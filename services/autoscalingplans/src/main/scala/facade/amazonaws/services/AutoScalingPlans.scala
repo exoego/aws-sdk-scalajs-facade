@@ -364,6 +364,7 @@ package autoscalingplans {
       __obj.asInstanceOf[DescribeScalingPlansResponse]
     }
   }
+
   @js.native
   sealed trait ForecastDataType extends js.Any
   object ForecastDataType extends js.Object {
@@ -432,6 +433,7 @@ package autoscalingplans {
       __obj.asInstanceOf[GetScalingPlanResourceForecastDataResponse]
     }
   }
+
   @js.native
   sealed trait LoadMetricType extends js.Any
   object LoadMetricType extends js.Object {
@@ -468,6 +470,7 @@ package autoscalingplans {
       __obj.asInstanceOf[MetricDimension]
     }
   }
+
   @js.native
   sealed trait MetricStatistic extends js.Any
   object MetricStatistic extends js.Object {
@@ -479,6 +482,7 @@ package autoscalingplans {
 
     val values = js.Object.freeze(js.Array(Average, Minimum, Maximum, SampleCount, Sum))
   }
+
   @js.native
   sealed trait PolicyType extends js.Any
   object PolicyType extends js.Object {
@@ -534,6 +538,7 @@ package autoscalingplans {
       __obj.asInstanceOf[PredefinedScalingMetricSpecification]
     }
   }
+
   @js.native
   sealed trait PredictiveScalingMaxCapacityBehavior extends js.Any
   object PredictiveScalingMaxCapacityBehavior extends js.Object {
@@ -548,6 +553,7 @@ package autoscalingplans {
       js.Array(SetForecastCapacityToMaxCapacity, SetMaxCapacityToForecastCapacity, SetMaxCapacityAboveForecastCapacity)
     )
   }
+
   @js.native
   sealed trait PredictiveScalingMode extends js.Any
   object PredictiveScalingMode extends js.Object {
@@ -556,6 +562,7 @@ package autoscalingplans {
 
     val values = js.Object.freeze(js.Array(ForecastAndScale, ForecastOnly))
   }
+
   @js.native
   sealed trait ScalableDimension extends js.Any
   object ScalableDimension extends js.Object {
@@ -660,6 +667,7 @@ package autoscalingplans {
       __obj.asInstanceOf[ScalingInstruction]
     }
   }
+
   @js.native
   sealed trait ScalingMetricType extends js.Any
   object ScalingMetricType extends js.Object {
@@ -780,6 +788,7 @@ package autoscalingplans {
       __obj.asInstanceOf[ScalingPlanResource]
     }
   }
+
   @js.native
   sealed trait ScalingPlanStatusCode extends js.Any
   object ScalingPlanStatusCode extends js.Object {
@@ -834,6 +843,7 @@ package autoscalingplans {
       __obj.asInstanceOf[ScalingPolicy]
     }
   }
+
   @js.native
   sealed trait ScalingPolicyUpdateBehavior extends js.Any
   object ScalingPolicyUpdateBehavior extends js.Object {
@@ -842,6 +852,7 @@ package autoscalingplans {
 
     val values = js.Object.freeze(js.Array(KeepExternalPolicies, ReplaceExternalPolicies))
   }
+
   @js.native
   sealed trait ScalingStatusCode extends js.Any
   object ScalingStatusCode extends js.Object {
@@ -851,6 +862,7 @@ package autoscalingplans {
 
     val values = js.Object.freeze(js.Array(Inactive, PartiallyActive, Active))
   }
+
   @js.native
   sealed trait ServiceNamespace extends js.Any
   object ServiceNamespace extends js.Object {

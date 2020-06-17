@@ -165,6 +165,7 @@ package marketplacecatalog {
       __obj.asInstanceOf[ChangeSetSummaryListItem]
     }
   }
+
   @js.native
   sealed trait ChangeStatus extends js.Any
   object ChangeStatus extends js.Object {
@@ -533,6 +534,7 @@ package marketplacecatalog {
       __obj.asInstanceOf[Sort]
     }
   }
+
   @js.native
   sealed trait SortOrder extends js.Any
   object SortOrder extends js.Object {

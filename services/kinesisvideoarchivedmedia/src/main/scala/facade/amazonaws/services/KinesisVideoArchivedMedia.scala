@@ -50,6 +50,7 @@ package kinesisvideoarchivedmedia {
       js.native
     def listFragments(params: ListFragmentsInput): Request[ListFragmentsOutput] = js.native
   }
+
   @js.native
   sealed trait ContainerFormat extends js.Any
   object ContainerFormat extends js.Object {
@@ -58,6 +59,7 @@ package kinesisvideoarchivedmedia {
 
     val values = js.Object.freeze(js.Array(FRAGMENTED_MP4, MPEG_TS))
   }
+
   @js.native
   sealed trait DASHDisplayFragmentNumber extends js.Any
   object DASHDisplayFragmentNumber extends js.Object {
@@ -66,6 +68,7 @@ package kinesisvideoarchivedmedia {
 
     val values = js.Object.freeze(js.Array(ALWAYS, NEVER))
   }
+
   @js.native
   sealed trait DASHDisplayFragmentTimestamp extends js.Any
   object DASHDisplayFragmentTimestamp extends js.Object {
@@ -96,6 +99,7 @@ package kinesisvideoarchivedmedia {
       __obj.asInstanceOf[DASHFragmentSelector]
     }
   }
+
   @js.native
   sealed trait DASHFragmentSelectorType extends js.Any
   object DASHFragmentSelectorType extends js.Object {
@@ -104,6 +108,7 @@ package kinesisvideoarchivedmedia {
 
     val values = js.Object.freeze(js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP))
   }
+
   @js.native
   sealed trait DASHPlaybackMode extends js.Any
   object DASHPlaybackMode extends js.Object {
@@ -201,6 +206,7 @@ package kinesisvideoarchivedmedia {
       __obj.asInstanceOf[FragmentSelector]
     }
   }
+
   @js.native
   sealed trait FragmentSelectorType extends js.Any
   object FragmentSelectorType extends js.Object {
@@ -362,6 +368,7 @@ package kinesisvideoarchivedmedia {
       __obj.asInstanceOf[GetMediaForFragmentListOutput]
     }
   }
+
   @js.native
   sealed trait HLSDiscontinuityMode extends js.Any
   object HLSDiscontinuityMode extends js.Object {
@@ -371,6 +378,7 @@ package kinesisvideoarchivedmedia {
 
     val values = js.Object.freeze(js.Array(ALWAYS, NEVER, ON_DISCONTINUITY))
   }
+
   @js.native
   sealed trait HLSDisplayFragmentTimestamp extends js.Any
   object HLSDisplayFragmentTimestamp extends js.Object {
@@ -401,6 +409,7 @@ package kinesisvideoarchivedmedia {
       __obj.asInstanceOf[HLSFragmentSelector]
     }
   }
+
   @js.native
   sealed trait HLSFragmentSelectorType extends js.Any
   object HLSFragmentSelectorType extends js.Object {
@@ -409,6 +418,7 @@ package kinesisvideoarchivedmedia {
 
     val values = js.Object.freeze(js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP))
   }
+
   @js.native
   sealed trait HLSPlaybackMode extends js.Any
   object HLSPlaybackMode extends js.Object {

@@ -59,7 +59,6 @@ package simpledb {
   }
 
   /**
-    *
     */
   @js.native
   trait Attribute extends js.Object {
@@ -157,7 +156,6 @@ package simpledb {
   }
 
   /**
-    *
     */
   @js.native
   trait DeletableAttribute extends js.Object {
@@ -390,7 +388,6 @@ package simpledb {
   }
 
   /**
-    *
     */
   @js.native
   trait Item extends js.Object {
@@ -546,7 +543,6 @@ package simpledb {
   }
 
   /**
-    *
     */
   @js.native
   trait ReplaceableAttribute extends js.Object {
@@ -573,7 +569,6 @@ package simpledb {
   }
 
   /**
-    *
     */
   @js.native
   trait ReplaceableItem extends js.Object {

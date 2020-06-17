@@ -1088,6 +1088,7 @@ package securityhub {
       __obj.asInstanceOf[AwsIamAccessKeyDetails]
     }
   }
+
   @js.native
   sealed trait AwsIamAccessKeyStatus extends js.Any
   object AwsIamAccessKeyStatus extends js.Object {
@@ -2285,6 +2286,7 @@ package securityhub {
       __obj.asInstanceOf[Compliance]
     }
   }
+
   @js.native
   sealed trait ComplianceStatus extends js.Any
   object ComplianceStatus extends js.Object {
@@ -2323,6 +2325,7 @@ package securityhub {
       __obj.asInstanceOf[ContainerDetails]
     }
   }
+
   @js.native
   sealed trait ControlStatus extends js.Any
   object ControlStatus extends js.Object {
@@ -2494,6 +2497,7 @@ package securityhub {
       __obj.asInstanceOf[DateRange]
     }
   }
+
   @js.native
   sealed trait DateRangeUnit extends js.Any
   object DateRangeUnit extends js.Object {
@@ -3719,6 +3723,7 @@ package securityhub {
       __obj.asInstanceOf[Malware]
     }
   }
+
   @js.native
   sealed trait MalwareState extends js.Any
   object MalwareState extends js.Object {
@@ -3728,6 +3733,7 @@ package securityhub {
 
     val values = js.Object.freeze(js.Array(OBSERVED, REMOVAL_FAILED, REMOVED))
   }
+
   @js.native
   sealed trait MalwareType extends js.Any
   object MalwareType extends js.Object {
@@ -3792,6 +3798,7 @@ package securityhub {
       __obj.asInstanceOf[MapFilter]
     }
   }
+
   @js.native
   sealed trait MapFilterComparison extends js.Any
   object MapFilterComparison extends js.Object {
@@ -3882,6 +3889,7 @@ package securityhub {
       __obj.asInstanceOf[Network]
     }
   }
+
   @js.native
   sealed trait NetworkDirection extends js.Any
   object NetworkDirection extends js.Object {
@@ -3966,6 +3974,7 @@ package securityhub {
       __obj.asInstanceOf[NumberFilter]
     }
   }
+
   @js.native
   sealed trait Partition extends js.Any
   object Partition extends js.Object {
@@ -4075,6 +4084,7 @@ package securityhub {
       __obj.asInstanceOf[Recommendation]
     }
   }
+
   @js.native
   sealed trait RecordState extends js.Any
   object RecordState extends js.Object {
@@ -4286,6 +4296,7 @@ package securityhub {
       __obj.asInstanceOf[Severity]
     }
   }
+
   @js.native
   sealed trait SeverityRating extends js.Any
   object SeverityRating extends js.Object {
@@ -4318,6 +4329,7 @@ package securityhub {
       __obj.asInstanceOf[SortCriterion]
     }
   }
+
   @js.native
   sealed trait SortOrder extends js.Any
   object SortOrder extends js.Object {
@@ -4397,6 +4409,7 @@ package securityhub {
       __obj.asInstanceOf[StandardsControl]
     }
   }
+
   @js.native
   sealed trait StandardsStatus extends js.Any
   object StandardsStatus extends js.Object {
@@ -4484,6 +4497,7 @@ package securityhub {
       __obj.asInstanceOf[StringFilter]
     }
   }
+
   @js.native
   sealed trait StringFilterComparison extends js.Any
   object StringFilterComparison extends js.Object {
@@ -4560,6 +4574,7 @@ package securityhub {
       __obj.asInstanceOf[ThreatIntelIndicator]
     }
   }
+
   @js.native
   sealed trait ThreatIntelIndicatorCategory extends js.Any
   object ThreatIntelIndicatorCategory extends js.Object {
@@ -4573,6 +4588,7 @@ package securityhub {
     val values =
       js.Object.freeze(js.Array(BACKDOOR, CARD_STEALER, COMMAND_AND_CONTROL, DROP_SITE, EXPLOIT_SITE, KEYLOGGER))
   }
+
   @js.native
   sealed trait ThreatIntelIndicatorType extends js.Any
   object ThreatIntelIndicatorType extends js.Object {
@@ -4789,6 +4805,7 @@ package securityhub {
       __obj.asInstanceOf[UpdateStandardsControlResponse]
     }
   }
+
   @js.native
   sealed trait VerificationState extends js.Any
   object VerificationState extends js.Object {
@@ -4856,6 +4873,7 @@ package securityhub {
       __obj.asInstanceOf[WafOverrideAction]
     }
   }
+
   @js.native
   sealed trait WorkflowState extends js.Any
   object WorkflowState extends js.Object {

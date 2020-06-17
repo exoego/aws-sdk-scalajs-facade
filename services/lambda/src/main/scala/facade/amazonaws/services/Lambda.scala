@@ -996,6 +996,7 @@ package lambda {
       __obj.asInstanceOf[EventSourceMappingConfiguration]
     }
   }
+
   @js.native
   sealed trait EventSourcePosition extends js.Any
   object EventSourcePosition extends js.Object {
@@ -1179,6 +1180,7 @@ package lambda {
       __obj.asInstanceOf[FunctionEventInvokeConfig]
     }
   }
+
   @js.native
   sealed trait FunctionVersion extends js.Any
   object FunctionVersion extends js.Object {
@@ -1656,6 +1658,7 @@ package lambda {
       __obj.asInstanceOf[InvocationResponse]
     }
   }
+
   @js.native
   sealed trait InvocationType extends js.Any
   object InvocationType extends js.Object {
@@ -1707,6 +1710,7 @@ package lambda {
       __obj.asInstanceOf[InvokeAsyncResponse]
     }
   }
+
   @js.native
   sealed trait LastUpdateStatus extends js.Any
   object LastUpdateStatus extends js.Object {
@@ -1716,6 +1720,7 @@ package lambda {
 
     val values = js.Object.freeze(js.Array(Successful, Failed, InProgress))
   }
+
   @js.native
   sealed trait LastUpdateStatusReasonCode extends js.Any
   object LastUpdateStatusReasonCode extends js.Object {
@@ -2264,6 +2269,7 @@ package lambda {
       __obj.asInstanceOf[ListVersionsByFunctionResponse]
     }
   }
+
   @js.native
   sealed trait LogType extends js.Any
   object LogType extends js.Object {
@@ -2353,6 +2359,7 @@ package lambda {
       __obj.asInstanceOf[ProvisionedConcurrencyConfigListItem]
     }
   }
+
   @js.native
   sealed trait ProvisionedConcurrencyStatusEnum extends js.Any
   object ProvisionedConcurrencyStatusEnum extends js.Object {
@@ -2622,6 +2629,7 @@ package lambda {
       __obj.asInstanceOf[RemovePermissionRequest]
     }
   }
+
   @js.native
   sealed trait Runtime extends js.Any
   object Runtime extends js.Object {
@@ -2671,6 +2679,7 @@ package lambda {
       )
     )
   }
+
   @js.native
   sealed trait State extends js.Any
   object State extends js.Object {
@@ -2681,6 +2690,7 @@ package lambda {
 
     val values = js.Object.freeze(js.Array(Pending, Active, Inactive, Failed))
   }
+
   @js.native
   sealed trait StateReasonCode extends js.Any
   object StateReasonCode extends js.Object {
@@ -2769,6 +2779,7 @@ package lambda {
       __obj.asInstanceOf[TracingConfigResponse]
     }
   }
+
   @js.native
   sealed trait TracingMode extends js.Any
   object TracingMode extends js.Object {

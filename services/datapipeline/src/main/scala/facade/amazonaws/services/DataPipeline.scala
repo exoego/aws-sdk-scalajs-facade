@@ -632,6 +632,7 @@ package datapipeline {
       __obj.asInstanceOf[Operator]
     }
   }
+
   @js.native
   sealed trait OperatorType extends js.Any
   object OperatorType extends js.Object {
@@ -1284,6 +1285,7 @@ package datapipeline {
       __obj.asInstanceOf[TaskObject]
     }
   }
+
   @js.native
   sealed trait TaskStatus extends js.Any
   object TaskStatus extends js.Object {

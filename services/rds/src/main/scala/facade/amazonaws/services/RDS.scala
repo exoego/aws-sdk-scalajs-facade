@@ -730,6 +730,7 @@ package rds {
       __obj.asInstanceOf[AccountQuota]
     }
   }
+
   @js.native
   sealed trait ActivityStreamMode extends js.Any
   object ActivityStreamMode extends js.Object {
@@ -738,6 +739,7 @@ package rds {
 
     val values = js.Object.freeze(js.Array(sync, async))
   }
+
   @js.native
   sealed trait ActivityStreamStatus extends js.Any
   object ActivityStreamStatus extends js.Object {
@@ -860,6 +862,7 @@ package rds {
       __obj.asInstanceOf[AddTagsToResourceMessage]
     }
   }
+
   @js.native
   sealed trait ApplyMethod extends js.Any
   object ApplyMethod extends js.Object {
@@ -913,6 +916,7 @@ package rds {
       __obj.asInstanceOf[ApplyPendingMaintenanceActionResult]
     }
   }
+
   @js.native
   sealed trait AuthScheme extends js.Any
   object AuthScheme extends js.Object {
@@ -3934,6 +3938,7 @@ package rds {
       __obj.asInstanceOf[DBProxy]
     }
   }
+
   @js.native
   sealed trait DBProxyStatus extends js.Any
   object DBProxyStatus extends js.Object {
@@ -6458,6 +6463,7 @@ package rds {
       __obj.asInstanceOf[EngineDefaults]
     }
   }
+
   @js.native
   sealed trait EngineFamily extends js.Any
   object EngineFamily extends js.Object {
@@ -6875,6 +6881,7 @@ package rds {
       __obj.asInstanceOf[GlobalClustersMessage]
     }
   }
+
   @js.native
   sealed trait IAMAuthMode extends js.Any
   object IAMAuthMode extends js.Object {
@@ -10221,6 +10228,7 @@ package rds {
       __obj.asInstanceOf[SourceRegionMessage]
     }
   }
+
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType extends js.Object {
@@ -10581,6 +10589,7 @@ package rds {
       __obj.asInstanceOf[TagListMessage]
     }
   }
+
   @js.native
   sealed trait TargetType extends js.Any
   object TargetType extends js.Object {

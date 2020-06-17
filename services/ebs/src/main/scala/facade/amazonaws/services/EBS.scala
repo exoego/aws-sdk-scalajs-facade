@@ -89,6 +89,7 @@ package ebs {
       __obj.asInstanceOf[ChangedBlock]
     }
   }
+
   @js.native
   sealed trait ChecksumAlgorithm extends js.Any
   object ChecksumAlgorithm extends js.Object {

@@ -2432,6 +2432,7 @@ package autoscaling {
       __obj.asInstanceOf[LifecycleHookSpecification]
     }
   }
+
   @js.native
   sealed trait LifecycleState extends js.Any
   object LifecycleState extends js.Object {
@@ -2578,6 +2579,7 @@ package autoscaling {
       __obj.asInstanceOf[MetricGranularityType]
     }
   }
+
   @js.native
   sealed trait MetricStatistic extends js.Any
   object MetricStatistic extends js.Object {
@@ -2589,6 +2591,7 @@ package autoscaling {
 
     val values = js.Object.freeze(js.Array(Average, Minimum, Maximum, SampleCount, Sum))
   }
+
   @js.native
   sealed trait MetricType extends js.Any
   object MetricType extends js.Object {
@@ -2966,6 +2969,7 @@ package autoscaling {
       __obj.asInstanceOf[RecordLifecycleActionHeartbeatType]
     }
   }
+
   @js.native
   sealed trait ScalingActivityStatusCode extends js.Any
   object ScalingActivityStatusCode extends js.Object {

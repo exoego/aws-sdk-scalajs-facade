@@ -253,6 +253,7 @@ package lakeformation {
       __obj.asInstanceOf[ColumnWildcard]
     }
   }
+
   @js.native
   sealed trait ComparisonOperator extends js.Any
   object ComparisonOperator extends js.Object {
@@ -291,6 +292,7 @@ package lakeformation {
       __obj.asInstanceOf[DataLakePrincipal]
     }
   }
+
   @js.native
   sealed trait DataLakeResourceType extends js.Any
   object DataLakeResourceType extends js.Object {
@@ -459,6 +461,7 @@ package lakeformation {
       __obj.asInstanceOf[ErrorDetail]
     }
   }
+
   @js.native
   sealed trait FieldNameString extends js.Any
   object FieldNameString extends js.Object {
@@ -709,6 +712,7 @@ package lakeformation {
       __obj.asInstanceOf[ListResourcesResponse]
     }
   }
+
   @js.native
   sealed trait Permission extends js.Any
   object Permission extends js.Object {

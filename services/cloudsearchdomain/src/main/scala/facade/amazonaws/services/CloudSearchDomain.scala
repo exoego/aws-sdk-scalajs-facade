@@ -97,6 +97,7 @@ package cloudsearchdomain {
       __obj.asInstanceOf[BucketInfo]
     }
   }
+
   @js.native
   sealed trait ContentType extends js.Any
   object ContentType extends js.Object {
@@ -229,6 +230,7 @@ package cloudsearchdomain {
       __obj.asInstanceOf[Hits]
     }
   }
+
   @js.native
   sealed trait QueryParser extends js.Any
   object QueryParser extends js.Object {

@@ -122,7 +122,6 @@ package kafka {
   /**
     *             The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.
     *          Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.
-    *
     */
   @js.native
   sealed trait BrokerAZDistribution extends js.Any
@@ -134,7 +133,6 @@ package kafka {
 
   /**
     *             Specifies the EBS volume upgrade information. The broker identifier must be set to the keyword ALL. This means the changes apply to all the brokers in the cluster.
-    *
     */
   @js.native
   trait BrokerEBSVolumeInfo extends js.Object {
@@ -159,7 +157,6 @@ package kafka {
 
   /**
     *             Describes the setup to be used for Kafka broker nodes in the cluster.
-    *
     */
   @js.native
   trait BrokerNodeGroupInfo extends js.Object {
@@ -193,7 +190,6 @@ package kafka {
 
   /**
     *             BrokerNodeInfo
-    *
     */
   @js.native
   trait BrokerNodeInfo extends js.Object {
@@ -230,7 +226,6 @@ package kafka {
 
   /**
     *             Information about the current software installed on the cluster.
-    *
     */
   @js.native
   trait BrokerSoftwareInfo extends js.Object {
@@ -256,7 +251,6 @@ package kafka {
 
   /**
     *             Includes all client authentication information.
-    *
     */
   @js.native
   trait ClientAuthentication extends js.Object {
@@ -276,7 +270,6 @@ package kafka {
 
   /**
     *             Client-broker encryption in transit setting.
-    *
     */
   @js.native
   sealed trait ClientBroker extends js.Any
@@ -290,7 +283,6 @@ package kafka {
 
   /**
     *             Returns information about a cluster.
-    *
     */
   @js.native
   trait ClusterInfo extends js.Object {
@@ -357,7 +349,6 @@ package kafka {
 
   /**
     *             Returns information about a cluster operation.
-    *
     */
   @js.native
   trait ClusterOperationInfo extends js.Object {
@@ -404,7 +395,6 @@ package kafka {
 
   /**
     *             The state of a Kafka cluster.
-    *
     */
   @js.native
   sealed trait ClusterState extends js.Any
@@ -420,7 +410,6 @@ package kafka {
 
   /**
     *             Represents an MSK Configuration.
-    *
     */
   @js.native
   trait Configuration extends js.Object {
@@ -457,7 +446,6 @@ package kafka {
 
   /**
     *             Specifies the configuration to use for the brokers.
-    *
     */
   @js.native
   trait ConfigurationInfo extends js.Object {
@@ -482,7 +470,6 @@ package kafka {
 
   /**
     *             Describes a configuration revision.
-    *
     */
   @js.native
   trait ConfigurationRevision extends js.Object {
@@ -835,7 +822,6 @@ package kafka {
 
   /**
     *             Contains information about the EBS storage volumes attached to Kafka broker nodes.
-    *
     */
   @js.native
   trait EBSStorageInfo extends js.Object {
@@ -855,7 +841,6 @@ package kafka {
 
   /**
     *             The data-volume encryption details.
-    *
     */
   @js.native
   trait EncryptionAtRest extends js.Object {
@@ -877,7 +862,6 @@ package kafka {
 
   /**
     *             The settings for encrypting data in transit.
-    *
     */
   @js.native
   trait EncryptionInTransit extends js.Object {
@@ -900,7 +884,6 @@ package kafka {
 
   /**
     *             Includes encryption-related information, such as the AWS KMS key used for encrypting data at rest and whether you want MSK to encrypt your data in transit.
-    *
     */
   @js.native
   trait EncryptionInfo extends js.Object {
@@ -923,7 +906,6 @@ package kafka {
 
   /**
     *             Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of monitoring, see [[https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html|Monitoring]].
-    *
     */
   @js.native
   sealed trait EnhancedMonitoring extends js.Any
@@ -937,7 +919,6 @@ package kafka {
 
   /**
     *             Returns information about an error state of the cluster.
-    *
     */
   @js.native
   trait ErrorInfo extends js.Object {
@@ -997,7 +978,6 @@ package kafka {
 
   /**
     *             Indicates whether you want to enable or disable the JMX Exporter.
-    *
     */
   @js.native
   trait JmxExporter extends js.Object {
@@ -1019,7 +999,6 @@ package kafka {
 
   /**
     *             Indicates whether you want to enable or disable the JMX Exporter.
-    *
     */
   @js.native
   trait JmxExporterInfo extends js.Object {
@@ -1057,6 +1036,7 @@ package kafka {
       __obj.asInstanceOf[KafkaVersion]
     }
   }
+
   @js.native
   sealed trait KafkaVersionStatus extends js.Any
   object KafkaVersionStatus extends js.Object {
@@ -1348,7 +1328,6 @@ package kafka {
 
   /**
     *             Information about cluster attributes that can be updated via update APIs.
-    *
     */
   @js.native
   trait MutableClusterInfo extends js.Object {
@@ -1380,7 +1359,6 @@ package kafka {
 
   /**
     *             Indicates whether you want to enable or disable the Node Exporter.
-    *
     */
   @js.native
   trait NodeExporter extends js.Object {
@@ -1402,7 +1380,6 @@ package kafka {
 
   /**
     *             Indicates whether you want to enable or disable the Node Exporter.
-    *
     */
   @js.native
   trait NodeExporterInfo extends js.Object {
@@ -1424,7 +1401,6 @@ package kafka {
 
   /**
     *             The node information object.
-    *
     */
   @js.native
   trait NodeInfo extends js.Object {
@@ -1459,7 +1435,6 @@ package kafka {
 
   /**
     *             The broker or Zookeeper node.
-    *
     */
   @js.native
   sealed trait NodeType extends js.Any
@@ -1471,7 +1446,6 @@ package kafka {
 
   /**
     *             JMX and Node monitoring for the MSK cluster.
-    *
     */
   @js.native
   trait OpenMonitoring extends js.Object {
@@ -1493,7 +1467,6 @@ package kafka {
 
   /**
     *             JMX and Node monitoring for the MSK cluster.
-    *
     */
   @js.native
   trait OpenMonitoringInfo extends js.Object {
@@ -1515,7 +1488,6 @@ package kafka {
 
   /**
     *             Prometheus settings.
-    *
     */
   @js.native
   trait Prometheus extends js.Object {
@@ -1538,7 +1510,6 @@ package kafka {
 
   /**
     *             Prometheus settings.
-    *
     */
   @js.native
   trait PrometheusInfo extends js.Object {
@@ -1580,7 +1551,6 @@ package kafka {
 
   /**
     *             Contains information about storage volumes attached to MSK broker nodes.
-    *
     */
   @js.native
   trait StorageInfo extends js.Object {
@@ -1621,7 +1591,6 @@ package kafka {
 
   /**
     *             Details for client authentication using TLS.
-    *
     */
   @js.native
   trait Tls extends js.Object {
@@ -1842,7 +1811,6 @@ package kafka {
 
   /**
     *             Zookeeper node information.
-    *
     */
   @js.native
   trait ZookeeperNodeInfo extends js.Object {

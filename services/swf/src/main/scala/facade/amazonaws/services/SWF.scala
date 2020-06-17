@@ -463,6 +463,7 @@ package swf {
       __obj.asInstanceOf[ActivityTaskTimedOutEventAttributes]
     }
   }
+
   @js.native
   sealed trait ActivityTaskTimeoutType extends js.Any
   object ActivityTaskTimeoutType extends js.Object {
@@ -647,6 +648,7 @@ package swf {
       __obj.asInstanceOf[CancelTimerDecisionAttributes]
     }
   }
+
   @js.native
   sealed trait CancelTimerFailedCause extends js.Any
   object CancelTimerFailedCause extends js.Object {
@@ -707,6 +709,7 @@ package swf {
       __obj.asInstanceOf[CancelWorkflowExecutionDecisionAttributes]
     }
   }
+
   @js.native
   sealed trait CancelWorkflowExecutionFailedCause extends js.Any
   object CancelWorkflowExecutionFailedCause extends js.Object {
@@ -739,6 +742,7 @@ package swf {
       __obj.asInstanceOf[CancelWorkflowExecutionFailedEventAttributes]
     }
   }
+
   @js.native
   sealed trait ChildPolicy extends js.Any
   object ChildPolicy extends js.Object {
@@ -940,6 +944,7 @@ package swf {
       __obj.asInstanceOf[ChildWorkflowExecutionTimedOutEventAttributes]
     }
   }
+
   @js.native
   sealed trait CloseStatus extends js.Any
   object CloseStatus extends js.Object {
@@ -998,6 +1003,7 @@ package swf {
       __obj.asInstanceOf[CompleteWorkflowExecutionDecisionAttributes]
     }
   }
+
   @js.native
   sealed trait CompleteWorkflowExecutionFailedCause extends js.Any
   object CompleteWorkflowExecutionFailedCause extends js.Object {
@@ -1084,6 +1090,7 @@ package swf {
       __obj.asInstanceOf[ContinueAsNewWorkflowExecutionDecisionAttributes]
     }
   }
+
   @js.native
   sealed trait ContinueAsNewWorkflowExecutionFailedCause extends js.Any
   object ContinueAsNewWorkflowExecutionFailedCause extends js.Object {
@@ -1537,6 +1544,7 @@ package swf {
       __obj.asInstanceOf[DecisionTaskTimedOutEventAttributes]
     }
   }
+
   @js.native
   sealed trait DecisionTaskTimeoutType extends js.Any
   object DecisionTaskTimeoutType extends js.Object {
@@ -1544,6 +1552,7 @@ package swf {
 
     val values = js.Object.freeze(js.Array(START_TO_CLOSE))
   }
+
   @js.native
   sealed trait DecisionType extends js.Any
   object DecisionType extends js.Object {
@@ -1819,6 +1828,7 @@ package swf {
       __obj.asInstanceOf[DomainInfos]
     }
   }
+
   @js.native
   sealed trait EventType extends js.Any
   object EventType extends js.Object {
@@ -1938,6 +1948,7 @@ package swf {
       )
     )
   }
+
   @js.native
   sealed trait ExecutionStatus extends js.Any
   object ExecutionStatus extends js.Object {
@@ -2046,6 +2057,7 @@ package swf {
       __obj.asInstanceOf[FailWorkflowExecutionDecisionAttributes]
     }
   }
+
   @js.native
   sealed trait FailWorkflowExecutionFailedCause extends js.Any
   object FailWorkflowExecutionFailedCause extends js.Object {
@@ -2663,6 +2675,7 @@ package swf {
       __obj.asInstanceOf[LambdaFunctionTimedOutEventAttributes]
     }
   }
+
   @js.native
   sealed trait LambdaFunctionTimeoutType extends js.Any
   object LambdaFunctionTimeoutType extends js.Object {
@@ -3040,6 +3053,7 @@ package swf {
       __obj.asInstanceOf[RecordMarkerDecisionAttributes]
     }
   }
+
   @js.native
   sealed trait RecordMarkerFailedCause extends js.Any
   object RecordMarkerFailedCause extends js.Object {
@@ -3203,6 +3217,7 @@ package swf {
       __obj.asInstanceOf[RegisterWorkflowTypeInput]
     }
   }
+
   @js.native
   sealed trait RegistrationStatus extends js.Any
   object RegistrationStatus extends js.Object {
@@ -3238,6 +3253,7 @@ package swf {
       __obj.asInstanceOf[RequestCancelActivityTaskDecisionAttributes]
     }
   }
+
   @js.native
   sealed trait RequestCancelActivityTaskFailedCause extends js.Any
   object RequestCancelActivityTaskFailedCause extends js.Object {
@@ -3306,6 +3322,7 @@ package swf {
       __obj.asInstanceOf[RequestCancelExternalWorkflowExecutionDecisionAttributes]
     }
   }
+
   @js.native
   sealed trait RequestCancelExternalWorkflowExecutionFailedCause extends js.Any
   object RequestCancelExternalWorkflowExecutionFailedCause extends js.Object {
@@ -3609,6 +3626,7 @@ package swf {
       __obj.asInstanceOf[ScheduleActivityTaskDecisionAttributes]
     }
   }
+
   @js.native
   sealed trait ScheduleActivityTaskFailedCause extends js.Any
   object ScheduleActivityTaskFailedCause extends js.Object {
@@ -3708,6 +3726,7 @@ package swf {
       __obj.asInstanceOf[ScheduleLambdaFunctionDecisionAttributes]
     }
   }
+
   @js.native
   sealed trait ScheduleLambdaFunctionFailedCause extends js.Any
   object ScheduleLambdaFunctionFailedCause extends js.Object {
@@ -3797,6 +3816,7 @@ package swf {
       __obj.asInstanceOf[SignalExternalWorkflowExecutionDecisionAttributes]
     }
   }
+
   @js.native
   sealed trait SignalExternalWorkflowExecutionFailedCause extends js.Any
   object SignalExternalWorkflowExecutionFailedCause extends js.Object {
@@ -3979,6 +3999,7 @@ package swf {
       __obj.asInstanceOf[StartChildWorkflowExecutionDecisionAttributes]
     }
   }
+
   @js.native
   sealed trait StartChildWorkflowExecutionFailedCause extends js.Any
   object StartChildWorkflowExecutionFailedCause extends js.Object {
@@ -4109,6 +4130,7 @@ package swf {
       __obj.asInstanceOf[StartChildWorkflowExecutionInitiatedEventAttributes]
     }
   }
+
   @js.native
   sealed trait StartLambdaFunctionFailedCause extends js.Any
   object StartLambdaFunctionFailedCause extends js.Object {
@@ -4174,6 +4196,7 @@ package swf {
       __obj.asInstanceOf[StartTimerDecisionAttributes]
     }
   }
+
   @js.native
   sealed trait StartTimerFailedCause extends js.Any
   object StartTimerFailedCause extends js.Object {
@@ -4550,6 +4573,7 @@ package swf {
       __obj.asInstanceOf[WorkflowExecution]
     }
   }
+
   @js.native
   sealed trait WorkflowExecutionCancelRequestedCause extends js.Any
   object WorkflowExecutionCancelRequestedCause extends js.Object {
@@ -5018,6 +5042,7 @@ package swf {
       __obj.asInstanceOf[WorkflowExecutionStartedEventAttributes]
     }
   }
+
   @js.native
   sealed trait WorkflowExecutionTerminatedCause extends js.Any
   object WorkflowExecutionTerminatedCause extends js.Object {
@@ -5081,6 +5106,7 @@ package swf {
       __obj.asInstanceOf[WorkflowExecutionTimedOutEventAttributes]
     }
   }
+
   @js.native
   sealed trait WorkflowExecutionTimeoutType extends js.Any
   object WorkflowExecutionTimeoutType extends js.Object {

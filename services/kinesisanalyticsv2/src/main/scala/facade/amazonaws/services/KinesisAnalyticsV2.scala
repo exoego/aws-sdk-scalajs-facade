@@ -795,6 +795,7 @@ package kinesisanalyticsv2 {
       __obj.asInstanceOf[ApplicationRestoreConfiguration]
     }
   }
+
   @js.native
   sealed trait ApplicationRestoreType extends js.Any
   object ApplicationRestoreType extends js.Object {
@@ -868,6 +869,7 @@ package kinesisanalyticsv2 {
       __obj.asInstanceOf[ApplicationSnapshotConfigurationUpdate]
     }
   }
+
   @js.native
   sealed trait ApplicationStatus extends js.Any
   object ApplicationStatus extends js.Object {
@@ -1162,6 +1164,7 @@ package kinesisanalyticsv2 {
       __obj.asInstanceOf[CodeContentDescription]
     }
   }
+
   @js.native
   sealed trait CodeContentType extends js.Any
   object CodeContentType extends js.Object {
@@ -1195,6 +1198,7 @@ package kinesisanalyticsv2 {
       __obj.asInstanceOf[CodeContentUpdate]
     }
   }
+
   @js.native
   sealed trait ConfigurationType extends js.Any
   object ConfigurationType extends js.Object {
@@ -2195,6 +2199,7 @@ package kinesisanalyticsv2 {
       __obj.asInstanceOf[InputSchemaUpdate]
     }
   }
+
   @js.native
   sealed trait InputStartingPosition extends js.Any
   object InputStartingPosition extends js.Object {
@@ -2736,6 +2741,7 @@ package kinesisanalyticsv2 {
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
+
   @js.native
   sealed trait LogLevel extends js.Any
   object LogLevel extends js.Object {
@@ -2768,6 +2774,7 @@ package kinesisanalyticsv2 {
       __obj.asInstanceOf[MappingParameters]
     }
   }
+
   @js.native
   sealed trait MetricsLevel extends js.Any
   object MetricsLevel extends js.Object {
@@ -3132,6 +3139,7 @@ package kinesisanalyticsv2 {
       __obj.asInstanceOf[RecordFormat]
     }
   }
+
   @js.native
   sealed trait RecordFormatType extends js.Any
   object RecordFormatType extends js.Object {
@@ -3301,6 +3309,7 @@ package kinesisanalyticsv2 {
       __obj.asInstanceOf[RunConfigurationUpdate]
     }
   }
+
   @js.native
   sealed trait RuntimeEnvironment extends js.Any
   object RuntimeEnvironment extends js.Object {
@@ -3517,6 +3526,7 @@ package kinesisanalyticsv2 {
       __obj.asInstanceOf[SnapshotDetails]
     }
   }
+
   @js.native
   sealed trait SnapshotStatus extends js.Any
   object SnapshotStatus extends js.Object {

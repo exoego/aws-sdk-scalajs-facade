@@ -426,6 +426,7 @@ package imagebuilder {
       __obj.asInstanceOf[ComponentConfiguration]
     }
   }
+
   @js.native
   sealed trait ComponentFormat extends js.Any
   object ComponentFormat extends js.Object {
@@ -479,6 +480,7 @@ package imagebuilder {
       __obj.asInstanceOf[ComponentSummary]
     }
   }
+
   @js.native
   sealed trait ComponentType extends js.Any
   object ComponentType extends js.Object {
@@ -1280,6 +1282,7 @@ package imagebuilder {
       __obj.asInstanceOf[EbsInstanceBlockDeviceSpecification]
     }
   }
+
   @js.native
   sealed trait EbsVolumeType extends js.Any
   object EbsVolumeType extends js.Object {
@@ -1891,6 +1894,7 @@ package imagebuilder {
       __obj.asInstanceOf[ImageState]
     }
   }
+
   @js.native
   sealed trait ImageStatus extends js.Any
   object ImageStatus extends js.Object {
@@ -2731,6 +2735,7 @@ package imagebuilder {
       __obj.asInstanceOf[OutputResources]
     }
   }
+
   @js.native
   sealed trait Ownership extends js.Any
   object Ownership extends js.Object {
@@ -2740,6 +2745,7 @@ package imagebuilder {
 
     val values = js.Object.freeze(js.Array(Self, Shared, Amazon))
   }
+
   @js.native
   sealed trait PipelineExecutionStartCondition extends js.Any
   object PipelineExecutionStartCondition extends js.Object {
@@ -2749,6 +2755,7 @@ package imagebuilder {
 
     val values = js.Object.freeze(js.Array(EXPRESSION_MATCH_ONLY, EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE))
   }
+
   @js.native
   sealed trait PipelineStatus extends js.Any
   object PipelineStatus extends js.Object {
@@ -2757,6 +2764,7 @@ package imagebuilder {
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
+
   @js.native
   sealed trait Platform extends js.Any
   object Platform extends js.Object {

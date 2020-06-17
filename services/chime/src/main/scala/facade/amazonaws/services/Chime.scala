@@ -534,6 +534,7 @@ package chime {
       __obj.asInstanceOf[AccountSettings]
     }
   }
+
   @js.native
   sealed trait AccountType extends js.Any
   object AccountType extends js.Object {
@@ -1047,6 +1048,7 @@ package chime {
       __obj.asInstanceOf[Bot]
     }
   }
+
   @js.native
   sealed trait BotType extends js.Any
   object BotType extends js.Object {
@@ -1073,6 +1075,7 @@ package chime {
       __obj.asInstanceOf[BusinessCallingSettings]
     }
   }
+
   @js.native
   sealed trait CallingNameStatus extends js.Any
   object CallingNameStatus extends js.Object {
@@ -1954,6 +1957,7 @@ package chime {
       __obj.asInstanceOf[DisassociateSigninDelegateGroupsFromAccountResponse]
     }
   }
+
   @js.native
   sealed trait EmailStatus extends js.Any
   object EmailStatus extends js.Object {
@@ -1963,6 +1967,7 @@ package chime {
 
     val values = js.Object.freeze(js.Array(NotSent, Sent, Failed))
   }
+
   @js.native
   sealed trait ErrorCode extends js.Any
   object ErrorCode extends js.Object {
@@ -2725,6 +2730,7 @@ package chime {
       __obj.asInstanceOf[Invite]
     }
   }
+
   @js.native
   sealed trait InviteStatus extends js.Any
   object InviteStatus extends js.Object {
@@ -2774,6 +2780,7 @@ package chime {
       __obj.asInstanceOf[InviteUsersResponse]
     }
   }
+
   @js.native
   sealed trait License extends js.Any
   object License extends js.Object {
@@ -3484,6 +3491,7 @@ package chime {
       __obj.asInstanceOf[MemberError]
     }
   }
+
   @js.native
   sealed trait MemberType extends js.Any
   object MemberType extends js.Object {
@@ -3537,6 +3545,7 @@ package chime {
       __obj.asInstanceOf[OrderedPhoneNumber]
     }
   }
+
   @js.native
   sealed trait OrderedPhoneNumberStatus extends js.Any
   object OrderedPhoneNumberStatus extends js.Object {
@@ -3599,6 +3608,7 @@ package chime {
       __obj.asInstanceOf[OriginationRoute]
     }
   }
+
   @js.native
   sealed trait OriginationRouteProtocol extends js.Any
   object OriginationRouteProtocol extends js.Object {
@@ -3684,6 +3694,7 @@ package chime {
       __obj.asInstanceOf[PhoneNumberAssociation]
     }
   }
+
   @js.native
   sealed trait PhoneNumberAssociationName extends js.Any
   object PhoneNumberAssociationName extends js.Object {
@@ -3787,6 +3798,7 @@ package chime {
       __obj.asInstanceOf[PhoneNumberOrder]
     }
   }
+
   @js.native
   sealed trait PhoneNumberOrderStatus extends js.Any
   object PhoneNumberOrderStatus extends js.Object {
@@ -3797,6 +3809,7 @@ package chime {
 
     val values = js.Object.freeze(js.Array(Processing, Successful, Failed, Partial))
   }
+
   @js.native
   sealed trait PhoneNumberProductType extends js.Any
   object PhoneNumberProductType extends js.Object {
@@ -3805,6 +3818,7 @@ package chime {
 
     val values = js.Object.freeze(js.Array(BusinessCalling, VoiceConnector))
   }
+
   @js.native
   sealed trait PhoneNumberStatus extends js.Any
   object PhoneNumberStatus extends js.Object {
@@ -3830,6 +3844,7 @@ package chime {
       )
     )
   }
+
   @js.native
   sealed trait PhoneNumberType extends js.Any
   object PhoneNumberType extends js.Object {
@@ -4089,6 +4104,7 @@ package chime {
       __obj.asInstanceOf[RegenerateSecurityTokenResponse]
     }
   }
+
   @js.native
   sealed trait RegistrationStatus extends js.Any
   object RegistrationStatus extends js.Object {
@@ -4234,6 +4250,7 @@ package chime {
       __obj.asInstanceOf[RoomMembership]
     }
   }
+
   @js.native
   sealed trait RoomMembershipRole extends js.Any
   object RoomMembershipRole extends js.Object {
@@ -4998,6 +5015,7 @@ package chime {
       __obj.asInstanceOf[UserSettings]
     }
   }
+
   @js.native
   sealed trait UserType extends js.Any
   object UserType extends js.Object {
@@ -5043,6 +5061,7 @@ package chime {
       __obj.asInstanceOf[VoiceConnector]
     }
   }
+
   @js.native
   sealed trait VoiceConnectorAwsRegion extends js.Any
   object VoiceConnectorAwsRegion extends js.Object {

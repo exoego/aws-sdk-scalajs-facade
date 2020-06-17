@@ -1224,6 +1224,7 @@ package guardduty {
       __obj.asInstanceOf[DestinationProperties]
     }
   }
+
   @js.native
   sealed trait DestinationType extends js.Any
   object DestinationType extends js.Object {
@@ -1231,6 +1232,7 @@ package guardduty {
 
     val values = js.Object.freeze(js.Array(S3))
   }
+
   @js.native
   sealed trait DetectorStatus extends js.Any
   object DetectorStatus extends js.Object {
@@ -1368,6 +1370,7 @@ package guardduty {
       __obj.asInstanceOf[Evidence]
     }
   }
+
   @js.native
   sealed trait Feedback extends js.Any
   object Feedback extends js.Object {
@@ -1376,6 +1379,7 @@ package guardduty {
 
     val values = js.Object.freeze(js.Array(USEFUL, NOT_USEFUL))
   }
+
   @js.native
   sealed trait FilterAction extends js.Any
   object FilterAction extends js.Object {
@@ -1466,6 +1470,7 @@ package guardduty {
       __obj.asInstanceOf[FindingCriteria]
     }
   }
+
   @js.native
   sealed trait FindingPublishingFrequency extends js.Any
   object FindingPublishingFrequency extends js.Object {
@@ -1475,6 +1480,7 @@ package guardduty {
 
     val values = js.Object.freeze(js.Array(FIFTEEN_MINUTES, ONE_HOUR, SIX_HOURS))
   }
+
   @js.native
   sealed trait FindingStatisticType extends js.Any
   object FindingStatisticType extends js.Object {
@@ -2070,6 +2076,7 @@ package guardduty {
       __obj.asInstanceOf[InviteMembersResponse]
     }
   }
+
   @js.native
   sealed trait IpSetFormat extends js.Any
   object IpSetFormat extends js.Object {
@@ -2082,6 +2089,7 @@ package guardduty {
 
     val values = js.Object.freeze(js.Array(TXT, STIX, OTX_CSV, ALIEN_VAULT, PROOF_POINT, FIRE_EYE))
   }
+
   @js.native
   sealed trait IpSetStatus extends js.Any
   object IpSetStatus extends js.Object {
@@ -2653,6 +2661,7 @@ package guardduty {
       __obj.asInstanceOf[NetworkInterface]
     }
   }
+
   @js.native
   sealed trait OrderBy extends js.Any
   object OrderBy extends js.Object {
@@ -2777,6 +2786,7 @@ package guardduty {
       __obj.asInstanceOf[ProductCode]
     }
   }
+
   @js.native
   sealed trait PublishingStatus extends js.Any
   object PublishingStatus extends js.Object {
@@ -3091,6 +3101,7 @@ package guardduty {
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
+
   @js.native
   sealed trait ThreatIntelSetFormat extends js.Any
   object ThreatIntelSetFormat extends js.Object {
@@ -3103,6 +3114,7 @@ package guardduty {
 
     val values = js.Object.freeze(js.Array(TXT, STIX, OTX_CSV, ALIEN_VAULT, PROOF_POINT, FIRE_EYE))
   }
+
   @js.native
   sealed trait ThreatIntelSetStatus extends js.Any
   object ThreatIntelSetStatus extends js.Object {

@@ -195,6 +195,7 @@ package sms {
     def updateApp(params: UpdateAppRequest): Request[UpdateAppResponse]                                  = js.native
     def updateReplicationJob(params: UpdateReplicationJobRequest): Request[UpdateReplicationJobResponse] = js.native
   }
+
   @js.native
   sealed trait AppLaunchStatus extends js.Any
   object AppLaunchStatus extends js.Object {
@@ -232,6 +233,7 @@ package sms {
       )
     )
   }
+
   @js.native
   sealed trait AppReplicationStatus extends js.Any
   object AppReplicationStatus extends js.Object {
@@ -271,6 +273,7 @@ package sms {
       )
     )
   }
+
   @js.native
   sealed trait AppStatus extends js.Any
   object AppStatus extends js.Object {
@@ -393,6 +396,7 @@ package sms {
       __obj.asInstanceOf[Connector]
     }
   }
+
   @js.native
   sealed trait ConnectorCapability extends js.Any
   object ConnectorCapability extends js.Object {
@@ -403,6 +407,7 @@ package sms {
 
     val values = js.Object.freeze(js.Array(VSPHERE, SCVMM, `HYPERV-MANAGER`, SNAPSHOT_BATCHING))
   }
+
   @js.native
   sealed trait ConnectorStatus extends js.Any
   object ConnectorStatus extends js.Object {
@@ -1140,6 +1145,7 @@ package sms {
       __obj.asInstanceOf[LaunchDetails]
     }
   }
+
   @js.native
   sealed trait LicenseType extends js.Any
   object LicenseType extends js.Object {
@@ -1189,6 +1195,7 @@ package sms {
       __obj.asInstanceOf[ListAppsResponse]
     }
   }
+
   @js.native
   sealed trait OutputFormat extends js.Any
   object OutputFormat extends js.Object {
@@ -1340,6 +1347,7 @@ package sms {
       __obj.asInstanceOf[ReplicationJob]
     }
   }
+
   @js.native
   sealed trait ReplicationJobState extends js.Any
   object ReplicationJobState extends js.Object {
@@ -1426,6 +1434,7 @@ package sms {
       __obj.asInstanceOf[ReplicationRunStageDetails]
     }
   }
+
   @js.native
   sealed trait ReplicationRunState extends js.Any
   object ReplicationRunState extends js.Object {
@@ -1439,6 +1448,7 @@ package sms {
 
     val values = js.Object.freeze(js.Array(PENDING, MISSED, ACTIVE, FAILED, COMPLETED, DELETING, DELETED))
   }
+
   @js.native
   sealed trait ReplicationRunType extends js.Any
   object ReplicationRunType extends js.Object {
@@ -1500,6 +1510,7 @@ package sms {
       __obj.asInstanceOf[Server]
     }
   }
+
   @js.native
   sealed trait ServerCatalogStatus extends js.Any
   object ServerCatalogStatus extends js.Object {
@@ -1691,6 +1702,7 @@ package sms {
       __obj.asInstanceOf[ServerReplicationParameters]
     }
   }
+
   @js.native
   sealed trait ServerType extends js.Any
   object ServerType extends js.Object {
@@ -1973,6 +1985,7 @@ package sms {
       __obj.asInstanceOf[UserData]
     }
   }
+
   @js.native
   sealed trait VmManagerType extends js.Any
   object VmManagerType extends js.Object {

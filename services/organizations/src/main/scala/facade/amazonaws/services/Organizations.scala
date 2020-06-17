@@ -316,6 +316,7 @@ package organizations {
       __obj.asInstanceOf[Account]
     }
   }
+
   @js.native
   sealed trait AccountJoinedMethod extends js.Any
   object AccountJoinedMethod extends js.Object {
@@ -324,6 +325,7 @@ package organizations {
 
     val values = js.Object.freeze(js.Array(INVITED, CREATED))
   }
+
   @js.native
   sealed trait AccountStatus extends js.Any
   object AccountStatus extends js.Object {
@@ -332,6 +334,7 @@ package organizations {
 
     val values = js.Object.freeze(js.Array(ACTIVE, SUSPENDED))
   }
+
   @js.native
   sealed trait ActionType extends js.Any
   object ActionType extends js.Object {
@@ -421,6 +424,7 @@ package organizations {
       __obj.asInstanceOf[Child]
     }
   }
+
   @js.native
   sealed trait ChildType extends js.Any
   object ChildType extends js.Object {
@@ -429,6 +433,7 @@ package organizations {
 
     val values = js.Object.freeze(js.Array(ACCOUNT, ORGANIZATIONAL_UNIT))
   }
+
   @js.native
   sealed trait CreateAccountFailureReason extends js.Any
   object CreateAccountFailureReason extends js.Object {
@@ -495,6 +500,7 @@ package organizations {
       __obj.asInstanceOf[CreateAccountResponse]
     }
   }
+
   @js.native
   sealed trait CreateAccountState extends js.Any
   object CreateAccountState extends js.Object {
@@ -1096,6 +1102,7 @@ package organizations {
       __obj.asInstanceOf[EffectivePolicy]
     }
   }
+
   @js.native
   sealed trait EffectivePolicyType extends js.Any
   object EffectivePolicyType extends js.Object {
@@ -1296,6 +1303,7 @@ package organizations {
       __obj.asInstanceOf[HandshakeParty]
     }
   }
+
   @js.native
   sealed trait HandshakePartyType extends js.Any
   object HandshakePartyType extends js.Object {
@@ -1330,6 +1338,7 @@ package organizations {
       __obj.asInstanceOf[HandshakeResource]
     }
   }
+
   @js.native
   sealed trait HandshakeResourceType extends js.Any
   object HandshakeResourceType extends js.Object {
@@ -1355,6 +1364,7 @@ package organizations {
       )
     )
   }
+
   @js.native
   sealed trait HandshakeState extends js.Any
   object HandshakeState extends js.Object {
@@ -1367,6 +1377,7 @@ package organizations {
 
     val values = js.Object.freeze(js.Array(REQUESTED, OPEN, CANCELED, ACCEPTED, DECLINED, EXPIRED))
   }
+
   @js.native
   sealed trait IAMUserAccessToBilling extends js.Any
   object IAMUserAccessToBilling extends js.Object {
@@ -2057,6 +2068,7 @@ package organizations {
       __obj.asInstanceOf[Organization]
     }
   }
+
   @js.native
   sealed trait OrganizationFeatureSet extends js.Any
   object OrganizationFeatureSet extends js.Object {
@@ -2112,6 +2124,7 @@ package organizations {
       __obj.asInstanceOf[Parent]
     }
   }
+
   @js.native
   sealed trait ParentType extends js.Any
   object ParentType extends js.Object {
@@ -2204,6 +2217,7 @@ package organizations {
       __obj.asInstanceOf[PolicyTargetSummary]
     }
   }
+
   @js.native
   sealed trait PolicyType extends js.Any
   object PolicyType extends js.Object {
@@ -2212,6 +2226,7 @@ package organizations {
 
     val values = js.Object.freeze(js.Array(SERVICE_CONTROL_POLICY, TAG_POLICY))
   }
+
   @js.native
   sealed trait PolicyTypeStatus extends js.Any
   object PolicyTypeStatus extends js.Object {
@@ -2334,6 +2349,7 @@ package organizations {
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
+
   @js.native
   sealed trait TargetType extends js.Any
   object TargetType extends js.Object {

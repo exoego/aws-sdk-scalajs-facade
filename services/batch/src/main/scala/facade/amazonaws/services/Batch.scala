@@ -104,6 +104,7 @@ package batch {
       js.native
     def updateJobQueue(params: UpdateJobQueueRequest): Request[UpdateJobQueueResponse] = js.native
   }
+
   @js.native
   sealed trait ArrayJobDependency extends js.Any
   object ArrayJobDependency extends js.Object {
@@ -240,6 +241,7 @@ package batch {
       __obj.asInstanceOf[AttemptDetail]
     }
   }
+
   @js.native
   sealed trait CEState extends js.Any
   object CEState extends js.Object {
@@ -248,6 +250,7 @@ package batch {
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
+
   @js.native
   sealed trait CEStatus extends js.Any
   object CEStatus extends js.Object {
@@ -260,6 +263,7 @@ package batch {
 
     val values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, DELETED, VALID, INVALID))
   }
+
   @js.native
   sealed trait CEType extends js.Any
   object CEType extends js.Object {
@@ -268,6 +272,7 @@ package batch {
 
     val values = js.Object.freeze(js.Array(MANAGED, UNMANAGED))
   }
+
   @js.native
   sealed trait CRAllocationStrategy extends js.Any
   object CRAllocationStrategy extends js.Object {
@@ -277,6 +282,7 @@ package batch {
 
     val values = js.Object.freeze(js.Array(BEST_FIT, BEST_FIT_PROGRESSIVE, SPOT_CAPACITY_OPTIMIZED))
   }
+
   @js.native
   sealed trait CRType extends js.Any
   object CRType extends js.Object {
@@ -1055,6 +1061,7 @@ package batch {
       __obj.asInstanceOf[Device]
     }
   }
+
   @js.native
   sealed trait DeviceCgroupPermission extends js.Any
   object DeviceCgroupPermission extends js.Object {
@@ -1083,6 +1090,7 @@ package batch {
       __obj.asInstanceOf[Host]
     }
   }
+
   @js.native
   sealed trait JQState extends js.Any
   object JQState extends js.Object {
@@ -1091,6 +1099,7 @@ package batch {
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
+
   @js.native
   sealed trait JQStatus extends js.Any
   object JQStatus extends js.Object {
@@ -1151,6 +1160,7 @@ package batch {
       __obj.asInstanceOf[JobDefinition]
     }
   }
+
   @js.native
   sealed trait JobDefinitionType extends js.Any
   object JobDefinitionType extends js.Object {
@@ -1292,6 +1302,7 @@ package batch {
       __obj.asInstanceOf[JobQueueDetail]
     }
   }
+
   @js.native
   sealed trait JobStatus extends js.Any
   object JobStatus extends js.Object {
@@ -1768,6 +1779,7 @@ package batch {
       __obj.asInstanceOf[ResourceRequirement]
     }
   }
+
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {

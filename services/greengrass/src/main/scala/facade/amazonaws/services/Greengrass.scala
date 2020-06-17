@@ -2279,6 +2279,7 @@ package greengrass {
       __obj.asInstanceOf[DisassociateServiceRoleFromAccountResponse]
     }
   }
+
   @js.native
   sealed trait EncodingType extends js.Any
   object EncodingType extends js.Object {
@@ -4733,6 +4734,7 @@ package greengrass {
       __obj.asInstanceOf[Logger]
     }
   }
+
   @js.native
   sealed trait LoggerComponent extends js.Any
   object LoggerComponent extends js.Object {
@@ -4760,6 +4762,7 @@ package greengrass {
       __obj.asInstanceOf[LoggerDefinitionVersion]
     }
   }
+
   @js.native
   sealed trait LoggerLevel extends js.Any
   object LoggerLevel extends js.Object {
@@ -4771,6 +4774,7 @@ package greengrass {
 
     val values = js.Object.freeze(js.Array(DEBUG, INFO, WARN, ERROR, FATAL))
   }
+
   @js.native
   sealed trait LoggerType extends js.Any
   object LoggerType extends js.Object {

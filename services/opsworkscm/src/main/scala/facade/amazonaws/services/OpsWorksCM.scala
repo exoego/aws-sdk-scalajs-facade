@@ -276,6 +276,7 @@ package opsworkscm {
       __obj.asInstanceOf[Backup]
     }
   }
+
   @js.native
   sealed trait BackupStatus extends js.Any
   object BackupStatus extends js.Object {
@@ -286,6 +287,7 @@ package opsworkscm {
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, OK, FAILED, DELETING))
   }
+
   @js.native
   sealed trait BackupType extends js.Any
   object BackupType extends js.Object {
@@ -839,6 +841,7 @@ package opsworkscm {
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
+
   @js.native
   sealed trait MaintenanceStatus extends js.Any
   object MaintenanceStatus extends js.Object {
@@ -1021,6 +1024,7 @@ package opsworkscm {
       __obj.asInstanceOf[ServerEvent]
     }
   }
+
   @js.native
   sealed trait ServerStatus extends js.Any
   object ServerStatus extends js.Object {

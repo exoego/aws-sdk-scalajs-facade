@@ -1012,6 +1012,7 @@ package iam {
       __obj.asInstanceOf[ContextEntry]
     }
   }
+
   @js.native
   sealed trait ContextKeyTypeEnum extends js.Any
   object ContextKeyTypeEnum extends js.Object {
@@ -2107,6 +2108,7 @@ package iam {
       __obj.asInstanceOf[DeletionTaskFailureReasonType]
     }
   }
+
   @js.native
   sealed trait DeletionTaskStatusType extends js.Any
   object DeletionTaskStatusType extends js.Object {
@@ -2266,6 +2268,7 @@ package iam {
       __obj.asInstanceOf[EntityInfo]
     }
   }
+
   @js.native
   sealed trait EntityType extends js.Any
   object EntityType extends js.Object {
@@ -5202,6 +5205,7 @@ package iam {
       __obj.asInstanceOf[PasswordPolicy]
     }
   }
+
   @js.native
   sealed trait PermissionsBoundaryAttachmentType extends js.Any
   object PermissionsBoundaryAttachmentType extends js.Object {
@@ -5306,6 +5310,7 @@ package iam {
       __obj.asInstanceOf[PolicyDetail]
     }
   }
+
   @js.native
   sealed trait PolicyEvaluationDecisionType extends js.Any
   object PolicyEvaluationDecisionType extends js.Object {
@@ -5397,6 +5402,7 @@ package iam {
       __obj.asInstanceOf[PolicyRole]
     }
   }
+
   @js.native
   sealed trait PolicySourceType extends js.Any
   object PolicySourceType extends js.Object {
@@ -5677,6 +5683,7 @@ package iam {
       __obj.asInstanceOf[RemoveUserFromGroupRequest]
     }
   }
+
   @js.native
   sealed trait ReportFormatType extends js.Any
   object ReportFormatType extends js.Object {
@@ -5684,6 +5691,7 @@ package iam {
 
     val values = js.Object.freeze(js.Array(`text/csv`))
   }
+
   @js.native
   sealed trait ReportStateType extends js.Any
   object ReportStateType extends js.Object {
@@ -7208,6 +7216,7 @@ package iam {
       __obj.asInstanceOf[VirtualMFADevice]
     }
   }
+
   @js.native
   sealed trait assignmentStatusType extends js.Any
   object assignmentStatusType extends js.Object {
@@ -7217,6 +7226,7 @@ package iam {
 
     val values = js.Object.freeze(js.Array(Assigned, Unassigned, Any))
   }
+
   @js.native
   sealed trait encodingType extends js.Any
   object encodingType extends js.Object {
@@ -7225,6 +7235,7 @@ package iam {
 
     val values = js.Object.freeze(js.Array(SSH, PEM))
   }
+
   @js.native
   sealed trait globalEndpointTokenVersion extends js.Any
   object globalEndpointTokenVersion extends js.Object {
@@ -7233,6 +7244,7 @@ package iam {
 
     val values = js.Object.freeze(js.Array(v1Token, v2Token))
   }
+
   @js.native
   sealed trait jobStatusType extends js.Any
   object jobStatusType extends js.Object {
@@ -7242,6 +7254,7 @@ package iam {
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED, FAILED))
   }
+
   @js.native
   sealed trait policyOwnerEntityType extends js.Any
   object policyOwnerEntityType extends js.Object {
@@ -7251,6 +7264,7 @@ package iam {
 
     val values = js.Object.freeze(js.Array(USER, ROLE, GROUP))
   }
+
   @js.native
   sealed trait policyScopeType extends js.Any
   object policyScopeType extends js.Object {
@@ -7260,6 +7274,7 @@ package iam {
 
     val values = js.Object.freeze(js.Array(All, AWS, Local))
   }
+
   @js.native
   sealed trait policyType extends js.Any
   object policyType extends js.Object {
@@ -7268,6 +7283,7 @@ package iam {
 
     val values = js.Object.freeze(js.Array(INLINE, MANAGED))
   }
+
   @js.native
   sealed trait sortKeyType extends js.Any
   object sortKeyType extends js.Object {
@@ -7285,6 +7301,7 @@ package iam {
       )
     )
   }
+
   @js.native
   sealed trait statusType extends js.Any
   object statusType extends js.Object {
@@ -7293,6 +7310,7 @@ package iam {
 
     val values = js.Object.freeze(js.Array(Active, Inactive))
   }
+
   @js.native
   sealed trait summaryKeyType extends js.Any
   object summaryKeyType extends js.Object {

@@ -149,6 +149,7 @@ package kinesisvideosignaling {
       __obj.asInstanceOf[SendAlexaOfferToMasterResponse]
     }
   }
+
   @js.native
   sealed trait Service extends js.Any
   object Service extends js.Object {

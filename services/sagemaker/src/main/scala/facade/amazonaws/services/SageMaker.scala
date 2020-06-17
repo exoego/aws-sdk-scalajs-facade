@@ -881,6 +881,7 @@ package sagemaker {
       __obj.asInstanceOf[AddTagsOutput]
     }
   }
+
   @js.native
   sealed trait AlgorithmSortBy extends js.Any
   object AlgorithmSortBy extends js.Object {
@@ -925,6 +926,7 @@ package sagemaker {
       __obj.asInstanceOf[AlgorithmSpecification]
     }
   }
+
   @js.native
   sealed trait AlgorithmStatus extends js.Any
   object AlgorithmStatus extends js.Object {
@@ -1125,6 +1127,7 @@ package sagemaker {
       __obj.asInstanceOf[AppDetails]
     }
   }
+
   @js.native
   sealed trait AppInstanceType extends js.Any
   object AppInstanceType extends js.Object {
@@ -1198,6 +1201,7 @@ package sagemaker {
       )
     )
   }
+
   @js.native
   sealed trait AppSortKey extends js.Any
   object AppSortKey extends js.Object {
@@ -1232,6 +1236,7 @@ package sagemaker {
       __obj.asInstanceOf[AppSpecification]
     }
   }
+
   @js.native
   sealed trait AppStatus extends js.Any
   object AppStatus extends js.Object {
@@ -1243,6 +1248,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(Deleted, Deleting, Failed, InService, Pending))
   }
+
   @js.native
   sealed trait AppType extends js.Any
   object AppType extends js.Object {
@@ -1252,6 +1258,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(JupyterServer, KernelGateway, TensorBoard))
   }
+
   @js.native
   sealed trait AssemblyType extends js.Any
   object AssemblyType extends js.Object {
@@ -1300,6 +1307,7 @@ package sagemaker {
       __obj.asInstanceOf[AssociateTrialComponentResponse]
     }
   }
+
   @js.native
   sealed trait AuthMode extends js.Any
   object AuthMode extends js.Object {
@@ -1558,6 +1566,7 @@ package sagemaker {
       __obj.asInstanceOf[AutoMLJobObjective]
     }
   }
+
   @js.native
   sealed trait AutoMLJobObjectiveType extends js.Any
   object AutoMLJobObjectiveType extends js.Object {
@@ -1566,6 +1575,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(Maximize, Minimize))
   }
+
   @js.native
   sealed trait AutoMLJobSecondaryStatus extends js.Any
   object AutoMLJobSecondaryStatus extends js.Object {
@@ -1595,6 +1605,7 @@ package sagemaker {
       )
     )
   }
+
   @js.native
   sealed trait AutoMLJobStatus extends js.Any
   object AutoMLJobStatus extends js.Object {
@@ -1648,6 +1659,7 @@ package sagemaker {
       __obj.asInstanceOf[AutoMLJobSummary]
     }
   }
+
   @js.native
   sealed trait AutoMLMetricEnum extends js.Any
   object AutoMLMetricEnum extends js.Object {
@@ -1706,6 +1718,7 @@ package sagemaker {
       __obj.asInstanceOf[AutoMLS3DataSource]
     }
   }
+
   @js.native
   sealed trait AutoMLS3DataType extends js.Any
   object AutoMLS3DataType extends js.Object {
@@ -1741,6 +1754,7 @@ package sagemaker {
       __obj.asInstanceOf[AutoMLSecurityConfig]
     }
   }
+
   @js.native
   sealed trait AutoMLSortBy extends js.Any
   object AutoMLSortBy extends js.Object {
@@ -1750,6 +1764,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(Name, CreationTime, Status))
   }
+
   @js.native
   sealed trait AutoMLSortOrder extends js.Any
   object AutoMLSortOrder extends js.Object {
@@ -1758,6 +1773,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(Ascending, Descending))
   }
+
   @js.native
   sealed trait AwsManagedHumanLoopRequestSource extends js.Any
   object AwsManagedHumanLoopRequestSource extends js.Object {
@@ -1770,6 +1786,7 @@ package sagemaker {
       js.Array(`AWS/Rekognition/DetectModerationLabels/Image/V3`, `AWS/Textract/AnalyzeDocument/Forms/V1`)
     )
   }
+
   @js.native
   sealed trait BatchStrategy extends js.Any
   object BatchStrategy extends js.Object {
@@ -1778,6 +1795,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(MultiRecord, SingleRecord))
   }
+
   @js.native
   sealed trait BooleanOperator extends js.Any
   object BooleanOperator extends js.Object {
@@ -1786,6 +1804,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(And, Or))
   }
+
   @js.native
   sealed trait CandidateSortBy extends js.Any
   object CandidateSortBy extends js.Object {
@@ -1795,6 +1814,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(CreationTime, Status, FinalObjectiveMetricValue))
   }
+
   @js.native
   sealed trait CandidateStatus extends js.Any
   object CandidateStatus extends js.Object {
@@ -1806,6 +1826,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(Completed, InProgress, Failed, Stopped, Stopping))
   }
+
   @js.native
   sealed trait CandidateStepType extends js.Any
   object CandidateStepType extends js.Object {
@@ -1839,6 +1860,7 @@ package sagemaker {
       __obj.asInstanceOf[CaptureContentTypeHeader]
     }
   }
+
   @js.native
   sealed trait CaptureMode extends js.Any
   object CaptureMode extends js.Object {
@@ -1868,6 +1890,7 @@ package sagemaker {
       __obj.asInstanceOf[CaptureOption]
     }
   }
+
   @js.native
   sealed trait CaptureStatus extends js.Any
   object CaptureStatus extends js.Object {
@@ -2022,6 +2045,7 @@ package sagemaker {
       __obj.asInstanceOf[CheckpointConfig]
     }
   }
+
   @js.native
   sealed trait CodeRepositorySortBy extends js.Any
   object CodeRepositorySortBy extends js.Object {
@@ -2031,6 +2055,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(Name, CreationTime, LastModifiedTime))
   }
+
   @js.native
   sealed trait CodeRepositorySortOrder extends js.Any
   object CodeRepositorySortOrder extends js.Object {
@@ -2121,6 +2146,7 @@ package sagemaker {
       __obj.asInstanceOf[CollectionConfiguration]
     }
   }
+
   @js.native
   sealed trait CompilationJobStatus extends js.Any
   object CompilationJobStatus extends js.Object {
@@ -2175,6 +2201,7 @@ package sagemaker {
       __obj.asInstanceOf[CompilationJobSummary]
     }
   }
+
   @js.native
   sealed trait CompressionType extends js.Any
   object CompressionType extends js.Object {
@@ -2217,6 +2244,7 @@ package sagemaker {
       __obj.asInstanceOf[ContainerDefinition]
     }
   }
+
   @js.native
   sealed trait ContainerMode extends js.Any
   object ContainerMode extends js.Object {
@@ -2225,6 +2253,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(SingleModel, MultiModel))
   }
+
   @js.native
   sealed trait ContentClassifier extends js.Any
   object ContentClassifier extends js.Object {
@@ -6261,6 +6290,7 @@ package sagemaker {
       __obj.asInstanceOf[DesiredWeightAndCapacity]
     }
   }
+
   @js.native
   sealed trait DetailedAlgorithmStatus extends js.Any
   object DetailedAlgorithmStatus extends js.Object {
@@ -6271,6 +6301,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(NotStarted, InProgress, Completed, Failed))
   }
+
   @js.native
   sealed trait DetailedModelPackageStatus extends js.Any
   object DetailedModelPackageStatus extends js.Object {
@@ -6281,6 +6312,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(NotStarted, InProgress, Completed, Failed))
   }
+
   @js.native
   sealed trait DirectInternetAccess extends js.Any
   object DirectInternetAccess extends js.Object {
@@ -6366,6 +6398,7 @@ package sagemaker {
       __obj.asInstanceOf[DomainDetails]
     }
   }
+
   @js.native
   sealed trait DomainStatus extends js.Any
   object DomainStatus extends js.Object {
@@ -6376,6 +6409,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(Deleting, Failed, InService, Pending))
   }
+
   @js.native
   sealed trait EndpointConfigSortKey extends js.Any
   object EndpointConfigSortKey extends js.Object {
@@ -6441,6 +6475,7 @@ package sagemaker {
       __obj.asInstanceOf[EndpointInput]
     }
   }
+
   @js.native
   sealed trait EndpointSortKey extends js.Any
   object EndpointSortKey extends js.Object {
@@ -6450,6 +6485,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(Name, CreationTime, Status))
   }
+
   @js.native
   sealed trait EndpointStatus extends js.Any
   object EndpointStatus extends js.Object {
@@ -6499,6 +6535,7 @@ package sagemaker {
       __obj.asInstanceOf[EndpointSummary]
     }
   }
+
   @js.native
   sealed trait ExecutionStatus extends js.Any
   object ExecutionStatus extends js.Object {
@@ -6644,6 +6681,7 @@ package sagemaker {
       __obj.asInstanceOf[ExperimentSummary]
     }
   }
+
   @js.native
   sealed trait FileSystemAccessMode extends js.Any
   object FileSystemAccessMode extends js.Object {
@@ -6682,6 +6720,7 @@ package sagemaker {
       __obj.asInstanceOf[FileSystemDataSource]
     }
   }
+
   @js.native
   sealed trait FileSystemType extends js.Any
   object FileSystemType extends js.Object {
@@ -6812,6 +6851,7 @@ package sagemaker {
       __obj.asInstanceOf[FlowDefinitionOutputConfig]
     }
   }
+
   @js.native
   sealed trait FlowDefinitionStatus extends js.Any
   object FlowDefinitionStatus extends js.Object {
@@ -6856,6 +6896,7 @@ package sagemaker {
       __obj.asInstanceOf[FlowDefinitionSummary]
     }
   }
+
   @js.native
   sealed trait Framework extends js.Any
   object Framework extends js.Object {
@@ -7177,6 +7218,7 @@ package sagemaker {
       __obj.asInstanceOf[HyperParameterAlgorithmSpecification]
     }
   }
+
   @js.native
   sealed trait HyperParameterScalingType extends js.Any
   object HyperParameterScalingType extends js.Object {
@@ -7418,6 +7460,7 @@ package sagemaker {
       __obj.asInstanceOf[HyperParameterTuningJobObjective]
     }
   }
+
   @js.native
   sealed trait HyperParameterTuningJobObjectiveType extends js.Any
   object HyperParameterTuningJobObjectiveType extends js.Object {
@@ -7426,6 +7469,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(Maximize, Minimize))
   }
+
   @js.native
   sealed trait HyperParameterTuningJobSortByOptions extends js.Any
   object HyperParameterTuningJobSortByOptions extends js.Object {
@@ -7435,6 +7479,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(Name, Status, CreationTime))
   }
+
   @js.native
   sealed trait HyperParameterTuningJobStatus extends js.Any
   object HyperParameterTuningJobStatus extends js.Object {
@@ -7535,6 +7580,7 @@ package sagemaker {
       __obj.asInstanceOf[HyperParameterTuningJobWarmStartConfig]
     }
   }
+
   @js.native
   sealed trait HyperParameterTuningJobWarmStartType extends js.Any
   object HyperParameterTuningJobWarmStartType extends js.Object {
@@ -7603,6 +7649,7 @@ package sagemaker {
       __obj.asInstanceOf[InputConfig]
     }
   }
+
   @js.native
   sealed trait InstanceType extends js.Any
   object InstanceType extends js.Object {
@@ -7742,6 +7789,7 @@ package sagemaker {
       __obj.asInstanceOf[IntegerParameterRangeSpecification]
     }
   }
+
   @js.native
   sealed trait JoinSource extends js.Any
   object JoinSource extends js.Object {
@@ -8067,6 +8115,7 @@ package sagemaker {
       __obj.asInstanceOf[LabelingJobS3DataSource]
     }
   }
+
   @js.native
   sealed trait LabelingJobStatus extends js.Any
   object LabelingJobStatus extends js.Object {
@@ -8513,6 +8562,7 @@ package sagemaker {
       __obj.asInstanceOf[ListCompilationJobsResponse]
     }
   }
+
   @js.native
   sealed trait ListCompilationJobsSortBy extends js.Any
   object ListCompilationJobsSortBy extends js.Object {
@@ -8951,6 +9001,7 @@ package sagemaker {
       __obj.asInstanceOf[ListLabelingJobsForWorkteamResponse]
     }
   }
+
   @js.native
   sealed trait ListLabelingJobsForWorkteamSortByOptions extends js.Any
   object ListLabelingJobsForWorkteamSortByOptions extends js.Object {
@@ -9951,6 +10002,7 @@ package sagemaker {
       __obj.asInstanceOf[ListWorkteamsResponse]
     }
   }
+
   @js.native
   sealed trait ListWorkteamsSortByOptions extends js.Any
   object ListWorkteamsSortByOptions extends js.Object {
@@ -10081,6 +10133,7 @@ package sagemaker {
       __obj.asInstanceOf[ModelPackageContainerDefinition]
     }
   }
+
   @js.native
   sealed trait ModelPackageSortBy extends js.Any
   object ModelPackageSortBy extends js.Object {
@@ -10089,6 +10142,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(Name, CreationTime))
   }
+
   @js.native
   sealed trait ModelPackageStatus extends js.Any
   object ModelPackageStatus extends js.Object {
@@ -10233,6 +10287,7 @@ package sagemaker {
       __obj.asInstanceOf[ModelPackageValidationSpecification]
     }
   }
+
   @js.native
   sealed trait ModelSortKey extends js.Any
   object ModelSortKey extends js.Object {
@@ -10376,6 +10431,7 @@ package sagemaker {
       __obj.asInstanceOf[MonitoringConstraintsResource]
     }
   }
+
   @js.native
   sealed trait MonitoringExecutionSortKey extends js.Any
   object MonitoringExecutionSortKey extends js.Object {
@@ -10610,6 +10666,7 @@ package sagemaker {
       __obj.asInstanceOf[MonitoringScheduleConfig]
     }
   }
+
   @js.native
   sealed trait MonitoringScheduleSortKey extends js.Any
   object MonitoringScheduleSortKey extends js.Object {
@@ -10745,6 +10802,7 @@ package sagemaker {
       __obj.asInstanceOf[NetworkConfig]
     }
   }
+
   @js.native
   sealed trait NotebookInstanceAcceleratorType extends js.Any
   object NotebookInstanceAcceleratorType extends js.Object {
@@ -10759,6 +10817,7 @@ package sagemaker {
       js.Array(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`, `ml.eia2.medium`, `ml.eia2.large`, `ml.eia2.xlarge`)
     )
   }
+
   @js.native
   sealed trait NotebookInstanceLifecycleConfigSortKey extends js.Any
   object NotebookInstanceLifecycleConfigSortKey extends js.Object {
@@ -10768,6 +10827,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(Name, CreationTime, LastModifiedTime))
   }
+
   @js.native
   sealed trait NotebookInstanceLifecycleConfigSortOrder extends js.Any
   object NotebookInstanceLifecycleConfigSortOrder extends js.Object {
@@ -10830,6 +10890,7 @@ package sagemaker {
       __obj.asInstanceOf[NotebookInstanceLifecycleHook]
     }
   }
+
   @js.native
   sealed trait NotebookInstanceSortKey extends js.Any
   object NotebookInstanceSortKey extends js.Object {
@@ -10839,6 +10900,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(Name, CreationTime, Status))
   }
+
   @js.native
   sealed trait NotebookInstanceSortOrder extends js.Any
   object NotebookInstanceSortOrder extends js.Object {
@@ -10847,6 +10909,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(Ascending, Descending))
   }
+
   @js.native
   sealed trait NotebookInstanceStatus extends js.Any
   object NotebookInstanceStatus extends js.Object {
@@ -10912,6 +10975,7 @@ package sagemaker {
       __obj.asInstanceOf[NotebookInstanceSummary]
     }
   }
+
   @js.native
   sealed trait NotebookOutputOption extends js.Any
   object NotebookOutputOption extends js.Object {
@@ -10939,6 +11003,7 @@ package sagemaker {
       __obj.asInstanceOf[NotificationConfiguration]
     }
   }
+
   @js.native
   sealed trait ObjectiveStatus extends js.Any
   object ObjectiveStatus extends js.Object {
@@ -10973,6 +11038,7 @@ package sagemaker {
       __obj.asInstanceOf[ObjectiveStatusCounters]
     }
   }
+
   @js.native
   sealed trait Operator extends js.Any
   object Operator extends js.Object {
@@ -11000,6 +11066,7 @@ package sagemaker {
       )
     )
   }
+
   @js.native
   sealed trait OrderKey extends js.Any
   object OrderKey extends js.Object {
@@ -11118,6 +11185,7 @@ package sagemaker {
       __obj.asInstanceOf[ParameterRanges]
     }
   }
+
   @js.native
   sealed trait ParameterType extends js.Any
   object ParameterType extends js.Object {
@@ -11171,6 +11239,7 @@ package sagemaker {
       __obj.asInstanceOf[ParentHyperParameterTuningJob]
     }
   }
+
   @js.native
   sealed trait ProblemType extends js.Any
   object ProblemType extends js.Object {
@@ -11234,6 +11303,7 @@ package sagemaker {
       __obj.asInstanceOf[ProcessingInput]
     }
   }
+
   @js.native
   sealed trait ProcessingInstanceType extends js.Any
   object ProcessingInstanceType extends js.Object {
@@ -11319,6 +11389,7 @@ package sagemaker {
       )
     )
   }
+
   @js.native
   sealed trait ProcessingJobStatus extends js.Any
   object ProcessingJobStatus extends js.Object {
@@ -11441,6 +11512,7 @@ package sagemaker {
       __obj.asInstanceOf[ProcessingResources]
     }
   }
+
   @js.native
   sealed trait ProcessingS3CompressionType extends js.Any
   object ProcessingS3CompressionType extends js.Object {
@@ -11449,6 +11521,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(None, Gzip))
   }
+
   @js.native
   sealed trait ProcessingS3DataDistributionType extends js.Any
   object ProcessingS3DataDistributionType extends js.Object {
@@ -11457,6 +11530,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(FullyReplicated, ShardedByS3Key))
   }
+
   @js.native
   sealed trait ProcessingS3DataType extends js.Any
   object ProcessingS3DataType extends js.Object {
@@ -11501,6 +11575,7 @@ package sagemaker {
       __obj.asInstanceOf[ProcessingS3Input]
     }
   }
+
   @js.native
   sealed trait ProcessingS3InputMode extends js.Any
   object ProcessingS3InputMode extends js.Object {
@@ -11536,6 +11611,7 @@ package sagemaker {
       __obj.asInstanceOf[ProcessingS3Output]
     }
   }
+
   @js.native
   sealed trait ProcessingS3UploadMode extends js.Any
   object ProcessingS3UploadMode extends js.Object {
@@ -11601,6 +11677,7 @@ package sagemaker {
       __obj.asInstanceOf[ProductionVariant]
     }
   }
+
   @js.native
   sealed trait ProductionVariantAcceleratorType extends js.Any
   object ProductionVariantAcceleratorType extends js.Object {
@@ -11615,6 +11692,7 @@ package sagemaker {
       js.Array(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`, `ml.eia2.medium`, `ml.eia2.large`, `ml.eia2.xlarge`)
     )
   }
+
   @js.native
   sealed trait ProductionVariantInstanceType extends js.Any
   object ProductionVariantInstanceType extends js.Object {
@@ -11949,6 +12027,7 @@ package sagemaker {
       __obj.asInstanceOf[PublicWorkforceTaskPrice]
     }
   }
+
   @js.native
   sealed trait RecordWrapper extends js.Any
   object RecordWrapper extends js.Object {
@@ -12148,6 +12227,7 @@ package sagemaker {
       __obj.asInstanceOf[ResourceSpec]
     }
   }
+
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {
@@ -12177,6 +12257,7 @@ package sagemaker {
       __obj.asInstanceOf[RetentionPolicy]
     }
   }
+
   @js.native
   sealed trait RetentionType extends js.Any
   object RetentionType extends js.Object {
@@ -12185,6 +12266,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(Retain, Delete))
   }
+
   @js.native
   sealed trait RootAccess extends js.Any
   object RootAccess extends js.Object {
@@ -12193,6 +12275,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
+
   @js.native
   sealed trait RuleEvaluationStatus extends js.Any
   object RuleEvaluationStatus extends js.Object {
@@ -12205,6 +12288,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(InProgress, NoIssuesFound, IssuesFound, Error, Stopping, Stopped))
   }
+
   @js.native
   sealed trait S3DataDistribution extends js.Any
   object S3DataDistribution extends js.Object {
@@ -12243,6 +12327,7 @@ package sagemaker {
       __obj.asInstanceOf[S3DataSource]
     }
   }
+
   @js.native
   sealed trait S3DataType extends js.Any
   object S3DataType extends js.Object {
@@ -12273,6 +12358,7 @@ package sagemaker {
       __obj.asInstanceOf[ScheduleConfig]
     }
   }
+
   @js.native
   sealed trait ScheduleStatus extends js.Any
   object ScheduleStatus extends js.Object {
@@ -12396,6 +12482,7 @@ package sagemaker {
       __obj.asInstanceOf[SearchResponse]
     }
   }
+
   @js.native
   sealed trait SearchSortOrder extends js.Any
   object SearchSortOrder extends js.Object {
@@ -12404,6 +12491,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(Ascending, Descending))
   }
+
   @js.native
   sealed trait SecondaryStatus extends js.Any
   object SecondaryStatus extends js.Object {
@@ -12519,6 +12607,7 @@ package sagemaker {
       __obj.asInstanceOf[ShuffleConfig]
     }
   }
+
   @js.native
   sealed trait SortBy extends js.Any
   object SortBy extends js.Object {
@@ -12528,6 +12617,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(Name, CreationTime, Status))
   }
+
   @js.native
   sealed trait SortExperimentsBy extends js.Any
   object SortExperimentsBy extends js.Object {
@@ -12536,6 +12626,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(Name, CreationTime))
   }
+
   @js.native
   sealed trait SortOrder extends js.Any
   object SortOrder extends js.Object {
@@ -12544,6 +12635,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(Ascending, Descending))
   }
+
   @js.native
   sealed trait SortTrialComponentsBy extends js.Any
   object SortTrialComponentsBy extends js.Object {
@@ -12552,6 +12644,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(Name, CreationTime))
   }
+
   @js.native
   sealed trait SortTrialsBy extends js.Any
   object SortTrialsBy extends js.Object {
@@ -12626,6 +12719,7 @@ package sagemaker {
       __obj.asInstanceOf[SourceIpConfig]
     }
   }
+
   @js.native
   sealed trait SplitType extends js.Any
   object SplitType extends js.Object {
@@ -12936,6 +13030,7 @@ package sagemaker {
       __obj.asInstanceOf[Tag]
     }
   }
+
   @js.native
   sealed trait TargetDevice extends js.Any
   object TargetDevice extends js.Object {
@@ -13026,6 +13121,7 @@ package sagemaker {
       __obj.asInstanceOf[TensorBoardOutputConfig]
     }
   }
+
   @js.native
   sealed trait TrainingInputMode extends js.Any
   object TrainingInputMode extends js.Object {
@@ -13034,6 +13130,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(Pipe, File))
   }
+
   @js.native
   sealed trait TrainingInstanceType extends js.Any
   object TrainingInstanceType extends js.Object {
@@ -13274,6 +13371,7 @@ package sagemaker {
       __obj.asInstanceOf[TrainingJobDefinition]
     }
   }
+
   @js.native
   sealed trait TrainingJobEarlyStoppingType extends js.Any
   object TrainingJobEarlyStoppingType extends js.Object {
@@ -13282,6 +13380,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(Off, Auto))
   }
+
   @js.native
   sealed trait TrainingJobSortByOptions extends js.Any
   object TrainingJobSortByOptions extends js.Object {
@@ -13292,6 +13391,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(Name, CreationTime, Status, FinalObjectiveMetricValue))
   }
+
   @js.native
   sealed trait TrainingJobStatus extends js.Any
   object TrainingJobStatus extends js.Object {
@@ -13467,6 +13567,7 @@ package sagemaker {
       __obj.asInstanceOf[TransformInput]
     }
   }
+
   @js.native
   sealed trait TransformInstanceType extends js.Any
   object TransformInstanceType extends js.Object {
@@ -13567,6 +13668,7 @@ package sagemaker {
       __obj.asInstanceOf[TransformJobDefinition]
     }
   }
+
   @js.native
   sealed trait TransformJobStatus extends js.Any
   object TransformJobStatus extends js.Object {
@@ -13908,6 +14010,7 @@ package sagemaker {
       __obj.asInstanceOf[TrialComponentParameterValue]
     }
   }
+
   @js.native
   sealed trait TrialComponentPrimaryStatus extends js.Any
   object TrialComponentPrimaryStatus extends js.Object {
@@ -14863,6 +14966,7 @@ package sagemaker {
       __obj.asInstanceOf[UserProfileDetails]
     }
   }
+
   @js.native
   sealed trait UserProfileSortKey extends js.Any
   object UserProfileSortKey extends js.Object {
@@ -14871,6 +14975,7 @@ package sagemaker {
 
     val values = js.Object.freeze(js.Array(CreationTime, LastModifiedTime))
   }
+
   @js.native
   sealed trait UserProfileStatus extends js.Any
   object UserProfileStatus extends js.Object {

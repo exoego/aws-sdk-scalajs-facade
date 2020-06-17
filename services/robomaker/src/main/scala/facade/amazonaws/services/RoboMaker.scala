@@ -256,6 +256,7 @@ package robomaker {
         params: UpdateSimulationApplicationRequest
     ): Request[UpdateSimulationApplicationResponse] = js.native
   }
+
   @js.native
   sealed trait Architecture extends js.Any
   object Architecture extends js.Object {
@@ -1246,6 +1247,7 @@ package robomaker {
       __obj.asInstanceOf[DeploymentJob]
     }
   }
+
   @js.native
   sealed trait DeploymentJobErrorCode extends js.Any
   object DeploymentJobErrorCode extends js.Object {
@@ -1324,6 +1326,7 @@ package robomaker {
       __obj.asInstanceOf[DeploymentLaunchConfig]
     }
   }
+
   @js.native
   sealed trait DeploymentStatus extends js.Any
   object DeploymentStatus extends js.Object {
@@ -1863,6 +1866,7 @@ package robomaker {
       __obj.asInstanceOf[FailedCreateSimulationJobRequest]
     }
   }
+
   @js.native
   sealed trait FailureBehavior extends js.Any
   object FailureBehavior extends js.Object {
@@ -2498,6 +2502,7 @@ package robomaker {
       __obj.asInstanceOf[RenderingEngine]
     }
   }
+
   @js.native
   sealed trait RenderingEngineType extends js.Any
   object RenderingEngineType extends js.Object {
@@ -2674,6 +2679,7 @@ package robomaker {
       __obj.asInstanceOf[RobotDeployment]
     }
   }
+
   @js.native
   sealed trait RobotDeploymentStep extends js.Any
   object RobotDeploymentStep extends js.Object {
@@ -2719,6 +2725,7 @@ package robomaker {
       __obj.asInstanceOf[RobotSoftwareSuite]
     }
   }
+
   @js.native
   sealed trait RobotSoftwareSuiteType extends js.Any
   object RobotSoftwareSuiteType extends js.Object {
@@ -2727,6 +2734,7 @@ package robomaker {
 
     val values = js.Object.freeze(js.Array(ROS, ROS2))
   }
+
   @js.native
   sealed trait RobotSoftwareSuiteVersionType extends js.Any
   object RobotSoftwareSuiteVersionType extends js.Object {
@@ -2736,6 +2744,7 @@ package robomaker {
 
     val values = js.Object.freeze(js.Array(Kinetic, Melodic, Dashing))
   }
+
   @js.native
   sealed trait RobotStatus extends js.Any
   object RobotStatus extends js.Object {
@@ -2936,6 +2945,7 @@ package robomaker {
       __obj.asInstanceOf[SimulationJob]
     }
   }
+
   @js.native
   sealed trait SimulationJobBatchErrorCode extends js.Any
   object SimulationJobBatchErrorCode extends js.Object {
@@ -2943,6 +2953,7 @@ package robomaker {
 
     val values = js.Object.freeze(js.Array(InternalServiceError))
   }
+
   @js.native
   sealed trait SimulationJobBatchStatus extends js.Any
   object SimulationJobBatchStatus extends js.Object {
@@ -2997,6 +3008,7 @@ package robomaker {
       __obj.asInstanceOf[SimulationJobBatchSummary]
     }
   }
+
   @js.native
   sealed trait SimulationJobErrorCode extends js.Any
   object SimulationJobErrorCode extends js.Object {
@@ -3113,6 +3125,7 @@ package robomaker {
       __obj.asInstanceOf[SimulationJobRequest]
     }
   }
+
   @js.native
   sealed trait SimulationJobStatus extends js.Any
   object SimulationJobStatus extends js.Object {
@@ -3203,6 +3216,7 @@ package robomaker {
       __obj.asInstanceOf[SimulationSoftwareSuite]
     }
   }
+
   @js.native
   sealed trait SimulationSoftwareSuiteType extends js.Any
   object SimulationSoftwareSuiteType extends js.Object {

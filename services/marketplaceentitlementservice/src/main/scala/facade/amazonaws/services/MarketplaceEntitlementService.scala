@@ -91,6 +91,7 @@ package marketplaceentitlementservice {
       __obj.asInstanceOf[EntitlementValue]
     }
   }
+
   @js.native
   sealed trait GetEntitlementFilterName extends js.Any
   object GetEntitlementFilterName extends js.Object {

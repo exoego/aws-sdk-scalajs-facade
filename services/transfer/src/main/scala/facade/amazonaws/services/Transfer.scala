@@ -491,6 +491,7 @@ package transfer {
       __obj.asInstanceOf[EndpointDetails]
     }
   }
+
   @js.native
   sealed trait EndpointType extends js.Any
   object EndpointType extends js.Object {
@@ -524,6 +525,7 @@ package transfer {
       __obj.asInstanceOf[HomeDirectoryMapEntry]
     }
   }
+
   @js.native
   sealed trait HomeDirectoryType extends js.Any
   object HomeDirectoryType extends js.Object {

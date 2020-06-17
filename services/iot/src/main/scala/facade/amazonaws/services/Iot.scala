@@ -1235,6 +1235,7 @@ package iot {
         params: ListPrincipalPoliciesRequest
     ): Request[ListPrincipalPoliciesResponse] = js.native
   }
+
   @js.native
   sealed trait AbortAction extends js.Any
   object AbortAction extends js.Object {
@@ -1387,6 +1388,7 @@ package iot {
       __obj.asInstanceOf[Action]
     }
   }
+
   @js.native
   sealed trait ActionType extends js.Any
   object ActionType extends js.Object {
@@ -1912,6 +1914,7 @@ package iot {
       __obj.asInstanceOf[AuditCheckDetails]
     }
   }
+
   @js.native
   sealed trait AuditCheckRunStatus extends js.Any
   object AuditCheckRunStatus extends js.Object {
@@ -1974,6 +1977,7 @@ package iot {
       __obj.asInstanceOf[AuditFinding]
     }
   }
+
   @js.native
   sealed trait AuditFindingSeverity extends js.Any
   object AuditFindingSeverity extends js.Object {
@@ -1984,6 +1988,7 @@ package iot {
 
     val values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW))
   }
+
   @js.native
   sealed trait AuditFrequency extends js.Any
   object AuditFrequency extends js.Object {
@@ -2037,6 +2042,7 @@ package iot {
       __obj.asInstanceOf[AuditMitigationActionExecutionMetadata]
     }
   }
+
   @js.native
   sealed trait AuditMitigationActionsExecutionStatus extends js.Any
   object AuditMitigationActionsExecutionStatus extends js.Object {
@@ -2074,6 +2080,7 @@ package iot {
       __obj.asInstanceOf[AuditMitigationActionsTaskMetadata]
     }
   }
+
   @js.native
   sealed trait AuditMitigationActionsTaskStatus extends js.Any
   object AuditMitigationActionsTaskStatus extends js.Object {
@@ -2136,6 +2143,7 @@ package iot {
       __obj.asInstanceOf[AuditNotificationTarget]
     }
   }
+
   @js.native
   sealed trait AuditNotificationType extends js.Any
   object AuditNotificationType extends js.Object {
@@ -2168,6 +2176,7 @@ package iot {
       __obj.asInstanceOf[AuditTaskMetadata]
     }
   }
+
   @js.native
   sealed trait AuditTaskStatus extends js.Any
   object AuditTaskStatus extends js.Object {
@@ -2178,6 +2187,7 @@ package iot {
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED))
   }
+
   @js.native
   sealed trait AuditTaskType extends js.Any
   object AuditTaskType extends js.Object {
@@ -2186,6 +2196,7 @@ package iot {
 
     val values = js.Object.freeze(js.Array(ON_DEMAND_AUDIT_TASK, SCHEDULED_AUDIT_TASK))
   }
+
   @js.native
   sealed trait AuthDecision extends js.Any
   object AuthDecision extends js.Object {
@@ -2313,6 +2324,7 @@ package iot {
       __obj.asInstanceOf[AuthorizerDescription]
     }
   }
+
   @js.native
   sealed trait AuthorizerStatus extends js.Any
   object AuthorizerStatus extends js.Object {
@@ -2343,6 +2355,7 @@ package iot {
       __obj.asInstanceOf[AuthorizerSummary]
     }
   }
+
   @js.native
   sealed trait AutoRegistrationStatus extends js.Any
   object AutoRegistrationStatus extends js.Object {
@@ -2569,6 +2582,7 @@ package iot {
       __obj.asInstanceOf[CACertificateDescription]
     }
   }
+
   @js.native
   sealed trait CACertificateStatus extends js.Any
   object CACertificateStatus extends js.Object {
@@ -2577,6 +2591,7 @@ package iot {
 
     val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
   }
+
   @js.native
   sealed trait CACertificateUpdateAction extends js.Any
   object CACertificateUpdateAction extends js.Object {
@@ -2746,6 +2761,7 @@ package iot {
       __obj.asInstanceOf[CancelJobResponse]
     }
   }
+
   @js.native
   sealed trait CannedAccessControlList extends js.Any
   object CannedAccessControlList extends js.Object {
@@ -2854,6 +2870,7 @@ package iot {
       __obj.asInstanceOf[CertificateDescription]
     }
   }
+
   @js.native
   sealed trait CertificateStatus extends js.Any
   object CertificateStatus extends js.Object {
@@ -3047,6 +3064,7 @@ package iot {
       __obj.asInstanceOf[CodeSigningSignature]
     }
   }
+
   @js.native
   sealed trait ComparisonOperator extends js.Any
   object ComparisonOperator extends js.Object {
@@ -4332,6 +4350,7 @@ package iot {
       __obj.asInstanceOf[CustomCodeSigning]
     }
   }
+
   @js.native
   sealed trait DayOfWeek extends js.Any
   object DayOfWeek extends js.Object {
@@ -6529,6 +6548,7 @@ package iot {
       __obj.asInstanceOf[DetachThingPrincipalResponse]
     }
   }
+
   @js.native
   sealed trait DeviceCertificateUpdateAction extends js.Any
   object DeviceCertificateUpdateAction extends js.Object {
@@ -6557,6 +6577,7 @@ package iot {
       __obj.asInstanceOf[DisableTopicRuleRequest]
     }
   }
+
   @js.native
   sealed trait DomainConfigurationStatus extends js.Any
   object DomainConfigurationStatus extends js.Object {
@@ -6594,6 +6615,7 @@ package iot {
       __obj.asInstanceOf[DomainConfigurationSummary]
     }
   }
+
   @js.native
   sealed trait DomainType extends js.Any
   object DomainType extends js.Object {
@@ -6603,6 +6625,7 @@ package iot {
 
     val values = js.Object.freeze(js.Array(ENDPOINT, AWS_MANAGED, CUSTOMER_MANAGED))
   }
+
   @js.native
   sealed trait DynamicGroupStatus extends js.Any
   object DynamicGroupStatus extends js.Object {
@@ -6691,6 +6714,7 @@ package iot {
       __obj.asInstanceOf[DynamoDBv2Action]
     }
   }
+
   @js.native
   sealed trait DynamoKeyType extends js.Any
   object DynamoKeyType extends js.Object {
@@ -6824,6 +6848,7 @@ package iot {
       __obj.asInstanceOf[ErrorInfo]
     }
   }
+
   @js.native
   sealed trait EventType extends js.Any
   object EventType extends js.Object {
@@ -6923,6 +6948,7 @@ package iot {
       __obj.asInstanceOf[Field]
     }
   }
+
   @js.native
   sealed trait FieldType extends js.Any
   object FieldType extends js.Object {
@@ -7757,6 +7783,7 @@ package iot {
       __obj.asInstanceOf[ImplicitDeny]
     }
   }
+
   @js.native
   sealed trait IndexStatus extends js.Any
   object IndexStatus extends js.Object {
@@ -7962,6 +7989,7 @@ package iot {
       __obj.asInstanceOf[JobExecution]
     }
   }
+
   @js.native
   sealed trait JobExecutionFailureType extends js.Any
   object JobExecutionFailureType extends js.Object {
@@ -7972,6 +8000,7 @@ package iot {
 
     val values = js.Object.freeze(js.Array(FAILED, REJECTED, TIMED_OUT, ALL))
   }
+
   @js.native
   sealed trait JobExecutionStatus extends js.Any
   object JobExecutionStatus extends js.Object {
@@ -8146,6 +8175,7 @@ package iot {
       __obj.asInstanceOf[JobProcessDetails]
     }
   }
+
   @js.native
   sealed trait JobStatus extends js.Any
   object JobStatus extends js.Object {
@@ -10391,6 +10421,7 @@ package iot {
       __obj.asInstanceOf[ListViolationEventsResponse]
     }
   }
+
   @js.native
   sealed trait LogLevel extends js.Any
   object LogLevel extends js.Object {
@@ -10448,6 +10479,7 @@ package iot {
       __obj.asInstanceOf[LogTargetConfiguration]
     }
   }
+
   @js.native
   sealed trait LogTargetType extends js.Any
   object LogTargetType extends js.Object {
@@ -10480,6 +10512,7 @@ package iot {
       __obj.asInstanceOf[LoggingOptionsPayload]
     }
   }
+
   @js.native
   sealed trait MessageFormat extends js.Any
   object MessageFormat extends js.Object {
@@ -10610,6 +10643,7 @@ package iot {
       __obj.asInstanceOf[MitigationActionParams]
     }
   }
+
   @js.native
   sealed trait MitigationActionType extends js.Any
   object MitigationActionType extends js.Object {
@@ -10778,6 +10812,7 @@ package iot {
       __obj.asInstanceOf[OTAUpdateInfo]
     }
   }
+
   @js.native
   sealed trait OTAUpdateStatus extends js.Any
   object OTAUpdateStatus extends js.Object {
@@ -10891,6 +10926,7 @@ package iot {
       __obj.asInstanceOf[Policy]
     }
   }
+
   @js.native
   sealed trait PolicyTemplateName extends js.Any
   object PolicyTemplateName extends js.Object {
@@ -10967,6 +11003,7 @@ package iot {
       __obj.asInstanceOf[PresignedUrlConfig]
     }
   }
+
   @js.native
   sealed trait Protocol extends js.Any
   object Protocol extends js.Object {
@@ -11470,6 +11507,7 @@ package iot {
       __obj.asInstanceOf[ReplaceTopicRuleRequest]
     }
   }
+
   @js.native
   sealed trait ReportType extends js.Any
   object ReportType extends js.Object {
@@ -11545,6 +11583,7 @@ package iot {
       __obj.asInstanceOf[ResourceIdentifier]
     }
   }
+
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {
@@ -11862,6 +11901,7 @@ package iot {
       __obj.asInstanceOf[SecurityProfileTargetMapping]
     }
   }
+
   @js.native
   sealed trait ServerCertificateStatus extends js.Any
   object ServerCertificateStatus extends js.Object {
@@ -11897,6 +11937,7 @@ package iot {
       __obj.asInstanceOf[ServerCertificateSummary]
     }
   }
+
   @js.native
   sealed trait ServiceType extends js.Any
   object ServiceType extends js.Object {
@@ -12341,6 +12382,7 @@ package iot {
       __obj.asInstanceOf[Statistics]
     }
   }
+
   @js.native
   sealed trait Status extends js.Any
   object Status extends js.Object {
@@ -12578,6 +12620,7 @@ package iot {
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
+
   @js.native
   sealed trait TargetSelection extends js.Any
   object TargetSelection extends js.Object {
@@ -12819,6 +12862,7 @@ package iot {
       __obj.asInstanceOf[ThingConnectivity]
     }
   }
+
   @js.native
   sealed trait ThingConnectivityIndexingMode extends js.Any
   object ThingConnectivityIndexingMode extends js.Object {
@@ -12922,6 +12966,7 @@ package iot {
       __obj.asInstanceOf[ThingGroupIndexingConfiguration]
     }
   }
+
   @js.native
   sealed trait ThingGroupIndexingMode extends js.Any
   object ThingGroupIndexingMode extends js.Object {
@@ -13009,6 +13054,7 @@ package iot {
       __obj.asInstanceOf[ThingIndexingConfiguration]
     }
   }
+
   @js.native
   sealed trait ThingIndexingMode extends js.Any
   object ThingIndexingMode extends js.Object {
@@ -13220,6 +13266,7 @@ package iot {
       __obj.asInstanceOf[TopicRuleDestinationConfiguration]
     }
   }
+
   @js.native
   sealed trait TopicRuleDestinationStatus extends js.Any
   object TopicRuleDestinationStatus extends js.Object {
@@ -14437,6 +14484,7 @@ package iot {
       __obj.asInstanceOf[ViolationEvent]
     }
   }
+
   @js.native
   sealed trait ViolationEventType extends js.Any
   object ViolationEventType extends js.Object {

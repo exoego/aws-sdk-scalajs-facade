@@ -887,6 +887,7 @@ package alexaforbusiness {
       __obj.asInstanceOf[BusinessReportContentRange]
     }
   }
+
   @js.native
   sealed trait BusinessReportFailureCode extends js.Any
   object BusinessReportFailureCode extends js.Object {
@@ -896,6 +897,7 @@ package alexaforbusiness {
 
     val values = js.Object.freeze(js.Array(ACCESS_DENIED, NO_SUCH_BUCKET, INTERNAL_FAILURE))
   }
+
   @js.native
   sealed trait BusinessReportFormat extends js.Any
   object BusinessReportFormat extends js.Object {
@@ -904,6 +906,7 @@ package alexaforbusiness {
 
     val values = js.Object.freeze(js.Array(CSV, CSV_ZIP))
   }
+
   @js.native
   sealed trait BusinessReportInterval extends js.Any
   object BusinessReportInterval extends js.Object {
@@ -994,6 +997,7 @@ package alexaforbusiness {
       __obj.asInstanceOf[BusinessReportSchedule]
     }
   }
+
   @js.native
   sealed trait BusinessReportStatus extends js.Any
   object BusinessReportStatus extends js.Object {
@@ -1025,6 +1029,7 @@ package alexaforbusiness {
       __obj.asInstanceOf[Category]
     }
   }
+
   @js.native
   sealed trait CommsProtocol extends js.Any
   object CommsProtocol extends js.Object {
@@ -1089,6 +1094,7 @@ package alexaforbusiness {
       __obj.asInstanceOf[ConferenceProvider]
     }
   }
+
   @js.native
   sealed trait ConferenceProviderType extends js.Any
   object ConferenceProviderType extends js.Object {
@@ -1107,6 +1113,7 @@ package alexaforbusiness {
       js.Array(CHIME, BLUEJEANS, FUZE, GOOGLE_HANGOUTS, POLYCOM, RINGCENTRAL, SKYPE_FOR_BUSINESS, WEBEX, ZOOM, CUSTOM)
     )
   }
+
   @js.native
   sealed trait ConnectionStatus extends js.Any
   object ConnectionStatus extends js.Object {
@@ -2415,6 +2422,7 @@ package alexaforbusiness {
       __obj.asInstanceOf[DeviceEvent]
     }
   }
+
   @js.native
   sealed trait DeviceEventType extends js.Any
   object DeviceEventType extends js.Object {
@@ -2450,6 +2458,7 @@ package alexaforbusiness {
       __obj.asInstanceOf[DeviceNetworkProfileInfo]
     }
   }
+
   @js.native
   sealed trait DeviceStatus extends js.Any
   object DeviceStatus extends js.Object {
@@ -2483,6 +2492,7 @@ package alexaforbusiness {
       __obj.asInstanceOf[DeviceStatusDetail]
     }
   }
+
   @js.native
   sealed trait DeviceStatusDetailCode extends js.Any
   object DeviceStatusDetailCode extends js.Object {
@@ -2549,6 +2559,7 @@ package alexaforbusiness {
       __obj.asInstanceOf[DeviceStatusInfo]
     }
   }
+
   @js.native
   sealed trait DeviceUsageType extends js.Any
   object DeviceUsageType extends js.Object {
@@ -2716,6 +2727,7 @@ package alexaforbusiness {
       __obj.asInstanceOf[DisassociateSkillGroupFromRoomResponse]
     }
   }
+
   @js.native
   sealed trait DistanceUnit extends js.Any
   object DistanceUnit extends js.Object {
@@ -2724,6 +2736,7 @@ package alexaforbusiness {
 
     val values = js.Object.freeze(js.Array(METRIC, IMPERIAL))
   }
+
   @js.native
   sealed trait EnablementType extends js.Any
   object EnablementType extends js.Object {
@@ -2732,6 +2745,7 @@ package alexaforbusiness {
 
     val values = js.Object.freeze(js.Array(ENABLED, PENDING))
   }
+
   @js.native
   sealed trait EnablementTypeFilter extends js.Any
   object EnablementTypeFilter extends js.Object {
@@ -2765,6 +2779,7 @@ package alexaforbusiness {
       __obj.asInstanceOf[EndOfMeetingReminder]
     }
   }
+
   @js.native
   sealed trait EndOfMeetingReminderType extends js.Any
   object EndOfMeetingReminderType extends js.Object {
@@ -2775,6 +2790,7 @@ package alexaforbusiness {
 
     val values = js.Object.freeze(js.Array(ANNOUNCEMENT_TIME_CHECK, ANNOUNCEMENT_VARIABLE_TIME_LEFT, CHIME, KNOCK))
   }
+
   @js.native
   sealed trait EnrollmentStatus extends js.Any
   object EnrollmentStatus extends js.Object {
@@ -2786,6 +2802,7 @@ package alexaforbusiness {
 
     val values = js.Object.freeze(js.Array(INITIALIZED, PENDING, REGISTERED, DISASSOCIATING, DEREGISTERING))
   }
+
   @js.native
   sealed trait Feature extends js.Any
   object Feature extends js.Object {
@@ -3865,6 +3882,7 @@ package alexaforbusiness {
       __obj.asInstanceOf[ListTagsResponse]
     }
   }
+
   @js.native
   sealed trait Locale extends js.Any
   object Locale extends js.Object {
@@ -3926,6 +3944,7 @@ package alexaforbusiness {
       __obj.asInstanceOf[MeetingSetting]
     }
   }
+
   @js.native
   sealed trait NetworkEapMethod extends js.Any
   object NetworkEapMethod extends js.Object {
@@ -4016,6 +4035,7 @@ package alexaforbusiness {
       __obj.asInstanceOf[NetworkProfileData]
     }
   }
+
   @js.native
   sealed trait NetworkSecurityType extends js.Any
   object NetworkSecurityType extends js.Object {
@@ -4081,6 +4101,7 @@ package alexaforbusiness {
       __obj.asInstanceOf[PhoneNumber]
     }
   }
+
   @js.native
   sealed trait PhoneNumberType extends js.Any
   object PhoneNumberType extends js.Object {
@@ -4432,6 +4453,7 @@ package alexaforbusiness {
       __obj.asInstanceOf[RequireCheckIn]
     }
   }
+
   @js.native
   sealed trait RequirePin extends js.Any
   object RequirePin extends js.Object {
@@ -5077,6 +5099,7 @@ package alexaforbusiness {
       __obj.asInstanceOf[SipAddress]
     }
   }
+
   @js.native
   sealed trait SipType extends js.Any
   object SipType extends js.Object {
@@ -5213,6 +5236,7 @@ package alexaforbusiness {
       __obj.asInstanceOf[SkillSummary]
     }
   }
+
   @js.native
   sealed trait SkillType extends js.Any
   object SkillType extends js.Object {
@@ -5221,6 +5245,7 @@ package alexaforbusiness {
 
     val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE))
   }
+
   @js.native
   sealed trait SkillTypeFilter extends js.Any
   object SkillTypeFilter extends js.Object {
@@ -5316,6 +5341,7 @@ package alexaforbusiness {
       __obj.asInstanceOf[Sort]
     }
   }
+
   @js.native
   sealed trait SortValue extends js.Any
   object SortValue extends js.Object {
@@ -5474,6 +5500,7 @@ package alexaforbusiness {
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
+
   @js.native
   sealed trait TemperatureUnit extends js.Any
   object TemperatureUnit extends js.Object {
@@ -6147,6 +6174,7 @@ package alexaforbusiness {
       __obj.asInstanceOf[UserData]
     }
   }
+
   @js.native
   sealed trait WakeWord extends js.Any
   object WakeWord extends js.Object {

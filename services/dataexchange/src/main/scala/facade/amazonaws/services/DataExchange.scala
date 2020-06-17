@@ -252,6 +252,7 @@ package dataexchange {
       __obj.asInstanceOf[CancelJobRequest]
     }
   }
+
   @js.native
   sealed trait Code extends js.Any
   object Code extends js.Object {
@@ -1605,6 +1606,7 @@ package dataexchange {
       __obj.asInstanceOf[StartJobResponse]
     }
   }
+
   @js.native
   sealed trait State extends js.Any
   object State extends js.Object {
@@ -1641,6 +1643,7 @@ package dataexchange {
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
+
   @js.native
   sealed trait Type extends js.Any
   object Type extends js.Object {

@@ -152,6 +152,7 @@ package forecast {
     def listPredictors(params: ListPredictorsRequest): Request[ListPredictorsResponse]             = js.native
     def updateDatasetGroup(params: UpdateDatasetGroupRequest): Request[UpdateDatasetGroupResponse] = js.native
   }
+
   @js.native
   sealed trait AttributeType extends js.Any
   object AttributeType extends js.Object {
@@ -633,6 +634,7 @@ package forecast {
       __obj.asInstanceOf[DatasetSummary]
     }
   }
+
   @js.native
   sealed trait DatasetType extends js.Any
   object DatasetType extends js.Object {
@@ -1130,6 +1132,7 @@ package forecast {
       __obj.asInstanceOf[DescribePredictorResponse]
     }
   }
+
   @js.native
   sealed trait Domain extends js.Any
   object Domain extends js.Object {
@@ -1212,6 +1215,7 @@ package forecast {
       __obj.asInstanceOf[EvaluationResult]
     }
   }
+
   @js.native
   sealed trait EvaluationType extends js.Any
   object EvaluationType extends js.Object {
@@ -1312,6 +1316,7 @@ package forecast {
       __obj.asInstanceOf[FeaturizationMethod]
     }
   }
+
   @js.native
   sealed trait FeaturizationMethodName extends js.Any
   object FeaturizationMethodName extends js.Object {
@@ -1346,6 +1351,7 @@ package forecast {
       __obj.asInstanceOf[Filter]
     }
   }
+
   @js.native
   sealed trait FilterConditionString extends js.Any
   object FilterConditionString extends js.Object {
@@ -1938,6 +1944,7 @@ package forecast {
       __obj.asInstanceOf[S3Config]
     }
   }
+
   @js.native
   sealed trait ScalingType extends js.Any
   object ScalingType extends js.Object {

@@ -245,7 +245,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait CreateMeshInput extends js.Object {
@@ -275,7 +274,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait CreateMeshOutput extends js.Object {
@@ -296,7 +294,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait CreateRouteInput extends js.Object {
@@ -332,7 +329,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait CreateRouteOutput extends js.Object {
@@ -353,7 +349,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait CreateVirtualNodeInput extends js.Object {
@@ -386,7 +381,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait CreateVirtualNodeOutput extends js.Object {
@@ -407,7 +401,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait CreateVirtualRouterInput extends js.Object {
@@ -440,7 +433,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait CreateVirtualRouterOutput extends js.Object {
@@ -461,7 +453,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait CreateVirtualServiceInput extends js.Object {
@@ -494,7 +485,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait CreateVirtualServiceOutput extends js.Object {
@@ -515,7 +505,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait DeleteMeshInput extends js.Object {
@@ -536,7 +525,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait DeleteMeshOutput extends js.Object {
@@ -557,7 +545,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait DeleteRouteInput extends js.Object {
@@ -584,7 +571,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait DeleteRouteOutput extends js.Object {
@@ -605,7 +591,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait DeleteVirtualNodeInput extends js.Object {
@@ -629,7 +614,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait DeleteVirtualNodeOutput extends js.Object {
@@ -650,7 +634,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait DeleteVirtualRouterInput extends js.Object {
@@ -674,7 +657,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait DeleteVirtualRouterOutput extends js.Object {
@@ -695,7 +677,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait DeleteVirtualServiceInput extends js.Object {
@@ -719,7 +700,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait DeleteVirtualServiceOutput extends js.Object {
@@ -740,7 +720,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait DescribeMeshInput extends js.Object {
@@ -761,7 +740,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait DescribeMeshOutput extends js.Object {
@@ -782,7 +760,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait DescribeRouteInput extends js.Object {
@@ -809,7 +786,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait DescribeRouteOutput extends js.Object {
@@ -830,7 +806,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait DescribeVirtualNodeInput extends js.Object {
@@ -854,7 +829,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait DescribeVirtualNodeOutput extends js.Object {
@@ -875,7 +849,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait DescribeVirtualRouterInput extends js.Object {
@@ -899,7 +872,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait DescribeVirtualRouterOutput extends js.Object {
@@ -920,7 +892,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait DescribeVirtualServiceInput extends js.Object {
@@ -944,7 +915,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait DescribeVirtualServiceOutput extends js.Object {
@@ -1007,6 +977,7 @@ package appmesh {
       __obj.asInstanceOf[Duration]
     }
   }
+
   @js.native
   sealed trait DurationUnit extends js.Any
   object DurationUnit extends js.Object {
@@ -1036,6 +1007,7 @@ package appmesh {
       __obj.asInstanceOf[EgressFilter]
     }
   }
+
   @js.native
   sealed trait EgressFilterType extends js.Any
   object EgressFilterType extends js.Object {
@@ -1098,6 +1070,7 @@ package appmesh {
       __obj.asInstanceOf[GrpcRetryPolicy]
     }
   }
+
   @js.native
   sealed trait GrpcRetryPolicyEvent extends js.Any
   object GrpcRetryPolicyEvent extends js.Object {
@@ -1311,6 +1284,7 @@ package appmesh {
       __obj.asInstanceOf[HealthCheckPolicy]
     }
   }
+
   @js.native
   sealed trait HttpMethod extends js.Any
   object HttpMethod extends js.Object {
@@ -1462,6 +1436,7 @@ package appmesh {
       __obj.asInstanceOf[HttpRouteMatch]
     }
   }
+
   @js.native
   sealed trait HttpScheme extends js.Any
   object HttpScheme extends js.Object {
@@ -1472,7 +1447,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait ListMeshesInput extends js.Object {
@@ -1494,7 +1468,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait ListMeshesOutput extends js.Object {
@@ -1518,7 +1491,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait ListRoutesInput extends js.Object {
@@ -1548,7 +1520,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait ListRoutesOutput extends js.Object {
@@ -1572,7 +1543,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait ListTagsForResourceInput extends js.Object {
@@ -1599,7 +1569,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait ListTagsForResourceOutput extends js.Object {
@@ -1623,7 +1592,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait ListVirtualNodesInput extends js.Object {
@@ -1650,7 +1618,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait ListVirtualNodesOutput extends js.Object {
@@ -1674,7 +1641,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait ListVirtualRoutersInput extends js.Object {
@@ -1701,7 +1667,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait ListVirtualRoutersOutput extends js.Object {
@@ -1725,7 +1690,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait ListVirtualServicesInput extends js.Object {
@@ -1752,7 +1716,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait ListVirtualServicesOutput extends js.Object {
@@ -1933,6 +1896,7 @@ package appmesh {
       __obj.asInstanceOf[MeshStatus]
     }
   }
+
   @js.native
   sealed trait MeshStatusCode extends js.Any
   object MeshStatusCode extends js.Object {
@@ -1966,6 +1930,7 @@ package appmesh {
       __obj.asInstanceOf[PortMapping]
     }
   }
+
   @js.native
   sealed trait PortProtocol extends js.Any
   object PortProtocol extends js.Object {
@@ -2127,6 +2092,7 @@ package appmesh {
       __obj.asInstanceOf[RouteStatus]
     }
   }
+
   @js.native
   sealed trait RouteStatusCode extends js.Any
   object RouteStatusCode extends js.Object {
@@ -2187,7 +2153,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait TagResourceInput extends js.Object {
@@ -2211,7 +2176,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait TagResourceOutput extends js.Object {}
@@ -2225,6 +2189,7 @@ package appmesh {
       __obj.asInstanceOf[TagResourceOutput]
     }
   }
+
   @js.native
   sealed trait TcpRetryPolicyEvent extends js.Any
   object TcpRetryPolicyEvent extends js.Object {
@@ -2276,7 +2241,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait UntagResourceInput extends js.Object {
@@ -2300,7 +2264,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait UntagResourceOutput extends js.Object {}
@@ -2316,7 +2279,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait UpdateMeshInput extends js.Object {
@@ -2343,7 +2305,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait UpdateMeshOutput extends js.Object {
@@ -2364,7 +2325,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait UpdateRouteInput extends js.Object {
@@ -2397,7 +2357,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait UpdateRouteOutput extends js.Object {
@@ -2418,7 +2377,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait UpdateVirtualNodeInput extends js.Object {
@@ -2448,7 +2406,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait UpdateVirtualNodeOutput extends js.Object {
@@ -2469,7 +2426,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait UpdateVirtualRouterInput extends js.Object {
@@ -2499,7 +2455,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait UpdateVirtualRouterOutput extends js.Object {
@@ -2520,7 +2475,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait UpdateVirtualServiceInput extends js.Object {
@@ -2550,7 +2504,6 @@ package appmesh {
   }
 
   /**
-    *
     */
   @js.native
   trait UpdateVirtualServiceOutput extends js.Object {
@@ -2699,6 +2652,7 @@ package appmesh {
       __obj.asInstanceOf[VirtualNodeStatus]
     }
   }
+
   @js.native
   sealed trait VirtualNodeStatusCode extends js.Any
   object VirtualNodeStatusCode extends js.Object {
@@ -2850,6 +2804,7 @@ package appmesh {
       __obj.asInstanceOf[VirtualRouterStatus]
     }
   }
+
   @js.native
   sealed trait VirtualRouterStatusCode extends js.Any
   object VirtualRouterStatusCode extends js.Object {
@@ -3002,6 +2957,7 @@ package appmesh {
       __obj.asInstanceOf[VirtualServiceStatus]
     }
   }
+
   @js.native
   sealed trait VirtualServiceStatusCode extends js.Any
   object VirtualServiceStatusCode extends js.Object {

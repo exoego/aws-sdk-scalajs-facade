@@ -229,6 +229,7 @@ package appsync {
       __obj.asInstanceOf[ApiCache]
     }
   }
+
   @js.native
   sealed trait ApiCacheStatus extends js.Any
   object ApiCacheStatus extends js.Object {
@@ -240,6 +241,7 @@ package appsync {
 
     val values = js.Object.freeze(js.Array(AVAILABLE, CREATING, DELETING, MODIFYING, FAILED))
   }
+
   @js.native
   sealed trait ApiCacheType extends js.Any
   object ApiCacheType extends js.Object {
@@ -254,6 +256,7 @@ package appsync {
     val values =
       js.Object.freeze(js.Array(T2_SMALL, T2_MEDIUM, R4_LARGE, R4_XLARGE, R4_2XLARGE, R4_4XLARGE, R4_8XLARGE))
   }
+
   @js.native
   sealed trait ApiCachingBehavior extends js.Any
   object ApiCachingBehavior extends js.Object {
@@ -300,6 +303,7 @@ package appsync {
       __obj.asInstanceOf[ApiKey]
     }
   }
+
   @js.native
   sealed trait AuthenticationType extends js.Any
   object AuthenticationType extends js.Object {
@@ -334,6 +338,7 @@ package appsync {
       __obj.asInstanceOf[AuthorizationConfig]
     }
   }
+
   @js.native
   sealed trait AuthorizationType extends js.Any
   object AuthorizationType extends js.Object {
@@ -412,6 +417,7 @@ package appsync {
       __obj.asInstanceOf[CognitoUserPoolConfig]
     }
   }
+
   @js.native
   sealed trait ConflictDetectionType extends js.Any
   object ConflictDetectionType extends js.Object {
@@ -420,6 +426,7 @@ package appsync {
 
     val values = js.Object.freeze(js.Array(VERSION, NONE))
   }
+
   @js.native
   sealed trait ConflictHandlerType extends js.Any
   object ConflictHandlerType extends js.Object {
@@ -842,6 +849,7 @@ package appsync {
       __obj.asInstanceOf[DataSource]
     }
   }
+
   @js.native
   sealed trait DataSourceType extends js.Any
   object DataSourceType extends js.Object {
@@ -855,6 +863,7 @@ package appsync {
     val values =
       js.Object.freeze(js.Array(AWS_LAMBDA, AMAZON_DYNAMODB, AMAZON_ELASTICSEARCH, NONE, HTTP, RELATIONAL_DATABASE))
   }
+
   @js.native
   sealed trait DefaultAction extends js.Any
   object DefaultAction extends js.Object {
@@ -1186,6 +1195,7 @@ package appsync {
       __obj.asInstanceOf[ElasticsearchDataSourceConfig]
     }
   }
+
   @js.native
   sealed trait FieldLogLevel extends js.Any
   object FieldLogLevel extends js.Object {
@@ -2086,6 +2096,7 @@ package appsync {
       __obj.asInstanceOf[OpenIDConnectConfig]
     }
   }
+
   @js.native
   sealed trait OutputType extends js.Any
   object OutputType extends js.Object {
@@ -2168,6 +2179,7 @@ package appsync {
       __obj.asInstanceOf[RelationalDatabaseDataSourceConfig]
     }
   }
+
   @js.native
   sealed trait RelationalDatabaseSourceType extends js.Any
   object RelationalDatabaseSourceType extends js.Object {
@@ -2221,6 +2233,7 @@ package appsync {
       __obj.asInstanceOf[Resolver]
     }
   }
+
   @js.native
   sealed trait ResolverKind extends js.Any
   object ResolverKind extends js.Object {
@@ -2229,6 +2242,7 @@ package appsync {
 
     val values = js.Object.freeze(js.Array(UNIT, PIPELINE))
   }
+
   @js.native
   sealed trait SchemaStatus extends js.Any
   object SchemaStatus extends js.Object {
@@ -2371,6 +2385,7 @@ package appsync {
       __obj.asInstanceOf[Type]
     }
   }
+
   @js.native
   sealed trait TypeDefinitionFormat extends js.Any
   object TypeDefinitionFormat extends js.Object {

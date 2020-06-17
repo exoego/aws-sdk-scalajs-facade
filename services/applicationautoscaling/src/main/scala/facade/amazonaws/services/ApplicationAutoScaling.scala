@@ -92,6 +92,7 @@ package applicationautoscaling {
     def registerScalableTarget(params: RegisterScalableTargetRequest): Request[RegisterScalableTargetResponse] =
       js.native
   }
+
   @js.native
   sealed trait AdjustmentType extends js.Any
   object AdjustmentType extends js.Object {
@@ -481,6 +482,7 @@ package applicationautoscaling {
       __obj.asInstanceOf[DescribeScheduledActionsResponse]
     }
   }
+
   @js.native
   sealed trait MetricAggregationType extends js.Any
   object MetricAggregationType extends js.Object {
@@ -514,6 +516,7 @@ package applicationautoscaling {
       __obj.asInstanceOf[MetricDimension]
     }
   }
+
   @js.native
   sealed trait MetricStatistic extends js.Any
   object MetricStatistic extends js.Object {
@@ -525,6 +528,7 @@ package applicationautoscaling {
 
     val values = js.Object.freeze(js.Array(Average, Minimum, Maximum, SampleCount, Sum))
   }
+
   @js.native
   sealed trait MetricType extends js.Any
   object MetricType extends js.Object {
@@ -562,6 +566,7 @@ package applicationautoscaling {
       )
     )
   }
+
   @js.native
   sealed trait PolicyType extends js.Any
   object PolicyType extends js.Object {
@@ -756,6 +761,7 @@ package applicationautoscaling {
       __obj.asInstanceOf[RegisterScalableTargetResponse]
     }
   }
+
   @js.native
   sealed trait ScalableDimension extends js.Any
   object ScalableDimension extends js.Object {
@@ -912,6 +918,7 @@ package applicationautoscaling {
       __obj.asInstanceOf[ScalingActivity]
     }
   }
+
   @js.native
   sealed trait ScalingActivityStatusCode extends js.Any
   object ScalingActivityStatusCode extends js.Object {
@@ -1024,6 +1031,7 @@ package applicationautoscaling {
       __obj.asInstanceOf[ScheduledAction]
     }
   }
+
   @js.native
   sealed trait ServiceNamespace extends js.Any
   object ServiceNamespace extends js.Object {

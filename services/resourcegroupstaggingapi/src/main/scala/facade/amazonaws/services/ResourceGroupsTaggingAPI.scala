@@ -143,6 +143,7 @@ package resourcegroupstaggingapi {
       __obj.asInstanceOf[DescribeReportCreationOutput]
     }
   }
+
   @js.native
   sealed trait ErrorCode extends js.Any
   object ErrorCode extends js.Object {
@@ -363,6 +364,7 @@ package resourcegroupstaggingapi {
       __obj.asInstanceOf[GetTagValuesOutput]
     }
   }
+
   @js.native
   sealed trait GroupByAttribute extends js.Any
   object GroupByAttribute extends js.Object {
@@ -545,6 +547,7 @@ package resourcegroupstaggingapi {
       __obj.asInstanceOf[TagResourcesOutput]
     }
   }
+
   @js.native
   sealed trait TargetIdType extends js.Any
   object TargetIdType extends js.Object {

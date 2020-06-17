@@ -402,6 +402,7 @@ package wafv2 {
       __obj.asInstanceOf[CheckCapacityResponse]
     }
   }
+
   @js.native
   sealed trait ComparisonOperator extends js.Any
   object ComparisonOperator extends js.Object {
@@ -432,6 +433,7 @@ package wafv2 {
       __obj.asInstanceOf[CountAction]
     }
   }
+
   @js.native
   sealed trait CountryCode extends js.Any
   object CountryCode extends js.Object {
@@ -1902,6 +1904,7 @@ package wafv2 {
       __obj.asInstanceOf[HTTPRequest]
     }
   }
+
   @js.native
   sealed trait IPAddressVersion extends js.Any
   object IPAddressVersion extends js.Object {
@@ -2525,6 +2528,7 @@ package wafv2 {
       __obj.asInstanceOf[OverrideAction]
     }
   }
+
   @js.native
   sealed trait PositionalConstraint extends js.Any
   object PositionalConstraint extends js.Object {
@@ -2622,6 +2626,7 @@ package wafv2 {
       __obj.asInstanceOf[RateBasedStatement]
     }
   }
+
   @js.native
   sealed trait RateBasedStatementAggregateKeyType extends js.Any
   object RateBasedStatementAggregateKeyType extends js.Object {
@@ -2766,6 +2771,7 @@ package wafv2 {
       __obj.asInstanceOf[RegexPatternSetSummary]
     }
   }
+
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {
@@ -2992,6 +2998,7 @@ package wafv2 {
       __obj.asInstanceOf[SampledHTTPRequest]
     }
   }
+
   @js.native
   sealed trait Scope extends js.Any
   object Scope extends js.Object {
@@ -3272,6 +3279,7 @@ package wafv2 {
       __obj.asInstanceOf[TextTransformation]
     }
   }
+
   @js.native
   sealed trait TextTransformationType extends js.Any
   object TextTransformationType extends js.Object {

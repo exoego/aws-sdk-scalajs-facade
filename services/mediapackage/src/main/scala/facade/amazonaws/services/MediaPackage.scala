@@ -94,10 +94,10 @@ package mediapackage {
     @deprecated(
       "This API is deprecated. Please use RotateIngestEndpointCredentials instead",
       "forever"
-    ) def rotateChannelCredentials(
-        params: RotateChannelCredentialsRequest
-    ): Request[RotateChannelCredentialsResponse] = js.native
+    ) def rotateChannelCredentials(params: RotateChannelCredentialsRequest): Request[RotateChannelCredentialsResponse] =
+      js.native
   }
+
   @js.native
   sealed trait AdMarkers extends js.Any
   object AdMarkers extends js.Object {
@@ -850,6 +850,7 @@ package mediapackage {
       __obj.asInstanceOf[DescribeOriginEndpointResponse]
     }
   }
+
   @js.native
   sealed trait EncryptionMethod extends js.Any
   object EncryptionMethod extends js.Object {
@@ -1288,6 +1289,7 @@ package mediapackage {
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
+
   @js.native
   sealed trait ManifestLayout extends js.Any
   object ManifestLayout extends js.Object {
@@ -1409,6 +1411,7 @@ package mediapackage {
       __obj.asInstanceOf[OriginEndpoint]
     }
   }
+
   @js.native
   sealed trait Origination extends js.Any
   object Origination extends js.Object {
@@ -1417,6 +1420,7 @@ package mediapackage {
 
     val values = js.Object.freeze(js.Array(ALLOW, DENY))
   }
+
   @js.native
   sealed trait PlaylistType extends js.Any
   object PlaylistType extends js.Object {
@@ -1426,6 +1430,7 @@ package mediapackage {
 
     val values = js.Object.freeze(js.Array(NONE, EVENT, VOD))
   }
+
   @js.native
   sealed trait Profile extends js.Any
   object Profile extends js.Object {
@@ -1558,6 +1563,7 @@ package mediapackage {
       __obj.asInstanceOf[S3Destination]
     }
   }
+
   @js.native
   sealed trait SegmentTemplateFormat extends js.Any
   object SegmentTemplateFormat extends js.Object {
@@ -1600,6 +1606,7 @@ package mediapackage {
       __obj.asInstanceOf[SpekeKeyProvider]
     }
   }
+
   @js.native
   sealed trait Status extends js.Any
   object Status extends js.Object {
@@ -1609,6 +1616,7 @@ package mediapackage {
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED))
   }
+
   @js.native
   sealed trait StreamOrder extends js.Any
   object StreamOrder extends js.Object {
@@ -1852,6 +1860,7 @@ package mediapackage {
       __obj.asInstanceOf[UpdateOriginEndpointResponse]
     }
   }
+
   @js.native
   sealed trait __AdTriggersElement extends js.Any
   object __AdTriggersElement extends js.Object {
@@ -1879,6 +1888,7 @@ package mediapackage {
       )
     )
   }
+
   @js.native
   sealed trait __PeriodTriggersElement extends js.Any
   object __PeriodTriggersElement extends js.Object {

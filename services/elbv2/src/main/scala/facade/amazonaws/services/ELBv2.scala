@@ -304,6 +304,7 @@ package elbv2 {
       __obj.asInstanceOf[Action]
     }
   }
+
   @js.native
   sealed trait ActionTypeEnum extends js.Any
   object ActionTypeEnum extends js.Object {
@@ -387,6 +388,7 @@ package elbv2 {
       __obj.asInstanceOf[AddTagsOutput]
     }
   }
+
   @js.native
   sealed trait AuthenticateCognitoActionConditionalBehaviorEnum extends js.Any
   object AuthenticateCognitoActionConditionalBehaviorEnum extends js.Object {
@@ -441,6 +443,7 @@ package elbv2 {
       __obj.asInstanceOf[AuthenticateCognitoActionConfig]
     }
   }
+
   @js.native
   sealed trait AuthenticateOidcActionConditionalBehaviorEnum extends js.Any
   object AuthenticateOidcActionConditionalBehaviorEnum extends js.Object {
@@ -1511,6 +1514,7 @@ package elbv2 {
       __obj.asInstanceOf[HttpRequestMethodConditionConfig]
     }
   }
+
   @js.native
   sealed trait IpAddressType extends js.Any
   object IpAddressType extends js.Object {
@@ -1677,6 +1681,7 @@ package elbv2 {
       __obj.asInstanceOf[LoadBalancerAttribute]
     }
   }
+
   @js.native
   sealed trait LoadBalancerSchemeEnum extends js.Any
   object LoadBalancerSchemeEnum extends js.Object {
@@ -1707,6 +1712,7 @@ package elbv2 {
       __obj.asInstanceOf[LoadBalancerState]
     }
   }
+
   @js.native
   sealed trait LoadBalancerStateEnum extends js.Any
   object LoadBalancerStateEnum extends js.Object {
@@ -1717,6 +1723,7 @@ package elbv2 {
 
     val values = js.Object.freeze(js.Array(active, provisioning, active_impaired, failed))
   }
+
   @js.native
   sealed trait LoadBalancerTypeEnum extends js.Any
   object LoadBalancerTypeEnum extends js.Object {
@@ -1993,6 +2000,7 @@ package elbv2 {
       __obj.asInstanceOf[PathPatternConditionConfig]
     }
   }
+
   @js.native
   sealed trait ProtocolEnum extends js.Any
   object ProtocolEnum extends js.Object {
@@ -2091,6 +2099,7 @@ package elbv2 {
       __obj.asInstanceOf[RedirectActionConfig]
     }
   }
+
   @js.native
   sealed trait RedirectActionStatusCodeEnum extends js.Any
   object RedirectActionStatusCodeEnum extends js.Object {
@@ -2769,6 +2778,7 @@ package elbv2 {
       __obj.asInstanceOf[TargetHealthDescription]
     }
   }
+
   @js.native
   sealed trait TargetHealthReasonEnum extends js.Any
   object TargetHealthReasonEnum extends js.Object {
@@ -2802,6 +2812,7 @@ package elbv2 {
       )
     )
   }
+
   @js.native
   sealed trait TargetHealthStateEnum extends js.Any
   object TargetHealthStateEnum extends js.Object {
@@ -2814,6 +2825,7 @@ package elbv2 {
 
     val values = js.Object.freeze(js.Array(initial, healthy, unhealthy, unused, draining, unavailable))
   }
+
   @js.native
   sealed trait TargetTypeEnum extends js.Any
   object TargetTypeEnum extends js.Object {

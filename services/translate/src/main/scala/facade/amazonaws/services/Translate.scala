@@ -180,6 +180,7 @@ package translate {
       __obj.asInstanceOf[EncryptionKey]
     }
   }
+
   @js.native
   sealed trait EncryptionKeyType extends js.Any
   object EncryptionKeyType extends js.Object {
@@ -322,6 +323,7 @@ package translate {
       __obj.asInstanceOf[JobDetails]
     }
   }
+
   @js.native
   sealed trait JobStatus extends js.Any
   object JobStatus extends js.Object {
@@ -420,6 +422,7 @@ package translate {
       __obj.asInstanceOf[ListTextTranslationJobsResponse]
     }
   }
+
   @js.native
   sealed trait MergeStrategy extends js.Any
   object MergeStrategy extends js.Object {
@@ -589,6 +592,7 @@ package translate {
       __obj.asInstanceOf[TerminologyData]
     }
   }
+
   @js.native
   sealed trait TerminologyDataFormat extends js.Any
   object TerminologyDataFormat extends js.Object {

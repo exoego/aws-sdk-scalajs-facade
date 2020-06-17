@@ -106,6 +106,7 @@ package kinesisvideomedia {
       __obj.asInstanceOf[StartSelector]
     }
   }
+
   @js.native
   sealed trait StartSelectorType extends js.Any
   object StartSelectorType extends js.Object {

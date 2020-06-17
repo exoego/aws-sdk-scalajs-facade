@@ -398,6 +398,7 @@ package route53 {
       __obj.asInstanceOf[AccountLimit]
     }
   }
+
   @js.native
   sealed trait AccountLimitType extends js.Any
   object AccountLimitType extends js.Object {
@@ -543,6 +544,7 @@ package route53 {
       __obj.asInstanceOf[Change]
     }
   }
+
   @js.native
   sealed trait ChangeAction extends js.Any
   object ChangeAction extends js.Object {
@@ -651,6 +653,7 @@ package route53 {
       __obj.asInstanceOf[ChangeResourceRecordSetsResponse]
     }
   }
+
   @js.native
   sealed trait ChangeStatus extends js.Any
   object ChangeStatus extends js.Object {
@@ -747,6 +750,7 @@ package route53 {
       __obj.asInstanceOf[CloudWatchAlarmConfiguration]
     }
   }
+
   @js.native
   sealed trait CloudWatchRegion extends js.Any
   object CloudWatchRegion extends js.Object {
@@ -798,6 +802,7 @@ package route53 {
       )
     )
   }
+
   @js.native
   sealed trait ComparisonOperator extends js.Any
   object ComparisonOperator extends js.Object {
@@ -2487,6 +2492,7 @@ package route53 {
       __obj.asInstanceOf[HealthCheckObservation]
     }
   }
+
   @js.native
   sealed trait HealthCheckRegion extends js.Any
   object HealthCheckRegion extends js.Object {
@@ -2512,6 +2518,7 @@ package route53 {
       )
     )
   }
+
   @js.native
   sealed trait HealthCheckType extends js.Any
   object HealthCheckType extends js.Object {
@@ -2608,6 +2615,7 @@ package route53 {
       __obj.asInstanceOf[HostedZoneLimit]
     }
   }
+
   @js.native
   sealed trait HostedZoneLimitType extends js.Any
   object HostedZoneLimitType extends js.Object {
@@ -2616,6 +2624,7 @@ package route53 {
 
     val values = js.Object.freeze(js.Array(MAX_RRSETS_BY_ZONE, MAX_VPCS_ASSOCIATED_BY_ZONE))
   }
+
   @js.native
   sealed trait InsufficientDataHealthStatus extends js.Any
   object InsufficientDataHealthStatus extends js.Object {
@@ -3557,6 +3566,7 @@ package route53 {
       __obj.asInstanceOf[QueryLoggingConfig]
     }
   }
+
   @js.native
   sealed trait RRType extends js.Any
   object RRType extends js.Object {
@@ -3575,6 +3585,7 @@ package route53 {
 
     val values = js.Object.freeze(js.Array(SOA, A, TXT, NS, CNAME, MX, NAPTR, PTR, SRV, SPF, AAAA, CAA))
   }
+
   @js.native
   sealed trait ResettableElementName extends js.Any
   object ResettableElementName extends js.Object {
@@ -3665,6 +3676,7 @@ package route53 {
       __obj.asInstanceOf[ResourceRecordSet]
     }
   }
+
   @js.native
   sealed trait ResourceRecordSetFailover extends js.Any
   object ResourceRecordSetFailover extends js.Object {
@@ -3673,6 +3685,7 @@ package route53 {
 
     val values = js.Object.freeze(js.Array(PRIMARY, SECONDARY))
   }
+
   @js.native
   sealed trait ResourceRecordSetRegion extends js.Any
   object ResourceRecordSetRegion extends js.Object {
@@ -3773,6 +3786,7 @@ package route53 {
       __obj.asInstanceOf[ReusableDelegationSetLimit]
     }
   }
+
   @js.native
   sealed trait ReusableDelegationSetLimitType extends js.Any
   object ReusableDelegationSetLimitType extends js.Object {
@@ -3781,6 +3795,7 @@ package route53 {
 
     val values = js.Object.freeze(js.Array(MAX_ZONES_BY_REUSABLE_DELEGATION_SET))
   }
+
   @js.native
   sealed trait Statistic extends js.Any
   object Statistic extends js.Object {
@@ -3836,6 +3851,7 @@ package route53 {
       __obj.asInstanceOf[Tag]
     }
   }
+
   @js.native
   sealed trait TagResourceType extends js.Any
   object TagResourceType extends js.Object {
@@ -4288,6 +4304,7 @@ package route53 {
       __obj.asInstanceOf[VPC]
     }
   }
+
   @js.native
   sealed trait VPCRegion extends js.Any
   object VPCRegion extends js.Object {

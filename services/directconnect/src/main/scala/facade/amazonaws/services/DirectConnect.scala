@@ -364,6 +364,7 @@ package directconnect {
       __obj.asInstanceOf[AcceptDirectConnectGatewayAssociationProposalResult]
     }
   }
+
   @js.native
   sealed trait AddressFamily extends js.Any
   object AddressFamily extends js.Object {
@@ -657,6 +658,7 @@ package directconnect {
       __obj.asInstanceOf[BGPPeer]
     }
   }
+
   @js.native
   sealed trait BGPPeerState extends js.Any
   object BGPPeerState extends js.Object {
@@ -668,6 +670,7 @@ package directconnect {
 
     val values = js.Object.freeze(js.Array(verifying, pending, available, deleting, deleted))
   }
+
   @js.native
   sealed trait BGPStatus extends js.Any
   object BGPStatus extends js.Object {
@@ -889,6 +892,7 @@ package directconnect {
       __obj.asInstanceOf[Connection]
     }
   }
+
   @js.native
   sealed trait ConnectionState extends js.Any
   object ConnectionState extends js.Object {
@@ -2092,6 +2096,7 @@ package directconnect {
       __obj.asInstanceOf[DirectConnectGatewayAssociationProposal]
     }
   }
+
   @js.native
   sealed trait DirectConnectGatewayAssociationProposalState extends js.Any
   object DirectConnectGatewayAssociationProposalState extends js.Object {
@@ -2101,6 +2106,7 @@ package directconnect {
 
     val values = js.Object.freeze(js.Array(requested, accepted, deleted))
   }
+
   @js.native
   sealed trait DirectConnectGatewayAssociationState extends js.Any
   object DirectConnectGatewayAssociationState extends js.Object {
@@ -2151,6 +2157,7 @@ package directconnect {
       __obj.asInstanceOf[DirectConnectGatewayAttachment]
     }
   }
+
   @js.native
   sealed trait DirectConnectGatewayAttachmentState extends js.Any
   object DirectConnectGatewayAttachmentState extends js.Object {
@@ -2161,6 +2168,7 @@ package directconnect {
 
     val values = js.Object.freeze(js.Array(attaching, attached, detaching, detached))
   }
+
   @js.native
   sealed trait DirectConnectGatewayAttachmentType extends js.Any
   object DirectConnectGatewayAttachmentType extends js.Object {
@@ -2169,6 +2177,7 @@ package directconnect {
 
     val values = js.Object.freeze(js.Array(TransitVirtualInterface, PrivateVirtualInterface))
   }
+
   @js.native
   sealed trait DirectConnectGatewayState extends js.Any
   object DirectConnectGatewayState extends js.Object {
@@ -2200,6 +2209,7 @@ package directconnect {
       __obj.asInstanceOf[DisassociateConnectionFromLagRequest]
     }
   }
+
   @js.native
   sealed trait GatewayType extends js.Any
   object GatewayType extends js.Object {
@@ -2208,6 +2218,7 @@ package directconnect {
 
     val values = js.Object.freeze(js.Array(virtualPrivateGateway, transitGateway))
   }
+
   @js.native
   sealed trait HasLogicalRedundancy extends js.Any
   object HasLogicalRedundancy extends js.Object {
@@ -2275,6 +2286,7 @@ package directconnect {
       __obj.asInstanceOf[Interconnect]
     }
   }
+
   @js.native
   sealed trait InterconnectState extends js.Any
   object InterconnectState extends js.Object {
@@ -2371,6 +2383,7 @@ package directconnect {
       __obj.asInstanceOf[Lag]
     }
   }
+
   @js.native
   sealed trait LagState extends js.Any
   object LagState extends js.Object {
@@ -2422,6 +2435,7 @@ package directconnect {
       __obj.asInstanceOf[Loa]
     }
   }
+
   @js.native
   sealed trait LoaContentType extends js.Any
   object LoaContentType extends js.Object {
@@ -3130,6 +3144,7 @@ package directconnect {
       __obj.asInstanceOf[VirtualInterface]
     }
   }
+
   @js.native
   sealed trait VirtualInterfaceState extends js.Any
   object VirtualInterfaceState extends js.Object {

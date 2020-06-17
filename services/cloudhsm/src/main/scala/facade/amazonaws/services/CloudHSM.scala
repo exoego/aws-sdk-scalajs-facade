@@ -152,6 +152,7 @@ package cloudhsm {
       __obj.asInstanceOf[AddTagsToResourceResponse]
     }
   }
+
   @js.native
   sealed trait ClientVersion extends js.Any
   object ClientVersion extends js.Object {
@@ -166,6 +167,7 @@ package cloudhsm {
     */
   @js.native
   trait CloudHsmInternalExceptionException extends js.Object {}
+
   @js.native
   sealed trait CloudHsmObjectState extends js.Any
   object CloudHsmObjectState extends js.Object {
@@ -706,6 +708,7 @@ package cloudhsm {
       __obj.asInstanceOf[GetConfigResponse]
     }
   }
+
   @js.native
   sealed trait HsmStatus extends js.Any
   object HsmStatus extends js.Object {

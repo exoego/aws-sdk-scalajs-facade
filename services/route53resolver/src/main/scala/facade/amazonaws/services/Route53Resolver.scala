@@ -685,6 +685,7 @@ package route53resolver {
       __obj.asInstanceOf[IpAddressResponse]
     }
   }
+
   @js.native
   sealed trait IpAddressStatus extends js.Any
   object IpAddressStatus extends js.Object {
@@ -1052,6 +1053,7 @@ package route53resolver {
       __obj.asInstanceOf[ResolverEndpoint]
     }
   }
+
   @js.native
   sealed trait ResolverEndpointDirection extends js.Any
   object ResolverEndpointDirection extends js.Object {
@@ -1060,6 +1062,7 @@ package route53resolver {
 
     val values = js.Object.freeze(js.Array(INBOUND, OUTBOUND))
   }
+
   @js.native
   sealed trait ResolverEndpointStatus extends js.Any
   object ResolverEndpointStatus extends js.Object {
@@ -1158,6 +1161,7 @@ package route53resolver {
       __obj.asInstanceOf[ResolverRuleAssociation]
     }
   }
+
   @js.native
   sealed trait ResolverRuleAssociationStatus extends js.Any
   object ResolverRuleAssociationStatus extends js.Object {
@@ -1194,6 +1198,7 @@ package route53resolver {
       __obj.asInstanceOf[ResolverRuleConfig]
     }
   }
+
   @js.native
   sealed trait ResolverRuleStatus extends js.Any
   object ResolverRuleStatus extends js.Object {
@@ -1204,6 +1209,7 @@ package route53resolver {
 
     val values = js.Object.freeze(js.Array(COMPLETE, DELETING, UPDATING, FAILED))
   }
+
   @js.native
   sealed trait RuleTypeOption extends js.Any
   object RuleTypeOption extends js.Object {
@@ -1213,6 +1219,7 @@ package route53resolver {
 
     val values = js.Object.freeze(js.Array(FORWARD, SYSTEM, RECURSIVE))
   }
+
   @js.native
   sealed trait ShareStatus extends js.Any
   object ShareStatus extends js.Object {

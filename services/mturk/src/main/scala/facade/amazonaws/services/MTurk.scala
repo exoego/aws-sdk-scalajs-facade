@@ -340,6 +340,7 @@ package mturk {
       __obj.asInstanceOf[Assignment]
     }
   }
+
   @js.native
   sealed trait AssignmentStatus extends js.Any
   object AssignmentStatus extends js.Object {
@@ -420,6 +421,7 @@ package mturk {
       __obj.asInstanceOf[BonusPayment]
     }
   }
+
   @js.native
   sealed trait Comparator extends js.Any
   object Comparator extends js.Object {
@@ -914,6 +916,7 @@ package mturk {
       __obj.asInstanceOf[DisassociateQualificationFromWorkerResponse]
     }
   }
+
   @js.native
   sealed trait EventType extends js.Any
   object EventType extends js.Object {
@@ -1249,6 +1252,7 @@ package mturk {
       __obj.asInstanceOf[HIT]
     }
   }
+
   @js.native
   sealed trait HITAccessActions extends js.Any
   object HITAccessActions extends js.Object {
@@ -1282,6 +1286,7 @@ package mturk {
       __obj.asInstanceOf[HITLayoutParameter]
     }
   }
+
   @js.native
   sealed trait HITReviewStatus extends js.Any
   object HITReviewStatus extends js.Object {
@@ -1292,6 +1297,7 @@ package mturk {
 
     val values = js.Object.freeze(js.Array(NotReviewed, MarkedForReview, ReviewedAppropriate, ReviewedInappropriate))
   }
+
   @js.native
   sealed trait HITStatus extends js.Any
   object HITStatus extends js.Object {
@@ -1837,6 +1843,7 @@ package mturk {
       __obj.asInstanceOf[NotificationSpecification]
     }
   }
+
   @js.native
   sealed trait NotificationTransport extends js.Any
   object NotificationTransport extends js.Object {
@@ -1846,6 +1853,7 @@ package mturk {
 
     val values = js.Object.freeze(js.Array(Email, SQS, SNS))
   }
+
   @js.native
   sealed trait NotifyWorkersFailureCode extends js.Any
   object NotifyWorkersFailureCode extends js.Object {
@@ -2074,6 +2082,7 @@ package mturk {
       __obj.asInstanceOf[QualificationRequirement]
     }
   }
+
   @js.native
   sealed trait QualificationStatus extends js.Any
   object QualificationStatus extends js.Object {
@@ -2137,6 +2146,7 @@ package mturk {
       __obj.asInstanceOf[QualificationType]
     }
   }
+
   @js.native
   sealed trait QualificationTypeStatus extends js.Any
   object QualificationTypeStatus extends js.Object {
@@ -2262,6 +2272,7 @@ package mturk {
       __obj.asInstanceOf[ReviewActionDetail]
     }
   }
+
   @js.native
   sealed trait ReviewActionStatus extends js.Any
   object ReviewActionStatus extends js.Object {
@@ -2296,6 +2307,7 @@ package mturk {
       __obj.asInstanceOf[ReviewPolicy]
     }
   }
+
   @js.native
   sealed trait ReviewPolicyLevel extends js.Any
   object ReviewPolicyLevel extends js.Object {
@@ -2360,6 +2372,7 @@ package mturk {
       __obj.asInstanceOf[ReviewResultDetail]
     }
   }
+
   @js.native
   sealed trait ReviewableHITStatus extends js.Any
   object ReviewableHITStatus extends js.Object {

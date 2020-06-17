@@ -1144,6 +1144,7 @@ package health {
       __obj.asInstanceOf[OrganizationEventFilter]
     }
   }
+
   @js.native
   sealed trait entityStatusCode extends js.Any
   object entityStatusCode extends js.Object {
@@ -1153,6 +1154,7 @@ package health {
 
     val values = js.Object.freeze(js.Array(IMPAIRED, UNIMPAIRED, UNKNOWN))
   }
+
   @js.native
   sealed trait eventAggregateField extends js.Any
   object eventAggregateField extends js.Object {
@@ -1160,6 +1162,7 @@ package health {
 
     val values = js.Object.freeze(js.Array(eventTypeCategory))
   }
+
   @js.native
   sealed trait eventStatusCode extends js.Any
   object eventStatusCode extends js.Object {
@@ -1169,6 +1172,7 @@ package health {
 
     val values = js.Object.freeze(js.Array(open, closed, upcoming))
   }
+
   @js.native
   sealed trait eventTypeCategory extends js.Any
   object eventTypeCategory extends js.Object {

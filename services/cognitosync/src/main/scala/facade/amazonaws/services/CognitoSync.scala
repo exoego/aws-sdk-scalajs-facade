@@ -157,6 +157,7 @@ package cognitosync {
       __obj.asInstanceOf[BulkPublishResponse]
     }
   }
+
   @js.native
   sealed trait BulkPublishStatus extends js.Any
   object BulkPublishStatus extends js.Object {
@@ -859,6 +860,7 @@ package cognitosync {
   trait NotAuthorizedExceptionException extends js.Object {
     val message: ExceptionMessage
   }
+
   @js.native
   sealed trait Operation extends js.Any
   object Operation extends js.Object {
@@ -867,6 +869,7 @@ package cognitosync {
 
     val values = js.Object.freeze(js.Array(replace, remove))
   }
+
   @js.native
   sealed trait Platform extends js.Any
   object Platform extends js.Object {
@@ -1108,6 +1111,7 @@ package cognitosync {
       __obj.asInstanceOf[SetIdentityPoolConfigurationResponse]
     }
   }
+
   @js.native
   sealed trait StreamingStatus extends js.Any
   object StreamingStatus extends js.Object {

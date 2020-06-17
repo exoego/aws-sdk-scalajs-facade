@@ -185,6 +185,7 @@ package textract {
       __obj.asInstanceOf[Block]
     }
   }
+
   @js.native
   sealed trait BlockType extends js.Any
   object BlockType extends js.Object {
@@ -228,6 +229,7 @@ package textract {
       __obj.asInstanceOf[BoundingBox]
     }
   }
+
   @js.native
   sealed trait ContentClassifier extends js.Any
   object ContentClassifier extends js.Object {
@@ -345,6 +347,7 @@ package textract {
       __obj.asInstanceOf[DocumentMetadata]
     }
   }
+
   @js.native
   sealed trait EntityType extends js.Any
   object EntityType extends js.Object {
@@ -353,6 +356,7 @@ package textract {
 
     val values = js.Object.freeze(js.Array(KEY, VALUE))
   }
+
   @js.native
   sealed trait FeatureType extends js.Any
   object FeatureType extends js.Object {
@@ -579,6 +583,7 @@ package textract {
       __obj.asInstanceOf[HumanLoopDataAttributes]
     }
   }
+
   @js.native
   sealed trait JobStatus extends js.Any
   object JobStatus extends js.Object {
@@ -659,6 +664,7 @@ package textract {
       __obj.asInstanceOf[Relationship]
     }
   }
+
   @js.native
   sealed trait RelationshipType extends js.Any
   object RelationshipType extends js.Object {
@@ -694,6 +700,7 @@ package textract {
       __obj.asInstanceOf[S3Object]
     }
   }
+
   @js.native
   sealed trait SelectionStatus extends js.Any
   object SelectionStatus extends js.Object {

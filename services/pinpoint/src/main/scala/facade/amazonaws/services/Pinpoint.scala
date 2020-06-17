@@ -1064,6 +1064,7 @@ package pinpoint {
       __obj.asInstanceOf[APNSVoipSandboxChannelResponse]
     }
   }
+
   @js.native
   sealed trait Action extends js.Any
   object Action extends js.Object {
@@ -1413,6 +1414,7 @@ package pinpoint {
       __obj.asInstanceOf[AttributeDimension]
     }
   }
+
   @js.native
   sealed trait AttributeType extends js.Any
   object AttributeType extends js.Object {
@@ -1880,6 +1882,7 @@ package pinpoint {
       __obj.asInstanceOf[CampaignState]
     }
   }
+
   @js.native
   sealed trait CampaignStatus extends js.Any
   object CampaignStatus extends js.Object {
@@ -1959,6 +1962,7 @@ package pinpoint {
       __obj.asInstanceOf[ChannelResponse]
     }
   }
+
   @js.native
   sealed trait ChannelType extends js.Any
   object ChannelType extends js.Object {
@@ -3358,6 +3362,7 @@ package pinpoint {
       __obj.asInstanceOf[DeleteVoiceTemplateResponse]
     }
   }
+
   @js.native
   sealed trait DeliveryStatus extends js.Any
   object DeliveryStatus extends js.Object {
@@ -3373,6 +3378,7 @@ package pinpoint {
       js.Array(SUCCESSFUL, THROTTLED, TEMPORARY_FAILURE, PERMANENT_FAILURE, UNKNOWN_FAILURE, OPT_OUT, DUPLICATE)
     )
   }
+
   @js.native
   sealed trait DimensionType extends js.Any
   object DimensionType extends js.Object {
@@ -3426,6 +3432,7 @@ package pinpoint {
       __obj.asInstanceOf[DirectMessageConfiguration]
     }
   }
+
   @js.native
   sealed trait Duration extends js.Any
   object Duration extends js.Object {
@@ -4436,6 +4443,7 @@ package pinpoint {
       __obj.asInstanceOf[ExportJobsResponse]
     }
   }
+
   @js.native
   sealed trait FilterType extends js.Any
   object FilterType extends js.Object {
@@ -4444,6 +4452,7 @@ package pinpoint {
 
     val values = js.Object.freeze(js.Array(SYSTEM, ENDPOINT))
   }
+
   @js.native
   sealed trait Format extends js.Any
   object Format extends js.Object {
@@ -4452,6 +4461,7 @@ package pinpoint {
 
     val values = js.Object.freeze(js.Array(CSV, JSON))
   }
+
   @js.native
   sealed trait Frequency extends js.Any
   object Frequency extends js.Object {
@@ -6542,6 +6552,7 @@ package pinpoint {
       __obj.asInstanceOf[ImportJobsResponse]
     }
   }
+
   @js.native
   sealed trait Include extends js.Any
   object Include extends js.Object {
@@ -6573,6 +6584,7 @@ package pinpoint {
       __obj.asInstanceOf[ItemResponse]
     }
   }
+
   @js.native
   sealed trait JobStatus extends js.Any
   object JobStatus extends js.Object {
@@ -7256,6 +7268,7 @@ package pinpoint {
       __obj.asInstanceOf[MessageResult]
     }
   }
+
   @js.native
   sealed trait MessageType extends js.Any
   object MessageType extends js.Object {
@@ -7288,6 +7301,7 @@ package pinpoint {
       __obj.asInstanceOf[MetricDimension]
     }
   }
+
   @js.native
   sealed trait Mode extends js.Any
   object Mode extends js.Object {
@@ -7425,6 +7439,7 @@ package pinpoint {
       __obj.asInstanceOf[NumberValidateResponse]
     }
   }
+
   @js.native
   sealed trait Operator extends js.Any
   object Operator extends js.Object {
@@ -7802,6 +7817,7 @@ package pinpoint {
       __obj.asInstanceOf[RecencyDimension]
     }
   }
+
   @js.native
   sealed trait RecencyType extends js.Any
   object RecencyType extends js.Object {
@@ -8435,6 +8451,7 @@ package pinpoint {
       __obj.asInstanceOf[SegmentResponse]
     }
   }
+
   @js.native
   sealed trait SegmentType extends js.Any
   object SegmentType extends js.Object {
@@ -8731,6 +8748,7 @@ package pinpoint {
       __obj.asInstanceOf[SimpleEmailPart]
     }
   }
+
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType extends js.Object {
@@ -8762,6 +8780,7 @@ package pinpoint {
       __obj.asInstanceOf[StartCondition]
     }
   }
+
   @js.native
   sealed trait State extends js.Any
   object State extends js.Object {
@@ -8929,6 +8948,7 @@ package pinpoint {
       __obj.asInstanceOf[TemplateResponse]
     }
   }
+
   @js.native
   sealed trait TemplateType extends js.Any
   object TemplateType extends js.Object {
@@ -9074,6 +9094,7 @@ package pinpoint {
       __obj.asInstanceOf[TreatmentResource]
     }
   }
+
   @js.native
   sealed trait Type extends js.Any
   object Type extends js.Object {

@@ -33,13 +33,11 @@ trait Request[T <: js.Object] extends js.Object {
     *  The data read from a readable stream contains only
     *    the raw HTTP body contents.
     *
-    *
     * @return the readable stream object that can be piped or read from (by registering 'data' event listeners).
     */
   def createReadStream(): js.Dynamic = js.native
 
   /**
-    *
     * Iterates over each page of results given a pageable request, calling
     * the provided callback with each page of data. After all pages have been
     * retrieved, the callback is called with `null` data.

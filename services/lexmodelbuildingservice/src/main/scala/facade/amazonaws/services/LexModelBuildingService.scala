@@ -372,6 +372,7 @@ package lexmodelbuildingservice {
       __obj.asInstanceOf[BuiltinSlotTypeMetadata]
     }
   }
+
   @js.native
   sealed trait ChannelStatus extends js.Any
   object ChannelStatus extends js.Object {
@@ -381,6 +382,7 @@ package lexmodelbuildingservice {
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, CREATED, FAILED))
   }
+
   @js.native
   sealed trait ChannelType extends js.Any
   object ChannelType extends js.Object {
@@ -415,6 +417,7 @@ package lexmodelbuildingservice {
       __obj.asInstanceOf[CodeHook]
     }
   }
+
   @js.native
   sealed trait ContentType extends js.Any
   object ContentType extends js.Object {
@@ -878,6 +881,7 @@ package lexmodelbuildingservice {
       __obj.asInstanceOf[DeleteUtterancesRequest]
     }
   }
+
   @js.native
   sealed trait Destination extends js.Any
   object Destination extends js.Object {
@@ -914,6 +918,7 @@ package lexmodelbuildingservice {
       __obj.asInstanceOf[EnumerationValue]
     }
   }
+
   @js.native
   sealed trait ExportStatus extends js.Any
   object ExportStatus extends js.Object {
@@ -923,6 +928,7 @@ package lexmodelbuildingservice {
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, READY, FAILED))
   }
+
   @js.native
   sealed trait ExportType extends js.Any
   object ExportType extends js.Object {
@@ -982,6 +988,7 @@ package lexmodelbuildingservice {
       __obj.asInstanceOf[FulfillmentActivity]
     }
   }
+
   @js.native
   sealed trait FulfillmentActivityType extends js.Any
   object FulfillmentActivityType extends js.Object {
@@ -1968,6 +1975,7 @@ package lexmodelbuildingservice {
       __obj.asInstanceOf[GetUtterancesViewResponse]
     }
   }
+
   @js.native
   sealed trait ImportStatus extends js.Any
   object ImportStatus extends js.Object {
@@ -2032,6 +2040,7 @@ package lexmodelbuildingservice {
       __obj.asInstanceOf[IntentMetadata]
     }
   }
+
   @js.native
   sealed trait Locale extends js.Any
   object Locale extends js.Object {
@@ -2102,6 +2111,7 @@ package lexmodelbuildingservice {
       __obj.asInstanceOf[LogSettingsResponse]
     }
   }
+
   @js.native
   sealed trait LogType extends js.Any
   object LogType extends js.Object {
@@ -2110,6 +2120,7 @@ package lexmodelbuildingservice {
 
     val values = js.Object.freeze(js.Array(AUDIO, TEXT))
   }
+
   @js.native
   sealed trait MergeStrategy extends js.Any
   object MergeStrategy extends js.Object {
@@ -2145,6 +2156,7 @@ package lexmodelbuildingservice {
       __obj.asInstanceOf[Message]
     }
   }
+
   @js.native
   sealed trait ObfuscationSetting extends js.Any
   object ObfuscationSetting extends js.Object {
@@ -2153,6 +2165,7 @@ package lexmodelbuildingservice {
 
     val values = js.Object.freeze(js.Array(NONE, DEFAULT_OBFUSCATION))
   }
+
   @js.native
   sealed trait ProcessBehavior extends js.Any
   object ProcessBehavior extends js.Object {
@@ -2576,6 +2589,7 @@ package lexmodelbuildingservice {
       __obj.asInstanceOf[PutSlotTypeResponse]
     }
   }
+
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {
@@ -2633,6 +2647,7 @@ package lexmodelbuildingservice {
       __obj.asInstanceOf[Slot]
     }
   }
+
   @js.native
   sealed trait SlotConstraint extends js.Any
   object SlotConstraint extends js.Object {
@@ -2712,6 +2727,7 @@ package lexmodelbuildingservice {
       __obj.asInstanceOf[SlotTypeRegexConfiguration]
     }
   }
+
   @js.native
   sealed trait SlotValueSelectionStrategy extends js.Any
   object SlotValueSelectionStrategy extends js.Object {
@@ -2799,6 +2815,7 @@ package lexmodelbuildingservice {
       __obj.asInstanceOf[Statement]
     }
   }
+
   @js.native
   sealed trait Status extends js.Any
   object Status extends js.Object {
@@ -2810,6 +2827,7 @@ package lexmodelbuildingservice {
 
     val values = js.Object.freeze(js.Array(BUILDING, READY, READY_BASIC_TESTING, FAILED, NOT_BUILT))
   }
+
   @js.native
   sealed trait StatusType extends js.Any
   object StatusType extends js.Object {

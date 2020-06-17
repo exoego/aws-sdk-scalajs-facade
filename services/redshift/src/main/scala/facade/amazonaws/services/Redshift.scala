@@ -558,6 +558,7 @@ package redshift {
       __obj.asInstanceOf[AccountWithRestoreAccess]
     }
   }
+
   @js.native
   sealed trait ActionType extends js.Any
   object ActionType extends js.Object {
@@ -4115,6 +4116,7 @@ package redshift {
       __obj.asInstanceOf[MaintenanceTrack]
     }
   }
+
   @js.native
   sealed trait Mode extends js.Any
   object Mode extends js.Object {
@@ -4716,6 +4718,7 @@ package redshift {
       __obj.asInstanceOf[NodeConfigurationOptionsFilter]
     }
   }
+
   @js.native
   sealed trait NodeConfigurationOptionsFilterName extends js.Any
   object NodeConfigurationOptionsFilterName extends js.Object {
@@ -4748,6 +4751,7 @@ package redshift {
       __obj.asInstanceOf[NodeConfigurationOptionsMessage]
     }
   }
+
   @js.native
   sealed trait OperatorType extends js.Any
   object OperatorType extends js.Object {
@@ -4854,6 +4858,7 @@ package redshift {
       __obj.asInstanceOf[Parameter]
     }
   }
+
   @js.native
   sealed trait ParameterApplyType extends js.Any
   object ParameterApplyType extends js.Object {
@@ -5110,6 +5115,7 @@ package redshift {
       __obj.asInstanceOf[ReservedNodeOffering]
     }
   }
+
   @js.native
   sealed trait ReservedNodeOfferingType extends js.Any
   object ReservedNodeOfferingType extends js.Object {
@@ -5708,6 +5714,7 @@ package redshift {
       __obj.asInstanceOf[RotateEncryptionKeyResult]
     }
   }
+
   @js.native
   sealed trait ScheduleState extends js.Any
   object ScheduleState extends js.Object {
@@ -5786,6 +5793,7 @@ package redshift {
       __obj.asInstanceOf[ScheduledActionFilter]
     }
   }
+
   @js.native
   sealed trait ScheduledActionFilterName extends js.Any
   object ScheduledActionFilterName extends js.Object {
@@ -5794,6 +5802,7 @@ package redshift {
 
     val values = js.Object.freeze(js.Array(`cluster-identifier`, `iam-role`))
   }
+
   @js.native
   sealed trait ScheduledActionState extends js.Any
   object ScheduledActionState extends js.Object {
@@ -5821,6 +5830,7 @@ package redshift {
       __obj.asInstanceOf[ScheduledActionType]
     }
   }
+
   @js.native
   sealed trait ScheduledActionTypeValues extends js.Any
   object ScheduledActionTypeValues extends js.Object {
@@ -5980,6 +5990,7 @@ package redshift {
       __obj.asInstanceOf[Snapshot]
     }
   }
+
   @js.native
   sealed trait SnapshotAttributeToSortBy extends js.Any
   object SnapshotAttributeToSortBy extends js.Object {
@@ -6150,6 +6161,7 @@ package redshift {
       __obj.asInstanceOf[SnapshotSortingEntity]
     }
   }
+
   @js.native
   sealed trait SortByOrder extends js.Any
   object SortByOrder extends js.Object {
@@ -6158,6 +6170,7 @@ package redshift {
 
     val values = js.Object.freeze(js.Array(ASC, DESC))
   }
+
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType extends js.Object {
@@ -6316,6 +6329,7 @@ package redshift {
       __obj.asInstanceOf[TableRestoreStatusMessage]
     }
   }
+
   @js.native
   sealed trait TableRestoreStatusType extends js.Any
   object TableRestoreStatusType extends js.Object {

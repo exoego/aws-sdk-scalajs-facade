@@ -741,6 +741,7 @@ package fsx {
       __obj.asInstanceOf[DataRepositoryTaskFilter]
     }
   }
+
   @js.native
   sealed trait DataRepositoryTaskFilterName extends js.Any
   object DataRepositoryTaskFilterName extends js.Object {
@@ -749,6 +750,7 @@ package fsx {
 
     val values = js.Object.freeze(js.Array(`file-system-id`, `task-lifecycle`))
   }
+
   @js.native
   sealed trait DataRepositoryTaskLifecycle extends js.Any
   object DataRepositoryTaskLifecycle extends js.Object {
@@ -789,6 +791,7 @@ package fsx {
       __obj.asInstanceOf[DataRepositoryTaskStatus]
     }
   }
+
   @js.native
   sealed trait DataRepositoryTaskType extends js.Any
   object DataRepositoryTaskType extends js.Object {
@@ -1311,6 +1314,7 @@ package fsx {
       __obj.asInstanceOf[LustreFileSystemConfiguration]
     }
   }
+
   @js.native
   sealed trait ReportFormat extends js.Any
   object ReportFormat extends js.Object {
@@ -1318,6 +1322,7 @@ package fsx {
 
     val values = js.Object.freeze(js.Array(REPORT_CSV_20191124))
   }
+
   @js.native
   sealed trait ReportScope extends js.Any
   object ReportScope extends js.Object {
@@ -1634,6 +1639,7 @@ package fsx {
       __obj.asInstanceOf[UpdateFileSystemWindowsConfiguration]
     }
   }
+
   @js.native
   sealed trait WindowsDeploymentType extends js.Any
   object WindowsDeploymentType extends js.Object {

@@ -749,6 +749,7 @@ package sqs {
       __obj.asInstanceOf[MessageAttributeValue]
     }
   }
+
   @js.native
   sealed trait MessageSystemAttributeName extends js.Any
   object MessageSystemAttributeName extends js.Object {
@@ -774,6 +775,7 @@ package sqs {
       )
     )
   }
+
   @js.native
   sealed trait MessageSystemAttributeNameForSends extends js.Any
   object MessageSystemAttributeNameForSends extends js.Object {
@@ -836,6 +838,7 @@ package sqs {
       __obj.asInstanceOf[PurgeQueueRequest]
     }
   }
+
   @js.native
   sealed trait QueueAttributeName extends js.Any
   object QueueAttributeName extends js.Object {

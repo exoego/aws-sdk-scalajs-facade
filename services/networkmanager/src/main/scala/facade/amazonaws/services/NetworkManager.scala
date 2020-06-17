@@ -462,6 +462,7 @@ package networkmanager {
       __obj.asInstanceOf[CustomerGatewayAssociation]
     }
   }
+
   @js.native
   sealed trait CustomerGatewayAssociationState extends js.Any
   object CustomerGatewayAssociationState extends js.Object {
@@ -752,6 +753,7 @@ package networkmanager {
       __obj.asInstanceOf[Device]
     }
   }
+
   @js.native
   sealed trait DeviceState extends js.Any
   object DeviceState extends js.Object {
@@ -1170,6 +1172,7 @@ package networkmanager {
       __obj.asInstanceOf[GlobalNetwork]
     }
   }
+
   @js.native
   sealed trait GlobalNetworkState extends js.Any
   object GlobalNetworkState extends js.Object {
@@ -1257,6 +1260,7 @@ package networkmanager {
       __obj.asInstanceOf[LinkAssociation]
     }
   }
+
   @js.native
   sealed trait LinkAssociationState extends js.Any
   object LinkAssociationState extends js.Object {
@@ -1267,6 +1271,7 @@ package networkmanager {
 
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, DELETING, DELETED))
   }
+
   @js.native
   sealed trait LinkState extends js.Any
   object LinkState extends js.Object {
@@ -1415,6 +1420,7 @@ package networkmanager {
       __obj.asInstanceOf[Site]
     }
   }
+
   @js.native
   sealed trait SiteState extends js.Any
   object SiteState extends js.Object {
@@ -1506,6 +1512,7 @@ package networkmanager {
       __obj.asInstanceOf[TransitGatewayRegistration]
     }
   }
+
   @js.native
   sealed trait TransitGatewayRegistrationState extends js.Any
   object TransitGatewayRegistrationState extends js.Object {

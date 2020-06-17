@@ -232,6 +232,7 @@ package codegurureviewer {
       __obj.asInstanceOf[ListRepositoryAssociationsResponse]
     }
   }
+
   @js.native
   sealed trait ProviderType extends js.Any
   object ProviderType extends js.Object {
@@ -302,6 +303,7 @@ package codegurureviewer {
       __obj.asInstanceOf[RepositoryAssociation]
     }
   }
+
   @js.native
   sealed trait RepositoryAssociationState extends js.Any
   object RepositoryAssociationState extends js.Object {

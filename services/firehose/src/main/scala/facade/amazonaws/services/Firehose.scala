@@ -177,6 +177,7 @@ package firehose {
       __obj.asInstanceOf[CloudWatchLoggingOptions]
     }
   }
+
   @js.native
   sealed trait CompressionFormat extends js.Any
   object CompressionFormat extends js.Object {
@@ -462,6 +463,7 @@ package firehose {
       __obj.asInstanceOf[DeliveryStreamEncryptionConfigurationInput]
     }
   }
+
   @js.native
   sealed trait DeliveryStreamEncryptionStatus extends js.Any
   object DeliveryStreamEncryptionStatus extends js.Object {
@@ -474,6 +476,7 @@ package firehose {
 
     val values = js.Object.freeze(js.Array(ENABLED, ENABLING, ENABLING_FAILED, DISABLED, DISABLING, DISABLING_FAILED))
   }
+
   @js.native
   sealed trait DeliveryStreamFailureType extends js.Any
   object DeliveryStreamFailureType extends js.Object {
@@ -499,6 +502,7 @@ package firehose {
       )
     )
   }
+
   @js.native
   sealed trait DeliveryStreamStatus extends js.Any
   object DeliveryStreamStatus extends js.Object {
@@ -510,6 +514,7 @@ package firehose {
 
     val values = js.Object.freeze(js.Array(CREATING, CREATING_FAILED, DELETING, DELETING_FAILED, ACTIVE))
   }
+
   @js.native
   sealed trait DeliveryStreamType extends js.Any
   object DeliveryStreamType extends js.Object {
@@ -805,6 +810,7 @@ package firehose {
       __obj.asInstanceOf[ElasticsearchDestinationUpdate]
     }
   }
+
   @js.native
   sealed trait ElasticsearchIndexRotationPeriod extends js.Any
   object ElasticsearchIndexRotationPeriod extends js.Object {
@@ -835,6 +841,7 @@ package firehose {
       __obj.asInstanceOf[ElasticsearchRetryOptions]
     }
   }
+
   @js.native
   sealed trait ElasticsearchS3BackupMode extends js.Any
   object ElasticsearchS3BackupMode extends js.Object {
@@ -1055,6 +1062,7 @@ package firehose {
       __obj.asInstanceOf[FailureDescription]
     }
   }
+
   @js.native
   sealed trait HECEndpointType extends js.Any
   object HECEndpointType extends js.Object {
@@ -1122,6 +1130,7 @@ package firehose {
       __obj.asInstanceOf[KMSEncryptionConfig]
     }
   }
+
   @js.native
   sealed trait KeyType extends js.Any
   object KeyType extends js.Object {
@@ -1269,6 +1278,7 @@ package firehose {
       __obj.asInstanceOf[ListTagsForDeliveryStreamOutput]
     }
   }
+
   @js.native
   sealed trait NoEncryptionConfig extends js.Any
   object NoEncryptionConfig extends js.Object {
@@ -1303,6 +1313,7 @@ package firehose {
       __obj.asInstanceOf[OpenXJsonSerDe]
     }
   }
+
   @js.native
   sealed trait OrcCompression extends js.Any
   object OrcCompression extends js.Object {
@@ -1312,6 +1323,7 @@ package firehose {
 
     val values = js.Object.freeze(js.Array(NONE, ZLIB, SNAPPY))
   }
+
   @js.native
   sealed trait OrcFormatVersion extends js.Any
   object OrcFormatVersion extends js.Object {
@@ -1387,6 +1399,7 @@ package firehose {
       __obj.asInstanceOf[OutputFormatConfiguration]
     }
   }
+
   @js.native
   sealed trait ParquetCompression extends js.Any
   object ParquetCompression extends js.Object {
@@ -1432,6 +1445,7 @@ package firehose {
       __obj.asInstanceOf[ParquetSerDe]
     }
   }
+
   @js.native
   sealed trait ParquetWriterVersion extends js.Any
   object ParquetWriterVersion extends js.Object {
@@ -1510,6 +1524,7 @@ package firehose {
       __obj.asInstanceOf[ProcessorParameter]
     }
   }
+
   @js.native
   sealed trait ProcessorParameterName extends js.Any
   object ProcessorParameterName extends js.Object {
@@ -1522,6 +1537,7 @@ package firehose {
     val values =
       js.Object.freeze(js.Array(LambdaArn, NumberOfRetries, RoleArn, BufferSizeInMBs, BufferIntervalInSeconds))
   }
+
   @js.native
   sealed trait ProcessorType extends js.Any
   object ProcessorType extends js.Object {
@@ -1829,6 +1845,7 @@ package firehose {
       __obj.asInstanceOf[RedshiftRetryOptions]
     }
   }
+
   @js.native
   sealed trait RedshiftS3BackupMode extends js.Any
   object RedshiftS3BackupMode extends js.Object {
@@ -1837,6 +1854,7 @@ package firehose {
 
     val values = js.Object.freeze(js.Array(Disabled, Enabled))
   }
+
   @js.native
   sealed trait S3BackupMode extends js.Any
   object S3BackupMode extends js.Object {
@@ -2202,6 +2220,7 @@ package firehose {
       __obj.asInstanceOf[SplunkRetryOptions]
     }
   }
+
   @js.native
   sealed trait SplunkS3BackupMode extends js.Any
   object SplunkS3BackupMode extends js.Object {

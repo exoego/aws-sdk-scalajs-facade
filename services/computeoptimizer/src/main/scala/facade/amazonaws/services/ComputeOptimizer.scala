@@ -225,6 +225,7 @@ package computeoptimizer {
       __obj.asInstanceOf[Filter]
     }
   }
+
   @js.native
   sealed trait FilterName extends js.Any
   object FilterName extends js.Object {
@@ -233,6 +234,7 @@ package computeoptimizer {
 
     val values = js.Object.freeze(js.Array(Finding, RecommendationSourceType))
   }
+
   @js.native
   sealed trait Finding extends js.Any
   object Finding extends js.Object {
@@ -571,6 +573,7 @@ package computeoptimizer {
       __obj.asInstanceOf[InstanceRecommendationOption]
     }
   }
+
   @js.native
   sealed trait MetricName extends js.Any
   object MetricName extends js.Object {
@@ -579,6 +582,7 @@ package computeoptimizer {
 
     val values = js.Object.freeze(js.Array(Cpu, Memory))
   }
+
   @js.native
   sealed trait MetricStatistic extends js.Any
   object MetricStatistic extends js.Object {
@@ -634,6 +638,7 @@ package computeoptimizer {
       __obj.asInstanceOf[RecommendationSource]
     }
   }
+
   @js.native
   sealed trait RecommendationSourceType extends js.Any
   object RecommendationSourceType extends js.Object {
@@ -694,6 +699,7 @@ package computeoptimizer {
       __obj.asInstanceOf[RecommendedOptionProjectedMetric]
     }
   }
+
   @js.native
   sealed trait Status extends js.Any
   object Status extends js.Object {

@@ -2646,6 +2646,7 @@ package personalize {
       __obj.asInstanceOf[Recipe]
     }
   }
+
   @js.native
   sealed trait RecipeProvider extends js.Any
   object RecipeProvider extends js.Object {
@@ -2916,6 +2917,7 @@ package personalize {
       __obj.asInstanceOf[SolutionVersionSummary]
     }
   }
+
   @js.native
   sealed trait TrainingMode extends js.Any
   object TrainingMode extends js.Object {

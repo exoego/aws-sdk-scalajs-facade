@@ -1866,6 +1866,7 @@ package clouddirectory {
       __obj.asInstanceOf[BatchReadException]
     }
   }
+
   @js.native
   sealed trait BatchReadExceptionType extends js.Any
   object BatchReadExceptionType extends js.Object {
@@ -2361,6 +2362,7 @@ package clouddirectory {
       __obj.asInstanceOf[BatchWriteResponse]
     }
   }
+
   @js.native
   sealed trait ConsistencyLevel extends js.Any
   object ConsistencyLevel extends js.Object {
@@ -2958,6 +2960,7 @@ package clouddirectory {
       __obj.asInstanceOf[Directory]
     }
   }
+
   @js.native
   sealed trait DirectoryState extends js.Any
   object DirectoryState extends js.Object {
@@ -3148,6 +3151,7 @@ package clouddirectory {
       __obj.asInstanceOf[FacetAttributeReference]
     }
   }
+
   @js.native
   sealed trait FacetAttributeType extends js.Any
   object FacetAttributeType extends js.Object {
@@ -3182,6 +3186,7 @@ package clouddirectory {
       __obj.asInstanceOf[FacetAttributeUpdate]
     }
   }
+
   @js.native
   sealed trait FacetStyle extends js.Any
   object FacetStyle extends js.Object {
@@ -4671,6 +4676,7 @@ package clouddirectory {
       __obj.asInstanceOf[ObjectReference]
     }
   }
+
   @js.native
   sealed trait ObjectType extends js.Any
   object ObjectType extends js.Object {
@@ -4830,6 +4836,7 @@ package clouddirectory {
       __obj.asInstanceOf[PutSchemaFromJsonResponse]
     }
   }
+
   @js.native
   sealed trait RangeMode extends js.Any
   object RangeMode extends js.Object {
@@ -4878,6 +4885,7 @@ package clouddirectory {
       __obj.asInstanceOf[RemoveFacetFromObjectResponse]
     }
   }
+
   @js.native
   sealed trait RequiredAttributeBehavior extends js.Any
   object RequiredAttributeBehavior extends js.Object {
@@ -4908,6 +4916,7 @@ package clouddirectory {
       __obj.asInstanceOf[Rule]
     }
   }
+
   @js.native
   sealed trait RuleType extends js.Any
   object RuleType extends js.Object {
@@ -5256,6 +5265,7 @@ package clouddirectory {
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
+
   @js.native
   sealed trait UpdateActionType extends js.Any
   object UpdateActionType extends js.Object {

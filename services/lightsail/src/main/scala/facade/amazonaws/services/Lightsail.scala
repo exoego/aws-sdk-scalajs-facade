@@ -514,6 +514,7 @@ package lightsail {
         params: UpdateRelationalDatabaseParametersRequest
     ): Request[UpdateRelationalDatabaseParametersResult] = js.native
   }
+
   @js.native
   sealed trait AccessDirection extends js.Any
   object AccessDirection extends js.Object {
@@ -576,6 +577,7 @@ package lightsail {
       __obj.asInstanceOf[AddOnRequest]
     }
   }
+
   @js.native
   sealed trait AddOnType extends js.Any
   object AddOnType extends js.Object {
@@ -842,6 +844,7 @@ package lightsail {
       __obj.asInstanceOf[AutoSnapshotDetails]
     }
   }
+
   @js.native
   sealed trait AutoSnapshotStatus extends js.Any
   object AutoSnapshotStatus extends js.Object {
@@ -926,6 +929,7 @@ package lightsail {
       __obj.asInstanceOf[Blueprint]
     }
   }
+
   @js.native
   sealed trait BlueprintType extends js.Any
   object BlueprintType extends js.Object {
@@ -1086,6 +1090,7 @@ package lightsail {
       __obj.asInstanceOf[CloudFormationStackRecordSourceInfo]
     }
   }
+
   @js.native
   sealed trait CloudFormationStackRecordSourceType extends js.Any
   object CloudFormationStackRecordSourceType extends js.Object {
@@ -2715,6 +2720,7 @@ package lightsail {
       __obj.asInstanceOf[DiskSnapshotInfo]
     }
   }
+
   @js.native
   sealed trait DiskSnapshotState extends js.Any
   object DiskSnapshotState extends js.Object {
@@ -2725,6 +2731,7 @@ package lightsail {
 
     val values = js.Object.freeze(js.Array(pending, completed, error, unknown))
   }
+
   @js.native
   sealed trait DiskState extends js.Any
   object DiskState extends js.Object {
@@ -2959,6 +2966,7 @@ package lightsail {
       __obj.asInstanceOf[ExportSnapshotRecordSourceInfo]
     }
   }
+
   @js.native
   sealed trait ExportSnapshotRecordSourceType extends js.Any
   object ExportSnapshotRecordSourceType extends js.Object {
@@ -4849,6 +4857,7 @@ package lightsail {
       __obj.asInstanceOf[InstanceAccessDetails]
     }
   }
+
   @js.native
   sealed trait InstanceAccessProtocol extends js.Any
   object InstanceAccessProtocol extends js.Object {
@@ -4915,6 +4924,7 @@ package lightsail {
       __obj.asInstanceOf[InstanceHardware]
     }
   }
+
   @js.native
   sealed trait InstanceHealthReason extends js.Any
   object InstanceHealthReason extends js.Object {
@@ -4946,6 +4956,7 @@ package lightsail {
       )
     )
   }
+
   @js.native
   sealed trait InstanceHealthState extends js.Any
   object InstanceHealthState extends js.Object {
@@ -4983,6 +4994,7 @@ package lightsail {
       __obj.asInstanceOf[InstanceHealthSummary]
     }
   }
+
   @js.native
   sealed trait InstanceMetricName extends js.Any
   object InstanceMetricName extends js.Object {
@@ -5026,6 +5038,7 @@ package lightsail {
       __obj.asInstanceOf[InstanceNetworking]
     }
   }
+
   @js.native
   sealed trait InstancePlatform extends js.Any
   object InstancePlatform extends js.Object {
@@ -5188,6 +5201,7 @@ package lightsail {
       __obj.asInstanceOf[InstanceSnapshotInfo]
     }
   }
+
   @js.native
   sealed trait InstanceSnapshotState extends js.Any
   object InstanceSnapshotState extends js.Object {
@@ -5352,6 +5366,7 @@ package lightsail {
       __obj.asInstanceOf[LoadBalancer]
     }
   }
+
   @js.native
   sealed trait LoadBalancerAttributeName extends js.Any
   object LoadBalancerAttributeName extends js.Object {
@@ -5363,6 +5378,7 @@ package lightsail {
     val values =
       js.Object.freeze(js.Array(HealthCheckPath, SessionStickinessEnabled, SessionStickiness_LB_CookieDurationSeconds))
   }
+
   @js.native
   sealed trait LoadBalancerMetricName extends js.Any
   object LoadBalancerMetricName extends js.Object {
@@ -5396,6 +5412,7 @@ package lightsail {
       )
     )
   }
+
   @js.native
   sealed trait LoadBalancerProtocol extends js.Any
   object LoadBalancerProtocol extends js.Object {
@@ -5404,6 +5421,7 @@ package lightsail {
 
     val values = js.Object.freeze(js.Array(HTTP_HTTPS, HTTP))
   }
+
   @js.native
   sealed trait LoadBalancerState extends js.Any
   object LoadBalancerState extends js.Object {
@@ -5507,6 +5525,7 @@ package lightsail {
       __obj.asInstanceOf[LoadBalancerTlsCertificate]
     }
   }
+
   @js.native
   sealed trait LoadBalancerTlsCertificateDomainStatus extends js.Any
   object LoadBalancerTlsCertificateDomainStatus extends js.Object {
@@ -5569,6 +5588,7 @@ package lightsail {
       __obj.asInstanceOf[LoadBalancerTlsCertificateDomainValidationRecord]
     }
   }
+
   @js.native
   sealed trait LoadBalancerTlsCertificateFailureReason extends js.Any
   object LoadBalancerTlsCertificateFailureReason extends js.Object {
@@ -5589,6 +5609,7 @@ package lightsail {
       )
     )
   }
+
   @js.native
   sealed trait LoadBalancerTlsCertificateRenewalStatus extends js.Any
   object LoadBalancerTlsCertificateRenewalStatus extends js.Object {
@@ -5621,6 +5642,7 @@ package lightsail {
       __obj.asInstanceOf[LoadBalancerTlsCertificateRenewalSummary]
     }
   }
+
   @js.native
   sealed trait LoadBalancerTlsCertificateRevocationReason extends js.Any
   object LoadBalancerTlsCertificateRevocationReason extends js.Object {
@@ -5650,6 +5672,7 @@ package lightsail {
       )
     )
   }
+
   @js.native
   sealed trait LoadBalancerTlsCertificateStatus extends js.Any
   object LoadBalancerTlsCertificateStatus extends js.Object {
@@ -5747,6 +5770,7 @@ package lightsail {
       __obj.asInstanceOf[MetricDatapoint]
     }
   }
+
   @js.native
   sealed trait MetricStatistic extends js.Any
   object MetricStatistic extends js.Object {
@@ -5758,6 +5782,7 @@ package lightsail {
 
     val values = js.Object.freeze(js.Array(Minimum, Maximum, Sum, Average, SampleCount))
   }
+
   @js.native
   sealed trait MetricUnit extends js.Any
   object MetricUnit extends js.Object {
@@ -5840,6 +5865,7 @@ package lightsail {
       __obj.asInstanceOf[MonthlyTransfer]
     }
   }
+
   @js.native
   sealed trait NetworkProtocol extends js.Any
   object NetworkProtocol extends js.Object {
@@ -5938,6 +5964,7 @@ package lightsail {
       __obj.asInstanceOf[Operation]
     }
   }
+
   @js.native
   sealed trait OperationStatus extends js.Any
   object OperationStatus extends js.Object {
@@ -5949,6 +5976,7 @@ package lightsail {
 
     val values = js.Object.freeze(js.Array(NotStarted, Started, Failed, Completed, Succeeded))
   }
+
   @js.native
   sealed trait OperationType extends js.Any
   object OperationType extends js.Object {
@@ -6153,6 +6181,7 @@ package lightsail {
       __obj.asInstanceOf[PendingModifiedRelationalDatabaseValues]
     }
   }
+
   @js.native
   sealed trait PortAccessType extends js.Any
   object PortAccessType extends js.Object {
@@ -6186,6 +6215,7 @@ package lightsail {
       __obj.asInstanceOf[PortInfo]
     }
   }
+
   @js.native
   sealed trait PortInfoSourceType extends js.Any
   object PortInfoSourceType extends js.Object {
@@ -6196,6 +6226,7 @@ package lightsail {
 
     val values = js.Object.freeze(js.Array(DEFAULT, INSTANCE, NONE, CLOSED))
   }
+
   @js.native
   sealed trait PortState extends js.Any
   object PortState extends js.Object {
@@ -6309,6 +6340,7 @@ package lightsail {
       __obj.asInstanceOf[RebootRelationalDatabaseResult]
     }
   }
+
   @js.native
   sealed trait RecordState extends js.Any
   object RecordState extends js.Object {
@@ -6354,6 +6386,7 @@ package lightsail {
       __obj.asInstanceOf[Region]
     }
   }
+
   @js.native
   sealed trait RegionName extends js.Any
   object RegionName extends js.Object {
@@ -6594,6 +6627,7 @@ package lightsail {
       __obj.asInstanceOf[RelationalDatabaseEndpoint]
     }
   }
+
   @js.native
   sealed trait RelationalDatabaseEngine extends js.Any
   object RelationalDatabaseEngine extends js.Object {
@@ -6654,6 +6688,7 @@ package lightsail {
       __obj.asInstanceOf[RelationalDatabaseHardware]
     }
   }
+
   @js.native
   sealed trait RelationalDatabaseMetricName extends js.Any
   object RelationalDatabaseMetricName extends js.Object {
@@ -6715,6 +6750,7 @@ package lightsail {
       __obj.asInstanceOf[RelationalDatabaseParameter]
     }
   }
+
   @js.native
   sealed trait RelationalDatabasePasswordVersion extends js.Any
   object RelationalDatabasePasswordVersion extends js.Object {
@@ -6849,6 +6885,7 @@ package lightsail {
       __obj.asInstanceOf[ResourceLocation]
     }
   }
+
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {

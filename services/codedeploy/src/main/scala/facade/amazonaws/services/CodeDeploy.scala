@@ -286,18 +286,16 @@ package codedeploy {
     @deprecated(
       "This operation is deprecated, use ContinueDeployment with DeploymentWaitType instead.",
       "forever"
-    ) def skipWaitTimeForInstanceTermination(
-        params: SkipWaitTimeForInstanceTerminationInput
-    ): Request[js.Object] = js.native
+    ) def skipWaitTimeForInstanceTermination(params: SkipWaitTimeForInstanceTerminationInput): Request[js.Object] =
+      js.native
     @deprecated("This operation is deprecated, use GetDeploymentTarget instead.", "forever") def getDeploymentInstance(
         params: GetDeploymentInstanceInput
     ): Request[GetDeploymentInstanceOutput] = js.native
     @deprecated(
       "This operation is deprecated, use ListDeploymentTargets instead.",
       "forever"
-    ) def listDeploymentInstances(
-        params: ListDeploymentInstancesInput
-    ): Request[ListDeploymentInstancesOutput] = js.native
+    ) def listDeploymentInstances(params: ListDeploymentInstancesInput): Request[ListDeploymentInstancesOutput] =
+      js.native
   }
 
   /**
@@ -423,6 +421,7 @@ package codedeploy {
       __obj.asInstanceOf[ApplicationInfo]
     }
   }
+
   @js.native
   sealed trait ApplicationRevisionSortBy extends js.Any
   object ApplicationRevisionSortBy extends js.Object {
@@ -454,6 +453,7 @@ package codedeploy {
       __obj.asInstanceOf[AutoRollbackConfiguration]
     }
   }
+
   @js.native
   sealed trait AutoRollbackEvent extends js.Any
   object AutoRollbackEvent extends js.Object {
@@ -834,6 +834,7 @@ package codedeploy {
       __obj.asInstanceOf[BlueInstanceTerminationOption]
     }
   }
+
   @js.native
   sealed trait BundleType extends js.Any
   object BundleType extends js.Object {
@@ -845,6 +846,7 @@ package codedeploy {
 
     val values = js.Object.freeze(js.Array(tar, tgz, zip, YAML, JSON))
   }
+
   @js.native
   sealed trait ComputePlatform extends js.Any
   object ComputePlatform extends js.Object {
@@ -1292,6 +1294,7 @@ package codedeploy {
       __obj.asInstanceOf[DeploymentConfigInfo]
     }
   }
+
   @js.native
   sealed trait DeploymentCreator extends js.Any
   object DeploymentCreator extends js.Object {
@@ -1495,6 +1498,7 @@ package codedeploy {
       __obj.asInstanceOf[DeploymentInfo]
     }
   }
+
   @js.native
   sealed trait DeploymentOption extends js.Any
   object DeploymentOption extends js.Object {
@@ -1537,6 +1541,7 @@ package codedeploy {
       __obj.asInstanceOf[DeploymentOverview]
     }
   }
+
   @js.native
   sealed trait DeploymentReadyAction extends js.Any
   object DeploymentReadyAction extends js.Object {
@@ -1567,6 +1572,7 @@ package codedeploy {
       __obj.asInstanceOf[DeploymentReadyOption]
     }
   }
+
   @js.native
   sealed trait DeploymentStatus extends js.Any
   object DeploymentStatus extends js.Object {
@@ -1630,6 +1636,7 @@ package codedeploy {
       __obj.asInstanceOf[DeploymentTarget]
     }
   }
+
   @js.native
   sealed trait DeploymentTargetType extends js.Any
   object DeploymentTargetType extends js.Object {
@@ -1639,6 +1646,7 @@ package codedeploy {
 
     val values = js.Object.freeze(js.Array(InstanceTarget, LambdaTarget, ECSTarget))
   }
+
   @js.native
   sealed trait DeploymentType extends js.Any
   object DeploymentType extends js.Object {
@@ -1647,6 +1655,7 @@ package codedeploy {
 
     val values = js.Object.freeze(js.Array(IN_PLACE, BLUE_GREEN))
   }
+
   @js.native
   sealed trait DeploymentWaitType extends js.Any
   object DeploymentWaitType extends js.Object {
@@ -1729,6 +1738,7 @@ package codedeploy {
       __obj.asInstanceOf[EC2TagFilter]
     }
   }
+
   @js.native
   sealed trait EC2TagFilterType extends js.Any
   object EC2TagFilterType extends js.Object {
@@ -1875,6 +1885,7 @@ package codedeploy {
       __obj.asInstanceOf[ELBInfo]
     }
   }
+
   @js.native
   sealed trait ErrorCode extends js.Any
   object ErrorCode extends js.Object {
@@ -1973,6 +1984,7 @@ package codedeploy {
       __obj.asInstanceOf[ErrorInformation]
     }
   }
+
   @js.native
   sealed trait FileExistsBehavior extends js.Any
   object FileExistsBehavior extends js.Object {
@@ -2365,6 +2377,7 @@ package codedeploy {
       __obj.asInstanceOf[GitHubLocation]
     }
   }
+
   @js.native
   sealed trait GreenFleetProvisioningAction extends js.Any
   object GreenFleetProvisioningAction extends js.Object {
@@ -2392,6 +2405,7 @@ package codedeploy {
       __obj.asInstanceOf[GreenFleetProvisioningOption]
     }
   }
+
   @js.native
   sealed trait InstanceAction extends js.Any
   object InstanceAction extends js.Object {
@@ -2524,6 +2538,7 @@ package codedeploy {
       __obj.asInstanceOf[InstanceTarget]
     }
   }
+
   @js.native
   sealed trait InstanceType extends js.Any
   object InstanceType extends js.Object {
@@ -2628,6 +2643,7 @@ package codedeploy {
       __obj.asInstanceOf[LastDeploymentInfo]
     }
   }
+
   @js.native
   sealed trait LifecycleErrorCode extends js.Any
   object LifecycleErrorCode extends js.Object {
@@ -2673,6 +2689,7 @@ package codedeploy {
       __obj.asInstanceOf[LifecycleEvent]
     }
   }
+
   @js.native
   sealed trait LifecycleEventStatus extends js.Any
   object LifecycleEventStatus extends js.Object {
@@ -3111,6 +3128,7 @@ package codedeploy {
       __obj.asInstanceOf[ListOnPremisesInstancesOutput]
     }
   }
+
   @js.native
   sealed trait ListStateFilterAction extends js.Any
   object ListStateFilterAction extends js.Object {
@@ -3207,6 +3225,7 @@ package codedeploy {
       __obj.asInstanceOf[MinimumHealthyHosts]
     }
   }
+
   @js.native
   sealed trait MinimumHealthyHostsType extends js.Any
   object MinimumHealthyHostsType extends js.Object {
@@ -3353,6 +3372,7 @@ package codedeploy {
       __obj.asInstanceOf[RegisterOnPremisesInstanceInput]
     }
   }
+
   @js.native
   sealed trait RegistrationStatus extends js.Any
   object RegistrationStatus extends js.Object {
@@ -3438,6 +3458,7 @@ package codedeploy {
       __obj.asInstanceOf[RevisionLocation]
     }
   }
+
   @js.native
   sealed trait RevisionLocationType extends js.Any
   object RevisionLocationType extends js.Object {
@@ -3522,6 +3543,7 @@ package codedeploy {
       __obj.asInstanceOf[SkipWaitTimeForInstanceTerminationInput]
     }
   }
+
   @js.native
   sealed trait SortOrder extends js.Any
   object SortOrder extends js.Object {
@@ -3576,6 +3598,7 @@ package codedeploy {
       __obj.asInstanceOf[StopDeploymentOutput]
     }
   }
+
   @js.native
   sealed trait StopStatus extends js.Any
   object StopStatus extends js.Object {
@@ -3631,6 +3654,7 @@ package codedeploy {
       __obj.asInstanceOf[TagFilter]
     }
   }
+
   @js.native
   sealed trait TagFilterType extends js.Any
   object TagFilterType extends js.Object {
@@ -3674,6 +3698,7 @@ package codedeploy {
       __obj.asInstanceOf[TagResourceOutput]
     }
   }
+
   @js.native
   sealed trait TargetFilterName extends js.Any
   object TargetFilterName extends js.Object {
@@ -3751,6 +3776,7 @@ package codedeploy {
       __obj.asInstanceOf[TargetInstances]
     }
   }
+
   @js.native
   sealed trait TargetLabel extends js.Any
   object TargetLabel extends js.Object {
@@ -3759,6 +3785,7 @@ package codedeploy {
 
     val values = js.Object.freeze(js.Array(Blue, Green))
   }
+
   @js.native
   sealed trait TargetStatus extends js.Any
   object TargetStatus extends js.Object {
@@ -3882,6 +3909,7 @@ package codedeploy {
       __obj.asInstanceOf[TrafficRoutingConfig]
     }
   }
+
   @js.native
   sealed trait TrafficRoutingType extends js.Any
   object TrafficRoutingType extends js.Object {
@@ -3916,6 +3944,7 @@ package codedeploy {
       __obj.asInstanceOf[TriggerConfig]
     }
   }
+
   @js.native
   sealed trait TriggerEventType extends js.Any
   object TriggerEventType extends js.Object {

@@ -296,6 +296,7 @@ package servicediscovery {
       __obj.asInstanceOf[CreateServiceResponse]
     }
   }
+
   @js.native
   sealed trait CustomHealthStatus extends js.Any
   object CustomHealthStatus extends js.Object {
@@ -543,6 +544,7 @@ package servicediscovery {
       __obj.asInstanceOf[DnsRecord]
     }
   }
+
   @js.native
   sealed trait FilterCondition extends js.Any
   object FilterCondition extends js.Object {
@@ -816,6 +818,7 @@ package servicediscovery {
       __obj.asInstanceOf[HealthCheckCustomConfig]
     }
   }
+
   @js.native
   sealed trait HealthCheckType extends js.Any
   object HealthCheckType extends js.Object {
@@ -825,6 +828,7 @@ package servicediscovery {
 
     val values = js.Object.freeze(js.Array(HTTP, HTTPS, TCP))
   }
+
   @js.native
   sealed trait HealthStatus extends js.Any
   object HealthStatus extends js.Object {
@@ -834,6 +838,7 @@ package servicediscovery {
 
     val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY, UNKNOWN))
   }
+
   @js.native
   sealed trait HealthStatusFilter extends js.Any
   object HealthStatusFilter extends js.Object {
@@ -1178,6 +1183,7 @@ package servicediscovery {
       __obj.asInstanceOf[NamespaceFilter]
     }
   }
+
   @js.native
   sealed trait NamespaceFilterName extends js.Any
   object NamespaceFilterName extends js.Object {
@@ -1247,6 +1253,7 @@ package servicediscovery {
       __obj.asInstanceOf[NamespaceSummary]
     }
   }
+
   @js.native
   sealed trait NamespaceType extends js.Any
   object NamespaceType extends js.Object {
@@ -1323,6 +1330,7 @@ package servicediscovery {
       __obj.asInstanceOf[OperationFilter]
     }
   }
+
   @js.native
   sealed trait OperationFilterName extends js.Any
   object OperationFilterName extends js.Object {
@@ -1334,6 +1342,7 @@ package servicediscovery {
 
     val values = js.Object.freeze(js.Array(NAMESPACE_ID, SERVICE_ID, STATUS, TYPE, UPDATE_DATE))
   }
+
   @js.native
   sealed trait OperationStatus extends js.Any
   object OperationStatus extends js.Object {
@@ -1366,6 +1375,7 @@ package servicediscovery {
       __obj.asInstanceOf[OperationSummary]
     }
   }
+
   @js.native
   sealed trait OperationTargetType extends js.Any
   object OperationTargetType extends js.Object {
@@ -1375,6 +1385,7 @@ package servicediscovery {
 
     val values = js.Object.freeze(js.Array(NAMESPACE, SERVICE, INSTANCE))
   }
+
   @js.native
   sealed trait OperationType extends js.Any
   object OperationType extends js.Object {
@@ -1388,6 +1399,7 @@ package servicediscovery {
       js.Array(CREATE_NAMESPACE, DELETE_NAMESPACE, UPDATE_SERVICE, REGISTER_INSTANCE, DEREGISTER_INSTANCE)
     )
   }
+
   @js.native
   sealed trait RecordType extends js.Any
   object RecordType extends js.Object {
@@ -1441,6 +1453,7 @@ package servicediscovery {
       __obj.asInstanceOf[RegisterInstanceResponse]
     }
   }
+
   @js.native
   sealed trait RoutingPolicy extends js.Any
   object RoutingPolicy extends js.Object {
@@ -1552,6 +1565,7 @@ package servicediscovery {
       __obj.asInstanceOf[ServiceFilter]
     }
   }
+
   @js.native
   sealed trait ServiceFilterName extends js.Any
   object ServiceFilterName extends js.Object {

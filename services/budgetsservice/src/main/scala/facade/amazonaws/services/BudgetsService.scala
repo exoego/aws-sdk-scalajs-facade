@@ -863,6 +863,7 @@ package budgetsservice {
       __obj.asInstanceOf[Notification]
     }
   }
+
   @js.native
   sealed trait NotificationState extends js.Any
   object NotificationState extends js.Object {

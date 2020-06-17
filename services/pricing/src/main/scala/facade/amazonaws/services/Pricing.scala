@@ -138,6 +138,7 @@ package pricing {
       __obj.asInstanceOf[Filter]
     }
   }
+
   @js.native
   sealed trait FilterType extends js.Any
   object FilterType extends js.Object {

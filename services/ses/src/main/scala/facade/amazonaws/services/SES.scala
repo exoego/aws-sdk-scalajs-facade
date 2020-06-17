@@ -451,6 +451,7 @@ package ses {
       __obj.asInstanceOf[AddHeaderAction]
     }
   }
+
   @js.native
   sealed trait BehaviorOnMXFailure extends js.Any
   object BehaviorOnMXFailure extends js.Object {
@@ -515,6 +516,7 @@ package ses {
       __obj.asInstanceOf[BounceAction]
     }
   }
+
   @js.native
   sealed trait BounceType extends js.Any
   object BounceType extends js.Object {
@@ -612,6 +614,7 @@ package ses {
       __obj.asInstanceOf[BulkEmailDestinationStatus]
     }
   }
+
   @js.native
   sealed trait BulkEmailStatus extends js.Any
   object BulkEmailStatus extends js.Object {
@@ -761,6 +764,7 @@ package ses {
       __obj.asInstanceOf[ConfigurationSet]
     }
   }
+
   @js.native
   sealed trait ConfigurationSetAttribute extends js.Any
   object ConfigurationSetAttribute extends js.Object {
@@ -1100,6 +1104,7 @@ package ses {
       __obj.asInstanceOf[CreateTemplateResponse]
     }
   }
+
   @js.native
   sealed trait CustomMailFromStatus extends js.Any
   object CustomMailFromStatus extends js.Object {
@@ -1749,6 +1754,7 @@ package ses {
       __obj.asInstanceOf[Destination]
     }
   }
+
   @js.native
   sealed trait DimensionValueSource extends js.Any
   object DimensionValueSource extends js.Object {
@@ -1758,6 +1764,7 @@ package ses {
 
     val values = js.Object.freeze(js.Array(messageTag, emailHeader, linkTag))
   }
+
   @js.native
   sealed trait DsnAction extends js.Any
   object DsnAction extends js.Object {
@@ -1810,6 +1817,7 @@ package ses {
       __obj.asInstanceOf[EventDestination]
     }
   }
+
   @js.native
   sealed trait EventType extends js.Any
   object EventType extends js.Object {
@@ -2313,6 +2321,7 @@ package ses {
       __obj.asInstanceOf[IdentityNotificationAttributes]
     }
   }
+
   @js.native
   sealed trait IdentityType extends js.Any
   object IdentityType extends js.Object {
@@ -2345,6 +2354,7 @@ package ses {
       __obj.asInstanceOf[IdentityVerificationAttributes]
     }
   }
+
   @js.native
   sealed trait InvocationType extends js.Any
   object InvocationType extends js.Object {
@@ -2799,6 +2809,7 @@ package ses {
       __obj.asInstanceOf[MessageTag]
     }
   }
+
   @js.native
   sealed trait NotificationType extends js.Any
   object NotificationType extends js.Object {
@@ -2975,6 +2986,7 @@ package ses {
       __obj.asInstanceOf[ReceiptFilter]
     }
   }
+
   @js.native
   sealed trait ReceiptFilterPolicy extends js.Any
   object ReceiptFilterPolicy extends js.Object {
@@ -3236,6 +3248,7 @@ package ses {
       __obj.asInstanceOf[SNSAction]
     }
   }
+
   @js.native
   sealed trait SNSActionEncoding extends js.Any
   object SNSActionEncoding extends js.Object {
@@ -3977,6 +3990,7 @@ package ses {
       __obj.asInstanceOf[StopAction]
     }
   }
+
   @js.native
   sealed trait StopScope extends js.Any
   object StopScope extends js.Object {
@@ -4073,6 +4087,7 @@ package ses {
       __obj.asInstanceOf[TestRenderTemplateResponse]
     }
   }
+
   @js.native
   sealed trait TlsPolicy extends js.Any
   object TlsPolicy extends js.Object {
@@ -4355,6 +4370,7 @@ package ses {
       __obj.asInstanceOf[UpdateTemplateResponse]
     }
   }
+
   @js.native
   sealed trait VerificationStatus extends js.Any
   object VerificationStatus extends js.Object {

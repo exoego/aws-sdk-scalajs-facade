@@ -650,6 +650,7 @@ package s3control {
       __obj.asInstanceOf[JobManifest]
     }
   }
+
   @js.native
   sealed trait JobManifestFieldName extends js.Any
   object JobManifestFieldName extends js.Object {
@@ -660,6 +661,7 @@ package s3control {
 
     val values = js.Object.freeze(js.Array(Ignore, Bucket, Key, VersionId))
   }
+
   @js.native
   sealed trait JobManifestFormat extends js.Any
   object JobManifestFormat extends js.Object {
@@ -808,6 +810,7 @@ package s3control {
       __obj.asInstanceOf[JobReport]
     }
   }
+
   @js.native
   sealed trait JobReportFormat extends js.Any
   object JobReportFormat extends js.Object {
@@ -815,6 +818,7 @@ package s3control {
 
     val values = js.Object.freeze(js.Array(Report_CSV_20180820))
   }
+
   @js.native
   sealed trait JobReportScope extends js.Any
   object JobReportScope extends js.Object {
@@ -823,6 +827,7 @@ package s3control {
 
     val values = js.Object.freeze(js.Array(AllTasks, FailedTasksOnly))
   }
+
   @js.native
   sealed trait JobStatus extends js.Any
   object JobStatus extends js.Object {
@@ -969,6 +974,7 @@ package s3control {
       __obj.asInstanceOf[ListJobsResult]
     }
   }
+
   @js.native
   sealed trait NetworkOrigin extends js.Any
   object NetworkOrigin extends js.Object {
@@ -977,6 +983,7 @@ package s3control {
 
     val values = js.Object.freeze(js.Array(Internet, VPC))
   }
+
   @js.native
   sealed trait OperationName extends js.Any
   object OperationName extends js.Object {
@@ -1082,6 +1089,7 @@ package s3control {
       __obj.asInstanceOf[PutPublicAccessBlockRequest]
     }
   }
+
   @js.native
   sealed trait RequestedJobStatus extends js.Any
   object RequestedJobStatus extends js.Object {
@@ -1136,6 +1144,7 @@ package s3control {
       __obj.asInstanceOf[S3AccessControlPolicy]
     }
   }
+
   @js.native
   sealed trait S3CannedAccessControlList extends js.Any
   object S3CannedAccessControlList extends js.Object {
@@ -1229,6 +1238,7 @@ package s3control {
       __obj.asInstanceOf[S3CopyObjectOperation]
     }
   }
+
   @js.native
   sealed trait S3GlacierJobTier extends js.Any
   object S3GlacierJobTier extends js.Object {
@@ -1284,6 +1294,7 @@ package s3control {
       __obj.asInstanceOf[S3Grantee]
     }
   }
+
   @js.native
   sealed trait S3GranteeTypeIdentifier extends js.Any
   object S3GranteeTypeIdentifier extends js.Object {
@@ -1315,6 +1326,7 @@ package s3control {
       __obj.asInstanceOf[S3InitiateRestoreObjectOperation]
     }
   }
+
   @js.native
   sealed trait S3MetadataDirective extends js.Any
   object S3MetadataDirective extends js.Object {
@@ -1323,6 +1335,7 @@ package s3control {
 
     val values = js.Object.freeze(js.Array(COPY, REPLACE))
   }
+
   @js.native
   sealed trait S3ObjectLockLegalHoldStatus extends js.Any
   object S3ObjectLockLegalHoldStatus extends js.Object {
@@ -1331,6 +1344,7 @@ package s3control {
 
     val values = js.Object.freeze(js.Array(OFF, ON))
   }
+
   @js.native
   sealed trait S3ObjectLockMode extends js.Any
   object S3ObjectLockMode extends js.Object {
@@ -1410,6 +1424,7 @@ package s3control {
       __obj.asInstanceOf[S3ObjectOwner]
     }
   }
+
   @js.native
   sealed trait S3Permission extends js.Any
   object S3Permission extends js.Object {
@@ -1421,6 +1436,7 @@ package s3control {
 
     val values = js.Object.freeze(js.Array(FULL_CONTROL, READ, WRITE, READ_ACP, WRITE_ACP))
   }
+
   @js.native
   sealed trait S3SSEAlgorithm extends js.Any
   object S3SSEAlgorithm extends js.Object {
@@ -1467,6 +1483,7 @@ package s3control {
       __obj.asInstanceOf[S3SetObjectTaggingOperation]
     }
   }
+
   @js.native
   sealed trait S3StorageClass extends js.Any
   object S3StorageClass extends js.Object {

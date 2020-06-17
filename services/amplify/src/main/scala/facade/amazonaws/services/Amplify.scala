@@ -1247,6 +1247,7 @@ package amplify {
       __obj.asInstanceOf[DomainAssociation]
     }
   }
+
   @js.native
   sealed trait DomainStatus extends js.Any
   object DomainStatus extends js.Object {
@@ -1648,6 +1649,7 @@ package amplify {
       __obj.asInstanceOf[Job]
     }
   }
+
   @js.native
   sealed trait JobStatus extends js.Any
   object JobStatus extends js.Object {
@@ -1706,6 +1708,7 @@ package amplify {
       __obj.asInstanceOf[JobSummary]
     }
   }
+
   @js.native
   sealed trait JobType extends js.Any
   object JobType extends js.Object {
@@ -2120,6 +2123,7 @@ package amplify {
       __obj.asInstanceOf[ListWebhooksResult]
     }
   }
+
   @js.native
   sealed trait Platform extends js.Any
   object Platform extends js.Object {
@@ -2155,6 +2159,7 @@ package amplify {
       __obj.asInstanceOf[ProductionBranch]
     }
   }
+
   @js.native
   sealed trait Stage extends js.Any
   object Stage extends js.Object {

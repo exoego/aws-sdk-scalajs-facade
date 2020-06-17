@@ -309,6 +309,7 @@ package rdsdataservice {
       __obj.asInstanceOf[CommitTransactionResponse]
     }
   }
+
   @js.native
   sealed trait DecimalReturnType extends js.Any
   object DecimalReturnType extends js.Object {
@@ -677,6 +678,7 @@ package rdsdataservice {
       __obj.asInstanceOf[StructValue]
     }
   }
+
   @js.native
   sealed trait TypeHint extends js.Any
   object TypeHint extends js.Object {

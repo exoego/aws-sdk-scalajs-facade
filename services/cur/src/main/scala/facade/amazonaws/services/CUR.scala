@@ -326,6 +326,7 @@ package cur {
 
     val values = js.Object.freeze(js.Array(textORcsv, Parquet))
   }
+
   @js.native
   sealed trait ReportVersioning extends js.Any
   object ReportVersioning extends js.Object {

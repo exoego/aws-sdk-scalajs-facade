@@ -197,6 +197,7 @@ package costexplorer {
         params: UpdateCostCategoryDefinitionRequest
     ): Request[UpdateCostCategoryDefinitionResponse] = js.native
   }
+
   @js.native
   sealed trait AccountScope extends js.Any
   object AccountScope extends js.Object {
@@ -205,6 +206,7 @@ package costexplorer {
 
     val values = js.Object.freeze(js.Array(PAYER, LINKED))
   }
+
   @js.native
   sealed trait Context extends js.Any
   object Context extends js.Object {
@@ -665,6 +667,7 @@ package costexplorer {
       __obj.asInstanceOf[DescribeCostCategoryDefinitionResponse]
     }
   }
+
   @js.native
   sealed trait Dimension extends js.Any
   object Dimension extends js.Object {
@@ -1811,6 +1814,7 @@ package costexplorer {
       __obj.asInstanceOf[GetUsageForecastResponse]
     }
   }
+
   @js.native
   sealed trait Granularity extends js.Any
   object Granularity extends js.Object {
@@ -1864,6 +1868,7 @@ package costexplorer {
       __obj.asInstanceOf[GroupDefinition]
     }
   }
+
   @js.native
   sealed trait GroupDefinitionType extends js.Any
   object GroupDefinitionType extends js.Object {
@@ -1944,6 +1949,7 @@ package costexplorer {
       __obj.asInstanceOf[ListCostCategoryDefinitionsResponse]
     }
   }
+
   @js.native
   sealed trait LookbackPeriodInDays extends js.Any
   object LookbackPeriodInDays extends js.Object {
@@ -1953,6 +1959,7 @@ package costexplorer {
 
     val values = js.Object.freeze(js.Array(SEVEN_DAYS, THIRTY_DAYS, SIXTY_DAYS))
   }
+
   @js.native
   sealed trait Metric extends js.Any
   object Metric extends js.Object {
@@ -2017,6 +2024,7 @@ package costexplorer {
       __obj.asInstanceOf[ModifyRecommendationDetail]
     }
   }
+
   @js.native
   sealed trait OfferingClass extends js.Any
   object OfferingClass extends js.Object {
@@ -2025,6 +2033,7 @@ package costexplorer {
 
     val values = js.Object.freeze(js.Array(STANDARD, CONVERTIBLE))
   }
+
   @js.native
   sealed trait PaymentOption extends js.Any
   object PaymentOption extends js.Object {
@@ -2570,6 +2579,7 @@ package costexplorer {
       __obj.asInstanceOf[RightsizingRecommendationSummary]
     }
   }
+
   @js.native
   sealed trait RightsizingType extends js.Any
   object RightsizingType extends js.Object {
@@ -3044,6 +3054,7 @@ package costexplorer {
       __obj.asInstanceOf[ServiceSpecification]
     }
   }
+
   @js.native
   sealed trait SupportedSavingsPlansType extends js.Any
   object SupportedSavingsPlansType extends js.Object {
@@ -3110,6 +3121,7 @@ package costexplorer {
       __obj.asInstanceOf[TargetInstance]
     }
   }
+
   @js.native
   sealed trait TermInYears extends js.Any
   object TermInYears extends js.Object {

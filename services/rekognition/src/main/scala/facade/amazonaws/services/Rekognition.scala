@@ -293,6 +293,7 @@ package rekognition {
       __obj.asInstanceOf[Asset]
     }
   }
+
   @js.native
   sealed trait Attribute extends js.Any
   object Attribute extends js.Object {
@@ -442,6 +443,7 @@ package rekognition {
       __obj.asInstanceOf[CelebrityRecognition]
     }
   }
+
   @js.native
   sealed trait CelebrityRecognitionSortBy extends js.Any
   object CelebrityRecognitionSortBy extends js.Object {
@@ -584,6 +586,7 @@ package rekognition {
       __obj.asInstanceOf[ComparedSourceImageFace]
     }
   }
+
   @js.native
   sealed trait ContentClassifier extends js.Any
   object ContentClassifier extends js.Object {
@@ -615,6 +618,7 @@ package rekognition {
       __obj.asInstanceOf[ContentModerationDetection]
     }
   }
+
   @js.native
   sealed trait ContentModerationSortBy extends js.Any
   object ContentModerationSortBy extends js.Object {
@@ -1392,6 +1396,7 @@ package rekognition {
       __obj.asInstanceOf[Emotion]
     }
   }
+
   @js.native
   sealed trait EmotionName extends js.Any
   object EmotionName extends js.Object {
@@ -1504,6 +1509,7 @@ package rekognition {
       __obj.asInstanceOf[Face]
     }
   }
+
   @js.native
   sealed trait FaceAttributes extends js.Any
   object FaceAttributes extends js.Object {
@@ -1667,6 +1673,7 @@ package rekognition {
       __obj.asInstanceOf[FaceSearchSettings]
     }
   }
+
   @js.native
   sealed trait FaceSearchSortBy extends js.Any
   object FaceSearchSortBy extends js.Object {
@@ -1700,6 +1707,7 @@ package rekognition {
       __obj.asInstanceOf[Gender]
     }
   }
+
   @js.native
   sealed trait GenderType extends js.Any
   object GenderType extends js.Object {
@@ -2421,7 +2429,6 @@ package rekognition {
 
   /**
     * Structure containing details about the detected label, including the name, detected instances, parent labels, and level of confidence.
-    *
     */
   @js.native
   trait Label extends js.Object {
@@ -2469,6 +2476,7 @@ package rekognition {
       __obj.asInstanceOf[LabelDetection]
     }
   }
+
   @js.native
   sealed trait LabelDetectionSortBy extends js.Any
   object LabelDetectionSortBy extends js.Object {
@@ -2502,6 +2510,7 @@ package rekognition {
       __obj.asInstanceOf[Landmark]
     }
   }
+
   @js.native
   sealed trait LandmarkType extends js.Any
   object LandmarkType extends js.Object {
@@ -2789,6 +2798,7 @@ package rekognition {
       __obj.asInstanceOf[NotificationChannel]
     }
   }
+
   @js.native
   sealed trait OrientationCorrection extends js.Any
   object OrientationCorrection extends js.Object {
@@ -2913,6 +2923,7 @@ package rekognition {
       __obj.asInstanceOf[PersonMatch]
     }
   }
+
   @js.native
   sealed trait PersonTrackingSortBy extends js.Any
   object PersonTrackingSortBy extends js.Object {
@@ -2994,6 +3005,7 @@ package rekognition {
       __obj.asInstanceOf[ProjectDescription]
     }
   }
+
   @js.native
   sealed trait ProjectStatus extends js.Any
   object ProjectStatus extends js.Object {
@@ -3054,6 +3066,7 @@ package rekognition {
       __obj.asInstanceOf[ProjectVersionDescription]
     }
   }
+
   @js.native
   sealed trait ProjectVersionStatus extends js.Any
   object ProjectVersionStatus extends js.Object {
@@ -3081,6 +3094,7 @@ package rekognition {
       )
     )
   }
+
   @js.native
   sealed trait QualityFilter extends js.Any
   object QualityFilter extends js.Object {
@@ -3092,6 +3106,7 @@ package rekognition {
 
     val values = js.Object.freeze(js.Array(NONE, AUTO, LOW, MEDIUM, HIGH))
   }
+
   @js.native
   sealed trait Reason extends js.Any
   object Reason extends js.Object {
@@ -3881,6 +3896,7 @@ package rekognition {
       __obj.asInstanceOf[StreamProcessorSettings]
     }
   }
+
   @js.native
   sealed trait StreamProcessorStatus extends js.Any
   object StreamProcessorStatus extends js.Object {
@@ -4037,6 +4053,7 @@ package rekognition {
       __obj.asInstanceOf[TextDetectionResult]
     }
   }
+
   @js.native
   sealed trait TextTypes extends js.Any
   object TextTypes extends js.Object {
@@ -4127,6 +4144,7 @@ package rekognition {
       __obj.asInstanceOf[Video]
     }
   }
+
   @js.native
   sealed trait VideoJobStatus extends js.Any
   object VideoJobStatus extends js.Object {

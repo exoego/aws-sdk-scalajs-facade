@@ -264,6 +264,7 @@ package applicationdiscovery {
       __obj.asInstanceOf[AgentNetworkInfo]
     }
   }
+
   @js.native
   sealed trait AgentStatus extends js.Any
   object AgentStatus extends js.Object {
@@ -335,6 +336,7 @@ package applicationdiscovery {
       __obj.asInstanceOf[BatchDeleteImportDataError]
     }
   }
+
   @js.native
   sealed trait BatchDeleteImportDataErrorCode extends js.Any
   object BatchDeleteImportDataErrorCode extends js.Object {
@@ -378,6 +380,7 @@ package applicationdiscovery {
       __obj.asInstanceOf[BatchDeleteImportDataResponse]
     }
   }
+
   @js.native
   sealed trait ConfigurationItemType extends js.Any
   object ConfigurationItemType extends js.Object {
@@ -459,6 +462,7 @@ package applicationdiscovery {
       __obj.asInstanceOf[ContinuousExportDescription]
     }
   }
+
   @js.native
   sealed trait ContinuousExportStatus extends js.Any
   object ContinuousExportStatus extends js.Object {
@@ -623,6 +627,7 @@ package applicationdiscovery {
       __obj.asInstanceOf[CustomerConnectorInfo]
     }
   }
+
   @js.native
   sealed trait DataSource extends js.Any
   object DataSource extends js.Object {
@@ -1031,6 +1036,7 @@ package applicationdiscovery {
       __obj.asInstanceOf[ExportConfigurationsResponse]
     }
   }
+
   @js.native
   sealed trait ExportDataFormat extends js.Any
   object ExportDataFormat extends js.Object {
@@ -1110,6 +1116,7 @@ package applicationdiscovery {
       __obj.asInstanceOf[ExportInfo]
     }
   }
+
   @js.native
   sealed trait ExportStatus extends js.Any
   object ExportStatus extends js.Object {
@@ -1193,6 +1200,7 @@ package applicationdiscovery {
       __obj.asInstanceOf[GetDiscoverySummaryResponse]
     }
   }
+
   @js.native
   sealed trait ImportStatus extends js.Any
   object ImportStatus extends js.Object {
@@ -1305,6 +1313,7 @@ package applicationdiscovery {
       __obj.asInstanceOf[ImportTaskFilter]
     }
   }
+
   @js.native
   sealed trait ImportTaskFilterName extends js.Any
   object ImportTaskFilterName extends js.Object {
@@ -1790,6 +1799,7 @@ package applicationdiscovery {
       __obj.asInstanceOf[UpdateApplicationResponse]
     }
   }
+
   @js.native
   sealed trait orderString extends js.Any
   object orderString extends js.Object {

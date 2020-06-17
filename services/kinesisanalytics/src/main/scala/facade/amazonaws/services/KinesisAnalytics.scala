@@ -421,6 +421,7 @@ package kinesisanalytics {
       __obj.asInstanceOf[ApplicationDetail]
     }
   }
+
   @js.native
   sealed trait ApplicationStatus extends js.Any
   object ApplicationStatus extends js.Object {
@@ -1286,6 +1287,7 @@ package kinesisanalytics {
       __obj.asInstanceOf[InputSchemaUpdate]
     }
   }
+
   @js.native
   sealed trait InputStartingPosition extends js.Any
   object InputStartingPosition extends js.Object {
@@ -1988,6 +1990,7 @@ package kinesisanalytics {
       __obj.asInstanceOf[RecordFormat]
     }
   }
+
   @js.native
   sealed trait RecordFormatType extends js.Any
   object RecordFormatType extends js.Object {

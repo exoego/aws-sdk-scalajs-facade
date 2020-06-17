@@ -232,6 +232,7 @@ package servicequotas {
       __obj.asInstanceOf[DisassociateServiceQuotaTemplateResponse]
     }
   }
+
   @js.native
   sealed trait ErrorCode extends js.Any
   object ErrorCode extends js.Object {
@@ -745,6 +746,7 @@ package servicequotas {
       __obj.asInstanceOf[MetricInfo]
     }
   }
+
   @js.native
   sealed trait PeriodUnit extends js.Any
   object PeriodUnit extends js.Object {
@@ -865,6 +867,7 @@ package servicequotas {
       __obj.asInstanceOf[RequestServiceQuotaIncreaseResponse]
     }
   }
+
   @js.native
   sealed trait RequestStatus extends js.Any
   object RequestStatus extends js.Object {
@@ -1048,6 +1051,7 @@ package servicequotas {
       __obj.asInstanceOf[ServiceQuotaIncreaseRequestInTemplate]
     }
   }
+
   @js.native
   sealed trait ServiceQuotaTemplateAssociationStatus extends js.Any
   object ServiceQuotaTemplateAssociationStatus extends js.Object {

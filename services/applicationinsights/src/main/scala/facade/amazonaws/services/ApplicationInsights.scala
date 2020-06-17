@@ -261,6 +261,7 @@ package applicationinsights {
       __obj.asInstanceOf[ConfigurationEvent]
     }
   }
+
   @js.native
   sealed trait ConfigurationEventResourceType extends js.Any
   object ConfigurationEventResourceType extends js.Object {
@@ -270,6 +271,7 @@ package applicationinsights {
 
     val values = js.Object.freeze(js.Array(CLOUDWATCH_ALARM, CLOUDFORMATION, SSM_ASSOCIATION))
   }
+
   @js.native
   sealed trait ConfigurationEventStatus extends js.Any
   object ConfigurationEventStatus extends js.Object {
@@ -812,6 +814,7 @@ package applicationinsights {
       __obj.asInstanceOf[DescribeProblemResponse]
     }
   }
+
   @js.native
   sealed trait FeedbackKey extends js.Any
   object FeedbackKey extends js.Object {
@@ -819,6 +822,7 @@ package applicationinsights {
 
     val values = js.Object.freeze(js.Array(INSIGHTS_FEEDBACK))
   }
+
   @js.native
   sealed trait FeedbackValue extends js.Any
   object FeedbackValue extends js.Object {
@@ -1135,6 +1139,7 @@ package applicationinsights {
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
+
   @js.native
   sealed trait LogFilter extends js.Any
   object LogFilter extends js.Object {
@@ -1292,6 +1297,7 @@ package applicationinsights {
       __obj.asInstanceOf[RelatedObservations]
     }
   }
+
   @js.native
   sealed trait SeverityLevel extends js.Any
   object SeverityLevel extends js.Object {
@@ -1301,6 +1307,7 @@ package applicationinsights {
 
     val values = js.Object.freeze(js.Array(Low, Medium, High))
   }
+
   @js.native
   sealed trait Status extends js.Any
   object Status extends js.Object {
@@ -1372,6 +1379,7 @@ package applicationinsights {
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
+
   @js.native
   sealed trait Tier extends js.Any
   object Tier extends js.Object {

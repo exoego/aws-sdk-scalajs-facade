@@ -256,6 +256,7 @@ package shield {
       __obj.asInstanceOf[AttackDetail]
     }
   }
+
   @js.native
   sealed trait AttackLayer extends js.Any
   object AttackLayer extends js.Object {
@@ -295,6 +296,7 @@ package shield {
       __obj.asInstanceOf[AttackProperty]
     }
   }
+
   @js.native
   sealed trait AttackPropertyIdentifier extends js.Any
   object AttackPropertyIdentifier extends js.Object {
@@ -372,6 +374,7 @@ package shield {
       __obj.asInstanceOf[AttackVectorDescription]
     }
   }
+
   @js.native
   sealed trait AutoRenew extends js.Any
   object AutoRenew extends js.Object {
@@ -1008,6 +1011,7 @@ package shield {
       __obj.asInstanceOf[SubResourceSummary]
     }
   }
+
   @js.native
   sealed trait SubResourceType extends js.Any
   object SubResourceType extends js.Object {
@@ -1047,6 +1051,7 @@ package shield {
       __obj.asInstanceOf[Subscription]
     }
   }
+
   @js.native
   sealed trait SubscriptionState extends js.Any
   object SubscriptionState extends js.Object {
@@ -1135,6 +1140,7 @@ package shield {
       __obj.asInstanceOf[TimeRange]
     }
   }
+
   @js.native
   sealed trait Unit extends js.Any
   object Unit extends js.Object {

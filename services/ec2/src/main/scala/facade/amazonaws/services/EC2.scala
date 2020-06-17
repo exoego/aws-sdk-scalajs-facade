@@ -2675,6 +2675,7 @@ package ec2 {
       __obj.asInstanceOf[AccountAttribute]
     }
   }
+
   @js.native
   sealed trait AccountAttributeName extends js.Any
   object AccountAttributeName extends js.Object {
@@ -2730,6 +2731,7 @@ package ec2 {
       __obj.asInstanceOf[ActiveInstance]
     }
   }
+
   @js.native
   sealed trait ActivityStatus extends js.Any
   object ActivityStatus extends js.Object {
@@ -2832,6 +2834,7 @@ package ec2 {
       __obj.asInstanceOf[AdvertiseByoipCidrResult]
     }
   }
+
   @js.native
   sealed trait Affinity extends js.Any
   object Affinity extends js.Object {
@@ -2963,6 +2966,7 @@ package ec2 {
       __obj.asInstanceOf[AllocateHostsResult]
     }
   }
+
   @js.native
   sealed trait AllocationState extends js.Any
   object AllocationState extends js.Object {
@@ -2977,6 +2981,7 @@ package ec2 {
       js.Array(available, `under-assessment`, `permanent-failure`, released, `released-permanent-failure`, pending)
     )
   }
+
   @js.native
   sealed trait AllocationStrategy extends js.Any
   object AllocationStrategy extends js.Object {
@@ -3008,6 +3013,7 @@ package ec2 {
       __obj.asInstanceOf[AllowedPrincipal]
     }
   }
+
   @js.native
   sealed trait AllowsMultipleInstanceTypes extends js.Any
   object AllowsMultipleInstanceTypes extends js.Object {
@@ -3059,6 +3065,7 @@ package ec2 {
       __obj.asInstanceOf[ApplySecurityGroupsToClientVpnTargetNetworkResult]
     }
   }
+
   @js.native
   sealed trait ArchitectureType extends js.Any
   object ArchitectureType extends js.Object {
@@ -3068,6 +3075,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(i386, x86_64, arm64))
   }
+
   @js.native
   sealed trait ArchitectureValues extends js.Any
   object ArchitectureValues extends js.Object {
@@ -3581,6 +3589,7 @@ package ec2 {
       __obj.asInstanceOf[AssociateVpcCidrBlockResult]
     }
   }
+
   @js.native
   sealed trait AssociatedNetworkType extends js.Any
   object AssociatedNetworkType extends js.Object {
@@ -3632,6 +3641,7 @@ package ec2 {
       __obj.asInstanceOf[AssociationStatus]
     }
   }
+
   @js.native
   sealed trait AssociationStatusCode extends js.Any
   object AssociationStatusCode extends js.Object {
@@ -3833,6 +3843,7 @@ package ec2 {
       __obj.asInstanceOf[AttachVpnGatewayResult]
     }
   }
+
   @js.native
   sealed trait AttachmentStatus extends js.Any
   object AttachmentStatus extends js.Object {
@@ -4056,6 +4067,7 @@ package ec2 {
       __obj.asInstanceOf[AuthorizeSecurityGroupIngressRequest]
     }
   }
+
   @js.native
   sealed trait AutoAcceptSharedAttachmentsValue extends js.Any
   object AutoAcceptSharedAttachmentsValue extends js.Object {
@@ -4064,6 +4076,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(enable, disable))
   }
+
   @js.native
   sealed trait AutoPlacement extends js.Any
   object AutoPlacement extends js.Object {
@@ -4131,6 +4144,7 @@ package ec2 {
       __obj.asInstanceOf[AvailabilityZoneMessage]
     }
   }
+
   @js.native
   sealed trait AvailabilityZoneOptInStatus extends js.Any
   object AvailabilityZoneOptInStatus extends js.Object {
@@ -4140,6 +4154,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(`opt-in-not-required`, `opted-in`, `not-opted-in`))
   }
+
   @js.native
   sealed trait AvailabilityZoneState extends js.Any
   object AvailabilityZoneState extends js.Object {
@@ -4174,6 +4189,7 @@ package ec2 {
       __obj.asInstanceOf[AvailableCapacity]
     }
   }
+
   @js.native
   sealed trait BatchState extends js.Any
   object BatchState extends js.Object {
@@ -4341,6 +4357,7 @@ package ec2 {
       __obj.asInstanceOf[BundleTaskError]
     }
   }
+
   @js.native
   sealed trait BundleTaskState extends js.Any
   object BundleTaskState extends js.Object {
@@ -4383,6 +4400,7 @@ package ec2 {
       __obj.asInstanceOf[ByoipCidr]
     }
   }
+
   @js.native
   sealed trait ByoipCidrState extends js.Any
   object ByoipCidrState extends js.Object {
@@ -4408,6 +4426,7 @@ package ec2 {
       )
     )
   }
+
   @js.native
   sealed trait CancelBatchErrorCode extends js.Any
   object CancelBatchErrorCode extends js.Object {
@@ -4752,6 +4771,7 @@ package ec2 {
       __obj.asInstanceOf[CancelSpotFleetRequestsSuccessItem]
     }
   }
+
   @js.native
   sealed trait CancelSpotInstanceRequestState extends js.Any
   object CancelSpotInstanceRequestState extends js.Object {
@@ -4900,6 +4920,7 @@ package ec2 {
       __obj.asInstanceOf[CapacityReservation]
     }
   }
+
   @js.native
   sealed trait CapacityReservationInstancePlatform extends js.Any
   object CapacityReservationInstancePlatform extends js.Object {
@@ -4979,6 +5000,7 @@ package ec2 {
       __obj.asInstanceOf[CapacityReservationOptionsRequest]
     }
   }
+
   @js.native
   sealed trait CapacityReservationPreference extends js.Any
   object CapacityReservationPreference extends js.Object {
@@ -5040,6 +5062,7 @@ package ec2 {
       __obj.asInstanceOf[CapacityReservationSpecificationResponse]
     }
   }
+
   @js.native
   sealed trait CapacityReservationState extends js.Any
   object CapacityReservationState extends js.Object {
@@ -5089,6 +5112,7 @@ package ec2 {
       __obj.asInstanceOf[CapacityReservationTargetResponse]
     }
   }
+
   @js.native
   sealed trait CapacityReservationTenancy extends js.Any
   object CapacityReservationTenancy extends js.Object {
@@ -5292,6 +5316,7 @@ package ec2 {
       __obj.asInstanceOf[ClientCertificateRevocationListStatus]
     }
   }
+
   @js.native
   sealed trait ClientCertificateRevocationListStatusCode extends js.Any
   object ClientCertificateRevocationListStatusCode extends js.Object {
@@ -5378,6 +5403,7 @@ package ec2 {
       __obj.asInstanceOf[ClientVpnAuthenticationRequest]
     }
   }
+
   @js.native
   sealed trait ClientVpnAuthenticationType extends js.Any
   object ClientVpnAuthenticationType extends js.Object {
@@ -5409,6 +5435,7 @@ package ec2 {
       __obj.asInstanceOf[ClientVpnAuthorizationRuleStatus]
     }
   }
+
   @js.native
   sealed trait ClientVpnAuthorizationRuleStatusCode extends js.Any
   object ClientVpnAuthorizationRuleStatusCode extends js.Object {
@@ -5498,6 +5525,7 @@ package ec2 {
       __obj.asInstanceOf[ClientVpnConnectionStatus]
     }
   }
+
   @js.native
   sealed trait ClientVpnConnectionStatusCode extends js.Any
   object ClientVpnConnectionStatusCode extends js.Object {
@@ -5597,6 +5625,7 @@ package ec2 {
       __obj.asInstanceOf[ClientVpnEndpointStatus]
     }
   }
+
   @js.native
   sealed trait ClientVpnEndpointStatusCode extends js.Any
   object ClientVpnEndpointStatusCode extends js.Object {
@@ -5666,6 +5695,7 @@ package ec2 {
       __obj.asInstanceOf[ClientVpnRouteStatus]
     }
   }
+
   @js.native
   sealed trait ClientVpnRouteStatusCode extends js.Any
   object ClientVpnRouteStatusCode extends js.Object {
@@ -5868,6 +5898,7 @@ package ec2 {
       __obj.asInstanceOf[ConnectionNotification]
     }
   }
+
   @js.native
   sealed trait ConnectionNotificationState extends js.Any
   object ConnectionNotificationState extends js.Object {
@@ -5876,6 +5907,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
+
   @js.native
   sealed trait ConnectionNotificationType extends js.Any
   object ConnectionNotificationType extends js.Object {
@@ -5883,6 +5915,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(Topic))
   }
+
   @js.native
   sealed trait ContainerFormat extends js.Any
   object ContainerFormat extends js.Object {
@@ -5927,6 +5960,7 @@ package ec2 {
       __obj.asInstanceOf[ConversionTask]
     }
   }
+
   @js.native
   sealed trait ConversionTaskState extends js.Any
   object ConversionTaskState extends js.Object {
@@ -6108,6 +6142,7 @@ package ec2 {
       __obj.asInstanceOf[CopySnapshotResult]
     }
   }
+
   @js.native
   sealed trait CopyTagsFromSource extends js.Any
   object CopyTagsFromSource extends js.Object {
@@ -8887,6 +8922,7 @@ package ec2 {
       __obj.asInstanceOf[CreditSpecificationRequest]
     }
   }
+
   @js.native
   sealed trait CurrencyCodeValues extends js.Any
   object CurrencyCodeValues extends js.Object {
@@ -8934,6 +8970,7 @@ package ec2 {
       __obj.asInstanceOf[CustomerGateway]
     }
   }
+
   @js.native
   sealed trait DatafeedSubscriptionState extends js.Any
   object DatafeedSubscriptionState extends js.Object {
@@ -8942,6 +8979,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(Active, Inactive))
   }
+
   @js.native
   sealed trait DefaultRouteTableAssociationValue extends js.Any
   object DefaultRouteTableAssociationValue extends js.Object {
@@ -8950,6 +8988,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(enable, disable))
   }
+
   @js.native
   sealed trait DefaultRouteTablePropagationValue extends js.Any
   object DefaultRouteTablePropagationValue extends js.Object {
@@ -8958,6 +8997,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(enable, disable))
   }
+
   @js.native
   sealed trait DefaultTargetCapacityType extends js.Any
   object DefaultTargetCapacityType extends js.Object {
@@ -9150,6 +9190,7 @@ package ec2 {
       __obj.asInstanceOf[DeleteFleetError]
     }
   }
+
   @js.native
   sealed trait DeleteFleetErrorCode extends js.Any
   object DeleteFleetErrorCode extends js.Object {
@@ -9786,6 +9827,7 @@ package ec2 {
       __obj.asInstanceOf[DeleteQueuedReservedInstancesError]
     }
   }
+
   @js.native
   sealed trait DeleteQueuedReservedInstancesErrorCode extends js.Any
   object DeleteQueuedReservedInstancesErrorCode extends js.Object {
@@ -16381,6 +16423,7 @@ package ec2 {
       __obj.asInstanceOf[DetachVpnGatewayRequest]
     }
   }
+
   @js.native
   sealed trait DeviceType extends js.Any
   object DeviceType extends js.Object {
@@ -17169,6 +17212,7 @@ package ec2 {
       __obj.asInstanceOf[DiskImageDetail]
     }
   }
+
   @js.native
   sealed trait DiskImageFormat extends js.Any
   object DiskImageFormat extends js.Object {
@@ -17225,6 +17269,7 @@ package ec2 {
       __obj.asInstanceOf[DiskInfo]
     }
   }
+
   @js.native
   sealed trait DiskType extends js.Any
   object DiskType extends js.Object {
@@ -17255,6 +17300,7 @@ package ec2 {
       __obj.asInstanceOf[DnsEntry]
     }
   }
+
   @js.native
   sealed trait DnsNameState extends js.Any
   object DnsNameState extends js.Object {
@@ -17286,6 +17332,7 @@ package ec2 {
       __obj.asInstanceOf[DnsServersOptionsModifyStructure]
     }
   }
+
   @js.native
   sealed trait DnsSupportValue extends js.Any
   object DnsSupportValue extends js.Object {
@@ -17294,6 +17341,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(enable, disable))
   }
+
   @js.native
   sealed trait DomainType extends js.Any
   object DomainType extends js.Object {
@@ -17339,6 +17387,7 @@ package ec2 {
       __obj.asInstanceOf[EbsBlockDevice]
     }
   }
+
   @js.native
   sealed trait EbsEncryptionSupport extends js.Any
   object EbsEncryptionSupport extends js.Object {
@@ -17419,6 +17468,7 @@ package ec2 {
       __obj.asInstanceOf[EbsInstanceBlockDeviceSpecification]
     }
   }
+
   @js.native
   sealed trait EbsOptimizedSupport extends js.Any
   object EbsOptimizedSupport extends js.Object {
@@ -17546,6 +17596,7 @@ package ec2 {
       __obj.asInstanceOf[ElasticGpuSpecificationResponse]
     }
   }
+
   @js.native
   sealed trait ElasticGpuState extends js.Any
   object ElasticGpuState extends js.Object {
@@ -17553,6 +17604,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(ATTACHED))
   }
+
   @js.native
   sealed trait ElasticGpuStatus extends js.Any
   object ElasticGpuStatus extends js.Object {
@@ -17658,6 +17710,7 @@ package ec2 {
       __obj.asInstanceOf[ElasticInferenceAcceleratorAssociation]
     }
   }
+
   @js.native
   sealed trait EnaSupport extends js.Any
   object EnaSupport extends js.Object {
@@ -18016,6 +18069,7 @@ package ec2 {
       __obj.asInstanceOf[EnableVpcClassicLinkResult]
     }
   }
+
   @js.native
   sealed trait EndDateType extends js.Any
   object EndDateType extends js.Object {
@@ -18024,6 +18078,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(unlimited, limited))
   }
+
   @js.native
   sealed trait EventCode extends js.Any
   object EventCode extends js.Object {
@@ -18062,6 +18117,7 @@ package ec2 {
       __obj.asInstanceOf[EventInformation]
     }
   }
+
   @js.native
   sealed trait EventType extends js.Any
   object EventType extends js.Object {
@@ -18072,6 +18128,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(instanceChange, fleetRequestChange, error, information))
   }
+
   @js.native
   sealed trait ExcessCapacityTerminationPolicy extends js.Any
   object ExcessCapacityTerminationPolicy extends js.Object {
@@ -18159,6 +18216,7 @@ package ec2 {
       __obj.asInstanceOf[ExportClientVpnClientConfigurationResult]
     }
   }
+
   @js.native
   sealed trait ExportEnvironment extends js.Any
   object ExportEnvironment extends js.Object {
@@ -18364,6 +18422,7 @@ package ec2 {
       __obj.asInstanceOf[ExportTaskS3LocationRequest]
     }
   }
+
   @js.native
   sealed trait ExportTaskState extends js.Any
   object ExportTaskState extends js.Object {
@@ -18495,6 +18554,7 @@ package ec2 {
       __obj.asInstanceOf[FailedQueuedPurchaseDeletion]
     }
   }
+
   @js.native
   sealed trait FastSnapshotRestoreStateCode extends js.Any
   object FastSnapshotRestoreStateCode extends js.Object {
@@ -18538,6 +18598,7 @@ package ec2 {
       __obj.asInstanceOf[Filter]
     }
   }
+
   @js.native
   sealed trait FleetActivityStatus extends js.Any
   object FleetActivityStatus extends js.Object {
@@ -18548,6 +18609,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(error, pending_fulfillment, pending_termination, fulfilled))
   }
+
   @js.native
   sealed trait FleetCapacityReservationUsageStrategy extends js.Any
   object FleetCapacityReservationUsageStrategy extends js.Object {
@@ -18642,6 +18704,7 @@ package ec2 {
       __obj.asInstanceOf[FleetData]
     }
   }
+
   @js.native
   sealed trait FleetEventType extends js.Any
   object FleetEventType extends js.Object {
@@ -18651,6 +18714,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(`instance-change`, `fleet-change`, `service-error`))
   }
+
   @js.native
   sealed trait FleetExcessCapacityTerminationPolicy extends js.Any
   object FleetExcessCapacityTerminationPolicy extends js.Object {
@@ -18831,6 +18895,7 @@ package ec2 {
       __obj.asInstanceOf[FleetLaunchTemplateSpecificationRequest]
     }
   }
+
   @js.native
   sealed trait FleetOnDemandAllocationStrategy extends js.Any
   object FleetOnDemandAllocationStrategy extends js.Object {
@@ -18839,6 +18904,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(`lowest-price`, prioritized))
   }
+
   @js.native
   sealed trait FleetStateCode extends js.Any
   object FleetStateCode extends js.Object {
@@ -18853,6 +18919,7 @@ package ec2 {
     val values =
       js.Object.freeze(js.Array(submitted, active, deleted, failed, deleted_running, deleted_terminating, modifying))
   }
+
   @js.native
   sealed trait FleetType extends js.Any
   object FleetType extends js.Object {
@@ -18917,6 +18984,7 @@ package ec2 {
       __obj.asInstanceOf[FlowLog]
     }
   }
+
   @js.native
   sealed trait FlowLogsResourceType extends js.Any
   object FlowLogsResourceType extends js.Object {
@@ -19065,6 +19133,7 @@ package ec2 {
       __obj.asInstanceOf[FpgaImageAttribute]
     }
   }
+
   @js.native
   sealed trait FpgaImageAttributeName extends js.Any
   object FpgaImageAttributeName extends js.Object {
@@ -19097,6 +19166,7 @@ package ec2 {
       __obj.asInstanceOf[FpgaImageState]
     }
   }
+
   @js.native
   sealed trait FpgaImageStateCode extends js.Any
   object FpgaImageStateCode extends js.Object {
@@ -19129,6 +19199,7 @@ package ec2 {
       __obj.asInstanceOf[FpgaInfo]
     }
   }
+
   @js.native
   sealed trait GatewayType extends js.Any
   object GatewayType extends js.Object {
@@ -20236,6 +20307,7 @@ package ec2 {
       __obj.asInstanceOf[HostProperties]
     }
   }
+
   @js.native
   sealed trait HostRecovery extends js.Any
   object HostRecovery extends js.Object {
@@ -20302,6 +20374,7 @@ package ec2 {
       __obj.asInstanceOf[HostReservation]
     }
   }
+
   @js.native
   sealed trait HostTenancy extends js.Any
   object HostTenancy extends js.Object {
@@ -20310,6 +20383,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(dedicated, host))
   }
+
   @js.native
   sealed trait HttpTokensState extends js.Any
   object HttpTokensState extends js.Object {
@@ -20318,6 +20392,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(optional, required))
   }
+
   @js.native
   sealed trait HypervisorType extends js.Any
   object HypervisorType extends js.Object {
@@ -20417,6 +20492,7 @@ package ec2 {
       __obj.asInstanceOf[IamInstanceProfileAssociation]
     }
   }
+
   @js.native
   sealed trait IamInstanceProfileAssociationState extends js.Any
   object IamInstanceProfileAssociationState extends js.Object {
@@ -20630,6 +20706,7 @@ package ec2 {
       __obj.asInstanceOf[ImageAttribute]
     }
   }
+
   @js.native
   sealed trait ImageAttributeName extends js.Any
   object ImageAttributeName extends js.Object {
@@ -20679,6 +20756,7 @@ package ec2 {
       __obj.asInstanceOf[ImageDiskContainer]
     }
   }
+
   @js.native
   sealed trait ImageState extends js.Any
   object ImageState extends js.Object {
@@ -20692,6 +20770,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(pending, available, invalid, deregistered, transient, failed, error))
   }
+
   @js.native
   sealed trait ImageTypeValues extends js.Any
   object ImageTypeValues extends js.Object {
@@ -21584,6 +21663,7 @@ package ec2 {
       __obj.asInstanceOf[InstanceAttribute]
     }
   }
+
   @js.native
   sealed trait InstanceAttributeName extends js.Any
   object InstanceAttributeName extends js.Object {
@@ -21806,6 +21886,7 @@ package ec2 {
       __obj.asInstanceOf[InstanceFamilyCreditSpecification]
     }
   }
+
   @js.native
   sealed trait InstanceHealthStatus extends js.Any
   object InstanceHealthStatus extends js.Object {
@@ -21814,6 +21895,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(healthy, unhealthy))
   }
+
   @js.native
   sealed trait InstanceInterruptionBehavior extends js.Any
   object InstanceInterruptionBehavior extends js.Object {
@@ -21861,6 +21943,7 @@ package ec2 {
       __obj.asInstanceOf[InstanceIpv6AddressRequest]
     }
   }
+
   @js.native
   sealed trait InstanceLifecycle extends js.Any
   object InstanceLifecycle extends js.Object {
@@ -21869,6 +21952,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(spot, `on-demand`))
   }
+
   @js.native
   sealed trait InstanceLifecycleType extends js.Any
   object InstanceLifecycleType extends js.Object {
@@ -21899,6 +21983,7 @@ package ec2 {
       __obj.asInstanceOf[InstanceMarketOptionsRequest]
     }
   }
+
   @js.native
   sealed trait InstanceMatchCriteria extends js.Any
   object InstanceMatchCriteria extends js.Object {
@@ -21907,6 +21992,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(open, targeted))
   }
+
   @js.native
   sealed trait InstanceMetadataEndpointState extends js.Any
   object InstanceMetadataEndpointState extends js.Object {
@@ -21968,6 +22054,7 @@ package ec2 {
       __obj.asInstanceOf[InstanceMetadataOptionsResponse]
     }
   }
+
   @js.native
   sealed trait InstanceMetadataOptionsState extends js.Any
   object InstanceMetadataOptionsState extends js.Object {
@@ -22272,6 +22359,7 @@ package ec2 {
       __obj.asInstanceOf[InstanceStateChange]
     }
   }
+
   @js.native
   sealed trait InstanceStateName extends js.Any
   object InstanceStateName extends js.Object {
@@ -22424,6 +22512,7 @@ package ec2 {
       __obj.asInstanceOf[InstanceStorageInfo]
     }
   }
+
   @js.native
   sealed trait InstanceType extends js.Any
   object InstanceType extends js.Object {
@@ -22975,6 +23064,7 @@ package ec2 {
       )
     )
   }
+
   @js.native
   sealed trait InstanceTypeHypervisor extends js.Any
   object InstanceTypeHypervisor extends js.Object {
@@ -23114,6 +23204,7 @@ package ec2 {
       __obj.asInstanceOf[InstanceUsage]
     }
   }
+
   @js.native
   sealed trait InterfacePermissionType extends js.Any
   object InterfacePermissionType extends js.Object {
@@ -23322,6 +23413,7 @@ package ec2 {
       __obj.asInstanceOf[Ipv6Range]
     }
   }
+
   @js.native
   sealed trait Ipv6SupportValue extends js.Any
   object Ipv6SupportValue extends js.Object {
@@ -23870,6 +23962,7 @@ package ec2 {
       __obj.asInstanceOf[LaunchTemplateElasticInferenceAcceleratorResponse]
     }
   }
+
   @js.native
   sealed trait LaunchTemplateErrorCode extends js.Any
   object LaunchTemplateErrorCode extends js.Object {
@@ -23929,6 +24022,7 @@ package ec2 {
       __obj.asInstanceOf[LaunchTemplateHibernationOptionsRequest]
     }
   }
+
   @js.native
   sealed trait LaunchTemplateHttpTokensState extends js.Any
   object LaunchTemplateHttpTokensState extends js.Object {
@@ -24025,6 +24119,7 @@ package ec2 {
       __obj.asInstanceOf[LaunchTemplateInstanceMarketOptionsRequest]
     }
   }
+
   @js.native
   sealed trait LaunchTemplateInstanceMetadataEndpointState extends js.Any
   object LaunchTemplateInstanceMetadataEndpointState extends js.Object {
@@ -24086,6 +24181,7 @@ package ec2 {
       __obj.asInstanceOf[LaunchTemplateInstanceMetadataOptionsRequest]
     }
   }
+
   @js.native
   sealed trait LaunchTemplateInstanceMetadataOptionsState extends js.Any
   object LaunchTemplateInstanceMetadataOptionsState extends js.Object {
@@ -24611,6 +24707,7 @@ package ec2 {
       __obj.asInstanceOf[LicenseConfigurationRequest]
     }
   }
+
   @js.native
   sealed trait ListingState extends js.Any
   object ListingState extends js.Object {
@@ -24621,6 +24718,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(available, sold, cancelled, pending))
   }
+
   @js.native
   sealed trait ListingStatus extends js.Any
   object ListingStatus extends js.Object {
@@ -24785,6 +24883,7 @@ package ec2 {
       __obj.asInstanceOf[LocalGatewayRoute]
     }
   }
+
   @js.native
   sealed trait LocalGatewayRouteState extends js.Any
   object LocalGatewayRouteState extends js.Object {
@@ -24905,6 +25004,7 @@ package ec2 {
       __obj.asInstanceOf[LocalGatewayRouteTableVpcAssociation]
     }
   }
+
   @js.native
   sealed trait LocalGatewayRouteType extends js.Any
   object LocalGatewayRouteType extends js.Object {
@@ -24987,6 +25087,7 @@ package ec2 {
       __obj.asInstanceOf[LocalGatewayVirtualInterfaceGroup]
     }
   }
+
   @js.native
   sealed trait LocationType extends js.Any
   object LocationType extends js.Object {
@@ -24996,6 +25097,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(region, `availability-zone`, `availability-zone-id`))
   }
+
   @js.native
   sealed trait LogDestinationType extends js.Any
   object LogDestinationType extends js.Object {
@@ -25004,6 +25106,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(`cloud-watch-logs`, s3))
   }
+
   @js.native
   sealed trait MarketType extends js.Any
   object MarketType extends js.Object {
@@ -25011,6 +25114,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(spot))
   }
+
   @js.native
   sealed trait MembershipType extends js.Any
   object MembershipType extends js.Object {
@@ -26894,6 +26998,7 @@ package ec2 {
       __obj.asInstanceOf[Monitoring]
     }
   }
+
   @js.native
   sealed trait MonitoringState extends js.Any
   object MonitoringState extends js.Object {
@@ -26944,6 +27049,7 @@ package ec2 {
       __obj.asInstanceOf[MoveAddressToVpcResult]
     }
   }
+
   @js.native
   sealed trait MoveStatus extends js.Any
   object MoveStatus extends js.Object {
@@ -26974,6 +27080,7 @@ package ec2 {
       __obj.asInstanceOf[MovingAddressStatus]
     }
   }
+
   @js.native
   sealed trait MulticastSupportValue extends js.Any
   object MulticastSupportValue extends js.Object {
@@ -27059,6 +27166,7 @@ package ec2 {
       __obj.asInstanceOf[NatGatewayAddress]
     }
   }
+
   @js.native
   sealed trait NatGatewayState extends js.Any
   object NatGatewayState extends js.Object {
@@ -27379,6 +27487,7 @@ package ec2 {
       __obj.asInstanceOf[NetworkInterfaceAttachmentChanges]
     }
   }
+
   @js.native
   sealed trait NetworkInterfaceAttribute extends js.Any
   object NetworkInterfaceAttribute extends js.Object {
@@ -27389,6 +27498,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(description, groupSet, sourceDestCheck, attachment))
   }
+
   @js.native
   sealed trait NetworkInterfaceCreationType extends js.Any
   object NetworkInterfaceCreationType extends js.Object {
@@ -27473,6 +27583,7 @@ package ec2 {
       __obj.asInstanceOf[NetworkInterfacePermissionState]
     }
   }
+
   @js.native
   sealed trait NetworkInterfacePermissionStateCode extends js.Any
   object NetworkInterfacePermissionStateCode extends js.Object {
@@ -27511,6 +27622,7 @@ package ec2 {
       __obj.asInstanceOf[NetworkInterfacePrivateIpAddress]
     }
   }
+
   @js.native
   sealed trait NetworkInterfaceStatus extends js.Any
   object NetworkInterfaceStatus extends js.Object {
@@ -27522,6 +27634,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(available, associated, attaching, `in-use`, detaching))
   }
+
   @js.native
   sealed trait NetworkInterfaceType extends js.Any
   object NetworkInterfaceType extends js.Object {
@@ -27550,6 +27663,7 @@ package ec2 {
       __obj.asInstanceOf[NewDhcpConfiguration]
     }
   }
+
   @js.native
   sealed trait OfferingClassType extends js.Any
   object OfferingClassType extends js.Object {
@@ -27558,6 +27672,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(standard, convertible))
   }
+
   @js.native
   sealed trait OfferingTypeValues extends js.Any
   object OfferingTypeValues extends js.Object {
@@ -27579,6 +27694,7 @@ package ec2 {
       )
     )
   }
+
   @js.native
   sealed trait OnDemandAllocationStrategy extends js.Any
   object OnDemandAllocationStrategy extends js.Object {
@@ -27659,6 +27775,7 @@ package ec2 {
       __obj.asInstanceOf[OnDemandOptionsRequest]
     }
   }
+
   @js.native
   sealed trait OperationType extends js.Any
   object OperationType extends js.Object {
@@ -27667,6 +27784,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(add, remove))
   }
+
   @js.native
   sealed trait PaymentOption extends js.Any
   object PaymentOption extends js.Object {
@@ -27813,6 +27931,7 @@ package ec2 {
       __obj.asInstanceOf[PeeringTgwInfo]
     }
   }
+
   @js.native
   sealed trait PermissionGroup extends js.Any
   object PermissionGroup extends js.Object {
@@ -28141,6 +28260,7 @@ package ec2 {
       __obj.asInstanceOf[PlacementGroupInfo]
     }
   }
+
   @js.native
   sealed trait PlacementGroupState extends js.Any
   object PlacementGroupState extends js.Object {
@@ -28151,6 +28271,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
   }
+
   @js.native
   sealed trait PlacementGroupStrategy extends js.Any
   object PlacementGroupStrategy extends js.Object {
@@ -28179,6 +28300,7 @@ package ec2 {
       __obj.asInstanceOf[PlacementResponse]
     }
   }
+
   @js.native
   sealed trait PlacementStrategy extends js.Any
   object PlacementStrategy extends js.Object {
@@ -28188,6 +28310,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(cluster, spread, partition))
   }
+
   @js.native
   sealed trait PlatformValues extends js.Any
   object PlatformValues extends js.Object {
@@ -28380,6 +28503,7 @@ package ec2 {
       __obj.asInstanceOf[PrincipalIdFormat]
     }
   }
+
   @js.native
   sealed trait PrincipalType extends js.Any
   object PrincipalType extends js.Object {
@@ -28486,6 +28610,7 @@ package ec2 {
       __obj.asInstanceOf[ProductCode]
     }
   }
+
   @js.native
   sealed trait ProductCodeValues extends js.Any
   object ProductCodeValues extends js.Object {
@@ -28874,6 +28999,7 @@ package ec2 {
       __obj.asInstanceOf[PurchaseScheduledInstancesResult]
     }
   }
+
   @js.native
   sealed trait RIProductDescription extends js.Any
   object RIProductDescription extends js.Object {
@@ -28927,6 +29053,7 @@ package ec2 {
       __obj.asInstanceOf[RecurringCharge]
     }
   }
+
   @js.native
   sealed trait RecurringChargeFrequency extends js.Any
   object RecurringChargeFrequency extends js.Object {
@@ -29613,6 +29740,7 @@ package ec2 {
       __obj.asInstanceOf[ReplaceTransitGatewayRouteResult]
     }
   }
+
   @js.native
   sealed trait ReportInstanceReasonCodes extends js.Any
   object ReportInstanceReasonCodes extends js.Object {
@@ -29676,6 +29804,7 @@ package ec2 {
       __obj.asInstanceOf[ReportInstanceStatusRequest]
     }
   }
+
   @js.native
   sealed trait ReportStatusType extends js.Any
   object ReportStatusType extends js.Object {
@@ -29996,6 +30125,7 @@ package ec2 {
       __obj.asInstanceOf[Reservation]
     }
   }
+
   @js.native
   sealed trait ReservationState extends js.Any
   object ReservationState extends js.Object {
@@ -30075,6 +30205,7 @@ package ec2 {
       __obj.asInstanceOf[ReservedInstanceReservationValue]
     }
   }
+
   @js.native
   sealed trait ReservedInstanceState extends js.Any
   object ReservedInstanceState extends js.Object {
@@ -30418,6 +30549,7 @@ package ec2 {
       __obj.asInstanceOf[ResetEbsDefaultKmsKeyIdResult]
     }
   }
+
   @js.native
   sealed trait ResetFpgaImageAttributeName extends js.Any
   object ResetFpgaImageAttributeName extends js.Object {
@@ -30465,6 +30597,7 @@ package ec2 {
       __obj.asInstanceOf[ResetFpgaImageAttributeResult]
     }
   }
+
   @js.native
   sealed trait ResetImageAttributeName extends js.Any
   object ResetImageAttributeName extends js.Object {
@@ -30574,6 +30707,7 @@ package ec2 {
       __obj.asInstanceOf[ResetSnapshotAttributeRequest]
     }
   }
+
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {
@@ -30953,6 +31087,7 @@ package ec2 {
       __obj.asInstanceOf[RevokeSecurityGroupIngressRequest]
     }
   }
+
   @js.native
   sealed trait RootDeviceType extends js.Any
   object RootDeviceType extends js.Object {
@@ -31021,6 +31156,7 @@ package ec2 {
       __obj.asInstanceOf[Route]
     }
   }
+
   @js.native
   sealed trait RouteOrigin extends js.Any
   object RouteOrigin extends js.Object {
@@ -31030,6 +31166,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(CreateRouteTable, CreateRoute, EnableVgwRoutePropagation))
   }
+
   @js.native
   sealed trait RouteState extends js.Any
   object RouteState extends js.Object {
@@ -31131,6 +31268,7 @@ package ec2 {
       __obj.asInstanceOf[RouteTableAssociationState]
     }
   }
+
   @js.native
   sealed trait RouteTableAssociationStateCode extends js.Any
   object RouteTableAssociationStateCode extends js.Object {
@@ -31142,6 +31280,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated, failed))
   }
+
   @js.native
   sealed trait RuleAction extends js.Any
   object RuleAction extends js.Object {
@@ -32210,6 +32349,7 @@ package ec2 {
       __obj.asInstanceOf[ServiceDetail]
     }
   }
+
   @js.native
   sealed trait ServiceState extends js.Any
   object ServiceState extends js.Object {
@@ -32221,6 +32361,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(Pending, Available, Deleting, Deleted, Failed))
   }
+
   @js.native
   sealed trait ServiceType extends js.Any
   object ServiceType extends js.Object {
@@ -32248,6 +32389,7 @@ package ec2 {
       __obj.asInstanceOf[ServiceTypeDetail]
     }
   }
+
   @js.native
   sealed trait ShutdownBehavior extends js.Any
   object ShutdownBehavior extends js.Object {
@@ -32360,6 +32502,7 @@ package ec2 {
       __obj.asInstanceOf[Snapshot]
     }
   }
+
   @js.native
   sealed trait SnapshotAttributeName extends js.Any
   object SnapshotAttributeName extends js.Object {
@@ -32488,6 +32631,7 @@ package ec2 {
       __obj.asInstanceOf[SnapshotInfo]
     }
   }
+
   @js.native
   sealed trait SnapshotState extends js.Any
   object SnapshotState extends js.Object {
@@ -32546,6 +32690,7 @@ package ec2 {
       __obj.asInstanceOf[SnapshotTaskDetail]
     }
   }
+
   @js.native
   sealed trait SpotAllocationStrategy extends js.Any
   object SpotAllocationStrategy extends js.Object {
@@ -32830,6 +32975,7 @@ package ec2 {
       __obj.asInstanceOf[SpotFleetTagSpecification]
     }
   }
+
   @js.native
   sealed trait SpotInstanceInterruptionBehavior extends js.Any
   object SpotInstanceInterruptionBehavior extends js.Object {
@@ -32914,6 +33060,7 @@ package ec2 {
       __obj.asInstanceOf[SpotInstanceRequest]
     }
   }
+
   @js.native
   sealed trait SpotInstanceState extends js.Any
   object SpotInstanceState extends js.Object {
@@ -32972,6 +33119,7 @@ package ec2 {
       __obj.asInstanceOf[SpotInstanceStatus]
     }
   }
+
   @js.native
   sealed trait SpotInstanceType extends js.Any
   object SpotInstanceType extends js.Object {
@@ -33292,6 +33440,7 @@ package ec2 {
       __obj.asInstanceOf[StartVpcEndpointServicePrivateDnsVerificationResult]
     }
   }
+
   @js.native
   sealed trait State extends js.Any
   object State extends js.Object {
@@ -33329,6 +33478,7 @@ package ec2 {
       __obj.asInstanceOf[StateReason]
     }
   }
+
   @js.native
   sealed trait Status extends js.Any
   object Status extends js.Object {
@@ -33338,6 +33488,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(MoveInProgress, InVpc, InClassic))
   }
+
   @js.native
   sealed trait StatusName extends js.Any
   object StatusName extends js.Object {
@@ -33345,6 +33496,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(reachability))
   }
+
   @js.native
   sealed trait StatusType extends js.Any
   object StatusType extends js.Object {
@@ -33548,6 +33700,7 @@ package ec2 {
       __obj.asInstanceOf[SubnetCidrBlockState]
     }
   }
+
   @js.native
   sealed trait SubnetCidrBlockStateCode extends js.Any
   object SubnetCidrBlockStateCode extends js.Object {
@@ -33585,6 +33738,7 @@ package ec2 {
       __obj.asInstanceOf[SubnetIpv6CidrBlockAssociation]
     }
   }
+
   @js.native
   sealed trait SubnetState extends js.Any
   object SubnetState extends js.Object {
@@ -33631,6 +33785,7 @@ package ec2 {
       __obj.asInstanceOf[SuccessfulQueuedPurchaseDeletion]
     }
   }
+
   @js.native
   sealed trait SummaryStatus extends js.Any
   object SummaryStatus extends js.Object {
@@ -33918,6 +34073,7 @@ package ec2 {
       __obj.asInstanceOf[TargetReservationValue]
     }
   }
+
   @js.native
   sealed trait TelemetryStatus extends js.Any
   object TelemetryStatus extends js.Object {
@@ -33926,6 +34082,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(UP, DOWN))
   }
+
   @js.native
   sealed trait Tenancy extends js.Any
   object Tenancy extends js.Object {
@@ -34046,6 +34203,7 @@ package ec2 {
       __obj.asInstanceOf[TerminateInstancesResult]
     }
   }
+
   @js.native
   sealed trait TrafficDirection extends js.Any
   object TrafficDirection extends js.Object {
@@ -34139,6 +34297,7 @@ package ec2 {
       __obj.asInstanceOf[TrafficMirrorFilterRule]
     }
   }
+
   @js.native
   sealed trait TrafficMirrorFilterRuleField extends js.Any
   object TrafficMirrorFilterRuleField extends js.Object {
@@ -34149,6 +34308,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(`destination-port-range`, `source-port-range`, protocol, description))
   }
+
   @js.native
   sealed trait TrafficMirrorNetworkService extends js.Any
   object TrafficMirrorNetworkService extends js.Object {
@@ -34200,6 +34360,7 @@ package ec2 {
       __obj.asInstanceOf[TrafficMirrorPortRangeRequest]
     }
   }
+
   @js.native
   sealed trait TrafficMirrorRuleAction extends js.Any
   object TrafficMirrorRuleAction extends js.Object {
@@ -34254,6 +34415,7 @@ package ec2 {
       __obj.asInstanceOf[TrafficMirrorSession]
     }
   }
+
   @js.native
   sealed trait TrafficMirrorSessionField extends js.Any
   object TrafficMirrorSessionField extends js.Object {
@@ -34300,6 +34462,7 @@ package ec2 {
       __obj.asInstanceOf[TrafficMirrorTarget]
     }
   }
+
   @js.native
   sealed trait TrafficMirrorTargetType extends js.Any
   object TrafficMirrorTargetType extends js.Object {
@@ -34308,6 +34471,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(`network-interface`, `network-load-balancer`))
   }
+
   @js.native
   sealed trait TrafficType extends js.Any
   object TrafficType extends js.Object {
@@ -34392,6 +34556,7 @@ package ec2 {
       __obj.asInstanceOf[TransitGatewayAssociation]
     }
   }
+
   @js.native
   sealed trait TransitGatewayAssociationState extends js.Any
   object TransitGatewayAssociationState extends js.Object {
@@ -34498,6 +34663,7 @@ package ec2 {
       __obj.asInstanceOf[TransitGatewayAttachmentPropagation]
     }
   }
+
   @js.native
   sealed trait TransitGatewayAttachmentResourceType extends js.Any
   object TransitGatewayAttachmentResourceType extends js.Object {
@@ -34508,6 +34674,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(vpc, vpn, `direct-connect-gateway`, `tgw-peering`))
   }
+
   @js.native
   sealed trait TransitGatewayAttachmentState extends js.Any
   object TransitGatewayAttachmentState extends js.Object {
@@ -34541,6 +34708,7 @@ package ec2 {
       )
     )
   }
+
   @js.native
   sealed trait TransitGatewayMulitcastDomainAssociationState extends js.Any
   object TransitGatewayMulitcastDomainAssociationState extends js.Object {
@@ -34707,6 +34875,7 @@ package ec2 {
       __obj.asInstanceOf[TransitGatewayMulticastDomainAssociations]
     }
   }
+
   @js.native
   sealed trait TransitGatewayMulticastDomainState extends js.Any
   object TransitGatewayMulticastDomainState extends js.Object {
@@ -34950,6 +35119,7 @@ package ec2 {
       __obj.asInstanceOf[TransitGatewayPropagation]
     }
   }
+
   @js.native
   sealed trait TransitGatewayPropagationState extends js.Any
   object TransitGatewayPropagationState extends js.Object {
@@ -35060,6 +35230,7 @@ package ec2 {
       __obj.asInstanceOf[TransitGatewayRouteAttachment]
     }
   }
+
   @js.native
   sealed trait TransitGatewayRouteState extends js.Any
   object TransitGatewayRouteState extends js.Object {
@@ -35174,6 +35345,7 @@ package ec2 {
       __obj.asInstanceOf[TransitGatewayRouteTablePropagation]
     }
   }
+
   @js.native
   sealed trait TransitGatewayRouteTableState extends js.Any
   object TransitGatewayRouteTableState extends js.Object {
@@ -35184,6 +35356,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
   }
+
   @js.native
   sealed trait TransitGatewayRouteType extends js.Any
   object TransitGatewayRouteType extends js.Object {
@@ -35192,6 +35365,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(static, propagated))
   }
+
   @js.native
   sealed trait TransitGatewayState extends js.Any
   object TransitGatewayState extends js.Object {
@@ -35270,6 +35444,7 @@ package ec2 {
       __obj.asInstanceOf[TransitGatewayVpcAttachmentOptions]
     }
   }
+
   @js.native
   sealed trait TransportProtocol extends js.Any
   object TransportProtocol extends js.Object {
@@ -35414,6 +35589,7 @@ package ec2 {
       __obj.asInstanceOf[UnassignPrivateIpAddressesRequest]
     }
   }
+
   @js.native
   sealed trait UnlimitedSupportedInstanceFamily extends js.Any
   object UnlimitedSupportedInstanceFamily extends js.Object {
@@ -35460,6 +35636,7 @@ package ec2 {
       __obj.asInstanceOf[UnmonitorInstancesResult]
     }
   }
+
   @js.native
   sealed trait UnsuccessfulInstanceCreditSpecificationErrorCode extends js.Any
   object UnsuccessfulInstanceCreditSpecificationErrorCode extends js.Object {
@@ -35654,6 +35831,7 @@ package ec2 {
       __obj.asInstanceOf[UpdateSecurityGroupRuleDescriptionsIngressResult]
     }
   }
+
   @js.native
   sealed trait UsageClassType extends js.Any
   object UsageClassType extends js.Object {
@@ -35827,6 +36005,7 @@ package ec2 {
       __obj.asInstanceOf[VgwTelemetry]
     }
   }
+
   @js.native
   sealed trait VirtualizationType extends js.Any
   object VirtualizationType extends js.Object {
@@ -35930,6 +36109,7 @@ package ec2 {
       __obj.asInstanceOf[VolumeAttachment]
     }
   }
+
   @js.native
   sealed trait VolumeAttachmentState extends js.Any
   object VolumeAttachmentState extends js.Object {
@@ -35941,6 +36121,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(attaching, attached, detaching, detached, busy))
   }
+
   @js.native
   sealed trait VolumeAttributeName extends js.Any
   object VolumeAttributeName extends js.Object {
@@ -36023,6 +36204,7 @@ package ec2 {
       __obj.asInstanceOf[VolumeModification]
     }
   }
+
   @js.native
   sealed trait VolumeModificationState extends js.Any
   object VolumeModificationState extends js.Object {
@@ -36033,6 +36215,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(modifying, optimizing, completed, failed))
   }
+
   @js.native
   sealed trait VolumeState extends js.Any
   object VolumeState extends js.Object {
@@ -36173,6 +36356,7 @@ package ec2 {
       __obj.asInstanceOf[VolumeStatusInfo]
     }
   }
+
   @js.native
   sealed trait VolumeStatusInfoStatus extends js.Any
   object VolumeStatusInfoStatus extends js.Object {
@@ -36219,6 +36403,7 @@ package ec2 {
       __obj.asInstanceOf[VolumeStatusItem]
     }
   }
+
   @js.native
   sealed trait VolumeStatusName extends js.Any
   object VolumeStatusName extends js.Object {
@@ -36227,6 +36412,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(`io-enabled`, `io-performance`))
   }
+
   @js.native
   sealed trait VolumeType extends js.Any
   object VolumeType extends js.Object {
@@ -36308,6 +36494,7 @@ package ec2 {
       __obj.asInstanceOf[VpcAttachment]
     }
   }
+
   @js.native
   sealed trait VpcAttributeName extends js.Any
   object VpcAttributeName extends js.Object {
@@ -36363,6 +36550,7 @@ package ec2 {
       __obj.asInstanceOf[VpcCidrBlockState]
     }
   }
+
   @js.native
   sealed trait VpcCidrBlockStateCode extends js.Any
   object VpcCidrBlockStateCode extends js.Object {
@@ -36504,6 +36692,7 @@ package ec2 {
       __obj.asInstanceOf[VpcEndpointConnection]
     }
   }
+
   @js.native
   sealed trait VpcEndpointType extends js.Any
   object VpcEndpointType extends js.Object {
@@ -36630,6 +36819,7 @@ package ec2 {
       __obj.asInstanceOf[VpcPeeringConnectionStateReason]
     }
   }
+
   @js.native
   sealed trait VpcPeeringConnectionStateReasonCode extends js.Any
   object VpcPeeringConnectionStateReasonCode extends js.Object {
@@ -36694,6 +36884,7 @@ package ec2 {
       __obj.asInstanceOf[VpcPeeringConnectionVpcInfo]
     }
   }
+
   @js.native
   sealed trait VpcState extends js.Any
   object VpcState extends js.Object {
@@ -36702,6 +36893,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(pending, available))
   }
+
   @js.native
   sealed trait VpcTenancy extends js.Any
   object VpcTenancy extends js.Object {
@@ -36813,6 +37005,7 @@ package ec2 {
       __obj.asInstanceOf[VpnConnectionOptionsSpecification]
     }
   }
+
   @js.native
   sealed trait VpnEcmpSupportValue extends js.Any
   object VpnEcmpSupportValue extends js.Object {
@@ -36858,6 +37051,7 @@ package ec2 {
       __obj.asInstanceOf[VpnGateway]
     }
   }
+
   @js.native
   sealed trait VpnProtocol extends js.Any
   object VpnProtocol extends js.Object {
@@ -36865,6 +37059,7 @@ package ec2 {
 
     val values = js.Object.freeze(js.Array(openvpn))
   }
+
   @js.native
   sealed trait VpnState extends js.Any
   object VpnState extends js.Object {
@@ -36900,6 +37095,7 @@ package ec2 {
       __obj.asInstanceOf[VpnStaticRoute]
     }
   }
+
   @js.native
   sealed trait VpnStaticRouteSource extends js.Any
   object VpnStaticRouteSource extends js.Object {
@@ -37013,6 +37209,7 @@ package ec2 {
       __obj.asInstanceOf[WithdrawByoipCidrResult]
     }
   }
+
   @js.native
   sealed trait scope extends js.Any
   object scope extends js.Object {

@@ -222,6 +222,7 @@ package mediastoredata {
       __obj.asInstanceOf[Item]
     }
   }
+
   @js.native
   sealed trait ItemType extends js.Any
   object ItemType extends js.Object {
@@ -326,6 +327,7 @@ package mediastoredata {
       __obj.asInstanceOf[PutObjectResponse]
     }
   }
+
   @js.native
   sealed trait StorageClass extends js.Any
   object StorageClass extends js.Object {
@@ -333,6 +335,7 @@ package mediastoredata {
 
     val values = js.Object.freeze(js.Array(TEMPORAL))
   }
+
   @js.native
   sealed trait UploadAvailability extends js.Any
   object UploadAvailability extends js.Object {

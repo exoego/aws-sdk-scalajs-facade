@@ -312,6 +312,7 @@ package dynamodbstreams {
       __obj.asInstanceOf[KeySchemaElement]
     }
   }
+
   @js.native
   sealed trait KeyType extends js.Any
   object KeyType extends js.Object {
@@ -375,6 +376,7 @@ package dynamodbstreams {
       __obj.asInstanceOf[ListStreamsOutput]
     }
   }
+
   @js.native
   sealed trait OperationType extends js.Any
   object OperationType extends js.Object {
@@ -476,6 +478,7 @@ package dynamodbstreams {
       __obj.asInstanceOf[Shard]
     }
   }
+
   @js.native
   sealed trait ShardIteratorType extends js.Any
   object ShardIteratorType extends js.Object {
@@ -593,6 +596,7 @@ package dynamodbstreams {
       __obj.asInstanceOf[StreamRecord]
     }
   }
+
   @js.native
   sealed trait StreamStatus extends js.Any
   object StreamStatus extends js.Object {
@@ -603,6 +607,7 @@ package dynamodbstreams {
 
     val values = js.Object.freeze(js.Array(ENABLING, ENABLED, DISABLING, DISABLED))
   }
+
   @js.native
   sealed trait StreamViewType extends js.Any
   object StreamViewType extends js.Object {

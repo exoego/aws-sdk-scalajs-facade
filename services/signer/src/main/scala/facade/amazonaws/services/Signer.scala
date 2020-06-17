@@ -105,6 +105,7 @@ package signer {
       __obj.asInstanceOf[CancelSigningProfileRequest]
     }
   }
+
   @js.native
   sealed trait Category extends js.Any
   object Category extends js.Object {
@@ -201,6 +202,7 @@ package signer {
       __obj.asInstanceOf[Destination]
     }
   }
+
   @js.native
   sealed trait EncryptionAlgorithm extends js.Any
   object EncryptionAlgorithm extends js.Object {
@@ -343,6 +345,7 @@ package signer {
       __obj.asInstanceOf[GetSigningProfileResponse]
     }
   }
+
   @js.native
   sealed trait HashAlgorithm extends js.Any
   object HashAlgorithm extends js.Object {
@@ -375,6 +378,7 @@ package signer {
       __obj.asInstanceOf[HashAlgorithmOptions]
     }
   }
+
   @js.native
   sealed trait ImageFormat extends js.Any
   object ImageFormat extends js.Object {
@@ -911,6 +915,7 @@ package signer {
       __obj.asInstanceOf[SigningProfile]
     }
   }
+
   @js.native
   sealed trait SigningProfileStatus extends js.Any
   object SigningProfileStatus extends js.Object {
@@ -919,6 +924,7 @@ package signer {
 
     val values = js.Object.freeze(js.Array(Active, Canceled))
   }
+
   @js.native
   sealed trait SigningStatus extends js.Any
   object SigningStatus extends js.Object {

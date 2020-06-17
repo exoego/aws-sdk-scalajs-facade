@@ -166,6 +166,7 @@ package globalaccelerator {
       __obj.asInstanceOf[AcceleratorAttributes]
     }
   }
+
   @js.native
   sealed trait AcceleratorStatus extends js.Any
   object AcceleratorStatus extends js.Object {
@@ -174,6 +175,7 @@ package globalaccelerator {
 
     val values = js.Object.freeze(js.Array(DEPLOYED, IN_PROGRESS))
   }
+
   @js.native
   sealed trait ClientAffinity extends js.Any
   object ClientAffinity extends js.Object {
@@ -629,6 +631,7 @@ package globalaccelerator {
       __obj.asInstanceOf[EndpointGroup]
     }
   }
+
   @js.native
   sealed trait HealthCheckProtocol extends js.Any
   object HealthCheckProtocol extends js.Object {
@@ -638,6 +641,7 @@ package globalaccelerator {
 
     val values = js.Object.freeze(js.Array(TCP, HTTP, HTTPS))
   }
+
   @js.native
   sealed trait HealthState extends js.Any
   object HealthState extends js.Object {
@@ -647,6 +651,7 @@ package globalaccelerator {
 
     val values = js.Object.freeze(js.Array(INITIAL, HEALTHY, UNHEALTHY))
   }
+
   @js.native
   sealed trait IpAddressType extends js.Any
   object IpAddressType extends js.Object {
@@ -850,6 +855,7 @@ package globalaccelerator {
       __obj.asInstanceOf[PortRange]
     }
   }
+
   @js.native
   sealed trait Protocol extends js.Any
   object Protocol extends js.Object {

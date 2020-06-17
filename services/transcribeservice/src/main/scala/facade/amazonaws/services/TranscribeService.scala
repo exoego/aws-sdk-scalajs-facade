@@ -396,6 +396,7 @@ package transcribeservice {
       __obj.asInstanceOf[JobExecutionSettings]
     }
   }
+
   @js.native
   sealed trait LanguageCode extends js.Any
   object LanguageCode extends js.Object {
@@ -623,6 +624,7 @@ package transcribeservice {
       __obj.asInstanceOf[Media]
     }
   }
+
   @js.native
   sealed trait MediaFormat extends js.Any
   object MediaFormat extends js.Object {
@@ -633,6 +635,7 @@ package transcribeservice {
 
     val values = js.Object.freeze(js.Array(mp3, mp4, wav, flac))
   }
+
   @js.native
   sealed trait OutputLocationType extends js.Any
   object OutputLocationType extends js.Object {
@@ -813,6 +816,7 @@ package transcribeservice {
       __obj.asInstanceOf[TranscriptionJob]
     }
   }
+
   @js.native
   sealed trait TranscriptionJobStatus extends js.Any
   object TranscriptionJobStatus extends js.Object {
@@ -986,6 +990,7 @@ package transcribeservice {
       __obj.asInstanceOf[VocabularyFilterInfo]
     }
   }
+
   @js.native
   sealed trait VocabularyFilterMethod extends js.Any
   object VocabularyFilterMethod extends js.Object {
@@ -1022,6 +1027,7 @@ package transcribeservice {
       __obj.asInstanceOf[VocabularyInfo]
     }
   }
+
   @js.native
   sealed trait VocabularyState extends js.Any
   object VocabularyState extends js.Object {

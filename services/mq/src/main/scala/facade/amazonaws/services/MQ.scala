@@ -628,6 +628,7 @@ package mq {
       __obj.asInstanceOf[CreateUserResponse]
     }
   }
+
   @js.native
   sealed trait DayOfWeek extends js.Any
   object DayOfWeek extends js.Object {

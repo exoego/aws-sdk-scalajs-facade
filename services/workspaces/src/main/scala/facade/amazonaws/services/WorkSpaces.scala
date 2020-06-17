@@ -262,6 +262,7 @@ package workspaces {
     def terminateWorkspaces(params: TerminateWorkspacesRequest): Request[TerminateWorkspacesResult]    = js.native
     def updateRulesOfIpGroup(params: UpdateRulesOfIpGroupRequest): Request[UpdateRulesOfIpGroupResult] = js.native
   }
+
   @js.native
   sealed trait AccessPropertyValue extends js.Any
   object AccessPropertyValue extends js.Object {
@@ -415,6 +416,7 @@ package workspaces {
       __obj.asInstanceOf[ClientPropertiesResult]
     }
   }
+
   @js.native
   sealed trait Compute extends js.Any
   object Compute extends js.Object {
@@ -447,6 +449,7 @@ package workspaces {
       __obj.asInstanceOf[ComputeType]
     }
   }
+
   @js.native
   sealed trait ConnectionState extends js.Any
   object ConnectionState extends js.Object {
@@ -616,6 +619,7 @@ package workspaces {
       __obj.asInstanceOf[CreateWorkspacesResult]
     }
   }
+
   @js.native
   sealed trait DedicatedTenancyModificationStateEnum extends js.Any
   object DedicatedTenancyModificationStateEnum extends js.Object {
@@ -625,6 +629,7 @@ package workspaces {
 
     val values = js.Object.freeze(js.Array(PENDING, COMPLETED, FAILED))
   }
+
   @js.native
   sealed trait DedicatedTenancySupportEnum extends js.Any
   object DedicatedTenancySupportEnum extends js.Object {
@@ -632,6 +637,7 @@ package workspaces {
 
     val values = js.Object.freeze(js.Array(ENABLED))
   }
+
   @js.native
   sealed trait DedicatedTenancySupportResultEnum extends js.Any
   object DedicatedTenancySupportResultEnum extends js.Object {
@@ -1466,6 +1472,7 @@ package workspaces {
       __obj.asInstanceOf[MigrateWorkspaceResult]
     }
   }
+
   @js.native
   sealed trait ModificationResourceEnum extends js.Any
   object ModificationResourceEnum extends js.Object {
@@ -1497,6 +1504,7 @@ package workspaces {
       __obj.asInstanceOf[ModificationState]
     }
   }
+
   @js.native
   sealed trait ModificationStateEnum extends js.Any
   object ModificationStateEnum extends js.Object {
@@ -1762,6 +1770,7 @@ package workspaces {
       __obj.asInstanceOf[OperatingSystem]
     }
   }
+
   @js.native
   sealed trait OperatingSystemType extends js.Any
   object OperatingSystemType extends js.Object {
@@ -1880,6 +1889,7 @@ package workspaces {
       __obj.asInstanceOf[RebuildWorkspacesResult]
     }
   }
+
   @js.native
   sealed trait ReconnectEnum extends js.Any
   object ReconnectEnum extends js.Object {
@@ -2018,6 +2028,7 @@ package workspaces {
       __obj.asInstanceOf[RootStorage]
     }
   }
+
   @js.native
   sealed trait RunningMode extends js.Any
   object RunningMode extends js.Object {
@@ -2206,6 +2217,7 @@ package workspaces {
       __obj.asInstanceOf[Tag]
     }
   }
+
   @js.native
   sealed trait TargetWorkspaceState extends js.Any
   object TargetWorkspaceState extends js.Object {
@@ -2214,6 +2226,7 @@ package workspaces {
 
     val values = js.Object.freeze(js.Array(AVAILABLE, ADMIN_MAINTENANCE))
   }
+
   @js.native
   sealed trait Tenancy extends js.Any
   object Tenancy extends js.Object {
@@ -2608,6 +2621,7 @@ package workspaces {
       __obj.asInstanceOf[WorkspaceDirectory]
     }
   }
+
   @js.native
   sealed trait WorkspaceDirectoryState extends js.Any
   object WorkspaceDirectoryState extends js.Object {
@@ -2619,6 +2633,7 @@ package workspaces {
 
     val values = js.Object.freeze(js.Array(REGISTERING, REGISTERED, DEREGISTERING, DEREGISTERED, ERROR))
   }
+
   @js.native
   sealed trait WorkspaceDirectoryType extends js.Any
   object WorkspaceDirectoryType extends js.Object {
@@ -2667,6 +2682,7 @@ package workspaces {
       __obj.asInstanceOf[WorkspaceImage]
     }
   }
+
   @js.native
   sealed trait WorkspaceImageIngestionProcess extends js.Any
   object WorkspaceImageIngestionProcess extends js.Object {
@@ -2676,6 +2692,7 @@ package workspaces {
 
     val values = js.Object.freeze(js.Array(BYOL_REGULAR, BYOL_GRAPHICS, BYOL_GRAPHICSPRO))
   }
+
   @js.native
   sealed trait WorkspaceImageRequiredTenancy extends js.Any
   object WorkspaceImageRequiredTenancy extends js.Object {
@@ -2684,6 +2701,7 @@ package workspaces {
 
     val values = js.Object.freeze(js.Array(DEFAULT, DEDICATED))
   }
+
   @js.native
   sealed trait WorkspaceImageState extends js.Any
   object WorkspaceImageState extends js.Object {
@@ -2772,6 +2790,7 @@ package workspaces {
       __obj.asInstanceOf[WorkspaceRequest]
     }
   }
+
   @js.native
   sealed trait WorkspaceState extends js.Any
   object WorkspaceState extends js.Object {

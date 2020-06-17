@@ -478,6 +478,7 @@ package frauddetector {
       __obj.asInstanceOf[CreateVariableResult]
     }
   }
+
   @js.native
   sealed trait DataSource extends js.Any
   object DataSource extends js.Object {
@@ -487,6 +488,7 @@ package frauddetector {
 
     val values = js.Object.freeze(js.Array(EVENT, MODEL_SCORE, EXTERNAL_MODEL_SCORE))
   }
+
   @js.native
   sealed trait DataType extends js.Any
   object DataType extends js.Object {
@@ -683,6 +685,7 @@ package frauddetector {
       __obj.asInstanceOf[Detector]
     }
   }
+
   @js.native
   sealed trait DetectorVersionStatus extends js.Any
   object DetectorVersionStatus extends js.Object {
@@ -1205,6 +1208,7 @@ package frauddetector {
       __obj.asInstanceOf[LabelSchema]
     }
   }
+
   @js.native
   sealed trait Language extends js.Any
   object Language extends js.Object {
@@ -1274,6 +1278,7 @@ package frauddetector {
       __obj.asInstanceOf[ModelEndpointDataBlob]
     }
   }
+
   @js.native
   sealed trait ModelEndpointStatus extends js.Any
   object ModelEndpointStatus extends js.Object {
@@ -1312,6 +1317,7 @@ package frauddetector {
       __obj.asInstanceOf[ModelInputConfiguration]
     }
   }
+
   @js.native
   sealed trait ModelInputDataFormat extends js.Any
   object ModelInputDataFormat extends js.Object {
@@ -1347,6 +1353,7 @@ package frauddetector {
       __obj.asInstanceOf[ModelOutputConfiguration]
     }
   }
+
   @js.native
   sealed trait ModelOutputDataFormat extends js.Any
   object ModelOutputDataFormat extends js.Object {
@@ -1377,6 +1384,7 @@ package frauddetector {
       __obj.asInstanceOf[ModelScores]
     }
   }
+
   @js.native
   sealed trait ModelSource extends js.Any
   object ModelSource extends js.Object {
@@ -1384,6 +1392,7 @@ package frauddetector {
 
     val values = js.Object.freeze(js.Array(SAGEMAKER))
   }
+
   @js.native
   sealed trait ModelTypeEnum extends js.Any
   object ModelTypeEnum extends js.Object {
@@ -1494,6 +1503,7 @@ package frauddetector {
       __obj.asInstanceOf[ModelVersionDetail]
     }
   }
+
   @js.native
   sealed trait ModelVersionStatus extends js.Any
   object ModelVersionStatus extends js.Object {

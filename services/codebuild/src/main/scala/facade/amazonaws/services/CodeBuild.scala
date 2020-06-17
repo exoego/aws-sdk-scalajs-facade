@@ -180,6 +180,7 @@ package codebuild {
     def updateReportGroup(params: UpdateReportGroupInput): Request[UpdateReportGroupOutput]                = js.native
     def updateWebhook(params: UpdateWebhookInput): Request[UpdateWebhookOutput]                            = js.native
   }
+
   @js.native
   sealed trait ArtifactNamespace extends js.Any
   object ArtifactNamespace extends js.Object {
@@ -188,6 +189,7 @@ package codebuild {
 
     val values = js.Object.freeze(js.Array(NONE, BUILD_ID))
   }
+
   @js.native
   sealed trait ArtifactPackaging extends js.Any
   object ArtifactPackaging extends js.Object {
@@ -196,6 +198,7 @@ package codebuild {
 
     val values = js.Object.freeze(js.Array(NONE, ZIP))
   }
+
   @js.native
   sealed trait ArtifactsType extends js.Any
   object ArtifactsType extends js.Object {
@@ -205,6 +208,7 @@ package codebuild {
 
     val values = js.Object.freeze(js.Array(CODEPIPELINE, S3, NO_ARTIFACTS))
   }
+
   @js.native
   sealed trait AuthType extends js.Any
   object AuthType extends js.Object {
@@ -597,6 +601,7 @@ package codebuild {
       __obj.asInstanceOf[BuildPhase]
     }
   }
+
   @js.native
   sealed trait BuildPhaseType extends js.Any
   object BuildPhaseType extends js.Object {
@@ -628,6 +633,7 @@ package codebuild {
       )
     )
   }
+
   @js.native
   sealed trait CacheMode extends js.Any
   object CacheMode extends js.Object {
@@ -637,6 +643,7 @@ package codebuild {
 
     val values = js.Object.freeze(js.Array(LOCAL_DOCKER_LAYER_CACHE, LOCAL_SOURCE_CACHE, LOCAL_CUSTOM_CACHE))
   }
+
   @js.native
   sealed trait CacheType extends js.Any
   object CacheType extends js.Object {
@@ -673,6 +680,7 @@ package codebuild {
       __obj.asInstanceOf[CloudWatchLogsConfig]
     }
   }
+
   @js.native
   sealed trait ComputeType extends js.Any
   object ComputeType extends js.Object {
@@ -853,6 +861,7 @@ package codebuild {
       __obj.asInstanceOf[CreateWebhookOutput]
     }
   }
+
   @js.native
   sealed trait CredentialProviderType extends js.Any
   object CredentialProviderType extends js.Object {
@@ -1164,6 +1173,7 @@ package codebuild {
       __obj.asInstanceOf[EnvironmentPlatform]
     }
   }
+
   @js.native
   sealed trait EnvironmentType extends js.Any
   object EnvironmentType extends js.Object {
@@ -1201,6 +1211,7 @@ package codebuild {
       __obj.asInstanceOf[EnvironmentVariable]
     }
   }
+
   @js.native
   sealed trait EnvironmentVariableType extends js.Any
   object EnvironmentVariableType extends js.Object {
@@ -1232,6 +1243,7 @@ package codebuild {
       __obj.asInstanceOf[ExportedEnvironmentVariable]
     }
   }
+
   @js.native
   sealed trait FileSystemType extends js.Any
   object FileSystemType extends js.Object {
@@ -1294,6 +1306,7 @@ package codebuild {
       __obj.asInstanceOf[GitSubmodulesConfig]
     }
   }
+
   @js.native
   sealed trait ImagePullCredentialsType extends js.Any
   object ImagePullCredentialsType extends js.Object {
@@ -1379,6 +1392,7 @@ package codebuild {
       __obj.asInstanceOf[InvalidateProjectCacheOutput]
     }
   }
+
   @js.native
   sealed trait LanguageType extends js.Any
   object LanguageType extends js.Object {
@@ -1822,6 +1836,7 @@ package codebuild {
       __obj.asInstanceOf[LogsConfig]
     }
   }
+
   @js.native
   sealed trait LogsConfigStatusType extends js.Any
   object LogsConfigStatusType extends js.Object {
@@ -1914,6 +1929,7 @@ package codebuild {
       __obj.asInstanceOf[PhaseContext]
     }
   }
+
   @js.native
   sealed trait PlatformType extends js.Any
   object PlatformType extends js.Object {
@@ -2176,6 +2192,7 @@ package codebuild {
       __obj.asInstanceOf[ProjectFileSystemLocation]
     }
   }
+
   @js.native
   sealed trait ProjectSortByType extends js.Any
   object ProjectSortByType extends js.Object {
@@ -2389,6 +2406,7 @@ package codebuild {
       __obj.asInstanceOf[ReportExportConfig]
     }
   }
+
   @js.native
   sealed trait ReportExportConfigType extends js.Any
   object ReportExportConfigType extends js.Object {
@@ -2450,6 +2468,7 @@ package codebuild {
       __obj.asInstanceOf[ReportGroup]
     }
   }
+
   @js.native
   sealed trait ReportGroupSortByType extends js.Any
   object ReportGroupSortByType extends js.Object {
@@ -2459,6 +2478,7 @@ package codebuild {
 
     val values = js.Object.freeze(js.Array(NAME, CREATED_TIME, LAST_MODIFIED_TIME))
   }
+
   @js.native
   sealed trait ReportPackagingType extends js.Any
   object ReportPackagingType extends js.Object {
@@ -2467,6 +2487,7 @@ package codebuild {
 
     val values = js.Object.freeze(js.Array(ZIP, NONE))
   }
+
   @js.native
   sealed trait ReportStatusType extends js.Any
   object ReportStatusType extends js.Object {
@@ -2478,6 +2499,7 @@ package codebuild {
 
     val values = js.Object.freeze(js.Array(GENERATING, SUCCEEDED, FAILED, INCOMPLETE, DELETING))
   }
+
   @js.native
   sealed trait ReportType extends js.Any
   object ReportType extends js.Object {
@@ -2543,6 +2565,7 @@ package codebuild {
       __obj.asInstanceOf[S3ReportExportConfig]
     }
   }
+
   @js.native
   sealed trait ServerType extends js.Any
   object ServerType extends js.Object {
@@ -2552,6 +2575,7 @@ package codebuild {
 
     val values = js.Object.freeze(js.Array(GITHUB, BITBUCKET, GITHUB_ENTERPRISE))
   }
+
   @js.native
   sealed trait SharedResourceSortByType extends js.Any
   object SharedResourceSortByType extends js.Object {
@@ -2560,6 +2584,7 @@ package codebuild {
 
     val values = js.Object.freeze(js.Array(ARN, MODIFIED_TIME))
   }
+
   @js.native
   sealed trait SortOrderType extends js.Any
   object SortOrderType extends js.Object {
@@ -2593,6 +2618,7 @@ package codebuild {
       __obj.asInstanceOf[SourceAuth]
     }
   }
+
   @js.native
   sealed trait SourceAuthType extends js.Any
   object SourceAuthType extends js.Object {
@@ -2625,6 +2651,7 @@ package codebuild {
       __obj.asInstanceOf[SourceCredentialsInfo]
     }
   }
+
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType extends js.Object {
@@ -2773,6 +2800,7 @@ package codebuild {
       __obj.asInstanceOf[StartBuildOutput]
     }
   }
+
   @js.native
   sealed trait StatusType extends js.Any
   object StatusType extends js.Object {
@@ -3182,6 +3210,7 @@ package codebuild {
       __obj.asInstanceOf[WebhookFilter]
     }
   }
+
   @js.native
   sealed trait WebhookFilterType extends js.Any
   object WebhookFilterType extends js.Object {

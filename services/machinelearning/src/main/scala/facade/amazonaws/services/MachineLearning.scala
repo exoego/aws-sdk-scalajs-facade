@@ -1915,6 +1915,7 @@ package machinelearning {
       __obj.asInstanceOf[MLModel]
     }
   }
+
   @js.native
   sealed trait MLModelFilterVariable extends js.Any
   object MLModelFilterVariable extends js.Object {
@@ -1944,6 +1945,7 @@ package machinelearning {
       )
     )
   }
+
   @js.native
   sealed trait MLModelType extends js.Any
   object MLModelType extends js.Object {
@@ -2217,6 +2219,7 @@ package machinelearning {
       __obj.asInstanceOf[RealtimeEndpointInfo]
     }
   }
+
   @js.native
   sealed trait RealtimeEndpointStatus extends js.Any
   object RealtimeEndpointStatus extends js.Object {
@@ -2419,6 +2422,7 @@ package machinelearning {
   trait TagLimitExceededExceptionException extends js.Object {
     val message: ErrorMessage
   }
+
   @js.native
   sealed trait TaggableResourceType extends js.Any
   object TaggableResourceType extends js.Object {

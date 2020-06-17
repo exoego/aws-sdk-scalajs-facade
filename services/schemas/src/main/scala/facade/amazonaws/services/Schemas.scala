@@ -132,6 +132,7 @@ package schemas {
     def updateRegistry(params: UpdateRegistryRequest): Request[UpdateRegistryResponse]       = js.native
     def updateSchema(params: UpdateSchemaRequest): Request[UpdateSchemaResponse]             = js.native
   }
+
   @js.native
   sealed trait CodeGenerationStatus extends js.Any
   object CodeGenerationStatus extends js.Object {
@@ -604,6 +605,7 @@ package schemas {
       __obj.asInstanceOf[DescribeSchemaResponse]
     }
   }
+
   @js.native
   sealed trait DiscovererState extends js.Any
   object DiscovererState extends js.Object {
@@ -1291,6 +1293,7 @@ package schemas {
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
+
   @js.native
   sealed trait Type extends js.Any
   object Type extends js.Object {

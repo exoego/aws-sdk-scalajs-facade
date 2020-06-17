@@ -613,6 +613,7 @@ package codecommit {
       __obj.asInstanceOf[ApprovalRuleTemplate]
     }
   }
+
   @js.native
   sealed trait ApprovalState extends js.Any
   object ApprovalState extends js.Object {
@@ -1060,6 +1061,7 @@ package codecommit {
       __obj.asInstanceOf[BranchInfo]
     }
   }
+
   @js.native
   sealed trait ChangeTypeEnum extends js.Any
   object ChangeTypeEnum extends js.Object {
@@ -1245,6 +1247,7 @@ package codecommit {
       __obj.asInstanceOf[Conflict]
     }
   }
+
   @js.native
   sealed trait ConflictDetailLevelTypeEnum extends js.Any
   object ConflictDetailLevelTypeEnum extends js.Object {
@@ -1324,6 +1327,7 @@ package codecommit {
       __obj.asInstanceOf[ConflictResolution]
     }
   }
+
   @js.native
   sealed trait ConflictResolutionStrategyTypeEnum extends js.Any
   object ConflictResolutionStrategyTypeEnum extends js.Object {
@@ -2255,6 +2259,7 @@ package codecommit {
       __obj.asInstanceOf[FileMetadata]
     }
   }
+
   @js.native
   sealed trait FileModeTypeEnum extends js.Any
   object FileModeTypeEnum extends js.Object {
@@ -3852,6 +3857,7 @@ package codecommit {
       __obj.asInstanceOf[MergeOperations]
     }
   }
+
   @js.native
   sealed trait MergeOptionTypeEnum extends js.Any
   object MergeOptionTypeEnum extends js.Object {
@@ -4027,6 +4033,7 @@ package codecommit {
       __obj.asInstanceOf[MergePullRequestByThreeWayOutput]
     }
   }
+
   @js.native
   sealed trait ObjectTypeEnum extends js.Any
   object ObjectTypeEnum extends js.Object {
@@ -4062,6 +4069,7 @@ package codecommit {
       __obj.asInstanceOf[ObjectTypes]
     }
   }
+
   @js.native
   sealed trait OrderEnum extends js.Any
   object OrderEnum extends js.Object {
@@ -4116,6 +4124,7 @@ package codecommit {
       __obj.asInstanceOf[OverridePullRequestApprovalRulesInput]
     }
   }
+
   @js.native
   sealed trait OverrideStatus extends js.Any
   object OverrideStatus extends js.Object {
@@ -4446,6 +4455,7 @@ package codecommit {
       __obj.asInstanceOf[PullRequestEvent]
     }
   }
+
   @js.native
   sealed trait PullRequestEventType extends js.Any
   object PullRequestEventType extends js.Object {
@@ -4547,6 +4557,7 @@ package codecommit {
       __obj.asInstanceOf[PullRequestStatusChangedEventMetadata]
     }
   }
+
   @js.native
   sealed trait PullRequestStatusEnum extends js.Any
   object PullRequestStatusEnum extends js.Object {
@@ -4731,6 +4742,7 @@ package codecommit {
       __obj.asInstanceOf[PutRepositoryTriggersOutput]
     }
   }
+
   @js.native
   sealed trait RelativeFileVersionEnum extends js.Any
   object RelativeFileVersionEnum extends js.Object {
@@ -4769,6 +4781,7 @@ package codecommit {
       __obj.asInstanceOf[ReplaceContentEntry]
     }
   }
+
   @js.native
   sealed trait ReplacementTypeEnum extends js.Any
   object ReplacementTypeEnum extends js.Object {
@@ -4880,6 +4893,7 @@ package codecommit {
       __obj.asInstanceOf[RepositoryTrigger]
     }
   }
+
   @js.native
   sealed trait RepositoryTriggerEventEnum extends js.Any
   object RepositoryTriggerEventEnum extends js.Object {
@@ -4936,6 +4950,7 @@ package codecommit {
       __obj.asInstanceOf[SetFileModeEntry]
     }
   }
+
   @js.native
   sealed trait SortByEnum extends js.Any
   object SortByEnum extends js.Object {

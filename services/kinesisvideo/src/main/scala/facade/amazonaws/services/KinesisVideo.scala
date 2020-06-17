@@ -110,6 +110,7 @@ package kinesisvideo {
     def updateSignalingChannel(params: UpdateSignalingChannelInput): Request[UpdateSignalingChannelOutput] = js.native
     def updateStream(params: UpdateStreamInput): Request[UpdateStreamOutput]                               = js.native
   }
+
   @js.native
   sealed trait APIName extends js.Any
   object APIName extends js.Object {
@@ -192,6 +193,7 @@ package kinesisvideo {
       __obj.asInstanceOf[ChannelNameCondition]
     }
   }
+
   @js.native
   sealed trait ChannelProtocol extends js.Any
   object ChannelProtocol extends js.Object {
@@ -200,6 +202,7 @@ package kinesisvideo {
 
     val values = js.Object.freeze(js.Array(WSS, HTTPS))
   }
+
   @js.native
   sealed trait ChannelRole extends js.Any
   object ChannelRole extends js.Object {
@@ -208,6 +211,7 @@ package kinesisvideo {
 
     val values = js.Object.freeze(js.Array(MASTER, VIEWER))
   }
+
   @js.native
   sealed trait ChannelType extends js.Any
   object ChannelType extends js.Object {
@@ -215,6 +219,7 @@ package kinesisvideo {
 
     val values = js.Object.freeze(js.Array(SINGLE_MASTER))
   }
+
   @js.native
   sealed trait ComparisonOperator extends js.Any
   object ComparisonOperator extends js.Object {
@@ -759,6 +764,7 @@ package kinesisvideo {
       __obj.asInstanceOf[SingleMasterConfiguration]
     }
   }
+
   @js.native
   sealed trait Status extends js.Any
   object Status extends js.Object {
@@ -1030,6 +1036,7 @@ package kinesisvideo {
       __obj.asInstanceOf[UpdateDataRetentionInput]
     }
   }
+
   @js.native
   sealed trait UpdateDataRetentionOperation extends js.Any
   object UpdateDataRetentionOperation extends js.Object {

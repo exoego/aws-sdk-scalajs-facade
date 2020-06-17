@@ -417,6 +417,7 @@ package iotanalytics {
       __obj.asInstanceOf[ChannelStatistics]
     }
   }
+
   @js.native
   sealed trait ChannelStatus extends js.Any
   object ChannelStatus extends js.Object {
@@ -501,6 +502,7 @@ package iotanalytics {
       __obj.asInstanceOf[ChannelSummary]
     }
   }
+
   @js.native
   sealed trait ComputeType extends js.Any
   object ComputeType extends js.Object {
@@ -969,6 +971,7 @@ package iotanalytics {
       __obj.asInstanceOf[DatasetActionSummary]
     }
   }
+
   @js.native
   sealed trait DatasetActionType extends js.Any
   object DatasetActionType extends js.Object {
@@ -1027,6 +1030,7 @@ package iotanalytics {
       __obj.asInstanceOf[DatasetContentDeliveryRule]
     }
   }
+
   @js.native
   sealed trait DatasetContentState extends js.Any
   object DatasetContentState extends js.Object {
@@ -1132,6 +1136,7 @@ package iotanalytics {
       __obj.asInstanceOf[DatasetEntry]
     }
   }
+
   @js.native
   sealed trait DatasetStatus extends js.Any
   object DatasetStatus extends js.Object {
@@ -1277,6 +1282,7 @@ package iotanalytics {
       __obj.asInstanceOf[DatastoreStatistics]
     }
   }
+
   @js.native
   sealed trait DatastoreStatus extends js.Any
   object DatastoreStatus extends js.Object {
@@ -2126,6 +2132,7 @@ package iotanalytics {
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
+
   @js.native
   sealed trait LoggingLevel extends js.Any
   object LoggingLevel extends js.Object {
@@ -2407,6 +2414,7 @@ package iotanalytics {
       __obj.asInstanceOf[RemoveAttributesActivity]
     }
   }
+
   @js.native
   sealed trait ReprocessingStatus extends js.Any
   object ReprocessingStatus extends js.Object {

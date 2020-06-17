@@ -69,6 +69,7 @@ package codestarconnections {
       __obj.asInstanceOf[Connection]
     }
   }
+
   @js.native
   sealed trait ConnectionStatus extends js.Any
   object ConnectionStatus extends js.Object {
@@ -223,6 +224,7 @@ package codestarconnections {
       __obj.asInstanceOf[ListConnectionsOutput]
     }
   }
+
   @js.native
   sealed trait ProviderType extends js.Any
   object ProviderType extends js.Object {
