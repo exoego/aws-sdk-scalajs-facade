@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v1
       - uses: olafurpg/setup-scala@v5
       - name: Check Scalafmt
-        run: sbt -jvm-opts .travis/jvmopts ++2.13.1 scalafmtSbtCheck scalafmtCheck test:scalafmtCheck
+        run: sbt -jvm-opts .travis/jvmopts ++2.13.3 scalafmtSbtCheck scalafmtCheck test:scalafmtCheck
       - name: Cache SBT ivy cache
         uses: actions/cache@v1
         with:
