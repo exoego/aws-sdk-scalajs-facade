@@ -20,6 +20,21 @@ object SharedConfig {
         .withSourceMap(false)
         .withModuleKind(ModuleKind.CommonJSModule)
     },
+    Compile / scalacOptions ++= {
+      CrossVersion.partialVersion(scalaVersion.value) match {
+        case Some((2, n)) if n >= 13 => "-Ymacro-annotations" :: Nil
+        case _                       => Nil
+      }
+    },
+    libraryDependencies ++= {
+      CrossVersion.partialVersion(scalaVersion.value) match {
+        case Some((2, n)) if n >= 13 => Nil
+        case _ =>
+          compilerPlugin(
+            "org.scalamacros" % "paradise" % "2.1.1" cross CrossVersion.full
+          ) :: Nil
+      }
+    },
     licenses := Seq("APL2" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt")),
     scmInfo := Some(
       ScmInfo(
