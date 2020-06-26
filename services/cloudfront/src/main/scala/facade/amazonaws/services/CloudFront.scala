@@ -52,131 +52,132 @@ package object cloudfront {
     @inline def createCloudFrontOriginAccessIdentityFuture(
         params: CreateCloudFrontOriginAccessIdentityRequest
     ): Future[CreateCloudFrontOriginAccessIdentityResult] =
-      service.createCloudFrontOriginAccessIdentity(params).promise.toFuture
+      service.createCloudFrontOriginAccessIdentity(params).promise().toFuture
     @inline def createDistributionFuture(params: CreateDistributionRequest): Future[CreateDistributionResult] =
-      service.createDistribution(params).promise.toFuture
+      service.createDistribution(params).promise().toFuture
     @inline def createDistributionWithTagsFuture(
         params: CreateDistributionWithTagsRequest
-    ): Future[CreateDistributionWithTagsResult] = service.createDistributionWithTags(params).promise.toFuture
+    ): Future[CreateDistributionWithTagsResult] = service.createDistributionWithTags(params).promise().toFuture
     @inline def createFieldLevelEncryptionConfigFuture(
         params: CreateFieldLevelEncryptionConfigRequest
     ): Future[CreateFieldLevelEncryptionConfigResult] =
-      service.createFieldLevelEncryptionConfig(params).promise.toFuture
+      service.createFieldLevelEncryptionConfig(params).promise().toFuture
     @inline def createFieldLevelEncryptionProfileFuture(
         params: CreateFieldLevelEncryptionProfileRequest
     ): Future[CreateFieldLevelEncryptionProfileResult] =
-      service.createFieldLevelEncryptionProfile(params).promise.toFuture
+      service.createFieldLevelEncryptionProfile(params).promise().toFuture
     @inline def createInvalidationFuture(params: CreateInvalidationRequest): Future[CreateInvalidationResult] =
-      service.createInvalidation(params).promise.toFuture
+      service.createInvalidation(params).promise().toFuture
     @inline def createPublicKeyFuture(params: CreatePublicKeyRequest): Future[CreatePublicKeyResult] =
-      service.createPublicKey(params).promise.toFuture
+      service.createPublicKey(params).promise().toFuture
     @inline def createStreamingDistributionFuture(
         params: CreateStreamingDistributionRequest
-    ): Future[CreateStreamingDistributionResult] = service.createStreamingDistribution(params).promise.toFuture
+    ): Future[CreateStreamingDistributionResult] = service.createStreamingDistribution(params).promise().toFuture
     @inline def createStreamingDistributionWithTagsFuture(
         params: CreateStreamingDistributionWithTagsRequest
     ): Future[CreateStreamingDistributionWithTagsResult] =
-      service.createStreamingDistributionWithTags(params).promise.toFuture
+      service.createStreamingDistributionWithTags(params).promise().toFuture
     @inline def deleteCloudFrontOriginAccessIdentityFuture(
         params: DeleteCloudFrontOriginAccessIdentityRequest
-    ): Future[js.Object] = service.deleteCloudFrontOriginAccessIdentity(params).promise.toFuture
+    ): Future[js.Object] = service.deleteCloudFrontOriginAccessIdentity(params).promise().toFuture
     @inline def deleteDistributionFuture(params: DeleteDistributionRequest): Future[js.Object] =
-      service.deleteDistribution(params).promise.toFuture
+      service.deleteDistribution(params).promise().toFuture
     @inline def deleteFieldLevelEncryptionConfigFuture(
         params: DeleteFieldLevelEncryptionConfigRequest
-    ): Future[js.Object] = service.deleteFieldLevelEncryptionConfig(params).promise.toFuture
+    ): Future[js.Object] = service.deleteFieldLevelEncryptionConfig(params).promise().toFuture
     @inline def deleteFieldLevelEncryptionProfileFuture(
         params: DeleteFieldLevelEncryptionProfileRequest
-    ): Future[js.Object] = service.deleteFieldLevelEncryptionProfile(params).promise.toFuture
+    ): Future[js.Object] = service.deleteFieldLevelEncryptionProfile(params).promise().toFuture
     @inline def deletePublicKeyFuture(params: DeletePublicKeyRequest): Future[js.Object] =
-      service.deletePublicKey(params).promise.toFuture
+      service.deletePublicKey(params).promise().toFuture
     @inline def deleteStreamingDistributionFuture(params: DeleteStreamingDistributionRequest): Future[js.Object] =
-      service.deleteStreamingDistribution(params).promise.toFuture
+      service.deleteStreamingDistribution(params).promise().toFuture
     @inline def getCloudFrontOriginAccessIdentityConfigFuture(
         params: GetCloudFrontOriginAccessIdentityConfigRequest
     ): Future[GetCloudFrontOriginAccessIdentityConfigResult] =
-      service.getCloudFrontOriginAccessIdentityConfig(params).promise.toFuture
+      service.getCloudFrontOriginAccessIdentityConfig(params).promise().toFuture
     @inline def getCloudFrontOriginAccessIdentityFuture(
         params: GetCloudFrontOriginAccessIdentityRequest
     ): Future[GetCloudFrontOriginAccessIdentityResult] =
-      service.getCloudFrontOriginAccessIdentity(params).promise.toFuture
+      service.getCloudFrontOriginAccessIdentity(params).promise().toFuture
     @inline def getDistributionConfigFuture(params: GetDistributionConfigRequest): Future[GetDistributionConfigResult] =
-      service.getDistributionConfig(params).promise.toFuture
+      service.getDistributionConfig(params).promise().toFuture
     @inline def getDistributionFuture(params: GetDistributionRequest): Future[GetDistributionResult] =
-      service.getDistribution(params).promise.toFuture
+      service.getDistribution(params).promise().toFuture
     @inline def getFieldLevelEncryptionConfigFuture(
         params: GetFieldLevelEncryptionConfigRequest
-    ): Future[GetFieldLevelEncryptionConfigResult] = service.getFieldLevelEncryptionConfig(params).promise.toFuture
+    ): Future[GetFieldLevelEncryptionConfigResult] = service.getFieldLevelEncryptionConfig(params).promise().toFuture
     @inline def getFieldLevelEncryptionFuture(
         params: GetFieldLevelEncryptionRequest
-    ): Future[GetFieldLevelEncryptionResult] = service.getFieldLevelEncryption(params).promise.toFuture
+    ): Future[GetFieldLevelEncryptionResult] = service.getFieldLevelEncryption(params).promise().toFuture
     @inline def getFieldLevelEncryptionProfileConfigFuture(
         params: GetFieldLevelEncryptionProfileConfigRequest
     ): Future[GetFieldLevelEncryptionProfileConfigResult] =
-      service.getFieldLevelEncryptionProfileConfig(params).promise.toFuture
+      service.getFieldLevelEncryptionProfileConfig(params).promise().toFuture
     @inline def getFieldLevelEncryptionProfileFuture(
         params: GetFieldLevelEncryptionProfileRequest
-    ): Future[GetFieldLevelEncryptionProfileResult] = service.getFieldLevelEncryptionProfile(params).promise.toFuture
+    ): Future[GetFieldLevelEncryptionProfileResult] = service.getFieldLevelEncryptionProfile(params).promise().toFuture
     @inline def getInvalidationFuture(params: GetInvalidationRequest): Future[GetInvalidationResult] =
-      service.getInvalidation(params).promise.toFuture
+      service.getInvalidation(params).promise().toFuture
     @inline def getPublicKeyConfigFuture(params: GetPublicKeyConfigRequest): Future[GetPublicKeyConfigResult] =
-      service.getPublicKeyConfig(params).promise.toFuture
+      service.getPublicKeyConfig(params).promise().toFuture
     @inline def getPublicKeyFuture(params: GetPublicKeyRequest): Future[GetPublicKeyResult] =
-      service.getPublicKey(params).promise.toFuture
+      service.getPublicKey(params).promise().toFuture
     @inline def getStreamingDistributionConfigFuture(
         params: GetStreamingDistributionConfigRequest
-    ): Future[GetStreamingDistributionConfigResult] = service.getStreamingDistributionConfig(params).promise.toFuture
+    ): Future[GetStreamingDistributionConfigResult] = service.getStreamingDistributionConfig(params).promise().toFuture
     @inline def getStreamingDistributionFuture(
         params: GetStreamingDistributionRequest
-    ): Future[GetStreamingDistributionResult] = service.getStreamingDistribution(params).promise.toFuture
+    ): Future[GetStreamingDistributionResult] = service.getStreamingDistribution(params).promise().toFuture
     @inline def listCloudFrontOriginAccessIdentitiesFuture(
         params: ListCloudFrontOriginAccessIdentitiesRequest
     ): Future[ListCloudFrontOriginAccessIdentitiesResult] =
-      service.listCloudFrontOriginAccessIdentities(params).promise.toFuture
+      service.listCloudFrontOriginAccessIdentities(params).promise().toFuture
     @inline def listDistributionsByWebACLIdFuture(
         params: ListDistributionsByWebACLIdRequest
-    ): Future[ListDistributionsByWebACLIdResult] = service.listDistributionsByWebACLId(params).promise.toFuture
+    ): Future[ListDistributionsByWebACLIdResult] = service.listDistributionsByWebACLId(params).promise().toFuture
     @inline def listDistributionsFuture(params: ListDistributionsRequest): Future[ListDistributionsResult] =
-      service.listDistributions(params).promise.toFuture
+      service.listDistributions(params).promise().toFuture
     @inline def listFieldLevelEncryptionConfigsFuture(
         params: ListFieldLevelEncryptionConfigsRequest
-    ): Future[ListFieldLevelEncryptionConfigsResult] = service.listFieldLevelEncryptionConfigs(params).promise.toFuture
+    ): Future[ListFieldLevelEncryptionConfigsResult] =
+      service.listFieldLevelEncryptionConfigs(params).promise().toFuture
     @inline def listFieldLevelEncryptionProfilesFuture(
         params: ListFieldLevelEncryptionProfilesRequest
     ): Future[ListFieldLevelEncryptionProfilesResult] =
-      service.listFieldLevelEncryptionProfiles(params).promise.toFuture
+      service.listFieldLevelEncryptionProfiles(params).promise().toFuture
     @inline def listInvalidationsFuture(params: ListInvalidationsRequest): Future[ListInvalidationsResult] =
-      service.listInvalidations(params).promise.toFuture
+      service.listInvalidations(params).promise().toFuture
     @inline def listPublicKeysFuture(params: ListPublicKeysRequest): Future[ListPublicKeysResult] =
-      service.listPublicKeys(params).promise.toFuture
+      service.listPublicKeys(params).promise().toFuture
     @inline def listStreamingDistributionsFuture(
         params: ListStreamingDistributionsRequest
-    ): Future[ListStreamingDistributionsResult] = service.listStreamingDistributions(params).promise.toFuture
+    ): Future[ListStreamingDistributionsResult] = service.listStreamingDistributions(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResult] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateCloudFrontOriginAccessIdentityFuture(
         params: UpdateCloudFrontOriginAccessIdentityRequest
     ): Future[UpdateCloudFrontOriginAccessIdentityResult] =
-      service.updateCloudFrontOriginAccessIdentity(params).promise.toFuture
+      service.updateCloudFrontOriginAccessIdentity(params).promise().toFuture
     @inline def updateDistributionFuture(params: UpdateDistributionRequest): Future[UpdateDistributionResult] =
-      service.updateDistribution(params).promise.toFuture
+      service.updateDistribution(params).promise().toFuture
     @inline def updateFieldLevelEncryptionConfigFuture(
         params: UpdateFieldLevelEncryptionConfigRequest
     ): Future[UpdateFieldLevelEncryptionConfigResult] =
-      service.updateFieldLevelEncryptionConfig(params).promise.toFuture
+      service.updateFieldLevelEncryptionConfig(params).promise().toFuture
     @inline def updateFieldLevelEncryptionProfileFuture(
         params: UpdateFieldLevelEncryptionProfileRequest
     ): Future[UpdateFieldLevelEncryptionProfileResult] =
-      service.updateFieldLevelEncryptionProfile(params).promise.toFuture
+      service.updateFieldLevelEncryptionProfile(params).promise().toFuture
     @inline def updatePublicKeyFuture(params: UpdatePublicKeyRequest): Future[UpdatePublicKeyResult] =
-      service.updatePublicKey(params).promise.toFuture
+      service.updatePublicKey(params).promise().toFuture
     @inline def updateStreamingDistributionFuture(
         params: UpdateStreamingDistributionRequest
-    ): Future[UpdateStreamingDistributionResult] = service.updateStreamingDistribution(params).promise.toFuture
+    ): Future[UpdateStreamingDistributionResult] = service.updateStreamingDistribution(params).promise().toFuture
   }
 }
 

@@ -63,65 +63,66 @@ package object applicationinsights {
   implicit final class ApplicationInsightsOps(private val service: ApplicationInsights) extends AnyVal {
 
     @inline def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResponse] =
-      service.createApplication(params).promise.toFuture
+      service.createApplication(params).promise().toFuture
     @inline def createComponentFuture(params: CreateComponentRequest): Future[CreateComponentResponse] =
-      service.createComponent(params).promise.toFuture
+      service.createComponent(params).promise().toFuture
     @inline def createLogPatternFuture(params: CreateLogPatternRequest): Future[CreateLogPatternResponse] =
-      service.createLogPattern(params).promise.toFuture
+      service.createLogPattern(params).promise().toFuture
     @inline def deleteApplicationFuture(params: DeleteApplicationRequest): Future[DeleteApplicationResponse] =
-      service.deleteApplication(params).promise.toFuture
+      service.deleteApplication(params).promise().toFuture
     @inline def deleteComponentFuture(params: DeleteComponentRequest): Future[DeleteComponentResponse] =
-      service.deleteComponent(params).promise.toFuture
+      service.deleteComponent(params).promise().toFuture
     @inline def deleteLogPatternFuture(params: DeleteLogPatternRequest): Future[DeleteLogPatternResponse] =
-      service.deleteLogPattern(params).promise.toFuture
+      service.deleteLogPattern(params).promise().toFuture
     @inline def describeApplicationFuture(params: DescribeApplicationRequest): Future[DescribeApplicationResponse] =
-      service.describeApplication(params).promise.toFuture
+      service.describeApplication(params).promise().toFuture
     @inline def describeComponentConfigurationFuture(
         params: DescribeComponentConfigurationRequest
-    ): Future[DescribeComponentConfigurationResponse] = service.describeComponentConfiguration(params).promise.toFuture
+    ): Future[DescribeComponentConfigurationResponse] =
+      service.describeComponentConfiguration(params).promise().toFuture
     @inline def describeComponentConfigurationRecommendationFuture(
         params: DescribeComponentConfigurationRecommendationRequest
     ): Future[DescribeComponentConfigurationRecommendationResponse] =
-      service.describeComponentConfigurationRecommendation(params).promise.toFuture
+      service.describeComponentConfigurationRecommendation(params).promise().toFuture
     @inline def describeComponentFuture(params: DescribeComponentRequest): Future[DescribeComponentResponse] =
-      service.describeComponent(params).promise.toFuture
+      service.describeComponent(params).promise().toFuture
     @inline def describeLogPatternFuture(params: DescribeLogPatternRequest): Future[DescribeLogPatternResponse] =
-      service.describeLogPattern(params).promise.toFuture
+      service.describeLogPattern(params).promise().toFuture
     @inline def describeObservationFuture(params: DescribeObservationRequest): Future[DescribeObservationResponse] =
-      service.describeObservation(params).promise.toFuture
+      service.describeObservation(params).promise().toFuture
     @inline def describeProblemFuture(params: DescribeProblemRequest): Future[DescribeProblemResponse] =
-      service.describeProblem(params).promise.toFuture
+      service.describeProblem(params).promise().toFuture
     @inline def describeProblemObservationsFuture(
         params: DescribeProblemObservationsRequest
-    ): Future[DescribeProblemObservationsResponse] = service.describeProblemObservations(params).promise.toFuture
+    ): Future[DescribeProblemObservationsResponse] = service.describeProblemObservations(params).promise().toFuture
     @inline def listApplicationsFuture(params: ListApplicationsRequest): Future[ListApplicationsResponse] =
-      service.listApplications(params).promise.toFuture
+      service.listApplications(params).promise().toFuture
     @inline def listComponentsFuture(params: ListComponentsRequest): Future[ListComponentsResponse] =
-      service.listComponents(params).promise.toFuture
+      service.listComponents(params).promise().toFuture
     @inline def listConfigurationHistoryFuture(
         params: ListConfigurationHistoryRequest
-    ): Future[ListConfigurationHistoryResponse] = service.listConfigurationHistory(params).promise.toFuture
+    ): Future[ListConfigurationHistoryResponse] = service.listConfigurationHistory(params).promise().toFuture
     @inline def listLogPatternSetsFuture(params: ListLogPatternSetsRequest): Future[ListLogPatternSetsResponse] =
-      service.listLogPatternSets(params).promise.toFuture
+      service.listLogPatternSets(params).promise().toFuture
     @inline def listLogPatternsFuture(params: ListLogPatternsRequest): Future[ListLogPatternsResponse] =
-      service.listLogPatterns(params).promise.toFuture
+      service.listLogPatterns(params).promise().toFuture
     @inline def listProblemsFuture(params: ListProblemsRequest): Future[ListProblemsResponse] =
-      service.listProblems(params).promise.toFuture
+      service.listProblems(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] =
-      service.updateApplication(params).promise.toFuture
+      service.updateApplication(params).promise().toFuture
     @inline def updateComponentConfigurationFuture(
         params: UpdateComponentConfigurationRequest
-    ): Future[UpdateComponentConfigurationResponse] = service.updateComponentConfiguration(params).promise.toFuture
+    ): Future[UpdateComponentConfigurationResponse] = service.updateComponentConfiguration(params).promise().toFuture
     @inline def updateComponentFuture(params: UpdateComponentRequest): Future[UpdateComponentResponse] =
-      service.updateComponent(params).promise.toFuture
+      service.updateComponent(params).promise().toFuture
     @inline def updateLogPatternFuture(params: UpdateLogPatternRequest): Future[UpdateLogPatternResponse] =
-      service.updateLogPattern(params).promise.toFuture
+      service.updateLogPattern(params).promise().toFuture
   }
 }
 

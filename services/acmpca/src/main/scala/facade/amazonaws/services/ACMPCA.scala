@@ -46,54 +46,54 @@ package object acmpca {
     @inline def createCertificateAuthorityAuditReportFuture(
         params: CreateCertificateAuthorityAuditReportRequest
     ): Future[CreateCertificateAuthorityAuditReportResponse] =
-      service.createCertificateAuthorityAuditReport(params).promise.toFuture
+      service.createCertificateAuthorityAuditReport(params).promise().toFuture
     @inline def createCertificateAuthorityFuture(
         params: CreateCertificateAuthorityRequest
-    ): Future[CreateCertificateAuthorityResponse] = service.createCertificateAuthority(params).promise.toFuture
+    ): Future[CreateCertificateAuthorityResponse] = service.createCertificateAuthority(params).promise().toFuture
     @inline def createPermissionFuture(params: CreatePermissionRequest): Future[js.Object] =
-      service.createPermission(params).promise.toFuture
+      service.createPermission(params).promise().toFuture
     @inline def deleteCertificateAuthorityFuture(params: DeleteCertificateAuthorityRequest): Future[js.Object] =
-      service.deleteCertificateAuthority(params).promise.toFuture
+      service.deleteCertificateAuthority(params).promise().toFuture
     @inline def deletePermissionFuture(params: DeletePermissionRequest): Future[js.Object] =
-      service.deletePermission(params).promise.toFuture
+      service.deletePermission(params).promise().toFuture
     @inline def describeCertificateAuthorityAuditReportFuture(
         params: DescribeCertificateAuthorityAuditReportRequest
     ): Future[DescribeCertificateAuthorityAuditReportResponse] =
-      service.describeCertificateAuthorityAuditReport(params).promise.toFuture
+      service.describeCertificateAuthorityAuditReport(params).promise().toFuture
     @inline def describeCertificateAuthorityFuture(
         params: DescribeCertificateAuthorityRequest
-    ): Future[DescribeCertificateAuthorityResponse] = service.describeCertificateAuthority(params).promise.toFuture
+    ): Future[DescribeCertificateAuthorityResponse] = service.describeCertificateAuthority(params).promise().toFuture
     @inline def getCertificateAuthorityCertificateFuture(
         params: GetCertificateAuthorityCertificateRequest
     ): Future[GetCertificateAuthorityCertificateResponse] =
-      service.getCertificateAuthorityCertificate(params).promise.toFuture
+      service.getCertificateAuthorityCertificate(params).promise().toFuture
     @inline def getCertificateAuthorityCsrFuture(
         params: GetCertificateAuthorityCsrRequest
-    ): Future[GetCertificateAuthorityCsrResponse] = service.getCertificateAuthorityCsr(params).promise.toFuture
+    ): Future[GetCertificateAuthorityCsrResponse] = service.getCertificateAuthorityCsr(params).promise().toFuture
     @inline def getCertificateFuture(params: GetCertificateRequest): Future[GetCertificateResponse] =
-      service.getCertificate(params).promise.toFuture
+      service.getCertificate(params).promise().toFuture
     @inline def importCertificateAuthorityCertificateFuture(
         params: ImportCertificateAuthorityCertificateRequest
-    ): Future[js.Object] = service.importCertificateAuthorityCertificate(params).promise.toFuture
+    ): Future[js.Object] = service.importCertificateAuthorityCertificate(params).promise().toFuture
     @inline def issueCertificateFuture(params: IssueCertificateRequest): Future[IssueCertificateResponse] =
-      service.issueCertificate(params).promise.toFuture
+      service.issueCertificate(params).promise().toFuture
     @inline def listCertificateAuthoritiesFuture(
         params: ListCertificateAuthoritiesRequest
-    ): Future[ListCertificateAuthoritiesResponse] = service.listCertificateAuthorities(params).promise.toFuture
+    ): Future[ListCertificateAuthoritiesResponse] = service.listCertificateAuthorities(params).promise().toFuture
     @inline def listPermissionsFuture(params: ListPermissionsRequest): Future[ListPermissionsResponse] =
-      service.listPermissions(params).promise.toFuture
+      service.listPermissions(params).promise().toFuture
     @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] =
-      service.listTags(params).promise.toFuture
+      service.listTags(params).promise().toFuture
     @inline def restoreCertificateAuthorityFuture(params: RestoreCertificateAuthorityRequest): Future[js.Object] =
-      service.restoreCertificateAuthority(params).promise.toFuture
+      service.restoreCertificateAuthority(params).promise().toFuture
     @inline def revokeCertificateFuture(params: RevokeCertificateRequest): Future[js.Object] =
-      service.revokeCertificate(params).promise.toFuture
+      service.revokeCertificate(params).promise().toFuture
     @inline def tagCertificateAuthorityFuture(params: TagCertificateAuthorityRequest): Future[js.Object] =
-      service.tagCertificateAuthority(params).promise.toFuture
+      service.tagCertificateAuthority(params).promise().toFuture
     @inline def untagCertificateAuthorityFuture(params: UntagCertificateAuthorityRequest): Future[js.Object] =
-      service.untagCertificateAuthority(params).promise.toFuture
+      service.untagCertificateAuthority(params).promise().toFuture
     @inline def updateCertificateAuthorityFuture(params: UpdateCertificateAuthorityRequest): Future[js.Object] =
-      service.updateCertificateAuthority(params).promise.toFuture
+      service.updateCertificateAuthority(params).promise().toFuture
   }
 }
 

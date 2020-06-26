@@ -20,7 +20,7 @@ package object marketplaceentitlementservice {
       extends AnyVal {
 
     @inline def getEntitlementsFuture(params: GetEntitlementsRequest): Future[GetEntitlementsResult] =
-      service.getEntitlements(params).promise.toFuture
+      service.getEntitlements(params).promise().toFuture
   }
 }
 

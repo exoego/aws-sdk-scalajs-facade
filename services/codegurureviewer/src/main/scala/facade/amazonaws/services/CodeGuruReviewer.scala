@@ -25,16 +25,16 @@ package object codegurureviewer {
   implicit final class CodeGuruReviewerOps(private val service: CodeGuruReviewer) extends AnyVal {
 
     @inline def associateRepositoryFuture(params: AssociateRepositoryRequest): Future[AssociateRepositoryResponse] =
-      service.associateRepository(params).promise.toFuture
+      service.associateRepository(params).promise().toFuture
     @inline def describeRepositoryAssociationFuture(
         params: DescribeRepositoryAssociationRequest
-    ): Future[DescribeRepositoryAssociationResponse] = service.describeRepositoryAssociation(params).promise.toFuture
+    ): Future[DescribeRepositoryAssociationResponse] = service.describeRepositoryAssociation(params).promise().toFuture
     @inline def disassociateRepositoryFuture(
         params: DisassociateRepositoryRequest
-    ): Future[DisassociateRepositoryResponse] = service.disassociateRepository(params).promise.toFuture
+    ): Future[DisassociateRepositoryResponse] = service.disassociateRepository(params).promise().toFuture
     @inline def listRepositoryAssociationsFuture(
         params: ListRepositoryAssociationsRequest
-    ): Future[ListRepositoryAssociationsResponse] = service.listRepositoryAssociations(params).promise.toFuture
+    ): Future[ListRepositoryAssociationsResponse] = service.listRepositoryAssociations(params).promise().toFuture
   }
 }
 

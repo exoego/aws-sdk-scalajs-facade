@@ -69,59 +69,59 @@ package object applicationdiscovery {
     @inline def associateConfigurationItemsToApplicationFuture(
         params: AssociateConfigurationItemsToApplicationRequest
     ): Future[AssociateConfigurationItemsToApplicationResponse] =
-      service.associateConfigurationItemsToApplication(params).promise.toFuture
+      service.associateConfigurationItemsToApplication(params).promise().toFuture
     @inline def batchDeleteImportDataFuture(
         params: BatchDeleteImportDataRequest
-    ): Future[BatchDeleteImportDataResponse] = service.batchDeleteImportData(params).promise.toFuture
+    ): Future[BatchDeleteImportDataResponse] = service.batchDeleteImportData(params).promise().toFuture
     @inline def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResponse] =
-      service.createApplication(params).promise.toFuture
+      service.createApplication(params).promise().toFuture
     @inline def createTagsFuture(params: CreateTagsRequest): Future[CreateTagsResponse] =
-      service.createTags(params).promise.toFuture
+      service.createTags(params).promise().toFuture
     @inline def deleteApplicationsFuture(params: DeleteApplicationsRequest): Future[DeleteApplicationsResponse] =
-      service.deleteApplications(params).promise.toFuture
+      service.deleteApplications(params).promise().toFuture
     @inline def deleteTagsFuture(params: DeleteTagsRequest): Future[DeleteTagsResponse] =
-      service.deleteTags(params).promise.toFuture
+      service.deleteTags(params).promise().toFuture
     @inline def describeAgentsFuture(params: DescribeAgentsRequest): Future[DescribeAgentsResponse] =
-      service.describeAgents(params).promise.toFuture
+      service.describeAgents(params).promise().toFuture
     @inline def describeConfigurationsFuture(
         params: DescribeConfigurationsRequest
-    ): Future[DescribeConfigurationsResponse] = service.describeConfigurations(params).promise.toFuture
+    ): Future[DescribeConfigurationsResponse] = service.describeConfigurations(params).promise().toFuture
     @inline def describeContinuousExportsFuture(
         params: DescribeContinuousExportsRequest
-    ): Future[DescribeContinuousExportsResponse] = service.describeContinuousExports(params).promise.toFuture
+    ): Future[DescribeContinuousExportsResponse] = service.describeContinuousExports(params).promise().toFuture
     @inline def describeExportTasksFuture(params: DescribeExportTasksRequest): Future[DescribeExportTasksResponse] =
-      service.describeExportTasks(params).promise.toFuture
+      service.describeExportTasks(params).promise().toFuture
     @inline def describeImportTasksFuture(params: DescribeImportTasksRequest): Future[DescribeImportTasksResponse] =
-      service.describeImportTasks(params).promise.toFuture
+      service.describeImportTasks(params).promise().toFuture
     @inline def describeTagsFuture(params: DescribeTagsRequest): Future[DescribeTagsResponse] =
-      service.describeTags(params).promise.toFuture
+      service.describeTags(params).promise().toFuture
     @inline def disassociateConfigurationItemsFromApplicationFuture(
         params: DisassociateConfigurationItemsFromApplicationRequest
     ): Future[DisassociateConfigurationItemsFromApplicationResponse] =
-      service.disassociateConfigurationItemsFromApplication(params).promise.toFuture
+      service.disassociateConfigurationItemsFromApplication(params).promise().toFuture
     @inline def getDiscoverySummaryFuture(params: GetDiscoverySummaryRequest): Future[GetDiscoverySummaryResponse] =
-      service.getDiscoverySummary(params).promise.toFuture
+      service.getDiscoverySummary(params).promise().toFuture
     @inline def listConfigurationsFuture(params: ListConfigurationsRequest): Future[ListConfigurationsResponse] =
-      service.listConfigurations(params).promise.toFuture
+      service.listConfigurations(params).promise().toFuture
     @inline def listServerNeighborsFuture(params: ListServerNeighborsRequest): Future[ListServerNeighborsResponse] =
-      service.listServerNeighbors(params).promise.toFuture
+      service.listServerNeighbors(params).promise().toFuture
     @inline def startContinuousExportFuture(
         params: StartContinuousExportRequest
-    ): Future[StartContinuousExportResponse] = service.startContinuousExport(params).promise.toFuture
+    ): Future[StartContinuousExportResponse] = service.startContinuousExport(params).promise().toFuture
     @inline def startDataCollectionByAgentIdsFuture(
         params: StartDataCollectionByAgentIdsRequest
-    ): Future[StartDataCollectionByAgentIdsResponse] = service.startDataCollectionByAgentIds(params).promise.toFuture
+    ): Future[StartDataCollectionByAgentIdsResponse] = service.startDataCollectionByAgentIds(params).promise().toFuture
     @inline def startExportTaskFuture(params: StartExportTaskRequest): Future[StartExportTaskResponse] =
-      service.startExportTask(params).promise.toFuture
+      service.startExportTask(params).promise().toFuture
     @inline def startImportTaskFuture(params: StartImportTaskRequest): Future[StartImportTaskResponse] =
-      service.startImportTask(params).promise.toFuture
+      service.startImportTask(params).promise().toFuture
     @inline def stopContinuousExportFuture(params: StopContinuousExportRequest): Future[StopContinuousExportResponse] =
-      service.stopContinuousExport(params).promise.toFuture
+      service.stopContinuousExport(params).promise().toFuture
     @inline def stopDataCollectionByAgentIdsFuture(
         params: StopDataCollectionByAgentIdsRequest
-    ): Future[StopDataCollectionByAgentIdsResponse] = service.stopDataCollectionByAgentIds(params).promise.toFuture
+    ): Future[StopDataCollectionByAgentIdsResponse] = service.stopDataCollectionByAgentIds(params).promise().toFuture
     @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] =
-      service.updateApplication(params).promise.toFuture
+      service.updateApplication(params).promise().toFuture
   }
 }
 

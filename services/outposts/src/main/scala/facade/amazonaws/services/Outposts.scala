@@ -29,16 +29,16 @@ package object outposts {
   implicit final class OutpostsOps(private val service: Outposts) extends AnyVal {
 
     @inline def createOutpostFuture(params: CreateOutpostInput): Future[CreateOutpostOutput] =
-      service.createOutpost(params).promise.toFuture
+      service.createOutpost(params).promise().toFuture
     @inline def getOutpostFuture(params: GetOutpostInput): Future[GetOutpostOutput] =
-      service.getOutpost(params).promise.toFuture
+      service.getOutpost(params).promise().toFuture
     @inline def getOutpostInstanceTypesFuture(
         params: GetOutpostInstanceTypesInput
-    ): Future[GetOutpostInstanceTypesOutput] = service.getOutpostInstanceTypes(params).promise.toFuture
+    ): Future[GetOutpostInstanceTypesOutput] = service.getOutpostInstanceTypes(params).promise().toFuture
     @inline def listOutpostsFuture(params: ListOutpostsInput): Future[ListOutpostsOutput] =
-      service.listOutposts(params).promise.toFuture
+      service.listOutposts(params).promise().toFuture
     @inline def listSitesFuture(params: ListSitesInput): Future[ListSitesOutput] =
-      service.listSites(params).promise.toFuture
+      service.listSites(params).promise().toFuture
   }
 }
 

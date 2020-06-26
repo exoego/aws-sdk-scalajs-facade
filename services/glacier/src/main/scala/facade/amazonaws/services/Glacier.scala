@@ -29,75 +29,75 @@ package object glacier {
   implicit final class GlacierOps(private val service: Glacier) extends AnyVal {
 
     @inline def abortMultipartUploadFuture(params: AbortMultipartUploadInput): Future[js.Object] =
-      service.abortMultipartUpload(params).promise.toFuture
+      service.abortMultipartUpload(params).promise().toFuture
     @inline def abortVaultLockFuture(params: AbortVaultLockInput): Future[js.Object] =
-      service.abortVaultLock(params).promise.toFuture
+      service.abortVaultLock(params).promise().toFuture
     @inline def addTagsToVaultFuture(params: AddTagsToVaultInput): Future[js.Object] =
-      service.addTagsToVault(params).promise.toFuture
+      service.addTagsToVault(params).promise().toFuture
     @inline def completeMultipartUploadFuture(params: CompleteMultipartUploadInput): Future[ArchiveCreationOutput] =
-      service.completeMultipartUpload(params).promise.toFuture
+      service.completeMultipartUpload(params).promise().toFuture
     @inline def completeVaultLockFuture(params: CompleteVaultLockInput): Future[js.Object] =
-      service.completeVaultLock(params).promise.toFuture
+      service.completeVaultLock(params).promise().toFuture
     @inline def createVaultFuture(params: CreateVaultInput): Future[CreateVaultOutput] =
-      service.createVault(params).promise.toFuture
+      service.createVault(params).promise().toFuture
     @inline def deleteArchiveFuture(params: DeleteArchiveInput): Future[js.Object] =
-      service.deleteArchive(params).promise.toFuture
+      service.deleteArchive(params).promise().toFuture
     @inline def deleteVaultAccessPolicyFuture(params: DeleteVaultAccessPolicyInput): Future[js.Object] =
-      service.deleteVaultAccessPolicy(params).promise.toFuture
+      service.deleteVaultAccessPolicy(params).promise().toFuture
     @inline def deleteVaultFuture(params: DeleteVaultInput): Future[js.Object] =
-      service.deleteVault(params).promise.toFuture
+      service.deleteVault(params).promise().toFuture
     @inline def deleteVaultNotificationsFuture(params: DeleteVaultNotificationsInput): Future[js.Object] =
-      service.deleteVaultNotifications(params).promise.toFuture
+      service.deleteVaultNotifications(params).promise().toFuture
     @inline def describeJobFuture(params: DescribeJobInput): Future[GlacierJobDescription] =
-      service.describeJob(params).promise.toFuture
+      service.describeJob(params).promise().toFuture
     @inline def describeVaultFuture(params: DescribeVaultInput): Future[DescribeVaultOutput] =
-      service.describeVault(params).promise.toFuture
+      service.describeVault(params).promise().toFuture
     @inline def getDataRetrievalPolicyFuture(
         params: GetDataRetrievalPolicyInput
-    ): Future[GetDataRetrievalPolicyOutput] = service.getDataRetrievalPolicy(params).promise.toFuture
+    ): Future[GetDataRetrievalPolicyOutput] = service.getDataRetrievalPolicy(params).promise().toFuture
     @inline def getJobOutputFuture(params: GetJobOutputInput): Future[GetJobOutputOutput] =
-      service.getJobOutput(params).promise.toFuture
+      service.getJobOutput(params).promise().toFuture
     @inline def getVaultAccessPolicyFuture(params: GetVaultAccessPolicyInput): Future[GetVaultAccessPolicyOutput] =
-      service.getVaultAccessPolicy(params).promise.toFuture
+      service.getVaultAccessPolicy(params).promise().toFuture
     @inline def getVaultLockFuture(params: GetVaultLockInput): Future[GetVaultLockOutput] =
-      service.getVaultLock(params).promise.toFuture
+      service.getVaultLock(params).promise().toFuture
     @inline def getVaultNotificationsFuture(params: GetVaultNotificationsInput): Future[GetVaultNotificationsOutput] =
-      service.getVaultNotifications(params).promise.toFuture
+      service.getVaultNotifications(params).promise().toFuture
     @inline def initiateJobFuture(params: InitiateJobInput): Future[InitiateJobOutput] =
-      service.initiateJob(params).promise.toFuture
+      service.initiateJob(params).promise().toFuture
     @inline def initiateMultipartUploadFuture(
         params: InitiateMultipartUploadInput
-    ): Future[InitiateMultipartUploadOutput] = service.initiateMultipartUpload(params).promise.toFuture
+    ): Future[InitiateMultipartUploadOutput] = service.initiateMultipartUpload(params).promise().toFuture
     @inline def initiateVaultLockFuture(params: InitiateVaultLockInput): Future[InitiateVaultLockOutput] =
-      service.initiateVaultLock(params).promise.toFuture
+      service.initiateVaultLock(params).promise().toFuture
     @inline def listJobsFuture(params: ListJobsInput): Future[ListJobsOutput] =
-      service.listJobs(params).promise.toFuture
+      service.listJobs(params).promise().toFuture
     @inline def listMultipartUploadsFuture(params: ListMultipartUploadsInput): Future[ListMultipartUploadsOutput] =
-      service.listMultipartUploads(params).promise.toFuture
+      service.listMultipartUploads(params).promise().toFuture
     @inline def listPartsFuture(params: ListPartsInput): Future[ListPartsOutput] =
-      service.listParts(params).promise.toFuture
+      service.listParts(params).promise().toFuture
     @inline def listProvisionedCapacityFuture(
         params: ListProvisionedCapacityInput
-    ): Future[ListProvisionedCapacityOutput] = service.listProvisionedCapacity(params).promise.toFuture
+    ): Future[ListProvisionedCapacityOutput] = service.listProvisionedCapacity(params).promise().toFuture
     @inline def listTagsForVaultFuture(params: ListTagsForVaultInput): Future[ListTagsForVaultOutput] =
-      service.listTagsForVault(params).promise.toFuture
+      service.listTagsForVault(params).promise().toFuture
     @inline def listVaultsFuture(params: ListVaultsInput): Future[ListVaultsOutput] =
-      service.listVaults(params).promise.toFuture
+      service.listVaults(params).promise().toFuture
     @inline def purchaseProvisionedCapacityFuture(
         params: PurchaseProvisionedCapacityInput
-    ): Future[PurchaseProvisionedCapacityOutput] = service.purchaseProvisionedCapacity(params).promise.toFuture
+    ): Future[PurchaseProvisionedCapacityOutput] = service.purchaseProvisionedCapacity(params).promise().toFuture
     @inline def removeTagsFromVaultFuture(params: RemoveTagsFromVaultInput): Future[js.Object] =
-      service.removeTagsFromVault(params).promise.toFuture
+      service.removeTagsFromVault(params).promise().toFuture
     @inline def setDataRetrievalPolicyFuture(params: SetDataRetrievalPolicyInput): Future[js.Object] =
-      service.setDataRetrievalPolicy(params).promise.toFuture
+      service.setDataRetrievalPolicy(params).promise().toFuture
     @inline def setVaultAccessPolicyFuture(params: SetVaultAccessPolicyInput): Future[js.Object] =
-      service.setVaultAccessPolicy(params).promise.toFuture
+      service.setVaultAccessPolicy(params).promise().toFuture
     @inline def setVaultNotificationsFuture(params: SetVaultNotificationsInput): Future[js.Object] =
-      service.setVaultNotifications(params).promise.toFuture
+      service.setVaultNotifications(params).promise().toFuture
     @inline def uploadArchiveFuture(params: UploadArchiveInput): Future[ArchiveCreationOutput] =
-      service.uploadArchive(params).promise.toFuture
+      service.uploadArchive(params).promise().toFuture
     @inline def uploadMultipartPartFuture(params: UploadMultipartPartInput): Future[UploadMultipartPartOutput] =
-      service.uploadMultipartPart(params).promise.toFuture
+      service.uploadMultipartPart(params).promise().toFuture
   }
 }
 

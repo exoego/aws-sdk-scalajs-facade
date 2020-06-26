@@ -31,36 +31,36 @@ package object cloud9 {
   implicit final class Cloud9Ops(private val service: Cloud9) extends AnyVal {
 
     @inline def createEnvironmentEC2Future(params: CreateEnvironmentEC2Request): Future[CreateEnvironmentEC2Result] =
-      service.createEnvironmentEC2(params).promise.toFuture
+      service.createEnvironmentEC2(params).promise().toFuture
     @inline def createEnvironmentMembershipFuture(
         params: CreateEnvironmentMembershipRequest
-    ): Future[CreateEnvironmentMembershipResult] = service.createEnvironmentMembership(params).promise.toFuture
+    ): Future[CreateEnvironmentMembershipResult] = service.createEnvironmentMembership(params).promise().toFuture
     @inline def deleteEnvironmentFuture(params: DeleteEnvironmentRequest): Future[DeleteEnvironmentResult] =
-      service.deleteEnvironment(params).promise.toFuture
+      service.deleteEnvironment(params).promise().toFuture
     @inline def deleteEnvironmentMembershipFuture(
         params: DeleteEnvironmentMembershipRequest
-    ): Future[DeleteEnvironmentMembershipResult] = service.deleteEnvironmentMembership(params).promise.toFuture
+    ): Future[DeleteEnvironmentMembershipResult] = service.deleteEnvironmentMembership(params).promise().toFuture
     @inline def describeEnvironmentMembershipsFuture(
         params: DescribeEnvironmentMembershipsRequest
-    ): Future[DescribeEnvironmentMembershipsResult] = service.describeEnvironmentMemberships(params).promise.toFuture
+    ): Future[DescribeEnvironmentMembershipsResult] = service.describeEnvironmentMemberships(params).promise().toFuture
     @inline def describeEnvironmentStatusFuture(
         params: DescribeEnvironmentStatusRequest
-    ): Future[DescribeEnvironmentStatusResult] = service.describeEnvironmentStatus(params).promise.toFuture
+    ): Future[DescribeEnvironmentStatusResult] = service.describeEnvironmentStatus(params).promise().toFuture
     @inline def describeEnvironmentsFuture(params: DescribeEnvironmentsRequest): Future[DescribeEnvironmentsResult] =
-      service.describeEnvironments(params).promise.toFuture
+      service.describeEnvironments(params).promise().toFuture
     @inline def listEnvironmentsFuture(params: ListEnvironmentsRequest): Future[ListEnvironmentsResult] =
-      service.listEnvironments(params).promise.toFuture
+      service.listEnvironments(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateEnvironmentFuture(params: UpdateEnvironmentRequest): Future[UpdateEnvironmentResult] =
-      service.updateEnvironment(params).promise.toFuture
+      service.updateEnvironment(params).promise().toFuture
     @inline def updateEnvironmentMembershipFuture(
         params: UpdateEnvironmentMembershipRequest
-    ): Future[UpdateEnvironmentMembershipResult] = service.updateEnvironmentMembership(params).promise.toFuture
+    ): Future[UpdateEnvironmentMembershipResult] = service.updateEnvironmentMembership(params).promise().toFuture
   }
 }
 

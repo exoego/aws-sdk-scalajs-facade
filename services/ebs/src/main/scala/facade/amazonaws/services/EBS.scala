@@ -24,11 +24,11 @@ package object ebs {
   implicit final class EBSOps(private val service: EBS) extends AnyVal {
 
     @inline def getSnapshotBlockFuture(params: GetSnapshotBlockRequest): Future[GetSnapshotBlockResponse] =
-      service.getSnapshotBlock(params).promise.toFuture
+      service.getSnapshotBlock(params).promise().toFuture
     @inline def listChangedBlocksFuture(params: ListChangedBlocksRequest): Future[ListChangedBlocksResponse] =
-      service.listChangedBlocks(params).promise.toFuture
+      service.listChangedBlocks(params).promise().toFuture
     @inline def listSnapshotBlocksFuture(params: ListSnapshotBlocksRequest): Future[ListSnapshotBlocksResponse] =
-      service.listSnapshotBlocks(params).promise.toFuture
+      service.listSnapshotBlocks(params).promise().toFuture
   }
 }
 

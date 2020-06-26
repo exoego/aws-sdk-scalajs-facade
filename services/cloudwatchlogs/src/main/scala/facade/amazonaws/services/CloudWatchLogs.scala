@@ -85,86 +85,86 @@ package object cloudwatchlogs {
   implicit final class CloudWatchLogsOps(private val service: CloudWatchLogs) extends AnyVal {
 
     @inline def associateKmsKeyFuture(params: AssociateKmsKeyRequest): Future[js.Object] =
-      service.associateKmsKey(params).promise.toFuture
+      service.associateKmsKey(params).promise().toFuture
     @inline def cancelExportTaskFuture(params: CancelExportTaskRequest): Future[js.Object] =
-      service.cancelExportTask(params).promise.toFuture
+      service.cancelExportTask(params).promise().toFuture
     @inline def createExportTaskFuture(params: CreateExportTaskRequest): Future[CreateExportTaskResponse] =
-      service.createExportTask(params).promise.toFuture
+      service.createExportTask(params).promise().toFuture
     @inline def createLogGroupFuture(params: CreateLogGroupRequest): Future[js.Object] =
-      service.createLogGroup(params).promise.toFuture
+      service.createLogGroup(params).promise().toFuture
     @inline def createLogStreamFuture(params: CreateLogStreamRequest): Future[js.Object] =
-      service.createLogStream(params).promise.toFuture
+      service.createLogStream(params).promise().toFuture
     @inline def deleteDestinationFuture(params: DeleteDestinationRequest): Future[js.Object] =
-      service.deleteDestination(params).promise.toFuture
+      service.deleteDestination(params).promise().toFuture
     @inline def deleteLogGroupFuture(params: DeleteLogGroupRequest): Future[js.Object] =
-      service.deleteLogGroup(params).promise.toFuture
+      service.deleteLogGroup(params).promise().toFuture
     @inline def deleteLogStreamFuture(params: DeleteLogStreamRequest): Future[js.Object] =
-      service.deleteLogStream(params).promise.toFuture
+      service.deleteLogStream(params).promise().toFuture
     @inline def deleteMetricFilterFuture(params: DeleteMetricFilterRequest): Future[js.Object] =
-      service.deleteMetricFilter(params).promise.toFuture
+      service.deleteMetricFilter(params).promise().toFuture
     @inline def deleteResourcePolicyFuture(params: DeleteResourcePolicyRequest): Future[js.Object] =
-      service.deleteResourcePolicy(params).promise.toFuture
+      service.deleteResourcePolicy(params).promise().toFuture
     @inline def deleteRetentionPolicyFuture(params: DeleteRetentionPolicyRequest): Future[js.Object] =
-      service.deleteRetentionPolicy(params).promise.toFuture
+      service.deleteRetentionPolicy(params).promise().toFuture
     @inline def deleteSubscriptionFilterFuture(params: DeleteSubscriptionFilterRequest): Future[js.Object] =
-      service.deleteSubscriptionFilter(params).promise.toFuture
+      service.deleteSubscriptionFilter(params).promise().toFuture
     @inline def describeDestinationsFuture(params: DescribeDestinationsRequest): Future[DescribeDestinationsResponse] =
-      service.describeDestinations(params).promise.toFuture
+      service.describeDestinations(params).promise().toFuture
     @inline def describeExportTasksFuture(params: DescribeExportTasksRequest): Future[DescribeExportTasksResponse] =
-      service.describeExportTasks(params).promise.toFuture
+      service.describeExportTasks(params).promise().toFuture
     @inline def describeLogGroupsFuture(params: DescribeLogGroupsRequest): Future[DescribeLogGroupsResponse] =
-      service.describeLogGroups(params).promise.toFuture
+      service.describeLogGroups(params).promise().toFuture
     @inline def describeLogStreamsFuture(params: DescribeLogStreamsRequest): Future[DescribeLogStreamsResponse] =
-      service.describeLogStreams(params).promise.toFuture
+      service.describeLogStreams(params).promise().toFuture
     @inline def describeMetricFiltersFuture(
         params: DescribeMetricFiltersRequest
-    ): Future[DescribeMetricFiltersResponse] = service.describeMetricFilters(params).promise.toFuture
+    ): Future[DescribeMetricFiltersResponse] = service.describeMetricFilters(params).promise().toFuture
     @inline def describeQueriesFuture(params: DescribeQueriesRequest): Future[DescribeQueriesResponse] =
-      service.describeQueries(params).promise.toFuture
+      service.describeQueries(params).promise().toFuture
     @inline def describeResourcePoliciesFuture(
         params: DescribeResourcePoliciesRequest
-    ): Future[DescribeResourcePoliciesResponse] = service.describeResourcePolicies(params).promise.toFuture
+    ): Future[DescribeResourcePoliciesResponse] = service.describeResourcePolicies(params).promise().toFuture
     @inline def describeSubscriptionFiltersFuture(
         params: DescribeSubscriptionFiltersRequest
-    ): Future[DescribeSubscriptionFiltersResponse] = service.describeSubscriptionFilters(params).promise.toFuture
+    ): Future[DescribeSubscriptionFiltersResponse] = service.describeSubscriptionFilters(params).promise().toFuture
     @inline def disassociateKmsKeyFuture(params: DisassociateKmsKeyRequest): Future[js.Object] =
-      service.disassociateKmsKey(params).promise.toFuture
+      service.disassociateKmsKey(params).promise().toFuture
     @inline def filterLogEventsFuture(params: FilterLogEventsRequest): Future[FilterLogEventsResponse] =
-      service.filterLogEvents(params).promise.toFuture
+      service.filterLogEvents(params).promise().toFuture
     @inline def getLogEventsFuture(params: GetLogEventsRequest): Future[GetLogEventsResponse] =
-      service.getLogEvents(params).promise.toFuture
+      service.getLogEvents(params).promise().toFuture
     @inline def getLogGroupFieldsFuture(params: GetLogGroupFieldsRequest): Future[GetLogGroupFieldsResponse] =
-      service.getLogGroupFields(params).promise.toFuture
+      service.getLogGroupFields(params).promise().toFuture
     @inline def getLogRecordFuture(params: GetLogRecordRequest): Future[GetLogRecordResponse] =
-      service.getLogRecord(params).promise.toFuture
+      service.getLogRecord(params).promise().toFuture
     @inline def getQueryResultsFuture(params: GetQueryResultsRequest): Future[GetQueryResultsResponse] =
-      service.getQueryResults(params).promise.toFuture
+      service.getQueryResults(params).promise().toFuture
     @inline def listTagsLogGroupFuture(params: ListTagsLogGroupRequest): Future[ListTagsLogGroupResponse] =
-      service.listTagsLogGroup(params).promise.toFuture
+      service.listTagsLogGroup(params).promise().toFuture
     @inline def putDestinationFuture(params: PutDestinationRequest): Future[PutDestinationResponse] =
-      service.putDestination(params).promise.toFuture
+      service.putDestination(params).promise().toFuture
     @inline def putDestinationPolicyFuture(params: PutDestinationPolicyRequest): Future[js.Object] =
-      service.putDestinationPolicy(params).promise.toFuture
+      service.putDestinationPolicy(params).promise().toFuture
     @inline def putLogEventsFuture(params: PutLogEventsRequest): Future[PutLogEventsResponse] =
-      service.putLogEvents(params).promise.toFuture
+      service.putLogEvents(params).promise().toFuture
     @inline def putMetricFilterFuture(params: PutMetricFilterRequest): Future[js.Object] =
-      service.putMetricFilter(params).promise.toFuture
+      service.putMetricFilter(params).promise().toFuture
     @inline def putResourcePolicyFuture(params: PutResourcePolicyRequest): Future[PutResourcePolicyResponse] =
-      service.putResourcePolicy(params).promise.toFuture
+      service.putResourcePolicy(params).promise().toFuture
     @inline def putRetentionPolicyFuture(params: PutRetentionPolicyRequest): Future[js.Object] =
-      service.putRetentionPolicy(params).promise.toFuture
+      service.putRetentionPolicy(params).promise().toFuture
     @inline def putSubscriptionFilterFuture(params: PutSubscriptionFilterRequest): Future[js.Object] =
-      service.putSubscriptionFilter(params).promise.toFuture
+      service.putSubscriptionFilter(params).promise().toFuture
     @inline def startQueryFuture(params: StartQueryRequest): Future[StartQueryResponse] =
-      service.startQuery(params).promise.toFuture
+      service.startQuery(params).promise().toFuture
     @inline def stopQueryFuture(params: StopQueryRequest): Future[StopQueryResponse] =
-      service.stopQuery(params).promise.toFuture
+      service.stopQuery(params).promise().toFuture
     @inline def tagLogGroupFuture(params: TagLogGroupRequest): Future[js.Object] =
-      service.tagLogGroup(params).promise.toFuture
+      service.tagLogGroup(params).promise().toFuture
     @inline def testMetricFilterFuture(params: TestMetricFilterRequest): Future[TestMetricFilterResponse] =
-      service.testMetricFilter(params).promise.toFuture
+      service.testMetricFilter(params).promise().toFuture
     @inline def untagLogGroupFuture(params: UntagLogGroupRequest): Future[js.Object] =
-      service.untagLogGroup(params).promise.toFuture
+      service.untagLogGroup(params).promise().toFuture
   }
 }
 

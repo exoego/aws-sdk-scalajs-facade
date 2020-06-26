@@ -89,75 +89,76 @@ package object kinesisanalyticsv2 {
     @inline def addApplicationCloudWatchLoggingOptionFuture(
         params: AddApplicationCloudWatchLoggingOptionRequest
     ): Future[AddApplicationCloudWatchLoggingOptionResponse] =
-      service.addApplicationCloudWatchLoggingOption(params).promise.toFuture
+      service.addApplicationCloudWatchLoggingOption(params).promise().toFuture
     @inline def addApplicationInputFuture(params: AddApplicationInputRequest): Future[AddApplicationInputResponse] =
-      service.addApplicationInput(params).promise.toFuture
+      service.addApplicationInput(params).promise().toFuture
     @inline def addApplicationInputProcessingConfigurationFuture(
         params: AddApplicationInputProcessingConfigurationRequest
     ): Future[AddApplicationInputProcessingConfigurationResponse] =
-      service.addApplicationInputProcessingConfiguration(params).promise.toFuture
+      service.addApplicationInputProcessingConfiguration(params).promise().toFuture
     @inline def addApplicationOutputFuture(params: AddApplicationOutputRequest): Future[AddApplicationOutputResponse] =
-      service.addApplicationOutput(params).promise.toFuture
+      service.addApplicationOutput(params).promise().toFuture
     @inline def addApplicationReferenceDataSourceFuture(
         params: AddApplicationReferenceDataSourceRequest
     ): Future[AddApplicationReferenceDataSourceResponse] =
-      service.addApplicationReferenceDataSource(params).promise.toFuture
+      service.addApplicationReferenceDataSource(params).promise().toFuture
     @inline def addApplicationVpcConfigurationFuture(
         params: AddApplicationVpcConfigurationRequest
-    ): Future[AddApplicationVpcConfigurationResponse] = service.addApplicationVpcConfiguration(params).promise.toFuture
+    ): Future[AddApplicationVpcConfigurationResponse] =
+      service.addApplicationVpcConfiguration(params).promise().toFuture
     @inline def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResponse] =
-      service.createApplication(params).promise.toFuture
+      service.createApplication(params).promise().toFuture
     @inline def createApplicationSnapshotFuture(
         params: CreateApplicationSnapshotRequest
-    ): Future[CreateApplicationSnapshotResponse] = service.createApplicationSnapshot(params).promise.toFuture
+    ): Future[CreateApplicationSnapshotResponse] = service.createApplicationSnapshot(params).promise().toFuture
     @inline def deleteApplicationCloudWatchLoggingOptionFuture(
         params: DeleteApplicationCloudWatchLoggingOptionRequest
     ): Future[DeleteApplicationCloudWatchLoggingOptionResponse] =
-      service.deleteApplicationCloudWatchLoggingOption(params).promise.toFuture
+      service.deleteApplicationCloudWatchLoggingOption(params).promise().toFuture
     @inline def deleteApplicationFuture(params: DeleteApplicationRequest): Future[DeleteApplicationResponse] =
-      service.deleteApplication(params).promise.toFuture
+      service.deleteApplication(params).promise().toFuture
     @inline def deleteApplicationInputProcessingConfigurationFuture(
         params: DeleteApplicationInputProcessingConfigurationRequest
     ): Future[DeleteApplicationInputProcessingConfigurationResponse] =
-      service.deleteApplicationInputProcessingConfiguration(params).promise.toFuture
+      service.deleteApplicationInputProcessingConfiguration(params).promise().toFuture
     @inline def deleteApplicationOutputFuture(
         params: DeleteApplicationOutputRequest
-    ): Future[DeleteApplicationOutputResponse] = service.deleteApplicationOutput(params).promise.toFuture
+    ): Future[DeleteApplicationOutputResponse] = service.deleteApplicationOutput(params).promise().toFuture
     @inline def deleteApplicationReferenceDataSourceFuture(
         params: DeleteApplicationReferenceDataSourceRequest
     ): Future[DeleteApplicationReferenceDataSourceResponse] =
-      service.deleteApplicationReferenceDataSource(params).promise.toFuture
+      service.deleteApplicationReferenceDataSource(params).promise().toFuture
     @inline def deleteApplicationSnapshotFuture(
         params: DeleteApplicationSnapshotRequest
-    ): Future[DeleteApplicationSnapshotResponse] = service.deleteApplicationSnapshot(params).promise.toFuture
+    ): Future[DeleteApplicationSnapshotResponse] = service.deleteApplicationSnapshot(params).promise().toFuture
     @inline def deleteApplicationVpcConfigurationFuture(
         params: DeleteApplicationVpcConfigurationRequest
     ): Future[DeleteApplicationVpcConfigurationResponse] =
-      service.deleteApplicationVpcConfiguration(params).promise.toFuture
+      service.deleteApplicationVpcConfiguration(params).promise().toFuture
     @inline def describeApplicationFuture(params: DescribeApplicationRequest): Future[DescribeApplicationResponse] =
-      service.describeApplication(params).promise.toFuture
+      service.describeApplication(params).promise().toFuture
     @inline def describeApplicationSnapshotFuture(
         params: DescribeApplicationSnapshotRequest
-    ): Future[DescribeApplicationSnapshotResponse] = service.describeApplicationSnapshot(params).promise.toFuture
+    ): Future[DescribeApplicationSnapshotResponse] = service.describeApplicationSnapshot(params).promise().toFuture
     @inline def discoverInputSchemaFuture(params: DiscoverInputSchemaRequest): Future[DiscoverInputSchemaResponse] =
-      service.discoverInputSchema(params).promise.toFuture
+      service.discoverInputSchema(params).promise().toFuture
     @inline def listApplicationSnapshotsFuture(
         params: ListApplicationSnapshotsRequest
-    ): Future[ListApplicationSnapshotsResponse] = service.listApplicationSnapshots(params).promise.toFuture
+    ): Future[ListApplicationSnapshotsResponse] = service.listApplicationSnapshots(params).promise().toFuture
     @inline def listApplicationsFuture(params: ListApplicationsRequest): Future[ListApplicationsResponse] =
-      service.listApplications(params).promise.toFuture
+      service.listApplications(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def startApplicationFuture(params: StartApplicationRequest): Future[StartApplicationResponse] =
-      service.startApplication(params).promise.toFuture
+      service.startApplication(params).promise().toFuture
     @inline def stopApplicationFuture(params: StopApplicationRequest): Future[StopApplicationResponse] =
-      service.stopApplication(params).promise.toFuture
+      service.stopApplication(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] =
-      service.updateApplication(params).promise.toFuture
+      service.updateApplication(params).promise().toFuture
   }
 }
 

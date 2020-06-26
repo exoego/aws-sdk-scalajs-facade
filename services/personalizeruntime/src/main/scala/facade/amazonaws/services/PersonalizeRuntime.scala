@@ -21,9 +21,9 @@ package object personalizeruntime {
 
     @inline def getPersonalizedRankingFuture(
         params: GetPersonalizedRankingRequest
-    ): Future[GetPersonalizedRankingResponse] = service.getPersonalizedRanking(params).promise.toFuture
+    ): Future[GetPersonalizedRankingResponse] = service.getPersonalizedRanking(params).promise().toFuture
     @inline def getRecommendationsFuture(params: GetRecommendationsRequest): Future[GetRecommendationsResponse] =
-      service.getRecommendations(params).promise.toFuture
+      service.getRecommendations(params).promise().toFuture
   }
 }
 

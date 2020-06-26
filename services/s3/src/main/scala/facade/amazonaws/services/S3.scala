@@ -205,196 +205,200 @@ package object s3 {
   implicit final class S3Ops(private val service: S3) extends AnyVal {
 
     @inline def abortMultipartUploadFuture(params: AbortMultipartUploadRequest): Future[AbortMultipartUploadOutput] =
-      service.abortMultipartUpload(params).promise.toFuture
+      service.abortMultipartUpload(params).promise().toFuture
     @inline def completeMultipartUploadFuture(
         params: CompleteMultipartUploadRequest
-    ): Future[CompleteMultipartUploadOutput] = service.completeMultipartUpload(params).promise.toFuture
+    ): Future[CompleteMultipartUploadOutput] = service.completeMultipartUpload(params).promise().toFuture
     @inline def copyObjectFuture(params: CopyObjectRequest): Future[CopyObjectOutput] =
-      service.copyObject(params).promise.toFuture
+      service.copyObject(params).promise().toFuture
     @inline def createBucketFuture(params: CreateBucketRequest): Future[CreateBucketOutput] =
-      service.createBucket(params).promise.toFuture
+      service.createBucket(params).promise().toFuture
     @inline def createMultipartUploadFuture(params: CreateMultipartUploadRequest): Future[CreateMultipartUploadOutput] =
-      service.createMultipartUpload(params).promise.toFuture
+      service.createMultipartUpload(params).promise().toFuture
     @inline def deleteBucketAnalyticsConfigurationFuture(
         params: DeleteBucketAnalyticsConfigurationRequest
-    ): Future[js.Object] = service.deleteBucketAnalyticsConfiguration(params).promise.toFuture
+    ): Future[js.Object] = service.deleteBucketAnalyticsConfiguration(params).promise().toFuture
     @inline def deleteBucketCorsFuture(params: DeleteBucketCorsRequest): Future[js.Object] =
-      service.deleteBucketCors(params).promise.toFuture
+      service.deleteBucketCors(params).promise().toFuture
     @inline def deleteBucketEncryptionFuture(params: DeleteBucketEncryptionRequest): Future[js.Object] =
-      service.deleteBucketEncryption(params).promise.toFuture
+      service.deleteBucketEncryption(params).promise().toFuture
     @inline def deleteBucketFuture(params: DeleteBucketRequest): Future[js.Object] =
-      service.deleteBucket(params).promise.toFuture
+      service.deleteBucket(params).promise().toFuture
     @inline def deleteBucketInventoryConfigurationFuture(
         params: DeleteBucketInventoryConfigurationRequest
-    ): Future[js.Object] = service.deleteBucketInventoryConfiguration(params).promise.toFuture
+    ): Future[js.Object] = service.deleteBucketInventoryConfiguration(params).promise().toFuture
     @inline def deleteBucketLifecycleFuture(params: DeleteBucketLifecycleRequest): Future[js.Object] =
-      service.deleteBucketLifecycle(params).promise.toFuture
+      service.deleteBucketLifecycle(params).promise().toFuture
     @inline def deleteBucketMetricsConfigurationFuture(
         params: DeleteBucketMetricsConfigurationRequest
-    ): Future[js.Object] = service.deleteBucketMetricsConfiguration(params).promise.toFuture
+    ): Future[js.Object] = service.deleteBucketMetricsConfiguration(params).promise().toFuture
     @inline def deleteBucketPolicyFuture(params: DeleteBucketPolicyRequest): Future[js.Object] =
-      service.deleteBucketPolicy(params).promise.toFuture
+      service.deleteBucketPolicy(params).promise().toFuture
     @inline def deleteBucketReplicationFuture(params: DeleteBucketReplicationRequest): Future[js.Object] =
-      service.deleteBucketReplication(params).promise.toFuture
+      service.deleteBucketReplication(params).promise().toFuture
     @inline def deleteBucketTaggingFuture(params: DeleteBucketTaggingRequest): Future[js.Object] =
-      service.deleteBucketTagging(params).promise.toFuture
+      service.deleteBucketTagging(params).promise().toFuture
     @inline def deleteBucketWebsiteFuture(params: DeleteBucketWebsiteRequest): Future[js.Object] =
-      service.deleteBucketWebsite(params).promise.toFuture
+      service.deleteBucketWebsite(params).promise().toFuture
     @inline def deleteObjectFuture(params: DeleteObjectRequest): Future[DeleteObjectOutput] =
-      service.deleteObject(params).promise.toFuture
+      service.deleteObject(params).promise().toFuture
     @inline def deleteObjectTaggingFuture(params: DeleteObjectTaggingRequest): Future[DeleteObjectTaggingOutput] =
-      service.deleteObjectTagging(params).promise.toFuture
+      service.deleteObjectTagging(params).promise().toFuture
     @inline def deleteObjectsFuture(params: DeleteObjectsRequest): Future[DeleteObjectsOutput] =
-      service.deleteObjects(params).promise.toFuture
+      service.deleteObjects(params).promise().toFuture
     @inline def deletePublicAccessBlockFuture(params: DeletePublicAccessBlockRequest): Future[js.Object] =
-      service.deletePublicAccessBlock(params).promise.toFuture
+      service.deletePublicAccessBlock(params).promise().toFuture
     @inline def getBucketAccelerateConfigurationFuture(
         params: GetBucketAccelerateConfigurationRequest
     ): Future[GetBucketAccelerateConfigurationOutput] =
-      service.getBucketAccelerateConfiguration(params).promise.toFuture
+      service.getBucketAccelerateConfiguration(params).promise().toFuture
     @inline def getBucketAclFuture(params: GetBucketAclRequest): Future[GetBucketAclOutput] =
-      service.getBucketAcl(params).promise.toFuture
+      service.getBucketAcl(params).promise().toFuture
     @inline def getBucketAnalyticsConfigurationFuture(
         params: GetBucketAnalyticsConfigurationRequest
-    ): Future[GetBucketAnalyticsConfigurationOutput] = service.getBucketAnalyticsConfiguration(params).promise.toFuture
+    ): Future[GetBucketAnalyticsConfigurationOutput] =
+      service.getBucketAnalyticsConfiguration(params).promise().toFuture
     @inline def getBucketCorsFuture(params: GetBucketCorsRequest): Future[GetBucketCorsOutput] =
-      service.getBucketCors(params).promise.toFuture
+      service.getBucketCors(params).promise().toFuture
     @inline def getBucketEncryptionFuture(params: GetBucketEncryptionRequest): Future[GetBucketEncryptionOutput] =
-      service.getBucketEncryption(params).promise.toFuture
+      service.getBucketEncryption(params).promise().toFuture
     @inline def getBucketInventoryConfigurationFuture(
         params: GetBucketInventoryConfigurationRequest
-    ): Future[GetBucketInventoryConfigurationOutput] = service.getBucketInventoryConfiguration(params).promise.toFuture
+    ): Future[GetBucketInventoryConfigurationOutput] =
+      service.getBucketInventoryConfiguration(params).promise().toFuture
     @inline def getBucketLifecycleConfigurationFuture(
         params: GetBucketLifecycleConfigurationRequest
-    ): Future[GetBucketLifecycleConfigurationOutput] = service.getBucketLifecycleConfiguration(params).promise.toFuture
+    ): Future[GetBucketLifecycleConfigurationOutput] =
+      service.getBucketLifecycleConfiguration(params).promise().toFuture
     @inline def getBucketLocationFuture(params: GetBucketLocationRequest): Future[GetBucketLocationOutput] =
-      service.getBucketLocation(params).promise.toFuture
+      service.getBucketLocation(params).promise().toFuture
     @inline def getBucketLoggingFuture(params: GetBucketLoggingRequest): Future[GetBucketLoggingOutput] =
-      service.getBucketLogging(params).promise.toFuture
+      service.getBucketLogging(params).promise().toFuture
     @inline def getBucketMetricsConfigurationFuture(
         params: GetBucketMetricsConfigurationRequest
-    ): Future[GetBucketMetricsConfigurationOutput] = service.getBucketMetricsConfiguration(params).promise.toFuture
+    ): Future[GetBucketMetricsConfigurationOutput] = service.getBucketMetricsConfiguration(params).promise().toFuture
     @inline def getBucketNotificationConfigurationFuture(
         params: GetBucketNotificationConfigurationRequest
-    ): Future[NotificationConfiguration] = service.getBucketNotificationConfiguration(params).promise.toFuture
+    ): Future[NotificationConfiguration] = service.getBucketNotificationConfiguration(params).promise().toFuture
     @inline def getBucketPolicyFuture(params: GetBucketPolicyRequest): Future[GetBucketPolicyOutput] =
-      service.getBucketPolicy(params).promise.toFuture
+      service.getBucketPolicy(params).promise().toFuture
     @inline def getBucketPolicyStatusFuture(params: GetBucketPolicyStatusRequest): Future[GetBucketPolicyStatusOutput] =
-      service.getBucketPolicyStatus(params).promise.toFuture
+      service.getBucketPolicyStatus(params).promise().toFuture
     @inline def getBucketReplicationFuture(params: GetBucketReplicationRequest): Future[GetBucketReplicationOutput] =
-      service.getBucketReplication(params).promise.toFuture
+      service.getBucketReplication(params).promise().toFuture
     @inline def getBucketRequestPaymentFuture(
         params: GetBucketRequestPaymentRequest
-    ): Future[GetBucketRequestPaymentOutput] = service.getBucketRequestPayment(params).promise.toFuture
+    ): Future[GetBucketRequestPaymentOutput] = service.getBucketRequestPayment(params).promise().toFuture
     @inline def getBucketTaggingFuture(params: GetBucketTaggingRequest): Future[GetBucketTaggingOutput] =
-      service.getBucketTagging(params).promise.toFuture
+      service.getBucketTagging(params).promise().toFuture
     @inline def getBucketVersioningFuture(params: GetBucketVersioningRequest): Future[GetBucketVersioningOutput] =
-      service.getBucketVersioning(params).promise.toFuture
+      service.getBucketVersioning(params).promise().toFuture
     @inline def getBucketWebsiteFuture(params: GetBucketWebsiteRequest): Future[GetBucketWebsiteOutput] =
-      service.getBucketWebsite(params).promise.toFuture
+      service.getBucketWebsite(params).promise().toFuture
     @inline def getObjectAclFuture(params: GetObjectAclRequest): Future[GetObjectAclOutput] =
-      service.getObjectAcl(params).promise.toFuture
+      service.getObjectAcl(params).promise().toFuture
     @inline def getObjectFuture(params: GetObjectRequest): Future[GetObjectOutput] =
-      service.getObject(params).promise.toFuture
+      service.getObject(params).promise().toFuture
     @inline def getObjectLegalHoldFuture(params: GetObjectLegalHoldRequest): Future[GetObjectLegalHoldOutput] =
-      service.getObjectLegalHold(params).promise.toFuture
+      service.getObjectLegalHold(params).promise().toFuture
     @inline def getObjectLockConfigurationFuture(
         params: GetObjectLockConfigurationRequest
-    ): Future[GetObjectLockConfigurationOutput] = service.getObjectLockConfiguration(params).promise.toFuture
+    ): Future[GetObjectLockConfigurationOutput] = service.getObjectLockConfiguration(params).promise().toFuture
     @inline def getObjectRetentionFuture(params: GetObjectRetentionRequest): Future[GetObjectRetentionOutput] =
-      service.getObjectRetention(params).promise.toFuture
+      service.getObjectRetention(params).promise().toFuture
     @inline def getObjectTaggingFuture(params: GetObjectTaggingRequest): Future[GetObjectTaggingOutput] =
-      service.getObjectTagging(params).promise.toFuture
+      service.getObjectTagging(params).promise().toFuture
     @inline def getObjectTorrentFuture(params: GetObjectTorrentRequest): Future[GetObjectTorrentOutput] =
-      service.getObjectTorrent(params).promise.toFuture
+      service.getObjectTorrent(params).promise().toFuture
     @inline def getPublicAccessBlockFuture(params: GetPublicAccessBlockRequest): Future[GetPublicAccessBlockOutput] =
-      service.getPublicAccessBlock(params).promise.toFuture
+      service.getPublicAccessBlock(params).promise().toFuture
     @inline def headBucketFuture(params: HeadBucketRequest): Future[js.Object] =
-      service.headBucket(params).promise.toFuture
+      service.headBucket(params).promise().toFuture
     @inline def headObjectFuture(params: HeadObjectRequest): Future[HeadObjectOutput] =
-      service.headObject(params).promise.toFuture
+      service.headObject(params).promise().toFuture
     @inline def listBucketAnalyticsConfigurationsFuture(
         params: ListBucketAnalyticsConfigurationsRequest
     ): Future[ListBucketAnalyticsConfigurationsOutput] =
-      service.listBucketAnalyticsConfigurations(params).promise.toFuture
+      service.listBucketAnalyticsConfigurations(params).promise().toFuture
     @inline def listBucketInventoryConfigurationsFuture(
         params: ListBucketInventoryConfigurationsRequest
     ): Future[ListBucketInventoryConfigurationsOutput] =
-      service.listBucketInventoryConfigurations(params).promise.toFuture
+      service.listBucketInventoryConfigurations(params).promise().toFuture
     @inline def listBucketMetricsConfigurationsFuture(
         params: ListBucketMetricsConfigurationsRequest
-    ): Future[ListBucketMetricsConfigurationsOutput]           = service.listBucketMetricsConfigurations(params).promise.toFuture
-    @inline def listBucketsFuture(): Future[ListBucketsOutput] = service.listBuckets().promise.toFuture
+    ): Future[ListBucketMetricsConfigurationsOutput] =
+      service.listBucketMetricsConfigurations(params).promise().toFuture
+    @inline def listBucketsFuture(): Future[ListBucketsOutput] = service.listBuckets().promise().toFuture
     @inline def listMultipartUploadsFuture(params: ListMultipartUploadsRequest): Future[ListMultipartUploadsOutput] =
-      service.listMultipartUploads(params).promise.toFuture
+      service.listMultipartUploads(params).promise().toFuture
     @inline def listObjectVersionsFuture(params: ListObjectVersionsRequest): Future[ListObjectVersionsOutput] =
-      service.listObjectVersions(params).promise.toFuture
+      service.listObjectVersions(params).promise().toFuture
     @inline def listObjectsFuture(params: ListObjectsRequest): Future[ListObjectsOutput] =
-      service.listObjects(params).promise.toFuture
+      service.listObjects(params).promise().toFuture
     @inline def listObjectsV2Future(params: ListObjectsV2Request): Future[ListObjectsV2Output] =
-      service.listObjectsV2(params).promise.toFuture
+      service.listObjectsV2(params).promise().toFuture
     @inline def listPartsFuture(params: ListPartsRequest): Future[ListPartsOutput] =
-      service.listParts(params).promise.toFuture
+      service.listParts(params).promise().toFuture
     @inline def putBucketAccelerateConfigurationFuture(
         params: PutBucketAccelerateConfigurationRequest
-    ): Future[js.Object] = service.putBucketAccelerateConfiguration(params).promise.toFuture
+    ): Future[js.Object] = service.putBucketAccelerateConfiguration(params).promise().toFuture
     @inline def putBucketAclFuture(params: PutBucketAclRequest): Future[js.Object] =
-      service.putBucketAcl(params).promise.toFuture
+      service.putBucketAcl(params).promise().toFuture
     @inline def putBucketAnalyticsConfigurationFuture(
         params: PutBucketAnalyticsConfigurationRequest
-    ): Future[js.Object] = service.putBucketAnalyticsConfiguration(params).promise.toFuture
+    ): Future[js.Object] = service.putBucketAnalyticsConfiguration(params).promise().toFuture
     @inline def putBucketCorsFuture(params: PutBucketCorsRequest): Future[js.Object] =
-      service.putBucketCors(params).promise.toFuture
+      service.putBucketCors(params).promise().toFuture
     @inline def putBucketEncryptionFuture(params: PutBucketEncryptionRequest): Future[js.Object] =
-      service.putBucketEncryption(params).promise.toFuture
+      service.putBucketEncryption(params).promise().toFuture
     @inline def putBucketInventoryConfigurationFuture(
         params: PutBucketInventoryConfigurationRequest
-    ): Future[js.Object] = service.putBucketInventoryConfiguration(params).promise.toFuture
+    ): Future[js.Object] = service.putBucketInventoryConfiguration(params).promise().toFuture
     @inline def putBucketLifecycleConfigurationFuture(
         params: PutBucketLifecycleConfigurationRequest
-    ): Future[js.Object] = service.putBucketLifecycleConfiguration(params).promise.toFuture
+    ): Future[js.Object] = service.putBucketLifecycleConfiguration(params).promise().toFuture
     @inline def putBucketLoggingFuture(params: PutBucketLoggingRequest): Future[js.Object] =
-      service.putBucketLogging(params).promise.toFuture
+      service.putBucketLogging(params).promise().toFuture
     @inline def putBucketMetricsConfigurationFuture(params: PutBucketMetricsConfigurationRequest): Future[js.Object] =
-      service.putBucketMetricsConfiguration(params).promise.toFuture
+      service.putBucketMetricsConfiguration(params).promise().toFuture
     @inline def putBucketNotificationConfigurationFuture(
         params: PutBucketNotificationConfigurationRequest
-    ): Future[js.Object] = service.putBucketNotificationConfiguration(params).promise.toFuture
+    ): Future[js.Object] = service.putBucketNotificationConfiguration(params).promise().toFuture
     @inline def putBucketPolicyFuture(params: PutBucketPolicyRequest): Future[js.Object] =
-      service.putBucketPolicy(params).promise.toFuture
+      service.putBucketPolicy(params).promise().toFuture
     @inline def putBucketReplicationFuture(params: PutBucketReplicationRequest): Future[js.Object] =
-      service.putBucketReplication(params).promise.toFuture
+      service.putBucketReplication(params).promise().toFuture
     @inline def putBucketRequestPaymentFuture(params: PutBucketRequestPaymentRequest): Future[js.Object] =
-      service.putBucketRequestPayment(params).promise.toFuture
+      service.putBucketRequestPayment(params).promise().toFuture
     @inline def putBucketTaggingFuture(params: PutBucketTaggingRequest): Future[js.Object] =
-      service.putBucketTagging(params).promise.toFuture
+      service.putBucketTagging(params).promise().toFuture
     @inline def putBucketVersioningFuture(params: PutBucketVersioningRequest): Future[js.Object] =
-      service.putBucketVersioning(params).promise.toFuture
+      service.putBucketVersioning(params).promise().toFuture
     @inline def putBucketWebsiteFuture(params: PutBucketWebsiteRequest): Future[js.Object] =
-      service.putBucketWebsite(params).promise.toFuture
+      service.putBucketWebsite(params).promise().toFuture
     @inline def putObjectAclFuture(params: PutObjectAclRequest): Future[PutObjectAclOutput] =
-      service.putObjectAcl(params).promise.toFuture
+      service.putObjectAcl(params).promise().toFuture
     @inline def putObjectFuture(params: PutObjectRequest): Future[PutObjectOutput] =
-      service.putObject(params).promise.toFuture
+      service.putObject(params).promise().toFuture
     @inline def putObjectLegalHoldFuture(params: PutObjectLegalHoldRequest): Future[PutObjectLegalHoldOutput] =
-      service.putObjectLegalHold(params).promise.toFuture
+      service.putObjectLegalHold(params).promise().toFuture
     @inline def putObjectLockConfigurationFuture(
         params: PutObjectLockConfigurationRequest
-    ): Future[PutObjectLockConfigurationOutput] = service.putObjectLockConfiguration(params).promise.toFuture
+    ): Future[PutObjectLockConfigurationOutput] = service.putObjectLockConfiguration(params).promise().toFuture
     @inline def putObjectRetentionFuture(params: PutObjectRetentionRequest): Future[PutObjectRetentionOutput] =
-      service.putObjectRetention(params).promise.toFuture
+      service.putObjectRetention(params).promise().toFuture
     @inline def putObjectTaggingFuture(params: PutObjectTaggingRequest): Future[PutObjectTaggingOutput] =
-      service.putObjectTagging(params).promise.toFuture
+      service.putObjectTagging(params).promise().toFuture
     @inline def putPublicAccessBlockFuture(params: PutPublicAccessBlockRequest): Future[js.Object] =
-      service.putPublicAccessBlock(params).promise.toFuture
+      service.putPublicAccessBlock(params).promise().toFuture
     @inline def restoreObjectFuture(params: RestoreObjectRequest): Future[RestoreObjectOutput] =
-      service.restoreObject(params).promise.toFuture
+      service.restoreObject(params).promise().toFuture
     @inline def selectObjectContentFuture(params: SelectObjectContentRequest): Future[SelectObjectContentOutput] =
-      service.selectObjectContent(params).promise.toFuture
+      service.selectObjectContent(params).promise().toFuture
     @inline def uploadPartCopyFuture(params: UploadPartCopyRequest): Future[UploadPartCopyOutput] =
-      service.uploadPartCopy(params).promise.toFuture
+      service.uploadPartCopy(params).promise().toFuture
     @inline def uploadPartFuture(params: UploadPartRequest): Future[UploadPartOutput] =
-      service.uploadPart(params).promise.toFuture
+      service.uploadPart(params).promise().toFuture
 
     /**
       * Get a pre-signed URL for a given operation name.

@@ -41,47 +41,47 @@ package object opsworkscm {
   implicit final class OpsWorksCMOps(private val service: OpsWorksCM) extends AnyVal {
 
     @inline def associateNodeFuture(params: AssociateNodeRequest): Future[AssociateNodeResponse] =
-      service.associateNode(params).promise.toFuture
+      service.associateNode(params).promise().toFuture
     @inline def createBackupFuture(params: CreateBackupRequest): Future[CreateBackupResponse] =
-      service.createBackup(params).promise.toFuture
+      service.createBackup(params).promise().toFuture
     @inline def createServerFuture(params: CreateServerRequest): Future[CreateServerResponse] =
-      service.createServer(params).promise.toFuture
+      service.createServer(params).promise().toFuture
     @inline def deleteBackupFuture(params: DeleteBackupRequest): Future[DeleteBackupResponse] =
-      service.deleteBackup(params).promise.toFuture
+      service.deleteBackup(params).promise().toFuture
     @inline def deleteServerFuture(params: DeleteServerRequest): Future[DeleteServerResponse] =
-      service.deleteServer(params).promise.toFuture
+      service.deleteServer(params).promise().toFuture
     @inline def describeAccountAttributesFuture(
         params: DescribeAccountAttributesRequest
-    ): Future[DescribeAccountAttributesResponse] = service.describeAccountAttributes(params).promise.toFuture
+    ): Future[DescribeAccountAttributesResponse] = service.describeAccountAttributes(params).promise().toFuture
     @inline def describeBackupsFuture(params: DescribeBackupsRequest): Future[DescribeBackupsResponse] =
-      service.describeBackups(params).promise.toFuture
+      service.describeBackups(params).promise().toFuture
     @inline def describeEventsFuture(params: DescribeEventsRequest): Future[DescribeEventsResponse] =
-      service.describeEvents(params).promise.toFuture
+      service.describeEvents(params).promise().toFuture
     @inline def describeNodeAssociationStatusFuture(
         params: DescribeNodeAssociationStatusRequest
-    ): Future[DescribeNodeAssociationStatusResponse] = service.describeNodeAssociationStatus(params).promise.toFuture
+    ): Future[DescribeNodeAssociationStatusResponse] = service.describeNodeAssociationStatus(params).promise().toFuture
     @inline def describeServersFuture(params: DescribeServersRequest): Future[DescribeServersResponse] =
-      service.describeServers(params).promise.toFuture
+      service.describeServers(params).promise().toFuture
     @inline def disassociateNodeFuture(params: DisassociateNodeRequest): Future[DisassociateNodeResponse] =
-      service.disassociateNode(params).promise.toFuture
+      service.disassociateNode(params).promise().toFuture
     @inline def exportServerEngineAttributeFuture(
         params: ExportServerEngineAttributeRequest
-    ): Future[ExportServerEngineAttributeResponse] = service.exportServerEngineAttribute(params).promise.toFuture
+    ): Future[ExportServerEngineAttributeResponse] = service.exportServerEngineAttribute(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def restoreServerFuture(params: RestoreServerRequest): Future[RestoreServerResponse] =
-      service.restoreServer(params).promise.toFuture
+      service.restoreServer(params).promise().toFuture
     @inline def startMaintenanceFuture(params: StartMaintenanceRequest): Future[StartMaintenanceResponse] =
-      service.startMaintenance(params).promise.toFuture
+      service.startMaintenance(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateServerEngineAttributesFuture(
         params: UpdateServerEngineAttributesRequest
-    ): Future[UpdateServerEngineAttributesResponse] = service.updateServerEngineAttributes(params).promise.toFuture
+    ): Future[UpdateServerEngineAttributesResponse] = service.updateServerEngineAttributes(params).promise().toFuture
     @inline def updateServerFuture(params: UpdateServerRequest): Future[UpdateServerResponse] =
-      service.updateServer(params).promise.toFuture
+      service.updateServer(params).promise().toFuture
   }
 }
 

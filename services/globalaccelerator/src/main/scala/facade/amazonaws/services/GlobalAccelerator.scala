@@ -31,42 +31,42 @@ package object globalaccelerator {
   implicit final class GlobalAcceleratorOps(private val service: GlobalAccelerator) extends AnyVal {
 
     @inline def createAcceleratorFuture(params: CreateAcceleratorRequest): Future[CreateAcceleratorResponse] =
-      service.createAccelerator(params).promise.toFuture
+      service.createAccelerator(params).promise().toFuture
     @inline def createEndpointGroupFuture(params: CreateEndpointGroupRequest): Future[CreateEndpointGroupResponse] =
-      service.createEndpointGroup(params).promise.toFuture
+      service.createEndpointGroup(params).promise().toFuture
     @inline def createListenerFuture(params: CreateListenerRequest): Future[CreateListenerResponse] =
-      service.createListener(params).promise.toFuture
+      service.createListener(params).promise().toFuture
     @inline def deleteAcceleratorFuture(params: DeleteAcceleratorRequest): Future[js.Object] =
-      service.deleteAccelerator(params).promise.toFuture
+      service.deleteAccelerator(params).promise().toFuture
     @inline def deleteEndpointGroupFuture(params: DeleteEndpointGroupRequest): Future[js.Object] =
-      service.deleteEndpointGroup(params).promise.toFuture
+      service.deleteEndpointGroup(params).promise().toFuture
     @inline def deleteListenerFuture(params: DeleteListenerRequest): Future[js.Object] =
-      service.deleteListener(params).promise.toFuture
+      service.deleteListener(params).promise().toFuture
     @inline def describeAcceleratorAttributesFuture(
         params: DescribeAcceleratorAttributesRequest
-    ): Future[DescribeAcceleratorAttributesResponse] = service.describeAcceleratorAttributes(params).promise.toFuture
+    ): Future[DescribeAcceleratorAttributesResponse] = service.describeAcceleratorAttributes(params).promise().toFuture
     @inline def describeAcceleratorFuture(params: DescribeAcceleratorRequest): Future[DescribeAcceleratorResponse] =
-      service.describeAccelerator(params).promise.toFuture
+      service.describeAccelerator(params).promise().toFuture
     @inline def describeEndpointGroupFuture(
         params: DescribeEndpointGroupRequest
-    ): Future[DescribeEndpointGroupResponse] = service.describeEndpointGroup(params).promise.toFuture
+    ): Future[DescribeEndpointGroupResponse] = service.describeEndpointGroup(params).promise().toFuture
     @inline def describeListenerFuture(params: DescribeListenerRequest): Future[DescribeListenerResponse] =
-      service.describeListener(params).promise.toFuture
+      service.describeListener(params).promise().toFuture
     @inline def listAcceleratorsFuture(params: ListAcceleratorsRequest): Future[ListAcceleratorsResponse] =
-      service.listAccelerators(params).promise.toFuture
+      service.listAccelerators(params).promise().toFuture
     @inline def listEndpointGroupsFuture(params: ListEndpointGroupsRequest): Future[ListEndpointGroupsResponse] =
-      service.listEndpointGroups(params).promise.toFuture
+      service.listEndpointGroups(params).promise().toFuture
     @inline def listListenersFuture(params: ListListenersRequest): Future[ListListenersResponse] =
-      service.listListeners(params).promise.toFuture
+      service.listListeners(params).promise().toFuture
     @inline def updateAcceleratorAttributesFuture(
         params: UpdateAcceleratorAttributesRequest
-    ): Future[UpdateAcceleratorAttributesResponse] = service.updateAcceleratorAttributes(params).promise.toFuture
+    ): Future[UpdateAcceleratorAttributesResponse] = service.updateAcceleratorAttributes(params).promise().toFuture
     @inline def updateAcceleratorFuture(params: UpdateAcceleratorRequest): Future[UpdateAcceleratorResponse] =
-      service.updateAccelerator(params).promise.toFuture
+      service.updateAccelerator(params).promise().toFuture
     @inline def updateEndpointGroupFuture(params: UpdateEndpointGroupRequest): Future[UpdateEndpointGroupResponse] =
-      service.updateEndpointGroup(params).promise.toFuture
+      service.updateEndpointGroup(params).promise().toFuture
     @inline def updateListenerFuture(params: UpdateListenerRequest): Future[UpdateListenerResponse] =
-      service.updateListener(params).promise.toFuture
+      service.updateListener(params).promise().toFuture
   }
 }
 

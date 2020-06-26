@@ -34,48 +34,48 @@ package object dataexchange {
   implicit final class DataExchangeOps(private val service: DataExchange) extends AnyVal {
 
     @inline def cancelJobFuture(params: CancelJobRequest): Future[js.Object] =
-      service.cancelJob(params).promise.toFuture
+      service.cancelJob(params).promise().toFuture
     @inline def createDataSetFuture(params: CreateDataSetRequest): Future[CreateDataSetResponse] =
-      service.createDataSet(params).promise.toFuture
+      service.createDataSet(params).promise().toFuture
     @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResponse] =
-      service.createJob(params).promise.toFuture
+      service.createJob(params).promise().toFuture
     @inline def createRevisionFuture(params: CreateRevisionRequest): Future[CreateRevisionResponse] =
-      service.createRevision(params).promise.toFuture
+      service.createRevision(params).promise().toFuture
     @inline def deleteAssetFuture(params: DeleteAssetRequest): Future[js.Object] =
-      service.deleteAsset(params).promise.toFuture
+      service.deleteAsset(params).promise().toFuture
     @inline def deleteDataSetFuture(params: DeleteDataSetRequest): Future[js.Object] =
-      service.deleteDataSet(params).promise.toFuture
+      service.deleteDataSet(params).promise().toFuture
     @inline def deleteRevisionFuture(params: DeleteRevisionRequest): Future[js.Object] =
-      service.deleteRevision(params).promise.toFuture
+      service.deleteRevision(params).promise().toFuture
     @inline def getAssetFuture(params: GetAssetRequest): Future[GetAssetResponse] =
-      service.getAsset(params).promise.toFuture
+      service.getAsset(params).promise().toFuture
     @inline def getDataSetFuture(params: GetDataSetRequest): Future[GetDataSetResponse] =
-      service.getDataSet(params).promise.toFuture
-    @inline def getJobFuture(params: GetJobRequest): Future[GetJobResponse] = service.getJob(params).promise.toFuture
+      service.getDataSet(params).promise().toFuture
+    @inline def getJobFuture(params: GetJobRequest): Future[GetJobResponse] = service.getJob(params).promise().toFuture
     @inline def getRevisionFuture(params: GetRevisionRequest): Future[GetRevisionResponse] =
-      service.getRevision(params).promise.toFuture
+      service.getRevision(params).promise().toFuture
     @inline def listDataSetRevisionsFuture(params: ListDataSetRevisionsRequest): Future[ListDataSetRevisionsResponse] =
-      service.listDataSetRevisions(params).promise.toFuture
+      service.listDataSetRevisions(params).promise().toFuture
     @inline def listDataSetsFuture(params: ListDataSetsRequest): Future[ListDataSetsResponse] =
-      service.listDataSets(params).promise.toFuture
+      service.listDataSets(params).promise().toFuture
     @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResponse] =
-      service.listJobs(params).promise.toFuture
+      service.listJobs(params).promise().toFuture
     @inline def listRevisionAssetsFuture(params: ListRevisionAssetsRequest): Future[ListRevisionAssetsResponse] =
-      service.listRevisionAssets(params).promise.toFuture
+      service.listRevisionAssets(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def startJobFuture(params: StartJobRequest): Future[StartJobResponse] =
-      service.startJob(params).promise.toFuture
+      service.startJob(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateAssetFuture(params: UpdateAssetRequest): Future[UpdateAssetResponse] =
-      service.updateAsset(params).promise.toFuture
+      service.updateAsset(params).promise().toFuture
     @inline def updateDataSetFuture(params: UpdateDataSetRequest): Future[UpdateDataSetResponse] =
-      service.updateDataSet(params).promise.toFuture
+      service.updateDataSet(params).promise().toFuture
     @inline def updateRevisionFuture(params: UpdateRevisionRequest): Future[UpdateRevisionResponse] =
-      service.updateRevision(params).promise.toFuture
+      service.updateRevision(params).promise().toFuture
   }
 }
 

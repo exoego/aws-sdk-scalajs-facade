@@ -39,32 +39,32 @@ package object acm {
   implicit final class ACMOps(private val service: ACM) extends AnyVal {
 
     @inline def addTagsToCertificateFuture(params: AddTagsToCertificateRequest): Future[js.Object] =
-      service.addTagsToCertificate(params).promise.toFuture
+      service.addTagsToCertificate(params).promise().toFuture
     @inline def deleteCertificateFuture(params: DeleteCertificateRequest): Future[js.Object] =
-      service.deleteCertificate(params).promise.toFuture
+      service.deleteCertificate(params).promise().toFuture
     @inline def describeCertificateFuture(params: DescribeCertificateRequest): Future[DescribeCertificateResponse] =
-      service.describeCertificate(params).promise.toFuture
+      service.describeCertificate(params).promise().toFuture
     @inline def exportCertificateFuture(params: ExportCertificateRequest): Future[ExportCertificateResponse] =
-      service.exportCertificate(params).promise.toFuture
+      service.exportCertificate(params).promise().toFuture
     @inline def getCertificateFuture(params: GetCertificateRequest): Future[GetCertificateResponse] =
-      service.getCertificate(params).promise.toFuture
+      service.getCertificate(params).promise().toFuture
     @inline def importCertificateFuture(params: ImportCertificateRequest): Future[ImportCertificateResponse] =
-      service.importCertificate(params).promise.toFuture
+      service.importCertificate(params).promise().toFuture
     @inline def listCertificatesFuture(params: ListCertificatesRequest): Future[ListCertificatesResponse] =
-      service.listCertificates(params).promise.toFuture
+      service.listCertificates(params).promise().toFuture
     @inline def listTagsForCertificateFuture(
         params: ListTagsForCertificateRequest
-    ): Future[ListTagsForCertificateResponse] = service.listTagsForCertificate(params).promise.toFuture
+    ): Future[ListTagsForCertificateResponse] = service.listTagsForCertificate(params).promise().toFuture
     @inline def removeTagsFromCertificateFuture(params: RemoveTagsFromCertificateRequest): Future[js.Object] =
-      service.removeTagsFromCertificate(params).promise.toFuture
+      service.removeTagsFromCertificate(params).promise().toFuture
     @inline def renewCertificateFuture(params: RenewCertificateRequest): Future[js.Object] =
-      service.renewCertificate(params).promise.toFuture
+      service.renewCertificate(params).promise().toFuture
     @inline def requestCertificateFuture(params: RequestCertificateRequest): Future[RequestCertificateResponse] =
-      service.requestCertificate(params).promise.toFuture
+      service.requestCertificate(params).promise().toFuture
     @inline def resendValidationEmailFuture(params: ResendValidationEmailRequest): Future[js.Object] =
-      service.resendValidationEmail(params).promise.toFuture
+      service.resendValidationEmail(params).promise().toFuture
     @inline def updateCertificateOptionsFuture(params: UpdateCertificateOptionsRequest): Future[js.Object] =
-      service.updateCertificateOptions(params).promise.toFuture
+      service.updateCertificateOptions(params).promise().toFuture
   }
 }
 

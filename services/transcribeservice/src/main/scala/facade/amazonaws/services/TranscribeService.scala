@@ -33,37 +33,37 @@ package object transcribeservice {
 
     @inline def createVocabularyFilterFuture(
         params: CreateVocabularyFilterRequest
-    ): Future[CreateVocabularyFilterResponse] = service.createVocabularyFilter(params).promise.toFuture
+    ): Future[CreateVocabularyFilterResponse] = service.createVocabularyFilter(params).promise().toFuture
     @inline def createVocabularyFuture(params: CreateVocabularyRequest): Future[CreateVocabularyResponse] =
-      service.createVocabulary(params).promise.toFuture
+      service.createVocabulary(params).promise().toFuture
     @inline def deleteTranscriptionJobFuture(params: DeleteTranscriptionJobRequest): Future[js.Object] =
-      service.deleteTranscriptionJob(params).promise.toFuture
+      service.deleteTranscriptionJob(params).promise().toFuture
     @inline def deleteVocabularyFilterFuture(params: DeleteVocabularyFilterRequest): Future[js.Object] =
-      service.deleteVocabularyFilter(params).promise.toFuture
+      service.deleteVocabularyFilter(params).promise().toFuture
     @inline def deleteVocabularyFuture(params: DeleteVocabularyRequest): Future[js.Object] =
-      service.deleteVocabulary(params).promise.toFuture
+      service.deleteVocabulary(params).promise().toFuture
     @inline def getTranscriptionJobFuture(params: GetTranscriptionJobRequest): Future[GetTranscriptionJobResponse] =
-      service.getTranscriptionJob(params).promise.toFuture
+      service.getTranscriptionJob(params).promise().toFuture
     @inline def getVocabularyFilterFuture(params: GetVocabularyFilterRequest): Future[GetVocabularyFilterResponse] =
-      service.getVocabularyFilter(params).promise.toFuture
+      service.getVocabularyFilter(params).promise().toFuture
     @inline def getVocabularyFuture(params: GetVocabularyRequest): Future[GetVocabularyResponse] =
-      service.getVocabulary(params).promise.toFuture
+      service.getVocabulary(params).promise().toFuture
     @inline def listTranscriptionJobsFuture(
         params: ListTranscriptionJobsRequest
-    ): Future[ListTranscriptionJobsResponse] = service.listTranscriptionJobs(params).promise.toFuture
+    ): Future[ListTranscriptionJobsResponse] = service.listTranscriptionJobs(params).promise().toFuture
     @inline def listVocabulariesFuture(params: ListVocabulariesRequest): Future[ListVocabulariesResponse] =
-      service.listVocabularies(params).promise.toFuture
+      service.listVocabularies(params).promise().toFuture
     @inline def listVocabularyFiltersFuture(
         params: ListVocabularyFiltersRequest
-    ): Future[ListVocabularyFiltersResponse] = service.listVocabularyFilters(params).promise.toFuture
+    ): Future[ListVocabularyFiltersResponse] = service.listVocabularyFilters(params).promise().toFuture
     @inline def startTranscriptionJobFuture(
         params: StartTranscriptionJobRequest
-    ): Future[StartTranscriptionJobResponse] = service.startTranscriptionJob(params).promise.toFuture
+    ): Future[StartTranscriptionJobResponse] = service.startTranscriptionJob(params).promise().toFuture
     @inline def updateVocabularyFilterFuture(
         params: UpdateVocabularyFilterRequest
-    ): Future[UpdateVocabularyFilterResponse] = service.updateVocabularyFilter(params).promise.toFuture
+    ): Future[UpdateVocabularyFilterResponse] = service.updateVocabularyFilter(params).promise().toFuture
     @inline def updateVocabularyFuture(params: UpdateVocabularyRequest): Future[UpdateVocabularyResponse] =
-      service.updateVocabulary(params).promise.toFuture
+      service.updateVocabulary(params).promise().toFuture
   }
 }
 

@@ -37,59 +37,59 @@ package object groundstation {
   implicit final class GroundStationOps(private val service: GroundStation) extends AnyVal {
 
     @inline def cancelContactFuture(params: CancelContactRequest): Future[ContactIdResponse] =
-      service.cancelContact(params).promise.toFuture
+      service.cancelContact(params).promise().toFuture
     @inline def createConfigFuture(params: CreateConfigRequest): Future[ConfigIdResponse] =
-      service.createConfig(params).promise.toFuture
+      service.createConfig(params).promise().toFuture
     @inline def createDataflowEndpointGroupFuture(
         params: CreateDataflowEndpointGroupRequest
-    ): Future[DataflowEndpointGroupIdResponse] = service.createDataflowEndpointGroup(params).promise.toFuture
+    ): Future[DataflowEndpointGroupIdResponse] = service.createDataflowEndpointGroup(params).promise().toFuture
     @inline def createMissionProfileFuture(params: CreateMissionProfileRequest): Future[MissionProfileIdResponse] =
-      service.createMissionProfile(params).promise.toFuture
+      service.createMissionProfile(params).promise().toFuture
     @inline def deleteConfigFuture(params: DeleteConfigRequest): Future[ConfigIdResponse] =
-      service.deleteConfig(params).promise.toFuture
+      service.deleteConfig(params).promise().toFuture
     @inline def deleteDataflowEndpointGroupFuture(
         params: DeleteDataflowEndpointGroupRequest
-    ): Future[DataflowEndpointGroupIdResponse] = service.deleteDataflowEndpointGroup(params).promise.toFuture
+    ): Future[DataflowEndpointGroupIdResponse] = service.deleteDataflowEndpointGroup(params).promise().toFuture
     @inline def deleteMissionProfileFuture(params: DeleteMissionProfileRequest): Future[MissionProfileIdResponse] =
-      service.deleteMissionProfile(params).promise.toFuture
+      service.deleteMissionProfile(params).promise().toFuture
     @inline def describeContactFuture(params: DescribeContactRequest): Future[DescribeContactResponse] =
-      service.describeContact(params).promise.toFuture
+      service.describeContact(params).promise().toFuture
     @inline def getConfigFuture(params: GetConfigRequest): Future[GetConfigResponse] =
-      service.getConfig(params).promise.toFuture
+      service.getConfig(params).promise().toFuture
     @inline def getDataflowEndpointGroupFuture(
         params: GetDataflowEndpointGroupRequest
-    ): Future[GetDataflowEndpointGroupResponse] = service.getDataflowEndpointGroup(params).promise.toFuture
+    ): Future[GetDataflowEndpointGroupResponse] = service.getDataflowEndpointGroup(params).promise().toFuture
     @inline def getMinuteUsageFuture(params: GetMinuteUsageRequest): Future[GetMinuteUsageResponse] =
-      service.getMinuteUsage(params).promise.toFuture
+      service.getMinuteUsage(params).promise().toFuture
     @inline def getMissionProfileFuture(params: GetMissionProfileRequest): Future[GetMissionProfileResponse] =
-      service.getMissionProfile(params).promise.toFuture
+      service.getMissionProfile(params).promise().toFuture
     @inline def getSatelliteFuture(params: GetSatelliteRequest): Future[GetSatelliteResponse] =
-      service.getSatellite(params).promise.toFuture
+      service.getSatellite(params).promise().toFuture
     @inline def listConfigsFuture(params: ListConfigsRequest): Future[ListConfigsResponse] =
-      service.listConfigs(params).promise.toFuture
+      service.listConfigs(params).promise().toFuture
     @inline def listContactsFuture(params: ListContactsRequest): Future[ListContactsResponse] =
-      service.listContacts(params).promise.toFuture
+      service.listContacts(params).promise().toFuture
     @inline def listDataflowEndpointGroupsFuture(
         params: ListDataflowEndpointGroupsRequest
-    ): Future[ListDataflowEndpointGroupsResponse] = service.listDataflowEndpointGroups(params).promise.toFuture
+    ): Future[ListDataflowEndpointGroupsResponse] = service.listDataflowEndpointGroups(params).promise().toFuture
     @inline def listGroundStationsFuture(params: ListGroundStationsRequest): Future[ListGroundStationsResponse] =
-      service.listGroundStations(params).promise.toFuture
+      service.listGroundStations(params).promise().toFuture
     @inline def listMissionProfilesFuture(params: ListMissionProfilesRequest): Future[ListMissionProfilesResponse] =
-      service.listMissionProfiles(params).promise.toFuture
+      service.listMissionProfiles(params).promise().toFuture
     @inline def listSatellitesFuture(params: ListSatellitesRequest): Future[ListSatellitesResponse] =
-      service.listSatellites(params).promise.toFuture
+      service.listSatellites(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def reserveContactFuture(params: ReserveContactRequest): Future[ContactIdResponse] =
-      service.reserveContact(params).promise.toFuture
+      service.reserveContact(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateConfigFuture(params: UpdateConfigRequest): Future[ConfigIdResponse] =
-      service.updateConfig(params).promise.toFuture
+      service.updateConfig(params).promise().toFuture
     @inline def updateMissionProfileFuture(params: UpdateMissionProfileRequest): Future[MissionProfileIdResponse] =
-      service.updateMissionProfile(params).promise.toFuture
+      service.updateMissionProfile(params).promise().toFuture
   }
 }
 

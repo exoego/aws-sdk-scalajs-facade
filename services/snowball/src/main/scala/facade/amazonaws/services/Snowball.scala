@@ -31,43 +31,43 @@ package object snowball {
   implicit final class SnowballOps(private val service: Snowball) extends AnyVal {
 
     @inline def cancelClusterFuture(params: CancelClusterRequest): Future[CancelClusterResult] =
-      service.cancelCluster(params).promise.toFuture
+      service.cancelCluster(params).promise().toFuture
     @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResult] =
-      service.cancelJob(params).promise.toFuture
+      service.cancelJob(params).promise().toFuture
     @inline def createAddressFuture(params: CreateAddressRequest): Future[CreateAddressResult] =
-      service.createAddress(params).promise.toFuture
+      service.createAddress(params).promise().toFuture
     @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResult] =
-      service.createCluster(params).promise.toFuture
+      service.createCluster(params).promise().toFuture
     @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResult] =
-      service.createJob(params).promise.toFuture
+      service.createJob(params).promise().toFuture
     @inline def describeAddressFuture(params: DescribeAddressRequest): Future[DescribeAddressResult] =
-      service.describeAddress(params).promise.toFuture
+      service.describeAddress(params).promise().toFuture
     @inline def describeAddressesFuture(params: DescribeAddressesRequest): Future[DescribeAddressesResult] =
-      service.describeAddresses(params).promise.toFuture
+      service.describeAddresses(params).promise().toFuture
     @inline def describeClusterFuture(params: DescribeClusterRequest): Future[DescribeClusterResult] =
-      service.describeCluster(params).promise.toFuture
+      service.describeCluster(params).promise().toFuture
     @inline def describeJobFuture(params: DescribeJobRequest): Future[DescribeJobResult] =
-      service.describeJob(params).promise.toFuture
+      service.describeJob(params).promise().toFuture
     @inline def getJobManifestFuture(params: GetJobManifestRequest): Future[GetJobManifestResult] =
-      service.getJobManifest(params).promise.toFuture
+      service.getJobManifest(params).promise().toFuture
     @inline def getJobUnlockCodeFuture(params: GetJobUnlockCodeRequest): Future[GetJobUnlockCodeResult] =
-      service.getJobUnlockCode(params).promise.toFuture
+      service.getJobUnlockCode(params).promise().toFuture
     @inline def getSnowballUsageFuture(params: GetSnowballUsageRequest): Future[GetSnowballUsageResult] =
-      service.getSnowballUsage(params).promise.toFuture
+      service.getSnowballUsage(params).promise().toFuture
     @inline def getSoftwareUpdatesFuture(params: GetSoftwareUpdatesRequest): Future[GetSoftwareUpdatesResult] =
-      service.getSoftwareUpdates(params).promise.toFuture
+      service.getSoftwareUpdates(params).promise().toFuture
     @inline def listClusterJobsFuture(params: ListClusterJobsRequest): Future[ListClusterJobsResult] =
-      service.listClusterJobs(params).promise.toFuture
+      service.listClusterJobs(params).promise().toFuture
     @inline def listClustersFuture(params: ListClustersRequest): Future[ListClustersResult] =
-      service.listClusters(params).promise.toFuture
+      service.listClusters(params).promise().toFuture
     @inline def listCompatibleImagesFuture(params: ListCompatibleImagesRequest): Future[ListCompatibleImagesResult] =
-      service.listCompatibleImages(params).promise.toFuture
+      service.listCompatibleImages(params).promise().toFuture
     @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] =
-      service.listJobs(params).promise.toFuture
+      service.listJobs(params).promise().toFuture
     @inline def updateClusterFuture(params: UpdateClusterRequest): Future[UpdateClusterResult] =
-      service.updateCluster(params).promise.toFuture
+      service.updateCluster(params).promise().toFuture
     @inline def updateJobFuture(params: UpdateJobRequest): Future[UpdateJobResult] =
-      service.updateJob(params).promise.toFuture
+      service.updateJob(params).promise().toFuture
   }
 }
 

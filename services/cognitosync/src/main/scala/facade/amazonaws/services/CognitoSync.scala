@@ -35,46 +35,46 @@ package object cognitosync {
   implicit final class CognitoSyncOps(private val service: CognitoSync) extends AnyVal {
 
     @inline def bulkPublishFuture(params: BulkPublishRequest): Future[BulkPublishResponse] =
-      service.bulkPublish(params).promise.toFuture
+      service.bulkPublish(params).promise().toFuture
     @inline def deleteDatasetFuture(params: DeleteDatasetRequest): Future[DeleteDatasetResponse] =
-      service.deleteDataset(params).promise.toFuture
+      service.deleteDataset(params).promise().toFuture
     @inline def describeDatasetFuture(params: DescribeDatasetRequest): Future[DescribeDatasetResponse] =
-      service.describeDataset(params).promise.toFuture
+      service.describeDataset(params).promise().toFuture
     @inline def describeIdentityPoolUsageFuture(
         params: DescribeIdentityPoolUsageRequest
-    ): Future[DescribeIdentityPoolUsageResponse] = service.describeIdentityPoolUsage(params).promise.toFuture
+    ): Future[DescribeIdentityPoolUsageResponse] = service.describeIdentityPoolUsage(params).promise().toFuture
     @inline def describeIdentityUsageFuture(
         params: DescribeIdentityUsageRequest
-    ): Future[DescribeIdentityUsageResponse] = service.describeIdentityUsage(params).promise.toFuture
+    ): Future[DescribeIdentityUsageResponse] = service.describeIdentityUsage(params).promise().toFuture
     @inline def getBulkPublishDetailsFuture(
         params: GetBulkPublishDetailsRequest
-    ): Future[GetBulkPublishDetailsResponse] = service.getBulkPublishDetails(params).promise.toFuture
+    ): Future[GetBulkPublishDetailsResponse] = service.getBulkPublishDetails(params).promise().toFuture
     @inline def getCognitoEventsFuture(params: GetCognitoEventsRequest): Future[GetCognitoEventsResponse] =
-      service.getCognitoEvents(params).promise.toFuture
+      service.getCognitoEvents(params).promise().toFuture
     @inline def getIdentityPoolConfigurationFuture(
         params: GetIdentityPoolConfigurationRequest
-    ): Future[GetIdentityPoolConfigurationResponse] = service.getIdentityPoolConfiguration(params).promise.toFuture
+    ): Future[GetIdentityPoolConfigurationResponse] = service.getIdentityPoolConfiguration(params).promise().toFuture
     @inline def listDatasetsFuture(params: ListDatasetsRequest): Future[ListDatasetsResponse] =
-      service.listDatasets(params).promise.toFuture
+      service.listDatasets(params).promise().toFuture
     @inline def listIdentityPoolUsageFuture(
         params: ListIdentityPoolUsageRequest
-    ): Future[ListIdentityPoolUsageResponse] = service.listIdentityPoolUsage(params).promise.toFuture
+    ): Future[ListIdentityPoolUsageResponse] = service.listIdentityPoolUsage(params).promise().toFuture
     @inline def listRecordsFuture(params: ListRecordsRequest): Future[ListRecordsResponse] =
-      service.listRecords(params).promise.toFuture
+      service.listRecords(params).promise().toFuture
     @inline def registerDeviceFuture(params: RegisterDeviceRequest): Future[RegisterDeviceResponse] =
-      service.registerDevice(params).promise.toFuture
+      service.registerDevice(params).promise().toFuture
     @inline def setCognitoEventsFuture(params: SetCognitoEventsRequest): Future[js.Object] =
-      service.setCognitoEvents(params).promise.toFuture
+      service.setCognitoEvents(params).promise().toFuture
     @inline def setIdentityPoolConfigurationFuture(
         params: SetIdentityPoolConfigurationRequest
-    ): Future[SetIdentityPoolConfigurationResponse] = service.setIdentityPoolConfiguration(params).promise.toFuture
+    ): Future[SetIdentityPoolConfigurationResponse] = service.setIdentityPoolConfiguration(params).promise().toFuture
     @inline def subscribeToDatasetFuture(params: SubscribeToDatasetRequest): Future[SubscribeToDatasetResponse] =
-      service.subscribeToDataset(params).promise.toFuture
+      service.subscribeToDataset(params).promise().toFuture
     @inline def unsubscribeFromDatasetFuture(
         params: UnsubscribeFromDatasetRequest
-    ): Future[UnsubscribeFromDatasetResponse] = service.unsubscribeFromDataset(params).promise.toFuture
+    ): Future[UnsubscribeFromDatasetResponse] = service.unsubscribeFromDataset(params).promise().toFuture
     @inline def updateRecordsFuture(params: UpdateRecordsRequest): Future[UpdateRecordsResponse] =
-      service.updateRecords(params).promise.toFuture
+      service.updateRecords(params).promise().toFuture
   }
 }
 

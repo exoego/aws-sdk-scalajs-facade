@@ -36,260 +36,262 @@ package object greengrass {
   implicit final class GreengrassOps(private val service: Greengrass) extends AnyVal {
 
     @inline def associateRoleToGroupFuture(params: AssociateRoleToGroupRequest): Future[AssociateRoleToGroupResponse] =
-      service.associateRoleToGroup(params).promise.toFuture
+      service.associateRoleToGroup(params).promise().toFuture
     @inline def associateServiceRoleToAccountFuture(
         params: AssociateServiceRoleToAccountRequest
-    ): Future[AssociateServiceRoleToAccountResponse] = service.associateServiceRoleToAccount(params).promise.toFuture
+    ): Future[AssociateServiceRoleToAccountResponse] = service.associateServiceRoleToAccount(params).promise().toFuture
     @inline def createConnectorDefinitionFuture(
         params: CreateConnectorDefinitionRequest
-    ): Future[CreateConnectorDefinitionResponse] = service.createConnectorDefinition(params).promise.toFuture
+    ): Future[CreateConnectorDefinitionResponse] = service.createConnectorDefinition(params).promise().toFuture
     @inline def createConnectorDefinitionVersionFuture(
         params: CreateConnectorDefinitionVersionRequest
     ): Future[CreateConnectorDefinitionVersionResponse] =
-      service.createConnectorDefinitionVersion(params).promise.toFuture
+      service.createConnectorDefinitionVersion(params).promise().toFuture
     @inline def createCoreDefinitionFuture(params: CreateCoreDefinitionRequest): Future[CreateCoreDefinitionResponse] =
-      service.createCoreDefinition(params).promise.toFuture
+      service.createCoreDefinition(params).promise().toFuture
     @inline def createCoreDefinitionVersionFuture(
         params: CreateCoreDefinitionVersionRequest
-    ): Future[CreateCoreDefinitionVersionResponse] = service.createCoreDefinitionVersion(params).promise.toFuture
+    ): Future[CreateCoreDefinitionVersionResponse] = service.createCoreDefinitionVersion(params).promise().toFuture
     @inline def createDeploymentFuture(params: CreateDeploymentRequest): Future[CreateDeploymentResponse] =
-      service.createDeployment(params).promise.toFuture
+      service.createDeployment(params).promise().toFuture
     @inline def createDeviceDefinitionFuture(
         params: CreateDeviceDefinitionRequest
-    ): Future[CreateDeviceDefinitionResponse] = service.createDeviceDefinition(params).promise.toFuture
+    ): Future[CreateDeviceDefinitionResponse] = service.createDeviceDefinition(params).promise().toFuture
     @inline def createDeviceDefinitionVersionFuture(
         params: CreateDeviceDefinitionVersionRequest
-    ): Future[CreateDeviceDefinitionVersionResponse] = service.createDeviceDefinitionVersion(params).promise.toFuture
+    ): Future[CreateDeviceDefinitionVersionResponse] = service.createDeviceDefinitionVersion(params).promise().toFuture
     @inline def createFunctionDefinitionFuture(
         params: CreateFunctionDefinitionRequest
-    ): Future[CreateFunctionDefinitionResponse] = service.createFunctionDefinition(params).promise.toFuture
+    ): Future[CreateFunctionDefinitionResponse] = service.createFunctionDefinition(params).promise().toFuture
     @inline def createFunctionDefinitionVersionFuture(
         params: CreateFunctionDefinitionVersionRequest
     ): Future[CreateFunctionDefinitionVersionResponse] =
-      service.createFunctionDefinitionVersion(params).promise.toFuture
+      service.createFunctionDefinitionVersion(params).promise().toFuture
     @inline def createGroupCertificateAuthorityFuture(
         params: CreateGroupCertificateAuthorityRequest
     ): Future[CreateGroupCertificateAuthorityResponse] =
-      service.createGroupCertificateAuthority(params).promise.toFuture
+      service.createGroupCertificateAuthority(params).promise().toFuture
     @inline def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] =
-      service.createGroup(params).promise.toFuture
+      service.createGroup(params).promise().toFuture
     @inline def createGroupVersionFuture(params: CreateGroupVersionRequest): Future[CreateGroupVersionResponse] =
-      service.createGroupVersion(params).promise.toFuture
+      service.createGroupVersion(params).promise().toFuture
     @inline def createLoggerDefinitionFuture(
         params: CreateLoggerDefinitionRequest
-    ): Future[CreateLoggerDefinitionResponse] = service.createLoggerDefinition(params).promise.toFuture
+    ): Future[CreateLoggerDefinitionResponse] = service.createLoggerDefinition(params).promise().toFuture
     @inline def createLoggerDefinitionVersionFuture(
         params: CreateLoggerDefinitionVersionRequest
-    ): Future[CreateLoggerDefinitionVersionResponse] = service.createLoggerDefinitionVersion(params).promise.toFuture
+    ): Future[CreateLoggerDefinitionVersionResponse] = service.createLoggerDefinitionVersion(params).promise().toFuture
     @inline def createResourceDefinitionFuture(
         params: CreateResourceDefinitionRequest
-    ): Future[CreateResourceDefinitionResponse] = service.createResourceDefinition(params).promise.toFuture
+    ): Future[CreateResourceDefinitionResponse] = service.createResourceDefinition(params).promise().toFuture
     @inline def createResourceDefinitionVersionFuture(
         params: CreateResourceDefinitionVersionRequest
     ): Future[CreateResourceDefinitionVersionResponse] =
-      service.createResourceDefinitionVersion(params).promise.toFuture
+      service.createResourceDefinitionVersion(params).promise().toFuture
     @inline def createSoftwareUpdateJobFuture(
         params: CreateSoftwareUpdateJobRequest
-    ): Future[CreateSoftwareUpdateJobResponse] = service.createSoftwareUpdateJob(params).promise.toFuture
+    ): Future[CreateSoftwareUpdateJobResponse] = service.createSoftwareUpdateJob(params).promise().toFuture
     @inline def createSubscriptionDefinitionFuture(
         params: CreateSubscriptionDefinitionRequest
-    ): Future[CreateSubscriptionDefinitionResponse] = service.createSubscriptionDefinition(params).promise.toFuture
+    ): Future[CreateSubscriptionDefinitionResponse] = service.createSubscriptionDefinition(params).promise().toFuture
     @inline def createSubscriptionDefinitionVersionFuture(
         params: CreateSubscriptionDefinitionVersionRequest
     ): Future[CreateSubscriptionDefinitionVersionResponse] =
-      service.createSubscriptionDefinitionVersion(params).promise.toFuture
+      service.createSubscriptionDefinitionVersion(params).promise().toFuture
     @inline def deleteConnectorDefinitionFuture(
         params: DeleteConnectorDefinitionRequest
-    ): Future[DeleteConnectorDefinitionResponse] = service.deleteConnectorDefinition(params).promise.toFuture
+    ): Future[DeleteConnectorDefinitionResponse] = service.deleteConnectorDefinition(params).promise().toFuture
     @inline def deleteCoreDefinitionFuture(params: DeleteCoreDefinitionRequest): Future[DeleteCoreDefinitionResponse] =
-      service.deleteCoreDefinition(params).promise.toFuture
+      service.deleteCoreDefinition(params).promise().toFuture
     @inline def deleteDeviceDefinitionFuture(
         params: DeleteDeviceDefinitionRequest
-    ): Future[DeleteDeviceDefinitionResponse] = service.deleteDeviceDefinition(params).promise.toFuture
+    ): Future[DeleteDeviceDefinitionResponse] = service.deleteDeviceDefinition(params).promise().toFuture
     @inline def deleteFunctionDefinitionFuture(
         params: DeleteFunctionDefinitionRequest
-    ): Future[DeleteFunctionDefinitionResponse] = service.deleteFunctionDefinition(params).promise.toFuture
+    ): Future[DeleteFunctionDefinitionResponse] = service.deleteFunctionDefinition(params).promise().toFuture
     @inline def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResponse] =
-      service.deleteGroup(params).promise.toFuture
+      service.deleteGroup(params).promise().toFuture
     @inline def deleteLoggerDefinitionFuture(
         params: DeleteLoggerDefinitionRequest
-    ): Future[DeleteLoggerDefinitionResponse] = service.deleteLoggerDefinition(params).promise.toFuture
+    ): Future[DeleteLoggerDefinitionResponse] = service.deleteLoggerDefinition(params).promise().toFuture
     @inline def deleteResourceDefinitionFuture(
         params: DeleteResourceDefinitionRequest
-    ): Future[DeleteResourceDefinitionResponse] = service.deleteResourceDefinition(params).promise.toFuture
+    ): Future[DeleteResourceDefinitionResponse] = service.deleteResourceDefinition(params).promise().toFuture
     @inline def deleteSubscriptionDefinitionFuture(
         params: DeleteSubscriptionDefinitionRequest
-    ): Future[DeleteSubscriptionDefinitionResponse] = service.deleteSubscriptionDefinition(params).promise.toFuture
+    ): Future[DeleteSubscriptionDefinitionResponse] = service.deleteSubscriptionDefinition(params).promise().toFuture
     @inline def disassociateRoleFromGroupFuture(
         params: DisassociateRoleFromGroupRequest
-    ): Future[DisassociateRoleFromGroupResponse] = service.disassociateRoleFromGroup(params).promise.toFuture
+    ): Future[DisassociateRoleFromGroupResponse] = service.disassociateRoleFromGroup(params).promise().toFuture
     @inline def disassociateServiceRoleFromAccountFuture(
         params: DisassociateServiceRoleFromAccountRequest
     ): Future[DisassociateServiceRoleFromAccountResponse] =
-      service.disassociateServiceRoleFromAccount(params).promise.toFuture
+      service.disassociateServiceRoleFromAccount(params).promise().toFuture
     @inline def getAssociatedRoleFuture(params: GetAssociatedRoleRequest): Future[GetAssociatedRoleResponse] =
-      service.getAssociatedRole(params).promise.toFuture
+      service.getAssociatedRole(params).promise().toFuture
     @inline def getBulkDeploymentStatusFuture(
         params: GetBulkDeploymentStatusRequest
-    ): Future[GetBulkDeploymentStatusResponse] = service.getBulkDeploymentStatus(params).promise.toFuture
+    ): Future[GetBulkDeploymentStatusResponse] = service.getBulkDeploymentStatus(params).promise().toFuture
     @inline def getConnectivityInfoFuture(params: GetConnectivityInfoRequest): Future[GetConnectivityInfoResponse] =
-      service.getConnectivityInfo(params).promise.toFuture
+      service.getConnectivityInfo(params).promise().toFuture
     @inline def getConnectorDefinitionFuture(
         params: GetConnectorDefinitionRequest
-    ): Future[GetConnectorDefinitionResponse] = service.getConnectorDefinition(params).promise.toFuture
+    ): Future[GetConnectorDefinitionResponse] = service.getConnectorDefinition(params).promise().toFuture
     @inline def getConnectorDefinitionVersionFuture(
         params: GetConnectorDefinitionVersionRequest
-    ): Future[GetConnectorDefinitionVersionResponse] = service.getConnectorDefinitionVersion(params).promise.toFuture
+    ): Future[GetConnectorDefinitionVersionResponse] = service.getConnectorDefinitionVersion(params).promise().toFuture
     @inline def getCoreDefinitionFuture(params: GetCoreDefinitionRequest): Future[GetCoreDefinitionResponse] =
-      service.getCoreDefinition(params).promise.toFuture
+      service.getCoreDefinition(params).promise().toFuture
     @inline def getCoreDefinitionVersionFuture(
         params: GetCoreDefinitionVersionRequest
-    ): Future[GetCoreDefinitionVersionResponse] = service.getCoreDefinitionVersion(params).promise.toFuture
+    ): Future[GetCoreDefinitionVersionResponse] = service.getCoreDefinitionVersion(params).promise().toFuture
     @inline def getDeploymentStatusFuture(params: GetDeploymentStatusRequest): Future[GetDeploymentStatusResponse] =
-      service.getDeploymentStatus(params).promise.toFuture
+      service.getDeploymentStatus(params).promise().toFuture
     @inline def getDeviceDefinitionFuture(params: GetDeviceDefinitionRequest): Future[GetDeviceDefinitionResponse] =
-      service.getDeviceDefinition(params).promise.toFuture
+      service.getDeviceDefinition(params).promise().toFuture
     @inline def getDeviceDefinitionVersionFuture(
         params: GetDeviceDefinitionVersionRequest
-    ): Future[GetDeviceDefinitionVersionResponse] = service.getDeviceDefinitionVersion(params).promise.toFuture
+    ): Future[GetDeviceDefinitionVersionResponse] = service.getDeviceDefinitionVersion(params).promise().toFuture
     @inline def getFunctionDefinitionFuture(
         params: GetFunctionDefinitionRequest
-    ): Future[GetFunctionDefinitionResponse] = service.getFunctionDefinition(params).promise.toFuture
+    ): Future[GetFunctionDefinitionResponse] = service.getFunctionDefinition(params).promise().toFuture
     @inline def getFunctionDefinitionVersionFuture(
         params: GetFunctionDefinitionVersionRequest
-    ): Future[GetFunctionDefinitionVersionResponse] = service.getFunctionDefinitionVersion(params).promise.toFuture
+    ): Future[GetFunctionDefinitionVersionResponse] = service.getFunctionDefinitionVersion(params).promise().toFuture
     @inline def getGroupCertificateAuthorityFuture(
         params: GetGroupCertificateAuthorityRequest
-    ): Future[GetGroupCertificateAuthorityResponse] = service.getGroupCertificateAuthority(params).promise.toFuture
+    ): Future[GetGroupCertificateAuthorityResponse] = service.getGroupCertificateAuthority(params).promise().toFuture
     @inline def getGroupCertificateConfigurationFuture(
         params: GetGroupCertificateConfigurationRequest
     ): Future[GetGroupCertificateConfigurationResponse] =
-      service.getGroupCertificateConfiguration(params).promise.toFuture
+      service.getGroupCertificateConfiguration(params).promise().toFuture
     @inline def getGroupFuture(params: GetGroupRequest): Future[GetGroupResponse] =
-      service.getGroup(params).promise.toFuture
+      service.getGroup(params).promise().toFuture
     @inline def getGroupVersionFuture(params: GetGroupVersionRequest): Future[GetGroupVersionResponse] =
-      service.getGroupVersion(params).promise.toFuture
+      service.getGroupVersion(params).promise().toFuture
     @inline def getLoggerDefinitionFuture(params: GetLoggerDefinitionRequest): Future[GetLoggerDefinitionResponse] =
-      service.getLoggerDefinition(params).promise.toFuture
+      service.getLoggerDefinition(params).promise().toFuture
     @inline def getLoggerDefinitionVersionFuture(
         params: GetLoggerDefinitionVersionRequest
-    ): Future[GetLoggerDefinitionVersionResponse] = service.getLoggerDefinitionVersion(params).promise.toFuture
+    ): Future[GetLoggerDefinitionVersionResponse] = service.getLoggerDefinitionVersion(params).promise().toFuture
     @inline def getResourceDefinitionFuture(
         params: GetResourceDefinitionRequest
-    ): Future[GetResourceDefinitionResponse] = service.getResourceDefinition(params).promise.toFuture
+    ): Future[GetResourceDefinitionResponse] = service.getResourceDefinition(params).promise().toFuture
     @inline def getResourceDefinitionVersionFuture(
         params: GetResourceDefinitionVersionRequest
-    ): Future[GetResourceDefinitionVersionResponse] = service.getResourceDefinitionVersion(params).promise.toFuture
+    ): Future[GetResourceDefinitionVersionResponse] = service.getResourceDefinitionVersion(params).promise().toFuture
     @inline def getServiceRoleForAccountFuture(
         params: GetServiceRoleForAccountRequest
-    ): Future[GetServiceRoleForAccountResponse] = service.getServiceRoleForAccount(params).promise.toFuture
+    ): Future[GetServiceRoleForAccountResponse] = service.getServiceRoleForAccount(params).promise().toFuture
     @inline def getSubscriptionDefinitionFuture(
         params: GetSubscriptionDefinitionRequest
-    ): Future[GetSubscriptionDefinitionResponse] = service.getSubscriptionDefinition(params).promise.toFuture
+    ): Future[GetSubscriptionDefinitionResponse] = service.getSubscriptionDefinition(params).promise().toFuture
     @inline def getSubscriptionDefinitionVersionFuture(
         params: GetSubscriptionDefinitionVersionRequest
     ): Future[GetSubscriptionDefinitionVersionResponse] =
-      service.getSubscriptionDefinitionVersion(params).promise.toFuture
+      service.getSubscriptionDefinitionVersion(params).promise().toFuture
     @inline def listBulkDeploymentDetailedReportsFuture(
         params: ListBulkDeploymentDetailedReportsRequest
     ): Future[ListBulkDeploymentDetailedReportsResponse] =
-      service.listBulkDeploymentDetailedReports(params).promise.toFuture
+      service.listBulkDeploymentDetailedReports(params).promise().toFuture
     @inline def listBulkDeploymentsFuture(params: ListBulkDeploymentsRequest): Future[ListBulkDeploymentsResponse] =
-      service.listBulkDeployments(params).promise.toFuture
+      service.listBulkDeployments(params).promise().toFuture
     @inline def listConnectorDefinitionVersionsFuture(
         params: ListConnectorDefinitionVersionsRequest
     ): Future[ListConnectorDefinitionVersionsResponse] =
-      service.listConnectorDefinitionVersions(params).promise.toFuture
+      service.listConnectorDefinitionVersions(params).promise().toFuture
     @inline def listConnectorDefinitionsFuture(
         params: ListConnectorDefinitionsRequest
-    ): Future[ListConnectorDefinitionsResponse] = service.listConnectorDefinitions(params).promise.toFuture
+    ): Future[ListConnectorDefinitionsResponse] = service.listConnectorDefinitions(params).promise().toFuture
     @inline def listCoreDefinitionVersionsFuture(
         params: ListCoreDefinitionVersionsRequest
-    ): Future[ListCoreDefinitionVersionsResponse] = service.listCoreDefinitionVersions(params).promise.toFuture
+    ): Future[ListCoreDefinitionVersionsResponse] = service.listCoreDefinitionVersions(params).promise().toFuture
     @inline def listCoreDefinitionsFuture(params: ListCoreDefinitionsRequest): Future[ListCoreDefinitionsResponse] =
-      service.listCoreDefinitions(params).promise.toFuture
+      service.listCoreDefinitions(params).promise().toFuture
     @inline def listDeploymentsFuture(params: ListDeploymentsRequest): Future[ListDeploymentsResponse] =
-      service.listDeployments(params).promise.toFuture
+      service.listDeployments(params).promise().toFuture
     @inline def listDeviceDefinitionVersionsFuture(
         params: ListDeviceDefinitionVersionsRequest
-    ): Future[ListDeviceDefinitionVersionsResponse] = service.listDeviceDefinitionVersions(params).promise.toFuture
+    ): Future[ListDeviceDefinitionVersionsResponse] = service.listDeviceDefinitionVersions(params).promise().toFuture
     @inline def listDeviceDefinitionsFuture(
         params: ListDeviceDefinitionsRequest
-    ): Future[ListDeviceDefinitionsResponse] = service.listDeviceDefinitions(params).promise.toFuture
+    ): Future[ListDeviceDefinitionsResponse] = service.listDeviceDefinitions(params).promise().toFuture
     @inline def listFunctionDefinitionVersionsFuture(
         params: ListFunctionDefinitionVersionsRequest
-    ): Future[ListFunctionDefinitionVersionsResponse] = service.listFunctionDefinitionVersions(params).promise.toFuture
+    ): Future[ListFunctionDefinitionVersionsResponse] =
+      service.listFunctionDefinitionVersions(params).promise().toFuture
     @inline def listFunctionDefinitionsFuture(
         params: ListFunctionDefinitionsRequest
-    ): Future[ListFunctionDefinitionsResponse] = service.listFunctionDefinitions(params).promise.toFuture
+    ): Future[ListFunctionDefinitionsResponse] = service.listFunctionDefinitions(params).promise().toFuture
     @inline def listGroupCertificateAuthoritiesFuture(
         params: ListGroupCertificateAuthoritiesRequest
     ): Future[ListGroupCertificateAuthoritiesResponse] =
-      service.listGroupCertificateAuthorities(params).promise.toFuture
+      service.listGroupCertificateAuthorities(params).promise().toFuture
     @inline def listGroupVersionsFuture(params: ListGroupVersionsRequest): Future[ListGroupVersionsResponse] =
-      service.listGroupVersions(params).promise.toFuture
+      service.listGroupVersions(params).promise().toFuture
     @inline def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] =
-      service.listGroups(params).promise.toFuture
+      service.listGroups(params).promise().toFuture
     @inline def listLoggerDefinitionVersionsFuture(
         params: ListLoggerDefinitionVersionsRequest
-    ): Future[ListLoggerDefinitionVersionsResponse] = service.listLoggerDefinitionVersions(params).promise.toFuture
+    ): Future[ListLoggerDefinitionVersionsResponse] = service.listLoggerDefinitionVersions(params).promise().toFuture
     @inline def listLoggerDefinitionsFuture(
         params: ListLoggerDefinitionsRequest
-    ): Future[ListLoggerDefinitionsResponse] = service.listLoggerDefinitions(params).promise.toFuture
+    ): Future[ListLoggerDefinitionsResponse] = service.listLoggerDefinitions(params).promise().toFuture
     @inline def listResourceDefinitionVersionsFuture(
         params: ListResourceDefinitionVersionsRequest
-    ): Future[ListResourceDefinitionVersionsResponse] = service.listResourceDefinitionVersions(params).promise.toFuture
+    ): Future[ListResourceDefinitionVersionsResponse] =
+      service.listResourceDefinitionVersions(params).promise().toFuture
     @inline def listResourceDefinitionsFuture(
         params: ListResourceDefinitionsRequest
-    ): Future[ListResourceDefinitionsResponse] = service.listResourceDefinitions(params).promise.toFuture
+    ): Future[ListResourceDefinitionsResponse] = service.listResourceDefinitions(params).promise().toFuture
     @inline def listSubscriptionDefinitionVersionsFuture(
         params: ListSubscriptionDefinitionVersionsRequest
     ): Future[ListSubscriptionDefinitionVersionsResponse] =
-      service.listSubscriptionDefinitionVersions(params).promise.toFuture
+      service.listSubscriptionDefinitionVersions(params).promise().toFuture
     @inline def listSubscriptionDefinitionsFuture(
         params: ListSubscriptionDefinitionsRequest
-    ): Future[ListSubscriptionDefinitionsResponse] = service.listSubscriptionDefinitions(params).promise.toFuture
+    ): Future[ListSubscriptionDefinitionsResponse] = service.listSubscriptionDefinitions(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def resetDeploymentsFuture(params: ResetDeploymentsRequest): Future[ResetDeploymentsResponse] =
-      service.resetDeployments(params).promise.toFuture
+      service.resetDeployments(params).promise().toFuture
     @inline def startBulkDeploymentFuture(params: StartBulkDeploymentRequest): Future[StartBulkDeploymentResponse] =
-      service.startBulkDeployment(params).promise.toFuture
+      service.startBulkDeployment(params).promise().toFuture
     @inline def stopBulkDeploymentFuture(params: StopBulkDeploymentRequest): Future[StopBulkDeploymentResponse] =
-      service.stopBulkDeployment(params).promise.toFuture
+      service.stopBulkDeployment(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateConnectivityInfoFuture(
         params: UpdateConnectivityInfoRequest
-    ): Future[UpdateConnectivityInfoResponse] = service.updateConnectivityInfo(params).promise.toFuture
+    ): Future[UpdateConnectivityInfoResponse] = service.updateConnectivityInfo(params).promise().toFuture
     @inline def updateConnectorDefinitionFuture(
         params: UpdateConnectorDefinitionRequest
-    ): Future[UpdateConnectorDefinitionResponse] = service.updateConnectorDefinition(params).promise.toFuture
+    ): Future[UpdateConnectorDefinitionResponse] = service.updateConnectorDefinition(params).promise().toFuture
     @inline def updateCoreDefinitionFuture(params: UpdateCoreDefinitionRequest): Future[UpdateCoreDefinitionResponse] =
-      service.updateCoreDefinition(params).promise.toFuture
+      service.updateCoreDefinition(params).promise().toFuture
     @inline def updateDeviceDefinitionFuture(
         params: UpdateDeviceDefinitionRequest
-    ): Future[UpdateDeviceDefinitionResponse] = service.updateDeviceDefinition(params).promise.toFuture
+    ): Future[UpdateDeviceDefinitionResponse] = service.updateDeviceDefinition(params).promise().toFuture
     @inline def updateFunctionDefinitionFuture(
         params: UpdateFunctionDefinitionRequest
-    ): Future[UpdateFunctionDefinitionResponse] = service.updateFunctionDefinition(params).promise.toFuture
+    ): Future[UpdateFunctionDefinitionResponse] = service.updateFunctionDefinition(params).promise().toFuture
     @inline def updateGroupCertificateConfigurationFuture(
         params: UpdateGroupCertificateConfigurationRequest
     ): Future[UpdateGroupCertificateConfigurationResponse] =
-      service.updateGroupCertificateConfiguration(params).promise.toFuture
+      service.updateGroupCertificateConfiguration(params).promise().toFuture
     @inline def updateGroupFuture(params: UpdateGroupRequest): Future[UpdateGroupResponse] =
-      service.updateGroup(params).promise.toFuture
+      service.updateGroup(params).promise().toFuture
     @inline def updateLoggerDefinitionFuture(
         params: UpdateLoggerDefinitionRequest
-    ): Future[UpdateLoggerDefinitionResponse] = service.updateLoggerDefinition(params).promise.toFuture
+    ): Future[UpdateLoggerDefinitionResponse] = service.updateLoggerDefinition(params).promise().toFuture
     @inline def updateResourceDefinitionFuture(
         params: UpdateResourceDefinitionRequest
-    ): Future[UpdateResourceDefinitionResponse] = service.updateResourceDefinition(params).promise.toFuture
+    ): Future[UpdateResourceDefinitionResponse] = service.updateResourceDefinition(params).promise().toFuture
     @inline def updateSubscriptionDefinitionFuture(
         params: UpdateSubscriptionDefinitionRequest
-    ): Future[UpdateSubscriptionDefinitionResponse] = service.updateSubscriptionDefinition(params).promise.toFuture
+    ): Future[UpdateSubscriptionDefinitionResponse] = service.updateSubscriptionDefinition(params).promise().toFuture
   }
 }
 

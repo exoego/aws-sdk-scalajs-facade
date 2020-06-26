@@ -26,37 +26,37 @@ package object serverlessapplicationrepository {
       extends AnyVal {
 
     @inline def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResponse] =
-      service.createApplication(params).promise.toFuture
+      service.createApplication(params).promise().toFuture
     @inline def createApplicationVersionFuture(
         params: CreateApplicationVersionRequest
-    ): Future[CreateApplicationVersionResponse] = service.createApplicationVersion(params).promise.toFuture
+    ): Future[CreateApplicationVersionResponse] = service.createApplicationVersion(params).promise().toFuture
     @inline def createCloudFormationChangeSetFuture(
         params: CreateCloudFormationChangeSetRequest
-    ): Future[CreateCloudFormationChangeSetResponse] = service.createCloudFormationChangeSet(params).promise.toFuture
+    ): Future[CreateCloudFormationChangeSetResponse] = service.createCloudFormationChangeSet(params).promise().toFuture
     @inline def createCloudFormationTemplateFuture(
         params: CreateCloudFormationTemplateRequest
-    ): Future[CreateCloudFormationTemplateResponse] = service.createCloudFormationTemplate(params).promise.toFuture
+    ): Future[CreateCloudFormationTemplateResponse] = service.createCloudFormationTemplate(params).promise().toFuture
     @inline def deleteApplicationFuture(params: DeleteApplicationRequest): Future[js.Object] =
-      service.deleteApplication(params).promise.toFuture
+      service.deleteApplication(params).promise().toFuture
     @inline def getApplicationFuture(params: GetApplicationRequest): Future[GetApplicationResponse] =
-      service.getApplication(params).promise.toFuture
+      service.getApplication(params).promise().toFuture
     @inline def getApplicationPolicyFuture(params: GetApplicationPolicyRequest): Future[GetApplicationPolicyResponse] =
-      service.getApplicationPolicy(params).promise.toFuture
+      service.getApplicationPolicy(params).promise().toFuture
     @inline def getCloudFormationTemplateFuture(
         params: GetCloudFormationTemplateRequest
-    ): Future[GetCloudFormationTemplateResponse] = service.getCloudFormationTemplate(params).promise.toFuture
+    ): Future[GetCloudFormationTemplateResponse] = service.getCloudFormationTemplate(params).promise().toFuture
     @inline def listApplicationDependenciesFuture(
         params: ListApplicationDependenciesRequest
-    ): Future[ListApplicationDependenciesResponse] = service.listApplicationDependencies(params).promise.toFuture
+    ): Future[ListApplicationDependenciesResponse] = service.listApplicationDependencies(params).promise().toFuture
     @inline def listApplicationVersionsFuture(
         params: ListApplicationVersionsRequest
-    ): Future[ListApplicationVersionsResponse] = service.listApplicationVersions(params).promise.toFuture
+    ): Future[ListApplicationVersionsResponse] = service.listApplicationVersions(params).promise().toFuture
     @inline def listApplicationsFuture(params: ListApplicationsRequest): Future[ListApplicationsResponse] =
-      service.listApplications(params).promise.toFuture
+      service.listApplications(params).promise().toFuture
     @inline def putApplicationPolicyFuture(params: PutApplicationPolicyRequest): Future[PutApplicationPolicyResponse] =
-      service.putApplicationPolicy(params).promise.toFuture
+      service.putApplicationPolicy(params).promise().toFuture
     @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] =
-      service.updateApplication(params).promise.toFuture
+      service.updateApplication(params).promise().toFuture
   }
 }
 

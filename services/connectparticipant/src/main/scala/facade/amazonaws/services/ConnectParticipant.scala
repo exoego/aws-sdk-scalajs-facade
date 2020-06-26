@@ -28,16 +28,16 @@ package object connectparticipant {
 
     @inline def createParticipantConnectionFuture(
         params: CreateParticipantConnectionRequest
-    ): Future[CreateParticipantConnectionResponse] = service.createParticipantConnection(params).promise.toFuture
+    ): Future[CreateParticipantConnectionResponse] = service.createParticipantConnection(params).promise().toFuture
     @inline def disconnectParticipantFuture(
         params: DisconnectParticipantRequest
-    ): Future[DisconnectParticipantResponse] = service.disconnectParticipant(params).promise.toFuture
+    ): Future[DisconnectParticipantResponse] = service.disconnectParticipant(params).promise().toFuture
     @inline def getTranscriptFuture(params: GetTranscriptRequest): Future[GetTranscriptResponse] =
-      service.getTranscript(params).promise.toFuture
+      service.getTranscript(params).promise().toFuture
     @inline def sendEventFuture(params: SendEventRequest): Future[SendEventResponse] =
-      service.sendEvent(params).promise.toFuture
+      service.sendEvent(params).promise().toFuture
     @inline def sendMessageFuture(params: SendMessageRequest): Future[SendMessageResponse] =
-      service.sendMessage(params).promise.toFuture
+      service.sendMessage(params).promise().toFuture
   }
 }
 

@@ -85,118 +85,118 @@ package object ecs {
 
     @inline def createCapacityProviderFuture(
         params: CreateCapacityProviderRequest
-    ): Future[CreateCapacityProviderResponse] = service.createCapacityProvider(params).promise.toFuture
+    ): Future[CreateCapacityProviderResponse] = service.createCapacityProvider(params).promise().toFuture
     @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
-      service.createCluster(params).promise.toFuture
+      service.createCluster(params).promise().toFuture
     @inline def createServiceFuture(params: CreateServiceRequest): Future[CreateServiceResponse] =
-      service.createService(params).promise.toFuture
+      service.createService(params).promise().toFuture
     @inline def createTaskSetFuture(params: CreateTaskSetRequest): Future[CreateTaskSetResponse] =
-      service.createTaskSet(params).promise.toFuture
+      service.createTaskSet(params).promise().toFuture
     @inline def deleteAccountSettingFuture(params: DeleteAccountSettingRequest): Future[DeleteAccountSettingResponse] =
-      service.deleteAccountSetting(params).promise.toFuture
+      service.deleteAccountSetting(params).promise().toFuture
     @inline def deleteAttributesFuture(params: DeleteAttributesRequest): Future[DeleteAttributesResponse] =
-      service.deleteAttributes(params).promise.toFuture
+      service.deleteAttributes(params).promise().toFuture
     @inline def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] =
-      service.deleteCluster(params).promise.toFuture
+      service.deleteCluster(params).promise().toFuture
     @inline def deleteServiceFuture(params: DeleteServiceRequest): Future[DeleteServiceResponse] =
-      service.deleteService(params).promise.toFuture
+      service.deleteService(params).promise().toFuture
     @inline def deleteTaskSetFuture(params: DeleteTaskSetRequest): Future[DeleteTaskSetResponse] =
-      service.deleteTaskSet(params).promise.toFuture
+      service.deleteTaskSet(params).promise().toFuture
     @inline def deregisterContainerInstanceFuture(
         params: DeregisterContainerInstanceRequest
-    ): Future[DeregisterContainerInstanceResponse] = service.deregisterContainerInstance(params).promise.toFuture
+    ): Future[DeregisterContainerInstanceResponse] = service.deregisterContainerInstance(params).promise().toFuture
     @inline def deregisterTaskDefinitionFuture(
         params: DeregisterTaskDefinitionRequest
-    ): Future[DeregisterTaskDefinitionResponse] = service.deregisterTaskDefinition(params).promise.toFuture
+    ): Future[DeregisterTaskDefinitionResponse] = service.deregisterTaskDefinition(params).promise().toFuture
     @inline def describeCapacityProvidersFuture(
         params: DescribeCapacityProvidersRequest
-    ): Future[DescribeCapacityProvidersResponse] = service.describeCapacityProviders(params).promise.toFuture
+    ): Future[DescribeCapacityProvidersResponse] = service.describeCapacityProviders(params).promise().toFuture
     @inline def describeClustersFuture(params: DescribeClustersRequest): Future[DescribeClustersResponse] =
-      service.describeClusters(params).promise.toFuture
+      service.describeClusters(params).promise().toFuture
     @inline def describeContainerInstancesFuture(
         params: DescribeContainerInstancesRequest
-    ): Future[DescribeContainerInstancesResponse] = service.describeContainerInstances(params).promise.toFuture
+    ): Future[DescribeContainerInstancesResponse] = service.describeContainerInstances(params).promise().toFuture
     @inline def describeServicesFuture(params: DescribeServicesRequest): Future[DescribeServicesResponse] =
-      service.describeServices(params).promise.toFuture
+      service.describeServices(params).promise().toFuture
     @inline def describeTaskDefinitionFuture(
         params: DescribeTaskDefinitionRequest
-    ): Future[DescribeTaskDefinitionResponse] = service.describeTaskDefinition(params).promise.toFuture
+    ): Future[DescribeTaskDefinitionResponse] = service.describeTaskDefinition(params).promise().toFuture
     @inline def describeTaskSetsFuture(params: DescribeTaskSetsRequest): Future[DescribeTaskSetsResponse] =
-      service.describeTaskSets(params).promise.toFuture
+      service.describeTaskSets(params).promise().toFuture
     @inline def describeTasksFuture(params: DescribeTasksRequest): Future[DescribeTasksResponse] =
-      service.describeTasks(params).promise.toFuture
+      service.describeTasks(params).promise().toFuture
     @inline def discoverPollEndpointFuture(params: DiscoverPollEndpointRequest): Future[DiscoverPollEndpointResponse] =
-      service.discoverPollEndpoint(params).promise.toFuture
+      service.discoverPollEndpoint(params).promise().toFuture
     @inline def listAccountSettingsFuture(params: ListAccountSettingsRequest): Future[ListAccountSettingsResponse] =
-      service.listAccountSettings(params).promise.toFuture
+      service.listAccountSettings(params).promise().toFuture
     @inline def listAttributesFuture(params: ListAttributesRequest): Future[ListAttributesResponse] =
-      service.listAttributes(params).promise.toFuture
+      service.listAttributes(params).promise().toFuture
     @inline def listClustersFuture(params: ListClustersRequest): Future[ListClustersResponse] =
-      service.listClusters(params).promise.toFuture
+      service.listClusters(params).promise().toFuture
     @inline def listContainerInstancesFuture(
         params: ListContainerInstancesRequest
-    ): Future[ListContainerInstancesResponse] = service.listContainerInstances(params).promise.toFuture
+    ): Future[ListContainerInstancesResponse] = service.listContainerInstances(params).promise().toFuture
     @inline def listServicesFuture(params: ListServicesRequest): Future[ListServicesResponse] =
-      service.listServices(params).promise.toFuture
+      service.listServices(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def listTaskDefinitionFamiliesFuture(
         params: ListTaskDefinitionFamiliesRequest
-    ): Future[ListTaskDefinitionFamiliesResponse] = service.listTaskDefinitionFamilies(params).promise.toFuture
+    ): Future[ListTaskDefinitionFamiliesResponse] = service.listTaskDefinitionFamilies(params).promise().toFuture
     @inline def listTaskDefinitionsFuture(params: ListTaskDefinitionsRequest): Future[ListTaskDefinitionsResponse] =
-      service.listTaskDefinitions(params).promise.toFuture
+      service.listTaskDefinitions(params).promise().toFuture
     @inline def listTasksFuture(params: ListTasksRequest): Future[ListTasksResponse] =
-      service.listTasks(params).promise.toFuture
+      service.listTasks(params).promise().toFuture
     @inline def putAccountSettingDefaultFuture(
         params: PutAccountSettingDefaultRequest
-    ): Future[PutAccountSettingDefaultResponse] = service.putAccountSettingDefault(params).promise.toFuture
+    ): Future[PutAccountSettingDefaultResponse] = service.putAccountSettingDefault(params).promise().toFuture
     @inline def putAccountSettingFuture(params: PutAccountSettingRequest): Future[PutAccountSettingResponse] =
-      service.putAccountSetting(params).promise.toFuture
+      service.putAccountSetting(params).promise().toFuture
     @inline def putAttributesFuture(params: PutAttributesRequest): Future[PutAttributesResponse] =
-      service.putAttributes(params).promise.toFuture
+      service.putAttributes(params).promise().toFuture
     @inline def putClusterCapacityProvidersFuture(
         params: PutClusterCapacityProvidersRequest
-    ): Future[PutClusterCapacityProvidersResponse] = service.putClusterCapacityProviders(params).promise.toFuture
+    ): Future[PutClusterCapacityProvidersResponse] = service.putClusterCapacityProviders(params).promise().toFuture
     @inline def registerContainerInstanceFuture(
         params: RegisterContainerInstanceRequest
-    ): Future[RegisterContainerInstanceResponse] = service.registerContainerInstance(params).promise.toFuture
+    ): Future[RegisterContainerInstanceResponse] = service.registerContainerInstance(params).promise().toFuture
     @inline def registerTaskDefinitionFuture(
         params: RegisterTaskDefinitionRequest
-    ): Future[RegisterTaskDefinitionResponse] = service.registerTaskDefinition(params).promise.toFuture
+    ): Future[RegisterTaskDefinitionResponse] = service.registerTaskDefinition(params).promise().toFuture
     @inline def runTaskFuture(params: RunTaskRequest): Future[RunTaskResponse] =
-      service.runTask(params).promise.toFuture
+      service.runTask(params).promise().toFuture
     @inline def startTaskFuture(params: StartTaskRequest): Future[StartTaskResponse] =
-      service.startTask(params).promise.toFuture
+      service.startTask(params).promise().toFuture
     @inline def stopTaskFuture(params: StopTaskRequest): Future[StopTaskResponse] =
-      service.stopTask(params).promise.toFuture
+      service.stopTask(params).promise().toFuture
     @inline def submitAttachmentStateChangesFuture(
         params: SubmitAttachmentStateChangesRequest
-    ): Future[SubmitAttachmentStateChangesResponse] = service.submitAttachmentStateChanges(params).promise.toFuture
+    ): Future[SubmitAttachmentStateChangesResponse] = service.submitAttachmentStateChanges(params).promise().toFuture
     @inline def submitContainerStateChangeFuture(
         params: SubmitContainerStateChangeRequest
-    ): Future[SubmitContainerStateChangeResponse] = service.submitContainerStateChange(params).promise.toFuture
+    ): Future[SubmitContainerStateChangeResponse] = service.submitContainerStateChange(params).promise().toFuture
     @inline def submitTaskStateChangeFuture(
         params: SubmitTaskStateChangeRequest
-    ): Future[SubmitTaskStateChangeResponse] = service.submitTaskStateChange(params).promise.toFuture
+    ): Future[SubmitTaskStateChangeResponse] = service.submitTaskStateChange(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateClusterSettingsFuture(
         params: UpdateClusterSettingsRequest
-    ): Future[UpdateClusterSettingsResponse] = service.updateClusterSettings(params).promise.toFuture
+    ): Future[UpdateClusterSettingsResponse] = service.updateClusterSettings(params).promise().toFuture
     @inline def updateContainerAgentFuture(params: UpdateContainerAgentRequest): Future[UpdateContainerAgentResponse] =
-      service.updateContainerAgent(params).promise.toFuture
+      service.updateContainerAgent(params).promise().toFuture
     @inline def updateContainerInstancesStateFuture(
         params: UpdateContainerInstancesStateRequest
-    ): Future[UpdateContainerInstancesStateResponse] = service.updateContainerInstancesState(params).promise.toFuture
+    ): Future[UpdateContainerInstancesStateResponse] = service.updateContainerInstancesState(params).promise().toFuture
     @inline def updateServiceFuture(params: UpdateServiceRequest): Future[UpdateServiceResponse] =
-      service.updateService(params).promise.toFuture
+      service.updateService(params).promise().toFuture
     @inline def updateServicePrimaryTaskSetFuture(
         params: UpdateServicePrimaryTaskSetRequest
-    ): Future[UpdateServicePrimaryTaskSetResponse] = service.updateServicePrimaryTaskSet(params).promise.toFuture
+    ): Future[UpdateServicePrimaryTaskSetResponse] = service.updateServicePrimaryTaskSet(params).promise().toFuture
     @inline def updateTaskSetFuture(params: UpdateTaskSetRequest): Future[UpdateTaskSetResponse] =
-      service.updateTaskSet(params).promise.toFuture
+      service.updateTaskSet(params).promise().toFuture
   }
 }
 

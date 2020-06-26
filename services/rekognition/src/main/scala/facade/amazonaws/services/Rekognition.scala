@@ -98,99 +98,99 @@ package object rekognition {
   implicit final class RekognitionOps(private val service: Rekognition) extends AnyVal {
 
     @inline def compareFacesFuture(params: CompareFacesRequest): Future[CompareFacesResponse] =
-      service.compareFaces(params).promise.toFuture
+      service.compareFaces(params).promise().toFuture
     @inline def createCollectionFuture(params: CreateCollectionRequest): Future[CreateCollectionResponse] =
-      service.createCollection(params).promise.toFuture
+      service.createCollection(params).promise().toFuture
     @inline def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResponse] =
-      service.createProject(params).promise.toFuture
+      service.createProject(params).promise().toFuture
     @inline def createProjectVersionFuture(params: CreateProjectVersionRequest): Future[CreateProjectVersionResponse] =
-      service.createProjectVersion(params).promise.toFuture
+      service.createProjectVersion(params).promise().toFuture
     @inline def createStreamProcessorFuture(
         params: CreateStreamProcessorRequest
-    ): Future[CreateStreamProcessorResponse] = service.createStreamProcessor(params).promise.toFuture
+    ): Future[CreateStreamProcessorResponse] = service.createStreamProcessor(params).promise().toFuture
     @inline def deleteCollectionFuture(params: DeleteCollectionRequest): Future[DeleteCollectionResponse] =
-      service.deleteCollection(params).promise.toFuture
+      service.deleteCollection(params).promise().toFuture
     @inline def deleteFacesFuture(params: DeleteFacesRequest): Future[DeleteFacesResponse] =
-      service.deleteFaces(params).promise.toFuture
+      service.deleteFaces(params).promise().toFuture
     @inline def deleteStreamProcessorFuture(
         params: DeleteStreamProcessorRequest
-    ): Future[DeleteStreamProcessorResponse] = service.deleteStreamProcessor(params).promise.toFuture
+    ): Future[DeleteStreamProcessorResponse] = service.deleteStreamProcessor(params).promise().toFuture
     @inline def describeCollectionFuture(params: DescribeCollectionRequest): Future[DescribeCollectionResponse] =
-      service.describeCollection(params).promise.toFuture
+      service.describeCollection(params).promise().toFuture
     @inline def describeProjectVersionsFuture(
         params: DescribeProjectVersionsRequest
-    ): Future[DescribeProjectVersionsResponse] = service.describeProjectVersions(params).promise.toFuture
+    ): Future[DescribeProjectVersionsResponse] = service.describeProjectVersions(params).promise().toFuture
     @inline def describeProjectsFuture(params: DescribeProjectsRequest): Future[DescribeProjectsResponse] =
-      service.describeProjects(params).promise.toFuture
+      service.describeProjects(params).promise().toFuture
     @inline def describeStreamProcessorFuture(
         params: DescribeStreamProcessorRequest
-    ): Future[DescribeStreamProcessorResponse] = service.describeStreamProcessor(params).promise.toFuture
+    ): Future[DescribeStreamProcessorResponse] = service.describeStreamProcessor(params).promise().toFuture
     @inline def detectCustomLabelsFuture(params: DetectCustomLabelsRequest): Future[DetectCustomLabelsResponse] =
-      service.detectCustomLabels(params).promise.toFuture
+      service.detectCustomLabels(params).promise().toFuture
     @inline def detectFacesFuture(params: DetectFacesRequest): Future[DetectFacesResponse] =
-      service.detectFaces(params).promise.toFuture
+      service.detectFaces(params).promise().toFuture
     @inline def detectLabelsFuture(params: DetectLabelsRequest): Future[DetectLabelsResponse] =
-      service.detectLabels(params).promise.toFuture
+      service.detectLabels(params).promise().toFuture
     @inline def detectModerationLabelsFuture(
         params: DetectModerationLabelsRequest
-    ): Future[DetectModerationLabelsResponse] = service.detectModerationLabels(params).promise.toFuture
+    ): Future[DetectModerationLabelsResponse] = service.detectModerationLabels(params).promise().toFuture
     @inline def detectTextFuture(params: DetectTextRequest): Future[DetectTextResponse] =
-      service.detectText(params).promise.toFuture
+      service.detectText(params).promise().toFuture
     @inline def getCelebrityInfoFuture(params: GetCelebrityInfoRequest): Future[GetCelebrityInfoResponse] =
-      service.getCelebrityInfo(params).promise.toFuture
+      service.getCelebrityInfo(params).promise().toFuture
     @inline def getCelebrityRecognitionFuture(
         params: GetCelebrityRecognitionRequest
-    ): Future[GetCelebrityRecognitionResponse] = service.getCelebrityRecognition(params).promise.toFuture
+    ): Future[GetCelebrityRecognitionResponse] = service.getCelebrityRecognition(params).promise().toFuture
     @inline def getContentModerationFuture(params: GetContentModerationRequest): Future[GetContentModerationResponse] =
-      service.getContentModeration(params).promise.toFuture
+      service.getContentModeration(params).promise().toFuture
     @inline def getFaceDetectionFuture(params: GetFaceDetectionRequest): Future[GetFaceDetectionResponse] =
-      service.getFaceDetection(params).promise.toFuture
+      service.getFaceDetection(params).promise().toFuture
     @inline def getFaceSearchFuture(params: GetFaceSearchRequest): Future[GetFaceSearchResponse] =
-      service.getFaceSearch(params).promise.toFuture
+      service.getFaceSearch(params).promise().toFuture
     @inline def getLabelDetectionFuture(params: GetLabelDetectionRequest): Future[GetLabelDetectionResponse] =
-      service.getLabelDetection(params).promise.toFuture
+      service.getLabelDetection(params).promise().toFuture
     @inline def getPersonTrackingFuture(params: GetPersonTrackingRequest): Future[GetPersonTrackingResponse] =
-      service.getPersonTracking(params).promise.toFuture
+      service.getPersonTracking(params).promise().toFuture
     @inline def getTextDetectionFuture(params: GetTextDetectionRequest): Future[GetTextDetectionResponse] =
-      service.getTextDetection(params).promise.toFuture
+      service.getTextDetection(params).promise().toFuture
     @inline def indexFacesFuture(params: IndexFacesRequest): Future[IndexFacesResponse] =
-      service.indexFaces(params).promise.toFuture
+      service.indexFaces(params).promise().toFuture
     @inline def listCollectionsFuture(params: ListCollectionsRequest): Future[ListCollectionsResponse] =
-      service.listCollections(params).promise.toFuture
+      service.listCollections(params).promise().toFuture
     @inline def listFacesFuture(params: ListFacesRequest): Future[ListFacesResponse] =
-      service.listFaces(params).promise.toFuture
+      service.listFaces(params).promise().toFuture
     @inline def listStreamProcessorsFuture(params: ListStreamProcessorsRequest): Future[ListStreamProcessorsResponse] =
-      service.listStreamProcessors(params).promise.toFuture
+      service.listStreamProcessors(params).promise().toFuture
     @inline def recognizeCelebritiesFuture(params: RecognizeCelebritiesRequest): Future[RecognizeCelebritiesResponse] =
-      service.recognizeCelebrities(params).promise.toFuture
+      service.recognizeCelebrities(params).promise().toFuture
     @inline def searchFacesByImageFuture(params: SearchFacesByImageRequest): Future[SearchFacesByImageResponse] =
-      service.searchFacesByImage(params).promise.toFuture
+      service.searchFacesByImage(params).promise().toFuture
     @inline def searchFacesFuture(params: SearchFacesRequest): Future[SearchFacesResponse] =
-      service.searchFaces(params).promise.toFuture
+      service.searchFaces(params).promise().toFuture
     @inline def startCelebrityRecognitionFuture(
         params: StartCelebrityRecognitionRequest
-    ): Future[StartCelebrityRecognitionResponse] = service.startCelebrityRecognition(params).promise.toFuture
+    ): Future[StartCelebrityRecognitionResponse] = service.startCelebrityRecognition(params).promise().toFuture
     @inline def startContentModerationFuture(
         params: StartContentModerationRequest
-    ): Future[StartContentModerationResponse] = service.startContentModeration(params).promise.toFuture
+    ): Future[StartContentModerationResponse] = service.startContentModeration(params).promise().toFuture
     @inline def startFaceDetectionFuture(params: StartFaceDetectionRequest): Future[StartFaceDetectionResponse] =
-      service.startFaceDetection(params).promise.toFuture
+      service.startFaceDetection(params).promise().toFuture
     @inline def startFaceSearchFuture(params: StartFaceSearchRequest): Future[StartFaceSearchResponse] =
-      service.startFaceSearch(params).promise.toFuture
+      service.startFaceSearch(params).promise().toFuture
     @inline def startLabelDetectionFuture(params: StartLabelDetectionRequest): Future[StartLabelDetectionResponse] =
-      service.startLabelDetection(params).promise.toFuture
+      service.startLabelDetection(params).promise().toFuture
     @inline def startPersonTrackingFuture(params: StartPersonTrackingRequest): Future[StartPersonTrackingResponse] =
-      service.startPersonTracking(params).promise.toFuture
+      service.startPersonTracking(params).promise().toFuture
     @inline def startProjectVersionFuture(params: StartProjectVersionRequest): Future[StartProjectVersionResponse] =
-      service.startProjectVersion(params).promise.toFuture
+      service.startProjectVersion(params).promise().toFuture
     @inline def startStreamProcessorFuture(params: StartStreamProcessorRequest): Future[StartStreamProcessorResponse] =
-      service.startStreamProcessor(params).promise.toFuture
+      service.startStreamProcessor(params).promise().toFuture
     @inline def startTextDetectionFuture(params: StartTextDetectionRequest): Future[StartTextDetectionResponse] =
-      service.startTextDetection(params).promise.toFuture
+      service.startTextDetection(params).promise().toFuture
     @inline def stopProjectVersionFuture(params: StopProjectVersionRequest): Future[StopProjectVersionResponse] =
-      service.stopProjectVersion(params).promise.toFuture
+      service.stopProjectVersion(params).promise().toFuture
     @inline def stopStreamProcessorFuture(params: StopStreamProcessorRequest): Future[StopStreamProcessorResponse] =
-      service.stopStreamProcessor(params).promise.toFuture
+      service.stopStreamProcessor(params).promise().toFuture
   }
 }
 

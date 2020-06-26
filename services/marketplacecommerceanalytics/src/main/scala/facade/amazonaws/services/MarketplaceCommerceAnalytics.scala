@@ -22,10 +22,10 @@ package object marketplacecommerceanalytics {
       extends AnyVal {
 
     @inline def generateDataSetFuture(params: GenerateDataSetRequest): Future[GenerateDataSetResult] =
-      service.generateDataSet(params).promise.toFuture
+      service.generateDataSet(params).promise().toFuture
     @inline def startSupportDataExportFuture(
         params: StartSupportDataExportRequest
-    ): Future[StartSupportDataExportResult] = service.startSupportDataExport(params).promise.toFuture
+    ): Future[StartSupportDataExportResult] = service.startSupportDataExport(params).promise().toFuture
   }
 }
 

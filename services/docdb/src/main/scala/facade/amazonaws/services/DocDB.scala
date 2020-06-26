@@ -45,110 +45,110 @@ package object docdb {
   implicit final class DocDBOps(private val service: DocDB) extends AnyVal {
 
     @inline def addTagsToResourceFuture(params: AddTagsToResourceMessage): Future[js.Object] =
-      service.addTagsToResource(params).promise.toFuture
+      service.addTagsToResource(params).promise().toFuture
     @inline def applyPendingMaintenanceActionFuture(
         params: ApplyPendingMaintenanceActionMessage
-    ): Future[ApplyPendingMaintenanceActionResult] = service.applyPendingMaintenanceAction(params).promise.toFuture
+    ): Future[ApplyPendingMaintenanceActionResult] = service.applyPendingMaintenanceAction(params).promise().toFuture
     @inline def copyDBClusterParameterGroupFuture(
         params: CopyDBClusterParameterGroupMessage
-    ): Future[CopyDBClusterParameterGroupResult] = service.copyDBClusterParameterGroup(params).promise.toFuture
+    ): Future[CopyDBClusterParameterGroupResult] = service.copyDBClusterParameterGroup(params).promise().toFuture
     @inline def copyDBClusterSnapshotFuture(params: CopyDBClusterSnapshotMessage): Future[CopyDBClusterSnapshotResult] =
-      service.copyDBClusterSnapshot(params).promise.toFuture
+      service.copyDBClusterSnapshot(params).promise().toFuture
     @inline def createDBClusterFuture(params: CreateDBClusterMessage): Future[CreateDBClusterResult] =
-      service.createDBCluster(params).promise.toFuture
+      service.createDBCluster(params).promise().toFuture
     @inline def createDBClusterParameterGroupFuture(
         params: CreateDBClusterParameterGroupMessage
-    ): Future[CreateDBClusterParameterGroupResult] = service.createDBClusterParameterGroup(params).promise.toFuture
+    ): Future[CreateDBClusterParameterGroupResult] = service.createDBClusterParameterGroup(params).promise().toFuture
     @inline def createDBClusterSnapshotFuture(
         params: CreateDBClusterSnapshotMessage
-    ): Future[CreateDBClusterSnapshotResult] = service.createDBClusterSnapshot(params).promise.toFuture
+    ): Future[CreateDBClusterSnapshotResult] = service.createDBClusterSnapshot(params).promise().toFuture
     @inline def createDBInstanceFuture(params: CreateDBInstanceMessage): Future[CreateDBInstanceResult] =
-      service.createDBInstance(params).promise.toFuture
+      service.createDBInstance(params).promise().toFuture
     @inline def createDBSubnetGroupFuture(params: CreateDBSubnetGroupMessage): Future[CreateDBSubnetGroupResult] =
-      service.createDBSubnetGroup(params).promise.toFuture
+      service.createDBSubnetGroup(params).promise().toFuture
     @inline def deleteDBClusterFuture(params: DeleteDBClusterMessage): Future[DeleteDBClusterResult] =
-      service.deleteDBCluster(params).promise.toFuture
+      service.deleteDBCluster(params).promise().toFuture
     @inline def deleteDBClusterParameterGroupFuture(params: DeleteDBClusterParameterGroupMessage): Future[js.Object] =
-      service.deleteDBClusterParameterGroup(params).promise.toFuture
+      service.deleteDBClusterParameterGroup(params).promise().toFuture
     @inline def deleteDBClusterSnapshotFuture(
         params: DeleteDBClusterSnapshotMessage
-    ): Future[DeleteDBClusterSnapshotResult] = service.deleteDBClusterSnapshot(params).promise.toFuture
+    ): Future[DeleteDBClusterSnapshotResult] = service.deleteDBClusterSnapshot(params).promise().toFuture
     @inline def deleteDBInstanceFuture(params: DeleteDBInstanceMessage): Future[DeleteDBInstanceResult] =
-      service.deleteDBInstance(params).promise.toFuture
+      service.deleteDBInstance(params).promise().toFuture
     @inline def deleteDBSubnetGroupFuture(params: DeleteDBSubnetGroupMessage): Future[js.Object] =
-      service.deleteDBSubnetGroup(params).promise.toFuture
+      service.deleteDBSubnetGroup(params).promise().toFuture
     @inline def describeCertificatesFuture(params: DescribeCertificatesMessage): Future[CertificateMessage] =
-      service.describeCertificates(params).promise.toFuture
+      service.describeCertificates(params).promise().toFuture
     @inline def describeDBClusterParameterGroupsFuture(
         params: DescribeDBClusterParameterGroupsMessage
-    ): Future[DBClusterParameterGroupsMessage] = service.describeDBClusterParameterGroups(params).promise.toFuture
+    ): Future[DBClusterParameterGroupsMessage] = service.describeDBClusterParameterGroups(params).promise().toFuture
     @inline def describeDBClusterParametersFuture(
         params: DescribeDBClusterParametersMessage
-    ): Future[DBClusterParameterGroupDetails] = service.describeDBClusterParameters(params).promise.toFuture
+    ): Future[DBClusterParameterGroupDetails] = service.describeDBClusterParameters(params).promise().toFuture
     @inline def describeDBClusterSnapshotAttributesFuture(
         params: DescribeDBClusterSnapshotAttributesMessage
     ): Future[DescribeDBClusterSnapshotAttributesResult] =
-      service.describeDBClusterSnapshotAttributes(params).promise.toFuture
+      service.describeDBClusterSnapshotAttributes(params).promise().toFuture
     @inline def describeDBClusterSnapshotsFuture(
         params: DescribeDBClusterSnapshotsMessage
-    ): Future[DBClusterSnapshotMessage] = service.describeDBClusterSnapshots(params).promise.toFuture
+    ): Future[DBClusterSnapshotMessage] = service.describeDBClusterSnapshots(params).promise().toFuture
     @inline def describeDBClustersFuture(params: DescribeDBClustersMessage): Future[DBClusterMessage] =
-      service.describeDBClusters(params).promise.toFuture
+      service.describeDBClusters(params).promise().toFuture
     @inline def describeDBEngineVersionsFuture(
         params: DescribeDBEngineVersionsMessage
-    ): Future[DBEngineVersionMessage] = service.describeDBEngineVersions(params).promise.toFuture
+    ): Future[DBEngineVersionMessage] = service.describeDBEngineVersions(params).promise().toFuture
     @inline def describeDBInstancesFuture(params: DescribeDBInstancesMessage): Future[DBInstanceMessage] =
-      service.describeDBInstances(params).promise.toFuture
+      service.describeDBInstances(params).promise().toFuture
     @inline def describeDBSubnetGroupsFuture(params: DescribeDBSubnetGroupsMessage): Future[DBSubnetGroupMessage] =
-      service.describeDBSubnetGroups(params).promise.toFuture
+      service.describeDBSubnetGroups(params).promise().toFuture
     @inline def describeEngineDefaultClusterParametersFuture(
         params: DescribeEngineDefaultClusterParametersMessage
     ): Future[DescribeEngineDefaultClusterParametersResult] =
-      service.describeEngineDefaultClusterParameters(params).promise.toFuture
+      service.describeEngineDefaultClusterParameters(params).promise().toFuture
     @inline def describeEventCategoriesFuture(params: DescribeEventCategoriesMessage): Future[EventCategoriesMessage] =
-      service.describeEventCategories(params).promise.toFuture
+      service.describeEventCategories(params).promise().toFuture
     @inline def describeEventsFuture(params: DescribeEventsMessage): Future[EventsMessage] =
-      service.describeEvents(params).promise.toFuture
+      service.describeEvents(params).promise().toFuture
     @inline def describeOrderableDBInstanceOptionsFuture(
         params: DescribeOrderableDBInstanceOptionsMessage
-    ): Future[OrderableDBInstanceOptionsMessage] = service.describeOrderableDBInstanceOptions(params).promise.toFuture
+    ): Future[OrderableDBInstanceOptionsMessage] = service.describeOrderableDBInstanceOptions(params).promise().toFuture
     @inline def describePendingMaintenanceActionsFuture(
         params: DescribePendingMaintenanceActionsMessage
-    ): Future[PendingMaintenanceActionsMessage] = service.describePendingMaintenanceActions(params).promise.toFuture
+    ): Future[PendingMaintenanceActionsMessage] = service.describePendingMaintenanceActions(params).promise().toFuture
     @inline def failoverDBClusterFuture(params: FailoverDBClusterMessage): Future[FailoverDBClusterResult] =
-      service.failoverDBCluster(params).promise.toFuture
+      service.failoverDBCluster(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceMessage): Future[TagListMessage] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def modifyDBClusterFuture(params: ModifyDBClusterMessage): Future[ModifyDBClusterResult] =
-      service.modifyDBCluster(params).promise.toFuture
+      service.modifyDBCluster(params).promise().toFuture
     @inline def modifyDBClusterParameterGroupFuture(
         params: ModifyDBClusterParameterGroupMessage
-    ): Future[DBClusterParameterGroupNameMessage] = service.modifyDBClusterParameterGroup(params).promise.toFuture
+    ): Future[DBClusterParameterGroupNameMessage] = service.modifyDBClusterParameterGroup(params).promise().toFuture
     @inline def modifyDBClusterSnapshotAttributeFuture(
         params: ModifyDBClusterSnapshotAttributeMessage
     ): Future[ModifyDBClusterSnapshotAttributeResult] =
-      service.modifyDBClusterSnapshotAttribute(params).promise.toFuture
+      service.modifyDBClusterSnapshotAttribute(params).promise().toFuture
     @inline def modifyDBInstanceFuture(params: ModifyDBInstanceMessage): Future[ModifyDBInstanceResult] =
-      service.modifyDBInstance(params).promise.toFuture
+      service.modifyDBInstance(params).promise().toFuture
     @inline def modifyDBSubnetGroupFuture(params: ModifyDBSubnetGroupMessage): Future[ModifyDBSubnetGroupResult] =
-      service.modifyDBSubnetGroup(params).promise.toFuture
+      service.modifyDBSubnetGroup(params).promise().toFuture
     @inline def rebootDBInstanceFuture(params: RebootDBInstanceMessage): Future[RebootDBInstanceResult] =
-      service.rebootDBInstance(params).promise.toFuture
+      service.rebootDBInstance(params).promise().toFuture
     @inline def removeTagsFromResourceFuture(params: RemoveTagsFromResourceMessage): Future[js.Object] =
-      service.removeTagsFromResource(params).promise.toFuture
+      service.removeTagsFromResource(params).promise().toFuture
     @inline def resetDBClusterParameterGroupFuture(
         params: ResetDBClusterParameterGroupMessage
-    ): Future[DBClusterParameterGroupNameMessage] = service.resetDBClusterParameterGroup(params).promise.toFuture
+    ): Future[DBClusterParameterGroupNameMessage] = service.resetDBClusterParameterGroup(params).promise().toFuture
     @inline def restoreDBClusterFromSnapshotFuture(
         params: RestoreDBClusterFromSnapshotMessage
-    ): Future[RestoreDBClusterFromSnapshotResult] = service.restoreDBClusterFromSnapshot(params).promise.toFuture
+    ): Future[RestoreDBClusterFromSnapshotResult] = service.restoreDBClusterFromSnapshot(params).promise().toFuture
     @inline def restoreDBClusterToPointInTimeFuture(
         params: RestoreDBClusterToPointInTimeMessage
-    ): Future[RestoreDBClusterToPointInTimeResult] = service.restoreDBClusterToPointInTime(params).promise.toFuture
+    ): Future[RestoreDBClusterToPointInTimeResult] = service.restoreDBClusterToPointInTime(params).promise().toFuture
     @inline def startDBClusterFuture(params: StartDBClusterMessage): Future[StartDBClusterResult] =
-      service.startDBCluster(params).promise.toFuture
+      service.startDBCluster(params).promise().toFuture
     @inline def stopDBClusterFuture(params: StopDBClusterMessage): Future[StopDBClusterResult] =
-      service.stopDBCluster(params).promise.toFuture
+      service.stopDBCluster(params).promise().toFuture
   }
 }
 

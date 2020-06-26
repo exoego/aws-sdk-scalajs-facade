@@ -42,65 +42,65 @@ package object cloudsearch {
   implicit final class CloudSearchOps(private val service: CloudSearch) extends AnyVal {
 
     @inline def buildSuggestersFuture(params: BuildSuggestersRequest): Future[BuildSuggestersResponse] =
-      service.buildSuggesters(params).promise.toFuture
+      service.buildSuggesters(params).promise().toFuture
     @inline def createDomainFuture(params: CreateDomainRequest): Future[CreateDomainResponse] =
-      service.createDomain(params).promise.toFuture
+      service.createDomain(params).promise().toFuture
     @inline def defineAnalysisSchemeFuture(params: DefineAnalysisSchemeRequest): Future[DefineAnalysisSchemeResponse] =
-      service.defineAnalysisScheme(params).promise.toFuture
+      service.defineAnalysisScheme(params).promise().toFuture
     @inline def defineExpressionFuture(params: DefineExpressionRequest): Future[DefineExpressionResponse] =
-      service.defineExpression(params).promise.toFuture
+      service.defineExpression(params).promise().toFuture
     @inline def defineIndexFieldFuture(params: DefineIndexFieldRequest): Future[DefineIndexFieldResponse] =
-      service.defineIndexField(params).promise.toFuture
+      service.defineIndexField(params).promise().toFuture
     @inline def defineSuggesterFuture(params: DefineSuggesterRequest): Future[DefineSuggesterResponse] =
-      service.defineSuggester(params).promise.toFuture
+      service.defineSuggester(params).promise().toFuture
     @inline def deleteAnalysisSchemeFuture(params: DeleteAnalysisSchemeRequest): Future[DeleteAnalysisSchemeResponse] =
-      service.deleteAnalysisScheme(params).promise.toFuture
+      service.deleteAnalysisScheme(params).promise().toFuture
     @inline def deleteDomainFuture(params: DeleteDomainRequest): Future[DeleteDomainResponse] =
-      service.deleteDomain(params).promise.toFuture
+      service.deleteDomain(params).promise().toFuture
     @inline def deleteExpressionFuture(params: DeleteExpressionRequest): Future[DeleteExpressionResponse] =
-      service.deleteExpression(params).promise.toFuture
+      service.deleteExpression(params).promise().toFuture
     @inline def deleteIndexFieldFuture(params: DeleteIndexFieldRequest): Future[DeleteIndexFieldResponse] =
-      service.deleteIndexField(params).promise.toFuture
+      service.deleteIndexField(params).promise().toFuture
     @inline def deleteSuggesterFuture(params: DeleteSuggesterRequest): Future[DeleteSuggesterResponse] =
-      service.deleteSuggester(params).promise.toFuture
+      service.deleteSuggester(params).promise().toFuture
     @inline def describeAnalysisSchemesFuture(
         params: DescribeAnalysisSchemesRequest
-    ): Future[DescribeAnalysisSchemesResponse] = service.describeAnalysisSchemes(params).promise.toFuture
+    ): Future[DescribeAnalysisSchemesResponse] = service.describeAnalysisSchemes(params).promise().toFuture
     @inline def describeAvailabilityOptionsFuture(
         params: DescribeAvailabilityOptionsRequest
-    ): Future[DescribeAvailabilityOptionsResponse] = service.describeAvailabilityOptions(params).promise.toFuture
+    ): Future[DescribeAvailabilityOptionsResponse] = service.describeAvailabilityOptions(params).promise().toFuture
     @inline def describeDomainEndpointOptionsFuture(
         params: DescribeDomainEndpointOptionsRequest
-    ): Future[DescribeDomainEndpointOptionsResponse] = service.describeDomainEndpointOptions(params).promise.toFuture
+    ): Future[DescribeDomainEndpointOptionsResponse] = service.describeDomainEndpointOptions(params).promise().toFuture
     @inline def describeDomainsFuture(params: DescribeDomainsRequest): Future[DescribeDomainsResponse] =
-      service.describeDomains(params).promise.toFuture
+      service.describeDomains(params).promise().toFuture
     @inline def describeExpressionsFuture(params: DescribeExpressionsRequest): Future[DescribeExpressionsResponse] =
-      service.describeExpressions(params).promise.toFuture
+      service.describeExpressions(params).promise().toFuture
     @inline def describeIndexFieldsFuture(params: DescribeIndexFieldsRequest): Future[DescribeIndexFieldsResponse] =
-      service.describeIndexFields(params).promise.toFuture
+      service.describeIndexFields(params).promise().toFuture
     @inline def describeScalingParametersFuture(
         params: DescribeScalingParametersRequest
-    ): Future[DescribeScalingParametersResponse] = service.describeScalingParameters(params).promise.toFuture
+    ): Future[DescribeScalingParametersResponse] = service.describeScalingParameters(params).promise().toFuture
     @inline def describeServiceAccessPoliciesFuture(
         params: DescribeServiceAccessPoliciesRequest
-    ): Future[DescribeServiceAccessPoliciesResponse] = service.describeServiceAccessPolicies(params).promise.toFuture
+    ): Future[DescribeServiceAccessPoliciesResponse] = service.describeServiceAccessPolicies(params).promise().toFuture
     @inline def describeSuggestersFuture(params: DescribeSuggestersRequest): Future[DescribeSuggestersResponse] =
-      service.describeSuggesters(params).promise.toFuture
+      service.describeSuggesters(params).promise().toFuture
     @inline def indexDocumentsFuture(params: IndexDocumentsRequest): Future[IndexDocumentsResponse] =
-      service.indexDocuments(params).promise.toFuture
-    @inline def listDomainNamesFuture(): Future[ListDomainNamesResponse] = service.listDomainNames().promise.toFuture
+      service.indexDocuments(params).promise().toFuture
+    @inline def listDomainNamesFuture(): Future[ListDomainNamesResponse] = service.listDomainNames().promise().toFuture
     @inline def updateAvailabilityOptionsFuture(
         params: UpdateAvailabilityOptionsRequest
-    ): Future[UpdateAvailabilityOptionsResponse] = service.updateAvailabilityOptions(params).promise.toFuture
+    ): Future[UpdateAvailabilityOptionsResponse] = service.updateAvailabilityOptions(params).promise().toFuture
     @inline def updateDomainEndpointOptionsFuture(
         params: UpdateDomainEndpointOptionsRequest
-    ): Future[UpdateDomainEndpointOptionsResponse] = service.updateDomainEndpointOptions(params).promise.toFuture
+    ): Future[UpdateDomainEndpointOptionsResponse] = service.updateDomainEndpointOptions(params).promise().toFuture
     @inline def updateScalingParametersFuture(
         params: UpdateScalingParametersRequest
-    ): Future[UpdateScalingParametersResponse] = service.updateScalingParameters(params).promise.toFuture
+    ): Future[UpdateScalingParametersResponse] = service.updateScalingParameters(params).promise().toFuture
     @inline def updateServiceAccessPoliciesFuture(
         params: UpdateServiceAccessPoliciesRequest
-    ): Future[UpdateServiceAccessPoliciesResponse] = service.updateServiceAccessPolicies(params).promise.toFuture
+    ): Future[UpdateServiceAccessPoliciesResponse] = service.updateServiceAccessPolicies(params).promise().toFuture
   }
 }
 

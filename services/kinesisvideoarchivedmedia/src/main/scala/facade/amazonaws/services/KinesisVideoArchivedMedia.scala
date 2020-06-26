@@ -24,15 +24,15 @@ package object kinesisvideoarchivedmedia {
 
     @inline def getDASHStreamingSessionURLFuture(
         params: GetDASHStreamingSessionURLInput
-    ): Future[GetDASHStreamingSessionURLOutput] = service.getDASHStreamingSessionURL(params).promise.toFuture
+    ): Future[GetDASHStreamingSessionURLOutput] = service.getDASHStreamingSessionURL(params).promise().toFuture
     @inline def getHLSStreamingSessionURLFuture(
         params: GetHLSStreamingSessionURLInput
-    ): Future[GetHLSStreamingSessionURLOutput] = service.getHLSStreamingSessionURL(params).promise.toFuture
+    ): Future[GetHLSStreamingSessionURLOutput] = service.getHLSStreamingSessionURL(params).promise().toFuture
     @inline def getMediaForFragmentListFuture(
         params: GetMediaForFragmentListInput
-    ): Future[GetMediaForFragmentListOutput] = service.getMediaForFragmentList(params).promise.toFuture
+    ): Future[GetMediaForFragmentListOutput] = service.getMediaForFragmentList(params).promise().toFuture
     @inline def listFragmentsFuture(params: ListFragmentsInput): Future[ListFragmentsOutput] =
-      service.listFragments(params).promise.toFuture
+      service.listFragments(params).promise().toFuture
   }
 }
 

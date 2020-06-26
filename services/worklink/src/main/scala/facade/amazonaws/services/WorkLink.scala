@@ -41,95 +41,96 @@ package object worklink {
   implicit final class WorkLinkOps(private val service: WorkLink) extends AnyVal {
 
     @inline def associateDomainFuture(params: AssociateDomainRequest): Future[AssociateDomainResponse] =
-      service.associateDomain(params).promise.toFuture
+      service.associateDomain(params).promise().toFuture
     @inline def associateWebsiteAuthorizationProviderFuture(
         params: AssociateWebsiteAuthorizationProviderRequest
     ): Future[AssociateWebsiteAuthorizationProviderResponse] =
-      service.associateWebsiteAuthorizationProvider(params).promise.toFuture
+      service.associateWebsiteAuthorizationProvider(params).promise().toFuture
     @inline def associateWebsiteCertificateAuthorityFuture(
         params: AssociateWebsiteCertificateAuthorityRequest
     ): Future[AssociateWebsiteCertificateAuthorityResponse] =
-      service.associateWebsiteCertificateAuthority(params).promise.toFuture
+      service.associateWebsiteCertificateAuthority(params).promise().toFuture
     @inline def createFleetFuture(params: CreateFleetRequest): Future[CreateFleetResponse] =
-      service.createFleet(params).promise.toFuture
+      service.createFleet(params).promise().toFuture
     @inline def deleteFleetFuture(params: DeleteFleetRequest): Future[DeleteFleetResponse] =
-      service.deleteFleet(params).promise.toFuture
+      service.deleteFleet(params).promise().toFuture
     @inline def describeAuditStreamConfigurationFuture(
         params: DescribeAuditStreamConfigurationRequest
     ): Future[DescribeAuditStreamConfigurationResponse] =
-      service.describeAuditStreamConfiguration(params).promise.toFuture
+      service.describeAuditStreamConfiguration(params).promise().toFuture
     @inline def describeCompanyNetworkConfigurationFuture(
         params: DescribeCompanyNetworkConfigurationRequest
     ): Future[DescribeCompanyNetworkConfigurationResponse] =
-      service.describeCompanyNetworkConfiguration(params).promise.toFuture
+      service.describeCompanyNetworkConfiguration(params).promise().toFuture
     @inline def describeDeviceFuture(params: DescribeDeviceRequest): Future[DescribeDeviceResponse] =
-      service.describeDevice(params).promise.toFuture
+      service.describeDevice(params).promise().toFuture
     @inline def describeDevicePolicyConfigurationFuture(
         params: DescribeDevicePolicyConfigurationRequest
     ): Future[DescribeDevicePolicyConfigurationResponse] =
-      service.describeDevicePolicyConfiguration(params).promise.toFuture
+      service.describeDevicePolicyConfiguration(params).promise().toFuture
     @inline def describeDomainFuture(params: DescribeDomainRequest): Future[DescribeDomainResponse] =
-      service.describeDomain(params).promise.toFuture
+      service.describeDomain(params).promise().toFuture
     @inline def describeFleetMetadataFuture(
         params: DescribeFleetMetadataRequest
-    ): Future[DescribeFleetMetadataResponse] = service.describeFleetMetadata(params).promise.toFuture
+    ): Future[DescribeFleetMetadataResponse] = service.describeFleetMetadata(params).promise().toFuture
     @inline def describeIdentityProviderConfigurationFuture(
         params: DescribeIdentityProviderConfigurationRequest
     ): Future[DescribeIdentityProviderConfigurationResponse] =
-      service.describeIdentityProviderConfiguration(params).promise.toFuture
+      service.describeIdentityProviderConfiguration(params).promise().toFuture
     @inline def describeWebsiteCertificateAuthorityFuture(
         params: DescribeWebsiteCertificateAuthorityRequest
     ): Future[DescribeWebsiteCertificateAuthorityResponse] =
-      service.describeWebsiteCertificateAuthority(params).promise.toFuture
+      service.describeWebsiteCertificateAuthority(params).promise().toFuture
     @inline def disassociateDomainFuture(params: DisassociateDomainRequest): Future[DisassociateDomainResponse] =
-      service.disassociateDomain(params).promise.toFuture
+      service.disassociateDomain(params).promise().toFuture
     @inline def disassociateWebsiteAuthorizationProviderFuture(
         params: DisassociateWebsiteAuthorizationProviderRequest
     ): Future[DisassociateWebsiteAuthorizationProviderResponse] =
-      service.disassociateWebsiteAuthorizationProvider(params).promise.toFuture
+      service.disassociateWebsiteAuthorizationProvider(params).promise().toFuture
     @inline def disassociateWebsiteCertificateAuthorityFuture(
         params: DisassociateWebsiteCertificateAuthorityRequest
     ): Future[DisassociateWebsiteCertificateAuthorityResponse] =
-      service.disassociateWebsiteCertificateAuthority(params).promise.toFuture
+      service.disassociateWebsiteCertificateAuthority(params).promise().toFuture
     @inline def listDevicesFuture(params: ListDevicesRequest): Future[ListDevicesResponse] =
-      service.listDevices(params).promise.toFuture
+      service.listDevices(params).promise().toFuture
     @inline def listDomainsFuture(params: ListDomainsRequest): Future[ListDomainsResponse] =
-      service.listDomains(params).promise.toFuture
+      service.listDomains(params).promise().toFuture
     @inline def listFleetsFuture(params: ListFleetsRequest): Future[ListFleetsResponse] =
-      service.listFleets(params).promise.toFuture
+      service.listFleets(params).promise().toFuture
     @inline def listWebsiteAuthorizationProvidersFuture(
         params: ListWebsiteAuthorizationProvidersRequest
     ): Future[ListWebsiteAuthorizationProvidersResponse] =
-      service.listWebsiteAuthorizationProviders(params).promise.toFuture
+      service.listWebsiteAuthorizationProviders(params).promise().toFuture
     @inline def listWebsiteCertificateAuthoritiesFuture(
         params: ListWebsiteCertificateAuthoritiesRequest
     ): Future[ListWebsiteCertificateAuthoritiesResponse] =
-      service.listWebsiteCertificateAuthorities(params).promise.toFuture
+      service.listWebsiteCertificateAuthorities(params).promise().toFuture
     @inline def restoreDomainAccessFuture(params: RestoreDomainAccessRequest): Future[RestoreDomainAccessResponse] =
-      service.restoreDomainAccess(params).promise.toFuture
+      service.restoreDomainAccess(params).promise().toFuture
     @inline def revokeDomainAccessFuture(params: RevokeDomainAccessRequest): Future[RevokeDomainAccessResponse] =
-      service.revokeDomainAccess(params).promise.toFuture
+      service.revokeDomainAccess(params).promise().toFuture
     @inline def signOutUserFuture(params: SignOutUserRequest): Future[SignOutUserResponse] =
-      service.signOutUser(params).promise.toFuture
+      service.signOutUser(params).promise().toFuture
     @inline def updateAuditStreamConfigurationFuture(
         params: UpdateAuditStreamConfigurationRequest
-    ): Future[UpdateAuditStreamConfigurationResponse] = service.updateAuditStreamConfiguration(params).promise.toFuture
+    ): Future[UpdateAuditStreamConfigurationResponse] =
+      service.updateAuditStreamConfiguration(params).promise().toFuture
     @inline def updateCompanyNetworkConfigurationFuture(
         params: UpdateCompanyNetworkConfigurationRequest
     ): Future[UpdateCompanyNetworkConfigurationResponse] =
-      service.updateCompanyNetworkConfiguration(params).promise.toFuture
+      service.updateCompanyNetworkConfiguration(params).promise().toFuture
     @inline def updateDevicePolicyConfigurationFuture(
         params: UpdateDevicePolicyConfigurationRequest
     ): Future[UpdateDevicePolicyConfigurationResponse] =
-      service.updateDevicePolicyConfiguration(params).promise.toFuture
+      service.updateDevicePolicyConfiguration(params).promise().toFuture
     @inline def updateDomainMetadataFuture(params: UpdateDomainMetadataRequest): Future[UpdateDomainMetadataResponse] =
-      service.updateDomainMetadata(params).promise.toFuture
+      service.updateDomainMetadata(params).promise().toFuture
     @inline def updateFleetMetadataFuture(params: UpdateFleetMetadataRequest): Future[UpdateFleetMetadataResponse] =
-      service.updateFleetMetadata(params).promise.toFuture
+      service.updateFleetMetadata(params).promise().toFuture
     @inline def updateIdentityProviderConfigurationFuture(
         params: UpdateIdentityProviderConfigurationRequest
     ): Future[UpdateIdentityProviderConfigurationResponse] =
-      service.updateIdentityProviderConfiguration(params).promise.toFuture
+      service.updateIdentityProviderConfiguration(params).promise().toFuture
   }
 }
 

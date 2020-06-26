@@ -42,26 +42,26 @@ package object polly {
   implicit final class PollyOps(private val service: Polly) extends AnyVal {
 
     @inline def deleteLexiconFuture(params: DeleteLexiconInput): Future[DeleteLexiconOutput] =
-      service.deleteLexicon(params).promise.toFuture
+      service.deleteLexicon(params).promise().toFuture
     @inline def describeVoicesFuture(params: DescribeVoicesInput): Future[DescribeVoicesOutput] =
-      service.describeVoices(params).promise.toFuture
+      service.describeVoices(params).promise().toFuture
     @inline def getLexiconFuture(params: GetLexiconInput): Future[GetLexiconOutput] =
-      service.getLexicon(params).promise.toFuture
+      service.getLexicon(params).promise().toFuture
     @inline def getSpeechSynthesisTaskFuture(
         params: GetSpeechSynthesisTaskInput
-    ): Future[GetSpeechSynthesisTaskOutput] = service.getSpeechSynthesisTask(params).promise.toFuture
+    ): Future[GetSpeechSynthesisTaskOutput] = service.getSpeechSynthesisTask(params).promise().toFuture
     @inline def listLexiconsFuture(params: ListLexiconsInput): Future[ListLexiconsOutput] =
-      service.listLexicons(params).promise.toFuture
+      service.listLexicons(params).promise().toFuture
     @inline def listSpeechSynthesisTasksFuture(
         params: ListSpeechSynthesisTasksInput
-    ): Future[ListSpeechSynthesisTasksOutput] = service.listSpeechSynthesisTasks(params).promise.toFuture
+    ): Future[ListSpeechSynthesisTasksOutput] = service.listSpeechSynthesisTasks(params).promise().toFuture
     @inline def putLexiconFuture(params: PutLexiconInput): Future[PutLexiconOutput] =
-      service.putLexicon(params).promise.toFuture
+      service.putLexicon(params).promise().toFuture
     @inline def startSpeechSynthesisTaskFuture(
         params: StartSpeechSynthesisTaskInput
-    ): Future[StartSpeechSynthesisTaskOutput] = service.startSpeechSynthesisTask(params).promise.toFuture
+    ): Future[StartSpeechSynthesisTaskOutput] = service.startSpeechSynthesisTask(params).promise().toFuture
     @inline def synthesizeSpeechFuture(params: SynthesizeSpeechInput): Future[SynthesizeSpeechOutput] =
-      service.synthesizeSpeech(params).promise.toFuture
+      service.synthesizeSpeech(params).promise().toFuture
   }
 }
 

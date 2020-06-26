@@ -19,22 +19,22 @@ package object mediatailor {
 
     @inline def deletePlaybackConfigurationFuture(
         params: DeletePlaybackConfigurationRequest
-    ): Future[DeletePlaybackConfigurationResponse] = service.deletePlaybackConfiguration(params).promise.toFuture
+    ): Future[DeletePlaybackConfigurationResponse] = service.deletePlaybackConfiguration(params).promise().toFuture
     @inline def getPlaybackConfigurationFuture(
         params: GetPlaybackConfigurationRequest
-    ): Future[GetPlaybackConfigurationResponse] = service.getPlaybackConfiguration(params).promise.toFuture
+    ): Future[GetPlaybackConfigurationResponse] = service.getPlaybackConfiguration(params).promise().toFuture
     @inline def listPlaybackConfigurationsFuture(
         params: ListPlaybackConfigurationsRequest
-    ): Future[ListPlaybackConfigurationsResponse] = service.listPlaybackConfigurations(params).promise.toFuture
+    ): Future[ListPlaybackConfigurationsResponse] = service.listPlaybackConfigurations(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def putPlaybackConfigurationFuture(
         params: PutPlaybackConfigurationRequest
-    ): Future[PutPlaybackConfigurationResponse] = service.putPlaybackConfiguration(params).promise.toFuture
+    ): Future[PutPlaybackConfigurationResponse] = service.putPlaybackConfiguration(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
   }
 }
 

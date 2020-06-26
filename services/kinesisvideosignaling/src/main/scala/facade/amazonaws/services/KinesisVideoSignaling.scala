@@ -21,10 +21,10 @@ package object kinesisvideosignaling {
   implicit final class KinesisVideoSignalingOps(private val service: KinesisVideoSignaling) extends AnyVal {
 
     @inline def getIceServerConfigFuture(params: GetIceServerConfigRequest): Future[GetIceServerConfigResponse] =
-      service.getIceServerConfig(params).promise.toFuture
+      service.getIceServerConfig(params).promise().toFuture
     @inline def sendAlexaOfferToMasterFuture(
         params: SendAlexaOfferToMasterRequest
-    ): Future[SendAlexaOfferToMasterResponse] = service.sendAlexaOfferToMaster(params).promise.toFuture
+    ): Future[SendAlexaOfferToMasterResponse] = service.sendAlexaOfferToMaster(params).promise().toFuture
   }
 }
 

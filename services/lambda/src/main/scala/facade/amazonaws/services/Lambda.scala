@@ -96,122 +96,123 @@ package object lambda {
 
     @inline def addLayerVersionPermissionFuture(
         params: AddLayerVersionPermissionRequest
-    ): Future[AddLayerVersionPermissionResponse] = service.addLayerVersionPermission(params).promise.toFuture
+    ): Future[AddLayerVersionPermissionResponse] = service.addLayerVersionPermission(params).promise().toFuture
     @inline def addPermissionFuture(params: AddPermissionRequest): Future[AddPermissionResponse] =
-      service.addPermission(params).promise.toFuture
+      service.addPermission(params).promise().toFuture
     @inline def createAliasFuture(params: CreateAliasRequest): Future[AliasConfiguration] =
-      service.createAlias(params).promise.toFuture
+      service.createAlias(params).promise().toFuture
     @inline def createEventSourceMappingFuture(
         params: CreateEventSourceMappingRequest
-    ): Future[EventSourceMappingConfiguration] = service.createEventSourceMapping(params).promise.toFuture
+    ): Future[EventSourceMappingConfiguration] = service.createEventSourceMapping(params).promise().toFuture
     @inline def createFunctionFuture(params: CreateFunctionRequest): Future[FunctionConfiguration] =
-      service.createFunction(params).promise.toFuture
+      service.createFunction(params).promise().toFuture
     @inline def deleteAliasFuture(params: DeleteAliasRequest): Future[js.Object] =
-      service.deleteAlias(params).promise.toFuture
+      service.deleteAlias(params).promise().toFuture
     @inline def deleteEventSourceMappingFuture(
         params: DeleteEventSourceMappingRequest
-    ): Future[EventSourceMappingConfiguration] = service.deleteEventSourceMapping(params).promise.toFuture
+    ): Future[EventSourceMappingConfiguration] = service.deleteEventSourceMapping(params).promise().toFuture
     @inline def deleteFunctionConcurrencyFuture(params: DeleteFunctionConcurrencyRequest): Future[js.Object] =
-      service.deleteFunctionConcurrency(params).promise.toFuture
+      service.deleteFunctionConcurrency(params).promise().toFuture
     @inline def deleteFunctionEventInvokeConfigFuture(
         params: DeleteFunctionEventInvokeConfigRequest
-    ): Future[js.Object] = service.deleteFunctionEventInvokeConfig(params).promise.toFuture
+    ): Future[js.Object] = service.deleteFunctionEventInvokeConfig(params).promise().toFuture
     @inline def deleteFunctionFuture(params: DeleteFunctionRequest): Future[js.Object] =
-      service.deleteFunction(params).promise.toFuture
+      service.deleteFunction(params).promise().toFuture
     @inline def deleteLayerVersionFuture(params: DeleteLayerVersionRequest): Future[js.Object] =
-      service.deleteLayerVersion(params).promise.toFuture
+      service.deleteLayerVersion(params).promise().toFuture
     @inline def deleteProvisionedConcurrencyConfigFuture(
         params: DeleteProvisionedConcurrencyConfigRequest
-    ): Future[js.Object] = service.deleteProvisionedConcurrencyConfig(params).promise.toFuture
+    ): Future[js.Object] = service.deleteProvisionedConcurrencyConfig(params).promise().toFuture
     @inline def getAccountSettingsFuture(params: GetAccountSettingsRequest): Future[GetAccountSettingsResponse] =
-      service.getAccountSettings(params).promise.toFuture
+      service.getAccountSettings(params).promise().toFuture
     @inline def getAliasFuture(params: GetAliasRequest): Future[AliasConfiguration] =
-      service.getAlias(params).promise.toFuture
+      service.getAlias(params).promise().toFuture
     @inline def getEventSourceMappingFuture(
         params: GetEventSourceMappingRequest
-    ): Future[EventSourceMappingConfiguration] = service.getEventSourceMapping(params).promise.toFuture
+    ): Future[EventSourceMappingConfiguration] = service.getEventSourceMapping(params).promise().toFuture
     @inline def getFunctionConcurrencyFuture(
         params: GetFunctionConcurrencyRequest
-    ): Future[GetFunctionConcurrencyResponse] = service.getFunctionConcurrency(params).promise.toFuture
+    ): Future[GetFunctionConcurrencyResponse] = service.getFunctionConcurrency(params).promise().toFuture
     @inline def getFunctionConfigurationFuture(params: GetFunctionConfigurationRequest): Future[FunctionConfiguration] =
-      service.getFunctionConfiguration(params).promise.toFuture
+      service.getFunctionConfiguration(params).promise().toFuture
     @inline def getFunctionEventInvokeConfigFuture(
         params: GetFunctionEventInvokeConfigRequest
-    ): Future[FunctionEventInvokeConfig] = service.getFunctionEventInvokeConfig(params).promise.toFuture
+    ): Future[FunctionEventInvokeConfig] = service.getFunctionEventInvokeConfig(params).promise().toFuture
     @inline def getFunctionFuture(params: GetFunctionRequest): Future[GetFunctionResponse] =
-      service.getFunction(params).promise.toFuture
+      service.getFunction(params).promise().toFuture
     @inline def getLayerVersionByArnFuture(params: GetLayerVersionByArnRequest): Future[GetLayerVersionResponse] =
-      service.getLayerVersionByArn(params).promise.toFuture
+      service.getLayerVersionByArn(params).promise().toFuture
     @inline def getLayerVersionFuture(params: GetLayerVersionRequest): Future[GetLayerVersionResponse] =
-      service.getLayerVersion(params).promise.toFuture
+      service.getLayerVersion(params).promise().toFuture
     @inline def getLayerVersionPolicyFuture(
         params: GetLayerVersionPolicyRequest
-    ): Future[GetLayerVersionPolicyResponse] = service.getLayerVersionPolicy(params).promise.toFuture
+    ): Future[GetLayerVersionPolicyResponse] = service.getLayerVersionPolicy(params).promise().toFuture
     @inline def getPolicyFuture(params: GetPolicyRequest): Future[GetPolicyResponse] =
-      service.getPolicy(params).promise.toFuture
+      service.getPolicy(params).promise().toFuture
     @inline def getProvisionedConcurrencyConfigFuture(
         params: GetProvisionedConcurrencyConfigRequest
     ): Future[GetProvisionedConcurrencyConfigResponse] =
-      service.getProvisionedConcurrencyConfig(params).promise.toFuture
+      service.getProvisionedConcurrencyConfig(params).promise().toFuture
     @inline def invokeFuture(params: InvocationRequest): Future[InvocationResponse] =
-      service.invoke(params).promise.toFuture
+      service.invoke(params).promise().toFuture
     @inline def listAliasesFuture(params: ListAliasesRequest): Future[ListAliasesResponse] =
-      service.listAliases(params).promise.toFuture
+      service.listAliases(params).promise().toFuture
     @inline def listEventSourceMappingsFuture(
         params: ListEventSourceMappingsRequest
-    ): Future[ListEventSourceMappingsResponse] = service.listEventSourceMappings(params).promise.toFuture
+    ): Future[ListEventSourceMappingsResponse] = service.listEventSourceMappings(params).promise().toFuture
     @inline def listFunctionEventInvokeConfigsFuture(
         params: ListFunctionEventInvokeConfigsRequest
-    ): Future[ListFunctionEventInvokeConfigsResponse] = service.listFunctionEventInvokeConfigs(params).promise.toFuture
+    ): Future[ListFunctionEventInvokeConfigsResponse] =
+      service.listFunctionEventInvokeConfigs(params).promise().toFuture
     @inline def listFunctionsFuture(params: ListFunctionsRequest): Future[ListFunctionsResponse] =
-      service.listFunctions(params).promise.toFuture
+      service.listFunctions(params).promise().toFuture
     @inline def listLayerVersionsFuture(params: ListLayerVersionsRequest): Future[ListLayerVersionsResponse] =
-      service.listLayerVersions(params).promise.toFuture
+      service.listLayerVersions(params).promise().toFuture
     @inline def listLayersFuture(params: ListLayersRequest): Future[ListLayersResponse] =
-      service.listLayers(params).promise.toFuture
+      service.listLayers(params).promise().toFuture
     @inline def listProvisionedConcurrencyConfigsFuture(
         params: ListProvisionedConcurrencyConfigsRequest
     ): Future[ListProvisionedConcurrencyConfigsResponse] =
-      service.listProvisionedConcurrencyConfigs(params).promise.toFuture
+      service.listProvisionedConcurrencyConfigs(params).promise().toFuture
     @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] =
-      service.listTags(params).promise.toFuture
+      service.listTags(params).promise().toFuture
     @inline def listVersionsByFunctionFuture(
         params: ListVersionsByFunctionRequest
-    ): Future[ListVersionsByFunctionResponse] = service.listVersionsByFunction(params).promise.toFuture
+    ): Future[ListVersionsByFunctionResponse] = service.listVersionsByFunction(params).promise().toFuture
     @inline def publishLayerVersionFuture(params: PublishLayerVersionRequest): Future[PublishLayerVersionResponse] =
-      service.publishLayerVersion(params).promise.toFuture
+      service.publishLayerVersion(params).promise().toFuture
     @inline def publishVersionFuture(params: PublishVersionRequest): Future[FunctionConfiguration] =
-      service.publishVersion(params).promise.toFuture
+      service.publishVersion(params).promise().toFuture
     @inline def putFunctionConcurrencyFuture(params: PutFunctionConcurrencyRequest): Future[Concurrency] =
-      service.putFunctionConcurrency(params).promise.toFuture
+      service.putFunctionConcurrency(params).promise().toFuture
     @inline def putFunctionEventInvokeConfigFuture(
         params: PutFunctionEventInvokeConfigRequest
-    ): Future[FunctionEventInvokeConfig] = service.putFunctionEventInvokeConfig(params).promise.toFuture
+    ): Future[FunctionEventInvokeConfig] = service.putFunctionEventInvokeConfig(params).promise().toFuture
     @inline def putProvisionedConcurrencyConfigFuture(
         params: PutProvisionedConcurrencyConfigRequest
     ): Future[PutProvisionedConcurrencyConfigResponse] =
-      service.putProvisionedConcurrencyConfig(params).promise.toFuture
+      service.putProvisionedConcurrencyConfig(params).promise().toFuture
     @inline def removeLayerVersionPermissionFuture(params: RemoveLayerVersionPermissionRequest): Future[js.Object] =
-      service.removeLayerVersionPermission(params).promise.toFuture
+      service.removeLayerVersionPermission(params).promise().toFuture
     @inline def removePermissionFuture(params: RemovePermissionRequest): Future[js.Object] =
-      service.removePermission(params).promise.toFuture
+      service.removePermission(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateAliasFuture(params: UpdateAliasRequest): Future[AliasConfiguration] =
-      service.updateAlias(params).promise.toFuture
+      service.updateAlias(params).promise().toFuture
     @inline def updateEventSourceMappingFuture(
         params: UpdateEventSourceMappingRequest
-    ): Future[EventSourceMappingConfiguration] = service.updateEventSourceMapping(params).promise.toFuture
+    ): Future[EventSourceMappingConfiguration] = service.updateEventSourceMapping(params).promise().toFuture
     @inline def updateFunctionCodeFuture(params: UpdateFunctionCodeRequest): Future[FunctionConfiguration] =
-      service.updateFunctionCode(params).promise.toFuture
+      service.updateFunctionCode(params).promise().toFuture
     @inline def updateFunctionConfigurationFuture(
         params: UpdateFunctionConfigurationRequest
-    ): Future[FunctionConfiguration] = service.updateFunctionConfiguration(params).promise.toFuture
+    ): Future[FunctionConfiguration] = service.updateFunctionConfiguration(params).promise().toFuture
     @inline def updateFunctionEventInvokeConfigFuture(
         params: UpdateFunctionEventInvokeConfigRequest
-    ): Future[FunctionEventInvokeConfig] = service.updateFunctionEventInvokeConfig(params).promise.toFuture
+    ): Future[FunctionEventInvokeConfig] = service.updateFunctionEventInvokeConfig(params).promise().toFuture
   }
 }
 
