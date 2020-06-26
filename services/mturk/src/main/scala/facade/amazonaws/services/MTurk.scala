@@ -43,104 +43,104 @@ package object mturk {
 
     @inline def acceptQualificationRequestFuture(
         params: AcceptQualificationRequestRequest
-    ): Future[AcceptQualificationRequestResponse] = service.acceptQualificationRequest(params).promise.toFuture
+    ): Future[AcceptQualificationRequestResponse] = service.acceptQualificationRequest(params).promise().toFuture
     @inline def approveAssignmentFuture(params: ApproveAssignmentRequest): Future[ApproveAssignmentResponse] =
-      service.approveAssignment(params).promise.toFuture
+      service.approveAssignment(params).promise().toFuture
     @inline def associateQualificationWithWorkerFuture(
         params: AssociateQualificationWithWorkerRequest
     ): Future[AssociateQualificationWithWorkerResponse] =
-      service.associateQualificationWithWorker(params).promise.toFuture
+      service.associateQualificationWithWorker(params).promise().toFuture
     @inline def createAdditionalAssignmentsForHITFuture(
         params: CreateAdditionalAssignmentsForHITRequest
     ): Future[CreateAdditionalAssignmentsForHITResponse] =
-      service.createAdditionalAssignmentsForHIT(params).promise.toFuture
+      service.createAdditionalAssignmentsForHIT(params).promise().toFuture
     @inline def createHITFuture(params: CreateHITRequest): Future[CreateHITResponse] =
-      service.createHIT(params).promise.toFuture
+      service.createHIT(params).promise().toFuture
     @inline def createHITTypeFuture(params: CreateHITTypeRequest): Future[CreateHITTypeResponse] =
-      service.createHITType(params).promise.toFuture
+      service.createHITType(params).promise().toFuture
     @inline def createHITWithHITTypeFuture(params: CreateHITWithHITTypeRequest): Future[CreateHITWithHITTypeResponse] =
-      service.createHITWithHITType(params).promise.toFuture
+      service.createHITWithHITType(params).promise().toFuture
     @inline def createQualificationTypeFuture(
         params: CreateQualificationTypeRequest
-    ): Future[CreateQualificationTypeResponse] = service.createQualificationType(params).promise.toFuture
+    ): Future[CreateQualificationTypeResponse] = service.createQualificationType(params).promise().toFuture
     @inline def createWorkerBlockFuture(params: CreateWorkerBlockRequest): Future[CreateWorkerBlockResponse] =
-      service.createWorkerBlock(params).promise.toFuture
+      service.createWorkerBlock(params).promise().toFuture
     @inline def deleteHITFuture(params: DeleteHITRequest): Future[DeleteHITResponse] =
-      service.deleteHIT(params).promise.toFuture
+      service.deleteHIT(params).promise().toFuture
     @inline def deleteQualificationTypeFuture(
         params: DeleteQualificationTypeRequest
-    ): Future[DeleteQualificationTypeResponse] = service.deleteQualificationType(params).promise.toFuture
+    ): Future[DeleteQualificationTypeResponse] = service.deleteQualificationType(params).promise().toFuture
     @inline def deleteWorkerBlockFuture(params: DeleteWorkerBlockRequest): Future[DeleteWorkerBlockResponse] =
-      service.deleteWorkerBlock(params).promise.toFuture
+      service.deleteWorkerBlock(params).promise().toFuture
     @inline def disassociateQualificationFromWorkerFuture(
         params: DisassociateQualificationFromWorkerRequest
     ): Future[DisassociateQualificationFromWorkerResponse] =
-      service.disassociateQualificationFromWorker(params).promise.toFuture
+      service.disassociateQualificationFromWorker(params).promise().toFuture
     @inline def getAccountBalanceFuture(params: GetAccountBalanceRequest): Future[GetAccountBalanceResponse] =
-      service.getAccountBalance(params).promise.toFuture
+      service.getAccountBalance(params).promise().toFuture
     @inline def getAssignmentFuture(params: GetAssignmentRequest): Future[GetAssignmentResponse] =
-      service.getAssignment(params).promise.toFuture
+      service.getAssignment(params).promise().toFuture
     @inline def getFileUploadURLFuture(params: GetFileUploadURLRequest): Future[GetFileUploadURLResponse] =
-      service.getFileUploadURL(params).promise.toFuture
-    @inline def getHITFuture(params: GetHITRequest): Future[GetHITResponse] = service.getHIT(params).promise.toFuture
+      service.getFileUploadURL(params).promise().toFuture
+    @inline def getHITFuture(params: GetHITRequest): Future[GetHITResponse] = service.getHIT(params).promise().toFuture
     @inline def getQualificationScoreFuture(
         params: GetQualificationScoreRequest
-    ): Future[GetQualificationScoreResponse] = service.getQualificationScore(params).promise.toFuture
+    ): Future[GetQualificationScoreResponse] = service.getQualificationScore(params).promise().toFuture
     @inline def getQualificationTypeFuture(params: GetQualificationTypeRequest): Future[GetQualificationTypeResponse] =
-      service.getQualificationType(params).promise.toFuture
+      service.getQualificationType(params).promise().toFuture
     @inline def listAssignmentsForHITFuture(
         params: ListAssignmentsForHITRequest
-    ): Future[ListAssignmentsForHITResponse] = service.listAssignmentsForHIT(params).promise.toFuture
+    ): Future[ListAssignmentsForHITResponse] = service.listAssignmentsForHIT(params).promise().toFuture
     @inline def listBonusPaymentsFuture(params: ListBonusPaymentsRequest): Future[ListBonusPaymentsResponse] =
-      service.listBonusPayments(params).promise.toFuture
+      service.listBonusPayments(params).promise().toFuture
     @inline def listHITsForQualificationTypeFuture(
         params: ListHITsForQualificationTypeRequest
-    ): Future[ListHITsForQualificationTypeResponse] = service.listHITsForQualificationType(params).promise.toFuture
+    ): Future[ListHITsForQualificationTypeResponse] = service.listHITsForQualificationType(params).promise().toFuture
     @inline def listHITsFuture(params: ListHITsRequest): Future[ListHITsResponse] =
-      service.listHITs(params).promise.toFuture
+      service.listHITs(params).promise().toFuture
     @inline def listQualificationRequestsFuture(
         params: ListQualificationRequestsRequest
-    ): Future[ListQualificationRequestsResponse] = service.listQualificationRequests(params).promise.toFuture
+    ): Future[ListQualificationRequestsResponse] = service.listQualificationRequests(params).promise().toFuture
     @inline def listQualificationTypesFuture(
         params: ListQualificationTypesRequest
-    ): Future[ListQualificationTypesResponse] = service.listQualificationTypes(params).promise.toFuture
+    ): Future[ListQualificationTypesResponse] = service.listQualificationTypes(params).promise().toFuture
     @inline def listReviewPolicyResultsForHITFuture(
         params: ListReviewPolicyResultsForHITRequest
-    ): Future[ListReviewPolicyResultsForHITResponse] = service.listReviewPolicyResultsForHIT(params).promise.toFuture
+    ): Future[ListReviewPolicyResultsForHITResponse] = service.listReviewPolicyResultsForHIT(params).promise().toFuture
     @inline def listReviewableHITsFuture(params: ListReviewableHITsRequest): Future[ListReviewableHITsResponse] =
-      service.listReviewableHITs(params).promise.toFuture
+      service.listReviewableHITs(params).promise().toFuture
     @inline def listWorkerBlocksFuture(params: ListWorkerBlocksRequest): Future[ListWorkerBlocksResponse] =
-      service.listWorkerBlocks(params).promise.toFuture
+      service.listWorkerBlocks(params).promise().toFuture
     @inline def listWorkersWithQualificationTypeFuture(
         params: ListWorkersWithQualificationTypeRequest
     ): Future[ListWorkersWithQualificationTypeResponse] =
-      service.listWorkersWithQualificationType(params).promise.toFuture
+      service.listWorkersWithQualificationType(params).promise().toFuture
     @inline def notifyWorkersFuture(params: NotifyWorkersRequest): Future[NotifyWorkersResponse] =
-      service.notifyWorkers(params).promise.toFuture
+      service.notifyWorkers(params).promise().toFuture
     @inline def rejectAssignmentFuture(params: RejectAssignmentRequest): Future[RejectAssignmentResponse] =
-      service.rejectAssignment(params).promise.toFuture
+      service.rejectAssignment(params).promise().toFuture
     @inline def rejectQualificationRequestFuture(
         params: RejectQualificationRequestRequest
-    ): Future[RejectQualificationRequestResponse] = service.rejectQualificationRequest(params).promise.toFuture
+    ): Future[RejectQualificationRequestResponse] = service.rejectQualificationRequest(params).promise().toFuture
     @inline def sendBonusFuture(params: SendBonusRequest): Future[SendBonusResponse] =
-      service.sendBonus(params).promise.toFuture
+      service.sendBonus(params).promise().toFuture
     @inline def sendTestEventNotificationFuture(
         params: SendTestEventNotificationRequest
-    ): Future[SendTestEventNotificationResponse] = service.sendTestEventNotification(params).promise.toFuture
+    ): Future[SendTestEventNotificationResponse] = service.sendTestEventNotification(params).promise().toFuture
     @inline def updateExpirationForHITFuture(
         params: UpdateExpirationForHITRequest
-    ): Future[UpdateExpirationForHITResponse] = service.updateExpirationForHIT(params).promise.toFuture
+    ): Future[UpdateExpirationForHITResponse] = service.updateExpirationForHIT(params).promise().toFuture
     @inline def updateHITReviewStatusFuture(
         params: UpdateHITReviewStatusRequest
-    ): Future[UpdateHITReviewStatusResponse] = service.updateHITReviewStatus(params).promise.toFuture
+    ): Future[UpdateHITReviewStatusResponse] = service.updateHITReviewStatus(params).promise().toFuture
     @inline def updateHITTypeOfHITFuture(params: UpdateHITTypeOfHITRequest): Future[UpdateHITTypeOfHITResponse] =
-      service.updateHITTypeOfHIT(params).promise.toFuture
+      service.updateHITTypeOfHIT(params).promise().toFuture
     @inline def updateNotificationSettingsFuture(
         params: UpdateNotificationSettingsRequest
-    ): Future[UpdateNotificationSettingsResponse] = service.updateNotificationSettings(params).promise.toFuture
+    ): Future[UpdateNotificationSettingsResponse] = service.updateNotificationSettings(params).promise().toFuture
     @inline def updateQualificationTypeFuture(
         params: UpdateQualificationTypeRequest
-    ): Future[UpdateQualificationTypeResponse] = service.updateQualificationType(params).promise.toFuture
+    ): Future[UpdateQualificationTypeResponse] = service.updateQualificationType(params).promise().toFuture
   }
 }
 

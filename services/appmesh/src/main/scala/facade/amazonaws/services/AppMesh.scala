@@ -57,62 +57,62 @@ package object appmesh {
   implicit final class AppMeshOps(private val service: AppMesh) extends AnyVal {
 
     @inline def createMeshFuture(params: CreateMeshInput): Future[CreateMeshOutput] =
-      service.createMesh(params).promise.toFuture
+      service.createMesh(params).promise().toFuture
     @inline def createRouteFuture(params: CreateRouteInput): Future[CreateRouteOutput] =
-      service.createRoute(params).promise.toFuture
+      service.createRoute(params).promise().toFuture
     @inline def createVirtualNodeFuture(params: CreateVirtualNodeInput): Future[CreateVirtualNodeOutput] =
-      service.createVirtualNode(params).promise.toFuture
+      service.createVirtualNode(params).promise().toFuture
     @inline def createVirtualRouterFuture(params: CreateVirtualRouterInput): Future[CreateVirtualRouterOutput] =
-      service.createVirtualRouter(params).promise.toFuture
+      service.createVirtualRouter(params).promise().toFuture
     @inline def createVirtualServiceFuture(params: CreateVirtualServiceInput): Future[CreateVirtualServiceOutput] =
-      service.createVirtualService(params).promise.toFuture
+      service.createVirtualService(params).promise().toFuture
     @inline def deleteMeshFuture(params: DeleteMeshInput): Future[DeleteMeshOutput] =
-      service.deleteMesh(params).promise.toFuture
+      service.deleteMesh(params).promise().toFuture
     @inline def deleteRouteFuture(params: DeleteRouteInput): Future[DeleteRouteOutput] =
-      service.deleteRoute(params).promise.toFuture
+      service.deleteRoute(params).promise().toFuture
     @inline def deleteVirtualNodeFuture(params: DeleteVirtualNodeInput): Future[DeleteVirtualNodeOutput] =
-      service.deleteVirtualNode(params).promise.toFuture
+      service.deleteVirtualNode(params).promise().toFuture
     @inline def deleteVirtualRouterFuture(params: DeleteVirtualRouterInput): Future[DeleteVirtualRouterOutput] =
-      service.deleteVirtualRouter(params).promise.toFuture
+      service.deleteVirtualRouter(params).promise().toFuture
     @inline def deleteVirtualServiceFuture(params: DeleteVirtualServiceInput): Future[DeleteVirtualServiceOutput] =
-      service.deleteVirtualService(params).promise.toFuture
+      service.deleteVirtualService(params).promise().toFuture
     @inline def describeMeshFuture(params: DescribeMeshInput): Future[DescribeMeshOutput] =
-      service.describeMesh(params).promise.toFuture
+      service.describeMesh(params).promise().toFuture
     @inline def describeRouteFuture(params: DescribeRouteInput): Future[DescribeRouteOutput] =
-      service.describeRoute(params).promise.toFuture
+      service.describeRoute(params).promise().toFuture
     @inline def describeVirtualNodeFuture(params: DescribeVirtualNodeInput): Future[DescribeVirtualNodeOutput] =
-      service.describeVirtualNode(params).promise.toFuture
+      service.describeVirtualNode(params).promise().toFuture
     @inline def describeVirtualRouterFuture(params: DescribeVirtualRouterInput): Future[DescribeVirtualRouterOutput] =
-      service.describeVirtualRouter(params).promise.toFuture
+      service.describeVirtualRouter(params).promise().toFuture
     @inline def describeVirtualServiceFuture(
         params: DescribeVirtualServiceInput
-    ): Future[DescribeVirtualServiceOutput] = service.describeVirtualService(params).promise.toFuture
+    ): Future[DescribeVirtualServiceOutput] = service.describeVirtualService(params).promise().toFuture
     @inline def listMeshesFuture(params: ListMeshesInput): Future[ListMeshesOutput] =
-      service.listMeshes(params).promise.toFuture
+      service.listMeshes(params).promise().toFuture
     @inline def listRoutesFuture(params: ListRoutesInput): Future[ListRoutesOutput] =
-      service.listRoutes(params).promise.toFuture
+      service.listRoutes(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def listVirtualNodesFuture(params: ListVirtualNodesInput): Future[ListVirtualNodesOutput] =
-      service.listVirtualNodes(params).promise.toFuture
+      service.listVirtualNodes(params).promise().toFuture
     @inline def listVirtualRoutersFuture(params: ListVirtualRoutersInput): Future[ListVirtualRoutersOutput] =
-      service.listVirtualRouters(params).promise.toFuture
+      service.listVirtualRouters(params).promise().toFuture
     @inline def listVirtualServicesFuture(params: ListVirtualServicesInput): Future[ListVirtualServicesOutput] =
-      service.listVirtualServices(params).promise.toFuture
+      service.listVirtualServices(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateMeshFuture(params: UpdateMeshInput): Future[UpdateMeshOutput] =
-      service.updateMesh(params).promise.toFuture
+      service.updateMesh(params).promise().toFuture
     @inline def updateRouteFuture(params: UpdateRouteInput): Future[UpdateRouteOutput] =
-      service.updateRoute(params).promise.toFuture
+      service.updateRoute(params).promise().toFuture
     @inline def updateVirtualNodeFuture(params: UpdateVirtualNodeInput): Future[UpdateVirtualNodeOutput] =
-      service.updateVirtualNode(params).promise.toFuture
+      service.updateVirtualNode(params).promise().toFuture
     @inline def updateVirtualRouterFuture(params: UpdateVirtualRouterInput): Future[UpdateVirtualRouterOutput] =
-      service.updateVirtualRouter(params).promise.toFuture
+      service.updateVirtualRouter(params).promise().toFuture
     @inline def updateVirtualServiceFuture(params: UpdateVirtualServiceInput): Future[UpdateVirtualServiceOutput] =
-      service.updateVirtualService(params).promise.toFuture
+      service.updateVirtualService(params).promise().toFuture
   }
 }
 

@@ -45,23 +45,23 @@ package object sts {
   implicit final class STSOps(private val service: STS) extends AnyVal {
 
     @inline def assumeRoleFuture(params: AssumeRoleRequest): Future[AssumeRoleResponse] =
-      service.assumeRole(params).promise.toFuture
+      service.assumeRole(params).promise().toFuture
     @inline def assumeRoleWithSAMLFuture(params: AssumeRoleWithSAMLRequest): Future[AssumeRoleWithSAMLResponse] =
-      service.assumeRoleWithSAML(params).promise.toFuture
+      service.assumeRoleWithSAML(params).promise().toFuture
     @inline def assumeRoleWithWebIdentityFuture(
         params: AssumeRoleWithWebIdentityRequest
-    ): Future[AssumeRoleWithWebIdentityResponse] = service.assumeRoleWithWebIdentity(params).promise.toFuture
+    ): Future[AssumeRoleWithWebIdentityResponse] = service.assumeRoleWithWebIdentity(params).promise().toFuture
     @inline def decodeAuthorizationMessageFuture(
         params: DecodeAuthorizationMessageRequest
-    ): Future[DecodeAuthorizationMessageResponse] = service.decodeAuthorizationMessage(params).promise.toFuture
+    ): Future[DecodeAuthorizationMessageResponse] = service.decodeAuthorizationMessage(params).promise().toFuture
     @inline def getAccessKeyInfoFuture(params: GetAccessKeyInfoRequest): Future[GetAccessKeyInfoResponse] =
-      service.getAccessKeyInfo(params).promise.toFuture
+      service.getAccessKeyInfo(params).promise().toFuture
     @inline def getCallerIdentityFuture(params: GetCallerIdentityRequest): Future[GetCallerIdentityResponse] =
-      service.getCallerIdentity(params).promise.toFuture
+      service.getCallerIdentity(params).promise().toFuture
     @inline def getFederationTokenFuture(params: GetFederationTokenRequest): Future[GetFederationTokenResponse] =
-      service.getFederationToken(params).promise.toFuture
+      service.getFederationToken(params).promise().toFuture
     @inline def getSessionTokenFuture(params: GetSessionTokenRequest): Future[GetSessionTokenResponse] =
-      service.getSessionToken(params).promise.toFuture
+      service.getSessionToken(params).promise().toFuture
   }
 }
 

@@ -27,67 +27,69 @@ package object networkmanager {
 
     @inline def associateCustomerGatewayFuture(
         params: AssociateCustomerGatewayRequest
-    ): Future[AssociateCustomerGatewayResponse] = service.associateCustomerGateway(params).promise.toFuture
+    ): Future[AssociateCustomerGatewayResponse] = service.associateCustomerGateway(params).promise().toFuture
     @inline def associateLinkFuture(params: AssociateLinkRequest): Future[AssociateLinkResponse] =
-      service.associateLink(params).promise.toFuture
+      service.associateLink(params).promise().toFuture
     @inline def createDeviceFuture(params: CreateDeviceRequest): Future[CreateDeviceResponse] =
-      service.createDevice(params).promise.toFuture
+      service.createDevice(params).promise().toFuture
     @inline def createGlobalNetworkFuture(params: CreateGlobalNetworkRequest): Future[CreateGlobalNetworkResponse] =
-      service.createGlobalNetwork(params).promise.toFuture
+      service.createGlobalNetwork(params).promise().toFuture
     @inline def createLinkFuture(params: CreateLinkRequest): Future[CreateLinkResponse] =
-      service.createLink(params).promise.toFuture
+      service.createLink(params).promise().toFuture
     @inline def createSiteFuture(params: CreateSiteRequest): Future[CreateSiteResponse] =
-      service.createSite(params).promise.toFuture
+      service.createSite(params).promise().toFuture
     @inline def deleteDeviceFuture(params: DeleteDeviceRequest): Future[DeleteDeviceResponse] =
-      service.deleteDevice(params).promise.toFuture
+      service.deleteDevice(params).promise().toFuture
     @inline def deleteGlobalNetworkFuture(params: DeleteGlobalNetworkRequest): Future[DeleteGlobalNetworkResponse] =
-      service.deleteGlobalNetwork(params).promise.toFuture
+      service.deleteGlobalNetwork(params).promise().toFuture
     @inline def deleteLinkFuture(params: DeleteLinkRequest): Future[DeleteLinkResponse] =
-      service.deleteLink(params).promise.toFuture
+      service.deleteLink(params).promise().toFuture
     @inline def deleteSiteFuture(params: DeleteSiteRequest): Future[DeleteSiteResponse] =
-      service.deleteSite(params).promise.toFuture
+      service.deleteSite(params).promise().toFuture
     @inline def deregisterTransitGatewayFuture(
         params: DeregisterTransitGatewayRequest
-    ): Future[DeregisterTransitGatewayResponse] = service.deregisterTransitGateway(params).promise.toFuture
+    ): Future[DeregisterTransitGatewayResponse] = service.deregisterTransitGateway(params).promise().toFuture
     @inline def describeGlobalNetworksFuture(
         params: DescribeGlobalNetworksRequest
-    ): Future[DescribeGlobalNetworksResponse] = service.describeGlobalNetworks(params).promise.toFuture
+    ): Future[DescribeGlobalNetworksResponse] = service.describeGlobalNetworks(params).promise().toFuture
     @inline def disassociateCustomerGatewayFuture(
         params: DisassociateCustomerGatewayRequest
-    ): Future[DisassociateCustomerGatewayResponse] = service.disassociateCustomerGateway(params).promise.toFuture
+    ): Future[DisassociateCustomerGatewayResponse] = service.disassociateCustomerGateway(params).promise().toFuture
     @inline def disassociateLinkFuture(params: DisassociateLinkRequest): Future[DisassociateLinkResponse] =
-      service.disassociateLink(params).promise.toFuture
+      service.disassociateLink(params).promise().toFuture
     @inline def getCustomerGatewayAssociationsFuture(
         params: GetCustomerGatewayAssociationsRequest
-    ): Future[GetCustomerGatewayAssociationsResponse] = service.getCustomerGatewayAssociations(params).promise.toFuture
+    ): Future[GetCustomerGatewayAssociationsResponse] =
+      service.getCustomerGatewayAssociations(params).promise().toFuture
     @inline def getDevicesFuture(params: GetDevicesRequest): Future[GetDevicesResponse] =
-      service.getDevices(params).promise.toFuture
+      service.getDevices(params).promise().toFuture
     @inline def getLinkAssociationsFuture(params: GetLinkAssociationsRequest): Future[GetLinkAssociationsResponse] =
-      service.getLinkAssociations(params).promise.toFuture
+      service.getLinkAssociations(params).promise().toFuture
     @inline def getLinksFuture(params: GetLinksRequest): Future[GetLinksResponse] =
-      service.getLinks(params).promise.toFuture
+      service.getLinks(params).promise().toFuture
     @inline def getSitesFuture(params: GetSitesRequest): Future[GetSitesResponse] =
-      service.getSites(params).promise.toFuture
+      service.getSites(params).promise().toFuture
     @inline def getTransitGatewayRegistrationsFuture(
         params: GetTransitGatewayRegistrationsRequest
-    ): Future[GetTransitGatewayRegistrationsResponse] = service.getTransitGatewayRegistrations(params).promise.toFuture
+    ): Future[GetTransitGatewayRegistrationsResponse] =
+      service.getTransitGatewayRegistrations(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def registerTransitGatewayFuture(
         params: RegisterTransitGatewayRequest
-    ): Future[RegisterTransitGatewayResponse] = service.registerTransitGateway(params).promise.toFuture
+    ): Future[RegisterTransitGatewayResponse] = service.registerTransitGateway(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateDeviceFuture(params: UpdateDeviceRequest): Future[UpdateDeviceResponse] =
-      service.updateDevice(params).promise.toFuture
+      service.updateDevice(params).promise().toFuture
     @inline def updateGlobalNetworkFuture(params: UpdateGlobalNetworkRequest): Future[UpdateGlobalNetworkResponse] =
-      service.updateGlobalNetwork(params).promise.toFuture
+      service.updateGlobalNetwork(params).promise().toFuture
     @inline def updateLinkFuture(params: UpdateLinkRequest): Future[UpdateLinkResponse] =
-      service.updateLink(params).promise.toFuture
+      service.updateLink(params).promise().toFuture
     @inline def updateSiteFuture(params: UpdateSiteRequest): Future[UpdateSiteResponse] =
-      service.updateSite(params).promise.toFuture
+      service.updateSite(params).promise().toFuture
   }
 }
 

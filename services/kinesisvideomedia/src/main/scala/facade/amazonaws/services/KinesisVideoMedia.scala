@@ -18,7 +18,7 @@ package object kinesisvideomedia {
   implicit final class KinesisVideoMediaOps(private val service: KinesisVideoMedia) extends AnyVal {
 
     @inline def getMediaFuture(params: GetMediaInput): Future[GetMediaOutput] =
-      service.getMedia(params).promise.toFuture
+      service.getMedia(params).promise().toFuture
   }
 }
 

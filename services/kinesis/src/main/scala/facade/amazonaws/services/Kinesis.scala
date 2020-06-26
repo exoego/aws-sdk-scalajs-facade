@@ -51,63 +51,63 @@ package object kinesis {
   implicit final class KinesisOps(private val service: Kinesis) extends AnyVal {
 
     @inline def addTagsToStreamFuture(params: AddTagsToStreamInput): Future[js.Object] =
-      service.addTagsToStream(params).promise.toFuture
+      service.addTagsToStream(params).promise().toFuture
     @inline def createStreamFuture(params: CreateStreamInput): Future[js.Object] =
-      service.createStream(params).promise.toFuture
+      service.createStream(params).promise().toFuture
     @inline def decreaseStreamRetentionPeriodFuture(params: DecreaseStreamRetentionPeriodInput): Future[js.Object] =
-      service.decreaseStreamRetentionPeriod(params).promise.toFuture
+      service.decreaseStreamRetentionPeriod(params).promise().toFuture
     @inline def deleteStreamFuture(params: DeleteStreamInput): Future[js.Object] =
-      service.deleteStream(params).promise.toFuture
+      service.deleteStream(params).promise().toFuture
     @inline def deregisterStreamConsumerFuture(params: DeregisterStreamConsumerInput): Future[js.Object] =
-      service.deregisterStreamConsumer(params).promise.toFuture
+      service.deregisterStreamConsumer(params).promise().toFuture
     @inline def describeLimitsFuture(params: DescribeLimitsInput): Future[DescribeLimitsOutput] =
-      service.describeLimits(params).promise.toFuture
+      service.describeLimits(params).promise().toFuture
     @inline def describeStreamConsumerFuture(
         params: DescribeStreamConsumerInput
-    ): Future[DescribeStreamConsumerOutput] = service.describeStreamConsumer(params).promise.toFuture
+    ): Future[DescribeStreamConsumerOutput] = service.describeStreamConsumer(params).promise().toFuture
     @inline def describeStreamFuture(params: DescribeStreamInput): Future[DescribeStreamOutput] =
-      service.describeStream(params).promise.toFuture
+      service.describeStream(params).promise().toFuture
     @inline def describeStreamSummaryFuture(params: DescribeStreamSummaryInput): Future[DescribeStreamSummaryOutput] =
-      service.describeStreamSummary(params).promise.toFuture
+      service.describeStreamSummary(params).promise().toFuture
     @inline def disableEnhancedMonitoringFuture(
         params: DisableEnhancedMonitoringInput
-    ): Future[EnhancedMonitoringOutput] = service.disableEnhancedMonitoring(params).promise.toFuture
+    ): Future[EnhancedMonitoringOutput] = service.disableEnhancedMonitoring(params).promise().toFuture
     @inline def enableEnhancedMonitoringFuture(
         params: EnableEnhancedMonitoringInput
-    ): Future[EnhancedMonitoringOutput] = service.enableEnhancedMonitoring(params).promise.toFuture
+    ): Future[EnhancedMonitoringOutput] = service.enableEnhancedMonitoring(params).promise().toFuture
     @inline def getRecordsFuture(params: GetRecordsInput): Future[GetRecordsOutput] =
-      service.getRecords(params).promise.toFuture
+      service.getRecords(params).promise().toFuture
     @inline def getShardIteratorFuture(params: GetShardIteratorInput): Future[GetShardIteratorOutput] =
-      service.getShardIterator(params).promise.toFuture
+      service.getShardIterator(params).promise().toFuture
     @inline def increaseStreamRetentionPeriodFuture(params: IncreaseStreamRetentionPeriodInput): Future[js.Object] =
-      service.increaseStreamRetentionPeriod(params).promise.toFuture
+      service.increaseStreamRetentionPeriod(params).promise().toFuture
     @inline def listShardsFuture(params: ListShardsInput): Future[ListShardsOutput] =
-      service.listShards(params).promise.toFuture
+      service.listShards(params).promise().toFuture
     @inline def listStreamConsumersFuture(params: ListStreamConsumersInput): Future[ListStreamConsumersOutput] =
-      service.listStreamConsumers(params).promise.toFuture
+      service.listStreamConsumers(params).promise().toFuture
     @inline def listStreamsFuture(params: ListStreamsInput): Future[ListStreamsOutput] =
-      service.listStreams(params).promise.toFuture
+      service.listStreams(params).promise().toFuture
     @inline def listTagsForStreamFuture(params: ListTagsForStreamInput): Future[ListTagsForStreamOutput] =
-      service.listTagsForStream(params).promise.toFuture
+      service.listTagsForStream(params).promise().toFuture
     @inline def mergeShardsFuture(params: MergeShardsInput): Future[js.Object] =
-      service.mergeShards(params).promise.toFuture
+      service.mergeShards(params).promise().toFuture
     @inline def putRecordFuture(params: PutRecordInput): Future[PutRecordOutput] =
-      service.putRecord(params).promise.toFuture
+      service.putRecord(params).promise().toFuture
     @inline def putRecordsFuture(params: PutRecordsInput): Future[PutRecordsOutput] =
-      service.putRecords(params).promise.toFuture
+      service.putRecords(params).promise().toFuture
     @inline def registerStreamConsumerFuture(
         params: RegisterStreamConsumerInput
-    ): Future[RegisterStreamConsumerOutput] = service.registerStreamConsumer(params).promise.toFuture
+    ): Future[RegisterStreamConsumerOutput] = service.registerStreamConsumer(params).promise().toFuture
     @inline def removeTagsFromStreamFuture(params: RemoveTagsFromStreamInput): Future[js.Object] =
-      service.removeTagsFromStream(params).promise.toFuture
+      service.removeTagsFromStream(params).promise().toFuture
     @inline def splitShardFuture(params: SplitShardInput): Future[js.Object] =
-      service.splitShard(params).promise.toFuture
+      service.splitShard(params).promise().toFuture
     @inline def startStreamEncryptionFuture(params: StartStreamEncryptionInput): Future[js.Object] =
-      service.startStreamEncryption(params).promise.toFuture
+      service.startStreamEncryption(params).promise().toFuture
     @inline def stopStreamEncryptionFuture(params: StopStreamEncryptionInput): Future[js.Object] =
-      service.stopStreamEncryption(params).promise.toFuture
+      service.stopStreamEncryption(params).promise().toFuture
     @inline def updateShardCountFuture(params: UpdateShardCountInput): Future[UpdateShardCountOutput] =
-      service.updateShardCount(params).promise.toFuture
+      service.updateShardCount(params).promise().toFuture
   }
 }
 

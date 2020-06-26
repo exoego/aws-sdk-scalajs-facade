@@ -39,43 +39,44 @@ package object datapipeline {
   implicit final class DataPipelineOps(private val service: DataPipeline) extends AnyVal {
 
     @inline def activatePipelineFuture(params: ActivatePipelineInput): Future[ActivatePipelineOutput] =
-      service.activatePipeline(params).promise.toFuture
-    @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise.toFuture
+      service.activatePipeline(params).promise().toFuture
+    @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise().toFuture
     @inline def createPipelineFuture(params: CreatePipelineInput): Future[CreatePipelineOutput] =
-      service.createPipeline(params).promise.toFuture
+      service.createPipeline(params).promise().toFuture
     @inline def deactivatePipelineFuture(params: DeactivatePipelineInput): Future[DeactivatePipelineOutput] =
-      service.deactivatePipeline(params).promise.toFuture
+      service.deactivatePipeline(params).promise().toFuture
     @inline def deletePipelineFuture(params: DeletePipelineInput): Future[js.Object] =
-      service.deletePipeline(params).promise.toFuture
+      service.deletePipeline(params).promise().toFuture
     @inline def describeObjectsFuture(params: DescribeObjectsInput): Future[DescribeObjectsOutput] =
-      service.describeObjects(params).promise.toFuture
+      service.describeObjects(params).promise().toFuture
     @inline def describePipelinesFuture(params: DescribePipelinesInput): Future[DescribePipelinesOutput] =
-      service.describePipelines(params).promise.toFuture
+      service.describePipelines(params).promise().toFuture
     @inline def evaluateExpressionFuture(params: EvaluateExpressionInput): Future[EvaluateExpressionOutput] =
-      service.evaluateExpression(params).promise.toFuture
+      service.evaluateExpression(params).promise().toFuture
     @inline def getPipelineDefinitionFuture(params: GetPipelineDefinitionInput): Future[GetPipelineDefinitionOutput] =
-      service.getPipelineDefinition(params).promise.toFuture
+      service.getPipelineDefinition(params).promise().toFuture
     @inline def listPipelinesFuture(params: ListPipelinesInput): Future[ListPipelinesOutput] =
-      service.listPipelines(params).promise.toFuture
+      service.listPipelines(params).promise().toFuture
     @inline def pollForTaskFuture(params: PollForTaskInput): Future[PollForTaskOutput] =
-      service.pollForTask(params).promise.toFuture
+      service.pollForTask(params).promise().toFuture
     @inline def putPipelineDefinitionFuture(params: PutPipelineDefinitionInput): Future[PutPipelineDefinitionOutput] =
-      service.putPipelineDefinition(params).promise.toFuture
+      service.putPipelineDefinition(params).promise().toFuture
     @inline def queryObjectsFuture(params: QueryObjectsInput): Future[QueryObjectsOutput] =
-      service.queryObjects(params).promise.toFuture
+      service.queryObjects(params).promise().toFuture
     @inline def removeTagsFuture(params: RemoveTagsInput): Future[RemoveTagsOutput] =
-      service.removeTags(params).promise.toFuture
+      service.removeTags(params).promise().toFuture
     @inline def reportTaskProgressFuture(params: ReportTaskProgressInput): Future[ReportTaskProgressOutput] =
-      service.reportTaskProgress(params).promise.toFuture
+      service.reportTaskProgress(params).promise().toFuture
     @inline def reportTaskRunnerHeartbeatFuture(
         params: ReportTaskRunnerHeartbeatInput
-    ): Future[ReportTaskRunnerHeartbeatOutput]                             = service.reportTaskRunnerHeartbeat(params).promise.toFuture
-    @inline def setStatusFuture(params: SetStatusInput): Future[js.Object] = service.setStatus(params).promise.toFuture
+    ): Future[ReportTaskRunnerHeartbeatOutput] = service.reportTaskRunnerHeartbeat(params).promise().toFuture
+    @inline def setStatusFuture(params: SetStatusInput): Future[js.Object] =
+      service.setStatus(params).promise().toFuture
     @inline def setTaskStatusFuture(params: SetTaskStatusInput): Future[SetTaskStatusOutput] =
-      service.setTaskStatus(params).promise.toFuture
+      service.setTaskStatus(params).promise().toFuture
     @inline def validatePipelineDefinitionFuture(
         params: ValidatePipelineDefinitionInput
-    ): Future[ValidatePipelineDefinitionOutput] = service.validatePipelineDefinition(params).promise.toFuture
+    ): Future[ValidatePipelineDefinitionOutput] = service.validatePipelineDefinition(params).promise().toFuture
   }
 }
 

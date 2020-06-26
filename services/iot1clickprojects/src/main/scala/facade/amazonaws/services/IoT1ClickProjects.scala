@@ -38,40 +38,40 @@ package object iot1clickprojects {
 
     @inline def associateDeviceWithPlacementFuture(
         params: AssociateDeviceWithPlacementRequest
-    ): Future[AssociateDeviceWithPlacementResponse] = service.associateDeviceWithPlacement(params).promise.toFuture
+    ): Future[AssociateDeviceWithPlacementResponse] = service.associateDeviceWithPlacement(params).promise().toFuture
     @inline def createPlacementFuture(params: CreatePlacementRequest): Future[CreatePlacementResponse] =
-      service.createPlacement(params).promise.toFuture
+      service.createPlacement(params).promise().toFuture
     @inline def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResponse] =
-      service.createProject(params).promise.toFuture
+      service.createProject(params).promise().toFuture
     @inline def deletePlacementFuture(params: DeletePlacementRequest): Future[DeletePlacementResponse] =
-      service.deletePlacement(params).promise.toFuture
+      service.deletePlacement(params).promise().toFuture
     @inline def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResponse] =
-      service.deleteProject(params).promise.toFuture
+      service.deleteProject(params).promise().toFuture
     @inline def describePlacementFuture(params: DescribePlacementRequest): Future[DescribePlacementResponse] =
-      service.describePlacement(params).promise.toFuture
+      service.describePlacement(params).promise().toFuture
     @inline def describeProjectFuture(params: DescribeProjectRequest): Future[DescribeProjectResponse] =
-      service.describeProject(params).promise.toFuture
+      service.describeProject(params).promise().toFuture
     @inline def disassociateDeviceFromPlacementFuture(
         params: DisassociateDeviceFromPlacementRequest
     ): Future[DisassociateDeviceFromPlacementResponse] =
-      service.disassociateDeviceFromPlacement(params).promise.toFuture
+      service.disassociateDeviceFromPlacement(params).promise().toFuture
     @inline def getDevicesInPlacementFuture(
         params: GetDevicesInPlacementRequest
-    ): Future[GetDevicesInPlacementResponse] = service.getDevicesInPlacement(params).promise.toFuture
+    ): Future[GetDevicesInPlacementResponse] = service.getDevicesInPlacement(params).promise().toFuture
     @inline def listPlacementsFuture(params: ListPlacementsRequest): Future[ListPlacementsResponse] =
-      service.listPlacements(params).promise.toFuture
+      service.listPlacements(params).promise().toFuture
     @inline def listProjectsFuture(params: ListProjectsRequest): Future[ListProjectsResponse] =
-      service.listProjects(params).promise.toFuture
+      service.listProjects(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updatePlacementFuture(params: UpdatePlacementRequest): Future[UpdatePlacementResponse] =
-      service.updatePlacement(params).promise.toFuture
+      service.updatePlacement(params).promise().toFuture
     @inline def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResponse] =
-      service.updateProject(params).promise.toFuture
+      service.updateProject(params).promise().toFuture
   }
 }
 

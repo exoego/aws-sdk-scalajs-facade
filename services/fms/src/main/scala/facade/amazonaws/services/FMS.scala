@@ -42,40 +42,40 @@ package object fms {
   implicit final class FMSOps(private val service: FMS) extends AnyVal {
 
     @inline def associateAdminAccountFuture(params: AssociateAdminAccountRequest): Future[js.Object] =
-      service.associateAdminAccount(params).promise.toFuture
+      service.associateAdminAccount(params).promise().toFuture
     @inline def deleteNotificationChannelFuture(params: DeleteNotificationChannelRequest): Future[js.Object] =
-      service.deleteNotificationChannel(params).promise.toFuture
+      service.deleteNotificationChannel(params).promise().toFuture
     @inline def deletePolicyFuture(params: DeletePolicyRequest): Future[js.Object] =
-      service.deletePolicy(params).promise.toFuture
+      service.deletePolicy(params).promise().toFuture
     @inline def disassociateAdminAccountFuture(params: DisassociateAdminAccountRequest): Future[js.Object] =
-      service.disassociateAdminAccount(params).promise.toFuture
+      service.disassociateAdminAccount(params).promise().toFuture
     @inline def getAdminAccountFuture(params: GetAdminAccountRequest): Future[GetAdminAccountResponse] =
-      service.getAdminAccount(params).promise.toFuture
+      service.getAdminAccount(params).promise().toFuture
     @inline def getComplianceDetailFuture(params: GetComplianceDetailRequest): Future[GetComplianceDetailResponse] =
-      service.getComplianceDetail(params).promise.toFuture
+      service.getComplianceDetail(params).promise().toFuture
     @inline def getNotificationChannelFuture(
         params: GetNotificationChannelRequest
-    ): Future[GetNotificationChannelResponse] = service.getNotificationChannel(params).promise.toFuture
+    ): Future[GetNotificationChannelResponse] = service.getNotificationChannel(params).promise().toFuture
     @inline def getPolicyFuture(params: GetPolicyRequest): Future[GetPolicyResponse] =
-      service.getPolicy(params).promise.toFuture
+      service.getPolicy(params).promise().toFuture
     @inline def getProtectionStatusFuture(params: GetProtectionStatusRequest): Future[GetProtectionStatusResponse] =
-      service.getProtectionStatus(params).promise.toFuture
+      service.getProtectionStatus(params).promise().toFuture
     @inline def listComplianceStatusFuture(params: ListComplianceStatusRequest): Future[ListComplianceStatusResponse] =
-      service.listComplianceStatus(params).promise.toFuture
+      service.listComplianceStatus(params).promise().toFuture
     @inline def listMemberAccountsFuture(params: ListMemberAccountsRequest): Future[ListMemberAccountsResponse] =
-      service.listMemberAccounts(params).promise.toFuture
+      service.listMemberAccounts(params).promise().toFuture
     @inline def listPoliciesFuture(params: ListPoliciesRequest): Future[ListPoliciesResponse] =
-      service.listPolicies(params).promise.toFuture
+      service.listPolicies(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def putNotificationChannelFuture(params: PutNotificationChannelRequest): Future[js.Object] =
-      service.putNotificationChannel(params).promise.toFuture
+      service.putNotificationChannel(params).promise().toFuture
     @inline def putPolicyFuture(params: PutPolicyRequest): Future[PutPolicyResponse] =
-      service.putPolicy(params).promise.toFuture
+      service.putPolicy(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
   }
 }
 

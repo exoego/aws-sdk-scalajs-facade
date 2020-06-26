@@ -70,72 +70,73 @@ package object eventbridge {
   implicit final class EventBridgeOps(private val service: EventBridge) extends AnyVal {
 
     @inline def activateEventSourceFuture(params: ActivateEventSourceRequest): Future[js.Object] =
-      service.activateEventSource(params).promise.toFuture
+      service.activateEventSource(params).promise().toFuture
     @inline def createEventBusFuture(params: CreateEventBusRequest): Future[CreateEventBusResponse] =
-      service.createEventBus(params).promise.toFuture
+      service.createEventBus(params).promise().toFuture
     @inline def createPartnerEventSourceFuture(
         params: CreatePartnerEventSourceRequest
-    ): Future[CreatePartnerEventSourceResponse] = service.createPartnerEventSource(params).promise.toFuture
+    ): Future[CreatePartnerEventSourceResponse] = service.createPartnerEventSource(params).promise().toFuture
     @inline def deactivateEventSourceFuture(params: DeactivateEventSourceRequest): Future[js.Object] =
-      service.deactivateEventSource(params).promise.toFuture
+      service.deactivateEventSource(params).promise().toFuture
     @inline def deleteEventBusFuture(params: DeleteEventBusRequest): Future[js.Object] =
-      service.deleteEventBus(params).promise.toFuture
+      service.deleteEventBus(params).promise().toFuture
     @inline def deletePartnerEventSourceFuture(params: DeletePartnerEventSourceRequest): Future[js.Object] =
-      service.deletePartnerEventSource(params).promise.toFuture
+      service.deletePartnerEventSource(params).promise().toFuture
     @inline def deleteRuleFuture(params: DeleteRuleRequest): Future[js.Object] =
-      service.deleteRule(params).promise.toFuture
+      service.deleteRule(params).promise().toFuture
     @inline def describeEventBusFuture(params: DescribeEventBusRequest): Future[DescribeEventBusResponse] =
-      service.describeEventBus(params).promise.toFuture
+      service.describeEventBus(params).promise().toFuture
     @inline def describeEventSourceFuture(params: DescribeEventSourceRequest): Future[DescribeEventSourceResponse] =
-      service.describeEventSource(params).promise.toFuture
+      service.describeEventSource(params).promise().toFuture
     @inline def describePartnerEventSourceFuture(
         params: DescribePartnerEventSourceRequest
-    ): Future[DescribePartnerEventSourceResponse] = service.describePartnerEventSource(params).promise.toFuture
+    ): Future[DescribePartnerEventSourceResponse] = service.describePartnerEventSource(params).promise().toFuture
     @inline def describeRuleFuture(params: DescribeRuleRequest): Future[DescribeRuleResponse] =
-      service.describeRule(params).promise.toFuture
+      service.describeRule(params).promise().toFuture
     @inline def disableRuleFuture(params: DisableRuleRequest): Future[js.Object] =
-      service.disableRule(params).promise.toFuture
+      service.disableRule(params).promise().toFuture
     @inline def enableRuleFuture(params: EnableRuleRequest): Future[js.Object] =
-      service.enableRule(params).promise.toFuture
+      service.enableRule(params).promise().toFuture
     @inline def listEventBusesFuture(params: ListEventBusesRequest): Future[ListEventBusesResponse] =
-      service.listEventBuses(params).promise.toFuture
+      service.listEventBuses(params).promise().toFuture
     @inline def listEventSourcesFuture(params: ListEventSourcesRequest): Future[ListEventSourcesResponse] =
-      service.listEventSources(params).promise.toFuture
+      service.listEventSources(params).promise().toFuture
     @inline def listPartnerEventSourceAccountsFuture(
         params: ListPartnerEventSourceAccountsRequest
-    ): Future[ListPartnerEventSourceAccountsResponse] = service.listPartnerEventSourceAccounts(params).promise.toFuture
+    ): Future[ListPartnerEventSourceAccountsResponse] =
+      service.listPartnerEventSourceAccounts(params).promise().toFuture
     @inline def listPartnerEventSourcesFuture(
         params: ListPartnerEventSourcesRequest
-    ): Future[ListPartnerEventSourcesResponse] = service.listPartnerEventSources(params).promise.toFuture
+    ): Future[ListPartnerEventSourcesResponse] = service.listPartnerEventSources(params).promise().toFuture
     @inline def listRuleNamesByTargetFuture(
         params: ListRuleNamesByTargetRequest
-    ): Future[ListRuleNamesByTargetResponse] = service.listRuleNamesByTarget(params).promise.toFuture
+    ): Future[ListRuleNamesByTargetResponse] = service.listRuleNamesByTarget(params).promise().toFuture
     @inline def listRulesFuture(params: ListRulesRequest): Future[ListRulesResponse] =
-      service.listRules(params).promise.toFuture
+      service.listRules(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def listTargetsByRuleFuture(params: ListTargetsByRuleRequest): Future[ListTargetsByRuleResponse] =
-      service.listTargetsByRule(params).promise.toFuture
+      service.listTargetsByRule(params).promise().toFuture
     @inline def putEventsFuture(params: PutEventsRequest): Future[PutEventsResponse] =
-      service.putEvents(params).promise.toFuture
+      service.putEvents(params).promise().toFuture
     @inline def putPartnerEventsFuture(params: PutPartnerEventsRequest): Future[PutPartnerEventsResponse] =
-      service.putPartnerEvents(params).promise.toFuture
+      service.putPartnerEvents(params).promise().toFuture
     @inline def putPermissionFuture(params: PutPermissionRequest): Future[js.Object] =
-      service.putPermission(params).promise.toFuture
+      service.putPermission(params).promise().toFuture
     @inline def putRuleFuture(params: PutRuleRequest): Future[PutRuleResponse] =
-      service.putRule(params).promise.toFuture
+      service.putRule(params).promise().toFuture
     @inline def putTargetsFuture(params: PutTargetsRequest): Future[PutTargetsResponse] =
-      service.putTargets(params).promise.toFuture
+      service.putTargets(params).promise().toFuture
     @inline def removePermissionFuture(params: RemovePermissionRequest): Future[js.Object] =
-      service.removePermission(params).promise.toFuture
+      service.removePermission(params).promise().toFuture
     @inline def removeTargetsFuture(params: RemoveTargetsRequest): Future[RemoveTargetsResponse] =
-      service.removeTargets(params).promise.toFuture
+      service.removeTargets(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def testEventPatternFuture(params: TestEventPatternRequest): Future[TestEventPatternResponse] =
-      service.testEventPattern(params).promise.toFuture
+      service.testEventPattern(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
   }
 }
 

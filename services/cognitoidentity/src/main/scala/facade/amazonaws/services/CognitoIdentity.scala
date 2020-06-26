@@ -56,51 +56,51 @@ package object cognitoidentity {
   implicit final class CognitoIdentityOps(private val service: CognitoIdentity) extends AnyVal {
 
     @inline def createIdentityPoolFuture(params: CreateIdentityPoolInput): Future[IdentityPool] =
-      service.createIdentityPool(params).promise.toFuture
+      service.createIdentityPool(params).promise().toFuture
     @inline def deleteIdentitiesFuture(params: DeleteIdentitiesInput): Future[DeleteIdentitiesResponse] =
-      service.deleteIdentities(params).promise.toFuture
+      service.deleteIdentities(params).promise().toFuture
     @inline def deleteIdentityPoolFuture(params: DeleteIdentityPoolInput): Future[js.Object] =
-      service.deleteIdentityPool(params).promise.toFuture
+      service.deleteIdentityPool(params).promise().toFuture
     @inline def describeIdentityFuture(params: DescribeIdentityInput): Future[IdentityDescription] =
-      service.describeIdentity(params).promise.toFuture
+      service.describeIdentity(params).promise().toFuture
     @inline def describeIdentityPoolFuture(params: DescribeIdentityPoolInput): Future[IdentityPool] =
-      service.describeIdentityPool(params).promise.toFuture
+      service.describeIdentityPool(params).promise().toFuture
     @inline def getCredentialsForIdentityFuture(
         params: GetCredentialsForIdentityInput
-    ): Future[GetCredentialsForIdentityResponse]                       = service.getCredentialsForIdentity(params).promise.toFuture
-    @inline def getIdFuture(params: GetIdInput): Future[GetIdResponse] = service.getId(params).promise.toFuture
+    ): Future[GetCredentialsForIdentityResponse]                       = service.getCredentialsForIdentity(params).promise().toFuture
+    @inline def getIdFuture(params: GetIdInput): Future[GetIdResponse] = service.getId(params).promise().toFuture
     @inline def getIdentityPoolRolesFuture(params: GetIdentityPoolRolesInput): Future[GetIdentityPoolRolesResponse] =
-      service.getIdentityPoolRoles(params).promise.toFuture
+      service.getIdentityPoolRoles(params).promise().toFuture
     @inline def getOpenIdTokenForDeveloperIdentityFuture(
         params: GetOpenIdTokenForDeveloperIdentityInput
     ): Future[GetOpenIdTokenForDeveloperIdentityResponse] =
-      service.getOpenIdTokenForDeveloperIdentity(params).promise.toFuture
+      service.getOpenIdTokenForDeveloperIdentity(params).promise().toFuture
     @inline def getOpenIdTokenFuture(params: GetOpenIdTokenInput): Future[GetOpenIdTokenResponse] =
-      service.getOpenIdToken(params).promise.toFuture
+      service.getOpenIdToken(params).promise().toFuture
     @inline def listIdentitiesFuture(params: ListIdentitiesInput): Future[ListIdentitiesResponse] =
-      service.listIdentities(params).promise.toFuture
+      service.listIdentities(params).promise().toFuture
     @inline def listIdentityPoolsFuture(params: ListIdentityPoolsInput): Future[ListIdentityPoolsResponse] =
-      service.listIdentityPools(params).promise.toFuture
+      service.listIdentityPools(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def lookupDeveloperIdentityFuture(
         params: LookupDeveloperIdentityInput
-    ): Future[LookupDeveloperIdentityResponse] = service.lookupDeveloperIdentity(params).promise.toFuture
+    ): Future[LookupDeveloperIdentityResponse] = service.lookupDeveloperIdentity(params).promise().toFuture
     @inline def mergeDeveloperIdentitiesFuture(
         params: MergeDeveloperIdentitiesInput
-    ): Future[MergeDeveloperIdentitiesResponse] = service.mergeDeveloperIdentities(params).promise.toFuture
+    ): Future[MergeDeveloperIdentitiesResponse] = service.mergeDeveloperIdentities(params).promise().toFuture
     @inline def setIdentityPoolRolesFuture(params: SetIdentityPoolRolesInput): Future[js.Object] =
-      service.setIdentityPoolRoles(params).promise.toFuture
+      service.setIdentityPoolRoles(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def unlinkDeveloperIdentityFuture(params: UnlinkDeveloperIdentityInput): Future[js.Object] =
-      service.unlinkDeveloperIdentity(params).promise.toFuture
+      service.unlinkDeveloperIdentity(params).promise().toFuture
     @inline def unlinkIdentityFuture(params: UnlinkIdentityInput): Future[js.Object] =
-      service.unlinkIdentity(params).promise.toFuture
+      service.unlinkIdentity(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateIdentityPoolFuture(params: IdentityPool): Future[IdentityPool] =
-      service.updateIdentityPool(params).promise.toFuture
+      service.updateIdentityPool(params).promise().toFuture
   }
 }
 

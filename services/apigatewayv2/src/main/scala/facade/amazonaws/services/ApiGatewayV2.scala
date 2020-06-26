@@ -59,134 +59,134 @@ package object apigatewayv2 {
   implicit final class ApiGatewayV2Ops(private val service: ApiGatewayV2) extends AnyVal {
 
     @inline def createApiFuture(params: CreateApiRequest): Future[CreateApiResponse] =
-      service.createApi(params).promise.toFuture
+      service.createApi(params).promise().toFuture
     @inline def createApiMappingFuture(params: CreateApiMappingRequest): Future[CreateApiMappingResponse] =
-      service.createApiMapping(params).promise.toFuture
+      service.createApiMapping(params).promise().toFuture
     @inline def createAuthorizerFuture(params: CreateAuthorizerRequest): Future[CreateAuthorizerResponse] =
-      service.createAuthorizer(params).promise.toFuture
+      service.createAuthorizer(params).promise().toFuture
     @inline def createDeploymentFuture(params: CreateDeploymentRequest): Future[CreateDeploymentResponse] =
-      service.createDeployment(params).promise.toFuture
+      service.createDeployment(params).promise().toFuture
     @inline def createDomainNameFuture(params: CreateDomainNameRequest): Future[CreateDomainNameResponse] =
-      service.createDomainName(params).promise.toFuture
+      service.createDomainName(params).promise().toFuture
     @inline def createIntegrationFuture(params: CreateIntegrationRequest): Future[CreateIntegrationResult] =
-      service.createIntegration(params).promise.toFuture
+      service.createIntegration(params).promise().toFuture
     @inline def createIntegrationResponseFuture(
         params: CreateIntegrationResponseRequest
-    ): Future[CreateIntegrationResponseResponse] = service.createIntegrationResponse(params).promise.toFuture
+    ): Future[CreateIntegrationResponseResponse] = service.createIntegrationResponse(params).promise().toFuture
     @inline def createModelFuture(params: CreateModelRequest): Future[CreateModelResponse] =
-      service.createModel(params).promise.toFuture
+      service.createModel(params).promise().toFuture
     @inline def createRouteFuture(params: CreateRouteRequest): Future[CreateRouteResult] =
-      service.createRoute(params).promise.toFuture
+      service.createRoute(params).promise().toFuture
     @inline def createRouteResponseFuture(params: CreateRouteResponseRequest): Future[CreateRouteResponseResponse] =
-      service.createRouteResponse(params).promise.toFuture
+      service.createRouteResponse(params).promise().toFuture
     @inline def createStageFuture(params: CreateStageRequest): Future[CreateStageResponse] =
-      service.createStage(params).promise.toFuture
+      service.createStage(params).promise().toFuture
     @inline def deleteApiFuture(params: DeleteApiRequest): Future[js.Object] =
-      service.deleteApi(params).promise.toFuture
+      service.deleteApi(params).promise().toFuture
     @inline def deleteApiMappingFuture(params: DeleteApiMappingRequest): Future[js.Object] =
-      service.deleteApiMapping(params).promise.toFuture
+      service.deleteApiMapping(params).promise().toFuture
     @inline def deleteAuthorizerFuture(params: DeleteAuthorizerRequest): Future[js.Object] =
-      service.deleteAuthorizer(params).promise.toFuture
+      service.deleteAuthorizer(params).promise().toFuture
     @inline def deleteCorsConfigurationFuture(params: DeleteCorsConfigurationRequest): Future[js.Object] =
-      service.deleteCorsConfiguration(params).promise.toFuture
+      service.deleteCorsConfiguration(params).promise().toFuture
     @inline def deleteDeploymentFuture(params: DeleteDeploymentRequest): Future[js.Object] =
-      service.deleteDeployment(params).promise.toFuture
+      service.deleteDeployment(params).promise().toFuture
     @inline def deleteDomainNameFuture(params: DeleteDomainNameRequest): Future[js.Object] =
-      service.deleteDomainName(params).promise.toFuture
+      service.deleteDomainName(params).promise().toFuture
     @inline def deleteIntegrationFuture(params: DeleteIntegrationRequest): Future[js.Object] =
-      service.deleteIntegration(params).promise.toFuture
+      service.deleteIntegration(params).promise().toFuture
     @inline def deleteIntegrationResponseFuture(params: DeleteIntegrationResponseRequest): Future[js.Object] =
-      service.deleteIntegrationResponse(params).promise.toFuture
+      service.deleteIntegrationResponse(params).promise().toFuture
     @inline def deleteModelFuture(params: DeleteModelRequest): Future[js.Object] =
-      service.deleteModel(params).promise.toFuture
+      service.deleteModel(params).promise().toFuture
     @inline def deleteRouteFuture(params: DeleteRouteRequest): Future[js.Object] =
-      service.deleteRoute(params).promise.toFuture
+      service.deleteRoute(params).promise().toFuture
     @inline def deleteRouteResponseFuture(params: DeleteRouteResponseRequest): Future[js.Object] =
-      service.deleteRouteResponse(params).promise.toFuture
+      service.deleteRouteResponse(params).promise().toFuture
     @inline def deleteRouteSettingsFuture(params: DeleteRouteSettingsRequest): Future[js.Object] =
-      service.deleteRouteSettings(params).promise.toFuture
+      service.deleteRouteSettings(params).promise().toFuture
     @inline def deleteStageFuture(params: DeleteStageRequest): Future[js.Object] =
-      service.deleteStage(params).promise.toFuture
-    @inline def getApiFuture(params: GetApiRequest): Future[GetApiResponse] = service.getApi(params).promise.toFuture
+      service.deleteStage(params).promise().toFuture
+    @inline def getApiFuture(params: GetApiRequest): Future[GetApiResponse] = service.getApi(params).promise().toFuture
     @inline def getApiMappingFuture(params: GetApiMappingRequest): Future[GetApiMappingResponse] =
-      service.getApiMapping(params).promise.toFuture
+      service.getApiMapping(params).promise().toFuture
     @inline def getApiMappingsFuture(params: GetApiMappingsRequest): Future[GetApiMappingsResponse] =
-      service.getApiMappings(params).promise.toFuture
+      service.getApiMappings(params).promise().toFuture
     @inline def getApisFuture(params: GetApisRequest): Future[GetApisResponse] =
-      service.getApis(params).promise.toFuture
+      service.getApis(params).promise().toFuture
     @inline def getAuthorizerFuture(params: GetAuthorizerRequest): Future[GetAuthorizerResponse] =
-      service.getAuthorizer(params).promise.toFuture
+      service.getAuthorizer(params).promise().toFuture
     @inline def getAuthorizersFuture(params: GetAuthorizersRequest): Future[GetAuthorizersResponse] =
-      service.getAuthorizers(params).promise.toFuture
+      service.getAuthorizers(params).promise().toFuture
     @inline def getDeploymentFuture(params: GetDeploymentRequest): Future[GetDeploymentResponse] =
-      service.getDeployment(params).promise.toFuture
+      service.getDeployment(params).promise().toFuture
     @inline def getDeploymentsFuture(params: GetDeploymentsRequest): Future[GetDeploymentsResponse] =
-      service.getDeployments(params).promise.toFuture
+      service.getDeployments(params).promise().toFuture
     @inline def getDomainNameFuture(params: GetDomainNameRequest): Future[GetDomainNameResponse] =
-      service.getDomainName(params).promise.toFuture
+      service.getDomainName(params).promise().toFuture
     @inline def getDomainNamesFuture(params: GetDomainNamesRequest): Future[GetDomainNamesResponse] =
-      service.getDomainNames(params).promise.toFuture
+      service.getDomainNames(params).promise().toFuture
     @inline def getIntegrationFuture(params: GetIntegrationRequest): Future[GetIntegrationResult] =
-      service.getIntegration(params).promise.toFuture
+      service.getIntegration(params).promise().toFuture
     @inline def getIntegrationResponseFuture(
         params: GetIntegrationResponseRequest
-    ): Future[GetIntegrationResponseResponse] = service.getIntegrationResponse(params).promise.toFuture
+    ): Future[GetIntegrationResponseResponse] = service.getIntegrationResponse(params).promise().toFuture
     @inline def getIntegrationResponsesFuture(
         params: GetIntegrationResponsesRequest
-    ): Future[GetIntegrationResponsesResponse] = service.getIntegrationResponses(params).promise.toFuture
+    ): Future[GetIntegrationResponsesResponse] = service.getIntegrationResponses(params).promise().toFuture
     @inline def getIntegrationsFuture(params: GetIntegrationsRequest): Future[GetIntegrationsResponse] =
-      service.getIntegrations(params).promise.toFuture
+      service.getIntegrations(params).promise().toFuture
     @inline def getModelFuture(params: GetModelRequest): Future[GetModelResponse] =
-      service.getModel(params).promise.toFuture
+      service.getModel(params).promise().toFuture
     @inline def getModelTemplateFuture(params: GetModelTemplateRequest): Future[GetModelTemplateResponse] =
-      service.getModelTemplate(params).promise.toFuture
+      service.getModelTemplate(params).promise().toFuture
     @inline def getModelsFuture(params: GetModelsRequest): Future[GetModelsResponse] =
-      service.getModels(params).promise.toFuture
+      service.getModels(params).promise().toFuture
     @inline def getRouteFuture(params: GetRouteRequest): Future[GetRouteResult] =
-      service.getRoute(params).promise.toFuture
+      service.getRoute(params).promise().toFuture
     @inline def getRouteResponseFuture(params: GetRouteResponseRequest): Future[GetRouteResponseResponse] =
-      service.getRouteResponse(params).promise.toFuture
+      service.getRouteResponse(params).promise().toFuture
     @inline def getRouteResponsesFuture(params: GetRouteResponsesRequest): Future[GetRouteResponsesResponse] =
-      service.getRouteResponses(params).promise.toFuture
+      service.getRouteResponses(params).promise().toFuture
     @inline def getRoutesFuture(params: GetRoutesRequest): Future[GetRoutesResponse] =
-      service.getRoutes(params).promise.toFuture
+      service.getRoutes(params).promise().toFuture
     @inline def getStageFuture(params: GetStageRequest): Future[GetStageResponse] =
-      service.getStage(params).promise.toFuture
+      service.getStage(params).promise().toFuture
     @inline def getStagesFuture(params: GetStagesRequest): Future[GetStagesResponse] =
-      service.getStages(params).promise.toFuture
+      service.getStages(params).promise().toFuture
     @inline def getTagsFuture(params: GetTagsRequest): Future[GetTagsResponse] =
-      service.getTags(params).promise.toFuture
+      service.getTags(params).promise().toFuture
     @inline def importApiFuture(params: ImportApiRequest): Future[ImportApiResponse] =
-      service.importApi(params).promise.toFuture
+      service.importApi(params).promise().toFuture
     @inline def reimportApiFuture(params: ReimportApiRequest): Future[ReimportApiResponse] =
-      service.reimportApi(params).promise.toFuture
+      service.reimportApi(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateApiFuture(params: UpdateApiRequest): Future[UpdateApiResponse] =
-      service.updateApi(params).promise.toFuture
+      service.updateApi(params).promise().toFuture
     @inline def updateApiMappingFuture(params: UpdateApiMappingRequest): Future[UpdateApiMappingResponse] =
-      service.updateApiMapping(params).promise.toFuture
+      service.updateApiMapping(params).promise().toFuture
     @inline def updateAuthorizerFuture(params: UpdateAuthorizerRequest): Future[UpdateAuthorizerResponse] =
-      service.updateAuthorizer(params).promise.toFuture
+      service.updateAuthorizer(params).promise().toFuture
     @inline def updateDeploymentFuture(params: UpdateDeploymentRequest): Future[UpdateDeploymentResponse] =
-      service.updateDeployment(params).promise.toFuture
+      service.updateDeployment(params).promise().toFuture
     @inline def updateDomainNameFuture(params: UpdateDomainNameRequest): Future[UpdateDomainNameResponse] =
-      service.updateDomainName(params).promise.toFuture
+      service.updateDomainName(params).promise().toFuture
     @inline def updateIntegrationFuture(params: UpdateIntegrationRequest): Future[UpdateIntegrationResult] =
-      service.updateIntegration(params).promise.toFuture
+      service.updateIntegration(params).promise().toFuture
     @inline def updateIntegrationResponseFuture(
         params: UpdateIntegrationResponseRequest
-    ): Future[UpdateIntegrationResponseResponse] = service.updateIntegrationResponse(params).promise.toFuture
+    ): Future[UpdateIntegrationResponseResponse] = service.updateIntegrationResponse(params).promise().toFuture
     @inline def updateModelFuture(params: UpdateModelRequest): Future[UpdateModelResponse] =
-      service.updateModel(params).promise.toFuture
+      service.updateModel(params).promise().toFuture
     @inline def updateRouteFuture(params: UpdateRouteRequest): Future[UpdateRouteResult] =
-      service.updateRoute(params).promise.toFuture
+      service.updateRoute(params).promise().toFuture
     @inline def updateRouteResponseFuture(params: UpdateRouteResponseRequest): Future[UpdateRouteResponseResponse] =
-      service.updateRouteResponse(params).promise.toFuture
+      service.updateRouteResponse(params).promise().toFuture
     @inline def updateStageFuture(params: UpdateStageRequest): Future[UpdateStageResponse] =
-      service.updateStage(params).promise.toFuture
+      service.updateStage(params).promise().toFuture
   }
 }
 

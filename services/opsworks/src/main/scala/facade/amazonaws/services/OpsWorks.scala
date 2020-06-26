@@ -55,159 +55,159 @@ package object opsworks {
   implicit final class OpsWorksOps(private val service: OpsWorks) extends AnyVal {
 
     @inline def assignInstanceFuture(params: AssignInstanceRequest): Future[js.Object] =
-      service.assignInstance(params).promise.toFuture
+      service.assignInstance(params).promise().toFuture
     @inline def assignVolumeFuture(params: AssignVolumeRequest): Future[js.Object] =
-      service.assignVolume(params).promise.toFuture
+      service.assignVolume(params).promise().toFuture
     @inline def associateElasticIpFuture(params: AssociateElasticIpRequest): Future[js.Object] =
-      service.associateElasticIp(params).promise.toFuture
+      service.associateElasticIp(params).promise().toFuture
     @inline def attachElasticLoadBalancerFuture(params: AttachElasticLoadBalancerRequest): Future[js.Object] =
-      service.attachElasticLoadBalancer(params).promise.toFuture
+      service.attachElasticLoadBalancer(params).promise().toFuture
     @inline def cloneStackFuture(params: CloneStackRequest): Future[CloneStackResult] =
-      service.cloneStack(params).promise.toFuture
+      service.cloneStack(params).promise().toFuture
     @inline def createAppFuture(params: CreateAppRequest): Future[CreateAppResult] =
-      service.createApp(params).promise.toFuture
+      service.createApp(params).promise().toFuture
     @inline def createDeploymentFuture(params: CreateDeploymentRequest): Future[CreateDeploymentResult] =
-      service.createDeployment(params).promise.toFuture
+      service.createDeployment(params).promise().toFuture
     @inline def createInstanceFuture(params: CreateInstanceRequest): Future[CreateInstanceResult] =
-      service.createInstance(params).promise.toFuture
+      service.createInstance(params).promise().toFuture
     @inline def createLayerFuture(params: CreateLayerRequest): Future[CreateLayerResult] =
-      service.createLayer(params).promise.toFuture
+      service.createLayer(params).promise().toFuture
     @inline def createStackFuture(params: CreateStackRequest): Future[CreateStackResult] =
-      service.createStack(params).promise.toFuture
+      service.createStack(params).promise().toFuture
     @inline def createUserProfileFuture(params: CreateUserProfileRequest): Future[CreateUserProfileResult] =
-      service.createUserProfile(params).promise.toFuture
+      service.createUserProfile(params).promise().toFuture
     @inline def deleteAppFuture(params: DeleteAppRequest): Future[js.Object] =
-      service.deleteApp(params).promise.toFuture
+      service.deleteApp(params).promise().toFuture
     @inline def deleteInstanceFuture(params: DeleteInstanceRequest): Future[js.Object] =
-      service.deleteInstance(params).promise.toFuture
+      service.deleteInstance(params).promise().toFuture
     @inline def deleteLayerFuture(params: DeleteLayerRequest): Future[js.Object] =
-      service.deleteLayer(params).promise.toFuture
+      service.deleteLayer(params).promise().toFuture
     @inline def deleteStackFuture(params: DeleteStackRequest): Future[js.Object] =
-      service.deleteStack(params).promise.toFuture
+      service.deleteStack(params).promise().toFuture
     @inline def deleteUserProfileFuture(params: DeleteUserProfileRequest): Future[js.Object] =
-      service.deleteUserProfile(params).promise.toFuture
+      service.deleteUserProfile(params).promise().toFuture
     @inline def deregisterEcsClusterFuture(params: DeregisterEcsClusterRequest): Future[js.Object] =
-      service.deregisterEcsCluster(params).promise.toFuture
+      service.deregisterEcsCluster(params).promise().toFuture
     @inline def deregisterElasticIpFuture(params: DeregisterElasticIpRequest): Future[js.Object] =
-      service.deregisterElasticIp(params).promise.toFuture
+      service.deregisterElasticIp(params).promise().toFuture
     @inline def deregisterInstanceFuture(params: DeregisterInstanceRequest): Future[js.Object] =
-      service.deregisterInstance(params).promise.toFuture
+      service.deregisterInstance(params).promise().toFuture
     @inline def deregisterRdsDbInstanceFuture(params: DeregisterRdsDbInstanceRequest): Future[js.Object] =
-      service.deregisterRdsDbInstance(params).promise.toFuture
+      service.deregisterRdsDbInstance(params).promise().toFuture
     @inline def deregisterVolumeFuture(params: DeregisterVolumeRequest): Future[js.Object] =
-      service.deregisterVolume(params).promise.toFuture
+      service.deregisterVolume(params).promise().toFuture
     @inline def describeAgentVersionsFuture(params: DescribeAgentVersionsRequest): Future[DescribeAgentVersionsResult] =
-      service.describeAgentVersions(params).promise.toFuture
+      service.describeAgentVersions(params).promise().toFuture
     @inline def describeAppsFuture(params: DescribeAppsRequest): Future[DescribeAppsResult] =
-      service.describeApps(params).promise.toFuture
+      service.describeApps(params).promise().toFuture
     @inline def describeCommandsFuture(params: DescribeCommandsRequest): Future[DescribeCommandsResult] =
-      service.describeCommands(params).promise.toFuture
+      service.describeCommands(params).promise().toFuture
     @inline def describeDeploymentsFuture(params: DescribeDeploymentsRequest): Future[DescribeDeploymentsResult] =
-      service.describeDeployments(params).promise.toFuture
+      service.describeDeployments(params).promise().toFuture
     @inline def describeEcsClustersFuture(params: DescribeEcsClustersRequest): Future[DescribeEcsClustersResult] =
-      service.describeEcsClusters(params).promise.toFuture
+      service.describeEcsClusters(params).promise().toFuture
     @inline def describeElasticIpsFuture(params: DescribeElasticIpsRequest): Future[DescribeElasticIpsResult] =
-      service.describeElasticIps(params).promise.toFuture
+      service.describeElasticIps(params).promise().toFuture
     @inline def describeElasticLoadBalancersFuture(
         params: DescribeElasticLoadBalancersRequest
-    ): Future[DescribeElasticLoadBalancersResult] = service.describeElasticLoadBalancers(params).promise.toFuture
+    ): Future[DescribeElasticLoadBalancersResult] = service.describeElasticLoadBalancers(params).promise().toFuture
     @inline def describeInstancesFuture(params: DescribeInstancesRequest): Future[DescribeInstancesResult] =
-      service.describeInstances(params).promise.toFuture
+      service.describeInstances(params).promise().toFuture
     @inline def describeLayersFuture(params: DescribeLayersRequest): Future[DescribeLayersResult] =
-      service.describeLayers(params).promise.toFuture
+      service.describeLayers(params).promise().toFuture
     @inline def describeLoadBasedAutoScalingFuture(
         params: DescribeLoadBasedAutoScalingRequest
-    ): Future[DescribeLoadBasedAutoScalingResult] = service.describeLoadBasedAutoScaling(params).promise.toFuture
+    ): Future[DescribeLoadBasedAutoScalingResult] = service.describeLoadBasedAutoScaling(params).promise().toFuture
     @inline def describeMyUserProfileFuture(): Future[DescribeMyUserProfileResult] =
-      service.describeMyUserProfile().promise.toFuture
+      service.describeMyUserProfile().promise().toFuture
     @inline def describeOperatingSystemsFuture(): Future[DescribeOperatingSystemsResponse] =
-      service.describeOperatingSystems().promise.toFuture
+      service.describeOperatingSystems().promise().toFuture
     @inline def describePermissionsFuture(params: DescribePermissionsRequest): Future[DescribePermissionsResult] =
-      service.describePermissions(params).promise.toFuture
+      service.describePermissions(params).promise().toFuture
     @inline def describeRaidArraysFuture(params: DescribeRaidArraysRequest): Future[DescribeRaidArraysResult] =
-      service.describeRaidArrays(params).promise.toFuture
+      service.describeRaidArrays(params).promise().toFuture
     @inline def describeRdsDbInstancesFuture(
         params: DescribeRdsDbInstancesRequest
-    ): Future[DescribeRdsDbInstancesResult] = service.describeRdsDbInstances(params).promise.toFuture
+    ): Future[DescribeRdsDbInstancesResult] = service.describeRdsDbInstances(params).promise().toFuture
     @inline def describeServiceErrorsFuture(params: DescribeServiceErrorsRequest): Future[DescribeServiceErrorsResult] =
-      service.describeServiceErrors(params).promise.toFuture
+      service.describeServiceErrors(params).promise().toFuture
     @inline def describeStackProvisioningParametersFuture(
         params: DescribeStackProvisioningParametersRequest
     ): Future[DescribeStackProvisioningParametersResult] =
-      service.describeStackProvisioningParameters(params).promise.toFuture
+      service.describeStackProvisioningParameters(params).promise().toFuture
     @inline def describeStackSummaryFuture(params: DescribeStackSummaryRequest): Future[DescribeStackSummaryResult] =
-      service.describeStackSummary(params).promise.toFuture
+      service.describeStackSummary(params).promise().toFuture
     @inline def describeStacksFuture(params: DescribeStacksRequest): Future[DescribeStacksResult] =
-      service.describeStacks(params).promise.toFuture
+      service.describeStacks(params).promise().toFuture
     @inline def describeTimeBasedAutoScalingFuture(
         params: DescribeTimeBasedAutoScalingRequest
-    ): Future[DescribeTimeBasedAutoScalingResult] = service.describeTimeBasedAutoScaling(params).promise.toFuture
+    ): Future[DescribeTimeBasedAutoScalingResult] = service.describeTimeBasedAutoScaling(params).promise().toFuture
     @inline def describeUserProfilesFuture(params: DescribeUserProfilesRequest): Future[DescribeUserProfilesResult] =
-      service.describeUserProfiles(params).promise.toFuture
+      service.describeUserProfiles(params).promise().toFuture
     @inline def describeVolumesFuture(params: DescribeVolumesRequest): Future[DescribeVolumesResult] =
-      service.describeVolumes(params).promise.toFuture
+      service.describeVolumes(params).promise().toFuture
     @inline def detachElasticLoadBalancerFuture(params: DetachElasticLoadBalancerRequest): Future[js.Object] =
-      service.detachElasticLoadBalancer(params).promise.toFuture
+      service.detachElasticLoadBalancer(params).promise().toFuture
     @inline def disassociateElasticIpFuture(params: DisassociateElasticIpRequest): Future[js.Object] =
-      service.disassociateElasticIp(params).promise.toFuture
+      service.disassociateElasticIp(params).promise().toFuture
     @inline def getHostnameSuggestionFuture(params: GetHostnameSuggestionRequest): Future[GetHostnameSuggestionResult] =
-      service.getHostnameSuggestion(params).promise.toFuture
+      service.getHostnameSuggestion(params).promise().toFuture
     @inline def grantAccessFuture(params: GrantAccessRequest): Future[GrantAccessResult] =
-      service.grantAccess(params).promise.toFuture
+      service.grantAccess(params).promise().toFuture
     @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResult] =
-      service.listTags(params).promise.toFuture
+      service.listTags(params).promise().toFuture
     @inline def rebootInstanceFuture(params: RebootInstanceRequest): Future[js.Object] =
-      service.rebootInstance(params).promise.toFuture
+      service.rebootInstance(params).promise().toFuture
     @inline def registerEcsClusterFuture(params: RegisterEcsClusterRequest): Future[RegisterEcsClusterResult] =
-      service.registerEcsCluster(params).promise.toFuture
+      service.registerEcsCluster(params).promise().toFuture
     @inline def registerElasticIpFuture(params: RegisterElasticIpRequest): Future[RegisterElasticIpResult] =
-      service.registerElasticIp(params).promise.toFuture
+      service.registerElasticIp(params).promise().toFuture
     @inline def registerInstanceFuture(params: RegisterInstanceRequest): Future[RegisterInstanceResult] =
-      service.registerInstance(params).promise.toFuture
+      service.registerInstance(params).promise().toFuture
     @inline def registerRdsDbInstanceFuture(params: RegisterRdsDbInstanceRequest): Future[js.Object] =
-      service.registerRdsDbInstance(params).promise.toFuture
+      service.registerRdsDbInstance(params).promise().toFuture
     @inline def registerVolumeFuture(params: RegisterVolumeRequest): Future[RegisterVolumeResult] =
-      service.registerVolume(params).promise.toFuture
+      service.registerVolume(params).promise().toFuture
     @inline def setLoadBasedAutoScalingFuture(params: SetLoadBasedAutoScalingRequest): Future[js.Object] =
-      service.setLoadBasedAutoScaling(params).promise.toFuture
+      service.setLoadBasedAutoScaling(params).promise().toFuture
     @inline def setPermissionFuture(params: SetPermissionRequest): Future[js.Object] =
-      service.setPermission(params).promise.toFuture
+      service.setPermission(params).promise().toFuture
     @inline def setTimeBasedAutoScalingFuture(params: SetTimeBasedAutoScalingRequest): Future[js.Object] =
-      service.setTimeBasedAutoScaling(params).promise.toFuture
+      service.setTimeBasedAutoScaling(params).promise().toFuture
     @inline def startInstanceFuture(params: StartInstanceRequest): Future[js.Object] =
-      service.startInstance(params).promise.toFuture
+      service.startInstance(params).promise().toFuture
     @inline def startStackFuture(params: StartStackRequest): Future[js.Object] =
-      service.startStack(params).promise.toFuture
+      service.startStack(params).promise().toFuture
     @inline def stopInstanceFuture(params: StopInstanceRequest): Future[js.Object] =
-      service.stopInstance(params).promise.toFuture
+      service.stopInstance(params).promise().toFuture
     @inline def stopStackFuture(params: StopStackRequest): Future[js.Object] =
-      service.stopStack(params).promise.toFuture
+      service.stopStack(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def unassignInstanceFuture(params: UnassignInstanceRequest): Future[js.Object] =
-      service.unassignInstance(params).promise.toFuture
+      service.unassignInstance(params).promise().toFuture
     @inline def unassignVolumeFuture(params: UnassignVolumeRequest): Future[js.Object] =
-      service.unassignVolume(params).promise.toFuture
+      service.unassignVolume(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateAppFuture(params: UpdateAppRequest): Future[js.Object] =
-      service.updateApp(params).promise.toFuture
+      service.updateApp(params).promise().toFuture
     @inline def updateElasticIpFuture(params: UpdateElasticIpRequest): Future[js.Object] =
-      service.updateElasticIp(params).promise.toFuture
+      service.updateElasticIp(params).promise().toFuture
     @inline def updateInstanceFuture(params: UpdateInstanceRequest): Future[js.Object] =
-      service.updateInstance(params).promise.toFuture
+      service.updateInstance(params).promise().toFuture
     @inline def updateLayerFuture(params: UpdateLayerRequest): Future[js.Object] =
-      service.updateLayer(params).promise.toFuture
+      service.updateLayer(params).promise().toFuture
     @inline def updateMyUserProfileFuture(params: UpdateMyUserProfileRequest): Future[js.Object] =
-      service.updateMyUserProfile(params).promise.toFuture
+      service.updateMyUserProfile(params).promise().toFuture
     @inline def updateRdsDbInstanceFuture(params: UpdateRdsDbInstanceRequest): Future[js.Object] =
-      service.updateRdsDbInstance(params).promise.toFuture
+      service.updateRdsDbInstance(params).promise().toFuture
     @inline def updateStackFuture(params: UpdateStackRequest): Future[js.Object] =
-      service.updateStack(params).promise.toFuture
+      service.updateStack(params).promise().toFuture
     @inline def updateUserProfileFuture(params: UpdateUserProfileRequest): Future[js.Object] =
-      service.updateUserProfile(params).promise.toFuture
+      service.updateUserProfile(params).promise().toFuture
     @inline def updateVolumeFuture(params: UpdateVolumeRequest): Future[js.Object] =
-      service.updateVolume(params).promise.toFuture
+      service.updateVolume(params).promise().toFuture
   }
 }
 

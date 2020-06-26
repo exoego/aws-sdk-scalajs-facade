@@ -52,17 +52,17 @@ package object importexport {
   implicit final class ImportExportOps(private val service: ImportExport) extends AnyVal {
 
     @inline def cancelJobFuture(params: CancelJobInput): Future[CancelJobOutput] =
-      service.cancelJob(params).promise.toFuture
+      service.cancelJob(params).promise().toFuture
     @inline def createJobFuture(params: CreateJobInput): Future[CreateJobOutput] =
-      service.createJob(params).promise.toFuture
+      service.createJob(params).promise().toFuture
     @inline def getShippingLabelFuture(params: GetShippingLabelInput): Future[GetShippingLabelOutput] =
-      service.getShippingLabel(params).promise.toFuture
+      service.getShippingLabel(params).promise().toFuture
     @inline def getStatusFuture(params: GetStatusInput): Future[GetStatusOutput] =
-      service.getStatus(params).promise.toFuture
+      service.getStatus(params).promise().toFuture
     @inline def listJobsFuture(params: ListJobsInput): Future[ListJobsOutput] =
-      service.listJobs(params).promise.toFuture
+      service.listJobs(params).promise().toFuture
     @inline def updateJobFuture(params: UpdateJobInput): Future[UpdateJobOutput] =
-      service.updateJob(params).promise.toFuture
+      service.updateJob(params).promise().toFuture
   }
 }
 

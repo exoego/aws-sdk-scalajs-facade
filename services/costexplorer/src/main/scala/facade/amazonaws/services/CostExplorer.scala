@@ -89,59 +89,60 @@ package object costexplorer {
 
     @inline def createCostCategoryDefinitionFuture(
         params: CreateCostCategoryDefinitionRequest
-    ): Future[CreateCostCategoryDefinitionResponse] = service.createCostCategoryDefinition(params).promise.toFuture
+    ): Future[CreateCostCategoryDefinitionResponse] = service.createCostCategoryDefinition(params).promise().toFuture
     @inline def deleteCostCategoryDefinitionFuture(
         params: DeleteCostCategoryDefinitionRequest
-    ): Future[DeleteCostCategoryDefinitionResponse] = service.deleteCostCategoryDefinition(params).promise.toFuture
+    ): Future[DeleteCostCategoryDefinitionResponse] = service.deleteCostCategoryDefinition(params).promise().toFuture
     @inline def describeCostCategoryDefinitionFuture(
         params: DescribeCostCategoryDefinitionRequest
-    ): Future[DescribeCostCategoryDefinitionResponse] = service.describeCostCategoryDefinition(params).promise.toFuture
+    ): Future[DescribeCostCategoryDefinitionResponse] =
+      service.describeCostCategoryDefinition(params).promise().toFuture
     @inline def getCostAndUsageFuture(params: GetCostAndUsageRequest): Future[GetCostAndUsageResponse] =
-      service.getCostAndUsage(params).promise.toFuture
+      service.getCostAndUsage(params).promise().toFuture
     @inline def getCostAndUsageWithResourcesFuture(
         params: GetCostAndUsageWithResourcesRequest
-    ): Future[GetCostAndUsageWithResourcesResponse] = service.getCostAndUsageWithResources(params).promise.toFuture
+    ): Future[GetCostAndUsageWithResourcesResponse] = service.getCostAndUsageWithResources(params).promise().toFuture
     @inline def getCostForecastFuture(params: GetCostForecastRequest): Future[GetCostForecastResponse] =
-      service.getCostForecast(params).promise.toFuture
+      service.getCostForecast(params).promise().toFuture
     @inline def getDimensionValuesFuture(params: GetDimensionValuesRequest): Future[GetDimensionValuesResponse] =
-      service.getDimensionValues(params).promise.toFuture
+      service.getDimensionValues(params).promise().toFuture
     @inline def getReservationCoverageFuture(
         params: GetReservationCoverageRequest
-    ): Future[GetReservationCoverageResponse] = service.getReservationCoverage(params).promise.toFuture
+    ): Future[GetReservationCoverageResponse] = service.getReservationCoverage(params).promise().toFuture
     @inline def getReservationPurchaseRecommendationFuture(
         params: GetReservationPurchaseRecommendationRequest
     ): Future[GetReservationPurchaseRecommendationResponse] =
-      service.getReservationPurchaseRecommendation(params).promise.toFuture
+      service.getReservationPurchaseRecommendation(params).promise().toFuture
     @inline def getReservationUtilizationFuture(
         params: GetReservationUtilizationRequest
-    ): Future[GetReservationUtilizationResponse] = service.getReservationUtilization(params).promise.toFuture
+    ): Future[GetReservationUtilizationResponse] = service.getReservationUtilization(params).promise().toFuture
     @inline def getRightsizingRecommendationFuture(
         params: GetRightsizingRecommendationRequest
-    ): Future[GetRightsizingRecommendationResponse] = service.getRightsizingRecommendation(params).promise.toFuture
+    ): Future[GetRightsizingRecommendationResponse] = service.getRightsizingRecommendation(params).promise().toFuture
     @inline def getSavingsPlansCoverageFuture(
         params: GetSavingsPlansCoverageRequest
-    ): Future[GetSavingsPlansCoverageResponse] = service.getSavingsPlansCoverage(params).promise.toFuture
+    ): Future[GetSavingsPlansCoverageResponse] = service.getSavingsPlansCoverage(params).promise().toFuture
     @inline def getSavingsPlansPurchaseRecommendationFuture(
         params: GetSavingsPlansPurchaseRecommendationRequest
     ): Future[GetSavingsPlansPurchaseRecommendationResponse] =
-      service.getSavingsPlansPurchaseRecommendation(params).promise.toFuture
+      service.getSavingsPlansPurchaseRecommendation(params).promise().toFuture
     @inline def getSavingsPlansUtilizationDetailsFuture(
         params: GetSavingsPlansUtilizationDetailsRequest
     ): Future[GetSavingsPlansUtilizationDetailsResponse] =
-      service.getSavingsPlansUtilizationDetails(params).promise.toFuture
+      service.getSavingsPlansUtilizationDetails(params).promise().toFuture
     @inline def getSavingsPlansUtilizationFuture(
         params: GetSavingsPlansUtilizationRequest
-    ): Future[GetSavingsPlansUtilizationResponse] = service.getSavingsPlansUtilization(params).promise.toFuture
+    ): Future[GetSavingsPlansUtilizationResponse] = service.getSavingsPlansUtilization(params).promise().toFuture
     @inline def getTagsFuture(params: GetTagsRequest): Future[GetTagsResponse] =
-      service.getTags(params).promise.toFuture
+      service.getTags(params).promise().toFuture
     @inline def getUsageForecastFuture(params: GetUsageForecastRequest): Future[GetUsageForecastResponse] =
-      service.getUsageForecast(params).promise.toFuture
+      service.getUsageForecast(params).promise().toFuture
     @inline def listCostCategoryDefinitionsFuture(
         params: ListCostCategoryDefinitionsRequest
-    ): Future[ListCostCategoryDefinitionsResponse] = service.listCostCategoryDefinitions(params).promise.toFuture
+    ): Future[ListCostCategoryDefinitionsResponse] = service.listCostCategoryDefinitions(params).promise().toFuture
     @inline def updateCostCategoryDefinitionFuture(
         params: UpdateCostCategoryDefinitionRequest
-    ): Future[UpdateCostCategoryDefinitionResponse] = service.updateCostCategoryDefinition(params).promise.toFuture
+    ): Future[UpdateCostCategoryDefinitionResponse] = service.updateCostCategoryDefinition(params).promise().toFuture
   }
 }
 

@@ -43,49 +43,49 @@ package object servicediscovery {
   implicit final class ServiceDiscoveryOps(private val service: ServiceDiscovery) extends AnyVal {
 
     @inline def createHttpNamespaceFuture(params: CreateHttpNamespaceRequest): Future[CreateHttpNamespaceResponse] =
-      service.createHttpNamespace(params).promise.toFuture
+      service.createHttpNamespace(params).promise().toFuture
     @inline def createPrivateDnsNamespaceFuture(
         params: CreatePrivateDnsNamespaceRequest
-    ): Future[CreatePrivateDnsNamespaceResponse] = service.createPrivateDnsNamespace(params).promise.toFuture
+    ): Future[CreatePrivateDnsNamespaceResponse] = service.createPrivateDnsNamespace(params).promise().toFuture
     @inline def createPublicDnsNamespaceFuture(
         params: CreatePublicDnsNamespaceRequest
-    ): Future[CreatePublicDnsNamespaceResponse] = service.createPublicDnsNamespace(params).promise.toFuture
+    ): Future[CreatePublicDnsNamespaceResponse] = service.createPublicDnsNamespace(params).promise().toFuture
     @inline def createServiceFuture(params: CreateServiceRequest): Future[CreateServiceResponse] =
-      service.createService(params).promise.toFuture
+      service.createService(params).promise().toFuture
     @inline def deleteNamespaceFuture(params: DeleteNamespaceRequest): Future[DeleteNamespaceResponse] =
-      service.deleteNamespace(params).promise.toFuture
+      service.deleteNamespace(params).promise().toFuture
     @inline def deleteServiceFuture(params: DeleteServiceRequest): Future[DeleteServiceResponse] =
-      service.deleteService(params).promise.toFuture
+      service.deleteService(params).promise().toFuture
     @inline def deregisterInstanceFuture(params: DeregisterInstanceRequest): Future[DeregisterInstanceResponse] =
-      service.deregisterInstance(params).promise.toFuture
+      service.deregisterInstance(params).promise().toFuture
     @inline def discoverInstancesFuture(params: DiscoverInstancesRequest): Future[DiscoverInstancesResponse] =
-      service.discoverInstances(params).promise.toFuture
+      service.discoverInstances(params).promise().toFuture
     @inline def getInstanceFuture(params: GetInstanceRequest): Future[GetInstanceResponse] =
-      service.getInstance(params).promise.toFuture
+      service.getInstance(params).promise().toFuture
     @inline def getInstancesHealthStatusFuture(
         params: GetInstancesHealthStatusRequest
-    ): Future[GetInstancesHealthStatusResponse] = service.getInstancesHealthStatus(params).promise.toFuture
+    ): Future[GetInstancesHealthStatusResponse] = service.getInstancesHealthStatus(params).promise().toFuture
     @inline def getNamespaceFuture(params: GetNamespaceRequest): Future[GetNamespaceResponse] =
-      service.getNamespace(params).promise.toFuture
+      service.getNamespace(params).promise().toFuture
     @inline def getOperationFuture(params: GetOperationRequest): Future[GetOperationResponse] =
-      service.getOperation(params).promise.toFuture
+      service.getOperation(params).promise().toFuture
     @inline def getServiceFuture(params: GetServiceRequest): Future[GetServiceResponse] =
-      service.getService(params).promise.toFuture
+      service.getService(params).promise().toFuture
     @inline def listInstancesFuture(params: ListInstancesRequest): Future[ListInstancesResponse] =
-      service.listInstances(params).promise.toFuture
+      service.listInstances(params).promise().toFuture
     @inline def listNamespacesFuture(params: ListNamespacesRequest): Future[ListNamespacesResponse] =
-      service.listNamespaces(params).promise.toFuture
+      service.listNamespaces(params).promise().toFuture
     @inline def listOperationsFuture(params: ListOperationsRequest): Future[ListOperationsResponse] =
-      service.listOperations(params).promise.toFuture
+      service.listOperations(params).promise().toFuture
     @inline def listServicesFuture(params: ListServicesRequest): Future[ListServicesResponse] =
-      service.listServices(params).promise.toFuture
+      service.listServices(params).promise().toFuture
     @inline def registerInstanceFuture(params: RegisterInstanceRequest): Future[RegisterInstanceResponse] =
-      service.registerInstance(params).promise.toFuture
+      service.registerInstance(params).promise().toFuture
     @inline def updateInstanceCustomHealthStatusFuture(
         params: UpdateInstanceCustomHealthStatusRequest
-    ): Future[js.Object] = service.updateInstanceCustomHealthStatus(params).promise.toFuture
+    ): Future[js.Object] = service.updateInstanceCustomHealthStatus(params).promise().toFuture
     @inline def updateServiceFuture(params: UpdateServiceRequest): Future[UpdateServiceResponse] =
-      service.updateService(params).promise.toFuture
+      service.updateService(params).promise().toFuture
   }
 }
 

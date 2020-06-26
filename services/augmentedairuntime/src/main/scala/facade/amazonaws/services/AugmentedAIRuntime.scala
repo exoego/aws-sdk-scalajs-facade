@@ -21,15 +21,15 @@ package object augmentedairuntime {
   implicit final class AugmentedAIRuntimeOps(private val service: AugmentedAIRuntime) extends AnyVal {
 
     @inline def deleteHumanLoopFuture(params: DeleteHumanLoopRequest): Future[DeleteHumanLoopResponse] =
-      service.deleteHumanLoop(params).promise.toFuture
+      service.deleteHumanLoop(params).promise().toFuture
     @inline def describeHumanLoopFuture(params: DescribeHumanLoopRequest): Future[DescribeHumanLoopResponse] =
-      service.describeHumanLoop(params).promise.toFuture
+      service.describeHumanLoop(params).promise().toFuture
     @inline def listHumanLoopsFuture(params: ListHumanLoopsRequest): Future[ListHumanLoopsResponse] =
-      service.listHumanLoops(params).promise.toFuture
+      service.listHumanLoops(params).promise().toFuture
     @inline def startHumanLoopFuture(params: StartHumanLoopRequest): Future[StartHumanLoopResponse] =
-      service.startHumanLoop(params).promise.toFuture
+      service.startHumanLoop(params).promise().toFuture
     @inline def stopHumanLoopFuture(params: StopHumanLoopRequest): Future[StopHumanLoopResponse] =
-      service.stopHumanLoop(params).promise.toFuture
+      service.stopHumanLoop(params).promise().toFuture
   }
 }
 

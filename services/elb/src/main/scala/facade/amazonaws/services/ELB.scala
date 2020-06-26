@@ -85,87 +85,90 @@ package object elb {
 
   implicit final class ELBOps(private val service: ELB) extends AnyVal {
 
-    @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise.toFuture
+    @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise().toFuture
     @inline def applySecurityGroupsToLoadBalancerFuture(
         params: ApplySecurityGroupsToLoadBalancerInput
     ): Future[ApplySecurityGroupsToLoadBalancerOutput] =
-      service.applySecurityGroupsToLoadBalancer(params).promise.toFuture
+      service.applySecurityGroupsToLoadBalancer(params).promise().toFuture
     @inline def attachLoadBalancerToSubnetsFuture(
         params: AttachLoadBalancerToSubnetsInput
-    ): Future[AttachLoadBalancerToSubnetsOutput] = service.attachLoadBalancerToSubnets(params).promise.toFuture
+    ): Future[AttachLoadBalancerToSubnetsOutput] = service.attachLoadBalancerToSubnets(params).promise().toFuture
     @inline def configureHealthCheckFuture(params: ConfigureHealthCheckInput): Future[ConfigureHealthCheckOutput] =
-      service.configureHealthCheck(params).promise.toFuture
+      service.configureHealthCheck(params).promise().toFuture
     @inline def createAppCookieStickinessPolicyFuture(
         params: CreateAppCookieStickinessPolicyInput
-    ): Future[CreateAppCookieStickinessPolicyOutput] = service.createAppCookieStickinessPolicy(params).promise.toFuture
+    ): Future[CreateAppCookieStickinessPolicyOutput] =
+      service.createAppCookieStickinessPolicy(params).promise().toFuture
     @inline def createLBCookieStickinessPolicyFuture(
         params: CreateLBCookieStickinessPolicyInput
-    ): Future[CreateLBCookieStickinessPolicyOutput] = service.createLBCookieStickinessPolicy(params).promise.toFuture
+    ): Future[CreateLBCookieStickinessPolicyOutput] = service.createLBCookieStickinessPolicy(params).promise().toFuture
     @inline def createLoadBalancerFuture(params: CreateAccessPointInput): Future[CreateAccessPointOutput] =
-      service.createLoadBalancer(params).promise.toFuture
+      service.createLoadBalancer(params).promise().toFuture
     @inline def createLoadBalancerListenersFuture(
         params: CreateLoadBalancerListenerInput
-    ): Future[CreateLoadBalancerListenerOutput] = service.createLoadBalancerListeners(params).promise.toFuture
+    ): Future[CreateLoadBalancerListenerOutput] = service.createLoadBalancerListeners(params).promise().toFuture
     @inline def createLoadBalancerPolicyFuture(
         params: CreateLoadBalancerPolicyInput
-    ): Future[CreateLoadBalancerPolicyOutput] = service.createLoadBalancerPolicy(params).promise.toFuture
+    ): Future[CreateLoadBalancerPolicyOutput] = service.createLoadBalancerPolicy(params).promise().toFuture
     @inline def deleteLoadBalancerFuture(params: DeleteAccessPointInput): Future[DeleteAccessPointOutput] =
-      service.deleteLoadBalancer(params).promise.toFuture
+      service.deleteLoadBalancer(params).promise().toFuture
     @inline def deleteLoadBalancerListenersFuture(
         params: DeleteLoadBalancerListenerInput
-    ): Future[DeleteLoadBalancerListenerOutput] = service.deleteLoadBalancerListeners(params).promise.toFuture
+    ): Future[DeleteLoadBalancerListenerOutput] = service.deleteLoadBalancerListeners(params).promise().toFuture
     @inline def deleteLoadBalancerPolicyFuture(
         params: DeleteLoadBalancerPolicyInput
-    ): Future[DeleteLoadBalancerPolicyOutput] = service.deleteLoadBalancerPolicy(params).promise.toFuture
+    ): Future[DeleteLoadBalancerPolicyOutput] = service.deleteLoadBalancerPolicy(params).promise().toFuture
     @inline def deregisterInstancesFromLoadBalancerFuture(
         params: DeregisterEndPointsInput
-    ): Future[DeregisterEndPointsOutput] = service.deregisterInstancesFromLoadBalancer(params).promise.toFuture
+    ): Future[DeregisterEndPointsOutput] = service.deregisterInstancesFromLoadBalancer(params).promise().toFuture
     @inline def describeAccountLimitsFuture(params: DescribeAccountLimitsInput): Future[DescribeAccountLimitsOutput] =
-      service.describeAccountLimits(params).promise.toFuture
+      service.describeAccountLimits(params).promise().toFuture
     @inline def describeInstanceHealthFuture(params: DescribeEndPointStateInput): Future[DescribeEndPointStateOutput] =
-      service.describeInstanceHealth(params).promise.toFuture
+      service.describeInstanceHealth(params).promise().toFuture
     @inline def describeLoadBalancerAttributesFuture(
         params: DescribeLoadBalancerAttributesInput
-    ): Future[DescribeLoadBalancerAttributesOutput] = service.describeLoadBalancerAttributes(params).promise.toFuture
+    ): Future[DescribeLoadBalancerAttributesOutput] = service.describeLoadBalancerAttributes(params).promise().toFuture
     @inline def describeLoadBalancerPoliciesFuture(
         params: DescribeLoadBalancerPoliciesInput
-    ): Future[DescribeLoadBalancerPoliciesOutput] = service.describeLoadBalancerPolicies(params).promise.toFuture
+    ): Future[DescribeLoadBalancerPoliciesOutput] = service.describeLoadBalancerPolicies(params).promise().toFuture
     @inline def describeLoadBalancerPolicyTypesFuture(
         params: DescribeLoadBalancerPolicyTypesInput
-    ): Future[DescribeLoadBalancerPolicyTypesOutput] = service.describeLoadBalancerPolicyTypes(params).promise.toFuture
+    ): Future[DescribeLoadBalancerPolicyTypesOutput] =
+      service.describeLoadBalancerPolicyTypes(params).promise().toFuture
     @inline def describeLoadBalancersFuture(params: DescribeAccessPointsInput): Future[DescribeAccessPointsOutput] =
-      service.describeLoadBalancers(params).promise.toFuture
+      service.describeLoadBalancers(params).promise().toFuture
     @inline def describeTagsFuture(params: DescribeTagsInput): Future[DescribeTagsOutput] =
-      service.describeTags(params).promise.toFuture
+      service.describeTags(params).promise().toFuture
     @inline def detachLoadBalancerFromSubnetsFuture(
         params: DetachLoadBalancerFromSubnetsInput
-    ): Future[DetachLoadBalancerFromSubnetsOutput] = service.detachLoadBalancerFromSubnets(params).promise.toFuture
+    ): Future[DetachLoadBalancerFromSubnetsOutput] = service.detachLoadBalancerFromSubnets(params).promise().toFuture
     @inline def disableAvailabilityZonesForLoadBalancerFuture(
         params: RemoveAvailabilityZonesInput
-    ): Future[RemoveAvailabilityZonesOutput] = service.disableAvailabilityZonesForLoadBalancer(params).promise.toFuture
+    ): Future[RemoveAvailabilityZonesOutput] =
+      service.disableAvailabilityZonesForLoadBalancer(params).promise().toFuture
     @inline def enableAvailabilityZonesForLoadBalancerFuture(
         params: AddAvailabilityZonesInput
-    ): Future[AddAvailabilityZonesOutput] = service.enableAvailabilityZonesForLoadBalancer(params).promise.toFuture
+    ): Future[AddAvailabilityZonesOutput] = service.enableAvailabilityZonesForLoadBalancer(params).promise().toFuture
     @inline def modifyLoadBalancerAttributesFuture(
         params: ModifyLoadBalancerAttributesInput
-    ): Future[ModifyLoadBalancerAttributesOutput] = service.modifyLoadBalancerAttributes(params).promise.toFuture
+    ): Future[ModifyLoadBalancerAttributesOutput] = service.modifyLoadBalancerAttributes(params).promise().toFuture
     @inline def registerInstancesWithLoadBalancerFuture(
         params: RegisterEndPointsInput
-    ): Future[RegisterEndPointsOutput] = service.registerInstancesWithLoadBalancer(params).promise.toFuture
+    ): Future[RegisterEndPointsOutput] = service.registerInstancesWithLoadBalancer(params).promise().toFuture
     @inline def removeTagsFuture(params: RemoveTagsInput): Future[RemoveTagsOutput] =
-      service.removeTags(params).promise.toFuture
+      service.removeTags(params).promise().toFuture
     @inline def setLoadBalancerListenerSSLCertificateFuture(
         params: SetLoadBalancerListenerSSLCertificateInput
     ): Future[SetLoadBalancerListenerSSLCertificateOutput] =
-      service.setLoadBalancerListenerSSLCertificate(params).promise.toFuture
+      service.setLoadBalancerListenerSSLCertificate(params).promise().toFuture
     @inline def setLoadBalancerPoliciesForBackendServerFuture(
         params: SetLoadBalancerPoliciesForBackendServerInput
     ): Future[SetLoadBalancerPoliciesForBackendServerOutput] =
-      service.setLoadBalancerPoliciesForBackendServer(params).promise.toFuture
+      service.setLoadBalancerPoliciesForBackendServer(params).promise().toFuture
     @inline def setLoadBalancerPoliciesOfListenerFuture(
         params: SetLoadBalancerPoliciesOfListenerInput
     ): Future[SetLoadBalancerPoliciesOfListenerOutput] =
-      service.setLoadBalancerPoliciesOfListener(params).promise.toFuture
+      service.setLoadBalancerPoliciesOfListener(params).promise().toFuture
   }
 }
 

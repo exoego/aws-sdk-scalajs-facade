@@ -42,46 +42,46 @@ package object cloudhsm {
   implicit final class CloudHSMOps(private val service: CloudHSM) extends AnyVal {
 
     @inline def addTagsToResourceFuture(params: AddTagsToResourceRequest): Future[AddTagsToResourceResponse] =
-      service.addTagsToResource(params).promise.toFuture
+      service.addTagsToResource(params).promise().toFuture
     @inline def createHapgFuture(params: CreateHapgRequest): Future[CreateHapgResponse] =
-      service.createHapg(params).promise.toFuture
+      service.createHapg(params).promise().toFuture
     @inline def createHsmFuture(params: CreateHsmRequest): Future[CreateHsmResponse] =
-      service.createHsm(params).promise.toFuture
+      service.createHsm(params).promise().toFuture
     @inline def createLunaClientFuture(params: CreateLunaClientRequest): Future[CreateLunaClientResponse] =
-      service.createLunaClient(params).promise.toFuture
+      service.createLunaClient(params).promise().toFuture
     @inline def deleteHapgFuture(params: DeleteHapgRequest): Future[DeleteHapgResponse] =
-      service.deleteHapg(params).promise.toFuture
+      service.deleteHapg(params).promise().toFuture
     @inline def deleteHsmFuture(params: DeleteHsmRequest): Future[DeleteHsmResponse] =
-      service.deleteHsm(params).promise.toFuture
+      service.deleteHsm(params).promise().toFuture
     @inline def deleteLunaClientFuture(params: DeleteLunaClientRequest): Future[DeleteLunaClientResponse] =
-      service.deleteLunaClient(params).promise.toFuture
+      service.deleteLunaClient(params).promise().toFuture
     @inline def describeHapgFuture(params: DescribeHapgRequest): Future[DescribeHapgResponse] =
-      service.describeHapg(params).promise.toFuture
+      service.describeHapg(params).promise().toFuture
     @inline def describeHsmFuture(params: DescribeHsmRequest): Future[DescribeHsmResponse] =
-      service.describeHsm(params).promise.toFuture
+      service.describeHsm(params).promise().toFuture
     @inline def describeLunaClientFuture(params: DescribeLunaClientRequest): Future[DescribeLunaClientResponse] =
-      service.describeLunaClient(params).promise.toFuture
+      service.describeLunaClient(params).promise().toFuture
     @inline def getConfigFuture(params: GetConfigRequest): Future[GetConfigResponse] =
-      service.getConfig(params).promise.toFuture
+      service.getConfig(params).promise().toFuture
     @inline def listAvailableZonesFuture(params: ListAvailableZonesRequest): Future[ListAvailableZonesResponse] =
-      service.listAvailableZones(params).promise.toFuture
+      service.listAvailableZones(params).promise().toFuture
     @inline def listHapgsFuture(params: ListHapgsRequest): Future[ListHapgsResponse] =
-      service.listHapgs(params).promise.toFuture
+      service.listHapgs(params).promise().toFuture
     @inline def listHsmsFuture(params: ListHsmsRequest): Future[ListHsmsResponse] =
-      service.listHsms(params).promise.toFuture
+      service.listHsms(params).promise().toFuture
     @inline def listLunaClientsFuture(params: ListLunaClientsRequest): Future[ListLunaClientsResponse] =
-      service.listLunaClients(params).promise.toFuture
+      service.listLunaClients(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def modifyHapgFuture(params: ModifyHapgRequest): Future[ModifyHapgResponse] =
-      service.modifyHapg(params).promise.toFuture
+      service.modifyHapg(params).promise().toFuture
     @inline def modifyHsmFuture(params: ModifyHsmRequest): Future[ModifyHsmResponse] =
-      service.modifyHsm(params).promise.toFuture
+      service.modifyHsm(params).promise().toFuture
     @inline def modifyLunaClientFuture(params: ModifyLunaClientRequest): Future[ModifyLunaClientResponse] =
-      service.modifyLunaClient(params).promise.toFuture
+      service.modifyLunaClient(params).promise().toFuture
     @inline def removeTagsFromResourceFuture(
         params: RemoveTagsFromResourceRequest
-    ): Future[RemoveTagsFromResourceResponse] = service.removeTagsFromResource(params).promise.toFuture
+    ): Future[RemoveTagsFromResourceResponse] = service.removeTagsFromResource(params).promise().toFuture
   }
 }
 

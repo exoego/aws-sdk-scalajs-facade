@@ -42,29 +42,29 @@ package object signer {
   implicit final class SignerOps(private val service: Signer) extends AnyVal {
 
     @inline def cancelSigningProfileFuture(params: CancelSigningProfileRequest): Future[js.Object] =
-      service.cancelSigningProfile(params).promise.toFuture
+      service.cancelSigningProfile(params).promise().toFuture
     @inline def describeSigningJobFuture(params: DescribeSigningJobRequest): Future[DescribeSigningJobResponse] =
-      service.describeSigningJob(params).promise.toFuture
+      service.describeSigningJob(params).promise().toFuture
     @inline def getSigningPlatformFuture(params: GetSigningPlatformRequest): Future[GetSigningPlatformResponse] =
-      service.getSigningPlatform(params).promise.toFuture
+      service.getSigningPlatform(params).promise().toFuture
     @inline def getSigningProfileFuture(params: GetSigningProfileRequest): Future[GetSigningProfileResponse] =
-      service.getSigningProfile(params).promise.toFuture
+      service.getSigningProfile(params).promise().toFuture
     @inline def listSigningJobsFuture(params: ListSigningJobsRequest): Future[ListSigningJobsResponse] =
-      service.listSigningJobs(params).promise.toFuture
+      service.listSigningJobs(params).promise().toFuture
     @inline def listSigningPlatformsFuture(params: ListSigningPlatformsRequest): Future[ListSigningPlatformsResponse] =
-      service.listSigningPlatforms(params).promise.toFuture
+      service.listSigningPlatforms(params).promise().toFuture
     @inline def listSigningProfilesFuture(params: ListSigningProfilesRequest): Future[ListSigningProfilesResponse] =
-      service.listSigningProfiles(params).promise.toFuture
+      service.listSigningProfiles(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def putSigningProfileFuture(params: PutSigningProfileRequest): Future[PutSigningProfileResponse] =
-      service.putSigningProfile(params).promise.toFuture
+      service.putSigningProfile(params).promise().toFuture
     @inline def startSigningJobFuture(params: StartSigningJobRequest): Future[StartSigningJobResponse] =
-      service.startSigningJob(params).promise.toFuture
+      service.startSigningJob(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
   }
 }
 

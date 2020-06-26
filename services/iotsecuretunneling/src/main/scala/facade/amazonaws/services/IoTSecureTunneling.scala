@@ -29,19 +29,19 @@ package object iotsecuretunneling {
   implicit final class IoTSecureTunnelingOps(private val service: IoTSecureTunneling) extends AnyVal {
 
     @inline def closeTunnelFuture(params: CloseTunnelRequest): Future[CloseTunnelResponse] =
-      service.closeTunnel(params).promise.toFuture
+      service.closeTunnel(params).promise().toFuture
     @inline def describeTunnelFuture(params: DescribeTunnelRequest): Future[DescribeTunnelResponse] =
-      service.describeTunnel(params).promise.toFuture
+      service.describeTunnel(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def listTunnelsFuture(params: ListTunnelsRequest): Future[ListTunnelsResponse] =
-      service.listTunnels(params).promise.toFuture
+      service.listTunnels(params).promise().toFuture
     @inline def openTunnelFuture(params: OpenTunnelRequest): Future[OpenTunnelResponse] =
-      service.openTunnel(params).promise.toFuture
+      service.openTunnel(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
   }
 }
 

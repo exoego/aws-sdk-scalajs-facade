@@ -20,12 +20,12 @@ package object migrationhubconfig {
 
     @inline def createHomeRegionControlFuture(
         params: CreateHomeRegionControlRequest
-    ): Future[CreateHomeRegionControlResult] = service.createHomeRegionControl(params).promise.toFuture
+    ): Future[CreateHomeRegionControlResult] = service.createHomeRegionControl(params).promise().toFuture
     @inline def describeHomeRegionControlsFuture(
         params: DescribeHomeRegionControlsRequest
-    ): Future[DescribeHomeRegionControlsResult] = service.describeHomeRegionControls(params).promise.toFuture
+    ): Future[DescribeHomeRegionControlsResult] = service.describeHomeRegionControls(params).promise().toFuture
     @inline def getHomeRegionFuture(params: GetHomeRegionRequest): Future[GetHomeRegionResult] =
-      service.getHomeRegion(params).promise.toFuture
+      service.getHomeRegion(params).promise().toFuture
   }
 }
 

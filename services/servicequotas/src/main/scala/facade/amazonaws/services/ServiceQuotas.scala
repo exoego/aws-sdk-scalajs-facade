@@ -40,57 +40,58 @@ package object servicequotas {
 
     @inline def associateServiceQuotaTemplateFuture(
         params: AssociateServiceQuotaTemplateRequest
-    ): Future[AssociateServiceQuotaTemplateResponse] = service.associateServiceQuotaTemplate(params).promise.toFuture
+    ): Future[AssociateServiceQuotaTemplateResponse] = service.associateServiceQuotaTemplate(params).promise().toFuture
     @inline def deleteServiceQuotaIncreaseRequestFromTemplateFuture(
         params: DeleteServiceQuotaIncreaseRequestFromTemplateRequest
     ): Future[DeleteServiceQuotaIncreaseRequestFromTemplateResponse] =
-      service.deleteServiceQuotaIncreaseRequestFromTemplate(params).promise.toFuture
+      service.deleteServiceQuotaIncreaseRequestFromTemplate(params).promise().toFuture
     @inline def disassociateServiceQuotaTemplateFuture(
         params: DisassociateServiceQuotaTemplateRequest
     ): Future[DisassociateServiceQuotaTemplateResponse] =
-      service.disassociateServiceQuotaTemplate(params).promise.toFuture
+      service.disassociateServiceQuotaTemplate(params).promise().toFuture
     @inline def getAWSDefaultServiceQuotaFuture(
         params: GetAWSDefaultServiceQuotaRequest
-    ): Future[GetAWSDefaultServiceQuotaResponse] = service.getAWSDefaultServiceQuota(params).promise.toFuture
+    ): Future[GetAWSDefaultServiceQuotaResponse] = service.getAWSDefaultServiceQuota(params).promise().toFuture
     @inline def getAssociationForServiceQuotaTemplateFuture(
         params: GetAssociationForServiceQuotaTemplateRequest
     ): Future[GetAssociationForServiceQuotaTemplateResponse] =
-      service.getAssociationForServiceQuotaTemplate(params).promise.toFuture
+      service.getAssociationForServiceQuotaTemplate(params).promise().toFuture
     @inline def getRequestedServiceQuotaChangeFuture(
         params: GetRequestedServiceQuotaChangeRequest
-    ): Future[GetRequestedServiceQuotaChangeResponse] = service.getRequestedServiceQuotaChange(params).promise.toFuture
+    ): Future[GetRequestedServiceQuotaChangeResponse] =
+      service.getRequestedServiceQuotaChange(params).promise().toFuture
     @inline def getServiceQuotaFuture(params: GetServiceQuotaRequest): Future[GetServiceQuotaResponse] =
-      service.getServiceQuota(params).promise.toFuture
+      service.getServiceQuota(params).promise().toFuture
     @inline def getServiceQuotaIncreaseRequestFromTemplateFuture(
         params: GetServiceQuotaIncreaseRequestFromTemplateRequest
     ): Future[GetServiceQuotaIncreaseRequestFromTemplateResponse] =
-      service.getServiceQuotaIncreaseRequestFromTemplate(params).promise.toFuture
+      service.getServiceQuotaIncreaseRequestFromTemplate(params).promise().toFuture
     @inline def listAWSDefaultServiceQuotasFuture(
         params: ListAWSDefaultServiceQuotasRequest
-    ): Future[ListAWSDefaultServiceQuotasResponse] = service.listAWSDefaultServiceQuotas(params).promise.toFuture
+    ): Future[ListAWSDefaultServiceQuotasResponse] = service.listAWSDefaultServiceQuotas(params).promise().toFuture
     @inline def listRequestedServiceQuotaChangeHistoryByQuotaFuture(
         params: ListRequestedServiceQuotaChangeHistoryByQuotaRequest
     ): Future[ListRequestedServiceQuotaChangeHistoryByQuotaResponse] =
-      service.listRequestedServiceQuotaChangeHistoryByQuota(params).promise.toFuture
+      service.listRequestedServiceQuotaChangeHistoryByQuota(params).promise().toFuture
     @inline def listRequestedServiceQuotaChangeHistoryFuture(
         params: ListRequestedServiceQuotaChangeHistoryRequest
     ): Future[ListRequestedServiceQuotaChangeHistoryResponse] =
-      service.listRequestedServiceQuotaChangeHistory(params).promise.toFuture
+      service.listRequestedServiceQuotaChangeHistory(params).promise().toFuture
     @inline def listServiceQuotaIncreaseRequestsInTemplateFuture(
         params: ListServiceQuotaIncreaseRequestsInTemplateRequest
     ): Future[ListServiceQuotaIncreaseRequestsInTemplateResponse] =
-      service.listServiceQuotaIncreaseRequestsInTemplate(params).promise.toFuture
+      service.listServiceQuotaIncreaseRequestsInTemplate(params).promise().toFuture
     @inline def listServiceQuotasFuture(params: ListServiceQuotasRequest): Future[ListServiceQuotasResponse] =
-      service.listServiceQuotas(params).promise.toFuture
+      service.listServiceQuotas(params).promise().toFuture
     @inline def listServicesFuture(params: ListServicesRequest): Future[ListServicesResponse] =
-      service.listServices(params).promise.toFuture
+      service.listServices(params).promise().toFuture
     @inline def putServiceQuotaIncreaseRequestIntoTemplateFuture(
         params: PutServiceQuotaIncreaseRequestIntoTemplateRequest
     ): Future[PutServiceQuotaIncreaseRequestIntoTemplateResponse] =
-      service.putServiceQuotaIncreaseRequestIntoTemplate(params).promise.toFuture
+      service.putServiceQuotaIncreaseRequestIntoTemplate(params).promise().toFuture
     @inline def requestServiceQuotaIncreaseFuture(
         params: RequestServiceQuotaIncreaseRequest
-    ): Future[RequestServiceQuotaIncreaseResponse] = service.requestServiceQuotaIncrease(params).promise.toFuture
+    ): Future[RequestServiceQuotaIncreaseResponse] = service.requestServiceQuotaIncrease(params).promise().toFuture
   }
 }
 

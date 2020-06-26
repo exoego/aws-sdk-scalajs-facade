@@ -105,191 +105,191 @@ package object gamelift {
   implicit final class GameLiftOps(private val service: GameLift) extends AnyVal {
 
     @inline def acceptMatchFuture(params: AcceptMatchInput): Future[AcceptMatchOutput] =
-      service.acceptMatch(params).promise.toFuture
+      service.acceptMatch(params).promise().toFuture
     @inline def createAliasFuture(params: CreateAliasInput): Future[CreateAliasOutput] =
-      service.createAlias(params).promise.toFuture
+      service.createAlias(params).promise().toFuture
     @inline def createBuildFuture(params: CreateBuildInput): Future[CreateBuildOutput] =
-      service.createBuild(params).promise.toFuture
+      service.createBuild(params).promise().toFuture
     @inline def createFleetFuture(params: CreateFleetInput): Future[CreateFleetOutput] =
-      service.createFleet(params).promise.toFuture
+      service.createFleet(params).promise().toFuture
     @inline def createGameSessionFuture(params: CreateGameSessionInput): Future[CreateGameSessionOutput] =
-      service.createGameSession(params).promise.toFuture
+      service.createGameSession(params).promise().toFuture
     @inline def createGameSessionQueueFuture(
         params: CreateGameSessionQueueInput
-    ): Future[CreateGameSessionQueueOutput] = service.createGameSessionQueue(params).promise.toFuture
+    ): Future[CreateGameSessionQueueOutput] = service.createGameSessionQueue(params).promise().toFuture
     @inline def createMatchmakingConfigurationFuture(
         params: CreateMatchmakingConfigurationInput
-    ): Future[CreateMatchmakingConfigurationOutput] = service.createMatchmakingConfiguration(params).promise.toFuture
+    ): Future[CreateMatchmakingConfigurationOutput] = service.createMatchmakingConfiguration(params).promise().toFuture
     @inline def createMatchmakingRuleSetFuture(
         params: CreateMatchmakingRuleSetInput
-    ): Future[CreateMatchmakingRuleSetOutput] = service.createMatchmakingRuleSet(params).promise.toFuture
+    ): Future[CreateMatchmakingRuleSetOutput] = service.createMatchmakingRuleSet(params).promise().toFuture
     @inline def createPlayerSessionFuture(params: CreatePlayerSessionInput): Future[CreatePlayerSessionOutput] =
-      service.createPlayerSession(params).promise.toFuture
+      service.createPlayerSession(params).promise().toFuture
     @inline def createPlayerSessionsFuture(params: CreatePlayerSessionsInput): Future[CreatePlayerSessionsOutput] =
-      service.createPlayerSessions(params).promise.toFuture
+      service.createPlayerSessions(params).promise().toFuture
     @inline def createScriptFuture(params: CreateScriptInput): Future[CreateScriptOutput] =
-      service.createScript(params).promise.toFuture
+      service.createScript(params).promise().toFuture
     @inline def createVpcPeeringAuthorizationFuture(
         params: CreateVpcPeeringAuthorizationInput
-    ): Future[CreateVpcPeeringAuthorizationOutput] = service.createVpcPeeringAuthorization(params).promise.toFuture
+    ): Future[CreateVpcPeeringAuthorizationOutput] = service.createVpcPeeringAuthorization(params).promise().toFuture
     @inline def createVpcPeeringConnectionFuture(
         params: CreateVpcPeeringConnectionInput
-    ): Future[CreateVpcPeeringConnectionOutput] = service.createVpcPeeringConnection(params).promise.toFuture
+    ): Future[CreateVpcPeeringConnectionOutput] = service.createVpcPeeringConnection(params).promise().toFuture
     @inline def deleteAliasFuture(params: DeleteAliasInput): Future[js.Object] =
-      service.deleteAlias(params).promise.toFuture
+      service.deleteAlias(params).promise().toFuture
     @inline def deleteBuildFuture(params: DeleteBuildInput): Future[js.Object] =
-      service.deleteBuild(params).promise.toFuture
+      service.deleteBuild(params).promise().toFuture
     @inline def deleteFleetFuture(params: DeleteFleetInput): Future[js.Object] =
-      service.deleteFleet(params).promise.toFuture
+      service.deleteFleet(params).promise().toFuture
     @inline def deleteGameSessionQueueFuture(
         params: DeleteGameSessionQueueInput
-    ): Future[DeleteGameSessionQueueOutput] = service.deleteGameSessionQueue(params).promise.toFuture
+    ): Future[DeleteGameSessionQueueOutput] = service.deleteGameSessionQueue(params).promise().toFuture
     @inline def deleteMatchmakingConfigurationFuture(
         params: DeleteMatchmakingConfigurationInput
-    ): Future[DeleteMatchmakingConfigurationOutput] = service.deleteMatchmakingConfiguration(params).promise.toFuture
+    ): Future[DeleteMatchmakingConfigurationOutput] = service.deleteMatchmakingConfiguration(params).promise().toFuture
     @inline def deleteMatchmakingRuleSetFuture(
         params: DeleteMatchmakingRuleSetInput
-    ): Future[DeleteMatchmakingRuleSetOutput] = service.deleteMatchmakingRuleSet(params).promise.toFuture
+    ): Future[DeleteMatchmakingRuleSetOutput] = service.deleteMatchmakingRuleSet(params).promise().toFuture
     @inline def deleteScalingPolicyFuture(params: DeleteScalingPolicyInput): Future[js.Object] =
-      service.deleteScalingPolicy(params).promise.toFuture
+      service.deleteScalingPolicy(params).promise().toFuture
     @inline def deleteScriptFuture(params: DeleteScriptInput): Future[js.Object] =
-      service.deleteScript(params).promise.toFuture
+      service.deleteScript(params).promise().toFuture
     @inline def deleteVpcPeeringAuthorizationFuture(
         params: DeleteVpcPeeringAuthorizationInput
-    ): Future[DeleteVpcPeeringAuthorizationOutput] = service.deleteVpcPeeringAuthorization(params).promise.toFuture
+    ): Future[DeleteVpcPeeringAuthorizationOutput] = service.deleteVpcPeeringAuthorization(params).promise().toFuture
     @inline def deleteVpcPeeringConnectionFuture(
         params: DeleteVpcPeeringConnectionInput
-    ): Future[DeleteVpcPeeringConnectionOutput] = service.deleteVpcPeeringConnection(params).promise.toFuture
+    ): Future[DeleteVpcPeeringConnectionOutput] = service.deleteVpcPeeringConnection(params).promise().toFuture
     @inline def describeAliasFuture(params: DescribeAliasInput): Future[DescribeAliasOutput] =
-      service.describeAlias(params).promise.toFuture
+      service.describeAlias(params).promise().toFuture
     @inline def describeBuildFuture(params: DescribeBuildInput): Future[DescribeBuildOutput] =
-      service.describeBuild(params).promise.toFuture
+      service.describeBuild(params).promise().toFuture
     @inline def describeEC2InstanceLimitsFuture(
         params: DescribeEC2InstanceLimitsInput
-    ): Future[DescribeEC2InstanceLimitsOutput] = service.describeEC2InstanceLimits(params).promise.toFuture
+    ): Future[DescribeEC2InstanceLimitsOutput] = service.describeEC2InstanceLimits(params).promise().toFuture
     @inline def describeFleetAttributesFuture(
         params: DescribeFleetAttributesInput
-    ): Future[DescribeFleetAttributesOutput] = service.describeFleetAttributes(params).promise.toFuture
+    ): Future[DescribeFleetAttributesOutput] = service.describeFleetAttributes(params).promise().toFuture
     @inline def describeFleetCapacityFuture(params: DescribeFleetCapacityInput): Future[DescribeFleetCapacityOutput] =
-      service.describeFleetCapacity(params).promise.toFuture
+      service.describeFleetCapacity(params).promise().toFuture
     @inline def describeFleetEventsFuture(params: DescribeFleetEventsInput): Future[DescribeFleetEventsOutput] =
-      service.describeFleetEvents(params).promise.toFuture
+      service.describeFleetEvents(params).promise().toFuture
     @inline def describeFleetPortSettingsFuture(
         params: DescribeFleetPortSettingsInput
-    ): Future[DescribeFleetPortSettingsOutput] = service.describeFleetPortSettings(params).promise.toFuture
+    ): Future[DescribeFleetPortSettingsOutput] = service.describeFleetPortSettings(params).promise().toFuture
     @inline def describeFleetUtilizationFuture(
         params: DescribeFleetUtilizationInput
-    ): Future[DescribeFleetUtilizationOutput] = service.describeFleetUtilization(params).promise.toFuture
+    ): Future[DescribeFleetUtilizationOutput] = service.describeFleetUtilization(params).promise().toFuture
     @inline def describeGameSessionDetailsFuture(
         params: DescribeGameSessionDetailsInput
-    ): Future[DescribeGameSessionDetailsOutput] = service.describeGameSessionDetails(params).promise.toFuture
+    ): Future[DescribeGameSessionDetailsOutput] = service.describeGameSessionDetails(params).promise().toFuture
     @inline def describeGameSessionPlacementFuture(
         params: DescribeGameSessionPlacementInput
-    ): Future[DescribeGameSessionPlacementOutput] = service.describeGameSessionPlacement(params).promise.toFuture
+    ): Future[DescribeGameSessionPlacementOutput] = service.describeGameSessionPlacement(params).promise().toFuture
     @inline def describeGameSessionQueuesFuture(
         params: DescribeGameSessionQueuesInput
-    ): Future[DescribeGameSessionQueuesOutput] = service.describeGameSessionQueues(params).promise.toFuture
+    ): Future[DescribeGameSessionQueuesOutput] = service.describeGameSessionQueues(params).promise().toFuture
     @inline def describeGameSessionsFuture(params: DescribeGameSessionsInput): Future[DescribeGameSessionsOutput] =
-      service.describeGameSessions(params).promise.toFuture
+      service.describeGameSessions(params).promise().toFuture
     @inline def describeInstancesFuture(params: DescribeInstancesInput): Future[DescribeInstancesOutput] =
-      service.describeInstances(params).promise.toFuture
+      service.describeInstances(params).promise().toFuture
     @inline def describeMatchmakingConfigurationsFuture(
         params: DescribeMatchmakingConfigurationsInput
     ): Future[DescribeMatchmakingConfigurationsOutput] =
-      service.describeMatchmakingConfigurations(params).promise.toFuture
+      service.describeMatchmakingConfigurations(params).promise().toFuture
     @inline def describeMatchmakingFuture(params: DescribeMatchmakingInput): Future[DescribeMatchmakingOutput] =
-      service.describeMatchmaking(params).promise.toFuture
+      service.describeMatchmaking(params).promise().toFuture
     @inline def describeMatchmakingRuleSetsFuture(
         params: DescribeMatchmakingRuleSetsInput
-    ): Future[DescribeMatchmakingRuleSetsOutput] = service.describeMatchmakingRuleSets(params).promise.toFuture
+    ): Future[DescribeMatchmakingRuleSetsOutput] = service.describeMatchmakingRuleSets(params).promise().toFuture
     @inline def describePlayerSessionsFuture(
         params: DescribePlayerSessionsInput
-    ): Future[DescribePlayerSessionsOutput] = service.describePlayerSessions(params).promise.toFuture
+    ): Future[DescribePlayerSessionsOutput] = service.describePlayerSessions(params).promise().toFuture
     @inline def describeRuntimeConfigurationFuture(
         params: DescribeRuntimeConfigurationInput
-    ): Future[DescribeRuntimeConfigurationOutput] = service.describeRuntimeConfiguration(params).promise.toFuture
+    ): Future[DescribeRuntimeConfigurationOutput] = service.describeRuntimeConfiguration(params).promise().toFuture
     @inline def describeScalingPoliciesFuture(
         params: DescribeScalingPoliciesInput
-    ): Future[DescribeScalingPoliciesOutput] = service.describeScalingPolicies(params).promise.toFuture
+    ): Future[DescribeScalingPoliciesOutput] = service.describeScalingPolicies(params).promise().toFuture
     @inline def describeScriptFuture(params: DescribeScriptInput): Future[DescribeScriptOutput] =
-      service.describeScript(params).promise.toFuture
+      service.describeScript(params).promise().toFuture
     @inline def describeVpcPeeringAuthorizationsFuture(
         params: DescribeVpcPeeringAuthorizationsInput
     ): Future[DescribeVpcPeeringAuthorizationsOutput] =
-      service.describeVpcPeeringAuthorizations(params).promise.toFuture
+      service.describeVpcPeeringAuthorizations(params).promise().toFuture
     @inline def describeVpcPeeringConnectionsFuture(
         params: DescribeVpcPeeringConnectionsInput
-    ): Future[DescribeVpcPeeringConnectionsOutput] = service.describeVpcPeeringConnections(params).promise.toFuture
+    ): Future[DescribeVpcPeeringConnectionsOutput] = service.describeVpcPeeringConnections(params).promise().toFuture
     @inline def getGameSessionLogUrlFuture(params: GetGameSessionLogUrlInput): Future[GetGameSessionLogUrlOutput] =
-      service.getGameSessionLogUrl(params).promise.toFuture
+      service.getGameSessionLogUrl(params).promise().toFuture
     @inline def getInstanceAccessFuture(params: GetInstanceAccessInput): Future[GetInstanceAccessOutput] =
-      service.getInstanceAccess(params).promise.toFuture
+      service.getInstanceAccess(params).promise().toFuture
     @inline def listAliasesFuture(params: ListAliasesInput): Future[ListAliasesOutput] =
-      service.listAliases(params).promise.toFuture
+      service.listAliases(params).promise().toFuture
     @inline def listBuildsFuture(params: ListBuildsInput): Future[ListBuildsOutput] =
-      service.listBuilds(params).promise.toFuture
+      service.listBuilds(params).promise().toFuture
     @inline def listFleetsFuture(params: ListFleetsInput): Future[ListFleetsOutput] =
-      service.listFleets(params).promise.toFuture
+      service.listFleets(params).promise().toFuture
     @inline def listScriptsFuture(params: ListScriptsInput): Future[ListScriptsOutput] =
-      service.listScripts(params).promise.toFuture
+      service.listScripts(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def putScalingPolicyFuture(params: PutScalingPolicyInput): Future[PutScalingPolicyOutput] =
-      service.putScalingPolicy(params).promise.toFuture
+      service.putScalingPolicy(params).promise().toFuture
     @inline def requestUploadCredentialsFuture(
         params: RequestUploadCredentialsInput
-    ): Future[RequestUploadCredentialsOutput] = service.requestUploadCredentials(params).promise.toFuture
+    ): Future[RequestUploadCredentialsOutput] = service.requestUploadCredentials(params).promise().toFuture
     @inline def resolveAliasFuture(params: ResolveAliasInput): Future[ResolveAliasOutput] =
-      service.resolveAlias(params).promise.toFuture
+      service.resolveAlias(params).promise().toFuture
     @inline def searchGameSessionsFuture(params: SearchGameSessionsInput): Future[SearchGameSessionsOutput] =
-      service.searchGameSessions(params).promise.toFuture
+      service.searchGameSessions(params).promise().toFuture
     @inline def startFleetActionsFuture(params: StartFleetActionsInput): Future[StartFleetActionsOutput] =
-      service.startFleetActions(params).promise.toFuture
+      service.startFleetActions(params).promise().toFuture
     @inline def startGameSessionPlacementFuture(
         params: StartGameSessionPlacementInput
-    ): Future[StartGameSessionPlacementOutput] = service.startGameSessionPlacement(params).promise.toFuture
+    ): Future[StartGameSessionPlacementOutput] = service.startGameSessionPlacement(params).promise().toFuture
     @inline def startMatchBackfillFuture(params: StartMatchBackfillInput): Future[StartMatchBackfillOutput] =
-      service.startMatchBackfill(params).promise.toFuture
+      service.startMatchBackfill(params).promise().toFuture
     @inline def startMatchmakingFuture(params: StartMatchmakingInput): Future[StartMatchmakingOutput] =
-      service.startMatchmaking(params).promise.toFuture
+      service.startMatchmaking(params).promise().toFuture
     @inline def stopFleetActionsFuture(params: StopFleetActionsInput): Future[StopFleetActionsOutput] =
-      service.stopFleetActions(params).promise.toFuture
+      service.stopFleetActions(params).promise().toFuture
     @inline def stopGameSessionPlacementFuture(
         params: StopGameSessionPlacementInput
-    ): Future[StopGameSessionPlacementOutput] = service.stopGameSessionPlacement(params).promise.toFuture
+    ): Future[StopGameSessionPlacementOutput] = service.stopGameSessionPlacement(params).promise().toFuture
     @inline def stopMatchmakingFuture(params: StopMatchmakingInput): Future[StopMatchmakingOutput] =
-      service.stopMatchmaking(params).promise.toFuture
+      service.stopMatchmaking(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateAliasFuture(params: UpdateAliasInput): Future[UpdateAliasOutput] =
-      service.updateAlias(params).promise.toFuture
+      service.updateAlias(params).promise().toFuture
     @inline def updateBuildFuture(params: UpdateBuildInput): Future[UpdateBuildOutput] =
-      service.updateBuild(params).promise.toFuture
+      service.updateBuild(params).promise().toFuture
     @inline def updateFleetAttributesFuture(params: UpdateFleetAttributesInput): Future[UpdateFleetAttributesOutput] =
-      service.updateFleetAttributes(params).promise.toFuture
+      service.updateFleetAttributes(params).promise().toFuture
     @inline def updateFleetCapacityFuture(params: UpdateFleetCapacityInput): Future[UpdateFleetCapacityOutput] =
-      service.updateFleetCapacity(params).promise.toFuture
+      service.updateFleetCapacity(params).promise().toFuture
     @inline def updateFleetPortSettingsFuture(
         params: UpdateFleetPortSettingsInput
-    ): Future[UpdateFleetPortSettingsOutput] = service.updateFleetPortSettings(params).promise.toFuture
+    ): Future[UpdateFleetPortSettingsOutput] = service.updateFleetPortSettings(params).promise().toFuture
     @inline def updateGameSessionFuture(params: UpdateGameSessionInput): Future[UpdateGameSessionOutput] =
-      service.updateGameSession(params).promise.toFuture
+      service.updateGameSession(params).promise().toFuture
     @inline def updateGameSessionQueueFuture(
         params: UpdateGameSessionQueueInput
-    ): Future[UpdateGameSessionQueueOutput] = service.updateGameSessionQueue(params).promise.toFuture
+    ): Future[UpdateGameSessionQueueOutput] = service.updateGameSessionQueue(params).promise().toFuture
     @inline def updateMatchmakingConfigurationFuture(
         params: UpdateMatchmakingConfigurationInput
-    ): Future[UpdateMatchmakingConfigurationOutput] = service.updateMatchmakingConfiguration(params).promise.toFuture
+    ): Future[UpdateMatchmakingConfigurationOutput] = service.updateMatchmakingConfiguration(params).promise().toFuture
     @inline def updateRuntimeConfigurationFuture(
         params: UpdateRuntimeConfigurationInput
-    ): Future[UpdateRuntimeConfigurationOutput] = service.updateRuntimeConfiguration(params).promise.toFuture
+    ): Future[UpdateRuntimeConfigurationOutput] = service.updateRuntimeConfiguration(params).promise().toFuture
     @inline def updateScriptFuture(params: UpdateScriptInput): Future[UpdateScriptOutput] =
-      service.updateScript(params).promise.toFuture
+      service.updateScript(params).promise().toFuture
     @inline def validateMatchmakingRuleSetFuture(
         params: ValidateMatchmakingRuleSetInput
-    ): Future[ValidateMatchmakingRuleSetOutput] = service.validateMatchmakingRuleSet(params).promise.toFuture
+    ): Future[ValidateMatchmakingRuleSetOutput] = service.validateMatchmakingRuleSet(params).promise().toFuture
   }
 }
 

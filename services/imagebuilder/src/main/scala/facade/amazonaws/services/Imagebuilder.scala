@@ -66,110 +66,112 @@ package object imagebuilder {
   implicit final class ImagebuilderOps(private val service: Imagebuilder) extends AnyVal {
 
     @inline def cancelImageCreationFuture(params: CancelImageCreationRequest): Future[CancelImageCreationResponse] =
-      service.cancelImageCreation(params).promise.toFuture
+      service.cancelImageCreation(params).promise().toFuture
     @inline def createComponentFuture(params: CreateComponentRequest): Future[CreateComponentResponse] =
-      service.createComponent(params).promise.toFuture
+      service.createComponent(params).promise().toFuture
     @inline def createDistributionConfigurationFuture(
         params: CreateDistributionConfigurationRequest
     ): Future[CreateDistributionConfigurationResponse] =
-      service.createDistributionConfiguration(params).promise.toFuture
+      service.createDistributionConfiguration(params).promise().toFuture
     @inline def createImageFuture(params: CreateImageRequest): Future[CreateImageResponse] =
-      service.createImage(params).promise.toFuture
+      service.createImage(params).promise().toFuture
     @inline def createImagePipelineFuture(params: CreateImagePipelineRequest): Future[CreateImagePipelineResponse] =
-      service.createImagePipeline(params).promise.toFuture
+      service.createImagePipeline(params).promise().toFuture
     @inline def createImageRecipeFuture(params: CreateImageRecipeRequest): Future[CreateImageRecipeResponse] =
-      service.createImageRecipe(params).promise.toFuture
+      service.createImageRecipe(params).promise().toFuture
     @inline def createInfrastructureConfigurationFuture(
         params: CreateInfrastructureConfigurationRequest
     ): Future[CreateInfrastructureConfigurationResponse] =
-      service.createInfrastructureConfiguration(params).promise.toFuture
+      service.createInfrastructureConfiguration(params).promise().toFuture
     @inline def deleteComponentFuture(params: DeleteComponentRequest): Future[DeleteComponentResponse] =
-      service.deleteComponent(params).promise.toFuture
+      service.deleteComponent(params).promise().toFuture
     @inline def deleteDistributionConfigurationFuture(
         params: DeleteDistributionConfigurationRequest
     ): Future[DeleteDistributionConfigurationResponse] =
-      service.deleteDistributionConfiguration(params).promise.toFuture
+      service.deleteDistributionConfiguration(params).promise().toFuture
     @inline def deleteImageFuture(params: DeleteImageRequest): Future[DeleteImageResponse] =
-      service.deleteImage(params).promise.toFuture
+      service.deleteImage(params).promise().toFuture
     @inline def deleteImagePipelineFuture(params: DeleteImagePipelineRequest): Future[DeleteImagePipelineResponse] =
-      service.deleteImagePipeline(params).promise.toFuture
+      service.deleteImagePipeline(params).promise().toFuture
     @inline def deleteImageRecipeFuture(params: DeleteImageRecipeRequest): Future[DeleteImageRecipeResponse] =
-      service.deleteImageRecipe(params).promise.toFuture
+      service.deleteImageRecipe(params).promise().toFuture
     @inline def deleteInfrastructureConfigurationFuture(
         params: DeleteInfrastructureConfigurationRequest
     ): Future[DeleteInfrastructureConfigurationResponse] =
-      service.deleteInfrastructureConfiguration(params).promise.toFuture
+      service.deleteInfrastructureConfiguration(params).promise().toFuture
     @inline def getComponentFuture(params: GetComponentRequest): Future[GetComponentResponse] =
-      service.getComponent(params).promise.toFuture
+      service.getComponent(params).promise().toFuture
     @inline def getComponentPolicyFuture(params: GetComponentPolicyRequest): Future[GetComponentPolicyResponse] =
-      service.getComponentPolicy(params).promise.toFuture
+      service.getComponentPolicy(params).promise().toFuture
     @inline def getDistributionConfigurationFuture(
         params: GetDistributionConfigurationRequest
-    ): Future[GetDistributionConfigurationResponse] = service.getDistributionConfiguration(params).promise.toFuture
+    ): Future[GetDistributionConfigurationResponse] = service.getDistributionConfiguration(params).promise().toFuture
     @inline def getImageFuture(params: GetImageRequest): Future[GetImageResponse] =
-      service.getImage(params).promise.toFuture
+      service.getImage(params).promise().toFuture
     @inline def getImagePipelineFuture(params: GetImagePipelineRequest): Future[GetImagePipelineResponse] =
-      service.getImagePipeline(params).promise.toFuture
+      service.getImagePipeline(params).promise().toFuture
     @inline def getImagePolicyFuture(params: GetImagePolicyRequest): Future[GetImagePolicyResponse] =
-      service.getImagePolicy(params).promise.toFuture
+      service.getImagePolicy(params).promise().toFuture
     @inline def getImageRecipeFuture(params: GetImageRecipeRequest): Future[GetImageRecipeResponse] =
-      service.getImageRecipe(params).promise.toFuture
+      service.getImageRecipe(params).promise().toFuture
     @inline def getImageRecipePolicyFuture(params: GetImageRecipePolicyRequest): Future[GetImageRecipePolicyResponse] =
-      service.getImageRecipePolicy(params).promise.toFuture
+      service.getImageRecipePolicy(params).promise().toFuture
     @inline def getInfrastructureConfigurationFuture(
         params: GetInfrastructureConfigurationRequest
-    ): Future[GetInfrastructureConfigurationResponse] = service.getInfrastructureConfiguration(params).promise.toFuture
+    ): Future[GetInfrastructureConfigurationResponse] =
+      service.getInfrastructureConfiguration(params).promise().toFuture
     @inline def importComponentFuture(params: ImportComponentRequest): Future[ImportComponentResponse] =
-      service.importComponent(params).promise.toFuture
+      service.importComponent(params).promise().toFuture
     @inline def listComponentBuildVersionsFuture(
         params: ListComponentBuildVersionsRequest
-    ): Future[ListComponentBuildVersionsResponse] = service.listComponentBuildVersions(params).promise.toFuture
+    ): Future[ListComponentBuildVersionsResponse] = service.listComponentBuildVersions(params).promise().toFuture
     @inline def listComponentsFuture(params: ListComponentsRequest): Future[ListComponentsResponse] =
-      service.listComponents(params).promise.toFuture
+      service.listComponents(params).promise().toFuture
     @inline def listDistributionConfigurationsFuture(
         params: ListDistributionConfigurationsRequest
-    ): Future[ListDistributionConfigurationsResponse] = service.listDistributionConfigurations(params).promise.toFuture
+    ): Future[ListDistributionConfigurationsResponse] =
+      service.listDistributionConfigurations(params).promise().toFuture
     @inline def listImageBuildVersionsFuture(
         params: ListImageBuildVersionsRequest
-    ): Future[ListImageBuildVersionsResponse] = service.listImageBuildVersions(params).promise.toFuture
+    ): Future[ListImageBuildVersionsResponse] = service.listImageBuildVersions(params).promise().toFuture
     @inline def listImagePipelineImagesFuture(
         params: ListImagePipelineImagesRequest
-    ): Future[ListImagePipelineImagesResponse] = service.listImagePipelineImages(params).promise.toFuture
+    ): Future[ListImagePipelineImagesResponse] = service.listImagePipelineImages(params).promise().toFuture
     @inline def listImagePipelinesFuture(params: ListImagePipelinesRequest): Future[ListImagePipelinesResponse] =
-      service.listImagePipelines(params).promise.toFuture
+      service.listImagePipelines(params).promise().toFuture
     @inline def listImageRecipesFuture(params: ListImageRecipesRequest): Future[ListImageRecipesResponse] =
-      service.listImageRecipes(params).promise.toFuture
+      service.listImageRecipes(params).promise().toFuture
     @inline def listImagesFuture(params: ListImagesRequest): Future[ListImagesResponse] =
-      service.listImages(params).promise.toFuture
+      service.listImages(params).promise().toFuture
     @inline def listInfrastructureConfigurationsFuture(
         params: ListInfrastructureConfigurationsRequest
     ): Future[ListInfrastructureConfigurationsResponse] =
-      service.listInfrastructureConfigurations(params).promise.toFuture
+      service.listInfrastructureConfigurations(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def putComponentPolicyFuture(params: PutComponentPolicyRequest): Future[PutComponentPolicyResponse] =
-      service.putComponentPolicy(params).promise.toFuture
+      service.putComponentPolicy(params).promise().toFuture
     @inline def putImagePolicyFuture(params: PutImagePolicyRequest): Future[PutImagePolicyResponse] =
-      service.putImagePolicy(params).promise.toFuture
+      service.putImagePolicy(params).promise().toFuture
     @inline def putImageRecipePolicyFuture(params: PutImageRecipePolicyRequest): Future[PutImageRecipePolicyResponse] =
-      service.putImageRecipePolicy(params).promise.toFuture
+      service.putImageRecipePolicy(params).promise().toFuture
     @inline def startImagePipelineExecutionFuture(
         params: StartImagePipelineExecutionRequest
-    ): Future[StartImagePipelineExecutionResponse] = service.startImagePipelineExecution(params).promise.toFuture
+    ): Future[StartImagePipelineExecutionResponse] = service.startImagePipelineExecution(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateDistributionConfigurationFuture(
         params: UpdateDistributionConfigurationRequest
     ): Future[UpdateDistributionConfigurationResponse] =
-      service.updateDistributionConfiguration(params).promise.toFuture
+      service.updateDistributionConfiguration(params).promise().toFuture
     @inline def updateImagePipelineFuture(params: UpdateImagePipelineRequest): Future[UpdateImagePipelineResponse] =
-      service.updateImagePipeline(params).promise.toFuture
+      service.updateImagePipeline(params).promise().toFuture
     @inline def updateInfrastructureConfigurationFuture(
         params: UpdateInfrastructureConfigurationRequest
     ): Future[UpdateInfrastructureConfigurationResponse] =
-      service.updateInfrastructureConfiguration(params).promise.toFuture
+      service.updateInfrastructureConfiguration(params).promise().toFuture
   }
 }
 

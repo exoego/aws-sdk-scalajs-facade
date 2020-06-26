@@ -56,38 +56,38 @@ package object s3control {
   implicit final class S3ControlOps(private val service: S3Control) extends AnyVal {
 
     @inline def createAccessPointFuture(params: CreateAccessPointRequest): Future[js.Object] =
-      service.createAccessPoint(params).promise.toFuture
+      service.createAccessPoint(params).promise().toFuture
     @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResult] =
-      service.createJob(params).promise.toFuture
+      service.createJob(params).promise().toFuture
     @inline def deleteAccessPointFuture(params: DeleteAccessPointRequest): Future[js.Object] =
-      service.deleteAccessPoint(params).promise.toFuture
+      service.deleteAccessPoint(params).promise().toFuture
     @inline def deleteAccessPointPolicyFuture(params: DeleteAccessPointPolicyRequest): Future[js.Object] =
-      service.deleteAccessPointPolicy(params).promise.toFuture
+      service.deleteAccessPointPolicy(params).promise().toFuture
     @inline def deletePublicAccessBlockFuture(params: DeletePublicAccessBlockRequest): Future[js.Object] =
-      service.deletePublicAccessBlock(params).promise.toFuture
+      service.deletePublicAccessBlock(params).promise().toFuture
     @inline def describeJobFuture(params: DescribeJobRequest): Future[DescribeJobResult] =
-      service.describeJob(params).promise.toFuture
+      service.describeJob(params).promise().toFuture
     @inline def getAccessPointFuture(params: GetAccessPointRequest): Future[GetAccessPointResult] =
-      service.getAccessPoint(params).promise.toFuture
+      service.getAccessPoint(params).promise().toFuture
     @inline def getAccessPointPolicyFuture(params: GetAccessPointPolicyRequest): Future[GetAccessPointPolicyResult] =
-      service.getAccessPointPolicy(params).promise.toFuture
+      service.getAccessPointPolicy(params).promise().toFuture
     @inline def getAccessPointPolicyStatusFuture(
         params: GetAccessPointPolicyStatusRequest
-    ): Future[GetAccessPointPolicyStatusResult] = service.getAccessPointPolicyStatus(params).promise.toFuture
+    ): Future[GetAccessPointPolicyStatusResult] = service.getAccessPointPolicyStatus(params).promise().toFuture
     @inline def getPublicAccessBlockFuture(params: GetPublicAccessBlockRequest): Future[GetPublicAccessBlockOutput] =
-      service.getPublicAccessBlock(params).promise.toFuture
+      service.getPublicAccessBlock(params).promise().toFuture
     @inline def listAccessPointsFuture(params: ListAccessPointsRequest): Future[ListAccessPointsResult] =
-      service.listAccessPoints(params).promise.toFuture
+      service.listAccessPoints(params).promise().toFuture
     @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] =
-      service.listJobs(params).promise.toFuture
+      service.listJobs(params).promise().toFuture
     @inline def putAccessPointPolicyFuture(params: PutAccessPointPolicyRequest): Future[js.Object] =
-      service.putAccessPointPolicy(params).promise.toFuture
+      service.putAccessPointPolicy(params).promise().toFuture
     @inline def putPublicAccessBlockFuture(params: PutPublicAccessBlockRequest): Future[js.Object] =
-      service.putPublicAccessBlock(params).promise.toFuture
+      service.putPublicAccessBlock(params).promise().toFuture
     @inline def updateJobPriorityFuture(params: UpdateJobPriorityRequest): Future[UpdateJobPriorityResult] =
-      service.updateJobPriority(params).promise.toFuture
+      service.updateJobPriority(params).promise().toFuture
     @inline def updateJobStatusFuture(params: UpdateJobStatusRequest): Future[UpdateJobStatusResult] =
-      service.updateJobStatus(params).promise.toFuture
+      service.updateJobStatus(params).promise().toFuture
   }
 }
 

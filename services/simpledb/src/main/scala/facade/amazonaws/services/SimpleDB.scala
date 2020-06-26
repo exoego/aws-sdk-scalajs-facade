@@ -19,24 +19,24 @@ package object simpledb {
   implicit final class SimpleDBOps(private val service: SimpleDB) extends AnyVal {
 
     @inline def batchDeleteAttributesFuture(params: BatchDeleteAttributesRequest): Future[js.Object] =
-      service.batchDeleteAttributes(params).promise.toFuture
+      service.batchDeleteAttributes(params).promise().toFuture
     @inline def batchPutAttributesFuture(params: BatchPutAttributesRequest): Future[js.Object] =
-      service.batchPutAttributes(params).promise.toFuture
+      service.batchPutAttributes(params).promise().toFuture
     @inline def createDomainFuture(params: CreateDomainRequest): Future[js.Object] =
-      service.createDomain(params).promise.toFuture
+      service.createDomain(params).promise().toFuture
     @inline def deleteAttributesFuture(params: DeleteAttributesRequest): Future[js.Object] =
-      service.deleteAttributes(params).promise.toFuture
+      service.deleteAttributes(params).promise().toFuture
     @inline def deleteDomainFuture(params: DeleteDomainRequest): Future[js.Object] =
-      service.deleteDomain(params).promise.toFuture
+      service.deleteDomain(params).promise().toFuture
     @inline def domainMetadataFuture(params: DomainMetadataRequest): Future[DomainMetadataResult] =
-      service.domainMetadata(params).promise.toFuture
+      service.domainMetadata(params).promise().toFuture
     @inline def getAttributesFuture(params: GetAttributesRequest): Future[GetAttributesResult] =
-      service.getAttributes(params).promise.toFuture
+      service.getAttributes(params).promise().toFuture
     @inline def listDomainsFuture(params: ListDomainsRequest): Future[ListDomainsResult] =
-      service.listDomains(params).promise.toFuture
+      service.listDomains(params).promise().toFuture
     @inline def putAttributesFuture(params: PutAttributesRequest): Future[js.Object] =
-      service.putAttributes(params).promise.toFuture
-    @inline def selectFuture(params: SelectRequest): Future[SelectResult] = service.select(params).promise.toFuture
+      service.putAttributes(params).promise().toFuture
+    @inline def selectFuture(params: SelectRequest): Future[SelectResult] = service.select(params).promise().toFuture
   }
 }
 

@@ -48,21 +48,21 @@ package object resourcegroupstaggingapi {
 
     @inline def describeReportCreationFuture(
         params: DescribeReportCreationInput
-    ): Future[DescribeReportCreationOutput] = service.describeReportCreation(params).promise.toFuture
+    ): Future[DescribeReportCreationOutput] = service.describeReportCreation(params).promise().toFuture
     @inline def getComplianceSummaryFuture(params: GetComplianceSummaryInput): Future[GetComplianceSummaryOutput] =
-      service.getComplianceSummary(params).promise.toFuture
+      service.getComplianceSummary(params).promise().toFuture
     @inline def getResourcesFuture(params: GetResourcesInput): Future[GetResourcesOutput] =
-      service.getResources(params).promise.toFuture
+      service.getResources(params).promise().toFuture
     @inline def getTagKeysFuture(params: GetTagKeysInput): Future[GetTagKeysOutput] =
-      service.getTagKeys(params).promise.toFuture
+      service.getTagKeys(params).promise().toFuture
     @inline def getTagValuesFuture(params: GetTagValuesInput): Future[GetTagValuesOutput] =
-      service.getTagValues(params).promise.toFuture
+      service.getTagValues(params).promise().toFuture
     @inline def startReportCreationFuture(params: StartReportCreationInput): Future[StartReportCreationOutput] =
-      service.startReportCreation(params).promise.toFuture
+      service.startReportCreation(params).promise().toFuture
     @inline def tagResourcesFuture(params: TagResourcesInput): Future[TagResourcesOutput] =
-      service.tagResources(params).promise.toFuture
+      service.tagResources(params).promise().toFuture
     @inline def untagResourcesFuture(params: UntagResourcesInput): Future[UntagResourcesOutput] =
-      service.untagResources(params).promise.toFuture
+      service.untagResources(params).promise().toFuture
   }
 }
 

@@ -25,20 +25,20 @@ package object macie {
   implicit final class MacieOps(private val service: Macie) extends AnyVal {
 
     @inline def associateMemberAccountFuture(params: AssociateMemberAccountRequest): Future[js.Object] =
-      service.associateMemberAccount(params).promise.toFuture
+      service.associateMemberAccount(params).promise().toFuture
     @inline def associateS3ResourcesFuture(params: AssociateS3ResourcesRequest): Future[AssociateS3ResourcesResult] =
-      service.associateS3Resources(params).promise.toFuture
+      service.associateS3Resources(params).promise().toFuture
     @inline def disassociateMemberAccountFuture(params: DisassociateMemberAccountRequest): Future[js.Object] =
-      service.disassociateMemberAccount(params).promise.toFuture
+      service.disassociateMemberAccount(params).promise().toFuture
     @inline def disassociateS3ResourcesFuture(
         params: DisassociateS3ResourcesRequest
-    ): Future[DisassociateS3ResourcesResult] = service.disassociateS3Resources(params).promise.toFuture
+    ): Future[DisassociateS3ResourcesResult] = service.disassociateS3Resources(params).promise().toFuture
     @inline def listMemberAccountsFuture(params: ListMemberAccountsRequest): Future[ListMemberAccountsResult] =
-      service.listMemberAccounts(params).promise.toFuture
+      service.listMemberAccounts(params).promise().toFuture
     @inline def listS3ResourcesFuture(params: ListS3ResourcesRequest): Future[ListS3ResourcesResult] =
-      service.listS3Resources(params).promise.toFuture
+      service.listS3Resources(params).promise().toFuture
     @inline def updateS3ResourcesFuture(params: UpdateS3ResourcesRequest): Future[UpdateS3ResourcesResult] =
-      service.updateS3Resources(params).promise.toFuture
+      service.updateS3Resources(params).promise().toFuture
   }
 }
 

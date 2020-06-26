@@ -48,41 +48,41 @@ package object transfer {
   implicit final class TransferOps(private val service: Transfer) extends AnyVal {
 
     @inline def createServerFuture(params: CreateServerRequest): Future[CreateServerResponse] =
-      service.createServer(params).promise.toFuture
+      service.createServer(params).promise().toFuture
     @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] =
-      service.createUser(params).promise.toFuture
+      service.createUser(params).promise().toFuture
     @inline def deleteServerFuture(params: DeleteServerRequest): Future[js.Object] =
-      service.deleteServer(params).promise.toFuture
+      service.deleteServer(params).promise().toFuture
     @inline def deleteSshPublicKeyFuture(params: DeleteSshPublicKeyRequest): Future[js.Object] =
-      service.deleteSshPublicKey(params).promise.toFuture
+      service.deleteSshPublicKey(params).promise().toFuture
     @inline def deleteUserFuture(params: DeleteUserRequest): Future[js.Object] =
-      service.deleteUser(params).promise.toFuture
+      service.deleteUser(params).promise().toFuture
     @inline def describeServerFuture(params: DescribeServerRequest): Future[DescribeServerResponse] =
-      service.describeServer(params).promise.toFuture
+      service.describeServer(params).promise().toFuture
     @inline def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] =
-      service.describeUser(params).promise.toFuture
+      service.describeUser(params).promise().toFuture
     @inline def importSshPublicKeyFuture(params: ImportSshPublicKeyRequest): Future[ImportSshPublicKeyResponse] =
-      service.importSshPublicKey(params).promise.toFuture
+      service.importSshPublicKey(params).promise().toFuture
     @inline def listServersFuture(params: ListServersRequest): Future[ListServersResponse] =
-      service.listServers(params).promise.toFuture
+      service.listServers(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
-      service.listUsers(params).promise.toFuture
+      service.listUsers(params).promise().toFuture
     @inline def startServerFuture(params: StartServerRequest): Future[js.Object] =
-      service.startServer(params).promise.toFuture
+      service.startServer(params).promise().toFuture
     @inline def stopServerFuture(params: StopServerRequest): Future[js.Object] =
-      service.stopServer(params).promise.toFuture
+      service.stopServer(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def testIdentityProviderFuture(params: TestIdentityProviderRequest): Future[TestIdentityProviderResponse] =
-      service.testIdentityProvider(params).promise.toFuture
+      service.testIdentityProvider(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateServerFuture(params: UpdateServerRequest): Future[UpdateServerResponse] =
-      service.updateServer(params).promise.toFuture
+      service.updateServer(params).promise().toFuture
     @inline def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] =
-      service.updateUser(params).promise.toFuture
+      service.updateUser(params).promise().toFuture
   }
 }
 

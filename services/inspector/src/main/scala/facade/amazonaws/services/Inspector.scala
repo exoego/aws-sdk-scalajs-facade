@@ -96,92 +96,92 @@ package object inspector {
 
     @inline def addAttributesToFindingsFuture(
         params: AddAttributesToFindingsRequest
-    ): Future[AddAttributesToFindingsResponse] = service.addAttributesToFindings(params).promise.toFuture
+    ): Future[AddAttributesToFindingsResponse] = service.addAttributesToFindings(params).promise().toFuture
     @inline def createAssessmentTargetFuture(
         params: CreateAssessmentTargetRequest
-    ): Future[CreateAssessmentTargetResponse] = service.createAssessmentTarget(params).promise.toFuture
+    ): Future[CreateAssessmentTargetResponse] = service.createAssessmentTarget(params).promise().toFuture
     @inline def createAssessmentTemplateFuture(
         params: CreateAssessmentTemplateRequest
-    ): Future[CreateAssessmentTemplateResponse] = service.createAssessmentTemplate(params).promise.toFuture
+    ): Future[CreateAssessmentTemplateResponse] = service.createAssessmentTemplate(params).promise().toFuture
     @inline def createExclusionsPreviewFuture(
         params: CreateExclusionsPreviewRequest
-    ): Future[CreateExclusionsPreviewResponse] = service.createExclusionsPreview(params).promise.toFuture
+    ): Future[CreateExclusionsPreviewResponse] = service.createExclusionsPreview(params).promise().toFuture
     @inline def createResourceGroupFuture(params: CreateResourceGroupRequest): Future[CreateResourceGroupResponse] =
-      service.createResourceGroup(params).promise.toFuture
+      service.createResourceGroup(params).promise().toFuture
     @inline def deleteAssessmentRunFuture(params: DeleteAssessmentRunRequest): Future[js.Object] =
-      service.deleteAssessmentRun(params).promise.toFuture
+      service.deleteAssessmentRun(params).promise().toFuture
     @inline def deleteAssessmentTargetFuture(params: DeleteAssessmentTargetRequest): Future[js.Object] =
-      service.deleteAssessmentTarget(params).promise.toFuture
+      service.deleteAssessmentTarget(params).promise().toFuture
     @inline def deleteAssessmentTemplateFuture(params: DeleteAssessmentTemplateRequest): Future[js.Object] =
-      service.deleteAssessmentTemplate(params).promise.toFuture
+      service.deleteAssessmentTemplate(params).promise().toFuture
     @inline def describeAssessmentRunsFuture(
         params: DescribeAssessmentRunsRequest
-    ): Future[DescribeAssessmentRunsResponse] = service.describeAssessmentRuns(params).promise.toFuture
+    ): Future[DescribeAssessmentRunsResponse] = service.describeAssessmentRuns(params).promise().toFuture
     @inline def describeAssessmentTargetsFuture(
         params: DescribeAssessmentTargetsRequest
-    ): Future[DescribeAssessmentTargetsResponse] = service.describeAssessmentTargets(params).promise.toFuture
+    ): Future[DescribeAssessmentTargetsResponse] = service.describeAssessmentTargets(params).promise().toFuture
     @inline def describeAssessmentTemplatesFuture(
         params: DescribeAssessmentTemplatesRequest
-    ): Future[DescribeAssessmentTemplatesResponse] = service.describeAssessmentTemplates(params).promise.toFuture
+    ): Future[DescribeAssessmentTemplatesResponse] = service.describeAssessmentTemplates(params).promise().toFuture
     @inline def describeCrossAccountAccessRoleFuture(): Future[DescribeCrossAccountAccessRoleResponse] =
-      service.describeCrossAccountAccessRole().promise.toFuture
+      service.describeCrossAccountAccessRole().promise().toFuture
     @inline def describeExclusionsFuture(params: DescribeExclusionsRequest): Future[DescribeExclusionsResponse] =
-      service.describeExclusions(params).promise.toFuture
+      service.describeExclusions(params).promise().toFuture
     @inline def describeFindingsFuture(params: DescribeFindingsRequest): Future[DescribeFindingsResponse] =
-      service.describeFindings(params).promise.toFuture
+      service.describeFindings(params).promise().toFuture
     @inline def describeResourceGroupsFuture(
         params: DescribeResourceGroupsRequest
-    ): Future[DescribeResourceGroupsResponse] = service.describeResourceGroups(params).promise.toFuture
+    ): Future[DescribeResourceGroupsResponse] = service.describeResourceGroups(params).promise().toFuture
     @inline def describeRulesPackagesFuture(
         params: DescribeRulesPackagesRequest
-    ): Future[DescribeRulesPackagesResponse] = service.describeRulesPackages(params).promise.toFuture
+    ): Future[DescribeRulesPackagesResponse] = service.describeRulesPackages(params).promise().toFuture
     @inline def getAssessmentReportFuture(params: GetAssessmentReportRequest): Future[GetAssessmentReportResponse] =
-      service.getAssessmentReport(params).promise.toFuture
+      service.getAssessmentReport(params).promise().toFuture
     @inline def getExclusionsPreviewFuture(params: GetExclusionsPreviewRequest): Future[GetExclusionsPreviewResponse] =
-      service.getExclusionsPreview(params).promise.toFuture
+      service.getExclusionsPreview(params).promise().toFuture
     @inline def getTelemetryMetadataFuture(params: GetTelemetryMetadataRequest): Future[GetTelemetryMetadataResponse] =
-      service.getTelemetryMetadata(params).promise.toFuture
+      service.getTelemetryMetadata(params).promise().toFuture
     @inline def listAssessmentRunAgentsFuture(
         params: ListAssessmentRunAgentsRequest
-    ): Future[ListAssessmentRunAgentsResponse] = service.listAssessmentRunAgents(params).promise.toFuture
+    ): Future[ListAssessmentRunAgentsResponse] = service.listAssessmentRunAgents(params).promise().toFuture
     @inline def listAssessmentRunsFuture(params: ListAssessmentRunsRequest): Future[ListAssessmentRunsResponse] =
-      service.listAssessmentRuns(params).promise.toFuture
+      service.listAssessmentRuns(params).promise().toFuture
     @inline def listAssessmentTargetsFuture(
         params: ListAssessmentTargetsRequest
-    ): Future[ListAssessmentTargetsResponse] = service.listAssessmentTargets(params).promise.toFuture
+    ): Future[ListAssessmentTargetsResponse] = service.listAssessmentTargets(params).promise().toFuture
     @inline def listAssessmentTemplatesFuture(
         params: ListAssessmentTemplatesRequest
-    ): Future[ListAssessmentTemplatesResponse] = service.listAssessmentTemplates(params).promise.toFuture
+    ): Future[ListAssessmentTemplatesResponse] = service.listAssessmentTemplates(params).promise().toFuture
     @inline def listEventSubscriptionsFuture(
         params: ListEventSubscriptionsRequest
-    ): Future[ListEventSubscriptionsResponse] = service.listEventSubscriptions(params).promise.toFuture
+    ): Future[ListEventSubscriptionsResponse] = service.listEventSubscriptions(params).promise().toFuture
     @inline def listExclusionsFuture(params: ListExclusionsRequest): Future[ListExclusionsResponse] =
-      service.listExclusions(params).promise.toFuture
+      service.listExclusions(params).promise().toFuture
     @inline def listFindingsFuture(params: ListFindingsRequest): Future[ListFindingsResponse] =
-      service.listFindings(params).promise.toFuture
+      service.listFindings(params).promise().toFuture
     @inline def listRulesPackagesFuture(params: ListRulesPackagesRequest): Future[ListRulesPackagesResponse] =
-      service.listRulesPackages(params).promise.toFuture
+      service.listRulesPackages(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def previewAgentsFuture(params: PreviewAgentsRequest): Future[PreviewAgentsResponse] =
-      service.previewAgents(params).promise.toFuture
+      service.previewAgents(params).promise().toFuture
     @inline def registerCrossAccountAccessRoleFuture(params: RegisterCrossAccountAccessRoleRequest): Future[js.Object] =
-      service.registerCrossAccountAccessRole(params).promise.toFuture
+      service.registerCrossAccountAccessRole(params).promise().toFuture
     @inline def removeAttributesFromFindingsFuture(
         params: RemoveAttributesFromFindingsRequest
-    ): Future[RemoveAttributesFromFindingsResponse] = service.removeAttributesFromFindings(params).promise.toFuture
+    ): Future[RemoveAttributesFromFindingsResponse] = service.removeAttributesFromFindings(params).promise().toFuture
     @inline def setTagsForResourceFuture(params: SetTagsForResourceRequest): Future[js.Object] =
-      service.setTagsForResource(params).promise.toFuture
+      service.setTagsForResource(params).promise().toFuture
     @inline def startAssessmentRunFuture(params: StartAssessmentRunRequest): Future[StartAssessmentRunResponse] =
-      service.startAssessmentRun(params).promise.toFuture
+      service.startAssessmentRun(params).promise().toFuture
     @inline def stopAssessmentRunFuture(params: StopAssessmentRunRequest): Future[js.Object] =
-      service.stopAssessmentRun(params).promise.toFuture
+      service.stopAssessmentRun(params).promise().toFuture
     @inline def subscribeToEventFuture(params: SubscribeToEventRequest): Future[js.Object] =
-      service.subscribeToEvent(params).promise.toFuture
+      service.subscribeToEvent(params).promise().toFuture
     @inline def unsubscribeFromEventFuture(params: UnsubscribeFromEventRequest): Future[js.Object] =
-      service.unsubscribeFromEvent(params).promise.toFuture
+      service.unsubscribeFromEvent(params).promise().toFuture
     @inline def updateAssessmentTargetFuture(params: UpdateAssessmentTargetRequest): Future[js.Object] =
-      service.updateAssessmentTarget(params).promise.toFuture
+      service.updateAssessmentTarget(params).promise().toFuture
   }
 }
 

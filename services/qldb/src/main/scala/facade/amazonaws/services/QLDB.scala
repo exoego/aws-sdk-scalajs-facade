@@ -28,37 +28,37 @@ package object qldb {
   implicit final class QLDBOps(private val service: QLDB) extends AnyVal {
 
     @inline def createLedgerFuture(params: CreateLedgerRequest): Future[CreateLedgerResponse] =
-      service.createLedger(params).promise.toFuture
+      service.createLedger(params).promise().toFuture
     @inline def deleteLedgerFuture(params: DeleteLedgerRequest): Future[js.Object] =
-      service.deleteLedger(params).promise.toFuture
+      service.deleteLedger(params).promise().toFuture
     @inline def describeJournalS3ExportFuture(
         params: DescribeJournalS3ExportRequest
-    ): Future[DescribeJournalS3ExportResponse] = service.describeJournalS3Export(params).promise.toFuture
+    ): Future[DescribeJournalS3ExportResponse] = service.describeJournalS3Export(params).promise().toFuture
     @inline def describeLedgerFuture(params: DescribeLedgerRequest): Future[DescribeLedgerResponse] =
-      service.describeLedger(params).promise.toFuture
+      service.describeLedger(params).promise().toFuture
     @inline def exportJournalToS3Future(params: ExportJournalToS3Request): Future[ExportJournalToS3Response] =
-      service.exportJournalToS3(params).promise.toFuture
+      service.exportJournalToS3(params).promise().toFuture
     @inline def getBlockFuture(params: GetBlockRequest): Future[GetBlockResponse] =
-      service.getBlock(params).promise.toFuture
+      service.getBlock(params).promise().toFuture
     @inline def getDigestFuture(params: GetDigestRequest): Future[GetDigestResponse] =
-      service.getDigest(params).promise.toFuture
+      service.getDigest(params).promise().toFuture
     @inline def getRevisionFuture(params: GetRevisionRequest): Future[GetRevisionResponse] =
-      service.getRevision(params).promise.toFuture
+      service.getRevision(params).promise().toFuture
     @inline def listJournalS3ExportsForLedgerFuture(
         params: ListJournalS3ExportsForLedgerRequest
-    ): Future[ListJournalS3ExportsForLedgerResponse] = service.listJournalS3ExportsForLedger(params).promise.toFuture
+    ): Future[ListJournalS3ExportsForLedgerResponse] = service.listJournalS3ExportsForLedger(params).promise().toFuture
     @inline def listJournalS3ExportsFuture(params: ListJournalS3ExportsRequest): Future[ListJournalS3ExportsResponse] =
-      service.listJournalS3Exports(params).promise.toFuture
+      service.listJournalS3Exports(params).promise().toFuture
     @inline def listLedgersFuture(params: ListLedgersRequest): Future[ListLedgersResponse] =
-      service.listLedgers(params).promise.toFuture
+      service.listLedgers(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateLedgerFuture(params: UpdateLedgerRequest): Future[UpdateLedgerResponse] =
-      service.updateLedger(params).promise.toFuture
+      service.updateLedger(params).promise().toFuture
   }
 }
 

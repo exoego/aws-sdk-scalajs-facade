@@ -84,263 +84,270 @@ package object lightsail {
   implicit final class LightsailOps(private val service: Lightsail) extends AnyVal {
 
     @inline def allocateStaticIpFuture(params: AllocateStaticIpRequest): Future[AllocateStaticIpResult] =
-      service.allocateStaticIp(params).promise.toFuture
+      service.allocateStaticIp(params).promise().toFuture
     @inline def attachDiskFuture(params: AttachDiskRequest): Future[AttachDiskResult] =
-      service.attachDisk(params).promise.toFuture
+      service.attachDisk(params).promise().toFuture
     @inline def attachInstancesToLoadBalancerFuture(
         params: AttachInstancesToLoadBalancerRequest
-    ): Future[AttachInstancesToLoadBalancerResult] = service.attachInstancesToLoadBalancer(params).promise.toFuture
+    ): Future[AttachInstancesToLoadBalancerResult] = service.attachInstancesToLoadBalancer(params).promise().toFuture
     @inline def attachLoadBalancerTlsCertificateFuture(
         params: AttachLoadBalancerTlsCertificateRequest
     ): Future[AttachLoadBalancerTlsCertificateResult] =
-      service.attachLoadBalancerTlsCertificate(params).promise.toFuture
+      service.attachLoadBalancerTlsCertificate(params).promise().toFuture
     @inline def attachStaticIpFuture(params: AttachStaticIpRequest): Future[AttachStaticIpResult] =
-      service.attachStaticIp(params).promise.toFuture
+      service.attachStaticIp(params).promise().toFuture
     @inline def closeInstancePublicPortsFuture(
         params: CloseInstancePublicPortsRequest
-    ): Future[CloseInstancePublicPortsResult] = service.closeInstancePublicPorts(params).promise.toFuture
+    ): Future[CloseInstancePublicPortsResult] = service.closeInstancePublicPorts(params).promise().toFuture
     @inline def copySnapshotFuture(params: CopySnapshotRequest): Future[CopySnapshotResult] =
-      service.copySnapshot(params).promise.toFuture
+      service.copySnapshot(params).promise().toFuture
     @inline def createCloudFormationStackFuture(
         params: CreateCloudFormationStackRequest
-    ): Future[CreateCloudFormationStackResult] = service.createCloudFormationStack(params).promise.toFuture
+    ): Future[CreateCloudFormationStackResult] = service.createCloudFormationStack(params).promise().toFuture
     @inline def createDiskFromSnapshotFuture(
         params: CreateDiskFromSnapshotRequest
-    ): Future[CreateDiskFromSnapshotResult] = service.createDiskFromSnapshot(params).promise.toFuture
+    ): Future[CreateDiskFromSnapshotResult] = service.createDiskFromSnapshot(params).promise().toFuture
     @inline def createDiskFuture(params: CreateDiskRequest): Future[CreateDiskResult] =
-      service.createDisk(params).promise.toFuture
+      service.createDisk(params).promise().toFuture
     @inline def createDiskSnapshotFuture(params: CreateDiskSnapshotRequest): Future[CreateDiskSnapshotResult] =
-      service.createDiskSnapshot(params).promise.toFuture
+      service.createDiskSnapshot(params).promise().toFuture
     @inline def createDomainEntryFuture(params: CreateDomainEntryRequest): Future[CreateDomainEntryResult] =
-      service.createDomainEntry(params).promise.toFuture
+      service.createDomainEntry(params).promise().toFuture
     @inline def createDomainFuture(params: CreateDomainRequest): Future[CreateDomainResult] =
-      service.createDomain(params).promise.toFuture
+      service.createDomain(params).promise().toFuture
     @inline def createInstanceSnapshotFuture(
         params: CreateInstanceSnapshotRequest
-    ): Future[CreateInstanceSnapshotResult] = service.createInstanceSnapshot(params).promise.toFuture
+    ): Future[CreateInstanceSnapshotResult] = service.createInstanceSnapshot(params).promise().toFuture
     @inline def createInstancesFromSnapshotFuture(
         params: CreateInstancesFromSnapshotRequest
-    ): Future[CreateInstancesFromSnapshotResult] = service.createInstancesFromSnapshot(params).promise.toFuture
+    ): Future[CreateInstancesFromSnapshotResult] = service.createInstancesFromSnapshot(params).promise().toFuture
     @inline def createInstancesFuture(params: CreateInstancesRequest): Future[CreateInstancesResult] =
-      service.createInstances(params).promise.toFuture
+      service.createInstances(params).promise().toFuture
     @inline def createKeyPairFuture(params: CreateKeyPairRequest): Future[CreateKeyPairResult] =
-      service.createKeyPair(params).promise.toFuture
+      service.createKeyPair(params).promise().toFuture
     @inline def createLoadBalancerFuture(params: CreateLoadBalancerRequest): Future[CreateLoadBalancerResult] =
-      service.createLoadBalancer(params).promise.toFuture
+      service.createLoadBalancer(params).promise().toFuture
     @inline def createLoadBalancerTlsCertificateFuture(
         params: CreateLoadBalancerTlsCertificateRequest
     ): Future[CreateLoadBalancerTlsCertificateResult] =
-      service.createLoadBalancerTlsCertificate(params).promise.toFuture
+      service.createLoadBalancerTlsCertificate(params).promise().toFuture
     @inline def createRelationalDatabaseFromSnapshotFuture(
         params: CreateRelationalDatabaseFromSnapshotRequest
     ): Future[CreateRelationalDatabaseFromSnapshotResult] =
-      service.createRelationalDatabaseFromSnapshot(params).promise.toFuture
+      service.createRelationalDatabaseFromSnapshot(params).promise().toFuture
     @inline def createRelationalDatabaseFuture(
         params: CreateRelationalDatabaseRequest
-    ): Future[CreateRelationalDatabaseResult] = service.createRelationalDatabase(params).promise.toFuture
+    ): Future[CreateRelationalDatabaseResult] = service.createRelationalDatabase(params).promise().toFuture
     @inline def createRelationalDatabaseSnapshotFuture(
         params: CreateRelationalDatabaseSnapshotRequest
     ): Future[CreateRelationalDatabaseSnapshotResult] =
-      service.createRelationalDatabaseSnapshot(params).promise.toFuture
+      service.createRelationalDatabaseSnapshot(params).promise().toFuture
     @inline def deleteAutoSnapshotFuture(params: DeleteAutoSnapshotRequest): Future[DeleteAutoSnapshotResult] =
-      service.deleteAutoSnapshot(params).promise.toFuture
+      service.deleteAutoSnapshot(params).promise().toFuture
     @inline def deleteDiskFuture(params: DeleteDiskRequest): Future[DeleteDiskResult] =
-      service.deleteDisk(params).promise.toFuture
+      service.deleteDisk(params).promise().toFuture
     @inline def deleteDiskSnapshotFuture(params: DeleteDiskSnapshotRequest): Future[DeleteDiskSnapshotResult] =
-      service.deleteDiskSnapshot(params).promise.toFuture
+      service.deleteDiskSnapshot(params).promise().toFuture
     @inline def deleteDomainEntryFuture(params: DeleteDomainEntryRequest): Future[DeleteDomainEntryResult] =
-      service.deleteDomainEntry(params).promise.toFuture
+      service.deleteDomainEntry(params).promise().toFuture
     @inline def deleteDomainFuture(params: DeleteDomainRequest): Future[DeleteDomainResult] =
-      service.deleteDomain(params).promise.toFuture
+      service.deleteDomain(params).promise().toFuture
     @inline def deleteInstanceFuture(params: DeleteInstanceRequest): Future[DeleteInstanceResult] =
-      service.deleteInstance(params).promise.toFuture
+      service.deleteInstance(params).promise().toFuture
     @inline def deleteInstanceSnapshotFuture(
         params: DeleteInstanceSnapshotRequest
-    ): Future[DeleteInstanceSnapshotResult] = service.deleteInstanceSnapshot(params).promise.toFuture
+    ): Future[DeleteInstanceSnapshotResult] = service.deleteInstanceSnapshot(params).promise().toFuture
     @inline def deleteKeyPairFuture(params: DeleteKeyPairRequest): Future[DeleteKeyPairResult] =
-      service.deleteKeyPair(params).promise.toFuture
+      service.deleteKeyPair(params).promise().toFuture
     @inline def deleteKnownHostKeysFuture(params: DeleteKnownHostKeysRequest): Future[DeleteKnownHostKeysResult] =
-      service.deleteKnownHostKeys(params).promise.toFuture
+      service.deleteKnownHostKeys(params).promise().toFuture
     @inline def deleteLoadBalancerFuture(params: DeleteLoadBalancerRequest): Future[DeleteLoadBalancerResult] =
-      service.deleteLoadBalancer(params).promise.toFuture
+      service.deleteLoadBalancer(params).promise().toFuture
     @inline def deleteLoadBalancerTlsCertificateFuture(
         params: DeleteLoadBalancerTlsCertificateRequest
     ): Future[DeleteLoadBalancerTlsCertificateResult] =
-      service.deleteLoadBalancerTlsCertificate(params).promise.toFuture
+      service.deleteLoadBalancerTlsCertificate(params).promise().toFuture
     @inline def deleteRelationalDatabaseFuture(
         params: DeleteRelationalDatabaseRequest
-    ): Future[DeleteRelationalDatabaseResult] = service.deleteRelationalDatabase(params).promise.toFuture
+    ): Future[DeleteRelationalDatabaseResult] = service.deleteRelationalDatabase(params).promise().toFuture
     @inline def deleteRelationalDatabaseSnapshotFuture(
         params: DeleteRelationalDatabaseSnapshotRequest
     ): Future[DeleteRelationalDatabaseSnapshotResult] =
-      service.deleteRelationalDatabaseSnapshot(params).promise.toFuture
+      service.deleteRelationalDatabaseSnapshot(params).promise().toFuture
     @inline def detachDiskFuture(params: DetachDiskRequest): Future[DetachDiskResult] =
-      service.detachDisk(params).promise.toFuture
+      service.detachDisk(params).promise().toFuture
     @inline def detachInstancesFromLoadBalancerFuture(
         params: DetachInstancesFromLoadBalancerRequest
-    ): Future[DetachInstancesFromLoadBalancerResult] = service.detachInstancesFromLoadBalancer(params).promise.toFuture
+    ): Future[DetachInstancesFromLoadBalancerResult] =
+      service.detachInstancesFromLoadBalancer(params).promise().toFuture
     @inline def detachStaticIpFuture(params: DetachStaticIpRequest): Future[DetachStaticIpResult] =
-      service.detachStaticIp(params).promise.toFuture
+      service.detachStaticIp(params).promise().toFuture
     @inline def disableAddOnFuture(params: DisableAddOnRequest): Future[DisableAddOnResult] =
-      service.disableAddOn(params).promise.toFuture
+      service.disableAddOn(params).promise().toFuture
     @inline def downloadDefaultKeyPairFuture(
         params: DownloadDefaultKeyPairRequest
-    ): Future[DownloadDefaultKeyPairResult] = service.downloadDefaultKeyPair(params).promise.toFuture
+    ): Future[DownloadDefaultKeyPairResult] = service.downloadDefaultKeyPair(params).promise().toFuture
     @inline def enableAddOnFuture(params: EnableAddOnRequest): Future[EnableAddOnResult] =
-      service.enableAddOn(params).promise.toFuture
+      service.enableAddOn(params).promise().toFuture
     @inline def exportSnapshotFuture(params: ExportSnapshotRequest): Future[ExportSnapshotResult] =
-      service.exportSnapshot(params).promise.toFuture
+      service.exportSnapshot(params).promise().toFuture
     @inline def getActiveNamesFuture(params: GetActiveNamesRequest): Future[GetActiveNamesResult] =
-      service.getActiveNames(params).promise.toFuture
+      service.getActiveNames(params).promise().toFuture
     @inline def getAutoSnapshotsFuture(params: GetAutoSnapshotsRequest): Future[GetAutoSnapshotsResult] =
-      service.getAutoSnapshots(params).promise.toFuture
+      service.getAutoSnapshots(params).promise().toFuture
     @inline def getBlueprintsFuture(params: GetBlueprintsRequest): Future[GetBlueprintsResult] =
-      service.getBlueprints(params).promise.toFuture
+      service.getBlueprints(params).promise().toFuture
     @inline def getBundlesFuture(params: GetBundlesRequest): Future[GetBundlesResult] =
-      service.getBundles(params).promise.toFuture
+      service.getBundles(params).promise().toFuture
     @inline def getCloudFormationStackRecordsFuture(
         params: GetCloudFormationStackRecordsRequest
-    ): Future[GetCloudFormationStackRecordsResult]                           = service.getCloudFormationStackRecords(params).promise.toFuture
-    @inline def getDiskFuture(params: GetDiskRequest): Future[GetDiskResult] = service.getDisk(params).promise.toFuture
+    ): Future[GetCloudFormationStackRecordsResult] = service.getCloudFormationStackRecords(params).promise().toFuture
+    @inline def getDiskFuture(params: GetDiskRequest): Future[GetDiskResult] =
+      service.getDisk(params).promise().toFuture
     @inline def getDiskSnapshotFuture(params: GetDiskSnapshotRequest): Future[GetDiskSnapshotResult] =
-      service.getDiskSnapshot(params).promise.toFuture
+      service.getDiskSnapshot(params).promise().toFuture
     @inline def getDiskSnapshotsFuture(params: GetDiskSnapshotsRequest): Future[GetDiskSnapshotsResult] =
-      service.getDiskSnapshots(params).promise.toFuture
+      service.getDiskSnapshots(params).promise().toFuture
     @inline def getDisksFuture(params: GetDisksRequest): Future[GetDisksResult] =
-      service.getDisks(params).promise.toFuture
+      service.getDisks(params).promise().toFuture
     @inline def getDomainFuture(params: GetDomainRequest): Future[GetDomainResult] =
-      service.getDomain(params).promise.toFuture
+      service.getDomain(params).promise().toFuture
     @inline def getDomainsFuture(params: GetDomainsRequest): Future[GetDomainsResult] =
-      service.getDomains(params).promise.toFuture
+      service.getDomains(params).promise().toFuture
     @inline def getExportSnapshotRecordsFuture(
         params: GetExportSnapshotRecordsRequest
-    ): Future[GetExportSnapshotRecordsResult] = service.getExportSnapshotRecords(params).promise.toFuture
+    ): Future[GetExportSnapshotRecordsResult] = service.getExportSnapshotRecords(params).promise().toFuture
     @inline def getInstanceAccessDetailsFuture(
         params: GetInstanceAccessDetailsRequest
-    ): Future[GetInstanceAccessDetailsResult] = service.getInstanceAccessDetails(params).promise.toFuture
+    ): Future[GetInstanceAccessDetailsResult] = service.getInstanceAccessDetails(params).promise().toFuture
     @inline def getInstanceFuture(params: GetInstanceRequest): Future[GetInstanceResult] =
-      service.getInstance(params).promise.toFuture
+      service.getInstance(params).promise().toFuture
     @inline def getInstanceMetricDataFuture(params: GetInstanceMetricDataRequest): Future[GetInstanceMetricDataResult] =
-      service.getInstanceMetricData(params).promise.toFuture
+      service.getInstanceMetricData(params).promise().toFuture
     @inline def getInstancePortStatesFuture(params: GetInstancePortStatesRequest): Future[GetInstancePortStatesResult] =
-      service.getInstancePortStates(params).promise.toFuture
+      service.getInstancePortStates(params).promise().toFuture
     @inline def getInstanceSnapshotFuture(params: GetInstanceSnapshotRequest): Future[GetInstanceSnapshotResult] =
-      service.getInstanceSnapshot(params).promise.toFuture
+      service.getInstanceSnapshot(params).promise().toFuture
     @inline def getInstanceSnapshotsFuture(params: GetInstanceSnapshotsRequest): Future[GetInstanceSnapshotsResult] =
-      service.getInstanceSnapshots(params).promise.toFuture
+      service.getInstanceSnapshots(params).promise().toFuture
     @inline def getInstanceStateFuture(params: GetInstanceStateRequest): Future[GetInstanceStateResult] =
-      service.getInstanceState(params).promise.toFuture
+      service.getInstanceState(params).promise().toFuture
     @inline def getInstancesFuture(params: GetInstancesRequest): Future[GetInstancesResult] =
-      service.getInstances(params).promise.toFuture
+      service.getInstances(params).promise().toFuture
     @inline def getKeyPairFuture(params: GetKeyPairRequest): Future[GetKeyPairResult] =
-      service.getKeyPair(params).promise.toFuture
+      service.getKeyPair(params).promise().toFuture
     @inline def getKeyPairsFuture(params: GetKeyPairsRequest): Future[GetKeyPairsResult] =
-      service.getKeyPairs(params).promise.toFuture
+      service.getKeyPairs(params).promise().toFuture
     @inline def getLoadBalancerFuture(params: GetLoadBalancerRequest): Future[GetLoadBalancerResult] =
-      service.getLoadBalancer(params).promise.toFuture
+      service.getLoadBalancer(params).promise().toFuture
     @inline def getLoadBalancerMetricDataFuture(
         params: GetLoadBalancerMetricDataRequest
-    ): Future[GetLoadBalancerMetricDataResult] = service.getLoadBalancerMetricData(params).promise.toFuture
+    ): Future[GetLoadBalancerMetricDataResult] = service.getLoadBalancerMetricData(params).promise().toFuture
     @inline def getLoadBalancerTlsCertificatesFuture(
         params: GetLoadBalancerTlsCertificatesRequest
-    ): Future[GetLoadBalancerTlsCertificatesResult] = service.getLoadBalancerTlsCertificates(params).promise.toFuture
+    ): Future[GetLoadBalancerTlsCertificatesResult] = service.getLoadBalancerTlsCertificates(params).promise().toFuture
     @inline def getLoadBalancersFuture(params: GetLoadBalancersRequest): Future[GetLoadBalancersResult] =
-      service.getLoadBalancers(params).promise.toFuture
+      service.getLoadBalancers(params).promise().toFuture
     @inline def getOperationFuture(params: GetOperationRequest): Future[GetOperationResult] =
-      service.getOperation(params).promise.toFuture
+      service.getOperation(params).promise().toFuture
     @inline def getOperationsForResourceFuture(
         params: GetOperationsForResourceRequest
-    ): Future[GetOperationsForResourceResult] = service.getOperationsForResource(params).promise.toFuture
+    ): Future[GetOperationsForResourceResult] = service.getOperationsForResource(params).promise().toFuture
     @inline def getOperationsFuture(params: GetOperationsRequest): Future[GetOperationsResult] =
-      service.getOperations(params).promise.toFuture
+      service.getOperations(params).promise().toFuture
     @inline def getRegionsFuture(params: GetRegionsRequest): Future[GetRegionsResult] =
-      service.getRegions(params).promise.toFuture
+      service.getRegions(params).promise().toFuture
     @inline def getRelationalDatabaseBlueprintsFuture(
         params: GetRelationalDatabaseBlueprintsRequest
-    ): Future[GetRelationalDatabaseBlueprintsResult] = service.getRelationalDatabaseBlueprints(params).promise.toFuture
+    ): Future[GetRelationalDatabaseBlueprintsResult] =
+      service.getRelationalDatabaseBlueprints(params).promise().toFuture
     @inline def getRelationalDatabaseBundlesFuture(
         params: GetRelationalDatabaseBundlesRequest
-    ): Future[GetRelationalDatabaseBundlesResult] = service.getRelationalDatabaseBundles(params).promise.toFuture
+    ): Future[GetRelationalDatabaseBundlesResult] = service.getRelationalDatabaseBundles(params).promise().toFuture
     @inline def getRelationalDatabaseEventsFuture(
         params: GetRelationalDatabaseEventsRequest
-    ): Future[GetRelationalDatabaseEventsResult] = service.getRelationalDatabaseEvents(params).promise.toFuture
+    ): Future[GetRelationalDatabaseEventsResult] = service.getRelationalDatabaseEvents(params).promise().toFuture
     @inline def getRelationalDatabaseFuture(params: GetRelationalDatabaseRequest): Future[GetRelationalDatabaseResult] =
-      service.getRelationalDatabase(params).promise.toFuture
+      service.getRelationalDatabase(params).promise().toFuture
     @inline def getRelationalDatabaseLogEventsFuture(
         params: GetRelationalDatabaseLogEventsRequest
-    ): Future[GetRelationalDatabaseLogEventsResult] = service.getRelationalDatabaseLogEvents(params).promise.toFuture
+    ): Future[GetRelationalDatabaseLogEventsResult] = service.getRelationalDatabaseLogEvents(params).promise().toFuture
     @inline def getRelationalDatabaseLogStreamsFuture(
         params: GetRelationalDatabaseLogStreamsRequest
-    ): Future[GetRelationalDatabaseLogStreamsResult] = service.getRelationalDatabaseLogStreams(params).promise.toFuture
+    ): Future[GetRelationalDatabaseLogStreamsResult] =
+      service.getRelationalDatabaseLogStreams(params).promise().toFuture
     @inline def getRelationalDatabaseMasterUserPasswordFuture(
         params: GetRelationalDatabaseMasterUserPasswordRequest
     ): Future[GetRelationalDatabaseMasterUserPasswordResult] =
-      service.getRelationalDatabaseMasterUserPassword(params).promise.toFuture
+      service.getRelationalDatabaseMasterUserPassword(params).promise().toFuture
     @inline def getRelationalDatabaseMetricDataFuture(
         params: GetRelationalDatabaseMetricDataRequest
-    ): Future[GetRelationalDatabaseMetricDataResult] = service.getRelationalDatabaseMetricData(params).promise.toFuture
+    ): Future[GetRelationalDatabaseMetricDataResult] =
+      service.getRelationalDatabaseMetricData(params).promise().toFuture
     @inline def getRelationalDatabaseParametersFuture(
         params: GetRelationalDatabaseParametersRequest
-    ): Future[GetRelationalDatabaseParametersResult] = service.getRelationalDatabaseParameters(params).promise.toFuture
+    ): Future[GetRelationalDatabaseParametersResult] =
+      service.getRelationalDatabaseParameters(params).promise().toFuture
     @inline def getRelationalDatabaseSnapshotFuture(
         params: GetRelationalDatabaseSnapshotRequest
-    ): Future[GetRelationalDatabaseSnapshotResult] = service.getRelationalDatabaseSnapshot(params).promise.toFuture
+    ): Future[GetRelationalDatabaseSnapshotResult] = service.getRelationalDatabaseSnapshot(params).promise().toFuture
     @inline def getRelationalDatabaseSnapshotsFuture(
         params: GetRelationalDatabaseSnapshotsRequest
-    ): Future[GetRelationalDatabaseSnapshotsResult] = service.getRelationalDatabaseSnapshots(params).promise.toFuture
+    ): Future[GetRelationalDatabaseSnapshotsResult] = service.getRelationalDatabaseSnapshots(params).promise().toFuture
     @inline def getRelationalDatabasesFuture(
         params: GetRelationalDatabasesRequest
-    ): Future[GetRelationalDatabasesResult] = service.getRelationalDatabases(params).promise.toFuture
+    ): Future[GetRelationalDatabasesResult] = service.getRelationalDatabases(params).promise().toFuture
     @inline def getStaticIpFuture(params: GetStaticIpRequest): Future[GetStaticIpResult] =
-      service.getStaticIp(params).promise.toFuture
+      service.getStaticIp(params).promise().toFuture
     @inline def getStaticIpsFuture(params: GetStaticIpsRequest): Future[GetStaticIpsResult] =
-      service.getStaticIps(params).promise.toFuture
+      service.getStaticIps(params).promise().toFuture
     @inline def importKeyPairFuture(params: ImportKeyPairRequest): Future[ImportKeyPairResult] =
-      service.importKeyPair(params).promise.toFuture
+      service.importKeyPair(params).promise().toFuture
     @inline def isVpcPeeredFuture(params: IsVpcPeeredRequest): Future[IsVpcPeeredResult] =
-      service.isVpcPeered(params).promise.toFuture
+      service.isVpcPeered(params).promise().toFuture
     @inline def openInstancePublicPortsFuture(
         params: OpenInstancePublicPortsRequest
-    ): Future[OpenInstancePublicPortsResult]                                 = service.openInstancePublicPorts(params).promise.toFuture
-    @inline def peerVpcFuture(params: PeerVpcRequest): Future[PeerVpcResult] = service.peerVpc(params).promise.toFuture
+    ): Future[OpenInstancePublicPortsResult] = service.openInstancePublicPorts(params).promise().toFuture
+    @inline def peerVpcFuture(params: PeerVpcRequest): Future[PeerVpcResult] =
+      service.peerVpc(params).promise().toFuture
     @inline def putInstancePublicPortsFuture(
         params: PutInstancePublicPortsRequest
-    ): Future[PutInstancePublicPortsResult] = service.putInstancePublicPorts(params).promise.toFuture
+    ): Future[PutInstancePublicPortsResult] = service.putInstancePublicPorts(params).promise().toFuture
     @inline def rebootInstanceFuture(params: RebootInstanceRequest): Future[RebootInstanceResult] =
-      service.rebootInstance(params).promise.toFuture
+      service.rebootInstance(params).promise().toFuture
     @inline def rebootRelationalDatabaseFuture(
         params: RebootRelationalDatabaseRequest
-    ): Future[RebootRelationalDatabaseResult] = service.rebootRelationalDatabase(params).promise.toFuture
+    ): Future[RebootRelationalDatabaseResult] = service.rebootRelationalDatabase(params).promise().toFuture
     @inline def releaseStaticIpFuture(params: ReleaseStaticIpRequest): Future[ReleaseStaticIpResult] =
-      service.releaseStaticIp(params).promise.toFuture
+      service.releaseStaticIp(params).promise().toFuture
     @inline def startInstanceFuture(params: StartInstanceRequest): Future[StartInstanceResult] =
-      service.startInstance(params).promise.toFuture
+      service.startInstance(params).promise().toFuture
     @inline def startRelationalDatabaseFuture(
         params: StartRelationalDatabaseRequest
-    ): Future[StartRelationalDatabaseResult] = service.startRelationalDatabase(params).promise.toFuture
+    ): Future[StartRelationalDatabaseResult] = service.startRelationalDatabase(params).promise().toFuture
     @inline def stopInstanceFuture(params: StopInstanceRequest): Future[StopInstanceResult] =
-      service.stopInstance(params).promise.toFuture
+      service.stopInstance(params).promise().toFuture
     @inline def stopRelationalDatabaseFuture(
         params: StopRelationalDatabaseRequest
-    ): Future[StopRelationalDatabaseResult] = service.stopRelationalDatabase(params).promise.toFuture
+    ): Future[StopRelationalDatabaseResult] = service.stopRelationalDatabase(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResult] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def unpeerVpcFuture(params: UnpeerVpcRequest): Future[UnpeerVpcResult] =
-      service.unpeerVpc(params).promise.toFuture
+      service.unpeerVpc(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResult] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateDomainEntryFuture(params: UpdateDomainEntryRequest): Future[UpdateDomainEntryResult] =
-      service.updateDomainEntry(params).promise.toFuture
+      service.updateDomainEntry(params).promise().toFuture
     @inline def updateLoadBalancerAttributeFuture(
         params: UpdateLoadBalancerAttributeRequest
-    ): Future[UpdateLoadBalancerAttributeResult] = service.updateLoadBalancerAttribute(params).promise.toFuture
+    ): Future[UpdateLoadBalancerAttributeResult] = service.updateLoadBalancerAttribute(params).promise().toFuture
     @inline def updateRelationalDatabaseFuture(
         params: UpdateRelationalDatabaseRequest
-    ): Future[UpdateRelationalDatabaseResult] = service.updateRelationalDatabase(params).promise.toFuture
+    ): Future[UpdateRelationalDatabaseResult] = service.updateRelationalDatabase(params).promise().toFuture
     @inline def updateRelationalDatabaseParametersFuture(
         params: UpdateRelationalDatabaseParametersRequest
     ): Future[UpdateRelationalDatabaseParametersResult] =
-      service.updateRelationalDatabaseParameters(params).promise.toFuture
+      service.updateRelationalDatabaseParameters(params).promise().toFuture
   }
 }
 

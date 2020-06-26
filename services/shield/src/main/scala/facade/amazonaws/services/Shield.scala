@@ -40,48 +40,49 @@ package object shield {
 
     @inline def associateDRTLogBucketFuture(
         params: AssociateDRTLogBucketRequest
-    ): Future[AssociateDRTLogBucketResponse] = service.associateDRTLogBucket(params).promise.toFuture
+    ): Future[AssociateDRTLogBucketResponse] = service.associateDRTLogBucket(params).promise().toFuture
     @inline def associateDRTRoleFuture(params: AssociateDRTRoleRequest): Future[AssociateDRTRoleResponse] =
-      service.associateDRTRole(params).promise.toFuture
+      service.associateDRTRole(params).promise().toFuture
     @inline def associateHealthCheckFuture(params: AssociateHealthCheckRequest): Future[AssociateHealthCheckResponse] =
-      service.associateHealthCheck(params).promise.toFuture
+      service.associateHealthCheck(params).promise().toFuture
     @inline def createProtectionFuture(params: CreateProtectionRequest): Future[CreateProtectionResponse] =
-      service.createProtection(params).promise.toFuture
+      service.createProtection(params).promise().toFuture
     @inline def createSubscriptionFuture(params: CreateSubscriptionRequest): Future[CreateSubscriptionResponse] =
-      service.createSubscription(params).promise.toFuture
+      service.createSubscription(params).promise().toFuture
     @inline def deleteProtectionFuture(params: DeleteProtectionRequest): Future[DeleteProtectionResponse] =
-      service.deleteProtection(params).promise.toFuture
+      service.deleteProtection(params).promise().toFuture
     @inline def describeAttackFuture(params: DescribeAttackRequest): Future[DescribeAttackResponse] =
-      service.describeAttack(params).promise.toFuture
+      service.describeAttack(params).promise().toFuture
     @inline def describeDRTAccessFuture(params: DescribeDRTAccessRequest): Future[DescribeDRTAccessResponse] =
-      service.describeDRTAccess(params).promise.toFuture
+      service.describeDRTAccess(params).promise().toFuture
     @inline def describeEmergencyContactSettingsFuture(
         params: DescribeEmergencyContactSettingsRequest
     ): Future[DescribeEmergencyContactSettingsResponse] =
-      service.describeEmergencyContactSettings(params).promise.toFuture
+      service.describeEmergencyContactSettings(params).promise().toFuture
     @inline def describeProtectionFuture(params: DescribeProtectionRequest): Future[DescribeProtectionResponse] =
-      service.describeProtection(params).promise.toFuture
+      service.describeProtection(params).promise().toFuture
     @inline def describeSubscriptionFuture(params: DescribeSubscriptionRequest): Future[DescribeSubscriptionResponse] =
-      service.describeSubscription(params).promise.toFuture
+      service.describeSubscription(params).promise().toFuture
     @inline def disassociateDRTLogBucketFuture(
         params: DisassociateDRTLogBucketRequest
-    ): Future[DisassociateDRTLogBucketResponse] = service.disassociateDRTLogBucket(params).promise.toFuture
+    ): Future[DisassociateDRTLogBucketResponse] = service.disassociateDRTLogBucket(params).promise().toFuture
     @inline def disassociateDRTRoleFuture(params: DisassociateDRTRoleRequest): Future[DisassociateDRTRoleResponse] =
-      service.disassociateDRTRole(params).promise.toFuture
+      service.disassociateDRTRole(params).promise().toFuture
     @inline def disassociateHealthCheckFuture(
         params: DisassociateHealthCheckRequest
-    ): Future[DisassociateHealthCheckResponse] = service.disassociateHealthCheck(params).promise.toFuture
+    ): Future[DisassociateHealthCheckResponse] = service.disassociateHealthCheck(params).promise().toFuture
     @inline def getSubscriptionStateFuture(params: GetSubscriptionStateRequest): Future[GetSubscriptionStateResponse] =
-      service.getSubscriptionState(params).promise.toFuture
+      service.getSubscriptionState(params).promise().toFuture
     @inline def listAttacksFuture(params: ListAttacksRequest): Future[ListAttacksResponse] =
-      service.listAttacks(params).promise.toFuture
+      service.listAttacks(params).promise().toFuture
     @inline def listProtectionsFuture(params: ListProtectionsRequest): Future[ListProtectionsResponse] =
-      service.listProtections(params).promise.toFuture
+      service.listProtections(params).promise().toFuture
     @inline def updateEmergencyContactSettingsFuture(
         params: UpdateEmergencyContactSettingsRequest
-    ): Future[UpdateEmergencyContactSettingsResponse] = service.updateEmergencyContactSettings(params).promise.toFuture
+    ): Future[UpdateEmergencyContactSettingsResponse] =
+      service.updateEmergencyContactSettings(params).promise().toFuture
     @inline def updateSubscriptionFuture(params: UpdateSubscriptionRequest): Future[UpdateSubscriptionResponse] =
-      service.updateSubscription(params).promise.toFuture
+      service.updateSubscription(params).promise().toFuture
   }
 }
 

@@ -29,15 +29,15 @@ package object iotjobsdataplane {
   implicit final class IoTJobsDataPlaneOps(private val service: IoTJobsDataPlane) extends AnyVal {
 
     @inline def describeJobExecutionFuture(params: DescribeJobExecutionRequest): Future[DescribeJobExecutionResponse] =
-      service.describeJobExecution(params).promise.toFuture
+      service.describeJobExecution(params).promise().toFuture
     @inline def getPendingJobExecutionsFuture(
         params: GetPendingJobExecutionsRequest
-    ): Future[GetPendingJobExecutionsResponse] = service.getPendingJobExecutions(params).promise.toFuture
+    ): Future[GetPendingJobExecutionsResponse] = service.getPendingJobExecutions(params).promise().toFuture
     @inline def startNextPendingJobExecutionFuture(
         params: StartNextPendingJobExecutionRequest
-    ): Future[StartNextPendingJobExecutionResponse] = service.startNextPendingJobExecution(params).promise.toFuture
+    ): Future[StartNextPendingJobExecutionResponse] = service.startNextPendingJobExecution(params).promise().toFuture
     @inline def updateJobExecutionFuture(params: UpdateJobExecutionRequest): Future[UpdateJobExecutionResponse] =
-      service.updateJobExecution(params).promise.toFuture
+      service.updateJobExecution(params).promise().toFuture
   }
 }
 

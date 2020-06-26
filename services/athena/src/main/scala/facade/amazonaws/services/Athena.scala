@@ -47,44 +47,44 @@ package object athena {
   implicit final class AthenaOps(private val service: Athena) extends AnyVal {
 
     @inline def batchGetNamedQueryFuture(params: BatchGetNamedQueryInput): Future[BatchGetNamedQueryOutput] =
-      service.batchGetNamedQuery(params).promise.toFuture
+      service.batchGetNamedQuery(params).promise().toFuture
     @inline def batchGetQueryExecutionFuture(
         params: BatchGetQueryExecutionInput
-    ): Future[BatchGetQueryExecutionOutput] = service.batchGetQueryExecution(params).promise.toFuture
+    ): Future[BatchGetQueryExecutionOutput] = service.batchGetQueryExecution(params).promise().toFuture
     @inline def createNamedQueryFuture(params: CreateNamedQueryInput): Future[CreateNamedQueryOutput] =
-      service.createNamedQuery(params).promise.toFuture
+      service.createNamedQuery(params).promise().toFuture
     @inline def createWorkGroupFuture(params: CreateWorkGroupInput): Future[CreateWorkGroupOutput] =
-      service.createWorkGroup(params).promise.toFuture
+      service.createWorkGroup(params).promise().toFuture
     @inline def deleteNamedQueryFuture(params: DeleteNamedQueryInput): Future[DeleteNamedQueryOutput] =
-      service.deleteNamedQuery(params).promise.toFuture
+      service.deleteNamedQuery(params).promise().toFuture
     @inline def deleteWorkGroupFuture(params: DeleteWorkGroupInput): Future[DeleteWorkGroupOutput] =
-      service.deleteWorkGroup(params).promise.toFuture
+      service.deleteWorkGroup(params).promise().toFuture
     @inline def getNamedQueryFuture(params: GetNamedQueryInput): Future[GetNamedQueryOutput] =
-      service.getNamedQuery(params).promise.toFuture
+      service.getNamedQuery(params).promise().toFuture
     @inline def getQueryExecutionFuture(params: GetQueryExecutionInput): Future[GetQueryExecutionOutput] =
-      service.getQueryExecution(params).promise.toFuture
+      service.getQueryExecution(params).promise().toFuture
     @inline def getQueryResultsFuture(params: GetQueryResultsInput): Future[GetQueryResultsOutput] =
-      service.getQueryResults(params).promise.toFuture
+      service.getQueryResults(params).promise().toFuture
     @inline def getWorkGroupFuture(params: GetWorkGroupInput): Future[GetWorkGroupOutput] =
-      service.getWorkGroup(params).promise.toFuture
+      service.getWorkGroup(params).promise().toFuture
     @inline def listNamedQueriesFuture(params: ListNamedQueriesInput): Future[ListNamedQueriesOutput] =
-      service.listNamedQueries(params).promise.toFuture
+      service.listNamedQueries(params).promise().toFuture
     @inline def listQueryExecutionsFuture(params: ListQueryExecutionsInput): Future[ListQueryExecutionsOutput] =
-      service.listQueryExecutions(params).promise.toFuture
+      service.listQueryExecutions(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def listWorkGroupsFuture(params: ListWorkGroupsInput): Future[ListWorkGroupsOutput] =
-      service.listWorkGroups(params).promise.toFuture
+      service.listWorkGroups(params).promise().toFuture
     @inline def startQueryExecutionFuture(params: StartQueryExecutionInput): Future[StartQueryExecutionOutput] =
-      service.startQueryExecution(params).promise.toFuture
+      service.startQueryExecution(params).promise().toFuture
     @inline def stopQueryExecutionFuture(params: StopQueryExecutionInput): Future[StopQueryExecutionOutput] =
-      service.stopQueryExecution(params).promise.toFuture
+      service.stopQueryExecution(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateWorkGroupFuture(params: UpdateWorkGroupInput): Future[UpdateWorkGroupOutput] =
-      service.updateWorkGroup(params).promise.toFuture
+      service.updateWorkGroup(params).promise().toFuture
   }
 }
 

@@ -14,11 +14,11 @@ package object apigatewaymanagementapi {
   implicit final class ApiGatewayManagementApiOps(private val service: ApiGatewayManagementApi) extends AnyVal {
 
     @inline def deleteConnectionFuture(params: DeleteConnectionRequest): Future[js.Object] =
-      service.deleteConnection(params).promise.toFuture
+      service.deleteConnection(params).promise().toFuture
     @inline def getConnectionFuture(params: GetConnectionRequest): Future[GetConnectionResponse] =
-      service.getConnection(params).promise.toFuture
+      service.getConnection(params).promise().toFuture
     @inline def postToConnectionFuture(params: PostToConnectionRequest): Future[js.Object] =
-      service.postToConnection(params).promise.toFuture
+      service.postToConnection(params).promise().toFuture
   }
 }
 
