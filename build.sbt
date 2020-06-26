@@ -25,6 +25,7 @@ def defineAwsProject(service: String): Project = {
     .settings(
       name := s"${SharedConfig.libraryName}-$lowerServiceName",
       libraryDependencies ++= Seq(
+        Dependencies.shared.typesMacro.value,
         Dependencies.shared.scalatest.value,
         Dependencies.shared.scalatestHelper.value
       )
@@ -268,6 +269,7 @@ lazy val all = (project in file("all"))
   .settings(
     name := s"${SharedConfig.libraryName}",
     libraryDependencies ++= Seq(
+      Dependencies.shared.typesMacro.value,
       Dependencies.shared.scalatest.value,
       Dependencies.shared.scalatestHelper.value
     ),

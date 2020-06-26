@@ -11,6 +11,7 @@ object Dependencies {
     val scalatest       = Def.setting("org.scalatest" %%% "scalatest" % "3.2.0" % Test)
     val scalatestHelper = Def.setting("net.exoego" %%% "scalajs-test-helper-scalatest" % "0.2.0" % Test)
     val compat          = Def.setting("org.scala-lang.modules" %%% "scala-collection-compat" % "2.1.6")
+    val typesMacro      = Def.setting("net.exoego" %%% "scalajs-types-util" % "0.2.2")
   }
   object scalajs {}
 }
