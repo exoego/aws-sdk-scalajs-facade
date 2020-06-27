@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object importexport {
   type APIVersion            = String
@@ -84,22 +85,10 @@ package importexport {
     * A discrete item that contains the description and URL of an artifact (such as a PDF).
     */
   @js.native
+  @Factory
   trait Artifact extends js.Object {
     var Description: js.UndefOr[Description]
     var URL: js.UndefOr[URL]
-  }
-
-  object Artifact {
-    @inline
-    def apply(
-        Description: js.UndefOr[Description] = js.undefined,
-        URL: js.UndefOr[URL] = js.undefined
-    ): Artifact = {
-      val __obj = js.Dynamic.literal()
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      URL.foreach(__v => __obj.updateDynamic("URL")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Artifact]
-    }
   }
 
   /**
@@ -114,43 +103,19 @@ package importexport {
     * Input structure for the CancelJob operation.
     */
   @js.native
+  @Factory
   trait CancelJobInput extends js.Object {
     var JobId: JobId
     var APIVersion: js.UndefOr[APIVersion]
-  }
-
-  object CancelJobInput {
-    @inline
-    def apply(
-        JobId: JobId,
-        APIVersion: js.UndefOr[APIVersion] = js.undefined
-    ): CancelJobInput = {
-      val __obj = js.Dynamic.literal(
-        "JobId" -> JobId.asInstanceOf[js.Any]
-      )
-
-      APIVersion.foreach(__v => __obj.updateDynamic("APIVersion")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CancelJobInput]
-    }
   }
 
   /**
     * Output structure for the CancelJob operation.
     */
   @js.native
+  @Factory
   trait CancelJobOutput extends js.Object {
     var Success: js.UndefOr[Success]
-  }
-
-  object CancelJobOutput {
-    @inline
-    def apply(
-        Success: js.UndefOr[Success] = js.undefined
-    ): CancelJobOutput = {
-      val __obj = js.Dynamic.literal()
-      Success.foreach(__v => __obj.updateDynamic("Success")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CancelJobOutput]
-    }
   }
 
   /**
@@ -165,6 +130,7 @@ package importexport {
     * Input structure for the CreateJob operation.
     */
   @js.native
+  @Factory
   trait CreateJobInput extends js.Object {
     var JobType: JobType
     var Manifest: Manifest
@@ -173,31 +139,11 @@ package importexport {
     var ManifestAddendum: js.UndefOr[ManifestAddendum]
   }
 
-  object CreateJobInput {
-    @inline
-    def apply(
-        JobType: JobType,
-        Manifest: Manifest,
-        ValidateOnly: ValidateOnly,
-        APIVersion: js.UndefOr[APIVersion] = js.undefined,
-        ManifestAddendum: js.UndefOr[ManifestAddendum] = js.undefined
-    ): CreateJobInput = {
-      val __obj = js.Dynamic.literal(
-        "JobType"      -> JobType.asInstanceOf[js.Any],
-        "Manifest"     -> Manifest.asInstanceOf[js.Any],
-        "ValidateOnly" -> ValidateOnly.asInstanceOf[js.Any]
-      )
-
-      APIVersion.foreach(__v => __obj.updateDynamic("APIVersion")(__v.asInstanceOf[js.Any]))
-      ManifestAddendum.foreach(__v => __obj.updateDynamic("ManifestAddendum")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateJobInput]
-    }
-  }
-
   /**
     * Output structure for the CreateJob operation.
     */
   @js.native
+  @Factory
   trait CreateJobOutput extends js.Object {
     var ArtifactList: js.UndefOr[ArtifactList]
     var JobId: js.UndefOr[JobId]
@@ -205,27 +151,6 @@ package importexport {
     var Signature: js.UndefOr[Signature]
     var SignatureFileContents: js.UndefOr[SignatureFileContents]
     var WarningMessage: js.UndefOr[WarningMessage]
-  }
-
-  object CreateJobOutput {
-    @inline
-    def apply(
-        ArtifactList: js.UndefOr[ArtifactList] = js.undefined,
-        JobId: js.UndefOr[JobId] = js.undefined,
-        JobType: js.UndefOr[JobType] = js.undefined,
-        Signature: js.UndefOr[Signature] = js.undefined,
-        SignatureFileContents: js.UndefOr[SignatureFileContents] = js.undefined,
-        WarningMessage: js.UndefOr[WarningMessage] = js.undefined
-    ): CreateJobOutput = {
-      val __obj = js.Dynamic.literal()
-      ArtifactList.foreach(__v => __obj.updateDynamic("ArtifactList")(__v.asInstanceOf[js.Any]))
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      JobType.foreach(__v => __obj.updateDynamic("JobType")(__v.asInstanceOf[js.Any]))
-      Signature.foreach(__v => __obj.updateDynamic("Signature")(__v.asInstanceOf[js.Any]))
-      SignatureFileContents.foreach(__v => __obj.updateDynamic("SignatureFileContents")(__v.asInstanceOf[js.Any]))
-      WarningMessage.foreach(__v => __obj.updateDynamic("WarningMessage")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateJobOutput]
-    }
   }
 
   /**
@@ -245,6 +170,7 @@ package importexport {
   }
 
   @js.native
+  @Factory
   trait GetShippingLabelInput extends js.Object {
     var jobIds: JobIdList
     var APIVersion: js.UndefOr[APIVersion]
@@ -260,88 +186,28 @@ package importexport {
     var street3: js.UndefOr[street3]
   }
 
-  object GetShippingLabelInput {
-    @inline
-    def apply(
-        jobIds: JobIdList,
-        APIVersion: js.UndefOr[APIVersion] = js.undefined,
-        city: js.UndefOr[city] = js.undefined,
-        company: js.UndefOr[company] = js.undefined,
-        country: js.UndefOr[country] = js.undefined,
-        name: js.UndefOr[name] = js.undefined,
-        phoneNumber: js.UndefOr[phoneNumber] = js.undefined,
-        postalCode: js.UndefOr[postalCode] = js.undefined,
-        stateOrProvince: js.UndefOr[stateOrProvince] = js.undefined,
-        street1: js.UndefOr[street1] = js.undefined,
-        street2: js.UndefOr[street2] = js.undefined,
-        street3: js.UndefOr[street3] = js.undefined
-    ): GetShippingLabelInput = {
-      val __obj = js.Dynamic.literal(
-        "jobIds" -> jobIds.asInstanceOf[js.Any]
-      )
-
-      APIVersion.foreach(__v => __obj.updateDynamic("APIVersion")(__v.asInstanceOf[js.Any]))
-      city.foreach(__v => __obj.updateDynamic("city")(__v.asInstanceOf[js.Any]))
-      company.foreach(__v => __obj.updateDynamic("company")(__v.asInstanceOf[js.Any]))
-      country.foreach(__v => __obj.updateDynamic("country")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      phoneNumber.foreach(__v => __obj.updateDynamic("phoneNumber")(__v.asInstanceOf[js.Any]))
-      postalCode.foreach(__v => __obj.updateDynamic("postalCode")(__v.asInstanceOf[js.Any]))
-      stateOrProvince.foreach(__v => __obj.updateDynamic("stateOrProvince")(__v.asInstanceOf[js.Any]))
-      street1.foreach(__v => __obj.updateDynamic("street1")(__v.asInstanceOf[js.Any]))
-      street2.foreach(__v => __obj.updateDynamic("street2")(__v.asInstanceOf[js.Any]))
-      street3.foreach(__v => __obj.updateDynamic("street3")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetShippingLabelInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetShippingLabelOutput extends js.Object {
     var ShippingLabelURL: js.UndefOr[GenericString]
     var Warning: js.UndefOr[GenericString]
-  }
-
-  object GetShippingLabelOutput {
-    @inline
-    def apply(
-        ShippingLabelURL: js.UndefOr[GenericString] = js.undefined,
-        Warning: js.UndefOr[GenericString] = js.undefined
-    ): GetShippingLabelOutput = {
-      val __obj = js.Dynamic.literal()
-      ShippingLabelURL.foreach(__v => __obj.updateDynamic("ShippingLabelURL")(__v.asInstanceOf[js.Any]))
-      Warning.foreach(__v => __obj.updateDynamic("Warning")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetShippingLabelOutput]
-    }
   }
 
   /**
     * Input structure for the GetStatus operation.
     */
   @js.native
+  @Factory
   trait GetStatusInput extends js.Object {
     var JobId: JobId
     var APIVersion: js.UndefOr[APIVersion]
-  }
-
-  object GetStatusInput {
-    @inline
-    def apply(
-        JobId: JobId,
-        APIVersion: js.UndefOr[APIVersion] = js.undefined
-    ): GetStatusInput = {
-      val __obj = js.Dynamic.literal(
-        "JobId" -> JobId.asInstanceOf[js.Any]
-      )
-
-      APIVersion.foreach(__v => __obj.updateDynamic("APIVersion")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetStatusInput]
-    }
   }
 
   /**
     * Output structure for the GetStatus operation.
     */
   @js.native
+  @Factory
   trait GetStatusOutput extends js.Object {
     var ArtifactList: js.UndefOr[ArtifactList]
     var Carrier: js.UndefOr[Carrier]
@@ -359,47 +225,6 @@ package importexport {
     var Signature: js.UndefOr[Signature]
     var SignatureFileContents: js.UndefOr[Signature]
     var TrackingNumber: js.UndefOr[TrackingNumber]
-  }
-
-  object GetStatusOutput {
-    @inline
-    def apply(
-        ArtifactList: js.UndefOr[ArtifactList] = js.undefined,
-        Carrier: js.UndefOr[Carrier] = js.undefined,
-        CreationDate: js.UndefOr[CreationDate] = js.undefined,
-        CurrentManifest: js.UndefOr[CurrentManifest] = js.undefined,
-        ErrorCount: js.UndefOr[ErrorCount] = js.undefined,
-        JobId: js.UndefOr[JobId] = js.undefined,
-        JobType: js.UndefOr[JobType] = js.undefined,
-        LocationCode: js.UndefOr[LocationCode] = js.undefined,
-        LocationMessage: js.UndefOr[LocationMessage] = js.undefined,
-        LogBucket: js.UndefOr[LogBucket] = js.undefined,
-        LogKey: js.UndefOr[LogKey] = js.undefined,
-        ProgressCode: js.UndefOr[ProgressCode] = js.undefined,
-        ProgressMessage: js.UndefOr[ProgressMessage] = js.undefined,
-        Signature: js.UndefOr[Signature] = js.undefined,
-        SignatureFileContents: js.UndefOr[Signature] = js.undefined,
-        TrackingNumber: js.UndefOr[TrackingNumber] = js.undefined
-    ): GetStatusOutput = {
-      val __obj = js.Dynamic.literal()
-      ArtifactList.foreach(__v => __obj.updateDynamic("ArtifactList")(__v.asInstanceOf[js.Any]))
-      Carrier.foreach(__v => __obj.updateDynamic("Carrier")(__v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      CurrentManifest.foreach(__v => __obj.updateDynamic("CurrentManifest")(__v.asInstanceOf[js.Any]))
-      ErrorCount.foreach(__v => __obj.updateDynamic("ErrorCount")(__v.asInstanceOf[js.Any]))
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      JobType.foreach(__v => __obj.updateDynamic("JobType")(__v.asInstanceOf[js.Any]))
-      LocationCode.foreach(__v => __obj.updateDynamic("LocationCode")(__v.asInstanceOf[js.Any]))
-      LocationMessage.foreach(__v => __obj.updateDynamic("LocationMessage")(__v.asInstanceOf[js.Any]))
-      LogBucket.foreach(__v => __obj.updateDynamic("LogBucket")(__v.asInstanceOf[js.Any]))
-      LogKey.foreach(__v => __obj.updateDynamic("LogKey")(__v.asInstanceOf[js.Any]))
-      ProgressCode.foreach(__v => __obj.updateDynamic("ProgressCode")(__v.asInstanceOf[js.Any]))
-      ProgressMessage.foreach(__v => __obj.updateDynamic("ProgressMessage")(__v.asInstanceOf[js.Any]))
-      Signature.foreach(__v => __obj.updateDynamic("Signature")(__v.asInstanceOf[js.Any]))
-      SignatureFileContents.foreach(__v => __obj.updateDynamic("SignatureFileContents")(__v.asInstanceOf[js.Any]))
-      TrackingNumber.foreach(__v => __obj.updateDynamic("TrackingNumber")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetStatusOutput]
-    }
   }
 
   /**
@@ -470,28 +295,12 @@ package importexport {
     * Representation of a job returned by the ListJobs operation.
     */
   @js.native
+  @Factory
   trait Job extends js.Object {
     var CreationDate: js.UndefOr[CreationDate]
     var IsCanceled: js.UndefOr[IsCanceled]
     var JobId: js.UndefOr[JobId]
     var JobType: js.UndefOr[JobType]
-  }
-
-  object Job {
-    @inline
-    def apply(
-        CreationDate: js.UndefOr[CreationDate] = js.undefined,
-        IsCanceled: js.UndefOr[IsCanceled] = js.undefined,
-        JobId: js.UndefOr[JobId] = js.undefined,
-        JobType: js.UndefOr[JobType] = js.undefined
-    ): Job = {
-      val __obj = js.Dynamic.literal()
-      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      IsCanceled.foreach(__v => __obj.updateDynamic("IsCanceled")(__v.asInstanceOf[js.Any]))
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      JobType.foreach(__v => __obj.updateDynamic("JobType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Job]
-    }
   }
 
   /**
@@ -510,47 +319,21 @@ package importexport {
     * Input structure for the ListJobs operation.
     */
   @js.native
+  @Factory
   trait ListJobsInput extends js.Object {
     var APIVersion: js.UndefOr[APIVersion]
     var Marker: js.UndefOr[Marker]
     var MaxJobs: js.UndefOr[MaxJobs]
   }
 
-  object ListJobsInput {
-    @inline
-    def apply(
-        APIVersion: js.UndefOr[APIVersion] = js.undefined,
-        Marker: js.UndefOr[Marker] = js.undefined,
-        MaxJobs: js.UndefOr[MaxJobs] = js.undefined
-    ): ListJobsInput = {
-      val __obj = js.Dynamic.literal()
-      APIVersion.foreach(__v => __obj.updateDynamic("APIVersion")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxJobs.foreach(__v => __obj.updateDynamic("MaxJobs")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListJobsInput]
-    }
-  }
-
   /**
     * Output structure for the ListJobs operation.
     */
   @js.native
+  @Factory
   trait ListJobsOutput extends js.Object {
     var IsTruncated: js.UndefOr[IsTruncated]
     var Jobs: js.UndefOr[JobsList]
-  }
-
-  object ListJobsOutput {
-    @inline
-    def apply(
-        IsTruncated: js.UndefOr[IsTruncated] = js.undefined,
-        Jobs: js.UndefOr[JobsList] = js.undefined
-    ): ListJobsOutput = {
-      val __obj = js.Dynamic.literal()
-      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
-      Jobs.foreach(__v => __obj.updateDynamic("Jobs")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListJobsOutput]
-    }
   }
 
   /**
@@ -621,6 +404,7 @@ package importexport {
     * Input structure for the UpateJob operation.
     */
   @js.native
+  @Factory
   trait UpdateJobInput extends js.Object {
     var JobId: JobId
     var JobType: JobType
@@ -629,49 +413,14 @@ package importexport {
     var APIVersion: js.UndefOr[APIVersion]
   }
 
-  object UpdateJobInput {
-    @inline
-    def apply(
-        JobId: JobId,
-        JobType: JobType,
-        Manifest: Manifest,
-        ValidateOnly: ValidateOnly,
-        APIVersion: js.UndefOr[APIVersion] = js.undefined
-    ): UpdateJobInput = {
-      val __obj = js.Dynamic.literal(
-        "JobId"        -> JobId.asInstanceOf[js.Any],
-        "JobType"      -> JobType.asInstanceOf[js.Any],
-        "Manifest"     -> Manifest.asInstanceOf[js.Any],
-        "ValidateOnly" -> ValidateOnly.asInstanceOf[js.Any]
-      )
-
-      APIVersion.foreach(__v => __obj.updateDynamic("APIVersion")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateJobInput]
-    }
-  }
-
   /**
     * Output structure for the UpateJob operation.
     */
   @js.native
+  @Factory
   trait UpdateJobOutput extends js.Object {
     var ArtifactList: js.UndefOr[ArtifactList]
     var Success: js.UndefOr[Success]
     var WarningMessage: js.UndefOr[WarningMessage]
-  }
-
-  object UpdateJobOutput {
-    @inline
-    def apply(
-        ArtifactList: js.UndefOr[ArtifactList] = js.undefined,
-        Success: js.UndefOr[Success] = js.undefined,
-        WarningMessage: js.UndefOr[WarningMessage] = js.undefined
-    ): UpdateJobOutput = {
-      val __obj = js.Dynamic.literal()
-      ArtifactList.foreach(__v => __obj.updateDynamic("ArtifactList")(__v.asInstanceOf[js.Any]))
-      Success.foreach(__v => __obj.updateDynamic("Success")(__v.asInstanceOf[js.Any]))
-      WarningMessage.foreach(__v => __obj.updateDynamic("WarningMessage")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateJobOutput]
-    }
   }
 }

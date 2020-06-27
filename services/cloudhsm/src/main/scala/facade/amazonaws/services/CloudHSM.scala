@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object cloudhsm {
   type AZ                     = String
@@ -115,42 +116,16 @@ package cloudhsm {
   }
 
   @js.native
+  @Factory
   trait AddTagsToResourceRequest extends js.Object {
     var ResourceArn: String
     var TagList: TagList
   }
 
-  object AddTagsToResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: String,
-        TagList: TagList
-    ): AddTagsToResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagList"     -> TagList.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AddTagsToResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AddTagsToResourceResponse extends js.Object {
     var Status: String
-  }
-
-  object AddTagsToResourceResponse {
-    @inline
-    def apply(
-        Status: String
-    ): AddTagsToResourceResponse = {
-      val __obj = js.Dynamic.literal(
-        "Status" -> Status.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AddTagsToResourceResponse]
-    }
   }
 
   @js.native
@@ -191,46 +166,25 @@ package cloudhsm {
     * Contains the inputs for the <a>CreateHapgRequest</a> action.
     */
   @js.native
+  @Factory
   trait CreateHapgRequest extends js.Object {
     var Label: Label
-  }
-
-  object CreateHapgRequest {
-    @inline
-    def apply(
-        Label: Label
-    ): CreateHapgRequest = {
-      val __obj = js.Dynamic.literal(
-        "Label" -> Label.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateHapgRequest]
-    }
   }
 
   /**
     * Contains the output of the <a>CreateHAPartitionGroup</a> action.
     */
   @js.native
+  @Factory
   trait CreateHapgResponse extends js.Object {
     var HapgArn: js.UndefOr[HapgArn]
-  }
-
-  object CreateHapgResponse {
-    @inline
-    def apply(
-        HapgArn: js.UndefOr[HapgArn] = js.undefined
-    ): CreateHapgResponse = {
-      val __obj = js.Dynamic.literal()
-      HapgArn.foreach(__v => __obj.updateDynamic("HapgArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateHapgResponse]
-    }
   }
 
   /**
     * Contains the inputs for the <code>CreateHsm</code> operation.
     */
   @js.native
+  @Factory
   trait CreateHsmRequest extends js.Object {
     var IamRoleArn: IamRoleArn
     var SshKey: SshKey
@@ -242,240 +196,96 @@ package cloudhsm {
     var SyslogIp: js.UndefOr[IpAddress]
   }
 
-  object CreateHsmRequest {
-    @inline
-    def apply(
-        IamRoleArn: IamRoleArn,
-        SshKey: SshKey,
-        SubnetId: SubnetId,
-        SubscriptionType: SubscriptionType,
-        ClientToken: js.UndefOr[ClientToken] = js.undefined,
-        EniIp: js.UndefOr[IpAddress] = js.undefined,
-        ExternalId: js.UndefOr[ExternalId] = js.undefined,
-        SyslogIp: js.UndefOr[IpAddress] = js.undefined
-    ): CreateHsmRequest = {
-      val __obj = js.Dynamic.literal(
-        "IamRoleArn"       -> IamRoleArn.asInstanceOf[js.Any],
-        "SshKey"           -> SshKey.asInstanceOf[js.Any],
-        "SubnetId"         -> SubnetId.asInstanceOf[js.Any],
-        "SubscriptionType" -> SubscriptionType.asInstanceOf[js.Any]
-      )
-
-      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
-      EniIp.foreach(__v => __obj.updateDynamic("EniIp")(__v.asInstanceOf[js.Any]))
-      ExternalId.foreach(__v => __obj.updateDynamic("ExternalId")(__v.asInstanceOf[js.Any]))
-      SyslogIp.foreach(__v => __obj.updateDynamic("SyslogIp")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateHsmRequest]
-    }
-  }
-
   /**
     * Contains the output of the <code>CreateHsm</code> operation.
     */
   @js.native
+  @Factory
   trait CreateHsmResponse extends js.Object {
     var HsmArn: js.UndefOr[HsmArn]
-  }
-
-  object CreateHsmResponse {
-    @inline
-    def apply(
-        HsmArn: js.UndefOr[HsmArn] = js.undefined
-    ): CreateHsmResponse = {
-      val __obj = js.Dynamic.literal()
-      HsmArn.foreach(__v => __obj.updateDynamic("HsmArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateHsmResponse]
-    }
   }
 
   /**
     * Contains the inputs for the <a>CreateLunaClient</a> action.
     */
   @js.native
+  @Factory
   trait CreateLunaClientRequest extends js.Object {
     var Certificate: Certificate
     var Label: js.UndefOr[ClientLabel]
-  }
-
-  object CreateLunaClientRequest {
-    @inline
-    def apply(
-        Certificate: Certificate,
-        Label: js.UndefOr[ClientLabel] = js.undefined
-    ): CreateLunaClientRequest = {
-      val __obj = js.Dynamic.literal(
-        "Certificate" -> Certificate.asInstanceOf[js.Any]
-      )
-
-      Label.foreach(__v => __obj.updateDynamic("Label")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateLunaClientRequest]
-    }
   }
 
   /**
     * Contains the output of the <a>CreateLunaClient</a> action.
     */
   @js.native
+  @Factory
   trait CreateLunaClientResponse extends js.Object {
     var ClientArn: js.UndefOr[ClientArn]
-  }
-
-  object CreateLunaClientResponse {
-    @inline
-    def apply(
-        ClientArn: js.UndefOr[ClientArn] = js.undefined
-    ): CreateLunaClientResponse = {
-      val __obj = js.Dynamic.literal()
-      ClientArn.foreach(__v => __obj.updateDynamic("ClientArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateLunaClientResponse]
-    }
   }
 
   /**
     * Contains the inputs for the <a>DeleteHapg</a> action.
     */
   @js.native
+  @Factory
   trait DeleteHapgRequest extends js.Object {
     var HapgArn: HapgArn
-  }
-
-  object DeleteHapgRequest {
-    @inline
-    def apply(
-        HapgArn: HapgArn
-    ): DeleteHapgRequest = {
-      val __obj = js.Dynamic.literal(
-        "HapgArn" -> HapgArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteHapgRequest]
-    }
   }
 
   /**
     * Contains the output of the <a>DeleteHapg</a> action.
     */
   @js.native
+  @Factory
   trait DeleteHapgResponse extends js.Object {
     var Status: String
-  }
-
-  object DeleteHapgResponse {
-    @inline
-    def apply(
-        Status: String
-    ): DeleteHapgResponse = {
-      val __obj = js.Dynamic.literal(
-        "Status" -> Status.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteHapgResponse]
-    }
   }
 
   /**
     * Contains the inputs for the <a>DeleteHsm</a> operation.
     */
   @js.native
+  @Factory
   trait DeleteHsmRequest extends js.Object {
     var HsmArn: HsmArn
-  }
-
-  object DeleteHsmRequest {
-    @inline
-    def apply(
-        HsmArn: HsmArn
-    ): DeleteHsmRequest = {
-      val __obj = js.Dynamic.literal(
-        "HsmArn" -> HsmArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteHsmRequest]
-    }
   }
 
   /**
     * Contains the output of the <a>DeleteHsm</a> operation.
     */
   @js.native
+  @Factory
   trait DeleteHsmResponse extends js.Object {
     var Status: String
   }
 
-  object DeleteHsmResponse {
-    @inline
-    def apply(
-        Status: String
-    ): DeleteHsmResponse = {
-      val __obj = js.Dynamic.literal(
-        "Status" -> Status.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteHsmResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteLunaClientRequest extends js.Object {
     var ClientArn: ClientArn
   }
 
-  object DeleteLunaClientRequest {
-    @inline
-    def apply(
-        ClientArn: ClientArn
-    ): DeleteLunaClientRequest = {
-      val __obj = js.Dynamic.literal(
-        "ClientArn" -> ClientArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteLunaClientRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteLunaClientResponse extends js.Object {
     var Status: String
-  }
-
-  object DeleteLunaClientResponse {
-    @inline
-    def apply(
-        Status: String
-    ): DeleteLunaClientResponse = {
-      val __obj = js.Dynamic.literal(
-        "Status" -> Status.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteLunaClientResponse]
-    }
   }
 
   /**
     * Contains the inputs for the <a>DescribeHapg</a> action.
     */
   @js.native
+  @Factory
   trait DescribeHapgRequest extends js.Object {
     var HapgArn: HapgArn
-  }
-
-  object DescribeHapgRequest {
-    @inline
-    def apply(
-        HapgArn: HapgArn
-    ): DescribeHapgRequest = {
-      val __obj = js.Dynamic.literal(
-        "HapgArn" -> HapgArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeHapgRequest]
-    }
   }
 
   /**
     * Contains the output of the <a>DescribeHapg</a> action.
     */
   @js.native
+  @Factory
   trait DescribeHapgResponse extends js.Object {
     var HapgArn: js.UndefOr[HapgArn]
     var HapgSerial: js.UndefOr[String]
@@ -488,59 +298,21 @@ package cloudhsm {
     var State: js.UndefOr[CloudHsmObjectState]
   }
 
-  object DescribeHapgResponse {
-    @inline
-    def apply(
-        HapgArn: js.UndefOr[HapgArn] = js.undefined,
-        HapgSerial: js.UndefOr[String] = js.undefined,
-        HsmsLastActionFailed: js.UndefOr[HsmList] = js.undefined,
-        HsmsPendingDeletion: js.UndefOr[HsmList] = js.undefined,
-        HsmsPendingRegistration: js.UndefOr[HsmList] = js.undefined,
-        Label: js.UndefOr[Label] = js.undefined,
-        LastModifiedTimestamp: js.UndefOr[Timestamp] = js.undefined,
-        PartitionSerialList: js.UndefOr[PartitionSerialList] = js.undefined,
-        State: js.UndefOr[CloudHsmObjectState] = js.undefined
-    ): DescribeHapgResponse = {
-      val __obj = js.Dynamic.literal()
-      HapgArn.foreach(__v => __obj.updateDynamic("HapgArn")(__v.asInstanceOf[js.Any]))
-      HapgSerial.foreach(__v => __obj.updateDynamic("HapgSerial")(__v.asInstanceOf[js.Any]))
-      HsmsLastActionFailed.foreach(__v => __obj.updateDynamic("HsmsLastActionFailed")(__v.asInstanceOf[js.Any]))
-      HsmsPendingDeletion.foreach(__v => __obj.updateDynamic("HsmsPendingDeletion")(__v.asInstanceOf[js.Any]))
-      HsmsPendingRegistration.foreach(__v => __obj.updateDynamic("HsmsPendingRegistration")(__v.asInstanceOf[js.Any]))
-      Label.foreach(__v => __obj.updateDynamic("Label")(__v.asInstanceOf[js.Any]))
-      LastModifiedTimestamp.foreach(__v => __obj.updateDynamic("LastModifiedTimestamp")(__v.asInstanceOf[js.Any]))
-      PartitionSerialList.foreach(__v => __obj.updateDynamic("PartitionSerialList")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeHapgResponse]
-    }
-  }
-
   /**
     * Contains the inputs for the <a>DescribeHsm</a> operation.
     */
   @js.native
+  @Factory
   trait DescribeHsmRequest extends js.Object {
     var HsmArn: js.UndefOr[HsmArn]
     var HsmSerialNumber: js.UndefOr[HsmSerialNumber]
-  }
-
-  object DescribeHsmRequest {
-    @inline
-    def apply(
-        HsmArn: js.UndefOr[HsmArn] = js.undefined,
-        HsmSerialNumber: js.UndefOr[HsmSerialNumber] = js.undefined
-    ): DescribeHsmRequest = {
-      val __obj = js.Dynamic.literal()
-      HsmArn.foreach(__v => __obj.updateDynamic("HsmArn")(__v.asInstanceOf[js.Any]))
-      HsmSerialNumber.foreach(__v => __obj.updateDynamic("HsmSerialNumber")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeHsmRequest]
-    }
   }
 
   /**
     * Contains the output of the <a>DescribeHsm</a> operation.
     */
   @js.native
+  @Factory
   trait DescribeHsmResponse extends js.Object {
     var AvailabilityZone: js.UndefOr[AZ]
     var EniId: js.UndefOr[EniId]
@@ -565,77 +337,15 @@ package cloudhsm {
     var VpcId: js.UndefOr[VpcId]
   }
 
-  object DescribeHsmResponse {
-    @inline
-    def apply(
-        AvailabilityZone: js.UndefOr[AZ] = js.undefined,
-        EniId: js.UndefOr[EniId] = js.undefined,
-        EniIp: js.UndefOr[IpAddress] = js.undefined,
-        HsmArn: js.UndefOr[HsmArn] = js.undefined,
-        HsmType: js.UndefOr[String] = js.undefined,
-        IamRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
-        Partitions: js.UndefOr[PartitionList] = js.undefined,
-        SerialNumber: js.UndefOr[HsmSerialNumber] = js.undefined,
-        ServerCertLastUpdated: js.UndefOr[Timestamp] = js.undefined,
-        ServerCertUri: js.UndefOr[String] = js.undefined,
-        SoftwareVersion: js.UndefOr[String] = js.undefined,
-        SshKeyLastUpdated: js.UndefOr[Timestamp] = js.undefined,
-        SshPublicKey: js.UndefOr[SshKey] = js.undefined,
-        Status: js.UndefOr[HsmStatus] = js.undefined,
-        StatusDetails: js.UndefOr[String] = js.undefined,
-        SubnetId: js.UndefOr[SubnetId] = js.undefined,
-        SubscriptionEndDate: js.UndefOr[Timestamp] = js.undefined,
-        SubscriptionStartDate: js.UndefOr[Timestamp] = js.undefined,
-        SubscriptionType: js.UndefOr[SubscriptionType] = js.undefined,
-        VendorName: js.UndefOr[String] = js.undefined,
-        VpcId: js.UndefOr[VpcId] = js.undefined
-    ): DescribeHsmResponse = {
-      val __obj = js.Dynamic.literal()
-      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
-      EniId.foreach(__v => __obj.updateDynamic("EniId")(__v.asInstanceOf[js.Any]))
-      EniIp.foreach(__v => __obj.updateDynamic("EniIp")(__v.asInstanceOf[js.Any]))
-      HsmArn.foreach(__v => __obj.updateDynamic("HsmArn")(__v.asInstanceOf[js.Any]))
-      HsmType.foreach(__v => __obj.updateDynamic("HsmType")(__v.asInstanceOf[js.Any]))
-      IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
-      Partitions.foreach(__v => __obj.updateDynamic("Partitions")(__v.asInstanceOf[js.Any]))
-      SerialNumber.foreach(__v => __obj.updateDynamic("SerialNumber")(__v.asInstanceOf[js.Any]))
-      ServerCertLastUpdated.foreach(__v => __obj.updateDynamic("ServerCertLastUpdated")(__v.asInstanceOf[js.Any]))
-      ServerCertUri.foreach(__v => __obj.updateDynamic("ServerCertUri")(__v.asInstanceOf[js.Any]))
-      SoftwareVersion.foreach(__v => __obj.updateDynamic("SoftwareVersion")(__v.asInstanceOf[js.Any]))
-      SshKeyLastUpdated.foreach(__v => __obj.updateDynamic("SshKeyLastUpdated")(__v.asInstanceOf[js.Any]))
-      SshPublicKey.foreach(__v => __obj.updateDynamic("SshPublicKey")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      StatusDetails.foreach(__v => __obj.updateDynamic("StatusDetails")(__v.asInstanceOf[js.Any]))
-      SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
-      SubscriptionEndDate.foreach(__v => __obj.updateDynamic("SubscriptionEndDate")(__v.asInstanceOf[js.Any]))
-      SubscriptionStartDate.foreach(__v => __obj.updateDynamic("SubscriptionStartDate")(__v.asInstanceOf[js.Any]))
-      SubscriptionType.foreach(__v => __obj.updateDynamic("SubscriptionType")(__v.asInstanceOf[js.Any]))
-      VendorName.foreach(__v => __obj.updateDynamic("VendorName")(__v.asInstanceOf[js.Any]))
-      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeHsmResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeLunaClientRequest extends js.Object {
     var CertificateFingerprint: js.UndefOr[CertificateFingerprint]
     var ClientArn: js.UndefOr[ClientArn]
   }
 
-  object DescribeLunaClientRequest {
-    @inline
-    def apply(
-        CertificateFingerprint: js.UndefOr[CertificateFingerprint] = js.undefined,
-        ClientArn: js.UndefOr[ClientArn] = js.undefined
-    ): DescribeLunaClientRequest = {
-      val __obj = js.Dynamic.literal()
-      CertificateFingerprint.foreach(__v => __obj.updateDynamic("CertificateFingerprint")(__v.asInstanceOf[js.Any]))
-      ClientArn.foreach(__v => __obj.updateDynamic("ClientArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeLunaClientRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeLunaClientResponse extends js.Object {
     var Certificate: js.UndefOr[Certificate]
     var CertificateFingerprint: js.UndefOr[CertificateFingerprint]
@@ -644,69 +354,20 @@ package cloudhsm {
     var LastModifiedTimestamp: js.UndefOr[Timestamp]
   }
 
-  object DescribeLunaClientResponse {
-    @inline
-    def apply(
-        Certificate: js.UndefOr[Certificate] = js.undefined,
-        CertificateFingerprint: js.UndefOr[CertificateFingerprint] = js.undefined,
-        ClientArn: js.UndefOr[ClientArn] = js.undefined,
-        Label: js.UndefOr[Label] = js.undefined,
-        LastModifiedTimestamp: js.UndefOr[Timestamp] = js.undefined
-    ): DescribeLunaClientResponse = {
-      val __obj = js.Dynamic.literal()
-      Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
-      CertificateFingerprint.foreach(__v => __obj.updateDynamic("CertificateFingerprint")(__v.asInstanceOf[js.Any]))
-      ClientArn.foreach(__v => __obj.updateDynamic("ClientArn")(__v.asInstanceOf[js.Any]))
-      Label.foreach(__v => __obj.updateDynamic("Label")(__v.asInstanceOf[js.Any]))
-      LastModifiedTimestamp.foreach(__v => __obj.updateDynamic("LastModifiedTimestamp")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeLunaClientResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetConfigRequest extends js.Object {
     var ClientArn: ClientArn
     var ClientVersion: ClientVersion
     var HapgList: HapgList
   }
 
-  object GetConfigRequest {
-    @inline
-    def apply(
-        ClientArn: ClientArn,
-        ClientVersion: ClientVersion,
-        HapgList: HapgList
-    ): GetConfigRequest = {
-      val __obj = js.Dynamic.literal(
-        "ClientArn"     -> ClientArn.asInstanceOf[js.Any],
-        "ClientVersion" -> ClientVersion.asInstanceOf[js.Any],
-        "HapgList"      -> HapgList.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetConfigRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetConfigResponse extends js.Object {
     var ConfigCred: js.UndefOr[String]
     var ConfigFile: js.UndefOr[String]
     var ConfigType: js.UndefOr[String]
-  }
-
-  object GetConfigResponse {
-    @inline
-    def apply(
-        ConfigCred: js.UndefOr[String] = js.undefined,
-        ConfigFile: js.UndefOr[String] = js.undefined,
-        ConfigType: js.UndefOr[String] = js.undefined
-    ): GetConfigResponse = {
-      val __obj = js.Dynamic.literal()
-      ConfigCred.foreach(__v => __obj.updateDynamic("ConfigCred")(__v.asInstanceOf[js.Any]))
-      ConfigFile.foreach(__v => __obj.updateDynamic("ConfigFile")(__v.asInstanceOf[js.Any]))
-      ConfigType.foreach(__v => __obj.updateDynamic("ConfigType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetConfigResponse]
-    }
   }
 
   @js.native
@@ -733,226 +394,88 @@ package cloudhsm {
     * Contains the inputs for the <a>ListAvailableZones</a> action.
     */
   @js.native
+  @Factory
   trait ListAvailableZonesRequest extends js.Object {}
 
-  object ListAvailableZonesRequest {
-    @inline
-    def apply(
-    ): ListAvailableZonesRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[ListAvailableZonesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAvailableZonesResponse extends js.Object {
     var AZList: js.UndefOr[AZList]
   }
 
-  object ListAvailableZonesResponse {
-    @inline
-    def apply(
-        AZList: js.UndefOr[AZList] = js.undefined
-    ): ListAvailableZonesResponse = {
-      val __obj = js.Dynamic.literal()
-      AZList.foreach(__v => __obj.updateDynamic("AZList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAvailableZonesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListHapgsRequest extends js.Object {
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListHapgsRequest {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListHapgsRequest = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListHapgsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListHapgsResponse extends js.Object {
     var HapgList: HapgList
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListHapgsResponse {
-    @inline
-    def apply(
-        HapgList: HapgList,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListHapgsResponse = {
-      val __obj = js.Dynamic.literal(
-        "HapgList" -> HapgList.asInstanceOf[js.Any]
-      )
-
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListHapgsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListHsmsRequest extends js.Object {
     var NextToken: js.UndefOr[PaginationToken]
-  }
-
-  object ListHsmsRequest {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListHsmsRequest = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListHsmsRequest]
-    }
   }
 
   /**
     * Contains the output of the <code>ListHsms</code> operation.
     */
   @js.native
+  @Factory
   trait ListHsmsResponse extends js.Object {
     var HsmList: js.UndefOr[HsmList]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListHsmsResponse {
-    @inline
-    def apply(
-        HsmList: js.UndefOr[HsmList] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListHsmsResponse = {
-      val __obj = js.Dynamic.literal()
-      HsmList.foreach(__v => __obj.updateDynamic("HsmList")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListHsmsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListLunaClientsRequest extends js.Object {
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListLunaClientsRequest {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListLunaClientsRequest = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListLunaClientsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListLunaClientsResponse extends js.Object {
     var ClientList: ClientList
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListLunaClientsResponse {
-    @inline
-    def apply(
-        ClientList: ClientList,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListLunaClientsResponse = {
-      val __obj = js.Dynamic.literal(
-        "ClientList" -> ClientList.asInstanceOf[js.Any]
-      )
-
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListLunaClientsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceRequest extends js.Object {
     var ResourceArn: String
   }
 
-  object ListTagsForResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: String
-    ): ListTagsForResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListTagsForResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceResponse extends js.Object {
     var TagList: TagList
   }
 
-  object ListTagsForResourceResponse {
-    @inline
-    def apply(
-        TagList: TagList
-    ): ListTagsForResourceResponse = {
-      val __obj = js.Dynamic.literal(
-        "TagList" -> TagList.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListTagsForResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ModifyHapgRequest extends js.Object {
     var HapgArn: HapgArn
     var Label: js.UndefOr[Label]
     var PartitionSerialList: js.UndefOr[PartitionSerialList]
   }
 
-  object ModifyHapgRequest {
-    @inline
-    def apply(
-        HapgArn: HapgArn,
-        Label: js.UndefOr[Label] = js.undefined,
-        PartitionSerialList: js.UndefOr[PartitionSerialList] = js.undefined
-    ): ModifyHapgRequest = {
-      val __obj = js.Dynamic.literal(
-        "HapgArn" -> HapgArn.asInstanceOf[js.Any]
-      )
-
-      Label.foreach(__v => __obj.updateDynamic("Label")(__v.asInstanceOf[js.Any]))
-      PartitionSerialList.foreach(__v => __obj.updateDynamic("PartitionSerialList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ModifyHapgRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ModifyHapgResponse extends js.Object {
     var HapgArn: js.UndefOr[HapgArn]
-  }
-
-  object ModifyHapgResponse {
-    @inline
-    def apply(
-        HapgArn: js.UndefOr[HapgArn] = js.undefined
-    ): ModifyHapgResponse = {
-      val __obj = js.Dynamic.literal()
-      HapgArn.foreach(__v => __obj.updateDynamic("HapgArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ModifyHapgResponse]
-    }
   }
 
   /**
     * Contains the inputs for the <a>ModifyHsm</a> operation.
     */
   @js.native
+  @Factory
   trait ModifyHsmRequest extends js.Object {
     var HsmArn: HsmArn
     var EniIp: js.UndefOr[IpAddress]
@@ -962,122 +485,39 @@ package cloudhsm {
     var SyslogIp: js.UndefOr[IpAddress]
   }
 
-  object ModifyHsmRequest {
-    @inline
-    def apply(
-        HsmArn: HsmArn,
-        EniIp: js.UndefOr[IpAddress] = js.undefined,
-        ExternalId: js.UndefOr[ExternalId] = js.undefined,
-        IamRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
-        SubnetId: js.UndefOr[SubnetId] = js.undefined,
-        SyslogIp: js.UndefOr[IpAddress] = js.undefined
-    ): ModifyHsmRequest = {
-      val __obj = js.Dynamic.literal(
-        "HsmArn" -> HsmArn.asInstanceOf[js.Any]
-      )
-
-      EniIp.foreach(__v => __obj.updateDynamic("EniIp")(__v.asInstanceOf[js.Any]))
-      ExternalId.foreach(__v => __obj.updateDynamic("ExternalId")(__v.asInstanceOf[js.Any]))
-      IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
-      SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
-      SyslogIp.foreach(__v => __obj.updateDynamic("SyslogIp")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ModifyHsmRequest]
-    }
-  }
-
   /**
     * Contains the output of the <a>ModifyHsm</a> operation.
     */
   @js.native
+  @Factory
   trait ModifyHsmResponse extends js.Object {
     var HsmArn: js.UndefOr[HsmArn]
   }
 
-  object ModifyHsmResponse {
-    @inline
-    def apply(
-        HsmArn: js.UndefOr[HsmArn] = js.undefined
-    ): ModifyHsmResponse = {
-      val __obj = js.Dynamic.literal()
-      HsmArn.foreach(__v => __obj.updateDynamic("HsmArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ModifyHsmResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ModifyLunaClientRequest extends js.Object {
     var Certificate: Certificate
     var ClientArn: ClientArn
   }
 
-  object ModifyLunaClientRequest {
-    @inline
-    def apply(
-        Certificate: Certificate,
-        ClientArn: ClientArn
-    ): ModifyLunaClientRequest = {
-      val __obj = js.Dynamic.literal(
-        "Certificate" -> Certificate.asInstanceOf[js.Any],
-        "ClientArn"   -> ClientArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ModifyLunaClientRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ModifyLunaClientResponse extends js.Object {
     var ClientArn: js.UndefOr[ClientArn]
   }
 
-  object ModifyLunaClientResponse {
-    @inline
-    def apply(
-        ClientArn: js.UndefOr[ClientArn] = js.undefined
-    ): ModifyLunaClientResponse = {
-      val __obj = js.Dynamic.literal()
-      ClientArn.foreach(__v => __obj.updateDynamic("ClientArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ModifyLunaClientResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait RemoveTagsFromResourceRequest extends js.Object {
     var ResourceArn: String
     var TagKeyList: TagKeyList
   }
 
-  object RemoveTagsFromResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: String,
-        TagKeyList: TagKeyList
-    ): RemoveTagsFromResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeyList"  -> TagKeyList.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RemoveTagsFromResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait RemoveTagsFromResourceResponse extends js.Object {
     var Status: String
-  }
-
-  object RemoveTagsFromResourceResponse {
-    @inline
-    def apply(
-        Status: String
-    ): RemoveTagsFromResourceResponse = {
-      val __obj = js.Dynamic.literal(
-        "Status" -> Status.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RemoveTagsFromResourceResponse]
-    }
   }
 
   /**
@@ -1097,23 +537,9 @@ package cloudhsm {
     * A key-value pair that identifies or specifies metadata about an AWS CloudHSM resource.
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var Key: TagKey
     var Value: TagValue
-  }
-
-  object Tag {
-    @inline
-    def apply(
-        Key: TagKey,
-        Value: TagValue
-    ): Tag = {
-      val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Tag]
-    }
   }
 }

@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object kinesisvideosignaling {
   type Answer         = String
@@ -40,6 +41,7 @@ package kinesisvideosignaling {
   }
 
   @js.native
+  @Factory
   trait GetIceServerConfigRequest extends js.Object {
     var ChannelARN: ResourceARN
     var ClientId: js.UndefOr[ClientId]
@@ -47,45 +49,17 @@ package kinesisvideosignaling {
     var Username: js.UndefOr[Username]
   }
 
-  object GetIceServerConfigRequest {
-    @inline
-    def apply(
-        ChannelARN: ResourceARN,
-        ClientId: js.UndefOr[ClientId] = js.undefined,
-        Service: js.UndefOr[Service] = js.undefined,
-        Username: js.UndefOr[Username] = js.undefined
-    ): GetIceServerConfigRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChannelARN" -> ChannelARN.asInstanceOf[js.Any]
-      )
-
-      ClientId.foreach(__v => __obj.updateDynamic("ClientId")(__v.asInstanceOf[js.Any]))
-      Service.foreach(__v => __obj.updateDynamic("Service")(__v.asInstanceOf[js.Any]))
-      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetIceServerConfigRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetIceServerConfigResponse extends js.Object {
     var IceServerList: js.UndefOr[IceServerList]
-  }
-
-  object GetIceServerConfigResponse {
-    @inline
-    def apply(
-        IceServerList: js.UndefOr[IceServerList] = js.undefined
-    ): GetIceServerConfigResponse = {
-      val __obj = js.Dynamic.literal()
-      IceServerList.foreach(__v => __obj.updateDynamic("IceServerList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetIceServerConfigResponse]
-    }
   }
 
   /**
     * A structure for the ICE server connection data.
     */
   @js.native
+  @Factory
   trait IceServer extends js.Object {
     var Password: js.UndefOr[Password]
     var Ttl: js.UndefOr[Ttl]
@@ -93,61 +67,18 @@ package kinesisvideosignaling {
     var Username: js.UndefOr[Username]
   }
 
-  object IceServer {
-    @inline
-    def apply(
-        Password: js.UndefOr[Password] = js.undefined,
-        Ttl: js.UndefOr[Ttl] = js.undefined,
-        Uris: js.UndefOr[Uris] = js.undefined,
-        Username: js.UndefOr[Username] = js.undefined
-    ): IceServer = {
-      val __obj = js.Dynamic.literal()
-      Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
-      Ttl.foreach(__v => __obj.updateDynamic("Ttl")(__v.asInstanceOf[js.Any]))
-      Uris.foreach(__v => __obj.updateDynamic("Uris")(__v.asInstanceOf[js.Any]))
-      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[IceServer]
-    }
-  }
-
   @js.native
+  @Factory
   trait SendAlexaOfferToMasterRequest extends js.Object {
     var ChannelARN: ResourceARN
     var MessagePayload: MessagePayload
     var SenderClientId: ClientId
   }
 
-  object SendAlexaOfferToMasterRequest {
-    @inline
-    def apply(
-        ChannelARN: ResourceARN,
-        MessagePayload: MessagePayload,
-        SenderClientId: ClientId
-    ): SendAlexaOfferToMasterRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChannelARN"     -> ChannelARN.asInstanceOf[js.Any],
-        "MessagePayload" -> MessagePayload.asInstanceOf[js.Any],
-        "SenderClientId" -> SenderClientId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SendAlexaOfferToMasterRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait SendAlexaOfferToMasterResponse extends js.Object {
     var Answer: js.UndefOr[Answer]
-  }
-
-  object SendAlexaOfferToMasterResponse {
-    @inline
-    def apply(
-        Answer: js.UndefOr[Answer] = js.undefined
-    ): SendAlexaOfferToMasterResponse = {
-      val __obj = js.Dynamic.literal()
-      Answer.foreach(__v => __obj.updateDynamic("Answer")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SendAlexaOfferToMasterResponse]
-    }
   }
 
   @js.native

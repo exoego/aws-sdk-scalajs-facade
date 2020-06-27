@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object detective {
   type AccountId              = String
@@ -67,21 +68,9 @@ package detective {
   }
 
   @js.native
+  @Factory
   trait AcceptInvitationRequest extends js.Object {
     var GraphArn: GraphArn
-  }
-
-  object AcceptInvitationRequest {
-    @inline
-    def apply(
-        GraphArn: GraphArn
-    ): AcceptInvitationRequest = {
-      val __obj = js.Dynamic.literal(
-        "GraphArn" -> GraphArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AcceptInvitationRequest]
-    }
   }
 
   /**
@@ -89,199 +78,71 @@ package detective {
     *  An AWS account that is the master of or a member of a behavior graph.
     */
   @js.native
+  @Factory
   trait Account extends js.Object {
     var AccountId: AccountId
     var EmailAddress: EmailAddress
   }
 
-  object Account {
-    @inline
-    def apply(
-        AccountId: AccountId,
-        EmailAddress: EmailAddress
-    ): Account = {
-      val __obj = js.Dynamic.literal(
-        "AccountId"    -> AccountId.asInstanceOf[js.Any],
-        "EmailAddress" -> EmailAddress.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Account]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateGraphResponse extends js.Object {
     var GraphArn: js.UndefOr[GraphArn]
   }
 
-  object CreateGraphResponse {
-    @inline
-    def apply(
-        GraphArn: js.UndefOr[GraphArn] = js.undefined
-    ): CreateGraphResponse = {
-      val __obj = js.Dynamic.literal()
-      GraphArn.foreach(__v => __obj.updateDynamic("GraphArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateGraphResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateMembersRequest extends js.Object {
     var Accounts: AccountList
     var GraphArn: GraphArn
     var Message: js.UndefOr[EmailMessage]
   }
 
-  object CreateMembersRequest {
-    @inline
-    def apply(
-        Accounts: AccountList,
-        GraphArn: GraphArn,
-        Message: js.UndefOr[EmailMessage] = js.undefined
-    ): CreateMembersRequest = {
-      val __obj = js.Dynamic.literal(
-        "Accounts" -> Accounts.asInstanceOf[js.Any],
-        "GraphArn" -> GraphArn.asInstanceOf[js.Any]
-      )
-
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateMembersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateMembersResponse extends js.Object {
     var Members: js.UndefOr[MemberDetailList]
     var UnprocessedAccounts: js.UndefOr[UnprocessedAccountList]
   }
 
-  object CreateMembersResponse {
-    @inline
-    def apply(
-        Members: js.UndefOr[MemberDetailList] = js.undefined,
-        UnprocessedAccounts: js.UndefOr[UnprocessedAccountList] = js.undefined
-    ): CreateMembersResponse = {
-      val __obj = js.Dynamic.literal()
-      Members.foreach(__v => __obj.updateDynamic("Members")(__v.asInstanceOf[js.Any]))
-      UnprocessedAccounts.foreach(__v => __obj.updateDynamic("UnprocessedAccounts")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateMembersResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteGraphRequest extends js.Object {
     var GraphArn: GraphArn
   }
 
-  object DeleteGraphRequest {
-    @inline
-    def apply(
-        GraphArn: GraphArn
-    ): DeleteGraphRequest = {
-      val __obj = js.Dynamic.literal(
-        "GraphArn" -> GraphArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteGraphRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteMembersRequest extends js.Object {
     var AccountIds: AccountIdList
     var GraphArn: GraphArn
   }
 
-  object DeleteMembersRequest {
-    @inline
-    def apply(
-        AccountIds: AccountIdList,
-        GraphArn: GraphArn
-    ): DeleteMembersRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountIds" -> AccountIds.asInstanceOf[js.Any],
-        "GraphArn"   -> GraphArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteMembersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteMembersResponse extends js.Object {
     var AccountIds: js.UndefOr[AccountIdList]
     var UnprocessedAccounts: js.UndefOr[UnprocessedAccountList]
   }
 
-  object DeleteMembersResponse {
-    @inline
-    def apply(
-        AccountIds: js.UndefOr[AccountIdList] = js.undefined,
-        UnprocessedAccounts: js.UndefOr[UnprocessedAccountList] = js.undefined
-    ): DeleteMembersResponse = {
-      val __obj = js.Dynamic.literal()
-      AccountIds.foreach(__v => __obj.updateDynamic("AccountIds")(__v.asInstanceOf[js.Any]))
-      UnprocessedAccounts.foreach(__v => __obj.updateDynamic("UnprocessedAccounts")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteMembersResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateMembershipRequest extends js.Object {
     var GraphArn: GraphArn
   }
 
-  object DisassociateMembershipRequest {
-    @inline
-    def apply(
-        GraphArn: GraphArn
-    ): DisassociateMembershipRequest = {
-      val __obj = js.Dynamic.literal(
-        "GraphArn" -> GraphArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisassociateMembershipRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetMembersRequest extends js.Object {
     var AccountIds: AccountIdList
     var GraphArn: GraphArn
   }
 
-  object GetMembersRequest {
-    @inline
-    def apply(
-        AccountIds: AccountIdList,
-        GraphArn: GraphArn
-    ): GetMembersRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountIds" -> AccountIds.asInstanceOf[js.Any],
-        "GraphArn"   -> GraphArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetMembersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetMembersResponse extends js.Object {
     var MemberDetails: js.UndefOr[MemberDetailList]
     var UnprocessedAccounts: js.UndefOr[UnprocessedAccountList]
-  }
-
-  object GetMembersResponse {
-    @inline
-    def apply(
-        MemberDetails: js.UndefOr[MemberDetailList] = js.undefined,
-        UnprocessedAccounts: js.UndefOr[UnprocessedAccountList] = js.undefined
-    ): GetMembersResponse = {
-      val __obj = js.Dynamic.literal()
-      MemberDetails.foreach(__v => __obj.updateDynamic("MemberDetails")(__v.asInstanceOf[js.Any]))
-      UnprocessedAccounts.foreach(__v => __obj.updateDynamic("UnprocessedAccounts")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetMembersResponse]
-    }
   }
 
   /**
@@ -289,141 +150,53 @@ package detective {
     *  A behavior graph in Detective.
     */
   @js.native
+  @Factory
   trait Graph extends js.Object {
     var Arn: js.UndefOr[GraphArn]
     var CreatedTime: js.UndefOr[Timestamp]
   }
 
-  object Graph {
-    @inline
-    def apply(
-        Arn: js.UndefOr[GraphArn] = js.undefined,
-        CreatedTime: js.UndefOr[Timestamp] = js.undefined
-    ): Graph = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Graph]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListGraphsRequest extends js.Object {
     var MaxResults: js.UndefOr[MemberResultsLimit]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListGraphsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MemberResultsLimit] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListGraphsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListGraphsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListGraphsResponse extends js.Object {
     var GraphList: js.UndefOr[GraphList]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListGraphsResponse {
-    @inline
-    def apply(
-        GraphList: js.UndefOr[GraphList] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListGraphsResponse = {
-      val __obj = js.Dynamic.literal()
-      GraphList.foreach(__v => __obj.updateDynamic("GraphList")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListGraphsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListInvitationsRequest extends js.Object {
     var MaxResults: js.UndefOr[MemberResultsLimit]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListInvitationsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MemberResultsLimit] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListInvitationsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListInvitationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListInvitationsResponse extends js.Object {
     var Invitations: js.UndefOr[MemberDetailList]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListInvitationsResponse {
-    @inline
-    def apply(
-        Invitations: js.UndefOr[MemberDetailList] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListInvitationsResponse = {
-      val __obj = js.Dynamic.literal()
-      Invitations.foreach(__v => __obj.updateDynamic("Invitations")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListInvitationsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListMembersRequest extends js.Object {
     var GraphArn: GraphArn
     var MaxResults: js.UndefOr[MemberResultsLimit]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListMembersRequest {
-    @inline
-    def apply(
-        GraphArn: GraphArn,
-        MaxResults: js.UndefOr[MemberResultsLimit] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListMembersRequest = {
-      val __obj = js.Dynamic.literal(
-        "GraphArn" -> GraphArn.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListMembersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListMembersResponse extends js.Object {
     var MemberDetails: js.UndefOr[MemberDetailList]
     var NextToken: js.UndefOr[PaginationToken]
-  }
-
-  object ListMembersResponse {
-    @inline
-    def apply(
-        MemberDetails: js.UndefOr[MemberDetailList] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListMembersResponse = {
-      val __obj = js.Dynamic.literal()
-      MemberDetails.foreach(__v => __obj.updateDynamic("MemberDetails")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListMembersResponse]
-    }
   }
 
   /**
@@ -431,6 +204,7 @@ package detective {
     *  Details about a member account that was invited to contribute to a behavior graph.
     */
   @js.native
+  @Factory
   trait MemberDetail extends js.Object {
     var AccountId: js.UndefOr[AccountId]
     var EmailAddress: js.UndefOr[EmailAddress]
@@ -439,29 +213,6 @@ package detective {
     var MasterId: js.UndefOr[AccountId]
     var Status: js.UndefOr[MemberStatus]
     var UpdatedTime: js.UndefOr[Timestamp]
-  }
-
-  object MemberDetail {
-    @inline
-    def apply(
-        AccountId: js.UndefOr[AccountId] = js.undefined,
-        EmailAddress: js.UndefOr[EmailAddress] = js.undefined,
-        GraphArn: js.UndefOr[GraphArn] = js.undefined,
-        InvitedTime: js.UndefOr[Timestamp] = js.undefined,
-        MasterId: js.UndefOr[AccountId] = js.undefined,
-        Status: js.UndefOr[MemberStatus] = js.undefined,
-        UpdatedTime: js.UndefOr[Timestamp] = js.undefined
-    ): MemberDetail = {
-      val __obj = js.Dynamic.literal()
-      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
-      EmailAddress.foreach(__v => __obj.updateDynamic("EmailAddress")(__v.asInstanceOf[js.Any]))
-      GraphArn.foreach(__v => __obj.updateDynamic("GraphArn")(__v.asInstanceOf[js.Any]))
-      InvitedTime.foreach(__v => __obj.updateDynamic("InvitedTime")(__v.asInstanceOf[js.Any]))
-      MasterId.foreach(__v => __obj.updateDynamic("MasterId")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      UpdatedTime.foreach(__v => __obj.updateDynamic("UpdatedTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MemberDetail]
-    }
   }
 
   @js.native
@@ -476,21 +227,9 @@ package detective {
   }
 
   @js.native
+  @Factory
   trait RejectInvitationRequest extends js.Object {
     var GraphArn: GraphArn
-  }
-
-  object RejectInvitationRequest {
-    @inline
-    def apply(
-        GraphArn: GraphArn
-    ): RejectInvitationRequest = {
-      val __obj = js.Dynamic.literal(
-        "GraphArn" -> GraphArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RejectInvitationRequest]
-    }
   }
 
   /**
@@ -498,21 +237,9 @@ package detective {
     *  A member account that was included in a request but for which the request could not be processed.
     */
   @js.native
+  @Factory
   trait UnprocessedAccount extends js.Object {
     var AccountId: js.UndefOr[AccountId]
     var Reason: js.UndefOr[UnprocessedReason]
-  }
-
-  object UnprocessedAccount {
-    @inline
-    def apply(
-        AccountId: js.UndefOr[AccountId] = js.undefined,
-        Reason: js.UndefOr[UnprocessedReason] = js.undefined
-    ): UnprocessedAccount = {
-      val __obj = js.Dynamic.literal()
-      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
-      Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UnprocessedAccount]
-    }
   }
 }

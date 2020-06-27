@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object imagebuilder {
   type AccountList                            = js.Array[NonEmptyString]
@@ -255,6 +256,7 @@ package imagebuilder {
     * Details of an EC2 AMI.
     */
   @js.native
+  @Factory
   trait Ami extends js.Object {
     var description: js.UndefOr[NonEmptyString]
     var image: js.UndefOr[NonEmptyString]
@@ -263,29 +265,11 @@ package imagebuilder {
     var state: js.UndefOr[ImageState]
   }
 
-  object Ami {
-    @inline
-    def apply(
-        description: js.UndefOr[NonEmptyString] = js.undefined,
-        image: js.UndefOr[NonEmptyString] = js.undefined,
-        name: js.UndefOr[NonEmptyString] = js.undefined,
-        region: js.UndefOr[NonEmptyString] = js.undefined,
-        state: js.UndefOr[ImageState] = js.undefined
-    ): Ami = {
-      val __obj = js.Dynamic.literal()
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      image.foreach(__v => __obj.updateDynamic("image")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Ami]
-    }
-  }
-
   /**
     * Define and configure the output AMIs of the pipeline.
     */
   @js.native
+  @Factory
   trait AmiDistributionConfiguration extends js.Object {
     var amiTags: js.UndefOr[TagMap]
     var description: js.UndefOr[NonEmptyString]
@@ -293,70 +277,26 @@ package imagebuilder {
     var name: js.UndefOr[AmiNameString]
   }
 
-  object AmiDistributionConfiguration {
-    @inline
-    def apply(
-        amiTags: js.UndefOr[TagMap] = js.undefined,
-        description: js.UndefOr[NonEmptyString] = js.undefined,
-        launchPermission: js.UndefOr[LaunchPermissionConfiguration] = js.undefined,
-        name: js.UndefOr[AmiNameString] = js.undefined
-    ): AmiDistributionConfiguration = {
-      val __obj = js.Dynamic.literal()
-      amiTags.foreach(__v => __obj.updateDynamic("amiTags")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      launchPermission.foreach(__v => __obj.updateDynamic("launchPermission")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AmiDistributionConfiguration]
-    }
-  }
-
   @js.native
+  @Factory
   trait CancelImageCreationRequest extends js.Object {
     var clientToken: ClientToken
     var imageBuildVersionArn: ImageBuildVersionArn
   }
 
-  object CancelImageCreationRequest {
-    @inline
-    def apply(
-        clientToken: ClientToken,
-        imageBuildVersionArn: ImageBuildVersionArn
-    ): CancelImageCreationRequest = {
-      val __obj = js.Dynamic.literal(
-        "clientToken"          -> clientToken.asInstanceOf[js.Any],
-        "imageBuildVersionArn" -> imageBuildVersionArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CancelImageCreationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CancelImageCreationResponse extends js.Object {
     var clientToken: js.UndefOr[ClientToken]
     var imageBuildVersionArn: js.UndefOr[ImageBuildVersionArn]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object CancelImageCreationResponse {
-    @inline
-    def apply(
-        clientToken: js.UndefOr[ClientToken] = js.undefined,
-        imageBuildVersionArn: js.UndefOr[ImageBuildVersionArn] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): CancelImageCreationResponse = {
-      val __obj = js.Dynamic.literal()
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      imageBuildVersionArn.foreach(__v => __obj.updateDynamic("imageBuildVersionArn")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CancelImageCreationResponse]
-    }
-  }
-
   /**
     * A detailed view of a component.
     */
   @js.native
+  @Factory
   trait Component extends js.Object {
     var arn: js.UndefOr[ImageBuilderArn]
     var changeDescription: js.UndefOr[NonEmptyString]
@@ -373,60 +313,13 @@ package imagebuilder {
     var version: js.UndefOr[VersionNumber]
   }
 
-  object Component {
-    @inline
-    def apply(
-        arn: js.UndefOr[ImageBuilderArn] = js.undefined,
-        changeDescription: js.UndefOr[NonEmptyString] = js.undefined,
-        data: js.UndefOr[ComponentData] = js.undefined,
-        dateCreated: js.UndefOr[DateTime] = js.undefined,
-        description: js.UndefOr[NonEmptyString] = js.undefined,
-        encrypted: js.UndefOr[NullableBoolean] = js.undefined,
-        kmsKeyId: js.UndefOr[NonEmptyString] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined,
-        owner: js.UndefOr[NonEmptyString] = js.undefined,
-        platform: js.UndefOr[Platform] = js.undefined,
-        tags: js.UndefOr[TagMap] = js.undefined,
-        `type`: js.UndefOr[ComponentType] = js.undefined,
-        version: js.UndefOr[VersionNumber] = js.undefined
-    ): Component = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      changeDescription.foreach(__v => __obj.updateDynamic("changeDescription")(__v.asInstanceOf[js.Any]))
-      data.foreach(__v => __obj.updateDynamic("data")(__v.asInstanceOf[js.Any]))
-      dateCreated.foreach(__v => __obj.updateDynamic("dateCreated")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      encrypted.foreach(__v => __obj.updateDynamic("encrypted")(__v.asInstanceOf[js.Any]))
-      kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      owner.foreach(__v => __obj.updateDynamic("owner")(__v.asInstanceOf[js.Any]))
-      platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Component]
-    }
-  }
-
   /**
     * Configuration details of the component.
     */
   @js.native
+  @Factory
   trait ComponentConfiguration extends js.Object {
     var componentArn: ComponentVersionArnOrBuildVersionArn
-  }
-
-  object ComponentConfiguration {
-    @inline
-    def apply(
-        componentArn: ComponentVersionArnOrBuildVersionArn
-    ): ComponentConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "componentArn" -> componentArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ComponentConfiguration]
-    }
   }
 
   @js.native
@@ -441,6 +334,7 @@ package imagebuilder {
     * A high-level summary of a component.
     */
   @js.native
+  @Factory
   trait ComponentSummary extends js.Object {
     var arn: js.UndefOr[ImageBuilderArn]
     var changeDescription: js.UndefOr[NonEmptyString]
@@ -452,35 +346,6 @@ package imagebuilder {
     var tags: js.UndefOr[TagMap]
     var `type`: js.UndefOr[ComponentType]
     var version: js.UndefOr[VersionNumber]
-  }
-
-  object ComponentSummary {
-    @inline
-    def apply(
-        arn: js.UndefOr[ImageBuilderArn] = js.undefined,
-        changeDescription: js.UndefOr[NonEmptyString] = js.undefined,
-        dateCreated: js.UndefOr[DateTime] = js.undefined,
-        description: js.UndefOr[NonEmptyString] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined,
-        owner: js.UndefOr[NonEmptyString] = js.undefined,
-        platform: js.UndefOr[Platform] = js.undefined,
-        tags: js.UndefOr[TagMap] = js.undefined,
-        `type`: js.UndefOr[ComponentType] = js.undefined,
-        version: js.UndefOr[VersionNumber] = js.undefined
-    ): ComponentSummary = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      changeDescription.foreach(__v => __obj.updateDynamic("changeDescription")(__v.asInstanceOf[js.Any]))
-      dateCreated.foreach(__v => __obj.updateDynamic("dateCreated")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      owner.foreach(__v => __obj.updateDynamic("owner")(__v.asInstanceOf[js.Any]))
-      platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ComponentSummary]
-    }
   }
 
   @js.native
@@ -496,6 +361,7 @@ package imagebuilder {
     * A high-level overview of a component semantic version.
     */
   @js.native
+  @Factory
   trait ComponentVersion extends js.Object {
     var arn: js.UndefOr[ImageBuilderArn]
     var dateCreated: js.UndefOr[DateTime]
@@ -507,32 +373,8 @@ package imagebuilder {
     var version: js.UndefOr[VersionNumber]
   }
 
-  object ComponentVersion {
-    @inline
-    def apply(
-        arn: js.UndefOr[ImageBuilderArn] = js.undefined,
-        dateCreated: js.UndefOr[DateTime] = js.undefined,
-        description: js.UndefOr[NonEmptyString] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined,
-        owner: js.UndefOr[NonEmptyString] = js.undefined,
-        platform: js.UndefOr[Platform] = js.undefined,
-        `type`: js.UndefOr[ComponentType] = js.undefined,
-        version: js.UndefOr[VersionNumber] = js.undefined
-    ): ComponentVersion = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      dateCreated.foreach(__v => __obj.updateDynamic("dateCreated")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      owner.foreach(__v => __obj.updateDynamic("owner")(__v.asInstanceOf[js.Any]))
-      platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ComponentVersion]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateComponentRequest extends js.Object {
     var clientToken: ClientToken
     var name: ResourceName
@@ -546,60 +388,16 @@ package imagebuilder {
     var uri: js.UndefOr[Uri]
   }
 
-  object CreateComponentRequest {
-    @inline
-    def apply(
-        clientToken: ClientToken,
-        name: ResourceName,
-        platform: Platform,
-        semanticVersion: VersionNumber,
-        changeDescription: js.UndefOr[NonEmptyString] = js.undefined,
-        data: js.UndefOr[InlineComponentData] = js.undefined,
-        description: js.UndefOr[NonEmptyString] = js.undefined,
-        kmsKeyId: js.UndefOr[NonEmptyString] = js.undefined,
-        tags: js.UndefOr[TagMap] = js.undefined,
-        uri: js.UndefOr[Uri] = js.undefined
-    ): CreateComponentRequest = {
-      val __obj = js.Dynamic.literal(
-        "clientToken"     -> clientToken.asInstanceOf[js.Any],
-        "name"            -> name.asInstanceOf[js.Any],
-        "platform"        -> platform.asInstanceOf[js.Any],
-        "semanticVersion" -> semanticVersion.asInstanceOf[js.Any]
-      )
-
-      changeDescription.foreach(__v => __obj.updateDynamic("changeDescription")(__v.asInstanceOf[js.Any]))
-      data.foreach(__v => __obj.updateDynamic("data")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      uri.foreach(__v => __obj.updateDynamic("uri")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateComponentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateComponentResponse extends js.Object {
     var clientToken: js.UndefOr[ClientToken]
     var componentBuildVersionArn: js.UndefOr[ComponentBuildVersionArn]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object CreateComponentResponse {
-    @inline
-    def apply(
-        clientToken: js.UndefOr[ClientToken] = js.undefined,
-        componentBuildVersionArn: js.UndefOr[ComponentBuildVersionArn] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): CreateComponentResponse = {
-      val __obj = js.Dynamic.literal()
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      componentBuildVersionArn.foreach(__v => __obj.updateDynamic("componentBuildVersionArn")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateComponentResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateDistributionConfigurationRequest extends js.Object {
     var clientToken: ClientToken
     var distributions: DistributionList
@@ -608,52 +406,16 @@ package imagebuilder {
     var tags: js.UndefOr[TagMap]
   }
 
-  object CreateDistributionConfigurationRequest {
-    @inline
-    def apply(
-        clientToken: ClientToken,
-        distributions: DistributionList,
-        name: ResourceName,
-        description: js.UndefOr[NonEmptyString] = js.undefined,
-        tags: js.UndefOr[TagMap] = js.undefined
-    ): CreateDistributionConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "clientToken"   -> clientToken.asInstanceOf[js.Any],
-        "distributions" -> distributions.asInstanceOf[js.Any],
-        "name"          -> name.asInstanceOf[js.Any]
-      )
-
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDistributionConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateDistributionConfigurationResponse extends js.Object {
     var clientToken: js.UndefOr[ClientToken]
     var distributionConfigurationArn: js.UndefOr[DistributionConfigurationArn]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object CreateDistributionConfigurationResponse {
-    @inline
-    def apply(
-        clientToken: js.UndefOr[ClientToken] = js.undefined,
-        distributionConfigurationArn: js.UndefOr[DistributionConfigurationArn] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): CreateDistributionConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      distributionConfigurationArn.foreach(__v =>
-        __obj.updateDynamic("distributionConfigurationArn")(__v.asInstanceOf[js.Any])
-      )
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDistributionConfigurationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateImagePipelineRequest extends js.Object {
     var clientToken: ClientToken
     var imageRecipeArn: ImageRecipeArn
@@ -667,62 +429,16 @@ package imagebuilder {
     var tags: js.UndefOr[TagMap]
   }
 
-  object CreateImagePipelineRequest {
-    @inline
-    def apply(
-        clientToken: ClientToken,
-        imageRecipeArn: ImageRecipeArn,
-        infrastructureConfigurationArn: InfrastructureConfigurationArn,
-        name: ResourceName,
-        description: js.UndefOr[NonEmptyString] = js.undefined,
-        distributionConfigurationArn: js.UndefOr[DistributionConfigurationArn] = js.undefined,
-        imageTestsConfiguration: js.UndefOr[ImageTestsConfiguration] = js.undefined,
-        schedule: js.UndefOr[Schedule] = js.undefined,
-        status: js.UndefOr[PipelineStatus] = js.undefined,
-        tags: js.UndefOr[TagMap] = js.undefined
-    ): CreateImagePipelineRequest = {
-      val __obj = js.Dynamic.literal(
-        "clientToken"                    -> clientToken.asInstanceOf[js.Any],
-        "imageRecipeArn"                 -> imageRecipeArn.asInstanceOf[js.Any],
-        "infrastructureConfigurationArn" -> infrastructureConfigurationArn.asInstanceOf[js.Any],
-        "name"                           -> name.asInstanceOf[js.Any]
-      )
-
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      distributionConfigurationArn.foreach(__v =>
-        __obj.updateDynamic("distributionConfigurationArn")(__v.asInstanceOf[js.Any])
-      )
-      imageTestsConfiguration.foreach(__v => __obj.updateDynamic("imageTestsConfiguration")(__v.asInstanceOf[js.Any]))
-      schedule.foreach(__v => __obj.updateDynamic("schedule")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateImagePipelineRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateImagePipelineResponse extends js.Object {
     var clientToken: js.UndefOr[ClientToken]
     var imagePipelineArn: js.UndefOr[ImagePipelineArn]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object CreateImagePipelineResponse {
-    @inline
-    def apply(
-        clientToken: js.UndefOr[ClientToken] = js.undefined,
-        imagePipelineArn: js.UndefOr[ImagePipelineArn] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): CreateImagePipelineResponse = {
-      val __obj = js.Dynamic.literal()
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      imagePipelineArn.foreach(__v => __obj.updateDynamic("imagePipelineArn")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateImagePipelineResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateImageRecipeRequest extends js.Object {
     var clientToken: ClientToken
     var components: ComponentConfigurationList
@@ -734,56 +450,16 @@ package imagebuilder {
     var tags: js.UndefOr[TagMap]
   }
 
-  object CreateImageRecipeRequest {
-    @inline
-    def apply(
-        clientToken: ClientToken,
-        components: ComponentConfigurationList,
-        name: ResourceName,
-        parentImage: NonEmptyString,
-        semanticVersion: VersionNumber,
-        blockDeviceMappings: js.UndefOr[InstanceBlockDeviceMappings] = js.undefined,
-        description: js.UndefOr[NonEmptyString] = js.undefined,
-        tags: js.UndefOr[TagMap] = js.undefined
-    ): CreateImageRecipeRequest = {
-      val __obj = js.Dynamic.literal(
-        "clientToken"     -> clientToken.asInstanceOf[js.Any],
-        "components"      -> components.asInstanceOf[js.Any],
-        "name"            -> name.asInstanceOf[js.Any],
-        "parentImage"     -> parentImage.asInstanceOf[js.Any],
-        "semanticVersion" -> semanticVersion.asInstanceOf[js.Any]
-      )
-
-      blockDeviceMappings.foreach(__v => __obj.updateDynamic("blockDeviceMappings")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateImageRecipeRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateImageRecipeResponse extends js.Object {
     var clientToken: js.UndefOr[ClientToken]
     var imageRecipeArn: js.UndefOr[ImageRecipeArn]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object CreateImageRecipeResponse {
-    @inline
-    def apply(
-        clientToken: js.UndefOr[ClientToken] = js.undefined,
-        imageRecipeArn: js.UndefOr[ImageRecipeArn] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): CreateImageRecipeResponse = {
-      val __obj = js.Dynamic.literal()
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      imageRecipeArn.foreach(__v => __obj.updateDynamic("imageRecipeArn")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateImageRecipeResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateImageRequest extends js.Object {
     var clientToken: ClientToken
     var imageRecipeArn: ImageRecipeArn
@@ -793,54 +469,16 @@ package imagebuilder {
     var tags: js.UndefOr[TagMap]
   }
 
-  object CreateImageRequest {
-    @inline
-    def apply(
-        clientToken: ClientToken,
-        imageRecipeArn: ImageRecipeArn,
-        infrastructureConfigurationArn: InfrastructureConfigurationArn,
-        distributionConfigurationArn: js.UndefOr[DistributionConfigurationArn] = js.undefined,
-        imageTestsConfiguration: js.UndefOr[ImageTestsConfiguration] = js.undefined,
-        tags: js.UndefOr[TagMap] = js.undefined
-    ): CreateImageRequest = {
-      val __obj = js.Dynamic.literal(
-        "clientToken"                    -> clientToken.asInstanceOf[js.Any],
-        "imageRecipeArn"                 -> imageRecipeArn.asInstanceOf[js.Any],
-        "infrastructureConfigurationArn" -> infrastructureConfigurationArn.asInstanceOf[js.Any]
-      )
-
-      distributionConfigurationArn.foreach(__v =>
-        __obj.updateDynamic("distributionConfigurationArn")(__v.asInstanceOf[js.Any])
-      )
-      imageTestsConfiguration.foreach(__v => __obj.updateDynamic("imageTestsConfiguration")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateImageRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateImageResponse extends js.Object {
     var clientToken: js.UndefOr[ClientToken]
     var imageBuildVersionArn: js.UndefOr[ImageBuildVersionArn]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object CreateImageResponse {
-    @inline
-    def apply(
-        clientToken: js.UndefOr[ClientToken] = js.undefined,
-        imageBuildVersionArn: js.UndefOr[ImageBuildVersionArn] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): CreateImageResponse = {
-      val __obj = js.Dynamic.literal()
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      imageBuildVersionArn.foreach(__v => __obj.updateDynamic("imageBuildVersionArn")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateImageResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateInfrastructureConfigurationRequest extends js.Object {
     var clientToken: ClientToken
     var instanceProfileName: NonEmptyString
@@ -856,326 +494,108 @@ package imagebuilder {
     var terminateInstanceOnFailure: js.UndefOr[NullableBoolean]
   }
 
-  object CreateInfrastructureConfigurationRequest {
-    @inline
-    def apply(
-        clientToken: ClientToken,
-        instanceProfileName: NonEmptyString,
-        name: ResourceName,
-        description: js.UndefOr[NonEmptyString] = js.undefined,
-        instanceTypes: js.UndefOr[InstanceTypeList] = js.undefined,
-        keyPair: js.UndefOr[NonEmptyString] = js.undefined,
-        logging: js.UndefOr[Logging] = js.undefined,
-        securityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
-        snsTopicArn: js.UndefOr[SnsTopicArn] = js.undefined,
-        subnetId: js.UndefOr[NonEmptyString] = js.undefined,
-        tags: js.UndefOr[TagMap] = js.undefined,
-        terminateInstanceOnFailure: js.UndefOr[NullableBoolean] = js.undefined
-    ): CreateInfrastructureConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "clientToken"         -> clientToken.asInstanceOf[js.Any],
-        "instanceProfileName" -> instanceProfileName.asInstanceOf[js.Any],
-        "name"                -> name.asInstanceOf[js.Any]
-      )
-
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      instanceTypes.foreach(__v => __obj.updateDynamic("instanceTypes")(__v.asInstanceOf[js.Any]))
-      keyPair.foreach(__v => __obj.updateDynamic("keyPair")(__v.asInstanceOf[js.Any]))
-      logging.foreach(__v => __obj.updateDynamic("logging")(__v.asInstanceOf[js.Any]))
-      securityGroupIds.foreach(__v => __obj.updateDynamic("securityGroupIds")(__v.asInstanceOf[js.Any]))
-      snsTopicArn.foreach(__v => __obj.updateDynamic("snsTopicArn")(__v.asInstanceOf[js.Any]))
-      subnetId.foreach(__v => __obj.updateDynamic("subnetId")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      terminateInstanceOnFailure.foreach(__v =>
-        __obj.updateDynamic("terminateInstanceOnFailure")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[CreateInfrastructureConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateInfrastructureConfigurationResponse extends js.Object {
     var clientToken: js.UndefOr[ClientToken]
     var infrastructureConfigurationArn: js.UndefOr[InfrastructureConfigurationArn]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object CreateInfrastructureConfigurationResponse {
-    @inline
-    def apply(
-        clientToken: js.UndefOr[ClientToken] = js.undefined,
-        infrastructureConfigurationArn: js.UndefOr[InfrastructureConfigurationArn] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): CreateInfrastructureConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      infrastructureConfigurationArn.foreach(__v =>
-        __obj.updateDynamic("infrastructureConfigurationArn")(__v.asInstanceOf[js.Any])
-      )
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateInfrastructureConfigurationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteComponentRequest extends js.Object {
     var componentBuildVersionArn: ComponentBuildVersionArn
   }
 
-  object DeleteComponentRequest {
-    @inline
-    def apply(
-        componentBuildVersionArn: ComponentBuildVersionArn
-    ): DeleteComponentRequest = {
-      val __obj = js.Dynamic.literal(
-        "componentBuildVersionArn" -> componentBuildVersionArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteComponentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteComponentResponse extends js.Object {
     var componentBuildVersionArn: js.UndefOr[ComponentBuildVersionArn]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object DeleteComponentResponse {
-    @inline
-    def apply(
-        componentBuildVersionArn: js.UndefOr[ComponentBuildVersionArn] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): DeleteComponentResponse = {
-      val __obj = js.Dynamic.literal()
-      componentBuildVersionArn.foreach(__v => __obj.updateDynamic("componentBuildVersionArn")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteComponentResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDistributionConfigurationRequest extends js.Object {
     var distributionConfigurationArn: DistributionConfigurationArn
   }
 
-  object DeleteDistributionConfigurationRequest {
-    @inline
-    def apply(
-        distributionConfigurationArn: DistributionConfigurationArn
-    ): DeleteDistributionConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "distributionConfigurationArn" -> distributionConfigurationArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteDistributionConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDistributionConfigurationResponse extends js.Object {
     var distributionConfigurationArn: js.UndefOr[DistributionConfigurationArn]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object DeleteDistributionConfigurationResponse {
-    @inline
-    def apply(
-        distributionConfigurationArn: js.UndefOr[DistributionConfigurationArn] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): DeleteDistributionConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-      distributionConfigurationArn.foreach(__v =>
-        __obj.updateDynamic("distributionConfigurationArn")(__v.asInstanceOf[js.Any])
-      )
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteDistributionConfigurationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteImagePipelineRequest extends js.Object {
     var imagePipelineArn: ImagePipelineArn
   }
 
-  object DeleteImagePipelineRequest {
-    @inline
-    def apply(
-        imagePipelineArn: ImagePipelineArn
-    ): DeleteImagePipelineRequest = {
-      val __obj = js.Dynamic.literal(
-        "imagePipelineArn" -> imagePipelineArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteImagePipelineRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteImagePipelineResponse extends js.Object {
     var imagePipelineArn: js.UndefOr[ImagePipelineArn]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object DeleteImagePipelineResponse {
-    @inline
-    def apply(
-        imagePipelineArn: js.UndefOr[ImagePipelineArn] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): DeleteImagePipelineResponse = {
-      val __obj = js.Dynamic.literal()
-      imagePipelineArn.foreach(__v => __obj.updateDynamic("imagePipelineArn")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteImagePipelineResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteImageRecipeRequest extends js.Object {
     var imageRecipeArn: ImageRecipeArn
   }
 
-  object DeleteImageRecipeRequest {
-    @inline
-    def apply(
-        imageRecipeArn: ImageRecipeArn
-    ): DeleteImageRecipeRequest = {
-      val __obj = js.Dynamic.literal(
-        "imageRecipeArn" -> imageRecipeArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteImageRecipeRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteImageRecipeResponse extends js.Object {
     var imageRecipeArn: js.UndefOr[ImageRecipeArn]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object DeleteImageRecipeResponse {
-    @inline
-    def apply(
-        imageRecipeArn: js.UndefOr[ImageRecipeArn] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): DeleteImageRecipeResponse = {
-      val __obj = js.Dynamic.literal()
-      imageRecipeArn.foreach(__v => __obj.updateDynamic("imageRecipeArn")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteImageRecipeResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteImageRequest extends js.Object {
     var imageBuildVersionArn: ImageBuildVersionArn
   }
 
-  object DeleteImageRequest {
-    @inline
-    def apply(
-        imageBuildVersionArn: ImageBuildVersionArn
-    ): DeleteImageRequest = {
-      val __obj = js.Dynamic.literal(
-        "imageBuildVersionArn" -> imageBuildVersionArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteImageRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteImageResponse extends js.Object {
     var imageBuildVersionArn: js.UndefOr[ImageBuildVersionArn]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object DeleteImageResponse {
-    @inline
-    def apply(
-        imageBuildVersionArn: js.UndefOr[ImageBuildVersionArn] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): DeleteImageResponse = {
-      val __obj = js.Dynamic.literal()
-      imageBuildVersionArn.foreach(__v => __obj.updateDynamic("imageBuildVersionArn")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteImageResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteInfrastructureConfigurationRequest extends js.Object {
     var infrastructureConfigurationArn: InfrastructureConfigurationArn
   }
 
-  object DeleteInfrastructureConfigurationRequest {
-    @inline
-    def apply(
-        infrastructureConfigurationArn: InfrastructureConfigurationArn
-    ): DeleteInfrastructureConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "infrastructureConfigurationArn" -> infrastructureConfigurationArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteInfrastructureConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteInfrastructureConfigurationResponse extends js.Object {
     var infrastructureConfigurationArn: js.UndefOr[InfrastructureConfigurationArn]
     var requestId: js.UndefOr[NonEmptyString]
-  }
-
-  object DeleteInfrastructureConfigurationResponse {
-    @inline
-    def apply(
-        infrastructureConfigurationArn: js.UndefOr[InfrastructureConfigurationArn] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): DeleteInfrastructureConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-      infrastructureConfigurationArn.foreach(__v =>
-        __obj.updateDynamic("infrastructureConfigurationArn")(__v.asInstanceOf[js.Any])
-      )
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteInfrastructureConfigurationResponse]
-    }
   }
 
   /**
     * Defines the settings for a specific Region.
     */
   @js.native
+  @Factory
   trait Distribution extends js.Object {
     var region: NonEmptyString
     var amiDistributionConfiguration: js.UndefOr[AmiDistributionConfiguration]
     var licenseConfigurationArns: js.UndefOr[ArnList]
   }
 
-  object Distribution {
-    @inline
-    def apply(
-        region: NonEmptyString,
-        amiDistributionConfiguration: js.UndefOr[AmiDistributionConfiguration] = js.undefined,
-        licenseConfigurationArns: js.UndefOr[ArnList] = js.undefined
-    ): Distribution = {
-      val __obj = js.Dynamic.literal(
-        "region" -> region.asInstanceOf[js.Any]
-      )
-
-      amiDistributionConfiguration.foreach(__v =>
-        __obj.updateDynamic("amiDistributionConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      licenseConfigurationArns.foreach(__v => __obj.updateDynamic("licenseConfigurationArns")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Distribution]
-    }
-  }
-
   /**
     * A distribution configuration.
     */
   @js.native
+  @Factory
   trait DistributionConfiguration extends js.Object {
     var timeoutMinutes: DistributionTimeoutMinutes
     var arn: js.UndefOr[ImageBuilderArn]
@@ -1187,37 +607,11 @@ package imagebuilder {
     var tags: js.UndefOr[TagMap]
   }
 
-  object DistributionConfiguration {
-    @inline
-    def apply(
-        timeoutMinutes: DistributionTimeoutMinutes,
-        arn: js.UndefOr[ImageBuilderArn] = js.undefined,
-        dateCreated: js.UndefOr[DateTime] = js.undefined,
-        dateUpdated: js.UndefOr[DateTime] = js.undefined,
-        description: js.UndefOr[NonEmptyString] = js.undefined,
-        distributions: js.UndefOr[DistributionList] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined,
-        tags: js.UndefOr[TagMap] = js.undefined
-    ): DistributionConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "timeoutMinutes" -> timeoutMinutes.asInstanceOf[js.Any]
-      )
-
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      dateCreated.foreach(__v => __obj.updateDynamic("dateCreated")(__v.asInstanceOf[js.Any]))
-      dateUpdated.foreach(__v => __obj.updateDynamic("dateUpdated")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      distributions.foreach(__v => __obj.updateDynamic("distributions")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DistributionConfiguration]
-    }
-  }
-
   /**
     * A high-level overview of a distribution configuration.
     */
   @js.native
+  @Factory
   trait DistributionConfigurationSummary extends js.Object {
     var arn: js.UndefOr[ImageBuilderArn]
     var dateCreated: js.UndefOr[DateTime]
@@ -1227,31 +621,11 @@ package imagebuilder {
     var tags: js.UndefOr[TagMap]
   }
 
-  object DistributionConfigurationSummary {
-    @inline
-    def apply(
-        arn: js.UndefOr[ImageBuilderArn] = js.undefined,
-        dateCreated: js.UndefOr[DateTime] = js.undefined,
-        dateUpdated: js.UndefOr[DateTime] = js.undefined,
-        description: js.UndefOr[NonEmptyString] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined,
-        tags: js.UndefOr[TagMap] = js.undefined
-    ): DistributionConfigurationSummary = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      dateCreated.foreach(__v => __obj.updateDynamic("dateCreated")(__v.asInstanceOf[js.Any]))
-      dateUpdated.foreach(__v => __obj.updateDynamic("dateUpdated")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DistributionConfigurationSummary]
-    }
-  }
-
   /**
     * Amazon EBS-specific block device mapping specifications.
     */
   @js.native
+  @Factory
   trait EbsInstanceBlockDeviceSpecification extends js.Object {
     var deleteOnTermination: js.UndefOr[NullableBoolean]
     var encrypted: js.UndefOr[NullableBoolean]
@@ -1260,29 +634,6 @@ package imagebuilder {
     var snapshotId: js.UndefOr[NonEmptyString]
     var volumeSize: js.UndefOr[EbsVolumeSizeInteger]
     var volumeType: js.UndefOr[EbsVolumeType]
-  }
-
-  object EbsInstanceBlockDeviceSpecification {
-    @inline
-    def apply(
-        deleteOnTermination: js.UndefOr[NullableBoolean] = js.undefined,
-        encrypted: js.UndefOr[NullableBoolean] = js.undefined,
-        iops: js.UndefOr[EbsIopsInteger] = js.undefined,
-        kmsKeyId: js.UndefOr[NonEmptyString] = js.undefined,
-        snapshotId: js.UndefOr[NonEmptyString] = js.undefined,
-        volumeSize: js.UndefOr[EbsVolumeSizeInteger] = js.undefined,
-        volumeType: js.UndefOr[EbsVolumeType] = js.undefined
-    ): EbsInstanceBlockDeviceSpecification = {
-      val __obj = js.Dynamic.literal()
-      deleteOnTermination.foreach(__v => __obj.updateDynamic("deleteOnTermination")(__v.asInstanceOf[js.Any]))
-      encrypted.foreach(__v => __obj.updateDynamic("encrypted")(__v.asInstanceOf[js.Any]))
-      iops.foreach(__v => __obj.updateDynamic("iops")(__v.asInstanceOf[js.Any]))
-      kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
-      snapshotId.foreach(__v => __obj.updateDynamic("snapshotId")(__v.asInstanceOf[js.Any]))
-      volumeSize.foreach(__v => __obj.updateDynamic("volumeSize")(__v.asInstanceOf[js.Any]))
-      volumeType.foreach(__v => __obj.updateDynamic("volumeType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EbsInstanceBlockDeviceSpecification]
-    }
   }
 
   @js.native
@@ -1301,371 +652,140 @@ package imagebuilder {
     * A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.
     */
   @js.native
+  @Factory
   trait Filter extends js.Object {
     var name: js.UndefOr[FilterName]
     var values: js.UndefOr[FilterValues]
   }
 
-  object Filter {
-    @inline
-    def apply(
-        name: js.UndefOr[FilterName] = js.undefined,
-        values: js.UndefOr[FilterValues] = js.undefined
-    ): Filter = {
-      val __obj = js.Dynamic.literal()
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      values.foreach(__v => __obj.updateDynamic("values")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Filter]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetComponentPolicyRequest extends js.Object {
     var componentArn: ComponentBuildVersionArn
   }
 
-  object GetComponentPolicyRequest {
-    @inline
-    def apply(
-        componentArn: ComponentBuildVersionArn
-    ): GetComponentPolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "componentArn" -> componentArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetComponentPolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetComponentPolicyResponse extends js.Object {
     var policy: js.UndefOr[ResourcePolicyDocument]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object GetComponentPolicyResponse {
-    @inline
-    def apply(
-        policy: js.UndefOr[ResourcePolicyDocument] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): GetComponentPolicyResponse = {
-      val __obj = js.Dynamic.literal()
-      policy.foreach(__v => __obj.updateDynamic("policy")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetComponentPolicyResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetComponentRequest extends js.Object {
     var componentBuildVersionArn: ComponentBuildVersionArn
   }
 
-  object GetComponentRequest {
-    @inline
-    def apply(
-        componentBuildVersionArn: ComponentBuildVersionArn
-    ): GetComponentRequest = {
-      val __obj = js.Dynamic.literal(
-        "componentBuildVersionArn" -> componentBuildVersionArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetComponentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetComponentResponse extends js.Object {
     var component: js.UndefOr[Component]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object GetComponentResponse {
-    @inline
-    def apply(
-        component: js.UndefOr[Component] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): GetComponentResponse = {
-      val __obj = js.Dynamic.literal()
-      component.foreach(__v => __obj.updateDynamic("component")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetComponentResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDistributionConfigurationRequest extends js.Object {
     var distributionConfigurationArn: DistributionConfigurationArn
   }
 
-  object GetDistributionConfigurationRequest {
-    @inline
-    def apply(
-        distributionConfigurationArn: DistributionConfigurationArn
-    ): GetDistributionConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "distributionConfigurationArn" -> distributionConfigurationArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetDistributionConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDistributionConfigurationResponse extends js.Object {
     var distributionConfiguration: js.UndefOr[DistributionConfiguration]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object GetDistributionConfigurationResponse {
-    @inline
-    def apply(
-        distributionConfiguration: js.UndefOr[DistributionConfiguration] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): GetDistributionConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-      distributionConfiguration.foreach(__v =>
-        __obj.updateDynamic("distributionConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDistributionConfigurationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetImagePipelineRequest extends js.Object {
     var imagePipelineArn: ImagePipelineArn
   }
 
-  object GetImagePipelineRequest {
-    @inline
-    def apply(
-        imagePipelineArn: ImagePipelineArn
-    ): GetImagePipelineRequest = {
-      val __obj = js.Dynamic.literal(
-        "imagePipelineArn" -> imagePipelineArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetImagePipelineRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetImagePipelineResponse extends js.Object {
     var imagePipeline: js.UndefOr[ImagePipeline]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object GetImagePipelineResponse {
-    @inline
-    def apply(
-        imagePipeline: js.UndefOr[ImagePipeline] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): GetImagePipelineResponse = {
-      val __obj = js.Dynamic.literal()
-      imagePipeline.foreach(__v => __obj.updateDynamic("imagePipeline")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetImagePipelineResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetImagePolicyRequest extends js.Object {
     var imageArn: ImageBuildVersionArn
   }
 
-  object GetImagePolicyRequest {
-    @inline
-    def apply(
-        imageArn: ImageBuildVersionArn
-    ): GetImagePolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "imageArn" -> imageArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetImagePolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetImagePolicyResponse extends js.Object {
     var policy: js.UndefOr[ResourcePolicyDocument]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object GetImagePolicyResponse {
-    @inline
-    def apply(
-        policy: js.UndefOr[ResourcePolicyDocument] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): GetImagePolicyResponse = {
-      val __obj = js.Dynamic.literal()
-      policy.foreach(__v => __obj.updateDynamic("policy")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetImagePolicyResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetImageRecipePolicyRequest extends js.Object {
     var imageRecipeArn: ImageRecipeArn
   }
 
-  object GetImageRecipePolicyRequest {
-    @inline
-    def apply(
-        imageRecipeArn: ImageRecipeArn
-    ): GetImageRecipePolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "imageRecipeArn" -> imageRecipeArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetImageRecipePolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetImageRecipePolicyResponse extends js.Object {
     var policy: js.UndefOr[ResourcePolicyDocument]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object GetImageRecipePolicyResponse {
-    @inline
-    def apply(
-        policy: js.UndefOr[ResourcePolicyDocument] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): GetImageRecipePolicyResponse = {
-      val __obj = js.Dynamic.literal()
-      policy.foreach(__v => __obj.updateDynamic("policy")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetImageRecipePolicyResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetImageRecipeRequest extends js.Object {
     var imageRecipeArn: ImageRecipeArn
   }
 
-  object GetImageRecipeRequest {
-    @inline
-    def apply(
-        imageRecipeArn: ImageRecipeArn
-    ): GetImageRecipeRequest = {
-      val __obj = js.Dynamic.literal(
-        "imageRecipeArn" -> imageRecipeArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetImageRecipeRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetImageRecipeResponse extends js.Object {
     var imageRecipe: js.UndefOr[ImageRecipe]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object GetImageRecipeResponse {
-    @inline
-    def apply(
-        imageRecipe: js.UndefOr[ImageRecipe] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): GetImageRecipeResponse = {
-      val __obj = js.Dynamic.literal()
-      imageRecipe.foreach(__v => __obj.updateDynamic("imageRecipe")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetImageRecipeResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetImageRequest extends js.Object {
     var imageBuildVersionArn: ImageBuildVersionArn
   }
 
-  object GetImageRequest {
-    @inline
-    def apply(
-        imageBuildVersionArn: ImageBuildVersionArn
-    ): GetImageRequest = {
-      val __obj = js.Dynamic.literal(
-        "imageBuildVersionArn" -> imageBuildVersionArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetImageRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetImageResponse extends js.Object {
     var image: js.UndefOr[Image]
     var requestId: js.UndefOr[NonEmptyString]
-  }
-
-  object GetImageResponse {
-    @inline
-    def apply(
-        image: js.UndefOr[Image] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): GetImageResponse = {
-      val __obj = js.Dynamic.literal()
-      image.foreach(__v => __obj.updateDynamic("image")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetImageResponse]
-    }
   }
 
   /**
     * GetInfrastructureConfiguration request object.
     */
   @js.native
+  @Factory
   trait GetInfrastructureConfigurationRequest extends js.Object {
     var infrastructureConfigurationArn: InfrastructureConfigurationArn
-  }
-
-  object GetInfrastructureConfigurationRequest {
-    @inline
-    def apply(
-        infrastructureConfigurationArn: InfrastructureConfigurationArn
-    ): GetInfrastructureConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "infrastructureConfigurationArn" -> infrastructureConfigurationArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetInfrastructureConfigurationRequest]
-    }
   }
 
   /**
     * GetInfrastructureConfiguration response object.
     */
   @js.native
+  @Factory
   trait GetInfrastructureConfigurationResponse extends js.Object {
     var infrastructureConfiguration: js.UndefOr[InfrastructureConfiguration]
     var requestId: js.UndefOr[NonEmptyString]
-  }
-
-  object GetInfrastructureConfigurationResponse {
-    @inline
-    def apply(
-        infrastructureConfiguration: js.UndefOr[InfrastructureConfiguration] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): GetInfrastructureConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-      infrastructureConfiguration.foreach(__v =>
-        __obj.updateDynamic("infrastructureConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetInfrastructureConfigurationResponse]
-    }
   }
 
   /**
     * An image build version.
     */
   @js.native
+  @Factory
   trait Image extends js.Object {
     var arn: js.UndefOr[ImageBuilderArn]
     var dateCreated: js.UndefOr[DateTime]
@@ -1683,51 +803,11 @@ package imagebuilder {
     var version: js.UndefOr[VersionNumber]
   }
 
-  object Image {
-    @inline
-    def apply(
-        arn: js.UndefOr[ImageBuilderArn] = js.undefined,
-        dateCreated: js.UndefOr[DateTime] = js.undefined,
-        distributionConfiguration: js.UndefOr[DistributionConfiguration] = js.undefined,
-        imageRecipe: js.UndefOr[ImageRecipe] = js.undefined,
-        imageTestsConfiguration: js.UndefOr[ImageTestsConfiguration] = js.undefined,
-        infrastructureConfiguration: js.UndefOr[InfrastructureConfiguration] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined,
-        outputResources: js.UndefOr[OutputResources] = js.undefined,
-        platform: js.UndefOr[Platform] = js.undefined,
-        sourcePipelineArn: js.UndefOr[Arn] = js.undefined,
-        sourcePipelineName: js.UndefOr[ResourceName] = js.undefined,
-        state: js.UndefOr[ImageState] = js.undefined,
-        tags: js.UndefOr[TagMap] = js.undefined,
-        version: js.UndefOr[VersionNumber] = js.undefined
-    ): Image = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      dateCreated.foreach(__v => __obj.updateDynamic("dateCreated")(__v.asInstanceOf[js.Any]))
-      distributionConfiguration.foreach(__v =>
-        __obj.updateDynamic("distributionConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      imageRecipe.foreach(__v => __obj.updateDynamic("imageRecipe")(__v.asInstanceOf[js.Any]))
-      imageTestsConfiguration.foreach(__v => __obj.updateDynamic("imageTestsConfiguration")(__v.asInstanceOf[js.Any]))
-      infrastructureConfiguration.foreach(__v =>
-        __obj.updateDynamic("infrastructureConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      outputResources.foreach(__v => __obj.updateDynamic("outputResources")(__v.asInstanceOf[js.Any]))
-      platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
-      sourcePipelineArn.foreach(__v => __obj.updateDynamic("sourcePipelineArn")(__v.asInstanceOf[js.Any]))
-      sourcePipelineName.foreach(__v => __obj.updateDynamic("sourcePipelineName")(__v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Image]
-    }
-  }
-
   /**
     * Details of an image pipeline.
     */
   @js.native
+  @Factory
   trait ImagePipeline extends js.Object {
     var arn: js.UndefOr[ImageBuilderArn]
     var dateCreated: js.UndefOr[DateTime]
@@ -1746,53 +826,11 @@ package imagebuilder {
     var tags: js.UndefOr[TagMap]
   }
 
-  object ImagePipeline {
-    @inline
-    def apply(
-        arn: js.UndefOr[ImageBuilderArn] = js.undefined,
-        dateCreated: js.UndefOr[DateTime] = js.undefined,
-        dateLastRun: js.UndefOr[DateTime] = js.undefined,
-        dateNextRun: js.UndefOr[DateTime] = js.undefined,
-        dateUpdated: js.UndefOr[DateTime] = js.undefined,
-        description: js.UndefOr[NonEmptyString] = js.undefined,
-        distributionConfigurationArn: js.UndefOr[Arn] = js.undefined,
-        imageRecipeArn: js.UndefOr[Arn] = js.undefined,
-        imageTestsConfiguration: js.UndefOr[ImageTestsConfiguration] = js.undefined,
-        infrastructureConfigurationArn: js.UndefOr[Arn] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined,
-        platform: js.UndefOr[Platform] = js.undefined,
-        schedule: js.UndefOr[Schedule] = js.undefined,
-        status: js.UndefOr[PipelineStatus] = js.undefined,
-        tags: js.UndefOr[TagMap] = js.undefined
-    ): ImagePipeline = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      dateCreated.foreach(__v => __obj.updateDynamic("dateCreated")(__v.asInstanceOf[js.Any]))
-      dateLastRun.foreach(__v => __obj.updateDynamic("dateLastRun")(__v.asInstanceOf[js.Any]))
-      dateNextRun.foreach(__v => __obj.updateDynamic("dateNextRun")(__v.asInstanceOf[js.Any]))
-      dateUpdated.foreach(__v => __obj.updateDynamic("dateUpdated")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      distributionConfigurationArn.foreach(__v =>
-        __obj.updateDynamic("distributionConfigurationArn")(__v.asInstanceOf[js.Any])
-      )
-      imageRecipeArn.foreach(__v => __obj.updateDynamic("imageRecipeArn")(__v.asInstanceOf[js.Any]))
-      imageTestsConfiguration.foreach(__v => __obj.updateDynamic("imageTestsConfiguration")(__v.asInstanceOf[js.Any]))
-      infrastructureConfigurationArn.foreach(__v =>
-        __obj.updateDynamic("infrastructureConfigurationArn")(__v.asInstanceOf[js.Any])
-      )
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
-      schedule.foreach(__v => __obj.updateDynamic("schedule")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ImagePipeline]
-    }
-  }
-
   /**
     * An image recipe.
     */
   @js.native
+  @Factory
   trait ImageRecipe extends js.Object {
     var arn: js.UndefOr[ImageBuilderArn]
     var blockDeviceMappings: js.UndefOr[InstanceBlockDeviceMappings]
@@ -1807,41 +845,11 @@ package imagebuilder {
     var version: js.UndefOr[VersionNumber]
   }
 
-  object ImageRecipe {
-    @inline
-    def apply(
-        arn: js.UndefOr[ImageBuilderArn] = js.undefined,
-        blockDeviceMappings: js.UndefOr[InstanceBlockDeviceMappings] = js.undefined,
-        components: js.UndefOr[ComponentConfigurationList] = js.undefined,
-        dateCreated: js.UndefOr[DateTime] = js.undefined,
-        description: js.UndefOr[NonEmptyString] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined,
-        owner: js.UndefOr[NonEmptyString] = js.undefined,
-        parentImage: js.UndefOr[NonEmptyString] = js.undefined,
-        platform: js.UndefOr[Platform] = js.undefined,
-        tags: js.UndefOr[TagMap] = js.undefined,
-        version: js.UndefOr[VersionNumber] = js.undefined
-    ): ImageRecipe = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      blockDeviceMappings.foreach(__v => __obj.updateDynamic("blockDeviceMappings")(__v.asInstanceOf[js.Any]))
-      components.foreach(__v => __obj.updateDynamic("components")(__v.asInstanceOf[js.Any]))
-      dateCreated.foreach(__v => __obj.updateDynamic("dateCreated")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      owner.foreach(__v => __obj.updateDynamic("owner")(__v.asInstanceOf[js.Any]))
-      parentImage.foreach(__v => __obj.updateDynamic("parentImage")(__v.asInstanceOf[js.Any]))
-      platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ImageRecipe]
-    }
-  }
-
   /**
     * A summary of an image recipe.
     */
   @js.native
+  @Factory
   trait ImageRecipeSummary extends js.Object {
     var arn: js.UndefOr[ImageBuilderArn]
     var dateCreated: js.UndefOr[DateTime]
@@ -1852,49 +860,14 @@ package imagebuilder {
     var tags: js.UndefOr[TagMap]
   }
 
-  object ImageRecipeSummary {
-    @inline
-    def apply(
-        arn: js.UndefOr[ImageBuilderArn] = js.undefined,
-        dateCreated: js.UndefOr[DateTime] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined,
-        owner: js.UndefOr[NonEmptyString] = js.undefined,
-        parentImage: js.UndefOr[NonEmptyString] = js.undefined,
-        platform: js.UndefOr[Platform] = js.undefined,
-        tags: js.UndefOr[TagMap] = js.undefined
-    ): ImageRecipeSummary = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      dateCreated.foreach(__v => __obj.updateDynamic("dateCreated")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      owner.foreach(__v => __obj.updateDynamic("owner")(__v.asInstanceOf[js.Any]))
-      parentImage.foreach(__v => __obj.updateDynamic("parentImage")(__v.asInstanceOf[js.Any]))
-      platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ImageRecipeSummary]
-    }
-  }
-
   /**
     * Image state shows the image status and the reason for that status.
     */
   @js.native
+  @Factory
   trait ImageState extends js.Object {
     var reason: js.UndefOr[NonEmptyString]
     var status: js.UndefOr[ImageStatus]
-  }
-
-  object ImageState {
-    @inline
-    def apply(
-        reason: js.UndefOr[NonEmptyString] = js.undefined,
-        status: js.UndefOr[ImageStatus] = js.undefined
-    ): ImageState = {
-      val __obj = js.Dynamic.literal()
-      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ImageState]
-    }
   }
 
   @js.native
@@ -1933,6 +906,7 @@ package imagebuilder {
     * An image summary.
     */
   @js.native
+  @Factory
   trait ImageSummary extends js.Object {
     var arn: js.UndefOr[ImageBuilderArn]
     var dateCreated: js.UndefOr[DateTime]
@@ -1945,59 +919,21 @@ package imagebuilder {
     var version: js.UndefOr[VersionNumber]
   }
 
-  object ImageSummary {
-    @inline
-    def apply(
-        arn: js.UndefOr[ImageBuilderArn] = js.undefined,
-        dateCreated: js.UndefOr[DateTime] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined,
-        outputResources: js.UndefOr[OutputResources] = js.undefined,
-        owner: js.UndefOr[NonEmptyString] = js.undefined,
-        platform: js.UndefOr[Platform] = js.undefined,
-        state: js.UndefOr[ImageState] = js.undefined,
-        tags: js.UndefOr[TagMap] = js.undefined,
-        version: js.UndefOr[VersionNumber] = js.undefined
-    ): ImageSummary = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      dateCreated.foreach(__v => __obj.updateDynamic("dateCreated")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      outputResources.foreach(__v => __obj.updateDynamic("outputResources")(__v.asInstanceOf[js.Any]))
-      owner.foreach(__v => __obj.updateDynamic("owner")(__v.asInstanceOf[js.Any]))
-      platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ImageSummary]
-    }
-  }
-
   /**
     * Image tests configuration.
     */
   @js.native
+  @Factory
   trait ImageTestsConfiguration extends js.Object {
     var imageTestsEnabled: js.UndefOr[NullableBoolean]
     var timeoutMinutes: js.UndefOr[ImageTestsTimeoutMinutes]
-  }
-
-  object ImageTestsConfiguration {
-    @inline
-    def apply(
-        imageTestsEnabled: js.UndefOr[NullableBoolean] = js.undefined,
-        timeoutMinutes: js.UndefOr[ImageTestsTimeoutMinutes] = js.undefined
-    ): ImageTestsConfiguration = {
-      val __obj = js.Dynamic.literal()
-      imageTestsEnabled.foreach(__v => __obj.updateDynamic("imageTestsEnabled")(__v.asInstanceOf[js.Any]))
-      timeoutMinutes.foreach(__v => __obj.updateDynamic("timeoutMinutes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ImageTestsConfiguration]
-    }
   }
 
   /**
     * An image semantic version.
     */
   @js.native
+  @Factory
   trait ImageVersion extends js.Object {
     var arn: js.UndefOr[ImageBuilderArn]
     var dateCreated: js.UndefOr[DateTime]
@@ -2007,28 +943,8 @@ package imagebuilder {
     var version: js.UndefOr[VersionNumber]
   }
 
-  object ImageVersion {
-    @inline
-    def apply(
-        arn: js.UndefOr[ImageBuilderArn] = js.undefined,
-        dateCreated: js.UndefOr[DateTime] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined,
-        owner: js.UndefOr[NonEmptyString] = js.undefined,
-        platform: js.UndefOr[Platform] = js.undefined,
-        version: js.UndefOr[VersionNumber] = js.undefined
-    ): ImageVersion = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      dateCreated.foreach(__v => __obj.updateDynamic("dateCreated")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      owner.foreach(__v => __obj.updateDynamic("owner")(__v.asInstanceOf[js.Any]))
-      platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ImageVersion]
-    }
-  }
-
   @js.native
+  @Factory
   trait ImportComponentRequest extends js.Object {
     var clientToken: ClientToken
     var format: ComponentFormat
@@ -2044,67 +960,19 @@ package imagebuilder {
     var uri: js.UndefOr[Uri]
   }
 
-  object ImportComponentRequest {
-    @inline
-    def apply(
-        clientToken: ClientToken,
-        format: ComponentFormat,
-        name: ResourceName,
-        platform: Platform,
-        semanticVersion: VersionNumber,
-        `type`: ComponentType,
-        changeDescription: js.UndefOr[NonEmptyString] = js.undefined,
-        data: js.UndefOr[NonEmptyString] = js.undefined,
-        description: js.UndefOr[NonEmptyString] = js.undefined,
-        kmsKeyId: js.UndefOr[NonEmptyString] = js.undefined,
-        tags: js.UndefOr[TagMap] = js.undefined,
-        uri: js.UndefOr[Uri] = js.undefined
-    ): ImportComponentRequest = {
-      val __obj = js.Dynamic.literal(
-        "clientToken"     -> clientToken.asInstanceOf[js.Any],
-        "format"          -> format.asInstanceOf[js.Any],
-        "name"            -> name.asInstanceOf[js.Any],
-        "platform"        -> platform.asInstanceOf[js.Any],
-        "semanticVersion" -> semanticVersion.asInstanceOf[js.Any],
-        "type"            -> `type`.asInstanceOf[js.Any]
-      )
-
-      changeDescription.foreach(__v => __obj.updateDynamic("changeDescription")(__v.asInstanceOf[js.Any]))
-      data.foreach(__v => __obj.updateDynamic("data")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      uri.foreach(__v => __obj.updateDynamic("uri")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ImportComponentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ImportComponentResponse extends js.Object {
     var clientToken: js.UndefOr[ClientToken]
     var componentBuildVersionArn: js.UndefOr[ComponentBuildVersionArn]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object ImportComponentResponse {
-    @inline
-    def apply(
-        clientToken: js.UndefOr[ClientToken] = js.undefined,
-        componentBuildVersionArn: js.UndefOr[ComponentBuildVersionArn] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): ImportComponentResponse = {
-      val __obj = js.Dynamic.literal()
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      componentBuildVersionArn.foreach(__v => __obj.updateDynamic("componentBuildVersionArn")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ImportComponentResponse]
-    }
-  }
-
   /**
     * Details of the infrastructure configuration.
     */
   @js.native
+  @Factory
   trait InfrastructureConfiguration extends js.Object {
     var arn: js.UndefOr[ImageBuilderArn]
     var dateCreated: js.UndefOr[DateTime]
@@ -2122,49 +990,11 @@ package imagebuilder {
     var terminateInstanceOnFailure: js.UndefOr[NullableBoolean]
   }
 
-  object InfrastructureConfiguration {
-    @inline
-    def apply(
-        arn: js.UndefOr[ImageBuilderArn] = js.undefined,
-        dateCreated: js.UndefOr[DateTime] = js.undefined,
-        dateUpdated: js.UndefOr[DateTime] = js.undefined,
-        description: js.UndefOr[NonEmptyString] = js.undefined,
-        instanceProfileName: js.UndefOr[NonEmptyString] = js.undefined,
-        instanceTypes: js.UndefOr[InstanceTypeList] = js.undefined,
-        keyPair: js.UndefOr[NonEmptyString] = js.undefined,
-        logging: js.UndefOr[Logging] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined,
-        securityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
-        snsTopicArn: js.UndefOr[NonEmptyString] = js.undefined,
-        subnetId: js.UndefOr[NonEmptyString] = js.undefined,
-        tags: js.UndefOr[TagMap] = js.undefined,
-        terminateInstanceOnFailure: js.UndefOr[NullableBoolean] = js.undefined
-    ): InfrastructureConfiguration = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      dateCreated.foreach(__v => __obj.updateDynamic("dateCreated")(__v.asInstanceOf[js.Any]))
-      dateUpdated.foreach(__v => __obj.updateDynamic("dateUpdated")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      instanceProfileName.foreach(__v => __obj.updateDynamic("instanceProfileName")(__v.asInstanceOf[js.Any]))
-      instanceTypes.foreach(__v => __obj.updateDynamic("instanceTypes")(__v.asInstanceOf[js.Any]))
-      keyPair.foreach(__v => __obj.updateDynamic("keyPair")(__v.asInstanceOf[js.Any]))
-      logging.foreach(__v => __obj.updateDynamic("logging")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      securityGroupIds.foreach(__v => __obj.updateDynamic("securityGroupIds")(__v.asInstanceOf[js.Any]))
-      snsTopicArn.foreach(__v => __obj.updateDynamic("snsTopicArn")(__v.asInstanceOf[js.Any]))
-      subnetId.foreach(__v => __obj.updateDynamic("subnetId")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      terminateInstanceOnFailure.foreach(__v =>
-        __obj.updateDynamic("terminateInstanceOnFailure")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[InfrastructureConfiguration]
-    }
-  }
-
   /**
     * The infrastructure used when building EC2 AMIs.
     */
   @js.native
+  @Factory
   trait InfrastructureConfigurationSummary extends js.Object {
     var arn: js.UndefOr[ImageBuilderArn]
     var dateCreated: js.UndefOr[DateTime]
@@ -2174,31 +1004,11 @@ package imagebuilder {
     var tags: js.UndefOr[TagMap]
   }
 
-  object InfrastructureConfigurationSummary {
-    @inline
-    def apply(
-        arn: js.UndefOr[ImageBuilderArn] = js.undefined,
-        dateCreated: js.UndefOr[DateTime] = js.undefined,
-        dateUpdated: js.UndefOr[DateTime] = js.undefined,
-        description: js.UndefOr[NonEmptyString] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined,
-        tags: js.UndefOr[TagMap] = js.undefined
-    ): InfrastructureConfigurationSummary = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      dateCreated.foreach(__v => __obj.updateDynamic("dateCreated")(__v.asInstanceOf[js.Any]))
-      dateUpdated.foreach(__v => __obj.updateDynamic("dateUpdated")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InfrastructureConfigurationSummary]
-    }
-  }
-
   /**
     * Defines block device mappings for the instance used to configure your image.
     */
   @js.native
+  @Factory
   trait InstanceBlockDeviceMapping extends js.Object {
     var deviceName: js.UndefOr[NonEmptyString]
     var ebs: js.UndefOr[EbsInstanceBlockDeviceSpecification]
@@ -2206,92 +1016,34 @@ package imagebuilder {
     var virtualName: js.UndefOr[NonEmptyString]
   }
 
-  object InstanceBlockDeviceMapping {
-    @inline
-    def apply(
-        deviceName: js.UndefOr[NonEmptyString] = js.undefined,
-        ebs: js.UndefOr[EbsInstanceBlockDeviceSpecification] = js.undefined,
-        noDevice: js.UndefOr[EmptyString] = js.undefined,
-        virtualName: js.UndefOr[NonEmptyString] = js.undefined
-    ): InstanceBlockDeviceMapping = {
-      val __obj = js.Dynamic.literal()
-      deviceName.foreach(__v => __obj.updateDynamic("deviceName")(__v.asInstanceOf[js.Any]))
-      ebs.foreach(__v => __obj.updateDynamic("ebs")(__v.asInstanceOf[js.Any]))
-      noDevice.foreach(__v => __obj.updateDynamic("noDevice")(__v.asInstanceOf[js.Any]))
-      virtualName.foreach(__v => __obj.updateDynamic("virtualName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceBlockDeviceMapping]
-    }
-  }
-
   /**
     * Describes the configuration for a launch permission. The launch permission modification request is sent to the [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html|EC2 ModifyImageAttribute]] API on behalf of the user for each Region they have selected to distribute the AMI.
     */
   @js.native
+  @Factory
   trait LaunchPermissionConfiguration extends js.Object {
     var userGroups: js.UndefOr[StringList]
     var userIds: js.UndefOr[AccountList]
   }
 
-  object LaunchPermissionConfiguration {
-    @inline
-    def apply(
-        userGroups: js.UndefOr[StringList] = js.undefined,
-        userIds: js.UndefOr[AccountList] = js.undefined
-    ): LaunchPermissionConfiguration = {
-      val __obj = js.Dynamic.literal()
-      userGroups.foreach(__v => __obj.updateDynamic("userGroups")(__v.asInstanceOf[js.Any]))
-      userIds.foreach(__v => __obj.updateDynamic("userIds")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LaunchPermissionConfiguration]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListComponentBuildVersionsRequest extends js.Object {
     var componentVersionArn: ComponentVersionArn
     var maxResults: js.UndefOr[RestrictedInteger]
     var nextToken: js.UndefOr[NonEmptyString]
   }
 
-  object ListComponentBuildVersionsRequest {
-    @inline
-    def apply(
-        componentVersionArn: ComponentVersionArn,
-        maxResults: js.UndefOr[RestrictedInteger] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined
-    ): ListComponentBuildVersionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "componentVersionArn" -> componentVersionArn.asInstanceOf[js.Any]
-      )
-
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListComponentBuildVersionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListComponentBuildVersionsResponse extends js.Object {
     var componentSummaryList: js.UndefOr[ComponentSummaryList]
     var nextToken: js.UndefOr[NonEmptyString]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object ListComponentBuildVersionsResponse {
-    @inline
-    def apply(
-        componentSummaryList: js.UndefOr[ComponentSummaryList] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): ListComponentBuildVersionsResponse = {
-      val __obj = js.Dynamic.literal()
-      componentSummaryList.foreach(__v => __obj.updateDynamic("componentSummaryList")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListComponentBuildVersionsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListComponentsRequest extends js.Object {
     var filters: js.UndefOr[FilterList]
     var maxResults: js.UndefOr[RestrictedInteger]
@@ -2299,92 +1051,32 @@ package imagebuilder {
     var owner: js.UndefOr[Ownership]
   }
 
-  object ListComponentsRequest {
-    @inline
-    def apply(
-        filters: js.UndefOr[FilterList] = js.undefined,
-        maxResults: js.UndefOr[RestrictedInteger] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined,
-        owner: js.UndefOr[Ownership] = js.undefined
-    ): ListComponentsRequest = {
-      val __obj = js.Dynamic.literal()
-      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      owner.foreach(__v => __obj.updateDynamic("owner")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListComponentsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListComponentsResponse extends js.Object {
     var componentVersionList: js.UndefOr[ComponentVersionList]
     var nextToken: js.UndefOr[NonEmptyString]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object ListComponentsResponse {
-    @inline
-    def apply(
-        componentVersionList: js.UndefOr[ComponentVersionList] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): ListComponentsResponse = {
-      val __obj = js.Dynamic.literal()
-      componentVersionList.foreach(__v => __obj.updateDynamic("componentVersionList")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListComponentsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListDistributionConfigurationsRequest extends js.Object {
     var filters: js.UndefOr[FilterList]
     var maxResults: js.UndefOr[RestrictedInteger]
     var nextToken: js.UndefOr[NonEmptyString]
   }
 
-  object ListDistributionConfigurationsRequest {
-    @inline
-    def apply(
-        filters: js.UndefOr[FilterList] = js.undefined,
-        maxResults: js.UndefOr[RestrictedInteger] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined
-    ): ListDistributionConfigurationsRequest = {
-      val __obj = js.Dynamic.literal()
-      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDistributionConfigurationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListDistributionConfigurationsResponse extends js.Object {
     var distributionConfigurationSummaryList: js.UndefOr[DistributionConfigurationSummaryList]
     var nextToken: js.UndefOr[NonEmptyString]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object ListDistributionConfigurationsResponse {
-    @inline
-    def apply(
-        distributionConfigurationSummaryList: js.UndefOr[DistributionConfigurationSummaryList] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): ListDistributionConfigurationsResponse = {
-      val __obj = js.Dynamic.literal()
-      distributionConfigurationSummaryList.foreach(__v =>
-        __obj.updateDynamic("distributionConfigurationSummaryList")(__v.asInstanceOf[js.Any])
-      )
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDistributionConfigurationsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListImageBuildVersionsRequest extends js.Object {
     var imageVersionArn: ImageVersionArn
     var filters: js.UndefOr[FilterList]
@@ -2392,48 +1084,16 @@ package imagebuilder {
     var nextToken: js.UndefOr[NonEmptyString]
   }
 
-  object ListImageBuildVersionsRequest {
-    @inline
-    def apply(
-        imageVersionArn: ImageVersionArn,
-        filters: js.UndefOr[FilterList] = js.undefined,
-        maxResults: js.UndefOr[RestrictedInteger] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined
-    ): ListImageBuildVersionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "imageVersionArn" -> imageVersionArn.asInstanceOf[js.Any]
-      )
-
-      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListImageBuildVersionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListImageBuildVersionsResponse extends js.Object {
     var imageSummaryList: js.UndefOr[ImageSummaryList]
     var nextToken: js.UndefOr[NonEmptyString]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object ListImageBuildVersionsResponse {
-    @inline
-    def apply(
-        imageSummaryList: js.UndefOr[ImageSummaryList] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): ListImageBuildVersionsResponse = {
-      val __obj = js.Dynamic.literal()
-      imageSummaryList.foreach(__v => __obj.updateDynamic("imageSummaryList")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListImageBuildVersionsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListImagePipelineImagesRequest extends js.Object {
     var imagePipelineArn: ImagePipelineArn
     var filters: js.UndefOr[FilterList]
@@ -2441,92 +1101,32 @@ package imagebuilder {
     var nextToken: js.UndefOr[NonEmptyString]
   }
 
-  object ListImagePipelineImagesRequest {
-    @inline
-    def apply(
-        imagePipelineArn: ImagePipelineArn,
-        filters: js.UndefOr[FilterList] = js.undefined,
-        maxResults: js.UndefOr[RestrictedInteger] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined
-    ): ListImagePipelineImagesRequest = {
-      val __obj = js.Dynamic.literal(
-        "imagePipelineArn" -> imagePipelineArn.asInstanceOf[js.Any]
-      )
-
-      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListImagePipelineImagesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListImagePipelineImagesResponse extends js.Object {
     var imageSummaryList: js.UndefOr[ImageSummaryList]
     var nextToken: js.UndefOr[NonEmptyString]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object ListImagePipelineImagesResponse {
-    @inline
-    def apply(
-        imageSummaryList: js.UndefOr[ImageSummaryList] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): ListImagePipelineImagesResponse = {
-      val __obj = js.Dynamic.literal()
-      imageSummaryList.foreach(__v => __obj.updateDynamic("imageSummaryList")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListImagePipelineImagesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListImagePipelinesRequest extends js.Object {
     var filters: js.UndefOr[FilterList]
     var maxResults: js.UndefOr[RestrictedInteger]
     var nextToken: js.UndefOr[NonEmptyString]
   }
 
-  object ListImagePipelinesRequest {
-    @inline
-    def apply(
-        filters: js.UndefOr[FilterList] = js.undefined,
-        maxResults: js.UndefOr[RestrictedInteger] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined
-    ): ListImagePipelinesRequest = {
-      val __obj = js.Dynamic.literal()
-      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListImagePipelinesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListImagePipelinesResponse extends js.Object {
     var imagePipelineList: js.UndefOr[ImagePipelineList]
     var nextToken: js.UndefOr[NonEmptyString]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object ListImagePipelinesResponse {
-    @inline
-    def apply(
-        imagePipelineList: js.UndefOr[ImagePipelineList] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): ListImagePipelinesResponse = {
-      val __obj = js.Dynamic.literal()
-      imagePipelineList.foreach(__v => __obj.updateDynamic("imagePipelineList")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListImagePipelinesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListImageRecipesRequest extends js.Object {
     var filters: js.UndefOr[FilterList]
     var maxResults: js.UndefOr[RestrictedInteger]
@@ -2534,46 +1134,16 @@ package imagebuilder {
     var owner: js.UndefOr[Ownership]
   }
 
-  object ListImageRecipesRequest {
-    @inline
-    def apply(
-        filters: js.UndefOr[FilterList] = js.undefined,
-        maxResults: js.UndefOr[RestrictedInteger] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined,
-        owner: js.UndefOr[Ownership] = js.undefined
-    ): ListImageRecipesRequest = {
-      val __obj = js.Dynamic.literal()
-      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      owner.foreach(__v => __obj.updateDynamic("owner")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListImageRecipesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListImageRecipesResponse extends js.Object {
     var imageRecipeSummaryList: js.UndefOr[ImageRecipeSummaryList]
     var nextToken: js.UndefOr[NonEmptyString]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object ListImageRecipesResponse {
-    @inline
-    def apply(
-        imageRecipeSummaryList: js.UndefOr[ImageRecipeSummaryList] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): ListImageRecipesResponse = {
-      val __obj = js.Dynamic.literal()
-      imageRecipeSummaryList.foreach(__v => __obj.updateDynamic("imageRecipeSummaryList")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListImageRecipesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListImagesRequest extends js.Object {
     var filters: js.UndefOr[FilterList]
     var maxResults: js.UndefOr[RestrictedInteger]
@@ -2581,161 +1151,58 @@ package imagebuilder {
     var owner: js.UndefOr[Ownership]
   }
 
-  object ListImagesRequest {
-    @inline
-    def apply(
-        filters: js.UndefOr[FilterList] = js.undefined,
-        maxResults: js.UndefOr[RestrictedInteger] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined,
-        owner: js.UndefOr[Ownership] = js.undefined
-    ): ListImagesRequest = {
-      val __obj = js.Dynamic.literal()
-      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      owner.foreach(__v => __obj.updateDynamic("owner")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListImagesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListImagesResponse extends js.Object {
     var imageVersionList: js.UndefOr[ImageVersionList]
     var nextToken: js.UndefOr[NonEmptyString]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object ListImagesResponse {
-    @inline
-    def apply(
-        imageVersionList: js.UndefOr[ImageVersionList] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): ListImagesResponse = {
-      val __obj = js.Dynamic.literal()
-      imageVersionList.foreach(__v => __obj.updateDynamic("imageVersionList")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListImagesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListInfrastructureConfigurationsRequest extends js.Object {
     var filters: js.UndefOr[FilterList]
     var maxResults: js.UndefOr[RestrictedInteger]
     var nextToken: js.UndefOr[NonEmptyString]
   }
 
-  object ListInfrastructureConfigurationsRequest {
-    @inline
-    def apply(
-        filters: js.UndefOr[FilterList] = js.undefined,
-        maxResults: js.UndefOr[RestrictedInteger] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined
-    ): ListInfrastructureConfigurationsRequest = {
-      val __obj = js.Dynamic.literal()
-      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListInfrastructureConfigurationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListInfrastructureConfigurationsResponse extends js.Object {
     var infrastructureConfigurationSummaryList: js.UndefOr[InfrastructureConfigurationSummaryList]
     var nextToken: js.UndefOr[NonEmptyString]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object ListInfrastructureConfigurationsResponse {
-    @inline
-    def apply(
-        infrastructureConfigurationSummaryList: js.UndefOr[InfrastructureConfigurationSummaryList] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): ListInfrastructureConfigurationsResponse = {
-      val __obj = js.Dynamic.literal()
-      infrastructureConfigurationSummaryList.foreach(__v =>
-        __obj.updateDynamic("infrastructureConfigurationSummaryList")(__v.asInstanceOf[js.Any])
-      )
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListInfrastructureConfigurationsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceRequest extends js.Object {
     var resourceArn: ImageBuilderArn
   }
 
-  object ListTagsForResourceRequest {
-    @inline
-    def apply(
-        resourceArn: ImageBuilderArn
-    ): ListTagsForResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListTagsForResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceResponse extends js.Object {
     var tags: js.UndefOr[TagMap]
-  }
-
-  object ListTagsForResourceResponse {
-    @inline
-    def apply(
-        tags: js.UndefOr[TagMap] = js.undefined
-    ): ListTagsForResourceResponse = {
-      val __obj = js.Dynamic.literal()
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceResponse]
-    }
   }
 
   /**
     * Logging configuration defines where Image Builder uploads your logs.
     */
   @js.native
+  @Factory
   trait Logging extends js.Object {
     var s3Logs: js.UndefOr[S3Logs]
-  }
-
-  object Logging {
-    @inline
-    def apply(
-        s3Logs: js.UndefOr[S3Logs] = js.undefined
-    ): Logging = {
-      val __obj = js.Dynamic.literal()
-      s3Logs.foreach(__v => __obj.updateDynamic("s3Logs")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Logging]
-    }
   }
 
   /**
     * The resources produced by this image.
     */
   @js.native
+  @Factory
   trait OutputResources extends js.Object {
     var amis: js.UndefOr[AmiList]
-  }
-
-  object OutputResources {
-    @inline
-    def apply(
-        amis: js.UndefOr[AmiList] = js.undefined
-    ): OutputResources = {
-      val __obj = js.Dynamic.literal()
-      amis.foreach(__v => __obj.updateDynamic("amis")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[OutputResources]
-    }
   }
 
   @js.native
@@ -2777,283 +1244,106 @@ package imagebuilder {
   }
 
   @js.native
+  @Factory
   trait PutComponentPolicyRequest extends js.Object {
     var componentArn: ComponentBuildVersionArn
     var policy: ResourcePolicyDocument
   }
 
-  object PutComponentPolicyRequest {
-    @inline
-    def apply(
-        componentArn: ComponentBuildVersionArn,
-        policy: ResourcePolicyDocument
-    ): PutComponentPolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "componentArn" -> componentArn.asInstanceOf[js.Any],
-        "policy"       -> policy.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutComponentPolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutComponentPolicyResponse extends js.Object {
     var componentArn: js.UndefOr[ComponentBuildVersionArn]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object PutComponentPolicyResponse {
-    @inline
-    def apply(
-        componentArn: js.UndefOr[ComponentBuildVersionArn] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): PutComponentPolicyResponse = {
-      val __obj = js.Dynamic.literal()
-      componentArn.foreach(__v => __obj.updateDynamic("componentArn")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutComponentPolicyResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutImagePolicyRequest extends js.Object {
     var imageArn: ImageBuildVersionArn
     var policy: ResourcePolicyDocument
   }
 
-  object PutImagePolicyRequest {
-    @inline
-    def apply(
-        imageArn: ImageBuildVersionArn,
-        policy: ResourcePolicyDocument
-    ): PutImagePolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "imageArn" -> imageArn.asInstanceOf[js.Any],
-        "policy"   -> policy.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutImagePolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutImagePolicyResponse extends js.Object {
     var imageArn: js.UndefOr[ImageBuildVersionArn]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object PutImagePolicyResponse {
-    @inline
-    def apply(
-        imageArn: js.UndefOr[ImageBuildVersionArn] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): PutImagePolicyResponse = {
-      val __obj = js.Dynamic.literal()
-      imageArn.foreach(__v => __obj.updateDynamic("imageArn")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutImagePolicyResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutImageRecipePolicyRequest extends js.Object {
     var imageRecipeArn: ImageRecipeArn
     var policy: ResourcePolicyDocument
   }
 
-  object PutImageRecipePolicyRequest {
-    @inline
-    def apply(
-        imageRecipeArn: ImageRecipeArn,
-        policy: ResourcePolicyDocument
-    ): PutImageRecipePolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "imageRecipeArn" -> imageRecipeArn.asInstanceOf[js.Any],
-        "policy"         -> policy.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutImageRecipePolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutImageRecipePolicyResponse extends js.Object {
     var imageRecipeArn: js.UndefOr[ImageRecipeArn]
     var requestId: js.UndefOr[NonEmptyString]
-  }
-
-  object PutImageRecipePolicyResponse {
-    @inline
-    def apply(
-        imageRecipeArn: js.UndefOr[ImageRecipeArn] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): PutImageRecipePolicyResponse = {
-      val __obj = js.Dynamic.literal()
-      imageRecipeArn.foreach(__v => __obj.updateDynamic("imageRecipeArn")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutImageRecipePolicyResponse]
-    }
   }
 
   /**
     * Amazon S3 logging configuration.
     */
   @js.native
+  @Factory
   trait S3Logs extends js.Object {
     var s3BucketName: js.UndefOr[NonEmptyString]
     var s3KeyPrefix: js.UndefOr[NonEmptyString]
-  }
-
-  object S3Logs {
-    @inline
-    def apply(
-        s3BucketName: js.UndefOr[NonEmptyString] = js.undefined,
-        s3KeyPrefix: js.UndefOr[NonEmptyString] = js.undefined
-    ): S3Logs = {
-      val __obj = js.Dynamic.literal()
-      s3BucketName.foreach(__v => __obj.updateDynamic("s3BucketName")(__v.asInstanceOf[js.Any]))
-      s3KeyPrefix.foreach(__v => __obj.updateDynamic("s3KeyPrefix")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[S3Logs]
-    }
   }
 
   /**
     * A schedule configures how often and when a pipeline will automatically create a new image.
     */
   @js.native
+  @Factory
   trait Schedule extends js.Object {
     var pipelineExecutionStartCondition: js.UndefOr[PipelineExecutionStartCondition]
     var scheduleExpression: js.UndefOr[NonEmptyString]
   }
 
-  object Schedule {
-    @inline
-    def apply(
-        pipelineExecutionStartCondition: js.UndefOr[PipelineExecutionStartCondition] = js.undefined,
-        scheduleExpression: js.UndefOr[NonEmptyString] = js.undefined
-    ): Schedule = {
-      val __obj = js.Dynamic.literal()
-      pipelineExecutionStartCondition.foreach(__v =>
-        __obj.updateDynamic("pipelineExecutionStartCondition")(__v.asInstanceOf[js.Any])
-      )
-      scheduleExpression.foreach(__v => __obj.updateDynamic("scheduleExpression")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Schedule]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartImagePipelineExecutionRequest extends js.Object {
     var clientToken: ClientToken
     var imagePipelineArn: ImagePipelineArn
   }
 
-  object StartImagePipelineExecutionRequest {
-    @inline
-    def apply(
-        clientToken: ClientToken,
-        imagePipelineArn: ImagePipelineArn
-    ): StartImagePipelineExecutionRequest = {
-      val __obj = js.Dynamic.literal(
-        "clientToken"      -> clientToken.asInstanceOf[js.Any],
-        "imagePipelineArn" -> imagePipelineArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StartImagePipelineExecutionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartImagePipelineExecutionResponse extends js.Object {
     var clientToken: js.UndefOr[ClientToken]
     var imageBuildVersionArn: js.UndefOr[ImageBuildVersionArn]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object StartImagePipelineExecutionResponse {
-    @inline
-    def apply(
-        clientToken: js.UndefOr[ClientToken] = js.undefined,
-        imageBuildVersionArn: js.UndefOr[ImageBuildVersionArn] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): StartImagePipelineExecutionResponse = {
-      val __obj = js.Dynamic.literal()
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      imageBuildVersionArn.foreach(__v => __obj.updateDynamic("imageBuildVersionArn")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartImagePipelineExecutionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceRequest extends js.Object {
     var resourceArn: ImageBuilderArn
     var tags: TagMap
   }
 
-  object TagResourceRequest {
-    @inline
-    def apply(
-        resourceArn: ImageBuilderArn,
-        tags: TagMap
-    ): TagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceResponse extends js.Object {}
 
-  object TagResourceResponse {
-    @inline
-    def apply(
-    ): TagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[TagResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceRequest extends js.Object {
     var resourceArn: ImageBuilderArn
     var tagKeys: TagKeyList
   }
 
-  object UntagResourceRequest {
-    @inline
-    def apply(
-        resourceArn: ImageBuilderArn,
-        tagKeys: TagKeyList
-    ): UntagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceResponse extends js.Object {}
 
-  object UntagResourceResponse {
-    @inline
-    def apply(
-    ): UntagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UntagResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateDistributionConfigurationRequest extends js.Object {
     var clientToken: ClientToken
     var distributionConfigurationArn: DistributionConfigurationArn
@@ -3061,50 +1351,16 @@ package imagebuilder {
     var description: js.UndefOr[NonEmptyString]
   }
 
-  object UpdateDistributionConfigurationRequest {
-    @inline
-    def apply(
-        clientToken: ClientToken,
-        distributionConfigurationArn: DistributionConfigurationArn,
-        distributions: DistributionList,
-        description: js.UndefOr[NonEmptyString] = js.undefined
-    ): UpdateDistributionConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "clientToken"                  -> clientToken.asInstanceOf[js.Any],
-        "distributionConfigurationArn" -> distributionConfigurationArn.asInstanceOf[js.Any],
-        "distributions"                -> distributions.asInstanceOf[js.Any]
-      )
-
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateDistributionConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateDistributionConfigurationResponse extends js.Object {
     var clientToken: js.UndefOr[ClientToken]
     var distributionConfigurationArn: js.UndefOr[DistributionConfigurationArn]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object UpdateDistributionConfigurationResponse {
-    @inline
-    def apply(
-        clientToken: js.UndefOr[ClientToken] = js.undefined,
-        distributionConfigurationArn: js.UndefOr[DistributionConfigurationArn] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): UpdateDistributionConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      distributionConfigurationArn.foreach(__v =>
-        __obj.updateDynamic("distributionConfigurationArn")(__v.asInstanceOf[js.Any])
-      )
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateDistributionConfigurationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateImagePipelineRequest extends js.Object {
     var clientToken: ClientToken
     var imagePipelineArn: ImagePipelineArn
@@ -3117,60 +1373,16 @@ package imagebuilder {
     var status: js.UndefOr[PipelineStatus]
   }
 
-  object UpdateImagePipelineRequest {
-    @inline
-    def apply(
-        clientToken: ClientToken,
-        imagePipelineArn: ImagePipelineArn,
-        imageRecipeArn: ImageRecipeArn,
-        infrastructureConfigurationArn: InfrastructureConfigurationArn,
-        description: js.UndefOr[NonEmptyString] = js.undefined,
-        distributionConfigurationArn: js.UndefOr[DistributionConfigurationArn] = js.undefined,
-        imageTestsConfiguration: js.UndefOr[ImageTestsConfiguration] = js.undefined,
-        schedule: js.UndefOr[Schedule] = js.undefined,
-        status: js.UndefOr[PipelineStatus] = js.undefined
-    ): UpdateImagePipelineRequest = {
-      val __obj = js.Dynamic.literal(
-        "clientToken"                    -> clientToken.asInstanceOf[js.Any],
-        "imagePipelineArn"               -> imagePipelineArn.asInstanceOf[js.Any],
-        "imageRecipeArn"                 -> imageRecipeArn.asInstanceOf[js.Any],
-        "infrastructureConfigurationArn" -> infrastructureConfigurationArn.asInstanceOf[js.Any]
-      )
-
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      distributionConfigurationArn.foreach(__v =>
-        __obj.updateDynamic("distributionConfigurationArn")(__v.asInstanceOf[js.Any])
-      )
-      imageTestsConfiguration.foreach(__v => __obj.updateDynamic("imageTestsConfiguration")(__v.asInstanceOf[js.Any]))
-      schedule.foreach(__v => __obj.updateDynamic("schedule")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateImagePipelineRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateImagePipelineResponse extends js.Object {
     var clientToken: js.UndefOr[ClientToken]
     var imagePipelineArn: js.UndefOr[ImagePipelineArn]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
-  object UpdateImagePipelineResponse {
-    @inline
-    def apply(
-        clientToken: js.UndefOr[ClientToken] = js.undefined,
-        imagePipelineArn: js.UndefOr[ImagePipelineArn] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): UpdateImagePipelineResponse = {
-      val __obj = js.Dynamic.literal()
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      imagePipelineArn.foreach(__v => __obj.updateDynamic("imagePipelineArn")(__v.asInstanceOf[js.Any]))
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateImagePipelineResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateInfrastructureConfigurationRequest extends js.Object {
     var clientToken: ClientToken
     var infrastructureConfigurationArn: InfrastructureConfigurationArn
@@ -3185,62 +1397,11 @@ package imagebuilder {
     var terminateInstanceOnFailure: js.UndefOr[NullableBoolean]
   }
 
-  object UpdateInfrastructureConfigurationRequest {
-    @inline
-    def apply(
-        clientToken: ClientToken,
-        infrastructureConfigurationArn: InfrastructureConfigurationArn,
-        instanceProfileName: NonEmptyString,
-        description: js.UndefOr[NonEmptyString] = js.undefined,
-        instanceTypes: js.UndefOr[InstanceTypeList] = js.undefined,
-        keyPair: js.UndefOr[NonEmptyString] = js.undefined,
-        logging: js.UndefOr[Logging] = js.undefined,
-        securityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
-        snsTopicArn: js.UndefOr[SnsTopicArn] = js.undefined,
-        subnetId: js.UndefOr[NonEmptyString] = js.undefined,
-        terminateInstanceOnFailure: js.UndefOr[NullableBoolean] = js.undefined
-    ): UpdateInfrastructureConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "clientToken"                    -> clientToken.asInstanceOf[js.Any],
-        "infrastructureConfigurationArn" -> infrastructureConfigurationArn.asInstanceOf[js.Any],
-        "instanceProfileName"            -> instanceProfileName.asInstanceOf[js.Any]
-      )
-
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      instanceTypes.foreach(__v => __obj.updateDynamic("instanceTypes")(__v.asInstanceOf[js.Any]))
-      keyPair.foreach(__v => __obj.updateDynamic("keyPair")(__v.asInstanceOf[js.Any]))
-      logging.foreach(__v => __obj.updateDynamic("logging")(__v.asInstanceOf[js.Any]))
-      securityGroupIds.foreach(__v => __obj.updateDynamic("securityGroupIds")(__v.asInstanceOf[js.Any]))
-      snsTopicArn.foreach(__v => __obj.updateDynamic("snsTopicArn")(__v.asInstanceOf[js.Any]))
-      subnetId.foreach(__v => __obj.updateDynamic("subnetId")(__v.asInstanceOf[js.Any]))
-      terminateInstanceOnFailure.foreach(__v =>
-        __obj.updateDynamic("terminateInstanceOnFailure")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[UpdateInfrastructureConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateInfrastructureConfigurationResponse extends js.Object {
     var clientToken: js.UndefOr[ClientToken]
     var infrastructureConfigurationArn: js.UndefOr[InfrastructureConfigurationArn]
     var requestId: js.UndefOr[NonEmptyString]
-  }
-
-  object UpdateInfrastructureConfigurationResponse {
-    @inline
-    def apply(
-        clientToken: js.UndefOr[ClientToken] = js.undefined,
-        infrastructureConfigurationArn: js.UndefOr[InfrastructureConfigurationArn] = js.undefined,
-        requestId: js.UndefOr[NonEmptyString] = js.undefined
-    ): UpdateInfrastructureConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      infrastructureConfigurationArn.foreach(__v =>
-        __obj.updateDynamic("infrastructureConfigurationArn")(__v.asInstanceOf[js.Any])
-      )
-      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateInfrastructureConfigurationResponse]
-    }
   }
 }

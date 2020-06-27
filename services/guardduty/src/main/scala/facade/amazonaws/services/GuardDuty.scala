@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object guardduty {
   type AccountDetails            = js.Array[AccountDetail]
@@ -242,46 +243,22 @@ package guardduty {
   }
 
   @js.native
+  @Factory
   trait AcceptInvitationRequest extends js.Object {
     var DetectorId: DetectorId
     var InvitationId: String
     var MasterId: String
   }
 
-  object AcceptInvitationRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId,
-        InvitationId: String,
-        MasterId: String
-    ): AcceptInvitationRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId"   -> DetectorId.asInstanceOf[js.Any],
-        "InvitationId" -> InvitationId.asInstanceOf[js.Any],
-        "MasterId"     -> MasterId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AcceptInvitationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AcceptInvitationResponse extends js.Object {}
-
-  object AcceptInvitationResponse {
-    @inline
-    def apply(
-    ): AcceptInvitationResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[AcceptInvitationResponse]
-    }
-  }
 
   /**
     * Contains information about the access keys.
     */
   @js.native
+  @Factory
   trait AccessKeyDetails extends js.Object {
     var AccessKeyId: js.UndefOr[String]
     var PrincipalId: js.UndefOr[String]
@@ -289,51 +266,21 @@ package guardduty {
     var UserType: js.UndefOr[String]
   }
 
-  object AccessKeyDetails {
-    @inline
-    def apply(
-        AccessKeyId: js.UndefOr[String] = js.undefined,
-        PrincipalId: js.UndefOr[String] = js.undefined,
-        UserName: js.UndefOr[String] = js.undefined,
-        UserType: js.UndefOr[String] = js.undefined
-    ): AccessKeyDetails = {
-      val __obj = js.Dynamic.literal()
-      AccessKeyId.foreach(__v => __obj.updateDynamic("AccessKeyId")(__v.asInstanceOf[js.Any]))
-      PrincipalId.foreach(__v => __obj.updateDynamic("PrincipalId")(__v.asInstanceOf[js.Any]))
-      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
-      UserType.foreach(__v => __obj.updateDynamic("UserType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AccessKeyDetails]
-    }
-  }
-
   /**
     * Contains information about the account.
     */
   @js.native
+  @Factory
   trait AccountDetail extends js.Object {
     var AccountId: AccountId
     var Email: Email
-  }
-
-  object AccountDetail {
-    @inline
-    def apply(
-        AccountId: AccountId,
-        Email: Email
-    ): AccountDetail = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "Email"     -> Email.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AccountDetail]
-    }
   }
 
   /**
     * Contains information about action.
     */
   @js.native
+  @Factory
   trait Action extends js.Object {
     var ActionType: js.UndefOr[String]
     var AwsApiCallAction: js.UndefOr[AwsApiCallAction]
@@ -342,63 +289,22 @@ package guardduty {
     var PortProbeAction: js.UndefOr[PortProbeAction]
   }
 
-  object Action {
-    @inline
-    def apply(
-        ActionType: js.UndefOr[String] = js.undefined,
-        AwsApiCallAction: js.UndefOr[AwsApiCallAction] = js.undefined,
-        DnsRequestAction: js.UndefOr[DnsRequestAction] = js.undefined,
-        NetworkConnectionAction: js.UndefOr[NetworkConnectionAction] = js.undefined,
-        PortProbeAction: js.UndefOr[PortProbeAction] = js.undefined
-    ): Action = {
-      val __obj = js.Dynamic.literal()
-      ActionType.foreach(__v => __obj.updateDynamic("ActionType")(__v.asInstanceOf[js.Any]))
-      AwsApiCallAction.foreach(__v => __obj.updateDynamic("AwsApiCallAction")(__v.asInstanceOf[js.Any]))
-      DnsRequestAction.foreach(__v => __obj.updateDynamic("DnsRequestAction")(__v.asInstanceOf[js.Any]))
-      NetworkConnectionAction.foreach(__v => __obj.updateDynamic("NetworkConnectionAction")(__v.asInstanceOf[js.Any]))
-      PortProbeAction.foreach(__v => __obj.updateDynamic("PortProbeAction")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Action]
-    }
-  }
-
   @js.native
+  @Factory
   trait ArchiveFindingsRequest extends js.Object {
     var DetectorId: DetectorId
     var FindingIds: FindingIds
   }
 
-  object ArchiveFindingsRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId,
-        FindingIds: FindingIds
-    ): ArchiveFindingsRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any],
-        "FindingIds" -> FindingIds.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ArchiveFindingsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ArchiveFindingsResponse extends js.Object {}
-
-  object ArchiveFindingsResponse {
-    @inline
-    def apply(
-    ): ArchiveFindingsResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[ArchiveFindingsResponse]
-    }
-  }
 
   /**
     * Contains information about the API operation.
     */
   @js.native
+  @Factory
   trait AwsApiCallAction extends js.Object {
     var Api: js.UndefOr[String]
     var CallerType: js.UndefOr[String]
@@ -407,48 +313,20 @@ package guardduty {
     var ServiceName: js.UndefOr[String]
   }
 
-  object AwsApiCallAction {
-    @inline
-    def apply(
-        Api: js.UndefOr[String] = js.undefined,
-        CallerType: js.UndefOr[String] = js.undefined,
-        DomainDetails: js.UndefOr[DomainDetails] = js.undefined,
-        RemoteIpDetails: js.UndefOr[RemoteIpDetails] = js.undefined,
-        ServiceName: js.UndefOr[String] = js.undefined
-    ): AwsApiCallAction = {
-      val __obj = js.Dynamic.literal()
-      Api.foreach(__v => __obj.updateDynamic("Api")(__v.asInstanceOf[js.Any]))
-      CallerType.foreach(__v => __obj.updateDynamic("CallerType")(__v.asInstanceOf[js.Any]))
-      DomainDetails.foreach(__v => __obj.updateDynamic("DomainDetails")(__v.asInstanceOf[js.Any]))
-      RemoteIpDetails.foreach(__v => __obj.updateDynamic("RemoteIpDetails")(__v.asInstanceOf[js.Any]))
-      ServiceName.foreach(__v => __obj.updateDynamic("ServiceName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AwsApiCallAction]
-    }
-  }
-
   /**
     * Contains information about the city associated with the IP address.
     */
   @js.native
+  @Factory
   trait City extends js.Object {
     var CityName: js.UndefOr[String]
-  }
-
-  object City {
-    @inline
-    def apply(
-        CityName: js.UndefOr[String] = js.undefined
-    ): City = {
-      val __obj = js.Dynamic.literal()
-      CityName.foreach(__v => __obj.updateDynamic("CityName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[City]
-    }
   }
 
   /**
     * Contains information about the condition.
     */
   @js.native
+  @Factory
   trait Condition extends js.Object {
     var Eq: js.UndefOr[Eq]
     var Equals: js.UndefOr[Equals]
@@ -464,62 +342,18 @@ package guardduty {
     var NotEquals: js.UndefOr[NotEquals]
   }
 
-  object Condition {
-    @inline
-    def apply(
-        Eq: js.UndefOr[Eq] = js.undefined,
-        Equals: js.UndefOr[Equals] = js.undefined,
-        GreaterThan: js.UndefOr[Double] = js.undefined,
-        GreaterThanOrEqual: js.UndefOr[Double] = js.undefined,
-        Gt: js.UndefOr[Int] = js.undefined,
-        Gte: js.UndefOr[Int] = js.undefined,
-        LessThan: js.UndefOr[Double] = js.undefined,
-        LessThanOrEqual: js.UndefOr[Double] = js.undefined,
-        Lt: js.UndefOr[Int] = js.undefined,
-        Lte: js.UndefOr[Int] = js.undefined,
-        Neq: js.UndefOr[Neq] = js.undefined,
-        NotEquals: js.UndefOr[NotEquals] = js.undefined
-    ): Condition = {
-      val __obj = js.Dynamic.literal()
-      Eq.foreach(__v => __obj.updateDynamic("Eq")(__v.asInstanceOf[js.Any]))
-      Equals.foreach(__v => __obj.updateDynamic("Equals")(__v.asInstanceOf[js.Any]))
-      GreaterThan.foreach(__v => __obj.updateDynamic("GreaterThan")(__v.asInstanceOf[js.Any]))
-      GreaterThanOrEqual.foreach(__v => __obj.updateDynamic("GreaterThanOrEqual")(__v.asInstanceOf[js.Any]))
-      Gt.foreach(__v => __obj.updateDynamic("Gt")(__v.asInstanceOf[js.Any]))
-      Gte.foreach(__v => __obj.updateDynamic("Gte")(__v.asInstanceOf[js.Any]))
-      LessThan.foreach(__v => __obj.updateDynamic("LessThan")(__v.asInstanceOf[js.Any]))
-      LessThanOrEqual.foreach(__v => __obj.updateDynamic("LessThanOrEqual")(__v.asInstanceOf[js.Any]))
-      Lt.foreach(__v => __obj.updateDynamic("Lt")(__v.asInstanceOf[js.Any]))
-      Lte.foreach(__v => __obj.updateDynamic("Lte")(__v.asInstanceOf[js.Any]))
-      Neq.foreach(__v => __obj.updateDynamic("Neq")(__v.asInstanceOf[js.Any]))
-      NotEquals.foreach(__v => __obj.updateDynamic("NotEquals")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Condition]
-    }
-  }
-
   /**
     * Contains information about the country in which the remote IP address is located.
     */
   @js.native
+  @Factory
   trait Country extends js.Object {
     var CountryCode: js.UndefOr[String]
     var CountryName: js.UndefOr[String]
   }
 
-  object Country {
-    @inline
-    def apply(
-        CountryCode: js.UndefOr[String] = js.undefined,
-        CountryName: js.UndefOr[String] = js.undefined
-    ): Country = {
-      val __obj = js.Dynamic.literal()
-      CountryCode.foreach(__v => __obj.updateDynamic("CountryCode")(__v.asInstanceOf[js.Any]))
-      CountryName.foreach(__v => __obj.updateDynamic("CountryName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Country]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateDetectorRequest extends js.Object {
     var Enable: Boolean
     var ClientToken: js.UndefOr[ClientToken]
@@ -527,44 +361,14 @@ package guardduty {
     var Tags: js.UndefOr[TagMap]
   }
 
-  object CreateDetectorRequest {
-    @inline
-    def apply(
-        Enable: Boolean,
-        ClientToken: js.UndefOr[ClientToken] = js.undefined,
-        FindingPublishingFrequency: js.UndefOr[FindingPublishingFrequency] = js.undefined,
-        Tags: js.UndefOr[TagMap] = js.undefined
-    ): CreateDetectorRequest = {
-      val __obj = js.Dynamic.literal(
-        "Enable" -> Enable.asInstanceOf[js.Any]
-      )
-
-      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
-      FindingPublishingFrequency.foreach(__v =>
-        __obj.updateDynamic("FindingPublishingFrequency")(__v.asInstanceOf[js.Any])
-      )
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDetectorRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateDetectorResponse extends js.Object {
     var DetectorId: js.UndefOr[DetectorId]
   }
 
-  object CreateDetectorResponse {
-    @inline
-    def apply(
-        DetectorId: js.UndefOr[DetectorId] = js.undefined
-    ): CreateDetectorResponse = {
-      val __obj = js.Dynamic.literal()
-      DetectorId.foreach(__v => __obj.updateDynamic("DetectorId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDetectorResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateFilterRequest extends js.Object {
     var DetectorId: DetectorId
     var FindingCriteria: FindingCriteria
@@ -576,52 +380,14 @@ package guardduty {
     var Tags: js.UndefOr[TagMap]
   }
 
-  object CreateFilterRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId,
-        FindingCriteria: FindingCriteria,
-        Name: FilterName,
-        Action: js.UndefOr[FilterAction] = js.undefined,
-        ClientToken: js.UndefOr[ClientToken] = js.undefined,
-        Description: js.UndefOr[FilterDescription] = js.undefined,
-        Rank: js.UndefOr[FilterRank] = js.undefined,
-        Tags: js.UndefOr[TagMap] = js.undefined
-    ): CreateFilterRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId"      -> DetectorId.asInstanceOf[js.Any],
-        "FindingCriteria" -> FindingCriteria.asInstanceOf[js.Any],
-        "Name"            -> Name.asInstanceOf[js.Any]
-      )
-
-      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
-      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Rank.foreach(__v => __obj.updateDynamic("Rank")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateFilterRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateFilterResponse extends js.Object {
     var Name: FilterName
   }
 
-  object CreateFilterResponse {
-    @inline
-    def apply(
-        Name: FilterName
-    ): CreateFilterResponse = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateFilterResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateIPSetRequest extends js.Object {
     var Activate: Boolean
     var DetectorId: DetectorId
@@ -632,89 +398,27 @@ package guardduty {
     var Tags: js.UndefOr[TagMap]
   }
 
-  object CreateIPSetRequest {
-    @inline
-    def apply(
-        Activate: Boolean,
-        DetectorId: DetectorId,
-        Format: IpSetFormat,
-        Location: Location,
-        Name: Name,
-        ClientToken: js.UndefOr[ClientToken] = js.undefined,
-        Tags: js.UndefOr[TagMap] = js.undefined
-    ): CreateIPSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "Activate"   -> Activate.asInstanceOf[js.Any],
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any],
-        "Format"     -> Format.asInstanceOf[js.Any],
-        "Location"   -> Location.asInstanceOf[js.Any],
-        "Name"       -> Name.asInstanceOf[js.Any]
-      )
-
-      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateIPSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateIPSetResponse extends js.Object {
     var IpSetId: String
   }
 
-  object CreateIPSetResponse {
-    @inline
-    def apply(
-        IpSetId: String
-    ): CreateIPSetResponse = {
-      val __obj = js.Dynamic.literal(
-        "IpSetId" -> IpSetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateIPSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateMembersRequest extends js.Object {
     var AccountDetails: AccountDetails
     var DetectorId: DetectorId
   }
 
-  object CreateMembersRequest {
-    @inline
-    def apply(
-        AccountDetails: AccountDetails,
-        DetectorId: DetectorId
-    ): CreateMembersRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountDetails" -> AccountDetails.asInstanceOf[js.Any],
-        "DetectorId"     -> DetectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateMembersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateMembersResponse extends js.Object {
     var UnprocessedAccounts: UnprocessedAccounts
   }
 
-  object CreateMembersResponse {
-    @inline
-    def apply(
-        UnprocessedAccounts: UnprocessedAccounts
-    ): CreateMembersResponse = {
-      val __obj = js.Dynamic.literal(
-        "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateMembersResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreatePublishingDestinationRequest extends js.Object {
     var DestinationProperties: DestinationProperties
     var DestinationType: DestinationType
@@ -722,78 +426,25 @@ package guardduty {
     var ClientToken: js.UndefOr[ClientToken]
   }
 
-  object CreatePublishingDestinationRequest {
-    @inline
-    def apply(
-        DestinationProperties: DestinationProperties,
-        DestinationType: DestinationType,
-        DetectorId: DetectorId,
-        ClientToken: js.UndefOr[ClientToken] = js.undefined
-    ): CreatePublishingDestinationRequest = {
-      val __obj = js.Dynamic.literal(
-        "DestinationProperties" -> DestinationProperties.asInstanceOf[js.Any],
-        "DestinationType"       -> DestinationType.asInstanceOf[js.Any],
-        "DetectorId"            -> DetectorId.asInstanceOf[js.Any]
-      )
-
-      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreatePublishingDestinationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreatePublishingDestinationResponse extends js.Object {
     var DestinationId: String
   }
 
-  object CreatePublishingDestinationResponse {
-    @inline
-    def apply(
-        DestinationId: String
-    ): CreatePublishingDestinationResponse = {
-      val __obj = js.Dynamic.literal(
-        "DestinationId" -> DestinationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreatePublishingDestinationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateSampleFindingsRequest extends js.Object {
     var DetectorId: DetectorId
     var FindingTypes: js.UndefOr[FindingTypes]
   }
 
-  object CreateSampleFindingsRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId,
-        FindingTypes: js.UndefOr[FindingTypes] = js.undefined
-    ): CreateSampleFindingsRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
-      )
-
-      FindingTypes.foreach(__v => __obj.updateDynamic("FindingTypes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateSampleFindingsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateSampleFindingsResponse extends js.Object {}
 
-  object CreateSampleFindingsResponse {
-    @inline
-    def apply(
-    ): CreateSampleFindingsResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[CreateSampleFindingsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateThreatIntelSetRequest extends js.Object {
     var Activate: Boolean
     var DetectorId: DetectorId
@@ -804,349 +455,112 @@ package guardduty {
     var Tags: js.UndefOr[TagMap]
   }
 
-  object CreateThreatIntelSetRequest {
-    @inline
-    def apply(
-        Activate: Boolean,
-        DetectorId: DetectorId,
-        Format: ThreatIntelSetFormat,
-        Location: Location,
-        Name: Name,
-        ClientToken: js.UndefOr[ClientToken] = js.undefined,
-        Tags: js.UndefOr[TagMap] = js.undefined
-    ): CreateThreatIntelSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "Activate"   -> Activate.asInstanceOf[js.Any],
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any],
-        "Format"     -> Format.asInstanceOf[js.Any],
-        "Location"   -> Location.asInstanceOf[js.Any],
-        "Name"       -> Name.asInstanceOf[js.Any]
-      )
-
-      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateThreatIntelSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateThreatIntelSetResponse extends js.Object {
     var ThreatIntelSetId: String
   }
 
-  object CreateThreatIntelSetResponse {
-    @inline
-    def apply(
-        ThreatIntelSetId: String
-    ): CreateThreatIntelSetResponse = {
-      val __obj = js.Dynamic.literal(
-        "ThreatIntelSetId" -> ThreatIntelSetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateThreatIntelSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeclineInvitationsRequest extends js.Object {
     var AccountIds: AccountIds
   }
 
-  object DeclineInvitationsRequest {
-    @inline
-    def apply(
-        AccountIds: AccountIds
-    ): DeclineInvitationsRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountIds" -> AccountIds.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeclineInvitationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeclineInvitationsResponse extends js.Object {
     var UnprocessedAccounts: UnprocessedAccounts
   }
 
-  object DeclineInvitationsResponse {
-    @inline
-    def apply(
-        UnprocessedAccounts: UnprocessedAccounts
-    ): DeclineInvitationsResponse = {
-      val __obj = js.Dynamic.literal(
-        "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeclineInvitationsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDetectorRequest extends js.Object {
     var DetectorId: DetectorId
   }
 
-  object DeleteDetectorRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId
-    ): DeleteDetectorRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteDetectorRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDetectorResponse extends js.Object {}
 
-  object DeleteDetectorResponse {
-    @inline
-    def apply(
-    ): DeleteDetectorResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteDetectorResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteFilterRequest extends js.Object {
     var DetectorId: DetectorId
     var FilterName: String
   }
 
-  object DeleteFilterRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId,
-        FilterName: String
-    ): DeleteFilterRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any],
-        "FilterName" -> FilterName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteFilterRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteFilterResponse extends js.Object {}
 
-  object DeleteFilterResponse {
-    @inline
-    def apply(
-    ): DeleteFilterResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteFilterResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteIPSetRequest extends js.Object {
     var DetectorId: DetectorId
     var IpSetId: String
   }
 
-  object DeleteIPSetRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId,
-        IpSetId: String
-    ): DeleteIPSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any],
-        "IpSetId"    -> IpSetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteIPSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteIPSetResponse extends js.Object {}
 
-  object DeleteIPSetResponse {
-    @inline
-    def apply(
-    ): DeleteIPSetResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteIPSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteInvitationsRequest extends js.Object {
     var AccountIds: AccountIds
   }
 
-  object DeleteInvitationsRequest {
-    @inline
-    def apply(
-        AccountIds: AccountIds
-    ): DeleteInvitationsRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountIds" -> AccountIds.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteInvitationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteInvitationsResponse extends js.Object {
     var UnprocessedAccounts: UnprocessedAccounts
   }
 
-  object DeleteInvitationsResponse {
-    @inline
-    def apply(
-        UnprocessedAccounts: UnprocessedAccounts
-    ): DeleteInvitationsResponse = {
-      val __obj = js.Dynamic.literal(
-        "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteInvitationsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteMembersRequest extends js.Object {
     var AccountIds: AccountIds
     var DetectorId: DetectorId
   }
 
-  object DeleteMembersRequest {
-    @inline
-    def apply(
-        AccountIds: AccountIds,
-        DetectorId: DetectorId
-    ): DeleteMembersRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountIds" -> AccountIds.asInstanceOf[js.Any],
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteMembersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteMembersResponse extends js.Object {
     var UnprocessedAccounts: UnprocessedAccounts
   }
 
-  object DeleteMembersResponse {
-    @inline
-    def apply(
-        UnprocessedAccounts: UnprocessedAccounts
-    ): DeleteMembersResponse = {
-      val __obj = js.Dynamic.literal(
-        "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteMembersResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeletePublishingDestinationRequest extends js.Object {
     var DestinationId: String
     var DetectorId: DetectorId
   }
 
-  object DeletePublishingDestinationRequest {
-    @inline
-    def apply(
-        DestinationId: String,
-        DetectorId: DetectorId
-    ): DeletePublishingDestinationRequest = {
-      val __obj = js.Dynamic.literal(
-        "DestinationId" -> DestinationId.asInstanceOf[js.Any],
-        "DetectorId"    -> DetectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeletePublishingDestinationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeletePublishingDestinationResponse extends js.Object {}
 
-  object DeletePublishingDestinationResponse {
-    @inline
-    def apply(
-    ): DeletePublishingDestinationResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeletePublishingDestinationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteThreatIntelSetRequest extends js.Object {
     var DetectorId: DetectorId
     var ThreatIntelSetId: String
   }
 
-  object DeleteThreatIntelSetRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId,
-        ThreatIntelSetId: String
-    ): DeleteThreatIntelSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId"       -> DetectorId.asInstanceOf[js.Any],
-        "ThreatIntelSetId" -> ThreatIntelSetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteThreatIntelSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteThreatIntelSetResponse extends js.Object {}
 
-  object DeleteThreatIntelSetResponse {
-    @inline
-    def apply(
-    ): DeleteThreatIntelSetResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteThreatIntelSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribePublishingDestinationRequest extends js.Object {
     var DestinationId: String
     var DetectorId: DetectorId
   }
 
-  object DescribePublishingDestinationRequest {
-    @inline
-    def apply(
-        DestinationId: String,
-        DetectorId: DetectorId
-    ): DescribePublishingDestinationRequest = {
-      val __obj = js.Dynamic.literal(
-        "DestinationId" -> DestinationId.asInstanceOf[js.Any],
-        "DetectorId"    -> DetectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribePublishingDestinationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribePublishingDestinationResponse extends js.Object {
     var DestinationId: String
     var DestinationProperties: DestinationProperties
@@ -1155,74 +569,25 @@ package guardduty {
     var Status: PublishingStatus
   }
 
-  object DescribePublishingDestinationResponse {
-    @inline
-    def apply(
-        DestinationId: String,
-        DestinationProperties: DestinationProperties,
-        DestinationType: DestinationType,
-        PublishingFailureStartTimestamp: Double,
-        Status: PublishingStatus
-    ): DescribePublishingDestinationResponse = {
-      val __obj = js.Dynamic.literal(
-        "DestinationId"                   -> DestinationId.asInstanceOf[js.Any],
-        "DestinationProperties"           -> DestinationProperties.asInstanceOf[js.Any],
-        "DestinationType"                 -> DestinationType.asInstanceOf[js.Any],
-        "PublishingFailureStartTimestamp" -> PublishingFailureStartTimestamp.asInstanceOf[js.Any],
-        "Status"                          -> Status.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribePublishingDestinationResponse]
-    }
-  }
-
   /**
     * Contains information about a publishing destination, including the ID, type, and status.
     */
   @js.native
+  @Factory
   trait Destination extends js.Object {
     var DestinationId: String
     var DestinationType: DestinationType
     var Status: PublishingStatus
   }
 
-  object Destination {
-    @inline
-    def apply(
-        DestinationId: String,
-        DestinationType: DestinationType,
-        Status: PublishingStatus
-    ): Destination = {
-      val __obj = js.Dynamic.literal(
-        "DestinationId"   -> DestinationId.asInstanceOf[js.Any],
-        "DestinationType" -> DestinationType.asInstanceOf[js.Any],
-        "Status"          -> Status.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Destination]
-    }
-  }
-
   /**
     * Contains the ARN of the resource to publish to, such as an S3 bucket, and the ARN of the KMS key to use to encrypt published findings.
     */
   @js.native
+  @Factory
   trait DestinationProperties extends js.Object {
     var DestinationArn: js.UndefOr[String]
     var KmsKeyArn: js.UndefOr[String]
-  }
-
-  object DestinationProperties {
-    @inline
-    def apply(
-        DestinationArn: js.UndefOr[String] = js.undefined,
-        KmsKeyArn: js.UndefOr[String] = js.undefined
-    ): DestinationProperties = {
-      val __obj = js.Dynamic.literal()
-      DestinationArn.foreach(__v => __obj.updateDynamic("DestinationArn")(__v.asInstanceOf[js.Any]))
-      KmsKeyArn.foreach(__v => __obj.updateDynamic("KmsKeyArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DestinationProperties]
-    }
   }
 
   @js.native
@@ -1243,132 +608,53 @@ package guardduty {
   }
 
   @js.native
+  @Factory
   trait DisassociateFromMasterAccountRequest extends js.Object {
     var DetectorId: DetectorId
   }
 
-  object DisassociateFromMasterAccountRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId
-    ): DisassociateFromMasterAccountRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisassociateFromMasterAccountRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateFromMasterAccountResponse extends js.Object {}
 
-  object DisassociateFromMasterAccountResponse {
-    @inline
-    def apply(
-    ): DisassociateFromMasterAccountResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DisassociateFromMasterAccountResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateMembersRequest extends js.Object {
     var AccountIds: AccountIds
     var DetectorId: DetectorId
   }
 
-  object DisassociateMembersRequest {
-    @inline
-    def apply(
-        AccountIds: AccountIds,
-        DetectorId: DetectorId
-    ): DisassociateMembersRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountIds" -> AccountIds.asInstanceOf[js.Any],
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisassociateMembersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateMembersResponse extends js.Object {
     var UnprocessedAccounts: UnprocessedAccounts
-  }
-
-  object DisassociateMembersResponse {
-    @inline
-    def apply(
-        UnprocessedAccounts: UnprocessedAccounts
-    ): DisassociateMembersResponse = {
-      val __obj = js.Dynamic.literal(
-        "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisassociateMembersResponse]
-    }
   }
 
   /**
     * Contains information about the DNS_REQUEST action described in this finding.
     */
   @js.native
+  @Factory
   trait DnsRequestAction extends js.Object {
     var Domain: js.UndefOr[String]
-  }
-
-  object DnsRequestAction {
-    @inline
-    def apply(
-        Domain: js.UndefOr[String] = js.undefined
-    ): DnsRequestAction = {
-      val __obj = js.Dynamic.literal()
-      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DnsRequestAction]
-    }
   }
 
   /**
     * Contains information about the domain.
     */
   @js.native
+  @Factory
   trait DomainDetails extends js.Object {
     var Domain: js.UndefOr[String]
-  }
-
-  object DomainDetails {
-    @inline
-    def apply(
-        Domain: js.UndefOr[String] = js.undefined
-    ): DomainDetails = {
-      val __obj = js.Dynamic.literal()
-      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DomainDetails]
-    }
   }
 
   /**
     * Contains information about the reason that the finding was generated.
     */
   @js.native
+  @Factory
   trait Evidence extends js.Object {
     var ThreatIntelligenceDetails: js.UndefOr[ThreatIntelligenceDetails]
-  }
-
-  object Evidence {
-    @inline
-    def apply(
-        ThreatIntelligenceDetails: js.UndefOr[ThreatIntelligenceDetails] = js.undefined
-    ): Evidence = {
-      val __obj = js.Dynamic.literal()
-      ThreatIntelligenceDetails.foreach(__v =>
-        __obj.updateDynamic("ThreatIntelligenceDetails")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[Evidence]
-    }
   }
 
   @js.native
@@ -1393,6 +679,7 @@ package guardduty {
     * Contains information about the finding, which is generated when abnormal or suspicious activity is detected.
     */
   @js.native
+  @Factory
   trait Finding extends js.Object {
     var AccountId: String
     var Arn: String
@@ -1411,64 +698,13 @@ package guardduty {
     var Title: js.UndefOr[String]
   }
 
-  object Finding {
-    @inline
-    def apply(
-        AccountId: String,
-        Arn: String,
-        CreatedAt: String,
-        Id: String,
-        Region: String,
-        Resource: Resource,
-        SchemaVersion: String,
-        Severity: Double,
-        Type: FindingType,
-        UpdatedAt: String,
-        Confidence: js.UndefOr[Double] = js.undefined,
-        Description: js.UndefOr[String] = js.undefined,
-        Partition: js.UndefOr[String] = js.undefined,
-        Service: js.UndefOr[Service] = js.undefined,
-        Title: js.UndefOr[String] = js.undefined
-    ): Finding = {
-      val __obj = js.Dynamic.literal(
-        "AccountId"     -> AccountId.asInstanceOf[js.Any],
-        "Arn"           -> Arn.asInstanceOf[js.Any],
-        "CreatedAt"     -> CreatedAt.asInstanceOf[js.Any],
-        "Id"            -> Id.asInstanceOf[js.Any],
-        "Region"        -> Region.asInstanceOf[js.Any],
-        "Resource"      -> Resource.asInstanceOf[js.Any],
-        "SchemaVersion" -> SchemaVersion.asInstanceOf[js.Any],
-        "Severity"      -> Severity.asInstanceOf[js.Any],
-        "Type"          -> Type.asInstanceOf[js.Any],
-        "UpdatedAt"     -> UpdatedAt.asInstanceOf[js.Any]
-      )
-
-      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Partition.foreach(__v => __obj.updateDynamic("Partition")(__v.asInstanceOf[js.Any]))
-      Service.foreach(__v => __obj.updateDynamic("Service")(__v.asInstanceOf[js.Any]))
-      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Finding]
-    }
-  }
-
   /**
     * Contains information about the criteria used for querying findings.
     */
   @js.native
+  @Factory
   trait FindingCriteria extends js.Object {
     var Criterion: js.UndefOr[Criterion]
-  }
-
-  object FindingCriteria {
-    @inline
-    def apply(
-        Criterion: js.UndefOr[Criterion] = js.undefined
-    ): FindingCriteria = {
-      val __obj = js.Dynamic.literal()
-      Criterion.foreach(__v => __obj.updateDynamic("Criterion")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[FindingCriteria]
-    }
   }
 
   @js.native
@@ -1493,62 +729,29 @@ package guardduty {
     * Contains information about finding statistics.
     */
   @js.native
+  @Factory
   trait FindingStatistics extends js.Object {
     var CountBySeverity: js.UndefOr[CountBySeverity]
-  }
-
-  object FindingStatistics {
-    @inline
-    def apply(
-        CountBySeverity: js.UndefOr[CountBySeverity] = js.undefined
-    ): FindingStatistics = {
-      val __obj = js.Dynamic.literal()
-      CountBySeverity.foreach(__v => __obj.updateDynamic("CountBySeverity")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[FindingStatistics]
-    }
   }
 
   /**
     * Contains information about the location of the remote IP address.
     */
   @js.native
+  @Factory
   trait GeoLocation extends js.Object {
     var Lat: js.UndefOr[Double]
     var Lon: js.UndefOr[Double]
   }
 
-  object GeoLocation {
-    @inline
-    def apply(
-        Lat: js.UndefOr[Double] = js.undefined,
-        Lon: js.UndefOr[Double] = js.undefined
-    ): GeoLocation = {
-      val __obj = js.Dynamic.literal()
-      Lat.foreach(__v => __obj.updateDynamic("Lat")(__v.asInstanceOf[js.Any]))
-      Lon.foreach(__v => __obj.updateDynamic("Lon")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GeoLocation]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDetectorRequest extends js.Object {
     var DetectorId: DetectorId
   }
 
-  object GetDetectorRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId
-    ): GetDetectorRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetDetectorRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDetectorResponse extends js.Object {
     var ServiceRole: String
     var Status: DetectorStatus
@@ -1558,53 +761,15 @@ package guardduty {
     var UpdatedAt: js.UndefOr[String]
   }
 
-  object GetDetectorResponse {
-    @inline
-    def apply(
-        ServiceRole: String,
-        Status: DetectorStatus,
-        CreatedAt: js.UndefOr[String] = js.undefined,
-        FindingPublishingFrequency: js.UndefOr[FindingPublishingFrequency] = js.undefined,
-        Tags: js.UndefOr[TagMap] = js.undefined,
-        UpdatedAt: js.UndefOr[String] = js.undefined
-    ): GetDetectorResponse = {
-      val __obj = js.Dynamic.literal(
-        "ServiceRole" -> ServiceRole.asInstanceOf[js.Any],
-        "Status"      -> Status.asInstanceOf[js.Any]
-      )
-
-      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
-      FindingPublishingFrequency.foreach(__v =>
-        __obj.updateDynamic("FindingPublishingFrequency")(__v.asInstanceOf[js.Any])
-      )
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDetectorResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetFilterRequest extends js.Object {
     var DetectorId: DetectorId
     var FilterName: String
   }
 
-  object GetFilterRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId,
-        FilterName: String
-    ): GetFilterRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any],
-        "FilterName" -> FilterName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetFilterRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetFilterResponse extends js.Object {
     var Action: FilterAction
     var FindingCriteria: FindingCriteria
@@ -1614,135 +779,43 @@ package guardduty {
     var Tags: js.UndefOr[TagMap]
   }
 
-  object GetFilterResponse {
-    @inline
-    def apply(
-        Action: FilterAction,
-        FindingCriteria: FindingCriteria,
-        Name: FilterName,
-        Description: js.UndefOr[FilterDescription] = js.undefined,
-        Rank: js.UndefOr[FilterRank] = js.undefined,
-        Tags: js.UndefOr[TagMap] = js.undefined
-    ): GetFilterResponse = {
-      val __obj = js.Dynamic.literal(
-        "Action"          -> Action.asInstanceOf[js.Any],
-        "FindingCriteria" -> FindingCriteria.asInstanceOf[js.Any],
-        "Name"            -> Name.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Rank.foreach(__v => __obj.updateDynamic("Rank")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetFilterResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetFindingsRequest extends js.Object {
     var DetectorId: DetectorId
     var FindingIds: FindingIds
     var SortCriteria: js.UndefOr[SortCriteria]
   }
 
-  object GetFindingsRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId,
-        FindingIds: FindingIds,
-        SortCriteria: js.UndefOr[SortCriteria] = js.undefined
-    ): GetFindingsRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any],
-        "FindingIds" -> FindingIds.asInstanceOf[js.Any]
-      )
-
-      SortCriteria.foreach(__v => __obj.updateDynamic("SortCriteria")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetFindingsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetFindingsResponse extends js.Object {
     var Findings: Findings
   }
 
-  object GetFindingsResponse {
-    @inline
-    def apply(
-        Findings: Findings
-    ): GetFindingsResponse = {
-      val __obj = js.Dynamic.literal(
-        "Findings" -> Findings.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetFindingsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetFindingsStatisticsRequest extends js.Object {
     var DetectorId: DetectorId
     var FindingStatisticTypes: FindingStatisticTypes
     var FindingCriteria: js.UndefOr[FindingCriteria]
   }
 
-  object GetFindingsStatisticsRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId,
-        FindingStatisticTypes: FindingStatisticTypes,
-        FindingCriteria: js.UndefOr[FindingCriteria] = js.undefined
-    ): GetFindingsStatisticsRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId"            -> DetectorId.asInstanceOf[js.Any],
-        "FindingStatisticTypes" -> FindingStatisticTypes.asInstanceOf[js.Any]
-      )
-
-      FindingCriteria.foreach(__v => __obj.updateDynamic("FindingCriteria")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetFindingsStatisticsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetFindingsStatisticsResponse extends js.Object {
     var FindingStatistics: FindingStatistics
   }
 
-  object GetFindingsStatisticsResponse {
-    @inline
-    def apply(
-        FindingStatistics: FindingStatistics
-    ): GetFindingsStatisticsResponse = {
-      val __obj = js.Dynamic.literal(
-        "FindingStatistics" -> FindingStatistics.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetFindingsStatisticsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetIPSetRequest extends js.Object {
     var DetectorId: DetectorId
     var IpSetId: String
   }
 
-  object GetIPSetRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId,
-        IpSetId: String
-    ): GetIPSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any],
-        "IpSetId"    -> IpSetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetIPSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetIPSetResponse extends js.Object {
     var Format: IpSetFormat
     var Location: Location
@@ -1751,156 +824,51 @@ package guardduty {
     var Tags: js.UndefOr[TagMap]
   }
 
-  object GetIPSetResponse {
-    @inline
-    def apply(
-        Format: IpSetFormat,
-        Location: Location,
-        Name: Name,
-        Status: IpSetStatus,
-        Tags: js.UndefOr[TagMap] = js.undefined
-    ): GetIPSetResponse = {
-      val __obj = js.Dynamic.literal(
-        "Format"   -> Format.asInstanceOf[js.Any],
-        "Location" -> Location.asInstanceOf[js.Any],
-        "Name"     -> Name.asInstanceOf[js.Any],
-        "Status"   -> Status.asInstanceOf[js.Any]
-      )
-
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetIPSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetInvitationsCountRequest extends js.Object {}
 
-  object GetInvitationsCountRequest {
-    @inline
-    def apply(
-    ): GetInvitationsCountRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[GetInvitationsCountRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetInvitationsCountResponse extends js.Object {
     var InvitationsCount: js.UndefOr[Int]
   }
 
-  object GetInvitationsCountResponse {
-    @inline
-    def apply(
-        InvitationsCount: js.UndefOr[Int] = js.undefined
-    ): GetInvitationsCountResponse = {
-      val __obj = js.Dynamic.literal()
-      InvitationsCount.foreach(__v => __obj.updateDynamic("InvitationsCount")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetInvitationsCountResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetMasterAccountRequest extends js.Object {
     var DetectorId: DetectorId
   }
 
-  object GetMasterAccountRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId
-    ): GetMasterAccountRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetMasterAccountRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetMasterAccountResponse extends js.Object {
     var Master: Master
   }
 
-  object GetMasterAccountResponse {
-    @inline
-    def apply(
-        Master: Master
-    ): GetMasterAccountResponse = {
-      val __obj = js.Dynamic.literal(
-        "Master" -> Master.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetMasterAccountResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetMembersRequest extends js.Object {
     var AccountIds: AccountIds
     var DetectorId: DetectorId
   }
 
-  object GetMembersRequest {
-    @inline
-    def apply(
-        AccountIds: AccountIds,
-        DetectorId: DetectorId
-    ): GetMembersRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountIds" -> AccountIds.asInstanceOf[js.Any],
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetMembersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetMembersResponse extends js.Object {
     var Members: Members
     var UnprocessedAccounts: UnprocessedAccounts
   }
 
-  object GetMembersResponse {
-    @inline
-    def apply(
-        Members: Members,
-        UnprocessedAccounts: UnprocessedAccounts
-    ): GetMembersResponse = {
-      val __obj = js.Dynamic.literal(
-        "Members"             -> Members.asInstanceOf[js.Any],
-        "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetMembersResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetThreatIntelSetRequest extends js.Object {
     var DetectorId: DetectorId
     var ThreatIntelSetId: String
   }
 
-  object GetThreatIntelSetRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId,
-        ThreatIntelSetId: String
-    ): GetThreatIntelSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId"       -> DetectorId.asInstanceOf[js.Any],
-        "ThreatIntelSetId" -> ThreatIntelSetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetThreatIntelSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetThreatIntelSetResponse extends js.Object {
     var Format: ThreatIntelSetFormat
     var Location: Location
@@ -1909,53 +877,21 @@ package guardduty {
     var Tags: js.UndefOr[TagMap]
   }
 
-  object GetThreatIntelSetResponse {
-    @inline
-    def apply(
-        Format: ThreatIntelSetFormat,
-        Location: Location,
-        Name: Name,
-        Status: ThreatIntelSetStatus,
-        Tags: js.UndefOr[TagMap] = js.undefined
-    ): GetThreatIntelSetResponse = {
-      val __obj = js.Dynamic.literal(
-        "Format"   -> Format.asInstanceOf[js.Any],
-        "Location" -> Location.asInstanceOf[js.Any],
-        "Name"     -> Name.asInstanceOf[js.Any],
-        "Status"   -> Status.asInstanceOf[js.Any]
-      )
-
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetThreatIntelSetResponse]
-    }
-  }
-
   /**
     * Contains information about the EC2 instance profile.
     */
   @js.native
+  @Factory
   trait IamInstanceProfile extends js.Object {
     var Arn: js.UndefOr[String]
     var Id: js.UndefOr[String]
-  }
-
-  object IamInstanceProfile {
-    @inline
-    def apply(
-        Arn: js.UndefOr[String] = js.undefined,
-        Id: js.UndefOr[String] = js.undefined
-    ): IamInstanceProfile = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[IamInstanceProfile]
-    }
   }
 
   /**
     * Contains information about the details of an instance.
     */
   @js.native
+  @Factory
   trait InstanceDetails extends js.Object {
     var AvailabilityZone: js.UndefOr[String]
     var IamInstanceProfile: js.UndefOr[IamInstanceProfile]
@@ -1971,43 +907,11 @@ package guardduty {
     var Tags: js.UndefOr[Tags]
   }
 
-  object InstanceDetails {
-    @inline
-    def apply(
-        AvailabilityZone: js.UndefOr[String] = js.undefined,
-        IamInstanceProfile: js.UndefOr[IamInstanceProfile] = js.undefined,
-        ImageDescription: js.UndefOr[String] = js.undefined,
-        ImageId: js.UndefOr[String] = js.undefined,
-        InstanceId: js.UndefOr[String] = js.undefined,
-        InstanceState: js.UndefOr[String] = js.undefined,
-        InstanceType: js.UndefOr[String] = js.undefined,
-        LaunchTime: js.UndefOr[String] = js.undefined,
-        NetworkInterfaces: js.UndefOr[NetworkInterfaces] = js.undefined,
-        Platform: js.UndefOr[String] = js.undefined,
-        ProductCodes: js.UndefOr[ProductCodes] = js.undefined,
-        Tags: js.UndefOr[Tags] = js.undefined
-    ): InstanceDetails = {
-      val __obj = js.Dynamic.literal()
-      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
-      IamInstanceProfile.foreach(__v => __obj.updateDynamic("IamInstanceProfile")(__v.asInstanceOf[js.Any]))
-      ImageDescription.foreach(__v => __obj.updateDynamic("ImageDescription")(__v.asInstanceOf[js.Any]))
-      ImageId.foreach(__v => __obj.updateDynamic("ImageId")(__v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
-      InstanceState.foreach(__v => __obj.updateDynamic("InstanceState")(__v.asInstanceOf[js.Any]))
-      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
-      LaunchTime.foreach(__v => __obj.updateDynamic("LaunchTime")(__v.asInstanceOf[js.Any]))
-      NetworkInterfaces.foreach(__v => __obj.updateDynamic("NetworkInterfaces")(__v.asInstanceOf[js.Any]))
-      Platform.foreach(__v => __obj.updateDynamic("Platform")(__v.asInstanceOf[js.Any]))
-      ProductCodes.foreach(__v => __obj.updateDynamic("ProductCodes")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceDetails]
-    }
-  }
-
   /**
     * Contains information about the invitation to become a member account.
     */
   @js.native
+  @Factory
   trait Invitation extends js.Object {
     var AccountId: js.UndefOr[AccountId]
     var InvitationId: js.UndefOr[String]
@@ -2015,24 +919,8 @@ package guardduty {
     var RelationshipStatus: js.UndefOr[String]
   }
 
-  object Invitation {
-    @inline
-    def apply(
-        AccountId: js.UndefOr[AccountId] = js.undefined,
-        InvitationId: js.UndefOr[String] = js.undefined,
-        InvitedAt: js.UndefOr[String] = js.undefined,
-        RelationshipStatus: js.UndefOr[String] = js.undefined
-    ): Invitation = {
-      val __obj = js.Dynamic.literal()
-      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
-      InvitationId.foreach(__v => __obj.updateDynamic("InvitationId")(__v.asInstanceOf[js.Any]))
-      InvitedAt.foreach(__v => __obj.updateDynamic("InvitedAt")(__v.asInstanceOf[js.Any]))
-      RelationshipStatus.foreach(__v => __obj.updateDynamic("RelationshipStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Invitation]
-    }
-  }
-
   @js.native
+  @Factory
   trait InviteMembersRequest extends js.Object {
     var AccountIds: AccountIds
     var DetectorId: DetectorId
@@ -2040,41 +928,10 @@ package guardduty {
     var Message: js.UndefOr[String]
   }
 
-  object InviteMembersRequest {
-    @inline
-    def apply(
-        AccountIds: AccountIds,
-        DetectorId: DetectorId,
-        DisableEmailNotification: js.UndefOr[Boolean] = js.undefined,
-        Message: js.UndefOr[String] = js.undefined
-    ): InviteMembersRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountIds" -> AccountIds.asInstanceOf[js.Any],
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
-      )
-
-      DisableEmailNotification.foreach(__v => __obj.updateDynamic("DisableEmailNotification")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InviteMembersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait InviteMembersResponse extends js.Object {
     var UnprocessedAccounts: UnprocessedAccounts
-  }
-
-  object InviteMembersResponse {
-    @inline
-    def apply(
-        UnprocessedAccounts: UnprocessedAccounts
-    ): InviteMembersResponse = {
-      val __obj = js.Dynamic.literal(
-        "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[InviteMembersResponse]
-    }
   }
 
   @js.native
@@ -2105,91 +962,36 @@ package guardduty {
   }
 
   @js.native
+  @Factory
   trait ListDetectorsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListDetectorsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListDetectorsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDetectorsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListDetectorsResponse extends js.Object {
     var DetectorIds: DetectorIds
     var NextToken: js.UndefOr[String]
   }
 
-  object ListDetectorsResponse {
-    @inline
-    def apply(
-        DetectorIds: DetectorIds,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListDetectorsResponse = {
-      val __obj = js.Dynamic.literal(
-        "DetectorIds" -> DetectorIds.asInstanceOf[js.Any]
-      )
-
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDetectorsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListFiltersRequest extends js.Object {
     var DetectorId: DetectorId
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListFiltersRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListFiltersRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListFiltersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListFiltersResponse extends js.Object {
     var FilterNames: FilterNames
     var NextToken: js.UndefOr[String]
   }
 
-  object ListFiltersResponse {
-    @inline
-    def apply(
-        FilterNames: FilterNames,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListFiltersResponse = {
-      val __obj = js.Dynamic.literal(
-        "FilterNames" -> FilterNames.asInstanceOf[js.Any]
-      )
-
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListFiltersResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListFindingsRequest extends js.Object {
     var DetectorId: DetectorId
     var FindingCriteria: js.UndefOr[FindingCriteria]
@@ -2198,132 +1000,44 @@ package guardduty {
     var SortCriteria: js.UndefOr[SortCriteria]
   }
 
-  object ListFindingsRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId,
-        FindingCriteria: js.UndefOr[FindingCriteria] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined,
-        SortCriteria: js.UndefOr[SortCriteria] = js.undefined
-    ): ListFindingsRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
-      )
-
-      FindingCriteria.foreach(__v => __obj.updateDynamic("FindingCriteria")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SortCriteria.foreach(__v => __obj.updateDynamic("SortCriteria")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListFindingsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListFindingsResponse extends js.Object {
     var FindingIds: FindingIds
     var NextToken: js.UndefOr[String]
   }
 
-  object ListFindingsResponse {
-    @inline
-    def apply(
-        FindingIds: FindingIds,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListFindingsResponse = {
-      val __obj = js.Dynamic.literal(
-        "FindingIds" -> FindingIds.asInstanceOf[js.Any]
-      )
-
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListFindingsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListIPSetsRequest extends js.Object {
     var DetectorId: DetectorId
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListIPSetsRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListIPSetsRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListIPSetsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListIPSetsResponse extends js.Object {
     var IpSetIds: IpSetIds
     var NextToken: js.UndefOr[String]
   }
 
-  object ListIPSetsResponse {
-    @inline
-    def apply(
-        IpSetIds: IpSetIds,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListIPSetsResponse = {
-      val __obj = js.Dynamic.literal(
-        "IpSetIds" -> IpSetIds.asInstanceOf[js.Any]
-      )
-
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListIPSetsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListInvitationsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListInvitationsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListInvitationsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListInvitationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListInvitationsResponse extends js.Object {
     var Invitations: js.UndefOr[Invitations]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListInvitationsResponse {
-    @inline
-    def apply(
-        Invitations: js.UndefOr[Invitations] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListInvitationsResponse = {
-      val __obj = js.Dynamic.literal()
-      Invitations.foreach(__v => __obj.updateDynamic("Invitations")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListInvitationsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListMembersRequest extends js.Object {
     var DetectorId: DetectorId
     var MaxResults: js.UndefOr[MaxResults]
@@ -2331,194 +1045,70 @@ package guardduty {
     var OnlyAssociated: js.UndefOr[String]
   }
 
-  object ListMembersRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined,
-        OnlyAssociated: js.UndefOr[String] = js.undefined
-    ): ListMembersRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      OnlyAssociated.foreach(__v => __obj.updateDynamic("OnlyAssociated")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListMembersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListMembersResponse extends js.Object {
     var Members: js.UndefOr[Members]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListMembersResponse {
-    @inline
-    def apply(
-        Members: js.UndefOr[Members] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListMembersResponse = {
-      val __obj = js.Dynamic.literal()
-      Members.foreach(__v => __obj.updateDynamic("Members")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListMembersResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPublishingDestinationsRequest extends js.Object {
     var DetectorId: DetectorId
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListPublishingDestinationsRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListPublishingDestinationsRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPublishingDestinationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPublishingDestinationsResponse extends js.Object {
     var Destinations: Destinations
     var NextToken: js.UndefOr[String]
   }
 
-  object ListPublishingDestinationsResponse {
-    @inline
-    def apply(
-        Destinations: Destinations,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListPublishingDestinationsResponse = {
-      val __obj = js.Dynamic.literal(
-        "Destinations" -> Destinations.asInstanceOf[js.Any]
-      )
-
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPublishingDestinationsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceRequest extends js.Object {
     var ResourceArn: GuardDutyArn
   }
 
-  object ListTagsForResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: GuardDutyArn
-    ): ListTagsForResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListTagsForResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceResponse extends js.Object {
     var Tags: js.UndefOr[TagMap]
   }
 
-  object ListTagsForResourceResponse {
-    @inline
-    def apply(
-        Tags: js.UndefOr[TagMap] = js.undefined
-    ): ListTagsForResourceResponse = {
-      val __obj = js.Dynamic.literal()
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListThreatIntelSetsRequest extends js.Object {
     var DetectorId: DetectorId
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListThreatIntelSetsRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListThreatIntelSetsRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListThreatIntelSetsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListThreatIntelSetsResponse extends js.Object {
     var ThreatIntelSetIds: ThreatIntelSetIds
     var NextToken: js.UndefOr[String]
-  }
-
-  object ListThreatIntelSetsResponse {
-    @inline
-    def apply(
-        ThreatIntelSetIds: ThreatIntelSetIds,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListThreatIntelSetsResponse = {
-      val __obj = js.Dynamic.literal(
-        "ThreatIntelSetIds" -> ThreatIntelSetIds.asInstanceOf[js.Any]
-      )
-
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListThreatIntelSetsResponse]
-    }
   }
 
   /**
     * Contains information about the port for the local connection.
     */
   @js.native
+  @Factory
   trait LocalPortDetails extends js.Object {
     var Port: js.UndefOr[Int]
     var PortName: js.UndefOr[String]
-  }
-
-  object LocalPortDetails {
-    @inline
-    def apply(
-        Port: js.UndefOr[Int] = js.undefined,
-        PortName: js.UndefOr[String] = js.undefined
-    ): LocalPortDetails = {
-      val __obj = js.Dynamic.literal()
-      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
-      PortName.foreach(__v => __obj.updateDynamic("PortName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LocalPortDetails]
-    }
   }
 
   /**
     * Contains information about the Master account and invitation.
     */
   @js.native
+  @Factory
   trait Master extends js.Object {
     var AccountId: js.UndefOr[AccountId]
     var InvitationId: js.UndefOr[String]
@@ -2526,27 +1116,11 @@ package guardduty {
     var RelationshipStatus: js.UndefOr[String]
   }
 
-  object Master {
-    @inline
-    def apply(
-        AccountId: js.UndefOr[AccountId] = js.undefined,
-        InvitationId: js.UndefOr[String] = js.undefined,
-        InvitedAt: js.UndefOr[String] = js.undefined,
-        RelationshipStatus: js.UndefOr[String] = js.undefined
-    ): Master = {
-      val __obj = js.Dynamic.literal()
-      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
-      InvitationId.foreach(__v => __obj.updateDynamic("InvitationId")(__v.asInstanceOf[js.Any]))
-      InvitedAt.foreach(__v => __obj.updateDynamic("InvitedAt")(__v.asInstanceOf[js.Any]))
-      RelationshipStatus.foreach(__v => __obj.updateDynamic("RelationshipStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Master]
-    }
-  }
-
   /**
     * Continas information about the member account
     */
   @js.native
+  @Factory
   trait Member extends js.Object {
     var AccountId: AccountId
     var Email: Email
@@ -2557,35 +1131,11 @@ package guardduty {
     var InvitedAt: js.UndefOr[String]
   }
 
-  object Member {
-    @inline
-    def apply(
-        AccountId: AccountId,
-        Email: Email,
-        MasterId: String,
-        RelationshipStatus: String,
-        UpdatedAt: String,
-        DetectorId: js.UndefOr[DetectorId] = js.undefined,
-        InvitedAt: js.UndefOr[String] = js.undefined
-    ): Member = {
-      val __obj = js.Dynamic.literal(
-        "AccountId"          -> AccountId.asInstanceOf[js.Any],
-        "Email"              -> Email.asInstanceOf[js.Any],
-        "MasterId"           -> MasterId.asInstanceOf[js.Any],
-        "RelationshipStatus" -> RelationshipStatus.asInstanceOf[js.Any],
-        "UpdatedAt"          -> UpdatedAt.asInstanceOf[js.Any]
-      )
-
-      DetectorId.foreach(__v => __obj.updateDynamic("DetectorId")(__v.asInstanceOf[js.Any]))
-      InvitedAt.foreach(__v => __obj.updateDynamic("InvitedAt")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Member]
-    }
-  }
-
   /**
     * Contains information about the NETWORK_CONNECTION action described in the finding.
     */
   @js.native
+  @Factory
   trait NetworkConnectionAction extends js.Object {
     var Blocked: js.UndefOr[Boolean]
     var ConnectionDirection: js.UndefOr[String]
@@ -2595,31 +1145,11 @@ package guardduty {
     var RemotePortDetails: js.UndefOr[RemotePortDetails]
   }
 
-  object NetworkConnectionAction {
-    @inline
-    def apply(
-        Blocked: js.UndefOr[Boolean] = js.undefined,
-        ConnectionDirection: js.UndefOr[String] = js.undefined,
-        LocalPortDetails: js.UndefOr[LocalPortDetails] = js.undefined,
-        Protocol: js.UndefOr[String] = js.undefined,
-        RemoteIpDetails: js.UndefOr[RemoteIpDetails] = js.undefined,
-        RemotePortDetails: js.UndefOr[RemotePortDetails] = js.undefined
-    ): NetworkConnectionAction = {
-      val __obj = js.Dynamic.literal()
-      Blocked.foreach(__v => __obj.updateDynamic("Blocked")(__v.asInstanceOf[js.Any]))
-      ConnectionDirection.foreach(__v => __obj.updateDynamic("ConnectionDirection")(__v.asInstanceOf[js.Any]))
-      LocalPortDetails.foreach(__v => __obj.updateDynamic("LocalPortDetails")(__v.asInstanceOf[js.Any]))
-      Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
-      RemoteIpDetails.foreach(__v => __obj.updateDynamic("RemoteIpDetails")(__v.asInstanceOf[js.Any]))
-      RemotePortDetails.foreach(__v => __obj.updateDynamic("RemotePortDetails")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NetworkConnectionAction]
-    }
-  }
-
   /**
     * Contains information about the network interface of the Ec2 instance.
     */
   @js.native
+  @Factory
   trait NetworkInterface extends js.Object {
     var Ipv6Addresses: js.UndefOr[Ipv6Addresses]
     var NetworkInterfaceId: js.UndefOr[String]
@@ -2631,35 +1161,6 @@ package guardduty {
     var SecurityGroups: js.UndefOr[SecurityGroups]
     var SubnetId: js.UndefOr[String]
     var VpcId: js.UndefOr[String]
-  }
-
-  object NetworkInterface {
-    @inline
-    def apply(
-        Ipv6Addresses: js.UndefOr[Ipv6Addresses] = js.undefined,
-        NetworkInterfaceId: js.UndefOr[String] = js.undefined,
-        PrivateDnsName: js.UndefOr[String] = js.undefined,
-        PrivateIpAddress: js.UndefOr[String] = js.undefined,
-        PrivateIpAddresses: js.UndefOr[PrivateIpAddresses] = js.undefined,
-        PublicDnsName: js.UndefOr[String] = js.undefined,
-        PublicIp: js.UndefOr[String] = js.undefined,
-        SecurityGroups: js.UndefOr[SecurityGroups] = js.undefined,
-        SubnetId: js.UndefOr[String] = js.undefined,
-        VpcId: js.UndefOr[String] = js.undefined
-    ): NetworkInterface = {
-      val __obj = js.Dynamic.literal()
-      Ipv6Addresses.foreach(__v => __obj.updateDynamic("Ipv6Addresses")(__v.asInstanceOf[js.Any]))
-      NetworkInterfaceId.foreach(__v => __obj.updateDynamic("NetworkInterfaceId")(__v.asInstanceOf[js.Any]))
-      PrivateDnsName.foreach(__v => __obj.updateDynamic("PrivateDnsName")(__v.asInstanceOf[js.Any]))
-      PrivateIpAddress.foreach(__v => __obj.updateDynamic("PrivateIpAddress")(__v.asInstanceOf[js.Any]))
-      PrivateIpAddresses.foreach(__v => __obj.updateDynamic("PrivateIpAddresses")(__v.asInstanceOf[js.Any]))
-      PublicDnsName.foreach(__v => __obj.updateDynamic("PublicDnsName")(__v.asInstanceOf[js.Any]))
-      PublicIp.foreach(__v => __obj.updateDynamic("PublicIp")(__v.asInstanceOf[js.Any]))
-      SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
-      SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
-      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NetworkInterface]
-    }
   }
 
   @js.native
@@ -2675,6 +1176,7 @@ package guardduty {
     * Continas information about the ISP organization of the remote IP address.
     */
   @js.native
+  @Factory
   trait Organization extends js.Object {
     var Asn: js.UndefOr[String]
     var AsnOrg: js.UndefOr[String]
@@ -2682,109 +1184,44 @@ package guardduty {
     var Org: js.UndefOr[String]
   }
 
-  object Organization {
-    @inline
-    def apply(
-        Asn: js.UndefOr[String] = js.undefined,
-        AsnOrg: js.UndefOr[String] = js.undefined,
-        Isp: js.UndefOr[String] = js.undefined,
-        Org: js.UndefOr[String] = js.undefined
-    ): Organization = {
-      val __obj = js.Dynamic.literal()
-      Asn.foreach(__v => __obj.updateDynamic("Asn")(__v.asInstanceOf[js.Any]))
-      AsnOrg.foreach(__v => __obj.updateDynamic("AsnOrg")(__v.asInstanceOf[js.Any]))
-      Isp.foreach(__v => __obj.updateDynamic("Isp")(__v.asInstanceOf[js.Any]))
-      Org.foreach(__v => __obj.updateDynamic("Org")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Organization]
-    }
-  }
-
   /**
     * Contains information about the PORT_PROBE action described in the finding.
     */
   @js.native
+  @Factory
   trait PortProbeAction extends js.Object {
     var Blocked: js.UndefOr[Boolean]
     var PortProbeDetails: js.UndefOr[PortProbeDetails]
-  }
-
-  object PortProbeAction {
-    @inline
-    def apply(
-        Blocked: js.UndefOr[Boolean] = js.undefined,
-        PortProbeDetails: js.UndefOr[PortProbeDetails] = js.undefined
-    ): PortProbeAction = {
-      val __obj = js.Dynamic.literal()
-      Blocked.foreach(__v => __obj.updateDynamic("Blocked")(__v.asInstanceOf[js.Any]))
-      PortProbeDetails.foreach(__v => __obj.updateDynamic("PortProbeDetails")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PortProbeAction]
-    }
   }
 
   /**
     * Contains information about the port probe details.
     */
   @js.native
+  @Factory
   trait PortProbeDetail extends js.Object {
     var LocalPortDetails: js.UndefOr[LocalPortDetails]
     var RemoteIpDetails: js.UndefOr[RemoteIpDetails]
-  }
-
-  object PortProbeDetail {
-    @inline
-    def apply(
-        LocalPortDetails: js.UndefOr[LocalPortDetails] = js.undefined,
-        RemoteIpDetails: js.UndefOr[RemoteIpDetails] = js.undefined
-    ): PortProbeDetail = {
-      val __obj = js.Dynamic.literal()
-      LocalPortDetails.foreach(__v => __obj.updateDynamic("LocalPortDetails")(__v.asInstanceOf[js.Any]))
-      RemoteIpDetails.foreach(__v => __obj.updateDynamic("RemoteIpDetails")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PortProbeDetail]
-    }
   }
 
   /**
     * Contains other private IP address information of the EC2 instance.
     */
   @js.native
+  @Factory
   trait PrivateIpAddressDetails extends js.Object {
     var PrivateDnsName: js.UndefOr[String]
     var PrivateIpAddress: js.UndefOr[String]
-  }
-
-  object PrivateIpAddressDetails {
-    @inline
-    def apply(
-        PrivateDnsName: js.UndefOr[String] = js.undefined,
-        PrivateIpAddress: js.UndefOr[String] = js.undefined
-    ): PrivateIpAddressDetails = {
-      val __obj = js.Dynamic.literal()
-      PrivateDnsName.foreach(__v => __obj.updateDynamic("PrivateDnsName")(__v.asInstanceOf[js.Any]))
-      PrivateIpAddress.foreach(__v => __obj.updateDynamic("PrivateIpAddress")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PrivateIpAddressDetails]
-    }
   }
 
   /**
     * Contains information about the product code for the Ec2 instance.
     */
   @js.native
+  @Factory
   trait ProductCode extends js.Object {
     var Code: js.UndefOr[String]
     var ProductType: js.UndefOr[String]
-  }
-
-  object ProductCode {
-    @inline
-    def apply(
-        Code: js.UndefOr[String] = js.undefined,
-        ProductType: js.UndefOr[String] = js.undefined
-    ): ProductCode = {
-      val __obj = js.Dynamic.literal()
-      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
-      ProductType.foreach(__v => __obj.updateDynamic("ProductType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ProductCode]
-    }
   }
 
   @js.native
@@ -2804,6 +1241,7 @@ package guardduty {
     * Continas information about the remote IP address of the connection.
     */
   @js.native
+  @Factory
   trait RemoteIpDetails extends js.Object {
     var City: js.UndefOr[City]
     var Country: js.UndefOr[Country]
@@ -2812,98 +1250,42 @@ package guardduty {
     var Organization: js.UndefOr[Organization]
   }
 
-  object RemoteIpDetails {
-    @inline
-    def apply(
-        City: js.UndefOr[City] = js.undefined,
-        Country: js.UndefOr[Country] = js.undefined,
-        GeoLocation: js.UndefOr[GeoLocation] = js.undefined,
-        IpAddressV4: js.UndefOr[String] = js.undefined,
-        Organization: js.UndefOr[Organization] = js.undefined
-    ): RemoteIpDetails = {
-      val __obj = js.Dynamic.literal()
-      City.foreach(__v => __obj.updateDynamic("City")(__v.asInstanceOf[js.Any]))
-      Country.foreach(__v => __obj.updateDynamic("Country")(__v.asInstanceOf[js.Any]))
-      GeoLocation.foreach(__v => __obj.updateDynamic("GeoLocation")(__v.asInstanceOf[js.Any]))
-      IpAddressV4.foreach(__v => __obj.updateDynamic("IpAddressV4")(__v.asInstanceOf[js.Any]))
-      Organization.foreach(__v => __obj.updateDynamic("Organization")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RemoteIpDetails]
-    }
-  }
-
   /**
     * Contains information about the remote port.
     */
   @js.native
+  @Factory
   trait RemotePortDetails extends js.Object {
     var Port: js.UndefOr[Int]
     var PortName: js.UndefOr[String]
-  }
-
-  object RemotePortDetails {
-    @inline
-    def apply(
-        Port: js.UndefOr[Int] = js.undefined,
-        PortName: js.UndefOr[String] = js.undefined
-    ): RemotePortDetails = {
-      val __obj = js.Dynamic.literal()
-      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
-      PortName.foreach(__v => __obj.updateDynamic("PortName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RemotePortDetails]
-    }
   }
 
   /**
     * Contains information about the AWS resource associated with the activity that prompted GuardDuty to generate a finding.
     */
   @js.native
+  @Factory
   trait Resource extends js.Object {
     var AccessKeyDetails: js.UndefOr[AccessKeyDetails]
     var InstanceDetails: js.UndefOr[InstanceDetails]
     var ResourceType: js.UndefOr[String]
   }
 
-  object Resource {
-    @inline
-    def apply(
-        AccessKeyDetails: js.UndefOr[AccessKeyDetails] = js.undefined,
-        InstanceDetails: js.UndefOr[InstanceDetails] = js.undefined,
-        ResourceType: js.UndefOr[String] = js.undefined
-    ): Resource = {
-      val __obj = js.Dynamic.literal()
-      AccessKeyDetails.foreach(__v => __obj.updateDynamic("AccessKeyDetails")(__v.asInstanceOf[js.Any]))
-      InstanceDetails.foreach(__v => __obj.updateDynamic("InstanceDetails")(__v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Resource]
-    }
-  }
-
   /**
     * Contains information about the security groups associated with the EC2 instance.
     */
   @js.native
+  @Factory
   trait SecurityGroup extends js.Object {
     var GroupId: js.UndefOr[String]
     var GroupName: js.UndefOr[String]
-  }
-
-  object SecurityGroup {
-    @inline
-    def apply(
-        GroupId: js.UndefOr[String] = js.undefined,
-        GroupName: js.UndefOr[String] = js.undefined
-    ): SecurityGroup = {
-      val __obj = js.Dynamic.literal()
-      GroupId.foreach(__v => __obj.updateDynamic("GroupId")(__v.asInstanceOf[js.Any]))
-      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SecurityGroup]
-    }
   }
 
   /**
     * Contains additional information about the generated finding.
     */
   @js.native
+  @Factory
   trait Service extends js.Object {
     var Action: js.UndefOr[Action]
     var Archived: js.UndefOr[Boolean]
@@ -2917,190 +1299,62 @@ package guardduty {
     var UserFeedback: js.UndefOr[String]
   }
 
-  object Service {
-    @inline
-    def apply(
-        Action: js.UndefOr[Action] = js.undefined,
-        Archived: js.UndefOr[Boolean] = js.undefined,
-        Count: js.UndefOr[Int] = js.undefined,
-        DetectorId: js.UndefOr[DetectorId] = js.undefined,
-        EventFirstSeen: js.UndefOr[String] = js.undefined,
-        EventLastSeen: js.UndefOr[String] = js.undefined,
-        Evidence: js.UndefOr[Evidence] = js.undefined,
-        ResourceRole: js.UndefOr[String] = js.undefined,
-        ServiceName: js.UndefOr[String] = js.undefined,
-        UserFeedback: js.UndefOr[String] = js.undefined
-    ): Service = {
-      val __obj = js.Dynamic.literal()
-      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
-      Archived.foreach(__v => __obj.updateDynamic("Archived")(__v.asInstanceOf[js.Any]))
-      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
-      DetectorId.foreach(__v => __obj.updateDynamic("DetectorId")(__v.asInstanceOf[js.Any]))
-      EventFirstSeen.foreach(__v => __obj.updateDynamic("EventFirstSeen")(__v.asInstanceOf[js.Any]))
-      EventLastSeen.foreach(__v => __obj.updateDynamic("EventLastSeen")(__v.asInstanceOf[js.Any]))
-      Evidence.foreach(__v => __obj.updateDynamic("Evidence")(__v.asInstanceOf[js.Any]))
-      ResourceRole.foreach(__v => __obj.updateDynamic("ResourceRole")(__v.asInstanceOf[js.Any]))
-      ServiceName.foreach(__v => __obj.updateDynamic("ServiceName")(__v.asInstanceOf[js.Any]))
-      UserFeedback.foreach(__v => __obj.updateDynamic("UserFeedback")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Service]
-    }
-  }
-
   /**
     * Contains information about the criteria used for sorting findings.
     */
   @js.native
+  @Factory
   trait SortCriteria extends js.Object {
     var AttributeName: js.UndefOr[String]
     var OrderBy: js.UndefOr[OrderBy]
   }
 
-  object SortCriteria {
-    @inline
-    def apply(
-        AttributeName: js.UndefOr[String] = js.undefined,
-        OrderBy: js.UndefOr[OrderBy] = js.undefined
-    ): SortCriteria = {
-      val __obj = js.Dynamic.literal()
-      AttributeName.foreach(__v => __obj.updateDynamic("AttributeName")(__v.asInstanceOf[js.Any]))
-      OrderBy.foreach(__v => __obj.updateDynamic("OrderBy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SortCriteria]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartMonitoringMembersRequest extends js.Object {
     var AccountIds: AccountIds
     var DetectorId: DetectorId
   }
 
-  object StartMonitoringMembersRequest {
-    @inline
-    def apply(
-        AccountIds: AccountIds,
-        DetectorId: DetectorId
-    ): StartMonitoringMembersRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountIds" -> AccountIds.asInstanceOf[js.Any],
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StartMonitoringMembersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartMonitoringMembersResponse extends js.Object {
     var UnprocessedAccounts: UnprocessedAccounts
   }
 
-  object StartMonitoringMembersResponse {
-    @inline
-    def apply(
-        UnprocessedAccounts: UnprocessedAccounts
-    ): StartMonitoringMembersResponse = {
-      val __obj = js.Dynamic.literal(
-        "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StartMonitoringMembersResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopMonitoringMembersRequest extends js.Object {
     var AccountIds: AccountIds
     var DetectorId: DetectorId
   }
 
-  object StopMonitoringMembersRequest {
-    @inline
-    def apply(
-        AccountIds: AccountIds,
-        DetectorId: DetectorId
-    ): StopMonitoringMembersRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountIds" -> AccountIds.asInstanceOf[js.Any],
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StopMonitoringMembersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopMonitoringMembersResponse extends js.Object {
     var UnprocessedAccounts: UnprocessedAccounts
-  }
-
-  object StopMonitoringMembersResponse {
-    @inline
-    def apply(
-        UnprocessedAccounts: UnprocessedAccounts
-    ): StopMonitoringMembersResponse = {
-      val __obj = js.Dynamic.literal(
-        "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StopMonitoringMembersResponse]
-    }
   }
 
   /**
     * Contains information about a tag associated with the Ec2 instance.
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var Key: js.UndefOr[String]
     var Value: js.UndefOr[String]
   }
 
-  object Tag {
-    @inline
-    def apply(
-        Key: js.UndefOr[String] = js.undefined,
-        Value: js.UndefOr[String] = js.undefined
-    ): Tag = {
-      val __obj = js.Dynamic.literal()
-      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Tag]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceRequest extends js.Object {
     var ResourceArn: GuardDutyArn
     var Tags: TagMap
   }
 
-  object TagResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: GuardDutyArn,
-        Tags: TagMap
-    ): TagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceResponse extends js.Object {}
-
-  object TagResourceResponse {
-    @inline
-    def apply(
-    ): TagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[TagResourceResponse]
-    }
-  }
 
   @js.native
   sealed trait ThreatIntelSetFormat extends js.Any
@@ -3133,156 +1387,58 @@ package guardduty {
     * An instance of a threat intelligence detail that constitutes evidence for the finding.
     */
   @js.native
+  @Factory
   trait ThreatIntelligenceDetail extends js.Object {
     var ThreatListName: js.UndefOr[String]
     var ThreatNames: js.UndefOr[ThreatNames]
   }
 
-  object ThreatIntelligenceDetail {
-    @inline
-    def apply(
-        ThreatListName: js.UndefOr[String] = js.undefined,
-        ThreatNames: js.UndefOr[ThreatNames] = js.undefined
-    ): ThreatIntelligenceDetail = {
-      val __obj = js.Dynamic.literal()
-      ThreatListName.foreach(__v => __obj.updateDynamic("ThreatListName")(__v.asInstanceOf[js.Any]))
-      ThreatNames.foreach(__v => __obj.updateDynamic("ThreatNames")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ThreatIntelligenceDetail]
-    }
-  }
-
   @js.native
+  @Factory
   trait UnarchiveFindingsRequest extends js.Object {
     var DetectorId: DetectorId
     var FindingIds: FindingIds
   }
 
-  object UnarchiveFindingsRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId,
-        FindingIds: FindingIds
-    ): UnarchiveFindingsRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any],
-        "FindingIds" -> FindingIds.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UnarchiveFindingsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UnarchiveFindingsResponse extends js.Object {}
-
-  object UnarchiveFindingsResponse {
-    @inline
-    def apply(
-    ): UnarchiveFindingsResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UnarchiveFindingsResponse]
-    }
-  }
 
   /**
     * Contains information about the accounts that were not processed.
     */
   @js.native
+  @Factory
   trait UnprocessedAccount extends js.Object {
     var AccountId: AccountId
     var Result: String
   }
 
-  object UnprocessedAccount {
-    @inline
-    def apply(
-        AccountId: AccountId,
-        Result: String
-    ): UnprocessedAccount = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "Result"    -> Result.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UnprocessedAccount]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceRequest extends js.Object {
     var ResourceArn: GuardDutyArn
     var TagKeys: TagKeyList
   }
 
-  object UntagResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: GuardDutyArn,
-        TagKeys: TagKeyList
-    ): UntagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceResponse extends js.Object {}
 
-  object UntagResourceResponse {
-    @inline
-    def apply(
-    ): UntagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UntagResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateDetectorRequest extends js.Object {
     var DetectorId: DetectorId
     var Enable: js.UndefOr[Boolean]
     var FindingPublishingFrequency: js.UndefOr[FindingPublishingFrequency]
   }
 
-  object UpdateDetectorRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId,
-        Enable: js.UndefOr[Boolean] = js.undefined,
-        FindingPublishingFrequency: js.UndefOr[FindingPublishingFrequency] = js.undefined
-    ): UpdateDetectorRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
-      )
-
-      Enable.foreach(__v => __obj.updateDynamic("Enable")(__v.asInstanceOf[js.Any]))
-      FindingPublishingFrequency.foreach(__v =>
-        __obj.updateDynamic("FindingPublishingFrequency")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[UpdateDetectorRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateDetectorResponse extends js.Object {}
 
-  object UpdateDetectorResponse {
-    @inline
-    def apply(
-    ): UpdateDetectorResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateDetectorResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateFilterRequest extends js.Object {
     var DetectorId: DetectorId
     var FilterName: String
@@ -3292,48 +1448,14 @@ package guardduty {
     var Rank: js.UndefOr[FilterRank]
   }
 
-  object UpdateFilterRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId,
-        FilterName: String,
-        Action: js.UndefOr[FilterAction] = js.undefined,
-        Description: js.UndefOr[FilterDescription] = js.undefined,
-        FindingCriteria: js.UndefOr[FindingCriteria] = js.undefined,
-        Rank: js.UndefOr[FilterRank] = js.undefined
-    ): UpdateFilterRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any],
-        "FilterName" -> FilterName.asInstanceOf[js.Any]
-      )
-
-      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      FindingCriteria.foreach(__v => __obj.updateDynamic("FindingCriteria")(__v.asInstanceOf[js.Any]))
-      Rank.foreach(__v => __obj.updateDynamic("Rank")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateFilterRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateFilterResponse extends js.Object {
     var Name: FilterName
   }
 
-  object UpdateFilterResponse {
-    @inline
-    def apply(
-        Name: FilterName
-    ): UpdateFilterResponse = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateFilterResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateFindingsFeedbackRequest extends js.Object {
     var DetectorId: DetectorId
     var Feedback: Feedback
@@ -3341,39 +1463,12 @@ package guardduty {
     var Comments: js.UndefOr[String]
   }
 
-  object UpdateFindingsFeedbackRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId,
-        Feedback: Feedback,
-        FindingIds: FindingIds,
-        Comments: js.UndefOr[String] = js.undefined
-    ): UpdateFindingsFeedbackRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any],
-        "Feedback"   -> Feedback.asInstanceOf[js.Any],
-        "FindingIds" -> FindingIds.asInstanceOf[js.Any]
-      )
-
-      Comments.foreach(__v => __obj.updateDynamic("Comments")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateFindingsFeedbackRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateFindingsFeedbackResponse extends js.Object {}
 
-  object UpdateFindingsFeedbackResponse {
-    @inline
-    def apply(
-    ): UpdateFindingsFeedbackResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateFindingsFeedbackResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateIPSetRequest extends js.Object {
     var DetectorId: DetectorId
     var IpSetId: String
@@ -3382,78 +1477,24 @@ package guardduty {
     var Name: js.UndefOr[Name]
   }
 
-  object UpdateIPSetRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId,
-        IpSetId: String,
-        Activate: js.UndefOr[Boolean] = js.undefined,
-        Location: js.UndefOr[Location] = js.undefined,
-        Name: js.UndefOr[Name] = js.undefined
-    ): UpdateIPSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId" -> DetectorId.asInstanceOf[js.Any],
-        "IpSetId"    -> IpSetId.asInstanceOf[js.Any]
-      )
-
-      Activate.foreach(__v => __obj.updateDynamic("Activate")(__v.asInstanceOf[js.Any]))
-      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateIPSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateIPSetResponse extends js.Object {}
 
-  object UpdateIPSetResponse {
-    @inline
-    def apply(
-    ): UpdateIPSetResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateIPSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdatePublishingDestinationRequest extends js.Object {
     var DestinationId: String
     var DetectorId: DetectorId
     var DestinationProperties: js.UndefOr[DestinationProperties]
   }
 
-  object UpdatePublishingDestinationRequest {
-    @inline
-    def apply(
-        DestinationId: String,
-        DetectorId: DetectorId,
-        DestinationProperties: js.UndefOr[DestinationProperties] = js.undefined
-    ): UpdatePublishingDestinationRequest = {
-      val __obj = js.Dynamic.literal(
-        "DestinationId" -> DestinationId.asInstanceOf[js.Any],
-        "DetectorId"    -> DetectorId.asInstanceOf[js.Any]
-      )
-
-      DestinationProperties.foreach(__v => __obj.updateDynamic("DestinationProperties")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdatePublishingDestinationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdatePublishingDestinationResponse extends js.Object {}
 
-  object UpdatePublishingDestinationResponse {
-    @inline
-    def apply(
-    ): UpdatePublishingDestinationResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdatePublishingDestinationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateThreatIntelSetRequest extends js.Object {
     var DetectorId: DetectorId
     var ThreatIntelSetId: String
@@ -3462,37 +1503,7 @@ package guardduty {
     var Name: js.UndefOr[Name]
   }
 
-  object UpdateThreatIntelSetRequest {
-    @inline
-    def apply(
-        DetectorId: DetectorId,
-        ThreatIntelSetId: String,
-        Activate: js.UndefOr[Boolean] = js.undefined,
-        Location: js.UndefOr[Location] = js.undefined,
-        Name: js.UndefOr[Name] = js.undefined
-    ): UpdateThreatIntelSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetectorId"       -> DetectorId.asInstanceOf[js.Any],
-        "ThreatIntelSetId" -> ThreatIntelSetId.asInstanceOf[js.Any]
-      )
-
-      Activate.foreach(__v => __obj.updateDynamic("Activate")(__v.asInstanceOf[js.Any]))
-      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateThreatIntelSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateThreatIntelSetResponse extends js.Object {}
-
-  object UpdateThreatIntelSetResponse {
-    @inline
-    def apply(
-    ): UpdateThreatIntelSetResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateThreatIntelSetResponse]
-    }
-  }
 }

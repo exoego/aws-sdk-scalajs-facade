@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object workdocs {
   type ActivityNamesFilterType     = String
@@ -220,70 +221,31 @@ package workdocs {
   }
 
   @js.native
+  @Factory
   trait AbortDocumentVersionUploadRequest extends js.Object {
     var DocumentId: ResourceIdType
     var VersionId: DocumentVersionIdType
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
   }
 
-  object AbortDocumentVersionUploadRequest {
-    @inline
-    def apply(
-        DocumentId: ResourceIdType,
-        VersionId: DocumentVersionIdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
-    ): AbortDocumentVersionUploadRequest = {
-      val __obj = js.Dynamic.literal(
-        "DocumentId" -> DocumentId.asInstanceOf[js.Any],
-        "VersionId"  -> VersionId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AbortDocumentVersionUploadRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ActivateUserRequest extends js.Object {
     var UserId: IdType
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
   }
 
-  object ActivateUserRequest {
-    @inline
-    def apply(
-        UserId: IdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
-    ): ActivateUserRequest = {
-      val __obj = js.Dynamic.literal(
-        "UserId" -> UserId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ActivateUserRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ActivateUserResponse extends js.Object {
     var User: js.UndefOr[User]
-  }
-
-  object ActivateUserResponse {
-    @inline
-    def apply(
-        User: js.UndefOr[User] = js.undefined
-    ): ActivateUserResponse = {
-      val __obj = js.Dynamic.literal()
-      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ActivateUserResponse]
-    }
   }
 
   /**
     * Describes the activity information.
     */
   @js.native
+  @Factory
   trait Activity extends js.Object {
     var CommentMetadata: js.UndefOr[CommentMetadata]
     var Initiator: js.UndefOr[UserMetadata]
@@ -294,33 +256,6 @@ package workdocs {
     var ResourceMetadata: js.UndefOr[ResourceMetadata]
     var TimeStamp: js.UndefOr[TimestampType]
     var Type: js.UndefOr[ActivityType]
-  }
-
-  object Activity {
-    @inline
-    def apply(
-        CommentMetadata: js.UndefOr[CommentMetadata] = js.undefined,
-        Initiator: js.UndefOr[UserMetadata] = js.undefined,
-        IsIndirectActivity: js.UndefOr[BooleanType] = js.undefined,
-        OrganizationId: js.UndefOr[IdType] = js.undefined,
-        OriginalParent: js.UndefOr[ResourceMetadata] = js.undefined,
-        Participants: js.UndefOr[Participants] = js.undefined,
-        ResourceMetadata: js.UndefOr[ResourceMetadata] = js.undefined,
-        TimeStamp: js.UndefOr[TimestampType] = js.undefined,
-        Type: js.UndefOr[ActivityType] = js.undefined
-    ): Activity = {
-      val __obj = js.Dynamic.literal()
-      CommentMetadata.foreach(__v => __obj.updateDynamic("CommentMetadata")(__v.asInstanceOf[js.Any]))
-      Initiator.foreach(__v => __obj.updateDynamic("Initiator")(__v.asInstanceOf[js.Any]))
-      IsIndirectActivity.foreach(__v => __obj.updateDynamic("IsIndirectActivity")(__v.asInstanceOf[js.Any]))
-      OrganizationId.foreach(__v => __obj.updateDynamic("OrganizationId")(__v.asInstanceOf[js.Any]))
-      OriginalParent.foreach(__v => __obj.updateDynamic("OriginalParent")(__v.asInstanceOf[js.Any]))
-      Participants.foreach(__v => __obj.updateDynamic("Participants")(__v.asInstanceOf[js.Any]))
-      ResourceMetadata.foreach(__v => __obj.updateDynamic("ResourceMetadata")(__v.asInstanceOf[js.Any]))
-      TimeStamp.foreach(__v => __obj.updateDynamic("TimeStamp")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Activity]
-    }
   }
 
   @js.native
@@ -401,6 +336,7 @@ package workdocs {
   }
 
   @js.native
+  @Factory
   trait AddResourcePermissionsRequest extends js.Object {
     var Principals: SharePrincipalList
     var ResourceId: ResourceIdType
@@ -408,39 +344,10 @@ package workdocs {
     var NotificationOptions: js.UndefOr[NotificationOptions]
   }
 
-  object AddResourcePermissionsRequest {
-    @inline
-    def apply(
-        Principals: SharePrincipalList,
-        ResourceId: ResourceIdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-        NotificationOptions: js.UndefOr[NotificationOptions] = js.undefined
-    ): AddResourcePermissionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Principals" -> Principals.asInstanceOf[js.Any],
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      NotificationOptions.foreach(__v => __obj.updateDynamic("NotificationOptions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AddResourcePermissionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AddResourcePermissionsResponse extends js.Object {
     var ShareResults: js.UndefOr[ShareResultsList]
-  }
-
-  object AddResourcePermissionsResponse {
-    @inline
-    def apply(
-        ShareResults: js.UndefOr[ShareResultsList] = js.undefined
-    ): AddResourcePermissionsResponse = {
-      val __obj = js.Dynamic.literal()
-      ShareResults.foreach(__v => __obj.updateDynamic("ShareResults")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AddResourcePermissionsResponse]
-    }
   }
 
   @js.native
@@ -456,6 +363,7 @@ package workdocs {
     * Describes a comment.
     */
   @js.native
+  @Factory
   trait Comment extends js.Object {
     var CommentId: CommentIdType
     var Contributor: js.UndefOr[User]
@@ -468,64 +376,17 @@ package workdocs {
     var Visibility: js.UndefOr[CommentVisibilityType]
   }
 
-  object Comment {
-    @inline
-    def apply(
-        CommentId: CommentIdType,
-        Contributor: js.UndefOr[User] = js.undefined,
-        CreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-        ParentId: js.UndefOr[CommentIdType] = js.undefined,
-        RecipientId: js.UndefOr[IdType] = js.undefined,
-        Status: js.UndefOr[CommentStatusType] = js.undefined,
-        Text: js.UndefOr[CommentTextType] = js.undefined,
-        ThreadId: js.UndefOr[CommentIdType] = js.undefined,
-        Visibility: js.UndefOr[CommentVisibilityType] = js.undefined
-    ): Comment = {
-      val __obj = js.Dynamic.literal(
-        "CommentId" -> CommentId.asInstanceOf[js.Any]
-      )
-
-      Contributor.foreach(__v => __obj.updateDynamic("Contributor")(__v.asInstanceOf[js.Any]))
-      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
-      ParentId.foreach(__v => __obj.updateDynamic("ParentId")(__v.asInstanceOf[js.Any]))
-      RecipientId.foreach(__v => __obj.updateDynamic("RecipientId")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
-      ThreadId.foreach(__v => __obj.updateDynamic("ThreadId")(__v.asInstanceOf[js.Any]))
-      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Comment]
-    }
-  }
-
   /**
     * Describes the metadata of a comment.
     */
   @js.native
+  @Factory
   trait CommentMetadata extends js.Object {
     var CommentId: js.UndefOr[CommentIdType]
     var CommentStatus: js.UndefOr[CommentStatusType]
     var Contributor: js.UndefOr[User]
     var CreatedTimestamp: js.UndefOr[TimestampType]
     var RecipientId: js.UndefOr[IdType]
-  }
-
-  object CommentMetadata {
-    @inline
-    def apply(
-        CommentId: js.UndefOr[CommentIdType] = js.undefined,
-        CommentStatus: js.UndefOr[CommentStatusType] = js.undefined,
-        Contributor: js.UndefOr[User] = js.undefined,
-        CreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-        RecipientId: js.UndefOr[IdType] = js.undefined
-    ): CommentMetadata = {
-      val __obj = js.Dynamic.literal()
-      CommentId.foreach(__v => __obj.updateDynamic("CommentId")(__v.asInstanceOf[js.Any]))
-      CommentStatus.foreach(__v => __obj.updateDynamic("CommentStatus")(__v.asInstanceOf[js.Any]))
-      Contributor.foreach(__v => __obj.updateDynamic("Contributor")(__v.asInstanceOf[js.Any]))
-      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
-      RecipientId.foreach(__v => __obj.updateDynamic("RecipientId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CommentMetadata]
-    }
   }
 
   @js.native
@@ -548,6 +409,7 @@ package workdocs {
   }
 
   @js.native
+  @Factory
   trait CreateCommentRequest extends js.Object {
     var DocumentId: ResourceIdType
     var Text: CommentTextType
@@ -559,50 +421,14 @@ package workdocs {
     var Visibility: js.UndefOr[CommentVisibilityType]
   }
 
-  object CreateCommentRequest {
-    @inline
-    def apply(
-        DocumentId: ResourceIdType,
-        Text: CommentTextType,
-        VersionId: DocumentVersionIdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-        NotifyCollaborators: js.UndefOr[BooleanType] = js.undefined,
-        ParentId: js.UndefOr[CommentIdType] = js.undefined,
-        ThreadId: js.UndefOr[CommentIdType] = js.undefined,
-        Visibility: js.UndefOr[CommentVisibilityType] = js.undefined
-    ): CreateCommentRequest = {
-      val __obj = js.Dynamic.literal(
-        "DocumentId" -> DocumentId.asInstanceOf[js.Any],
-        "Text"       -> Text.asInstanceOf[js.Any],
-        "VersionId"  -> VersionId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      NotifyCollaborators.foreach(__v => __obj.updateDynamic("NotifyCollaborators")(__v.asInstanceOf[js.Any]))
-      ParentId.foreach(__v => __obj.updateDynamic("ParentId")(__v.asInstanceOf[js.Any]))
-      ThreadId.foreach(__v => __obj.updateDynamic("ThreadId")(__v.asInstanceOf[js.Any]))
-      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateCommentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateCommentResponse extends js.Object {
     var Comment: js.UndefOr[Comment]
   }
 
-  object CreateCommentResponse {
-    @inline
-    def apply(
-        Comment: js.UndefOr[Comment] = js.undefined
-    ): CreateCommentResponse = {
-      val __obj = js.Dynamic.literal()
-      Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateCommentResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateCustomMetadataRequest extends js.Object {
     var CustomMetadata: CustomMetadataMap
     var ResourceId: ResourceIdType
@@ -610,116 +436,38 @@ package workdocs {
     var VersionId: js.UndefOr[DocumentVersionIdType]
   }
 
-  object CreateCustomMetadataRequest {
-    @inline
-    def apply(
-        CustomMetadata: CustomMetadataMap,
-        ResourceId: ResourceIdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-        VersionId: js.UndefOr[DocumentVersionIdType] = js.undefined
-    ): CreateCustomMetadataRequest = {
-      val __obj = js.Dynamic.literal(
-        "CustomMetadata" -> CustomMetadata.asInstanceOf[js.Any],
-        "ResourceId"     -> ResourceId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateCustomMetadataRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateCustomMetadataResponse extends js.Object {}
 
-  object CreateCustomMetadataResponse {
-    @inline
-    def apply(
-    ): CreateCustomMetadataResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[CreateCustomMetadataResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateFolderRequest extends js.Object {
     var ParentFolderId: ResourceIdType
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
     var Name: js.UndefOr[ResourceNameType]
   }
 
-  object CreateFolderRequest {
-    @inline
-    def apply(
-        ParentFolderId: ResourceIdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-        Name: js.UndefOr[ResourceNameType] = js.undefined
-    ): CreateFolderRequest = {
-      val __obj = js.Dynamic.literal(
-        "ParentFolderId" -> ParentFolderId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateFolderRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateFolderResponse extends js.Object {
     var Metadata: js.UndefOr[FolderMetadata]
   }
 
-  object CreateFolderResponse {
-    @inline
-    def apply(
-        Metadata: js.UndefOr[FolderMetadata] = js.undefined
-    ): CreateFolderResponse = {
-      val __obj = js.Dynamic.literal()
-      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateFolderResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateLabelsRequest extends js.Object {
     var Labels: SharedLabels
     var ResourceId: ResourceIdType
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
   }
 
-  object CreateLabelsRequest {
-    @inline
-    def apply(
-        Labels: SharedLabels,
-        ResourceId: ResourceIdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
-    ): CreateLabelsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Labels"     -> Labels.asInstanceOf[js.Any],
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateLabelsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateLabelsResponse extends js.Object {}
 
-  object CreateLabelsResponse {
-    @inline
-    def apply(
-    ): CreateLabelsResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[CreateLabelsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateNotificationSubscriptionRequest extends js.Object {
     var Endpoint: SubscriptionEndPointType
     var OrganizationId: IdType
@@ -727,42 +475,14 @@ package workdocs {
     var SubscriptionType: SubscriptionType
   }
 
-  object CreateNotificationSubscriptionRequest {
-    @inline
-    def apply(
-        Endpoint: SubscriptionEndPointType,
-        OrganizationId: IdType,
-        Protocol: SubscriptionProtocolType,
-        SubscriptionType: SubscriptionType
-    ): CreateNotificationSubscriptionRequest = {
-      val __obj = js.Dynamic.literal(
-        "Endpoint"         -> Endpoint.asInstanceOf[js.Any],
-        "OrganizationId"   -> OrganizationId.asInstanceOf[js.Any],
-        "Protocol"         -> Protocol.asInstanceOf[js.Any],
-        "SubscriptionType" -> SubscriptionType.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateNotificationSubscriptionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateNotificationSubscriptionResponse extends js.Object {
     var Subscription: js.UndefOr[Subscription]
   }
 
-  object CreateNotificationSubscriptionResponse {
-    @inline
-    def apply(
-        Subscription: js.UndefOr[Subscription] = js.undefined
-    ): CreateNotificationSubscriptionResponse = {
-      val __obj = js.Dynamic.literal()
-      Subscription.foreach(__v => __obj.updateDynamic("Subscription")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateNotificationSubscriptionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateUserRequest extends js.Object {
     var GivenName: UserAttributeValueType
     var Password: PasswordType
@@ -775,73 +495,21 @@ package workdocs {
     var TimeZoneId: js.UndefOr[TimeZoneIdType]
   }
 
-  object CreateUserRequest {
-    @inline
-    def apply(
-        GivenName: UserAttributeValueType,
-        Password: PasswordType,
-        Surname: UserAttributeValueType,
-        Username: UsernameType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-        EmailAddress: js.UndefOr[EmailAddressType] = js.undefined,
-        OrganizationId: js.UndefOr[IdType] = js.undefined,
-        StorageRule: js.UndefOr[StorageRuleType] = js.undefined,
-        TimeZoneId: js.UndefOr[TimeZoneIdType] = js.undefined
-    ): CreateUserRequest = {
-      val __obj = js.Dynamic.literal(
-        "GivenName" -> GivenName.asInstanceOf[js.Any],
-        "Password"  -> Password.asInstanceOf[js.Any],
-        "Surname"   -> Surname.asInstanceOf[js.Any],
-        "Username"  -> Username.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      EmailAddress.foreach(__v => __obj.updateDynamic("EmailAddress")(__v.asInstanceOf[js.Any]))
-      OrganizationId.foreach(__v => __obj.updateDynamic("OrganizationId")(__v.asInstanceOf[js.Any]))
-      StorageRule.foreach(__v => __obj.updateDynamic("StorageRule")(__v.asInstanceOf[js.Any]))
-      TimeZoneId.foreach(__v => __obj.updateDynamic("TimeZoneId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateUserRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateUserResponse extends js.Object {
     var User: js.UndefOr[User]
   }
 
-  object CreateUserResponse {
-    @inline
-    def apply(
-        User: js.UndefOr[User] = js.undefined
-    ): CreateUserResponse = {
-      val __obj = js.Dynamic.literal()
-      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateUserResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeactivateUserRequest extends js.Object {
     var UserId: IdType
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
   }
 
-  object DeactivateUserRequest {
-    @inline
-    def apply(
-        UserId: IdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
-    ): DeactivateUserRequest = {
-      val __obj = js.Dynamic.literal(
-        "UserId" -> UserId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeactivateUserRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteCommentRequest extends js.Object {
     var CommentId: CommentIdType
     var DocumentId: ResourceIdType
@@ -849,26 +517,8 @@ package workdocs {
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
   }
 
-  object DeleteCommentRequest {
-    @inline
-    def apply(
-        CommentId: CommentIdType,
-        DocumentId: ResourceIdType,
-        VersionId: DocumentVersionIdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
-    ): DeleteCommentRequest = {
-      val __obj = js.Dynamic.literal(
-        "CommentId"  -> CommentId.asInstanceOf[js.Any],
-        "DocumentId" -> DocumentId.asInstanceOf[js.Any],
-        "VersionId"  -> VersionId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteCommentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteCustomMetadataRequest extends js.Object {
     var ResourceId: ResourceIdType
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
@@ -877,104 +527,33 @@ package workdocs {
     var VersionId: js.UndefOr[DocumentVersionIdType]
   }
 
-  object DeleteCustomMetadataRequest {
-    @inline
-    def apply(
-        ResourceId: ResourceIdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-        DeleteAll: js.UndefOr[BooleanType] = js.undefined,
-        Keys: js.UndefOr[CustomMetadataKeyList] = js.undefined,
-        VersionId: js.UndefOr[DocumentVersionIdType] = js.undefined
-    ): DeleteCustomMetadataRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      DeleteAll.foreach(__v => __obj.updateDynamic("DeleteAll")(__v.asInstanceOf[js.Any]))
-      Keys.foreach(__v => __obj.updateDynamic("Keys")(__v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteCustomMetadataRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteCustomMetadataResponse extends js.Object {}
 
-  object DeleteCustomMetadataResponse {
-    @inline
-    def apply(
-    ): DeleteCustomMetadataResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteCustomMetadataResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDocumentRequest extends js.Object {
     var DocumentId: ResourceIdType
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
   }
 
-  object DeleteDocumentRequest {
-    @inline
-    def apply(
-        DocumentId: ResourceIdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
-    ): DeleteDocumentRequest = {
-      val __obj = js.Dynamic.literal(
-        "DocumentId" -> DocumentId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteDocumentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteFolderContentsRequest extends js.Object {
     var FolderId: ResourceIdType
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
   }
 
-  object DeleteFolderContentsRequest {
-    @inline
-    def apply(
-        FolderId: ResourceIdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
-    ): DeleteFolderContentsRequest = {
-      val __obj = js.Dynamic.literal(
-        "FolderId" -> FolderId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteFolderContentsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteFolderRequest extends js.Object {
     var FolderId: ResourceIdType
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
   }
 
-  object DeleteFolderRequest {
-    @inline
-    def apply(
-        FolderId: ResourceIdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
-    ): DeleteFolderRequest = {
-      val __obj = js.Dynamic.literal(
-        "FolderId" -> FolderId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteFolderRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteLabelsRequest extends js.Object {
     var ResourceId: ResourceIdType
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
@@ -982,81 +561,26 @@ package workdocs {
     var Labels: js.UndefOr[SharedLabels]
   }
 
-  object DeleteLabelsRequest {
-    @inline
-    def apply(
-        ResourceId: ResourceIdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-        DeleteAll: js.UndefOr[BooleanType] = js.undefined,
-        Labels: js.UndefOr[SharedLabels] = js.undefined
-    ): DeleteLabelsRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      DeleteAll.foreach(__v => __obj.updateDynamic("DeleteAll")(__v.asInstanceOf[js.Any]))
-      Labels.foreach(__v => __obj.updateDynamic("Labels")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteLabelsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteLabelsResponse extends js.Object {}
 
-  object DeleteLabelsResponse {
-    @inline
-    def apply(
-    ): DeleteLabelsResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteLabelsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteNotificationSubscriptionRequest extends js.Object {
     var OrganizationId: IdType
     var SubscriptionId: IdType
   }
 
-  object DeleteNotificationSubscriptionRequest {
-    @inline
-    def apply(
-        OrganizationId: IdType,
-        SubscriptionId: IdType
-    ): DeleteNotificationSubscriptionRequest = {
-      val __obj = js.Dynamic.literal(
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "SubscriptionId" -> SubscriptionId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteNotificationSubscriptionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteUserRequest extends js.Object {
     var UserId: IdType
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
   }
 
-  object DeleteUserRequest {
-    @inline
-    def apply(
-        UserId: IdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
-    ): DeleteUserRequest = {
-      val __obj = js.Dynamic.literal(
-        "UserId" -> UserId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteUserRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeActivitiesRequest extends js.Object {
     var ActivityTypes: js.UndefOr[ActivityNamesFilterType]
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
@@ -1070,57 +594,15 @@ package workdocs {
     var UserId: js.UndefOr[IdType]
   }
 
-  object DescribeActivitiesRequest {
-    @inline
-    def apply(
-        ActivityTypes: js.UndefOr[ActivityNamesFilterType] = js.undefined,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-        EndTime: js.UndefOr[TimestampType] = js.undefined,
-        IncludeIndirectActivities: js.UndefOr[BooleanType] = js.undefined,
-        Limit: js.UndefOr[LimitType] = js.undefined,
-        Marker: js.UndefOr[MarkerType] = js.undefined,
-        OrganizationId: js.UndefOr[IdType] = js.undefined,
-        ResourceId: js.UndefOr[IdType] = js.undefined,
-        StartTime: js.UndefOr[TimestampType] = js.undefined,
-        UserId: js.UndefOr[IdType] = js.undefined
-    ): DescribeActivitiesRequest = {
-      val __obj = js.Dynamic.literal()
-      ActivityTypes.foreach(__v => __obj.updateDynamic("ActivityTypes")(__v.asInstanceOf[js.Any]))
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      IncludeIndirectActivities.foreach(__v =>
-        __obj.updateDynamic("IncludeIndirectActivities")(__v.asInstanceOf[js.Any])
-      )
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      OrganizationId.foreach(__v => __obj.updateDynamic("OrganizationId")(__v.asInstanceOf[js.Any]))
-      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
-      UserId.foreach(__v => __obj.updateDynamic("UserId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeActivitiesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeActivitiesResponse extends js.Object {
     var Marker: js.UndefOr[MarkerType]
     var UserActivities: js.UndefOr[UserActivities]
   }
 
-  object DescribeActivitiesResponse {
-    @inline
-    def apply(
-        Marker: js.UndefOr[MarkerType] = js.undefined,
-        UserActivities: js.UndefOr[UserActivities] = js.undefined
-    ): DescribeActivitiesResponse = {
-      val __obj = js.Dynamic.literal()
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      UserActivities.foreach(__v => __obj.updateDynamic("UserActivities")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeActivitiesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeCommentsRequest extends js.Object {
     var DocumentId: ResourceIdType
     var VersionId: DocumentVersionIdType
@@ -1129,47 +611,15 @@ package workdocs {
     var Marker: js.UndefOr[MarkerType]
   }
 
-  object DescribeCommentsRequest {
-    @inline
-    def apply(
-        DocumentId: ResourceIdType,
-        VersionId: DocumentVersionIdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-        Limit: js.UndefOr[LimitType] = js.undefined,
-        Marker: js.UndefOr[MarkerType] = js.undefined
-    ): DescribeCommentsRequest = {
-      val __obj = js.Dynamic.literal(
-        "DocumentId" -> DocumentId.asInstanceOf[js.Any],
-        "VersionId"  -> VersionId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeCommentsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeCommentsResponse extends js.Object {
     var Comments: js.UndefOr[CommentList]
     var Marker: js.UndefOr[MarkerType]
   }
 
-  object DescribeCommentsResponse {
-    @inline
-    def apply(
-        Comments: js.UndefOr[CommentList] = js.undefined,
-        Marker: js.UndefOr[MarkerType] = js.undefined
-    ): DescribeCommentsResponse = {
-      val __obj = js.Dynamic.literal()
-      Comments.foreach(__v => __obj.updateDynamic("Comments")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeCommentsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeDocumentVersionsRequest extends js.Object {
     var DocumentId: ResourceIdType
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
@@ -1179,49 +629,15 @@ package workdocs {
     var Marker: js.UndefOr[PageMarkerType]
   }
 
-  object DescribeDocumentVersionsRequest {
-    @inline
-    def apply(
-        DocumentId: ResourceIdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-        Fields: js.UndefOr[FieldNamesType] = js.undefined,
-        Include: js.UndefOr[FieldNamesType] = js.undefined,
-        Limit: js.UndefOr[LimitType] = js.undefined,
-        Marker: js.UndefOr[PageMarkerType] = js.undefined
-    ): DescribeDocumentVersionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "DocumentId" -> DocumentId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      Fields.foreach(__v => __obj.updateDynamic("Fields")(__v.asInstanceOf[js.Any]))
-      Include.foreach(__v => __obj.updateDynamic("Include")(__v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeDocumentVersionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeDocumentVersionsResponse extends js.Object {
     var DocumentVersions: js.UndefOr[DocumentVersionMetadataList]
     var Marker: js.UndefOr[PageMarkerType]
   }
 
-  object DescribeDocumentVersionsResponse {
-    @inline
-    def apply(
-        DocumentVersions: js.UndefOr[DocumentVersionMetadataList] = js.undefined,
-        Marker: js.UndefOr[PageMarkerType] = js.undefined
-    ): DescribeDocumentVersionsResponse = {
-      val __obj = js.Dynamic.literal()
-      DocumentVersions.foreach(__v => __obj.updateDynamic("DocumentVersions")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeDocumentVersionsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeFolderContentsRequest extends js.Object {
     var FolderId: ResourceIdType
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
@@ -1233,56 +649,16 @@ package workdocs {
     var Type: js.UndefOr[FolderContentType]
   }
 
-  object DescribeFolderContentsRequest {
-    @inline
-    def apply(
-        FolderId: ResourceIdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-        Include: js.UndefOr[FieldNamesType] = js.undefined,
-        Limit: js.UndefOr[LimitType] = js.undefined,
-        Marker: js.UndefOr[PageMarkerType] = js.undefined,
-        Order: js.UndefOr[OrderType] = js.undefined,
-        Sort: js.UndefOr[ResourceSortType] = js.undefined,
-        Type: js.UndefOr[FolderContentType] = js.undefined
-    ): DescribeFolderContentsRequest = {
-      val __obj = js.Dynamic.literal(
-        "FolderId" -> FolderId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      Include.foreach(__v => __obj.updateDynamic("Include")(__v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      Order.foreach(__v => __obj.updateDynamic("Order")(__v.asInstanceOf[js.Any]))
-      Sort.foreach(__v => __obj.updateDynamic("Sort")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeFolderContentsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeFolderContentsResponse extends js.Object {
     var Documents: js.UndefOr[DocumentMetadataList]
     var Folders: js.UndefOr[FolderMetadataList]
     var Marker: js.UndefOr[PageMarkerType]
   }
 
-  object DescribeFolderContentsResponse {
-    @inline
-    def apply(
-        Documents: js.UndefOr[DocumentMetadataList] = js.undefined,
-        Folders: js.UndefOr[FolderMetadataList] = js.undefined,
-        Marker: js.UndefOr[PageMarkerType] = js.undefined
-    ): DescribeFolderContentsResponse = {
-      val __obj = js.Dynamic.literal()
-      Documents.foreach(__v => __obj.updateDynamic("Documents")(__v.asInstanceOf[js.Any]))
-      Folders.foreach(__v => __obj.updateDynamic("Folders")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeFolderContentsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeGroupsRequest extends js.Object {
     var SearchQuery: SearchQueryType
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
@@ -1291,90 +667,30 @@ package workdocs {
     var OrganizationId: js.UndefOr[IdType]
   }
 
-  object DescribeGroupsRequest {
-    @inline
-    def apply(
-        SearchQuery: SearchQueryType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-        Limit: js.UndefOr[PositiveIntegerType] = js.undefined,
-        Marker: js.UndefOr[MarkerType] = js.undefined,
-        OrganizationId: js.UndefOr[IdType] = js.undefined
-    ): DescribeGroupsRequest = {
-      val __obj = js.Dynamic.literal(
-        "SearchQuery" -> SearchQuery.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      OrganizationId.foreach(__v => __obj.updateDynamic("OrganizationId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeGroupsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeGroupsResponse extends js.Object {
     var Groups: js.UndefOr[GroupMetadataList]
     var Marker: js.UndefOr[MarkerType]
   }
 
-  object DescribeGroupsResponse {
-    @inline
-    def apply(
-        Groups: js.UndefOr[GroupMetadataList] = js.undefined,
-        Marker: js.UndefOr[MarkerType] = js.undefined
-    ): DescribeGroupsResponse = {
-      val __obj = js.Dynamic.literal()
-      Groups.foreach(__v => __obj.updateDynamic("Groups")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeGroupsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeNotificationSubscriptionsRequest extends js.Object {
     var OrganizationId: IdType
     var Limit: js.UndefOr[LimitType]
     var Marker: js.UndefOr[PageMarkerType]
   }
 
-  object DescribeNotificationSubscriptionsRequest {
-    @inline
-    def apply(
-        OrganizationId: IdType,
-        Limit: js.UndefOr[LimitType] = js.undefined,
-        Marker: js.UndefOr[PageMarkerType] = js.undefined
-    ): DescribeNotificationSubscriptionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
-      )
-
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeNotificationSubscriptionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeNotificationSubscriptionsResponse extends js.Object {
     var Marker: js.UndefOr[PageMarkerType]
     var Subscriptions: js.UndefOr[SubscriptionList]
   }
 
-  object DescribeNotificationSubscriptionsResponse {
-    @inline
-    def apply(
-        Marker: js.UndefOr[PageMarkerType] = js.undefined,
-        Subscriptions: js.UndefOr[SubscriptionList] = js.undefined
-    ): DescribeNotificationSubscriptionsResponse = {
-      val __obj = js.Dynamic.literal()
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      Subscriptions.foreach(__v => __obj.updateDynamic("Subscriptions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeNotificationSubscriptionsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeResourcePermissionsRequest extends js.Object {
     var ResourceId: ResourceIdType
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
@@ -1383,90 +699,30 @@ package workdocs {
     var PrincipalId: js.UndefOr[IdType]
   }
 
-  object DescribeResourcePermissionsRequest {
-    @inline
-    def apply(
-        ResourceId: ResourceIdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-        Limit: js.UndefOr[LimitType] = js.undefined,
-        Marker: js.UndefOr[PageMarkerType] = js.undefined,
-        PrincipalId: js.UndefOr[IdType] = js.undefined
-    ): DescribeResourcePermissionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      PrincipalId.foreach(__v => __obj.updateDynamic("PrincipalId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeResourcePermissionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeResourcePermissionsResponse extends js.Object {
     var Marker: js.UndefOr[PageMarkerType]
     var Principals: js.UndefOr[PrincipalList]
   }
 
-  object DescribeResourcePermissionsResponse {
-    @inline
-    def apply(
-        Marker: js.UndefOr[PageMarkerType] = js.undefined,
-        Principals: js.UndefOr[PrincipalList] = js.undefined
-    ): DescribeResourcePermissionsResponse = {
-      val __obj = js.Dynamic.literal()
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      Principals.foreach(__v => __obj.updateDynamic("Principals")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeResourcePermissionsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeRootFoldersRequest extends js.Object {
     var AuthenticationToken: AuthenticationHeaderType
     var Limit: js.UndefOr[LimitType]
     var Marker: js.UndefOr[PageMarkerType]
   }
 
-  object DescribeRootFoldersRequest {
-    @inline
-    def apply(
-        AuthenticationToken: AuthenticationHeaderType,
-        Limit: js.UndefOr[LimitType] = js.undefined,
-        Marker: js.UndefOr[PageMarkerType] = js.undefined
-    ): DescribeRootFoldersRequest = {
-      val __obj = js.Dynamic.literal(
-        "AuthenticationToken" -> AuthenticationToken.asInstanceOf[js.Any]
-      )
-
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeRootFoldersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeRootFoldersResponse extends js.Object {
     var Folders: js.UndefOr[FolderMetadataList]
     var Marker: js.UndefOr[PageMarkerType]
   }
 
-  object DescribeRootFoldersResponse {
-    @inline
-    def apply(
-        Folders: js.UndefOr[FolderMetadataList] = js.undefined,
-        Marker: js.UndefOr[PageMarkerType] = js.undefined
-    ): DescribeRootFoldersResponse = {
-      val __obj = js.Dynamic.literal()
-      Folders.foreach(__v => __obj.updateDynamic("Folders")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeRootFoldersResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeUsersRequest extends js.Object {
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
     var Fields: js.UndefOr[FieldNamesType]
@@ -1480,61 +736,19 @@ package workdocs {
     var UserIds: js.UndefOr[UserIdsType]
   }
 
-  object DescribeUsersRequest {
-    @inline
-    def apply(
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-        Fields: js.UndefOr[FieldNamesType] = js.undefined,
-        Include: js.UndefOr[UserFilterType] = js.undefined,
-        Limit: js.UndefOr[LimitType] = js.undefined,
-        Marker: js.UndefOr[PageMarkerType] = js.undefined,
-        Order: js.UndefOr[OrderType] = js.undefined,
-        OrganizationId: js.UndefOr[IdType] = js.undefined,
-        Query: js.UndefOr[SearchQueryType] = js.undefined,
-        Sort: js.UndefOr[UserSortType] = js.undefined,
-        UserIds: js.UndefOr[UserIdsType] = js.undefined
-    ): DescribeUsersRequest = {
-      val __obj = js.Dynamic.literal()
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      Fields.foreach(__v => __obj.updateDynamic("Fields")(__v.asInstanceOf[js.Any]))
-      Include.foreach(__v => __obj.updateDynamic("Include")(__v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      Order.foreach(__v => __obj.updateDynamic("Order")(__v.asInstanceOf[js.Any]))
-      OrganizationId.foreach(__v => __obj.updateDynamic("OrganizationId")(__v.asInstanceOf[js.Any]))
-      Query.foreach(__v => __obj.updateDynamic("Query")(__v.asInstanceOf[js.Any]))
-      Sort.foreach(__v => __obj.updateDynamic("Sort")(__v.asInstanceOf[js.Any]))
-      UserIds.foreach(__v => __obj.updateDynamic("UserIds")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeUsersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeUsersResponse extends js.Object {
     var Marker: js.UndefOr[PageMarkerType]
     var TotalNumberOfUsers: js.UndefOr[SizeType]
     var Users: js.UndefOr[OrganizationUserList]
   }
 
-  object DescribeUsersResponse {
-    @inline
-    def apply(
-        Marker: js.UndefOr[PageMarkerType] = js.undefined,
-        TotalNumberOfUsers: js.UndefOr[SizeType] = js.undefined,
-        Users: js.UndefOr[OrganizationUserList] = js.undefined
-    ): DescribeUsersResponse = {
-      val __obj = js.Dynamic.literal()
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      TotalNumberOfUsers.foreach(__v => __obj.updateDynamic("TotalNumberOfUsers")(__v.asInstanceOf[js.Any]))
-      Users.foreach(__v => __obj.updateDynamic("Users")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeUsersResponse]
-    }
-  }
-
   /**
     * Describes the document.
     */
   @js.native
+  @Factory
   trait DocumentMetadata extends js.Object {
     var CreatedTimestamp: js.UndefOr[TimestampType]
     var CreatorId: js.UndefOr[IdType]
@@ -1544,31 +758,6 @@ package workdocs {
     var ModifiedTimestamp: js.UndefOr[TimestampType]
     var ParentFolderId: js.UndefOr[ResourceIdType]
     var ResourceState: js.UndefOr[ResourceStateType]
-  }
-
-  object DocumentMetadata {
-    @inline
-    def apply(
-        CreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-        CreatorId: js.UndefOr[IdType] = js.undefined,
-        Id: js.UndefOr[ResourceIdType] = js.undefined,
-        Labels: js.UndefOr[SharedLabels] = js.undefined,
-        LatestVersionMetadata: js.UndefOr[DocumentVersionMetadata] = js.undefined,
-        ModifiedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-        ParentFolderId: js.UndefOr[ResourceIdType] = js.undefined,
-        ResourceState: js.UndefOr[ResourceStateType] = js.undefined
-    ): DocumentMetadata = {
-      val __obj = js.Dynamic.literal()
-      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
-      CreatorId.foreach(__v => __obj.updateDynamic("CreatorId")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Labels.foreach(__v => __obj.updateDynamic("Labels")(__v.asInstanceOf[js.Any]))
-      LatestVersionMetadata.foreach(__v => __obj.updateDynamic("LatestVersionMetadata")(__v.asInstanceOf[js.Any]))
-      ModifiedTimestamp.foreach(__v => __obj.updateDynamic("ModifiedTimestamp")(__v.asInstanceOf[js.Any]))
-      ParentFolderId.foreach(__v => __obj.updateDynamic("ParentFolderId")(__v.asInstanceOf[js.Any]))
-      ResourceState.foreach(__v => __obj.updateDynamic("ResourceState")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DocumentMetadata]
-    }
   }
 
   @js.native
@@ -1603,6 +792,7 @@ package workdocs {
     * Describes a version of a document.
     */
   @js.native
+  @Factory
   trait DocumentVersionMetadata extends js.Object {
     var ContentCreatedTimestamp: js.UndefOr[TimestampType]
     var ContentModifiedTimestamp: js.UndefOr[TimestampType]
@@ -1617,41 +807,6 @@ package workdocs {
     var Source: js.UndefOr[DocumentSourceUrlMap]
     var Status: js.UndefOr[DocumentStatusType]
     var Thumbnail: js.UndefOr[DocumentThumbnailUrlMap]
-  }
-
-  object DocumentVersionMetadata {
-    @inline
-    def apply(
-        ContentCreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-        ContentModifiedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-        ContentType: js.UndefOr[DocumentContentType] = js.undefined,
-        CreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-        CreatorId: js.UndefOr[IdType] = js.undefined,
-        Id: js.UndefOr[DocumentVersionIdType] = js.undefined,
-        ModifiedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-        Name: js.UndefOr[ResourceNameType] = js.undefined,
-        Signature: js.UndefOr[HashType] = js.undefined,
-        Size: js.UndefOr[SizeType] = js.undefined,
-        Source: js.UndefOr[DocumentSourceUrlMap] = js.undefined,
-        Status: js.UndefOr[DocumentStatusType] = js.undefined,
-        Thumbnail: js.UndefOr[DocumentThumbnailUrlMap] = js.undefined
-    ): DocumentVersionMetadata = {
-      val __obj = js.Dynamic.literal()
-      ContentCreatedTimestamp.foreach(__v => __obj.updateDynamic("ContentCreatedTimestamp")(__v.asInstanceOf[js.Any]))
-      ContentModifiedTimestamp.foreach(__v => __obj.updateDynamic("ContentModifiedTimestamp")(__v.asInstanceOf[js.Any]))
-      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
-      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
-      CreatorId.foreach(__v => __obj.updateDynamic("CreatorId")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      ModifiedTimestamp.foreach(__v => __obj.updateDynamic("ModifiedTimestamp")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Signature.foreach(__v => __obj.updateDynamic("Signature")(__v.asInstanceOf[js.Any]))
-      Size.foreach(__v => __obj.updateDynamic("Size")(__v.asInstanceOf[js.Any]))
-      Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      Thumbnail.foreach(__v => __obj.updateDynamic("Thumbnail")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DocumentVersionMetadata]
-    }
   }
 
   @js.native
@@ -1676,6 +831,7 @@ package workdocs {
     * Describes a folder.
     */
   @js.native
+  @Factory
   trait FolderMetadata extends js.Object {
     var CreatedTimestamp: js.UndefOr[TimestampType]
     var CreatorId: js.UndefOr[IdType]
@@ -1690,72 +846,20 @@ package workdocs {
     var Size: js.UndefOr[SizeType]
   }
 
-  object FolderMetadata {
-    @inline
-    def apply(
-        CreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-        CreatorId: js.UndefOr[IdType] = js.undefined,
-        Id: js.UndefOr[ResourceIdType] = js.undefined,
-        Labels: js.UndefOr[SharedLabels] = js.undefined,
-        LatestVersionSize: js.UndefOr[SizeType] = js.undefined,
-        ModifiedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-        Name: js.UndefOr[ResourceNameType] = js.undefined,
-        ParentFolderId: js.UndefOr[ResourceIdType] = js.undefined,
-        ResourceState: js.UndefOr[ResourceStateType] = js.undefined,
-        Signature: js.UndefOr[HashType] = js.undefined,
-        Size: js.UndefOr[SizeType] = js.undefined
-    ): FolderMetadata = {
-      val __obj = js.Dynamic.literal()
-      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
-      CreatorId.foreach(__v => __obj.updateDynamic("CreatorId")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Labels.foreach(__v => __obj.updateDynamic("Labels")(__v.asInstanceOf[js.Any]))
-      LatestVersionSize.foreach(__v => __obj.updateDynamic("LatestVersionSize")(__v.asInstanceOf[js.Any]))
-      ModifiedTimestamp.foreach(__v => __obj.updateDynamic("ModifiedTimestamp")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      ParentFolderId.foreach(__v => __obj.updateDynamic("ParentFolderId")(__v.asInstanceOf[js.Any]))
-      ResourceState.foreach(__v => __obj.updateDynamic("ResourceState")(__v.asInstanceOf[js.Any]))
-      Signature.foreach(__v => __obj.updateDynamic("Signature")(__v.asInstanceOf[js.Any]))
-      Size.foreach(__v => __obj.updateDynamic("Size")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[FolderMetadata]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetCurrentUserRequest extends js.Object {
     var AuthenticationToken: AuthenticationHeaderType
   }
 
-  object GetCurrentUserRequest {
-    @inline
-    def apply(
-        AuthenticationToken: AuthenticationHeaderType
-    ): GetCurrentUserRequest = {
-      val __obj = js.Dynamic.literal(
-        "AuthenticationToken" -> AuthenticationToken.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetCurrentUserRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetCurrentUserResponse extends js.Object {
     var User: js.UndefOr[User]
   }
 
-  object GetCurrentUserResponse {
-    @inline
-    def apply(
-        User: js.UndefOr[User] = js.undefined
-    ): GetCurrentUserResponse = {
-      val __obj = js.Dynamic.literal()
-      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetCurrentUserResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDocumentPathRequest extends js.Object {
     var DocumentId: IdType
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
@@ -1764,87 +868,29 @@ package workdocs {
     var Marker: js.UndefOr[PageMarkerType]
   }
 
-  object GetDocumentPathRequest {
-    @inline
-    def apply(
-        DocumentId: IdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-        Fields: js.UndefOr[FieldNamesType] = js.undefined,
-        Limit: js.UndefOr[LimitType] = js.undefined,
-        Marker: js.UndefOr[PageMarkerType] = js.undefined
-    ): GetDocumentPathRequest = {
-      val __obj = js.Dynamic.literal(
-        "DocumentId" -> DocumentId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      Fields.foreach(__v => __obj.updateDynamic("Fields")(__v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDocumentPathRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDocumentPathResponse extends js.Object {
     var Path: js.UndefOr[ResourcePath]
   }
 
-  object GetDocumentPathResponse {
-    @inline
-    def apply(
-        Path: js.UndefOr[ResourcePath] = js.undefined
-    ): GetDocumentPathResponse = {
-      val __obj = js.Dynamic.literal()
-      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDocumentPathResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDocumentRequest extends js.Object {
     var DocumentId: ResourceIdType
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
     var IncludeCustomMetadata: js.UndefOr[BooleanType]
   }
 
-  object GetDocumentRequest {
-    @inline
-    def apply(
-        DocumentId: ResourceIdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-        IncludeCustomMetadata: js.UndefOr[BooleanType] = js.undefined
-    ): GetDocumentRequest = {
-      val __obj = js.Dynamic.literal(
-        "DocumentId" -> DocumentId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      IncludeCustomMetadata.foreach(__v => __obj.updateDynamic("IncludeCustomMetadata")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDocumentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDocumentResponse extends js.Object {
     var CustomMetadata: js.UndefOr[CustomMetadataMap]
     var Metadata: js.UndefOr[DocumentMetadata]
   }
 
-  object GetDocumentResponse {
-    @inline
-    def apply(
-        CustomMetadata: js.UndefOr[CustomMetadataMap] = js.undefined,
-        Metadata: js.UndefOr[DocumentMetadata] = js.undefined
-    ): GetDocumentResponse = {
-      val __obj = js.Dynamic.literal()
-      CustomMetadata.foreach(__v => __obj.updateDynamic("CustomMetadata")(__v.asInstanceOf[js.Any]))
-      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDocumentResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDocumentVersionRequest extends js.Object {
     var DocumentId: ResourceIdType
     var VersionId: DocumentVersionIdType
@@ -1853,47 +899,15 @@ package workdocs {
     var IncludeCustomMetadata: js.UndefOr[BooleanType]
   }
 
-  object GetDocumentVersionRequest {
-    @inline
-    def apply(
-        DocumentId: ResourceIdType,
-        VersionId: DocumentVersionIdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-        Fields: js.UndefOr[FieldNamesType] = js.undefined,
-        IncludeCustomMetadata: js.UndefOr[BooleanType] = js.undefined
-    ): GetDocumentVersionRequest = {
-      val __obj = js.Dynamic.literal(
-        "DocumentId" -> DocumentId.asInstanceOf[js.Any],
-        "VersionId"  -> VersionId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      Fields.foreach(__v => __obj.updateDynamic("Fields")(__v.asInstanceOf[js.Any]))
-      IncludeCustomMetadata.foreach(__v => __obj.updateDynamic("IncludeCustomMetadata")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDocumentVersionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDocumentVersionResponse extends js.Object {
     var CustomMetadata: js.UndefOr[CustomMetadataMap]
     var Metadata: js.UndefOr[DocumentVersionMetadata]
   }
 
-  object GetDocumentVersionResponse {
-    @inline
-    def apply(
-        CustomMetadata: js.UndefOr[CustomMetadataMap] = js.undefined,
-        Metadata: js.UndefOr[DocumentVersionMetadata] = js.undefined
-    ): GetDocumentVersionResponse = {
-      val __obj = js.Dynamic.literal()
-      CustomMetadata.foreach(__v => __obj.updateDynamic("CustomMetadata")(__v.asInstanceOf[js.Any]))
-      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDocumentVersionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetFolderPathRequest extends js.Object {
     var FolderId: IdType
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
@@ -1902,87 +916,29 @@ package workdocs {
     var Marker: js.UndefOr[PageMarkerType]
   }
 
-  object GetFolderPathRequest {
-    @inline
-    def apply(
-        FolderId: IdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-        Fields: js.UndefOr[FieldNamesType] = js.undefined,
-        Limit: js.UndefOr[LimitType] = js.undefined,
-        Marker: js.UndefOr[PageMarkerType] = js.undefined
-    ): GetFolderPathRequest = {
-      val __obj = js.Dynamic.literal(
-        "FolderId" -> FolderId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      Fields.foreach(__v => __obj.updateDynamic("Fields")(__v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetFolderPathRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetFolderPathResponse extends js.Object {
     var Path: js.UndefOr[ResourcePath]
   }
 
-  object GetFolderPathResponse {
-    @inline
-    def apply(
-        Path: js.UndefOr[ResourcePath] = js.undefined
-    ): GetFolderPathResponse = {
-      val __obj = js.Dynamic.literal()
-      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetFolderPathResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetFolderRequest extends js.Object {
     var FolderId: ResourceIdType
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
     var IncludeCustomMetadata: js.UndefOr[BooleanType]
   }
 
-  object GetFolderRequest {
-    @inline
-    def apply(
-        FolderId: ResourceIdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-        IncludeCustomMetadata: js.UndefOr[BooleanType] = js.undefined
-    ): GetFolderRequest = {
-      val __obj = js.Dynamic.literal(
-        "FolderId" -> FolderId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      IncludeCustomMetadata.foreach(__v => __obj.updateDynamic("IncludeCustomMetadata")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetFolderRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetFolderResponse extends js.Object {
     var CustomMetadata: js.UndefOr[CustomMetadataMap]
     var Metadata: js.UndefOr[FolderMetadata]
   }
 
-  object GetFolderResponse {
-    @inline
-    def apply(
-        CustomMetadata: js.UndefOr[CustomMetadataMap] = js.undefined,
-        Metadata: js.UndefOr[FolderMetadata] = js.undefined
-    ): GetFolderResponse = {
-      val __obj = js.Dynamic.literal()
-      CustomMetadata.foreach(__v => __obj.updateDynamic("CustomMetadata")(__v.asInstanceOf[js.Any]))
-      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetFolderResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetResourcesRequest extends js.Object {
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
     var CollectionType: js.UndefOr[ResourceCollectionType]
@@ -1991,70 +947,26 @@ package workdocs {
     var UserId: js.UndefOr[IdType]
   }
 
-  object GetResourcesRequest {
-    @inline
-    def apply(
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-        CollectionType: js.UndefOr[ResourceCollectionType] = js.undefined,
-        Limit: js.UndefOr[LimitType] = js.undefined,
-        Marker: js.UndefOr[PageMarkerType] = js.undefined,
-        UserId: js.UndefOr[IdType] = js.undefined
-    ): GetResourcesRequest = {
-      val __obj = js.Dynamic.literal()
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      CollectionType.foreach(__v => __obj.updateDynamic("CollectionType")(__v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      UserId.foreach(__v => __obj.updateDynamic("UserId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetResourcesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetResourcesResponse extends js.Object {
     var Documents: js.UndefOr[DocumentMetadataList]
     var Folders: js.UndefOr[FolderMetadataList]
     var Marker: js.UndefOr[PageMarkerType]
   }
 
-  object GetResourcesResponse {
-    @inline
-    def apply(
-        Documents: js.UndefOr[DocumentMetadataList] = js.undefined,
-        Folders: js.UndefOr[FolderMetadataList] = js.undefined,
-        Marker: js.UndefOr[PageMarkerType] = js.undefined
-    ): GetResourcesResponse = {
-      val __obj = js.Dynamic.literal()
-      Documents.foreach(__v => __obj.updateDynamic("Documents")(__v.asInstanceOf[js.Any]))
-      Folders.foreach(__v => __obj.updateDynamic("Folders")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetResourcesResponse]
-    }
-  }
-
   /**
     * Describes the metadata of a user group.
     */
   @js.native
+  @Factory
   trait GroupMetadata extends js.Object {
     var Id: js.UndefOr[IdType]
     var Name: js.UndefOr[GroupNameType]
   }
 
-  object GroupMetadata {
-    @inline
-    def apply(
-        Id: js.UndefOr[IdType] = js.undefined,
-        Name: js.UndefOr[GroupNameType] = js.undefined
-    ): GroupMetadata = {
-      val __obj = js.Dynamic.literal()
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GroupMetadata]
-    }
-  }
-
   @js.native
+  @Factory
   trait InitiateDocumentVersionUploadRequest extends js.Object {
     var ParentFolderId: ResourceIdType
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
@@ -2066,50 +978,11 @@ package workdocs {
     var Name: js.UndefOr[ResourceNameType]
   }
 
-  object InitiateDocumentVersionUploadRequest {
-    @inline
-    def apply(
-        ParentFolderId: ResourceIdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-        ContentCreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-        ContentModifiedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-        ContentType: js.UndefOr[DocumentContentType] = js.undefined,
-        DocumentSizeInBytes: js.UndefOr[SizeType] = js.undefined,
-        Id: js.UndefOr[ResourceIdType] = js.undefined,
-        Name: js.UndefOr[ResourceNameType] = js.undefined
-    ): InitiateDocumentVersionUploadRequest = {
-      val __obj = js.Dynamic.literal(
-        "ParentFolderId" -> ParentFolderId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      ContentCreatedTimestamp.foreach(__v => __obj.updateDynamic("ContentCreatedTimestamp")(__v.asInstanceOf[js.Any]))
-      ContentModifiedTimestamp.foreach(__v => __obj.updateDynamic("ContentModifiedTimestamp")(__v.asInstanceOf[js.Any]))
-      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
-      DocumentSizeInBytes.foreach(__v => __obj.updateDynamic("DocumentSizeInBytes")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InitiateDocumentVersionUploadRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait InitiateDocumentVersionUploadResponse extends js.Object {
     var Metadata: js.UndefOr[DocumentMetadata]
     var UploadMetadata: js.UndefOr[UploadMetadata]
-  }
-
-  object InitiateDocumentVersionUploadResponse {
-    @inline
-    def apply(
-        Metadata: js.UndefOr[DocumentMetadata] = js.undefined,
-        UploadMetadata: js.UndefOr[UploadMetadata] = js.undefined
-    ): InitiateDocumentVersionUploadResponse = {
-      val __obj = js.Dynamic.literal()
-      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
-      UploadMetadata.foreach(__v => __obj.updateDynamic("UploadMetadata")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InitiateDocumentVersionUploadResponse]
-    }
   }
 
   @js.native
@@ -2134,22 +1007,10 @@ package workdocs {
     * Set of options which defines notification preferences of given action.
     */
   @js.native
+  @Factory
   trait NotificationOptions extends js.Object {
     var EmailMessage: js.UndefOr[MessageType]
     var SendEmail: js.UndefOr[BooleanType]
-  }
-
-  object NotificationOptions {
-    @inline
-    def apply(
-        EmailMessage: js.UndefOr[MessageType] = js.undefined,
-        SendEmail: js.UndefOr[BooleanType] = js.undefined
-    ): NotificationOptions = {
-      val __obj = js.Dynamic.literal()
-      EmailMessage.foreach(__v => __obj.updateDynamic("EmailMessage")(__v.asInstanceOf[js.Any]))
-      SendEmail.foreach(__v => __obj.updateDynamic("SendEmail")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NotificationOptions]
-    }
   }
 
   @js.native
@@ -2165,69 +1026,31 @@ package workdocs {
     * Describes the users or user groups.
     */
   @js.native
+  @Factory
   trait Participants extends js.Object {
     var Groups: js.UndefOr[GroupMetadataList]
     var Users: js.UndefOr[UserMetadataList]
-  }
-
-  object Participants {
-    @inline
-    def apply(
-        Groups: js.UndefOr[GroupMetadataList] = js.undefined,
-        Users: js.UndefOr[UserMetadataList] = js.undefined
-    ): Participants = {
-      val __obj = js.Dynamic.literal()
-      Groups.foreach(__v => __obj.updateDynamic("Groups")(__v.asInstanceOf[js.Any]))
-      Users.foreach(__v => __obj.updateDynamic("Users")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Participants]
-    }
   }
 
   /**
     * Describes the permissions.
     */
   @js.native
+  @Factory
   trait PermissionInfo extends js.Object {
     var Role: js.UndefOr[RoleType]
     var Type: js.UndefOr[RolePermissionType]
-  }
-
-  object PermissionInfo {
-    @inline
-    def apply(
-        Role: js.UndefOr[RoleType] = js.undefined,
-        Type: js.UndefOr[RolePermissionType] = js.undefined
-    ): PermissionInfo = {
-      val __obj = js.Dynamic.literal()
-      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PermissionInfo]
-    }
   }
 
   /**
     * Describes a resource.
     */
   @js.native
+  @Factory
   trait Principal extends js.Object {
     var Id: js.UndefOr[IdType]
     var Roles: js.UndefOr[PermissionInfoList]
     var Type: js.UndefOr[PrincipalType]
-  }
-
-  object Principal {
-    @inline
-    def apply(
-        Id: js.UndefOr[IdType] = js.undefined,
-        Roles: js.UndefOr[PermissionInfoList] = js.undefined,
-        Type: js.UndefOr[PrincipalType] = js.undefined
-    ): Principal = {
-      val __obj = js.Dynamic.literal()
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Roles.foreach(__v => __obj.updateDynamic("Roles")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Principal]
-    }
   }
 
   @js.native
@@ -2243,51 +1066,19 @@ package workdocs {
   }
 
   @js.native
+  @Factory
   trait RemoveAllResourcePermissionsRequest extends js.Object {
     var ResourceId: ResourceIdType
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
   }
 
-  object RemoveAllResourcePermissionsRequest {
-    @inline
-    def apply(
-        ResourceId: ResourceIdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
-    ): RemoveAllResourcePermissionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RemoveAllResourcePermissionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait RemoveResourcePermissionRequest extends js.Object {
     var PrincipalId: IdType
     var ResourceId: ResourceIdType
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
     var PrincipalType: js.UndefOr[PrincipalType]
-  }
-
-  object RemoveResourcePermissionRequest {
-    @inline
-    def apply(
-        PrincipalId: IdType,
-        ResourceId: ResourceIdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-        PrincipalType: js.UndefOr[PrincipalType] = js.undefined
-    ): RemoveResourcePermissionRequest = {
-      val __obj = js.Dynamic.literal(
-        "PrincipalId" -> PrincipalId.asInstanceOf[js.Any],
-        "ResourceId"  -> ResourceId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      PrincipalType.foreach(__v => __obj.updateDynamic("PrincipalType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RemoveResourcePermissionRequest]
-    }
   }
 
   @js.native
@@ -2302,6 +1093,7 @@ package workdocs {
     * Describes the metadata of a resource.
     */
   @js.native
+  @Factory
   trait ResourceMetadata extends js.Object {
     var Id: js.UndefOr[ResourceIdType]
     var Name: js.UndefOr[ResourceNameType]
@@ -2312,68 +1104,23 @@ package workdocs {
     var VersionId: js.UndefOr[DocumentVersionIdType]
   }
 
-  object ResourceMetadata {
-    @inline
-    def apply(
-        Id: js.UndefOr[ResourceIdType] = js.undefined,
-        Name: js.UndefOr[ResourceNameType] = js.undefined,
-        OriginalName: js.UndefOr[ResourceNameType] = js.undefined,
-        Owner: js.UndefOr[UserMetadata] = js.undefined,
-        ParentId: js.UndefOr[ResourceIdType] = js.undefined,
-        Type: js.UndefOr[ResourceType] = js.undefined,
-        VersionId: js.UndefOr[DocumentVersionIdType] = js.undefined
-    ): ResourceMetadata = {
-      val __obj = js.Dynamic.literal()
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      OriginalName.foreach(__v => __obj.updateDynamic("OriginalName")(__v.asInstanceOf[js.Any]))
-      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
-      ParentId.foreach(__v => __obj.updateDynamic("ParentId")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ResourceMetadata]
-    }
-  }
-
   /**
     * Describes the path information of a resource.
     */
   @js.native
+  @Factory
   trait ResourcePath extends js.Object {
     var Components: js.UndefOr[ResourcePathComponentList]
-  }
-
-  object ResourcePath {
-    @inline
-    def apply(
-        Components: js.UndefOr[ResourcePathComponentList] = js.undefined
-    ): ResourcePath = {
-      val __obj = js.Dynamic.literal()
-      Components.foreach(__v => __obj.updateDynamic("Components")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ResourcePath]
-    }
   }
 
   /**
     * Describes the resource path.
     */
   @js.native
+  @Factory
   trait ResourcePathComponent extends js.Object {
     var Id: js.UndefOr[IdType]
     var Name: js.UndefOr[ResourceNameType]
-  }
-
-  object ResourcePathComponent {
-    @inline
-    def apply(
-        Id: js.UndefOr[IdType] = js.undefined,
-        Name: js.UndefOr[ResourceNameType] = js.undefined
-    ): ResourcePathComponent = {
-      val __obj = js.Dynamic.literal()
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ResourcePathComponent]
-    }
   }
 
   @js.native
@@ -2429,33 +1176,18 @@ package workdocs {
     * Describes the recipient type and ID, if available.
     */
   @js.native
+  @Factory
   trait SharePrincipal extends js.Object {
     var Id: IdType
     var Role: RoleType
     var Type: PrincipalType
   }
 
-  object SharePrincipal {
-    @inline
-    def apply(
-        Id: IdType,
-        Role: RoleType,
-        Type: PrincipalType
-    ): SharePrincipal = {
-      val __obj = js.Dynamic.literal(
-        "Id"   -> Id.asInstanceOf[js.Any],
-        "Role" -> Role.asInstanceOf[js.Any],
-        "Type" -> Type.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SharePrincipal]
-    }
-  }
-
   /**
     * Describes the share results of a resource.
     */
   @js.native
+  @Factory
   trait ShareResult extends js.Object {
     var InviteePrincipalId: js.UndefOr[IdType]
     var PrincipalId: js.UndefOr[IdType]
@@ -2463,27 +1195,6 @@ package workdocs {
     var ShareId: js.UndefOr[ResourceIdType]
     var Status: js.UndefOr[ShareStatusType]
     var StatusMessage: js.UndefOr[MessageType]
-  }
-
-  object ShareResult {
-    @inline
-    def apply(
-        InviteePrincipalId: js.UndefOr[IdType] = js.undefined,
-        PrincipalId: js.UndefOr[IdType] = js.undefined,
-        Role: js.UndefOr[RoleType] = js.undefined,
-        ShareId: js.UndefOr[ResourceIdType] = js.undefined,
-        Status: js.UndefOr[ShareStatusType] = js.undefined,
-        StatusMessage: js.UndefOr[MessageType] = js.undefined
-    ): ShareResult = {
-      val __obj = js.Dynamic.literal()
-      InviteePrincipalId.foreach(__v => __obj.updateDynamic("InviteePrincipalId")(__v.asInstanceOf[js.Any]))
-      PrincipalId.foreach(__v => __obj.updateDynamic("PrincipalId")(__v.asInstanceOf[js.Any]))
-      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
-      ShareId.foreach(__v => __obj.updateDynamic("ShareId")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ShareResult]
-    }
   }
 
   @js.native
@@ -2499,22 +1210,10 @@ package workdocs {
     * Describes the storage for a user.
     */
   @js.native
+  @Factory
   trait StorageRuleType extends js.Object {
     var StorageAllocatedInBytes: js.UndefOr[PositiveSizeType]
     var StorageType: js.UndefOr[StorageType]
-  }
-
-  object StorageRuleType {
-    @inline
-    def apply(
-        StorageAllocatedInBytes: js.UndefOr[PositiveSizeType] = js.undefined,
-        StorageType: js.UndefOr[StorageType] = js.undefined
-    ): StorageRuleType = {
-      val __obj = js.Dynamic.literal()
-      StorageAllocatedInBytes.foreach(__v => __obj.updateDynamic("StorageAllocatedInBytes")(__v.asInstanceOf[js.Any]))
-      StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StorageRuleType]
-    }
   }
 
   @js.native
@@ -2530,25 +1229,11 @@ package workdocs {
     * Describes a subscription.
     */
   @js.native
+  @Factory
   trait Subscription extends js.Object {
     var EndPoint: js.UndefOr[SubscriptionEndPointType]
     var Protocol: js.UndefOr[SubscriptionProtocolType]
     var SubscriptionId: js.UndefOr[IdType]
-  }
-
-  object Subscription {
-    @inline
-    def apply(
-        EndPoint: js.UndefOr[SubscriptionEndPointType] = js.undefined,
-        Protocol: js.UndefOr[SubscriptionProtocolType] = js.undefined,
-        SubscriptionId: js.UndefOr[IdType] = js.undefined
-    ): Subscription = {
-      val __obj = js.Dynamic.literal()
-      EndPoint.foreach(__v => __obj.updateDynamic("EndPoint")(__v.asInstanceOf[js.Any]))
-      Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
-      SubscriptionId.foreach(__v => __obj.updateDynamic("SubscriptionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Subscription]
-    }
   }
 
   @js.native
@@ -2568,6 +1253,7 @@ package workdocs {
   }
 
   @js.native
+  @Factory
   trait UpdateDocumentRequest extends js.Object {
     var DocumentId: ResourceIdType
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
@@ -2576,28 +1262,8 @@ package workdocs {
     var ResourceState: js.UndefOr[ResourceStateType]
   }
 
-  object UpdateDocumentRequest {
-    @inline
-    def apply(
-        DocumentId: ResourceIdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-        Name: js.UndefOr[ResourceNameType] = js.undefined,
-        ParentFolderId: js.UndefOr[ResourceIdType] = js.undefined,
-        ResourceState: js.UndefOr[ResourceStateType] = js.undefined
-    ): UpdateDocumentRequest = {
-      val __obj = js.Dynamic.literal(
-        "DocumentId" -> DocumentId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      ParentFolderId.foreach(__v => __obj.updateDynamic("ParentFolderId")(__v.asInstanceOf[js.Any]))
-      ResourceState.foreach(__v => __obj.updateDynamic("ResourceState")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateDocumentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateDocumentVersionRequest extends js.Object {
     var DocumentId: ResourceIdType
     var VersionId: DocumentVersionIdType
@@ -2605,26 +1271,8 @@ package workdocs {
     var VersionStatus: js.UndefOr[DocumentVersionStatus]
   }
 
-  object UpdateDocumentVersionRequest {
-    @inline
-    def apply(
-        DocumentId: ResourceIdType,
-        VersionId: DocumentVersionIdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-        VersionStatus: js.UndefOr[DocumentVersionStatus] = js.undefined
-    ): UpdateDocumentVersionRequest = {
-      val __obj = js.Dynamic.literal(
-        "DocumentId" -> DocumentId.asInstanceOf[js.Any],
-        "VersionId"  -> VersionId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      VersionStatus.foreach(__v => __obj.updateDynamic("VersionStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateDocumentVersionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateFolderRequest extends js.Object {
     var FolderId: ResourceIdType
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
@@ -2633,28 +1281,8 @@ package workdocs {
     var ResourceState: js.UndefOr[ResourceStateType]
   }
 
-  object UpdateFolderRequest {
-    @inline
-    def apply(
-        FolderId: ResourceIdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-        Name: js.UndefOr[ResourceNameType] = js.undefined,
-        ParentFolderId: js.UndefOr[ResourceIdType] = js.undefined,
-        ResourceState: js.UndefOr[ResourceStateType] = js.undefined
-    ): UpdateFolderRequest = {
-      val __obj = js.Dynamic.literal(
-        "FolderId" -> FolderId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      ParentFolderId.foreach(__v => __obj.updateDynamic("ParentFolderId")(__v.asInstanceOf[js.Any]))
-      ResourceState.foreach(__v => __obj.updateDynamic("ResourceState")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateFolderRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateUserRequest extends js.Object {
     var UserId: IdType
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
@@ -2667,77 +1295,27 @@ package workdocs {
     var Type: js.UndefOr[UserType]
   }
 
-  object UpdateUserRequest {
-    @inline
-    def apply(
-        UserId: IdType,
-        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-        GivenName: js.UndefOr[UserAttributeValueType] = js.undefined,
-        GrantPoweruserPrivileges: js.UndefOr[BooleanEnumType] = js.undefined,
-        Locale: js.UndefOr[LocaleType] = js.undefined,
-        StorageRule: js.UndefOr[StorageRuleType] = js.undefined,
-        Surname: js.UndefOr[UserAttributeValueType] = js.undefined,
-        TimeZoneId: js.UndefOr[TimeZoneIdType] = js.undefined,
-        Type: js.UndefOr[UserType] = js.undefined
-    ): UpdateUserRequest = {
-      val __obj = js.Dynamic.literal(
-        "UserId" -> UserId.asInstanceOf[js.Any]
-      )
-
-      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
-      GivenName.foreach(__v => __obj.updateDynamic("GivenName")(__v.asInstanceOf[js.Any]))
-      GrantPoweruserPrivileges.foreach(__v => __obj.updateDynamic("GrantPoweruserPrivileges")(__v.asInstanceOf[js.Any]))
-      Locale.foreach(__v => __obj.updateDynamic("Locale")(__v.asInstanceOf[js.Any]))
-      StorageRule.foreach(__v => __obj.updateDynamic("StorageRule")(__v.asInstanceOf[js.Any]))
-      Surname.foreach(__v => __obj.updateDynamic("Surname")(__v.asInstanceOf[js.Any]))
-      TimeZoneId.foreach(__v => __obj.updateDynamic("TimeZoneId")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateUserRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateUserResponse extends js.Object {
     var User: js.UndefOr[User]
-  }
-
-  object UpdateUserResponse {
-    @inline
-    def apply(
-        User: js.UndefOr[User] = js.undefined
-    ): UpdateUserResponse = {
-      val __obj = js.Dynamic.literal()
-      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateUserResponse]
-    }
   }
 
   /**
     * Describes the upload.
     */
   @js.native
+  @Factory
   trait UploadMetadata extends js.Object {
     var SignedHeaders: js.UndefOr[SignedHeaderMap]
     var UploadUrl: js.UndefOr[UrlType]
-  }
-
-  object UploadMetadata {
-    @inline
-    def apply(
-        SignedHeaders: js.UndefOr[SignedHeaderMap] = js.undefined,
-        UploadUrl: js.UndefOr[UrlType] = js.undefined
-    ): UploadMetadata = {
-      val __obj = js.Dynamic.literal()
-      SignedHeaders.foreach(__v => __obj.updateDynamic("SignedHeaders")(__v.asInstanceOf[js.Any]))
-      UploadUrl.foreach(__v => __obj.updateDynamic("UploadUrl")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UploadMetadata]
-    }
   }
 
   /**
     * Describes a user.
     */
   @js.native
+  @Factory
   trait User extends js.Object {
     var CreatedTimestamp: js.UndefOr[TimestampType]
     var EmailAddress: js.UndefOr[EmailAddressType]
@@ -2756,45 +1334,6 @@ package workdocs {
     var Username: js.UndefOr[UsernameType]
   }
 
-  object User {
-    @inline
-    def apply(
-        CreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-        EmailAddress: js.UndefOr[EmailAddressType] = js.undefined,
-        GivenName: js.UndefOr[UserAttributeValueType] = js.undefined,
-        Id: js.UndefOr[IdType] = js.undefined,
-        Locale: js.UndefOr[LocaleType] = js.undefined,
-        ModifiedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-        OrganizationId: js.UndefOr[IdType] = js.undefined,
-        RecycleBinFolderId: js.UndefOr[ResourceIdType] = js.undefined,
-        RootFolderId: js.UndefOr[ResourceIdType] = js.undefined,
-        Status: js.UndefOr[UserStatusType] = js.undefined,
-        Storage: js.UndefOr[UserStorageMetadata] = js.undefined,
-        Surname: js.UndefOr[UserAttributeValueType] = js.undefined,
-        TimeZoneId: js.UndefOr[TimeZoneIdType] = js.undefined,
-        Type: js.UndefOr[UserType] = js.undefined,
-        Username: js.UndefOr[UsernameType] = js.undefined
-    ): User = {
-      val __obj = js.Dynamic.literal()
-      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
-      EmailAddress.foreach(__v => __obj.updateDynamic("EmailAddress")(__v.asInstanceOf[js.Any]))
-      GivenName.foreach(__v => __obj.updateDynamic("GivenName")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Locale.foreach(__v => __obj.updateDynamic("Locale")(__v.asInstanceOf[js.Any]))
-      ModifiedTimestamp.foreach(__v => __obj.updateDynamic("ModifiedTimestamp")(__v.asInstanceOf[js.Any]))
-      OrganizationId.foreach(__v => __obj.updateDynamic("OrganizationId")(__v.asInstanceOf[js.Any]))
-      RecycleBinFolderId.foreach(__v => __obj.updateDynamic("RecycleBinFolderId")(__v.asInstanceOf[js.Any]))
-      RootFolderId.foreach(__v => __obj.updateDynamic("RootFolderId")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      Storage.foreach(__v => __obj.updateDynamic("Storage")(__v.asInstanceOf[js.Any]))
-      Surname.foreach(__v => __obj.updateDynamic("Surname")(__v.asInstanceOf[js.Any]))
-      TimeZoneId.foreach(__v => __obj.updateDynamic("TimeZoneId")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[User]
-    }
-  }
-
   @js.native
   sealed trait UserFilterType extends js.Any
   object UserFilterType extends js.Object {
@@ -2808,31 +1347,13 @@ package workdocs {
     * Describes the metadata of the user.
     */
   @js.native
+  @Factory
   trait UserMetadata extends js.Object {
     var EmailAddress: js.UndefOr[EmailAddressType]
     var GivenName: js.UndefOr[UserAttributeValueType]
     var Id: js.UndefOr[IdType]
     var Surname: js.UndefOr[UserAttributeValueType]
     var Username: js.UndefOr[UsernameType]
-  }
-
-  object UserMetadata {
-    @inline
-    def apply(
-        EmailAddress: js.UndefOr[EmailAddressType] = js.undefined,
-        GivenName: js.UndefOr[UserAttributeValueType] = js.undefined,
-        Id: js.UndefOr[IdType] = js.undefined,
-        Surname: js.UndefOr[UserAttributeValueType] = js.undefined,
-        Username: js.UndefOr[UsernameType] = js.undefined
-    ): UserMetadata = {
-      val __obj = js.Dynamic.literal()
-      EmailAddress.foreach(__v => __obj.updateDynamic("EmailAddress")(__v.asInstanceOf[js.Any]))
-      GivenName.foreach(__v => __obj.updateDynamic("GivenName")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Surname.foreach(__v => __obj.updateDynamic("Surname")(__v.asInstanceOf[js.Any]))
-      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UserMetadata]
-    }
   }
 
   @js.native
@@ -2861,22 +1382,10 @@ package workdocs {
     * Describes the storage for a user.
     */
   @js.native
+  @Factory
   trait UserStorageMetadata extends js.Object {
     var StorageRule: js.UndefOr[StorageRuleType]
     var StorageUtilizedInBytes: js.UndefOr[SizeType]
-  }
-
-  object UserStorageMetadata {
-    @inline
-    def apply(
-        StorageRule: js.UndefOr[StorageRuleType] = js.undefined,
-        StorageUtilizedInBytes: js.UndefOr[SizeType] = js.undefined
-    ): UserStorageMetadata = {
-      val __obj = js.Dynamic.literal()
-      StorageRule.foreach(__v => __obj.updateDynamic("StorageRule")(__v.asInstanceOf[js.Any]))
-      StorageUtilizedInBytes.foreach(__v => __obj.updateDynamic("StorageUtilizedInBytes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UserStorageMetadata]
-    }
   }
 
   @js.native

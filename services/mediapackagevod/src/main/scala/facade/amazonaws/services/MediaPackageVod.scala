@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object mediapackagevod {
   type MaxResults                      = Int
@@ -99,6 +100,7 @@ package mediapackagevod {
     * A MediaPackage VOD Asset resource.
     */
   @js.native
+  @Factory
   trait AssetShallow extends js.Object {
     var Arn: js.UndefOr[__string]
     var CreatedAt: js.UndefOr[__string]
@@ -109,81 +111,31 @@ package mediapackagevod {
     var SourceRoleArn: js.UndefOr[__string]
   }
 
-  object AssetShallow {
-    @inline
-    def apply(
-        Arn: js.UndefOr[__string] = js.undefined,
-        CreatedAt: js.UndefOr[__string] = js.undefined,
-        Id: js.UndefOr[__string] = js.undefined,
-        PackagingGroupId: js.UndefOr[__string] = js.undefined,
-        ResourceId: js.UndefOr[__string] = js.undefined,
-        SourceArn: js.UndefOr[__string] = js.undefined,
-        SourceRoleArn: js.UndefOr[__string] = js.undefined
-    ): AssetShallow = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      PackagingGroupId.foreach(__v => __obj.updateDynamic("PackagingGroupId")(__v.asInstanceOf[js.Any]))
-      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
-      SourceArn.foreach(__v => __obj.updateDynamic("SourceArn")(__v.asInstanceOf[js.Any]))
-      SourceRoleArn.foreach(__v => __obj.updateDynamic("SourceRoleArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AssetShallow]
-    }
-  }
-
   /**
     * A CMAF encryption configuration.
     */
   @js.native
+  @Factory
   trait CmafEncryption extends js.Object {
     var SpekeKeyProvider: SpekeKeyProvider
-  }
-
-  object CmafEncryption {
-    @inline
-    def apply(
-        SpekeKeyProvider: SpekeKeyProvider
-    ): CmafEncryption = {
-      val __obj = js.Dynamic.literal(
-        "SpekeKeyProvider" -> SpekeKeyProvider.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CmafEncryption]
-    }
   }
 
   /**
     * A CMAF packaging configuration.
     */
   @js.native
+  @Factory
   trait CmafPackage extends js.Object {
     var HlsManifests: __listOfHlsManifest
     var Encryption: js.UndefOr[CmafEncryption]
     var SegmentDurationSeconds: js.UndefOr[__integer]
   }
 
-  object CmafPackage {
-    @inline
-    def apply(
-        HlsManifests: __listOfHlsManifest,
-        Encryption: js.UndefOr[CmafEncryption] = js.undefined,
-        SegmentDurationSeconds: js.UndefOr[__integer] = js.undefined
-    ): CmafPackage = {
-      val __obj = js.Dynamic.literal(
-        "HlsManifests" -> HlsManifests.asInstanceOf[js.Any]
-      )
-
-      Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
-      SegmentDurationSeconds.foreach(__v => __obj.updateDynamic("SegmentDurationSeconds")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CmafPackage]
-    }
-  }
-
   /**
     * A new MediaPackage VOD Asset configuration.
     */
   @js.native
+  @Factory
   trait CreateAssetRequest extends js.Object {
     var Id: __string
     var PackagingGroupId: __string
@@ -192,28 +144,8 @@ package mediapackagevod {
     var ResourceId: js.UndefOr[__string]
   }
 
-  object CreateAssetRequest {
-    @inline
-    def apply(
-        Id: __string,
-        PackagingGroupId: __string,
-        SourceArn: __string,
-        SourceRoleArn: __string,
-        ResourceId: js.UndefOr[__string] = js.undefined
-    ): CreateAssetRequest = {
-      val __obj = js.Dynamic.literal(
-        "Id"               -> Id.asInstanceOf[js.Any],
-        "PackagingGroupId" -> PackagingGroupId.asInstanceOf[js.Any],
-        "SourceArn"        -> SourceArn.asInstanceOf[js.Any],
-        "SourceRoleArn"    -> SourceRoleArn.asInstanceOf[js.Any]
-      )
-
-      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateAssetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateAssetResponse extends js.Object {
     var Arn: js.UndefOr[__string]
     var CreatedAt: js.UndefOr[__string]
@@ -225,35 +157,11 @@ package mediapackagevod {
     var SourceRoleArn: js.UndefOr[__string]
   }
 
-  object CreateAssetResponse {
-    @inline
-    def apply(
-        Arn: js.UndefOr[__string] = js.undefined,
-        CreatedAt: js.UndefOr[__string] = js.undefined,
-        EgressEndpoints: js.UndefOr[__listOfEgressEndpoint] = js.undefined,
-        Id: js.UndefOr[__string] = js.undefined,
-        PackagingGroupId: js.UndefOr[__string] = js.undefined,
-        ResourceId: js.UndefOr[__string] = js.undefined,
-        SourceArn: js.UndefOr[__string] = js.undefined,
-        SourceRoleArn: js.UndefOr[__string] = js.undefined
-    ): CreateAssetResponse = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
-      EgressEndpoints.foreach(__v => __obj.updateDynamic("EgressEndpoints")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      PackagingGroupId.foreach(__v => __obj.updateDynamic("PackagingGroupId")(__v.asInstanceOf[js.Any]))
-      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
-      SourceArn.foreach(__v => __obj.updateDynamic("SourceArn")(__v.asInstanceOf[js.Any]))
-      SourceRoleArn.foreach(__v => __obj.updateDynamic("SourceRoleArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateAssetResponse]
-    }
-  }
-
   /**
     * A new MediaPackage VOD PackagingConfiguration resource configuration.
     */
   @js.native
+  @Factory
   trait CreatePackagingConfigurationRequest extends js.Object {
     var Id: __string
     var PackagingGroupId: __string
@@ -263,30 +171,8 @@ package mediapackagevod {
     var MssPackage: js.UndefOr[MssPackage]
   }
 
-  object CreatePackagingConfigurationRequest {
-    @inline
-    def apply(
-        Id: __string,
-        PackagingGroupId: __string,
-        CmafPackage: js.UndefOr[CmafPackage] = js.undefined,
-        DashPackage: js.UndefOr[DashPackage] = js.undefined,
-        HlsPackage: js.UndefOr[HlsPackage] = js.undefined,
-        MssPackage: js.UndefOr[MssPackage] = js.undefined
-    ): CreatePackagingConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Id"               -> Id.asInstanceOf[js.Any],
-        "PackagingGroupId" -> PackagingGroupId.asInstanceOf[js.Any]
-      )
-
-      CmafPackage.foreach(__v => __obj.updateDynamic("CmafPackage")(__v.asInstanceOf[js.Any]))
-      DashPackage.foreach(__v => __obj.updateDynamic("DashPackage")(__v.asInstanceOf[js.Any]))
-      HlsPackage.foreach(__v => __obj.updateDynamic("HlsPackage")(__v.asInstanceOf[js.Any]))
-      MssPackage.foreach(__v => __obj.updateDynamic("MssPackage")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreatePackagingConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreatePackagingConfigurationResponse extends js.Object {
     var Arn: js.UndefOr[__string]
     var CmafPackage: js.UndefOr[CmafPackage]
@@ -297,97 +183,37 @@ package mediapackagevod {
     var PackagingGroupId: js.UndefOr[__string]
   }
 
-  object CreatePackagingConfigurationResponse {
-    @inline
-    def apply(
-        Arn: js.UndefOr[__string] = js.undefined,
-        CmafPackage: js.UndefOr[CmafPackage] = js.undefined,
-        DashPackage: js.UndefOr[DashPackage] = js.undefined,
-        HlsPackage: js.UndefOr[HlsPackage] = js.undefined,
-        Id: js.UndefOr[__string] = js.undefined,
-        MssPackage: js.UndefOr[MssPackage] = js.undefined,
-        PackagingGroupId: js.UndefOr[__string] = js.undefined
-    ): CreatePackagingConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      CmafPackage.foreach(__v => __obj.updateDynamic("CmafPackage")(__v.asInstanceOf[js.Any]))
-      DashPackage.foreach(__v => __obj.updateDynamic("DashPackage")(__v.asInstanceOf[js.Any]))
-      HlsPackage.foreach(__v => __obj.updateDynamic("HlsPackage")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      MssPackage.foreach(__v => __obj.updateDynamic("MssPackage")(__v.asInstanceOf[js.Any]))
-      PackagingGroupId.foreach(__v => __obj.updateDynamic("PackagingGroupId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreatePackagingConfigurationResponse]
-    }
-  }
-
   /**
     * A new MediaPackage VOD PackagingGroup resource configuration.
     */
   @js.native
+  @Factory
   trait CreatePackagingGroupRequest extends js.Object {
     var Id: __string
   }
 
-  object CreatePackagingGroupRequest {
-    @inline
-    def apply(
-        Id: __string
-    ): CreatePackagingGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "Id" -> Id.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreatePackagingGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreatePackagingGroupResponse extends js.Object {
     var Arn: js.UndefOr[__string]
     var DomainName: js.UndefOr[__string]
     var Id: js.UndefOr[__string]
   }
 
-  object CreatePackagingGroupResponse {
-    @inline
-    def apply(
-        Arn: js.UndefOr[__string] = js.undefined,
-        DomainName: js.UndefOr[__string] = js.undefined,
-        Id: js.UndefOr[__string] = js.undefined
-    ): CreatePackagingGroupResponse = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreatePackagingGroupResponse]
-    }
-  }
-
   /**
     * A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
     */
   @js.native
+  @Factory
   trait DashEncryption extends js.Object {
     var SpekeKeyProvider: SpekeKeyProvider
-  }
-
-  object DashEncryption {
-    @inline
-    def apply(
-        SpekeKeyProvider: SpekeKeyProvider
-    ): DashEncryption = {
-      val __obj = js.Dynamic.literal(
-        "SpekeKeyProvider" -> SpekeKeyProvider.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DashEncryption]
-    }
   }
 
   /**
     * A DASH manifest configuration.
     */
   @js.native
+  @Factory
   trait DashManifest extends js.Object {
     var ManifestLayout: js.UndefOr[ManifestLayout]
     var ManifestName: js.UndefOr[__string]
@@ -396,29 +222,11 @@ package mediapackagevod {
     var StreamSelection: js.UndefOr[StreamSelection]
   }
 
-  object DashManifest {
-    @inline
-    def apply(
-        ManifestLayout: js.UndefOr[ManifestLayout] = js.undefined,
-        ManifestName: js.UndefOr[__string] = js.undefined,
-        MinBufferTimeSeconds: js.UndefOr[__integer] = js.undefined,
-        Profile: js.UndefOr[Profile] = js.undefined,
-        StreamSelection: js.UndefOr[StreamSelection] = js.undefined
-    ): DashManifest = {
-      val __obj = js.Dynamic.literal()
-      ManifestLayout.foreach(__v => __obj.updateDynamic("ManifestLayout")(__v.asInstanceOf[js.Any]))
-      ManifestName.foreach(__v => __obj.updateDynamic("ManifestName")(__v.asInstanceOf[js.Any]))
-      MinBufferTimeSeconds.foreach(__v => __obj.updateDynamic("MinBufferTimeSeconds")(__v.asInstanceOf[js.Any]))
-      Profile.foreach(__v => __obj.updateDynamic("Profile")(__v.asInstanceOf[js.Any]))
-      StreamSelection.foreach(__v => __obj.updateDynamic("StreamSelection")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DashManifest]
-    }
-  }
-
   /**
     * A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
     */
   @js.native
+  @Factory
   trait DashPackage extends js.Object {
     var DashManifests: __listOfDashManifest
     var Encryption: js.UndefOr[DashEncryption]
@@ -427,139 +235,44 @@ package mediapackagevod {
     var SegmentTemplateFormat: js.UndefOr[SegmentTemplateFormat]
   }
 
-  object DashPackage {
-    @inline
-    def apply(
-        DashManifests: __listOfDashManifest,
-        Encryption: js.UndefOr[DashEncryption] = js.undefined,
-        PeriodTriggers: js.UndefOr[__listOf__PeriodTriggersElement] = js.undefined,
-        SegmentDurationSeconds: js.UndefOr[__integer] = js.undefined,
-        SegmentTemplateFormat: js.UndefOr[SegmentTemplateFormat] = js.undefined
-    ): DashPackage = {
-      val __obj = js.Dynamic.literal(
-        "DashManifests" -> DashManifests.asInstanceOf[js.Any]
-      )
-
-      Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
-      PeriodTriggers.foreach(__v => __obj.updateDynamic("PeriodTriggers")(__v.asInstanceOf[js.Any]))
-      SegmentDurationSeconds.foreach(__v => __obj.updateDynamic("SegmentDurationSeconds")(__v.asInstanceOf[js.Any]))
-      SegmentTemplateFormat.foreach(__v => __obj.updateDynamic("SegmentTemplateFormat")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DashPackage]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteAssetRequest extends js.Object {
     var Id: __string
   }
 
-  object DeleteAssetRequest {
-    @inline
-    def apply(
-        Id: __string
-    ): DeleteAssetRequest = {
-      val __obj = js.Dynamic.literal(
-        "Id" -> Id.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteAssetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteAssetResponse extends js.Object {}
 
-  object DeleteAssetResponse {
-    @inline
-    def apply(
-    ): DeleteAssetResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteAssetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeletePackagingConfigurationRequest extends js.Object {
     var Id: __string
   }
 
-  object DeletePackagingConfigurationRequest {
-    @inline
-    def apply(
-        Id: __string
-    ): DeletePackagingConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Id" -> Id.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeletePackagingConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeletePackagingConfigurationResponse extends js.Object {}
 
-  object DeletePackagingConfigurationResponse {
-    @inline
-    def apply(
-    ): DeletePackagingConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeletePackagingConfigurationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeletePackagingGroupRequest extends js.Object {
     var Id: __string
   }
 
-  object DeletePackagingGroupRequest {
-    @inline
-    def apply(
-        Id: __string
-    ): DeletePackagingGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "Id" -> Id.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeletePackagingGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeletePackagingGroupResponse extends js.Object {}
 
-  object DeletePackagingGroupResponse {
-    @inline
-    def apply(
-    ): DeletePackagingGroupResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeletePackagingGroupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeAssetRequest extends js.Object {
     var Id: __string
   }
 
-  object DescribeAssetRequest {
-    @inline
-    def apply(
-        Id: __string
-    ): DescribeAssetRequest = {
-      val __obj = js.Dynamic.literal(
-        "Id" -> Id.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeAssetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeAssetResponse extends js.Object {
     var Arn: js.UndefOr[__string]
     var CreatedAt: js.UndefOr[__string]
@@ -571,50 +284,14 @@ package mediapackagevod {
     var SourceRoleArn: js.UndefOr[__string]
   }
 
-  object DescribeAssetResponse {
-    @inline
-    def apply(
-        Arn: js.UndefOr[__string] = js.undefined,
-        CreatedAt: js.UndefOr[__string] = js.undefined,
-        EgressEndpoints: js.UndefOr[__listOfEgressEndpoint] = js.undefined,
-        Id: js.UndefOr[__string] = js.undefined,
-        PackagingGroupId: js.UndefOr[__string] = js.undefined,
-        ResourceId: js.UndefOr[__string] = js.undefined,
-        SourceArn: js.UndefOr[__string] = js.undefined,
-        SourceRoleArn: js.UndefOr[__string] = js.undefined
-    ): DescribeAssetResponse = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
-      EgressEndpoints.foreach(__v => __obj.updateDynamic("EgressEndpoints")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      PackagingGroupId.foreach(__v => __obj.updateDynamic("PackagingGroupId")(__v.asInstanceOf[js.Any]))
-      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
-      SourceArn.foreach(__v => __obj.updateDynamic("SourceArn")(__v.asInstanceOf[js.Any]))
-      SourceRoleArn.foreach(__v => __obj.updateDynamic("SourceRoleArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeAssetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribePackagingConfigurationRequest extends js.Object {
     var Id: __string
   }
 
-  object DescribePackagingConfigurationRequest {
-    @inline
-    def apply(
-        Id: __string
-    ): DescribePackagingConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Id" -> Id.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribePackagingConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribePackagingConfigurationResponse extends js.Object {
     var Arn: js.UndefOr[__string]
     var CmafPackage: js.UndefOr[CmafPackage]
@@ -625,89 +302,28 @@ package mediapackagevod {
     var PackagingGroupId: js.UndefOr[__string]
   }
 
-  object DescribePackagingConfigurationResponse {
-    @inline
-    def apply(
-        Arn: js.UndefOr[__string] = js.undefined,
-        CmafPackage: js.UndefOr[CmafPackage] = js.undefined,
-        DashPackage: js.UndefOr[DashPackage] = js.undefined,
-        HlsPackage: js.UndefOr[HlsPackage] = js.undefined,
-        Id: js.UndefOr[__string] = js.undefined,
-        MssPackage: js.UndefOr[MssPackage] = js.undefined,
-        PackagingGroupId: js.UndefOr[__string] = js.undefined
-    ): DescribePackagingConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      CmafPackage.foreach(__v => __obj.updateDynamic("CmafPackage")(__v.asInstanceOf[js.Any]))
-      DashPackage.foreach(__v => __obj.updateDynamic("DashPackage")(__v.asInstanceOf[js.Any]))
-      HlsPackage.foreach(__v => __obj.updateDynamic("HlsPackage")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      MssPackage.foreach(__v => __obj.updateDynamic("MssPackage")(__v.asInstanceOf[js.Any]))
-      PackagingGroupId.foreach(__v => __obj.updateDynamic("PackagingGroupId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribePackagingConfigurationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribePackagingGroupRequest extends js.Object {
     var Id: __string
   }
 
-  object DescribePackagingGroupRequest {
-    @inline
-    def apply(
-        Id: __string
-    ): DescribePackagingGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "Id" -> Id.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribePackagingGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribePackagingGroupResponse extends js.Object {
     var Arn: js.UndefOr[__string]
     var DomainName: js.UndefOr[__string]
     var Id: js.UndefOr[__string]
   }
 
-  object DescribePackagingGroupResponse {
-    @inline
-    def apply(
-        Arn: js.UndefOr[__string] = js.undefined,
-        DomainName: js.UndefOr[__string] = js.undefined,
-        Id: js.UndefOr[__string] = js.undefined
-    ): DescribePackagingGroupResponse = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribePackagingGroupResponse]
-    }
-  }
-
   /**
     * The endpoint URL used to access an Asset using one PackagingConfiguration.
     */
   @js.native
+  @Factory
   trait EgressEndpoint extends js.Object {
     var PackagingConfigurationId: js.UndefOr[__string]
     var Url: js.UndefOr[__string]
-  }
-
-  object EgressEndpoint {
-    @inline
-    def apply(
-        PackagingConfigurationId: js.UndefOr[__string] = js.undefined,
-        Url: js.UndefOr[__string] = js.undefined
-    ): EgressEndpoint = {
-      val __obj = js.Dynamic.literal()
-      PackagingConfigurationId.foreach(__v => __obj.updateDynamic("PackagingConfigurationId")(__v.asInstanceOf[js.Any]))
-      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EgressEndpoint]
-    }
   }
 
   @js.native
@@ -723,35 +339,18 @@ package mediapackagevod {
     * An HTTP Live Streaming (HLS) encryption configuration.
     */
   @js.native
+  @Factory
   trait HlsEncryption extends js.Object {
     var SpekeKeyProvider: SpekeKeyProvider
     var ConstantInitializationVector: js.UndefOr[__string]
     var EncryptionMethod: js.UndefOr[EncryptionMethod]
   }
 
-  object HlsEncryption {
-    @inline
-    def apply(
-        SpekeKeyProvider: SpekeKeyProvider,
-        ConstantInitializationVector: js.UndefOr[__string] = js.undefined,
-        EncryptionMethod: js.UndefOr[EncryptionMethod] = js.undefined
-    ): HlsEncryption = {
-      val __obj = js.Dynamic.literal(
-        "SpekeKeyProvider" -> SpekeKeyProvider.asInstanceOf[js.Any]
-      )
-
-      ConstantInitializationVector.foreach(__v =>
-        __obj.updateDynamic("ConstantInitializationVector")(__v.asInstanceOf[js.Any])
-      )
-      EncryptionMethod.foreach(__v => __obj.updateDynamic("EncryptionMethod")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HlsEncryption]
-    }
-  }
-
   /**
     * An HTTP Live Streaming (HLS) manifest configuration.
     */
   @js.native
+  @Factory
   trait HlsManifest extends js.Object {
     var AdMarkers: js.UndefOr[AdMarkers]
     var IncludeIframeOnlyStream: js.UndefOr[__boolean]
@@ -761,33 +360,11 @@ package mediapackagevod {
     var StreamSelection: js.UndefOr[StreamSelection]
   }
 
-  object HlsManifest {
-    @inline
-    def apply(
-        AdMarkers: js.UndefOr[AdMarkers] = js.undefined,
-        IncludeIframeOnlyStream: js.UndefOr[__boolean] = js.undefined,
-        ManifestName: js.UndefOr[__string] = js.undefined,
-        ProgramDateTimeIntervalSeconds: js.UndefOr[__integer] = js.undefined,
-        RepeatExtXKey: js.UndefOr[__boolean] = js.undefined,
-        StreamSelection: js.UndefOr[StreamSelection] = js.undefined
-    ): HlsManifest = {
-      val __obj = js.Dynamic.literal()
-      AdMarkers.foreach(__v => __obj.updateDynamic("AdMarkers")(__v.asInstanceOf[js.Any]))
-      IncludeIframeOnlyStream.foreach(__v => __obj.updateDynamic("IncludeIframeOnlyStream")(__v.asInstanceOf[js.Any]))
-      ManifestName.foreach(__v => __obj.updateDynamic("ManifestName")(__v.asInstanceOf[js.Any]))
-      ProgramDateTimeIntervalSeconds.foreach(__v =>
-        __obj.updateDynamic("ProgramDateTimeIntervalSeconds")(__v.asInstanceOf[js.Any])
-      )
-      RepeatExtXKey.foreach(__v => __obj.updateDynamic("RepeatExtXKey")(__v.asInstanceOf[js.Any]))
-      StreamSelection.foreach(__v => __obj.updateDynamic("StreamSelection")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HlsManifest]
-    }
-  }
-
   /**
     * An HTTP Live Streaming (HLS) packaging configuration.
     */
   @js.native
+  @Factory
   trait HlsPackage extends js.Object {
     var HlsManifests: __listOfHlsManifest
     var Encryption: js.UndefOr[HlsEncryption]
@@ -795,143 +372,48 @@ package mediapackagevod {
     var UseAudioRenditionGroup: js.UndefOr[__boolean]
   }
 
-  object HlsPackage {
-    @inline
-    def apply(
-        HlsManifests: __listOfHlsManifest,
-        Encryption: js.UndefOr[HlsEncryption] = js.undefined,
-        SegmentDurationSeconds: js.UndefOr[__integer] = js.undefined,
-        UseAudioRenditionGroup: js.UndefOr[__boolean] = js.undefined
-    ): HlsPackage = {
-      val __obj = js.Dynamic.literal(
-        "HlsManifests" -> HlsManifests.asInstanceOf[js.Any]
-      )
-
-      Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
-      SegmentDurationSeconds.foreach(__v => __obj.updateDynamic("SegmentDurationSeconds")(__v.asInstanceOf[js.Any]))
-      UseAudioRenditionGroup.foreach(__v => __obj.updateDynamic("UseAudioRenditionGroup")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HlsPackage]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAssetsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[__string]
     var PackagingGroupId: js.UndefOr[__string]
   }
 
-  object ListAssetsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[__string] = js.undefined,
-        PackagingGroupId: js.UndefOr[__string] = js.undefined
-    ): ListAssetsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PackagingGroupId.foreach(__v => __obj.updateDynamic("PackagingGroupId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAssetsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAssetsResponse extends js.Object {
     var Assets: js.UndefOr[__listOfAssetShallow]
     var NextToken: js.UndefOr[__string]
   }
 
-  object ListAssetsResponse {
-    @inline
-    def apply(
-        Assets: js.UndefOr[__listOfAssetShallow] = js.undefined,
-        NextToken: js.UndefOr[__string] = js.undefined
-    ): ListAssetsResponse = {
-      val __obj = js.Dynamic.literal()
-      Assets.foreach(__v => __obj.updateDynamic("Assets")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAssetsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPackagingConfigurationsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[__string]
     var PackagingGroupId: js.UndefOr[__string]
   }
 
-  object ListPackagingConfigurationsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[__string] = js.undefined,
-        PackagingGroupId: js.UndefOr[__string] = js.undefined
-    ): ListPackagingConfigurationsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PackagingGroupId.foreach(__v => __obj.updateDynamic("PackagingGroupId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPackagingConfigurationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPackagingConfigurationsResponse extends js.Object {
     var NextToken: js.UndefOr[__string]
     var PackagingConfigurations: js.UndefOr[__listOfPackagingConfiguration]
   }
 
-  object ListPackagingConfigurationsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[__string] = js.undefined,
-        PackagingConfigurations: js.UndefOr[__listOfPackagingConfiguration] = js.undefined
-    ): ListPackagingConfigurationsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PackagingConfigurations.foreach(__v => __obj.updateDynamic("PackagingConfigurations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPackagingConfigurationsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPackagingGroupsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[__string]
   }
 
-  object ListPackagingGroupsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[__string] = js.undefined
-    ): ListPackagingGroupsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPackagingGroupsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPackagingGroupsResponse extends js.Object {
     var NextToken: js.UndefOr[__string]
     var PackagingGroups: js.UndefOr[__listOfPackagingGroup]
-  }
-
-  object ListPackagingGroupsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[__string] = js.undefined,
-        PackagingGroups: js.UndefOr[__listOfPackagingGroup] = js.undefined
-    ): ListPackagingGroupsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PackagingGroups.foreach(__v => __obj.updateDynamic("PackagingGroups")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPackagingGroupsResponse]
-    }
   }
 
   @js.native
@@ -947,76 +429,37 @@ package mediapackagevod {
     * A Microsoft Smooth Streaming (MSS) encryption configuration.
     */
   @js.native
+  @Factory
   trait MssEncryption extends js.Object {
     var SpekeKeyProvider: SpekeKeyProvider
-  }
-
-  object MssEncryption {
-    @inline
-    def apply(
-        SpekeKeyProvider: SpekeKeyProvider
-    ): MssEncryption = {
-      val __obj = js.Dynamic.literal(
-        "SpekeKeyProvider" -> SpekeKeyProvider.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[MssEncryption]
-    }
   }
 
   /**
     * A Microsoft Smooth Streaming (MSS) manifest configuration.
     */
   @js.native
+  @Factory
   trait MssManifest extends js.Object {
     var ManifestName: js.UndefOr[__string]
     var StreamSelection: js.UndefOr[StreamSelection]
-  }
-
-  object MssManifest {
-    @inline
-    def apply(
-        ManifestName: js.UndefOr[__string] = js.undefined,
-        StreamSelection: js.UndefOr[StreamSelection] = js.undefined
-    ): MssManifest = {
-      val __obj = js.Dynamic.literal()
-      ManifestName.foreach(__v => __obj.updateDynamic("ManifestName")(__v.asInstanceOf[js.Any]))
-      StreamSelection.foreach(__v => __obj.updateDynamic("StreamSelection")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MssManifest]
-    }
   }
 
   /**
     * A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
     */
   @js.native
+  @Factory
   trait MssPackage extends js.Object {
     var MssManifests: __listOfMssManifest
     var Encryption: js.UndefOr[MssEncryption]
     var SegmentDurationSeconds: js.UndefOr[__integer]
   }
 
-  object MssPackage {
-    @inline
-    def apply(
-        MssManifests: __listOfMssManifest,
-        Encryption: js.UndefOr[MssEncryption] = js.undefined,
-        SegmentDurationSeconds: js.UndefOr[__integer] = js.undefined
-    ): MssPackage = {
-      val __obj = js.Dynamic.literal(
-        "MssManifests" -> MssManifests.asInstanceOf[js.Any]
-      )
-
-      Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
-      SegmentDurationSeconds.foreach(__v => __obj.updateDynamic("SegmentDurationSeconds")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MssPackage]
-    }
-  }
-
   /**
     * A MediaPackage VOD PackagingConfiguration resource.
     */
   @js.native
+  @Factory
   trait PackagingConfiguration extends js.Object {
     var Arn: js.UndefOr[__string]
     var CmafPackage: js.UndefOr[CmafPackage]
@@ -1027,52 +470,15 @@ package mediapackagevod {
     var PackagingGroupId: js.UndefOr[__string]
   }
 
-  object PackagingConfiguration {
-    @inline
-    def apply(
-        Arn: js.UndefOr[__string] = js.undefined,
-        CmafPackage: js.UndefOr[CmafPackage] = js.undefined,
-        DashPackage: js.UndefOr[DashPackage] = js.undefined,
-        HlsPackage: js.UndefOr[HlsPackage] = js.undefined,
-        Id: js.UndefOr[__string] = js.undefined,
-        MssPackage: js.UndefOr[MssPackage] = js.undefined,
-        PackagingGroupId: js.UndefOr[__string] = js.undefined
-    ): PackagingConfiguration = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      CmafPackage.foreach(__v => __obj.updateDynamic("CmafPackage")(__v.asInstanceOf[js.Any]))
-      DashPackage.foreach(__v => __obj.updateDynamic("DashPackage")(__v.asInstanceOf[js.Any]))
-      HlsPackage.foreach(__v => __obj.updateDynamic("HlsPackage")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      MssPackage.foreach(__v => __obj.updateDynamic("MssPackage")(__v.asInstanceOf[js.Any]))
-      PackagingGroupId.foreach(__v => __obj.updateDynamic("PackagingGroupId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PackagingConfiguration]
-    }
-  }
-
   /**
     * A MediaPackage VOD PackagingGroup resource.
     */
   @js.native
+  @Factory
   trait PackagingGroup extends js.Object {
     var Arn: js.UndefOr[__string]
     var DomainName: js.UndefOr[__string]
     var Id: js.UndefOr[__string]
-  }
-
-  object PackagingGroup {
-    @inline
-    def apply(
-        Arn: js.UndefOr[__string] = js.undefined,
-        DomainName: js.UndefOr[__string] = js.undefined,
-        Id: js.UndefOr[__string] = js.undefined
-    ): PackagingGroup = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PackagingGroup]
-    }
   }
 
   @js.native
@@ -1098,27 +504,11 @@ package mediapackagevod {
     * A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     */
   @js.native
+  @Factory
   trait SpekeKeyProvider extends js.Object {
     var RoleArn: __string
     var SystemIds: __listOf__string
     var Url: __string
-  }
-
-  object SpekeKeyProvider {
-    @inline
-    def apply(
-        RoleArn: __string,
-        SystemIds: __listOf__string,
-        Url: __string
-    ): SpekeKeyProvider = {
-      val __obj = js.Dynamic.literal(
-        "RoleArn"   -> RoleArn.asInstanceOf[js.Any],
-        "SystemIds" -> SystemIds.asInstanceOf[js.Any],
-        "Url"       -> Url.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SpekeKeyProvider]
-    }
   }
 
   @js.native
@@ -1135,25 +525,11 @@ package mediapackagevod {
     * A StreamSelection configuration.
     */
   @js.native
+  @Factory
   trait StreamSelection extends js.Object {
     var MaxVideoBitsPerSecond: js.UndefOr[__integer]
     var MinVideoBitsPerSecond: js.UndefOr[__integer]
     var StreamOrder: js.UndefOr[StreamOrder]
-  }
-
-  object StreamSelection {
-    @inline
-    def apply(
-        MaxVideoBitsPerSecond: js.UndefOr[__integer] = js.undefined,
-        MinVideoBitsPerSecond: js.UndefOr[__integer] = js.undefined,
-        StreamOrder: js.UndefOr[StreamOrder] = js.undefined
-    ): StreamSelection = {
-      val __obj = js.Dynamic.literal()
-      MaxVideoBitsPerSecond.foreach(__v => __obj.updateDynamic("MaxVideoBitsPerSecond")(__v.asInstanceOf[js.Any]))
-      MinVideoBitsPerSecond.foreach(__v => __obj.updateDynamic("MinVideoBitsPerSecond")(__v.asInstanceOf[js.Any]))
-      StreamOrder.foreach(__v => __obj.updateDynamic("StreamOrder")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StreamSelection]
-    }
   }
 
   @js.native

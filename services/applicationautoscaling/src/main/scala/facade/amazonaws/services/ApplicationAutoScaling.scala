@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object applicationautoscaling {
   type Alarms                 = js.Array[Alarm]
@@ -107,24 +108,10 @@ package applicationautoscaling {
     * Represents a CloudWatch alarm associated with a scaling policy.
     */
   @js.native
+  @Factory
   trait Alarm extends js.Object {
     var AlarmARN: ResourceId
     var AlarmName: ResourceId
-  }
-
-  object Alarm {
-    @inline
-    def apply(
-        AlarmARN: ResourceId,
-        AlarmName: ResourceId
-    ): Alarm = {
-      val __obj = js.Dynamic.literal(
-        "AlarmARN"  -> AlarmARN.asInstanceOf[js.Any],
-        "AlarmName" -> AlarmName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Alarm]
-    }
   }
 
   /**
@@ -135,6 +122,7 @@ package applicationautoscaling {
     * For more information about CloudWatch, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html|Amazon CloudWatch Concepts]].
     */
   @js.native
+  @Factory
   trait CustomizedMetricSpecification extends js.Object {
     var MetricName: MetricName
     var Namespace: MetricNamespace
@@ -143,28 +131,8 @@ package applicationautoscaling {
     var Unit: js.UndefOr[MetricUnit]
   }
 
-  object CustomizedMetricSpecification {
-    @inline
-    def apply(
-        MetricName: MetricName,
-        Namespace: MetricNamespace,
-        Statistic: MetricStatistic,
-        Dimensions: js.UndefOr[MetricDimensions] = js.undefined,
-        Unit: js.UndefOr[MetricUnit] = js.undefined
-    ): CustomizedMetricSpecification = {
-      val __obj = js.Dynamic.literal(
-        "MetricName" -> MetricName.asInstanceOf[js.Any],
-        "Namespace"  -> Namespace.asInstanceOf[js.Any],
-        "Statistic"  -> Statistic.asInstanceOf[js.Any]
-      )
-
-      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
-      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CustomizedMetricSpecification]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteScalingPolicyRequest extends js.Object {
     var PolicyName: ResourceIdMaxLen1600
     var ResourceId: ResourceIdMaxLen1600
@@ -172,39 +140,12 @@ package applicationautoscaling {
     var ServiceNamespace: ServiceNamespace
   }
 
-  object DeleteScalingPolicyRequest {
-    @inline
-    def apply(
-        PolicyName: ResourceIdMaxLen1600,
-        ResourceId: ResourceIdMaxLen1600,
-        ScalableDimension: ScalableDimension,
-        ServiceNamespace: ServiceNamespace
-    ): DeleteScalingPolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "PolicyName"        -> PolicyName.asInstanceOf[js.Any],
-        "ResourceId"        -> ResourceId.asInstanceOf[js.Any],
-        "ScalableDimension" -> ScalableDimension.asInstanceOf[js.Any],
-        "ServiceNamespace"  -> ServiceNamespace.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteScalingPolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteScalingPolicyResponse extends js.Object {}
 
-  object DeleteScalingPolicyResponse {
-    @inline
-    def apply(
-    ): DeleteScalingPolicyResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteScalingPolicyResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteScheduledActionRequest extends js.Object {
     var ResourceId: ResourceIdMaxLen1600
     var ScalableDimension: ScalableDimension
@@ -212,76 +153,24 @@ package applicationautoscaling {
     var ServiceNamespace: ServiceNamespace
   }
 
-  object DeleteScheduledActionRequest {
-    @inline
-    def apply(
-        ResourceId: ResourceIdMaxLen1600,
-        ScalableDimension: ScalableDimension,
-        ScheduledActionName: ResourceIdMaxLen1600,
-        ServiceNamespace: ServiceNamespace
-    ): DeleteScheduledActionRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceId"          -> ResourceId.asInstanceOf[js.Any],
-        "ScalableDimension"   -> ScalableDimension.asInstanceOf[js.Any],
-        "ScheduledActionName" -> ScheduledActionName.asInstanceOf[js.Any],
-        "ServiceNamespace"    -> ServiceNamespace.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteScheduledActionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteScheduledActionResponse extends js.Object {}
 
-  object DeleteScheduledActionResponse {
-    @inline
-    def apply(
-    ): DeleteScheduledActionResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteScheduledActionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeregisterScalableTargetRequest extends js.Object {
     var ResourceId: ResourceIdMaxLen1600
     var ScalableDimension: ScalableDimension
     var ServiceNamespace: ServiceNamespace
   }
 
-  object DeregisterScalableTargetRequest {
-    @inline
-    def apply(
-        ResourceId: ResourceIdMaxLen1600,
-        ScalableDimension: ScalableDimension,
-        ServiceNamespace: ServiceNamespace
-    ): DeregisterScalableTargetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceId"        -> ResourceId.asInstanceOf[js.Any],
-        "ScalableDimension" -> ScalableDimension.asInstanceOf[js.Any],
-        "ServiceNamespace"  -> ServiceNamespace.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeregisterScalableTargetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeregisterScalableTargetResponse extends js.Object {}
 
-  object DeregisterScalableTargetResponse {
-    @inline
-    def apply(
-    ): DeregisterScalableTargetResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeregisterScalableTargetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeScalableTargetsRequest extends js.Object {
     var ServiceNamespace: ServiceNamespace
     var MaxResults: js.UndefOr[MaxResults]
@@ -290,47 +179,15 @@ package applicationautoscaling {
     var ScalableDimension: js.UndefOr[ScalableDimension]
   }
 
-  object DescribeScalableTargetsRequest {
-    @inline
-    def apply(
-        ServiceNamespace: ServiceNamespace,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[XmlString] = js.undefined,
-        ResourceIds: js.UndefOr[ResourceIdsMaxLen1600] = js.undefined,
-        ScalableDimension: js.UndefOr[ScalableDimension] = js.undefined
-    ): DescribeScalableTargetsRequest = {
-      val __obj = js.Dynamic.literal(
-        "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ResourceIds.foreach(__v => __obj.updateDynamic("ResourceIds")(__v.asInstanceOf[js.Any]))
-      ScalableDimension.foreach(__v => __obj.updateDynamic("ScalableDimension")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeScalableTargetsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeScalableTargetsResponse extends js.Object {
     var NextToken: js.UndefOr[XmlString]
     var ScalableTargets: js.UndefOr[ScalableTargets]
   }
 
-  object DescribeScalableTargetsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[XmlString] = js.undefined,
-        ScalableTargets: js.UndefOr[ScalableTargets] = js.undefined
-    ): DescribeScalableTargetsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ScalableTargets.foreach(__v => __obj.updateDynamic("ScalableTargets")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeScalableTargetsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeScalingActivitiesRequest extends js.Object {
     var ServiceNamespace: ServiceNamespace
     var MaxResults: js.UndefOr[MaxResults]
@@ -339,47 +196,15 @@ package applicationautoscaling {
     var ScalableDimension: js.UndefOr[ScalableDimension]
   }
 
-  object DescribeScalingActivitiesRequest {
-    @inline
-    def apply(
-        ServiceNamespace: ServiceNamespace,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[XmlString] = js.undefined,
-        ResourceId: js.UndefOr[ResourceIdMaxLen1600] = js.undefined,
-        ScalableDimension: js.UndefOr[ScalableDimension] = js.undefined
-    ): DescribeScalingActivitiesRequest = {
-      val __obj = js.Dynamic.literal(
-        "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
-      ScalableDimension.foreach(__v => __obj.updateDynamic("ScalableDimension")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeScalingActivitiesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeScalingActivitiesResponse extends js.Object {
     var NextToken: js.UndefOr[XmlString]
     var ScalingActivities: js.UndefOr[ScalingActivities]
   }
 
-  object DescribeScalingActivitiesResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[XmlString] = js.undefined,
-        ScalingActivities: js.UndefOr[ScalingActivities] = js.undefined
-    ): DescribeScalingActivitiesResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ScalingActivities.foreach(__v => __obj.updateDynamic("ScalingActivities")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeScalingActivitiesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeScalingPoliciesRequest extends js.Object {
     var ServiceNamespace: ServiceNamespace
     var MaxResults: js.UndefOr[MaxResults]
@@ -389,49 +214,15 @@ package applicationautoscaling {
     var ScalableDimension: js.UndefOr[ScalableDimension]
   }
 
-  object DescribeScalingPoliciesRequest {
-    @inline
-    def apply(
-        ServiceNamespace: ServiceNamespace,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[XmlString] = js.undefined,
-        PolicyNames: js.UndefOr[ResourceIdsMaxLen1600] = js.undefined,
-        ResourceId: js.UndefOr[ResourceIdMaxLen1600] = js.undefined,
-        ScalableDimension: js.UndefOr[ScalableDimension] = js.undefined
-    ): DescribeScalingPoliciesRequest = {
-      val __obj = js.Dynamic.literal(
-        "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PolicyNames.foreach(__v => __obj.updateDynamic("PolicyNames")(__v.asInstanceOf[js.Any]))
-      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
-      ScalableDimension.foreach(__v => __obj.updateDynamic("ScalableDimension")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeScalingPoliciesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeScalingPoliciesResponse extends js.Object {
     var NextToken: js.UndefOr[XmlString]
     var ScalingPolicies: js.UndefOr[ScalingPolicies]
   }
 
-  object DescribeScalingPoliciesResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[XmlString] = js.undefined,
-        ScalingPolicies: js.UndefOr[ScalingPolicies] = js.undefined
-    ): DescribeScalingPoliciesResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ScalingPolicies.foreach(__v => __obj.updateDynamic("ScalingPolicies")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeScalingPoliciesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeScheduledActionsRequest extends js.Object {
     var ServiceNamespace: ServiceNamespace
     var MaxResults: js.UndefOr[MaxResults]
@@ -441,46 +232,11 @@ package applicationautoscaling {
     var ScheduledActionNames: js.UndefOr[ResourceIdsMaxLen1600]
   }
 
-  object DescribeScheduledActionsRequest {
-    @inline
-    def apply(
-        ServiceNamespace: ServiceNamespace,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[XmlString] = js.undefined,
-        ResourceId: js.UndefOr[ResourceIdMaxLen1600] = js.undefined,
-        ScalableDimension: js.UndefOr[ScalableDimension] = js.undefined,
-        ScheduledActionNames: js.UndefOr[ResourceIdsMaxLen1600] = js.undefined
-    ): DescribeScheduledActionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
-      ScalableDimension.foreach(__v => __obj.updateDynamic("ScalableDimension")(__v.asInstanceOf[js.Any]))
-      ScheduledActionNames.foreach(__v => __obj.updateDynamic("ScheduledActionNames")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeScheduledActionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeScheduledActionsResponse extends js.Object {
     var NextToken: js.UndefOr[XmlString]
     var ScheduledActions: js.UndefOr[ScheduledActions]
-  }
-
-  object DescribeScheduledActionsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[XmlString] = js.undefined,
-        ScheduledActions: js.UndefOr[ScheduledActions] = js.undefined
-    ): DescribeScheduledActionsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ScheduledActions.foreach(__v => __obj.updateDynamic("ScheduledActions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeScheduledActionsResponse]
-    }
   }
 
   @js.native
@@ -497,24 +253,10 @@ package applicationautoscaling {
     * Describes the dimension names and values associated with a metric.
     */
   @js.native
+  @Factory
   trait MetricDimension extends js.Object {
     var Name: MetricDimensionName
     var Value: MetricDimensionValue
-  }
-
-  object MetricDimension {
-    @inline
-    def apply(
-        Name: MetricDimensionName,
-        Value: MetricDimensionValue
-    ): MetricDimension = {
-      val __obj = js.Dynamic.literal(
-        "Name"  -> Name.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[MetricDimension]
-    }
   }
 
   @js.native
@@ -580,27 +322,14 @@ package applicationautoscaling {
     * Represents a predefined metric for a target tracking scaling policy to use with Application Auto Scaling.
     */
   @js.native
+  @Factory
   trait PredefinedMetricSpecification extends js.Object {
     var PredefinedMetricType: MetricType
     var ResourceLabel: js.UndefOr[ResourceLabel]
   }
 
-  object PredefinedMetricSpecification {
-    @inline
-    def apply(
-        PredefinedMetricType: MetricType,
-        ResourceLabel: js.UndefOr[ResourceLabel] = js.undefined
-    ): PredefinedMetricSpecification = {
-      val __obj = js.Dynamic.literal(
-        "PredefinedMetricType" -> PredefinedMetricType.asInstanceOf[js.Any]
-      )
-
-      ResourceLabel.foreach(__v => __obj.updateDynamic("ResourceLabel")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PredefinedMetricSpecification]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutScalingPolicyRequest extends js.Object {
     var PolicyName: PolicyName
     var ResourceId: ResourceIdMaxLen1600
@@ -611,57 +340,15 @@ package applicationautoscaling {
     var TargetTrackingScalingPolicyConfiguration: js.UndefOr[TargetTrackingScalingPolicyConfiguration]
   }
 
-  object PutScalingPolicyRequest {
-    @inline
-    def apply(
-        PolicyName: PolicyName,
-        ResourceId: ResourceIdMaxLen1600,
-        ScalableDimension: ScalableDimension,
-        ServiceNamespace: ServiceNamespace,
-        PolicyType: js.UndefOr[PolicyType] = js.undefined,
-        StepScalingPolicyConfiguration: js.UndefOr[StepScalingPolicyConfiguration] = js.undefined,
-        TargetTrackingScalingPolicyConfiguration: js.UndefOr[TargetTrackingScalingPolicyConfiguration] = js.undefined
-    ): PutScalingPolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "PolicyName"        -> PolicyName.asInstanceOf[js.Any],
-        "ResourceId"        -> ResourceId.asInstanceOf[js.Any],
-        "ScalableDimension" -> ScalableDimension.asInstanceOf[js.Any],
-        "ServiceNamespace"  -> ServiceNamespace.asInstanceOf[js.Any]
-      )
-
-      PolicyType.foreach(__v => __obj.updateDynamic("PolicyType")(__v.asInstanceOf[js.Any]))
-      StepScalingPolicyConfiguration.foreach(__v =>
-        __obj.updateDynamic("StepScalingPolicyConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      TargetTrackingScalingPolicyConfiguration.foreach(__v =>
-        __obj.updateDynamic("TargetTrackingScalingPolicyConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[PutScalingPolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutScalingPolicyResponse extends js.Object {
     var PolicyARN: ResourceIdMaxLen1600
     var Alarms: js.UndefOr[Alarms]
   }
 
-  object PutScalingPolicyResponse {
-    @inline
-    def apply(
-        PolicyARN: ResourceIdMaxLen1600,
-        Alarms: js.UndefOr[Alarms] = js.undefined
-    ): PutScalingPolicyResponse = {
-      val __obj = js.Dynamic.literal(
-        "PolicyARN" -> PolicyARN.asInstanceOf[js.Any]
-      )
-
-      Alarms.foreach(__v => __obj.updateDynamic("Alarms")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutScalingPolicyResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutScheduledActionRequest extends js.Object {
     var ResourceId: ResourceIdMaxLen1600
     var ScalableDimension: ScalableDimension
@@ -673,47 +360,12 @@ package applicationautoscaling {
     var StartTime: js.UndefOr[TimestampType]
   }
 
-  object PutScheduledActionRequest {
-    @inline
-    def apply(
-        ResourceId: ResourceIdMaxLen1600,
-        ScalableDimension: ScalableDimension,
-        ScheduledActionName: ScheduledActionName,
-        ServiceNamespace: ServiceNamespace,
-        EndTime: js.UndefOr[TimestampType] = js.undefined,
-        ScalableTargetAction: js.UndefOr[ScalableTargetAction] = js.undefined,
-        Schedule: js.UndefOr[ResourceIdMaxLen1600] = js.undefined,
-        StartTime: js.UndefOr[TimestampType] = js.undefined
-    ): PutScheduledActionRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceId"          -> ResourceId.asInstanceOf[js.Any],
-        "ScalableDimension"   -> ScalableDimension.asInstanceOf[js.Any],
-        "ScheduledActionName" -> ScheduledActionName.asInstanceOf[js.Any],
-        "ServiceNamespace"    -> ServiceNamespace.asInstanceOf[js.Any]
-      )
-
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      ScalableTargetAction.foreach(__v => __obj.updateDynamic("ScalableTargetAction")(__v.asInstanceOf[js.Any]))
-      Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutScheduledActionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutScheduledActionResponse extends js.Object {}
 
-  object PutScheduledActionResponse {
-    @inline
-    def apply(
-    ): PutScheduledActionResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutScheduledActionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait RegisterScalableTargetRequest extends js.Object {
     var ResourceId: ResourceIdMaxLen1600
     var ScalableDimension: ScalableDimension
@@ -724,43 +376,9 @@ package applicationautoscaling {
     var SuspendedState: js.UndefOr[SuspendedState]
   }
 
-  object RegisterScalableTargetRequest {
-    @inline
-    def apply(
-        ResourceId: ResourceIdMaxLen1600,
-        ScalableDimension: ScalableDimension,
-        ServiceNamespace: ServiceNamespace,
-        MaxCapacity: js.UndefOr[ResourceCapacity] = js.undefined,
-        MinCapacity: js.UndefOr[ResourceCapacity] = js.undefined,
-        RoleARN: js.UndefOr[ResourceIdMaxLen1600] = js.undefined,
-        SuspendedState: js.UndefOr[SuspendedState] = js.undefined
-    ): RegisterScalableTargetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceId"        -> ResourceId.asInstanceOf[js.Any],
-        "ScalableDimension" -> ScalableDimension.asInstanceOf[js.Any],
-        "ServiceNamespace"  -> ServiceNamespace.asInstanceOf[js.Any]
-      )
-
-      MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
-      MinCapacity.foreach(__v => __obj.updateDynamic("MinCapacity")(__v.asInstanceOf[js.Any]))
-      RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
-      SuspendedState.foreach(__v => __obj.updateDynamic("SuspendedState")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RegisterScalableTargetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait RegisterScalableTargetResponse extends js.Object {}
-
-  object RegisterScalableTargetResponse {
-    @inline
-    def apply(
-    ): RegisterScalableTargetResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[RegisterScalableTargetResponse]
-    }
-  }
 
   @js.native
   sealed trait ScalableDimension extends js.Any
@@ -808,6 +426,7 @@ package applicationautoscaling {
     * Represents a scalable target.
     */
   @js.native
+  @Factory
   trait ScalableTarget extends js.Object {
     var CreationTime: TimestampType
     var MaxCapacity: ResourceCapacity
@@ -819,59 +438,21 @@ package applicationautoscaling {
     var SuspendedState: js.UndefOr[SuspendedState]
   }
 
-  object ScalableTarget {
-    @inline
-    def apply(
-        CreationTime: TimestampType,
-        MaxCapacity: ResourceCapacity,
-        MinCapacity: ResourceCapacity,
-        ResourceId: ResourceIdMaxLen1600,
-        RoleARN: ResourceIdMaxLen1600,
-        ScalableDimension: ScalableDimension,
-        ServiceNamespace: ServiceNamespace,
-        SuspendedState: js.UndefOr[SuspendedState] = js.undefined
-    ): ScalableTarget = {
-      val __obj = js.Dynamic.literal(
-        "CreationTime"      -> CreationTime.asInstanceOf[js.Any],
-        "MaxCapacity"       -> MaxCapacity.asInstanceOf[js.Any],
-        "MinCapacity"       -> MinCapacity.asInstanceOf[js.Any],
-        "ResourceId"        -> ResourceId.asInstanceOf[js.Any],
-        "RoleARN"           -> RoleARN.asInstanceOf[js.Any],
-        "ScalableDimension" -> ScalableDimension.asInstanceOf[js.Any],
-        "ServiceNamespace"  -> ServiceNamespace.asInstanceOf[js.Any]
-      )
-
-      SuspendedState.foreach(__v => __obj.updateDynamic("SuspendedState")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ScalableTarget]
-    }
-  }
-
   /**
     * Represents the minimum and maximum capacity for a scheduled action.
     */
   @js.native
+  @Factory
   trait ScalableTargetAction extends js.Object {
     var MaxCapacity: js.UndefOr[ResourceCapacity]
     var MinCapacity: js.UndefOr[ResourceCapacity]
-  }
-
-  object ScalableTargetAction {
-    @inline
-    def apply(
-        MaxCapacity: js.UndefOr[ResourceCapacity] = js.undefined,
-        MinCapacity: js.UndefOr[ResourceCapacity] = js.undefined
-    ): ScalableTargetAction = {
-      val __obj = js.Dynamic.literal()
-      MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
-      MinCapacity.foreach(__v => __obj.updateDynamic("MinCapacity")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ScalableTargetAction]
-    }
   }
 
   /**
     * Represents a scaling activity.
     */
   @js.native
+  @Factory
   trait ScalingActivity extends js.Object {
     var ActivityId: ResourceId
     var Cause: XmlString
@@ -884,39 +465,6 @@ package applicationautoscaling {
     var Details: js.UndefOr[XmlString]
     var EndTime: js.UndefOr[TimestampType]
     var StatusMessage: js.UndefOr[XmlString]
-  }
-
-  object ScalingActivity {
-    @inline
-    def apply(
-        ActivityId: ResourceId,
-        Cause: XmlString,
-        Description: XmlString,
-        ResourceId: ResourceIdMaxLen1600,
-        ScalableDimension: ScalableDimension,
-        ServiceNamespace: ServiceNamespace,
-        StartTime: TimestampType,
-        StatusCode: ScalingActivityStatusCode,
-        Details: js.UndefOr[XmlString] = js.undefined,
-        EndTime: js.UndefOr[TimestampType] = js.undefined,
-        StatusMessage: js.UndefOr[XmlString] = js.undefined
-    ): ScalingActivity = {
-      val __obj = js.Dynamic.literal(
-        "ActivityId"        -> ActivityId.asInstanceOf[js.Any],
-        "Cause"             -> Cause.asInstanceOf[js.Any],
-        "Description"       -> Description.asInstanceOf[js.Any],
-        "ResourceId"        -> ResourceId.asInstanceOf[js.Any],
-        "ScalableDimension" -> ScalableDimension.asInstanceOf[js.Any],
-        "ServiceNamespace"  -> ServiceNamespace.asInstanceOf[js.Any],
-        "StartTime"         -> StartTime.asInstanceOf[js.Any],
-        "StatusCode"        -> StatusCode.asInstanceOf[js.Any]
-      )
-
-      Details.foreach(__v => __obj.updateDynamic("Details")(__v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ScalingActivity]
-    }
   }
 
   @js.native
@@ -936,6 +484,7 @@ package applicationautoscaling {
     * Represents a scaling policy to use with Application Auto Scaling.
     */
   @js.native
+  @Factory
   trait ScalingPolicy extends js.Object {
     var CreationTime: TimestampType
     var PolicyARN: ResourceIdMaxLen1600
@@ -949,45 +498,11 @@ package applicationautoscaling {
     var TargetTrackingScalingPolicyConfiguration: js.UndefOr[TargetTrackingScalingPolicyConfiguration]
   }
 
-  object ScalingPolicy {
-    @inline
-    def apply(
-        CreationTime: TimestampType,
-        PolicyARN: ResourceIdMaxLen1600,
-        PolicyName: PolicyName,
-        PolicyType: PolicyType,
-        ResourceId: ResourceIdMaxLen1600,
-        ScalableDimension: ScalableDimension,
-        ServiceNamespace: ServiceNamespace,
-        Alarms: js.UndefOr[Alarms] = js.undefined,
-        StepScalingPolicyConfiguration: js.UndefOr[StepScalingPolicyConfiguration] = js.undefined,
-        TargetTrackingScalingPolicyConfiguration: js.UndefOr[TargetTrackingScalingPolicyConfiguration] = js.undefined
-    ): ScalingPolicy = {
-      val __obj = js.Dynamic.literal(
-        "CreationTime"      -> CreationTime.asInstanceOf[js.Any],
-        "PolicyARN"         -> PolicyARN.asInstanceOf[js.Any],
-        "PolicyName"        -> PolicyName.asInstanceOf[js.Any],
-        "PolicyType"        -> PolicyType.asInstanceOf[js.Any],
-        "ResourceId"        -> ResourceId.asInstanceOf[js.Any],
-        "ScalableDimension" -> ScalableDimension.asInstanceOf[js.Any],
-        "ServiceNamespace"  -> ServiceNamespace.asInstanceOf[js.Any]
-      )
-
-      Alarms.foreach(__v => __obj.updateDynamic("Alarms")(__v.asInstanceOf[js.Any]))
-      StepScalingPolicyConfiguration.foreach(__v =>
-        __obj.updateDynamic("StepScalingPolicyConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      TargetTrackingScalingPolicyConfiguration.foreach(__v =>
-        __obj.updateDynamic("TargetTrackingScalingPolicyConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[ScalingPolicy]
-    }
-  }
-
   /**
     * Represents a scheduled action.
     */
   @js.native
+  @Factory
   trait ScheduledAction extends js.Object {
     var CreationTime: TimestampType
     var ResourceId: ResourceIdMaxLen1600
@@ -999,37 +514,6 @@ package applicationautoscaling {
     var ScalableDimension: js.UndefOr[ScalableDimension]
     var ScalableTargetAction: js.UndefOr[ScalableTargetAction]
     var StartTime: js.UndefOr[TimestampType]
-  }
-
-  object ScheduledAction {
-    @inline
-    def apply(
-        CreationTime: TimestampType,
-        ResourceId: ResourceIdMaxLen1600,
-        Schedule: ResourceIdMaxLen1600,
-        ScheduledActionARN: ResourceIdMaxLen1600,
-        ScheduledActionName: ScheduledActionName,
-        ServiceNamespace: ServiceNamespace,
-        EndTime: js.UndefOr[TimestampType] = js.undefined,
-        ScalableDimension: js.UndefOr[ScalableDimension] = js.undefined,
-        ScalableTargetAction: js.UndefOr[ScalableTargetAction] = js.undefined,
-        StartTime: js.UndefOr[TimestampType] = js.undefined
-    ): ScheduledAction = {
-      val __obj = js.Dynamic.literal(
-        "CreationTime"        -> CreationTime.asInstanceOf[js.Any],
-        "ResourceId"          -> ResourceId.asInstanceOf[js.Any],
-        "Schedule"            -> Schedule.asInstanceOf[js.Any],
-        "ScheduledActionARN"  -> ScheduledActionARN.asInstanceOf[js.Any],
-        "ScheduledActionName" -> ScheduledActionName.asInstanceOf[js.Any],
-        "ServiceNamespace"    -> ServiceNamespace.asInstanceOf[js.Any]
-      )
-
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      ScalableDimension.foreach(__v => __obj.updateDynamic("ScalableDimension")(__v.asInstanceOf[js.Any]))
-      ScalableTargetAction.foreach(__v => __obj.updateDynamic("ScalableTargetAction")(__v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ScheduledAction]
-    }
   }
 
   @js.native
@@ -1063,33 +547,18 @@ package applicationautoscaling {
     *  * The upper and lower bound can't be null in the same step adjustment.
     */
   @js.native
+  @Factory
   trait StepAdjustment extends js.Object {
     var ScalingAdjustment: ScalingAdjustment
     var MetricIntervalLowerBound: js.UndefOr[MetricScale]
     var MetricIntervalUpperBound: js.UndefOr[MetricScale]
   }
 
-  object StepAdjustment {
-    @inline
-    def apply(
-        ScalingAdjustment: ScalingAdjustment,
-        MetricIntervalLowerBound: js.UndefOr[MetricScale] = js.undefined,
-        MetricIntervalUpperBound: js.UndefOr[MetricScale] = js.undefined
-    ): StepAdjustment = {
-      val __obj = js.Dynamic.literal(
-        "ScalingAdjustment" -> ScalingAdjustment.asInstanceOf[js.Any]
-      )
-
-      MetricIntervalLowerBound.foreach(__v => __obj.updateDynamic("MetricIntervalLowerBound")(__v.asInstanceOf[js.Any]))
-      MetricIntervalUpperBound.foreach(__v => __obj.updateDynamic("MetricIntervalUpperBound")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StepAdjustment]
-    }
-  }
-
   /**
     * Represents a step scaling policy configuration to use with Application Auto Scaling.
     */
   @js.native
+  @Factory
   trait StepScalingPolicyConfiguration extends js.Object {
     var AdjustmentType: js.UndefOr[AdjustmentType]
     var Cooldown: js.UndefOr[Cooldown]
@@ -1098,60 +567,22 @@ package applicationautoscaling {
     var StepAdjustments: js.UndefOr[StepAdjustments]
   }
 
-  object StepScalingPolicyConfiguration {
-    @inline
-    def apply(
-        AdjustmentType: js.UndefOr[AdjustmentType] = js.undefined,
-        Cooldown: js.UndefOr[Cooldown] = js.undefined,
-        MetricAggregationType: js.UndefOr[MetricAggregationType] = js.undefined,
-        MinAdjustmentMagnitude: js.UndefOr[MinAdjustmentMagnitude] = js.undefined,
-        StepAdjustments: js.UndefOr[StepAdjustments] = js.undefined
-    ): StepScalingPolicyConfiguration = {
-      val __obj = js.Dynamic.literal()
-      AdjustmentType.foreach(__v => __obj.updateDynamic("AdjustmentType")(__v.asInstanceOf[js.Any]))
-      Cooldown.foreach(__v => __obj.updateDynamic("Cooldown")(__v.asInstanceOf[js.Any]))
-      MetricAggregationType.foreach(__v => __obj.updateDynamic("MetricAggregationType")(__v.asInstanceOf[js.Any]))
-      MinAdjustmentMagnitude.foreach(__v => __obj.updateDynamic("MinAdjustmentMagnitude")(__v.asInstanceOf[js.Any]))
-      StepAdjustments.foreach(__v => __obj.updateDynamic("StepAdjustments")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StepScalingPolicyConfiguration]
-    }
-  }
-
   /**
     * Specifies whether the scaling activities for a scalable target are in a suspended state.
     */
   @js.native
+  @Factory
   trait SuspendedState extends js.Object {
     var DynamicScalingInSuspended: js.UndefOr[ScalingSuspended]
     var DynamicScalingOutSuspended: js.UndefOr[ScalingSuspended]
     var ScheduledScalingSuspended: js.UndefOr[ScalingSuspended]
   }
 
-  object SuspendedState {
-    @inline
-    def apply(
-        DynamicScalingInSuspended: js.UndefOr[ScalingSuspended] = js.undefined,
-        DynamicScalingOutSuspended: js.UndefOr[ScalingSuspended] = js.undefined,
-        ScheduledScalingSuspended: js.UndefOr[ScalingSuspended] = js.undefined
-    ): SuspendedState = {
-      val __obj = js.Dynamic.literal()
-      DynamicScalingInSuspended.foreach(__v =>
-        __obj.updateDynamic("DynamicScalingInSuspended")(__v.asInstanceOf[js.Any])
-      )
-      DynamicScalingOutSuspended.foreach(__v =>
-        __obj.updateDynamic("DynamicScalingOutSuspended")(__v.asInstanceOf[js.Any])
-      )
-      ScheduledScalingSuspended.foreach(__v =>
-        __obj.updateDynamic("ScheduledScalingSuspended")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[SuspendedState]
-    }
-  }
-
   /**
     * Represents a target tracking scaling policy configuration to use with Application Auto Scaling.
     */
   @js.native
+  @Factory
   trait TargetTrackingScalingPolicyConfiguration extends js.Object {
     var TargetValue: MetricScale
     var CustomizedMetricSpecification: js.UndefOr[CustomizedMetricSpecification]
@@ -1159,32 +590,5 @@ package applicationautoscaling {
     var PredefinedMetricSpecification: js.UndefOr[PredefinedMetricSpecification]
     var ScaleInCooldown: js.UndefOr[Cooldown]
     var ScaleOutCooldown: js.UndefOr[Cooldown]
-  }
-
-  object TargetTrackingScalingPolicyConfiguration {
-    @inline
-    def apply(
-        TargetValue: MetricScale,
-        CustomizedMetricSpecification: js.UndefOr[CustomizedMetricSpecification] = js.undefined,
-        DisableScaleIn: js.UndefOr[DisableScaleIn] = js.undefined,
-        PredefinedMetricSpecification: js.UndefOr[PredefinedMetricSpecification] = js.undefined,
-        ScaleInCooldown: js.UndefOr[Cooldown] = js.undefined,
-        ScaleOutCooldown: js.UndefOr[Cooldown] = js.undefined
-    ): TargetTrackingScalingPolicyConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "TargetValue" -> TargetValue.asInstanceOf[js.Any]
-      )
-
-      CustomizedMetricSpecification.foreach(__v =>
-        __obj.updateDynamic("CustomizedMetricSpecification")(__v.asInstanceOf[js.Any])
-      )
-      DisableScaleIn.foreach(__v => __obj.updateDynamic("DisableScaleIn")(__v.asInstanceOf[js.Any]))
-      PredefinedMetricSpecification.foreach(__v =>
-        __obj.updateDynamic("PredefinedMetricSpecification")(__v.asInstanceOf[js.Any])
-      )
-      ScaleInCooldown.foreach(__v => __obj.updateDynamic("ScaleInCooldown")(__v.asInstanceOf[js.Any]))
-      ScaleOutCooldown.foreach(__v => __obj.updateDynamic("ScaleOutCooldown")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TargetTrackingScalingPolicyConfiguration]
-    }
   }
 }

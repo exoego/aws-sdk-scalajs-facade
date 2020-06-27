@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object lexmodelbuildingservice {
   type AliasName                   = String
@@ -197,6 +198,7 @@ package lexmodelbuildingservice {
     * Provides information about a bot alias.
     */
   @js.native
+  @Factory
   trait BotAliasMetadata extends js.Object {
     var botName: js.UndefOr[BotName]
     var botVersion: js.UndefOr[Version]
@@ -208,35 +210,11 @@ package lexmodelbuildingservice {
     var name: js.UndefOr[AliasName]
   }
 
-  object BotAliasMetadata {
-    @inline
-    def apply(
-        botName: js.UndefOr[BotName] = js.undefined,
-        botVersion: js.UndefOr[Version] = js.undefined,
-        checksum: js.UndefOr[String] = js.undefined,
-        conversationLogs: js.UndefOr[ConversationLogsResponse] = js.undefined,
-        createdDate: js.UndefOr[Timestamp] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined,
-        lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-        name: js.UndefOr[AliasName] = js.undefined
-    ): BotAliasMetadata = {
-      val __obj = js.Dynamic.literal()
-      botName.foreach(__v => __obj.updateDynamic("botName")(__v.asInstanceOf[js.Any]))
-      botVersion.foreach(__v => __obj.updateDynamic("botVersion")(__v.asInstanceOf[js.Any]))
-      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
-      conversationLogs.foreach(__v => __obj.updateDynamic("conversationLogs")(__v.asInstanceOf[js.Any]))
-      createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BotAliasMetadata]
-    }
-  }
-
   /**
     * Represents an association between an Amazon Lex bot and an external messaging platform.
     */
   @js.native
+  @Factory
   trait BotChannelAssociation extends js.Object {
     var botAlias: js.UndefOr[AliasName]
     var botConfiguration: js.UndefOr[ChannelConfigurationMap]
@@ -249,37 +227,11 @@ package lexmodelbuildingservice {
     var `type`: js.UndefOr[ChannelType]
   }
 
-  object BotChannelAssociation {
-    @inline
-    def apply(
-        botAlias: js.UndefOr[AliasName] = js.undefined,
-        botConfiguration: js.UndefOr[ChannelConfigurationMap] = js.undefined,
-        botName: js.UndefOr[BotName] = js.undefined,
-        createdDate: js.UndefOr[Timestamp] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined,
-        failureReason: js.UndefOr[String] = js.undefined,
-        name: js.UndefOr[BotChannelName] = js.undefined,
-        status: js.UndefOr[ChannelStatus] = js.undefined,
-        `type`: js.UndefOr[ChannelType] = js.undefined
-    ): BotChannelAssociation = {
-      val __obj = js.Dynamic.literal()
-      botAlias.foreach(__v => __obj.updateDynamic("botAlias")(__v.asInstanceOf[js.Any]))
-      botConfiguration.foreach(__v => __obj.updateDynamic("botConfiguration")(__v.asInstanceOf[js.Any]))
-      botName.foreach(__v => __obj.updateDynamic("botName")(__v.asInstanceOf[js.Any]))
-      createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BotChannelAssociation]
-    }
-  }
-
   /**
     * Provides information about a bot. .
     */
   @js.native
+  @Factory
   trait BotMetadata extends js.Object {
     var createdDate: js.UndefOr[Timestamp]
     var description: js.UndefOr[Description]
@@ -289,88 +241,33 @@ package lexmodelbuildingservice {
     var version: js.UndefOr[Version]
   }
 
-  object BotMetadata {
-    @inline
-    def apply(
-        createdDate: js.UndefOr[Timestamp] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined,
-        lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-        name: js.UndefOr[BotName] = js.undefined,
-        status: js.UndefOr[Status] = js.undefined,
-        version: js.UndefOr[Version] = js.undefined
-    ): BotMetadata = {
-      val __obj = js.Dynamic.literal()
-      createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BotMetadata]
-    }
-  }
-
   /**
     * Provides metadata for a built-in intent.
     */
   @js.native
+  @Factory
   trait BuiltinIntentMetadata extends js.Object {
     var signature: js.UndefOr[BuiltinIntentSignature]
     var supportedLocales: js.UndefOr[LocaleList]
-  }
-
-  object BuiltinIntentMetadata {
-    @inline
-    def apply(
-        signature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
-        supportedLocales: js.UndefOr[LocaleList] = js.undefined
-    ): BuiltinIntentMetadata = {
-      val __obj = js.Dynamic.literal()
-      signature.foreach(__v => __obj.updateDynamic("signature")(__v.asInstanceOf[js.Any]))
-      supportedLocales.foreach(__v => __obj.updateDynamic("supportedLocales")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BuiltinIntentMetadata]
-    }
   }
 
   /**
     * Provides information about a slot used in a built-in intent.
     */
   @js.native
+  @Factory
   trait BuiltinIntentSlot extends js.Object {
     var name: js.UndefOr[String]
-  }
-
-  object BuiltinIntentSlot {
-    @inline
-    def apply(
-        name: js.UndefOr[String] = js.undefined
-    ): BuiltinIntentSlot = {
-      val __obj = js.Dynamic.literal()
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BuiltinIntentSlot]
-    }
   }
 
   /**
     * Provides information about a built in slot type.
     */
   @js.native
+  @Factory
   trait BuiltinSlotTypeMetadata extends js.Object {
     var signature: js.UndefOr[BuiltinSlotTypeSignature]
     var supportedLocales: js.UndefOr[LocaleList]
-  }
-
-  object BuiltinSlotTypeMetadata {
-    @inline
-    def apply(
-        signature: js.UndefOr[BuiltinSlotTypeSignature] = js.undefined,
-        supportedLocales: js.UndefOr[LocaleList] = js.undefined
-    ): BuiltinSlotTypeMetadata = {
-      val __obj = js.Dynamic.literal()
-      signature.foreach(__v => __obj.updateDynamic("signature")(__v.asInstanceOf[js.Any]))
-      supportedLocales.foreach(__v => __obj.updateDynamic("supportedLocales")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BuiltinSlotTypeMetadata]
-    }
   }
 
   @js.native
@@ -398,24 +295,10 @@ package lexmodelbuildingservice {
     * Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot..
     */
   @js.native
+  @Factory
   trait CodeHook extends js.Object {
     var messageVersion: MessageVersion
     var uri: LambdaARN
-  }
-
-  object CodeHook {
-    @inline
-    def apply(
-        messageVersion: MessageVersion,
-        uri: LambdaARN
-    ): CodeHook = {
-      val __obj = js.Dynamic.literal(
-        "messageVersion" -> messageVersion.asInstanceOf[js.Any],
-        "uri"            -> uri.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CodeHook]
-    }
   }
 
   @js.native
@@ -432,70 +315,31 @@ package lexmodelbuildingservice {
     * Provides the settings needed for conversation logs.
     */
   @js.native
+  @Factory
   trait ConversationLogsRequest extends js.Object {
     var iamRoleArn: IamRoleArn
     var logSettings: LogSettingsRequestList
-  }
-
-  object ConversationLogsRequest {
-    @inline
-    def apply(
-        iamRoleArn: IamRoleArn,
-        logSettings: LogSettingsRequestList
-    ): ConversationLogsRequest = {
-      val __obj = js.Dynamic.literal(
-        "iamRoleArn"  -> iamRoleArn.asInstanceOf[js.Any],
-        "logSettings" -> logSettings.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ConversationLogsRequest]
-    }
   }
 
   /**
     * Contains information about conversation log settings.
     */
   @js.native
+  @Factory
   trait ConversationLogsResponse extends js.Object {
     var iamRoleArn: js.UndefOr[IamRoleArn]
     var logSettings: js.UndefOr[LogSettingsResponseList]
   }
 
-  object ConversationLogsResponse {
-    @inline
-    def apply(
-        iamRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
-        logSettings: js.UndefOr[LogSettingsResponseList] = js.undefined
-    ): ConversationLogsResponse = {
-      val __obj = js.Dynamic.literal()
-      iamRoleArn.foreach(__v => __obj.updateDynamic("iamRoleArn")(__v.asInstanceOf[js.Any]))
-      logSettings.foreach(__v => __obj.updateDynamic("logSettings")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ConversationLogsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateBotVersionRequest extends js.Object {
     var name: BotName
     var checksum: js.UndefOr[String]
   }
 
-  object CreateBotVersionRequest {
-    @inline
-    def apply(
-        name: BotName,
-        checksum: js.UndefOr[String] = js.undefined
-    ): CreateBotVersionRequest = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateBotVersionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateBotVersionResponse extends js.Object {
     var abortStatement: js.UndefOr[Statement]
     var checksum: js.UndefOr[String]
@@ -515,69 +359,15 @@ package lexmodelbuildingservice {
     var voiceId: js.UndefOr[String]
   }
 
-  object CreateBotVersionResponse {
-    @inline
-    def apply(
-        abortStatement: js.UndefOr[Statement] = js.undefined,
-        checksum: js.UndefOr[String] = js.undefined,
-        childDirected: js.UndefOr[Boolean] = js.undefined,
-        clarificationPrompt: js.UndefOr[Prompt] = js.undefined,
-        createdDate: js.UndefOr[Timestamp] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined,
-        detectSentiment: js.UndefOr[Boolean] = js.undefined,
-        failureReason: js.UndefOr[String] = js.undefined,
-        idleSessionTTLInSeconds: js.UndefOr[SessionTTL] = js.undefined,
-        intents: js.UndefOr[IntentList] = js.undefined,
-        lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-        locale: js.UndefOr[Locale] = js.undefined,
-        name: js.UndefOr[BotName] = js.undefined,
-        status: js.UndefOr[Status] = js.undefined,
-        version: js.UndefOr[Version] = js.undefined,
-        voiceId: js.UndefOr[String] = js.undefined
-    ): CreateBotVersionResponse = {
-      val __obj = js.Dynamic.literal()
-      abortStatement.foreach(__v => __obj.updateDynamic("abortStatement")(__v.asInstanceOf[js.Any]))
-      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
-      childDirected.foreach(__v => __obj.updateDynamic("childDirected")(__v.asInstanceOf[js.Any]))
-      clarificationPrompt.foreach(__v => __obj.updateDynamic("clarificationPrompt")(__v.asInstanceOf[js.Any]))
-      createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      detectSentiment.foreach(__v => __obj.updateDynamic("detectSentiment")(__v.asInstanceOf[js.Any]))
-      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
-      idleSessionTTLInSeconds.foreach(__v => __obj.updateDynamic("idleSessionTTLInSeconds")(__v.asInstanceOf[js.Any]))
-      intents.foreach(__v => __obj.updateDynamic("intents")(__v.asInstanceOf[js.Any]))
-      lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
-      locale.foreach(__v => __obj.updateDynamic("locale")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      voiceId.foreach(__v => __obj.updateDynamic("voiceId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateBotVersionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateIntentVersionRequest extends js.Object {
     var name: IntentName
     var checksum: js.UndefOr[String]
   }
 
-  object CreateIntentVersionRequest {
-    @inline
-    def apply(
-        name: IntentName,
-        checksum: js.UndefOr[String] = js.undefined
-    ): CreateIntentVersionRequest = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateIntentVersionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateIntentVersionResponse extends js.Object {
     var checksum: js.UndefOr[String]
     var conclusionStatement: js.UndefOr[Statement]
@@ -596,67 +386,15 @@ package lexmodelbuildingservice {
     var version: js.UndefOr[Version]
   }
 
-  object CreateIntentVersionResponse {
-    @inline
-    def apply(
-        checksum: js.UndefOr[String] = js.undefined,
-        conclusionStatement: js.UndefOr[Statement] = js.undefined,
-        confirmationPrompt: js.UndefOr[Prompt] = js.undefined,
-        createdDate: js.UndefOr[Timestamp] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined,
-        dialogCodeHook: js.UndefOr[CodeHook] = js.undefined,
-        followUpPrompt: js.UndefOr[FollowUpPrompt] = js.undefined,
-        fulfillmentActivity: js.UndefOr[FulfillmentActivity] = js.undefined,
-        lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-        name: js.UndefOr[IntentName] = js.undefined,
-        parentIntentSignature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
-        rejectionStatement: js.UndefOr[Statement] = js.undefined,
-        sampleUtterances: js.UndefOr[IntentUtteranceList] = js.undefined,
-        slots: js.UndefOr[SlotList] = js.undefined,
-        version: js.UndefOr[Version] = js.undefined
-    ): CreateIntentVersionResponse = {
-      val __obj = js.Dynamic.literal()
-      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
-      conclusionStatement.foreach(__v => __obj.updateDynamic("conclusionStatement")(__v.asInstanceOf[js.Any]))
-      confirmationPrompt.foreach(__v => __obj.updateDynamic("confirmationPrompt")(__v.asInstanceOf[js.Any]))
-      createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      dialogCodeHook.foreach(__v => __obj.updateDynamic("dialogCodeHook")(__v.asInstanceOf[js.Any]))
-      followUpPrompt.foreach(__v => __obj.updateDynamic("followUpPrompt")(__v.asInstanceOf[js.Any]))
-      fulfillmentActivity.foreach(__v => __obj.updateDynamic("fulfillmentActivity")(__v.asInstanceOf[js.Any]))
-      lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      parentIntentSignature.foreach(__v => __obj.updateDynamic("parentIntentSignature")(__v.asInstanceOf[js.Any]))
-      rejectionStatement.foreach(__v => __obj.updateDynamic("rejectionStatement")(__v.asInstanceOf[js.Any]))
-      sampleUtterances.foreach(__v => __obj.updateDynamic("sampleUtterances")(__v.asInstanceOf[js.Any]))
-      slots.foreach(__v => __obj.updateDynamic("slots")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateIntentVersionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateSlotTypeVersionRequest extends js.Object {
     var name: SlotTypeName
     var checksum: js.UndefOr[String]
   }
 
-  object CreateSlotTypeVersionRequest {
-    @inline
-    def apply(
-        name: SlotTypeName,
-        checksum: js.UndefOr[String] = js.undefined
-    ): CreateSlotTypeVersionRequest = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateSlotTypeVersionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateSlotTypeVersionResponse extends js.Object {
     var checksum: js.UndefOr[String]
     var createdDate: js.UndefOr[Timestamp]
@@ -670,216 +408,65 @@ package lexmodelbuildingservice {
     var version: js.UndefOr[Version]
   }
 
-  object CreateSlotTypeVersionResponse {
-    @inline
-    def apply(
-        checksum: js.UndefOr[String] = js.undefined,
-        createdDate: js.UndefOr[Timestamp] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined,
-        enumerationValues: js.UndefOr[EnumerationValues] = js.undefined,
-        lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-        name: js.UndefOr[SlotTypeName] = js.undefined,
-        parentSlotTypeSignature: js.UndefOr[CustomOrBuiltinSlotTypeName] = js.undefined,
-        slotTypeConfigurations: js.UndefOr[SlotTypeConfigurations] = js.undefined,
-        valueSelectionStrategy: js.UndefOr[SlotValueSelectionStrategy] = js.undefined,
-        version: js.UndefOr[Version] = js.undefined
-    ): CreateSlotTypeVersionResponse = {
-      val __obj = js.Dynamic.literal()
-      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
-      createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      enumerationValues.foreach(__v => __obj.updateDynamic("enumerationValues")(__v.asInstanceOf[js.Any]))
-      lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      parentSlotTypeSignature.foreach(__v => __obj.updateDynamic("parentSlotTypeSignature")(__v.asInstanceOf[js.Any]))
-      slotTypeConfigurations.foreach(__v => __obj.updateDynamic("slotTypeConfigurations")(__v.asInstanceOf[js.Any]))
-      valueSelectionStrategy.foreach(__v => __obj.updateDynamic("valueSelectionStrategy")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateSlotTypeVersionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteBotAliasRequest extends js.Object {
     var botName: BotName
     var name: AliasName
   }
 
-  object DeleteBotAliasRequest {
-    @inline
-    def apply(
-        botName: BotName,
-        name: AliasName
-    ): DeleteBotAliasRequest = {
-      val __obj = js.Dynamic.literal(
-        "botName" -> botName.asInstanceOf[js.Any],
-        "name"    -> name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteBotAliasRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteBotChannelAssociationRequest extends js.Object {
     var botAlias: AliasName
     var botName: BotName
     var name: BotChannelName
   }
 
-  object DeleteBotChannelAssociationRequest {
-    @inline
-    def apply(
-        botAlias: AliasName,
-        botName: BotName,
-        name: BotChannelName
-    ): DeleteBotChannelAssociationRequest = {
-      val __obj = js.Dynamic.literal(
-        "botAlias" -> botAlias.asInstanceOf[js.Any],
-        "botName"  -> botName.asInstanceOf[js.Any],
-        "name"     -> name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteBotChannelAssociationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteBotRequest extends js.Object {
     var name: BotName
   }
 
-  object DeleteBotRequest {
-    @inline
-    def apply(
-        name: BotName
-    ): DeleteBotRequest = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteBotRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteBotVersionRequest extends js.Object {
     var name: BotName
     var version: NumericalVersion
   }
 
-  object DeleteBotVersionRequest {
-    @inline
-    def apply(
-        name: BotName,
-        version: NumericalVersion
-    ): DeleteBotVersionRequest = {
-      val __obj = js.Dynamic.literal(
-        "name"    -> name.asInstanceOf[js.Any],
-        "version" -> version.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteBotVersionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteIntentRequest extends js.Object {
     var name: IntentName
   }
 
-  object DeleteIntentRequest {
-    @inline
-    def apply(
-        name: IntentName
-    ): DeleteIntentRequest = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteIntentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteIntentVersionRequest extends js.Object {
     var name: IntentName
     var version: NumericalVersion
   }
 
-  object DeleteIntentVersionRequest {
-    @inline
-    def apply(
-        name: IntentName,
-        version: NumericalVersion
-    ): DeleteIntentVersionRequest = {
-      val __obj = js.Dynamic.literal(
-        "name"    -> name.asInstanceOf[js.Any],
-        "version" -> version.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteIntentVersionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteSlotTypeRequest extends js.Object {
     var name: SlotTypeName
   }
 
-  object DeleteSlotTypeRequest {
-    @inline
-    def apply(
-        name: SlotTypeName
-    ): DeleteSlotTypeRequest = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteSlotTypeRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteSlotTypeVersionRequest extends js.Object {
     var name: SlotTypeName
     var version: NumericalVersion
   }
 
-  object DeleteSlotTypeVersionRequest {
-    @inline
-    def apply(
-        name: SlotTypeName,
-        version: NumericalVersion
-    ): DeleteSlotTypeVersionRequest = {
-      val __obj = js.Dynamic.literal(
-        "name"    -> name.asInstanceOf[js.Any],
-        "version" -> version.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteSlotTypeVersionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteUtterancesRequest extends js.Object {
     var botName: BotName
     var userId: UserId
-  }
-
-  object DeleteUtterancesRequest {
-    @inline
-    def apply(
-        botName: BotName,
-        userId: UserId
-    ): DeleteUtterancesRequest = {
-      val __obj = js.Dynamic.literal(
-        "botName" -> botName.asInstanceOf[js.Any],
-        "userId"  -> userId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteUtterancesRequest]
-    }
   }
 
   @js.native
@@ -899,24 +486,10 @@ package lexmodelbuildingservice {
     *  * stuffed
     */
   @js.native
+  @Factory
   trait EnumerationValue extends js.Object {
     var value: Value
     var synonyms: js.UndefOr[SynonymList]
-  }
-
-  object EnumerationValue {
-    @inline
-    def apply(
-        value: Value,
-        synonyms: js.UndefOr[SynonymList] = js.undefined
-    ): EnumerationValue = {
-      val __obj = js.Dynamic.literal(
-        "value" -> value.asInstanceOf[js.Any]
-      )
-
-      synonyms.foreach(__v => __obj.updateDynamic("synonyms")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EnumerationValue]
-    }
   }
 
   @js.native
@@ -942,24 +515,10 @@ package lexmodelbuildingservice {
     * A prompt for additional activity after an intent is fulfilled. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to find out whether the user wants to order drinks.
     */
   @js.native
+  @Factory
   trait FollowUpPrompt extends js.Object {
     var prompt: Prompt
     var rejectionStatement: Statement
-  }
-
-  object FollowUpPrompt {
-    @inline
-    def apply(
-        prompt: Prompt,
-        rejectionStatement: Statement
-    ): FollowUpPrompt = {
-      val __obj = js.Dynamic.literal(
-        "prompt"             -> prompt.asInstanceOf[js.Any],
-        "rejectionStatement" -> rejectionStatement.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[FollowUpPrompt]
-    }
   }
 
   /**
@@ -969,24 +528,10 @@ package lexmodelbuildingservice {
     *  * In a gaming application, when a user says "pick up a rock," this information must go back to the client application so that it can perform the operation and update the graphics. In this case, you want Amazon Lex to return the intent data to the client.
     */
   @js.native
+  @Factory
   trait FulfillmentActivity extends js.Object {
     var `type`: FulfillmentActivityType
     var codeHook: js.UndefOr[CodeHook]
-  }
-
-  object FulfillmentActivity {
-    @inline
-    def apply(
-        `type`: FulfillmentActivityType,
-        codeHook: js.UndefOr[CodeHook] = js.undefined
-    ): FulfillmentActivity = {
-      val __obj = js.Dynamic.literal(
-        "type" -> `type`.asInstanceOf[js.Any]
-      )
-
-      codeHook.foreach(__v => __obj.updateDynamic("codeHook")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[FulfillmentActivity]
-    }
   }
 
   @js.native
@@ -999,27 +544,14 @@ package lexmodelbuildingservice {
   }
 
   @js.native
+  @Factory
   trait GetBotAliasRequest extends js.Object {
     var botName: BotName
     var name: AliasName
   }
 
-  object GetBotAliasRequest {
-    @inline
-    def apply(
-        botName: BotName,
-        name: AliasName
-    ): GetBotAliasRequest = {
-      val __obj = js.Dynamic.literal(
-        "botName" -> botName.asInstanceOf[js.Any],
-        "name"    -> name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBotAliasRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBotAliasResponse extends js.Object {
     var botName: js.UndefOr[BotName]
     var botVersion: js.UndefOr[Version]
@@ -1031,32 +563,8 @@ package lexmodelbuildingservice {
     var name: js.UndefOr[AliasName]
   }
 
-  object GetBotAliasResponse {
-    @inline
-    def apply(
-        botName: js.UndefOr[BotName] = js.undefined,
-        botVersion: js.UndefOr[Version] = js.undefined,
-        checksum: js.UndefOr[String] = js.undefined,
-        conversationLogs: js.UndefOr[ConversationLogsResponse] = js.undefined,
-        createdDate: js.UndefOr[Timestamp] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined,
-        lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-        name: js.UndefOr[AliasName] = js.undefined
-    ): GetBotAliasResponse = {
-      val __obj = js.Dynamic.literal()
-      botName.foreach(__v => __obj.updateDynamic("botName")(__v.asInstanceOf[js.Any]))
-      botVersion.foreach(__v => __obj.updateDynamic("botVersion")(__v.asInstanceOf[js.Any]))
-      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
-      conversationLogs.foreach(__v => __obj.updateDynamic("conversationLogs")(__v.asInstanceOf[js.Any]))
-      createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBotAliasResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBotAliasesRequest extends js.Object {
     var botName: BotName
     var maxResults: js.UndefOr[MaxResults]
@@ -1064,69 +572,23 @@ package lexmodelbuildingservice {
     var nextToken: js.UndefOr[NextToken]
   }
 
-  object GetBotAliasesRequest {
-    @inline
-    def apply(
-        botName: BotName,
-        maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nameContains: js.UndefOr[AliasName] = js.undefined,
-        nextToken: js.UndefOr[NextToken] = js.undefined
-    ): GetBotAliasesRequest = {
-      val __obj = js.Dynamic.literal(
-        "botName" -> botName.asInstanceOf[js.Any]
-      )
-
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nameContains.foreach(__v => __obj.updateDynamic("nameContains")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBotAliasesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBotAliasesResponse extends js.Object {
     var BotAliases: js.UndefOr[BotAliasMetadataList]
     var nextToken: js.UndefOr[NextToken]
   }
 
-  object GetBotAliasesResponse {
-    @inline
-    def apply(
-        BotAliases: js.UndefOr[BotAliasMetadataList] = js.undefined,
-        nextToken: js.UndefOr[NextToken] = js.undefined
-    ): GetBotAliasesResponse = {
-      val __obj = js.Dynamic.literal()
-      BotAliases.foreach(__v => __obj.updateDynamic("BotAliases")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBotAliasesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBotChannelAssociationRequest extends js.Object {
     var botAlias: AliasName
     var botName: BotName
     var name: BotChannelName
   }
 
-  object GetBotChannelAssociationRequest {
-    @inline
-    def apply(
-        botAlias: AliasName,
-        botName: BotName,
-        name: BotChannelName
-    ): GetBotChannelAssociationRequest = {
-      val __obj = js.Dynamic.literal(
-        "botAlias" -> botAlias.asInstanceOf[js.Any],
-        "botName"  -> botName.asInstanceOf[js.Any],
-        "name"     -> name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBotChannelAssociationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBotChannelAssociationResponse extends js.Object {
     var botAlias: js.UndefOr[AliasName]
     var botConfiguration: js.UndefOr[ChannelConfigurationMap]
@@ -1139,34 +601,8 @@ package lexmodelbuildingservice {
     var `type`: js.UndefOr[ChannelType]
   }
 
-  object GetBotChannelAssociationResponse {
-    @inline
-    def apply(
-        botAlias: js.UndefOr[AliasName] = js.undefined,
-        botConfiguration: js.UndefOr[ChannelConfigurationMap] = js.undefined,
-        botName: js.UndefOr[BotName] = js.undefined,
-        createdDate: js.UndefOr[Timestamp] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined,
-        failureReason: js.UndefOr[String] = js.undefined,
-        name: js.UndefOr[BotChannelName] = js.undefined,
-        status: js.UndefOr[ChannelStatus] = js.undefined,
-        `type`: js.UndefOr[ChannelType] = js.undefined
-    ): GetBotChannelAssociationResponse = {
-      val __obj = js.Dynamic.literal()
-      botAlias.foreach(__v => __obj.updateDynamic("botAlias")(__v.asInstanceOf[js.Any]))
-      botConfiguration.foreach(__v => __obj.updateDynamic("botConfiguration")(__v.asInstanceOf[js.Any]))
-      botName.foreach(__v => __obj.updateDynamic("botName")(__v.asInstanceOf[js.Any]))
-      createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBotChannelAssociationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBotChannelAssociationsRequest extends js.Object {
     var botAlias: AliasNameOrListAll
     var botName: BotName
@@ -1175,68 +611,22 @@ package lexmodelbuildingservice {
     var nextToken: js.UndefOr[NextToken]
   }
 
-  object GetBotChannelAssociationsRequest {
-    @inline
-    def apply(
-        botAlias: AliasNameOrListAll,
-        botName: BotName,
-        maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nameContains: js.UndefOr[BotChannelName] = js.undefined,
-        nextToken: js.UndefOr[NextToken] = js.undefined
-    ): GetBotChannelAssociationsRequest = {
-      val __obj = js.Dynamic.literal(
-        "botAlias" -> botAlias.asInstanceOf[js.Any],
-        "botName"  -> botName.asInstanceOf[js.Any]
-      )
-
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nameContains.foreach(__v => __obj.updateDynamic("nameContains")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBotChannelAssociationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBotChannelAssociationsResponse extends js.Object {
     var botChannelAssociations: js.UndefOr[BotChannelAssociationList]
     var nextToken: js.UndefOr[NextToken]
   }
 
-  object GetBotChannelAssociationsResponse {
-    @inline
-    def apply(
-        botChannelAssociations: js.UndefOr[BotChannelAssociationList] = js.undefined,
-        nextToken: js.UndefOr[NextToken] = js.undefined
-    ): GetBotChannelAssociationsResponse = {
-      val __obj = js.Dynamic.literal()
-      botChannelAssociations.foreach(__v => __obj.updateDynamic("botChannelAssociations")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBotChannelAssociationsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBotRequest extends js.Object {
     var name: BotName
     var versionOrAlias: String
   }
 
-  object GetBotRequest {
-    @inline
-    def apply(
-        name: BotName,
-        versionOrAlias: String
-    ): GetBotRequest = {
-      val __obj = js.Dynamic.literal(
-        "name"           -> name.asInstanceOf[js.Any],
-        "versionOrAlias" -> versionOrAlias.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBotRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBotResponse extends js.Object {
     var abortStatement: js.UndefOr[Statement]
     var checksum: js.UndefOr[String]
@@ -1256,172 +646,52 @@ package lexmodelbuildingservice {
     var voiceId: js.UndefOr[String]
   }
 
-  object GetBotResponse {
-    @inline
-    def apply(
-        abortStatement: js.UndefOr[Statement] = js.undefined,
-        checksum: js.UndefOr[String] = js.undefined,
-        childDirected: js.UndefOr[Boolean] = js.undefined,
-        clarificationPrompt: js.UndefOr[Prompt] = js.undefined,
-        createdDate: js.UndefOr[Timestamp] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined,
-        detectSentiment: js.UndefOr[Boolean] = js.undefined,
-        failureReason: js.UndefOr[String] = js.undefined,
-        idleSessionTTLInSeconds: js.UndefOr[SessionTTL] = js.undefined,
-        intents: js.UndefOr[IntentList] = js.undefined,
-        lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-        locale: js.UndefOr[Locale] = js.undefined,
-        name: js.UndefOr[BotName] = js.undefined,
-        status: js.UndefOr[Status] = js.undefined,
-        version: js.UndefOr[Version] = js.undefined,
-        voiceId: js.UndefOr[String] = js.undefined
-    ): GetBotResponse = {
-      val __obj = js.Dynamic.literal()
-      abortStatement.foreach(__v => __obj.updateDynamic("abortStatement")(__v.asInstanceOf[js.Any]))
-      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
-      childDirected.foreach(__v => __obj.updateDynamic("childDirected")(__v.asInstanceOf[js.Any]))
-      clarificationPrompt.foreach(__v => __obj.updateDynamic("clarificationPrompt")(__v.asInstanceOf[js.Any]))
-      createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      detectSentiment.foreach(__v => __obj.updateDynamic("detectSentiment")(__v.asInstanceOf[js.Any]))
-      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
-      idleSessionTTLInSeconds.foreach(__v => __obj.updateDynamic("idleSessionTTLInSeconds")(__v.asInstanceOf[js.Any]))
-      intents.foreach(__v => __obj.updateDynamic("intents")(__v.asInstanceOf[js.Any]))
-      lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
-      locale.foreach(__v => __obj.updateDynamic("locale")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      voiceId.foreach(__v => __obj.updateDynamic("voiceId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBotResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBotVersionsRequest extends js.Object {
     var name: BotName
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
   }
 
-  object GetBotVersionsRequest {
-    @inline
-    def apply(
-        name: BotName,
-        maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nextToken: js.UndefOr[NextToken] = js.undefined
-    ): GetBotVersionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBotVersionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBotVersionsResponse extends js.Object {
     var bots: js.UndefOr[BotMetadataList]
     var nextToken: js.UndefOr[NextToken]
   }
 
-  object GetBotVersionsResponse {
-    @inline
-    def apply(
-        bots: js.UndefOr[BotMetadataList] = js.undefined,
-        nextToken: js.UndefOr[NextToken] = js.undefined
-    ): GetBotVersionsResponse = {
-      val __obj = js.Dynamic.literal()
-      bots.foreach(__v => __obj.updateDynamic("bots")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBotVersionsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBotsRequest extends js.Object {
     var maxResults: js.UndefOr[MaxResults]
     var nameContains: js.UndefOr[BotName]
     var nextToken: js.UndefOr[NextToken]
   }
 
-  object GetBotsRequest {
-    @inline
-    def apply(
-        maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nameContains: js.UndefOr[BotName] = js.undefined,
-        nextToken: js.UndefOr[NextToken] = js.undefined
-    ): GetBotsRequest = {
-      val __obj = js.Dynamic.literal()
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nameContains.foreach(__v => __obj.updateDynamic("nameContains")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBotsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBotsResponse extends js.Object {
     var bots: js.UndefOr[BotMetadataList]
     var nextToken: js.UndefOr[NextToken]
   }
 
-  object GetBotsResponse {
-    @inline
-    def apply(
-        bots: js.UndefOr[BotMetadataList] = js.undefined,
-        nextToken: js.UndefOr[NextToken] = js.undefined
-    ): GetBotsResponse = {
-      val __obj = js.Dynamic.literal()
-      bots.foreach(__v => __obj.updateDynamic("bots")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBotsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBuiltinIntentRequest extends js.Object {
     var signature: BuiltinIntentSignature
   }
 
-  object GetBuiltinIntentRequest {
-    @inline
-    def apply(
-        signature: BuiltinIntentSignature
-    ): GetBuiltinIntentRequest = {
-      val __obj = js.Dynamic.literal(
-        "signature" -> signature.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBuiltinIntentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBuiltinIntentResponse extends js.Object {
     var signature: js.UndefOr[BuiltinIntentSignature]
     var slots: js.UndefOr[BuiltinIntentSlotList]
     var supportedLocales: js.UndefOr[LocaleList]
   }
 
-  object GetBuiltinIntentResponse {
-    @inline
-    def apply(
-        signature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
-        slots: js.UndefOr[BuiltinIntentSlotList] = js.undefined,
-        supportedLocales: js.UndefOr[LocaleList] = js.undefined
-    ): GetBuiltinIntentResponse = {
-      val __obj = js.Dynamic.literal()
-      signature.foreach(__v => __obj.updateDynamic("signature")(__v.asInstanceOf[js.Any]))
-      slots.foreach(__v => __obj.updateDynamic("slots")(__v.asInstanceOf[js.Any]))
-      supportedLocales.foreach(__v => __obj.updateDynamic("supportedLocales")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBuiltinIntentResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBuiltinIntentsRequest extends js.Object {
     var locale: js.UndefOr[Locale]
     var maxResults: js.UndefOr[MaxResults]
@@ -1429,43 +699,15 @@ package lexmodelbuildingservice {
     var signatureContains: js.UndefOr[String]
   }
 
-  object GetBuiltinIntentsRequest {
-    @inline
-    def apply(
-        locale: js.UndefOr[Locale] = js.undefined,
-        maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nextToken: js.UndefOr[NextToken] = js.undefined,
-        signatureContains: js.UndefOr[String] = js.undefined
-    ): GetBuiltinIntentsRequest = {
-      val __obj = js.Dynamic.literal()
-      locale.foreach(__v => __obj.updateDynamic("locale")(__v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      signatureContains.foreach(__v => __obj.updateDynamic("signatureContains")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBuiltinIntentsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBuiltinIntentsResponse extends js.Object {
     var intents: js.UndefOr[BuiltinIntentMetadataList]
     var nextToken: js.UndefOr[NextToken]
   }
 
-  object GetBuiltinIntentsResponse {
-    @inline
-    def apply(
-        intents: js.UndefOr[BuiltinIntentMetadataList] = js.undefined,
-        nextToken: js.UndefOr[NextToken] = js.undefined
-    ): GetBuiltinIntentsResponse = {
-      val __obj = js.Dynamic.literal()
-      intents.foreach(__v => __obj.updateDynamic("intents")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBuiltinIntentsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBuiltinSlotTypesRequest extends js.Object {
     var locale: js.UndefOr[Locale]
     var maxResults: js.UndefOr[MaxResults]
@@ -1473,43 +715,15 @@ package lexmodelbuildingservice {
     var signatureContains: js.UndefOr[String]
   }
 
-  object GetBuiltinSlotTypesRequest {
-    @inline
-    def apply(
-        locale: js.UndefOr[Locale] = js.undefined,
-        maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nextToken: js.UndefOr[NextToken] = js.undefined,
-        signatureContains: js.UndefOr[String] = js.undefined
-    ): GetBuiltinSlotTypesRequest = {
-      val __obj = js.Dynamic.literal()
-      locale.foreach(__v => __obj.updateDynamic("locale")(__v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      signatureContains.foreach(__v => __obj.updateDynamic("signatureContains")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBuiltinSlotTypesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBuiltinSlotTypesResponse extends js.Object {
     var nextToken: js.UndefOr[NextToken]
     var slotTypes: js.UndefOr[BuiltinSlotTypeMetadataList]
   }
 
-  object GetBuiltinSlotTypesResponse {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[NextToken] = js.undefined,
-        slotTypes: js.UndefOr[BuiltinSlotTypeMetadataList] = js.undefined
-    ): GetBuiltinSlotTypesResponse = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      slotTypes.foreach(__v => __obj.updateDynamic("slotTypes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBuiltinSlotTypesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetExportRequest extends js.Object {
     var exportType: ExportType
     var name: Name
@@ -1517,26 +731,8 @@ package lexmodelbuildingservice {
     var version: NumericalVersion
   }
 
-  object GetExportRequest {
-    @inline
-    def apply(
-        exportType: ExportType,
-        name: Name,
-        resourceType: ResourceType,
-        version: NumericalVersion
-    ): GetExportRequest = {
-      val __obj = js.Dynamic.literal(
-        "exportType"   -> exportType.asInstanceOf[js.Any],
-        "name"         -> name.asInstanceOf[js.Any],
-        "resourceType" -> resourceType.asInstanceOf[js.Any],
-        "version"      -> version.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetExportRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetExportResponse extends js.Object {
     var exportStatus: js.UndefOr[ExportStatus]
     var exportType: js.UndefOr[ExportType]
@@ -1547,48 +743,14 @@ package lexmodelbuildingservice {
     var version: js.UndefOr[NumericalVersion]
   }
 
-  object GetExportResponse {
-    @inline
-    def apply(
-        exportStatus: js.UndefOr[ExportStatus] = js.undefined,
-        exportType: js.UndefOr[ExportType] = js.undefined,
-        failureReason: js.UndefOr[String] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined,
-        resourceType: js.UndefOr[ResourceType] = js.undefined,
-        url: js.UndefOr[String] = js.undefined,
-        version: js.UndefOr[NumericalVersion] = js.undefined
-    ): GetExportResponse = {
-      val __obj = js.Dynamic.literal()
-      exportStatus.foreach(__v => __obj.updateDynamic("exportStatus")(__v.asInstanceOf[js.Any]))
-      exportType.foreach(__v => __obj.updateDynamic("exportType")(__v.asInstanceOf[js.Any]))
-      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      url.foreach(__v => __obj.updateDynamic("url")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetExportResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetImportRequest extends js.Object {
     var importId: String
   }
 
-  object GetImportRequest {
-    @inline
-    def apply(
-        importId: String
-    ): GetImportRequest = {
-      val __obj = js.Dynamic.literal(
-        "importId" -> importId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetImportRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetImportResponse extends js.Object {
     var createdDate: js.UndefOr[Timestamp]
     var failureReason: js.UndefOr[StringList]
@@ -1599,51 +761,15 @@ package lexmodelbuildingservice {
     var resourceType: js.UndefOr[ResourceType]
   }
 
-  object GetImportResponse {
-    @inline
-    def apply(
-        createdDate: js.UndefOr[Timestamp] = js.undefined,
-        failureReason: js.UndefOr[StringList] = js.undefined,
-        importId: js.UndefOr[String] = js.undefined,
-        importStatus: js.UndefOr[ImportStatus] = js.undefined,
-        mergeStrategy: js.UndefOr[MergeStrategy] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined,
-        resourceType: js.UndefOr[ResourceType] = js.undefined
-    ): GetImportResponse = {
-      val __obj = js.Dynamic.literal()
-      createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
-      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
-      importId.foreach(__v => __obj.updateDynamic("importId")(__v.asInstanceOf[js.Any]))
-      importStatus.foreach(__v => __obj.updateDynamic("importStatus")(__v.asInstanceOf[js.Any]))
-      mergeStrategy.foreach(__v => __obj.updateDynamic("mergeStrategy")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetImportResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetIntentRequest extends js.Object {
     var name: IntentName
     var version: Version
   }
 
-  object GetIntentRequest {
-    @inline
-    def apply(
-        name: IntentName,
-        version: Version
-    ): GetIntentRequest = {
-      val __obj = js.Dynamic.literal(
-        "name"    -> name.asInstanceOf[js.Any],
-        "version" -> version.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetIntentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetIntentResponse extends js.Object {
     var checksum: js.UndefOr[String]
     var conclusionStatement: js.UndefOr[Statement]
@@ -1662,151 +788,45 @@ package lexmodelbuildingservice {
     var version: js.UndefOr[Version]
   }
 
-  object GetIntentResponse {
-    @inline
-    def apply(
-        checksum: js.UndefOr[String] = js.undefined,
-        conclusionStatement: js.UndefOr[Statement] = js.undefined,
-        confirmationPrompt: js.UndefOr[Prompt] = js.undefined,
-        createdDate: js.UndefOr[Timestamp] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined,
-        dialogCodeHook: js.UndefOr[CodeHook] = js.undefined,
-        followUpPrompt: js.UndefOr[FollowUpPrompt] = js.undefined,
-        fulfillmentActivity: js.UndefOr[FulfillmentActivity] = js.undefined,
-        lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-        name: js.UndefOr[IntentName] = js.undefined,
-        parentIntentSignature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
-        rejectionStatement: js.UndefOr[Statement] = js.undefined,
-        sampleUtterances: js.UndefOr[IntentUtteranceList] = js.undefined,
-        slots: js.UndefOr[SlotList] = js.undefined,
-        version: js.UndefOr[Version] = js.undefined
-    ): GetIntentResponse = {
-      val __obj = js.Dynamic.literal()
-      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
-      conclusionStatement.foreach(__v => __obj.updateDynamic("conclusionStatement")(__v.asInstanceOf[js.Any]))
-      confirmationPrompt.foreach(__v => __obj.updateDynamic("confirmationPrompt")(__v.asInstanceOf[js.Any]))
-      createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      dialogCodeHook.foreach(__v => __obj.updateDynamic("dialogCodeHook")(__v.asInstanceOf[js.Any]))
-      followUpPrompt.foreach(__v => __obj.updateDynamic("followUpPrompt")(__v.asInstanceOf[js.Any]))
-      fulfillmentActivity.foreach(__v => __obj.updateDynamic("fulfillmentActivity")(__v.asInstanceOf[js.Any]))
-      lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      parentIntentSignature.foreach(__v => __obj.updateDynamic("parentIntentSignature")(__v.asInstanceOf[js.Any]))
-      rejectionStatement.foreach(__v => __obj.updateDynamic("rejectionStatement")(__v.asInstanceOf[js.Any]))
-      sampleUtterances.foreach(__v => __obj.updateDynamic("sampleUtterances")(__v.asInstanceOf[js.Any]))
-      slots.foreach(__v => __obj.updateDynamic("slots")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetIntentResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetIntentVersionsRequest extends js.Object {
     var name: IntentName
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
   }
 
-  object GetIntentVersionsRequest {
-    @inline
-    def apply(
-        name: IntentName,
-        maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nextToken: js.UndefOr[NextToken] = js.undefined
-    ): GetIntentVersionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetIntentVersionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetIntentVersionsResponse extends js.Object {
     var intents: js.UndefOr[IntentMetadataList]
     var nextToken: js.UndefOr[NextToken]
   }
 
-  object GetIntentVersionsResponse {
-    @inline
-    def apply(
-        intents: js.UndefOr[IntentMetadataList] = js.undefined,
-        nextToken: js.UndefOr[NextToken] = js.undefined
-    ): GetIntentVersionsResponse = {
-      val __obj = js.Dynamic.literal()
-      intents.foreach(__v => __obj.updateDynamic("intents")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetIntentVersionsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetIntentsRequest extends js.Object {
     var maxResults: js.UndefOr[MaxResults]
     var nameContains: js.UndefOr[IntentName]
     var nextToken: js.UndefOr[NextToken]
   }
 
-  object GetIntentsRequest {
-    @inline
-    def apply(
-        maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nameContains: js.UndefOr[IntentName] = js.undefined,
-        nextToken: js.UndefOr[NextToken] = js.undefined
-    ): GetIntentsRequest = {
-      val __obj = js.Dynamic.literal()
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nameContains.foreach(__v => __obj.updateDynamic("nameContains")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetIntentsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetIntentsResponse extends js.Object {
     var intents: js.UndefOr[IntentMetadataList]
     var nextToken: js.UndefOr[NextToken]
   }
 
-  object GetIntentsResponse {
-    @inline
-    def apply(
-        intents: js.UndefOr[IntentMetadataList] = js.undefined,
-        nextToken: js.UndefOr[NextToken] = js.undefined
-    ): GetIntentsResponse = {
-      val __obj = js.Dynamic.literal()
-      intents.foreach(__v => __obj.updateDynamic("intents")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetIntentsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetSlotTypeRequest extends js.Object {
     var name: SlotTypeName
     var version: Version
   }
 
-  object GetSlotTypeRequest {
-    @inline
-    def apply(
-        name: SlotTypeName,
-        version: Version
-    ): GetSlotTypeRequest = {
-      val __obj = js.Dynamic.literal(
-        "name"    -> name.asInstanceOf[js.Any],
-        "version" -> version.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetSlotTypeRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetSlotTypeResponse extends js.Object {
     var checksum: js.UndefOr[String]
     var createdDate: js.UndefOr[Timestamp]
@@ -1820,160 +840,49 @@ package lexmodelbuildingservice {
     var version: js.UndefOr[Version]
   }
 
-  object GetSlotTypeResponse {
-    @inline
-    def apply(
-        checksum: js.UndefOr[String] = js.undefined,
-        createdDate: js.UndefOr[Timestamp] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined,
-        enumerationValues: js.UndefOr[EnumerationValues] = js.undefined,
-        lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-        name: js.UndefOr[SlotTypeName] = js.undefined,
-        parentSlotTypeSignature: js.UndefOr[CustomOrBuiltinSlotTypeName] = js.undefined,
-        slotTypeConfigurations: js.UndefOr[SlotTypeConfigurations] = js.undefined,
-        valueSelectionStrategy: js.UndefOr[SlotValueSelectionStrategy] = js.undefined,
-        version: js.UndefOr[Version] = js.undefined
-    ): GetSlotTypeResponse = {
-      val __obj = js.Dynamic.literal()
-      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
-      createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      enumerationValues.foreach(__v => __obj.updateDynamic("enumerationValues")(__v.asInstanceOf[js.Any]))
-      lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      parentSlotTypeSignature.foreach(__v => __obj.updateDynamic("parentSlotTypeSignature")(__v.asInstanceOf[js.Any]))
-      slotTypeConfigurations.foreach(__v => __obj.updateDynamic("slotTypeConfigurations")(__v.asInstanceOf[js.Any]))
-      valueSelectionStrategy.foreach(__v => __obj.updateDynamic("valueSelectionStrategy")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetSlotTypeResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetSlotTypeVersionsRequest extends js.Object {
     var name: SlotTypeName
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
   }
 
-  object GetSlotTypeVersionsRequest {
-    @inline
-    def apply(
-        name: SlotTypeName,
-        maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nextToken: js.UndefOr[NextToken] = js.undefined
-    ): GetSlotTypeVersionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetSlotTypeVersionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetSlotTypeVersionsResponse extends js.Object {
     var nextToken: js.UndefOr[NextToken]
     var slotTypes: js.UndefOr[SlotTypeMetadataList]
   }
 
-  object GetSlotTypeVersionsResponse {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[NextToken] = js.undefined,
-        slotTypes: js.UndefOr[SlotTypeMetadataList] = js.undefined
-    ): GetSlotTypeVersionsResponse = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      slotTypes.foreach(__v => __obj.updateDynamic("slotTypes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetSlotTypeVersionsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetSlotTypesRequest extends js.Object {
     var maxResults: js.UndefOr[MaxResults]
     var nameContains: js.UndefOr[SlotTypeName]
     var nextToken: js.UndefOr[NextToken]
   }
 
-  object GetSlotTypesRequest {
-    @inline
-    def apply(
-        maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nameContains: js.UndefOr[SlotTypeName] = js.undefined,
-        nextToken: js.UndefOr[NextToken] = js.undefined
-    ): GetSlotTypesRequest = {
-      val __obj = js.Dynamic.literal()
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nameContains.foreach(__v => __obj.updateDynamic("nameContains")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetSlotTypesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetSlotTypesResponse extends js.Object {
     var nextToken: js.UndefOr[NextToken]
     var slotTypes: js.UndefOr[SlotTypeMetadataList]
   }
 
-  object GetSlotTypesResponse {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[NextToken] = js.undefined,
-        slotTypes: js.UndefOr[SlotTypeMetadataList] = js.undefined
-    ): GetSlotTypesResponse = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      slotTypes.foreach(__v => __obj.updateDynamic("slotTypes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetSlotTypesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetUtterancesViewRequest extends js.Object {
     var botName: BotName
     var botVersions: BotVersions
     var statusType: StatusType
   }
 
-  object GetUtterancesViewRequest {
-    @inline
-    def apply(
-        botName: BotName,
-        botVersions: BotVersions,
-        statusType: StatusType
-    ): GetUtterancesViewRequest = {
-      val __obj = js.Dynamic.literal(
-        "botName"     -> botName.asInstanceOf[js.Any],
-        "botVersions" -> botVersions.asInstanceOf[js.Any],
-        "statusType"  -> statusType.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetUtterancesViewRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetUtterancesViewResponse extends js.Object {
     var botName: js.UndefOr[BotName]
     var utterances: js.UndefOr[ListsOfUtterances]
-  }
-
-  object GetUtterancesViewResponse {
-    @inline
-    def apply(
-        botName: js.UndefOr[BotName] = js.undefined,
-        utterances: js.UndefOr[ListsOfUtterances] = js.undefined
-    ): GetUtterancesViewResponse = {
-      val __obj = js.Dynamic.literal()
-      botName.foreach(__v => __obj.updateDynamic("botName")(__v.asInstanceOf[js.Any]))
-      utterances.foreach(__v => __obj.updateDynamic("utterances")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetUtterancesViewResponse]
-    }
   }
 
   @js.native
@@ -1990,55 +899,23 @@ package lexmodelbuildingservice {
     * Identifies the specific version of an intent.
     */
   @js.native
+  @Factory
   trait Intent extends js.Object {
     var intentName: IntentName
     var intentVersion: Version
-  }
-
-  object Intent {
-    @inline
-    def apply(
-        intentName: IntentName,
-        intentVersion: Version
-    ): Intent = {
-      val __obj = js.Dynamic.literal(
-        "intentName"    -> intentName.asInstanceOf[js.Any],
-        "intentVersion" -> intentVersion.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Intent]
-    }
   }
 
   /**
     * Provides information about an intent.
     */
   @js.native
+  @Factory
   trait IntentMetadata extends js.Object {
     var createdDate: js.UndefOr[Timestamp]
     var description: js.UndefOr[Description]
     var lastUpdatedDate: js.UndefOr[Timestamp]
     var name: js.UndefOr[IntentName]
     var version: js.UndefOr[Version]
-  }
-
-  object IntentMetadata {
-    @inline
-    def apply(
-        createdDate: js.UndefOr[Timestamp] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined,
-        lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-        name: js.UndefOr[IntentName] = js.undefined,
-        version: js.UndefOr[Version] = js.undefined
-    ): IntentMetadata = {
-      val __obj = js.Dynamic.literal()
-      createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[IntentMetadata]
-    }
   }
 
   @js.native
@@ -2055,6 +932,7 @@ package lexmodelbuildingservice {
     * Settings used to configure delivery mode and destination for conversation logs.
     */
   @js.native
+  @Factory
   trait LogSettingsRequest extends js.Object {
     var destination: Destination
     var logType: LogType
@@ -2062,54 +940,17 @@ package lexmodelbuildingservice {
     var kmsKeyArn: js.UndefOr[KmsKeyArn]
   }
 
-  object LogSettingsRequest {
-    @inline
-    def apply(
-        destination: Destination,
-        logType: LogType,
-        resourceArn: ResourceArn,
-        kmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined
-    ): LogSettingsRequest = {
-      val __obj = js.Dynamic.literal(
-        "destination" -> destination.asInstanceOf[js.Any],
-        "logType"     -> logType.asInstanceOf[js.Any],
-        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
-      )
-
-      kmsKeyArn.foreach(__v => __obj.updateDynamic("kmsKeyArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LogSettingsRequest]
-    }
-  }
-
   /**
     * The settings for conversation logs.
     */
   @js.native
+  @Factory
   trait LogSettingsResponse extends js.Object {
     var destination: js.UndefOr[Destination]
     var kmsKeyArn: js.UndefOr[KmsKeyArn]
     var logType: js.UndefOr[LogType]
     var resourceArn: js.UndefOr[ResourceArn]
     var resourcePrefix: js.UndefOr[ResourcePrefix]
-  }
-
-  object LogSettingsResponse {
-    @inline
-    def apply(
-        destination: js.UndefOr[Destination] = js.undefined,
-        kmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined,
-        logType: js.UndefOr[LogType] = js.undefined,
-        resourceArn: js.UndefOr[ResourceArn] = js.undefined,
-        resourcePrefix: js.UndefOr[ResourcePrefix] = js.undefined
-    ): LogSettingsResponse = {
-      val __obj = js.Dynamic.literal()
-      destination.foreach(__v => __obj.updateDynamic("destination")(__v.asInstanceOf[js.Any]))
-      kmsKeyArn.foreach(__v => __obj.updateDynamic("kmsKeyArn")(__v.asInstanceOf[js.Any]))
-      logType.foreach(__v => __obj.updateDynamic("logType")(__v.asInstanceOf[js.Any]))
-      resourceArn.foreach(__v => __obj.updateDynamic("resourceArn")(__v.asInstanceOf[js.Any]))
-      resourcePrefix.foreach(__v => __obj.updateDynamic("resourcePrefix")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LogSettingsResponse]
-    }
   }
 
   @js.native
@@ -2134,27 +975,11 @@ package lexmodelbuildingservice {
     * The message object that provides the message text and its type.
     */
   @js.native
+  @Factory
   trait Message extends js.Object {
     var content: ContentString
     var contentType: ContentType
     var groupNumber: js.UndefOr[GroupNumber]
-  }
-
-  object Message {
-    @inline
-    def apply(
-        content: ContentString,
-        contentType: ContentType,
-        groupNumber: js.UndefOr[GroupNumber] = js.undefined
-    ): Message = {
-      val __obj = js.Dynamic.literal(
-        "content"     -> content.asInstanceOf[js.Any],
-        "contentType" -> contentType.asInstanceOf[js.Any]
-      )
-
-      groupNumber.foreach(__v => __obj.updateDynamic("groupNumber")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Message]
-    }
   }
 
   @js.native
@@ -2179,30 +1004,15 @@ package lexmodelbuildingservice {
     * Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>.
     */
   @js.native
+  @Factory
   trait Prompt extends js.Object {
     var maxAttempts: PromptMaxAttempts
     var messages: MessageList
     var responseCard: js.UndefOr[ResponseCard]
   }
 
-  object Prompt {
-    @inline
-    def apply(
-        maxAttempts: PromptMaxAttempts,
-        messages: MessageList,
-        responseCard: js.UndefOr[ResponseCard] = js.undefined
-    ): Prompt = {
-      val __obj = js.Dynamic.literal(
-        "maxAttempts" -> maxAttempts.asInstanceOf[js.Any],
-        "messages"    -> messages.asInstanceOf[js.Any]
-      )
-
-      responseCard.foreach(__v => __obj.updateDynamic("responseCard")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Prompt]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutBotAliasRequest extends js.Object {
     var botName: BotName
     var botVersion: Version
@@ -2212,30 +1022,8 @@ package lexmodelbuildingservice {
     var description: js.UndefOr[Description]
   }
 
-  object PutBotAliasRequest {
-    @inline
-    def apply(
-        botName: BotName,
-        botVersion: Version,
-        name: AliasName,
-        checksum: js.UndefOr[String] = js.undefined,
-        conversationLogs: js.UndefOr[ConversationLogsRequest] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined
-    ): PutBotAliasRequest = {
-      val __obj = js.Dynamic.literal(
-        "botName"    -> botName.asInstanceOf[js.Any],
-        "botVersion" -> botVersion.asInstanceOf[js.Any],
-        "name"       -> name.asInstanceOf[js.Any]
-      )
-
-      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
-      conversationLogs.foreach(__v => __obj.updateDynamic("conversationLogs")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutBotAliasRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutBotAliasResponse extends js.Object {
     var botName: js.UndefOr[BotName]
     var botVersion: js.UndefOr[Version]
@@ -2247,32 +1035,8 @@ package lexmodelbuildingservice {
     var name: js.UndefOr[AliasName]
   }
 
-  object PutBotAliasResponse {
-    @inline
-    def apply(
-        botName: js.UndefOr[BotName] = js.undefined,
-        botVersion: js.UndefOr[Version] = js.undefined,
-        checksum: js.UndefOr[String] = js.undefined,
-        conversationLogs: js.UndefOr[ConversationLogsResponse] = js.undefined,
-        createdDate: js.UndefOr[Timestamp] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined,
-        lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-        name: js.UndefOr[AliasName] = js.undefined
-    ): PutBotAliasResponse = {
-      val __obj = js.Dynamic.literal()
-      botName.foreach(__v => __obj.updateDynamic("botName")(__v.asInstanceOf[js.Any]))
-      botVersion.foreach(__v => __obj.updateDynamic("botVersion")(__v.asInstanceOf[js.Any]))
-      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
-      conversationLogs.foreach(__v => __obj.updateDynamic("conversationLogs")(__v.asInstanceOf[js.Any]))
-      createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutBotAliasResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutBotRequest extends js.Object {
     var childDirected: Boolean
     var locale: Locale
@@ -2289,44 +1053,8 @@ package lexmodelbuildingservice {
     var voiceId: js.UndefOr[String]
   }
 
-  object PutBotRequest {
-    @inline
-    def apply(
-        childDirected: Boolean,
-        locale: Locale,
-        name: BotName,
-        abortStatement: js.UndefOr[Statement] = js.undefined,
-        checksum: js.UndefOr[String] = js.undefined,
-        clarificationPrompt: js.UndefOr[Prompt] = js.undefined,
-        createVersion: js.UndefOr[Boolean] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined,
-        detectSentiment: js.UndefOr[Boolean] = js.undefined,
-        idleSessionTTLInSeconds: js.UndefOr[SessionTTL] = js.undefined,
-        intents: js.UndefOr[IntentList] = js.undefined,
-        processBehavior: js.UndefOr[ProcessBehavior] = js.undefined,
-        voiceId: js.UndefOr[String] = js.undefined
-    ): PutBotRequest = {
-      val __obj = js.Dynamic.literal(
-        "childDirected" -> childDirected.asInstanceOf[js.Any],
-        "locale"        -> locale.asInstanceOf[js.Any],
-        "name"          -> name.asInstanceOf[js.Any]
-      )
-
-      abortStatement.foreach(__v => __obj.updateDynamic("abortStatement")(__v.asInstanceOf[js.Any]))
-      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
-      clarificationPrompt.foreach(__v => __obj.updateDynamic("clarificationPrompt")(__v.asInstanceOf[js.Any]))
-      createVersion.foreach(__v => __obj.updateDynamic("createVersion")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      detectSentiment.foreach(__v => __obj.updateDynamic("detectSentiment")(__v.asInstanceOf[js.Any]))
-      idleSessionTTLInSeconds.foreach(__v => __obj.updateDynamic("idleSessionTTLInSeconds")(__v.asInstanceOf[js.Any]))
-      intents.foreach(__v => __obj.updateDynamic("intents")(__v.asInstanceOf[js.Any]))
-      processBehavior.foreach(__v => __obj.updateDynamic("processBehavior")(__v.asInstanceOf[js.Any]))
-      voiceId.foreach(__v => __obj.updateDynamic("voiceId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutBotRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutBotResponse extends js.Object {
     var abortStatement: js.UndefOr[Statement]
     var checksum: js.UndefOr[String]
@@ -2347,50 +1075,8 @@ package lexmodelbuildingservice {
     var voiceId: js.UndefOr[String]
   }
 
-  object PutBotResponse {
-    @inline
-    def apply(
-        abortStatement: js.UndefOr[Statement] = js.undefined,
-        checksum: js.UndefOr[String] = js.undefined,
-        childDirected: js.UndefOr[Boolean] = js.undefined,
-        clarificationPrompt: js.UndefOr[Prompt] = js.undefined,
-        createVersion: js.UndefOr[Boolean] = js.undefined,
-        createdDate: js.UndefOr[Timestamp] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined,
-        detectSentiment: js.UndefOr[Boolean] = js.undefined,
-        failureReason: js.UndefOr[String] = js.undefined,
-        idleSessionTTLInSeconds: js.UndefOr[SessionTTL] = js.undefined,
-        intents: js.UndefOr[IntentList] = js.undefined,
-        lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-        locale: js.UndefOr[Locale] = js.undefined,
-        name: js.UndefOr[BotName] = js.undefined,
-        status: js.UndefOr[Status] = js.undefined,
-        version: js.UndefOr[Version] = js.undefined,
-        voiceId: js.UndefOr[String] = js.undefined
-    ): PutBotResponse = {
-      val __obj = js.Dynamic.literal()
-      abortStatement.foreach(__v => __obj.updateDynamic("abortStatement")(__v.asInstanceOf[js.Any]))
-      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
-      childDirected.foreach(__v => __obj.updateDynamic("childDirected")(__v.asInstanceOf[js.Any]))
-      clarificationPrompt.foreach(__v => __obj.updateDynamic("clarificationPrompt")(__v.asInstanceOf[js.Any]))
-      createVersion.foreach(__v => __obj.updateDynamic("createVersion")(__v.asInstanceOf[js.Any]))
-      createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      detectSentiment.foreach(__v => __obj.updateDynamic("detectSentiment")(__v.asInstanceOf[js.Any]))
-      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
-      idleSessionTTLInSeconds.foreach(__v => __obj.updateDynamic("idleSessionTTLInSeconds")(__v.asInstanceOf[js.Any]))
-      intents.foreach(__v => __obj.updateDynamic("intents")(__v.asInstanceOf[js.Any]))
-      lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
-      locale.foreach(__v => __obj.updateDynamic("locale")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      voiceId.foreach(__v => __obj.updateDynamic("voiceId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutBotResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutIntentRequest extends js.Object {
     var name: IntentName
     var checksum: js.UndefOr[String]
@@ -2407,44 +1093,8 @@ package lexmodelbuildingservice {
     var slots: js.UndefOr[SlotList]
   }
 
-  object PutIntentRequest {
-    @inline
-    def apply(
-        name: IntentName,
-        checksum: js.UndefOr[String] = js.undefined,
-        conclusionStatement: js.UndefOr[Statement] = js.undefined,
-        confirmationPrompt: js.UndefOr[Prompt] = js.undefined,
-        createVersion: js.UndefOr[Boolean] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined,
-        dialogCodeHook: js.UndefOr[CodeHook] = js.undefined,
-        followUpPrompt: js.UndefOr[FollowUpPrompt] = js.undefined,
-        fulfillmentActivity: js.UndefOr[FulfillmentActivity] = js.undefined,
-        parentIntentSignature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
-        rejectionStatement: js.UndefOr[Statement] = js.undefined,
-        sampleUtterances: js.UndefOr[IntentUtteranceList] = js.undefined,
-        slots: js.UndefOr[SlotList] = js.undefined
-    ): PutIntentRequest = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
-      conclusionStatement.foreach(__v => __obj.updateDynamic("conclusionStatement")(__v.asInstanceOf[js.Any]))
-      confirmationPrompt.foreach(__v => __obj.updateDynamic("confirmationPrompt")(__v.asInstanceOf[js.Any]))
-      createVersion.foreach(__v => __obj.updateDynamic("createVersion")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      dialogCodeHook.foreach(__v => __obj.updateDynamic("dialogCodeHook")(__v.asInstanceOf[js.Any]))
-      followUpPrompt.foreach(__v => __obj.updateDynamic("followUpPrompt")(__v.asInstanceOf[js.Any]))
-      fulfillmentActivity.foreach(__v => __obj.updateDynamic("fulfillmentActivity")(__v.asInstanceOf[js.Any]))
-      parentIntentSignature.foreach(__v => __obj.updateDynamic("parentIntentSignature")(__v.asInstanceOf[js.Any]))
-      rejectionStatement.foreach(__v => __obj.updateDynamic("rejectionStatement")(__v.asInstanceOf[js.Any]))
-      sampleUtterances.foreach(__v => __obj.updateDynamic("sampleUtterances")(__v.asInstanceOf[js.Any]))
-      slots.foreach(__v => __obj.updateDynamic("slots")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutIntentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutIntentResponse extends js.Object {
     var checksum: js.UndefOr[String]
     var conclusionStatement: js.UndefOr[Statement]
@@ -2464,48 +1114,8 @@ package lexmodelbuildingservice {
     var version: js.UndefOr[Version]
   }
 
-  object PutIntentResponse {
-    @inline
-    def apply(
-        checksum: js.UndefOr[String] = js.undefined,
-        conclusionStatement: js.UndefOr[Statement] = js.undefined,
-        confirmationPrompt: js.UndefOr[Prompt] = js.undefined,
-        createVersion: js.UndefOr[Boolean] = js.undefined,
-        createdDate: js.UndefOr[Timestamp] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined,
-        dialogCodeHook: js.UndefOr[CodeHook] = js.undefined,
-        followUpPrompt: js.UndefOr[FollowUpPrompt] = js.undefined,
-        fulfillmentActivity: js.UndefOr[FulfillmentActivity] = js.undefined,
-        lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-        name: js.UndefOr[IntentName] = js.undefined,
-        parentIntentSignature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
-        rejectionStatement: js.UndefOr[Statement] = js.undefined,
-        sampleUtterances: js.UndefOr[IntentUtteranceList] = js.undefined,
-        slots: js.UndefOr[SlotList] = js.undefined,
-        version: js.UndefOr[Version] = js.undefined
-    ): PutIntentResponse = {
-      val __obj = js.Dynamic.literal()
-      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
-      conclusionStatement.foreach(__v => __obj.updateDynamic("conclusionStatement")(__v.asInstanceOf[js.Any]))
-      confirmationPrompt.foreach(__v => __obj.updateDynamic("confirmationPrompt")(__v.asInstanceOf[js.Any]))
-      createVersion.foreach(__v => __obj.updateDynamic("createVersion")(__v.asInstanceOf[js.Any]))
-      createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      dialogCodeHook.foreach(__v => __obj.updateDynamic("dialogCodeHook")(__v.asInstanceOf[js.Any]))
-      followUpPrompt.foreach(__v => __obj.updateDynamic("followUpPrompt")(__v.asInstanceOf[js.Any]))
-      fulfillmentActivity.foreach(__v => __obj.updateDynamic("fulfillmentActivity")(__v.asInstanceOf[js.Any]))
-      lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      parentIntentSignature.foreach(__v => __obj.updateDynamic("parentIntentSignature")(__v.asInstanceOf[js.Any]))
-      rejectionStatement.foreach(__v => __obj.updateDynamic("rejectionStatement")(__v.asInstanceOf[js.Any]))
-      sampleUtterances.foreach(__v => __obj.updateDynamic("sampleUtterances")(__v.asInstanceOf[js.Any]))
-      slots.foreach(__v => __obj.updateDynamic("slots")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutIntentResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutSlotTypeRequest extends js.Object {
     var name: SlotTypeName
     var checksum: js.UndefOr[String]
@@ -2517,34 +1127,8 @@ package lexmodelbuildingservice {
     var valueSelectionStrategy: js.UndefOr[SlotValueSelectionStrategy]
   }
 
-  object PutSlotTypeRequest {
-    @inline
-    def apply(
-        name: SlotTypeName,
-        checksum: js.UndefOr[String] = js.undefined,
-        createVersion: js.UndefOr[Boolean] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined,
-        enumerationValues: js.UndefOr[EnumerationValues] = js.undefined,
-        parentSlotTypeSignature: js.UndefOr[CustomOrBuiltinSlotTypeName] = js.undefined,
-        slotTypeConfigurations: js.UndefOr[SlotTypeConfigurations] = js.undefined,
-        valueSelectionStrategy: js.UndefOr[SlotValueSelectionStrategy] = js.undefined
-    ): PutSlotTypeRequest = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
-      createVersion.foreach(__v => __obj.updateDynamic("createVersion")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      enumerationValues.foreach(__v => __obj.updateDynamic("enumerationValues")(__v.asInstanceOf[js.Any]))
-      parentSlotTypeSignature.foreach(__v => __obj.updateDynamic("parentSlotTypeSignature")(__v.asInstanceOf[js.Any]))
-      slotTypeConfigurations.foreach(__v => __obj.updateDynamic("slotTypeConfigurations")(__v.asInstanceOf[js.Any]))
-      valueSelectionStrategy.foreach(__v => __obj.updateDynamic("valueSelectionStrategy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutSlotTypeRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutSlotTypeResponse extends js.Object {
     var checksum: js.UndefOr[String]
     var createVersion: js.UndefOr[Boolean]
@@ -2557,37 +1141,6 @@ package lexmodelbuildingservice {
     var slotTypeConfigurations: js.UndefOr[SlotTypeConfigurations]
     var valueSelectionStrategy: js.UndefOr[SlotValueSelectionStrategy]
     var version: js.UndefOr[Version]
-  }
-
-  object PutSlotTypeResponse {
-    @inline
-    def apply(
-        checksum: js.UndefOr[String] = js.undefined,
-        createVersion: js.UndefOr[Boolean] = js.undefined,
-        createdDate: js.UndefOr[Timestamp] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined,
-        enumerationValues: js.UndefOr[EnumerationValues] = js.undefined,
-        lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-        name: js.UndefOr[SlotTypeName] = js.undefined,
-        parentSlotTypeSignature: js.UndefOr[CustomOrBuiltinSlotTypeName] = js.undefined,
-        slotTypeConfigurations: js.UndefOr[SlotTypeConfigurations] = js.undefined,
-        valueSelectionStrategy: js.UndefOr[SlotValueSelectionStrategy] = js.undefined,
-        version: js.UndefOr[Version] = js.undefined
-    ): PutSlotTypeResponse = {
-      val __obj = js.Dynamic.literal()
-      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
-      createVersion.foreach(__v => __obj.updateDynamic("createVersion")(__v.asInstanceOf[js.Any]))
-      createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      enumerationValues.foreach(__v => __obj.updateDynamic("enumerationValues")(__v.asInstanceOf[js.Any]))
-      lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      parentSlotTypeSignature.foreach(__v => __obj.updateDynamic("parentSlotTypeSignature")(__v.asInstanceOf[js.Any]))
-      slotTypeConfigurations.foreach(__v => __obj.updateDynamic("slotTypeConfigurations")(__v.asInstanceOf[js.Any]))
-      valueSelectionStrategy.foreach(__v => __obj.updateDynamic("valueSelectionStrategy")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutSlotTypeResponse]
-    }
   }
 
   @js.native
@@ -2604,6 +1157,7 @@ package lexmodelbuildingservice {
     * Identifies the version of a specific slot.
     */
   @js.native
+  @Factory
   trait Slot extends js.Object {
     var name: SlotName
     var slotConstraint: SlotConstraint
@@ -2615,37 +1169,6 @@ package lexmodelbuildingservice {
     var slotType: js.UndefOr[CustomOrBuiltinSlotTypeName]
     var slotTypeVersion: js.UndefOr[Version]
     var valueElicitationPrompt: js.UndefOr[Prompt]
-  }
-
-  object Slot {
-    @inline
-    def apply(
-        name: SlotName,
-        slotConstraint: SlotConstraint,
-        description: js.UndefOr[Description] = js.undefined,
-        obfuscationSetting: js.UndefOr[ObfuscationSetting] = js.undefined,
-        priority: js.UndefOr[Priority] = js.undefined,
-        responseCard: js.UndefOr[ResponseCard] = js.undefined,
-        sampleUtterances: js.UndefOr[SlotUtteranceList] = js.undefined,
-        slotType: js.UndefOr[CustomOrBuiltinSlotTypeName] = js.undefined,
-        slotTypeVersion: js.UndefOr[Version] = js.undefined,
-        valueElicitationPrompt: js.UndefOr[Prompt] = js.undefined
-    ): Slot = {
-      val __obj = js.Dynamic.literal(
-        "name"           -> name.asInstanceOf[js.Any],
-        "slotConstraint" -> slotConstraint.asInstanceOf[js.Any]
-      )
-
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      obfuscationSetting.foreach(__v => __obj.updateDynamic("obfuscationSetting")(__v.asInstanceOf[js.Any]))
-      priority.foreach(__v => __obj.updateDynamic("priority")(__v.asInstanceOf[js.Any]))
-      responseCard.foreach(__v => __obj.updateDynamic("responseCard")(__v.asInstanceOf[js.Any]))
-      sampleUtterances.foreach(__v => __obj.updateDynamic("sampleUtterances")(__v.asInstanceOf[js.Any]))
-      slotType.foreach(__v => __obj.updateDynamic("slotType")(__v.asInstanceOf[js.Any]))
-      slotTypeVersion.foreach(__v => __obj.updateDynamic("slotTypeVersion")(__v.asInstanceOf[js.Any]))
-      valueElicitationPrompt.foreach(__v => __obj.updateDynamic("valueElicitationPrompt")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Slot]
-    }
   }
 
   @js.native
@@ -2661,25 +1184,16 @@ package lexmodelbuildingservice {
     * Provides configuration information for a slot type.
     */
   @js.native
+  @Factory
   trait SlotTypeConfiguration extends js.Object {
     var regexConfiguration: js.UndefOr[SlotTypeRegexConfiguration]
-  }
-
-  object SlotTypeConfiguration {
-    @inline
-    def apply(
-        regexConfiguration: js.UndefOr[SlotTypeRegexConfiguration] = js.undefined
-    ): SlotTypeConfiguration = {
-      val __obj = js.Dynamic.literal()
-      regexConfiguration.foreach(__v => __obj.updateDynamic("regexConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SlotTypeConfiguration]
-    }
   }
 
   /**
     * Provides information about a slot type..
     */
   @js.native
+  @Factory
   trait SlotTypeMetadata extends js.Object {
     var createdDate: js.UndefOr[Timestamp]
     var description: js.UndefOr[Description]
@@ -2688,44 +1202,13 @@ package lexmodelbuildingservice {
     var version: js.UndefOr[Version]
   }
 
-  object SlotTypeMetadata {
-    @inline
-    def apply(
-        createdDate: js.UndefOr[Timestamp] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined,
-        lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-        name: js.UndefOr[SlotTypeName] = js.undefined,
-        version: js.UndefOr[Version] = js.undefined
-    ): SlotTypeMetadata = {
-      val __obj = js.Dynamic.literal()
-      createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SlotTypeMetadata]
-    }
-  }
-
   /**
     * Provides a regular expression used to validate the value of a slot.
     */
   @js.native
+  @Factory
   trait SlotTypeRegexConfiguration extends js.Object {
     var pattern: RegexPattern
-  }
-
-  object SlotTypeRegexConfiguration {
-    @inline
-    def apply(
-        pattern: RegexPattern
-    ): SlotTypeRegexConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "pattern" -> pattern.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SlotTypeRegexConfiguration]
-    }
   }
 
   @js.native
@@ -2738,30 +1221,15 @@ package lexmodelbuildingservice {
   }
 
   @js.native
+  @Factory
   trait StartImportRequest extends js.Object {
     var mergeStrategy: MergeStrategy
     var payload: Blob
     var resourceType: ResourceType
   }
 
-  object StartImportRequest {
-    @inline
-    def apply(
-        mergeStrategy: MergeStrategy,
-        payload: Blob,
-        resourceType: ResourceType
-    ): StartImportRequest = {
-      val __obj = js.Dynamic.literal(
-        "mergeStrategy" -> mergeStrategy.asInstanceOf[js.Any],
-        "payload"       -> payload.asInstanceOf[js.Any],
-        "resourceType"  -> resourceType.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StartImportRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartImportResponse extends js.Object {
     var createdDate: js.UndefOr[Timestamp]
     var importId: js.UndefOr[String]
@@ -2771,49 +1239,14 @@ package lexmodelbuildingservice {
     var resourceType: js.UndefOr[ResourceType]
   }
 
-  object StartImportResponse {
-    @inline
-    def apply(
-        createdDate: js.UndefOr[Timestamp] = js.undefined,
-        importId: js.UndefOr[String] = js.undefined,
-        importStatus: js.UndefOr[ImportStatus] = js.undefined,
-        mergeStrategy: js.UndefOr[MergeStrategy] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined,
-        resourceType: js.UndefOr[ResourceType] = js.undefined
-    ): StartImportResponse = {
-      val __obj = js.Dynamic.literal()
-      createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
-      importId.foreach(__v => __obj.updateDynamic("importId")(__v.asInstanceOf[js.Any]))
-      importStatus.foreach(__v => __obj.updateDynamic("importStatus")(__v.asInstanceOf[js.Any]))
-      mergeStrategy.foreach(__v => __obj.updateDynamic("mergeStrategy")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartImportResponse]
-    }
-  }
-
   /**
     * A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey.
     */
   @js.native
+  @Factory
   trait Statement extends js.Object {
     var messages: MessageList
     var responseCard: js.UndefOr[ResponseCard]
-  }
-
-  object Statement {
-    @inline
-    def apply(
-        messages: MessageList,
-        responseCard: js.UndefOr[ResponseCard] = js.undefined
-    ): Statement = {
-      val __obj = js.Dynamic.literal(
-        "messages" -> messages.asInstanceOf[js.Any]
-      )
-
-      responseCard.foreach(__v => __obj.updateDynamic("responseCard")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Statement]
-    }
   }
 
   @js.native
@@ -2841,6 +1274,7 @@ package lexmodelbuildingservice {
     * Provides information about a single utterance that was made to your bot.
     */
   @js.native
+  @Factory
   trait UtteranceData extends js.Object {
     var count: js.UndefOr[Count]
     var distinctUsers: js.UndefOr[Count]
@@ -2849,44 +1283,13 @@ package lexmodelbuildingservice {
     var utteranceString: js.UndefOr[UtteranceString]
   }
 
-  object UtteranceData {
-    @inline
-    def apply(
-        count: js.UndefOr[Count] = js.undefined,
-        distinctUsers: js.UndefOr[Count] = js.undefined,
-        firstUtteredDate: js.UndefOr[Timestamp] = js.undefined,
-        lastUtteredDate: js.UndefOr[Timestamp] = js.undefined,
-        utteranceString: js.UndefOr[UtteranceString] = js.undefined
-    ): UtteranceData = {
-      val __obj = js.Dynamic.literal()
-      count.foreach(__v => __obj.updateDynamic("count")(__v.asInstanceOf[js.Any]))
-      distinctUsers.foreach(__v => __obj.updateDynamic("distinctUsers")(__v.asInstanceOf[js.Any]))
-      firstUtteredDate.foreach(__v => __obj.updateDynamic("firstUtteredDate")(__v.asInstanceOf[js.Any]))
-      lastUtteredDate.foreach(__v => __obj.updateDynamic("lastUtteredDate")(__v.asInstanceOf[js.Any]))
-      utteranceString.foreach(__v => __obj.updateDynamic("utteranceString")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UtteranceData]
-    }
-  }
-
   /**
     * Provides a list of utterances that have been made to a specific version of your bot. The list contains a maximum of 100 utterances.
     */
   @js.native
+  @Factory
   trait UtteranceList extends js.Object {
     var botVersion: js.UndefOr[Version]
     var utterances: js.UndefOr[ListOfUtterance]
-  }
-
-  object UtteranceList {
-    @inline
-    def apply(
-        botVersion: js.UndefOr[Version] = js.undefined,
-        utterances: js.UndefOr[ListOfUtterance] = js.undefined
-    ): UtteranceList = {
-      val __obj = js.Dynamic.literal()
-      botVersion.foreach(__v => __obj.updateDynamic("botVersion")(__v.asInstanceOf[js.Any]))
-      utterances.foreach(__v => __obj.updateDynamic("utterances")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UtteranceList]
-    }
   }
 }

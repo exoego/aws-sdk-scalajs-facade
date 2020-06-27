@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object stepfunctions {
   type ActivityList            = js.Array[ActivityListItem]
@@ -123,77 +124,38 @@ package stepfunctions {
     * Contains details about an activity that failed during an execution.
     */
   @js.native
+  @Factory
   trait ActivityFailedEventDetails extends js.Object {
     var cause: js.UndefOr[SensitiveCause]
     var error: js.UndefOr[SensitiveError]
-  }
-
-  object ActivityFailedEventDetails {
-    @inline
-    def apply(
-        cause: js.UndefOr[SensitiveCause] = js.undefined,
-        error: js.UndefOr[SensitiveError] = js.undefined
-    ): ActivityFailedEventDetails = {
-      val __obj = js.Dynamic.literal()
-      cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
-      error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ActivityFailedEventDetails]
-    }
   }
 
   /**
     * Contains details about an activity.
     */
   @js.native
+  @Factory
   trait ActivityListItem extends js.Object {
     var activityArn: Arn
     var creationDate: Timestamp
     var name: Name
   }
 
-  object ActivityListItem {
-    @inline
-    def apply(
-        activityArn: Arn,
-        creationDate: Timestamp,
-        name: Name
-    ): ActivityListItem = {
-      val __obj = js.Dynamic.literal(
-        "activityArn"  -> activityArn.asInstanceOf[js.Any],
-        "creationDate" -> creationDate.asInstanceOf[js.Any],
-        "name"         -> name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ActivityListItem]
-    }
-  }
-
   /**
     * Contains details about an activity schedule failure that occurred during an execution.
     */
   @js.native
+  @Factory
   trait ActivityScheduleFailedEventDetails extends js.Object {
     var cause: js.UndefOr[SensitiveCause]
     var error: js.UndefOr[SensitiveError]
-  }
-
-  object ActivityScheduleFailedEventDetails {
-    @inline
-    def apply(
-        cause: js.UndefOr[SensitiveCause] = js.undefined,
-        error: js.UndefOr[SensitiveError] = js.undefined
-    ): ActivityScheduleFailedEventDetails = {
-      val __obj = js.Dynamic.literal()
-      cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
-      error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ActivityScheduleFailedEventDetails]
-    }
   }
 
   /**
     * Contains details about an activity scheduled during an execution.
     */
   @js.native
+  @Factory
   trait ActivityScheduledEventDetails extends js.Object {
     var resource: Arn
     var heartbeatInSeconds: js.UndefOr[TimeoutInSeconds]
@@ -201,147 +163,59 @@ package stepfunctions {
     var timeoutInSeconds: js.UndefOr[TimeoutInSeconds]
   }
 
-  object ActivityScheduledEventDetails {
-    @inline
-    def apply(
-        resource: Arn,
-        heartbeatInSeconds: js.UndefOr[TimeoutInSeconds] = js.undefined,
-        input: js.UndefOr[SensitiveData] = js.undefined,
-        timeoutInSeconds: js.UndefOr[TimeoutInSeconds] = js.undefined
-    ): ActivityScheduledEventDetails = {
-      val __obj = js.Dynamic.literal(
-        "resource" -> resource.asInstanceOf[js.Any]
-      )
-
-      heartbeatInSeconds.foreach(__v => __obj.updateDynamic("heartbeatInSeconds")(__v.asInstanceOf[js.Any]))
-      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
-      timeoutInSeconds.foreach(__v => __obj.updateDynamic("timeoutInSeconds")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ActivityScheduledEventDetails]
-    }
-  }
-
   /**
     * Contains details about the start of an activity during an execution.
     */
   @js.native
+  @Factory
   trait ActivityStartedEventDetails extends js.Object {
     var workerName: js.UndefOr[Identity]
-  }
-
-  object ActivityStartedEventDetails {
-    @inline
-    def apply(
-        workerName: js.UndefOr[Identity] = js.undefined
-    ): ActivityStartedEventDetails = {
-      val __obj = js.Dynamic.literal()
-      workerName.foreach(__v => __obj.updateDynamic("workerName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ActivityStartedEventDetails]
-    }
   }
 
   /**
     * Contains details about an activity that successfully terminated during an execution.
     */
   @js.native
+  @Factory
   trait ActivitySucceededEventDetails extends js.Object {
     var output: js.UndefOr[SensitiveData]
-  }
-
-  object ActivitySucceededEventDetails {
-    @inline
-    def apply(
-        output: js.UndefOr[SensitiveData] = js.undefined
-    ): ActivitySucceededEventDetails = {
-      val __obj = js.Dynamic.literal()
-      output.foreach(__v => __obj.updateDynamic("output")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ActivitySucceededEventDetails]
-    }
   }
 
   /**
     * Contains details about an activity timeout that occurred during an execution.
     */
   @js.native
+  @Factory
   trait ActivityTimedOutEventDetails extends js.Object {
     var cause: js.UndefOr[SensitiveCause]
     var error: js.UndefOr[SensitiveError]
-  }
-
-  object ActivityTimedOutEventDetails {
-    @inline
-    def apply(
-        cause: js.UndefOr[SensitiveCause] = js.undefined,
-        error: js.UndefOr[SensitiveError] = js.undefined
-    ): ActivityTimedOutEventDetails = {
-      val __obj = js.Dynamic.literal()
-      cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
-      error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ActivityTimedOutEventDetails]
-    }
   }
 
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait CloudWatchLogsLogGroup extends js.Object {
     var logGroupArn: js.UndefOr[Arn]
   }
 
-  object CloudWatchLogsLogGroup {
-    @inline
-    def apply(
-        logGroupArn: js.UndefOr[Arn] = js.undefined
-    ): CloudWatchLogsLogGroup = {
-      val __obj = js.Dynamic.literal()
-      logGroupArn.foreach(__v => __obj.updateDynamic("logGroupArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CloudWatchLogsLogGroup]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateActivityInput extends js.Object {
     var name: Name
     var tags: js.UndefOr[TagList]
   }
 
-  object CreateActivityInput {
-    @inline
-    def apply(
-        name: Name,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): CreateActivityInput = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateActivityInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateActivityOutput extends js.Object {
     var activityArn: Arn
     var creationDate: Timestamp
   }
 
-  object CreateActivityOutput {
-    @inline
-    def apply(
-        activityArn: Arn,
-        creationDate: Timestamp
-    ): CreateActivityOutput = {
-      val __obj = js.Dynamic.literal(
-        "activityArn"  -> activityArn.asInstanceOf[js.Any],
-        "creationDate" -> creationDate.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateActivityOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateStateMachineInput extends js.Object {
     var definition: Definition
     var name: Name
@@ -351,173 +225,55 @@ package stepfunctions {
     var `type`: js.UndefOr[StateMachineType]
   }
 
-  object CreateStateMachineInput {
-    @inline
-    def apply(
-        definition: Definition,
-        name: Name,
-        roleArn: Arn,
-        loggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined,
-        `type`: js.UndefOr[StateMachineType] = js.undefined
-    ): CreateStateMachineInput = {
-      val __obj = js.Dynamic.literal(
-        "definition" -> definition.asInstanceOf[js.Any],
-        "name"       -> name.asInstanceOf[js.Any],
-        "roleArn"    -> roleArn.asInstanceOf[js.Any]
-      )
-
-      loggingConfiguration.foreach(__v => __obj.updateDynamic("loggingConfiguration")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateStateMachineInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateStateMachineOutput extends js.Object {
     var creationDate: Timestamp
     var stateMachineArn: Arn
   }
 
-  object CreateStateMachineOutput {
-    @inline
-    def apply(
-        creationDate: Timestamp,
-        stateMachineArn: Arn
-    ): CreateStateMachineOutput = {
-      val __obj = js.Dynamic.literal(
-        "creationDate"    -> creationDate.asInstanceOf[js.Any],
-        "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateStateMachineOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteActivityInput extends js.Object {
     var activityArn: Arn
   }
 
-  object DeleteActivityInput {
-    @inline
-    def apply(
-        activityArn: Arn
-    ): DeleteActivityInput = {
-      val __obj = js.Dynamic.literal(
-        "activityArn" -> activityArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteActivityInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteActivityOutput extends js.Object {}
 
-  object DeleteActivityOutput {
-    @inline
-    def apply(
-    ): DeleteActivityOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteActivityOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteStateMachineInput extends js.Object {
     var stateMachineArn: Arn
   }
 
-  object DeleteStateMachineInput {
-    @inline
-    def apply(
-        stateMachineArn: Arn
-    ): DeleteStateMachineInput = {
-      val __obj = js.Dynamic.literal(
-        "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteStateMachineInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteStateMachineOutput extends js.Object {}
 
-  object DeleteStateMachineOutput {
-    @inline
-    def apply(
-    ): DeleteStateMachineOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteStateMachineOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeActivityInput extends js.Object {
     var activityArn: Arn
   }
 
-  object DescribeActivityInput {
-    @inline
-    def apply(
-        activityArn: Arn
-    ): DescribeActivityInput = {
-      val __obj = js.Dynamic.literal(
-        "activityArn" -> activityArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeActivityInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeActivityOutput extends js.Object {
     var activityArn: Arn
     var creationDate: Timestamp
     var name: Name
   }
 
-  object DescribeActivityOutput {
-    @inline
-    def apply(
-        activityArn: Arn,
-        creationDate: Timestamp,
-        name: Name
-    ): DescribeActivityOutput = {
-      val __obj = js.Dynamic.literal(
-        "activityArn"  -> activityArn.asInstanceOf[js.Any],
-        "creationDate" -> creationDate.asInstanceOf[js.Any],
-        "name"         -> name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeActivityOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeExecutionInput extends js.Object {
     var executionArn: Arn
   }
 
-  object DescribeExecutionInput {
-    @inline
-    def apply(
-        executionArn: Arn
-    ): DescribeExecutionInput = {
-      val __obj = js.Dynamic.literal(
-        "executionArn" -> executionArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeExecutionInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeExecutionOutput extends js.Object {
     var executionArn: Arn
     var input: SensitiveData
@@ -529,52 +285,14 @@ package stepfunctions {
     var stopDate: js.UndefOr[Timestamp]
   }
 
-  object DescribeExecutionOutput {
-    @inline
-    def apply(
-        executionArn: Arn,
-        input: SensitiveData,
-        startDate: Timestamp,
-        stateMachineArn: Arn,
-        status: ExecutionStatus,
-        name: js.UndefOr[Name] = js.undefined,
-        output: js.UndefOr[SensitiveData] = js.undefined,
-        stopDate: js.UndefOr[Timestamp] = js.undefined
-    ): DescribeExecutionOutput = {
-      val __obj = js.Dynamic.literal(
-        "executionArn"    -> executionArn.asInstanceOf[js.Any],
-        "input"           -> input.asInstanceOf[js.Any],
-        "startDate"       -> startDate.asInstanceOf[js.Any],
-        "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any],
-        "status"          -> status.asInstanceOf[js.Any]
-      )
-
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      output.foreach(__v => __obj.updateDynamic("output")(__v.asInstanceOf[js.Any]))
-      stopDate.foreach(__v => __obj.updateDynamic("stopDate")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeExecutionOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeStateMachineForExecutionInput extends js.Object {
     var executionArn: Arn
   }
 
-  object DescribeStateMachineForExecutionInput {
-    @inline
-    def apply(
-        executionArn: Arn
-    ): DescribeStateMachineForExecutionInput = {
-      val __obj = js.Dynamic.literal(
-        "executionArn" -> executionArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeStateMachineForExecutionInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeStateMachineForExecutionOutput extends js.Object {
     var definition: Definition
     var name: Name
@@ -583,46 +301,14 @@ package stepfunctions {
     var updateDate: Timestamp
   }
 
-  object DescribeStateMachineForExecutionOutput {
-    @inline
-    def apply(
-        definition: Definition,
-        name: Name,
-        roleArn: Arn,
-        stateMachineArn: Arn,
-        updateDate: Timestamp
-    ): DescribeStateMachineForExecutionOutput = {
-      val __obj = js.Dynamic.literal(
-        "definition"      -> definition.asInstanceOf[js.Any],
-        "name"            -> name.asInstanceOf[js.Any],
-        "roleArn"         -> roleArn.asInstanceOf[js.Any],
-        "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any],
-        "updateDate"      -> updateDate.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeStateMachineForExecutionOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeStateMachineInput extends js.Object {
     var stateMachineArn: Arn
   }
 
-  object DescribeStateMachineInput {
-    @inline
-    def apply(
-        stateMachineArn: Arn
-    ): DescribeStateMachineInput = {
-      val __obj = js.Dynamic.literal(
-        "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeStateMachineInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeStateMachineOutput extends js.Object {
     var creationDate: Timestamp
     var definition: Definition
@@ -634,81 +320,31 @@ package stepfunctions {
     var status: js.UndefOr[StateMachineStatus]
   }
 
-  object DescribeStateMachineOutput {
-    @inline
-    def apply(
-        creationDate: Timestamp,
-        definition: Definition,
-        name: Name,
-        roleArn: Arn,
-        stateMachineArn: Arn,
-        `type`: StateMachineType,
-        loggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined,
-        status: js.UndefOr[StateMachineStatus] = js.undefined
-    ): DescribeStateMachineOutput = {
-      val __obj = js.Dynamic.literal(
-        "creationDate"    -> creationDate.asInstanceOf[js.Any],
-        "definition"      -> definition.asInstanceOf[js.Any],
-        "name"            -> name.asInstanceOf[js.Any],
-        "roleArn"         -> roleArn.asInstanceOf[js.Any],
-        "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any],
-        "type"            -> `type`.asInstanceOf[js.Any]
-      )
-
-      loggingConfiguration.foreach(__v => __obj.updateDynamic("loggingConfiguration")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeStateMachineOutput]
-    }
-  }
-
   /**
     * Contains details about an abort of an execution.
     */
   @js.native
+  @Factory
   trait ExecutionAbortedEventDetails extends js.Object {
     var cause: js.UndefOr[SensitiveCause]
     var error: js.UndefOr[SensitiveError]
-  }
-
-  object ExecutionAbortedEventDetails {
-    @inline
-    def apply(
-        cause: js.UndefOr[SensitiveCause] = js.undefined,
-        error: js.UndefOr[SensitiveError] = js.undefined
-    ): ExecutionAbortedEventDetails = {
-      val __obj = js.Dynamic.literal()
-      cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
-      error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ExecutionAbortedEventDetails]
-    }
   }
 
   /**
     * Contains details about an execution failure event.
     */
   @js.native
+  @Factory
   trait ExecutionFailedEventDetails extends js.Object {
     var cause: js.UndefOr[SensitiveCause]
     var error: js.UndefOr[SensitiveError]
-  }
-
-  object ExecutionFailedEventDetails {
-    @inline
-    def apply(
-        cause: js.UndefOr[SensitiveCause] = js.undefined,
-        error: js.UndefOr[SensitiveError] = js.undefined
-    ): ExecutionFailedEventDetails = {
-      val __obj = js.Dynamic.literal()
-      cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
-      error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ExecutionFailedEventDetails]
-    }
   }
 
   /**
     * Contains details about an execution.
     */
   @js.native
+  @Factory
   trait ExecutionListItem extends js.Object {
     var executionArn: Arn
     var name: Name
@@ -718,49 +354,14 @@ package stepfunctions {
     var stopDate: js.UndefOr[Timestamp]
   }
 
-  object ExecutionListItem {
-    @inline
-    def apply(
-        executionArn: Arn,
-        name: Name,
-        startDate: Timestamp,
-        stateMachineArn: Arn,
-        status: ExecutionStatus,
-        stopDate: js.UndefOr[Timestamp] = js.undefined
-    ): ExecutionListItem = {
-      val __obj = js.Dynamic.literal(
-        "executionArn"    -> executionArn.asInstanceOf[js.Any],
-        "name"            -> name.asInstanceOf[js.Any],
-        "startDate"       -> startDate.asInstanceOf[js.Any],
-        "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any],
-        "status"          -> status.asInstanceOf[js.Any]
-      )
-
-      stopDate.foreach(__v => __obj.updateDynamic("stopDate")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ExecutionListItem]
-    }
-  }
-
   /**
     * Contains details about the start of the execution.
     */
   @js.native
+  @Factory
   trait ExecutionStartedEventDetails extends js.Object {
     var input: js.UndefOr[SensitiveData]
     var roleArn: js.UndefOr[Arn]
-  }
-
-  object ExecutionStartedEventDetails {
-    @inline
-    def apply(
-        input: js.UndefOr[SensitiveData] = js.undefined,
-        roleArn: js.UndefOr[Arn] = js.undefined
-    ): ExecutionStartedEventDetails = {
-      val __obj = js.Dynamic.literal()
-      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ExecutionStartedEventDetails]
-    }
   }
 
   @js.native
@@ -779,84 +380,37 @@ package stepfunctions {
     * Contains details about the successful termination of the execution.
     */
   @js.native
+  @Factory
   trait ExecutionSucceededEventDetails extends js.Object {
     var output: js.UndefOr[SensitiveData]
-  }
-
-  object ExecutionSucceededEventDetails {
-    @inline
-    def apply(
-        output: js.UndefOr[SensitiveData] = js.undefined
-    ): ExecutionSucceededEventDetails = {
-      val __obj = js.Dynamic.literal()
-      output.foreach(__v => __obj.updateDynamic("output")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ExecutionSucceededEventDetails]
-    }
   }
 
   /**
     * Contains details about the execution timeout that occurred during the execution.
     */
   @js.native
+  @Factory
   trait ExecutionTimedOutEventDetails extends js.Object {
     var cause: js.UndefOr[SensitiveCause]
     var error: js.UndefOr[SensitiveError]
   }
 
-  object ExecutionTimedOutEventDetails {
-    @inline
-    def apply(
-        cause: js.UndefOr[SensitiveCause] = js.undefined,
-        error: js.UndefOr[SensitiveError] = js.undefined
-    ): ExecutionTimedOutEventDetails = {
-      val __obj = js.Dynamic.literal()
-      cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
-      error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ExecutionTimedOutEventDetails]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetActivityTaskInput extends js.Object {
     var activityArn: Arn
     var workerName: js.UndefOr[Name]
   }
 
-  object GetActivityTaskInput {
-    @inline
-    def apply(
-        activityArn: Arn,
-        workerName: js.UndefOr[Name] = js.undefined
-    ): GetActivityTaskInput = {
-      val __obj = js.Dynamic.literal(
-        "activityArn" -> activityArn.asInstanceOf[js.Any]
-      )
-
-      workerName.foreach(__v => __obj.updateDynamic("workerName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetActivityTaskInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetActivityTaskOutput extends js.Object {
     var input: js.UndefOr[SensitiveDataJobInput]
     var taskToken: js.UndefOr[TaskToken]
   }
 
-  object GetActivityTaskOutput {
-    @inline
-    def apply(
-        input: js.UndefOr[SensitiveDataJobInput] = js.undefined,
-        taskToken: js.UndefOr[TaskToken] = js.undefined
-    ): GetActivityTaskOutput = {
-      val __obj = js.Dynamic.literal()
-      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
-      taskToken.foreach(__v => __obj.updateDynamic("taskToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetActivityTaskOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetExecutionHistoryInput extends js.Object {
     var executionArn: Arn
     var maxResults: js.UndefOr[PageSize]
@@ -864,50 +418,18 @@ package stepfunctions {
     var reverseOrder: js.UndefOr[ReverseOrder]
   }
 
-  object GetExecutionHistoryInput {
-    @inline
-    def apply(
-        executionArn: Arn,
-        maxResults: js.UndefOr[PageSize] = js.undefined,
-        nextToken: js.UndefOr[PageToken] = js.undefined,
-        reverseOrder: js.UndefOr[ReverseOrder] = js.undefined
-    ): GetExecutionHistoryInput = {
-      val __obj = js.Dynamic.literal(
-        "executionArn" -> executionArn.asInstanceOf[js.Any]
-      )
-
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      reverseOrder.foreach(__v => __obj.updateDynamic("reverseOrder")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetExecutionHistoryInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetExecutionHistoryOutput extends js.Object {
     var events: HistoryEventList
     var nextToken: js.UndefOr[PageToken]
-  }
-
-  object GetExecutionHistoryOutput {
-    @inline
-    def apply(
-        events: HistoryEventList,
-        nextToken: js.UndefOr[PageToken] = js.undefined
-    ): GetExecutionHistoryOutput = {
-      val __obj = js.Dynamic.literal(
-        "events" -> events.asInstanceOf[js.Any]
-      )
-
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetExecutionHistoryOutput]
-    }
   }
 
   /**
     * Contains details about the events of an execution.
     */
   @js.native
+  @Factory
   trait HistoryEvent extends js.Object {
     var id: EventId
     var timestamp: Timestamp
@@ -945,143 +467,6 @@ package stepfunctions {
     var taskSubmittedEventDetails: js.UndefOr[TaskSubmittedEventDetails]
     var taskSucceededEventDetails: js.UndefOr[TaskSucceededEventDetails]
     var taskTimedOutEventDetails: js.UndefOr[TaskTimedOutEventDetails]
-  }
-
-  object HistoryEvent {
-    @inline
-    def apply(
-        id: EventId,
-        timestamp: Timestamp,
-        `type`: HistoryEventType,
-        activityFailedEventDetails: js.UndefOr[ActivityFailedEventDetails] = js.undefined,
-        activityScheduleFailedEventDetails: js.UndefOr[ActivityScheduleFailedEventDetails] = js.undefined,
-        activityScheduledEventDetails: js.UndefOr[ActivityScheduledEventDetails] = js.undefined,
-        activityStartedEventDetails: js.UndefOr[ActivityStartedEventDetails] = js.undefined,
-        activitySucceededEventDetails: js.UndefOr[ActivitySucceededEventDetails] = js.undefined,
-        activityTimedOutEventDetails: js.UndefOr[ActivityTimedOutEventDetails] = js.undefined,
-        executionAbortedEventDetails: js.UndefOr[ExecutionAbortedEventDetails] = js.undefined,
-        executionFailedEventDetails: js.UndefOr[ExecutionFailedEventDetails] = js.undefined,
-        executionStartedEventDetails: js.UndefOr[ExecutionStartedEventDetails] = js.undefined,
-        executionSucceededEventDetails: js.UndefOr[ExecutionSucceededEventDetails] = js.undefined,
-        executionTimedOutEventDetails: js.UndefOr[ExecutionTimedOutEventDetails] = js.undefined,
-        lambdaFunctionFailedEventDetails: js.UndefOr[LambdaFunctionFailedEventDetails] = js.undefined,
-        lambdaFunctionScheduleFailedEventDetails: js.UndefOr[LambdaFunctionScheduleFailedEventDetails] = js.undefined,
-        lambdaFunctionScheduledEventDetails: js.UndefOr[LambdaFunctionScheduledEventDetails] = js.undefined,
-        lambdaFunctionStartFailedEventDetails: js.UndefOr[LambdaFunctionStartFailedEventDetails] = js.undefined,
-        lambdaFunctionSucceededEventDetails: js.UndefOr[LambdaFunctionSucceededEventDetails] = js.undefined,
-        lambdaFunctionTimedOutEventDetails: js.UndefOr[LambdaFunctionTimedOutEventDetails] = js.undefined,
-        mapIterationAbortedEventDetails: js.UndefOr[MapIterationEventDetails] = js.undefined,
-        mapIterationFailedEventDetails: js.UndefOr[MapIterationEventDetails] = js.undefined,
-        mapIterationStartedEventDetails: js.UndefOr[MapIterationEventDetails] = js.undefined,
-        mapIterationSucceededEventDetails: js.UndefOr[MapIterationEventDetails] = js.undefined,
-        mapStateStartedEventDetails: js.UndefOr[MapStateStartedEventDetails] = js.undefined,
-        previousEventId: js.UndefOr[EventId] = js.undefined,
-        stateEnteredEventDetails: js.UndefOr[StateEnteredEventDetails] = js.undefined,
-        stateExitedEventDetails: js.UndefOr[StateExitedEventDetails] = js.undefined,
-        taskFailedEventDetails: js.UndefOr[TaskFailedEventDetails] = js.undefined,
-        taskScheduledEventDetails: js.UndefOr[TaskScheduledEventDetails] = js.undefined,
-        taskStartFailedEventDetails: js.UndefOr[TaskStartFailedEventDetails] = js.undefined,
-        taskStartedEventDetails: js.UndefOr[TaskStartedEventDetails] = js.undefined,
-        taskSubmitFailedEventDetails: js.UndefOr[TaskSubmitFailedEventDetails] = js.undefined,
-        taskSubmittedEventDetails: js.UndefOr[TaskSubmittedEventDetails] = js.undefined,
-        taskSucceededEventDetails: js.UndefOr[TaskSucceededEventDetails] = js.undefined,
-        taskTimedOutEventDetails: js.UndefOr[TaskTimedOutEventDetails] = js.undefined
-    ): HistoryEvent = {
-      val __obj = js.Dynamic.literal(
-        "id"        -> id.asInstanceOf[js.Any],
-        "timestamp" -> timestamp.asInstanceOf[js.Any],
-        "type"      -> `type`.asInstanceOf[js.Any]
-      )
-
-      activityFailedEventDetails.foreach(__v =>
-        __obj.updateDynamic("activityFailedEventDetails")(__v.asInstanceOf[js.Any])
-      )
-      activityScheduleFailedEventDetails.foreach(__v =>
-        __obj.updateDynamic("activityScheduleFailedEventDetails")(__v.asInstanceOf[js.Any])
-      )
-      activityScheduledEventDetails.foreach(__v =>
-        __obj.updateDynamic("activityScheduledEventDetails")(__v.asInstanceOf[js.Any])
-      )
-      activityStartedEventDetails.foreach(__v =>
-        __obj.updateDynamic("activityStartedEventDetails")(__v.asInstanceOf[js.Any])
-      )
-      activitySucceededEventDetails.foreach(__v =>
-        __obj.updateDynamic("activitySucceededEventDetails")(__v.asInstanceOf[js.Any])
-      )
-      activityTimedOutEventDetails.foreach(__v =>
-        __obj.updateDynamic("activityTimedOutEventDetails")(__v.asInstanceOf[js.Any])
-      )
-      executionAbortedEventDetails.foreach(__v =>
-        __obj.updateDynamic("executionAbortedEventDetails")(__v.asInstanceOf[js.Any])
-      )
-      executionFailedEventDetails.foreach(__v =>
-        __obj.updateDynamic("executionFailedEventDetails")(__v.asInstanceOf[js.Any])
-      )
-      executionStartedEventDetails.foreach(__v =>
-        __obj.updateDynamic("executionStartedEventDetails")(__v.asInstanceOf[js.Any])
-      )
-      executionSucceededEventDetails.foreach(__v =>
-        __obj.updateDynamic("executionSucceededEventDetails")(__v.asInstanceOf[js.Any])
-      )
-      executionTimedOutEventDetails.foreach(__v =>
-        __obj.updateDynamic("executionTimedOutEventDetails")(__v.asInstanceOf[js.Any])
-      )
-      lambdaFunctionFailedEventDetails.foreach(__v =>
-        __obj.updateDynamic("lambdaFunctionFailedEventDetails")(__v.asInstanceOf[js.Any])
-      )
-      lambdaFunctionScheduleFailedEventDetails.foreach(__v =>
-        __obj.updateDynamic("lambdaFunctionScheduleFailedEventDetails")(__v.asInstanceOf[js.Any])
-      )
-      lambdaFunctionScheduledEventDetails.foreach(__v =>
-        __obj.updateDynamic("lambdaFunctionScheduledEventDetails")(__v.asInstanceOf[js.Any])
-      )
-      lambdaFunctionStartFailedEventDetails.foreach(__v =>
-        __obj.updateDynamic("lambdaFunctionStartFailedEventDetails")(__v.asInstanceOf[js.Any])
-      )
-      lambdaFunctionSucceededEventDetails.foreach(__v =>
-        __obj.updateDynamic("lambdaFunctionSucceededEventDetails")(__v.asInstanceOf[js.Any])
-      )
-      lambdaFunctionTimedOutEventDetails.foreach(__v =>
-        __obj.updateDynamic("lambdaFunctionTimedOutEventDetails")(__v.asInstanceOf[js.Any])
-      )
-      mapIterationAbortedEventDetails.foreach(__v =>
-        __obj.updateDynamic("mapIterationAbortedEventDetails")(__v.asInstanceOf[js.Any])
-      )
-      mapIterationFailedEventDetails.foreach(__v =>
-        __obj.updateDynamic("mapIterationFailedEventDetails")(__v.asInstanceOf[js.Any])
-      )
-      mapIterationStartedEventDetails.foreach(__v =>
-        __obj.updateDynamic("mapIterationStartedEventDetails")(__v.asInstanceOf[js.Any])
-      )
-      mapIterationSucceededEventDetails.foreach(__v =>
-        __obj.updateDynamic("mapIterationSucceededEventDetails")(__v.asInstanceOf[js.Any])
-      )
-      mapStateStartedEventDetails.foreach(__v =>
-        __obj.updateDynamic("mapStateStartedEventDetails")(__v.asInstanceOf[js.Any])
-      )
-      previousEventId.foreach(__v => __obj.updateDynamic("previousEventId")(__v.asInstanceOf[js.Any]))
-      stateEnteredEventDetails.foreach(__v => __obj.updateDynamic("stateEnteredEventDetails")(__v.asInstanceOf[js.Any]))
-      stateExitedEventDetails.foreach(__v => __obj.updateDynamic("stateExitedEventDetails")(__v.asInstanceOf[js.Any]))
-      taskFailedEventDetails.foreach(__v => __obj.updateDynamic("taskFailedEventDetails")(__v.asInstanceOf[js.Any]))
-      taskScheduledEventDetails.foreach(__v =>
-        __obj.updateDynamic("taskScheduledEventDetails")(__v.asInstanceOf[js.Any])
-      )
-      taskStartFailedEventDetails.foreach(__v =>
-        __obj.updateDynamic("taskStartFailedEventDetails")(__v.asInstanceOf[js.Any])
-      )
-      taskStartedEventDetails.foreach(__v => __obj.updateDynamic("taskStartedEventDetails")(__v.asInstanceOf[js.Any]))
-      taskSubmitFailedEventDetails.foreach(__v =>
-        __obj.updateDynamic("taskSubmitFailedEventDetails")(__v.asInstanceOf[js.Any])
-      )
-      taskSubmittedEventDetails.foreach(__v =>
-        __obj.updateDynamic("taskSubmittedEventDetails")(__v.asInstanceOf[js.Any])
-      )
-      taskSucceededEventDetails.foreach(__v =>
-        __obj.updateDynamic("taskSucceededEventDetails")(__v.asInstanceOf[js.Any])
-      )
-      taskTimedOutEventDetails.foreach(__v => __obj.updateDynamic("taskTimedOutEventDetails")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HistoryEvent]
-    }
   }
 
   @js.native
@@ -1208,177 +593,78 @@ package stepfunctions {
     * Contains details about a lambda function that failed during an execution.
     */
   @js.native
+  @Factory
   trait LambdaFunctionFailedEventDetails extends js.Object {
     var cause: js.UndefOr[SensitiveCause]
     var error: js.UndefOr[SensitiveError]
-  }
-
-  object LambdaFunctionFailedEventDetails {
-    @inline
-    def apply(
-        cause: js.UndefOr[SensitiveCause] = js.undefined,
-        error: js.UndefOr[SensitiveError] = js.undefined
-    ): LambdaFunctionFailedEventDetails = {
-      val __obj = js.Dynamic.literal()
-      cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
-      error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LambdaFunctionFailedEventDetails]
-    }
   }
 
   /**
     * Contains details about a failed lambda function schedule event that occurred during an execution.
     */
   @js.native
+  @Factory
   trait LambdaFunctionScheduleFailedEventDetails extends js.Object {
     var cause: js.UndefOr[SensitiveCause]
     var error: js.UndefOr[SensitiveError]
-  }
-
-  object LambdaFunctionScheduleFailedEventDetails {
-    @inline
-    def apply(
-        cause: js.UndefOr[SensitiveCause] = js.undefined,
-        error: js.UndefOr[SensitiveError] = js.undefined
-    ): LambdaFunctionScheduleFailedEventDetails = {
-      val __obj = js.Dynamic.literal()
-      cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
-      error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LambdaFunctionScheduleFailedEventDetails]
-    }
   }
 
   /**
     * Contains details about a lambda function scheduled during an execution.
     */
   @js.native
+  @Factory
   trait LambdaFunctionScheduledEventDetails extends js.Object {
     var resource: Arn
     var input: js.UndefOr[SensitiveData]
     var timeoutInSeconds: js.UndefOr[TimeoutInSeconds]
   }
 
-  object LambdaFunctionScheduledEventDetails {
-    @inline
-    def apply(
-        resource: Arn,
-        input: js.UndefOr[SensitiveData] = js.undefined,
-        timeoutInSeconds: js.UndefOr[TimeoutInSeconds] = js.undefined
-    ): LambdaFunctionScheduledEventDetails = {
-      val __obj = js.Dynamic.literal(
-        "resource" -> resource.asInstanceOf[js.Any]
-      )
-
-      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
-      timeoutInSeconds.foreach(__v => __obj.updateDynamic("timeoutInSeconds")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LambdaFunctionScheduledEventDetails]
-    }
-  }
-
   /**
     * Contains details about a lambda function that failed to start during an execution.
     */
   @js.native
+  @Factory
   trait LambdaFunctionStartFailedEventDetails extends js.Object {
     var cause: js.UndefOr[SensitiveCause]
     var error: js.UndefOr[SensitiveError]
-  }
-
-  object LambdaFunctionStartFailedEventDetails {
-    @inline
-    def apply(
-        cause: js.UndefOr[SensitiveCause] = js.undefined,
-        error: js.UndefOr[SensitiveError] = js.undefined
-    ): LambdaFunctionStartFailedEventDetails = {
-      val __obj = js.Dynamic.literal()
-      cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
-      error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LambdaFunctionStartFailedEventDetails]
-    }
   }
 
   /**
     * Contains details about a lambda function that successfully terminated during an execution.
     */
   @js.native
+  @Factory
   trait LambdaFunctionSucceededEventDetails extends js.Object {
     var output: js.UndefOr[SensitiveData]
-  }
-
-  object LambdaFunctionSucceededEventDetails {
-    @inline
-    def apply(
-        output: js.UndefOr[SensitiveData] = js.undefined
-    ): LambdaFunctionSucceededEventDetails = {
-      val __obj = js.Dynamic.literal()
-      output.foreach(__v => __obj.updateDynamic("output")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LambdaFunctionSucceededEventDetails]
-    }
   }
 
   /**
     * Contains details about a lambda function timeout that occurred during an execution.
     */
   @js.native
+  @Factory
   trait LambdaFunctionTimedOutEventDetails extends js.Object {
     var cause: js.UndefOr[SensitiveCause]
     var error: js.UndefOr[SensitiveError]
   }
 
-  object LambdaFunctionTimedOutEventDetails {
-    @inline
-    def apply(
-        cause: js.UndefOr[SensitiveCause] = js.undefined,
-        error: js.UndefOr[SensitiveError] = js.undefined
-    ): LambdaFunctionTimedOutEventDetails = {
-      val __obj = js.Dynamic.literal()
-      cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
-      error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LambdaFunctionTimedOutEventDetails]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListActivitiesInput extends js.Object {
     var maxResults: js.UndefOr[PageSize]
     var nextToken: js.UndefOr[PageToken]
   }
 
-  object ListActivitiesInput {
-    @inline
-    def apply(
-        maxResults: js.UndefOr[PageSize] = js.undefined,
-        nextToken: js.UndefOr[PageToken] = js.undefined
-    ): ListActivitiesInput = {
-      val __obj = js.Dynamic.literal()
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListActivitiesInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListActivitiesOutput extends js.Object {
     var activities: ActivityList
     var nextToken: js.UndefOr[PageToken]
   }
 
-  object ListActivitiesOutput {
-    @inline
-    def apply(
-        activities: ActivityList,
-        nextToken: js.UndefOr[PageToken] = js.undefined
-    ): ListActivitiesOutput = {
-      val __obj = js.Dynamic.literal(
-        "activities" -> activities.asInstanceOf[js.Any]
-      )
-
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListActivitiesOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListExecutionsInput extends js.Object {
     var stateMachineArn: Arn
     var maxResults: js.UndefOr[PageSize]
@@ -1386,137 +672,46 @@ package stepfunctions {
     var statusFilter: js.UndefOr[ExecutionStatus]
   }
 
-  object ListExecutionsInput {
-    @inline
-    def apply(
-        stateMachineArn: Arn,
-        maxResults: js.UndefOr[PageSize] = js.undefined,
-        nextToken: js.UndefOr[ListExecutionsPageToken] = js.undefined,
-        statusFilter: js.UndefOr[ExecutionStatus] = js.undefined
-    ): ListExecutionsInput = {
-      val __obj = js.Dynamic.literal(
-        "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any]
-      )
-
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      statusFilter.foreach(__v => __obj.updateDynamic("statusFilter")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListExecutionsInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListExecutionsOutput extends js.Object {
     var executions: ExecutionList
     var nextToken: js.UndefOr[ListExecutionsPageToken]
   }
 
-  object ListExecutionsOutput {
-    @inline
-    def apply(
-        executions: ExecutionList,
-        nextToken: js.UndefOr[ListExecutionsPageToken] = js.undefined
-    ): ListExecutionsOutput = {
-      val __obj = js.Dynamic.literal(
-        "executions" -> executions.asInstanceOf[js.Any]
-      )
-
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListExecutionsOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListStateMachinesInput extends js.Object {
     var maxResults: js.UndefOr[PageSize]
     var nextToken: js.UndefOr[PageToken]
   }
 
-  object ListStateMachinesInput {
-    @inline
-    def apply(
-        maxResults: js.UndefOr[PageSize] = js.undefined,
-        nextToken: js.UndefOr[PageToken] = js.undefined
-    ): ListStateMachinesInput = {
-      val __obj = js.Dynamic.literal()
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListStateMachinesInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListStateMachinesOutput extends js.Object {
     var stateMachines: StateMachineList
     var nextToken: js.UndefOr[PageToken]
   }
 
-  object ListStateMachinesOutput {
-    @inline
-    def apply(
-        stateMachines: StateMachineList,
-        nextToken: js.UndefOr[PageToken] = js.undefined
-    ): ListStateMachinesOutput = {
-      val __obj = js.Dynamic.literal(
-        "stateMachines" -> stateMachines.asInstanceOf[js.Any]
-      )
-
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListStateMachinesOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceInput extends js.Object {
     var resourceArn: Arn
   }
 
-  object ListTagsForResourceInput {
-    @inline
-    def apply(
-        resourceArn: Arn
-    ): ListTagsForResourceInput = {
-      val __obj = js.Dynamic.literal(
-        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListTagsForResourceInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceOutput extends js.Object {
     var tags: js.UndefOr[TagList]
-  }
-
-  object ListTagsForResourceOutput {
-    @inline
-    def apply(
-        tags: js.UndefOr[TagList] = js.undefined
-    ): ListTagsForResourceOutput = {
-      val __obj = js.Dynamic.literal()
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceOutput]
-    }
   }
 
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait LogDestination extends js.Object {
     var cloudWatchLogsLogGroup: js.UndefOr[CloudWatchLogsLogGroup]
-  }
-
-  object LogDestination {
-    @inline
-    def apply(
-        cloudWatchLogsLogGroup: js.UndefOr[CloudWatchLogsLogGroup] = js.undefined
-    ): LogDestination = {
-      val __obj = js.Dynamic.literal()
-      cloudWatchLogsLogGroup.foreach(__v => __obj.updateDynamic("cloudWatchLogsLogGroup")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LogDestination]
-    }
   }
 
   @js.native
@@ -1534,291 +729,110 @@ package stepfunctions {
     * <p/>
     */
   @js.native
+  @Factory
   trait LoggingConfiguration extends js.Object {
     var destinations: js.UndefOr[LogDestinationList]
     var includeExecutionData: js.UndefOr[IncludeExecutionData]
     var level: js.UndefOr[LogLevel]
   }
 
-  object LoggingConfiguration {
-    @inline
-    def apply(
-        destinations: js.UndefOr[LogDestinationList] = js.undefined,
-        includeExecutionData: js.UndefOr[IncludeExecutionData] = js.undefined,
-        level: js.UndefOr[LogLevel] = js.undefined
-    ): LoggingConfiguration = {
-      val __obj = js.Dynamic.literal()
-      destinations.foreach(__v => __obj.updateDynamic("destinations")(__v.asInstanceOf[js.Any]))
-      includeExecutionData.foreach(__v => __obj.updateDynamic("includeExecutionData")(__v.asInstanceOf[js.Any]))
-      level.foreach(__v => __obj.updateDynamic("level")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LoggingConfiguration]
-    }
-  }
-
   /**
     * Contains details about an iteration of a Map state.
     */
   @js.native
+  @Factory
   trait MapIterationEventDetails extends js.Object {
     var index: js.UndefOr[UnsignedInteger]
     var name: js.UndefOr[Name]
-  }
-
-  object MapIterationEventDetails {
-    @inline
-    def apply(
-        index: js.UndefOr[UnsignedInteger] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined
-    ): MapIterationEventDetails = {
-      val __obj = js.Dynamic.literal()
-      index.foreach(__v => __obj.updateDynamic("index")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MapIterationEventDetails]
-    }
   }
 
   /**
     * Details about a Map state that was started.
     */
   @js.native
+  @Factory
   trait MapStateStartedEventDetails extends js.Object {
     var length: js.UndefOr[UnsignedInteger]
   }
 
-  object MapStateStartedEventDetails {
-    @inline
-    def apply(
-        length: js.UndefOr[UnsignedInteger] = js.undefined
-    ): MapStateStartedEventDetails = {
-      val __obj = js.Dynamic.literal()
-      length.foreach(__v => __obj.updateDynamic("length")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MapStateStartedEventDetails]
-    }
-  }
-
   @js.native
+  @Factory
   trait SendTaskFailureInput extends js.Object {
     var taskToken: TaskToken
     var cause: js.UndefOr[SensitiveCause]
     var error: js.UndefOr[SensitiveError]
   }
 
-  object SendTaskFailureInput {
-    @inline
-    def apply(
-        taskToken: TaskToken,
-        cause: js.UndefOr[SensitiveCause] = js.undefined,
-        error: js.UndefOr[SensitiveError] = js.undefined
-    ): SendTaskFailureInput = {
-      val __obj = js.Dynamic.literal(
-        "taskToken" -> taskToken.asInstanceOf[js.Any]
-      )
-
-      cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
-      error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SendTaskFailureInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait SendTaskFailureOutput extends js.Object {}
 
-  object SendTaskFailureOutput {
-    @inline
-    def apply(
-    ): SendTaskFailureOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[SendTaskFailureOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait SendTaskHeartbeatInput extends js.Object {
     var taskToken: TaskToken
   }
 
-  object SendTaskHeartbeatInput {
-    @inline
-    def apply(
-        taskToken: TaskToken
-    ): SendTaskHeartbeatInput = {
-      val __obj = js.Dynamic.literal(
-        "taskToken" -> taskToken.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SendTaskHeartbeatInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait SendTaskHeartbeatOutput extends js.Object {}
 
-  object SendTaskHeartbeatOutput {
-    @inline
-    def apply(
-    ): SendTaskHeartbeatOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[SendTaskHeartbeatOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait SendTaskSuccessInput extends js.Object {
     var output: SensitiveData
     var taskToken: TaskToken
   }
 
-  object SendTaskSuccessInput {
-    @inline
-    def apply(
-        output: SensitiveData,
-        taskToken: TaskToken
-    ): SendTaskSuccessInput = {
-      val __obj = js.Dynamic.literal(
-        "output"    -> output.asInstanceOf[js.Any],
-        "taskToken" -> taskToken.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SendTaskSuccessInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait SendTaskSuccessOutput extends js.Object {}
 
-  object SendTaskSuccessOutput {
-    @inline
-    def apply(
-    ): SendTaskSuccessOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[SendTaskSuccessOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartExecutionInput extends js.Object {
     var stateMachineArn: Arn
     var input: js.UndefOr[SensitiveData]
     var name: js.UndefOr[Name]
   }
 
-  object StartExecutionInput {
-    @inline
-    def apply(
-        stateMachineArn: Arn,
-        input: js.UndefOr[SensitiveData] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined
-    ): StartExecutionInput = {
-      val __obj = js.Dynamic.literal(
-        "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any]
-      )
-
-      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartExecutionInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartExecutionOutput extends js.Object {
     var executionArn: Arn
     var startDate: Timestamp
-  }
-
-  object StartExecutionOutput {
-    @inline
-    def apply(
-        executionArn: Arn,
-        startDate: Timestamp
-    ): StartExecutionOutput = {
-      val __obj = js.Dynamic.literal(
-        "executionArn" -> executionArn.asInstanceOf[js.Any],
-        "startDate"    -> startDate.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StartExecutionOutput]
-    }
   }
 
   /**
     * Contains details about a state entered during an execution.
     */
   @js.native
+  @Factory
   trait StateEnteredEventDetails extends js.Object {
     var name: Name
     var input: js.UndefOr[SensitiveData]
-  }
-
-  object StateEnteredEventDetails {
-    @inline
-    def apply(
-        name: Name,
-        input: js.UndefOr[SensitiveData] = js.undefined
-    ): StateEnteredEventDetails = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StateEnteredEventDetails]
-    }
   }
 
   /**
     * Contains details about an exit from a state during an execution.
     */
   @js.native
+  @Factory
   trait StateExitedEventDetails extends js.Object {
     var name: Name
     var output: js.UndefOr[SensitiveData]
-  }
-
-  object StateExitedEventDetails {
-    @inline
-    def apply(
-        name: Name,
-        output: js.UndefOr[SensitiveData] = js.undefined
-    ): StateExitedEventDetails = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      output.foreach(__v => __obj.updateDynamic("output")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StateExitedEventDetails]
-    }
   }
 
   /**
     * Contains details about the state machine.
     */
   @js.native
+  @Factory
   trait StateMachineListItem extends js.Object {
     var creationDate: Timestamp
     var name: Name
     var stateMachineArn: Arn
     var `type`: StateMachineType
-  }
-
-  object StateMachineListItem {
-    @inline
-    def apply(
-        creationDate: Timestamp,
-        name: Name,
-        stateMachineArn: Arn,
-        `type`: StateMachineType
-    ): StateMachineListItem = {
-      val __obj = js.Dynamic.literal(
-        "creationDate"    -> creationDate.asInstanceOf[js.Any],
-        "name"            -> name.asInstanceOf[js.Any],
-        "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any],
-        "type"            -> `type`.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StateMachineListItem]
-    }
   }
 
   @js.native
@@ -1840,45 +854,17 @@ package stepfunctions {
   }
 
   @js.native
+  @Factory
   trait StopExecutionInput extends js.Object {
     var executionArn: Arn
     var cause: js.UndefOr[SensitiveCause]
     var error: js.UndefOr[SensitiveError]
   }
 
-  object StopExecutionInput {
-    @inline
-    def apply(
-        executionArn: Arn,
-        cause: js.UndefOr[SensitiveCause] = js.undefined,
-        error: js.UndefOr[SensitiveError] = js.undefined
-    ): StopExecutionInput = {
-      val __obj = js.Dynamic.literal(
-        "executionArn" -> executionArn.asInstanceOf[js.Any]
-      )
-
-      cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
-      error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StopExecutionInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopExecutionOutput extends js.Object {
     var stopDate: Timestamp
-  }
-
-  object StopExecutionOutput {
-    @inline
-    def apply(
-        stopDate: Timestamp
-    ): StopExecutionOutput = {
-      val __obj = js.Dynamic.literal(
-        "stopDate" -> stopDate.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StopExecutionOutput]
-    }
   }
 
   /**
@@ -1887,62 +873,28 @@ package stepfunctions {
     *  Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var key: js.UndefOr[TagKey]
     var value: js.UndefOr[TagValue]
   }
 
-  object Tag {
-    @inline
-    def apply(
-        key: js.UndefOr[TagKey] = js.undefined,
-        value: js.UndefOr[TagValue] = js.undefined
-    ): Tag = {
-      val __obj = js.Dynamic.literal()
-      key.foreach(__v => __obj.updateDynamic("key")(__v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Tag]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceInput extends js.Object {
     var resourceArn: Arn
     var tags: TagList
   }
 
-  object TagResourceInput {
-    @inline
-    def apply(
-        resourceArn: Arn,
-        tags: TagList
-    ): TagResourceInput = {
-      val __obj = js.Dynamic.literal(
-        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceOutput extends js.Object {}
-
-  object TagResourceOutput {
-    @inline
-    def apply(
-    ): TagResourceOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[TagResourceOutput]
-    }
-  }
 
   /**
     * Contains details about a task failure event.
     */
   @js.native
+  @Factory
   trait TaskFailedEventDetails extends js.Object {
     var resource: Name
     var resourceType: Name
@@ -1950,29 +902,11 @@ package stepfunctions {
     var error: js.UndefOr[SensitiveError]
   }
 
-  object TaskFailedEventDetails {
-    @inline
-    def apply(
-        resource: Name,
-        resourceType: Name,
-        cause: js.UndefOr[SensitiveCause] = js.undefined,
-        error: js.UndefOr[SensitiveError] = js.undefined
-    ): TaskFailedEventDetails = {
-      val __obj = js.Dynamic.literal(
-        "resource"     -> resource.asInstanceOf[js.Any],
-        "resourceType" -> resourceType.asInstanceOf[js.Any]
-      )
-
-      cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
-      error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TaskFailedEventDetails]
-    }
-  }
-
   /**
     * Contains details about a task scheduled during an execution.
     */
   @js.native
+  @Factory
   trait TaskScheduledEventDetails extends js.Object {
     var parameters: ConnectorParameters
     var region: Name
@@ -1981,31 +915,11 @@ package stepfunctions {
     var timeoutInSeconds: js.UndefOr[TimeoutInSeconds]
   }
 
-  object TaskScheduledEventDetails {
-    @inline
-    def apply(
-        parameters: ConnectorParameters,
-        region: Name,
-        resource: Name,
-        resourceType: Name,
-        timeoutInSeconds: js.UndefOr[TimeoutInSeconds] = js.undefined
-    ): TaskScheduledEventDetails = {
-      val __obj = js.Dynamic.literal(
-        "parameters"   -> parameters.asInstanceOf[js.Any],
-        "region"       -> region.asInstanceOf[js.Any],
-        "resource"     -> resource.asInstanceOf[js.Any],
-        "resourceType" -> resourceType.asInstanceOf[js.Any]
-      )
-
-      timeoutInSeconds.foreach(__v => __obj.updateDynamic("timeoutInSeconds")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TaskScheduledEventDetails]
-    }
-  }
-
   /**
     * Contains details about a task that failed to start during an execution.
     */
   @js.native
+  @Factory
   trait TaskStartFailedEventDetails extends js.Object {
     var resource: Name
     var resourceType: Name
@@ -2013,53 +927,21 @@ package stepfunctions {
     var error: js.UndefOr[SensitiveError]
   }
 
-  object TaskStartFailedEventDetails {
-    @inline
-    def apply(
-        resource: Name,
-        resourceType: Name,
-        cause: js.UndefOr[SensitiveCause] = js.undefined,
-        error: js.UndefOr[SensitiveError] = js.undefined
-    ): TaskStartFailedEventDetails = {
-      val __obj = js.Dynamic.literal(
-        "resource"     -> resource.asInstanceOf[js.Any],
-        "resourceType" -> resourceType.asInstanceOf[js.Any]
-      )
-
-      cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
-      error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TaskStartFailedEventDetails]
-    }
-  }
-
   /**
     * Contains details about the start of a task during an execution.
     */
   @js.native
+  @Factory
   trait TaskStartedEventDetails extends js.Object {
     var resource: Name
     var resourceType: Name
-  }
-
-  object TaskStartedEventDetails {
-    @inline
-    def apply(
-        resource: Name,
-        resourceType: Name
-    ): TaskStartedEventDetails = {
-      val __obj = js.Dynamic.literal(
-        "resource"     -> resource.asInstanceOf[js.Any],
-        "resourceType" -> resourceType.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TaskStartedEventDetails]
-    }
   }
 
   /**
     * Contains details about a task that failed to submit during an execution.
     */
   @js.native
+  @Factory
   trait TaskSubmitFailedEventDetails extends js.Object {
     var resource: Name
     var resourceType: Name
@@ -2067,83 +949,33 @@ package stepfunctions {
     var error: js.UndefOr[SensitiveError]
   }
 
-  object TaskSubmitFailedEventDetails {
-    @inline
-    def apply(
-        resource: Name,
-        resourceType: Name,
-        cause: js.UndefOr[SensitiveCause] = js.undefined,
-        error: js.UndefOr[SensitiveError] = js.undefined
-    ): TaskSubmitFailedEventDetails = {
-      val __obj = js.Dynamic.literal(
-        "resource"     -> resource.asInstanceOf[js.Any],
-        "resourceType" -> resourceType.asInstanceOf[js.Any]
-      )
-
-      cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
-      error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TaskSubmitFailedEventDetails]
-    }
-  }
-
   /**
     * Contains details about a task submitted to a resource .
     */
   @js.native
+  @Factory
   trait TaskSubmittedEventDetails extends js.Object {
     var resource: Name
     var resourceType: Name
     var output: js.UndefOr[SensitiveData]
   }
 
-  object TaskSubmittedEventDetails {
-    @inline
-    def apply(
-        resource: Name,
-        resourceType: Name,
-        output: js.UndefOr[SensitiveData] = js.undefined
-    ): TaskSubmittedEventDetails = {
-      val __obj = js.Dynamic.literal(
-        "resource"     -> resource.asInstanceOf[js.Any],
-        "resourceType" -> resourceType.asInstanceOf[js.Any]
-      )
-
-      output.foreach(__v => __obj.updateDynamic("output")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TaskSubmittedEventDetails]
-    }
-  }
-
   /**
     * Contains details about the successful completion of a task state.
     */
   @js.native
+  @Factory
   trait TaskSucceededEventDetails extends js.Object {
     var resource: Name
     var resourceType: Name
     var output: js.UndefOr[SensitiveData]
   }
 
-  object TaskSucceededEventDetails {
-    @inline
-    def apply(
-        resource: Name,
-        resourceType: Name,
-        output: js.UndefOr[SensitiveData] = js.undefined
-    ): TaskSucceededEventDetails = {
-      val __obj = js.Dynamic.literal(
-        "resource"     -> resource.asInstanceOf[js.Any],
-        "resourceType" -> resourceType.asInstanceOf[js.Any]
-      )
-
-      output.foreach(__v => __obj.updateDynamic("output")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TaskSucceededEventDetails]
-    }
-  }
-
   /**
     * Contains details about a resource timeout that occurred during an execution.
     */
   @js.native
+  @Factory
   trait TaskTimedOutEventDetails extends js.Object {
     var resource: Name
     var resourceType: Name
@@ -2151,60 +983,19 @@ package stepfunctions {
     var error: js.UndefOr[SensitiveError]
   }
 
-  object TaskTimedOutEventDetails {
-    @inline
-    def apply(
-        resource: Name,
-        resourceType: Name,
-        cause: js.UndefOr[SensitiveCause] = js.undefined,
-        error: js.UndefOr[SensitiveError] = js.undefined
-    ): TaskTimedOutEventDetails = {
-      val __obj = js.Dynamic.literal(
-        "resource"     -> resource.asInstanceOf[js.Any],
-        "resourceType" -> resourceType.asInstanceOf[js.Any]
-      )
-
-      cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
-      error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TaskTimedOutEventDetails]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceInput extends js.Object {
     var resourceArn: Arn
     var tagKeys: TagKeyList
   }
 
-  object UntagResourceInput {
-    @inline
-    def apply(
-        resourceArn: Arn,
-        tagKeys: TagKeyList
-    ): UntagResourceInput = {
-      val __obj = js.Dynamic.literal(
-        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceOutput extends js.Object {}
 
-  object UntagResourceOutput {
-    @inline
-    def apply(
-    ): UntagResourceOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UntagResourceOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateStateMachineInput extends js.Object {
     var stateMachineArn: Arn
     var definition: js.UndefOr[Definition]
@@ -2212,40 +1003,9 @@ package stepfunctions {
     var roleArn: js.UndefOr[Arn]
   }
 
-  object UpdateStateMachineInput {
-    @inline
-    def apply(
-        stateMachineArn: Arn,
-        definition: js.UndefOr[Definition] = js.undefined,
-        loggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined,
-        roleArn: js.UndefOr[Arn] = js.undefined
-    ): UpdateStateMachineInput = {
-      val __obj = js.Dynamic.literal(
-        "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any]
-      )
-
-      definition.foreach(__v => __obj.updateDynamic("definition")(__v.asInstanceOf[js.Any]))
-      loggingConfiguration.foreach(__v => __obj.updateDynamic("loggingConfiguration")(__v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateStateMachineInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateStateMachineOutput extends js.Object {
     var updateDate: Timestamp
-  }
-
-  object UpdateStateMachineOutput {
-    @inline
-    def apply(
-        updateDate: Timestamp
-    ): UpdateStateMachineOutput = {
-      val __obj = js.Dynamic.literal(
-        "updateDate" -> updateDate.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateStateMachineOutput]
-    }
   }
 }

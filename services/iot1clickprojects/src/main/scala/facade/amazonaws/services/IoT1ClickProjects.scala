@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object iot1clickprojects {
   type AttributeDefaultValue        = String
@@ -104,6 +105,7 @@ package iot1clickprojects {
   }
 
   @js.native
+  @Factory
   trait AssociateDeviceWithPlacementRequest extends js.Object {
     var deviceId: DeviceId
     var deviceTemplateName: DeviceTemplateName
@@ -111,76 +113,24 @@ package iot1clickprojects {
     var projectName: ProjectName
   }
 
-  object AssociateDeviceWithPlacementRequest {
-    @inline
-    def apply(
-        deviceId: DeviceId,
-        deviceTemplateName: DeviceTemplateName,
-        placementName: PlacementName,
-        projectName: ProjectName
-    ): AssociateDeviceWithPlacementRequest = {
-      val __obj = js.Dynamic.literal(
-        "deviceId"           -> deviceId.asInstanceOf[js.Any],
-        "deviceTemplateName" -> deviceTemplateName.asInstanceOf[js.Any],
-        "placementName"      -> placementName.asInstanceOf[js.Any],
-        "projectName"        -> projectName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AssociateDeviceWithPlacementRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateDeviceWithPlacementResponse extends js.Object {}
 
-  object AssociateDeviceWithPlacementResponse {
-    @inline
-    def apply(
-    ): AssociateDeviceWithPlacementResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[AssociateDeviceWithPlacementResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreatePlacementRequest extends js.Object {
     var placementName: PlacementName
     var projectName: ProjectName
     var attributes: js.UndefOr[PlacementAttributeMap]
   }
 
-  object CreatePlacementRequest {
-    @inline
-    def apply(
-        placementName: PlacementName,
-        projectName: ProjectName,
-        attributes: js.UndefOr[PlacementAttributeMap] = js.undefined
-    ): CreatePlacementRequest = {
-      val __obj = js.Dynamic.literal(
-        "placementName" -> placementName.asInstanceOf[js.Any],
-        "projectName"   -> projectName.asInstanceOf[js.Any]
-      )
-
-      attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreatePlacementRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreatePlacementResponse extends js.Object {}
 
-  object CreatePlacementResponse {
-    @inline
-    def apply(
-    ): CreatePlacementResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[CreatePlacementResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateProjectRequest extends js.Object {
     var projectName: ProjectName
     var description: js.UndefOr[Description]
@@ -188,399 +138,137 @@ package iot1clickprojects {
     var tags: js.UndefOr[TagMap]
   }
 
-  object CreateProjectRequest {
-    @inline
-    def apply(
-        projectName: ProjectName,
-        description: js.UndefOr[Description] = js.undefined,
-        placementTemplate: js.UndefOr[PlacementTemplate] = js.undefined,
-        tags: js.UndefOr[TagMap] = js.undefined
-    ): CreateProjectRequest = {
-      val __obj = js.Dynamic.literal(
-        "projectName" -> projectName.asInstanceOf[js.Any]
-      )
-
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      placementTemplate.foreach(__v => __obj.updateDynamic("placementTemplate")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateProjectRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateProjectResponse extends js.Object {}
 
-  object CreateProjectResponse {
-    @inline
-    def apply(
-    ): CreateProjectResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[CreateProjectResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeletePlacementRequest extends js.Object {
     var placementName: PlacementName
     var projectName: ProjectName
   }
 
-  object DeletePlacementRequest {
-    @inline
-    def apply(
-        placementName: PlacementName,
-        projectName: ProjectName
-    ): DeletePlacementRequest = {
-      val __obj = js.Dynamic.literal(
-        "placementName" -> placementName.asInstanceOf[js.Any],
-        "projectName"   -> projectName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeletePlacementRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeletePlacementResponse extends js.Object {}
 
-  object DeletePlacementResponse {
-    @inline
-    def apply(
-    ): DeletePlacementResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeletePlacementResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteProjectRequest extends js.Object {
     var projectName: ProjectName
   }
 
-  object DeleteProjectRequest {
-    @inline
-    def apply(
-        projectName: ProjectName
-    ): DeleteProjectRequest = {
-      val __obj = js.Dynamic.literal(
-        "projectName" -> projectName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteProjectRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteProjectResponse extends js.Object {}
 
-  object DeleteProjectResponse {
-    @inline
-    def apply(
-    ): DeleteProjectResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteProjectResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribePlacementRequest extends js.Object {
     var placementName: PlacementName
     var projectName: ProjectName
   }
 
-  object DescribePlacementRequest {
-    @inline
-    def apply(
-        placementName: PlacementName,
-        projectName: ProjectName
-    ): DescribePlacementRequest = {
-      val __obj = js.Dynamic.literal(
-        "placementName" -> placementName.asInstanceOf[js.Any],
-        "projectName"   -> projectName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribePlacementRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribePlacementResponse extends js.Object {
     var placement: PlacementDescription
   }
 
-  object DescribePlacementResponse {
-    @inline
-    def apply(
-        placement: PlacementDescription
-    ): DescribePlacementResponse = {
-      val __obj = js.Dynamic.literal(
-        "placement" -> placement.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribePlacementResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeProjectRequest extends js.Object {
     var projectName: ProjectName
   }
 
-  object DescribeProjectRequest {
-    @inline
-    def apply(
-        projectName: ProjectName
-    ): DescribeProjectRequest = {
-      val __obj = js.Dynamic.literal(
-        "projectName" -> projectName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeProjectRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeProjectResponse extends js.Object {
     var project: ProjectDescription
-  }
-
-  object DescribeProjectResponse {
-    @inline
-    def apply(
-        project: ProjectDescription
-    ): DescribeProjectResponse = {
-      val __obj = js.Dynamic.literal(
-        "project" -> project.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeProjectResponse]
-    }
   }
 
   /**
     * An object representing a device for a placement template (see <a>PlacementTemplate</a>).
     */
   @js.native
+  @Factory
   trait DeviceTemplate extends js.Object {
     var callbackOverrides: js.UndefOr[DeviceCallbackOverrideMap]
     var deviceType: js.UndefOr[DeviceType]
   }
 
-  object DeviceTemplate {
-    @inline
-    def apply(
-        callbackOverrides: js.UndefOr[DeviceCallbackOverrideMap] = js.undefined,
-        deviceType: js.UndefOr[DeviceType] = js.undefined
-    ): DeviceTemplate = {
-      val __obj = js.Dynamic.literal()
-      callbackOverrides.foreach(__v => __obj.updateDynamic("callbackOverrides")(__v.asInstanceOf[js.Any]))
-      deviceType.foreach(__v => __obj.updateDynamic("deviceType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeviceTemplate]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateDeviceFromPlacementRequest extends js.Object {
     var deviceTemplateName: DeviceTemplateName
     var placementName: PlacementName
     var projectName: ProjectName
   }
 
-  object DisassociateDeviceFromPlacementRequest {
-    @inline
-    def apply(
-        deviceTemplateName: DeviceTemplateName,
-        placementName: PlacementName,
-        projectName: ProjectName
-    ): DisassociateDeviceFromPlacementRequest = {
-      val __obj = js.Dynamic.literal(
-        "deviceTemplateName" -> deviceTemplateName.asInstanceOf[js.Any],
-        "placementName"      -> placementName.asInstanceOf[js.Any],
-        "projectName"        -> projectName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisassociateDeviceFromPlacementRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateDeviceFromPlacementResponse extends js.Object {}
 
-  object DisassociateDeviceFromPlacementResponse {
-    @inline
-    def apply(
-    ): DisassociateDeviceFromPlacementResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DisassociateDeviceFromPlacementResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDevicesInPlacementRequest extends js.Object {
     var placementName: PlacementName
     var projectName: ProjectName
   }
 
-  object GetDevicesInPlacementRequest {
-    @inline
-    def apply(
-        placementName: PlacementName,
-        projectName: ProjectName
-    ): GetDevicesInPlacementRequest = {
-      val __obj = js.Dynamic.literal(
-        "placementName" -> placementName.asInstanceOf[js.Any],
-        "projectName"   -> projectName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetDevicesInPlacementRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDevicesInPlacementResponse extends js.Object {
     var devices: DeviceMap
   }
 
-  object GetDevicesInPlacementResponse {
-    @inline
-    def apply(
-        devices: DeviceMap
-    ): GetDevicesInPlacementResponse = {
-      val __obj = js.Dynamic.literal(
-        "devices" -> devices.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetDevicesInPlacementResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPlacementsRequest extends js.Object {
     var projectName: ProjectName
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
   }
 
-  object ListPlacementsRequest {
-    @inline
-    def apply(
-        projectName: ProjectName,
-        maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListPlacementsRequest = {
-      val __obj = js.Dynamic.literal(
-        "projectName" -> projectName.asInstanceOf[js.Any]
-      )
-
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPlacementsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPlacementsResponse extends js.Object {
     var placements: PlacementSummaryList
     var nextToken: js.UndefOr[NextToken]
   }
 
-  object ListPlacementsResponse {
-    @inline
-    def apply(
-        placements: PlacementSummaryList,
-        nextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListPlacementsResponse = {
-      val __obj = js.Dynamic.literal(
-        "placements" -> placements.asInstanceOf[js.Any]
-      )
-
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPlacementsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListProjectsRequest extends js.Object {
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
   }
 
-  object ListProjectsRequest {
-    @inline
-    def apply(
-        maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListProjectsRequest = {
-      val __obj = js.Dynamic.literal()
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListProjectsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListProjectsResponse extends js.Object {
     var projects: ProjectSummaryList
     var nextToken: js.UndefOr[NextToken]
   }
 
-  object ListProjectsResponse {
-    @inline
-    def apply(
-        projects: ProjectSummaryList,
-        nextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListProjectsResponse = {
-      val __obj = js.Dynamic.literal(
-        "projects" -> projects.asInstanceOf[js.Any]
-      )
-
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListProjectsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceRequest extends js.Object {
     var resourceArn: ProjectArn
   }
 
-  object ListTagsForResourceRequest {
-    @inline
-    def apply(
-        resourceArn: ProjectArn
-    ): ListTagsForResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListTagsForResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceResponse extends js.Object {
     var tags: js.UndefOr[TagMap]
-  }
-
-  object ListTagsForResourceResponse {
-    @inline
-    def apply(
-        tags: js.UndefOr[TagMap] = js.undefined
-    ): ListTagsForResourceResponse = {
-      val __obj = js.Dynamic.literal()
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceResponse]
-    }
   }
 
   /**
     * An object describing a project's placement.
     */
   @js.native
+  @Factory
   trait PlacementDescription extends js.Object {
     var attributes: PlacementAttributeMap
     var createdDate: Time
@@ -589,31 +277,11 @@ package iot1clickprojects {
     var updatedDate: Time
   }
 
-  object PlacementDescription {
-    @inline
-    def apply(
-        attributes: PlacementAttributeMap,
-        createdDate: Time,
-        placementName: PlacementName,
-        projectName: ProjectName,
-        updatedDate: Time
-    ): PlacementDescription = {
-      val __obj = js.Dynamic.literal(
-        "attributes"    -> attributes.asInstanceOf[js.Any],
-        "createdDate"   -> createdDate.asInstanceOf[js.Any],
-        "placementName" -> placementName.asInstanceOf[js.Any],
-        "projectName"   -> projectName.asInstanceOf[js.Any],
-        "updatedDate"   -> updatedDate.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PlacementDescription]
-    }
-  }
-
   /**
     * An object providing summary information for a particular placement.
     */
   @js.native
+  @Factory
   trait PlacementSummary extends js.Object {
     var createdDate: Time
     var placementName: PlacementName
@@ -621,51 +289,21 @@ package iot1clickprojects {
     var updatedDate: Time
   }
 
-  object PlacementSummary {
-    @inline
-    def apply(
-        createdDate: Time,
-        placementName: PlacementName,
-        projectName: ProjectName,
-        updatedDate: Time
-    ): PlacementSummary = {
-      val __obj = js.Dynamic.literal(
-        "createdDate"   -> createdDate.asInstanceOf[js.Any],
-        "placementName" -> placementName.asInstanceOf[js.Any],
-        "projectName"   -> projectName.asInstanceOf[js.Any],
-        "updatedDate"   -> updatedDate.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PlacementSummary]
-    }
-  }
-
   /**
     * An object defining the template for a placement.
     */
   @js.native
+  @Factory
   trait PlacementTemplate extends js.Object {
     var defaultAttributes: js.UndefOr[DefaultPlacementAttributeMap]
     var deviceTemplates: js.UndefOr[DeviceTemplateMap]
-  }
-
-  object PlacementTemplate {
-    @inline
-    def apply(
-        defaultAttributes: js.UndefOr[DefaultPlacementAttributeMap] = js.undefined,
-        deviceTemplates: js.UndefOr[DeviceTemplateMap] = js.undefined
-    ): PlacementTemplate = {
-      val __obj = js.Dynamic.literal()
-      defaultAttributes.foreach(__v => __obj.updateDynamic("defaultAttributes")(__v.asInstanceOf[js.Any]))
-      deviceTemplates.foreach(__v => __obj.updateDynamic("deviceTemplates")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PlacementTemplate]
-    }
   }
 
   /**
     * An object providing detailed information for a particular project associated with an AWS account and region.
     */
   @js.native
+  @Factory
   trait ProjectDescription extends js.Object {
     var createdDate: Time
     var projectName: ProjectName
@@ -676,35 +314,11 @@ package iot1clickprojects {
     var tags: js.UndefOr[TagMap]
   }
 
-  object ProjectDescription {
-    @inline
-    def apply(
-        createdDate: Time,
-        projectName: ProjectName,
-        updatedDate: Time,
-        arn: js.UndefOr[ProjectArn] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined,
-        placementTemplate: js.UndefOr[PlacementTemplate] = js.undefined,
-        tags: js.UndefOr[TagMap] = js.undefined
-    ): ProjectDescription = {
-      val __obj = js.Dynamic.literal(
-        "createdDate" -> createdDate.asInstanceOf[js.Any],
-        "projectName" -> projectName.asInstanceOf[js.Any],
-        "updatedDate" -> updatedDate.asInstanceOf[js.Any]
-      )
-
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      placementTemplate.foreach(__v => __obj.updateDynamic("placementTemplate")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ProjectDescription]
-    }
-  }
-
   /**
     * An object providing summary information for a particular project for an associated AWS account and region.
     */
   @js.native
+  @Factory
   trait ProjectSummary extends js.Object {
     var createdDate: Time
     var projectName: ProjectName
@@ -713,166 +327,49 @@ package iot1clickprojects {
     var tags: js.UndefOr[TagMap]
   }
 
-  object ProjectSummary {
-    @inline
-    def apply(
-        createdDate: Time,
-        projectName: ProjectName,
-        updatedDate: Time,
-        arn: js.UndefOr[ProjectArn] = js.undefined,
-        tags: js.UndefOr[TagMap] = js.undefined
-    ): ProjectSummary = {
-      val __obj = js.Dynamic.literal(
-        "createdDate" -> createdDate.asInstanceOf[js.Any],
-        "projectName" -> projectName.asInstanceOf[js.Any],
-        "updatedDate" -> updatedDate.asInstanceOf[js.Any]
-      )
-
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ProjectSummary]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceRequest extends js.Object {
     var resourceArn: ProjectArn
     var tags: TagMap
   }
 
-  object TagResourceRequest {
-    @inline
-    def apply(
-        resourceArn: ProjectArn,
-        tags: TagMap
-    ): TagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceResponse extends js.Object {}
 
-  object TagResourceResponse {
-    @inline
-    def apply(
-    ): TagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[TagResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceRequest extends js.Object {
     var resourceArn: ProjectArn
     var tagKeys: TagKeyList
   }
 
-  object UntagResourceRequest {
-    @inline
-    def apply(
-        resourceArn: ProjectArn,
-        tagKeys: TagKeyList
-    ): UntagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceResponse extends js.Object {}
 
-  object UntagResourceResponse {
-    @inline
-    def apply(
-    ): UntagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UntagResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdatePlacementRequest extends js.Object {
     var placementName: PlacementName
     var projectName: ProjectName
     var attributes: js.UndefOr[PlacementAttributeMap]
   }
 
-  object UpdatePlacementRequest {
-    @inline
-    def apply(
-        placementName: PlacementName,
-        projectName: ProjectName,
-        attributes: js.UndefOr[PlacementAttributeMap] = js.undefined
-    ): UpdatePlacementRequest = {
-      val __obj = js.Dynamic.literal(
-        "placementName" -> placementName.asInstanceOf[js.Any],
-        "projectName"   -> projectName.asInstanceOf[js.Any]
-      )
-
-      attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdatePlacementRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdatePlacementResponse extends js.Object {}
 
-  object UpdatePlacementResponse {
-    @inline
-    def apply(
-    ): UpdatePlacementResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdatePlacementResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateProjectRequest extends js.Object {
     var projectName: ProjectName
     var description: js.UndefOr[Description]
     var placementTemplate: js.UndefOr[PlacementTemplate]
   }
 
-  object UpdateProjectRequest {
-    @inline
-    def apply(
-        projectName: ProjectName,
-        description: js.UndefOr[Description] = js.undefined,
-        placementTemplate: js.UndefOr[PlacementTemplate] = js.undefined
-    ): UpdateProjectRequest = {
-      val __obj = js.Dynamic.literal(
-        "projectName" -> projectName.asInstanceOf[js.Any]
-      )
-
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      placementTemplate.foreach(__v => __obj.updateDynamic("placementTemplate")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateProjectRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateProjectResponse extends js.Object {}
-
-  object UpdateProjectResponse {
-    @inline
-    def apply(
-    ): UpdateProjectResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateProjectResponse]
-    }
-  }
 }

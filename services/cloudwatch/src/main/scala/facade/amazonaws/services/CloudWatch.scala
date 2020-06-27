@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object cloudwatch {
   type ActionPrefix                      = String
@@ -219,6 +220,7 @@ package cloudwatch {
     * Represents the history of a specific alarm.
     */
   @js.native
+  @Factory
   trait AlarmHistoryItem extends js.Object {
     var AlarmName: js.UndefOr[AlarmName]
     var HistoryData: js.UndefOr[HistoryData]
@@ -227,29 +229,11 @@ package cloudwatch {
     var Timestamp: js.UndefOr[Timestamp]
   }
 
-  object AlarmHistoryItem {
-    @inline
-    def apply(
-        AlarmName: js.UndefOr[AlarmName] = js.undefined,
-        HistoryData: js.UndefOr[HistoryData] = js.undefined,
-        HistoryItemType: js.UndefOr[HistoryItemType] = js.undefined,
-        HistorySummary: js.UndefOr[HistorySummary] = js.undefined,
-        Timestamp: js.UndefOr[Timestamp] = js.undefined
-    ): AlarmHistoryItem = {
-      val __obj = js.Dynamic.literal()
-      AlarmName.foreach(__v => __obj.updateDynamic("AlarmName")(__v.asInstanceOf[js.Any]))
-      HistoryData.foreach(__v => __obj.updateDynamic("HistoryData")(__v.asInstanceOf[js.Any]))
-      HistoryItemType.foreach(__v => __obj.updateDynamic("HistoryItemType")(__v.asInstanceOf[js.Any]))
-      HistorySummary.foreach(__v => __obj.updateDynamic("HistorySummary")(__v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AlarmHistoryItem]
-    }
-  }
-
   /**
     * An anomaly detection model associated with a particular CloudWatch metric and statistic. You can use the model to display a band of expected normal values when the metric is graphed.
     */
   @js.native
+  @Factory
   trait AnomalyDetector extends js.Object {
     var Configuration: js.UndefOr[AnomalyDetectorConfiguration]
     var Dimensions: js.UndefOr[Dimensions]
@@ -259,47 +243,14 @@ package cloudwatch {
     var StateValue: js.UndefOr[AnomalyDetectorStateValue]
   }
 
-  object AnomalyDetector {
-    @inline
-    def apply(
-        Configuration: js.UndefOr[AnomalyDetectorConfiguration] = js.undefined,
-        Dimensions: js.UndefOr[Dimensions] = js.undefined,
-        MetricName: js.UndefOr[MetricName] = js.undefined,
-        Namespace: js.UndefOr[Namespace] = js.undefined,
-        Stat: js.UndefOr[Stat] = js.undefined,
-        StateValue: js.UndefOr[AnomalyDetectorStateValue] = js.undefined
-    ): AnomalyDetector = {
-      val __obj = js.Dynamic.literal()
-      Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
-      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
-      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
-      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
-      Stat.foreach(__v => __obj.updateDynamic("Stat")(__v.asInstanceOf[js.Any]))
-      StateValue.foreach(__v => __obj.updateDynamic("StateValue")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AnomalyDetector]
-    }
-  }
-
   /**
     * The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model and the time zone to use for the metric.
     */
   @js.native
+  @Factory
   trait AnomalyDetectorConfiguration extends js.Object {
     var ExcludedTimeRanges: js.UndefOr[AnomalyDetectorExcludedTimeRanges]
     var MetricTimezone: js.UndefOr[AnomalyDetectorMetricTimezone]
-  }
-
-  object AnomalyDetectorConfiguration {
-    @inline
-    def apply(
-        ExcludedTimeRanges: js.UndefOr[AnomalyDetectorExcludedTimeRanges] = js.undefined,
-        MetricTimezone: js.UndefOr[AnomalyDetectorMetricTimezone] = js.undefined
-    ): AnomalyDetectorConfiguration = {
-      val __obj = js.Dynamic.literal()
-      ExcludedTimeRanges.foreach(__v => __obj.updateDynamic("ExcludedTimeRanges")(__v.asInstanceOf[js.Any]))
-      MetricTimezone.foreach(__v => __obj.updateDynamic("MetricTimezone")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AnomalyDetectorConfiguration]
-    }
   }
 
   @js.native
@@ -341,6 +292,7 @@ package cloudwatch {
     * Represents a specific dashboard.
     */
   @js.native
+  @Factory
   trait DashboardEntry extends js.Object {
     var DashboardArn: js.UndefOr[DashboardArn]
     var DashboardName: js.UndefOr[DashboardName]
@@ -348,49 +300,21 @@ package cloudwatch {
     var Size: js.UndefOr[Size]
   }
 
-  object DashboardEntry {
-    @inline
-    def apply(
-        DashboardArn: js.UndefOr[DashboardArn] = js.undefined,
-        DashboardName: js.UndefOr[DashboardName] = js.undefined,
-        LastModified: js.UndefOr[LastModified] = js.undefined,
-        Size: js.UndefOr[Size] = js.undefined
-    ): DashboardEntry = {
-      val __obj = js.Dynamic.literal()
-      DashboardArn.foreach(__v => __obj.updateDynamic("DashboardArn")(__v.asInstanceOf[js.Any]))
-      DashboardName.foreach(__v => __obj.updateDynamic("DashboardName")(__v.asInstanceOf[js.Any]))
-      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
-      Size.foreach(__v => __obj.updateDynamic("Size")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DashboardEntry]
-    }
-  }
-
   /**
     * An error or warning for the operation.
     */
   @js.native
+  @Factory
   trait DashboardValidationMessage extends js.Object {
     var DataPath: js.UndefOr[DataPath]
     var Message: js.UndefOr[Message]
-  }
-
-  object DashboardValidationMessage {
-    @inline
-    def apply(
-        DataPath: js.UndefOr[DataPath] = js.undefined,
-        Message: js.UndefOr[Message] = js.undefined
-    ): DashboardValidationMessage = {
-      val __obj = js.Dynamic.literal()
-      DataPath.foreach(__v => __obj.updateDynamic("DataPath")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DashboardValidationMessage]
-    }
   }
 
   /**
     * Encapsulates the statistical data that CloudWatch computes from metric data.
     */
   @js.native
+  @Factory
   trait Datapoint extends js.Object {
     var Average: js.UndefOr[DatapointValue]
     var ExtendedStatistics: js.UndefOr[DatapointValueMap]
@@ -402,50 +326,14 @@ package cloudwatch {
     var Unit: js.UndefOr[StandardUnit]
   }
 
-  object Datapoint {
-    @inline
-    def apply(
-        Average: js.UndefOr[DatapointValue] = js.undefined,
-        ExtendedStatistics: js.UndefOr[DatapointValueMap] = js.undefined,
-        Maximum: js.UndefOr[DatapointValue] = js.undefined,
-        Minimum: js.UndefOr[DatapointValue] = js.undefined,
-        SampleCount: js.UndefOr[DatapointValue] = js.undefined,
-        Sum: js.UndefOr[DatapointValue] = js.undefined,
-        Timestamp: js.UndefOr[Timestamp] = js.undefined,
-        Unit: js.UndefOr[StandardUnit] = js.undefined
-    ): Datapoint = {
-      val __obj = js.Dynamic.literal()
-      Average.foreach(__v => __obj.updateDynamic("Average")(__v.asInstanceOf[js.Any]))
-      ExtendedStatistics.foreach(__v => __obj.updateDynamic("ExtendedStatistics")(__v.asInstanceOf[js.Any]))
-      Maximum.foreach(__v => __obj.updateDynamic("Maximum")(__v.asInstanceOf[js.Any]))
-      Minimum.foreach(__v => __obj.updateDynamic("Minimum")(__v.asInstanceOf[js.Any]))
-      SampleCount.foreach(__v => __obj.updateDynamic("SampleCount")(__v.asInstanceOf[js.Any]))
-      Sum.foreach(__v => __obj.updateDynamic("Sum")(__v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
-      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Datapoint]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteAlarmsInput extends js.Object {
     var AlarmNames: AlarmNames
   }
 
-  object DeleteAlarmsInput {
-    @inline
-    def apply(
-        AlarmNames: AlarmNames
-    ): DeleteAlarmsInput = {
-      val __obj = js.Dynamic.literal(
-        "AlarmNames" -> AlarmNames.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteAlarmsInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteAnomalyDetectorInput extends js.Object {
     var MetricName: MetricName
     var Namespace: Namespace
@@ -453,104 +341,34 @@ package cloudwatch {
     var Dimensions: js.UndefOr[Dimensions]
   }
 
-  object DeleteAnomalyDetectorInput {
-    @inline
-    def apply(
-        MetricName: MetricName,
-        Namespace: Namespace,
-        Stat: Stat,
-        Dimensions: js.UndefOr[Dimensions] = js.undefined
-    ): DeleteAnomalyDetectorInput = {
-      val __obj = js.Dynamic.literal(
-        "MetricName" -> MetricName.asInstanceOf[js.Any],
-        "Namespace"  -> Namespace.asInstanceOf[js.Any],
-        "Stat"       -> Stat.asInstanceOf[js.Any]
-      )
-
-      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteAnomalyDetectorInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteAnomalyDetectorOutput extends js.Object {}
 
-  object DeleteAnomalyDetectorOutput {
-    @inline
-    def apply(
-    ): DeleteAnomalyDetectorOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteAnomalyDetectorOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDashboardsInput extends js.Object {
     var DashboardNames: DashboardNames
   }
 
-  object DeleteDashboardsInput {
-    @inline
-    def apply(
-        DashboardNames: DashboardNames
-    ): DeleteDashboardsInput = {
-      val __obj = js.Dynamic.literal(
-        "DashboardNames" -> DashboardNames.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteDashboardsInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDashboardsOutput extends js.Object {}
 
-  object DeleteDashboardsOutput {
-    @inline
-    def apply(
-    ): DeleteDashboardsOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteDashboardsOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteInsightRulesInput extends js.Object {
     var RuleNames: InsightRuleNames
   }
 
-  object DeleteInsightRulesInput {
-    @inline
-    def apply(
-        RuleNames: InsightRuleNames
-    ): DeleteInsightRulesInput = {
-      val __obj = js.Dynamic.literal(
-        "RuleNames" -> RuleNames.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteInsightRulesInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteInsightRulesOutput extends js.Object {
     var Failures: js.UndefOr[BatchFailures]
   }
 
-  object DeleteInsightRulesOutput {
-    @inline
-    def apply(
-        Failures: js.UndefOr[BatchFailures] = js.undefined
-    ): DeleteInsightRulesOutput = {
-      val __obj = js.Dynamic.literal()
-      Failures.foreach(__v => __obj.updateDynamic("Failures")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteInsightRulesOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeAlarmHistoryInput extends js.Object {
     var AlarmName: js.UndefOr[AlarmName]
     var EndDate: js.UndefOr[Timestamp]
@@ -560,47 +378,15 @@ package cloudwatch {
     var StartDate: js.UndefOr[Timestamp]
   }
 
-  object DescribeAlarmHistoryInput {
-    @inline
-    def apply(
-        AlarmName: js.UndefOr[AlarmName] = js.undefined,
-        EndDate: js.UndefOr[Timestamp] = js.undefined,
-        HistoryItemType: js.UndefOr[HistoryItemType] = js.undefined,
-        MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        StartDate: js.UndefOr[Timestamp] = js.undefined
-    ): DescribeAlarmHistoryInput = {
-      val __obj = js.Dynamic.literal()
-      AlarmName.foreach(__v => __obj.updateDynamic("AlarmName")(__v.asInstanceOf[js.Any]))
-      EndDate.foreach(__v => __obj.updateDynamic("EndDate")(__v.asInstanceOf[js.Any]))
-      HistoryItemType.foreach(__v => __obj.updateDynamic("HistoryItemType")(__v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeAlarmHistoryInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeAlarmHistoryOutput extends js.Object {
     var AlarmHistoryItems: js.UndefOr[AlarmHistoryItems]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object DescribeAlarmHistoryOutput {
-    @inline
-    def apply(
-        AlarmHistoryItems: js.UndefOr[AlarmHistoryItems] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): DescribeAlarmHistoryOutput = {
-      val __obj = js.Dynamic.literal()
-      AlarmHistoryItems.foreach(__v => __obj.updateDynamic("AlarmHistoryItems")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeAlarmHistoryOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeAlarmsForMetricInput extends js.Object {
     var MetricName: MetricName
     var Namespace: Namespace
@@ -611,48 +397,14 @@ package cloudwatch {
     var Unit: js.UndefOr[StandardUnit]
   }
 
-  object DescribeAlarmsForMetricInput {
-    @inline
-    def apply(
-        MetricName: MetricName,
-        Namespace: Namespace,
-        Dimensions: js.UndefOr[Dimensions] = js.undefined,
-        ExtendedStatistic: js.UndefOr[ExtendedStatistic] = js.undefined,
-        Period: js.UndefOr[Period] = js.undefined,
-        Statistic: js.UndefOr[Statistic] = js.undefined,
-        Unit: js.UndefOr[StandardUnit] = js.undefined
-    ): DescribeAlarmsForMetricInput = {
-      val __obj = js.Dynamic.literal(
-        "MetricName" -> MetricName.asInstanceOf[js.Any],
-        "Namespace"  -> Namespace.asInstanceOf[js.Any]
-      )
-
-      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
-      ExtendedStatistic.foreach(__v => __obj.updateDynamic("ExtendedStatistic")(__v.asInstanceOf[js.Any]))
-      Period.foreach(__v => __obj.updateDynamic("Period")(__v.asInstanceOf[js.Any]))
-      Statistic.foreach(__v => __obj.updateDynamic("Statistic")(__v.asInstanceOf[js.Any]))
-      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeAlarmsForMetricInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeAlarmsForMetricOutput extends js.Object {
     var MetricAlarms: js.UndefOr[MetricAlarms]
   }
 
-  object DescribeAlarmsForMetricOutput {
-    @inline
-    def apply(
-        MetricAlarms: js.UndefOr[MetricAlarms] = js.undefined
-    ): DescribeAlarmsForMetricOutput = {
-      val __obj = js.Dynamic.literal()
-      MetricAlarms.foreach(__v => __obj.updateDynamic("MetricAlarms")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeAlarmsForMetricOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeAlarmsInput extends js.Object {
     var ActionPrefix: js.UndefOr[ActionPrefix]
     var AlarmNamePrefix: js.UndefOr[AlarmNamePrefix]
@@ -662,47 +414,15 @@ package cloudwatch {
     var StateValue: js.UndefOr[StateValue]
   }
 
-  object DescribeAlarmsInput {
-    @inline
-    def apply(
-        ActionPrefix: js.UndefOr[ActionPrefix] = js.undefined,
-        AlarmNamePrefix: js.UndefOr[AlarmNamePrefix] = js.undefined,
-        AlarmNames: js.UndefOr[AlarmNames] = js.undefined,
-        MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        StateValue: js.UndefOr[StateValue] = js.undefined
-    ): DescribeAlarmsInput = {
-      val __obj = js.Dynamic.literal()
-      ActionPrefix.foreach(__v => __obj.updateDynamic("ActionPrefix")(__v.asInstanceOf[js.Any]))
-      AlarmNamePrefix.foreach(__v => __obj.updateDynamic("AlarmNamePrefix")(__v.asInstanceOf[js.Any]))
-      AlarmNames.foreach(__v => __obj.updateDynamic("AlarmNames")(__v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      StateValue.foreach(__v => __obj.updateDynamic("StateValue")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeAlarmsInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeAlarmsOutput extends js.Object {
     var MetricAlarms: js.UndefOr[MetricAlarms]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object DescribeAlarmsOutput {
-    @inline
-    def apply(
-        MetricAlarms: js.UndefOr[MetricAlarms] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): DescribeAlarmsOutput = {
-      val __obj = js.Dynamic.literal()
-      MetricAlarms.foreach(__v => __obj.updateDynamic("MetricAlarms")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeAlarmsOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeAnomalyDetectorsInput extends js.Object {
     var Dimensions: js.UndefOr[Dimensions]
     var MaxResults: js.UndefOr[MaxReturnedResultsCount]
@@ -711,275 +431,99 @@ package cloudwatch {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object DescribeAnomalyDetectorsInput {
-    @inline
-    def apply(
-        Dimensions: js.UndefOr[Dimensions] = js.undefined,
-        MaxResults: js.UndefOr[MaxReturnedResultsCount] = js.undefined,
-        MetricName: js.UndefOr[MetricName] = js.undefined,
-        Namespace: js.UndefOr[Namespace] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): DescribeAnomalyDetectorsInput = {
-      val __obj = js.Dynamic.literal()
-      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
-      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeAnomalyDetectorsInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeAnomalyDetectorsOutput extends js.Object {
     var AnomalyDetectors: js.UndefOr[AnomalyDetectors]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object DescribeAnomalyDetectorsOutput {
-    @inline
-    def apply(
-        AnomalyDetectors: js.UndefOr[AnomalyDetectors] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): DescribeAnomalyDetectorsOutput = {
-      val __obj = js.Dynamic.literal()
-      AnomalyDetectors.foreach(__v => __obj.updateDynamic("AnomalyDetectors")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeAnomalyDetectorsOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeInsightRulesInput extends js.Object {
     var MaxResults: js.UndefOr[InsightRuleMaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object DescribeInsightRulesInput {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[InsightRuleMaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): DescribeInsightRulesInput = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeInsightRulesInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeInsightRulesOutput extends js.Object {
     var InsightRules: js.UndefOr[InsightRules]
     var NextToken: js.UndefOr[NextToken]
-  }
-
-  object DescribeInsightRulesOutput {
-    @inline
-    def apply(
-        InsightRules: js.UndefOr[InsightRules] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): DescribeInsightRulesOutput = {
-      val __obj = js.Dynamic.literal()
-      InsightRules.foreach(__v => __obj.updateDynamic("InsightRules")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeInsightRulesOutput]
-    }
   }
 
   /**
     * Expands the identity of a metric.
     */
   @js.native
+  @Factory
   trait Dimension extends js.Object {
     var Name: DimensionName
     var Value: DimensionValue
-  }
-
-  object Dimension {
-    @inline
-    def apply(
-        Name: DimensionName,
-        Value: DimensionValue
-    ): Dimension = {
-      val __obj = js.Dynamic.literal(
-        "Name"  -> Name.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Dimension]
-    }
   }
 
   /**
     * Represents filters for a dimension.
     */
   @js.native
+  @Factory
   trait DimensionFilter extends js.Object {
     var Name: DimensionName
     var Value: js.UndefOr[DimensionValue]
   }
 
-  object DimensionFilter {
-    @inline
-    def apply(
-        Name: DimensionName,
-        Value: js.UndefOr[DimensionValue] = js.undefined
-    ): DimensionFilter = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DimensionFilter]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisableAlarmActionsInput extends js.Object {
     var AlarmNames: AlarmNames
   }
 
-  object DisableAlarmActionsInput {
-    @inline
-    def apply(
-        AlarmNames: AlarmNames
-    ): DisableAlarmActionsInput = {
-      val __obj = js.Dynamic.literal(
-        "AlarmNames" -> AlarmNames.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisableAlarmActionsInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisableInsightRulesInput extends js.Object {
     var RuleNames: InsightRuleNames
   }
 
-  object DisableInsightRulesInput {
-    @inline
-    def apply(
-        RuleNames: InsightRuleNames
-    ): DisableInsightRulesInput = {
-      val __obj = js.Dynamic.literal(
-        "RuleNames" -> RuleNames.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisableInsightRulesInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisableInsightRulesOutput extends js.Object {
     var Failures: js.UndefOr[BatchFailures]
   }
 
-  object DisableInsightRulesOutput {
-    @inline
-    def apply(
-        Failures: js.UndefOr[BatchFailures] = js.undefined
-    ): DisableInsightRulesOutput = {
-      val __obj = js.Dynamic.literal()
-      Failures.foreach(__v => __obj.updateDynamic("Failures")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DisableInsightRulesOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait EnableAlarmActionsInput extends js.Object {
     var AlarmNames: AlarmNames
   }
 
-  object EnableAlarmActionsInput {
-    @inline
-    def apply(
-        AlarmNames: AlarmNames
-    ): EnableAlarmActionsInput = {
-      val __obj = js.Dynamic.literal(
-        "AlarmNames" -> AlarmNames.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[EnableAlarmActionsInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait EnableInsightRulesInput extends js.Object {
     var RuleNames: InsightRuleNames
   }
 
-  object EnableInsightRulesInput {
-    @inline
-    def apply(
-        RuleNames: InsightRuleNames
-    ): EnableInsightRulesInput = {
-      val __obj = js.Dynamic.literal(
-        "RuleNames" -> RuleNames.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[EnableInsightRulesInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait EnableInsightRulesOutput extends js.Object {
     var Failures: js.UndefOr[BatchFailures]
   }
 
-  object EnableInsightRulesOutput {
-    @inline
-    def apply(
-        Failures: js.UndefOr[BatchFailures] = js.undefined
-    ): EnableInsightRulesOutput = {
-      val __obj = js.Dynamic.literal()
-      Failures.foreach(__v => __obj.updateDynamic("Failures")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EnableInsightRulesOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDashboardInput extends js.Object {
     var DashboardName: DashboardName
   }
 
-  object GetDashboardInput {
-    @inline
-    def apply(
-        DashboardName: DashboardName
-    ): GetDashboardInput = {
-      val __obj = js.Dynamic.literal(
-        "DashboardName" -> DashboardName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetDashboardInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDashboardOutput extends js.Object {
     var DashboardArn: js.UndefOr[DashboardArn]
     var DashboardBody: js.UndefOr[DashboardBody]
     var DashboardName: js.UndefOr[DashboardName]
   }
 
-  object GetDashboardOutput {
-    @inline
-    def apply(
-        DashboardArn: js.UndefOr[DashboardArn] = js.undefined,
-        DashboardBody: js.UndefOr[DashboardBody] = js.undefined,
-        DashboardName: js.UndefOr[DashboardName] = js.undefined
-    ): GetDashboardOutput = {
-      val __obj = js.Dynamic.literal()
-      DashboardArn.foreach(__v => __obj.updateDynamic("DashboardArn")(__v.asInstanceOf[js.Any]))
-      DashboardBody.foreach(__v => __obj.updateDynamic("DashboardBody")(__v.asInstanceOf[js.Any]))
-      DashboardName.foreach(__v => __obj.updateDynamic("DashboardName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDashboardOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetInsightRuleReportInput extends js.Object {
     var EndTime: Timestamp
     var Period: Period
@@ -990,32 +534,8 @@ package cloudwatch {
     var OrderBy: js.UndefOr[InsightRuleOrderBy]
   }
 
-  object GetInsightRuleReportInput {
-    @inline
-    def apply(
-        EndTime: Timestamp,
-        Period: Period,
-        RuleName: InsightRuleName,
-        StartTime: Timestamp,
-        MaxContributorCount: js.UndefOr[InsightRuleUnboundInteger] = js.undefined,
-        Metrics: js.UndefOr[InsightRuleMetricList] = js.undefined,
-        OrderBy: js.UndefOr[InsightRuleOrderBy] = js.undefined
-    ): GetInsightRuleReportInput = {
-      val __obj = js.Dynamic.literal(
-        "EndTime"   -> EndTime.asInstanceOf[js.Any],
-        "Period"    -> Period.asInstanceOf[js.Any],
-        "RuleName"  -> RuleName.asInstanceOf[js.Any],
-        "StartTime" -> StartTime.asInstanceOf[js.Any]
-      )
-
-      MaxContributorCount.foreach(__v => __obj.updateDynamic("MaxContributorCount")(__v.asInstanceOf[js.Any]))
-      Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
-      OrderBy.foreach(__v => __obj.updateDynamic("OrderBy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetInsightRuleReportInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetInsightRuleReportOutput extends js.Object {
     var AggregateValue: js.UndefOr[InsightRuleUnboundDouble]
     var AggregationStatistic: js.UndefOr[InsightRuleAggregationStatistic]
@@ -1025,28 +545,8 @@ package cloudwatch {
     var MetricDatapoints: js.UndefOr[InsightRuleMetricDatapoints]
   }
 
-  object GetInsightRuleReportOutput {
-    @inline
-    def apply(
-        AggregateValue: js.UndefOr[InsightRuleUnboundDouble] = js.undefined,
-        AggregationStatistic: js.UndefOr[InsightRuleAggregationStatistic] = js.undefined,
-        ApproximateUniqueCount: js.UndefOr[InsightRuleUnboundLong] = js.undefined,
-        Contributors: js.UndefOr[InsightRuleContributors] = js.undefined,
-        KeyLabels: js.UndefOr[InsightRuleContributorKeyLabels] = js.undefined,
-        MetricDatapoints: js.UndefOr[InsightRuleMetricDatapoints] = js.undefined
-    ): GetInsightRuleReportOutput = {
-      val __obj = js.Dynamic.literal()
-      AggregateValue.foreach(__v => __obj.updateDynamic("AggregateValue")(__v.asInstanceOf[js.Any]))
-      AggregationStatistic.foreach(__v => __obj.updateDynamic("AggregationStatistic")(__v.asInstanceOf[js.Any]))
-      ApproximateUniqueCount.foreach(__v => __obj.updateDynamic("ApproximateUniqueCount")(__v.asInstanceOf[js.Any]))
-      Contributors.foreach(__v => __obj.updateDynamic("Contributors")(__v.asInstanceOf[js.Any]))
-      KeyLabels.foreach(__v => __obj.updateDynamic("KeyLabels")(__v.asInstanceOf[js.Any]))
-      MetricDatapoints.foreach(__v => __obj.updateDynamic("MetricDatapoints")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetInsightRuleReportOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetMetricDataInput extends js.Object {
     var EndTime: Timestamp
     var MetricDataQueries: MetricDataQueries
@@ -1056,52 +556,16 @@ package cloudwatch {
     var ScanBy: js.UndefOr[ScanBy]
   }
 
-  object GetMetricDataInput {
-    @inline
-    def apply(
-        EndTime: Timestamp,
-        MetricDataQueries: MetricDataQueries,
-        StartTime: Timestamp,
-        MaxDatapoints: js.UndefOr[GetMetricDataMaxDatapoints] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        ScanBy: js.UndefOr[ScanBy] = js.undefined
-    ): GetMetricDataInput = {
-      val __obj = js.Dynamic.literal(
-        "EndTime"           -> EndTime.asInstanceOf[js.Any],
-        "MetricDataQueries" -> MetricDataQueries.asInstanceOf[js.Any],
-        "StartTime"         -> StartTime.asInstanceOf[js.Any]
-      )
-
-      MaxDatapoints.foreach(__v => __obj.updateDynamic("MaxDatapoints")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ScanBy.foreach(__v => __obj.updateDynamic("ScanBy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetMetricDataInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetMetricDataOutput extends js.Object {
     var Messages: js.UndefOr[MetricDataResultMessages]
     var MetricDataResults: js.UndefOr[MetricDataResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object GetMetricDataOutput {
-    @inline
-    def apply(
-        Messages: js.UndefOr[MetricDataResultMessages] = js.undefined,
-        MetricDataResults: js.UndefOr[MetricDataResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): GetMetricDataOutput = {
-      val __obj = js.Dynamic.literal()
-      Messages.foreach(__v => __obj.updateDynamic("Messages")(__v.asInstanceOf[js.Any]))
-      MetricDataResults.foreach(__v => __obj.updateDynamic("MetricDataResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetMetricDataOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetMetricStatisticsInput extends js.Object {
     var EndTime: Timestamp
     var MetricName: MetricName
@@ -1114,89 +578,24 @@ package cloudwatch {
     var Unit: js.UndefOr[StandardUnit]
   }
 
-  object GetMetricStatisticsInput {
-    @inline
-    def apply(
-        EndTime: Timestamp,
-        MetricName: MetricName,
-        Namespace: Namespace,
-        Period: Period,
-        StartTime: Timestamp,
-        Dimensions: js.UndefOr[Dimensions] = js.undefined,
-        ExtendedStatistics: js.UndefOr[ExtendedStatistics] = js.undefined,
-        Statistics: js.UndefOr[Statistics] = js.undefined,
-        Unit: js.UndefOr[StandardUnit] = js.undefined
-    ): GetMetricStatisticsInput = {
-      val __obj = js.Dynamic.literal(
-        "EndTime"    -> EndTime.asInstanceOf[js.Any],
-        "MetricName" -> MetricName.asInstanceOf[js.Any],
-        "Namespace"  -> Namespace.asInstanceOf[js.Any],
-        "Period"     -> Period.asInstanceOf[js.Any],
-        "StartTime"  -> StartTime.asInstanceOf[js.Any]
-      )
-
-      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
-      ExtendedStatistics.foreach(__v => __obj.updateDynamic("ExtendedStatistics")(__v.asInstanceOf[js.Any]))
-      Statistics.foreach(__v => __obj.updateDynamic("Statistics")(__v.asInstanceOf[js.Any]))
-      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetMetricStatisticsInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetMetricStatisticsOutput extends js.Object {
     var Datapoints: js.UndefOr[Datapoints]
     var Label: js.UndefOr[MetricLabel]
   }
 
-  object GetMetricStatisticsOutput {
-    @inline
-    def apply(
-        Datapoints: js.UndefOr[Datapoints] = js.undefined,
-        Label: js.UndefOr[MetricLabel] = js.undefined
-    ): GetMetricStatisticsOutput = {
-      val __obj = js.Dynamic.literal()
-      Datapoints.foreach(__v => __obj.updateDynamic("Datapoints")(__v.asInstanceOf[js.Any]))
-      Label.foreach(__v => __obj.updateDynamic("Label")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetMetricStatisticsOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetMetricWidgetImageInput extends js.Object {
     var MetricWidget: MetricWidget
     var OutputFormat: js.UndefOr[OutputFormat]
   }
 
-  object GetMetricWidgetImageInput {
-    @inline
-    def apply(
-        MetricWidget: MetricWidget,
-        OutputFormat: js.UndefOr[OutputFormat] = js.undefined
-    ): GetMetricWidgetImageInput = {
-      val __obj = js.Dynamic.literal(
-        "MetricWidget" -> MetricWidget.asInstanceOf[js.Any]
-      )
-
-      OutputFormat.foreach(__v => __obj.updateDynamic("OutputFormat")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetMetricWidgetImageInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetMetricWidgetImageOutput extends js.Object {
     var MetricWidgetImage: js.UndefOr[MetricWidgetImage]
-  }
-
-  object GetMetricWidgetImageOutput {
-    @inline
-    def apply(
-        MetricWidgetImage: js.UndefOr[MetricWidgetImage] = js.undefined
-    ): GetMetricWidgetImageOutput = {
-      val __obj = js.Dynamic.literal()
-      MetricWidgetImage.foreach(__v => __obj.updateDynamic("MetricWidgetImage")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetMetricWidgetImageOutput]
-    }
   }
 
   @js.native
@@ -1213,30 +612,12 @@ package cloudwatch {
     * This structure contains the definition for a Contributor Insights rule.
     */
   @js.native
+  @Factory
   trait InsightRule extends js.Object {
     var Definition: InsightRuleDefinition
     var Name: InsightRuleName
     var Schema: InsightRuleSchema
     var State: InsightRuleState
-  }
-
-  object InsightRule {
-    @inline
-    def apply(
-        Definition: InsightRuleDefinition,
-        Name: InsightRuleName,
-        Schema: InsightRuleSchema,
-        State: InsightRuleState
-    ): InsightRule = {
-      val __obj = js.Dynamic.literal(
-        "Definition" -> Definition.asInstanceOf[js.Any],
-        "Name"       -> Name.asInstanceOf[js.Any],
-        "Schema"     -> Schema.asInstanceOf[js.Any],
-        "State"      -> State.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[InsightRule]
-    }
   }
 
   /**
@@ -1245,27 +626,11 @@ package cloudwatch {
     *  For more information, see <a>GetInsightRuleReport</a>.
     */
   @js.native
+  @Factory
   trait InsightRuleContributor extends js.Object {
     var ApproximateAggregateValue: InsightRuleUnboundDouble
     var Datapoints: InsightRuleContributorDatapoints
     var Keys: InsightRuleContributorKeys
-  }
-
-  object InsightRuleContributor {
-    @inline
-    def apply(
-        ApproximateAggregateValue: InsightRuleUnboundDouble,
-        Datapoints: InsightRuleContributorDatapoints,
-        Keys: InsightRuleContributorKeys
-    ): InsightRuleContributor = {
-      val __obj = js.Dynamic.literal(
-        "ApproximateAggregateValue" -> ApproximateAggregateValue.asInstanceOf[js.Any],
-        "Datapoints"                -> Datapoints.asInstanceOf[js.Any],
-        "Keys"                      -> Keys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[InsightRuleContributor]
-    }
   }
 
   /**
@@ -1273,24 +638,10 @@ package cloudwatch {
     *  For more information, see <a>GetInsightRuleReport</a> and <a>InsightRuleContributor</a>.
     */
   @js.native
+  @Factory
   trait InsightRuleContributorDatapoint extends js.Object {
     var ApproximateValue: InsightRuleUnboundDouble
     var Timestamp: Timestamp
-  }
-
-  object InsightRuleContributorDatapoint {
-    @inline
-    def apply(
-        ApproximateValue: InsightRuleUnboundDouble,
-        Timestamp: Timestamp
-    ): InsightRuleContributorDatapoint = {
-      val __obj = js.Dynamic.literal(
-        "ApproximateValue" -> ApproximateValue.asInstanceOf[js.Any],
-        "Timestamp"        -> Timestamp.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[InsightRuleContributorDatapoint]
-    }
   }
 
   /**
@@ -1298,6 +649,7 @@ package cloudwatch {
     *  For more information, see <a>GetInsightRuleReport</a>.
     */
   @js.native
+  @Factory
   trait InsightRuleMetricDatapoint extends js.Object {
     var Timestamp: Timestamp
     var Average: js.UndefOr[InsightRuleUnboundDouble]
@@ -1309,72 +661,22 @@ package cloudwatch {
     var UniqueContributors: js.UndefOr[InsightRuleUnboundDouble]
   }
 
-  object InsightRuleMetricDatapoint {
-    @inline
-    def apply(
-        Timestamp: Timestamp,
-        Average: js.UndefOr[InsightRuleUnboundDouble] = js.undefined,
-        MaxContributorValue: js.UndefOr[InsightRuleUnboundDouble] = js.undefined,
-        Maximum: js.UndefOr[InsightRuleUnboundDouble] = js.undefined,
-        Minimum: js.UndefOr[InsightRuleUnboundDouble] = js.undefined,
-        SampleCount: js.UndefOr[InsightRuleUnboundDouble] = js.undefined,
-        Sum: js.UndefOr[InsightRuleUnboundDouble] = js.undefined,
-        UniqueContributors: js.UndefOr[InsightRuleUnboundDouble] = js.undefined
-    ): InsightRuleMetricDatapoint = {
-      val __obj = js.Dynamic.literal(
-        "Timestamp" -> Timestamp.asInstanceOf[js.Any]
-      )
-
-      Average.foreach(__v => __obj.updateDynamic("Average")(__v.asInstanceOf[js.Any]))
-      MaxContributorValue.foreach(__v => __obj.updateDynamic("MaxContributorValue")(__v.asInstanceOf[js.Any]))
-      Maximum.foreach(__v => __obj.updateDynamic("Maximum")(__v.asInstanceOf[js.Any]))
-      Minimum.foreach(__v => __obj.updateDynamic("Minimum")(__v.asInstanceOf[js.Any]))
-      SampleCount.foreach(__v => __obj.updateDynamic("SampleCount")(__v.asInstanceOf[js.Any]))
-      Sum.foreach(__v => __obj.updateDynamic("Sum")(__v.asInstanceOf[js.Any]))
-      UniqueContributors.foreach(__v => __obj.updateDynamic("UniqueContributors")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InsightRuleMetricDatapoint]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListDashboardsInput extends js.Object {
     var DashboardNamePrefix: js.UndefOr[DashboardNamePrefix]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListDashboardsInput {
-    @inline
-    def apply(
-        DashboardNamePrefix: js.UndefOr[DashboardNamePrefix] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListDashboardsInput = {
-      val __obj = js.Dynamic.literal()
-      DashboardNamePrefix.foreach(__v => __obj.updateDynamic("DashboardNamePrefix")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDashboardsInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListDashboardsOutput extends js.Object {
     var DashboardEntries: js.UndefOr[DashboardEntries]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListDashboardsOutput {
-    @inline
-    def apply(
-        DashboardEntries: js.UndefOr[DashboardEntries] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListDashboardsOutput = {
-      val __obj = js.Dynamic.literal()
-      DashboardEntries.foreach(__v => __obj.updateDynamic("DashboardEntries")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDashboardsOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListMetricsInput extends js.Object {
     var Dimensions: js.UndefOr[DimensionFilters]
     var MetricName: js.UndefOr[MetricName]
@@ -1382,127 +684,51 @@ package cloudwatch {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListMetricsInput {
-    @inline
-    def apply(
-        Dimensions: js.UndefOr[DimensionFilters] = js.undefined,
-        MetricName: js.UndefOr[MetricName] = js.undefined,
-        Namespace: js.UndefOr[Namespace] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListMetricsInput = {
-      val __obj = js.Dynamic.literal()
-      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
-      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
-      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListMetricsInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListMetricsOutput extends js.Object {
     var Metrics: js.UndefOr[Metrics]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListMetricsOutput {
-    @inline
-    def apply(
-        Metrics: js.UndefOr[Metrics] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListMetricsOutput = {
-      val __obj = js.Dynamic.literal()
-      Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListMetricsOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceInput extends js.Object {
     var ResourceARN: AmazonResourceName
   }
 
-  object ListTagsForResourceInput {
-    @inline
-    def apply(
-        ResourceARN: AmazonResourceName
-    ): ListTagsForResourceInput = {
-      val __obj = js.Dynamic.literal(
-        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListTagsForResourceInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceOutput extends js.Object {
     var Tags: js.UndefOr[TagList]
-  }
-
-  object ListTagsForResourceOutput {
-    @inline
-    def apply(
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): ListTagsForResourceOutput = {
-      val __obj = js.Dynamic.literal()
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceOutput]
-    }
   }
 
   /**
     * A message returned by the <code>GetMetricData</code>API, including a code and a description.
     */
   @js.native
+  @Factory
   trait MessageData extends js.Object {
     var Code: js.UndefOr[MessageDataCode]
     var Value: js.UndefOr[MessageDataValue]
-  }
-
-  object MessageData {
-    @inline
-    def apply(
-        Code: js.UndefOr[MessageDataCode] = js.undefined,
-        Value: js.UndefOr[MessageDataValue] = js.undefined
-    ): MessageData = {
-      val __obj = js.Dynamic.literal()
-      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MessageData]
-    }
   }
 
   /**
     * Represents a specific metric.
     */
   @js.native
+  @Factory
   trait Metric extends js.Object {
     var Dimensions: js.UndefOr[Dimensions]
     var MetricName: js.UndefOr[MetricName]
     var Namespace: js.UndefOr[Namespace]
   }
 
-  object Metric {
-    @inline
-    def apply(
-        Dimensions: js.UndefOr[Dimensions] = js.undefined,
-        MetricName: js.UndefOr[MetricName] = js.undefined,
-        Namespace: js.UndefOr[Namespace] = js.undefined
-    ): Metric = {
-      val __obj = js.Dynamic.literal()
-      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
-      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
-      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Metric]
-    }
-  }
-
   /**
     * Represents an alarm.
     */
   @js.native
+  @Factory
   trait MetricAlarm extends js.Object {
     var ActionsEnabled: js.UndefOr[ActionsEnabled]
     var AlarmActions: js.UndefOr[ResourceList]
@@ -1533,73 +759,6 @@ package cloudwatch {
     var Unit: js.UndefOr[StandardUnit]
   }
 
-  object MetricAlarm {
-    @inline
-    def apply(
-        ActionsEnabled: js.UndefOr[ActionsEnabled] = js.undefined,
-        AlarmActions: js.UndefOr[ResourceList] = js.undefined,
-        AlarmArn: js.UndefOr[AlarmArn] = js.undefined,
-        AlarmConfigurationUpdatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
-        AlarmDescription: js.UndefOr[AlarmDescription] = js.undefined,
-        AlarmName: js.UndefOr[AlarmName] = js.undefined,
-        ComparisonOperator: js.UndefOr[ComparisonOperator] = js.undefined,
-        DatapointsToAlarm: js.UndefOr[DatapointsToAlarm] = js.undefined,
-        Dimensions: js.UndefOr[Dimensions] = js.undefined,
-        EvaluateLowSampleCountPercentile: js.UndefOr[EvaluateLowSampleCountPercentile] = js.undefined,
-        EvaluationPeriods: js.UndefOr[EvaluationPeriods] = js.undefined,
-        ExtendedStatistic: js.UndefOr[ExtendedStatistic] = js.undefined,
-        InsufficientDataActions: js.UndefOr[ResourceList] = js.undefined,
-        MetricName: js.UndefOr[MetricName] = js.undefined,
-        Metrics: js.UndefOr[MetricDataQueries] = js.undefined,
-        Namespace: js.UndefOr[Namespace] = js.undefined,
-        OKActions: js.UndefOr[ResourceList] = js.undefined,
-        Period: js.UndefOr[Period] = js.undefined,
-        StateReason: js.UndefOr[StateReason] = js.undefined,
-        StateReasonData: js.UndefOr[StateReasonData] = js.undefined,
-        StateUpdatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
-        StateValue: js.UndefOr[StateValue] = js.undefined,
-        Statistic: js.UndefOr[Statistic] = js.undefined,
-        Threshold: js.UndefOr[Threshold] = js.undefined,
-        ThresholdMetricId: js.UndefOr[MetricId] = js.undefined,
-        TreatMissingData: js.UndefOr[TreatMissingData] = js.undefined,
-        Unit: js.UndefOr[StandardUnit] = js.undefined
-    ): MetricAlarm = {
-      val __obj = js.Dynamic.literal()
-      ActionsEnabled.foreach(__v => __obj.updateDynamic("ActionsEnabled")(__v.asInstanceOf[js.Any]))
-      AlarmActions.foreach(__v => __obj.updateDynamic("AlarmActions")(__v.asInstanceOf[js.Any]))
-      AlarmArn.foreach(__v => __obj.updateDynamic("AlarmArn")(__v.asInstanceOf[js.Any]))
-      AlarmConfigurationUpdatedTimestamp.foreach(__v =>
-        __obj.updateDynamic("AlarmConfigurationUpdatedTimestamp")(__v.asInstanceOf[js.Any])
-      )
-      AlarmDescription.foreach(__v => __obj.updateDynamic("AlarmDescription")(__v.asInstanceOf[js.Any]))
-      AlarmName.foreach(__v => __obj.updateDynamic("AlarmName")(__v.asInstanceOf[js.Any]))
-      ComparisonOperator.foreach(__v => __obj.updateDynamic("ComparisonOperator")(__v.asInstanceOf[js.Any]))
-      DatapointsToAlarm.foreach(__v => __obj.updateDynamic("DatapointsToAlarm")(__v.asInstanceOf[js.Any]))
-      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
-      EvaluateLowSampleCountPercentile.foreach(__v =>
-        __obj.updateDynamic("EvaluateLowSampleCountPercentile")(__v.asInstanceOf[js.Any])
-      )
-      EvaluationPeriods.foreach(__v => __obj.updateDynamic("EvaluationPeriods")(__v.asInstanceOf[js.Any]))
-      ExtendedStatistic.foreach(__v => __obj.updateDynamic("ExtendedStatistic")(__v.asInstanceOf[js.Any]))
-      InsufficientDataActions.foreach(__v => __obj.updateDynamic("InsufficientDataActions")(__v.asInstanceOf[js.Any]))
-      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
-      Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
-      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
-      OKActions.foreach(__v => __obj.updateDynamic("OKActions")(__v.asInstanceOf[js.Any]))
-      Period.foreach(__v => __obj.updateDynamic("Period")(__v.asInstanceOf[js.Any]))
-      StateReason.foreach(__v => __obj.updateDynamic("StateReason")(__v.asInstanceOf[js.Any]))
-      StateReasonData.foreach(__v => __obj.updateDynamic("StateReasonData")(__v.asInstanceOf[js.Any]))
-      StateUpdatedTimestamp.foreach(__v => __obj.updateDynamic("StateUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
-      StateValue.foreach(__v => __obj.updateDynamic("StateValue")(__v.asInstanceOf[js.Any]))
-      Statistic.foreach(__v => __obj.updateDynamic("Statistic")(__v.asInstanceOf[js.Any]))
-      Threshold.foreach(__v => __obj.updateDynamic("Threshold")(__v.asInstanceOf[js.Any]))
-      ThresholdMetricId.foreach(__v => __obj.updateDynamic("ThresholdMetricId")(__v.asInstanceOf[js.Any]))
-      TreatMissingData.foreach(__v => __obj.updateDynamic("TreatMissingData")(__v.asInstanceOf[js.Any]))
-      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MetricAlarm]
-    }
-  }
-
   /**
     * This structure is used in both <code>GetMetricData</code> and <code>PutMetricAlarm</code>. The supported use of this structure is different for those two operations.
     *  When used in <code>GetMetricData</code>, it indicates the metric data to return, and whether this call is just retrieving a batch set of data for one metric, or is performing a math expression on metric data. A single <code>GetMetricData</code> call can include up to 100 <code>MetricDataQuery</code> structures.
@@ -1608,6 +767,7 @@ package cloudwatch {
     *  Some of the parameters of this structure also have different uses whether you are using this structure in a <code>GetMetricData</code> operation or a <code>PutMetricAlarm</code> operation. These differences are explained in the following parameter list.
     */
   @js.native
+  @Factory
   trait MetricDataQuery extends js.Object {
     var Id: MetricId
     var Expression: js.UndefOr[MetricExpression]
@@ -1617,33 +777,11 @@ package cloudwatch {
     var ReturnData: js.UndefOr[ReturnData]
   }
 
-  object MetricDataQuery {
-    @inline
-    def apply(
-        Id: MetricId,
-        Expression: js.UndefOr[MetricExpression] = js.undefined,
-        Label: js.UndefOr[MetricLabel] = js.undefined,
-        MetricStat: js.UndefOr[MetricStat] = js.undefined,
-        Period: js.UndefOr[Period] = js.undefined,
-        ReturnData: js.UndefOr[ReturnData] = js.undefined
-    ): MetricDataQuery = {
-      val __obj = js.Dynamic.literal(
-        "Id" -> Id.asInstanceOf[js.Any]
-      )
-
-      Expression.foreach(__v => __obj.updateDynamic("Expression")(__v.asInstanceOf[js.Any]))
-      Label.foreach(__v => __obj.updateDynamic("Label")(__v.asInstanceOf[js.Any]))
-      MetricStat.foreach(__v => __obj.updateDynamic("MetricStat")(__v.asInstanceOf[js.Any]))
-      Period.foreach(__v => __obj.updateDynamic("Period")(__v.asInstanceOf[js.Any]))
-      ReturnData.foreach(__v => __obj.updateDynamic("ReturnData")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MetricDataQuery]
-    }
-  }
-
   /**
     * A <code>GetMetricData</code> call returns an array of <code>MetricDataResult</code> structures. Each of these structures includes the data points for that metric, along with the timestamps of those data points and other identifying information.
     */
   @js.native
+  @Factory
   trait MetricDataResult extends js.Object {
     var Id: js.UndefOr[MetricId]
     var Label: js.UndefOr[MetricLabel]
@@ -1653,31 +791,11 @@ package cloudwatch {
     var Values: js.UndefOr[DatapointValues]
   }
 
-  object MetricDataResult {
-    @inline
-    def apply(
-        Id: js.UndefOr[MetricId] = js.undefined,
-        Label: js.UndefOr[MetricLabel] = js.undefined,
-        Messages: js.UndefOr[MetricDataResultMessages] = js.undefined,
-        StatusCode: js.UndefOr[StatusCode] = js.undefined,
-        Timestamps: js.UndefOr[Timestamps] = js.undefined,
-        Values: js.UndefOr[DatapointValues] = js.undefined
-    ): MetricDataResult = {
-      val __obj = js.Dynamic.literal()
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Label.foreach(__v => __obj.updateDynamic("Label")(__v.asInstanceOf[js.Any]))
-      Messages.foreach(__v => __obj.updateDynamic("Messages")(__v.asInstanceOf[js.Any]))
-      StatusCode.foreach(__v => __obj.updateDynamic("StatusCode")(__v.asInstanceOf[js.Any]))
-      Timestamps.foreach(__v => __obj.updateDynamic("Timestamps")(__v.asInstanceOf[js.Any]))
-      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MetricDataResult]
-    }
-  }
-
   /**
     * Encapsulates the information sent to either create a metric or add new values to be aggregated into an existing metric.
     */
   @js.native
+  @Factory
   trait MetricDatum extends js.Object {
     var MetricName: MetricName
     var Counts: js.UndefOr[Counts]
@@ -1690,39 +808,11 @@ package cloudwatch {
     var Values: js.UndefOr[Values]
   }
 
-  object MetricDatum {
-    @inline
-    def apply(
-        MetricName: MetricName,
-        Counts: js.UndefOr[Counts] = js.undefined,
-        Dimensions: js.UndefOr[Dimensions] = js.undefined,
-        StatisticValues: js.UndefOr[StatisticSet] = js.undefined,
-        StorageResolution: js.UndefOr[StorageResolution] = js.undefined,
-        Timestamp: js.UndefOr[Timestamp] = js.undefined,
-        Unit: js.UndefOr[StandardUnit] = js.undefined,
-        Value: js.UndefOr[DatapointValue] = js.undefined,
-        Values: js.UndefOr[Values] = js.undefined
-    ): MetricDatum = {
-      val __obj = js.Dynamic.literal(
-        "MetricName" -> MetricName.asInstanceOf[js.Any]
-      )
-
-      Counts.foreach(__v => __obj.updateDynamic("Counts")(__v.asInstanceOf[js.Any]))
-      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
-      StatisticValues.foreach(__v => __obj.updateDynamic("StatisticValues")(__v.asInstanceOf[js.Any]))
-      StorageResolution.foreach(__v => __obj.updateDynamic("StorageResolution")(__v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
-      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MetricDatum]
-    }
-  }
-
   /**
     * This structure defines the metric to be returned, along with the statistics, period, and units.
     */
   @js.native
+  @Factory
   trait MetricStat extends js.Object {
     var Metric: Metric
     var Period: Period
@@ -1730,29 +820,11 @@ package cloudwatch {
     var Unit: js.UndefOr[StandardUnit]
   }
 
-  object MetricStat {
-    @inline
-    def apply(
-        Metric: Metric,
-        Period: Period,
-        Stat: Stat,
-        Unit: js.UndefOr[StandardUnit] = js.undefined
-    ): MetricStat = {
-      val __obj = js.Dynamic.literal(
-        "Metric" -> Metric.asInstanceOf[js.Any],
-        "Period" -> Period.asInstanceOf[js.Any],
-        "Stat"   -> Stat.asInstanceOf[js.Any]
-      )
-
-      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MetricStat]
-    }
-  }
-
   /**
     * This array is empty if the API operation was successful for all the rules specified in the request. If the operation could not process one of the rules, the following data is returned for each of those rules.
     */
   @js.native
+  @Factory
   trait PartialFailure extends js.Object {
     var ExceptionType: js.UndefOr[ExceptionType]
     var FailureCode: js.UndefOr[FailureCode]
@@ -1760,24 +832,8 @@ package cloudwatch {
     var FailureResource: js.UndefOr[FailureResource]
   }
 
-  object PartialFailure {
-    @inline
-    def apply(
-        ExceptionType: js.UndefOr[ExceptionType] = js.undefined,
-        FailureCode: js.UndefOr[FailureCode] = js.undefined,
-        FailureDescription: js.UndefOr[FailureDescription] = js.undefined,
-        FailureResource: js.UndefOr[FailureResource] = js.undefined
-    ): PartialFailure = {
-      val __obj = js.Dynamic.literal()
-      ExceptionType.foreach(__v => __obj.updateDynamic("ExceptionType")(__v.asInstanceOf[js.Any]))
-      FailureCode.foreach(__v => __obj.updateDynamic("FailureCode")(__v.asInstanceOf[js.Any]))
-      FailureDescription.foreach(__v => __obj.updateDynamic("FailureDescription")(__v.asInstanceOf[js.Any]))
-      FailureResource.foreach(__v => __obj.updateDynamic("FailureResource")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PartialFailure]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutAnomalyDetectorInput extends js.Object {
     var MetricName: MetricName
     var Namespace: Namespace
@@ -1786,117 +842,37 @@ package cloudwatch {
     var Dimensions: js.UndefOr[Dimensions]
   }
 
-  object PutAnomalyDetectorInput {
-    @inline
-    def apply(
-        MetricName: MetricName,
-        Namespace: Namespace,
-        Stat: Stat,
-        Configuration: js.UndefOr[AnomalyDetectorConfiguration] = js.undefined,
-        Dimensions: js.UndefOr[Dimensions] = js.undefined
-    ): PutAnomalyDetectorInput = {
-      val __obj = js.Dynamic.literal(
-        "MetricName" -> MetricName.asInstanceOf[js.Any],
-        "Namespace"  -> Namespace.asInstanceOf[js.Any],
-        "Stat"       -> Stat.asInstanceOf[js.Any]
-      )
-
-      Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
-      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutAnomalyDetectorInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutAnomalyDetectorOutput extends js.Object {}
 
-  object PutAnomalyDetectorOutput {
-    @inline
-    def apply(
-    ): PutAnomalyDetectorOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutAnomalyDetectorOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutDashboardInput extends js.Object {
     var DashboardBody: DashboardBody
     var DashboardName: DashboardName
   }
 
-  object PutDashboardInput {
-    @inline
-    def apply(
-        DashboardBody: DashboardBody,
-        DashboardName: DashboardName
-    ): PutDashboardInput = {
-      val __obj = js.Dynamic.literal(
-        "DashboardBody" -> DashboardBody.asInstanceOf[js.Any],
-        "DashboardName" -> DashboardName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutDashboardInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutDashboardOutput extends js.Object {
     var DashboardValidationMessages: js.UndefOr[DashboardValidationMessages]
   }
 
-  object PutDashboardOutput {
-    @inline
-    def apply(
-        DashboardValidationMessages: js.UndefOr[DashboardValidationMessages] = js.undefined
-    ): PutDashboardOutput = {
-      val __obj = js.Dynamic.literal()
-      DashboardValidationMessages.foreach(__v =>
-        __obj.updateDynamic("DashboardValidationMessages")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[PutDashboardOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutInsightRuleInput extends js.Object {
     var RuleDefinition: InsightRuleDefinition
     var RuleName: InsightRuleName
     var RuleState: js.UndefOr[InsightRuleState]
   }
 
-  object PutInsightRuleInput {
-    @inline
-    def apply(
-        RuleDefinition: InsightRuleDefinition,
-        RuleName: InsightRuleName,
-        RuleState: js.UndefOr[InsightRuleState] = js.undefined
-    ): PutInsightRuleInput = {
-      val __obj = js.Dynamic.literal(
-        "RuleDefinition" -> RuleDefinition.asInstanceOf[js.Any],
-        "RuleName"       -> RuleName.asInstanceOf[js.Any]
-      )
-
-      RuleState.foreach(__v => __obj.updateDynamic("RuleState")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutInsightRuleInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutInsightRuleOutput extends js.Object {}
 
-  object PutInsightRuleOutput {
-    @inline
-    def apply(
-    ): PutInsightRuleOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutInsightRuleOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutMetricAlarmInput extends js.Object {
     var AlarmName: AlarmName
     var ComparisonOperator: ComparisonOperator
@@ -1922,106 +898,21 @@ package cloudwatch {
     var Unit: js.UndefOr[StandardUnit]
   }
 
-  object PutMetricAlarmInput {
-    @inline
-    def apply(
-        AlarmName: AlarmName,
-        ComparisonOperator: ComparisonOperator,
-        EvaluationPeriods: EvaluationPeriods,
-        ActionsEnabled: js.UndefOr[ActionsEnabled] = js.undefined,
-        AlarmActions: js.UndefOr[ResourceList] = js.undefined,
-        AlarmDescription: js.UndefOr[AlarmDescription] = js.undefined,
-        DatapointsToAlarm: js.UndefOr[DatapointsToAlarm] = js.undefined,
-        Dimensions: js.UndefOr[Dimensions] = js.undefined,
-        EvaluateLowSampleCountPercentile: js.UndefOr[EvaluateLowSampleCountPercentile] = js.undefined,
-        ExtendedStatistic: js.UndefOr[ExtendedStatistic] = js.undefined,
-        InsufficientDataActions: js.UndefOr[ResourceList] = js.undefined,
-        MetricName: js.UndefOr[MetricName] = js.undefined,
-        Metrics: js.UndefOr[MetricDataQueries] = js.undefined,
-        Namespace: js.UndefOr[Namespace] = js.undefined,
-        OKActions: js.UndefOr[ResourceList] = js.undefined,
-        Period: js.UndefOr[Period] = js.undefined,
-        Statistic: js.UndefOr[Statistic] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined,
-        Threshold: js.UndefOr[Threshold] = js.undefined,
-        ThresholdMetricId: js.UndefOr[MetricId] = js.undefined,
-        TreatMissingData: js.UndefOr[TreatMissingData] = js.undefined,
-        Unit: js.UndefOr[StandardUnit] = js.undefined
-    ): PutMetricAlarmInput = {
-      val __obj = js.Dynamic.literal(
-        "AlarmName"          -> AlarmName.asInstanceOf[js.Any],
-        "ComparisonOperator" -> ComparisonOperator.asInstanceOf[js.Any],
-        "EvaluationPeriods"  -> EvaluationPeriods.asInstanceOf[js.Any]
-      )
-
-      ActionsEnabled.foreach(__v => __obj.updateDynamic("ActionsEnabled")(__v.asInstanceOf[js.Any]))
-      AlarmActions.foreach(__v => __obj.updateDynamic("AlarmActions")(__v.asInstanceOf[js.Any]))
-      AlarmDescription.foreach(__v => __obj.updateDynamic("AlarmDescription")(__v.asInstanceOf[js.Any]))
-      DatapointsToAlarm.foreach(__v => __obj.updateDynamic("DatapointsToAlarm")(__v.asInstanceOf[js.Any]))
-      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
-      EvaluateLowSampleCountPercentile.foreach(__v =>
-        __obj.updateDynamic("EvaluateLowSampleCountPercentile")(__v.asInstanceOf[js.Any])
-      )
-      ExtendedStatistic.foreach(__v => __obj.updateDynamic("ExtendedStatistic")(__v.asInstanceOf[js.Any]))
-      InsufficientDataActions.foreach(__v => __obj.updateDynamic("InsufficientDataActions")(__v.asInstanceOf[js.Any]))
-      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
-      Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
-      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
-      OKActions.foreach(__v => __obj.updateDynamic("OKActions")(__v.asInstanceOf[js.Any]))
-      Period.foreach(__v => __obj.updateDynamic("Period")(__v.asInstanceOf[js.Any]))
-      Statistic.foreach(__v => __obj.updateDynamic("Statistic")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      Threshold.foreach(__v => __obj.updateDynamic("Threshold")(__v.asInstanceOf[js.Any]))
-      ThresholdMetricId.foreach(__v => __obj.updateDynamic("ThresholdMetricId")(__v.asInstanceOf[js.Any]))
-      TreatMissingData.foreach(__v => __obj.updateDynamic("TreatMissingData")(__v.asInstanceOf[js.Any]))
-      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutMetricAlarmInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutMetricDataInput extends js.Object {
     var MetricData: MetricData
     var Namespace: Namespace
-  }
-
-  object PutMetricDataInput {
-    @inline
-    def apply(
-        MetricData: MetricData,
-        Namespace: Namespace
-    ): PutMetricDataInput = {
-      val __obj = js.Dynamic.literal(
-        "MetricData" -> MetricData.asInstanceOf[js.Any],
-        "Namespace"  -> Namespace.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutMetricDataInput]
-    }
   }
 
   /**
     * Specifies one range of days or times to exclude from use for training an anomaly detection model.
     */
   @js.native
+  @Factory
   trait Range extends js.Object {
     var EndTime: Timestamp
     var StartTime: Timestamp
-  }
-
-  object Range {
-    @inline
-    def apply(
-        EndTime: Timestamp,
-        StartTime: Timestamp
-    ): Range = {
-      val __obj = js.Dynamic.literal(
-        "EndTime"   -> EndTime.asInstanceOf[js.Any],
-        "StartTime" -> StartTime.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Range]
-    }
   }
 
   @js.native
@@ -2034,30 +925,12 @@ package cloudwatch {
   }
 
   @js.native
+  @Factory
   trait SetAlarmStateInput extends js.Object {
     var AlarmName: AlarmName
     var StateReason: StateReason
     var StateValue: StateValue
     var StateReasonData: js.UndefOr[StateReasonData]
-  }
-
-  object SetAlarmStateInput {
-    @inline
-    def apply(
-        AlarmName: AlarmName,
-        StateReason: StateReason,
-        StateValue: StateValue,
-        StateReasonData: js.UndefOr[StateReasonData] = js.undefined
-    ): SetAlarmStateInput = {
-      val __obj = js.Dynamic.literal(
-        "AlarmName"   -> AlarmName.asInstanceOf[js.Any],
-        "StateReason" -> StateReason.asInstanceOf[js.Any],
-        "StateValue"  -> StateValue.asInstanceOf[js.Any]
-      )
-
-      StateReasonData.foreach(__v => __obj.updateDynamic("StateReasonData")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SetAlarmStateInput]
-    }
   }
 
   @js.native
@@ -2150,30 +1023,12 @@ package cloudwatch {
     * Represents a set of statistics that describes a specific metric.
     */
   @js.native
+  @Factory
   trait StatisticSet extends js.Object {
     var Maximum: DatapointValue
     var Minimum: DatapointValue
     var SampleCount: DatapointValue
     var Sum: DatapointValue
-  }
-
-  object StatisticSet {
-    @inline
-    def apply(
-        Maximum: DatapointValue,
-        Minimum: DatapointValue,
-        SampleCount: DatapointValue,
-        Sum: DatapointValue
-    ): StatisticSet = {
-      val __obj = js.Dynamic.literal(
-        "Maximum"     -> Maximum.asInstanceOf[js.Any],
-        "Minimum"     -> Minimum.asInstanceOf[js.Any],
-        "SampleCount" -> SampleCount.asInstanceOf[js.Any],
-        "Sum"         -> Sum.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StatisticSet]
-    }
   }
 
   @js.native
@@ -2190,91 +1045,31 @@ package cloudwatch {
     * A key-value pair associated with a CloudWatch resource.
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var Key: TagKey
     var Value: TagValue
   }
 
-  object Tag {
-    @inline
-    def apply(
-        Key: TagKey,
-        Value: TagValue
-    ): Tag = {
-      val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Tag]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceInput extends js.Object {
     var ResourceARN: AmazonResourceName
     var Tags: TagList
   }
 
-  object TagResourceInput {
-    @inline
-    def apply(
-        ResourceARN: AmazonResourceName,
-        Tags: TagList
-    ): TagResourceInput = {
-      val __obj = js.Dynamic.literal(
-        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceOutput extends js.Object {}
 
-  object TagResourceOutput {
-    @inline
-    def apply(
-    ): TagResourceOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[TagResourceOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceInput extends js.Object {
     var ResourceARN: AmazonResourceName
     var TagKeys: TagKeyList
   }
 
-  object UntagResourceInput {
-    @inline
-    def apply(
-        ResourceARN: AmazonResourceName,
-        TagKeys: TagKeyList
-    ): UntagResourceInput = {
-      val __obj = js.Dynamic.literal(
-        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceOutput extends js.Object {}
-
-  object UntagResourceOutput {
-    @inline
-    def apply(
-    ): UntagResourceOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UntagResourceOutput]
-    }
-  }
 }

@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object comprehend {
   type AnyLengthString                            = String
@@ -331,351 +332,138 @@ package comprehend {
     * The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
     */
   @js.native
+  @Factory
   trait BatchDetectDominantLanguageItemResult extends js.Object {
     var Index: js.UndefOr[Int]
     var Languages: js.UndefOr[ListOfDominantLanguages]
   }
 
-  object BatchDetectDominantLanguageItemResult {
-    @inline
-    def apply(
-        Index: js.UndefOr[Int] = js.undefined,
-        Languages: js.UndefOr[ListOfDominantLanguages] = js.undefined
-    ): BatchDetectDominantLanguageItemResult = {
-      val __obj = js.Dynamic.literal()
-      Index.foreach(__v => __obj.updateDynamic("Index")(__v.asInstanceOf[js.Any]))
-      Languages.foreach(__v => __obj.updateDynamic("Languages")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchDetectDominantLanguageItemResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchDetectDominantLanguageRequest extends js.Object {
     var TextList: StringList
   }
 
-  object BatchDetectDominantLanguageRequest {
-    @inline
-    def apply(
-        TextList: StringList
-    ): BatchDetectDominantLanguageRequest = {
-      val __obj = js.Dynamic.literal(
-        "TextList" -> TextList.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchDetectDominantLanguageRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchDetectDominantLanguageResponse extends js.Object {
     var ErrorList: BatchItemErrorList
     var ResultList: ListOfDetectDominantLanguageResult
   }
 
-  object BatchDetectDominantLanguageResponse {
-    @inline
-    def apply(
-        ErrorList: BatchItemErrorList,
-        ResultList: ListOfDetectDominantLanguageResult
-    ): BatchDetectDominantLanguageResponse = {
-      val __obj = js.Dynamic.literal(
-        "ErrorList"  -> ErrorList.asInstanceOf[js.Any],
-        "ResultList" -> ResultList.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchDetectDominantLanguageResponse]
-    }
-  }
-
   /**
     * The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
     */
   @js.native
+  @Factory
   trait BatchDetectEntitiesItemResult extends js.Object {
     var Entities: js.UndefOr[ListOfEntities]
     var Index: js.UndefOr[Int]
   }
 
-  object BatchDetectEntitiesItemResult {
-    @inline
-    def apply(
-        Entities: js.UndefOr[ListOfEntities] = js.undefined,
-        Index: js.UndefOr[Int] = js.undefined
-    ): BatchDetectEntitiesItemResult = {
-      val __obj = js.Dynamic.literal()
-      Entities.foreach(__v => __obj.updateDynamic("Entities")(__v.asInstanceOf[js.Any]))
-      Index.foreach(__v => __obj.updateDynamic("Index")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchDetectEntitiesItemResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchDetectEntitiesRequest extends js.Object {
     var LanguageCode: LanguageCode
     var TextList: StringList
   }
 
-  object BatchDetectEntitiesRequest {
-    @inline
-    def apply(
-        LanguageCode: LanguageCode,
-        TextList: StringList
-    ): BatchDetectEntitiesRequest = {
-      val __obj = js.Dynamic.literal(
-        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
-        "TextList"     -> TextList.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchDetectEntitiesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchDetectEntitiesResponse extends js.Object {
     var ErrorList: BatchItemErrorList
     var ResultList: ListOfDetectEntitiesResult
   }
 
-  object BatchDetectEntitiesResponse {
-    @inline
-    def apply(
-        ErrorList: BatchItemErrorList,
-        ResultList: ListOfDetectEntitiesResult
-    ): BatchDetectEntitiesResponse = {
-      val __obj = js.Dynamic.literal(
-        "ErrorList"  -> ErrorList.asInstanceOf[js.Any],
-        "ResultList" -> ResultList.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchDetectEntitiesResponse]
-    }
-  }
-
   /**
     * The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
     */
   @js.native
+  @Factory
   trait BatchDetectKeyPhrasesItemResult extends js.Object {
     var Index: js.UndefOr[Int]
     var KeyPhrases: js.UndefOr[ListOfKeyPhrases]
   }
 
-  object BatchDetectKeyPhrasesItemResult {
-    @inline
-    def apply(
-        Index: js.UndefOr[Int] = js.undefined,
-        KeyPhrases: js.UndefOr[ListOfKeyPhrases] = js.undefined
-    ): BatchDetectKeyPhrasesItemResult = {
-      val __obj = js.Dynamic.literal()
-      Index.foreach(__v => __obj.updateDynamic("Index")(__v.asInstanceOf[js.Any]))
-      KeyPhrases.foreach(__v => __obj.updateDynamic("KeyPhrases")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchDetectKeyPhrasesItemResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchDetectKeyPhrasesRequest extends js.Object {
     var LanguageCode: LanguageCode
     var TextList: StringList
   }
 
-  object BatchDetectKeyPhrasesRequest {
-    @inline
-    def apply(
-        LanguageCode: LanguageCode,
-        TextList: StringList
-    ): BatchDetectKeyPhrasesRequest = {
-      val __obj = js.Dynamic.literal(
-        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
-        "TextList"     -> TextList.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchDetectKeyPhrasesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchDetectKeyPhrasesResponse extends js.Object {
     var ErrorList: BatchItemErrorList
     var ResultList: ListOfDetectKeyPhrasesResult
-  }
-
-  object BatchDetectKeyPhrasesResponse {
-    @inline
-    def apply(
-        ErrorList: BatchItemErrorList,
-        ResultList: ListOfDetectKeyPhrasesResult
-    ): BatchDetectKeyPhrasesResponse = {
-      val __obj = js.Dynamic.literal(
-        "ErrorList"  -> ErrorList.asInstanceOf[js.Any],
-        "ResultList" -> ResultList.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchDetectKeyPhrasesResponse]
-    }
   }
 
   /**
     * The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
     */
   @js.native
+  @Factory
   trait BatchDetectSentimentItemResult extends js.Object {
     var Index: js.UndefOr[Int]
     var Sentiment: js.UndefOr[SentimentType]
     var SentimentScore: js.UndefOr[SentimentScore]
   }
 
-  object BatchDetectSentimentItemResult {
-    @inline
-    def apply(
-        Index: js.UndefOr[Int] = js.undefined,
-        Sentiment: js.UndefOr[SentimentType] = js.undefined,
-        SentimentScore: js.UndefOr[SentimentScore] = js.undefined
-    ): BatchDetectSentimentItemResult = {
-      val __obj = js.Dynamic.literal()
-      Index.foreach(__v => __obj.updateDynamic("Index")(__v.asInstanceOf[js.Any]))
-      Sentiment.foreach(__v => __obj.updateDynamic("Sentiment")(__v.asInstanceOf[js.Any]))
-      SentimentScore.foreach(__v => __obj.updateDynamic("SentimentScore")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchDetectSentimentItemResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchDetectSentimentRequest extends js.Object {
     var LanguageCode: LanguageCode
     var TextList: StringList
   }
 
-  object BatchDetectSentimentRequest {
-    @inline
-    def apply(
-        LanguageCode: LanguageCode,
-        TextList: StringList
-    ): BatchDetectSentimentRequest = {
-      val __obj = js.Dynamic.literal(
-        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
-        "TextList"     -> TextList.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchDetectSentimentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchDetectSentimentResponse extends js.Object {
     var ErrorList: BatchItemErrorList
     var ResultList: ListOfDetectSentimentResult
-  }
-
-  object BatchDetectSentimentResponse {
-    @inline
-    def apply(
-        ErrorList: BatchItemErrorList,
-        ResultList: ListOfDetectSentimentResult
-    ): BatchDetectSentimentResponse = {
-      val __obj = js.Dynamic.literal(
-        "ErrorList"  -> ErrorList.asInstanceOf[js.Any],
-        "ResultList" -> ResultList.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchDetectSentimentResponse]
-    }
   }
 
   /**
     * The result of calling the operation. The operation returns one object that is successfully processed by the operation.
     */
   @js.native
+  @Factory
   trait BatchDetectSyntaxItemResult extends js.Object {
     var Index: js.UndefOr[Int]
     var SyntaxTokens: js.UndefOr[ListOfSyntaxTokens]
   }
 
-  object BatchDetectSyntaxItemResult {
-    @inline
-    def apply(
-        Index: js.UndefOr[Int] = js.undefined,
-        SyntaxTokens: js.UndefOr[ListOfSyntaxTokens] = js.undefined
-    ): BatchDetectSyntaxItemResult = {
-      val __obj = js.Dynamic.literal()
-      Index.foreach(__v => __obj.updateDynamic("Index")(__v.asInstanceOf[js.Any]))
-      SyntaxTokens.foreach(__v => __obj.updateDynamic("SyntaxTokens")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchDetectSyntaxItemResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchDetectSyntaxRequest extends js.Object {
     var LanguageCode: SyntaxLanguageCode
     var TextList: StringList
   }
 
-  object BatchDetectSyntaxRequest {
-    @inline
-    def apply(
-        LanguageCode: SyntaxLanguageCode,
-        TextList: StringList
-    ): BatchDetectSyntaxRequest = {
-      val __obj = js.Dynamic.literal(
-        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
-        "TextList"     -> TextList.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchDetectSyntaxRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchDetectSyntaxResponse extends js.Object {
     var ErrorList: BatchItemErrorList
     var ResultList: ListOfDetectSyntaxResult
-  }
-
-  object BatchDetectSyntaxResponse {
-    @inline
-    def apply(
-        ErrorList: BatchItemErrorList,
-        ResultList: ListOfDetectSyntaxResult
-    ): BatchDetectSyntaxResponse = {
-      val __obj = js.Dynamic.literal(
-        "ErrorList"  -> ErrorList.asInstanceOf[js.Any],
-        "ResultList" -> ResultList.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchDetectSyntaxResponse]
-    }
   }
 
   /**
     * Describes an error that occurred while processing a document in a batch. The operation returns on <code>BatchItemError</code> object for each document that contained an error.
     */
   @js.native
+  @Factory
   trait BatchItemError extends js.Object {
     var ErrorCode: js.UndefOr[String]
     var ErrorMessage: js.UndefOr[String]
     var Index: js.UndefOr[Int]
   }
 
-  object BatchItemError {
-    @inline
-    def apply(
-        ErrorCode: js.UndefOr[String] = js.undefined,
-        ErrorMessage: js.UndefOr[String] = js.undefined,
-        Index: js.UndefOr[Int] = js.undefined
-    ): BatchItemError = {
-      val __obj = js.Dynamic.literal()
-      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
-      Index.foreach(__v => __obj.updateDynamic("Index")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchItemError]
-    }
-  }
-
   /**
     * Describes the result metrics for the test data associated with an documentation classifier.
     */
   @js.native
+  @Factory
   trait ClassifierEvaluationMetrics extends js.Object {
     var Accuracy: js.UndefOr[Double]
     var F1Score: js.UndefOr[Double]
@@ -687,35 +475,11 @@ package comprehend {
     var Recall: js.UndefOr[Double]
   }
 
-  object ClassifierEvaluationMetrics {
-    @inline
-    def apply(
-        Accuracy: js.UndefOr[Double] = js.undefined,
-        F1Score: js.UndefOr[Double] = js.undefined,
-        HammingLoss: js.UndefOr[Double] = js.undefined,
-        MicroF1Score: js.UndefOr[Double] = js.undefined,
-        MicroPrecision: js.UndefOr[Double] = js.undefined,
-        MicroRecall: js.UndefOr[Double] = js.undefined,
-        Precision: js.UndefOr[Double] = js.undefined,
-        Recall: js.UndefOr[Double] = js.undefined
-    ): ClassifierEvaluationMetrics = {
-      val __obj = js.Dynamic.literal()
-      Accuracy.foreach(__v => __obj.updateDynamic("Accuracy")(__v.asInstanceOf[js.Any]))
-      F1Score.foreach(__v => __obj.updateDynamic("F1Score")(__v.asInstanceOf[js.Any]))
-      HammingLoss.foreach(__v => __obj.updateDynamic("HammingLoss")(__v.asInstanceOf[js.Any]))
-      MicroF1Score.foreach(__v => __obj.updateDynamic("MicroF1Score")(__v.asInstanceOf[js.Any]))
-      MicroPrecision.foreach(__v => __obj.updateDynamic("MicroPrecision")(__v.asInstanceOf[js.Any]))
-      MicroRecall.foreach(__v => __obj.updateDynamic("MicroRecall")(__v.asInstanceOf[js.Any]))
-      Precision.foreach(__v => __obj.updateDynamic("Precision")(__v.asInstanceOf[js.Any]))
-      Recall.foreach(__v => __obj.updateDynamic("Recall")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ClassifierEvaluationMetrics]
-    }
-  }
-
   /**
     * Provides information about a document classifier.
     */
   @js.native
+  @Factory
   trait ClassifierMetadata extends js.Object {
     var EvaluationMetrics: js.UndefOr[ClassifierEvaluationMetrics]
     var NumberOfLabels: js.UndefOr[Int]
@@ -723,64 +487,22 @@ package comprehend {
     var NumberOfTrainedDocuments: js.UndefOr[Int]
   }
 
-  object ClassifierMetadata {
-    @inline
-    def apply(
-        EvaluationMetrics: js.UndefOr[ClassifierEvaluationMetrics] = js.undefined,
-        NumberOfLabels: js.UndefOr[Int] = js.undefined,
-        NumberOfTestDocuments: js.UndefOr[Int] = js.undefined,
-        NumberOfTrainedDocuments: js.UndefOr[Int] = js.undefined
-    ): ClassifierMetadata = {
-      val __obj = js.Dynamic.literal()
-      EvaluationMetrics.foreach(__v => __obj.updateDynamic("EvaluationMetrics")(__v.asInstanceOf[js.Any]))
-      NumberOfLabels.foreach(__v => __obj.updateDynamic("NumberOfLabels")(__v.asInstanceOf[js.Any]))
-      NumberOfTestDocuments.foreach(__v => __obj.updateDynamic("NumberOfTestDocuments")(__v.asInstanceOf[js.Any]))
-      NumberOfTrainedDocuments.foreach(__v => __obj.updateDynamic("NumberOfTrainedDocuments")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ClassifierMetadata]
-    }
-  }
-
   @js.native
+  @Factory
   trait ClassifyDocumentRequest extends js.Object {
     var EndpointArn: DocumentClassifierEndpointArn
     var Text: String
   }
 
-  object ClassifyDocumentRequest {
-    @inline
-    def apply(
-        EndpointArn: DocumentClassifierEndpointArn,
-        Text: String
-    ): ClassifyDocumentRequest = {
-      val __obj = js.Dynamic.literal(
-        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any],
-        "Text"        -> Text.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ClassifyDocumentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ClassifyDocumentResponse extends js.Object {
     var Classes: js.UndefOr[ListOfClasses]
     var Labels: js.UndefOr[ListOfLabels]
   }
 
-  object ClassifyDocumentResponse {
-    @inline
-    def apply(
-        Classes: js.UndefOr[ListOfClasses] = js.undefined,
-        Labels: js.UndefOr[ListOfLabels] = js.undefined
-    ): ClassifyDocumentResponse = {
-      val __obj = js.Dynamic.literal()
-      Classes.foreach(__v => __obj.updateDynamic("Classes")(__v.asInstanceOf[js.Any]))
-      Labels.foreach(__v => __obj.updateDynamic("Labels")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ClassifyDocumentResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateDocumentClassifierRequest extends js.Object {
     var DataAccessRoleArn: IamRoleArn
     var DocumentClassifierName: ComprehendArnName
@@ -794,54 +516,14 @@ package comprehend {
     var VpcConfig: js.UndefOr[VpcConfig]
   }
 
-  object CreateDocumentClassifierRequest {
-    @inline
-    def apply(
-        DataAccessRoleArn: IamRoleArn,
-        DocumentClassifierName: ComprehendArnName,
-        InputDataConfig: DocumentClassifierInputDataConfig,
-        LanguageCode: LanguageCode,
-        ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
-        Mode: js.UndefOr[DocumentClassifierMode] = js.undefined,
-        OutputDataConfig: js.UndefOr[DocumentClassifierOutputDataConfig] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
-    ): CreateDocumentClassifierRequest = {
-      val __obj = js.Dynamic.literal(
-        "DataAccessRoleArn"      -> DataAccessRoleArn.asInstanceOf[js.Any],
-        "DocumentClassifierName" -> DocumentClassifierName.asInstanceOf[js.Any],
-        "InputDataConfig"        -> InputDataConfig.asInstanceOf[js.Any],
-        "LanguageCode"           -> LanguageCode.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
-      OutputDataConfig.foreach(__v => __obj.updateDynamic("OutputDataConfig")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      VolumeKmsKeyId.foreach(__v => __obj.updateDynamic("VolumeKmsKeyId")(__v.asInstanceOf[js.Any]))
-      VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDocumentClassifierRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateDocumentClassifierResponse extends js.Object {
     var DocumentClassifierArn: js.UndefOr[DocumentClassifierArn]
   }
 
-  object CreateDocumentClassifierResponse {
-    @inline
-    def apply(
-        DocumentClassifierArn: js.UndefOr[DocumentClassifierArn] = js.undefined
-    ): CreateDocumentClassifierResponse = {
-      val __obj = js.Dynamic.literal()
-      DocumentClassifierArn.foreach(__v => __obj.updateDynamic("DocumentClassifierArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDocumentClassifierResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateEndpointRequest extends js.Object {
     var DesiredInferenceUnits: InferenceUnitsInteger
     var EndpointName: ComprehendEndpointName
@@ -850,44 +532,14 @@ package comprehend {
     var Tags: js.UndefOr[TagList]
   }
 
-  object CreateEndpointRequest {
-    @inline
-    def apply(
-        DesiredInferenceUnits: InferenceUnitsInteger,
-        EndpointName: ComprehendEndpointName,
-        ModelArn: ComprehendModelArn,
-        ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateEndpointRequest = {
-      val __obj = js.Dynamic.literal(
-        "DesiredInferenceUnits" -> DesiredInferenceUnits.asInstanceOf[js.Any],
-        "EndpointName"          -> EndpointName.asInstanceOf[js.Any],
-        "ModelArn"              -> ModelArn.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateEndpointRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateEndpointResponse extends js.Object {
     var EndpointArn: js.UndefOr[ComprehendEndpointArn]
   }
 
-  object CreateEndpointResponse {
-    @inline
-    def apply(
-        EndpointArn: js.UndefOr[ComprehendEndpointArn] = js.undefined
-    ): CreateEndpointResponse = {
-      val __obj = js.Dynamic.literal()
-      EndpointArn.foreach(__v => __obj.updateDynamic("EndpointArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateEndpointResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateEntityRecognizerRequest extends js.Object {
     var DataAccessRoleArn: IamRoleArn
     var InputDataConfig: EntityRecognizerInputDataConfig
@@ -899,675 +551,230 @@ package comprehend {
     var VpcConfig: js.UndefOr[VpcConfig]
   }
 
-  object CreateEntityRecognizerRequest {
-    @inline
-    def apply(
-        DataAccessRoleArn: IamRoleArn,
-        InputDataConfig: EntityRecognizerInputDataConfig,
-        LanguageCode: LanguageCode,
-        RecognizerName: ComprehendArnName,
-        ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
-    ): CreateEntityRecognizerRequest = {
-      val __obj = js.Dynamic.literal(
-        "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
-        "InputDataConfig"   -> InputDataConfig.asInstanceOf[js.Any],
-        "LanguageCode"      -> LanguageCode.asInstanceOf[js.Any],
-        "RecognizerName"    -> RecognizerName.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      VolumeKmsKeyId.foreach(__v => __obj.updateDynamic("VolumeKmsKeyId")(__v.asInstanceOf[js.Any]))
-      VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateEntityRecognizerRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateEntityRecognizerResponse extends js.Object {
     var EntityRecognizerArn: js.UndefOr[EntityRecognizerArn]
   }
 
-  object CreateEntityRecognizerResponse {
-    @inline
-    def apply(
-        EntityRecognizerArn: js.UndefOr[EntityRecognizerArn] = js.undefined
-    ): CreateEntityRecognizerResponse = {
-      val __obj = js.Dynamic.literal()
-      EntityRecognizerArn.foreach(__v => __obj.updateDynamic("EntityRecognizerArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateEntityRecognizerResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDocumentClassifierRequest extends js.Object {
     var DocumentClassifierArn: DocumentClassifierArn
   }
 
-  object DeleteDocumentClassifierRequest {
-    @inline
-    def apply(
-        DocumentClassifierArn: DocumentClassifierArn
-    ): DeleteDocumentClassifierRequest = {
-      val __obj = js.Dynamic.literal(
-        "DocumentClassifierArn" -> DocumentClassifierArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteDocumentClassifierRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDocumentClassifierResponse extends js.Object {}
 
-  object DeleteDocumentClassifierResponse {
-    @inline
-    def apply(
-    ): DeleteDocumentClassifierResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteDocumentClassifierResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteEndpointRequest extends js.Object {
     var EndpointArn: ComprehendEndpointArn
   }
 
-  object DeleteEndpointRequest {
-    @inline
-    def apply(
-        EndpointArn: ComprehendEndpointArn
-    ): DeleteEndpointRequest = {
-      val __obj = js.Dynamic.literal(
-        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteEndpointRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteEndpointResponse extends js.Object {}
 
-  object DeleteEndpointResponse {
-    @inline
-    def apply(
-    ): DeleteEndpointResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteEndpointResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteEntityRecognizerRequest extends js.Object {
     var EntityRecognizerArn: EntityRecognizerArn
   }
 
-  object DeleteEntityRecognizerRequest {
-    @inline
-    def apply(
-        EntityRecognizerArn: EntityRecognizerArn
-    ): DeleteEntityRecognizerRequest = {
-      val __obj = js.Dynamic.literal(
-        "EntityRecognizerArn" -> EntityRecognizerArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteEntityRecognizerRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteEntityRecognizerResponse extends js.Object {}
 
-  object DeleteEntityRecognizerResponse {
-    @inline
-    def apply(
-    ): DeleteEntityRecognizerResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteEntityRecognizerResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeDocumentClassificationJobRequest extends js.Object {
     var JobId: JobId
   }
 
-  object DescribeDocumentClassificationJobRequest {
-    @inline
-    def apply(
-        JobId: JobId
-    ): DescribeDocumentClassificationJobRequest = {
-      val __obj = js.Dynamic.literal(
-        "JobId" -> JobId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeDocumentClassificationJobRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeDocumentClassificationJobResponse extends js.Object {
     var DocumentClassificationJobProperties: js.UndefOr[DocumentClassificationJobProperties]
   }
 
-  object DescribeDocumentClassificationJobResponse {
-    @inline
-    def apply(
-        DocumentClassificationJobProperties: js.UndefOr[DocumentClassificationJobProperties] = js.undefined
-    ): DescribeDocumentClassificationJobResponse = {
-      val __obj = js.Dynamic.literal()
-      DocumentClassificationJobProperties.foreach(__v =>
-        __obj.updateDynamic("DocumentClassificationJobProperties")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[DescribeDocumentClassificationJobResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeDocumentClassifierRequest extends js.Object {
     var DocumentClassifierArn: DocumentClassifierArn
   }
 
-  object DescribeDocumentClassifierRequest {
-    @inline
-    def apply(
-        DocumentClassifierArn: DocumentClassifierArn
-    ): DescribeDocumentClassifierRequest = {
-      val __obj = js.Dynamic.literal(
-        "DocumentClassifierArn" -> DocumentClassifierArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeDocumentClassifierRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeDocumentClassifierResponse extends js.Object {
     var DocumentClassifierProperties: js.UndefOr[DocumentClassifierProperties]
   }
 
-  object DescribeDocumentClassifierResponse {
-    @inline
-    def apply(
-        DocumentClassifierProperties: js.UndefOr[DocumentClassifierProperties] = js.undefined
-    ): DescribeDocumentClassifierResponse = {
-      val __obj = js.Dynamic.literal()
-      DocumentClassifierProperties.foreach(__v =>
-        __obj.updateDynamic("DocumentClassifierProperties")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[DescribeDocumentClassifierResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeDominantLanguageDetectionJobRequest extends js.Object {
     var JobId: JobId
   }
 
-  object DescribeDominantLanguageDetectionJobRequest {
-    @inline
-    def apply(
-        JobId: JobId
-    ): DescribeDominantLanguageDetectionJobRequest = {
-      val __obj = js.Dynamic.literal(
-        "JobId" -> JobId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeDominantLanguageDetectionJobRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeDominantLanguageDetectionJobResponse extends js.Object {
     var DominantLanguageDetectionJobProperties: js.UndefOr[DominantLanguageDetectionJobProperties]
   }
 
-  object DescribeDominantLanguageDetectionJobResponse {
-    @inline
-    def apply(
-        DominantLanguageDetectionJobProperties: js.UndefOr[DominantLanguageDetectionJobProperties] = js.undefined
-    ): DescribeDominantLanguageDetectionJobResponse = {
-      val __obj = js.Dynamic.literal()
-      DominantLanguageDetectionJobProperties.foreach(__v =>
-        __obj.updateDynamic("DominantLanguageDetectionJobProperties")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[DescribeDominantLanguageDetectionJobResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeEndpointRequest extends js.Object {
     var EndpointArn: ComprehendEndpointArn
   }
 
-  object DescribeEndpointRequest {
-    @inline
-    def apply(
-        EndpointArn: ComprehendEndpointArn
-    ): DescribeEndpointRequest = {
-      val __obj = js.Dynamic.literal(
-        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeEndpointRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeEndpointResponse extends js.Object {
     var EndpointProperties: js.UndefOr[EndpointProperties]
   }
 
-  object DescribeEndpointResponse {
-    @inline
-    def apply(
-        EndpointProperties: js.UndefOr[EndpointProperties] = js.undefined
-    ): DescribeEndpointResponse = {
-      val __obj = js.Dynamic.literal()
-      EndpointProperties.foreach(__v => __obj.updateDynamic("EndpointProperties")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeEndpointResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeEntitiesDetectionJobRequest extends js.Object {
     var JobId: JobId
   }
 
-  object DescribeEntitiesDetectionJobRequest {
-    @inline
-    def apply(
-        JobId: JobId
-    ): DescribeEntitiesDetectionJobRequest = {
-      val __obj = js.Dynamic.literal(
-        "JobId" -> JobId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeEntitiesDetectionJobRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeEntitiesDetectionJobResponse extends js.Object {
     var EntitiesDetectionJobProperties: js.UndefOr[EntitiesDetectionJobProperties]
   }
 
-  object DescribeEntitiesDetectionJobResponse {
-    @inline
-    def apply(
-        EntitiesDetectionJobProperties: js.UndefOr[EntitiesDetectionJobProperties] = js.undefined
-    ): DescribeEntitiesDetectionJobResponse = {
-      val __obj = js.Dynamic.literal()
-      EntitiesDetectionJobProperties.foreach(__v =>
-        __obj.updateDynamic("EntitiesDetectionJobProperties")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[DescribeEntitiesDetectionJobResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeEntityRecognizerRequest extends js.Object {
     var EntityRecognizerArn: EntityRecognizerArn
   }
 
-  object DescribeEntityRecognizerRequest {
-    @inline
-    def apply(
-        EntityRecognizerArn: EntityRecognizerArn
-    ): DescribeEntityRecognizerRequest = {
-      val __obj = js.Dynamic.literal(
-        "EntityRecognizerArn" -> EntityRecognizerArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeEntityRecognizerRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeEntityRecognizerResponse extends js.Object {
     var EntityRecognizerProperties: js.UndefOr[EntityRecognizerProperties]
   }
 
-  object DescribeEntityRecognizerResponse {
-    @inline
-    def apply(
-        EntityRecognizerProperties: js.UndefOr[EntityRecognizerProperties] = js.undefined
-    ): DescribeEntityRecognizerResponse = {
-      val __obj = js.Dynamic.literal()
-      EntityRecognizerProperties.foreach(__v =>
-        __obj.updateDynamic("EntityRecognizerProperties")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[DescribeEntityRecognizerResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeKeyPhrasesDetectionJobRequest extends js.Object {
     var JobId: JobId
   }
 
-  object DescribeKeyPhrasesDetectionJobRequest {
-    @inline
-    def apply(
-        JobId: JobId
-    ): DescribeKeyPhrasesDetectionJobRequest = {
-      val __obj = js.Dynamic.literal(
-        "JobId" -> JobId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeKeyPhrasesDetectionJobRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeKeyPhrasesDetectionJobResponse extends js.Object {
     var KeyPhrasesDetectionJobProperties: js.UndefOr[KeyPhrasesDetectionJobProperties]
   }
 
-  object DescribeKeyPhrasesDetectionJobResponse {
-    @inline
-    def apply(
-        KeyPhrasesDetectionJobProperties: js.UndefOr[KeyPhrasesDetectionJobProperties] = js.undefined
-    ): DescribeKeyPhrasesDetectionJobResponse = {
-      val __obj = js.Dynamic.literal()
-      KeyPhrasesDetectionJobProperties.foreach(__v =>
-        __obj.updateDynamic("KeyPhrasesDetectionJobProperties")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[DescribeKeyPhrasesDetectionJobResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeSentimentDetectionJobRequest extends js.Object {
     var JobId: JobId
   }
 
-  object DescribeSentimentDetectionJobRequest {
-    @inline
-    def apply(
-        JobId: JobId
-    ): DescribeSentimentDetectionJobRequest = {
-      val __obj = js.Dynamic.literal(
-        "JobId" -> JobId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeSentimentDetectionJobRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeSentimentDetectionJobResponse extends js.Object {
     var SentimentDetectionJobProperties: js.UndefOr[SentimentDetectionJobProperties]
   }
 
-  object DescribeSentimentDetectionJobResponse {
-    @inline
-    def apply(
-        SentimentDetectionJobProperties: js.UndefOr[SentimentDetectionJobProperties] = js.undefined
-    ): DescribeSentimentDetectionJobResponse = {
-      val __obj = js.Dynamic.literal()
-      SentimentDetectionJobProperties.foreach(__v =>
-        __obj.updateDynamic("SentimentDetectionJobProperties")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[DescribeSentimentDetectionJobResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeTopicsDetectionJobRequest extends js.Object {
     var JobId: JobId
   }
 
-  object DescribeTopicsDetectionJobRequest {
-    @inline
-    def apply(
-        JobId: JobId
-    ): DescribeTopicsDetectionJobRequest = {
-      val __obj = js.Dynamic.literal(
-        "JobId" -> JobId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeTopicsDetectionJobRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeTopicsDetectionJobResponse extends js.Object {
     var TopicsDetectionJobProperties: js.UndefOr[TopicsDetectionJobProperties]
   }
 
-  object DescribeTopicsDetectionJobResponse {
-    @inline
-    def apply(
-        TopicsDetectionJobProperties: js.UndefOr[TopicsDetectionJobProperties] = js.undefined
-    ): DescribeTopicsDetectionJobResponse = {
-      val __obj = js.Dynamic.literal()
-      TopicsDetectionJobProperties.foreach(__v =>
-        __obj.updateDynamic("TopicsDetectionJobProperties")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[DescribeTopicsDetectionJobResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetectDominantLanguageRequest extends js.Object {
     var Text: String
   }
 
-  object DetectDominantLanguageRequest {
-    @inline
-    def apply(
-        Text: String
-    ): DetectDominantLanguageRequest = {
-      val __obj = js.Dynamic.literal(
-        "Text" -> Text.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DetectDominantLanguageRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetectDominantLanguageResponse extends js.Object {
     var Languages: js.UndefOr[ListOfDominantLanguages]
   }
 
-  object DetectDominantLanguageResponse {
-    @inline
-    def apply(
-        Languages: js.UndefOr[ListOfDominantLanguages] = js.undefined
-    ): DetectDominantLanguageResponse = {
-      val __obj = js.Dynamic.literal()
-      Languages.foreach(__v => __obj.updateDynamic("Languages")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DetectDominantLanguageResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetectEntitiesRequest extends js.Object {
     var LanguageCode: LanguageCode
     var Text: String
   }
 
-  object DetectEntitiesRequest {
-    @inline
-    def apply(
-        LanguageCode: LanguageCode,
-        Text: String
-    ): DetectEntitiesRequest = {
-      val __obj = js.Dynamic.literal(
-        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
-        "Text"         -> Text.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DetectEntitiesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetectEntitiesResponse extends js.Object {
     var Entities: js.UndefOr[ListOfEntities]
   }
 
-  object DetectEntitiesResponse {
-    @inline
-    def apply(
-        Entities: js.UndefOr[ListOfEntities] = js.undefined
-    ): DetectEntitiesResponse = {
-      val __obj = js.Dynamic.literal()
-      Entities.foreach(__v => __obj.updateDynamic("Entities")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DetectEntitiesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetectKeyPhrasesRequest extends js.Object {
     var LanguageCode: LanguageCode
     var Text: String
   }
 
-  object DetectKeyPhrasesRequest {
-    @inline
-    def apply(
-        LanguageCode: LanguageCode,
-        Text: String
-    ): DetectKeyPhrasesRequest = {
-      val __obj = js.Dynamic.literal(
-        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
-        "Text"         -> Text.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DetectKeyPhrasesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetectKeyPhrasesResponse extends js.Object {
     var KeyPhrases: js.UndefOr[ListOfKeyPhrases]
   }
 
-  object DetectKeyPhrasesResponse {
-    @inline
-    def apply(
-        KeyPhrases: js.UndefOr[ListOfKeyPhrases] = js.undefined
-    ): DetectKeyPhrasesResponse = {
-      val __obj = js.Dynamic.literal()
-      KeyPhrases.foreach(__v => __obj.updateDynamic("KeyPhrases")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DetectKeyPhrasesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetectSentimentRequest extends js.Object {
     var LanguageCode: LanguageCode
     var Text: String
   }
 
-  object DetectSentimentRequest {
-    @inline
-    def apply(
-        LanguageCode: LanguageCode,
-        Text: String
-    ): DetectSentimentRequest = {
-      val __obj = js.Dynamic.literal(
-        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
-        "Text"         -> Text.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DetectSentimentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetectSentimentResponse extends js.Object {
     var Sentiment: js.UndefOr[SentimentType]
     var SentimentScore: js.UndefOr[SentimentScore]
   }
 
-  object DetectSentimentResponse {
-    @inline
-    def apply(
-        Sentiment: js.UndefOr[SentimentType] = js.undefined,
-        SentimentScore: js.UndefOr[SentimentScore] = js.undefined
-    ): DetectSentimentResponse = {
-      val __obj = js.Dynamic.literal()
-      Sentiment.foreach(__v => __obj.updateDynamic("Sentiment")(__v.asInstanceOf[js.Any]))
-      SentimentScore.foreach(__v => __obj.updateDynamic("SentimentScore")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DetectSentimentResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetectSyntaxRequest extends js.Object {
     var LanguageCode: SyntaxLanguageCode
     var Text: String
   }
 
-  object DetectSyntaxRequest {
-    @inline
-    def apply(
-        LanguageCode: SyntaxLanguageCode,
-        Text: String
-    ): DetectSyntaxRequest = {
-      val __obj = js.Dynamic.literal(
-        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
-        "Text"         -> Text.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DetectSyntaxRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetectSyntaxResponse extends js.Object {
     var SyntaxTokens: js.UndefOr[ListOfSyntaxTokens]
-  }
-
-  object DetectSyntaxResponse {
-    @inline
-    def apply(
-        SyntaxTokens: js.UndefOr[ListOfSyntaxTokens] = js.undefined
-    ): DetectSyntaxResponse = {
-      val __obj = js.Dynamic.literal()
-      SyntaxTokens.foreach(__v => __obj.updateDynamic("SyntaxTokens")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DetectSyntaxResponse]
-    }
   }
 
   /**
     * Specifies the class that categorizes the document being analyzed
     */
   @js.native
+  @Factory
   trait DocumentClass extends js.Object {
     var Name: js.UndefOr[String]
     var Score: js.UndefOr[Float]
-  }
-
-  object DocumentClass {
-    @inline
-    def apply(
-        Name: js.UndefOr[String] = js.undefined,
-        Score: js.UndefOr[Float] = js.undefined
-    ): DocumentClass = {
-      val __obj = js.Dynamic.literal()
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DocumentClass]
-    }
   }
 
   /**
     * Provides information for filtering a list of document classification jobs. For more information, see the operation. You can provide only one filter parameter in each request.
     */
   @js.native
+  @Factory
   trait DocumentClassificationJobFilter extends js.Object {
     var JobName: js.UndefOr[JobName]
     var JobStatus: js.UndefOr[JobStatus]
@@ -1575,27 +782,11 @@ package comprehend {
     var SubmitTimeBefore: js.UndefOr[Timestamp]
   }
 
-  object DocumentClassificationJobFilter {
-    @inline
-    def apply(
-        JobName: js.UndefOr[JobName] = js.undefined,
-        JobStatus: js.UndefOr[JobStatus] = js.undefined,
-        SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-        SubmitTimeBefore: js.UndefOr[Timestamp] = js.undefined
-    ): DocumentClassificationJobFilter = {
-      val __obj = js.Dynamic.literal()
-      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      SubmitTimeAfter.foreach(__v => __obj.updateDynamic("SubmitTimeAfter")(__v.asInstanceOf[js.Any]))
-      SubmitTimeBefore.foreach(__v => __obj.updateDynamic("SubmitTimeBefore")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DocumentClassificationJobFilter]
-    }
-  }
-
   /**
     * Provides information about a document classification job.
     */
   @js.native
+  @Factory
   trait DocumentClassificationJobProperties extends js.Object {
     var DataAccessRoleArn: js.UndefOr[IamRoleArn]
     var DocumentClassifierArn: js.UndefOr[DocumentClassifierArn]
@@ -1611,62 +802,15 @@ package comprehend {
     var VpcConfig: js.UndefOr[VpcConfig]
   }
 
-  object DocumentClassificationJobProperties {
-    @inline
-    def apply(
-        DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
-        DocumentClassifierArn: js.UndefOr[DocumentClassifierArn] = js.undefined,
-        EndTime: js.UndefOr[Timestamp] = js.undefined,
-        InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
-        JobId: js.UndefOr[JobId] = js.undefined,
-        JobName: js.UndefOr[JobName] = js.undefined,
-        JobStatus: js.UndefOr[JobStatus] = js.undefined,
-        Message: js.UndefOr[AnyLengthString] = js.undefined,
-        OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
-        SubmitTime: js.UndefOr[Timestamp] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
-    ): DocumentClassificationJobProperties = {
-      val __obj = js.Dynamic.literal()
-      DataAccessRoleArn.foreach(__v => __obj.updateDynamic("DataAccessRoleArn")(__v.asInstanceOf[js.Any]))
-      DocumentClassifierArn.foreach(__v => __obj.updateDynamic("DocumentClassifierArn")(__v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      InputDataConfig.foreach(__v => __obj.updateDynamic("InputDataConfig")(__v.asInstanceOf[js.Any]))
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      OutputDataConfig.foreach(__v => __obj.updateDynamic("OutputDataConfig")(__v.asInstanceOf[js.Any]))
-      SubmitTime.foreach(__v => __obj.updateDynamic("SubmitTime")(__v.asInstanceOf[js.Any]))
-      VolumeKmsKeyId.foreach(__v => __obj.updateDynamic("VolumeKmsKeyId")(__v.asInstanceOf[js.Any]))
-      VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DocumentClassificationJobProperties]
-    }
-  }
-
   /**
     * Provides information for filtering a list of document classifiers. You can only specify one filtering parameter in a request. For more information, see the operation.
     */
   @js.native
+  @Factory
   trait DocumentClassifierFilter extends js.Object {
     var Status: js.UndefOr[ModelStatus]
     var SubmitTimeAfter: js.UndefOr[Timestamp]
     var SubmitTimeBefore: js.UndefOr[Timestamp]
-  }
-
-  object DocumentClassifierFilter {
-    @inline
-    def apply(
-        Status: js.UndefOr[ModelStatus] = js.undefined,
-        SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-        SubmitTimeBefore: js.UndefOr[Timestamp] = js.undefined
-    ): DocumentClassifierFilter = {
-      val __obj = js.Dynamic.literal()
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      SubmitTimeAfter.foreach(__v => __obj.updateDynamic("SubmitTimeAfter")(__v.asInstanceOf[js.Any]))
-      SubmitTimeBefore.foreach(__v => __obj.updateDynamic("SubmitTimeBefore")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DocumentClassifierFilter]
-    }
   }
 
   /**
@@ -1674,24 +818,10 @@ package comprehend {
     *  For more information on how the input file is formatted, see <a>how-document-classification-training-data</a>.
     */
   @js.native
+  @Factory
   trait DocumentClassifierInputDataConfig extends js.Object {
     var S3Uri: S3Uri
     var LabelDelimiter: js.UndefOr[LabelDelimiter]
-  }
-
-  object DocumentClassifierInputDataConfig {
-    @inline
-    def apply(
-        S3Uri: S3Uri,
-        LabelDelimiter: js.UndefOr[LabelDelimiter] = js.undefined
-    ): DocumentClassifierInputDataConfig = {
-      val __obj = js.Dynamic.literal(
-        "S3Uri" -> S3Uri.asInstanceOf[js.Any]
-      )
-
-      LabelDelimiter.foreach(__v => __obj.updateDynamic("LabelDelimiter")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DocumentClassifierInputDataConfig]
-    }
   }
 
   @js.native
@@ -1707,28 +837,17 @@ package comprehend {
     * Provides output results configuration parameters for custom classifier jobs.
     */
   @js.native
+  @Factory
   trait DocumentClassifierOutputDataConfig extends js.Object {
     var KmsKeyId: js.UndefOr[KmsKeyId]
     var S3Uri: js.UndefOr[S3Uri]
-  }
-
-  object DocumentClassifierOutputDataConfig {
-    @inline
-    def apply(
-        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-        S3Uri: js.UndefOr[S3Uri] = js.undefined
-    ): DocumentClassifierOutputDataConfig = {
-      val __obj = js.Dynamic.literal()
-      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
-      S3Uri.foreach(__v => __obj.updateDynamic("S3Uri")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DocumentClassifierOutputDataConfig]
-    }
   }
 
   /**
     * Provides information about a document classifier.
     */
   @js.native
+  @Factory
   trait DocumentClassifierProperties extends js.Object {
     var ClassifierMetadata: js.UndefOr[ClassifierMetadata]
     var DataAccessRoleArn: js.UndefOr[IamRoleArn]
@@ -1747,93 +866,31 @@ package comprehend {
     var VpcConfig: js.UndefOr[VpcConfig]
   }
 
-  object DocumentClassifierProperties {
-    @inline
-    def apply(
-        ClassifierMetadata: js.UndefOr[ClassifierMetadata] = js.undefined,
-        DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
-        DocumentClassifierArn: js.UndefOr[DocumentClassifierArn] = js.undefined,
-        EndTime: js.UndefOr[Timestamp] = js.undefined,
-        InputDataConfig: js.UndefOr[DocumentClassifierInputDataConfig] = js.undefined,
-        LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-        Message: js.UndefOr[AnyLengthString] = js.undefined,
-        Mode: js.UndefOr[DocumentClassifierMode] = js.undefined,
-        OutputDataConfig: js.UndefOr[DocumentClassifierOutputDataConfig] = js.undefined,
-        Status: js.UndefOr[ModelStatus] = js.undefined,
-        SubmitTime: js.UndefOr[Timestamp] = js.undefined,
-        TrainingEndTime: js.UndefOr[Timestamp] = js.undefined,
-        TrainingStartTime: js.UndefOr[Timestamp] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
-    ): DocumentClassifierProperties = {
-      val __obj = js.Dynamic.literal()
-      ClassifierMetadata.foreach(__v => __obj.updateDynamic("ClassifierMetadata")(__v.asInstanceOf[js.Any]))
-      DataAccessRoleArn.foreach(__v => __obj.updateDynamic("DataAccessRoleArn")(__v.asInstanceOf[js.Any]))
-      DocumentClassifierArn.foreach(__v => __obj.updateDynamic("DocumentClassifierArn")(__v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      InputDataConfig.foreach(__v => __obj.updateDynamic("InputDataConfig")(__v.asInstanceOf[js.Any]))
-      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
-      OutputDataConfig.foreach(__v => __obj.updateDynamic("OutputDataConfig")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      SubmitTime.foreach(__v => __obj.updateDynamic("SubmitTime")(__v.asInstanceOf[js.Any]))
-      TrainingEndTime.foreach(__v => __obj.updateDynamic("TrainingEndTime")(__v.asInstanceOf[js.Any]))
-      TrainingStartTime.foreach(__v => __obj.updateDynamic("TrainingStartTime")(__v.asInstanceOf[js.Any]))
-      VolumeKmsKeyId.foreach(__v => __obj.updateDynamic("VolumeKmsKeyId")(__v.asInstanceOf[js.Any]))
-      VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DocumentClassifierProperties]
-    }
-  }
-
   /**
     * Specifies one of the label or labels that categorize the document being analyzed.
     */
   @js.native
+  @Factory
   trait DocumentLabel extends js.Object {
     var Name: js.UndefOr[String]
     var Score: js.UndefOr[Float]
-  }
-
-  object DocumentLabel {
-    @inline
-    def apply(
-        Name: js.UndefOr[String] = js.undefined,
-        Score: js.UndefOr[Float] = js.undefined
-    ): DocumentLabel = {
-      val __obj = js.Dynamic.literal()
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DocumentLabel]
-    }
   }
 
   /**
     * Returns the code for the dominant language in the input text and the level of confidence that Amazon Comprehend has in the accuracy of the detection.
     */
   @js.native
+  @Factory
   trait DominantLanguage extends js.Object {
     var LanguageCode: js.UndefOr[String]
     var Score: js.UndefOr[Float]
-  }
-
-  object DominantLanguage {
-    @inline
-    def apply(
-        LanguageCode: js.UndefOr[String] = js.undefined,
-        Score: js.UndefOr[Float] = js.undefined
-    ): DominantLanguage = {
-      val __obj = js.Dynamic.literal()
-      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
-      Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DominantLanguage]
-    }
   }
 
   /**
     * Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
     */
   @js.native
+  @Factory
   trait DominantLanguageDetectionJobFilter extends js.Object {
     var JobName: js.UndefOr[JobName]
     var JobStatus: js.UndefOr[JobStatus]
@@ -1841,27 +898,11 @@ package comprehend {
     var SubmitTimeBefore: js.UndefOr[Timestamp]
   }
 
-  object DominantLanguageDetectionJobFilter {
-    @inline
-    def apply(
-        JobName: js.UndefOr[JobName] = js.undefined,
-        JobStatus: js.UndefOr[JobStatus] = js.undefined,
-        SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-        SubmitTimeBefore: js.UndefOr[Timestamp] = js.undefined
-    ): DominantLanguageDetectionJobFilter = {
-      val __obj = js.Dynamic.literal()
-      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      SubmitTimeAfter.foreach(__v => __obj.updateDynamic("SubmitTimeAfter")(__v.asInstanceOf[js.Any]))
-      SubmitTimeBefore.foreach(__v => __obj.updateDynamic("SubmitTimeBefore")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DominantLanguageDetectionJobFilter]
-    }
-  }
-
   /**
     * Provides information about a dominant language detection job.
     */
   @js.native
+  @Factory
   trait DominantLanguageDetectionJobProperties extends js.Object {
     var DataAccessRoleArn: js.UndefOr[IamRoleArn]
     var EndTime: js.UndefOr[Timestamp]
@@ -1876,41 +917,11 @@ package comprehend {
     var VpcConfig: js.UndefOr[VpcConfig]
   }
 
-  object DominantLanguageDetectionJobProperties {
-    @inline
-    def apply(
-        DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
-        EndTime: js.UndefOr[Timestamp] = js.undefined,
-        InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
-        JobId: js.UndefOr[JobId] = js.undefined,
-        JobName: js.UndefOr[JobName] = js.undefined,
-        JobStatus: js.UndefOr[JobStatus] = js.undefined,
-        Message: js.UndefOr[AnyLengthString] = js.undefined,
-        OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
-        SubmitTime: js.UndefOr[Timestamp] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
-    ): DominantLanguageDetectionJobProperties = {
-      val __obj = js.Dynamic.literal()
-      DataAccessRoleArn.foreach(__v => __obj.updateDynamic("DataAccessRoleArn")(__v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      InputDataConfig.foreach(__v => __obj.updateDynamic("InputDataConfig")(__v.asInstanceOf[js.Any]))
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      OutputDataConfig.foreach(__v => __obj.updateDynamic("OutputDataConfig")(__v.asInstanceOf[js.Any]))
-      SubmitTime.foreach(__v => __obj.updateDynamic("SubmitTime")(__v.asInstanceOf[js.Any]))
-      VolumeKmsKeyId.foreach(__v => __obj.updateDynamic("VolumeKmsKeyId")(__v.asInstanceOf[js.Any]))
-      VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DominantLanguageDetectionJobProperties]
-    }
-  }
-
   /**
     * The filter used to determine which endpoints are are returned. You can filter jobs on their name, model, status, or the date and time that they were created. You can only set one filter at a time.
     */
   @js.native
+  @Factory
   trait EndpointFilter extends js.Object {
     var CreationTimeAfter: js.UndefOr[Timestamp]
     var CreationTimeBefore: js.UndefOr[Timestamp]
@@ -1918,27 +929,11 @@ package comprehend {
     var Status: js.UndefOr[EndpointStatus]
   }
 
-  object EndpointFilter {
-    @inline
-    def apply(
-        CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-        CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
-        ModelArn: js.UndefOr[ComprehendModelArn] = js.undefined,
-        Status: js.UndefOr[EndpointStatus] = js.undefined
-    ): EndpointFilter = {
-      val __obj = js.Dynamic.literal()
-      CreationTimeAfter.foreach(__v => __obj.updateDynamic("CreationTimeAfter")(__v.asInstanceOf[js.Any]))
-      CreationTimeBefore.foreach(__v => __obj.updateDynamic("CreationTimeBefore")(__v.asInstanceOf[js.Any]))
-      ModelArn.foreach(__v => __obj.updateDynamic("ModelArn")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EndpointFilter]
-    }
-  }
-
   /**
     * Specifies information about the specified endpoint.
     */
   @js.native
+  @Factory
   trait EndpointProperties extends js.Object {
     var CreationTime: js.UndefOr[Timestamp]
     var CurrentInferenceUnits: js.UndefOr[InferenceUnitsInteger]
@@ -1948,31 +943,6 @@ package comprehend {
     var Message: js.UndefOr[AnyLengthString]
     var ModelArn: js.UndefOr[ComprehendModelArn]
     var Status: js.UndefOr[EndpointStatus]
-  }
-
-  object EndpointProperties {
-    @inline
-    def apply(
-        CreationTime: js.UndefOr[Timestamp] = js.undefined,
-        CurrentInferenceUnits: js.UndefOr[InferenceUnitsInteger] = js.undefined,
-        DesiredInferenceUnits: js.UndefOr[InferenceUnitsInteger] = js.undefined,
-        EndpointArn: js.UndefOr[ComprehendEndpointArn] = js.undefined,
-        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
-        Message: js.UndefOr[AnyLengthString] = js.undefined,
-        ModelArn: js.UndefOr[ComprehendModelArn] = js.undefined,
-        Status: js.UndefOr[EndpointStatus] = js.undefined
-    ): EndpointProperties = {
-      val __obj = js.Dynamic.literal()
-      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
-      CurrentInferenceUnits.foreach(__v => __obj.updateDynamic("CurrentInferenceUnits")(__v.asInstanceOf[js.Any]))
-      DesiredInferenceUnits.foreach(__v => __obj.updateDynamic("DesiredInferenceUnits")(__v.asInstanceOf[js.Any]))
-      EndpointArn.foreach(__v => __obj.updateDynamic("EndpointArn")(__v.asInstanceOf[js.Any]))
-      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      ModelArn.foreach(__v => __obj.updateDynamic("ModelArn")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EndpointProperties]
-    }
   }
 
   @js.native
@@ -1991,6 +961,7 @@ package comprehend {
     * Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
     */
   @js.native
+  @Factory
   trait EntitiesDetectionJobFilter extends js.Object {
     var JobName: js.UndefOr[JobName]
     var JobStatus: js.UndefOr[JobStatus]
@@ -1998,27 +969,11 @@ package comprehend {
     var SubmitTimeBefore: js.UndefOr[Timestamp]
   }
 
-  object EntitiesDetectionJobFilter {
-    @inline
-    def apply(
-        JobName: js.UndefOr[JobName] = js.undefined,
-        JobStatus: js.UndefOr[JobStatus] = js.undefined,
-        SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-        SubmitTimeBefore: js.UndefOr[Timestamp] = js.undefined
-    ): EntitiesDetectionJobFilter = {
-      val __obj = js.Dynamic.literal()
-      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      SubmitTimeAfter.foreach(__v => __obj.updateDynamic("SubmitTimeAfter")(__v.asInstanceOf[js.Any]))
-      SubmitTimeBefore.foreach(__v => __obj.updateDynamic("SubmitTimeBefore")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EntitiesDetectionJobFilter]
-    }
-  }
-
   /**
     * Provides information about an entities detection job.
     */
   @js.native
+  @Factory
   trait EntitiesDetectionJobProperties extends js.Object {
     var DataAccessRoleArn: js.UndefOr[IamRoleArn]
     var EndTime: js.UndefOr[Timestamp]
@@ -2035,45 +990,11 @@ package comprehend {
     var VpcConfig: js.UndefOr[VpcConfig]
   }
 
-  object EntitiesDetectionJobProperties {
-    @inline
-    def apply(
-        DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
-        EndTime: js.UndefOr[Timestamp] = js.undefined,
-        EntityRecognizerArn: js.UndefOr[EntityRecognizerArn] = js.undefined,
-        InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
-        JobId: js.UndefOr[JobId] = js.undefined,
-        JobName: js.UndefOr[JobName] = js.undefined,
-        JobStatus: js.UndefOr[JobStatus] = js.undefined,
-        LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-        Message: js.UndefOr[AnyLengthString] = js.undefined,
-        OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
-        SubmitTime: js.UndefOr[Timestamp] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
-    ): EntitiesDetectionJobProperties = {
-      val __obj = js.Dynamic.literal()
-      DataAccessRoleArn.foreach(__v => __obj.updateDynamic("DataAccessRoleArn")(__v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      EntityRecognizerArn.foreach(__v => __obj.updateDynamic("EntityRecognizerArn")(__v.asInstanceOf[js.Any]))
-      InputDataConfig.foreach(__v => __obj.updateDynamic("InputDataConfig")(__v.asInstanceOf[js.Any]))
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      OutputDataConfig.foreach(__v => __obj.updateDynamic("OutputDataConfig")(__v.asInstanceOf[js.Any]))
-      SubmitTime.foreach(__v => __obj.updateDynamic("SubmitTime")(__v.asInstanceOf[js.Any]))
-      VolumeKmsKeyId.foreach(__v => __obj.updateDynamic("VolumeKmsKeyId")(__v.asInstanceOf[js.Any]))
-      VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EntitiesDetectionJobProperties]
-    }
-  }
-
   /**
     * Provides information about an entity.
     */
   @js.native
+  @Factory
   trait Entity extends js.Object {
     var BeginOffset: js.UndefOr[Int]
     var EndOffset: js.UndefOr[Int]
@@ -2082,142 +1003,60 @@ package comprehend {
     var Type: js.UndefOr[EntityType]
   }
 
-  object Entity {
-    @inline
-    def apply(
-        BeginOffset: js.UndefOr[Int] = js.undefined,
-        EndOffset: js.UndefOr[Int] = js.undefined,
-        Score: js.UndefOr[Float] = js.undefined,
-        Text: js.UndefOr[String] = js.undefined,
-        Type: js.UndefOr[EntityType] = js.undefined
-    ): Entity = {
-      val __obj = js.Dynamic.literal()
-      BeginOffset.foreach(__v => __obj.updateDynamic("BeginOffset")(__v.asInstanceOf[js.Any]))
-      EndOffset.foreach(__v => __obj.updateDynamic("EndOffset")(__v.asInstanceOf[js.Any]))
-      Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
-      Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Entity]
-    }
-  }
-
   /**
     * Describes the annotations associated with a entity recognizer.
     */
   @js.native
+  @Factory
   trait EntityRecognizerAnnotations extends js.Object {
     var S3Uri: S3Uri
-  }
-
-  object EntityRecognizerAnnotations {
-    @inline
-    def apply(
-        S3Uri: S3Uri
-    ): EntityRecognizerAnnotations = {
-      val __obj = js.Dynamic.literal(
-        "S3Uri" -> S3Uri.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[EntityRecognizerAnnotations]
-    }
   }
 
   /**
     * Describes the training documents submitted with an entity recognizer.
     */
   @js.native
+  @Factory
   trait EntityRecognizerDocuments extends js.Object {
     var S3Uri: S3Uri
-  }
-
-  object EntityRecognizerDocuments {
-    @inline
-    def apply(
-        S3Uri: S3Uri
-    ): EntityRecognizerDocuments = {
-      val __obj = js.Dynamic.literal(
-        "S3Uri" -> S3Uri.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[EntityRecognizerDocuments]
-    }
   }
 
   /**
     * Describes the entity recognizer submitted with an entity recognizer.
     */
   @js.native
+  @Factory
   trait EntityRecognizerEntityList extends js.Object {
     var S3Uri: S3Uri
-  }
-
-  object EntityRecognizerEntityList {
-    @inline
-    def apply(
-        S3Uri: S3Uri
-    ): EntityRecognizerEntityList = {
-      val __obj = js.Dynamic.literal(
-        "S3Uri" -> S3Uri.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[EntityRecognizerEntityList]
-    }
   }
 
   /**
     * Detailed information about the accuracy of an entity recognizer.
     */
   @js.native
+  @Factory
   trait EntityRecognizerEvaluationMetrics extends js.Object {
     var F1Score: js.UndefOr[Double]
     var Precision: js.UndefOr[Double]
     var Recall: js.UndefOr[Double]
   }
 
-  object EntityRecognizerEvaluationMetrics {
-    @inline
-    def apply(
-        F1Score: js.UndefOr[Double] = js.undefined,
-        Precision: js.UndefOr[Double] = js.undefined,
-        Recall: js.UndefOr[Double] = js.undefined
-    ): EntityRecognizerEvaluationMetrics = {
-      val __obj = js.Dynamic.literal()
-      F1Score.foreach(__v => __obj.updateDynamic("F1Score")(__v.asInstanceOf[js.Any]))
-      Precision.foreach(__v => __obj.updateDynamic("Precision")(__v.asInstanceOf[js.Any]))
-      Recall.foreach(__v => __obj.updateDynamic("Recall")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EntityRecognizerEvaluationMetrics]
-    }
-  }
-
   /**
     * Provides information for filtering a list of entity recognizers. You can only specify one filtering parameter in a request. For more information, see the operation./&gt;
     */
   @js.native
+  @Factory
   trait EntityRecognizerFilter extends js.Object {
     var Status: js.UndefOr[ModelStatus]
     var SubmitTimeAfter: js.UndefOr[Timestamp]
     var SubmitTimeBefore: js.UndefOr[Timestamp]
   }
 
-  object EntityRecognizerFilter {
-    @inline
-    def apply(
-        Status: js.UndefOr[ModelStatus] = js.undefined,
-        SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-        SubmitTimeBefore: js.UndefOr[Timestamp] = js.undefined
-    ): EntityRecognizerFilter = {
-      val __obj = js.Dynamic.literal()
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      SubmitTimeAfter.foreach(__v => __obj.updateDynamic("SubmitTimeAfter")(__v.asInstanceOf[js.Any]))
-      SubmitTimeBefore.foreach(__v => __obj.updateDynamic("SubmitTimeBefore")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EntityRecognizerFilter]
-    }
-  }
-
   /**
     * Specifies the format and location of the input data.
     */
   @js.native
+  @Factory
   trait EntityRecognizerInputDataConfig extends js.Object {
     var Documents: EntityRecognizerDocuments
     var EntityTypes: EntityTypesList
@@ -2225,29 +1064,11 @@ package comprehend {
     var EntityList: js.UndefOr[EntityRecognizerEntityList]
   }
 
-  object EntityRecognizerInputDataConfig {
-    @inline
-    def apply(
-        Documents: EntityRecognizerDocuments,
-        EntityTypes: EntityTypesList,
-        Annotations: js.UndefOr[EntityRecognizerAnnotations] = js.undefined,
-        EntityList: js.UndefOr[EntityRecognizerEntityList] = js.undefined
-    ): EntityRecognizerInputDataConfig = {
-      val __obj = js.Dynamic.literal(
-        "Documents"   -> Documents.asInstanceOf[js.Any],
-        "EntityTypes" -> EntityTypes.asInstanceOf[js.Any]
-      )
-
-      Annotations.foreach(__v => __obj.updateDynamic("Annotations")(__v.asInstanceOf[js.Any]))
-      EntityList.foreach(__v => __obj.updateDynamic("EntityList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EntityRecognizerInputDataConfig]
-    }
-  }
-
   /**
     * Detailed information about an entity recognizer.
     */
   @js.native
+  @Factory
   trait EntityRecognizerMetadata extends js.Object {
     var EntityTypes: js.UndefOr[EntityRecognizerMetadataEntityTypesList]
     var EvaluationMetrics: js.UndefOr[EntityRecognizerEvaluationMetrics]
@@ -2255,52 +1076,22 @@ package comprehend {
     var NumberOfTrainedDocuments: js.UndefOr[Int]
   }
 
-  object EntityRecognizerMetadata {
-    @inline
-    def apply(
-        EntityTypes: js.UndefOr[EntityRecognizerMetadataEntityTypesList] = js.undefined,
-        EvaluationMetrics: js.UndefOr[EntityRecognizerEvaluationMetrics] = js.undefined,
-        NumberOfTestDocuments: js.UndefOr[Int] = js.undefined,
-        NumberOfTrainedDocuments: js.UndefOr[Int] = js.undefined
-    ): EntityRecognizerMetadata = {
-      val __obj = js.Dynamic.literal()
-      EntityTypes.foreach(__v => __obj.updateDynamic("EntityTypes")(__v.asInstanceOf[js.Any]))
-      EvaluationMetrics.foreach(__v => __obj.updateDynamic("EvaluationMetrics")(__v.asInstanceOf[js.Any]))
-      NumberOfTestDocuments.foreach(__v => __obj.updateDynamic("NumberOfTestDocuments")(__v.asInstanceOf[js.Any]))
-      NumberOfTrainedDocuments.foreach(__v => __obj.updateDynamic("NumberOfTrainedDocuments")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EntityRecognizerMetadata]
-    }
-  }
-
   /**
     * Individual item from the list of entity types in the metadata of an entity recognizer.
     */
   @js.native
+  @Factory
   trait EntityRecognizerMetadataEntityTypesListItem extends js.Object {
     var EvaluationMetrics: js.UndefOr[EntityTypesEvaluationMetrics]
     var NumberOfTrainMentions: js.UndefOr[Int]
     var Type: js.UndefOr[AnyLengthString]
   }
 
-  object EntityRecognizerMetadataEntityTypesListItem {
-    @inline
-    def apply(
-        EvaluationMetrics: js.UndefOr[EntityTypesEvaluationMetrics] = js.undefined,
-        NumberOfTrainMentions: js.UndefOr[Int] = js.undefined,
-        Type: js.UndefOr[AnyLengthString] = js.undefined
-    ): EntityRecognizerMetadataEntityTypesListItem = {
-      val __obj = js.Dynamic.literal()
-      EvaluationMetrics.foreach(__v => __obj.updateDynamic("EvaluationMetrics")(__v.asInstanceOf[js.Any]))
-      NumberOfTrainMentions.foreach(__v => __obj.updateDynamic("NumberOfTrainMentions")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EntityRecognizerMetadataEntityTypesListItem]
-    }
-  }
-
   /**
     * Describes information about an entity recognizer.
     */
   @js.native
+  @Factory
   trait EntityRecognizerProperties extends js.Object {
     var DataAccessRoleArn: js.UndefOr[IamRoleArn]
     var EndTime: js.UndefOr[Timestamp]
@@ -2315,41 +1106,6 @@ package comprehend {
     var TrainingStartTime: js.UndefOr[Timestamp]
     var VolumeKmsKeyId: js.UndefOr[KmsKeyId]
     var VpcConfig: js.UndefOr[VpcConfig]
-  }
-
-  object EntityRecognizerProperties {
-    @inline
-    def apply(
-        DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
-        EndTime: js.UndefOr[Timestamp] = js.undefined,
-        EntityRecognizerArn: js.UndefOr[EntityRecognizerArn] = js.undefined,
-        InputDataConfig: js.UndefOr[EntityRecognizerInputDataConfig] = js.undefined,
-        LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-        Message: js.UndefOr[AnyLengthString] = js.undefined,
-        RecognizerMetadata: js.UndefOr[EntityRecognizerMetadata] = js.undefined,
-        Status: js.UndefOr[ModelStatus] = js.undefined,
-        SubmitTime: js.UndefOr[Timestamp] = js.undefined,
-        TrainingEndTime: js.UndefOr[Timestamp] = js.undefined,
-        TrainingStartTime: js.UndefOr[Timestamp] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
-    ): EntityRecognizerProperties = {
-      val __obj = js.Dynamic.literal()
-      DataAccessRoleArn.foreach(__v => __obj.updateDynamic("DataAccessRoleArn")(__v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      EntityRecognizerArn.foreach(__v => __obj.updateDynamic("EntityRecognizerArn")(__v.asInstanceOf[js.Any]))
-      InputDataConfig.foreach(__v => __obj.updateDynamic("InputDataConfig")(__v.asInstanceOf[js.Any]))
-      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      RecognizerMetadata.foreach(__v => __obj.updateDynamic("RecognizerMetadata")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      SubmitTime.foreach(__v => __obj.updateDynamic("SubmitTime")(__v.asInstanceOf[js.Any]))
-      TrainingEndTime.foreach(__v => __obj.updateDynamic("TrainingEndTime")(__v.asInstanceOf[js.Any]))
-      TrainingStartTime.foreach(__v => __obj.updateDynamic("TrainingStartTime")(__v.asInstanceOf[js.Any]))
-      VolumeKmsKeyId.foreach(__v => __obj.updateDynamic("VolumeKmsKeyId")(__v.asInstanceOf[js.Any]))
-      VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EntityRecognizerProperties]
-    }
   }
 
   @js.native
@@ -2373,70 +1129,30 @@ package comprehend {
     * Detailed information about the accuracy of an entity recognizer for a specific entity type.
     */
   @js.native
+  @Factory
   trait EntityTypesEvaluationMetrics extends js.Object {
     var F1Score: js.UndefOr[Double]
     var Precision: js.UndefOr[Double]
     var Recall: js.UndefOr[Double]
   }
 
-  object EntityTypesEvaluationMetrics {
-    @inline
-    def apply(
-        F1Score: js.UndefOr[Double] = js.undefined,
-        Precision: js.UndefOr[Double] = js.undefined,
-        Recall: js.UndefOr[Double] = js.undefined
-    ): EntityTypesEvaluationMetrics = {
-      val __obj = js.Dynamic.literal()
-      F1Score.foreach(__v => __obj.updateDynamic("F1Score")(__v.asInstanceOf[js.Any]))
-      Precision.foreach(__v => __obj.updateDynamic("Precision")(__v.asInstanceOf[js.Any]))
-      Recall.foreach(__v => __obj.updateDynamic("Recall")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EntityTypesEvaluationMetrics]
-    }
-  }
-
   /**
     * Information about an individual item on a list of entity types.
     */
   @js.native
+  @Factory
   trait EntityTypesListItem extends js.Object {
     var Type: EntityTypeName
-  }
-
-  object EntityTypesListItem {
-    @inline
-    def apply(
-        Type: EntityTypeName
-    ): EntityTypesListItem = {
-      val __obj = js.Dynamic.literal(
-        "Type" -> Type.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[EntityTypesListItem]
-    }
   }
 
   /**
     * The input properties for a topic detection job.
     */
   @js.native
+  @Factory
   trait InputDataConfig extends js.Object {
     var S3Uri: S3Uri
     var InputFormat: js.UndefOr[InputFormat]
-  }
-
-  object InputDataConfig {
-    @inline
-    def apply(
-        S3Uri: S3Uri,
-        InputFormat: js.UndefOr[InputFormat] = js.undefined
-    ): InputDataConfig = {
-      val __obj = js.Dynamic.literal(
-        "S3Uri" -> S3Uri.asInstanceOf[js.Any]
-      )
-
-      InputFormat.foreach(__v => __obj.updateDynamic("InputFormat")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InputDataConfig]
-    }
   }
 
   @js.native
@@ -2465,6 +1181,7 @@ package comprehend {
     * Describes a key noun phrase.
     */
   @js.native
+  @Factory
   trait KeyPhrase extends js.Object {
     var BeginOffset: js.UndefOr[Int]
     var EndOffset: js.UndefOr[Int]
@@ -2472,27 +1189,11 @@ package comprehend {
     var Text: js.UndefOr[String]
   }
 
-  object KeyPhrase {
-    @inline
-    def apply(
-        BeginOffset: js.UndefOr[Int] = js.undefined,
-        EndOffset: js.UndefOr[Int] = js.undefined,
-        Score: js.UndefOr[Float] = js.undefined,
-        Text: js.UndefOr[String] = js.undefined
-    ): KeyPhrase = {
-      val __obj = js.Dynamic.literal()
-      BeginOffset.foreach(__v => __obj.updateDynamic("BeginOffset")(__v.asInstanceOf[js.Any]))
-      EndOffset.foreach(__v => __obj.updateDynamic("EndOffset")(__v.asInstanceOf[js.Any]))
-      Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
-      Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[KeyPhrase]
-    }
-  }
-
   /**
     * Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
     */
   @js.native
+  @Factory
   trait KeyPhrasesDetectionJobFilter extends js.Object {
     var JobName: js.UndefOr[JobName]
     var JobStatus: js.UndefOr[JobStatus]
@@ -2500,27 +1201,11 @@ package comprehend {
     var SubmitTimeBefore: js.UndefOr[Timestamp]
   }
 
-  object KeyPhrasesDetectionJobFilter {
-    @inline
-    def apply(
-        JobName: js.UndefOr[JobName] = js.undefined,
-        JobStatus: js.UndefOr[JobStatus] = js.undefined,
-        SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-        SubmitTimeBefore: js.UndefOr[Timestamp] = js.undefined
-    ): KeyPhrasesDetectionJobFilter = {
-      val __obj = js.Dynamic.literal()
-      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      SubmitTimeAfter.foreach(__v => __obj.updateDynamic("SubmitTimeAfter")(__v.asInstanceOf[js.Any]))
-      SubmitTimeBefore.foreach(__v => __obj.updateDynamic("SubmitTimeBefore")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[KeyPhrasesDetectionJobFilter]
-    }
-  }
-
   /**
     * Provides information about a key phrases detection job.
     */
   @js.native
+  @Factory
   trait KeyPhrasesDetectionJobProperties extends js.Object {
     var DataAccessRoleArn: js.UndefOr[IamRoleArn]
     var EndTime: js.UndefOr[Timestamp]
@@ -2534,39 +1219,6 @@ package comprehend {
     var SubmitTime: js.UndefOr[Timestamp]
     var VolumeKmsKeyId: js.UndefOr[KmsKeyId]
     var VpcConfig: js.UndefOr[VpcConfig]
-  }
-
-  object KeyPhrasesDetectionJobProperties {
-    @inline
-    def apply(
-        DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
-        EndTime: js.UndefOr[Timestamp] = js.undefined,
-        InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
-        JobId: js.UndefOr[JobId] = js.undefined,
-        JobName: js.UndefOr[JobName] = js.undefined,
-        JobStatus: js.UndefOr[JobStatus] = js.undefined,
-        LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-        Message: js.UndefOr[AnyLengthString] = js.undefined,
-        OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
-        SubmitTime: js.UndefOr[Timestamp] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
-    ): KeyPhrasesDetectionJobProperties = {
-      val __obj = js.Dynamic.literal()
-      DataAccessRoleArn.foreach(__v => __obj.updateDynamic("DataAccessRoleArn")(__v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      InputDataConfig.foreach(__v => __obj.updateDynamic("InputDataConfig")(__v.asInstanceOf[js.Any]))
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      OutputDataConfig.foreach(__v => __obj.updateDynamic("OutputDataConfig")(__v.asInstanceOf[js.Any]))
-      SubmitTime.foreach(__v => __obj.updateDynamic("SubmitTime")(__v.asInstanceOf[js.Any]))
-      VolumeKmsKeyId.foreach(__v => __obj.updateDynamic("VolumeKmsKeyId")(__v.asInstanceOf[js.Any]))
-      VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[KeyPhrasesDetectionJobProperties]
-    }
   }
 
   @js.native
@@ -2589,426 +1241,151 @@ package comprehend {
   }
 
   @js.native
+  @Factory
   trait ListDocumentClassificationJobsRequest extends js.Object {
     var Filter: js.UndefOr[DocumentClassificationJobFilter]
     var MaxResults: js.UndefOr[MaxResultsInteger]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListDocumentClassificationJobsRequest {
-    @inline
-    def apply(
-        Filter: js.UndefOr[DocumentClassificationJobFilter] = js.undefined,
-        MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListDocumentClassificationJobsRequest = {
-      val __obj = js.Dynamic.literal()
-      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDocumentClassificationJobsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListDocumentClassificationJobsResponse extends js.Object {
     var DocumentClassificationJobPropertiesList: js.UndefOr[DocumentClassificationJobPropertiesList]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListDocumentClassificationJobsResponse {
-    @inline
-    def apply(
-        DocumentClassificationJobPropertiesList: js.UndefOr[DocumentClassificationJobPropertiesList] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListDocumentClassificationJobsResponse = {
-      val __obj = js.Dynamic.literal()
-      DocumentClassificationJobPropertiesList.foreach(__v =>
-        __obj.updateDynamic("DocumentClassificationJobPropertiesList")(__v.asInstanceOf[js.Any])
-      )
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDocumentClassificationJobsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListDocumentClassifiersRequest extends js.Object {
     var Filter: js.UndefOr[DocumentClassifierFilter]
     var MaxResults: js.UndefOr[MaxResultsInteger]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListDocumentClassifiersRequest {
-    @inline
-    def apply(
-        Filter: js.UndefOr[DocumentClassifierFilter] = js.undefined,
-        MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListDocumentClassifiersRequest = {
-      val __obj = js.Dynamic.literal()
-      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDocumentClassifiersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListDocumentClassifiersResponse extends js.Object {
     var DocumentClassifierPropertiesList: js.UndefOr[DocumentClassifierPropertiesList]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListDocumentClassifiersResponse {
-    @inline
-    def apply(
-        DocumentClassifierPropertiesList: js.UndefOr[DocumentClassifierPropertiesList] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListDocumentClassifiersResponse = {
-      val __obj = js.Dynamic.literal()
-      DocumentClassifierPropertiesList.foreach(__v =>
-        __obj.updateDynamic("DocumentClassifierPropertiesList")(__v.asInstanceOf[js.Any])
-      )
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDocumentClassifiersResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListDominantLanguageDetectionJobsRequest extends js.Object {
     var Filter: js.UndefOr[DominantLanguageDetectionJobFilter]
     var MaxResults: js.UndefOr[MaxResultsInteger]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListDominantLanguageDetectionJobsRequest {
-    @inline
-    def apply(
-        Filter: js.UndefOr[DominantLanguageDetectionJobFilter] = js.undefined,
-        MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListDominantLanguageDetectionJobsRequest = {
-      val __obj = js.Dynamic.literal()
-      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDominantLanguageDetectionJobsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListDominantLanguageDetectionJobsResponse extends js.Object {
     var DominantLanguageDetectionJobPropertiesList: js.UndefOr[DominantLanguageDetectionJobPropertiesList]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListDominantLanguageDetectionJobsResponse {
-    @inline
-    def apply(
-        DominantLanguageDetectionJobPropertiesList: js.UndefOr[DominantLanguageDetectionJobPropertiesList] =
-          js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListDominantLanguageDetectionJobsResponse = {
-      val __obj = js.Dynamic.literal()
-      DominantLanguageDetectionJobPropertiesList.foreach(__v =>
-        __obj.updateDynamic("DominantLanguageDetectionJobPropertiesList")(__v.asInstanceOf[js.Any])
-      )
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDominantLanguageDetectionJobsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListEndpointsRequest extends js.Object {
     var Filter: js.UndefOr[EndpointFilter]
     var MaxResults: js.UndefOr[MaxResultsInteger]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListEndpointsRequest {
-    @inline
-    def apply(
-        Filter: js.UndefOr[EndpointFilter] = js.undefined,
-        MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListEndpointsRequest = {
-      val __obj = js.Dynamic.literal()
-      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListEndpointsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListEndpointsResponse extends js.Object {
     var EndpointPropertiesList: js.UndefOr[EndpointPropertiesList]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListEndpointsResponse {
-    @inline
-    def apply(
-        EndpointPropertiesList: js.UndefOr[EndpointPropertiesList] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListEndpointsResponse = {
-      val __obj = js.Dynamic.literal()
-      EndpointPropertiesList.foreach(__v => __obj.updateDynamic("EndpointPropertiesList")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListEndpointsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListEntitiesDetectionJobsRequest extends js.Object {
     var Filter: js.UndefOr[EntitiesDetectionJobFilter]
     var MaxResults: js.UndefOr[MaxResultsInteger]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListEntitiesDetectionJobsRequest {
-    @inline
-    def apply(
-        Filter: js.UndefOr[EntitiesDetectionJobFilter] = js.undefined,
-        MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListEntitiesDetectionJobsRequest = {
-      val __obj = js.Dynamic.literal()
-      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListEntitiesDetectionJobsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListEntitiesDetectionJobsResponse extends js.Object {
     var EntitiesDetectionJobPropertiesList: js.UndefOr[EntitiesDetectionJobPropertiesList]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListEntitiesDetectionJobsResponse {
-    @inline
-    def apply(
-        EntitiesDetectionJobPropertiesList: js.UndefOr[EntitiesDetectionJobPropertiesList] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListEntitiesDetectionJobsResponse = {
-      val __obj = js.Dynamic.literal()
-      EntitiesDetectionJobPropertiesList.foreach(__v =>
-        __obj.updateDynamic("EntitiesDetectionJobPropertiesList")(__v.asInstanceOf[js.Any])
-      )
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListEntitiesDetectionJobsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListEntityRecognizersRequest extends js.Object {
     var Filter: js.UndefOr[EntityRecognizerFilter]
     var MaxResults: js.UndefOr[MaxResultsInteger]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListEntityRecognizersRequest {
-    @inline
-    def apply(
-        Filter: js.UndefOr[EntityRecognizerFilter] = js.undefined,
-        MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListEntityRecognizersRequest = {
-      val __obj = js.Dynamic.literal()
-      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListEntityRecognizersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListEntityRecognizersResponse extends js.Object {
     var EntityRecognizerPropertiesList: js.UndefOr[EntityRecognizerPropertiesList]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListEntityRecognizersResponse {
-    @inline
-    def apply(
-        EntityRecognizerPropertiesList: js.UndefOr[EntityRecognizerPropertiesList] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListEntityRecognizersResponse = {
-      val __obj = js.Dynamic.literal()
-      EntityRecognizerPropertiesList.foreach(__v =>
-        __obj.updateDynamic("EntityRecognizerPropertiesList")(__v.asInstanceOf[js.Any])
-      )
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListEntityRecognizersResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListKeyPhrasesDetectionJobsRequest extends js.Object {
     var Filter: js.UndefOr[KeyPhrasesDetectionJobFilter]
     var MaxResults: js.UndefOr[MaxResultsInteger]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListKeyPhrasesDetectionJobsRequest {
-    @inline
-    def apply(
-        Filter: js.UndefOr[KeyPhrasesDetectionJobFilter] = js.undefined,
-        MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListKeyPhrasesDetectionJobsRequest = {
-      val __obj = js.Dynamic.literal()
-      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListKeyPhrasesDetectionJobsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListKeyPhrasesDetectionJobsResponse extends js.Object {
     var KeyPhrasesDetectionJobPropertiesList: js.UndefOr[KeyPhrasesDetectionJobPropertiesList]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListKeyPhrasesDetectionJobsResponse {
-    @inline
-    def apply(
-        KeyPhrasesDetectionJobPropertiesList: js.UndefOr[KeyPhrasesDetectionJobPropertiesList] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListKeyPhrasesDetectionJobsResponse = {
-      val __obj = js.Dynamic.literal()
-      KeyPhrasesDetectionJobPropertiesList.foreach(__v =>
-        __obj.updateDynamic("KeyPhrasesDetectionJobPropertiesList")(__v.asInstanceOf[js.Any])
-      )
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListKeyPhrasesDetectionJobsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListSentimentDetectionJobsRequest extends js.Object {
     var Filter: js.UndefOr[SentimentDetectionJobFilter]
     var MaxResults: js.UndefOr[MaxResultsInteger]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListSentimentDetectionJobsRequest {
-    @inline
-    def apply(
-        Filter: js.UndefOr[SentimentDetectionJobFilter] = js.undefined,
-        MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListSentimentDetectionJobsRequest = {
-      val __obj = js.Dynamic.literal()
-      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListSentimentDetectionJobsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListSentimentDetectionJobsResponse extends js.Object {
     var NextToken: js.UndefOr[String]
     var SentimentDetectionJobPropertiesList: js.UndefOr[SentimentDetectionJobPropertiesList]
   }
 
-  object ListSentimentDetectionJobsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[String] = js.undefined,
-        SentimentDetectionJobPropertiesList: js.UndefOr[SentimentDetectionJobPropertiesList] = js.undefined
-    ): ListSentimentDetectionJobsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SentimentDetectionJobPropertiesList.foreach(__v =>
-        __obj.updateDynamic("SentimentDetectionJobPropertiesList")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[ListSentimentDetectionJobsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceRequest extends js.Object {
     var ResourceArn: ComprehendArn
   }
 
-  object ListTagsForResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: ComprehendArn
-    ): ListTagsForResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListTagsForResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceResponse extends js.Object {
     var ResourceArn: js.UndefOr[ComprehendArn]
     var Tags: js.UndefOr[TagList]
   }
 
-  object ListTagsForResourceResponse {
-    @inline
-    def apply(
-        ResourceArn: js.UndefOr[ComprehendArn] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): ListTagsForResourceResponse = {
-      val __obj = js.Dynamic.literal()
-      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTopicsDetectionJobsRequest extends js.Object {
     var Filter: js.UndefOr[TopicsDetectionJobFilter]
     var MaxResults: js.UndefOr[MaxResultsInteger]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListTopicsDetectionJobsRequest {
-    @inline
-    def apply(
-        Filter: js.UndefOr[TopicsDetectionJobFilter] = js.undefined,
-        MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListTopicsDetectionJobsRequest = {
-      val __obj = js.Dynamic.literal()
-      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTopicsDetectionJobsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTopicsDetectionJobsResponse extends js.Object {
     var NextToken: js.UndefOr[String]
     var TopicsDetectionJobPropertiesList: js.UndefOr[TopicsDetectionJobPropertiesList]
-  }
-
-  object ListTopicsDetectionJobsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[String] = js.undefined,
-        TopicsDetectionJobPropertiesList: js.UndefOr[TopicsDetectionJobPropertiesList] = js.undefined
-    ): ListTopicsDetectionJobsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      TopicsDetectionJobPropertiesList.foreach(__v =>
-        __obj.updateDynamic("TopicsDetectionJobPropertiesList")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[ListTopicsDetectionJobsResponse]
-    }
   }
 
   @js.native
@@ -3030,46 +1407,20 @@ package comprehend {
     *  <p/>
     */
   @js.native
+  @Factory
   trait OutputDataConfig extends js.Object {
     var S3Uri: S3Uri
     var KmsKeyId: js.UndefOr[KmsKeyId]
-  }
-
-  object OutputDataConfig {
-    @inline
-    def apply(
-        S3Uri: S3Uri,
-        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
-    ): OutputDataConfig = {
-      val __obj = js.Dynamic.literal(
-        "S3Uri" -> S3Uri.asInstanceOf[js.Any]
-      )
-
-      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[OutputDataConfig]
-    }
   }
 
   /**
     * Identifies the part of speech represented by the token and gives the confidence that Amazon Comprehend has that the part of speech was correctly identified. For more information about the parts of speech that Amazon Comprehend can identify, see <a>how-syntax</a>.
     */
   @js.native
+  @Factory
   trait PartOfSpeechTag extends js.Object {
     var Score: js.UndefOr[Float]
     var Tag: js.UndefOr[PartOfSpeechTagType]
-  }
-
-  object PartOfSpeechTag {
-    @inline
-    def apply(
-        Score: js.UndefOr[Float] = js.undefined,
-        Tag: js.UndefOr[PartOfSpeechTagType] = js.undefined
-    ): PartOfSpeechTag = {
-      val __obj = js.Dynamic.literal()
-      Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
-      Tag.foreach(__v => __obj.updateDynamic("Tag")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PartOfSpeechTag]
-    }
   }
 
   @js.native
@@ -3103,6 +1454,7 @@ package comprehend {
     * Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
     */
   @js.native
+  @Factory
   trait SentimentDetectionJobFilter extends js.Object {
     var JobName: js.UndefOr[JobName]
     var JobStatus: js.UndefOr[JobStatus]
@@ -3110,27 +1462,11 @@ package comprehend {
     var SubmitTimeBefore: js.UndefOr[Timestamp]
   }
 
-  object SentimentDetectionJobFilter {
-    @inline
-    def apply(
-        JobName: js.UndefOr[JobName] = js.undefined,
-        JobStatus: js.UndefOr[JobStatus] = js.undefined,
-        SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-        SubmitTimeBefore: js.UndefOr[Timestamp] = js.undefined
-    ): SentimentDetectionJobFilter = {
-      val __obj = js.Dynamic.literal()
-      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      SubmitTimeAfter.foreach(__v => __obj.updateDynamic("SubmitTimeAfter")(__v.asInstanceOf[js.Any]))
-      SubmitTimeBefore.foreach(__v => __obj.updateDynamic("SubmitTimeBefore")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SentimentDetectionJobFilter]
-    }
-  }
-
   /**
     * Provides information about a sentiment detection job.
     */
   @js.native
+  @Factory
   trait SentimentDetectionJobProperties extends js.Object {
     var DataAccessRoleArn: js.UndefOr[IamRoleArn]
     var EndTime: js.UndefOr[Timestamp]
@@ -3146,65 +1482,16 @@ package comprehend {
     var VpcConfig: js.UndefOr[VpcConfig]
   }
 
-  object SentimentDetectionJobProperties {
-    @inline
-    def apply(
-        DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
-        EndTime: js.UndefOr[Timestamp] = js.undefined,
-        InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
-        JobId: js.UndefOr[JobId] = js.undefined,
-        JobName: js.UndefOr[JobName] = js.undefined,
-        JobStatus: js.UndefOr[JobStatus] = js.undefined,
-        LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-        Message: js.UndefOr[AnyLengthString] = js.undefined,
-        OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
-        SubmitTime: js.UndefOr[Timestamp] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
-    ): SentimentDetectionJobProperties = {
-      val __obj = js.Dynamic.literal()
-      DataAccessRoleArn.foreach(__v => __obj.updateDynamic("DataAccessRoleArn")(__v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      InputDataConfig.foreach(__v => __obj.updateDynamic("InputDataConfig")(__v.asInstanceOf[js.Any]))
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      OutputDataConfig.foreach(__v => __obj.updateDynamic("OutputDataConfig")(__v.asInstanceOf[js.Any]))
-      SubmitTime.foreach(__v => __obj.updateDynamic("SubmitTime")(__v.asInstanceOf[js.Any]))
-      VolumeKmsKeyId.foreach(__v => __obj.updateDynamic("VolumeKmsKeyId")(__v.asInstanceOf[js.Any]))
-      VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SentimentDetectionJobProperties]
-    }
-  }
-
   /**
     * Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments.
     */
   @js.native
+  @Factory
   trait SentimentScore extends js.Object {
     var Mixed: js.UndefOr[Float]
     var Negative: js.UndefOr[Float]
     var Neutral: js.UndefOr[Float]
     var Positive: js.UndefOr[Float]
-  }
-
-  object SentimentScore {
-    @inline
-    def apply(
-        Mixed: js.UndefOr[Float] = js.undefined,
-        Negative: js.UndefOr[Float] = js.undefined,
-        Neutral: js.UndefOr[Float] = js.undefined,
-        Positive: js.UndefOr[Float] = js.undefined
-    ): SentimentScore = {
-      val __obj = js.Dynamic.literal()
-      Mixed.foreach(__v => __obj.updateDynamic("Mixed")(__v.asInstanceOf[js.Any]))
-      Negative.foreach(__v => __obj.updateDynamic("Negative")(__v.asInstanceOf[js.Any]))
-      Neutral.foreach(__v => __obj.updateDynamic("Neutral")(__v.asInstanceOf[js.Any]))
-      Positive.foreach(__v => __obj.updateDynamic("Positive")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SentimentScore]
-    }
   }
 
   @js.native
@@ -3219,6 +1506,7 @@ package comprehend {
   }
 
   @js.native
+  @Factory
   trait StartDocumentClassificationJobRequest extends js.Object {
     var DataAccessRoleArn: IamRoleArn
     var DocumentClassifierArn: DocumentClassifierArn
@@ -3230,53 +1518,15 @@ package comprehend {
     var VpcConfig: js.UndefOr[VpcConfig]
   }
 
-  object StartDocumentClassificationJobRequest {
-    @inline
-    def apply(
-        DataAccessRoleArn: IamRoleArn,
-        DocumentClassifierArn: DocumentClassifierArn,
-        InputDataConfig: InputDataConfig,
-        OutputDataConfig: OutputDataConfig,
-        ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
-        JobName: js.UndefOr[JobName] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
-    ): StartDocumentClassificationJobRequest = {
-      val __obj = js.Dynamic.literal(
-        "DataAccessRoleArn"     -> DataAccessRoleArn.asInstanceOf[js.Any],
-        "DocumentClassifierArn" -> DocumentClassifierArn.asInstanceOf[js.Any],
-        "InputDataConfig"       -> InputDataConfig.asInstanceOf[js.Any],
-        "OutputDataConfig"      -> OutputDataConfig.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
-      VolumeKmsKeyId.foreach(__v => __obj.updateDynamic("VolumeKmsKeyId")(__v.asInstanceOf[js.Any]))
-      VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartDocumentClassificationJobRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartDocumentClassificationJobResponse extends js.Object {
     var JobId: js.UndefOr[JobId]
     var JobStatus: js.UndefOr[JobStatus]
   }
 
-  object StartDocumentClassificationJobResponse {
-    @inline
-    def apply(
-        JobId: js.UndefOr[JobId] = js.undefined,
-        JobStatus: js.UndefOr[JobStatus] = js.undefined
-    ): StartDocumentClassificationJobResponse = {
-      val __obj = js.Dynamic.literal()
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartDocumentClassificationJobResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartDominantLanguageDetectionJobRequest extends js.Object {
     var DataAccessRoleArn: IamRoleArn
     var InputDataConfig: InputDataConfig
@@ -3287,51 +1537,15 @@ package comprehend {
     var VpcConfig: js.UndefOr[VpcConfig]
   }
 
-  object StartDominantLanguageDetectionJobRequest {
-    @inline
-    def apply(
-        DataAccessRoleArn: IamRoleArn,
-        InputDataConfig: InputDataConfig,
-        OutputDataConfig: OutputDataConfig,
-        ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
-        JobName: js.UndefOr[JobName] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
-    ): StartDominantLanguageDetectionJobRequest = {
-      val __obj = js.Dynamic.literal(
-        "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
-        "InputDataConfig"   -> InputDataConfig.asInstanceOf[js.Any],
-        "OutputDataConfig"  -> OutputDataConfig.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
-      VolumeKmsKeyId.foreach(__v => __obj.updateDynamic("VolumeKmsKeyId")(__v.asInstanceOf[js.Any]))
-      VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartDominantLanguageDetectionJobRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartDominantLanguageDetectionJobResponse extends js.Object {
     var JobId: js.UndefOr[JobId]
     var JobStatus: js.UndefOr[JobStatus]
   }
 
-  object StartDominantLanguageDetectionJobResponse {
-    @inline
-    def apply(
-        JobId: js.UndefOr[JobId] = js.undefined,
-        JobStatus: js.UndefOr[JobStatus] = js.undefined
-    ): StartDominantLanguageDetectionJobResponse = {
-      val __obj = js.Dynamic.literal()
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartDominantLanguageDetectionJobResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartEntitiesDetectionJobRequest extends js.Object {
     var DataAccessRoleArn: IamRoleArn
     var InputDataConfig: InputDataConfig
@@ -3344,55 +1558,15 @@ package comprehend {
     var VpcConfig: js.UndefOr[VpcConfig]
   }
 
-  object StartEntitiesDetectionJobRequest {
-    @inline
-    def apply(
-        DataAccessRoleArn: IamRoleArn,
-        InputDataConfig: InputDataConfig,
-        LanguageCode: LanguageCode,
-        OutputDataConfig: OutputDataConfig,
-        ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
-        EntityRecognizerArn: js.UndefOr[EntityRecognizerArn] = js.undefined,
-        JobName: js.UndefOr[JobName] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
-    ): StartEntitiesDetectionJobRequest = {
-      val __obj = js.Dynamic.literal(
-        "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
-        "InputDataConfig"   -> InputDataConfig.asInstanceOf[js.Any],
-        "LanguageCode"      -> LanguageCode.asInstanceOf[js.Any],
-        "OutputDataConfig"  -> OutputDataConfig.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      EntityRecognizerArn.foreach(__v => __obj.updateDynamic("EntityRecognizerArn")(__v.asInstanceOf[js.Any]))
-      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
-      VolumeKmsKeyId.foreach(__v => __obj.updateDynamic("VolumeKmsKeyId")(__v.asInstanceOf[js.Any]))
-      VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartEntitiesDetectionJobRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartEntitiesDetectionJobResponse extends js.Object {
     var JobId: js.UndefOr[JobId]
     var JobStatus: js.UndefOr[JobStatus]
   }
 
-  object StartEntitiesDetectionJobResponse {
-    @inline
-    def apply(
-        JobId: js.UndefOr[JobId] = js.undefined,
-        JobStatus: js.UndefOr[JobStatus] = js.undefined
-    ): StartEntitiesDetectionJobResponse = {
-      val __obj = js.Dynamic.literal()
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartEntitiesDetectionJobResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartKeyPhrasesDetectionJobRequest extends js.Object {
     var DataAccessRoleArn: IamRoleArn
     var InputDataConfig: InputDataConfig
@@ -3404,53 +1578,15 @@ package comprehend {
     var VpcConfig: js.UndefOr[VpcConfig]
   }
 
-  object StartKeyPhrasesDetectionJobRequest {
-    @inline
-    def apply(
-        DataAccessRoleArn: IamRoleArn,
-        InputDataConfig: InputDataConfig,
-        LanguageCode: LanguageCode,
-        OutputDataConfig: OutputDataConfig,
-        ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
-        JobName: js.UndefOr[JobName] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
-    ): StartKeyPhrasesDetectionJobRequest = {
-      val __obj = js.Dynamic.literal(
-        "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
-        "InputDataConfig"   -> InputDataConfig.asInstanceOf[js.Any],
-        "LanguageCode"      -> LanguageCode.asInstanceOf[js.Any],
-        "OutputDataConfig"  -> OutputDataConfig.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
-      VolumeKmsKeyId.foreach(__v => __obj.updateDynamic("VolumeKmsKeyId")(__v.asInstanceOf[js.Any]))
-      VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartKeyPhrasesDetectionJobRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartKeyPhrasesDetectionJobResponse extends js.Object {
     var JobId: js.UndefOr[JobId]
     var JobStatus: js.UndefOr[JobStatus]
   }
 
-  object StartKeyPhrasesDetectionJobResponse {
-    @inline
-    def apply(
-        JobId: js.UndefOr[JobId] = js.undefined,
-        JobStatus: js.UndefOr[JobStatus] = js.undefined
-    ): StartKeyPhrasesDetectionJobResponse = {
-      val __obj = js.Dynamic.literal()
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartKeyPhrasesDetectionJobResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartSentimentDetectionJobRequest extends js.Object {
     var DataAccessRoleArn: IamRoleArn
     var InputDataConfig: InputDataConfig
@@ -3462,53 +1598,15 @@ package comprehend {
     var VpcConfig: js.UndefOr[VpcConfig]
   }
 
-  object StartSentimentDetectionJobRequest {
-    @inline
-    def apply(
-        DataAccessRoleArn: IamRoleArn,
-        InputDataConfig: InputDataConfig,
-        LanguageCode: LanguageCode,
-        OutputDataConfig: OutputDataConfig,
-        ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
-        JobName: js.UndefOr[JobName] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
-    ): StartSentimentDetectionJobRequest = {
-      val __obj = js.Dynamic.literal(
-        "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
-        "InputDataConfig"   -> InputDataConfig.asInstanceOf[js.Any],
-        "LanguageCode"      -> LanguageCode.asInstanceOf[js.Any],
-        "OutputDataConfig"  -> OutputDataConfig.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
-      VolumeKmsKeyId.foreach(__v => __obj.updateDynamic("VolumeKmsKeyId")(__v.asInstanceOf[js.Any]))
-      VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartSentimentDetectionJobRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartSentimentDetectionJobResponse extends js.Object {
     var JobId: js.UndefOr[JobId]
     var JobStatus: js.UndefOr[JobStatus]
   }
 
-  object StartSentimentDetectionJobResponse {
-    @inline
-    def apply(
-        JobId: js.UndefOr[JobId] = js.undefined,
-        JobStatus: js.UndefOr[JobStatus] = js.undefined
-    ): StartSentimentDetectionJobResponse = {
-      val __obj = js.Dynamic.literal()
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartSentimentDetectionJobResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartTopicsDetectionJobRequest extends js.Object {
     var DataAccessRoleArn: IamRoleArn
     var InputDataConfig: InputDataConfig
@@ -3520,261 +1618,84 @@ package comprehend {
     var VpcConfig: js.UndefOr[VpcConfig]
   }
 
-  object StartTopicsDetectionJobRequest {
-    @inline
-    def apply(
-        DataAccessRoleArn: IamRoleArn,
-        InputDataConfig: InputDataConfig,
-        OutputDataConfig: OutputDataConfig,
-        ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
-        JobName: js.UndefOr[JobName] = js.undefined,
-        NumberOfTopics: js.UndefOr[NumberOfTopicsInteger] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
-    ): StartTopicsDetectionJobRequest = {
-      val __obj = js.Dynamic.literal(
-        "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
-        "InputDataConfig"   -> InputDataConfig.asInstanceOf[js.Any],
-        "OutputDataConfig"  -> OutputDataConfig.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
-      NumberOfTopics.foreach(__v => __obj.updateDynamic("NumberOfTopics")(__v.asInstanceOf[js.Any]))
-      VolumeKmsKeyId.foreach(__v => __obj.updateDynamic("VolumeKmsKeyId")(__v.asInstanceOf[js.Any]))
-      VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartTopicsDetectionJobRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartTopicsDetectionJobResponse extends js.Object {
     var JobId: js.UndefOr[JobId]
     var JobStatus: js.UndefOr[JobStatus]
   }
 
-  object StartTopicsDetectionJobResponse {
-    @inline
-    def apply(
-        JobId: js.UndefOr[JobId] = js.undefined,
-        JobStatus: js.UndefOr[JobStatus] = js.undefined
-    ): StartTopicsDetectionJobResponse = {
-      val __obj = js.Dynamic.literal()
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartTopicsDetectionJobResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopDominantLanguageDetectionJobRequest extends js.Object {
     var JobId: JobId
   }
 
-  object StopDominantLanguageDetectionJobRequest {
-    @inline
-    def apply(
-        JobId: JobId
-    ): StopDominantLanguageDetectionJobRequest = {
-      val __obj = js.Dynamic.literal(
-        "JobId" -> JobId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StopDominantLanguageDetectionJobRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopDominantLanguageDetectionJobResponse extends js.Object {
     var JobId: js.UndefOr[JobId]
     var JobStatus: js.UndefOr[JobStatus]
   }
 
-  object StopDominantLanguageDetectionJobResponse {
-    @inline
-    def apply(
-        JobId: js.UndefOr[JobId] = js.undefined,
-        JobStatus: js.UndefOr[JobStatus] = js.undefined
-    ): StopDominantLanguageDetectionJobResponse = {
-      val __obj = js.Dynamic.literal()
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StopDominantLanguageDetectionJobResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopEntitiesDetectionJobRequest extends js.Object {
     var JobId: JobId
   }
 
-  object StopEntitiesDetectionJobRequest {
-    @inline
-    def apply(
-        JobId: JobId
-    ): StopEntitiesDetectionJobRequest = {
-      val __obj = js.Dynamic.literal(
-        "JobId" -> JobId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StopEntitiesDetectionJobRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopEntitiesDetectionJobResponse extends js.Object {
     var JobId: js.UndefOr[JobId]
     var JobStatus: js.UndefOr[JobStatus]
   }
 
-  object StopEntitiesDetectionJobResponse {
-    @inline
-    def apply(
-        JobId: js.UndefOr[JobId] = js.undefined,
-        JobStatus: js.UndefOr[JobStatus] = js.undefined
-    ): StopEntitiesDetectionJobResponse = {
-      val __obj = js.Dynamic.literal()
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StopEntitiesDetectionJobResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopKeyPhrasesDetectionJobRequest extends js.Object {
     var JobId: JobId
   }
 
-  object StopKeyPhrasesDetectionJobRequest {
-    @inline
-    def apply(
-        JobId: JobId
-    ): StopKeyPhrasesDetectionJobRequest = {
-      val __obj = js.Dynamic.literal(
-        "JobId" -> JobId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StopKeyPhrasesDetectionJobRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopKeyPhrasesDetectionJobResponse extends js.Object {
     var JobId: js.UndefOr[JobId]
     var JobStatus: js.UndefOr[JobStatus]
   }
 
-  object StopKeyPhrasesDetectionJobResponse {
-    @inline
-    def apply(
-        JobId: js.UndefOr[JobId] = js.undefined,
-        JobStatus: js.UndefOr[JobStatus] = js.undefined
-    ): StopKeyPhrasesDetectionJobResponse = {
-      val __obj = js.Dynamic.literal()
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StopKeyPhrasesDetectionJobResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopSentimentDetectionJobRequest extends js.Object {
     var JobId: JobId
   }
 
-  object StopSentimentDetectionJobRequest {
-    @inline
-    def apply(
-        JobId: JobId
-    ): StopSentimentDetectionJobRequest = {
-      val __obj = js.Dynamic.literal(
-        "JobId" -> JobId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StopSentimentDetectionJobRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopSentimentDetectionJobResponse extends js.Object {
     var JobId: js.UndefOr[JobId]
     var JobStatus: js.UndefOr[JobStatus]
   }
 
-  object StopSentimentDetectionJobResponse {
-    @inline
-    def apply(
-        JobId: js.UndefOr[JobId] = js.undefined,
-        JobStatus: js.UndefOr[JobStatus] = js.undefined
-    ): StopSentimentDetectionJobResponse = {
-      val __obj = js.Dynamic.literal()
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StopSentimentDetectionJobResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopTrainingDocumentClassifierRequest extends js.Object {
     var DocumentClassifierArn: DocumentClassifierArn
   }
 
-  object StopTrainingDocumentClassifierRequest {
-    @inline
-    def apply(
-        DocumentClassifierArn: DocumentClassifierArn
-    ): StopTrainingDocumentClassifierRequest = {
-      val __obj = js.Dynamic.literal(
-        "DocumentClassifierArn" -> DocumentClassifierArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StopTrainingDocumentClassifierRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopTrainingDocumentClassifierResponse extends js.Object {}
 
-  object StopTrainingDocumentClassifierResponse {
-    @inline
-    def apply(
-    ): StopTrainingDocumentClassifierResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[StopTrainingDocumentClassifierResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopTrainingEntityRecognizerRequest extends js.Object {
     var EntityRecognizerArn: EntityRecognizerArn
   }
 
-  object StopTrainingEntityRecognizerRequest {
-    @inline
-    def apply(
-        EntityRecognizerArn: EntityRecognizerArn
-    ): StopTrainingEntityRecognizerRequest = {
-      val __obj = js.Dynamic.literal(
-        "EntityRecognizerArn" -> EntityRecognizerArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StopTrainingEntityRecognizerRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopTrainingEntityRecognizerResponse extends js.Object {}
-
-  object StopTrainingEntityRecognizerResponse {
-    @inline
-    def apply(
-    ): StopTrainingEntityRecognizerResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[StopTrainingEntityRecognizerResponse]
-    }
-  }
 
   @js.native
   sealed trait SyntaxLanguageCode extends js.Any
@@ -3793,6 +1714,7 @@ package comprehend {
     * Represents a work in the input text that was recognized and assigned a part of speech. There is one syntax token record for each word in the source text.
     */
   @js.native
+  @Factory
   trait SyntaxToken extends js.Object {
     var BeginOffset: js.UndefOr[Int]
     var EndOffset: js.UndefOr[Int]
@@ -3801,87 +1723,32 @@ package comprehend {
     var TokenId: js.UndefOr[Int]
   }
 
-  object SyntaxToken {
-    @inline
-    def apply(
-        BeginOffset: js.UndefOr[Int] = js.undefined,
-        EndOffset: js.UndefOr[Int] = js.undefined,
-        PartOfSpeech: js.UndefOr[PartOfSpeechTag] = js.undefined,
-        Text: js.UndefOr[String] = js.undefined,
-        TokenId: js.UndefOr[Int] = js.undefined
-    ): SyntaxToken = {
-      val __obj = js.Dynamic.literal()
-      BeginOffset.foreach(__v => __obj.updateDynamic("BeginOffset")(__v.asInstanceOf[js.Any]))
-      EndOffset.foreach(__v => __obj.updateDynamic("EndOffset")(__v.asInstanceOf[js.Any]))
-      PartOfSpeech.foreach(__v => __obj.updateDynamic("PartOfSpeech")(__v.asInstanceOf[js.Any]))
-      Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
-      TokenId.foreach(__v => __obj.updateDynamic("TokenId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SyntaxToken]
-    }
-  }
-
   /**
     * A key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with the key-value pair ‘Department’:’Sales’ might be added to a resource to indicate its use by a particular department.
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var Key: TagKey
     var Value: js.UndefOr[TagValue]
   }
 
-  object Tag {
-    @inline
-    def apply(
-        Key: TagKey,
-        Value: js.UndefOr[TagValue] = js.undefined
-    ): Tag = {
-      val __obj = js.Dynamic.literal(
-        "Key" -> Key.asInstanceOf[js.Any]
-      )
-
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Tag]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceRequest extends js.Object {
     var ResourceArn: ComprehendArn
     var Tags: TagList
   }
 
-  object TagResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: ComprehendArn,
-        Tags: TagList
-    ): TagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceResponse extends js.Object {}
-
-  object TagResourceResponse {
-    @inline
-    def apply(
-    ): TagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[TagResourceResponse]
-    }
-  }
 
   /**
     * Provides information for filtering topic detection jobs. For more information, see .
     */
   @js.native
+  @Factory
   trait TopicsDetectionJobFilter extends js.Object {
     var JobName: js.UndefOr[JobName]
     var JobStatus: js.UndefOr[JobStatus]
@@ -3889,27 +1756,11 @@ package comprehend {
     var SubmitTimeBefore: js.UndefOr[Timestamp]
   }
 
-  object TopicsDetectionJobFilter {
-    @inline
-    def apply(
-        JobName: js.UndefOr[JobName] = js.undefined,
-        JobStatus: js.UndefOr[JobStatus] = js.undefined,
-        SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-        SubmitTimeBefore: js.UndefOr[Timestamp] = js.undefined
-    ): TopicsDetectionJobFilter = {
-      val __obj = js.Dynamic.literal()
-      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      SubmitTimeAfter.foreach(__v => __obj.updateDynamic("SubmitTimeAfter")(__v.asInstanceOf[js.Any]))
-      SubmitTimeBefore.foreach(__v => __obj.updateDynamic("SubmitTimeBefore")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TopicsDetectionJobFilter]
-    }
-  }
-
   /**
     * Provides information about a topic detection job.
     */
   @js.native
+  @Factory
   trait TopicsDetectionJobProperties extends js.Object {
     var DataAccessRoleArn: js.UndefOr[IamRoleArn]
     var EndTime: js.UndefOr[Timestamp]
@@ -3925,128 +1776,35 @@ package comprehend {
     var VpcConfig: js.UndefOr[VpcConfig]
   }
 
-  object TopicsDetectionJobProperties {
-    @inline
-    def apply(
-        DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
-        EndTime: js.UndefOr[Timestamp] = js.undefined,
-        InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
-        JobId: js.UndefOr[JobId] = js.undefined,
-        JobName: js.UndefOr[JobName] = js.undefined,
-        JobStatus: js.UndefOr[JobStatus] = js.undefined,
-        Message: js.UndefOr[AnyLengthString] = js.undefined,
-        NumberOfTopics: js.UndefOr[Int] = js.undefined,
-        OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
-        SubmitTime: js.UndefOr[Timestamp] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
-    ): TopicsDetectionJobProperties = {
-      val __obj = js.Dynamic.literal()
-      DataAccessRoleArn.foreach(__v => __obj.updateDynamic("DataAccessRoleArn")(__v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      InputDataConfig.foreach(__v => __obj.updateDynamic("InputDataConfig")(__v.asInstanceOf[js.Any]))
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      NumberOfTopics.foreach(__v => __obj.updateDynamic("NumberOfTopics")(__v.asInstanceOf[js.Any]))
-      OutputDataConfig.foreach(__v => __obj.updateDynamic("OutputDataConfig")(__v.asInstanceOf[js.Any]))
-      SubmitTime.foreach(__v => __obj.updateDynamic("SubmitTime")(__v.asInstanceOf[js.Any]))
-      VolumeKmsKeyId.foreach(__v => __obj.updateDynamic("VolumeKmsKeyId")(__v.asInstanceOf[js.Any]))
-      VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TopicsDetectionJobProperties]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceRequest extends js.Object {
     var ResourceArn: ComprehendArn
     var TagKeys: TagKeyList
   }
 
-  object UntagResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: ComprehendArn,
-        TagKeys: TagKeyList
-    ): UntagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceResponse extends js.Object {}
 
-  object UntagResourceResponse {
-    @inline
-    def apply(
-    ): UntagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UntagResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateEndpointRequest extends js.Object {
     var DesiredInferenceUnits: InferenceUnitsInteger
     var EndpointArn: ComprehendEndpointArn
   }
 
-  object UpdateEndpointRequest {
-    @inline
-    def apply(
-        DesiredInferenceUnits: InferenceUnitsInteger,
-        EndpointArn: ComprehendEndpointArn
-    ): UpdateEndpointRequest = {
-      val __obj = js.Dynamic.literal(
-        "DesiredInferenceUnits" -> DesiredInferenceUnits.asInstanceOf[js.Any],
-        "EndpointArn"           -> EndpointArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateEndpointRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateEndpointResponse extends js.Object {}
-
-  object UpdateEndpointResponse {
-    @inline
-    def apply(
-    ): UpdateEndpointResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateEndpointResponse]
-    }
-  }
 
   /**
     * Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see [[https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html|Amazon VPC]].
     */
   @js.native
+  @Factory
   trait VpcConfig extends js.Object {
     var SecurityGroupIds: SecurityGroupIds
     var Subnets: Subnets
-  }
-
-  object VpcConfig {
-    @inline
-    def apply(
-        SecurityGroupIds: SecurityGroupIds,
-        Subnets: Subnets
-    ): VpcConfig = {
-      val __obj = js.Dynamic.literal(
-        "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any],
-        "Subnets"          -> Subnets.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[VpcConfig]
-    }
   }
 }

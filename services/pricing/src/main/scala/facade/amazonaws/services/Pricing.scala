@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object pricing {
   type AttributeNameList  = js.Array[String]
@@ -42,22 +43,13 @@ package pricing {
     * The values of a given attribute, such as <code>Throughput Optimized HDD</code> or <code>Provisioned IOPS</code> for the <code>Amazon EC2</code> <code>volumeType</code> attribute.
     */
   @js.native
+  @Factory
   trait AttributeValue extends js.Object {
     var Value: js.UndefOr[String]
   }
 
-  object AttributeValue {
-    @inline
-    def apply(
-        Value: js.UndefOr[String] = js.undefined
-    ): AttributeValue = {
-      val __obj = js.Dynamic.literal()
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AttributeValue]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeServicesRequest extends js.Object {
     var FormatVersion: js.UndefOr[String]
     var MaxResults: js.UndefOr[BoxedInteger]
@@ -65,43 +57,12 @@ package pricing {
     var ServiceCode: js.UndefOr[String]
   }
 
-  object DescribeServicesRequest {
-    @inline
-    def apply(
-        FormatVersion: js.UndefOr[String] = js.undefined,
-        MaxResults: js.UndefOr[BoxedInteger] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined,
-        ServiceCode: js.UndefOr[String] = js.undefined
-    ): DescribeServicesRequest = {
-      val __obj = js.Dynamic.literal()
-      FormatVersion.foreach(__v => __obj.updateDynamic("FormatVersion")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ServiceCode.foreach(__v => __obj.updateDynamic("ServiceCode")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeServicesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeServicesResponse extends js.Object {
     var FormatVersion: js.UndefOr[String]
     var NextToken: js.UndefOr[String]
     var Services: js.UndefOr[ServiceList]
-  }
-
-  object DescribeServicesResponse {
-    @inline
-    def apply(
-        FormatVersion: js.UndefOr[String] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined,
-        Services: js.UndefOr[ServiceList] = js.undefined
-    ): DescribeServicesResponse = {
-      val __obj = js.Dynamic.literal()
-      FormatVersion.foreach(__v => __obj.updateDynamic("FormatVersion")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Services.foreach(__v => __obj.updateDynamic("Services")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeServicesResponse]
-    }
   }
 
   /**
@@ -116,27 +77,11 @@ package pricing {
     * The constraints that you want all returned products to match.
     */
   @js.native
+  @Factory
   trait Filter extends js.Object {
     var Field: String
     var Type: FilterType
     var Value: String
-  }
-
-  object Filter {
-    @inline
-    def apply(
-        Field: String,
-        Type: FilterType,
-        Value: String
-    ): Filter = {
-      val __obj = js.Dynamic.literal(
-        "Field" -> Field.asInstanceOf[js.Any],
-        "Type"  -> Type.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Filter]
-    }
   }
 
   @js.native
@@ -148,6 +93,7 @@ package pricing {
   }
 
   @js.native
+  @Factory
   trait GetAttributeValuesRequest extends js.Object {
     var AttributeName: String
     var ServiceCode: String
@@ -155,45 +101,15 @@ package pricing {
     var NextToken: js.UndefOr[String]
   }
 
-  object GetAttributeValuesRequest {
-    @inline
-    def apply(
-        AttributeName: String,
-        ServiceCode: String,
-        MaxResults: js.UndefOr[BoxedInteger] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): GetAttributeValuesRequest = {
-      val __obj = js.Dynamic.literal(
-        "AttributeName" -> AttributeName.asInstanceOf[js.Any],
-        "ServiceCode"   -> ServiceCode.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetAttributeValuesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetAttributeValuesResponse extends js.Object {
     var AttributeValues: js.UndefOr[AttributeValueList]
     var NextToken: js.UndefOr[String]
   }
 
-  object GetAttributeValuesResponse {
-    @inline
-    def apply(
-        AttributeValues: js.UndefOr[AttributeValueList] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): GetAttributeValuesResponse = {
-      val __obj = js.Dynamic.literal()
-      AttributeValues.foreach(__v => __obj.updateDynamic("AttributeValues")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetAttributeValuesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetProductsRequest extends js.Object {
     var Filters: js.UndefOr[Filters]
     var FormatVersion: js.UndefOr[String]
@@ -202,45 +118,12 @@ package pricing {
     var ServiceCode: js.UndefOr[String]
   }
 
-  object GetProductsRequest {
-    @inline
-    def apply(
-        Filters: js.UndefOr[Filters] = js.undefined,
-        FormatVersion: js.UndefOr[String] = js.undefined,
-        MaxResults: js.UndefOr[BoxedInteger] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined,
-        ServiceCode: js.UndefOr[String] = js.undefined
-    ): GetProductsRequest = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      FormatVersion.foreach(__v => __obj.updateDynamic("FormatVersion")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ServiceCode.foreach(__v => __obj.updateDynamic("ServiceCode")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetProductsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetProductsResponse extends js.Object {
     var FormatVersion: js.UndefOr[String]
     var NextToken: js.UndefOr[String]
     var PriceList: js.UndefOr[PriceList]
-  }
-
-  object GetProductsResponse {
-    @inline
-    def apply(
-        FormatVersion: js.UndefOr[String] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined,
-        PriceList: js.UndefOr[PriceList] = js.undefined
-    ): GetProductsResponse = {
-      val __obj = js.Dynamic.literal()
-      FormatVersion.foreach(__v => __obj.updateDynamic("FormatVersion")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PriceList.foreach(__v => __obj.updateDynamic("PriceList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetProductsResponse]
-    }
   }
 
   /**
@@ -279,21 +162,9 @@ package pricing {
     * The metadata for a service, such as the service code and available attribute names.
     */
   @js.native
+  @Factory
   trait Service extends js.Object {
     var AttributeNames: js.UndefOr[AttributeNameList]
     var ServiceCode: js.UndefOr[String]
-  }
-
-  object Service {
-    @inline
-    def apply(
-        AttributeNames: js.UndefOr[AttributeNameList] = js.undefined,
-        ServiceCode: js.UndefOr[String] = js.undefined
-    ): Service = {
-      val __obj = js.Dynamic.literal()
-      AttributeNames.foreach(__v => __obj.updateDynamic("AttributeNames")(__v.asInstanceOf[js.Any]))
-      ServiceCode.foreach(__v => __obj.updateDynamic("ServiceCode")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Service]
-    }
   }
 }

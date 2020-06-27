@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object appmesh {
   type Arn                               = String
@@ -156,19 +157,9 @@ package appmesh {
     * An object that represents the access logging information for a virtual node.
     */
   @js.native
+  @Factory
   trait AccessLog extends js.Object {
     var file: js.UndefOr[FileAccessLog]
-  }
-
-  object AccessLog {
-    @inline
-    def apply(
-        file: js.UndefOr[FileAccessLog] = js.undefined
-    ): AccessLog = {
-      val __obj = js.Dynamic.literal()
-      file.foreach(__v => __obj.updateDynamic("file")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AccessLog]
-    }
   }
 
   /**
@@ -176,24 +167,10 @@ package appmesh {
     *          node.</p>
     */
   @js.native
+  @Factory
   trait AwsCloudMapInstanceAttribute extends js.Object {
     var key: AwsCloudMapInstanceAttributeKey
     var value: AwsCloudMapInstanceAttributeValue
-  }
-
-  object AwsCloudMapInstanceAttribute {
-    @inline
-    def apply(
-        key: AwsCloudMapInstanceAttributeKey,
-        value: AwsCloudMapInstanceAttributeValue
-    ): AwsCloudMapInstanceAttribute = {
-      val __obj = js.Dynamic.literal(
-        "key"   -> key.asInstanceOf[js.Any],
-        "value" -> value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AwsCloudMapInstanceAttribute]
-    }
   }
 
   /**
@@ -201,27 +178,11 @@ package appmesh {
     *          node.</p>
     */
   @js.native
+  @Factory
   trait AwsCloudMapServiceDiscovery extends js.Object {
     var namespaceName: AwsCloudMapName
     var serviceName: AwsCloudMapName
     var attributes: js.UndefOr[AwsCloudMapInstanceAttributes]
-  }
-
-  object AwsCloudMapServiceDiscovery {
-    @inline
-    def apply(
-        namespaceName: AwsCloudMapName,
-        serviceName: AwsCloudMapName,
-        attributes: js.UndefOr[AwsCloudMapInstanceAttributes] = js.undefined
-    ): AwsCloudMapServiceDiscovery = {
-      val __obj = js.Dynamic.literal(
-        "namespaceName" -> namespaceName.asInstanceOf[js.Any],
-        "serviceName"   -> serviceName.asInstanceOf[js.Any]
-      )
-
-      attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AwsCloudMapServiceDiscovery]
-    }
   }
 
   /**
@@ -229,24 +190,15 @@ package appmesh {
     *          traffic to. </p>
     */
   @js.native
+  @Factory
   trait Backend extends js.Object {
     var virtualService: js.UndefOr[VirtualServiceBackend]
-  }
-
-  object Backend {
-    @inline
-    def apply(
-        virtualService: js.UndefOr[VirtualServiceBackend] = js.undefined
-    ): Backend = {
-      val __obj = js.Dynamic.literal()
-      virtualService.foreach(__v => __obj.updateDynamic("virtualService")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Backend]
-    }
   }
 
   /**
     */
   @js.native
+  @Factory
   trait CreateMeshInput extends js.Object {
     var meshName: ResourceName
     var clientToken: js.UndefOr[String]
@@ -254,48 +206,18 @@ package appmesh {
     var tags: js.UndefOr[TagList]
   }
 
-  object CreateMeshInput {
-    @inline
-    def apply(
-        meshName: ResourceName,
-        clientToken: js.UndefOr[String] = js.undefined,
-        spec: js.UndefOr[MeshSpec] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): CreateMeshInput = {
-      val __obj = js.Dynamic.literal(
-        "meshName" -> meshName.asInstanceOf[js.Any]
-      )
-
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      spec.foreach(__v => __obj.updateDynamic("spec")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateMeshInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait CreateMeshOutput extends js.Object {
     var mesh: MeshData
   }
 
-  object CreateMeshOutput {
-    @inline
-    def apply(
-        mesh: MeshData
-    ): CreateMeshOutput = {
-      val __obj = js.Dynamic.literal(
-        "mesh" -> mesh.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateMeshOutput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait CreateRouteInput extends js.Object {
     var meshName: ResourceName
     var routeName: ResourceName
@@ -305,52 +227,18 @@ package appmesh {
     var tags: js.UndefOr[TagList]
   }
 
-  object CreateRouteInput {
-    @inline
-    def apply(
-        meshName: ResourceName,
-        routeName: ResourceName,
-        spec: RouteSpec,
-        virtualRouterName: ResourceName,
-        clientToken: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): CreateRouteInput = {
-      val __obj = js.Dynamic.literal(
-        "meshName"          -> meshName.asInstanceOf[js.Any],
-        "routeName"         -> routeName.asInstanceOf[js.Any],
-        "spec"              -> spec.asInstanceOf[js.Any],
-        "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
-      )
-
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRouteInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait CreateRouteOutput extends js.Object {
     var route: RouteData
   }
 
-  object CreateRouteOutput {
-    @inline
-    def apply(
-        route: RouteData
-    ): CreateRouteOutput = {
-      val __obj = js.Dynamic.literal(
-        "route" -> route.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateRouteOutput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait CreateVirtualNodeInput extends js.Object {
     var meshName: ResourceName
     var spec: VirtualNodeSpec
@@ -359,50 +247,18 @@ package appmesh {
     var tags: js.UndefOr[TagList]
   }
 
-  object CreateVirtualNodeInput {
-    @inline
-    def apply(
-        meshName: ResourceName,
-        spec: VirtualNodeSpec,
-        virtualNodeName: ResourceName,
-        clientToken: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): CreateVirtualNodeInput = {
-      val __obj = js.Dynamic.literal(
-        "meshName"        -> meshName.asInstanceOf[js.Any],
-        "spec"            -> spec.asInstanceOf[js.Any],
-        "virtualNodeName" -> virtualNodeName.asInstanceOf[js.Any]
-      )
-
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateVirtualNodeInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait CreateVirtualNodeOutput extends js.Object {
     var virtualNode: VirtualNodeData
   }
 
-  object CreateVirtualNodeOutput {
-    @inline
-    def apply(
-        virtualNode: VirtualNodeData
-    ): CreateVirtualNodeOutput = {
-      val __obj = js.Dynamic.literal(
-        "virtualNode" -> virtualNode.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateVirtualNodeOutput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait CreateVirtualRouterInput extends js.Object {
     var meshName: ResourceName
     var spec: VirtualRouterSpec
@@ -411,50 +267,18 @@ package appmesh {
     var tags: js.UndefOr[TagList]
   }
 
-  object CreateVirtualRouterInput {
-    @inline
-    def apply(
-        meshName: ResourceName,
-        spec: VirtualRouterSpec,
-        virtualRouterName: ResourceName,
-        clientToken: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): CreateVirtualRouterInput = {
-      val __obj = js.Dynamic.literal(
-        "meshName"          -> meshName.asInstanceOf[js.Any],
-        "spec"              -> spec.asInstanceOf[js.Any],
-        "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
-      )
-
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateVirtualRouterInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait CreateVirtualRouterOutput extends js.Object {
     var virtualRouter: VirtualRouterData
   }
 
-  object CreateVirtualRouterOutput {
-    @inline
-    def apply(
-        virtualRouter: VirtualRouterData
-    ): CreateVirtualRouterOutput = {
-      val __obj = js.Dynamic.literal(
-        "virtualRouter" -> virtualRouter.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateVirtualRouterOutput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait CreateVirtualServiceInput extends js.Object {
     var meshName: ResourceName
     var spec: VirtualServiceSpec
@@ -463,475 +287,182 @@ package appmesh {
     var tags: js.UndefOr[TagList]
   }
 
-  object CreateVirtualServiceInput {
-    @inline
-    def apply(
-        meshName: ResourceName,
-        spec: VirtualServiceSpec,
-        virtualServiceName: ServiceName,
-        clientToken: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): CreateVirtualServiceInput = {
-      val __obj = js.Dynamic.literal(
-        "meshName"           -> meshName.asInstanceOf[js.Any],
-        "spec"               -> spec.asInstanceOf[js.Any],
-        "virtualServiceName" -> virtualServiceName.asInstanceOf[js.Any]
-      )
-
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateVirtualServiceInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait CreateVirtualServiceOutput extends js.Object {
     var virtualService: VirtualServiceData
   }
 
-  object CreateVirtualServiceOutput {
-    @inline
-    def apply(
-        virtualService: VirtualServiceData
-    ): CreateVirtualServiceOutput = {
-      val __obj = js.Dynamic.literal(
-        "virtualService" -> virtualService.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateVirtualServiceOutput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait DeleteMeshInput extends js.Object {
     var meshName: ResourceName
   }
 
-  object DeleteMeshInput {
-    @inline
-    def apply(
-        meshName: ResourceName
-    ): DeleteMeshInput = {
-      val __obj = js.Dynamic.literal(
-        "meshName" -> meshName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteMeshInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait DeleteMeshOutput extends js.Object {
     var mesh: MeshData
   }
 
-  object DeleteMeshOutput {
-    @inline
-    def apply(
-        mesh: MeshData
-    ): DeleteMeshOutput = {
-      val __obj = js.Dynamic.literal(
-        "mesh" -> mesh.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteMeshOutput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait DeleteRouteInput extends js.Object {
     var meshName: ResourceName
     var routeName: ResourceName
     var virtualRouterName: ResourceName
   }
 
-  object DeleteRouteInput {
-    @inline
-    def apply(
-        meshName: ResourceName,
-        routeName: ResourceName,
-        virtualRouterName: ResourceName
-    ): DeleteRouteInput = {
-      val __obj = js.Dynamic.literal(
-        "meshName"          -> meshName.asInstanceOf[js.Any],
-        "routeName"         -> routeName.asInstanceOf[js.Any],
-        "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteRouteInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait DeleteRouteOutput extends js.Object {
     var route: RouteData
   }
 
-  object DeleteRouteOutput {
-    @inline
-    def apply(
-        route: RouteData
-    ): DeleteRouteOutput = {
-      val __obj = js.Dynamic.literal(
-        "route" -> route.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteRouteOutput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait DeleteVirtualNodeInput extends js.Object {
     var meshName: ResourceName
     var virtualNodeName: ResourceName
   }
 
-  object DeleteVirtualNodeInput {
-    @inline
-    def apply(
-        meshName: ResourceName,
-        virtualNodeName: ResourceName
-    ): DeleteVirtualNodeInput = {
-      val __obj = js.Dynamic.literal(
-        "meshName"        -> meshName.asInstanceOf[js.Any],
-        "virtualNodeName" -> virtualNodeName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteVirtualNodeInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait DeleteVirtualNodeOutput extends js.Object {
     var virtualNode: VirtualNodeData
   }
 
-  object DeleteVirtualNodeOutput {
-    @inline
-    def apply(
-        virtualNode: VirtualNodeData
-    ): DeleteVirtualNodeOutput = {
-      val __obj = js.Dynamic.literal(
-        "virtualNode" -> virtualNode.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteVirtualNodeOutput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait DeleteVirtualRouterInput extends js.Object {
     var meshName: ResourceName
     var virtualRouterName: ResourceName
   }
 
-  object DeleteVirtualRouterInput {
-    @inline
-    def apply(
-        meshName: ResourceName,
-        virtualRouterName: ResourceName
-    ): DeleteVirtualRouterInput = {
-      val __obj = js.Dynamic.literal(
-        "meshName"          -> meshName.asInstanceOf[js.Any],
-        "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteVirtualRouterInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait DeleteVirtualRouterOutput extends js.Object {
     var virtualRouter: VirtualRouterData
   }
 
-  object DeleteVirtualRouterOutput {
-    @inline
-    def apply(
-        virtualRouter: VirtualRouterData
-    ): DeleteVirtualRouterOutput = {
-      val __obj = js.Dynamic.literal(
-        "virtualRouter" -> virtualRouter.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteVirtualRouterOutput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait DeleteVirtualServiceInput extends js.Object {
     var meshName: ResourceName
     var virtualServiceName: ServiceName
   }
 
-  object DeleteVirtualServiceInput {
-    @inline
-    def apply(
-        meshName: ResourceName,
-        virtualServiceName: ServiceName
-    ): DeleteVirtualServiceInput = {
-      val __obj = js.Dynamic.literal(
-        "meshName"           -> meshName.asInstanceOf[js.Any],
-        "virtualServiceName" -> virtualServiceName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteVirtualServiceInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait DeleteVirtualServiceOutput extends js.Object {
     var virtualService: VirtualServiceData
   }
 
-  object DeleteVirtualServiceOutput {
-    @inline
-    def apply(
-        virtualService: VirtualServiceData
-    ): DeleteVirtualServiceOutput = {
-      val __obj = js.Dynamic.literal(
-        "virtualService" -> virtualService.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteVirtualServiceOutput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait DescribeMeshInput extends js.Object {
     var meshName: ResourceName
   }
 
-  object DescribeMeshInput {
-    @inline
-    def apply(
-        meshName: ResourceName
-    ): DescribeMeshInput = {
-      val __obj = js.Dynamic.literal(
-        "meshName" -> meshName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeMeshInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait DescribeMeshOutput extends js.Object {
     var mesh: MeshData
   }
 
-  object DescribeMeshOutput {
-    @inline
-    def apply(
-        mesh: MeshData
-    ): DescribeMeshOutput = {
-      val __obj = js.Dynamic.literal(
-        "mesh" -> mesh.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeMeshOutput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait DescribeRouteInput extends js.Object {
     var meshName: ResourceName
     var routeName: ResourceName
     var virtualRouterName: ResourceName
   }
 
-  object DescribeRouteInput {
-    @inline
-    def apply(
-        meshName: ResourceName,
-        routeName: ResourceName,
-        virtualRouterName: ResourceName
-    ): DescribeRouteInput = {
-      val __obj = js.Dynamic.literal(
-        "meshName"          -> meshName.asInstanceOf[js.Any],
-        "routeName"         -> routeName.asInstanceOf[js.Any],
-        "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeRouteInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait DescribeRouteOutput extends js.Object {
     var route: RouteData
   }
 
-  object DescribeRouteOutput {
-    @inline
-    def apply(
-        route: RouteData
-    ): DescribeRouteOutput = {
-      val __obj = js.Dynamic.literal(
-        "route" -> route.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeRouteOutput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait DescribeVirtualNodeInput extends js.Object {
     var meshName: ResourceName
     var virtualNodeName: ResourceName
   }
 
-  object DescribeVirtualNodeInput {
-    @inline
-    def apply(
-        meshName: ResourceName,
-        virtualNodeName: ResourceName
-    ): DescribeVirtualNodeInput = {
-      val __obj = js.Dynamic.literal(
-        "meshName"        -> meshName.asInstanceOf[js.Any],
-        "virtualNodeName" -> virtualNodeName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeVirtualNodeInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait DescribeVirtualNodeOutput extends js.Object {
     var virtualNode: VirtualNodeData
   }
 
-  object DescribeVirtualNodeOutput {
-    @inline
-    def apply(
-        virtualNode: VirtualNodeData
-    ): DescribeVirtualNodeOutput = {
-      val __obj = js.Dynamic.literal(
-        "virtualNode" -> virtualNode.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeVirtualNodeOutput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait DescribeVirtualRouterInput extends js.Object {
     var meshName: ResourceName
     var virtualRouterName: ResourceName
   }
 
-  object DescribeVirtualRouterInput {
-    @inline
-    def apply(
-        meshName: ResourceName,
-        virtualRouterName: ResourceName
-    ): DescribeVirtualRouterInput = {
-      val __obj = js.Dynamic.literal(
-        "meshName"          -> meshName.asInstanceOf[js.Any],
-        "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeVirtualRouterInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait DescribeVirtualRouterOutput extends js.Object {
     var virtualRouter: VirtualRouterData
   }
 
-  object DescribeVirtualRouterOutput {
-    @inline
-    def apply(
-        virtualRouter: VirtualRouterData
-    ): DescribeVirtualRouterOutput = {
-      val __obj = js.Dynamic.literal(
-        "virtualRouter" -> virtualRouter.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeVirtualRouterOutput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait DescribeVirtualServiceInput extends js.Object {
     var meshName: ResourceName
     var virtualServiceName: ServiceName
   }
 
-  object DescribeVirtualServiceInput {
-    @inline
-    def apply(
-        meshName: ResourceName,
-        virtualServiceName: ServiceName
-    ): DescribeVirtualServiceInput = {
-      val __obj = js.Dynamic.literal(
-        "meshName"           -> meshName.asInstanceOf[js.Any],
-        "virtualServiceName" -> virtualServiceName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeVirtualServiceInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait DescribeVirtualServiceOutput extends js.Object {
     var virtualService: VirtualServiceData
-  }
-
-  object DescribeVirtualServiceOutput {
-    @inline
-    def apply(
-        virtualService: VirtualServiceData
-    ): DescribeVirtualServiceOutput = {
-      val __obj = js.Dynamic.literal(
-        "virtualService" -> virtualService.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeVirtualServiceOutput]
-    }
   }
 
   /**
@@ -939,43 +470,19 @@ package appmesh {
     *          node.</p>
     */
   @js.native
+  @Factory
   trait DnsServiceDiscovery extends js.Object {
     var hostname: Hostname
-  }
-
-  object DnsServiceDiscovery {
-    @inline
-    def apply(
-        hostname: Hostname
-    ): DnsServiceDiscovery = {
-      val __obj = js.Dynamic.literal(
-        "hostname" -> hostname.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DnsServiceDiscovery]
-    }
   }
 
   /**
     * An object that represents a duration of time.
     */
   @js.native
+  @Factory
   trait Duration extends js.Object {
     var unit: js.UndefOr[DurationUnit]
     var value: js.UndefOr[DurationValue]
-  }
-
-  object Duration {
-    @inline
-    def apply(
-        unit: js.UndefOr[DurationUnit] = js.undefined,
-        value: js.UndefOr[DurationValue] = js.undefined
-    ): Duration = {
-      val __obj = js.Dynamic.literal()
-      unit.foreach(__v => __obj.updateDynamic("unit")(__v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Duration]
-    }
   }
 
   @js.native
@@ -991,21 +498,9 @@ package appmesh {
     * An object that represents the egress filter rules for a service mesh.
     */
   @js.native
+  @Factory
   trait EgressFilter extends js.Object {
     var `type`: EgressFilterType
-  }
-
-  object EgressFilter {
-    @inline
-    def apply(
-        `type`: EgressFilterType
-    ): EgressFilter = {
-      val __obj = js.Dynamic.literal(
-        "type" -> `type`.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[EgressFilter]
-    }
   }
 
   @js.native
@@ -1021,54 +516,22 @@ package appmesh {
     * An object that represents an access log file.
     */
   @js.native
+  @Factory
   trait FileAccessLog extends js.Object {
     var path: FilePath
-  }
-
-  object FileAccessLog {
-    @inline
-    def apply(
-        path: FilePath
-    ): FileAccessLog = {
-      val __obj = js.Dynamic.literal(
-        "path" -> path.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[FileAccessLog]
-    }
   }
 
   /**
     * An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>.
     */
   @js.native
+  @Factory
   trait GrpcRetryPolicy extends js.Object {
     var maxRetries: MaxRetries
     var perRetryTimeout: Duration
     var grpcRetryEvents: js.UndefOr[GrpcRetryPolicyEvents]
     var httpRetryEvents: js.UndefOr[HttpRetryPolicyEvents]
     var tcpRetryEvents: js.UndefOr[TcpRetryPolicyEvents]
-  }
-
-  object GrpcRetryPolicy {
-    @inline
-    def apply(
-        maxRetries: MaxRetries,
-        perRetryTimeout: Duration,
-        grpcRetryEvents: js.UndefOr[GrpcRetryPolicyEvents] = js.undefined,
-        httpRetryEvents: js.UndefOr[HttpRetryPolicyEvents] = js.undefined,
-        tcpRetryEvents: js.UndefOr[TcpRetryPolicyEvents] = js.undefined
-    ): GrpcRetryPolicy = {
-      val __obj = js.Dynamic.literal(
-        "maxRetries"      -> maxRetries.asInstanceOf[js.Any],
-        "perRetryTimeout" -> perRetryTimeout.asInstanceOf[js.Any]
-      )
-
-      grpcRetryEvents.foreach(__v => __obj.updateDynamic("grpcRetryEvents")(__v.asInstanceOf[js.Any]))
-      httpRetryEvents.foreach(__v => __obj.updateDynamic("httpRetryEvents")(__v.asInstanceOf[js.Any]))
-      tcpRetryEvents.foreach(__v => __obj.updateDynamic("tcpRetryEvents")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GrpcRetryPolicy]
-    }
   }
 
   @js.native
@@ -1087,106 +550,49 @@ package appmesh {
     * An object that represents a GRPC route type.
     */
   @js.native
+  @Factory
   trait GrpcRoute extends js.Object {
     var action: GrpcRouteAction
     var `match`: GrpcRouteMatch
     var retryPolicy: js.UndefOr[GrpcRetryPolicy]
   }
 
-  object GrpcRoute {
-    @inline
-    def apply(
-        action: GrpcRouteAction,
-        `match`: GrpcRouteMatch,
-        retryPolicy: js.UndefOr[GrpcRetryPolicy] = js.undefined
-    ): GrpcRoute = {
-      val __obj = js.Dynamic.literal(
-        "action" -> action.asInstanceOf[js.Any],
-        "match"  -> `match`.asInstanceOf[js.Any]
-      )
-
-      retryPolicy.foreach(__v => __obj.updateDynamic("retryPolicy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GrpcRoute]
-    }
-  }
-
   /**
     * An object that represents the action to take if a match is determined.
     */
   @js.native
+  @Factory
   trait GrpcRouteAction extends js.Object {
     var weightedTargets: WeightedTargets
-  }
-
-  object GrpcRouteAction {
-    @inline
-    def apply(
-        weightedTargets: WeightedTargets
-    ): GrpcRouteAction = {
-      val __obj = js.Dynamic.literal(
-        "weightedTargets" -> weightedTargets.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GrpcRouteAction]
-    }
   }
 
   /**
     * An object that represents the criteria for determining a request match.
     */
   @js.native
+  @Factory
   trait GrpcRouteMatch extends js.Object {
     var metadata: js.UndefOr[GrpcRouteMetadataList]
     var methodName: js.UndefOr[MethodName]
     var serviceName: js.UndefOr[ServiceName]
   }
 
-  object GrpcRouteMatch {
-    @inline
-    def apply(
-        metadata: js.UndefOr[GrpcRouteMetadataList] = js.undefined,
-        methodName: js.UndefOr[MethodName] = js.undefined,
-        serviceName: js.UndefOr[ServiceName] = js.undefined
-    ): GrpcRouteMatch = {
-      val __obj = js.Dynamic.literal()
-      metadata.foreach(__v => __obj.updateDynamic("metadata")(__v.asInstanceOf[js.Any]))
-      methodName.foreach(__v => __obj.updateDynamic("methodName")(__v.asInstanceOf[js.Any]))
-      serviceName.foreach(__v => __obj.updateDynamic("serviceName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GrpcRouteMatch]
-    }
-  }
-
   /**
     * An object that represents the match metadata for the route.
     */
   @js.native
+  @Factory
   trait GrpcRouteMetadata extends js.Object {
     var name: HeaderName
     var invert: js.UndefOr[Boolean]
     var `match`: js.UndefOr[GrpcRouteMetadataMatchMethod]
   }
 
-  object GrpcRouteMetadata {
-    @inline
-    def apply(
-        name: HeaderName,
-        invert: js.UndefOr[Boolean] = js.undefined,
-        `match`: js.UndefOr[GrpcRouteMetadataMatchMethod] = js.undefined
-    ): GrpcRouteMetadata = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      invert.foreach(__v => __obj.updateDynamic("invert")(__v.asInstanceOf[js.Any]))
-      `match`.foreach(__v => __obj.updateDynamic("match")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GrpcRouteMetadata]
-    }
-  }
-
   /**
     * An object that represents the match method. Specify one of the match values.
     */
   @js.native
+  @Factory
   trait GrpcRouteMetadataMatchMethod extends js.Object {
     var exact: js.UndefOr[HeaderMatch]
     var prefix: js.UndefOr[HeaderMatch]
@@ -1195,30 +601,12 @@ package appmesh {
     var suffix: js.UndefOr[HeaderMatch]
   }
 
-  object GrpcRouteMetadataMatchMethod {
-    @inline
-    def apply(
-        exact: js.UndefOr[HeaderMatch] = js.undefined,
-        prefix: js.UndefOr[HeaderMatch] = js.undefined,
-        range: js.UndefOr[MatchRange] = js.undefined,
-        regex: js.UndefOr[HeaderMatch] = js.undefined,
-        suffix: js.UndefOr[HeaderMatch] = js.undefined
-    ): GrpcRouteMetadataMatchMethod = {
-      val __obj = js.Dynamic.literal()
-      exact.foreach(__v => __obj.updateDynamic("exact")(__v.asInstanceOf[js.Any]))
-      prefix.foreach(__v => __obj.updateDynamic("prefix")(__v.asInstanceOf[js.Any]))
-      range.foreach(__v => __obj.updateDynamic("range")(__v.asInstanceOf[js.Any]))
-      regex.foreach(__v => __obj.updateDynamic("regex")(__v.asInstanceOf[js.Any]))
-      suffix.foreach(__v => __obj.updateDynamic("suffix")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GrpcRouteMetadataMatchMethod]
-    }
-  }
-
   /**
     * <p>An object that represents the method and value to match with the header value sent in a
     *          request. Specify one match method.</p>
     */
   @js.native
+  @Factory
   trait HeaderMatchMethod extends js.Object {
     var exact: js.UndefOr[HeaderMatch]
     var prefix: js.UndefOr[HeaderMatch]
@@ -1227,29 +615,11 @@ package appmesh {
     var suffix: js.UndefOr[HeaderMatch]
   }
 
-  object HeaderMatchMethod {
-    @inline
-    def apply(
-        exact: js.UndefOr[HeaderMatch] = js.undefined,
-        prefix: js.UndefOr[HeaderMatch] = js.undefined,
-        range: js.UndefOr[MatchRange] = js.undefined,
-        regex: js.UndefOr[HeaderMatch] = js.undefined,
-        suffix: js.UndefOr[HeaderMatch] = js.undefined
-    ): HeaderMatchMethod = {
-      val __obj = js.Dynamic.literal()
-      exact.foreach(__v => __obj.updateDynamic("exact")(__v.asInstanceOf[js.Any]))
-      prefix.foreach(__v => __obj.updateDynamic("prefix")(__v.asInstanceOf[js.Any]))
-      range.foreach(__v => __obj.updateDynamic("range")(__v.asInstanceOf[js.Any]))
-      regex.foreach(__v => __obj.updateDynamic("regex")(__v.asInstanceOf[js.Any]))
-      suffix.foreach(__v => __obj.updateDynamic("suffix")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HeaderMatchMethod]
-    }
-  }
-
   /**
     * An object that represents the health check policy for a virtual node's listener.
     */
   @js.native
+  @Factory
   trait HealthCheckPolicy extends js.Object {
     var healthyThreshold: HealthCheckThreshold
     var intervalMillis: HealthCheckIntervalMillis
@@ -1258,31 +628,6 @@ package appmesh {
     var unhealthyThreshold: HealthCheckThreshold
     var path: js.UndefOr[String]
     var port: js.UndefOr[PortNumber]
-  }
-
-  object HealthCheckPolicy {
-    @inline
-    def apply(
-        healthyThreshold: HealthCheckThreshold,
-        intervalMillis: HealthCheckIntervalMillis,
-        protocol: PortProtocol,
-        timeoutMillis: HealthCheckTimeoutMillis,
-        unhealthyThreshold: HealthCheckThreshold,
-        path: js.UndefOr[String] = js.undefined,
-        port: js.UndefOr[PortNumber] = js.undefined
-    ): HealthCheckPolicy = {
-      val __obj = js.Dynamic.literal(
-        "healthyThreshold"   -> healthyThreshold.asInstanceOf[js.Any],
-        "intervalMillis"     -> intervalMillis.asInstanceOf[js.Any],
-        "protocol"           -> protocol.asInstanceOf[js.Any],
-        "timeoutMillis"      -> timeoutMillis.asInstanceOf[js.Any],
-        "unhealthyThreshold" -> unhealthyThreshold.asInstanceOf[js.Any]
-      )
-
-      path.foreach(__v => __obj.updateDynamic("path")(__v.asInstanceOf[js.Any]))
-      port.foreach(__v => __obj.updateDynamic("port")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HealthCheckPolicy]
-    }
   }
 
   @js.native
@@ -1305,6 +650,7 @@ package appmesh {
     * An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>.
     */
   @js.native
+  @Factory
   trait HttpRetryPolicy extends js.Object {
     var maxRetries: MaxRetries
     var perRetryTimeout: Duration
@@ -1312,98 +658,35 @@ package appmesh {
     var tcpRetryEvents: js.UndefOr[TcpRetryPolicyEvents]
   }
 
-  object HttpRetryPolicy {
-    @inline
-    def apply(
-        maxRetries: MaxRetries,
-        perRetryTimeout: Duration,
-        httpRetryEvents: js.UndefOr[HttpRetryPolicyEvents] = js.undefined,
-        tcpRetryEvents: js.UndefOr[TcpRetryPolicyEvents] = js.undefined
-    ): HttpRetryPolicy = {
-      val __obj = js.Dynamic.literal(
-        "maxRetries"      -> maxRetries.asInstanceOf[js.Any],
-        "perRetryTimeout" -> perRetryTimeout.asInstanceOf[js.Any]
-      )
-
-      httpRetryEvents.foreach(__v => __obj.updateDynamic("httpRetryEvents")(__v.asInstanceOf[js.Any]))
-      tcpRetryEvents.foreach(__v => __obj.updateDynamic("tcpRetryEvents")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HttpRetryPolicy]
-    }
-  }
-
   /**
     * An object that represents an HTTP or HTTP2 route type.
     */
   @js.native
+  @Factory
   trait HttpRoute extends js.Object {
     var action: HttpRouteAction
     var `match`: HttpRouteMatch
     var retryPolicy: js.UndefOr[HttpRetryPolicy]
   }
 
-  object HttpRoute {
-    @inline
-    def apply(
-        action: HttpRouteAction,
-        `match`: HttpRouteMatch,
-        retryPolicy: js.UndefOr[HttpRetryPolicy] = js.undefined
-    ): HttpRoute = {
-      val __obj = js.Dynamic.literal(
-        "action" -> action.asInstanceOf[js.Any],
-        "match"  -> `match`.asInstanceOf[js.Any]
-      )
-
-      retryPolicy.foreach(__v => __obj.updateDynamic("retryPolicy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HttpRoute]
-    }
-  }
-
   /**
     * An object that represents the action to take if a match is determined.
     */
   @js.native
+  @Factory
   trait HttpRouteAction extends js.Object {
     var weightedTargets: WeightedTargets
-  }
-
-  object HttpRouteAction {
-    @inline
-    def apply(
-        weightedTargets: WeightedTargets
-    ): HttpRouteAction = {
-      val __obj = js.Dynamic.literal(
-        "weightedTargets" -> weightedTargets.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[HttpRouteAction]
-    }
   }
 
   /**
     * An object that represents the HTTP header in the request.
     */
   @js.native
+  @Factory
   trait HttpRouteHeader extends js.Object {
     var name: HeaderName
     var invert: js.UndefOr[Boolean]
     var `match`: js.UndefOr[HeaderMatchMethod]
-  }
-
-  object HttpRouteHeader {
-    @inline
-    def apply(
-        name: HeaderName,
-        invert: js.UndefOr[Boolean] = js.undefined,
-        `match`: js.UndefOr[HeaderMatchMethod] = js.undefined
-    ): HttpRouteHeader = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      invert.foreach(__v => __obj.updateDynamic("invert")(__v.asInstanceOf[js.Any]))
-      `match`.foreach(__v => __obj.updateDynamic("match")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HttpRouteHeader]
-    }
   }
 
   /**
@@ -1411,30 +694,12 @@ package appmesh {
     *          router.</p>
     */
   @js.native
+  @Factory
   trait HttpRouteMatch extends js.Object {
     var prefix: String
     var headers: js.UndefOr[HttpRouteHeaders]
     var method: js.UndefOr[HttpMethod]
     var scheme: js.UndefOr[HttpScheme]
-  }
-
-  object HttpRouteMatch {
-    @inline
-    def apply(
-        prefix: String,
-        headers: js.UndefOr[HttpRouteHeaders] = js.undefined,
-        method: js.UndefOr[HttpMethod] = js.undefined,
-        scheme: js.UndefOr[HttpScheme] = js.undefined
-    ): HttpRouteMatch = {
-      val __obj = js.Dynamic.literal(
-        "prefix" -> prefix.asInstanceOf[js.Any]
-      )
-
-      headers.foreach(__v => __obj.updateDynamic("headers")(__v.asInstanceOf[js.Any]))
-      method.foreach(__v => __obj.updateDynamic("method")(__v.asInstanceOf[js.Any]))
-      scheme.foreach(__v => __obj.updateDynamic("scheme")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HttpRouteMatch]
-    }
   }
 
   @js.native
@@ -1449,50 +714,25 @@ package appmesh {
   /**
     */
   @js.native
+  @Factory
   trait ListMeshesInput extends js.Object {
     var limit: js.UndefOr[ListMeshesLimit]
     var nextToken: js.UndefOr[String]
   }
 
-  object ListMeshesInput {
-    @inline
-    def apply(
-        limit: js.UndefOr[ListMeshesLimit] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
-    ): ListMeshesInput = {
-      val __obj = js.Dynamic.literal()
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListMeshesInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait ListMeshesOutput extends js.Object {
     var meshes: MeshList
     var nextToken: js.UndefOr[String]
   }
 
-  object ListMeshesOutput {
-    @inline
-    def apply(
-        meshes: MeshList,
-        nextToken: js.UndefOr[String] = js.undefined
-    ): ListMeshesOutput = {
-      val __obj = js.Dynamic.literal(
-        "meshes" -> meshes.asInstanceOf[js.Any]
-      )
-
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListMeshesOutput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait ListRoutesInput extends js.Object {
     var meshName: ResourceName
     var virtualRouterName: ResourceName
@@ -1500,315 +740,125 @@ package appmesh {
     var nextToken: js.UndefOr[String]
   }
 
-  object ListRoutesInput {
-    @inline
-    def apply(
-        meshName: ResourceName,
-        virtualRouterName: ResourceName,
-        limit: js.UndefOr[ListRoutesLimit] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
-    ): ListRoutesInput = {
-      val __obj = js.Dynamic.literal(
-        "meshName"          -> meshName.asInstanceOf[js.Any],
-        "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
-      )
-
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRoutesInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait ListRoutesOutput extends js.Object {
     var routes: RouteList
     var nextToken: js.UndefOr[String]
   }
 
-  object ListRoutesOutput {
-    @inline
-    def apply(
-        routes: RouteList,
-        nextToken: js.UndefOr[String] = js.undefined
-    ): ListRoutesOutput = {
-      val __obj = js.Dynamic.literal(
-        "routes" -> routes.asInstanceOf[js.Any]
-      )
-
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRoutesOutput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait ListTagsForResourceInput extends js.Object {
     var resourceArn: Arn
     var limit: js.UndefOr[TagsLimit]
     var nextToken: js.UndefOr[String]
   }
 
-  object ListTagsForResourceInput {
-    @inline
-    def apply(
-        resourceArn: Arn,
-        limit: js.UndefOr[TagsLimit] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
-    ): ListTagsForResourceInput = {
-      val __obj = js.Dynamic.literal(
-        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
-      )
-
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait ListTagsForResourceOutput extends js.Object {
     var tags: TagList
     var nextToken: js.UndefOr[String]
   }
 
-  object ListTagsForResourceOutput {
-    @inline
-    def apply(
-        tags: TagList,
-        nextToken: js.UndefOr[String] = js.undefined
-    ): ListTagsForResourceOutput = {
-      val __obj = js.Dynamic.literal(
-        "tags" -> tags.asInstanceOf[js.Any]
-      )
-
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceOutput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait ListVirtualNodesInput extends js.Object {
     var meshName: ResourceName
     var limit: js.UndefOr[ListVirtualNodesLimit]
     var nextToken: js.UndefOr[String]
   }
 
-  object ListVirtualNodesInput {
-    @inline
-    def apply(
-        meshName: ResourceName,
-        limit: js.UndefOr[ListVirtualNodesLimit] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
-    ): ListVirtualNodesInput = {
-      val __obj = js.Dynamic.literal(
-        "meshName" -> meshName.asInstanceOf[js.Any]
-      )
-
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListVirtualNodesInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait ListVirtualNodesOutput extends js.Object {
     var virtualNodes: VirtualNodeList
     var nextToken: js.UndefOr[String]
   }
 
-  object ListVirtualNodesOutput {
-    @inline
-    def apply(
-        virtualNodes: VirtualNodeList,
-        nextToken: js.UndefOr[String] = js.undefined
-    ): ListVirtualNodesOutput = {
-      val __obj = js.Dynamic.literal(
-        "virtualNodes" -> virtualNodes.asInstanceOf[js.Any]
-      )
-
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListVirtualNodesOutput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait ListVirtualRoutersInput extends js.Object {
     var meshName: ResourceName
     var limit: js.UndefOr[ListVirtualRoutersLimit]
     var nextToken: js.UndefOr[String]
   }
 
-  object ListVirtualRoutersInput {
-    @inline
-    def apply(
-        meshName: ResourceName,
-        limit: js.UndefOr[ListVirtualRoutersLimit] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
-    ): ListVirtualRoutersInput = {
-      val __obj = js.Dynamic.literal(
-        "meshName" -> meshName.asInstanceOf[js.Any]
-      )
-
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListVirtualRoutersInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait ListVirtualRoutersOutput extends js.Object {
     var virtualRouters: VirtualRouterList
     var nextToken: js.UndefOr[String]
   }
 
-  object ListVirtualRoutersOutput {
-    @inline
-    def apply(
-        virtualRouters: VirtualRouterList,
-        nextToken: js.UndefOr[String] = js.undefined
-    ): ListVirtualRoutersOutput = {
-      val __obj = js.Dynamic.literal(
-        "virtualRouters" -> virtualRouters.asInstanceOf[js.Any]
-      )
-
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListVirtualRoutersOutput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait ListVirtualServicesInput extends js.Object {
     var meshName: ResourceName
     var limit: js.UndefOr[ListVirtualServicesLimit]
     var nextToken: js.UndefOr[String]
   }
 
-  object ListVirtualServicesInput {
-    @inline
-    def apply(
-        meshName: ResourceName,
-        limit: js.UndefOr[ListVirtualServicesLimit] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
-    ): ListVirtualServicesInput = {
-      val __obj = js.Dynamic.literal(
-        "meshName" -> meshName.asInstanceOf[js.Any]
-      )
-
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListVirtualServicesInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait ListVirtualServicesOutput extends js.Object {
     var virtualServices: VirtualServiceList
     var nextToken: js.UndefOr[String]
-  }
-
-  object ListVirtualServicesOutput {
-    @inline
-    def apply(
-        virtualServices: VirtualServiceList,
-        nextToken: js.UndefOr[String] = js.undefined
-    ): ListVirtualServicesOutput = {
-      val __obj = js.Dynamic.literal(
-        "virtualServices" -> virtualServices.asInstanceOf[js.Any]
-      )
-
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListVirtualServicesOutput]
-    }
   }
 
   /**
     * An object that represents a listener for a virtual node.
     */
   @js.native
+  @Factory
   trait Listener extends js.Object {
     var portMapping: PortMapping
     var healthCheck: js.UndefOr[HealthCheckPolicy]
-  }
-
-  object Listener {
-    @inline
-    def apply(
-        portMapping: PortMapping,
-        healthCheck: js.UndefOr[HealthCheckPolicy] = js.undefined
-    ): Listener = {
-      val __obj = js.Dynamic.literal(
-        "portMapping" -> portMapping.asInstanceOf[js.Any]
-      )
-
-      healthCheck.foreach(__v => __obj.updateDynamic("healthCheck")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Listener]
-    }
   }
 
   /**
     * An object that represents the logging information for a virtual node.
     */
   @js.native
+  @Factory
   trait Logging extends js.Object {
     var accessLog: js.UndefOr[AccessLog]
-  }
-
-  object Logging {
-    @inline
-    def apply(
-        accessLog: js.UndefOr[AccessLog] = js.undefined
-    ): Logging = {
-      val __obj = js.Dynamic.literal()
-      accessLog.foreach(__v => __obj.updateDynamic("accessLog")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Logging]
-    }
   }
 
   /**
     * An object that represents the range of values to match on. The first character of the range is included in the range, though the last character is not. For example, if the range specified were 1-100, only values 1-99 would be matched.
     */
   @js.native
+  @Factory
   trait MatchRange extends js.Object {
     var end: Double
     var start: Double
-  }
-
-  object MatchRange {
-    @inline
-    def apply(
-        end: Double,
-        start: Double
-    ): MatchRange = {
-      val __obj = js.Dynamic.literal(
-        "end"   -> end.asInstanceOf[js.Any],
-        "start" -> start.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[MatchRange]
-    }
   }
 
   /**
     * An object that represents a service mesh returned by a describe operation.
     */
   @js.native
+  @Factory
   trait MeshData extends js.Object {
     var meshName: ResourceName
     var metadata: ResourceMetadata
@@ -1816,85 +866,32 @@ package appmesh {
     var status: MeshStatus
   }
 
-  object MeshData {
-    @inline
-    def apply(
-        meshName: ResourceName,
-        metadata: ResourceMetadata,
-        spec: MeshSpec,
-        status: MeshStatus
-    ): MeshData = {
-      val __obj = js.Dynamic.literal(
-        "meshName" -> meshName.asInstanceOf[js.Any],
-        "metadata" -> metadata.asInstanceOf[js.Any],
-        "spec"     -> spec.asInstanceOf[js.Any],
-        "status"   -> status.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[MeshData]
-    }
-  }
-
   /**
     * An object that represents a service mesh returned by a list operation.
     */
   @js.native
+  @Factory
   trait MeshRef extends js.Object {
     var arn: Arn
     var meshName: ResourceName
-  }
-
-  object MeshRef {
-    @inline
-    def apply(
-        arn: Arn,
-        meshName: ResourceName
-    ): MeshRef = {
-      val __obj = js.Dynamic.literal(
-        "arn"      -> arn.asInstanceOf[js.Any],
-        "meshName" -> meshName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[MeshRef]
-    }
   }
 
   /**
     * An object that represents the specification of a service mesh.
     */
   @js.native
+  @Factory
   trait MeshSpec extends js.Object {
     var egressFilter: js.UndefOr[EgressFilter]
-  }
-
-  object MeshSpec {
-    @inline
-    def apply(
-        egressFilter: js.UndefOr[EgressFilter] = js.undefined
-    ): MeshSpec = {
-      val __obj = js.Dynamic.literal()
-      egressFilter.foreach(__v => __obj.updateDynamic("egressFilter")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MeshSpec]
-    }
   }
 
   /**
     * An object that represents the status of a service mesh.
     */
   @js.native
+  @Factory
   trait MeshStatus extends js.Object {
     var status: js.UndefOr[MeshStatusCode]
-  }
-
-  object MeshStatus {
-    @inline
-    def apply(
-        status: js.UndefOr[MeshStatusCode] = js.undefined
-    ): MeshStatus = {
-      val __obj = js.Dynamic.literal()
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MeshStatus]
-    }
   }
 
   @js.native
@@ -1911,24 +908,10 @@ package appmesh {
     * An object that represents a port mapping.
     */
   @js.native
+  @Factory
   trait PortMapping extends js.Object {
     var port: PortNumber
     var protocol: PortProtocol
-  }
-
-  object PortMapping {
-    @inline
-    def apply(
-        port: PortNumber,
-        protocol: PortProtocol
-    ): PortMapping = {
-      val __obj = js.Dynamic.literal(
-        "port"     -> port.asInstanceOf[js.Any],
-        "protocol" -> protocol.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PortMapping]
-    }
   }
 
   @js.native
@@ -1946,6 +929,7 @@ package appmesh {
     * An object that represents metadata for a resource.
     */
   @js.native
+  @Factory
   trait ResourceMetadata extends js.Object {
     var arn: Arn
     var createdAt: Timestamp
@@ -1954,31 +938,11 @@ package appmesh {
     var version: Double
   }
 
-  object ResourceMetadata {
-    @inline
-    def apply(
-        arn: Arn,
-        createdAt: Timestamp,
-        lastUpdatedAt: Timestamp,
-        uid: String,
-        version: Double
-    ): ResourceMetadata = {
-      val __obj = js.Dynamic.literal(
-        "arn"           -> arn.asInstanceOf[js.Any],
-        "createdAt"     -> createdAt.asInstanceOf[js.Any],
-        "lastUpdatedAt" -> lastUpdatedAt.asInstanceOf[js.Any],
-        "uid"           -> uid.asInstanceOf[js.Any],
-        "version"       -> version.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ResourceMetadata]
-    }
-  }
-
   /**
     * An object that represents a route returned by a describe operation.
     */
   @js.native
+  @Factory
   trait RouteData extends js.Object {
     var meshName: ResourceName
     var metadata: ResourceMetadata
@@ -1988,33 +952,11 @@ package appmesh {
     var virtualRouterName: ResourceName
   }
 
-  object RouteData {
-    @inline
-    def apply(
-        meshName: ResourceName,
-        metadata: ResourceMetadata,
-        routeName: ResourceName,
-        spec: RouteSpec,
-        status: RouteStatus,
-        virtualRouterName: ResourceName
-    ): RouteData = {
-      val __obj = js.Dynamic.literal(
-        "meshName"          -> meshName.asInstanceOf[js.Any],
-        "metadata"          -> metadata.asInstanceOf[js.Any],
-        "routeName"         -> routeName.asInstanceOf[js.Any],
-        "spec"              -> spec.asInstanceOf[js.Any],
-        "status"            -> status.asInstanceOf[js.Any],
-        "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RouteData]
-    }
-  }
-
   /**
     * An object that represents a route returned by a list operation.
     */
   @js.native
+  @Factory
   trait RouteRef extends js.Object {
     var arn: Arn
     var meshName: ResourceName
@@ -2022,29 +964,11 @@ package appmesh {
     var virtualRouterName: ResourceName
   }
 
-  object RouteRef {
-    @inline
-    def apply(
-        arn: Arn,
-        meshName: ResourceName,
-        routeName: ResourceName,
-        virtualRouterName: ResourceName
-    ): RouteRef = {
-      val __obj = js.Dynamic.literal(
-        "arn"               -> arn.asInstanceOf[js.Any],
-        "meshName"          -> meshName.asInstanceOf[js.Any],
-        "routeName"         -> routeName.asInstanceOf[js.Any],
-        "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RouteRef]
-    }
-  }
-
   /**
     * An object that represents a route specification. Specify one route type.
     */
   @js.native
+  @Factory
   trait RouteSpec extends js.Object {
     var grpcRoute: js.UndefOr[GrpcRoute]
     var http2Route: js.UndefOr[HttpRoute]
@@ -2053,44 +977,13 @@ package appmesh {
     var tcpRoute: js.UndefOr[TcpRoute]
   }
 
-  object RouteSpec {
-    @inline
-    def apply(
-        grpcRoute: js.UndefOr[GrpcRoute] = js.undefined,
-        http2Route: js.UndefOr[HttpRoute] = js.undefined,
-        httpRoute: js.UndefOr[HttpRoute] = js.undefined,
-        priority: js.UndefOr[RoutePriority] = js.undefined,
-        tcpRoute: js.UndefOr[TcpRoute] = js.undefined
-    ): RouteSpec = {
-      val __obj = js.Dynamic.literal()
-      grpcRoute.foreach(__v => __obj.updateDynamic("grpcRoute")(__v.asInstanceOf[js.Any]))
-      http2Route.foreach(__v => __obj.updateDynamic("http2Route")(__v.asInstanceOf[js.Any]))
-      httpRoute.foreach(__v => __obj.updateDynamic("httpRoute")(__v.asInstanceOf[js.Any]))
-      priority.foreach(__v => __obj.updateDynamic("priority")(__v.asInstanceOf[js.Any]))
-      tcpRoute.foreach(__v => __obj.updateDynamic("tcpRoute")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RouteSpec]
-    }
-  }
-
   /**
     * An object that represents the current status of a route.
     */
   @js.native
+  @Factory
   trait RouteStatus extends js.Object {
     var status: RouteStatusCode
-  }
-
-  object RouteStatus {
-    @inline
-    def apply(
-        status: RouteStatusCode
-    ): RouteStatus = {
-      val __obj = js.Dynamic.literal(
-        "status" -> status.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RouteStatus]
-    }
   }
 
   @js.native
@@ -2107,22 +1000,10 @@ package appmesh {
     * An object that represents the service discovery information for a virtual node.
     */
   @js.native
+  @Factory
   trait ServiceDiscovery extends js.Object {
     var awsCloudMap: js.UndefOr[AwsCloudMapServiceDiscovery]
     var dns: js.UndefOr[DnsServiceDiscovery]
-  }
-
-  object ServiceDiscovery {
-    @inline
-    def apply(
-        awsCloudMap: js.UndefOr[AwsCloudMapServiceDiscovery] = js.undefined,
-        dns: js.UndefOr[DnsServiceDiscovery] = js.undefined
-    ): ServiceDiscovery = {
-      val __obj = js.Dynamic.literal()
-      awsCloudMap.foreach(__v => __obj.updateDynamic("awsCloudMap")(__v.asInstanceOf[js.Any]))
-      dns.foreach(__v => __obj.updateDynamic("dns")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ServiceDiscovery]
-    }
   }
 
   /**
@@ -2132,63 +1013,26 @@ package appmesh {
     *             a maximum length of 256 characters.</p>
     */
   @js.native
+  @Factory
   trait TagRef extends js.Object {
     var key: TagKey
     var value: js.UndefOr[TagValue]
   }
 
-  object TagRef {
-    @inline
-    def apply(
-        key: TagKey,
-        value: js.UndefOr[TagValue] = js.undefined
-    ): TagRef = {
-      val __obj = js.Dynamic.literal(
-        "key" -> key.asInstanceOf[js.Any]
-      )
-
-      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TagRef]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait TagResourceInput extends js.Object {
     var resourceArn: Arn
     var tags: TagList
   }
 
-  object TagResourceInput {
-    @inline
-    def apply(
-        resourceArn: Arn,
-        tags: TagList
-    ): TagResourceInput = {
-      val __obj = js.Dynamic.literal(
-        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait TagResourceOutput extends js.Object {}
-
-  object TagResourceOutput {
-    @inline
-    def apply(
-    ): TagResourceOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[TagResourceOutput]
-    }
-  }
 
   @js.native
   sealed trait TcpRetryPolicyEvent extends js.Any
@@ -2202,131 +1046,57 @@ package appmesh {
     * An object that represents a TCP route type.
     */
   @js.native
+  @Factory
   trait TcpRoute extends js.Object {
     var action: TcpRouteAction
-  }
-
-  object TcpRoute {
-    @inline
-    def apply(
-        action: TcpRouteAction
-    ): TcpRoute = {
-      val __obj = js.Dynamic.literal(
-        "action" -> action.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TcpRoute]
-    }
   }
 
   /**
     * An object that represents the action to take if a match is determined.
     */
   @js.native
+  @Factory
   trait TcpRouteAction extends js.Object {
     var weightedTargets: WeightedTargets
-  }
-
-  object TcpRouteAction {
-    @inline
-    def apply(
-        weightedTargets: WeightedTargets
-    ): TcpRouteAction = {
-      val __obj = js.Dynamic.literal(
-        "weightedTargets" -> weightedTargets.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TcpRouteAction]
-    }
   }
 
   /**
     */
   @js.native
+  @Factory
   trait UntagResourceInput extends js.Object {
     var resourceArn: Arn
     var tagKeys: TagKeyList
   }
 
-  object UntagResourceInput {
-    @inline
-    def apply(
-        resourceArn: Arn,
-        tagKeys: TagKeyList
-    ): UntagResourceInput = {
-      val __obj = js.Dynamic.literal(
-        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait UntagResourceOutput extends js.Object {}
 
-  object UntagResourceOutput {
-    @inline
-    def apply(
-    ): UntagResourceOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UntagResourceOutput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait UpdateMeshInput extends js.Object {
     var meshName: ResourceName
     var clientToken: js.UndefOr[String]
     var spec: js.UndefOr[MeshSpec]
   }
 
-  object UpdateMeshInput {
-    @inline
-    def apply(
-        meshName: ResourceName,
-        clientToken: js.UndefOr[String] = js.undefined,
-        spec: js.UndefOr[MeshSpec] = js.undefined
-    ): UpdateMeshInput = {
-      val __obj = js.Dynamic.literal(
-        "meshName" -> meshName.asInstanceOf[js.Any]
-      )
-
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      spec.foreach(__v => __obj.updateDynamic("spec")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateMeshInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait UpdateMeshOutput extends js.Object {
     var mesh: MeshData
   }
 
-  object UpdateMeshOutput {
-    @inline
-    def apply(
-        mesh: MeshData
-    ): UpdateMeshOutput = {
-      val __obj = js.Dynamic.literal(
-        "mesh" -> mesh.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateMeshOutput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait UpdateRouteInput extends js.Object {
     var meshName: ResourceName
     var routeName: ResourceName
@@ -2335,50 +1105,18 @@ package appmesh {
     var clientToken: js.UndefOr[String]
   }
 
-  object UpdateRouteInput {
-    @inline
-    def apply(
-        meshName: ResourceName,
-        routeName: ResourceName,
-        spec: RouteSpec,
-        virtualRouterName: ResourceName,
-        clientToken: js.UndefOr[String] = js.undefined
-    ): UpdateRouteInput = {
-      val __obj = js.Dynamic.literal(
-        "meshName"          -> meshName.asInstanceOf[js.Any],
-        "routeName"         -> routeName.asInstanceOf[js.Any],
-        "spec"              -> spec.asInstanceOf[js.Any],
-        "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
-      )
-
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateRouteInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait UpdateRouteOutput extends js.Object {
     var route: RouteData
   }
 
-  object UpdateRouteOutput {
-    @inline
-    def apply(
-        route: RouteData
-    ): UpdateRouteOutput = {
-      val __obj = js.Dynamic.literal(
-        "route" -> route.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateRouteOutput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait UpdateVirtualNodeInput extends js.Object {
     var meshName: ResourceName
     var spec: VirtualNodeSpec
@@ -2386,48 +1124,18 @@ package appmesh {
     var clientToken: js.UndefOr[String]
   }
 
-  object UpdateVirtualNodeInput {
-    @inline
-    def apply(
-        meshName: ResourceName,
-        spec: VirtualNodeSpec,
-        virtualNodeName: ResourceName,
-        clientToken: js.UndefOr[String] = js.undefined
-    ): UpdateVirtualNodeInput = {
-      val __obj = js.Dynamic.literal(
-        "meshName"        -> meshName.asInstanceOf[js.Any],
-        "spec"            -> spec.asInstanceOf[js.Any],
-        "virtualNodeName" -> virtualNodeName.asInstanceOf[js.Any]
-      )
-
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateVirtualNodeInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait UpdateVirtualNodeOutput extends js.Object {
     var virtualNode: VirtualNodeData
   }
 
-  object UpdateVirtualNodeOutput {
-    @inline
-    def apply(
-        virtualNode: VirtualNodeData
-    ): UpdateVirtualNodeOutput = {
-      val __obj = js.Dynamic.literal(
-        "virtualNode" -> virtualNode.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateVirtualNodeOutput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait UpdateVirtualRouterInput extends js.Object {
     var meshName: ResourceName
     var spec: VirtualRouterSpec
@@ -2435,48 +1143,18 @@ package appmesh {
     var clientToken: js.UndefOr[String]
   }
 
-  object UpdateVirtualRouterInput {
-    @inline
-    def apply(
-        meshName: ResourceName,
-        spec: VirtualRouterSpec,
-        virtualRouterName: ResourceName,
-        clientToken: js.UndefOr[String] = js.undefined
-    ): UpdateVirtualRouterInput = {
-      val __obj = js.Dynamic.literal(
-        "meshName"          -> meshName.asInstanceOf[js.Any],
-        "spec"              -> spec.asInstanceOf[js.Any],
-        "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
-      )
-
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateVirtualRouterInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait UpdateVirtualRouterOutput extends js.Object {
     var virtualRouter: VirtualRouterData
   }
 
-  object UpdateVirtualRouterOutput {
-    @inline
-    def apply(
-        virtualRouter: VirtualRouterData
-    ): UpdateVirtualRouterOutput = {
-      val __obj = js.Dynamic.literal(
-        "virtualRouter" -> virtualRouter.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateVirtualRouterOutput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait UpdateVirtualServiceInput extends js.Object {
     var meshName: ResourceName
     var spec: VirtualServiceSpec
@@ -2484,49 +1162,19 @@ package appmesh {
     var clientToken: js.UndefOr[String]
   }
 
-  object UpdateVirtualServiceInput {
-    @inline
-    def apply(
-        meshName: ResourceName,
-        spec: VirtualServiceSpec,
-        virtualServiceName: ServiceName,
-        clientToken: js.UndefOr[String] = js.undefined
-    ): UpdateVirtualServiceInput = {
-      val __obj = js.Dynamic.literal(
-        "meshName"           -> meshName.asInstanceOf[js.Any],
-        "spec"               -> spec.asInstanceOf[js.Any],
-        "virtualServiceName" -> virtualServiceName.asInstanceOf[js.Any]
-      )
-
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateVirtualServiceInput]
-    }
-  }
-
   /**
     */
   @js.native
+  @Factory
   trait UpdateVirtualServiceOutput extends js.Object {
     var virtualService: VirtualServiceData
-  }
-
-  object UpdateVirtualServiceOutput {
-    @inline
-    def apply(
-        virtualService: VirtualServiceData
-    ): UpdateVirtualServiceOutput = {
-      val __obj = js.Dynamic.literal(
-        "virtualService" -> virtualService.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateVirtualServiceOutput]
-    }
   }
 
   /**
     * An object that represents a virtual node returned by a describe operation.
     */
   @js.native
+  @Factory
   trait VirtualNodeData extends js.Object {
     var meshName: ResourceName
     var metadata: ResourceMetadata
@@ -2535,79 +1183,31 @@ package appmesh {
     var virtualNodeName: ResourceName
   }
 
-  object VirtualNodeData {
-    @inline
-    def apply(
-        meshName: ResourceName,
-        metadata: ResourceMetadata,
-        spec: VirtualNodeSpec,
-        status: VirtualNodeStatus,
-        virtualNodeName: ResourceName
-    ): VirtualNodeData = {
-      val __obj = js.Dynamic.literal(
-        "meshName"        -> meshName.asInstanceOf[js.Any],
-        "metadata"        -> metadata.asInstanceOf[js.Any],
-        "spec"            -> spec.asInstanceOf[js.Any],
-        "status"          -> status.asInstanceOf[js.Any],
-        "virtualNodeName" -> virtualNodeName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[VirtualNodeData]
-    }
-  }
-
   /**
     * An object that represents a virtual node returned by a list operation.
     */
   @js.native
+  @Factory
   trait VirtualNodeRef extends js.Object {
     var arn: Arn
     var meshName: ResourceName
     var virtualNodeName: ResourceName
   }
 
-  object VirtualNodeRef {
-    @inline
-    def apply(
-        arn: Arn,
-        meshName: ResourceName,
-        virtualNodeName: ResourceName
-    ): VirtualNodeRef = {
-      val __obj = js.Dynamic.literal(
-        "arn"             -> arn.asInstanceOf[js.Any],
-        "meshName"        -> meshName.asInstanceOf[js.Any],
-        "virtualNodeName" -> virtualNodeName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[VirtualNodeRef]
-    }
-  }
-
   /**
     * An object that represents a virtual node service provider.
     */
   @js.native
+  @Factory
   trait VirtualNodeServiceProvider extends js.Object {
     var virtualNodeName: ResourceName
-  }
-
-  object VirtualNodeServiceProvider {
-    @inline
-    def apply(
-        virtualNodeName: ResourceName
-    ): VirtualNodeServiceProvider = {
-      val __obj = js.Dynamic.literal(
-        "virtualNodeName" -> virtualNodeName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[VirtualNodeServiceProvider]
-    }
   }
 
   /**
     * An object that represents the specification of a virtual node.
     */
   @js.native
+  @Factory
   trait VirtualNodeSpec extends js.Object {
     var backends: js.UndefOr[Backends]
     var listeners: js.UndefOr[Listeners]
@@ -2615,42 +1215,13 @@ package appmesh {
     var serviceDiscovery: js.UndefOr[ServiceDiscovery]
   }
 
-  object VirtualNodeSpec {
-    @inline
-    def apply(
-        backends: js.UndefOr[Backends] = js.undefined,
-        listeners: js.UndefOr[Listeners] = js.undefined,
-        logging: js.UndefOr[Logging] = js.undefined,
-        serviceDiscovery: js.UndefOr[ServiceDiscovery] = js.undefined
-    ): VirtualNodeSpec = {
-      val __obj = js.Dynamic.literal()
-      backends.foreach(__v => __obj.updateDynamic("backends")(__v.asInstanceOf[js.Any]))
-      listeners.foreach(__v => __obj.updateDynamic("listeners")(__v.asInstanceOf[js.Any]))
-      logging.foreach(__v => __obj.updateDynamic("logging")(__v.asInstanceOf[js.Any]))
-      serviceDiscovery.foreach(__v => __obj.updateDynamic("serviceDiscovery")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VirtualNodeSpec]
-    }
-  }
-
   /**
     * An object that represents the current status of the virtual node.
     */
   @js.native
+  @Factory
   trait VirtualNodeStatus extends js.Object {
     var status: VirtualNodeStatusCode
-  }
-
-  object VirtualNodeStatus {
-    @inline
-    def apply(
-        status: VirtualNodeStatusCode
-    ): VirtualNodeStatus = {
-      val __obj = js.Dynamic.literal(
-        "status" -> status.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[VirtualNodeStatus]
-    }
   }
 
   @js.native
@@ -2667,6 +1238,7 @@ package appmesh {
     * An object that represents a virtual router returned by a describe operation.
     */
   @js.native
+  @Factory
   trait VirtualRouterData extends js.Object {
     var meshName: ResourceName
     var metadata: ResourceMetadata
@@ -2675,134 +1247,51 @@ package appmesh {
     var virtualRouterName: ResourceName
   }
 
-  object VirtualRouterData {
-    @inline
-    def apply(
-        meshName: ResourceName,
-        metadata: ResourceMetadata,
-        spec: VirtualRouterSpec,
-        status: VirtualRouterStatus,
-        virtualRouterName: ResourceName
-    ): VirtualRouterData = {
-      val __obj = js.Dynamic.literal(
-        "meshName"          -> meshName.asInstanceOf[js.Any],
-        "metadata"          -> metadata.asInstanceOf[js.Any],
-        "spec"              -> spec.asInstanceOf[js.Any],
-        "status"            -> status.asInstanceOf[js.Any],
-        "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[VirtualRouterData]
-    }
-  }
-
   /**
     * An object that represents a virtual router listener.
     */
   @js.native
+  @Factory
   trait VirtualRouterListener extends js.Object {
     var portMapping: PortMapping
-  }
-
-  object VirtualRouterListener {
-    @inline
-    def apply(
-        portMapping: PortMapping
-    ): VirtualRouterListener = {
-      val __obj = js.Dynamic.literal(
-        "portMapping" -> portMapping.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[VirtualRouterListener]
-    }
   }
 
   /**
     * An object that represents a virtual router returned by a list operation.
     */
   @js.native
+  @Factory
   trait VirtualRouterRef extends js.Object {
     var arn: Arn
     var meshName: ResourceName
     var virtualRouterName: ResourceName
   }
 
-  object VirtualRouterRef {
-    @inline
-    def apply(
-        arn: Arn,
-        meshName: ResourceName,
-        virtualRouterName: ResourceName
-    ): VirtualRouterRef = {
-      val __obj = js.Dynamic.literal(
-        "arn"               -> arn.asInstanceOf[js.Any],
-        "meshName"          -> meshName.asInstanceOf[js.Any],
-        "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[VirtualRouterRef]
-    }
-  }
-
   /**
     * An object that represents a virtual node service provider.
     */
   @js.native
+  @Factory
   trait VirtualRouterServiceProvider extends js.Object {
     var virtualRouterName: ResourceName
-  }
-
-  object VirtualRouterServiceProvider {
-    @inline
-    def apply(
-        virtualRouterName: ResourceName
-    ): VirtualRouterServiceProvider = {
-      val __obj = js.Dynamic.literal(
-        "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[VirtualRouterServiceProvider]
-    }
   }
 
   /**
     * An object that represents the specification of a virtual router.
     */
   @js.native
+  @Factory
   trait VirtualRouterSpec extends js.Object {
     var listeners: js.UndefOr[VirtualRouterListeners]
-  }
-
-  object VirtualRouterSpec {
-    @inline
-    def apply(
-        listeners: js.UndefOr[VirtualRouterListeners] = js.undefined
-    ): VirtualRouterSpec = {
-      val __obj = js.Dynamic.literal()
-      listeners.foreach(__v => __obj.updateDynamic("listeners")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VirtualRouterSpec]
-    }
   }
 
   /**
     * An object that represents the status of a virtual router.
     */
   @js.native
+  @Factory
   trait VirtualRouterStatus extends js.Object {
     var status: VirtualRouterStatusCode
-  }
-
-  object VirtualRouterStatus {
-    @inline
-    def apply(
-        status: VirtualRouterStatusCode
-    ): VirtualRouterStatus = {
-      val __obj = js.Dynamic.literal(
-        "status" -> status.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[VirtualRouterStatus]
-    }
   }
 
   @js.native
@@ -2819,27 +1308,16 @@ package appmesh {
     * An object that represents a virtual service backend for a virtual node.
     */
   @js.native
+  @Factory
   trait VirtualServiceBackend extends js.Object {
     var virtualServiceName: ServiceName
-  }
-
-  object VirtualServiceBackend {
-    @inline
-    def apply(
-        virtualServiceName: ServiceName
-    ): VirtualServiceBackend = {
-      val __obj = js.Dynamic.literal(
-        "virtualServiceName" -> virtualServiceName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[VirtualServiceBackend]
-    }
   }
 
   /**
     * An object that represents a virtual service returned by a describe operation.
     */
   @js.native
+  @Factory
   trait VirtualServiceData extends js.Object {
     var meshName: ResourceName
     var metadata: ResourceMetadata
@@ -2848,114 +1326,43 @@ package appmesh {
     var virtualServiceName: ServiceName
   }
 
-  object VirtualServiceData {
-    @inline
-    def apply(
-        meshName: ResourceName,
-        metadata: ResourceMetadata,
-        spec: VirtualServiceSpec,
-        status: VirtualServiceStatus,
-        virtualServiceName: ServiceName
-    ): VirtualServiceData = {
-      val __obj = js.Dynamic.literal(
-        "meshName"           -> meshName.asInstanceOf[js.Any],
-        "metadata"           -> metadata.asInstanceOf[js.Any],
-        "spec"               -> spec.asInstanceOf[js.Any],
-        "status"             -> status.asInstanceOf[js.Any],
-        "virtualServiceName" -> virtualServiceName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[VirtualServiceData]
-    }
-  }
-
   /**
     * An object that represents the provider for a virtual service.
     */
   @js.native
+  @Factory
   trait VirtualServiceProvider extends js.Object {
     var virtualNode: js.UndefOr[VirtualNodeServiceProvider]
     var virtualRouter: js.UndefOr[VirtualRouterServiceProvider]
-  }
-
-  object VirtualServiceProvider {
-    @inline
-    def apply(
-        virtualNode: js.UndefOr[VirtualNodeServiceProvider] = js.undefined,
-        virtualRouter: js.UndefOr[VirtualRouterServiceProvider] = js.undefined
-    ): VirtualServiceProvider = {
-      val __obj = js.Dynamic.literal()
-      virtualNode.foreach(__v => __obj.updateDynamic("virtualNode")(__v.asInstanceOf[js.Any]))
-      virtualRouter.foreach(__v => __obj.updateDynamic("virtualRouter")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VirtualServiceProvider]
-    }
   }
 
   /**
     * An object that represents a virtual service returned by a list operation.
     */
   @js.native
+  @Factory
   trait VirtualServiceRef extends js.Object {
     var arn: Arn
     var meshName: ResourceName
     var virtualServiceName: ServiceName
   }
 
-  object VirtualServiceRef {
-    @inline
-    def apply(
-        arn: Arn,
-        meshName: ResourceName,
-        virtualServiceName: ServiceName
-    ): VirtualServiceRef = {
-      val __obj = js.Dynamic.literal(
-        "arn"                -> arn.asInstanceOf[js.Any],
-        "meshName"           -> meshName.asInstanceOf[js.Any],
-        "virtualServiceName" -> virtualServiceName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[VirtualServiceRef]
-    }
-  }
-
   /**
     * An object that represents the specification of a virtual service.
     */
   @js.native
+  @Factory
   trait VirtualServiceSpec extends js.Object {
     var provider: js.UndefOr[VirtualServiceProvider]
-  }
-
-  object VirtualServiceSpec {
-    @inline
-    def apply(
-        provider: js.UndefOr[VirtualServiceProvider] = js.undefined
-    ): VirtualServiceSpec = {
-      val __obj = js.Dynamic.literal()
-      provider.foreach(__v => __obj.updateDynamic("provider")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VirtualServiceSpec]
-    }
   }
 
   /**
     * An object that represents the status of a virtual service.
     */
   @js.native
+  @Factory
   trait VirtualServiceStatus extends js.Object {
     var status: VirtualServiceStatusCode
-  }
-
-  object VirtualServiceStatus {
-    @inline
-    def apply(
-        status: VirtualServiceStatusCode
-    ): VirtualServiceStatus = {
-      val __obj = js.Dynamic.literal(
-        "status" -> status.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[VirtualServiceStatus]
-    }
   }
 
   @js.native
@@ -2975,23 +1382,9 @@ package appmesh {
     *          10. The total weight for all targets combined must be less than or equal to 100.</p>
     */
   @js.native
+  @Factory
   trait WeightedTarget extends js.Object {
     var virtualNode: ResourceName
     var weight: PercentInt
-  }
-
-  object WeightedTarget {
-    @inline
-    def apply(
-        virtualNode: ResourceName,
-        weight: PercentInt
-    ): WeightedTarget = {
-      val __obj = js.Dynamic.literal(
-        "virtualNode" -> virtualNode.asInstanceOf[js.Any],
-        "weight"      -> weight.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[WeightedTarget]
-    }
   }
 }

@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object kafka {
   type MaxResults                    = Int
@@ -135,30 +136,17 @@ package kafka {
     *             Specifies the EBS volume upgrade information. The broker identifier must be set to the keyword ALL. This means the changes apply to all the brokers in the cluster.
     */
   @js.native
+  @Factory
   trait BrokerEBSVolumeInfo extends js.Object {
     var KafkaBrokerNodeId: __string
     var VolumeSizeGB: __integer
-  }
-
-  object BrokerEBSVolumeInfo {
-    @inline
-    def apply(
-        KafkaBrokerNodeId: __string,
-        VolumeSizeGB: __integer
-    ): BrokerEBSVolumeInfo = {
-      val __obj = js.Dynamic.literal(
-        "KafkaBrokerNodeId" -> KafkaBrokerNodeId.asInstanceOf[js.Any],
-        "VolumeSizeGB"      -> VolumeSizeGB.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BrokerEBSVolumeInfo]
-    }
   }
 
   /**
     *             Describes the setup to be used for Kafka broker nodes in the cluster.
     */
   @js.native
+  @Factory
   trait BrokerNodeGroupInfo extends js.Object {
     var ClientSubnets: __listOf__string
     var InstanceType: __stringMin5Max32
@@ -167,31 +155,11 @@ package kafka {
     var StorageInfo: js.UndefOr[StorageInfo]
   }
 
-  object BrokerNodeGroupInfo {
-    @inline
-    def apply(
-        ClientSubnets: __listOf__string,
-        InstanceType: __stringMin5Max32,
-        BrokerAZDistribution: js.UndefOr[BrokerAZDistribution] = js.undefined,
-        SecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
-        StorageInfo: js.UndefOr[StorageInfo] = js.undefined
-    ): BrokerNodeGroupInfo = {
-      val __obj = js.Dynamic.literal(
-        "ClientSubnets" -> ClientSubnets.asInstanceOf[js.Any],
-        "InstanceType"  -> InstanceType.asInstanceOf[js.Any]
-      )
-
-      BrokerAZDistribution.foreach(__v => __obj.updateDynamic("BrokerAZDistribution")(__v.asInstanceOf[js.Any]))
-      SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
-      StorageInfo.foreach(__v => __obj.updateDynamic("StorageInfo")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BrokerNodeGroupInfo]
-    }
-  }
-
   /**
     *             BrokerNodeInfo
     */
   @js.native
+  @Factory
   trait BrokerNodeInfo extends js.Object {
     var AttachedENIId: js.UndefOr[__string]
     var BrokerId: js.UndefOr[__double]
@@ -201,71 +169,24 @@ package kafka {
     var Endpoints: js.UndefOr[__listOf__string]
   }
 
-  object BrokerNodeInfo {
-    @inline
-    def apply(
-        AttachedENIId: js.UndefOr[__string] = js.undefined,
-        BrokerId: js.UndefOr[__double] = js.undefined,
-        ClientSubnet: js.UndefOr[__string] = js.undefined,
-        ClientVpcIpAddress: js.UndefOr[__string] = js.undefined,
-        CurrentBrokerSoftwareInfo: js.UndefOr[BrokerSoftwareInfo] = js.undefined,
-        Endpoints: js.UndefOr[__listOf__string] = js.undefined
-    ): BrokerNodeInfo = {
-      val __obj = js.Dynamic.literal()
-      AttachedENIId.foreach(__v => __obj.updateDynamic("AttachedENIId")(__v.asInstanceOf[js.Any]))
-      BrokerId.foreach(__v => __obj.updateDynamic("BrokerId")(__v.asInstanceOf[js.Any]))
-      ClientSubnet.foreach(__v => __obj.updateDynamic("ClientSubnet")(__v.asInstanceOf[js.Any]))
-      ClientVpcIpAddress.foreach(__v => __obj.updateDynamic("ClientVpcIpAddress")(__v.asInstanceOf[js.Any]))
-      CurrentBrokerSoftwareInfo.foreach(__v =>
-        __obj.updateDynamic("CurrentBrokerSoftwareInfo")(__v.asInstanceOf[js.Any])
-      )
-      Endpoints.foreach(__v => __obj.updateDynamic("Endpoints")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BrokerNodeInfo]
-    }
-  }
-
   /**
     *             Information about the current software installed on the cluster.
     */
   @js.native
+  @Factory
   trait BrokerSoftwareInfo extends js.Object {
     var ConfigurationArn: js.UndefOr[__string]
     var ConfigurationRevision: js.UndefOr[__long]
     var KafkaVersion: js.UndefOr[__string]
   }
 
-  object BrokerSoftwareInfo {
-    @inline
-    def apply(
-        ConfigurationArn: js.UndefOr[__string] = js.undefined,
-        ConfigurationRevision: js.UndefOr[__long] = js.undefined,
-        KafkaVersion: js.UndefOr[__string] = js.undefined
-    ): BrokerSoftwareInfo = {
-      val __obj = js.Dynamic.literal()
-      ConfigurationArn.foreach(__v => __obj.updateDynamic("ConfigurationArn")(__v.asInstanceOf[js.Any]))
-      ConfigurationRevision.foreach(__v => __obj.updateDynamic("ConfigurationRevision")(__v.asInstanceOf[js.Any]))
-      KafkaVersion.foreach(__v => __obj.updateDynamic("KafkaVersion")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BrokerSoftwareInfo]
-    }
-  }
-
   /**
     *             Includes all client authentication information.
     */
   @js.native
+  @Factory
   trait ClientAuthentication extends js.Object {
     var Tls: js.UndefOr[Tls]
-  }
-
-  object ClientAuthentication {
-    @inline
-    def apply(
-        Tls: js.UndefOr[Tls] = js.undefined
-    ): ClientAuthentication = {
-      val __obj = js.Dynamic.literal()
-      Tls.foreach(__v => __obj.updateDynamic("Tls")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ClientAuthentication]
-    }
   }
 
   /**
@@ -285,6 +206,7 @@ package kafka {
     *             Returns information about a cluster.
     */
   @js.native
+  @Factory
   trait ClusterInfo extends js.Object {
     var ActiveOperationArn: js.UndefOr[__string]
     var BrokerNodeGroupInfo: js.UndefOr[BrokerNodeGroupInfo]
@@ -304,53 +226,11 @@ package kafka {
     var ZookeeperConnectString: js.UndefOr[__string]
   }
 
-  object ClusterInfo {
-    @inline
-    def apply(
-        ActiveOperationArn: js.UndefOr[__string] = js.undefined,
-        BrokerNodeGroupInfo: js.UndefOr[BrokerNodeGroupInfo] = js.undefined,
-        ClientAuthentication: js.UndefOr[ClientAuthentication] = js.undefined,
-        ClusterArn: js.UndefOr[__string] = js.undefined,
-        ClusterName: js.UndefOr[__string] = js.undefined,
-        CreationTime: js.UndefOr[__timestampIso8601] = js.undefined,
-        CurrentBrokerSoftwareInfo: js.UndefOr[BrokerSoftwareInfo] = js.undefined,
-        CurrentVersion: js.UndefOr[__string] = js.undefined,
-        EncryptionInfo: js.UndefOr[EncryptionInfo] = js.undefined,
-        EnhancedMonitoring: js.UndefOr[EnhancedMonitoring] = js.undefined,
-        NumberOfBrokerNodes: js.UndefOr[__integer] = js.undefined,
-        OpenMonitoring: js.UndefOr[OpenMonitoring] = js.undefined,
-        State: js.UndefOr[ClusterState] = js.undefined,
-        StateInfo: js.UndefOr[StateInfo] = js.undefined,
-        Tags: js.UndefOr[__mapOf__string] = js.undefined,
-        ZookeeperConnectString: js.UndefOr[__string] = js.undefined
-    ): ClusterInfo = {
-      val __obj = js.Dynamic.literal()
-      ActiveOperationArn.foreach(__v => __obj.updateDynamic("ActiveOperationArn")(__v.asInstanceOf[js.Any]))
-      BrokerNodeGroupInfo.foreach(__v => __obj.updateDynamic("BrokerNodeGroupInfo")(__v.asInstanceOf[js.Any]))
-      ClientAuthentication.foreach(__v => __obj.updateDynamic("ClientAuthentication")(__v.asInstanceOf[js.Any]))
-      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
-      ClusterName.foreach(__v => __obj.updateDynamic("ClusterName")(__v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
-      CurrentBrokerSoftwareInfo.foreach(__v =>
-        __obj.updateDynamic("CurrentBrokerSoftwareInfo")(__v.asInstanceOf[js.Any])
-      )
-      CurrentVersion.foreach(__v => __obj.updateDynamic("CurrentVersion")(__v.asInstanceOf[js.Any]))
-      EncryptionInfo.foreach(__v => __obj.updateDynamic("EncryptionInfo")(__v.asInstanceOf[js.Any]))
-      EnhancedMonitoring.foreach(__v => __obj.updateDynamic("EnhancedMonitoring")(__v.asInstanceOf[js.Any]))
-      NumberOfBrokerNodes.foreach(__v => __obj.updateDynamic("NumberOfBrokerNodes")(__v.asInstanceOf[js.Any]))
-      OpenMonitoring.foreach(__v => __obj.updateDynamic("OpenMonitoring")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      StateInfo.foreach(__v => __obj.updateDynamic("StateInfo")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      ZookeeperConnectString.foreach(__v => __obj.updateDynamic("ZookeeperConnectString")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ClusterInfo]
-    }
-  }
-
   /**
     *             Returns information about a cluster operation.
     */
   @js.native
+  @Factory
   trait ClusterOperationInfo extends js.Object {
     var ClientRequestId: js.UndefOr[__string]
     var ClusterArn: js.UndefOr[__string]
@@ -362,35 +242,6 @@ package kafka {
     var OperationType: js.UndefOr[__string]
     var SourceClusterInfo: js.UndefOr[MutableClusterInfo]
     var TargetClusterInfo: js.UndefOr[MutableClusterInfo]
-  }
-
-  object ClusterOperationInfo {
-    @inline
-    def apply(
-        ClientRequestId: js.UndefOr[__string] = js.undefined,
-        ClusterArn: js.UndefOr[__string] = js.undefined,
-        CreationTime: js.UndefOr[__timestampIso8601] = js.undefined,
-        EndTime: js.UndefOr[__timestampIso8601] = js.undefined,
-        ErrorInfo: js.UndefOr[ErrorInfo] = js.undefined,
-        OperationArn: js.UndefOr[__string] = js.undefined,
-        OperationState: js.UndefOr[__string] = js.undefined,
-        OperationType: js.UndefOr[__string] = js.undefined,
-        SourceClusterInfo: js.UndefOr[MutableClusterInfo] = js.undefined,
-        TargetClusterInfo: js.UndefOr[MutableClusterInfo] = js.undefined
-    ): ClusterOperationInfo = {
-      val __obj = js.Dynamic.literal()
-      ClientRequestId.foreach(__v => __obj.updateDynamic("ClientRequestId")(__v.asInstanceOf[js.Any]))
-      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      ErrorInfo.foreach(__v => __obj.updateDynamic("ErrorInfo")(__v.asInstanceOf[js.Any]))
-      OperationArn.foreach(__v => __obj.updateDynamic("OperationArn")(__v.asInstanceOf[js.Any]))
-      OperationState.foreach(__v => __obj.updateDynamic("OperationState")(__v.asInstanceOf[js.Any]))
-      OperationType.foreach(__v => __obj.updateDynamic("OperationType")(__v.asInstanceOf[js.Any]))
-      SourceClusterInfo.foreach(__v => __obj.updateDynamic("SourceClusterInfo")(__v.asInstanceOf[js.Any]))
-      TargetClusterInfo.foreach(__v => __obj.updateDynamic("TargetClusterInfo")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ClusterOperationInfo]
-    }
   }
 
   /**
@@ -412,6 +263,7 @@ package kafka {
     *             Represents an MSK Configuration.
     */
   @js.native
+  @Factory
   trait Configuration extends js.Object {
     var Arn: __string
     var CreationTime: __timestampIso8601
@@ -421,81 +273,29 @@ package kafka {
     var Name: __string
   }
 
-  object Configuration {
-    @inline
-    def apply(
-        Arn: __string,
-        CreationTime: __timestampIso8601,
-        Description: __string,
-        KafkaVersions: __listOf__string,
-        LatestRevision: ConfigurationRevision,
-        Name: __string
-    ): Configuration = {
-      val __obj = js.Dynamic.literal(
-        "Arn"            -> Arn.asInstanceOf[js.Any],
-        "CreationTime"   -> CreationTime.asInstanceOf[js.Any],
-        "Description"    -> Description.asInstanceOf[js.Any],
-        "KafkaVersions"  -> KafkaVersions.asInstanceOf[js.Any],
-        "LatestRevision" -> LatestRevision.asInstanceOf[js.Any],
-        "Name"           -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Configuration]
-    }
-  }
-
   /**
     *             Specifies the configuration to use for the brokers.
     */
   @js.native
+  @Factory
   trait ConfigurationInfo extends js.Object {
     var Arn: __string
     var Revision: __long
-  }
-
-  object ConfigurationInfo {
-    @inline
-    def apply(
-        Arn: __string,
-        Revision: __long
-    ): ConfigurationInfo = {
-      val __obj = js.Dynamic.literal(
-        "Arn"      -> Arn.asInstanceOf[js.Any],
-        "Revision" -> Revision.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ConfigurationInfo]
-    }
   }
 
   /**
     *             Describes a configuration revision.
     */
   @js.native
+  @Factory
   trait ConfigurationRevision extends js.Object {
     var CreationTime: __timestampIso8601
     var Revision: __long
     var Description: js.UndefOr[__string]
   }
 
-  object ConfigurationRevision {
-    @inline
-    def apply(
-        CreationTime: __timestampIso8601,
-        Revision: __long,
-        Description: js.UndefOr[__string] = js.undefined
-    ): ConfigurationRevision = {
-      val __obj = js.Dynamic.literal(
-        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "Revision"     -> Revision.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ConfigurationRevision]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateClusterRequest extends js.Object {
     var BrokerNodeGroupInfo: BrokerNodeGroupInfo
     var ClusterName: __stringMin1Max64
@@ -509,60 +309,16 @@ package kafka {
     var Tags: js.UndefOr[__mapOf__string]
   }
 
-  object CreateClusterRequest {
-    @inline
-    def apply(
-        BrokerNodeGroupInfo: BrokerNodeGroupInfo,
-        ClusterName: __stringMin1Max64,
-        KafkaVersion: __stringMin1Max128,
-        NumberOfBrokerNodes: __integerMin1Max15,
-        ClientAuthentication: js.UndefOr[ClientAuthentication] = js.undefined,
-        ConfigurationInfo: js.UndefOr[ConfigurationInfo] = js.undefined,
-        EncryptionInfo: js.UndefOr[EncryptionInfo] = js.undefined,
-        EnhancedMonitoring: js.UndefOr[EnhancedMonitoring] = js.undefined,
-        OpenMonitoring: js.UndefOr[OpenMonitoringInfo] = js.undefined,
-        Tags: js.UndefOr[__mapOf__string] = js.undefined
-    ): CreateClusterRequest = {
-      val __obj = js.Dynamic.literal(
-        "BrokerNodeGroupInfo" -> BrokerNodeGroupInfo.asInstanceOf[js.Any],
-        "ClusterName"         -> ClusterName.asInstanceOf[js.Any],
-        "KafkaVersion"        -> KafkaVersion.asInstanceOf[js.Any],
-        "NumberOfBrokerNodes" -> NumberOfBrokerNodes.asInstanceOf[js.Any]
-      )
-
-      ClientAuthentication.foreach(__v => __obj.updateDynamic("ClientAuthentication")(__v.asInstanceOf[js.Any]))
-      ConfigurationInfo.foreach(__v => __obj.updateDynamic("ConfigurationInfo")(__v.asInstanceOf[js.Any]))
-      EncryptionInfo.foreach(__v => __obj.updateDynamic("EncryptionInfo")(__v.asInstanceOf[js.Any]))
-      EnhancedMonitoring.foreach(__v => __obj.updateDynamic("EnhancedMonitoring")(__v.asInstanceOf[js.Any]))
-      OpenMonitoring.foreach(__v => __obj.updateDynamic("OpenMonitoring")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateClusterRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateClusterResponse extends js.Object {
     var ClusterArn: js.UndefOr[__string]
     var ClusterName: js.UndefOr[__string]
     var State: js.UndefOr[ClusterState]
   }
 
-  object CreateClusterResponse {
-    @inline
-    def apply(
-        ClusterArn: js.UndefOr[__string] = js.undefined,
-        ClusterName: js.UndefOr[__string] = js.undefined,
-        State: js.UndefOr[ClusterState] = js.undefined
-    ): CreateClusterResponse = {
-      val __obj = js.Dynamic.literal()
-      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
-      ClusterName.foreach(__v => __obj.updateDynamic("ClusterName")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateClusterResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateConfigurationRequest extends js.Object {
     var KafkaVersions: __listOf__string
     var Name: __string
@@ -570,26 +326,8 @@ package kafka {
     var Description: js.UndefOr[__string]
   }
 
-  object CreateConfigurationRequest {
-    @inline
-    def apply(
-        KafkaVersions: __listOf__string,
-        Name: __string,
-        ServerProperties: __blob,
-        Description: js.UndefOr[__string] = js.undefined
-    ): CreateConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "KafkaVersions"    -> KafkaVersions.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any],
-        "ServerProperties" -> ServerProperties.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateConfigurationResponse extends js.Object {
     var Arn: js.UndefOr[__string]
     var CreationTime: js.UndefOr[__timestampIso8601]
@@ -597,150 +335,52 @@ package kafka {
     var Name: js.UndefOr[__string]
   }
 
-  object CreateConfigurationResponse {
-    @inline
-    def apply(
-        Arn: js.UndefOr[__string] = js.undefined,
-        CreationTime: js.UndefOr[__timestampIso8601] = js.undefined,
-        LatestRevision: js.UndefOr[ConfigurationRevision] = js.undefined,
-        Name: js.UndefOr[__string] = js.undefined
-    ): CreateConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
-      LatestRevision.foreach(__v => __obj.updateDynamic("LatestRevision")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateConfigurationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteClusterRequest extends js.Object {
     var ClusterArn: __string
     var CurrentVersion: js.UndefOr[__string]
   }
 
-  object DeleteClusterRequest {
-    @inline
-    def apply(
-        ClusterArn: __string,
-        CurrentVersion: js.UndefOr[__string] = js.undefined
-    ): DeleteClusterRequest = {
-      val __obj = js.Dynamic.literal(
-        "ClusterArn" -> ClusterArn.asInstanceOf[js.Any]
-      )
-
-      CurrentVersion.foreach(__v => __obj.updateDynamic("CurrentVersion")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteClusterRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteClusterResponse extends js.Object {
     var ClusterArn: js.UndefOr[__string]
     var State: js.UndefOr[ClusterState]
   }
 
-  object DeleteClusterResponse {
-    @inline
-    def apply(
-        ClusterArn: js.UndefOr[__string] = js.undefined,
-        State: js.UndefOr[ClusterState] = js.undefined
-    ): DeleteClusterResponse = {
-      val __obj = js.Dynamic.literal()
-      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteClusterResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeClusterOperationRequest extends js.Object {
     var ClusterOperationArn: __string
   }
 
-  object DescribeClusterOperationRequest {
-    @inline
-    def apply(
-        ClusterOperationArn: __string
-    ): DescribeClusterOperationRequest = {
-      val __obj = js.Dynamic.literal(
-        "ClusterOperationArn" -> ClusterOperationArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeClusterOperationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeClusterOperationResponse extends js.Object {
     var ClusterOperationInfo: js.UndefOr[ClusterOperationInfo]
   }
 
-  object DescribeClusterOperationResponse {
-    @inline
-    def apply(
-        ClusterOperationInfo: js.UndefOr[ClusterOperationInfo] = js.undefined
-    ): DescribeClusterOperationResponse = {
-      val __obj = js.Dynamic.literal()
-      ClusterOperationInfo.foreach(__v => __obj.updateDynamic("ClusterOperationInfo")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeClusterOperationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeClusterRequest extends js.Object {
     var ClusterArn: __string
   }
 
-  object DescribeClusterRequest {
-    @inline
-    def apply(
-        ClusterArn: __string
-    ): DescribeClusterRequest = {
-      val __obj = js.Dynamic.literal(
-        "ClusterArn" -> ClusterArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeClusterRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeClusterResponse extends js.Object {
     var ClusterInfo: js.UndefOr[ClusterInfo]
   }
 
-  object DescribeClusterResponse {
-    @inline
-    def apply(
-        ClusterInfo: js.UndefOr[ClusterInfo] = js.undefined
-    ): DescribeClusterResponse = {
-      val __obj = js.Dynamic.literal()
-      ClusterInfo.foreach(__v => __obj.updateDynamic("ClusterInfo")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeClusterResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeConfigurationRequest extends js.Object {
     var Arn: __string
   }
 
-  object DescribeConfigurationRequest {
-    @inline
-    def apply(
-        Arn: __string
-    ): DescribeConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Arn" -> Arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeConfigurationResponse extends js.Object {
     var Arn: js.UndefOr[__string]
     var CreationTime: js.UndefOr[__timestampIso8601]
@@ -750,49 +390,15 @@ package kafka {
     var Name: js.UndefOr[__string]
   }
 
-  object DescribeConfigurationResponse {
-    @inline
-    def apply(
-        Arn: js.UndefOr[__string] = js.undefined,
-        CreationTime: js.UndefOr[__timestampIso8601] = js.undefined,
-        Description: js.UndefOr[__string] = js.undefined,
-        KafkaVersions: js.UndefOr[__listOf__string] = js.undefined,
-        LatestRevision: js.UndefOr[ConfigurationRevision] = js.undefined,
-        Name: js.UndefOr[__string] = js.undefined
-    ): DescribeConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      KafkaVersions.foreach(__v => __obj.updateDynamic("KafkaVersions")(__v.asInstanceOf[js.Any]))
-      LatestRevision.foreach(__v => __obj.updateDynamic("LatestRevision")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeConfigurationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeConfigurationRevisionRequest extends js.Object {
     var Arn: __string
     var Revision: __long
   }
 
-  object DescribeConfigurationRevisionRequest {
-    @inline
-    def apply(
-        Arn: __string,
-        Revision: __long
-    ): DescribeConfigurationRevisionRequest = {
-      val __obj = js.Dynamic.literal(
-        "Arn"      -> Arn.asInstanceOf[js.Any],
-        "Revision" -> Revision.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeConfigurationRevisionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeConfigurationRevisionResponse extends js.Object {
     var Arn: js.UndefOr[__string]
     var CreationTime: js.UndefOr[__timestampIso8601]
@@ -801,107 +407,42 @@ package kafka {
     var ServerProperties: js.UndefOr[__blob]
   }
 
-  object DescribeConfigurationRevisionResponse {
-    @inline
-    def apply(
-        Arn: js.UndefOr[__string] = js.undefined,
-        CreationTime: js.UndefOr[__timestampIso8601] = js.undefined,
-        Description: js.UndefOr[__string] = js.undefined,
-        Revision: js.UndefOr[__long] = js.undefined,
-        ServerProperties: js.UndefOr[__blob] = js.undefined
-    ): DescribeConfigurationRevisionResponse = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Revision.foreach(__v => __obj.updateDynamic("Revision")(__v.asInstanceOf[js.Any]))
-      ServerProperties.foreach(__v => __obj.updateDynamic("ServerProperties")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeConfigurationRevisionResponse]
-    }
-  }
-
   /**
     *             Contains information about the EBS storage volumes attached to Kafka broker nodes.
     */
   @js.native
+  @Factory
   trait EBSStorageInfo extends js.Object {
     var VolumeSize: js.UndefOr[__integerMin1Max16384]
-  }
-
-  object EBSStorageInfo {
-    @inline
-    def apply(
-        VolumeSize: js.UndefOr[__integerMin1Max16384] = js.undefined
-    ): EBSStorageInfo = {
-      val __obj = js.Dynamic.literal()
-      VolumeSize.foreach(__v => __obj.updateDynamic("VolumeSize")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EBSStorageInfo]
-    }
   }
 
   /**
     *             The data-volume encryption details.
     */
   @js.native
+  @Factory
   trait EncryptionAtRest extends js.Object {
     var DataVolumeKMSKeyId: __string
-  }
-
-  object EncryptionAtRest {
-    @inline
-    def apply(
-        DataVolumeKMSKeyId: __string
-    ): EncryptionAtRest = {
-      val __obj = js.Dynamic.literal(
-        "DataVolumeKMSKeyId" -> DataVolumeKMSKeyId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[EncryptionAtRest]
-    }
   }
 
   /**
     *             The settings for encrypting data in transit.
     */
   @js.native
+  @Factory
   trait EncryptionInTransit extends js.Object {
     var ClientBroker: js.UndefOr[ClientBroker]
     var InCluster: js.UndefOr[__boolean]
-  }
-
-  object EncryptionInTransit {
-    @inline
-    def apply(
-        ClientBroker: js.UndefOr[ClientBroker] = js.undefined,
-        InCluster: js.UndefOr[__boolean] = js.undefined
-    ): EncryptionInTransit = {
-      val __obj = js.Dynamic.literal()
-      ClientBroker.foreach(__v => __obj.updateDynamic("ClientBroker")(__v.asInstanceOf[js.Any]))
-      InCluster.foreach(__v => __obj.updateDynamic("InCluster")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EncryptionInTransit]
-    }
   }
 
   /**
     *             Includes encryption-related information, such as the AWS KMS key used for encrypting data at rest and whether you want MSK to encrypt your data in transit.
     */
   @js.native
+  @Factory
   trait EncryptionInfo extends js.Object {
     var EncryptionAtRest: js.UndefOr[EncryptionAtRest]
     var EncryptionInTransit: js.UndefOr[EncryptionInTransit]
-  }
-
-  object EncryptionInfo {
-    @inline
-    def apply(
-        EncryptionAtRest: js.UndefOr[EncryptionAtRest] = js.undefined,
-        EncryptionInTransit: js.UndefOr[EncryptionInTransit] = js.undefined
-    ): EncryptionInfo = {
-      val __obj = js.Dynamic.literal()
-      EncryptionAtRest.foreach(__v => __obj.updateDynamic("EncryptionAtRest")(__v.asInstanceOf[js.Any]))
-      EncryptionInTransit.foreach(__v => __obj.updateDynamic("EncryptionInTransit")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EncryptionInfo]
-    }
   }
 
   /**
@@ -921,120 +462,48 @@ package kafka {
     *             Returns information about an error state of the cluster.
     */
   @js.native
+  @Factory
   trait ErrorInfo extends js.Object {
     var ErrorCode: js.UndefOr[__string]
     var ErrorString: js.UndefOr[__string]
   }
 
-  object ErrorInfo {
-    @inline
-    def apply(
-        ErrorCode: js.UndefOr[__string] = js.undefined,
-        ErrorString: js.UndefOr[__string] = js.undefined
-    ): ErrorInfo = {
-      val __obj = js.Dynamic.literal()
-      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
-      ErrorString.foreach(__v => __obj.updateDynamic("ErrorString")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ErrorInfo]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBootstrapBrokersRequest extends js.Object {
     var ClusterArn: __string
   }
 
-  object GetBootstrapBrokersRequest {
-    @inline
-    def apply(
-        ClusterArn: __string
-    ): GetBootstrapBrokersRequest = {
-      val __obj = js.Dynamic.literal(
-        "ClusterArn" -> ClusterArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBootstrapBrokersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBootstrapBrokersResponse extends js.Object {
     var BootstrapBrokerString: js.UndefOr[__string]
     var BootstrapBrokerStringTls: js.UndefOr[__string]
   }
 
-  object GetBootstrapBrokersResponse {
-    @inline
-    def apply(
-        BootstrapBrokerString: js.UndefOr[__string] = js.undefined,
-        BootstrapBrokerStringTls: js.UndefOr[__string] = js.undefined
-    ): GetBootstrapBrokersResponse = {
-      val __obj = js.Dynamic.literal()
-      BootstrapBrokerString.foreach(__v => __obj.updateDynamic("BootstrapBrokerString")(__v.asInstanceOf[js.Any]))
-      BootstrapBrokerStringTls.foreach(__v => __obj.updateDynamic("BootstrapBrokerStringTls")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBootstrapBrokersResponse]
-    }
-  }
-
   /**
     *             Indicates whether you want to enable or disable the JMX Exporter.
     */
   @js.native
+  @Factory
   trait JmxExporter extends js.Object {
     var EnabledInBroker: __boolean
   }
 
-  object JmxExporter {
-    @inline
-    def apply(
-        EnabledInBroker: __boolean
-    ): JmxExporter = {
-      val __obj = js.Dynamic.literal(
-        "EnabledInBroker" -> EnabledInBroker.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[JmxExporter]
-    }
-  }
-
   /**
     *             Indicates whether you want to enable or disable the JMX Exporter.
     */
   @js.native
+  @Factory
   trait JmxExporterInfo extends js.Object {
     var EnabledInBroker: __boolean
   }
 
-  object JmxExporterInfo {
-    @inline
-    def apply(
-        EnabledInBroker: __boolean
-    ): JmxExporterInfo = {
-      val __obj = js.Dynamic.literal(
-        "EnabledInBroker" -> EnabledInBroker.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[JmxExporterInfo]
-    }
-  }
-
   @js.native
+  @Factory
   trait KafkaVersion extends js.Object {
     var Status: js.UndefOr[KafkaVersionStatus]
     var Version: js.UndefOr[__string]
-  }
-
-  object KafkaVersion {
-    @inline
-    def apply(
-        Status: js.UndefOr[KafkaVersionStatus] = js.undefined,
-        Version: js.UndefOr[__string] = js.undefined
-    ): KafkaVersion = {
-      val __obj = js.Dynamic.literal()
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[KafkaVersion]
-    }
   }
 
   @js.native
@@ -1047,289 +516,110 @@ package kafka {
   }
 
   @js.native
+  @Factory
   trait ListClusterOperationsRequest extends js.Object {
     var ClusterArn: __string
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[__string]
   }
 
-  object ListClusterOperationsRequest {
-    @inline
-    def apply(
-        ClusterArn: __string,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[__string] = js.undefined
-    ): ListClusterOperationsRequest = {
-      val __obj = js.Dynamic.literal(
-        "ClusterArn" -> ClusterArn.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListClusterOperationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListClusterOperationsResponse extends js.Object {
     var ClusterOperationInfoList: js.UndefOr[__listOfClusterOperationInfo]
     var NextToken: js.UndefOr[__string]
   }
 
-  object ListClusterOperationsResponse {
-    @inline
-    def apply(
-        ClusterOperationInfoList: js.UndefOr[__listOfClusterOperationInfo] = js.undefined,
-        NextToken: js.UndefOr[__string] = js.undefined
-    ): ListClusterOperationsResponse = {
-      val __obj = js.Dynamic.literal()
-      ClusterOperationInfoList.foreach(__v => __obj.updateDynamic("ClusterOperationInfoList")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListClusterOperationsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListClustersRequest extends js.Object {
     var ClusterNameFilter: js.UndefOr[__string]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[__string]
   }
 
-  object ListClustersRequest {
-    @inline
-    def apply(
-        ClusterNameFilter: js.UndefOr[__string] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[__string] = js.undefined
-    ): ListClustersRequest = {
-      val __obj = js.Dynamic.literal()
-      ClusterNameFilter.foreach(__v => __obj.updateDynamic("ClusterNameFilter")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListClustersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListClustersResponse extends js.Object {
     var ClusterInfoList: js.UndefOr[__listOfClusterInfo]
     var NextToken: js.UndefOr[__string]
   }
 
-  object ListClustersResponse {
-    @inline
-    def apply(
-        ClusterInfoList: js.UndefOr[__listOfClusterInfo] = js.undefined,
-        NextToken: js.UndefOr[__string] = js.undefined
-    ): ListClustersResponse = {
-      val __obj = js.Dynamic.literal()
-      ClusterInfoList.foreach(__v => __obj.updateDynamic("ClusterInfoList")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListClustersResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListConfigurationRevisionsRequest extends js.Object {
     var Arn: __string
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[__string]
   }
 
-  object ListConfigurationRevisionsRequest {
-    @inline
-    def apply(
-        Arn: __string,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[__string] = js.undefined
-    ): ListConfigurationRevisionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Arn" -> Arn.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListConfigurationRevisionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListConfigurationRevisionsResponse extends js.Object {
     var NextToken: js.UndefOr[__string]
     var Revisions: js.UndefOr[__listOfConfigurationRevision]
   }
 
-  object ListConfigurationRevisionsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[__string] = js.undefined,
-        Revisions: js.UndefOr[__listOfConfigurationRevision] = js.undefined
-    ): ListConfigurationRevisionsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Revisions.foreach(__v => __obj.updateDynamic("Revisions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListConfigurationRevisionsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListConfigurationsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[__string]
   }
 
-  object ListConfigurationsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[__string] = js.undefined
-    ): ListConfigurationsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListConfigurationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListConfigurationsResponse extends js.Object {
     var Configurations: js.UndefOr[__listOfConfiguration]
     var NextToken: js.UndefOr[__string]
   }
 
-  object ListConfigurationsResponse {
-    @inline
-    def apply(
-        Configurations: js.UndefOr[__listOfConfiguration] = js.undefined,
-        NextToken: js.UndefOr[__string] = js.undefined
-    ): ListConfigurationsResponse = {
-      val __obj = js.Dynamic.literal()
-      Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListConfigurationsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListKafkaVersionsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[__string]
   }
 
-  object ListKafkaVersionsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[__string] = js.undefined
-    ): ListKafkaVersionsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListKafkaVersionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListKafkaVersionsResponse extends js.Object {
     var KafkaVersions: js.UndefOr[__listOfKafkaVersion]
     var NextToken: js.UndefOr[__string]
   }
 
-  object ListKafkaVersionsResponse {
-    @inline
-    def apply(
-        KafkaVersions: js.UndefOr[__listOfKafkaVersion] = js.undefined,
-        NextToken: js.UndefOr[__string] = js.undefined
-    ): ListKafkaVersionsResponse = {
-      val __obj = js.Dynamic.literal()
-      KafkaVersions.foreach(__v => __obj.updateDynamic("KafkaVersions")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListKafkaVersionsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListNodesRequest extends js.Object {
     var ClusterArn: __string
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[__string]
   }
 
-  object ListNodesRequest {
-    @inline
-    def apply(
-        ClusterArn: __string,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[__string] = js.undefined
-    ): ListNodesRequest = {
-      val __obj = js.Dynamic.literal(
-        "ClusterArn" -> ClusterArn.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListNodesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListNodesResponse extends js.Object {
     var NextToken: js.UndefOr[__string]
     var NodeInfoList: js.UndefOr[__listOfNodeInfo]
   }
 
-  object ListNodesResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[__string] = js.undefined,
-        NodeInfoList: js.UndefOr[__listOfNodeInfo] = js.undefined
-    ): ListNodesResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      NodeInfoList.foreach(__v => __obj.updateDynamic("NodeInfoList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListNodesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceRequest extends js.Object {
     var ResourceArn: __string
   }
 
-  object ListTagsForResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: __string
-    ): ListTagsForResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListTagsForResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceResponse extends js.Object {
     var Tags: js.UndefOr[__mapOf__string]
-  }
-
-  object ListTagsForResourceResponse {
-    @inline
-    def apply(
-        Tags: js.UndefOr[__mapOf__string] = js.undefined
-    ): ListTagsForResourceResponse = {
-      val __obj = js.Dynamic.literal()
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceResponse]
-    }
   }
 
   /**
     *             Information about cluster attributes that can be updated via update APIs.
     */
   @js.native
+  @Factory
   trait MutableClusterInfo extends js.Object {
     var BrokerEBSVolumeInfo: js.UndefOr[__listOfBrokerEBSVolumeInfo]
     var ConfigurationInfo: js.UndefOr[ConfigurationInfo]
@@ -1338,71 +628,29 @@ package kafka {
     var OpenMonitoring: js.UndefOr[OpenMonitoring]
   }
 
-  object MutableClusterInfo {
-    @inline
-    def apply(
-        BrokerEBSVolumeInfo: js.UndefOr[__listOfBrokerEBSVolumeInfo] = js.undefined,
-        ConfigurationInfo: js.UndefOr[ConfigurationInfo] = js.undefined,
-        EnhancedMonitoring: js.UndefOr[EnhancedMonitoring] = js.undefined,
-        NumberOfBrokerNodes: js.UndefOr[__integer] = js.undefined,
-        OpenMonitoring: js.UndefOr[OpenMonitoring] = js.undefined
-    ): MutableClusterInfo = {
-      val __obj = js.Dynamic.literal()
-      BrokerEBSVolumeInfo.foreach(__v => __obj.updateDynamic("BrokerEBSVolumeInfo")(__v.asInstanceOf[js.Any]))
-      ConfigurationInfo.foreach(__v => __obj.updateDynamic("ConfigurationInfo")(__v.asInstanceOf[js.Any]))
-      EnhancedMonitoring.foreach(__v => __obj.updateDynamic("EnhancedMonitoring")(__v.asInstanceOf[js.Any]))
-      NumberOfBrokerNodes.foreach(__v => __obj.updateDynamic("NumberOfBrokerNodes")(__v.asInstanceOf[js.Any]))
-      OpenMonitoring.foreach(__v => __obj.updateDynamic("OpenMonitoring")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MutableClusterInfo]
-    }
-  }
-
   /**
     *             Indicates whether you want to enable or disable the Node Exporter.
     */
   @js.native
+  @Factory
   trait NodeExporter extends js.Object {
     var EnabledInBroker: __boolean
   }
 
-  object NodeExporter {
-    @inline
-    def apply(
-        EnabledInBroker: __boolean
-    ): NodeExporter = {
-      val __obj = js.Dynamic.literal(
-        "EnabledInBroker" -> EnabledInBroker.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[NodeExporter]
-    }
-  }
-
   /**
     *             Indicates whether you want to enable or disable the Node Exporter.
     */
   @js.native
+  @Factory
   trait NodeExporterInfo extends js.Object {
     var EnabledInBroker: __boolean
-  }
-
-  object NodeExporterInfo {
-    @inline
-    def apply(
-        EnabledInBroker: __boolean
-    ): NodeExporterInfo = {
-      val __obj = js.Dynamic.literal(
-        "EnabledInBroker" -> EnabledInBroker.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[NodeExporterInfo]
-    }
   }
 
   /**
     *             The node information object.
     */
   @js.native
+  @Factory
   trait NodeInfo extends js.Object {
     var AddedToClusterTime: js.UndefOr[__string]
     var BrokerNodeInfo: js.UndefOr[BrokerNodeInfo]
@@ -1410,27 +658,6 @@ package kafka {
     var NodeARN: js.UndefOr[__string]
     var NodeType: js.UndefOr[NodeType]
     var ZookeeperNodeInfo: js.UndefOr[ZookeeperNodeInfo]
-  }
-
-  object NodeInfo {
-    @inline
-    def apply(
-        AddedToClusterTime: js.UndefOr[__string] = js.undefined,
-        BrokerNodeInfo: js.UndefOr[BrokerNodeInfo] = js.undefined,
-        InstanceType: js.UndefOr[__string] = js.undefined,
-        NodeARN: js.UndefOr[__string] = js.undefined,
-        NodeType: js.UndefOr[NodeType] = js.undefined,
-        ZookeeperNodeInfo: js.UndefOr[ZookeeperNodeInfo] = js.undefined
-    ): NodeInfo = {
-      val __obj = js.Dynamic.literal()
-      AddedToClusterTime.foreach(__v => __obj.updateDynamic("AddedToClusterTime")(__v.asInstanceOf[js.Any]))
-      BrokerNodeInfo.foreach(__v => __obj.updateDynamic("BrokerNodeInfo")(__v.asInstanceOf[js.Any]))
-      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
-      NodeARN.foreach(__v => __obj.updateDynamic("NodeARN")(__v.asInstanceOf[js.Any]))
-      NodeType.foreach(__v => __obj.updateDynamic("NodeType")(__v.asInstanceOf[js.Any]))
-      ZookeeperNodeInfo.foreach(__v => __obj.updateDynamic("ZookeeperNodeInfo")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NodeInfo]
-    }
   }
 
   /**
@@ -1448,322 +675,129 @@ package kafka {
     *             JMX and Node monitoring for the MSK cluster.
     */
   @js.native
+  @Factory
   trait OpenMonitoring extends js.Object {
     var Prometheus: Prometheus
-  }
-
-  object OpenMonitoring {
-    @inline
-    def apply(
-        Prometheus: Prometheus
-    ): OpenMonitoring = {
-      val __obj = js.Dynamic.literal(
-        "Prometheus" -> Prometheus.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[OpenMonitoring]
-    }
   }
 
   /**
     *             JMX and Node monitoring for the MSK cluster.
     */
   @js.native
+  @Factory
   trait OpenMonitoringInfo extends js.Object {
     var Prometheus: PrometheusInfo
-  }
-
-  object OpenMonitoringInfo {
-    @inline
-    def apply(
-        Prometheus: PrometheusInfo
-    ): OpenMonitoringInfo = {
-      val __obj = js.Dynamic.literal(
-        "Prometheus" -> Prometheus.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[OpenMonitoringInfo]
-    }
   }
 
   /**
     *             Prometheus settings.
     */
   @js.native
+  @Factory
   trait Prometheus extends js.Object {
     var JmxExporter: js.UndefOr[JmxExporter]
     var NodeExporter: js.UndefOr[NodeExporter]
   }
 
-  object Prometheus {
-    @inline
-    def apply(
-        JmxExporter: js.UndefOr[JmxExporter] = js.undefined,
-        NodeExporter: js.UndefOr[NodeExporter] = js.undefined
-    ): Prometheus = {
-      val __obj = js.Dynamic.literal()
-      JmxExporter.foreach(__v => __obj.updateDynamic("JmxExporter")(__v.asInstanceOf[js.Any]))
-      NodeExporter.foreach(__v => __obj.updateDynamic("NodeExporter")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Prometheus]
-    }
-  }
-
   /**
     *             Prometheus settings.
     */
   @js.native
+  @Factory
   trait PrometheusInfo extends js.Object {
     var JmxExporter: js.UndefOr[JmxExporterInfo]
     var NodeExporter: js.UndefOr[NodeExporterInfo]
   }
 
-  object PrometheusInfo {
-    @inline
-    def apply(
-        JmxExporter: js.UndefOr[JmxExporterInfo] = js.undefined,
-        NodeExporter: js.UndefOr[NodeExporterInfo] = js.undefined
-    ): PrometheusInfo = {
-      val __obj = js.Dynamic.literal()
-      JmxExporter.foreach(__v => __obj.updateDynamic("JmxExporter")(__v.asInstanceOf[js.Any]))
-      NodeExporter.foreach(__v => __obj.updateDynamic("NodeExporter")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PrometheusInfo]
-    }
-  }
-
   @js.native
+  @Factory
   trait StateInfo extends js.Object {
     var Code: js.UndefOr[__string]
     var Message: js.UndefOr[__string]
-  }
-
-  object StateInfo {
-    @inline
-    def apply(
-        Code: js.UndefOr[__string] = js.undefined,
-        Message: js.UndefOr[__string] = js.undefined
-    ): StateInfo = {
-      val __obj = js.Dynamic.literal()
-      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StateInfo]
-    }
   }
 
   /**
     *             Contains information about storage volumes attached to MSK broker nodes.
     */
   @js.native
+  @Factory
   trait StorageInfo extends js.Object {
     var EbsStorageInfo: js.UndefOr[EBSStorageInfo]
   }
 
-  object StorageInfo {
-    @inline
-    def apply(
-        EbsStorageInfo: js.UndefOr[EBSStorageInfo] = js.undefined
-    ): StorageInfo = {
-      val __obj = js.Dynamic.literal()
-      EbsStorageInfo.foreach(__v => __obj.updateDynamic("EbsStorageInfo")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StorageInfo]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceRequest extends js.Object {
     var ResourceArn: __string
     var Tags: __mapOf__string
-  }
-
-  object TagResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: __string,
-        Tags: __mapOf__string
-    ): TagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceRequest]
-    }
   }
 
   /**
     *             Details for client authentication using TLS.
     */
   @js.native
+  @Factory
   trait Tls extends js.Object {
     var CertificateAuthorityArnList: js.UndefOr[__listOf__string]
   }
 
-  object Tls {
-    @inline
-    def apply(
-        CertificateAuthorityArnList: js.UndefOr[__listOf__string] = js.undefined
-    ): Tls = {
-      val __obj = js.Dynamic.literal()
-      CertificateAuthorityArnList.foreach(__v =>
-        __obj.updateDynamic("CertificateAuthorityArnList")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[Tls]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceRequest extends js.Object {
     var ResourceArn: __string
     var TagKeys: __listOf__string
   }
 
-  object UntagResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: __string,
-        TagKeys: __listOf__string
-    ): UntagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateBrokerCountRequest extends js.Object {
     var ClusterArn: __string
     var CurrentVersion: __string
     var TargetNumberOfBrokerNodes: __integerMin1Max15
   }
 
-  object UpdateBrokerCountRequest {
-    @inline
-    def apply(
-        ClusterArn: __string,
-        CurrentVersion: __string,
-        TargetNumberOfBrokerNodes: __integerMin1Max15
-    ): UpdateBrokerCountRequest = {
-      val __obj = js.Dynamic.literal(
-        "ClusterArn"                -> ClusterArn.asInstanceOf[js.Any],
-        "CurrentVersion"            -> CurrentVersion.asInstanceOf[js.Any],
-        "TargetNumberOfBrokerNodes" -> TargetNumberOfBrokerNodes.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateBrokerCountRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateBrokerCountResponse extends js.Object {
     var ClusterArn: js.UndefOr[__string]
     var ClusterOperationArn: js.UndefOr[__string]
   }
 
-  object UpdateBrokerCountResponse {
-    @inline
-    def apply(
-        ClusterArn: js.UndefOr[__string] = js.undefined,
-        ClusterOperationArn: js.UndefOr[__string] = js.undefined
-    ): UpdateBrokerCountResponse = {
-      val __obj = js.Dynamic.literal()
-      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
-      ClusterOperationArn.foreach(__v => __obj.updateDynamic("ClusterOperationArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateBrokerCountResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateBrokerStorageRequest extends js.Object {
     var ClusterArn: __string
     var CurrentVersion: __string
     var TargetBrokerEBSVolumeInfo: __listOfBrokerEBSVolumeInfo
   }
 
-  object UpdateBrokerStorageRequest {
-    @inline
-    def apply(
-        ClusterArn: __string,
-        CurrentVersion: __string,
-        TargetBrokerEBSVolumeInfo: __listOfBrokerEBSVolumeInfo
-    ): UpdateBrokerStorageRequest = {
-      val __obj = js.Dynamic.literal(
-        "ClusterArn"                -> ClusterArn.asInstanceOf[js.Any],
-        "CurrentVersion"            -> CurrentVersion.asInstanceOf[js.Any],
-        "TargetBrokerEBSVolumeInfo" -> TargetBrokerEBSVolumeInfo.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateBrokerStorageRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateBrokerStorageResponse extends js.Object {
     var ClusterArn: js.UndefOr[__string]
     var ClusterOperationArn: js.UndefOr[__string]
   }
 
-  object UpdateBrokerStorageResponse {
-    @inline
-    def apply(
-        ClusterArn: js.UndefOr[__string] = js.undefined,
-        ClusterOperationArn: js.UndefOr[__string] = js.undefined
-    ): UpdateBrokerStorageResponse = {
-      val __obj = js.Dynamic.literal()
-      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
-      ClusterOperationArn.foreach(__v => __obj.updateDynamic("ClusterOperationArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateBrokerStorageResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateClusterConfigurationRequest extends js.Object {
     var ClusterArn: __string
     var ConfigurationInfo: ConfigurationInfo
     var CurrentVersion: __string
   }
 
-  object UpdateClusterConfigurationRequest {
-    @inline
-    def apply(
-        ClusterArn: __string,
-        ConfigurationInfo: ConfigurationInfo,
-        CurrentVersion: __string
-    ): UpdateClusterConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "ClusterArn"        -> ClusterArn.asInstanceOf[js.Any],
-        "ConfigurationInfo" -> ConfigurationInfo.asInstanceOf[js.Any],
-        "CurrentVersion"    -> CurrentVersion.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateClusterConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateClusterConfigurationResponse extends js.Object {
     var ClusterArn: js.UndefOr[__string]
     var ClusterOperationArn: js.UndefOr[__string]
-  }
-
-  object UpdateClusterConfigurationResponse {
-    @inline
-    def apply(
-        ClusterArn: js.UndefOr[__string] = js.undefined,
-        ClusterOperationArn: js.UndefOr[__string] = js.undefined
-    ): UpdateClusterConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
-      ClusterOperationArn.foreach(__v => __obj.updateDynamic("ClusterOperationArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateClusterConfigurationResponse]
-    }
   }
 
   /**
     * Request body for UpdateMonitoring.
     */
   @js.native
+  @Factory
   trait UpdateMonitoringRequest extends js.Object {
     var ClusterArn: __string
     var CurrentVersion: __string
@@ -1771,72 +805,23 @@ package kafka {
     var OpenMonitoring: js.UndefOr[OpenMonitoringInfo]
   }
 
-  object UpdateMonitoringRequest {
-    @inline
-    def apply(
-        ClusterArn: __string,
-        CurrentVersion: __string,
-        EnhancedMonitoring: js.UndefOr[EnhancedMonitoring] = js.undefined,
-        OpenMonitoring: js.UndefOr[OpenMonitoringInfo] = js.undefined
-    ): UpdateMonitoringRequest = {
-      val __obj = js.Dynamic.literal(
-        "ClusterArn"     -> ClusterArn.asInstanceOf[js.Any],
-        "CurrentVersion" -> CurrentVersion.asInstanceOf[js.Any]
-      )
-
-      EnhancedMonitoring.foreach(__v => __obj.updateDynamic("EnhancedMonitoring")(__v.asInstanceOf[js.Any]))
-      OpenMonitoring.foreach(__v => __obj.updateDynamic("OpenMonitoring")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateMonitoringRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateMonitoringResponse extends js.Object {
     var ClusterArn: js.UndefOr[__string]
     var ClusterOperationArn: js.UndefOr[__string]
-  }
-
-  object UpdateMonitoringResponse {
-    @inline
-    def apply(
-        ClusterArn: js.UndefOr[__string] = js.undefined,
-        ClusterOperationArn: js.UndefOr[__string] = js.undefined
-    ): UpdateMonitoringResponse = {
-      val __obj = js.Dynamic.literal()
-      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
-      ClusterOperationArn.foreach(__v => __obj.updateDynamic("ClusterOperationArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateMonitoringResponse]
-    }
   }
 
   /**
     *             Zookeeper node information.
     */
   @js.native
+  @Factory
   trait ZookeeperNodeInfo extends js.Object {
     var AttachedENIId: js.UndefOr[__string]
     var ClientVpcIpAddress: js.UndefOr[__string]
     var Endpoints: js.UndefOr[__listOf__string]
     var ZookeeperId: js.UndefOr[__double]
     var ZookeeperVersion: js.UndefOr[__string]
-  }
-
-  object ZookeeperNodeInfo {
-    @inline
-    def apply(
-        AttachedENIId: js.UndefOr[__string] = js.undefined,
-        ClientVpcIpAddress: js.UndefOr[__string] = js.undefined,
-        Endpoints: js.UndefOr[__listOf__string] = js.undefined,
-        ZookeeperId: js.UndefOr[__double] = js.undefined,
-        ZookeeperVersion: js.UndefOr[__string] = js.undefined
-    ): ZookeeperNodeInfo = {
-      val __obj = js.Dynamic.literal()
-      AttachedENIId.foreach(__v => __obj.updateDynamic("AttachedENIId")(__v.asInstanceOf[js.Any]))
-      ClientVpcIpAddress.foreach(__v => __obj.updateDynamic("ClientVpcIpAddress")(__v.asInstanceOf[js.Any]))
-      Endpoints.foreach(__v => __obj.updateDynamic("Endpoints")(__v.asInstanceOf[js.Any]))
-      ZookeeperId.foreach(__v => __obj.updateDynamic("ZookeeperId")(__v.asInstanceOf[js.Any]))
-      ZookeeperVersion.foreach(__v => __obj.updateDynamic("ZookeeperVersion")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ZookeeperNodeInfo]
-    }
   }
 }

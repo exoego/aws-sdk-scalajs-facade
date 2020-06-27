@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object outposts {
   type AccountId                  = String
@@ -57,6 +58,7 @@ package outposts {
   }
 
   @js.native
+  @Factory
   trait CreateOutpostInput extends js.Object {
     var SiteId: SiteId
     var AvailabilityZone: js.UndefOr[AvailabilityZone]
@@ -65,86 +67,28 @@ package outposts {
     var Name: js.UndefOr[OutpostName]
   }
 
-  object CreateOutpostInput {
-    @inline
-    def apply(
-        SiteId: SiteId,
-        AvailabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
-        AvailabilityZoneId: js.UndefOr[AvailabilityZoneId] = js.undefined,
-        Description: js.UndefOr[OutpostDescription] = js.undefined,
-        Name: js.UndefOr[OutpostName] = js.undefined
-    ): CreateOutpostInput = {
-      val __obj = js.Dynamic.literal(
-        "SiteId" -> SiteId.asInstanceOf[js.Any]
-      )
-
-      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
-      AvailabilityZoneId.foreach(__v => __obj.updateDynamic("AvailabilityZoneId")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateOutpostInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateOutpostOutput extends js.Object {
     var Outpost: js.UndefOr[Outpost]
   }
 
-  object CreateOutpostOutput {
-    @inline
-    def apply(
-        Outpost: js.UndefOr[Outpost] = js.undefined
-    ): CreateOutpostOutput = {
-      val __obj = js.Dynamic.literal()
-      Outpost.foreach(__v => __obj.updateDynamic("Outpost")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateOutpostOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetOutpostInput extends js.Object {
     var OutpostId: OutpostId
   }
 
-  object GetOutpostInput {
-    @inline
-    def apply(
-        OutpostId: OutpostId
-    ): GetOutpostInput = {
-      val __obj = js.Dynamic.literal(
-        "OutpostId" -> OutpostId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetOutpostInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetOutpostInstanceTypesInput extends js.Object {
     var OutpostId: OutpostId
     var MaxResults: js.UndefOr[MaxResults1000]
     var NextToken: js.UndefOr[Token]
   }
 
-  object GetOutpostInstanceTypesInput {
-    @inline
-    def apply(
-        OutpostId: OutpostId,
-        MaxResults: js.UndefOr[MaxResults1000] = js.undefined,
-        NextToken: js.UndefOr[Token] = js.undefined
-    ): GetOutpostInstanceTypesInput = {
-      val __obj = js.Dynamic.literal(
-        "OutpostId" -> OutpostId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetOutpostInstanceTypesInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetOutpostInstanceTypesOutput extends js.Object {
     var InstanceTypes: js.UndefOr[InstanceTypeListDefinition]
     var NextToken: js.UndefOr[Token]
@@ -152,138 +96,54 @@ package outposts {
     var OutpostId: js.UndefOr[OutpostId]
   }
 
-  object GetOutpostInstanceTypesOutput {
-    @inline
-    def apply(
-        InstanceTypes: js.UndefOr[InstanceTypeListDefinition] = js.undefined,
-        NextToken: js.UndefOr[Token] = js.undefined,
-        OutpostArn: js.UndefOr[OutpostArn] = js.undefined,
-        OutpostId: js.UndefOr[OutpostId] = js.undefined
-    ): GetOutpostInstanceTypesOutput = {
-      val __obj = js.Dynamic.literal()
-      InstanceTypes.foreach(__v => __obj.updateDynamic("InstanceTypes")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      OutpostArn.foreach(__v => __obj.updateDynamic("OutpostArn")(__v.asInstanceOf[js.Any]))
-      OutpostId.foreach(__v => __obj.updateDynamic("OutpostId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetOutpostInstanceTypesOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetOutpostOutput extends js.Object {
     var Outpost: js.UndefOr[Outpost]
-  }
-
-  object GetOutpostOutput {
-    @inline
-    def apply(
-        Outpost: js.UndefOr[Outpost] = js.undefined
-    ): GetOutpostOutput = {
-      val __obj = js.Dynamic.literal()
-      Outpost.foreach(__v => __obj.updateDynamic("Outpost")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetOutpostOutput]
-    }
   }
 
   /**
     * Information about an instance type.
     */
   @js.native
+  @Factory
   trait InstanceTypeItem extends js.Object {
     var InstanceType: js.UndefOr[InstanceType]
   }
 
-  object InstanceTypeItem {
-    @inline
-    def apply(
-        InstanceType: js.UndefOr[InstanceType] = js.undefined
-    ): InstanceTypeItem = {
-      val __obj = js.Dynamic.literal()
-      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceTypeItem]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListOutpostsInput extends js.Object {
     var MaxResults: js.UndefOr[MaxResults1000]
     var NextToken: js.UndefOr[Token]
   }
 
-  object ListOutpostsInput {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults1000] = js.undefined,
-        NextToken: js.UndefOr[Token] = js.undefined
-    ): ListOutpostsInput = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListOutpostsInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListOutpostsOutput extends js.Object {
     var NextToken: js.UndefOr[Token]
     var Outposts: js.UndefOr[outpostListDefinition]
   }
 
-  object ListOutpostsOutput {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[Token] = js.undefined,
-        Outposts: js.UndefOr[outpostListDefinition] = js.undefined
-    ): ListOutpostsOutput = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Outposts.foreach(__v => __obj.updateDynamic("Outposts")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListOutpostsOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListSitesInput extends js.Object {
     var MaxResults: js.UndefOr[MaxResults1000]
     var NextToken: js.UndefOr[Token]
   }
 
-  object ListSitesInput {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults1000] = js.undefined,
-        NextToken: js.UndefOr[Token] = js.undefined
-    ): ListSitesInput = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListSitesInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListSitesOutput extends js.Object {
     var NextToken: js.UndefOr[Token]
     var Sites: js.UndefOr[siteListDefinition]
-  }
-
-  object ListSitesOutput {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[Token] = js.undefined,
-        Sites: js.UndefOr[siteListDefinition] = js.undefined
-    ): ListSitesOutput = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Sites.foreach(__v => __obj.updateDynamic("Sites")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListSitesOutput]
-    }
   }
 
   /**
     * Information about an Outpost.
     */
   @js.native
+  @Factory
   trait Outpost extends js.Object {
     var AvailabilityZone: js.UndefOr[AvailabilityZone]
     var AvailabilityZoneId: js.UndefOr[AvailabilityZoneId]
@@ -296,58 +156,15 @@ package outposts {
     var SiteId: js.UndefOr[SiteId]
   }
 
-  object Outpost {
-    @inline
-    def apply(
-        AvailabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
-        AvailabilityZoneId: js.UndefOr[AvailabilityZoneId] = js.undefined,
-        Description: js.UndefOr[OutpostDescription] = js.undefined,
-        LifeCycleStatus: js.UndefOr[LifeCycleStatus] = js.undefined,
-        Name: js.UndefOr[OutpostName] = js.undefined,
-        OutpostArn: js.UndefOr[OutpostArn] = js.undefined,
-        OutpostId: js.UndefOr[OutpostId] = js.undefined,
-        OwnerId: js.UndefOr[OwnerId] = js.undefined,
-        SiteId: js.UndefOr[SiteId] = js.undefined
-    ): Outpost = {
-      val __obj = js.Dynamic.literal()
-      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
-      AvailabilityZoneId.foreach(__v => __obj.updateDynamic("AvailabilityZoneId")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      LifeCycleStatus.foreach(__v => __obj.updateDynamic("LifeCycleStatus")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      OutpostArn.foreach(__v => __obj.updateDynamic("OutpostArn")(__v.asInstanceOf[js.Any]))
-      OutpostId.foreach(__v => __obj.updateDynamic("OutpostId")(__v.asInstanceOf[js.Any]))
-      OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
-      SiteId.foreach(__v => __obj.updateDynamic("SiteId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Outpost]
-    }
-  }
-
   /**
     * Information about a site.
     */
   @js.native
+  @Factory
   trait Site extends js.Object {
     var AccountId: js.UndefOr[AccountId]
     var Description: js.UndefOr[SiteDescription]
     var Name: js.UndefOr[SiteName]
     var SiteId: js.UndefOr[SiteId]
-  }
-
-  object Site {
-    @inline
-    def apply(
-        AccountId: js.UndefOr[AccountId] = js.undefined,
-        Description: js.UndefOr[SiteDescription] = js.undefined,
-        Name: js.UndefOr[SiteName] = js.undefined,
-        SiteId: js.UndefOr[SiteId] = js.undefined
-    ): Site = {
-      val __obj = js.Dynamic.literal()
-      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      SiteId.foreach(__v => __obj.updateDynamic("SiteId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Site]
-    }
   }
 }

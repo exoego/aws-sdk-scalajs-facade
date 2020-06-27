@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object mobileanalytics {
   type EventListDefinition = js.Array[Event]
@@ -43,6 +44,7 @@ package mobileanalytics {
     * A JSON object representing a batch of unique event occurrences in your app.
     */
   @js.native
+  @Factory
   trait Event extends js.Object {
     var eventType: String50Chars
     var timestamp: ISO8601Timestamp
@@ -52,81 +54,26 @@ package mobileanalytics {
     var version: js.UndefOr[String10Chars]
   }
 
-  object Event {
-    @inline
-    def apply(
-        eventType: String50Chars,
-        timestamp: ISO8601Timestamp,
-        attributes: js.UndefOr[MapOfStringToString] = js.undefined,
-        metrics: js.UndefOr[MapOfStringToNumber] = js.undefined,
-        session: js.UndefOr[Session] = js.undefined,
-        version: js.UndefOr[String10Chars] = js.undefined
-    ): Event = {
-      val __obj = js.Dynamic.literal(
-        "eventType" -> eventType.asInstanceOf[js.Any],
-        "timestamp" -> timestamp.asInstanceOf[js.Any]
-      )
-
-      attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
-      metrics.foreach(__v => __obj.updateDynamic("metrics")(__v.asInstanceOf[js.Any]))
-      session.foreach(__v => __obj.updateDynamic("session")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Event]
-    }
-  }
-
   /**
     * A container for the data needed for a PutEvent operation
     */
   @js.native
+  @Factory
   trait PutEventsInput extends js.Object {
     var clientContext: String
     var events: EventListDefinition
     var clientContextEncoding: js.UndefOr[String]
   }
 
-  object PutEventsInput {
-    @inline
-    def apply(
-        clientContext: String,
-        events: EventListDefinition,
-        clientContextEncoding: js.UndefOr[String] = js.undefined
-    ): PutEventsInput = {
-      val __obj = js.Dynamic.literal(
-        "clientContext" -> clientContext.asInstanceOf[js.Any],
-        "events"        -> events.asInstanceOf[js.Any]
-      )
-
-      clientContextEncoding.foreach(__v => __obj.updateDynamic("clientContextEncoding")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutEventsInput]
-    }
-  }
-
   /**
     * Describes the session. Session information is required on ALL events.
     */
   @js.native
+  @Factory
   trait Session extends js.Object {
     var duration: js.UndefOr[Double]
     var id: js.UndefOr[String50Chars]
     var startTimestamp: js.UndefOr[ISO8601Timestamp]
     var stopTimestamp: js.UndefOr[ISO8601Timestamp]
-  }
-
-  object Session {
-    @inline
-    def apply(
-        duration: js.UndefOr[Double] = js.undefined,
-        id: js.UndefOr[String50Chars] = js.undefined,
-        startTimestamp: js.UndefOr[ISO8601Timestamp] = js.undefined,
-        stopTimestamp: js.UndefOr[ISO8601Timestamp] = js.undefined
-    ): Session = {
-      val __obj = js.Dynamic.literal()
-      duration.foreach(__v => __obj.updateDynamic("duration")(__v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
-      startTimestamp.foreach(__v => __obj.updateDynamic("startTimestamp")(__v.asInstanceOf[js.Any]))
-      stopTimestamp.foreach(__v => __obj.updateDynamic("stopTimestamp")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Session]
-    }
   }
 }

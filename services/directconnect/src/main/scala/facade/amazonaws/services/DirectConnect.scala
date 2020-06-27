@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object directconnect {
   type ASN                 = Int
@@ -322,6 +323,7 @@ package directconnect {
   }
 
   @js.native
+  @Factory
   trait AcceptDirectConnectGatewayAssociationProposalRequest extends js.Object {
     var associatedGatewayOwnerAccount: OwnerAccount
     var directConnectGatewayId: DirectConnectGatewayId
@@ -329,43 +331,10 @@ package directconnect {
     var overrideAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList]
   }
 
-  object AcceptDirectConnectGatewayAssociationProposalRequest {
-    @inline
-    def apply(
-        associatedGatewayOwnerAccount: OwnerAccount,
-        directConnectGatewayId: DirectConnectGatewayId,
-        proposalId: DirectConnectGatewayAssociationProposalId,
-        overrideAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList] = js.undefined
-    ): AcceptDirectConnectGatewayAssociationProposalRequest = {
-      val __obj = js.Dynamic.literal(
-        "associatedGatewayOwnerAccount" -> associatedGatewayOwnerAccount.asInstanceOf[js.Any],
-        "directConnectGatewayId"        -> directConnectGatewayId.asInstanceOf[js.Any],
-        "proposalId"                    -> proposalId.asInstanceOf[js.Any]
-      )
-
-      overrideAllowedPrefixesToDirectConnectGateway.foreach(__v =>
-        __obj.updateDynamic("overrideAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[AcceptDirectConnectGatewayAssociationProposalRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AcceptDirectConnectGatewayAssociationProposalResult extends js.Object {
     var directConnectGatewayAssociation: js.UndefOr[DirectConnectGatewayAssociation]
-  }
-
-  object AcceptDirectConnectGatewayAssociationProposalResult {
-    @inline
-    def apply(
-        directConnectGatewayAssociation: js.UndefOr[DirectConnectGatewayAssociation] = js.undefined
-    ): AcceptDirectConnectGatewayAssociationProposalResult = {
-      val __obj = js.Dynamic.literal()
-      directConnectGatewayAssociation.foreach(__v =>
-        __obj.updateDynamic("directConnectGatewayAssociation")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[AcceptDirectConnectGatewayAssociationProposalResult]
-    }
   }
 
   @js.native
@@ -378,6 +347,7 @@ package directconnect {
   }
 
   @js.native
+  @Factory
   trait AllocateConnectionOnInterconnectRequest extends js.Object {
     var bandwidth: Bandwidth
     var connectionName: ConnectionName
@@ -386,28 +356,8 @@ package directconnect {
     var vlan: VLAN
   }
 
-  object AllocateConnectionOnInterconnectRequest {
-    @inline
-    def apply(
-        bandwidth: Bandwidth,
-        connectionName: ConnectionName,
-        interconnectId: InterconnectId,
-        ownerAccount: OwnerAccount,
-        vlan: VLAN
-    ): AllocateConnectionOnInterconnectRequest = {
-      val __obj = js.Dynamic.literal(
-        "bandwidth"      -> bandwidth.asInstanceOf[js.Any],
-        "connectionName" -> connectionName.asInstanceOf[js.Any],
-        "interconnectId" -> interconnectId.asInstanceOf[js.Any],
-        "ownerAccount"   -> ownerAccount.asInstanceOf[js.Any],
-        "vlan"           -> vlan.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AllocateConnectionOnInterconnectRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AllocateHostedConnectionRequest extends js.Object {
     var bandwidth: Bandwidth
     var connectionId: ConnectionId
@@ -417,184 +367,62 @@ package directconnect {
     var tags: js.UndefOr[TagList]
   }
 
-  object AllocateHostedConnectionRequest {
-    @inline
-    def apply(
-        bandwidth: Bandwidth,
-        connectionId: ConnectionId,
-        connectionName: ConnectionName,
-        ownerAccount: OwnerAccount,
-        vlan: VLAN,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): AllocateHostedConnectionRequest = {
-      val __obj = js.Dynamic.literal(
-        "bandwidth"      -> bandwidth.asInstanceOf[js.Any],
-        "connectionId"   -> connectionId.asInstanceOf[js.Any],
-        "connectionName" -> connectionName.asInstanceOf[js.Any],
-        "ownerAccount"   -> ownerAccount.asInstanceOf[js.Any],
-        "vlan"           -> vlan.asInstanceOf[js.Any]
-      )
-
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AllocateHostedConnectionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AllocatePrivateVirtualInterfaceRequest extends js.Object {
     var connectionId: ConnectionId
     var newPrivateVirtualInterfaceAllocation: NewPrivateVirtualInterfaceAllocation
     var ownerAccount: OwnerAccount
   }
 
-  object AllocatePrivateVirtualInterfaceRequest {
-    @inline
-    def apply(
-        connectionId: ConnectionId,
-        newPrivateVirtualInterfaceAllocation: NewPrivateVirtualInterfaceAllocation,
-        ownerAccount: OwnerAccount
-    ): AllocatePrivateVirtualInterfaceRequest = {
-      val __obj = js.Dynamic.literal(
-        "connectionId"                         -> connectionId.asInstanceOf[js.Any],
-        "newPrivateVirtualInterfaceAllocation" -> newPrivateVirtualInterfaceAllocation.asInstanceOf[js.Any],
-        "ownerAccount"                         -> ownerAccount.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AllocatePrivateVirtualInterfaceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AllocatePublicVirtualInterfaceRequest extends js.Object {
     var connectionId: ConnectionId
     var newPublicVirtualInterfaceAllocation: NewPublicVirtualInterfaceAllocation
     var ownerAccount: OwnerAccount
   }
 
-  object AllocatePublicVirtualInterfaceRequest {
-    @inline
-    def apply(
-        connectionId: ConnectionId,
-        newPublicVirtualInterfaceAllocation: NewPublicVirtualInterfaceAllocation,
-        ownerAccount: OwnerAccount
-    ): AllocatePublicVirtualInterfaceRequest = {
-      val __obj = js.Dynamic.literal(
-        "connectionId"                        -> connectionId.asInstanceOf[js.Any],
-        "newPublicVirtualInterfaceAllocation" -> newPublicVirtualInterfaceAllocation.asInstanceOf[js.Any],
-        "ownerAccount"                        -> ownerAccount.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AllocatePublicVirtualInterfaceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AllocateTransitVirtualInterfaceRequest extends js.Object {
     var connectionId: ConnectionId
     var newTransitVirtualInterfaceAllocation: NewTransitVirtualInterfaceAllocation
     var ownerAccount: OwnerAccount
   }
 
-  object AllocateTransitVirtualInterfaceRequest {
-    @inline
-    def apply(
-        connectionId: ConnectionId,
-        newTransitVirtualInterfaceAllocation: NewTransitVirtualInterfaceAllocation,
-        ownerAccount: OwnerAccount
-    ): AllocateTransitVirtualInterfaceRequest = {
-      val __obj = js.Dynamic.literal(
-        "connectionId"                         -> connectionId.asInstanceOf[js.Any],
-        "newTransitVirtualInterfaceAllocation" -> newTransitVirtualInterfaceAllocation.asInstanceOf[js.Any],
-        "ownerAccount"                         -> ownerAccount.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AllocateTransitVirtualInterfaceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AllocateTransitVirtualInterfaceResult extends js.Object {
     var virtualInterface: js.UndefOr[VirtualInterface]
   }
 
-  object AllocateTransitVirtualInterfaceResult {
-    @inline
-    def apply(
-        virtualInterface: js.UndefOr[VirtualInterface] = js.undefined
-    ): AllocateTransitVirtualInterfaceResult = {
-      val __obj = js.Dynamic.literal()
-      virtualInterface.foreach(__v => __obj.updateDynamic("virtualInterface")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AllocateTransitVirtualInterfaceResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateConnectionWithLagRequest extends js.Object {
     var connectionId: ConnectionId
     var lagId: LagId
   }
 
-  object AssociateConnectionWithLagRequest {
-    @inline
-    def apply(
-        connectionId: ConnectionId,
-        lagId: LagId
-    ): AssociateConnectionWithLagRequest = {
-      val __obj = js.Dynamic.literal(
-        "connectionId" -> connectionId.asInstanceOf[js.Any],
-        "lagId"        -> lagId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AssociateConnectionWithLagRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateHostedConnectionRequest extends js.Object {
     var connectionId: ConnectionId
     var parentConnectionId: ConnectionId
   }
 
-  object AssociateHostedConnectionRequest {
-    @inline
-    def apply(
-        connectionId: ConnectionId,
-        parentConnectionId: ConnectionId
-    ): AssociateHostedConnectionRequest = {
-      val __obj = js.Dynamic.literal(
-        "connectionId"       -> connectionId.asInstanceOf[js.Any],
-        "parentConnectionId" -> parentConnectionId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AssociateHostedConnectionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateVirtualInterfaceRequest extends js.Object {
     var connectionId: ConnectionId
     var virtualInterfaceId: VirtualInterfaceId
-  }
-
-  object AssociateVirtualInterfaceRequest {
-    @inline
-    def apply(
-        connectionId: ConnectionId,
-        virtualInterfaceId: VirtualInterfaceId
-    ): AssociateVirtualInterfaceRequest = {
-      val __obj = js.Dynamic.literal(
-        "connectionId"       -> connectionId.asInstanceOf[js.Any],
-        "virtualInterfaceId" -> virtualInterfaceId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AssociateVirtualInterfaceRequest]
-    }
   }
 
   /**
     * Information about the associated gateway.
     */
   @js.native
+  @Factory
   trait AssociatedGateway extends js.Object {
     var id: js.UndefOr[GatewayIdentifier]
     var ownerAccount: js.UndefOr[OwnerAccount]
@@ -602,27 +430,11 @@ package directconnect {
     var `type`: js.UndefOr[GatewayType]
   }
 
-  object AssociatedGateway {
-    @inline
-    def apply(
-        id: js.UndefOr[GatewayIdentifier] = js.undefined,
-        ownerAccount: js.UndefOr[OwnerAccount] = js.undefined,
-        region: js.UndefOr[Region] = js.undefined,
-        `type`: js.UndefOr[GatewayType] = js.undefined
-    ): AssociatedGateway = {
-      val __obj = js.Dynamic.literal()
-      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
-      ownerAccount.foreach(__v => __obj.updateDynamic("ownerAccount")(__v.asInstanceOf[js.Any]))
-      region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AssociatedGateway]
-    }
-  }
-
   /**
     * Information about a BGP peer.
     */
   @js.native
+  @Factory
   trait BGPPeer extends js.Object {
     var addressFamily: js.UndefOr[AddressFamily]
     var amazonAddress: js.UndefOr[AmazonAddress]
@@ -633,33 +445,6 @@ package directconnect {
     var bgpPeerState: js.UndefOr[BGPPeerState]
     var bgpStatus: js.UndefOr[BGPStatus]
     var customerAddress: js.UndefOr[CustomerAddress]
-  }
-
-  object BGPPeer {
-    @inline
-    def apply(
-        addressFamily: js.UndefOr[AddressFamily] = js.undefined,
-        amazonAddress: js.UndefOr[AmazonAddress] = js.undefined,
-        asn: js.UndefOr[ASN] = js.undefined,
-        authKey: js.UndefOr[BGPAuthKey] = js.undefined,
-        awsDeviceV2: js.UndefOr[AwsDeviceV2] = js.undefined,
-        bgpPeerId: js.UndefOr[BGPPeerId] = js.undefined,
-        bgpPeerState: js.UndefOr[BGPPeerState] = js.undefined,
-        bgpStatus: js.UndefOr[BGPStatus] = js.undefined,
-        customerAddress: js.UndefOr[CustomerAddress] = js.undefined
-    ): BGPPeer = {
-      val __obj = js.Dynamic.literal()
-      addressFamily.foreach(__v => __obj.updateDynamic("addressFamily")(__v.asInstanceOf[js.Any]))
-      amazonAddress.foreach(__v => __obj.updateDynamic("amazonAddress")(__v.asInstanceOf[js.Any]))
-      asn.foreach(__v => __obj.updateDynamic("asn")(__v.asInstanceOf[js.Any]))
-      authKey.foreach(__v => __obj.updateDynamic("authKey")(__v.asInstanceOf[js.Any]))
-      awsDeviceV2.foreach(__v => __obj.updateDynamic("awsDeviceV2")(__v.asInstanceOf[js.Any]))
-      bgpPeerId.foreach(__v => __obj.updateDynamic("bgpPeerId")(__v.asInstanceOf[js.Any]))
-      bgpPeerState.foreach(__v => __obj.updateDynamic("bgpPeerState")(__v.asInstanceOf[js.Any]))
-      bgpStatus.foreach(__v => __obj.updateDynamic("bgpStatus")(__v.asInstanceOf[js.Any]))
-      customerAddress.foreach(__v => __obj.updateDynamic("customerAddress")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BGPPeer]
-    }
   }
 
   @js.native
@@ -685,154 +470,61 @@ package directconnect {
   }
 
   @js.native
+  @Factory
   trait ConfirmConnectionRequest extends js.Object {
     var connectionId: ConnectionId
   }
 
-  object ConfirmConnectionRequest {
-    @inline
-    def apply(
-        connectionId: ConnectionId
-    ): ConfirmConnectionRequest = {
-      val __obj = js.Dynamic.literal(
-        "connectionId" -> connectionId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ConfirmConnectionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ConfirmConnectionResponse extends js.Object {
     var connectionState: js.UndefOr[ConnectionState]
   }
 
-  object ConfirmConnectionResponse {
-    @inline
-    def apply(
-        connectionState: js.UndefOr[ConnectionState] = js.undefined
-    ): ConfirmConnectionResponse = {
-      val __obj = js.Dynamic.literal()
-      connectionState.foreach(__v => __obj.updateDynamic("connectionState")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ConfirmConnectionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ConfirmPrivateVirtualInterfaceRequest extends js.Object {
     var virtualInterfaceId: VirtualInterfaceId
     var directConnectGatewayId: js.UndefOr[DirectConnectGatewayId]
     var virtualGatewayId: js.UndefOr[VirtualGatewayId]
   }
 
-  object ConfirmPrivateVirtualInterfaceRequest {
-    @inline
-    def apply(
-        virtualInterfaceId: VirtualInterfaceId,
-        directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
-        virtualGatewayId: js.UndefOr[VirtualGatewayId] = js.undefined
-    ): ConfirmPrivateVirtualInterfaceRequest = {
-      val __obj = js.Dynamic.literal(
-        "virtualInterfaceId" -> virtualInterfaceId.asInstanceOf[js.Any]
-      )
-
-      directConnectGatewayId.foreach(__v => __obj.updateDynamic("directConnectGatewayId")(__v.asInstanceOf[js.Any]))
-      virtualGatewayId.foreach(__v => __obj.updateDynamic("virtualGatewayId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ConfirmPrivateVirtualInterfaceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ConfirmPrivateVirtualInterfaceResponse extends js.Object {
     var virtualInterfaceState: js.UndefOr[VirtualInterfaceState]
   }
 
-  object ConfirmPrivateVirtualInterfaceResponse {
-    @inline
-    def apply(
-        virtualInterfaceState: js.UndefOr[VirtualInterfaceState] = js.undefined
-    ): ConfirmPrivateVirtualInterfaceResponse = {
-      val __obj = js.Dynamic.literal()
-      virtualInterfaceState.foreach(__v => __obj.updateDynamic("virtualInterfaceState")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ConfirmPrivateVirtualInterfaceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ConfirmPublicVirtualInterfaceRequest extends js.Object {
     var virtualInterfaceId: VirtualInterfaceId
   }
 
-  object ConfirmPublicVirtualInterfaceRequest {
-    @inline
-    def apply(
-        virtualInterfaceId: VirtualInterfaceId
-    ): ConfirmPublicVirtualInterfaceRequest = {
-      val __obj = js.Dynamic.literal(
-        "virtualInterfaceId" -> virtualInterfaceId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ConfirmPublicVirtualInterfaceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ConfirmPublicVirtualInterfaceResponse extends js.Object {
     var virtualInterfaceState: js.UndefOr[VirtualInterfaceState]
   }
 
-  object ConfirmPublicVirtualInterfaceResponse {
-    @inline
-    def apply(
-        virtualInterfaceState: js.UndefOr[VirtualInterfaceState] = js.undefined
-    ): ConfirmPublicVirtualInterfaceResponse = {
-      val __obj = js.Dynamic.literal()
-      virtualInterfaceState.foreach(__v => __obj.updateDynamic("virtualInterfaceState")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ConfirmPublicVirtualInterfaceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ConfirmTransitVirtualInterfaceRequest extends js.Object {
     var directConnectGatewayId: DirectConnectGatewayId
     var virtualInterfaceId: VirtualInterfaceId
   }
 
-  object ConfirmTransitVirtualInterfaceRequest {
-    @inline
-    def apply(
-        directConnectGatewayId: DirectConnectGatewayId,
-        virtualInterfaceId: VirtualInterfaceId
-    ): ConfirmTransitVirtualInterfaceRequest = {
-      val __obj = js.Dynamic.literal(
-        "directConnectGatewayId" -> directConnectGatewayId.asInstanceOf[js.Any],
-        "virtualInterfaceId"     -> virtualInterfaceId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ConfirmTransitVirtualInterfaceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ConfirmTransitVirtualInterfaceResponse extends js.Object {
     var virtualInterfaceState: js.UndefOr[VirtualInterfaceState]
-  }
-
-  object ConfirmTransitVirtualInterfaceResponse {
-    @inline
-    def apply(
-        virtualInterfaceState: js.UndefOr[VirtualInterfaceState] = js.undefined
-    ): ConfirmTransitVirtualInterfaceResponse = {
-      val __obj = js.Dynamic.literal()
-      virtualInterfaceState.foreach(__v => __obj.updateDynamic("virtualInterfaceState")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ConfirmTransitVirtualInterfaceResponse]
-    }
   }
 
   /**
     * Information about an AWS Direct Connect connection.
     */
   @js.native
+  @Factory
   trait Connection extends js.Object {
     var awsDevice: js.UndefOr[AwsDevice]
     var awsDeviceV2: js.UndefOr[AwsDeviceV2]
@@ -853,49 +545,6 @@ package directconnect {
     var vlan: js.UndefOr[VLAN]
   }
 
-  object Connection {
-    @inline
-    def apply(
-        awsDevice: js.UndefOr[AwsDevice] = js.undefined,
-        awsDeviceV2: js.UndefOr[AwsDeviceV2] = js.undefined,
-        bandwidth: js.UndefOr[Bandwidth] = js.undefined,
-        connectionId: js.UndefOr[ConnectionId] = js.undefined,
-        connectionName: js.UndefOr[ConnectionName] = js.undefined,
-        connectionState: js.UndefOr[ConnectionState] = js.undefined,
-        hasLogicalRedundancy: js.UndefOr[HasLogicalRedundancy] = js.undefined,
-        jumboFrameCapable: js.UndefOr[JumboFrameCapable] = js.undefined,
-        lagId: js.UndefOr[LagId] = js.undefined,
-        loaIssueTime: js.UndefOr[LoaIssueTime] = js.undefined,
-        location: js.UndefOr[LocationCode] = js.undefined,
-        ownerAccount: js.UndefOr[OwnerAccount] = js.undefined,
-        partnerName: js.UndefOr[PartnerName] = js.undefined,
-        providerName: js.UndefOr[ProviderName] = js.undefined,
-        region: js.UndefOr[Region] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined,
-        vlan: js.UndefOr[VLAN] = js.undefined
-    ): Connection = {
-      val __obj = js.Dynamic.literal()
-      awsDevice.foreach(__v => __obj.updateDynamic("awsDevice")(__v.asInstanceOf[js.Any]))
-      awsDeviceV2.foreach(__v => __obj.updateDynamic("awsDeviceV2")(__v.asInstanceOf[js.Any]))
-      bandwidth.foreach(__v => __obj.updateDynamic("bandwidth")(__v.asInstanceOf[js.Any]))
-      connectionId.foreach(__v => __obj.updateDynamic("connectionId")(__v.asInstanceOf[js.Any]))
-      connectionName.foreach(__v => __obj.updateDynamic("connectionName")(__v.asInstanceOf[js.Any]))
-      connectionState.foreach(__v => __obj.updateDynamic("connectionState")(__v.asInstanceOf[js.Any]))
-      hasLogicalRedundancy.foreach(__v => __obj.updateDynamic("hasLogicalRedundancy")(__v.asInstanceOf[js.Any]))
-      jumboFrameCapable.foreach(__v => __obj.updateDynamic("jumboFrameCapable")(__v.asInstanceOf[js.Any]))
-      lagId.foreach(__v => __obj.updateDynamic("lagId")(__v.asInstanceOf[js.Any]))
-      loaIssueTime.foreach(__v => __obj.updateDynamic("loaIssueTime")(__v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
-      ownerAccount.foreach(__v => __obj.updateDynamic("ownerAccount")(__v.asInstanceOf[js.Any]))
-      partnerName.foreach(__v => __obj.updateDynamic("partnerName")(__v.asInstanceOf[js.Any]))
-      providerName.foreach(__v => __obj.updateDynamic("providerName")(__v.asInstanceOf[js.Any]))
-      region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      vlan.foreach(__v => __obj.updateDynamic("vlan")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Connection]
-    }
-  }
-
   @js.native
   sealed trait ConnectionState extends js.Any
   object ConnectionState extends js.Object {
@@ -914,57 +563,26 @@ package directconnect {
   }
 
   @js.native
+  @Factory
   trait Connections extends js.Object {
     var connections: js.UndefOr[ConnectionList]
   }
 
-  object Connections {
-    @inline
-    def apply(
-        connections: js.UndefOr[ConnectionList] = js.undefined
-    ): Connections = {
-      val __obj = js.Dynamic.literal()
-      connections.foreach(__v => __obj.updateDynamic("connections")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Connections]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateBGPPeerRequest extends js.Object {
     var newBGPPeer: js.UndefOr[NewBGPPeer]
     var virtualInterfaceId: js.UndefOr[VirtualInterfaceId]
   }
 
-  object CreateBGPPeerRequest {
-    @inline
-    def apply(
-        newBGPPeer: js.UndefOr[NewBGPPeer] = js.undefined,
-        virtualInterfaceId: js.UndefOr[VirtualInterfaceId] = js.undefined
-    ): CreateBGPPeerRequest = {
-      val __obj = js.Dynamic.literal()
-      newBGPPeer.foreach(__v => __obj.updateDynamic("newBGPPeer")(__v.asInstanceOf[js.Any]))
-      virtualInterfaceId.foreach(__v => __obj.updateDynamic("virtualInterfaceId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateBGPPeerRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateBGPPeerResponse extends js.Object {
     var virtualInterface: js.UndefOr[VirtualInterface]
   }
 
-  object CreateBGPPeerResponse {
-    @inline
-    def apply(
-        virtualInterface: js.UndefOr[VirtualInterface] = js.undefined
-    ): CreateBGPPeerResponse = {
-      val __obj = js.Dynamic.literal()
-      virtualInterface.foreach(__v => __obj.updateDynamic("virtualInterface")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateBGPPeerResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateConnectionRequest extends js.Object {
     var bandwidth: Bandwidth
     var connectionName: ConnectionName
@@ -974,30 +592,8 @@ package directconnect {
     var tags: js.UndefOr[TagList]
   }
 
-  object CreateConnectionRequest {
-    @inline
-    def apply(
-        bandwidth: Bandwidth,
-        connectionName: ConnectionName,
-        location: LocationCode,
-        lagId: js.UndefOr[LagId] = js.undefined,
-        providerName: js.UndefOr[ProviderName] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): CreateConnectionRequest = {
-      val __obj = js.Dynamic.literal(
-        "bandwidth"      -> bandwidth.asInstanceOf[js.Any],
-        "connectionName" -> connectionName.asInstanceOf[js.Any],
-        "location"       -> location.asInstanceOf[js.Any]
-      )
-
-      lagId.foreach(__v => __obj.updateDynamic("lagId")(__v.asInstanceOf[js.Any]))
-      providerName.foreach(__v => __obj.updateDynamic("providerName")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateConnectionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateDirectConnectGatewayAssociationProposalRequest extends js.Object {
     var directConnectGatewayId: DirectConnectGatewayId
     var directConnectGatewayOwnerAccount: OwnerAccount
@@ -1006,50 +602,14 @@ package directconnect {
     var removeAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList]
   }
 
-  object CreateDirectConnectGatewayAssociationProposalRequest {
-    @inline
-    def apply(
-        directConnectGatewayId: DirectConnectGatewayId,
-        directConnectGatewayOwnerAccount: OwnerAccount,
-        gatewayId: GatewayIdToAssociate,
-        addAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList] = js.undefined,
-        removeAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList] = js.undefined
-    ): CreateDirectConnectGatewayAssociationProposalRequest = {
-      val __obj = js.Dynamic.literal(
-        "directConnectGatewayId"           -> directConnectGatewayId.asInstanceOf[js.Any],
-        "directConnectGatewayOwnerAccount" -> directConnectGatewayOwnerAccount.asInstanceOf[js.Any],
-        "gatewayId"                        -> gatewayId.asInstanceOf[js.Any]
-      )
-
-      addAllowedPrefixesToDirectConnectGateway.foreach(__v =>
-        __obj.updateDynamic("addAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
-      )
-      removeAllowedPrefixesToDirectConnectGateway.foreach(__v =>
-        __obj.updateDynamic("removeAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[CreateDirectConnectGatewayAssociationProposalRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateDirectConnectGatewayAssociationProposalResult extends js.Object {
     var directConnectGatewayAssociationProposal: js.UndefOr[DirectConnectGatewayAssociationProposal]
   }
 
-  object CreateDirectConnectGatewayAssociationProposalResult {
-    @inline
-    def apply(
-        directConnectGatewayAssociationProposal: js.UndefOr[DirectConnectGatewayAssociationProposal] = js.undefined
-    ): CreateDirectConnectGatewayAssociationProposalResult = {
-      val __obj = js.Dynamic.literal()
-      directConnectGatewayAssociationProposal.foreach(__v =>
-        __obj.updateDynamic("directConnectGatewayAssociationProposal")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[CreateDirectConnectGatewayAssociationProposalResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateDirectConnectGatewayAssociationRequest extends js.Object {
     var directConnectGatewayId: DirectConnectGatewayId
     var addAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList]
@@ -1057,83 +617,27 @@ package directconnect {
     var virtualGatewayId: js.UndefOr[VirtualGatewayId]
   }
 
-  object CreateDirectConnectGatewayAssociationRequest {
-    @inline
-    def apply(
-        directConnectGatewayId: DirectConnectGatewayId,
-        addAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList] = js.undefined,
-        gatewayId: js.UndefOr[GatewayIdToAssociate] = js.undefined,
-        virtualGatewayId: js.UndefOr[VirtualGatewayId] = js.undefined
-    ): CreateDirectConnectGatewayAssociationRequest = {
-      val __obj = js.Dynamic.literal(
-        "directConnectGatewayId" -> directConnectGatewayId.asInstanceOf[js.Any]
-      )
-
-      addAllowedPrefixesToDirectConnectGateway.foreach(__v =>
-        __obj.updateDynamic("addAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
-      )
-      gatewayId.foreach(__v => __obj.updateDynamic("gatewayId")(__v.asInstanceOf[js.Any]))
-      virtualGatewayId.foreach(__v => __obj.updateDynamic("virtualGatewayId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDirectConnectGatewayAssociationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateDirectConnectGatewayAssociationResult extends js.Object {
     var directConnectGatewayAssociation: js.UndefOr[DirectConnectGatewayAssociation]
   }
 
-  object CreateDirectConnectGatewayAssociationResult {
-    @inline
-    def apply(
-        directConnectGatewayAssociation: js.UndefOr[DirectConnectGatewayAssociation] = js.undefined
-    ): CreateDirectConnectGatewayAssociationResult = {
-      val __obj = js.Dynamic.literal()
-      directConnectGatewayAssociation.foreach(__v =>
-        __obj.updateDynamic("directConnectGatewayAssociation")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[CreateDirectConnectGatewayAssociationResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateDirectConnectGatewayRequest extends js.Object {
     var directConnectGatewayName: DirectConnectGatewayName
     var amazonSideAsn: js.UndefOr[LongAsn]
   }
 
-  object CreateDirectConnectGatewayRequest {
-    @inline
-    def apply(
-        directConnectGatewayName: DirectConnectGatewayName,
-        amazonSideAsn: js.UndefOr[LongAsn] = js.undefined
-    ): CreateDirectConnectGatewayRequest = {
-      val __obj = js.Dynamic.literal(
-        "directConnectGatewayName" -> directConnectGatewayName.asInstanceOf[js.Any]
-      )
-
-      amazonSideAsn.foreach(__v => __obj.updateDynamic("amazonSideAsn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDirectConnectGatewayRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateDirectConnectGatewayResult extends js.Object {
     var directConnectGateway: js.UndefOr[DirectConnectGateway]
   }
 
-  object CreateDirectConnectGatewayResult {
-    @inline
-    def apply(
-        directConnectGateway: js.UndefOr[DirectConnectGateway] = js.undefined
-    ): CreateDirectConnectGatewayResult = {
-      val __obj = js.Dynamic.literal()
-      directConnectGateway.foreach(__v => __obj.updateDynamic("directConnectGateway")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDirectConnectGatewayResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateInterconnectRequest extends js.Object {
     var bandwidth: Bandwidth
     var interconnectName: InterconnectName
@@ -1143,30 +647,8 @@ package directconnect {
     var tags: js.UndefOr[TagList]
   }
 
-  object CreateInterconnectRequest {
-    @inline
-    def apply(
-        bandwidth: Bandwidth,
-        interconnectName: InterconnectName,
-        location: LocationCode,
-        lagId: js.UndefOr[LagId] = js.undefined,
-        providerName: js.UndefOr[ProviderName] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): CreateInterconnectRequest = {
-      val __obj = js.Dynamic.literal(
-        "bandwidth"        -> bandwidth.asInstanceOf[js.Any],
-        "interconnectName" -> interconnectName.asInstanceOf[js.Any],
-        "location"         -> location.asInstanceOf[js.Any]
-      )
-
-      lagId.foreach(__v => __obj.updateDynamic("lagId")(__v.asInstanceOf[js.Any]))
-      providerName.foreach(__v => __obj.updateDynamic("providerName")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateInterconnectRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateLagRequest extends js.Object {
     var connectionsBandwidth: Bandwidth
     var lagName: LagName
@@ -1178,113 +660,35 @@ package directconnect {
     var tags: js.UndefOr[TagList]
   }
 
-  object CreateLagRequest {
-    @inline
-    def apply(
-        connectionsBandwidth: Bandwidth,
-        lagName: LagName,
-        location: LocationCode,
-        numberOfConnections: Count,
-        childConnectionTags: js.UndefOr[TagList] = js.undefined,
-        connectionId: js.UndefOr[ConnectionId] = js.undefined,
-        providerName: js.UndefOr[ProviderName] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): CreateLagRequest = {
-      val __obj = js.Dynamic.literal(
-        "connectionsBandwidth" -> connectionsBandwidth.asInstanceOf[js.Any],
-        "lagName"              -> lagName.asInstanceOf[js.Any],
-        "location"             -> location.asInstanceOf[js.Any],
-        "numberOfConnections"  -> numberOfConnections.asInstanceOf[js.Any]
-      )
-
-      childConnectionTags.foreach(__v => __obj.updateDynamic("childConnectionTags")(__v.asInstanceOf[js.Any]))
-      connectionId.foreach(__v => __obj.updateDynamic("connectionId")(__v.asInstanceOf[js.Any]))
-      providerName.foreach(__v => __obj.updateDynamic("providerName")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateLagRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreatePrivateVirtualInterfaceRequest extends js.Object {
     var connectionId: ConnectionId
     var newPrivateVirtualInterface: NewPrivateVirtualInterface
   }
 
-  object CreatePrivateVirtualInterfaceRequest {
-    @inline
-    def apply(
-        connectionId: ConnectionId,
-        newPrivateVirtualInterface: NewPrivateVirtualInterface
-    ): CreatePrivateVirtualInterfaceRequest = {
-      val __obj = js.Dynamic.literal(
-        "connectionId"               -> connectionId.asInstanceOf[js.Any],
-        "newPrivateVirtualInterface" -> newPrivateVirtualInterface.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreatePrivateVirtualInterfaceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreatePublicVirtualInterfaceRequest extends js.Object {
     var connectionId: ConnectionId
     var newPublicVirtualInterface: NewPublicVirtualInterface
   }
 
-  object CreatePublicVirtualInterfaceRequest {
-    @inline
-    def apply(
-        connectionId: ConnectionId,
-        newPublicVirtualInterface: NewPublicVirtualInterface
-    ): CreatePublicVirtualInterfaceRequest = {
-      val __obj = js.Dynamic.literal(
-        "connectionId"              -> connectionId.asInstanceOf[js.Any],
-        "newPublicVirtualInterface" -> newPublicVirtualInterface.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreatePublicVirtualInterfaceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateTransitVirtualInterfaceRequest extends js.Object {
     var connectionId: ConnectionId
     var newTransitVirtualInterface: NewTransitVirtualInterface
   }
 
-  object CreateTransitVirtualInterfaceRequest {
-    @inline
-    def apply(
-        connectionId: ConnectionId,
-        newTransitVirtualInterface: NewTransitVirtualInterface
-    ): CreateTransitVirtualInterfaceRequest = {
-      val __obj = js.Dynamic.literal(
-        "connectionId"               -> connectionId.asInstanceOf[js.Any],
-        "newTransitVirtualInterface" -> newTransitVirtualInterface.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateTransitVirtualInterfaceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateTransitVirtualInterfaceResult extends js.Object {
     var virtualInterface: js.UndefOr[VirtualInterface]
   }
 
-  object CreateTransitVirtualInterfaceResult {
-    @inline
-    def apply(
-        virtualInterface: js.UndefOr[VirtualInterface] = js.undefined
-    ): CreateTransitVirtualInterfaceResult = {
-      val __obj = js.Dynamic.literal()
-      virtualInterface.foreach(__v => __obj.updateDynamic("virtualInterface")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateTransitVirtualInterfaceResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteBGPPeerRequest extends js.Object {
     var asn: js.UndefOr[ASN]
     var bgpPeerId: js.UndefOr[BGPPeerId]
@@ -1292,328 +696,114 @@ package directconnect {
     var virtualInterfaceId: js.UndefOr[VirtualInterfaceId]
   }
 
-  object DeleteBGPPeerRequest {
-    @inline
-    def apply(
-        asn: js.UndefOr[ASN] = js.undefined,
-        bgpPeerId: js.UndefOr[BGPPeerId] = js.undefined,
-        customerAddress: js.UndefOr[CustomerAddress] = js.undefined,
-        virtualInterfaceId: js.UndefOr[VirtualInterfaceId] = js.undefined
-    ): DeleteBGPPeerRequest = {
-      val __obj = js.Dynamic.literal()
-      asn.foreach(__v => __obj.updateDynamic("asn")(__v.asInstanceOf[js.Any]))
-      bgpPeerId.foreach(__v => __obj.updateDynamic("bgpPeerId")(__v.asInstanceOf[js.Any]))
-      customerAddress.foreach(__v => __obj.updateDynamic("customerAddress")(__v.asInstanceOf[js.Any]))
-      virtualInterfaceId.foreach(__v => __obj.updateDynamic("virtualInterfaceId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteBGPPeerRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteBGPPeerResponse extends js.Object {
     var virtualInterface: js.UndefOr[VirtualInterface]
   }
 
-  object DeleteBGPPeerResponse {
-    @inline
-    def apply(
-        virtualInterface: js.UndefOr[VirtualInterface] = js.undefined
-    ): DeleteBGPPeerResponse = {
-      val __obj = js.Dynamic.literal()
-      virtualInterface.foreach(__v => __obj.updateDynamic("virtualInterface")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteBGPPeerResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteConnectionRequest extends js.Object {
     var connectionId: ConnectionId
   }
 
-  object DeleteConnectionRequest {
-    @inline
-    def apply(
-        connectionId: ConnectionId
-    ): DeleteConnectionRequest = {
-      val __obj = js.Dynamic.literal(
-        "connectionId" -> connectionId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteConnectionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDirectConnectGatewayAssociationProposalRequest extends js.Object {
     var proposalId: DirectConnectGatewayAssociationProposalId
   }
 
-  object DeleteDirectConnectGatewayAssociationProposalRequest {
-    @inline
-    def apply(
-        proposalId: DirectConnectGatewayAssociationProposalId
-    ): DeleteDirectConnectGatewayAssociationProposalRequest = {
-      val __obj = js.Dynamic.literal(
-        "proposalId" -> proposalId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteDirectConnectGatewayAssociationProposalRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDirectConnectGatewayAssociationProposalResult extends js.Object {
     var directConnectGatewayAssociationProposal: js.UndefOr[DirectConnectGatewayAssociationProposal]
   }
 
-  object DeleteDirectConnectGatewayAssociationProposalResult {
-    @inline
-    def apply(
-        directConnectGatewayAssociationProposal: js.UndefOr[DirectConnectGatewayAssociationProposal] = js.undefined
-    ): DeleteDirectConnectGatewayAssociationProposalResult = {
-      val __obj = js.Dynamic.literal()
-      directConnectGatewayAssociationProposal.foreach(__v =>
-        __obj.updateDynamic("directConnectGatewayAssociationProposal")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[DeleteDirectConnectGatewayAssociationProposalResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDirectConnectGatewayAssociationRequest extends js.Object {
     var associationId: js.UndefOr[DirectConnectGatewayAssociationId]
     var directConnectGatewayId: js.UndefOr[DirectConnectGatewayId]
     var virtualGatewayId: js.UndefOr[VirtualGatewayId]
   }
 
-  object DeleteDirectConnectGatewayAssociationRequest {
-    @inline
-    def apply(
-        associationId: js.UndefOr[DirectConnectGatewayAssociationId] = js.undefined,
-        directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
-        virtualGatewayId: js.UndefOr[VirtualGatewayId] = js.undefined
-    ): DeleteDirectConnectGatewayAssociationRequest = {
-      val __obj = js.Dynamic.literal()
-      associationId.foreach(__v => __obj.updateDynamic("associationId")(__v.asInstanceOf[js.Any]))
-      directConnectGatewayId.foreach(__v => __obj.updateDynamic("directConnectGatewayId")(__v.asInstanceOf[js.Any]))
-      virtualGatewayId.foreach(__v => __obj.updateDynamic("virtualGatewayId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteDirectConnectGatewayAssociationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDirectConnectGatewayAssociationResult extends js.Object {
     var directConnectGatewayAssociation: js.UndefOr[DirectConnectGatewayAssociation]
   }
 
-  object DeleteDirectConnectGatewayAssociationResult {
-    @inline
-    def apply(
-        directConnectGatewayAssociation: js.UndefOr[DirectConnectGatewayAssociation] = js.undefined
-    ): DeleteDirectConnectGatewayAssociationResult = {
-      val __obj = js.Dynamic.literal()
-      directConnectGatewayAssociation.foreach(__v =>
-        __obj.updateDynamic("directConnectGatewayAssociation")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[DeleteDirectConnectGatewayAssociationResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDirectConnectGatewayRequest extends js.Object {
     var directConnectGatewayId: DirectConnectGatewayId
   }
 
-  object DeleteDirectConnectGatewayRequest {
-    @inline
-    def apply(
-        directConnectGatewayId: DirectConnectGatewayId
-    ): DeleteDirectConnectGatewayRequest = {
-      val __obj = js.Dynamic.literal(
-        "directConnectGatewayId" -> directConnectGatewayId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteDirectConnectGatewayRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDirectConnectGatewayResult extends js.Object {
     var directConnectGateway: js.UndefOr[DirectConnectGateway]
   }
 
-  object DeleteDirectConnectGatewayResult {
-    @inline
-    def apply(
-        directConnectGateway: js.UndefOr[DirectConnectGateway] = js.undefined
-    ): DeleteDirectConnectGatewayResult = {
-      val __obj = js.Dynamic.literal()
-      directConnectGateway.foreach(__v => __obj.updateDynamic("directConnectGateway")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteDirectConnectGatewayResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteInterconnectRequest extends js.Object {
     var interconnectId: InterconnectId
   }
 
-  object DeleteInterconnectRequest {
-    @inline
-    def apply(
-        interconnectId: InterconnectId
-    ): DeleteInterconnectRequest = {
-      val __obj = js.Dynamic.literal(
-        "interconnectId" -> interconnectId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteInterconnectRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteInterconnectResponse extends js.Object {
     var interconnectState: js.UndefOr[InterconnectState]
   }
 
-  object DeleteInterconnectResponse {
-    @inline
-    def apply(
-        interconnectState: js.UndefOr[InterconnectState] = js.undefined
-    ): DeleteInterconnectResponse = {
-      val __obj = js.Dynamic.literal()
-      interconnectState.foreach(__v => __obj.updateDynamic("interconnectState")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteInterconnectResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteLagRequest extends js.Object {
     var lagId: LagId
   }
 
-  object DeleteLagRequest {
-    @inline
-    def apply(
-        lagId: LagId
-    ): DeleteLagRequest = {
-      val __obj = js.Dynamic.literal(
-        "lagId" -> lagId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteLagRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteVirtualInterfaceRequest extends js.Object {
     var virtualInterfaceId: VirtualInterfaceId
   }
 
-  object DeleteVirtualInterfaceRequest {
-    @inline
-    def apply(
-        virtualInterfaceId: VirtualInterfaceId
-    ): DeleteVirtualInterfaceRequest = {
-      val __obj = js.Dynamic.literal(
-        "virtualInterfaceId" -> virtualInterfaceId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteVirtualInterfaceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteVirtualInterfaceResponse extends js.Object {
     var virtualInterfaceState: js.UndefOr[VirtualInterfaceState]
   }
 
-  object DeleteVirtualInterfaceResponse {
-    @inline
-    def apply(
-        virtualInterfaceState: js.UndefOr[VirtualInterfaceState] = js.undefined
-    ): DeleteVirtualInterfaceResponse = {
-      val __obj = js.Dynamic.literal()
-      virtualInterfaceState.foreach(__v => __obj.updateDynamic("virtualInterfaceState")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteVirtualInterfaceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeConnectionLoaRequest extends js.Object {
     var connectionId: ConnectionId
     var loaContentType: js.UndefOr[LoaContentType]
     var providerName: js.UndefOr[ProviderName]
   }
 
-  object DescribeConnectionLoaRequest {
-    @inline
-    def apply(
-        connectionId: ConnectionId,
-        loaContentType: js.UndefOr[LoaContentType] = js.undefined,
-        providerName: js.UndefOr[ProviderName] = js.undefined
-    ): DescribeConnectionLoaRequest = {
-      val __obj = js.Dynamic.literal(
-        "connectionId" -> connectionId.asInstanceOf[js.Any]
-      )
-
-      loaContentType.foreach(__v => __obj.updateDynamic("loaContentType")(__v.asInstanceOf[js.Any]))
-      providerName.foreach(__v => __obj.updateDynamic("providerName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeConnectionLoaRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeConnectionLoaResponse extends js.Object {
     var loa: js.UndefOr[Loa]
   }
 
-  object DescribeConnectionLoaResponse {
-    @inline
-    def apply(
-        loa: js.UndefOr[Loa] = js.undefined
-    ): DescribeConnectionLoaResponse = {
-      val __obj = js.Dynamic.literal()
-      loa.foreach(__v => __obj.updateDynamic("loa")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeConnectionLoaResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeConnectionsOnInterconnectRequest extends js.Object {
     var interconnectId: InterconnectId
   }
 
-  object DescribeConnectionsOnInterconnectRequest {
-    @inline
-    def apply(
-        interconnectId: InterconnectId
-    ): DescribeConnectionsOnInterconnectRequest = {
-      val __obj = js.Dynamic.literal(
-        "interconnectId" -> interconnectId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeConnectionsOnInterconnectRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeConnectionsRequest extends js.Object {
     var connectionId: js.UndefOr[ConnectionId]
   }
 
-  object DescribeConnectionsRequest {
-    @inline
-    def apply(
-        connectionId: js.UndefOr[ConnectionId] = js.undefined
-    ): DescribeConnectionsRequest = {
-      val __obj = js.Dynamic.literal()
-      connectionId.foreach(__v => __obj.updateDynamic("connectionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeConnectionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeDirectConnectGatewayAssociationProposalsRequest extends js.Object {
     var associatedGatewayId: js.UndefOr[AssociatedGatewayId]
     var directConnectGatewayId: js.UndefOr[DirectConnectGatewayId]
@@ -1622,48 +812,15 @@ package directconnect {
     var proposalId: js.UndefOr[DirectConnectGatewayAssociationProposalId]
   }
 
-  object DescribeDirectConnectGatewayAssociationProposalsRequest {
-    @inline
-    def apply(
-        associatedGatewayId: js.UndefOr[AssociatedGatewayId] = js.undefined,
-        directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
-        maxResults: js.UndefOr[MaxResultSetSize] = js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined,
-        proposalId: js.UndefOr[DirectConnectGatewayAssociationProposalId] = js.undefined
-    ): DescribeDirectConnectGatewayAssociationProposalsRequest = {
-      val __obj = js.Dynamic.literal()
-      associatedGatewayId.foreach(__v => __obj.updateDynamic("associatedGatewayId")(__v.asInstanceOf[js.Any]))
-      directConnectGatewayId.foreach(__v => __obj.updateDynamic("directConnectGatewayId")(__v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      proposalId.foreach(__v => __obj.updateDynamic("proposalId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeDirectConnectGatewayAssociationProposalsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeDirectConnectGatewayAssociationProposalsResult extends js.Object {
     var directConnectGatewayAssociationProposals: js.UndefOr[DirectConnectGatewayAssociationProposalList]
     var nextToken: js.UndefOr[PaginationToken]
   }
 
-  object DescribeDirectConnectGatewayAssociationProposalsResult {
-    @inline
-    def apply(
-        directConnectGatewayAssociationProposals: js.UndefOr[DirectConnectGatewayAssociationProposalList] =
-          js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): DescribeDirectConnectGatewayAssociationProposalsResult = {
-      val __obj = js.Dynamic.literal()
-      directConnectGatewayAssociationProposals.foreach(__v =>
-        __obj.updateDynamic("directConnectGatewayAssociationProposals")(__v.asInstanceOf[js.Any])
-      )
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeDirectConnectGatewayAssociationProposalsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeDirectConnectGatewayAssociationsRequest extends js.Object {
     var associatedGatewayId: js.UndefOr[AssociatedGatewayId]
     var associationId: js.UndefOr[DirectConnectGatewayAssociationId]
@@ -1673,49 +830,15 @@ package directconnect {
     var virtualGatewayId: js.UndefOr[VirtualGatewayId]
   }
 
-  object DescribeDirectConnectGatewayAssociationsRequest {
-    @inline
-    def apply(
-        associatedGatewayId: js.UndefOr[AssociatedGatewayId] = js.undefined,
-        associationId: js.UndefOr[DirectConnectGatewayAssociationId] = js.undefined,
-        directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
-        maxResults: js.UndefOr[MaxResultSetSize] = js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined,
-        virtualGatewayId: js.UndefOr[VirtualGatewayId] = js.undefined
-    ): DescribeDirectConnectGatewayAssociationsRequest = {
-      val __obj = js.Dynamic.literal()
-      associatedGatewayId.foreach(__v => __obj.updateDynamic("associatedGatewayId")(__v.asInstanceOf[js.Any]))
-      associationId.foreach(__v => __obj.updateDynamic("associationId")(__v.asInstanceOf[js.Any]))
-      directConnectGatewayId.foreach(__v => __obj.updateDynamic("directConnectGatewayId")(__v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      virtualGatewayId.foreach(__v => __obj.updateDynamic("virtualGatewayId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeDirectConnectGatewayAssociationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeDirectConnectGatewayAssociationsResult extends js.Object {
     var directConnectGatewayAssociations: js.UndefOr[DirectConnectGatewayAssociationList]
     var nextToken: js.UndefOr[PaginationToken]
   }
 
-  object DescribeDirectConnectGatewayAssociationsResult {
-    @inline
-    def apply(
-        directConnectGatewayAssociations: js.UndefOr[DirectConnectGatewayAssociationList] = js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): DescribeDirectConnectGatewayAssociationsResult = {
-      val __obj = js.Dynamic.literal()
-      directConnectGatewayAssociations.foreach(__v =>
-        __obj.updateDynamic("directConnectGatewayAssociations")(__v.asInstanceOf[js.Any])
-      )
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeDirectConnectGatewayAssociationsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeDirectConnectGatewayAttachmentsRequest extends js.Object {
     var directConnectGatewayId: js.UndefOr[DirectConnectGatewayId]
     var maxResults: js.UndefOr[MaxResultSetSize]
@@ -1723,256 +846,92 @@ package directconnect {
     var virtualInterfaceId: js.UndefOr[VirtualInterfaceId]
   }
 
-  object DescribeDirectConnectGatewayAttachmentsRequest {
-    @inline
-    def apply(
-        directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
-        maxResults: js.UndefOr[MaxResultSetSize] = js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined,
-        virtualInterfaceId: js.UndefOr[VirtualInterfaceId] = js.undefined
-    ): DescribeDirectConnectGatewayAttachmentsRequest = {
-      val __obj = js.Dynamic.literal()
-      directConnectGatewayId.foreach(__v => __obj.updateDynamic("directConnectGatewayId")(__v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      virtualInterfaceId.foreach(__v => __obj.updateDynamic("virtualInterfaceId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeDirectConnectGatewayAttachmentsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeDirectConnectGatewayAttachmentsResult extends js.Object {
     var directConnectGatewayAttachments: js.UndefOr[DirectConnectGatewayAttachmentList]
     var nextToken: js.UndefOr[PaginationToken]
   }
 
-  object DescribeDirectConnectGatewayAttachmentsResult {
-    @inline
-    def apply(
-        directConnectGatewayAttachments: js.UndefOr[DirectConnectGatewayAttachmentList] = js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): DescribeDirectConnectGatewayAttachmentsResult = {
-      val __obj = js.Dynamic.literal()
-      directConnectGatewayAttachments.foreach(__v =>
-        __obj.updateDynamic("directConnectGatewayAttachments")(__v.asInstanceOf[js.Any])
-      )
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeDirectConnectGatewayAttachmentsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeDirectConnectGatewaysRequest extends js.Object {
     var directConnectGatewayId: js.UndefOr[DirectConnectGatewayId]
     var maxResults: js.UndefOr[MaxResultSetSize]
     var nextToken: js.UndefOr[PaginationToken]
   }
 
-  object DescribeDirectConnectGatewaysRequest {
-    @inline
-    def apply(
-        directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
-        maxResults: js.UndefOr[MaxResultSetSize] = js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): DescribeDirectConnectGatewaysRequest = {
-      val __obj = js.Dynamic.literal()
-      directConnectGatewayId.foreach(__v => __obj.updateDynamic("directConnectGatewayId")(__v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeDirectConnectGatewaysRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeDirectConnectGatewaysResult extends js.Object {
     var directConnectGateways: js.UndefOr[DirectConnectGatewayList]
     var nextToken: js.UndefOr[PaginationToken]
   }
 
-  object DescribeDirectConnectGatewaysResult {
-    @inline
-    def apply(
-        directConnectGateways: js.UndefOr[DirectConnectGatewayList] = js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): DescribeDirectConnectGatewaysResult = {
-      val __obj = js.Dynamic.literal()
-      directConnectGateways.foreach(__v => __obj.updateDynamic("directConnectGateways")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeDirectConnectGatewaysResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeHostedConnectionsRequest extends js.Object {
     var connectionId: ConnectionId
   }
 
-  object DescribeHostedConnectionsRequest {
-    @inline
-    def apply(
-        connectionId: ConnectionId
-    ): DescribeHostedConnectionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "connectionId" -> connectionId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeHostedConnectionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeInterconnectLoaRequest extends js.Object {
     var interconnectId: InterconnectId
     var loaContentType: js.UndefOr[LoaContentType]
     var providerName: js.UndefOr[ProviderName]
   }
 
-  object DescribeInterconnectLoaRequest {
-    @inline
-    def apply(
-        interconnectId: InterconnectId,
-        loaContentType: js.UndefOr[LoaContentType] = js.undefined,
-        providerName: js.UndefOr[ProviderName] = js.undefined
-    ): DescribeInterconnectLoaRequest = {
-      val __obj = js.Dynamic.literal(
-        "interconnectId" -> interconnectId.asInstanceOf[js.Any]
-      )
-
-      loaContentType.foreach(__v => __obj.updateDynamic("loaContentType")(__v.asInstanceOf[js.Any]))
-      providerName.foreach(__v => __obj.updateDynamic("providerName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeInterconnectLoaRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeInterconnectLoaResponse extends js.Object {
     var loa: js.UndefOr[Loa]
   }
 
-  object DescribeInterconnectLoaResponse {
-    @inline
-    def apply(
-        loa: js.UndefOr[Loa] = js.undefined
-    ): DescribeInterconnectLoaResponse = {
-      val __obj = js.Dynamic.literal()
-      loa.foreach(__v => __obj.updateDynamic("loa")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeInterconnectLoaResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeInterconnectsRequest extends js.Object {
     var interconnectId: js.UndefOr[InterconnectId]
   }
 
-  object DescribeInterconnectsRequest {
-    @inline
-    def apply(
-        interconnectId: js.UndefOr[InterconnectId] = js.undefined
-    ): DescribeInterconnectsRequest = {
-      val __obj = js.Dynamic.literal()
-      interconnectId.foreach(__v => __obj.updateDynamic("interconnectId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeInterconnectsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeLagsRequest extends js.Object {
     var lagId: js.UndefOr[LagId]
   }
 
-  object DescribeLagsRequest {
-    @inline
-    def apply(
-        lagId: js.UndefOr[LagId] = js.undefined
-    ): DescribeLagsRequest = {
-      val __obj = js.Dynamic.literal()
-      lagId.foreach(__v => __obj.updateDynamic("lagId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeLagsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeLoaRequest extends js.Object {
     var connectionId: ConnectionId
     var loaContentType: js.UndefOr[LoaContentType]
     var providerName: js.UndefOr[ProviderName]
   }
 
-  object DescribeLoaRequest {
-    @inline
-    def apply(
-        connectionId: ConnectionId,
-        loaContentType: js.UndefOr[LoaContentType] = js.undefined,
-        providerName: js.UndefOr[ProviderName] = js.undefined
-    ): DescribeLoaRequest = {
-      val __obj = js.Dynamic.literal(
-        "connectionId" -> connectionId.asInstanceOf[js.Any]
-      )
-
-      loaContentType.foreach(__v => __obj.updateDynamic("loaContentType")(__v.asInstanceOf[js.Any]))
-      providerName.foreach(__v => __obj.updateDynamic("providerName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeLoaRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeTagsRequest extends js.Object {
     var resourceArns: ResourceArnList
   }
 
-  object DescribeTagsRequest {
-    @inline
-    def apply(
-        resourceArns: ResourceArnList
-    ): DescribeTagsRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceArns" -> resourceArns.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeTagsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeTagsResponse extends js.Object {
     var resourceTags: js.UndefOr[ResourceTagList]
   }
 
-  object DescribeTagsResponse {
-    @inline
-    def apply(
-        resourceTags: js.UndefOr[ResourceTagList] = js.undefined
-    ): DescribeTagsResponse = {
-      val __obj = js.Dynamic.literal()
-      resourceTags.foreach(__v => __obj.updateDynamic("resourceTags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeTagsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeVirtualInterfacesRequest extends js.Object {
     var connectionId: js.UndefOr[ConnectionId]
     var virtualInterfaceId: js.UndefOr[VirtualInterfaceId]
-  }
-
-  object DescribeVirtualInterfacesRequest {
-    @inline
-    def apply(
-        connectionId: js.UndefOr[ConnectionId] = js.undefined,
-        virtualInterfaceId: js.UndefOr[VirtualInterfaceId] = js.undefined
-    ): DescribeVirtualInterfacesRequest = {
-      val __obj = js.Dynamic.literal()
-      connectionId.foreach(__v => __obj.updateDynamic("connectionId")(__v.asInstanceOf[js.Any]))
-      virtualInterfaceId.foreach(__v => __obj.updateDynamic("virtualInterfaceId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeVirtualInterfacesRequest]
-    }
   }
 
   /**
     * Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.
     */
   @js.native
+  @Factory
   trait DirectConnectGateway extends js.Object {
     var amazonSideAsn: js.UndefOr[LongAsn]
     var directConnectGatewayId: js.UndefOr[DirectConnectGatewayId]
@@ -1982,33 +941,11 @@ package directconnect {
     var stateChangeError: js.UndefOr[StateChangeError]
   }
 
-  object DirectConnectGateway {
-    @inline
-    def apply(
-        amazonSideAsn: js.UndefOr[LongAsn] = js.undefined,
-        directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
-        directConnectGatewayName: js.UndefOr[DirectConnectGatewayName] = js.undefined,
-        directConnectGatewayState: js.UndefOr[DirectConnectGatewayState] = js.undefined,
-        ownerAccount: js.UndefOr[OwnerAccount] = js.undefined,
-        stateChangeError: js.UndefOr[StateChangeError] = js.undefined
-    ): DirectConnectGateway = {
-      val __obj = js.Dynamic.literal()
-      amazonSideAsn.foreach(__v => __obj.updateDynamic("amazonSideAsn")(__v.asInstanceOf[js.Any]))
-      directConnectGatewayId.foreach(__v => __obj.updateDynamic("directConnectGatewayId")(__v.asInstanceOf[js.Any]))
-      directConnectGatewayName.foreach(__v => __obj.updateDynamic("directConnectGatewayName")(__v.asInstanceOf[js.Any]))
-      directConnectGatewayState.foreach(__v =>
-        __obj.updateDynamic("directConnectGatewayState")(__v.asInstanceOf[js.Any])
-      )
-      ownerAccount.foreach(__v => __obj.updateDynamic("ownerAccount")(__v.asInstanceOf[js.Any]))
-      stateChangeError.foreach(__v => __obj.updateDynamic("stateChangeError")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DirectConnectGateway]
-    }
-  }
-
   /**
     * Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.
     */
   @js.native
+  @Factory
   trait DirectConnectGatewayAssociation extends js.Object {
     var allowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList]
     var associatedGateway: js.UndefOr[AssociatedGateway]
@@ -2022,45 +959,11 @@ package directconnect {
     var virtualGatewayRegion: js.UndefOr[VirtualGatewayRegion]
   }
 
-  object DirectConnectGatewayAssociation {
-    @inline
-    def apply(
-        allowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList] = js.undefined,
-        associatedGateway: js.UndefOr[AssociatedGateway] = js.undefined,
-        associationId: js.UndefOr[DirectConnectGatewayAssociationId] = js.undefined,
-        associationState: js.UndefOr[DirectConnectGatewayAssociationState] = js.undefined,
-        directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
-        directConnectGatewayOwnerAccount: js.UndefOr[OwnerAccount] = js.undefined,
-        stateChangeError: js.UndefOr[StateChangeError] = js.undefined,
-        virtualGatewayId: js.UndefOr[VirtualGatewayId] = js.undefined,
-        virtualGatewayOwnerAccount: js.UndefOr[OwnerAccount] = js.undefined,
-        virtualGatewayRegion: js.UndefOr[VirtualGatewayRegion] = js.undefined
-    ): DirectConnectGatewayAssociation = {
-      val __obj = js.Dynamic.literal()
-      allowedPrefixesToDirectConnectGateway.foreach(__v =>
-        __obj.updateDynamic("allowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
-      )
-      associatedGateway.foreach(__v => __obj.updateDynamic("associatedGateway")(__v.asInstanceOf[js.Any]))
-      associationId.foreach(__v => __obj.updateDynamic("associationId")(__v.asInstanceOf[js.Any]))
-      associationState.foreach(__v => __obj.updateDynamic("associationState")(__v.asInstanceOf[js.Any]))
-      directConnectGatewayId.foreach(__v => __obj.updateDynamic("directConnectGatewayId")(__v.asInstanceOf[js.Any]))
-      directConnectGatewayOwnerAccount.foreach(__v =>
-        __obj.updateDynamic("directConnectGatewayOwnerAccount")(__v.asInstanceOf[js.Any])
-      )
-      stateChangeError.foreach(__v => __obj.updateDynamic("stateChangeError")(__v.asInstanceOf[js.Any]))
-      virtualGatewayId.foreach(__v => __obj.updateDynamic("virtualGatewayId")(__v.asInstanceOf[js.Any]))
-      virtualGatewayOwnerAccount.foreach(__v =>
-        __obj.updateDynamic("virtualGatewayOwnerAccount")(__v.asInstanceOf[js.Any])
-      )
-      virtualGatewayRegion.foreach(__v => __obj.updateDynamic("virtualGatewayRegion")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DirectConnectGatewayAssociation]
-    }
-  }
-
   /**
     * Information about the proposal request to attach a virtual private gateway to a Direct Connect gateway.
     */
   @js.native
+  @Factory
   trait DirectConnectGatewayAssociationProposal extends js.Object {
     var associatedGateway: js.UndefOr[AssociatedGateway]
     var directConnectGatewayId: js.UndefOr[DirectConnectGatewayId]
@@ -2069,35 +972,6 @@ package directconnect {
     var proposalId: js.UndefOr[DirectConnectGatewayAssociationProposalId]
     var proposalState: js.UndefOr[DirectConnectGatewayAssociationProposalState]
     var requestedAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList]
-  }
-
-  object DirectConnectGatewayAssociationProposal {
-    @inline
-    def apply(
-        associatedGateway: js.UndefOr[AssociatedGateway] = js.undefined,
-        directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
-        directConnectGatewayOwnerAccount: js.UndefOr[OwnerAccount] = js.undefined,
-        existingAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList] = js.undefined,
-        proposalId: js.UndefOr[DirectConnectGatewayAssociationProposalId] = js.undefined,
-        proposalState: js.UndefOr[DirectConnectGatewayAssociationProposalState] = js.undefined,
-        requestedAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList] = js.undefined
-    ): DirectConnectGatewayAssociationProposal = {
-      val __obj = js.Dynamic.literal()
-      associatedGateway.foreach(__v => __obj.updateDynamic("associatedGateway")(__v.asInstanceOf[js.Any]))
-      directConnectGatewayId.foreach(__v => __obj.updateDynamic("directConnectGatewayId")(__v.asInstanceOf[js.Any]))
-      directConnectGatewayOwnerAccount.foreach(__v =>
-        __obj.updateDynamic("directConnectGatewayOwnerAccount")(__v.asInstanceOf[js.Any])
-      )
-      existingAllowedPrefixesToDirectConnectGateway.foreach(__v =>
-        __obj.updateDynamic("existingAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
-      )
-      proposalId.foreach(__v => __obj.updateDynamic("proposalId")(__v.asInstanceOf[js.Any]))
-      proposalState.foreach(__v => __obj.updateDynamic("proposalState")(__v.asInstanceOf[js.Any]))
-      requestedAllowedPrefixesToDirectConnectGateway.foreach(__v =>
-        __obj.updateDynamic("requestedAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[DirectConnectGatewayAssociationProposal]
-    }
   }
 
   @js.native
@@ -2126,6 +1000,7 @@ package directconnect {
     * Information about an attachment between a Direct Connect gateway and a virtual interface.
     */
   @js.native
+  @Factory
   trait DirectConnectGatewayAttachment extends js.Object {
     var attachmentState: js.UndefOr[DirectConnectGatewayAttachmentState]
     var attachmentType: js.UndefOr[DirectConnectGatewayAttachmentType]
@@ -2134,31 +1009,6 @@ package directconnect {
     var virtualInterfaceId: js.UndefOr[VirtualInterfaceId]
     var virtualInterfaceOwnerAccount: js.UndefOr[OwnerAccount]
     var virtualInterfaceRegion: js.UndefOr[VirtualInterfaceRegion]
-  }
-
-  object DirectConnectGatewayAttachment {
-    @inline
-    def apply(
-        attachmentState: js.UndefOr[DirectConnectGatewayAttachmentState] = js.undefined,
-        attachmentType: js.UndefOr[DirectConnectGatewayAttachmentType] = js.undefined,
-        directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
-        stateChangeError: js.UndefOr[StateChangeError] = js.undefined,
-        virtualInterfaceId: js.UndefOr[VirtualInterfaceId] = js.undefined,
-        virtualInterfaceOwnerAccount: js.UndefOr[OwnerAccount] = js.undefined,
-        virtualInterfaceRegion: js.UndefOr[VirtualInterfaceRegion] = js.undefined
-    ): DirectConnectGatewayAttachment = {
-      val __obj = js.Dynamic.literal()
-      attachmentState.foreach(__v => __obj.updateDynamic("attachmentState")(__v.asInstanceOf[js.Any]))
-      attachmentType.foreach(__v => __obj.updateDynamic("attachmentType")(__v.asInstanceOf[js.Any]))
-      directConnectGatewayId.foreach(__v => __obj.updateDynamic("directConnectGatewayId")(__v.asInstanceOf[js.Any]))
-      stateChangeError.foreach(__v => __obj.updateDynamic("stateChangeError")(__v.asInstanceOf[js.Any]))
-      virtualInterfaceId.foreach(__v => __obj.updateDynamic("virtualInterfaceId")(__v.asInstanceOf[js.Any]))
-      virtualInterfaceOwnerAccount.foreach(__v =>
-        __obj.updateDynamic("virtualInterfaceOwnerAccount")(__v.asInstanceOf[js.Any])
-      )
-      virtualInterfaceRegion.foreach(__v => __obj.updateDynamic("virtualInterfaceRegion")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DirectConnectGatewayAttachment]
-    }
   }
 
   @js.native
@@ -2193,24 +1043,10 @@ package directconnect {
   }
 
   @js.native
+  @Factory
   trait DisassociateConnectionFromLagRequest extends js.Object {
     var connectionId: ConnectionId
     var lagId: LagId
-  }
-
-  object DisassociateConnectionFromLagRequest {
-    @inline
-    def apply(
-        connectionId: ConnectionId,
-        lagId: LagId
-    ): DisassociateConnectionFromLagRequest = {
-      val __obj = js.Dynamic.literal(
-        "connectionId" -> connectionId.asInstanceOf[js.Any],
-        "lagId"        -> lagId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisassociateConnectionFromLagRequest]
-    }
   }
 
   @js.native
@@ -2236,6 +1072,7 @@ package directconnect {
     * Information about an interconnect.
     */
   @js.native
+  @Factory
   trait Interconnect extends js.Object {
     var awsDevice: js.UndefOr[AwsDevice]
     var awsDeviceV2: js.UndefOr[AwsDeviceV2]
@@ -2253,43 +1090,6 @@ package directconnect {
     var tags: js.UndefOr[TagList]
   }
 
-  object Interconnect {
-    @inline
-    def apply(
-        awsDevice: js.UndefOr[AwsDevice] = js.undefined,
-        awsDeviceV2: js.UndefOr[AwsDeviceV2] = js.undefined,
-        bandwidth: js.UndefOr[Bandwidth] = js.undefined,
-        hasLogicalRedundancy: js.UndefOr[HasLogicalRedundancy] = js.undefined,
-        interconnectId: js.UndefOr[InterconnectId] = js.undefined,
-        interconnectName: js.UndefOr[InterconnectName] = js.undefined,
-        interconnectState: js.UndefOr[InterconnectState] = js.undefined,
-        jumboFrameCapable: js.UndefOr[JumboFrameCapable] = js.undefined,
-        lagId: js.UndefOr[LagId] = js.undefined,
-        loaIssueTime: js.UndefOr[LoaIssueTime] = js.undefined,
-        location: js.UndefOr[LocationCode] = js.undefined,
-        providerName: js.UndefOr[ProviderName] = js.undefined,
-        region: js.UndefOr[Region] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): Interconnect = {
-      val __obj = js.Dynamic.literal()
-      awsDevice.foreach(__v => __obj.updateDynamic("awsDevice")(__v.asInstanceOf[js.Any]))
-      awsDeviceV2.foreach(__v => __obj.updateDynamic("awsDeviceV2")(__v.asInstanceOf[js.Any]))
-      bandwidth.foreach(__v => __obj.updateDynamic("bandwidth")(__v.asInstanceOf[js.Any]))
-      hasLogicalRedundancy.foreach(__v => __obj.updateDynamic("hasLogicalRedundancy")(__v.asInstanceOf[js.Any]))
-      interconnectId.foreach(__v => __obj.updateDynamic("interconnectId")(__v.asInstanceOf[js.Any]))
-      interconnectName.foreach(__v => __obj.updateDynamic("interconnectName")(__v.asInstanceOf[js.Any]))
-      interconnectState.foreach(__v => __obj.updateDynamic("interconnectState")(__v.asInstanceOf[js.Any]))
-      jumboFrameCapable.foreach(__v => __obj.updateDynamic("jumboFrameCapable")(__v.asInstanceOf[js.Any]))
-      lagId.foreach(__v => __obj.updateDynamic("lagId")(__v.asInstanceOf[js.Any]))
-      loaIssueTime.foreach(__v => __obj.updateDynamic("loaIssueTime")(__v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
-      providerName.foreach(__v => __obj.updateDynamic("providerName")(__v.asInstanceOf[js.Any]))
-      region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Interconnect]
-    }
-  }
-
   @js.native
   sealed trait InterconnectState extends js.Any
   object InterconnectState extends js.Object {
@@ -2305,25 +1105,16 @@ package directconnect {
   }
 
   @js.native
+  @Factory
   trait Interconnects extends js.Object {
     var interconnects: js.UndefOr[InterconnectList]
-  }
-
-  object Interconnects {
-    @inline
-    def apply(
-        interconnects: js.UndefOr[InterconnectList] = js.undefined
-    ): Interconnects = {
-      val __obj = js.Dynamic.literal()
-      interconnects.foreach(__v => __obj.updateDynamic("interconnects")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Interconnects]
-    }
   }
 
   /**
     * Information about a link aggregation group (LAG).
     */
   @js.native
+  @Factory
   trait Lag extends js.Object {
     var allowsHostedConnections: js.UndefOr[BooleanFlag]
     var awsDevice: js.UndefOr[AwsDevice]
@@ -2344,49 +1135,6 @@ package directconnect {
     var tags: js.UndefOr[TagList]
   }
 
-  object Lag {
-    @inline
-    def apply(
-        allowsHostedConnections: js.UndefOr[BooleanFlag] = js.undefined,
-        awsDevice: js.UndefOr[AwsDevice] = js.undefined,
-        awsDeviceV2: js.UndefOr[AwsDeviceV2] = js.undefined,
-        connections: js.UndefOr[ConnectionList] = js.undefined,
-        connectionsBandwidth: js.UndefOr[Bandwidth] = js.undefined,
-        hasLogicalRedundancy: js.UndefOr[HasLogicalRedundancy] = js.undefined,
-        jumboFrameCapable: js.UndefOr[JumboFrameCapable] = js.undefined,
-        lagId: js.UndefOr[LagId] = js.undefined,
-        lagName: js.UndefOr[LagName] = js.undefined,
-        lagState: js.UndefOr[LagState] = js.undefined,
-        location: js.UndefOr[LocationCode] = js.undefined,
-        minimumLinks: js.UndefOr[Count] = js.undefined,
-        numberOfConnections: js.UndefOr[Count] = js.undefined,
-        ownerAccount: js.UndefOr[OwnerAccount] = js.undefined,
-        providerName: js.UndefOr[ProviderName] = js.undefined,
-        region: js.UndefOr[Region] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): Lag = {
-      val __obj = js.Dynamic.literal()
-      allowsHostedConnections.foreach(__v => __obj.updateDynamic("allowsHostedConnections")(__v.asInstanceOf[js.Any]))
-      awsDevice.foreach(__v => __obj.updateDynamic("awsDevice")(__v.asInstanceOf[js.Any]))
-      awsDeviceV2.foreach(__v => __obj.updateDynamic("awsDeviceV2")(__v.asInstanceOf[js.Any]))
-      connections.foreach(__v => __obj.updateDynamic("connections")(__v.asInstanceOf[js.Any]))
-      connectionsBandwidth.foreach(__v => __obj.updateDynamic("connectionsBandwidth")(__v.asInstanceOf[js.Any]))
-      hasLogicalRedundancy.foreach(__v => __obj.updateDynamic("hasLogicalRedundancy")(__v.asInstanceOf[js.Any]))
-      jumboFrameCapable.foreach(__v => __obj.updateDynamic("jumboFrameCapable")(__v.asInstanceOf[js.Any]))
-      lagId.foreach(__v => __obj.updateDynamic("lagId")(__v.asInstanceOf[js.Any]))
-      lagName.foreach(__v => __obj.updateDynamic("lagName")(__v.asInstanceOf[js.Any]))
-      lagState.foreach(__v => __obj.updateDynamic("lagState")(__v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
-      minimumLinks.foreach(__v => __obj.updateDynamic("minimumLinks")(__v.asInstanceOf[js.Any]))
-      numberOfConnections.foreach(__v => __obj.updateDynamic("numberOfConnections")(__v.asInstanceOf[js.Any]))
-      ownerAccount.foreach(__v => __obj.updateDynamic("ownerAccount")(__v.asInstanceOf[js.Any]))
-      providerName.foreach(__v => __obj.updateDynamic("providerName")(__v.asInstanceOf[js.Any]))
-      region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Lag]
-    }
-  }
-
   @js.native
   sealed trait LagState extends js.Any
   object LagState extends js.Object {
@@ -2402,41 +1150,19 @@ package directconnect {
   }
 
   @js.native
+  @Factory
   trait Lags extends js.Object {
     var lags: js.UndefOr[LagList]
-  }
-
-  object Lags {
-    @inline
-    def apply(
-        lags: js.UndefOr[LagList] = js.undefined
-    ): Lags = {
-      val __obj = js.Dynamic.literal()
-      lags.foreach(__v => __obj.updateDynamic("lags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Lags]
-    }
   }
 
   /**
     * Information about a Letter of Authorization - Connecting Facility Assignment (LOA-CFA) for a connection.
     */
   @js.native
+  @Factory
   trait Loa extends js.Object {
     var loaContent: js.UndefOr[LoaContent]
     var loaContentType: js.UndefOr[LoaContentType]
-  }
-
-  object Loa {
-    @inline
-    def apply(
-        loaContent: js.UndefOr[LoaContent] = js.undefined,
-        loaContentType: js.UndefOr[LoaContentType] = js.undefined
-    ): Loa = {
-      val __obj = js.Dynamic.literal()
-      loaContent.foreach(__v => __obj.updateDynamic("loaContent")(__v.asInstanceOf[js.Any]))
-      loaContentType.foreach(__v => __obj.updateDynamic("loaContentType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Loa]
-    }
   }
 
   @js.native
@@ -2451,6 +1177,7 @@ package directconnect {
     * Information about an AWS Direct Connect location.
     */
   @js.native
+  @Factory
   trait Location extends js.Object {
     var availablePortSpeeds: js.UndefOr[AvailablePortSpeeds]
     var availableProviders: js.UndefOr[ProviderList]
@@ -2459,45 +1186,17 @@ package directconnect {
     var region: js.UndefOr[Region]
   }
 
-  object Location {
-    @inline
-    def apply(
-        availablePortSpeeds: js.UndefOr[AvailablePortSpeeds] = js.undefined,
-        availableProviders: js.UndefOr[ProviderList] = js.undefined,
-        locationCode: js.UndefOr[LocationCode] = js.undefined,
-        locationName: js.UndefOr[LocationName] = js.undefined,
-        region: js.UndefOr[Region] = js.undefined
-    ): Location = {
-      val __obj = js.Dynamic.literal()
-      availablePortSpeeds.foreach(__v => __obj.updateDynamic("availablePortSpeeds")(__v.asInstanceOf[js.Any]))
-      availableProviders.foreach(__v => __obj.updateDynamic("availableProviders")(__v.asInstanceOf[js.Any]))
-      locationCode.foreach(__v => __obj.updateDynamic("locationCode")(__v.asInstanceOf[js.Any]))
-      locationName.foreach(__v => __obj.updateDynamic("locationName")(__v.asInstanceOf[js.Any]))
-      region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Location]
-    }
-  }
-
   @js.native
+  @Factory
   trait Locations extends js.Object {
     var locations: js.UndefOr[LocationList]
-  }
-
-  object Locations {
-    @inline
-    def apply(
-        locations: js.UndefOr[LocationList] = js.undefined
-    ): Locations = {
-      val __obj = js.Dynamic.literal()
-      locations.foreach(__v => __obj.updateDynamic("locations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Locations]
-    }
   }
 
   /**
     * Information about a new BGP peer.
     */
   @js.native
+  @Factory
   trait NewBGPPeer extends js.Object {
     var addressFamily: js.UndefOr[AddressFamily]
     var amazonAddress: js.UndefOr[AmazonAddress]
@@ -2506,29 +1205,11 @@ package directconnect {
     var customerAddress: js.UndefOr[CustomerAddress]
   }
 
-  object NewBGPPeer {
-    @inline
-    def apply(
-        addressFamily: js.UndefOr[AddressFamily] = js.undefined,
-        amazonAddress: js.UndefOr[AmazonAddress] = js.undefined,
-        asn: js.UndefOr[ASN] = js.undefined,
-        authKey: js.UndefOr[BGPAuthKey] = js.undefined,
-        customerAddress: js.UndefOr[CustomerAddress] = js.undefined
-    ): NewBGPPeer = {
-      val __obj = js.Dynamic.literal()
-      addressFamily.foreach(__v => __obj.updateDynamic("addressFamily")(__v.asInstanceOf[js.Any]))
-      amazonAddress.foreach(__v => __obj.updateDynamic("amazonAddress")(__v.asInstanceOf[js.Any]))
-      asn.foreach(__v => __obj.updateDynamic("asn")(__v.asInstanceOf[js.Any]))
-      authKey.foreach(__v => __obj.updateDynamic("authKey")(__v.asInstanceOf[js.Any]))
-      customerAddress.foreach(__v => __obj.updateDynamic("customerAddress")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NewBGPPeer]
-    }
-  }
-
   /**
     * Information about a private virtual interface.
     */
   @js.native
+  @Factory
   trait NewPrivateVirtualInterface extends js.Object {
     var asn: ASN
     var virtualInterfaceName: VirtualInterfaceName
@@ -2543,43 +1224,11 @@ package directconnect {
     var virtualGatewayId: js.UndefOr[VirtualGatewayId]
   }
 
-  object NewPrivateVirtualInterface {
-    @inline
-    def apply(
-        asn: ASN,
-        virtualInterfaceName: VirtualInterfaceName,
-        vlan: VLAN,
-        addressFamily: js.UndefOr[AddressFamily] = js.undefined,
-        amazonAddress: js.UndefOr[AmazonAddress] = js.undefined,
-        authKey: js.UndefOr[BGPAuthKey] = js.undefined,
-        customerAddress: js.UndefOr[CustomerAddress] = js.undefined,
-        directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
-        mtu: js.UndefOr[MTU] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined,
-        virtualGatewayId: js.UndefOr[VirtualGatewayId] = js.undefined
-    ): NewPrivateVirtualInterface = {
-      val __obj = js.Dynamic.literal(
-        "asn"                  -> asn.asInstanceOf[js.Any],
-        "virtualInterfaceName" -> virtualInterfaceName.asInstanceOf[js.Any],
-        "vlan"                 -> vlan.asInstanceOf[js.Any]
-      )
-
-      addressFamily.foreach(__v => __obj.updateDynamic("addressFamily")(__v.asInstanceOf[js.Any]))
-      amazonAddress.foreach(__v => __obj.updateDynamic("amazonAddress")(__v.asInstanceOf[js.Any]))
-      authKey.foreach(__v => __obj.updateDynamic("authKey")(__v.asInstanceOf[js.Any]))
-      customerAddress.foreach(__v => __obj.updateDynamic("customerAddress")(__v.asInstanceOf[js.Any]))
-      directConnectGatewayId.foreach(__v => __obj.updateDynamic("directConnectGatewayId")(__v.asInstanceOf[js.Any]))
-      mtu.foreach(__v => __obj.updateDynamic("mtu")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      virtualGatewayId.foreach(__v => __obj.updateDynamic("virtualGatewayId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NewPrivateVirtualInterface]
-    }
-  }
-
   /**
     * Information about a private virtual interface to be provisioned on a connection.
     */
   @js.native
+  @Factory
   trait NewPrivateVirtualInterfaceAllocation extends js.Object {
     var asn: ASN
     var virtualInterfaceName: VirtualInterfaceName
@@ -2592,39 +1241,11 @@ package directconnect {
     var tags: js.UndefOr[TagList]
   }
 
-  object NewPrivateVirtualInterfaceAllocation {
-    @inline
-    def apply(
-        asn: ASN,
-        virtualInterfaceName: VirtualInterfaceName,
-        vlan: VLAN,
-        addressFamily: js.UndefOr[AddressFamily] = js.undefined,
-        amazonAddress: js.UndefOr[AmazonAddress] = js.undefined,
-        authKey: js.UndefOr[BGPAuthKey] = js.undefined,
-        customerAddress: js.UndefOr[CustomerAddress] = js.undefined,
-        mtu: js.UndefOr[MTU] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): NewPrivateVirtualInterfaceAllocation = {
-      val __obj = js.Dynamic.literal(
-        "asn"                  -> asn.asInstanceOf[js.Any],
-        "virtualInterfaceName" -> virtualInterfaceName.asInstanceOf[js.Any],
-        "vlan"                 -> vlan.asInstanceOf[js.Any]
-      )
-
-      addressFamily.foreach(__v => __obj.updateDynamic("addressFamily")(__v.asInstanceOf[js.Any]))
-      amazonAddress.foreach(__v => __obj.updateDynamic("amazonAddress")(__v.asInstanceOf[js.Any]))
-      authKey.foreach(__v => __obj.updateDynamic("authKey")(__v.asInstanceOf[js.Any]))
-      customerAddress.foreach(__v => __obj.updateDynamic("customerAddress")(__v.asInstanceOf[js.Any]))
-      mtu.foreach(__v => __obj.updateDynamic("mtu")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NewPrivateVirtualInterfaceAllocation]
-    }
-  }
-
   /**
     * Information about a public virtual interface.
     */
   @js.native
+  @Factory
   trait NewPublicVirtualInterface extends js.Object {
     var asn: ASN
     var virtualInterfaceName: VirtualInterfaceName
@@ -2637,39 +1258,11 @@ package directconnect {
     var tags: js.UndefOr[TagList]
   }
 
-  object NewPublicVirtualInterface {
-    @inline
-    def apply(
-        asn: ASN,
-        virtualInterfaceName: VirtualInterfaceName,
-        vlan: VLAN,
-        addressFamily: js.UndefOr[AddressFamily] = js.undefined,
-        amazonAddress: js.UndefOr[AmazonAddress] = js.undefined,
-        authKey: js.UndefOr[BGPAuthKey] = js.undefined,
-        customerAddress: js.UndefOr[CustomerAddress] = js.undefined,
-        routeFilterPrefixes: js.UndefOr[RouteFilterPrefixList] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): NewPublicVirtualInterface = {
-      val __obj = js.Dynamic.literal(
-        "asn"                  -> asn.asInstanceOf[js.Any],
-        "virtualInterfaceName" -> virtualInterfaceName.asInstanceOf[js.Any],
-        "vlan"                 -> vlan.asInstanceOf[js.Any]
-      )
-
-      addressFamily.foreach(__v => __obj.updateDynamic("addressFamily")(__v.asInstanceOf[js.Any]))
-      amazonAddress.foreach(__v => __obj.updateDynamic("amazonAddress")(__v.asInstanceOf[js.Any]))
-      authKey.foreach(__v => __obj.updateDynamic("authKey")(__v.asInstanceOf[js.Any]))
-      customerAddress.foreach(__v => __obj.updateDynamic("customerAddress")(__v.asInstanceOf[js.Any]))
-      routeFilterPrefixes.foreach(__v => __obj.updateDynamic("routeFilterPrefixes")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NewPublicVirtualInterface]
-    }
-  }
-
   /**
     * Information about a public virtual interface to be provisioned on a connection.
     */
   @js.native
+  @Factory
   trait NewPublicVirtualInterfaceAllocation extends js.Object {
     var asn: ASN
     var virtualInterfaceName: VirtualInterfaceName
@@ -2682,39 +1275,11 @@ package directconnect {
     var tags: js.UndefOr[TagList]
   }
 
-  object NewPublicVirtualInterfaceAllocation {
-    @inline
-    def apply(
-        asn: ASN,
-        virtualInterfaceName: VirtualInterfaceName,
-        vlan: VLAN,
-        addressFamily: js.UndefOr[AddressFamily] = js.undefined,
-        amazonAddress: js.UndefOr[AmazonAddress] = js.undefined,
-        authKey: js.UndefOr[BGPAuthKey] = js.undefined,
-        customerAddress: js.UndefOr[CustomerAddress] = js.undefined,
-        routeFilterPrefixes: js.UndefOr[RouteFilterPrefixList] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): NewPublicVirtualInterfaceAllocation = {
-      val __obj = js.Dynamic.literal(
-        "asn"                  -> asn.asInstanceOf[js.Any],
-        "virtualInterfaceName" -> virtualInterfaceName.asInstanceOf[js.Any],
-        "vlan"                 -> vlan.asInstanceOf[js.Any]
-      )
-
-      addressFamily.foreach(__v => __obj.updateDynamic("addressFamily")(__v.asInstanceOf[js.Any]))
-      amazonAddress.foreach(__v => __obj.updateDynamic("amazonAddress")(__v.asInstanceOf[js.Any]))
-      authKey.foreach(__v => __obj.updateDynamic("authKey")(__v.asInstanceOf[js.Any]))
-      customerAddress.foreach(__v => __obj.updateDynamic("customerAddress")(__v.asInstanceOf[js.Any]))
-      routeFilterPrefixes.foreach(__v => __obj.updateDynamic("routeFilterPrefixes")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NewPublicVirtualInterfaceAllocation]
-    }
-  }
-
   /**
     * Information about a transit virtual interface.
     */
   @js.native
+  @Factory
   trait NewTransitVirtualInterface extends js.Object {
     var addressFamily: js.UndefOr[AddressFamily]
     var amazonAddress: js.UndefOr[AmazonAddress]
@@ -2728,39 +1293,11 @@ package directconnect {
     var vlan: js.UndefOr[VLAN]
   }
 
-  object NewTransitVirtualInterface {
-    @inline
-    def apply(
-        addressFamily: js.UndefOr[AddressFamily] = js.undefined,
-        amazonAddress: js.UndefOr[AmazonAddress] = js.undefined,
-        asn: js.UndefOr[ASN] = js.undefined,
-        authKey: js.UndefOr[BGPAuthKey] = js.undefined,
-        customerAddress: js.UndefOr[CustomerAddress] = js.undefined,
-        directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
-        mtu: js.UndefOr[MTU] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined,
-        virtualInterfaceName: js.UndefOr[VirtualInterfaceName] = js.undefined,
-        vlan: js.UndefOr[VLAN] = js.undefined
-    ): NewTransitVirtualInterface = {
-      val __obj = js.Dynamic.literal()
-      addressFamily.foreach(__v => __obj.updateDynamic("addressFamily")(__v.asInstanceOf[js.Any]))
-      amazonAddress.foreach(__v => __obj.updateDynamic("amazonAddress")(__v.asInstanceOf[js.Any]))
-      asn.foreach(__v => __obj.updateDynamic("asn")(__v.asInstanceOf[js.Any]))
-      authKey.foreach(__v => __obj.updateDynamic("authKey")(__v.asInstanceOf[js.Any]))
-      customerAddress.foreach(__v => __obj.updateDynamic("customerAddress")(__v.asInstanceOf[js.Any]))
-      directConnectGatewayId.foreach(__v => __obj.updateDynamic("directConnectGatewayId")(__v.asInstanceOf[js.Any]))
-      mtu.foreach(__v => __obj.updateDynamic("mtu")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      virtualInterfaceName.foreach(__v => __obj.updateDynamic("virtualInterfaceName")(__v.asInstanceOf[js.Any]))
-      vlan.foreach(__v => __obj.updateDynamic("vlan")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NewTransitVirtualInterface]
-    }
-  }
-
   /**
     * Information about a transit virtual interface to be provisioned on a connection.
     */
   @js.native
+  @Factory
   trait NewTransitVirtualInterfaceAllocation extends js.Object {
     var addressFamily: js.UndefOr[AddressFamily]
     var amazonAddress: js.UndefOr[AmazonAddress]
@@ -2773,297 +1310,107 @@ package directconnect {
     var vlan: js.UndefOr[VLAN]
   }
 
-  object NewTransitVirtualInterfaceAllocation {
-    @inline
-    def apply(
-        addressFamily: js.UndefOr[AddressFamily] = js.undefined,
-        amazonAddress: js.UndefOr[AmazonAddress] = js.undefined,
-        asn: js.UndefOr[ASN] = js.undefined,
-        authKey: js.UndefOr[BGPAuthKey] = js.undefined,
-        customerAddress: js.UndefOr[CustomerAddress] = js.undefined,
-        mtu: js.UndefOr[MTU] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined,
-        virtualInterfaceName: js.UndefOr[VirtualInterfaceName] = js.undefined,
-        vlan: js.UndefOr[VLAN] = js.undefined
-    ): NewTransitVirtualInterfaceAllocation = {
-      val __obj = js.Dynamic.literal()
-      addressFamily.foreach(__v => __obj.updateDynamic("addressFamily")(__v.asInstanceOf[js.Any]))
-      amazonAddress.foreach(__v => __obj.updateDynamic("amazonAddress")(__v.asInstanceOf[js.Any]))
-      asn.foreach(__v => __obj.updateDynamic("asn")(__v.asInstanceOf[js.Any]))
-      authKey.foreach(__v => __obj.updateDynamic("authKey")(__v.asInstanceOf[js.Any]))
-      customerAddress.foreach(__v => __obj.updateDynamic("customerAddress")(__v.asInstanceOf[js.Any]))
-      mtu.foreach(__v => __obj.updateDynamic("mtu")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      virtualInterfaceName.foreach(__v => __obj.updateDynamic("virtualInterfaceName")(__v.asInstanceOf[js.Any]))
-      vlan.foreach(__v => __obj.updateDynamic("vlan")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NewTransitVirtualInterfaceAllocation]
-    }
-  }
-
   /**
     * Information about a tag associated with an AWS Direct Connect resource.
     */
   @js.native
+  @Factory
   trait ResourceTag extends js.Object {
     var resourceArn: js.UndefOr[ResourceArn]
     var tags: js.UndefOr[TagList]
-  }
-
-  object ResourceTag {
-    @inline
-    def apply(
-        resourceArn: js.UndefOr[ResourceArn] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): ResourceTag = {
-      val __obj = js.Dynamic.literal()
-      resourceArn.foreach(__v => __obj.updateDynamic("resourceArn")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ResourceTag]
-    }
   }
 
   /**
     * Information about a route filter prefix that a customer can advertise through Border Gateway Protocol (BGP) over a public virtual interface.
     */
   @js.native
+  @Factory
   trait RouteFilterPrefix extends js.Object {
     var cidr: js.UndefOr[CIDR]
-  }
-
-  object RouteFilterPrefix {
-    @inline
-    def apply(
-        cidr: js.UndefOr[CIDR] = js.undefined
-    ): RouteFilterPrefix = {
-      val __obj = js.Dynamic.literal()
-      cidr.foreach(__v => __obj.updateDynamic("cidr")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RouteFilterPrefix]
-    }
   }
 
   /**
     * Information about a tag.
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var key: TagKey
     var value: js.UndefOr[TagValue]
   }
 
-  object Tag {
-    @inline
-    def apply(
-        key: TagKey,
-        value: js.UndefOr[TagValue] = js.undefined
-    ): Tag = {
-      val __obj = js.Dynamic.literal(
-        "key" -> key.asInstanceOf[js.Any]
-      )
-
-      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Tag]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceRequest extends js.Object {
     var resourceArn: ResourceArn
     var tags: TagList
   }
 
-  object TagResourceRequest {
-    @inline
-    def apply(
-        resourceArn: ResourceArn,
-        tags: TagList
-    ): TagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceResponse extends js.Object {}
 
-  object TagResourceResponse {
-    @inline
-    def apply(
-    ): TagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[TagResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceRequest extends js.Object {
     var resourceArn: ResourceArn
     var tagKeys: TagKeyList
   }
 
-  object UntagResourceRequest {
-    @inline
-    def apply(
-        resourceArn: ResourceArn,
-        tagKeys: TagKeyList
-    ): UntagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceResponse extends js.Object {}
 
-  object UntagResourceResponse {
-    @inline
-    def apply(
-    ): UntagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UntagResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateDirectConnectGatewayAssociationRequest extends js.Object {
     var addAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList]
     var associationId: js.UndefOr[DirectConnectGatewayAssociationId]
     var removeAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList]
   }
 
-  object UpdateDirectConnectGatewayAssociationRequest {
-    @inline
-    def apply(
-        addAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList] = js.undefined,
-        associationId: js.UndefOr[DirectConnectGatewayAssociationId] = js.undefined,
-        removeAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList] = js.undefined
-    ): UpdateDirectConnectGatewayAssociationRequest = {
-      val __obj = js.Dynamic.literal()
-      addAllowedPrefixesToDirectConnectGateway.foreach(__v =>
-        __obj.updateDynamic("addAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
-      )
-      associationId.foreach(__v => __obj.updateDynamic("associationId")(__v.asInstanceOf[js.Any]))
-      removeAllowedPrefixesToDirectConnectGateway.foreach(__v =>
-        __obj.updateDynamic("removeAllowedPrefixesToDirectConnectGateway")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[UpdateDirectConnectGatewayAssociationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateDirectConnectGatewayAssociationResult extends js.Object {
     var directConnectGatewayAssociation: js.UndefOr[DirectConnectGatewayAssociation]
   }
 
-  object UpdateDirectConnectGatewayAssociationResult {
-    @inline
-    def apply(
-        directConnectGatewayAssociation: js.UndefOr[DirectConnectGatewayAssociation] = js.undefined
-    ): UpdateDirectConnectGatewayAssociationResult = {
-      val __obj = js.Dynamic.literal()
-      directConnectGatewayAssociation.foreach(__v =>
-        __obj.updateDynamic("directConnectGatewayAssociation")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[UpdateDirectConnectGatewayAssociationResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateLagRequest extends js.Object {
     var lagId: LagId
     var lagName: js.UndefOr[LagName]
     var minimumLinks: js.UndefOr[Count]
   }
 
-  object UpdateLagRequest {
-    @inline
-    def apply(
-        lagId: LagId,
-        lagName: js.UndefOr[LagName] = js.undefined,
-        minimumLinks: js.UndefOr[Count] = js.undefined
-    ): UpdateLagRequest = {
-      val __obj = js.Dynamic.literal(
-        "lagId" -> lagId.asInstanceOf[js.Any]
-      )
-
-      lagName.foreach(__v => __obj.updateDynamic("lagName")(__v.asInstanceOf[js.Any]))
-      minimumLinks.foreach(__v => __obj.updateDynamic("minimumLinks")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateLagRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateVirtualInterfaceAttributesRequest extends js.Object {
     var virtualInterfaceId: VirtualInterfaceId
     var mtu: js.UndefOr[MTU]
-  }
-
-  object UpdateVirtualInterfaceAttributesRequest {
-    @inline
-    def apply(
-        virtualInterfaceId: VirtualInterfaceId,
-        mtu: js.UndefOr[MTU] = js.undefined
-    ): UpdateVirtualInterfaceAttributesRequest = {
-      val __obj = js.Dynamic.literal(
-        "virtualInterfaceId" -> virtualInterfaceId.asInstanceOf[js.Any]
-      )
-
-      mtu.foreach(__v => __obj.updateDynamic("mtu")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateVirtualInterfaceAttributesRequest]
-    }
   }
 
   /**
     * Information about a virtual private gateway for a private virtual interface.
     */
   @js.native
+  @Factory
   trait VirtualGateway extends js.Object {
     var virtualGatewayId: js.UndefOr[VirtualGatewayId]
     var virtualGatewayState: js.UndefOr[VirtualGatewayState]
   }
 
-  object VirtualGateway {
-    @inline
-    def apply(
-        virtualGatewayId: js.UndefOr[VirtualGatewayId] = js.undefined,
-        virtualGatewayState: js.UndefOr[VirtualGatewayState] = js.undefined
-    ): VirtualGateway = {
-      val __obj = js.Dynamic.literal()
-      virtualGatewayId.foreach(__v => __obj.updateDynamic("virtualGatewayId")(__v.asInstanceOf[js.Any]))
-      virtualGatewayState.foreach(__v => __obj.updateDynamic("virtualGatewayState")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VirtualGateway]
-    }
-  }
-
   @js.native
+  @Factory
   trait VirtualGateways extends js.Object {
     var virtualGateways: js.UndefOr[VirtualGatewayList]
-  }
-
-  object VirtualGateways {
-    @inline
-    def apply(
-        virtualGateways: js.UndefOr[VirtualGatewayList] = js.undefined
-    ): VirtualGateways = {
-      val __obj = js.Dynamic.literal()
-      virtualGateways.foreach(__v => __obj.updateDynamic("virtualGateways")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VirtualGateways]
-    }
   }
 
   /**
     * Information about a virtual interface.
     */
   @js.native
+  @Factory
   trait VirtualInterface extends js.Object {
     var addressFamily: js.UndefOr[AddressFamily]
     var amazonAddress: js.UndefOr[AmazonAddress]
@@ -3091,63 +1438,6 @@ package directconnect {
     var vlan: js.UndefOr[VLAN]
   }
 
-  object VirtualInterface {
-    @inline
-    def apply(
-        addressFamily: js.UndefOr[AddressFamily] = js.undefined,
-        amazonAddress: js.UndefOr[AmazonAddress] = js.undefined,
-        amazonSideAsn: js.UndefOr[LongAsn] = js.undefined,
-        asn: js.UndefOr[ASN] = js.undefined,
-        authKey: js.UndefOr[BGPAuthKey] = js.undefined,
-        awsDeviceV2: js.UndefOr[AwsDeviceV2] = js.undefined,
-        bgpPeers: js.UndefOr[BGPPeerList] = js.undefined,
-        connectionId: js.UndefOr[ConnectionId] = js.undefined,
-        customerAddress: js.UndefOr[CustomerAddress] = js.undefined,
-        customerRouterConfig: js.UndefOr[RouterConfig] = js.undefined,
-        directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
-        jumboFrameCapable: js.UndefOr[JumboFrameCapable] = js.undefined,
-        location: js.UndefOr[LocationCode] = js.undefined,
-        mtu: js.UndefOr[MTU] = js.undefined,
-        ownerAccount: js.UndefOr[OwnerAccount] = js.undefined,
-        region: js.UndefOr[Region] = js.undefined,
-        routeFilterPrefixes: js.UndefOr[RouteFilterPrefixList] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined,
-        virtualGatewayId: js.UndefOr[VirtualGatewayId] = js.undefined,
-        virtualInterfaceId: js.UndefOr[VirtualInterfaceId] = js.undefined,
-        virtualInterfaceName: js.UndefOr[VirtualInterfaceName] = js.undefined,
-        virtualInterfaceState: js.UndefOr[VirtualInterfaceState] = js.undefined,
-        virtualInterfaceType: js.UndefOr[VirtualInterfaceType] = js.undefined,
-        vlan: js.UndefOr[VLAN] = js.undefined
-    ): VirtualInterface = {
-      val __obj = js.Dynamic.literal()
-      addressFamily.foreach(__v => __obj.updateDynamic("addressFamily")(__v.asInstanceOf[js.Any]))
-      amazonAddress.foreach(__v => __obj.updateDynamic("amazonAddress")(__v.asInstanceOf[js.Any]))
-      amazonSideAsn.foreach(__v => __obj.updateDynamic("amazonSideAsn")(__v.asInstanceOf[js.Any]))
-      asn.foreach(__v => __obj.updateDynamic("asn")(__v.asInstanceOf[js.Any]))
-      authKey.foreach(__v => __obj.updateDynamic("authKey")(__v.asInstanceOf[js.Any]))
-      awsDeviceV2.foreach(__v => __obj.updateDynamic("awsDeviceV2")(__v.asInstanceOf[js.Any]))
-      bgpPeers.foreach(__v => __obj.updateDynamic("bgpPeers")(__v.asInstanceOf[js.Any]))
-      connectionId.foreach(__v => __obj.updateDynamic("connectionId")(__v.asInstanceOf[js.Any]))
-      customerAddress.foreach(__v => __obj.updateDynamic("customerAddress")(__v.asInstanceOf[js.Any]))
-      customerRouterConfig.foreach(__v => __obj.updateDynamic("customerRouterConfig")(__v.asInstanceOf[js.Any]))
-      directConnectGatewayId.foreach(__v => __obj.updateDynamic("directConnectGatewayId")(__v.asInstanceOf[js.Any]))
-      jumboFrameCapable.foreach(__v => __obj.updateDynamic("jumboFrameCapable")(__v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
-      mtu.foreach(__v => __obj.updateDynamic("mtu")(__v.asInstanceOf[js.Any]))
-      ownerAccount.foreach(__v => __obj.updateDynamic("ownerAccount")(__v.asInstanceOf[js.Any]))
-      region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
-      routeFilterPrefixes.foreach(__v => __obj.updateDynamic("routeFilterPrefixes")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      virtualGatewayId.foreach(__v => __obj.updateDynamic("virtualGatewayId")(__v.asInstanceOf[js.Any]))
-      virtualInterfaceId.foreach(__v => __obj.updateDynamic("virtualInterfaceId")(__v.asInstanceOf[js.Any]))
-      virtualInterfaceName.foreach(__v => __obj.updateDynamic("virtualInterfaceName")(__v.asInstanceOf[js.Any]))
-      virtualInterfaceState.foreach(__v => __obj.updateDynamic("virtualInterfaceState")(__v.asInstanceOf[js.Any]))
-      virtualInterfaceType.foreach(__v => __obj.updateDynamic("virtualInterfaceType")(__v.asInstanceOf[js.Any]))
-      vlan.foreach(__v => __obj.updateDynamic("vlan")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VirtualInterface]
-    }
-  }
-
   @js.native
   sealed trait VirtualInterfaceState extends js.Any
   object VirtualInterfaceState extends js.Object {
@@ -3166,18 +1456,8 @@ package directconnect {
   }
 
   @js.native
+  @Factory
   trait VirtualInterfaces extends js.Object {
     var virtualInterfaces: js.UndefOr[VirtualInterfaceList]
-  }
-
-  object VirtualInterfaces {
-    @inline
-    def apply(
-        virtualInterfaces: js.UndefOr[VirtualInterfaceList] = js.undefined
-    ): VirtualInterfaces = {
-      val __obj = js.Dynamic.literal()
-      virtualInterfaces.foreach(__v => __obj.updateDynamic("virtualInterfaces")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VirtualInterfaces]
-    }
   }
 }

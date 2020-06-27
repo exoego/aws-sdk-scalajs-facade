@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object devicefarm {
   type AWSAccountNumber                   = String
@@ -362,6 +363,7 @@ package devicefarm {
     * A container for account-level settings in AWS Device Farm.
     */
   @js.native
+  @Factory
   trait AccountSettings extends js.Object {
     var awsAccountNumber: js.UndefOr[AWSAccountNumber]
     var defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes]
@@ -373,62 +375,17 @@ package devicefarm {
     var unmeteredRemoteAccessDevices: js.UndefOr[PurchasedDevicesMap]
   }
 
-  object AccountSettings {
-    @inline
-    def apply(
-        awsAccountNumber: js.UndefOr[AWSAccountNumber] = js.undefined,
-        defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined,
-        maxJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined,
-        maxSlots: js.UndefOr[MaxSlotMap] = js.undefined,
-        skipAppResign: js.UndefOr[SkipAppResign] = js.undefined,
-        trialMinutes: js.UndefOr[TrialMinutes] = js.undefined,
-        unmeteredDevices: js.UndefOr[PurchasedDevicesMap] = js.undefined,
-        unmeteredRemoteAccessDevices: js.UndefOr[PurchasedDevicesMap] = js.undefined
-    ): AccountSettings = {
-      val __obj = js.Dynamic.literal()
-      awsAccountNumber.foreach(__v => __obj.updateDynamic("awsAccountNumber")(__v.asInstanceOf[js.Any]))
-      defaultJobTimeoutMinutes.foreach(__v => __obj.updateDynamic("defaultJobTimeoutMinutes")(__v.asInstanceOf[js.Any]))
-      maxJobTimeoutMinutes.foreach(__v => __obj.updateDynamic("maxJobTimeoutMinutes")(__v.asInstanceOf[js.Any]))
-      maxSlots.foreach(__v => __obj.updateDynamic("maxSlots")(__v.asInstanceOf[js.Any]))
-      skipAppResign.foreach(__v => __obj.updateDynamic("skipAppResign")(__v.asInstanceOf[js.Any]))
-      trialMinutes.foreach(__v => __obj.updateDynamic("trialMinutes")(__v.asInstanceOf[js.Any]))
-      unmeteredDevices.foreach(__v => __obj.updateDynamic("unmeteredDevices")(__v.asInstanceOf[js.Any]))
-      unmeteredRemoteAccessDevices.foreach(__v =>
-        __obj.updateDynamic("unmeteredRemoteAccessDevices")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[AccountSettings]
-    }
-  }
-
   /**
     * Represents the output of a test. Examples of artifacts include logs and screenshots.
     */
   @js.native
+  @Factory
   trait Artifact extends js.Object {
     var arn: js.UndefOr[AmazonResourceName]
     var extension: js.UndefOr[String]
     var name: js.UndefOr[Name]
     var `type`: js.UndefOr[ArtifactType]
     var url: js.UndefOr[URL]
-  }
-
-  object Artifact {
-    @inline
-    def apply(
-        arn: js.UndefOr[AmazonResourceName] = js.undefined,
-        extension: js.UndefOr[String] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined,
-        `type`: js.UndefOr[ArtifactType] = js.undefined,
-        url: js.UndefOr[URL] = js.undefined
-    ): Artifact = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      extension.foreach(__v => __obj.updateDynamic("extension")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      url.foreach(__v => __obj.updateDynamic("url")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Artifact]
-    }
   }
 
   @js.native
@@ -520,31 +477,18 @@ package devicefarm {
     * Represents the amount of CPU that an app is using on a physical device. Does not represent system-wide CPU usage.
     */
   @js.native
+  @Factory
   trait CPU extends js.Object {
     var architecture: js.UndefOr[String]
     var clock: js.UndefOr[Double]
     var frequency: js.UndefOr[String]
   }
 
-  object CPU {
-    @inline
-    def apply(
-        architecture: js.UndefOr[String] = js.undefined,
-        clock: js.UndefOr[Double] = js.undefined,
-        frequency: js.UndefOr[String] = js.undefined
-    ): CPU = {
-      val __obj = js.Dynamic.literal()
-      architecture.foreach(__v => __obj.updateDynamic("architecture")(__v.asInstanceOf[js.Any]))
-      clock.foreach(__v => __obj.updateDynamic("clock")(__v.asInstanceOf[js.Any]))
-      frequency.foreach(__v => __obj.updateDynamic("frequency")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CPU]
-    }
-  }
-
   /**
     * Represents entity counters.
     */
   @js.native
+  @Factory
   trait Counters extends js.Object {
     var errored: js.UndefOr[Int]
     var failed: js.UndefOr[Int]
@@ -555,33 +499,11 @@ package devicefarm {
     var warned: js.UndefOr[Int]
   }
 
-  object Counters {
-    @inline
-    def apply(
-        errored: js.UndefOr[Int] = js.undefined,
-        failed: js.UndefOr[Int] = js.undefined,
-        passed: js.UndefOr[Int] = js.undefined,
-        skipped: js.UndefOr[Int] = js.undefined,
-        stopped: js.UndefOr[Int] = js.undefined,
-        total: js.UndefOr[Int] = js.undefined,
-        warned: js.UndefOr[Int] = js.undefined
-    ): Counters = {
-      val __obj = js.Dynamic.literal()
-      errored.foreach(__v => __obj.updateDynamic("errored")(__v.asInstanceOf[js.Any]))
-      failed.foreach(__v => __obj.updateDynamic("failed")(__v.asInstanceOf[js.Any]))
-      passed.foreach(__v => __obj.updateDynamic("passed")(__v.asInstanceOf[js.Any]))
-      skipped.foreach(__v => __obj.updateDynamic("skipped")(__v.asInstanceOf[js.Any]))
-      stopped.foreach(__v => __obj.updateDynamic("stopped")(__v.asInstanceOf[js.Any]))
-      total.foreach(__v => __obj.updateDynamic("total")(__v.asInstanceOf[js.Any]))
-      warned.foreach(__v => __obj.updateDynamic("warned")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Counters]
-    }
-  }
-
   /**
     * Represents a request to the create device pool operation.
     */
   @js.native
+  @Factory
   trait CreateDevicePoolRequest extends js.Object {
     var name: Name
     var projectArn: AmazonResourceName
@@ -590,47 +512,17 @@ package devicefarm {
     var maxDevices: js.UndefOr[Int]
   }
 
-  object CreateDevicePoolRequest {
-    @inline
-    def apply(
-        name: Name,
-        projectArn: AmazonResourceName,
-        rules: Rules,
-        description: js.UndefOr[Message] = js.undefined,
-        maxDevices: js.UndefOr[Int] = js.undefined
-    ): CreateDevicePoolRequest = {
-      val __obj = js.Dynamic.literal(
-        "name"       -> name.asInstanceOf[js.Any],
-        "projectArn" -> projectArn.asInstanceOf[js.Any],
-        "rules"      -> rules.asInstanceOf[js.Any]
-      )
-
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      maxDevices.foreach(__v => __obj.updateDynamic("maxDevices")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDevicePoolRequest]
-    }
-  }
-
   /**
     * Represents the result of a create device pool request.
     */
   @js.native
+  @Factory
   trait CreateDevicePoolResult extends js.Object {
     var devicePool: js.UndefOr[DevicePool]
   }
 
-  object CreateDevicePoolResult {
-    @inline
-    def apply(
-        devicePool: js.UndefOr[DevicePool] = js.undefined
-    ): CreateDevicePoolResult = {
-      val __obj = js.Dynamic.literal()
-      devicePool.foreach(__v => __obj.updateDynamic("devicePool")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDevicePoolResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateInstanceProfileRequest extends js.Object {
     var name: Name
     var description: js.UndefOr[Message]
@@ -639,46 +531,14 @@ package devicefarm {
     var rebootAfterUse: js.UndefOr[Boolean]
   }
 
-  object CreateInstanceProfileRequest {
-    @inline
-    def apply(
-        name: Name,
-        description: js.UndefOr[Message] = js.undefined,
-        excludeAppPackagesFromCleanup: js.UndefOr[PackageIds] = js.undefined,
-        packageCleanup: js.UndefOr[Boolean] = js.undefined,
-        rebootAfterUse: js.UndefOr[Boolean] = js.undefined
-    ): CreateInstanceProfileRequest = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      excludeAppPackagesFromCleanup.foreach(__v =>
-        __obj.updateDynamic("excludeAppPackagesFromCleanup")(__v.asInstanceOf[js.Any])
-      )
-      packageCleanup.foreach(__v => __obj.updateDynamic("packageCleanup")(__v.asInstanceOf[js.Any]))
-      rebootAfterUse.foreach(__v => __obj.updateDynamic("rebootAfterUse")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateInstanceProfileRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateInstanceProfileResult extends js.Object {
     var instanceProfile: js.UndefOr[InstanceProfile]
   }
 
-  object CreateInstanceProfileResult {
-    @inline
-    def apply(
-        instanceProfile: js.UndefOr[InstanceProfile] = js.undefined
-    ): CreateInstanceProfileResult = {
-      val __obj = js.Dynamic.literal()
-      instanceProfile.foreach(__v => __obj.updateDynamic("instanceProfile")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateInstanceProfileResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateNetworkProfileRequest extends js.Object {
     var name: Name
     var projectArn: AmazonResourceName
@@ -694,126 +554,46 @@ package devicefarm {
     var uplinkLossPercent: js.UndefOr[PercentInteger]
   }
 
-  object CreateNetworkProfileRequest {
-    @inline
-    def apply(
-        name: Name,
-        projectArn: AmazonResourceName,
-        description: js.UndefOr[Message] = js.undefined,
-        downlinkBandwidthBits: js.UndefOr[Double] = js.undefined,
-        downlinkDelayMs: js.UndefOr[Double] = js.undefined,
-        downlinkJitterMs: js.UndefOr[Double] = js.undefined,
-        downlinkLossPercent: js.UndefOr[PercentInteger] = js.undefined,
-        `type`: js.UndefOr[NetworkProfileType] = js.undefined,
-        uplinkBandwidthBits: js.UndefOr[Double] = js.undefined,
-        uplinkDelayMs: js.UndefOr[Double] = js.undefined,
-        uplinkJitterMs: js.UndefOr[Double] = js.undefined,
-        uplinkLossPercent: js.UndefOr[PercentInteger] = js.undefined
-    ): CreateNetworkProfileRequest = {
-      val __obj = js.Dynamic.literal(
-        "name"       -> name.asInstanceOf[js.Any],
-        "projectArn" -> projectArn.asInstanceOf[js.Any]
-      )
-
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      downlinkBandwidthBits.foreach(__v => __obj.updateDynamic("downlinkBandwidthBits")(__v.asInstanceOf[js.Any]))
-      downlinkDelayMs.foreach(__v => __obj.updateDynamic("downlinkDelayMs")(__v.asInstanceOf[js.Any]))
-      downlinkJitterMs.foreach(__v => __obj.updateDynamic("downlinkJitterMs")(__v.asInstanceOf[js.Any]))
-      downlinkLossPercent.foreach(__v => __obj.updateDynamic("downlinkLossPercent")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      uplinkBandwidthBits.foreach(__v => __obj.updateDynamic("uplinkBandwidthBits")(__v.asInstanceOf[js.Any]))
-      uplinkDelayMs.foreach(__v => __obj.updateDynamic("uplinkDelayMs")(__v.asInstanceOf[js.Any]))
-      uplinkJitterMs.foreach(__v => __obj.updateDynamic("uplinkJitterMs")(__v.asInstanceOf[js.Any]))
-      uplinkLossPercent.foreach(__v => __obj.updateDynamic("uplinkLossPercent")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateNetworkProfileRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateNetworkProfileResult extends js.Object {
     var networkProfile: js.UndefOr[NetworkProfile]
-  }
-
-  object CreateNetworkProfileResult {
-    @inline
-    def apply(
-        networkProfile: js.UndefOr[NetworkProfile] = js.undefined
-    ): CreateNetworkProfileResult = {
-      val __obj = js.Dynamic.literal()
-      networkProfile.foreach(__v => __obj.updateDynamic("networkProfile")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateNetworkProfileResult]
-    }
   }
 
   /**
     * Represents a request to the create project operation.
     */
   @js.native
+  @Factory
   trait CreateProjectRequest extends js.Object {
     var name: Name
     var defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes]
-  }
-
-  object CreateProjectRequest {
-    @inline
-    def apply(
-        name: Name,
-        defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined
-    ): CreateProjectRequest = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      defaultJobTimeoutMinutes.foreach(__v => __obj.updateDynamic("defaultJobTimeoutMinutes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateProjectRequest]
-    }
   }
 
   /**
     * Represents the result of a create project request.
     */
   @js.native
+  @Factory
   trait CreateProjectResult extends js.Object {
     var project: js.UndefOr[Project]
-  }
-
-  object CreateProjectResult {
-    @inline
-    def apply(
-        project: js.UndefOr[Project] = js.undefined
-    ): CreateProjectResult = {
-      val __obj = js.Dynamic.literal()
-      project.foreach(__v => __obj.updateDynamic("project")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateProjectResult]
-    }
   }
 
   /**
     * Configuration settings for a remote access session, including billing method.
     */
   @js.native
+  @Factory
   trait CreateRemoteAccessSessionConfiguration extends js.Object {
     var billingMethod: js.UndefOr[BillingMethod]
     var vpceConfigurationArns: js.UndefOr[AmazonResourceNames]
-  }
-
-  object CreateRemoteAccessSessionConfiguration {
-    @inline
-    def apply(
-        billingMethod: js.UndefOr[BillingMethod] = js.undefined,
-        vpceConfigurationArns: js.UndefOr[AmazonResourceNames] = js.undefined
-    ): CreateRemoteAccessSessionConfiguration = {
-      val __obj = js.Dynamic.literal()
-      billingMethod.foreach(__v => __obj.updateDynamic("billingMethod")(__v.asInstanceOf[js.Any]))
-      vpceConfigurationArns.foreach(__v => __obj.updateDynamic("vpceConfigurationArns")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRemoteAccessSessionConfiguration]
-    }
   }
 
   /**
     * Creates and submits a request to start a remote access session.
     */
   @js.native
+  @Factory
   trait CreateRemoteAccessSessionRequest extends js.Object {
     var deviceArn: AmazonResourceName
     var projectArn: AmazonResourceName
@@ -829,141 +609,47 @@ package devicefarm {
     var sshPublicKey: js.UndefOr[SshPublicKey]
   }
 
-  object CreateRemoteAccessSessionRequest {
-    @inline
-    def apply(
-        deviceArn: AmazonResourceName,
-        projectArn: AmazonResourceName,
-        clientId: js.UndefOr[ClientId] = js.undefined,
-        configuration: js.UndefOr[CreateRemoteAccessSessionConfiguration] = js.undefined,
-        instanceArn: js.UndefOr[AmazonResourceName] = js.undefined,
-        interactionMode: js.UndefOr[InteractionMode] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined,
-        remoteDebugEnabled: js.UndefOr[Boolean] = js.undefined,
-        remoteRecordAppArn: js.UndefOr[AmazonResourceName] = js.undefined,
-        remoteRecordEnabled: js.UndefOr[Boolean] = js.undefined,
-        skipAppResign: js.UndefOr[Boolean] = js.undefined,
-        sshPublicKey: js.UndefOr[SshPublicKey] = js.undefined
-    ): CreateRemoteAccessSessionRequest = {
-      val __obj = js.Dynamic.literal(
-        "deviceArn"  -> deviceArn.asInstanceOf[js.Any],
-        "projectArn" -> projectArn.asInstanceOf[js.Any]
-      )
-
-      clientId.foreach(__v => __obj.updateDynamic("clientId")(__v.asInstanceOf[js.Any]))
-      configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
-      instanceArn.foreach(__v => __obj.updateDynamic("instanceArn")(__v.asInstanceOf[js.Any]))
-      interactionMode.foreach(__v => __obj.updateDynamic("interactionMode")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      remoteDebugEnabled.foreach(__v => __obj.updateDynamic("remoteDebugEnabled")(__v.asInstanceOf[js.Any]))
-      remoteRecordAppArn.foreach(__v => __obj.updateDynamic("remoteRecordAppArn")(__v.asInstanceOf[js.Any]))
-      remoteRecordEnabled.foreach(__v => __obj.updateDynamic("remoteRecordEnabled")(__v.asInstanceOf[js.Any]))
-      skipAppResign.foreach(__v => __obj.updateDynamic("skipAppResign")(__v.asInstanceOf[js.Any]))
-      sshPublicKey.foreach(__v => __obj.updateDynamic("sshPublicKey")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRemoteAccessSessionRequest]
-    }
-  }
-
   /**
     * Represents the server response from a request to create a remote access session.
     */
   @js.native
+  @Factory
   trait CreateRemoteAccessSessionResult extends js.Object {
     var remoteAccessSession: js.UndefOr[RemoteAccessSession]
   }
 
-  object CreateRemoteAccessSessionResult {
-    @inline
-    def apply(
-        remoteAccessSession: js.UndefOr[RemoteAccessSession] = js.undefined
-    ): CreateRemoteAccessSessionResult = {
-      val __obj = js.Dynamic.literal()
-      remoteAccessSession.foreach(__v => __obj.updateDynamic("remoteAccessSession")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRemoteAccessSessionResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateTestGridProjectRequest extends js.Object {
     var name: ResourceName
     var description: js.UndefOr[ResourceDescription]
   }
 
-  object CreateTestGridProjectRequest {
-    @inline
-    def apply(
-        name: ResourceName,
-        description: js.UndefOr[ResourceDescription] = js.undefined
-    ): CreateTestGridProjectRequest = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateTestGridProjectRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateTestGridProjectResult extends js.Object {
     var testGridProject: js.UndefOr[TestGridProject]
   }
 
-  object CreateTestGridProjectResult {
-    @inline
-    def apply(
-        testGridProject: js.UndefOr[TestGridProject] = js.undefined
-    ): CreateTestGridProjectResult = {
-      val __obj = js.Dynamic.literal()
-      testGridProject.foreach(__v => __obj.updateDynamic("testGridProject")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateTestGridProjectResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateTestGridUrlRequest extends js.Object {
     var expiresInSeconds: TestGridUrlExpiresInSecondsInput
     var projectArn: DeviceFarmArn
   }
 
-  object CreateTestGridUrlRequest {
-    @inline
-    def apply(
-        expiresInSeconds: TestGridUrlExpiresInSecondsInput,
-        projectArn: DeviceFarmArn
-    ): CreateTestGridUrlRequest = {
-      val __obj = js.Dynamic.literal(
-        "expiresInSeconds" -> expiresInSeconds.asInstanceOf[js.Any],
-        "projectArn"       -> projectArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateTestGridUrlRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateTestGridUrlResult extends js.Object {
     var expires: js.UndefOr[DateTime]
     var url: js.UndefOr[String]
-  }
-
-  object CreateTestGridUrlResult {
-    @inline
-    def apply(
-        expires: js.UndefOr[DateTime] = js.undefined,
-        url: js.UndefOr[String] = js.undefined
-    ): CreateTestGridUrlResult = {
-      val __obj = js.Dynamic.literal()
-      expires.foreach(__v => __obj.updateDynamic("expires")(__v.asInstanceOf[js.Any]))
-      url.foreach(__v => __obj.updateDynamic("url")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateTestGridUrlResult]
-    }
   }
 
   /**
     * Represents a request to the create upload operation.
     */
   @js.native
+  @Factory
   trait CreateUploadRequest extends js.Object {
     var name: Name
     var projectArn: AmazonResourceName
@@ -971,45 +657,17 @@ package devicefarm {
     var contentType: js.UndefOr[ContentType]
   }
 
-  object CreateUploadRequest {
-    @inline
-    def apply(
-        name: Name,
-        projectArn: AmazonResourceName,
-        `type`: UploadType,
-        contentType: js.UndefOr[ContentType] = js.undefined
-    ): CreateUploadRequest = {
-      val __obj = js.Dynamic.literal(
-        "name"       -> name.asInstanceOf[js.Any],
-        "projectArn" -> projectArn.asInstanceOf[js.Any],
-        "type"       -> `type`.asInstanceOf[js.Any]
-      )
-
-      contentType.foreach(__v => __obj.updateDynamic("contentType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateUploadRequest]
-    }
-  }
-
   /**
     * Represents the result of a create upload request.
     */
   @js.native
+  @Factory
   trait CreateUploadResult extends js.Object {
     var upload: js.UndefOr[Upload]
   }
 
-  object CreateUploadResult {
-    @inline
-    def apply(
-        upload: js.UndefOr[Upload] = js.undefined
-    ): CreateUploadResult = {
-      val __obj = js.Dynamic.literal()
-      upload.foreach(__v => __obj.updateDynamic("upload")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateUploadResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateVPCEConfigurationRequest extends js.Object {
     var serviceDnsName: ServiceDnsName
     var vpceConfigurationName: VPCEConfigurationName
@@ -1017,41 +675,10 @@ package devicefarm {
     var vpceConfigurationDescription: js.UndefOr[VPCEConfigurationDescription]
   }
 
-  object CreateVPCEConfigurationRequest {
-    @inline
-    def apply(
-        serviceDnsName: ServiceDnsName,
-        vpceConfigurationName: VPCEConfigurationName,
-        vpceServiceName: VPCEServiceName,
-        vpceConfigurationDescription: js.UndefOr[VPCEConfigurationDescription] = js.undefined
-    ): CreateVPCEConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "serviceDnsName"        -> serviceDnsName.asInstanceOf[js.Any],
-        "vpceConfigurationName" -> vpceConfigurationName.asInstanceOf[js.Any],
-        "vpceServiceName"       -> vpceServiceName.asInstanceOf[js.Any]
-      )
-
-      vpceConfigurationDescription.foreach(__v =>
-        __obj.updateDynamic("vpceConfigurationDescription")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[CreateVPCEConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateVPCEConfigurationResult extends js.Object {
     var vpceConfiguration: js.UndefOr[VPCEConfiguration]
-  }
-
-  object CreateVPCEConfigurationResult {
-    @inline
-    def apply(
-        vpceConfiguration: js.UndefOr[VPCEConfiguration] = js.undefined
-    ): CreateVPCEConfigurationResult = {
-      val __obj = js.Dynamic.literal()
-      vpceConfiguration.foreach(__v => __obj.updateDynamic("vpceConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateVPCEConfigurationResult]
-    }
   }
 
   @js.native
@@ -1068,340 +695,138 @@ package devicefarm {
     *  For web app tests, you can specify both <code>iosPaths</code> and <code>androidPaths</code>.
     */
   @js.native
+  @Factory
   trait CustomerArtifactPaths extends js.Object {
     var androidPaths: js.UndefOr[AndroidPaths]
     var deviceHostPaths: js.UndefOr[DeviceHostPaths]
     var iosPaths: js.UndefOr[IosPaths]
   }
 
-  object CustomerArtifactPaths {
-    @inline
-    def apply(
-        androidPaths: js.UndefOr[AndroidPaths] = js.undefined,
-        deviceHostPaths: js.UndefOr[DeviceHostPaths] = js.undefined,
-        iosPaths: js.UndefOr[IosPaths] = js.undefined
-    ): CustomerArtifactPaths = {
-      val __obj = js.Dynamic.literal()
-      androidPaths.foreach(__v => __obj.updateDynamic("androidPaths")(__v.asInstanceOf[js.Any]))
-      deviceHostPaths.foreach(__v => __obj.updateDynamic("deviceHostPaths")(__v.asInstanceOf[js.Any]))
-      iosPaths.foreach(__v => __obj.updateDynamic("iosPaths")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CustomerArtifactPaths]
-    }
-  }
-
   /**
     * Represents a request to the delete device pool operation.
     */
   @js.native
+  @Factory
   trait DeleteDevicePoolRequest extends js.Object {
     var arn: AmazonResourceName
-  }
-
-  object DeleteDevicePoolRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName
-    ): DeleteDevicePoolRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteDevicePoolRequest]
-    }
   }
 
   /**
     * Represents the result of a delete device pool request.
     */
   @js.native
+  @Factory
   trait DeleteDevicePoolResult extends js.Object {}
 
-  object DeleteDevicePoolResult {
-    @inline
-    def apply(
-    ): DeleteDevicePoolResult = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteDevicePoolResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteInstanceProfileRequest extends js.Object {
     var arn: AmazonResourceName
   }
 
-  object DeleteInstanceProfileRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName
-    ): DeleteInstanceProfileRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteInstanceProfileRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteInstanceProfileResult extends js.Object {}
 
-  object DeleteInstanceProfileResult {
-    @inline
-    def apply(
-    ): DeleteInstanceProfileResult = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteInstanceProfileResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteNetworkProfileRequest extends js.Object {
     var arn: AmazonResourceName
   }
 
-  object DeleteNetworkProfileRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName
-    ): DeleteNetworkProfileRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteNetworkProfileRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteNetworkProfileResult extends js.Object {}
-
-  object DeleteNetworkProfileResult {
-    @inline
-    def apply(
-    ): DeleteNetworkProfileResult = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteNetworkProfileResult]
-    }
-  }
 
   /**
     * Represents a request to the delete project operation.
     */
   @js.native
+  @Factory
   trait DeleteProjectRequest extends js.Object {
     var arn: AmazonResourceName
-  }
-
-  object DeleteProjectRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName
-    ): DeleteProjectRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteProjectRequest]
-    }
   }
 
   /**
     * Represents the result of a delete project request.
     */
   @js.native
+  @Factory
   trait DeleteProjectResult extends js.Object {}
-
-  object DeleteProjectResult {
-    @inline
-    def apply(
-    ): DeleteProjectResult = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteProjectResult]
-    }
-  }
 
   /**
     * Represents the request to delete the specified remote access session.
     */
   @js.native
+  @Factory
   trait DeleteRemoteAccessSessionRequest extends js.Object {
     var arn: AmazonResourceName
-  }
-
-  object DeleteRemoteAccessSessionRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName
-    ): DeleteRemoteAccessSessionRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteRemoteAccessSessionRequest]
-    }
   }
 
   /**
     * The response from the server when a request is made to delete the remote access session.
     */
   @js.native
+  @Factory
   trait DeleteRemoteAccessSessionResult extends js.Object {}
-
-  object DeleteRemoteAccessSessionResult {
-    @inline
-    def apply(
-    ): DeleteRemoteAccessSessionResult = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteRemoteAccessSessionResult]
-    }
-  }
 
   /**
     * Represents a request to the delete run operation.
     */
   @js.native
+  @Factory
   trait DeleteRunRequest extends js.Object {
     var arn: AmazonResourceName
-  }
-
-  object DeleteRunRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName
-    ): DeleteRunRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteRunRequest]
-    }
   }
 
   /**
     * Represents the result of a delete run request.
     */
   @js.native
+  @Factory
   trait DeleteRunResult extends js.Object {}
 
-  object DeleteRunResult {
-    @inline
-    def apply(
-    ): DeleteRunResult = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteRunResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteTestGridProjectRequest extends js.Object {
     var projectArn: DeviceFarmArn
   }
 
-  object DeleteTestGridProjectRequest {
-    @inline
-    def apply(
-        projectArn: DeviceFarmArn
-    ): DeleteTestGridProjectRequest = {
-      val __obj = js.Dynamic.literal(
-        "projectArn" -> projectArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteTestGridProjectRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteTestGridProjectResult extends js.Object {}
-
-  object DeleteTestGridProjectResult {
-    @inline
-    def apply(
-    ): DeleteTestGridProjectResult = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteTestGridProjectResult]
-    }
-  }
 
   /**
     * Represents a request to the delete upload operation.
     */
   @js.native
+  @Factory
   trait DeleteUploadRequest extends js.Object {
     var arn: AmazonResourceName
-  }
-
-  object DeleteUploadRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName
-    ): DeleteUploadRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteUploadRequest]
-    }
   }
 
   /**
     * Represents the result of a delete upload request.
     */
   @js.native
+  @Factory
   trait DeleteUploadResult extends js.Object {}
 
-  object DeleteUploadResult {
-    @inline
-    def apply(
-    ): DeleteUploadResult = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteUploadResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteVPCEConfigurationRequest extends js.Object {
     var arn: AmazonResourceName
   }
 
-  object DeleteVPCEConfigurationRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName
-    ): DeleteVPCEConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteVPCEConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteVPCEConfigurationResult extends js.Object {}
-
-  object DeleteVPCEConfigurationResult {
-    @inline
-    def apply(
-    ): DeleteVPCEConfigurationResult = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteVPCEConfigurationResult]
-    }
-  }
 
   /**
     * Represents a device type that an app is tested against.
     */
   @js.native
+  @Factory
   trait Device extends js.Object {
     var arn: js.UndefOr[AmazonResourceName]
     var availability: js.UndefOr[DeviceAvailability]
@@ -1424,57 +849,6 @@ package devicefarm {
     var remoteAccessEnabled: js.UndefOr[Boolean]
     var remoteDebugEnabled: js.UndefOr[Boolean]
     var resolution: js.UndefOr[Resolution]
-  }
-
-  object Device {
-    @inline
-    def apply(
-        arn: js.UndefOr[AmazonResourceName] = js.undefined,
-        availability: js.UndefOr[DeviceAvailability] = js.undefined,
-        carrier: js.UndefOr[String] = js.undefined,
-        cpu: js.UndefOr[CPU] = js.undefined,
-        fleetName: js.UndefOr[String] = js.undefined,
-        fleetType: js.UndefOr[String] = js.undefined,
-        formFactor: js.UndefOr[DeviceFormFactor] = js.undefined,
-        heapSize: js.UndefOr[Double] = js.undefined,
-        image: js.UndefOr[String] = js.undefined,
-        instances: js.UndefOr[DeviceInstances] = js.undefined,
-        manufacturer: js.UndefOr[String] = js.undefined,
-        memory: js.UndefOr[Double] = js.undefined,
-        model: js.UndefOr[String] = js.undefined,
-        modelId: js.UndefOr[String] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined,
-        os: js.UndefOr[String] = js.undefined,
-        platform: js.UndefOr[DevicePlatform] = js.undefined,
-        radio: js.UndefOr[String] = js.undefined,
-        remoteAccessEnabled: js.UndefOr[Boolean] = js.undefined,
-        remoteDebugEnabled: js.UndefOr[Boolean] = js.undefined,
-        resolution: js.UndefOr[Resolution] = js.undefined
-    ): Device = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      availability.foreach(__v => __obj.updateDynamic("availability")(__v.asInstanceOf[js.Any]))
-      carrier.foreach(__v => __obj.updateDynamic("carrier")(__v.asInstanceOf[js.Any]))
-      cpu.foreach(__v => __obj.updateDynamic("cpu")(__v.asInstanceOf[js.Any]))
-      fleetName.foreach(__v => __obj.updateDynamic("fleetName")(__v.asInstanceOf[js.Any]))
-      fleetType.foreach(__v => __obj.updateDynamic("fleetType")(__v.asInstanceOf[js.Any]))
-      formFactor.foreach(__v => __obj.updateDynamic("formFactor")(__v.asInstanceOf[js.Any]))
-      heapSize.foreach(__v => __obj.updateDynamic("heapSize")(__v.asInstanceOf[js.Any]))
-      image.foreach(__v => __obj.updateDynamic("image")(__v.asInstanceOf[js.Any]))
-      instances.foreach(__v => __obj.updateDynamic("instances")(__v.asInstanceOf[js.Any]))
-      manufacturer.foreach(__v => __obj.updateDynamic("manufacturer")(__v.asInstanceOf[js.Any]))
-      memory.foreach(__v => __obj.updateDynamic("memory")(__v.asInstanceOf[js.Any]))
-      model.foreach(__v => __obj.updateDynamic("model")(__v.asInstanceOf[js.Any]))
-      modelId.foreach(__v => __obj.updateDynamic("modelId")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      os.foreach(__v => __obj.updateDynamic("os")(__v.asInstanceOf[js.Any]))
-      platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
-      radio.foreach(__v => __obj.updateDynamic("radio")(__v.asInstanceOf[js.Any]))
-      remoteAccessEnabled.foreach(__v => __obj.updateDynamic("remoteAccessEnabled")(__v.asInstanceOf[js.Any]))
-      remoteDebugEnabled.foreach(__v => __obj.updateDynamic("remoteDebugEnabled")(__v.asInstanceOf[js.Any]))
-      resolution.foreach(__v => __obj.updateDynamic("resolution")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Device]
-    }
   }
 
   @js.native
@@ -1529,25 +903,11 @@ package devicefarm {
     *  It is also passed in as the <code>filters</code> parameter to <code>ListDevices</code>. For an example of the JSON request syntax, see <a>ListDevices</a>.
     */
   @js.native
+  @Factory
   trait DeviceFilter extends js.Object {
     var attribute: js.UndefOr[DeviceFilterAttribute]
     var operator: js.UndefOr[RuleOperator]
     var values: js.UndefOr[DeviceFilterValues]
-  }
-
-  object DeviceFilter {
-    @inline
-    def apply(
-        attribute: js.UndefOr[DeviceFilterAttribute] = js.undefined,
-        operator: js.UndefOr[RuleOperator] = js.undefined,
-        values: js.UndefOr[DeviceFilterValues] = js.undefined
-    ): DeviceFilter = {
-      val __obj = js.Dynamic.literal()
-      attribute.foreach(__v => __obj.updateDynamic("attribute")(__v.asInstanceOf[js.Any]))
-      operator.foreach(__v => __obj.updateDynamic("operator")(__v.asInstanceOf[js.Any]))
-      values.foreach(__v => __obj.updateDynamic("values")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeviceFilter]
-    }
   }
 
   @js.native
@@ -1597,6 +957,7 @@ package devicefarm {
     * Represents the device instance.
     */
   @js.native
+  @Factory
   trait DeviceInstance extends js.Object {
     var arn: js.UndefOr[AmazonResourceName]
     var deviceArn: js.UndefOr[AmazonResourceName]
@@ -1606,50 +967,15 @@ package devicefarm {
     var udid: js.UndefOr[String]
   }
 
-  object DeviceInstance {
-    @inline
-    def apply(
-        arn: js.UndefOr[AmazonResourceName] = js.undefined,
-        deviceArn: js.UndefOr[AmazonResourceName] = js.undefined,
-        instanceProfile: js.UndefOr[InstanceProfile] = js.undefined,
-        labels: js.UndefOr[InstanceLabels] = js.undefined,
-        status: js.UndefOr[InstanceStatus] = js.undefined,
-        udid: js.UndefOr[String] = js.undefined
-    ): DeviceInstance = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      deviceArn.foreach(__v => __obj.updateDynamic("deviceArn")(__v.asInstanceOf[js.Any]))
-      instanceProfile.foreach(__v => __obj.updateDynamic("instanceProfile")(__v.asInstanceOf[js.Any]))
-      labels.foreach(__v => __obj.updateDynamic("labels")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      udid.foreach(__v => __obj.updateDynamic("udid")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeviceInstance]
-    }
-  }
-
   /**
     * Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes consumed by all children.
     */
   @js.native
+  @Factory
   trait DeviceMinutes extends js.Object {
     var metered: js.UndefOr[Double]
     var total: js.UndefOr[Double]
     var unmetered: js.UndefOr[Double]
-  }
-
-  object DeviceMinutes {
-    @inline
-    def apply(
-        metered: js.UndefOr[Double] = js.undefined,
-        total: js.UndefOr[Double] = js.undefined,
-        unmetered: js.UndefOr[Double] = js.undefined
-    ): DeviceMinutes = {
-      val __obj = js.Dynamic.literal()
-      metered.foreach(__v => __obj.updateDynamic("metered")(__v.asInstanceOf[js.Any]))
-      total.foreach(__v => __obj.updateDynamic("total")(__v.asInstanceOf[js.Any]))
-      unmetered.foreach(__v => __obj.updateDynamic("unmetered")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeviceMinutes]
-    }
   }
 
   @js.native
@@ -1665,6 +991,7 @@ package devicefarm {
     * Represents a collection of device types.
     */
   @js.native
+  @Factory
   trait DevicePool extends js.Object {
     var arn: js.UndefOr[AmazonResourceName]
     var description: js.UndefOr[Message]
@@ -1674,50 +1001,15 @@ package devicefarm {
     var `type`: js.UndefOr[DevicePoolType]
   }
 
-  object DevicePool {
-    @inline
-    def apply(
-        arn: js.UndefOr[AmazonResourceName] = js.undefined,
-        description: js.UndefOr[Message] = js.undefined,
-        maxDevices: js.UndefOr[Int] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined,
-        rules: js.UndefOr[Rules] = js.undefined,
-        `type`: js.UndefOr[DevicePoolType] = js.undefined
-    ): DevicePool = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      maxDevices.foreach(__v => __obj.updateDynamic("maxDevices")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      rules.foreach(__v => __obj.updateDynamic("rules")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DevicePool]
-    }
-  }
-
   /**
     * Represents a device pool compatibility result.
     */
   @js.native
+  @Factory
   trait DevicePoolCompatibilityResult extends js.Object {
     var compatible: js.UndefOr[Boolean]
     var device: js.UndefOr[Device]
     var incompatibilityMessages: js.UndefOr[IncompatibilityMessages]
-  }
-
-  object DevicePoolCompatibilityResult {
-    @inline
-    def apply(
-        compatible: js.UndefOr[Boolean] = js.undefined,
-        device: js.UndefOr[Device] = js.undefined,
-        incompatibilityMessages: js.UndefOr[IncompatibilityMessages] = js.undefined
-    ): DevicePoolCompatibilityResult = {
-      val __obj = js.Dynamic.literal()
-      compatible.foreach(__v => __obj.updateDynamic("compatible")(__v.asInstanceOf[js.Any]))
-      device.foreach(__v => __obj.updateDynamic("device")(__v.asInstanceOf[js.Any]))
-      incompatibilityMessages.foreach(__v => __obj.updateDynamic("incompatibilityMessages")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DevicePoolCompatibilityResult]
-    }
   }
 
   @js.native
@@ -1733,80 +1025,34 @@ package devicefarm {
     * Represents the device filters used in a test run and the maximum number of devices to be included in the run. It is passed in as the <code>deviceSelectionConfiguration</code> request parameter in <a>ScheduleRun</a>.
     */
   @js.native
+  @Factory
   trait DeviceSelectionConfiguration extends js.Object {
     var filters: DeviceFilters
     var maxDevices: Int
-  }
-
-  object DeviceSelectionConfiguration {
-    @inline
-    def apply(
-        filters: DeviceFilters,
-        maxDevices: Int
-    ): DeviceSelectionConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "filters"    -> filters.asInstanceOf[js.Any],
-        "maxDevices" -> maxDevices.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeviceSelectionConfiguration]
-    }
   }
 
   /**
     * Contains the run results requested by the device selection configuration and how many devices were returned. For an example of the JSON response syntax, see <a>ScheduleRun</a>.
     */
   @js.native
+  @Factory
   trait DeviceSelectionResult extends js.Object {
     var filters: js.UndefOr[DeviceFilters]
     var matchedDevicesCount: js.UndefOr[Int]
     var maxDevices: js.UndefOr[Int]
   }
 
-  object DeviceSelectionResult {
-    @inline
-    def apply(
-        filters: js.UndefOr[DeviceFilters] = js.undefined,
-        matchedDevicesCount: js.UndefOr[Int] = js.undefined,
-        maxDevices: js.UndefOr[Int] = js.undefined
-    ): DeviceSelectionResult = {
-      val __obj = js.Dynamic.literal()
-      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
-      matchedDevicesCount.foreach(__v => __obj.updateDynamic("matchedDevicesCount")(__v.asInstanceOf[js.Any]))
-      maxDevices.foreach(__v => __obj.updateDynamic("maxDevices")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeviceSelectionResult]
-    }
-  }
-
   /**
     * Represents configuration information about a test run, such as the execution timeout (in minutes).
     */
   @js.native
+  @Factory
   trait ExecutionConfiguration extends js.Object {
     var accountsCleanup: js.UndefOr[AccountsCleanup]
     var appPackagesCleanup: js.UndefOr[AppPackagesCleanup]
     var jobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes]
     var skipAppResign: js.UndefOr[SkipAppResign]
     var videoCapture: js.UndefOr[VideoCapture]
-  }
-
-  object ExecutionConfiguration {
-    @inline
-    def apply(
-        accountsCleanup: js.UndefOr[AccountsCleanup] = js.undefined,
-        appPackagesCleanup: js.UndefOr[AppPackagesCleanup] = js.undefined,
-        jobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined,
-        skipAppResign: js.UndefOr[SkipAppResign] = js.undefined,
-        videoCapture: js.UndefOr[VideoCapture] = js.undefined
-    ): ExecutionConfiguration = {
-      val __obj = js.Dynamic.literal()
-      accountsCleanup.foreach(__v => __obj.updateDynamic("accountsCleanup")(__v.asInstanceOf[js.Any]))
-      appPackagesCleanup.foreach(__v => __obj.updateDynamic("appPackagesCleanup")(__v.asInstanceOf[js.Any]))
-      jobTimeoutMinutes.foreach(__v => __obj.updateDynamic("jobTimeoutMinutes")(__v.asInstanceOf[js.Any]))
-      skipAppResign.foreach(__v => __obj.updateDynamic("skipAppResign")(__v.asInstanceOf[js.Any]))
-      videoCapture.foreach(__v => __obj.updateDynamic("videoCapture")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ExecutionConfiguration]
-    }
   }
 
   @js.native
@@ -1864,75 +1110,35 @@ package devicefarm {
     * Represents the request sent to retrieve the account settings.
     */
   @js.native
+  @Factory
   trait GetAccountSettingsRequest extends js.Object {}
-
-  object GetAccountSettingsRequest {
-    @inline
-    def apply(
-    ): GetAccountSettingsRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[GetAccountSettingsRequest]
-    }
-  }
 
   /**
     * Represents the account settings return values from the <code>GetAccountSettings</code> request.
     */
   @js.native
+  @Factory
   trait GetAccountSettingsResult extends js.Object {
     var accountSettings: js.UndefOr[AccountSettings]
   }
 
-  object GetAccountSettingsResult {
-    @inline
-    def apply(
-        accountSettings: js.UndefOr[AccountSettings] = js.undefined
-    ): GetAccountSettingsResult = {
-      val __obj = js.Dynamic.literal()
-      accountSettings.foreach(__v => __obj.updateDynamic("accountSettings")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetAccountSettingsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDeviceInstanceRequest extends js.Object {
     var arn: AmazonResourceName
   }
 
-  object GetDeviceInstanceRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName
-    ): GetDeviceInstanceRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetDeviceInstanceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDeviceInstanceResult extends js.Object {
     var deviceInstance: js.UndefOr[DeviceInstance]
-  }
-
-  object GetDeviceInstanceResult {
-    @inline
-    def apply(
-        deviceInstance: js.UndefOr[DeviceInstance] = js.undefined
-    ): GetDeviceInstanceResult = {
-      val __obj = js.Dynamic.literal()
-      deviceInstance.foreach(__v => __obj.updateDynamic("deviceInstance")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDeviceInstanceResult]
-    }
   }
 
   /**
     * Represents a request to the get device pool compatibility operation.
     */
   @js.native
+  @Factory
   trait GetDevicePoolCompatibilityRequest extends js.Object {
     var devicePoolArn: AmazonResourceName
     var appArn: js.UndefOr[AmazonResourceName]
@@ -1941,696 +1147,294 @@ package devicefarm {
     var testType: js.UndefOr[TestType]
   }
 
-  object GetDevicePoolCompatibilityRequest {
-    @inline
-    def apply(
-        devicePoolArn: AmazonResourceName,
-        appArn: js.UndefOr[AmazonResourceName] = js.undefined,
-        configuration: js.UndefOr[ScheduleRunConfiguration] = js.undefined,
-        test: js.UndefOr[ScheduleRunTest] = js.undefined,
-        testType: js.UndefOr[TestType] = js.undefined
-    ): GetDevicePoolCompatibilityRequest = {
-      val __obj = js.Dynamic.literal(
-        "devicePoolArn" -> devicePoolArn.asInstanceOf[js.Any]
-      )
-
-      appArn.foreach(__v => __obj.updateDynamic("appArn")(__v.asInstanceOf[js.Any]))
-      configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
-      test.foreach(__v => __obj.updateDynamic("test")(__v.asInstanceOf[js.Any]))
-      testType.foreach(__v => __obj.updateDynamic("testType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDevicePoolCompatibilityRequest]
-    }
-  }
-
   /**
     * Represents the result of describe device pool compatibility request.
     */
   @js.native
+  @Factory
   trait GetDevicePoolCompatibilityResult extends js.Object {
     var compatibleDevices: js.UndefOr[DevicePoolCompatibilityResults]
     var incompatibleDevices: js.UndefOr[DevicePoolCompatibilityResults]
-  }
-
-  object GetDevicePoolCompatibilityResult {
-    @inline
-    def apply(
-        compatibleDevices: js.UndefOr[DevicePoolCompatibilityResults] = js.undefined,
-        incompatibleDevices: js.UndefOr[DevicePoolCompatibilityResults] = js.undefined
-    ): GetDevicePoolCompatibilityResult = {
-      val __obj = js.Dynamic.literal()
-      compatibleDevices.foreach(__v => __obj.updateDynamic("compatibleDevices")(__v.asInstanceOf[js.Any]))
-      incompatibleDevices.foreach(__v => __obj.updateDynamic("incompatibleDevices")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDevicePoolCompatibilityResult]
-    }
   }
 
   /**
     * Represents a request to the get device pool operation.
     */
   @js.native
+  @Factory
   trait GetDevicePoolRequest extends js.Object {
     var arn: AmazonResourceName
-  }
-
-  object GetDevicePoolRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName
-    ): GetDevicePoolRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetDevicePoolRequest]
-    }
   }
 
   /**
     * Represents the result of a get device pool request.
     */
   @js.native
+  @Factory
   trait GetDevicePoolResult extends js.Object {
     var devicePool: js.UndefOr[DevicePool]
-  }
-
-  object GetDevicePoolResult {
-    @inline
-    def apply(
-        devicePool: js.UndefOr[DevicePool] = js.undefined
-    ): GetDevicePoolResult = {
-      val __obj = js.Dynamic.literal()
-      devicePool.foreach(__v => __obj.updateDynamic("devicePool")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDevicePoolResult]
-    }
   }
 
   /**
     * Represents a request to the get device request.
     */
   @js.native
+  @Factory
   trait GetDeviceRequest extends js.Object {
     var arn: AmazonResourceName
-  }
-
-  object GetDeviceRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName
-    ): GetDeviceRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetDeviceRequest]
-    }
   }
 
   /**
     * Represents the result of a get device request.
     */
   @js.native
+  @Factory
   trait GetDeviceResult extends js.Object {
     var device: js.UndefOr[Device]
   }
 
-  object GetDeviceResult {
-    @inline
-    def apply(
-        device: js.UndefOr[Device] = js.undefined
-    ): GetDeviceResult = {
-      val __obj = js.Dynamic.literal()
-      device.foreach(__v => __obj.updateDynamic("device")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDeviceResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetInstanceProfileRequest extends js.Object {
     var arn: AmazonResourceName
   }
 
-  object GetInstanceProfileRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName
-    ): GetInstanceProfileRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetInstanceProfileRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetInstanceProfileResult extends js.Object {
     var instanceProfile: js.UndefOr[InstanceProfile]
-  }
-
-  object GetInstanceProfileResult {
-    @inline
-    def apply(
-        instanceProfile: js.UndefOr[InstanceProfile] = js.undefined
-    ): GetInstanceProfileResult = {
-      val __obj = js.Dynamic.literal()
-      instanceProfile.foreach(__v => __obj.updateDynamic("instanceProfile")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetInstanceProfileResult]
-    }
   }
 
   /**
     * Represents a request to the get job operation.
     */
   @js.native
+  @Factory
   trait GetJobRequest extends js.Object {
     var arn: AmazonResourceName
-  }
-
-  object GetJobRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName
-    ): GetJobRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetJobRequest]
-    }
   }
 
   /**
     * Represents the result of a get job request.
     */
   @js.native
+  @Factory
   trait GetJobResult extends js.Object {
     var job: js.UndefOr[Job]
   }
 
-  object GetJobResult {
-    @inline
-    def apply(
-        job: js.UndefOr[Job] = js.undefined
-    ): GetJobResult = {
-      val __obj = js.Dynamic.literal()
-      job.foreach(__v => __obj.updateDynamic("job")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetJobResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetNetworkProfileRequest extends js.Object {
     var arn: AmazonResourceName
   }
 
-  object GetNetworkProfileRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName
-    ): GetNetworkProfileRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetNetworkProfileRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetNetworkProfileResult extends js.Object {
     var networkProfile: js.UndefOr[NetworkProfile]
-  }
-
-  object GetNetworkProfileResult {
-    @inline
-    def apply(
-        networkProfile: js.UndefOr[NetworkProfile] = js.undefined
-    ): GetNetworkProfileResult = {
-      val __obj = js.Dynamic.literal()
-      networkProfile.foreach(__v => __obj.updateDynamic("networkProfile")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetNetworkProfileResult]
-    }
   }
 
   /**
     * Represents the request to retrieve the offering status for the specified customer or account.
     */
   @js.native
+  @Factory
   trait GetOfferingStatusRequest extends js.Object {
     var nextToken: js.UndefOr[PaginationToken]
-  }
-
-  object GetOfferingStatusRequest {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): GetOfferingStatusRequest = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetOfferingStatusRequest]
-    }
   }
 
   /**
     * Returns the status result for a device offering.
     */
   @js.native
+  @Factory
   trait GetOfferingStatusResult extends js.Object {
     var current: js.UndefOr[OfferingStatusMap]
     var nextPeriod: js.UndefOr[OfferingStatusMap]
     var nextToken: js.UndefOr[PaginationToken]
   }
 
-  object GetOfferingStatusResult {
-    @inline
-    def apply(
-        current: js.UndefOr[OfferingStatusMap] = js.undefined,
-        nextPeriod: js.UndefOr[OfferingStatusMap] = js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): GetOfferingStatusResult = {
-      val __obj = js.Dynamic.literal()
-      current.foreach(__v => __obj.updateDynamic("current")(__v.asInstanceOf[js.Any]))
-      nextPeriod.foreach(__v => __obj.updateDynamic("nextPeriod")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetOfferingStatusResult]
-    }
-  }
-
   /**
     * Represents a request to the get project operation.
     */
   @js.native
+  @Factory
   trait GetProjectRequest extends js.Object {
     var arn: AmazonResourceName
-  }
-
-  object GetProjectRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName
-    ): GetProjectRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetProjectRequest]
-    }
   }
 
   /**
     * Represents the result of a get project request.
     */
   @js.native
+  @Factory
   trait GetProjectResult extends js.Object {
     var project: js.UndefOr[Project]
-  }
-
-  object GetProjectResult {
-    @inline
-    def apply(
-        project: js.UndefOr[Project] = js.undefined
-    ): GetProjectResult = {
-      val __obj = js.Dynamic.literal()
-      project.foreach(__v => __obj.updateDynamic("project")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetProjectResult]
-    }
   }
 
   /**
     * Represents the request to get information about the specified remote access session.
     */
   @js.native
+  @Factory
   trait GetRemoteAccessSessionRequest extends js.Object {
     var arn: AmazonResourceName
-  }
-
-  object GetRemoteAccessSessionRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName
-    ): GetRemoteAccessSessionRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetRemoteAccessSessionRequest]
-    }
   }
 
   /**
     * Represents the response from the server that lists detailed information about the remote access session.
     */
   @js.native
+  @Factory
   trait GetRemoteAccessSessionResult extends js.Object {
     var remoteAccessSession: js.UndefOr[RemoteAccessSession]
-  }
-
-  object GetRemoteAccessSessionResult {
-    @inline
-    def apply(
-        remoteAccessSession: js.UndefOr[RemoteAccessSession] = js.undefined
-    ): GetRemoteAccessSessionResult = {
-      val __obj = js.Dynamic.literal()
-      remoteAccessSession.foreach(__v => __obj.updateDynamic("remoteAccessSession")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRemoteAccessSessionResult]
-    }
   }
 
   /**
     * Represents a request to the get run operation.
     */
   @js.native
+  @Factory
   trait GetRunRequest extends js.Object {
     var arn: AmazonResourceName
-  }
-
-  object GetRunRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName
-    ): GetRunRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetRunRequest]
-    }
   }
 
   /**
     * Represents the result of a get run request.
     */
   @js.native
+  @Factory
   trait GetRunResult extends js.Object {
     var run: js.UndefOr[Run]
-  }
-
-  object GetRunResult {
-    @inline
-    def apply(
-        run: js.UndefOr[Run] = js.undefined
-    ): GetRunResult = {
-      val __obj = js.Dynamic.literal()
-      run.foreach(__v => __obj.updateDynamic("run")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRunResult]
-    }
   }
 
   /**
     * Represents a request to the get suite operation.
     */
   @js.native
+  @Factory
   trait GetSuiteRequest extends js.Object {
     var arn: AmazonResourceName
-  }
-
-  object GetSuiteRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName
-    ): GetSuiteRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetSuiteRequest]
-    }
   }
 
   /**
     * Represents the result of a get suite request.
     */
   @js.native
+  @Factory
   trait GetSuiteResult extends js.Object {
     var suite: js.UndefOr[Suite]
   }
 
-  object GetSuiteResult {
-    @inline
-    def apply(
-        suite: js.UndefOr[Suite] = js.undefined
-    ): GetSuiteResult = {
-      val __obj = js.Dynamic.literal()
-      suite.foreach(__v => __obj.updateDynamic("suite")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetSuiteResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetTestGridProjectRequest extends js.Object {
     var projectArn: DeviceFarmArn
   }
 
-  object GetTestGridProjectRequest {
-    @inline
-    def apply(
-        projectArn: DeviceFarmArn
-    ): GetTestGridProjectRequest = {
-      val __obj = js.Dynamic.literal(
-        "projectArn" -> projectArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetTestGridProjectRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetTestGridProjectResult extends js.Object {
     var testGridProject: js.UndefOr[TestGridProject]
   }
 
-  object GetTestGridProjectResult {
-    @inline
-    def apply(
-        testGridProject: js.UndefOr[TestGridProject] = js.undefined
-    ): GetTestGridProjectResult = {
-      val __obj = js.Dynamic.literal()
-      testGridProject.foreach(__v => __obj.updateDynamic("testGridProject")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetTestGridProjectResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetTestGridSessionRequest extends js.Object {
     var projectArn: js.UndefOr[DeviceFarmArn]
     var sessionArn: js.UndefOr[DeviceFarmArn]
     var sessionId: js.UndefOr[ResourceId]
   }
 
-  object GetTestGridSessionRequest {
-    @inline
-    def apply(
-        projectArn: js.UndefOr[DeviceFarmArn] = js.undefined,
-        sessionArn: js.UndefOr[DeviceFarmArn] = js.undefined,
-        sessionId: js.UndefOr[ResourceId] = js.undefined
-    ): GetTestGridSessionRequest = {
-      val __obj = js.Dynamic.literal()
-      projectArn.foreach(__v => __obj.updateDynamic("projectArn")(__v.asInstanceOf[js.Any]))
-      sessionArn.foreach(__v => __obj.updateDynamic("sessionArn")(__v.asInstanceOf[js.Any]))
-      sessionId.foreach(__v => __obj.updateDynamic("sessionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetTestGridSessionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetTestGridSessionResult extends js.Object {
     var testGridSession: js.UndefOr[TestGridSession]
-  }
-
-  object GetTestGridSessionResult {
-    @inline
-    def apply(
-        testGridSession: js.UndefOr[TestGridSession] = js.undefined
-    ): GetTestGridSessionResult = {
-      val __obj = js.Dynamic.literal()
-      testGridSession.foreach(__v => __obj.updateDynamic("testGridSession")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetTestGridSessionResult]
-    }
   }
 
   /**
     * Represents a request to the get test operation.
     */
   @js.native
+  @Factory
   trait GetTestRequest extends js.Object {
     var arn: AmazonResourceName
-  }
-
-  object GetTestRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName
-    ): GetTestRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetTestRequest]
-    }
   }
 
   /**
     * Represents the result of a get test request.
     */
   @js.native
+  @Factory
   trait GetTestResult extends js.Object {
     var test: js.UndefOr[Test]
-  }
-
-  object GetTestResult {
-    @inline
-    def apply(
-        test: js.UndefOr[Test] = js.undefined
-    ): GetTestResult = {
-      val __obj = js.Dynamic.literal()
-      test.foreach(__v => __obj.updateDynamic("test")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetTestResult]
-    }
   }
 
   /**
     * Represents a request to the get upload operation.
     */
   @js.native
+  @Factory
   trait GetUploadRequest extends js.Object {
     var arn: AmazonResourceName
-  }
-
-  object GetUploadRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName
-    ): GetUploadRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetUploadRequest]
-    }
   }
 
   /**
     * Represents the result of a get upload request.
     */
   @js.native
+  @Factory
   trait GetUploadResult extends js.Object {
     var upload: js.UndefOr[Upload]
   }
 
-  object GetUploadResult {
-    @inline
-    def apply(
-        upload: js.UndefOr[Upload] = js.undefined
-    ): GetUploadResult = {
-      val __obj = js.Dynamic.literal()
-      upload.foreach(__v => __obj.updateDynamic("upload")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetUploadResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetVPCEConfigurationRequest extends js.Object {
     var arn: AmazonResourceName
   }
 
-  object GetVPCEConfigurationRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName
-    ): GetVPCEConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetVPCEConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetVPCEConfigurationResult extends js.Object {
     var vpceConfiguration: js.UndefOr[VPCEConfiguration]
-  }
-
-  object GetVPCEConfigurationResult {
-    @inline
-    def apply(
-        vpceConfiguration: js.UndefOr[VPCEConfiguration] = js.undefined
-    ): GetVPCEConfigurationResult = {
-      val __obj = js.Dynamic.literal()
-      vpceConfiguration.foreach(__v => __obj.updateDynamic("vpceConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetVPCEConfigurationResult]
-    }
   }
 
   /**
     * Represents information about incompatibility.
     */
   @js.native
+  @Factory
   trait IncompatibilityMessage extends js.Object {
     var message: js.UndefOr[Message]
     var `type`: js.UndefOr[DeviceAttribute]
-  }
-
-  object IncompatibilityMessage {
-    @inline
-    def apply(
-        message: js.UndefOr[Message] = js.undefined,
-        `type`: js.UndefOr[DeviceAttribute] = js.undefined
-    ): IncompatibilityMessage = {
-      val __obj = js.Dynamic.literal()
-      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[IncompatibilityMessage]
-    }
   }
 
   /**
     * Represents the request to install an Android application (in .apk format) or an iOS application (in .ipa format) as part of a remote access session.
     */
   @js.native
+  @Factory
   trait InstallToRemoteAccessSessionRequest extends js.Object {
     var appArn: AmazonResourceName
     var remoteAccessSessionArn: AmazonResourceName
-  }
-
-  object InstallToRemoteAccessSessionRequest {
-    @inline
-    def apply(
-        appArn: AmazonResourceName,
-        remoteAccessSessionArn: AmazonResourceName
-    ): InstallToRemoteAccessSessionRequest = {
-      val __obj = js.Dynamic.literal(
-        "appArn"                 -> appArn.asInstanceOf[js.Any],
-        "remoteAccessSessionArn" -> remoteAccessSessionArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[InstallToRemoteAccessSessionRequest]
-    }
   }
 
   /**
     * Represents the response from the server after AWS Device Farm makes a request to install to a remote access session.
     */
   @js.native
+  @Factory
   trait InstallToRemoteAccessSessionResult extends js.Object {
     var appUpload: js.UndefOr[Upload]
-  }
-
-  object InstallToRemoteAccessSessionResult {
-    @inline
-    def apply(
-        appUpload: js.UndefOr[Upload] = js.undefined
-    ): InstallToRemoteAccessSessionResult = {
-      val __obj = js.Dynamic.literal()
-      appUpload.foreach(__v => __obj.updateDynamic("appUpload")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstallToRemoteAccessSessionResult]
-    }
   }
 
   /**
     * Represents the instance profile.
     */
   @js.native
+  @Factory
   trait InstanceProfile extends js.Object {
     var arn: js.UndefOr[AmazonResourceName]
     var description: js.UndefOr[Message]
@@ -2638,29 +1442,6 @@ package devicefarm {
     var name: js.UndefOr[Name]
     var packageCleanup: js.UndefOr[Boolean]
     var rebootAfterUse: js.UndefOr[Boolean]
-  }
-
-  object InstanceProfile {
-    @inline
-    def apply(
-        arn: js.UndefOr[AmazonResourceName] = js.undefined,
-        description: js.UndefOr[Message] = js.undefined,
-        excludeAppPackagesFromCleanup: js.UndefOr[PackageIds] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined,
-        packageCleanup: js.UndefOr[Boolean] = js.undefined,
-        rebootAfterUse: js.UndefOr[Boolean] = js.undefined
-    ): InstanceProfile = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      excludeAppPackagesFromCleanup.foreach(__v =>
-        __obj.updateDynamic("excludeAppPackagesFromCleanup")(__v.asInstanceOf[js.Any])
-      )
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      packageCleanup.foreach(__v => __obj.updateDynamic("packageCleanup")(__v.asInstanceOf[js.Any]))
-      rebootAfterUse.foreach(__v => __obj.updateDynamic("rebootAfterUse")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceProfile]
-    }
   }
 
   @js.native
@@ -2688,6 +1469,7 @@ package devicefarm {
     * Represents a device.
     */
   @js.native
+  @Factory
   trait Job extends js.Object {
     var arn: js.UndefOr[AmazonResourceName]
     var counters: js.UndefOr[Counters]
@@ -2706,816 +1488,326 @@ package devicefarm {
     var videoEndpoint: js.UndefOr[String]
   }
 
-  object Job {
-    @inline
-    def apply(
-        arn: js.UndefOr[AmazonResourceName] = js.undefined,
-        counters: js.UndefOr[Counters] = js.undefined,
-        created: js.UndefOr[DateTime] = js.undefined,
-        device: js.UndefOr[Device] = js.undefined,
-        deviceMinutes: js.UndefOr[DeviceMinutes] = js.undefined,
-        instanceArn: js.UndefOr[AmazonResourceName] = js.undefined,
-        message: js.UndefOr[Message] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined,
-        result: js.UndefOr[ExecutionResult] = js.undefined,
-        started: js.UndefOr[DateTime] = js.undefined,
-        status: js.UndefOr[ExecutionStatus] = js.undefined,
-        stopped: js.UndefOr[DateTime] = js.undefined,
-        `type`: js.UndefOr[TestType] = js.undefined,
-        videoCapture: js.UndefOr[VideoCapture] = js.undefined,
-        videoEndpoint: js.UndefOr[String] = js.undefined
-    ): Job = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      counters.foreach(__v => __obj.updateDynamic("counters")(__v.asInstanceOf[js.Any]))
-      created.foreach(__v => __obj.updateDynamic("created")(__v.asInstanceOf[js.Any]))
-      device.foreach(__v => __obj.updateDynamic("device")(__v.asInstanceOf[js.Any]))
-      deviceMinutes.foreach(__v => __obj.updateDynamic("deviceMinutes")(__v.asInstanceOf[js.Any]))
-      instanceArn.foreach(__v => __obj.updateDynamic("instanceArn")(__v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      result.foreach(__v => __obj.updateDynamic("result")(__v.asInstanceOf[js.Any]))
-      started.foreach(__v => __obj.updateDynamic("started")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      stopped.foreach(__v => __obj.updateDynamic("stopped")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      videoCapture.foreach(__v => __obj.updateDynamic("videoCapture")(__v.asInstanceOf[js.Any]))
-      videoEndpoint.foreach(__v => __obj.updateDynamic("videoEndpoint")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Job]
-    }
-  }
-
   /**
     * Represents a request to the list artifacts operation.
     */
   @js.native
+  @Factory
   trait ListArtifactsRequest extends js.Object {
     var arn: AmazonResourceName
     var `type`: ArtifactCategory
     var nextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListArtifactsRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName,
-        `type`: ArtifactCategory,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListArtifactsRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn"  -> arn.asInstanceOf[js.Any],
-        "type" -> `type`.asInstanceOf[js.Any]
-      )
-
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListArtifactsRequest]
-    }
-  }
-
   /**
     * Represents the result of a list artifacts operation.
     */
   @js.native
+  @Factory
   trait ListArtifactsResult extends js.Object {
     var artifacts: js.UndefOr[Artifacts]
     var nextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListArtifactsResult {
-    @inline
-    def apply(
-        artifacts: js.UndefOr[Artifacts] = js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListArtifactsResult = {
-      val __obj = js.Dynamic.literal()
-      artifacts.foreach(__v => __obj.updateDynamic("artifacts")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListArtifactsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListDeviceInstancesRequest extends js.Object {
     var maxResults: js.UndefOr[Int]
     var nextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListDeviceInstancesRequest {
-    @inline
-    def apply(
-        maxResults: js.UndefOr[Int] = js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListDeviceInstancesRequest = {
-      val __obj = js.Dynamic.literal()
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDeviceInstancesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListDeviceInstancesResult extends js.Object {
     var deviceInstances: js.UndefOr[DeviceInstances]
     var nextToken: js.UndefOr[PaginationToken]
-  }
-
-  object ListDeviceInstancesResult {
-    @inline
-    def apply(
-        deviceInstances: js.UndefOr[DeviceInstances] = js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListDeviceInstancesResult = {
-      val __obj = js.Dynamic.literal()
-      deviceInstances.foreach(__v => __obj.updateDynamic("deviceInstances")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDeviceInstancesResult]
-    }
   }
 
   /**
     * Represents the result of a list device pools request.
     */
   @js.native
+  @Factory
   trait ListDevicePoolsRequest extends js.Object {
     var arn: AmazonResourceName
     var nextToken: js.UndefOr[PaginationToken]
     var `type`: js.UndefOr[DevicePoolType]
   }
 
-  object ListDevicePoolsRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined,
-        `type`: js.UndefOr[DevicePoolType] = js.undefined
-    ): ListDevicePoolsRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDevicePoolsRequest]
-    }
-  }
-
   /**
     * Represents the result of a list device pools request.
     */
   @js.native
+  @Factory
   trait ListDevicePoolsResult extends js.Object {
     var devicePools: js.UndefOr[DevicePools]
     var nextToken: js.UndefOr[PaginationToken]
-  }
-
-  object ListDevicePoolsResult {
-    @inline
-    def apply(
-        devicePools: js.UndefOr[DevicePools] = js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListDevicePoolsResult = {
-      val __obj = js.Dynamic.literal()
-      devicePools.foreach(__v => __obj.updateDynamic("devicePools")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDevicePoolsResult]
-    }
   }
 
   /**
     * Represents the result of a list devices request.
     */
   @js.native
+  @Factory
   trait ListDevicesRequest extends js.Object {
     var arn: js.UndefOr[AmazonResourceName]
     var filters: js.UndefOr[DeviceFilters]
     var nextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListDevicesRequest {
-    @inline
-    def apply(
-        arn: js.UndefOr[AmazonResourceName] = js.undefined,
-        filters: js.UndefOr[DeviceFilters] = js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListDevicesRequest = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDevicesRequest]
-    }
-  }
-
   /**
     * Represents the result of a list devices operation.
     */
   @js.native
+  @Factory
   trait ListDevicesResult extends js.Object {
     var devices: js.UndefOr[Devices]
     var nextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListDevicesResult {
-    @inline
-    def apply(
-        devices: js.UndefOr[Devices] = js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListDevicesResult = {
-      val __obj = js.Dynamic.literal()
-      devices.foreach(__v => __obj.updateDynamic("devices")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDevicesResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListInstanceProfilesRequest extends js.Object {
     var maxResults: js.UndefOr[Int]
     var nextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListInstanceProfilesRequest {
-    @inline
-    def apply(
-        maxResults: js.UndefOr[Int] = js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListInstanceProfilesRequest = {
-      val __obj = js.Dynamic.literal()
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListInstanceProfilesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListInstanceProfilesResult extends js.Object {
     var instanceProfiles: js.UndefOr[InstanceProfiles]
     var nextToken: js.UndefOr[PaginationToken]
-  }
-
-  object ListInstanceProfilesResult {
-    @inline
-    def apply(
-        instanceProfiles: js.UndefOr[InstanceProfiles] = js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListInstanceProfilesResult = {
-      val __obj = js.Dynamic.literal()
-      instanceProfiles.foreach(__v => __obj.updateDynamic("instanceProfiles")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListInstanceProfilesResult]
-    }
   }
 
   /**
     * Represents a request to the list jobs operation.
     */
   @js.native
+  @Factory
   trait ListJobsRequest extends js.Object {
     var arn: AmazonResourceName
     var nextToken: js.UndefOr[PaginationToken]
-  }
-
-  object ListJobsRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListJobsRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListJobsRequest]
-    }
   }
 
   /**
     * Represents the result of a list jobs request.
     */
   @js.native
+  @Factory
   trait ListJobsResult extends js.Object {
     var jobs: js.UndefOr[Jobs]
     var nextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListJobsResult {
-    @inline
-    def apply(
-        jobs: js.UndefOr[Jobs] = js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListJobsResult = {
-      val __obj = js.Dynamic.literal()
-      jobs.foreach(__v => __obj.updateDynamic("jobs")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListJobsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListNetworkProfilesRequest extends js.Object {
     var arn: AmazonResourceName
     var nextToken: js.UndefOr[PaginationToken]
     var `type`: js.UndefOr[NetworkProfileType]
   }
 
-  object ListNetworkProfilesRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined,
-        `type`: js.UndefOr[NetworkProfileType] = js.undefined
-    ): ListNetworkProfilesRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListNetworkProfilesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListNetworkProfilesResult extends js.Object {
     var networkProfiles: js.UndefOr[NetworkProfiles]
     var nextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListNetworkProfilesResult {
-    @inline
-    def apply(
-        networkProfiles: js.UndefOr[NetworkProfiles] = js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListNetworkProfilesResult = {
-      val __obj = js.Dynamic.literal()
-      networkProfiles.foreach(__v => __obj.updateDynamic("networkProfiles")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListNetworkProfilesResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListOfferingPromotionsRequest extends js.Object {
     var nextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListOfferingPromotionsRequest {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListOfferingPromotionsRequest = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListOfferingPromotionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListOfferingPromotionsResult extends js.Object {
     var nextToken: js.UndefOr[PaginationToken]
     var offeringPromotions: js.UndefOr[OfferingPromotions]
-  }
-
-  object ListOfferingPromotionsResult {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[PaginationToken] = js.undefined,
-        offeringPromotions: js.UndefOr[OfferingPromotions] = js.undefined
-    ): ListOfferingPromotionsResult = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      offeringPromotions.foreach(__v => __obj.updateDynamic("offeringPromotions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListOfferingPromotionsResult]
-    }
   }
 
   /**
     * Represents the request to list the offering transaction history.
     */
   @js.native
+  @Factory
   trait ListOfferingTransactionsRequest extends js.Object {
     var nextToken: js.UndefOr[PaginationToken]
-  }
-
-  object ListOfferingTransactionsRequest {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListOfferingTransactionsRequest = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListOfferingTransactionsRequest]
-    }
   }
 
   /**
     * Returns the transaction log of the specified offerings.
     */
   @js.native
+  @Factory
   trait ListOfferingTransactionsResult extends js.Object {
     var nextToken: js.UndefOr[PaginationToken]
     var offeringTransactions: js.UndefOr[OfferingTransactions]
-  }
-
-  object ListOfferingTransactionsResult {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[PaginationToken] = js.undefined,
-        offeringTransactions: js.UndefOr[OfferingTransactions] = js.undefined
-    ): ListOfferingTransactionsResult = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      offeringTransactions.foreach(__v => __obj.updateDynamic("offeringTransactions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListOfferingTransactionsResult]
-    }
   }
 
   /**
     * Represents the request to list all offerings.
     */
   @js.native
+  @Factory
   trait ListOfferingsRequest extends js.Object {
     var nextToken: js.UndefOr[PaginationToken]
-  }
-
-  object ListOfferingsRequest {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListOfferingsRequest = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListOfferingsRequest]
-    }
   }
 
   /**
     * Represents the return values of the list of offerings.
     */
   @js.native
+  @Factory
   trait ListOfferingsResult extends js.Object {
     var nextToken: js.UndefOr[PaginationToken]
     var offerings: js.UndefOr[Offerings]
-  }
-
-  object ListOfferingsResult {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[PaginationToken] = js.undefined,
-        offerings: js.UndefOr[Offerings] = js.undefined
-    ): ListOfferingsResult = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      offerings.foreach(__v => __obj.updateDynamic("offerings")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListOfferingsResult]
-    }
   }
 
   /**
     * Represents a request to the list projects operation.
     */
   @js.native
+  @Factory
   trait ListProjectsRequest extends js.Object {
     var arn: js.UndefOr[AmazonResourceName]
     var nextToken: js.UndefOr[PaginationToken]
-  }
-
-  object ListProjectsRequest {
-    @inline
-    def apply(
-        arn: js.UndefOr[AmazonResourceName] = js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListProjectsRequest = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListProjectsRequest]
-    }
   }
 
   /**
     * Represents the result of a list projects request.
     */
   @js.native
+  @Factory
   trait ListProjectsResult extends js.Object {
     var nextToken: js.UndefOr[PaginationToken]
     var projects: js.UndefOr[Projects]
-  }
-
-  object ListProjectsResult {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[PaginationToken] = js.undefined,
-        projects: js.UndefOr[Projects] = js.undefined
-    ): ListProjectsResult = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      projects.foreach(__v => __obj.updateDynamic("projects")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListProjectsResult]
-    }
   }
 
   /**
     * Represents the request to return information about the remote access session.
     */
   @js.native
+  @Factory
   trait ListRemoteAccessSessionsRequest extends js.Object {
     var arn: AmazonResourceName
     var nextToken: js.UndefOr[PaginationToken]
-  }
-
-  object ListRemoteAccessSessionsRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListRemoteAccessSessionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRemoteAccessSessionsRequest]
-    }
   }
 
   /**
     * Represents the response from the server after AWS Device Farm makes a request to return information about the remote access session.
     */
   @js.native
+  @Factory
   trait ListRemoteAccessSessionsResult extends js.Object {
     var nextToken: js.UndefOr[PaginationToken]
     var remoteAccessSessions: js.UndefOr[RemoteAccessSessions]
-  }
-
-  object ListRemoteAccessSessionsResult {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[PaginationToken] = js.undefined,
-        remoteAccessSessions: js.UndefOr[RemoteAccessSessions] = js.undefined
-    ): ListRemoteAccessSessionsResult = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      remoteAccessSessions.foreach(__v => __obj.updateDynamic("remoteAccessSessions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRemoteAccessSessionsResult]
-    }
   }
 
   /**
     * Represents a request to the list runs operation.
     */
   @js.native
+  @Factory
   trait ListRunsRequest extends js.Object {
     var arn: AmazonResourceName
     var nextToken: js.UndefOr[PaginationToken]
-  }
-
-  object ListRunsRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListRunsRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRunsRequest]
-    }
   }
 
   /**
     * Represents the result of a list runs request.
     */
   @js.native
+  @Factory
   trait ListRunsResult extends js.Object {
     var nextToken: js.UndefOr[PaginationToken]
     var runs: js.UndefOr[Runs]
-  }
-
-  object ListRunsResult {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[PaginationToken] = js.undefined,
-        runs: js.UndefOr[Runs] = js.undefined
-    ): ListRunsResult = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      runs.foreach(__v => __obj.updateDynamic("runs")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRunsResult]
-    }
   }
 
   /**
     * Represents a request to the list samples operation.
     */
   @js.native
+  @Factory
   trait ListSamplesRequest extends js.Object {
     var arn: AmazonResourceName
     var nextToken: js.UndefOr[PaginationToken]
-  }
-
-  object ListSamplesRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListSamplesRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListSamplesRequest]
-    }
   }
 
   /**
     * Represents the result of a list samples request.
     */
   @js.native
+  @Factory
   trait ListSamplesResult extends js.Object {
     var nextToken: js.UndefOr[PaginationToken]
     var samples: js.UndefOr[Samples]
-  }
-
-  object ListSamplesResult {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[PaginationToken] = js.undefined,
-        samples: js.UndefOr[Samples] = js.undefined
-    ): ListSamplesResult = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      samples.foreach(__v => __obj.updateDynamic("samples")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListSamplesResult]
-    }
   }
 
   /**
     * Represents a request to the list suites operation.
     */
   @js.native
+  @Factory
   trait ListSuitesRequest extends js.Object {
     var arn: AmazonResourceName
     var nextToken: js.UndefOr[PaginationToken]
-  }
-
-  object ListSuitesRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListSuitesRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListSuitesRequest]
-    }
   }
 
   /**
     * Represents the result of a list suites request.
     */
   @js.native
+  @Factory
   trait ListSuitesResult extends js.Object {
     var nextToken: js.UndefOr[PaginationToken]
     var suites: js.UndefOr[Suites]
   }
 
-  object ListSuitesResult {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[PaginationToken] = js.undefined,
-        suites: js.UndefOr[Suites] = js.undefined
-    ): ListSuitesResult = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      suites.foreach(__v => __obj.updateDynamic("suites")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListSuitesResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceRequest extends js.Object {
     var ResourceARN: DeviceFarmArn
   }
 
-  object ListTagsForResourceRequest {
-    @inline
-    def apply(
-        ResourceARN: DeviceFarmArn
-    ): ListTagsForResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListTagsForResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceResponse extends js.Object {
     var Tags: js.UndefOr[TagList]
   }
 
-  object ListTagsForResourceResponse {
-    @inline
-    def apply(
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): ListTagsForResourceResponse = {
-      val __obj = js.Dynamic.literal()
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTestGridProjectsRequest extends js.Object {
     var maxResult: js.UndefOr[MaxPageSize]
     var nextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListTestGridProjectsRequest {
-    @inline
-    def apply(
-        maxResult: js.UndefOr[MaxPageSize] = js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListTestGridProjectsRequest = {
-      val __obj = js.Dynamic.literal()
-      maxResult.foreach(__v => __obj.updateDynamic("maxResult")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTestGridProjectsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTestGridProjectsResult extends js.Object {
     var nextToken: js.UndefOr[PaginationToken]
     var testGridProjects: js.UndefOr[TestGridProjects]
   }
 
-  object ListTestGridProjectsResult {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[PaginationToken] = js.undefined,
-        testGridProjects: js.UndefOr[TestGridProjects] = js.undefined
-    ): ListTestGridProjectsResult = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      testGridProjects.foreach(__v => __obj.updateDynamic("testGridProjects")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTestGridProjectsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTestGridSessionActionsRequest extends js.Object {
     var sessionArn: DeviceFarmArn
     var maxResult: js.UndefOr[MaxPageSize]
     var nextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListTestGridSessionActionsRequest {
-    @inline
-    def apply(
-        sessionArn: DeviceFarmArn,
-        maxResult: js.UndefOr[MaxPageSize] = js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListTestGridSessionActionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "sessionArn" -> sessionArn.asInstanceOf[js.Any]
-      )
-
-      maxResult.foreach(__v => __obj.updateDynamic("maxResult")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTestGridSessionActionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTestGridSessionActionsResult extends js.Object {
     var actions: js.UndefOr[TestGridSessionActions]
     var nextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListTestGridSessionActionsResult {
-    @inline
-    def apply(
-        actions: js.UndefOr[TestGridSessionActions] = js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListTestGridSessionActionsResult = {
-      val __obj = js.Dynamic.literal()
-      actions.foreach(__v => __obj.updateDynamic("actions")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTestGridSessionActionsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTestGridSessionArtifactsRequest extends js.Object {
     var sessionArn: DeviceFarmArn
     var maxResult: js.UndefOr[MaxPageSize]
@@ -3523,45 +1815,15 @@ package devicefarm {
     var `type`: js.UndefOr[TestGridSessionArtifactCategory]
   }
 
-  object ListTestGridSessionArtifactsRequest {
-    @inline
-    def apply(
-        sessionArn: DeviceFarmArn,
-        maxResult: js.UndefOr[MaxPageSize] = js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined,
-        `type`: js.UndefOr[TestGridSessionArtifactCategory] = js.undefined
-    ): ListTestGridSessionArtifactsRequest = {
-      val __obj = js.Dynamic.literal(
-        "sessionArn" -> sessionArn.asInstanceOf[js.Any]
-      )
-
-      maxResult.foreach(__v => __obj.updateDynamic("maxResult")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTestGridSessionArtifactsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTestGridSessionArtifactsResult extends js.Object {
     var artifacts: js.UndefOr[TestGridSessionArtifacts]
     var nextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListTestGridSessionArtifactsResult {
-    @inline
-    def apply(
-        artifacts: js.UndefOr[TestGridSessionArtifacts] = js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListTestGridSessionArtifactsResult = {
-      val __obj = js.Dynamic.literal()
-      artifacts.foreach(__v => __obj.updateDynamic("artifacts")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTestGridSessionArtifactsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTestGridSessionsRequest extends js.Object {
     var projectArn: DeviceFarmArn
     var creationTimeAfter: js.UndefOr[DateTime]
@@ -3573,229 +1835,86 @@ package devicefarm {
     var status: js.UndefOr[TestGridSessionStatus]
   }
 
-  object ListTestGridSessionsRequest {
-    @inline
-    def apply(
-        projectArn: DeviceFarmArn,
-        creationTimeAfter: js.UndefOr[DateTime] = js.undefined,
-        creationTimeBefore: js.UndefOr[DateTime] = js.undefined,
-        endTimeAfter: js.UndefOr[DateTime] = js.undefined,
-        endTimeBefore: js.UndefOr[DateTime] = js.undefined,
-        maxResult: js.UndefOr[MaxPageSize] = js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined,
-        status: js.UndefOr[TestGridSessionStatus] = js.undefined
-    ): ListTestGridSessionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "projectArn" -> projectArn.asInstanceOf[js.Any]
-      )
-
-      creationTimeAfter.foreach(__v => __obj.updateDynamic("creationTimeAfter")(__v.asInstanceOf[js.Any]))
-      creationTimeBefore.foreach(__v => __obj.updateDynamic("creationTimeBefore")(__v.asInstanceOf[js.Any]))
-      endTimeAfter.foreach(__v => __obj.updateDynamic("endTimeAfter")(__v.asInstanceOf[js.Any]))
-      endTimeBefore.foreach(__v => __obj.updateDynamic("endTimeBefore")(__v.asInstanceOf[js.Any]))
-      maxResult.foreach(__v => __obj.updateDynamic("maxResult")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTestGridSessionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTestGridSessionsResult extends js.Object {
     var nextToken: js.UndefOr[PaginationToken]
     var testGridSessions: js.UndefOr[TestGridSessions]
-  }
-
-  object ListTestGridSessionsResult {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[PaginationToken] = js.undefined,
-        testGridSessions: js.UndefOr[TestGridSessions] = js.undefined
-    ): ListTestGridSessionsResult = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      testGridSessions.foreach(__v => __obj.updateDynamic("testGridSessions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTestGridSessionsResult]
-    }
   }
 
   /**
     * Represents a request to the list tests operation.
     */
   @js.native
+  @Factory
   trait ListTestsRequest extends js.Object {
     var arn: AmazonResourceName
     var nextToken: js.UndefOr[PaginationToken]
-  }
-
-  object ListTestsRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListTestsRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTestsRequest]
-    }
   }
 
   /**
     * Represents the result of a list tests request.
     */
   @js.native
+  @Factory
   trait ListTestsResult extends js.Object {
     var nextToken: js.UndefOr[PaginationToken]
     var tests: js.UndefOr[Tests]
-  }
-
-  object ListTestsResult {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[PaginationToken] = js.undefined,
-        tests: js.UndefOr[Tests] = js.undefined
-    ): ListTestsResult = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      tests.foreach(__v => __obj.updateDynamic("tests")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTestsResult]
-    }
   }
 
   /**
     * Represents a request to the list unique problems operation.
     */
   @js.native
+  @Factory
   trait ListUniqueProblemsRequest extends js.Object {
     var arn: AmazonResourceName
     var nextToken: js.UndefOr[PaginationToken]
-  }
-
-  object ListUniqueProblemsRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListUniqueProblemsRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListUniqueProblemsRequest]
-    }
   }
 
   /**
     * Represents the result of a list unique problems request.
     */
   @js.native
+  @Factory
   trait ListUniqueProblemsResult extends js.Object {
     var nextToken: js.UndefOr[PaginationToken]
     var uniqueProblems: js.UndefOr[UniqueProblemsByExecutionResultMap]
-  }
-
-  object ListUniqueProblemsResult {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[PaginationToken] = js.undefined,
-        uniqueProblems: js.UndefOr[UniqueProblemsByExecutionResultMap] = js.undefined
-    ): ListUniqueProblemsResult = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      uniqueProblems.foreach(__v => __obj.updateDynamic("uniqueProblems")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListUniqueProblemsResult]
-    }
   }
 
   /**
     * Represents a request to the list uploads operation.
     */
   @js.native
+  @Factory
   trait ListUploadsRequest extends js.Object {
     var arn: AmazonResourceName
     var nextToken: js.UndefOr[PaginationToken]
     var `type`: js.UndefOr[UploadType]
   }
 
-  object ListUploadsRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined,
-        `type`: js.UndefOr[UploadType] = js.undefined
-    ): ListUploadsRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListUploadsRequest]
-    }
-  }
-
   /**
     * Represents the result of a list uploads request.
     */
   @js.native
+  @Factory
   trait ListUploadsResult extends js.Object {
     var nextToken: js.UndefOr[PaginationToken]
     var uploads: js.UndefOr[Uploads]
   }
 
-  object ListUploadsResult {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[PaginationToken] = js.undefined,
-        uploads: js.UndefOr[Uploads] = js.undefined
-    ): ListUploadsResult = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      uploads.foreach(__v => __obj.updateDynamic("uploads")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListUploadsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListVPCEConfigurationsRequest extends js.Object {
     var maxResults: js.UndefOr[Int]
     var nextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListVPCEConfigurationsRequest {
-    @inline
-    def apply(
-        maxResults: js.UndefOr[Int] = js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListVPCEConfigurationsRequest = {
-      val __obj = js.Dynamic.literal()
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListVPCEConfigurationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListVPCEConfigurationsResult extends js.Object {
     var nextToken: js.UndefOr[PaginationToken]
     var vpceConfigurations: js.UndefOr[VPCEConfigurations]
-  }
-
-  object ListVPCEConfigurationsResult {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[PaginationToken] = js.undefined,
-        vpceConfigurations: js.UndefOr[VPCEConfigurations] = js.undefined
-    ): ListVPCEConfigurationsResult = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      vpceConfigurations.foreach(__v => __obj.updateDynamic("vpceConfigurations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListVPCEConfigurationsResult]
-    }
   }
 
   /**
@@ -3803,52 +1922,27 @@ package devicefarm {
     *  Elevation is currently not supported.
     */
   @js.native
+  @Factory
   trait Location extends js.Object {
     var latitude: Double
     var longitude: Double
-  }
-
-  object Location {
-    @inline
-    def apply(
-        latitude: Double,
-        longitude: Double
-    ): Location = {
-      val __obj = js.Dynamic.literal(
-        "latitude"  -> latitude.asInstanceOf[js.Any],
-        "longitude" -> longitude.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Location]
-    }
   }
 
   /**
     * A number that represents the monetary amount for an offering or transaction.
     */
   @js.native
+  @Factory
   trait MonetaryAmount extends js.Object {
     var amount: js.UndefOr[Double]
     var currencyCode: js.UndefOr[CurrencyCode]
-  }
-
-  object MonetaryAmount {
-    @inline
-    def apply(
-        amount: js.UndefOr[Double] = js.undefined,
-        currencyCode: js.UndefOr[CurrencyCode] = js.undefined
-    ): MonetaryAmount = {
-      val __obj = js.Dynamic.literal()
-      amount.foreach(__v => __obj.updateDynamic("amount")(__v.asInstanceOf[js.Any]))
-      currencyCode.foreach(__v => __obj.updateDynamic("currencyCode")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MonetaryAmount]
-    }
   }
 
   /**
     * An array of settings that describes characteristics of a network profile.
     */
   @js.native
+  @Factory
   trait NetworkProfile extends js.Object {
     var arn: js.UndefOr[AmazonResourceName]
     var description: js.UndefOr[Message]
@@ -3864,39 +1958,6 @@ package devicefarm {
     var uplinkLossPercent: js.UndefOr[PercentInteger]
   }
 
-  object NetworkProfile {
-    @inline
-    def apply(
-        arn: js.UndefOr[AmazonResourceName] = js.undefined,
-        description: js.UndefOr[Message] = js.undefined,
-        downlinkBandwidthBits: js.UndefOr[Double] = js.undefined,
-        downlinkDelayMs: js.UndefOr[Double] = js.undefined,
-        downlinkJitterMs: js.UndefOr[Double] = js.undefined,
-        downlinkLossPercent: js.UndefOr[PercentInteger] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined,
-        `type`: js.UndefOr[NetworkProfileType] = js.undefined,
-        uplinkBandwidthBits: js.UndefOr[Double] = js.undefined,
-        uplinkDelayMs: js.UndefOr[Double] = js.undefined,
-        uplinkJitterMs: js.UndefOr[Double] = js.undefined,
-        uplinkLossPercent: js.UndefOr[PercentInteger] = js.undefined
-    ): NetworkProfile = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      downlinkBandwidthBits.foreach(__v => __obj.updateDynamic("downlinkBandwidthBits")(__v.asInstanceOf[js.Any]))
-      downlinkDelayMs.foreach(__v => __obj.updateDynamic("downlinkDelayMs")(__v.asInstanceOf[js.Any]))
-      downlinkJitterMs.foreach(__v => __obj.updateDynamic("downlinkJitterMs")(__v.asInstanceOf[js.Any]))
-      downlinkLossPercent.foreach(__v => __obj.updateDynamic("downlinkLossPercent")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      uplinkBandwidthBits.foreach(__v => __obj.updateDynamic("uplinkBandwidthBits")(__v.asInstanceOf[js.Any]))
-      uplinkDelayMs.foreach(__v => __obj.updateDynamic("uplinkDelayMs")(__v.asInstanceOf[js.Any]))
-      uplinkJitterMs.foreach(__v => __obj.updateDynamic("uplinkJitterMs")(__v.asInstanceOf[js.Any]))
-      uplinkLossPercent.foreach(__v => __obj.updateDynamic("uplinkLossPercent")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NetworkProfile]
-    }
-  }
-
   @js.native
   sealed trait NetworkProfileType extends js.Any
   object NetworkProfileType extends js.Object {
@@ -3910,6 +1971,7 @@ package devicefarm {
     * Represents the metadata of a device offering.
     */
   @js.native
+  @Factory
   trait Offering extends js.Object {
     var description: js.UndefOr[Message]
     var id: js.UndefOr[OfferingIdentifier]
@@ -3918,51 +1980,21 @@ package devicefarm {
     var `type`: js.UndefOr[OfferingType]
   }
 
-  object Offering {
-    @inline
-    def apply(
-        description: js.UndefOr[Message] = js.undefined,
-        id: js.UndefOr[OfferingIdentifier] = js.undefined,
-        platform: js.UndefOr[DevicePlatform] = js.undefined,
-        recurringCharges: js.UndefOr[RecurringCharges] = js.undefined,
-        `type`: js.UndefOr[OfferingType] = js.undefined
-    ): Offering = {
-      val __obj = js.Dynamic.literal()
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
-      platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
-      recurringCharges.foreach(__v => __obj.updateDynamic("recurringCharges")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Offering]
-    }
-  }
-
   /**
     * Represents information about an offering promotion.
     */
   @js.native
+  @Factory
   trait OfferingPromotion extends js.Object {
     var description: js.UndefOr[Message]
     var id: js.UndefOr[OfferingPromotionIdentifier]
-  }
-
-  object OfferingPromotion {
-    @inline
-    def apply(
-        description: js.UndefOr[Message] = js.undefined,
-        id: js.UndefOr[OfferingPromotionIdentifier] = js.undefined
-    ): OfferingPromotion = {
-      val __obj = js.Dynamic.literal()
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[OfferingPromotion]
-    }
   }
 
   /**
     * The status of the offering.
     */
   @js.native
+  @Factory
   trait OfferingStatus extends js.Object {
     var effectiveOn: js.UndefOr[DateTime]
     var offering: js.UndefOr[Offering]
@@ -3970,52 +2002,17 @@ package devicefarm {
     var `type`: js.UndefOr[OfferingTransactionType]
   }
 
-  object OfferingStatus {
-    @inline
-    def apply(
-        effectiveOn: js.UndefOr[DateTime] = js.undefined,
-        offering: js.UndefOr[Offering] = js.undefined,
-        quantity: js.UndefOr[Int] = js.undefined,
-        `type`: js.UndefOr[OfferingTransactionType] = js.undefined
-    ): OfferingStatus = {
-      val __obj = js.Dynamic.literal()
-      effectiveOn.foreach(__v => __obj.updateDynamic("effectiveOn")(__v.asInstanceOf[js.Any]))
-      offering.foreach(__v => __obj.updateDynamic("offering")(__v.asInstanceOf[js.Any]))
-      quantity.foreach(__v => __obj.updateDynamic("quantity")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[OfferingStatus]
-    }
-  }
-
   /**
     * Represents the metadata of an offering transaction.
     */
   @js.native
+  @Factory
   trait OfferingTransaction extends js.Object {
     var cost: js.UndefOr[MonetaryAmount]
     var createdOn: js.UndefOr[DateTime]
     var offeringPromotionId: js.UndefOr[OfferingPromotionIdentifier]
     var offeringStatus: js.UndefOr[OfferingStatus]
     var transactionId: js.UndefOr[TransactionIdentifier]
-  }
-
-  object OfferingTransaction {
-    @inline
-    def apply(
-        cost: js.UndefOr[MonetaryAmount] = js.undefined,
-        createdOn: js.UndefOr[DateTime] = js.undefined,
-        offeringPromotionId: js.UndefOr[OfferingPromotionIdentifier] = js.undefined,
-        offeringStatus: js.UndefOr[OfferingStatus] = js.undefined,
-        transactionId: js.UndefOr[TransactionIdentifier] = js.undefined
-    ): OfferingTransaction = {
-      val __obj = js.Dynamic.literal()
-      cost.foreach(__v => __obj.updateDynamic("cost")(__v.asInstanceOf[js.Any]))
-      createdOn.foreach(__v => __obj.updateDynamic("createdOn")(__v.asInstanceOf[js.Any]))
-      offeringPromotionId.foreach(__v => __obj.updateDynamic("offeringPromotionId")(__v.asInstanceOf[js.Any]))
-      offeringStatus.foreach(__v => __obj.updateDynamic("offeringStatus")(__v.asInstanceOf[js.Any]))
-      transactionId.foreach(__v => __obj.updateDynamic("transactionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[OfferingTransaction]
-    }
   }
 
   @js.native
@@ -4040,6 +2037,7 @@ package devicefarm {
     * Represents a specific warning or failure.
     */
   @js.native
+  @Factory
   trait Problem extends js.Object {
     var device: js.UndefOr[Device]
     var job: js.UndefOr[ProblemDetail]
@@ -4050,55 +2048,21 @@ package devicefarm {
     var test: js.UndefOr[ProblemDetail]
   }
 
-  object Problem {
-    @inline
-    def apply(
-        device: js.UndefOr[Device] = js.undefined,
-        job: js.UndefOr[ProblemDetail] = js.undefined,
-        message: js.UndefOr[Message] = js.undefined,
-        result: js.UndefOr[ExecutionResult] = js.undefined,
-        run: js.UndefOr[ProblemDetail] = js.undefined,
-        suite: js.UndefOr[ProblemDetail] = js.undefined,
-        test: js.UndefOr[ProblemDetail] = js.undefined
-    ): Problem = {
-      val __obj = js.Dynamic.literal()
-      device.foreach(__v => __obj.updateDynamic("device")(__v.asInstanceOf[js.Any]))
-      job.foreach(__v => __obj.updateDynamic("job")(__v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
-      result.foreach(__v => __obj.updateDynamic("result")(__v.asInstanceOf[js.Any]))
-      run.foreach(__v => __obj.updateDynamic("run")(__v.asInstanceOf[js.Any]))
-      suite.foreach(__v => __obj.updateDynamic("suite")(__v.asInstanceOf[js.Any]))
-      test.foreach(__v => __obj.updateDynamic("test")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Problem]
-    }
-  }
-
   /**
     * Information about a problem detail.
     */
   @js.native
+  @Factory
   trait ProblemDetail extends js.Object {
     var arn: js.UndefOr[AmazonResourceName]
     var name: js.UndefOr[Name]
-  }
-
-  object ProblemDetail {
-    @inline
-    def apply(
-        arn: js.UndefOr[AmazonResourceName] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined
-    ): ProblemDetail = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ProblemDetail]
-    }
   }
 
   /**
     * Represents an operating-system neutral workspace for running and managing tests.
     */
   @js.native
+  @Factory
   trait Project extends js.Object {
     var arn: js.UndefOr[AmazonResourceName]
     var created: js.UndefOr[DateTime]
@@ -4106,71 +2070,31 @@ package devicefarm {
     var name: js.UndefOr[Name]
   }
 
-  object Project {
-    @inline
-    def apply(
-        arn: js.UndefOr[AmazonResourceName] = js.undefined,
-        created: js.UndefOr[DateTime] = js.undefined,
-        defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined
-    ): Project = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      created.foreach(__v => __obj.updateDynamic("created")(__v.asInstanceOf[js.Any]))
-      defaultJobTimeoutMinutes.foreach(__v => __obj.updateDynamic("defaultJobTimeoutMinutes")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Project]
-    }
-  }
-
   /**
     * Represents a request for a purchase offering.
     */
   @js.native
+  @Factory
   trait PurchaseOfferingRequest extends js.Object {
     var offeringId: js.UndefOr[OfferingIdentifier]
     var offeringPromotionId: js.UndefOr[OfferingPromotionIdentifier]
     var quantity: js.UndefOr[Int]
   }
 
-  object PurchaseOfferingRequest {
-    @inline
-    def apply(
-        offeringId: js.UndefOr[OfferingIdentifier] = js.undefined,
-        offeringPromotionId: js.UndefOr[OfferingPromotionIdentifier] = js.undefined,
-        quantity: js.UndefOr[Int] = js.undefined
-    ): PurchaseOfferingRequest = {
-      val __obj = js.Dynamic.literal()
-      offeringId.foreach(__v => __obj.updateDynamic("offeringId")(__v.asInstanceOf[js.Any]))
-      offeringPromotionId.foreach(__v => __obj.updateDynamic("offeringPromotionId")(__v.asInstanceOf[js.Any]))
-      quantity.foreach(__v => __obj.updateDynamic("quantity")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PurchaseOfferingRequest]
-    }
-  }
-
   /**
     * The result of the purchase offering (for example, success or failure).
     */
   @js.native
+  @Factory
   trait PurchaseOfferingResult extends js.Object {
     var offeringTransaction: js.UndefOr[OfferingTransaction]
-  }
-
-  object PurchaseOfferingResult {
-    @inline
-    def apply(
-        offeringTransaction: js.UndefOr[OfferingTransaction] = js.undefined
-    ): PurchaseOfferingResult = {
-      val __obj = js.Dynamic.literal()
-      offeringTransaction.foreach(__v => __obj.updateDynamic("offeringTransaction")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PurchaseOfferingResult]
-    }
   }
 
   /**
     * Represents the set of radios and their states on a device. Examples of radios include Wi-Fi, GPS, Bluetooth, and NFC.
     */
   @js.native
+  @Factory
   trait Radios extends js.Object {
     var bluetooth: js.UndefOr[Boolean]
     var gps: js.UndefOr[Boolean]
@@ -4178,43 +2102,14 @@ package devicefarm {
     var wifi: js.UndefOr[Boolean]
   }
 
-  object Radios {
-    @inline
-    def apply(
-        bluetooth: js.UndefOr[Boolean] = js.undefined,
-        gps: js.UndefOr[Boolean] = js.undefined,
-        nfc: js.UndefOr[Boolean] = js.undefined,
-        wifi: js.UndefOr[Boolean] = js.undefined
-    ): Radios = {
-      val __obj = js.Dynamic.literal()
-      bluetooth.foreach(__v => __obj.updateDynamic("bluetooth")(__v.asInstanceOf[js.Any]))
-      gps.foreach(__v => __obj.updateDynamic("gps")(__v.asInstanceOf[js.Any]))
-      nfc.foreach(__v => __obj.updateDynamic("nfc")(__v.asInstanceOf[js.Any]))
-      wifi.foreach(__v => __obj.updateDynamic("wifi")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Radios]
-    }
-  }
-
   /**
     * Specifies whether charges for devices are recurring.
     */
   @js.native
+  @Factory
   trait RecurringCharge extends js.Object {
     var cost: js.UndefOr[MonetaryAmount]
     var frequency: js.UndefOr[RecurringChargeFrequency]
-  }
-
-  object RecurringCharge {
-    @inline
-    def apply(
-        cost: js.UndefOr[MonetaryAmount] = js.undefined,
-        frequency: js.UndefOr[RecurringChargeFrequency] = js.undefined
-    ): RecurringCharge = {
-      val __obj = js.Dynamic.literal()
-      cost.foreach(__v => __obj.updateDynamic("cost")(__v.asInstanceOf[js.Any]))
-      frequency.foreach(__v => __obj.updateDynamic("frequency")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RecurringCharge]
-    }
   }
 
   @js.native
@@ -4229,6 +2124,7 @@ package devicefarm {
     * Represents information about the remote access session.
     */
   @js.native
+  @Factory
   trait RemoteAccessSession extends js.Object {
     var arn: js.UndefOr[AmazonResourceName]
     var billingMethod: js.UndefOr[BillingMethod]
@@ -4253,143 +2149,44 @@ package devicefarm {
     var stopped: js.UndefOr[DateTime]
   }
 
-  object RemoteAccessSession {
-    @inline
-    def apply(
-        arn: js.UndefOr[AmazonResourceName] = js.undefined,
-        billingMethod: js.UndefOr[BillingMethod] = js.undefined,
-        clientId: js.UndefOr[ClientId] = js.undefined,
-        created: js.UndefOr[DateTime] = js.undefined,
-        device: js.UndefOr[Device] = js.undefined,
-        deviceMinutes: js.UndefOr[DeviceMinutes] = js.undefined,
-        deviceUdid: js.UndefOr[String] = js.undefined,
-        endpoint: js.UndefOr[String] = js.undefined,
-        hostAddress: js.UndefOr[HostAddress] = js.undefined,
-        instanceArn: js.UndefOr[AmazonResourceName] = js.undefined,
-        interactionMode: js.UndefOr[InteractionMode] = js.undefined,
-        message: js.UndefOr[Message] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined,
-        remoteDebugEnabled: js.UndefOr[Boolean] = js.undefined,
-        remoteRecordAppArn: js.UndefOr[AmazonResourceName] = js.undefined,
-        remoteRecordEnabled: js.UndefOr[Boolean] = js.undefined,
-        result: js.UndefOr[ExecutionResult] = js.undefined,
-        skipAppResign: js.UndefOr[SkipAppResign] = js.undefined,
-        started: js.UndefOr[DateTime] = js.undefined,
-        status: js.UndefOr[ExecutionStatus] = js.undefined,
-        stopped: js.UndefOr[DateTime] = js.undefined
-    ): RemoteAccessSession = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      billingMethod.foreach(__v => __obj.updateDynamic("billingMethod")(__v.asInstanceOf[js.Any]))
-      clientId.foreach(__v => __obj.updateDynamic("clientId")(__v.asInstanceOf[js.Any]))
-      created.foreach(__v => __obj.updateDynamic("created")(__v.asInstanceOf[js.Any]))
-      device.foreach(__v => __obj.updateDynamic("device")(__v.asInstanceOf[js.Any]))
-      deviceMinutes.foreach(__v => __obj.updateDynamic("deviceMinutes")(__v.asInstanceOf[js.Any]))
-      deviceUdid.foreach(__v => __obj.updateDynamic("deviceUdid")(__v.asInstanceOf[js.Any]))
-      endpoint.foreach(__v => __obj.updateDynamic("endpoint")(__v.asInstanceOf[js.Any]))
-      hostAddress.foreach(__v => __obj.updateDynamic("hostAddress")(__v.asInstanceOf[js.Any]))
-      instanceArn.foreach(__v => __obj.updateDynamic("instanceArn")(__v.asInstanceOf[js.Any]))
-      interactionMode.foreach(__v => __obj.updateDynamic("interactionMode")(__v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      remoteDebugEnabled.foreach(__v => __obj.updateDynamic("remoteDebugEnabled")(__v.asInstanceOf[js.Any]))
-      remoteRecordAppArn.foreach(__v => __obj.updateDynamic("remoteRecordAppArn")(__v.asInstanceOf[js.Any]))
-      remoteRecordEnabled.foreach(__v => __obj.updateDynamic("remoteRecordEnabled")(__v.asInstanceOf[js.Any]))
-      result.foreach(__v => __obj.updateDynamic("result")(__v.asInstanceOf[js.Any]))
-      skipAppResign.foreach(__v => __obj.updateDynamic("skipAppResign")(__v.asInstanceOf[js.Any]))
-      started.foreach(__v => __obj.updateDynamic("started")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      stopped.foreach(__v => __obj.updateDynamic("stopped")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RemoteAccessSession]
-    }
-  }
-
   /**
     * A request that represents an offering renewal.
     */
   @js.native
+  @Factory
   trait RenewOfferingRequest extends js.Object {
     var offeringId: js.UndefOr[OfferingIdentifier]
     var quantity: js.UndefOr[Int]
-  }
-
-  object RenewOfferingRequest {
-    @inline
-    def apply(
-        offeringId: js.UndefOr[OfferingIdentifier] = js.undefined,
-        quantity: js.UndefOr[Int] = js.undefined
-    ): RenewOfferingRequest = {
-      val __obj = js.Dynamic.literal()
-      offeringId.foreach(__v => __obj.updateDynamic("offeringId")(__v.asInstanceOf[js.Any]))
-      quantity.foreach(__v => __obj.updateDynamic("quantity")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RenewOfferingRequest]
-    }
   }
 
   /**
     * The result of a renewal offering.
     */
   @js.native
+  @Factory
   trait RenewOfferingResult extends js.Object {
     var offeringTransaction: js.UndefOr[OfferingTransaction]
-  }
-
-  object RenewOfferingResult {
-    @inline
-    def apply(
-        offeringTransaction: js.UndefOr[OfferingTransaction] = js.undefined
-    ): RenewOfferingResult = {
-      val __obj = js.Dynamic.literal()
-      offeringTransaction.foreach(__v => __obj.updateDynamic("offeringTransaction")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RenewOfferingResult]
-    }
   }
 
   /**
     * Represents the screen resolution of a device in height and width, expressed in pixels.
     */
   @js.native
+  @Factory
   trait Resolution extends js.Object {
     var height: js.UndefOr[Int]
     var width: js.UndefOr[Int]
-  }
-
-  object Resolution {
-    @inline
-    def apply(
-        height: js.UndefOr[Int] = js.undefined,
-        width: js.UndefOr[Int] = js.undefined
-    ): Resolution = {
-      val __obj = js.Dynamic.literal()
-      height.foreach(__v => __obj.updateDynamic("height")(__v.asInstanceOf[js.Any]))
-      width.foreach(__v => __obj.updateDynamic("width")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Resolution]
-    }
   }
 
   /**
     * Represents a condition for a device pool.
     */
   @js.native
+  @Factory
   trait Rule extends js.Object {
     var attribute: js.UndefOr[DeviceAttribute]
     var operator: js.UndefOr[RuleOperator]
     var value: js.UndefOr[String]
-  }
-
-  object Rule {
-    @inline
-    def apply(
-        attribute: js.UndefOr[DeviceAttribute] = js.undefined,
-        operator: js.UndefOr[RuleOperator] = js.undefined,
-        value: js.UndefOr[String] = js.undefined
-    ): Rule = {
-      val __obj = js.Dynamic.literal()
-      attribute.foreach(__v => __obj.updateDynamic("attribute")(__v.asInstanceOf[js.Any]))
-      operator.foreach(__v => __obj.updateDynamic("operator")(__v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Rule]
-    }
   }
 
   @js.native
@@ -4413,6 +2210,7 @@ package devicefarm {
     * Represents a test run on a set of devices with a given app package, test parameters, and so on.
     */
   @js.native
+  @Factory
   trait Run extends js.Object {
     var appUpload: js.UndefOr[AmazonResourceName]
     var arn: js.UndefOr[AmazonResourceName]
@@ -4447,100 +2245,15 @@ package devicefarm {
     var webUrl: js.UndefOr[String]
   }
 
-  object Run {
-    @inline
-    def apply(
-        appUpload: js.UndefOr[AmazonResourceName] = js.undefined,
-        arn: js.UndefOr[AmazonResourceName] = js.undefined,
-        billingMethod: js.UndefOr[BillingMethod] = js.undefined,
-        completedJobs: js.UndefOr[Int] = js.undefined,
-        counters: js.UndefOr[Counters] = js.undefined,
-        created: js.UndefOr[DateTime] = js.undefined,
-        customerArtifactPaths: js.UndefOr[CustomerArtifactPaths] = js.undefined,
-        deviceMinutes: js.UndefOr[DeviceMinutes] = js.undefined,
-        devicePoolArn: js.UndefOr[AmazonResourceName] = js.undefined,
-        deviceSelectionResult: js.UndefOr[DeviceSelectionResult] = js.undefined,
-        eventCount: js.UndefOr[Int] = js.undefined,
-        jobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined,
-        locale: js.UndefOr[String] = js.undefined,
-        location: js.UndefOr[Location] = js.undefined,
-        message: js.UndefOr[Message] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined,
-        networkProfile: js.UndefOr[NetworkProfile] = js.undefined,
-        parsingResultUrl: js.UndefOr[String] = js.undefined,
-        platform: js.UndefOr[DevicePlatform] = js.undefined,
-        radios: js.UndefOr[Radios] = js.undefined,
-        result: js.UndefOr[ExecutionResult] = js.undefined,
-        resultCode: js.UndefOr[ExecutionResultCode] = js.undefined,
-        seed: js.UndefOr[Int] = js.undefined,
-        skipAppResign: js.UndefOr[SkipAppResign] = js.undefined,
-        started: js.UndefOr[DateTime] = js.undefined,
-        status: js.UndefOr[ExecutionStatus] = js.undefined,
-        stopped: js.UndefOr[DateTime] = js.undefined,
-        testSpecArn: js.UndefOr[AmazonResourceName] = js.undefined,
-        totalJobs: js.UndefOr[Int] = js.undefined,
-        `type`: js.UndefOr[TestType] = js.undefined,
-        webUrl: js.UndefOr[String] = js.undefined
-    ): Run = {
-      val __obj = js.Dynamic.literal()
-      appUpload.foreach(__v => __obj.updateDynamic("appUpload")(__v.asInstanceOf[js.Any]))
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      billingMethod.foreach(__v => __obj.updateDynamic("billingMethod")(__v.asInstanceOf[js.Any]))
-      completedJobs.foreach(__v => __obj.updateDynamic("completedJobs")(__v.asInstanceOf[js.Any]))
-      counters.foreach(__v => __obj.updateDynamic("counters")(__v.asInstanceOf[js.Any]))
-      created.foreach(__v => __obj.updateDynamic("created")(__v.asInstanceOf[js.Any]))
-      customerArtifactPaths.foreach(__v => __obj.updateDynamic("customerArtifactPaths")(__v.asInstanceOf[js.Any]))
-      deviceMinutes.foreach(__v => __obj.updateDynamic("deviceMinutes")(__v.asInstanceOf[js.Any]))
-      devicePoolArn.foreach(__v => __obj.updateDynamic("devicePoolArn")(__v.asInstanceOf[js.Any]))
-      deviceSelectionResult.foreach(__v => __obj.updateDynamic("deviceSelectionResult")(__v.asInstanceOf[js.Any]))
-      eventCount.foreach(__v => __obj.updateDynamic("eventCount")(__v.asInstanceOf[js.Any]))
-      jobTimeoutMinutes.foreach(__v => __obj.updateDynamic("jobTimeoutMinutes")(__v.asInstanceOf[js.Any]))
-      locale.foreach(__v => __obj.updateDynamic("locale")(__v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      networkProfile.foreach(__v => __obj.updateDynamic("networkProfile")(__v.asInstanceOf[js.Any]))
-      parsingResultUrl.foreach(__v => __obj.updateDynamic("parsingResultUrl")(__v.asInstanceOf[js.Any]))
-      platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
-      radios.foreach(__v => __obj.updateDynamic("radios")(__v.asInstanceOf[js.Any]))
-      result.foreach(__v => __obj.updateDynamic("result")(__v.asInstanceOf[js.Any]))
-      resultCode.foreach(__v => __obj.updateDynamic("resultCode")(__v.asInstanceOf[js.Any]))
-      seed.foreach(__v => __obj.updateDynamic("seed")(__v.asInstanceOf[js.Any]))
-      skipAppResign.foreach(__v => __obj.updateDynamic("skipAppResign")(__v.asInstanceOf[js.Any]))
-      started.foreach(__v => __obj.updateDynamic("started")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      stopped.foreach(__v => __obj.updateDynamic("stopped")(__v.asInstanceOf[js.Any]))
-      testSpecArn.foreach(__v => __obj.updateDynamic("testSpecArn")(__v.asInstanceOf[js.Any]))
-      totalJobs.foreach(__v => __obj.updateDynamic("totalJobs")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      webUrl.foreach(__v => __obj.updateDynamic("webUrl")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Run]
-    }
-  }
-
   /**
     * Represents a sample of performance data.
     */
   @js.native
+  @Factory
   trait Sample extends js.Object {
     var arn: js.UndefOr[AmazonResourceName]
     var `type`: js.UndefOr[SampleType]
     var url: js.UndefOr[URL]
-  }
-
-  object Sample {
-    @inline
-    def apply(
-        arn: js.UndefOr[AmazonResourceName] = js.undefined,
-        `type`: js.UndefOr[SampleType] = js.undefined,
-        url: js.UndefOr[URL] = js.undefined
-    ): Sample = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      url.foreach(__v => __obj.updateDynamic("url")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Sample]
-    }
   }
 
   @js.native
@@ -4591,6 +2304,7 @@ package devicefarm {
     * Represents the settings for a run. Includes things like location, radio states, auxiliary apps, and network profiles.
     */
   @js.native
+  @Factory
   trait ScheduleRunConfiguration extends js.Object {
     var auxiliaryApps: js.UndefOr[AmazonResourceNames]
     var billingMethod: js.UndefOr[BillingMethod]
@@ -4603,37 +2317,11 @@ package devicefarm {
     var vpceConfigurationArns: js.UndefOr[AmazonResourceNames]
   }
 
-  object ScheduleRunConfiguration {
-    @inline
-    def apply(
-        auxiliaryApps: js.UndefOr[AmazonResourceNames] = js.undefined,
-        billingMethod: js.UndefOr[BillingMethod] = js.undefined,
-        customerArtifactPaths: js.UndefOr[CustomerArtifactPaths] = js.undefined,
-        extraDataPackageArn: js.UndefOr[AmazonResourceName] = js.undefined,
-        locale: js.UndefOr[String] = js.undefined,
-        location: js.UndefOr[Location] = js.undefined,
-        networkProfileArn: js.UndefOr[AmazonResourceName] = js.undefined,
-        radios: js.UndefOr[Radios] = js.undefined,
-        vpceConfigurationArns: js.UndefOr[AmazonResourceNames] = js.undefined
-    ): ScheduleRunConfiguration = {
-      val __obj = js.Dynamic.literal()
-      auxiliaryApps.foreach(__v => __obj.updateDynamic("auxiliaryApps")(__v.asInstanceOf[js.Any]))
-      billingMethod.foreach(__v => __obj.updateDynamic("billingMethod")(__v.asInstanceOf[js.Any]))
-      customerArtifactPaths.foreach(__v => __obj.updateDynamic("customerArtifactPaths")(__v.asInstanceOf[js.Any]))
-      extraDataPackageArn.foreach(__v => __obj.updateDynamic("extraDataPackageArn")(__v.asInstanceOf[js.Any]))
-      locale.foreach(__v => __obj.updateDynamic("locale")(__v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
-      networkProfileArn.foreach(__v => __obj.updateDynamic("networkProfileArn")(__v.asInstanceOf[js.Any]))
-      radios.foreach(__v => __obj.updateDynamic("radios")(__v.asInstanceOf[js.Any]))
-      vpceConfigurationArns.foreach(__v => __obj.updateDynamic("vpceConfigurationArns")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ScheduleRunConfiguration]
-    }
-  }
-
   /**
     * Represents a request to the schedule run operation.
     */
   @js.native
+  @Factory
   trait ScheduleRunRequest extends js.Object {
     var projectArn: AmazonResourceName
     var test: ScheduleRunTest
@@ -4645,58 +2333,20 @@ package devicefarm {
     var name: js.UndefOr[Name]
   }
 
-  object ScheduleRunRequest {
-    @inline
-    def apply(
-        projectArn: AmazonResourceName,
-        test: ScheduleRunTest,
-        appArn: js.UndefOr[AmazonResourceName] = js.undefined,
-        configuration: js.UndefOr[ScheduleRunConfiguration] = js.undefined,
-        devicePoolArn: js.UndefOr[AmazonResourceName] = js.undefined,
-        deviceSelectionConfiguration: js.UndefOr[DeviceSelectionConfiguration] = js.undefined,
-        executionConfiguration: js.UndefOr[ExecutionConfiguration] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined
-    ): ScheduleRunRequest = {
-      val __obj = js.Dynamic.literal(
-        "projectArn" -> projectArn.asInstanceOf[js.Any],
-        "test"       -> test.asInstanceOf[js.Any]
-      )
-
-      appArn.foreach(__v => __obj.updateDynamic("appArn")(__v.asInstanceOf[js.Any]))
-      configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
-      devicePoolArn.foreach(__v => __obj.updateDynamic("devicePoolArn")(__v.asInstanceOf[js.Any]))
-      deviceSelectionConfiguration.foreach(__v =>
-        __obj.updateDynamic("deviceSelectionConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      executionConfiguration.foreach(__v => __obj.updateDynamic("executionConfiguration")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ScheduleRunRequest]
-    }
-  }
-
   /**
     * Represents the result of a schedule run request.
     */
   @js.native
+  @Factory
   trait ScheduleRunResult extends js.Object {
     var run: js.UndefOr[Run]
-  }
-
-  object ScheduleRunResult {
-    @inline
-    def apply(
-        run: js.UndefOr[Run] = js.undefined
-    ): ScheduleRunResult = {
-      val __obj = js.Dynamic.literal()
-      run.foreach(__v => __obj.updateDynamic("run")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ScheduleRunResult]
-    }
   }
 
   /**
     * Represents test settings. This data structure is passed in as the test parameter to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>.
     */
   @js.native
+  @Factory
   trait ScheduleRunTest extends js.Object {
     var `type`: TestType
     var filter: js.UndefOr[Filter]
@@ -4705,145 +2355,59 @@ package devicefarm {
     var testSpecArn: js.UndefOr[AmazonResourceName]
   }
 
-  object ScheduleRunTest {
-    @inline
-    def apply(
-        `type`: TestType,
-        filter: js.UndefOr[Filter] = js.undefined,
-        parameters: js.UndefOr[TestParameters] = js.undefined,
-        testPackageArn: js.UndefOr[AmazonResourceName] = js.undefined,
-        testSpecArn: js.UndefOr[AmazonResourceName] = js.undefined
-    ): ScheduleRunTest = {
-      val __obj = js.Dynamic.literal(
-        "type" -> `type`.asInstanceOf[js.Any]
-      )
-
-      filter.foreach(__v => __obj.updateDynamic("filter")(__v.asInstanceOf[js.Any]))
-      parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
-      testPackageArn.foreach(__v => __obj.updateDynamic("testPackageArn")(__v.asInstanceOf[js.Any]))
-      testSpecArn.foreach(__v => __obj.updateDynamic("testSpecArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ScheduleRunTest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopJobRequest extends js.Object {
     var arn: AmazonResourceName
   }
 
-  object StopJobRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName
-    ): StopJobRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StopJobRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopJobResult extends js.Object {
     var job: js.UndefOr[Job]
-  }
-
-  object StopJobResult {
-    @inline
-    def apply(
-        job: js.UndefOr[Job] = js.undefined
-    ): StopJobResult = {
-      val __obj = js.Dynamic.literal()
-      job.foreach(__v => __obj.updateDynamic("job")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StopJobResult]
-    }
   }
 
   /**
     * Represents the request to stop the remote access session.
     */
   @js.native
+  @Factory
   trait StopRemoteAccessSessionRequest extends js.Object {
     var arn: AmazonResourceName
-  }
-
-  object StopRemoteAccessSessionRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName
-    ): StopRemoteAccessSessionRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StopRemoteAccessSessionRequest]
-    }
   }
 
   /**
     * Represents the response from the server that describes the remote access session when AWS Device Farm stops the session.
     */
   @js.native
+  @Factory
   trait StopRemoteAccessSessionResult extends js.Object {
     var remoteAccessSession: js.UndefOr[RemoteAccessSession]
-  }
-
-  object StopRemoteAccessSessionResult {
-    @inline
-    def apply(
-        remoteAccessSession: js.UndefOr[RemoteAccessSession] = js.undefined
-    ): StopRemoteAccessSessionResult = {
-      val __obj = js.Dynamic.literal()
-      remoteAccessSession.foreach(__v => __obj.updateDynamic("remoteAccessSession")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StopRemoteAccessSessionResult]
-    }
   }
 
   /**
     * Represents the request to stop a specific run.
     */
   @js.native
+  @Factory
   trait StopRunRequest extends js.Object {
     var arn: AmazonResourceName
-  }
-
-  object StopRunRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName
-    ): StopRunRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StopRunRequest]
-    }
   }
 
   /**
     * Represents the results of your stop run attempt.
     */
   @js.native
+  @Factory
   trait StopRunResult extends js.Object {
     var run: js.UndefOr[Run]
-  }
-
-  object StopRunResult {
-    @inline
-    def apply(
-        run: js.UndefOr[Run] = js.undefined
-    ): StopRunResult = {
-      val __obj = js.Dynamic.literal()
-      run.foreach(__v => __obj.updateDynamic("run")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StopRunResult]
-    }
   }
 
   /**
     * Represents a collection of one or more tests.
     */
   @js.native
+  @Factory
   trait Suite extends js.Object {
     var arn: js.UndefOr[AmazonResourceName]
     var counters: js.UndefOr[Counters]
@@ -4858,99 +2422,32 @@ package devicefarm {
     var `type`: js.UndefOr[TestType]
   }
 
-  object Suite {
-    @inline
-    def apply(
-        arn: js.UndefOr[AmazonResourceName] = js.undefined,
-        counters: js.UndefOr[Counters] = js.undefined,
-        created: js.UndefOr[DateTime] = js.undefined,
-        deviceMinutes: js.UndefOr[DeviceMinutes] = js.undefined,
-        message: js.UndefOr[Message] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined,
-        result: js.UndefOr[ExecutionResult] = js.undefined,
-        started: js.UndefOr[DateTime] = js.undefined,
-        status: js.UndefOr[ExecutionStatus] = js.undefined,
-        stopped: js.UndefOr[DateTime] = js.undefined,
-        `type`: js.UndefOr[TestType] = js.undefined
-    ): Suite = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      counters.foreach(__v => __obj.updateDynamic("counters")(__v.asInstanceOf[js.Any]))
-      created.foreach(__v => __obj.updateDynamic("created")(__v.asInstanceOf[js.Any]))
-      deviceMinutes.foreach(__v => __obj.updateDynamic("deviceMinutes")(__v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      result.foreach(__v => __obj.updateDynamic("result")(__v.asInstanceOf[js.Any]))
-      started.foreach(__v => __obj.updateDynamic("started")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      stopped.foreach(__v => __obj.updateDynamic("stopped")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Suite]
-    }
-  }
-
   /**
     * The metadata that you apply to a resource to help you categorize and organize it. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters. Tag values can have a maximum length of 256 characters.
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var Key: TagKey
     var Value: TagValue
   }
 
-  object Tag {
-    @inline
-    def apply(
-        Key: TagKey,
-        Value: TagValue
-    ): Tag = {
-      val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Tag]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceRequest extends js.Object {
     var ResourceARN: DeviceFarmArn
     var Tags: TagList
   }
 
-  object TagResourceRequest {
-    @inline
-    def apply(
-        ResourceARN: DeviceFarmArn,
-        Tags: TagList
-    ): TagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceResponse extends js.Object {}
-
-  object TagResourceResponse {
-    @inline
-    def apply(
-    ): TagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[TagResourceResponse]
-    }
-  }
 
   /**
     * Represents a condition that is evaluated.
     */
   @js.native
+  @Factory
   trait Test extends js.Object {
     var arn: js.UndefOr[AmazonResourceName]
     var counters: js.UndefOr[Counters]
@@ -4965,41 +2462,11 @@ package devicefarm {
     var `type`: js.UndefOr[TestType]
   }
 
-  object Test {
-    @inline
-    def apply(
-        arn: js.UndefOr[AmazonResourceName] = js.undefined,
-        counters: js.UndefOr[Counters] = js.undefined,
-        created: js.UndefOr[DateTime] = js.undefined,
-        deviceMinutes: js.UndefOr[DeviceMinutes] = js.undefined,
-        message: js.UndefOr[Message] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined,
-        result: js.UndefOr[ExecutionResult] = js.undefined,
-        started: js.UndefOr[DateTime] = js.undefined,
-        status: js.UndefOr[ExecutionStatus] = js.undefined,
-        stopped: js.UndefOr[DateTime] = js.undefined,
-        `type`: js.UndefOr[TestType] = js.undefined
-    ): Test = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      counters.foreach(__v => __obj.updateDynamic("counters")(__v.asInstanceOf[js.Any]))
-      created.foreach(__v => __obj.updateDynamic("created")(__v.asInstanceOf[js.Any]))
-      deviceMinutes.foreach(__v => __obj.updateDynamic("deviceMinutes")(__v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      result.foreach(__v => __obj.updateDynamic("result")(__v.asInstanceOf[js.Any]))
-      started.foreach(__v => __obj.updateDynamic("started")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      stopped.foreach(__v => __obj.updateDynamic("stopped")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Test]
-    }
-  }
-
   /**
     * A Selenium testing project. Projects are used to collect and collate sessions.
     */
   @js.native
+  @Factory
   trait TestGridProject extends js.Object {
     var arn: js.UndefOr[DeviceFarmArn]
     var created: js.UndefOr[DateTime]
@@ -5007,27 +2474,11 @@ package devicefarm {
     var name: js.UndefOr[String]
   }
 
-  object TestGridProject {
-    @inline
-    def apply(
-        arn: js.UndefOr[DeviceFarmArn] = js.undefined,
-        created: js.UndefOr[DateTime] = js.undefined,
-        description: js.UndefOr[String] = js.undefined,
-        name: js.UndefOr[String] = js.undefined
-    ): TestGridProject = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      created.foreach(__v => __obj.updateDynamic("created")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TestGridProject]
-    }
-  }
-
   /**
     * A <a>TestGridSession</a> is a single instance of a browser launched from the URL provided by a call to <a>CreateTestGridUrl</a>.
     */
   @js.native
+  @Factory
   trait TestGridSession extends js.Object {
     var arn: js.UndefOr[DeviceFarmArn]
     var billingMinutes: js.UndefOr[Double]
@@ -5037,31 +2488,11 @@ package devicefarm {
     var status: js.UndefOr[TestGridSessionStatus]
   }
 
-  object TestGridSession {
-    @inline
-    def apply(
-        arn: js.UndefOr[DeviceFarmArn] = js.undefined,
-        billingMinutes: js.UndefOr[Double] = js.undefined,
-        created: js.UndefOr[DateTime] = js.undefined,
-        ended: js.UndefOr[DateTime] = js.undefined,
-        seleniumProperties: js.UndefOr[String] = js.undefined,
-        status: js.UndefOr[TestGridSessionStatus] = js.undefined
-    ): TestGridSession = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      billingMinutes.foreach(__v => __obj.updateDynamic("billingMinutes")(__v.asInstanceOf[js.Any]))
-      created.foreach(__v => __obj.updateDynamic("created")(__v.asInstanceOf[js.Any]))
-      ended.foreach(__v => __obj.updateDynamic("ended")(__v.asInstanceOf[js.Any]))
-      seleniumProperties.foreach(__v => __obj.updateDynamic("seleniumProperties")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TestGridSession]
-    }
-  }
-
   /**
     * An action taken by a <a>TestGridSession</a> browser instance.
     */
   @js.native
+  @Factory
   trait TestGridSessionAction extends js.Object {
     var action: js.UndefOr[String]
     var duration: js.UndefOr[Double]
@@ -5070,50 +2501,17 @@ package devicefarm {
     var statusCode: js.UndefOr[String]
   }
 
-  object TestGridSessionAction {
-    @inline
-    def apply(
-        action: js.UndefOr[String] = js.undefined,
-        duration: js.UndefOr[Double] = js.undefined,
-        requestMethod: js.UndefOr[String] = js.undefined,
-        started: js.UndefOr[DateTime] = js.undefined,
-        statusCode: js.UndefOr[String] = js.undefined
-    ): TestGridSessionAction = {
-      val __obj = js.Dynamic.literal()
-      action.foreach(__v => __obj.updateDynamic("action")(__v.asInstanceOf[js.Any]))
-      duration.foreach(__v => __obj.updateDynamic("duration")(__v.asInstanceOf[js.Any]))
-      requestMethod.foreach(__v => __obj.updateDynamic("requestMethod")(__v.asInstanceOf[js.Any]))
-      started.foreach(__v => __obj.updateDynamic("started")(__v.asInstanceOf[js.Any]))
-      statusCode.foreach(__v => __obj.updateDynamic("statusCode")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TestGridSessionAction]
-    }
-  }
-
   /**
     * Artifacts are video and other files that are produced in the process of running a browser in an automated context.
     *
     * '''Note:'''Video elements might be broken up into multiple artifacts as they grow in size during creation.
     */
   @js.native
+  @Factory
   trait TestGridSessionArtifact extends js.Object {
     var filename: js.UndefOr[String]
     var `type`: js.UndefOr[TestGridSessionArtifactType]
     var url: js.UndefOr[String]
-  }
-
-  object TestGridSessionArtifact {
-    @inline
-    def apply(
-        filename: js.UndefOr[String] = js.undefined,
-        `type`: js.UndefOr[TestGridSessionArtifactType] = js.undefined,
-        url: js.UndefOr[String] = js.undefined
-    ): TestGridSessionArtifact = {
-      val __obj = js.Dynamic.literal()
-      filename.foreach(__v => __obj.updateDynamic("filename")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      url.foreach(__v => __obj.updateDynamic("url")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TestGridSessionArtifact]
-    }
   }
 
   @js.native
@@ -5201,124 +2599,52 @@ package devicefarm {
     * Represents information about free trial device minutes for an AWS account.
     */
   @js.native
+  @Factory
   trait TrialMinutes extends js.Object {
     var remaining: js.UndefOr[Double]
     var total: js.UndefOr[Double]
-  }
-
-  object TrialMinutes {
-    @inline
-    def apply(
-        remaining: js.UndefOr[Double] = js.undefined,
-        total: js.UndefOr[Double] = js.undefined
-    ): TrialMinutes = {
-      val __obj = js.Dynamic.literal()
-      remaining.foreach(__v => __obj.updateDynamic("remaining")(__v.asInstanceOf[js.Any]))
-      total.foreach(__v => __obj.updateDynamic("total")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TrialMinutes]
-    }
   }
 
   /**
     * A collection of one or more problems, grouped by their result.
     */
   @js.native
+  @Factory
   trait UniqueProblem extends js.Object {
     var message: js.UndefOr[Message]
     var problems: js.UndefOr[Problems]
   }
 
-  object UniqueProblem {
-    @inline
-    def apply(
-        message: js.UndefOr[Message] = js.undefined,
-        problems: js.UndefOr[Problems] = js.undefined
-    ): UniqueProblem = {
-      val __obj = js.Dynamic.literal()
-      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
-      problems.foreach(__v => __obj.updateDynamic("problems")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UniqueProblem]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceRequest extends js.Object {
     var ResourceARN: DeviceFarmArn
     var TagKeys: TagKeyList
   }
 
-  object UntagResourceRequest {
-    @inline
-    def apply(
-        ResourceARN: DeviceFarmArn,
-        TagKeys: TagKeyList
-    ): UntagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceResponse extends js.Object {}
 
-  object UntagResourceResponse {
-    @inline
-    def apply(
-    ): UntagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UntagResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateDeviceInstanceRequest extends js.Object {
     var arn: AmazonResourceName
     var labels: js.UndefOr[InstanceLabels]
     var profileArn: js.UndefOr[AmazonResourceName]
   }
 
-  object UpdateDeviceInstanceRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName,
-        labels: js.UndefOr[InstanceLabels] = js.undefined,
-        profileArn: js.UndefOr[AmazonResourceName] = js.undefined
-    ): UpdateDeviceInstanceRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      labels.foreach(__v => __obj.updateDynamic("labels")(__v.asInstanceOf[js.Any]))
-      profileArn.foreach(__v => __obj.updateDynamic("profileArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateDeviceInstanceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateDeviceInstanceResult extends js.Object {
     var deviceInstance: js.UndefOr[DeviceInstance]
-  }
-
-  object UpdateDeviceInstanceResult {
-    @inline
-    def apply(
-        deviceInstance: js.UndefOr[DeviceInstance] = js.undefined
-    ): UpdateDeviceInstanceResult = {
-      val __obj = js.Dynamic.literal()
-      deviceInstance.foreach(__v => __obj.updateDynamic("deviceInstance")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateDeviceInstanceResult]
-    }
   }
 
   /**
     * Represents a request to the update device pool operation.
     */
   @js.native
+  @Factory
   trait UpdateDevicePoolRequest extends js.Object {
     var arn: AmazonResourceName
     var clearMaxDevices: js.UndefOr[Boolean]
@@ -5328,49 +2654,17 @@ package devicefarm {
     var rules: js.UndefOr[Rules]
   }
 
-  object UpdateDevicePoolRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName,
-        clearMaxDevices: js.UndefOr[Boolean] = js.undefined,
-        description: js.UndefOr[Message] = js.undefined,
-        maxDevices: js.UndefOr[Int] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined,
-        rules: js.UndefOr[Rules] = js.undefined
-    ): UpdateDevicePoolRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      clearMaxDevices.foreach(__v => __obj.updateDynamic("clearMaxDevices")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      maxDevices.foreach(__v => __obj.updateDynamic("maxDevices")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      rules.foreach(__v => __obj.updateDynamic("rules")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateDevicePoolRequest]
-    }
-  }
-
   /**
     * Represents the result of an update device pool request.
     */
   @js.native
+  @Factory
   trait UpdateDevicePoolResult extends js.Object {
     var devicePool: js.UndefOr[DevicePool]
   }
 
-  object UpdateDevicePoolResult {
-    @inline
-    def apply(
-        devicePool: js.UndefOr[DevicePool] = js.undefined
-    ): UpdateDevicePoolResult = {
-      val __obj = js.Dynamic.literal()
-      devicePool.foreach(__v => __obj.updateDynamic("devicePool")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateDevicePoolResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateInstanceProfileRequest extends js.Object {
     var arn: AmazonResourceName
     var description: js.UndefOr[Message]
@@ -5380,48 +2674,14 @@ package devicefarm {
     var rebootAfterUse: js.UndefOr[Boolean]
   }
 
-  object UpdateInstanceProfileRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName,
-        description: js.UndefOr[Message] = js.undefined,
-        excludeAppPackagesFromCleanup: js.UndefOr[PackageIds] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined,
-        packageCleanup: js.UndefOr[Boolean] = js.undefined,
-        rebootAfterUse: js.UndefOr[Boolean] = js.undefined
-    ): UpdateInstanceProfileRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      excludeAppPackagesFromCleanup.foreach(__v =>
-        __obj.updateDynamic("excludeAppPackagesFromCleanup")(__v.asInstanceOf[js.Any])
-      )
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      packageCleanup.foreach(__v => __obj.updateDynamic("packageCleanup")(__v.asInstanceOf[js.Any]))
-      rebootAfterUse.foreach(__v => __obj.updateDynamic("rebootAfterUse")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateInstanceProfileRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateInstanceProfileResult extends js.Object {
     var instanceProfile: js.UndefOr[InstanceProfile]
   }
 
-  object UpdateInstanceProfileResult {
-    @inline
-    def apply(
-        instanceProfile: js.UndefOr[InstanceProfile] = js.undefined
-    ): UpdateInstanceProfileResult = {
-      val __obj = js.Dynamic.literal()
-      instanceProfile.foreach(__v => __obj.updateDynamic("instanceProfile")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateInstanceProfileResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateNetworkProfileRequest extends js.Object {
     var arn: AmazonResourceName
     var description: js.UndefOr[Message]
@@ -5437,144 +2697,48 @@ package devicefarm {
     var uplinkLossPercent: js.UndefOr[PercentInteger]
   }
 
-  object UpdateNetworkProfileRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName,
-        description: js.UndefOr[Message] = js.undefined,
-        downlinkBandwidthBits: js.UndefOr[Double] = js.undefined,
-        downlinkDelayMs: js.UndefOr[Double] = js.undefined,
-        downlinkJitterMs: js.UndefOr[Double] = js.undefined,
-        downlinkLossPercent: js.UndefOr[PercentInteger] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined,
-        `type`: js.UndefOr[NetworkProfileType] = js.undefined,
-        uplinkBandwidthBits: js.UndefOr[Double] = js.undefined,
-        uplinkDelayMs: js.UndefOr[Double] = js.undefined,
-        uplinkJitterMs: js.UndefOr[Double] = js.undefined,
-        uplinkLossPercent: js.UndefOr[PercentInteger] = js.undefined
-    ): UpdateNetworkProfileRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      downlinkBandwidthBits.foreach(__v => __obj.updateDynamic("downlinkBandwidthBits")(__v.asInstanceOf[js.Any]))
-      downlinkDelayMs.foreach(__v => __obj.updateDynamic("downlinkDelayMs")(__v.asInstanceOf[js.Any]))
-      downlinkJitterMs.foreach(__v => __obj.updateDynamic("downlinkJitterMs")(__v.asInstanceOf[js.Any]))
-      downlinkLossPercent.foreach(__v => __obj.updateDynamic("downlinkLossPercent")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      uplinkBandwidthBits.foreach(__v => __obj.updateDynamic("uplinkBandwidthBits")(__v.asInstanceOf[js.Any]))
-      uplinkDelayMs.foreach(__v => __obj.updateDynamic("uplinkDelayMs")(__v.asInstanceOf[js.Any]))
-      uplinkJitterMs.foreach(__v => __obj.updateDynamic("uplinkJitterMs")(__v.asInstanceOf[js.Any]))
-      uplinkLossPercent.foreach(__v => __obj.updateDynamic("uplinkLossPercent")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateNetworkProfileRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateNetworkProfileResult extends js.Object {
     var networkProfile: js.UndefOr[NetworkProfile]
-  }
-
-  object UpdateNetworkProfileResult {
-    @inline
-    def apply(
-        networkProfile: js.UndefOr[NetworkProfile] = js.undefined
-    ): UpdateNetworkProfileResult = {
-      val __obj = js.Dynamic.literal()
-      networkProfile.foreach(__v => __obj.updateDynamic("networkProfile")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateNetworkProfileResult]
-    }
   }
 
   /**
     * Represents a request to the update project operation.
     */
   @js.native
+  @Factory
   trait UpdateProjectRequest extends js.Object {
     var arn: AmazonResourceName
     var defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes]
     var name: js.UndefOr[Name]
   }
 
-  object UpdateProjectRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName,
-        defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined
-    ): UpdateProjectRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      defaultJobTimeoutMinutes.foreach(__v => __obj.updateDynamic("defaultJobTimeoutMinutes")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateProjectRequest]
-    }
-  }
-
   /**
     * Represents the result of an update project request.
     */
   @js.native
+  @Factory
   trait UpdateProjectResult extends js.Object {
     var project: js.UndefOr[Project]
   }
 
-  object UpdateProjectResult {
-    @inline
-    def apply(
-        project: js.UndefOr[Project] = js.undefined
-    ): UpdateProjectResult = {
-      val __obj = js.Dynamic.literal()
-      project.foreach(__v => __obj.updateDynamic("project")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateProjectResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateTestGridProjectRequest extends js.Object {
     var projectArn: DeviceFarmArn
     var description: js.UndefOr[ResourceDescription]
     var name: js.UndefOr[ResourceName]
   }
 
-  object UpdateTestGridProjectRequest {
-    @inline
-    def apply(
-        projectArn: DeviceFarmArn,
-        description: js.UndefOr[ResourceDescription] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined
-    ): UpdateTestGridProjectRequest = {
-      val __obj = js.Dynamic.literal(
-        "projectArn" -> projectArn.asInstanceOf[js.Any]
-      )
-
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateTestGridProjectRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateTestGridProjectResult extends js.Object {
     var testGridProject: js.UndefOr[TestGridProject]
   }
 
-  object UpdateTestGridProjectResult {
-    @inline
-    def apply(
-        testGridProject: js.UndefOr[TestGridProject] = js.undefined
-    ): UpdateTestGridProjectResult = {
-      val __obj = js.Dynamic.literal()
-      testGridProject.foreach(__v => __obj.updateDynamic("testGridProject")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateTestGridProjectResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateUploadRequest extends js.Object {
     var arn: AmazonResourceName
     var contentType: js.UndefOr[ContentType]
@@ -5582,42 +2746,14 @@ package devicefarm {
     var name: js.UndefOr[Name]
   }
 
-  object UpdateUploadRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName,
-        contentType: js.UndefOr[ContentType] = js.undefined,
-        editContent: js.UndefOr[Boolean] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined
-    ): UpdateUploadRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      contentType.foreach(__v => __obj.updateDynamic("contentType")(__v.asInstanceOf[js.Any]))
-      editContent.foreach(__v => __obj.updateDynamic("editContent")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateUploadRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateUploadResult extends js.Object {
     var upload: js.UndefOr[Upload]
   }
 
-  object UpdateUploadResult {
-    @inline
-    def apply(
-        upload: js.UndefOr[Upload] = js.undefined
-    ): UpdateUploadResult = {
-      val __obj = js.Dynamic.literal()
-      upload.foreach(__v => __obj.updateDynamic("upload")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateUploadResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateVPCEConfigurationRequest extends js.Object {
     var arn: AmazonResourceName
     var serviceDnsName: js.UndefOr[ServiceDnsName]
@@ -5626,49 +2762,17 @@ package devicefarm {
     var vpceServiceName: js.UndefOr[VPCEServiceName]
   }
 
-  object UpdateVPCEConfigurationRequest {
-    @inline
-    def apply(
-        arn: AmazonResourceName,
-        serviceDnsName: js.UndefOr[ServiceDnsName] = js.undefined,
-        vpceConfigurationDescription: js.UndefOr[VPCEConfigurationDescription] = js.undefined,
-        vpceConfigurationName: js.UndefOr[VPCEConfigurationName] = js.undefined,
-        vpceServiceName: js.UndefOr[VPCEServiceName] = js.undefined
-    ): UpdateVPCEConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "arn" -> arn.asInstanceOf[js.Any]
-      )
-
-      serviceDnsName.foreach(__v => __obj.updateDynamic("serviceDnsName")(__v.asInstanceOf[js.Any]))
-      vpceConfigurationDescription.foreach(__v =>
-        __obj.updateDynamic("vpceConfigurationDescription")(__v.asInstanceOf[js.Any])
-      )
-      vpceConfigurationName.foreach(__v => __obj.updateDynamic("vpceConfigurationName")(__v.asInstanceOf[js.Any]))
-      vpceServiceName.foreach(__v => __obj.updateDynamic("vpceServiceName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateVPCEConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateVPCEConfigurationResult extends js.Object {
     var vpceConfiguration: js.UndefOr[VPCEConfiguration]
-  }
-
-  object UpdateVPCEConfigurationResult {
-    @inline
-    def apply(
-        vpceConfiguration: js.UndefOr[VPCEConfiguration] = js.undefined
-    ): UpdateVPCEConfigurationResult = {
-      val __obj = js.Dynamic.literal()
-      vpceConfiguration.foreach(__v => __obj.updateDynamic("vpceConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateVPCEConfigurationResult]
-    }
   }
 
   /**
     * An app or a set of one or more tests to upload or that have been uploaded.
     */
   @js.native
+  @Factory
   trait Upload extends js.Object {
     var arn: js.UndefOr[AmazonResourceName]
     var category: js.UndefOr[UploadCategory]
@@ -5680,35 +2784,6 @@ package devicefarm {
     var status: js.UndefOr[UploadStatus]
     var `type`: js.UndefOr[UploadType]
     var url: js.UndefOr[URL]
-  }
-
-  object Upload {
-    @inline
-    def apply(
-        arn: js.UndefOr[AmazonResourceName] = js.undefined,
-        category: js.UndefOr[UploadCategory] = js.undefined,
-        contentType: js.UndefOr[ContentType] = js.undefined,
-        created: js.UndefOr[DateTime] = js.undefined,
-        message: js.UndefOr[Message] = js.undefined,
-        metadata: js.UndefOr[Metadata] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined,
-        status: js.UndefOr[UploadStatus] = js.undefined,
-        `type`: js.UndefOr[UploadType] = js.undefined,
-        url: js.UndefOr[URL] = js.undefined
-    ): Upload = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      category.foreach(__v => __obj.updateDynamic("category")(__v.asInstanceOf[js.Any]))
-      contentType.foreach(__v => __obj.updateDynamic("contentType")(__v.asInstanceOf[js.Any]))
-      created.foreach(__v => __obj.updateDynamic("created")(__v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
-      metadata.foreach(__v => __obj.updateDynamic("metadata")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      url.foreach(__v => __obj.updateDynamic("url")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Upload]
-    }
   }
 
   @js.native
@@ -5809,32 +2884,12 @@ package devicefarm {
     * Represents an Amazon Virtual Private Cloud (VPC) endpoint configuration.
     */
   @js.native
+  @Factory
   trait VPCEConfiguration extends js.Object {
     var arn: js.UndefOr[AmazonResourceName]
     var serviceDnsName: js.UndefOr[ServiceDnsName]
     var vpceConfigurationDescription: js.UndefOr[VPCEConfigurationDescription]
     var vpceConfigurationName: js.UndefOr[VPCEConfigurationName]
     var vpceServiceName: js.UndefOr[VPCEServiceName]
-  }
-
-  object VPCEConfiguration {
-    @inline
-    def apply(
-        arn: js.UndefOr[AmazonResourceName] = js.undefined,
-        serviceDnsName: js.UndefOr[ServiceDnsName] = js.undefined,
-        vpceConfigurationDescription: js.UndefOr[VPCEConfigurationDescription] = js.undefined,
-        vpceConfigurationName: js.UndefOr[VPCEConfigurationName] = js.undefined,
-        vpceServiceName: js.UndefOr[VPCEServiceName] = js.undefined
-    ): VPCEConfiguration = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      serviceDnsName.foreach(__v => __obj.updateDynamic("serviceDnsName")(__v.asInstanceOf[js.Any]))
-      vpceConfigurationDescription.foreach(__v =>
-        __obj.updateDynamic("vpceConfigurationDescription")(__v.asInstanceOf[js.Any])
-      )
-      vpceConfigurationName.foreach(__v => __obj.updateDynamic("vpceConfigurationName")(__v.asInstanceOf[js.Any]))
-      vpceServiceName.foreach(__v => __obj.updateDynamic("vpceServiceName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VPCEConfiguration]
-    }
   }
 }

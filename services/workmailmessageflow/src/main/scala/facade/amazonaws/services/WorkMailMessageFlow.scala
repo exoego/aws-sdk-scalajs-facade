@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object workmailmessageflow {
   type messageContentBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
@@ -27,38 +28,14 @@ package workmailmessageflow {
   }
 
   @js.native
+  @Factory
   trait GetRawMessageContentRequest extends js.Object {
     var messageId: messageIdType
   }
 
-  object GetRawMessageContentRequest {
-    @inline
-    def apply(
-        messageId: messageIdType
-    ): GetRawMessageContentRequest = {
-      val __obj = js.Dynamic.literal(
-        "messageId" -> messageId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetRawMessageContentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRawMessageContentResponse extends js.Object {
     var messageContent: messageContentBlob
-  }
-
-  object GetRawMessageContentResponse {
-    @inline
-    def apply(
-        messageContent: messageContentBlob
-    ): GetRawMessageContentResponse = {
-      val __obj = js.Dynamic.literal(
-        "messageContent" -> messageContent.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetRawMessageContentResponse]
-    }
   }
 }

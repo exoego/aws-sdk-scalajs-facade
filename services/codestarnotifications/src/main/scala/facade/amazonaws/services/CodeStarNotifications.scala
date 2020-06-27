@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object codestarnotifications {
   type ClientRequestToken               = String
@@ -98,6 +99,7 @@ package codestarnotifications {
   }
 
   @js.native
+  @Factory
   trait CreateNotificationRuleRequest extends js.Object {
     var DetailType: DetailType
     var EventTypeIds: EventTypeIds
@@ -109,136 +111,43 @@ package codestarnotifications {
     var Tags: js.UndefOr[Tags]
   }
 
-  object CreateNotificationRuleRequest {
-    @inline
-    def apply(
-        DetailType: DetailType,
-        EventTypeIds: EventTypeIds,
-        Name: NotificationRuleName,
-        Resource: NotificationRuleResource,
-        Targets: Targets,
-        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-        Status: js.UndefOr[NotificationRuleStatus] = js.undefined,
-        Tags: js.UndefOr[Tags] = js.undefined
-    ): CreateNotificationRuleRequest = {
-      val __obj = js.Dynamic.literal(
-        "DetailType"   -> DetailType.asInstanceOf[js.Any],
-        "EventTypeIds" -> EventTypeIds.asInstanceOf[js.Any],
-        "Name"         -> Name.asInstanceOf[js.Any],
-        "Resource"     -> Resource.asInstanceOf[js.Any],
-        "Targets"      -> Targets.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateNotificationRuleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateNotificationRuleResult extends js.Object {
     var Arn: js.UndefOr[NotificationRuleArn]
   }
 
-  object CreateNotificationRuleResult {
-    @inline
-    def apply(
-        Arn: js.UndefOr[NotificationRuleArn] = js.undefined
-    ): CreateNotificationRuleResult = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateNotificationRuleResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteNotificationRuleRequest extends js.Object {
     var Arn: NotificationRuleArn
   }
 
-  object DeleteNotificationRuleRequest {
-    @inline
-    def apply(
-        Arn: NotificationRuleArn
-    ): DeleteNotificationRuleRequest = {
-      val __obj = js.Dynamic.literal(
-        "Arn" -> Arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteNotificationRuleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteNotificationRuleResult extends js.Object {
     var Arn: js.UndefOr[NotificationRuleArn]
   }
 
-  object DeleteNotificationRuleResult {
-    @inline
-    def apply(
-        Arn: js.UndefOr[NotificationRuleArn] = js.undefined
-    ): DeleteNotificationRuleResult = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteNotificationRuleResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteTargetRequest extends js.Object {
     var TargetAddress: TargetAddress
     var ForceUnsubscribeAll: js.UndefOr[ForceUnsubscribeAll]
   }
 
-  object DeleteTargetRequest {
-    @inline
-    def apply(
-        TargetAddress: TargetAddress,
-        ForceUnsubscribeAll: js.UndefOr[ForceUnsubscribeAll] = js.undefined
-    ): DeleteTargetRequest = {
-      val __obj = js.Dynamic.literal(
-        "TargetAddress" -> TargetAddress.asInstanceOf[js.Any]
-      )
-
-      ForceUnsubscribeAll.foreach(__v => __obj.updateDynamic("ForceUnsubscribeAll")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteTargetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteTargetResult extends js.Object {}
 
-  object DeleteTargetResult {
-    @inline
-    def apply(
-    ): DeleteTargetResult = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteTargetResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeNotificationRuleRequest extends js.Object {
     var Arn: NotificationRuleArn
   }
 
-  object DescribeNotificationRuleRequest {
-    @inline
-    def apply(
-        Arn: NotificationRuleArn
-    ): DescribeNotificationRuleRequest = {
-      val __obj = js.Dynamic.literal(
-        "Arn" -> Arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeNotificationRuleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeNotificationRuleResult extends js.Object {
     var Arn: NotificationRuleArn
     var CreatedBy: js.UndefOr[NotificationRuleCreatedBy]
@@ -251,39 +160,6 @@ package codestarnotifications {
     var Status: js.UndefOr[NotificationRuleStatus]
     var Tags: js.UndefOr[Tags]
     var Targets: js.UndefOr[TargetsBatch]
-  }
-
-  object DescribeNotificationRuleResult {
-    @inline
-    def apply(
-        Arn: NotificationRuleArn,
-        CreatedBy: js.UndefOr[NotificationRuleCreatedBy] = js.undefined,
-        CreatedTimestamp: js.UndefOr[CreatedTimestamp] = js.undefined,
-        DetailType: js.UndefOr[DetailType] = js.undefined,
-        EventTypes: js.UndefOr[EventTypeBatch] = js.undefined,
-        LastModifiedTimestamp: js.UndefOr[LastModifiedTimestamp] = js.undefined,
-        Name: js.UndefOr[NotificationRuleName] = js.undefined,
-        Resource: js.UndefOr[NotificationRuleResource] = js.undefined,
-        Status: js.UndefOr[NotificationRuleStatus] = js.undefined,
-        Tags: js.UndefOr[Tags] = js.undefined,
-        Targets: js.UndefOr[TargetsBatch] = js.undefined
-    ): DescribeNotificationRuleResult = {
-      val __obj = js.Dynamic.literal(
-        "Arn" -> Arn.asInstanceOf[js.Any]
-      )
-
-      CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
-      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
-      DetailType.foreach(__v => __obj.updateDynamic("DetailType")(__v.asInstanceOf[js.Any]))
-      EventTypes.foreach(__v => __obj.updateDynamic("EventTypes")(__v.asInstanceOf[js.Any]))
-      LastModifiedTimestamp.foreach(__v => __obj.updateDynamic("LastModifiedTimestamp")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Resource.foreach(__v => __obj.updateDynamic("Resource")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeNotificationRuleResult]
-    }
   }
 
   @js.native
@@ -299,6 +175,7 @@ package codestarnotifications {
     * Returns information about an event that has triggered a notification rule.
     */
   @js.native
+  @Factory
   trait EventTypeSummary extends js.Object {
     var EventTypeId: js.UndefOr[EventTypeId]
     var EventTypeName: js.UndefOr[EventTypeName]
@@ -306,45 +183,14 @@ package codestarnotifications {
     var ServiceName: js.UndefOr[ServiceName]
   }
 
-  object EventTypeSummary {
-    @inline
-    def apply(
-        EventTypeId: js.UndefOr[EventTypeId] = js.undefined,
-        EventTypeName: js.UndefOr[EventTypeName] = js.undefined,
-        ResourceType: js.UndefOr[ResourceType] = js.undefined,
-        ServiceName: js.UndefOr[ServiceName] = js.undefined
-    ): EventTypeSummary = {
-      val __obj = js.Dynamic.literal()
-      EventTypeId.foreach(__v => __obj.updateDynamic("EventTypeId")(__v.asInstanceOf[js.Any]))
-      EventTypeName.foreach(__v => __obj.updateDynamic("EventTypeName")(__v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
-      ServiceName.foreach(__v => __obj.updateDynamic("ServiceName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EventTypeSummary]
-    }
-  }
-
   /**
     * Information about a filter to apply to the list of returned event types. You can filter by resource type or service name.
     */
   @js.native
+  @Factory
   trait ListEventTypesFilter extends js.Object {
     var Name: ListEventTypesFilterName
     var Value: ListEventTypesFilterValue
-  }
-
-  object ListEventTypesFilter {
-    @inline
-    def apply(
-        Name: ListEventTypesFilterName,
-        Value: ListEventTypesFilterValue
-    ): ListEventTypesFilter = {
-      val __obj = js.Dynamic.literal(
-        "Name"  -> Name.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListEventTypesFilter]
-    }
   }
 
   @js.native
@@ -357,68 +203,28 @@ package codestarnotifications {
   }
 
   @js.native
+  @Factory
   trait ListEventTypesRequest extends js.Object {
     var Filters: js.UndefOr[ListEventTypesFilters]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListEventTypesRequest {
-    @inline
-    def apply(
-        Filters: js.UndefOr[ListEventTypesFilters] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListEventTypesRequest = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListEventTypesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListEventTypesResult extends js.Object {
     var EventTypes: js.UndefOr[EventTypeBatch]
     var NextToken: js.UndefOr[NextToken]
-  }
-
-  object ListEventTypesResult {
-    @inline
-    def apply(
-        EventTypes: js.UndefOr[EventTypeBatch] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListEventTypesResult = {
-      val __obj = js.Dynamic.literal()
-      EventTypes.foreach(__v => __obj.updateDynamic("EventTypes")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListEventTypesResult]
-    }
   }
 
   /**
     * Information about a filter to apply to the list of returned notification rules. You can filter by event type, owner, resource, or target.
     */
   @js.native
+  @Factory
   trait ListNotificationRulesFilter extends js.Object {
     var Name: ListNotificationRulesFilterName
     var Value: ListNotificationRulesFilterValue
-  }
-
-  object ListNotificationRulesFilter {
-    @inline
-    def apply(
-        Name: ListNotificationRulesFilterName,
-        Value: ListNotificationRulesFilterValue
-    ): ListNotificationRulesFilter = {
-      val __obj = js.Dynamic.literal(
-        "Name"  -> Name.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListNotificationRulesFilter]
-    }
   }
 
   @js.native
@@ -433,102 +239,40 @@ package codestarnotifications {
   }
 
   @js.native
+  @Factory
   trait ListNotificationRulesRequest extends js.Object {
     var Filters: js.UndefOr[ListNotificationRulesFilters]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListNotificationRulesRequest {
-    @inline
-    def apply(
-        Filters: js.UndefOr[ListNotificationRulesFilters] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListNotificationRulesRequest = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListNotificationRulesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListNotificationRulesResult extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var NotificationRules: js.UndefOr[NotificationRuleBatch]
   }
 
-  object ListNotificationRulesResult {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        NotificationRules: js.UndefOr[NotificationRuleBatch] = js.undefined
-    ): ListNotificationRulesResult = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      NotificationRules.foreach(__v => __obj.updateDynamic("NotificationRules")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListNotificationRulesResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceRequest extends js.Object {
     var Arn: NotificationRuleArn
   }
 
-  object ListTagsForResourceRequest {
-    @inline
-    def apply(
-        Arn: NotificationRuleArn
-    ): ListTagsForResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "Arn" -> Arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListTagsForResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceResult extends js.Object {
     var Tags: js.UndefOr[Tags]
-  }
-
-  object ListTagsForResourceResult {
-    @inline
-    def apply(
-        Tags: js.UndefOr[Tags] = js.undefined
-    ): ListTagsForResourceResult = {
-      val __obj = js.Dynamic.literal()
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceResult]
-    }
   }
 
   /**
     * Information about a filter to apply to the list of returned targets. You can filter by target type, address, or status. For example, to filter results to notification rules that have active Amazon SNS topics as targets, you could specify a ListTargetsFilter Name as TargetType and a Value of SNS, and a Name of TARGET_STATUS and a Value of ACTIVE.
     */
   @js.native
+  @Factory
   trait ListTargetsFilter extends js.Object {
     var Name: ListTargetsFilterName
     var Value: ListTargetsFilterValue
-  }
-
-  object ListTargetsFilter {
-    @inline
-    def apply(
-        Name: ListTargetsFilterName,
-        Value: ListTargetsFilterValue
-    ): ListTargetsFilter = {
-      val __obj = js.Dynamic.literal(
-        "Name"  -> Name.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListTargetsFilter]
-    }
   }
 
   @js.native
@@ -542,44 +286,18 @@ package codestarnotifications {
   }
 
   @js.native
+  @Factory
   trait ListTargetsRequest extends js.Object {
     var Filters: js.UndefOr[ListTargetsFilters]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListTargetsRequest {
-    @inline
-    def apply(
-        Filters: js.UndefOr[ListTargetsFilters] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListTargetsRequest = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTargetsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTargetsResult extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var Targets: js.UndefOr[TargetsBatch]
-  }
-
-  object ListTargetsResult {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        Targets: js.UndefOr[TargetsBatch] = js.undefined
-    ): ListTargetsResult = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTargetsResult]
-    }
   }
 
   @js.native
@@ -595,121 +313,47 @@ package codestarnotifications {
     * Information about a specified notification rule.
     */
   @js.native
+  @Factory
   trait NotificationRuleSummary extends js.Object {
     var Arn: js.UndefOr[NotificationRuleArn]
     var Id: js.UndefOr[NotificationRuleId]
   }
 
-  object NotificationRuleSummary {
-    @inline
-    def apply(
-        Arn: js.UndefOr[NotificationRuleArn] = js.undefined,
-        Id: js.UndefOr[NotificationRuleId] = js.undefined
-    ): NotificationRuleSummary = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NotificationRuleSummary]
-    }
-  }
-
   @js.native
+  @Factory
   trait SubscribeRequest extends js.Object {
     var Arn: NotificationRuleArn
     var Target: Target
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
   }
 
-  object SubscribeRequest {
-    @inline
-    def apply(
-        Arn: NotificationRuleArn,
-        Target: Target,
-        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined
-    ): SubscribeRequest = {
-      val __obj = js.Dynamic.literal(
-        "Arn"    -> Arn.asInstanceOf[js.Any],
-        "Target" -> Target.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SubscribeRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait SubscribeResult extends js.Object {
     var Arn: js.UndefOr[NotificationRuleArn]
   }
 
-  object SubscribeResult {
-    @inline
-    def apply(
-        Arn: js.UndefOr[NotificationRuleArn] = js.undefined
-    ): SubscribeResult = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SubscribeResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceRequest extends js.Object {
     var Arn: NotificationRuleArn
     var Tags: Tags
   }
 
-  object TagResourceRequest {
-    @inline
-    def apply(
-        Arn: NotificationRuleArn,
-        Tags: Tags
-    ): TagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "Arn"  -> Arn.asInstanceOf[js.Any],
-        "Tags" -> Tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceResult extends js.Object {
     var Tags: js.UndefOr[Tags]
-  }
-
-  object TagResourceResult {
-    @inline
-    def apply(
-        Tags: js.UndefOr[Tags] = js.undefined
-    ): TagResourceResult = {
-      val __obj = js.Dynamic.literal()
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TagResourceResult]
-    }
   }
 
   /**
     * Information about the SNS topics associated with a notification rule.
     */
   @js.native
+  @Factory
   trait Target extends js.Object {
     var TargetAddress: js.UndefOr[TargetAddress]
     var TargetType: js.UndefOr[TargetType]
-  }
-
-  object Target {
-    @inline
-    def apply(
-        TargetAddress: js.UndefOr[TargetAddress] = js.undefined,
-        TargetType: js.UndefOr[TargetType] = js.undefined
-    ): Target = {
-      val __obj = js.Dynamic.literal()
-      TargetAddress.foreach(__v => __obj.updateDynamic("TargetAddress")(__v.asInstanceOf[js.Any]))
-      TargetType.foreach(__v => __obj.updateDynamic("TargetType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Target]
-    }
   }
 
   @js.native
@@ -728,101 +372,39 @@ package codestarnotifications {
     * Information about the targets specified for a notification rule.
     */
   @js.native
+  @Factory
   trait TargetSummary extends js.Object {
     var TargetAddress: js.UndefOr[TargetAddress]
     var TargetStatus: js.UndefOr[TargetStatus]
     var TargetType: js.UndefOr[TargetType]
   }
 
-  object TargetSummary {
-    @inline
-    def apply(
-        TargetAddress: js.UndefOr[TargetAddress] = js.undefined,
-        TargetStatus: js.UndefOr[TargetStatus] = js.undefined,
-        TargetType: js.UndefOr[TargetType] = js.undefined
-    ): TargetSummary = {
-      val __obj = js.Dynamic.literal()
-      TargetAddress.foreach(__v => __obj.updateDynamic("TargetAddress")(__v.asInstanceOf[js.Any]))
-      TargetStatus.foreach(__v => __obj.updateDynamic("TargetStatus")(__v.asInstanceOf[js.Any]))
-      TargetType.foreach(__v => __obj.updateDynamic("TargetType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TargetSummary]
-    }
-  }
-
   @js.native
+  @Factory
   trait UnsubscribeRequest extends js.Object {
     var Arn: NotificationRuleArn
     var TargetAddress: TargetAddress
   }
 
-  object UnsubscribeRequest {
-    @inline
-    def apply(
-        Arn: NotificationRuleArn,
-        TargetAddress: TargetAddress
-    ): UnsubscribeRequest = {
-      val __obj = js.Dynamic.literal(
-        "Arn"           -> Arn.asInstanceOf[js.Any],
-        "TargetAddress" -> TargetAddress.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UnsubscribeRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UnsubscribeResult extends js.Object {
     var Arn: NotificationRuleArn
   }
 
-  object UnsubscribeResult {
-    @inline
-    def apply(
-        Arn: NotificationRuleArn
-    ): UnsubscribeResult = {
-      val __obj = js.Dynamic.literal(
-        "Arn" -> Arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UnsubscribeResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceRequest extends js.Object {
     var Arn: NotificationRuleArn
     var TagKeys: TagKeys
   }
 
-  object UntagResourceRequest {
-    @inline
-    def apply(
-        Arn: NotificationRuleArn,
-        TagKeys: TagKeys
-    ): UntagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "Arn"     -> Arn.asInstanceOf[js.Any],
-        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceResult extends js.Object {}
 
-  object UntagResourceResult {
-    @inline
-    def apply(
-    ): UntagResourceResult = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UntagResourceResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateNotificationRuleRequest extends js.Object {
     var Arn: NotificationRuleArn
     var DetailType: js.UndefOr[DetailType]
@@ -832,39 +414,7 @@ package codestarnotifications {
     var Targets: js.UndefOr[Targets]
   }
 
-  object UpdateNotificationRuleRequest {
-    @inline
-    def apply(
-        Arn: NotificationRuleArn,
-        DetailType: js.UndefOr[DetailType] = js.undefined,
-        EventTypeIds: js.UndefOr[EventTypeIds] = js.undefined,
-        Name: js.UndefOr[NotificationRuleName] = js.undefined,
-        Status: js.UndefOr[NotificationRuleStatus] = js.undefined,
-        Targets: js.UndefOr[Targets] = js.undefined
-    ): UpdateNotificationRuleRequest = {
-      val __obj = js.Dynamic.literal(
-        "Arn" -> Arn.asInstanceOf[js.Any]
-      )
-
-      DetailType.foreach(__v => __obj.updateDynamic("DetailType")(__v.asInstanceOf[js.Any]))
-      EventTypeIds.foreach(__v => __obj.updateDynamic("EventTypeIds")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateNotificationRuleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateNotificationRuleResult extends js.Object {}
-
-  object UpdateNotificationRuleResult {
-    @inline
-    def apply(
-    ): UpdateNotificationRuleResult = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateNotificationRuleResult]
-    }
-  }
 }

@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object fms {
   type AWSAccountId               = String
@@ -118,46 +119,20 @@ package fms {
   }
 
   @js.native
+  @Factory
   trait AssociateAdminAccountRequest extends js.Object {
     var AdminAccount: AWSAccountId
-  }
-
-  object AssociateAdminAccountRequest {
-    @inline
-    def apply(
-        AdminAccount: AWSAccountId
-    ): AssociateAdminAccountRequest = {
-      val __obj = js.Dynamic.literal(
-        "AdminAccount" -> AdminAccount.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AssociateAdminAccountRequest]
-    }
   }
 
   /**
     * Details of the resource that is not protected by the policy.
     */
   @js.native
+  @Factory
   trait ComplianceViolator extends js.Object {
     var ResourceId: js.UndefOr[ResourceId]
     var ResourceType: js.UndefOr[ResourceType]
     var ViolationReason: js.UndefOr[ViolationReason]
-  }
-
-  object ComplianceViolator {
-    @inline
-    def apply(
-        ResourceId: js.UndefOr[ResourceId] = js.undefined,
-        ResourceType: js.UndefOr[ResourceType] = js.undefined,
-        ViolationReason: js.UndefOr[ViolationReason] = js.undefined
-    ): ComplianceViolator = {
-      val __obj = js.Dynamic.literal()
-      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
-      ViolationReason.foreach(__v => __obj.updateDynamic("ViolationReason")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ComplianceViolator]
-    }
   }
 
   @js.native
@@ -169,37 +144,14 @@ package fms {
   }
 
   @js.native
+  @Factory
   trait DeleteNotificationChannelRequest extends js.Object {}
 
-  object DeleteNotificationChannelRequest {
-    @inline
-    def apply(
-    ): DeleteNotificationChannelRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteNotificationChannelRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeletePolicyRequest extends js.Object {
     var PolicyId: PolicyId
     var DeleteAllPolicyResources: js.UndefOr[Boolean]
-  }
-
-  object DeletePolicyRequest {
-    @inline
-    def apply(
-        PolicyId: PolicyId,
-        DeleteAllPolicyResources: js.UndefOr[Boolean] = js.undefined
-    ): DeletePolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "PolicyId" -> PolicyId.asInstanceOf[js.Any]
-      )
-
-      DeleteAllPolicyResources.foreach(__v => __obj.updateDynamic("DeleteAllPolicyResources")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeletePolicyRequest]
-    }
   }
 
   @js.native
@@ -214,182 +166,70 @@ package fms {
   }
 
   @js.native
+  @Factory
   trait DisassociateAdminAccountRequest extends js.Object {}
-
-  object DisassociateAdminAccountRequest {
-    @inline
-    def apply(
-    ): DisassociateAdminAccountRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DisassociateAdminAccountRequest]
-    }
-  }
 
   /**
     * Describes the compliance status for the account. An account is considered noncompliant if it includes resources that are not protected by the specified policy or that don't comply with the policy.
     */
   @js.native
+  @Factory
   trait EvaluationResult extends js.Object {
     var ComplianceStatus: js.UndefOr[PolicyComplianceStatusType]
     var EvaluationLimitExceeded: js.UndefOr[Boolean]
     var ViolatorCount: js.UndefOr[ResourceCount]
   }
 
-  object EvaluationResult {
-    @inline
-    def apply(
-        ComplianceStatus: js.UndefOr[PolicyComplianceStatusType] = js.undefined,
-        EvaluationLimitExceeded: js.UndefOr[Boolean] = js.undefined,
-        ViolatorCount: js.UndefOr[ResourceCount] = js.undefined
-    ): EvaluationResult = {
-      val __obj = js.Dynamic.literal()
-      ComplianceStatus.foreach(__v => __obj.updateDynamic("ComplianceStatus")(__v.asInstanceOf[js.Any]))
-      EvaluationLimitExceeded.foreach(__v => __obj.updateDynamic("EvaluationLimitExceeded")(__v.asInstanceOf[js.Any]))
-      ViolatorCount.foreach(__v => __obj.updateDynamic("ViolatorCount")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EvaluationResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetAdminAccountRequest extends js.Object {}
 
-  object GetAdminAccountRequest {
-    @inline
-    def apply(
-    ): GetAdminAccountRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[GetAdminAccountRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetAdminAccountResponse extends js.Object {
     var AdminAccount: js.UndefOr[AWSAccountId]
     var RoleStatus: js.UndefOr[AccountRoleStatus]
   }
 
-  object GetAdminAccountResponse {
-    @inline
-    def apply(
-        AdminAccount: js.UndefOr[AWSAccountId] = js.undefined,
-        RoleStatus: js.UndefOr[AccountRoleStatus] = js.undefined
-    ): GetAdminAccountResponse = {
-      val __obj = js.Dynamic.literal()
-      AdminAccount.foreach(__v => __obj.updateDynamic("AdminAccount")(__v.asInstanceOf[js.Any]))
-      RoleStatus.foreach(__v => __obj.updateDynamic("RoleStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetAdminAccountResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetComplianceDetailRequest extends js.Object {
     var MemberAccount: AWSAccountId
     var PolicyId: PolicyId
   }
 
-  object GetComplianceDetailRequest {
-    @inline
-    def apply(
-        MemberAccount: AWSAccountId,
-        PolicyId: PolicyId
-    ): GetComplianceDetailRequest = {
-      val __obj = js.Dynamic.literal(
-        "MemberAccount" -> MemberAccount.asInstanceOf[js.Any],
-        "PolicyId"      -> PolicyId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetComplianceDetailRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetComplianceDetailResponse extends js.Object {
     var PolicyComplianceDetail: js.UndefOr[PolicyComplianceDetail]
   }
 
-  object GetComplianceDetailResponse {
-    @inline
-    def apply(
-        PolicyComplianceDetail: js.UndefOr[PolicyComplianceDetail] = js.undefined
-    ): GetComplianceDetailResponse = {
-      val __obj = js.Dynamic.literal()
-      PolicyComplianceDetail.foreach(__v => __obj.updateDynamic("PolicyComplianceDetail")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetComplianceDetailResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetNotificationChannelRequest extends js.Object {}
 
-  object GetNotificationChannelRequest {
-    @inline
-    def apply(
-    ): GetNotificationChannelRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[GetNotificationChannelRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetNotificationChannelResponse extends js.Object {
     var SnsRoleName: js.UndefOr[ResourceArn]
     var SnsTopicArn: js.UndefOr[ResourceArn]
   }
 
-  object GetNotificationChannelResponse {
-    @inline
-    def apply(
-        SnsRoleName: js.UndefOr[ResourceArn] = js.undefined,
-        SnsTopicArn: js.UndefOr[ResourceArn] = js.undefined
-    ): GetNotificationChannelResponse = {
-      val __obj = js.Dynamic.literal()
-      SnsRoleName.foreach(__v => __obj.updateDynamic("SnsRoleName")(__v.asInstanceOf[js.Any]))
-      SnsTopicArn.foreach(__v => __obj.updateDynamic("SnsTopicArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetNotificationChannelResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetPolicyRequest extends js.Object {
     var PolicyId: PolicyId
   }
 
-  object GetPolicyRequest {
-    @inline
-    def apply(
-        PolicyId: PolicyId
-    ): GetPolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "PolicyId" -> PolicyId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetPolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetPolicyResponse extends js.Object {
     var Policy: js.UndefOr[Policy]
     var PolicyArn: js.UndefOr[ResourceArn]
   }
 
-  object GetPolicyResponse {
-    @inline
-    def apply(
-        Policy: js.UndefOr[Policy] = js.undefined,
-        PolicyArn: js.UndefOr[ResourceArn] = js.undefined
-    ): GetPolicyResponse = {
-      val __obj = js.Dynamic.literal()
-      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
-      PolicyArn.foreach(__v => __obj.updateDynamic("PolicyArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetPolicyResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetProtectionStatusRequest extends js.Object {
     var PolicyId: PolicyId
     var EndTime: js.UndefOr[TimeStamp]
@@ -399,30 +239,8 @@ package fms {
     var StartTime: js.UndefOr[TimeStamp]
   }
 
-  object GetProtectionStatusRequest {
-    @inline
-    def apply(
-        PolicyId: PolicyId,
-        EndTime: js.UndefOr[TimeStamp] = js.undefined,
-        MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
-        MemberAccountId: js.UndefOr[AWSAccountId] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        StartTime: js.UndefOr[TimeStamp] = js.undefined
-    ): GetProtectionStatusRequest = {
-      val __obj = js.Dynamic.literal(
-        "PolicyId" -> PolicyId.asInstanceOf[js.Any]
-      )
-
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      MemberAccountId.foreach(__v => __obj.updateDynamic("MemberAccountId")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetProtectionStatusRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetProtectionStatusResponse extends js.Object {
     var AdminAccountId: js.UndefOr[AWSAccountId]
     var Data: js.UndefOr[ProtectionData]
@@ -430,182 +248,66 @@ package fms {
     var ServiceType: js.UndefOr[SecurityServiceType]
   }
 
-  object GetProtectionStatusResponse {
-    @inline
-    def apply(
-        AdminAccountId: js.UndefOr[AWSAccountId] = js.undefined,
-        Data: js.UndefOr[ProtectionData] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        ServiceType: js.UndefOr[SecurityServiceType] = js.undefined
-    ): GetProtectionStatusResponse = {
-      val __obj = js.Dynamic.literal()
-      AdminAccountId.foreach(__v => __obj.updateDynamic("AdminAccountId")(__v.asInstanceOf[js.Any]))
-      Data.foreach(__v => __obj.updateDynamic("Data")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ServiceType.foreach(__v => __obj.updateDynamic("ServiceType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetProtectionStatusResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListComplianceStatusRequest extends js.Object {
     var PolicyId: PolicyId
     var MaxResults: js.UndefOr[PaginationMaxResults]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListComplianceStatusRequest {
-    @inline
-    def apply(
-        PolicyId: PolicyId,
-        MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListComplianceStatusRequest = {
-      val __obj = js.Dynamic.literal(
-        "PolicyId" -> PolicyId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListComplianceStatusRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListComplianceStatusResponse extends js.Object {
     var NextToken: js.UndefOr[PaginationToken]
     var PolicyComplianceStatusList: js.UndefOr[PolicyComplianceStatusList]
   }
 
-  object ListComplianceStatusResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        PolicyComplianceStatusList: js.UndefOr[PolicyComplianceStatusList] = js.undefined
-    ): ListComplianceStatusResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PolicyComplianceStatusList.foreach(__v =>
-        __obj.updateDynamic("PolicyComplianceStatusList")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[ListComplianceStatusResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListMemberAccountsRequest extends js.Object {
     var MaxResults: js.UndefOr[PaginationMaxResults]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListMemberAccountsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListMemberAccountsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListMemberAccountsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListMemberAccountsResponse extends js.Object {
     var MemberAccounts: js.UndefOr[MemberAccounts]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListMemberAccountsResponse {
-    @inline
-    def apply(
-        MemberAccounts: js.UndefOr[MemberAccounts] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListMemberAccountsResponse = {
-      val __obj = js.Dynamic.literal()
-      MemberAccounts.foreach(__v => __obj.updateDynamic("MemberAccounts")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListMemberAccountsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPoliciesRequest extends js.Object {
     var MaxResults: js.UndefOr[PaginationMaxResults]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListPoliciesRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListPoliciesRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPoliciesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPoliciesResponse extends js.Object {
     var NextToken: js.UndefOr[PaginationToken]
     var PolicyList: js.UndefOr[PolicySummaryList]
   }
 
-  object ListPoliciesResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        PolicyList: js.UndefOr[PolicySummaryList] = js.undefined
-    ): ListPoliciesResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PolicyList.foreach(__v => __obj.updateDynamic("PolicyList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPoliciesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceRequest extends js.Object {
     var ResourceArn: ResourceArn
   }
 
-  object ListTagsForResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: ResourceArn
-    ): ListTagsForResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListTagsForResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceResponse extends js.Object {
     var TagList: js.UndefOr[TagList]
-  }
-
-  object ListTagsForResourceResponse {
-    @inline
-    def apply(
-        TagList: js.UndefOr[TagList] = js.undefined
-    ): ListTagsForResourceResponse = {
-      val __obj = js.Dynamic.literal()
-      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceResponse]
-    }
   }
 
   /**
     * An AWS Firewall Manager policy.
     */
   @js.native
+  @Factory
   trait Policy extends js.Object {
     var ExcludeResourceTags: Boolean
     var PolicyName: ResourceName
@@ -620,43 +322,11 @@ package fms {
     var ResourceTypeList: js.UndefOr[ResourceTypeList]
   }
 
-  object Policy {
-    @inline
-    def apply(
-        ExcludeResourceTags: Boolean,
-        PolicyName: ResourceName,
-        RemediationEnabled: Boolean,
-        ResourceType: ResourceType,
-        SecurityServicePolicyData: SecurityServicePolicyData,
-        ExcludeMap: js.UndefOr[CustomerPolicyScopeMap] = js.undefined,
-        IncludeMap: js.UndefOr[CustomerPolicyScopeMap] = js.undefined,
-        PolicyId: js.UndefOr[PolicyId] = js.undefined,
-        PolicyUpdateToken: js.UndefOr[PolicyUpdateToken] = js.undefined,
-        ResourceTags: js.UndefOr[ResourceTags] = js.undefined,
-        ResourceTypeList: js.UndefOr[ResourceTypeList] = js.undefined
-    ): Policy = {
-      val __obj = js.Dynamic.literal(
-        "ExcludeResourceTags"       -> ExcludeResourceTags.asInstanceOf[js.Any],
-        "PolicyName"                -> PolicyName.asInstanceOf[js.Any],
-        "RemediationEnabled"        -> RemediationEnabled.asInstanceOf[js.Any],
-        "ResourceType"              -> ResourceType.asInstanceOf[js.Any],
-        "SecurityServicePolicyData" -> SecurityServicePolicyData.asInstanceOf[js.Any]
-      )
-
-      ExcludeMap.foreach(__v => __obj.updateDynamic("ExcludeMap")(__v.asInstanceOf[js.Any]))
-      IncludeMap.foreach(__v => __obj.updateDynamic("IncludeMap")(__v.asInstanceOf[js.Any]))
-      PolicyId.foreach(__v => __obj.updateDynamic("PolicyId")(__v.asInstanceOf[js.Any]))
-      PolicyUpdateToken.foreach(__v => __obj.updateDynamic("PolicyUpdateToken")(__v.asInstanceOf[js.Any]))
-      ResourceTags.foreach(__v => __obj.updateDynamic("ResourceTags")(__v.asInstanceOf[js.Any]))
-      ResourceTypeList.foreach(__v => __obj.updateDynamic("ResourceTypeList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Policy]
-    }
-  }
-
   /**
     * Describes the noncompliant resources in a member account for a specific AWS Firewall Manager policy. A maximum of 100 entries are displayed. If more than 100 resources are noncompliant, <code>EvaluationLimitExceeded</code> is set to <code>True</code>.
     */
   @js.native
+  @Factory
   trait PolicyComplianceDetail extends js.Object {
     var EvaluationLimitExceeded: js.UndefOr[Boolean]
     var ExpiredAt: js.UndefOr[TimeStamp]
@@ -667,33 +337,11 @@ package fms {
     var Violators: js.UndefOr[ComplianceViolators]
   }
 
-  object PolicyComplianceDetail {
-    @inline
-    def apply(
-        EvaluationLimitExceeded: js.UndefOr[Boolean] = js.undefined,
-        ExpiredAt: js.UndefOr[TimeStamp] = js.undefined,
-        IssueInfoMap: js.UndefOr[IssueInfoMap] = js.undefined,
-        MemberAccount: js.UndefOr[AWSAccountId] = js.undefined,
-        PolicyId: js.UndefOr[PolicyId] = js.undefined,
-        PolicyOwner: js.UndefOr[AWSAccountId] = js.undefined,
-        Violators: js.UndefOr[ComplianceViolators] = js.undefined
-    ): PolicyComplianceDetail = {
-      val __obj = js.Dynamic.literal()
-      EvaluationLimitExceeded.foreach(__v => __obj.updateDynamic("EvaluationLimitExceeded")(__v.asInstanceOf[js.Any]))
-      ExpiredAt.foreach(__v => __obj.updateDynamic("ExpiredAt")(__v.asInstanceOf[js.Any]))
-      IssueInfoMap.foreach(__v => __obj.updateDynamic("IssueInfoMap")(__v.asInstanceOf[js.Any]))
-      MemberAccount.foreach(__v => __obj.updateDynamic("MemberAccount")(__v.asInstanceOf[js.Any]))
-      PolicyId.foreach(__v => __obj.updateDynamic("PolicyId")(__v.asInstanceOf[js.Any]))
-      PolicyOwner.foreach(__v => __obj.updateDynamic("PolicyOwner")(__v.asInstanceOf[js.Any]))
-      Violators.foreach(__v => __obj.updateDynamic("Violators")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PolicyComplianceDetail]
-    }
-  }
-
   /**
     * Indicates whether the account is compliant with the specified policy. An account is considered noncompliant if it includes resources that are not protected by the policy, for AWS WAF and Shield Advanced policies, or that are noncompliant with the policy, for security group policies.
     */
   @js.native
+  @Factory
   trait PolicyComplianceStatus extends js.Object {
     var EvaluationResults: js.UndefOr[EvaluationResults]
     var IssueInfoMap: js.UndefOr[IssueInfoMap]
@@ -702,29 +350,6 @@ package fms {
     var PolicyId: js.UndefOr[PolicyId]
     var PolicyName: js.UndefOr[ResourceName]
     var PolicyOwner: js.UndefOr[AWSAccountId]
-  }
-
-  object PolicyComplianceStatus {
-    @inline
-    def apply(
-        EvaluationResults: js.UndefOr[EvaluationResults] = js.undefined,
-        IssueInfoMap: js.UndefOr[IssueInfoMap] = js.undefined,
-        LastUpdated: js.UndefOr[TimeStamp] = js.undefined,
-        MemberAccount: js.UndefOr[AWSAccountId] = js.undefined,
-        PolicyId: js.UndefOr[PolicyId] = js.undefined,
-        PolicyName: js.UndefOr[ResourceName] = js.undefined,
-        PolicyOwner: js.UndefOr[AWSAccountId] = js.undefined
-    ): PolicyComplianceStatus = {
-      val __obj = js.Dynamic.literal()
-      EvaluationResults.foreach(__v => __obj.updateDynamic("EvaluationResults")(__v.asInstanceOf[js.Any]))
-      IssueInfoMap.foreach(__v => __obj.updateDynamic("IssueInfoMap")(__v.asInstanceOf[js.Any]))
-      LastUpdated.foreach(__v => __obj.updateDynamic("LastUpdated")(__v.asInstanceOf[js.Any]))
-      MemberAccount.foreach(__v => __obj.updateDynamic("MemberAccount")(__v.asInstanceOf[js.Any]))
-      PolicyId.foreach(__v => __obj.updateDynamic("PolicyId")(__v.asInstanceOf[js.Any]))
-      PolicyName.foreach(__v => __obj.updateDynamic("PolicyName")(__v.asInstanceOf[js.Any]))
-      PolicyOwner.foreach(__v => __obj.updateDynamic("PolicyOwner")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PolicyComplianceStatus]
-    }
   }
 
   @js.native
@@ -740,6 +365,7 @@ package fms {
     * Details of the AWS Firewall Manager policy.
     */
   @js.native
+  @Factory
   trait PolicySummary extends js.Object {
     var PolicyArn: js.UndefOr[ResourceArn]
     var PolicyId: js.UndefOr[PolicyId]
@@ -749,134 +375,45 @@ package fms {
     var SecurityServiceType: js.UndefOr[SecurityServiceType]
   }
 
-  object PolicySummary {
-    @inline
-    def apply(
-        PolicyArn: js.UndefOr[ResourceArn] = js.undefined,
-        PolicyId: js.UndefOr[PolicyId] = js.undefined,
-        PolicyName: js.UndefOr[ResourceName] = js.undefined,
-        RemediationEnabled: js.UndefOr[Boolean] = js.undefined,
-        ResourceType: js.UndefOr[ResourceType] = js.undefined,
-        SecurityServiceType: js.UndefOr[SecurityServiceType] = js.undefined
-    ): PolicySummary = {
-      val __obj = js.Dynamic.literal()
-      PolicyArn.foreach(__v => __obj.updateDynamic("PolicyArn")(__v.asInstanceOf[js.Any]))
-      PolicyId.foreach(__v => __obj.updateDynamic("PolicyId")(__v.asInstanceOf[js.Any]))
-      PolicyName.foreach(__v => __obj.updateDynamic("PolicyName")(__v.asInstanceOf[js.Any]))
-      RemediationEnabled.foreach(__v => __obj.updateDynamic("RemediationEnabled")(__v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
-      SecurityServiceType.foreach(__v => __obj.updateDynamic("SecurityServiceType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PolicySummary]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutNotificationChannelRequest extends js.Object {
     var SnsRoleName: ResourceArn
     var SnsTopicArn: ResourceArn
   }
 
-  object PutNotificationChannelRequest {
-    @inline
-    def apply(
-        SnsRoleName: ResourceArn,
-        SnsTopicArn: ResourceArn
-    ): PutNotificationChannelRequest = {
-      val __obj = js.Dynamic.literal(
-        "SnsRoleName" -> SnsRoleName.asInstanceOf[js.Any],
-        "SnsTopicArn" -> SnsTopicArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutNotificationChannelRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutPolicyRequest extends js.Object {
     var Policy: Policy
     var TagList: js.UndefOr[TagList]
   }
 
-  object PutPolicyRequest {
-    @inline
-    def apply(
-        Policy: Policy,
-        TagList: js.UndefOr[TagList] = js.undefined
-    ): PutPolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "Policy" -> Policy.asInstanceOf[js.Any]
-      )
-
-      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutPolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutPolicyResponse extends js.Object {
     var Policy: js.UndefOr[Policy]
     var PolicyArn: js.UndefOr[ResourceArn]
-  }
-
-  object PutPolicyResponse {
-    @inline
-    def apply(
-        Policy: js.UndefOr[Policy] = js.undefined,
-        PolicyArn: js.UndefOr[ResourceArn] = js.undefined
-    ): PutPolicyResponse = {
-      val __obj = js.Dynamic.literal()
-      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
-      PolicyArn.foreach(__v => __obj.updateDynamic("PolicyArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutPolicyResponse]
-    }
   }
 
   /**
     * The resource tags that AWS Firewall Manager uses to determine if a particular resource should be included or excluded from the AWS Firewall Manager policy. Tags enable you to categorize your AWS resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value. Firewall Manager combines the tags with "AND" so that, if you add more than one tag to a policy scope, a resource must have all the specified tags to be included or excluded. For more information, see [[https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html|Working with Tag Editor]].
     */
   @js.native
+  @Factory
   trait ResourceTag extends js.Object {
     var Key: ResourceTagKey
     var Value: js.UndefOr[ResourceTagValue]
-  }
-
-  object ResourceTag {
-    @inline
-    def apply(
-        Key: ResourceTagKey,
-        Value: js.UndefOr[ResourceTagValue] = js.undefined
-    ): ResourceTag = {
-      val __obj = js.Dynamic.literal(
-        "Key" -> Key.asInstanceOf[js.Any]
-      )
-
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ResourceTag]
-    }
   }
 
   /**
     * Details about the security service that is being used to protect the resources.
     */
   @js.native
+  @Factory
   trait SecurityServicePolicyData extends js.Object {
     var Type: SecurityServiceType
     var ManagedServiceData: js.UndefOr[ManagedServiceData]
-  }
-
-  object SecurityServicePolicyData {
-    @inline
-    def apply(
-        Type: SecurityServiceType,
-        ManagedServiceData: js.UndefOr[ManagedServiceData] = js.undefined
-    ): SecurityServicePolicyData = {
-      val __obj = js.Dynamic.literal(
-        "Type" -> Type.asInstanceOf[js.Any]
-      )
-
-      ManagedServiceData.foreach(__v => __obj.updateDynamic("ManagedServiceData")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SecurityServicePolicyData]
-    }
   }
 
   @js.native
@@ -897,93 +434,33 @@ package fms {
     * A collection of key:value pairs associated with an AWS resource. The key:value pair can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each AWS resource.
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var Key: TagKey
     var Value: TagValue
   }
 
-  object Tag {
-    @inline
-    def apply(
-        Key: TagKey,
-        Value: TagValue
-    ): Tag = {
-      val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Tag]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceRequest extends js.Object {
     var ResourceArn: ResourceArn
     var TagList: TagList
   }
 
-  object TagResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: ResourceArn,
-        TagList: TagList
-    ): TagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagList"     -> TagList.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceResponse extends js.Object {}
 
-  object TagResourceResponse {
-    @inline
-    def apply(
-    ): TagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[TagResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceRequest extends js.Object {
     var ResourceArn: ResourceArn
     var TagKeys: TagKeyList
   }
 
-  object UntagResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: ResourceArn,
-        TagKeys: TagKeyList
-    ): UntagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceResponse extends js.Object {}
-
-  object UntagResourceResponse {
-    @inline
-    def apply(
-    ): UntagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UntagResourceResponse]
-    }
-  }
 
   @js.native
   sealed trait ViolationReason extends js.Any

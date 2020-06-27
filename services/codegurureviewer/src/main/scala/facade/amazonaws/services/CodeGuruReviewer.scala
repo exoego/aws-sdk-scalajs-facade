@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object codegurureviewer {
   type Arn                            = String
@@ -56,132 +57,53 @@ package codegurureviewer {
   }
 
   @js.native
+  @Factory
   trait AssociateRepositoryRequest extends js.Object {
     var Repository: Repository
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
   }
 
-  object AssociateRepositoryRequest {
-    @inline
-    def apply(
-        Repository: Repository,
-        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined
-    ): AssociateRepositoryRequest = {
-      val __obj = js.Dynamic.literal(
-        "Repository" -> Repository.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AssociateRepositoryRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateRepositoryResponse extends js.Object {
     var RepositoryAssociation: js.UndefOr[RepositoryAssociation]
-  }
-
-  object AssociateRepositoryResponse {
-    @inline
-    def apply(
-        RepositoryAssociation: js.UndefOr[RepositoryAssociation] = js.undefined
-    ): AssociateRepositoryResponse = {
-      val __obj = js.Dynamic.literal()
-      RepositoryAssociation.foreach(__v => __obj.updateDynamic("RepositoryAssociation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AssociateRepositoryResponse]
-    }
   }
 
   /**
     * Information about an AWS CodeCommit repository.
     */
   @js.native
+  @Factory
   trait CodeCommitRepository extends js.Object {
     var Name: Name
   }
 
-  object CodeCommitRepository {
-    @inline
-    def apply(
-        Name: Name
-    ): CodeCommitRepository = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CodeCommitRepository]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeRepositoryAssociationRequest extends js.Object {
     var AssociationArn: Arn
   }
 
-  object DescribeRepositoryAssociationRequest {
-    @inline
-    def apply(
-        AssociationArn: Arn
-    ): DescribeRepositoryAssociationRequest = {
-      val __obj = js.Dynamic.literal(
-        "AssociationArn" -> AssociationArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeRepositoryAssociationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeRepositoryAssociationResponse extends js.Object {
     var RepositoryAssociation: js.UndefOr[RepositoryAssociation]
   }
 
-  object DescribeRepositoryAssociationResponse {
-    @inline
-    def apply(
-        RepositoryAssociation: js.UndefOr[RepositoryAssociation] = js.undefined
-    ): DescribeRepositoryAssociationResponse = {
-      val __obj = js.Dynamic.literal()
-      RepositoryAssociation.foreach(__v => __obj.updateDynamic("RepositoryAssociation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeRepositoryAssociationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateRepositoryRequest extends js.Object {
     var AssociationArn: Arn
   }
 
-  object DisassociateRepositoryRequest {
-    @inline
-    def apply(
-        AssociationArn: Arn
-    ): DisassociateRepositoryRequest = {
-      val __obj = js.Dynamic.literal(
-        "AssociationArn" -> AssociationArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisassociateRepositoryRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateRepositoryResponse extends js.Object {
     var RepositoryAssociation: js.UndefOr[RepositoryAssociation]
   }
 
-  object DisassociateRepositoryResponse {
-    @inline
-    def apply(
-        RepositoryAssociation: js.UndefOr[RepositoryAssociation] = js.undefined
-    ): DisassociateRepositoryResponse = {
-      val __obj = js.Dynamic.literal()
-      RepositoryAssociation.foreach(__v => __obj.updateDynamic("RepositoryAssociation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DisassociateRepositoryResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListRepositoryAssociationsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var Names: js.UndefOr[Names]
@@ -191,46 +113,11 @@ package codegurureviewer {
     var States: js.UndefOr[RepositoryAssociationStates]
   }
 
-  object ListRepositoryAssociationsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        Names: js.UndefOr[Names] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        Owners: js.UndefOr[Owners] = js.undefined,
-        ProviderTypes: js.UndefOr[ProviderTypes] = js.undefined,
-        States: js.UndefOr[RepositoryAssociationStates] = js.undefined
-    ): ListRepositoryAssociationsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      Names.foreach(__v => __obj.updateDynamic("Names")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Owners.foreach(__v => __obj.updateDynamic("Owners")(__v.asInstanceOf[js.Any]))
-      ProviderTypes.foreach(__v => __obj.updateDynamic("ProviderTypes")(__v.asInstanceOf[js.Any]))
-      States.foreach(__v => __obj.updateDynamic("States")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRepositoryAssociationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListRepositoryAssociationsResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var RepositoryAssociationSummaries: js.UndefOr[RepositoryAssociationSummaries]
-  }
-
-  object ListRepositoryAssociationsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        RepositoryAssociationSummaries: js.UndefOr[RepositoryAssociationSummaries] = js.undefined
-    ): ListRepositoryAssociationsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      RepositoryAssociationSummaries.foreach(__v =>
-        __obj.updateDynamic("RepositoryAssociationSummaries")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[ListRepositoryAssociationsResponse]
-    }
   }
 
   @js.native
@@ -246,25 +133,16 @@ package codegurureviewer {
     * Information about a repository.
     */
   @js.native
+  @Factory
   trait Repository extends js.Object {
     var CodeCommit: js.UndefOr[CodeCommitRepository]
-  }
-
-  object Repository {
-    @inline
-    def apply(
-        CodeCommit: js.UndefOr[CodeCommitRepository] = js.undefined
-    ): Repository = {
-      val __obj = js.Dynamic.literal()
-      CodeCommit.foreach(__v => __obj.updateDynamic("CodeCommit")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Repository]
-    }
   }
 
   /**
     * Information about a repository association.
     */
   @js.native
+  @Factory
   trait RepositoryAssociation extends js.Object {
     var AssociationArn: js.UndefOr[Arn]
     var AssociationId: js.UndefOr[AssociationId]
@@ -275,33 +153,6 @@ package codegurureviewer {
     var ProviderType: js.UndefOr[ProviderType]
     var State: js.UndefOr[RepositoryAssociationState]
     var StateReason: js.UndefOr[StateReason]
-  }
-
-  object RepositoryAssociation {
-    @inline
-    def apply(
-        AssociationArn: js.UndefOr[Arn] = js.undefined,
-        AssociationId: js.UndefOr[AssociationId] = js.undefined,
-        CreatedTimeStamp: js.UndefOr[TimeStamp] = js.undefined,
-        LastUpdatedTimeStamp: js.UndefOr[TimeStamp] = js.undefined,
-        Name: js.UndefOr[Name] = js.undefined,
-        Owner: js.UndefOr[Owner] = js.undefined,
-        ProviderType: js.UndefOr[ProviderType] = js.undefined,
-        State: js.UndefOr[RepositoryAssociationState] = js.undefined,
-        StateReason: js.UndefOr[StateReason] = js.undefined
-    ): RepositoryAssociation = {
-      val __obj = js.Dynamic.literal()
-      AssociationArn.foreach(__v => __obj.updateDynamic("AssociationArn")(__v.asInstanceOf[js.Any]))
-      AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
-      CreatedTimeStamp.foreach(__v => __obj.updateDynamic("CreatedTimeStamp")(__v.asInstanceOf[js.Any]))
-      LastUpdatedTimeStamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimeStamp")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
-      ProviderType.foreach(__v => __obj.updateDynamic("ProviderType")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      StateReason.foreach(__v => __obj.updateDynamic("StateReason")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RepositoryAssociation]
-    }
   }
 
   @js.native
@@ -319,6 +170,7 @@ package codegurureviewer {
     * Information about a repository association.
     */
   @js.native
+  @Factory
   trait RepositoryAssociationSummary extends js.Object {
     var AssociationArn: js.UndefOr[Arn]
     var AssociationId: js.UndefOr[AssociationId]
@@ -327,28 +179,5 @@ package codegurureviewer {
     var Owner: js.UndefOr[Owner]
     var ProviderType: js.UndefOr[ProviderType]
     var State: js.UndefOr[RepositoryAssociationState]
-  }
-
-  object RepositoryAssociationSummary {
-    @inline
-    def apply(
-        AssociationArn: js.UndefOr[Arn] = js.undefined,
-        AssociationId: js.UndefOr[AssociationId] = js.undefined,
-        LastUpdatedTimeStamp: js.UndefOr[TimeStamp] = js.undefined,
-        Name: js.UndefOr[Name] = js.undefined,
-        Owner: js.UndefOr[Owner] = js.undefined,
-        ProviderType: js.UndefOr[ProviderType] = js.undefined,
-        State: js.UndefOr[RepositoryAssociationState] = js.undefined
-    ): RepositoryAssociationSummary = {
-      val __obj = js.Dynamic.literal()
-      AssociationArn.foreach(__v => __obj.updateDynamic("AssociationArn")(__v.asInstanceOf[js.Any]))
-      AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
-      LastUpdatedTimeStamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimeStamp")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
-      ProviderType.foreach(__v => __obj.updateDynamic("ProviderType")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RepositoryAssociationSummary]
-    }
   }
 }

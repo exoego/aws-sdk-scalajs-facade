@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object alexaforbusiness {
   type Address                         = String
@@ -539,279 +540,98 @@ package alexaforbusiness {
     * An address book with attributes.
     */
   @js.native
+  @Factory
   trait AddressBook extends js.Object {
     var AddressBookArn: js.UndefOr[Arn]
     var Description: js.UndefOr[AddressBookDescription]
     var Name: js.UndefOr[AddressBookName]
   }
 
-  object AddressBook {
-    @inline
-    def apply(
-        AddressBookArn: js.UndefOr[Arn] = js.undefined,
-        Description: js.UndefOr[AddressBookDescription] = js.undefined,
-        Name: js.UndefOr[AddressBookName] = js.undefined
-    ): AddressBook = {
-      val __obj = js.Dynamic.literal()
-      AddressBookArn.foreach(__v => __obj.updateDynamic("AddressBookArn")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AddressBook]
-    }
-  }
-
   /**
     * Information related to an address book.
     */
   @js.native
+  @Factory
   trait AddressBookData extends js.Object {
     var AddressBookArn: js.UndefOr[Arn]
     var Description: js.UndefOr[AddressBookDescription]
     var Name: js.UndefOr[AddressBookName]
   }
 
-  object AddressBookData {
-    @inline
-    def apply(
-        AddressBookArn: js.UndefOr[Arn] = js.undefined,
-        Description: js.UndefOr[AddressBookDescription] = js.undefined,
-        Name: js.UndefOr[AddressBookName] = js.undefined
-    ): AddressBookData = {
-      val __obj = js.Dynamic.literal()
-      AddressBookArn.foreach(__v => __obj.updateDynamic("AddressBookArn")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AddressBookData]
-    }
-  }
-
   @js.native
+  @Factory
   trait ApproveSkillRequest extends js.Object {
     var SkillId: SkillId
   }
 
-  object ApproveSkillRequest {
-    @inline
-    def apply(
-        SkillId: SkillId
-    ): ApproveSkillRequest = {
-      val __obj = js.Dynamic.literal(
-        "SkillId" -> SkillId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ApproveSkillRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ApproveSkillResponse extends js.Object {}
 
-  object ApproveSkillResponse {
-    @inline
-    def apply(
-    ): ApproveSkillResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[ApproveSkillResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateContactWithAddressBookRequest extends js.Object {
     var AddressBookArn: Arn
     var ContactArn: Arn
   }
 
-  object AssociateContactWithAddressBookRequest {
-    @inline
-    def apply(
-        AddressBookArn: Arn,
-        ContactArn: Arn
-    ): AssociateContactWithAddressBookRequest = {
-      val __obj = js.Dynamic.literal(
-        "AddressBookArn" -> AddressBookArn.asInstanceOf[js.Any],
-        "ContactArn"     -> ContactArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AssociateContactWithAddressBookRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateContactWithAddressBookResponse extends js.Object {}
 
-  object AssociateContactWithAddressBookResponse {
-    @inline
-    def apply(
-    ): AssociateContactWithAddressBookResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[AssociateContactWithAddressBookResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateDeviceWithNetworkProfileRequest extends js.Object {
     var DeviceArn: Arn
     var NetworkProfileArn: Arn
   }
 
-  object AssociateDeviceWithNetworkProfileRequest {
-    @inline
-    def apply(
-        DeviceArn: Arn,
-        NetworkProfileArn: Arn
-    ): AssociateDeviceWithNetworkProfileRequest = {
-      val __obj = js.Dynamic.literal(
-        "DeviceArn"         -> DeviceArn.asInstanceOf[js.Any],
-        "NetworkProfileArn" -> NetworkProfileArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AssociateDeviceWithNetworkProfileRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateDeviceWithNetworkProfileResponse extends js.Object {}
 
-  object AssociateDeviceWithNetworkProfileResponse {
-    @inline
-    def apply(
-    ): AssociateDeviceWithNetworkProfileResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[AssociateDeviceWithNetworkProfileResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateDeviceWithRoomRequest extends js.Object {
     var DeviceArn: js.UndefOr[Arn]
     var RoomArn: js.UndefOr[Arn]
   }
 
-  object AssociateDeviceWithRoomRequest {
-    @inline
-    def apply(
-        DeviceArn: js.UndefOr[Arn] = js.undefined,
-        RoomArn: js.UndefOr[Arn] = js.undefined
-    ): AssociateDeviceWithRoomRequest = {
-      val __obj = js.Dynamic.literal()
-      DeviceArn.foreach(__v => __obj.updateDynamic("DeviceArn")(__v.asInstanceOf[js.Any]))
-      RoomArn.foreach(__v => __obj.updateDynamic("RoomArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AssociateDeviceWithRoomRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateDeviceWithRoomResponse extends js.Object {}
 
-  object AssociateDeviceWithRoomResponse {
-    @inline
-    def apply(
-    ): AssociateDeviceWithRoomResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[AssociateDeviceWithRoomResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateSkillGroupWithRoomRequest extends js.Object {
     var RoomArn: js.UndefOr[Arn]
     var SkillGroupArn: js.UndefOr[Arn]
   }
 
-  object AssociateSkillGroupWithRoomRequest {
-    @inline
-    def apply(
-        RoomArn: js.UndefOr[Arn] = js.undefined,
-        SkillGroupArn: js.UndefOr[Arn] = js.undefined
-    ): AssociateSkillGroupWithRoomRequest = {
-      val __obj = js.Dynamic.literal()
-      RoomArn.foreach(__v => __obj.updateDynamic("RoomArn")(__v.asInstanceOf[js.Any]))
-      SkillGroupArn.foreach(__v => __obj.updateDynamic("SkillGroupArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AssociateSkillGroupWithRoomRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateSkillGroupWithRoomResponse extends js.Object {}
 
-  object AssociateSkillGroupWithRoomResponse {
-    @inline
-    def apply(
-    ): AssociateSkillGroupWithRoomResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[AssociateSkillGroupWithRoomResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateSkillWithSkillGroupRequest extends js.Object {
     var SkillId: SkillId
     var SkillGroupArn: js.UndefOr[Arn]
   }
 
-  object AssociateSkillWithSkillGroupRequest {
-    @inline
-    def apply(
-        SkillId: SkillId,
-        SkillGroupArn: js.UndefOr[Arn] = js.undefined
-    ): AssociateSkillWithSkillGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "SkillId" -> SkillId.asInstanceOf[js.Any]
-      )
-
-      SkillGroupArn.foreach(__v => __obj.updateDynamic("SkillGroupArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AssociateSkillWithSkillGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateSkillWithSkillGroupResponse extends js.Object {}
 
-  object AssociateSkillWithSkillGroupResponse {
-    @inline
-    def apply(
-    ): AssociateSkillWithSkillGroupResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[AssociateSkillWithSkillGroupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateSkillWithUsersRequest extends js.Object {
     var SkillId: SkillId
   }
 
-  object AssociateSkillWithUsersRequest {
-    @inline
-    def apply(
-        SkillId: SkillId
-    ): AssociateSkillWithUsersRequest = {
-      val __obj = js.Dynamic.literal(
-        "SkillId" -> SkillId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AssociateSkillWithUsersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateSkillWithUsersResponse extends js.Object {}
-
-  object AssociateSkillWithUsersResponse {
-    @inline
-    def apply(
-    ): AssociateSkillWithUsersResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[AssociateSkillWithUsersResponse]
-    }
-  }
 
   /**
     * The audio message. There is a 1 MB limit on the audio file input and the only supported format is MP3. To convert your MP3 audio files to an Alexa-friendly,
@@ -819,30 +639,17 @@ package alexaforbusiness {
     *  <code>ffmpeg -i &lt;input-file&gt; -ac 2 -codec:a libmp3lame -b:a 48k -ar 16000 &lt;output-file.mp3&gt;</code>
     */
   @js.native
+  @Factory
   trait Audio extends js.Object {
     var Locale: Locale
     var Location: AudioLocation
-  }
-
-  object Audio {
-    @inline
-    def apply(
-        Locale: Locale,
-        Location: AudioLocation
-    ): Audio = {
-      val __obj = js.Dynamic.literal(
-        "Locale"   -> Locale.asInstanceOf[js.Any],
-        "Location" -> Location.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Audio]
-    }
   }
 
   /**
     * Usage report with specified parameters.
     */
   @js.native
+  @Factory
   trait BusinessReport extends js.Object {
     var DeliveryTime: js.UndefOr[BusinessReportDeliveryTime]
     var DownloadUrl: js.UndefOr[BusinessReportDownloadUrl]
@@ -851,42 +658,13 @@ package alexaforbusiness {
     var Status: js.UndefOr[BusinessReportStatus]
   }
 
-  object BusinessReport {
-    @inline
-    def apply(
-        DeliveryTime: js.UndefOr[BusinessReportDeliveryTime] = js.undefined,
-        DownloadUrl: js.UndefOr[BusinessReportDownloadUrl] = js.undefined,
-        FailureCode: js.UndefOr[BusinessReportFailureCode] = js.undefined,
-        S3Location: js.UndefOr[BusinessReportS3Location] = js.undefined,
-        Status: js.UndefOr[BusinessReportStatus] = js.undefined
-    ): BusinessReport = {
-      val __obj = js.Dynamic.literal()
-      DeliveryTime.foreach(__v => __obj.updateDynamic("DeliveryTime")(__v.asInstanceOf[js.Any]))
-      DownloadUrl.foreach(__v => __obj.updateDynamic("DownloadUrl")(__v.asInstanceOf[js.Any]))
-      FailureCode.foreach(__v => __obj.updateDynamic("FailureCode")(__v.asInstanceOf[js.Any]))
-      S3Location.foreach(__v => __obj.updateDynamic("S3Location")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BusinessReport]
-    }
-  }
-
   /**
     * The content range of the report.
     */
   @js.native
+  @Factory
   trait BusinessReportContentRange extends js.Object {
     var Interval: js.UndefOr[BusinessReportInterval]
-  }
-
-  object BusinessReportContentRange {
-    @inline
-    def apply(
-        Interval: js.UndefOr[BusinessReportInterval] = js.undefined
-    ): BusinessReportContentRange = {
-      val __obj = js.Dynamic.literal()
-      Interval.foreach(__v => __obj.updateDynamic("Interval")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BusinessReportContentRange]
-    }
   }
 
   @js.native
@@ -922,47 +700,26 @@ package alexaforbusiness {
     * The recurrence of the reports.
     */
   @js.native
+  @Factory
   trait BusinessReportRecurrence extends js.Object {
     var StartDate: js.UndefOr[Date]
-  }
-
-  object BusinessReportRecurrence {
-    @inline
-    def apply(
-        StartDate: js.UndefOr[Date] = js.undefined
-    ): BusinessReportRecurrence = {
-      val __obj = js.Dynamic.literal()
-      StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BusinessReportRecurrence]
-    }
   }
 
   /**
     * The S3 location of the output reports.
     */
   @js.native
+  @Factory
   trait BusinessReportS3Location extends js.Object {
     var BucketName: js.UndefOr[CustomerS3BucketName]
     var Path: js.UndefOr[BusinessReportS3Path]
-  }
-
-  object BusinessReportS3Location {
-    @inline
-    def apply(
-        BucketName: js.UndefOr[CustomerS3BucketName] = js.undefined,
-        Path: js.UndefOr[BusinessReportS3Path] = js.undefined
-    ): BusinessReportS3Location = {
-      val __obj = js.Dynamic.literal()
-      BucketName.foreach(__v => __obj.updateDynamic("BucketName")(__v.asInstanceOf[js.Any]))
-      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BusinessReportS3Location]
-    }
   }
 
   /**
     * The schedule of the usage report.
     */
   @js.native
+  @Factory
   trait BusinessReportSchedule extends js.Object {
     var ContentRange: js.UndefOr[BusinessReportContentRange]
     var Format: js.UndefOr[BusinessReportFormat]
@@ -972,31 +729,6 @@ package alexaforbusiness {
     var S3KeyPrefix: js.UndefOr[S3KeyPrefix]
     var ScheduleArn: js.UndefOr[Arn]
     var ScheduleName: js.UndefOr[BusinessReportScheduleName]
-  }
-
-  object BusinessReportSchedule {
-    @inline
-    def apply(
-        ContentRange: js.UndefOr[BusinessReportContentRange] = js.undefined,
-        Format: js.UndefOr[BusinessReportFormat] = js.undefined,
-        LastBusinessReport: js.UndefOr[BusinessReport] = js.undefined,
-        Recurrence: js.UndefOr[BusinessReportRecurrence] = js.undefined,
-        S3BucketName: js.UndefOr[CustomerS3BucketName] = js.undefined,
-        S3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
-        ScheduleArn: js.UndefOr[Arn] = js.undefined,
-        ScheduleName: js.UndefOr[BusinessReportScheduleName] = js.undefined
-    ): BusinessReportSchedule = {
-      val __obj = js.Dynamic.literal()
-      ContentRange.foreach(__v => __obj.updateDynamic("ContentRange")(__v.asInstanceOf[js.Any]))
-      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
-      LastBusinessReport.foreach(__v => __obj.updateDynamic("LastBusinessReport")(__v.asInstanceOf[js.Any]))
-      Recurrence.foreach(__v => __obj.updateDynamic("Recurrence")(__v.asInstanceOf[js.Any]))
-      S3BucketName.foreach(__v => __obj.updateDynamic("S3BucketName")(__v.asInstanceOf[js.Any]))
-      S3KeyPrefix.foreach(__v => __obj.updateDynamic("S3KeyPrefix")(__v.asInstanceOf[js.Any]))
-      ScheduleArn.foreach(__v => __obj.updateDynamic("ScheduleArn")(__v.asInstanceOf[js.Any]))
-      ScheduleName.foreach(__v => __obj.updateDynamic("ScheduleName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BusinessReportSchedule]
-    }
   }
 
   @js.native
@@ -1013,22 +745,10 @@ package alexaforbusiness {
     * The skill store category that is shown. Alexa skills are assigned a specific skill category during creation, such as News, Social, and Sports.
     */
   @js.native
+  @Factory
   trait Category extends js.Object {
     var CategoryId: js.UndefOr[CategoryId]
     var CategoryName: js.UndefOr[CategoryName]
-  }
-
-  object Category {
-    @inline
-    def apply(
-        CategoryId: js.UndefOr[CategoryId] = js.undefined,
-        CategoryName: js.UndefOr[CategoryName] = js.undefined
-    ): Category = {
-      val __obj = js.Dynamic.literal()
-      CategoryId.foreach(__v => __obj.updateDynamic("CategoryId")(__v.asInstanceOf[js.Any]))
-      CategoryName.foreach(__v => __obj.updateDynamic("CategoryName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Category]
-    }
   }
 
   @js.native
@@ -1045,27 +765,16 @@ package alexaforbusiness {
     * The default conference provider that is used if no other scheduled meetings are detected.
     */
   @js.native
+  @Factory
   trait ConferencePreference extends js.Object {
     var DefaultConferenceProviderArn: js.UndefOr[Arn]
-  }
-
-  object ConferencePreference {
-    @inline
-    def apply(
-        DefaultConferenceProviderArn: js.UndefOr[Arn] = js.undefined
-    ): ConferencePreference = {
-      val __obj = js.Dynamic.literal()
-      DefaultConferenceProviderArn.foreach(__v =>
-        __obj.updateDynamic("DefaultConferenceProviderArn")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[ConferencePreference]
-    }
   }
 
   /**
     * An entity that provides a conferencing solution. Alexa for Business acts as the voice interface and mediator that connects users to their preferred conference provider. Examples of conference providers include Amazon Chime, Zoom, Cisco, and Polycom.
     */
   @js.native
+  @Factory
   trait ConferenceProvider extends js.Object {
     var Arn: js.UndefOr[Arn]
     var IPDialIn: js.UndefOr[IPDialIn]
@@ -1073,27 +782,6 @@ package alexaforbusiness {
     var Name: js.UndefOr[ConferenceProviderName]
     var PSTNDialIn: js.UndefOr[PSTNDialIn]
     var Type: js.UndefOr[ConferenceProviderType]
-  }
-
-  object ConferenceProvider {
-    @inline
-    def apply(
-        Arn: js.UndefOr[Arn] = js.undefined,
-        IPDialIn: js.UndefOr[IPDialIn] = js.undefined,
-        MeetingSetting: js.UndefOr[MeetingSetting] = js.undefined,
-        Name: js.UndefOr[ConferenceProviderName] = js.undefined,
-        PSTNDialIn: js.UndefOr[PSTNDialIn] = js.undefined,
-        Type: js.UndefOr[ConferenceProviderType] = js.undefined
-    ): ConferenceProvider = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      IPDialIn.foreach(__v => __obj.updateDynamic("IPDialIn")(__v.asInstanceOf[js.Any]))
-      MeetingSetting.foreach(__v => __obj.updateDynamic("MeetingSetting")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      PSTNDialIn.foreach(__v => __obj.updateDynamic("PSTNDialIn")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ConferenceProvider]
-    }
   }
 
   @js.native
@@ -1128,6 +816,7 @@ package alexaforbusiness {
     * A contact with attributes.
     */
   @js.native
+  @Factory
   trait Contact extends js.Object {
     var ContactArn: js.UndefOr[Arn]
     var DisplayName: js.UndefOr[ContactName]
@@ -1138,33 +827,11 @@ package alexaforbusiness {
     var SipAddresses: js.UndefOr[SipAddressList]
   }
 
-  object Contact {
-    @inline
-    def apply(
-        ContactArn: js.UndefOr[Arn] = js.undefined,
-        DisplayName: js.UndefOr[ContactName] = js.undefined,
-        FirstName: js.UndefOr[ContactName] = js.undefined,
-        LastName: js.UndefOr[ContactName] = js.undefined,
-        PhoneNumber: js.UndefOr[RawPhoneNumber] = js.undefined,
-        PhoneNumbers: js.UndefOr[PhoneNumberList] = js.undefined,
-        SipAddresses: js.UndefOr[SipAddressList] = js.undefined
-    ): Contact = {
-      val __obj = js.Dynamic.literal()
-      ContactArn.foreach(__v => __obj.updateDynamic("ContactArn")(__v.asInstanceOf[js.Any]))
-      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
-      FirstName.foreach(__v => __obj.updateDynamic("FirstName")(__v.asInstanceOf[js.Any]))
-      LastName.foreach(__v => __obj.updateDynamic("LastName")(__v.asInstanceOf[js.Any]))
-      PhoneNumber.foreach(__v => __obj.updateDynamic("PhoneNumber")(__v.asInstanceOf[js.Any]))
-      PhoneNumbers.foreach(__v => __obj.updateDynamic("PhoneNumbers")(__v.asInstanceOf[js.Any]))
-      SipAddresses.foreach(__v => __obj.updateDynamic("SipAddresses")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Contact]
-    }
-  }
-
   /**
     * Information related to a contact.
     */
   @js.native
+  @Factory
   trait ContactData extends js.Object {
     var ContactArn: js.UndefOr[Arn]
     var DisplayName: js.UndefOr[ContactName]
@@ -1175,95 +842,33 @@ package alexaforbusiness {
     var SipAddresses: js.UndefOr[SipAddressList]
   }
 
-  object ContactData {
-    @inline
-    def apply(
-        ContactArn: js.UndefOr[Arn] = js.undefined,
-        DisplayName: js.UndefOr[ContactName] = js.undefined,
-        FirstName: js.UndefOr[ContactName] = js.undefined,
-        LastName: js.UndefOr[ContactName] = js.undefined,
-        PhoneNumber: js.UndefOr[RawPhoneNumber] = js.undefined,
-        PhoneNumbers: js.UndefOr[PhoneNumberList] = js.undefined,
-        SipAddresses: js.UndefOr[SipAddressList] = js.undefined
-    ): ContactData = {
-      val __obj = js.Dynamic.literal()
-      ContactArn.foreach(__v => __obj.updateDynamic("ContactArn")(__v.asInstanceOf[js.Any]))
-      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
-      FirstName.foreach(__v => __obj.updateDynamic("FirstName")(__v.asInstanceOf[js.Any]))
-      LastName.foreach(__v => __obj.updateDynamic("LastName")(__v.asInstanceOf[js.Any]))
-      PhoneNumber.foreach(__v => __obj.updateDynamic("PhoneNumber")(__v.asInstanceOf[js.Any]))
-      PhoneNumbers.foreach(__v => __obj.updateDynamic("PhoneNumbers")(__v.asInstanceOf[js.Any]))
-      SipAddresses.foreach(__v => __obj.updateDynamic("SipAddresses")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ContactData]
-    }
-  }
-
   /**
     * The content definition. This can contain only one text, SSML, or audio list object.
     */
   @js.native
+  @Factory
   trait Content extends js.Object {
     var AudioList: js.UndefOr[AudioList]
     var SsmlList: js.UndefOr[SsmlList]
     var TextList: js.UndefOr[TextList]
   }
 
-  object Content {
-    @inline
-    def apply(
-        AudioList: js.UndefOr[AudioList] = js.undefined,
-        SsmlList: js.UndefOr[SsmlList] = js.undefined,
-        TextList: js.UndefOr[TextList] = js.undefined
-    ): Content = {
-      val __obj = js.Dynamic.literal()
-      AudioList.foreach(__v => __obj.updateDynamic("AudioList")(__v.asInstanceOf[js.Any]))
-      SsmlList.foreach(__v => __obj.updateDynamic("SsmlList")(__v.asInstanceOf[js.Any]))
-      TextList.foreach(__v => __obj.updateDynamic("TextList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Content]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateAddressBookRequest extends js.Object {
     var Name: AddressBookName
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
     var Description: js.UndefOr[AddressBookDescription]
   }
 
-  object CreateAddressBookRequest {
-    @inline
-    def apply(
-        Name: AddressBookName,
-        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-        Description: js.UndefOr[AddressBookDescription] = js.undefined
-    ): CreateAddressBookRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateAddressBookRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateAddressBookResponse extends js.Object {
     var AddressBookArn: js.UndefOr[Arn]
   }
 
-  object CreateAddressBookResponse {
-    @inline
-    def apply(
-        AddressBookArn: js.UndefOr[Arn] = js.undefined
-    ): CreateAddressBookResponse = {
-      val __obj = js.Dynamic.literal()
-      AddressBookArn.foreach(__v => __obj.updateDynamic("AddressBookArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateAddressBookResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateBusinessReportScheduleRequest extends js.Object {
     var ContentRange: BusinessReportContentRange
     var Format: BusinessReportFormat
@@ -1274,48 +879,14 @@ package alexaforbusiness {
     var ScheduleName: js.UndefOr[BusinessReportScheduleName]
   }
 
-  object CreateBusinessReportScheduleRequest {
-    @inline
-    def apply(
-        ContentRange: BusinessReportContentRange,
-        Format: BusinessReportFormat,
-        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-        Recurrence: js.UndefOr[BusinessReportRecurrence] = js.undefined,
-        S3BucketName: js.UndefOr[CustomerS3BucketName] = js.undefined,
-        S3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
-        ScheduleName: js.UndefOr[BusinessReportScheduleName] = js.undefined
-    ): CreateBusinessReportScheduleRequest = {
-      val __obj = js.Dynamic.literal(
-        "ContentRange" -> ContentRange.asInstanceOf[js.Any],
-        "Format"       -> Format.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      Recurrence.foreach(__v => __obj.updateDynamic("Recurrence")(__v.asInstanceOf[js.Any]))
-      S3BucketName.foreach(__v => __obj.updateDynamic("S3BucketName")(__v.asInstanceOf[js.Any]))
-      S3KeyPrefix.foreach(__v => __obj.updateDynamic("S3KeyPrefix")(__v.asInstanceOf[js.Any]))
-      ScheduleName.foreach(__v => __obj.updateDynamic("ScheduleName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateBusinessReportScheduleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateBusinessReportScheduleResponse extends js.Object {
     var ScheduleArn: js.UndefOr[Arn]
   }
 
-  object CreateBusinessReportScheduleResponse {
-    @inline
-    def apply(
-        ScheduleArn: js.UndefOr[Arn] = js.undefined
-    ): CreateBusinessReportScheduleResponse = {
-      val __obj = js.Dynamic.literal()
-      ScheduleArn.foreach(__v => __obj.updateDynamic("ScheduleArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateBusinessReportScheduleResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateConferenceProviderRequest extends js.Object {
     var ConferenceProviderName: ConferenceProviderName
     var ConferenceProviderType: ConferenceProviderType
@@ -1325,46 +896,14 @@ package alexaforbusiness {
     var PSTNDialIn: js.UndefOr[PSTNDialIn]
   }
 
-  object CreateConferenceProviderRequest {
-    @inline
-    def apply(
-        ConferenceProviderName: ConferenceProviderName,
-        ConferenceProviderType: ConferenceProviderType,
-        MeetingSetting: MeetingSetting,
-        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-        IPDialIn: js.UndefOr[IPDialIn] = js.undefined,
-        PSTNDialIn: js.UndefOr[PSTNDialIn] = js.undefined
-    ): CreateConferenceProviderRequest = {
-      val __obj = js.Dynamic.literal(
-        "ConferenceProviderName" -> ConferenceProviderName.asInstanceOf[js.Any],
-        "ConferenceProviderType" -> ConferenceProviderType.asInstanceOf[js.Any],
-        "MeetingSetting"         -> MeetingSetting.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      IPDialIn.foreach(__v => __obj.updateDynamic("IPDialIn")(__v.asInstanceOf[js.Any]))
-      PSTNDialIn.foreach(__v => __obj.updateDynamic("PSTNDialIn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateConferenceProviderRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateConferenceProviderResponse extends js.Object {
     var ConferenceProviderArn: js.UndefOr[Arn]
   }
 
-  object CreateConferenceProviderResponse {
-    @inline
-    def apply(
-        ConferenceProviderArn: js.UndefOr[Arn] = js.undefined
-    ): CreateConferenceProviderResponse = {
-      val __obj = js.Dynamic.literal()
-      ConferenceProviderArn.foreach(__v => __obj.updateDynamic("ConferenceProviderArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateConferenceProviderResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateContactRequest extends js.Object {
     var FirstName: ContactName
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
@@ -1375,142 +914,52 @@ package alexaforbusiness {
     var SipAddresses: js.UndefOr[SipAddressList]
   }
 
-  object CreateContactRequest {
-    @inline
-    def apply(
-        FirstName: ContactName,
-        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-        DisplayName: js.UndefOr[ContactName] = js.undefined,
-        LastName: js.UndefOr[ContactName] = js.undefined,
-        PhoneNumber: js.UndefOr[RawPhoneNumber] = js.undefined,
-        PhoneNumbers: js.UndefOr[PhoneNumberList] = js.undefined,
-        SipAddresses: js.UndefOr[SipAddressList] = js.undefined
-    ): CreateContactRequest = {
-      val __obj = js.Dynamic.literal(
-        "FirstName" -> FirstName.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
-      LastName.foreach(__v => __obj.updateDynamic("LastName")(__v.asInstanceOf[js.Any]))
-      PhoneNumber.foreach(__v => __obj.updateDynamic("PhoneNumber")(__v.asInstanceOf[js.Any]))
-      PhoneNumbers.foreach(__v => __obj.updateDynamic("PhoneNumbers")(__v.asInstanceOf[js.Any]))
-      SipAddresses.foreach(__v => __obj.updateDynamic("SipAddresses")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateContactRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateContactResponse extends js.Object {
     var ContactArn: js.UndefOr[Arn]
-  }
-
-  object CreateContactResponse {
-    @inline
-    def apply(
-        ContactArn: js.UndefOr[Arn] = js.undefined
-    ): CreateContactResponse = {
-      val __obj = js.Dynamic.literal()
-      ContactArn.foreach(__v => __obj.updateDynamic("ContactArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateContactResponse]
-    }
   }
 
   /**
     * Creates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending.
     */
   @js.native
+  @Factory
   trait CreateEndOfMeetingReminder extends js.Object {
     var Enabled: Boolean
     var ReminderAtMinutes: EndOfMeetingReminderMinutesList
     var ReminderType: EndOfMeetingReminderType
   }
 
-  object CreateEndOfMeetingReminder {
-    @inline
-    def apply(
-        Enabled: Boolean,
-        ReminderAtMinutes: EndOfMeetingReminderMinutesList,
-        ReminderType: EndOfMeetingReminderType
-    ): CreateEndOfMeetingReminder = {
-      val __obj = js.Dynamic.literal(
-        "Enabled"           -> Enabled.asInstanceOf[js.Any],
-        "ReminderAtMinutes" -> ReminderAtMinutes.asInstanceOf[js.Any],
-        "ReminderType"      -> ReminderType.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateEndOfMeetingReminder]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateGatewayGroupRequest extends js.Object {
     var ClientRequestToken: ClientRequestToken
     var Name: GatewayGroupName
     var Description: js.UndefOr[GatewayGroupDescription]
   }
 
-  object CreateGatewayGroupRequest {
-    @inline
-    def apply(
-        ClientRequestToken: ClientRequestToken,
-        Name: GatewayGroupName,
-        Description: js.UndefOr[GatewayGroupDescription] = js.undefined
-    ): CreateGatewayGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any],
-        "Name"               -> Name.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateGatewayGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateGatewayGroupResponse extends js.Object {
     var GatewayGroupArn: js.UndefOr[Arn]
-  }
-
-  object CreateGatewayGroupResponse {
-    @inline
-    def apply(
-        GatewayGroupArn: js.UndefOr[Arn] = js.undefined
-    ): CreateGatewayGroupResponse = {
-      val __obj = js.Dynamic.literal()
-      GatewayGroupArn.foreach(__v => __obj.updateDynamic("GatewayGroupArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateGatewayGroupResponse]
-    }
   }
 
   /**
     * Creates settings for the instant booking feature that are applied to a room profile. When users start their meeting with Alexa, Alexa automatically books the room for the configured duration if the room is available.
     */
   @js.native
+  @Factory
   trait CreateInstantBooking extends js.Object {
     var DurationInMinutes: Minutes
     var Enabled: Boolean
-  }
-
-  object CreateInstantBooking {
-    @inline
-    def apply(
-        DurationInMinutes: Minutes,
-        Enabled: Boolean
-    ): CreateInstantBooking = {
-      val __obj = js.Dynamic.literal(
-        "DurationInMinutes" -> DurationInMinutes.asInstanceOf[js.Any],
-        "Enabled"           -> Enabled.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateInstantBooking]
-    }
   }
 
   /**
     * Creates meeting room settings of a room profile.
     */
   @js.native
+  @Factory
   trait CreateMeetingRoomConfiguration extends js.Object {
     var EndOfMeetingReminder: js.UndefOr[CreateEndOfMeetingReminder]
     var InstantBooking: js.UndefOr[CreateInstantBooking]
@@ -1518,26 +967,8 @@ package alexaforbusiness {
     var RoomUtilizationMetricsEnabled: js.UndefOr[Boolean]
   }
 
-  object CreateMeetingRoomConfiguration {
-    @inline
-    def apply(
-        EndOfMeetingReminder: js.UndefOr[CreateEndOfMeetingReminder] = js.undefined,
-        InstantBooking: js.UndefOr[CreateInstantBooking] = js.undefined,
-        RequireCheckIn: js.UndefOr[CreateRequireCheckIn] = js.undefined,
-        RoomUtilizationMetricsEnabled: js.UndefOr[Boolean] = js.undefined
-    ): CreateMeetingRoomConfiguration = {
-      val __obj = js.Dynamic.literal()
-      EndOfMeetingReminder.foreach(__v => __obj.updateDynamic("EndOfMeetingReminder")(__v.asInstanceOf[js.Any]))
-      InstantBooking.foreach(__v => __obj.updateDynamic("InstantBooking")(__v.asInstanceOf[js.Any]))
-      RequireCheckIn.foreach(__v => __obj.updateDynamic("RequireCheckIn")(__v.asInstanceOf[js.Any]))
-      RoomUtilizationMetricsEnabled.foreach(__v =>
-        __obj.updateDynamic("RoomUtilizationMetricsEnabled")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[CreateMeetingRoomConfiguration]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateNetworkProfileRequest extends js.Object {
     var ClientRequestToken: ClientRequestToken
     var NetworkProfileName: NetworkProfileName
@@ -1551,54 +982,14 @@ package alexaforbusiness {
     var TrustAnchors: js.UndefOr[TrustAnchorList]
   }
 
-  object CreateNetworkProfileRequest {
-    @inline
-    def apply(
-        ClientRequestToken: ClientRequestToken,
-        NetworkProfileName: NetworkProfileName,
-        SecurityType: NetworkSecurityType,
-        Ssid: NetworkSsid,
-        CertificateAuthorityArn: js.UndefOr[Arn] = js.undefined,
-        CurrentPassword: js.UndefOr[CurrentWiFiPassword] = js.undefined,
-        Description: js.UndefOr[NetworkProfileDescription] = js.undefined,
-        EapMethod: js.UndefOr[NetworkEapMethod] = js.undefined,
-        NextPassword: js.UndefOr[NextWiFiPassword] = js.undefined,
-        TrustAnchors: js.UndefOr[TrustAnchorList] = js.undefined
-    ): CreateNetworkProfileRequest = {
-      val __obj = js.Dynamic.literal(
-        "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any],
-        "NetworkProfileName" -> NetworkProfileName.asInstanceOf[js.Any],
-        "SecurityType"       -> SecurityType.asInstanceOf[js.Any],
-        "Ssid"               -> Ssid.asInstanceOf[js.Any]
-      )
-
-      CertificateAuthorityArn.foreach(__v => __obj.updateDynamic("CertificateAuthorityArn")(__v.asInstanceOf[js.Any]))
-      CurrentPassword.foreach(__v => __obj.updateDynamic("CurrentPassword")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      EapMethod.foreach(__v => __obj.updateDynamic("EapMethod")(__v.asInstanceOf[js.Any]))
-      NextPassword.foreach(__v => __obj.updateDynamic("NextPassword")(__v.asInstanceOf[js.Any]))
-      TrustAnchors.foreach(__v => __obj.updateDynamic("TrustAnchors")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateNetworkProfileRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateNetworkProfileResponse extends js.Object {
     var NetworkProfileArn: js.UndefOr[Arn]
   }
 
-  object CreateNetworkProfileResponse {
-    @inline
-    def apply(
-        NetworkProfileArn: js.UndefOr[Arn] = js.undefined
-    ): CreateNetworkProfileResponse = {
-      val __obj = js.Dynamic.literal()
-      NetworkProfileArn.foreach(__v => __obj.updateDynamic("NetworkProfileArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateNetworkProfileResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateProfileRequest extends js.Object {
     var Address: Address
     var DistanceUnit: DistanceUnit
@@ -1614,82 +1005,24 @@ package alexaforbusiness {
     var SetupModeDisabled: js.UndefOr[Boolean]
   }
 
-  object CreateProfileRequest {
-    @inline
-    def apply(
-        Address: Address,
-        DistanceUnit: DistanceUnit,
-        ProfileName: ProfileName,
-        TemperatureUnit: TemperatureUnit,
-        Timezone: Timezone,
-        WakeWord: WakeWord,
-        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-        Locale: js.UndefOr[DeviceLocale] = js.undefined,
-        MaxVolumeLimit: js.UndefOr[MaxVolumeLimit] = js.undefined,
-        MeetingRoomConfiguration: js.UndefOr[CreateMeetingRoomConfiguration] = js.undefined,
-        PSTNEnabled: js.UndefOr[Boolean] = js.undefined,
-        SetupModeDisabled: js.UndefOr[Boolean] = js.undefined
-    ): CreateProfileRequest = {
-      val __obj = js.Dynamic.literal(
-        "Address"         -> Address.asInstanceOf[js.Any],
-        "DistanceUnit"    -> DistanceUnit.asInstanceOf[js.Any],
-        "ProfileName"     -> ProfileName.asInstanceOf[js.Any],
-        "TemperatureUnit" -> TemperatureUnit.asInstanceOf[js.Any],
-        "Timezone"        -> Timezone.asInstanceOf[js.Any],
-        "WakeWord"        -> WakeWord.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      Locale.foreach(__v => __obj.updateDynamic("Locale")(__v.asInstanceOf[js.Any]))
-      MaxVolumeLimit.foreach(__v => __obj.updateDynamic("MaxVolumeLimit")(__v.asInstanceOf[js.Any]))
-      MeetingRoomConfiguration.foreach(__v => __obj.updateDynamic("MeetingRoomConfiguration")(__v.asInstanceOf[js.Any]))
-      PSTNEnabled.foreach(__v => __obj.updateDynamic("PSTNEnabled")(__v.asInstanceOf[js.Any]))
-      SetupModeDisabled.foreach(__v => __obj.updateDynamic("SetupModeDisabled")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateProfileRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateProfileResponse extends js.Object {
     var ProfileArn: js.UndefOr[Arn]
-  }
-
-  object CreateProfileResponse {
-    @inline
-    def apply(
-        ProfileArn: js.UndefOr[Arn] = js.undefined
-    ): CreateProfileResponse = {
-      val __obj = js.Dynamic.literal()
-      ProfileArn.foreach(__v => __obj.updateDynamic("ProfileArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateProfileResponse]
-    }
   }
 
   /**
     * Creates settings for the require check in feature that are applied to a room profile. Require check in allows a meeting room’s Alexa or AVS device to prompt the user to check in; otherwise, the room will be released.
     */
   @js.native
+  @Factory
   trait CreateRequireCheckIn extends js.Object {
     var Enabled: Boolean
     var ReleaseAfterMinutes: Minutes
   }
 
-  object CreateRequireCheckIn {
-    @inline
-    def apply(
-        Enabled: Boolean,
-        ReleaseAfterMinutes: Minutes
-    ): CreateRequireCheckIn = {
-      val __obj = js.Dynamic.literal(
-        "Enabled"             -> Enabled.asInstanceOf[js.Any],
-        "ReleaseAfterMinutes" -> ReleaseAfterMinutes.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateRequireCheckIn]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateRoomRequest extends js.Object {
     var RoomName: RoomName
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
@@ -1699,86 +1032,28 @@ package alexaforbusiness {
     var Tags: js.UndefOr[TagList]
   }
 
-  object CreateRoomRequest {
-    @inline
-    def apply(
-        RoomName: RoomName,
-        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-        Description: js.UndefOr[RoomDescription] = js.undefined,
-        ProfileArn: js.UndefOr[Arn] = js.undefined,
-        ProviderCalendarId: js.UndefOr[ProviderCalendarId] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateRoomRequest = {
-      val __obj = js.Dynamic.literal(
-        "RoomName" -> RoomName.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      ProfileArn.foreach(__v => __obj.updateDynamic("ProfileArn")(__v.asInstanceOf[js.Any]))
-      ProviderCalendarId.foreach(__v => __obj.updateDynamic("ProviderCalendarId")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRoomRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateRoomResponse extends js.Object {
     var RoomArn: js.UndefOr[Arn]
   }
 
-  object CreateRoomResponse {
-    @inline
-    def apply(
-        RoomArn: js.UndefOr[Arn] = js.undefined
-    ): CreateRoomResponse = {
-      val __obj = js.Dynamic.literal()
-      RoomArn.foreach(__v => __obj.updateDynamic("RoomArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRoomResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateSkillGroupRequest extends js.Object {
     var SkillGroupName: SkillGroupName
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
     var Description: js.UndefOr[SkillGroupDescription]
   }
 
-  object CreateSkillGroupRequest {
-    @inline
-    def apply(
-        SkillGroupName: SkillGroupName,
-        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-        Description: js.UndefOr[SkillGroupDescription] = js.undefined
-    ): CreateSkillGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "SkillGroupName" -> SkillGroupName.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateSkillGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateSkillGroupResponse extends js.Object {
     var SkillGroupArn: js.UndefOr[Arn]
   }
 
-  object CreateSkillGroupResponse {
-    @inline
-    def apply(
-        SkillGroupArn: js.UndefOr[Arn] = js.undefined
-    ): CreateSkillGroupResponse = {
-      val __obj = js.Dynamic.literal()
-      SkillGroupArn.foreach(__v => __obj.updateDynamic("SkillGroupArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateSkillGroupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateUserRequest extends js.Object {
     var UserId: user_UserId
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
@@ -1788,492 +1063,162 @@ package alexaforbusiness {
     var Tags: js.UndefOr[TagList]
   }
 
-  object CreateUserRequest {
-    @inline
-    def apply(
-        UserId: user_UserId,
-        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-        Email: js.UndefOr[Email] = js.undefined,
-        FirstName: js.UndefOr[user_FirstName] = js.undefined,
-        LastName: js.UndefOr[user_LastName] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateUserRequest = {
-      val __obj = js.Dynamic.literal(
-        "UserId" -> UserId.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
-      FirstName.foreach(__v => __obj.updateDynamic("FirstName")(__v.asInstanceOf[js.Any]))
-      LastName.foreach(__v => __obj.updateDynamic("LastName")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateUserRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateUserResponse extends js.Object {
     var UserArn: js.UndefOr[Arn]
   }
 
-  object CreateUserResponse {
-    @inline
-    def apply(
-        UserArn: js.UndefOr[Arn] = js.undefined
-    ): CreateUserResponse = {
-      val __obj = js.Dynamic.literal()
-      UserArn.foreach(__v => __obj.updateDynamic("UserArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateUserResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteAddressBookRequest extends js.Object {
     var AddressBookArn: Arn
   }
 
-  object DeleteAddressBookRequest {
-    @inline
-    def apply(
-        AddressBookArn: Arn
-    ): DeleteAddressBookRequest = {
-      val __obj = js.Dynamic.literal(
-        "AddressBookArn" -> AddressBookArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteAddressBookRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteAddressBookResponse extends js.Object {}
 
-  object DeleteAddressBookResponse {
-    @inline
-    def apply(
-    ): DeleteAddressBookResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteAddressBookResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteBusinessReportScheduleRequest extends js.Object {
     var ScheduleArn: Arn
   }
 
-  object DeleteBusinessReportScheduleRequest {
-    @inline
-    def apply(
-        ScheduleArn: Arn
-    ): DeleteBusinessReportScheduleRequest = {
-      val __obj = js.Dynamic.literal(
-        "ScheduleArn" -> ScheduleArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteBusinessReportScheduleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteBusinessReportScheduleResponse extends js.Object {}
 
-  object DeleteBusinessReportScheduleResponse {
-    @inline
-    def apply(
-    ): DeleteBusinessReportScheduleResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteBusinessReportScheduleResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteConferenceProviderRequest extends js.Object {
     var ConferenceProviderArn: Arn
   }
 
-  object DeleteConferenceProviderRequest {
-    @inline
-    def apply(
-        ConferenceProviderArn: Arn
-    ): DeleteConferenceProviderRequest = {
-      val __obj = js.Dynamic.literal(
-        "ConferenceProviderArn" -> ConferenceProviderArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteConferenceProviderRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteConferenceProviderResponse extends js.Object {}
 
-  object DeleteConferenceProviderResponse {
-    @inline
-    def apply(
-    ): DeleteConferenceProviderResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteConferenceProviderResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteContactRequest extends js.Object {
     var ContactArn: Arn
   }
 
-  object DeleteContactRequest {
-    @inline
-    def apply(
-        ContactArn: Arn
-    ): DeleteContactRequest = {
-      val __obj = js.Dynamic.literal(
-        "ContactArn" -> ContactArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteContactRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteContactResponse extends js.Object {}
 
-  object DeleteContactResponse {
-    @inline
-    def apply(
-    ): DeleteContactResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteContactResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDeviceRequest extends js.Object {
     var DeviceArn: Arn
   }
 
-  object DeleteDeviceRequest {
-    @inline
-    def apply(
-        DeviceArn: Arn
-    ): DeleteDeviceRequest = {
-      val __obj = js.Dynamic.literal(
-        "DeviceArn" -> DeviceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteDeviceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDeviceResponse extends js.Object {}
 
-  object DeleteDeviceResponse {
-    @inline
-    def apply(
-    ): DeleteDeviceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteDeviceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDeviceUsageDataRequest extends js.Object {
     var DeviceArn: Arn
     var DeviceUsageType: DeviceUsageType
   }
 
-  object DeleteDeviceUsageDataRequest {
-    @inline
-    def apply(
-        DeviceArn: Arn,
-        DeviceUsageType: DeviceUsageType
-    ): DeleteDeviceUsageDataRequest = {
-      val __obj = js.Dynamic.literal(
-        "DeviceArn"       -> DeviceArn.asInstanceOf[js.Any],
-        "DeviceUsageType" -> DeviceUsageType.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteDeviceUsageDataRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDeviceUsageDataResponse extends js.Object {}
 
-  object DeleteDeviceUsageDataResponse {
-    @inline
-    def apply(
-    ): DeleteDeviceUsageDataResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteDeviceUsageDataResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteGatewayGroupRequest extends js.Object {
     var GatewayGroupArn: Arn
   }
 
-  object DeleteGatewayGroupRequest {
-    @inline
-    def apply(
-        GatewayGroupArn: Arn
-    ): DeleteGatewayGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "GatewayGroupArn" -> GatewayGroupArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteGatewayGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteGatewayGroupResponse extends js.Object {}
 
-  object DeleteGatewayGroupResponse {
-    @inline
-    def apply(
-    ): DeleteGatewayGroupResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteGatewayGroupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteNetworkProfileRequest extends js.Object {
     var NetworkProfileArn: Arn
   }
 
-  object DeleteNetworkProfileRequest {
-    @inline
-    def apply(
-        NetworkProfileArn: Arn
-    ): DeleteNetworkProfileRequest = {
-      val __obj = js.Dynamic.literal(
-        "NetworkProfileArn" -> NetworkProfileArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteNetworkProfileRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteNetworkProfileResponse extends js.Object {}
 
-  object DeleteNetworkProfileResponse {
-    @inline
-    def apply(
-    ): DeleteNetworkProfileResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteNetworkProfileResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteProfileRequest extends js.Object {
     var ProfileArn: js.UndefOr[Arn]
   }
 
-  object DeleteProfileRequest {
-    @inline
-    def apply(
-        ProfileArn: js.UndefOr[Arn] = js.undefined
-    ): DeleteProfileRequest = {
-      val __obj = js.Dynamic.literal()
-      ProfileArn.foreach(__v => __obj.updateDynamic("ProfileArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteProfileRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteProfileResponse extends js.Object {}
 
-  object DeleteProfileResponse {
-    @inline
-    def apply(
-    ): DeleteProfileResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteProfileResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteRoomRequest extends js.Object {
     var RoomArn: js.UndefOr[Arn]
   }
 
-  object DeleteRoomRequest {
-    @inline
-    def apply(
-        RoomArn: js.UndefOr[Arn] = js.undefined
-    ): DeleteRoomRequest = {
-      val __obj = js.Dynamic.literal()
-      RoomArn.foreach(__v => __obj.updateDynamic("RoomArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteRoomRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteRoomResponse extends js.Object {}
 
-  object DeleteRoomResponse {
-    @inline
-    def apply(
-    ): DeleteRoomResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteRoomResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteRoomSkillParameterRequest extends js.Object {
     var ParameterKey: RoomSkillParameterKey
     var SkillId: SkillId
     var RoomArn: js.UndefOr[Arn]
   }
 
-  object DeleteRoomSkillParameterRequest {
-    @inline
-    def apply(
-        ParameterKey: RoomSkillParameterKey,
-        SkillId: SkillId,
-        RoomArn: js.UndefOr[Arn] = js.undefined
-    ): DeleteRoomSkillParameterRequest = {
-      val __obj = js.Dynamic.literal(
-        "ParameterKey" -> ParameterKey.asInstanceOf[js.Any],
-        "SkillId"      -> SkillId.asInstanceOf[js.Any]
-      )
-
-      RoomArn.foreach(__v => __obj.updateDynamic("RoomArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteRoomSkillParameterRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteRoomSkillParameterResponse extends js.Object {}
 
-  object DeleteRoomSkillParameterResponse {
-    @inline
-    def apply(
-    ): DeleteRoomSkillParameterResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteRoomSkillParameterResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteSkillAuthorizationRequest extends js.Object {
     var SkillId: SkillId
     var RoomArn: js.UndefOr[Arn]
   }
 
-  object DeleteSkillAuthorizationRequest {
-    @inline
-    def apply(
-        SkillId: SkillId,
-        RoomArn: js.UndefOr[Arn] = js.undefined
-    ): DeleteSkillAuthorizationRequest = {
-      val __obj = js.Dynamic.literal(
-        "SkillId" -> SkillId.asInstanceOf[js.Any]
-      )
-
-      RoomArn.foreach(__v => __obj.updateDynamic("RoomArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteSkillAuthorizationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteSkillAuthorizationResponse extends js.Object {}
 
-  object DeleteSkillAuthorizationResponse {
-    @inline
-    def apply(
-    ): DeleteSkillAuthorizationResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteSkillAuthorizationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteSkillGroupRequest extends js.Object {
     var SkillGroupArn: js.UndefOr[Arn]
   }
 
-  object DeleteSkillGroupRequest {
-    @inline
-    def apply(
-        SkillGroupArn: js.UndefOr[Arn] = js.undefined
-    ): DeleteSkillGroupRequest = {
-      val __obj = js.Dynamic.literal()
-      SkillGroupArn.foreach(__v => __obj.updateDynamic("SkillGroupArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteSkillGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteSkillGroupResponse extends js.Object {}
 
-  object DeleteSkillGroupResponse {
-    @inline
-    def apply(
-    ): DeleteSkillGroupResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteSkillGroupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteUserRequest extends js.Object {
     var EnrollmentId: EnrollmentId
     var UserArn: js.UndefOr[Arn]
   }
 
-  object DeleteUserRequest {
-    @inline
-    def apply(
-        EnrollmentId: EnrollmentId,
-        UserArn: js.UndefOr[Arn] = js.undefined
-    ): DeleteUserRequest = {
-      val __obj = js.Dynamic.literal(
-        "EnrollmentId" -> EnrollmentId.asInstanceOf[js.Any]
-      )
-
-      UserArn.foreach(__v => __obj.updateDynamic("UserArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteUserRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteUserResponse extends js.Object {}
-
-  object DeleteUserResponse {
-    @inline
-    def apply(
-    ): DeleteUserResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteUserResponse]
-    }
-  }
 
   /**
     * The details about the developer that published the skill.
     */
   @js.native
+  @Factory
   trait DeveloperInfo extends js.Object {
     var DeveloperName: js.UndefOr[DeveloperName]
     var Email: js.UndefOr[Email]
@@ -2281,27 +1226,11 @@ package alexaforbusiness {
     var Url: js.UndefOr[Url]
   }
 
-  object DeveloperInfo {
-    @inline
-    def apply(
-        DeveloperName: js.UndefOr[DeveloperName] = js.undefined,
-        Email: js.UndefOr[Email] = js.undefined,
-        PrivacyPolicy: js.UndefOr[PrivacyPolicy] = js.undefined,
-        Url: js.UndefOr[Url] = js.undefined
-    ): DeveloperInfo = {
-      val __obj = js.Dynamic.literal()
-      DeveloperName.foreach(__v => __obj.updateDynamic("DeveloperName")(__v.asInstanceOf[js.Any]))
-      Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
-      PrivacyPolicy.foreach(__v => __obj.updateDynamic("PrivacyPolicy")(__v.asInstanceOf[js.Any]))
-      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeveloperInfo]
-    }
-  }
-
   /**
     * A device with attributes.
     */
   @js.native
+  @Factory
   trait Device extends js.Object {
     var DeviceArn: js.UndefOr[Arn]
     var DeviceName: js.UndefOr[DeviceName]
@@ -2315,39 +1244,11 @@ package alexaforbusiness {
     var SoftwareVersion: js.UndefOr[SoftwareVersion]
   }
 
-  object Device {
-    @inline
-    def apply(
-        DeviceArn: js.UndefOr[Arn] = js.undefined,
-        DeviceName: js.UndefOr[DeviceName] = js.undefined,
-        DeviceSerialNumber: js.UndefOr[DeviceSerialNumber] = js.undefined,
-        DeviceStatus: js.UndefOr[DeviceStatus] = js.undefined,
-        DeviceStatusInfo: js.UndefOr[DeviceStatusInfo] = js.undefined,
-        DeviceType: js.UndefOr[DeviceType] = js.undefined,
-        MacAddress: js.UndefOr[MacAddress] = js.undefined,
-        NetworkProfileInfo: js.UndefOr[DeviceNetworkProfileInfo] = js.undefined,
-        RoomArn: js.UndefOr[Arn] = js.undefined,
-        SoftwareVersion: js.UndefOr[SoftwareVersion] = js.undefined
-    ): Device = {
-      val __obj = js.Dynamic.literal()
-      DeviceArn.foreach(__v => __obj.updateDynamic("DeviceArn")(__v.asInstanceOf[js.Any]))
-      DeviceName.foreach(__v => __obj.updateDynamic("DeviceName")(__v.asInstanceOf[js.Any]))
-      DeviceSerialNumber.foreach(__v => __obj.updateDynamic("DeviceSerialNumber")(__v.asInstanceOf[js.Any]))
-      DeviceStatus.foreach(__v => __obj.updateDynamic("DeviceStatus")(__v.asInstanceOf[js.Any]))
-      DeviceStatusInfo.foreach(__v => __obj.updateDynamic("DeviceStatusInfo")(__v.asInstanceOf[js.Any]))
-      DeviceType.foreach(__v => __obj.updateDynamic("DeviceType")(__v.asInstanceOf[js.Any]))
-      MacAddress.foreach(__v => __obj.updateDynamic("MacAddress")(__v.asInstanceOf[js.Any]))
-      NetworkProfileInfo.foreach(__v => __obj.updateDynamic("NetworkProfileInfo")(__v.asInstanceOf[js.Any]))
-      RoomArn.foreach(__v => __obj.updateDynamic("RoomArn")(__v.asInstanceOf[js.Any]))
-      SoftwareVersion.foreach(__v => __obj.updateDynamic("SoftwareVersion")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Device]
-    }
-  }
-
   /**
     * Device attributes.
     */
   @js.native
+  @Factory
   trait DeviceData extends js.Object {
     var CreatedTime: js.UndefOr[DeviceDataCreatedTime]
     var DeviceArn: js.UndefOr[Arn]
@@ -2364,64 +1265,15 @@ package alexaforbusiness {
     var SoftwareVersion: js.UndefOr[SoftwareVersion]
   }
 
-  object DeviceData {
-    @inline
-    def apply(
-        CreatedTime: js.UndefOr[DeviceDataCreatedTime] = js.undefined,
-        DeviceArn: js.UndefOr[Arn] = js.undefined,
-        DeviceName: js.UndefOr[DeviceName] = js.undefined,
-        DeviceSerialNumber: js.UndefOr[DeviceSerialNumber] = js.undefined,
-        DeviceStatus: js.UndefOr[DeviceStatus] = js.undefined,
-        DeviceStatusInfo: js.UndefOr[DeviceStatusInfo] = js.undefined,
-        DeviceType: js.UndefOr[DeviceType] = js.undefined,
-        MacAddress: js.UndefOr[MacAddress] = js.undefined,
-        NetworkProfileArn: js.UndefOr[Arn] = js.undefined,
-        NetworkProfileName: js.UndefOr[NetworkProfileName] = js.undefined,
-        RoomArn: js.UndefOr[Arn] = js.undefined,
-        RoomName: js.UndefOr[RoomName] = js.undefined,
-        SoftwareVersion: js.UndefOr[SoftwareVersion] = js.undefined
-    ): DeviceData = {
-      val __obj = js.Dynamic.literal()
-      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
-      DeviceArn.foreach(__v => __obj.updateDynamic("DeviceArn")(__v.asInstanceOf[js.Any]))
-      DeviceName.foreach(__v => __obj.updateDynamic("DeviceName")(__v.asInstanceOf[js.Any]))
-      DeviceSerialNumber.foreach(__v => __obj.updateDynamic("DeviceSerialNumber")(__v.asInstanceOf[js.Any]))
-      DeviceStatus.foreach(__v => __obj.updateDynamic("DeviceStatus")(__v.asInstanceOf[js.Any]))
-      DeviceStatusInfo.foreach(__v => __obj.updateDynamic("DeviceStatusInfo")(__v.asInstanceOf[js.Any]))
-      DeviceType.foreach(__v => __obj.updateDynamic("DeviceType")(__v.asInstanceOf[js.Any]))
-      MacAddress.foreach(__v => __obj.updateDynamic("MacAddress")(__v.asInstanceOf[js.Any]))
-      NetworkProfileArn.foreach(__v => __obj.updateDynamic("NetworkProfileArn")(__v.asInstanceOf[js.Any]))
-      NetworkProfileName.foreach(__v => __obj.updateDynamic("NetworkProfileName")(__v.asInstanceOf[js.Any]))
-      RoomArn.foreach(__v => __obj.updateDynamic("RoomArn")(__v.asInstanceOf[js.Any]))
-      RoomName.foreach(__v => __obj.updateDynamic("RoomName")(__v.asInstanceOf[js.Any]))
-      SoftwareVersion.foreach(__v => __obj.updateDynamic("SoftwareVersion")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeviceData]
-    }
-  }
-
   /**
     * The list of device events.
     */
   @js.native
+  @Factory
   trait DeviceEvent extends js.Object {
     var Timestamp: js.UndefOr[DeviceEventTime]
     var Type: js.UndefOr[DeviceEventType]
     var Value: js.UndefOr[DeviceEventValue]
-  }
-
-  object DeviceEvent {
-    @inline
-    def apply(
-        Timestamp: js.UndefOr[DeviceEventTime] = js.undefined,
-        Type: js.UndefOr[DeviceEventType] = js.undefined,
-        Value: js.UndefOr[DeviceEventValue] = js.undefined
-    ): DeviceEvent = {
-      val __obj = js.Dynamic.literal()
-      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeviceEvent]
-    }
   }
 
   @js.native
@@ -2437,27 +1289,11 @@ package alexaforbusiness {
     * Detailed information about a device's network profile.
     */
   @js.native
+  @Factory
   trait DeviceNetworkProfileInfo extends js.Object {
     var CertificateArn: js.UndefOr[Arn]
     var CertificateExpirationTime: js.UndefOr[CertificateTime]
     var NetworkProfileArn: js.UndefOr[Arn]
-  }
-
-  object DeviceNetworkProfileInfo {
-    @inline
-    def apply(
-        CertificateArn: js.UndefOr[Arn] = js.undefined,
-        CertificateExpirationTime: js.UndefOr[CertificateTime] = js.undefined,
-        NetworkProfileArn: js.UndefOr[Arn] = js.undefined
-    ): DeviceNetworkProfileInfo = {
-      val __obj = js.Dynamic.literal()
-      CertificateArn.foreach(__v => __obj.updateDynamic("CertificateArn")(__v.asInstanceOf[js.Any]))
-      CertificateExpirationTime.foreach(__v =>
-        __obj.updateDynamic("CertificateExpirationTime")(__v.asInstanceOf[js.Any])
-      )
-      NetworkProfileArn.foreach(__v => __obj.updateDynamic("NetworkProfileArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeviceNetworkProfileInfo]
-    }
   }
 
   @js.native
@@ -2476,22 +1312,10 @@ package alexaforbusiness {
     * Details of a device’s status.
     */
   @js.native
+  @Factory
   trait DeviceStatusDetail extends js.Object {
     var Code: js.UndefOr[DeviceStatusDetailCode]
     var Feature: js.UndefOr[Feature]
-  }
-
-  object DeviceStatusDetail {
-    @inline
-    def apply(
-        Code: js.UndefOr[DeviceStatusDetailCode] = js.undefined,
-        Feature: js.UndefOr[Feature] = js.undefined
-    ): DeviceStatusDetail = {
-      val __obj = js.Dynamic.literal()
-      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
-      Feature.foreach(__v => __obj.updateDynamic("Feature")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeviceStatusDetail]
-    }
   }
 
   @js.native
@@ -2538,27 +1362,11 @@ package alexaforbusiness {
     * Detailed information about a device's status.
     */
   @js.native
+  @Factory
   trait DeviceStatusInfo extends js.Object {
     var ConnectionStatus: js.UndefOr[ConnectionStatus]
     var ConnectionStatusUpdatedTime: js.UndefOr[ConnectionStatusUpdatedTime]
     var DeviceStatusDetails: js.UndefOr[DeviceStatusDetails]
-  }
-
-  object DeviceStatusInfo {
-    @inline
-    def apply(
-        ConnectionStatus: js.UndefOr[ConnectionStatus] = js.undefined,
-        ConnectionStatusUpdatedTime: js.UndefOr[ConnectionStatusUpdatedTime] = js.undefined,
-        DeviceStatusDetails: js.UndefOr[DeviceStatusDetails] = js.undefined
-    ): DeviceStatusInfo = {
-      val __obj = js.Dynamic.literal()
-      ConnectionStatus.foreach(__v => __obj.updateDynamic("ConnectionStatus")(__v.asInstanceOf[js.Any]))
-      ConnectionStatusUpdatedTime.foreach(__v =>
-        __obj.updateDynamic("ConnectionStatusUpdatedTime")(__v.asInstanceOf[js.Any])
-      )
-      DeviceStatusDetails.foreach(__v => __obj.updateDynamic("DeviceStatusDetails")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeviceStatusInfo]
-    }
   }
 
   @js.native
@@ -2570,164 +1378,57 @@ package alexaforbusiness {
   }
 
   @js.native
+  @Factory
   trait DisassociateContactFromAddressBookRequest extends js.Object {
     var AddressBookArn: Arn
     var ContactArn: Arn
   }
 
-  object DisassociateContactFromAddressBookRequest {
-    @inline
-    def apply(
-        AddressBookArn: Arn,
-        ContactArn: Arn
-    ): DisassociateContactFromAddressBookRequest = {
-      val __obj = js.Dynamic.literal(
-        "AddressBookArn" -> AddressBookArn.asInstanceOf[js.Any],
-        "ContactArn"     -> ContactArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisassociateContactFromAddressBookRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateContactFromAddressBookResponse extends js.Object {}
 
-  object DisassociateContactFromAddressBookResponse {
-    @inline
-    def apply(
-    ): DisassociateContactFromAddressBookResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DisassociateContactFromAddressBookResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateDeviceFromRoomRequest extends js.Object {
     var DeviceArn: js.UndefOr[Arn]
   }
 
-  object DisassociateDeviceFromRoomRequest {
-    @inline
-    def apply(
-        DeviceArn: js.UndefOr[Arn] = js.undefined
-    ): DisassociateDeviceFromRoomRequest = {
-      val __obj = js.Dynamic.literal()
-      DeviceArn.foreach(__v => __obj.updateDynamic("DeviceArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DisassociateDeviceFromRoomRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateDeviceFromRoomResponse extends js.Object {}
 
-  object DisassociateDeviceFromRoomResponse {
-    @inline
-    def apply(
-    ): DisassociateDeviceFromRoomResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DisassociateDeviceFromRoomResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateSkillFromSkillGroupRequest extends js.Object {
     var SkillId: SkillId
     var SkillGroupArn: js.UndefOr[Arn]
   }
 
-  object DisassociateSkillFromSkillGroupRequest {
-    @inline
-    def apply(
-        SkillId: SkillId,
-        SkillGroupArn: js.UndefOr[Arn] = js.undefined
-    ): DisassociateSkillFromSkillGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "SkillId" -> SkillId.asInstanceOf[js.Any]
-      )
-
-      SkillGroupArn.foreach(__v => __obj.updateDynamic("SkillGroupArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DisassociateSkillFromSkillGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateSkillFromSkillGroupResponse extends js.Object {}
 
-  object DisassociateSkillFromSkillGroupResponse {
-    @inline
-    def apply(
-    ): DisassociateSkillFromSkillGroupResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DisassociateSkillFromSkillGroupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateSkillFromUsersRequest extends js.Object {
     var SkillId: SkillId
   }
 
-  object DisassociateSkillFromUsersRequest {
-    @inline
-    def apply(
-        SkillId: SkillId
-    ): DisassociateSkillFromUsersRequest = {
-      val __obj = js.Dynamic.literal(
-        "SkillId" -> SkillId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisassociateSkillFromUsersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateSkillFromUsersResponse extends js.Object {}
 
-  object DisassociateSkillFromUsersResponse {
-    @inline
-    def apply(
-    ): DisassociateSkillFromUsersResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DisassociateSkillFromUsersResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateSkillGroupFromRoomRequest extends js.Object {
     var RoomArn: js.UndefOr[Arn]
     var SkillGroupArn: js.UndefOr[Arn]
   }
 
-  object DisassociateSkillGroupFromRoomRequest {
-    @inline
-    def apply(
-        RoomArn: js.UndefOr[Arn] = js.undefined,
-        SkillGroupArn: js.UndefOr[Arn] = js.undefined
-    ): DisassociateSkillGroupFromRoomRequest = {
-      val __obj = js.Dynamic.literal()
-      RoomArn.foreach(__v => __obj.updateDynamic("RoomArn")(__v.asInstanceOf[js.Any]))
-      SkillGroupArn.foreach(__v => __obj.updateDynamic("SkillGroupArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DisassociateSkillGroupFromRoomRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateSkillGroupFromRoomResponse extends js.Object {}
-
-  object DisassociateSkillGroupFromRoomResponse {
-    @inline
-    def apply(
-    ): DisassociateSkillGroupFromRoomResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DisassociateSkillGroupFromRoomResponse]
-    }
-  }
 
   @js.native
   sealed trait DistanceUnit extends js.Any
@@ -2760,25 +1461,11 @@ package alexaforbusiness {
     * Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending.
     */
   @js.native
+  @Factory
   trait EndOfMeetingReminder extends js.Object {
     var Enabled: js.UndefOr[Boolean]
     var ReminderAtMinutes: js.UndefOr[EndOfMeetingReminderMinutesList]
     var ReminderType: js.UndefOr[EndOfMeetingReminderType]
-  }
-
-  object EndOfMeetingReminder {
-    @inline
-    def apply(
-        Enabled: js.UndefOr[Boolean] = js.undefined,
-        ReminderAtMinutes: js.UndefOr[EndOfMeetingReminderMinutesList] = js.undefined,
-        ReminderType: js.UndefOr[EndOfMeetingReminderType] = js.undefined
-    ): EndOfMeetingReminder = {
-      val __obj = js.Dynamic.literal()
-      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      ReminderAtMinutes.foreach(__v => __obj.updateDynamic("ReminderAtMinutes")(__v.asInstanceOf[js.Any]))
-      ReminderType.foreach(__v => __obj.updateDynamic("ReminderType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EndOfMeetingReminder]
-    }
   }
 
   @js.native
@@ -2824,61 +1511,27 @@ package alexaforbusiness {
     * A filter name and value pair that is used to return a more specific list of results. Filters can be used to match a set of resources by various criteria.
     */
   @js.native
+  @Factory
   trait Filter extends js.Object {
     var Key: FilterKey
     var Values: FilterValueList
   }
 
-  object Filter {
-    @inline
-    def apply(
-        Key: FilterKey,
-        Values: FilterValueList
-    ): Filter = {
-      val __obj = js.Dynamic.literal(
-        "Key"    -> Key.asInstanceOf[js.Any],
-        "Values" -> Values.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Filter]
-    }
-  }
-
   @js.native
+  @Factory
   trait ForgetSmartHomeAppliancesRequest extends js.Object {
     var RoomArn: Arn
   }
 
-  object ForgetSmartHomeAppliancesRequest {
-    @inline
-    def apply(
-        RoomArn: Arn
-    ): ForgetSmartHomeAppliancesRequest = {
-      val __obj = js.Dynamic.literal(
-        "RoomArn" -> RoomArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ForgetSmartHomeAppliancesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ForgetSmartHomeAppliancesResponse extends js.Object {}
-
-  object ForgetSmartHomeAppliancesResponse {
-    @inline
-    def apply(
-    ): ForgetSmartHomeAppliancesResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[ForgetSmartHomeAppliancesResponse]
-    }
-  }
 
   /**
     * The details of the gateway.
     */
   @js.native
+  @Factory
   trait Gateway extends js.Object {
     var Arn: js.UndefOr[Arn]
     var Description: js.UndefOr[GatewayDescription]
@@ -2887,79 +1540,33 @@ package alexaforbusiness {
     var SoftwareVersion: js.UndefOr[GatewayVersion]
   }
 
-  object Gateway {
-    @inline
-    def apply(
-        Arn: js.UndefOr[Arn] = js.undefined,
-        Description: js.UndefOr[GatewayDescription] = js.undefined,
-        GatewayGroupArn: js.UndefOr[Arn] = js.undefined,
-        Name: js.UndefOr[GatewayName] = js.undefined,
-        SoftwareVersion: js.UndefOr[GatewayVersion] = js.undefined
-    ): Gateway = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      GatewayGroupArn.foreach(__v => __obj.updateDynamic("GatewayGroupArn")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      SoftwareVersion.foreach(__v => __obj.updateDynamic("SoftwareVersion")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Gateway]
-    }
-  }
-
   /**
     * The details of the gateway group.
     */
   @js.native
+  @Factory
   trait GatewayGroup extends js.Object {
     var Arn: js.UndefOr[Arn]
     var Description: js.UndefOr[GatewayGroupDescription]
     var Name: js.UndefOr[GatewayGroupName]
   }
 
-  object GatewayGroup {
-    @inline
-    def apply(
-        Arn: js.UndefOr[Arn] = js.undefined,
-        Description: js.UndefOr[GatewayGroupDescription] = js.undefined,
-        Name: js.UndefOr[GatewayGroupName] = js.undefined
-    ): GatewayGroup = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GatewayGroup]
-    }
-  }
-
   /**
     * The summary of a gateway group.
     */
   @js.native
+  @Factory
   trait GatewayGroupSummary extends js.Object {
     var Arn: js.UndefOr[Arn]
     var Description: js.UndefOr[GatewayGroupDescription]
     var Name: js.UndefOr[GatewayGroupName]
   }
 
-  object GatewayGroupSummary {
-    @inline
-    def apply(
-        Arn: js.UndefOr[Arn] = js.undefined,
-        Description: js.UndefOr[GatewayGroupDescription] = js.undefined,
-        Name: js.UndefOr[GatewayGroupName] = js.undefined
-    ): GatewayGroupSummary = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GatewayGroupSummary]
-    }
-  }
-
   /**
     * The summary of a gateway.
     */
   @js.native
+  @Factory
   trait GatewaySummary extends js.Object {
     var Arn: js.UndefOr[Arn]
     var Description: js.UndefOr[GatewayDescription]
@@ -2968,584 +1575,212 @@ package alexaforbusiness {
     var SoftwareVersion: js.UndefOr[GatewayVersion]
   }
 
-  object GatewaySummary {
-    @inline
-    def apply(
-        Arn: js.UndefOr[Arn] = js.undefined,
-        Description: js.UndefOr[GatewayDescription] = js.undefined,
-        GatewayGroupArn: js.UndefOr[Arn] = js.undefined,
-        Name: js.UndefOr[GatewayName] = js.undefined,
-        SoftwareVersion: js.UndefOr[GatewayVersion] = js.undefined
-    ): GatewaySummary = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      GatewayGroupArn.foreach(__v => __obj.updateDynamic("GatewayGroupArn")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      SoftwareVersion.foreach(__v => __obj.updateDynamic("SoftwareVersion")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GatewaySummary]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetAddressBookRequest extends js.Object {
     var AddressBookArn: Arn
   }
 
-  object GetAddressBookRequest {
-    @inline
-    def apply(
-        AddressBookArn: Arn
-    ): GetAddressBookRequest = {
-      val __obj = js.Dynamic.literal(
-        "AddressBookArn" -> AddressBookArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetAddressBookRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetAddressBookResponse extends js.Object {
     var AddressBook: js.UndefOr[AddressBook]
   }
 
-  object GetAddressBookResponse {
-    @inline
-    def apply(
-        AddressBook: js.UndefOr[AddressBook] = js.undefined
-    ): GetAddressBookResponse = {
-      val __obj = js.Dynamic.literal()
-      AddressBook.foreach(__v => __obj.updateDynamic("AddressBook")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetAddressBookResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetConferencePreferenceRequest extends js.Object {}
 
-  object GetConferencePreferenceRequest {
-    @inline
-    def apply(
-    ): GetConferencePreferenceRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[GetConferencePreferenceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetConferencePreferenceResponse extends js.Object {
     var Preference: js.UndefOr[ConferencePreference]
   }
 
-  object GetConferencePreferenceResponse {
-    @inline
-    def apply(
-        Preference: js.UndefOr[ConferencePreference] = js.undefined
-    ): GetConferencePreferenceResponse = {
-      val __obj = js.Dynamic.literal()
-      Preference.foreach(__v => __obj.updateDynamic("Preference")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetConferencePreferenceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetConferenceProviderRequest extends js.Object {
     var ConferenceProviderArn: Arn
   }
 
-  object GetConferenceProviderRequest {
-    @inline
-    def apply(
-        ConferenceProviderArn: Arn
-    ): GetConferenceProviderRequest = {
-      val __obj = js.Dynamic.literal(
-        "ConferenceProviderArn" -> ConferenceProviderArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetConferenceProviderRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetConferenceProviderResponse extends js.Object {
     var ConferenceProvider: js.UndefOr[ConferenceProvider]
   }
 
-  object GetConferenceProviderResponse {
-    @inline
-    def apply(
-        ConferenceProvider: js.UndefOr[ConferenceProvider] = js.undefined
-    ): GetConferenceProviderResponse = {
-      val __obj = js.Dynamic.literal()
-      ConferenceProvider.foreach(__v => __obj.updateDynamic("ConferenceProvider")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetConferenceProviderResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetContactRequest extends js.Object {
     var ContactArn: Arn
   }
 
-  object GetContactRequest {
-    @inline
-    def apply(
-        ContactArn: Arn
-    ): GetContactRequest = {
-      val __obj = js.Dynamic.literal(
-        "ContactArn" -> ContactArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetContactRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetContactResponse extends js.Object {
     var Contact: js.UndefOr[Contact]
   }
 
-  object GetContactResponse {
-    @inline
-    def apply(
-        Contact: js.UndefOr[Contact] = js.undefined
-    ): GetContactResponse = {
-      val __obj = js.Dynamic.literal()
-      Contact.foreach(__v => __obj.updateDynamic("Contact")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetContactResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDeviceRequest extends js.Object {
     var DeviceArn: js.UndefOr[Arn]
   }
 
-  object GetDeviceRequest {
-    @inline
-    def apply(
-        DeviceArn: js.UndefOr[Arn] = js.undefined
-    ): GetDeviceRequest = {
-      val __obj = js.Dynamic.literal()
-      DeviceArn.foreach(__v => __obj.updateDynamic("DeviceArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDeviceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDeviceResponse extends js.Object {
     var Device: js.UndefOr[Device]
   }
 
-  object GetDeviceResponse {
-    @inline
-    def apply(
-        Device: js.UndefOr[Device] = js.undefined
-    ): GetDeviceResponse = {
-      val __obj = js.Dynamic.literal()
-      Device.foreach(__v => __obj.updateDynamic("Device")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDeviceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetGatewayGroupRequest extends js.Object {
     var GatewayGroupArn: Arn
   }
 
-  object GetGatewayGroupRequest {
-    @inline
-    def apply(
-        GatewayGroupArn: Arn
-    ): GetGatewayGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "GatewayGroupArn" -> GatewayGroupArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetGatewayGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetGatewayGroupResponse extends js.Object {
     var GatewayGroup: js.UndefOr[GatewayGroup]
   }
 
-  object GetGatewayGroupResponse {
-    @inline
-    def apply(
-        GatewayGroup: js.UndefOr[GatewayGroup] = js.undefined
-    ): GetGatewayGroupResponse = {
-      val __obj = js.Dynamic.literal()
-      GatewayGroup.foreach(__v => __obj.updateDynamic("GatewayGroup")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetGatewayGroupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetGatewayRequest extends js.Object {
     var GatewayArn: Arn
   }
 
-  object GetGatewayRequest {
-    @inline
-    def apply(
-        GatewayArn: Arn
-    ): GetGatewayRequest = {
-      val __obj = js.Dynamic.literal(
-        "GatewayArn" -> GatewayArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetGatewayRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetGatewayResponse extends js.Object {
     var Gateway: js.UndefOr[Gateway]
   }
 
-  object GetGatewayResponse {
-    @inline
-    def apply(
-        Gateway: js.UndefOr[Gateway] = js.undefined
-    ): GetGatewayResponse = {
-      val __obj = js.Dynamic.literal()
-      Gateway.foreach(__v => __obj.updateDynamic("Gateway")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetGatewayResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetInvitationConfigurationRequest extends js.Object {}
 
-  object GetInvitationConfigurationRequest {
-    @inline
-    def apply(
-    ): GetInvitationConfigurationRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[GetInvitationConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetInvitationConfigurationResponse extends js.Object {
     var ContactEmail: js.UndefOr[Email]
     var OrganizationName: js.UndefOr[OrganizationName]
     var PrivateSkillIds: js.UndefOr[ShortSkillIdList]
   }
 
-  object GetInvitationConfigurationResponse {
-    @inline
-    def apply(
-        ContactEmail: js.UndefOr[Email] = js.undefined,
-        OrganizationName: js.UndefOr[OrganizationName] = js.undefined,
-        PrivateSkillIds: js.UndefOr[ShortSkillIdList] = js.undefined
-    ): GetInvitationConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-      ContactEmail.foreach(__v => __obj.updateDynamic("ContactEmail")(__v.asInstanceOf[js.Any]))
-      OrganizationName.foreach(__v => __obj.updateDynamic("OrganizationName")(__v.asInstanceOf[js.Any]))
-      PrivateSkillIds.foreach(__v => __obj.updateDynamic("PrivateSkillIds")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetInvitationConfigurationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetNetworkProfileRequest extends js.Object {
     var NetworkProfileArn: Arn
   }
 
-  object GetNetworkProfileRequest {
-    @inline
-    def apply(
-        NetworkProfileArn: Arn
-    ): GetNetworkProfileRequest = {
-      val __obj = js.Dynamic.literal(
-        "NetworkProfileArn" -> NetworkProfileArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetNetworkProfileRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetNetworkProfileResponse extends js.Object {
     var NetworkProfile: js.UndefOr[NetworkProfile]
   }
 
-  object GetNetworkProfileResponse {
-    @inline
-    def apply(
-        NetworkProfile: js.UndefOr[NetworkProfile] = js.undefined
-    ): GetNetworkProfileResponse = {
-      val __obj = js.Dynamic.literal()
-      NetworkProfile.foreach(__v => __obj.updateDynamic("NetworkProfile")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetNetworkProfileResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetProfileRequest extends js.Object {
     var ProfileArn: js.UndefOr[Arn]
   }
 
-  object GetProfileRequest {
-    @inline
-    def apply(
-        ProfileArn: js.UndefOr[Arn] = js.undefined
-    ): GetProfileRequest = {
-      val __obj = js.Dynamic.literal()
-      ProfileArn.foreach(__v => __obj.updateDynamic("ProfileArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetProfileRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetProfileResponse extends js.Object {
     var Profile: js.UndefOr[Profile]
   }
 
-  object GetProfileResponse {
-    @inline
-    def apply(
-        Profile: js.UndefOr[Profile] = js.undefined
-    ): GetProfileResponse = {
-      val __obj = js.Dynamic.literal()
-      Profile.foreach(__v => __obj.updateDynamic("Profile")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetProfileResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRoomRequest extends js.Object {
     var RoomArn: js.UndefOr[Arn]
   }
 
-  object GetRoomRequest {
-    @inline
-    def apply(
-        RoomArn: js.UndefOr[Arn] = js.undefined
-    ): GetRoomRequest = {
-      val __obj = js.Dynamic.literal()
-      RoomArn.foreach(__v => __obj.updateDynamic("RoomArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRoomRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRoomResponse extends js.Object {
     var Room: js.UndefOr[Room]
   }
 
-  object GetRoomResponse {
-    @inline
-    def apply(
-        Room: js.UndefOr[Room] = js.undefined
-    ): GetRoomResponse = {
-      val __obj = js.Dynamic.literal()
-      Room.foreach(__v => __obj.updateDynamic("Room")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRoomResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRoomSkillParameterRequest extends js.Object {
     var ParameterKey: RoomSkillParameterKey
     var SkillId: SkillId
     var RoomArn: js.UndefOr[Arn]
   }
 
-  object GetRoomSkillParameterRequest {
-    @inline
-    def apply(
-        ParameterKey: RoomSkillParameterKey,
-        SkillId: SkillId,
-        RoomArn: js.UndefOr[Arn] = js.undefined
-    ): GetRoomSkillParameterRequest = {
-      val __obj = js.Dynamic.literal(
-        "ParameterKey" -> ParameterKey.asInstanceOf[js.Any],
-        "SkillId"      -> SkillId.asInstanceOf[js.Any]
-      )
-
-      RoomArn.foreach(__v => __obj.updateDynamic("RoomArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRoomSkillParameterRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRoomSkillParameterResponse extends js.Object {
     var RoomSkillParameter: js.UndefOr[RoomSkillParameter]
   }
 
-  object GetRoomSkillParameterResponse {
-    @inline
-    def apply(
-        RoomSkillParameter: js.UndefOr[RoomSkillParameter] = js.undefined
-    ): GetRoomSkillParameterResponse = {
-      val __obj = js.Dynamic.literal()
-      RoomSkillParameter.foreach(__v => __obj.updateDynamic("RoomSkillParameter")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRoomSkillParameterResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetSkillGroupRequest extends js.Object {
     var SkillGroupArn: js.UndefOr[Arn]
   }
 
-  object GetSkillGroupRequest {
-    @inline
-    def apply(
-        SkillGroupArn: js.UndefOr[Arn] = js.undefined
-    ): GetSkillGroupRequest = {
-      val __obj = js.Dynamic.literal()
-      SkillGroupArn.foreach(__v => __obj.updateDynamic("SkillGroupArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetSkillGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetSkillGroupResponse extends js.Object {
     var SkillGroup: js.UndefOr[SkillGroup]
-  }
-
-  object GetSkillGroupResponse {
-    @inline
-    def apply(
-        SkillGroup: js.UndefOr[SkillGroup] = js.undefined
-    ): GetSkillGroupResponse = {
-      val __obj = js.Dynamic.literal()
-      SkillGroup.foreach(__v => __obj.updateDynamic("SkillGroup")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetSkillGroupResponse]
-    }
   }
 
   /**
     * The IP endpoint and protocol for calling.
     */
   @js.native
+  @Factory
   trait IPDialIn extends js.Object {
     var CommsProtocol: CommsProtocol
     var Endpoint: Endpoint
-  }
-
-  object IPDialIn {
-    @inline
-    def apply(
-        CommsProtocol: CommsProtocol,
-        Endpoint: Endpoint
-    ): IPDialIn = {
-      val __obj = js.Dynamic.literal(
-        "CommsProtocol" -> CommsProtocol.asInstanceOf[js.Any],
-        "Endpoint"      -> Endpoint.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[IPDialIn]
-    }
   }
 
   /**
     * Settings for the instant booking feature that are applied to a room profile. When users start their meeting with Alexa, Alexa automatically books the room for the configured duration if the room is available.
     */
   @js.native
+  @Factory
   trait InstantBooking extends js.Object {
     var DurationInMinutes: js.UndefOr[Minutes]
     var Enabled: js.UndefOr[Boolean]
   }
 
-  object InstantBooking {
-    @inline
-    def apply(
-        DurationInMinutes: js.UndefOr[Minutes] = js.undefined,
-        Enabled: js.UndefOr[Boolean] = js.undefined
-    ): InstantBooking = {
-      val __obj = js.Dynamic.literal()
-      DurationInMinutes.foreach(__v => __obj.updateDynamic("DurationInMinutes")(__v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstantBooking]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListBusinessReportSchedulesRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListBusinessReportSchedulesRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListBusinessReportSchedulesRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListBusinessReportSchedulesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListBusinessReportSchedulesResponse extends js.Object {
     var BusinessReportSchedules: js.UndefOr[BusinessReportScheduleList]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListBusinessReportSchedulesResponse {
-    @inline
-    def apply(
-        BusinessReportSchedules: js.UndefOr[BusinessReportScheduleList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListBusinessReportSchedulesResponse = {
-      val __obj = js.Dynamic.literal()
-      BusinessReportSchedules.foreach(__v => __obj.updateDynamic("BusinessReportSchedules")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListBusinessReportSchedulesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListConferenceProvidersRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListConferenceProvidersRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListConferenceProvidersRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListConferenceProvidersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListConferenceProvidersResponse extends js.Object {
     var ConferenceProviders: js.UndefOr[ConferenceProvidersList]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListConferenceProvidersResponse {
-    @inline
-    def apply(
-        ConferenceProviders: js.UndefOr[ConferenceProvidersList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListConferenceProvidersResponse = {
-      val __obj = js.Dynamic.literal()
-      ConferenceProviders.foreach(__v => __obj.updateDynamic("ConferenceProviders")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListConferenceProvidersResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListDeviceEventsRequest extends js.Object {
     var DeviceArn: Arn
     var EventType: js.UndefOr[DeviceEventType]
@@ -3553,124 +1788,44 @@ package alexaforbusiness {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListDeviceEventsRequest {
-    @inline
-    def apply(
-        DeviceArn: Arn,
-        EventType: js.UndefOr[DeviceEventType] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListDeviceEventsRequest = {
-      val __obj = js.Dynamic.literal(
-        "DeviceArn" -> DeviceArn.asInstanceOf[js.Any]
-      )
-
-      EventType.foreach(__v => __obj.updateDynamic("EventType")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDeviceEventsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListDeviceEventsResponse extends js.Object {
     var DeviceEvents: js.UndefOr[DeviceEventList]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListDeviceEventsResponse {
-    @inline
-    def apply(
-        DeviceEvents: js.UndefOr[DeviceEventList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListDeviceEventsResponse = {
-      val __obj = js.Dynamic.literal()
-      DeviceEvents.foreach(__v => __obj.updateDynamic("DeviceEvents")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDeviceEventsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListGatewayGroupsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListGatewayGroupsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListGatewayGroupsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListGatewayGroupsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListGatewayGroupsResponse extends js.Object {
     var GatewayGroups: js.UndefOr[GatewayGroupSummaries]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListGatewayGroupsResponse {
-    @inline
-    def apply(
-        GatewayGroups: js.UndefOr[GatewayGroupSummaries] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListGatewayGroupsResponse = {
-      val __obj = js.Dynamic.literal()
-      GatewayGroups.foreach(__v => __obj.updateDynamic("GatewayGroups")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListGatewayGroupsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListGatewaysRequest extends js.Object {
     var GatewayGroupArn: js.UndefOr[Arn]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListGatewaysRequest {
-    @inline
-    def apply(
-        GatewayGroupArn: js.UndefOr[Arn] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListGatewaysRequest = {
-      val __obj = js.Dynamic.literal()
-      GatewayGroupArn.foreach(__v => __obj.updateDynamic("GatewayGroupArn")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListGatewaysRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListGatewaysResponse extends js.Object {
     var Gateways: js.UndefOr[GatewaySummaries]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListGatewaysResponse {
-    @inline
-    def apply(
-        Gateways: js.UndefOr[GatewaySummaries] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListGatewaysResponse = {
-      val __obj = js.Dynamic.literal()
-      Gateways.foreach(__v => __obj.updateDynamic("Gateways")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListGatewaysResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListSkillsRequest extends js.Object {
     var EnablementType: js.UndefOr[EnablementTypeFilter]
     var MaxResults: js.UndefOr[SkillListMaxResults]
@@ -3679,209 +1834,70 @@ package alexaforbusiness {
     var SkillType: js.UndefOr[SkillTypeFilter]
   }
 
-  object ListSkillsRequest {
-    @inline
-    def apply(
-        EnablementType: js.UndefOr[EnablementTypeFilter] = js.undefined,
-        MaxResults: js.UndefOr[SkillListMaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        SkillGroupArn: js.UndefOr[Arn] = js.undefined,
-        SkillType: js.UndefOr[SkillTypeFilter] = js.undefined
-    ): ListSkillsRequest = {
-      val __obj = js.Dynamic.literal()
-      EnablementType.foreach(__v => __obj.updateDynamic("EnablementType")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SkillGroupArn.foreach(__v => __obj.updateDynamic("SkillGroupArn")(__v.asInstanceOf[js.Any]))
-      SkillType.foreach(__v => __obj.updateDynamic("SkillType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListSkillsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListSkillsResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var SkillSummaries: js.UndefOr[SkillSummaryList]
   }
 
-  object ListSkillsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        SkillSummaries: js.UndefOr[SkillSummaryList] = js.undefined
-    ): ListSkillsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SkillSummaries.foreach(__v => __obj.updateDynamic("SkillSummaries")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListSkillsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListSkillsStoreCategoriesRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListSkillsStoreCategoriesRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListSkillsStoreCategoriesRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListSkillsStoreCategoriesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListSkillsStoreCategoriesResponse extends js.Object {
     var CategoryList: js.UndefOr[CategoryList]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListSkillsStoreCategoriesResponse {
-    @inline
-    def apply(
-        CategoryList: js.UndefOr[CategoryList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListSkillsStoreCategoriesResponse = {
-      val __obj = js.Dynamic.literal()
-      CategoryList.foreach(__v => __obj.updateDynamic("CategoryList")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListSkillsStoreCategoriesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListSkillsStoreSkillsByCategoryRequest extends js.Object {
     var CategoryId: CategoryId
     var MaxResults: js.UndefOr[SkillListMaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListSkillsStoreSkillsByCategoryRequest {
-    @inline
-    def apply(
-        CategoryId: CategoryId,
-        MaxResults: js.UndefOr[SkillListMaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListSkillsStoreSkillsByCategoryRequest = {
-      val __obj = js.Dynamic.literal(
-        "CategoryId" -> CategoryId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListSkillsStoreSkillsByCategoryRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListSkillsStoreSkillsByCategoryResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var SkillsStoreSkills: js.UndefOr[SkillsStoreSkillList]
   }
 
-  object ListSkillsStoreSkillsByCategoryResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        SkillsStoreSkills: js.UndefOr[SkillsStoreSkillList] = js.undefined
-    ): ListSkillsStoreSkillsByCategoryResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SkillsStoreSkills.foreach(__v => __obj.updateDynamic("SkillsStoreSkills")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListSkillsStoreSkillsByCategoryResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListSmartHomeAppliancesRequest extends js.Object {
     var RoomArn: Arn
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListSmartHomeAppliancesRequest {
-    @inline
-    def apply(
-        RoomArn: Arn,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListSmartHomeAppliancesRequest = {
-      val __obj = js.Dynamic.literal(
-        "RoomArn" -> RoomArn.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListSmartHomeAppliancesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListSmartHomeAppliancesResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var SmartHomeAppliances: js.UndefOr[SmartHomeApplianceList]
   }
 
-  object ListSmartHomeAppliancesResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        SmartHomeAppliances: js.UndefOr[SmartHomeApplianceList] = js.undefined
-    ): ListSmartHomeAppliancesResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SmartHomeAppliances.foreach(__v => __obj.updateDynamic("SmartHomeAppliances")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListSmartHomeAppliancesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsRequest extends js.Object {
     var Arn: Arn
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListTagsRequest {
-    @inline
-    def apply(
-        Arn: Arn,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListTagsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Arn" -> Arn.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var Tags: js.UndefOr[TagList]
-  }
-
-  object ListTagsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): ListTagsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsResponse]
-    }
   }
 
   @js.native
@@ -3896,30 +1912,12 @@ package alexaforbusiness {
     * Meeting room settings of a room profile.
     */
   @js.native
+  @Factory
   trait MeetingRoomConfiguration extends js.Object {
     var EndOfMeetingReminder: js.UndefOr[EndOfMeetingReminder]
     var InstantBooking: js.UndefOr[InstantBooking]
     var RequireCheckIn: js.UndefOr[RequireCheckIn]
     var RoomUtilizationMetricsEnabled: js.UndefOr[Boolean]
-  }
-
-  object MeetingRoomConfiguration {
-    @inline
-    def apply(
-        EndOfMeetingReminder: js.UndefOr[EndOfMeetingReminder] = js.undefined,
-        InstantBooking: js.UndefOr[InstantBooking] = js.undefined,
-        RequireCheckIn: js.UndefOr[RequireCheckIn] = js.undefined,
-        RoomUtilizationMetricsEnabled: js.UndefOr[Boolean] = js.undefined
-    ): MeetingRoomConfiguration = {
-      val __obj = js.Dynamic.literal()
-      EndOfMeetingReminder.foreach(__v => __obj.updateDynamic("EndOfMeetingReminder")(__v.asInstanceOf[js.Any]))
-      InstantBooking.foreach(__v => __obj.updateDynamic("InstantBooking")(__v.asInstanceOf[js.Any]))
-      RequireCheckIn.foreach(__v => __obj.updateDynamic("RequireCheckIn")(__v.asInstanceOf[js.Any]))
-      RoomUtilizationMetricsEnabled.foreach(__v =>
-        __obj.updateDynamic("RoomUtilizationMetricsEnabled")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[MeetingRoomConfiguration]
-    }
   }
 
   /**
@@ -3929,21 +1927,9 @@ package alexaforbusiness {
     *  * If OPTIONAL, Alexa will ask if you have a meeting pin and if the customer responds with yes, it will ask for the meeting pin.
     */
   @js.native
+  @Factory
   trait MeetingSetting extends js.Object {
     var RequirePin: RequirePin
-  }
-
-  object MeetingSetting {
-    @inline
-    def apply(
-        RequirePin: RequirePin
-    ): MeetingSetting = {
-      val __obj = js.Dynamic.literal(
-        "RequirePin" -> RequirePin.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[MeetingSetting]
-    }
   }
 
   @js.native
@@ -3958,6 +1944,7 @@ package alexaforbusiness {
     * The network profile associated with a device.
     */
   @js.native
+  @Factory
   trait NetworkProfile extends js.Object {
     var CertificateAuthorityArn: js.UndefOr[Arn]
     var CurrentPassword: js.UndefOr[CurrentWiFiPassword]
@@ -3971,39 +1958,11 @@ package alexaforbusiness {
     var TrustAnchors: js.UndefOr[TrustAnchorList]
   }
 
-  object NetworkProfile {
-    @inline
-    def apply(
-        CertificateAuthorityArn: js.UndefOr[Arn] = js.undefined,
-        CurrentPassword: js.UndefOr[CurrentWiFiPassword] = js.undefined,
-        Description: js.UndefOr[NetworkProfileDescription] = js.undefined,
-        EapMethod: js.UndefOr[NetworkEapMethod] = js.undefined,
-        NetworkProfileArn: js.UndefOr[Arn] = js.undefined,
-        NetworkProfileName: js.UndefOr[NetworkProfileName] = js.undefined,
-        NextPassword: js.UndefOr[NextWiFiPassword] = js.undefined,
-        SecurityType: js.UndefOr[NetworkSecurityType] = js.undefined,
-        Ssid: js.UndefOr[NetworkSsid] = js.undefined,
-        TrustAnchors: js.UndefOr[TrustAnchorList] = js.undefined
-    ): NetworkProfile = {
-      val __obj = js.Dynamic.literal()
-      CertificateAuthorityArn.foreach(__v => __obj.updateDynamic("CertificateAuthorityArn")(__v.asInstanceOf[js.Any]))
-      CurrentPassword.foreach(__v => __obj.updateDynamic("CurrentPassword")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      EapMethod.foreach(__v => __obj.updateDynamic("EapMethod")(__v.asInstanceOf[js.Any]))
-      NetworkProfileArn.foreach(__v => __obj.updateDynamic("NetworkProfileArn")(__v.asInstanceOf[js.Any]))
-      NetworkProfileName.foreach(__v => __obj.updateDynamic("NetworkProfileName")(__v.asInstanceOf[js.Any]))
-      NextPassword.foreach(__v => __obj.updateDynamic("NextPassword")(__v.asInstanceOf[js.Any]))
-      SecurityType.foreach(__v => __obj.updateDynamic("SecurityType")(__v.asInstanceOf[js.Any]))
-      Ssid.foreach(__v => __obj.updateDynamic("Ssid")(__v.asInstanceOf[js.Any]))
-      TrustAnchors.foreach(__v => __obj.updateDynamic("TrustAnchors")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NetworkProfile]
-    }
-  }
-
   /**
     * The data associated with a network profile.
     */
   @js.native
+  @Factory
   trait NetworkProfileData extends js.Object {
     var CertificateAuthorityArn: js.UndefOr[Arn]
     var Description: js.UndefOr[NetworkProfileDescription]
@@ -4012,29 +1971,6 @@ package alexaforbusiness {
     var NetworkProfileName: js.UndefOr[NetworkProfileName]
     var SecurityType: js.UndefOr[NetworkSecurityType]
     var Ssid: js.UndefOr[NetworkSsid]
-  }
-
-  object NetworkProfileData {
-    @inline
-    def apply(
-        CertificateAuthorityArn: js.UndefOr[Arn] = js.undefined,
-        Description: js.UndefOr[NetworkProfileDescription] = js.undefined,
-        EapMethod: js.UndefOr[NetworkEapMethod] = js.undefined,
-        NetworkProfileArn: js.UndefOr[Arn] = js.undefined,
-        NetworkProfileName: js.UndefOr[NetworkProfileName] = js.undefined,
-        SecurityType: js.UndefOr[NetworkSecurityType] = js.undefined,
-        Ssid: js.UndefOr[NetworkSsid] = js.undefined
-    ): NetworkProfileData = {
-      val __obj = js.Dynamic.literal()
-      CertificateAuthorityArn.foreach(__v => __obj.updateDynamic("CertificateAuthorityArn")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      EapMethod.foreach(__v => __obj.updateDynamic("EapMethod")(__v.asInstanceOf[js.Any]))
-      NetworkProfileArn.foreach(__v => __obj.updateDynamic("NetworkProfileArn")(__v.asInstanceOf[js.Any]))
-      NetworkProfileName.foreach(__v => __obj.updateDynamic("NetworkProfileName")(__v.asInstanceOf[js.Any]))
-      SecurityType.foreach(__v => __obj.updateDynamic("SecurityType")(__v.asInstanceOf[js.Any]))
-      Ssid.foreach(__v => __obj.updateDynamic("Ssid")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NetworkProfileData]
-    }
   }
 
   @js.native
@@ -4053,6 +1989,7 @@ package alexaforbusiness {
     * The information for public switched telephone network (PSTN) conferencing.
     */
   @js.native
+  @Factory
   trait PSTNDialIn extends js.Object {
     var CountryCode: CountryCode
     var OneClickIdDelay: OneClickIdDelay
@@ -4060,47 +1997,14 @@ package alexaforbusiness {
     var PhoneNumber: OutboundPhoneNumber
   }
 
-  object PSTNDialIn {
-    @inline
-    def apply(
-        CountryCode: CountryCode,
-        OneClickIdDelay: OneClickIdDelay,
-        OneClickPinDelay: OneClickPinDelay,
-        PhoneNumber: OutboundPhoneNumber
-    ): PSTNDialIn = {
-      val __obj = js.Dynamic.literal(
-        "CountryCode"      -> CountryCode.asInstanceOf[js.Any],
-        "OneClickIdDelay"  -> OneClickIdDelay.asInstanceOf[js.Any],
-        "OneClickPinDelay" -> OneClickPinDelay.asInstanceOf[js.Any],
-        "PhoneNumber"      -> PhoneNumber.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PSTNDialIn]
-    }
-  }
-
   /**
     * The phone number for the contact containing the raw number and phone number type.
     */
   @js.native
+  @Factory
   trait PhoneNumber extends js.Object {
     var Number: RawPhoneNumber
     var Type: PhoneNumberType
-  }
-
-  object PhoneNumber {
-    @inline
-    def apply(
-        Number: RawPhoneNumber,
-        Type: PhoneNumberType
-    ): PhoneNumber = {
-      val __obj = js.Dynamic.literal(
-        "Number" -> Number.asInstanceOf[js.Any],
-        "Type"   -> Type.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PhoneNumber]
-    }
   }
 
   @js.native
@@ -4117,6 +2021,7 @@ package alexaforbusiness {
     * A room profile with attributes.
     */
   @js.native
+  @Factory
   trait Profile extends js.Object {
     var Address: js.UndefOr[Address]
     var AddressBookArn: js.UndefOr[Arn]
@@ -4134,47 +2039,11 @@ package alexaforbusiness {
     var WakeWord: js.UndefOr[WakeWord]
   }
 
-  object Profile {
-    @inline
-    def apply(
-        Address: js.UndefOr[Address] = js.undefined,
-        AddressBookArn: js.UndefOr[Arn] = js.undefined,
-        DistanceUnit: js.UndefOr[DistanceUnit] = js.undefined,
-        IsDefault: js.UndefOr[Boolean] = js.undefined,
-        Locale: js.UndefOr[DeviceLocale] = js.undefined,
-        MaxVolumeLimit: js.UndefOr[MaxVolumeLimit] = js.undefined,
-        MeetingRoomConfiguration: js.UndefOr[MeetingRoomConfiguration] = js.undefined,
-        PSTNEnabled: js.UndefOr[Boolean] = js.undefined,
-        ProfileArn: js.UndefOr[Arn] = js.undefined,
-        ProfileName: js.UndefOr[ProfileName] = js.undefined,
-        SetupModeDisabled: js.UndefOr[Boolean] = js.undefined,
-        TemperatureUnit: js.UndefOr[TemperatureUnit] = js.undefined,
-        Timezone: js.UndefOr[Timezone] = js.undefined,
-        WakeWord: js.UndefOr[WakeWord] = js.undefined
-    ): Profile = {
-      val __obj = js.Dynamic.literal()
-      Address.foreach(__v => __obj.updateDynamic("Address")(__v.asInstanceOf[js.Any]))
-      AddressBookArn.foreach(__v => __obj.updateDynamic("AddressBookArn")(__v.asInstanceOf[js.Any]))
-      DistanceUnit.foreach(__v => __obj.updateDynamic("DistanceUnit")(__v.asInstanceOf[js.Any]))
-      IsDefault.foreach(__v => __obj.updateDynamic("IsDefault")(__v.asInstanceOf[js.Any]))
-      Locale.foreach(__v => __obj.updateDynamic("Locale")(__v.asInstanceOf[js.Any]))
-      MaxVolumeLimit.foreach(__v => __obj.updateDynamic("MaxVolumeLimit")(__v.asInstanceOf[js.Any]))
-      MeetingRoomConfiguration.foreach(__v => __obj.updateDynamic("MeetingRoomConfiguration")(__v.asInstanceOf[js.Any]))
-      PSTNEnabled.foreach(__v => __obj.updateDynamic("PSTNEnabled")(__v.asInstanceOf[js.Any]))
-      ProfileArn.foreach(__v => __obj.updateDynamic("ProfileArn")(__v.asInstanceOf[js.Any]))
-      ProfileName.foreach(__v => __obj.updateDynamic("ProfileName")(__v.asInstanceOf[js.Any]))
-      SetupModeDisabled.foreach(__v => __obj.updateDynamic("SetupModeDisabled")(__v.asInstanceOf[js.Any]))
-      TemperatureUnit.foreach(__v => __obj.updateDynamic("TemperatureUnit")(__v.asInstanceOf[js.Any]))
-      Timezone.foreach(__v => __obj.updateDynamic("Timezone")(__v.asInstanceOf[js.Any]))
-      WakeWord.foreach(__v => __obj.updateDynamic("WakeWord")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Profile]
-    }
-  }
-
   /**
     * The data of a room profile.
     */
   @js.native
+  @Factory
   trait ProfileData extends js.Object {
     var Address: js.UndefOr[Address]
     var DistanceUnit: js.UndefOr[DistanceUnit]
@@ -4187,176 +2056,54 @@ package alexaforbusiness {
     var WakeWord: js.UndefOr[WakeWord]
   }
 
-  object ProfileData {
-    @inline
-    def apply(
-        Address: js.UndefOr[Address] = js.undefined,
-        DistanceUnit: js.UndefOr[DistanceUnit] = js.undefined,
-        IsDefault: js.UndefOr[Boolean] = js.undefined,
-        Locale: js.UndefOr[DeviceLocale] = js.undefined,
-        ProfileArn: js.UndefOr[Arn] = js.undefined,
-        ProfileName: js.UndefOr[ProfileName] = js.undefined,
-        TemperatureUnit: js.UndefOr[TemperatureUnit] = js.undefined,
-        Timezone: js.UndefOr[Timezone] = js.undefined,
-        WakeWord: js.UndefOr[WakeWord] = js.undefined
-    ): ProfileData = {
-      val __obj = js.Dynamic.literal()
-      Address.foreach(__v => __obj.updateDynamic("Address")(__v.asInstanceOf[js.Any]))
-      DistanceUnit.foreach(__v => __obj.updateDynamic("DistanceUnit")(__v.asInstanceOf[js.Any]))
-      IsDefault.foreach(__v => __obj.updateDynamic("IsDefault")(__v.asInstanceOf[js.Any]))
-      Locale.foreach(__v => __obj.updateDynamic("Locale")(__v.asInstanceOf[js.Any]))
-      ProfileArn.foreach(__v => __obj.updateDynamic("ProfileArn")(__v.asInstanceOf[js.Any]))
-      ProfileName.foreach(__v => __obj.updateDynamic("ProfileName")(__v.asInstanceOf[js.Any]))
-      TemperatureUnit.foreach(__v => __obj.updateDynamic("TemperatureUnit")(__v.asInstanceOf[js.Any]))
-      Timezone.foreach(__v => __obj.updateDynamic("Timezone")(__v.asInstanceOf[js.Any]))
-      WakeWord.foreach(__v => __obj.updateDynamic("WakeWord")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ProfileData]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutConferencePreferenceRequest extends js.Object {
     var ConferencePreference: ConferencePreference
   }
 
-  object PutConferencePreferenceRequest {
-    @inline
-    def apply(
-        ConferencePreference: ConferencePreference
-    ): PutConferencePreferenceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ConferencePreference" -> ConferencePreference.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutConferencePreferenceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutConferencePreferenceResponse extends js.Object {}
 
-  object PutConferencePreferenceResponse {
-    @inline
-    def apply(
-    ): PutConferencePreferenceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutConferencePreferenceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutInvitationConfigurationRequest extends js.Object {
     var OrganizationName: OrganizationName
     var ContactEmail: js.UndefOr[Email]
     var PrivateSkillIds: js.UndefOr[ShortSkillIdList]
   }
 
-  object PutInvitationConfigurationRequest {
-    @inline
-    def apply(
-        OrganizationName: OrganizationName,
-        ContactEmail: js.UndefOr[Email] = js.undefined,
-        PrivateSkillIds: js.UndefOr[ShortSkillIdList] = js.undefined
-    ): PutInvitationConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "OrganizationName" -> OrganizationName.asInstanceOf[js.Any]
-      )
-
-      ContactEmail.foreach(__v => __obj.updateDynamic("ContactEmail")(__v.asInstanceOf[js.Any]))
-      PrivateSkillIds.foreach(__v => __obj.updateDynamic("PrivateSkillIds")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutInvitationConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutInvitationConfigurationResponse extends js.Object {}
 
-  object PutInvitationConfigurationResponse {
-    @inline
-    def apply(
-    ): PutInvitationConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutInvitationConfigurationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutRoomSkillParameterRequest extends js.Object {
     var RoomSkillParameter: RoomSkillParameter
     var SkillId: SkillId
     var RoomArn: js.UndefOr[Arn]
   }
 
-  object PutRoomSkillParameterRequest {
-    @inline
-    def apply(
-        RoomSkillParameter: RoomSkillParameter,
-        SkillId: SkillId,
-        RoomArn: js.UndefOr[Arn] = js.undefined
-    ): PutRoomSkillParameterRequest = {
-      val __obj = js.Dynamic.literal(
-        "RoomSkillParameter" -> RoomSkillParameter.asInstanceOf[js.Any],
-        "SkillId"            -> SkillId.asInstanceOf[js.Any]
-      )
-
-      RoomArn.foreach(__v => __obj.updateDynamic("RoomArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutRoomSkillParameterRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutRoomSkillParameterResponse extends js.Object {}
 
-  object PutRoomSkillParameterResponse {
-    @inline
-    def apply(
-    ): PutRoomSkillParameterResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutRoomSkillParameterResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutSkillAuthorizationRequest extends js.Object {
     var AuthorizationResult: AuthorizationResult
     var SkillId: SkillId
     var RoomArn: js.UndefOr[Arn]
   }
 
-  object PutSkillAuthorizationRequest {
-    @inline
-    def apply(
-        AuthorizationResult: AuthorizationResult,
-        SkillId: SkillId,
-        RoomArn: js.UndefOr[Arn] = js.undefined
-    ): PutSkillAuthorizationRequest = {
-      val __obj = js.Dynamic.literal(
-        "AuthorizationResult" -> AuthorizationResult.asInstanceOf[js.Any],
-        "SkillId"             -> SkillId.asInstanceOf[js.Any]
-      )
-
-      RoomArn.foreach(__v => __obj.updateDynamic("RoomArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutSkillAuthorizationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutSkillAuthorizationResponse extends js.Object {}
 
-  object PutSkillAuthorizationResponse {
-    @inline
-    def apply(
-    ): PutSkillAuthorizationResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutSkillAuthorizationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait RegisterAVSDeviceRequest extends js.Object {
     var AmazonId: AmazonId
     var ClientId: ClientId
@@ -4365,94 +2112,30 @@ package alexaforbusiness {
     var UserCode: UserCode
   }
 
-  object RegisterAVSDeviceRequest {
-    @inline
-    def apply(
-        AmazonId: AmazonId,
-        ClientId: ClientId,
-        DeviceSerialNumber: DeviceSerialNumberForAVS,
-        ProductId: ProductId,
-        UserCode: UserCode
-    ): RegisterAVSDeviceRequest = {
-      val __obj = js.Dynamic.literal(
-        "AmazonId"           -> AmazonId.asInstanceOf[js.Any],
-        "ClientId"           -> ClientId.asInstanceOf[js.Any],
-        "DeviceSerialNumber" -> DeviceSerialNumber.asInstanceOf[js.Any],
-        "ProductId"          -> ProductId.asInstanceOf[js.Any],
-        "UserCode"           -> UserCode.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RegisterAVSDeviceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait RegisterAVSDeviceResponse extends js.Object {
     var DeviceArn: js.UndefOr[Arn]
   }
 
-  object RegisterAVSDeviceResponse {
-    @inline
-    def apply(
-        DeviceArn: js.UndefOr[Arn] = js.undefined
-    ): RegisterAVSDeviceResponse = {
-      val __obj = js.Dynamic.literal()
-      DeviceArn.foreach(__v => __obj.updateDynamic("DeviceArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RegisterAVSDeviceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait RejectSkillRequest extends js.Object {
     var SkillId: SkillId
   }
 
-  object RejectSkillRequest {
-    @inline
-    def apply(
-        SkillId: SkillId
-    ): RejectSkillRequest = {
-      val __obj = js.Dynamic.literal(
-        "SkillId" -> SkillId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RejectSkillRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait RejectSkillResponse extends js.Object {}
-
-  object RejectSkillResponse {
-    @inline
-    def apply(
-    ): RejectSkillResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[RejectSkillResponse]
-    }
-  }
 
   /**
     * Settings for the require check in feature that are applied to a room profile. Require check in allows a meeting room’s Alexa or AVS device to prompt the user to check in; otherwise, the room will be released.
     */
   @js.native
+  @Factory
   trait RequireCheckIn extends js.Object {
     var Enabled: js.UndefOr[Boolean]
     var ReleaseAfterMinutes: js.UndefOr[Minutes]
-  }
-
-  object RequireCheckIn {
-    @inline
-    def apply(
-        Enabled: js.UndefOr[Boolean] = js.undefined,
-        ReleaseAfterMinutes: js.UndefOr[Minutes] = js.undefined
-    ): RequireCheckIn = {
-      val __obj = js.Dynamic.literal()
-      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      ReleaseAfterMinutes.foreach(__v => __obj.updateDynamic("ReleaseAfterMinutes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RequireCheckIn]
-    }
   }
 
   @js.native
@@ -4466,84 +2149,36 @@ package alexaforbusiness {
   }
 
   @js.native
+  @Factory
   trait ResolveRoomRequest extends js.Object {
     var SkillId: SkillId
     var UserId: UserId
   }
 
-  object ResolveRoomRequest {
-    @inline
-    def apply(
-        SkillId: SkillId,
-        UserId: UserId
-    ): ResolveRoomRequest = {
-      val __obj = js.Dynamic.literal(
-        "SkillId" -> SkillId.asInstanceOf[js.Any],
-        "UserId"  -> UserId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ResolveRoomRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ResolveRoomResponse extends js.Object {
     var RoomArn: js.UndefOr[Arn]
     var RoomName: js.UndefOr[RoomName]
     var RoomSkillParameters: js.UndefOr[RoomSkillParameters]
   }
 
-  object ResolveRoomResponse {
-    @inline
-    def apply(
-        RoomArn: js.UndefOr[Arn] = js.undefined,
-        RoomName: js.UndefOr[RoomName] = js.undefined,
-        RoomSkillParameters: js.UndefOr[RoomSkillParameters] = js.undefined
-    ): ResolveRoomResponse = {
-      val __obj = js.Dynamic.literal()
-      RoomArn.foreach(__v => __obj.updateDynamic("RoomArn")(__v.asInstanceOf[js.Any]))
-      RoomName.foreach(__v => __obj.updateDynamic("RoomName")(__v.asInstanceOf[js.Any]))
-      RoomSkillParameters.foreach(__v => __obj.updateDynamic("RoomSkillParameters")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ResolveRoomResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait RevokeInvitationRequest extends js.Object {
     var EnrollmentId: js.UndefOr[EnrollmentId]
     var UserArn: js.UndefOr[Arn]
   }
 
-  object RevokeInvitationRequest {
-    @inline
-    def apply(
-        EnrollmentId: js.UndefOr[EnrollmentId] = js.undefined,
-        UserArn: js.UndefOr[Arn] = js.undefined
-    ): RevokeInvitationRequest = {
-      val __obj = js.Dynamic.literal()
-      EnrollmentId.foreach(__v => __obj.updateDynamic("EnrollmentId")(__v.asInstanceOf[js.Any]))
-      UserArn.foreach(__v => __obj.updateDynamic("UserArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RevokeInvitationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait RevokeInvitationResponse extends js.Object {}
-
-  object RevokeInvitationResponse {
-    @inline
-    def apply(
-    ): RevokeInvitationResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[RevokeInvitationResponse]
-    }
-  }
 
   /**
     * A room with attributes.
     */
   @js.native
+  @Factory
   trait Room extends js.Object {
     var Description: js.UndefOr[RoomDescription]
     var ProfileArn: js.UndefOr[Arn]
@@ -4552,29 +2187,11 @@ package alexaforbusiness {
     var RoomName: js.UndefOr[RoomName]
   }
 
-  object Room {
-    @inline
-    def apply(
-        Description: js.UndefOr[RoomDescription] = js.undefined,
-        ProfileArn: js.UndefOr[Arn] = js.undefined,
-        ProviderCalendarId: js.UndefOr[ProviderCalendarId] = js.undefined,
-        RoomArn: js.UndefOr[Arn] = js.undefined,
-        RoomName: js.UndefOr[RoomName] = js.undefined
-    ): Room = {
-      val __obj = js.Dynamic.literal()
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      ProfileArn.foreach(__v => __obj.updateDynamic("ProfileArn")(__v.asInstanceOf[js.Any]))
-      ProviderCalendarId.foreach(__v => __obj.updateDynamic("ProviderCalendarId")(__v.asInstanceOf[js.Any]))
-      RoomArn.foreach(__v => __obj.updateDynamic("RoomArn")(__v.asInstanceOf[js.Any]))
-      RoomName.foreach(__v => __obj.updateDynamic("RoomName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Room]
-    }
-  }
-
   /**
     * The data of a room.
     */
   @js.native
+  @Factory
   trait RoomData extends js.Object {
     var Description: js.UndefOr[RoomDescription]
     var ProfileArn: js.UndefOr[Arn]
@@ -4584,52 +2201,18 @@ package alexaforbusiness {
     var RoomName: js.UndefOr[RoomName]
   }
 
-  object RoomData {
-    @inline
-    def apply(
-        Description: js.UndefOr[RoomDescription] = js.undefined,
-        ProfileArn: js.UndefOr[Arn] = js.undefined,
-        ProfileName: js.UndefOr[ProfileName] = js.undefined,
-        ProviderCalendarId: js.UndefOr[ProviderCalendarId] = js.undefined,
-        RoomArn: js.UndefOr[Arn] = js.undefined,
-        RoomName: js.UndefOr[RoomName] = js.undefined
-    ): RoomData = {
-      val __obj = js.Dynamic.literal()
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      ProfileArn.foreach(__v => __obj.updateDynamic("ProfileArn")(__v.asInstanceOf[js.Any]))
-      ProfileName.foreach(__v => __obj.updateDynamic("ProfileName")(__v.asInstanceOf[js.Any]))
-      ProviderCalendarId.foreach(__v => __obj.updateDynamic("ProviderCalendarId")(__v.asInstanceOf[js.Any]))
-      RoomArn.foreach(__v => __obj.updateDynamic("RoomArn")(__v.asInstanceOf[js.Any]))
-      RoomName.foreach(__v => __obj.updateDynamic("RoomName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RoomData]
-    }
-  }
-
   /**
     * A skill parameter associated with a room.
     */
   @js.native
+  @Factory
   trait RoomSkillParameter extends js.Object {
     var ParameterKey: RoomSkillParameterKey
     var ParameterValue: RoomSkillParameterValue
   }
 
-  object RoomSkillParameter {
-    @inline
-    def apply(
-        ParameterKey: RoomSkillParameterKey,
-        ParameterValue: RoomSkillParameterValue
-    ): RoomSkillParameter = {
-      val __obj = js.Dynamic.literal(
-        "ParameterKey"   -> ParameterKey.asInstanceOf[js.Any],
-        "ParameterValue" -> ParameterValue.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RoomSkillParameter]
-    }
-  }
-
   @js.native
+  @Factory
   trait SearchAddressBooksRequest extends js.Object {
     var Filters: js.UndefOr[FilterList]
     var MaxResults: js.UndefOr[MaxResults]
@@ -4637,46 +2220,16 @@ package alexaforbusiness {
     var SortCriteria: js.UndefOr[SortList]
   }
 
-  object SearchAddressBooksRequest {
-    @inline
-    def apply(
-        Filters: js.UndefOr[FilterList] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        SortCriteria: js.UndefOr[SortList] = js.undefined
-    ): SearchAddressBooksRequest = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SortCriteria.foreach(__v => __obj.updateDynamic("SortCriteria")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SearchAddressBooksRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait SearchAddressBooksResponse extends js.Object {
     var AddressBooks: js.UndefOr[AddressBookDataList]
     var NextToken: js.UndefOr[NextToken]
     var TotalCount: js.UndefOr[TotalCount]
   }
 
-  object SearchAddressBooksResponse {
-    @inline
-    def apply(
-        AddressBooks: js.UndefOr[AddressBookDataList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        TotalCount: js.UndefOr[TotalCount] = js.undefined
-    ): SearchAddressBooksResponse = {
-      val __obj = js.Dynamic.literal()
-      AddressBooks.foreach(__v => __obj.updateDynamic("AddressBooks")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      TotalCount.foreach(__v => __obj.updateDynamic("TotalCount")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SearchAddressBooksResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait SearchContactsRequest extends js.Object {
     var Filters: js.UndefOr[FilterList]
     var MaxResults: js.UndefOr[MaxResults]
@@ -4684,46 +2237,16 @@ package alexaforbusiness {
     var SortCriteria: js.UndefOr[SortList]
   }
 
-  object SearchContactsRequest {
-    @inline
-    def apply(
-        Filters: js.UndefOr[FilterList] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        SortCriteria: js.UndefOr[SortList] = js.undefined
-    ): SearchContactsRequest = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SortCriteria.foreach(__v => __obj.updateDynamic("SortCriteria")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SearchContactsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait SearchContactsResponse extends js.Object {
     var Contacts: js.UndefOr[ContactDataList]
     var NextToken: js.UndefOr[NextToken]
     var TotalCount: js.UndefOr[TotalCount]
   }
 
-  object SearchContactsResponse {
-    @inline
-    def apply(
-        Contacts: js.UndefOr[ContactDataList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        TotalCount: js.UndefOr[TotalCount] = js.undefined
-    ): SearchContactsResponse = {
-      val __obj = js.Dynamic.literal()
-      Contacts.foreach(__v => __obj.updateDynamic("Contacts")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      TotalCount.foreach(__v => __obj.updateDynamic("TotalCount")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SearchContactsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait SearchDevicesRequest extends js.Object {
     var Filters: js.UndefOr[FilterList]
     var MaxResults: js.UndefOr[MaxResults]
@@ -4731,46 +2254,16 @@ package alexaforbusiness {
     var SortCriteria: js.UndefOr[SortList]
   }
 
-  object SearchDevicesRequest {
-    @inline
-    def apply(
-        Filters: js.UndefOr[FilterList] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        SortCriteria: js.UndefOr[SortList] = js.undefined
-    ): SearchDevicesRequest = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SortCriteria.foreach(__v => __obj.updateDynamic("SortCriteria")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SearchDevicesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait SearchDevicesResponse extends js.Object {
     var Devices: js.UndefOr[DeviceDataList]
     var NextToken: js.UndefOr[NextToken]
     var TotalCount: js.UndefOr[TotalCount]
   }
 
-  object SearchDevicesResponse {
-    @inline
-    def apply(
-        Devices: js.UndefOr[DeviceDataList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        TotalCount: js.UndefOr[TotalCount] = js.undefined
-    ): SearchDevicesResponse = {
-      val __obj = js.Dynamic.literal()
-      Devices.foreach(__v => __obj.updateDynamic("Devices")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      TotalCount.foreach(__v => __obj.updateDynamic("TotalCount")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SearchDevicesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait SearchNetworkProfilesRequest extends js.Object {
     var Filters: js.UndefOr[FilterList]
     var MaxResults: js.UndefOr[MaxResults]
@@ -4778,46 +2271,16 @@ package alexaforbusiness {
     var SortCriteria: js.UndefOr[SortList]
   }
 
-  object SearchNetworkProfilesRequest {
-    @inline
-    def apply(
-        Filters: js.UndefOr[FilterList] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        SortCriteria: js.UndefOr[SortList] = js.undefined
-    ): SearchNetworkProfilesRequest = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SortCriteria.foreach(__v => __obj.updateDynamic("SortCriteria")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SearchNetworkProfilesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait SearchNetworkProfilesResponse extends js.Object {
     var NetworkProfiles: js.UndefOr[NetworkProfileDataList]
     var NextToken: js.UndefOr[NextToken]
     var TotalCount: js.UndefOr[TotalCount]
   }
 
-  object SearchNetworkProfilesResponse {
-    @inline
-    def apply(
-        NetworkProfiles: js.UndefOr[NetworkProfileDataList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        TotalCount: js.UndefOr[TotalCount] = js.undefined
-    ): SearchNetworkProfilesResponse = {
-      val __obj = js.Dynamic.literal()
-      NetworkProfiles.foreach(__v => __obj.updateDynamic("NetworkProfiles")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      TotalCount.foreach(__v => __obj.updateDynamic("TotalCount")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SearchNetworkProfilesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait SearchProfilesRequest extends js.Object {
     var Filters: js.UndefOr[FilterList]
     var MaxResults: js.UndefOr[MaxResults]
@@ -4825,46 +2288,16 @@ package alexaforbusiness {
     var SortCriteria: js.UndefOr[SortList]
   }
 
-  object SearchProfilesRequest {
-    @inline
-    def apply(
-        Filters: js.UndefOr[FilterList] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        SortCriteria: js.UndefOr[SortList] = js.undefined
-    ): SearchProfilesRequest = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SortCriteria.foreach(__v => __obj.updateDynamic("SortCriteria")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SearchProfilesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait SearchProfilesResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var Profiles: js.UndefOr[ProfileDataList]
     var TotalCount: js.UndefOr[TotalCount]
   }
 
-  object SearchProfilesResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        Profiles: js.UndefOr[ProfileDataList] = js.undefined,
-        TotalCount: js.UndefOr[TotalCount] = js.undefined
-    ): SearchProfilesResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Profiles.foreach(__v => __obj.updateDynamic("Profiles")(__v.asInstanceOf[js.Any]))
-      TotalCount.foreach(__v => __obj.updateDynamic("TotalCount")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SearchProfilesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait SearchRoomsRequest extends js.Object {
     var Filters: js.UndefOr[FilterList]
     var MaxResults: js.UndefOr[MaxResults]
@@ -4872,46 +2305,16 @@ package alexaforbusiness {
     var SortCriteria: js.UndefOr[SortList]
   }
 
-  object SearchRoomsRequest {
-    @inline
-    def apply(
-        Filters: js.UndefOr[FilterList] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        SortCriteria: js.UndefOr[SortList] = js.undefined
-    ): SearchRoomsRequest = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SortCriteria.foreach(__v => __obj.updateDynamic("SortCriteria")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SearchRoomsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait SearchRoomsResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var Rooms: js.UndefOr[RoomDataList]
     var TotalCount: js.UndefOr[TotalCount]
   }
 
-  object SearchRoomsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        Rooms: js.UndefOr[RoomDataList] = js.undefined,
-        TotalCount: js.UndefOr[TotalCount] = js.undefined
-    ): SearchRoomsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Rooms.foreach(__v => __obj.updateDynamic("Rooms")(__v.asInstanceOf[js.Any]))
-      TotalCount.foreach(__v => __obj.updateDynamic("TotalCount")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SearchRoomsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait SearchSkillGroupsRequest extends js.Object {
     var Filters: js.UndefOr[FilterList]
     var MaxResults: js.UndefOr[MaxResults]
@@ -4919,46 +2322,16 @@ package alexaforbusiness {
     var SortCriteria: js.UndefOr[SortList]
   }
 
-  object SearchSkillGroupsRequest {
-    @inline
-    def apply(
-        Filters: js.UndefOr[FilterList] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        SortCriteria: js.UndefOr[SortList] = js.undefined
-    ): SearchSkillGroupsRequest = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SortCriteria.foreach(__v => __obj.updateDynamic("SortCriteria")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SearchSkillGroupsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait SearchSkillGroupsResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var SkillGroups: js.UndefOr[SkillGroupDataList]
     var TotalCount: js.UndefOr[TotalCount]
   }
 
-  object SearchSkillGroupsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        SkillGroups: js.UndefOr[SkillGroupDataList] = js.undefined,
-        TotalCount: js.UndefOr[TotalCount] = js.undefined
-    ): SearchSkillGroupsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SkillGroups.foreach(__v => __obj.updateDynamic("SkillGroups")(__v.asInstanceOf[js.Any]))
-      TotalCount.foreach(__v => __obj.updateDynamic("TotalCount")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SearchSkillGroupsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait SearchUsersRequest extends js.Object {
     var Filters: js.UndefOr[FilterList]
     var MaxResults: js.UndefOr[MaxResults]
@@ -4966,46 +2339,16 @@ package alexaforbusiness {
     var SortCriteria: js.UndefOr[SortList]
   }
 
-  object SearchUsersRequest {
-    @inline
-    def apply(
-        Filters: js.UndefOr[FilterList] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        SortCriteria: js.UndefOr[SortList] = js.undefined
-    ): SearchUsersRequest = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SortCriteria.foreach(__v => __obj.updateDynamic("SortCriteria")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SearchUsersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait SearchUsersResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var TotalCount: js.UndefOr[TotalCount]
     var Users: js.UndefOr[UserDataList]
   }
 
-  object SearchUsersResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        TotalCount: js.UndefOr[TotalCount] = js.undefined,
-        Users: js.UndefOr[UserDataList] = js.undefined
-    ): SearchUsersResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      TotalCount.foreach(__v => __obj.updateDynamic("TotalCount")(__v.asInstanceOf[js.Any]))
-      Users.foreach(__v => __obj.updateDynamic("Users")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SearchUsersResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait SendAnnouncementRequest extends js.Object {
     var ClientRequestToken: ClientRequestToken
     var Content: Content
@@ -5013,92 +2356,30 @@ package alexaforbusiness {
     var TimeToLiveInSeconds: js.UndefOr[TimeToLiveInSeconds]
   }
 
-  object SendAnnouncementRequest {
-    @inline
-    def apply(
-        ClientRequestToken: ClientRequestToken,
-        Content: Content,
-        RoomFilters: FilterList,
-        TimeToLiveInSeconds: js.UndefOr[TimeToLiveInSeconds] = js.undefined
-    ): SendAnnouncementRequest = {
-      val __obj = js.Dynamic.literal(
-        "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any],
-        "Content"            -> Content.asInstanceOf[js.Any],
-        "RoomFilters"        -> RoomFilters.asInstanceOf[js.Any]
-      )
-
-      TimeToLiveInSeconds.foreach(__v => __obj.updateDynamic("TimeToLiveInSeconds")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SendAnnouncementRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait SendAnnouncementResponse extends js.Object {
     var AnnouncementArn: js.UndefOr[Arn]
   }
 
-  object SendAnnouncementResponse {
-    @inline
-    def apply(
-        AnnouncementArn: js.UndefOr[Arn] = js.undefined
-    ): SendAnnouncementResponse = {
-      val __obj = js.Dynamic.literal()
-      AnnouncementArn.foreach(__v => __obj.updateDynamic("AnnouncementArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SendAnnouncementResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait SendInvitationRequest extends js.Object {
     var UserArn: js.UndefOr[Arn]
   }
 
-  object SendInvitationRequest {
-    @inline
-    def apply(
-        UserArn: js.UndefOr[Arn] = js.undefined
-    ): SendInvitationRequest = {
-      val __obj = js.Dynamic.literal()
-      UserArn.foreach(__v => __obj.updateDynamic("UserArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SendInvitationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait SendInvitationResponse extends js.Object {}
-
-  object SendInvitationResponse {
-    @inline
-    def apply(
-    ): SendInvitationResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[SendInvitationResponse]
-    }
-  }
 
   /**
     * The SIP address for the contact containing the URI and SIP address type.
     */
   @js.native
+  @Factory
   trait SipAddress extends js.Object {
     var Type: SipType
     var Uri: SipUri
-  }
-
-  object SipAddress {
-    @inline
-    def apply(
-        Type: SipType,
-        Uri: SipUri
-    ): SipAddress = {
-      val __obj = js.Dynamic.literal(
-        "Type" -> Type.asInstanceOf[js.Any],
-        "Uri"  -> Uri.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SipAddress]
-    }
   }
 
   @js.native
@@ -5113,6 +2394,7 @@ package alexaforbusiness {
     * Granular information about the skill.
     */
   @js.native
+  @Factory
   trait SkillDetails extends js.Object {
     var BulletPoints: js.UndefOr[BulletPoints]
     var DeveloperInfo: js.UndefOr[DeveloperInfo]
@@ -5126,116 +2408,39 @@ package alexaforbusiness {
     var SkillTypes: js.UndefOr[SkillTypes]
   }
 
-  object SkillDetails {
-    @inline
-    def apply(
-        BulletPoints: js.UndefOr[BulletPoints] = js.undefined,
-        DeveloperInfo: js.UndefOr[DeveloperInfo] = js.undefined,
-        EndUserLicenseAgreement: js.UndefOr[EndUserLicenseAgreement] = js.undefined,
-        GenericKeywords: js.UndefOr[GenericKeywords] = js.undefined,
-        InvocationPhrase: js.UndefOr[InvocationPhrase] = js.undefined,
-        NewInThisVersionBulletPoints: js.UndefOr[NewInThisVersionBulletPoints] = js.undefined,
-        ProductDescription: js.UndefOr[ProductDescription] = js.undefined,
-        ReleaseDate: js.UndefOr[ReleaseDate] = js.undefined,
-        Reviews: js.UndefOr[Reviews] = js.undefined,
-        SkillTypes: js.UndefOr[SkillTypes] = js.undefined
-    ): SkillDetails = {
-      val __obj = js.Dynamic.literal()
-      BulletPoints.foreach(__v => __obj.updateDynamic("BulletPoints")(__v.asInstanceOf[js.Any]))
-      DeveloperInfo.foreach(__v => __obj.updateDynamic("DeveloperInfo")(__v.asInstanceOf[js.Any]))
-      EndUserLicenseAgreement.foreach(__v => __obj.updateDynamic("EndUserLicenseAgreement")(__v.asInstanceOf[js.Any]))
-      GenericKeywords.foreach(__v => __obj.updateDynamic("GenericKeywords")(__v.asInstanceOf[js.Any]))
-      InvocationPhrase.foreach(__v => __obj.updateDynamic("InvocationPhrase")(__v.asInstanceOf[js.Any]))
-      NewInThisVersionBulletPoints.foreach(__v =>
-        __obj.updateDynamic("NewInThisVersionBulletPoints")(__v.asInstanceOf[js.Any])
-      )
-      ProductDescription.foreach(__v => __obj.updateDynamic("ProductDescription")(__v.asInstanceOf[js.Any]))
-      ReleaseDate.foreach(__v => __obj.updateDynamic("ReleaseDate")(__v.asInstanceOf[js.Any]))
-      Reviews.foreach(__v => __obj.updateDynamic("Reviews")(__v.asInstanceOf[js.Any]))
-      SkillTypes.foreach(__v => __obj.updateDynamic("SkillTypes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SkillDetails]
-    }
-  }
-
   /**
     * A skill group with attributes.
     */
   @js.native
+  @Factory
   trait SkillGroup extends js.Object {
     var Description: js.UndefOr[SkillGroupDescription]
     var SkillGroupArn: js.UndefOr[Arn]
     var SkillGroupName: js.UndefOr[SkillGroupName]
   }
 
-  object SkillGroup {
-    @inline
-    def apply(
-        Description: js.UndefOr[SkillGroupDescription] = js.undefined,
-        SkillGroupArn: js.UndefOr[Arn] = js.undefined,
-        SkillGroupName: js.UndefOr[SkillGroupName] = js.undefined
-    ): SkillGroup = {
-      val __obj = js.Dynamic.literal()
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      SkillGroupArn.foreach(__v => __obj.updateDynamic("SkillGroupArn")(__v.asInstanceOf[js.Any]))
-      SkillGroupName.foreach(__v => __obj.updateDynamic("SkillGroupName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SkillGroup]
-    }
-  }
-
   /**
     * The attributes of a skill group.
     */
   @js.native
+  @Factory
   trait SkillGroupData extends js.Object {
     var Description: js.UndefOr[SkillGroupDescription]
     var SkillGroupArn: js.UndefOr[Arn]
     var SkillGroupName: js.UndefOr[SkillGroupName]
   }
 
-  object SkillGroupData {
-    @inline
-    def apply(
-        Description: js.UndefOr[SkillGroupDescription] = js.undefined,
-        SkillGroupArn: js.UndefOr[Arn] = js.undefined,
-        SkillGroupName: js.UndefOr[SkillGroupName] = js.undefined
-    ): SkillGroupData = {
-      val __obj = js.Dynamic.literal()
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      SkillGroupArn.foreach(__v => __obj.updateDynamic("SkillGroupArn")(__v.asInstanceOf[js.Any]))
-      SkillGroupName.foreach(__v => __obj.updateDynamic("SkillGroupName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SkillGroupData]
-    }
-  }
-
   /**
     * The summary of skills.
     */
   @js.native
+  @Factory
   trait SkillSummary extends js.Object {
     var EnablementType: js.UndefOr[EnablementType]
     var SkillId: js.UndefOr[SkillId]
     var SkillName: js.UndefOr[SkillName]
     var SkillType: js.UndefOr[SkillType]
     var SupportsLinking: js.UndefOr[Boolean]
-  }
-
-  object SkillSummary {
-    @inline
-    def apply(
-        EnablementType: js.UndefOr[EnablementType] = js.undefined,
-        SkillId: js.UndefOr[SkillId] = js.undefined,
-        SkillName: js.UndefOr[SkillName] = js.undefined,
-        SkillType: js.UndefOr[SkillType] = js.undefined,
-        SupportsLinking: js.UndefOr[Boolean] = js.undefined
-    ): SkillSummary = {
-      val __obj = js.Dynamic.literal()
-      EnablementType.foreach(__v => __obj.updateDynamic("EnablementType")(__v.asInstanceOf[js.Any]))
-      SkillId.foreach(__v => __obj.updateDynamic("SkillId")(__v.asInstanceOf[js.Any]))
-      SkillName.foreach(__v => __obj.updateDynamic("SkillName")(__v.asInstanceOf[js.Any]))
-      SkillType.foreach(__v => __obj.updateDynamic("SkillType")(__v.asInstanceOf[js.Any]))
-      SupportsLinking.foreach(__v => __obj.updateDynamic("SupportsLinking")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SkillSummary]
-    }
   }
 
   @js.native
@@ -5261,6 +2466,7 @@ package alexaforbusiness {
     * The detailed information about an Alexa skill.
     */
   @js.native
+  @Factory
   trait SkillsStoreSkill extends js.Object {
     var IconUrl: js.UndefOr[IconUrl]
     var SampleUtterances: js.UndefOr[SampleUtterances]
@@ -5271,76 +2477,25 @@ package alexaforbusiness {
     var SupportsLinking: js.UndefOr[Boolean]
   }
 
-  object SkillsStoreSkill {
-    @inline
-    def apply(
-        IconUrl: js.UndefOr[IconUrl] = js.undefined,
-        SampleUtterances: js.UndefOr[SampleUtterances] = js.undefined,
-        ShortDescription: js.UndefOr[ShortDescription] = js.undefined,
-        SkillDetails: js.UndefOr[SkillDetails] = js.undefined,
-        SkillId: js.UndefOr[SkillId] = js.undefined,
-        SkillName: js.UndefOr[SkillName] = js.undefined,
-        SupportsLinking: js.UndefOr[Boolean] = js.undefined
-    ): SkillsStoreSkill = {
-      val __obj = js.Dynamic.literal()
-      IconUrl.foreach(__v => __obj.updateDynamic("IconUrl")(__v.asInstanceOf[js.Any]))
-      SampleUtterances.foreach(__v => __obj.updateDynamic("SampleUtterances")(__v.asInstanceOf[js.Any]))
-      ShortDescription.foreach(__v => __obj.updateDynamic("ShortDescription")(__v.asInstanceOf[js.Any]))
-      SkillDetails.foreach(__v => __obj.updateDynamic("SkillDetails")(__v.asInstanceOf[js.Any]))
-      SkillId.foreach(__v => __obj.updateDynamic("SkillId")(__v.asInstanceOf[js.Any]))
-      SkillName.foreach(__v => __obj.updateDynamic("SkillName")(__v.asInstanceOf[js.Any]))
-      SupportsLinking.foreach(__v => __obj.updateDynamic("SupportsLinking")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SkillsStoreSkill]
-    }
-  }
-
   /**
     * A smart home appliance that can connect to a central system. Any domestic device can be a smart appliance.
     */
   @js.native
+  @Factory
   trait SmartHomeAppliance extends js.Object {
     var Description: js.UndefOr[ApplianceDescription]
     var FriendlyName: js.UndefOr[ApplianceFriendlyName]
     var ManufacturerName: js.UndefOr[ApplianceManufacturerName]
   }
 
-  object SmartHomeAppliance {
-    @inline
-    def apply(
-        Description: js.UndefOr[ApplianceDescription] = js.undefined,
-        FriendlyName: js.UndefOr[ApplianceFriendlyName] = js.undefined,
-        ManufacturerName: js.UndefOr[ApplianceManufacturerName] = js.undefined
-    ): SmartHomeAppliance = {
-      val __obj = js.Dynamic.literal()
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      FriendlyName.foreach(__v => __obj.updateDynamic("FriendlyName")(__v.asInstanceOf[js.Any]))
-      ManufacturerName.foreach(__v => __obj.updateDynamic("ManufacturerName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SmartHomeAppliance]
-    }
-  }
-
   /**
     * An object representing a sort criteria.
     */
   @js.native
+  @Factory
   trait Sort extends js.Object {
     var Key: SortKey
     var Value: SortValue
-  }
-
-  object Sort {
-    @inline
-    def apply(
-        Key: SortKey,
-        Value: SortValue
-    ): Sort = {
-      val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Sort]
-    }
   }
 
   @js.native
@@ -5356,151 +2511,54 @@ package alexaforbusiness {
     * The SSML message. For more information, see [[https://developer.amazon.com/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html|SSML Reference]].
     */
   @js.native
+  @Factory
   trait Ssml extends js.Object {
     var Locale: Locale
     var Value: SsmlValue
   }
 
-  object Ssml {
-    @inline
-    def apply(
-        Locale: Locale,
-        Value: SsmlValue
-    ): Ssml = {
-      val __obj = js.Dynamic.literal(
-        "Locale" -> Locale.asInstanceOf[js.Any],
-        "Value"  -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Ssml]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartDeviceSyncRequest extends js.Object {
     var Features: Features
     var DeviceArn: js.UndefOr[Arn]
     var RoomArn: js.UndefOr[Arn]
   }
 
-  object StartDeviceSyncRequest {
-    @inline
-    def apply(
-        Features: Features,
-        DeviceArn: js.UndefOr[Arn] = js.undefined,
-        RoomArn: js.UndefOr[Arn] = js.undefined
-    ): StartDeviceSyncRequest = {
-      val __obj = js.Dynamic.literal(
-        "Features" -> Features.asInstanceOf[js.Any]
-      )
-
-      DeviceArn.foreach(__v => __obj.updateDynamic("DeviceArn")(__v.asInstanceOf[js.Any]))
-      RoomArn.foreach(__v => __obj.updateDynamic("RoomArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartDeviceSyncRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartDeviceSyncResponse extends js.Object {}
 
-  object StartDeviceSyncResponse {
-    @inline
-    def apply(
-    ): StartDeviceSyncResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[StartDeviceSyncResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartSmartHomeApplianceDiscoveryRequest extends js.Object {
     var RoomArn: Arn
   }
 
-  object StartSmartHomeApplianceDiscoveryRequest {
-    @inline
-    def apply(
-        RoomArn: Arn
-    ): StartSmartHomeApplianceDiscoveryRequest = {
-      val __obj = js.Dynamic.literal(
-        "RoomArn" -> RoomArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StartSmartHomeApplianceDiscoveryRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartSmartHomeApplianceDiscoveryResponse extends js.Object {}
-
-  object StartSmartHomeApplianceDiscoveryResponse {
-    @inline
-    def apply(
-    ): StartSmartHomeApplianceDiscoveryResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[StartSmartHomeApplianceDiscoveryResponse]
-    }
-  }
 
   /**
     * A key-value pair that can be associated with a resource.
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var Key: TagKey
     var Value: TagValue
   }
 
-  object Tag {
-    @inline
-    def apply(
-        Key: TagKey,
-        Value: TagValue
-    ): Tag = {
-      val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Tag]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceRequest extends js.Object {
     var Arn: Arn
     var Tags: TagList
   }
 
-  object TagResourceRequest {
-    @inline
-    def apply(
-        Arn: Arn,
-        Tags: TagList
-    ): TagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "Arn"  -> Arn.asInstanceOf[js.Any],
-        "Tags" -> Tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceResponse extends js.Object {}
-
-  object TagResourceResponse {
-    @inline
-    def apply(
-    ): TagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[TagResourceResponse]
-    }
-  }
 
   @js.native
   sealed trait TemperatureUnit extends js.Any
@@ -5515,98 +2573,37 @@ package alexaforbusiness {
     * The text message.
     */
   @js.native
+  @Factory
   trait Text extends js.Object {
     var Locale: Locale
     var Value: TextValue
   }
 
-  object Text {
-    @inline
-    def apply(
-        Locale: Locale,
-        Value: TextValue
-    ): Text = {
-      val __obj = js.Dynamic.literal(
-        "Locale" -> Locale.asInstanceOf[js.Any],
-        "Value"  -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Text]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceRequest extends js.Object {
     var Arn: Arn
     var TagKeys: TagKeyList
   }
 
-  object UntagResourceRequest {
-    @inline
-    def apply(
-        Arn: Arn,
-        TagKeys: TagKeyList
-    ): UntagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "Arn"     -> Arn.asInstanceOf[js.Any],
-        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceResponse extends js.Object {}
 
-  object UntagResourceResponse {
-    @inline
-    def apply(
-    ): UntagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UntagResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateAddressBookRequest extends js.Object {
     var AddressBookArn: Arn
     var Description: js.UndefOr[AddressBookDescription]
     var Name: js.UndefOr[AddressBookName]
   }
 
-  object UpdateAddressBookRequest {
-    @inline
-    def apply(
-        AddressBookArn: Arn,
-        Description: js.UndefOr[AddressBookDescription] = js.undefined,
-        Name: js.UndefOr[AddressBookName] = js.undefined
-    ): UpdateAddressBookRequest = {
-      val __obj = js.Dynamic.literal(
-        "AddressBookArn" -> AddressBookArn.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateAddressBookRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateAddressBookResponse extends js.Object {}
 
-  object UpdateAddressBookResponse {
-    @inline
-    def apply(
-    ): UpdateAddressBookResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateAddressBookResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateBusinessReportScheduleRequest extends js.Object {
     var ScheduleArn: Arn
     var Format: js.UndefOr[BusinessReportFormat]
@@ -5616,43 +2613,12 @@ package alexaforbusiness {
     var ScheduleName: js.UndefOr[BusinessReportScheduleName]
   }
 
-  object UpdateBusinessReportScheduleRequest {
-    @inline
-    def apply(
-        ScheduleArn: Arn,
-        Format: js.UndefOr[BusinessReportFormat] = js.undefined,
-        Recurrence: js.UndefOr[BusinessReportRecurrence] = js.undefined,
-        S3BucketName: js.UndefOr[CustomerS3BucketName] = js.undefined,
-        S3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
-        ScheduleName: js.UndefOr[BusinessReportScheduleName] = js.undefined
-    ): UpdateBusinessReportScheduleRequest = {
-      val __obj = js.Dynamic.literal(
-        "ScheduleArn" -> ScheduleArn.asInstanceOf[js.Any]
-      )
-
-      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
-      Recurrence.foreach(__v => __obj.updateDynamic("Recurrence")(__v.asInstanceOf[js.Any]))
-      S3BucketName.foreach(__v => __obj.updateDynamic("S3BucketName")(__v.asInstanceOf[js.Any]))
-      S3KeyPrefix.foreach(__v => __obj.updateDynamic("S3KeyPrefix")(__v.asInstanceOf[js.Any]))
-      ScheduleName.foreach(__v => __obj.updateDynamic("ScheduleName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateBusinessReportScheduleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateBusinessReportScheduleResponse extends js.Object {}
 
-  object UpdateBusinessReportScheduleResponse {
-    @inline
-    def apply(
-    ): UpdateBusinessReportScheduleResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateBusinessReportScheduleResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateConferenceProviderRequest extends js.Object {
     var ConferenceProviderArn: Arn
     var ConferenceProviderType: ConferenceProviderType
@@ -5661,41 +2627,12 @@ package alexaforbusiness {
     var PSTNDialIn: js.UndefOr[PSTNDialIn]
   }
 
-  object UpdateConferenceProviderRequest {
-    @inline
-    def apply(
-        ConferenceProviderArn: Arn,
-        ConferenceProviderType: ConferenceProviderType,
-        MeetingSetting: MeetingSetting,
-        IPDialIn: js.UndefOr[IPDialIn] = js.undefined,
-        PSTNDialIn: js.UndefOr[PSTNDialIn] = js.undefined
-    ): UpdateConferenceProviderRequest = {
-      val __obj = js.Dynamic.literal(
-        "ConferenceProviderArn"  -> ConferenceProviderArn.asInstanceOf[js.Any],
-        "ConferenceProviderType" -> ConferenceProviderType.asInstanceOf[js.Any],
-        "MeetingSetting"         -> MeetingSetting.asInstanceOf[js.Any]
-      )
-
-      IPDialIn.foreach(__v => __obj.updateDynamic("IPDialIn")(__v.asInstanceOf[js.Any]))
-      PSTNDialIn.foreach(__v => __obj.updateDynamic("PSTNDialIn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateConferenceProviderRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateConferenceProviderResponse extends js.Object {}
 
-  object UpdateConferenceProviderResponse {
-    @inline
-    def apply(
-    ): UpdateConferenceProviderResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateConferenceProviderResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateContactRequest extends js.Object {
     var ContactArn: Arn
     var DisplayName: js.UndefOr[ContactName]
@@ -5706,139 +2643,46 @@ package alexaforbusiness {
     var SipAddresses: js.UndefOr[SipAddressList]
   }
 
-  object UpdateContactRequest {
-    @inline
-    def apply(
-        ContactArn: Arn,
-        DisplayName: js.UndefOr[ContactName] = js.undefined,
-        FirstName: js.UndefOr[ContactName] = js.undefined,
-        LastName: js.UndefOr[ContactName] = js.undefined,
-        PhoneNumber: js.UndefOr[RawPhoneNumber] = js.undefined,
-        PhoneNumbers: js.UndefOr[PhoneNumberList] = js.undefined,
-        SipAddresses: js.UndefOr[SipAddressList] = js.undefined
-    ): UpdateContactRequest = {
-      val __obj = js.Dynamic.literal(
-        "ContactArn" -> ContactArn.asInstanceOf[js.Any]
-      )
-
-      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
-      FirstName.foreach(__v => __obj.updateDynamic("FirstName")(__v.asInstanceOf[js.Any]))
-      LastName.foreach(__v => __obj.updateDynamic("LastName")(__v.asInstanceOf[js.Any]))
-      PhoneNumber.foreach(__v => __obj.updateDynamic("PhoneNumber")(__v.asInstanceOf[js.Any]))
-      PhoneNumbers.foreach(__v => __obj.updateDynamic("PhoneNumbers")(__v.asInstanceOf[js.Any]))
-      SipAddresses.foreach(__v => __obj.updateDynamic("SipAddresses")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateContactRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateContactResponse extends js.Object {}
 
-  object UpdateContactResponse {
-    @inline
-    def apply(
-    ): UpdateContactResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateContactResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateDeviceRequest extends js.Object {
     var DeviceArn: js.UndefOr[Arn]
     var DeviceName: js.UndefOr[DeviceName]
   }
 
-  object UpdateDeviceRequest {
-    @inline
-    def apply(
-        DeviceArn: js.UndefOr[Arn] = js.undefined,
-        DeviceName: js.UndefOr[DeviceName] = js.undefined
-    ): UpdateDeviceRequest = {
-      val __obj = js.Dynamic.literal()
-      DeviceArn.foreach(__v => __obj.updateDynamic("DeviceArn")(__v.asInstanceOf[js.Any]))
-      DeviceName.foreach(__v => __obj.updateDynamic("DeviceName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateDeviceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateDeviceResponse extends js.Object {}
-
-  object UpdateDeviceResponse {
-    @inline
-    def apply(
-    ): UpdateDeviceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateDeviceResponse]
-    }
-  }
 
   /**
     * Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending.
     */
   @js.native
+  @Factory
   trait UpdateEndOfMeetingReminder extends js.Object {
     var Enabled: js.UndefOr[Boolean]
     var ReminderAtMinutes: js.UndefOr[EndOfMeetingReminderMinutesList]
     var ReminderType: js.UndefOr[EndOfMeetingReminderType]
   }
 
-  object UpdateEndOfMeetingReminder {
-    @inline
-    def apply(
-        Enabled: js.UndefOr[Boolean] = js.undefined,
-        ReminderAtMinutes: js.UndefOr[EndOfMeetingReminderMinutesList] = js.undefined,
-        ReminderType: js.UndefOr[EndOfMeetingReminderType] = js.undefined
-    ): UpdateEndOfMeetingReminder = {
-      val __obj = js.Dynamic.literal()
-      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      ReminderAtMinutes.foreach(__v => __obj.updateDynamic("ReminderAtMinutes")(__v.asInstanceOf[js.Any]))
-      ReminderType.foreach(__v => __obj.updateDynamic("ReminderType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateEndOfMeetingReminder]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateGatewayGroupRequest extends js.Object {
     var GatewayGroupArn: Arn
     var Description: js.UndefOr[GatewayGroupDescription]
     var Name: js.UndefOr[GatewayGroupName]
   }
 
-  object UpdateGatewayGroupRequest {
-    @inline
-    def apply(
-        GatewayGroupArn: Arn,
-        Description: js.UndefOr[GatewayGroupDescription] = js.undefined,
-        Name: js.UndefOr[GatewayGroupName] = js.undefined
-    ): UpdateGatewayGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "GatewayGroupArn" -> GatewayGroupArn.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateGatewayGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateGatewayGroupResponse extends js.Object {}
 
-  object UpdateGatewayGroupResponse {
-    @inline
-    def apply(
-    ): UpdateGatewayGroupResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateGatewayGroupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateGatewayRequest extends js.Object {
     var GatewayArn: Arn
     var Description: js.UndefOr[GatewayDescription]
@@ -5846,64 +2690,25 @@ package alexaforbusiness {
     var SoftwareVersion: js.UndefOr[GatewayVersion]
   }
 
-  object UpdateGatewayRequest {
-    @inline
-    def apply(
-        GatewayArn: Arn,
-        Description: js.UndefOr[GatewayDescription] = js.undefined,
-        Name: js.UndefOr[GatewayName] = js.undefined,
-        SoftwareVersion: js.UndefOr[GatewayVersion] = js.undefined
-    ): UpdateGatewayRequest = {
-      val __obj = js.Dynamic.literal(
-        "GatewayArn" -> GatewayArn.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      SoftwareVersion.foreach(__v => __obj.updateDynamic("SoftwareVersion")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateGatewayRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateGatewayResponse extends js.Object {}
-
-  object UpdateGatewayResponse {
-    @inline
-    def apply(
-    ): UpdateGatewayResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateGatewayResponse]
-    }
-  }
 
   /**
     * Updates settings for the instant booking feature that are applied to a room profile. If instant booking is enabled, Alexa automatically reserves a room if it is free when a user joins a meeting with Alexa.
     */
   @js.native
+  @Factory
   trait UpdateInstantBooking extends js.Object {
     var DurationInMinutes: js.UndefOr[Minutes]
     var Enabled: js.UndefOr[Boolean]
-  }
-
-  object UpdateInstantBooking {
-    @inline
-    def apply(
-        DurationInMinutes: js.UndefOr[Minutes] = js.undefined,
-        Enabled: js.UndefOr[Boolean] = js.undefined
-    ): UpdateInstantBooking = {
-      val __obj = js.Dynamic.literal()
-      DurationInMinutes.foreach(__v => __obj.updateDynamic("DurationInMinutes")(__v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateInstantBooking]
-    }
   }
 
   /**
     * Updates meeting room settings of a room profile.
     */
   @js.native
+  @Factory
   trait UpdateMeetingRoomConfiguration extends js.Object {
     var EndOfMeetingReminder: js.UndefOr[UpdateEndOfMeetingReminder]
     var InstantBooking: js.UndefOr[UpdateInstantBooking]
@@ -5911,26 +2716,8 @@ package alexaforbusiness {
     var RoomUtilizationMetricsEnabled: js.UndefOr[Boolean]
   }
 
-  object UpdateMeetingRoomConfiguration {
-    @inline
-    def apply(
-        EndOfMeetingReminder: js.UndefOr[UpdateEndOfMeetingReminder] = js.undefined,
-        InstantBooking: js.UndefOr[UpdateInstantBooking] = js.undefined,
-        RequireCheckIn: js.UndefOr[UpdateRequireCheckIn] = js.undefined,
-        RoomUtilizationMetricsEnabled: js.UndefOr[Boolean] = js.undefined
-    ): UpdateMeetingRoomConfiguration = {
-      val __obj = js.Dynamic.literal()
-      EndOfMeetingReminder.foreach(__v => __obj.updateDynamic("EndOfMeetingReminder")(__v.asInstanceOf[js.Any]))
-      InstantBooking.foreach(__v => __obj.updateDynamic("InstantBooking")(__v.asInstanceOf[js.Any]))
-      RequireCheckIn.foreach(__v => __obj.updateDynamic("RequireCheckIn")(__v.asInstanceOf[js.Any]))
-      RoomUtilizationMetricsEnabled.foreach(__v =>
-        __obj.updateDynamic("RoomUtilizationMetricsEnabled")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[UpdateMeetingRoomConfiguration]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateNetworkProfileRequest extends js.Object {
     var NetworkProfileArn: Arn
     var CertificateAuthorityArn: js.UndefOr[Arn]
@@ -5941,45 +2728,12 @@ package alexaforbusiness {
     var TrustAnchors: js.UndefOr[TrustAnchorList]
   }
 
-  object UpdateNetworkProfileRequest {
-    @inline
-    def apply(
-        NetworkProfileArn: Arn,
-        CertificateAuthorityArn: js.UndefOr[Arn] = js.undefined,
-        CurrentPassword: js.UndefOr[CurrentWiFiPassword] = js.undefined,
-        Description: js.UndefOr[NetworkProfileDescription] = js.undefined,
-        NetworkProfileName: js.UndefOr[NetworkProfileName] = js.undefined,
-        NextPassword: js.UndefOr[NextWiFiPassword] = js.undefined,
-        TrustAnchors: js.UndefOr[TrustAnchorList] = js.undefined
-    ): UpdateNetworkProfileRequest = {
-      val __obj = js.Dynamic.literal(
-        "NetworkProfileArn" -> NetworkProfileArn.asInstanceOf[js.Any]
-      )
-
-      CertificateAuthorityArn.foreach(__v => __obj.updateDynamic("CertificateAuthorityArn")(__v.asInstanceOf[js.Any]))
-      CurrentPassword.foreach(__v => __obj.updateDynamic("CurrentPassword")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      NetworkProfileName.foreach(__v => __obj.updateDynamic("NetworkProfileName")(__v.asInstanceOf[js.Any]))
-      NextPassword.foreach(__v => __obj.updateDynamic("NextPassword")(__v.asInstanceOf[js.Any]))
-      TrustAnchors.foreach(__v => __obj.updateDynamic("TrustAnchors")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateNetworkProfileRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateNetworkProfileResponse extends js.Object {}
 
-  object UpdateNetworkProfileResponse {
-    @inline
-    def apply(
-    ): UpdateNetworkProfileResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateNetworkProfileResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateProfileRequest extends js.Object {
     var Address: js.UndefOr[Address]
     var DistanceUnit: js.UndefOr[DistanceUnit]
@@ -5996,77 +2750,22 @@ package alexaforbusiness {
     var WakeWord: js.UndefOr[WakeWord]
   }
 
-  object UpdateProfileRequest {
-    @inline
-    def apply(
-        Address: js.UndefOr[Address] = js.undefined,
-        DistanceUnit: js.UndefOr[DistanceUnit] = js.undefined,
-        IsDefault: js.UndefOr[Boolean] = js.undefined,
-        Locale: js.UndefOr[DeviceLocale] = js.undefined,
-        MaxVolumeLimit: js.UndefOr[MaxVolumeLimit] = js.undefined,
-        MeetingRoomConfiguration: js.UndefOr[UpdateMeetingRoomConfiguration] = js.undefined,
-        PSTNEnabled: js.UndefOr[Boolean] = js.undefined,
-        ProfileArn: js.UndefOr[Arn] = js.undefined,
-        ProfileName: js.UndefOr[ProfileName] = js.undefined,
-        SetupModeDisabled: js.UndefOr[Boolean] = js.undefined,
-        TemperatureUnit: js.UndefOr[TemperatureUnit] = js.undefined,
-        Timezone: js.UndefOr[Timezone] = js.undefined,
-        WakeWord: js.UndefOr[WakeWord] = js.undefined
-    ): UpdateProfileRequest = {
-      val __obj = js.Dynamic.literal()
-      Address.foreach(__v => __obj.updateDynamic("Address")(__v.asInstanceOf[js.Any]))
-      DistanceUnit.foreach(__v => __obj.updateDynamic("DistanceUnit")(__v.asInstanceOf[js.Any]))
-      IsDefault.foreach(__v => __obj.updateDynamic("IsDefault")(__v.asInstanceOf[js.Any]))
-      Locale.foreach(__v => __obj.updateDynamic("Locale")(__v.asInstanceOf[js.Any]))
-      MaxVolumeLimit.foreach(__v => __obj.updateDynamic("MaxVolumeLimit")(__v.asInstanceOf[js.Any]))
-      MeetingRoomConfiguration.foreach(__v => __obj.updateDynamic("MeetingRoomConfiguration")(__v.asInstanceOf[js.Any]))
-      PSTNEnabled.foreach(__v => __obj.updateDynamic("PSTNEnabled")(__v.asInstanceOf[js.Any]))
-      ProfileArn.foreach(__v => __obj.updateDynamic("ProfileArn")(__v.asInstanceOf[js.Any]))
-      ProfileName.foreach(__v => __obj.updateDynamic("ProfileName")(__v.asInstanceOf[js.Any]))
-      SetupModeDisabled.foreach(__v => __obj.updateDynamic("SetupModeDisabled")(__v.asInstanceOf[js.Any]))
-      TemperatureUnit.foreach(__v => __obj.updateDynamic("TemperatureUnit")(__v.asInstanceOf[js.Any]))
-      Timezone.foreach(__v => __obj.updateDynamic("Timezone")(__v.asInstanceOf[js.Any]))
-      WakeWord.foreach(__v => __obj.updateDynamic("WakeWord")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateProfileRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateProfileResponse extends js.Object {}
-
-  object UpdateProfileResponse {
-    @inline
-    def apply(
-    ): UpdateProfileResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateProfileResponse]
-    }
-  }
 
   /**
     * Updates settings for the require check in feature that are applied to a room profile. Require check in allows a meeting room’s Alexa or AVS device to prompt the user to check in; otherwise, the room will be released.
     */
   @js.native
+  @Factory
   trait UpdateRequireCheckIn extends js.Object {
     var Enabled: js.UndefOr[Boolean]
     var ReleaseAfterMinutes: js.UndefOr[Minutes]
   }
 
-  object UpdateRequireCheckIn {
-    @inline
-    def apply(
-        Enabled: js.UndefOr[Boolean] = js.undefined,
-        ReleaseAfterMinutes: js.UndefOr[Minutes] = js.undefined
-    ): UpdateRequireCheckIn = {
-      val __obj = js.Dynamic.literal()
-      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      ReleaseAfterMinutes.foreach(__v => __obj.updateDynamic("ReleaseAfterMinutes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateRequireCheckIn]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateRoomRequest extends js.Object {
     var Description: js.UndefOr[RoomDescription]
     var ProfileArn: js.UndefOr[Arn]
@@ -6075,77 +2774,27 @@ package alexaforbusiness {
     var RoomName: js.UndefOr[RoomName]
   }
 
-  object UpdateRoomRequest {
-    @inline
-    def apply(
-        Description: js.UndefOr[RoomDescription] = js.undefined,
-        ProfileArn: js.UndefOr[Arn] = js.undefined,
-        ProviderCalendarId: js.UndefOr[ProviderCalendarId] = js.undefined,
-        RoomArn: js.UndefOr[Arn] = js.undefined,
-        RoomName: js.UndefOr[RoomName] = js.undefined
-    ): UpdateRoomRequest = {
-      val __obj = js.Dynamic.literal()
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      ProfileArn.foreach(__v => __obj.updateDynamic("ProfileArn")(__v.asInstanceOf[js.Any]))
-      ProviderCalendarId.foreach(__v => __obj.updateDynamic("ProviderCalendarId")(__v.asInstanceOf[js.Any]))
-      RoomArn.foreach(__v => __obj.updateDynamic("RoomArn")(__v.asInstanceOf[js.Any]))
-      RoomName.foreach(__v => __obj.updateDynamic("RoomName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateRoomRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateRoomResponse extends js.Object {}
 
-  object UpdateRoomResponse {
-    @inline
-    def apply(
-    ): UpdateRoomResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateRoomResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateSkillGroupRequest extends js.Object {
     var Description: js.UndefOr[SkillGroupDescription]
     var SkillGroupArn: js.UndefOr[Arn]
     var SkillGroupName: js.UndefOr[SkillGroupName]
   }
 
-  object UpdateSkillGroupRequest {
-    @inline
-    def apply(
-        Description: js.UndefOr[SkillGroupDescription] = js.undefined,
-        SkillGroupArn: js.UndefOr[Arn] = js.undefined,
-        SkillGroupName: js.UndefOr[SkillGroupName] = js.undefined
-    ): UpdateSkillGroupRequest = {
-      val __obj = js.Dynamic.literal()
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      SkillGroupArn.foreach(__v => __obj.updateDynamic("SkillGroupArn")(__v.asInstanceOf[js.Any]))
-      SkillGroupName.foreach(__v => __obj.updateDynamic("SkillGroupName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateSkillGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateSkillGroupResponse extends js.Object {}
-
-  object UpdateSkillGroupResponse {
-    @inline
-    def apply(
-    ): UpdateSkillGroupResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateSkillGroupResponse]
-    }
-  }
 
   /**
     * Information related to a user.
     */
   @js.native
+  @Factory
   trait UserData extends js.Object {
     var Email: js.UndefOr[Email]
     var EnrollmentId: js.UndefOr[EnrollmentId]
@@ -6153,27 +2802,6 @@ package alexaforbusiness {
     var FirstName: js.UndefOr[user_FirstName]
     var LastName: js.UndefOr[user_LastName]
     var UserArn: js.UndefOr[Arn]
-  }
-
-  object UserData {
-    @inline
-    def apply(
-        Email: js.UndefOr[Email] = js.undefined,
-        EnrollmentId: js.UndefOr[EnrollmentId] = js.undefined,
-        EnrollmentStatus: js.UndefOr[EnrollmentStatus] = js.undefined,
-        FirstName: js.UndefOr[user_FirstName] = js.undefined,
-        LastName: js.UndefOr[user_LastName] = js.undefined,
-        UserArn: js.UndefOr[Arn] = js.undefined
-    ): UserData = {
-      val __obj = js.Dynamic.literal()
-      Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
-      EnrollmentId.foreach(__v => __obj.updateDynamic("EnrollmentId")(__v.asInstanceOf[js.Any]))
-      EnrollmentStatus.foreach(__v => __obj.updateDynamic("EnrollmentStatus")(__v.asInstanceOf[js.Any]))
-      FirstName.foreach(__v => __obj.updateDynamic("FirstName")(__v.asInstanceOf[js.Any]))
-      LastName.foreach(__v => __obj.updateDynamic("LastName")(__v.asInstanceOf[js.Any]))
-      UserArn.foreach(__v => __obj.updateDynamic("UserArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UserData]
-    }
   }
 
   @js.native

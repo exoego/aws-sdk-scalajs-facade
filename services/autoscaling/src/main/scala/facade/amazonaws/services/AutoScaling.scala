@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object autoscaling {
   type Activities                               = js.Array[Activity]
@@ -331,30 +332,17 @@ package autoscaling {
   }
 
   @js.native
+  @Factory
   trait ActivitiesType extends js.Object {
     var Activities: Activities
     var NextToken: js.UndefOr[XmlString]
-  }
-
-  object ActivitiesType {
-    @inline
-    def apply(
-        Activities: Activities,
-        NextToken: js.UndefOr[XmlString] = js.undefined
-    ): ActivitiesType = {
-      val __obj = js.Dynamic.literal(
-        "Activities" -> Activities.asInstanceOf[js.Any]
-      )
-
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ActivitiesType]
-    }
   }
 
   /**
     * Describes scaling activity, which is a long-running process that represents a change to your Auto Scaling group, such as changing its size or replacing an instance.
     */
   @js.native
+  @Factory
   trait Activity extends js.Object {
     var ActivityId: XmlString
     var AutoScalingGroupName: XmlStringMaxLen255
@@ -368,187 +356,65 @@ package autoscaling {
     var StatusMessage: js.UndefOr[XmlStringMaxLen255]
   }
 
-  object Activity {
-    @inline
-    def apply(
-        ActivityId: XmlString,
-        AutoScalingGroupName: XmlStringMaxLen255,
-        Cause: XmlStringMaxLen1023,
-        StartTime: TimestampType,
-        StatusCode: ScalingActivityStatusCode,
-        Description: js.UndefOr[XmlString] = js.undefined,
-        Details: js.UndefOr[XmlString] = js.undefined,
-        EndTime: js.UndefOr[TimestampType] = js.undefined,
-        Progress: js.UndefOr[Progress] = js.undefined,
-        StatusMessage: js.UndefOr[XmlStringMaxLen255] = js.undefined
-    ): Activity = {
-      val __obj = js.Dynamic.literal(
-        "ActivityId"           -> ActivityId.asInstanceOf[js.Any],
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "Cause"                -> Cause.asInstanceOf[js.Any],
-        "StartTime"            -> StartTime.asInstanceOf[js.Any],
-        "StatusCode"           -> StatusCode.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Details.foreach(__v => __obj.updateDynamic("Details")(__v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      Progress.foreach(__v => __obj.updateDynamic("Progress")(__v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Activity]
-    }
-  }
-
   @js.native
+  @Factory
   trait ActivityType extends js.Object {
     var Activity: js.UndefOr[Activity]
-  }
-
-  object ActivityType {
-    @inline
-    def apply(
-        Activity: js.UndefOr[Activity] = js.undefined
-    ): ActivityType = {
-      val __obj = js.Dynamic.literal()
-      Activity.foreach(__v => __obj.updateDynamic("Activity")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ActivityType]
-    }
   }
 
   /**
     * Describes a policy adjustment type.
     */
   @js.native
+  @Factory
   trait AdjustmentType extends js.Object {
     var AdjustmentType: js.UndefOr[XmlStringMaxLen255]
-  }
-
-  object AdjustmentType {
-    @inline
-    def apply(
-        AdjustmentType: js.UndefOr[XmlStringMaxLen255] = js.undefined
-    ): AdjustmentType = {
-      val __obj = js.Dynamic.literal()
-      AdjustmentType.foreach(__v => __obj.updateDynamic("AdjustmentType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AdjustmentType]
-    }
   }
 
   /**
     * Describes an alarm.
     */
   @js.native
+  @Factory
   trait Alarm extends js.Object {
     var AlarmARN: js.UndefOr[ResourceName]
     var AlarmName: js.UndefOr[XmlStringMaxLen255]
   }
 
-  object Alarm {
-    @inline
-    def apply(
-        AlarmARN: js.UndefOr[ResourceName] = js.undefined,
-        AlarmName: js.UndefOr[XmlStringMaxLen255] = js.undefined
-    ): Alarm = {
-      val __obj = js.Dynamic.literal()
-      AlarmARN.foreach(__v => __obj.updateDynamic("AlarmARN")(__v.asInstanceOf[js.Any]))
-      AlarmName.foreach(__v => __obj.updateDynamic("AlarmName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Alarm]
-    }
-  }
-
   @js.native
+  @Factory
   trait AttachInstancesQuery extends js.Object {
     var AutoScalingGroupName: ResourceName
     var InstanceIds: js.UndefOr[InstanceIds]
   }
 
-  object AttachInstancesQuery {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        InstanceIds: js.UndefOr[InstanceIds] = js.undefined
-    ): AttachInstancesQuery = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any]
-      )
-
-      InstanceIds.foreach(__v => __obj.updateDynamic("InstanceIds")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AttachInstancesQuery]
-    }
-  }
-
   @js.native
+  @Factory
   trait AttachLoadBalancerTargetGroupsResultType extends js.Object {}
 
-  object AttachLoadBalancerTargetGroupsResultType {
-    @inline
-    def apply(
-    ): AttachLoadBalancerTargetGroupsResultType = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[AttachLoadBalancerTargetGroupsResultType]
-    }
-  }
-
   @js.native
+  @Factory
   trait AttachLoadBalancerTargetGroupsType extends js.Object {
     var AutoScalingGroupName: ResourceName
     var TargetGroupARNs: TargetGroupARNs
   }
 
-  object AttachLoadBalancerTargetGroupsType {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        TargetGroupARNs: TargetGroupARNs
-    ): AttachLoadBalancerTargetGroupsType = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "TargetGroupARNs"      -> TargetGroupARNs.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AttachLoadBalancerTargetGroupsType]
-    }
-  }
-
   @js.native
+  @Factory
   trait AttachLoadBalancersResultType extends js.Object {}
 
-  object AttachLoadBalancersResultType {
-    @inline
-    def apply(
-    ): AttachLoadBalancersResultType = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[AttachLoadBalancersResultType]
-    }
-  }
-
   @js.native
+  @Factory
   trait AttachLoadBalancersType extends js.Object {
     var AutoScalingGroupName: ResourceName
     var LoadBalancerNames: LoadBalancerNames
-  }
-
-  object AttachLoadBalancersType {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        LoadBalancerNames: LoadBalancerNames
-    ): AttachLoadBalancersType = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "LoadBalancerNames"    -> LoadBalancerNames.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AttachLoadBalancersType]
-    }
   }
 
   /**
     * Describes an Auto Scaling group.
     */
   @js.native
+  @Factory
   trait AutoScalingGroup extends js.Object {
     var AutoScalingGroupName: XmlStringMaxLen255
     var AvailabilityZones: AvailabilityZones
@@ -578,118 +444,26 @@ package autoscaling {
     var VPCZoneIdentifier: js.UndefOr[XmlStringMaxLen2047]
   }
 
-  object AutoScalingGroup {
-    @inline
-    def apply(
-        AutoScalingGroupName: XmlStringMaxLen255,
-        AvailabilityZones: AvailabilityZones,
-        CreatedTime: TimestampType,
-        DefaultCooldown: Cooldown,
-        DesiredCapacity: AutoScalingGroupDesiredCapacity,
-        HealthCheckType: XmlStringMaxLen32,
-        MaxSize: AutoScalingGroupMaxSize,
-        MinSize: AutoScalingGroupMinSize,
-        AutoScalingGroupARN: js.UndefOr[ResourceName] = js.undefined,
-        EnabledMetrics: js.UndefOr[EnabledMetrics] = js.undefined,
-        HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod] = js.undefined,
-        Instances: js.UndefOr[Instances] = js.undefined,
-        LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        LaunchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
-        LoadBalancerNames: js.UndefOr[LoadBalancerNames] = js.undefined,
-        MaxInstanceLifetime: js.UndefOr[MaxInstanceLifetime] = js.undefined,
-        MixedInstancesPolicy: js.UndefOr[MixedInstancesPolicy] = js.undefined,
-        NewInstancesProtectedFromScaleIn: js.UndefOr[InstanceProtected] = js.undefined,
-        PlacementGroup: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        ServiceLinkedRoleARN: js.UndefOr[ResourceName] = js.undefined,
-        Status: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        SuspendedProcesses: js.UndefOr[SuspendedProcesses] = js.undefined,
-        Tags: js.UndefOr[TagDescriptionList] = js.undefined,
-        TargetGroupARNs: js.UndefOr[TargetGroupARNs] = js.undefined,
-        TerminationPolicies: js.UndefOr[TerminationPolicies] = js.undefined,
-        VPCZoneIdentifier: js.UndefOr[XmlStringMaxLen2047] = js.undefined
-    ): AutoScalingGroup = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "AvailabilityZones"    -> AvailabilityZones.asInstanceOf[js.Any],
-        "CreatedTime"          -> CreatedTime.asInstanceOf[js.Any],
-        "DefaultCooldown"      -> DefaultCooldown.asInstanceOf[js.Any],
-        "DesiredCapacity"      -> DesiredCapacity.asInstanceOf[js.Any],
-        "HealthCheckType"      -> HealthCheckType.asInstanceOf[js.Any],
-        "MaxSize"              -> MaxSize.asInstanceOf[js.Any],
-        "MinSize"              -> MinSize.asInstanceOf[js.Any]
-      )
-
-      AutoScalingGroupARN.foreach(__v => __obj.updateDynamic("AutoScalingGroupARN")(__v.asInstanceOf[js.Any]))
-      EnabledMetrics.foreach(__v => __obj.updateDynamic("EnabledMetrics")(__v.asInstanceOf[js.Any]))
-      HealthCheckGracePeriod.foreach(__v => __obj.updateDynamic("HealthCheckGracePeriod")(__v.asInstanceOf[js.Any]))
-      Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
-      LaunchConfigurationName.foreach(__v => __obj.updateDynamic("LaunchConfigurationName")(__v.asInstanceOf[js.Any]))
-      LaunchTemplate.foreach(__v => __obj.updateDynamic("LaunchTemplate")(__v.asInstanceOf[js.Any]))
-      LoadBalancerNames.foreach(__v => __obj.updateDynamic("LoadBalancerNames")(__v.asInstanceOf[js.Any]))
-      MaxInstanceLifetime.foreach(__v => __obj.updateDynamic("MaxInstanceLifetime")(__v.asInstanceOf[js.Any]))
-      MixedInstancesPolicy.foreach(__v => __obj.updateDynamic("MixedInstancesPolicy")(__v.asInstanceOf[js.Any]))
-      NewInstancesProtectedFromScaleIn.foreach(__v =>
-        __obj.updateDynamic("NewInstancesProtectedFromScaleIn")(__v.asInstanceOf[js.Any])
-      )
-      PlacementGroup.foreach(__v => __obj.updateDynamic("PlacementGroup")(__v.asInstanceOf[js.Any]))
-      ServiceLinkedRoleARN.foreach(__v => __obj.updateDynamic("ServiceLinkedRoleARN")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      SuspendedProcesses.foreach(__v => __obj.updateDynamic("SuspendedProcesses")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      TargetGroupARNs.foreach(__v => __obj.updateDynamic("TargetGroupARNs")(__v.asInstanceOf[js.Any]))
-      TerminationPolicies.foreach(__v => __obj.updateDynamic("TerminationPolicies")(__v.asInstanceOf[js.Any]))
-      VPCZoneIdentifier.foreach(__v => __obj.updateDynamic("VPCZoneIdentifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AutoScalingGroup]
-    }
-  }
-
   @js.native
+  @Factory
   trait AutoScalingGroupNamesType extends js.Object {
     var AutoScalingGroupNames: js.UndefOr[AutoScalingGroupNames]
     var MaxRecords: js.UndefOr[MaxRecords]
     var NextToken: js.UndefOr[XmlString]
   }
 
-  object AutoScalingGroupNamesType {
-    @inline
-    def apply(
-        AutoScalingGroupNames: js.UndefOr[AutoScalingGroupNames] = js.undefined,
-        MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
-        NextToken: js.UndefOr[XmlString] = js.undefined
-    ): AutoScalingGroupNamesType = {
-      val __obj = js.Dynamic.literal()
-      AutoScalingGroupNames.foreach(__v => __obj.updateDynamic("AutoScalingGroupNames")(__v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AutoScalingGroupNamesType]
-    }
-  }
-
   @js.native
+  @Factory
   trait AutoScalingGroupsType extends js.Object {
     var AutoScalingGroups: AutoScalingGroups
     var NextToken: js.UndefOr[XmlString]
-  }
-
-  object AutoScalingGroupsType {
-    @inline
-    def apply(
-        AutoScalingGroups: AutoScalingGroups,
-        NextToken: js.UndefOr[XmlString] = js.undefined
-    ): AutoScalingGroupsType = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroups" -> AutoScalingGroups.asInstanceOf[js.Any]
-      )
-
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AutoScalingGroupsType]
-    }
   }
 
   /**
     * Describes an EC2 instance associated with an Auto Scaling group.
     */
   @js.native
+  @Factory
   trait AutoScalingInstanceDetails extends js.Object {
     var AutoScalingGroupName: XmlStringMaxLen255
     var AvailabilityZone: XmlStringMaxLen255
@@ -703,136 +477,44 @@ package autoscaling {
     var WeightedCapacity: js.UndefOr[XmlStringMaxLen32]
   }
 
-  object AutoScalingInstanceDetails {
-    @inline
-    def apply(
-        AutoScalingGroupName: XmlStringMaxLen255,
-        AvailabilityZone: XmlStringMaxLen255,
-        HealthStatus: XmlStringMaxLen32,
-        InstanceId: XmlStringMaxLen19,
-        LifecycleState: XmlStringMaxLen32,
-        ProtectedFromScaleIn: InstanceProtected,
-        InstanceType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        LaunchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
-        WeightedCapacity: js.UndefOr[XmlStringMaxLen32] = js.undefined
-    ): AutoScalingInstanceDetails = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "AvailabilityZone"     -> AvailabilityZone.asInstanceOf[js.Any],
-        "HealthStatus"         -> HealthStatus.asInstanceOf[js.Any],
-        "InstanceId"           -> InstanceId.asInstanceOf[js.Any],
-        "LifecycleState"       -> LifecycleState.asInstanceOf[js.Any],
-        "ProtectedFromScaleIn" -> ProtectedFromScaleIn.asInstanceOf[js.Any]
-      )
-
-      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
-      LaunchConfigurationName.foreach(__v => __obj.updateDynamic("LaunchConfigurationName")(__v.asInstanceOf[js.Any]))
-      LaunchTemplate.foreach(__v => __obj.updateDynamic("LaunchTemplate")(__v.asInstanceOf[js.Any]))
-      WeightedCapacity.foreach(__v => __obj.updateDynamic("WeightedCapacity")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AutoScalingInstanceDetails]
-    }
-  }
-
   @js.native
+  @Factory
   trait AutoScalingInstancesType extends js.Object {
     var AutoScalingInstances: js.UndefOr[AutoScalingInstances]
     var NextToken: js.UndefOr[XmlString]
   }
 
-  object AutoScalingInstancesType {
-    @inline
-    def apply(
-        AutoScalingInstances: js.UndefOr[AutoScalingInstances] = js.undefined,
-        NextToken: js.UndefOr[XmlString] = js.undefined
-    ): AutoScalingInstancesType = {
-      val __obj = js.Dynamic.literal()
-      AutoScalingInstances.foreach(__v => __obj.updateDynamic("AutoScalingInstances")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AutoScalingInstancesType]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchDeleteScheduledActionAnswer extends js.Object {
     var FailedScheduledActions: js.UndefOr[FailedScheduledUpdateGroupActionRequests]
   }
 
-  object BatchDeleteScheduledActionAnswer {
-    @inline
-    def apply(
-        FailedScheduledActions: js.UndefOr[FailedScheduledUpdateGroupActionRequests] = js.undefined
-    ): BatchDeleteScheduledActionAnswer = {
-      val __obj = js.Dynamic.literal()
-      FailedScheduledActions.foreach(__v => __obj.updateDynamic("FailedScheduledActions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchDeleteScheduledActionAnswer]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchDeleteScheduledActionType extends js.Object {
     var AutoScalingGroupName: ResourceName
     var ScheduledActionNames: ScheduledActionNames
   }
 
-  object BatchDeleteScheduledActionType {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        ScheduledActionNames: ScheduledActionNames
-    ): BatchDeleteScheduledActionType = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "ScheduledActionNames" -> ScheduledActionNames.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchDeleteScheduledActionType]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchPutScheduledUpdateGroupActionAnswer extends js.Object {
     var FailedScheduledUpdateGroupActions: js.UndefOr[FailedScheduledUpdateGroupActionRequests]
   }
 
-  object BatchPutScheduledUpdateGroupActionAnswer {
-    @inline
-    def apply(
-        FailedScheduledUpdateGroupActions: js.UndefOr[FailedScheduledUpdateGroupActionRequests] = js.undefined
-    ): BatchPutScheduledUpdateGroupActionAnswer = {
-      val __obj = js.Dynamic.literal()
-      FailedScheduledUpdateGroupActions.foreach(__v =>
-        __obj.updateDynamic("FailedScheduledUpdateGroupActions")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[BatchPutScheduledUpdateGroupActionAnswer]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchPutScheduledUpdateGroupActionType extends js.Object {
     var AutoScalingGroupName: ResourceName
     var ScheduledUpdateGroupActions: ScheduledUpdateGroupActionRequests
-  }
-
-  object BatchPutScheduledUpdateGroupActionType {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        ScheduledUpdateGroupActions: ScheduledUpdateGroupActionRequests
-    ): BatchPutScheduledUpdateGroupActionType = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName"        -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "ScheduledUpdateGroupActions" -> ScheduledUpdateGroupActions.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchPutScheduledUpdateGroupActionType]
-    }
   }
 
   /**
     * Describes a block device mapping.
     */
   @js.native
+  @Factory
   trait BlockDeviceMapping extends js.Object {
     var DeviceName: XmlStringMaxLen255
     var Ebs: js.UndefOr[Ebs]
@@ -840,39 +522,12 @@ package autoscaling {
     var VirtualName: js.UndefOr[XmlStringMaxLen255]
   }
 
-  object BlockDeviceMapping {
-    @inline
-    def apply(
-        DeviceName: XmlStringMaxLen255,
-        Ebs: js.UndefOr[Ebs] = js.undefined,
-        NoDevice: js.UndefOr[NoDevice] = js.undefined,
-        VirtualName: js.UndefOr[XmlStringMaxLen255] = js.undefined
-    ): BlockDeviceMapping = {
-      val __obj = js.Dynamic.literal(
-        "DeviceName" -> DeviceName.asInstanceOf[js.Any]
-      )
-
-      Ebs.foreach(__v => __obj.updateDynamic("Ebs")(__v.asInstanceOf[js.Any]))
-      NoDevice.foreach(__v => __obj.updateDynamic("NoDevice")(__v.asInstanceOf[js.Any]))
-      VirtualName.foreach(__v => __obj.updateDynamic("VirtualName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BlockDeviceMapping]
-    }
-  }
-
   @js.native
+  @Factory
   trait CompleteLifecycleActionAnswer extends js.Object {}
 
-  object CompleteLifecycleActionAnswer {
-    @inline
-    def apply(
-    ): CompleteLifecycleActionAnswer = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[CompleteLifecycleActionAnswer]
-    }
-  }
-
   @js.native
+  @Factory
   trait CompleteLifecycleActionType extends js.Object {
     var AutoScalingGroupName: ResourceName
     var LifecycleActionResult: LifecycleActionResult
@@ -881,28 +536,8 @@ package autoscaling {
     var LifecycleActionToken: js.UndefOr[LifecycleActionToken]
   }
 
-  object CompleteLifecycleActionType {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        LifecycleActionResult: LifecycleActionResult,
-        LifecycleHookName: AsciiStringMaxLen255,
-        InstanceId: js.UndefOr[XmlStringMaxLen19] = js.undefined,
-        LifecycleActionToken: js.UndefOr[LifecycleActionToken] = js.undefined
-    ): CompleteLifecycleActionType = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName"  -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "LifecycleActionResult" -> LifecycleActionResult.asInstanceOf[js.Any],
-        "LifecycleHookName"     -> LifecycleHookName.asInstanceOf[js.Any]
-      )
-
-      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
-      LifecycleActionToken.foreach(__v => __obj.updateDynamic("LifecycleActionToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CompleteLifecycleActionType]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateAutoScalingGroupType extends js.Object {
     var AutoScalingGroupName: XmlStringMaxLen255
     var MaxSize: AutoScalingGroupMaxSize
@@ -928,66 +563,8 @@ package autoscaling {
     var VPCZoneIdentifier: js.UndefOr[XmlStringMaxLen2047]
   }
 
-  object CreateAutoScalingGroupType {
-    @inline
-    def apply(
-        AutoScalingGroupName: XmlStringMaxLen255,
-        MaxSize: AutoScalingGroupMaxSize,
-        MinSize: AutoScalingGroupMinSize,
-        AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
-        DefaultCooldown: js.UndefOr[Cooldown] = js.undefined,
-        DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity] = js.undefined,
-        HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod] = js.undefined,
-        HealthCheckType: js.UndefOr[XmlStringMaxLen32] = js.undefined,
-        InstanceId: js.UndefOr[XmlStringMaxLen19] = js.undefined,
-        LaunchConfigurationName: js.UndefOr[ResourceName] = js.undefined,
-        LaunchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
-        LifecycleHookSpecificationList: js.UndefOr[LifecycleHookSpecifications] = js.undefined,
-        LoadBalancerNames: js.UndefOr[LoadBalancerNames] = js.undefined,
-        MaxInstanceLifetime: js.UndefOr[MaxInstanceLifetime] = js.undefined,
-        MixedInstancesPolicy: js.UndefOr[MixedInstancesPolicy] = js.undefined,
-        NewInstancesProtectedFromScaleIn: js.UndefOr[InstanceProtected] = js.undefined,
-        PlacementGroup: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        ServiceLinkedRoleARN: js.UndefOr[ResourceName] = js.undefined,
-        Tags: js.UndefOr[Tags] = js.undefined,
-        TargetGroupARNs: js.UndefOr[TargetGroupARNs] = js.undefined,
-        TerminationPolicies: js.UndefOr[TerminationPolicies] = js.undefined,
-        VPCZoneIdentifier: js.UndefOr[XmlStringMaxLen2047] = js.undefined
-    ): CreateAutoScalingGroupType = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "MaxSize"              -> MaxSize.asInstanceOf[js.Any],
-        "MinSize"              -> MinSize.asInstanceOf[js.Any]
-      )
-
-      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
-      DefaultCooldown.foreach(__v => __obj.updateDynamic("DefaultCooldown")(__v.asInstanceOf[js.Any]))
-      DesiredCapacity.foreach(__v => __obj.updateDynamic("DesiredCapacity")(__v.asInstanceOf[js.Any]))
-      HealthCheckGracePeriod.foreach(__v => __obj.updateDynamic("HealthCheckGracePeriod")(__v.asInstanceOf[js.Any]))
-      HealthCheckType.foreach(__v => __obj.updateDynamic("HealthCheckType")(__v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
-      LaunchConfigurationName.foreach(__v => __obj.updateDynamic("LaunchConfigurationName")(__v.asInstanceOf[js.Any]))
-      LaunchTemplate.foreach(__v => __obj.updateDynamic("LaunchTemplate")(__v.asInstanceOf[js.Any]))
-      LifecycleHookSpecificationList.foreach(__v =>
-        __obj.updateDynamic("LifecycleHookSpecificationList")(__v.asInstanceOf[js.Any])
-      )
-      LoadBalancerNames.foreach(__v => __obj.updateDynamic("LoadBalancerNames")(__v.asInstanceOf[js.Any]))
-      MaxInstanceLifetime.foreach(__v => __obj.updateDynamic("MaxInstanceLifetime")(__v.asInstanceOf[js.Any]))
-      MixedInstancesPolicy.foreach(__v => __obj.updateDynamic("MixedInstancesPolicy")(__v.asInstanceOf[js.Any]))
-      NewInstancesProtectedFromScaleIn.foreach(__v =>
-        __obj.updateDynamic("NewInstancesProtectedFromScaleIn")(__v.asInstanceOf[js.Any])
-      )
-      PlacementGroup.foreach(__v => __obj.updateDynamic("PlacementGroup")(__v.asInstanceOf[js.Any]))
-      ServiceLinkedRoleARN.foreach(__v => __obj.updateDynamic("ServiceLinkedRoleARN")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      TargetGroupARNs.foreach(__v => __obj.updateDynamic("TargetGroupARNs")(__v.asInstanceOf[js.Any]))
-      TerminationPolicies.foreach(__v => __obj.updateDynamic("TerminationPolicies")(__v.asInstanceOf[js.Any]))
-      VPCZoneIdentifier.foreach(__v => __obj.updateDynamic("VPCZoneIdentifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateAutoScalingGroupType]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateLaunchConfigurationType extends js.Object {
     var LaunchConfigurationName: XmlStringMaxLen255
     var AssociatePublicIpAddress: js.UndefOr[AssociatePublicIpAddress]
@@ -1009,71 +586,10 @@ package autoscaling {
     var UserData: js.UndefOr[XmlStringUserData]
   }
 
-  object CreateLaunchConfigurationType {
-    @inline
-    def apply(
-        LaunchConfigurationName: XmlStringMaxLen255,
-        AssociatePublicIpAddress: js.UndefOr[AssociatePublicIpAddress] = js.undefined,
-        BlockDeviceMappings: js.UndefOr[BlockDeviceMappings] = js.undefined,
-        ClassicLinkVPCId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        ClassicLinkVPCSecurityGroups: js.UndefOr[ClassicLinkVPCSecurityGroups] = js.undefined,
-        EbsOptimized: js.UndefOr[EbsOptimized] = js.undefined,
-        IamInstanceProfile: js.UndefOr[XmlStringMaxLen1600] = js.undefined,
-        ImageId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        InstanceId: js.UndefOr[XmlStringMaxLen19] = js.undefined,
-        InstanceMonitoring: js.UndefOr[InstanceMonitoring] = js.undefined,
-        InstanceType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        KernelId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        KeyName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        PlacementTenancy: js.UndefOr[XmlStringMaxLen64] = js.undefined,
-        RamdiskId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        SecurityGroups: js.UndefOr[SecurityGroups] = js.undefined,
-        SpotPrice: js.UndefOr[SpotPrice] = js.undefined,
-        UserData: js.UndefOr[XmlStringUserData] = js.undefined
-    ): CreateLaunchConfigurationType = {
-      val __obj = js.Dynamic.literal(
-        "LaunchConfigurationName" -> LaunchConfigurationName.asInstanceOf[js.Any]
-      )
-
-      AssociatePublicIpAddress.foreach(__v => __obj.updateDynamic("AssociatePublicIpAddress")(__v.asInstanceOf[js.Any]))
-      BlockDeviceMappings.foreach(__v => __obj.updateDynamic("BlockDeviceMappings")(__v.asInstanceOf[js.Any]))
-      ClassicLinkVPCId.foreach(__v => __obj.updateDynamic("ClassicLinkVPCId")(__v.asInstanceOf[js.Any]))
-      ClassicLinkVPCSecurityGroups.foreach(__v =>
-        __obj.updateDynamic("ClassicLinkVPCSecurityGroups")(__v.asInstanceOf[js.Any])
-      )
-      EbsOptimized.foreach(__v => __obj.updateDynamic("EbsOptimized")(__v.asInstanceOf[js.Any]))
-      IamInstanceProfile.foreach(__v => __obj.updateDynamic("IamInstanceProfile")(__v.asInstanceOf[js.Any]))
-      ImageId.foreach(__v => __obj.updateDynamic("ImageId")(__v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
-      InstanceMonitoring.foreach(__v => __obj.updateDynamic("InstanceMonitoring")(__v.asInstanceOf[js.Any]))
-      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
-      KernelId.foreach(__v => __obj.updateDynamic("KernelId")(__v.asInstanceOf[js.Any]))
-      KeyName.foreach(__v => __obj.updateDynamic("KeyName")(__v.asInstanceOf[js.Any]))
-      PlacementTenancy.foreach(__v => __obj.updateDynamic("PlacementTenancy")(__v.asInstanceOf[js.Any]))
-      RamdiskId.foreach(__v => __obj.updateDynamic("RamdiskId")(__v.asInstanceOf[js.Any]))
-      SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
-      SpotPrice.foreach(__v => __obj.updateDynamic("SpotPrice")(__v.asInstanceOf[js.Any]))
-      UserData.foreach(__v => __obj.updateDynamic("UserData")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateLaunchConfigurationType]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateOrUpdateTagsType extends js.Object {
     var Tags: Tags
-  }
-
-  object CreateOrUpdateTagsType {
-    @inline
-    def apply(
-        Tags: Tags
-    ): CreateOrUpdateTagsType = {
-      val __obj = js.Dynamic.literal(
-        "Tags" -> Tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateOrUpdateTagsType]
-    }
   }
 
   /**
@@ -1084,6 +600,7 @@ package autoscaling {
     * For more information about CloudWatch, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html|Amazon CloudWatch Concepts]].
     */
   @js.native
+  @Factory
   trait CustomizedMetricSpecification extends js.Object {
     var MetricName: MetricName
     var Namespace: MetricNamespace
@@ -1092,164 +609,53 @@ package autoscaling {
     var Unit: js.UndefOr[MetricUnit]
   }
 
-  object CustomizedMetricSpecification {
-    @inline
-    def apply(
-        MetricName: MetricName,
-        Namespace: MetricNamespace,
-        Statistic: MetricStatistic,
-        Dimensions: js.UndefOr[MetricDimensions] = js.undefined,
-        Unit: js.UndefOr[MetricUnit] = js.undefined
-    ): CustomizedMetricSpecification = {
-      val __obj = js.Dynamic.literal(
-        "MetricName" -> MetricName.asInstanceOf[js.Any],
-        "Namespace"  -> Namespace.asInstanceOf[js.Any],
-        "Statistic"  -> Statistic.asInstanceOf[js.Any]
-      )
-
-      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
-      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CustomizedMetricSpecification]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteAutoScalingGroupType extends js.Object {
     var AutoScalingGroupName: ResourceName
     var ForceDelete: js.UndefOr[ForceDelete]
   }
 
-  object DeleteAutoScalingGroupType {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        ForceDelete: js.UndefOr[ForceDelete] = js.undefined
-    ): DeleteAutoScalingGroupType = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any]
-      )
-
-      ForceDelete.foreach(__v => __obj.updateDynamic("ForceDelete")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteAutoScalingGroupType]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteLifecycleHookAnswer extends js.Object {}
 
-  object DeleteLifecycleHookAnswer {
-    @inline
-    def apply(
-    ): DeleteLifecycleHookAnswer = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteLifecycleHookAnswer]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteLifecycleHookType extends js.Object {
     var AutoScalingGroupName: ResourceName
     var LifecycleHookName: AsciiStringMaxLen255
   }
 
-  object DeleteLifecycleHookType {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        LifecycleHookName: AsciiStringMaxLen255
-    ): DeleteLifecycleHookType = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "LifecycleHookName"    -> LifecycleHookName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteLifecycleHookType]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteNotificationConfigurationType extends js.Object {
     var AutoScalingGroupName: ResourceName
     var TopicARN: ResourceName
   }
 
-  object DeleteNotificationConfigurationType {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        TopicARN: ResourceName
-    ): DeleteNotificationConfigurationType = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "TopicARN"             -> TopicARN.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteNotificationConfigurationType]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeletePolicyType extends js.Object {
     var PolicyName: ResourceName
     var AutoScalingGroupName: js.UndefOr[ResourceName]
   }
 
-  object DeletePolicyType {
-    @inline
-    def apply(
-        PolicyName: ResourceName,
-        AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined
-    ): DeletePolicyType = {
-      val __obj = js.Dynamic.literal(
-        "PolicyName" -> PolicyName.asInstanceOf[js.Any]
-      )
-
-      AutoScalingGroupName.foreach(__v => __obj.updateDynamic("AutoScalingGroupName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeletePolicyType]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteScheduledActionType extends js.Object {
     var AutoScalingGroupName: ResourceName
     var ScheduledActionName: ResourceName
   }
 
-  object DeleteScheduledActionType {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        ScheduledActionName: ResourceName
-    ): DeleteScheduledActionType = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "ScheduledActionName"  -> ScheduledActionName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteScheduledActionType]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteTagsType extends js.Object {
     var Tags: Tags
   }
 
-  object DeleteTagsType {
-    @inline
-    def apply(
-        Tags: Tags
-    ): DeleteTagsType = {
-      val __obj = js.Dynamic.literal(
-        "Tags" -> Tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteTagsType]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeAccountLimitsAnswer extends js.Object {
     var MaxNumberOfAutoScalingGroups: js.UndefOr[MaxNumberOfAutoScalingGroups]
     var MaxNumberOfLaunchConfigurations: js.UndefOr[MaxNumberOfLaunchConfigurations]
@@ -1257,289 +663,99 @@ package autoscaling {
     var NumberOfLaunchConfigurations: js.UndefOr[NumberOfLaunchConfigurations]
   }
 
-  object DescribeAccountLimitsAnswer {
-    @inline
-    def apply(
-        MaxNumberOfAutoScalingGroups: js.UndefOr[MaxNumberOfAutoScalingGroups] = js.undefined,
-        MaxNumberOfLaunchConfigurations: js.UndefOr[MaxNumberOfLaunchConfigurations] = js.undefined,
-        NumberOfAutoScalingGroups: js.UndefOr[NumberOfAutoScalingGroups] = js.undefined,
-        NumberOfLaunchConfigurations: js.UndefOr[NumberOfLaunchConfigurations] = js.undefined
-    ): DescribeAccountLimitsAnswer = {
-      val __obj = js.Dynamic.literal()
-      MaxNumberOfAutoScalingGroups.foreach(__v =>
-        __obj.updateDynamic("MaxNumberOfAutoScalingGroups")(__v.asInstanceOf[js.Any])
-      )
-      MaxNumberOfLaunchConfigurations.foreach(__v =>
-        __obj.updateDynamic("MaxNumberOfLaunchConfigurations")(__v.asInstanceOf[js.Any])
-      )
-      NumberOfAutoScalingGroups.foreach(__v =>
-        __obj.updateDynamic("NumberOfAutoScalingGroups")(__v.asInstanceOf[js.Any])
-      )
-      NumberOfLaunchConfigurations.foreach(__v =>
-        __obj.updateDynamic("NumberOfLaunchConfigurations")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[DescribeAccountLimitsAnswer]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeAdjustmentTypesAnswer extends js.Object {
     var AdjustmentTypes: js.UndefOr[AdjustmentTypes]
   }
 
-  object DescribeAdjustmentTypesAnswer {
-    @inline
-    def apply(
-        AdjustmentTypes: js.UndefOr[AdjustmentTypes] = js.undefined
-    ): DescribeAdjustmentTypesAnswer = {
-      val __obj = js.Dynamic.literal()
-      AdjustmentTypes.foreach(__v => __obj.updateDynamic("AdjustmentTypes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeAdjustmentTypesAnswer]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeAutoScalingInstancesType extends js.Object {
     var InstanceIds: js.UndefOr[InstanceIds]
     var MaxRecords: js.UndefOr[MaxRecords]
     var NextToken: js.UndefOr[XmlString]
   }
 
-  object DescribeAutoScalingInstancesType {
-    @inline
-    def apply(
-        InstanceIds: js.UndefOr[InstanceIds] = js.undefined,
-        MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
-        NextToken: js.UndefOr[XmlString] = js.undefined
-    ): DescribeAutoScalingInstancesType = {
-      val __obj = js.Dynamic.literal()
-      InstanceIds.foreach(__v => __obj.updateDynamic("InstanceIds")(__v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeAutoScalingInstancesType]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeAutoScalingNotificationTypesAnswer extends js.Object {
     var AutoScalingNotificationTypes: js.UndefOr[AutoScalingNotificationTypes]
   }
 
-  object DescribeAutoScalingNotificationTypesAnswer {
-    @inline
-    def apply(
-        AutoScalingNotificationTypes: js.UndefOr[AutoScalingNotificationTypes] = js.undefined
-    ): DescribeAutoScalingNotificationTypesAnswer = {
-      val __obj = js.Dynamic.literal()
-      AutoScalingNotificationTypes.foreach(__v =>
-        __obj.updateDynamic("AutoScalingNotificationTypes")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[DescribeAutoScalingNotificationTypesAnswer]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeLifecycleHookTypesAnswer extends js.Object {
     var LifecycleHookTypes: js.UndefOr[AutoScalingNotificationTypes]
   }
 
-  object DescribeLifecycleHookTypesAnswer {
-    @inline
-    def apply(
-        LifecycleHookTypes: js.UndefOr[AutoScalingNotificationTypes] = js.undefined
-    ): DescribeLifecycleHookTypesAnswer = {
-      val __obj = js.Dynamic.literal()
-      LifecycleHookTypes.foreach(__v => __obj.updateDynamic("LifecycleHookTypes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeLifecycleHookTypesAnswer]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeLifecycleHooksAnswer extends js.Object {
     var LifecycleHooks: js.UndefOr[LifecycleHooks]
   }
 
-  object DescribeLifecycleHooksAnswer {
-    @inline
-    def apply(
-        LifecycleHooks: js.UndefOr[LifecycleHooks] = js.undefined
-    ): DescribeLifecycleHooksAnswer = {
-      val __obj = js.Dynamic.literal()
-      LifecycleHooks.foreach(__v => __obj.updateDynamic("LifecycleHooks")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeLifecycleHooksAnswer]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeLifecycleHooksType extends js.Object {
     var AutoScalingGroupName: ResourceName
     var LifecycleHookNames: js.UndefOr[LifecycleHookNames]
   }
 
-  object DescribeLifecycleHooksType {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        LifecycleHookNames: js.UndefOr[LifecycleHookNames] = js.undefined
-    ): DescribeLifecycleHooksType = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any]
-      )
-
-      LifecycleHookNames.foreach(__v => __obj.updateDynamic("LifecycleHookNames")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeLifecycleHooksType]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeLoadBalancerTargetGroupsRequest extends js.Object {
     var AutoScalingGroupName: ResourceName
     var MaxRecords: js.UndefOr[MaxRecords]
     var NextToken: js.UndefOr[XmlString]
   }
 
-  object DescribeLoadBalancerTargetGroupsRequest {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
-        NextToken: js.UndefOr[XmlString] = js.undefined
-    ): DescribeLoadBalancerTargetGroupsRequest = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any]
-      )
-
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeLoadBalancerTargetGroupsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeLoadBalancerTargetGroupsResponse extends js.Object {
     var LoadBalancerTargetGroups: js.UndefOr[LoadBalancerTargetGroupStates]
     var NextToken: js.UndefOr[XmlString]
   }
 
-  object DescribeLoadBalancerTargetGroupsResponse {
-    @inline
-    def apply(
-        LoadBalancerTargetGroups: js.UndefOr[LoadBalancerTargetGroupStates] = js.undefined,
-        NextToken: js.UndefOr[XmlString] = js.undefined
-    ): DescribeLoadBalancerTargetGroupsResponse = {
-      val __obj = js.Dynamic.literal()
-      LoadBalancerTargetGroups.foreach(__v => __obj.updateDynamic("LoadBalancerTargetGroups")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeLoadBalancerTargetGroupsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeLoadBalancersRequest extends js.Object {
     var AutoScalingGroupName: ResourceName
     var MaxRecords: js.UndefOr[MaxRecords]
     var NextToken: js.UndefOr[XmlString]
   }
 
-  object DescribeLoadBalancersRequest {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
-        NextToken: js.UndefOr[XmlString] = js.undefined
-    ): DescribeLoadBalancersRequest = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any]
-      )
-
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeLoadBalancersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeLoadBalancersResponse extends js.Object {
     var LoadBalancers: js.UndefOr[LoadBalancerStates]
     var NextToken: js.UndefOr[XmlString]
   }
 
-  object DescribeLoadBalancersResponse {
-    @inline
-    def apply(
-        LoadBalancers: js.UndefOr[LoadBalancerStates] = js.undefined,
-        NextToken: js.UndefOr[XmlString] = js.undefined
-    ): DescribeLoadBalancersResponse = {
-      val __obj = js.Dynamic.literal()
-      LoadBalancers.foreach(__v => __obj.updateDynamic("LoadBalancers")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeLoadBalancersResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeMetricCollectionTypesAnswer extends js.Object {
     var Granularities: js.UndefOr[MetricGranularityTypes]
     var Metrics: js.UndefOr[MetricCollectionTypes]
   }
 
-  object DescribeMetricCollectionTypesAnswer {
-    @inline
-    def apply(
-        Granularities: js.UndefOr[MetricGranularityTypes] = js.undefined,
-        Metrics: js.UndefOr[MetricCollectionTypes] = js.undefined
-    ): DescribeMetricCollectionTypesAnswer = {
-      val __obj = js.Dynamic.literal()
-      Granularities.foreach(__v => __obj.updateDynamic("Granularities")(__v.asInstanceOf[js.Any]))
-      Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeMetricCollectionTypesAnswer]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeNotificationConfigurationsAnswer extends js.Object {
     var NotificationConfigurations: NotificationConfigurations
     var NextToken: js.UndefOr[XmlString]
   }
 
-  object DescribeNotificationConfigurationsAnswer {
-    @inline
-    def apply(
-        NotificationConfigurations: NotificationConfigurations,
-        NextToken: js.UndefOr[XmlString] = js.undefined
-    ): DescribeNotificationConfigurationsAnswer = {
-      val __obj = js.Dynamic.literal(
-        "NotificationConfigurations" -> NotificationConfigurations.asInstanceOf[js.Any]
-      )
-
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeNotificationConfigurationsAnswer]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeNotificationConfigurationsType extends js.Object {
     var AutoScalingGroupNames: js.UndefOr[AutoScalingGroupNames]
     var MaxRecords: js.UndefOr[MaxRecords]
     var NextToken: js.UndefOr[XmlString]
   }
 
-  object DescribeNotificationConfigurationsType {
-    @inline
-    def apply(
-        AutoScalingGroupNames: js.UndefOr[AutoScalingGroupNames] = js.undefined,
-        MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
-        NextToken: js.UndefOr[XmlString] = js.undefined
-    ): DescribeNotificationConfigurationsType = {
-      val __obj = js.Dynamic.literal()
-      AutoScalingGroupNames.foreach(__v => __obj.updateDynamic("AutoScalingGroupNames")(__v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeNotificationConfigurationsType]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribePoliciesType extends js.Object {
     var AutoScalingGroupName: js.UndefOr[ResourceName]
     var MaxRecords: js.UndefOr[MaxRecords]
@@ -1548,26 +764,8 @@ package autoscaling {
     var PolicyTypes: js.UndefOr[PolicyTypes]
   }
 
-  object DescribePoliciesType {
-    @inline
-    def apply(
-        AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-        MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
-        NextToken: js.UndefOr[XmlString] = js.undefined,
-        PolicyNames: js.UndefOr[PolicyNames] = js.undefined,
-        PolicyTypes: js.UndefOr[PolicyTypes] = js.undefined
-    ): DescribePoliciesType = {
-      val __obj = js.Dynamic.literal()
-      AutoScalingGroupName.foreach(__v => __obj.updateDynamic("AutoScalingGroupName")(__v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PolicyNames.foreach(__v => __obj.updateDynamic("PolicyNames")(__v.asInstanceOf[js.Any]))
-      PolicyTypes.foreach(__v => __obj.updateDynamic("PolicyTypes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribePoliciesType]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeScalingActivitiesType extends js.Object {
     var ActivityIds: js.UndefOr[ActivityIds]
     var AutoScalingGroupName: js.UndefOr[ResourceName]
@@ -1575,24 +773,8 @@ package autoscaling {
     var NextToken: js.UndefOr[XmlString]
   }
 
-  object DescribeScalingActivitiesType {
-    @inline
-    def apply(
-        ActivityIds: js.UndefOr[ActivityIds] = js.undefined,
-        AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-        MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
-        NextToken: js.UndefOr[XmlString] = js.undefined
-    ): DescribeScalingActivitiesType = {
-      val __obj = js.Dynamic.literal()
-      ActivityIds.foreach(__v => __obj.updateDynamic("ActivityIds")(__v.asInstanceOf[js.Any]))
-      AutoScalingGroupName.foreach(__v => __obj.updateDynamic("AutoScalingGroupName")(__v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeScalingActivitiesType]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeScheduledActionsType extends js.Object {
     var AutoScalingGroupName: js.UndefOr[ResourceName]
     var EndTime: js.UndefOr[TimestampType]
@@ -1602,198 +784,68 @@ package autoscaling {
     var StartTime: js.UndefOr[TimestampType]
   }
 
-  object DescribeScheduledActionsType {
-    @inline
-    def apply(
-        AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-        EndTime: js.UndefOr[TimestampType] = js.undefined,
-        MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
-        NextToken: js.UndefOr[XmlString] = js.undefined,
-        ScheduledActionNames: js.UndefOr[ScheduledActionNames] = js.undefined,
-        StartTime: js.UndefOr[TimestampType] = js.undefined
-    ): DescribeScheduledActionsType = {
-      val __obj = js.Dynamic.literal()
-      AutoScalingGroupName.foreach(__v => __obj.updateDynamic("AutoScalingGroupName")(__v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ScheduledActionNames.foreach(__v => __obj.updateDynamic("ScheduledActionNames")(__v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeScheduledActionsType]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeTagsType extends js.Object {
     var Filters: js.UndefOr[Filters]
     var MaxRecords: js.UndefOr[MaxRecords]
     var NextToken: js.UndefOr[XmlString]
   }
 
-  object DescribeTagsType {
-    @inline
-    def apply(
-        Filters: js.UndefOr[Filters] = js.undefined,
-        MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
-        NextToken: js.UndefOr[XmlString] = js.undefined
-    ): DescribeTagsType = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeTagsType]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeTerminationPolicyTypesAnswer extends js.Object {
     var TerminationPolicyTypes: js.UndefOr[TerminationPolicies]
   }
 
-  object DescribeTerminationPolicyTypesAnswer {
-    @inline
-    def apply(
-        TerminationPolicyTypes: js.UndefOr[TerminationPolicies] = js.undefined
-    ): DescribeTerminationPolicyTypesAnswer = {
-      val __obj = js.Dynamic.literal()
-      TerminationPolicyTypes.foreach(__v => __obj.updateDynamic("TerminationPolicyTypes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeTerminationPolicyTypesAnswer]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetachInstancesAnswer extends js.Object {
     var Activities: js.UndefOr[Activities]
   }
 
-  object DetachInstancesAnswer {
-    @inline
-    def apply(
-        Activities: js.UndefOr[Activities] = js.undefined
-    ): DetachInstancesAnswer = {
-      val __obj = js.Dynamic.literal()
-      Activities.foreach(__v => __obj.updateDynamic("Activities")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DetachInstancesAnswer]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetachInstancesQuery extends js.Object {
     var AutoScalingGroupName: ResourceName
     var ShouldDecrementDesiredCapacity: ShouldDecrementDesiredCapacity
     var InstanceIds: js.UndefOr[InstanceIds]
   }
 
-  object DetachInstancesQuery {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        ShouldDecrementDesiredCapacity: ShouldDecrementDesiredCapacity,
-        InstanceIds: js.UndefOr[InstanceIds] = js.undefined
-    ): DetachInstancesQuery = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName"           -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "ShouldDecrementDesiredCapacity" -> ShouldDecrementDesiredCapacity.asInstanceOf[js.Any]
-      )
-
-      InstanceIds.foreach(__v => __obj.updateDynamic("InstanceIds")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DetachInstancesQuery]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetachLoadBalancerTargetGroupsResultType extends js.Object {}
 
-  object DetachLoadBalancerTargetGroupsResultType {
-    @inline
-    def apply(
-    ): DetachLoadBalancerTargetGroupsResultType = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DetachLoadBalancerTargetGroupsResultType]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetachLoadBalancerTargetGroupsType extends js.Object {
     var AutoScalingGroupName: ResourceName
     var TargetGroupARNs: TargetGroupARNs
   }
 
-  object DetachLoadBalancerTargetGroupsType {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        TargetGroupARNs: TargetGroupARNs
-    ): DetachLoadBalancerTargetGroupsType = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "TargetGroupARNs"      -> TargetGroupARNs.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DetachLoadBalancerTargetGroupsType]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetachLoadBalancersResultType extends js.Object {}
 
-  object DetachLoadBalancersResultType {
-    @inline
-    def apply(
-    ): DetachLoadBalancersResultType = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DetachLoadBalancersResultType]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetachLoadBalancersType extends js.Object {
     var AutoScalingGroupName: ResourceName
     var LoadBalancerNames: LoadBalancerNames
   }
 
-  object DetachLoadBalancersType {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        LoadBalancerNames: LoadBalancerNames
-    ): DetachLoadBalancersType = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "LoadBalancerNames"    -> LoadBalancerNames.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DetachLoadBalancersType]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisableMetricsCollectionQuery extends js.Object {
     var AutoScalingGroupName: ResourceName
     var Metrics: js.UndefOr[Metrics]
-  }
-
-  object DisableMetricsCollectionQuery {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        Metrics: js.UndefOr[Metrics] = js.undefined
-    ): DisableMetricsCollectionQuery = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any]
-      )
-
-      Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DisableMetricsCollectionQuery]
-    }
   }
 
   /**
     * Describes an Amazon EBS volume. Used in combination with <a>BlockDeviceMapping</a>.
     */
   @js.native
+  @Factory
   trait Ebs extends js.Object {
     var DeleteOnTermination: js.UndefOr[BlockDeviceEbsDeleteOnTermination]
     var Encrypted: js.UndefOr[BlockDeviceEbsEncrypted]
@@ -1803,114 +855,40 @@ package autoscaling {
     var VolumeType: js.UndefOr[BlockDeviceEbsVolumeType]
   }
 
-  object Ebs {
-    @inline
-    def apply(
-        DeleteOnTermination: js.UndefOr[BlockDeviceEbsDeleteOnTermination] = js.undefined,
-        Encrypted: js.UndefOr[BlockDeviceEbsEncrypted] = js.undefined,
-        Iops: js.UndefOr[BlockDeviceEbsIops] = js.undefined,
-        SnapshotId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        VolumeSize: js.UndefOr[BlockDeviceEbsVolumeSize] = js.undefined,
-        VolumeType: js.UndefOr[BlockDeviceEbsVolumeType] = js.undefined
-    ): Ebs = {
-      val __obj = js.Dynamic.literal()
-      DeleteOnTermination.foreach(__v => __obj.updateDynamic("DeleteOnTermination")(__v.asInstanceOf[js.Any]))
-      Encrypted.foreach(__v => __obj.updateDynamic("Encrypted")(__v.asInstanceOf[js.Any]))
-      Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
-      SnapshotId.foreach(__v => __obj.updateDynamic("SnapshotId")(__v.asInstanceOf[js.Any]))
-      VolumeSize.foreach(__v => __obj.updateDynamic("VolumeSize")(__v.asInstanceOf[js.Any]))
-      VolumeType.foreach(__v => __obj.updateDynamic("VolumeType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Ebs]
-    }
-  }
-
   @js.native
+  @Factory
   trait EnableMetricsCollectionQuery extends js.Object {
     var AutoScalingGroupName: ResourceName
     var Granularity: XmlStringMaxLen255
     var Metrics: js.UndefOr[Metrics]
   }
 
-  object EnableMetricsCollectionQuery {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        Granularity: XmlStringMaxLen255,
-        Metrics: js.UndefOr[Metrics] = js.undefined
-    ): EnableMetricsCollectionQuery = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "Granularity"          -> Granularity.asInstanceOf[js.Any]
-      )
-
-      Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EnableMetricsCollectionQuery]
-    }
-  }
-
   /**
     * Describes an enabled metric.
     */
   @js.native
+  @Factory
   trait EnabledMetric extends js.Object {
     var Granularity: js.UndefOr[XmlStringMaxLen255]
     var Metric: js.UndefOr[XmlStringMaxLen255]
   }
 
-  object EnabledMetric {
-    @inline
-    def apply(
-        Granularity: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        Metric: js.UndefOr[XmlStringMaxLen255] = js.undefined
-    ): EnabledMetric = {
-      val __obj = js.Dynamic.literal()
-      Granularity.foreach(__v => __obj.updateDynamic("Granularity")(__v.asInstanceOf[js.Any]))
-      Metric.foreach(__v => __obj.updateDynamic("Metric")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EnabledMetric]
-    }
-  }
-
   @js.native
+  @Factory
   trait EnterStandbyAnswer extends js.Object {
     var Activities: js.UndefOr[Activities]
   }
 
-  object EnterStandbyAnswer {
-    @inline
-    def apply(
-        Activities: js.UndefOr[Activities] = js.undefined
-    ): EnterStandbyAnswer = {
-      val __obj = js.Dynamic.literal()
-      Activities.foreach(__v => __obj.updateDynamic("Activities")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EnterStandbyAnswer]
-    }
-  }
-
   @js.native
+  @Factory
   trait EnterStandbyQuery extends js.Object {
     var AutoScalingGroupName: ResourceName
     var ShouldDecrementDesiredCapacity: ShouldDecrementDesiredCapacity
     var InstanceIds: js.UndefOr[InstanceIds]
   }
 
-  object EnterStandbyQuery {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        ShouldDecrementDesiredCapacity: ShouldDecrementDesiredCapacity,
-        InstanceIds: js.UndefOr[InstanceIds] = js.undefined
-    ): EnterStandbyQuery = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName"           -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "ShouldDecrementDesiredCapacity" -> ShouldDecrementDesiredCapacity.asInstanceOf[js.Any]
-      )
-
-      InstanceIds.foreach(__v => __obj.updateDynamic("InstanceIds")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EnterStandbyQuery]
-    }
-  }
-
   @js.native
+  @Factory
   trait ExecutePolicyType extends js.Object {
     var PolicyName: ResourceName
     var AutoScalingGroupName: js.UndefOr[ResourceName]
@@ -1919,117 +897,45 @@ package autoscaling {
     var MetricValue: js.UndefOr[MetricScale]
   }
 
-  object ExecutePolicyType {
-    @inline
-    def apply(
-        PolicyName: ResourceName,
-        AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-        BreachThreshold: js.UndefOr[MetricScale] = js.undefined,
-        HonorCooldown: js.UndefOr[HonorCooldown] = js.undefined,
-        MetricValue: js.UndefOr[MetricScale] = js.undefined
-    ): ExecutePolicyType = {
-      val __obj = js.Dynamic.literal(
-        "PolicyName" -> PolicyName.asInstanceOf[js.Any]
-      )
-
-      AutoScalingGroupName.foreach(__v => __obj.updateDynamic("AutoScalingGroupName")(__v.asInstanceOf[js.Any]))
-      BreachThreshold.foreach(__v => __obj.updateDynamic("BreachThreshold")(__v.asInstanceOf[js.Any]))
-      HonorCooldown.foreach(__v => __obj.updateDynamic("HonorCooldown")(__v.asInstanceOf[js.Any]))
-      MetricValue.foreach(__v => __obj.updateDynamic("MetricValue")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ExecutePolicyType]
-    }
-  }
-
   @js.native
+  @Factory
   trait ExitStandbyAnswer extends js.Object {
     var Activities: js.UndefOr[Activities]
   }
 
-  object ExitStandbyAnswer {
-    @inline
-    def apply(
-        Activities: js.UndefOr[Activities] = js.undefined
-    ): ExitStandbyAnswer = {
-      val __obj = js.Dynamic.literal()
-      Activities.foreach(__v => __obj.updateDynamic("Activities")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ExitStandbyAnswer]
-    }
-  }
-
   @js.native
+  @Factory
   trait ExitStandbyQuery extends js.Object {
     var AutoScalingGroupName: ResourceName
     var InstanceIds: js.UndefOr[InstanceIds]
-  }
-
-  object ExitStandbyQuery {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        InstanceIds: js.UndefOr[InstanceIds] = js.undefined
-    ): ExitStandbyQuery = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any]
-      )
-
-      InstanceIds.foreach(__v => __obj.updateDynamic("InstanceIds")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ExitStandbyQuery]
-    }
   }
 
   /**
     * Describes a scheduled action that could not be created, updated, or deleted.
     */
   @js.native
+  @Factory
   trait FailedScheduledUpdateGroupActionRequest extends js.Object {
     var ScheduledActionName: XmlStringMaxLen255
     var ErrorCode: js.UndefOr[XmlStringMaxLen64]
     var ErrorMessage: js.UndefOr[XmlString]
   }
 
-  object FailedScheduledUpdateGroupActionRequest {
-    @inline
-    def apply(
-        ScheduledActionName: XmlStringMaxLen255,
-        ErrorCode: js.UndefOr[XmlStringMaxLen64] = js.undefined,
-        ErrorMessage: js.UndefOr[XmlString] = js.undefined
-    ): FailedScheduledUpdateGroupActionRequest = {
-      val __obj = js.Dynamic.literal(
-        "ScheduledActionName" -> ScheduledActionName.asInstanceOf[js.Any]
-      )
-
-      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[FailedScheduledUpdateGroupActionRequest]
-    }
-  }
-
   /**
     * Describes a filter.
     */
   @js.native
+  @Factory
   trait Filter extends js.Object {
     var Name: js.UndefOr[XmlString]
     var Values: js.UndefOr[Values]
-  }
-
-  object Filter {
-    @inline
-    def apply(
-        Name: js.UndefOr[XmlString] = js.undefined,
-        Values: js.UndefOr[Values] = js.undefined
-    ): Filter = {
-      val __obj = js.Dynamic.literal()
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Filter]
-    }
   }
 
   /**
     * Describes an EC2 instance.
     */
   @js.native
+  @Factory
   trait Instance extends js.Object {
     var AvailabilityZone: XmlStringMaxLen255
     var HealthStatus: XmlStringMaxLen32
@@ -2042,52 +948,13 @@ package autoscaling {
     var WeightedCapacity: js.UndefOr[XmlStringMaxLen32]
   }
 
-  object Instance {
-    @inline
-    def apply(
-        AvailabilityZone: XmlStringMaxLen255,
-        HealthStatus: XmlStringMaxLen32,
-        InstanceId: XmlStringMaxLen19,
-        LifecycleState: LifecycleState,
-        ProtectedFromScaleIn: InstanceProtected,
-        InstanceType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        LaunchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
-        WeightedCapacity: js.UndefOr[XmlStringMaxLen32] = js.undefined
-    ): Instance = {
-      val __obj = js.Dynamic.literal(
-        "AvailabilityZone"     -> AvailabilityZone.asInstanceOf[js.Any],
-        "HealthStatus"         -> HealthStatus.asInstanceOf[js.Any],
-        "InstanceId"           -> InstanceId.asInstanceOf[js.Any],
-        "LifecycleState"       -> LifecycleState.asInstanceOf[js.Any],
-        "ProtectedFromScaleIn" -> ProtectedFromScaleIn.asInstanceOf[js.Any]
-      )
-
-      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
-      LaunchConfigurationName.foreach(__v => __obj.updateDynamic("LaunchConfigurationName")(__v.asInstanceOf[js.Any]))
-      LaunchTemplate.foreach(__v => __obj.updateDynamic("LaunchTemplate")(__v.asInstanceOf[js.Any]))
-      WeightedCapacity.foreach(__v => __obj.updateDynamic("WeightedCapacity")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Instance]
-    }
-  }
-
   /**
     * Describes whether detailed monitoring is enabled for the Auto Scaling instances.
     */
   @js.native
+  @Factory
   trait InstanceMonitoring extends js.Object {
     var Enabled: js.UndefOr[MonitoringEnabled]
-  }
-
-  object InstanceMonitoring {
-    @inline
-    def apply(
-        Enabled: js.UndefOr[MonitoringEnabled] = js.undefined
-    ): InstanceMonitoring = {
-      val __obj = js.Dynamic.literal()
-      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceMonitoring]
-    }
   }
 
   /**
@@ -2096,6 +963,7 @@ package autoscaling {
     *  When you update <code>SpotAllocationStrategy</code>, <code>SpotInstancePools</code>, or <code>SpotMaxPrice</code>, this update action does not deploy any changes across the running Amazon EC2 instances in the group. Your existing Spot Instances continue to run as long as the maximum price for those instances is higher than the current Spot price. When scale out occurs, Amazon EC2 Auto Scaling launches instances based on the new settings. When scale in occurs, Amazon EC2 Auto Scaling terminates instances according to the group's termination policies.
     */
   @js.native
+  @Factory
   trait InstancesDistribution extends js.Object {
     var OnDemandAllocationStrategy: js.UndefOr[XmlString]
     var OnDemandBaseCapacity: js.UndefOr[OnDemandBaseCapacity]
@@ -2105,35 +973,11 @@ package autoscaling {
     var SpotMaxPrice: js.UndefOr[MixedInstanceSpotPrice]
   }
 
-  object InstancesDistribution {
-    @inline
-    def apply(
-        OnDemandAllocationStrategy: js.UndefOr[XmlString] = js.undefined,
-        OnDemandBaseCapacity: js.UndefOr[OnDemandBaseCapacity] = js.undefined,
-        OnDemandPercentageAboveBaseCapacity: js.UndefOr[OnDemandPercentageAboveBaseCapacity] = js.undefined,
-        SpotAllocationStrategy: js.UndefOr[XmlString] = js.undefined,
-        SpotInstancePools: js.UndefOr[SpotInstancePools] = js.undefined,
-        SpotMaxPrice: js.UndefOr[MixedInstanceSpotPrice] = js.undefined
-    ): InstancesDistribution = {
-      val __obj = js.Dynamic.literal()
-      OnDemandAllocationStrategy.foreach(__v =>
-        __obj.updateDynamic("OnDemandAllocationStrategy")(__v.asInstanceOf[js.Any])
-      )
-      OnDemandBaseCapacity.foreach(__v => __obj.updateDynamic("OnDemandBaseCapacity")(__v.asInstanceOf[js.Any]))
-      OnDemandPercentageAboveBaseCapacity.foreach(__v =>
-        __obj.updateDynamic("OnDemandPercentageAboveBaseCapacity")(__v.asInstanceOf[js.Any])
-      )
-      SpotAllocationStrategy.foreach(__v => __obj.updateDynamic("SpotAllocationStrategy")(__v.asInstanceOf[js.Any]))
-      SpotInstancePools.foreach(__v => __obj.updateDynamic("SpotInstancePools")(__v.asInstanceOf[js.Any]))
-      SpotMaxPrice.foreach(__v => __obj.updateDynamic("SpotMaxPrice")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstancesDistribution]
-    }
-  }
-
   /**
     * Describes a launch configuration.
     */
   @js.native
+  @Factory
   trait LaunchConfiguration extends js.Object {
     var CreatedTime: TimestampType
     var ImageId: XmlStringMaxLen255
@@ -2156,116 +1000,25 @@ package autoscaling {
     var UserData: js.UndefOr[XmlStringUserData]
   }
 
-  object LaunchConfiguration {
-    @inline
-    def apply(
-        CreatedTime: TimestampType,
-        ImageId: XmlStringMaxLen255,
-        InstanceType: XmlStringMaxLen255,
-        LaunchConfigurationName: XmlStringMaxLen255,
-        AssociatePublicIpAddress: js.UndefOr[AssociatePublicIpAddress] = js.undefined,
-        BlockDeviceMappings: js.UndefOr[BlockDeviceMappings] = js.undefined,
-        ClassicLinkVPCId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        ClassicLinkVPCSecurityGroups: js.UndefOr[ClassicLinkVPCSecurityGroups] = js.undefined,
-        EbsOptimized: js.UndefOr[EbsOptimized] = js.undefined,
-        IamInstanceProfile: js.UndefOr[XmlStringMaxLen1600] = js.undefined,
-        InstanceMonitoring: js.UndefOr[InstanceMonitoring] = js.undefined,
-        KernelId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        KeyName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        LaunchConfigurationARN: js.UndefOr[ResourceName] = js.undefined,
-        PlacementTenancy: js.UndefOr[XmlStringMaxLen64] = js.undefined,
-        RamdiskId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        SecurityGroups: js.UndefOr[SecurityGroups] = js.undefined,
-        SpotPrice: js.UndefOr[SpotPrice] = js.undefined,
-        UserData: js.UndefOr[XmlStringUserData] = js.undefined
-    ): LaunchConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "CreatedTime"             -> CreatedTime.asInstanceOf[js.Any],
-        "ImageId"                 -> ImageId.asInstanceOf[js.Any],
-        "InstanceType"            -> InstanceType.asInstanceOf[js.Any],
-        "LaunchConfigurationName" -> LaunchConfigurationName.asInstanceOf[js.Any]
-      )
-
-      AssociatePublicIpAddress.foreach(__v => __obj.updateDynamic("AssociatePublicIpAddress")(__v.asInstanceOf[js.Any]))
-      BlockDeviceMappings.foreach(__v => __obj.updateDynamic("BlockDeviceMappings")(__v.asInstanceOf[js.Any]))
-      ClassicLinkVPCId.foreach(__v => __obj.updateDynamic("ClassicLinkVPCId")(__v.asInstanceOf[js.Any]))
-      ClassicLinkVPCSecurityGroups.foreach(__v =>
-        __obj.updateDynamic("ClassicLinkVPCSecurityGroups")(__v.asInstanceOf[js.Any])
-      )
-      EbsOptimized.foreach(__v => __obj.updateDynamic("EbsOptimized")(__v.asInstanceOf[js.Any]))
-      IamInstanceProfile.foreach(__v => __obj.updateDynamic("IamInstanceProfile")(__v.asInstanceOf[js.Any]))
-      InstanceMonitoring.foreach(__v => __obj.updateDynamic("InstanceMonitoring")(__v.asInstanceOf[js.Any]))
-      KernelId.foreach(__v => __obj.updateDynamic("KernelId")(__v.asInstanceOf[js.Any]))
-      KeyName.foreach(__v => __obj.updateDynamic("KeyName")(__v.asInstanceOf[js.Any]))
-      LaunchConfigurationARN.foreach(__v => __obj.updateDynamic("LaunchConfigurationARN")(__v.asInstanceOf[js.Any]))
-      PlacementTenancy.foreach(__v => __obj.updateDynamic("PlacementTenancy")(__v.asInstanceOf[js.Any]))
-      RamdiskId.foreach(__v => __obj.updateDynamic("RamdiskId")(__v.asInstanceOf[js.Any]))
-      SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
-      SpotPrice.foreach(__v => __obj.updateDynamic("SpotPrice")(__v.asInstanceOf[js.Any]))
-      UserData.foreach(__v => __obj.updateDynamic("UserData")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LaunchConfiguration]
-    }
-  }
-
   @js.native
+  @Factory
   trait LaunchConfigurationNameType extends js.Object {
     var LaunchConfigurationName: ResourceName
   }
 
-  object LaunchConfigurationNameType {
-    @inline
-    def apply(
-        LaunchConfigurationName: ResourceName
-    ): LaunchConfigurationNameType = {
-      val __obj = js.Dynamic.literal(
-        "LaunchConfigurationName" -> LaunchConfigurationName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[LaunchConfigurationNameType]
-    }
-  }
-
   @js.native
+  @Factory
   trait LaunchConfigurationNamesType extends js.Object {
     var LaunchConfigurationNames: js.UndefOr[LaunchConfigurationNames]
     var MaxRecords: js.UndefOr[MaxRecords]
     var NextToken: js.UndefOr[XmlString]
   }
 
-  object LaunchConfigurationNamesType {
-    @inline
-    def apply(
-        LaunchConfigurationNames: js.UndefOr[LaunchConfigurationNames] = js.undefined,
-        MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
-        NextToken: js.UndefOr[XmlString] = js.undefined
-    ): LaunchConfigurationNamesType = {
-      val __obj = js.Dynamic.literal()
-      LaunchConfigurationNames.foreach(__v => __obj.updateDynamic("LaunchConfigurationNames")(__v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LaunchConfigurationNamesType]
-    }
-  }
-
   @js.native
+  @Factory
   trait LaunchConfigurationsType extends js.Object {
     var LaunchConfigurations: LaunchConfigurations
     var NextToken: js.UndefOr[XmlString]
-  }
-
-  object LaunchConfigurationsType {
-    @inline
-    def apply(
-        LaunchConfigurations: LaunchConfigurations,
-        NextToken: js.UndefOr[XmlString] = js.undefined
-    ): LaunchConfigurationsType = {
-      val __obj = js.Dynamic.literal(
-        "LaunchConfigurations" -> LaunchConfigurations.asInstanceOf[js.Any]
-      )
-
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LaunchConfigurationsType]
-    }
   }
 
   /**
@@ -2274,46 +1027,20 @@ package autoscaling {
     *  When you update the launch template or overrides, existing Amazon EC2 instances continue to run. When scale out occurs, Amazon EC2 Auto Scaling launches instances to match the new settings. When scale in occurs, Amazon EC2 Auto Scaling terminates instances according to the group's termination policies.
     */
   @js.native
+  @Factory
   trait LaunchTemplate extends js.Object {
     var LaunchTemplateSpecification: js.UndefOr[LaunchTemplateSpecification]
     var Overrides: js.UndefOr[Overrides]
-  }
-
-  object LaunchTemplate {
-    @inline
-    def apply(
-        LaunchTemplateSpecification: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
-        Overrides: js.UndefOr[Overrides] = js.undefined
-    ): LaunchTemplate = {
-      val __obj = js.Dynamic.literal()
-      LaunchTemplateSpecification.foreach(__v =>
-        __obj.updateDynamic("LaunchTemplateSpecification")(__v.asInstanceOf[js.Any])
-      )
-      Overrides.foreach(__v => __obj.updateDynamic("Overrides")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LaunchTemplate]
-    }
   }
 
   /**
     * Describes an override for a launch template.
     */
   @js.native
+  @Factory
   trait LaunchTemplateOverrides extends js.Object {
     var InstanceType: js.UndefOr[XmlStringMaxLen255]
     var WeightedCapacity: js.UndefOr[XmlStringMaxLen32]
-  }
-
-  object LaunchTemplateOverrides {
-    @inline
-    def apply(
-        InstanceType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        WeightedCapacity: js.UndefOr[XmlStringMaxLen32] = js.undefined
-    ): LaunchTemplateOverrides = {
-      val __obj = js.Dynamic.literal()
-      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
-      WeightedCapacity.foreach(__v => __obj.updateDynamic("WeightedCapacity")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LaunchTemplateOverrides]
-    }
   }
 
   /**
@@ -2321,31 +1048,18 @@ package autoscaling {
     *  The launch template that is specified must be configured for use with an Auto Scaling group. For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html|Creating a Launch Template for an Auto Scaling Group]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     */
   @js.native
+  @Factory
   trait LaunchTemplateSpecification extends js.Object {
     var LaunchTemplateId: js.UndefOr[XmlStringMaxLen255]
     var LaunchTemplateName: js.UndefOr[LaunchTemplateName]
     var Version: js.UndefOr[XmlStringMaxLen255]
   }
 
-  object LaunchTemplateSpecification {
-    @inline
-    def apply(
-        LaunchTemplateId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        LaunchTemplateName: js.UndefOr[LaunchTemplateName] = js.undefined,
-        Version: js.UndefOr[XmlStringMaxLen255] = js.undefined
-    ): LaunchTemplateSpecification = {
-      val __obj = js.Dynamic.literal()
-      LaunchTemplateId.foreach(__v => __obj.updateDynamic("LaunchTemplateId")(__v.asInstanceOf[js.Any]))
-      LaunchTemplateName.foreach(__v => __obj.updateDynamic("LaunchTemplateName")(__v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LaunchTemplateSpecification]
-    }
-  }
-
   /**
     * Describes a lifecycle hook, which tells Amazon EC2 Auto Scaling that you want to perform an action whenever it launches instances or terminates instances. Used in response to <a>DescribeLifecycleHooks</a>.
     */
   @js.native
+  @Factory
   trait LifecycleHook extends js.Object {
     var AutoScalingGroupName: js.UndefOr[ResourceName]
     var DefaultResult: js.UndefOr[LifecycleActionResult]
@@ -2356,33 +1070,6 @@ package autoscaling {
     var NotificationMetadata: js.UndefOr[XmlStringMaxLen1023]
     var NotificationTargetARN: js.UndefOr[ResourceName]
     var RoleARN: js.UndefOr[ResourceName]
-  }
-
-  object LifecycleHook {
-    @inline
-    def apply(
-        AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-        DefaultResult: js.UndefOr[LifecycleActionResult] = js.undefined,
-        GlobalTimeout: js.UndefOr[GlobalTimeout] = js.undefined,
-        HeartbeatTimeout: js.UndefOr[HeartbeatTimeout] = js.undefined,
-        LifecycleHookName: js.UndefOr[AsciiStringMaxLen255] = js.undefined,
-        LifecycleTransition: js.UndefOr[LifecycleTransition] = js.undefined,
-        NotificationMetadata: js.UndefOr[XmlStringMaxLen1023] = js.undefined,
-        NotificationTargetARN: js.UndefOr[ResourceName] = js.undefined,
-        RoleARN: js.UndefOr[ResourceName] = js.undefined
-    ): LifecycleHook = {
-      val __obj = js.Dynamic.literal()
-      AutoScalingGroupName.foreach(__v => __obj.updateDynamic("AutoScalingGroupName")(__v.asInstanceOf[js.Any]))
-      DefaultResult.foreach(__v => __obj.updateDynamic("DefaultResult")(__v.asInstanceOf[js.Any]))
-      GlobalTimeout.foreach(__v => __obj.updateDynamic("GlobalTimeout")(__v.asInstanceOf[js.Any]))
-      HeartbeatTimeout.foreach(__v => __obj.updateDynamic("HeartbeatTimeout")(__v.asInstanceOf[js.Any]))
-      LifecycleHookName.foreach(__v => __obj.updateDynamic("LifecycleHookName")(__v.asInstanceOf[js.Any]))
-      LifecycleTransition.foreach(__v => __obj.updateDynamic("LifecycleTransition")(__v.asInstanceOf[js.Any]))
-      NotificationMetadata.foreach(__v => __obj.updateDynamic("NotificationMetadata")(__v.asInstanceOf[js.Any]))
-      NotificationTargetARN.foreach(__v => __obj.updateDynamic("NotificationTargetARN")(__v.asInstanceOf[js.Any]))
-      RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LifecycleHook]
-    }
   }
 
   /**
@@ -2398,6 +1085,7 @@ package autoscaling {
     *  You can view the lifecycle hooks for an Auto Scaling group using <a>DescribeLifecycleHooks</a>. You can modify an existing lifecycle hook or create new lifecycle hooks using <a>PutLifecycleHook</a>. If you are no longer using a lifecycle hook, you can delete it using <a>DeleteLifecycleHook</a>.
     */
   @js.native
+  @Factory
   trait LifecycleHookSpecification extends js.Object {
     var LifecycleHookName: AsciiStringMaxLen255
     var LifecycleTransition: LifecycleTransition
@@ -2406,31 +1094,6 @@ package autoscaling {
     var NotificationMetadata: js.UndefOr[XmlStringMaxLen1023]
     var NotificationTargetARN: js.UndefOr[NotificationTargetResourceName]
     var RoleARN: js.UndefOr[ResourceName]
-  }
-
-  object LifecycleHookSpecification {
-    @inline
-    def apply(
-        LifecycleHookName: AsciiStringMaxLen255,
-        LifecycleTransition: LifecycleTransition,
-        DefaultResult: js.UndefOr[LifecycleActionResult] = js.undefined,
-        HeartbeatTimeout: js.UndefOr[HeartbeatTimeout] = js.undefined,
-        NotificationMetadata: js.UndefOr[XmlStringMaxLen1023] = js.undefined,
-        NotificationTargetARN: js.UndefOr[NotificationTargetResourceName] = js.undefined,
-        RoleARN: js.UndefOr[ResourceName] = js.undefined
-    ): LifecycleHookSpecification = {
-      val __obj = js.Dynamic.literal(
-        "LifecycleHookName"   -> LifecycleHookName.asInstanceOf[js.Any],
-        "LifecycleTransition" -> LifecycleTransition.asInstanceOf[js.Any]
-      )
-
-      DefaultResult.foreach(__v => __obj.updateDynamic("DefaultResult")(__v.asInstanceOf[js.Any]))
-      HeartbeatTimeout.foreach(__v => __obj.updateDynamic("HeartbeatTimeout")(__v.asInstanceOf[js.Any]))
-      NotificationMetadata.foreach(__v => __obj.updateDynamic("NotificationMetadata")(__v.asInstanceOf[js.Any]))
-      NotificationTargetARN.foreach(__v => __obj.updateDynamic("NotificationTargetARN")(__v.asInstanceOf[js.Any]))
-      RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LifecycleHookSpecification]
-    }
   }
 
   @js.native
@@ -2475,22 +1138,10 @@ package autoscaling {
     *  If you attach a load balancer to an existing Auto Scaling group, the initial state is <code>Adding</code>. The state transitions to <code>Added</code> after all instances in the group are registered with the load balancer. If Elastic Load Balancing health checks are enabled for the load balancer, the state transitions to <code>InService</code> after at least one instance in the group passes the health check. If EC2 health checks are enabled instead, the load balancer remains in the <code>Added</code> state.
     */
   @js.native
+  @Factory
   trait LoadBalancerState extends js.Object {
     var LoadBalancerName: js.UndefOr[XmlStringMaxLen255]
     var State: js.UndefOr[XmlStringMaxLen255]
-  }
-
-  object LoadBalancerState {
-    @inline
-    def apply(
-        LoadBalancerName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        State: js.UndefOr[XmlStringMaxLen255] = js.undefined
-    ): LoadBalancerState = {
-      val __obj = js.Dynamic.literal()
-      LoadBalancerName.foreach(__v => __obj.updateDynamic("LoadBalancerName")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LoadBalancerState]
-    }
   }
 
   /**
@@ -2498,86 +1149,38 @@ package autoscaling {
     *  If you attach a target group to an existing Auto Scaling group, the initial state is <code>Adding</code>. The state transitions to <code>Added</code> after all Auto Scaling instances are registered with the target group. If Elastic Load Balancing health checks are enabled, the state transitions to <code>InService</code> after at least one Auto Scaling instance passes the health check. If EC2 health checks are enabled instead, the target group remains in the <code>Added</code> state.
     */
   @js.native
+  @Factory
   trait LoadBalancerTargetGroupState extends js.Object {
     var LoadBalancerTargetGroupARN: js.UndefOr[XmlStringMaxLen511]
     var State: js.UndefOr[XmlStringMaxLen255]
-  }
-
-  object LoadBalancerTargetGroupState {
-    @inline
-    def apply(
-        LoadBalancerTargetGroupARN: js.UndefOr[XmlStringMaxLen511] = js.undefined,
-        State: js.UndefOr[XmlStringMaxLen255] = js.undefined
-    ): LoadBalancerTargetGroupState = {
-      val __obj = js.Dynamic.literal()
-      LoadBalancerTargetGroupARN.foreach(__v =>
-        __obj.updateDynamic("LoadBalancerTargetGroupARN")(__v.asInstanceOf[js.Any])
-      )
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LoadBalancerTargetGroupState]
-    }
   }
 
   /**
     * Describes a metric.
     */
   @js.native
+  @Factory
   trait MetricCollectionType extends js.Object {
     var Metric: js.UndefOr[XmlStringMaxLen255]
-  }
-
-  object MetricCollectionType {
-    @inline
-    def apply(
-        Metric: js.UndefOr[XmlStringMaxLen255] = js.undefined
-    ): MetricCollectionType = {
-      val __obj = js.Dynamic.literal()
-      Metric.foreach(__v => __obj.updateDynamic("Metric")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MetricCollectionType]
-    }
   }
 
   /**
     * Describes the dimension of a metric.
     */
   @js.native
+  @Factory
   trait MetricDimension extends js.Object {
     var Name: MetricDimensionName
     var Value: MetricDimensionValue
-  }
-
-  object MetricDimension {
-    @inline
-    def apply(
-        Name: MetricDimensionName,
-        Value: MetricDimensionValue
-    ): MetricDimension = {
-      val __obj = js.Dynamic.literal(
-        "Name"  -> Name.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[MetricDimension]
-    }
   }
 
   /**
     * Describes a granularity of a metric.
     */
   @js.native
+  @Factory
   trait MetricGranularityType extends js.Object {
     var Granularity: js.UndefOr[XmlStringMaxLen255]
-  }
-
-  object MetricGranularityType {
-    @inline
-    def apply(
-        Granularity: js.UndefOr[XmlStringMaxLen255] = js.undefined
-    ): MetricGranularityType = {
-      val __obj = js.Dynamic.literal()
-      Granularity.foreach(__v => __obj.updateDynamic("Granularity")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MetricGranularityType]
-    }
   }
 
   @js.native
@@ -2610,112 +1213,48 @@ package autoscaling {
     *  You can create a mixed instances policy for a new Auto Scaling group, or you can create it for an existing group by updating the group to specify <code>MixedInstancesPolicy</code> as the top-level parameter instead of a launch configuration or template. For more information, see <a>CreateAutoScalingGroup</a> and <a>UpdateAutoScalingGroup</a>.
     */
   @js.native
+  @Factory
   trait MixedInstancesPolicy extends js.Object {
     var InstancesDistribution: js.UndefOr[InstancesDistribution]
     var LaunchTemplate: js.UndefOr[LaunchTemplate]
-  }
-
-  object MixedInstancesPolicy {
-    @inline
-    def apply(
-        InstancesDistribution: js.UndefOr[InstancesDistribution] = js.undefined,
-        LaunchTemplate: js.UndefOr[LaunchTemplate] = js.undefined
-    ): MixedInstancesPolicy = {
-      val __obj = js.Dynamic.literal()
-      InstancesDistribution.foreach(__v => __obj.updateDynamic("InstancesDistribution")(__v.asInstanceOf[js.Any]))
-      LaunchTemplate.foreach(__v => __obj.updateDynamic("LaunchTemplate")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MixedInstancesPolicy]
-    }
   }
 
   /**
     * Describes a notification.
     */
   @js.native
+  @Factory
   trait NotificationConfiguration extends js.Object {
     var AutoScalingGroupName: js.UndefOr[ResourceName]
     var NotificationType: js.UndefOr[XmlStringMaxLen255]
     var TopicARN: js.UndefOr[ResourceName]
   }
 
-  object NotificationConfiguration {
-    @inline
-    def apply(
-        AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
-        NotificationType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        TopicARN: js.UndefOr[ResourceName] = js.undefined
-    ): NotificationConfiguration = {
-      val __obj = js.Dynamic.literal()
-      AutoScalingGroupName.foreach(__v => __obj.updateDynamic("AutoScalingGroupName")(__v.asInstanceOf[js.Any]))
-      NotificationType.foreach(__v => __obj.updateDynamic("NotificationType")(__v.asInstanceOf[js.Any]))
-      TopicARN.foreach(__v => __obj.updateDynamic("TopicARN")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NotificationConfiguration]
-    }
-  }
-
   @js.native
+  @Factory
   trait PoliciesType extends js.Object {
     var NextToken: js.UndefOr[XmlString]
     var ScalingPolicies: js.UndefOr[ScalingPolicies]
-  }
-
-  object PoliciesType {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[XmlString] = js.undefined,
-        ScalingPolicies: js.UndefOr[ScalingPolicies] = js.undefined
-    ): PoliciesType = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ScalingPolicies.foreach(__v => __obj.updateDynamic("ScalingPolicies")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PoliciesType]
-    }
   }
 
   /**
     * Contains the output of PutScalingPolicy.
     */
   @js.native
+  @Factory
   trait PolicyARNType extends js.Object {
     var Alarms: js.UndefOr[Alarms]
     var PolicyARN: js.UndefOr[ResourceName]
-  }
-
-  object PolicyARNType {
-    @inline
-    def apply(
-        Alarms: js.UndefOr[Alarms] = js.undefined,
-        PolicyARN: js.UndefOr[ResourceName] = js.undefined
-    ): PolicyARNType = {
-      val __obj = js.Dynamic.literal()
-      Alarms.foreach(__v => __obj.updateDynamic("Alarms")(__v.asInstanceOf[js.Any]))
-      PolicyARN.foreach(__v => __obj.updateDynamic("PolicyARN")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PolicyARNType]
-    }
   }
 
   /**
     * Represents a predefined metric for a target tracking scaling policy to use with Amazon EC2 Auto Scaling.
     */
   @js.native
+  @Factory
   trait PredefinedMetricSpecification extends js.Object {
     var PredefinedMetricType: MetricType
     var ResourceLabel: js.UndefOr[XmlStringMaxLen1023]
-  }
-
-  object PredefinedMetricSpecification {
-    @inline
-    def apply(
-        PredefinedMetricType: MetricType,
-        ResourceLabel: js.UndefOr[XmlStringMaxLen1023] = js.undefined
-    ): PredefinedMetricSpecification = {
-      val __obj = js.Dynamic.literal(
-        "PredefinedMetricType" -> PredefinedMetricType.asInstanceOf[js.Any]
-      )
-
-      ResourceLabel.foreach(__v => __obj.updateDynamic("ResourceLabel")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PredefinedMetricSpecification]
-    }
   }
 
   /**
@@ -2723,53 +1262,23 @@ package autoscaling {
     *  For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types|Scaling Processes]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     */
   @js.native
+  @Factory
   trait ProcessType extends js.Object {
     var ProcessName: XmlStringMaxLen255
   }
 
-  object ProcessType {
-    @inline
-    def apply(
-        ProcessName: XmlStringMaxLen255
-    ): ProcessType = {
-      val __obj = js.Dynamic.literal(
-        "ProcessName" -> ProcessName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ProcessType]
-    }
-  }
-
   @js.native
+  @Factory
   trait ProcessesType extends js.Object {
     var Processes: js.UndefOr[Processes]
   }
 
-  object ProcessesType {
-    @inline
-    def apply(
-        Processes: js.UndefOr[Processes] = js.undefined
-    ): ProcessesType = {
-      val __obj = js.Dynamic.literal()
-      Processes.foreach(__v => __obj.updateDynamic("Processes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ProcessesType]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutLifecycleHookAnswer extends js.Object {}
 
-  object PutLifecycleHookAnswer {
-    @inline
-    def apply(
-    ): PutLifecycleHookAnswer = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutLifecycleHookAnswer]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutLifecycleHookType extends js.Object {
     var AutoScalingGroupName: ResourceName
     var LifecycleHookName: AsciiStringMaxLen255
@@ -2781,58 +1290,16 @@ package autoscaling {
     var RoleARN: js.UndefOr[ResourceName]
   }
 
-  object PutLifecycleHookType {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        LifecycleHookName: AsciiStringMaxLen255,
-        DefaultResult: js.UndefOr[LifecycleActionResult] = js.undefined,
-        HeartbeatTimeout: js.UndefOr[HeartbeatTimeout] = js.undefined,
-        LifecycleTransition: js.UndefOr[LifecycleTransition] = js.undefined,
-        NotificationMetadata: js.UndefOr[XmlStringMaxLen1023] = js.undefined,
-        NotificationTargetARN: js.UndefOr[NotificationTargetResourceName] = js.undefined,
-        RoleARN: js.UndefOr[ResourceName] = js.undefined
-    ): PutLifecycleHookType = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "LifecycleHookName"    -> LifecycleHookName.asInstanceOf[js.Any]
-      )
-
-      DefaultResult.foreach(__v => __obj.updateDynamic("DefaultResult")(__v.asInstanceOf[js.Any]))
-      HeartbeatTimeout.foreach(__v => __obj.updateDynamic("HeartbeatTimeout")(__v.asInstanceOf[js.Any]))
-      LifecycleTransition.foreach(__v => __obj.updateDynamic("LifecycleTransition")(__v.asInstanceOf[js.Any]))
-      NotificationMetadata.foreach(__v => __obj.updateDynamic("NotificationMetadata")(__v.asInstanceOf[js.Any]))
-      NotificationTargetARN.foreach(__v => __obj.updateDynamic("NotificationTargetARN")(__v.asInstanceOf[js.Any]))
-      RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutLifecycleHookType]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutNotificationConfigurationType extends js.Object {
     var AutoScalingGroupName: ResourceName
     var NotificationTypes: AutoScalingNotificationTypes
     var TopicARN: ResourceName
   }
 
-  object PutNotificationConfigurationType {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        NotificationTypes: AutoScalingNotificationTypes,
-        TopicARN: ResourceName
-    ): PutNotificationConfigurationType = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "NotificationTypes"    -> NotificationTypes.asInstanceOf[js.Any],
-        "TopicARN"             -> TopicARN.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutNotificationConfigurationType]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutScalingPolicyType extends js.Object {
     var AutoScalingGroupName: ResourceName
     var PolicyName: XmlStringMaxLen255
@@ -2849,46 +1316,8 @@ package autoscaling {
     var TargetTrackingConfiguration: js.UndefOr[TargetTrackingConfiguration]
   }
 
-  object PutScalingPolicyType {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        PolicyName: XmlStringMaxLen255,
-        AdjustmentType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        Cooldown: js.UndefOr[Cooldown] = js.undefined,
-        Enabled: js.UndefOr[ScalingPolicyEnabled] = js.undefined,
-        EstimatedInstanceWarmup: js.UndefOr[EstimatedInstanceWarmup] = js.undefined,
-        MetricAggregationType: js.UndefOr[XmlStringMaxLen32] = js.undefined,
-        MinAdjustmentMagnitude: js.UndefOr[MinAdjustmentMagnitude] = js.undefined,
-        MinAdjustmentStep: js.UndefOr[MinAdjustmentStep] = js.undefined,
-        PolicyType: js.UndefOr[XmlStringMaxLen64] = js.undefined,
-        ScalingAdjustment: js.UndefOr[PolicyIncrement] = js.undefined,
-        StepAdjustments: js.UndefOr[StepAdjustments] = js.undefined,
-        TargetTrackingConfiguration: js.UndefOr[TargetTrackingConfiguration] = js.undefined
-    ): PutScalingPolicyType = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "PolicyName"           -> PolicyName.asInstanceOf[js.Any]
-      )
-
-      AdjustmentType.foreach(__v => __obj.updateDynamic("AdjustmentType")(__v.asInstanceOf[js.Any]))
-      Cooldown.foreach(__v => __obj.updateDynamic("Cooldown")(__v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      EstimatedInstanceWarmup.foreach(__v => __obj.updateDynamic("EstimatedInstanceWarmup")(__v.asInstanceOf[js.Any]))
-      MetricAggregationType.foreach(__v => __obj.updateDynamic("MetricAggregationType")(__v.asInstanceOf[js.Any]))
-      MinAdjustmentMagnitude.foreach(__v => __obj.updateDynamic("MinAdjustmentMagnitude")(__v.asInstanceOf[js.Any]))
-      MinAdjustmentStep.foreach(__v => __obj.updateDynamic("MinAdjustmentStep")(__v.asInstanceOf[js.Any]))
-      PolicyType.foreach(__v => __obj.updateDynamic("PolicyType")(__v.asInstanceOf[js.Any]))
-      ScalingAdjustment.foreach(__v => __obj.updateDynamic("ScalingAdjustment")(__v.asInstanceOf[js.Any]))
-      StepAdjustments.foreach(__v => __obj.updateDynamic("StepAdjustments")(__v.asInstanceOf[js.Any]))
-      TargetTrackingConfiguration.foreach(__v =>
-        __obj.updateDynamic("TargetTrackingConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[PutScalingPolicyType]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutScheduledUpdateGroupActionType extends js.Object {
     var AutoScalingGroupName: ResourceName
     var ScheduledActionName: XmlStringMaxLen255
@@ -2901,73 +1330,17 @@ package autoscaling {
     var Time: js.UndefOr[TimestampType]
   }
 
-  object PutScheduledUpdateGroupActionType {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        ScheduledActionName: XmlStringMaxLen255,
-        DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity] = js.undefined,
-        EndTime: js.UndefOr[TimestampType] = js.undefined,
-        MaxSize: js.UndefOr[AutoScalingGroupMaxSize] = js.undefined,
-        MinSize: js.UndefOr[AutoScalingGroupMinSize] = js.undefined,
-        Recurrence: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        StartTime: js.UndefOr[TimestampType] = js.undefined,
-        Time: js.UndefOr[TimestampType] = js.undefined
-    ): PutScheduledUpdateGroupActionType = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "ScheduledActionName"  -> ScheduledActionName.asInstanceOf[js.Any]
-      )
-
-      DesiredCapacity.foreach(__v => __obj.updateDynamic("DesiredCapacity")(__v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      MaxSize.foreach(__v => __obj.updateDynamic("MaxSize")(__v.asInstanceOf[js.Any]))
-      MinSize.foreach(__v => __obj.updateDynamic("MinSize")(__v.asInstanceOf[js.Any]))
-      Recurrence.foreach(__v => __obj.updateDynamic("Recurrence")(__v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
-      Time.foreach(__v => __obj.updateDynamic("Time")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutScheduledUpdateGroupActionType]
-    }
-  }
-
   @js.native
+  @Factory
   trait RecordLifecycleActionHeartbeatAnswer extends js.Object {}
 
-  object RecordLifecycleActionHeartbeatAnswer {
-    @inline
-    def apply(
-    ): RecordLifecycleActionHeartbeatAnswer = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[RecordLifecycleActionHeartbeatAnswer]
-    }
-  }
-
   @js.native
+  @Factory
   trait RecordLifecycleActionHeartbeatType extends js.Object {
     var AutoScalingGroupName: ResourceName
     var LifecycleHookName: AsciiStringMaxLen255
     var InstanceId: js.UndefOr[XmlStringMaxLen19]
     var LifecycleActionToken: js.UndefOr[LifecycleActionToken]
-  }
-
-  object RecordLifecycleActionHeartbeatType {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        LifecycleHookName: AsciiStringMaxLen255,
-        InstanceId: js.UndefOr[XmlStringMaxLen19] = js.undefined,
-        LifecycleActionToken: js.UndefOr[LifecycleActionToken] = js.undefined
-    ): RecordLifecycleActionHeartbeatType = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "LifecycleHookName"    -> LifecycleHookName.asInstanceOf[js.Any]
-      )
-
-      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
-      LifecycleActionToken.foreach(__v => __obj.updateDynamic("LifecycleActionToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RecordLifecycleActionHeartbeatType]
-    }
   }
 
   @js.native
@@ -3008,6 +1381,7 @@ package autoscaling {
     * Describes a scaling policy.
     */
   @js.native
+  @Factory
   trait ScalingPolicy extends js.Object {
     var AdjustmentType: js.UndefOr[XmlStringMaxLen255]
     var Alarms: js.UndefOr[Alarms]
@@ -3026,93 +1400,25 @@ package autoscaling {
     var TargetTrackingConfiguration: js.UndefOr[TargetTrackingConfiguration]
   }
 
-  object ScalingPolicy {
-    @inline
-    def apply(
-        AdjustmentType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        Alarms: js.UndefOr[Alarms] = js.undefined,
-        AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        Cooldown: js.UndefOr[Cooldown] = js.undefined,
-        Enabled: js.UndefOr[ScalingPolicyEnabled] = js.undefined,
-        EstimatedInstanceWarmup: js.UndefOr[EstimatedInstanceWarmup] = js.undefined,
-        MetricAggregationType: js.UndefOr[XmlStringMaxLen32] = js.undefined,
-        MinAdjustmentMagnitude: js.UndefOr[MinAdjustmentMagnitude] = js.undefined,
-        MinAdjustmentStep: js.UndefOr[MinAdjustmentStep] = js.undefined,
-        PolicyARN: js.UndefOr[ResourceName] = js.undefined,
-        PolicyName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        PolicyType: js.UndefOr[XmlStringMaxLen64] = js.undefined,
-        ScalingAdjustment: js.UndefOr[PolicyIncrement] = js.undefined,
-        StepAdjustments: js.UndefOr[StepAdjustments] = js.undefined,
-        TargetTrackingConfiguration: js.UndefOr[TargetTrackingConfiguration] = js.undefined
-    ): ScalingPolicy = {
-      val __obj = js.Dynamic.literal()
-      AdjustmentType.foreach(__v => __obj.updateDynamic("AdjustmentType")(__v.asInstanceOf[js.Any]))
-      Alarms.foreach(__v => __obj.updateDynamic("Alarms")(__v.asInstanceOf[js.Any]))
-      AutoScalingGroupName.foreach(__v => __obj.updateDynamic("AutoScalingGroupName")(__v.asInstanceOf[js.Any]))
-      Cooldown.foreach(__v => __obj.updateDynamic("Cooldown")(__v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      EstimatedInstanceWarmup.foreach(__v => __obj.updateDynamic("EstimatedInstanceWarmup")(__v.asInstanceOf[js.Any]))
-      MetricAggregationType.foreach(__v => __obj.updateDynamic("MetricAggregationType")(__v.asInstanceOf[js.Any]))
-      MinAdjustmentMagnitude.foreach(__v => __obj.updateDynamic("MinAdjustmentMagnitude")(__v.asInstanceOf[js.Any]))
-      MinAdjustmentStep.foreach(__v => __obj.updateDynamic("MinAdjustmentStep")(__v.asInstanceOf[js.Any]))
-      PolicyARN.foreach(__v => __obj.updateDynamic("PolicyARN")(__v.asInstanceOf[js.Any]))
-      PolicyName.foreach(__v => __obj.updateDynamic("PolicyName")(__v.asInstanceOf[js.Any]))
-      PolicyType.foreach(__v => __obj.updateDynamic("PolicyType")(__v.asInstanceOf[js.Any]))
-      ScalingAdjustment.foreach(__v => __obj.updateDynamic("ScalingAdjustment")(__v.asInstanceOf[js.Any]))
-      StepAdjustments.foreach(__v => __obj.updateDynamic("StepAdjustments")(__v.asInstanceOf[js.Any]))
-      TargetTrackingConfiguration.foreach(__v =>
-        __obj.updateDynamic("TargetTrackingConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[ScalingPolicy]
-    }
-  }
-
   @js.native
+  @Factory
   trait ScalingProcessQuery extends js.Object {
     var AutoScalingGroupName: ResourceName
     var ScalingProcesses: js.UndefOr[ProcessNames]
   }
 
-  object ScalingProcessQuery {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        ScalingProcesses: js.UndefOr[ProcessNames] = js.undefined
-    ): ScalingProcessQuery = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any]
-      )
-
-      ScalingProcesses.foreach(__v => __obj.updateDynamic("ScalingProcesses")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ScalingProcessQuery]
-    }
-  }
-
   @js.native
+  @Factory
   trait ScheduledActionsType extends js.Object {
     var NextToken: js.UndefOr[XmlString]
     var ScheduledUpdateGroupActions: js.UndefOr[ScheduledUpdateGroupActions]
-  }
-
-  object ScheduledActionsType {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[XmlString] = js.undefined,
-        ScheduledUpdateGroupActions: js.UndefOr[ScheduledUpdateGroupActions] = js.undefined
-    ): ScheduledActionsType = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ScheduledUpdateGroupActions.foreach(__v =>
-        __obj.updateDynamic("ScheduledUpdateGroupActions")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[ScheduledActionsType]
-    }
   }
 
   /**
     * Describes a scheduled scaling action. Used in response to <a>DescribeScheduledActions</a>.
     */
   @js.native
+  @Factory
   trait ScheduledUpdateGroupAction extends js.Object {
     var AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255]
     var DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity]
@@ -3126,40 +1432,12 @@ package autoscaling {
     var Time: js.UndefOr[TimestampType]
   }
 
-  object ScheduledUpdateGroupAction {
-    @inline
-    def apply(
-        AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity] = js.undefined,
-        EndTime: js.UndefOr[TimestampType] = js.undefined,
-        MaxSize: js.UndefOr[AutoScalingGroupMaxSize] = js.undefined,
-        MinSize: js.UndefOr[AutoScalingGroupMinSize] = js.undefined,
-        Recurrence: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        ScheduledActionARN: js.UndefOr[ResourceName] = js.undefined,
-        ScheduledActionName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        StartTime: js.UndefOr[TimestampType] = js.undefined,
-        Time: js.UndefOr[TimestampType] = js.undefined
-    ): ScheduledUpdateGroupAction = {
-      val __obj = js.Dynamic.literal()
-      AutoScalingGroupName.foreach(__v => __obj.updateDynamic("AutoScalingGroupName")(__v.asInstanceOf[js.Any]))
-      DesiredCapacity.foreach(__v => __obj.updateDynamic("DesiredCapacity")(__v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      MaxSize.foreach(__v => __obj.updateDynamic("MaxSize")(__v.asInstanceOf[js.Any]))
-      MinSize.foreach(__v => __obj.updateDynamic("MinSize")(__v.asInstanceOf[js.Any]))
-      Recurrence.foreach(__v => __obj.updateDynamic("Recurrence")(__v.asInstanceOf[js.Any]))
-      ScheduledActionARN.foreach(__v => __obj.updateDynamic("ScheduledActionARN")(__v.asInstanceOf[js.Any]))
-      ScheduledActionName.foreach(__v => __obj.updateDynamic("ScheduledActionName")(__v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
-      Time.foreach(__v => __obj.updateDynamic("Time")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ScheduledUpdateGroupAction]
-    }
-  }
-
   /**
     * Describes one or more scheduled scaling action updates for a specified Auto Scaling group. Used in combination with <a>BatchPutScheduledUpdateGroupAction</a>.
     *  When updating a scheduled scaling action, all optional parameters are left unchanged if not specified.
     */
   @js.native
+  @Factory
   trait ScheduledUpdateGroupActionRequest extends js.Object {
     var ScheduledActionName: XmlStringMaxLen255
     var DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity]
@@ -3170,114 +1448,32 @@ package autoscaling {
     var StartTime: js.UndefOr[TimestampType]
   }
 
-  object ScheduledUpdateGroupActionRequest {
-    @inline
-    def apply(
-        ScheduledActionName: XmlStringMaxLen255,
-        DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity] = js.undefined,
-        EndTime: js.UndefOr[TimestampType] = js.undefined,
-        MaxSize: js.UndefOr[AutoScalingGroupMaxSize] = js.undefined,
-        MinSize: js.UndefOr[AutoScalingGroupMinSize] = js.undefined,
-        Recurrence: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        StartTime: js.UndefOr[TimestampType] = js.undefined
-    ): ScheduledUpdateGroupActionRequest = {
-      val __obj = js.Dynamic.literal(
-        "ScheduledActionName" -> ScheduledActionName.asInstanceOf[js.Any]
-      )
-
-      DesiredCapacity.foreach(__v => __obj.updateDynamic("DesiredCapacity")(__v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      MaxSize.foreach(__v => __obj.updateDynamic("MaxSize")(__v.asInstanceOf[js.Any]))
-      MinSize.foreach(__v => __obj.updateDynamic("MinSize")(__v.asInstanceOf[js.Any]))
-      Recurrence.foreach(__v => __obj.updateDynamic("Recurrence")(__v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ScheduledUpdateGroupActionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait SetDesiredCapacityType extends js.Object {
     var AutoScalingGroupName: ResourceName
     var DesiredCapacity: AutoScalingGroupDesiredCapacity
     var HonorCooldown: js.UndefOr[HonorCooldown]
   }
 
-  object SetDesiredCapacityType {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        DesiredCapacity: AutoScalingGroupDesiredCapacity,
-        HonorCooldown: js.UndefOr[HonorCooldown] = js.undefined
-    ): SetDesiredCapacityType = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "DesiredCapacity"      -> DesiredCapacity.asInstanceOf[js.Any]
-      )
-
-      HonorCooldown.foreach(__v => __obj.updateDynamic("HonorCooldown")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SetDesiredCapacityType]
-    }
-  }
-
   @js.native
+  @Factory
   trait SetInstanceHealthQuery extends js.Object {
     var HealthStatus: XmlStringMaxLen32
     var InstanceId: XmlStringMaxLen19
     var ShouldRespectGracePeriod: js.UndefOr[ShouldRespectGracePeriod]
   }
 
-  object SetInstanceHealthQuery {
-    @inline
-    def apply(
-        HealthStatus: XmlStringMaxLen32,
-        InstanceId: XmlStringMaxLen19,
-        ShouldRespectGracePeriod: js.UndefOr[ShouldRespectGracePeriod] = js.undefined
-    ): SetInstanceHealthQuery = {
-      val __obj = js.Dynamic.literal(
-        "HealthStatus" -> HealthStatus.asInstanceOf[js.Any],
-        "InstanceId"   -> InstanceId.asInstanceOf[js.Any]
-      )
-
-      ShouldRespectGracePeriod.foreach(__v => __obj.updateDynamic("ShouldRespectGracePeriod")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SetInstanceHealthQuery]
-    }
-  }
-
   @js.native
+  @Factory
   trait SetInstanceProtectionAnswer extends js.Object {}
 
-  object SetInstanceProtectionAnswer {
-    @inline
-    def apply(
-    ): SetInstanceProtectionAnswer = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[SetInstanceProtectionAnswer]
-    }
-  }
-
   @js.native
+  @Factory
   trait SetInstanceProtectionQuery extends js.Object {
     var AutoScalingGroupName: ResourceName
     var InstanceIds: InstanceIds
     var ProtectedFromScaleIn: ProtectedFromScaleIn
-  }
-
-  object SetInstanceProtectionQuery {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        InstanceIds: InstanceIds,
-        ProtectedFromScaleIn: ProtectedFromScaleIn
-    ): SetInstanceProtectionQuery = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "InstanceIds"          -> InstanceIds.asInstanceOf[js.Any],
-        "ProtectedFromScaleIn" -> ProtectedFromScaleIn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SetInstanceProtectionQuery]
-    }
   }
 
   /**
@@ -3292,55 +1488,28 @@ package autoscaling {
     *  * The upper and lower bound can't be null in the same step adjustment.
     */
   @js.native
+  @Factory
   trait StepAdjustment extends js.Object {
     var ScalingAdjustment: PolicyIncrement
     var MetricIntervalLowerBound: js.UndefOr[MetricScale]
     var MetricIntervalUpperBound: js.UndefOr[MetricScale]
   }
 
-  object StepAdjustment {
-    @inline
-    def apply(
-        ScalingAdjustment: PolicyIncrement,
-        MetricIntervalLowerBound: js.UndefOr[MetricScale] = js.undefined,
-        MetricIntervalUpperBound: js.UndefOr[MetricScale] = js.undefined
-    ): StepAdjustment = {
-      val __obj = js.Dynamic.literal(
-        "ScalingAdjustment" -> ScalingAdjustment.asInstanceOf[js.Any]
-      )
-
-      MetricIntervalLowerBound.foreach(__v => __obj.updateDynamic("MetricIntervalLowerBound")(__v.asInstanceOf[js.Any]))
-      MetricIntervalUpperBound.foreach(__v => __obj.updateDynamic("MetricIntervalUpperBound")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StepAdjustment]
-    }
-  }
-
   /**
     * Describes an automatic scaling process that has been suspended. For more information, see <a>ProcessType</a>.
     */
   @js.native
+  @Factory
   trait SuspendedProcess extends js.Object {
     var ProcessName: js.UndefOr[XmlStringMaxLen255]
     var SuspensionReason: js.UndefOr[XmlStringMaxLen255]
-  }
-
-  object SuspendedProcess {
-    @inline
-    def apply(
-        ProcessName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        SuspensionReason: js.UndefOr[XmlStringMaxLen255] = js.undefined
-    ): SuspendedProcess = {
-      val __obj = js.Dynamic.literal()
-      ProcessName.foreach(__v => __obj.updateDynamic("ProcessName")(__v.asInstanceOf[js.Any]))
-      SuspensionReason.foreach(__v => __obj.updateDynamic("SuspensionReason")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SuspendedProcess]
-    }
   }
 
   /**
     * Describes a tag for an Auto Scaling group.
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var Key: TagKey
     var PropagateAtLaunch: js.UndefOr[PropagateAtLaunch]
@@ -3349,31 +1518,11 @@ package autoscaling {
     var Value: js.UndefOr[TagValue]
   }
 
-  object Tag {
-    @inline
-    def apply(
-        Key: TagKey,
-        PropagateAtLaunch: js.UndefOr[PropagateAtLaunch] = js.undefined,
-        ResourceId: js.UndefOr[XmlString] = js.undefined,
-        ResourceType: js.UndefOr[XmlString] = js.undefined,
-        Value: js.UndefOr[TagValue] = js.undefined
-    ): Tag = {
-      val __obj = js.Dynamic.literal(
-        "Key" -> Key.asInstanceOf[js.Any]
-      )
-
-      PropagateAtLaunch.foreach(__v => __obj.updateDynamic("PropagateAtLaunch")(__v.asInstanceOf[js.Any]))
-      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Tag]
-    }
-  }
-
   /**
     * Describes a tag for an Auto Scaling group.
     */
   @js.native
+  @Factory
   trait TagDescription extends js.Object {
     var Key: js.UndefOr[TagKey]
     var PropagateAtLaunch: js.UndefOr[PropagateAtLaunch]
@@ -3382,48 +1531,18 @@ package autoscaling {
     var Value: js.UndefOr[TagValue]
   }
 
-  object TagDescription {
-    @inline
-    def apply(
-        Key: js.UndefOr[TagKey] = js.undefined,
-        PropagateAtLaunch: js.UndefOr[PropagateAtLaunch] = js.undefined,
-        ResourceId: js.UndefOr[XmlString] = js.undefined,
-        ResourceType: js.UndefOr[XmlString] = js.undefined,
-        Value: js.UndefOr[TagValue] = js.undefined
-    ): TagDescription = {
-      val __obj = js.Dynamic.literal()
-      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
-      PropagateAtLaunch.foreach(__v => __obj.updateDynamic("PropagateAtLaunch")(__v.asInstanceOf[js.Any]))
-      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TagDescription]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagsType extends js.Object {
     var NextToken: js.UndefOr[XmlString]
     var Tags: js.UndefOr[TagDescriptionList]
-  }
-
-  object TagsType {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[XmlString] = js.undefined,
-        Tags: js.UndefOr[TagDescriptionList] = js.undefined
-    ): TagsType = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TagsType]
-    }
   }
 
   /**
     * Represents a target tracking scaling policy configuration to use with Amazon EC2 Auto Scaling.
     */
   @js.native
+  @Factory
   trait TargetTrackingConfiguration extends js.Object {
     var TargetValue: MetricScale
     var CustomizedMetricSpecification: js.UndefOr[CustomizedMetricSpecification]
@@ -3431,51 +1550,15 @@ package autoscaling {
     var PredefinedMetricSpecification: js.UndefOr[PredefinedMetricSpecification]
   }
 
-  object TargetTrackingConfiguration {
-    @inline
-    def apply(
-        TargetValue: MetricScale,
-        CustomizedMetricSpecification: js.UndefOr[CustomizedMetricSpecification] = js.undefined,
-        DisableScaleIn: js.UndefOr[DisableScaleIn] = js.undefined,
-        PredefinedMetricSpecification: js.UndefOr[PredefinedMetricSpecification] = js.undefined
-    ): TargetTrackingConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "TargetValue" -> TargetValue.asInstanceOf[js.Any]
-      )
-
-      CustomizedMetricSpecification.foreach(__v =>
-        __obj.updateDynamic("CustomizedMetricSpecification")(__v.asInstanceOf[js.Any])
-      )
-      DisableScaleIn.foreach(__v => __obj.updateDynamic("DisableScaleIn")(__v.asInstanceOf[js.Any]))
-      PredefinedMetricSpecification.foreach(__v =>
-        __obj.updateDynamic("PredefinedMetricSpecification")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[TargetTrackingConfiguration]
-    }
-  }
-
   @js.native
+  @Factory
   trait TerminateInstanceInAutoScalingGroupType extends js.Object {
     var InstanceId: XmlStringMaxLen19
     var ShouldDecrementDesiredCapacity: ShouldDecrementDesiredCapacity
   }
 
-  object TerminateInstanceInAutoScalingGroupType {
-    @inline
-    def apply(
-        InstanceId: XmlStringMaxLen19,
-        ShouldDecrementDesiredCapacity: ShouldDecrementDesiredCapacity
-    ): TerminateInstanceInAutoScalingGroupType = {
-      val __obj = js.Dynamic.literal(
-        "InstanceId"                     -> InstanceId.asInstanceOf[js.Any],
-        "ShouldDecrementDesiredCapacity" -> ShouldDecrementDesiredCapacity.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TerminateInstanceInAutoScalingGroupType]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateAutoScalingGroupType extends js.Object {
     var AutoScalingGroupName: ResourceName
     var AvailabilityZones: js.UndefOr[AvailabilityZones]
@@ -3494,52 +1577,5 @@ package autoscaling {
     var ServiceLinkedRoleARN: js.UndefOr[ResourceName]
     var TerminationPolicies: js.UndefOr[TerminationPolicies]
     var VPCZoneIdentifier: js.UndefOr[XmlStringMaxLen2047]
-  }
-
-  object UpdateAutoScalingGroupType {
-    @inline
-    def apply(
-        AutoScalingGroupName: ResourceName,
-        AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
-        DefaultCooldown: js.UndefOr[Cooldown] = js.undefined,
-        DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity] = js.undefined,
-        HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod] = js.undefined,
-        HealthCheckType: js.UndefOr[XmlStringMaxLen32] = js.undefined,
-        LaunchConfigurationName: js.UndefOr[ResourceName] = js.undefined,
-        LaunchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
-        MaxInstanceLifetime: js.UndefOr[MaxInstanceLifetime] = js.undefined,
-        MaxSize: js.UndefOr[AutoScalingGroupMaxSize] = js.undefined,
-        MinSize: js.UndefOr[AutoScalingGroupMinSize] = js.undefined,
-        MixedInstancesPolicy: js.UndefOr[MixedInstancesPolicy] = js.undefined,
-        NewInstancesProtectedFromScaleIn: js.UndefOr[InstanceProtected] = js.undefined,
-        PlacementGroup: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        ServiceLinkedRoleARN: js.UndefOr[ResourceName] = js.undefined,
-        TerminationPolicies: js.UndefOr[TerminationPolicies] = js.undefined,
-        VPCZoneIdentifier: js.UndefOr[XmlStringMaxLen2047] = js.undefined
-    ): UpdateAutoScalingGroupType = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any]
-      )
-
-      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
-      DefaultCooldown.foreach(__v => __obj.updateDynamic("DefaultCooldown")(__v.asInstanceOf[js.Any]))
-      DesiredCapacity.foreach(__v => __obj.updateDynamic("DesiredCapacity")(__v.asInstanceOf[js.Any]))
-      HealthCheckGracePeriod.foreach(__v => __obj.updateDynamic("HealthCheckGracePeriod")(__v.asInstanceOf[js.Any]))
-      HealthCheckType.foreach(__v => __obj.updateDynamic("HealthCheckType")(__v.asInstanceOf[js.Any]))
-      LaunchConfigurationName.foreach(__v => __obj.updateDynamic("LaunchConfigurationName")(__v.asInstanceOf[js.Any]))
-      LaunchTemplate.foreach(__v => __obj.updateDynamic("LaunchTemplate")(__v.asInstanceOf[js.Any]))
-      MaxInstanceLifetime.foreach(__v => __obj.updateDynamic("MaxInstanceLifetime")(__v.asInstanceOf[js.Any]))
-      MaxSize.foreach(__v => __obj.updateDynamic("MaxSize")(__v.asInstanceOf[js.Any]))
-      MinSize.foreach(__v => __obj.updateDynamic("MinSize")(__v.asInstanceOf[js.Any]))
-      MixedInstancesPolicy.foreach(__v => __obj.updateDynamic("MixedInstancesPolicy")(__v.asInstanceOf[js.Any]))
-      NewInstancesProtectedFromScaleIn.foreach(__v =>
-        __obj.updateDynamic("NewInstancesProtectedFromScaleIn")(__v.asInstanceOf[js.Any])
-      )
-      PlacementGroup.foreach(__v => __obj.updateDynamic("PlacementGroup")(__v.asInstanceOf[js.Any]))
-      ServiceLinkedRoleARN.foreach(__v => __obj.updateDynamic("ServiceLinkedRoleARN")(__v.asInstanceOf[js.Any]))
-      TerminationPolicies.foreach(__v => __obj.updateDynamic("TerminationPolicies")(__v.asInstanceOf[js.Any]))
-      VPCZoneIdentifier.foreach(__v => __obj.updateDynamic("VPCZoneIdentifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateAutoScalingGroupType]
-    }
   }
 }

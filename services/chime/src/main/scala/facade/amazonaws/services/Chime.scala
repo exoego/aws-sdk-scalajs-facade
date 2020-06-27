@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object chime {
   type AccountList                      = js.Array[Account]
@@ -475,6 +476,7 @@ package chime {
     * The Amazon Chime account details. An AWS account can have multiple Amazon Chime accounts.
     */
   @js.native
+  @Factory
   trait Account extends js.Object {
     var AccountId: String
     var AwsAccountId: String
@@ -486,53 +488,14 @@ package chime {
     var SupportedLicenses: js.UndefOr[LicenseList]
   }
 
-  object Account {
-    @inline
-    def apply(
-        AccountId: String,
-        AwsAccountId: String,
-        Name: String,
-        AccountType: js.UndefOr[AccountType] = js.undefined,
-        CreatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
-        DefaultLicense: js.UndefOr[License] = js.undefined,
-        SigninDelegateGroups: js.UndefOr[SigninDelegateGroupList] = js.undefined,
-        SupportedLicenses: js.UndefOr[LicenseList] = js.undefined
-    ): Account = {
-      val __obj = js.Dynamic.literal(
-        "AccountId"    -> AccountId.asInstanceOf[js.Any],
-        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "Name"         -> Name.asInstanceOf[js.Any]
-      )
-
-      AccountType.foreach(__v => __obj.updateDynamic("AccountType")(__v.asInstanceOf[js.Any]))
-      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
-      DefaultLicense.foreach(__v => __obj.updateDynamic("DefaultLicense")(__v.asInstanceOf[js.Any]))
-      SigninDelegateGroups.foreach(__v => __obj.updateDynamic("SigninDelegateGroups")(__v.asInstanceOf[js.Any]))
-      SupportedLicenses.foreach(__v => __obj.updateDynamic("SupportedLicenses")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Account]
-    }
-  }
-
   /**
     * Settings related to the Amazon Chime account. This includes settings that start or stop remote control of shared screens, or start or stop the dial-out option in the Amazon Chime web application. For more information about these settings, see [[https://docs.aws.amazon.com/chime/latest/ag/policies.html|Use the Policies Page]] in the <i>Amazon Chime Administration Guide</i>.
     */
   @js.native
+  @Factory
   trait AccountSettings extends js.Object {
     var DisableRemoteControl: js.UndefOr[Boolean]
     var EnableDialOut: js.UndefOr[Boolean]
-  }
-
-  object AccountSettings {
-    @inline
-    def apply(
-        DisableRemoteControl: js.UndefOr[Boolean] = js.undefined,
-        EnableDialOut: js.UndefOr[Boolean] = js.undefined
-    ): AccountSettings = {
-      val __obj = js.Dynamic.literal()
-      DisableRemoteControl.foreach(__v => __obj.updateDynamic("DisableRemoteControl")(__v.asInstanceOf[js.Any]))
-      EnableDialOut.foreach(__v => __obj.updateDynamic("EnableDialOut")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AccountSettings]
-    }
   }
 
   @js.native
@@ -550,466 +513,171 @@ package chime {
     * The Alexa for Business metadata associated with an Amazon Chime user, used to integrate Alexa for Business with a device.
     */
   @js.native
+  @Factory
   trait AlexaForBusinessMetadata extends js.Object {
     var AlexaForBusinessRoomArn: js.UndefOr[SensitiveString]
     var IsAlexaForBusinessEnabled: js.UndefOr[Boolean]
   }
 
-  object AlexaForBusinessMetadata {
-    @inline
-    def apply(
-        AlexaForBusinessRoomArn: js.UndefOr[SensitiveString] = js.undefined,
-        IsAlexaForBusinessEnabled: js.UndefOr[Boolean] = js.undefined
-    ): AlexaForBusinessMetadata = {
-      val __obj = js.Dynamic.literal()
-      AlexaForBusinessRoomArn.foreach(__v => __obj.updateDynamic("AlexaForBusinessRoomArn")(__v.asInstanceOf[js.Any]))
-      IsAlexaForBusinessEnabled.foreach(__v =>
-        __obj.updateDynamic("IsAlexaForBusinessEnabled")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[AlexaForBusinessMetadata]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociatePhoneNumberWithUserRequest extends js.Object {
     var AccountId: String
     var E164PhoneNumber: E164PhoneNumber
     var UserId: String
   }
 
-  object AssociatePhoneNumberWithUserRequest {
-    @inline
-    def apply(
-        AccountId: String,
-        E164PhoneNumber: E164PhoneNumber,
-        UserId: String
-    ): AssociatePhoneNumberWithUserRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId"       -> AccountId.asInstanceOf[js.Any],
-        "E164PhoneNumber" -> E164PhoneNumber.asInstanceOf[js.Any],
-        "UserId"          -> UserId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AssociatePhoneNumberWithUserRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociatePhoneNumberWithUserResponse extends js.Object {}
 
-  object AssociatePhoneNumberWithUserResponse {
-    @inline
-    def apply(
-    ): AssociatePhoneNumberWithUserResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[AssociatePhoneNumberWithUserResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociatePhoneNumbersWithVoiceConnectorGroupRequest extends js.Object {
     var VoiceConnectorGroupId: NonEmptyString
     var E164PhoneNumbers: js.UndefOr[E164PhoneNumberList]
     var ForceAssociate: js.UndefOr[NullableBoolean]
   }
 
-  object AssociatePhoneNumbersWithVoiceConnectorGroupRequest {
-    @inline
-    def apply(
-        VoiceConnectorGroupId: NonEmptyString,
-        E164PhoneNumbers: js.UndefOr[E164PhoneNumberList] = js.undefined,
-        ForceAssociate: js.UndefOr[NullableBoolean] = js.undefined
-    ): AssociatePhoneNumbersWithVoiceConnectorGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "VoiceConnectorGroupId" -> VoiceConnectorGroupId.asInstanceOf[js.Any]
-      )
-
-      E164PhoneNumbers.foreach(__v => __obj.updateDynamic("E164PhoneNumbers")(__v.asInstanceOf[js.Any]))
-      ForceAssociate.foreach(__v => __obj.updateDynamic("ForceAssociate")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AssociatePhoneNumbersWithVoiceConnectorGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociatePhoneNumbersWithVoiceConnectorGroupResponse extends js.Object {
     var PhoneNumberErrors: js.UndefOr[PhoneNumberErrorList]
   }
 
-  object AssociatePhoneNumbersWithVoiceConnectorGroupResponse {
-    @inline
-    def apply(
-        PhoneNumberErrors: js.UndefOr[PhoneNumberErrorList] = js.undefined
-    ): AssociatePhoneNumbersWithVoiceConnectorGroupResponse = {
-      val __obj = js.Dynamic.literal()
-      PhoneNumberErrors.foreach(__v => __obj.updateDynamic("PhoneNumberErrors")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AssociatePhoneNumbersWithVoiceConnectorGroupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociatePhoneNumbersWithVoiceConnectorRequest extends js.Object {
     var VoiceConnectorId: NonEmptyString
     var E164PhoneNumbers: js.UndefOr[E164PhoneNumberList]
     var ForceAssociate: js.UndefOr[NullableBoolean]
   }
 
-  object AssociatePhoneNumbersWithVoiceConnectorRequest {
-    @inline
-    def apply(
-        VoiceConnectorId: NonEmptyString,
-        E164PhoneNumbers: js.UndefOr[E164PhoneNumberList] = js.undefined,
-        ForceAssociate: js.UndefOr[NullableBoolean] = js.undefined
-    ): AssociatePhoneNumbersWithVoiceConnectorRequest = {
-      val __obj = js.Dynamic.literal(
-        "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
-      )
-
-      E164PhoneNumbers.foreach(__v => __obj.updateDynamic("E164PhoneNumbers")(__v.asInstanceOf[js.Any]))
-      ForceAssociate.foreach(__v => __obj.updateDynamic("ForceAssociate")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AssociatePhoneNumbersWithVoiceConnectorRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociatePhoneNumbersWithVoiceConnectorResponse extends js.Object {
     var PhoneNumberErrors: js.UndefOr[PhoneNumberErrorList]
   }
 
-  object AssociatePhoneNumbersWithVoiceConnectorResponse {
-    @inline
-    def apply(
-        PhoneNumberErrors: js.UndefOr[PhoneNumberErrorList] = js.undefined
-    ): AssociatePhoneNumbersWithVoiceConnectorResponse = {
-      val __obj = js.Dynamic.literal()
-      PhoneNumberErrors.foreach(__v => __obj.updateDynamic("PhoneNumberErrors")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AssociatePhoneNumbersWithVoiceConnectorResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateSigninDelegateGroupsWithAccountRequest extends js.Object {
     var AccountId: NonEmptyString
     var SigninDelegateGroups: SigninDelegateGroupList
   }
 
-  object AssociateSigninDelegateGroupsWithAccountRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        SigninDelegateGroups: SigninDelegateGroupList
-    ): AssociateSigninDelegateGroupsWithAccountRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId"            -> AccountId.asInstanceOf[js.Any],
-        "SigninDelegateGroups" -> SigninDelegateGroups.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AssociateSigninDelegateGroupsWithAccountRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateSigninDelegateGroupsWithAccountResponse extends js.Object {}
-
-  object AssociateSigninDelegateGroupsWithAccountResponse {
-    @inline
-    def apply(
-    ): AssociateSigninDelegateGroupsWithAccountResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[AssociateSigninDelegateGroupsWithAccountResponse]
-    }
-  }
 
   /**
     * An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code>. The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends or when <a>DeleteAttendee</a> is called. After that, the attendee is unable to join the meeting.
     *  We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.
     */
   @js.native
+  @Factory
   trait Attendee extends js.Object {
     var AttendeeId: js.UndefOr[GuidString]
     var ExternalUserId: js.UndefOr[ExternalUserIdType]
     var JoinToken: js.UndefOr[JoinTokenString]
   }
 
-  object Attendee {
-    @inline
-    def apply(
-        AttendeeId: js.UndefOr[GuidString] = js.undefined,
-        ExternalUserId: js.UndefOr[ExternalUserIdType] = js.undefined,
-        JoinToken: js.UndefOr[JoinTokenString] = js.undefined
-    ): Attendee = {
-      val __obj = js.Dynamic.literal()
-      AttendeeId.foreach(__v => __obj.updateDynamic("AttendeeId")(__v.asInstanceOf[js.Any]))
-      ExternalUserId.foreach(__v => __obj.updateDynamic("ExternalUserId")(__v.asInstanceOf[js.Any]))
-      JoinToken.foreach(__v => __obj.updateDynamic("JoinToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Attendee]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchCreateAttendeeRequest extends js.Object {
     var Attendees: CreateAttendeeRequestItemList
     var MeetingId: GuidString
   }
 
-  object BatchCreateAttendeeRequest {
-    @inline
-    def apply(
-        Attendees: CreateAttendeeRequestItemList,
-        MeetingId: GuidString
-    ): BatchCreateAttendeeRequest = {
-      val __obj = js.Dynamic.literal(
-        "Attendees" -> Attendees.asInstanceOf[js.Any],
-        "MeetingId" -> MeetingId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchCreateAttendeeRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchCreateAttendeeResponse extends js.Object {
     var Attendees: js.UndefOr[AttendeeList]
     var Errors: js.UndefOr[BatchCreateAttendeeErrorList]
   }
 
-  object BatchCreateAttendeeResponse {
-    @inline
-    def apply(
-        Attendees: js.UndefOr[AttendeeList] = js.undefined,
-        Errors: js.UndefOr[BatchCreateAttendeeErrorList] = js.undefined
-    ): BatchCreateAttendeeResponse = {
-      val __obj = js.Dynamic.literal()
-      Attendees.foreach(__v => __obj.updateDynamic("Attendees")(__v.asInstanceOf[js.Any]))
-      Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchCreateAttendeeResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchCreateRoomMembershipRequest extends js.Object {
     var AccountId: NonEmptyString
     var MembershipItemList: MembershipItemList
     var RoomId: NonEmptyString
   }
 
-  object BatchCreateRoomMembershipRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        MembershipItemList: MembershipItemList,
-        RoomId: NonEmptyString
-    ): BatchCreateRoomMembershipRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId"          -> AccountId.asInstanceOf[js.Any],
-        "MembershipItemList" -> MembershipItemList.asInstanceOf[js.Any],
-        "RoomId"             -> RoomId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchCreateRoomMembershipRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchCreateRoomMembershipResponse extends js.Object {
     var Errors: js.UndefOr[MemberErrorList]
   }
 
-  object BatchCreateRoomMembershipResponse {
-    @inline
-    def apply(
-        Errors: js.UndefOr[MemberErrorList] = js.undefined
-    ): BatchCreateRoomMembershipResponse = {
-      val __obj = js.Dynamic.literal()
-      Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchCreateRoomMembershipResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchDeletePhoneNumberRequest extends js.Object {
     var PhoneNumberIds: NonEmptyStringList
   }
 
-  object BatchDeletePhoneNumberRequest {
-    @inline
-    def apply(
-        PhoneNumberIds: NonEmptyStringList
-    ): BatchDeletePhoneNumberRequest = {
-      val __obj = js.Dynamic.literal(
-        "PhoneNumberIds" -> PhoneNumberIds.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchDeletePhoneNumberRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchDeletePhoneNumberResponse extends js.Object {
     var PhoneNumberErrors: js.UndefOr[PhoneNumberErrorList]
   }
 
-  object BatchDeletePhoneNumberResponse {
-    @inline
-    def apply(
-        PhoneNumberErrors: js.UndefOr[PhoneNumberErrorList] = js.undefined
-    ): BatchDeletePhoneNumberResponse = {
-      val __obj = js.Dynamic.literal()
-      PhoneNumberErrors.foreach(__v => __obj.updateDynamic("PhoneNumberErrors")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchDeletePhoneNumberResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchSuspendUserRequest extends js.Object {
     var AccountId: NonEmptyString
     var UserIdList: UserIdList
   }
 
-  object BatchSuspendUserRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        UserIdList: UserIdList
-    ): BatchSuspendUserRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId"  -> AccountId.asInstanceOf[js.Any],
-        "UserIdList" -> UserIdList.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchSuspendUserRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchSuspendUserResponse extends js.Object {
     var UserErrors: js.UndefOr[UserErrorList]
   }
 
-  object BatchSuspendUserResponse {
-    @inline
-    def apply(
-        UserErrors: js.UndefOr[UserErrorList] = js.undefined
-    ): BatchSuspendUserResponse = {
-      val __obj = js.Dynamic.literal()
-      UserErrors.foreach(__v => __obj.updateDynamic("UserErrors")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchSuspendUserResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchUnsuspendUserRequest extends js.Object {
     var AccountId: NonEmptyString
     var UserIdList: UserIdList
   }
 
-  object BatchUnsuspendUserRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        UserIdList: UserIdList
-    ): BatchUnsuspendUserRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId"  -> AccountId.asInstanceOf[js.Any],
-        "UserIdList" -> UserIdList.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchUnsuspendUserRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchUnsuspendUserResponse extends js.Object {
     var UserErrors: js.UndefOr[UserErrorList]
   }
 
-  object BatchUnsuspendUserResponse {
-    @inline
-    def apply(
-        UserErrors: js.UndefOr[UserErrorList] = js.undefined
-    ): BatchUnsuspendUserResponse = {
-      val __obj = js.Dynamic.literal()
-      UserErrors.foreach(__v => __obj.updateDynamic("UserErrors")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchUnsuspendUserResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchUpdatePhoneNumberRequest extends js.Object {
     var UpdatePhoneNumberRequestItems: UpdatePhoneNumberRequestItemList
   }
 
-  object BatchUpdatePhoneNumberRequest {
-    @inline
-    def apply(
-        UpdatePhoneNumberRequestItems: UpdatePhoneNumberRequestItemList
-    ): BatchUpdatePhoneNumberRequest = {
-      val __obj = js.Dynamic.literal(
-        "UpdatePhoneNumberRequestItems" -> UpdatePhoneNumberRequestItems.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchUpdatePhoneNumberRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchUpdatePhoneNumberResponse extends js.Object {
     var PhoneNumberErrors: js.UndefOr[PhoneNumberErrorList]
   }
 
-  object BatchUpdatePhoneNumberResponse {
-    @inline
-    def apply(
-        PhoneNumberErrors: js.UndefOr[PhoneNumberErrorList] = js.undefined
-    ): BatchUpdatePhoneNumberResponse = {
-      val __obj = js.Dynamic.literal()
-      PhoneNumberErrors.foreach(__v => __obj.updateDynamic("PhoneNumberErrors")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchUpdatePhoneNumberResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchUpdateUserRequest extends js.Object {
     var AccountId: NonEmptyString
     var UpdateUserRequestItems: UpdateUserRequestItemList
   }
 
-  object BatchUpdateUserRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        UpdateUserRequestItems: UpdateUserRequestItemList
-    ): BatchUpdateUserRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId"              -> AccountId.asInstanceOf[js.Any],
-        "UpdateUserRequestItems" -> UpdateUserRequestItems.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchUpdateUserRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchUpdateUserResponse extends js.Object {
     var UserErrors: js.UndefOr[UserErrorList]
-  }
-
-  object BatchUpdateUserResponse {
-    @inline
-    def apply(
-        UserErrors: js.UndefOr[UserErrorList] = js.undefined
-    ): BatchUpdateUserResponse = {
-      val __obj = js.Dynamic.literal()
-      UserErrors.foreach(__v => __obj.updateDynamic("UserErrors")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchUpdateUserResponse]
-    }
   }
 
   /**
     * A resource that allows Enterprise account administrators to configure an interface to receive events from Amazon Chime.
     */
   @js.native
+  @Factory
   trait Bot extends js.Object {
     var BotEmail: js.UndefOr[SensitiveString]
     var BotId: js.UndefOr[String]
@@ -1020,33 +688,6 @@ package chime {
     var SecurityToken: js.UndefOr[SensitiveString]
     var UpdatedTimestamp: js.UndefOr[Iso8601Timestamp]
     var UserId: js.UndefOr[String]
-  }
-
-  object Bot {
-    @inline
-    def apply(
-        BotEmail: js.UndefOr[SensitiveString] = js.undefined,
-        BotId: js.UndefOr[String] = js.undefined,
-        BotType: js.UndefOr[BotType] = js.undefined,
-        CreatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
-        Disabled: js.UndefOr[NullableBoolean] = js.undefined,
-        DisplayName: js.UndefOr[SensitiveString] = js.undefined,
-        SecurityToken: js.UndefOr[SensitiveString] = js.undefined,
-        UpdatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
-        UserId: js.UndefOr[String] = js.undefined
-    ): Bot = {
-      val __obj = js.Dynamic.literal()
-      BotEmail.foreach(__v => __obj.updateDynamic("BotEmail")(__v.asInstanceOf[js.Any]))
-      BotId.foreach(__v => __obj.updateDynamic("BotId")(__v.asInstanceOf[js.Any]))
-      BotType.foreach(__v => __obj.updateDynamic("BotType")(__v.asInstanceOf[js.Any]))
-      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
-      Disabled.foreach(__v => __obj.updateDynamic("Disabled")(__v.asInstanceOf[js.Any]))
-      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
-      SecurityToken.foreach(__v => __obj.updateDynamic("SecurityToken")(__v.asInstanceOf[js.Any]))
-      UpdatedTimestamp.foreach(__v => __obj.updateDynamic("UpdatedTimestamp")(__v.asInstanceOf[js.Any]))
-      UserId.foreach(__v => __obj.updateDynamic("UserId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Bot]
-    }
   }
 
   @js.native
@@ -1061,19 +702,9 @@ package chime {
     * The Amazon Chime Business Calling settings for the administrator's AWS account. Includes any Amazon S3 buckets designated for storing call detail records.
     */
   @js.native
+  @Factory
   trait BusinessCallingSettings extends js.Object {
     var CdrBucket: js.UndefOr[String]
-  }
-
-  object BusinessCallingSettings {
-    @inline
-    def apply(
-        CdrBucket: js.UndefOr[String] = js.undefined
-    ): BusinessCallingSettings = {
-      val __obj = js.Dynamic.literal()
-      CdrBucket.foreach(__v => __obj.updateDynamic("CdrBucket")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BusinessCallingSettings]
-    }
   }
 
   @js.native
@@ -1088,163 +719,66 @@ package chime {
   }
 
   @js.native
+  @Factory
   trait CreateAccountRequest extends js.Object {
     var Name: AccountName
   }
 
-  object CreateAccountRequest {
-    @inline
-    def apply(
-        Name: AccountName
-    ): CreateAccountRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateAccountRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateAccountResponse extends js.Object {
     var Account: js.UndefOr[Account]
-  }
-
-  object CreateAccountResponse {
-    @inline
-    def apply(
-        Account: js.UndefOr[Account] = js.undefined
-    ): CreateAccountResponse = {
-      val __obj = js.Dynamic.literal()
-      Account.foreach(__v => __obj.updateDynamic("Account")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateAccountResponse]
-    }
   }
 
   /**
     * The list of errors returned when errors are encountered during the BatchCreateAttendee and CreateAttendee actions. This includes external user IDs, error codes, and error messages.
     */
   @js.native
+  @Factory
   trait CreateAttendeeError extends js.Object {
     var ErrorCode: js.UndefOr[String]
     var ErrorMessage: js.UndefOr[String]
     var ExternalUserId: js.UndefOr[ExternalUserIdType]
   }
 
-  object CreateAttendeeError {
-    @inline
-    def apply(
-        ErrorCode: js.UndefOr[String] = js.undefined,
-        ErrorMessage: js.UndefOr[String] = js.undefined,
-        ExternalUserId: js.UndefOr[ExternalUserIdType] = js.undefined
-    ): CreateAttendeeError = {
-      val __obj = js.Dynamic.literal()
-      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
-      ExternalUserId.foreach(__v => __obj.updateDynamic("ExternalUserId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateAttendeeError]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateAttendeeRequest extends js.Object {
     var ExternalUserId: ExternalUserIdType
     var MeetingId: GuidString
-  }
-
-  object CreateAttendeeRequest {
-    @inline
-    def apply(
-        ExternalUserId: ExternalUserIdType,
-        MeetingId: GuidString
-    ): CreateAttendeeRequest = {
-      val __obj = js.Dynamic.literal(
-        "ExternalUserId" -> ExternalUserId.asInstanceOf[js.Any],
-        "MeetingId"      -> MeetingId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateAttendeeRequest]
-    }
   }
 
   /**
     * The Amazon Chime SDK attendee fields to create, used with the BatchCreateAttendee action.
     */
   @js.native
+  @Factory
   trait CreateAttendeeRequestItem extends js.Object {
     var ExternalUserId: ExternalUserIdType
   }
 
-  object CreateAttendeeRequestItem {
-    @inline
-    def apply(
-        ExternalUserId: ExternalUserIdType
-    ): CreateAttendeeRequestItem = {
-      val __obj = js.Dynamic.literal(
-        "ExternalUserId" -> ExternalUserId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateAttendeeRequestItem]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateAttendeeResponse extends js.Object {
     var Attendee: js.UndefOr[Attendee]
   }
 
-  object CreateAttendeeResponse {
-    @inline
-    def apply(
-        Attendee: js.UndefOr[Attendee] = js.undefined
-    ): CreateAttendeeResponse = {
-      val __obj = js.Dynamic.literal()
-      Attendee.foreach(__v => __obj.updateDynamic("Attendee")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateAttendeeResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateBotRequest extends js.Object {
     var AccountId: NonEmptyString
     var DisplayName: SensitiveString
     var Domain: js.UndefOr[NonEmptyString]
   }
 
-  object CreateBotRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        DisplayName: SensitiveString,
-        Domain: js.UndefOr[NonEmptyString] = js.undefined
-    ): CreateBotRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId"   -> AccountId.asInstanceOf[js.Any],
-        "DisplayName" -> DisplayName.asInstanceOf[js.Any]
-      )
-
-      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateBotRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateBotResponse extends js.Object {
     var Bot: js.UndefOr[Bot]
   }
 
-  object CreateBotResponse {
-    @inline
-    def apply(
-        Bot: js.UndefOr[Bot] = js.undefined
-    ): CreateBotResponse = {
-      val __obj = js.Dynamic.literal()
-      Bot.foreach(__v => __obj.updateDynamic("Bot")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateBotResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateMeetingRequest extends js.Object {
     var ClientRequestToken: ClientRequestToken
     var MediaRegion: js.UndefOr[String]
@@ -1252,81 +786,27 @@ package chime {
     var NotificationsConfiguration: js.UndefOr[MeetingNotificationConfiguration]
   }
 
-  object CreateMeetingRequest {
-    @inline
-    def apply(
-        ClientRequestToken: ClientRequestToken,
-        MediaRegion: js.UndefOr[String] = js.undefined,
-        MeetingHostId: js.UndefOr[ExternalUserIdType] = js.undefined,
-        NotificationsConfiguration: js.UndefOr[MeetingNotificationConfiguration] = js.undefined
-    ): CreateMeetingRequest = {
-      val __obj = js.Dynamic.literal(
-        "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any]
-      )
-
-      MediaRegion.foreach(__v => __obj.updateDynamic("MediaRegion")(__v.asInstanceOf[js.Any]))
-      MeetingHostId.foreach(__v => __obj.updateDynamic("MeetingHostId")(__v.asInstanceOf[js.Any]))
-      NotificationsConfiguration.foreach(__v =>
-        __obj.updateDynamic("NotificationsConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[CreateMeetingRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateMeetingResponse extends js.Object {
     var Meeting: js.UndefOr[Meeting]
   }
 
-  object CreateMeetingResponse {
-    @inline
-    def apply(
-        Meeting: js.UndefOr[Meeting] = js.undefined
-    ): CreateMeetingResponse = {
-      val __obj = js.Dynamic.literal()
-      Meeting.foreach(__v => __obj.updateDynamic("Meeting")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateMeetingResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreatePhoneNumberOrderRequest extends js.Object {
     var E164PhoneNumbers: E164PhoneNumberList
     var ProductType: PhoneNumberProductType
   }
 
-  object CreatePhoneNumberOrderRequest {
-    @inline
-    def apply(
-        E164PhoneNumbers: E164PhoneNumberList,
-        ProductType: PhoneNumberProductType
-    ): CreatePhoneNumberOrderRequest = {
-      val __obj = js.Dynamic.literal(
-        "E164PhoneNumbers" -> E164PhoneNumbers.asInstanceOf[js.Any],
-        "ProductType"      -> ProductType.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreatePhoneNumberOrderRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreatePhoneNumberOrderResponse extends js.Object {
     var PhoneNumberOrder: js.UndefOr[PhoneNumberOrder]
   }
 
-  object CreatePhoneNumberOrderResponse {
-    @inline
-    def apply(
-        PhoneNumberOrder: js.UndefOr[PhoneNumberOrder] = js.undefined
-    ): CreatePhoneNumberOrderResponse = {
-      val __obj = js.Dynamic.literal()
-      PhoneNumberOrder.foreach(__v => __obj.updateDynamic("PhoneNumberOrder")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreatePhoneNumberOrderResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateRoomMembershipRequest extends js.Object {
     var AccountId: NonEmptyString
     var MemberId: NonEmptyString
@@ -1334,82 +814,28 @@ package chime {
     var Role: js.UndefOr[RoomMembershipRole]
   }
 
-  object CreateRoomMembershipRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        MemberId: NonEmptyString,
-        RoomId: NonEmptyString,
-        Role: js.UndefOr[RoomMembershipRole] = js.undefined
-    ): CreateRoomMembershipRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "MemberId"  -> MemberId.asInstanceOf[js.Any],
-        "RoomId"    -> RoomId.asInstanceOf[js.Any]
-      )
-
-      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRoomMembershipRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateRoomMembershipResponse extends js.Object {
     var RoomMembership: js.UndefOr[RoomMembership]
   }
 
-  object CreateRoomMembershipResponse {
-    @inline
-    def apply(
-        RoomMembership: js.UndefOr[RoomMembership] = js.undefined
-    ): CreateRoomMembershipResponse = {
-      val __obj = js.Dynamic.literal()
-      RoomMembership.foreach(__v => __obj.updateDynamic("RoomMembership")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRoomMembershipResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateRoomRequest extends js.Object {
     var AccountId: NonEmptyString
     var Name: SensitiveString
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
   }
 
-  object CreateRoomRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        Name: SensitiveString,
-        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined
-    ): CreateRoomRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRoomRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateRoomResponse extends js.Object {
     var Room: js.UndefOr[Room]
   }
 
-  object CreateRoomResponse {
-    @inline
-    def apply(
-        Room: js.UndefOr[Room] = js.undefined
-    ): CreateRoomResponse = {
-      val __obj = js.Dynamic.literal()
-      Room.foreach(__v => __obj.updateDynamic("Room")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRoomResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateUserRequest extends js.Object {
     var AccountId: NonEmptyString
     var Email: js.UndefOr[EmailAddress]
@@ -1417,546 +843,184 @@ package chime {
     var Username: js.UndefOr[String]
   }
 
-  object CreateUserRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        Email: js.UndefOr[EmailAddress] = js.undefined,
-        UserType: js.UndefOr[UserType] = js.undefined,
-        Username: js.UndefOr[String] = js.undefined
-    ): CreateUserRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any]
-      )
-
-      Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
-      UserType.foreach(__v => __obj.updateDynamic("UserType")(__v.asInstanceOf[js.Any]))
-      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateUserRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateUserResponse extends js.Object {
     var User: js.UndefOr[User]
   }
 
-  object CreateUserResponse {
-    @inline
-    def apply(
-        User: js.UndefOr[User] = js.undefined
-    ): CreateUserResponse = {
-      val __obj = js.Dynamic.literal()
-      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateUserResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateVoiceConnectorGroupRequest extends js.Object {
     var Name: VoiceConnectorGroupName
     var VoiceConnectorItems: js.UndefOr[VoiceConnectorItemList]
   }
 
-  object CreateVoiceConnectorGroupRequest {
-    @inline
-    def apply(
-        Name: VoiceConnectorGroupName,
-        VoiceConnectorItems: js.UndefOr[VoiceConnectorItemList] = js.undefined
-    ): CreateVoiceConnectorGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      VoiceConnectorItems.foreach(__v => __obj.updateDynamic("VoiceConnectorItems")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateVoiceConnectorGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateVoiceConnectorGroupResponse extends js.Object {
     var VoiceConnectorGroup: js.UndefOr[VoiceConnectorGroup]
   }
 
-  object CreateVoiceConnectorGroupResponse {
-    @inline
-    def apply(
-        VoiceConnectorGroup: js.UndefOr[VoiceConnectorGroup] = js.undefined
-    ): CreateVoiceConnectorGroupResponse = {
-      val __obj = js.Dynamic.literal()
-      VoiceConnectorGroup.foreach(__v => __obj.updateDynamic("VoiceConnectorGroup")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateVoiceConnectorGroupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateVoiceConnectorRequest extends js.Object {
     var Name: VoiceConnectorName
     var RequireEncryption: Boolean
     var AwsRegion: js.UndefOr[VoiceConnectorAwsRegion]
   }
 
-  object CreateVoiceConnectorRequest {
-    @inline
-    def apply(
-        Name: VoiceConnectorName,
-        RequireEncryption: Boolean,
-        AwsRegion: js.UndefOr[VoiceConnectorAwsRegion] = js.undefined
-    ): CreateVoiceConnectorRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name"              -> Name.asInstanceOf[js.Any],
-        "RequireEncryption" -> RequireEncryption.asInstanceOf[js.Any]
-      )
-
-      AwsRegion.foreach(__v => __obj.updateDynamic("AwsRegion")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateVoiceConnectorRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateVoiceConnectorResponse extends js.Object {
     var VoiceConnector: js.UndefOr[VoiceConnector]
-  }
-
-  object CreateVoiceConnectorResponse {
-    @inline
-    def apply(
-        VoiceConnector: js.UndefOr[VoiceConnector] = js.undefined
-    ): CreateVoiceConnectorResponse = {
-      val __obj = js.Dynamic.literal()
-      VoiceConnector.foreach(__v => __obj.updateDynamic("VoiceConnector")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateVoiceConnectorResponse]
-    }
   }
 
   /**
     * The SIP credentials used to authenticate requests to your Amazon Chime Voice Connector.
     */
   @js.native
+  @Factory
   trait Credential extends js.Object {
     var Password: js.UndefOr[SensitiveString]
     var Username: js.UndefOr[SensitiveString]
   }
 
-  object Credential {
-    @inline
-    def apply(
-        Password: js.UndefOr[SensitiveString] = js.undefined,
-        Username: js.UndefOr[SensitiveString] = js.undefined
-    ): Credential = {
-      val __obj = js.Dynamic.literal()
-      Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
-      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Credential]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteAccountRequest extends js.Object {
     var AccountId: NonEmptyString
   }
 
-  object DeleteAccountRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString
-    ): DeleteAccountRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteAccountRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteAccountResponse extends js.Object {}
 
-  object DeleteAccountResponse {
-    @inline
-    def apply(
-    ): DeleteAccountResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteAccountResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteAttendeeRequest extends js.Object {
     var AttendeeId: GuidString
     var MeetingId: GuidString
   }
 
-  object DeleteAttendeeRequest {
-    @inline
-    def apply(
-        AttendeeId: GuidString,
-        MeetingId: GuidString
-    ): DeleteAttendeeRequest = {
-      val __obj = js.Dynamic.literal(
-        "AttendeeId" -> AttendeeId.asInstanceOf[js.Any],
-        "MeetingId"  -> MeetingId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteAttendeeRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteEventsConfigurationRequest extends js.Object {
     var AccountId: NonEmptyString
     var BotId: NonEmptyString
   }
 
-  object DeleteEventsConfigurationRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        BotId: NonEmptyString
-    ): DeleteEventsConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "BotId"     -> BotId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteEventsConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteMeetingRequest extends js.Object {
     var MeetingId: GuidString
   }
 
-  object DeleteMeetingRequest {
-    @inline
-    def apply(
-        MeetingId: GuidString
-    ): DeleteMeetingRequest = {
-      val __obj = js.Dynamic.literal(
-        "MeetingId" -> MeetingId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteMeetingRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeletePhoneNumberRequest extends js.Object {
     var PhoneNumberId: String
   }
 
-  object DeletePhoneNumberRequest {
-    @inline
-    def apply(
-        PhoneNumberId: String
-    ): DeletePhoneNumberRequest = {
-      val __obj = js.Dynamic.literal(
-        "PhoneNumberId" -> PhoneNumberId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeletePhoneNumberRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteRoomMembershipRequest extends js.Object {
     var AccountId: NonEmptyString
     var MemberId: NonEmptyString
     var RoomId: NonEmptyString
   }
 
-  object DeleteRoomMembershipRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        MemberId: NonEmptyString,
-        RoomId: NonEmptyString
-    ): DeleteRoomMembershipRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "MemberId"  -> MemberId.asInstanceOf[js.Any],
-        "RoomId"    -> RoomId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteRoomMembershipRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteRoomRequest extends js.Object {
     var AccountId: NonEmptyString
     var RoomId: NonEmptyString
   }
 
-  object DeleteRoomRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        RoomId: NonEmptyString
-    ): DeleteRoomRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "RoomId"    -> RoomId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteRoomRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteVoiceConnectorGroupRequest extends js.Object {
     var VoiceConnectorGroupId: NonEmptyString
   }
 
-  object DeleteVoiceConnectorGroupRequest {
-    @inline
-    def apply(
-        VoiceConnectorGroupId: NonEmptyString
-    ): DeleteVoiceConnectorGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "VoiceConnectorGroupId" -> VoiceConnectorGroupId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteVoiceConnectorGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteVoiceConnectorOriginationRequest extends js.Object {
     var VoiceConnectorId: NonEmptyString
   }
 
-  object DeleteVoiceConnectorOriginationRequest {
-    @inline
-    def apply(
-        VoiceConnectorId: NonEmptyString
-    ): DeleteVoiceConnectorOriginationRequest = {
-      val __obj = js.Dynamic.literal(
-        "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteVoiceConnectorOriginationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteVoiceConnectorRequest extends js.Object {
     var VoiceConnectorId: NonEmptyString
   }
 
-  object DeleteVoiceConnectorRequest {
-    @inline
-    def apply(
-        VoiceConnectorId: NonEmptyString
-    ): DeleteVoiceConnectorRequest = {
-      val __obj = js.Dynamic.literal(
-        "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteVoiceConnectorRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteVoiceConnectorStreamingConfigurationRequest extends js.Object {
     var VoiceConnectorId: NonEmptyString
   }
 
-  object DeleteVoiceConnectorStreamingConfigurationRequest {
-    @inline
-    def apply(
-        VoiceConnectorId: NonEmptyString
-    ): DeleteVoiceConnectorStreamingConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteVoiceConnectorStreamingConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteVoiceConnectorTerminationCredentialsRequest extends js.Object {
     var VoiceConnectorId: NonEmptyString
     var Usernames: js.UndefOr[SensitiveStringList]
   }
 
-  object DeleteVoiceConnectorTerminationCredentialsRequest {
-    @inline
-    def apply(
-        VoiceConnectorId: NonEmptyString,
-        Usernames: js.UndefOr[SensitiveStringList] = js.undefined
-    ): DeleteVoiceConnectorTerminationCredentialsRequest = {
-      val __obj = js.Dynamic.literal(
-        "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
-      )
-
-      Usernames.foreach(__v => __obj.updateDynamic("Usernames")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteVoiceConnectorTerminationCredentialsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteVoiceConnectorTerminationRequest extends js.Object {
     var VoiceConnectorId: NonEmptyString
   }
 
-  object DeleteVoiceConnectorTerminationRequest {
-    @inline
-    def apply(
-        VoiceConnectorId: NonEmptyString
-    ): DeleteVoiceConnectorTerminationRequest = {
-      val __obj = js.Dynamic.literal(
-        "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteVoiceConnectorTerminationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociatePhoneNumberFromUserRequest extends js.Object {
     var AccountId: String
     var UserId: String
   }
 
-  object DisassociatePhoneNumberFromUserRequest {
-    @inline
-    def apply(
-        AccountId: String,
-        UserId: String
-    ): DisassociatePhoneNumberFromUserRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "UserId"    -> UserId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisassociatePhoneNumberFromUserRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociatePhoneNumberFromUserResponse extends js.Object {}
 
-  object DisassociatePhoneNumberFromUserResponse {
-    @inline
-    def apply(
-    ): DisassociatePhoneNumberFromUserResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DisassociatePhoneNumberFromUserResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociatePhoneNumbersFromVoiceConnectorGroupRequest extends js.Object {
     var VoiceConnectorGroupId: NonEmptyString
     var E164PhoneNumbers: js.UndefOr[E164PhoneNumberList]
   }
 
-  object DisassociatePhoneNumbersFromVoiceConnectorGroupRequest {
-    @inline
-    def apply(
-        VoiceConnectorGroupId: NonEmptyString,
-        E164PhoneNumbers: js.UndefOr[E164PhoneNumberList] = js.undefined
-    ): DisassociatePhoneNumbersFromVoiceConnectorGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "VoiceConnectorGroupId" -> VoiceConnectorGroupId.asInstanceOf[js.Any]
-      )
-
-      E164PhoneNumbers.foreach(__v => __obj.updateDynamic("E164PhoneNumbers")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DisassociatePhoneNumbersFromVoiceConnectorGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociatePhoneNumbersFromVoiceConnectorGroupResponse extends js.Object {
     var PhoneNumberErrors: js.UndefOr[PhoneNumberErrorList]
   }
 
-  object DisassociatePhoneNumbersFromVoiceConnectorGroupResponse {
-    @inline
-    def apply(
-        PhoneNumberErrors: js.UndefOr[PhoneNumberErrorList] = js.undefined
-    ): DisassociatePhoneNumbersFromVoiceConnectorGroupResponse = {
-      val __obj = js.Dynamic.literal()
-      PhoneNumberErrors.foreach(__v => __obj.updateDynamic("PhoneNumberErrors")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DisassociatePhoneNumbersFromVoiceConnectorGroupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociatePhoneNumbersFromVoiceConnectorRequest extends js.Object {
     var VoiceConnectorId: NonEmptyString
     var E164PhoneNumbers: js.UndefOr[E164PhoneNumberList]
   }
 
-  object DisassociatePhoneNumbersFromVoiceConnectorRequest {
-    @inline
-    def apply(
-        VoiceConnectorId: NonEmptyString,
-        E164PhoneNumbers: js.UndefOr[E164PhoneNumberList] = js.undefined
-    ): DisassociatePhoneNumbersFromVoiceConnectorRequest = {
-      val __obj = js.Dynamic.literal(
-        "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
-      )
-
-      E164PhoneNumbers.foreach(__v => __obj.updateDynamic("E164PhoneNumbers")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DisassociatePhoneNumbersFromVoiceConnectorRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociatePhoneNumbersFromVoiceConnectorResponse extends js.Object {
     var PhoneNumberErrors: js.UndefOr[PhoneNumberErrorList]
   }
 
-  object DisassociatePhoneNumbersFromVoiceConnectorResponse {
-    @inline
-    def apply(
-        PhoneNumberErrors: js.UndefOr[PhoneNumberErrorList] = js.undefined
-    ): DisassociatePhoneNumbersFromVoiceConnectorResponse = {
-      val __obj = js.Dynamic.literal()
-      PhoneNumberErrors.foreach(__v => __obj.updateDynamic("PhoneNumberErrors")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DisassociatePhoneNumbersFromVoiceConnectorResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateSigninDelegateGroupsFromAccountRequest extends js.Object {
     var AccountId: NonEmptyString
     var GroupNames: NonEmptyStringList
   }
 
-  object DisassociateSigninDelegateGroupsFromAccountRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        GroupNames: NonEmptyStringList
-    ): DisassociateSigninDelegateGroupsFromAccountRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId"  -> AccountId.asInstanceOf[js.Any],
-        "GroupNames" -> GroupNames.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisassociateSigninDelegateGroupsFromAccountRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateSigninDelegateGroupsFromAccountResponse extends js.Object {}
-
-  object DisassociateSigninDelegateGroupsFromAccountResponse {
-    @inline
-    def apply(
-    ): DisassociateSigninDelegateGroupsFromAccountResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DisassociateSigninDelegateGroupsFromAccountResponse]
-    }
-  }
 
   @js.native
   sealed trait EmailStatus extends js.Any
@@ -2010,725 +1074,259 @@ package chime {
     * The configuration that allows a bot to receive outgoing events. Can be either an HTTPS endpoint or a Lambda function ARN.
     */
   @js.native
+  @Factory
   trait EventsConfiguration extends js.Object {
     var BotId: js.UndefOr[String]
     var LambdaFunctionArn: js.UndefOr[SensitiveString]
     var OutboundEventsHTTPSEndpoint: js.UndefOr[SensitiveString]
   }
 
-  object EventsConfiguration {
-    @inline
-    def apply(
-        BotId: js.UndefOr[String] = js.undefined,
-        LambdaFunctionArn: js.UndefOr[SensitiveString] = js.undefined,
-        OutboundEventsHTTPSEndpoint: js.UndefOr[SensitiveString] = js.undefined
-    ): EventsConfiguration = {
-      val __obj = js.Dynamic.literal()
-      BotId.foreach(__v => __obj.updateDynamic("BotId")(__v.asInstanceOf[js.Any]))
-      LambdaFunctionArn.foreach(__v => __obj.updateDynamic("LambdaFunctionArn")(__v.asInstanceOf[js.Any]))
-      OutboundEventsHTTPSEndpoint.foreach(__v =>
-        __obj.updateDynamic("OutboundEventsHTTPSEndpoint")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[EventsConfiguration]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetAccountRequest extends js.Object {
     var AccountId: NonEmptyString
   }
 
-  object GetAccountRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString
-    ): GetAccountRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetAccountRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetAccountResponse extends js.Object {
     var Account: js.UndefOr[Account]
   }
 
-  object GetAccountResponse {
-    @inline
-    def apply(
-        Account: js.UndefOr[Account] = js.undefined
-    ): GetAccountResponse = {
-      val __obj = js.Dynamic.literal()
-      Account.foreach(__v => __obj.updateDynamic("Account")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetAccountResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetAccountSettingsRequest extends js.Object {
     var AccountId: NonEmptyString
   }
 
-  object GetAccountSettingsRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString
-    ): GetAccountSettingsRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetAccountSettingsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetAccountSettingsResponse extends js.Object {
     var AccountSettings: js.UndefOr[AccountSettings]
   }
 
-  object GetAccountSettingsResponse {
-    @inline
-    def apply(
-        AccountSettings: js.UndefOr[AccountSettings] = js.undefined
-    ): GetAccountSettingsResponse = {
-      val __obj = js.Dynamic.literal()
-      AccountSettings.foreach(__v => __obj.updateDynamic("AccountSettings")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetAccountSettingsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetAttendeeRequest extends js.Object {
     var AttendeeId: GuidString
     var MeetingId: GuidString
   }
 
-  object GetAttendeeRequest {
-    @inline
-    def apply(
-        AttendeeId: GuidString,
-        MeetingId: GuidString
-    ): GetAttendeeRequest = {
-      val __obj = js.Dynamic.literal(
-        "AttendeeId" -> AttendeeId.asInstanceOf[js.Any],
-        "MeetingId"  -> MeetingId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetAttendeeRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetAttendeeResponse extends js.Object {
     var Attendee: js.UndefOr[Attendee]
   }
 
-  object GetAttendeeResponse {
-    @inline
-    def apply(
-        Attendee: js.UndefOr[Attendee] = js.undefined
-    ): GetAttendeeResponse = {
-      val __obj = js.Dynamic.literal()
-      Attendee.foreach(__v => __obj.updateDynamic("Attendee")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetAttendeeResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBotRequest extends js.Object {
     var AccountId: NonEmptyString
     var BotId: NonEmptyString
   }
 
-  object GetBotRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        BotId: NonEmptyString
-    ): GetBotRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "BotId"     -> BotId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBotRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBotResponse extends js.Object {
     var Bot: js.UndefOr[Bot]
   }
 
-  object GetBotResponse {
-    @inline
-    def apply(
-        Bot: js.UndefOr[Bot] = js.undefined
-    ): GetBotResponse = {
-      val __obj = js.Dynamic.literal()
-      Bot.foreach(__v => __obj.updateDynamic("Bot")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBotResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetEventsConfigurationRequest extends js.Object {
     var AccountId: NonEmptyString
     var BotId: NonEmptyString
   }
 
-  object GetEventsConfigurationRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        BotId: NonEmptyString
-    ): GetEventsConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "BotId"     -> BotId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetEventsConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetEventsConfigurationResponse extends js.Object {
     var EventsConfiguration: js.UndefOr[EventsConfiguration]
   }
 
-  object GetEventsConfigurationResponse {
-    @inline
-    def apply(
-        EventsConfiguration: js.UndefOr[EventsConfiguration] = js.undefined
-    ): GetEventsConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-      EventsConfiguration.foreach(__v => __obj.updateDynamic("EventsConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetEventsConfigurationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetGlobalSettingsResponse extends js.Object {
     var BusinessCalling: js.UndefOr[BusinessCallingSettings]
     var VoiceConnector: js.UndefOr[VoiceConnectorSettings]
   }
 
-  object GetGlobalSettingsResponse {
-    @inline
-    def apply(
-        BusinessCalling: js.UndefOr[BusinessCallingSettings] = js.undefined,
-        VoiceConnector: js.UndefOr[VoiceConnectorSettings] = js.undefined
-    ): GetGlobalSettingsResponse = {
-      val __obj = js.Dynamic.literal()
-      BusinessCalling.foreach(__v => __obj.updateDynamic("BusinessCalling")(__v.asInstanceOf[js.Any]))
-      VoiceConnector.foreach(__v => __obj.updateDynamic("VoiceConnector")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetGlobalSettingsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetMeetingRequest extends js.Object {
     var MeetingId: GuidString
   }
 
-  object GetMeetingRequest {
-    @inline
-    def apply(
-        MeetingId: GuidString
-    ): GetMeetingRequest = {
-      val __obj = js.Dynamic.literal(
-        "MeetingId" -> MeetingId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetMeetingRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetMeetingResponse extends js.Object {
     var Meeting: js.UndefOr[Meeting]
   }
 
-  object GetMeetingResponse {
-    @inline
-    def apply(
-        Meeting: js.UndefOr[Meeting] = js.undefined
-    ): GetMeetingResponse = {
-      val __obj = js.Dynamic.literal()
-      Meeting.foreach(__v => __obj.updateDynamic("Meeting")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetMeetingResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetPhoneNumberOrderRequest extends js.Object {
     var PhoneNumberOrderId: GuidString
   }
 
-  object GetPhoneNumberOrderRequest {
-    @inline
-    def apply(
-        PhoneNumberOrderId: GuidString
-    ): GetPhoneNumberOrderRequest = {
-      val __obj = js.Dynamic.literal(
-        "PhoneNumberOrderId" -> PhoneNumberOrderId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetPhoneNumberOrderRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetPhoneNumberOrderResponse extends js.Object {
     var PhoneNumberOrder: js.UndefOr[PhoneNumberOrder]
   }
 
-  object GetPhoneNumberOrderResponse {
-    @inline
-    def apply(
-        PhoneNumberOrder: js.UndefOr[PhoneNumberOrder] = js.undefined
-    ): GetPhoneNumberOrderResponse = {
-      val __obj = js.Dynamic.literal()
-      PhoneNumberOrder.foreach(__v => __obj.updateDynamic("PhoneNumberOrder")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetPhoneNumberOrderResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetPhoneNumberRequest extends js.Object {
     var PhoneNumberId: String
   }
 
-  object GetPhoneNumberRequest {
-    @inline
-    def apply(
-        PhoneNumberId: String
-    ): GetPhoneNumberRequest = {
-      val __obj = js.Dynamic.literal(
-        "PhoneNumberId" -> PhoneNumberId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetPhoneNumberRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetPhoneNumberResponse extends js.Object {
     var PhoneNumber: js.UndefOr[PhoneNumber]
   }
 
-  object GetPhoneNumberResponse {
-    @inline
-    def apply(
-        PhoneNumber: js.UndefOr[PhoneNumber] = js.undefined
-    ): GetPhoneNumberResponse = {
-      val __obj = js.Dynamic.literal()
-      PhoneNumber.foreach(__v => __obj.updateDynamic("PhoneNumber")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetPhoneNumberResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetPhoneNumberSettingsResponse extends js.Object {
     var CallingName: js.UndefOr[CallingName]
     var CallingNameUpdatedTimestamp: js.UndefOr[Iso8601Timestamp]
   }
 
-  object GetPhoneNumberSettingsResponse {
-    @inline
-    def apply(
-        CallingName: js.UndefOr[CallingName] = js.undefined,
-        CallingNameUpdatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined
-    ): GetPhoneNumberSettingsResponse = {
-      val __obj = js.Dynamic.literal()
-      CallingName.foreach(__v => __obj.updateDynamic("CallingName")(__v.asInstanceOf[js.Any]))
-      CallingNameUpdatedTimestamp.foreach(__v =>
-        __obj.updateDynamic("CallingNameUpdatedTimestamp")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[GetPhoneNumberSettingsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRoomRequest extends js.Object {
     var AccountId: NonEmptyString
     var RoomId: NonEmptyString
   }
 
-  object GetRoomRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        RoomId: NonEmptyString
-    ): GetRoomRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "RoomId"    -> RoomId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetRoomRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRoomResponse extends js.Object {
     var Room: js.UndefOr[Room]
   }
 
-  object GetRoomResponse {
-    @inline
-    def apply(
-        Room: js.UndefOr[Room] = js.undefined
-    ): GetRoomResponse = {
-      val __obj = js.Dynamic.literal()
-      Room.foreach(__v => __obj.updateDynamic("Room")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRoomResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetUserRequest extends js.Object {
     var AccountId: NonEmptyString
     var UserId: NonEmptyString
   }
 
-  object GetUserRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        UserId: NonEmptyString
-    ): GetUserRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "UserId"    -> UserId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetUserRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetUserResponse extends js.Object {
     var User: js.UndefOr[User]
   }
 
-  object GetUserResponse {
-    @inline
-    def apply(
-        User: js.UndefOr[User] = js.undefined
-    ): GetUserResponse = {
-      val __obj = js.Dynamic.literal()
-      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetUserResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetUserSettingsRequest extends js.Object {
     var AccountId: String
     var UserId: String
   }
 
-  object GetUserSettingsRequest {
-    @inline
-    def apply(
-        AccountId: String,
-        UserId: String
-    ): GetUserSettingsRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "UserId"    -> UserId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetUserSettingsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetUserSettingsResponse extends js.Object {
     var UserSettings: js.UndefOr[UserSettings]
   }
 
-  object GetUserSettingsResponse {
-    @inline
-    def apply(
-        UserSettings: js.UndefOr[UserSettings] = js.undefined
-    ): GetUserSettingsResponse = {
-      val __obj = js.Dynamic.literal()
-      UserSettings.foreach(__v => __obj.updateDynamic("UserSettings")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetUserSettingsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetVoiceConnectorGroupRequest extends js.Object {
     var VoiceConnectorGroupId: NonEmptyString
   }
 
-  object GetVoiceConnectorGroupRequest {
-    @inline
-    def apply(
-        VoiceConnectorGroupId: NonEmptyString
-    ): GetVoiceConnectorGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "VoiceConnectorGroupId" -> VoiceConnectorGroupId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetVoiceConnectorGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetVoiceConnectorGroupResponse extends js.Object {
     var VoiceConnectorGroup: js.UndefOr[VoiceConnectorGroup]
   }
 
-  object GetVoiceConnectorGroupResponse {
-    @inline
-    def apply(
-        VoiceConnectorGroup: js.UndefOr[VoiceConnectorGroup] = js.undefined
-    ): GetVoiceConnectorGroupResponse = {
-      val __obj = js.Dynamic.literal()
-      VoiceConnectorGroup.foreach(__v => __obj.updateDynamic("VoiceConnectorGroup")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetVoiceConnectorGroupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetVoiceConnectorLoggingConfigurationRequest extends js.Object {
     var VoiceConnectorId: NonEmptyString
   }
 
-  object GetVoiceConnectorLoggingConfigurationRequest {
-    @inline
-    def apply(
-        VoiceConnectorId: NonEmptyString
-    ): GetVoiceConnectorLoggingConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetVoiceConnectorLoggingConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetVoiceConnectorLoggingConfigurationResponse extends js.Object {
     var LoggingConfiguration: js.UndefOr[LoggingConfiguration]
   }
 
-  object GetVoiceConnectorLoggingConfigurationResponse {
-    @inline
-    def apply(
-        LoggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined
-    ): GetVoiceConnectorLoggingConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-      LoggingConfiguration.foreach(__v => __obj.updateDynamic("LoggingConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetVoiceConnectorLoggingConfigurationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetVoiceConnectorOriginationRequest extends js.Object {
     var VoiceConnectorId: NonEmptyString
   }
 
-  object GetVoiceConnectorOriginationRequest {
-    @inline
-    def apply(
-        VoiceConnectorId: NonEmptyString
-    ): GetVoiceConnectorOriginationRequest = {
-      val __obj = js.Dynamic.literal(
-        "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetVoiceConnectorOriginationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetVoiceConnectorOriginationResponse extends js.Object {
     var Origination: js.UndefOr[Origination]
   }
 
-  object GetVoiceConnectorOriginationResponse {
-    @inline
-    def apply(
-        Origination: js.UndefOr[Origination] = js.undefined
-    ): GetVoiceConnectorOriginationResponse = {
-      val __obj = js.Dynamic.literal()
-      Origination.foreach(__v => __obj.updateDynamic("Origination")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetVoiceConnectorOriginationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetVoiceConnectorRequest extends js.Object {
     var VoiceConnectorId: NonEmptyString
   }
 
-  object GetVoiceConnectorRequest {
-    @inline
-    def apply(
-        VoiceConnectorId: NonEmptyString
-    ): GetVoiceConnectorRequest = {
-      val __obj = js.Dynamic.literal(
-        "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetVoiceConnectorRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetVoiceConnectorResponse extends js.Object {
     var VoiceConnector: js.UndefOr[VoiceConnector]
   }
 
-  object GetVoiceConnectorResponse {
-    @inline
-    def apply(
-        VoiceConnector: js.UndefOr[VoiceConnector] = js.undefined
-    ): GetVoiceConnectorResponse = {
-      val __obj = js.Dynamic.literal()
-      VoiceConnector.foreach(__v => __obj.updateDynamic("VoiceConnector")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetVoiceConnectorResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetVoiceConnectorStreamingConfigurationRequest extends js.Object {
     var VoiceConnectorId: NonEmptyString
   }
 
-  object GetVoiceConnectorStreamingConfigurationRequest {
-    @inline
-    def apply(
-        VoiceConnectorId: NonEmptyString
-    ): GetVoiceConnectorStreamingConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetVoiceConnectorStreamingConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetVoiceConnectorStreamingConfigurationResponse extends js.Object {
     var StreamingConfiguration: js.UndefOr[StreamingConfiguration]
   }
 
-  object GetVoiceConnectorStreamingConfigurationResponse {
-    @inline
-    def apply(
-        StreamingConfiguration: js.UndefOr[StreamingConfiguration] = js.undefined
-    ): GetVoiceConnectorStreamingConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-      StreamingConfiguration.foreach(__v => __obj.updateDynamic("StreamingConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetVoiceConnectorStreamingConfigurationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetVoiceConnectorTerminationHealthRequest extends js.Object {
     var VoiceConnectorId: NonEmptyString
   }
 
-  object GetVoiceConnectorTerminationHealthRequest {
-    @inline
-    def apply(
-        VoiceConnectorId: NonEmptyString
-    ): GetVoiceConnectorTerminationHealthRequest = {
-      val __obj = js.Dynamic.literal(
-        "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetVoiceConnectorTerminationHealthRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetVoiceConnectorTerminationHealthResponse extends js.Object {
     var TerminationHealth: js.UndefOr[TerminationHealth]
   }
 
-  object GetVoiceConnectorTerminationHealthResponse {
-    @inline
-    def apply(
-        TerminationHealth: js.UndefOr[TerminationHealth] = js.undefined
-    ): GetVoiceConnectorTerminationHealthResponse = {
-      val __obj = js.Dynamic.literal()
-      TerminationHealth.foreach(__v => __obj.updateDynamic("TerminationHealth")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetVoiceConnectorTerminationHealthResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetVoiceConnectorTerminationRequest extends js.Object {
     var VoiceConnectorId: NonEmptyString
   }
 
-  object GetVoiceConnectorTerminationRequest {
-    @inline
-    def apply(
-        VoiceConnectorId: NonEmptyString
-    ): GetVoiceConnectorTerminationRequest = {
-      val __obj = js.Dynamic.literal(
-        "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetVoiceConnectorTerminationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetVoiceConnectorTerminationResponse extends js.Object {
     var Termination: js.UndefOr[Termination]
-  }
-
-  object GetVoiceConnectorTerminationResponse {
-    @inline
-    def apply(
-        Termination: js.UndefOr[Termination] = js.undefined
-    ): GetVoiceConnectorTerminationResponse = {
-      val __obj = js.Dynamic.literal()
-      Termination.foreach(__v => __obj.updateDynamic("Termination")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetVoiceConnectorTerminationResponse]
-    }
   }
 
   /**
     * Invitation object returned after emailing users to invite them to join the Amazon Chime <code>Team</code> account.
     */
   @js.native
+  @Factory
   trait Invite extends js.Object {
     var EmailAddress: js.UndefOr[EmailAddress]
     var EmailStatus: js.UndefOr[EmailStatus]
     var InviteId: js.UndefOr[String]
     var Status: js.UndefOr[InviteStatus]
-  }
-
-  object Invite {
-    @inline
-    def apply(
-        EmailAddress: js.UndefOr[EmailAddress] = js.undefined,
-        EmailStatus: js.UndefOr[EmailStatus] = js.undefined,
-        InviteId: js.UndefOr[String] = js.undefined,
-        Status: js.UndefOr[InviteStatus] = js.undefined
-    ): Invite = {
-      val __obj = js.Dynamic.literal()
-      EmailAddress.foreach(__v => __obj.updateDynamic("EmailAddress")(__v.asInstanceOf[js.Any]))
-      EmailStatus.foreach(__v => __obj.updateDynamic("EmailStatus")(__v.asInstanceOf[js.Any]))
-      InviteId.foreach(__v => __obj.updateDynamic("InviteId")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Invite]
-    }
   }
 
   @js.native
@@ -2742,43 +1340,17 @@ package chime {
   }
 
   @js.native
+  @Factory
   trait InviteUsersRequest extends js.Object {
     var AccountId: NonEmptyString
     var UserEmailList: UserEmailList
     var UserType: js.UndefOr[UserType]
   }
 
-  object InviteUsersRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        UserEmailList: UserEmailList,
-        UserType: js.UndefOr[UserType] = js.undefined
-    ): InviteUsersRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId"     -> AccountId.asInstanceOf[js.Any],
-        "UserEmailList" -> UserEmailList.asInstanceOf[js.Any]
-      )
-
-      UserType.foreach(__v => __obj.updateDynamic("UserType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InviteUsersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait InviteUsersResponse extends js.Object {
     var Invites: js.UndefOr[InviteList]
-  }
-
-  object InviteUsersResponse {
-    @inline
-    def apply(
-        Invites: js.UndefOr[InviteList] = js.undefined
-    ): InviteUsersResponse = {
-      val __obj = js.Dynamic.literal()
-      Invites.foreach(__v => __obj.updateDynamic("Invites")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InviteUsersResponse]
-    }
   }
 
   @js.native
@@ -2793,6 +1365,7 @@ package chime {
   }
 
   @js.native
+  @Factory
   trait ListAccountsRequest extends js.Object {
     var MaxResults: js.UndefOr[ProfileServiceMaxResults]
     var Name: js.UndefOr[AccountName]
@@ -2800,205 +1373,73 @@ package chime {
     var UserEmail: js.UndefOr[EmailAddress]
   }
 
-  object ListAccountsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[ProfileServiceMaxResults] = js.undefined,
-        Name: js.UndefOr[AccountName] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined,
-        UserEmail: js.UndefOr[EmailAddress] = js.undefined
-    ): ListAccountsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      UserEmail.foreach(__v => __obj.updateDynamic("UserEmail")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAccountsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAccountsResponse extends js.Object {
     var Accounts: js.UndefOr[AccountList]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListAccountsResponse {
-    @inline
-    def apply(
-        Accounts: js.UndefOr[AccountList] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListAccountsResponse = {
-      val __obj = js.Dynamic.literal()
-      Accounts.foreach(__v => __obj.updateDynamic("Accounts")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAccountsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAttendeesRequest extends js.Object {
     var MeetingId: GuidString
     var MaxResults: js.UndefOr[ResultMax]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListAttendeesRequest {
-    @inline
-    def apply(
-        MeetingId: GuidString,
-        MaxResults: js.UndefOr[ResultMax] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListAttendeesRequest = {
-      val __obj = js.Dynamic.literal(
-        "MeetingId" -> MeetingId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAttendeesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAttendeesResponse extends js.Object {
     var Attendees: js.UndefOr[AttendeeList]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListAttendeesResponse {
-    @inline
-    def apply(
-        Attendees: js.UndefOr[AttendeeList] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListAttendeesResponse = {
-      val __obj = js.Dynamic.literal()
-      Attendees.foreach(__v => __obj.updateDynamic("Attendees")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAttendeesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListBotsRequest extends js.Object {
     var AccountId: NonEmptyString
     var MaxResults: js.UndefOr[ResultMax]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListBotsRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        MaxResults: js.UndefOr[ResultMax] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListBotsRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListBotsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListBotsResponse extends js.Object {
     var Bots: js.UndefOr[BotList]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListBotsResponse {
-    @inline
-    def apply(
-        Bots: js.UndefOr[BotList] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListBotsResponse = {
-      val __obj = js.Dynamic.literal()
-      Bots.foreach(__v => __obj.updateDynamic("Bots")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListBotsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListMeetingsRequest extends js.Object {
     var MaxResults: js.UndefOr[ResultMax]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListMeetingsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[ResultMax] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListMeetingsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListMeetingsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListMeetingsResponse extends js.Object {
     var Meetings: js.UndefOr[MeetingList]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListMeetingsResponse {
-    @inline
-    def apply(
-        Meetings: js.UndefOr[MeetingList] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListMeetingsResponse = {
-      val __obj = js.Dynamic.literal()
-      Meetings.foreach(__v => __obj.updateDynamic("Meetings")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListMeetingsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPhoneNumberOrdersRequest extends js.Object {
     var MaxResults: js.UndefOr[ResultMax]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListPhoneNumberOrdersRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[ResultMax] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListPhoneNumberOrdersRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPhoneNumberOrdersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPhoneNumberOrdersResponse extends js.Object {
     var NextToken: js.UndefOr[String]
     var PhoneNumberOrders: js.UndefOr[PhoneNumberOrderList]
   }
 
-  object ListPhoneNumberOrdersResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[String] = js.undefined,
-        PhoneNumberOrders: js.UndefOr[PhoneNumberOrderList] = js.undefined
-    ): ListPhoneNumberOrdersResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PhoneNumberOrders.foreach(__v => __obj.updateDynamic("PhoneNumberOrders")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPhoneNumberOrdersResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPhoneNumbersRequest extends js.Object {
     var FilterName: js.UndefOr[PhoneNumberAssociationName]
     var FilterValue: js.UndefOr[String]
@@ -3008,47 +1449,15 @@ package chime {
     var Status: js.UndefOr[PhoneNumberStatus]
   }
 
-  object ListPhoneNumbersRequest {
-    @inline
-    def apply(
-        FilterName: js.UndefOr[PhoneNumberAssociationName] = js.undefined,
-        FilterValue: js.UndefOr[String] = js.undefined,
-        MaxResults: js.UndefOr[ResultMax] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined,
-        ProductType: js.UndefOr[PhoneNumberProductType] = js.undefined,
-        Status: js.UndefOr[PhoneNumberStatus] = js.undefined
-    ): ListPhoneNumbersRequest = {
-      val __obj = js.Dynamic.literal()
-      FilterName.foreach(__v => __obj.updateDynamic("FilterName")(__v.asInstanceOf[js.Any]))
-      FilterValue.foreach(__v => __obj.updateDynamic("FilterValue")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ProductType.foreach(__v => __obj.updateDynamic("ProductType")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPhoneNumbersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPhoneNumbersResponse extends js.Object {
     var NextToken: js.UndefOr[String]
     var PhoneNumbers: js.UndefOr[PhoneNumberList]
   }
 
-  object ListPhoneNumbersResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[String] = js.undefined,
-        PhoneNumbers: js.UndefOr[PhoneNumberList] = js.undefined
-    ): ListPhoneNumbersResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PhoneNumbers.foreach(__v => __obj.updateDynamic("PhoneNumbers")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPhoneNumbersResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListRoomMembershipsRequest extends js.Object {
     var AccountId: NonEmptyString
     var RoomId: NonEmptyString
@@ -3056,45 +1465,15 @@ package chime {
     var NextToken: js.UndefOr[String]
   }
 
-  object ListRoomMembershipsRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        RoomId: NonEmptyString,
-        MaxResults: js.UndefOr[ResultMax] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListRoomMembershipsRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "RoomId"    -> RoomId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRoomMembershipsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListRoomMembershipsResponse extends js.Object {
     var NextToken: js.UndefOr[String]
     var RoomMemberships: js.UndefOr[RoomMembershipList]
   }
 
-  object ListRoomMembershipsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[String] = js.undefined,
-        RoomMemberships: js.UndefOr[RoomMembershipList] = js.undefined
-    ): ListRoomMembershipsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      RoomMemberships.foreach(__v => __obj.updateDynamic("RoomMemberships")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRoomMembershipsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListRoomsRequest extends js.Object {
     var AccountId: NonEmptyString
     var MaxResults: js.UndefOr[ResultMax]
@@ -3102,45 +1481,15 @@ package chime {
     var NextToken: js.UndefOr[String]
   }
 
-  object ListRoomsRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        MaxResults: js.UndefOr[ResultMax] = js.undefined,
-        MemberId: js.UndefOr[String] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListRoomsRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      MemberId.foreach(__v => __obj.updateDynamic("MemberId")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRoomsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListRoomsResponse extends js.Object {
     var NextToken: js.UndefOr[String]
     var Rooms: js.UndefOr[RoomList]
   }
 
-  object ListRoomsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[String] = js.undefined,
-        Rooms: js.UndefOr[RoomList] = js.undefined
-    ): ListRoomsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Rooms.foreach(__v => __obj.updateDynamic("Rooms")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRoomsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListUsersRequest extends js.Object {
     var AccountId: NonEmptyString
     var MaxResults: js.UndefOr[ProfileServiceMaxResults]
@@ -3149,213 +1498,78 @@ package chime {
     var UserType: js.UndefOr[UserType]
   }
 
-  object ListUsersRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        MaxResults: js.UndefOr[ProfileServiceMaxResults] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined,
-        UserEmail: js.UndefOr[EmailAddress] = js.undefined,
-        UserType: js.UndefOr[UserType] = js.undefined
-    ): ListUsersRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      UserEmail.foreach(__v => __obj.updateDynamic("UserEmail")(__v.asInstanceOf[js.Any]))
-      UserType.foreach(__v => __obj.updateDynamic("UserType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListUsersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListUsersResponse extends js.Object {
     var NextToken: js.UndefOr[String]
     var Users: js.UndefOr[UserList]
   }
 
-  object ListUsersResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[String] = js.undefined,
-        Users: js.UndefOr[UserList] = js.undefined
-    ): ListUsersResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Users.foreach(__v => __obj.updateDynamic("Users")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListUsersResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListVoiceConnectorGroupsRequest extends js.Object {
     var MaxResults: js.UndefOr[ResultMax]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListVoiceConnectorGroupsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[ResultMax] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListVoiceConnectorGroupsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListVoiceConnectorGroupsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListVoiceConnectorGroupsResponse extends js.Object {
     var NextToken: js.UndefOr[String]
     var VoiceConnectorGroups: js.UndefOr[VoiceConnectorGroupList]
   }
 
-  object ListVoiceConnectorGroupsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[String] = js.undefined,
-        VoiceConnectorGroups: js.UndefOr[VoiceConnectorGroupList] = js.undefined
-    ): ListVoiceConnectorGroupsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      VoiceConnectorGroups.foreach(__v => __obj.updateDynamic("VoiceConnectorGroups")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListVoiceConnectorGroupsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListVoiceConnectorTerminationCredentialsRequest extends js.Object {
     var VoiceConnectorId: NonEmptyString
   }
 
-  object ListVoiceConnectorTerminationCredentialsRequest {
-    @inline
-    def apply(
-        VoiceConnectorId: NonEmptyString
-    ): ListVoiceConnectorTerminationCredentialsRequest = {
-      val __obj = js.Dynamic.literal(
-        "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListVoiceConnectorTerminationCredentialsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListVoiceConnectorTerminationCredentialsResponse extends js.Object {
     var Usernames: js.UndefOr[SensitiveStringList]
   }
 
-  object ListVoiceConnectorTerminationCredentialsResponse {
-    @inline
-    def apply(
-        Usernames: js.UndefOr[SensitiveStringList] = js.undefined
-    ): ListVoiceConnectorTerminationCredentialsResponse = {
-      val __obj = js.Dynamic.literal()
-      Usernames.foreach(__v => __obj.updateDynamic("Usernames")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListVoiceConnectorTerminationCredentialsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListVoiceConnectorsRequest extends js.Object {
     var MaxResults: js.UndefOr[ResultMax]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListVoiceConnectorsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[ResultMax] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListVoiceConnectorsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListVoiceConnectorsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListVoiceConnectorsResponse extends js.Object {
     var NextToken: js.UndefOr[String]
     var VoiceConnectors: js.UndefOr[VoiceConnectorList]
-  }
-
-  object ListVoiceConnectorsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[String] = js.undefined,
-        VoiceConnectors: js.UndefOr[VoiceConnectorList] = js.undefined
-    ): ListVoiceConnectorsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      VoiceConnectors.foreach(__v => __obj.updateDynamic("VoiceConnectors")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListVoiceConnectorsResponse]
-    }
   }
 
   /**
     * The logging configuration associated with an Amazon Chime Voice Connector. Specifies whether SIP message logs are enabled for sending to Amazon CloudWatch Logs.
     */
   @js.native
+  @Factory
   trait LoggingConfiguration extends js.Object {
     var EnableSIPLogs: js.UndefOr[Boolean]
   }
 
-  object LoggingConfiguration {
-    @inline
-    def apply(
-        EnableSIPLogs: js.UndefOr[Boolean] = js.undefined
-    ): LoggingConfiguration = {
-      val __obj = js.Dynamic.literal()
-      EnableSIPLogs.foreach(__v => __obj.updateDynamic("EnableSIPLogs")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LoggingConfiguration]
-    }
-  }
-
   @js.native
+  @Factory
   trait LogoutUserRequest extends js.Object {
     var AccountId: NonEmptyString
     var UserId: NonEmptyString
   }
 
-  object LogoutUserRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        UserId: NonEmptyString
-    ): LogoutUserRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "UserId"    -> UserId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[LogoutUserRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait LogoutUserResponse extends js.Object {}
-
-  object LogoutUserResponse {
-    @inline
-    def apply(
-    ): LogoutUserResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[LogoutUserResponse]
-    }
-  }
 
   /**
     * A set of endpoints used by clients to connect to the media service group for a Amazon Chime SDK meeting.
     */
   @js.native
+  @Factory
   trait MediaPlacement extends js.Object {
     var AudioFallbackUrl: js.UndefOr[UriType]
     var AudioHostUrl: js.UndefOr[UriType]
@@ -3366,80 +1580,32 @@ package chime {
     var TurnControlUrl: js.UndefOr[UriType]
   }
 
-  object MediaPlacement {
-    @inline
-    def apply(
-        AudioFallbackUrl: js.UndefOr[UriType] = js.undefined,
-        AudioHostUrl: js.UndefOr[UriType] = js.undefined,
-        ScreenDataUrl: js.UndefOr[UriType] = js.undefined,
-        ScreenSharingUrl: js.UndefOr[UriType] = js.undefined,
-        ScreenViewingUrl: js.UndefOr[UriType] = js.undefined,
-        SignalingUrl: js.UndefOr[UriType] = js.undefined,
-        TurnControlUrl: js.UndefOr[UriType] = js.undefined
-    ): MediaPlacement = {
-      val __obj = js.Dynamic.literal()
-      AudioFallbackUrl.foreach(__v => __obj.updateDynamic("AudioFallbackUrl")(__v.asInstanceOf[js.Any]))
-      AudioHostUrl.foreach(__v => __obj.updateDynamic("AudioHostUrl")(__v.asInstanceOf[js.Any]))
-      ScreenDataUrl.foreach(__v => __obj.updateDynamic("ScreenDataUrl")(__v.asInstanceOf[js.Any]))
-      ScreenSharingUrl.foreach(__v => __obj.updateDynamic("ScreenSharingUrl")(__v.asInstanceOf[js.Any]))
-      ScreenViewingUrl.foreach(__v => __obj.updateDynamic("ScreenViewingUrl")(__v.asInstanceOf[js.Any]))
-      SignalingUrl.foreach(__v => __obj.updateDynamic("SignalingUrl")(__v.asInstanceOf[js.Any]))
-      TurnControlUrl.foreach(__v => __obj.updateDynamic("TurnControlUrl")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MediaPlacement]
-    }
-  }
-
   /**
     * A meeting created using the Amazon Chime SDK.
     */
   @js.native
+  @Factory
   trait Meeting extends js.Object {
     var MediaPlacement: js.UndefOr[MediaPlacement]
     var MediaRegion: js.UndefOr[String]
     var MeetingId: js.UndefOr[GuidString]
   }
 
-  object Meeting {
-    @inline
-    def apply(
-        MediaPlacement: js.UndefOr[MediaPlacement] = js.undefined,
-        MediaRegion: js.UndefOr[String] = js.undefined,
-        MeetingId: js.UndefOr[GuidString] = js.undefined
-    ): Meeting = {
-      val __obj = js.Dynamic.literal()
-      MediaPlacement.foreach(__v => __obj.updateDynamic("MediaPlacement")(__v.asInstanceOf[js.Any]))
-      MediaRegion.foreach(__v => __obj.updateDynamic("MediaRegion")(__v.asInstanceOf[js.Any]))
-      MeetingId.foreach(__v => __obj.updateDynamic("MeetingId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Meeting]
-    }
-  }
-
   /**
     * The configuration for resource targets to receive notifications when Amazon Chime SDK meeting and attendee events occur.
     */
   @js.native
+  @Factory
   trait MeetingNotificationConfiguration extends js.Object {
     var SnsTopicArn: js.UndefOr[Arn]
     var SqsQueueArn: js.UndefOr[Arn]
-  }
-
-  object MeetingNotificationConfiguration {
-    @inline
-    def apply(
-        SnsTopicArn: js.UndefOr[Arn] = js.undefined,
-        SqsQueueArn: js.UndefOr[Arn] = js.undefined
-    ): MeetingNotificationConfiguration = {
-      val __obj = js.Dynamic.literal()
-      SnsTopicArn.foreach(__v => __obj.updateDynamic("SnsTopicArn")(__v.asInstanceOf[js.Any]))
-      SqsQueueArn.foreach(__v => __obj.updateDynamic("SqsQueueArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MeetingNotificationConfiguration]
-    }
   }
 
   /**
     * The member details, such as email address, name, member ID, and member type.
     */
   @js.native
+  @Factory
   trait Member extends js.Object {
     var AccountId: js.UndefOr[NonEmptyString]
     var Email: js.UndefOr[SensitiveString]
@@ -3448,48 +1614,15 @@ package chime {
     var MemberType: js.UndefOr[MemberType]
   }
 
-  object Member {
-    @inline
-    def apply(
-        AccountId: js.UndefOr[NonEmptyString] = js.undefined,
-        Email: js.UndefOr[SensitiveString] = js.undefined,
-        FullName: js.UndefOr[SensitiveString] = js.undefined,
-        MemberId: js.UndefOr[NonEmptyString] = js.undefined,
-        MemberType: js.UndefOr[MemberType] = js.undefined
-    ): Member = {
-      val __obj = js.Dynamic.literal()
-      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
-      Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
-      FullName.foreach(__v => __obj.updateDynamic("FullName")(__v.asInstanceOf[js.Any]))
-      MemberId.foreach(__v => __obj.updateDynamic("MemberId")(__v.asInstanceOf[js.Any]))
-      MemberType.foreach(__v => __obj.updateDynamic("MemberType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Member]
-    }
-  }
-
   /**
     * The list of errors returned when a member action results in an error.
     */
   @js.native
+  @Factory
   trait MemberError extends js.Object {
     var ErrorCode: js.UndefOr[ErrorCode]
     var ErrorMessage: js.UndefOr[String]
     var MemberId: js.UndefOr[NonEmptyString]
-  }
-
-  object MemberError {
-    @inline
-    def apply(
-        ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
-        ErrorMessage: js.UndefOr[String] = js.undefined,
-        MemberId: js.UndefOr[NonEmptyString] = js.undefined
-    ): MemberError = {
-      val __obj = js.Dynamic.literal()
-      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
-      MemberId.foreach(__v => __obj.updateDynamic("MemberId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MemberError]
-    }
   }
 
   @js.native
@@ -3506,44 +1639,20 @@ package chime {
     * Membership details, such as member ID and member role.
     */
   @js.native
+  @Factory
   trait MembershipItem extends js.Object {
     var MemberId: js.UndefOr[NonEmptyString]
     var Role: js.UndefOr[RoomMembershipRole]
-  }
-
-  object MembershipItem {
-    @inline
-    def apply(
-        MemberId: js.UndefOr[NonEmptyString] = js.undefined,
-        Role: js.UndefOr[RoomMembershipRole] = js.undefined
-    ): MembershipItem = {
-      val __obj = js.Dynamic.literal()
-      MemberId.foreach(__v => __obj.updateDynamic("MemberId")(__v.asInstanceOf[js.Any]))
-      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MembershipItem]
-    }
   }
 
   /**
     * A phone number for which an order has been placed.
     */
   @js.native
+  @Factory
   trait OrderedPhoneNumber extends js.Object {
     var E164PhoneNumber: js.UndefOr[E164PhoneNumber]
     var Status: js.UndefOr[OrderedPhoneNumberStatus]
-  }
-
-  object OrderedPhoneNumber {
-    @inline
-    def apply(
-        E164PhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined,
-        Status: js.UndefOr[OrderedPhoneNumberStatus] = js.undefined
-    ): OrderedPhoneNumber = {
-      val __obj = js.Dynamic.literal()
-      E164PhoneNumber.foreach(__v => __obj.updateDynamic("E164PhoneNumber")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[OrderedPhoneNumber]
-    }
   }
 
   @js.native
@@ -3560,53 +1669,23 @@ package chime {
     * Origination settings enable your SIP hosts to receive inbound calls using your Amazon Chime Voice Connector.
     */
   @js.native
+  @Factory
   trait Origination extends js.Object {
     var Disabled: js.UndefOr[Boolean]
     var Routes: js.UndefOr[OriginationRouteList]
-  }
-
-  object Origination {
-    @inline
-    def apply(
-        Disabled: js.UndefOr[Boolean] = js.undefined,
-        Routes: js.UndefOr[OriginationRouteList] = js.undefined
-    ): Origination = {
-      val __obj = js.Dynamic.literal()
-      Disabled.foreach(__v => __obj.updateDynamic("Disabled")(__v.asInstanceOf[js.Any]))
-      Routes.foreach(__v => __obj.updateDynamic("Routes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Origination]
-    }
   }
 
   /**
     * Origination routes define call distribution properties for your SIP hosts to receive inbound calls using your Amazon Chime Voice Connector. Limit: Ten origination routes for each Amazon Chime Voice Connector.
     */
   @js.native
+  @Factory
   trait OriginationRoute extends js.Object {
     var Host: js.UndefOr[String]
     var Port: js.UndefOr[Port]
     var Priority: js.UndefOr[OriginationRoutePriority]
     var Protocol: js.UndefOr[OriginationRouteProtocol]
     var Weight: js.UndefOr[OriginationRouteWeight]
-  }
-
-  object OriginationRoute {
-    @inline
-    def apply(
-        Host: js.UndefOr[String] = js.undefined,
-        Port: js.UndefOr[Port] = js.undefined,
-        Priority: js.UndefOr[OriginationRoutePriority] = js.undefined,
-        Protocol: js.UndefOr[OriginationRouteProtocol] = js.undefined,
-        Weight: js.UndefOr[OriginationRouteWeight] = js.undefined
-    ): OriginationRoute = {
-      val __obj = js.Dynamic.literal()
-      Host.foreach(__v => __obj.updateDynamic("Host")(__v.asInstanceOf[js.Any]))
-      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
-      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
-      Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
-      Weight.foreach(__v => __obj.updateDynamic("Weight")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[OriginationRoute]
-    }
   }
 
   @js.native
@@ -3622,6 +1701,7 @@ package chime {
     * A phone number used for Amazon Chime Business Calling or an Amazon Chime Voice Connector.
     */
   @js.native
+  @Factory
   trait PhoneNumber extends js.Object {
     var Associations: js.UndefOr[PhoneNumberAssociationList]
     var CallingName: js.UndefOr[CallingName]
@@ -3637,62 +1717,15 @@ package chime {
     var UpdatedTimestamp: js.UndefOr[Iso8601Timestamp]
   }
 
-  object PhoneNumber {
-    @inline
-    def apply(
-        Associations: js.UndefOr[PhoneNumberAssociationList] = js.undefined,
-        CallingName: js.UndefOr[CallingName] = js.undefined,
-        CallingNameStatus: js.UndefOr[CallingNameStatus] = js.undefined,
-        Capabilities: js.UndefOr[PhoneNumberCapabilities] = js.undefined,
-        CreatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
-        DeletionTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
-        E164PhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined,
-        PhoneNumberId: js.UndefOr[String] = js.undefined,
-        ProductType: js.UndefOr[PhoneNumberProductType] = js.undefined,
-        Status: js.UndefOr[PhoneNumberStatus] = js.undefined,
-        Type: js.UndefOr[PhoneNumberType] = js.undefined,
-        UpdatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined
-    ): PhoneNumber = {
-      val __obj = js.Dynamic.literal()
-      Associations.foreach(__v => __obj.updateDynamic("Associations")(__v.asInstanceOf[js.Any]))
-      CallingName.foreach(__v => __obj.updateDynamic("CallingName")(__v.asInstanceOf[js.Any]))
-      CallingNameStatus.foreach(__v => __obj.updateDynamic("CallingNameStatus")(__v.asInstanceOf[js.Any]))
-      Capabilities.foreach(__v => __obj.updateDynamic("Capabilities")(__v.asInstanceOf[js.Any]))
-      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
-      DeletionTimestamp.foreach(__v => __obj.updateDynamic("DeletionTimestamp")(__v.asInstanceOf[js.Any]))
-      E164PhoneNumber.foreach(__v => __obj.updateDynamic("E164PhoneNumber")(__v.asInstanceOf[js.Any]))
-      PhoneNumberId.foreach(__v => __obj.updateDynamic("PhoneNumberId")(__v.asInstanceOf[js.Any]))
-      ProductType.foreach(__v => __obj.updateDynamic("ProductType")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      UpdatedTimestamp.foreach(__v => __obj.updateDynamic("UpdatedTimestamp")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PhoneNumber]
-    }
-  }
-
   /**
     * The phone number associations, such as Amazon Chime account ID, Amazon Chime user ID, Amazon Chime Voice Connector ID, or Amazon Chime Voice Connector group ID.
     */
   @js.native
+  @Factory
   trait PhoneNumberAssociation extends js.Object {
     var AssociatedTimestamp: js.UndefOr[Iso8601Timestamp]
     var Name: js.UndefOr[PhoneNumberAssociationName]
     var Value: js.UndefOr[String]
-  }
-
-  object PhoneNumberAssociation {
-    @inline
-    def apply(
-        AssociatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
-        Name: js.UndefOr[PhoneNumberAssociationName] = js.undefined,
-        Value: js.UndefOr[String] = js.undefined
-    ): PhoneNumberAssociation = {
-      val __obj = js.Dynamic.literal()
-      AssociatedTimestamp.foreach(__v => __obj.updateDynamic("AssociatedTimestamp")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PhoneNumberAssociation]
-    }
   }
 
   @js.native
@@ -3710,6 +1743,7 @@ package chime {
     * The phone number capabilities for Amazon Chime Business Calling phone numbers, such as enabled inbound and outbound calling and text messaging.
     */
   @js.native
+  @Factory
   trait PhoneNumberCapabilities extends js.Object {
     var InboundCall: js.UndefOr[NullableBoolean]
     var InboundMMS: js.UndefOr[NullableBoolean]
@@ -3719,56 +1753,22 @@ package chime {
     var OutboundSMS: js.UndefOr[NullableBoolean]
   }
 
-  object PhoneNumberCapabilities {
-    @inline
-    def apply(
-        InboundCall: js.UndefOr[NullableBoolean] = js.undefined,
-        InboundMMS: js.UndefOr[NullableBoolean] = js.undefined,
-        InboundSMS: js.UndefOr[NullableBoolean] = js.undefined,
-        OutboundCall: js.UndefOr[NullableBoolean] = js.undefined,
-        OutboundMMS: js.UndefOr[NullableBoolean] = js.undefined,
-        OutboundSMS: js.UndefOr[NullableBoolean] = js.undefined
-    ): PhoneNumberCapabilities = {
-      val __obj = js.Dynamic.literal()
-      InboundCall.foreach(__v => __obj.updateDynamic("InboundCall")(__v.asInstanceOf[js.Any]))
-      InboundMMS.foreach(__v => __obj.updateDynamic("InboundMMS")(__v.asInstanceOf[js.Any]))
-      InboundSMS.foreach(__v => __obj.updateDynamic("InboundSMS")(__v.asInstanceOf[js.Any]))
-      OutboundCall.foreach(__v => __obj.updateDynamic("OutboundCall")(__v.asInstanceOf[js.Any]))
-      OutboundMMS.foreach(__v => __obj.updateDynamic("OutboundMMS")(__v.asInstanceOf[js.Any]))
-      OutboundSMS.foreach(__v => __obj.updateDynamic("OutboundSMS")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PhoneNumberCapabilities]
-    }
-  }
-
   /**
     * If the phone number action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.
     */
   @js.native
+  @Factory
   trait PhoneNumberError extends js.Object {
     var ErrorCode: js.UndefOr[ErrorCode]
     var ErrorMessage: js.UndefOr[String]
     var PhoneNumberId: js.UndefOr[NonEmptyString]
   }
 
-  object PhoneNumberError {
-    @inline
-    def apply(
-        ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
-        ErrorMessage: js.UndefOr[String] = js.undefined,
-        PhoneNumberId: js.UndefOr[NonEmptyString] = js.undefined
-    ): PhoneNumberError = {
-      val __obj = js.Dynamic.literal()
-      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
-      PhoneNumberId.foreach(__v => __obj.updateDynamic("PhoneNumberId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PhoneNumberError]
-    }
-  }
-
   /**
     * The details of a phone number order created for Amazon Chime.
     */
   @js.native
+  @Factory
   trait PhoneNumberOrder extends js.Object {
     var CreatedTimestamp: js.UndefOr[Iso8601Timestamp]
     var OrderedPhoneNumbers: js.UndefOr[OrderedPhoneNumberList]
@@ -3776,27 +1776,6 @@ package chime {
     var ProductType: js.UndefOr[PhoneNumberProductType]
     var Status: js.UndefOr[PhoneNumberOrderStatus]
     var UpdatedTimestamp: js.UndefOr[Iso8601Timestamp]
-  }
-
-  object PhoneNumberOrder {
-    @inline
-    def apply(
-        CreatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
-        OrderedPhoneNumbers: js.UndefOr[OrderedPhoneNumberList] = js.undefined,
-        PhoneNumberOrderId: js.UndefOr[GuidString] = js.undefined,
-        ProductType: js.UndefOr[PhoneNumberProductType] = js.undefined,
-        Status: js.UndefOr[PhoneNumberOrderStatus] = js.undefined,
-        UpdatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined
-    ): PhoneNumberOrder = {
-      val __obj = js.Dynamic.literal()
-      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
-      OrderedPhoneNumbers.foreach(__v => __obj.updateDynamic("OrderedPhoneNumbers")(__v.asInstanceOf[js.Any]))
-      PhoneNumberOrderId.foreach(__v => __obj.updateDynamic("PhoneNumberOrderId")(__v.asInstanceOf[js.Any]))
-      ProductType.foreach(__v => __obj.updateDynamic("ProductType")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      UpdatedTimestamp.foreach(__v => __obj.updateDynamic("UpdatedTimestamp")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PhoneNumberOrder]
-    }
   }
 
   @js.native
@@ -3855,6 +1834,7 @@ package chime {
   }
 
   @js.native
+  @Factory
   trait PutEventsConfigurationRequest extends js.Object {
     var AccountId: NonEmptyString
     var BotId: NonEmptyString
@@ -3862,247 +1842,82 @@ package chime {
     var OutboundEventsHTTPSEndpoint: js.UndefOr[SensitiveString]
   }
 
-  object PutEventsConfigurationRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        BotId: NonEmptyString,
-        LambdaFunctionArn: js.UndefOr[SensitiveString] = js.undefined,
-        OutboundEventsHTTPSEndpoint: js.UndefOr[SensitiveString] = js.undefined
-    ): PutEventsConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "BotId"     -> BotId.asInstanceOf[js.Any]
-      )
-
-      LambdaFunctionArn.foreach(__v => __obj.updateDynamic("LambdaFunctionArn")(__v.asInstanceOf[js.Any]))
-      OutboundEventsHTTPSEndpoint.foreach(__v =>
-        __obj.updateDynamic("OutboundEventsHTTPSEndpoint")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[PutEventsConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutEventsConfigurationResponse extends js.Object {
     var EventsConfiguration: js.UndefOr[EventsConfiguration]
   }
 
-  object PutEventsConfigurationResponse {
-    @inline
-    def apply(
-        EventsConfiguration: js.UndefOr[EventsConfiguration] = js.undefined
-    ): PutEventsConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-      EventsConfiguration.foreach(__v => __obj.updateDynamic("EventsConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutEventsConfigurationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutVoiceConnectorLoggingConfigurationRequest extends js.Object {
     var LoggingConfiguration: LoggingConfiguration
     var VoiceConnectorId: NonEmptyString
   }
 
-  object PutVoiceConnectorLoggingConfigurationRequest {
-    @inline
-    def apply(
-        LoggingConfiguration: LoggingConfiguration,
-        VoiceConnectorId: NonEmptyString
-    ): PutVoiceConnectorLoggingConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "LoggingConfiguration" -> LoggingConfiguration.asInstanceOf[js.Any],
-        "VoiceConnectorId"     -> VoiceConnectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutVoiceConnectorLoggingConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutVoiceConnectorLoggingConfigurationResponse extends js.Object {
     var LoggingConfiguration: js.UndefOr[LoggingConfiguration]
   }
 
-  object PutVoiceConnectorLoggingConfigurationResponse {
-    @inline
-    def apply(
-        LoggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined
-    ): PutVoiceConnectorLoggingConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-      LoggingConfiguration.foreach(__v => __obj.updateDynamic("LoggingConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutVoiceConnectorLoggingConfigurationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutVoiceConnectorOriginationRequest extends js.Object {
     var Origination: Origination
     var VoiceConnectorId: NonEmptyString
   }
 
-  object PutVoiceConnectorOriginationRequest {
-    @inline
-    def apply(
-        Origination: Origination,
-        VoiceConnectorId: NonEmptyString
-    ): PutVoiceConnectorOriginationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Origination"      -> Origination.asInstanceOf[js.Any],
-        "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutVoiceConnectorOriginationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutVoiceConnectorOriginationResponse extends js.Object {
     var Origination: js.UndefOr[Origination]
   }
 
-  object PutVoiceConnectorOriginationResponse {
-    @inline
-    def apply(
-        Origination: js.UndefOr[Origination] = js.undefined
-    ): PutVoiceConnectorOriginationResponse = {
-      val __obj = js.Dynamic.literal()
-      Origination.foreach(__v => __obj.updateDynamic("Origination")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutVoiceConnectorOriginationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutVoiceConnectorStreamingConfigurationRequest extends js.Object {
     var StreamingConfiguration: StreamingConfiguration
     var VoiceConnectorId: NonEmptyString
   }
 
-  object PutVoiceConnectorStreamingConfigurationRequest {
-    @inline
-    def apply(
-        StreamingConfiguration: StreamingConfiguration,
-        VoiceConnectorId: NonEmptyString
-    ): PutVoiceConnectorStreamingConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "StreamingConfiguration" -> StreamingConfiguration.asInstanceOf[js.Any],
-        "VoiceConnectorId"       -> VoiceConnectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutVoiceConnectorStreamingConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutVoiceConnectorStreamingConfigurationResponse extends js.Object {
     var StreamingConfiguration: js.UndefOr[StreamingConfiguration]
   }
 
-  object PutVoiceConnectorStreamingConfigurationResponse {
-    @inline
-    def apply(
-        StreamingConfiguration: js.UndefOr[StreamingConfiguration] = js.undefined
-    ): PutVoiceConnectorStreamingConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-      StreamingConfiguration.foreach(__v => __obj.updateDynamic("StreamingConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutVoiceConnectorStreamingConfigurationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutVoiceConnectorTerminationCredentialsRequest extends js.Object {
     var VoiceConnectorId: NonEmptyString
     var Credentials: js.UndefOr[CredentialList]
   }
 
-  object PutVoiceConnectorTerminationCredentialsRequest {
-    @inline
-    def apply(
-        VoiceConnectorId: NonEmptyString,
-        Credentials: js.UndefOr[CredentialList] = js.undefined
-    ): PutVoiceConnectorTerminationCredentialsRequest = {
-      val __obj = js.Dynamic.literal(
-        "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
-      )
-
-      Credentials.foreach(__v => __obj.updateDynamic("Credentials")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutVoiceConnectorTerminationCredentialsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutVoiceConnectorTerminationRequest extends js.Object {
     var Termination: Termination
     var VoiceConnectorId: NonEmptyString
   }
 
-  object PutVoiceConnectorTerminationRequest {
-    @inline
-    def apply(
-        Termination: Termination,
-        VoiceConnectorId: NonEmptyString
-    ): PutVoiceConnectorTerminationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Termination"      -> Termination.asInstanceOf[js.Any],
-        "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutVoiceConnectorTerminationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutVoiceConnectorTerminationResponse extends js.Object {
     var Termination: js.UndefOr[Termination]
   }
 
-  object PutVoiceConnectorTerminationResponse {
-    @inline
-    def apply(
-        Termination: js.UndefOr[Termination] = js.undefined
-    ): PutVoiceConnectorTerminationResponse = {
-      val __obj = js.Dynamic.literal()
-      Termination.foreach(__v => __obj.updateDynamic("Termination")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutVoiceConnectorTerminationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait RegenerateSecurityTokenRequest extends js.Object {
     var AccountId: NonEmptyString
     var BotId: NonEmptyString
   }
 
-  object RegenerateSecurityTokenRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        BotId: NonEmptyString
-    ): RegenerateSecurityTokenRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "BotId"     -> BotId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RegenerateSecurityTokenRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait RegenerateSecurityTokenResponse extends js.Object {
     var Bot: js.UndefOr[Bot]
-  }
-
-  object RegenerateSecurityTokenResponse {
-    @inline
-    def apply(
-        Bot: js.UndefOr[Bot] = js.undefined
-    ): RegenerateSecurityTokenResponse = {
-      val __obj = js.Dynamic.literal()
-      Bot.foreach(__v => __obj.updateDynamic("Bot")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RegenerateSecurityTokenResponse]
-    }
   }
 
   @js.native
@@ -4116,80 +1931,35 @@ package chime {
   }
 
   @js.native
+  @Factory
   trait ResetPersonalPINRequest extends js.Object {
     var AccountId: NonEmptyString
     var UserId: NonEmptyString
   }
 
-  object ResetPersonalPINRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        UserId: NonEmptyString
-    ): ResetPersonalPINRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "UserId"    -> UserId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ResetPersonalPINRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ResetPersonalPINResponse extends js.Object {
     var User: js.UndefOr[User]
   }
 
-  object ResetPersonalPINResponse {
-    @inline
-    def apply(
-        User: js.UndefOr[User] = js.undefined
-    ): ResetPersonalPINResponse = {
-      val __obj = js.Dynamic.literal()
-      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ResetPersonalPINResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait RestorePhoneNumberRequest extends js.Object {
     var PhoneNumberId: NonEmptyString
   }
 
-  object RestorePhoneNumberRequest {
-    @inline
-    def apply(
-        PhoneNumberId: NonEmptyString
-    ): RestorePhoneNumberRequest = {
-      val __obj = js.Dynamic.literal(
-        "PhoneNumberId" -> PhoneNumberId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RestorePhoneNumberRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait RestorePhoneNumberResponse extends js.Object {
     var PhoneNumber: js.UndefOr[PhoneNumber]
-  }
-
-  object RestorePhoneNumberResponse {
-    @inline
-    def apply(
-        PhoneNumber: js.UndefOr[PhoneNumber] = js.undefined
-    ): RestorePhoneNumberResponse = {
-      val __obj = js.Dynamic.literal()
-      PhoneNumber.foreach(__v => __obj.updateDynamic("PhoneNumber")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RestorePhoneNumberResponse]
-    }
   }
 
   /**
     * The Amazon Chime chat room details.
     */
   @js.native
+  @Factory
   trait Room extends js.Object {
     var AccountId: js.UndefOr[NonEmptyString]
     var CreatedBy: js.UndefOr[NonEmptyString]
@@ -4199,56 +1969,17 @@ package chime {
     var UpdatedTimestamp: js.UndefOr[Iso8601Timestamp]
   }
 
-  object Room {
-    @inline
-    def apply(
-        AccountId: js.UndefOr[NonEmptyString] = js.undefined,
-        CreatedBy: js.UndefOr[NonEmptyString] = js.undefined,
-        CreatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
-        Name: js.UndefOr[SensitiveString] = js.undefined,
-        RoomId: js.UndefOr[NonEmptyString] = js.undefined,
-        UpdatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined
-    ): Room = {
-      val __obj = js.Dynamic.literal()
-      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
-      CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
-      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      RoomId.foreach(__v => __obj.updateDynamic("RoomId")(__v.asInstanceOf[js.Any]))
-      UpdatedTimestamp.foreach(__v => __obj.updateDynamic("UpdatedTimestamp")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Room]
-    }
-  }
-
   /**
     * The room membership details.
     */
   @js.native
+  @Factory
   trait RoomMembership extends js.Object {
     var InvitedBy: js.UndefOr[NonEmptyString]
     var Member: js.UndefOr[Member]
     var Role: js.UndefOr[RoomMembershipRole]
     var RoomId: js.UndefOr[NonEmptyString]
     var UpdatedTimestamp: js.UndefOr[Iso8601Timestamp]
-  }
-
-  object RoomMembership {
-    @inline
-    def apply(
-        InvitedBy: js.UndefOr[NonEmptyString] = js.undefined,
-        Member: js.UndefOr[Member] = js.undefined,
-        Role: js.UndefOr[RoomMembershipRole] = js.undefined,
-        RoomId: js.UndefOr[NonEmptyString] = js.undefined,
-        UpdatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined
-    ): RoomMembership = {
-      val __obj = js.Dynamic.literal()
-      InvitedBy.foreach(__v => __obj.updateDynamic("InvitedBy")(__v.asInstanceOf[js.Any]))
-      Member.foreach(__v => __obj.updateDynamic("Member")(__v.asInstanceOf[js.Any]))
-      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
-      RoomId.foreach(__v => __obj.updateDynamic("RoomId")(__v.asInstanceOf[js.Any]))
-      UpdatedTimestamp.foreach(__v => __obj.updateDynamic("UpdatedTimestamp")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RoomMembership]
-    }
   }
 
   @js.native
@@ -4261,6 +1992,7 @@ package chime {
   }
 
   @js.native
+  @Factory
   trait SearchAvailablePhoneNumbersRequest extends js.Object {
     var AreaCode: js.UndefOr[String]
     var City: js.UndefOr[String]
@@ -4271,119 +2003,47 @@ package chime {
     var TollFreePrefix: js.UndefOr[TollFreePrefix]
   }
 
-  object SearchAvailablePhoneNumbersRequest {
-    @inline
-    def apply(
-        AreaCode: js.UndefOr[String] = js.undefined,
-        City: js.UndefOr[String] = js.undefined,
-        Country: js.UndefOr[String] = js.undefined,
-        MaxResults: js.UndefOr[PhoneNumberMaxResults] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined,
-        State: js.UndefOr[String] = js.undefined,
-        TollFreePrefix: js.UndefOr[TollFreePrefix] = js.undefined
-    ): SearchAvailablePhoneNumbersRequest = {
-      val __obj = js.Dynamic.literal()
-      AreaCode.foreach(__v => __obj.updateDynamic("AreaCode")(__v.asInstanceOf[js.Any]))
-      City.foreach(__v => __obj.updateDynamic("City")(__v.asInstanceOf[js.Any]))
-      Country.foreach(__v => __obj.updateDynamic("Country")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      TollFreePrefix.foreach(__v => __obj.updateDynamic("TollFreePrefix")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SearchAvailablePhoneNumbersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait SearchAvailablePhoneNumbersResponse extends js.Object {
     var E164PhoneNumbers: js.UndefOr[E164PhoneNumberList]
-  }
-
-  object SearchAvailablePhoneNumbersResponse {
-    @inline
-    def apply(
-        E164PhoneNumbers: js.UndefOr[E164PhoneNumberList] = js.undefined
-    ): SearchAvailablePhoneNumbersResponse = {
-      val __obj = js.Dynamic.literal()
-      E164PhoneNumbers.foreach(__v => __obj.updateDynamic("E164PhoneNumbers")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SearchAvailablePhoneNumbersResponse]
-    }
   }
 
   /**
     * An Active Directory (AD) group whose members are granted permission to act as delegates.
     */
   @js.native
+  @Factory
   trait SigninDelegateGroup extends js.Object {
     var GroupName: js.UndefOr[NonEmptyString]
-  }
-
-  object SigninDelegateGroup {
-    @inline
-    def apply(
-        GroupName: js.UndefOr[NonEmptyString] = js.undefined
-    ): SigninDelegateGroup = {
-      val __obj = js.Dynamic.literal()
-      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SigninDelegateGroup]
-    }
   }
 
   /**
     * The streaming configuration associated with an Amazon Chime Voice Connector. Specifies whether media streaming is enabled for sending to Amazon Kinesis, and shows the retention period for the Amazon Kinesis data, in hours.
     */
   @js.native
+  @Factory
   trait StreamingConfiguration extends js.Object {
     var DataRetentionInHours: DataRetentionInHours
     var Disabled: js.UndefOr[Boolean]
-  }
-
-  object StreamingConfiguration {
-    @inline
-    def apply(
-        DataRetentionInHours: DataRetentionInHours,
-        Disabled: js.UndefOr[Boolean] = js.undefined
-    ): StreamingConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "DataRetentionInHours" -> DataRetentionInHours.asInstanceOf[js.Any]
-      )
-
-      Disabled.foreach(__v => __obj.updateDynamic("Disabled")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StreamingConfiguration]
-    }
   }
 
   /**
     * Settings that allow management of telephony permissions for an Amazon Chime user, such as inbound and outbound calling and text messaging.
     */
   @js.native
+  @Factory
   trait TelephonySettings extends js.Object {
     var InboundCalling: Boolean
     var OutboundCalling: Boolean
     var SMS: Boolean
   }
 
-  object TelephonySettings {
-    @inline
-    def apply(
-        InboundCalling: Boolean,
-        OutboundCalling: Boolean,
-        SMS: Boolean
-    ): TelephonySettings = {
-      val __obj = js.Dynamic.literal(
-        "InboundCalling"  -> InboundCalling.asInstanceOf[js.Any],
-        "OutboundCalling" -> OutboundCalling.asInstanceOf[js.Any],
-        "SMS"             -> SMS.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TelephonySettings]
-    }
-  }
-
   /**
     * Termination settings enable your SIP hosts to make outbound calls using your Amazon Chime Voice Connector.
     */
   @js.native
+  @Factory
   trait Termination extends js.Object {
     var CallingRegions: js.UndefOr[CallingRegionList]
     var CidrAllowedList: js.UndefOr[StringList]
@@ -4392,265 +2052,94 @@ package chime {
     var Disabled: js.UndefOr[Boolean]
   }
 
-  object Termination {
-    @inline
-    def apply(
-        CallingRegions: js.UndefOr[CallingRegionList] = js.undefined,
-        CidrAllowedList: js.UndefOr[StringList] = js.undefined,
-        CpsLimit: js.UndefOr[CpsLimit] = js.undefined,
-        DefaultPhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined,
-        Disabled: js.UndefOr[Boolean] = js.undefined
-    ): Termination = {
-      val __obj = js.Dynamic.literal()
-      CallingRegions.foreach(__v => __obj.updateDynamic("CallingRegions")(__v.asInstanceOf[js.Any]))
-      CidrAllowedList.foreach(__v => __obj.updateDynamic("CidrAllowedList")(__v.asInstanceOf[js.Any]))
-      CpsLimit.foreach(__v => __obj.updateDynamic("CpsLimit")(__v.asInstanceOf[js.Any]))
-      DefaultPhoneNumber.foreach(__v => __obj.updateDynamic("DefaultPhoneNumber")(__v.asInstanceOf[js.Any]))
-      Disabled.foreach(__v => __obj.updateDynamic("Disabled")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Termination]
-    }
-  }
-
   /**
     * The termination health details, including the source IP address and timestamp of the last successful SIP <code>OPTIONS</code> message from your SIP infrastructure.
     */
   @js.native
+  @Factory
   trait TerminationHealth extends js.Object {
     var Source: js.UndefOr[String]
     var Timestamp: js.UndefOr[Iso8601Timestamp]
   }
 
-  object TerminationHealth {
-    @inline
-    def apply(
-        Source: js.UndefOr[String] = js.undefined,
-        Timestamp: js.UndefOr[Iso8601Timestamp] = js.undefined
-    ): TerminationHealth = {
-      val __obj = js.Dynamic.literal()
-      Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TerminationHealth]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateAccountRequest extends js.Object {
     var AccountId: NonEmptyString
     var Name: js.UndefOr[AccountName]
   }
 
-  object UpdateAccountRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        Name: js.UndefOr[AccountName] = js.undefined
-    ): UpdateAccountRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any]
-      )
-
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateAccountRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateAccountResponse extends js.Object {
     var Account: js.UndefOr[Account]
   }
 
-  object UpdateAccountResponse {
-    @inline
-    def apply(
-        Account: js.UndefOr[Account] = js.undefined
-    ): UpdateAccountResponse = {
-      val __obj = js.Dynamic.literal()
-      Account.foreach(__v => __obj.updateDynamic("Account")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateAccountResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateAccountSettingsRequest extends js.Object {
     var AccountId: NonEmptyString
     var AccountSettings: AccountSettings
   }
 
-  object UpdateAccountSettingsRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        AccountSettings: AccountSettings
-    ): UpdateAccountSettingsRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId"       -> AccountId.asInstanceOf[js.Any],
-        "AccountSettings" -> AccountSettings.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateAccountSettingsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateAccountSettingsResponse extends js.Object {}
 
-  object UpdateAccountSettingsResponse {
-    @inline
-    def apply(
-    ): UpdateAccountSettingsResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateAccountSettingsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateBotRequest extends js.Object {
     var AccountId: NonEmptyString
     var BotId: NonEmptyString
     var Disabled: js.UndefOr[NullableBoolean]
   }
 
-  object UpdateBotRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        BotId: NonEmptyString,
-        Disabled: js.UndefOr[NullableBoolean] = js.undefined
-    ): UpdateBotRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "BotId"     -> BotId.asInstanceOf[js.Any]
-      )
-
-      Disabled.foreach(__v => __obj.updateDynamic("Disabled")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateBotRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateBotResponse extends js.Object {
     var Bot: js.UndefOr[Bot]
   }
 
-  object UpdateBotResponse {
-    @inline
-    def apply(
-        Bot: js.UndefOr[Bot] = js.undefined
-    ): UpdateBotResponse = {
-      val __obj = js.Dynamic.literal()
-      Bot.foreach(__v => __obj.updateDynamic("Bot")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateBotResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateGlobalSettingsRequest extends js.Object {
     var BusinessCalling: BusinessCallingSettings
     var VoiceConnector: VoiceConnectorSettings
   }
 
-  object UpdateGlobalSettingsRequest {
-    @inline
-    def apply(
-        BusinessCalling: BusinessCallingSettings,
-        VoiceConnector: VoiceConnectorSettings
-    ): UpdateGlobalSettingsRequest = {
-      val __obj = js.Dynamic.literal(
-        "BusinessCalling" -> BusinessCalling.asInstanceOf[js.Any],
-        "VoiceConnector"  -> VoiceConnector.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateGlobalSettingsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdatePhoneNumberRequest extends js.Object {
     var PhoneNumberId: String
     var CallingName: js.UndefOr[CallingName]
     var ProductType: js.UndefOr[PhoneNumberProductType]
   }
 
-  object UpdatePhoneNumberRequest {
-    @inline
-    def apply(
-        PhoneNumberId: String,
-        CallingName: js.UndefOr[CallingName] = js.undefined,
-        ProductType: js.UndefOr[PhoneNumberProductType] = js.undefined
-    ): UpdatePhoneNumberRequest = {
-      val __obj = js.Dynamic.literal(
-        "PhoneNumberId" -> PhoneNumberId.asInstanceOf[js.Any]
-      )
-
-      CallingName.foreach(__v => __obj.updateDynamic("CallingName")(__v.asInstanceOf[js.Any]))
-      ProductType.foreach(__v => __obj.updateDynamic("ProductType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdatePhoneNumberRequest]
-    }
-  }
-
   /**
     * The phone number ID, product type, or calling name fields to update, used with the <a>BatchUpdatePhoneNumber</a> and <a>UpdatePhoneNumber</a> actions.
     */
   @js.native
+  @Factory
   trait UpdatePhoneNumberRequestItem extends js.Object {
     var PhoneNumberId: NonEmptyString
     var CallingName: js.UndefOr[CallingName]
     var ProductType: js.UndefOr[PhoneNumberProductType]
   }
 
-  object UpdatePhoneNumberRequestItem {
-    @inline
-    def apply(
-        PhoneNumberId: NonEmptyString,
-        CallingName: js.UndefOr[CallingName] = js.undefined,
-        ProductType: js.UndefOr[PhoneNumberProductType] = js.undefined
-    ): UpdatePhoneNumberRequestItem = {
-      val __obj = js.Dynamic.literal(
-        "PhoneNumberId" -> PhoneNumberId.asInstanceOf[js.Any]
-      )
-
-      CallingName.foreach(__v => __obj.updateDynamic("CallingName")(__v.asInstanceOf[js.Any]))
-      ProductType.foreach(__v => __obj.updateDynamic("ProductType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdatePhoneNumberRequestItem]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdatePhoneNumberResponse extends js.Object {
     var PhoneNumber: js.UndefOr[PhoneNumber]
   }
 
-  object UpdatePhoneNumberResponse {
-    @inline
-    def apply(
-        PhoneNumber: js.UndefOr[PhoneNumber] = js.undefined
-    ): UpdatePhoneNumberResponse = {
-      val __obj = js.Dynamic.literal()
-      PhoneNumber.foreach(__v => __obj.updateDynamic("PhoneNumber")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdatePhoneNumberResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdatePhoneNumberSettingsRequest extends js.Object {
     var CallingName: CallingName
   }
 
-  object UpdatePhoneNumberSettingsRequest {
-    @inline
-    def apply(
-        CallingName: CallingName
-    ): UpdatePhoneNumberSettingsRequest = {
-      val __obj = js.Dynamic.literal(
-        "CallingName" -> CallingName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdatePhoneNumberSettingsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateRoomMembershipRequest extends js.Object {
     var AccountId: NonEmptyString
     var MemberId: NonEmptyString
@@ -4658,82 +2147,28 @@ package chime {
     var Role: js.UndefOr[RoomMembershipRole]
   }
 
-  object UpdateRoomMembershipRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        MemberId: NonEmptyString,
-        RoomId: NonEmptyString,
-        Role: js.UndefOr[RoomMembershipRole] = js.undefined
-    ): UpdateRoomMembershipRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "MemberId"  -> MemberId.asInstanceOf[js.Any],
-        "RoomId"    -> RoomId.asInstanceOf[js.Any]
-      )
-
-      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateRoomMembershipRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateRoomMembershipResponse extends js.Object {
     var RoomMembership: js.UndefOr[RoomMembership]
   }
 
-  object UpdateRoomMembershipResponse {
-    @inline
-    def apply(
-        RoomMembership: js.UndefOr[RoomMembership] = js.undefined
-    ): UpdateRoomMembershipResponse = {
-      val __obj = js.Dynamic.literal()
-      RoomMembership.foreach(__v => __obj.updateDynamic("RoomMembership")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateRoomMembershipResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateRoomRequest extends js.Object {
     var AccountId: NonEmptyString
     var RoomId: NonEmptyString
     var Name: js.UndefOr[SensitiveString]
   }
 
-  object UpdateRoomRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        RoomId: NonEmptyString,
-        Name: js.UndefOr[SensitiveString] = js.undefined
-    ): UpdateRoomRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "RoomId"    -> RoomId.asInstanceOf[js.Any]
-      )
-
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateRoomRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateRoomResponse extends js.Object {
     var Room: js.UndefOr[Room]
   }
 
-  object UpdateRoomResponse {
-    @inline
-    def apply(
-        Room: js.UndefOr[Room] = js.undefined
-    ): UpdateRoomResponse = {
-      val __obj = js.Dynamic.literal()
-      Room.foreach(__v => __obj.updateDynamic("Room")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateRoomResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateUserRequest extends js.Object {
     var AccountId: NonEmptyString
     var UserId: NonEmptyString
@@ -4742,31 +2177,11 @@ package chime {
     var UserType: js.UndefOr[UserType]
   }
 
-  object UpdateUserRequest {
-    @inline
-    def apply(
-        AccountId: NonEmptyString,
-        UserId: NonEmptyString,
-        AlexaForBusinessMetadata: js.UndefOr[AlexaForBusinessMetadata] = js.undefined,
-        LicenseType: js.UndefOr[License] = js.undefined,
-        UserType: js.UndefOr[UserType] = js.undefined
-    ): UpdateUserRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "UserId"    -> UserId.asInstanceOf[js.Any]
-      )
-
-      AlexaForBusinessMetadata.foreach(__v => __obj.updateDynamic("AlexaForBusinessMetadata")(__v.asInstanceOf[js.Any]))
-      LicenseType.foreach(__v => __obj.updateDynamic("LicenseType")(__v.asInstanceOf[js.Any]))
-      UserType.foreach(__v => __obj.updateDynamic("UserType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateUserRequest]
-    }
-  }
-
   /**
     * The user ID and user fields to update, used with the <a>BatchUpdateUser</a> action.
     */
   @js.native
+  @Factory
   trait UpdateUserRequestItem extends js.Object {
     var UserId: NonEmptyString
     var AlexaForBusinessMetadata: js.UndefOr[AlexaForBusinessMetadata]
@@ -4774,149 +2189,53 @@ package chime {
     var UserType: js.UndefOr[UserType]
   }
 
-  object UpdateUserRequestItem {
-    @inline
-    def apply(
-        UserId: NonEmptyString,
-        AlexaForBusinessMetadata: js.UndefOr[AlexaForBusinessMetadata] = js.undefined,
-        LicenseType: js.UndefOr[License] = js.undefined,
-        UserType: js.UndefOr[UserType] = js.undefined
-    ): UpdateUserRequestItem = {
-      val __obj = js.Dynamic.literal(
-        "UserId" -> UserId.asInstanceOf[js.Any]
-      )
-
-      AlexaForBusinessMetadata.foreach(__v => __obj.updateDynamic("AlexaForBusinessMetadata")(__v.asInstanceOf[js.Any]))
-      LicenseType.foreach(__v => __obj.updateDynamic("LicenseType")(__v.asInstanceOf[js.Any]))
-      UserType.foreach(__v => __obj.updateDynamic("UserType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateUserRequestItem]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateUserResponse extends js.Object {
     var User: js.UndefOr[User]
   }
 
-  object UpdateUserResponse {
-    @inline
-    def apply(
-        User: js.UndefOr[User] = js.undefined
-    ): UpdateUserResponse = {
-      val __obj = js.Dynamic.literal()
-      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateUserResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateUserSettingsRequest extends js.Object {
     var AccountId: String
     var UserId: String
     var UserSettings: UserSettings
   }
 
-  object UpdateUserSettingsRequest {
-    @inline
-    def apply(
-        AccountId: String,
-        UserId: String,
-        UserSettings: UserSettings
-    ): UpdateUserSettingsRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId"    -> AccountId.asInstanceOf[js.Any],
-        "UserId"       -> UserId.asInstanceOf[js.Any],
-        "UserSettings" -> UserSettings.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateUserSettingsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateVoiceConnectorGroupRequest extends js.Object {
     var Name: VoiceConnectorGroupName
     var VoiceConnectorGroupId: NonEmptyString
     var VoiceConnectorItems: VoiceConnectorItemList
   }
 
-  object UpdateVoiceConnectorGroupRequest {
-    @inline
-    def apply(
-        Name: VoiceConnectorGroupName,
-        VoiceConnectorGroupId: NonEmptyString,
-        VoiceConnectorItems: VoiceConnectorItemList
-    ): UpdateVoiceConnectorGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name"                  -> Name.asInstanceOf[js.Any],
-        "VoiceConnectorGroupId" -> VoiceConnectorGroupId.asInstanceOf[js.Any],
-        "VoiceConnectorItems"   -> VoiceConnectorItems.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateVoiceConnectorGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateVoiceConnectorGroupResponse extends js.Object {
     var VoiceConnectorGroup: js.UndefOr[VoiceConnectorGroup]
   }
 
-  object UpdateVoiceConnectorGroupResponse {
-    @inline
-    def apply(
-        VoiceConnectorGroup: js.UndefOr[VoiceConnectorGroup] = js.undefined
-    ): UpdateVoiceConnectorGroupResponse = {
-      val __obj = js.Dynamic.literal()
-      VoiceConnectorGroup.foreach(__v => __obj.updateDynamic("VoiceConnectorGroup")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateVoiceConnectorGroupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateVoiceConnectorRequest extends js.Object {
     var Name: VoiceConnectorName
     var RequireEncryption: Boolean
     var VoiceConnectorId: NonEmptyString
   }
 
-  object UpdateVoiceConnectorRequest {
-    @inline
-    def apply(
-        Name: VoiceConnectorName,
-        RequireEncryption: Boolean,
-        VoiceConnectorId: NonEmptyString
-    ): UpdateVoiceConnectorRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name"              -> Name.asInstanceOf[js.Any],
-        "RequireEncryption" -> RequireEncryption.asInstanceOf[js.Any],
-        "VoiceConnectorId"  -> VoiceConnectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateVoiceConnectorRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateVoiceConnectorResponse extends js.Object {
     var VoiceConnector: js.UndefOr[VoiceConnector]
-  }
-
-  object UpdateVoiceConnectorResponse {
-    @inline
-    def apply(
-        VoiceConnector: js.UndefOr[VoiceConnector] = js.undefined
-    ): UpdateVoiceConnectorResponse = {
-      val __obj = js.Dynamic.literal()
-      VoiceConnector.foreach(__v => __obj.updateDynamic("VoiceConnector")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateVoiceConnectorResponse]
-    }
   }
 
   /**
     * The user on the Amazon Chime account.
     */
   @js.native
+  @Factory
   trait User extends js.Object {
     var UserId: String
     var AccountId: js.UndefOr[String]
@@ -4933,87 +2252,24 @@ package chime {
     var UserType: js.UndefOr[UserType]
   }
 
-  object User {
-    @inline
-    def apply(
-        UserId: String,
-        AccountId: js.UndefOr[String] = js.undefined,
-        AlexaForBusinessMetadata: js.UndefOr[AlexaForBusinessMetadata] = js.undefined,
-        DisplayName: js.UndefOr[SensitiveString] = js.undefined,
-        InvitedOn: js.UndefOr[Iso8601Timestamp] = js.undefined,
-        LicenseType: js.UndefOr[License] = js.undefined,
-        PersonalPIN: js.UndefOr[String] = js.undefined,
-        PrimaryEmail: js.UndefOr[EmailAddress] = js.undefined,
-        PrimaryProvisionedNumber: js.UndefOr[SensitiveString] = js.undefined,
-        RegisteredOn: js.UndefOr[Iso8601Timestamp] = js.undefined,
-        UserInvitationStatus: js.UndefOr[InviteStatus] = js.undefined,
-        UserRegistrationStatus: js.UndefOr[RegistrationStatus] = js.undefined,
-        UserType: js.UndefOr[UserType] = js.undefined
-    ): User = {
-      val __obj = js.Dynamic.literal(
-        "UserId" -> UserId.asInstanceOf[js.Any]
-      )
-
-      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
-      AlexaForBusinessMetadata.foreach(__v => __obj.updateDynamic("AlexaForBusinessMetadata")(__v.asInstanceOf[js.Any]))
-      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
-      InvitedOn.foreach(__v => __obj.updateDynamic("InvitedOn")(__v.asInstanceOf[js.Any]))
-      LicenseType.foreach(__v => __obj.updateDynamic("LicenseType")(__v.asInstanceOf[js.Any]))
-      PersonalPIN.foreach(__v => __obj.updateDynamic("PersonalPIN")(__v.asInstanceOf[js.Any]))
-      PrimaryEmail.foreach(__v => __obj.updateDynamic("PrimaryEmail")(__v.asInstanceOf[js.Any]))
-      PrimaryProvisionedNumber.foreach(__v => __obj.updateDynamic("PrimaryProvisionedNumber")(__v.asInstanceOf[js.Any]))
-      RegisteredOn.foreach(__v => __obj.updateDynamic("RegisteredOn")(__v.asInstanceOf[js.Any]))
-      UserInvitationStatus.foreach(__v => __obj.updateDynamic("UserInvitationStatus")(__v.asInstanceOf[js.Any]))
-      UserRegistrationStatus.foreach(__v => __obj.updateDynamic("UserRegistrationStatus")(__v.asInstanceOf[js.Any]))
-      UserType.foreach(__v => __obj.updateDynamic("UserType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[User]
-    }
-  }
-
   /**
     * The list of errors returned when errors are encountered during the <a>BatchSuspendUser</a>, <a>BatchUnsuspendUser</a>, or <a>BatchUpdateUser</a> actions. This includes user IDs, error codes, and error messages.
     */
   @js.native
+  @Factory
   trait UserError extends js.Object {
     var ErrorCode: js.UndefOr[ErrorCode]
     var ErrorMessage: js.UndefOr[String]
     var UserId: js.UndefOr[NonEmptyString]
   }
 
-  object UserError {
-    @inline
-    def apply(
-        ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
-        ErrorMessage: js.UndefOr[String] = js.undefined,
-        UserId: js.UndefOr[NonEmptyString] = js.undefined
-    ): UserError = {
-      val __obj = js.Dynamic.literal()
-      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
-      UserId.foreach(__v => __obj.updateDynamic("UserId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UserError]
-    }
-  }
-
   /**
     * Settings associated with an Amazon Chime user, including inbound and outbound calling and text messaging.
     */
   @js.native
+  @Factory
   trait UserSettings extends js.Object {
     var Telephony: TelephonySettings
-  }
-
-  object UserSettings {
-    @inline
-    def apply(
-        Telephony: TelephonySettings
-    ): UserSettings = {
-      val __obj = js.Dynamic.literal(
-        "Telephony" -> Telephony.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UserSettings]
-    }
   }
 
   @js.native
@@ -5029,6 +2285,7 @@ package chime {
     * The Amazon Chime Voice Connector configuration, including outbound host name and encryption settings.
     */
   @js.native
+  @Factory
   trait VoiceConnector extends js.Object {
     var AwsRegion: js.UndefOr[VoiceConnectorAwsRegion]
     var CreatedTimestamp: js.UndefOr[Iso8601Timestamp]
@@ -5037,29 +2294,6 @@ package chime {
     var RequireEncryption: js.UndefOr[Boolean]
     var UpdatedTimestamp: js.UndefOr[Iso8601Timestamp]
     var VoiceConnectorId: js.UndefOr[NonEmptyString]
-  }
-
-  object VoiceConnector {
-    @inline
-    def apply(
-        AwsRegion: js.UndefOr[VoiceConnectorAwsRegion] = js.undefined,
-        CreatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
-        Name: js.UndefOr[VoiceConnectorName] = js.undefined,
-        OutboundHostName: js.UndefOr[String] = js.undefined,
-        RequireEncryption: js.UndefOr[Boolean] = js.undefined,
-        UpdatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
-        VoiceConnectorId: js.UndefOr[NonEmptyString] = js.undefined
-    ): VoiceConnector = {
-      val __obj = js.Dynamic.literal()
-      AwsRegion.foreach(__v => __obj.updateDynamic("AwsRegion")(__v.asInstanceOf[js.Any]))
-      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      OutboundHostName.foreach(__v => __obj.updateDynamic("OutboundHostName")(__v.asInstanceOf[js.Any]))
-      RequireEncryption.foreach(__v => __obj.updateDynamic("RequireEncryption")(__v.asInstanceOf[js.Any]))
-      UpdatedTimestamp.foreach(__v => __obj.updateDynamic("UpdatedTimestamp")(__v.asInstanceOf[js.Any]))
-      VoiceConnectorId.foreach(__v => __obj.updateDynamic("VoiceConnectorId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VoiceConnector]
-    }
   }
 
   @js.native
@@ -5075,6 +2309,7 @@ package chime {
     * The Amazon Chime Voice Connector group configuration, including associated Amazon Chime Voice Connectors. You can include Amazon Chime Voice Connectors from different AWS Regions in your group. This creates a fault tolerant mechanism for fallback in case of availability events.
     */
   @js.native
+  @Factory
   trait VoiceConnectorGroup extends js.Object {
     var CreatedTimestamp: js.UndefOr[Iso8601Timestamp]
     var Name: js.UndefOr[VoiceConnectorGroupName]
@@ -5083,65 +2318,22 @@ package chime {
     var VoiceConnectorItems: js.UndefOr[VoiceConnectorItemList]
   }
 
-  object VoiceConnectorGroup {
-    @inline
-    def apply(
-        CreatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
-        Name: js.UndefOr[VoiceConnectorGroupName] = js.undefined,
-        UpdatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
-        VoiceConnectorGroupId: js.UndefOr[NonEmptyString] = js.undefined,
-        VoiceConnectorItems: js.UndefOr[VoiceConnectorItemList] = js.undefined
-    ): VoiceConnectorGroup = {
-      val __obj = js.Dynamic.literal()
-      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      UpdatedTimestamp.foreach(__v => __obj.updateDynamic("UpdatedTimestamp")(__v.asInstanceOf[js.Any]))
-      VoiceConnectorGroupId.foreach(__v => __obj.updateDynamic("VoiceConnectorGroupId")(__v.asInstanceOf[js.Any]))
-      VoiceConnectorItems.foreach(__v => __obj.updateDynamic("VoiceConnectorItems")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VoiceConnectorGroup]
-    }
-  }
-
   /**
     * For Amazon Chime Voice Connector groups, the Amazon Chime Voice Connectors to which to route inbound calls. Includes priority configuration settings. Limit: 3 <code>VoiceConnectorItems</code> per Amazon Chime Voice Connector group.
     */
   @js.native
+  @Factory
   trait VoiceConnectorItem extends js.Object {
     var Priority: VoiceConnectorItemPriority
     var VoiceConnectorId: NonEmptyString
-  }
-
-  object VoiceConnectorItem {
-    @inline
-    def apply(
-        Priority: VoiceConnectorItemPriority,
-        VoiceConnectorId: NonEmptyString
-    ): VoiceConnectorItem = {
-      val __obj = js.Dynamic.literal(
-        "Priority"         -> Priority.asInstanceOf[js.Any],
-        "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[VoiceConnectorItem]
-    }
   }
 
   /**
     * The Amazon Chime Voice Connector settings. Includes any Amazon S3 buckets designated for storing call detail records.
     */
   @js.native
+  @Factory
   trait VoiceConnectorSettings extends js.Object {
     var CdrBucket: js.UndefOr[String]
-  }
-
-  object VoiceConnectorSettings {
-    @inline
-    def apply(
-        CdrBucket: js.UndefOr[String] = js.undefined
-    ): VoiceConnectorSettings = {
-      val __obj = js.Dynamic.literal()
-      CdrBucket.foreach(__v => __obj.updateDynamic("CdrBucket")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VoiceConnectorSettings]
-    }
   }
 }

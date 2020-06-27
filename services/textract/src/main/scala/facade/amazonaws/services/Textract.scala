@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object textract {
   type BlockList                                      = js.Array[Block]
@@ -77,56 +78,20 @@ package textract {
   }
 
   @js.native
+  @Factory
   trait AnalyzeDocumentRequest extends js.Object {
     var Document: Document
     var FeatureTypes: FeatureTypes
     var HumanLoopConfig: js.UndefOr[HumanLoopConfig]
   }
 
-  object AnalyzeDocumentRequest {
-    @inline
-    def apply(
-        Document: Document,
-        FeatureTypes: FeatureTypes,
-        HumanLoopConfig: js.UndefOr[HumanLoopConfig] = js.undefined
-    ): AnalyzeDocumentRequest = {
-      val __obj = js.Dynamic.literal(
-        "Document"     -> Document.asInstanceOf[js.Any],
-        "FeatureTypes" -> FeatureTypes.asInstanceOf[js.Any]
-      )
-
-      HumanLoopConfig.foreach(__v => __obj.updateDynamic("HumanLoopConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AnalyzeDocumentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AnalyzeDocumentResponse extends js.Object {
     var AnalyzeDocumentModelVersion: js.UndefOr[String]
     var Blocks: js.UndefOr[BlockList]
     var DocumentMetadata: js.UndefOr[DocumentMetadata]
     var HumanLoopActivationOutput: js.UndefOr[HumanLoopActivationOutput]
-  }
-
-  object AnalyzeDocumentResponse {
-    @inline
-    def apply(
-        AnalyzeDocumentModelVersion: js.UndefOr[String] = js.undefined,
-        Blocks: js.UndefOr[BlockList] = js.undefined,
-        DocumentMetadata: js.UndefOr[DocumentMetadata] = js.undefined,
-        HumanLoopActivationOutput: js.UndefOr[HumanLoopActivationOutput] = js.undefined
-    ): AnalyzeDocumentResponse = {
-      val __obj = js.Dynamic.literal()
-      AnalyzeDocumentModelVersion.foreach(__v =>
-        __obj.updateDynamic("AnalyzeDocumentModelVersion")(__v.asInstanceOf[js.Any])
-      )
-      Blocks.foreach(__v => __obj.updateDynamic("Blocks")(__v.asInstanceOf[js.Any]))
-      DocumentMetadata.foreach(__v => __obj.updateDynamic("DocumentMetadata")(__v.asInstanceOf[js.Any]))
-      HumanLoopActivationOutput.foreach(__v =>
-        __obj.updateDynamic("HumanLoopActivationOutput")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[AnalyzeDocumentResponse]
-    }
   }
 
   /**
@@ -135,6 +100,7 @@ package textract {
     *  For more information, see [[https://docs.aws.amazon.com/textract/latest/dg/how-it-works.html|How Amazon Textract Works]].
     */
   @js.native
+  @Factory
   trait Block extends js.Object {
     var BlockType: js.UndefOr[BlockType]
     var ColumnIndex: js.UndefOr[UInteger]
@@ -149,41 +115,6 @@ package textract {
     var RowSpan: js.UndefOr[UInteger]
     var SelectionStatus: js.UndefOr[SelectionStatus]
     var Text: js.UndefOr[String]
-  }
-
-  object Block {
-    @inline
-    def apply(
-        BlockType: js.UndefOr[BlockType] = js.undefined,
-        ColumnIndex: js.UndefOr[UInteger] = js.undefined,
-        ColumnSpan: js.UndefOr[UInteger] = js.undefined,
-        Confidence: js.UndefOr[Percent] = js.undefined,
-        EntityTypes: js.UndefOr[EntityTypes] = js.undefined,
-        Geometry: js.UndefOr[Geometry] = js.undefined,
-        Id: js.UndefOr[NonEmptyString] = js.undefined,
-        Page: js.UndefOr[UInteger] = js.undefined,
-        Relationships: js.UndefOr[RelationshipList] = js.undefined,
-        RowIndex: js.UndefOr[UInteger] = js.undefined,
-        RowSpan: js.UndefOr[UInteger] = js.undefined,
-        SelectionStatus: js.UndefOr[SelectionStatus] = js.undefined,
-        Text: js.UndefOr[String] = js.undefined
-    ): Block = {
-      val __obj = js.Dynamic.literal()
-      BlockType.foreach(__v => __obj.updateDynamic("BlockType")(__v.asInstanceOf[js.Any]))
-      ColumnIndex.foreach(__v => __obj.updateDynamic("ColumnIndex")(__v.asInstanceOf[js.Any]))
-      ColumnSpan.foreach(__v => __obj.updateDynamic("ColumnSpan")(__v.asInstanceOf[js.Any]))
-      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
-      EntityTypes.foreach(__v => __obj.updateDynamic("EntityTypes")(__v.asInstanceOf[js.Any]))
-      Geometry.foreach(__v => __obj.updateDynamic("Geometry")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Page.foreach(__v => __obj.updateDynamic("Page")(__v.asInstanceOf[js.Any]))
-      Relationships.foreach(__v => __obj.updateDynamic("Relationships")(__v.asInstanceOf[js.Any]))
-      RowIndex.foreach(__v => __obj.updateDynamic("RowIndex")(__v.asInstanceOf[js.Any]))
-      RowSpan.foreach(__v => __obj.updateDynamic("RowSpan")(__v.asInstanceOf[js.Any]))
-      SelectionStatus.foreach(__v => __obj.updateDynamic("SelectionStatus")(__v.asInstanceOf[js.Any]))
-      Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Block]
-    }
   }
 
   @js.native
@@ -206,28 +137,12 @@ package textract {
     *  The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall document page dimension. For example, if the document page size is 700 x 200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1.
     */
   @js.native
+  @Factory
   trait BoundingBox extends js.Object {
     var Height: js.UndefOr[Float]
     var Left: js.UndefOr[Float]
     var Top: js.UndefOr[Float]
     var Width: js.UndefOr[Float]
-  }
-
-  object BoundingBox {
-    @inline
-    def apply(
-        Height: js.UndefOr[Float] = js.undefined,
-        Left: js.UndefOr[Float] = js.undefined,
-        Top: js.UndefOr[Float] = js.undefined,
-        Width: js.UndefOr[Float] = js.undefined
-    ): BoundingBox = {
-      val __obj = js.Dynamic.literal()
-      Height.foreach(__v => __obj.updateDynamic("Height")(__v.asInstanceOf[js.Any]))
-      Left.foreach(__v => __obj.updateDynamic("Left")(__v.asInstanceOf[js.Any]))
-      Top.foreach(__v => __obj.updateDynamic("Top")(__v.asInstanceOf[js.Any]))
-      Width.foreach(__v => __obj.updateDynamic("Width")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BoundingBox]
-    }
   }
 
   @js.native
@@ -241,45 +156,17 @@ package textract {
   }
 
   @js.native
+  @Factory
   trait DetectDocumentTextRequest extends js.Object {
     var Document: Document
   }
 
-  object DetectDocumentTextRequest {
-    @inline
-    def apply(
-        Document: Document
-    ): DetectDocumentTextRequest = {
-      val __obj = js.Dynamic.literal(
-        "Document" -> Document.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DetectDocumentTextRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetectDocumentTextResponse extends js.Object {
     var Blocks: js.UndefOr[BlockList]
     var DetectDocumentTextModelVersion: js.UndefOr[String]
     var DocumentMetadata: js.UndefOr[DocumentMetadata]
-  }
-
-  object DetectDocumentTextResponse {
-    @inline
-    def apply(
-        Blocks: js.UndefOr[BlockList] = js.undefined,
-        DetectDocumentTextModelVersion: js.UndefOr[String] = js.undefined,
-        DocumentMetadata: js.UndefOr[DocumentMetadata] = js.undefined
-    ): DetectDocumentTextResponse = {
-      val __obj = js.Dynamic.literal()
-      Blocks.foreach(__v => __obj.updateDynamic("Blocks")(__v.asInstanceOf[js.Any]))
-      DetectDocumentTextModelVersion.foreach(__v =>
-        __obj.updateDynamic("DetectDocumentTextModelVersion")(__v.asInstanceOf[js.Any])
-      )
-      DocumentMetadata.foreach(__v => __obj.updateDynamic("DocumentMetadata")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DetectDocumentTextResponse]
-    }
   }
 
   /**
@@ -291,22 +178,10 @@ package textract {
     *  For Amazon Textract to process an S3 object, the user must have permission to access the S3 object.
     */
   @js.native
+  @Factory
   trait Document extends js.Object {
     var Bytes: js.UndefOr[ImageBlob]
     var S3Object: js.UndefOr[S3Object]
-  }
-
-  object Document {
-    @inline
-    def apply(
-        Bytes: js.UndefOr[ImageBlob] = js.undefined,
-        S3Object: js.UndefOr[S3Object] = js.undefined
-    ): Document = {
-      val __obj = js.Dynamic.literal()
-      Bytes.foreach(__v => __obj.updateDynamic("Bytes")(__v.asInstanceOf[js.Any]))
-      S3Object.foreach(__v => __obj.updateDynamic("S3Object")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Document]
-    }
   }
 
   /**
@@ -314,38 +189,18 @@ package textract {
     *  The input document can be an image file in JPEG or PNG format. It can also be a file in PDF format.
     */
   @js.native
+  @Factory
   trait DocumentLocation extends js.Object {
     var S3Object: js.UndefOr[S3Object]
-  }
-
-  object DocumentLocation {
-    @inline
-    def apply(
-        S3Object: js.UndefOr[S3Object] = js.undefined
-    ): DocumentLocation = {
-      val __obj = js.Dynamic.literal()
-      S3Object.foreach(__v => __obj.updateDynamic("S3Object")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DocumentLocation]
-    }
   }
 
   /**
     * Information about the input document.
     */
   @js.native
+  @Factory
   trait DocumentMetadata extends js.Object {
     var Pages: js.UndefOr[UInteger]
-  }
-
-  object DocumentMetadata {
-    @inline
-    def apply(
-        Pages: js.UndefOr[UInteger] = js.undefined
-    ): DocumentMetadata = {
-      val __obj = js.Dynamic.literal()
-      Pages.foreach(__v => __obj.updateDynamic("Pages")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DocumentMetadata]
-    }
   }
 
   @js.native
@@ -370,49 +225,22 @@ package textract {
     * Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.
     */
   @js.native
+  @Factory
   trait Geometry extends js.Object {
     var BoundingBox: js.UndefOr[BoundingBox]
     var Polygon: js.UndefOr[Polygon]
   }
 
-  object Geometry {
-    @inline
-    def apply(
-        BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
-        Polygon: js.UndefOr[Polygon] = js.undefined
-    ): Geometry = {
-      val __obj = js.Dynamic.literal()
-      BoundingBox.foreach(__v => __obj.updateDynamic("BoundingBox")(__v.asInstanceOf[js.Any]))
-      Polygon.foreach(__v => __obj.updateDynamic("Polygon")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Geometry]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDocumentAnalysisRequest extends js.Object {
     var JobId: JobId
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object GetDocumentAnalysisRequest {
-    @inline
-    def apply(
-        JobId: JobId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): GetDocumentAnalysisRequest = {
-      val __obj = js.Dynamic.literal(
-        "JobId" -> JobId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDocumentAnalysisRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDocumentAnalysisResponse extends js.Object {
     var AnalyzeDocumentModelVersion: js.UndefOr[String]
     var Blocks: js.UndefOr[BlockList]
@@ -423,56 +251,16 @@ package textract {
     var Warnings: js.UndefOr[Warnings]
   }
 
-  object GetDocumentAnalysisResponse {
-    @inline
-    def apply(
-        AnalyzeDocumentModelVersion: js.UndefOr[String] = js.undefined,
-        Blocks: js.UndefOr[BlockList] = js.undefined,
-        DocumentMetadata: js.UndefOr[DocumentMetadata] = js.undefined,
-        JobStatus: js.UndefOr[JobStatus] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
-        Warnings: js.UndefOr[Warnings] = js.undefined
-    ): GetDocumentAnalysisResponse = {
-      val __obj = js.Dynamic.literal()
-      AnalyzeDocumentModelVersion.foreach(__v =>
-        __obj.updateDynamic("AnalyzeDocumentModelVersion")(__v.asInstanceOf[js.Any])
-      )
-      Blocks.foreach(__v => __obj.updateDynamic("Blocks")(__v.asInstanceOf[js.Any]))
-      DocumentMetadata.foreach(__v => __obj.updateDynamic("DocumentMetadata")(__v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
-      Warnings.foreach(__v => __obj.updateDynamic("Warnings")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDocumentAnalysisResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDocumentTextDetectionRequest extends js.Object {
     var JobId: JobId
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object GetDocumentTextDetectionRequest {
-    @inline
-    def apply(
-        JobId: JobId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): GetDocumentTextDetectionRequest = {
-      val __obj = js.Dynamic.literal(
-        "JobId" -> JobId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDocumentTextDetectionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDocumentTextDetectionResponse extends js.Object {
     var Blocks: js.UndefOr[BlockList]
     var DetectDocumentTextModelVersion: js.UndefOr[String]
@@ -483,105 +271,35 @@ package textract {
     var Warnings: js.UndefOr[Warnings]
   }
 
-  object GetDocumentTextDetectionResponse {
-    @inline
-    def apply(
-        Blocks: js.UndefOr[BlockList] = js.undefined,
-        DetectDocumentTextModelVersion: js.UndefOr[String] = js.undefined,
-        DocumentMetadata: js.UndefOr[DocumentMetadata] = js.undefined,
-        JobStatus: js.UndefOr[JobStatus] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
-        Warnings: js.UndefOr[Warnings] = js.undefined
-    ): GetDocumentTextDetectionResponse = {
-      val __obj = js.Dynamic.literal()
-      Blocks.foreach(__v => __obj.updateDynamic("Blocks")(__v.asInstanceOf[js.Any]))
-      DetectDocumentTextModelVersion.foreach(__v =>
-        __obj.updateDynamic("DetectDocumentTextModelVersion")(__v.asInstanceOf[js.Any])
-      )
-      DocumentMetadata.foreach(__v => __obj.updateDynamic("DocumentMetadata")(__v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
-      Warnings.foreach(__v => __obj.updateDynamic("Warnings")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDocumentTextDetectionResponse]
-    }
-  }
-
   /**
     * Shows the results of the human in the loop evaluation. If there is no HumanLoopArn, the input did not trigger human review.
     */
   @js.native
+  @Factory
   trait HumanLoopActivationOutput extends js.Object {
     var HumanLoopActivationConditionsEvaluationResults: js.UndefOr[HumanLoopActivationConditionsEvaluationResults]
     var HumanLoopActivationReasons: js.UndefOr[HumanLoopActivationReasons]
     var HumanLoopArn: js.UndefOr[HumanLoopArn]
   }
 
-  object HumanLoopActivationOutput {
-    @inline
-    def apply(
-        HumanLoopActivationConditionsEvaluationResults: js.UndefOr[HumanLoopActivationConditionsEvaluationResults] =
-          js.undefined,
-        HumanLoopActivationReasons: js.UndefOr[HumanLoopActivationReasons] = js.undefined,
-        HumanLoopArn: js.UndefOr[HumanLoopArn] = js.undefined
-    ): HumanLoopActivationOutput = {
-      val __obj = js.Dynamic.literal()
-      HumanLoopActivationConditionsEvaluationResults.foreach(__v =>
-        __obj.updateDynamic("HumanLoopActivationConditionsEvaluationResults")(__v.asInstanceOf[js.Any])
-      )
-      HumanLoopActivationReasons.foreach(__v =>
-        __obj.updateDynamic("HumanLoopActivationReasons")(__v.asInstanceOf[js.Any])
-      )
-      HumanLoopArn.foreach(__v => __obj.updateDynamic("HumanLoopArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HumanLoopActivationOutput]
-    }
-  }
-
   /**
     * Sets up the human review workflow the document will be sent to if one of the conditions is met. You can also set certain attributes of the image before review.
     */
   @js.native
+  @Factory
   trait HumanLoopConfig extends js.Object {
     var FlowDefinitionArn: FlowDefinitionArn
     var HumanLoopName: HumanLoopName
     var DataAttributes: js.UndefOr[HumanLoopDataAttributes]
   }
 
-  object HumanLoopConfig {
-    @inline
-    def apply(
-        FlowDefinitionArn: FlowDefinitionArn,
-        HumanLoopName: HumanLoopName,
-        DataAttributes: js.UndefOr[HumanLoopDataAttributes] = js.undefined
-    ): HumanLoopConfig = {
-      val __obj = js.Dynamic.literal(
-        "FlowDefinitionArn" -> FlowDefinitionArn.asInstanceOf[js.Any],
-        "HumanLoopName"     -> HumanLoopName.asInstanceOf[js.Any]
-      )
-
-      DataAttributes.foreach(__v => __obj.updateDynamic("DataAttributes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HumanLoopConfig]
-    }
-  }
-
   /**
     * Allows you to set attributes of the image. Currently, you can declare an image as free of personally identifiable information and adult content.
     */
   @js.native
+  @Factory
   trait HumanLoopDataAttributes extends js.Object {
     var ContentClassifiers: js.UndefOr[ContentClassifiers]
-  }
-
-  object HumanLoopDataAttributes {
-    @inline
-    def apply(
-        ContentClassifiers: js.UndefOr[ContentClassifiers] = js.undefined
-    ): HumanLoopDataAttributes = {
-      val __obj = js.Dynamic.literal()
-      ContentClassifiers.foreach(__v => __obj.updateDynamic("ContentClassifiers")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HumanLoopDataAttributes]
-    }
   }
 
   @js.native
@@ -599,24 +317,10 @@ package textract {
     * The Amazon Simple Notification Service (Amazon SNS) topic to which Amazon Textract publishes the completion status of an asynchronous document operation, such as <a>StartDocumentTextDetection</a>.
     */
   @js.native
+  @Factory
   trait NotificationChannel extends js.Object {
     var RoleArn: RoleArn
     var SNSTopicArn: SNSTopicArn
-  }
-
-  object NotificationChannel {
-    @inline
-    def apply(
-        RoleArn: RoleArn,
-        SNSTopicArn: SNSTopicArn
-    ): NotificationChannel = {
-      val __obj = js.Dynamic.literal(
-        "RoleArn"     -> RoleArn.asInstanceOf[js.Any],
-        "SNSTopicArn" -> SNSTopicArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[NotificationChannel]
-    }
   }
 
   /**
@@ -624,22 +328,10 @@ package textract {
     *  An array of <code>Point</code> objects, <code>Polygon</code>, is returned by <a>DetectDocumentText</a>. <code>Polygon</code> represents a fine-grained polygon around detected text. For more information, see Geometry in the Amazon Textract Developer Guide.
     */
   @js.native
+  @Factory
   trait Point extends js.Object {
     var X: js.UndefOr[Float]
     var Y: js.UndefOr[Float]
-  }
-
-  object Point {
-    @inline
-    def apply(
-        X: js.UndefOr[Float] = js.undefined,
-        Y: js.UndefOr[Float] = js.undefined
-    ): Point = {
-      val __obj = js.Dynamic.literal()
-      X.foreach(__v => __obj.updateDynamic("X")(__v.asInstanceOf[js.Any]))
-      Y.foreach(__v => __obj.updateDynamic("Y")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Point]
-    }
   }
 
   /**
@@ -647,22 +339,10 @@ package textract {
     *  The <code>Type</code> element provides the type of the relationship for all blocks in the <code>IDs</code> array.
     */
   @js.native
+  @Factory
   trait Relationship extends js.Object {
     var Ids: js.UndefOr[IdList]
     var Type: js.UndefOr[RelationshipType]
-  }
-
-  object Relationship {
-    @inline
-    def apply(
-        Ids: js.UndefOr[IdList] = js.undefined,
-        Type: js.UndefOr[RelationshipType] = js.undefined
-    ): Relationship = {
-      val __obj = js.Dynamic.literal()
-      Ids.foreach(__v => __obj.updateDynamic("Ids")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Relationship]
-    }
   }
 
   @js.native
@@ -680,25 +360,11 @@ package textract {
     *  For Amazon Textract to process a file in an S3 bucket, the user must have permission to access the S3 bucket and file.
     */
   @js.native
+  @Factory
   trait S3Object extends js.Object {
     var Bucket: js.UndefOr[S3Bucket]
     var Name: js.UndefOr[S3ObjectName]
     var Version: js.UndefOr[S3ObjectVersion]
-  }
-
-  object S3Object {
-    @inline
-    def apply(
-        Bucket: js.UndefOr[S3Bucket] = js.undefined,
-        Name: js.UndefOr[S3ObjectName] = js.undefined,
-        Version: js.UndefOr[S3ObjectVersion] = js.undefined
-    ): S3Object = {
-      val __obj = js.Dynamic.literal()
-      Bucket.foreach(__v => __obj.updateDynamic("Bucket")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[S3Object]
-    }
   }
 
   @js.native
@@ -711,6 +377,7 @@ package textract {
   }
 
   @js.native
+  @Factory
   trait StartDocumentAnalysisRequest extends js.Object {
     var DocumentLocation: DocumentLocation
     var FeatureTypes: FeatureTypes
@@ -719,44 +386,14 @@ package textract {
     var NotificationChannel: js.UndefOr[NotificationChannel]
   }
 
-  object StartDocumentAnalysisRequest {
-    @inline
-    def apply(
-        DocumentLocation: DocumentLocation,
-        FeatureTypes: FeatureTypes,
-        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-        JobTag: js.UndefOr[JobTag] = js.undefined,
-        NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined
-    ): StartDocumentAnalysisRequest = {
-      val __obj = js.Dynamic.literal(
-        "DocumentLocation" -> DocumentLocation.asInstanceOf[js.Any],
-        "FeatureTypes"     -> FeatureTypes.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      JobTag.foreach(__v => __obj.updateDynamic("JobTag")(__v.asInstanceOf[js.Any]))
-      NotificationChannel.foreach(__v => __obj.updateDynamic("NotificationChannel")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartDocumentAnalysisRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartDocumentAnalysisResponse extends js.Object {
     var JobId: js.UndefOr[JobId]
   }
 
-  object StartDocumentAnalysisResponse {
-    @inline
-    def apply(
-        JobId: js.UndefOr[JobId] = js.undefined
-    ): StartDocumentAnalysisResponse = {
-      val __obj = js.Dynamic.literal()
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartDocumentAnalysisResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartDocumentTextDetectionRequest extends js.Object {
     var DocumentLocation: DocumentLocation
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
@@ -764,60 +401,19 @@ package textract {
     var NotificationChannel: js.UndefOr[NotificationChannel]
   }
 
-  object StartDocumentTextDetectionRequest {
-    @inline
-    def apply(
-        DocumentLocation: DocumentLocation,
-        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-        JobTag: js.UndefOr[JobTag] = js.undefined,
-        NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined
-    ): StartDocumentTextDetectionRequest = {
-      val __obj = js.Dynamic.literal(
-        "DocumentLocation" -> DocumentLocation.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      JobTag.foreach(__v => __obj.updateDynamic("JobTag")(__v.asInstanceOf[js.Any]))
-      NotificationChannel.foreach(__v => __obj.updateDynamic("NotificationChannel")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartDocumentTextDetectionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartDocumentTextDetectionResponse extends js.Object {
     var JobId: js.UndefOr[JobId]
-  }
-
-  object StartDocumentTextDetectionResponse {
-    @inline
-    def apply(
-        JobId: js.UndefOr[JobId] = js.undefined
-    ): StartDocumentTextDetectionResponse = {
-      val __obj = js.Dynamic.literal()
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartDocumentTextDetectionResponse]
-    }
   }
 
   /**
     * A warning about an issue that occurred during asynchronous text analysis (<a>StartDocumentAnalysis</a>) or asynchronous document text detection (<a>StartDocumentTextDetection</a>).
     */
   @js.native
+  @Factory
   trait Warning extends js.Object {
     var ErrorCode: js.UndefOr[ErrorCode]
     var Pages: js.UndefOr[Pages]
-  }
-
-  object Warning {
-    @inline
-    def apply(
-        ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
-        Pages: js.UndefOr[Pages] = js.undefined
-    ): Warning = {
-      val __obj = js.Dynamic.literal()
-      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
-      Pages.foreach(__v => __obj.updateDynamic("Pages")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Warning]
-    }
   }
 }

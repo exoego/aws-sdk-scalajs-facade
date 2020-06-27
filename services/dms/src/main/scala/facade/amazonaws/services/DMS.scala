@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object dms {
   type AccountQuotaList                        = js.Array[AccountQuota]
@@ -281,113 +282,48 @@ package dms {
     * Describes a quota for an AWS account, for example, the number of replication instances allowed.
     */
   @js.native
+  @Factory
   trait AccountQuota extends js.Object {
     var AccountQuotaName: js.UndefOr[String]
     var Max: js.UndefOr[Double]
     var Used: js.UndefOr[Double]
   }
 
-  object AccountQuota {
-    @inline
-    def apply(
-        AccountQuotaName: js.UndefOr[String] = js.undefined,
-        Max: js.UndefOr[Double] = js.undefined,
-        Used: js.UndefOr[Double] = js.undefined
-    ): AccountQuota = {
-      val __obj = js.Dynamic.literal()
-      AccountQuotaName.foreach(__v => __obj.updateDynamic("AccountQuotaName")(__v.asInstanceOf[js.Any]))
-      Max.foreach(__v => __obj.updateDynamic("Max")(__v.asInstanceOf[js.Any]))
-      Used.foreach(__v => __obj.updateDynamic("Used")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AccountQuota]
-    }
-  }
-
   /**
     * Associates a set of tags with an AWS DMS resource.
     */
   @js.native
+  @Factory
   trait AddTagsToResourceMessage extends js.Object {
     var ResourceArn: String
     var Tags: TagList
   }
 
-  object AddTagsToResourceMessage {
-    @inline
-    def apply(
-        ResourceArn: String,
-        Tags: TagList
-    ): AddTagsToResourceMessage = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AddTagsToResourceMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait AddTagsToResourceResponse extends js.Object {}
 
-  object AddTagsToResourceResponse {
-    @inline
-    def apply(
-    ): AddTagsToResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[AddTagsToResourceResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait ApplyPendingMaintenanceActionMessage extends js.Object {
     var ApplyAction: String
     var OptInType: String
     var ReplicationInstanceArn: String
   }
 
-  object ApplyPendingMaintenanceActionMessage {
-    @inline
-    def apply(
-        ApplyAction: String,
-        OptInType: String,
-        ReplicationInstanceArn: String
-    ): ApplyPendingMaintenanceActionMessage = {
-      val __obj = js.Dynamic.literal(
-        "ApplyAction"            -> ApplyAction.asInstanceOf[js.Any],
-        "OptInType"              -> OptInType.asInstanceOf[js.Any],
-        "ReplicationInstanceArn" -> ReplicationInstanceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ApplyPendingMaintenanceActionMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait ApplyPendingMaintenanceActionResponse extends js.Object {
     var ResourcePendingMaintenanceActions: js.UndefOr[ResourcePendingMaintenanceActions]
-  }
-
-  object ApplyPendingMaintenanceActionResponse {
-    @inline
-    def apply(
-        ResourcePendingMaintenanceActions: js.UndefOr[ResourcePendingMaintenanceActions] = js.undefined
-    ): ApplyPendingMaintenanceActionResponse = {
-      val __obj = js.Dynamic.literal()
-      ResourcePendingMaintenanceActions.foreach(__v =>
-        __obj.updateDynamic("ResourcePendingMaintenanceActions")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[ApplyPendingMaintenanceActionResponse]
-    }
   }
 
   @js.native
@@ -413,25 +349,16 @@ package dms {
     * <p/>
     */
   @js.native
+  @Factory
   trait AvailabilityZone extends js.Object {
     var Name: js.UndefOr[String]
-  }
-
-  object AvailabilityZone {
-    @inline
-    def apply(
-        Name: js.UndefOr[String] = js.undefined
-    ): AvailabilityZone = {
-      val __obj = js.Dynamic.literal()
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AvailabilityZone]
-    }
   }
 
   /**
     * The SSL certificate that can be used to encrypt connections between the endpoints and the replication instance.
     */
   @js.native
+  @Factory
   trait Certificate extends js.Object {
     var CertificateArn: js.UndefOr[String]
     var CertificateCreationDate: js.UndefOr[TStamp]
@@ -443,35 +370,6 @@ package dms {
     var SigningAlgorithm: js.UndefOr[String]
     var ValidFromDate: js.UndefOr[TStamp]
     var ValidToDate: js.UndefOr[TStamp]
-  }
-
-  object Certificate {
-    @inline
-    def apply(
-        CertificateArn: js.UndefOr[String] = js.undefined,
-        CertificateCreationDate: js.UndefOr[TStamp] = js.undefined,
-        CertificateIdentifier: js.UndefOr[String] = js.undefined,
-        CertificateOwner: js.UndefOr[String] = js.undefined,
-        CertificatePem: js.UndefOr[String] = js.undefined,
-        CertificateWallet: js.UndefOr[CertificateWallet] = js.undefined,
-        KeyLength: js.UndefOr[IntegerOptional] = js.undefined,
-        SigningAlgorithm: js.UndefOr[String] = js.undefined,
-        ValidFromDate: js.UndefOr[TStamp] = js.undefined,
-        ValidToDate: js.UndefOr[TStamp] = js.undefined
-    ): Certificate = {
-      val __obj = js.Dynamic.literal()
-      CertificateArn.foreach(__v => __obj.updateDynamic("CertificateArn")(__v.asInstanceOf[js.Any]))
-      CertificateCreationDate.foreach(__v => __obj.updateDynamic("CertificateCreationDate")(__v.asInstanceOf[js.Any]))
-      CertificateIdentifier.foreach(__v => __obj.updateDynamic("CertificateIdentifier")(__v.asInstanceOf[js.Any]))
-      CertificateOwner.foreach(__v => __obj.updateDynamic("CertificateOwner")(__v.asInstanceOf[js.Any]))
-      CertificatePem.foreach(__v => __obj.updateDynamic("CertificatePem")(__v.asInstanceOf[js.Any]))
-      CertificateWallet.foreach(__v => __obj.updateDynamic("CertificateWallet")(__v.asInstanceOf[js.Any]))
-      KeyLength.foreach(__v => __obj.updateDynamic("KeyLength")(__v.asInstanceOf[js.Any]))
-      SigningAlgorithm.foreach(__v => __obj.updateDynamic("SigningAlgorithm")(__v.asInstanceOf[js.Any]))
-      ValidFromDate.foreach(__v => __obj.updateDynamic("ValidFromDate")(__v.asInstanceOf[js.Any]))
-      ValidToDate.foreach(__v => __obj.updateDynamic("ValidToDate")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Certificate]
-    }
   }
 
   @js.native
@@ -487,6 +385,7 @@ package dms {
     * <p/>
     */
   @js.native
+  @Factory
   trait Connection extends js.Object {
     var EndpointArn: js.UndefOr[String]
     var EndpointIdentifier: js.UndefOr[String]
@@ -496,33 +395,11 @@ package dms {
     var Status: js.UndefOr[String]
   }
 
-  object Connection {
-    @inline
-    def apply(
-        EndpointArn: js.UndefOr[String] = js.undefined,
-        EndpointIdentifier: js.UndefOr[String] = js.undefined,
-        LastFailureMessage: js.UndefOr[String] = js.undefined,
-        ReplicationInstanceArn: js.UndefOr[String] = js.undefined,
-        ReplicationInstanceIdentifier: js.UndefOr[String] = js.undefined,
-        Status: js.UndefOr[String] = js.undefined
-    ): Connection = {
-      val __obj = js.Dynamic.literal()
-      EndpointArn.foreach(__v => __obj.updateDynamic("EndpointArn")(__v.asInstanceOf[js.Any]))
-      EndpointIdentifier.foreach(__v => __obj.updateDynamic("EndpointIdentifier")(__v.asInstanceOf[js.Any]))
-      LastFailureMessage.foreach(__v => __obj.updateDynamic("LastFailureMessage")(__v.asInstanceOf[js.Any]))
-      ReplicationInstanceArn.foreach(__v => __obj.updateDynamic("ReplicationInstanceArn")(__v.asInstanceOf[js.Any]))
-      ReplicationInstanceIdentifier.foreach(__v =>
-        __obj.updateDynamic("ReplicationInstanceIdentifier")(__v.asInstanceOf[js.Any])
-      )
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Connection]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait CreateEndpointMessage extends js.Object {
     var EndpointIdentifier: String
     var EndpointType: ReplicationEndpointTypeValue
@@ -548,86 +425,20 @@ package dms {
     var Username: js.UndefOr[String]
   }
 
-  object CreateEndpointMessage {
-    @inline
-    def apply(
-        EndpointIdentifier: String,
-        EndpointType: ReplicationEndpointTypeValue,
-        EngineName: String,
-        CertificateArn: js.UndefOr[String] = js.undefined,
-        DatabaseName: js.UndefOr[String] = js.undefined,
-        DmsTransferSettings: js.UndefOr[DmsTransferSettings] = js.undefined,
-        DynamoDbSettings: js.UndefOr[DynamoDbSettings] = js.undefined,
-        ElasticsearchSettings: js.UndefOr[ElasticsearchSettings] = js.undefined,
-        ExternalTableDefinition: js.UndefOr[String] = js.undefined,
-        ExtraConnectionAttributes: js.UndefOr[String] = js.undefined,
-        KinesisSettings: js.UndefOr[KinesisSettings] = js.undefined,
-        KmsKeyId: js.UndefOr[String] = js.undefined,
-        MongoDbSettings: js.UndefOr[MongoDbSettings] = js.undefined,
-        Password: js.UndefOr[SecretString] = js.undefined,
-        Port: js.UndefOr[IntegerOptional] = js.undefined,
-        RedshiftSettings: js.UndefOr[RedshiftSettings] = js.undefined,
-        S3Settings: js.UndefOr[S3Settings] = js.undefined,
-        ServerName: js.UndefOr[String] = js.undefined,
-        ServiceAccessRoleArn: js.UndefOr[String] = js.undefined,
-        SslMode: js.UndefOr[DmsSslModeValue] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined,
-        Username: js.UndefOr[String] = js.undefined
-    ): CreateEndpointMessage = {
-      val __obj = js.Dynamic.literal(
-        "EndpointIdentifier" -> EndpointIdentifier.asInstanceOf[js.Any],
-        "EndpointType"       -> EndpointType.asInstanceOf[js.Any],
-        "EngineName"         -> EngineName.asInstanceOf[js.Any]
-      )
-
-      CertificateArn.foreach(__v => __obj.updateDynamic("CertificateArn")(__v.asInstanceOf[js.Any]))
-      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
-      DmsTransferSettings.foreach(__v => __obj.updateDynamic("DmsTransferSettings")(__v.asInstanceOf[js.Any]))
-      DynamoDbSettings.foreach(__v => __obj.updateDynamic("DynamoDbSettings")(__v.asInstanceOf[js.Any]))
-      ElasticsearchSettings.foreach(__v => __obj.updateDynamic("ElasticsearchSettings")(__v.asInstanceOf[js.Any]))
-      ExternalTableDefinition.foreach(__v => __obj.updateDynamic("ExternalTableDefinition")(__v.asInstanceOf[js.Any]))
-      ExtraConnectionAttributes.foreach(__v =>
-        __obj.updateDynamic("ExtraConnectionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      KinesisSettings.foreach(__v => __obj.updateDynamic("KinesisSettings")(__v.asInstanceOf[js.Any]))
-      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
-      MongoDbSettings.foreach(__v => __obj.updateDynamic("MongoDbSettings")(__v.asInstanceOf[js.Any]))
-      Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
-      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
-      RedshiftSettings.foreach(__v => __obj.updateDynamic("RedshiftSettings")(__v.asInstanceOf[js.Any]))
-      S3Settings.foreach(__v => __obj.updateDynamic("S3Settings")(__v.asInstanceOf[js.Any]))
-      ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
-      ServiceAccessRoleArn.foreach(__v => __obj.updateDynamic("ServiceAccessRoleArn")(__v.asInstanceOf[js.Any]))
-      SslMode.foreach(__v => __obj.updateDynamic("SslMode")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateEndpointMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait CreateEndpointResponse extends js.Object {
     var Endpoint: js.UndefOr[Endpoint]
   }
 
-  object CreateEndpointResponse {
-    @inline
-    def apply(
-        Endpoint: js.UndefOr[Endpoint] = js.undefined
-    ): CreateEndpointResponse = {
-      val __obj = js.Dynamic.literal()
-      Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateEndpointResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait CreateEventSubscriptionMessage extends js.Object {
     var SnsTopicArn: String
     var SubscriptionName: String
@@ -638,54 +449,20 @@ package dms {
     var Tags: js.UndefOr[TagList]
   }
 
-  object CreateEventSubscriptionMessage {
-    @inline
-    def apply(
-        SnsTopicArn: String,
-        SubscriptionName: String,
-        Enabled: js.UndefOr[BooleanOptional] = js.undefined,
-        EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
-        SourceIds: js.UndefOr[SourceIdsList] = js.undefined,
-        SourceType: js.UndefOr[String] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateEventSubscriptionMessage = {
-      val __obj = js.Dynamic.literal(
-        "SnsTopicArn"      -> SnsTopicArn.asInstanceOf[js.Any],
-        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
-      )
-
-      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      EventCategories.foreach(__v => __obj.updateDynamic("EventCategories")(__v.asInstanceOf[js.Any]))
-      SourceIds.foreach(__v => __obj.updateDynamic("SourceIds")(__v.asInstanceOf[js.Any]))
-      SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateEventSubscriptionMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait CreateEventSubscriptionResponse extends js.Object {
     var EventSubscription: js.UndefOr[EventSubscription]
   }
 
-  object CreateEventSubscriptionResponse {
-    @inline
-    def apply(
-        EventSubscription: js.UndefOr[EventSubscription] = js.undefined
-    ): CreateEventSubscriptionResponse = {
-      val __obj = js.Dynamic.literal()
-      EventSubscription.foreach(__v => __obj.updateDynamic("EventSubscription")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateEventSubscriptionResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait CreateReplicationInstanceMessage extends js.Object {
     var ReplicationInstanceClass: String
     var ReplicationInstanceIdentifier: String
@@ -703,72 +480,20 @@ package dms {
     var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
   }
 
-  object CreateReplicationInstanceMessage {
-    @inline
-    def apply(
-        ReplicationInstanceClass: String,
-        ReplicationInstanceIdentifier: String,
-        AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
-        AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
-        AvailabilityZone: js.UndefOr[String] = js.undefined,
-        DnsNameServers: js.UndefOr[String] = js.undefined,
-        EngineVersion: js.UndefOr[String] = js.undefined,
-        KmsKeyId: js.UndefOr[String] = js.undefined,
-        MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
-        PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
-        PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
-        ReplicationSubnetGroupIdentifier: js.UndefOr[String] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined,
-        VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
-    ): CreateReplicationInstanceMessage = {
-      val __obj = js.Dynamic.literal(
-        "ReplicationInstanceClass"      -> ReplicationInstanceClass.asInstanceOf[js.Any],
-        "ReplicationInstanceIdentifier" -> ReplicationInstanceIdentifier.asInstanceOf[js.Any]
-      )
-
-      AllocatedStorage.foreach(__v => __obj.updateDynamic("AllocatedStorage")(__v.asInstanceOf[js.Any]))
-      AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
-      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
-      DnsNameServers.foreach(__v => __obj.updateDynamic("DnsNameServers")(__v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
-      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
-      MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
-      PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
-      ReplicationSubnetGroupIdentifier.foreach(__v =>
-        __obj.updateDynamic("ReplicationSubnetGroupIdentifier")(__v.asInstanceOf[js.Any])
-      )
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateReplicationInstanceMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait CreateReplicationInstanceResponse extends js.Object {
     var ReplicationInstance: js.UndefOr[ReplicationInstance]
   }
 
-  object CreateReplicationInstanceResponse {
-    @inline
-    def apply(
-        ReplicationInstance: js.UndefOr[ReplicationInstance] = js.undefined
-    ): CreateReplicationInstanceResponse = {
-      val __obj = js.Dynamic.literal()
-      ReplicationInstance.foreach(__v => __obj.updateDynamic("ReplicationInstance")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateReplicationInstanceResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait CreateReplicationSubnetGroupMessage extends js.Object {
     var ReplicationSubnetGroupDescription: String
     var ReplicationSubnetGroupIdentifier: String
@@ -776,48 +501,20 @@ package dms {
     var Tags: js.UndefOr[TagList]
   }
 
-  object CreateReplicationSubnetGroupMessage {
-    @inline
-    def apply(
-        ReplicationSubnetGroupDescription: String,
-        ReplicationSubnetGroupIdentifier: String,
-        SubnetIds: SubnetIdentifierList,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateReplicationSubnetGroupMessage = {
-      val __obj = js.Dynamic.literal(
-        "ReplicationSubnetGroupDescription" -> ReplicationSubnetGroupDescription.asInstanceOf[js.Any],
-        "ReplicationSubnetGroupIdentifier"  -> ReplicationSubnetGroupIdentifier.asInstanceOf[js.Any],
-        "SubnetIds"                         -> SubnetIds.asInstanceOf[js.Any]
-      )
-
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateReplicationSubnetGroupMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait CreateReplicationSubnetGroupResponse extends js.Object {
     var ReplicationSubnetGroup: js.UndefOr[ReplicationSubnetGroup]
   }
 
-  object CreateReplicationSubnetGroupResponse {
-    @inline
-    def apply(
-        ReplicationSubnetGroup: js.UndefOr[ReplicationSubnetGroup] = js.undefined
-    ): CreateReplicationSubnetGroupResponse = {
-      val __obj = js.Dynamic.literal()
-      ReplicationSubnetGroup.foreach(__v => __obj.updateDynamic("ReplicationSubnetGroup")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateReplicationSubnetGroupResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait CreateReplicationTaskMessage extends js.Object {
     var MigrationType: MigrationTypeValue
     var ReplicationInstanceArn: String
@@ -832,56 +529,13 @@ package dms {
     var Tags: js.UndefOr[TagList]
   }
 
-  object CreateReplicationTaskMessage {
-    @inline
-    def apply(
-        MigrationType: MigrationTypeValue,
-        ReplicationInstanceArn: String,
-        ReplicationTaskIdentifier: String,
-        SourceEndpointArn: String,
-        TableMappings: String,
-        TargetEndpointArn: String,
-        CdcStartPosition: js.UndefOr[String] = js.undefined,
-        CdcStartTime: js.UndefOr[TStamp] = js.undefined,
-        CdcStopPosition: js.UndefOr[String] = js.undefined,
-        ReplicationTaskSettings: js.UndefOr[String] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateReplicationTaskMessage = {
-      val __obj = js.Dynamic.literal(
-        "MigrationType"             -> MigrationType.asInstanceOf[js.Any],
-        "ReplicationInstanceArn"    -> ReplicationInstanceArn.asInstanceOf[js.Any],
-        "ReplicationTaskIdentifier" -> ReplicationTaskIdentifier.asInstanceOf[js.Any],
-        "SourceEndpointArn"         -> SourceEndpointArn.asInstanceOf[js.Any],
-        "TableMappings"             -> TableMappings.asInstanceOf[js.Any],
-        "TargetEndpointArn"         -> TargetEndpointArn.asInstanceOf[js.Any]
-      )
-
-      CdcStartPosition.foreach(__v => __obj.updateDynamic("CdcStartPosition")(__v.asInstanceOf[js.Any]))
-      CdcStartTime.foreach(__v => __obj.updateDynamic("CdcStartTime")(__v.asInstanceOf[js.Any]))
-      CdcStopPosition.foreach(__v => __obj.updateDynamic("CdcStopPosition")(__v.asInstanceOf[js.Any]))
-      ReplicationTaskSettings.foreach(__v => __obj.updateDynamic("ReplicationTaskSettings")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateReplicationTaskMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait CreateReplicationTaskResponse extends js.Object {
     var ReplicationTask: js.UndefOr[ReplicationTask]
-  }
-
-  object CreateReplicationTaskResponse {
-    @inline
-    def apply(
-        ReplicationTask: js.UndefOr[ReplicationTask] = js.undefined
-    ): CreateReplicationTaskResponse = {
-      val __obj = js.Dynamic.literal()
-      ReplicationTask.foreach(__v => __obj.updateDynamic("ReplicationTask")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateReplicationTaskResponse]
-    }
   }
 
   @js.native
@@ -894,544 +548,243 @@ package dms {
   }
 
   @js.native
+  @Factory
   trait DeleteCertificateMessage extends js.Object {
     var CertificateArn: String
   }
 
-  object DeleteCertificateMessage {
-    @inline
-    def apply(
-        CertificateArn: String
-    ): DeleteCertificateMessage = {
-      val __obj = js.Dynamic.literal(
-        "CertificateArn" -> CertificateArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteCertificateMessage]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteCertificateResponse extends js.Object {
     var Certificate: js.UndefOr[Certificate]
-  }
-
-  object DeleteCertificateResponse {
-    @inline
-    def apply(
-        Certificate: js.UndefOr[Certificate] = js.undefined
-    ): DeleteCertificateResponse = {
-      val __obj = js.Dynamic.literal()
-      Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteCertificateResponse]
-    }
   }
 
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DeleteConnectionMessage extends js.Object {
     var EndpointArn: String
     var ReplicationInstanceArn: String
   }
 
-  object DeleteConnectionMessage {
-    @inline
-    def apply(
-        EndpointArn: String,
-        ReplicationInstanceArn: String
-    ): DeleteConnectionMessage = {
-      val __obj = js.Dynamic.literal(
-        "EndpointArn"            -> EndpointArn.asInstanceOf[js.Any],
-        "ReplicationInstanceArn" -> ReplicationInstanceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteConnectionMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DeleteConnectionResponse extends js.Object {
     var Connection: js.UndefOr[Connection]
   }
 
-  object DeleteConnectionResponse {
-    @inline
-    def apply(
-        Connection: js.UndefOr[Connection] = js.undefined
-    ): DeleteConnectionResponse = {
-      val __obj = js.Dynamic.literal()
-      Connection.foreach(__v => __obj.updateDynamic("Connection")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteConnectionResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DeleteEndpointMessage extends js.Object {
     var EndpointArn: String
   }
 
-  object DeleteEndpointMessage {
-    @inline
-    def apply(
-        EndpointArn: String
-    ): DeleteEndpointMessage = {
-      val __obj = js.Dynamic.literal(
-        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteEndpointMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DeleteEndpointResponse extends js.Object {
     var Endpoint: js.UndefOr[Endpoint]
   }
 
-  object DeleteEndpointResponse {
-    @inline
-    def apply(
-        Endpoint: js.UndefOr[Endpoint] = js.undefined
-    ): DeleteEndpointResponse = {
-      val __obj = js.Dynamic.literal()
-      Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteEndpointResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DeleteEventSubscriptionMessage extends js.Object {
     var SubscriptionName: String
   }
 
-  object DeleteEventSubscriptionMessage {
-    @inline
-    def apply(
-        SubscriptionName: String
-    ): DeleteEventSubscriptionMessage = {
-      val __obj = js.Dynamic.literal(
-        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteEventSubscriptionMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DeleteEventSubscriptionResponse extends js.Object {
     var EventSubscription: js.UndefOr[EventSubscription]
   }
 
-  object DeleteEventSubscriptionResponse {
-    @inline
-    def apply(
-        EventSubscription: js.UndefOr[EventSubscription] = js.undefined
-    ): DeleteEventSubscriptionResponse = {
-      val __obj = js.Dynamic.literal()
-      EventSubscription.foreach(__v => __obj.updateDynamic("EventSubscription")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteEventSubscriptionResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DeleteReplicationInstanceMessage extends js.Object {
     var ReplicationInstanceArn: String
   }
 
-  object DeleteReplicationInstanceMessage {
-    @inline
-    def apply(
-        ReplicationInstanceArn: String
-    ): DeleteReplicationInstanceMessage = {
-      val __obj = js.Dynamic.literal(
-        "ReplicationInstanceArn" -> ReplicationInstanceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteReplicationInstanceMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DeleteReplicationInstanceResponse extends js.Object {
     var ReplicationInstance: js.UndefOr[ReplicationInstance]
   }
 
-  object DeleteReplicationInstanceResponse {
-    @inline
-    def apply(
-        ReplicationInstance: js.UndefOr[ReplicationInstance] = js.undefined
-    ): DeleteReplicationInstanceResponse = {
-      val __obj = js.Dynamic.literal()
-      ReplicationInstance.foreach(__v => __obj.updateDynamic("ReplicationInstance")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteReplicationInstanceResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DeleteReplicationSubnetGroupMessage extends js.Object {
     var ReplicationSubnetGroupIdentifier: String
   }
 
-  object DeleteReplicationSubnetGroupMessage {
-    @inline
-    def apply(
-        ReplicationSubnetGroupIdentifier: String
-    ): DeleteReplicationSubnetGroupMessage = {
-      val __obj = js.Dynamic.literal(
-        "ReplicationSubnetGroupIdentifier" -> ReplicationSubnetGroupIdentifier.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteReplicationSubnetGroupMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DeleteReplicationSubnetGroupResponse extends js.Object {}
 
-  object DeleteReplicationSubnetGroupResponse {
-    @inline
-    def apply(
-    ): DeleteReplicationSubnetGroupResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteReplicationSubnetGroupResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DeleteReplicationTaskMessage extends js.Object {
     var ReplicationTaskArn: String
   }
 
-  object DeleteReplicationTaskMessage {
-    @inline
-    def apply(
-        ReplicationTaskArn: String
-    ): DeleteReplicationTaskMessage = {
-      val __obj = js.Dynamic.literal(
-        "ReplicationTaskArn" -> ReplicationTaskArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteReplicationTaskMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DeleteReplicationTaskResponse extends js.Object {
     var ReplicationTask: js.UndefOr[ReplicationTask]
   }
 
-  object DeleteReplicationTaskResponse {
-    @inline
-    def apply(
-        ReplicationTask: js.UndefOr[ReplicationTask] = js.undefined
-    ): DeleteReplicationTaskResponse = {
-      val __obj = js.Dynamic.literal()
-      ReplicationTask.foreach(__v => __obj.updateDynamic("ReplicationTask")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteReplicationTaskResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeAccountAttributesMessage extends js.Object {}
 
-  object DescribeAccountAttributesMessage {
-    @inline
-    def apply(
-    ): DescribeAccountAttributesMessage = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DescribeAccountAttributesMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeAccountAttributesResponse extends js.Object {
     var AccountQuotas: js.UndefOr[AccountQuotaList]
     var UniqueAccountIdentifier: js.UndefOr[String]
   }
 
-  object DescribeAccountAttributesResponse {
-    @inline
-    def apply(
-        AccountQuotas: js.UndefOr[AccountQuotaList] = js.undefined,
-        UniqueAccountIdentifier: js.UndefOr[String] = js.undefined
-    ): DescribeAccountAttributesResponse = {
-      val __obj = js.Dynamic.literal()
-      AccountQuotas.foreach(__v => __obj.updateDynamic("AccountQuotas")(__v.asInstanceOf[js.Any]))
-      UniqueAccountIdentifier.foreach(__v => __obj.updateDynamic("UniqueAccountIdentifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeAccountAttributesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeCertificatesMessage extends js.Object {
     var Filters: js.UndefOr[FilterList]
     var Marker: js.UndefOr[String]
     var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
-  object DescribeCertificatesMessage {
-    @inline
-    def apply(
-        Filters: js.UndefOr[FilterList] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined,
-        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
-    ): DescribeCertificatesMessage = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeCertificatesMessage]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeCertificatesResponse extends js.Object {
     var Certificates: js.UndefOr[CertificateList]
     var Marker: js.UndefOr[String]
-  }
-
-  object DescribeCertificatesResponse {
-    @inline
-    def apply(
-        Certificates: js.UndefOr[CertificateList] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined
-    ): DescribeCertificatesResponse = {
-      val __obj = js.Dynamic.literal()
-      Certificates.foreach(__v => __obj.updateDynamic("Certificates")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeCertificatesResponse]
-    }
   }
 
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeConnectionsMessage extends js.Object {
     var Filters: js.UndefOr[FilterList]
     var Marker: js.UndefOr[String]
     var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
-  object DescribeConnectionsMessage {
-    @inline
-    def apply(
-        Filters: js.UndefOr[FilterList] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined,
-        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
-    ): DescribeConnectionsMessage = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeConnectionsMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeConnectionsResponse extends js.Object {
     var Connections: js.UndefOr[ConnectionList]
     var Marker: js.UndefOr[String]
   }
 
-  object DescribeConnectionsResponse {
-    @inline
-    def apply(
-        Connections: js.UndefOr[ConnectionList] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined
-    ): DescribeConnectionsResponse = {
-      val __obj = js.Dynamic.literal()
-      Connections.foreach(__v => __obj.updateDynamic("Connections")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeConnectionsResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeEndpointTypesMessage extends js.Object {
     var Filters: js.UndefOr[FilterList]
     var Marker: js.UndefOr[String]
     var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
-  object DescribeEndpointTypesMessage {
-    @inline
-    def apply(
-        Filters: js.UndefOr[FilterList] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined,
-        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
-    ): DescribeEndpointTypesMessage = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeEndpointTypesMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeEndpointTypesResponse extends js.Object {
     var Marker: js.UndefOr[String]
     var SupportedEndpointTypes: js.UndefOr[SupportedEndpointTypeList]
   }
 
-  object DescribeEndpointTypesResponse {
-    @inline
-    def apply(
-        Marker: js.UndefOr[String] = js.undefined,
-        SupportedEndpointTypes: js.UndefOr[SupportedEndpointTypeList] = js.undefined
-    ): DescribeEndpointTypesResponse = {
-      val __obj = js.Dynamic.literal()
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      SupportedEndpointTypes.foreach(__v => __obj.updateDynamic("SupportedEndpointTypes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeEndpointTypesResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeEndpointsMessage extends js.Object {
     var Filters: js.UndefOr[FilterList]
     var Marker: js.UndefOr[String]
     var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
-  object DescribeEndpointsMessage {
-    @inline
-    def apply(
-        Filters: js.UndefOr[FilterList] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined,
-        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
-    ): DescribeEndpointsMessage = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeEndpointsMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeEndpointsResponse extends js.Object {
     var Endpoints: js.UndefOr[EndpointList]
     var Marker: js.UndefOr[String]
   }
 
-  object DescribeEndpointsResponse {
-    @inline
-    def apply(
-        Endpoints: js.UndefOr[EndpointList] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined
-    ): DescribeEndpointsResponse = {
-      val __obj = js.Dynamic.literal()
-      Endpoints.foreach(__v => __obj.updateDynamic("Endpoints")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeEndpointsResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeEventCategoriesMessage extends js.Object {
     var Filters: js.UndefOr[FilterList]
     var SourceType: js.UndefOr[String]
   }
 
-  object DescribeEventCategoriesMessage {
-    @inline
-    def apply(
-        Filters: js.UndefOr[FilterList] = js.undefined,
-        SourceType: js.UndefOr[String] = js.undefined
-    ): DescribeEventCategoriesMessage = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeEventCategoriesMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeEventCategoriesResponse extends js.Object {
     var EventCategoryGroupList: js.UndefOr[EventCategoryGroupList]
   }
 
-  object DescribeEventCategoriesResponse {
-    @inline
-    def apply(
-        EventCategoryGroupList: js.UndefOr[EventCategoryGroupList] = js.undefined
-    ): DescribeEventCategoriesResponse = {
-      val __obj = js.Dynamic.literal()
-      EventCategoryGroupList.foreach(__v => __obj.updateDynamic("EventCategoryGroupList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeEventCategoriesResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeEventSubscriptionsMessage extends js.Object {
     var Filters: js.UndefOr[FilterList]
     var Marker: js.UndefOr[String]
@@ -1439,49 +792,21 @@ package dms {
     var SubscriptionName: js.UndefOr[String]
   }
 
-  object DescribeEventSubscriptionsMessage {
-    @inline
-    def apply(
-        Filters: js.UndefOr[FilterList] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined,
-        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-        SubscriptionName: js.UndefOr[String] = js.undefined
-    ): DescribeEventSubscriptionsMessage = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      SubscriptionName.foreach(__v => __obj.updateDynamic("SubscriptionName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeEventSubscriptionsMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeEventSubscriptionsResponse extends js.Object {
     var EventSubscriptionsList: js.UndefOr[EventSubscriptionsList]
     var Marker: js.UndefOr[String]
   }
 
-  object DescribeEventSubscriptionsResponse {
-    @inline
-    def apply(
-        EventSubscriptionsList: js.UndefOr[EventSubscriptionsList] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined
-    ): DescribeEventSubscriptionsResponse = {
-      val __obj = js.Dynamic.literal()
-      EventSubscriptionsList.foreach(__v => __obj.updateDynamic("EventSubscriptionsList")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeEventSubscriptionsResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeEventsMessage extends js.Object {
     var Duration: js.UndefOr[IntegerOptional]
     var EndTime: js.UndefOr[TStamp]
@@ -1494,105 +819,41 @@ package dms {
     var StartTime: js.UndefOr[TStamp]
   }
 
-  object DescribeEventsMessage {
-    @inline
-    def apply(
-        Duration: js.UndefOr[IntegerOptional] = js.undefined,
-        EndTime: js.UndefOr[TStamp] = js.undefined,
-        EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
-        Filters: js.UndefOr[FilterList] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined,
-        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-        SourceIdentifier: js.UndefOr[String] = js.undefined,
-        SourceType: js.UndefOr[SourceType] = js.undefined,
-        StartTime: js.UndefOr[TStamp] = js.undefined
-    ): DescribeEventsMessage = {
-      val __obj = js.Dynamic.literal()
-      Duration.foreach(__v => __obj.updateDynamic("Duration")(__v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      EventCategories.foreach(__v => __obj.updateDynamic("EventCategories")(__v.asInstanceOf[js.Any]))
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      SourceIdentifier.foreach(__v => __obj.updateDynamic("SourceIdentifier")(__v.asInstanceOf[js.Any]))
-      SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeEventsMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeEventsResponse extends js.Object {
     var Events: js.UndefOr[EventList]
     var Marker: js.UndefOr[String]
   }
 
-  object DescribeEventsResponse {
-    @inline
-    def apply(
-        Events: js.UndefOr[EventList] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined
-    ): DescribeEventsResponse = {
-      val __obj = js.Dynamic.literal()
-      Events.foreach(__v => __obj.updateDynamic("Events")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeEventsResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeOrderableReplicationInstancesMessage extends js.Object {
     var Marker: js.UndefOr[String]
     var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
-  object DescribeOrderableReplicationInstancesMessage {
-    @inline
-    def apply(
-        Marker: js.UndefOr[String] = js.undefined,
-        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
-    ): DescribeOrderableReplicationInstancesMessage = {
-      val __obj = js.Dynamic.literal()
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeOrderableReplicationInstancesMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeOrderableReplicationInstancesResponse extends js.Object {
     var Marker: js.UndefOr[String]
     var OrderableReplicationInstances: js.UndefOr[OrderableReplicationInstanceList]
   }
 
-  object DescribeOrderableReplicationInstancesResponse {
-    @inline
-    def apply(
-        Marker: js.UndefOr[String] = js.undefined,
-        OrderableReplicationInstances: js.UndefOr[OrderableReplicationInstanceList] = js.undefined
-    ): DescribeOrderableReplicationInstancesResponse = {
-      val __obj = js.Dynamic.literal()
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      OrderableReplicationInstances.foreach(__v =>
-        __obj.updateDynamic("OrderableReplicationInstances")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[DescribeOrderableReplicationInstancesResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribePendingMaintenanceActionsMessage extends js.Object {
     var Filters: js.UndefOr[FilterList]
     var Marker: js.UndefOr[String]
@@ -1600,285 +861,119 @@ package dms {
     var ReplicationInstanceArn: js.UndefOr[String]
   }
 
-  object DescribePendingMaintenanceActionsMessage {
-    @inline
-    def apply(
-        Filters: js.UndefOr[FilterList] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined,
-        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-        ReplicationInstanceArn: js.UndefOr[String] = js.undefined
-    ): DescribePendingMaintenanceActionsMessage = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      ReplicationInstanceArn.foreach(__v => __obj.updateDynamic("ReplicationInstanceArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribePendingMaintenanceActionsMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribePendingMaintenanceActionsResponse extends js.Object {
     var Marker: js.UndefOr[String]
     var PendingMaintenanceActions: js.UndefOr[PendingMaintenanceActions]
   }
 
-  object DescribePendingMaintenanceActionsResponse {
-    @inline
-    def apply(
-        Marker: js.UndefOr[String] = js.undefined,
-        PendingMaintenanceActions: js.UndefOr[PendingMaintenanceActions] = js.undefined
-    ): DescribePendingMaintenanceActionsResponse = {
-      val __obj = js.Dynamic.literal()
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      PendingMaintenanceActions.foreach(__v =>
-        __obj.updateDynamic("PendingMaintenanceActions")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[DescribePendingMaintenanceActionsResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeRefreshSchemasStatusMessage extends js.Object {
     var EndpointArn: String
   }
 
-  object DescribeRefreshSchemasStatusMessage {
-    @inline
-    def apply(
-        EndpointArn: String
-    ): DescribeRefreshSchemasStatusMessage = {
-      val __obj = js.Dynamic.literal(
-        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeRefreshSchemasStatusMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeRefreshSchemasStatusResponse extends js.Object {
     var RefreshSchemasStatus: js.UndefOr[RefreshSchemasStatus]
   }
 
-  object DescribeRefreshSchemasStatusResponse {
-    @inline
-    def apply(
-        RefreshSchemasStatus: js.UndefOr[RefreshSchemasStatus] = js.undefined
-    ): DescribeRefreshSchemasStatusResponse = {
-      val __obj = js.Dynamic.literal()
-      RefreshSchemasStatus.foreach(__v => __obj.updateDynamic("RefreshSchemasStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeRefreshSchemasStatusResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeReplicationInstanceTaskLogsMessage extends js.Object {
     var ReplicationInstanceArn: String
     var Marker: js.UndefOr[String]
     var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
-  object DescribeReplicationInstanceTaskLogsMessage {
-    @inline
-    def apply(
-        ReplicationInstanceArn: String,
-        Marker: js.UndefOr[String] = js.undefined,
-        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
-    ): DescribeReplicationInstanceTaskLogsMessage = {
-      val __obj = js.Dynamic.literal(
-        "ReplicationInstanceArn" -> ReplicationInstanceArn.asInstanceOf[js.Any]
-      )
-
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeReplicationInstanceTaskLogsMessage]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeReplicationInstanceTaskLogsResponse extends js.Object {
     var Marker: js.UndefOr[String]
     var ReplicationInstanceArn: js.UndefOr[String]
     var ReplicationInstanceTaskLogs: js.UndefOr[ReplicationInstanceTaskLogsList]
   }
 
-  object DescribeReplicationInstanceTaskLogsResponse {
-    @inline
-    def apply(
-        Marker: js.UndefOr[String] = js.undefined,
-        ReplicationInstanceArn: js.UndefOr[String] = js.undefined,
-        ReplicationInstanceTaskLogs: js.UndefOr[ReplicationInstanceTaskLogsList] = js.undefined
-    ): DescribeReplicationInstanceTaskLogsResponse = {
-      val __obj = js.Dynamic.literal()
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      ReplicationInstanceArn.foreach(__v => __obj.updateDynamic("ReplicationInstanceArn")(__v.asInstanceOf[js.Any]))
-      ReplicationInstanceTaskLogs.foreach(__v =>
-        __obj.updateDynamic("ReplicationInstanceTaskLogs")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[DescribeReplicationInstanceTaskLogsResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeReplicationInstancesMessage extends js.Object {
     var Filters: js.UndefOr[FilterList]
     var Marker: js.UndefOr[String]
     var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
-  object DescribeReplicationInstancesMessage {
-    @inline
-    def apply(
-        Filters: js.UndefOr[FilterList] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined,
-        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
-    ): DescribeReplicationInstancesMessage = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeReplicationInstancesMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeReplicationInstancesResponse extends js.Object {
     var Marker: js.UndefOr[String]
     var ReplicationInstances: js.UndefOr[ReplicationInstanceList]
   }
 
-  object DescribeReplicationInstancesResponse {
-    @inline
-    def apply(
-        Marker: js.UndefOr[String] = js.undefined,
-        ReplicationInstances: js.UndefOr[ReplicationInstanceList] = js.undefined
-    ): DescribeReplicationInstancesResponse = {
-      val __obj = js.Dynamic.literal()
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      ReplicationInstances.foreach(__v => __obj.updateDynamic("ReplicationInstances")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeReplicationInstancesResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeReplicationSubnetGroupsMessage extends js.Object {
     var Filters: js.UndefOr[FilterList]
     var Marker: js.UndefOr[String]
     var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
-  object DescribeReplicationSubnetGroupsMessage {
-    @inline
-    def apply(
-        Filters: js.UndefOr[FilterList] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined,
-        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
-    ): DescribeReplicationSubnetGroupsMessage = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeReplicationSubnetGroupsMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeReplicationSubnetGroupsResponse extends js.Object {
     var Marker: js.UndefOr[String]
     var ReplicationSubnetGroups: js.UndefOr[ReplicationSubnetGroups]
   }
 
-  object DescribeReplicationSubnetGroupsResponse {
-    @inline
-    def apply(
-        Marker: js.UndefOr[String] = js.undefined,
-        ReplicationSubnetGroups: js.UndefOr[ReplicationSubnetGroups] = js.undefined
-    ): DescribeReplicationSubnetGroupsResponse = {
-      val __obj = js.Dynamic.literal()
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      ReplicationSubnetGroups.foreach(__v => __obj.updateDynamic("ReplicationSubnetGroups")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeReplicationSubnetGroupsResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeReplicationTaskAssessmentResultsMessage extends js.Object {
     var Marker: js.UndefOr[String]
     var MaxRecords: js.UndefOr[IntegerOptional]
     var ReplicationTaskArn: js.UndefOr[String]
   }
 
-  object DescribeReplicationTaskAssessmentResultsMessage {
-    @inline
-    def apply(
-        Marker: js.UndefOr[String] = js.undefined,
-        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-        ReplicationTaskArn: js.UndefOr[String] = js.undefined
-    ): DescribeReplicationTaskAssessmentResultsMessage = {
-      val __obj = js.Dynamic.literal()
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      ReplicationTaskArn.foreach(__v => __obj.updateDynamic("ReplicationTaskArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeReplicationTaskAssessmentResultsMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeReplicationTaskAssessmentResultsResponse extends js.Object {
     var BucketName: js.UndefOr[String]
     var Marker: js.UndefOr[String]
     var ReplicationTaskAssessmentResults: js.UndefOr[ReplicationTaskAssessmentResultList]
   }
 
-  object DescribeReplicationTaskAssessmentResultsResponse {
-    @inline
-    def apply(
-        BucketName: js.UndefOr[String] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined,
-        ReplicationTaskAssessmentResults: js.UndefOr[ReplicationTaskAssessmentResultList] = js.undefined
-    ): DescribeReplicationTaskAssessmentResultsResponse = {
-      val __obj = js.Dynamic.literal()
-      BucketName.foreach(__v => __obj.updateDynamic("BucketName")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      ReplicationTaskAssessmentResults.foreach(__v =>
-        __obj.updateDynamic("ReplicationTaskAssessmentResults")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[DescribeReplicationTaskAssessmentResultsResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeReplicationTasksMessage extends js.Object {
     var Filters: js.UndefOr[FilterList]
     var Marker: js.UndefOr[String]
@@ -1886,98 +981,42 @@ package dms {
     var WithoutSettings: js.UndefOr[BooleanOptional]
   }
 
-  object DescribeReplicationTasksMessage {
-    @inline
-    def apply(
-        Filters: js.UndefOr[FilterList] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined,
-        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-        WithoutSettings: js.UndefOr[BooleanOptional] = js.undefined
-    ): DescribeReplicationTasksMessage = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      WithoutSettings.foreach(__v => __obj.updateDynamic("WithoutSettings")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeReplicationTasksMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeReplicationTasksResponse extends js.Object {
     var Marker: js.UndefOr[String]
     var ReplicationTasks: js.UndefOr[ReplicationTaskList]
   }
 
-  object DescribeReplicationTasksResponse {
-    @inline
-    def apply(
-        Marker: js.UndefOr[String] = js.undefined,
-        ReplicationTasks: js.UndefOr[ReplicationTaskList] = js.undefined
-    ): DescribeReplicationTasksResponse = {
-      val __obj = js.Dynamic.literal()
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      ReplicationTasks.foreach(__v => __obj.updateDynamic("ReplicationTasks")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeReplicationTasksResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeSchemasMessage extends js.Object {
     var EndpointArn: String
     var Marker: js.UndefOr[String]
     var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
-  object DescribeSchemasMessage {
-    @inline
-    def apply(
-        EndpointArn: String,
-        Marker: js.UndefOr[String] = js.undefined,
-        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
-    ): DescribeSchemasMessage = {
-      val __obj = js.Dynamic.literal(
-        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]
-      )
-
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeSchemasMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeSchemasResponse extends js.Object {
     var Marker: js.UndefOr[String]
     var Schemas: js.UndefOr[SchemaList]
   }
 
-  object DescribeSchemasResponse {
-    @inline
-    def apply(
-        Marker: js.UndefOr[String] = js.undefined,
-        Schemas: js.UndefOr[SchemaList] = js.undefined
-    ): DescribeSchemasResponse = {
-      val __obj = js.Dynamic.literal()
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      Schemas.foreach(__v => __obj.updateDynamic("Schemas")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeSchemasResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeTableStatisticsMessage extends js.Object {
     var ReplicationTaskArn: String
     var Filters: js.UndefOr[FilterList]
@@ -1985,48 +1024,15 @@ package dms {
     var MaxRecords: js.UndefOr[IntegerOptional]
   }
 
-  object DescribeTableStatisticsMessage {
-    @inline
-    def apply(
-        ReplicationTaskArn: String,
-        Filters: js.UndefOr[FilterList] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined,
-        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
-    ): DescribeTableStatisticsMessage = {
-      val __obj = js.Dynamic.literal(
-        "ReplicationTaskArn" -> ReplicationTaskArn.asInstanceOf[js.Any]
-      )
-
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeTableStatisticsMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DescribeTableStatisticsResponse extends js.Object {
     var Marker: js.UndefOr[String]
     var ReplicationTaskArn: js.UndefOr[String]
     var TableStatistics: js.UndefOr[TableStatisticsList]
-  }
-
-  object DescribeTableStatisticsResponse {
-    @inline
-    def apply(
-        Marker: js.UndefOr[String] = js.undefined,
-        ReplicationTaskArn: js.UndefOr[String] = js.undefined,
-        TableStatistics: js.UndefOr[TableStatisticsList] = js.undefined
-    ): DescribeTableStatisticsResponse = {
-      val __obj = js.Dynamic.literal()
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      ReplicationTaskArn.foreach(__v => __obj.updateDynamic("ReplicationTaskArn")(__v.asInstanceOf[js.Any]))
-      TableStatistics.foreach(__v => __obj.updateDynamic("TableStatistics")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeTableStatisticsResponse]
-    }
   }
 
   @js.native
@@ -2044,73 +1050,31 @@ package dms {
     * The settings in JSON format for the DMS Transfer type source endpoint.
     */
   @js.native
+  @Factory
   trait DmsTransferSettings extends js.Object {
     var BucketName: js.UndefOr[String]
     var ServiceAccessRoleArn: js.UndefOr[String]
   }
 
-  object DmsTransferSettings {
-    @inline
-    def apply(
-        BucketName: js.UndefOr[String] = js.undefined,
-        ServiceAccessRoleArn: js.UndefOr[String] = js.undefined
-    ): DmsTransferSettings = {
-      val __obj = js.Dynamic.literal()
-      BucketName.foreach(__v => __obj.updateDynamic("BucketName")(__v.asInstanceOf[js.Any]))
-      ServiceAccessRoleArn.foreach(__v => __obj.updateDynamic("ServiceAccessRoleArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DmsTransferSettings]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait DynamoDbSettings extends js.Object {
     var ServiceAccessRoleArn: String
   }
 
-  object DynamoDbSettings {
-    @inline
-    def apply(
-        ServiceAccessRoleArn: String
-    ): DynamoDbSettings = {
-      val __obj = js.Dynamic.literal(
-        "ServiceAccessRoleArn" -> ServiceAccessRoleArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DynamoDbSettings]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait ElasticsearchSettings extends js.Object {
     var EndpointUri: String
     var ServiceAccessRoleArn: String
     var ErrorRetryDuration: js.UndefOr[IntegerOptional]
     var FullLoadErrorPercentage: js.UndefOr[IntegerOptional]
-  }
-
-  object ElasticsearchSettings {
-    @inline
-    def apply(
-        EndpointUri: String,
-        ServiceAccessRoleArn: String,
-        ErrorRetryDuration: js.UndefOr[IntegerOptional] = js.undefined,
-        FullLoadErrorPercentage: js.UndefOr[IntegerOptional] = js.undefined
-    ): ElasticsearchSettings = {
-      val __obj = js.Dynamic.literal(
-        "EndpointUri"          -> EndpointUri.asInstanceOf[js.Any],
-        "ServiceAccessRoleArn" -> ServiceAccessRoleArn.asInstanceOf[js.Any]
-      )
-
-      ErrorRetryDuration.foreach(__v => __obj.updateDynamic("ErrorRetryDuration")(__v.asInstanceOf[js.Any]))
-      FullLoadErrorPercentage.foreach(__v => __obj.updateDynamic("FullLoadErrorPercentage")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ElasticsearchSettings]
-    }
   }
 
   @js.native
@@ -2136,6 +1100,7 @@ package dms {
     * <p/>
     */
   @js.native
+  @Factory
   trait Endpoint extends js.Object {
     var CertificateArn: js.UndefOr[String]
     var DatabaseName: js.UndefOr[String]
@@ -2163,69 +1128,11 @@ package dms {
     var Username: js.UndefOr[String]
   }
 
-  object Endpoint {
-    @inline
-    def apply(
-        CertificateArn: js.UndefOr[String] = js.undefined,
-        DatabaseName: js.UndefOr[String] = js.undefined,
-        DmsTransferSettings: js.UndefOr[DmsTransferSettings] = js.undefined,
-        DynamoDbSettings: js.UndefOr[DynamoDbSettings] = js.undefined,
-        ElasticsearchSettings: js.UndefOr[ElasticsearchSettings] = js.undefined,
-        EndpointArn: js.UndefOr[String] = js.undefined,
-        EndpointIdentifier: js.UndefOr[String] = js.undefined,
-        EndpointType: js.UndefOr[ReplicationEndpointTypeValue] = js.undefined,
-        EngineDisplayName: js.UndefOr[String] = js.undefined,
-        EngineName: js.UndefOr[String] = js.undefined,
-        ExternalId: js.UndefOr[String] = js.undefined,
-        ExternalTableDefinition: js.UndefOr[String] = js.undefined,
-        ExtraConnectionAttributes: js.UndefOr[String] = js.undefined,
-        KinesisSettings: js.UndefOr[KinesisSettings] = js.undefined,
-        KmsKeyId: js.UndefOr[String] = js.undefined,
-        MongoDbSettings: js.UndefOr[MongoDbSettings] = js.undefined,
-        Port: js.UndefOr[IntegerOptional] = js.undefined,
-        RedshiftSettings: js.UndefOr[RedshiftSettings] = js.undefined,
-        S3Settings: js.UndefOr[S3Settings] = js.undefined,
-        ServerName: js.UndefOr[String] = js.undefined,
-        ServiceAccessRoleArn: js.UndefOr[String] = js.undefined,
-        SslMode: js.UndefOr[DmsSslModeValue] = js.undefined,
-        Status: js.UndefOr[String] = js.undefined,
-        Username: js.UndefOr[String] = js.undefined
-    ): Endpoint = {
-      val __obj = js.Dynamic.literal()
-      CertificateArn.foreach(__v => __obj.updateDynamic("CertificateArn")(__v.asInstanceOf[js.Any]))
-      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
-      DmsTransferSettings.foreach(__v => __obj.updateDynamic("DmsTransferSettings")(__v.asInstanceOf[js.Any]))
-      DynamoDbSettings.foreach(__v => __obj.updateDynamic("DynamoDbSettings")(__v.asInstanceOf[js.Any]))
-      ElasticsearchSettings.foreach(__v => __obj.updateDynamic("ElasticsearchSettings")(__v.asInstanceOf[js.Any]))
-      EndpointArn.foreach(__v => __obj.updateDynamic("EndpointArn")(__v.asInstanceOf[js.Any]))
-      EndpointIdentifier.foreach(__v => __obj.updateDynamic("EndpointIdentifier")(__v.asInstanceOf[js.Any]))
-      EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
-      EngineDisplayName.foreach(__v => __obj.updateDynamic("EngineDisplayName")(__v.asInstanceOf[js.Any]))
-      EngineName.foreach(__v => __obj.updateDynamic("EngineName")(__v.asInstanceOf[js.Any]))
-      ExternalId.foreach(__v => __obj.updateDynamic("ExternalId")(__v.asInstanceOf[js.Any]))
-      ExternalTableDefinition.foreach(__v => __obj.updateDynamic("ExternalTableDefinition")(__v.asInstanceOf[js.Any]))
-      ExtraConnectionAttributes.foreach(__v =>
-        __obj.updateDynamic("ExtraConnectionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      KinesisSettings.foreach(__v => __obj.updateDynamic("KinesisSettings")(__v.asInstanceOf[js.Any]))
-      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
-      MongoDbSettings.foreach(__v => __obj.updateDynamic("MongoDbSettings")(__v.asInstanceOf[js.Any]))
-      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
-      RedshiftSettings.foreach(__v => __obj.updateDynamic("RedshiftSettings")(__v.asInstanceOf[js.Any]))
-      S3Settings.foreach(__v => __obj.updateDynamic("S3Settings")(__v.asInstanceOf[js.Any]))
-      ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
-      ServiceAccessRoleArn.foreach(__v => __obj.updateDynamic("ServiceAccessRoleArn")(__v.asInstanceOf[js.Any]))
-      SslMode.foreach(__v => __obj.updateDynamic("SslMode")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Endpoint]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait Event extends js.Object {
     var Date: js.UndefOr[TStamp]
     var EventCategories: js.UndefOr[EventCategoriesList]
@@ -2234,51 +1141,21 @@ package dms {
     var SourceType: js.UndefOr[SourceType]
   }
 
-  object Event {
-    @inline
-    def apply(
-        Date: js.UndefOr[TStamp] = js.undefined,
-        EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
-        Message: js.UndefOr[String] = js.undefined,
-        SourceIdentifier: js.UndefOr[String] = js.undefined,
-        SourceType: js.UndefOr[SourceType] = js.undefined
-    ): Event = {
-      val __obj = js.Dynamic.literal()
-      Date.foreach(__v => __obj.updateDynamic("Date")(__v.asInstanceOf[js.Any]))
-      EventCategories.foreach(__v => __obj.updateDynamic("EventCategories")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      SourceIdentifier.foreach(__v => __obj.updateDynamic("SourceIdentifier")(__v.asInstanceOf[js.Any]))
-      SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Event]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait EventCategoryGroup extends js.Object {
     var EventCategories: js.UndefOr[EventCategoriesList]
     var SourceType: js.UndefOr[String]
   }
 
-  object EventCategoryGroup {
-    @inline
-    def apply(
-        EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
-        SourceType: js.UndefOr[String] = js.undefined
-    ): EventCategoryGroup = {
-      val __obj = js.Dynamic.literal()
-      EventCategories.foreach(__v => __obj.updateDynamic("EventCategories")(__v.asInstanceOf[js.Any]))
-      SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EventCategoryGroup]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait EventSubscription extends js.Object {
     var CustSubscriptionId: js.UndefOr[String]
     var CustomerAwsId: js.UndefOr[String]
@@ -2291,58 +1168,18 @@ package dms {
     var SubscriptionCreationTime: js.UndefOr[String]
   }
 
-  object EventSubscription {
-    @inline
-    def apply(
-        CustSubscriptionId: js.UndefOr[String] = js.undefined,
-        CustomerAwsId: js.UndefOr[String] = js.undefined,
-        Enabled: js.UndefOr[Boolean] = js.undefined,
-        EventCategoriesList: js.UndefOr[EventCategoriesList] = js.undefined,
-        SnsTopicArn: js.UndefOr[String] = js.undefined,
-        SourceIdsList: js.UndefOr[SourceIdsList] = js.undefined,
-        SourceType: js.UndefOr[String] = js.undefined,
-        Status: js.UndefOr[String] = js.undefined,
-        SubscriptionCreationTime: js.UndefOr[String] = js.undefined
-    ): EventSubscription = {
-      val __obj = js.Dynamic.literal()
-      CustSubscriptionId.foreach(__v => __obj.updateDynamic("CustSubscriptionId")(__v.asInstanceOf[js.Any]))
-      CustomerAwsId.foreach(__v => __obj.updateDynamic("CustomerAwsId")(__v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      EventCategoriesList.foreach(__v => __obj.updateDynamic("EventCategoriesList")(__v.asInstanceOf[js.Any]))
-      SnsTopicArn.foreach(__v => __obj.updateDynamic("SnsTopicArn")(__v.asInstanceOf[js.Any]))
-      SourceIdsList.foreach(__v => __obj.updateDynamic("SourceIdsList")(__v.asInstanceOf[js.Any]))
-      SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      SubscriptionCreationTime.foreach(__v => __obj.updateDynamic("SubscriptionCreationTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EventSubscription]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait Filter extends js.Object {
     var Name: String
     var Values: FilterValueList
   }
 
-  object Filter {
-    @inline
-    def apply(
-        Name: String,
-        Values: FilterValueList
-    ): Filter = {
-      val __obj = js.Dynamic.literal(
-        "Name"   -> Name.asInstanceOf[js.Any],
-        "Values" -> Values.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Filter]
-    }
-  }
-
   @js.native
+  @Factory
   trait ImportCertificateMessage extends js.Object {
     var CertificateIdentifier: String
     var CertificatePem: js.UndefOr[String]
@@ -2350,104 +1187,39 @@ package dms {
     var Tags: js.UndefOr[TagList]
   }
 
-  object ImportCertificateMessage {
-    @inline
-    def apply(
-        CertificateIdentifier: String,
-        CertificatePem: js.UndefOr[String] = js.undefined,
-        CertificateWallet: js.UndefOr[CertificateWallet] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): ImportCertificateMessage = {
-      val __obj = js.Dynamic.literal(
-        "CertificateIdentifier" -> CertificateIdentifier.asInstanceOf[js.Any]
-      )
-
-      CertificatePem.foreach(__v => __obj.updateDynamic("CertificatePem")(__v.asInstanceOf[js.Any]))
-      CertificateWallet.foreach(__v => __obj.updateDynamic("CertificateWallet")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ImportCertificateMessage]
-    }
-  }
-
   @js.native
+  @Factory
   trait ImportCertificateResponse extends js.Object {
     var Certificate: js.UndefOr[Certificate]
-  }
-
-  object ImportCertificateResponse {
-    @inline
-    def apply(
-        Certificate: js.UndefOr[Certificate] = js.undefined
-    ): ImportCertificateResponse = {
-      val __obj = js.Dynamic.literal()
-      Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ImportCertificateResponse]
-    }
   }
 
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait KinesisSettings extends js.Object {
     var MessageFormat: js.UndefOr[MessageFormatValue]
     var ServiceAccessRoleArn: js.UndefOr[String]
     var StreamArn: js.UndefOr[String]
   }
 
-  object KinesisSettings {
-    @inline
-    def apply(
-        MessageFormat: js.UndefOr[MessageFormatValue] = js.undefined,
-        ServiceAccessRoleArn: js.UndefOr[String] = js.undefined,
-        StreamArn: js.UndefOr[String] = js.undefined
-    ): KinesisSettings = {
-      val __obj = js.Dynamic.literal()
-      MessageFormat.foreach(__v => __obj.updateDynamic("MessageFormat")(__v.asInstanceOf[js.Any]))
-      ServiceAccessRoleArn.foreach(__v => __obj.updateDynamic("ServiceAccessRoleArn")(__v.asInstanceOf[js.Any]))
-      StreamArn.foreach(__v => __obj.updateDynamic("StreamArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[KinesisSettings]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait ListTagsForResourceMessage extends js.Object {
     var ResourceArn: String
   }
 
-  object ListTagsForResourceMessage {
-    @inline
-    def apply(
-        ResourceArn: String
-    ): ListTagsForResourceMessage = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListTagsForResourceMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait ListTagsForResourceResponse extends js.Object {
     var TagList: js.UndefOr[TagList]
-  }
-
-  object ListTagsForResourceResponse {
-    @inline
-    def apply(
-        TagList: js.UndefOr[TagList] = js.undefined
-    ): ListTagsForResourceResponse = {
-      val __obj = js.Dynamic.literal()
-      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceResponse]
-    }
   }
 
   @js.native
@@ -2472,6 +1244,7 @@ package dms {
     * <p/>
     */
   @js.native
+  @Factory
   trait ModifyEndpointMessage extends js.Object {
     var EndpointArn: String
     var CertificateArn: js.UndefOr[String]
@@ -2496,84 +1269,20 @@ package dms {
     var Username: js.UndefOr[String]
   }
 
-  object ModifyEndpointMessage {
-    @inline
-    def apply(
-        EndpointArn: String,
-        CertificateArn: js.UndefOr[String] = js.undefined,
-        DatabaseName: js.UndefOr[String] = js.undefined,
-        DmsTransferSettings: js.UndefOr[DmsTransferSettings] = js.undefined,
-        DynamoDbSettings: js.UndefOr[DynamoDbSettings] = js.undefined,
-        ElasticsearchSettings: js.UndefOr[ElasticsearchSettings] = js.undefined,
-        EndpointIdentifier: js.UndefOr[String] = js.undefined,
-        EndpointType: js.UndefOr[ReplicationEndpointTypeValue] = js.undefined,
-        EngineName: js.UndefOr[String] = js.undefined,
-        ExternalTableDefinition: js.UndefOr[String] = js.undefined,
-        ExtraConnectionAttributes: js.UndefOr[String] = js.undefined,
-        KinesisSettings: js.UndefOr[KinesisSettings] = js.undefined,
-        MongoDbSettings: js.UndefOr[MongoDbSettings] = js.undefined,
-        Password: js.UndefOr[SecretString] = js.undefined,
-        Port: js.UndefOr[IntegerOptional] = js.undefined,
-        RedshiftSettings: js.UndefOr[RedshiftSettings] = js.undefined,
-        S3Settings: js.UndefOr[S3Settings] = js.undefined,
-        ServerName: js.UndefOr[String] = js.undefined,
-        ServiceAccessRoleArn: js.UndefOr[String] = js.undefined,
-        SslMode: js.UndefOr[DmsSslModeValue] = js.undefined,
-        Username: js.UndefOr[String] = js.undefined
-    ): ModifyEndpointMessage = {
-      val __obj = js.Dynamic.literal(
-        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]
-      )
-
-      CertificateArn.foreach(__v => __obj.updateDynamic("CertificateArn")(__v.asInstanceOf[js.Any]))
-      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
-      DmsTransferSettings.foreach(__v => __obj.updateDynamic("DmsTransferSettings")(__v.asInstanceOf[js.Any]))
-      DynamoDbSettings.foreach(__v => __obj.updateDynamic("DynamoDbSettings")(__v.asInstanceOf[js.Any]))
-      ElasticsearchSettings.foreach(__v => __obj.updateDynamic("ElasticsearchSettings")(__v.asInstanceOf[js.Any]))
-      EndpointIdentifier.foreach(__v => __obj.updateDynamic("EndpointIdentifier")(__v.asInstanceOf[js.Any]))
-      EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
-      EngineName.foreach(__v => __obj.updateDynamic("EngineName")(__v.asInstanceOf[js.Any]))
-      ExternalTableDefinition.foreach(__v => __obj.updateDynamic("ExternalTableDefinition")(__v.asInstanceOf[js.Any]))
-      ExtraConnectionAttributes.foreach(__v =>
-        __obj.updateDynamic("ExtraConnectionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      KinesisSettings.foreach(__v => __obj.updateDynamic("KinesisSettings")(__v.asInstanceOf[js.Any]))
-      MongoDbSettings.foreach(__v => __obj.updateDynamic("MongoDbSettings")(__v.asInstanceOf[js.Any]))
-      Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
-      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
-      RedshiftSettings.foreach(__v => __obj.updateDynamic("RedshiftSettings")(__v.asInstanceOf[js.Any]))
-      S3Settings.foreach(__v => __obj.updateDynamic("S3Settings")(__v.asInstanceOf[js.Any]))
-      ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
-      ServiceAccessRoleArn.foreach(__v => __obj.updateDynamic("ServiceAccessRoleArn")(__v.asInstanceOf[js.Any]))
-      SslMode.foreach(__v => __obj.updateDynamic("SslMode")(__v.asInstanceOf[js.Any]))
-      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ModifyEndpointMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait ModifyEndpointResponse extends js.Object {
     var Endpoint: js.UndefOr[Endpoint]
   }
 
-  object ModifyEndpointResponse {
-    @inline
-    def apply(
-        Endpoint: js.UndefOr[Endpoint] = js.undefined
-    ): ModifyEndpointResponse = {
-      val __obj = js.Dynamic.literal()
-      Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ModifyEndpointResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait ModifyEventSubscriptionMessage extends js.Object {
     var SubscriptionName: String
     var Enabled: js.UndefOr[BooleanOptional]
@@ -2582,50 +1291,20 @@ package dms {
     var SourceType: js.UndefOr[String]
   }
 
-  object ModifyEventSubscriptionMessage {
-    @inline
-    def apply(
-        SubscriptionName: String,
-        Enabled: js.UndefOr[BooleanOptional] = js.undefined,
-        EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
-        SnsTopicArn: js.UndefOr[String] = js.undefined,
-        SourceType: js.UndefOr[String] = js.undefined
-    ): ModifyEventSubscriptionMessage = {
-      val __obj = js.Dynamic.literal(
-        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
-      )
-
-      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      EventCategories.foreach(__v => __obj.updateDynamic("EventCategories")(__v.asInstanceOf[js.Any]))
-      SnsTopicArn.foreach(__v => __obj.updateDynamic("SnsTopicArn")(__v.asInstanceOf[js.Any]))
-      SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ModifyEventSubscriptionMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait ModifyEventSubscriptionResponse extends js.Object {
     var EventSubscription: js.UndefOr[EventSubscription]
   }
 
-  object ModifyEventSubscriptionResponse {
-    @inline
-    def apply(
-        EventSubscription: js.UndefOr[EventSubscription] = js.undefined
-    ): ModifyEventSubscriptionResponse = {
-      val __obj = js.Dynamic.literal()
-      EventSubscription.foreach(__v => __obj.updateDynamic("EventSubscription")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ModifyEventSubscriptionResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait ModifyReplicationInstanceMessage extends js.Object {
     var ReplicationInstanceArn: String
     var AllocatedStorage: js.UndefOr[IntegerOptional]
@@ -2640,114 +1319,40 @@ package dms {
     var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
   }
 
-  object ModifyReplicationInstanceMessage {
-    @inline
-    def apply(
-        ReplicationInstanceArn: String,
-        AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
-        AllowMajorVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
-        ApplyImmediately: js.UndefOr[Boolean] = js.undefined,
-        AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
-        EngineVersion: js.UndefOr[String] = js.undefined,
-        MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
-        PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
-        ReplicationInstanceClass: js.UndefOr[String] = js.undefined,
-        ReplicationInstanceIdentifier: js.UndefOr[String] = js.undefined,
-        VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
-    ): ModifyReplicationInstanceMessage = {
-      val __obj = js.Dynamic.literal(
-        "ReplicationInstanceArn" -> ReplicationInstanceArn.asInstanceOf[js.Any]
-      )
-
-      AllocatedStorage.foreach(__v => __obj.updateDynamic("AllocatedStorage")(__v.asInstanceOf[js.Any]))
-      AllowMajorVersionUpgrade.foreach(__v => __obj.updateDynamic("AllowMajorVersionUpgrade")(__v.asInstanceOf[js.Any]))
-      ApplyImmediately.foreach(__v => __obj.updateDynamic("ApplyImmediately")(__v.asInstanceOf[js.Any]))
-      AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
-      MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
-      ReplicationInstanceClass.foreach(__v => __obj.updateDynamic("ReplicationInstanceClass")(__v.asInstanceOf[js.Any]))
-      ReplicationInstanceIdentifier.foreach(__v =>
-        __obj.updateDynamic("ReplicationInstanceIdentifier")(__v.asInstanceOf[js.Any])
-      )
-      VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ModifyReplicationInstanceMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait ModifyReplicationInstanceResponse extends js.Object {
     var ReplicationInstance: js.UndefOr[ReplicationInstance]
   }
 
-  object ModifyReplicationInstanceResponse {
-    @inline
-    def apply(
-        ReplicationInstance: js.UndefOr[ReplicationInstance] = js.undefined
-    ): ModifyReplicationInstanceResponse = {
-      val __obj = js.Dynamic.literal()
-      ReplicationInstance.foreach(__v => __obj.updateDynamic("ReplicationInstance")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ModifyReplicationInstanceResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait ModifyReplicationSubnetGroupMessage extends js.Object {
     var ReplicationSubnetGroupIdentifier: String
     var SubnetIds: SubnetIdentifierList
     var ReplicationSubnetGroupDescription: js.UndefOr[String]
   }
 
-  object ModifyReplicationSubnetGroupMessage {
-    @inline
-    def apply(
-        ReplicationSubnetGroupIdentifier: String,
-        SubnetIds: SubnetIdentifierList,
-        ReplicationSubnetGroupDescription: js.UndefOr[String] = js.undefined
-    ): ModifyReplicationSubnetGroupMessage = {
-      val __obj = js.Dynamic.literal(
-        "ReplicationSubnetGroupIdentifier" -> ReplicationSubnetGroupIdentifier.asInstanceOf[js.Any],
-        "SubnetIds"                        -> SubnetIds.asInstanceOf[js.Any]
-      )
-
-      ReplicationSubnetGroupDescription.foreach(__v =>
-        __obj.updateDynamic("ReplicationSubnetGroupDescription")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[ModifyReplicationSubnetGroupMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait ModifyReplicationSubnetGroupResponse extends js.Object {
     var ReplicationSubnetGroup: js.UndefOr[ReplicationSubnetGroup]
   }
 
-  object ModifyReplicationSubnetGroupResponse {
-    @inline
-    def apply(
-        ReplicationSubnetGroup: js.UndefOr[ReplicationSubnetGroup] = js.undefined
-    ): ModifyReplicationSubnetGroupResponse = {
-      val __obj = js.Dynamic.literal()
-      ReplicationSubnetGroup.foreach(__v => __obj.updateDynamic("ReplicationSubnetGroup")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ModifyReplicationSubnetGroupResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait ModifyReplicationTaskMessage extends js.Object {
     var ReplicationTaskArn: String
     var CdcStartPosition: js.UndefOr[String]
@@ -2759,58 +1364,20 @@ package dms {
     var TableMappings: js.UndefOr[String]
   }
 
-  object ModifyReplicationTaskMessage {
-    @inline
-    def apply(
-        ReplicationTaskArn: String,
-        CdcStartPosition: js.UndefOr[String] = js.undefined,
-        CdcStartTime: js.UndefOr[TStamp] = js.undefined,
-        CdcStopPosition: js.UndefOr[String] = js.undefined,
-        MigrationType: js.UndefOr[MigrationTypeValue] = js.undefined,
-        ReplicationTaskIdentifier: js.UndefOr[String] = js.undefined,
-        ReplicationTaskSettings: js.UndefOr[String] = js.undefined,
-        TableMappings: js.UndefOr[String] = js.undefined
-    ): ModifyReplicationTaskMessage = {
-      val __obj = js.Dynamic.literal(
-        "ReplicationTaskArn" -> ReplicationTaskArn.asInstanceOf[js.Any]
-      )
-
-      CdcStartPosition.foreach(__v => __obj.updateDynamic("CdcStartPosition")(__v.asInstanceOf[js.Any]))
-      CdcStartTime.foreach(__v => __obj.updateDynamic("CdcStartTime")(__v.asInstanceOf[js.Any]))
-      CdcStopPosition.foreach(__v => __obj.updateDynamic("CdcStopPosition")(__v.asInstanceOf[js.Any]))
-      MigrationType.foreach(__v => __obj.updateDynamic("MigrationType")(__v.asInstanceOf[js.Any]))
-      ReplicationTaskIdentifier.foreach(__v =>
-        __obj.updateDynamic("ReplicationTaskIdentifier")(__v.asInstanceOf[js.Any])
-      )
-      ReplicationTaskSettings.foreach(__v => __obj.updateDynamic("ReplicationTaskSettings")(__v.asInstanceOf[js.Any]))
-      TableMappings.foreach(__v => __obj.updateDynamic("TableMappings")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ModifyReplicationTaskMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait ModifyReplicationTaskResponse extends js.Object {
     var ReplicationTask: js.UndefOr[ReplicationTask]
   }
 
-  object ModifyReplicationTaskResponse {
-    @inline
-    def apply(
-        ReplicationTask: js.UndefOr[ReplicationTask] = js.undefined
-    ): ModifyReplicationTaskResponse = {
-      val __obj = js.Dynamic.literal()
-      ReplicationTask.foreach(__v => __obj.updateDynamic("ReplicationTask")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ModifyReplicationTaskResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait MongoDbSettings extends js.Object {
     var AuthMechanism: js.UndefOr[AuthMechanismValue]
     var AuthSource: js.UndefOr[String]
@@ -2826,39 +1393,6 @@ package dms {
     var Username: js.UndefOr[String]
   }
 
-  object MongoDbSettings {
-    @inline
-    def apply(
-        AuthMechanism: js.UndefOr[AuthMechanismValue] = js.undefined,
-        AuthSource: js.UndefOr[String] = js.undefined,
-        AuthType: js.UndefOr[AuthTypeValue] = js.undefined,
-        DatabaseName: js.UndefOr[String] = js.undefined,
-        DocsToInvestigate: js.UndefOr[String] = js.undefined,
-        ExtractDocId: js.UndefOr[String] = js.undefined,
-        KmsKeyId: js.UndefOr[String] = js.undefined,
-        NestingLevel: js.UndefOr[NestingLevelValue] = js.undefined,
-        Password: js.UndefOr[SecretString] = js.undefined,
-        Port: js.UndefOr[IntegerOptional] = js.undefined,
-        ServerName: js.UndefOr[String] = js.undefined,
-        Username: js.UndefOr[String] = js.undefined
-    ): MongoDbSettings = {
-      val __obj = js.Dynamic.literal()
-      AuthMechanism.foreach(__v => __obj.updateDynamic("AuthMechanism")(__v.asInstanceOf[js.Any]))
-      AuthSource.foreach(__v => __obj.updateDynamic("AuthSource")(__v.asInstanceOf[js.Any]))
-      AuthType.foreach(__v => __obj.updateDynamic("AuthType")(__v.asInstanceOf[js.Any]))
-      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
-      DocsToInvestigate.foreach(__v => __obj.updateDynamic("DocsToInvestigate")(__v.asInstanceOf[js.Any]))
-      ExtractDocId.foreach(__v => __obj.updateDynamic("ExtractDocId")(__v.asInstanceOf[js.Any]))
-      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
-      NestingLevel.foreach(__v => __obj.updateDynamic("NestingLevel")(__v.asInstanceOf[js.Any]))
-      Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
-      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
-      ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
-      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MongoDbSettings]
-    }
-  }
-
   @js.native
   sealed trait NestingLevelValue extends js.Any
   object NestingLevelValue extends js.Object {
@@ -2872,6 +1406,7 @@ package dms {
     * <p/>
     */
   @js.native
+  @Factory
   trait OrderableReplicationInstance extends js.Object {
     var AvailabilityZones: js.UndefOr[AvailabilityZonesList]
     var DefaultAllocatedStorage: js.UndefOr[Int]
@@ -2882,33 +1417,6 @@ package dms {
     var ReleaseStatus: js.UndefOr[ReleaseStatusValues]
     var ReplicationInstanceClass: js.UndefOr[String]
     var StorageType: js.UndefOr[String]
-  }
-
-  object OrderableReplicationInstance {
-    @inline
-    def apply(
-        AvailabilityZones: js.UndefOr[AvailabilityZonesList] = js.undefined,
-        DefaultAllocatedStorage: js.UndefOr[Int] = js.undefined,
-        EngineVersion: js.UndefOr[String] = js.undefined,
-        IncludedAllocatedStorage: js.UndefOr[Int] = js.undefined,
-        MaxAllocatedStorage: js.UndefOr[Int] = js.undefined,
-        MinAllocatedStorage: js.UndefOr[Int] = js.undefined,
-        ReleaseStatus: js.UndefOr[ReleaseStatusValues] = js.undefined,
-        ReplicationInstanceClass: js.UndefOr[String] = js.undefined,
-        StorageType: js.UndefOr[String] = js.undefined
-    ): OrderableReplicationInstance = {
-      val __obj = js.Dynamic.literal()
-      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
-      DefaultAllocatedStorage.foreach(__v => __obj.updateDynamic("DefaultAllocatedStorage")(__v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
-      IncludedAllocatedStorage.foreach(__v => __obj.updateDynamic("IncludedAllocatedStorage")(__v.asInstanceOf[js.Any]))
-      MaxAllocatedStorage.foreach(__v => __obj.updateDynamic("MaxAllocatedStorage")(__v.asInstanceOf[js.Any]))
-      MinAllocatedStorage.foreach(__v => __obj.updateDynamic("MinAllocatedStorage")(__v.asInstanceOf[js.Any]))
-      ReleaseStatus.foreach(__v => __obj.updateDynamic("ReleaseStatus")(__v.asInstanceOf[js.Any]))
-      ReplicationInstanceClass.foreach(__v => __obj.updateDynamic("ReplicationInstanceClass")(__v.asInstanceOf[js.Any]))
-      StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[OrderableReplicationInstance]
-    }
   }
 
   @js.native
@@ -2924,6 +1432,7 @@ package dms {
     * <p/>
     */
   @js.native
+  @Factory
   trait PendingMaintenanceAction extends js.Object {
     var Action: js.UndefOr[String]
     var AutoAppliedAfterDate: js.UndefOr[TStamp]
@@ -2933,68 +1442,24 @@ package dms {
     var OptInStatus: js.UndefOr[String]
   }
 
-  object PendingMaintenanceAction {
-    @inline
-    def apply(
-        Action: js.UndefOr[String] = js.undefined,
-        AutoAppliedAfterDate: js.UndefOr[TStamp] = js.undefined,
-        CurrentApplyDate: js.UndefOr[TStamp] = js.undefined,
-        Description: js.UndefOr[String] = js.undefined,
-        ForcedApplyDate: js.UndefOr[TStamp] = js.undefined,
-        OptInStatus: js.UndefOr[String] = js.undefined
-    ): PendingMaintenanceAction = {
-      val __obj = js.Dynamic.literal()
-      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
-      AutoAppliedAfterDate.foreach(__v => __obj.updateDynamic("AutoAppliedAfterDate")(__v.asInstanceOf[js.Any]))
-      CurrentApplyDate.foreach(__v => __obj.updateDynamic("CurrentApplyDate")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      ForcedApplyDate.foreach(__v => __obj.updateDynamic("ForcedApplyDate")(__v.asInstanceOf[js.Any]))
-      OptInStatus.foreach(__v => __obj.updateDynamic("OptInStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PendingMaintenanceAction]
-    }
-  }
-
   @js.native
+  @Factory
   trait RebootReplicationInstanceMessage extends js.Object {
     var ReplicationInstanceArn: String
     var ForceFailover: js.UndefOr[BooleanOptional]
   }
 
-  object RebootReplicationInstanceMessage {
-    @inline
-    def apply(
-        ReplicationInstanceArn: String,
-        ForceFailover: js.UndefOr[BooleanOptional] = js.undefined
-    ): RebootReplicationInstanceMessage = {
-      val __obj = js.Dynamic.literal(
-        "ReplicationInstanceArn" -> ReplicationInstanceArn.asInstanceOf[js.Any]
-      )
-
-      ForceFailover.foreach(__v => __obj.updateDynamic("ForceFailover")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RebootReplicationInstanceMessage]
-    }
-  }
-
   @js.native
+  @Factory
   trait RebootReplicationInstanceResponse extends js.Object {
     var ReplicationInstance: js.UndefOr[ReplicationInstance]
-  }
-
-  object RebootReplicationInstanceResponse {
-    @inline
-    def apply(
-        ReplicationInstance: js.UndefOr[ReplicationInstance] = js.undefined
-    ): RebootReplicationInstanceResponse = {
-      val __obj = js.Dynamic.literal()
-      ReplicationInstance.foreach(__v => __obj.updateDynamic("ReplicationInstance")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RebootReplicationInstanceResponse]
-    }
   }
 
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait RedshiftSettings extends js.Object {
     var AcceptAnyDate: js.UndefOr[BooleanOptional]
     var AfterConnectScript: js.UndefOr[String]
@@ -3023,141 +1488,36 @@ package dms {
     var WriteBufferSize: js.UndefOr[IntegerOptional]
   }
 
-  object RedshiftSettings {
-    @inline
-    def apply(
-        AcceptAnyDate: js.UndefOr[BooleanOptional] = js.undefined,
-        AfterConnectScript: js.UndefOr[String] = js.undefined,
-        BucketFolder: js.UndefOr[String] = js.undefined,
-        BucketName: js.UndefOr[String] = js.undefined,
-        ConnectionTimeout: js.UndefOr[IntegerOptional] = js.undefined,
-        DatabaseName: js.UndefOr[String] = js.undefined,
-        DateFormat: js.UndefOr[String] = js.undefined,
-        EmptyAsNull: js.UndefOr[BooleanOptional] = js.undefined,
-        EncryptionMode: js.UndefOr[EncryptionModeValue] = js.undefined,
-        FileTransferUploadStreams: js.UndefOr[IntegerOptional] = js.undefined,
-        LoadTimeout: js.UndefOr[IntegerOptional] = js.undefined,
-        MaxFileSize: js.UndefOr[IntegerOptional] = js.undefined,
-        Password: js.UndefOr[SecretString] = js.undefined,
-        Port: js.UndefOr[IntegerOptional] = js.undefined,
-        RemoveQuotes: js.UndefOr[BooleanOptional] = js.undefined,
-        ReplaceChars: js.UndefOr[String] = js.undefined,
-        ReplaceInvalidChars: js.UndefOr[String] = js.undefined,
-        ServerName: js.UndefOr[String] = js.undefined,
-        ServerSideEncryptionKmsKeyId: js.UndefOr[String] = js.undefined,
-        ServiceAccessRoleArn: js.UndefOr[String] = js.undefined,
-        TimeFormat: js.UndefOr[String] = js.undefined,
-        TrimBlanks: js.UndefOr[BooleanOptional] = js.undefined,
-        TruncateColumns: js.UndefOr[BooleanOptional] = js.undefined,
-        Username: js.UndefOr[String] = js.undefined,
-        WriteBufferSize: js.UndefOr[IntegerOptional] = js.undefined
-    ): RedshiftSettings = {
-      val __obj = js.Dynamic.literal()
-      AcceptAnyDate.foreach(__v => __obj.updateDynamic("AcceptAnyDate")(__v.asInstanceOf[js.Any]))
-      AfterConnectScript.foreach(__v => __obj.updateDynamic("AfterConnectScript")(__v.asInstanceOf[js.Any]))
-      BucketFolder.foreach(__v => __obj.updateDynamic("BucketFolder")(__v.asInstanceOf[js.Any]))
-      BucketName.foreach(__v => __obj.updateDynamic("BucketName")(__v.asInstanceOf[js.Any]))
-      ConnectionTimeout.foreach(__v => __obj.updateDynamic("ConnectionTimeout")(__v.asInstanceOf[js.Any]))
-      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
-      DateFormat.foreach(__v => __obj.updateDynamic("DateFormat")(__v.asInstanceOf[js.Any]))
-      EmptyAsNull.foreach(__v => __obj.updateDynamic("EmptyAsNull")(__v.asInstanceOf[js.Any]))
-      EncryptionMode.foreach(__v => __obj.updateDynamic("EncryptionMode")(__v.asInstanceOf[js.Any]))
-      FileTransferUploadStreams.foreach(__v =>
-        __obj.updateDynamic("FileTransferUploadStreams")(__v.asInstanceOf[js.Any])
-      )
-      LoadTimeout.foreach(__v => __obj.updateDynamic("LoadTimeout")(__v.asInstanceOf[js.Any]))
-      MaxFileSize.foreach(__v => __obj.updateDynamic("MaxFileSize")(__v.asInstanceOf[js.Any]))
-      Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
-      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
-      RemoveQuotes.foreach(__v => __obj.updateDynamic("RemoveQuotes")(__v.asInstanceOf[js.Any]))
-      ReplaceChars.foreach(__v => __obj.updateDynamic("ReplaceChars")(__v.asInstanceOf[js.Any]))
-      ReplaceInvalidChars.foreach(__v => __obj.updateDynamic("ReplaceInvalidChars")(__v.asInstanceOf[js.Any]))
-      ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
-      ServerSideEncryptionKmsKeyId.foreach(__v =>
-        __obj.updateDynamic("ServerSideEncryptionKmsKeyId")(__v.asInstanceOf[js.Any])
-      )
-      ServiceAccessRoleArn.foreach(__v => __obj.updateDynamic("ServiceAccessRoleArn")(__v.asInstanceOf[js.Any]))
-      TimeFormat.foreach(__v => __obj.updateDynamic("TimeFormat")(__v.asInstanceOf[js.Any]))
-      TrimBlanks.foreach(__v => __obj.updateDynamic("TrimBlanks")(__v.asInstanceOf[js.Any]))
-      TruncateColumns.foreach(__v => __obj.updateDynamic("TruncateColumns")(__v.asInstanceOf[js.Any]))
-      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
-      WriteBufferSize.foreach(__v => __obj.updateDynamic("WriteBufferSize")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RedshiftSettings]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait RefreshSchemasMessage extends js.Object {
     var EndpointArn: String
     var ReplicationInstanceArn: String
   }
 
-  object RefreshSchemasMessage {
-    @inline
-    def apply(
-        EndpointArn: String,
-        ReplicationInstanceArn: String
-    ): RefreshSchemasMessage = {
-      val __obj = js.Dynamic.literal(
-        "EndpointArn"            -> EndpointArn.asInstanceOf[js.Any],
-        "ReplicationInstanceArn" -> ReplicationInstanceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RefreshSchemasMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait RefreshSchemasResponse extends js.Object {
     var RefreshSchemasStatus: js.UndefOr[RefreshSchemasStatus]
   }
 
-  object RefreshSchemasResponse {
-    @inline
-    def apply(
-        RefreshSchemasStatus: js.UndefOr[RefreshSchemasStatus] = js.undefined
-    ): RefreshSchemasResponse = {
-      val __obj = js.Dynamic.literal()
-      RefreshSchemasStatus.foreach(__v => __obj.updateDynamic("RefreshSchemasStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RefreshSchemasResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait RefreshSchemasStatus extends js.Object {
     var EndpointArn: js.UndefOr[String]
     var LastFailureMessage: js.UndefOr[String]
     var LastRefreshDate: js.UndefOr[TStamp]
     var ReplicationInstanceArn: js.UndefOr[String]
     var Status: js.UndefOr[RefreshSchemasStatusTypeValue]
-  }
-
-  object RefreshSchemasStatus {
-    @inline
-    def apply(
-        EndpointArn: js.UndefOr[String] = js.undefined,
-        LastFailureMessage: js.UndefOr[String] = js.undefined,
-        LastRefreshDate: js.UndefOr[TStamp] = js.undefined,
-        ReplicationInstanceArn: js.UndefOr[String] = js.undefined,
-        Status: js.UndefOr[RefreshSchemasStatusTypeValue] = js.undefined
-    ): RefreshSchemasStatus = {
-      val __obj = js.Dynamic.literal()
-      EndpointArn.foreach(__v => __obj.updateDynamic("EndpointArn")(__v.asInstanceOf[js.Any]))
-      LastFailureMessage.foreach(__v => __obj.updateDynamic("LastFailureMessage")(__v.asInstanceOf[js.Any]))
-      LastRefreshDate.foreach(__v => __obj.updateDynamic("LastRefreshDate")(__v.asInstanceOf[js.Any]))
-      ReplicationInstanceArn.foreach(__v => __obj.updateDynamic("ReplicationInstanceArn")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RefreshSchemasStatus]
-    }
   }
 
   @js.native
@@ -3188,84 +1548,35 @@ package dms {
   }
 
   @js.native
+  @Factory
   trait ReloadTablesMessage extends js.Object {
     var ReplicationTaskArn: String
     var TablesToReload: TableListToReload
     var ReloadOption: js.UndefOr[ReloadOptionValue]
   }
 
-  object ReloadTablesMessage {
-    @inline
-    def apply(
-        ReplicationTaskArn: String,
-        TablesToReload: TableListToReload,
-        ReloadOption: js.UndefOr[ReloadOptionValue] = js.undefined
-    ): ReloadTablesMessage = {
-      val __obj = js.Dynamic.literal(
-        "ReplicationTaskArn" -> ReplicationTaskArn.asInstanceOf[js.Any],
-        "TablesToReload"     -> TablesToReload.asInstanceOf[js.Any]
-      )
-
-      ReloadOption.foreach(__v => __obj.updateDynamic("ReloadOption")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ReloadTablesMessage]
-    }
-  }
-
   @js.native
+  @Factory
   trait ReloadTablesResponse extends js.Object {
     var ReplicationTaskArn: js.UndefOr[String]
-  }
-
-  object ReloadTablesResponse {
-    @inline
-    def apply(
-        ReplicationTaskArn: js.UndefOr[String] = js.undefined
-    ): ReloadTablesResponse = {
-      val __obj = js.Dynamic.literal()
-      ReplicationTaskArn.foreach(__v => __obj.updateDynamic("ReplicationTaskArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ReloadTablesResponse]
-    }
   }
 
   /**
     * Removes one or more tags from an AWS DMS resource.
     */
   @js.native
+  @Factory
   trait RemoveTagsFromResourceMessage extends js.Object {
     var ResourceArn: String
     var TagKeys: KeyList
-  }
-
-  object RemoveTagsFromResourceMessage {
-    @inline
-    def apply(
-        ResourceArn: String,
-        TagKeys: KeyList
-    ): RemoveTagsFromResourceMessage = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RemoveTagsFromResourceMessage]
-    }
   }
 
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait RemoveTagsFromResourceResponse extends js.Object {}
-
-  object RemoveTagsFromResourceResponse {
-    @inline
-    def apply(
-    ): RemoveTagsFromResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[RemoveTagsFromResourceResponse]
-    }
-  }
 
   @js.native
   sealed trait ReplicationEndpointTypeValue extends js.Any
@@ -3280,6 +1591,7 @@ package dms {
     * <p/>
     */
   @js.native
+  @Factory
   trait ReplicationInstance extends js.Object {
     var AllocatedStorage: js.UndefOr[Int]
     var AutoMinorVersionUpgrade: js.UndefOr[Boolean]
@@ -3306,108 +1618,22 @@ package dms {
     var VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList]
   }
 
-  object ReplicationInstance {
-    @inline
-    def apply(
-        AllocatedStorage: js.UndefOr[Int] = js.undefined,
-        AutoMinorVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
-        AvailabilityZone: js.UndefOr[String] = js.undefined,
-        DnsNameServers: js.UndefOr[String] = js.undefined,
-        EngineVersion: js.UndefOr[String] = js.undefined,
-        FreeUntil: js.UndefOr[TStamp] = js.undefined,
-        InstanceCreateTime: js.UndefOr[TStamp] = js.undefined,
-        KmsKeyId: js.UndefOr[String] = js.undefined,
-        MultiAZ: js.UndefOr[Boolean] = js.undefined,
-        PendingModifiedValues: js.UndefOr[ReplicationPendingModifiedValues] = js.undefined,
-        PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
-        PubliclyAccessible: js.UndefOr[Boolean] = js.undefined,
-        ReplicationInstanceArn: js.UndefOr[String] = js.undefined,
-        ReplicationInstanceClass: js.UndefOr[String] = js.undefined,
-        ReplicationInstanceIdentifier: js.UndefOr[String] = js.undefined,
-        ReplicationInstancePrivateIpAddress: js.UndefOr[String] = js.undefined,
-        ReplicationInstancePrivateIpAddresses: js.UndefOr[ReplicationInstancePrivateIpAddressList] = js.undefined,
-        ReplicationInstancePublicIpAddress: js.UndefOr[String] = js.undefined,
-        ReplicationInstancePublicIpAddresses: js.UndefOr[ReplicationInstancePublicIpAddressList] = js.undefined,
-        ReplicationInstanceStatus: js.UndefOr[String] = js.undefined,
-        ReplicationSubnetGroup: js.UndefOr[ReplicationSubnetGroup] = js.undefined,
-        SecondaryAvailabilityZone: js.UndefOr[String] = js.undefined,
-        VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined
-    ): ReplicationInstance = {
-      val __obj = js.Dynamic.literal()
-      AllocatedStorage.foreach(__v => __obj.updateDynamic("AllocatedStorage")(__v.asInstanceOf[js.Any]))
-      AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
-      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
-      DnsNameServers.foreach(__v => __obj.updateDynamic("DnsNameServers")(__v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
-      FreeUntil.foreach(__v => __obj.updateDynamic("FreeUntil")(__v.asInstanceOf[js.Any]))
-      InstanceCreateTime.foreach(__v => __obj.updateDynamic("InstanceCreateTime")(__v.asInstanceOf[js.Any]))
-      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
-      MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
-      PendingModifiedValues.foreach(__v => __obj.updateDynamic("PendingModifiedValues")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
-      PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
-      ReplicationInstanceArn.foreach(__v => __obj.updateDynamic("ReplicationInstanceArn")(__v.asInstanceOf[js.Any]))
-      ReplicationInstanceClass.foreach(__v => __obj.updateDynamic("ReplicationInstanceClass")(__v.asInstanceOf[js.Any]))
-      ReplicationInstanceIdentifier.foreach(__v =>
-        __obj.updateDynamic("ReplicationInstanceIdentifier")(__v.asInstanceOf[js.Any])
-      )
-      ReplicationInstancePrivateIpAddress.foreach(__v =>
-        __obj.updateDynamic("ReplicationInstancePrivateIpAddress")(__v.asInstanceOf[js.Any])
-      )
-      ReplicationInstancePrivateIpAddresses.foreach(__v =>
-        __obj.updateDynamic("ReplicationInstancePrivateIpAddresses")(__v.asInstanceOf[js.Any])
-      )
-      ReplicationInstancePublicIpAddress.foreach(__v =>
-        __obj.updateDynamic("ReplicationInstancePublicIpAddress")(__v.asInstanceOf[js.Any])
-      )
-      ReplicationInstancePublicIpAddresses.foreach(__v =>
-        __obj.updateDynamic("ReplicationInstancePublicIpAddresses")(__v.asInstanceOf[js.Any])
-      )
-      ReplicationInstanceStatus.foreach(__v =>
-        __obj.updateDynamic("ReplicationInstanceStatus")(__v.asInstanceOf[js.Any])
-      )
-      ReplicationSubnetGroup.foreach(__v => __obj.updateDynamic("ReplicationSubnetGroup")(__v.asInstanceOf[js.Any]))
-      SecondaryAvailabilityZone.foreach(__v =>
-        __obj.updateDynamic("SecondaryAvailabilityZone")(__v.asInstanceOf[js.Any])
-      )
-      VpcSecurityGroups.foreach(__v => __obj.updateDynamic("VpcSecurityGroups")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ReplicationInstance]
-    }
-  }
-
   /**
     * Contains metadata for a replication instance task log.
     */
   @js.native
+  @Factory
   trait ReplicationInstanceTaskLog extends js.Object {
     var ReplicationInstanceTaskLogSize: js.UndefOr[Double]
     var ReplicationTaskArn: js.UndefOr[String]
     var ReplicationTaskName: js.UndefOr[String]
   }
 
-  object ReplicationInstanceTaskLog {
-    @inline
-    def apply(
-        ReplicationInstanceTaskLogSize: js.UndefOr[Double] = js.undefined,
-        ReplicationTaskArn: js.UndefOr[String] = js.undefined,
-        ReplicationTaskName: js.UndefOr[String] = js.undefined
-    ): ReplicationInstanceTaskLog = {
-      val __obj = js.Dynamic.literal()
-      ReplicationInstanceTaskLogSize.foreach(__v =>
-        __obj.updateDynamic("ReplicationInstanceTaskLogSize")(__v.asInstanceOf[js.Any])
-      )
-      ReplicationTaskArn.foreach(__v => __obj.updateDynamic("ReplicationTaskArn")(__v.asInstanceOf[js.Any]))
-      ReplicationTaskName.foreach(__v => __obj.updateDynamic("ReplicationTaskName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ReplicationInstanceTaskLog]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait ReplicationPendingModifiedValues extends js.Object {
     var AllocatedStorage: js.UndefOr[IntegerOptional]
     var EngineVersion: js.UndefOr[String]
@@ -3415,27 +1641,11 @@ package dms {
     var ReplicationInstanceClass: js.UndefOr[String]
   }
 
-  object ReplicationPendingModifiedValues {
-    @inline
-    def apply(
-        AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
-        EngineVersion: js.UndefOr[String] = js.undefined,
-        MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
-        ReplicationInstanceClass: js.UndefOr[String] = js.undefined
-    ): ReplicationPendingModifiedValues = {
-      val __obj = js.Dynamic.literal()
-      AllocatedStorage.foreach(__v => __obj.updateDynamic("AllocatedStorage")(__v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
-      MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
-      ReplicationInstanceClass.foreach(__v => __obj.updateDynamic("ReplicationInstanceClass")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ReplicationPendingModifiedValues]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait ReplicationSubnetGroup extends js.Object {
     var ReplicationSubnetGroupDescription: js.UndefOr[String]
     var ReplicationSubnetGroupIdentifier: js.UndefOr[String]
@@ -3444,33 +1654,11 @@ package dms {
     var VpcId: js.UndefOr[String]
   }
 
-  object ReplicationSubnetGroup {
-    @inline
-    def apply(
-        ReplicationSubnetGroupDescription: js.UndefOr[String] = js.undefined,
-        ReplicationSubnetGroupIdentifier: js.UndefOr[String] = js.undefined,
-        SubnetGroupStatus: js.UndefOr[String] = js.undefined,
-        Subnets: js.UndefOr[SubnetList] = js.undefined,
-        VpcId: js.UndefOr[String] = js.undefined
-    ): ReplicationSubnetGroup = {
-      val __obj = js.Dynamic.literal()
-      ReplicationSubnetGroupDescription.foreach(__v =>
-        __obj.updateDynamic("ReplicationSubnetGroupDescription")(__v.asInstanceOf[js.Any])
-      )
-      ReplicationSubnetGroupIdentifier.foreach(__v =>
-        __obj.updateDynamic("ReplicationSubnetGroupIdentifier")(__v.asInstanceOf[js.Any])
-      )
-      SubnetGroupStatus.foreach(__v => __obj.updateDynamic("SubnetGroupStatus")(__v.asInstanceOf[js.Any]))
-      Subnets.foreach(__v => __obj.updateDynamic("Subnets")(__v.asInstanceOf[js.Any]))
-      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ReplicationSubnetGroup]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait ReplicationTask extends js.Object {
     var CdcStartPosition: js.UndefOr[String]
     var CdcStopPosition: js.UndefOr[String]
@@ -3491,57 +1679,11 @@ package dms {
     var TargetEndpointArn: js.UndefOr[String]
   }
 
-  object ReplicationTask {
-    @inline
-    def apply(
-        CdcStartPosition: js.UndefOr[String] = js.undefined,
-        CdcStopPosition: js.UndefOr[String] = js.undefined,
-        LastFailureMessage: js.UndefOr[String] = js.undefined,
-        MigrationType: js.UndefOr[MigrationTypeValue] = js.undefined,
-        RecoveryCheckpoint: js.UndefOr[String] = js.undefined,
-        ReplicationInstanceArn: js.UndefOr[String] = js.undefined,
-        ReplicationTaskArn: js.UndefOr[String] = js.undefined,
-        ReplicationTaskCreationDate: js.UndefOr[TStamp] = js.undefined,
-        ReplicationTaskIdentifier: js.UndefOr[String] = js.undefined,
-        ReplicationTaskSettings: js.UndefOr[String] = js.undefined,
-        ReplicationTaskStartDate: js.UndefOr[TStamp] = js.undefined,
-        ReplicationTaskStats: js.UndefOr[ReplicationTaskStats] = js.undefined,
-        SourceEndpointArn: js.UndefOr[String] = js.undefined,
-        Status: js.UndefOr[String] = js.undefined,
-        StopReason: js.UndefOr[String] = js.undefined,
-        TableMappings: js.UndefOr[String] = js.undefined,
-        TargetEndpointArn: js.UndefOr[String] = js.undefined
-    ): ReplicationTask = {
-      val __obj = js.Dynamic.literal()
-      CdcStartPosition.foreach(__v => __obj.updateDynamic("CdcStartPosition")(__v.asInstanceOf[js.Any]))
-      CdcStopPosition.foreach(__v => __obj.updateDynamic("CdcStopPosition")(__v.asInstanceOf[js.Any]))
-      LastFailureMessage.foreach(__v => __obj.updateDynamic("LastFailureMessage")(__v.asInstanceOf[js.Any]))
-      MigrationType.foreach(__v => __obj.updateDynamic("MigrationType")(__v.asInstanceOf[js.Any]))
-      RecoveryCheckpoint.foreach(__v => __obj.updateDynamic("RecoveryCheckpoint")(__v.asInstanceOf[js.Any]))
-      ReplicationInstanceArn.foreach(__v => __obj.updateDynamic("ReplicationInstanceArn")(__v.asInstanceOf[js.Any]))
-      ReplicationTaskArn.foreach(__v => __obj.updateDynamic("ReplicationTaskArn")(__v.asInstanceOf[js.Any]))
-      ReplicationTaskCreationDate.foreach(__v =>
-        __obj.updateDynamic("ReplicationTaskCreationDate")(__v.asInstanceOf[js.Any])
-      )
-      ReplicationTaskIdentifier.foreach(__v =>
-        __obj.updateDynamic("ReplicationTaskIdentifier")(__v.asInstanceOf[js.Any])
-      )
-      ReplicationTaskSettings.foreach(__v => __obj.updateDynamic("ReplicationTaskSettings")(__v.asInstanceOf[js.Any]))
-      ReplicationTaskStartDate.foreach(__v => __obj.updateDynamic("ReplicationTaskStartDate")(__v.asInstanceOf[js.Any]))
-      ReplicationTaskStats.foreach(__v => __obj.updateDynamic("ReplicationTaskStats")(__v.asInstanceOf[js.Any]))
-      SourceEndpointArn.foreach(__v => __obj.updateDynamic("SourceEndpointArn")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      StopReason.foreach(__v => __obj.updateDynamic("StopReason")(__v.asInstanceOf[js.Any]))
-      TableMappings.foreach(__v => __obj.updateDynamic("TableMappings")(__v.asInstanceOf[js.Any]))
-      TargetEndpointArn.foreach(__v => __obj.updateDynamic("TargetEndpointArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ReplicationTask]
-    }
-  }
-
   /**
     * The task assessment report in JSON format.
     */
   @js.native
+  @Factory
   trait ReplicationTaskAssessmentResult extends js.Object {
     var AssessmentResults: js.UndefOr[String]
     var AssessmentResultsFile: js.UndefOr[String]
@@ -3552,37 +1694,11 @@ package dms {
     var S3ObjectUrl: js.UndefOr[String]
   }
 
-  object ReplicationTaskAssessmentResult {
-    @inline
-    def apply(
-        AssessmentResults: js.UndefOr[String] = js.undefined,
-        AssessmentResultsFile: js.UndefOr[String] = js.undefined,
-        AssessmentStatus: js.UndefOr[String] = js.undefined,
-        ReplicationTaskArn: js.UndefOr[String] = js.undefined,
-        ReplicationTaskIdentifier: js.UndefOr[String] = js.undefined,
-        ReplicationTaskLastAssessmentDate: js.UndefOr[TStamp] = js.undefined,
-        S3ObjectUrl: js.UndefOr[String] = js.undefined
-    ): ReplicationTaskAssessmentResult = {
-      val __obj = js.Dynamic.literal()
-      AssessmentResults.foreach(__v => __obj.updateDynamic("AssessmentResults")(__v.asInstanceOf[js.Any]))
-      AssessmentResultsFile.foreach(__v => __obj.updateDynamic("AssessmentResultsFile")(__v.asInstanceOf[js.Any]))
-      AssessmentStatus.foreach(__v => __obj.updateDynamic("AssessmentStatus")(__v.asInstanceOf[js.Any]))
-      ReplicationTaskArn.foreach(__v => __obj.updateDynamic("ReplicationTaskArn")(__v.asInstanceOf[js.Any]))
-      ReplicationTaskIdentifier.foreach(__v =>
-        __obj.updateDynamic("ReplicationTaskIdentifier")(__v.asInstanceOf[js.Any])
-      )
-      ReplicationTaskLastAssessmentDate.foreach(__v =>
-        __obj.updateDynamic("ReplicationTaskLastAssessmentDate")(__v.asInstanceOf[js.Any])
-      )
-      S3ObjectUrl.foreach(__v => __obj.updateDynamic("S3ObjectUrl")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ReplicationTaskAssessmentResult]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait ReplicationTaskStats extends js.Object {
     var ElapsedTimeMillis: js.UndefOr[Double]
     var FreshStartDate: js.UndefOr[TStamp]
@@ -3597,65 +1713,21 @@ package dms {
     var TablesQueued: js.UndefOr[Int]
   }
 
-  object ReplicationTaskStats {
-    @inline
-    def apply(
-        ElapsedTimeMillis: js.UndefOr[Double] = js.undefined,
-        FreshStartDate: js.UndefOr[TStamp] = js.undefined,
-        FullLoadFinishDate: js.UndefOr[TStamp] = js.undefined,
-        FullLoadProgressPercent: js.UndefOr[Int] = js.undefined,
-        FullLoadStartDate: js.UndefOr[TStamp] = js.undefined,
-        StartDate: js.UndefOr[TStamp] = js.undefined,
-        StopDate: js.UndefOr[TStamp] = js.undefined,
-        TablesErrored: js.UndefOr[Int] = js.undefined,
-        TablesLoaded: js.UndefOr[Int] = js.undefined,
-        TablesLoading: js.UndefOr[Int] = js.undefined,
-        TablesQueued: js.UndefOr[Int] = js.undefined
-    ): ReplicationTaskStats = {
-      val __obj = js.Dynamic.literal()
-      ElapsedTimeMillis.foreach(__v => __obj.updateDynamic("ElapsedTimeMillis")(__v.asInstanceOf[js.Any]))
-      FreshStartDate.foreach(__v => __obj.updateDynamic("FreshStartDate")(__v.asInstanceOf[js.Any]))
-      FullLoadFinishDate.foreach(__v => __obj.updateDynamic("FullLoadFinishDate")(__v.asInstanceOf[js.Any]))
-      FullLoadProgressPercent.foreach(__v => __obj.updateDynamic("FullLoadProgressPercent")(__v.asInstanceOf[js.Any]))
-      FullLoadStartDate.foreach(__v => __obj.updateDynamic("FullLoadStartDate")(__v.asInstanceOf[js.Any]))
-      StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
-      StopDate.foreach(__v => __obj.updateDynamic("StopDate")(__v.asInstanceOf[js.Any]))
-      TablesErrored.foreach(__v => __obj.updateDynamic("TablesErrored")(__v.asInstanceOf[js.Any]))
-      TablesLoaded.foreach(__v => __obj.updateDynamic("TablesLoaded")(__v.asInstanceOf[js.Any]))
-      TablesLoading.foreach(__v => __obj.updateDynamic("TablesLoading")(__v.asInstanceOf[js.Any]))
-      TablesQueued.foreach(__v => __obj.updateDynamic("TablesQueued")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ReplicationTaskStats]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait ResourcePendingMaintenanceActions extends js.Object {
     var PendingMaintenanceActionDetails: js.UndefOr[PendingMaintenanceActionDetails]
     var ResourceIdentifier: js.UndefOr[String]
-  }
-
-  object ResourcePendingMaintenanceActions {
-    @inline
-    def apply(
-        PendingMaintenanceActionDetails: js.UndefOr[PendingMaintenanceActionDetails] = js.undefined,
-        ResourceIdentifier: js.UndefOr[String] = js.undefined
-    ): ResourcePendingMaintenanceActions = {
-      val __obj = js.Dynamic.literal()
-      PendingMaintenanceActionDetails.foreach(__v =>
-        __obj.updateDynamic("PendingMaintenanceActionDetails")(__v.asInstanceOf[js.Any])
-      )
-      ResourceIdentifier.foreach(__v => __obj.updateDynamic("ResourceIdentifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ResourcePendingMaintenanceActions]
-    }
   }
 
   /**
     * Settings for exporting data to Amazon S3.
     */
   @js.native
+  @Factory
   trait S3Settings extends js.Object {
     var BucketFolder: js.UndefOr[String]
     var BucketName: js.UndefOr[String]
@@ -3679,59 +1751,6 @@ package dms {
     var TimestampColumnName: js.UndefOr[String]
   }
 
-  object S3Settings {
-    @inline
-    def apply(
-        BucketFolder: js.UndefOr[String] = js.undefined,
-        BucketName: js.UndefOr[String] = js.undefined,
-        CdcInsertsOnly: js.UndefOr[BooleanOptional] = js.undefined,
-        CompressionType: js.UndefOr[CompressionTypeValue] = js.undefined,
-        CsvDelimiter: js.UndefOr[String] = js.undefined,
-        CsvRowDelimiter: js.UndefOr[String] = js.undefined,
-        DataFormat: js.UndefOr[DataFormatValue] = js.undefined,
-        DataPageSize: js.UndefOr[IntegerOptional] = js.undefined,
-        DictPageSizeLimit: js.UndefOr[IntegerOptional] = js.undefined,
-        EnableStatistics: js.UndefOr[BooleanOptional] = js.undefined,
-        EncodingType: js.UndefOr[EncodingTypeValue] = js.undefined,
-        EncryptionMode: js.UndefOr[EncryptionModeValue] = js.undefined,
-        ExternalTableDefinition: js.UndefOr[String] = js.undefined,
-        IncludeOpForFullLoad: js.UndefOr[BooleanOptional] = js.undefined,
-        ParquetTimestampInMillisecond: js.UndefOr[BooleanOptional] = js.undefined,
-        ParquetVersion: js.UndefOr[ParquetVersionValue] = js.undefined,
-        RowGroupLength: js.UndefOr[IntegerOptional] = js.undefined,
-        ServerSideEncryptionKmsKeyId: js.UndefOr[String] = js.undefined,
-        ServiceAccessRoleArn: js.UndefOr[String] = js.undefined,
-        TimestampColumnName: js.UndefOr[String] = js.undefined
-    ): S3Settings = {
-      val __obj = js.Dynamic.literal()
-      BucketFolder.foreach(__v => __obj.updateDynamic("BucketFolder")(__v.asInstanceOf[js.Any]))
-      BucketName.foreach(__v => __obj.updateDynamic("BucketName")(__v.asInstanceOf[js.Any]))
-      CdcInsertsOnly.foreach(__v => __obj.updateDynamic("CdcInsertsOnly")(__v.asInstanceOf[js.Any]))
-      CompressionType.foreach(__v => __obj.updateDynamic("CompressionType")(__v.asInstanceOf[js.Any]))
-      CsvDelimiter.foreach(__v => __obj.updateDynamic("CsvDelimiter")(__v.asInstanceOf[js.Any]))
-      CsvRowDelimiter.foreach(__v => __obj.updateDynamic("CsvRowDelimiter")(__v.asInstanceOf[js.Any]))
-      DataFormat.foreach(__v => __obj.updateDynamic("DataFormat")(__v.asInstanceOf[js.Any]))
-      DataPageSize.foreach(__v => __obj.updateDynamic("DataPageSize")(__v.asInstanceOf[js.Any]))
-      DictPageSizeLimit.foreach(__v => __obj.updateDynamic("DictPageSizeLimit")(__v.asInstanceOf[js.Any]))
-      EnableStatistics.foreach(__v => __obj.updateDynamic("EnableStatistics")(__v.asInstanceOf[js.Any]))
-      EncodingType.foreach(__v => __obj.updateDynamic("EncodingType")(__v.asInstanceOf[js.Any]))
-      EncryptionMode.foreach(__v => __obj.updateDynamic("EncryptionMode")(__v.asInstanceOf[js.Any]))
-      ExternalTableDefinition.foreach(__v => __obj.updateDynamic("ExternalTableDefinition")(__v.asInstanceOf[js.Any]))
-      IncludeOpForFullLoad.foreach(__v => __obj.updateDynamic("IncludeOpForFullLoad")(__v.asInstanceOf[js.Any]))
-      ParquetTimestampInMillisecond.foreach(__v =>
-        __obj.updateDynamic("ParquetTimestampInMillisecond")(__v.asInstanceOf[js.Any])
-      )
-      ParquetVersion.foreach(__v => __obj.updateDynamic("ParquetVersion")(__v.asInstanceOf[js.Any]))
-      RowGroupLength.foreach(__v => __obj.updateDynamic("RowGroupLength")(__v.asInstanceOf[js.Any]))
-      ServerSideEncryptionKmsKeyId.foreach(__v =>
-        __obj.updateDynamic("ServerSideEncryptionKmsKeyId")(__v.asInstanceOf[js.Any])
-      )
-      ServiceAccessRoleArn.foreach(__v => __obj.updateDynamic("ServiceAccessRoleArn")(__v.asInstanceOf[js.Any]))
-      TimestampColumnName.foreach(__v => __obj.updateDynamic("TimestampColumnName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[S3Settings]
-    }
-  }
-
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType extends js.Object {
@@ -3744,46 +1763,25 @@ package dms {
     * <p/>
     */
   @js.native
+  @Factory
   trait StartReplicationTaskAssessmentMessage extends js.Object {
     var ReplicationTaskArn: String
   }
 
-  object StartReplicationTaskAssessmentMessage {
-    @inline
-    def apply(
-        ReplicationTaskArn: String
-    ): StartReplicationTaskAssessmentMessage = {
-      val __obj = js.Dynamic.literal(
-        "ReplicationTaskArn" -> ReplicationTaskArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StartReplicationTaskAssessmentMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait StartReplicationTaskAssessmentResponse extends js.Object {
     var ReplicationTask: js.UndefOr[ReplicationTask]
   }
 
-  object StartReplicationTaskAssessmentResponse {
-    @inline
-    def apply(
-        ReplicationTask: js.UndefOr[ReplicationTask] = js.undefined
-    ): StartReplicationTaskAssessmentResponse = {
-      val __obj = js.Dynamic.literal()
-      ReplicationTask.foreach(__v => __obj.updateDynamic("ReplicationTask")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartReplicationTaskAssessmentResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait StartReplicationTaskMessage extends js.Object {
     var ReplicationTaskArn: String
     var StartReplicationTaskType: StartReplicationTaskTypeValue
@@ -3792,44 +1790,13 @@ package dms {
     var CdcStopPosition: js.UndefOr[String]
   }
 
-  object StartReplicationTaskMessage {
-    @inline
-    def apply(
-        ReplicationTaskArn: String,
-        StartReplicationTaskType: StartReplicationTaskTypeValue,
-        CdcStartPosition: js.UndefOr[String] = js.undefined,
-        CdcStartTime: js.UndefOr[TStamp] = js.undefined,
-        CdcStopPosition: js.UndefOr[String] = js.undefined
-    ): StartReplicationTaskMessage = {
-      val __obj = js.Dynamic.literal(
-        "ReplicationTaskArn"       -> ReplicationTaskArn.asInstanceOf[js.Any],
-        "StartReplicationTaskType" -> StartReplicationTaskType.asInstanceOf[js.Any]
-      )
-
-      CdcStartPosition.foreach(__v => __obj.updateDynamic("CdcStartPosition")(__v.asInstanceOf[js.Any]))
-      CdcStartTime.foreach(__v => __obj.updateDynamic("CdcStartTime")(__v.asInstanceOf[js.Any]))
-      CdcStopPosition.foreach(__v => __obj.updateDynamic("CdcStopPosition")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartReplicationTaskMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait StartReplicationTaskResponse extends js.Object {
     var ReplicationTask: js.UndefOr[ReplicationTask]
-  }
-
-  object StartReplicationTaskResponse {
-    @inline
-    def apply(
-        ReplicationTask: js.UndefOr[ReplicationTask] = js.undefined
-    ): StartReplicationTaskResponse = {
-      val __obj = js.Dynamic.literal()
-      ReplicationTask.foreach(__v => __obj.updateDynamic("ReplicationTask")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartReplicationTaskResponse]
-    }
   }
 
   @js.native
@@ -3846,71 +1813,36 @@ package dms {
     * <p/>
     */
   @js.native
+  @Factory
   trait StopReplicationTaskMessage extends js.Object {
     var ReplicationTaskArn: String
   }
 
-  object StopReplicationTaskMessage {
-    @inline
-    def apply(
-        ReplicationTaskArn: String
-    ): StopReplicationTaskMessage = {
-      val __obj = js.Dynamic.literal(
-        "ReplicationTaskArn" -> ReplicationTaskArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StopReplicationTaskMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait StopReplicationTaskResponse extends js.Object {
     var ReplicationTask: js.UndefOr[ReplicationTask]
   }
 
-  object StopReplicationTaskResponse {
-    @inline
-    def apply(
-        ReplicationTask: js.UndefOr[ReplicationTask] = js.undefined
-    ): StopReplicationTaskResponse = {
-      val __obj = js.Dynamic.literal()
-      ReplicationTask.foreach(__v => __obj.updateDynamic("ReplicationTask")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StopReplicationTaskResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait Subnet extends js.Object {
     var SubnetAvailabilityZone: js.UndefOr[AvailabilityZone]
     var SubnetIdentifier: js.UndefOr[String]
     var SubnetStatus: js.UndefOr[String]
   }
 
-  object Subnet {
-    @inline
-    def apply(
-        SubnetAvailabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
-        SubnetIdentifier: js.UndefOr[String] = js.undefined,
-        SubnetStatus: js.UndefOr[String] = js.undefined
-    ): Subnet = {
-      val __obj = js.Dynamic.literal()
-      SubnetAvailabilityZone.foreach(__v => __obj.updateDynamic("SubnetAvailabilityZone")(__v.asInstanceOf[js.Any]))
-      SubnetIdentifier.foreach(__v => __obj.updateDynamic("SubnetIdentifier")(__v.asInstanceOf[js.Any]))
-      SubnetStatus.foreach(__v => __obj.updateDynamic("SubnetStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Subnet]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait SupportedEndpointType extends js.Object {
     var EndpointType: js.UndefOr[ReplicationEndpointTypeValue]
     var EngineDisplayName: js.UndefOr[String]
@@ -3918,27 +1850,11 @@ package dms {
     var SupportsCDC: js.UndefOr[Boolean]
   }
 
-  object SupportedEndpointType {
-    @inline
-    def apply(
-        EndpointType: js.UndefOr[ReplicationEndpointTypeValue] = js.undefined,
-        EngineDisplayName: js.UndefOr[String] = js.undefined,
-        EngineName: js.UndefOr[String] = js.undefined,
-        SupportsCDC: js.UndefOr[Boolean] = js.undefined
-    ): SupportedEndpointType = {
-      val __obj = js.Dynamic.literal()
-      EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
-      EngineDisplayName.foreach(__v => __obj.updateDynamic("EngineDisplayName")(__v.asInstanceOf[js.Any]))
-      EngineName.foreach(__v => __obj.updateDynamic("EngineName")(__v.asInstanceOf[js.Any]))
-      SupportsCDC.foreach(__v => __obj.updateDynamic("SupportsCDC")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SupportedEndpointType]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait TableStatistics extends js.Object {
     var Ddls: js.UndefOr[Double]
     var Deletes: js.UndefOr[Double]
@@ -3958,157 +1874,52 @@ package dms {
     var ValidationSuspendedRecords: js.UndefOr[Double]
   }
 
-  object TableStatistics {
-    @inline
-    def apply(
-        Ddls: js.UndefOr[Double] = js.undefined,
-        Deletes: js.UndefOr[Double] = js.undefined,
-        FullLoadCondtnlChkFailedRows: js.UndefOr[Double] = js.undefined,
-        FullLoadErrorRows: js.UndefOr[Double] = js.undefined,
-        FullLoadRows: js.UndefOr[Double] = js.undefined,
-        Inserts: js.UndefOr[Double] = js.undefined,
-        LastUpdateTime: js.UndefOr[TStamp] = js.undefined,
-        SchemaName: js.UndefOr[String] = js.undefined,
-        TableName: js.UndefOr[String] = js.undefined,
-        TableState: js.UndefOr[String] = js.undefined,
-        Updates: js.UndefOr[Double] = js.undefined,
-        ValidationFailedRecords: js.UndefOr[Double] = js.undefined,
-        ValidationPendingRecords: js.UndefOr[Double] = js.undefined,
-        ValidationState: js.UndefOr[String] = js.undefined,
-        ValidationStateDetails: js.UndefOr[String] = js.undefined,
-        ValidationSuspendedRecords: js.UndefOr[Double] = js.undefined
-    ): TableStatistics = {
-      val __obj = js.Dynamic.literal()
-      Ddls.foreach(__v => __obj.updateDynamic("Ddls")(__v.asInstanceOf[js.Any]))
-      Deletes.foreach(__v => __obj.updateDynamic("Deletes")(__v.asInstanceOf[js.Any]))
-      FullLoadCondtnlChkFailedRows.foreach(__v =>
-        __obj.updateDynamic("FullLoadCondtnlChkFailedRows")(__v.asInstanceOf[js.Any])
-      )
-      FullLoadErrorRows.foreach(__v => __obj.updateDynamic("FullLoadErrorRows")(__v.asInstanceOf[js.Any]))
-      FullLoadRows.foreach(__v => __obj.updateDynamic("FullLoadRows")(__v.asInstanceOf[js.Any]))
-      Inserts.foreach(__v => __obj.updateDynamic("Inserts")(__v.asInstanceOf[js.Any]))
-      LastUpdateTime.foreach(__v => __obj.updateDynamic("LastUpdateTime")(__v.asInstanceOf[js.Any]))
-      SchemaName.foreach(__v => __obj.updateDynamic("SchemaName")(__v.asInstanceOf[js.Any]))
-      TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
-      TableState.foreach(__v => __obj.updateDynamic("TableState")(__v.asInstanceOf[js.Any]))
-      Updates.foreach(__v => __obj.updateDynamic("Updates")(__v.asInstanceOf[js.Any]))
-      ValidationFailedRecords.foreach(__v => __obj.updateDynamic("ValidationFailedRecords")(__v.asInstanceOf[js.Any]))
-      ValidationPendingRecords.foreach(__v => __obj.updateDynamic("ValidationPendingRecords")(__v.asInstanceOf[js.Any]))
-      ValidationState.foreach(__v => __obj.updateDynamic("ValidationState")(__v.asInstanceOf[js.Any]))
-      ValidationStateDetails.foreach(__v => __obj.updateDynamic("ValidationStateDetails")(__v.asInstanceOf[js.Any]))
-      ValidationSuspendedRecords.foreach(__v =>
-        __obj.updateDynamic("ValidationSuspendedRecords")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[TableStatistics]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait TableToReload extends js.Object {
     var SchemaName: js.UndefOr[String]
     var TableName: js.UndefOr[String]
   }
 
-  object TableToReload {
-    @inline
-    def apply(
-        SchemaName: js.UndefOr[String] = js.undefined,
-        TableName: js.UndefOr[String] = js.undefined
-    ): TableToReload = {
-      val __obj = js.Dynamic.literal()
-      SchemaName.foreach(__v => __obj.updateDynamic("SchemaName")(__v.asInstanceOf[js.Any]))
-      TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TableToReload]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var Key: js.UndefOr[String]
     var Value: js.UndefOr[String]
   }
 
-  object Tag {
-    @inline
-    def apply(
-        Key: js.UndefOr[String] = js.undefined,
-        Value: js.UndefOr[String] = js.undefined
-    ): Tag = {
-      val __obj = js.Dynamic.literal()
-      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Tag]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait TestConnectionMessage extends js.Object {
     var EndpointArn: String
     var ReplicationInstanceArn: String
   }
 
-  object TestConnectionMessage {
-    @inline
-    def apply(
-        EndpointArn: String,
-        ReplicationInstanceArn: String
-    ): TestConnectionMessage = {
-      val __obj = js.Dynamic.literal(
-        "EndpointArn"            -> EndpointArn.asInstanceOf[js.Any],
-        "ReplicationInstanceArn" -> ReplicationInstanceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TestConnectionMessage]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait TestConnectionResponse extends js.Object {
     var Connection: js.UndefOr[Connection]
   }
 
-  object TestConnectionResponse {
-    @inline
-    def apply(
-        Connection: js.UndefOr[Connection] = js.undefined
-    ): TestConnectionResponse = {
-      val __obj = js.Dynamic.literal()
-      Connection.foreach(__v => __obj.updateDynamic("Connection")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TestConnectionResponse]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait VpcSecurityGroupMembership extends js.Object {
     var Status: js.UndefOr[String]
     var VpcSecurityGroupId: js.UndefOr[String]
-  }
-
-  object VpcSecurityGroupMembership {
-    @inline
-    def apply(
-        Status: js.UndefOr[String] = js.undefined,
-        VpcSecurityGroupId: js.UndefOr[String] = js.undefined
-    ): VpcSecurityGroupMembership = {
-      val __obj = js.Dynamic.literal()
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      VpcSecurityGroupId.foreach(__v => __obj.updateDynamic("VpcSecurityGroupId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VpcSecurityGroupMembership]
-    }
   }
 }

@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object s3 {
   type AbortDate                       = js.Date
@@ -651,38 +652,19 @@ package s3 {
     * Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will wait before permanently removing all parts of the upload. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config| Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait AbortIncompleteMultipartUpload extends js.Object {
     var DaysAfterInitiation: js.UndefOr[DaysAfterInitiation]
   }
 
-  object AbortIncompleteMultipartUpload {
-    @inline
-    def apply(
-        DaysAfterInitiation: js.UndefOr[DaysAfterInitiation] = js.undefined
-    ): AbortIncompleteMultipartUpload = {
-      val __obj = js.Dynamic.literal()
-      DaysAfterInitiation.foreach(__v => __obj.updateDynamic("DaysAfterInitiation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AbortIncompleteMultipartUpload]
-    }
-  }
-
   @js.native
+  @Factory
   trait AbortMultipartUploadOutput extends js.Object {
     var RequestCharged: js.UndefOr[RequestCharged]
   }
 
-  object AbortMultipartUploadOutput {
-    @inline
-    def apply(
-        RequestCharged: js.UndefOr[RequestCharged] = js.undefined
-    ): AbortMultipartUploadOutput = {
-      val __obj = js.Dynamic.literal()
-      RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AbortMultipartUploadOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait AbortMultipartUploadRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
@@ -690,210 +672,85 @@ package s3 {
     var RequestPayer: js.UndefOr[RequestPayer]
   }
 
-  object AbortMultipartUploadRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Key: ObjectKey,
-        UploadId: MultipartUploadId,
-        RequestPayer: js.UndefOr[RequestPayer] = js.undefined
-    ): AbortMultipartUploadRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket"   -> Bucket.asInstanceOf[js.Any],
-        "Key"      -> Key.asInstanceOf[js.Any],
-        "UploadId" -> UploadId.asInstanceOf[js.Any]
-      )
-
-      RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AbortMultipartUploadRequest]
-    }
-  }
-
   /**
     * Configures the transfer acceleration state for an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html|Amazon S3 Transfer Acceleration]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait AccelerateConfiguration extends js.Object {
     var Status: js.UndefOr[BucketAccelerateStatus]
-  }
-
-  object AccelerateConfiguration {
-    @inline
-    def apply(
-        Status: js.UndefOr[BucketAccelerateStatus] = js.undefined
-    ): AccelerateConfiguration = {
-      val __obj = js.Dynamic.literal()
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AccelerateConfiguration]
-    }
   }
 
   /**
     * Contains the elements that set the ACL permissions for an object per grantee.
     */
   @js.native
+  @Factory
   trait AccessControlPolicy extends js.Object {
     var Grants: js.UndefOr[Grants]
     var Owner: js.UndefOr[Owner]
-  }
-
-  object AccessControlPolicy {
-    @inline
-    def apply(
-        Grants: js.UndefOr[Grants] = js.undefined,
-        Owner: js.UndefOr[Owner] = js.undefined
-    ): AccessControlPolicy = {
-      val __obj = js.Dynamic.literal()
-      Grants.foreach(__v => __obj.updateDynamic("Grants")(__v.asInstanceOf[js.Any]))
-      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AccessControlPolicy]
-    }
   }
 
   /**
     * A container for information about access control for replicas.
     */
   @js.native
+  @Factory
   trait AccessControlTranslation extends js.Object {
     var Owner: OwnerOverride
-  }
-
-  object AccessControlTranslation {
-    @inline
-    def apply(
-        Owner: OwnerOverride
-    ): AccessControlTranslation = {
-      val __obj = js.Dynamic.literal(
-        "Owner" -> Owner.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AccessControlTranslation]
-    }
   }
 
   /**
     * A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter. The operator must have at least two predicates in any combination, and an object must match all of the predicates for the filter to apply.
     */
   @js.native
+  @Factory
   trait AnalyticsAndOperator extends js.Object {
     var Prefix: js.UndefOr[Prefix]
     var Tags: js.UndefOr[TagSet]
-  }
-
-  object AnalyticsAndOperator {
-    @inline
-    def apply(
-        Prefix: js.UndefOr[Prefix] = js.undefined,
-        Tags: js.UndefOr[TagSet] = js.undefined
-    ): AnalyticsAndOperator = {
-      val __obj = js.Dynamic.literal()
-      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AnalyticsAndOperator]
-    }
   }
 
   /**
     * Specifies the configuration and any analyses for the analytics filter of an Amazon S3 bucket.
     */
   @js.native
+  @Factory
   trait AnalyticsConfiguration extends js.Object {
     var Id: AnalyticsId
     var StorageClassAnalysis: StorageClassAnalysis
     var Filter: js.UndefOr[AnalyticsFilter]
   }
 
-  object AnalyticsConfiguration {
-    @inline
-    def apply(
-        Id: AnalyticsId,
-        StorageClassAnalysis: StorageClassAnalysis,
-        Filter: js.UndefOr[AnalyticsFilter] = js.undefined
-    ): AnalyticsConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "Id"                   -> Id.asInstanceOf[js.Any],
-        "StorageClassAnalysis" -> StorageClassAnalysis.asInstanceOf[js.Any]
-      )
-
-      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AnalyticsConfiguration]
-    }
-  }
-
   /**
     * Where to publish the analytics results.
     */
   @js.native
+  @Factory
   trait AnalyticsExportDestination extends js.Object {
     var S3BucketDestination: AnalyticsS3BucketDestination
-  }
-
-  object AnalyticsExportDestination {
-    @inline
-    def apply(
-        S3BucketDestination: AnalyticsS3BucketDestination
-    ): AnalyticsExportDestination = {
-      val __obj = js.Dynamic.literal(
-        "S3BucketDestination" -> S3BucketDestination.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AnalyticsExportDestination]
-    }
   }
 
   /**
     * The filter used to describe a set of objects for analyses. A filter must have exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no filter is provided, all objects will be considered in any analysis.
     */
   @js.native
+  @Factory
   trait AnalyticsFilter extends js.Object {
     var And: js.UndefOr[AnalyticsAndOperator]
     var Prefix: js.UndefOr[Prefix]
     var Tag: js.UndefOr[Tag]
   }
 
-  object AnalyticsFilter {
-    @inline
-    def apply(
-        And: js.UndefOr[AnalyticsAndOperator] = js.undefined,
-        Prefix: js.UndefOr[Prefix] = js.undefined,
-        Tag: js.UndefOr[Tag] = js.undefined
-    ): AnalyticsFilter = {
-      val __obj = js.Dynamic.literal()
-      And.foreach(__v => __obj.updateDynamic("And")(__v.asInstanceOf[js.Any]))
-      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
-      Tag.foreach(__v => __obj.updateDynamic("Tag")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AnalyticsFilter]
-    }
-  }
-
   /**
     * Contains information about where to publish the analytics results.
     */
   @js.native
+  @Factory
   trait AnalyticsS3BucketDestination extends js.Object {
     var Bucket: BucketName
     var Format: AnalyticsS3ExportFileFormat
     var BucketAccountId: js.UndefOr[AccountId]
     var Prefix: js.UndefOr[Prefix]
-  }
-
-  object AnalyticsS3BucketDestination {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Format: AnalyticsS3ExportFileFormat,
-        BucketAccountId: js.UndefOr[AccountId] = js.undefined,
-        Prefix: js.UndefOr[Prefix] = js.undefined
-    ): AnalyticsS3BucketDestination = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Format" -> Format.asInstanceOf[js.Any]
-      )
-
-      BucketAccountId.foreach(__v => __obj.updateDynamic("BucketAccountId")(__v.asInstanceOf[js.Any]))
-      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AnalyticsS3BucketDestination]
-    }
   }
 
   @js.native
@@ -908,22 +765,10 @@ package s3 {
     * In terms of implementation, a Bucket is a resource. An Amazon S3 bucket name is globally unique, and the namespace is shared by all AWS accounts.
     */
   @js.native
+  @Factory
   trait Bucket extends js.Object {
     var CreationDate: js.UndefOr[CreationDate]
     var Name: js.UndefOr[BucketName]
-  }
-
-  object Bucket {
-    @inline
-    def apply(
-        CreationDate: js.UndefOr[CreationDate] = js.undefined,
-        Name: js.UndefOr[BucketName] = js.undefined
-    ): Bucket = {
-      val __obj = js.Dynamic.literal()
-      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Bucket]
-    }
   }
 
   @js.native
@@ -950,21 +795,9 @@ package s3 {
     * Specifies the lifecycle configuration for objects in an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html|Object Lifecycle Management]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait BucketLifecycleConfiguration extends js.Object {
     var Rules: LifecycleRules
-  }
-
-  object BucketLifecycleConfiguration {
-    @inline
-    def apply(
-        Rules: LifecycleRules
-    ): BucketLifecycleConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "Rules" -> Rules.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BucketLifecycleConfiguration]
-    }
   }
 
   @js.native
@@ -1003,19 +836,9 @@ package s3 {
     * Container for logging status information.
     */
   @js.native
+  @Factory
   trait BucketLoggingStatus extends js.Object {
     var LoggingEnabled: js.UndefOr[LoggingEnabled]
-  }
-
-  object BucketLoggingStatus {
-    @inline
-    def apply(
-        LoggingEnabled: js.UndefOr[LoggingEnabled] = js.undefined
-    ): BucketLoggingStatus = {
-      val __obj = js.Dynamic.literal()
-      LoggingEnabled.foreach(__v => __obj.updateDynamic("LoggingEnabled")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BucketLoggingStatus]
-    }
   }
 
   @js.native
@@ -1041,27 +864,16 @@ package s3 {
     * Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html|Enabling Cross-Origin Resource Sharing]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait CORSConfiguration extends js.Object {
     var CORSRules: CORSRules
-  }
-
-  object CORSConfiguration {
-    @inline
-    def apply(
-        CORSRules: CORSRules
-    ): CORSConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "CORSRules" -> CORSRules.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CORSConfiguration]
-    }
   }
 
   /**
     * Specifies a cross-origin access rule for an Amazon S3 bucket.
     */
   @js.native
+  @Factory
   trait CORSRule extends js.Object {
     var AllowedMethods: AllowedMethods
     var AllowedOrigins: AllowedOrigins
@@ -1070,31 +882,11 @@ package s3 {
     var MaxAgeSeconds: js.UndefOr[MaxAgeSeconds]
   }
 
-  object CORSRule {
-    @inline
-    def apply(
-        AllowedMethods: AllowedMethods,
-        AllowedOrigins: AllowedOrigins,
-        AllowedHeaders: js.UndefOr[AllowedHeaders] = js.undefined,
-        ExposeHeaders: js.UndefOr[ExposeHeaders] = js.undefined,
-        MaxAgeSeconds: js.UndefOr[MaxAgeSeconds] = js.undefined
-    ): CORSRule = {
-      val __obj = js.Dynamic.literal(
-        "AllowedMethods" -> AllowedMethods.asInstanceOf[js.Any],
-        "AllowedOrigins" -> AllowedOrigins.asInstanceOf[js.Any]
-      )
-
-      AllowedHeaders.foreach(__v => __obj.updateDynamic("AllowedHeaders")(__v.asInstanceOf[js.Any]))
-      ExposeHeaders.foreach(__v => __obj.updateDynamic("ExposeHeaders")(__v.asInstanceOf[js.Any]))
-      MaxAgeSeconds.foreach(__v => __obj.updateDynamic("MaxAgeSeconds")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CORSRule]
-    }
-  }
-
   /**
     * Describes how an uncompressed comma-separated values (CSV)-formatted input object is formatted.
     */
   @js.native
+  @Factory
   trait CSVInput extends js.Object {
     var AllowQuotedRecordDelimiter: js.UndefOr[AllowQuotedRecordDelimiter]
     var Comments: js.UndefOr[Comments]
@@ -1105,35 +897,11 @@ package s3 {
     var RecordDelimiter: js.UndefOr[RecordDelimiter]
   }
 
-  object CSVInput {
-    @inline
-    def apply(
-        AllowQuotedRecordDelimiter: js.UndefOr[AllowQuotedRecordDelimiter] = js.undefined,
-        Comments: js.UndefOr[Comments] = js.undefined,
-        FieldDelimiter: js.UndefOr[FieldDelimiter] = js.undefined,
-        FileHeaderInfo: js.UndefOr[FileHeaderInfo] = js.undefined,
-        QuoteCharacter: js.UndefOr[QuoteCharacter] = js.undefined,
-        QuoteEscapeCharacter: js.UndefOr[QuoteEscapeCharacter] = js.undefined,
-        RecordDelimiter: js.UndefOr[RecordDelimiter] = js.undefined
-    ): CSVInput = {
-      val __obj = js.Dynamic.literal()
-      AllowQuotedRecordDelimiter.foreach(__v =>
-        __obj.updateDynamic("AllowQuotedRecordDelimiter")(__v.asInstanceOf[js.Any])
-      )
-      Comments.foreach(__v => __obj.updateDynamic("Comments")(__v.asInstanceOf[js.Any]))
-      FieldDelimiter.foreach(__v => __obj.updateDynamic("FieldDelimiter")(__v.asInstanceOf[js.Any]))
-      FileHeaderInfo.foreach(__v => __obj.updateDynamic("FileHeaderInfo")(__v.asInstanceOf[js.Any]))
-      QuoteCharacter.foreach(__v => __obj.updateDynamic("QuoteCharacter")(__v.asInstanceOf[js.Any]))
-      QuoteEscapeCharacter.foreach(__v => __obj.updateDynamic("QuoteEscapeCharacter")(__v.asInstanceOf[js.Any]))
-      RecordDelimiter.foreach(__v => __obj.updateDynamic("RecordDelimiter")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CSVInput]
-    }
-  }
-
   /**
     * Describes how uncompressed comma-separated values (CSV)-formatted results are formatted.
     */
   @js.native
+  @Factory
   trait CSVOutput extends js.Object {
     var FieldDelimiter: js.UndefOr[FieldDelimiter]
     var QuoteCharacter: js.UndefOr[QuoteCharacter]
@@ -1142,29 +910,11 @@ package s3 {
     var RecordDelimiter: js.UndefOr[RecordDelimiter]
   }
 
-  object CSVOutput {
-    @inline
-    def apply(
-        FieldDelimiter: js.UndefOr[FieldDelimiter] = js.undefined,
-        QuoteCharacter: js.UndefOr[QuoteCharacter] = js.undefined,
-        QuoteEscapeCharacter: js.UndefOr[QuoteEscapeCharacter] = js.undefined,
-        QuoteFields: js.UndefOr[QuoteFields] = js.undefined,
-        RecordDelimiter: js.UndefOr[RecordDelimiter] = js.undefined
-    ): CSVOutput = {
-      val __obj = js.Dynamic.literal()
-      FieldDelimiter.foreach(__v => __obj.updateDynamic("FieldDelimiter")(__v.asInstanceOf[js.Any]))
-      QuoteCharacter.foreach(__v => __obj.updateDynamic("QuoteCharacter")(__v.asInstanceOf[js.Any]))
-      QuoteEscapeCharacter.foreach(__v => __obj.updateDynamic("QuoteEscapeCharacter")(__v.asInstanceOf[js.Any]))
-      QuoteFields.foreach(__v => __obj.updateDynamic("QuoteFields")(__v.asInstanceOf[js.Any]))
-      RecordDelimiter.foreach(__v => __obj.updateDynamic("RecordDelimiter")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CSVOutput]
-    }
-  }
-
   /**
     * Container for specifying the AWS Lambda notification configuration.
     */
   @js.native
+  @Factory
   trait CloudFunctionConfiguration extends js.Object {
     var CloudFunction: js.UndefOr[CloudFunction]
     var Event: js.UndefOr[Event]
@@ -1173,45 +923,17 @@ package s3 {
     var InvocationRole: js.UndefOr[CloudFunctionInvocationRole]
   }
 
-  object CloudFunctionConfiguration {
-    @inline
-    def apply(
-        CloudFunction: js.UndefOr[CloudFunction] = js.undefined,
-        Event: js.UndefOr[Event] = js.undefined,
-        Events: js.UndefOr[EventList] = js.undefined,
-        Id: js.UndefOr[NotificationId] = js.undefined,
-        InvocationRole: js.UndefOr[CloudFunctionInvocationRole] = js.undefined
-    ): CloudFunctionConfiguration = {
-      val __obj = js.Dynamic.literal()
-      CloudFunction.foreach(__v => __obj.updateDynamic("CloudFunction")(__v.asInstanceOf[js.Any]))
-      Event.foreach(__v => __obj.updateDynamic("Event")(__v.asInstanceOf[js.Any]))
-      Events.foreach(__v => __obj.updateDynamic("Events")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      InvocationRole.foreach(__v => __obj.updateDynamic("InvocationRole")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CloudFunctionConfiguration]
-    }
-  }
-
   /**
     * Container for all (if there are any) keys between Prefix and the next occurrence of the string specified by a delimiter. CommonPrefixes lists keys that act like subdirectories in the directory specified by Prefix. For example, if the prefix is notes/ and the delimiter is a slash (/) as in notes/summer/july, the common prefix is notes/summer/.
     */
   @js.native
+  @Factory
   trait CommonPrefix extends js.Object {
     var Prefix: js.UndefOr[Prefix]
   }
 
-  object CommonPrefix {
-    @inline
-    def apply(
-        Prefix: js.UndefOr[Prefix] = js.undefined
-    ): CommonPrefix = {
-      val __obj = js.Dynamic.literal()
-      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CommonPrefix]
-    }
-  }
-
   @js.native
+  @Factory
   trait CompleteMultipartUploadOutput extends js.Object {
     var Bucket: js.UndefOr[BucketName]
     var ETag: js.UndefOr[ETag]
@@ -1224,34 +946,8 @@ package s3 {
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
-  object CompleteMultipartUploadOutput {
-    @inline
-    def apply(
-        Bucket: js.UndefOr[BucketName] = js.undefined,
-        ETag: js.UndefOr[ETag] = js.undefined,
-        Expiration: js.UndefOr[Expiration] = js.undefined,
-        Key: js.UndefOr[ObjectKey] = js.undefined,
-        Location: js.UndefOr[Location] = js.undefined,
-        RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
-        SSEKMSKeyId: js.UndefOr[SSEKMSKeyId] = js.undefined,
-        ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined,
-        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
-    ): CompleteMultipartUploadOutput = {
-      val __obj = js.Dynamic.literal()
-      Bucket.foreach(__v => __obj.updateDynamic("Bucket")(__v.asInstanceOf[js.Any]))
-      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
-      Expiration.foreach(__v => __obj.updateDynamic("Expiration")(__v.asInstanceOf[js.Any]))
-      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
-      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
-      RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
-      SSEKMSKeyId.foreach(__v => __obj.updateDynamic("SSEKMSKeyId")(__v.asInstanceOf[js.Any]))
-      ServerSideEncryption.foreach(__v => __obj.updateDynamic("ServerSideEncryption")(__v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CompleteMultipartUploadOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait CompleteMultipartUploadRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
@@ -1260,66 +956,23 @@ package s3 {
     var RequestPayer: js.UndefOr[RequestPayer]
   }
 
-  object CompleteMultipartUploadRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Key: ObjectKey,
-        UploadId: MultipartUploadId,
-        MultipartUpload: js.UndefOr[CompletedMultipartUpload] = js.undefined,
-        RequestPayer: js.UndefOr[RequestPayer] = js.undefined
-    ): CompleteMultipartUploadRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket"   -> Bucket.asInstanceOf[js.Any],
-        "Key"      -> Key.asInstanceOf[js.Any],
-        "UploadId" -> UploadId.asInstanceOf[js.Any]
-      )
-
-      MultipartUpload.foreach(__v => __obj.updateDynamic("MultipartUpload")(__v.asInstanceOf[js.Any]))
-      RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CompleteMultipartUploadRequest]
-    }
-  }
-
   /**
     * The container for the completed multipart upload details.
     */
   @js.native
+  @Factory
   trait CompletedMultipartUpload extends js.Object {
     var Parts: js.UndefOr[CompletedPartList]
-  }
-
-  object CompletedMultipartUpload {
-    @inline
-    def apply(
-        Parts: js.UndefOr[CompletedPartList] = js.undefined
-    ): CompletedMultipartUpload = {
-      val __obj = js.Dynamic.literal()
-      Parts.foreach(__v => __obj.updateDynamic("Parts")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CompletedMultipartUpload]
-    }
   }
 
   /**
     * Details of the parts that were uploaded.
     */
   @js.native
+  @Factory
   trait CompletedPart extends js.Object {
     var ETag: js.UndefOr[ETag]
     var PartNumber: js.UndefOr[PartNumber]
-  }
-
-  object CompletedPart {
-    @inline
-    def apply(
-        ETag: js.UndefOr[ETag] = js.undefined,
-        PartNumber: js.UndefOr[PartNumber] = js.undefined
-    ): CompletedPart = {
-      val __obj = js.Dynamic.literal()
-      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
-      PartNumber.foreach(__v => __obj.updateDynamic("PartNumber")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CompletedPart]
-    }
   }
 
   @js.native
@@ -1336,43 +989,21 @@ package s3 {
     * A container for describing a condition that must be met for the specified redirect to apply. For example, 1. If request is for pages in the <code>/docs</code> folder, redirect to the <code>/documents</code> folder. 2. If request results in HTTP error 4xx, redirect request to another host where you might process the error.
     */
   @js.native
+  @Factory
   trait Condition extends js.Object {
     var HttpErrorCodeReturnedEquals: js.UndefOr[HttpErrorCodeReturnedEquals]
     var KeyPrefixEquals: js.UndefOr[KeyPrefixEquals]
-  }
-
-  object Condition {
-    @inline
-    def apply(
-        HttpErrorCodeReturnedEquals: js.UndefOr[HttpErrorCodeReturnedEquals] = js.undefined,
-        KeyPrefixEquals: js.UndefOr[KeyPrefixEquals] = js.undefined
-    ): Condition = {
-      val __obj = js.Dynamic.literal()
-      HttpErrorCodeReturnedEquals.foreach(__v =>
-        __obj.updateDynamic("HttpErrorCodeReturnedEquals")(__v.asInstanceOf[js.Any])
-      )
-      KeyPrefixEquals.foreach(__v => __obj.updateDynamic("KeyPrefixEquals")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Condition]
-    }
   }
 
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait ContinuationEvent extends js.Object {}
 
-  object ContinuationEvent {
-    @inline
-    def apply(
-    ): ContinuationEvent = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[ContinuationEvent]
-    }
-  }
-
   @js.native
+  @Factory
   trait CopyObjectOutput extends js.Object {
     var CopyObjectResult: js.UndefOr[CopyObjectResult]
     var CopySourceVersionId: js.UndefOr[CopySourceVersionId]
@@ -1386,36 +1017,8 @@ package s3 {
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
-  object CopyObjectOutput {
-    @inline
-    def apply(
-        CopyObjectResult: js.UndefOr[CopyObjectResult] = js.undefined,
-        CopySourceVersionId: js.UndefOr[CopySourceVersionId] = js.undefined,
-        Expiration: js.UndefOr[Expiration] = js.undefined,
-        RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
-        SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
-        SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined,
-        SSEKMSEncryptionContext: js.UndefOr[SSEKMSEncryptionContext] = js.undefined,
-        SSEKMSKeyId: js.UndefOr[SSEKMSKeyId] = js.undefined,
-        ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined,
-        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
-    ): CopyObjectOutput = {
-      val __obj = js.Dynamic.literal()
-      CopyObjectResult.foreach(__v => __obj.updateDynamic("CopyObjectResult")(__v.asInstanceOf[js.Any]))
-      CopySourceVersionId.foreach(__v => __obj.updateDynamic("CopySourceVersionId")(__v.asInstanceOf[js.Any]))
-      Expiration.foreach(__v => __obj.updateDynamic("Expiration")(__v.asInstanceOf[js.Any]))
-      RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
-      SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
-      SSECustomerKeyMD5.foreach(__v => __obj.updateDynamic("SSECustomerKeyMD5")(__v.asInstanceOf[js.Any]))
-      SSEKMSEncryptionContext.foreach(__v => __obj.updateDynamic("SSEKMSEncryptionContext")(__v.asInstanceOf[js.Any]))
-      SSEKMSKeyId.foreach(__v => __obj.updateDynamic("SSEKMSKeyId")(__v.asInstanceOf[js.Any]))
-      ServerSideEncryption.foreach(__v => __obj.updateDynamic("ServerSideEncryption")(__v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CopyObjectOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait CopyObjectRequest extends js.Object {
     var Bucket: BucketName
     var CopySource: CopySource
@@ -1456,183 +1059,43 @@ package s3 {
     var WebsiteRedirectLocation: js.UndefOr[WebsiteRedirectLocation]
   }
 
-  object CopyObjectRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        CopySource: CopySource,
-        Key: ObjectKey,
-        ACL: js.UndefOr[ObjectCannedACL] = js.undefined,
-        CacheControl: js.UndefOr[CacheControl] = js.undefined,
-        ContentDisposition: js.UndefOr[ContentDisposition] = js.undefined,
-        ContentEncoding: js.UndefOr[ContentEncoding] = js.undefined,
-        ContentLanguage: js.UndefOr[ContentLanguage] = js.undefined,
-        ContentType: js.UndefOr[ContentType] = js.undefined,
-        CopySourceIfMatch: js.UndefOr[CopySourceIfMatch] = js.undefined,
-        CopySourceIfModifiedSince: js.UndefOr[CopySourceIfModifiedSince] = js.undefined,
-        CopySourceIfNoneMatch: js.UndefOr[CopySourceIfNoneMatch] = js.undefined,
-        CopySourceIfUnmodifiedSince: js.UndefOr[CopySourceIfUnmodifiedSince] = js.undefined,
-        CopySourceSSECustomerAlgorithm: js.UndefOr[CopySourceSSECustomerAlgorithm] = js.undefined,
-        CopySourceSSECustomerKey: js.UndefOr[CopySourceSSECustomerKey] = js.undefined,
-        CopySourceSSECustomerKeyMD5: js.UndefOr[CopySourceSSECustomerKeyMD5] = js.undefined,
-        Expires: js.UndefOr[Expires] = js.undefined,
-        GrantFullControl: js.UndefOr[GrantFullControl] = js.undefined,
-        GrantRead: js.UndefOr[GrantRead] = js.undefined,
-        GrantReadACP: js.UndefOr[GrantReadACP] = js.undefined,
-        GrantWriteACP: js.UndefOr[GrantWriteACP] = js.undefined,
-        Metadata: js.UndefOr[Metadata] = js.undefined,
-        MetadataDirective: js.UndefOr[MetadataDirective] = js.undefined,
-        ObjectLockLegalHoldStatus: js.UndefOr[ObjectLockLegalHoldStatus] = js.undefined,
-        ObjectLockMode: js.UndefOr[ObjectLockMode] = js.undefined,
-        ObjectLockRetainUntilDate: js.UndefOr[ObjectLockRetainUntilDate] = js.undefined,
-        RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
-        SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
-        SSECustomerKey: js.UndefOr[SSECustomerKey] = js.undefined,
-        SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined,
-        SSEKMSEncryptionContext: js.UndefOr[SSEKMSEncryptionContext] = js.undefined,
-        SSEKMSKeyId: js.UndefOr[SSEKMSKeyId] = js.undefined,
-        ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined,
-        StorageClass: js.UndefOr[StorageClass] = js.undefined,
-        Tagging: js.UndefOr[TaggingHeader] = js.undefined,
-        TaggingDirective: js.UndefOr[TaggingDirective] = js.undefined,
-        WebsiteRedirectLocation: js.UndefOr[WebsiteRedirectLocation] = js.undefined
-    ): CopyObjectRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket"     -> Bucket.asInstanceOf[js.Any],
-        "CopySource" -> CopySource.asInstanceOf[js.Any],
-        "Key"        -> Key.asInstanceOf[js.Any]
-      )
-
-      ACL.foreach(__v => __obj.updateDynamic("ACL")(__v.asInstanceOf[js.Any]))
-      CacheControl.foreach(__v => __obj.updateDynamic("CacheControl")(__v.asInstanceOf[js.Any]))
-      ContentDisposition.foreach(__v => __obj.updateDynamic("ContentDisposition")(__v.asInstanceOf[js.Any]))
-      ContentEncoding.foreach(__v => __obj.updateDynamic("ContentEncoding")(__v.asInstanceOf[js.Any]))
-      ContentLanguage.foreach(__v => __obj.updateDynamic("ContentLanguage")(__v.asInstanceOf[js.Any]))
-      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
-      CopySourceIfMatch.foreach(__v => __obj.updateDynamic("CopySourceIfMatch")(__v.asInstanceOf[js.Any]))
-      CopySourceIfModifiedSince.foreach(__v =>
-        __obj.updateDynamic("CopySourceIfModifiedSince")(__v.asInstanceOf[js.Any])
-      )
-      CopySourceIfNoneMatch.foreach(__v => __obj.updateDynamic("CopySourceIfNoneMatch")(__v.asInstanceOf[js.Any]))
-      CopySourceIfUnmodifiedSince.foreach(__v =>
-        __obj.updateDynamic("CopySourceIfUnmodifiedSince")(__v.asInstanceOf[js.Any])
-      )
-      CopySourceSSECustomerAlgorithm.foreach(__v =>
-        __obj.updateDynamic("CopySourceSSECustomerAlgorithm")(__v.asInstanceOf[js.Any])
-      )
-      CopySourceSSECustomerKey.foreach(__v => __obj.updateDynamic("CopySourceSSECustomerKey")(__v.asInstanceOf[js.Any]))
-      CopySourceSSECustomerKeyMD5.foreach(__v =>
-        __obj.updateDynamic("CopySourceSSECustomerKeyMD5")(__v.asInstanceOf[js.Any])
-      )
-      Expires.foreach(__v => __obj.updateDynamic("Expires")(__v.asInstanceOf[js.Any]))
-      GrantFullControl.foreach(__v => __obj.updateDynamic("GrantFullControl")(__v.asInstanceOf[js.Any]))
-      GrantRead.foreach(__v => __obj.updateDynamic("GrantRead")(__v.asInstanceOf[js.Any]))
-      GrantReadACP.foreach(__v => __obj.updateDynamic("GrantReadACP")(__v.asInstanceOf[js.Any]))
-      GrantWriteACP.foreach(__v => __obj.updateDynamic("GrantWriteACP")(__v.asInstanceOf[js.Any]))
-      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
-      MetadataDirective.foreach(__v => __obj.updateDynamic("MetadataDirective")(__v.asInstanceOf[js.Any]))
-      ObjectLockLegalHoldStatus.foreach(__v =>
-        __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any])
-      )
-      ObjectLockMode.foreach(__v => __obj.updateDynamic("ObjectLockMode")(__v.asInstanceOf[js.Any]))
-      ObjectLockRetainUntilDate.foreach(__v =>
-        __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any])
-      )
-      RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
-      SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
-      SSECustomerKey.foreach(__v => __obj.updateDynamic("SSECustomerKey")(__v.asInstanceOf[js.Any]))
-      SSECustomerKeyMD5.foreach(__v => __obj.updateDynamic("SSECustomerKeyMD5")(__v.asInstanceOf[js.Any]))
-      SSEKMSEncryptionContext.foreach(__v => __obj.updateDynamic("SSEKMSEncryptionContext")(__v.asInstanceOf[js.Any]))
-      SSEKMSKeyId.foreach(__v => __obj.updateDynamic("SSEKMSKeyId")(__v.asInstanceOf[js.Any]))
-      ServerSideEncryption.foreach(__v => __obj.updateDynamic("ServerSideEncryption")(__v.asInstanceOf[js.Any]))
-      StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
-      Tagging.foreach(__v => __obj.updateDynamic("Tagging")(__v.asInstanceOf[js.Any]))
-      TaggingDirective.foreach(__v => __obj.updateDynamic("TaggingDirective")(__v.asInstanceOf[js.Any]))
-      WebsiteRedirectLocation.foreach(__v => __obj.updateDynamic("WebsiteRedirectLocation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CopyObjectRequest]
-    }
-  }
-
   /**
     * Container for all response elements.
     */
   @js.native
+  @Factory
   trait CopyObjectResult extends js.Object {
     var ETag: js.UndefOr[ETag]
     var LastModified: js.UndefOr[LastModified]
   }
 
-  object CopyObjectResult {
-    @inline
-    def apply(
-        ETag: js.UndefOr[ETag] = js.undefined,
-        LastModified: js.UndefOr[LastModified] = js.undefined
-    ): CopyObjectResult = {
-      val __obj = js.Dynamic.literal()
-      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
-      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CopyObjectResult]
-    }
-  }
-
   /**
     * Container for all response elements.
     */
   @js.native
+  @Factory
   trait CopyPartResult extends js.Object {
     var ETag: js.UndefOr[ETag]
     var LastModified: js.UndefOr[LastModified]
-  }
-
-  object CopyPartResult {
-    @inline
-    def apply(
-        ETag: js.UndefOr[ETag] = js.undefined,
-        LastModified: js.UndefOr[LastModified] = js.undefined
-    ): CopyPartResult = {
-      val __obj = js.Dynamic.literal()
-      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
-      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CopyPartResult]
-    }
   }
 
   /**
     * The configuration information for the bucket.
     */
   @js.native
+  @Factory
   trait CreateBucketConfiguration extends js.Object {
     var LocationConstraint: js.UndefOr[BucketLocationConstraint]
   }
 
-  object CreateBucketConfiguration {
-    @inline
-    def apply(
-        LocationConstraint: js.UndefOr[BucketLocationConstraint] = js.undefined
-    ): CreateBucketConfiguration = {
-      val __obj = js.Dynamic.literal()
-      LocationConstraint.foreach(__v => __obj.updateDynamic("LocationConstraint")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateBucketConfiguration]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateBucketOutput extends js.Object {
     var Location: js.UndefOr[Location]
   }
 
-  object CreateBucketOutput {
-    @inline
-    def apply(
-        Location: js.UndefOr[Location] = js.undefined
-    ): CreateBucketOutput = {
-      val __obj = js.Dynamic.literal()
-      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateBucketOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateBucketRequest extends js.Object {
     var Bucket: BucketName
     var ACL: js.UndefOr[BucketCannedACL]
@@ -1645,40 +1108,8 @@ package s3 {
     var ObjectLockEnabledForBucket: js.UndefOr[ObjectLockEnabledForBucket]
   }
 
-  object CreateBucketRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        ACL: js.UndefOr[BucketCannedACL] = js.undefined,
-        CreateBucketConfiguration: js.UndefOr[CreateBucketConfiguration] = js.undefined,
-        GrantFullControl: js.UndefOr[GrantFullControl] = js.undefined,
-        GrantRead: js.UndefOr[GrantRead] = js.undefined,
-        GrantReadACP: js.UndefOr[GrantReadACP] = js.undefined,
-        GrantWrite: js.UndefOr[GrantWrite] = js.undefined,
-        GrantWriteACP: js.UndefOr[GrantWriteACP] = js.undefined,
-        ObjectLockEnabledForBucket: js.UndefOr[ObjectLockEnabledForBucket] = js.undefined
-    ): CreateBucketRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      ACL.foreach(__v => __obj.updateDynamic("ACL")(__v.asInstanceOf[js.Any]))
-      CreateBucketConfiguration.foreach(__v =>
-        __obj.updateDynamic("CreateBucketConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      GrantFullControl.foreach(__v => __obj.updateDynamic("GrantFullControl")(__v.asInstanceOf[js.Any]))
-      GrantRead.foreach(__v => __obj.updateDynamic("GrantRead")(__v.asInstanceOf[js.Any]))
-      GrantReadACP.foreach(__v => __obj.updateDynamic("GrantReadACP")(__v.asInstanceOf[js.Any]))
-      GrantWrite.foreach(__v => __obj.updateDynamic("GrantWrite")(__v.asInstanceOf[js.Any]))
-      GrantWriteACP.foreach(__v => __obj.updateDynamic("GrantWriteACP")(__v.asInstanceOf[js.Any]))
-      ObjectLockEnabledForBucket.foreach(__v =>
-        __obj.updateDynamic("ObjectLockEnabledForBucket")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[CreateBucketRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateMultipartUploadOutput extends js.Object {
     var AbortDate: js.UndefOr[AbortDate]
     var AbortRuleId: js.UndefOr[AbortRuleId]
@@ -1693,38 +1124,8 @@ package s3 {
     var UploadId: js.UndefOr[MultipartUploadId]
   }
 
-  object CreateMultipartUploadOutput {
-    @inline
-    def apply(
-        AbortDate: js.UndefOr[AbortDate] = js.undefined,
-        AbortRuleId: js.UndefOr[AbortRuleId] = js.undefined,
-        Bucket: js.UndefOr[BucketName] = js.undefined,
-        Key: js.UndefOr[ObjectKey] = js.undefined,
-        RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
-        SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
-        SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined,
-        SSEKMSEncryptionContext: js.UndefOr[SSEKMSEncryptionContext] = js.undefined,
-        SSEKMSKeyId: js.UndefOr[SSEKMSKeyId] = js.undefined,
-        ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined,
-        UploadId: js.UndefOr[MultipartUploadId] = js.undefined
-    ): CreateMultipartUploadOutput = {
-      val __obj = js.Dynamic.literal()
-      AbortDate.foreach(__v => __obj.updateDynamic("AbortDate")(__v.asInstanceOf[js.Any]))
-      AbortRuleId.foreach(__v => __obj.updateDynamic("AbortRuleId")(__v.asInstanceOf[js.Any]))
-      Bucket.foreach(__v => __obj.updateDynamic("Bucket")(__v.asInstanceOf[js.Any]))
-      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
-      RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
-      SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
-      SSECustomerKeyMD5.foreach(__v => __obj.updateDynamic("SSECustomerKeyMD5")(__v.asInstanceOf[js.Any]))
-      SSEKMSEncryptionContext.foreach(__v => __obj.updateDynamic("SSEKMSEncryptionContext")(__v.asInstanceOf[js.Any]))
-      SSEKMSKeyId.foreach(__v => __obj.updateDynamic("SSEKMSKeyId")(__v.asInstanceOf[js.Any]))
-      ServerSideEncryption.foreach(__v => __obj.updateDynamic("ServerSideEncryption")(__v.asInstanceOf[js.Any]))
-      UploadId.foreach(__v => __obj.updateDynamic("UploadId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateMultipartUploadOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateMultipartUploadRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
@@ -1755,335 +1156,101 @@ package s3 {
     var WebsiteRedirectLocation: js.UndefOr[WebsiteRedirectLocation]
   }
 
-  object CreateMultipartUploadRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Key: ObjectKey,
-        ACL: js.UndefOr[ObjectCannedACL] = js.undefined,
-        CacheControl: js.UndefOr[CacheControl] = js.undefined,
-        ContentDisposition: js.UndefOr[ContentDisposition] = js.undefined,
-        ContentEncoding: js.UndefOr[ContentEncoding] = js.undefined,
-        ContentLanguage: js.UndefOr[ContentLanguage] = js.undefined,
-        ContentType: js.UndefOr[ContentType] = js.undefined,
-        Expires: js.UndefOr[Expires] = js.undefined,
-        GrantFullControl: js.UndefOr[GrantFullControl] = js.undefined,
-        GrantRead: js.UndefOr[GrantRead] = js.undefined,
-        GrantReadACP: js.UndefOr[GrantReadACP] = js.undefined,
-        GrantWriteACP: js.UndefOr[GrantWriteACP] = js.undefined,
-        Metadata: js.UndefOr[Metadata] = js.undefined,
-        ObjectLockLegalHoldStatus: js.UndefOr[ObjectLockLegalHoldStatus] = js.undefined,
-        ObjectLockMode: js.UndefOr[ObjectLockMode] = js.undefined,
-        ObjectLockRetainUntilDate: js.UndefOr[ObjectLockRetainUntilDate] = js.undefined,
-        RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
-        SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
-        SSECustomerKey: js.UndefOr[SSECustomerKey] = js.undefined,
-        SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined,
-        SSEKMSEncryptionContext: js.UndefOr[SSEKMSEncryptionContext] = js.undefined,
-        SSEKMSKeyId: js.UndefOr[SSEKMSKeyId] = js.undefined,
-        ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined,
-        StorageClass: js.UndefOr[StorageClass] = js.undefined,
-        Tagging: js.UndefOr[TaggingHeader] = js.undefined,
-        WebsiteRedirectLocation: js.UndefOr[WebsiteRedirectLocation] = js.undefined
-    ): CreateMultipartUploadRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
-      )
-
-      ACL.foreach(__v => __obj.updateDynamic("ACL")(__v.asInstanceOf[js.Any]))
-      CacheControl.foreach(__v => __obj.updateDynamic("CacheControl")(__v.asInstanceOf[js.Any]))
-      ContentDisposition.foreach(__v => __obj.updateDynamic("ContentDisposition")(__v.asInstanceOf[js.Any]))
-      ContentEncoding.foreach(__v => __obj.updateDynamic("ContentEncoding")(__v.asInstanceOf[js.Any]))
-      ContentLanguage.foreach(__v => __obj.updateDynamic("ContentLanguage")(__v.asInstanceOf[js.Any]))
-      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
-      Expires.foreach(__v => __obj.updateDynamic("Expires")(__v.asInstanceOf[js.Any]))
-      GrantFullControl.foreach(__v => __obj.updateDynamic("GrantFullControl")(__v.asInstanceOf[js.Any]))
-      GrantRead.foreach(__v => __obj.updateDynamic("GrantRead")(__v.asInstanceOf[js.Any]))
-      GrantReadACP.foreach(__v => __obj.updateDynamic("GrantReadACP")(__v.asInstanceOf[js.Any]))
-      GrantWriteACP.foreach(__v => __obj.updateDynamic("GrantWriteACP")(__v.asInstanceOf[js.Any]))
-      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
-      ObjectLockLegalHoldStatus.foreach(__v =>
-        __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any])
-      )
-      ObjectLockMode.foreach(__v => __obj.updateDynamic("ObjectLockMode")(__v.asInstanceOf[js.Any]))
-      ObjectLockRetainUntilDate.foreach(__v =>
-        __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any])
-      )
-      RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
-      SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
-      SSECustomerKey.foreach(__v => __obj.updateDynamic("SSECustomerKey")(__v.asInstanceOf[js.Any]))
-      SSECustomerKeyMD5.foreach(__v => __obj.updateDynamic("SSECustomerKeyMD5")(__v.asInstanceOf[js.Any]))
-      SSEKMSEncryptionContext.foreach(__v => __obj.updateDynamic("SSEKMSEncryptionContext")(__v.asInstanceOf[js.Any]))
-      SSEKMSKeyId.foreach(__v => __obj.updateDynamic("SSEKMSKeyId")(__v.asInstanceOf[js.Any]))
-      ServerSideEncryption.foreach(__v => __obj.updateDynamic("ServerSideEncryption")(__v.asInstanceOf[js.Any]))
-      StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
-      Tagging.foreach(__v => __obj.updateDynamic("Tagging")(__v.asInstanceOf[js.Any]))
-      WebsiteRedirectLocation.foreach(__v => __obj.updateDynamic("WebsiteRedirectLocation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateMultipartUploadRequest]
-    }
-  }
-
   /**
     * The container element for specifying the default Object Lock retention settings for new objects placed in the specified bucket.
     */
   @js.native
+  @Factory
   trait DefaultRetention extends js.Object {
     var Days: js.UndefOr[Days]
     var Mode: js.UndefOr[ObjectLockRetentionMode]
     var Years: js.UndefOr[Years]
   }
 
-  object DefaultRetention {
-    @inline
-    def apply(
-        Days: js.UndefOr[Days] = js.undefined,
-        Mode: js.UndefOr[ObjectLockRetentionMode] = js.undefined,
-        Years: js.UndefOr[Years] = js.undefined
-    ): DefaultRetention = {
-      val __obj = js.Dynamic.literal()
-      Days.foreach(__v => __obj.updateDynamic("Days")(__v.asInstanceOf[js.Any]))
-      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
-      Years.foreach(__v => __obj.updateDynamic("Years")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DefaultRetention]
-    }
-  }
-
   /**
     * Container for the objects to delete.
     */
   @js.native
+  @Factory
   trait Delete extends js.Object {
     var Objects: ObjectIdentifierList
     var Quiet: js.UndefOr[Quiet]
   }
 
-  object Delete {
-    @inline
-    def apply(
-        Objects: ObjectIdentifierList,
-        Quiet: js.UndefOr[Quiet] = js.undefined
-    ): Delete = {
-      val __obj = js.Dynamic.literal(
-        "Objects" -> Objects.asInstanceOf[js.Any]
-      )
-
-      Quiet.foreach(__v => __obj.updateDynamic("Quiet")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Delete]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteBucketAnalyticsConfigurationRequest extends js.Object {
     var Bucket: BucketName
     var Id: AnalyticsId
   }
 
-  object DeleteBucketAnalyticsConfigurationRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Id: AnalyticsId
-    ): DeleteBucketAnalyticsConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Id"     -> Id.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteBucketAnalyticsConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteBucketCorsRequest extends js.Object {
     var Bucket: BucketName
   }
 
-  object DeleteBucketCorsRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): DeleteBucketCorsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteBucketCorsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteBucketEncryptionRequest extends js.Object {
     var Bucket: BucketName
   }
 
-  object DeleteBucketEncryptionRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): DeleteBucketEncryptionRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteBucketEncryptionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteBucketInventoryConfigurationRequest extends js.Object {
     var Bucket: BucketName
     var Id: InventoryId
   }
 
-  object DeleteBucketInventoryConfigurationRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Id: InventoryId
-    ): DeleteBucketInventoryConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Id"     -> Id.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteBucketInventoryConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteBucketLifecycleRequest extends js.Object {
     var Bucket: BucketName
   }
 
-  object DeleteBucketLifecycleRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): DeleteBucketLifecycleRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteBucketLifecycleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteBucketMetricsConfigurationRequest extends js.Object {
     var Bucket: BucketName
     var Id: MetricsId
   }
 
-  object DeleteBucketMetricsConfigurationRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Id: MetricsId
-    ): DeleteBucketMetricsConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Id"     -> Id.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteBucketMetricsConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteBucketPolicyRequest extends js.Object {
     var Bucket: BucketName
   }
 
-  object DeleteBucketPolicyRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): DeleteBucketPolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteBucketPolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteBucketReplicationRequest extends js.Object {
     var Bucket: BucketName
   }
 
-  object DeleteBucketReplicationRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): DeleteBucketReplicationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteBucketReplicationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteBucketRequest extends js.Object {
     var Bucket: BucketName
   }
 
-  object DeleteBucketRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): DeleteBucketRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteBucketRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteBucketTaggingRequest extends js.Object {
     var Bucket: BucketName
   }
 
-  object DeleteBucketTaggingRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): DeleteBucketTaggingRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteBucketTaggingRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteBucketWebsiteRequest extends js.Object {
     var Bucket: BucketName
-  }
-
-  object DeleteBucketWebsiteRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): DeleteBucketWebsiteRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteBucketWebsiteRequest]
-    }
   }
 
   /**
     * Information about the delete marker.
     */
   @js.native
+  @Factory
   trait DeleteMarkerEntry extends js.Object {
     var IsLatest: js.UndefOr[IsLatest]
     var Key: js.UndefOr[ObjectKey]
@@ -2092,44 +1259,15 @@ package s3 {
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
-  object DeleteMarkerEntry {
-    @inline
-    def apply(
-        IsLatest: js.UndefOr[IsLatest] = js.undefined,
-        Key: js.UndefOr[ObjectKey] = js.undefined,
-        LastModified: js.UndefOr[LastModified] = js.undefined,
-        Owner: js.UndefOr[Owner] = js.undefined,
-        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
-    ): DeleteMarkerEntry = {
-      val __obj = js.Dynamic.literal()
-      IsLatest.foreach(__v => __obj.updateDynamic("IsLatest")(__v.asInstanceOf[js.Any]))
-      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
-      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
-      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteMarkerEntry]
-    }
-  }
-
   /**
     * Specifies whether Amazon S3 replicates the delete markers. If you specify a <code>Filter</code>, you must specify this element. However, in the latest version of replication configuration (when <code>Filter</code> is specified), Amazon S3 doesn't replicate delete markers. Therefore, the <code>DeleteMarkerReplication</code> element can contain only &lt;Status&gt;Disabled&lt;/Status&gt;. For an example configuration, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-config-min-rule-config|Basic Rule Configuration]].
     *
     * '''Note:'''If you don't specify the <code>Filter</code> element, Amazon S3 assumes that the replication configuration is the earlier version, V1. In the earlier version, Amazon S3 handled replication of delete markers differently. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations|Backward Compatibility]].
     */
   @js.native
+  @Factory
   trait DeleteMarkerReplication extends js.Object {
     var Status: js.UndefOr[DeleteMarkerReplicationStatus]
-  }
-
-  object DeleteMarkerReplication {
-    @inline
-    def apply(
-        Status: js.UndefOr[DeleteMarkerReplicationStatus] = js.undefined
-    ): DeleteMarkerReplication = {
-      val __obj = js.Dynamic.literal()
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteMarkerReplication]
-    }
   }
 
   @js.native
@@ -2142,28 +1280,15 @@ package s3 {
   }
 
   @js.native
+  @Factory
   trait DeleteObjectOutput extends js.Object {
     var DeleteMarker: js.UndefOr[DeleteMarker]
     var RequestCharged: js.UndefOr[RequestCharged]
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
-  object DeleteObjectOutput {
-    @inline
-    def apply(
-        DeleteMarker: js.UndefOr[DeleteMarker] = js.undefined,
-        RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
-        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
-    ): DeleteObjectOutput = {
-      val __obj = js.Dynamic.literal()
-      DeleteMarker.foreach(__v => __obj.updateDynamic("DeleteMarker")(__v.asInstanceOf[js.Any]))
-      RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteObjectOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteObjectRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
@@ -2173,94 +1298,30 @@ package s3 {
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
-  object DeleteObjectRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Key: ObjectKey,
-        BypassGovernanceRetention: js.UndefOr[BypassGovernanceRetention] = js.undefined,
-        MFA: js.UndefOr[MFA] = js.undefined,
-        RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
-        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
-    ): DeleteObjectRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
-      )
-
-      BypassGovernanceRetention.foreach(__v =>
-        __obj.updateDynamic("BypassGovernanceRetention")(__v.asInstanceOf[js.Any])
-      )
-      MFA.foreach(__v => __obj.updateDynamic("MFA")(__v.asInstanceOf[js.Any]))
-      RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteObjectRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteObjectTaggingOutput extends js.Object {
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
-  object DeleteObjectTaggingOutput {
-    @inline
-    def apply(
-        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
-    ): DeleteObjectTaggingOutput = {
-      val __obj = js.Dynamic.literal()
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteObjectTaggingOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteObjectTaggingRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
-  object DeleteObjectTaggingRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Key: ObjectKey,
-        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
-    ): DeleteObjectTaggingRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
-      )
-
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteObjectTaggingRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteObjectsOutput extends js.Object {
     var Deleted: js.UndefOr[DeletedObjects]
     var Errors: js.UndefOr[Errors]
     var RequestCharged: js.UndefOr[RequestCharged]
   }
 
-  object DeleteObjectsOutput {
-    @inline
-    def apply(
-        Deleted: js.UndefOr[DeletedObjects] = js.undefined,
-        Errors: js.UndefOr[Errors] = js.undefined,
-        RequestCharged: js.UndefOr[RequestCharged] = js.undefined
-    ): DeleteObjectsOutput = {
-      val __obj = js.Dynamic.literal()
-      Deleted.foreach(__v => __obj.updateDynamic("Deleted")(__v.asInstanceOf[js.Any]))
-      Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
-      RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteObjectsOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteObjectsRequest extends js.Object {
     var Bucket: BucketName
     var Delete: Delete
@@ -2269,51 +1330,17 @@ package s3 {
     var RequestPayer: js.UndefOr[RequestPayer]
   }
 
-  object DeleteObjectsRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Delete: Delete,
-        BypassGovernanceRetention: js.UndefOr[BypassGovernanceRetention] = js.undefined,
-        MFA: js.UndefOr[MFA] = js.undefined,
-        RequestPayer: js.UndefOr[RequestPayer] = js.undefined
-    ): DeleteObjectsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Delete" -> Delete.asInstanceOf[js.Any]
-      )
-
-      BypassGovernanceRetention.foreach(__v =>
-        __obj.updateDynamic("BypassGovernanceRetention")(__v.asInstanceOf[js.Any])
-      )
-      MFA.foreach(__v => __obj.updateDynamic("MFA")(__v.asInstanceOf[js.Any]))
-      RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteObjectsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeletePublicAccessBlockRequest extends js.Object {
     var Bucket: BucketName
-  }
-
-  object DeletePublicAccessBlockRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): DeletePublicAccessBlockRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeletePublicAccessBlockRequest]
-    }
   }
 
   /**
     * Information about the deleted object.
     */
   @js.native
+  @Factory
   trait DeletedObject extends js.Object {
     var DeleteMarker: js.UndefOr[DeleteMarker]
     var DeleteMarkerVersionId: js.UndefOr[DeleteMarkerVersionId]
@@ -2321,27 +1348,11 @@ package s3 {
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
-  object DeletedObject {
-    @inline
-    def apply(
-        DeleteMarker: js.UndefOr[DeleteMarker] = js.undefined,
-        DeleteMarkerVersionId: js.UndefOr[DeleteMarkerVersionId] = js.undefined,
-        Key: js.UndefOr[ObjectKey] = js.undefined,
-        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
-    ): DeletedObject = {
-      val __obj = js.Dynamic.literal()
-      DeleteMarker.foreach(__v => __obj.updateDynamic("DeleteMarker")(__v.asInstanceOf[js.Any]))
-      DeleteMarkerVersionId.foreach(__v => __obj.updateDynamic("DeleteMarkerVersionId")(__v.asInstanceOf[js.Any]))
-      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeletedObject]
-    }
-  }
-
   /**
     * Specifies information about where to publish analysis or configuration results for an Amazon S3 bucket and S3 Replication Time Control (S3 RTC).
     */
   @js.native
+  @Factory
   trait Destination extends js.Object {
     var Bucket: BucketName
     var AccessControlTranslation: js.UndefOr[AccessControlTranslation]
@@ -2350,31 +1361,6 @@ package s3 {
     var Metrics: js.UndefOr[Metrics]
     var ReplicationTime: js.UndefOr[ReplicationTime]
     var StorageClass: js.UndefOr[StorageClass]
-  }
-
-  object Destination {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        AccessControlTranslation: js.UndefOr[AccessControlTranslation] = js.undefined,
-        Account: js.UndefOr[AccountId] = js.undefined,
-        EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
-        Metrics: js.UndefOr[Metrics] = js.undefined,
-        ReplicationTime: js.UndefOr[ReplicationTime] = js.undefined,
-        StorageClass: js.UndefOr[StorageClass] = js.undefined
-    ): Destination = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      AccessControlTranslation.foreach(__v => __obj.updateDynamic("AccessControlTranslation")(__v.asInstanceOf[js.Any]))
-      Account.foreach(__v => __obj.updateDynamic("Account")(__v.asInstanceOf[js.Any]))
-      EncryptionConfiguration.foreach(__v => __obj.updateDynamic("EncryptionConfiguration")(__v.asInstanceOf[js.Any]))
-      Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
-      ReplicationTime.foreach(__v => __obj.updateDynamic("ReplicationTime")(__v.asInstanceOf[js.Any]))
-      StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Destination]
-    }
   }
 
   /**
@@ -2392,68 +1378,34 @@ package s3 {
     * Contains the type of server-side encryption used.
     */
   @js.native
+  @Factory
   trait Encryption extends js.Object {
     var EncryptionType: ServerSideEncryption
     var KMSContext: js.UndefOr[KMSContext]
     var KMSKeyId: js.UndefOr[SSEKMSKeyId]
   }
 
-  object Encryption {
-    @inline
-    def apply(
-        EncryptionType: ServerSideEncryption,
-        KMSContext: js.UndefOr[KMSContext] = js.undefined,
-        KMSKeyId: js.UndefOr[SSEKMSKeyId] = js.undefined
-    ): Encryption = {
-      val __obj = js.Dynamic.literal(
-        "EncryptionType" -> EncryptionType.asInstanceOf[js.Any]
-      )
-
-      KMSContext.foreach(__v => __obj.updateDynamic("KMSContext")(__v.asInstanceOf[js.Any]))
-      KMSKeyId.foreach(__v => __obj.updateDynamic("KMSKeyId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Encryption]
-    }
-  }
-
   /**
     * Specifies encryption-related information for an Amazon S3 bucket that is a destination for replicated objects.
     */
   @js.native
+  @Factory
   trait EncryptionConfiguration extends js.Object {
     var ReplicaKmsKeyID: js.UndefOr[ReplicaKmsKeyID]
-  }
-
-  object EncryptionConfiguration {
-    @inline
-    def apply(
-        ReplicaKmsKeyID: js.UndefOr[ReplicaKmsKeyID] = js.undefined
-    ): EncryptionConfiguration = {
-      val __obj = js.Dynamic.literal()
-      ReplicaKmsKeyID.foreach(__v => __obj.updateDynamic("ReplicaKmsKeyID")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EncryptionConfiguration]
-    }
   }
 
   /**
     * A message that indicates the request is complete and no more messages will be sent. You should not assume that the request is complete until the client receives an <code>EndEvent</code>.
     */
   @js.native
+  @Factory
   trait EndEvent extends js.Object {}
-
-  object EndEvent {
-    @inline
-    def apply(
-    ): EndEvent = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[EndEvent]
-    }
-  }
 
   /**
     * Container for all error elements.
     */
   @js.native
+  @Factory
   trait Error extends js.Object {
     var Code: js.UndefOr[Code]
     var Key: js.UndefOr[ObjectKey]
@@ -2461,42 +1413,13 @@ package s3 {
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
-  object Error {
-    @inline
-    def apply(
-        Code: js.UndefOr[Code] = js.undefined,
-        Key: js.UndefOr[ObjectKey] = js.undefined,
-        Message: js.UndefOr[Message] = js.undefined,
-        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
-    ): Error = {
-      val __obj = js.Dynamic.literal()
-      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
-      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Error]
-    }
-  }
-
   /**
     * The error information.
     */
   @js.native
+  @Factory
   trait ErrorDocument extends js.Object {
     var Key: ObjectKey
-  }
-
-  object ErrorDocument {
-    @inline
-    def apply(
-        Key: ObjectKey
-    ): ErrorDocument = {
-      val __obj = js.Dynamic.literal(
-        "Key" -> Key.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ErrorDocument]
-    }
   }
 
   /**
@@ -2551,21 +1474,9 @@ package s3 {
     * Optional configuration to replicate existing source bucket objects. For more information, see [[ https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication|Replicating Existing Objects]] in the <i>Amazon S3 Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait ExistingObjectReplication extends js.Object {
     var Status: ExistingObjectReplicationStatus
-  }
-
-  object ExistingObjectReplication {
-    @inline
-    def apply(
-        Status: ExistingObjectReplicationStatus
-    ): ExistingObjectReplication = {
-      val __obj = js.Dynamic.literal(
-        "Status" -> Status.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ExistingObjectReplication]
-    }
   }
 
   @js.native
@@ -2608,22 +1519,10 @@ package s3 {
     * Specifies the Amazon S3 object key name to filter on and whether to filter on the suffix or prefix of the key name.
     */
   @js.native
+  @Factory
   trait FilterRule extends js.Object {
     var Name: js.UndefOr[FilterRuleName]
     var Value: js.UndefOr[FilterRuleValue]
-  }
-
-  object FilterRule {
-    @inline
-    def apply(
-        Name: js.UndefOr[FilterRuleName] = js.undefined,
-        Value: js.UndefOr[FilterRuleValue] = js.undefined
-    ): FilterRule = {
-      val __obj = js.Dynamic.literal()
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[FilterRule]
-    }
   }
 
   @js.native
@@ -2636,621 +1535,222 @@ package s3 {
   }
 
   @js.native
+  @Factory
   trait GetBucketAccelerateConfigurationOutput extends js.Object {
     var Status: js.UndefOr[BucketAccelerateStatus]
   }
 
-  object GetBucketAccelerateConfigurationOutput {
-    @inline
-    def apply(
-        Status: js.UndefOr[BucketAccelerateStatus] = js.undefined
-    ): GetBucketAccelerateConfigurationOutput = {
-      val __obj = js.Dynamic.literal()
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBucketAccelerateConfigurationOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketAccelerateConfigurationRequest extends js.Object {
     var Bucket: BucketName
   }
 
-  object GetBucketAccelerateConfigurationRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): GetBucketAccelerateConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBucketAccelerateConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketAclOutput extends js.Object {
     var Grants: js.UndefOr[Grants]
     var Owner: js.UndefOr[Owner]
   }
 
-  object GetBucketAclOutput {
-    @inline
-    def apply(
-        Grants: js.UndefOr[Grants] = js.undefined,
-        Owner: js.UndefOr[Owner] = js.undefined
-    ): GetBucketAclOutput = {
-      val __obj = js.Dynamic.literal()
-      Grants.foreach(__v => __obj.updateDynamic("Grants")(__v.asInstanceOf[js.Any]))
-      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBucketAclOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketAclRequest extends js.Object {
     var Bucket: BucketName
   }
 
-  object GetBucketAclRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): GetBucketAclRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBucketAclRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketAnalyticsConfigurationOutput extends js.Object {
     var AnalyticsConfiguration: js.UndefOr[AnalyticsConfiguration]
   }
 
-  object GetBucketAnalyticsConfigurationOutput {
-    @inline
-    def apply(
-        AnalyticsConfiguration: js.UndefOr[AnalyticsConfiguration] = js.undefined
-    ): GetBucketAnalyticsConfigurationOutput = {
-      val __obj = js.Dynamic.literal()
-      AnalyticsConfiguration.foreach(__v => __obj.updateDynamic("AnalyticsConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBucketAnalyticsConfigurationOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketAnalyticsConfigurationRequest extends js.Object {
     var Bucket: BucketName
     var Id: AnalyticsId
   }
 
-  object GetBucketAnalyticsConfigurationRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Id: AnalyticsId
-    ): GetBucketAnalyticsConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Id"     -> Id.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBucketAnalyticsConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketCorsOutput extends js.Object {
     var CORSRules: js.UndefOr[CORSRules]
   }
 
-  object GetBucketCorsOutput {
-    @inline
-    def apply(
-        CORSRules: js.UndefOr[CORSRules] = js.undefined
-    ): GetBucketCorsOutput = {
-      val __obj = js.Dynamic.literal()
-      CORSRules.foreach(__v => __obj.updateDynamic("CORSRules")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBucketCorsOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketCorsRequest extends js.Object {
     var Bucket: BucketName
   }
 
-  object GetBucketCorsRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): GetBucketCorsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBucketCorsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketEncryptionOutput extends js.Object {
     var ServerSideEncryptionConfiguration: js.UndefOr[ServerSideEncryptionConfiguration]
   }
 
-  object GetBucketEncryptionOutput {
-    @inline
-    def apply(
-        ServerSideEncryptionConfiguration: js.UndefOr[ServerSideEncryptionConfiguration] = js.undefined
-    ): GetBucketEncryptionOutput = {
-      val __obj = js.Dynamic.literal()
-      ServerSideEncryptionConfiguration.foreach(__v =>
-        __obj.updateDynamic("ServerSideEncryptionConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[GetBucketEncryptionOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketEncryptionRequest extends js.Object {
     var Bucket: BucketName
   }
 
-  object GetBucketEncryptionRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): GetBucketEncryptionRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBucketEncryptionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketInventoryConfigurationOutput extends js.Object {
     var InventoryConfiguration: js.UndefOr[InventoryConfiguration]
   }
 
-  object GetBucketInventoryConfigurationOutput {
-    @inline
-    def apply(
-        InventoryConfiguration: js.UndefOr[InventoryConfiguration] = js.undefined
-    ): GetBucketInventoryConfigurationOutput = {
-      val __obj = js.Dynamic.literal()
-      InventoryConfiguration.foreach(__v => __obj.updateDynamic("InventoryConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBucketInventoryConfigurationOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketInventoryConfigurationRequest extends js.Object {
     var Bucket: BucketName
     var Id: InventoryId
   }
 
-  object GetBucketInventoryConfigurationRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Id: InventoryId
-    ): GetBucketInventoryConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Id"     -> Id.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBucketInventoryConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketLifecycleConfigurationOutput extends js.Object {
     var Rules: js.UndefOr[LifecycleRules]
   }
 
-  object GetBucketLifecycleConfigurationOutput {
-    @inline
-    def apply(
-        Rules: js.UndefOr[LifecycleRules] = js.undefined
-    ): GetBucketLifecycleConfigurationOutput = {
-      val __obj = js.Dynamic.literal()
-      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBucketLifecycleConfigurationOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketLifecycleConfigurationRequest extends js.Object {
     var Bucket: BucketName
   }
 
-  object GetBucketLifecycleConfigurationRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): GetBucketLifecycleConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBucketLifecycleConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketLifecycleOutput extends js.Object {
     var Rules: js.UndefOr[Rules]
   }
 
-  object GetBucketLifecycleOutput {
-    @inline
-    def apply(
-        Rules: js.UndefOr[Rules] = js.undefined
-    ): GetBucketLifecycleOutput = {
-      val __obj = js.Dynamic.literal()
-      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBucketLifecycleOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketLifecycleRequest extends js.Object {
     var Bucket: BucketName
   }
 
-  object GetBucketLifecycleRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): GetBucketLifecycleRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBucketLifecycleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketLocationOutput extends js.Object {
     var LocationConstraint: js.UndefOr[BucketLocationConstraint]
   }
 
-  object GetBucketLocationOutput {
-    @inline
-    def apply(
-        LocationConstraint: js.UndefOr[BucketLocationConstraint] = js.undefined
-    ): GetBucketLocationOutput = {
-      val __obj = js.Dynamic.literal()
-      LocationConstraint.foreach(__v => __obj.updateDynamic("LocationConstraint")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBucketLocationOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketLocationRequest extends js.Object {
     var Bucket: BucketName
   }
 
-  object GetBucketLocationRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): GetBucketLocationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBucketLocationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketLoggingOutput extends js.Object {
     var LoggingEnabled: js.UndefOr[LoggingEnabled]
   }
 
-  object GetBucketLoggingOutput {
-    @inline
-    def apply(
-        LoggingEnabled: js.UndefOr[LoggingEnabled] = js.undefined
-    ): GetBucketLoggingOutput = {
-      val __obj = js.Dynamic.literal()
-      LoggingEnabled.foreach(__v => __obj.updateDynamic("LoggingEnabled")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBucketLoggingOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketLoggingRequest extends js.Object {
     var Bucket: BucketName
   }
 
-  object GetBucketLoggingRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): GetBucketLoggingRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBucketLoggingRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketMetricsConfigurationOutput extends js.Object {
     var MetricsConfiguration: js.UndefOr[MetricsConfiguration]
   }
 
-  object GetBucketMetricsConfigurationOutput {
-    @inline
-    def apply(
-        MetricsConfiguration: js.UndefOr[MetricsConfiguration] = js.undefined
-    ): GetBucketMetricsConfigurationOutput = {
-      val __obj = js.Dynamic.literal()
-      MetricsConfiguration.foreach(__v => __obj.updateDynamic("MetricsConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBucketMetricsConfigurationOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketMetricsConfigurationRequest extends js.Object {
     var Bucket: BucketName
     var Id: MetricsId
   }
 
-  object GetBucketMetricsConfigurationRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Id: MetricsId
-    ): GetBucketMetricsConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Id"     -> Id.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBucketMetricsConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketNotificationConfigurationRequest extends js.Object {
     var Bucket: BucketName
   }
 
-  object GetBucketNotificationConfigurationRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): GetBucketNotificationConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBucketNotificationConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketPolicyOutput extends js.Object {
     var Policy: js.UndefOr[Policy]
   }
 
-  object GetBucketPolicyOutput {
-    @inline
-    def apply(
-        Policy: js.UndefOr[Policy] = js.undefined
-    ): GetBucketPolicyOutput = {
-      val __obj = js.Dynamic.literal()
-      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBucketPolicyOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketPolicyRequest extends js.Object {
     var Bucket: BucketName
   }
 
-  object GetBucketPolicyRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): GetBucketPolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBucketPolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketPolicyStatusOutput extends js.Object {
     var PolicyStatus: js.UndefOr[PolicyStatus]
   }
 
-  object GetBucketPolicyStatusOutput {
-    @inline
-    def apply(
-        PolicyStatus: js.UndefOr[PolicyStatus] = js.undefined
-    ): GetBucketPolicyStatusOutput = {
-      val __obj = js.Dynamic.literal()
-      PolicyStatus.foreach(__v => __obj.updateDynamic("PolicyStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBucketPolicyStatusOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketPolicyStatusRequest extends js.Object {
     var Bucket: BucketName
   }
 
-  object GetBucketPolicyStatusRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): GetBucketPolicyStatusRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBucketPolicyStatusRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketReplicationOutput extends js.Object {
     var ReplicationConfiguration: js.UndefOr[ReplicationConfiguration]
   }
 
-  object GetBucketReplicationOutput {
-    @inline
-    def apply(
-        ReplicationConfiguration: js.UndefOr[ReplicationConfiguration] = js.undefined
-    ): GetBucketReplicationOutput = {
-      val __obj = js.Dynamic.literal()
-      ReplicationConfiguration.foreach(__v => __obj.updateDynamic("ReplicationConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBucketReplicationOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketReplicationRequest extends js.Object {
     var Bucket: BucketName
   }
 
-  object GetBucketReplicationRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): GetBucketReplicationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBucketReplicationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketRequestPaymentOutput extends js.Object {
     var Payer: js.UndefOr[Payer]
   }
 
-  object GetBucketRequestPaymentOutput {
-    @inline
-    def apply(
-        Payer: js.UndefOr[Payer] = js.undefined
-    ): GetBucketRequestPaymentOutput = {
-      val __obj = js.Dynamic.literal()
-      Payer.foreach(__v => __obj.updateDynamic("Payer")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBucketRequestPaymentOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketRequestPaymentRequest extends js.Object {
     var Bucket: BucketName
   }
 
-  object GetBucketRequestPaymentRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): GetBucketRequestPaymentRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBucketRequestPaymentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketTaggingOutput extends js.Object {
     var TagSet: TagSet
   }
 
-  object GetBucketTaggingOutput {
-    @inline
-    def apply(
-        TagSet: TagSet
-    ): GetBucketTaggingOutput = {
-      val __obj = js.Dynamic.literal(
-        "TagSet" -> TagSet.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBucketTaggingOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketTaggingRequest extends js.Object {
     var Bucket: BucketName
   }
 
-  object GetBucketTaggingRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): GetBucketTaggingRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBucketTaggingRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketVersioningOutput extends js.Object {
     var MFADelete: js.UndefOr[MFADeleteStatus]
     var Status: js.UndefOr[BucketVersioningStatus]
   }
 
-  object GetBucketVersioningOutput {
-    @inline
-    def apply(
-        MFADelete: js.UndefOr[MFADeleteStatus] = js.undefined,
-        Status: js.UndefOr[BucketVersioningStatus] = js.undefined
-    ): GetBucketVersioningOutput = {
-      val __obj = js.Dynamic.literal()
-      MFADelete.foreach(__v => __obj.updateDynamic("MFADelete")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBucketVersioningOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketVersioningRequest extends js.Object {
     var Bucket: BucketName
   }
 
-  object GetBucketVersioningRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): GetBucketVersioningRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBucketVersioningRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketWebsiteOutput extends js.Object {
     var ErrorDocument: js.UndefOr[ErrorDocument]
     var IndexDocument: js.UndefOr[IndexDocument]
@@ -3258,64 +1758,22 @@ package s3 {
     var RoutingRules: js.UndefOr[RoutingRules]
   }
 
-  object GetBucketWebsiteOutput {
-    @inline
-    def apply(
-        ErrorDocument: js.UndefOr[ErrorDocument] = js.undefined,
-        IndexDocument: js.UndefOr[IndexDocument] = js.undefined,
-        RedirectAllRequestsTo: js.UndefOr[RedirectAllRequestsTo] = js.undefined,
-        RoutingRules: js.UndefOr[RoutingRules] = js.undefined
-    ): GetBucketWebsiteOutput = {
-      val __obj = js.Dynamic.literal()
-      ErrorDocument.foreach(__v => __obj.updateDynamic("ErrorDocument")(__v.asInstanceOf[js.Any]))
-      IndexDocument.foreach(__v => __obj.updateDynamic("IndexDocument")(__v.asInstanceOf[js.Any]))
-      RedirectAllRequestsTo.foreach(__v => __obj.updateDynamic("RedirectAllRequestsTo")(__v.asInstanceOf[js.Any]))
-      RoutingRules.foreach(__v => __obj.updateDynamic("RoutingRules")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBucketWebsiteOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBucketWebsiteRequest extends js.Object {
     var Bucket: BucketName
   }
 
-  object GetBucketWebsiteRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): GetBucketWebsiteRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBucketWebsiteRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetObjectAclOutput extends js.Object {
     var Grants: js.UndefOr[Grants]
     var Owner: js.UndefOr[Owner]
     var RequestCharged: js.UndefOr[RequestCharged]
   }
 
-  object GetObjectAclOutput {
-    @inline
-    def apply(
-        Grants: js.UndefOr[Grants] = js.undefined,
-        Owner: js.UndefOr[Owner] = js.undefined,
-        RequestCharged: js.UndefOr[RequestCharged] = js.undefined
-    ): GetObjectAclOutput = {
-      val __obj = js.Dynamic.literal()
-      Grants.foreach(__v => __obj.updateDynamic("Grants")(__v.asInstanceOf[js.Any]))
-      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
-      RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetObjectAclOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetObjectAclRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
@@ -3323,42 +1781,14 @@ package s3 {
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
-  object GetObjectAclRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Key: ObjectKey,
-        RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
-        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
-    ): GetObjectAclRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
-      )
-
-      RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetObjectAclRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetObjectLegalHoldOutput extends js.Object {
     var LegalHold: js.UndefOr[ObjectLockLegalHold]
   }
 
-  object GetObjectLegalHoldOutput {
-    @inline
-    def apply(
-        LegalHold: js.UndefOr[ObjectLockLegalHold] = js.undefined
-    ): GetObjectLegalHoldOutput = {
-      val __obj = js.Dynamic.literal()
-      LegalHold.foreach(__v => __obj.updateDynamic("LegalHold")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetObjectLegalHoldOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetObjectLegalHoldRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
@@ -3366,60 +1796,20 @@ package s3 {
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
-  object GetObjectLegalHoldRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Key: ObjectKey,
-        RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
-        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
-    ): GetObjectLegalHoldRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
-      )
-
-      RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetObjectLegalHoldRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetObjectLockConfigurationOutput extends js.Object {
     var ObjectLockConfiguration: js.UndefOr[ObjectLockConfiguration]
   }
 
-  object GetObjectLockConfigurationOutput {
-    @inline
-    def apply(
-        ObjectLockConfiguration: js.UndefOr[ObjectLockConfiguration] = js.undefined
-    ): GetObjectLockConfigurationOutput = {
-      val __obj = js.Dynamic.literal()
-      ObjectLockConfiguration.foreach(__v => __obj.updateDynamic("ObjectLockConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetObjectLockConfigurationOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetObjectLockConfigurationRequest extends js.Object {
     var Bucket: BucketName
   }
 
-  object GetObjectLockConfigurationRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): GetObjectLockConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetObjectLockConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetObjectOutput extends js.Object {
     var AcceptRanges: js.UndefOr[AcceptRanges]
     var Body: js.UndefOr[Body]
@@ -3454,82 +1844,8 @@ package s3 {
     var WebsiteRedirectLocation: js.UndefOr[WebsiteRedirectLocation]
   }
 
-  object GetObjectOutput {
-    @inline
-    def apply(
-        AcceptRanges: js.UndefOr[AcceptRanges] = js.undefined,
-        Body: js.UndefOr[Body] = js.undefined,
-        CacheControl: js.UndefOr[CacheControl] = js.undefined,
-        ContentDisposition: js.UndefOr[ContentDisposition] = js.undefined,
-        ContentEncoding: js.UndefOr[ContentEncoding] = js.undefined,
-        ContentLanguage: js.UndefOr[ContentLanguage] = js.undefined,
-        ContentLength: js.UndefOr[ContentLength] = js.undefined,
-        ContentRange: js.UndefOr[ContentRange] = js.undefined,
-        ContentType: js.UndefOr[ContentType] = js.undefined,
-        DeleteMarker: js.UndefOr[DeleteMarker] = js.undefined,
-        ETag: js.UndefOr[ETag] = js.undefined,
-        Expiration: js.UndefOr[Expiration] = js.undefined,
-        Expires: js.UndefOr[Expires] = js.undefined,
-        LastModified: js.UndefOr[LastModified] = js.undefined,
-        Metadata: js.UndefOr[Metadata] = js.undefined,
-        MissingMeta: js.UndefOr[MissingMeta] = js.undefined,
-        ObjectLockLegalHoldStatus: js.UndefOr[ObjectLockLegalHoldStatus] = js.undefined,
-        ObjectLockMode: js.UndefOr[ObjectLockMode] = js.undefined,
-        ObjectLockRetainUntilDate: js.UndefOr[ObjectLockRetainUntilDate] = js.undefined,
-        PartsCount: js.UndefOr[PartsCount] = js.undefined,
-        ReplicationStatus: js.UndefOr[ReplicationStatus] = js.undefined,
-        RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
-        Restore: js.UndefOr[Restore] = js.undefined,
-        SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
-        SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined,
-        SSEKMSKeyId: js.UndefOr[SSEKMSKeyId] = js.undefined,
-        ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined,
-        StorageClass: js.UndefOr[StorageClass] = js.undefined,
-        TagCount: js.UndefOr[TagCount] = js.undefined,
-        VersionId: js.UndefOr[ObjectVersionId] = js.undefined,
-        WebsiteRedirectLocation: js.UndefOr[WebsiteRedirectLocation] = js.undefined
-    ): GetObjectOutput = {
-      val __obj = js.Dynamic.literal()
-      AcceptRanges.foreach(__v => __obj.updateDynamic("AcceptRanges")(__v.asInstanceOf[js.Any]))
-      Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
-      CacheControl.foreach(__v => __obj.updateDynamic("CacheControl")(__v.asInstanceOf[js.Any]))
-      ContentDisposition.foreach(__v => __obj.updateDynamic("ContentDisposition")(__v.asInstanceOf[js.Any]))
-      ContentEncoding.foreach(__v => __obj.updateDynamic("ContentEncoding")(__v.asInstanceOf[js.Any]))
-      ContentLanguage.foreach(__v => __obj.updateDynamic("ContentLanguage")(__v.asInstanceOf[js.Any]))
-      ContentLength.foreach(__v => __obj.updateDynamic("ContentLength")(__v.asInstanceOf[js.Any]))
-      ContentRange.foreach(__v => __obj.updateDynamic("ContentRange")(__v.asInstanceOf[js.Any]))
-      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
-      DeleteMarker.foreach(__v => __obj.updateDynamic("DeleteMarker")(__v.asInstanceOf[js.Any]))
-      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
-      Expiration.foreach(__v => __obj.updateDynamic("Expiration")(__v.asInstanceOf[js.Any]))
-      Expires.foreach(__v => __obj.updateDynamic("Expires")(__v.asInstanceOf[js.Any]))
-      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
-      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
-      MissingMeta.foreach(__v => __obj.updateDynamic("MissingMeta")(__v.asInstanceOf[js.Any]))
-      ObjectLockLegalHoldStatus.foreach(__v =>
-        __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any])
-      )
-      ObjectLockMode.foreach(__v => __obj.updateDynamic("ObjectLockMode")(__v.asInstanceOf[js.Any]))
-      ObjectLockRetainUntilDate.foreach(__v =>
-        __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any])
-      )
-      PartsCount.foreach(__v => __obj.updateDynamic("PartsCount")(__v.asInstanceOf[js.Any]))
-      ReplicationStatus.foreach(__v => __obj.updateDynamic("ReplicationStatus")(__v.asInstanceOf[js.Any]))
-      RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
-      Restore.foreach(__v => __obj.updateDynamic("Restore")(__v.asInstanceOf[js.Any]))
-      SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
-      SSECustomerKeyMD5.foreach(__v => __obj.updateDynamic("SSECustomerKeyMD5")(__v.asInstanceOf[js.Any]))
-      SSEKMSKeyId.foreach(__v => __obj.updateDynamic("SSEKMSKeyId")(__v.asInstanceOf[js.Any]))
-      ServerSideEncryption.foreach(__v => __obj.updateDynamic("ServerSideEncryption")(__v.asInstanceOf[js.Any]))
-      StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
-      TagCount.foreach(__v => __obj.updateDynamic("TagCount")(__v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      WebsiteRedirectLocation.foreach(__v => __obj.updateDynamic("WebsiteRedirectLocation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetObjectOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetObjectRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
@@ -3552,74 +1868,14 @@ package s3 {
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
-  object GetObjectRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Key: ObjectKey,
-        IfMatch: js.UndefOr[IfMatch] = js.undefined,
-        IfModifiedSince: js.UndefOr[IfModifiedSince] = js.undefined,
-        IfNoneMatch: js.UndefOr[IfNoneMatch] = js.undefined,
-        IfUnmodifiedSince: js.UndefOr[IfUnmodifiedSince] = js.undefined,
-        PartNumber: js.UndefOr[PartNumber] = js.undefined,
-        Range: js.UndefOr[Range] = js.undefined,
-        RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
-        ResponseCacheControl: js.UndefOr[ResponseCacheControl] = js.undefined,
-        ResponseContentDisposition: js.UndefOr[ResponseContentDisposition] = js.undefined,
-        ResponseContentEncoding: js.UndefOr[ResponseContentEncoding] = js.undefined,
-        ResponseContentLanguage: js.UndefOr[ResponseContentLanguage] = js.undefined,
-        ResponseContentType: js.UndefOr[ResponseContentType] = js.undefined,
-        ResponseExpires: js.UndefOr[ResponseExpires] = js.undefined,
-        SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
-        SSECustomerKey: js.UndefOr[SSECustomerKey] = js.undefined,
-        SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined,
-        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
-    ): GetObjectRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
-      )
-
-      IfMatch.foreach(__v => __obj.updateDynamic("IfMatch")(__v.asInstanceOf[js.Any]))
-      IfModifiedSince.foreach(__v => __obj.updateDynamic("IfModifiedSince")(__v.asInstanceOf[js.Any]))
-      IfNoneMatch.foreach(__v => __obj.updateDynamic("IfNoneMatch")(__v.asInstanceOf[js.Any]))
-      IfUnmodifiedSince.foreach(__v => __obj.updateDynamic("IfUnmodifiedSince")(__v.asInstanceOf[js.Any]))
-      PartNumber.foreach(__v => __obj.updateDynamic("PartNumber")(__v.asInstanceOf[js.Any]))
-      Range.foreach(__v => __obj.updateDynamic("Range")(__v.asInstanceOf[js.Any]))
-      RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
-      ResponseCacheControl.foreach(__v => __obj.updateDynamic("ResponseCacheControl")(__v.asInstanceOf[js.Any]))
-      ResponseContentDisposition.foreach(__v =>
-        __obj.updateDynamic("ResponseContentDisposition")(__v.asInstanceOf[js.Any])
-      )
-      ResponseContentEncoding.foreach(__v => __obj.updateDynamic("ResponseContentEncoding")(__v.asInstanceOf[js.Any]))
-      ResponseContentLanguage.foreach(__v => __obj.updateDynamic("ResponseContentLanguage")(__v.asInstanceOf[js.Any]))
-      ResponseContentType.foreach(__v => __obj.updateDynamic("ResponseContentType")(__v.asInstanceOf[js.Any]))
-      ResponseExpires.foreach(__v => __obj.updateDynamic("ResponseExpires")(__v.asInstanceOf[js.Any]))
-      SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
-      SSECustomerKey.foreach(__v => __obj.updateDynamic("SSECustomerKey")(__v.asInstanceOf[js.Any]))
-      SSECustomerKeyMD5.foreach(__v => __obj.updateDynamic("SSECustomerKeyMD5")(__v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetObjectRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetObjectRetentionOutput extends js.Object {
     var Retention: js.UndefOr[ObjectLockRetention]
   }
 
-  object GetObjectRetentionOutput {
-    @inline
-    def apply(
-        Retention: js.UndefOr[ObjectLockRetention] = js.undefined
-    ): GetObjectRetentionOutput = {
-      val __obj = js.Dynamic.literal()
-      Retention.foreach(__v => __obj.updateDynamic("Retention")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetObjectRetentionOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetObjectRetentionRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
@@ -3627,196 +1883,72 @@ package s3 {
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
-  object GetObjectRetentionRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Key: ObjectKey,
-        RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
-        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
-    ): GetObjectRetentionRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
-      )
-
-      RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetObjectRetentionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetObjectTaggingOutput extends js.Object {
     var TagSet: TagSet
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
-  object GetObjectTaggingOutput {
-    @inline
-    def apply(
-        TagSet: TagSet,
-        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
-    ): GetObjectTaggingOutput = {
-      val __obj = js.Dynamic.literal(
-        "TagSet" -> TagSet.asInstanceOf[js.Any]
-      )
-
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetObjectTaggingOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetObjectTaggingRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
-  object GetObjectTaggingRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Key: ObjectKey,
-        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
-    ): GetObjectTaggingRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
-      )
-
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetObjectTaggingRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetObjectTorrentOutput extends js.Object {
     var Body: js.UndefOr[Body]
     var RequestCharged: js.UndefOr[RequestCharged]
   }
 
-  object GetObjectTorrentOutput {
-    @inline
-    def apply(
-        Body: js.UndefOr[Body] = js.undefined,
-        RequestCharged: js.UndefOr[RequestCharged] = js.undefined
-    ): GetObjectTorrentOutput = {
-      val __obj = js.Dynamic.literal()
-      Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
-      RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetObjectTorrentOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetObjectTorrentRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
     var RequestPayer: js.UndefOr[RequestPayer]
   }
 
-  object GetObjectTorrentRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Key: ObjectKey,
-        RequestPayer: js.UndefOr[RequestPayer] = js.undefined
-    ): GetObjectTorrentRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
-      )
-
-      RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetObjectTorrentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetPublicAccessBlockOutput extends js.Object {
     var PublicAccessBlockConfiguration: js.UndefOr[PublicAccessBlockConfiguration]
   }
 
-  object GetPublicAccessBlockOutput {
-    @inline
-    def apply(
-        PublicAccessBlockConfiguration: js.UndefOr[PublicAccessBlockConfiguration] = js.undefined
-    ): GetPublicAccessBlockOutput = {
-      val __obj = js.Dynamic.literal()
-      PublicAccessBlockConfiguration.foreach(__v =>
-        __obj.updateDynamic("PublicAccessBlockConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[GetPublicAccessBlockOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetPublicAccessBlockRequest extends js.Object {
     var Bucket: BucketName
-  }
-
-  object GetPublicAccessBlockRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): GetPublicAccessBlockRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetPublicAccessBlockRequest]
-    }
   }
 
   /**
     * Container for Glacier job parameters.
     */
   @js.native
+  @Factory
   trait GlacierJobParameters extends js.Object {
     var Tier: Tier
-  }
-
-  object GlacierJobParameters {
-    @inline
-    def apply(
-        Tier: Tier
-    ): GlacierJobParameters = {
-      val __obj = js.Dynamic.literal(
-        "Tier" -> Tier.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GlacierJobParameters]
-    }
   }
 
   /**
     * Container for grant information.
     */
   @js.native
+  @Factory
   trait Grant extends js.Object {
     var Grantee: js.UndefOr[Grantee]
     var Permission: js.UndefOr[Permission]
-  }
-
-  object Grant {
-    @inline
-    def apply(
-        Grantee: js.UndefOr[Grantee] = js.undefined,
-        Permission: js.UndefOr[Permission] = js.undefined
-    ): Grant = {
-      val __obj = js.Dynamic.literal()
-      Grantee.foreach(__v => __obj.updateDynamic("Grantee")(__v.asInstanceOf[js.Any]))
-      Permission.foreach(__v => __obj.updateDynamic("Permission")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Grant]
-    }
   }
 
   /**
     * Container for the person being granted permissions.
     */
   @js.native
+  @Factory
   trait Grantee extends js.Object {
     var Type: Type
     var DisplayName: js.UndefOr[DisplayName]
@@ -3825,46 +1957,14 @@ package s3 {
     var URI: js.UndefOr[URI]
   }
 
-  object Grantee {
-    @inline
-    def apply(
-        Type: Type,
-        DisplayName: js.UndefOr[DisplayName] = js.undefined,
-        EmailAddress: js.UndefOr[EmailAddress] = js.undefined,
-        ID: js.UndefOr[ID] = js.undefined,
-        URI: js.UndefOr[URI] = js.undefined
-    ): Grantee = {
-      val __obj = js.Dynamic.literal(
-        "Type" -> Type.asInstanceOf[js.Any]
-      )
-
-      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
-      EmailAddress.foreach(__v => __obj.updateDynamic("EmailAddress")(__v.asInstanceOf[js.Any]))
-      ID.foreach(__v => __obj.updateDynamic("ID")(__v.asInstanceOf[js.Any]))
-      URI.foreach(__v => __obj.updateDynamic("URI")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Grantee]
-    }
-  }
-
   @js.native
+  @Factory
   trait HeadBucketRequest extends js.Object {
     var Bucket: BucketName
   }
 
-  object HeadBucketRequest {
-    @inline
-    def apply(
-        Bucket: BucketName
-    ): HeadBucketRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[HeadBucketRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait HeadObjectOutput extends js.Object {
     var AcceptRanges: js.UndefOr[AcceptRanges]
     var CacheControl: js.UndefOr[CacheControl]
@@ -3896,76 +1996,8 @@ package s3 {
     var WebsiteRedirectLocation: js.UndefOr[WebsiteRedirectLocation]
   }
 
-  object HeadObjectOutput {
-    @inline
-    def apply(
-        AcceptRanges: js.UndefOr[AcceptRanges] = js.undefined,
-        CacheControl: js.UndefOr[CacheControl] = js.undefined,
-        ContentDisposition: js.UndefOr[ContentDisposition] = js.undefined,
-        ContentEncoding: js.UndefOr[ContentEncoding] = js.undefined,
-        ContentLanguage: js.UndefOr[ContentLanguage] = js.undefined,
-        ContentLength: js.UndefOr[ContentLength] = js.undefined,
-        ContentType: js.UndefOr[ContentType] = js.undefined,
-        DeleteMarker: js.UndefOr[DeleteMarker] = js.undefined,
-        ETag: js.UndefOr[ETag] = js.undefined,
-        Expiration: js.UndefOr[Expiration] = js.undefined,
-        Expires: js.UndefOr[Expires] = js.undefined,
-        LastModified: js.UndefOr[LastModified] = js.undefined,
-        Metadata: js.UndefOr[Metadata] = js.undefined,
-        MissingMeta: js.UndefOr[MissingMeta] = js.undefined,
-        ObjectLockLegalHoldStatus: js.UndefOr[ObjectLockLegalHoldStatus] = js.undefined,
-        ObjectLockMode: js.UndefOr[ObjectLockMode] = js.undefined,
-        ObjectLockRetainUntilDate: js.UndefOr[ObjectLockRetainUntilDate] = js.undefined,
-        PartsCount: js.UndefOr[PartsCount] = js.undefined,
-        ReplicationStatus: js.UndefOr[ReplicationStatus] = js.undefined,
-        RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
-        Restore: js.UndefOr[Restore] = js.undefined,
-        SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
-        SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined,
-        SSEKMSKeyId: js.UndefOr[SSEKMSKeyId] = js.undefined,
-        ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined,
-        StorageClass: js.UndefOr[StorageClass] = js.undefined,
-        VersionId: js.UndefOr[ObjectVersionId] = js.undefined,
-        WebsiteRedirectLocation: js.UndefOr[WebsiteRedirectLocation] = js.undefined
-    ): HeadObjectOutput = {
-      val __obj = js.Dynamic.literal()
-      AcceptRanges.foreach(__v => __obj.updateDynamic("AcceptRanges")(__v.asInstanceOf[js.Any]))
-      CacheControl.foreach(__v => __obj.updateDynamic("CacheControl")(__v.asInstanceOf[js.Any]))
-      ContentDisposition.foreach(__v => __obj.updateDynamic("ContentDisposition")(__v.asInstanceOf[js.Any]))
-      ContentEncoding.foreach(__v => __obj.updateDynamic("ContentEncoding")(__v.asInstanceOf[js.Any]))
-      ContentLanguage.foreach(__v => __obj.updateDynamic("ContentLanguage")(__v.asInstanceOf[js.Any]))
-      ContentLength.foreach(__v => __obj.updateDynamic("ContentLength")(__v.asInstanceOf[js.Any]))
-      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
-      DeleteMarker.foreach(__v => __obj.updateDynamic("DeleteMarker")(__v.asInstanceOf[js.Any]))
-      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
-      Expiration.foreach(__v => __obj.updateDynamic("Expiration")(__v.asInstanceOf[js.Any]))
-      Expires.foreach(__v => __obj.updateDynamic("Expires")(__v.asInstanceOf[js.Any]))
-      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
-      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
-      MissingMeta.foreach(__v => __obj.updateDynamic("MissingMeta")(__v.asInstanceOf[js.Any]))
-      ObjectLockLegalHoldStatus.foreach(__v =>
-        __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any])
-      )
-      ObjectLockMode.foreach(__v => __obj.updateDynamic("ObjectLockMode")(__v.asInstanceOf[js.Any]))
-      ObjectLockRetainUntilDate.foreach(__v =>
-        __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any])
-      )
-      PartsCount.foreach(__v => __obj.updateDynamic("PartsCount")(__v.asInstanceOf[js.Any]))
-      ReplicationStatus.foreach(__v => __obj.updateDynamic("ReplicationStatus")(__v.asInstanceOf[js.Any]))
-      RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
-      Restore.foreach(__v => __obj.updateDynamic("Restore")(__v.asInstanceOf[js.Any]))
-      SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
-      SSECustomerKeyMD5.foreach(__v => __obj.updateDynamic("SSECustomerKeyMD5")(__v.asInstanceOf[js.Any]))
-      SSEKMSKeyId.foreach(__v => __obj.updateDynamic("SSEKMSKeyId")(__v.asInstanceOf[js.Any]))
-      ServerSideEncryption.foreach(__v => __obj.updateDynamic("ServerSideEncryption")(__v.asInstanceOf[js.Any]))
-      StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      WebsiteRedirectLocation.foreach(__v => __obj.updateDynamic("WebsiteRedirectLocation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HeadObjectOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait HeadObjectRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
@@ -3982,90 +2014,30 @@ package s3 {
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
-  object HeadObjectRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Key: ObjectKey,
-        IfMatch: js.UndefOr[IfMatch] = js.undefined,
-        IfModifiedSince: js.UndefOr[IfModifiedSince] = js.undefined,
-        IfNoneMatch: js.UndefOr[IfNoneMatch] = js.undefined,
-        IfUnmodifiedSince: js.UndefOr[IfUnmodifiedSince] = js.undefined,
-        PartNumber: js.UndefOr[PartNumber] = js.undefined,
-        Range: js.UndefOr[Range] = js.undefined,
-        RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
-        SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
-        SSECustomerKey: js.UndefOr[SSECustomerKey] = js.undefined,
-        SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined,
-        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
-    ): HeadObjectRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
-      )
-
-      IfMatch.foreach(__v => __obj.updateDynamic("IfMatch")(__v.asInstanceOf[js.Any]))
-      IfModifiedSince.foreach(__v => __obj.updateDynamic("IfModifiedSince")(__v.asInstanceOf[js.Any]))
-      IfNoneMatch.foreach(__v => __obj.updateDynamic("IfNoneMatch")(__v.asInstanceOf[js.Any]))
-      IfUnmodifiedSince.foreach(__v => __obj.updateDynamic("IfUnmodifiedSince")(__v.asInstanceOf[js.Any]))
-      PartNumber.foreach(__v => __obj.updateDynamic("PartNumber")(__v.asInstanceOf[js.Any]))
-      Range.foreach(__v => __obj.updateDynamic("Range")(__v.asInstanceOf[js.Any]))
-      RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
-      SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
-      SSECustomerKey.foreach(__v => __obj.updateDynamic("SSECustomerKey")(__v.asInstanceOf[js.Any]))
-      SSECustomerKeyMD5.foreach(__v => __obj.updateDynamic("SSECustomerKeyMD5")(__v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HeadObjectRequest]
-    }
-  }
-
   /**
     * Container for the <code>Suffix</code> element.
     */
   @js.native
+  @Factory
   trait IndexDocument extends js.Object {
     var Suffix: Suffix
-  }
-
-  object IndexDocument {
-    @inline
-    def apply(
-        Suffix: Suffix
-    ): IndexDocument = {
-      val __obj = js.Dynamic.literal(
-        "Suffix" -> Suffix.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[IndexDocument]
-    }
   }
 
   /**
     * Container element that identifies who initiated the multipart upload.
     */
   @js.native
+  @Factory
   trait Initiator extends js.Object {
     var DisplayName: js.UndefOr[DisplayName]
     var ID: js.UndefOr[ID]
-  }
-
-  object Initiator {
-    @inline
-    def apply(
-        DisplayName: js.UndefOr[DisplayName] = js.undefined,
-        ID: js.UndefOr[ID] = js.undefined
-    ): Initiator = {
-      val __obj = js.Dynamic.literal()
-      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
-      ID.foreach(__v => __obj.updateDynamic("ID")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Initiator]
-    }
   }
 
   /**
     * Describes the serialization format of the object.
     */
   @js.native
+  @Factory
   trait InputSerialization extends js.Object {
     var CSV: js.UndefOr[CSVInput]
     var CompressionType: js.UndefOr[CompressionType]
@@ -4073,27 +2045,11 @@ package s3 {
     var Parquet: js.UndefOr[ParquetInput]
   }
 
-  object InputSerialization {
-    @inline
-    def apply(
-        CSV: js.UndefOr[CSVInput] = js.undefined,
-        CompressionType: js.UndefOr[CompressionType] = js.undefined,
-        JSON: js.UndefOr[JSONInput] = js.undefined,
-        Parquet: js.UndefOr[ParquetInput] = js.undefined
-    ): InputSerialization = {
-      val __obj = js.Dynamic.literal()
-      CSV.foreach(__v => __obj.updateDynamic("CSV")(__v.asInstanceOf[js.Any]))
-      CompressionType.foreach(__v => __obj.updateDynamic("CompressionType")(__v.asInstanceOf[js.Any]))
-      JSON.foreach(__v => __obj.updateDynamic("JSON")(__v.asInstanceOf[js.Any]))
-      Parquet.foreach(__v => __obj.updateDynamic("Parquet")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InputSerialization]
-    }
-  }
-
   /**
     * Specifies the inventory configuration for an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETInventoryConfig.html|GET Bucket inventory]] in the <i>Amazon Simple Storage Service API Reference</i>.
     */
   @js.native
+  @Factory
   trait InventoryConfiguration extends js.Object {
     var Destination: InventoryDestination
     var Id: InventoryId
@@ -4104,93 +2060,32 @@ package s3 {
     var OptionalFields: js.UndefOr[InventoryOptionalFields]
   }
 
-  object InventoryConfiguration {
-    @inline
-    def apply(
-        Destination: InventoryDestination,
-        Id: InventoryId,
-        IncludedObjectVersions: InventoryIncludedObjectVersions,
-        IsEnabled: IsEnabled,
-        Schedule: InventorySchedule,
-        Filter: js.UndefOr[InventoryFilter] = js.undefined,
-        OptionalFields: js.UndefOr[InventoryOptionalFields] = js.undefined
-    ): InventoryConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "Destination"            -> Destination.asInstanceOf[js.Any],
-        "Id"                     -> Id.asInstanceOf[js.Any],
-        "IncludedObjectVersions" -> IncludedObjectVersions.asInstanceOf[js.Any],
-        "IsEnabled"              -> IsEnabled.asInstanceOf[js.Any],
-        "Schedule"               -> Schedule.asInstanceOf[js.Any]
-      )
-
-      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
-      OptionalFields.foreach(__v => __obj.updateDynamic("OptionalFields")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InventoryConfiguration]
-    }
-  }
-
   /**
     * Specifies the inventory configuration for an Amazon S3 bucket.
     */
   @js.native
+  @Factory
   trait InventoryDestination extends js.Object {
     var S3BucketDestination: InventoryS3BucketDestination
-  }
-
-  object InventoryDestination {
-    @inline
-    def apply(
-        S3BucketDestination: InventoryS3BucketDestination
-    ): InventoryDestination = {
-      val __obj = js.Dynamic.literal(
-        "S3BucketDestination" -> S3BucketDestination.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[InventoryDestination]
-    }
   }
 
   /**
     * Contains the type of server-side encryption used to encrypt the inventory results.
     */
   @js.native
+  @Factory
   trait InventoryEncryption extends js.Object {
     var SSEKMS: js.UndefOr[SSEKMS]
     var SSES3: js.UndefOr[SSES3]
-  }
-
-  object InventoryEncryption {
-    @inline
-    def apply(
-        SSEKMS: js.UndefOr[SSEKMS] = js.undefined,
-        SSES3: js.UndefOr[SSES3] = js.undefined
-    ): InventoryEncryption = {
-      val __obj = js.Dynamic.literal()
-      SSEKMS.foreach(__v => __obj.updateDynamic("SSEKMS")(__v.asInstanceOf[js.Any]))
-      SSES3.foreach(__v => __obj.updateDynamic("SSES3")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InventoryEncryption]
-    }
   }
 
   /**
     * Specifies an inventory filter. The inventory only includes objects that meet the filter's criteria.
     */
   @js.native
+  @Factory
   trait InventoryFilter extends js.Object {
     var Prefix: Prefix
-  }
-
-  object InventoryFilter {
-    @inline
-    def apply(
-        Prefix: Prefix
-    ): InventoryFilter = {
-      val __obj = js.Dynamic.literal(
-        "Prefix" -> Prefix.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[InventoryFilter]
-    }
   }
 
   @js.native
@@ -4257,6 +2152,7 @@ package s3 {
     * Contains the bucket name, file format, bucket owner (optional), and prefix (optional) where inventory results are published.
     */
   @js.native
+  @Factory
   trait InventoryS3BucketDestination extends js.Object {
     var Bucket: BucketName
     var Format: InventoryFormat
@@ -4265,84 +2161,31 @@ package s3 {
     var Prefix: js.UndefOr[Prefix]
   }
 
-  object InventoryS3BucketDestination {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Format: InventoryFormat,
-        AccountId: js.UndefOr[AccountId] = js.undefined,
-        Encryption: js.UndefOr[InventoryEncryption] = js.undefined,
-        Prefix: js.UndefOr[Prefix] = js.undefined
-    ): InventoryS3BucketDestination = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Format" -> Format.asInstanceOf[js.Any]
-      )
-
-      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
-      Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
-      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InventoryS3BucketDestination]
-    }
-  }
-
   /**
     * Specifies the schedule for generating inventory results.
     */
   @js.native
+  @Factory
   trait InventorySchedule extends js.Object {
     var Frequency: InventoryFrequency
-  }
-
-  object InventorySchedule {
-    @inline
-    def apply(
-        Frequency: InventoryFrequency
-    ): InventorySchedule = {
-      val __obj = js.Dynamic.literal(
-        "Frequency" -> Frequency.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[InventorySchedule]
-    }
   }
 
   /**
     * Specifies JSON as object's input serialization format.
     */
   @js.native
+  @Factory
   trait JSONInput extends js.Object {
     var Type: js.UndefOr[JSONType]
-  }
-
-  object JSONInput {
-    @inline
-    def apply(
-        Type: js.UndefOr[JSONType] = js.undefined
-    ): JSONInput = {
-      val __obj = js.Dynamic.literal()
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[JSONInput]
-    }
   }
 
   /**
     * Specifies JSON as request's output serialization format.
     */
   @js.native
+  @Factory
   trait JSONOutput extends js.Object {
     var RecordDelimiter: js.UndefOr[RecordDelimiter]
-  }
-
-  object JSONOutput {
-    @inline
-    def apply(
-        RecordDelimiter: js.UndefOr[RecordDelimiter] = js.undefined
-    ): JSONOutput = {
-      val __obj = js.Dynamic.literal()
-      RecordDelimiter.foreach(__v => __obj.updateDynamic("RecordDelimiter")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[JSONOutput]
-    }
   }
 
   @js.native
@@ -4358,6 +2201,7 @@ package s3 {
     * A container for specifying the configuration for AWS Lambda notifications.
     */
   @js.native
+  @Factory
   trait LambdaFunctionConfiguration extends js.Object {
     var Events: EventList
     var LambdaFunctionArn: LambdaFunctionArn
@@ -4365,77 +2209,31 @@ package s3 {
     var Id: js.UndefOr[NotificationId]
   }
 
-  object LambdaFunctionConfiguration {
-    @inline
-    def apply(
-        Events: EventList,
-        LambdaFunctionArn: LambdaFunctionArn,
-        Filter: js.UndefOr[NotificationConfigurationFilter] = js.undefined,
-        Id: js.UndefOr[NotificationId] = js.undefined
-    ): LambdaFunctionConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "Events"            -> Events.asInstanceOf[js.Any],
-        "LambdaFunctionArn" -> LambdaFunctionArn.asInstanceOf[js.Any]
-      )
-
-      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LambdaFunctionConfiguration]
-    }
-  }
-
   /**
     * Container for lifecycle rules. You can add as many as 1000 rules.
     */
   @js.native
+  @Factory
   trait LifecycleConfiguration extends js.Object {
     var Rules: Rules
-  }
-
-  object LifecycleConfiguration {
-    @inline
-    def apply(
-        Rules: Rules
-    ): LifecycleConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "Rules" -> Rules.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[LifecycleConfiguration]
-    }
   }
 
   /**
     * Container for the expiration for the lifecycle of the object.
     */
   @js.native
+  @Factory
   trait LifecycleExpiration extends js.Object {
     var Date: js.UndefOr[Date]
     var Days: js.UndefOr[Days]
     var ExpiredObjectDeleteMarker: js.UndefOr[ExpiredObjectDeleteMarker]
   }
 
-  object LifecycleExpiration {
-    @inline
-    def apply(
-        Date: js.UndefOr[Date] = js.undefined,
-        Days: js.UndefOr[Days] = js.undefined,
-        ExpiredObjectDeleteMarker: js.UndefOr[ExpiredObjectDeleteMarker] = js.undefined
-    ): LifecycleExpiration = {
-      val __obj = js.Dynamic.literal()
-      Date.foreach(__v => __obj.updateDynamic("Date")(__v.asInstanceOf[js.Any]))
-      Days.foreach(__v => __obj.updateDynamic("Days")(__v.asInstanceOf[js.Any]))
-      ExpiredObjectDeleteMarker.foreach(__v =>
-        __obj.updateDynamic("ExpiredObjectDeleteMarker")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[LifecycleExpiration]
-    }
-  }
-
   /**
     * A lifecycle rule for individual objects in an Amazon S3 bucket.
     */
   @js.native
+  @Factory
   trait LifecycleRule extends js.Object {
     var Status: ExpirationStatus
     var AbortIncompleteMultipartUpload: js.UndefOr[AbortIncompleteMultipartUpload]
@@ -4448,89 +2246,29 @@ package s3 {
     var Transitions: js.UndefOr[TransitionList]
   }
 
-  object LifecycleRule {
-    @inline
-    def apply(
-        Status: ExpirationStatus,
-        AbortIncompleteMultipartUpload: js.UndefOr[AbortIncompleteMultipartUpload] = js.undefined,
-        Expiration: js.UndefOr[LifecycleExpiration] = js.undefined,
-        Filter: js.UndefOr[LifecycleRuleFilter] = js.undefined,
-        ID: js.UndefOr[ID] = js.undefined,
-        NoncurrentVersionExpiration: js.UndefOr[NoncurrentVersionExpiration] = js.undefined,
-        NoncurrentVersionTransitions: js.UndefOr[NoncurrentVersionTransitionList] = js.undefined,
-        Prefix: js.UndefOr[Prefix] = js.undefined,
-        Transitions: js.UndefOr[TransitionList] = js.undefined
-    ): LifecycleRule = {
-      val __obj = js.Dynamic.literal(
-        "Status" -> Status.asInstanceOf[js.Any]
-      )
-
-      AbortIncompleteMultipartUpload.foreach(__v =>
-        __obj.updateDynamic("AbortIncompleteMultipartUpload")(__v.asInstanceOf[js.Any])
-      )
-      Expiration.foreach(__v => __obj.updateDynamic("Expiration")(__v.asInstanceOf[js.Any]))
-      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
-      ID.foreach(__v => __obj.updateDynamic("ID")(__v.asInstanceOf[js.Any]))
-      NoncurrentVersionExpiration.foreach(__v =>
-        __obj.updateDynamic("NoncurrentVersionExpiration")(__v.asInstanceOf[js.Any])
-      )
-      NoncurrentVersionTransitions.foreach(__v =>
-        __obj.updateDynamic("NoncurrentVersionTransitions")(__v.asInstanceOf[js.Any])
-      )
-      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
-      Transitions.foreach(__v => __obj.updateDynamic("Transitions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LifecycleRule]
-    }
-  }
-
   /**
     * This is used in a Lifecycle Rule Filter to apply a logical AND to two or more predicates. The Lifecycle Rule will apply to any object matching all of the predicates configured inside the And operator.
     */
   @js.native
+  @Factory
   trait LifecycleRuleAndOperator extends js.Object {
     var Prefix: js.UndefOr[Prefix]
     var Tags: js.UndefOr[TagSet]
-  }
-
-  object LifecycleRuleAndOperator {
-    @inline
-    def apply(
-        Prefix: js.UndefOr[Prefix] = js.undefined,
-        Tags: js.UndefOr[TagSet] = js.undefined
-    ): LifecycleRuleAndOperator = {
-      val __obj = js.Dynamic.literal()
-      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LifecycleRuleAndOperator]
-    }
   }
 
   /**
     * The <code>Filter</code> is used to identify objects that a Lifecycle Rule applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>, <code>Tag</code>, or <code>And</code> specified.
     */
   @js.native
+  @Factory
   trait LifecycleRuleFilter extends js.Object {
     var And: js.UndefOr[LifecycleRuleAndOperator]
     var Prefix: js.UndefOr[Prefix]
     var Tag: js.UndefOr[Tag]
   }
 
-  object LifecycleRuleFilter {
-    @inline
-    def apply(
-        And: js.UndefOr[LifecycleRuleAndOperator] = js.undefined,
-        Prefix: js.UndefOr[Prefix] = js.undefined,
-        Tag: js.UndefOr[Tag] = js.undefined
-    ): LifecycleRuleFilter = {
-      val __obj = js.Dynamic.literal()
-      And.foreach(__v => __obj.updateDynamic("And")(__v.asInstanceOf[js.Any]))
-      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
-      Tag.foreach(__v => __obj.updateDynamic("Tag")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LifecycleRuleFilter]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListBucketAnalyticsConfigurationsOutput extends js.Object {
     var AnalyticsConfigurationList: js.UndefOr[AnalyticsConfigurationList]
     var ContinuationToken: js.UndefOr[Token]
@@ -4538,47 +2276,15 @@ package s3 {
     var NextContinuationToken: js.UndefOr[NextToken]
   }
 
-  object ListBucketAnalyticsConfigurationsOutput {
-    @inline
-    def apply(
-        AnalyticsConfigurationList: js.UndefOr[AnalyticsConfigurationList] = js.undefined,
-        ContinuationToken: js.UndefOr[Token] = js.undefined,
-        IsTruncated: js.UndefOr[IsTruncated] = js.undefined,
-        NextContinuationToken: js.UndefOr[NextToken] = js.undefined
-    ): ListBucketAnalyticsConfigurationsOutput = {
-      val __obj = js.Dynamic.literal()
-      AnalyticsConfigurationList.foreach(__v =>
-        __obj.updateDynamic("AnalyticsConfigurationList")(__v.asInstanceOf[js.Any])
-      )
-      ContinuationToken.foreach(__v => __obj.updateDynamic("ContinuationToken")(__v.asInstanceOf[js.Any]))
-      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
-      NextContinuationToken.foreach(__v => __obj.updateDynamic("NextContinuationToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListBucketAnalyticsConfigurationsOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListBucketAnalyticsConfigurationsRequest extends js.Object {
     var Bucket: BucketName
     var ContinuationToken: js.UndefOr[Token]
   }
 
-  object ListBucketAnalyticsConfigurationsRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        ContinuationToken: js.UndefOr[Token] = js.undefined
-    ): ListBucketAnalyticsConfigurationsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      ContinuationToken.foreach(__v => __obj.updateDynamic("ContinuationToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListBucketAnalyticsConfigurationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListBucketInventoryConfigurationsOutput extends js.Object {
     var ContinuationToken: js.UndefOr[Token]
     var InventoryConfigurationList: js.UndefOr[InventoryConfigurationList]
@@ -4586,47 +2292,15 @@ package s3 {
     var NextContinuationToken: js.UndefOr[NextToken]
   }
 
-  object ListBucketInventoryConfigurationsOutput {
-    @inline
-    def apply(
-        ContinuationToken: js.UndefOr[Token] = js.undefined,
-        InventoryConfigurationList: js.UndefOr[InventoryConfigurationList] = js.undefined,
-        IsTruncated: js.UndefOr[IsTruncated] = js.undefined,
-        NextContinuationToken: js.UndefOr[NextToken] = js.undefined
-    ): ListBucketInventoryConfigurationsOutput = {
-      val __obj = js.Dynamic.literal()
-      ContinuationToken.foreach(__v => __obj.updateDynamic("ContinuationToken")(__v.asInstanceOf[js.Any]))
-      InventoryConfigurationList.foreach(__v =>
-        __obj.updateDynamic("InventoryConfigurationList")(__v.asInstanceOf[js.Any])
-      )
-      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
-      NextContinuationToken.foreach(__v => __obj.updateDynamic("NextContinuationToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListBucketInventoryConfigurationsOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListBucketInventoryConfigurationsRequest extends js.Object {
     var Bucket: BucketName
     var ContinuationToken: js.UndefOr[Token]
   }
 
-  object ListBucketInventoryConfigurationsRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        ContinuationToken: js.UndefOr[Token] = js.undefined
-    ): ListBucketInventoryConfigurationsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      ContinuationToken.foreach(__v => __obj.updateDynamic("ContinuationToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListBucketInventoryConfigurationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListBucketMetricsConfigurationsOutput extends js.Object {
     var ContinuationToken: js.UndefOr[Token]
     var IsTruncated: js.UndefOr[IsTruncated]
@@ -4634,64 +2308,22 @@ package s3 {
     var NextContinuationToken: js.UndefOr[NextToken]
   }
 
-  object ListBucketMetricsConfigurationsOutput {
-    @inline
-    def apply(
-        ContinuationToken: js.UndefOr[Token] = js.undefined,
-        IsTruncated: js.UndefOr[IsTruncated] = js.undefined,
-        MetricsConfigurationList: js.UndefOr[MetricsConfigurationList] = js.undefined,
-        NextContinuationToken: js.UndefOr[NextToken] = js.undefined
-    ): ListBucketMetricsConfigurationsOutput = {
-      val __obj = js.Dynamic.literal()
-      ContinuationToken.foreach(__v => __obj.updateDynamic("ContinuationToken")(__v.asInstanceOf[js.Any]))
-      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
-      MetricsConfigurationList.foreach(__v => __obj.updateDynamic("MetricsConfigurationList")(__v.asInstanceOf[js.Any]))
-      NextContinuationToken.foreach(__v => __obj.updateDynamic("NextContinuationToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListBucketMetricsConfigurationsOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListBucketMetricsConfigurationsRequest extends js.Object {
     var Bucket: BucketName
     var ContinuationToken: js.UndefOr[Token]
   }
 
-  object ListBucketMetricsConfigurationsRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        ContinuationToken: js.UndefOr[Token] = js.undefined
-    ): ListBucketMetricsConfigurationsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      ContinuationToken.foreach(__v => __obj.updateDynamic("ContinuationToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListBucketMetricsConfigurationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListBucketsOutput extends js.Object {
     var Buckets: js.UndefOr[Buckets]
     var Owner: js.UndefOr[Owner]
   }
 
-  object ListBucketsOutput {
-    @inline
-    def apply(
-        Buckets: js.UndefOr[Buckets] = js.undefined,
-        Owner: js.UndefOr[Owner] = js.undefined
-    ): ListBucketsOutput = {
-      val __obj = js.Dynamic.literal()
-      Buckets.foreach(__v => __obj.updateDynamic("Buckets")(__v.asInstanceOf[js.Any]))
-      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListBucketsOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListMultipartUploadsOutput extends js.Object {
     var Bucket: js.UndefOr[BucketName]
     var CommonPrefixes: js.UndefOr[CommonPrefixList]
@@ -4707,40 +2339,8 @@ package s3 {
     var Uploads: js.UndefOr[MultipartUploadList]
   }
 
-  object ListMultipartUploadsOutput {
-    @inline
-    def apply(
-        Bucket: js.UndefOr[BucketName] = js.undefined,
-        CommonPrefixes: js.UndefOr[CommonPrefixList] = js.undefined,
-        Delimiter: js.UndefOr[Delimiter] = js.undefined,
-        EncodingType: js.UndefOr[EncodingType] = js.undefined,
-        IsTruncated: js.UndefOr[IsTruncated] = js.undefined,
-        KeyMarker: js.UndefOr[KeyMarker] = js.undefined,
-        MaxUploads: js.UndefOr[MaxUploads] = js.undefined,
-        NextKeyMarker: js.UndefOr[NextKeyMarker] = js.undefined,
-        NextUploadIdMarker: js.UndefOr[NextUploadIdMarker] = js.undefined,
-        Prefix: js.UndefOr[Prefix] = js.undefined,
-        UploadIdMarker: js.UndefOr[UploadIdMarker] = js.undefined,
-        Uploads: js.UndefOr[MultipartUploadList] = js.undefined
-    ): ListMultipartUploadsOutput = {
-      val __obj = js.Dynamic.literal()
-      Bucket.foreach(__v => __obj.updateDynamic("Bucket")(__v.asInstanceOf[js.Any]))
-      CommonPrefixes.foreach(__v => __obj.updateDynamic("CommonPrefixes")(__v.asInstanceOf[js.Any]))
-      Delimiter.foreach(__v => __obj.updateDynamic("Delimiter")(__v.asInstanceOf[js.Any]))
-      EncodingType.foreach(__v => __obj.updateDynamic("EncodingType")(__v.asInstanceOf[js.Any]))
-      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
-      KeyMarker.foreach(__v => __obj.updateDynamic("KeyMarker")(__v.asInstanceOf[js.Any]))
-      MaxUploads.foreach(__v => __obj.updateDynamic("MaxUploads")(__v.asInstanceOf[js.Any]))
-      NextKeyMarker.foreach(__v => __obj.updateDynamic("NextKeyMarker")(__v.asInstanceOf[js.Any]))
-      NextUploadIdMarker.foreach(__v => __obj.updateDynamic("NextUploadIdMarker")(__v.asInstanceOf[js.Any]))
-      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
-      UploadIdMarker.foreach(__v => __obj.updateDynamic("UploadIdMarker")(__v.asInstanceOf[js.Any]))
-      Uploads.foreach(__v => __obj.updateDynamic("Uploads")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListMultipartUploadsOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListMultipartUploadsRequest extends js.Object {
     var Bucket: BucketName
     var Delimiter: js.UndefOr[Delimiter]
@@ -4751,32 +2351,8 @@ package s3 {
     var UploadIdMarker: js.UndefOr[UploadIdMarker]
   }
 
-  object ListMultipartUploadsRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Delimiter: js.UndefOr[Delimiter] = js.undefined,
-        EncodingType: js.UndefOr[EncodingType] = js.undefined,
-        KeyMarker: js.UndefOr[KeyMarker] = js.undefined,
-        MaxUploads: js.UndefOr[MaxUploads] = js.undefined,
-        Prefix: js.UndefOr[Prefix] = js.undefined,
-        UploadIdMarker: js.UndefOr[UploadIdMarker] = js.undefined
-    ): ListMultipartUploadsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      Delimiter.foreach(__v => __obj.updateDynamic("Delimiter")(__v.asInstanceOf[js.Any]))
-      EncodingType.foreach(__v => __obj.updateDynamic("EncodingType")(__v.asInstanceOf[js.Any]))
-      KeyMarker.foreach(__v => __obj.updateDynamic("KeyMarker")(__v.asInstanceOf[js.Any]))
-      MaxUploads.foreach(__v => __obj.updateDynamic("MaxUploads")(__v.asInstanceOf[js.Any]))
-      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
-      UploadIdMarker.foreach(__v => __obj.updateDynamic("UploadIdMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListMultipartUploadsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListObjectVersionsOutput extends js.Object {
     var CommonPrefixes: js.UndefOr[CommonPrefixList]
     var DeleteMarkers: js.UndefOr[DeleteMarkers]
@@ -4793,42 +2369,8 @@ package s3 {
     var Versions: js.UndefOr[ObjectVersionList]
   }
 
-  object ListObjectVersionsOutput {
-    @inline
-    def apply(
-        CommonPrefixes: js.UndefOr[CommonPrefixList] = js.undefined,
-        DeleteMarkers: js.UndefOr[DeleteMarkers] = js.undefined,
-        Delimiter: js.UndefOr[Delimiter] = js.undefined,
-        EncodingType: js.UndefOr[EncodingType] = js.undefined,
-        IsTruncated: js.UndefOr[IsTruncated] = js.undefined,
-        KeyMarker: js.UndefOr[KeyMarker] = js.undefined,
-        MaxKeys: js.UndefOr[MaxKeys] = js.undefined,
-        Name: js.UndefOr[BucketName] = js.undefined,
-        NextKeyMarker: js.UndefOr[NextKeyMarker] = js.undefined,
-        NextVersionIdMarker: js.UndefOr[NextVersionIdMarker] = js.undefined,
-        Prefix: js.UndefOr[Prefix] = js.undefined,
-        VersionIdMarker: js.UndefOr[VersionIdMarker] = js.undefined,
-        Versions: js.UndefOr[ObjectVersionList] = js.undefined
-    ): ListObjectVersionsOutput = {
-      val __obj = js.Dynamic.literal()
-      CommonPrefixes.foreach(__v => __obj.updateDynamic("CommonPrefixes")(__v.asInstanceOf[js.Any]))
-      DeleteMarkers.foreach(__v => __obj.updateDynamic("DeleteMarkers")(__v.asInstanceOf[js.Any]))
-      Delimiter.foreach(__v => __obj.updateDynamic("Delimiter")(__v.asInstanceOf[js.Any]))
-      EncodingType.foreach(__v => __obj.updateDynamic("EncodingType")(__v.asInstanceOf[js.Any]))
-      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
-      KeyMarker.foreach(__v => __obj.updateDynamic("KeyMarker")(__v.asInstanceOf[js.Any]))
-      MaxKeys.foreach(__v => __obj.updateDynamic("MaxKeys")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      NextKeyMarker.foreach(__v => __obj.updateDynamic("NextKeyMarker")(__v.asInstanceOf[js.Any]))
-      NextVersionIdMarker.foreach(__v => __obj.updateDynamic("NextVersionIdMarker")(__v.asInstanceOf[js.Any]))
-      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
-      VersionIdMarker.foreach(__v => __obj.updateDynamic("VersionIdMarker")(__v.asInstanceOf[js.Any]))
-      Versions.foreach(__v => __obj.updateDynamic("Versions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListObjectVersionsOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListObjectVersionsRequest extends js.Object {
     var Bucket: BucketName
     var Delimiter: js.UndefOr[Delimiter]
@@ -4839,32 +2381,8 @@ package s3 {
     var VersionIdMarker: js.UndefOr[VersionIdMarker]
   }
 
-  object ListObjectVersionsRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Delimiter: js.UndefOr[Delimiter] = js.undefined,
-        EncodingType: js.UndefOr[EncodingType] = js.undefined,
-        KeyMarker: js.UndefOr[KeyMarker] = js.undefined,
-        MaxKeys: js.UndefOr[MaxKeys] = js.undefined,
-        Prefix: js.UndefOr[Prefix] = js.undefined,
-        VersionIdMarker: js.UndefOr[VersionIdMarker] = js.undefined
-    ): ListObjectVersionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      Delimiter.foreach(__v => __obj.updateDynamic("Delimiter")(__v.asInstanceOf[js.Any]))
-      EncodingType.foreach(__v => __obj.updateDynamic("EncodingType")(__v.asInstanceOf[js.Any]))
-      KeyMarker.foreach(__v => __obj.updateDynamic("KeyMarker")(__v.asInstanceOf[js.Any]))
-      MaxKeys.foreach(__v => __obj.updateDynamic("MaxKeys")(__v.asInstanceOf[js.Any]))
-      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
-      VersionIdMarker.foreach(__v => __obj.updateDynamic("VersionIdMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListObjectVersionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListObjectsOutput extends js.Object {
     var CommonPrefixes: js.UndefOr[CommonPrefixList]
     var Contents: js.UndefOr[ObjectList]
@@ -4878,36 +2396,8 @@ package s3 {
     var Prefix: js.UndefOr[Prefix]
   }
 
-  object ListObjectsOutput {
-    @inline
-    def apply(
-        CommonPrefixes: js.UndefOr[CommonPrefixList] = js.undefined,
-        Contents: js.UndefOr[ObjectList] = js.undefined,
-        Delimiter: js.UndefOr[Delimiter] = js.undefined,
-        EncodingType: js.UndefOr[EncodingType] = js.undefined,
-        IsTruncated: js.UndefOr[IsTruncated] = js.undefined,
-        Marker: js.UndefOr[Marker] = js.undefined,
-        MaxKeys: js.UndefOr[MaxKeys] = js.undefined,
-        Name: js.UndefOr[BucketName] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined,
-        Prefix: js.UndefOr[Prefix] = js.undefined
-    ): ListObjectsOutput = {
-      val __obj = js.Dynamic.literal()
-      CommonPrefixes.foreach(__v => __obj.updateDynamic("CommonPrefixes")(__v.asInstanceOf[js.Any]))
-      Contents.foreach(__v => __obj.updateDynamic("Contents")(__v.asInstanceOf[js.Any]))
-      Delimiter.foreach(__v => __obj.updateDynamic("Delimiter")(__v.asInstanceOf[js.Any]))
-      EncodingType.foreach(__v => __obj.updateDynamic("EncodingType")(__v.asInstanceOf[js.Any]))
-      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxKeys.foreach(__v => __obj.updateDynamic("MaxKeys")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListObjectsOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListObjectsRequest extends js.Object {
     var Bucket: BucketName
     var Delimiter: js.UndefOr[Delimiter]
@@ -4918,32 +2408,8 @@ package s3 {
     var RequestPayer: js.UndefOr[RequestPayer]
   }
 
-  object ListObjectsRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Delimiter: js.UndefOr[Delimiter] = js.undefined,
-        EncodingType: js.UndefOr[EncodingType] = js.undefined,
-        Marker: js.UndefOr[Marker] = js.undefined,
-        MaxKeys: js.UndefOr[MaxKeys] = js.undefined,
-        Prefix: js.UndefOr[Prefix] = js.undefined,
-        RequestPayer: js.UndefOr[RequestPayer] = js.undefined
-    ): ListObjectsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      Delimiter.foreach(__v => __obj.updateDynamic("Delimiter")(__v.asInstanceOf[js.Any]))
-      EncodingType.foreach(__v => __obj.updateDynamic("EncodingType")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxKeys.foreach(__v => __obj.updateDynamic("MaxKeys")(__v.asInstanceOf[js.Any]))
-      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
-      RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListObjectsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListObjectsV2Output extends js.Object {
     var CommonPrefixes: js.UndefOr[CommonPrefixList]
     var Contents: js.UndefOr[ObjectList]
@@ -4959,40 +2425,8 @@ package s3 {
     var StartAfter: js.UndefOr[StartAfter]
   }
 
-  object ListObjectsV2Output {
-    @inline
-    def apply(
-        CommonPrefixes: js.UndefOr[CommonPrefixList] = js.undefined,
-        Contents: js.UndefOr[ObjectList] = js.undefined,
-        ContinuationToken: js.UndefOr[Token] = js.undefined,
-        Delimiter: js.UndefOr[Delimiter] = js.undefined,
-        EncodingType: js.UndefOr[EncodingType] = js.undefined,
-        IsTruncated: js.UndefOr[IsTruncated] = js.undefined,
-        KeyCount: js.UndefOr[KeyCount] = js.undefined,
-        MaxKeys: js.UndefOr[MaxKeys] = js.undefined,
-        Name: js.UndefOr[BucketName] = js.undefined,
-        NextContinuationToken: js.UndefOr[NextToken] = js.undefined,
-        Prefix: js.UndefOr[Prefix] = js.undefined,
-        StartAfter: js.UndefOr[StartAfter] = js.undefined
-    ): ListObjectsV2Output = {
-      val __obj = js.Dynamic.literal()
-      CommonPrefixes.foreach(__v => __obj.updateDynamic("CommonPrefixes")(__v.asInstanceOf[js.Any]))
-      Contents.foreach(__v => __obj.updateDynamic("Contents")(__v.asInstanceOf[js.Any]))
-      ContinuationToken.foreach(__v => __obj.updateDynamic("ContinuationToken")(__v.asInstanceOf[js.Any]))
-      Delimiter.foreach(__v => __obj.updateDynamic("Delimiter")(__v.asInstanceOf[js.Any]))
-      EncodingType.foreach(__v => __obj.updateDynamic("EncodingType")(__v.asInstanceOf[js.Any]))
-      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
-      KeyCount.foreach(__v => __obj.updateDynamic("KeyCount")(__v.asInstanceOf[js.Any]))
-      MaxKeys.foreach(__v => __obj.updateDynamic("MaxKeys")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      NextContinuationToken.foreach(__v => __obj.updateDynamic("NextContinuationToken")(__v.asInstanceOf[js.Any]))
-      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
-      StartAfter.foreach(__v => __obj.updateDynamic("StartAfter")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListObjectsV2Output]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListObjectsV2Request extends js.Object {
     var Bucket: BucketName
     var ContinuationToken: js.UndefOr[Token]
@@ -5005,36 +2439,8 @@ package s3 {
     var StartAfter: js.UndefOr[StartAfter]
   }
 
-  object ListObjectsV2Request {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        ContinuationToken: js.UndefOr[Token] = js.undefined,
-        Delimiter: js.UndefOr[Delimiter] = js.undefined,
-        EncodingType: js.UndefOr[EncodingType] = js.undefined,
-        FetchOwner: js.UndefOr[FetchOwner] = js.undefined,
-        MaxKeys: js.UndefOr[MaxKeys] = js.undefined,
-        Prefix: js.UndefOr[Prefix] = js.undefined,
-        RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
-        StartAfter: js.UndefOr[StartAfter] = js.undefined
-    ): ListObjectsV2Request = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      ContinuationToken.foreach(__v => __obj.updateDynamic("ContinuationToken")(__v.asInstanceOf[js.Any]))
-      Delimiter.foreach(__v => __obj.updateDynamic("Delimiter")(__v.asInstanceOf[js.Any]))
-      EncodingType.foreach(__v => __obj.updateDynamic("EncodingType")(__v.asInstanceOf[js.Any]))
-      FetchOwner.foreach(__v => __obj.updateDynamic("FetchOwner")(__v.asInstanceOf[js.Any]))
-      MaxKeys.foreach(__v => __obj.updateDynamic("MaxKeys")(__v.asInstanceOf[js.Any]))
-      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
-      RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
-      StartAfter.foreach(__v => __obj.updateDynamic("StartAfter")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListObjectsV2Request]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPartsOutput extends js.Object {
     var AbortDate: js.UndefOr[AbortDate]
     var AbortRuleId: js.UndefOr[AbortRuleId]
@@ -5052,44 +2458,8 @@ package s3 {
     var UploadId: js.UndefOr[MultipartUploadId]
   }
 
-  object ListPartsOutput {
-    @inline
-    def apply(
-        AbortDate: js.UndefOr[AbortDate] = js.undefined,
-        AbortRuleId: js.UndefOr[AbortRuleId] = js.undefined,
-        Bucket: js.UndefOr[BucketName] = js.undefined,
-        Initiator: js.UndefOr[Initiator] = js.undefined,
-        IsTruncated: js.UndefOr[IsTruncated] = js.undefined,
-        Key: js.UndefOr[ObjectKey] = js.undefined,
-        MaxParts: js.UndefOr[MaxParts] = js.undefined,
-        NextPartNumberMarker: js.UndefOr[NextPartNumberMarker] = js.undefined,
-        Owner: js.UndefOr[Owner] = js.undefined,
-        PartNumberMarker: js.UndefOr[PartNumberMarker] = js.undefined,
-        Parts: js.UndefOr[Parts] = js.undefined,
-        RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
-        StorageClass: js.UndefOr[StorageClass] = js.undefined,
-        UploadId: js.UndefOr[MultipartUploadId] = js.undefined
-    ): ListPartsOutput = {
-      val __obj = js.Dynamic.literal()
-      AbortDate.foreach(__v => __obj.updateDynamic("AbortDate")(__v.asInstanceOf[js.Any]))
-      AbortRuleId.foreach(__v => __obj.updateDynamic("AbortRuleId")(__v.asInstanceOf[js.Any]))
-      Bucket.foreach(__v => __obj.updateDynamic("Bucket")(__v.asInstanceOf[js.Any]))
-      Initiator.foreach(__v => __obj.updateDynamic("Initiator")(__v.asInstanceOf[js.Any]))
-      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
-      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
-      MaxParts.foreach(__v => __obj.updateDynamic("MaxParts")(__v.asInstanceOf[js.Any]))
-      NextPartNumberMarker.foreach(__v => __obj.updateDynamic("NextPartNumberMarker")(__v.asInstanceOf[js.Any]))
-      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
-      PartNumberMarker.foreach(__v => __obj.updateDynamic("PartNumberMarker")(__v.asInstanceOf[js.Any]))
-      Parts.foreach(__v => __obj.updateDynamic("Parts")(__v.asInstanceOf[js.Any]))
-      RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
-      StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
-      UploadId.foreach(__v => __obj.updateDynamic("UploadId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPartsOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPartsRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
@@ -5099,54 +2469,15 @@ package s3 {
     var RequestPayer: js.UndefOr[RequestPayer]
   }
 
-  object ListPartsRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Key: ObjectKey,
-        UploadId: MultipartUploadId,
-        MaxParts: js.UndefOr[MaxParts] = js.undefined,
-        PartNumberMarker: js.UndefOr[PartNumberMarker] = js.undefined,
-        RequestPayer: js.UndefOr[RequestPayer] = js.undefined
-    ): ListPartsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket"   -> Bucket.asInstanceOf[js.Any],
-        "Key"      -> Key.asInstanceOf[js.Any],
-        "UploadId" -> UploadId.asInstanceOf[js.Any]
-      )
-
-      MaxParts.foreach(__v => __obj.updateDynamic("MaxParts")(__v.asInstanceOf[js.Any]))
-      PartNumberMarker.foreach(__v => __obj.updateDynamic("PartNumberMarker")(__v.asInstanceOf[js.Any]))
-      RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPartsRequest]
-    }
-  }
-
   /**
     * Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html|PUT Bucket logging]] in the <i>Amazon Simple Storage Service API Reference</i>.
     */
   @js.native
+  @Factory
   trait LoggingEnabled extends js.Object {
     var TargetBucket: TargetBucket
     var TargetPrefix: TargetPrefix
     var TargetGrants: js.UndefOr[TargetGrants]
-  }
-
-  object LoggingEnabled {
-    @inline
-    def apply(
-        TargetBucket: TargetBucket,
-        TargetPrefix: TargetPrefix,
-        TargetGrants: js.UndefOr[TargetGrants] = js.undefined
-    ): LoggingEnabled = {
-      val __obj = js.Dynamic.literal(
-        "TargetBucket" -> TargetBucket.asInstanceOf[js.Any],
-        "TargetPrefix" -> TargetPrefix.asInstanceOf[js.Any]
-      )
-
-      TargetGrants.foreach(__v => __obj.updateDynamic("TargetGrants")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LoggingEnabled]
-    }
   }
 
   @js.native
@@ -5180,117 +2511,51 @@ package s3 {
     * A metadata key-value pair to store with an object.
     */
   @js.native
+  @Factory
   trait MetadataEntry extends js.Object {
     var Name: js.UndefOr[MetadataKey]
     var Value: js.UndefOr[MetadataValue]
-  }
-
-  object MetadataEntry {
-    @inline
-    def apply(
-        Name: js.UndefOr[MetadataKey] = js.undefined,
-        Value: js.UndefOr[MetadataValue] = js.undefined
-    ): MetadataEntry = {
-      val __obj = js.Dynamic.literal()
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MetadataEntry]
-    }
   }
 
   /**
     * A container specifying replication metrics-related settings enabling metrics and Amazon S3 events for S3 Replication Time Control (S3 RTC). Must be specified together with a <code>ReplicationTime</code> block.
     */
   @js.native
+  @Factory
   trait Metrics extends js.Object {
     var EventThreshold: ReplicationTimeValue
     var Status: MetricsStatus
-  }
-
-  object Metrics {
-    @inline
-    def apply(
-        EventThreshold: ReplicationTimeValue,
-        Status: MetricsStatus
-    ): Metrics = {
-      val __obj = js.Dynamic.literal(
-        "EventThreshold" -> EventThreshold.asInstanceOf[js.Any],
-        "Status"         -> Status.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Metrics]
-    }
   }
 
   /**
     * A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter. The operator must have at least two predicates, and an object must match all of the predicates in order for the filter to apply.
     */
   @js.native
+  @Factory
   trait MetricsAndOperator extends js.Object {
     var Prefix: js.UndefOr[Prefix]
     var Tags: js.UndefOr[TagSet]
-  }
-
-  object MetricsAndOperator {
-    @inline
-    def apply(
-        Prefix: js.UndefOr[Prefix] = js.undefined,
-        Tags: js.UndefOr[TagSet] = js.undefined
-    ): MetricsAndOperator = {
-      val __obj = js.Dynamic.literal()
-      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MetricsAndOperator]
-    }
   }
 
   /**
     * Specifies a metrics configuration for the CloudWatch request metrics (specified by the metrics configuration ID) from an Amazon S3 bucket. If you're updating an existing metrics configuration, note that this is a full replacement of the existing metrics configuration. If you don't include the elements you want to keep, they are erased. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTMetricConfiguration.html| PUT Bucket metrics]] in the <i>Amazon Simple Storage Service API Reference</i>.
     */
   @js.native
+  @Factory
   trait MetricsConfiguration extends js.Object {
     var Id: MetricsId
     var Filter: js.UndefOr[MetricsFilter]
-  }
-
-  object MetricsConfiguration {
-    @inline
-    def apply(
-        Id: MetricsId,
-        Filter: js.UndefOr[MetricsFilter] = js.undefined
-    ): MetricsConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "Id" -> Id.asInstanceOf[js.Any]
-      )
-
-      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MetricsConfiguration]
-    }
   }
 
   /**
     * Specifies a metrics configuration filter. The metrics configuration only includes objects that meet the filter's criteria. A filter must be a prefix, a tag, or a conjunction (MetricsAndOperator).
     */
   @js.native
+  @Factory
   trait MetricsFilter extends js.Object {
     var And: js.UndefOr[MetricsAndOperator]
     var Prefix: js.UndefOr[Prefix]
     var Tag: js.UndefOr[Tag]
-  }
-
-  object MetricsFilter {
-    @inline
-    def apply(
-        And: js.UndefOr[MetricsAndOperator] = js.undefined,
-        Prefix: js.UndefOr[Prefix] = js.undefined,
-        Tag: js.UndefOr[Tag] = js.undefined
-    ): MetricsFilter = {
-      val __obj = js.Dynamic.literal()
-      And.foreach(__v => __obj.updateDynamic("And")(__v.asInstanceOf[js.Any]))
-      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
-      Tag.foreach(__v => __obj.updateDynamic("Tag")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MetricsFilter]
-    }
   }
 
   @js.native
@@ -5306,6 +2571,7 @@ package s3 {
     * Container for the <code>MultipartUpload</code> for the Amazon S3 object.
     */
   @js.native
+  @Factory
   trait MultipartUpload extends js.Object {
     var Initiated: js.UndefOr[Initiated]
     var Initiator: js.UndefOr[Initiator]
@@ -5315,142 +2581,58 @@ package s3 {
     var UploadId: js.UndefOr[MultipartUploadId]
   }
 
-  object MultipartUpload {
-    @inline
-    def apply(
-        Initiated: js.UndefOr[Initiated] = js.undefined,
-        Initiator: js.UndefOr[Initiator] = js.undefined,
-        Key: js.UndefOr[ObjectKey] = js.undefined,
-        Owner: js.UndefOr[Owner] = js.undefined,
-        StorageClass: js.UndefOr[StorageClass] = js.undefined,
-        UploadId: js.UndefOr[MultipartUploadId] = js.undefined
-    ): MultipartUpload = {
-      val __obj = js.Dynamic.literal()
-      Initiated.foreach(__v => __obj.updateDynamic("Initiated")(__v.asInstanceOf[js.Any]))
-      Initiator.foreach(__v => __obj.updateDynamic("Initiator")(__v.asInstanceOf[js.Any]))
-      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
-      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
-      StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
-      UploadId.foreach(__v => __obj.updateDynamic("UploadId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MultipartUpload]
-    }
-  }
-
   /**
     * Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently deletes the noncurrent object versions. You set this lifecycle configuration action on a bucket that has versioning enabled (or suspended) to request that Amazon S3 delete noncurrent object versions at a specific period in the object's lifetime.
     */
   @js.native
+  @Factory
   trait NoncurrentVersionExpiration extends js.Object {
     var NoncurrentDays: js.UndefOr[Days]
-  }
-
-  object NoncurrentVersionExpiration {
-    @inline
-    def apply(
-        NoncurrentDays: js.UndefOr[Days] = js.undefined
-    ): NoncurrentVersionExpiration = {
-      val __obj = js.Dynamic.literal()
-      NoncurrentDays.foreach(__v => __obj.updateDynamic("NoncurrentDays")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NoncurrentVersionExpiration]
-    }
   }
 
   /**
     * Container for the transition rule that describes when noncurrent objects transition to the <code>STANDARD_IA</code>, <code>ONEZONE_IA</code>, <code>INTELLIGENT_TIERING</code>, <code>GLACIER</code>, or <code>DEEP_ARCHIVE</code> storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to the <code>STANDARD_IA</code>, <code>ONEZONE_IA</code>, <code>INTELLIGENT_TIERING</code>, <code>GLACIER</code>, or <code>DEEP_ARCHIVE</code> storage class at a specific period in the object's lifetime.
     */
   @js.native
+  @Factory
   trait NoncurrentVersionTransition extends js.Object {
     var NoncurrentDays: js.UndefOr[Days]
     var StorageClass: js.UndefOr[TransitionStorageClass]
-  }
-
-  object NoncurrentVersionTransition {
-    @inline
-    def apply(
-        NoncurrentDays: js.UndefOr[Days] = js.undefined,
-        StorageClass: js.UndefOr[TransitionStorageClass] = js.undefined
-    ): NoncurrentVersionTransition = {
-      val __obj = js.Dynamic.literal()
-      NoncurrentDays.foreach(__v => __obj.updateDynamic("NoncurrentDays")(__v.asInstanceOf[js.Any]))
-      StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NoncurrentVersionTransition]
-    }
   }
 
   /**
     * A container for specifying the notification configuration of the bucket. If this element is empty, notifications are turned off for the bucket.
     */
   @js.native
+  @Factory
   trait NotificationConfiguration extends js.Object {
     var LambdaFunctionConfigurations: js.UndefOr[LambdaFunctionConfigurationList]
     var QueueConfigurations: js.UndefOr[QueueConfigurationList]
     var TopicConfigurations: js.UndefOr[TopicConfigurationList]
   }
 
-  object NotificationConfiguration {
-    @inline
-    def apply(
-        LambdaFunctionConfigurations: js.UndefOr[LambdaFunctionConfigurationList] = js.undefined,
-        QueueConfigurations: js.UndefOr[QueueConfigurationList] = js.undefined,
-        TopicConfigurations: js.UndefOr[TopicConfigurationList] = js.undefined
-    ): NotificationConfiguration = {
-      val __obj = js.Dynamic.literal()
-      LambdaFunctionConfigurations.foreach(__v =>
-        __obj.updateDynamic("LambdaFunctionConfigurations")(__v.asInstanceOf[js.Any])
-      )
-      QueueConfigurations.foreach(__v => __obj.updateDynamic("QueueConfigurations")(__v.asInstanceOf[js.Any]))
-      TopicConfigurations.foreach(__v => __obj.updateDynamic("TopicConfigurations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NotificationConfiguration]
-    }
-  }
-
   @js.native
+  @Factory
   trait NotificationConfigurationDeprecated extends js.Object {
     var CloudFunctionConfiguration: js.UndefOr[CloudFunctionConfiguration]
     var QueueConfiguration: js.UndefOr[QueueConfigurationDeprecated]
     var TopicConfiguration: js.UndefOr[TopicConfigurationDeprecated]
   }
 
-  object NotificationConfigurationDeprecated {
-    @inline
-    def apply(
-        CloudFunctionConfiguration: js.UndefOr[CloudFunctionConfiguration] = js.undefined,
-        QueueConfiguration: js.UndefOr[QueueConfigurationDeprecated] = js.undefined,
-        TopicConfiguration: js.UndefOr[TopicConfigurationDeprecated] = js.undefined
-    ): NotificationConfigurationDeprecated = {
-      val __obj = js.Dynamic.literal()
-      CloudFunctionConfiguration.foreach(__v =>
-        __obj.updateDynamic("CloudFunctionConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      QueueConfiguration.foreach(__v => __obj.updateDynamic("QueueConfiguration")(__v.asInstanceOf[js.Any]))
-      TopicConfiguration.foreach(__v => __obj.updateDynamic("TopicConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NotificationConfigurationDeprecated]
-    }
-  }
-
   /**
     * Specifies object key name filtering rules. For information about key name filtering, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html|Configuring Event Notifications]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait NotificationConfigurationFilter extends js.Object {
     var Key: js.UndefOr[S3KeyFilter]
-  }
-
-  object NotificationConfigurationFilter {
-    @inline
-    def apply(
-        Key: js.UndefOr[S3KeyFilter] = js.undefined
-    ): NotificationConfigurationFilter = {
-      val __obj = js.Dynamic.literal()
-      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NotificationConfigurationFilter]
-    }
   }
 
   /**
     * An object consists of data and its descriptive metadata.
     */
   @js.native
+  @Factory
   trait Object extends js.Object {
     var ETag: js.UndefOr[ETag]
     var Key: js.UndefOr[ObjectKey]
@@ -5458,27 +2640,6 @@ package s3 {
     var Owner: js.UndefOr[Owner]
     var Size: js.UndefOr[Size]
     var StorageClass: js.UndefOr[ObjectStorageClass]
-  }
-
-  object Object {
-    @inline
-    def apply(
-        ETag: js.UndefOr[ETag] = js.undefined,
-        Key: js.UndefOr[ObjectKey] = js.undefined,
-        LastModified: js.UndefOr[LastModified] = js.undefined,
-        Owner: js.UndefOr[Owner] = js.undefined,
-        Size: js.UndefOr[Size] = js.undefined,
-        StorageClass: js.UndefOr[ObjectStorageClass] = js.undefined
-    ): Object = {
-      val __obj = js.Dynamic.literal()
-      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
-      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
-      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
-      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
-      Size.foreach(__v => __obj.updateDynamic("Size")(__v.asInstanceOf[js.Any]))
-      StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Object]
-    }
   }
 
   @js.native
@@ -5509,46 +2670,20 @@ package s3 {
     * Object Identifier is unique value to identify objects.
     */
   @js.native
+  @Factory
   trait ObjectIdentifier extends js.Object {
     var Key: ObjectKey
     var VersionId: js.UndefOr[ObjectVersionId]
-  }
-
-  object ObjectIdentifier {
-    @inline
-    def apply(
-        Key: ObjectKey,
-        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
-    ): ObjectIdentifier = {
-      val __obj = js.Dynamic.literal(
-        "Key" -> Key.asInstanceOf[js.Any]
-      )
-
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ObjectIdentifier]
-    }
   }
 
   /**
     * The container element for Object Lock configuration parameters.
     */
   @js.native
+  @Factory
   trait ObjectLockConfiguration extends js.Object {
     var ObjectLockEnabled: js.UndefOr[ObjectLockEnabled]
     var Rule: js.UndefOr[ObjectLockRule]
-  }
-
-  object ObjectLockConfiguration {
-    @inline
-    def apply(
-        ObjectLockEnabled: js.UndefOr[ObjectLockEnabled] = js.undefined,
-        Rule: js.UndefOr[ObjectLockRule] = js.undefined
-    ): ObjectLockConfiguration = {
-      val __obj = js.Dynamic.literal()
-      ObjectLockEnabled.foreach(__v => __obj.updateDynamic("ObjectLockEnabled")(__v.asInstanceOf[js.Any]))
-      Rule.foreach(__v => __obj.updateDynamic("Rule")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ObjectLockConfiguration]
-    }
   }
 
   @js.native
@@ -5563,19 +2698,9 @@ package s3 {
     * A Legal Hold configuration for an object.
     */
   @js.native
+  @Factory
   trait ObjectLockLegalHold extends js.Object {
     var Status: js.UndefOr[ObjectLockLegalHoldStatus]
-  }
-
-  object ObjectLockLegalHold {
-    @inline
-    def apply(
-        Status: js.UndefOr[ObjectLockLegalHoldStatus] = js.undefined
-    ): ObjectLockLegalHold = {
-      val __obj = js.Dynamic.literal()
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ObjectLockLegalHold]
-    }
   }
 
   @js.native
@@ -5600,22 +2725,10 @@ package s3 {
     * A Retention configuration for an object.
     */
   @js.native
+  @Factory
   trait ObjectLockRetention extends js.Object {
     var Mode: js.UndefOr[ObjectLockRetentionMode]
     var RetainUntilDate: js.UndefOr[Date]
-  }
-
-  object ObjectLockRetention {
-    @inline
-    def apply(
-        Mode: js.UndefOr[ObjectLockRetentionMode] = js.undefined,
-        RetainUntilDate: js.UndefOr[Date] = js.undefined
-    ): ObjectLockRetention = {
-      val __obj = js.Dynamic.literal()
-      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
-      RetainUntilDate.foreach(__v => __obj.updateDynamic("RetainUntilDate")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ObjectLockRetention]
-    }
   }
 
   @js.native
@@ -5631,19 +2744,9 @@ package s3 {
     * The container element for an Object Lock rule.
     */
   @js.native
+  @Factory
   trait ObjectLockRule extends js.Object {
     var DefaultRetention: js.UndefOr[DefaultRetention]
-  }
-
-  object ObjectLockRule {
-    @inline
-    def apply(
-        DefaultRetention: js.UndefOr[DefaultRetention] = js.undefined
-    ): ObjectLockRule = {
-      val __obj = js.Dynamic.literal()
-      DefaultRetention.foreach(__v => __obj.updateDynamic("DefaultRetention")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ObjectLockRule]
-    }
   }
 
   @js.native
@@ -5666,6 +2769,7 @@ package s3 {
     * The version of an object.
     */
   @js.native
+  @Factory
   trait ObjectVersion extends js.Object {
     var ETag: js.UndefOr[ETag]
     var IsLatest: js.UndefOr[IsLatest]
@@ -5675,31 +2779,6 @@ package s3 {
     var Size: js.UndefOr[Size]
     var StorageClass: js.UndefOr[ObjectVersionStorageClass]
     var VersionId: js.UndefOr[ObjectVersionId]
-  }
-
-  object ObjectVersion {
-    @inline
-    def apply(
-        ETag: js.UndefOr[ETag] = js.undefined,
-        IsLatest: js.UndefOr[IsLatest] = js.undefined,
-        Key: js.UndefOr[ObjectKey] = js.undefined,
-        LastModified: js.UndefOr[LastModified] = js.undefined,
-        Owner: js.UndefOr[Owner] = js.undefined,
-        Size: js.UndefOr[Size] = js.undefined,
-        StorageClass: js.UndefOr[ObjectVersionStorageClass] = js.undefined,
-        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
-    ): ObjectVersion = {
-      val __obj = js.Dynamic.literal()
-      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
-      IsLatest.foreach(__v => __obj.updateDynamic("IsLatest")(__v.asInstanceOf[js.Any]))
-      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
-      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
-      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
-      Size.foreach(__v => __obj.updateDynamic("Size")(__v.asInstanceOf[js.Any]))
-      StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ObjectVersion]
-    }
   }
 
   @js.native
@@ -5714,63 +2793,29 @@ package s3 {
     * Describes the location where the restore job's output is stored.
     */
   @js.native
+  @Factory
   trait OutputLocation extends js.Object {
     var S3: js.UndefOr[S3Location]
-  }
-
-  object OutputLocation {
-    @inline
-    def apply(
-        S3: js.UndefOr[S3Location] = js.undefined
-    ): OutputLocation = {
-      val __obj = js.Dynamic.literal()
-      S3.foreach(__v => __obj.updateDynamic("S3")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[OutputLocation]
-    }
   }
 
   /**
     * Describes how results of the Select job are serialized.
     */
   @js.native
+  @Factory
   trait OutputSerialization extends js.Object {
     var CSV: js.UndefOr[CSVOutput]
     var JSON: js.UndefOr[JSONOutput]
-  }
-
-  object OutputSerialization {
-    @inline
-    def apply(
-        CSV: js.UndefOr[CSVOutput] = js.undefined,
-        JSON: js.UndefOr[JSONOutput] = js.undefined
-    ): OutputSerialization = {
-      val __obj = js.Dynamic.literal()
-      CSV.foreach(__v => __obj.updateDynamic("CSV")(__v.asInstanceOf[js.Any]))
-      JSON.foreach(__v => __obj.updateDynamic("JSON")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[OutputSerialization]
-    }
   }
 
   /**
     * Container for the owner's display name and ID.
     */
   @js.native
+  @Factory
   trait Owner extends js.Object {
     var DisplayName: js.UndefOr[DisplayName]
     var ID: js.UndefOr[ID]
-  }
-
-  object Owner {
-    @inline
-    def apply(
-        DisplayName: js.UndefOr[DisplayName] = js.undefined,
-        ID: js.UndefOr[ID] = js.undefined
-    ): Owner = {
-      val __obj = js.Dynamic.literal()
-      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
-      ID.foreach(__v => __obj.updateDynamic("ID")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Owner]
-    }
   }
 
   @js.native
@@ -5785,44 +2830,19 @@ package s3 {
     * Container for Parquet.
     */
   @js.native
+  @Factory
   trait ParquetInput extends js.Object {}
-
-  object ParquetInput {
-    @inline
-    def apply(
-    ): ParquetInput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[ParquetInput]
-    }
-  }
 
   /**
     * Container for elements related to a part.
     */
   @js.native
+  @Factory
   trait Part extends js.Object {
     var ETag: js.UndefOr[ETag]
     var LastModified: js.UndefOr[LastModified]
     var PartNumber: js.UndefOr[PartNumber]
     var Size: js.UndefOr[Size]
-  }
-
-  object Part {
-    @inline
-    def apply(
-        ETag: js.UndefOr[ETag] = js.undefined,
-        LastModified: js.UndefOr[LastModified] = js.undefined,
-        PartNumber: js.UndefOr[PartNumber] = js.undefined,
-        Size: js.UndefOr[Size] = js.undefined
-    ): Part = {
-      val __obj = js.Dynamic.literal()
-      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
-      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
-      PartNumber.foreach(__v => __obj.updateDynamic("PartNumber")(__v.asInstanceOf[js.Any]))
-      Size.foreach(__v => __obj.updateDynamic("Size")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Part]
-    }
   }
 
   @js.native
@@ -5850,63 +2870,29 @@ package s3 {
     * The container element for a bucket's policy status.
     */
   @js.native
+  @Factory
   trait PolicyStatus extends js.Object {
     var IsPublic: js.UndefOr[IsPublic]
-  }
-
-  object PolicyStatus {
-    @inline
-    def apply(
-        IsPublic: js.UndefOr[IsPublic] = js.undefined
-    ): PolicyStatus = {
-      val __obj = js.Dynamic.literal()
-      IsPublic.foreach(__v => __obj.updateDynamic("IsPublic")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PolicyStatus]
-    }
   }
 
   /**
     * This data type contains information about progress of an operation.
     */
   @js.native
+  @Factory
   trait Progress extends js.Object {
     var BytesProcessed: js.UndefOr[BytesProcessed]
     var BytesReturned: js.UndefOr[BytesReturned]
     var BytesScanned: js.UndefOr[BytesScanned]
   }
 
-  object Progress {
-    @inline
-    def apply(
-        BytesProcessed: js.UndefOr[BytesProcessed] = js.undefined,
-        BytesReturned: js.UndefOr[BytesReturned] = js.undefined,
-        BytesScanned: js.UndefOr[BytesScanned] = js.undefined
-    ): Progress = {
-      val __obj = js.Dynamic.literal()
-      BytesProcessed.foreach(__v => __obj.updateDynamic("BytesProcessed")(__v.asInstanceOf[js.Any]))
-      BytesReturned.foreach(__v => __obj.updateDynamic("BytesReturned")(__v.asInstanceOf[js.Any]))
-      BytesScanned.foreach(__v => __obj.updateDynamic("BytesScanned")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Progress]
-    }
-  }
-
   /**
     * This data type contains information about the progress event of an operation.
     */
   @js.native
+  @Factory
   trait ProgressEvent extends js.Object {
     var Details: js.UndefOr[Progress]
-  }
-
-  object ProgressEvent {
-    @inline
-    def apply(
-        Details: js.UndefOr[Progress] = js.undefined
-    ): ProgressEvent = {
-      val __obj = js.Dynamic.literal()
-      Details.foreach(__v => __obj.updateDynamic("Details")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ProgressEvent]
-    }
   }
 
   @js.native
@@ -5922,6 +2908,7 @@ package s3 {
     * The PublicAccessBlock configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status|The Meaning of "Public"]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait PublicAccessBlockConfiguration extends js.Object {
     var BlockPublicAcls: js.UndefOr[Setting]
     var BlockPublicPolicy: js.UndefOr[Setting]
@@ -5929,45 +2916,15 @@ package s3 {
     var RestrictPublicBuckets: js.UndefOr[Setting]
   }
 
-  object PublicAccessBlockConfiguration {
-    @inline
-    def apply(
-        BlockPublicAcls: js.UndefOr[Setting] = js.undefined,
-        BlockPublicPolicy: js.UndefOr[Setting] = js.undefined,
-        IgnorePublicAcls: js.UndefOr[Setting] = js.undefined,
-        RestrictPublicBuckets: js.UndefOr[Setting] = js.undefined
-    ): PublicAccessBlockConfiguration = {
-      val __obj = js.Dynamic.literal()
-      BlockPublicAcls.foreach(__v => __obj.updateDynamic("BlockPublicAcls")(__v.asInstanceOf[js.Any]))
-      BlockPublicPolicy.foreach(__v => __obj.updateDynamic("BlockPublicPolicy")(__v.asInstanceOf[js.Any]))
-      IgnorePublicAcls.foreach(__v => __obj.updateDynamic("IgnorePublicAcls")(__v.asInstanceOf[js.Any]))
-      RestrictPublicBuckets.foreach(__v => __obj.updateDynamic("RestrictPublicBuckets")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PublicAccessBlockConfiguration]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutBucketAccelerateConfigurationRequest extends js.Object {
     var AccelerateConfiguration: AccelerateConfiguration
     var Bucket: BucketName
   }
 
-  object PutBucketAccelerateConfigurationRequest {
-    @inline
-    def apply(
-        AccelerateConfiguration: AccelerateConfiguration,
-        Bucket: BucketName
-    ): PutBucketAccelerateConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccelerateConfiguration" -> AccelerateConfiguration.asInstanceOf[js.Any],
-        "Bucket"                  -> Bucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutBucketAccelerateConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutBucketAclRequest extends js.Object {
     var Bucket: BucketName
     var ACL: js.UndefOr[BucketCannedACL]
@@ -5980,270 +2937,86 @@ package s3 {
     var GrantWriteACP: js.UndefOr[GrantWriteACP]
   }
 
-  object PutBucketAclRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        ACL: js.UndefOr[BucketCannedACL] = js.undefined,
-        AccessControlPolicy: js.UndefOr[AccessControlPolicy] = js.undefined,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
-        GrantFullControl: js.UndefOr[GrantFullControl] = js.undefined,
-        GrantRead: js.UndefOr[GrantRead] = js.undefined,
-        GrantReadACP: js.UndefOr[GrantReadACP] = js.undefined,
-        GrantWrite: js.UndefOr[GrantWrite] = js.undefined,
-        GrantWriteACP: js.UndefOr[GrantWriteACP] = js.undefined
-    ): PutBucketAclRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      ACL.foreach(__v => __obj.updateDynamic("ACL")(__v.asInstanceOf[js.Any]))
-      AccessControlPolicy.foreach(__v => __obj.updateDynamic("AccessControlPolicy")(__v.asInstanceOf[js.Any]))
-      ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
-      GrantFullControl.foreach(__v => __obj.updateDynamic("GrantFullControl")(__v.asInstanceOf[js.Any]))
-      GrantRead.foreach(__v => __obj.updateDynamic("GrantRead")(__v.asInstanceOf[js.Any]))
-      GrantReadACP.foreach(__v => __obj.updateDynamic("GrantReadACP")(__v.asInstanceOf[js.Any]))
-      GrantWrite.foreach(__v => __obj.updateDynamic("GrantWrite")(__v.asInstanceOf[js.Any]))
-      GrantWriteACP.foreach(__v => __obj.updateDynamic("GrantWriteACP")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutBucketAclRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutBucketAnalyticsConfigurationRequest extends js.Object {
     var AnalyticsConfiguration: AnalyticsConfiguration
     var Bucket: BucketName
     var Id: AnalyticsId
   }
 
-  object PutBucketAnalyticsConfigurationRequest {
-    @inline
-    def apply(
-        AnalyticsConfiguration: AnalyticsConfiguration,
-        Bucket: BucketName,
-        Id: AnalyticsId
-    ): PutBucketAnalyticsConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "AnalyticsConfiguration" -> AnalyticsConfiguration.asInstanceOf[js.Any],
-        "Bucket"                 -> Bucket.asInstanceOf[js.Any],
-        "Id"                     -> Id.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutBucketAnalyticsConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutBucketCorsRequest extends js.Object {
     var Bucket: BucketName
     var CORSConfiguration: CORSConfiguration
     var ContentMD5: js.UndefOr[ContentMD5]
   }
 
-  object PutBucketCorsRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        CORSConfiguration: CORSConfiguration,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined
-    ): PutBucketCorsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket"            -> Bucket.asInstanceOf[js.Any],
-        "CORSConfiguration" -> CORSConfiguration.asInstanceOf[js.Any]
-      )
-
-      ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutBucketCorsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutBucketEncryptionRequest extends js.Object {
     var Bucket: BucketName
     var ServerSideEncryptionConfiguration: ServerSideEncryptionConfiguration
     var ContentMD5: js.UndefOr[ContentMD5]
   }
 
-  object PutBucketEncryptionRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        ServerSideEncryptionConfiguration: ServerSideEncryptionConfiguration,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined
-    ): PutBucketEncryptionRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket"                            -> Bucket.asInstanceOf[js.Any],
-        "ServerSideEncryptionConfiguration" -> ServerSideEncryptionConfiguration.asInstanceOf[js.Any]
-      )
-
-      ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutBucketEncryptionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutBucketInventoryConfigurationRequest extends js.Object {
     var Bucket: BucketName
     var Id: InventoryId
     var InventoryConfiguration: InventoryConfiguration
   }
 
-  object PutBucketInventoryConfigurationRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Id: InventoryId,
-        InventoryConfiguration: InventoryConfiguration
-    ): PutBucketInventoryConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket"                 -> Bucket.asInstanceOf[js.Any],
-        "Id"                     -> Id.asInstanceOf[js.Any],
-        "InventoryConfiguration" -> InventoryConfiguration.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutBucketInventoryConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutBucketLifecycleConfigurationRequest extends js.Object {
     var Bucket: BucketName
     var LifecycleConfiguration: js.UndefOr[BucketLifecycleConfiguration]
   }
 
-  object PutBucketLifecycleConfigurationRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        LifecycleConfiguration: js.UndefOr[BucketLifecycleConfiguration] = js.undefined
-    ): PutBucketLifecycleConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      LifecycleConfiguration.foreach(__v => __obj.updateDynamic("LifecycleConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutBucketLifecycleConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutBucketLifecycleRequest extends js.Object {
     var Bucket: BucketName
     var ContentMD5: js.UndefOr[ContentMD5]
     var LifecycleConfiguration: js.UndefOr[LifecycleConfiguration]
   }
 
-  object PutBucketLifecycleRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
-        LifecycleConfiguration: js.UndefOr[LifecycleConfiguration] = js.undefined
-    ): PutBucketLifecycleRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
-      LifecycleConfiguration.foreach(__v => __obj.updateDynamic("LifecycleConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutBucketLifecycleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutBucketLoggingRequest extends js.Object {
     var Bucket: BucketName
     var BucketLoggingStatus: BucketLoggingStatus
     var ContentMD5: js.UndefOr[ContentMD5]
   }
 
-  object PutBucketLoggingRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        BucketLoggingStatus: BucketLoggingStatus,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined
-    ): PutBucketLoggingRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket"              -> Bucket.asInstanceOf[js.Any],
-        "BucketLoggingStatus" -> BucketLoggingStatus.asInstanceOf[js.Any]
-      )
-
-      ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutBucketLoggingRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutBucketMetricsConfigurationRequest extends js.Object {
     var Bucket: BucketName
     var Id: MetricsId
     var MetricsConfiguration: MetricsConfiguration
   }
 
-  object PutBucketMetricsConfigurationRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Id: MetricsId,
-        MetricsConfiguration: MetricsConfiguration
-    ): PutBucketMetricsConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket"               -> Bucket.asInstanceOf[js.Any],
-        "Id"                   -> Id.asInstanceOf[js.Any],
-        "MetricsConfiguration" -> MetricsConfiguration.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutBucketMetricsConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutBucketNotificationConfigurationRequest extends js.Object {
     var Bucket: BucketName
     var NotificationConfiguration: NotificationConfiguration
   }
 
-  object PutBucketNotificationConfigurationRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        NotificationConfiguration: NotificationConfiguration
-    ): PutBucketNotificationConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket"                    -> Bucket.asInstanceOf[js.Any],
-        "NotificationConfiguration" -> NotificationConfiguration.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutBucketNotificationConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutBucketNotificationRequest extends js.Object {
     var Bucket: BucketName
     var NotificationConfiguration: NotificationConfigurationDeprecated
     var ContentMD5: js.UndefOr[ContentMD5]
   }
 
-  object PutBucketNotificationRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        NotificationConfiguration: NotificationConfigurationDeprecated,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined
-    ): PutBucketNotificationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket"                    -> Bucket.asInstanceOf[js.Any],
-        "NotificationConfiguration" -> NotificationConfiguration.asInstanceOf[js.Any]
-      )
-
-      ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutBucketNotificationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutBucketPolicyRequest extends js.Object {
     var Bucket: BucketName
     var Policy: Policy
@@ -6251,28 +3024,8 @@ package s3 {
     var ContentMD5: js.UndefOr[ContentMD5]
   }
 
-  object PutBucketPolicyRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Policy: Policy,
-        ConfirmRemoveSelfBucketAccess: js.UndefOr[ConfirmRemoveSelfBucketAccess] = js.undefined,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined
-    ): PutBucketPolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Policy" -> Policy.asInstanceOf[js.Any]
-      )
-
-      ConfirmRemoveSelfBucketAccess.foreach(__v =>
-        __obj.updateDynamic("ConfirmRemoveSelfBucketAccess")(__v.asInstanceOf[js.Any])
-      )
-      ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutBucketPolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutBucketReplicationRequest extends js.Object {
     var Bucket: BucketName
     var ReplicationConfiguration: ReplicationConfiguration
@@ -6280,74 +3033,24 @@ package s3 {
     var Token: js.UndefOr[ObjectLockToken]
   }
 
-  object PutBucketReplicationRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        ReplicationConfiguration: ReplicationConfiguration,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
-        Token: js.UndefOr[ObjectLockToken] = js.undefined
-    ): PutBucketReplicationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket"                   -> Bucket.asInstanceOf[js.Any],
-        "ReplicationConfiguration" -> ReplicationConfiguration.asInstanceOf[js.Any]
-      )
-
-      ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
-      Token.foreach(__v => __obj.updateDynamic("Token")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutBucketReplicationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutBucketRequestPaymentRequest extends js.Object {
     var Bucket: BucketName
     var RequestPaymentConfiguration: RequestPaymentConfiguration
     var ContentMD5: js.UndefOr[ContentMD5]
   }
 
-  object PutBucketRequestPaymentRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        RequestPaymentConfiguration: RequestPaymentConfiguration,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined
-    ): PutBucketRequestPaymentRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket"                      -> Bucket.asInstanceOf[js.Any],
-        "RequestPaymentConfiguration" -> RequestPaymentConfiguration.asInstanceOf[js.Any]
-      )
-
-      ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutBucketRequestPaymentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutBucketTaggingRequest extends js.Object {
     var Bucket: BucketName
     var Tagging: Tagging
     var ContentMD5: js.UndefOr[ContentMD5]
   }
 
-  object PutBucketTaggingRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Tagging: Tagging,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined
-    ): PutBucketTaggingRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket"  -> Bucket.asInstanceOf[js.Any],
-        "Tagging" -> Tagging.asInstanceOf[js.Any]
-      )
-
-      ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutBucketTaggingRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutBucketVersioningRequest extends js.Object {
     var Bucket: BucketName
     var VersioningConfiguration: VersioningConfiguration
@@ -6355,66 +3058,22 @@ package s3 {
     var MFA: js.UndefOr[MFA]
   }
 
-  object PutBucketVersioningRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        VersioningConfiguration: VersioningConfiguration,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
-        MFA: js.UndefOr[MFA] = js.undefined
-    ): PutBucketVersioningRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket"                  -> Bucket.asInstanceOf[js.Any],
-        "VersioningConfiguration" -> VersioningConfiguration.asInstanceOf[js.Any]
-      )
-
-      ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
-      MFA.foreach(__v => __obj.updateDynamic("MFA")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutBucketVersioningRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutBucketWebsiteRequest extends js.Object {
     var Bucket: BucketName
     var WebsiteConfiguration: WebsiteConfiguration
     var ContentMD5: js.UndefOr[ContentMD5]
   }
 
-  object PutBucketWebsiteRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        WebsiteConfiguration: WebsiteConfiguration,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined
-    ): PutBucketWebsiteRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket"               -> Bucket.asInstanceOf[js.Any],
-        "WebsiteConfiguration" -> WebsiteConfiguration.asInstanceOf[js.Any]
-      )
-
-      ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutBucketWebsiteRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutObjectAclOutput extends js.Object {
     var RequestCharged: js.UndefOr[RequestCharged]
   }
 
-  object PutObjectAclOutput {
-    @inline
-    def apply(
-        RequestCharged: js.UndefOr[RequestCharged] = js.undefined
-    ): PutObjectAclOutput = {
-      val __obj = js.Dynamic.literal()
-      RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutObjectAclOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutObjectAclRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
@@ -6430,58 +3089,14 @@ package s3 {
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
-  object PutObjectAclRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Key: ObjectKey,
-        ACL: js.UndefOr[ObjectCannedACL] = js.undefined,
-        AccessControlPolicy: js.UndefOr[AccessControlPolicy] = js.undefined,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
-        GrantFullControl: js.UndefOr[GrantFullControl] = js.undefined,
-        GrantRead: js.UndefOr[GrantRead] = js.undefined,
-        GrantReadACP: js.UndefOr[GrantReadACP] = js.undefined,
-        GrantWrite: js.UndefOr[GrantWrite] = js.undefined,
-        GrantWriteACP: js.UndefOr[GrantWriteACP] = js.undefined,
-        RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
-        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
-    ): PutObjectAclRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
-      )
-
-      ACL.foreach(__v => __obj.updateDynamic("ACL")(__v.asInstanceOf[js.Any]))
-      AccessControlPolicy.foreach(__v => __obj.updateDynamic("AccessControlPolicy")(__v.asInstanceOf[js.Any]))
-      ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
-      GrantFullControl.foreach(__v => __obj.updateDynamic("GrantFullControl")(__v.asInstanceOf[js.Any]))
-      GrantRead.foreach(__v => __obj.updateDynamic("GrantRead")(__v.asInstanceOf[js.Any]))
-      GrantReadACP.foreach(__v => __obj.updateDynamic("GrantReadACP")(__v.asInstanceOf[js.Any]))
-      GrantWrite.foreach(__v => __obj.updateDynamic("GrantWrite")(__v.asInstanceOf[js.Any]))
-      GrantWriteACP.foreach(__v => __obj.updateDynamic("GrantWriteACP")(__v.asInstanceOf[js.Any]))
-      RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutObjectAclRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutObjectLegalHoldOutput extends js.Object {
     var RequestCharged: js.UndefOr[RequestCharged]
   }
 
-  object PutObjectLegalHoldOutput {
-    @inline
-    def apply(
-        RequestCharged: js.UndefOr[RequestCharged] = js.undefined
-    ): PutObjectLegalHoldOutput = {
-      val __obj = js.Dynamic.literal()
-      RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutObjectLegalHoldOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutObjectLegalHoldRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
@@ -6491,46 +3106,14 @@ package s3 {
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
-  object PutObjectLegalHoldRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Key: ObjectKey,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
-        LegalHold: js.UndefOr[ObjectLockLegalHold] = js.undefined,
-        RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
-        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
-    ): PutObjectLegalHoldRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
-      )
-
-      ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
-      LegalHold.foreach(__v => __obj.updateDynamic("LegalHold")(__v.asInstanceOf[js.Any]))
-      RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutObjectLegalHoldRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutObjectLockConfigurationOutput extends js.Object {
     var RequestCharged: js.UndefOr[RequestCharged]
   }
 
-  object PutObjectLockConfigurationOutput {
-    @inline
-    def apply(
-        RequestCharged: js.UndefOr[RequestCharged] = js.undefined
-    ): PutObjectLockConfigurationOutput = {
-      val __obj = js.Dynamic.literal()
-      RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutObjectLockConfigurationOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutObjectLockConfigurationRequest extends js.Object {
     var Bucket: BucketName
     var ContentMD5: js.UndefOr[ContentMD5]
@@ -6539,28 +3122,8 @@ package s3 {
     var Token: js.UndefOr[ObjectLockToken]
   }
 
-  object PutObjectLockConfigurationRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
-        ObjectLockConfiguration: js.UndefOr[ObjectLockConfiguration] = js.undefined,
-        RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
-        Token: js.UndefOr[ObjectLockToken] = js.undefined
-    ): PutObjectLockConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any]
-      )
-
-      ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
-      ObjectLockConfiguration.foreach(__v => __obj.updateDynamic("ObjectLockConfiguration")(__v.asInstanceOf[js.Any]))
-      RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
-      Token.foreach(__v => __obj.updateDynamic("Token")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutObjectLockConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutObjectOutput extends js.Object {
     var ETag: js.UndefOr[ETag]
     var Expiration: js.UndefOr[Expiration]
@@ -6573,34 +3136,8 @@ package s3 {
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
-  object PutObjectOutput {
-    @inline
-    def apply(
-        ETag: js.UndefOr[ETag] = js.undefined,
-        Expiration: js.UndefOr[Expiration] = js.undefined,
-        RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
-        SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
-        SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined,
-        SSEKMSEncryptionContext: js.UndefOr[SSEKMSEncryptionContext] = js.undefined,
-        SSEKMSKeyId: js.UndefOr[SSEKMSKeyId] = js.undefined,
-        ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined,
-        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
-    ): PutObjectOutput = {
-      val __obj = js.Dynamic.literal()
-      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
-      Expiration.foreach(__v => __obj.updateDynamic("Expiration")(__v.asInstanceOf[js.Any]))
-      RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
-      SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
-      SSECustomerKeyMD5.foreach(__v => __obj.updateDynamic("SSECustomerKeyMD5")(__v.asInstanceOf[js.Any]))
-      SSEKMSEncryptionContext.foreach(__v => __obj.updateDynamic("SSEKMSEncryptionContext")(__v.asInstanceOf[js.Any]))
-      SSEKMSKeyId.foreach(__v => __obj.updateDynamic("SSEKMSKeyId")(__v.asInstanceOf[js.Any]))
-      ServerSideEncryption.foreach(__v => __obj.updateDynamic("ServerSideEncryption")(__v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutObjectOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutObjectRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
@@ -6634,98 +3171,14 @@ package s3 {
     var WebsiteRedirectLocation: js.UndefOr[WebsiteRedirectLocation]
   }
 
-  object PutObjectRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Key: ObjectKey,
-        ACL: js.UndefOr[ObjectCannedACL] = js.undefined,
-        Body: js.UndefOr[Body] = js.undefined,
-        CacheControl: js.UndefOr[CacheControl] = js.undefined,
-        ContentDisposition: js.UndefOr[ContentDisposition] = js.undefined,
-        ContentEncoding: js.UndefOr[ContentEncoding] = js.undefined,
-        ContentLanguage: js.UndefOr[ContentLanguage] = js.undefined,
-        ContentLength: js.UndefOr[ContentLength] = js.undefined,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
-        ContentType: js.UndefOr[ContentType] = js.undefined,
-        Expires: js.UndefOr[Expires] = js.undefined,
-        GrantFullControl: js.UndefOr[GrantFullControl] = js.undefined,
-        GrantRead: js.UndefOr[GrantRead] = js.undefined,
-        GrantReadACP: js.UndefOr[GrantReadACP] = js.undefined,
-        GrantWriteACP: js.UndefOr[GrantWriteACP] = js.undefined,
-        Metadata: js.UndefOr[Metadata] = js.undefined,
-        ObjectLockLegalHoldStatus: js.UndefOr[ObjectLockLegalHoldStatus] = js.undefined,
-        ObjectLockMode: js.UndefOr[ObjectLockMode] = js.undefined,
-        ObjectLockRetainUntilDate: js.UndefOr[ObjectLockRetainUntilDate] = js.undefined,
-        RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
-        SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
-        SSECustomerKey: js.UndefOr[SSECustomerKey] = js.undefined,
-        SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined,
-        SSEKMSEncryptionContext: js.UndefOr[SSEKMSEncryptionContext] = js.undefined,
-        SSEKMSKeyId: js.UndefOr[SSEKMSKeyId] = js.undefined,
-        ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined,
-        StorageClass: js.UndefOr[StorageClass] = js.undefined,
-        Tagging: js.UndefOr[TaggingHeader] = js.undefined,
-        WebsiteRedirectLocation: js.UndefOr[WebsiteRedirectLocation] = js.undefined
-    ): PutObjectRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
-      )
-
-      ACL.foreach(__v => __obj.updateDynamic("ACL")(__v.asInstanceOf[js.Any]))
-      Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
-      CacheControl.foreach(__v => __obj.updateDynamic("CacheControl")(__v.asInstanceOf[js.Any]))
-      ContentDisposition.foreach(__v => __obj.updateDynamic("ContentDisposition")(__v.asInstanceOf[js.Any]))
-      ContentEncoding.foreach(__v => __obj.updateDynamic("ContentEncoding")(__v.asInstanceOf[js.Any]))
-      ContentLanguage.foreach(__v => __obj.updateDynamic("ContentLanguage")(__v.asInstanceOf[js.Any]))
-      ContentLength.foreach(__v => __obj.updateDynamic("ContentLength")(__v.asInstanceOf[js.Any]))
-      ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
-      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
-      Expires.foreach(__v => __obj.updateDynamic("Expires")(__v.asInstanceOf[js.Any]))
-      GrantFullControl.foreach(__v => __obj.updateDynamic("GrantFullControl")(__v.asInstanceOf[js.Any]))
-      GrantRead.foreach(__v => __obj.updateDynamic("GrantRead")(__v.asInstanceOf[js.Any]))
-      GrantReadACP.foreach(__v => __obj.updateDynamic("GrantReadACP")(__v.asInstanceOf[js.Any]))
-      GrantWriteACP.foreach(__v => __obj.updateDynamic("GrantWriteACP")(__v.asInstanceOf[js.Any]))
-      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
-      ObjectLockLegalHoldStatus.foreach(__v =>
-        __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any])
-      )
-      ObjectLockMode.foreach(__v => __obj.updateDynamic("ObjectLockMode")(__v.asInstanceOf[js.Any]))
-      ObjectLockRetainUntilDate.foreach(__v =>
-        __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any])
-      )
-      RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
-      SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
-      SSECustomerKey.foreach(__v => __obj.updateDynamic("SSECustomerKey")(__v.asInstanceOf[js.Any]))
-      SSECustomerKeyMD5.foreach(__v => __obj.updateDynamic("SSECustomerKeyMD5")(__v.asInstanceOf[js.Any]))
-      SSEKMSEncryptionContext.foreach(__v => __obj.updateDynamic("SSEKMSEncryptionContext")(__v.asInstanceOf[js.Any]))
-      SSEKMSKeyId.foreach(__v => __obj.updateDynamic("SSEKMSKeyId")(__v.asInstanceOf[js.Any]))
-      ServerSideEncryption.foreach(__v => __obj.updateDynamic("ServerSideEncryption")(__v.asInstanceOf[js.Any]))
-      StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
-      Tagging.foreach(__v => __obj.updateDynamic("Tagging")(__v.asInstanceOf[js.Any]))
-      WebsiteRedirectLocation.foreach(__v => __obj.updateDynamic("WebsiteRedirectLocation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutObjectRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutObjectRetentionOutput extends js.Object {
     var RequestCharged: js.UndefOr[RequestCharged]
   }
 
-  object PutObjectRetentionOutput {
-    @inline
-    def apply(
-        RequestCharged: js.UndefOr[RequestCharged] = js.undefined
-    ): PutObjectRetentionOutput = {
-      val __obj = js.Dynamic.literal()
-      RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutObjectRetentionOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutObjectRetentionRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
@@ -6736,50 +3189,14 @@ package s3 {
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
-  object PutObjectRetentionRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Key: ObjectKey,
-        BypassGovernanceRetention: js.UndefOr[BypassGovernanceRetention] = js.undefined,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
-        RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
-        Retention: js.UndefOr[ObjectLockRetention] = js.undefined,
-        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
-    ): PutObjectRetentionRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
-      )
-
-      BypassGovernanceRetention.foreach(__v =>
-        __obj.updateDynamic("BypassGovernanceRetention")(__v.asInstanceOf[js.Any])
-      )
-      ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
-      RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
-      Retention.foreach(__v => __obj.updateDynamic("Retention")(__v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutObjectRetentionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutObjectTaggingOutput extends js.Object {
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
-  object PutObjectTaggingOutput {
-    @inline
-    def apply(
-        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
-    ): PutObjectTaggingOutput = {
-      val __obj = js.Dynamic.literal()
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutObjectTaggingOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutObjectTaggingRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
@@ -6788,55 +3205,19 @@ package s3 {
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
-  object PutObjectTaggingRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Key: ObjectKey,
-        Tagging: Tagging,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
-        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
-    ): PutObjectTaggingRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket"  -> Bucket.asInstanceOf[js.Any],
-        "Key"     -> Key.asInstanceOf[js.Any],
-        "Tagging" -> Tagging.asInstanceOf[js.Any]
-      )
-
-      ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutObjectTaggingRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutPublicAccessBlockRequest extends js.Object {
     var Bucket: BucketName
     var PublicAccessBlockConfiguration: PublicAccessBlockConfiguration
     var ContentMD5: js.UndefOr[ContentMD5]
   }
 
-  object PutPublicAccessBlockRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        PublicAccessBlockConfiguration: PublicAccessBlockConfiguration,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined
-    ): PutPublicAccessBlockRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket"                         -> Bucket.asInstanceOf[js.Any],
-        "PublicAccessBlockConfiguration" -> PublicAccessBlockConfiguration.asInstanceOf[js.Any]
-      )
-
-      ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutPublicAccessBlockRequest]
-    }
-  }
-
   /**
     * Specifies the configuration for publishing messages to an Amazon Simple Queue Service (Amazon SQS) queue when Amazon S3 detects specified events.
     */
   @js.native
+  @Factory
   trait QueueConfiguration extends js.Object {
     var Events: EventList
     var QueueArn: QueueArn
@@ -6844,51 +3225,16 @@ package s3 {
     var Id: js.UndefOr[NotificationId]
   }
 
-  object QueueConfiguration {
-    @inline
-    def apply(
-        Events: EventList,
-        QueueArn: QueueArn,
-        Filter: js.UndefOr[NotificationConfigurationFilter] = js.undefined,
-        Id: js.UndefOr[NotificationId] = js.undefined
-    ): QueueConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "Events"   -> Events.asInstanceOf[js.Any],
-        "QueueArn" -> QueueArn.asInstanceOf[js.Any]
-      )
-
-      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[QueueConfiguration]
-    }
-  }
-
   /**
     * This data type is deprecated. Use <a>QueueConfiguration</a> for the same purposes. This data type specifies the configuration for publishing messages to an Amazon Simple Queue Service (Amazon SQS) queue when Amazon S3 detects specified events.
     */
   @js.native
+  @Factory
   trait QueueConfigurationDeprecated extends js.Object {
     var Event: js.UndefOr[Event]
     var Events: js.UndefOr[EventList]
     var Id: js.UndefOr[NotificationId]
     var Queue: js.UndefOr[QueueArn]
-  }
-
-  object QueueConfigurationDeprecated {
-    @inline
-    def apply(
-        Event: js.UndefOr[Event] = js.undefined,
-        Events: js.UndefOr[EventList] = js.undefined,
-        Id: js.UndefOr[NotificationId] = js.undefined,
-        Queue: js.UndefOr[QueueArn] = js.undefined
-    ): QueueConfigurationDeprecated = {
-      val __obj = js.Dynamic.literal()
-      Event.foreach(__v => __obj.updateDynamic("Event")(__v.asInstanceOf[js.Any]))
-      Events.foreach(__v => __obj.updateDynamic("Events")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[QueueConfigurationDeprecated]
-    }
   }
 
   @js.native
@@ -6904,25 +3250,16 @@ package s3 {
     * The container for the records event.
     */
   @js.native
+  @Factory
   trait RecordsEvent extends js.Object {
     var Payload: js.UndefOr[Body]
-  }
-
-  object RecordsEvent {
-    @inline
-    def apply(
-        Payload: js.UndefOr[Body] = js.undefined
-    ): RecordsEvent = {
-      val __obj = js.Dynamic.literal()
-      Payload.foreach(__v => __obj.updateDynamic("Payload")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RecordsEvent]
-    }
   }
 
   /**
     * Specifies how requests are redirected. In the event of an error, you can specify a different error code to return.
     */
   @js.native
+  @Factory
   trait Redirect extends js.Object {
     var HostName: js.UndefOr[HostName]
     var HttpRedirectCode: js.UndefOr[HttpRedirectCode]
@@ -6931,77 +3268,31 @@ package s3 {
     var ReplaceKeyWith: js.UndefOr[ReplaceKeyWith]
   }
 
-  object Redirect {
-    @inline
-    def apply(
-        HostName: js.UndefOr[HostName] = js.undefined,
-        HttpRedirectCode: js.UndefOr[HttpRedirectCode] = js.undefined,
-        Protocol: js.UndefOr[Protocol] = js.undefined,
-        ReplaceKeyPrefixWith: js.UndefOr[ReplaceKeyPrefixWith] = js.undefined,
-        ReplaceKeyWith: js.UndefOr[ReplaceKeyWith] = js.undefined
-    ): Redirect = {
-      val __obj = js.Dynamic.literal()
-      HostName.foreach(__v => __obj.updateDynamic("HostName")(__v.asInstanceOf[js.Any]))
-      HttpRedirectCode.foreach(__v => __obj.updateDynamic("HttpRedirectCode")(__v.asInstanceOf[js.Any]))
-      Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
-      ReplaceKeyPrefixWith.foreach(__v => __obj.updateDynamic("ReplaceKeyPrefixWith")(__v.asInstanceOf[js.Any]))
-      ReplaceKeyWith.foreach(__v => __obj.updateDynamic("ReplaceKeyWith")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Redirect]
-    }
-  }
-
   /**
     * Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3 bucket.
     */
   @js.native
+  @Factory
   trait RedirectAllRequestsTo extends js.Object {
     var HostName: HostName
     var Protocol: js.UndefOr[Protocol]
-  }
-
-  object RedirectAllRequestsTo {
-    @inline
-    def apply(
-        HostName: HostName,
-        Protocol: js.UndefOr[Protocol] = js.undefined
-    ): RedirectAllRequestsTo = {
-      val __obj = js.Dynamic.literal(
-        "HostName" -> HostName.asInstanceOf[js.Any]
-      )
-
-      Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RedirectAllRequestsTo]
-    }
   }
 
   /**
     * A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.
     */
   @js.native
+  @Factory
   trait ReplicationConfiguration extends js.Object {
     var Role: Role
     var Rules: ReplicationRules
-  }
-
-  object ReplicationConfiguration {
-    @inline
-    def apply(
-        Role: Role,
-        Rules: ReplicationRules
-    ): ReplicationConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "Role"  -> Role.asInstanceOf[js.Any],
-        "Rules" -> Rules.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ReplicationConfiguration]
-    }
   }
 
   /**
     * Specifies which Amazon S3 objects to replicate and where to store the replicas.
     */
   @js.native
+  @Factory
   trait ReplicationRule extends js.Object {
     var Destination: Destination
     var Status: ReplicationRuleStatus
@@ -7014,37 +3305,6 @@ package s3 {
     var SourceSelectionCriteria: js.UndefOr[SourceSelectionCriteria]
   }
 
-  object ReplicationRule {
-    @inline
-    def apply(
-        Destination: Destination,
-        Status: ReplicationRuleStatus,
-        DeleteMarkerReplication: js.UndefOr[DeleteMarkerReplication] = js.undefined,
-        ExistingObjectReplication: js.UndefOr[ExistingObjectReplication] = js.undefined,
-        Filter: js.UndefOr[ReplicationRuleFilter] = js.undefined,
-        ID: js.UndefOr[ID] = js.undefined,
-        Prefix: js.UndefOr[Prefix] = js.undefined,
-        Priority: js.UndefOr[Priority] = js.undefined,
-        SourceSelectionCriteria: js.UndefOr[SourceSelectionCriteria] = js.undefined
-    ): ReplicationRule = {
-      val __obj = js.Dynamic.literal(
-        "Destination" -> Destination.asInstanceOf[js.Any],
-        "Status"      -> Status.asInstanceOf[js.Any]
-      )
-
-      DeleteMarkerReplication.foreach(__v => __obj.updateDynamic("DeleteMarkerReplication")(__v.asInstanceOf[js.Any]))
-      ExistingObjectReplication.foreach(__v =>
-        __obj.updateDynamic("ExistingObjectReplication")(__v.asInstanceOf[js.Any])
-      )
-      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
-      ID.foreach(__v => __obj.updateDynamic("ID")(__v.asInstanceOf[js.Any]))
-      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
-      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
-      SourceSelectionCriteria.foreach(__v => __obj.updateDynamic("SourceSelectionCriteria")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ReplicationRule]
-    }
-  }
-
   /**
     * A container for specifying rule filters. The filters determine the subset of objects to which the rule applies. This element is required only if you specify more than one filter.
     *  For example:
@@ -7052,47 +3312,21 @@ package s3 {
     *  * If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> tag
     */
   @js.native
+  @Factory
   trait ReplicationRuleAndOperator extends js.Object {
     var Prefix: js.UndefOr[Prefix]
     var Tags: js.UndefOr[TagSet]
-  }
-
-  object ReplicationRuleAndOperator {
-    @inline
-    def apply(
-        Prefix: js.UndefOr[Prefix] = js.undefined,
-        Tags: js.UndefOr[TagSet] = js.undefined
-    ): ReplicationRuleAndOperator = {
-      val __obj = js.Dynamic.literal()
-      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ReplicationRuleAndOperator]
-    }
   }
 
   /**
     * A filter that identifies the subset of objects to which the replication rule applies. A <code>Filter</code> must specify exactly one <code>Prefix</code>, <code>Tag</code>, or an <code>And</code> child element.
     */
   @js.native
+  @Factory
   trait ReplicationRuleFilter extends js.Object {
     var And: js.UndefOr[ReplicationRuleAndOperator]
     var Prefix: js.UndefOr[Prefix]
     var Tag: js.UndefOr[Tag]
-  }
-
-  object ReplicationRuleFilter {
-    @inline
-    def apply(
-        And: js.UndefOr[ReplicationRuleAndOperator] = js.undefined,
-        Prefix: js.UndefOr[Prefix] = js.undefined,
-        Tag: js.UndefOr[Tag] = js.undefined
-    ): ReplicationRuleFilter = {
-      val __obj = js.Dynamic.literal()
-      And.foreach(__v => __obj.updateDynamic("And")(__v.asInstanceOf[js.Any]))
-      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
-      Tag.foreach(__v => __obj.updateDynamic("Tag")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ReplicationRuleFilter]
-    }
   }
 
   @js.native
@@ -7119,24 +3353,10 @@ package s3 {
     * A container specifying S3 Replication Time Control (S3 RTC) related information, including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block.
     */
   @js.native
+  @Factory
   trait ReplicationTime extends js.Object {
     var Status: ReplicationTimeStatus
     var Time: ReplicationTimeValue
-  }
-
-  object ReplicationTime {
-    @inline
-    def apply(
-        Status: ReplicationTimeStatus,
-        Time: ReplicationTimeValue
-    ): ReplicationTime = {
-      val __obj = js.Dynamic.literal(
-        "Status" -> Status.asInstanceOf[js.Any],
-        "Time"   -> Time.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ReplicationTime]
-    }
   }
 
   @js.native
@@ -7152,19 +3372,9 @@ package s3 {
     * A container specifying the time value for S3 Replication Time Control (S3 RTC) and replication metrics <code>EventThreshold</code>.
     */
   @js.native
+  @Factory
   trait ReplicationTimeValue extends js.Object {
     var Minutes: js.UndefOr[Minutes]
-  }
-
-  object ReplicationTimeValue {
-    @inline
-    def apply(
-        Minutes: js.UndefOr[Minutes] = js.undefined
-    ): ReplicationTimeValue = {
-      val __obj = js.Dynamic.literal()
-      Minutes.foreach(__v => __obj.updateDynamic("Minutes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ReplicationTimeValue]
-    }
   }
 
   /**
@@ -7193,62 +3403,29 @@ package s3 {
     * Container for Payer.
     */
   @js.native
+  @Factory
   trait RequestPaymentConfiguration extends js.Object {
     var Payer: Payer
-  }
-
-  object RequestPaymentConfiguration {
-    @inline
-    def apply(
-        Payer: Payer
-    ): RequestPaymentConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "Payer" -> Payer.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RequestPaymentConfiguration]
-    }
   }
 
   /**
     * Container for specifying if periodic <code>QueryProgress</code> messages should be sent.
     */
   @js.native
+  @Factory
   trait RequestProgress extends js.Object {
     var Enabled: js.UndefOr[EnableRequestProgress]
   }
 
-  object RequestProgress {
-    @inline
-    def apply(
-        Enabled: js.UndefOr[EnableRequestProgress] = js.undefined
-    ): RequestProgress = {
-      val __obj = js.Dynamic.literal()
-      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RequestProgress]
-    }
-  }
-
   @js.native
+  @Factory
   trait RestoreObjectOutput extends js.Object {
     var RequestCharged: js.UndefOr[RequestCharged]
     var RestoreOutputPath: js.UndefOr[RestoreOutputPath]
   }
 
-  object RestoreObjectOutput {
-    @inline
-    def apply(
-        RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
-        RestoreOutputPath: js.UndefOr[RestoreOutputPath] = js.undefined
-    ): RestoreObjectOutput = {
-      val __obj = js.Dynamic.literal()
-      RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
-      RestoreOutputPath.foreach(__v => __obj.updateDynamic("RestoreOutputPath")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RestoreObjectOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait RestoreObjectRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
@@ -7257,31 +3434,11 @@ package s3 {
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
-  object RestoreObjectRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Key: ObjectKey,
-        RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
-        RestoreRequest: js.UndefOr[RestoreRequest] = js.undefined,
-        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
-    ): RestoreObjectRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
-      )
-
-      RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
-      RestoreRequest.foreach(__v => __obj.updateDynamic("RestoreRequest")(__v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RestoreObjectRequest]
-    }
-  }
-
   /**
     * Container for restore job parameters.
     */
   @js.native
+  @Factory
   trait RestoreRequest extends js.Object {
     var Days: js.UndefOr[Days]
     var Description: js.UndefOr[Description]
@@ -7290,29 +3447,6 @@ package s3 {
     var SelectParameters: js.UndefOr[SelectParameters]
     var Tier: js.UndefOr[Tier]
     var Type: js.UndefOr[RestoreRequestType]
-  }
-
-  object RestoreRequest {
-    @inline
-    def apply(
-        Days: js.UndefOr[Days] = js.undefined,
-        Description: js.UndefOr[Description] = js.undefined,
-        GlacierJobParameters: js.UndefOr[GlacierJobParameters] = js.undefined,
-        OutputLocation: js.UndefOr[OutputLocation] = js.undefined,
-        SelectParameters: js.UndefOr[SelectParameters] = js.undefined,
-        Tier: js.UndefOr[Tier] = js.undefined,
-        Type: js.UndefOr[RestoreRequestType] = js.undefined
-    ): RestoreRequest = {
-      val __obj = js.Dynamic.literal()
-      Days.foreach(__v => __obj.updateDynamic("Days")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      GlacierJobParameters.foreach(__v => __obj.updateDynamic("GlacierJobParameters")(__v.asInstanceOf[js.Any]))
-      OutputLocation.foreach(__v => __obj.updateDynamic("OutputLocation")(__v.asInstanceOf[js.Any]))
-      SelectParameters.foreach(__v => __obj.updateDynamic("SelectParameters")(__v.asInstanceOf[js.Any]))
-      Tier.foreach(__v => __obj.updateDynamic("Tier")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RestoreRequest]
-    }
   }
 
   @js.native
@@ -7327,30 +3461,17 @@ package s3 {
     * Specifies the redirect behavior and when a redirect is applied.
     */
   @js.native
+  @Factory
   trait RoutingRule extends js.Object {
     var Redirect: Redirect
     var Condition: js.UndefOr[Condition]
-  }
-
-  object RoutingRule {
-    @inline
-    def apply(
-        Redirect: Redirect,
-        Condition: js.UndefOr[Condition] = js.undefined
-    ): RoutingRule = {
-      val __obj = js.Dynamic.literal(
-        "Redirect" -> Redirect.asInstanceOf[js.Any]
-      )
-
-      Condition.foreach(__v => __obj.updateDynamic("Condition")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RoutingRule]
-    }
   }
 
   /**
     * Specifies lifecycle rules for an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlifecycle.html|PUT Bucket lifecycle]] in the <i>Amazon Simple Storage Service API Reference</i>.
     */
   @js.native
+  @Factory
   trait Rule extends js.Object {
     var Prefix: Prefix
     var Status: ExpirationStatus
@@ -7362,62 +3483,20 @@ package s3 {
     var Transition: js.UndefOr[Transition]
   }
 
-  object Rule {
-    @inline
-    def apply(
-        Prefix: Prefix,
-        Status: ExpirationStatus,
-        AbortIncompleteMultipartUpload: js.UndefOr[AbortIncompleteMultipartUpload] = js.undefined,
-        Expiration: js.UndefOr[LifecycleExpiration] = js.undefined,
-        ID: js.UndefOr[ID] = js.undefined,
-        NoncurrentVersionExpiration: js.UndefOr[NoncurrentVersionExpiration] = js.undefined,
-        NoncurrentVersionTransition: js.UndefOr[NoncurrentVersionTransition] = js.undefined,
-        Transition: js.UndefOr[Transition] = js.undefined
-    ): Rule = {
-      val __obj = js.Dynamic.literal(
-        "Prefix" -> Prefix.asInstanceOf[js.Any],
-        "Status" -> Status.asInstanceOf[js.Any]
-      )
-
-      AbortIncompleteMultipartUpload.foreach(__v =>
-        __obj.updateDynamic("AbortIncompleteMultipartUpload")(__v.asInstanceOf[js.Any])
-      )
-      Expiration.foreach(__v => __obj.updateDynamic("Expiration")(__v.asInstanceOf[js.Any]))
-      ID.foreach(__v => __obj.updateDynamic("ID")(__v.asInstanceOf[js.Any]))
-      NoncurrentVersionExpiration.foreach(__v =>
-        __obj.updateDynamic("NoncurrentVersionExpiration")(__v.asInstanceOf[js.Any])
-      )
-      NoncurrentVersionTransition.foreach(__v =>
-        __obj.updateDynamic("NoncurrentVersionTransition")(__v.asInstanceOf[js.Any])
-      )
-      Transition.foreach(__v => __obj.updateDynamic("Transition")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Rule]
-    }
-  }
-
   /**
     * A container for object key name prefix and suffix filtering rules.
     */
   @js.native
+  @Factory
   trait S3KeyFilter extends js.Object {
     var FilterRules: js.UndefOr[FilterRuleList]
-  }
-
-  object S3KeyFilter {
-    @inline
-    def apply(
-        FilterRules: js.UndefOr[FilterRuleList] = js.undefined
-    ): S3KeyFilter = {
-      val __obj = js.Dynamic.literal()
-      FilterRules.foreach(__v => __obj.updateDynamic("FilterRules")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[S3KeyFilter]
-    }
   }
 
   /**
     * Describes an Amazon S3 location that will receive the results of the restore request.
     */
   @js.native
+  @Factory
   trait S3Location extends js.Object {
     var BucketName: BucketName
     var Prefix: LocationPrefix
@@ -7429,96 +3508,37 @@ package s3 {
     var UserMetadata: js.UndefOr[UserMetadata]
   }
 
-  object S3Location {
-    @inline
-    def apply(
-        BucketName: BucketName,
-        Prefix: LocationPrefix,
-        AccessControlList: js.UndefOr[Grants] = js.undefined,
-        CannedACL: js.UndefOr[ObjectCannedACL] = js.undefined,
-        Encryption: js.UndefOr[Encryption] = js.undefined,
-        StorageClass: js.UndefOr[StorageClass] = js.undefined,
-        Tagging: js.UndefOr[Tagging] = js.undefined,
-        UserMetadata: js.UndefOr[UserMetadata] = js.undefined
-    ): S3Location = {
-      val __obj = js.Dynamic.literal(
-        "BucketName" -> BucketName.asInstanceOf[js.Any],
-        "Prefix"     -> Prefix.asInstanceOf[js.Any]
-      )
-
-      AccessControlList.foreach(__v => __obj.updateDynamic("AccessControlList")(__v.asInstanceOf[js.Any]))
-      CannedACL.foreach(__v => __obj.updateDynamic("CannedACL")(__v.asInstanceOf[js.Any]))
-      Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
-      StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
-      Tagging.foreach(__v => __obj.updateDynamic("Tagging")(__v.asInstanceOf[js.Any]))
-      UserMetadata.foreach(__v => __obj.updateDynamic("UserMetadata")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[S3Location]
-    }
-  }
-
   /**
     * Specifies the use of SSE-KMS to encrypt delivered inventory reports.
     */
   @js.native
+  @Factory
   trait SSEKMS extends js.Object {
     var KeyId: SSEKMSKeyId
-  }
-
-  object SSEKMS {
-    @inline
-    def apply(
-        KeyId: SSEKMSKeyId
-    ): SSEKMS = {
-      val __obj = js.Dynamic.literal(
-        "KeyId" -> KeyId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SSEKMS]
-    }
   }
 
   /**
     * Specifies the use of SSE-S3 to encrypt delivered inventory reports.
     */
   @js.native
+  @Factory
   trait SSES3 extends js.Object {}
-
-  object SSES3 {
-    @inline
-    def apply(
-    ): SSES3 = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[SSES3]
-    }
-  }
 
   /**
     * Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.
     */
   @js.native
+  @Factory
   trait ScanRange extends js.Object {
     var End: js.UndefOr[End]
     var Start: js.UndefOr[Start]
-  }
-
-  object ScanRange {
-    @inline
-    def apply(
-        End: js.UndefOr[End] = js.undefined,
-        Start: js.UndefOr[Start] = js.undefined
-    ): ScanRange = {
-      val __obj = js.Dynamic.literal()
-      End.foreach(__v => __obj.updateDynamic("End")(__v.asInstanceOf[js.Any]))
-      Start.foreach(__v => __obj.updateDynamic("Start")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ScanRange]
-    }
   }
 
   /**
     * The container for selecting objects from a content event stream.
     */
   @js.native
+  @Factory
   trait SelectObjectContentEventStream extends js.Object {
     var Cont: js.UndefOr[ContinuationEvent]
     var End: js.UndefOr[EndEvent]
@@ -7527,45 +3547,17 @@ package s3 {
     var Stats: js.UndefOr[StatsEvent]
   }
 
-  object SelectObjectContentEventStream {
-    @inline
-    def apply(
-        Cont: js.UndefOr[ContinuationEvent] = js.undefined,
-        End: js.UndefOr[EndEvent] = js.undefined,
-        Progress: js.UndefOr[ProgressEvent] = js.undefined,
-        Records: js.UndefOr[RecordsEvent] = js.undefined,
-        Stats: js.UndefOr[StatsEvent] = js.undefined
-    ): SelectObjectContentEventStream = {
-      val __obj = js.Dynamic.literal()
-      Cont.foreach(__v => __obj.updateDynamic("Cont")(__v.asInstanceOf[js.Any]))
-      End.foreach(__v => __obj.updateDynamic("End")(__v.asInstanceOf[js.Any]))
-      Progress.foreach(__v => __obj.updateDynamic("Progress")(__v.asInstanceOf[js.Any]))
-      Records.foreach(__v => __obj.updateDynamic("Records")(__v.asInstanceOf[js.Any]))
-      Stats.foreach(__v => __obj.updateDynamic("Stats")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SelectObjectContentEventStream]
-    }
-  }
-
   @js.native
+  @Factory
   trait SelectObjectContentOutput extends js.Object {
     var Payload: js.UndefOr[SelectObjectContentEventStream]
-  }
-
-  object SelectObjectContentOutput {
-    @inline
-    def apply(
-        Payload: js.UndefOr[SelectObjectContentEventStream] = js.undefined
-    ): SelectObjectContentOutput = {
-      val __obj = js.Dynamic.literal()
-      Payload.foreach(__v => __obj.updateDynamic("Payload")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SelectObjectContentOutput]
-    }
   }
 
   /**
     * Request to filter the contents of an Amazon S3 object based on a simple Structured Query Language (SQL) statement. In the request, along with the SQL expression, you must specify a data serialization format (JSON or CSV) of the object. Amazon S3 uses this to parse object data into records. It returns only records that match the specified SQL expression. You must also specify the data serialization format for the response. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectSELECTContent.html|S3Select API Documentation]].
     */
   @js.native
+  @Factory
   trait SelectObjectContentRequest extends js.Object {
     var Bucket: BucketName
     var Expression: Expression
@@ -7580,67 +3572,16 @@ package s3 {
     var ScanRange: js.UndefOr[ScanRange]
   }
 
-  object SelectObjectContentRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Expression: Expression,
-        ExpressionType: ExpressionType,
-        InputSerialization: InputSerialization,
-        Key: ObjectKey,
-        OutputSerialization: OutputSerialization,
-        RequestProgress: js.UndefOr[RequestProgress] = js.undefined,
-        SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
-        SSECustomerKey: js.UndefOr[SSECustomerKey] = js.undefined,
-        SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined,
-        ScanRange: js.UndefOr[ScanRange] = js.undefined
-    ): SelectObjectContentRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket"              -> Bucket.asInstanceOf[js.Any],
-        "Expression"          -> Expression.asInstanceOf[js.Any],
-        "ExpressionType"      -> ExpressionType.asInstanceOf[js.Any],
-        "InputSerialization"  -> InputSerialization.asInstanceOf[js.Any],
-        "Key"                 -> Key.asInstanceOf[js.Any],
-        "OutputSerialization" -> OutputSerialization.asInstanceOf[js.Any]
-      )
-
-      RequestProgress.foreach(__v => __obj.updateDynamic("RequestProgress")(__v.asInstanceOf[js.Any]))
-      SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
-      SSECustomerKey.foreach(__v => __obj.updateDynamic("SSECustomerKey")(__v.asInstanceOf[js.Any]))
-      SSECustomerKeyMD5.foreach(__v => __obj.updateDynamic("SSECustomerKeyMD5")(__v.asInstanceOf[js.Any]))
-      ScanRange.foreach(__v => __obj.updateDynamic("ScanRange")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SelectObjectContentRequest]
-    }
-  }
-
   /**
     * Describes the parameters for Select job types.
     */
   @js.native
+  @Factory
   trait SelectParameters extends js.Object {
     var Expression: Expression
     var ExpressionType: ExpressionType
     var InputSerialization: InputSerialization
     var OutputSerialization: OutputSerialization
-  }
-
-  object SelectParameters {
-    @inline
-    def apply(
-        Expression: Expression,
-        ExpressionType: ExpressionType,
-        InputSerialization: InputSerialization,
-        OutputSerialization: OutputSerialization
-    ): SelectParameters = {
-      val __obj = js.Dynamic.literal(
-        "Expression"          -> Expression.asInstanceOf[js.Any],
-        "ExpressionType"      -> ExpressionType.asInstanceOf[js.Any],
-        "InputSerialization"  -> InputSerialization.asInstanceOf[js.Any],
-        "OutputSerialization" -> OutputSerialization.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SelectParameters]
-    }
   }
 
   @js.native
@@ -7656,106 +3597,46 @@ package s3 {
     * Describes the default server-side encryption to apply to new objects in the bucket. If a PUT Object request doesn't specify any server-side encryption, this default encryption will be applied. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTencryption.html|PUT Bucket encryption]] in the <i>Amazon Simple Storage Service API Reference</i>.
     */
   @js.native
+  @Factory
   trait ServerSideEncryptionByDefault extends js.Object {
     var SSEAlgorithm: ServerSideEncryption
     var KMSMasterKeyID: js.UndefOr[SSEKMSKeyId]
-  }
-
-  object ServerSideEncryptionByDefault {
-    @inline
-    def apply(
-        SSEAlgorithm: ServerSideEncryption,
-        KMSMasterKeyID: js.UndefOr[SSEKMSKeyId] = js.undefined
-    ): ServerSideEncryptionByDefault = {
-      val __obj = js.Dynamic.literal(
-        "SSEAlgorithm" -> SSEAlgorithm.asInstanceOf[js.Any]
-      )
-
-      KMSMasterKeyID.foreach(__v => __obj.updateDynamic("KMSMasterKeyID")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ServerSideEncryptionByDefault]
-    }
   }
 
   /**
     * Specifies the default server-side-encryption configuration.
     */
   @js.native
+  @Factory
   trait ServerSideEncryptionConfiguration extends js.Object {
     var Rules: ServerSideEncryptionRules
-  }
-
-  object ServerSideEncryptionConfiguration {
-    @inline
-    def apply(
-        Rules: ServerSideEncryptionRules
-    ): ServerSideEncryptionConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "Rules" -> Rules.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ServerSideEncryptionConfiguration]
-    }
   }
 
   /**
     * Specifies the default server-side encryption configuration.
     */
   @js.native
+  @Factory
   trait ServerSideEncryptionRule extends js.Object {
     var ApplyServerSideEncryptionByDefault: js.UndefOr[ServerSideEncryptionByDefault]
-  }
-
-  object ServerSideEncryptionRule {
-    @inline
-    def apply(
-        ApplyServerSideEncryptionByDefault: js.UndefOr[ServerSideEncryptionByDefault] = js.undefined
-    ): ServerSideEncryptionRule = {
-      val __obj = js.Dynamic.literal()
-      ApplyServerSideEncryptionByDefault.foreach(__v =>
-        __obj.updateDynamic("ApplyServerSideEncryptionByDefault")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[ServerSideEncryptionRule]
-    }
   }
 
   /**
     * A container that describes additional filters for identifying the source objects that you want to replicate. You can choose to enable or disable the replication of these objects. Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using a customer master key (CMK) stored in AWS Key Management Service (SSE-KMS).
     */
   @js.native
+  @Factory
   trait SourceSelectionCriteria extends js.Object {
     var SseKmsEncryptedObjects: js.UndefOr[SseKmsEncryptedObjects]
-  }
-
-  object SourceSelectionCriteria {
-    @inline
-    def apply(
-        SseKmsEncryptedObjects: js.UndefOr[SseKmsEncryptedObjects] = js.undefined
-    ): SourceSelectionCriteria = {
-      val __obj = js.Dynamic.literal()
-      SseKmsEncryptedObjects.foreach(__v => __obj.updateDynamic("SseKmsEncryptedObjects")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SourceSelectionCriteria]
-    }
   }
 
   /**
     * A container for filter information for the selection of S3 objects encrypted with AWS KMS.
     */
   @js.native
+  @Factory
   trait SseKmsEncryptedObjects extends js.Object {
     var Status: SseKmsEncryptedObjectsStatus
-  }
-
-  object SseKmsEncryptedObjects {
-    @inline
-    def apply(
-        Status: SseKmsEncryptedObjectsStatus
-    ): SseKmsEncryptedObjects = {
-      val __obj = js.Dynamic.literal(
-        "Status" -> Status.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SseKmsEncryptedObjects]
-    }
   }
 
   @js.native
@@ -7771,44 +3652,20 @@ package s3 {
     * Container for the stats details.
     */
   @js.native
+  @Factory
   trait Stats extends js.Object {
     var BytesProcessed: js.UndefOr[BytesProcessed]
     var BytesReturned: js.UndefOr[BytesReturned]
     var BytesScanned: js.UndefOr[BytesScanned]
   }
 
-  object Stats {
-    @inline
-    def apply(
-        BytesProcessed: js.UndefOr[BytesProcessed] = js.undefined,
-        BytesReturned: js.UndefOr[BytesReturned] = js.undefined,
-        BytesScanned: js.UndefOr[BytesScanned] = js.undefined
-    ): Stats = {
-      val __obj = js.Dynamic.literal()
-      BytesProcessed.foreach(__v => __obj.updateDynamic("BytesProcessed")(__v.asInstanceOf[js.Any]))
-      BytesReturned.foreach(__v => __obj.updateDynamic("BytesReturned")(__v.asInstanceOf[js.Any]))
-      BytesScanned.foreach(__v => __obj.updateDynamic("BytesScanned")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Stats]
-    }
-  }
-
   /**
     * Container for the Stats Event.
     */
   @js.native
+  @Factory
   trait StatsEvent extends js.Object {
     var Details: js.UndefOr[Stats]
-  }
-
-  object StatsEvent {
-    @inline
-    def apply(
-        Details: js.UndefOr[Stats] = js.undefined
-    ): StatsEvent = {
-      val __obj = js.Dynamic.literal()
-      Details.foreach(__v => __obj.updateDynamic("Details")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StatsEvent]
-    }
   }
 
   @js.native
@@ -7831,43 +3688,19 @@ package s3 {
     * Specifies data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes for an Amazon S3 bucket.
     */
   @js.native
+  @Factory
   trait StorageClassAnalysis extends js.Object {
     var DataExport: js.UndefOr[StorageClassAnalysisDataExport]
-  }
-
-  object StorageClassAnalysis {
-    @inline
-    def apply(
-        DataExport: js.UndefOr[StorageClassAnalysisDataExport] = js.undefined
-    ): StorageClassAnalysis = {
-      val __obj = js.Dynamic.literal()
-      DataExport.foreach(__v => __obj.updateDynamic("DataExport")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StorageClassAnalysis]
-    }
   }
 
   /**
     * Container for data related to the storage class analysis for an Amazon S3 bucket for export.
     */
   @js.native
+  @Factory
   trait StorageClassAnalysisDataExport extends js.Object {
     var Destination: AnalyticsExportDestination
     var OutputSchemaVersion: StorageClassAnalysisSchemaVersion
-  }
-
-  object StorageClassAnalysisDataExport {
-    @inline
-    def apply(
-        Destination: AnalyticsExportDestination,
-        OutputSchemaVersion: StorageClassAnalysisSchemaVersion
-    ): StorageClassAnalysisDataExport = {
-      val __obj = js.Dynamic.literal(
-        "Destination"         -> Destination.asInstanceOf[js.Any],
-        "OutputSchemaVersion" -> OutputSchemaVersion.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StorageClassAnalysisDataExport]
-    }
   }
 
   @js.native
@@ -7882,45 +3715,19 @@ package s3 {
     * A container of a key value name pair.
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var Key: ObjectKey
     var Value: Value
-  }
-
-  object Tag {
-    @inline
-    def apply(
-        Key: ObjectKey,
-        Value: Value
-    ): Tag = {
-      val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Tag]
-    }
   }
 
   /**
     * Container for <code>TagSet</code> elements.
     */
   @js.native
+  @Factory
   trait Tagging extends js.Object {
     var TagSet: TagSet
-  }
-
-  object Tagging {
-    @inline
-    def apply(
-        TagSet: TagSet
-    ): Tagging = {
-      val __obj = js.Dynamic.literal(
-        "TagSet" -> TagSet.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Tagging]
-    }
   }
 
   @js.native
@@ -7936,22 +3743,10 @@ package s3 {
     * Container for granting information.
     */
   @js.native
+  @Factory
   trait TargetGrant extends js.Object {
     var Grantee: js.UndefOr[Grantee]
     var Permission: js.UndefOr[BucketLogsPermission]
-  }
-
-  object TargetGrant {
-    @inline
-    def apply(
-        Grantee: js.UndefOr[Grantee] = js.undefined,
-        Permission: js.UndefOr[BucketLogsPermission] = js.undefined
-    ): TargetGrant = {
-      val __obj = js.Dynamic.literal()
-      Grantee.foreach(__v => __obj.updateDynamic("Grantee")(__v.asInstanceOf[js.Any]))
-      Permission.foreach(__v => __obj.updateDynamic("Permission")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TargetGrant]
-    }
   }
 
   @js.native
@@ -7968,6 +3763,7 @@ package s3 {
     * A container for specifying the configuration for publication of messages to an Amazon Simple Notification Service (Amazon SNS) topic when Amazon S3 detects specified events.
     */
   @js.native
+  @Factory
   trait TopicConfiguration extends js.Object {
     var Events: EventList
     var TopicArn: TopicArn
@@ -7975,29 +3771,11 @@ package s3 {
     var Id: js.UndefOr[NotificationId]
   }
 
-  object TopicConfiguration {
-    @inline
-    def apply(
-        Events: EventList,
-        TopicArn: TopicArn,
-        Filter: js.UndefOr[NotificationConfigurationFilter] = js.undefined,
-        Id: js.UndefOr[NotificationId] = js.undefined
-    ): TopicConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "Events"   -> Events.asInstanceOf[js.Any],
-        "TopicArn" -> TopicArn.asInstanceOf[js.Any]
-      )
-
-      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TopicConfiguration]
-    }
-  }
-
   /**
     * A container for specifying the configuration for publication of messages to an Amazon Simple Notification Service (Amazon SNS) topic when Amazon S3 detects specified events. This data type is deprecated. Use <a>TopicConfiguration</a> instead.
     */
   @js.native
+  @Factory
   trait TopicConfigurationDeprecated extends js.Object {
     var Event: js.UndefOr[Event]
     var Events: js.UndefOr[EventList]
@@ -8005,46 +3783,15 @@ package s3 {
     var Topic: js.UndefOr[TopicArn]
   }
 
-  object TopicConfigurationDeprecated {
-    @inline
-    def apply(
-        Event: js.UndefOr[Event] = js.undefined,
-        Events: js.UndefOr[EventList] = js.undefined,
-        Id: js.UndefOr[NotificationId] = js.undefined,
-        Topic: js.UndefOr[TopicArn] = js.undefined
-    ): TopicConfigurationDeprecated = {
-      val __obj = js.Dynamic.literal()
-      Event.foreach(__v => __obj.updateDynamic("Event")(__v.asInstanceOf[js.Any]))
-      Events.foreach(__v => __obj.updateDynamic("Events")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Topic.foreach(__v => __obj.updateDynamic("Topic")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TopicConfigurationDeprecated]
-    }
-  }
-
   /**
     * Specifies when an object transitions to a specified storage class.
     */
   @js.native
+  @Factory
   trait Transition extends js.Object {
     var Date: js.UndefOr[Date]
     var Days: js.UndefOr[Days]
     var StorageClass: js.UndefOr[TransitionStorageClass]
-  }
-
-  object Transition {
-    @inline
-    def apply(
-        Date: js.UndefOr[Date] = js.undefined,
-        Days: js.UndefOr[Days] = js.undefined,
-        StorageClass: js.UndefOr[TransitionStorageClass] = js.undefined
-    ): Transition = {
-      val __obj = js.Dynamic.literal()
-      Date.foreach(__v => __obj.updateDynamic("Date")(__v.asInstanceOf[js.Any]))
-      Days.foreach(__v => __obj.updateDynamic("Days")(__v.asInstanceOf[js.Any]))
-      StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Transition]
-    }
   }
 
   @js.native
@@ -8070,6 +3817,7 @@ package s3 {
   }
 
   @js.native
+  @Factory
   trait UploadPartCopyOutput extends js.Object {
     var CopyPartResult: js.UndefOr[CopyPartResult]
     var CopySourceVersionId: js.UndefOr[CopySourceVersionId]
@@ -8080,30 +3828,8 @@ package s3 {
     var ServerSideEncryption: js.UndefOr[ServerSideEncryption]
   }
 
-  object UploadPartCopyOutput {
-    @inline
-    def apply(
-        CopyPartResult: js.UndefOr[CopyPartResult] = js.undefined,
-        CopySourceVersionId: js.UndefOr[CopySourceVersionId] = js.undefined,
-        RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
-        SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
-        SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined,
-        SSEKMSKeyId: js.UndefOr[SSEKMSKeyId] = js.undefined,
-        ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined
-    ): UploadPartCopyOutput = {
-      val __obj = js.Dynamic.literal()
-      CopyPartResult.foreach(__v => __obj.updateDynamic("CopyPartResult")(__v.asInstanceOf[js.Any]))
-      CopySourceVersionId.foreach(__v => __obj.updateDynamic("CopySourceVersionId")(__v.asInstanceOf[js.Any]))
-      RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
-      SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
-      SSECustomerKeyMD5.foreach(__v => __obj.updateDynamic("SSECustomerKeyMD5")(__v.asInstanceOf[js.Any]))
-      SSEKMSKeyId.foreach(__v => __obj.updateDynamic("SSEKMSKeyId")(__v.asInstanceOf[js.Any]))
-      ServerSideEncryption.foreach(__v => __obj.updateDynamic("ServerSideEncryption")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UploadPartCopyOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait UploadPartCopyRequest extends js.Object {
     var Bucket: BucketName
     var CopySource: CopySource
@@ -8124,60 +3850,8 @@ package s3 {
     var SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5]
   }
 
-  object UploadPartCopyRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        CopySource: CopySource,
-        Key: ObjectKey,
-        PartNumber: PartNumber,
-        UploadId: MultipartUploadId,
-        CopySourceIfMatch: js.UndefOr[CopySourceIfMatch] = js.undefined,
-        CopySourceIfModifiedSince: js.UndefOr[CopySourceIfModifiedSince] = js.undefined,
-        CopySourceIfNoneMatch: js.UndefOr[CopySourceIfNoneMatch] = js.undefined,
-        CopySourceIfUnmodifiedSince: js.UndefOr[CopySourceIfUnmodifiedSince] = js.undefined,
-        CopySourceRange: js.UndefOr[CopySourceRange] = js.undefined,
-        CopySourceSSECustomerAlgorithm: js.UndefOr[CopySourceSSECustomerAlgorithm] = js.undefined,
-        CopySourceSSECustomerKey: js.UndefOr[CopySourceSSECustomerKey] = js.undefined,
-        CopySourceSSECustomerKeyMD5: js.UndefOr[CopySourceSSECustomerKeyMD5] = js.undefined,
-        RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
-        SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
-        SSECustomerKey: js.UndefOr[SSECustomerKey] = js.undefined,
-        SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined
-    ): UploadPartCopyRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket"     -> Bucket.asInstanceOf[js.Any],
-        "CopySource" -> CopySource.asInstanceOf[js.Any],
-        "Key"        -> Key.asInstanceOf[js.Any],
-        "PartNumber" -> PartNumber.asInstanceOf[js.Any],
-        "UploadId"   -> UploadId.asInstanceOf[js.Any]
-      )
-
-      CopySourceIfMatch.foreach(__v => __obj.updateDynamic("CopySourceIfMatch")(__v.asInstanceOf[js.Any]))
-      CopySourceIfModifiedSince.foreach(__v =>
-        __obj.updateDynamic("CopySourceIfModifiedSince")(__v.asInstanceOf[js.Any])
-      )
-      CopySourceIfNoneMatch.foreach(__v => __obj.updateDynamic("CopySourceIfNoneMatch")(__v.asInstanceOf[js.Any]))
-      CopySourceIfUnmodifiedSince.foreach(__v =>
-        __obj.updateDynamic("CopySourceIfUnmodifiedSince")(__v.asInstanceOf[js.Any])
-      )
-      CopySourceRange.foreach(__v => __obj.updateDynamic("CopySourceRange")(__v.asInstanceOf[js.Any]))
-      CopySourceSSECustomerAlgorithm.foreach(__v =>
-        __obj.updateDynamic("CopySourceSSECustomerAlgorithm")(__v.asInstanceOf[js.Any])
-      )
-      CopySourceSSECustomerKey.foreach(__v => __obj.updateDynamic("CopySourceSSECustomerKey")(__v.asInstanceOf[js.Any]))
-      CopySourceSSECustomerKeyMD5.foreach(__v =>
-        __obj.updateDynamic("CopySourceSSECustomerKeyMD5")(__v.asInstanceOf[js.Any])
-      )
-      RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
-      SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
-      SSECustomerKey.foreach(__v => __obj.updateDynamic("SSECustomerKey")(__v.asInstanceOf[js.Any]))
-      SSECustomerKeyMD5.foreach(__v => __obj.updateDynamic("SSECustomerKeyMD5")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UploadPartCopyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UploadPartOutput extends js.Object {
     var ETag: js.UndefOr[ETag]
     var RequestCharged: js.UndefOr[RequestCharged]
@@ -8187,28 +3861,8 @@ package s3 {
     var ServerSideEncryption: js.UndefOr[ServerSideEncryption]
   }
 
-  object UploadPartOutput {
-    @inline
-    def apply(
-        ETag: js.UndefOr[ETag] = js.undefined,
-        RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
-        SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
-        SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined,
-        SSEKMSKeyId: js.UndefOr[SSEKMSKeyId] = js.undefined,
-        ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined
-    ): UploadPartOutput = {
-      val __obj = js.Dynamic.literal()
-      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
-      RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
-      SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
-      SSECustomerKeyMD5.foreach(__v => __obj.updateDynamic("SSECustomerKeyMD5")(__v.asInstanceOf[js.Any]))
-      SSEKMSKeyId.foreach(__v => __obj.updateDynamic("SSEKMSKeyId")(__v.asInstanceOf[js.Any]))
-      ServerSideEncryption.foreach(__v => __obj.updateDynamic("ServerSideEncryption")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UploadPartOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait UploadPartRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
@@ -8223,86 +3877,25 @@ package s3 {
     var SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5]
   }
 
-  object UploadPartRequest {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Key: ObjectKey,
-        PartNumber: PartNumber,
-        UploadId: MultipartUploadId,
-        Body: js.UndefOr[Body] = js.undefined,
-        ContentLength: js.UndefOr[ContentLength] = js.undefined,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
-        RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
-        SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
-        SSECustomerKey: js.UndefOr[SSECustomerKey] = js.undefined,
-        SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined
-    ): UploadPartRequest = {
-      val __obj = js.Dynamic.literal(
-        "Bucket"     -> Bucket.asInstanceOf[js.Any],
-        "Key"        -> Key.asInstanceOf[js.Any],
-        "PartNumber" -> PartNumber.asInstanceOf[js.Any],
-        "UploadId"   -> UploadId.asInstanceOf[js.Any]
-      )
-
-      Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
-      ContentLength.foreach(__v => __obj.updateDynamic("ContentLength")(__v.asInstanceOf[js.Any]))
-      ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
-      RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
-      SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
-      SSECustomerKey.foreach(__v => __obj.updateDynamic("SSECustomerKey")(__v.asInstanceOf[js.Any]))
-      SSECustomerKeyMD5.foreach(__v => __obj.updateDynamic("SSECustomerKeyMD5")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UploadPartRequest]
-    }
-  }
-
   /**
     * Describes the versioning state of an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTVersioningStatus.html|PUT Bucket versioning]] in the <i>Amazon Simple Storage Service API Reference</i>.
     */
   @js.native
+  @Factory
   trait VersioningConfiguration extends js.Object {
     var MFADelete: js.UndefOr[MFADelete]
     var Status: js.UndefOr[BucketVersioningStatus]
-  }
-
-  object VersioningConfiguration {
-    @inline
-    def apply(
-        MFADelete: js.UndefOr[MFADelete] = js.undefined,
-        Status: js.UndefOr[BucketVersioningStatus] = js.undefined
-    ): VersioningConfiguration = {
-      val __obj = js.Dynamic.literal()
-      MFADelete.foreach(__v => __obj.updateDynamic("MFADelete")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VersioningConfiguration]
-    }
   }
 
   /**
     * Specifies website configuration parameters for an Amazon S3 bucket.
     */
   @js.native
+  @Factory
   trait WebsiteConfiguration extends js.Object {
     var ErrorDocument: js.UndefOr[ErrorDocument]
     var IndexDocument: js.UndefOr[IndexDocument]
     var RedirectAllRequestsTo: js.UndefOr[RedirectAllRequestsTo]
     var RoutingRules: js.UndefOr[RoutingRules]
-  }
-
-  object WebsiteConfiguration {
-    @inline
-    def apply(
-        ErrorDocument: js.UndefOr[ErrorDocument] = js.undefined,
-        IndexDocument: js.UndefOr[IndexDocument] = js.undefined,
-        RedirectAllRequestsTo: js.UndefOr[RedirectAllRequestsTo] = js.undefined,
-        RoutingRules: js.UndefOr[RoutingRules] = js.undefined
-    ): WebsiteConfiguration = {
-      val __obj = js.Dynamic.literal()
-      ErrorDocument.foreach(__v => __obj.updateDynamic("ErrorDocument")(__v.asInstanceOf[js.Any]))
-      IndexDocument.foreach(__v => __obj.updateDynamic("IndexDocument")(__v.asInstanceOf[js.Any]))
-      RedirectAllRequestsTo.foreach(__v => __obj.updateDynamic("RedirectAllRequestsTo")(__v.asInstanceOf[js.Any]))
-      RoutingRules.foreach(__v => __obj.updateDynamic("RoutingRules")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[WebsiteConfiguration]
-    }
   }
 }

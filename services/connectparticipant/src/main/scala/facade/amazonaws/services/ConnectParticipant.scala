@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object connectparticipant {
   type ChatContent            = String
@@ -70,22 +71,10 @@ package connectparticipant {
     * Connection credentials.
     */
   @js.native
+  @Factory
   trait ConnectionCredentials extends js.Object {
     var ConnectionToken: js.UndefOr[ParticipantToken]
     var Expiry: js.UndefOr[ISO8601Datetime]
-  }
-
-  object ConnectionCredentials {
-    @inline
-    def apply(
-        ConnectionToken: js.UndefOr[ParticipantToken] = js.undefined,
-        Expiry: js.UndefOr[ISO8601Datetime] = js.undefined
-    ): ConnectionCredentials = {
-      val __obj = js.Dynamic.literal()
-      ConnectionToken.foreach(__v => __obj.updateDynamic("ConnectionToken")(__v.asInstanceOf[js.Any]))
-      Expiry.foreach(__v => __obj.updateDynamic("Expiry")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ConnectionCredentials]
-    }
   }
 
   @js.native
@@ -98,80 +87,32 @@ package connectparticipant {
   }
 
   @js.native
+  @Factory
   trait CreateParticipantConnectionRequest extends js.Object {
     var ParticipantToken: ParticipantToken
     var Type: ConnectionTypeList
   }
 
-  object CreateParticipantConnectionRequest {
-    @inline
-    def apply(
-        ParticipantToken: ParticipantToken,
-        Type: ConnectionTypeList
-    ): CreateParticipantConnectionRequest = {
-      val __obj = js.Dynamic.literal(
-        "ParticipantToken" -> ParticipantToken.asInstanceOf[js.Any],
-        "Type"             -> Type.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateParticipantConnectionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateParticipantConnectionResponse extends js.Object {
     var ConnectionCredentials: js.UndefOr[ConnectionCredentials]
     var Websocket: js.UndefOr[Websocket]
   }
 
-  object CreateParticipantConnectionResponse {
-    @inline
-    def apply(
-        ConnectionCredentials: js.UndefOr[ConnectionCredentials] = js.undefined,
-        Websocket: js.UndefOr[Websocket] = js.undefined
-    ): CreateParticipantConnectionResponse = {
-      val __obj = js.Dynamic.literal()
-      ConnectionCredentials.foreach(__v => __obj.updateDynamic("ConnectionCredentials")(__v.asInstanceOf[js.Any]))
-      Websocket.foreach(__v => __obj.updateDynamic("Websocket")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateParticipantConnectionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisconnectParticipantRequest extends js.Object {
     var ConnectionToken: ParticipantToken
     var ClientToken: js.UndefOr[ClientToken]
   }
 
-  object DisconnectParticipantRequest {
-    @inline
-    def apply(
-        ConnectionToken: ParticipantToken,
-        ClientToken: js.UndefOr[ClientToken] = js.undefined
-    ): DisconnectParticipantRequest = {
-      val __obj = js.Dynamic.literal(
-        "ConnectionToken" -> ConnectionToken.asInstanceOf[js.Any]
-      )
-
-      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DisconnectParticipantRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisconnectParticipantResponse extends js.Object {}
 
-  object DisconnectParticipantResponse {
-    @inline
-    def apply(
-    ): DisconnectParticipantResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DisconnectParticipantResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetTranscriptRequest extends js.Object {
     var ConnectionToken: ParticipantToken
     var ContactId: js.UndefOr[ContactId]
@@ -182,57 +123,19 @@ package connectparticipant {
     var StartPosition: js.UndefOr[StartPosition]
   }
 
-  object GetTranscriptRequest {
-    @inline
-    def apply(
-        ConnectionToken: ParticipantToken,
-        ContactId: js.UndefOr[ContactId] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        ScanDirection: js.UndefOr[ScanDirection] = js.undefined,
-        SortOrder: js.UndefOr[SortKey] = js.undefined,
-        StartPosition: js.UndefOr[StartPosition] = js.undefined
-    ): GetTranscriptRequest = {
-      val __obj = js.Dynamic.literal(
-        "ConnectionToken" -> ConnectionToken.asInstanceOf[js.Any]
-      )
-
-      ContactId.foreach(__v => __obj.updateDynamic("ContactId")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ScanDirection.foreach(__v => __obj.updateDynamic("ScanDirection")(__v.asInstanceOf[js.Any]))
-      SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
-      StartPosition.foreach(__v => __obj.updateDynamic("StartPosition")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetTranscriptRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetTranscriptResponse extends js.Object {
     var InitialContactId: js.UndefOr[ContactId]
     var NextToken: js.UndefOr[NextToken]
     var Transcript: js.UndefOr[Transcript]
   }
 
-  object GetTranscriptResponse {
-    @inline
-    def apply(
-        InitialContactId: js.UndefOr[ContactId] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        Transcript: js.UndefOr[Transcript] = js.undefined
-    ): GetTranscriptResponse = {
-      val __obj = js.Dynamic.literal()
-      InitialContactId.foreach(__v => __obj.updateDynamic("InitialContactId")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Transcript.foreach(__v => __obj.updateDynamic("Transcript")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetTranscriptResponse]
-    }
-  }
-
   /**
     * An item - message or event - that has been sent.
     */
   @js.native
+  @Factory
   trait Item extends js.Object {
     var AbsoluteTime: js.UndefOr[Instant]
     var Content: js.UndefOr[ChatContent]
@@ -242,31 +145,6 @@ package connectparticipant {
     var ParticipantId: js.UndefOr[ParticipantId]
     var ParticipantRole: js.UndefOr[ParticipantRole]
     var Type: js.UndefOr[ChatItemType]
-  }
-
-  object Item {
-    @inline
-    def apply(
-        AbsoluteTime: js.UndefOr[Instant] = js.undefined,
-        Content: js.UndefOr[ChatContent] = js.undefined,
-        ContentType: js.UndefOr[ChatContentType] = js.undefined,
-        DisplayName: js.UndefOr[DisplayName] = js.undefined,
-        Id: js.UndefOr[ChatItemId] = js.undefined,
-        ParticipantId: js.UndefOr[ParticipantId] = js.undefined,
-        ParticipantRole: js.UndefOr[ParticipantRole] = js.undefined,
-        Type: js.UndefOr[ChatItemType] = js.undefined
-    ): Item = {
-      val __obj = js.Dynamic.literal()
-      AbsoluteTime.foreach(__v => __obj.updateDynamic("AbsoluteTime")(__v.asInstanceOf[js.Any]))
-      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
-      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
-      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      ParticipantId.foreach(__v => __obj.updateDynamic("ParticipantId")(__v.asInstanceOf[js.Any]))
-      ParticipantRole.foreach(__v => __obj.updateDynamic("ParticipantRole")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Item]
-    }
   }
 
   @js.native
@@ -289,6 +167,7 @@ package connectparticipant {
   }
 
   @js.native
+  @Factory
   trait SendEventRequest extends js.Object {
     var ConnectionToken: ParticipantToken
     var ContentType: ChatContentType
@@ -296,45 +175,15 @@ package connectparticipant {
     var Content: js.UndefOr[ChatContent]
   }
 
-  object SendEventRequest {
-    @inline
-    def apply(
-        ConnectionToken: ParticipantToken,
-        ContentType: ChatContentType,
-        ClientToken: js.UndefOr[ClientToken] = js.undefined,
-        Content: js.UndefOr[ChatContent] = js.undefined
-    ): SendEventRequest = {
-      val __obj = js.Dynamic.literal(
-        "ConnectionToken" -> ConnectionToken.asInstanceOf[js.Any],
-        "ContentType"     -> ContentType.asInstanceOf[js.Any]
-      )
-
-      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
-      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SendEventRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait SendEventResponse extends js.Object {
     var AbsoluteTime: js.UndefOr[Instant]
     var Id: js.UndefOr[ChatItemId]
   }
 
-  object SendEventResponse {
-    @inline
-    def apply(
-        AbsoluteTime: js.UndefOr[Instant] = js.undefined,
-        Id: js.UndefOr[ChatItemId] = js.undefined
-    ): SendEventResponse = {
-      val __obj = js.Dynamic.literal()
-      AbsoluteTime.foreach(__v => __obj.updateDynamic("AbsoluteTime")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SendEventResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait SendMessageRequest extends js.Object {
     var ConnectionToken: ParticipantToken
     var Content: ChatContent
@@ -342,42 +191,11 @@ package connectparticipant {
     var ClientToken: js.UndefOr[ClientToken]
   }
 
-  object SendMessageRequest {
-    @inline
-    def apply(
-        ConnectionToken: ParticipantToken,
-        Content: ChatContent,
-        ContentType: ChatContentType,
-        ClientToken: js.UndefOr[ClientToken] = js.undefined
-    ): SendMessageRequest = {
-      val __obj = js.Dynamic.literal(
-        "ConnectionToken" -> ConnectionToken.asInstanceOf[js.Any],
-        "Content"         -> Content.asInstanceOf[js.Any],
-        "ContentType"     -> ContentType.asInstanceOf[js.Any]
-      )
-
-      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SendMessageRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait SendMessageResponse extends js.Object {
     var AbsoluteTime: js.UndefOr[Instant]
     var Id: js.UndefOr[ChatItemId]
-  }
-
-  object SendMessageResponse {
-    @inline
-    def apply(
-        AbsoluteTime: js.UndefOr[Instant] = js.undefined,
-        Id: js.UndefOr[ChatItemId] = js.undefined
-    ): SendMessageResponse = {
-      val __obj = js.Dynamic.literal()
-      AbsoluteTime.foreach(__v => __obj.updateDynamic("AbsoluteTime")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SendMessageResponse]
-    }
   }
 
   @js.native
@@ -393,46 +211,20 @@ package connectparticipant {
     * A filtering option for where to start. For example, if you sent 100 messages, start with message 50.
     */
   @js.native
+  @Factory
   trait StartPosition extends js.Object {
     var AbsoluteTime: js.UndefOr[Instant]
     var Id: js.UndefOr[ChatItemId]
     var MostRecent: js.UndefOr[MostRecent]
   }
 
-  object StartPosition {
-    @inline
-    def apply(
-        AbsoluteTime: js.UndefOr[Instant] = js.undefined,
-        Id: js.UndefOr[ChatItemId] = js.undefined,
-        MostRecent: js.UndefOr[MostRecent] = js.undefined
-    ): StartPosition = {
-      val __obj = js.Dynamic.literal()
-      AbsoluteTime.foreach(__v => __obj.updateDynamic("AbsoluteTime")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      MostRecent.foreach(__v => __obj.updateDynamic("MostRecent")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartPosition]
-    }
-  }
-
   /**
     * The websocket for the participant's connection.
     */
   @js.native
+  @Factory
   trait Websocket extends js.Object {
     var ConnectionExpiry: js.UndefOr[ISO8601Datetime]
     var Url: js.UndefOr[PreSignedConnectionUrl]
-  }
-
-  object Websocket {
-    @inline
-    def apply(
-        ConnectionExpiry: js.UndefOr[ISO8601Datetime] = js.undefined,
-        Url: js.UndefOr[PreSignedConnectionUrl] = js.undefined
-    ): Websocket = {
-      val __obj = js.Dynamic.literal()
-      ConnectionExpiry.foreach(__v => __obj.updateDynamic("ConnectionExpiry")(__v.asInstanceOf[js.Any]))
-      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Websocket]
-    }
   }
 }

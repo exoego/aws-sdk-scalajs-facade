@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object mediastore {
   type AllowedHeaders                = js.Array[Header]
@@ -101,6 +102,7 @@ package mediastore {
     * This section describes operations that you can perform on an AWS Elemental MediaStore container.
     */
   @js.native
+  @Factory
   trait Container extends js.Object {
     var ARN: js.UndefOr[ContainerARN]
     var AccessLoggingEnabled: js.UndefOr[ContainerAccessLoggingEnabled]
@@ -108,27 +110,6 @@ package mediastore {
     var Endpoint: js.UndefOr[Endpoint]
     var Name: js.UndefOr[ContainerName]
     var Status: js.UndefOr[ContainerStatus]
-  }
-
-  object Container {
-    @inline
-    def apply(
-        ARN: js.UndefOr[ContainerARN] = js.undefined,
-        AccessLoggingEnabled: js.UndefOr[ContainerAccessLoggingEnabled] = js.undefined,
-        CreationTime: js.UndefOr[TimeStamp] = js.undefined,
-        Endpoint: js.UndefOr[Endpoint] = js.undefined,
-        Name: js.UndefOr[ContainerName] = js.undefined,
-        Status: js.UndefOr[ContainerStatus] = js.undefined
-    ): Container = {
-      val __obj = js.Dynamic.literal()
-      ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
-      AccessLoggingEnabled.foreach(__v => __obj.updateDynamic("AccessLoggingEnabled")(__v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
-      Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Container]
-    }
   }
 
   @js.native
@@ -145,6 +126,7 @@ package mediastore {
     * A rule for a CORS policy. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses the first applicable rule listed.
     */
   @js.native
+  @Factory
   trait CorsRule extends js.Object {
     var AllowedHeaders: AllowedHeaders
     var AllowedOrigins: AllowedOrigins
@@ -153,402 +135,131 @@ package mediastore {
     var MaxAgeSeconds: js.UndefOr[MaxAgeSeconds]
   }
 
-  object CorsRule {
-    @inline
-    def apply(
-        AllowedHeaders: AllowedHeaders,
-        AllowedOrigins: AllowedOrigins,
-        AllowedMethods: js.UndefOr[AllowedMethods] = js.undefined,
-        ExposeHeaders: js.UndefOr[ExposeHeaders] = js.undefined,
-        MaxAgeSeconds: js.UndefOr[MaxAgeSeconds] = js.undefined
-    ): CorsRule = {
-      val __obj = js.Dynamic.literal(
-        "AllowedHeaders" -> AllowedHeaders.asInstanceOf[js.Any],
-        "AllowedOrigins" -> AllowedOrigins.asInstanceOf[js.Any]
-      )
-
-      AllowedMethods.foreach(__v => __obj.updateDynamic("AllowedMethods")(__v.asInstanceOf[js.Any]))
-      ExposeHeaders.foreach(__v => __obj.updateDynamic("ExposeHeaders")(__v.asInstanceOf[js.Any]))
-      MaxAgeSeconds.foreach(__v => __obj.updateDynamic("MaxAgeSeconds")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CorsRule]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateContainerInput extends js.Object {
     var ContainerName: ContainerName
     var Tags: js.UndefOr[TagList]
   }
 
-  object CreateContainerInput {
-    @inline
-    def apply(
-        ContainerName: ContainerName,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateContainerInput = {
-      val __obj = js.Dynamic.literal(
-        "ContainerName" -> ContainerName.asInstanceOf[js.Any]
-      )
-
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateContainerInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateContainerOutput extends js.Object {
     var Container: Container
   }
 
-  object CreateContainerOutput {
-    @inline
-    def apply(
-        Container: Container
-    ): CreateContainerOutput = {
-      val __obj = js.Dynamic.literal(
-        "Container" -> Container.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateContainerOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteContainerInput extends js.Object {
     var ContainerName: ContainerName
   }
 
-  object DeleteContainerInput {
-    @inline
-    def apply(
-        ContainerName: ContainerName
-    ): DeleteContainerInput = {
-      val __obj = js.Dynamic.literal(
-        "ContainerName" -> ContainerName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteContainerInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteContainerOutput extends js.Object {}
 
-  object DeleteContainerOutput {
-    @inline
-    def apply(
-    ): DeleteContainerOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteContainerOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteContainerPolicyInput extends js.Object {
     var ContainerName: ContainerName
   }
 
-  object DeleteContainerPolicyInput {
-    @inline
-    def apply(
-        ContainerName: ContainerName
-    ): DeleteContainerPolicyInput = {
-      val __obj = js.Dynamic.literal(
-        "ContainerName" -> ContainerName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteContainerPolicyInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteContainerPolicyOutput extends js.Object {}
 
-  object DeleteContainerPolicyOutput {
-    @inline
-    def apply(
-    ): DeleteContainerPolicyOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteContainerPolicyOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteCorsPolicyInput extends js.Object {
     var ContainerName: ContainerName
   }
 
-  object DeleteCorsPolicyInput {
-    @inline
-    def apply(
-        ContainerName: ContainerName
-    ): DeleteCorsPolicyInput = {
-      val __obj = js.Dynamic.literal(
-        "ContainerName" -> ContainerName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteCorsPolicyInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteCorsPolicyOutput extends js.Object {}
 
-  object DeleteCorsPolicyOutput {
-    @inline
-    def apply(
-    ): DeleteCorsPolicyOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteCorsPolicyOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteLifecyclePolicyInput extends js.Object {
     var ContainerName: ContainerName
   }
 
-  object DeleteLifecyclePolicyInput {
-    @inline
-    def apply(
-        ContainerName: ContainerName
-    ): DeleteLifecyclePolicyInput = {
-      val __obj = js.Dynamic.literal(
-        "ContainerName" -> ContainerName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteLifecyclePolicyInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteLifecyclePolicyOutput extends js.Object {}
 
-  object DeleteLifecyclePolicyOutput {
-    @inline
-    def apply(
-    ): DeleteLifecyclePolicyOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteLifecyclePolicyOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeContainerInput extends js.Object {
     var ContainerName: js.UndefOr[ContainerName]
   }
 
-  object DescribeContainerInput {
-    @inline
-    def apply(
-        ContainerName: js.UndefOr[ContainerName] = js.undefined
-    ): DescribeContainerInput = {
-      val __obj = js.Dynamic.literal()
-      ContainerName.foreach(__v => __obj.updateDynamic("ContainerName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeContainerInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeContainerOutput extends js.Object {
     var Container: js.UndefOr[Container]
   }
 
-  object DescribeContainerOutput {
-    @inline
-    def apply(
-        Container: js.UndefOr[Container] = js.undefined
-    ): DescribeContainerOutput = {
-      val __obj = js.Dynamic.literal()
-      Container.foreach(__v => __obj.updateDynamic("Container")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeContainerOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetContainerPolicyInput extends js.Object {
     var ContainerName: ContainerName
   }
 
-  object GetContainerPolicyInput {
-    @inline
-    def apply(
-        ContainerName: ContainerName
-    ): GetContainerPolicyInput = {
-      val __obj = js.Dynamic.literal(
-        "ContainerName" -> ContainerName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetContainerPolicyInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetContainerPolicyOutput extends js.Object {
     var Policy: ContainerPolicy
   }
 
-  object GetContainerPolicyOutput {
-    @inline
-    def apply(
-        Policy: ContainerPolicy
-    ): GetContainerPolicyOutput = {
-      val __obj = js.Dynamic.literal(
-        "Policy" -> Policy.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetContainerPolicyOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetCorsPolicyInput extends js.Object {
     var ContainerName: ContainerName
   }
 
-  object GetCorsPolicyInput {
-    @inline
-    def apply(
-        ContainerName: ContainerName
-    ): GetCorsPolicyInput = {
-      val __obj = js.Dynamic.literal(
-        "ContainerName" -> ContainerName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetCorsPolicyInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetCorsPolicyOutput extends js.Object {
     var CorsPolicy: CorsPolicy
   }
 
-  object GetCorsPolicyOutput {
-    @inline
-    def apply(
-        CorsPolicy: CorsPolicy
-    ): GetCorsPolicyOutput = {
-      val __obj = js.Dynamic.literal(
-        "CorsPolicy" -> CorsPolicy.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetCorsPolicyOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetLifecyclePolicyInput extends js.Object {
     var ContainerName: ContainerName
   }
 
-  object GetLifecyclePolicyInput {
-    @inline
-    def apply(
-        ContainerName: ContainerName
-    ): GetLifecyclePolicyInput = {
-      val __obj = js.Dynamic.literal(
-        "ContainerName" -> ContainerName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetLifecyclePolicyInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetLifecyclePolicyOutput extends js.Object {
     var LifecyclePolicy: LifecyclePolicy
   }
 
-  object GetLifecyclePolicyOutput {
-    @inline
-    def apply(
-        LifecyclePolicy: LifecyclePolicy
-    ): GetLifecyclePolicyOutput = {
-      val __obj = js.Dynamic.literal(
-        "LifecyclePolicy" -> LifecyclePolicy.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetLifecyclePolicyOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListContainersInput extends js.Object {
     var MaxResults: js.UndefOr[ContainerListLimit]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListContainersInput {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[ContainerListLimit] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListContainersInput = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListContainersInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListContainersOutput extends js.Object {
     var Containers: ContainerList
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListContainersOutput {
-    @inline
-    def apply(
-        Containers: ContainerList,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListContainersOutput = {
-      val __obj = js.Dynamic.literal(
-        "Containers" -> Containers.asInstanceOf[js.Any]
-      )
-
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListContainersOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceInput extends js.Object {
     var Resource: ContainerARN
   }
 
-  object ListTagsForResourceInput {
-    @inline
-    def apply(
-        Resource: ContainerARN
-    ): ListTagsForResourceInput = {
-      val __obj = js.Dynamic.literal(
-        "Resource" -> Resource.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListTagsForResourceInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceOutput extends js.Object {
     var Tags: js.UndefOr[TagList]
-  }
-
-  object ListTagsForResourceOutput {
-    @inline
-    def apply(
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): ListTagsForResourceOutput = {
-      val __obj = js.Dynamic.literal()
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceOutput]
-    }
   }
 
   @js.native
@@ -563,258 +274,87 @@ package mediastore {
   }
 
   @js.native
+  @Factory
   trait PutContainerPolicyInput extends js.Object {
     var ContainerName: ContainerName
     var Policy: ContainerPolicy
   }
 
-  object PutContainerPolicyInput {
-    @inline
-    def apply(
-        ContainerName: ContainerName,
-        Policy: ContainerPolicy
-    ): PutContainerPolicyInput = {
-      val __obj = js.Dynamic.literal(
-        "ContainerName" -> ContainerName.asInstanceOf[js.Any],
-        "Policy"        -> Policy.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutContainerPolicyInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutContainerPolicyOutput extends js.Object {}
 
-  object PutContainerPolicyOutput {
-    @inline
-    def apply(
-    ): PutContainerPolicyOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutContainerPolicyOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutCorsPolicyInput extends js.Object {
     var ContainerName: ContainerName
     var CorsPolicy: CorsPolicy
   }
 
-  object PutCorsPolicyInput {
-    @inline
-    def apply(
-        ContainerName: ContainerName,
-        CorsPolicy: CorsPolicy
-    ): PutCorsPolicyInput = {
-      val __obj = js.Dynamic.literal(
-        "ContainerName" -> ContainerName.asInstanceOf[js.Any],
-        "CorsPolicy"    -> CorsPolicy.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutCorsPolicyInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutCorsPolicyOutput extends js.Object {}
 
-  object PutCorsPolicyOutput {
-    @inline
-    def apply(
-    ): PutCorsPolicyOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutCorsPolicyOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutLifecyclePolicyInput extends js.Object {
     var ContainerName: ContainerName
     var LifecyclePolicy: LifecyclePolicy
   }
 
-  object PutLifecyclePolicyInput {
-    @inline
-    def apply(
-        ContainerName: ContainerName,
-        LifecyclePolicy: LifecyclePolicy
-    ): PutLifecyclePolicyInput = {
-      val __obj = js.Dynamic.literal(
-        "ContainerName"   -> ContainerName.asInstanceOf[js.Any],
-        "LifecyclePolicy" -> LifecyclePolicy.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutLifecyclePolicyInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutLifecyclePolicyOutput extends js.Object {}
 
-  object PutLifecyclePolicyOutput {
-    @inline
-    def apply(
-    ): PutLifecyclePolicyOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutLifecyclePolicyOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartAccessLoggingInput extends js.Object {
     var ContainerName: ContainerName
   }
 
-  object StartAccessLoggingInput {
-    @inline
-    def apply(
-        ContainerName: ContainerName
-    ): StartAccessLoggingInput = {
-      val __obj = js.Dynamic.literal(
-        "ContainerName" -> ContainerName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StartAccessLoggingInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartAccessLoggingOutput extends js.Object {}
 
-  object StartAccessLoggingOutput {
-    @inline
-    def apply(
-    ): StartAccessLoggingOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[StartAccessLoggingOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopAccessLoggingInput extends js.Object {
     var ContainerName: ContainerName
   }
 
-  object StopAccessLoggingInput {
-    @inline
-    def apply(
-        ContainerName: ContainerName
-    ): StopAccessLoggingInput = {
-      val __obj = js.Dynamic.literal(
-        "ContainerName" -> ContainerName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StopAccessLoggingInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopAccessLoggingOutput extends js.Object {}
-
-  object StopAccessLoggingOutput {
-    @inline
-    def apply(
-    ): StopAccessLoggingOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[StopAccessLoggingOutput]
-    }
-  }
 
   /**
     * A collection of tags associated with a container. Each tag consists of a key:value pair, which can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see [[https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html|Tagging Resources in MediaStore]].
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var Key: TagKey
     var Value: js.UndefOr[TagValue]
   }
 
-  object Tag {
-    @inline
-    def apply(
-        Key: TagKey,
-        Value: js.UndefOr[TagValue] = js.undefined
-    ): Tag = {
-      val __obj = js.Dynamic.literal(
-        "Key" -> Key.asInstanceOf[js.Any]
-      )
-
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Tag]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceInput extends js.Object {
     var Resource: ContainerARN
     var Tags: TagList
   }
 
-  object TagResourceInput {
-    @inline
-    def apply(
-        Resource: ContainerARN,
-        Tags: TagList
-    ): TagResourceInput = {
-      val __obj = js.Dynamic.literal(
-        "Resource" -> Resource.asInstanceOf[js.Any],
-        "Tags"     -> Tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceOutput extends js.Object {}
 
-  object TagResourceOutput {
-    @inline
-    def apply(
-    ): TagResourceOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[TagResourceOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceInput extends js.Object {
     var Resource: ContainerARN
     var TagKeys: TagKeyList
   }
 
-  object UntagResourceInput {
-    @inline
-    def apply(
-        Resource: ContainerARN,
-        TagKeys: TagKeyList
-    ): UntagResourceInput = {
-      val __obj = js.Dynamic.literal(
-        "Resource" -> Resource.asInstanceOf[js.Any],
-        "TagKeys"  -> TagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceOutput extends js.Object {}
-
-  object UntagResourceOutput {
-    @inline
-    def apply(
-    ): UntagResourceOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UntagResourceOutput]
-    }
-  }
 }

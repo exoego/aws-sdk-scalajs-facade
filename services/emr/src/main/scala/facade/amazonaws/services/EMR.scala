@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object emr {
   type ApplicationList               = js.Array[Application]
@@ -205,179 +206,76 @@ package emr {
   }
 
   @js.native
+  @Factory
   trait AddInstanceFleetInput extends js.Object {
     var ClusterId: XmlStringMaxLen256
     var InstanceFleet: InstanceFleetConfig
   }
 
-  object AddInstanceFleetInput {
-    @inline
-    def apply(
-        ClusterId: XmlStringMaxLen256,
-        InstanceFleet: InstanceFleetConfig
-    ): AddInstanceFleetInput = {
-      val __obj = js.Dynamic.literal(
-        "ClusterId"     -> ClusterId.asInstanceOf[js.Any],
-        "InstanceFleet" -> InstanceFleet.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AddInstanceFleetInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait AddInstanceFleetOutput extends js.Object {
     var ClusterArn: js.UndefOr[ArnType]
     var ClusterId: js.UndefOr[XmlStringMaxLen256]
     var InstanceFleetId: js.UndefOr[InstanceFleetId]
   }
 
-  object AddInstanceFleetOutput {
-    @inline
-    def apply(
-        ClusterArn: js.UndefOr[ArnType] = js.undefined,
-        ClusterId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-        InstanceFleetId: js.UndefOr[InstanceFleetId] = js.undefined
-    ): AddInstanceFleetOutput = {
-      val __obj = js.Dynamic.literal()
-      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
-      ClusterId.foreach(__v => __obj.updateDynamic("ClusterId")(__v.asInstanceOf[js.Any]))
-      InstanceFleetId.foreach(__v => __obj.updateDynamic("InstanceFleetId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AddInstanceFleetOutput]
-    }
-  }
-
   /**
     * Input to an AddInstanceGroups call.
     */
   @js.native
+  @Factory
   trait AddInstanceGroupsInput extends js.Object {
     var InstanceGroups: InstanceGroupConfigList
     var JobFlowId: XmlStringMaxLen256
-  }
-
-  object AddInstanceGroupsInput {
-    @inline
-    def apply(
-        InstanceGroups: InstanceGroupConfigList,
-        JobFlowId: XmlStringMaxLen256
-    ): AddInstanceGroupsInput = {
-      val __obj = js.Dynamic.literal(
-        "InstanceGroups" -> InstanceGroups.asInstanceOf[js.Any],
-        "JobFlowId"      -> JobFlowId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AddInstanceGroupsInput]
-    }
   }
 
   /**
     * Output from an AddInstanceGroups call.
     */
   @js.native
+  @Factory
   trait AddInstanceGroupsOutput extends js.Object {
     var ClusterArn: js.UndefOr[ArnType]
     var InstanceGroupIds: js.UndefOr[InstanceGroupIdsList]
     var JobFlowId: js.UndefOr[XmlStringMaxLen256]
   }
 
-  object AddInstanceGroupsOutput {
-    @inline
-    def apply(
-        ClusterArn: js.UndefOr[ArnType] = js.undefined,
-        InstanceGroupIds: js.UndefOr[InstanceGroupIdsList] = js.undefined,
-        JobFlowId: js.UndefOr[XmlStringMaxLen256] = js.undefined
-    ): AddInstanceGroupsOutput = {
-      val __obj = js.Dynamic.literal()
-      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
-      InstanceGroupIds.foreach(__v => __obj.updateDynamic("InstanceGroupIds")(__v.asInstanceOf[js.Any]))
-      JobFlowId.foreach(__v => __obj.updateDynamic("JobFlowId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AddInstanceGroupsOutput]
-    }
-  }
-
   /**
     * The input argument to the <a>AddJobFlowSteps</a> operation.
     */
   @js.native
+  @Factory
   trait AddJobFlowStepsInput extends js.Object {
     var JobFlowId: XmlStringMaxLen256
     var Steps: StepConfigList
-  }
-
-  object AddJobFlowStepsInput {
-    @inline
-    def apply(
-        JobFlowId: XmlStringMaxLen256,
-        Steps: StepConfigList
-    ): AddJobFlowStepsInput = {
-      val __obj = js.Dynamic.literal(
-        "JobFlowId" -> JobFlowId.asInstanceOf[js.Any],
-        "Steps"     -> Steps.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AddJobFlowStepsInput]
-    }
   }
 
   /**
     * The output for the <a>AddJobFlowSteps</a> operation.
     */
   @js.native
+  @Factory
   trait AddJobFlowStepsOutput extends js.Object {
     var StepIds: js.UndefOr[StepIdsList]
-  }
-
-  object AddJobFlowStepsOutput {
-    @inline
-    def apply(
-        StepIds: js.UndefOr[StepIdsList] = js.undefined
-    ): AddJobFlowStepsOutput = {
-      val __obj = js.Dynamic.literal()
-      StepIds.foreach(__v => __obj.updateDynamic("StepIds")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AddJobFlowStepsOutput]
-    }
   }
 
   /**
     * This input identifies a cluster and a list of tags to attach.
     */
   @js.native
+  @Factory
   trait AddTagsInput extends js.Object {
     var ResourceId: ResourceId
     var Tags: TagList
-  }
-
-  object AddTagsInput {
-    @inline
-    def apply(
-        ResourceId: ResourceId,
-        Tags: TagList
-    ): AddTagsInput = {
-      val __obj = js.Dynamic.literal(
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "Tags"       -> Tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AddTagsInput]
-    }
   }
 
   /**
     * This output indicates the result of adding tags to a resource.
     */
   @js.native
+  @Factory
   trait AddTagsOutput extends js.Object {}
-
-  object AddTagsOutput {
-    @inline
-    def apply(
-    ): AddTagsOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[AddTagsOutput]
-    }
-  }
 
   @js.native
   sealed trait AdjustmentType extends js.Any
@@ -394,6 +292,7 @@ package emr {
     *  With earlier Amazon EMR releases, the application is any Amazon or third-party software that you can add to the cluster. This structure contains a list of strings that indicates the software to use with the cluster and accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action argument.
     */
   @js.native
+  @Factory
   trait Application extends js.Object {
     var AdditionalInfo: js.UndefOr[StringMap]
     var Args: js.UndefOr[StringList]
@@ -401,70 +300,25 @@ package emr {
     var Version: js.UndefOr[String]
   }
 
-  object Application {
-    @inline
-    def apply(
-        AdditionalInfo: js.UndefOr[StringMap] = js.undefined,
-        Args: js.UndefOr[StringList] = js.undefined,
-        Name: js.UndefOr[String] = js.undefined,
-        Version: js.UndefOr[String] = js.undefined
-    ): Application = {
-      val __obj = js.Dynamic.literal()
-      AdditionalInfo.foreach(__v => __obj.updateDynamic("AdditionalInfo")(__v.asInstanceOf[js.Any]))
-      Args.foreach(__v => __obj.updateDynamic("Args")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Application]
-    }
-  }
-
   /**
     * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. An automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
     */
   @js.native
+  @Factory
   trait AutoScalingPolicy extends js.Object {
     var Constraints: ScalingConstraints
     var Rules: ScalingRuleList
-  }
-
-  object AutoScalingPolicy {
-    @inline
-    def apply(
-        Constraints: ScalingConstraints,
-        Rules: ScalingRuleList
-    ): AutoScalingPolicy = {
-      val __obj = js.Dynamic.literal(
-        "Constraints" -> Constraints.asInstanceOf[js.Any],
-        "Rules"       -> Rules.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AutoScalingPolicy]
-    }
   }
 
   /**
     * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
     */
   @js.native
+  @Factory
   trait AutoScalingPolicyDescription extends js.Object {
     var Constraints: js.UndefOr[ScalingConstraints]
     var Rules: js.UndefOr[ScalingRuleList]
     var Status: js.UndefOr[AutoScalingPolicyStatus]
-  }
-
-  object AutoScalingPolicyDescription {
-    @inline
-    def apply(
-        Constraints: js.UndefOr[ScalingConstraints] = js.undefined,
-        Rules: js.UndefOr[ScalingRuleList] = js.undefined,
-        Status: js.UndefOr[AutoScalingPolicyStatus] = js.undefined
-    ): AutoScalingPolicyDescription = {
-      val __obj = js.Dynamic.literal()
-      Constraints.foreach(__v => __obj.updateDynamic("Constraints")(__v.asInstanceOf[js.Any]))
-      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AutoScalingPolicyDescription]
-    }
   }
 
   @js.native
@@ -484,22 +338,10 @@ package emr {
     * The reason for an <a>AutoScalingPolicyStatus</a> change.
     */
   @js.native
+  @Factory
   trait AutoScalingPolicyStateChangeReason extends js.Object {
     var Code: js.UndefOr[AutoScalingPolicyStateChangeReasonCode]
     var Message: js.UndefOr[String]
-  }
-
-  object AutoScalingPolicyStateChangeReason {
-    @inline
-    def apply(
-        Code: js.UndefOr[AutoScalingPolicyStateChangeReasonCode] = js.undefined,
-        Message: js.UndefOr[String] = js.undefined
-    ): AutoScalingPolicyStateChangeReason = {
-      val __obj = js.Dynamic.literal()
-      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AutoScalingPolicyStateChangeReason]
-    }
   }
 
   @js.native
@@ -516,186 +358,80 @@ package emr {
     * The status of an automatic scaling policy.
     */
   @js.native
+  @Factory
   trait AutoScalingPolicyStatus extends js.Object {
     var State: js.UndefOr[AutoScalingPolicyState]
     var StateChangeReason: js.UndefOr[AutoScalingPolicyStateChangeReason]
-  }
-
-  object AutoScalingPolicyStatus {
-    @inline
-    def apply(
-        State: js.UndefOr[AutoScalingPolicyState] = js.undefined,
-        StateChangeReason: js.UndefOr[AutoScalingPolicyStateChangeReason] = js.undefined
-    ): AutoScalingPolicyStatus = {
-      val __obj = js.Dynamic.literal()
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      StateChangeReason.foreach(__v => __obj.updateDynamic("StateChangeReason")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AutoScalingPolicyStatus]
-    }
   }
 
   /**
     * A configuration for Amazon EMR block public access. When <code>BlockPublicSecurityGroupRules</code> is set to <code>true</code>, Amazon EMR prevents cluster creation if one of the cluster's security groups has a rule that allows inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code>.
     */
   @js.native
+  @Factory
   trait BlockPublicAccessConfiguration extends js.Object {
     var BlockPublicSecurityGroupRules: Boolean
     var PermittedPublicSecurityGroupRuleRanges: js.UndefOr[PortRanges]
-  }
-
-  object BlockPublicAccessConfiguration {
-    @inline
-    def apply(
-        BlockPublicSecurityGroupRules: Boolean,
-        PermittedPublicSecurityGroupRuleRanges: js.UndefOr[PortRanges] = js.undefined
-    ): BlockPublicAccessConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "BlockPublicSecurityGroupRules" -> BlockPublicSecurityGroupRules.asInstanceOf[js.Any]
-      )
-
-      PermittedPublicSecurityGroupRuleRanges.foreach(__v =>
-        __obj.updateDynamic("PermittedPublicSecurityGroupRuleRanges")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[BlockPublicAccessConfiguration]
-    }
   }
 
   /**
     * Properties that describe the AWS principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata.
     */
   @js.native
+  @Factory
   trait BlockPublicAccessConfigurationMetadata extends js.Object {
     var CreatedByArn: ArnType
     var CreationDateTime: Date
-  }
-
-  object BlockPublicAccessConfigurationMetadata {
-    @inline
-    def apply(
-        CreatedByArn: ArnType,
-        CreationDateTime: Date
-    ): BlockPublicAccessConfigurationMetadata = {
-      val __obj = js.Dynamic.literal(
-        "CreatedByArn"     -> CreatedByArn.asInstanceOf[js.Any],
-        "CreationDateTime" -> CreationDateTime.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BlockPublicAccessConfigurationMetadata]
-    }
   }
 
   /**
     * Configuration of a bootstrap action.
     */
   @js.native
+  @Factory
   trait BootstrapActionConfig extends js.Object {
     var Name: XmlStringMaxLen256
     var ScriptBootstrapAction: ScriptBootstrapActionConfig
-  }
-
-  object BootstrapActionConfig {
-    @inline
-    def apply(
-        Name: XmlStringMaxLen256,
-        ScriptBootstrapAction: ScriptBootstrapActionConfig
-    ): BootstrapActionConfig = {
-      val __obj = js.Dynamic.literal(
-        "Name"                  -> Name.asInstanceOf[js.Any],
-        "ScriptBootstrapAction" -> ScriptBootstrapAction.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BootstrapActionConfig]
-    }
   }
 
   /**
     * Reports the configuration of a bootstrap action in a cluster (job flow).
     */
   @js.native
+  @Factory
   trait BootstrapActionDetail extends js.Object {
     var BootstrapActionConfig: js.UndefOr[BootstrapActionConfig]
-  }
-
-  object BootstrapActionDetail {
-    @inline
-    def apply(
-        BootstrapActionConfig: js.UndefOr[BootstrapActionConfig] = js.undefined
-    ): BootstrapActionDetail = {
-      val __obj = js.Dynamic.literal()
-      BootstrapActionConfig.foreach(__v => __obj.updateDynamic("BootstrapActionConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BootstrapActionDetail]
-    }
   }
 
   /**
     * Specification of the status of a CancelSteps request. Available only in Amazon EMR version 4.8.0 and later, excluding version 5.0.0.
     */
   @js.native
+  @Factory
   trait CancelStepsInfo extends js.Object {
     var Reason: js.UndefOr[String]
     var Status: js.UndefOr[CancelStepsRequestStatus]
     var StepId: js.UndefOr[StepId]
   }
 
-  object CancelStepsInfo {
-    @inline
-    def apply(
-        Reason: js.UndefOr[String] = js.undefined,
-        Status: js.UndefOr[CancelStepsRequestStatus] = js.undefined,
-        StepId: js.UndefOr[StepId] = js.undefined
-    ): CancelStepsInfo = {
-      val __obj = js.Dynamic.literal()
-      Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      StepId.foreach(__v => __obj.updateDynamic("StepId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CancelStepsInfo]
-    }
-  }
-
   /**
     * The input argument to the <a>CancelSteps</a> operation.
     */
   @js.native
+  @Factory
   trait CancelStepsInput extends js.Object {
     var ClusterId: XmlStringMaxLen256
     var StepIds: StepIdsList
     var StepCancellationOption: js.UndefOr[StepCancellationOption]
   }
 
-  object CancelStepsInput {
-    @inline
-    def apply(
-        ClusterId: XmlStringMaxLen256,
-        StepIds: StepIdsList,
-        StepCancellationOption: js.UndefOr[StepCancellationOption] = js.undefined
-    ): CancelStepsInput = {
-      val __obj = js.Dynamic.literal(
-        "ClusterId" -> ClusterId.asInstanceOf[js.Any],
-        "StepIds"   -> StepIds.asInstanceOf[js.Any]
-      )
-
-      StepCancellationOption.foreach(__v => __obj.updateDynamic("StepCancellationOption")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CancelStepsInput]
-    }
-  }
-
   /**
     * The output for the <a>CancelSteps</a> operation.
     */
   @js.native
+  @Factory
   trait CancelStepsOutput extends js.Object {
     var CancelStepsInfoList: js.UndefOr[CancelStepsInfoList]
-  }
-
-  object CancelStepsOutput {
-    @inline
-    def apply(
-        CancelStepsInfoList: js.UndefOr[CancelStepsInfoList] = js.undefined
-    ): CancelStepsOutput = {
-      val __obj = js.Dynamic.literal()
-      CancelStepsInfoList.foreach(__v => __obj.updateDynamic("CancelStepsInfoList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CancelStepsOutput]
-    }
   }
 
   @js.native
@@ -711,6 +447,7 @@ package emr {
     * The definition of a CloudWatch metric alarm, which determines when an automatic scaling activity is triggered. When the defined alarm conditions are satisfied, scaling activity begins.
     */
   @js.native
+  @Factory
   trait CloudWatchAlarmDefinition extends js.Object {
     var ComparisonOperator: ComparisonOperator
     var MetricName: String
@@ -723,39 +460,11 @@ package emr {
     var Unit: js.UndefOr[Unit]
   }
 
-  object CloudWatchAlarmDefinition {
-    @inline
-    def apply(
-        ComparisonOperator: ComparisonOperator,
-        MetricName: String,
-        Period: Int,
-        Threshold: NonNegativeDouble,
-        Dimensions: js.UndefOr[MetricDimensionList] = js.undefined,
-        EvaluationPeriods: js.UndefOr[Int] = js.undefined,
-        Namespace: js.UndefOr[String] = js.undefined,
-        Statistic: js.UndefOr[Statistic] = js.undefined,
-        Unit: js.UndefOr[Unit] = js.undefined
-    ): CloudWatchAlarmDefinition = {
-      val __obj = js.Dynamic.literal(
-        "ComparisonOperator" -> ComparisonOperator.asInstanceOf[js.Any],
-        "MetricName"         -> MetricName.asInstanceOf[js.Any],
-        "Period"             -> Period.asInstanceOf[js.Any],
-        "Threshold"          -> Threshold.asInstanceOf[js.Any]
-      )
-
-      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
-      EvaluationPeriods.foreach(__v => __obj.updateDynamic("EvaluationPeriods")(__v.asInstanceOf[js.Any]))
-      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
-      Statistic.foreach(__v => __obj.updateDynamic("Statistic")(__v.asInstanceOf[js.Any]))
-      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CloudWatchAlarmDefinition]
-    }
-  }
-
   /**
     * The detailed description of the cluster.
     */
   @js.native
+  @Factory
   trait Cluster extends js.Object {
     var Applications: js.UndefOr[ApplicationList]
     var AutoScalingRole: js.UndefOr[XmlString]
@@ -787,71 +496,6 @@ package emr {
     var VisibleToAllUsers: js.UndefOr[Boolean]
   }
 
-  object Cluster {
-    @inline
-    def apply(
-        Applications: js.UndefOr[ApplicationList] = js.undefined,
-        AutoScalingRole: js.UndefOr[XmlString] = js.undefined,
-        AutoTerminate: js.UndefOr[Boolean] = js.undefined,
-        ClusterArn: js.UndefOr[ArnType] = js.undefined,
-        Configurations: js.UndefOr[ConfigurationList] = js.undefined,
-        CustomAmiId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-        EbsRootVolumeSize: js.UndefOr[Int] = js.undefined,
-        Ec2InstanceAttributes: js.UndefOr[Ec2InstanceAttributes] = js.undefined,
-        Id: js.UndefOr[ClusterId] = js.undefined,
-        InstanceCollectionType: js.UndefOr[InstanceCollectionType] = js.undefined,
-        KerberosAttributes: js.UndefOr[KerberosAttributes] = js.undefined,
-        LogUri: js.UndefOr[String] = js.undefined,
-        MasterPublicDnsName: js.UndefOr[String] = js.undefined,
-        Name: js.UndefOr[String] = js.undefined,
-        NormalizedInstanceHours: js.UndefOr[Int] = js.undefined,
-        OutpostArn: js.UndefOr[OptionalArnType] = js.undefined,
-        ReleaseLabel: js.UndefOr[String] = js.undefined,
-        RepoUpgradeOnBoot: js.UndefOr[RepoUpgradeOnBoot] = js.undefined,
-        RequestedAmiVersion: js.UndefOr[String] = js.undefined,
-        RunningAmiVersion: js.UndefOr[String] = js.undefined,
-        ScaleDownBehavior: js.UndefOr[ScaleDownBehavior] = js.undefined,
-        SecurityConfiguration: js.UndefOr[XmlString] = js.undefined,
-        ServiceRole: js.UndefOr[String] = js.undefined,
-        Status: js.UndefOr[ClusterStatus] = js.undefined,
-        StepConcurrencyLevel: js.UndefOr[Int] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined,
-        TerminationProtected: js.UndefOr[Boolean] = js.undefined,
-        VisibleToAllUsers: js.UndefOr[Boolean] = js.undefined
-    ): Cluster = {
-      val __obj = js.Dynamic.literal()
-      Applications.foreach(__v => __obj.updateDynamic("Applications")(__v.asInstanceOf[js.Any]))
-      AutoScalingRole.foreach(__v => __obj.updateDynamic("AutoScalingRole")(__v.asInstanceOf[js.Any]))
-      AutoTerminate.foreach(__v => __obj.updateDynamic("AutoTerminate")(__v.asInstanceOf[js.Any]))
-      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
-      Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
-      CustomAmiId.foreach(__v => __obj.updateDynamic("CustomAmiId")(__v.asInstanceOf[js.Any]))
-      EbsRootVolumeSize.foreach(__v => __obj.updateDynamic("EbsRootVolumeSize")(__v.asInstanceOf[js.Any]))
-      Ec2InstanceAttributes.foreach(__v => __obj.updateDynamic("Ec2InstanceAttributes")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      InstanceCollectionType.foreach(__v => __obj.updateDynamic("InstanceCollectionType")(__v.asInstanceOf[js.Any]))
-      KerberosAttributes.foreach(__v => __obj.updateDynamic("KerberosAttributes")(__v.asInstanceOf[js.Any]))
-      LogUri.foreach(__v => __obj.updateDynamic("LogUri")(__v.asInstanceOf[js.Any]))
-      MasterPublicDnsName.foreach(__v => __obj.updateDynamic("MasterPublicDnsName")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      NormalizedInstanceHours.foreach(__v => __obj.updateDynamic("NormalizedInstanceHours")(__v.asInstanceOf[js.Any]))
-      OutpostArn.foreach(__v => __obj.updateDynamic("OutpostArn")(__v.asInstanceOf[js.Any]))
-      ReleaseLabel.foreach(__v => __obj.updateDynamic("ReleaseLabel")(__v.asInstanceOf[js.Any]))
-      RepoUpgradeOnBoot.foreach(__v => __obj.updateDynamic("RepoUpgradeOnBoot")(__v.asInstanceOf[js.Any]))
-      RequestedAmiVersion.foreach(__v => __obj.updateDynamic("RequestedAmiVersion")(__v.asInstanceOf[js.Any]))
-      RunningAmiVersion.foreach(__v => __obj.updateDynamic("RunningAmiVersion")(__v.asInstanceOf[js.Any]))
-      ScaleDownBehavior.foreach(__v => __obj.updateDynamic("ScaleDownBehavior")(__v.asInstanceOf[js.Any]))
-      SecurityConfiguration.foreach(__v => __obj.updateDynamic("SecurityConfiguration")(__v.asInstanceOf[js.Any]))
-      ServiceRole.foreach(__v => __obj.updateDynamic("ServiceRole")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      StepConcurrencyLevel.foreach(__v => __obj.updateDynamic("StepConcurrencyLevel")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      TerminationProtected.foreach(__v => __obj.updateDynamic("TerminationProtected")(__v.asInstanceOf[js.Any]))
-      VisibleToAllUsers.foreach(__v => __obj.updateDynamic("VisibleToAllUsers")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Cluster]
-    }
-  }
-
   @js.native
   sealed trait ClusterState extends js.Any
   object ClusterState extends js.Object {
@@ -872,22 +516,10 @@ package emr {
     * The reason that the cluster changed to its current state.
     */
   @js.native
+  @Factory
   trait ClusterStateChangeReason extends js.Object {
     var Code: js.UndefOr[ClusterStateChangeReasonCode]
     var Message: js.UndefOr[String]
-  }
-
-  object ClusterStateChangeReason {
-    @inline
-    def apply(
-        Code: js.UndefOr[ClusterStateChangeReasonCode] = js.undefined,
-        Message: js.UndefOr[String] = js.undefined
-    ): ClusterStateChangeReason = {
-      val __obj = js.Dynamic.literal()
-      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ClusterStateChangeReason]
-    }
   }
 
   @js.native
@@ -920,31 +552,18 @@ package emr {
     * The detailed status of the cluster.
     */
   @js.native
+  @Factory
   trait ClusterStatus extends js.Object {
     var State: js.UndefOr[ClusterState]
     var StateChangeReason: js.UndefOr[ClusterStateChangeReason]
     var Timeline: js.UndefOr[ClusterTimeline]
   }
 
-  object ClusterStatus {
-    @inline
-    def apply(
-        State: js.UndefOr[ClusterState] = js.undefined,
-        StateChangeReason: js.UndefOr[ClusterStateChangeReason] = js.undefined,
-        Timeline: js.UndefOr[ClusterTimeline] = js.undefined
-    ): ClusterStatus = {
-      val __obj = js.Dynamic.literal()
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      StateChangeReason.foreach(__v => __obj.updateDynamic("StateChangeReason")(__v.asInstanceOf[js.Any]))
-      Timeline.foreach(__v => __obj.updateDynamic("Timeline")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ClusterStatus]
-    }
-  }
-
   /**
     * The summary description of the cluster.
     */
   @js.native
+  @Factory
   trait ClusterSummary extends js.Object {
     var ClusterArn: js.UndefOr[ArnType]
     var Id: js.UndefOr[ClusterId]
@@ -954,75 +573,26 @@ package emr {
     var Status: js.UndefOr[ClusterStatus]
   }
 
-  object ClusterSummary {
-    @inline
-    def apply(
-        ClusterArn: js.UndefOr[ArnType] = js.undefined,
-        Id: js.UndefOr[ClusterId] = js.undefined,
-        Name: js.UndefOr[String] = js.undefined,
-        NormalizedInstanceHours: js.UndefOr[Int] = js.undefined,
-        OutpostArn: js.UndefOr[OptionalArnType] = js.undefined,
-        Status: js.UndefOr[ClusterStatus] = js.undefined
-    ): ClusterSummary = {
-      val __obj = js.Dynamic.literal()
-      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      NormalizedInstanceHours.foreach(__v => __obj.updateDynamic("NormalizedInstanceHours")(__v.asInstanceOf[js.Any]))
-      OutpostArn.foreach(__v => __obj.updateDynamic("OutpostArn")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ClusterSummary]
-    }
-  }
-
   /**
     * Represents the timeline of the cluster's lifecycle.
     */
   @js.native
+  @Factory
   trait ClusterTimeline extends js.Object {
     var CreationDateTime: js.UndefOr[Date]
     var EndDateTime: js.UndefOr[Date]
     var ReadyDateTime: js.UndefOr[Date]
   }
 
-  object ClusterTimeline {
-    @inline
-    def apply(
-        CreationDateTime: js.UndefOr[Date] = js.undefined,
-        EndDateTime: js.UndefOr[Date] = js.undefined,
-        ReadyDateTime: js.UndefOr[Date] = js.undefined
-    ): ClusterTimeline = {
-      val __obj = js.Dynamic.literal()
-      CreationDateTime.foreach(__v => __obj.updateDynamic("CreationDateTime")(__v.asInstanceOf[js.Any]))
-      EndDateTime.foreach(__v => __obj.updateDynamic("EndDateTime")(__v.asInstanceOf[js.Any]))
-      ReadyDateTime.foreach(__v => __obj.updateDynamic("ReadyDateTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ClusterTimeline]
-    }
-  }
-
   /**
     * An entity describing an executable that runs on a cluster.
     */
   @js.native
+  @Factory
   trait Command extends js.Object {
     var Args: js.UndefOr[StringList]
     var Name: js.UndefOr[String]
     var ScriptPath: js.UndefOr[String]
-  }
-
-  object Command {
-    @inline
-    def apply(
-        Args: js.UndefOr[StringList] = js.undefined,
-        Name: js.UndefOr[String] = js.undefined,
-        ScriptPath: js.UndefOr[String] = js.undefined
-    ): Command = {
-      val __obj = js.Dynamic.literal()
-      Args.foreach(__v => __obj.updateDynamic("Args")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      ScriptPath.foreach(__v => __obj.updateDynamic("ScriptPath")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Command]
-    }
   }
 
   @js.native
@@ -1041,144 +611,60 @@ package emr {
     * An optional configuration specification to be used when provisioning cluster instances, which can include configurations for applications and software bundled with Amazon EMR. A configuration consists of a classification, properties, and optional nested configurations. A classification refers to an application-specific configuration file. Properties are the settings you want to change in that file. For more information, see [[https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html|Configuring Applications]].
     */
   @js.native
+  @Factory
   trait Configuration extends js.Object {
     var Classification: js.UndefOr[String]
     var Configurations: js.UndefOr[ConfigurationList]
     var Properties: js.UndefOr[StringMap]
   }
 
-  object Configuration {
-    @inline
-    def apply(
-        Classification: js.UndefOr[String] = js.undefined,
-        Configurations: js.UndefOr[ConfigurationList] = js.undefined,
-        Properties: js.UndefOr[StringMap] = js.undefined
-    ): Configuration = {
-      val __obj = js.Dynamic.literal()
-      Classification.foreach(__v => __obj.updateDynamic("Classification")(__v.asInstanceOf[js.Any]))
-      Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
-      Properties.foreach(__v => __obj.updateDynamic("Properties")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Configuration]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateSecurityConfigurationInput extends js.Object {
     var Name: XmlString
     var SecurityConfiguration: String
   }
 
-  object CreateSecurityConfigurationInput {
-    @inline
-    def apply(
-        Name: XmlString,
-        SecurityConfiguration: String
-    ): CreateSecurityConfigurationInput = {
-      val __obj = js.Dynamic.literal(
-        "Name"                  -> Name.asInstanceOf[js.Any],
-        "SecurityConfiguration" -> SecurityConfiguration.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateSecurityConfigurationInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateSecurityConfigurationOutput extends js.Object {
     var CreationDateTime: Date
     var Name: XmlString
   }
 
-  object CreateSecurityConfigurationOutput {
-    @inline
-    def apply(
-        CreationDateTime: Date,
-        Name: XmlString
-    ): CreateSecurityConfigurationOutput = {
-      val __obj = js.Dynamic.literal(
-        "CreationDateTime" -> CreationDateTime.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateSecurityConfigurationOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteSecurityConfigurationInput extends js.Object {
     var Name: XmlString
   }
 
-  object DeleteSecurityConfigurationInput {
-    @inline
-    def apply(
-        Name: XmlString
-    ): DeleteSecurityConfigurationInput = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteSecurityConfigurationInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteSecurityConfigurationOutput extends js.Object {}
-
-  object DeleteSecurityConfigurationOutput {
-    @inline
-    def apply(
-    ): DeleteSecurityConfigurationOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteSecurityConfigurationOutput]
-    }
-  }
 
   /**
     * This input determines which cluster to describe.
     */
   @js.native
+  @Factory
   trait DescribeClusterInput extends js.Object {
     var ClusterId: ClusterId
-  }
-
-  object DescribeClusterInput {
-    @inline
-    def apply(
-        ClusterId: ClusterId
-    ): DescribeClusterInput = {
-      val __obj = js.Dynamic.literal(
-        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeClusterInput]
-    }
   }
 
   /**
     * This output contains the description of the cluster.
     */
   @js.native
+  @Factory
   trait DescribeClusterOutput extends js.Object {
     var Cluster: js.UndefOr[Cluster]
-  }
-
-  object DescribeClusterOutput {
-    @inline
-    def apply(
-        Cluster: js.UndefOr[Cluster] = js.undefined
-    ): DescribeClusterOutput = {
-      val __obj = js.Dynamic.literal()
-      Cluster.foreach(__v => __obj.updateDynamic("Cluster")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeClusterOutput]
-    }
   }
 
   /**
     * The input for the <a>DescribeJobFlows</a> operation.
     */
   @js.native
+  @Factory
   trait DescribeJobFlowsInput extends js.Object {
     var CreatedAfter: js.UndefOr[Date]
     var CreatedBefore: js.UndefOr[Date]
@@ -1186,219 +672,93 @@ package emr {
     var JobFlowStates: js.UndefOr[JobFlowExecutionStateList]
   }
 
-  object DescribeJobFlowsInput {
-    @inline
-    def apply(
-        CreatedAfter: js.UndefOr[Date] = js.undefined,
-        CreatedBefore: js.UndefOr[Date] = js.undefined,
-        JobFlowIds: js.UndefOr[XmlStringList] = js.undefined,
-        JobFlowStates: js.UndefOr[JobFlowExecutionStateList] = js.undefined
-    ): DescribeJobFlowsInput = {
-      val __obj = js.Dynamic.literal()
-      CreatedAfter.foreach(__v => __obj.updateDynamic("CreatedAfter")(__v.asInstanceOf[js.Any]))
-      CreatedBefore.foreach(__v => __obj.updateDynamic("CreatedBefore")(__v.asInstanceOf[js.Any]))
-      JobFlowIds.foreach(__v => __obj.updateDynamic("JobFlowIds")(__v.asInstanceOf[js.Any]))
-      JobFlowStates.foreach(__v => __obj.updateDynamic("JobFlowStates")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeJobFlowsInput]
-    }
-  }
-
   /**
     * The output for the <a>DescribeJobFlows</a> operation.
     */
   @js.native
+  @Factory
   trait DescribeJobFlowsOutput extends js.Object {
     var JobFlows: js.UndefOr[JobFlowDetailList]
   }
 
-  object DescribeJobFlowsOutput {
-    @inline
-    def apply(
-        JobFlows: js.UndefOr[JobFlowDetailList] = js.undefined
-    ): DescribeJobFlowsOutput = {
-      val __obj = js.Dynamic.literal()
-      JobFlows.foreach(__v => __obj.updateDynamic("JobFlows")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeJobFlowsOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeSecurityConfigurationInput extends js.Object {
     var Name: XmlString
   }
 
-  object DescribeSecurityConfigurationInput {
-    @inline
-    def apply(
-        Name: XmlString
-    ): DescribeSecurityConfigurationInput = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeSecurityConfigurationInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeSecurityConfigurationOutput extends js.Object {
     var CreationDateTime: js.UndefOr[Date]
     var Name: js.UndefOr[XmlString]
     var SecurityConfiguration: js.UndefOr[String]
   }
 
-  object DescribeSecurityConfigurationOutput {
-    @inline
-    def apply(
-        CreationDateTime: js.UndefOr[Date] = js.undefined,
-        Name: js.UndefOr[XmlString] = js.undefined,
-        SecurityConfiguration: js.UndefOr[String] = js.undefined
-    ): DescribeSecurityConfigurationOutput = {
-      val __obj = js.Dynamic.literal()
-      CreationDateTime.foreach(__v => __obj.updateDynamic("CreationDateTime")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      SecurityConfiguration.foreach(__v => __obj.updateDynamic("SecurityConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeSecurityConfigurationOutput]
-    }
-  }
-
   /**
     * This input determines which step to describe.
     */
   @js.native
+  @Factory
   trait DescribeStepInput extends js.Object {
     var ClusterId: ClusterId
     var StepId: StepId
-  }
-
-  object DescribeStepInput {
-    @inline
-    def apply(
-        ClusterId: ClusterId,
-        StepId: StepId
-    ): DescribeStepInput = {
-      val __obj = js.Dynamic.literal(
-        "ClusterId" -> ClusterId.asInstanceOf[js.Any],
-        "StepId"    -> StepId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeStepInput]
-    }
   }
 
   /**
     * This output contains the description of the cluster step.
     */
   @js.native
+  @Factory
   trait DescribeStepOutput extends js.Object {
     var Step: js.UndefOr[Step]
-  }
-
-  object DescribeStepOutput {
-    @inline
-    def apply(
-        Step: js.UndefOr[Step] = js.undefined
-    ): DescribeStepOutput = {
-      val __obj = js.Dynamic.literal()
-      Step.foreach(__v => __obj.updateDynamic("Step")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeStepOutput]
-    }
   }
 
   /**
     * Configuration of requested EBS block device associated with the instance group.
     */
   @js.native
+  @Factory
   trait EbsBlockDevice extends js.Object {
     var Device: js.UndefOr[String]
     var VolumeSpecification: js.UndefOr[VolumeSpecification]
-  }
-
-  object EbsBlockDevice {
-    @inline
-    def apply(
-        Device: js.UndefOr[String] = js.undefined,
-        VolumeSpecification: js.UndefOr[VolumeSpecification] = js.undefined
-    ): EbsBlockDevice = {
-      val __obj = js.Dynamic.literal()
-      Device.foreach(__v => __obj.updateDynamic("Device")(__v.asInstanceOf[js.Any]))
-      VolumeSpecification.foreach(__v => __obj.updateDynamic("VolumeSpecification")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EbsBlockDevice]
-    }
   }
 
   /**
     * Configuration of requested EBS block device associated with the instance group with count of volumes that will be associated to every instance.
     */
   @js.native
+  @Factory
   trait EbsBlockDeviceConfig extends js.Object {
     var VolumeSpecification: VolumeSpecification
     var VolumesPerInstance: js.UndefOr[Int]
-  }
-
-  object EbsBlockDeviceConfig {
-    @inline
-    def apply(
-        VolumeSpecification: VolumeSpecification,
-        VolumesPerInstance: js.UndefOr[Int] = js.undefined
-    ): EbsBlockDeviceConfig = {
-      val __obj = js.Dynamic.literal(
-        "VolumeSpecification" -> VolumeSpecification.asInstanceOf[js.Any]
-      )
-
-      VolumesPerInstance.foreach(__v => __obj.updateDynamic("VolumesPerInstance")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EbsBlockDeviceConfig]
-    }
   }
 
   /**
     * The Amazon EBS configuration of a cluster instance.
     */
   @js.native
+  @Factory
   trait EbsConfiguration extends js.Object {
     var EbsBlockDeviceConfigs: js.UndefOr[EbsBlockDeviceConfigList]
     var EbsOptimized: js.UndefOr[BooleanObject]
-  }
-
-  object EbsConfiguration {
-    @inline
-    def apply(
-        EbsBlockDeviceConfigs: js.UndefOr[EbsBlockDeviceConfigList] = js.undefined,
-        EbsOptimized: js.UndefOr[BooleanObject] = js.undefined
-    ): EbsConfiguration = {
-      val __obj = js.Dynamic.literal()
-      EbsBlockDeviceConfigs.foreach(__v => __obj.updateDynamic("EbsBlockDeviceConfigs")(__v.asInstanceOf[js.Any]))
-      EbsOptimized.foreach(__v => __obj.updateDynamic("EbsOptimized")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EbsConfiguration]
-    }
   }
 
   /**
     * EBS block device that's attached to an EC2 instance.
     */
   @js.native
+  @Factory
   trait EbsVolume extends js.Object {
     var Device: js.UndefOr[String]
     var VolumeId: js.UndefOr[String]
-  }
-
-  object EbsVolume {
-    @inline
-    def apply(
-        Device: js.UndefOr[String] = js.undefined,
-        VolumeId: js.UndefOr[String] = js.undefined
-    ): EbsVolume = {
-      val __obj = js.Dynamic.literal()
-      Device.foreach(__v => __obj.updateDynamic("Device")(__v.asInstanceOf[js.Any]))
-      VolumeId.foreach(__v => __obj.updateDynamic("VolumeId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EbsVolume]
-    }
   }
 
   /**
     * Provides information about the EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM instance profile, and so on.
     */
   @js.native
+  @Factory
   trait Ec2InstanceAttributes extends js.Object {
     var AdditionalMasterSecurityGroups: js.UndefOr[StringList]
     var AdditionalSlaveSecurityGroups: js.UndefOr[StringList]
@@ -1413,112 +773,33 @@ package emr {
     var ServiceAccessSecurityGroup: js.UndefOr[String]
   }
 
-  object Ec2InstanceAttributes {
-    @inline
-    def apply(
-        AdditionalMasterSecurityGroups: js.UndefOr[StringList] = js.undefined,
-        AdditionalSlaveSecurityGroups: js.UndefOr[StringList] = js.undefined,
-        Ec2AvailabilityZone: js.UndefOr[String] = js.undefined,
-        Ec2KeyName: js.UndefOr[String] = js.undefined,
-        Ec2SubnetId: js.UndefOr[String] = js.undefined,
-        EmrManagedMasterSecurityGroup: js.UndefOr[String] = js.undefined,
-        EmrManagedSlaveSecurityGroup: js.UndefOr[String] = js.undefined,
-        IamInstanceProfile: js.UndefOr[String] = js.undefined,
-        RequestedEc2AvailabilityZones: js.UndefOr[XmlStringMaxLen256List] = js.undefined,
-        RequestedEc2SubnetIds: js.UndefOr[XmlStringMaxLen256List] = js.undefined,
-        ServiceAccessSecurityGroup: js.UndefOr[String] = js.undefined
-    ): Ec2InstanceAttributes = {
-      val __obj = js.Dynamic.literal()
-      AdditionalMasterSecurityGroups.foreach(__v =>
-        __obj.updateDynamic("AdditionalMasterSecurityGroups")(__v.asInstanceOf[js.Any])
-      )
-      AdditionalSlaveSecurityGroups.foreach(__v =>
-        __obj.updateDynamic("AdditionalSlaveSecurityGroups")(__v.asInstanceOf[js.Any])
-      )
-      Ec2AvailabilityZone.foreach(__v => __obj.updateDynamic("Ec2AvailabilityZone")(__v.asInstanceOf[js.Any]))
-      Ec2KeyName.foreach(__v => __obj.updateDynamic("Ec2KeyName")(__v.asInstanceOf[js.Any]))
-      Ec2SubnetId.foreach(__v => __obj.updateDynamic("Ec2SubnetId")(__v.asInstanceOf[js.Any]))
-      EmrManagedMasterSecurityGroup.foreach(__v =>
-        __obj.updateDynamic("EmrManagedMasterSecurityGroup")(__v.asInstanceOf[js.Any])
-      )
-      EmrManagedSlaveSecurityGroup.foreach(__v =>
-        __obj.updateDynamic("EmrManagedSlaveSecurityGroup")(__v.asInstanceOf[js.Any])
-      )
-      IamInstanceProfile.foreach(__v => __obj.updateDynamic("IamInstanceProfile")(__v.asInstanceOf[js.Any]))
-      RequestedEc2AvailabilityZones.foreach(__v =>
-        __obj.updateDynamic("RequestedEc2AvailabilityZones")(__v.asInstanceOf[js.Any])
-      )
-      RequestedEc2SubnetIds.foreach(__v => __obj.updateDynamic("RequestedEc2SubnetIds")(__v.asInstanceOf[js.Any]))
-      ServiceAccessSecurityGroup.foreach(__v =>
-        __obj.updateDynamic("ServiceAccessSecurityGroup")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[Ec2InstanceAttributes]
-    }
-  }
-
   /**
     * The details of the step failure. The service attempts to detect the root cause for many common failures.
     */
   @js.native
+  @Factory
   trait FailureDetails extends js.Object {
     var LogFile: js.UndefOr[String]
     var Message: js.UndefOr[String]
     var Reason: js.UndefOr[String]
   }
 
-  object FailureDetails {
-    @inline
-    def apply(
-        LogFile: js.UndefOr[String] = js.undefined,
-        Message: js.UndefOr[String] = js.undefined,
-        Reason: js.UndefOr[String] = js.undefined
-    ): FailureDetails = {
-      val __obj = js.Dynamic.literal()
-      LogFile.foreach(__v => __obj.updateDynamic("LogFile")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[FailureDetails]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBlockPublicAccessConfigurationInput extends js.Object {}
 
-  object GetBlockPublicAccessConfigurationInput {
-    @inline
-    def apply(
-    ): GetBlockPublicAccessConfigurationInput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[GetBlockPublicAccessConfigurationInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBlockPublicAccessConfigurationOutput extends js.Object {
     var BlockPublicAccessConfiguration: BlockPublicAccessConfiguration
     var BlockPublicAccessConfigurationMetadata: BlockPublicAccessConfigurationMetadata
-  }
-
-  object GetBlockPublicAccessConfigurationOutput {
-    @inline
-    def apply(
-        BlockPublicAccessConfiguration: BlockPublicAccessConfiguration,
-        BlockPublicAccessConfigurationMetadata: BlockPublicAccessConfigurationMetadata
-    ): GetBlockPublicAccessConfigurationOutput = {
-      val __obj = js.Dynamic.literal(
-        "BlockPublicAccessConfiguration"         -> BlockPublicAccessConfiguration.asInstanceOf[js.Any],
-        "BlockPublicAccessConfigurationMetadata" -> BlockPublicAccessConfigurationMetadata.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBlockPublicAccessConfigurationOutput]
-    }
   }
 
   /**
     * A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.
     */
   @js.native
+  @Factory
   trait HadoopJarStepConfig extends js.Object {
     var Jar: XmlString
     var Args: js.UndefOr[XmlStringList]
@@ -1526,29 +807,11 @@ package emr {
     var Properties: js.UndefOr[KeyValueList]
   }
 
-  object HadoopJarStepConfig {
-    @inline
-    def apply(
-        Jar: XmlString,
-        Args: js.UndefOr[XmlStringList] = js.undefined,
-        MainClass: js.UndefOr[XmlString] = js.undefined,
-        Properties: js.UndefOr[KeyValueList] = js.undefined
-    ): HadoopJarStepConfig = {
-      val __obj = js.Dynamic.literal(
-        "Jar" -> Jar.asInstanceOf[js.Any]
-      )
-
-      Args.foreach(__v => __obj.updateDynamic("Args")(__v.asInstanceOf[js.Any]))
-      MainClass.foreach(__v => __obj.updateDynamic("MainClass")(__v.asInstanceOf[js.Any]))
-      Properties.foreach(__v => __obj.updateDynamic("Properties")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HadoopJarStepConfig]
-    }
-  }
-
   /**
     * A cluster step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.
     */
   @js.native
+  @Factory
   trait HadoopStepConfig extends js.Object {
     var Args: js.UndefOr[StringList]
     var Jar: js.UndefOr[String]
@@ -1556,27 +819,11 @@ package emr {
     var Properties: js.UndefOr[StringMap]
   }
 
-  object HadoopStepConfig {
-    @inline
-    def apply(
-        Args: js.UndefOr[StringList] = js.undefined,
-        Jar: js.UndefOr[String] = js.undefined,
-        MainClass: js.UndefOr[String] = js.undefined,
-        Properties: js.UndefOr[StringMap] = js.undefined
-    ): HadoopStepConfig = {
-      val __obj = js.Dynamic.literal()
-      Args.foreach(__v => __obj.updateDynamic("Args")(__v.asInstanceOf[js.Any]))
-      Jar.foreach(__v => __obj.updateDynamic("Jar")(__v.asInstanceOf[js.Any]))
-      MainClass.foreach(__v => __obj.updateDynamic("MainClass")(__v.asInstanceOf[js.Any]))
-      Properties.foreach(__v => __obj.updateDynamic("Properties")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HadoopStepConfig]
-    }
-  }
-
   /**
     * Represents an EC2 instance provisioned as part of cluster.
     */
   @js.native
+  @Factory
   trait Instance extends js.Object {
     var EbsVolumes: js.UndefOr[EbsVolumeList]
     var Ec2InstanceId: js.UndefOr[InstanceId]
@@ -1590,39 +837,6 @@ package emr {
     var PublicDnsName: js.UndefOr[String]
     var PublicIpAddress: js.UndefOr[String]
     var Status: js.UndefOr[InstanceStatus]
-  }
-
-  object Instance {
-    @inline
-    def apply(
-        EbsVolumes: js.UndefOr[EbsVolumeList] = js.undefined,
-        Ec2InstanceId: js.UndefOr[InstanceId] = js.undefined,
-        Id: js.UndefOr[InstanceId] = js.undefined,
-        InstanceFleetId: js.UndefOr[InstanceFleetId] = js.undefined,
-        InstanceGroupId: js.UndefOr[String] = js.undefined,
-        InstanceType: js.UndefOr[InstanceType] = js.undefined,
-        Market: js.UndefOr[MarketType] = js.undefined,
-        PrivateDnsName: js.UndefOr[String] = js.undefined,
-        PrivateIpAddress: js.UndefOr[String] = js.undefined,
-        PublicDnsName: js.UndefOr[String] = js.undefined,
-        PublicIpAddress: js.UndefOr[String] = js.undefined,
-        Status: js.UndefOr[InstanceStatus] = js.undefined
-    ): Instance = {
-      val __obj = js.Dynamic.literal()
-      EbsVolumes.foreach(__v => __obj.updateDynamic("EbsVolumes")(__v.asInstanceOf[js.Any]))
-      Ec2InstanceId.foreach(__v => __obj.updateDynamic("Ec2InstanceId")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      InstanceFleetId.foreach(__v => __obj.updateDynamic("InstanceFleetId")(__v.asInstanceOf[js.Any]))
-      InstanceGroupId.foreach(__v => __obj.updateDynamic("InstanceGroupId")(__v.asInstanceOf[js.Any]))
-      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
-      Market.foreach(__v => __obj.updateDynamic("Market")(__v.asInstanceOf[js.Any]))
-      PrivateDnsName.foreach(__v => __obj.updateDynamic("PrivateDnsName")(__v.asInstanceOf[js.Any]))
-      PrivateIpAddress.foreach(__v => __obj.updateDynamic("PrivateIpAddress")(__v.asInstanceOf[js.Any]))
-      PublicDnsName.foreach(__v => __obj.updateDynamic("PublicDnsName")(__v.asInstanceOf[js.Any]))
-      PublicIpAddress.foreach(__v => __obj.updateDynamic("PublicIpAddress")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Instance]
-    }
   }
 
   @js.native
@@ -1640,6 +854,7 @@ package emr {
     * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
     */
   @js.native
+  @Factory
   trait InstanceFleet extends js.Object {
     var Id: js.UndefOr[InstanceFleetId]
     var InstanceFleetType: js.UndefOr[InstanceFleetType]
@@ -1653,45 +868,13 @@ package emr {
     var TargetSpotCapacity: js.UndefOr[WholeNumber]
   }
 
-  object InstanceFleet {
-    @inline
-    def apply(
-        Id: js.UndefOr[InstanceFleetId] = js.undefined,
-        InstanceFleetType: js.UndefOr[InstanceFleetType] = js.undefined,
-        InstanceTypeSpecifications: js.UndefOr[InstanceTypeSpecificationList] = js.undefined,
-        LaunchSpecifications: js.UndefOr[InstanceFleetProvisioningSpecifications] = js.undefined,
-        Name: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-        ProvisionedOnDemandCapacity: js.UndefOr[WholeNumber] = js.undefined,
-        ProvisionedSpotCapacity: js.UndefOr[WholeNumber] = js.undefined,
-        Status: js.UndefOr[InstanceFleetStatus] = js.undefined,
-        TargetOnDemandCapacity: js.UndefOr[WholeNumber] = js.undefined,
-        TargetSpotCapacity: js.UndefOr[WholeNumber] = js.undefined
-    ): InstanceFleet = {
-      val __obj = js.Dynamic.literal()
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      InstanceFleetType.foreach(__v => __obj.updateDynamic("InstanceFleetType")(__v.asInstanceOf[js.Any]))
-      InstanceTypeSpecifications.foreach(__v =>
-        __obj.updateDynamic("InstanceTypeSpecifications")(__v.asInstanceOf[js.Any])
-      )
-      LaunchSpecifications.foreach(__v => __obj.updateDynamic("LaunchSpecifications")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      ProvisionedOnDemandCapacity.foreach(__v =>
-        __obj.updateDynamic("ProvisionedOnDemandCapacity")(__v.asInstanceOf[js.Any])
-      )
-      ProvisionedSpotCapacity.foreach(__v => __obj.updateDynamic("ProvisionedSpotCapacity")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      TargetOnDemandCapacity.foreach(__v => __obj.updateDynamic("TargetOnDemandCapacity")(__v.asInstanceOf[js.Any]))
-      TargetSpotCapacity.foreach(__v => __obj.updateDynamic("TargetSpotCapacity")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceFleet]
-    }
-  }
-
   /**
     * The configuration that defines an instance fleet.
     *
     * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
     */
   @js.native
+  @Factory
   trait InstanceFleetConfig extends js.Object {
     var InstanceFleetType: InstanceFleetType
     var InstanceTypeConfigs: js.UndefOr[InstanceTypeConfigList]
@@ -1701,56 +884,17 @@ package emr {
     var TargetSpotCapacity: js.UndefOr[WholeNumber]
   }
 
-  object InstanceFleetConfig {
-    @inline
-    def apply(
-        InstanceFleetType: InstanceFleetType,
-        InstanceTypeConfigs: js.UndefOr[InstanceTypeConfigList] = js.undefined,
-        LaunchSpecifications: js.UndefOr[InstanceFleetProvisioningSpecifications] = js.undefined,
-        Name: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-        TargetOnDemandCapacity: js.UndefOr[WholeNumber] = js.undefined,
-        TargetSpotCapacity: js.UndefOr[WholeNumber] = js.undefined
-    ): InstanceFleetConfig = {
-      val __obj = js.Dynamic.literal(
-        "InstanceFleetType" -> InstanceFleetType.asInstanceOf[js.Any]
-      )
-
-      InstanceTypeConfigs.foreach(__v => __obj.updateDynamic("InstanceTypeConfigs")(__v.asInstanceOf[js.Any]))
-      LaunchSpecifications.foreach(__v => __obj.updateDynamic("LaunchSpecifications")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      TargetOnDemandCapacity.foreach(__v => __obj.updateDynamic("TargetOnDemandCapacity")(__v.asInstanceOf[js.Any]))
-      TargetSpotCapacity.foreach(__v => __obj.updateDynamic("TargetSpotCapacity")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceFleetConfig]
-    }
-  }
-
   /**
     * Configuration parameters for an instance fleet modification request.
     *
     * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
     */
   @js.native
+  @Factory
   trait InstanceFleetModifyConfig extends js.Object {
     var InstanceFleetId: InstanceFleetId
     var TargetOnDemandCapacity: js.UndefOr[WholeNumber]
     var TargetSpotCapacity: js.UndefOr[WholeNumber]
-  }
-
-  object InstanceFleetModifyConfig {
-    @inline
-    def apply(
-        InstanceFleetId: InstanceFleetId,
-        TargetOnDemandCapacity: js.UndefOr[WholeNumber] = js.undefined,
-        TargetSpotCapacity: js.UndefOr[WholeNumber] = js.undefined
-    ): InstanceFleetModifyConfig = {
-      val __obj = js.Dynamic.literal(
-        "InstanceFleetId" -> InstanceFleetId.asInstanceOf[js.Any]
-      )
-
-      TargetOnDemandCapacity.foreach(__v => __obj.updateDynamic("TargetOnDemandCapacity")(__v.asInstanceOf[js.Any]))
-      TargetSpotCapacity.foreach(__v => __obj.updateDynamic("TargetSpotCapacity")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceFleetModifyConfig]
-    }
   }
 
   /**
@@ -1759,21 +903,9 @@ package emr {
     * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
     */
   @js.native
+  @Factory
   trait InstanceFleetProvisioningSpecifications extends js.Object {
     var SpotSpecification: SpotProvisioningSpecification
-  }
-
-  object InstanceFleetProvisioningSpecifications {
-    @inline
-    def apply(
-        SpotSpecification: SpotProvisioningSpecification
-    ): InstanceFleetProvisioningSpecifications = {
-      val __obj = js.Dynamic.literal(
-        "SpotSpecification" -> SpotSpecification.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[InstanceFleetProvisioningSpecifications]
-    }
   }
 
   @js.native
@@ -1797,22 +929,10 @@ package emr {
     * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
     */
   @js.native
+  @Factory
   trait InstanceFleetStateChangeReason extends js.Object {
     var Code: js.UndefOr[InstanceFleetStateChangeReasonCode]
     var Message: js.UndefOr[String]
-  }
-
-  object InstanceFleetStateChangeReason {
-    @inline
-    def apply(
-        Code: js.UndefOr[InstanceFleetStateChangeReasonCode] = js.undefined,
-        Message: js.UndefOr[String] = js.undefined
-    ): InstanceFleetStateChangeReason = {
-      val __obj = js.Dynamic.literal()
-      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceFleetStateChangeReason]
-    }
   }
 
   @js.native
@@ -1832,25 +952,11 @@ package emr {
     * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
     */
   @js.native
+  @Factory
   trait InstanceFleetStatus extends js.Object {
     var State: js.UndefOr[InstanceFleetState]
     var StateChangeReason: js.UndefOr[InstanceFleetStateChangeReason]
     var Timeline: js.UndefOr[InstanceFleetTimeline]
-  }
-
-  object InstanceFleetStatus {
-    @inline
-    def apply(
-        State: js.UndefOr[InstanceFleetState] = js.undefined,
-        StateChangeReason: js.UndefOr[InstanceFleetStateChangeReason] = js.undefined,
-        Timeline: js.UndefOr[InstanceFleetTimeline] = js.undefined
-    ): InstanceFleetStatus = {
-      val __obj = js.Dynamic.literal()
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      StateChangeReason.foreach(__v => __obj.updateDynamic("StateChangeReason")(__v.asInstanceOf[js.Any]))
-      Timeline.foreach(__v => __obj.updateDynamic("Timeline")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceFleetStatus]
-    }
   }
 
   /**
@@ -1859,25 +965,11 @@ package emr {
     * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
     */
   @js.native
+  @Factory
   trait InstanceFleetTimeline extends js.Object {
     var CreationDateTime: js.UndefOr[Date]
     var EndDateTime: js.UndefOr[Date]
     var ReadyDateTime: js.UndefOr[Date]
-  }
-
-  object InstanceFleetTimeline {
-    @inline
-    def apply(
-        CreationDateTime: js.UndefOr[Date] = js.undefined,
-        EndDateTime: js.UndefOr[Date] = js.undefined,
-        ReadyDateTime: js.UndefOr[Date] = js.undefined
-    ): InstanceFleetTimeline = {
-      val __obj = js.Dynamic.literal()
-      CreationDateTime.foreach(__v => __obj.updateDynamic("CreationDateTime")(__v.asInstanceOf[js.Any]))
-      EndDateTime.foreach(__v => __obj.updateDynamic("EndDateTime")(__v.asInstanceOf[js.Any]))
-      ReadyDateTime.foreach(__v => __obj.updateDynamic("ReadyDateTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceFleetTimeline]
-    }
   }
 
   @js.native
@@ -1894,6 +986,7 @@ package emr {
     * This entity represents an instance group, which is a group of instances that have common purpose. For example, CORE instance group is used for HDFS.
     */
   @js.native
+  @Factory
   trait InstanceGroup extends js.Object {
     var AutoScalingPolicy: js.UndefOr[AutoScalingPolicyDescription]
     var BidPrice: js.UndefOr[String]
@@ -1914,57 +1007,11 @@ package emr {
     var Status: js.UndefOr[InstanceGroupStatus]
   }
 
-  object InstanceGroup {
-    @inline
-    def apply(
-        AutoScalingPolicy: js.UndefOr[AutoScalingPolicyDescription] = js.undefined,
-        BidPrice: js.UndefOr[String] = js.undefined,
-        Configurations: js.UndefOr[ConfigurationList] = js.undefined,
-        ConfigurationsVersion: js.UndefOr[Double] = js.undefined,
-        EbsBlockDevices: js.UndefOr[EbsBlockDeviceList] = js.undefined,
-        EbsOptimized: js.UndefOr[BooleanObject] = js.undefined,
-        Id: js.UndefOr[InstanceGroupId] = js.undefined,
-        InstanceGroupType: js.UndefOr[InstanceGroupType] = js.undefined,
-        InstanceType: js.UndefOr[InstanceType] = js.undefined,
-        LastSuccessfullyAppliedConfigurations: js.UndefOr[ConfigurationList] = js.undefined,
-        LastSuccessfullyAppliedConfigurationsVersion: js.UndefOr[Double] = js.undefined,
-        Market: js.UndefOr[MarketType] = js.undefined,
-        Name: js.UndefOr[String] = js.undefined,
-        RequestedInstanceCount: js.UndefOr[Int] = js.undefined,
-        RunningInstanceCount: js.UndefOr[Int] = js.undefined,
-        ShrinkPolicy: js.UndefOr[ShrinkPolicy] = js.undefined,
-        Status: js.UndefOr[InstanceGroupStatus] = js.undefined
-    ): InstanceGroup = {
-      val __obj = js.Dynamic.literal()
-      AutoScalingPolicy.foreach(__v => __obj.updateDynamic("AutoScalingPolicy")(__v.asInstanceOf[js.Any]))
-      BidPrice.foreach(__v => __obj.updateDynamic("BidPrice")(__v.asInstanceOf[js.Any]))
-      Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
-      ConfigurationsVersion.foreach(__v => __obj.updateDynamic("ConfigurationsVersion")(__v.asInstanceOf[js.Any]))
-      EbsBlockDevices.foreach(__v => __obj.updateDynamic("EbsBlockDevices")(__v.asInstanceOf[js.Any]))
-      EbsOptimized.foreach(__v => __obj.updateDynamic("EbsOptimized")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      InstanceGroupType.foreach(__v => __obj.updateDynamic("InstanceGroupType")(__v.asInstanceOf[js.Any]))
-      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
-      LastSuccessfullyAppliedConfigurations.foreach(__v =>
-        __obj.updateDynamic("LastSuccessfullyAppliedConfigurations")(__v.asInstanceOf[js.Any])
-      )
-      LastSuccessfullyAppliedConfigurationsVersion.foreach(__v =>
-        __obj.updateDynamic("LastSuccessfullyAppliedConfigurationsVersion")(__v.asInstanceOf[js.Any])
-      )
-      Market.foreach(__v => __obj.updateDynamic("Market")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      RequestedInstanceCount.foreach(__v => __obj.updateDynamic("RequestedInstanceCount")(__v.asInstanceOf[js.Any]))
-      RunningInstanceCount.foreach(__v => __obj.updateDynamic("RunningInstanceCount")(__v.asInstanceOf[js.Any]))
-      ShrinkPolicy.foreach(__v => __obj.updateDynamic("ShrinkPolicy")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceGroup]
-    }
-  }
-
   /**
     * Configuration defining a new instance group.
     */
   @js.native
+  @Factory
   trait InstanceGroupConfig extends js.Object {
     var InstanceCount: Int
     var InstanceRole: InstanceRoleType
@@ -1977,39 +1024,11 @@ package emr {
     var Name: js.UndefOr[XmlStringMaxLen256]
   }
 
-  object InstanceGroupConfig {
-    @inline
-    def apply(
-        InstanceCount: Int,
-        InstanceRole: InstanceRoleType,
-        InstanceType: InstanceType,
-        AutoScalingPolicy: js.UndefOr[AutoScalingPolicy] = js.undefined,
-        BidPrice: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-        Configurations: js.UndefOr[ConfigurationList] = js.undefined,
-        EbsConfiguration: js.UndefOr[EbsConfiguration] = js.undefined,
-        Market: js.UndefOr[MarketType] = js.undefined,
-        Name: js.UndefOr[XmlStringMaxLen256] = js.undefined
-    ): InstanceGroupConfig = {
-      val __obj = js.Dynamic.literal(
-        "InstanceCount" -> InstanceCount.asInstanceOf[js.Any],
-        "InstanceRole"  -> InstanceRole.asInstanceOf[js.Any],
-        "InstanceType"  -> InstanceType.asInstanceOf[js.Any]
-      )
-
-      AutoScalingPolicy.foreach(__v => __obj.updateDynamic("AutoScalingPolicy")(__v.asInstanceOf[js.Any]))
-      BidPrice.foreach(__v => __obj.updateDynamic("BidPrice")(__v.asInstanceOf[js.Any]))
-      Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
-      EbsConfiguration.foreach(__v => __obj.updateDynamic("EbsConfiguration")(__v.asInstanceOf[js.Any]))
-      Market.foreach(__v => __obj.updateDynamic("Market")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceGroupConfig]
-    }
-  }
-
   /**
     * Detailed information about an instance group.
     */
   @js.native
+  @Factory
   trait InstanceGroupDetail extends js.Object {
     var CreationDateTime: Date
     var InstanceRequestCount: Int
@@ -2027,78 +1046,17 @@ package emr {
     var StartDateTime: js.UndefOr[Date]
   }
 
-  object InstanceGroupDetail {
-    @inline
-    def apply(
-        CreationDateTime: Date,
-        InstanceRequestCount: Int,
-        InstanceRole: InstanceRoleType,
-        InstanceRunningCount: Int,
-        InstanceType: InstanceType,
-        Market: MarketType,
-        State: InstanceGroupState,
-        BidPrice: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-        EndDateTime: js.UndefOr[Date] = js.undefined,
-        InstanceGroupId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-        LastStateChangeReason: js.UndefOr[XmlString] = js.undefined,
-        Name: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-        ReadyDateTime: js.UndefOr[Date] = js.undefined,
-        StartDateTime: js.UndefOr[Date] = js.undefined
-    ): InstanceGroupDetail = {
-      val __obj = js.Dynamic.literal(
-        "CreationDateTime"     -> CreationDateTime.asInstanceOf[js.Any],
-        "InstanceRequestCount" -> InstanceRequestCount.asInstanceOf[js.Any],
-        "InstanceRole"         -> InstanceRole.asInstanceOf[js.Any],
-        "InstanceRunningCount" -> InstanceRunningCount.asInstanceOf[js.Any],
-        "InstanceType"         -> InstanceType.asInstanceOf[js.Any],
-        "Market"               -> Market.asInstanceOf[js.Any],
-        "State"                -> State.asInstanceOf[js.Any]
-      )
-
-      BidPrice.foreach(__v => __obj.updateDynamic("BidPrice")(__v.asInstanceOf[js.Any]))
-      EndDateTime.foreach(__v => __obj.updateDynamic("EndDateTime")(__v.asInstanceOf[js.Any]))
-      InstanceGroupId.foreach(__v => __obj.updateDynamic("InstanceGroupId")(__v.asInstanceOf[js.Any]))
-      LastStateChangeReason.foreach(__v => __obj.updateDynamic("LastStateChangeReason")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      ReadyDateTime.foreach(__v => __obj.updateDynamic("ReadyDateTime")(__v.asInstanceOf[js.Any]))
-      StartDateTime.foreach(__v => __obj.updateDynamic("StartDateTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceGroupDetail]
-    }
-  }
-
   /**
     * Modify the size or configurations of an instance group.
     */
   @js.native
+  @Factory
   trait InstanceGroupModifyConfig extends js.Object {
     var InstanceGroupId: XmlStringMaxLen256
     var Configurations: js.UndefOr[ConfigurationList]
     var EC2InstanceIdsToTerminate: js.UndefOr[EC2InstanceIdsToTerminateList]
     var InstanceCount: js.UndefOr[Int]
     var ShrinkPolicy: js.UndefOr[ShrinkPolicy]
-  }
-
-  object InstanceGroupModifyConfig {
-    @inline
-    def apply(
-        InstanceGroupId: XmlStringMaxLen256,
-        Configurations: js.UndefOr[ConfigurationList] = js.undefined,
-        EC2InstanceIdsToTerminate: js.UndefOr[EC2InstanceIdsToTerminateList] = js.undefined,
-        InstanceCount: js.UndefOr[Int] = js.undefined,
-        ShrinkPolicy: js.UndefOr[ShrinkPolicy] = js.undefined
-    ): InstanceGroupModifyConfig = {
-      val __obj = js.Dynamic.literal(
-        "InstanceGroupId" -> InstanceGroupId.asInstanceOf[js.Any]
-      )
-
-      Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
-      EC2InstanceIdsToTerminate.foreach(__v =>
-        __obj.updateDynamic("EC2InstanceIdsToTerminate")(__v.asInstanceOf[js.Any])
-      )
-      InstanceCount.foreach(__v => __obj.updateDynamic("InstanceCount")(__v.asInstanceOf[js.Any]))
-      ShrinkPolicy.foreach(__v => __obj.updateDynamic("ShrinkPolicy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceGroupModifyConfig]
-    }
   }
 
   @js.native
@@ -2137,22 +1095,10 @@ package emr {
     * The status change reason details for the instance group.
     */
   @js.native
+  @Factory
   trait InstanceGroupStateChangeReason extends js.Object {
     var Code: js.UndefOr[InstanceGroupStateChangeReasonCode]
     var Message: js.UndefOr[String]
-  }
-
-  object InstanceGroupStateChangeReason {
-    @inline
-    def apply(
-        Code: js.UndefOr[InstanceGroupStateChangeReasonCode] = js.undefined,
-        Message: js.UndefOr[String] = js.undefined
-    ): InstanceGroupStateChangeReason = {
-      val __obj = js.Dynamic.literal()
-      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceGroupStateChangeReason]
-    }
   }
 
   @js.native
@@ -2170,50 +1116,22 @@ package emr {
     * The details of the instance group status.
     */
   @js.native
+  @Factory
   trait InstanceGroupStatus extends js.Object {
     var State: js.UndefOr[InstanceGroupState]
     var StateChangeReason: js.UndefOr[InstanceGroupStateChangeReason]
     var Timeline: js.UndefOr[InstanceGroupTimeline]
   }
 
-  object InstanceGroupStatus {
-    @inline
-    def apply(
-        State: js.UndefOr[InstanceGroupState] = js.undefined,
-        StateChangeReason: js.UndefOr[InstanceGroupStateChangeReason] = js.undefined,
-        Timeline: js.UndefOr[InstanceGroupTimeline] = js.undefined
-    ): InstanceGroupStatus = {
-      val __obj = js.Dynamic.literal()
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      StateChangeReason.foreach(__v => __obj.updateDynamic("StateChangeReason")(__v.asInstanceOf[js.Any]))
-      Timeline.foreach(__v => __obj.updateDynamic("Timeline")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceGroupStatus]
-    }
-  }
-
   /**
     * The timeline of the instance group lifecycle.
     */
   @js.native
+  @Factory
   trait InstanceGroupTimeline extends js.Object {
     var CreationDateTime: js.UndefOr[Date]
     var EndDateTime: js.UndefOr[Date]
     var ReadyDateTime: js.UndefOr[Date]
-  }
-
-  object InstanceGroupTimeline {
-    @inline
-    def apply(
-        CreationDateTime: js.UndefOr[Date] = js.undefined,
-        EndDateTime: js.UndefOr[Date] = js.undefined,
-        ReadyDateTime: js.UndefOr[Date] = js.undefined
-    ): InstanceGroupTimeline = {
-      val __obj = js.Dynamic.literal()
-      CreationDateTime.foreach(__v => __obj.updateDynamic("CreationDateTime")(__v.asInstanceOf[js.Any]))
-      EndDateTime.foreach(__v => __obj.updateDynamic("EndDateTime")(__v.asInstanceOf[js.Any]))
-      ReadyDateTime.foreach(__v => __obj.updateDynamic("ReadyDateTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceGroupTimeline]
-    }
   }
 
   @js.native
@@ -2230,27 +1148,11 @@ package emr {
     * Custom policy for requesting termination protection or termination of specific instances when shrinking an instance group.
     */
   @js.native
+  @Factory
   trait InstanceResizePolicy extends js.Object {
     var InstanceTerminationTimeout: js.UndefOr[Int]
     var InstancesToProtect: js.UndefOr[EC2InstanceIdsList]
     var InstancesToTerminate: js.UndefOr[EC2InstanceIdsList]
-  }
-
-  object InstanceResizePolicy {
-    @inline
-    def apply(
-        InstanceTerminationTimeout: js.UndefOr[Int] = js.undefined,
-        InstancesToProtect: js.UndefOr[EC2InstanceIdsList] = js.undefined,
-        InstancesToTerminate: js.UndefOr[EC2InstanceIdsList] = js.undefined
-    ): InstanceResizePolicy = {
-      val __obj = js.Dynamic.literal()
-      InstanceTerminationTimeout.foreach(__v =>
-        __obj.updateDynamic("InstanceTerminationTimeout")(__v.asInstanceOf[js.Any])
-      )
-      InstancesToProtect.foreach(__v => __obj.updateDynamic("InstancesToProtect")(__v.asInstanceOf[js.Any]))
-      InstancesToTerminate.foreach(__v => __obj.updateDynamic("InstancesToTerminate")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceResizePolicy]
-    }
   }
 
   @js.native
@@ -2279,22 +1181,10 @@ package emr {
     * The details of the status change reason for the instance.
     */
   @js.native
+  @Factory
   trait InstanceStateChangeReason extends js.Object {
     var Code: js.UndefOr[InstanceStateChangeReasonCode]
     var Message: js.UndefOr[String]
-  }
-
-  object InstanceStateChangeReason {
-    @inline
-    def apply(
-        Code: js.UndefOr[InstanceStateChangeReasonCode] = js.undefined,
-        Message: js.UndefOr[String] = js.undefined
-    ): InstanceStateChangeReason = {
-      val __obj = js.Dynamic.literal()
-      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceStateChangeReason]
-    }
   }
 
   @js.native
@@ -2315,50 +1205,22 @@ package emr {
     * The instance status details.
     */
   @js.native
+  @Factory
   trait InstanceStatus extends js.Object {
     var State: js.UndefOr[InstanceState]
     var StateChangeReason: js.UndefOr[InstanceStateChangeReason]
     var Timeline: js.UndefOr[InstanceTimeline]
   }
 
-  object InstanceStatus {
-    @inline
-    def apply(
-        State: js.UndefOr[InstanceState] = js.undefined,
-        StateChangeReason: js.UndefOr[InstanceStateChangeReason] = js.undefined,
-        Timeline: js.UndefOr[InstanceTimeline] = js.undefined
-    ): InstanceStatus = {
-      val __obj = js.Dynamic.literal()
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      StateChangeReason.foreach(__v => __obj.updateDynamic("StateChangeReason")(__v.asInstanceOf[js.Any]))
-      Timeline.foreach(__v => __obj.updateDynamic("Timeline")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceStatus]
-    }
-  }
-
   /**
     * The timeline of the instance lifecycle.
     */
   @js.native
+  @Factory
   trait InstanceTimeline extends js.Object {
     var CreationDateTime: js.UndefOr[Date]
     var EndDateTime: js.UndefOr[Date]
     var ReadyDateTime: js.UndefOr[Date]
-  }
-
-  object InstanceTimeline {
-    @inline
-    def apply(
-        CreationDateTime: js.UndefOr[Date] = js.undefined,
-        EndDateTime: js.UndefOr[Date] = js.undefined,
-        ReadyDateTime: js.UndefOr[Date] = js.undefined
-    ): InstanceTimeline = {
-      val __obj = js.Dynamic.literal()
-      CreationDateTime.foreach(__v => __obj.updateDynamic("CreationDateTime")(__v.asInstanceOf[js.Any]))
-      EndDateTime.foreach(__v => __obj.updateDynamic("EndDateTime")(__v.asInstanceOf[js.Any]))
-      ReadyDateTime.foreach(__v => __obj.updateDynamic("ReadyDateTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceTimeline]
-    }
   }
 
   /**
@@ -2367,6 +1229,7 @@ package emr {
     * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
     */
   @js.native
+  @Factory
   trait InstanceTypeConfig extends js.Object {
     var InstanceType: InstanceType
     var BidPrice: js.UndefOr[XmlStringMaxLen256]
@@ -2376,37 +1239,13 @@ package emr {
     var WeightedCapacity: js.UndefOr[WholeNumber]
   }
 
-  object InstanceTypeConfig {
-    @inline
-    def apply(
-        InstanceType: InstanceType,
-        BidPrice: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-        BidPriceAsPercentageOfOnDemandPrice: js.UndefOr[NonNegativeDouble] = js.undefined,
-        Configurations: js.UndefOr[ConfigurationList] = js.undefined,
-        EbsConfiguration: js.UndefOr[EbsConfiguration] = js.undefined,
-        WeightedCapacity: js.UndefOr[WholeNumber] = js.undefined
-    ): InstanceTypeConfig = {
-      val __obj = js.Dynamic.literal(
-        "InstanceType" -> InstanceType.asInstanceOf[js.Any]
-      )
-
-      BidPrice.foreach(__v => __obj.updateDynamic("BidPrice")(__v.asInstanceOf[js.Any]))
-      BidPriceAsPercentageOfOnDemandPrice.foreach(__v =>
-        __obj.updateDynamic("BidPriceAsPercentageOfOnDemandPrice")(__v.asInstanceOf[js.Any])
-      )
-      Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
-      EbsConfiguration.foreach(__v => __obj.updateDynamic("EbsConfiguration")(__v.asInstanceOf[js.Any]))
-      WeightedCapacity.foreach(__v => __obj.updateDynamic("WeightedCapacity")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceTypeConfig]
-    }
-  }
-
   /**
     * The configuration specification for each instance type in an instance fleet.
     *
     * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
     */
   @js.native
+  @Factory
   trait InstanceTypeSpecification extends js.Object {
     var BidPrice: js.UndefOr[XmlStringMaxLen256]
     var BidPriceAsPercentageOfOnDemandPrice: js.UndefOr[NonNegativeDouble]
@@ -2417,35 +1256,11 @@ package emr {
     var WeightedCapacity: js.UndefOr[WholeNumber]
   }
 
-  object InstanceTypeSpecification {
-    @inline
-    def apply(
-        BidPrice: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-        BidPriceAsPercentageOfOnDemandPrice: js.UndefOr[NonNegativeDouble] = js.undefined,
-        Configurations: js.UndefOr[ConfigurationList] = js.undefined,
-        EbsBlockDevices: js.UndefOr[EbsBlockDeviceList] = js.undefined,
-        EbsOptimized: js.UndefOr[BooleanObject] = js.undefined,
-        InstanceType: js.UndefOr[InstanceType] = js.undefined,
-        WeightedCapacity: js.UndefOr[WholeNumber] = js.undefined
-    ): InstanceTypeSpecification = {
-      val __obj = js.Dynamic.literal()
-      BidPrice.foreach(__v => __obj.updateDynamic("BidPrice")(__v.asInstanceOf[js.Any]))
-      BidPriceAsPercentageOfOnDemandPrice.foreach(__v =>
-        __obj.updateDynamic("BidPriceAsPercentageOfOnDemandPrice")(__v.asInstanceOf[js.Any])
-      )
-      Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
-      EbsBlockDevices.foreach(__v => __obj.updateDynamic("EbsBlockDevices")(__v.asInstanceOf[js.Any]))
-      EbsOptimized.foreach(__v => __obj.updateDynamic("EbsOptimized")(__v.asInstanceOf[js.Any]))
-      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
-      WeightedCapacity.foreach(__v => __obj.updateDynamic("WeightedCapacity")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceTypeSpecification]
-    }
-  }
-
   /**
     * A description of a cluster (job flow).
     */
   @js.native
+  @Factory
   trait JobFlowDetail extends js.Object {
     var ExecutionStatusDetail: JobFlowExecutionStatusDetail
     var Instances: JobFlowInstancesDetail
@@ -2461,45 +1276,6 @@ package emr {
     var Steps: js.UndefOr[StepDetailList]
     var SupportedProducts: js.UndefOr[SupportedProductsList]
     var VisibleToAllUsers: js.UndefOr[Boolean]
-  }
-
-  object JobFlowDetail {
-    @inline
-    def apply(
-        ExecutionStatusDetail: JobFlowExecutionStatusDetail,
-        Instances: JobFlowInstancesDetail,
-        JobFlowId: XmlStringMaxLen256,
-        Name: XmlStringMaxLen256,
-        AmiVersion: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-        AutoScalingRole: js.UndefOr[XmlString] = js.undefined,
-        BootstrapActions: js.UndefOr[BootstrapActionDetailList] = js.undefined,
-        JobFlowRole: js.UndefOr[XmlString] = js.undefined,
-        LogUri: js.UndefOr[XmlString] = js.undefined,
-        ScaleDownBehavior: js.UndefOr[ScaleDownBehavior] = js.undefined,
-        ServiceRole: js.UndefOr[XmlString] = js.undefined,
-        Steps: js.UndefOr[StepDetailList] = js.undefined,
-        SupportedProducts: js.UndefOr[SupportedProductsList] = js.undefined,
-        VisibleToAllUsers: js.UndefOr[Boolean] = js.undefined
-    ): JobFlowDetail = {
-      val __obj = js.Dynamic.literal(
-        "ExecutionStatusDetail" -> ExecutionStatusDetail.asInstanceOf[js.Any],
-        "Instances"             -> Instances.asInstanceOf[js.Any],
-        "JobFlowId"             -> JobFlowId.asInstanceOf[js.Any],
-        "Name"                  -> Name.asInstanceOf[js.Any]
-      )
-
-      AmiVersion.foreach(__v => __obj.updateDynamic("AmiVersion")(__v.asInstanceOf[js.Any]))
-      AutoScalingRole.foreach(__v => __obj.updateDynamic("AutoScalingRole")(__v.asInstanceOf[js.Any]))
-      BootstrapActions.foreach(__v => __obj.updateDynamic("BootstrapActions")(__v.asInstanceOf[js.Any]))
-      JobFlowRole.foreach(__v => __obj.updateDynamic("JobFlowRole")(__v.asInstanceOf[js.Any]))
-      LogUri.foreach(__v => __obj.updateDynamic("LogUri")(__v.asInstanceOf[js.Any]))
-      ScaleDownBehavior.foreach(__v => __obj.updateDynamic("ScaleDownBehavior")(__v.asInstanceOf[js.Any]))
-      ServiceRole.foreach(__v => __obj.updateDynamic("ServiceRole")(__v.asInstanceOf[js.Any]))
-      Steps.foreach(__v => __obj.updateDynamic("Steps")(__v.asInstanceOf[js.Any]))
-      SupportedProducts.foreach(__v => __obj.updateDynamic("SupportedProducts")(__v.asInstanceOf[js.Any]))
-      VisibleToAllUsers.foreach(__v => __obj.updateDynamic("VisibleToAllUsers")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[JobFlowDetail]
-    }
   }
 
   /**
@@ -2526,6 +1302,7 @@ package emr {
     * Describes the status of the cluster (job flow).
     */
   @js.native
+  @Factory
   trait JobFlowExecutionStatusDetail extends js.Object {
     var CreationDateTime: Date
     var State: JobFlowExecutionState
@@ -2535,33 +1312,11 @@ package emr {
     var StartDateTime: js.UndefOr[Date]
   }
 
-  object JobFlowExecutionStatusDetail {
-    @inline
-    def apply(
-        CreationDateTime: Date,
-        State: JobFlowExecutionState,
-        EndDateTime: js.UndefOr[Date] = js.undefined,
-        LastStateChangeReason: js.UndefOr[XmlString] = js.undefined,
-        ReadyDateTime: js.UndefOr[Date] = js.undefined,
-        StartDateTime: js.UndefOr[Date] = js.undefined
-    ): JobFlowExecutionStatusDetail = {
-      val __obj = js.Dynamic.literal(
-        "CreationDateTime" -> CreationDateTime.asInstanceOf[js.Any],
-        "State"            -> State.asInstanceOf[js.Any]
-      )
-
-      EndDateTime.foreach(__v => __obj.updateDynamic("EndDateTime")(__v.asInstanceOf[js.Any]))
-      LastStateChangeReason.foreach(__v => __obj.updateDynamic("LastStateChangeReason")(__v.asInstanceOf[js.Any]))
-      ReadyDateTime.foreach(__v => __obj.updateDynamic("ReadyDateTime")(__v.asInstanceOf[js.Any]))
-      StartDateTime.foreach(__v => __obj.updateDynamic("StartDateTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[JobFlowExecutionStatusDetail]
-    }
-  }
-
   /**
     * A description of the Amazon EC2 instance on which the cluster (job flow) runs. A valid JobFlowInstancesConfig must contain either InstanceGroups or InstanceFleets, which is the recommended configuration. They cannot be used together. You may also have MasterInstanceType, SlaveInstanceType, and InstanceCount (all three must be present), but we don't recommend this configuration.
     */
   @js.native
+  @Factory
   trait JobFlowInstancesConfig extends js.Object {
     var AdditionalMasterSecurityGroups: js.UndefOr[SecurityGroupsList]
     var AdditionalSlaveSecurityGroups: js.UndefOr[SecurityGroupsList]
@@ -2582,65 +1337,11 @@ package emr {
     var TerminationProtected: js.UndefOr[Boolean]
   }
 
-  object JobFlowInstancesConfig {
-    @inline
-    def apply(
-        AdditionalMasterSecurityGroups: js.UndefOr[SecurityGroupsList] = js.undefined,
-        AdditionalSlaveSecurityGroups: js.UndefOr[SecurityGroupsList] = js.undefined,
-        Ec2KeyName: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-        Ec2SubnetId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-        Ec2SubnetIds: js.UndefOr[XmlStringMaxLen256List] = js.undefined,
-        EmrManagedMasterSecurityGroup: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-        EmrManagedSlaveSecurityGroup: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-        HadoopVersion: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-        InstanceCount: js.UndefOr[Int] = js.undefined,
-        InstanceFleets: js.UndefOr[InstanceFleetConfigList] = js.undefined,
-        InstanceGroups: js.UndefOr[InstanceGroupConfigList] = js.undefined,
-        KeepJobFlowAliveWhenNoSteps: js.UndefOr[Boolean] = js.undefined,
-        MasterInstanceType: js.UndefOr[InstanceType] = js.undefined,
-        Placement: js.UndefOr[PlacementType] = js.undefined,
-        ServiceAccessSecurityGroup: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-        SlaveInstanceType: js.UndefOr[InstanceType] = js.undefined,
-        TerminationProtected: js.UndefOr[Boolean] = js.undefined
-    ): JobFlowInstancesConfig = {
-      val __obj = js.Dynamic.literal()
-      AdditionalMasterSecurityGroups.foreach(__v =>
-        __obj.updateDynamic("AdditionalMasterSecurityGroups")(__v.asInstanceOf[js.Any])
-      )
-      AdditionalSlaveSecurityGroups.foreach(__v =>
-        __obj.updateDynamic("AdditionalSlaveSecurityGroups")(__v.asInstanceOf[js.Any])
-      )
-      Ec2KeyName.foreach(__v => __obj.updateDynamic("Ec2KeyName")(__v.asInstanceOf[js.Any]))
-      Ec2SubnetId.foreach(__v => __obj.updateDynamic("Ec2SubnetId")(__v.asInstanceOf[js.Any]))
-      Ec2SubnetIds.foreach(__v => __obj.updateDynamic("Ec2SubnetIds")(__v.asInstanceOf[js.Any]))
-      EmrManagedMasterSecurityGroup.foreach(__v =>
-        __obj.updateDynamic("EmrManagedMasterSecurityGroup")(__v.asInstanceOf[js.Any])
-      )
-      EmrManagedSlaveSecurityGroup.foreach(__v =>
-        __obj.updateDynamic("EmrManagedSlaveSecurityGroup")(__v.asInstanceOf[js.Any])
-      )
-      HadoopVersion.foreach(__v => __obj.updateDynamic("HadoopVersion")(__v.asInstanceOf[js.Any]))
-      InstanceCount.foreach(__v => __obj.updateDynamic("InstanceCount")(__v.asInstanceOf[js.Any]))
-      InstanceFleets.foreach(__v => __obj.updateDynamic("InstanceFleets")(__v.asInstanceOf[js.Any]))
-      InstanceGroups.foreach(__v => __obj.updateDynamic("InstanceGroups")(__v.asInstanceOf[js.Any]))
-      KeepJobFlowAliveWhenNoSteps.foreach(__v =>
-        __obj.updateDynamic("KeepJobFlowAliveWhenNoSteps")(__v.asInstanceOf[js.Any])
-      )
-      MasterInstanceType.foreach(__v => __obj.updateDynamic("MasterInstanceType")(__v.asInstanceOf[js.Any]))
-      Placement.foreach(__v => __obj.updateDynamic("Placement")(__v.asInstanceOf[js.Any]))
-      ServiceAccessSecurityGroup.foreach(__v =>
-        __obj.updateDynamic("ServiceAccessSecurityGroup")(__v.asInstanceOf[js.Any])
-      )
-      SlaveInstanceType.foreach(__v => __obj.updateDynamic("SlaveInstanceType")(__v.asInstanceOf[js.Any]))
-      TerminationProtected.foreach(__v => __obj.updateDynamic("TerminationProtected")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[JobFlowInstancesConfig]
-    }
-  }
-
   /**
     * Specify the type of Amazon EC2 instances that the cluster (job flow) runs on.
     */
   @js.native
+  @Factory
   trait JobFlowInstancesDetail extends js.Object {
     var InstanceCount: Int
     var MasterInstanceType: InstanceType
@@ -2657,49 +1358,11 @@ package emr {
     var TerminationProtected: js.UndefOr[Boolean]
   }
 
-  object JobFlowInstancesDetail {
-    @inline
-    def apply(
-        InstanceCount: Int,
-        MasterInstanceType: InstanceType,
-        SlaveInstanceType: InstanceType,
-        Ec2KeyName: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-        Ec2SubnetId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-        HadoopVersion: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-        InstanceGroups: js.UndefOr[InstanceGroupDetailList] = js.undefined,
-        KeepJobFlowAliveWhenNoSteps: js.UndefOr[Boolean] = js.undefined,
-        MasterInstanceId: js.UndefOr[XmlString] = js.undefined,
-        MasterPublicDnsName: js.UndefOr[XmlString] = js.undefined,
-        NormalizedInstanceHours: js.UndefOr[Int] = js.undefined,
-        Placement: js.UndefOr[PlacementType] = js.undefined,
-        TerminationProtected: js.UndefOr[Boolean] = js.undefined
-    ): JobFlowInstancesDetail = {
-      val __obj = js.Dynamic.literal(
-        "InstanceCount"      -> InstanceCount.asInstanceOf[js.Any],
-        "MasterInstanceType" -> MasterInstanceType.asInstanceOf[js.Any],
-        "SlaveInstanceType"  -> SlaveInstanceType.asInstanceOf[js.Any]
-      )
-
-      Ec2KeyName.foreach(__v => __obj.updateDynamic("Ec2KeyName")(__v.asInstanceOf[js.Any]))
-      Ec2SubnetId.foreach(__v => __obj.updateDynamic("Ec2SubnetId")(__v.asInstanceOf[js.Any]))
-      HadoopVersion.foreach(__v => __obj.updateDynamic("HadoopVersion")(__v.asInstanceOf[js.Any]))
-      InstanceGroups.foreach(__v => __obj.updateDynamic("InstanceGroups")(__v.asInstanceOf[js.Any]))
-      KeepJobFlowAliveWhenNoSteps.foreach(__v =>
-        __obj.updateDynamic("KeepJobFlowAliveWhenNoSteps")(__v.asInstanceOf[js.Any])
-      )
-      MasterInstanceId.foreach(__v => __obj.updateDynamic("MasterInstanceId")(__v.asInstanceOf[js.Any]))
-      MasterPublicDnsName.foreach(__v => __obj.updateDynamic("MasterPublicDnsName")(__v.asInstanceOf[js.Any]))
-      NormalizedInstanceHours.foreach(__v => __obj.updateDynamic("NormalizedInstanceHours")(__v.asInstanceOf[js.Any]))
-      Placement.foreach(__v => __obj.updateDynamic("Placement")(__v.asInstanceOf[js.Any]))
-      TerminationProtected.foreach(__v => __obj.updateDynamic("TerminationProtected")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[JobFlowInstancesDetail]
-    }
-  }
-
   /**
     * Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see [[https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html|Use Kerberos Authentication]] in the <i>EMR Management Guide</i>.
     */
   @js.native
+  @Factory
   trait KerberosAttributes extends js.Object {
     var KdcAdminPassword: XmlStringMaxLen256
     var Realm: XmlStringMaxLen256
@@ -2708,101 +1371,41 @@ package emr {
     var CrossRealmTrustPrincipalPassword: js.UndefOr[XmlStringMaxLen256]
   }
 
-  object KerberosAttributes {
-    @inline
-    def apply(
-        KdcAdminPassword: XmlStringMaxLen256,
-        Realm: XmlStringMaxLen256,
-        ADDomainJoinPassword: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-        ADDomainJoinUser: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-        CrossRealmTrustPrincipalPassword: js.UndefOr[XmlStringMaxLen256] = js.undefined
-    ): KerberosAttributes = {
-      val __obj = js.Dynamic.literal(
-        "KdcAdminPassword" -> KdcAdminPassword.asInstanceOf[js.Any],
-        "Realm"            -> Realm.asInstanceOf[js.Any]
-      )
-
-      ADDomainJoinPassword.foreach(__v => __obj.updateDynamic("ADDomainJoinPassword")(__v.asInstanceOf[js.Any]))
-      ADDomainJoinUser.foreach(__v => __obj.updateDynamic("ADDomainJoinUser")(__v.asInstanceOf[js.Any]))
-      CrossRealmTrustPrincipalPassword.foreach(__v =>
-        __obj.updateDynamic("CrossRealmTrustPrincipalPassword")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[KerberosAttributes]
-    }
-  }
-
   /**
     * A key value pair.
     */
   @js.native
+  @Factory
   trait KeyValue extends js.Object {
     var Key: js.UndefOr[XmlString]
     var Value: js.UndefOr[XmlString]
-  }
-
-  object KeyValue {
-    @inline
-    def apply(
-        Key: js.UndefOr[XmlString] = js.undefined,
-        Value: js.UndefOr[XmlString] = js.undefined
-    ): KeyValue = {
-      val __obj = js.Dynamic.literal()
-      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[KeyValue]
-    }
   }
 
   /**
     * This input determines which bootstrap actions to retrieve.
     */
   @js.native
+  @Factory
   trait ListBootstrapActionsInput extends js.Object {
     var ClusterId: ClusterId
     var Marker: js.UndefOr[Marker]
-  }
-
-  object ListBootstrapActionsInput {
-    @inline
-    def apply(
-        ClusterId: ClusterId,
-        Marker: js.UndefOr[Marker] = js.undefined
-    ): ListBootstrapActionsInput = {
-      val __obj = js.Dynamic.literal(
-        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
-      )
-
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListBootstrapActionsInput]
-    }
   }
 
   /**
     * This output contains the bootstrap actions detail.
     */
   @js.native
+  @Factory
   trait ListBootstrapActionsOutput extends js.Object {
     var BootstrapActions: js.UndefOr[CommandList]
     var Marker: js.UndefOr[Marker]
-  }
-
-  object ListBootstrapActionsOutput {
-    @inline
-    def apply(
-        BootstrapActions: js.UndefOr[CommandList] = js.undefined,
-        Marker: js.UndefOr[Marker] = js.undefined
-    ): ListBootstrapActionsOutput = {
-      val __obj = js.Dynamic.literal()
-      BootstrapActions.foreach(__v => __obj.updateDynamic("BootstrapActions")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListBootstrapActionsOutput]
-    }
   }
 
   /**
     * This input determines how the ListClusters action filters the list of clusters that it returns.
     */
   @js.native
+  @Factory
   trait ListClustersInput extends js.Object {
     var ClusterStates: js.UndefOr[ClusterStateList]
     var CreatedAfter: js.UndefOr[Date]
@@ -2810,135 +1413,55 @@ package emr {
     var Marker: js.UndefOr[Marker]
   }
 
-  object ListClustersInput {
-    @inline
-    def apply(
-        ClusterStates: js.UndefOr[ClusterStateList] = js.undefined,
-        CreatedAfter: js.UndefOr[Date] = js.undefined,
-        CreatedBefore: js.UndefOr[Date] = js.undefined,
-        Marker: js.UndefOr[Marker] = js.undefined
-    ): ListClustersInput = {
-      val __obj = js.Dynamic.literal()
-      ClusterStates.foreach(__v => __obj.updateDynamic("ClusterStates")(__v.asInstanceOf[js.Any]))
-      CreatedAfter.foreach(__v => __obj.updateDynamic("CreatedAfter")(__v.asInstanceOf[js.Any]))
-      CreatedBefore.foreach(__v => __obj.updateDynamic("CreatedBefore")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListClustersInput]
-    }
-  }
-
   /**
     * This contains a ClusterSummaryList with the cluster details; for example, the cluster IDs, names, and status.
     */
   @js.native
+  @Factory
   trait ListClustersOutput extends js.Object {
     var Clusters: js.UndefOr[ClusterSummaryList]
     var Marker: js.UndefOr[Marker]
   }
 
-  object ListClustersOutput {
-    @inline
-    def apply(
-        Clusters: js.UndefOr[ClusterSummaryList] = js.undefined,
-        Marker: js.UndefOr[Marker] = js.undefined
-    ): ListClustersOutput = {
-      val __obj = js.Dynamic.literal()
-      Clusters.foreach(__v => __obj.updateDynamic("Clusters")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListClustersOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListInstanceFleetsInput extends js.Object {
     var ClusterId: ClusterId
     var Marker: js.UndefOr[Marker]
   }
 
-  object ListInstanceFleetsInput {
-    @inline
-    def apply(
-        ClusterId: ClusterId,
-        Marker: js.UndefOr[Marker] = js.undefined
-    ): ListInstanceFleetsInput = {
-      val __obj = js.Dynamic.literal(
-        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
-      )
-
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListInstanceFleetsInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListInstanceFleetsOutput extends js.Object {
     var InstanceFleets: js.UndefOr[InstanceFleetList]
     var Marker: js.UndefOr[Marker]
   }
 
-  object ListInstanceFleetsOutput {
-    @inline
-    def apply(
-        InstanceFleets: js.UndefOr[InstanceFleetList] = js.undefined,
-        Marker: js.UndefOr[Marker] = js.undefined
-    ): ListInstanceFleetsOutput = {
-      val __obj = js.Dynamic.literal()
-      InstanceFleets.foreach(__v => __obj.updateDynamic("InstanceFleets")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListInstanceFleetsOutput]
-    }
-  }
-
   /**
     * This input determines which instance groups to retrieve.
     */
   @js.native
+  @Factory
   trait ListInstanceGroupsInput extends js.Object {
     var ClusterId: ClusterId
     var Marker: js.UndefOr[Marker]
   }
 
-  object ListInstanceGroupsInput {
-    @inline
-    def apply(
-        ClusterId: ClusterId,
-        Marker: js.UndefOr[Marker] = js.undefined
-    ): ListInstanceGroupsInput = {
-      val __obj = js.Dynamic.literal(
-        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
-      )
-
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListInstanceGroupsInput]
-    }
-  }
-
   /**
     * This input determines which instance groups to retrieve.
     */
   @js.native
+  @Factory
   trait ListInstanceGroupsOutput extends js.Object {
     var InstanceGroups: js.UndefOr[InstanceGroupList]
     var Marker: js.UndefOr[Marker]
-  }
-
-  object ListInstanceGroupsOutput {
-    @inline
-    def apply(
-        InstanceGroups: js.UndefOr[InstanceGroupList] = js.undefined,
-        Marker: js.UndefOr[Marker] = js.undefined
-    ): ListInstanceGroupsOutput = {
-      val __obj = js.Dynamic.literal()
-      InstanceGroups.foreach(__v => __obj.updateDynamic("InstanceGroups")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListInstanceGroupsOutput]
-    }
   }
 
   /**
     * This input determines which instances to list.
     */
   @js.native
+  @Factory
   trait ListInstancesInput extends js.Object {
     var ClusterId: ClusterId
     var InstanceFleetId: js.UndefOr[InstanceFleetId]
@@ -2949,92 +1472,34 @@ package emr {
     var Marker: js.UndefOr[Marker]
   }
 
-  object ListInstancesInput {
-    @inline
-    def apply(
-        ClusterId: ClusterId,
-        InstanceFleetId: js.UndefOr[InstanceFleetId] = js.undefined,
-        InstanceFleetType: js.UndefOr[InstanceFleetType] = js.undefined,
-        InstanceGroupId: js.UndefOr[InstanceGroupId] = js.undefined,
-        InstanceGroupTypes: js.UndefOr[InstanceGroupTypeList] = js.undefined,
-        InstanceStates: js.UndefOr[InstanceStateList] = js.undefined,
-        Marker: js.UndefOr[Marker] = js.undefined
-    ): ListInstancesInput = {
-      val __obj = js.Dynamic.literal(
-        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
-      )
-
-      InstanceFleetId.foreach(__v => __obj.updateDynamic("InstanceFleetId")(__v.asInstanceOf[js.Any]))
-      InstanceFleetType.foreach(__v => __obj.updateDynamic("InstanceFleetType")(__v.asInstanceOf[js.Any]))
-      InstanceGroupId.foreach(__v => __obj.updateDynamic("InstanceGroupId")(__v.asInstanceOf[js.Any]))
-      InstanceGroupTypes.foreach(__v => __obj.updateDynamic("InstanceGroupTypes")(__v.asInstanceOf[js.Any]))
-      InstanceStates.foreach(__v => __obj.updateDynamic("InstanceStates")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListInstancesInput]
-    }
-  }
-
   /**
     * This output contains the list of instances.
     */
   @js.native
+  @Factory
   trait ListInstancesOutput extends js.Object {
     var Instances: js.UndefOr[InstanceList]
     var Marker: js.UndefOr[Marker]
   }
 
-  object ListInstancesOutput {
-    @inline
-    def apply(
-        Instances: js.UndefOr[InstanceList] = js.undefined,
-        Marker: js.UndefOr[Marker] = js.undefined
-    ): ListInstancesOutput = {
-      val __obj = js.Dynamic.literal()
-      Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListInstancesOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListSecurityConfigurationsInput extends js.Object {
     var Marker: js.UndefOr[Marker]
   }
 
-  object ListSecurityConfigurationsInput {
-    @inline
-    def apply(
-        Marker: js.UndefOr[Marker] = js.undefined
-    ): ListSecurityConfigurationsInput = {
-      val __obj = js.Dynamic.literal()
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListSecurityConfigurationsInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListSecurityConfigurationsOutput extends js.Object {
     var Marker: js.UndefOr[Marker]
     var SecurityConfigurations: js.UndefOr[SecurityConfigurationList]
-  }
-
-  object ListSecurityConfigurationsOutput {
-    @inline
-    def apply(
-        Marker: js.UndefOr[Marker] = js.undefined,
-        SecurityConfigurations: js.UndefOr[SecurityConfigurationList] = js.undefined
-    ): ListSecurityConfigurationsOutput = {
-      val __obj = js.Dynamic.literal()
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      SecurityConfigurations.foreach(__v => __obj.updateDynamic("SecurityConfigurations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListSecurityConfigurationsOutput]
-    }
   }
 
   /**
     * This input determines which steps to list.
     */
   @js.native
+  @Factory
   trait ListStepsInput extends js.Object {
     var ClusterId: ClusterId
     var Marker: js.UndefOr[Marker]
@@ -3042,45 +1507,14 @@ package emr {
     var StepStates: js.UndefOr[StepStateList]
   }
 
-  object ListStepsInput {
-    @inline
-    def apply(
-        ClusterId: ClusterId,
-        Marker: js.UndefOr[Marker] = js.undefined,
-        StepIds: js.UndefOr[XmlStringList] = js.undefined,
-        StepStates: js.UndefOr[StepStateList] = js.undefined
-    ): ListStepsInput = {
-      val __obj = js.Dynamic.literal(
-        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
-      )
-
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      StepIds.foreach(__v => __obj.updateDynamic("StepIds")(__v.asInstanceOf[js.Any]))
-      StepStates.foreach(__v => __obj.updateDynamic("StepStates")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListStepsInput]
-    }
-  }
-
   /**
     * This output contains the list of steps returned in reverse order. This means that the last step is the first element in the list.
     */
   @js.native
+  @Factory
   trait ListStepsOutput extends js.Object {
     var Marker: js.UndefOr[Marker]
     var Steps: js.UndefOr[StepSummaryList]
-  }
-
-  object ListStepsOutput {
-    @inline
-    def apply(
-        Marker: js.UndefOr[Marker] = js.undefined,
-        Steps: js.UndefOr[StepSummaryList] = js.undefined
-    ): ListStepsOutput = {
-      val __obj = js.Dynamic.literal()
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      Steps.foreach(__v => __obj.updateDynamic("Steps")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListStepsOutput]
-    }
   }
 
   @js.native
@@ -3096,175 +1530,72 @@ package emr {
     * A CloudWatch dimension, which is specified using a <code>Key</code> (known as a <code>Name</code> in CloudWatch), <code>Value</code> pair. By default, Amazon EMR uses one dimension whose <code>Key</code> is <code>JobFlowID</code> and <code>Value</code> is a variable representing the cluster ID, which is <code>{emr.clusterId}</code>. This enables the rule to bootstrap when the cluster ID becomes available.
     */
   @js.native
+  @Factory
   trait MetricDimension extends js.Object {
     var Key: js.UndefOr[String]
     var Value: js.UndefOr[String]
   }
 
-  object MetricDimension {
-    @inline
-    def apply(
-        Key: js.UndefOr[String] = js.undefined,
-        Value: js.UndefOr[String] = js.undefined
-    ): MetricDimension = {
-      val __obj = js.Dynamic.literal()
-      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MetricDimension]
-    }
-  }
-
   @js.native
+  @Factory
   trait ModifyClusterInput extends js.Object {
     var ClusterId: String
     var StepConcurrencyLevel: js.UndefOr[Int]
   }
 
-  object ModifyClusterInput {
-    @inline
-    def apply(
-        ClusterId: String,
-        StepConcurrencyLevel: js.UndefOr[Int] = js.undefined
-    ): ModifyClusterInput = {
-      val __obj = js.Dynamic.literal(
-        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
-      )
-
-      StepConcurrencyLevel.foreach(__v => __obj.updateDynamic("StepConcurrencyLevel")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ModifyClusterInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ModifyClusterOutput extends js.Object {
     var StepConcurrencyLevel: js.UndefOr[Int]
   }
 
-  object ModifyClusterOutput {
-    @inline
-    def apply(
-        StepConcurrencyLevel: js.UndefOr[Int] = js.undefined
-    ): ModifyClusterOutput = {
-      val __obj = js.Dynamic.literal()
-      StepConcurrencyLevel.foreach(__v => __obj.updateDynamic("StepConcurrencyLevel")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ModifyClusterOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ModifyInstanceFleetInput extends js.Object {
     var ClusterId: ClusterId
     var InstanceFleet: InstanceFleetModifyConfig
-  }
-
-  object ModifyInstanceFleetInput {
-    @inline
-    def apply(
-        ClusterId: ClusterId,
-        InstanceFleet: InstanceFleetModifyConfig
-    ): ModifyInstanceFleetInput = {
-      val __obj = js.Dynamic.literal(
-        "ClusterId"     -> ClusterId.asInstanceOf[js.Any],
-        "InstanceFleet" -> InstanceFleet.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ModifyInstanceFleetInput]
-    }
   }
 
   /**
     * Change the size of some instance groups.
     */
   @js.native
+  @Factory
   trait ModifyInstanceGroupsInput extends js.Object {
     var ClusterId: js.UndefOr[ClusterId]
     var InstanceGroups: js.UndefOr[InstanceGroupModifyConfigList]
-  }
-
-  object ModifyInstanceGroupsInput {
-    @inline
-    def apply(
-        ClusterId: js.UndefOr[ClusterId] = js.undefined,
-        InstanceGroups: js.UndefOr[InstanceGroupModifyConfigList] = js.undefined
-    ): ModifyInstanceGroupsInput = {
-      val __obj = js.Dynamic.literal()
-      ClusterId.foreach(__v => __obj.updateDynamic("ClusterId")(__v.asInstanceOf[js.Any]))
-      InstanceGroups.foreach(__v => __obj.updateDynamic("InstanceGroups")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ModifyInstanceGroupsInput]
-    }
   }
 
   /**
     * The Amazon EC2 Availability Zone configuration of the cluster (job flow).
     */
   @js.native
+  @Factory
   trait PlacementType extends js.Object {
     var AvailabilityZone: js.UndefOr[XmlString]
     var AvailabilityZones: js.UndefOr[XmlStringMaxLen256List]
-  }
-
-  object PlacementType {
-    @inline
-    def apply(
-        AvailabilityZone: js.UndefOr[XmlString] = js.undefined,
-        AvailabilityZones: js.UndefOr[XmlStringMaxLen256List] = js.undefined
-    ): PlacementType = {
-      val __obj = js.Dynamic.literal()
-      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
-      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PlacementType]
-    }
   }
 
   /**
     * A list of port ranges that are permitted to allow inbound traffic from all public IP addresses. To specify a single port, use the same value for <code>MinRange</code> and <code>MaxRange</code>.
     */
   @js.native
+  @Factory
   trait PortRange extends js.Object {
     var MinRange: Port
     var MaxRange: js.UndefOr[Port]
   }
 
-  object PortRange {
-    @inline
-    def apply(
-        MinRange: Port,
-        MaxRange: js.UndefOr[Port] = js.undefined
-    ): PortRange = {
-      val __obj = js.Dynamic.literal(
-        "MinRange" -> MinRange.asInstanceOf[js.Any]
-      )
-
-      MaxRange.foreach(__v => __obj.updateDynamic("MaxRange")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PortRange]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutAutoScalingPolicyInput extends js.Object {
     var AutoScalingPolicy: AutoScalingPolicy
     var ClusterId: ClusterId
     var InstanceGroupId: InstanceGroupId
   }
 
-  object PutAutoScalingPolicyInput {
-    @inline
-    def apply(
-        AutoScalingPolicy: AutoScalingPolicy,
-        ClusterId: ClusterId,
-        InstanceGroupId: InstanceGroupId
-    ): PutAutoScalingPolicyInput = {
-      val __obj = js.Dynamic.literal(
-        "AutoScalingPolicy" -> AutoScalingPolicy.asInstanceOf[js.Any],
-        "ClusterId"         -> ClusterId.asInstanceOf[js.Any],
-        "InstanceGroupId"   -> InstanceGroupId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutAutoScalingPolicyInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutAutoScalingPolicyOutput extends js.Object {
     var AutoScalingPolicy: js.UndefOr[AutoScalingPolicyDescription]
     var ClusterArn: js.UndefOr[ArnType]
@@ -3272,127 +1603,43 @@ package emr {
     var InstanceGroupId: js.UndefOr[InstanceGroupId]
   }
 
-  object PutAutoScalingPolicyOutput {
-    @inline
-    def apply(
-        AutoScalingPolicy: js.UndefOr[AutoScalingPolicyDescription] = js.undefined,
-        ClusterArn: js.UndefOr[ArnType] = js.undefined,
-        ClusterId: js.UndefOr[ClusterId] = js.undefined,
-        InstanceGroupId: js.UndefOr[InstanceGroupId] = js.undefined
-    ): PutAutoScalingPolicyOutput = {
-      val __obj = js.Dynamic.literal()
-      AutoScalingPolicy.foreach(__v => __obj.updateDynamic("AutoScalingPolicy")(__v.asInstanceOf[js.Any]))
-      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
-      ClusterId.foreach(__v => __obj.updateDynamic("ClusterId")(__v.asInstanceOf[js.Any]))
-      InstanceGroupId.foreach(__v => __obj.updateDynamic("InstanceGroupId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutAutoScalingPolicyOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutBlockPublicAccessConfigurationInput extends js.Object {
     var BlockPublicAccessConfiguration: BlockPublicAccessConfiguration
   }
 
-  object PutBlockPublicAccessConfigurationInput {
-    @inline
-    def apply(
-        BlockPublicAccessConfiguration: BlockPublicAccessConfiguration
-    ): PutBlockPublicAccessConfigurationInput = {
-      val __obj = js.Dynamic.literal(
-        "BlockPublicAccessConfiguration" -> BlockPublicAccessConfiguration.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutBlockPublicAccessConfigurationInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutBlockPublicAccessConfigurationOutput extends js.Object {}
 
-  object PutBlockPublicAccessConfigurationOutput {
-    @inline
-    def apply(
-    ): PutBlockPublicAccessConfigurationOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutBlockPublicAccessConfigurationOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait RemoveAutoScalingPolicyInput extends js.Object {
     var ClusterId: ClusterId
     var InstanceGroupId: InstanceGroupId
   }
 
-  object RemoveAutoScalingPolicyInput {
-    @inline
-    def apply(
-        ClusterId: ClusterId,
-        InstanceGroupId: InstanceGroupId
-    ): RemoveAutoScalingPolicyInput = {
-      val __obj = js.Dynamic.literal(
-        "ClusterId"       -> ClusterId.asInstanceOf[js.Any],
-        "InstanceGroupId" -> InstanceGroupId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RemoveAutoScalingPolicyInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait RemoveAutoScalingPolicyOutput extends js.Object {}
-
-  object RemoveAutoScalingPolicyOutput {
-    @inline
-    def apply(
-    ): RemoveAutoScalingPolicyOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[RemoveAutoScalingPolicyOutput]
-    }
-  }
 
   /**
     * This input identifies a cluster and a list of tags to remove.
     */
   @js.native
+  @Factory
   trait RemoveTagsInput extends js.Object {
     var ResourceId: ResourceId
     var TagKeys: StringList
-  }
-
-  object RemoveTagsInput {
-    @inline
-    def apply(
-        ResourceId: ResourceId,
-        TagKeys: StringList
-    ): RemoveTagsInput = {
-      val __obj = js.Dynamic.literal(
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "TagKeys"    -> TagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RemoveTagsInput]
-    }
   }
 
   /**
     * This output indicates the result of removing tags from a resource.
     */
   @js.native
+  @Factory
   trait RemoveTagsOutput extends js.Object {}
-
-  object RemoveTagsOutput {
-    @inline
-    def apply(
-    ): RemoveTagsOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[RemoveTagsOutput]
-    }
-  }
 
   @js.native
   sealed trait RepoUpgradeOnBoot extends js.Any
@@ -3407,6 +1654,7 @@ package emr {
     * Input to the <a>RunJobFlow</a> operation.
     */
   @js.native
+  @Factory
   trait RunJobFlowInput extends js.Object {
     var Instances: JobFlowInstancesConfig
     var Name: XmlStringMaxLen256
@@ -3434,85 +1682,14 @@ package emr {
     var VisibleToAllUsers: js.UndefOr[Boolean]
   }
 
-  object RunJobFlowInput {
-    @inline
-    def apply(
-        Instances: JobFlowInstancesConfig,
-        Name: XmlStringMaxLen256,
-        AdditionalInfo: js.UndefOr[XmlString] = js.undefined,
-        AmiVersion: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-        Applications: js.UndefOr[ApplicationList] = js.undefined,
-        AutoScalingRole: js.UndefOr[XmlString] = js.undefined,
-        BootstrapActions: js.UndefOr[BootstrapActionConfigList] = js.undefined,
-        Configurations: js.UndefOr[ConfigurationList] = js.undefined,
-        CustomAmiId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-        EbsRootVolumeSize: js.UndefOr[Int] = js.undefined,
-        JobFlowRole: js.UndefOr[XmlString] = js.undefined,
-        KerberosAttributes: js.UndefOr[KerberosAttributes] = js.undefined,
-        LogUri: js.UndefOr[XmlString] = js.undefined,
-        NewSupportedProducts: js.UndefOr[NewSupportedProductsList] = js.undefined,
-        ReleaseLabel: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-        RepoUpgradeOnBoot: js.UndefOr[RepoUpgradeOnBoot] = js.undefined,
-        ScaleDownBehavior: js.UndefOr[ScaleDownBehavior] = js.undefined,
-        SecurityConfiguration: js.UndefOr[XmlString] = js.undefined,
-        ServiceRole: js.UndefOr[XmlString] = js.undefined,
-        StepConcurrencyLevel: js.UndefOr[Int] = js.undefined,
-        Steps: js.UndefOr[StepConfigList] = js.undefined,
-        SupportedProducts: js.UndefOr[SupportedProductsList] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined,
-        VisibleToAllUsers: js.UndefOr[Boolean] = js.undefined
-    ): RunJobFlowInput = {
-      val __obj = js.Dynamic.literal(
-        "Instances" -> Instances.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any]
-      )
-
-      AdditionalInfo.foreach(__v => __obj.updateDynamic("AdditionalInfo")(__v.asInstanceOf[js.Any]))
-      AmiVersion.foreach(__v => __obj.updateDynamic("AmiVersion")(__v.asInstanceOf[js.Any]))
-      Applications.foreach(__v => __obj.updateDynamic("Applications")(__v.asInstanceOf[js.Any]))
-      AutoScalingRole.foreach(__v => __obj.updateDynamic("AutoScalingRole")(__v.asInstanceOf[js.Any]))
-      BootstrapActions.foreach(__v => __obj.updateDynamic("BootstrapActions")(__v.asInstanceOf[js.Any]))
-      Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
-      CustomAmiId.foreach(__v => __obj.updateDynamic("CustomAmiId")(__v.asInstanceOf[js.Any]))
-      EbsRootVolumeSize.foreach(__v => __obj.updateDynamic("EbsRootVolumeSize")(__v.asInstanceOf[js.Any]))
-      JobFlowRole.foreach(__v => __obj.updateDynamic("JobFlowRole")(__v.asInstanceOf[js.Any]))
-      KerberosAttributes.foreach(__v => __obj.updateDynamic("KerberosAttributes")(__v.asInstanceOf[js.Any]))
-      LogUri.foreach(__v => __obj.updateDynamic("LogUri")(__v.asInstanceOf[js.Any]))
-      NewSupportedProducts.foreach(__v => __obj.updateDynamic("NewSupportedProducts")(__v.asInstanceOf[js.Any]))
-      ReleaseLabel.foreach(__v => __obj.updateDynamic("ReleaseLabel")(__v.asInstanceOf[js.Any]))
-      RepoUpgradeOnBoot.foreach(__v => __obj.updateDynamic("RepoUpgradeOnBoot")(__v.asInstanceOf[js.Any]))
-      ScaleDownBehavior.foreach(__v => __obj.updateDynamic("ScaleDownBehavior")(__v.asInstanceOf[js.Any]))
-      SecurityConfiguration.foreach(__v => __obj.updateDynamic("SecurityConfiguration")(__v.asInstanceOf[js.Any]))
-      ServiceRole.foreach(__v => __obj.updateDynamic("ServiceRole")(__v.asInstanceOf[js.Any]))
-      StepConcurrencyLevel.foreach(__v => __obj.updateDynamic("StepConcurrencyLevel")(__v.asInstanceOf[js.Any]))
-      Steps.foreach(__v => __obj.updateDynamic("Steps")(__v.asInstanceOf[js.Any]))
-      SupportedProducts.foreach(__v => __obj.updateDynamic("SupportedProducts")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      VisibleToAllUsers.foreach(__v => __obj.updateDynamic("VisibleToAllUsers")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RunJobFlowInput]
-    }
-  }
-
   /**
     * The result of the <a>RunJobFlow</a> operation.
     */
   @js.native
+  @Factory
   trait RunJobFlowOutput extends js.Object {
     var ClusterArn: js.UndefOr[ArnType]
     var JobFlowId: js.UndefOr[XmlStringMaxLen256]
-  }
-
-  object RunJobFlowOutput {
-    @inline
-    def apply(
-        ClusterArn: js.UndefOr[ArnType] = js.undefined,
-        JobFlowId: js.UndefOr[XmlStringMaxLen256] = js.undefined
-    ): RunJobFlowOutput = {
-      val __obj = js.Dynamic.literal()
-      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
-      JobFlowId.foreach(__v => __obj.updateDynamic("JobFlowId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RunJobFlowOutput]
-    }
   }
 
   @js.native
@@ -3528,54 +1705,27 @@ package emr {
     * The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.
     */
   @js.native
+  @Factory
   trait ScalingAction extends js.Object {
     var SimpleScalingPolicyConfiguration: SimpleScalingPolicyConfiguration
     var Market: js.UndefOr[MarketType]
-  }
-
-  object ScalingAction {
-    @inline
-    def apply(
-        SimpleScalingPolicyConfiguration: SimpleScalingPolicyConfiguration,
-        Market: js.UndefOr[MarketType] = js.undefined
-    ): ScalingAction = {
-      val __obj = js.Dynamic.literal(
-        "SimpleScalingPolicyConfiguration" -> SimpleScalingPolicyConfiguration.asInstanceOf[js.Any]
-      )
-
-      Market.foreach(__v => __obj.updateDynamic("Market")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ScalingAction]
-    }
   }
 
   /**
     * The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activities triggered by automatic scaling rules will not cause an instance group to grow above or below these limits.
     */
   @js.native
+  @Factory
   trait ScalingConstraints extends js.Object {
     var MaxCapacity: Int
     var MinCapacity: Int
-  }
-
-  object ScalingConstraints {
-    @inline
-    def apply(
-        MaxCapacity: Int,
-        MinCapacity: Int
-    ): ScalingConstraints = {
-      val __obj = js.Dynamic.literal(
-        "MaxCapacity" -> MaxCapacity.asInstanceOf[js.Any],
-        "MinCapacity" -> MinCapacity.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ScalingConstraints]
-    }
   }
 
   /**
     * A scale-in or scale-out rule that defines scaling activity, including the CloudWatch metric alarm that triggers activity, how EC2 instances are added or removed, and the periodicity of adjustments. The automatic scaling policy for an instance group can comprise one or more automatic scaling rules.
     */
   @js.native
+  @Factory
   trait ScalingRule extends js.Object {
     var Action: ScalingAction
     var Name: String
@@ -3583,187 +1733,74 @@ package emr {
     var Description: js.UndefOr[String]
   }
 
-  object ScalingRule {
-    @inline
-    def apply(
-        Action: ScalingAction,
-        Name: String,
-        Trigger: ScalingTrigger,
-        Description: js.UndefOr[String] = js.undefined
-    ): ScalingRule = {
-      val __obj = js.Dynamic.literal(
-        "Action"  -> Action.asInstanceOf[js.Any],
-        "Name"    -> Name.asInstanceOf[js.Any],
-        "Trigger" -> Trigger.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ScalingRule]
-    }
-  }
-
   /**
     * The conditions that trigger an automatic scaling activity.
     */
   @js.native
+  @Factory
   trait ScalingTrigger extends js.Object {
     var CloudWatchAlarmDefinition: CloudWatchAlarmDefinition
-  }
-
-  object ScalingTrigger {
-    @inline
-    def apply(
-        CloudWatchAlarmDefinition: CloudWatchAlarmDefinition
-    ): ScalingTrigger = {
-      val __obj = js.Dynamic.literal(
-        "CloudWatchAlarmDefinition" -> CloudWatchAlarmDefinition.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ScalingTrigger]
-    }
   }
 
   /**
     * Configuration of the script to run during a bootstrap action.
     */
   @js.native
+  @Factory
   trait ScriptBootstrapActionConfig extends js.Object {
     var Path: XmlString
     var Args: js.UndefOr[XmlStringList]
-  }
-
-  object ScriptBootstrapActionConfig {
-    @inline
-    def apply(
-        Path: XmlString,
-        Args: js.UndefOr[XmlStringList] = js.undefined
-    ): ScriptBootstrapActionConfig = {
-      val __obj = js.Dynamic.literal(
-        "Path" -> Path.asInstanceOf[js.Any]
-      )
-
-      Args.foreach(__v => __obj.updateDynamic("Args")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ScriptBootstrapActionConfig]
-    }
   }
 
   /**
     * The creation date and time, and name, of a security configuration.
     */
   @js.native
+  @Factory
   trait SecurityConfigurationSummary extends js.Object {
     var CreationDateTime: js.UndefOr[Date]
     var Name: js.UndefOr[XmlString]
-  }
-
-  object SecurityConfigurationSummary {
-    @inline
-    def apply(
-        CreationDateTime: js.UndefOr[Date] = js.undefined,
-        Name: js.UndefOr[XmlString] = js.undefined
-    ): SecurityConfigurationSummary = {
-      val __obj = js.Dynamic.literal()
-      CreationDateTime.foreach(__v => __obj.updateDynamic("CreationDateTime")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SecurityConfigurationSummary]
-    }
   }
 
   /**
     * The input argument to the <a>TerminationProtection</a> operation.
     */
   @js.native
+  @Factory
   trait SetTerminationProtectionInput extends js.Object {
     var JobFlowIds: XmlStringList
     var TerminationProtected: Boolean
-  }
-
-  object SetTerminationProtectionInput {
-    @inline
-    def apply(
-        JobFlowIds: XmlStringList,
-        TerminationProtected: Boolean
-    ): SetTerminationProtectionInput = {
-      val __obj = js.Dynamic.literal(
-        "JobFlowIds"           -> JobFlowIds.asInstanceOf[js.Any],
-        "TerminationProtected" -> TerminationProtected.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SetTerminationProtectionInput]
-    }
   }
 
   /**
     * The input to the SetVisibleToAllUsers action.
     */
   @js.native
+  @Factory
   trait SetVisibleToAllUsersInput extends js.Object {
     var JobFlowIds: XmlStringList
     var VisibleToAllUsers: Boolean
-  }
-
-  object SetVisibleToAllUsersInput {
-    @inline
-    def apply(
-        JobFlowIds: XmlStringList,
-        VisibleToAllUsers: Boolean
-    ): SetVisibleToAllUsersInput = {
-      val __obj = js.Dynamic.literal(
-        "JobFlowIds"        -> JobFlowIds.asInstanceOf[js.Any],
-        "VisibleToAllUsers" -> VisibleToAllUsers.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SetVisibleToAllUsersInput]
-    }
   }
 
   /**
     * Policy for customizing shrink operations. Allows configuration of decommissioning timeout and targeted instance shrinking.
     */
   @js.native
+  @Factory
   trait ShrinkPolicy extends js.Object {
     var DecommissionTimeout: js.UndefOr[Int]
     var InstanceResizePolicy: js.UndefOr[InstanceResizePolicy]
-  }
-
-  object ShrinkPolicy {
-    @inline
-    def apply(
-        DecommissionTimeout: js.UndefOr[Int] = js.undefined,
-        InstanceResizePolicy: js.UndefOr[InstanceResizePolicy] = js.undefined
-    ): ShrinkPolicy = {
-      val __obj = js.Dynamic.literal()
-      DecommissionTimeout.foreach(__v => __obj.updateDynamic("DecommissionTimeout")(__v.asInstanceOf[js.Any]))
-      InstanceResizePolicy.foreach(__v => __obj.updateDynamic("InstanceResizePolicy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ShrinkPolicy]
-    }
   }
 
   /**
     * An automatic scaling configuration, which describes how the policy adds or removes instances, the cooldown period, and the number of EC2 instances that will be added each time the CloudWatch metric alarm condition is satisfied.
     */
   @js.native
+  @Factory
   trait SimpleScalingPolicyConfiguration extends js.Object {
     var ScalingAdjustment: Int
     var AdjustmentType: js.UndefOr[AdjustmentType]
     var CoolDown: js.UndefOr[Int]
-  }
-
-  object SimpleScalingPolicyConfiguration {
-    @inline
-    def apply(
-        ScalingAdjustment: Int,
-        AdjustmentType: js.UndefOr[AdjustmentType] = js.undefined,
-        CoolDown: js.UndefOr[Int] = js.undefined
-    ): SimpleScalingPolicyConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "ScalingAdjustment" -> ScalingAdjustment.asInstanceOf[js.Any]
-      )
-
-      AdjustmentType.foreach(__v => __obj.updateDynamic("AdjustmentType")(__v.asInstanceOf[js.Any]))
-      CoolDown.foreach(__v => __obj.updateDynamic("CoolDown")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SimpleScalingPolicyConfiguration]
-    }
   }
 
   /**
@@ -3772,27 +1809,11 @@ package emr {
     * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
     */
   @js.native
+  @Factory
   trait SpotProvisioningSpecification extends js.Object {
     var TimeoutAction: SpotProvisioningTimeoutAction
     var TimeoutDurationMinutes: WholeNumber
     var BlockDurationMinutes: js.UndefOr[WholeNumber]
-  }
-
-  object SpotProvisioningSpecification {
-    @inline
-    def apply(
-        TimeoutAction: SpotProvisioningTimeoutAction,
-        TimeoutDurationMinutes: WholeNumber,
-        BlockDurationMinutes: js.UndefOr[WholeNumber] = js.undefined
-    ): SpotProvisioningSpecification = {
-      val __obj = js.Dynamic.literal(
-        "TimeoutAction"          -> TimeoutAction.asInstanceOf[js.Any],
-        "TimeoutDurationMinutes" -> TimeoutDurationMinutes.asInstanceOf[js.Any]
-      )
-
-      BlockDurationMinutes.foreach(__v => __obj.updateDynamic("BlockDurationMinutes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SpotProvisioningSpecification]
-    }
   }
 
   @js.native
@@ -3820,31 +1841,13 @@ package emr {
     * This represents a step in a cluster.
     */
   @js.native
+  @Factory
   trait Step extends js.Object {
     var ActionOnFailure: js.UndefOr[ActionOnFailure]
     var Config: js.UndefOr[HadoopStepConfig]
     var Id: js.UndefOr[StepId]
     var Name: js.UndefOr[String]
     var Status: js.UndefOr[StepStatus]
-  }
-
-  object Step {
-    @inline
-    def apply(
-        ActionOnFailure: js.UndefOr[ActionOnFailure] = js.undefined,
-        Config: js.UndefOr[HadoopStepConfig] = js.undefined,
-        Id: js.UndefOr[StepId] = js.undefined,
-        Name: js.UndefOr[String] = js.undefined,
-        Status: js.UndefOr[StepStatus] = js.undefined
-    ): Step = {
-      val __obj = js.Dynamic.literal()
-      ActionOnFailure.foreach(__v => __obj.updateDynamic("ActionOnFailure")(__v.asInstanceOf[js.Any]))
-      Config.foreach(__v => __obj.updateDynamic("Config")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Step]
-    }
   }
 
   @js.native
@@ -3860,51 +1863,21 @@ package emr {
     * Specification of a cluster (job flow) step.
     */
   @js.native
+  @Factory
   trait StepConfig extends js.Object {
     var HadoopJarStep: HadoopJarStepConfig
     var Name: XmlStringMaxLen256
     var ActionOnFailure: js.UndefOr[ActionOnFailure]
   }
 
-  object StepConfig {
-    @inline
-    def apply(
-        HadoopJarStep: HadoopJarStepConfig,
-        Name: XmlStringMaxLen256,
-        ActionOnFailure: js.UndefOr[ActionOnFailure] = js.undefined
-    ): StepConfig = {
-      val __obj = js.Dynamic.literal(
-        "HadoopJarStep" -> HadoopJarStep.asInstanceOf[js.Any],
-        "Name"          -> Name.asInstanceOf[js.Any]
-      )
-
-      ActionOnFailure.foreach(__v => __obj.updateDynamic("ActionOnFailure")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StepConfig]
-    }
-  }
-
   /**
     * Combines the execution state and configuration of a step.
     */
   @js.native
+  @Factory
   trait StepDetail extends js.Object {
     var ExecutionStatusDetail: StepExecutionStatusDetail
     var StepConfig: StepConfig
-  }
-
-  object StepDetail {
-    @inline
-    def apply(
-        ExecutionStatusDetail: StepExecutionStatusDetail,
-        StepConfig: StepConfig
-    ): StepDetail = {
-      val __obj = js.Dynamic.literal(
-        "ExecutionStatusDetail" -> ExecutionStatusDetail.asInstanceOf[js.Any],
-        "StepConfig"            -> StepConfig.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StepDetail]
-    }
   }
 
   @js.native
@@ -3925,33 +1898,13 @@ package emr {
     * The execution state of a step.
     */
   @js.native
+  @Factory
   trait StepExecutionStatusDetail extends js.Object {
     var CreationDateTime: Date
     var State: StepExecutionState
     var EndDateTime: js.UndefOr[Date]
     var LastStateChangeReason: js.UndefOr[XmlString]
     var StartDateTime: js.UndefOr[Date]
-  }
-
-  object StepExecutionStatusDetail {
-    @inline
-    def apply(
-        CreationDateTime: Date,
-        State: StepExecutionState,
-        EndDateTime: js.UndefOr[Date] = js.undefined,
-        LastStateChangeReason: js.UndefOr[XmlString] = js.undefined,
-        StartDateTime: js.UndefOr[Date] = js.undefined
-    ): StepExecutionStatusDetail = {
-      val __obj = js.Dynamic.literal(
-        "CreationDateTime" -> CreationDateTime.asInstanceOf[js.Any],
-        "State"            -> State.asInstanceOf[js.Any]
-      )
-
-      EndDateTime.foreach(__v => __obj.updateDynamic("EndDateTime")(__v.asInstanceOf[js.Any]))
-      LastStateChangeReason.foreach(__v => __obj.updateDynamic("LastStateChangeReason")(__v.asInstanceOf[js.Any]))
-      StartDateTime.foreach(__v => __obj.updateDynamic("StartDateTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StepExecutionStatusDetail]
-    }
   }
 
   @js.native
@@ -3972,22 +1925,10 @@ package emr {
     * The details of the step state change reason.
     */
   @js.native
+  @Factory
   trait StepStateChangeReason extends js.Object {
     var Code: js.UndefOr[StepStateChangeReasonCode]
     var Message: js.UndefOr[String]
-  }
-
-  object StepStateChangeReason {
-    @inline
-    def apply(
-        Code: js.UndefOr[StepStateChangeReasonCode] = js.undefined,
-        Message: js.UndefOr[String] = js.undefined
-    ): StepStateChangeReason = {
-      val __obj = js.Dynamic.literal()
-      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StepStateChangeReason]
-    }
   }
 
   @js.native
@@ -4002,6 +1943,7 @@ package emr {
     * The execution status details of the cluster step.
     */
   @js.native
+  @Factory
   trait StepStatus extends js.Object {
     var FailureDetails: js.UndefOr[FailureDetails]
     var State: js.UndefOr[StepState]
@@ -4009,27 +1951,11 @@ package emr {
     var Timeline: js.UndefOr[StepTimeline]
   }
 
-  object StepStatus {
-    @inline
-    def apply(
-        FailureDetails: js.UndefOr[FailureDetails] = js.undefined,
-        State: js.UndefOr[StepState] = js.undefined,
-        StateChangeReason: js.UndefOr[StepStateChangeReason] = js.undefined,
-        Timeline: js.UndefOr[StepTimeline] = js.undefined
-    ): StepStatus = {
-      val __obj = js.Dynamic.literal()
-      FailureDetails.foreach(__v => __obj.updateDynamic("FailureDetails")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      StateChangeReason.foreach(__v => __obj.updateDynamic("StateChangeReason")(__v.asInstanceOf[js.Any]))
-      Timeline.foreach(__v => __obj.updateDynamic("Timeline")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StepStatus]
-    }
-  }
-
   /**
     * The summary of the cluster step.
     */
   @js.native
+  @Factory
   trait StepSummary extends js.Object {
     var ActionOnFailure: js.UndefOr[ActionOnFailure]
     var Config: js.UndefOr[HadoopStepConfig]
@@ -4038,113 +1964,44 @@ package emr {
     var Status: js.UndefOr[StepStatus]
   }
 
-  object StepSummary {
-    @inline
-    def apply(
-        ActionOnFailure: js.UndefOr[ActionOnFailure] = js.undefined,
-        Config: js.UndefOr[HadoopStepConfig] = js.undefined,
-        Id: js.UndefOr[StepId] = js.undefined,
-        Name: js.UndefOr[String] = js.undefined,
-        Status: js.UndefOr[StepStatus] = js.undefined
-    ): StepSummary = {
-      val __obj = js.Dynamic.literal()
-      ActionOnFailure.foreach(__v => __obj.updateDynamic("ActionOnFailure")(__v.asInstanceOf[js.Any]))
-      Config.foreach(__v => __obj.updateDynamic("Config")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StepSummary]
-    }
-  }
-
   /**
     * The timeline of the cluster step lifecycle.
     */
   @js.native
+  @Factory
   trait StepTimeline extends js.Object {
     var CreationDateTime: js.UndefOr[Date]
     var EndDateTime: js.UndefOr[Date]
     var StartDateTime: js.UndefOr[Date]
   }
 
-  object StepTimeline {
-    @inline
-    def apply(
-        CreationDateTime: js.UndefOr[Date] = js.undefined,
-        EndDateTime: js.UndefOr[Date] = js.undefined,
-        StartDateTime: js.UndefOr[Date] = js.undefined
-    ): StepTimeline = {
-      val __obj = js.Dynamic.literal()
-      CreationDateTime.foreach(__v => __obj.updateDynamic("CreationDateTime")(__v.asInstanceOf[js.Any]))
-      EndDateTime.foreach(__v => __obj.updateDynamic("EndDateTime")(__v.asInstanceOf[js.Any]))
-      StartDateTime.foreach(__v => __obj.updateDynamic("StartDateTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StepTimeline]
-    }
-  }
-
   /**
     * The list of supported product configurations which allow user-supplied arguments. EMR accepts these arguments and forwards them to the corresponding installation script as bootstrap action arguments.
     */
   @js.native
+  @Factory
   trait SupportedProductConfig extends js.Object {
     var Args: js.UndefOr[XmlStringList]
     var Name: js.UndefOr[XmlStringMaxLen256]
-  }
-
-  object SupportedProductConfig {
-    @inline
-    def apply(
-        Args: js.UndefOr[XmlStringList] = js.undefined,
-        Name: js.UndefOr[XmlStringMaxLen256] = js.undefined
-    ): SupportedProductConfig = {
-      val __obj = js.Dynamic.literal()
-      Args.foreach(__v => __obj.updateDynamic("Args")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SupportedProductConfig]
-    }
   }
 
   /**
     * A key/value pair containing user-defined metadata that you can associate with an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see [[https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html|Tag Clusters]].
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var Key: js.UndefOr[String]
     var Value: js.UndefOr[String]
-  }
-
-  object Tag {
-    @inline
-    def apply(
-        Key: js.UndefOr[String] = js.undefined,
-        Value: js.UndefOr[String] = js.undefined
-    ): Tag = {
-      val __obj = js.Dynamic.literal()
-      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Tag]
-    }
   }
 
   /**
     * Input to the <a>TerminateJobFlows</a> operation.
     */
   @js.native
+  @Factory
   trait TerminateJobFlowsInput extends js.Object {
     var JobFlowIds: XmlStringList
-  }
-
-  object TerminateJobFlowsInput {
-    @inline
-    def apply(
-        JobFlowIds: XmlStringList
-    ): TerminateJobFlowsInput = {
-      val __obj = js.Dynamic.literal(
-        "JobFlowIds" -> JobFlowIds.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TerminateJobFlowsInput]
-    }
   }
 
   @js.native
@@ -4215,26 +2072,10 @@ package emr {
     * EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.
     */
   @js.native
+  @Factory
   trait VolumeSpecification extends js.Object {
     var SizeInGB: Int
     var VolumeType: String
     var Iops: js.UndefOr[Int]
-  }
-
-  object VolumeSpecification {
-    @inline
-    def apply(
-        SizeInGB: Int,
-        VolumeType: String,
-        Iops: js.UndefOr[Int] = js.undefined
-    ): VolumeSpecification = {
-      val __obj = js.Dynamic.literal(
-        "SizeInGB"   -> SizeInGB.asInstanceOf[js.Any],
-        "VolumeType" -> VolumeType.asInstanceOf[js.Any]
-      )
-
-      Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VolumeSpecification]
-    }
   }
 }

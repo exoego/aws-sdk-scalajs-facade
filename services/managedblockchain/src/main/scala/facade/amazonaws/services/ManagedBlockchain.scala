@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object managedblockchain {
   type AvailabilityZoneString   = String
@@ -107,28 +108,15 @@ package managedblockchain {
     * A policy type that defines the voting rules for the network. The rules decide if a proposal is approved. Approval may be based on criteria such as the percentage of <code>YES</code> votes and the duration of the proposal. The policy applies to all proposals and is specified when the network is created.
     */
   @js.native
+  @Factory
   trait ApprovalThresholdPolicy extends js.Object {
     var ProposalDurationInHours: js.UndefOr[ProposalDurationInt]
     var ThresholdComparator: js.UndefOr[ThresholdComparator]
     var ThresholdPercentage: js.UndefOr[ThresholdPercentageInt]
   }
 
-  object ApprovalThresholdPolicy {
-    @inline
-    def apply(
-        ProposalDurationInHours: js.UndefOr[ProposalDurationInt] = js.undefined,
-        ThresholdComparator: js.UndefOr[ThresholdComparator] = js.undefined,
-        ThresholdPercentage: js.UndefOr[ThresholdPercentageInt] = js.undefined
-    ): ApprovalThresholdPolicy = {
-      val __obj = js.Dynamic.literal()
-      ProposalDurationInHours.foreach(__v => __obj.updateDynamic("ProposalDurationInHours")(__v.asInstanceOf[js.Any]))
-      ThresholdComparator.foreach(__v => __obj.updateDynamic("ThresholdComparator")(__v.asInstanceOf[js.Any]))
-      ThresholdPercentage.foreach(__v => __obj.updateDynamic("ThresholdPercentage")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ApprovalThresholdPolicy]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateMemberInput extends js.Object {
     var ClientRequestToken: ClientRequestTokenString
     var InvitationId: ResourceIdString
@@ -136,42 +124,14 @@ package managedblockchain {
     var NetworkId: ResourceIdString
   }
 
-  object CreateMemberInput {
-    @inline
-    def apply(
-        ClientRequestToken: ClientRequestTokenString,
-        InvitationId: ResourceIdString,
-        MemberConfiguration: MemberConfiguration,
-        NetworkId: ResourceIdString
-    ): CreateMemberInput = {
-      val __obj = js.Dynamic.literal(
-        "ClientRequestToken"  -> ClientRequestToken.asInstanceOf[js.Any],
-        "InvitationId"        -> InvitationId.asInstanceOf[js.Any],
-        "MemberConfiguration" -> MemberConfiguration.asInstanceOf[js.Any],
-        "NetworkId"           -> NetworkId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateMemberInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateMemberOutput extends js.Object {
     var MemberId: js.UndefOr[ResourceIdString]
   }
 
-  object CreateMemberOutput {
-    @inline
-    def apply(
-        MemberId: js.UndefOr[ResourceIdString] = js.undefined
-    ): CreateMemberOutput = {
-      val __obj = js.Dynamic.literal()
-      MemberId.foreach(__v => __obj.updateDynamic("MemberId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateMemberOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateNetworkInput extends js.Object {
     var ClientRequestToken: ClientRequestTokenString
     var Framework: Framework
@@ -183,53 +143,15 @@ package managedblockchain {
     var FrameworkConfiguration: js.UndefOr[NetworkFrameworkConfiguration]
   }
 
-  object CreateNetworkInput {
-    @inline
-    def apply(
-        ClientRequestToken: ClientRequestTokenString,
-        Framework: Framework,
-        FrameworkVersion: FrameworkVersionString,
-        MemberConfiguration: MemberConfiguration,
-        Name: NameString,
-        VotingPolicy: VotingPolicy,
-        Description: js.UndefOr[DescriptionString] = js.undefined,
-        FrameworkConfiguration: js.UndefOr[NetworkFrameworkConfiguration] = js.undefined
-    ): CreateNetworkInput = {
-      val __obj = js.Dynamic.literal(
-        "ClientRequestToken"  -> ClientRequestToken.asInstanceOf[js.Any],
-        "Framework"           -> Framework.asInstanceOf[js.Any],
-        "FrameworkVersion"    -> FrameworkVersion.asInstanceOf[js.Any],
-        "MemberConfiguration" -> MemberConfiguration.asInstanceOf[js.Any],
-        "Name"                -> Name.asInstanceOf[js.Any],
-        "VotingPolicy"        -> VotingPolicy.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      FrameworkConfiguration.foreach(__v => __obj.updateDynamic("FrameworkConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateNetworkInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateNetworkOutput extends js.Object {
     var MemberId: js.UndefOr[ResourceIdString]
     var NetworkId: js.UndefOr[ResourceIdString]
   }
 
-  object CreateNetworkOutput {
-    @inline
-    def apply(
-        MemberId: js.UndefOr[ResourceIdString] = js.undefined,
-        NetworkId: js.UndefOr[ResourceIdString] = js.undefined
-    ): CreateNetworkOutput = {
-      val __obj = js.Dynamic.literal()
-      MemberId.foreach(__v => __obj.updateDynamic("MemberId")(__v.asInstanceOf[js.Any]))
-      NetworkId.foreach(__v => __obj.updateDynamic("NetworkId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateNetworkOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateNodeInput extends js.Object {
     var ClientRequestToken: ClientRequestTokenString
     var MemberId: ResourceIdString
@@ -237,42 +159,14 @@ package managedblockchain {
     var NodeConfiguration: NodeConfiguration
   }
 
-  object CreateNodeInput {
-    @inline
-    def apply(
-        ClientRequestToken: ClientRequestTokenString,
-        MemberId: ResourceIdString,
-        NetworkId: ResourceIdString,
-        NodeConfiguration: NodeConfiguration
-    ): CreateNodeInput = {
-      val __obj = js.Dynamic.literal(
-        "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any],
-        "MemberId"           -> MemberId.asInstanceOf[js.Any],
-        "NetworkId"          -> NetworkId.asInstanceOf[js.Any],
-        "NodeConfiguration"  -> NodeConfiguration.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateNodeInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateNodeOutput extends js.Object {
     var NodeId: js.UndefOr[ResourceIdString]
   }
 
-  object CreateNodeOutput {
-    @inline
-    def apply(
-        NodeId: js.UndefOr[ResourceIdString] = js.undefined
-    ): CreateNodeOutput = {
-      val __obj = js.Dynamic.literal()
-      NodeId.foreach(__v => __obj.updateDynamic("NodeId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateNodeOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateProposalInput extends js.Object {
     var Actions: ProposalActions
     var ClientRequestToken: ClientRequestTokenString
@@ -281,113 +175,34 @@ package managedblockchain {
     var Description: js.UndefOr[DescriptionString]
   }
 
-  object CreateProposalInput {
-    @inline
-    def apply(
-        Actions: ProposalActions,
-        ClientRequestToken: ClientRequestTokenString,
-        MemberId: ResourceIdString,
-        NetworkId: ResourceIdString,
-        Description: js.UndefOr[DescriptionString] = js.undefined
-    ): CreateProposalInput = {
-      val __obj = js.Dynamic.literal(
-        "Actions"            -> Actions.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any],
-        "MemberId"           -> MemberId.asInstanceOf[js.Any],
-        "NetworkId"          -> NetworkId.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateProposalInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateProposalOutput extends js.Object {
     var ProposalId: js.UndefOr[ResourceIdString]
   }
 
-  object CreateProposalOutput {
-    @inline
-    def apply(
-        ProposalId: js.UndefOr[ResourceIdString] = js.undefined
-    ): CreateProposalOutput = {
-      val __obj = js.Dynamic.literal()
-      ProposalId.foreach(__v => __obj.updateDynamic("ProposalId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateProposalOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteMemberInput extends js.Object {
     var MemberId: ResourceIdString
     var NetworkId: ResourceIdString
   }
 
-  object DeleteMemberInput {
-    @inline
-    def apply(
-        MemberId: ResourceIdString,
-        NetworkId: ResourceIdString
-    ): DeleteMemberInput = {
-      val __obj = js.Dynamic.literal(
-        "MemberId"  -> MemberId.asInstanceOf[js.Any],
-        "NetworkId" -> NetworkId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteMemberInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteMemberOutput extends js.Object {}
 
-  object DeleteMemberOutput {
-    @inline
-    def apply(
-    ): DeleteMemberOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteMemberOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteNodeInput extends js.Object {
     var MemberId: ResourceIdString
     var NetworkId: ResourceIdString
     var NodeId: ResourceIdString
   }
 
-  object DeleteNodeInput {
-    @inline
-    def apply(
-        MemberId: ResourceIdString,
-        NetworkId: ResourceIdString,
-        NodeId: ResourceIdString
-    ): DeleteNodeInput = {
-      val __obj = js.Dynamic.literal(
-        "MemberId"  -> MemberId.asInstanceOf[js.Any],
-        "NetworkId" -> NetworkId.asInstanceOf[js.Any],
-        "NodeId"    -> NodeId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteNodeInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteNodeOutput extends js.Object {}
-
-  object DeleteNodeOutput {
-    @inline
-    def apply(
-    ): DeleteNodeOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteNodeOutput]
-    }
-  }
 
   @js.native
   sealed trait Edition extends js.Any
@@ -407,182 +222,68 @@ package managedblockchain {
   }
 
   @js.native
+  @Factory
   trait GetMemberInput extends js.Object {
     var MemberId: ResourceIdString
     var NetworkId: ResourceIdString
   }
 
-  object GetMemberInput {
-    @inline
-    def apply(
-        MemberId: ResourceIdString,
-        NetworkId: ResourceIdString
-    ): GetMemberInput = {
-      val __obj = js.Dynamic.literal(
-        "MemberId"  -> MemberId.asInstanceOf[js.Any],
-        "NetworkId" -> NetworkId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetMemberInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetMemberOutput extends js.Object {
     var Member: js.UndefOr[Member]
   }
 
-  object GetMemberOutput {
-    @inline
-    def apply(
-        Member: js.UndefOr[Member] = js.undefined
-    ): GetMemberOutput = {
-      val __obj = js.Dynamic.literal()
-      Member.foreach(__v => __obj.updateDynamic("Member")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetMemberOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetNetworkInput extends js.Object {
     var NetworkId: ResourceIdString
   }
 
-  object GetNetworkInput {
-    @inline
-    def apply(
-        NetworkId: ResourceIdString
-    ): GetNetworkInput = {
-      val __obj = js.Dynamic.literal(
-        "NetworkId" -> NetworkId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetNetworkInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetNetworkOutput extends js.Object {
     var Network: js.UndefOr[Network]
   }
 
-  object GetNetworkOutput {
-    @inline
-    def apply(
-        Network: js.UndefOr[Network] = js.undefined
-    ): GetNetworkOutput = {
-      val __obj = js.Dynamic.literal()
-      Network.foreach(__v => __obj.updateDynamic("Network")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetNetworkOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetNodeInput extends js.Object {
     var MemberId: ResourceIdString
     var NetworkId: ResourceIdString
     var NodeId: ResourceIdString
   }
 
-  object GetNodeInput {
-    @inline
-    def apply(
-        MemberId: ResourceIdString,
-        NetworkId: ResourceIdString,
-        NodeId: ResourceIdString
-    ): GetNodeInput = {
-      val __obj = js.Dynamic.literal(
-        "MemberId"  -> MemberId.asInstanceOf[js.Any],
-        "NetworkId" -> NetworkId.asInstanceOf[js.Any],
-        "NodeId"    -> NodeId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetNodeInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetNodeOutput extends js.Object {
     var Node: js.UndefOr[Node]
   }
 
-  object GetNodeOutput {
-    @inline
-    def apply(
-        Node: js.UndefOr[Node] = js.undefined
-    ): GetNodeOutput = {
-      val __obj = js.Dynamic.literal()
-      Node.foreach(__v => __obj.updateDynamic("Node")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetNodeOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetProposalInput extends js.Object {
     var NetworkId: ResourceIdString
     var ProposalId: ResourceIdString
   }
 
-  object GetProposalInput {
-    @inline
-    def apply(
-        NetworkId: ResourceIdString,
-        ProposalId: ResourceIdString
-    ): GetProposalInput = {
-      val __obj = js.Dynamic.literal(
-        "NetworkId"  -> NetworkId.asInstanceOf[js.Any],
-        "ProposalId" -> ProposalId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetProposalInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetProposalOutput extends js.Object {
     var Proposal: js.UndefOr[Proposal]
-  }
-
-  object GetProposalOutput {
-    @inline
-    def apply(
-        Proposal: js.UndefOr[Proposal] = js.undefined
-    ): GetProposalOutput = {
-      val __obj = js.Dynamic.literal()
-      Proposal.foreach(__v => __obj.updateDynamic("Proposal")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetProposalOutput]
-    }
   }
 
   /**
     * An invitation to an AWS account to create a member and join the network.
     */
   @js.native
+  @Factory
   trait Invitation extends js.Object {
     var CreationDate: js.UndefOr[Timestamp]
     var ExpirationDate: js.UndefOr[Timestamp]
     var InvitationId: js.UndefOr[ResourceIdString]
     var NetworkSummary: js.UndefOr[NetworkSummary]
     var Status: js.UndefOr[InvitationStatus]
-  }
-
-  object Invitation {
-    @inline
-    def apply(
-        CreationDate: js.UndefOr[Timestamp] = js.undefined,
-        ExpirationDate: js.UndefOr[Timestamp] = js.undefined,
-        InvitationId: js.UndefOr[ResourceIdString] = js.undefined,
-        NetworkSummary: js.UndefOr[NetworkSummary] = js.undefined,
-        Status: js.UndefOr[InvitationStatus] = js.undefined
-    ): Invitation = {
-      val __obj = js.Dynamic.literal()
-      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      ExpirationDate.foreach(__v => __obj.updateDynamic("ExpirationDate")(__v.asInstanceOf[js.Any]))
-      InvitationId.foreach(__v => __obj.updateDynamic("InvitationId")(__v.asInstanceOf[js.Any]))
-      NetworkSummary.foreach(__v => __obj.updateDynamic("NetworkSummary")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Invitation]
-    }
   }
 
   @js.native
@@ -601,62 +302,27 @@ package managedblockchain {
     * An action to invite a specific AWS account to create a member and join the network. The <code>InviteAction</code> is carried out when a <code>Proposal</code> is <code>APPROVED</code>.
     */
   @js.native
+  @Factory
   trait InviteAction extends js.Object {
     var Principal: PrincipalString
   }
 
-  object InviteAction {
-    @inline
-    def apply(
-        Principal: PrincipalString
-    ): InviteAction = {
-      val __obj = js.Dynamic.literal(
-        "Principal" -> Principal.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[InviteAction]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListInvitationsInput extends js.Object {
     var MaxResults: js.UndefOr[ProposalListMaxResults]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListInvitationsInput {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[ProposalListMaxResults] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListInvitationsInput = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListInvitationsInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListInvitationsOutput extends js.Object {
     var Invitations: js.UndefOr[InvitationList]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListInvitationsOutput {
-    @inline
-    def apply(
-        Invitations: js.UndefOr[InvitationList] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListInvitationsOutput = {
-      val __obj = js.Dynamic.literal()
-      Invitations.foreach(__v => __obj.updateDynamic("Invitations")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListInvitationsOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListMembersInput extends js.Object {
     var NetworkId: ResourceIdString
     var IsOwned: js.UndefOr[IsOwned]
@@ -666,49 +332,15 @@ package managedblockchain {
     var Status: js.UndefOr[MemberStatus]
   }
 
-  object ListMembersInput {
-    @inline
-    def apply(
-        NetworkId: ResourceIdString,
-        IsOwned: js.UndefOr[IsOwned] = js.undefined,
-        MaxResults: js.UndefOr[MemberListMaxResults] = js.undefined,
-        Name: js.UndefOr[String] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        Status: js.UndefOr[MemberStatus] = js.undefined
-    ): ListMembersInput = {
-      val __obj = js.Dynamic.literal(
-        "NetworkId" -> NetworkId.asInstanceOf[js.Any]
-      )
-
-      IsOwned.foreach(__v => __obj.updateDynamic("IsOwned")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListMembersInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListMembersOutput extends js.Object {
     var Members: js.UndefOr[MemberSummaryList]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListMembersOutput {
-    @inline
-    def apply(
-        Members: js.UndefOr[MemberSummaryList] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListMembersOutput = {
-      val __obj = js.Dynamic.literal()
-      Members.foreach(__v => __obj.updateDynamic("Members")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListMembersOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListNetworksInput extends js.Object {
     var Framework: js.UndefOr[Framework]
     var MaxResults: js.UndefOr[NetworkListMaxResults]
@@ -717,45 +349,15 @@ package managedblockchain {
     var Status: js.UndefOr[NetworkStatus]
   }
 
-  object ListNetworksInput {
-    @inline
-    def apply(
-        Framework: js.UndefOr[Framework] = js.undefined,
-        MaxResults: js.UndefOr[NetworkListMaxResults] = js.undefined,
-        Name: js.UndefOr[String] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        Status: js.UndefOr[NetworkStatus] = js.undefined
-    ): ListNetworksInput = {
-      val __obj = js.Dynamic.literal()
-      Framework.foreach(__v => __obj.updateDynamic("Framework")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListNetworksInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListNetworksOutput extends js.Object {
     var Networks: js.UndefOr[NetworkSummaryList]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListNetworksOutput {
-    @inline
-    def apply(
-        Networks: js.UndefOr[NetworkSummaryList] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListNetworksOutput = {
-      val __obj = js.Dynamic.literal()
-      Networks.foreach(__v => __obj.updateDynamic("Networks")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListNetworksOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListNodesInput extends js.Object {
     var MemberId: ResourceIdString
     var NetworkId: ResourceIdString
@@ -764,47 +366,15 @@ package managedblockchain {
     var Status: js.UndefOr[NodeStatus]
   }
 
-  object ListNodesInput {
-    @inline
-    def apply(
-        MemberId: ResourceIdString,
-        NetworkId: ResourceIdString,
-        MaxResults: js.UndefOr[NodeListMaxResults] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        Status: js.UndefOr[NodeStatus] = js.undefined
-    ): ListNodesInput = {
-      val __obj = js.Dynamic.literal(
-        "MemberId"  -> MemberId.asInstanceOf[js.Any],
-        "NetworkId" -> NetworkId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListNodesInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListNodesOutput extends js.Object {
     var NextToken: js.UndefOr[PaginationToken]
     var Nodes: js.UndefOr[NodeSummaryList]
   }
 
-  object ListNodesOutput {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        Nodes: js.UndefOr[NodeSummaryList] = js.undefined
-    ): ListNodesOutput = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Nodes.foreach(__v => __obj.updateDynamic("Nodes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListNodesOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListProposalVotesInput extends js.Object {
     var NetworkId: ResourceIdString
     var ProposalId: ResourceIdString
@@ -812,91 +382,33 @@ package managedblockchain {
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListProposalVotesInput {
-    @inline
-    def apply(
-        NetworkId: ResourceIdString,
-        ProposalId: ResourceIdString,
-        MaxResults: js.UndefOr[ProposalListMaxResults] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListProposalVotesInput = {
-      val __obj = js.Dynamic.literal(
-        "NetworkId"  -> NetworkId.asInstanceOf[js.Any],
-        "ProposalId" -> ProposalId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListProposalVotesInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListProposalVotesOutput extends js.Object {
     var NextToken: js.UndefOr[PaginationToken]
     var ProposalVotes: js.UndefOr[ProposalVoteList]
   }
 
-  object ListProposalVotesOutput {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        ProposalVotes: js.UndefOr[ProposalVoteList] = js.undefined
-    ): ListProposalVotesOutput = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ProposalVotes.foreach(__v => __obj.updateDynamic("ProposalVotes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListProposalVotesOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListProposalsInput extends js.Object {
     var NetworkId: ResourceIdString
     var MaxResults: js.UndefOr[ProposalListMaxResults]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListProposalsInput {
-    @inline
-    def apply(
-        NetworkId: ResourceIdString,
-        MaxResults: js.UndefOr[ProposalListMaxResults] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListProposalsInput = {
-      val __obj = js.Dynamic.literal(
-        "NetworkId" -> NetworkId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListProposalsInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListProposalsOutput extends js.Object {
     var NextToken: js.UndefOr[PaginationToken]
     var Proposals: js.UndefOr[ProposalSummaryList]
-  }
-
-  object ListProposalsOutput {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        Proposals: js.UndefOr[ProposalSummaryList] = js.undefined
-    ): ListProposalsOutput = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Proposals.foreach(__v => __obj.updateDynamic("Proposals")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListProposalsOutput]
-    }
   }
 
   /**
     * Member configuration properties.
     */
   @js.native
+  @Factory
   trait Member extends js.Object {
     var CreationDate: js.UndefOr[Timestamp]
     var Description: js.UndefOr[DescriptionString]
@@ -907,138 +419,53 @@ package managedblockchain {
     var Status: js.UndefOr[MemberStatus]
   }
 
-  object Member {
-    @inline
-    def apply(
-        CreationDate: js.UndefOr[Timestamp] = js.undefined,
-        Description: js.UndefOr[DescriptionString] = js.undefined,
-        FrameworkAttributes: js.UndefOr[MemberFrameworkAttributes] = js.undefined,
-        Id: js.UndefOr[ResourceIdString] = js.undefined,
-        Name: js.UndefOr[NetworkMemberNameString] = js.undefined,
-        NetworkId: js.UndefOr[ResourceIdString] = js.undefined,
-        Status: js.UndefOr[MemberStatus] = js.undefined
-    ): Member = {
-      val __obj = js.Dynamic.literal()
-      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      FrameworkAttributes.foreach(__v => __obj.updateDynamic("FrameworkAttributes")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      NetworkId.foreach(__v => __obj.updateDynamic("NetworkId")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Member]
-    }
-  }
-
   /**
     * Configuration properties of the member.
     */
   @js.native
+  @Factory
   trait MemberConfiguration extends js.Object {
     var FrameworkConfiguration: MemberFrameworkConfiguration
     var Name: NetworkMemberNameString
     var Description: js.UndefOr[DescriptionString]
   }
 
-  object MemberConfiguration {
-    @inline
-    def apply(
-        FrameworkConfiguration: MemberFrameworkConfiguration,
-        Name: NetworkMemberNameString,
-        Description: js.UndefOr[DescriptionString] = js.undefined
-    ): MemberConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "FrameworkConfiguration" -> FrameworkConfiguration.asInstanceOf[js.Any],
-        "Name"                   -> Name.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MemberConfiguration]
-    }
-  }
-
   /**
     * Attributes of Hyperledger Fabric for a member in a Managed Blockchain network using the Hyperledger Fabric framework.
     */
   @js.native
+  @Factory
   trait MemberFabricAttributes extends js.Object {
     var AdminUsername: js.UndefOr[UsernameString]
     var CaEndpoint: js.UndefOr[String]
-  }
-
-  object MemberFabricAttributes {
-    @inline
-    def apply(
-        AdminUsername: js.UndefOr[UsernameString] = js.undefined,
-        CaEndpoint: js.UndefOr[String] = js.undefined
-    ): MemberFabricAttributes = {
-      val __obj = js.Dynamic.literal()
-      AdminUsername.foreach(__v => __obj.updateDynamic("AdminUsername")(__v.asInstanceOf[js.Any]))
-      CaEndpoint.foreach(__v => __obj.updateDynamic("CaEndpoint")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MemberFabricAttributes]
-    }
   }
 
   /**
     * Configuration properties for Hyperledger Fabric for a member in a Managed Blockchain network using the Hyperledger Fabric framework.
     */
   @js.native
+  @Factory
   trait MemberFabricConfiguration extends js.Object {
     var AdminPassword: PasswordString
     var AdminUsername: UsernameString
-  }
-
-  object MemberFabricConfiguration {
-    @inline
-    def apply(
-        AdminPassword: PasswordString,
-        AdminUsername: UsernameString
-    ): MemberFabricConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "AdminPassword" -> AdminPassword.asInstanceOf[js.Any],
-        "AdminUsername" -> AdminUsername.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[MemberFabricConfiguration]
-    }
   }
 
   /**
     * Attributes relevant to a member for the blockchain framework that the Managed Blockchain network uses.
     */
   @js.native
+  @Factory
   trait MemberFrameworkAttributes extends js.Object {
     var Fabric: js.UndefOr[MemberFabricAttributes]
-  }
-
-  object MemberFrameworkAttributes {
-    @inline
-    def apply(
-        Fabric: js.UndefOr[MemberFabricAttributes] = js.undefined
-    ): MemberFrameworkAttributes = {
-      val __obj = js.Dynamic.literal()
-      Fabric.foreach(__v => __obj.updateDynamic("Fabric")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MemberFrameworkAttributes]
-    }
   }
 
   /**
     * Configuration properties relevant to a member for the blockchain framework that the Managed Blockchain network uses.
     */
   @js.native
+  @Factory
   trait MemberFrameworkConfiguration extends js.Object {
     var Fabric: js.UndefOr[MemberFabricConfiguration]
-  }
-
-  object MemberFrameworkConfiguration {
-    @inline
-    def apply(
-        Fabric: js.UndefOr[MemberFabricConfiguration] = js.undefined
-    ): MemberFrameworkConfiguration = {
-      val __obj = js.Dynamic.literal()
-      Fabric.foreach(__v => __obj.updateDynamic("Fabric")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MemberFrameworkConfiguration]
-    }
   }
 
   @js.native
@@ -1057,6 +484,7 @@ package managedblockchain {
     * A summary of configuration properties for a member.
     */
   @js.native
+  @Factory
   trait MemberSummary extends js.Object {
     var CreationDate: js.UndefOr[Timestamp]
     var Description: js.UndefOr[DescriptionString]
@@ -1066,31 +494,11 @@ package managedblockchain {
     var Status: js.UndefOr[MemberStatus]
   }
 
-  object MemberSummary {
-    @inline
-    def apply(
-        CreationDate: js.UndefOr[Timestamp] = js.undefined,
-        Description: js.UndefOr[DescriptionString] = js.undefined,
-        Id: js.UndefOr[ResourceIdString] = js.undefined,
-        IsOwned: js.UndefOr[IsOwned] = js.undefined,
-        Name: js.UndefOr[NetworkMemberNameString] = js.undefined,
-        Status: js.UndefOr[MemberStatus] = js.undefined
-    ): MemberSummary = {
-      val __obj = js.Dynamic.literal()
-      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      IsOwned.foreach(__v => __obj.updateDynamic("IsOwned")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MemberSummary]
-    }
-  }
-
   /**
     * Network configuration properties.
     */
   @js.native
+  @Factory
   trait Network extends js.Object {
     var CreationDate: js.UndefOr[Timestamp]
     var Description: js.UndefOr[DescriptionString]
@@ -1104,114 +512,41 @@ package managedblockchain {
     var VpcEndpointServiceName: js.UndefOr[String]
   }
 
-  object Network {
-    @inline
-    def apply(
-        CreationDate: js.UndefOr[Timestamp] = js.undefined,
-        Description: js.UndefOr[DescriptionString] = js.undefined,
-        Framework: js.UndefOr[Framework] = js.undefined,
-        FrameworkAttributes: js.UndefOr[NetworkFrameworkAttributes] = js.undefined,
-        FrameworkVersion: js.UndefOr[FrameworkVersionString] = js.undefined,
-        Id: js.UndefOr[ResourceIdString] = js.undefined,
-        Name: js.UndefOr[NameString] = js.undefined,
-        Status: js.UndefOr[NetworkStatus] = js.undefined,
-        VotingPolicy: js.UndefOr[VotingPolicy] = js.undefined,
-        VpcEndpointServiceName: js.UndefOr[String] = js.undefined
-    ): Network = {
-      val __obj = js.Dynamic.literal()
-      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Framework.foreach(__v => __obj.updateDynamic("Framework")(__v.asInstanceOf[js.Any]))
-      FrameworkAttributes.foreach(__v => __obj.updateDynamic("FrameworkAttributes")(__v.asInstanceOf[js.Any]))
-      FrameworkVersion.foreach(__v => __obj.updateDynamic("FrameworkVersion")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      VotingPolicy.foreach(__v => __obj.updateDynamic("VotingPolicy")(__v.asInstanceOf[js.Any]))
-      VpcEndpointServiceName.foreach(__v => __obj.updateDynamic("VpcEndpointServiceName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Network]
-    }
-  }
-
   /**
     * Attributes of Hyperledger Fabric for a network.
     */
   @js.native
+  @Factory
   trait NetworkFabricAttributes extends js.Object {
     var Edition: js.UndefOr[Edition]
     var OrderingServiceEndpoint: js.UndefOr[String]
-  }
-
-  object NetworkFabricAttributes {
-    @inline
-    def apply(
-        Edition: js.UndefOr[Edition] = js.undefined,
-        OrderingServiceEndpoint: js.UndefOr[String] = js.undefined
-    ): NetworkFabricAttributes = {
-      val __obj = js.Dynamic.literal()
-      Edition.foreach(__v => __obj.updateDynamic("Edition")(__v.asInstanceOf[js.Any]))
-      OrderingServiceEndpoint.foreach(__v => __obj.updateDynamic("OrderingServiceEndpoint")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NetworkFabricAttributes]
-    }
   }
 
   /**
     * Hyperledger Fabric configuration properties for the network.
     */
   @js.native
+  @Factory
   trait NetworkFabricConfiguration extends js.Object {
     var Edition: Edition
-  }
-
-  object NetworkFabricConfiguration {
-    @inline
-    def apply(
-        Edition: Edition
-    ): NetworkFabricConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "Edition" -> Edition.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[NetworkFabricConfiguration]
-    }
   }
 
   /**
     * Attributes relevant to the network for the blockchain framework that the network uses.
     */
   @js.native
+  @Factory
   trait NetworkFrameworkAttributes extends js.Object {
     var Fabric: js.UndefOr[NetworkFabricAttributes]
-  }
-
-  object NetworkFrameworkAttributes {
-    @inline
-    def apply(
-        Fabric: js.UndefOr[NetworkFabricAttributes] = js.undefined
-    ): NetworkFrameworkAttributes = {
-      val __obj = js.Dynamic.literal()
-      Fabric.foreach(__v => __obj.updateDynamic("Fabric")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NetworkFrameworkAttributes]
-    }
   }
 
   /**
     * Configuration properties relevant to the network for the blockchain framework that the network uses.
     */
   @js.native
+  @Factory
   trait NetworkFrameworkConfiguration extends js.Object {
     var Fabric: js.UndefOr[NetworkFabricConfiguration]
-  }
-
-  object NetworkFrameworkConfiguration {
-    @inline
-    def apply(
-        Fabric: js.UndefOr[NetworkFabricConfiguration] = js.undefined
-    ): NetworkFrameworkConfiguration = {
-      val __obj = js.Dynamic.literal()
-      Fabric.foreach(__v => __obj.updateDynamic("Fabric")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NetworkFrameworkConfiguration]
-    }
   }
 
   @js.native
@@ -1230,6 +565,7 @@ package managedblockchain {
     * A summary of network configuration properties.
     */
   @js.native
+  @Factory
   trait NetworkSummary extends js.Object {
     var CreationDate: js.UndefOr[Timestamp]
     var Description: js.UndefOr[DescriptionString]
@@ -1240,33 +576,11 @@ package managedblockchain {
     var Status: js.UndefOr[NetworkStatus]
   }
 
-  object NetworkSummary {
-    @inline
-    def apply(
-        CreationDate: js.UndefOr[Timestamp] = js.undefined,
-        Description: js.UndefOr[DescriptionString] = js.undefined,
-        Framework: js.UndefOr[Framework] = js.undefined,
-        FrameworkVersion: js.UndefOr[FrameworkVersionString] = js.undefined,
-        Id: js.UndefOr[ResourceIdString] = js.undefined,
-        Name: js.UndefOr[NameString] = js.undefined,
-        Status: js.UndefOr[NetworkStatus] = js.undefined
-    ): NetworkSummary = {
-      val __obj = js.Dynamic.literal()
-      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Framework.foreach(__v => __obj.updateDynamic("Framework")(__v.asInstanceOf[js.Any]))
-      FrameworkVersion.foreach(__v => __obj.updateDynamic("FrameworkVersion")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NetworkSummary]
-    }
-  }
-
   /**
     * Configuration properties of a peer node.
     */
   @js.native
+  @Factory
   trait Node extends js.Object {
     var AvailabilityZone: js.UndefOr[AvailabilityZoneString]
     var CreationDate: js.UndefOr[Timestamp]
@@ -1278,94 +592,33 @@ package managedblockchain {
     var Status: js.UndefOr[NodeStatus]
   }
 
-  object Node {
-    @inline
-    def apply(
-        AvailabilityZone: js.UndefOr[AvailabilityZoneString] = js.undefined,
-        CreationDate: js.UndefOr[Timestamp] = js.undefined,
-        FrameworkAttributes: js.UndefOr[NodeFrameworkAttributes] = js.undefined,
-        Id: js.UndefOr[ResourceIdString] = js.undefined,
-        InstanceType: js.UndefOr[InstanceTypeString] = js.undefined,
-        MemberId: js.UndefOr[ResourceIdString] = js.undefined,
-        NetworkId: js.UndefOr[ResourceIdString] = js.undefined,
-        Status: js.UndefOr[NodeStatus] = js.undefined
-    ): Node = {
-      val __obj = js.Dynamic.literal()
-      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      FrameworkAttributes.foreach(__v => __obj.updateDynamic("FrameworkAttributes")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
-      MemberId.foreach(__v => __obj.updateDynamic("MemberId")(__v.asInstanceOf[js.Any]))
-      NetworkId.foreach(__v => __obj.updateDynamic("NetworkId")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Node]
-    }
-  }
-
   /**
     * Configuration properties of a peer node.
     */
   @js.native
+  @Factory
   trait NodeConfiguration extends js.Object {
     var AvailabilityZone: AvailabilityZoneString
     var InstanceType: InstanceTypeString
-  }
-
-  object NodeConfiguration {
-    @inline
-    def apply(
-        AvailabilityZone: AvailabilityZoneString,
-        InstanceType: InstanceTypeString
-    ): NodeConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "AvailabilityZone" -> AvailabilityZone.asInstanceOf[js.Any],
-        "InstanceType"     -> InstanceType.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[NodeConfiguration]
-    }
   }
 
   /**
     * Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain network that uses Hyperledger Fabric.
     */
   @js.native
+  @Factory
   trait NodeFabricAttributes extends js.Object {
     var PeerEndpoint: js.UndefOr[String]
     var PeerEventEndpoint: js.UndefOr[String]
-  }
-
-  object NodeFabricAttributes {
-    @inline
-    def apply(
-        PeerEndpoint: js.UndefOr[String] = js.undefined,
-        PeerEventEndpoint: js.UndefOr[String] = js.undefined
-    ): NodeFabricAttributes = {
-      val __obj = js.Dynamic.literal()
-      PeerEndpoint.foreach(__v => __obj.updateDynamic("PeerEndpoint")(__v.asInstanceOf[js.Any]))
-      PeerEventEndpoint.foreach(__v => __obj.updateDynamic("PeerEventEndpoint")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NodeFabricAttributes]
-    }
   }
 
   /**
     * Attributes relevant to a peer node on a Managed Blockchain network for the blockchain framework that the network uses.
     */
   @js.native
+  @Factory
   trait NodeFrameworkAttributes extends js.Object {
     var Fabric: js.UndefOr[NodeFabricAttributes]
-  }
-
-  object NodeFrameworkAttributes {
-    @inline
-    def apply(
-        Fabric: js.UndefOr[NodeFabricAttributes] = js.undefined
-    ): NodeFrameworkAttributes = {
-      val __obj = js.Dynamic.literal()
-      Fabric.foreach(__v => __obj.updateDynamic("Fabric")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NodeFrameworkAttributes]
-    }
   }
 
   @js.native
@@ -1385,6 +638,7 @@ package managedblockchain {
     * A summary of configuration properties for a peer node.
     */
   @js.native
+  @Factory
   trait NodeSummary extends js.Object {
     var AvailabilityZone: js.UndefOr[AvailabilityZoneString]
     var CreationDate: js.UndefOr[Timestamp]
@@ -1393,29 +647,11 @@ package managedblockchain {
     var Status: js.UndefOr[NodeStatus]
   }
 
-  object NodeSummary {
-    @inline
-    def apply(
-        AvailabilityZone: js.UndefOr[AvailabilityZoneString] = js.undefined,
-        CreationDate: js.UndefOr[Timestamp] = js.undefined,
-        Id: js.UndefOr[ResourceIdString] = js.undefined,
-        InstanceType: js.UndefOr[InstanceTypeString] = js.undefined,
-        Status: js.UndefOr[NodeStatus] = js.undefined
-    ): NodeSummary = {
-      val __obj = js.Dynamic.literal()
-      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NodeSummary]
-    }
-  }
-
   /**
     * Properties of a proposal on a Managed Blockchain network.
     */
   @js.native
+  @Factory
   trait Proposal extends js.Object {
     var Actions: js.UndefOr[ProposalActions]
     var CreationDate: js.UndefOr[Timestamp]
@@ -1431,59 +667,14 @@ package managedblockchain {
     var YesVoteCount: js.UndefOr[VoteCount]
   }
 
-  object Proposal {
-    @inline
-    def apply(
-        Actions: js.UndefOr[ProposalActions] = js.undefined,
-        CreationDate: js.UndefOr[Timestamp] = js.undefined,
-        Description: js.UndefOr[DescriptionString] = js.undefined,
-        ExpirationDate: js.UndefOr[Timestamp] = js.undefined,
-        NetworkId: js.UndefOr[ResourceIdString] = js.undefined,
-        NoVoteCount: js.UndefOr[VoteCount] = js.undefined,
-        OutstandingVoteCount: js.UndefOr[VoteCount] = js.undefined,
-        ProposalId: js.UndefOr[ResourceIdString] = js.undefined,
-        ProposedByMemberId: js.UndefOr[ResourceIdString] = js.undefined,
-        ProposedByMemberName: js.UndefOr[NetworkMemberNameString] = js.undefined,
-        Status: js.UndefOr[ProposalStatus] = js.undefined,
-        YesVoteCount: js.UndefOr[VoteCount] = js.undefined
-    ): Proposal = {
-      val __obj = js.Dynamic.literal()
-      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      ExpirationDate.foreach(__v => __obj.updateDynamic("ExpirationDate")(__v.asInstanceOf[js.Any]))
-      NetworkId.foreach(__v => __obj.updateDynamic("NetworkId")(__v.asInstanceOf[js.Any]))
-      NoVoteCount.foreach(__v => __obj.updateDynamic("NoVoteCount")(__v.asInstanceOf[js.Any]))
-      OutstandingVoteCount.foreach(__v => __obj.updateDynamic("OutstandingVoteCount")(__v.asInstanceOf[js.Any]))
-      ProposalId.foreach(__v => __obj.updateDynamic("ProposalId")(__v.asInstanceOf[js.Any]))
-      ProposedByMemberId.foreach(__v => __obj.updateDynamic("ProposedByMemberId")(__v.asInstanceOf[js.Any]))
-      ProposedByMemberName.foreach(__v => __obj.updateDynamic("ProposedByMemberName")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      YesVoteCount.foreach(__v => __obj.updateDynamic("YesVoteCount")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Proposal]
-    }
-  }
-
   /**
     * The actions to carry out if a proposal is <code>APPROVED</code>.
     */
   @js.native
+  @Factory
   trait ProposalActions extends js.Object {
     var Invitations: js.UndefOr[InviteActionList]
     var Removals: js.UndefOr[RemoveActionList]
-  }
-
-  object ProposalActions {
-    @inline
-    def apply(
-        Invitations: js.UndefOr[InviteActionList] = js.undefined,
-        Removals: js.UndefOr[RemoveActionList] = js.undefined
-    ): ProposalActions = {
-      val __obj = js.Dynamic.literal()
-      Invitations.foreach(__v => __obj.updateDynamic("Invitations")(__v.asInstanceOf[js.Any]))
-      Removals.foreach(__v => __obj.updateDynamic("Removals")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ProposalActions]
-    }
   }
 
   @js.native
@@ -1502,6 +693,7 @@ package managedblockchain {
     * Properties of a proposal.
     */
   @js.native
+  @Factory
   trait ProposalSummary extends js.Object {
     var CreationDate: js.UndefOr[Timestamp]
     var Description: js.UndefOr[DescriptionString]
@@ -1512,79 +704,23 @@ package managedblockchain {
     var Status: js.UndefOr[ProposalStatus]
   }
 
-  object ProposalSummary {
-    @inline
-    def apply(
-        CreationDate: js.UndefOr[Timestamp] = js.undefined,
-        Description: js.UndefOr[DescriptionString] = js.undefined,
-        ExpirationDate: js.UndefOr[Timestamp] = js.undefined,
-        ProposalId: js.UndefOr[ResourceIdString] = js.undefined,
-        ProposedByMemberId: js.UndefOr[ResourceIdString] = js.undefined,
-        ProposedByMemberName: js.UndefOr[NetworkMemberNameString] = js.undefined,
-        Status: js.UndefOr[ProposalStatus] = js.undefined
-    ): ProposalSummary = {
-      val __obj = js.Dynamic.literal()
-      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      ExpirationDate.foreach(__v => __obj.updateDynamic("ExpirationDate")(__v.asInstanceOf[js.Any]))
-      ProposalId.foreach(__v => __obj.updateDynamic("ProposalId")(__v.asInstanceOf[js.Any]))
-      ProposedByMemberId.foreach(__v => __obj.updateDynamic("ProposedByMemberId")(__v.asInstanceOf[js.Any]))
-      ProposedByMemberName.foreach(__v => __obj.updateDynamic("ProposedByMemberName")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ProposalSummary]
-    }
-  }
-
   @js.native
+  @Factory
   trait RejectInvitationInput extends js.Object {
     var InvitationId: ResourceIdString
   }
 
-  object RejectInvitationInput {
-    @inline
-    def apply(
-        InvitationId: ResourceIdString
-    ): RejectInvitationInput = {
-      val __obj = js.Dynamic.literal(
-        "InvitationId" -> InvitationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RejectInvitationInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait RejectInvitationOutput extends js.Object {}
-
-  object RejectInvitationOutput {
-    @inline
-    def apply(
-    ): RejectInvitationOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[RejectInvitationOutput]
-    }
-  }
 
   /**
     * An action to remove a member from a Managed Blockchain network as the result of a removal proposal that is <code>APPROVED</code>. The member and all associated resources are deleted from the network.
     */
   @js.native
+  @Factory
   trait RemoveAction extends js.Object {
     var MemberId: ResourceIdString
-  }
-
-  object RemoveAction {
-    @inline
-    def apply(
-        MemberId: ResourceIdString
-    ): RemoveAction = {
-      val __obj = js.Dynamic.literal(
-        "MemberId" -> MemberId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RemoveAction]
-    }
   }
 
   @js.native
@@ -1597,6 +733,7 @@ package managedblockchain {
   }
 
   @js.native
+  @Factory
   trait VoteOnProposalInput extends js.Object {
     var NetworkId: ResourceIdString
     var ProposalId: ResourceIdString
@@ -1604,61 +741,19 @@ package managedblockchain {
     var VoterMemberId: ResourceIdString
   }
 
-  object VoteOnProposalInput {
-    @inline
-    def apply(
-        NetworkId: ResourceIdString,
-        ProposalId: ResourceIdString,
-        Vote: VoteValue,
-        VoterMemberId: ResourceIdString
-    ): VoteOnProposalInput = {
-      val __obj = js.Dynamic.literal(
-        "NetworkId"     -> NetworkId.asInstanceOf[js.Any],
-        "ProposalId"    -> ProposalId.asInstanceOf[js.Any],
-        "Vote"          -> Vote.asInstanceOf[js.Any],
-        "VoterMemberId" -> VoterMemberId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[VoteOnProposalInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait VoteOnProposalOutput extends js.Object {}
-
-  object VoteOnProposalOutput {
-    @inline
-    def apply(
-    ): VoteOnProposalOutput = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[VoteOnProposalOutput]
-    }
-  }
 
   /**
     * Properties of an individual vote that a member cast for a proposal.
     */
   @js.native
+  @Factory
   trait VoteSummary extends js.Object {
     var MemberId: js.UndefOr[ResourceIdString]
     var MemberName: js.UndefOr[NetworkMemberNameString]
     var Vote: js.UndefOr[VoteValue]
-  }
-
-  object VoteSummary {
-    @inline
-    def apply(
-        MemberId: js.UndefOr[ResourceIdString] = js.undefined,
-        MemberName: js.UndefOr[NetworkMemberNameString] = js.undefined,
-        Vote: js.UndefOr[VoteValue] = js.undefined
-    ): VoteSummary = {
-      val __obj = js.Dynamic.literal()
-      MemberId.foreach(__v => __obj.updateDynamic("MemberId")(__v.asInstanceOf[js.Any]))
-      MemberName.foreach(__v => __obj.updateDynamic("MemberName")(__v.asInstanceOf[js.Any]))
-      Vote.foreach(__v => __obj.updateDynamic("Vote")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VoteSummary]
-    }
   }
 
   @js.native
@@ -1674,18 +769,8 @@ package managedblockchain {
     * The voting rules for the network to decide if a proposal is accepted
     */
   @js.native
+  @Factory
   trait VotingPolicy extends js.Object {
     var ApprovalThresholdPolicy: js.UndefOr[ApprovalThresholdPolicy]
-  }
-
-  object VotingPolicy {
-    @inline
-    def apply(
-        ApprovalThresholdPolicy: js.UndefOr[ApprovalThresholdPolicy] = js.undefined
-    ): VotingPolicy = {
-      val __obj = js.Dynamic.literal()
-      ApprovalThresholdPolicy.foreach(__v => __obj.updateDynamic("ApprovalThresholdPolicy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VotingPolicy]
-    }
   }
 }

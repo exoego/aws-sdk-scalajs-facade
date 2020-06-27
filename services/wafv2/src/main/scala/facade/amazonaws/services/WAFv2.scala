@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object wafv2 {
   type Action                     = String
@@ -214,17 +215,8 @@ package wafv2 {
     *  This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
     */
   @js.native
+  @Factory
   trait AllQueryArguments extends js.Object {}
-
-  object AllQueryArguments {
-    @inline
-    def apply(
-    ): AllQueryArguments = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[AllQueryArguments]
-    }
-  }
 
   /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
@@ -232,73 +224,29 @@ package wafv2 {
     *  This is used only in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
     */
   @js.native
+  @Factory
   trait AllowAction extends js.Object {}
-
-  object AllowAction {
-    @inline
-    def apply(
-    ): AllowAction = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[AllowAction]
-    }
-  }
 
   /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
     * A logical rule statement used to combine other rule statements with AND logic. You provide more than one <a>Statement</a> within the <code>AndStatement</code>.
     */
   @js.native
+  @Factory
   trait AndStatement extends js.Object {
     var Statements: Statements
   }
 
-  object AndStatement {
-    @inline
-    def apply(
-        Statements: Statements
-    ): AndStatement = {
-      val __obj = js.Dynamic.literal(
-        "Statements" -> Statements.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AndStatement]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateWebACLRequest extends js.Object {
     var ResourceArn: ResourceArn
     var WebACLArn: ResourceArn
   }
 
-  object AssociateWebACLRequest {
-    @inline
-    def apply(
-        ResourceArn: ResourceArn,
-        WebACLArn: ResourceArn
-    ): AssociateWebACLRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "WebACLArn"   -> WebACLArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AssociateWebACLRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateWebACLResponse extends js.Object {}
-
-  object AssociateWebACLResponse {
-    @inline
-    def apply(
-    ): AssociateWebACLResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[AssociateWebACLResponse]
-    }
-  }
 
   /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
@@ -306,17 +254,8 @@ package wafv2 {
     *  This is used only in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
     */
   @js.native
+  @Factory
   trait BlockAction extends js.Object {}
-
-  object BlockAction {
-    @inline
-    def apply(
-    ): BlockAction = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[BlockAction]
-    }
-  }
 
   /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
@@ -324,23 +263,15 @@ package wafv2 {
     *  This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
     */
   @js.native
+  @Factory
   trait Body extends js.Object {}
-
-  object Body {
-    @inline
-    def apply(
-    ): Body = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[Body]
-    }
-  }
 
   /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
     * A rule statement that defines a string match search for AWS WAF to apply to web requests. The byte match statement provides the bytes to search for, the location in requests that you want AWS WAF to search, and other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the AWS WAF console and the developer guide, this is refered to as a string match statement.
     */
   @js.native
+  @Factory
   trait ByteMatchStatement extends js.Object {
     var FieldToMatch: FieldToMatch
     var PositionalConstraint: PositionalConstraint
@@ -348,60 +279,17 @@ package wafv2 {
     var TextTransformations: TextTransformations
   }
 
-  object ByteMatchStatement {
-    @inline
-    def apply(
-        FieldToMatch: FieldToMatch,
-        PositionalConstraint: PositionalConstraint,
-        SearchString: SearchString,
-        TextTransformations: TextTransformations
-    ): ByteMatchStatement = {
-      val __obj = js.Dynamic.literal(
-        "FieldToMatch"         -> FieldToMatch.asInstanceOf[js.Any],
-        "PositionalConstraint" -> PositionalConstraint.asInstanceOf[js.Any],
-        "SearchString"         -> SearchString.asInstanceOf[js.Any],
-        "TextTransformations"  -> TextTransformations.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ByteMatchStatement]
-    }
-  }
-
   @js.native
+  @Factory
   trait CheckCapacityRequest extends js.Object {
     var Rules: Rules
     var Scope: Scope
   }
 
-  object CheckCapacityRequest {
-    @inline
-    def apply(
-        Rules: Rules,
-        Scope: Scope
-    ): CheckCapacityRequest = {
-      val __obj = js.Dynamic.literal(
-        "Rules" -> Rules.asInstanceOf[js.Any],
-        "Scope" -> Scope.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CheckCapacityRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CheckCapacityResponse extends js.Object {
     var Capacity: js.UndefOr[ConsumedCapacity]
-  }
-
-  object CheckCapacityResponse {
-    @inline
-    def apply(
-        Capacity: js.UndefOr[ConsumedCapacity] = js.undefined
-    ): CheckCapacityResponse = {
-      val __obj = js.Dynamic.literal()
-      Capacity.foreach(__v => __obj.updateDynamic("Capacity")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CheckCapacityResponse]
-    }
   }
 
   @js.native
@@ -423,17 +311,8 @@ package wafv2 {
     *  This is used only in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
     */
   @js.native
+  @Factory
   trait CountAction extends js.Object {}
-
-  object CountAction {
-    @inline
-    def apply(
-    ): CountAction = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[CountAction]
-    }
-  }
 
   @js.native
   sealed trait CountryCode extends js.Any
@@ -944,6 +823,7 @@ package wafv2 {
   }
 
   @js.native
+  @Factory
   trait CreateIPSetRequest extends js.Object {
     var Addresses: IPAddresses
     var IPAddressVersion: IPAddressVersion
@@ -953,46 +833,14 @@ package wafv2 {
     var Tags: js.UndefOr[TagList]
   }
 
-  object CreateIPSetRequest {
-    @inline
-    def apply(
-        Addresses: IPAddresses,
-        IPAddressVersion: IPAddressVersion,
-        Name: EntityName,
-        Scope: Scope,
-        Description: js.UndefOr[EntityDescription] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateIPSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "Addresses"        -> Addresses.asInstanceOf[js.Any],
-        "IPAddressVersion" -> IPAddressVersion.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any],
-        "Scope"            -> Scope.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateIPSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateIPSetResponse extends js.Object {
     var Summary: js.UndefOr[IPSetSummary]
   }
 
-  object CreateIPSetResponse {
-    @inline
-    def apply(
-        Summary: js.UndefOr[IPSetSummary] = js.undefined
-    ): CreateIPSetResponse = {
-      val __obj = js.Dynamic.literal()
-      Summary.foreach(__v => __obj.updateDynamic("Summary")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateIPSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateRegexPatternSetRequest extends js.Object {
     var Name: EntityName
     var RegularExpressionList: RegularExpressionList
@@ -1001,44 +849,14 @@ package wafv2 {
     var Tags: js.UndefOr[TagList]
   }
 
-  object CreateRegexPatternSetRequest {
-    @inline
-    def apply(
-        Name: EntityName,
-        RegularExpressionList: RegularExpressionList,
-        Scope: Scope,
-        Description: js.UndefOr[EntityDescription] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateRegexPatternSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name"                  -> Name.asInstanceOf[js.Any],
-        "RegularExpressionList" -> RegularExpressionList.asInstanceOf[js.Any],
-        "Scope"                 -> Scope.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRegexPatternSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateRegexPatternSetResponse extends js.Object {
     var Summary: js.UndefOr[RegexPatternSetSummary]
   }
 
-  object CreateRegexPatternSetResponse {
-    @inline
-    def apply(
-        Summary: js.UndefOr[RegexPatternSetSummary] = js.undefined
-    ): CreateRegexPatternSetResponse = {
-      val __obj = js.Dynamic.literal()
-      Summary.foreach(__v => __obj.updateDynamic("Summary")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRegexPatternSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateRuleGroupRequest extends js.Object {
     var Capacity: CapacityUnit
     var Name: EntityName
@@ -1049,48 +867,14 @@ package wafv2 {
     var Tags: js.UndefOr[TagList]
   }
 
-  object CreateRuleGroupRequest {
-    @inline
-    def apply(
-        Capacity: CapacityUnit,
-        Name: EntityName,
-        Scope: Scope,
-        VisibilityConfig: VisibilityConfig,
-        Description: js.UndefOr[EntityDescription] = js.undefined,
-        Rules: js.UndefOr[Rules] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateRuleGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "Capacity"         -> Capacity.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any],
-        "Scope"            -> Scope.asInstanceOf[js.Any],
-        "VisibilityConfig" -> VisibilityConfig.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRuleGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateRuleGroupResponse extends js.Object {
     var Summary: js.UndefOr[RuleGroupSummary]
   }
 
-  object CreateRuleGroupResponse {
-    @inline
-    def apply(
-        Summary: js.UndefOr[RuleGroupSummary] = js.undefined
-    ): CreateRuleGroupResponse = {
-      val __obj = js.Dynamic.literal()
-      Summary.foreach(__v => __obj.updateDynamic("Summary")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRuleGroupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateWebACLRequest extends js.Object {
     var DefaultAction: DefaultAction
     var Name: EntityName
@@ -1101,45 +885,10 @@ package wafv2 {
     var Tags: js.UndefOr[TagList]
   }
 
-  object CreateWebACLRequest {
-    @inline
-    def apply(
-        DefaultAction: DefaultAction,
-        Name: EntityName,
-        Scope: Scope,
-        VisibilityConfig: VisibilityConfig,
-        Description: js.UndefOr[EntityDescription] = js.undefined,
-        Rules: js.UndefOr[Rules] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateWebACLRequest = {
-      val __obj = js.Dynamic.literal(
-        "DefaultAction"    -> DefaultAction.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any],
-        "Scope"            -> Scope.asInstanceOf[js.Any],
-        "VisibilityConfig" -> VisibilityConfig.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateWebACLRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateWebACLResponse extends js.Object {
     var Summary: js.UndefOr[WebACLSummary]
-  }
-
-  object CreateWebACLResponse {
-    @inline
-    def apply(
-        Summary: js.UndefOr[WebACLSummary] = js.undefined
-    ): CreateWebACLResponse = {
-      val __obj = js.Dynamic.literal()
-      Summary.foreach(__v => __obj.updateDynamic("Summary")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateWebACLResponse]
-    }
   }
 
   /**
@@ -1147,25 +896,14 @@ package wafv2 {
     * In a <a>WebACL</a>, this is the action that you want AWS WAF to perform when a web request doesn't match any of the rules in the <code>WebACL</code>. The default action must be a terminating action, so count is not allowed.
     */
   @js.native
+  @Factory
   trait DefaultAction extends js.Object {
     var Allow: js.UndefOr[AllowAction]
     var Block: js.UndefOr[BlockAction]
   }
 
-  object DefaultAction {
-    @inline
-    def apply(
-        Allow: js.UndefOr[AllowAction] = js.undefined,
-        Block: js.UndefOr[BlockAction] = js.undefined
-    ): DefaultAction = {
-      val __obj = js.Dynamic.literal()
-      Allow.foreach(__v => __obj.updateDynamic("Allow")(__v.asInstanceOf[js.Any]))
-      Block.foreach(__v => __obj.updateDynamic("Block")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DefaultAction]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteIPSetRequest extends js.Object {
     var Id: EntityId
     var LockToken: LockToken
@@ -1173,70 +911,22 @@ package wafv2 {
     var Scope: Scope
   }
 
-  object DeleteIPSetRequest {
-    @inline
-    def apply(
-        Id: EntityId,
-        LockToken: LockToken,
-        Name: EntityName,
-        Scope: Scope
-    ): DeleteIPSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "Id"        -> Id.asInstanceOf[js.Any],
-        "LockToken" -> LockToken.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any],
-        "Scope"     -> Scope.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteIPSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteIPSetResponse extends js.Object {}
 
-  object DeleteIPSetResponse {
-    @inline
-    def apply(
-    ): DeleteIPSetResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteIPSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteLoggingConfigurationRequest extends js.Object {
     var ResourceArn: ResourceArn
   }
 
-  object DeleteLoggingConfigurationRequest {
-    @inline
-    def apply(
-        ResourceArn: ResourceArn
-    ): DeleteLoggingConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteLoggingConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteLoggingConfigurationResponse extends js.Object {}
 
-  object DeleteLoggingConfigurationResponse {
-    @inline
-    def apply(
-    ): DeleteLoggingConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteLoggingConfigurationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteRegexPatternSetRequest extends js.Object {
     var Id: EntityId
     var LockToken: LockToken
@@ -1244,39 +934,12 @@ package wafv2 {
     var Scope: Scope
   }
 
-  object DeleteRegexPatternSetRequest {
-    @inline
-    def apply(
-        Id: EntityId,
-        LockToken: LockToken,
-        Name: EntityName,
-        Scope: Scope
-    ): DeleteRegexPatternSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "Id"        -> Id.asInstanceOf[js.Any],
-        "LockToken" -> LockToken.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any],
-        "Scope"     -> Scope.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteRegexPatternSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteRegexPatternSetResponse extends js.Object {}
 
-  object DeleteRegexPatternSetResponse {
-    @inline
-    def apply(
-    ): DeleteRegexPatternSetResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteRegexPatternSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteRuleGroupRequest extends js.Object {
     var Id: EntityId
     var LockToken: LockToken
@@ -1284,39 +947,12 @@ package wafv2 {
     var Scope: Scope
   }
 
-  object DeleteRuleGroupRequest {
-    @inline
-    def apply(
-        Id: EntityId,
-        LockToken: LockToken,
-        Name: EntityName,
-        Scope: Scope
-    ): DeleteRuleGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "Id"        -> Id.asInstanceOf[js.Any],
-        "LockToken" -> LockToken.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any],
-        "Scope"     -> Scope.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteRuleGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteRuleGroupResponse extends js.Object {}
 
-  object DeleteRuleGroupResponse {
-    @inline
-    def apply(
-    ): DeleteRuleGroupResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteRuleGroupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteWebACLRequest extends js.Object {
     var Id: EntityId
     var LockToken: LockToken
@@ -1324,132 +960,43 @@ package wafv2 {
     var Scope: Scope
   }
 
-  object DeleteWebACLRequest {
-    @inline
-    def apply(
-        Id: EntityId,
-        LockToken: LockToken,
-        Name: EntityName,
-        Scope: Scope
-    ): DeleteWebACLRequest = {
-      val __obj = js.Dynamic.literal(
-        "Id"        -> Id.asInstanceOf[js.Any],
-        "LockToken" -> LockToken.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any],
-        "Scope"     -> Scope.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteWebACLRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteWebACLResponse extends js.Object {}
 
-  object DeleteWebACLResponse {
-    @inline
-    def apply(
-    ): DeleteWebACLResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteWebACLResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeManagedRuleGroupRequest extends js.Object {
     var Name: EntityName
     var Scope: Scope
     var VendorName: VendorName
   }
 
-  object DescribeManagedRuleGroupRequest {
-    @inline
-    def apply(
-        Name: EntityName,
-        Scope: Scope,
-        VendorName: VendorName
-    ): DescribeManagedRuleGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name"       -> Name.asInstanceOf[js.Any],
-        "Scope"      -> Scope.asInstanceOf[js.Any],
-        "VendorName" -> VendorName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeManagedRuleGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeManagedRuleGroupResponse extends js.Object {
     var Capacity: js.UndefOr[CapacityUnit]
     var Rules: js.UndefOr[RuleSummaries]
   }
 
-  object DescribeManagedRuleGroupResponse {
-    @inline
-    def apply(
-        Capacity: js.UndefOr[CapacityUnit] = js.undefined,
-        Rules: js.UndefOr[RuleSummaries] = js.undefined
-    ): DescribeManagedRuleGroupResponse = {
-      val __obj = js.Dynamic.literal()
-      Capacity.foreach(__v => __obj.updateDynamic("Capacity")(__v.asInstanceOf[js.Any]))
-      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeManagedRuleGroupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateWebACLRequest extends js.Object {
     var ResourceArn: ResourceArn
   }
 
-  object DisassociateWebACLRequest {
-    @inline
-    def apply(
-        ResourceArn: ResourceArn
-    ): DisassociateWebACLRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisassociateWebACLRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateWebACLResponse extends js.Object {}
-
-  object DisassociateWebACLResponse {
-    @inline
-    def apply(
-    ): DisassociateWebACLResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DisassociateWebACLResponse]
-    }
-  }
 
   /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
     * Specifies a single rule to exclude from the rule group. Excluding a rule overrides its action setting for the rule group in the web ACL, setting it to <code>COUNT</code>. This effectively excludes the rule from acting on web requests.
     */
   @js.native
+  @Factory
   trait ExcludedRule extends js.Object {
     var Name: EntityName
-  }
-
-  object ExcludedRule {
-    @inline
-    def apply(
-        Name: EntityName
-    ): ExcludedRule = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ExcludedRule]
-    }
   }
 
   /**
@@ -1457,6 +1004,7 @@ package wafv2 {
     * The part of a web request that you want AWS WAF to inspect. Include the <code>FieldToMatch</code> types that you want to inspect, with additional specifications as needed, according to the type.
     */
   @js.native
+  @Factory
   trait FieldToMatch extends js.Object {
     var AllQueryArguments: js.UndefOr[AllQueryArguments]
     var Body: js.UndefOr[Body]
@@ -1467,127 +1015,45 @@ package wafv2 {
     var UriPath: js.UndefOr[UriPath]
   }
 
-  object FieldToMatch {
-    @inline
-    def apply(
-        AllQueryArguments: js.UndefOr[AllQueryArguments] = js.undefined,
-        Body: js.UndefOr[Body] = js.undefined,
-        Method: js.UndefOr[Method] = js.undefined,
-        QueryString: js.UndefOr[QueryString] = js.undefined,
-        SingleHeader: js.UndefOr[SingleHeader] = js.undefined,
-        SingleQueryArgument: js.UndefOr[SingleQueryArgument] = js.undefined,
-        UriPath: js.UndefOr[UriPath] = js.undefined
-    ): FieldToMatch = {
-      val __obj = js.Dynamic.literal()
-      AllQueryArguments.foreach(__v => __obj.updateDynamic("AllQueryArguments")(__v.asInstanceOf[js.Any]))
-      Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
-      Method.foreach(__v => __obj.updateDynamic("Method")(__v.asInstanceOf[js.Any]))
-      QueryString.foreach(__v => __obj.updateDynamic("QueryString")(__v.asInstanceOf[js.Any]))
-      SingleHeader.foreach(__v => __obj.updateDynamic("SingleHeader")(__v.asInstanceOf[js.Any]))
-      SingleQueryArgument.foreach(__v => __obj.updateDynamic("SingleQueryArgument")(__v.asInstanceOf[js.Any]))
-      UriPath.foreach(__v => __obj.updateDynamic("UriPath")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[FieldToMatch]
-    }
-  }
-
   /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
     * A rule statement used to identify web requests based on country of origin.
     */
   @js.native
+  @Factory
   trait GeoMatchStatement extends js.Object {
     var CountryCodes: js.UndefOr[CountryCodes]
   }
 
-  object GeoMatchStatement {
-    @inline
-    def apply(
-        CountryCodes: js.UndefOr[CountryCodes] = js.undefined
-    ): GeoMatchStatement = {
-      val __obj = js.Dynamic.literal()
-      CountryCodes.foreach(__v => __obj.updateDynamic("CountryCodes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GeoMatchStatement]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetIPSetRequest extends js.Object {
     var Id: EntityId
     var Name: EntityName
     var Scope: Scope
   }
 
-  object GetIPSetRequest {
-    @inline
-    def apply(
-        Id: EntityId,
-        Name: EntityName,
-        Scope: Scope
-    ): GetIPSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "Id"    -> Id.asInstanceOf[js.Any],
-        "Name"  -> Name.asInstanceOf[js.Any],
-        "Scope" -> Scope.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetIPSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetIPSetResponse extends js.Object {
     var IPSet: js.UndefOr[IPSet]
     var LockToken: js.UndefOr[LockToken]
   }
 
-  object GetIPSetResponse {
-    @inline
-    def apply(
-        IPSet: js.UndefOr[IPSet] = js.undefined,
-        LockToken: js.UndefOr[LockToken] = js.undefined
-    ): GetIPSetResponse = {
-      val __obj = js.Dynamic.literal()
-      IPSet.foreach(__v => __obj.updateDynamic("IPSet")(__v.asInstanceOf[js.Any]))
-      LockToken.foreach(__v => __obj.updateDynamic("LockToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetIPSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetLoggingConfigurationRequest extends js.Object {
     var ResourceArn: ResourceArn
   }
 
-  object GetLoggingConfigurationRequest {
-    @inline
-    def apply(
-        ResourceArn: ResourceArn
-    ): GetLoggingConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetLoggingConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetLoggingConfigurationResponse extends js.Object {
     var LoggingConfiguration: js.UndefOr[LoggingConfiguration]
   }
 
-  object GetLoggingConfigurationResponse {
-    @inline
-    def apply(
-        LoggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined
-    ): GetLoggingConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-      LoggingConfiguration.foreach(__v => __obj.updateDynamic("LoggingConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetLoggingConfigurationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRateBasedStatementManagedKeysRequest extends js.Object {
     var RuleName: EntityName
     var Scope: Scope
@@ -1595,131 +1061,45 @@ package wafv2 {
     var WebACLName: EntityName
   }
 
-  object GetRateBasedStatementManagedKeysRequest {
-    @inline
-    def apply(
-        RuleName: EntityName,
-        Scope: Scope,
-        WebACLId: EntityId,
-        WebACLName: EntityName
-    ): GetRateBasedStatementManagedKeysRequest = {
-      val __obj = js.Dynamic.literal(
-        "RuleName"   -> RuleName.asInstanceOf[js.Any],
-        "Scope"      -> Scope.asInstanceOf[js.Any],
-        "WebACLId"   -> WebACLId.asInstanceOf[js.Any],
-        "WebACLName" -> WebACLName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetRateBasedStatementManagedKeysRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRateBasedStatementManagedKeysResponse extends js.Object {
     var ManagedKeysIPV4: js.UndefOr[RateBasedStatementManagedKeysIPSet]
     var ManagedKeysIPV6: js.UndefOr[RateBasedStatementManagedKeysIPSet]
   }
 
-  object GetRateBasedStatementManagedKeysResponse {
-    @inline
-    def apply(
-        ManagedKeysIPV4: js.UndefOr[RateBasedStatementManagedKeysIPSet] = js.undefined,
-        ManagedKeysIPV6: js.UndefOr[RateBasedStatementManagedKeysIPSet] = js.undefined
-    ): GetRateBasedStatementManagedKeysResponse = {
-      val __obj = js.Dynamic.literal()
-      ManagedKeysIPV4.foreach(__v => __obj.updateDynamic("ManagedKeysIPV4")(__v.asInstanceOf[js.Any]))
-      ManagedKeysIPV6.foreach(__v => __obj.updateDynamic("ManagedKeysIPV6")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRateBasedStatementManagedKeysResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRegexPatternSetRequest extends js.Object {
     var Id: EntityId
     var Name: EntityName
     var Scope: Scope
   }
 
-  object GetRegexPatternSetRequest {
-    @inline
-    def apply(
-        Id: EntityId,
-        Name: EntityName,
-        Scope: Scope
-    ): GetRegexPatternSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "Id"    -> Id.asInstanceOf[js.Any],
-        "Name"  -> Name.asInstanceOf[js.Any],
-        "Scope" -> Scope.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetRegexPatternSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRegexPatternSetResponse extends js.Object {
     var LockToken: js.UndefOr[LockToken]
     var RegexPatternSet: js.UndefOr[RegexPatternSet]
   }
 
-  object GetRegexPatternSetResponse {
-    @inline
-    def apply(
-        LockToken: js.UndefOr[LockToken] = js.undefined,
-        RegexPatternSet: js.UndefOr[RegexPatternSet] = js.undefined
-    ): GetRegexPatternSetResponse = {
-      val __obj = js.Dynamic.literal()
-      LockToken.foreach(__v => __obj.updateDynamic("LockToken")(__v.asInstanceOf[js.Any]))
-      RegexPatternSet.foreach(__v => __obj.updateDynamic("RegexPatternSet")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRegexPatternSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRuleGroupRequest extends js.Object {
     var Id: EntityId
     var Name: EntityName
     var Scope: Scope
   }
 
-  object GetRuleGroupRequest {
-    @inline
-    def apply(
-        Id: EntityId,
-        Name: EntityName,
-        Scope: Scope
-    ): GetRuleGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "Id"    -> Id.asInstanceOf[js.Any],
-        "Name"  -> Name.asInstanceOf[js.Any],
-        "Scope" -> Scope.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetRuleGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRuleGroupResponse extends js.Object {
     var LockToken: js.UndefOr[LockToken]
     var RuleGroup: js.UndefOr[RuleGroup]
   }
 
-  object GetRuleGroupResponse {
-    @inline
-    def apply(
-        LockToken: js.UndefOr[LockToken] = js.undefined,
-        RuleGroup: js.UndefOr[RuleGroup] = js.undefined
-    ): GetRuleGroupResponse = {
-      val __obj = js.Dynamic.literal()
-      LockToken.foreach(__v => __obj.updateDynamic("LockToken")(__v.asInstanceOf[js.Any]))
-      RuleGroup.foreach(__v => __obj.updateDynamic("RuleGroup")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRuleGroupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetSampledRequestsRequest extends js.Object {
     var MaxItems: ListMaxItems
     var RuleMetricName: MetricName
@@ -1728,124 +1108,39 @@ package wafv2 {
     var WebAclArn: ResourceArn
   }
 
-  object GetSampledRequestsRequest {
-    @inline
-    def apply(
-        MaxItems: ListMaxItems,
-        RuleMetricName: MetricName,
-        Scope: Scope,
-        TimeWindow: TimeWindow,
-        WebAclArn: ResourceArn
-    ): GetSampledRequestsRequest = {
-      val __obj = js.Dynamic.literal(
-        "MaxItems"       -> MaxItems.asInstanceOf[js.Any],
-        "RuleMetricName" -> RuleMetricName.asInstanceOf[js.Any],
-        "Scope"          -> Scope.asInstanceOf[js.Any],
-        "TimeWindow"     -> TimeWindow.asInstanceOf[js.Any],
-        "WebAclArn"      -> WebAclArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetSampledRequestsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetSampledRequestsResponse extends js.Object {
     var PopulationSize: js.UndefOr[PopulationSize]
     var SampledRequests: js.UndefOr[SampledHTTPRequests]
     var TimeWindow: js.UndefOr[TimeWindow]
   }
 
-  object GetSampledRequestsResponse {
-    @inline
-    def apply(
-        PopulationSize: js.UndefOr[PopulationSize] = js.undefined,
-        SampledRequests: js.UndefOr[SampledHTTPRequests] = js.undefined,
-        TimeWindow: js.UndefOr[TimeWindow] = js.undefined
-    ): GetSampledRequestsResponse = {
-      val __obj = js.Dynamic.literal()
-      PopulationSize.foreach(__v => __obj.updateDynamic("PopulationSize")(__v.asInstanceOf[js.Any]))
-      SampledRequests.foreach(__v => __obj.updateDynamic("SampledRequests")(__v.asInstanceOf[js.Any]))
-      TimeWindow.foreach(__v => __obj.updateDynamic("TimeWindow")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetSampledRequestsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetWebACLForResourceRequest extends js.Object {
     var ResourceArn: ResourceArn
   }
 
-  object GetWebACLForResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: ResourceArn
-    ): GetWebACLForResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetWebACLForResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetWebACLForResourceResponse extends js.Object {
     var WebACL: js.UndefOr[WebACL]
   }
 
-  object GetWebACLForResourceResponse {
-    @inline
-    def apply(
-        WebACL: js.UndefOr[WebACL] = js.undefined
-    ): GetWebACLForResourceResponse = {
-      val __obj = js.Dynamic.literal()
-      WebACL.foreach(__v => __obj.updateDynamic("WebACL")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetWebACLForResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetWebACLRequest extends js.Object {
     var Id: EntityId
     var Name: EntityName
     var Scope: Scope
   }
 
-  object GetWebACLRequest {
-    @inline
-    def apply(
-        Id: EntityId,
-        Name: EntityName,
-        Scope: Scope
-    ): GetWebACLRequest = {
-      val __obj = js.Dynamic.literal(
-        "Id"    -> Id.asInstanceOf[js.Any],
-        "Name"  -> Name.asInstanceOf[js.Any],
-        "Scope" -> Scope.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetWebACLRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetWebACLResponse extends js.Object {
     var LockToken: js.UndefOr[LockToken]
     var WebACL: js.UndefOr[WebACL]
-  }
-
-  object GetWebACLResponse {
-    @inline
-    def apply(
-        LockToken: js.UndefOr[LockToken] = js.undefined,
-        WebACL: js.UndefOr[WebACL] = js.undefined
-    ): GetWebACLResponse = {
-      val __obj = js.Dynamic.literal()
-      LockToken.foreach(__v => __obj.updateDynamic("LockToken")(__v.asInstanceOf[js.Any]))
-      WebACL.foreach(__v => __obj.updateDynamic("WebACL")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetWebACLResponse]
-    }
   }
 
   /**
@@ -1853,22 +1148,10 @@ package wafv2 {
     * Part of the response from <a>GetSampledRequests</a>. This is a complex type that appears as <code>Headers</code> in the response syntax. <code>HTTPHeader</code> contains the names and values of all of the headers that appear in one of the web requests.
     */
   @js.native
+  @Factory
   trait HTTPHeader extends js.Object {
     var Name: js.UndefOr[HeaderName]
     var Value: js.UndefOr[HeaderValue]
-  }
-
-  object HTTPHeader {
-    @inline
-    def apply(
-        Name: js.UndefOr[HeaderName] = js.undefined,
-        Value: js.UndefOr[HeaderValue] = js.undefined
-    ): HTTPHeader = {
-      val __obj = js.Dynamic.literal()
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HTTPHeader]
-    }
   }
 
   /**
@@ -1876,6 +1159,7 @@ package wafv2 {
     * Part of the response from <a>GetSampledRequests</a>. This is a complex type that appears as <code>Request</code> in the response syntax. <code>HTTPRequest</code> contains information about one of the web requests.
     */
   @js.native
+  @Factory
   trait HTTPRequest extends js.Object {
     var ClientIP: js.UndefOr[IPString]
     var Country: js.UndefOr[Country]
@@ -1883,27 +1167,6 @@ package wafv2 {
     var Headers: js.UndefOr[HTTPHeaders]
     var Method: js.UndefOr[HTTPMethod]
     var URI: js.UndefOr[URIString]
-  }
-
-  object HTTPRequest {
-    @inline
-    def apply(
-        ClientIP: js.UndefOr[IPString] = js.undefined,
-        Country: js.UndefOr[Country] = js.undefined,
-        HTTPVersion: js.UndefOr[HTTPVersion] = js.undefined,
-        Headers: js.UndefOr[HTTPHeaders] = js.undefined,
-        Method: js.UndefOr[HTTPMethod] = js.undefined,
-        URI: js.UndefOr[URIString] = js.undefined
-    ): HTTPRequest = {
-      val __obj = js.Dynamic.literal()
-      ClientIP.foreach(__v => __obj.updateDynamic("ClientIP")(__v.asInstanceOf[js.Any]))
-      Country.foreach(__v => __obj.updateDynamic("Country")(__v.asInstanceOf[js.Any]))
-      HTTPVersion.foreach(__v => __obj.updateDynamic("HTTPVersion")(__v.asInstanceOf[js.Any]))
-      Headers.foreach(__v => __obj.updateDynamic("Headers")(__v.asInstanceOf[js.Any]))
-      Method.foreach(__v => __obj.updateDynamic("Method")(__v.asInstanceOf[js.Any]))
-      URI.foreach(__v => __obj.updateDynamic("URI")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HTTPRequest]
-    }
   }
 
   @js.native
@@ -1921,6 +1184,7 @@ package wafv2 {
     *  AWS WAF assigns an ARN to each <code>IPSet</code> that you create. To use an IP set in a rule, you provide the ARN to the <a>Rule</a> statement <a>IPSetReferenceStatement</a>.
     */
   @js.native
+  @Factory
   trait IPSet extends js.Object {
     var ARN: ResourceArn
     var Addresses: IPAddresses
@@ -1930,50 +1194,15 @@ package wafv2 {
     var Description: js.UndefOr[EntityDescription]
   }
 
-  object IPSet {
-    @inline
-    def apply(
-        ARN: ResourceArn,
-        Addresses: IPAddresses,
-        IPAddressVersion: IPAddressVersion,
-        Id: EntityId,
-        Name: EntityName,
-        Description: js.UndefOr[EntityDescription] = js.undefined
-    ): IPSet = {
-      val __obj = js.Dynamic.literal(
-        "ARN"              -> ARN.asInstanceOf[js.Any],
-        "Addresses"        -> Addresses.asInstanceOf[js.Any],
-        "IPAddressVersion" -> IPAddressVersion.asInstanceOf[js.Any],
-        "Id"               -> Id.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[IPSet]
-    }
-  }
-
   /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
     * A rule statement used to detect web requests coming from particular IP addresses or address ranges. To use this, create an <a>IPSet</a> that specifies the addresses you want to detect, then use the ARN of that set in this statement. To create an IP set, see <a>CreateIPSet</a>.
     *  Each IP set rule statement references an IP set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, AWS WAF automatically updates all rules that reference it.
     */
   @js.native
+  @Factory
   trait IPSetReferenceStatement extends js.Object {
     var ARN: ResourceArn
-  }
-
-  object IPSetReferenceStatement {
-    @inline
-    def apply(
-        ARN: ResourceArn
-    ): IPSetReferenceStatement = {
-      val __obj = js.Dynamic.literal(
-        "ARN" -> ARN.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[IPSetReferenceStatement]
-    }
   }
 
   /**
@@ -1981,6 +1210,7 @@ package wafv2 {
     * High-level information about an <a>IPSet</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the <a>IPSetReferenceStatement</a> to use the address set in a <a>Rule</a>.
     */
   @js.native
+  @Factory
   trait IPSetSummary extends js.Object {
     var ARN: js.UndefOr[ResourceArn]
     var Description: js.UndefOr[EntityDescription]
@@ -1989,359 +1219,122 @@ package wafv2 {
     var Name: js.UndefOr[EntityName]
   }
 
-  object IPSetSummary {
-    @inline
-    def apply(
-        ARN: js.UndefOr[ResourceArn] = js.undefined,
-        Description: js.UndefOr[EntityDescription] = js.undefined,
-        Id: js.UndefOr[EntityId] = js.undefined,
-        LockToken: js.UndefOr[LockToken] = js.undefined,
-        Name: js.UndefOr[EntityName] = js.undefined
-    ): IPSetSummary = {
-      val __obj = js.Dynamic.literal()
-      ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      LockToken.foreach(__v => __obj.updateDynamic("LockToken")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[IPSetSummary]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAvailableManagedRuleGroupsRequest extends js.Object {
     var Scope: Scope
     var Limit: js.UndefOr[PaginationLimit]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object ListAvailableManagedRuleGroupsRequest {
-    @inline
-    def apply(
-        Scope: Scope,
-        Limit: js.UndefOr[PaginationLimit] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListAvailableManagedRuleGroupsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Scope" -> Scope.asInstanceOf[js.Any]
-      )
-
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAvailableManagedRuleGroupsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAvailableManagedRuleGroupsResponse extends js.Object {
     var ManagedRuleGroups: js.UndefOr[ManagedRuleGroupSummaries]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object ListAvailableManagedRuleGroupsResponse {
-    @inline
-    def apply(
-        ManagedRuleGroups: js.UndefOr[ManagedRuleGroupSummaries] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListAvailableManagedRuleGroupsResponse = {
-      val __obj = js.Dynamic.literal()
-      ManagedRuleGroups.foreach(__v => __obj.updateDynamic("ManagedRuleGroups")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAvailableManagedRuleGroupsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListIPSetsRequest extends js.Object {
     var Scope: Scope
     var Limit: js.UndefOr[PaginationLimit]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object ListIPSetsRequest {
-    @inline
-    def apply(
-        Scope: Scope,
-        Limit: js.UndefOr[PaginationLimit] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListIPSetsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Scope" -> Scope.asInstanceOf[js.Any]
-      )
-
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListIPSetsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListIPSetsResponse extends js.Object {
     var IPSets: js.UndefOr[IPSetSummaries]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object ListIPSetsResponse {
-    @inline
-    def apply(
-        IPSets: js.UndefOr[IPSetSummaries] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListIPSetsResponse = {
-      val __obj = js.Dynamic.literal()
-      IPSets.foreach(__v => __obj.updateDynamic("IPSets")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListIPSetsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListLoggingConfigurationsRequest extends js.Object {
     var Limit: js.UndefOr[PaginationLimit]
     var NextMarker: js.UndefOr[NextMarker]
     var Scope: js.UndefOr[Scope]
   }
 
-  object ListLoggingConfigurationsRequest {
-    @inline
-    def apply(
-        Limit: js.UndefOr[PaginationLimit] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined,
-        Scope: js.UndefOr[Scope] = js.undefined
-    ): ListLoggingConfigurationsRequest = {
-      val __obj = js.Dynamic.literal()
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      Scope.foreach(__v => __obj.updateDynamic("Scope")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListLoggingConfigurationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListLoggingConfigurationsResponse extends js.Object {
     var LoggingConfigurations: js.UndefOr[LoggingConfigurations]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object ListLoggingConfigurationsResponse {
-    @inline
-    def apply(
-        LoggingConfigurations: js.UndefOr[LoggingConfigurations] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListLoggingConfigurationsResponse = {
-      val __obj = js.Dynamic.literal()
-      LoggingConfigurations.foreach(__v => __obj.updateDynamic("LoggingConfigurations")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListLoggingConfigurationsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListRegexPatternSetsRequest extends js.Object {
     var Scope: Scope
     var Limit: js.UndefOr[PaginationLimit]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object ListRegexPatternSetsRequest {
-    @inline
-    def apply(
-        Scope: Scope,
-        Limit: js.UndefOr[PaginationLimit] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListRegexPatternSetsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Scope" -> Scope.asInstanceOf[js.Any]
-      )
-
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRegexPatternSetsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListRegexPatternSetsResponse extends js.Object {
     var NextMarker: js.UndefOr[NextMarker]
     var RegexPatternSets: js.UndefOr[RegexPatternSetSummaries]
   }
 
-  object ListRegexPatternSetsResponse {
-    @inline
-    def apply(
-        NextMarker: js.UndefOr[NextMarker] = js.undefined,
-        RegexPatternSets: js.UndefOr[RegexPatternSetSummaries] = js.undefined
-    ): ListRegexPatternSetsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      RegexPatternSets.foreach(__v => __obj.updateDynamic("RegexPatternSets")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRegexPatternSetsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListResourcesForWebACLRequest extends js.Object {
     var WebACLArn: ResourceArn
     var ResourceType: js.UndefOr[ResourceType]
   }
 
-  object ListResourcesForWebACLRequest {
-    @inline
-    def apply(
-        WebACLArn: ResourceArn,
-        ResourceType: js.UndefOr[ResourceType] = js.undefined
-    ): ListResourcesForWebACLRequest = {
-      val __obj = js.Dynamic.literal(
-        "WebACLArn" -> WebACLArn.asInstanceOf[js.Any]
-      )
-
-      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListResourcesForWebACLRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListResourcesForWebACLResponse extends js.Object {
     var ResourceArns: js.UndefOr[ResourceArns]
   }
 
-  object ListResourcesForWebACLResponse {
-    @inline
-    def apply(
-        ResourceArns: js.UndefOr[ResourceArns] = js.undefined
-    ): ListResourcesForWebACLResponse = {
-      val __obj = js.Dynamic.literal()
-      ResourceArns.foreach(__v => __obj.updateDynamic("ResourceArns")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListResourcesForWebACLResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListRuleGroupsRequest extends js.Object {
     var Scope: Scope
     var Limit: js.UndefOr[PaginationLimit]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object ListRuleGroupsRequest {
-    @inline
-    def apply(
-        Scope: Scope,
-        Limit: js.UndefOr[PaginationLimit] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListRuleGroupsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Scope" -> Scope.asInstanceOf[js.Any]
-      )
-
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRuleGroupsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListRuleGroupsResponse extends js.Object {
     var NextMarker: js.UndefOr[NextMarker]
     var RuleGroups: js.UndefOr[RuleGroupSummaries]
   }
 
-  object ListRuleGroupsResponse {
-    @inline
-    def apply(
-        NextMarker: js.UndefOr[NextMarker] = js.undefined,
-        RuleGroups: js.UndefOr[RuleGroupSummaries] = js.undefined
-    ): ListRuleGroupsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      RuleGroups.foreach(__v => __obj.updateDynamic("RuleGroups")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRuleGroupsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceRequest extends js.Object {
     var ResourceARN: ResourceArn
     var Limit: js.UndefOr[PaginationLimit]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object ListTagsForResourceRequest {
-    @inline
-    def apply(
-        ResourceARN: ResourceArn,
-        Limit: js.UndefOr[PaginationLimit] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListTagsForResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
-      )
-
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceResponse extends js.Object {
     var NextMarker: js.UndefOr[NextMarker]
     var TagInfoForResource: js.UndefOr[TagInfoForResource]
   }
 
-  object ListTagsForResourceResponse {
-    @inline
-    def apply(
-        NextMarker: js.UndefOr[NextMarker] = js.undefined,
-        TagInfoForResource: js.UndefOr[TagInfoForResource] = js.undefined
-    ): ListTagsForResourceResponse = {
-      val __obj = js.Dynamic.literal()
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      TagInfoForResource.foreach(__v => __obj.updateDynamic("TagInfoForResource")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListWebACLsRequest extends js.Object {
     var Scope: Scope
     var Limit: js.UndefOr[PaginationLimit]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object ListWebACLsRequest {
-    @inline
-    def apply(
-        Scope: Scope,
-        Limit: js.UndefOr[PaginationLimit] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListWebACLsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Scope" -> Scope.asInstanceOf[js.Any]
-      )
-
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListWebACLsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListWebACLsResponse extends js.Object {
     var NextMarker: js.UndefOr[NextMarker]
     var WebACLs: js.UndefOr[WebACLSummaries]
-  }
-
-  object ListWebACLsResponse {
-    @inline
-    def apply(
-        NextMarker: js.UndefOr[NextMarker] = js.undefined,
-        WebACLs: js.UndefOr[WebACLSummaries] = js.undefined
-    ): ListWebACLsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      WebACLs.foreach(__v => __obj.updateDynamic("WebACLs")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListWebACLsResponse]
-    }
   }
 
   /**
@@ -2349,27 +1342,11 @@ package wafv2 {
     * Defines an association between Amazon Kinesis Data Firehose destinations and a web ACL resource, for logging from AWS WAF. As part of the association, you can specify parts of the standard logging fields to keep out of the logs.
     */
   @js.native
+  @Factory
   trait LoggingConfiguration extends js.Object {
     var LogDestinationConfigs: LogDestinationConfigs
     var ResourceArn: ResourceArn
     var RedactedFields: js.UndefOr[RedactedFields]
-  }
-
-  object LoggingConfiguration {
-    @inline
-    def apply(
-        LogDestinationConfigs: LogDestinationConfigs,
-        ResourceArn: ResourceArn,
-        RedactedFields: js.UndefOr[RedactedFields] = js.undefined
-    ): LoggingConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "LogDestinationConfigs" -> LogDestinationConfigs.asInstanceOf[js.Any],
-        "ResourceArn"           -> ResourceArn.asInstanceOf[js.Any]
-      )
-
-      RedactedFields.foreach(__v => __obj.updateDynamic("RedactedFields")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LoggingConfiguration]
-    }
   }
 
   /**
@@ -2378,27 +1355,11 @@ package wafv2 {
     *  You can't nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
     */
   @js.native
+  @Factory
   trait ManagedRuleGroupStatement extends js.Object {
     var Name: EntityName
     var VendorName: VendorName
     var ExcludedRules: js.UndefOr[ExcludedRules]
-  }
-
-  object ManagedRuleGroupStatement {
-    @inline
-    def apply(
-        Name: EntityName,
-        VendorName: VendorName,
-        ExcludedRules: js.UndefOr[ExcludedRules] = js.undefined
-    ): ManagedRuleGroupStatement = {
-      val __obj = js.Dynamic.literal(
-        "Name"       -> Name.asInstanceOf[js.Any],
-        "VendorName" -> VendorName.asInstanceOf[js.Any]
-      )
-
-      ExcludedRules.foreach(__v => __obj.updateDynamic("ExcludedRules")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ManagedRuleGroupStatement]
-    }
   }
 
   /**
@@ -2406,25 +1367,11 @@ package wafv2 {
     * High-level information about a managed rule group, returned by <a>ListAvailableManagedRuleGroups</a>. This provides information like the name and vendor name, that you provide when you add a <a>ManagedRuleGroupStatement</a> to a web ACL. Managed rule groups include AWS Managed Rules rule groups, which are free of charge to AWS WAF customers, and AWS Marketplace managed rule groups, which you can subscribe to through AWS Marketplace.
     */
   @js.native
+  @Factory
   trait ManagedRuleGroupSummary extends js.Object {
     var Description: js.UndefOr[EntityDescription]
     var Name: js.UndefOr[EntityName]
     var VendorName: js.UndefOr[VendorName]
-  }
-
-  object ManagedRuleGroupSummary {
-    @inline
-    def apply(
-        Description: js.UndefOr[EntityDescription] = js.undefined,
-        Name: js.UndefOr[EntityName] = js.undefined,
-        VendorName: js.UndefOr[VendorName] = js.undefined
-    ): ManagedRuleGroupSummary = {
-      val __obj = js.Dynamic.literal()
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      VendorName.foreach(__v => __obj.updateDynamic("VendorName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ManagedRuleGroupSummary]
-    }
   }
 
   /**
@@ -2433,17 +1380,8 @@ package wafv2 {
     *  This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
     */
   @js.native
+  @Factory
   trait Method extends js.Object {}
-
-  object Method {
-    @inline
-    def apply(
-    ): Method = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[Method]
-    }
-  }
 
   /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
@@ -2451,38 +1389,17 @@ package wafv2 {
     *  This is used only in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
     */
   @js.native
+  @Factory
   trait NoneAction extends js.Object {}
-
-  object NoneAction {
-    @inline
-    def apply(
-    ): NoneAction = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[NoneAction]
-    }
-  }
 
   /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
     * A logical rule statement used to negate the results of another rule statement. You provide one <a>Statement</a> within the <code>NotStatement</code>.
     */
   @js.native
+  @Factory
   trait NotStatement extends js.Object {
     var Statement: Statement
-  }
-
-  object NotStatement {
-    @inline
-    def apply(
-        Statement: Statement
-    ): NotStatement = {
-      val __obj = js.Dynamic.literal(
-        "Statement" -> Statement.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[NotStatement]
-    }
   }
 
   /**
@@ -2490,21 +1407,9 @@ package wafv2 {
     * A logical rule statement used to combine other rule statements with OR logic. You provide more than one <a>Statement</a> within the <code>OrStatement</code>.
     */
   @js.native
+  @Factory
   trait OrStatement extends js.Object {
     var Statements: Statements
-  }
-
-  object OrStatement {
-    @inline
-    def apply(
-        Statements: Statements
-    ): OrStatement = {
-      val __obj = js.Dynamic.literal(
-        "Statements" -> Statements.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[OrStatement]
-    }
   }
 
   /**
@@ -2512,22 +1417,10 @@ package wafv2 {
     * The action to use to override the rule's <code>Action</code> setting. You can use no override action, in which case the rule action is in effect, or count, in which case, if the rule matches a web request, it only counts the match.
     */
   @js.native
+  @Factory
   trait OverrideAction extends js.Object {
     var Count: js.UndefOr[CountAction]
     var None: js.UndefOr[NoneAction]
-  }
-
-  object OverrideAction {
-    @inline
-    def apply(
-        Count: js.UndefOr[CountAction] = js.undefined,
-        None: js.UndefOr[NoneAction] = js.undefined
-    ): OverrideAction = {
-      val __obj = js.Dynamic.literal()
-      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
-      None.foreach(__v => __obj.updateDynamic("None")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[OverrideAction]
-    }
   }
 
   @js.native
@@ -2543,37 +1436,15 @@ package wafv2 {
   }
 
   @js.native
+  @Factory
   trait PutLoggingConfigurationRequest extends js.Object {
     var LoggingConfiguration: LoggingConfiguration
   }
 
-  object PutLoggingConfigurationRequest {
-    @inline
-    def apply(
-        LoggingConfiguration: LoggingConfiguration
-    ): PutLoggingConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "LoggingConfiguration" -> LoggingConfiguration.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutLoggingConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutLoggingConfigurationResponse extends js.Object {
     var LoggingConfiguration: js.UndefOr[LoggingConfiguration]
-  }
-
-  object PutLoggingConfigurationResponse {
-    @inline
-    def apply(
-        LoggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined
-    ): PutLoggingConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-      LoggingConfiguration.foreach(__v => __obj.updateDynamic("LoggingConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutLoggingConfigurationResponse]
-    }
   }
 
   /**
@@ -2582,17 +1453,8 @@ package wafv2 {
     *  This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
     */
   @js.native
+  @Factory
   trait QueryString extends js.Object {}
-
-  object QueryString {
-    @inline
-    def apply(
-    ): QueryString = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[QueryString]
-    }
-  }
 
   /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
@@ -2605,27 +1467,11 @@ package wafv2 {
     *  You cannot nest a <code>RateBasedStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
     */
   @js.native
+  @Factory
   trait RateBasedStatement extends js.Object {
     var AggregateKeyType: RateBasedStatementAggregateKeyType
     var Limit: RateLimit
     var ScopeDownStatement: js.UndefOr[Statement]
-  }
-
-  object RateBasedStatement {
-    @inline
-    def apply(
-        AggregateKeyType: RateBasedStatementAggregateKeyType,
-        Limit: RateLimit,
-        ScopeDownStatement: js.UndefOr[Statement] = js.undefined
-    ): RateBasedStatement = {
-      val __obj = js.Dynamic.literal(
-        "AggregateKeyType" -> AggregateKeyType.asInstanceOf[js.Any],
-        "Limit"            -> Limit.asInstanceOf[js.Any]
-      )
-
-      ScopeDownStatement.foreach(__v => __obj.updateDynamic("ScopeDownStatement")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RateBasedStatement]
-    }
   }
 
   @js.native
@@ -2641,22 +1487,10 @@ package wafv2 {
     * The set of IP addresses that are currently blocked for a rate-based statement.
     */
   @js.native
+  @Factory
   trait RateBasedStatementManagedKeysIPSet extends js.Object {
     var Addresses: js.UndefOr[IPAddresses]
     var IPAddressVersion: js.UndefOr[IPAddressVersion]
-  }
-
-  object RateBasedStatementManagedKeysIPSet {
-    @inline
-    def apply(
-        Addresses: js.UndefOr[IPAddresses] = js.undefined,
-        IPAddressVersion: js.UndefOr[IPAddressVersion] = js.undefined
-    ): RateBasedStatementManagedKeysIPSet = {
-      val __obj = js.Dynamic.literal()
-      Addresses.foreach(__v => __obj.updateDynamic("Addresses")(__v.asInstanceOf[js.Any]))
-      IPAddressVersion.foreach(__v => __obj.updateDynamic("IPAddressVersion")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RateBasedStatementManagedKeysIPSet]
-    }
   }
 
   /**
@@ -2664,19 +1498,9 @@ package wafv2 {
     * A single regular expression. This is used in a <a>RegexPatternSet</a>.
     */
   @js.native
+  @Factory
   trait Regex extends js.Object {
     var RegexString: js.UndefOr[RegexPatternString]
-  }
-
-  object Regex {
-    @inline
-    def apply(
-        RegexString: js.UndefOr[RegexPatternString] = js.undefined
-    ): Regex = {
-      val __obj = js.Dynamic.literal()
-      RegexString.foreach(__v => __obj.updateDynamic("RegexString")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Regex]
-    }
   }
 
   /**
@@ -2685,6 +1509,7 @@ package wafv2 {
     *  AWS WAF assigns an ARN to each <code>RegexPatternSet</code> that you create. To use a set in a rule, you provide the ARN to the <a>Rule</a> statement <a>RegexPatternSetReferenceStatement</a>.
     */
   @js.native
+  @Factory
   trait RegexPatternSet extends js.Object {
     var ARN: js.UndefOr[ResourceArn]
     var Description: js.UndefOr[EntityDescription]
@@ -2693,52 +1518,17 @@ package wafv2 {
     var RegularExpressionList: js.UndefOr[RegularExpressionList]
   }
 
-  object RegexPatternSet {
-    @inline
-    def apply(
-        ARN: js.UndefOr[ResourceArn] = js.undefined,
-        Description: js.UndefOr[EntityDescription] = js.undefined,
-        Id: js.UndefOr[EntityId] = js.undefined,
-        Name: js.UndefOr[EntityName] = js.undefined,
-        RegularExpressionList: js.UndefOr[RegularExpressionList] = js.undefined
-    ): RegexPatternSet = {
-      val __obj = js.Dynamic.literal()
-      ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      RegularExpressionList.foreach(__v => __obj.updateDynamic("RegularExpressionList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RegexPatternSet]
-    }
-  }
-
   /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
     * A rule statement used to search web request components for matches with regular expressions. To use this, create a <a>RegexPatternSet</a> that specifies the expressions that you want to detect, then use the ARN of that set in this statement. A web request matches the pattern set rule statement if the request component matches any of the patterns in the set. To create a regex pattern set, see <a>CreateRegexPatternSet</a>.
     *  Each regex pattern set rule statement references a regex pattern set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, AWS WAF automatically updates all rules that reference it.
     */
   @js.native
+  @Factory
   trait RegexPatternSetReferenceStatement extends js.Object {
     var ARN: ResourceArn
     var FieldToMatch: FieldToMatch
     var TextTransformations: TextTransformations
-  }
-
-  object RegexPatternSetReferenceStatement {
-    @inline
-    def apply(
-        ARN: ResourceArn,
-        FieldToMatch: FieldToMatch,
-        TextTransformations: TextTransformations
-    ): RegexPatternSetReferenceStatement = {
-      val __obj = js.Dynamic.literal(
-        "ARN"                 -> ARN.asInstanceOf[js.Any],
-        "FieldToMatch"        -> FieldToMatch.asInstanceOf[js.Any],
-        "TextTransformations" -> TextTransformations.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RegexPatternSetReferenceStatement]
-    }
   }
 
   /**
@@ -2746,31 +1536,13 @@ package wafv2 {
     * High-level information about a <a>RegexPatternSet</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <a>RegexPatternSetReferenceStatement</a> to use the pattern set in a <a>Rule</a>.
     */
   @js.native
+  @Factory
   trait RegexPatternSetSummary extends js.Object {
     var ARN: js.UndefOr[ResourceArn]
     var Description: js.UndefOr[EntityDescription]
     var Id: js.UndefOr[EntityId]
     var LockToken: js.UndefOr[LockToken]
     var Name: js.UndefOr[EntityName]
-  }
-
-  object RegexPatternSetSummary {
-    @inline
-    def apply(
-        ARN: js.UndefOr[ResourceArn] = js.undefined,
-        Description: js.UndefOr[EntityDescription] = js.undefined,
-        Id: js.UndefOr[EntityId] = js.undefined,
-        LockToken: js.UndefOr[LockToken] = js.undefined,
-        Name: js.UndefOr[EntityName] = js.undefined
-    ): RegexPatternSetSummary = {
-      val __obj = js.Dynamic.literal()
-      ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      LockToken.foreach(__v => __obj.updateDynamic("LockToken")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RegexPatternSetSummary]
-    }
   }
 
   @js.native
@@ -2787,6 +1559,7 @@ package wafv2 {
     * A single rule, which you can use in a <a>WebACL</a> or <a>RuleGroup</a> to identify web requests that you want to allow, block, or count. Each rule includes one top-level <a>Statement</a> that AWS WAF uses to identify matching web requests, and parameters that govern how AWS WAF handles them.
     */
   @js.native
+  @Factory
   trait Rule extends js.Object {
     var Name: EntityName
     var Priority: RulePriority
@@ -2796,53 +1569,16 @@ package wafv2 {
     var OverrideAction: js.UndefOr[OverrideAction]
   }
 
-  object Rule {
-    @inline
-    def apply(
-        Name: EntityName,
-        Priority: RulePriority,
-        Statement: Statement,
-        VisibilityConfig: VisibilityConfig,
-        Action: js.UndefOr[RuleAction] = js.undefined,
-        OverrideAction: js.UndefOr[OverrideAction] = js.undefined
-    ): Rule = {
-      val __obj = js.Dynamic.literal(
-        "Name"             -> Name.asInstanceOf[js.Any],
-        "Priority"         -> Priority.asInstanceOf[js.Any],
-        "Statement"        -> Statement.asInstanceOf[js.Any],
-        "VisibilityConfig" -> VisibilityConfig.asInstanceOf[js.Any]
-      )
-
-      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
-      OverrideAction.foreach(__v => __obj.updateDynamic("OverrideAction")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Rule]
-    }
-  }
-
   /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
     * The action that AWS WAF should take on a web request when it matches a rule's statement. Settings at the web ACL level can override the rule action setting.
     */
   @js.native
+  @Factory
   trait RuleAction extends js.Object {
     var Allow: js.UndefOr[AllowAction]
     var Block: js.UndefOr[BlockAction]
     var Count: js.UndefOr[CountAction]
-  }
-
-  object RuleAction {
-    @inline
-    def apply(
-        Allow: js.UndefOr[AllowAction] = js.undefined,
-        Block: js.UndefOr[BlockAction] = js.undefined,
-        Count: js.UndefOr[CountAction] = js.undefined
-    ): RuleAction = {
-      val __obj = js.Dynamic.literal()
-      Allow.foreach(__v => __obj.updateDynamic("Allow")(__v.asInstanceOf[js.Any]))
-      Block.foreach(__v => __obj.updateDynamic("Block")(__v.asInstanceOf[js.Any]))
-      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RuleAction]
-    }
   }
 
   /**
@@ -2850,6 +1586,7 @@ package wafv2 {
     * A rule group defines a collection of rules to inspect and control web requests that you can use in a <a>WebACL</a>. When you create a rule group, you define an immutable capacity limit. If you update a rule group, you must stay within the capacity. This allows others to reuse the rule group with confidence in its capacity requirements.
     */
   @js.native
+  @Factory
   trait RuleGroup extends js.Object {
     var ARN: ResourceArn
     var Capacity: CapacityUnit
@@ -2860,55 +1597,16 @@ package wafv2 {
     var Rules: js.UndefOr[Rules]
   }
 
-  object RuleGroup {
-    @inline
-    def apply(
-        ARN: ResourceArn,
-        Capacity: CapacityUnit,
-        Id: EntityId,
-        Name: EntityName,
-        VisibilityConfig: VisibilityConfig,
-        Description: js.UndefOr[EntityDescription] = js.undefined,
-        Rules: js.UndefOr[Rules] = js.undefined
-    ): RuleGroup = {
-      val __obj = js.Dynamic.literal(
-        "ARN"              -> ARN.asInstanceOf[js.Any],
-        "Capacity"         -> Capacity.asInstanceOf[js.Any],
-        "Id"               -> Id.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any],
-        "VisibilityConfig" -> VisibilityConfig.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RuleGroup]
-    }
-  }
-
   /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
     * A rule statement used to run the rules that are defined in a <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.
     *  You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
     */
   @js.native
+  @Factory
   trait RuleGroupReferenceStatement extends js.Object {
     var ARN: ResourceArn
     var ExcludedRules: js.UndefOr[ExcludedRules]
-  }
-
-  object RuleGroupReferenceStatement {
-    @inline
-    def apply(
-        ARN: ResourceArn,
-        ExcludedRules: js.UndefOr[ExcludedRules] = js.undefined
-    ): RuleGroupReferenceStatement = {
-      val __obj = js.Dynamic.literal(
-        "ARN" -> ARN.asInstanceOf[js.Any]
-      )
-
-      ExcludedRules.foreach(__v => __obj.updateDynamic("ExcludedRules")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RuleGroupReferenceStatement]
-    }
   }
 
   /**
@@ -2916,6 +1614,7 @@ package wafv2 {
     * High-level information about a <a>RuleGroup</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <a>RuleGroupReferenceStatement</a> to use the rule group in a <a>Rule</a>.
     */
   @js.native
+  @Factory
   trait RuleGroupSummary extends js.Object {
     var ARN: js.UndefOr[ResourceArn]
     var Description: js.UndefOr[EntityDescription]
@@ -2924,46 +1623,15 @@ package wafv2 {
     var Name: js.UndefOr[EntityName]
   }
 
-  object RuleGroupSummary {
-    @inline
-    def apply(
-        ARN: js.UndefOr[ResourceArn] = js.undefined,
-        Description: js.UndefOr[EntityDescription] = js.undefined,
-        Id: js.UndefOr[EntityId] = js.undefined,
-        LockToken: js.UndefOr[LockToken] = js.undefined,
-        Name: js.UndefOr[EntityName] = js.undefined
-    ): RuleGroupSummary = {
-      val __obj = js.Dynamic.literal()
-      ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      LockToken.foreach(__v => __obj.updateDynamic("LockToken")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RuleGroupSummary]
-    }
-  }
-
   /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
     * High-level information about a <a>Rule</a>, returned by operations like <a>DescribeManagedRuleGroup</a>. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <a>RuleGroupReferenceStatement</a> to use the rule group in a <a>Rule</a>.
     */
   @js.native
+  @Factory
   trait RuleSummary extends js.Object {
     var Action: js.UndefOr[RuleAction]
     var Name: js.UndefOr[EntityName]
-  }
-
-  object RuleSummary {
-    @inline
-    def apply(
-        Action: js.UndefOr[RuleAction] = js.undefined,
-        Name: js.UndefOr[EntityName] = js.undefined
-    ): RuleSummary = {
-      val __obj = js.Dynamic.literal()
-      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RuleSummary]
-    }
   }
 
   /**
@@ -2971,33 +1639,13 @@ package wafv2 {
     * Represents a single sampled web request. The response from <a>GetSampledRequests</a> includes a <code>SampledHTTPRequests</code> complex type that appears as <code>SampledRequests</code> in the response syntax. <code>SampledHTTPRequests</code> contains an array of <code>SampledHTTPRequest</code> objects.
     */
   @js.native
+  @Factory
   trait SampledHTTPRequest extends js.Object {
     var Request: HTTPRequest
     var Weight: SampleWeight
     var Action: js.UndefOr[Action]
     var RuleNameWithinRuleGroup: js.UndefOr[EntityName]
     var Timestamp: js.UndefOr[Timestamp]
-  }
-
-  object SampledHTTPRequest {
-    @inline
-    def apply(
-        Request: HTTPRequest,
-        Weight: SampleWeight,
-        Action: js.UndefOr[Action] = js.undefined,
-        RuleNameWithinRuleGroup: js.UndefOr[EntityName] = js.undefined,
-        Timestamp: js.UndefOr[Timestamp] = js.undefined
-    ): SampledHTTPRequest = {
-      val __obj = js.Dynamic.literal(
-        "Request" -> Request.asInstanceOf[js.Any],
-        "Weight"  -> Weight.asInstanceOf[js.Any]
-      )
-
-      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
-      RuleNameWithinRuleGroup.foreach(__v => __obj.updateDynamic("RuleNameWithinRuleGroup")(__v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SampledHTTPRequest]
-    }
   }
 
   @js.native
@@ -3015,21 +1663,9 @@ package wafv2 {
     *  This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
     */
   @js.native
+  @Factory
   trait SingleHeader extends js.Object {
     var Name: FieldToMatchData
-  }
-
-  object SingleHeader {
-    @inline
-    def apply(
-        Name: FieldToMatchData
-    ): SingleHeader = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SingleHeader]
-    }
   }
 
   /**
@@ -3037,21 +1673,9 @@ package wafv2 {
     * One query argument in a web request, identified by name, for example <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive.
     */
   @js.native
+  @Factory
   trait SingleQueryArgument extends js.Object {
     var Name: FieldToMatchData
-  }
-
-  object SingleQueryArgument {
-    @inline
-    def apply(
-        Name: FieldToMatchData
-    ): SingleQueryArgument = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SingleQueryArgument]
-    }
   }
 
   /**
@@ -3061,6 +1685,7 @@ package wafv2 {
     *  If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.
     */
   @js.native
+  @Factory
   trait SizeConstraintStatement extends js.Object {
     var ComparisonOperator: ComparisonOperator
     var FieldToMatch: FieldToMatch
@@ -3068,48 +1693,15 @@ package wafv2 {
     var TextTransformations: TextTransformations
   }
 
-  object SizeConstraintStatement {
-    @inline
-    def apply(
-        ComparisonOperator: ComparisonOperator,
-        FieldToMatch: FieldToMatch,
-        Size: Size,
-        TextTransformations: TextTransformations
-    ): SizeConstraintStatement = {
-      val __obj = js.Dynamic.literal(
-        "ComparisonOperator"  -> ComparisonOperator.asInstanceOf[js.Any],
-        "FieldToMatch"        -> FieldToMatch.asInstanceOf[js.Any],
-        "Size"                -> Size.asInstanceOf[js.Any],
-        "TextTransformations" -> TextTransformations.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SizeConstraintStatement]
-    }
-  }
-
   /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
     * Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your database. To allow or block web requests that appear to contain malicious SQL code, create one or more SQL injection match conditions. An SQL injection match condition identifies the part of web requests, such as the URI or the query string, that you want AWS WAF to inspect. Later in the process, when you create a web ACL, you specify whether to allow or block requests that appear to contain malicious SQL code.
     */
   @js.native
+  @Factory
   trait SqliMatchStatement extends js.Object {
     var FieldToMatch: FieldToMatch
     var TextTransformations: TextTransformations
-  }
-
-  object SqliMatchStatement {
-    @inline
-    def apply(
-        FieldToMatch: FieldToMatch,
-        TextTransformations: TextTransformations
-    ): SqliMatchStatement = {
-      val __obj = js.Dynamic.literal(
-        "FieldToMatch"        -> FieldToMatch.asInstanceOf[js.Any],
-        "TextTransformations" -> TextTransformations.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SqliMatchStatement]
-    }
   }
 
   /**
@@ -3117,6 +1709,7 @@ package wafv2 {
     * The processing guidance for a <a>Rule</a>, used by AWS WAF to determine whether a web request matches the rule.
     */
   @js.native
+  @Factory
   trait Statement extends js.Object {
     var AndStatement: js.UndefOr[AndStatement]
     var ByteMatchStatement: js.UndefOr[ByteMatchStatement]
@@ -3133,70 +1726,15 @@ package wafv2 {
     var XssMatchStatement: js.UndefOr[XssMatchStatement]
   }
 
-  object Statement {
-    @inline
-    def apply(
-        AndStatement: js.UndefOr[AndStatement] = js.undefined,
-        ByteMatchStatement: js.UndefOr[ByteMatchStatement] = js.undefined,
-        GeoMatchStatement: js.UndefOr[GeoMatchStatement] = js.undefined,
-        IPSetReferenceStatement: js.UndefOr[IPSetReferenceStatement] = js.undefined,
-        ManagedRuleGroupStatement: js.UndefOr[ManagedRuleGroupStatement] = js.undefined,
-        NotStatement: js.UndefOr[NotStatement] = js.undefined,
-        OrStatement: js.UndefOr[OrStatement] = js.undefined,
-        RateBasedStatement: js.UndefOr[RateBasedStatement] = js.undefined,
-        RegexPatternSetReferenceStatement: js.UndefOr[RegexPatternSetReferenceStatement] = js.undefined,
-        RuleGroupReferenceStatement: js.UndefOr[RuleGroupReferenceStatement] = js.undefined,
-        SizeConstraintStatement: js.UndefOr[SizeConstraintStatement] = js.undefined,
-        SqliMatchStatement: js.UndefOr[SqliMatchStatement] = js.undefined,
-        XssMatchStatement: js.UndefOr[XssMatchStatement] = js.undefined
-    ): Statement = {
-      val __obj = js.Dynamic.literal()
-      AndStatement.foreach(__v => __obj.updateDynamic("AndStatement")(__v.asInstanceOf[js.Any]))
-      ByteMatchStatement.foreach(__v => __obj.updateDynamic("ByteMatchStatement")(__v.asInstanceOf[js.Any]))
-      GeoMatchStatement.foreach(__v => __obj.updateDynamic("GeoMatchStatement")(__v.asInstanceOf[js.Any]))
-      IPSetReferenceStatement.foreach(__v => __obj.updateDynamic("IPSetReferenceStatement")(__v.asInstanceOf[js.Any]))
-      ManagedRuleGroupStatement.foreach(__v =>
-        __obj.updateDynamic("ManagedRuleGroupStatement")(__v.asInstanceOf[js.Any])
-      )
-      NotStatement.foreach(__v => __obj.updateDynamic("NotStatement")(__v.asInstanceOf[js.Any]))
-      OrStatement.foreach(__v => __obj.updateDynamic("OrStatement")(__v.asInstanceOf[js.Any]))
-      RateBasedStatement.foreach(__v => __obj.updateDynamic("RateBasedStatement")(__v.asInstanceOf[js.Any]))
-      RegexPatternSetReferenceStatement.foreach(__v =>
-        __obj.updateDynamic("RegexPatternSetReferenceStatement")(__v.asInstanceOf[js.Any])
-      )
-      RuleGroupReferenceStatement.foreach(__v =>
-        __obj.updateDynamic("RuleGroupReferenceStatement")(__v.asInstanceOf[js.Any])
-      )
-      SizeConstraintStatement.foreach(__v => __obj.updateDynamic("SizeConstraintStatement")(__v.asInstanceOf[js.Any]))
-      SqliMatchStatement.foreach(__v => __obj.updateDynamic("SqliMatchStatement")(__v.asInstanceOf[js.Any]))
-      XssMatchStatement.foreach(__v => __obj.updateDynamic("XssMatchStatement")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Statement]
-    }
-  }
-
   /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
     * A collection of key:value pairs associated with an AWS resource. The key:value pair can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each AWS resource.
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var Key: TagKey
     var Value: TagValue
-  }
-
-  object Tag {
-    @inline
-    def apply(
-        Key: TagKey,
-        Value: TagValue
-    ): Tag = {
-      val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Tag]
-    }
   }
 
   /**
@@ -3204,81 +1742,32 @@ package wafv2 {
     * The collection of tagging definitions for an AWS resource.
     */
   @js.native
+  @Factory
   trait TagInfoForResource extends js.Object {
     var ResourceARN: js.UndefOr[ResourceArn]
     var TagList: js.UndefOr[TagList]
   }
 
-  object TagInfoForResource {
-    @inline
-    def apply(
-        ResourceARN: js.UndefOr[ResourceArn] = js.undefined,
-        TagList: js.UndefOr[TagList] = js.undefined
-    ): TagInfoForResource = {
-      val __obj = js.Dynamic.literal()
-      ResourceARN.foreach(__v => __obj.updateDynamic("ResourceARN")(__v.asInstanceOf[js.Any]))
-      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TagInfoForResource]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceRequest extends js.Object {
     var ResourceARN: ResourceArn
     var Tags: TagList
   }
 
-  object TagResourceRequest {
-    @inline
-    def apply(
-        ResourceARN: ResourceArn,
-        Tags: TagList
-    ): TagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceResponse extends js.Object {}
-
-  object TagResourceResponse {
-    @inline
-    def apply(
-    ): TagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[TagResourceResponse]
-    }
-  }
 
   /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
     * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.
     */
   @js.native
+  @Factory
   trait TextTransformation extends js.Object {
     var Priority: TextTransformationPriority
     var Type: TextTransformationType
-  }
-
-  object TextTransformation {
-    @inline
-    def apply(
-        Priority: TextTransformationPriority,
-        Type: TextTransformationType
-    ): TextTransformation = {
-      val __obj = js.Dynamic.literal(
-        "Priority" -> Priority.asInstanceOf[js.Any],
-        "Type"     -> Type.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TextTransformation]
-    }
   }
 
   @js.native
@@ -3301,61 +1790,25 @@ package wafv2 {
     *  In a <a>GetSampledRequests</a> response, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which AWS WAF actually returned a sample of web requests. AWS WAF gets the specified number of requests from among the first 5,000 requests that your AWS resource receives during the specified time period. If your resource receives more than 5,000 requests during that period, AWS WAF stops sampling after the 5,000th request. In that case, <code>EndTime</code> is the time that AWS WAF received the 5,000th request.
     */
   @js.native
+  @Factory
   trait TimeWindow extends js.Object {
     var EndTime: Timestamp
     var StartTime: Timestamp
   }
 
-  object TimeWindow {
-    @inline
-    def apply(
-        EndTime: Timestamp,
-        StartTime: Timestamp
-    ): TimeWindow = {
-      val __obj = js.Dynamic.literal(
-        "EndTime"   -> EndTime.asInstanceOf[js.Any],
-        "StartTime" -> StartTime.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TimeWindow]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceRequest extends js.Object {
     var ResourceARN: ResourceArn
     var TagKeys: TagKeyList
   }
 
-  object UntagResourceRequest {
-    @inline
-    def apply(
-        ResourceARN: ResourceArn,
-        TagKeys: TagKeyList
-    ): UntagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceResponse extends js.Object {}
 
-  object UntagResourceResponse {
-    @inline
-    def apply(
-    ): UntagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UntagResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateIPSetRequest extends js.Object {
     var Addresses: IPAddresses
     var Id: EntityId
@@ -3365,46 +1818,14 @@ package wafv2 {
     var Description: js.UndefOr[EntityDescription]
   }
 
-  object UpdateIPSetRequest {
-    @inline
-    def apply(
-        Addresses: IPAddresses,
-        Id: EntityId,
-        LockToken: LockToken,
-        Name: EntityName,
-        Scope: Scope,
-        Description: js.UndefOr[EntityDescription] = js.undefined
-    ): UpdateIPSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "Addresses" -> Addresses.asInstanceOf[js.Any],
-        "Id"        -> Id.asInstanceOf[js.Any],
-        "LockToken" -> LockToken.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any],
-        "Scope"     -> Scope.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateIPSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateIPSetResponse extends js.Object {
     var NextLockToken: js.UndefOr[LockToken]
   }
 
-  object UpdateIPSetResponse {
-    @inline
-    def apply(
-        NextLockToken: js.UndefOr[LockToken] = js.undefined
-    ): UpdateIPSetResponse = {
-      val __obj = js.Dynamic.literal()
-      NextLockToken.foreach(__v => __obj.updateDynamic("NextLockToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateIPSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateRegexPatternSetRequest extends js.Object {
     var Id: EntityId
     var LockToken: LockToken
@@ -3414,46 +1835,14 @@ package wafv2 {
     var Description: js.UndefOr[EntityDescription]
   }
 
-  object UpdateRegexPatternSetRequest {
-    @inline
-    def apply(
-        Id: EntityId,
-        LockToken: LockToken,
-        Name: EntityName,
-        RegularExpressionList: RegularExpressionList,
-        Scope: Scope,
-        Description: js.UndefOr[EntityDescription] = js.undefined
-    ): UpdateRegexPatternSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "Id"                    -> Id.asInstanceOf[js.Any],
-        "LockToken"             -> LockToken.asInstanceOf[js.Any],
-        "Name"                  -> Name.asInstanceOf[js.Any],
-        "RegularExpressionList" -> RegularExpressionList.asInstanceOf[js.Any],
-        "Scope"                 -> Scope.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateRegexPatternSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateRegexPatternSetResponse extends js.Object {
     var NextLockToken: js.UndefOr[LockToken]
   }
 
-  object UpdateRegexPatternSetResponse {
-    @inline
-    def apply(
-        NextLockToken: js.UndefOr[LockToken] = js.undefined
-    ): UpdateRegexPatternSetResponse = {
-      val __obj = js.Dynamic.literal()
-      NextLockToken.foreach(__v => __obj.updateDynamic("NextLockToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateRegexPatternSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateRuleGroupRequest extends js.Object {
     var Id: EntityId
     var LockToken: LockToken
@@ -3464,48 +1853,14 @@ package wafv2 {
     var Rules: js.UndefOr[Rules]
   }
 
-  object UpdateRuleGroupRequest {
-    @inline
-    def apply(
-        Id: EntityId,
-        LockToken: LockToken,
-        Name: EntityName,
-        Scope: Scope,
-        VisibilityConfig: VisibilityConfig,
-        Description: js.UndefOr[EntityDescription] = js.undefined,
-        Rules: js.UndefOr[Rules] = js.undefined
-    ): UpdateRuleGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "Id"               -> Id.asInstanceOf[js.Any],
-        "LockToken"        -> LockToken.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any],
-        "Scope"            -> Scope.asInstanceOf[js.Any],
-        "VisibilityConfig" -> VisibilityConfig.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateRuleGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateRuleGroupResponse extends js.Object {
     var NextLockToken: js.UndefOr[LockToken]
   }
 
-  object UpdateRuleGroupResponse {
-    @inline
-    def apply(
-        NextLockToken: js.UndefOr[LockToken] = js.undefined
-    ): UpdateRuleGroupResponse = {
-      val __obj = js.Dynamic.literal()
-      NextLockToken.foreach(__v => __obj.updateDynamic("NextLockToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateRuleGroupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateWebACLRequest extends js.Object {
     var DefaultAction: DefaultAction
     var Id: EntityId
@@ -3517,47 +1872,10 @@ package wafv2 {
     var Rules: js.UndefOr[Rules]
   }
 
-  object UpdateWebACLRequest {
-    @inline
-    def apply(
-        DefaultAction: DefaultAction,
-        Id: EntityId,
-        LockToken: LockToken,
-        Name: EntityName,
-        Scope: Scope,
-        VisibilityConfig: VisibilityConfig,
-        Description: js.UndefOr[EntityDescription] = js.undefined,
-        Rules: js.UndefOr[Rules] = js.undefined
-    ): UpdateWebACLRequest = {
-      val __obj = js.Dynamic.literal(
-        "DefaultAction"    -> DefaultAction.asInstanceOf[js.Any],
-        "Id"               -> Id.asInstanceOf[js.Any],
-        "LockToken"        -> LockToken.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any],
-        "Scope"            -> Scope.asInstanceOf[js.Any],
-        "VisibilityConfig" -> VisibilityConfig.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateWebACLRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateWebACLResponse extends js.Object {
     var NextLockToken: js.UndefOr[LockToken]
-  }
-
-  object UpdateWebACLResponse {
-    @inline
-    def apply(
-        NextLockToken: js.UndefOr[LockToken] = js.undefined
-    ): UpdateWebACLResponse = {
-      val __obj = js.Dynamic.literal()
-      NextLockToken.foreach(__v => __obj.updateDynamic("NextLockToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateWebACLResponse]
-    }
   }
 
   /**
@@ -3566,44 +1884,19 @@ package wafv2 {
     *  This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
     */
   @js.native
+  @Factory
   trait UriPath extends js.Object {}
-
-  object UriPath {
-    @inline
-    def apply(
-    ): UriPath = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UriPath]
-    }
-  }
 
   /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
     * Defines and enables Amazon CloudWatch metrics and web request sample collection.
     */
   @js.native
+  @Factory
   trait VisibilityConfig extends js.Object {
     var CloudWatchMetricsEnabled: Boolean
     var MetricName: MetricName
     var SampledRequestsEnabled: Boolean
-  }
-
-  object VisibilityConfig {
-    @inline
-    def apply(
-        CloudWatchMetricsEnabled: Boolean,
-        MetricName: MetricName,
-        SampledRequestsEnabled: Boolean
-    ): VisibilityConfig = {
-      val __obj = js.Dynamic.literal(
-        "CloudWatchMetricsEnabled" -> CloudWatchMetricsEnabled.asInstanceOf[js.Any],
-        "MetricName"               -> MetricName.asInstanceOf[js.Any],
-        "SampledRequestsEnabled"   -> SampledRequestsEnabled.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[VisibilityConfig]
-    }
   }
 
   /**
@@ -3611,6 +1904,7 @@ package wafv2 {
     * A Web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined (allow, block, or count) for requests that match the statement of the rule. In the Web ACL, you assign a default action to take (allow, block) for any request that does not match any of the rules. The rules in a Web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a Web ACL with one or more AWS resources to protect. The resources can be Amazon CloudFront, an Amazon API Gateway API, or an Application Load Balancer.
     */
   @js.native
+  @Factory
   trait WebACL extends js.Object {
     var ARN: ResourceArn
     var DefaultAction: DefaultAction
@@ -3622,38 +1916,12 @@ package wafv2 {
     var Rules: js.UndefOr[Rules]
   }
 
-  object WebACL {
-    @inline
-    def apply(
-        ARN: ResourceArn,
-        DefaultAction: DefaultAction,
-        Id: EntityId,
-        Name: EntityName,
-        VisibilityConfig: VisibilityConfig,
-        Capacity: js.UndefOr[ConsumedCapacity] = js.undefined,
-        Description: js.UndefOr[EntityDescription] = js.undefined,
-        Rules: js.UndefOr[Rules] = js.undefined
-    ): WebACL = {
-      val __obj = js.Dynamic.literal(
-        "ARN"              -> ARN.asInstanceOf[js.Any],
-        "DefaultAction"    -> DefaultAction.asInstanceOf[js.Any],
-        "Id"               -> Id.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any],
-        "VisibilityConfig" -> VisibilityConfig.asInstanceOf[js.Any]
-      )
-
-      Capacity.foreach(__v => __obj.updateDynamic("Capacity")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[WebACL]
-    }
-  }
-
   /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
     * High-level information about a <a>WebACL</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <a>AssociateWebACL</a>.
     */
   @js.native
+  @Factory
   trait WebACLSummary extends js.Object {
     var ARN: js.UndefOr[ResourceArn]
     var Description: js.UndefOr[EntityDescription]
@@ -3662,47 +1930,14 @@ package wafv2 {
     var Name: js.UndefOr[EntityName]
   }
 
-  object WebACLSummary {
-    @inline
-    def apply(
-        ARN: js.UndefOr[ResourceArn] = js.undefined,
-        Description: js.UndefOr[EntityDescription] = js.undefined,
-        Id: js.UndefOr[EntityId] = js.undefined,
-        LockToken: js.UndefOr[LockToken] = js.undefined,
-        Name: js.UndefOr[EntityName] = js.undefined
-    ): WebACLSummary = {
-      val __obj = js.Dynamic.literal()
-      ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      LockToken.foreach(__v => __obj.updateDynamic("LockToken")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[WebACLSummary]
-    }
-  }
-
   /**
     * '''Note:'''This is the latest version of ```AWS WAF```, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
     * A rule statement that defines a cross-site scripting (XSS) match search for AWS WAF to apply to web requests. XSS attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate web browsers. The XSS match statement provides the location in requests that you want AWS WAF to search and text transformations to use on the search area before AWS WAF searches for character sequences that are likely to be malicious strings.
     */
   @js.native
+  @Factory
   trait XssMatchStatement extends js.Object {
     var FieldToMatch: FieldToMatch
     var TextTransformations: TextTransformations
-  }
-
-  object XssMatchStatement {
-    @inline
-    def apply(
-        FieldToMatch: FieldToMatch,
-        TextTransformations: TextTransformations
-    ): XssMatchStatement = {
-      val __obj = js.Dynamic.literal(
-        "FieldToMatch"        -> FieldToMatch.asInstanceOf[js.Any],
-        "TextTransformations" -> TextTransformations.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[XssMatchStatement]
-    }
   }
 }

@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object servicediscovery {
   type Arn                     = String
@@ -123,46 +124,21 @@ package servicediscovery {
   }
 
   @js.native
+  @Factory
   trait CreateHttpNamespaceRequest extends js.Object {
     var Name: NamespaceName
     var CreatorRequestId: js.UndefOr[ResourceId]
     var Description: js.UndefOr[ResourceDescription]
   }
 
-  object CreateHttpNamespaceRequest {
-    @inline
-    def apply(
-        Name: NamespaceName,
-        CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
-        Description: js.UndefOr[ResourceDescription] = js.undefined
-    ): CreateHttpNamespaceRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateHttpNamespaceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateHttpNamespaceResponse extends js.Object {
     var OperationId: js.UndefOr[OperationId]
   }
 
-  object CreateHttpNamespaceResponse {
-    @inline
-    def apply(
-        OperationId: js.UndefOr[OperationId] = js.undefined
-    ): CreateHttpNamespaceResponse = {
-      val __obj = js.Dynamic.literal()
-      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateHttpNamespaceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreatePrivateDnsNamespaceRequest extends js.Object {
     var Name: NamespaceName
     var Vpc: ResourceId
@@ -170,82 +146,28 @@ package servicediscovery {
     var Description: js.UndefOr[ResourceDescription]
   }
 
-  object CreatePrivateDnsNamespaceRequest {
-    @inline
-    def apply(
-        Name: NamespaceName,
-        Vpc: ResourceId,
-        CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
-        Description: js.UndefOr[ResourceDescription] = js.undefined
-    ): CreatePrivateDnsNamespaceRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any],
-        "Vpc"  -> Vpc.asInstanceOf[js.Any]
-      )
-
-      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreatePrivateDnsNamespaceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreatePrivateDnsNamespaceResponse extends js.Object {
     var OperationId: js.UndefOr[OperationId]
   }
 
-  object CreatePrivateDnsNamespaceResponse {
-    @inline
-    def apply(
-        OperationId: js.UndefOr[OperationId] = js.undefined
-    ): CreatePrivateDnsNamespaceResponse = {
-      val __obj = js.Dynamic.literal()
-      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreatePrivateDnsNamespaceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreatePublicDnsNamespaceRequest extends js.Object {
     var Name: NamespaceName
     var CreatorRequestId: js.UndefOr[ResourceId]
     var Description: js.UndefOr[ResourceDescription]
   }
 
-  object CreatePublicDnsNamespaceRequest {
-    @inline
-    def apply(
-        Name: NamespaceName,
-        CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
-        Description: js.UndefOr[ResourceDescription] = js.undefined
-    ): CreatePublicDnsNamespaceRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreatePublicDnsNamespaceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreatePublicDnsNamespaceResponse extends js.Object {
     var OperationId: js.UndefOr[OperationId]
   }
 
-  object CreatePublicDnsNamespaceResponse {
-    @inline
-    def apply(
-        OperationId: js.UndefOr[OperationId] = js.undefined
-    ): CreatePublicDnsNamespaceResponse = {
-      val __obj = js.Dynamic.literal()
-      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreatePublicDnsNamespaceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateServiceRequest extends js.Object {
     var Name: ServiceName
     var CreatorRequestId: js.UndefOr[ResourceId]
@@ -256,45 +178,10 @@ package servicediscovery {
     var NamespaceId: js.UndefOr[ResourceId]
   }
 
-  object CreateServiceRequest {
-    @inline
-    def apply(
-        Name: ServiceName,
-        CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
-        Description: js.UndefOr[ResourceDescription] = js.undefined,
-        DnsConfig: js.UndefOr[DnsConfig] = js.undefined,
-        HealthCheckConfig: js.UndefOr[HealthCheckConfig] = js.undefined,
-        HealthCheckCustomConfig: js.UndefOr[HealthCheckCustomConfig] = js.undefined,
-        NamespaceId: js.UndefOr[ResourceId] = js.undefined
-    ): CreateServiceRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      DnsConfig.foreach(__v => __obj.updateDynamic("DnsConfig")(__v.asInstanceOf[js.Any]))
-      HealthCheckConfig.foreach(__v => __obj.updateDynamic("HealthCheckConfig")(__v.asInstanceOf[js.Any]))
-      HealthCheckCustomConfig.foreach(__v => __obj.updateDynamic("HealthCheckCustomConfig")(__v.asInstanceOf[js.Any]))
-      NamespaceId.foreach(__v => __obj.updateDynamic("NamespaceId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateServiceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateServiceResponse extends js.Object {
     var Service: js.UndefOr[Service]
-  }
-
-  object CreateServiceResponse {
-    @inline
-    def apply(
-        Service: js.UndefOr[Service] = js.undefined
-    ): CreateServiceResponse = {
-      val __obj = js.Dynamic.literal()
-      Service.foreach(__v => __obj.updateDynamic("Service")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateServiceResponse]
-    }
   }
 
   @js.native
@@ -307,108 +194,42 @@ package servicediscovery {
   }
 
   @js.native
+  @Factory
   trait DeleteNamespaceRequest extends js.Object {
     var Id: ResourceId
   }
 
-  object DeleteNamespaceRequest {
-    @inline
-    def apply(
-        Id: ResourceId
-    ): DeleteNamespaceRequest = {
-      val __obj = js.Dynamic.literal(
-        "Id" -> Id.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteNamespaceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteNamespaceResponse extends js.Object {
     var OperationId: js.UndefOr[OperationId]
   }
 
-  object DeleteNamespaceResponse {
-    @inline
-    def apply(
-        OperationId: js.UndefOr[OperationId] = js.undefined
-    ): DeleteNamespaceResponse = {
-      val __obj = js.Dynamic.literal()
-      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteNamespaceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteServiceRequest extends js.Object {
     var Id: ResourceId
   }
 
-  object DeleteServiceRequest {
-    @inline
-    def apply(
-        Id: ResourceId
-    ): DeleteServiceRequest = {
-      val __obj = js.Dynamic.literal(
-        "Id" -> Id.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteServiceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteServiceResponse extends js.Object {}
 
-  object DeleteServiceResponse {
-    @inline
-    def apply(
-    ): DeleteServiceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteServiceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeregisterInstanceRequest extends js.Object {
     var InstanceId: ResourceId
     var ServiceId: ResourceId
   }
 
-  object DeregisterInstanceRequest {
-    @inline
-    def apply(
-        InstanceId: ResourceId,
-        ServiceId: ResourceId
-    ): DeregisterInstanceRequest = {
-      val __obj = js.Dynamic.literal(
-        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
-        "ServiceId"  -> ServiceId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeregisterInstanceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeregisterInstanceResponse extends js.Object {
     var OperationId: js.UndefOr[OperationId]
   }
 
-  object DeregisterInstanceResponse {
-    @inline
-    def apply(
-        OperationId: js.UndefOr[OperationId] = js.undefined
-    ): DeregisterInstanceResponse = {
-      val __obj = js.Dynamic.literal()
-      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeregisterInstanceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DiscoverInstancesRequest extends js.Object {
     var NamespaceName: NamespaceName
     var ServiceName: ServiceName
@@ -417,132 +238,49 @@ package servicediscovery {
     var QueryParameters: js.UndefOr[Attributes]
   }
 
-  object DiscoverInstancesRequest {
-    @inline
-    def apply(
-        NamespaceName: NamespaceName,
-        ServiceName: ServiceName,
-        HealthStatus: js.UndefOr[HealthStatusFilter] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        QueryParameters: js.UndefOr[Attributes] = js.undefined
-    ): DiscoverInstancesRequest = {
-      val __obj = js.Dynamic.literal(
-        "NamespaceName" -> NamespaceName.asInstanceOf[js.Any],
-        "ServiceName"   -> ServiceName.asInstanceOf[js.Any]
-      )
-
-      HealthStatus.foreach(__v => __obj.updateDynamic("HealthStatus")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      QueryParameters.foreach(__v => __obj.updateDynamic("QueryParameters")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DiscoverInstancesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DiscoverInstancesResponse extends js.Object {
     var Instances: js.UndefOr[HttpInstanceSummaryList]
-  }
-
-  object DiscoverInstancesResponse {
-    @inline
-    def apply(
-        Instances: js.UndefOr[HttpInstanceSummaryList] = js.undefined
-    ): DiscoverInstancesResponse = {
-      val __obj = js.Dynamic.literal()
-      Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DiscoverInstancesResponse]
-    }
   }
 
   /**
     * A complex type that contains information about the Amazon Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.
     */
   @js.native
+  @Factory
   trait DnsConfig extends js.Object {
     var DnsRecords: DnsRecordList
     var NamespaceId: js.UndefOr[ResourceId]
     var RoutingPolicy: js.UndefOr[RoutingPolicy]
   }
 
-  object DnsConfig {
-    @inline
-    def apply(
-        DnsRecords: DnsRecordList,
-        NamespaceId: js.UndefOr[ResourceId] = js.undefined,
-        RoutingPolicy: js.UndefOr[RoutingPolicy] = js.undefined
-    ): DnsConfig = {
-      val __obj = js.Dynamic.literal(
-        "DnsRecords" -> DnsRecords.asInstanceOf[js.Any]
-      )
-
-      NamespaceId.foreach(__v => __obj.updateDynamic("NamespaceId")(__v.asInstanceOf[js.Any]))
-      RoutingPolicy.foreach(__v => __obj.updateDynamic("RoutingPolicy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DnsConfig]
-    }
-  }
-
   /**
     * A complex type that contains information about changes to the Route 53 DNS records that AWS Cloud Map creates when you register an instance.
     */
   @js.native
+  @Factory
   trait DnsConfigChange extends js.Object {
     var DnsRecords: DnsRecordList
-  }
-
-  object DnsConfigChange {
-    @inline
-    def apply(
-        DnsRecords: DnsRecordList
-    ): DnsConfigChange = {
-      val __obj = js.Dynamic.literal(
-        "DnsRecords" -> DnsRecords.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DnsConfigChange]
-    }
   }
 
   /**
     * A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a namespace.
     */
   @js.native
+  @Factory
   trait DnsProperties extends js.Object {
     var HostedZoneId: js.UndefOr[ResourceId]
-  }
-
-  object DnsProperties {
-    @inline
-    def apply(
-        HostedZoneId: js.UndefOr[ResourceId] = js.undefined
-    ): DnsProperties = {
-      val __obj = js.Dynamic.literal()
-      HostedZoneId.foreach(__v => __obj.updateDynamic("HostedZoneId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DnsProperties]
-    }
   }
 
   /**
     * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.
     */
   @js.native
+  @Factory
   trait DnsRecord extends js.Object {
     var TTL: RecordTTL
     var Type: RecordType
-  }
-
-  object DnsRecord {
-    @inline
-    def apply(
-        TTL: RecordTTL,
-        Type: RecordType
-    ): DnsRecord = {
-      val __obj = js.Dynamic.literal(
-        "TTL"  -> TTL.asInstanceOf[js.Any],
-        "Type" -> Type.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DnsRecord]
-    }
   }
 
   @js.native
@@ -556,43 +294,20 @@ package servicediscovery {
   }
 
   @js.native
+  @Factory
   trait GetInstanceRequest extends js.Object {
     var InstanceId: ResourceId
     var ServiceId: ResourceId
   }
 
-  object GetInstanceRequest {
-    @inline
-    def apply(
-        InstanceId: ResourceId,
-        ServiceId: ResourceId
-    ): GetInstanceRequest = {
-      val __obj = js.Dynamic.literal(
-        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
-        "ServiceId"  -> ServiceId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetInstanceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetInstanceResponse extends js.Object {
     var Instance: js.UndefOr[Instance]
   }
 
-  object GetInstanceResponse {
-    @inline
-    def apply(
-        Instance: js.UndefOr[Instance] = js.undefined
-    ): GetInstanceResponse = {
-      val __obj = js.Dynamic.literal()
-      Instance.foreach(__v => __obj.updateDynamic("Instance")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetInstanceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetInstancesHealthStatusRequest extends js.Object {
     var ServiceId: ResourceId
     var Instances: js.UndefOr[InstanceIdList]
@@ -600,144 +315,47 @@ package servicediscovery {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object GetInstancesHealthStatusRequest {
-    @inline
-    def apply(
-        ServiceId: ResourceId,
-        Instances: js.UndefOr[InstanceIdList] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): GetInstancesHealthStatusRequest = {
-      val __obj = js.Dynamic.literal(
-        "ServiceId" -> ServiceId.asInstanceOf[js.Any]
-      )
-
-      Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetInstancesHealthStatusRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetInstancesHealthStatusResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var Status: js.UndefOr[InstanceHealthStatusMap]
   }
 
-  object GetInstancesHealthStatusResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        Status: js.UndefOr[InstanceHealthStatusMap] = js.undefined
-    ): GetInstancesHealthStatusResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetInstancesHealthStatusResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetNamespaceRequest extends js.Object {
     var Id: ResourceId
   }
 
-  object GetNamespaceRequest {
-    @inline
-    def apply(
-        Id: ResourceId
-    ): GetNamespaceRequest = {
-      val __obj = js.Dynamic.literal(
-        "Id" -> Id.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetNamespaceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetNamespaceResponse extends js.Object {
     var Namespace: js.UndefOr[Namespace]
   }
 
-  object GetNamespaceResponse {
-    @inline
-    def apply(
-        Namespace: js.UndefOr[Namespace] = js.undefined
-    ): GetNamespaceResponse = {
-      val __obj = js.Dynamic.literal()
-      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetNamespaceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetOperationRequest extends js.Object {
     var OperationId: ResourceId
   }
 
-  object GetOperationRequest {
-    @inline
-    def apply(
-        OperationId: ResourceId
-    ): GetOperationRequest = {
-      val __obj = js.Dynamic.literal(
-        "OperationId" -> OperationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetOperationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetOperationResponse extends js.Object {
     var Operation: js.UndefOr[Operation]
   }
 
-  object GetOperationResponse {
-    @inline
-    def apply(
-        Operation: js.UndefOr[Operation] = js.undefined
-    ): GetOperationResponse = {
-      val __obj = js.Dynamic.literal()
-      Operation.foreach(__v => __obj.updateDynamic("Operation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetOperationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetServiceRequest extends js.Object {
     var Id: ResourceId
   }
 
-  object GetServiceRequest {
-    @inline
-    def apply(
-        Id: ResourceId
-    ): GetServiceRequest = {
-      val __obj = js.Dynamic.literal(
-        "Id" -> Id.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetServiceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetServiceResponse extends js.Object {
     var Service: js.UndefOr[Service]
-  }
-
-  object GetServiceResponse {
-    @inline
-    def apply(
-        Service: js.UndefOr[Service] = js.undefined
-    ): GetServiceResponse = {
-      val __obj = js.Dynamic.literal()
-      Service.foreach(__v => __obj.updateDynamic("Service")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetServiceResponse]
-    }
   }
 
   /**
@@ -761,27 +379,11 @@ package servicediscovery {
     *  Health checks are basic Route 53 health checks that monitor an AWS endpoint. For information about pricing for health checks, see [[http://aws.amazon.com/route53/pricing/|Amazon Route 53 Pricing]].
     */
   @js.native
+  @Factory
   trait HealthCheckConfig extends js.Object {
     var Type: HealthCheckType
     var FailureThreshold: js.UndefOr[FailureThreshold]
     var ResourcePath: js.UndefOr[ResourcePath]
-  }
-
-  object HealthCheckConfig {
-    @inline
-    def apply(
-        Type: HealthCheckType,
-        FailureThreshold: js.UndefOr[FailureThreshold] = js.undefined,
-        ResourcePath: js.UndefOr[ResourcePath] = js.undefined
-    ): HealthCheckConfig = {
-      val __obj = js.Dynamic.literal(
-        "Type" -> Type.asInstanceOf[js.Any]
-      )
-
-      FailureThreshold.foreach(__v => __obj.updateDynamic("FailureThreshold")(__v.asInstanceOf[js.Any]))
-      ResourcePath.foreach(__v => __obj.updateDynamic("ResourcePath")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HealthCheckConfig]
-    }
   }
 
   /**
@@ -804,19 +406,9 @@ package servicediscovery {
     *  </ol> Note the following about configuring custom health checks.
     */
   @js.native
+  @Factory
   trait HealthCheckCustomConfig extends js.Object {
     var FailureThreshold: js.UndefOr[FailureThreshold]
-  }
-
-  object HealthCheckCustomConfig {
-    @inline
-    def apply(
-        FailureThreshold: js.UndefOr[FailureThreshold] = js.undefined
-    ): HealthCheckCustomConfig = {
-      val __obj = js.Dynamic.literal()
-      FailureThreshold.foreach(__v => __obj.updateDynamic("FailureThreshold")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HealthCheckCustomConfig]
-    }
   }
 
   @js.native
@@ -853,6 +445,7 @@ package servicediscovery {
     * In a response to a <a>DiscoverInstance</a> request, <code>HttpInstanceSummary</code> contains information about one instance that matches the values that you specified in the request.
     */
   @js.native
+  @Factory
   trait HttpInstanceSummary extends js.Object {
     var Attributes: js.UndefOr[Attributes]
     var HealthStatus: js.UndefOr[HealthStatus]
@@ -861,263 +454,101 @@ package servicediscovery {
     var ServiceName: js.UndefOr[ServiceName]
   }
 
-  object HttpInstanceSummary {
-    @inline
-    def apply(
-        Attributes: js.UndefOr[Attributes] = js.undefined,
-        HealthStatus: js.UndefOr[HealthStatus] = js.undefined,
-        InstanceId: js.UndefOr[ResourceId] = js.undefined,
-        NamespaceName: js.UndefOr[NamespaceName] = js.undefined,
-        ServiceName: js.UndefOr[ServiceName] = js.undefined
-    ): HttpInstanceSummary = {
-      val __obj = js.Dynamic.literal()
-      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
-      HealthStatus.foreach(__v => __obj.updateDynamic("HealthStatus")(__v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
-      NamespaceName.foreach(__v => __obj.updateDynamic("NamespaceName")(__v.asInstanceOf[js.Any]))
-      ServiceName.foreach(__v => __obj.updateDynamic("ServiceName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HttpInstanceSummary]
-    }
-  }
-
   /**
     * A complex type that contains the name of an HTTP namespace.
     */
   @js.native
+  @Factory
   trait HttpProperties extends js.Object {
     var HttpName: js.UndefOr[NamespaceName]
-  }
-
-  object HttpProperties {
-    @inline
-    def apply(
-        HttpName: js.UndefOr[NamespaceName] = js.undefined
-    ): HttpProperties = {
-      val __obj = js.Dynamic.literal()
-      HttpName.foreach(__v => __obj.updateDynamic("HttpName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HttpProperties]
-    }
   }
 
   /**
     * A complex type that contains information about an instance that AWS Cloud Map creates when you submit a <code>RegisterInstance</code> request.
     */
   @js.native
+  @Factory
   trait Instance extends js.Object {
     var Id: ResourceId
     var Attributes: js.UndefOr[Attributes]
     var CreatorRequestId: js.UndefOr[ResourceId]
   }
 
-  object Instance {
-    @inline
-    def apply(
-        Id: ResourceId,
-        Attributes: js.UndefOr[Attributes] = js.undefined,
-        CreatorRequestId: js.UndefOr[ResourceId] = js.undefined
-    ): Instance = {
-      val __obj = js.Dynamic.literal(
-        "Id" -> Id.asInstanceOf[js.Any]
-      )
-
-      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
-      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Instance]
-    }
-  }
-
   /**
     * A complex type that contains information about the instances that you registered by using a specified service.
     */
   @js.native
+  @Factory
   trait InstanceSummary extends js.Object {
     var Attributes: js.UndefOr[Attributes]
     var Id: js.UndefOr[ResourceId]
   }
 
-  object InstanceSummary {
-    @inline
-    def apply(
-        Attributes: js.UndefOr[Attributes] = js.undefined,
-        Id: js.UndefOr[ResourceId] = js.undefined
-    ): InstanceSummary = {
-      val __obj = js.Dynamic.literal()
-      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceSummary]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListInstancesRequest extends js.Object {
     var ServiceId: ResourceId
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListInstancesRequest {
-    @inline
-    def apply(
-        ServiceId: ResourceId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListInstancesRequest = {
-      val __obj = js.Dynamic.literal(
-        "ServiceId" -> ServiceId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListInstancesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListInstancesResponse extends js.Object {
     var Instances: js.UndefOr[InstanceSummaryList]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListInstancesResponse {
-    @inline
-    def apply(
-        Instances: js.UndefOr[InstanceSummaryList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListInstancesResponse = {
-      val __obj = js.Dynamic.literal()
-      Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListInstancesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListNamespacesRequest extends js.Object {
     var Filters: js.UndefOr[NamespaceFilters]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListNamespacesRequest {
-    @inline
-    def apply(
-        Filters: js.UndefOr[NamespaceFilters] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListNamespacesRequest = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListNamespacesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListNamespacesResponse extends js.Object {
     var Namespaces: js.UndefOr[NamespaceSummariesList]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListNamespacesResponse {
-    @inline
-    def apply(
-        Namespaces: js.UndefOr[NamespaceSummariesList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListNamespacesResponse = {
-      val __obj = js.Dynamic.literal()
-      Namespaces.foreach(__v => __obj.updateDynamic("Namespaces")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListNamespacesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListOperationsRequest extends js.Object {
     var Filters: js.UndefOr[OperationFilters]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListOperationsRequest {
-    @inline
-    def apply(
-        Filters: js.UndefOr[OperationFilters] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListOperationsRequest = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListOperationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListOperationsResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var Operations: js.UndefOr[OperationSummaryList]
   }
 
-  object ListOperationsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        Operations: js.UndefOr[OperationSummaryList] = js.undefined
-    ): ListOperationsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Operations.foreach(__v => __obj.updateDynamic("Operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListOperationsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListServicesRequest extends js.Object {
     var Filters: js.UndefOr[ServiceFilters]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListServicesRequest {
-    @inline
-    def apply(
-        Filters: js.UndefOr[ServiceFilters] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListServicesRequest = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListServicesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListServicesResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var Services: js.UndefOr[ServiceSummariesList]
-  }
-
-  object ListServicesResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        Services: js.UndefOr[ServiceSummariesList] = js.undefined
-    ): ListServicesResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Services.foreach(__v => __obj.updateDynamic("Services")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListServicesResponse]
-    }
   }
 
   /**
     * A complex type that contains information about a specified namespace.
     */
   @js.native
+  @Factory
   trait Namespace extends js.Object {
     var Arn: js.UndefOr[Arn]
     var CreateDate: js.UndefOr[Timestamp]
@@ -1130,58 +561,15 @@ package servicediscovery {
     var Type: js.UndefOr[NamespaceType]
   }
 
-  object Namespace {
-    @inline
-    def apply(
-        Arn: js.UndefOr[Arn] = js.undefined,
-        CreateDate: js.UndefOr[Timestamp] = js.undefined,
-        CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
-        Description: js.UndefOr[ResourceDescription] = js.undefined,
-        Id: js.UndefOr[ResourceId] = js.undefined,
-        Name: js.UndefOr[NamespaceName] = js.undefined,
-        Properties: js.UndefOr[NamespaceProperties] = js.undefined,
-        ServiceCount: js.UndefOr[ResourceCount] = js.undefined,
-        Type: js.UndefOr[NamespaceType] = js.undefined
-    ): Namespace = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
-      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Properties.foreach(__v => __obj.updateDynamic("Properties")(__v.asInstanceOf[js.Any]))
-      ServiceCount.foreach(__v => __obj.updateDynamic("ServiceCount")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Namespace]
-    }
-  }
-
   /**
     * A complex type that identifies the namespaces that you want to list. You can choose to list public or private namespaces.
     */
   @js.native
+  @Factory
   trait NamespaceFilter extends js.Object {
     var Name: NamespaceFilterName
     var Values: FilterValues
     var Condition: js.UndefOr[FilterCondition]
-  }
-
-  object NamespaceFilter {
-    @inline
-    def apply(
-        Name: NamespaceFilterName,
-        Values: FilterValues,
-        Condition: js.UndefOr[FilterCondition] = js.undefined
-    ): NamespaceFilter = {
-      val __obj = js.Dynamic.literal(
-        "Name"   -> Name.asInstanceOf[js.Any],
-        "Values" -> Values.asInstanceOf[js.Any]
-      )
-
-      Condition.foreach(__v => __obj.updateDynamic("Condition")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NamespaceFilter]
-    }
   }
 
   @js.native
@@ -1196,28 +584,17 @@ package servicediscovery {
     * A complex type that contains information that is specific to the namespace type.
     */
   @js.native
+  @Factory
   trait NamespaceProperties extends js.Object {
     var DnsProperties: js.UndefOr[DnsProperties]
     var HttpProperties: js.UndefOr[HttpProperties]
-  }
-
-  object NamespaceProperties {
-    @inline
-    def apply(
-        DnsProperties: js.UndefOr[DnsProperties] = js.undefined,
-        HttpProperties: js.UndefOr[HttpProperties] = js.undefined
-    ): NamespaceProperties = {
-      val __obj = js.Dynamic.literal()
-      DnsProperties.foreach(__v => __obj.updateDynamic("DnsProperties")(__v.asInstanceOf[js.Any]))
-      HttpProperties.foreach(__v => __obj.updateDynamic("HttpProperties")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NamespaceProperties]
-    }
   }
 
   /**
     * A complex type that contains information about a namespace.
     */
   @js.native
+  @Factory
   trait NamespaceSummary extends js.Object {
     var Arn: js.UndefOr[Arn]
     var CreateDate: js.UndefOr[Timestamp]
@@ -1227,31 +604,6 @@ package servicediscovery {
     var Properties: js.UndefOr[NamespaceProperties]
     var ServiceCount: js.UndefOr[ResourceCount]
     var Type: js.UndefOr[NamespaceType]
-  }
-
-  object NamespaceSummary {
-    @inline
-    def apply(
-        Arn: js.UndefOr[Arn] = js.undefined,
-        CreateDate: js.UndefOr[Timestamp] = js.undefined,
-        Description: js.UndefOr[ResourceDescription] = js.undefined,
-        Id: js.UndefOr[ResourceId] = js.undefined,
-        Name: js.UndefOr[NamespaceName] = js.undefined,
-        Properties: js.UndefOr[NamespaceProperties] = js.undefined,
-        ServiceCount: js.UndefOr[ResourceCount] = js.undefined,
-        Type: js.UndefOr[NamespaceType] = js.undefined
-    ): NamespaceSummary = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Properties.foreach(__v => __obj.updateDynamic("Properties")(__v.asInstanceOf[js.Any]))
-      ServiceCount.foreach(__v => __obj.updateDynamic("ServiceCount")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NamespaceSummary]
-    }
   }
 
   @js.native
@@ -1268,6 +620,7 @@ package servicediscovery {
     * A complex type that contains information about a specified operation.
     */
   @js.native
+  @Factory
   trait Operation extends js.Object {
     var CreateDate: js.UndefOr[Timestamp]
     var ErrorCode: js.UndefOr[Code]
@@ -1279,56 +632,15 @@ package servicediscovery {
     var UpdateDate: js.UndefOr[Timestamp]
   }
 
-  object Operation {
-    @inline
-    def apply(
-        CreateDate: js.UndefOr[Timestamp] = js.undefined,
-        ErrorCode: js.UndefOr[Code] = js.undefined,
-        ErrorMessage: js.UndefOr[Message] = js.undefined,
-        Id: js.UndefOr[OperationId] = js.undefined,
-        Status: js.UndefOr[OperationStatus] = js.undefined,
-        Targets: js.UndefOr[OperationTargetsMap] = js.undefined,
-        Type: js.UndefOr[OperationType] = js.undefined,
-        UpdateDate: js.UndefOr[Timestamp] = js.undefined
-    ): Operation = {
-      val __obj = js.Dynamic.literal()
-      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
-      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      UpdateDate.foreach(__v => __obj.updateDynamic("UpdateDate")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Operation]
-    }
-  }
-
   /**
     * A complex type that lets you select the operations that you want to list.
     */
   @js.native
+  @Factory
   trait OperationFilter extends js.Object {
     var Name: OperationFilterName
     var Values: FilterValues
     var Condition: js.UndefOr[FilterCondition]
-  }
-
-  object OperationFilter {
-    @inline
-    def apply(
-        Name: OperationFilterName,
-        Values: FilterValues,
-        Condition: js.UndefOr[FilterCondition] = js.undefined
-    ): OperationFilter = {
-      val __obj = js.Dynamic.literal(
-        "Name"   -> Name.asInstanceOf[js.Any],
-        "Values" -> Values.asInstanceOf[js.Any]
-      )
-
-      Condition.foreach(__v => __obj.updateDynamic("Condition")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[OperationFilter]
-    }
   }
 
   @js.native
@@ -1358,22 +670,10 @@ package servicediscovery {
     * A complex type that contains information about an operation that matches the criteria that you specified in a <a>ListOperations</a> request.
     */
   @js.native
+  @Factory
   trait OperationSummary extends js.Object {
     var Id: js.UndefOr[OperationId]
     var Status: js.UndefOr[OperationStatus]
-  }
-
-  object OperationSummary {
-    @inline
-    def apply(
-        Id: js.UndefOr[OperationId] = js.undefined,
-        Status: js.UndefOr[OperationStatus] = js.undefined
-    ): OperationSummary = {
-      val __obj = js.Dynamic.literal()
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[OperationSummary]
-    }
   }
 
   @js.native
@@ -1412,6 +712,7 @@ package servicediscovery {
   }
 
   @js.native
+  @Factory
   trait RegisterInstanceRequest extends js.Object {
     var Attributes: Attributes
     var InstanceId: ResourceId
@@ -1419,39 +720,10 @@ package servicediscovery {
     var CreatorRequestId: js.UndefOr[ResourceId]
   }
 
-  object RegisterInstanceRequest {
-    @inline
-    def apply(
-        Attributes: Attributes,
-        InstanceId: ResourceId,
-        ServiceId: ResourceId,
-        CreatorRequestId: js.UndefOr[ResourceId] = js.undefined
-    ): RegisterInstanceRequest = {
-      val __obj = js.Dynamic.literal(
-        "Attributes" -> Attributes.asInstanceOf[js.Any],
-        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
-        "ServiceId"  -> ServiceId.asInstanceOf[js.Any]
-      )
-
-      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RegisterInstanceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait RegisterInstanceResponse extends js.Object {
     var OperationId: js.UndefOr[OperationId]
-  }
-
-  object RegisterInstanceResponse {
-    @inline
-    def apply(
-        OperationId: js.UndefOr[OperationId] = js.undefined
-    ): RegisterInstanceResponse = {
-      val __obj = js.Dynamic.literal()
-      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RegisterInstanceResponse]
-    }
   }
 
   @js.native
@@ -1467,6 +739,7 @@ package servicediscovery {
     * A complex type that contains information about the specified service.
     */
   @js.native
+  @Factory
   trait Service extends js.Object {
     var Arn: js.UndefOr[Arn]
     var CreateDate: js.UndefOr[Timestamp]
@@ -1481,89 +754,26 @@ package servicediscovery {
     var NamespaceId: js.UndefOr[ResourceId]
   }
 
-  object Service {
-    @inline
-    def apply(
-        Arn: js.UndefOr[Arn] = js.undefined,
-        CreateDate: js.UndefOr[Timestamp] = js.undefined,
-        CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
-        Description: js.UndefOr[ResourceDescription] = js.undefined,
-        DnsConfig: js.UndefOr[DnsConfig] = js.undefined,
-        HealthCheckConfig: js.UndefOr[HealthCheckConfig] = js.undefined,
-        HealthCheckCustomConfig: js.UndefOr[HealthCheckCustomConfig] = js.undefined,
-        Id: js.UndefOr[ResourceId] = js.undefined,
-        InstanceCount: js.UndefOr[ResourceCount] = js.undefined,
-        Name: js.UndefOr[ServiceName] = js.undefined,
-        NamespaceId: js.UndefOr[ResourceId] = js.undefined
-    ): Service = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
-      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      DnsConfig.foreach(__v => __obj.updateDynamic("DnsConfig")(__v.asInstanceOf[js.Any]))
-      HealthCheckConfig.foreach(__v => __obj.updateDynamic("HealthCheckConfig")(__v.asInstanceOf[js.Any]))
-      HealthCheckCustomConfig.foreach(__v => __obj.updateDynamic("HealthCheckCustomConfig")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      InstanceCount.foreach(__v => __obj.updateDynamic("InstanceCount")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      NamespaceId.foreach(__v => __obj.updateDynamic("NamespaceId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Service]
-    }
-  }
-
   /**
     * A complex type that contains changes to an existing service.
     */
   @js.native
+  @Factory
   trait ServiceChange extends js.Object {
     var DnsConfig: DnsConfigChange
     var Description: js.UndefOr[ResourceDescription]
     var HealthCheckConfig: js.UndefOr[HealthCheckConfig]
   }
 
-  object ServiceChange {
-    @inline
-    def apply(
-        DnsConfig: DnsConfigChange,
-        Description: js.UndefOr[ResourceDescription] = js.undefined,
-        HealthCheckConfig: js.UndefOr[HealthCheckConfig] = js.undefined
-    ): ServiceChange = {
-      val __obj = js.Dynamic.literal(
-        "DnsConfig" -> DnsConfig.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      HealthCheckConfig.foreach(__v => __obj.updateDynamic("HealthCheckConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ServiceChange]
-    }
-  }
-
   /**
     * A complex type that lets you specify the namespaces that you want to list services for.
     */
   @js.native
+  @Factory
   trait ServiceFilter extends js.Object {
     var Name: ServiceFilterName
     var Values: FilterValues
     var Condition: js.UndefOr[FilterCondition]
-  }
-
-  object ServiceFilter {
-    @inline
-    def apply(
-        Name: ServiceFilterName,
-        Values: FilterValues,
-        Condition: js.UndefOr[FilterCondition] = js.undefined
-    ): ServiceFilter = {
-      val __obj = js.Dynamic.literal(
-        "Name"   -> Name.asInstanceOf[js.Any],
-        "Values" -> Values.asInstanceOf[js.Any]
-      )
-
-      Condition.foreach(__v => __obj.updateDynamic("Condition")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ServiceFilter]
-    }
   }
 
   @js.native
@@ -1578,6 +788,7 @@ package servicediscovery {
     * A complex type that contains information about a specified service.
     */
   @js.native
+  @Factory
   trait ServiceSummary extends js.Object {
     var Arn: js.UndefOr[Arn]
     var CreateDate: js.UndefOr[Timestamp]
@@ -1590,91 +801,24 @@ package servicediscovery {
     var Name: js.UndefOr[ServiceName]
   }
 
-  object ServiceSummary {
-    @inline
-    def apply(
-        Arn: js.UndefOr[Arn] = js.undefined,
-        CreateDate: js.UndefOr[Timestamp] = js.undefined,
-        Description: js.UndefOr[ResourceDescription] = js.undefined,
-        DnsConfig: js.UndefOr[DnsConfig] = js.undefined,
-        HealthCheckConfig: js.UndefOr[HealthCheckConfig] = js.undefined,
-        HealthCheckCustomConfig: js.UndefOr[HealthCheckCustomConfig] = js.undefined,
-        Id: js.UndefOr[ResourceId] = js.undefined,
-        InstanceCount: js.UndefOr[ResourceCount] = js.undefined,
-        Name: js.UndefOr[ServiceName] = js.undefined
-    ): ServiceSummary = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      DnsConfig.foreach(__v => __obj.updateDynamic("DnsConfig")(__v.asInstanceOf[js.Any]))
-      HealthCheckConfig.foreach(__v => __obj.updateDynamic("HealthCheckConfig")(__v.asInstanceOf[js.Any]))
-      HealthCheckCustomConfig.foreach(__v => __obj.updateDynamic("HealthCheckCustomConfig")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      InstanceCount.foreach(__v => __obj.updateDynamic("InstanceCount")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ServiceSummary]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateInstanceCustomHealthStatusRequest extends js.Object {
     var InstanceId: ResourceId
     var ServiceId: ResourceId
     var Status: CustomHealthStatus
   }
 
-  object UpdateInstanceCustomHealthStatusRequest {
-    @inline
-    def apply(
-        InstanceId: ResourceId,
-        ServiceId: ResourceId,
-        Status: CustomHealthStatus
-    ): UpdateInstanceCustomHealthStatusRequest = {
-      val __obj = js.Dynamic.literal(
-        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
-        "ServiceId"  -> ServiceId.asInstanceOf[js.Any],
-        "Status"     -> Status.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateInstanceCustomHealthStatusRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateServiceRequest extends js.Object {
     var Id: ResourceId
     var Service: ServiceChange
   }
 
-  object UpdateServiceRequest {
-    @inline
-    def apply(
-        Id: ResourceId,
-        Service: ServiceChange
-    ): UpdateServiceRequest = {
-      val __obj = js.Dynamic.literal(
-        "Id"      -> Id.asInstanceOf[js.Any],
-        "Service" -> Service.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateServiceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateServiceResponse extends js.Object {
     var OperationId: js.UndefOr[OperationId]
-  }
-
-  object UpdateServiceResponse {
-    @inline
-    def apply(
-        OperationId: js.UndefOr[OperationId] = js.undefined
-    ): UpdateServiceResponse = {
-      val __obj = js.Dynamic.literal()
-      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateServiceResponse]
-    }
   }
 }

@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object marketplacecommerceanalytics {
   type CustomerDefinedValues   = js.Dictionary[OptionalValue]
@@ -112,6 +113,7 @@ package marketplacecommerceanalytics {
     * Container for the parameters to the GenerateDataSet operation.
     */
   @js.native
+  @Factory
   trait GenerateDataSetRequest extends js.Object {
     var dataSetPublicationDate: DataSetPublicationDate
     var dataSetType: DataSetType
@@ -122,54 +124,20 @@ package marketplacecommerceanalytics {
     var destinationS3Prefix: js.UndefOr[DestinationS3Prefix]
   }
 
-  object GenerateDataSetRequest {
-    @inline
-    def apply(
-        dataSetPublicationDate: DataSetPublicationDate,
-        dataSetType: DataSetType,
-        destinationS3BucketName: DestinationS3BucketName,
-        roleNameArn: RoleNameArn,
-        snsTopicArn: SnsTopicArn,
-        customerDefinedValues: js.UndefOr[CustomerDefinedValues] = js.undefined,
-        destinationS3Prefix: js.UndefOr[DestinationS3Prefix] = js.undefined
-    ): GenerateDataSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "dataSetPublicationDate"  -> dataSetPublicationDate.asInstanceOf[js.Any],
-        "dataSetType"             -> dataSetType.asInstanceOf[js.Any],
-        "destinationS3BucketName" -> destinationS3BucketName.asInstanceOf[js.Any],
-        "roleNameArn"             -> roleNameArn.asInstanceOf[js.Any],
-        "snsTopicArn"             -> snsTopicArn.asInstanceOf[js.Any]
-      )
-
-      customerDefinedValues.foreach(__v => __obj.updateDynamic("customerDefinedValues")(__v.asInstanceOf[js.Any]))
-      destinationS3Prefix.foreach(__v => __obj.updateDynamic("destinationS3Prefix")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GenerateDataSetRequest]
-    }
-  }
-
   /**
     * Container for the result of the GenerateDataSet operation.
     */
   @js.native
+  @Factory
   trait GenerateDataSetResult extends js.Object {
     var dataSetRequestId: js.UndefOr[DataSetRequestId]
-  }
-
-  object GenerateDataSetResult {
-    @inline
-    def apply(
-        dataSetRequestId: js.UndefOr[DataSetRequestId] = js.undefined
-    ): GenerateDataSetResult = {
-      val __obj = js.Dynamic.literal()
-      dataSetRequestId.foreach(__v => __obj.updateDynamic("dataSetRequestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GenerateDataSetResult]
-    }
   }
 
   /**
     * Container for the parameters to the StartSupportDataExport operation.
     */
   @js.native
+  @Factory
   trait StartSupportDataExportRequest extends js.Object {
     var dataSetType: SupportDataSetType
     var destinationS3BucketName: DestinationS3BucketName
@@ -180,48 +148,13 @@ package marketplacecommerceanalytics {
     var destinationS3Prefix: js.UndefOr[DestinationS3Prefix]
   }
 
-  object StartSupportDataExportRequest {
-    @inline
-    def apply(
-        dataSetType: SupportDataSetType,
-        destinationS3BucketName: DestinationS3BucketName,
-        fromDate: FromDate,
-        roleNameArn: RoleNameArn,
-        snsTopicArn: SnsTopicArn,
-        customerDefinedValues: js.UndefOr[CustomerDefinedValues] = js.undefined,
-        destinationS3Prefix: js.UndefOr[DestinationS3Prefix] = js.undefined
-    ): StartSupportDataExportRequest = {
-      val __obj = js.Dynamic.literal(
-        "dataSetType"             -> dataSetType.asInstanceOf[js.Any],
-        "destinationS3BucketName" -> destinationS3BucketName.asInstanceOf[js.Any],
-        "fromDate"                -> fromDate.asInstanceOf[js.Any],
-        "roleNameArn"             -> roleNameArn.asInstanceOf[js.Any],
-        "snsTopicArn"             -> snsTopicArn.asInstanceOf[js.Any]
-      )
-
-      customerDefinedValues.foreach(__v => __obj.updateDynamic("customerDefinedValues")(__v.asInstanceOf[js.Any]))
-      destinationS3Prefix.foreach(__v => __obj.updateDynamic("destinationS3Prefix")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartSupportDataExportRequest]
-    }
-  }
-
   /**
     * Container for the result of the StartSupportDataExport operation.
     */
   @js.native
+  @Factory
   trait StartSupportDataExportResult extends js.Object {
     var dataSetRequestId: js.UndefOr[DataSetRequestId]
-  }
-
-  object StartSupportDataExportResult {
-    @inline
-    def apply(
-        dataSetRequestId: js.UndefOr[DataSetRequestId] = js.undefined
-    ): StartSupportDataExportResult = {
-      val __obj = js.Dynamic.literal()
-      dataSetRequestId.foreach(__v => __obj.updateDynamic("dataSetRequestId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartSupportDataExportResult]
-    }
   }
 
   @js.native

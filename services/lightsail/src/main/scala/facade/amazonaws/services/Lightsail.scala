@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object lightsail {
   type AddOnList                                            = js.Array[AddOn]
@@ -535,28 +536,12 @@ package lightsail {
     * Describes an add-on that is enabled for an Amazon Lightsail resource.
     */
   @js.native
+  @Factory
   trait AddOn extends js.Object {
     var name: js.UndefOr[String]
     var nextSnapshotTimeOfDay: js.UndefOr[TimeOfDay]
     var snapshotTimeOfDay: js.UndefOr[TimeOfDay]
     var status: js.UndefOr[String]
-  }
-
-  object AddOn {
-    @inline
-    def apply(
-        name: js.UndefOr[String] = js.undefined,
-        nextSnapshotTimeOfDay: js.UndefOr[TimeOfDay] = js.undefined,
-        snapshotTimeOfDay: js.UndefOr[TimeOfDay] = js.undefined,
-        status: js.UndefOr[String] = js.undefined
-    ): AddOn = {
-      val __obj = js.Dynamic.literal()
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      nextSnapshotTimeOfDay.foreach(__v => __obj.updateDynamic("nextSnapshotTimeOfDay")(__v.asInstanceOf[js.Any]))
-      snapshotTimeOfDay.foreach(__v => __obj.updateDynamic("snapshotTimeOfDay")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AddOn]
-    }
   }
 
   /**
@@ -565,24 +550,10 @@ package lightsail {
     * '''Note:'''An additional cost may be associated with enabling add-ons. For more information, see the [[https://aws.amazon.com/lightsail/pricing/|Lightsail pricing page]].
     */
   @js.native
+  @Factory
   trait AddOnRequest extends js.Object {
     var addOnType: AddOnType
     var autoSnapshotAddOnRequest: js.UndefOr[AutoSnapshotAddOnRequest]
-  }
-
-  object AddOnRequest {
-    @inline
-    def apply(
-        addOnType: AddOnType,
-        autoSnapshotAddOnRequest: js.UndefOr[AutoSnapshotAddOnRequest] = js.undefined
-    ): AddOnRequest = {
-      val __obj = js.Dynamic.literal(
-        "addOnType" -> addOnType.asInstanceOf[js.Any]
-      )
-
-      autoSnapshotAddOnRequest.foreach(__v => __obj.updateDynamic("autoSnapshotAddOnRequest")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AddOnRequest]
-    }
   }
 
   @js.native
@@ -594,210 +565,78 @@ package lightsail {
   }
 
   @js.native
+  @Factory
   trait AllocateStaticIpRequest extends js.Object {
     var staticIpName: ResourceName
   }
 
-  object AllocateStaticIpRequest {
-    @inline
-    def apply(
-        staticIpName: ResourceName
-    ): AllocateStaticIpRequest = {
-      val __obj = js.Dynamic.literal(
-        "staticIpName" -> staticIpName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AllocateStaticIpRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AllocateStaticIpResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object AllocateStaticIpResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): AllocateStaticIpResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AllocateStaticIpResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait AttachDiskRequest extends js.Object {
     var diskName: ResourceName
     var diskPath: NonEmptyString
     var instanceName: ResourceName
   }
 
-  object AttachDiskRequest {
-    @inline
-    def apply(
-        diskName: ResourceName,
-        diskPath: NonEmptyString,
-        instanceName: ResourceName
-    ): AttachDiskRequest = {
-      val __obj = js.Dynamic.literal(
-        "diskName"     -> diskName.asInstanceOf[js.Any],
-        "diskPath"     -> diskPath.asInstanceOf[js.Any],
-        "instanceName" -> instanceName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AttachDiskRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AttachDiskResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object AttachDiskResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): AttachDiskResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AttachDiskResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait AttachInstancesToLoadBalancerRequest extends js.Object {
     var instanceNames: ResourceNameList
     var loadBalancerName: ResourceName
   }
 
-  object AttachInstancesToLoadBalancerRequest {
-    @inline
-    def apply(
-        instanceNames: ResourceNameList,
-        loadBalancerName: ResourceName
-    ): AttachInstancesToLoadBalancerRequest = {
-      val __obj = js.Dynamic.literal(
-        "instanceNames"    -> instanceNames.asInstanceOf[js.Any],
-        "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AttachInstancesToLoadBalancerRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AttachInstancesToLoadBalancerResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object AttachInstancesToLoadBalancerResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): AttachInstancesToLoadBalancerResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AttachInstancesToLoadBalancerResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait AttachLoadBalancerTlsCertificateRequest extends js.Object {
     var certificateName: ResourceName
     var loadBalancerName: ResourceName
   }
 
-  object AttachLoadBalancerTlsCertificateRequest {
-    @inline
-    def apply(
-        certificateName: ResourceName,
-        loadBalancerName: ResourceName
-    ): AttachLoadBalancerTlsCertificateRequest = {
-      val __obj = js.Dynamic.literal(
-        "certificateName"  -> certificateName.asInstanceOf[js.Any],
-        "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AttachLoadBalancerTlsCertificateRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AttachLoadBalancerTlsCertificateResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object AttachLoadBalancerTlsCertificateResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): AttachLoadBalancerTlsCertificateResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AttachLoadBalancerTlsCertificateResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait AttachStaticIpRequest extends js.Object {
     var instanceName: ResourceName
     var staticIpName: ResourceName
   }
 
-  object AttachStaticIpRequest {
-    @inline
-    def apply(
-        instanceName: ResourceName,
-        staticIpName: ResourceName
-    ): AttachStaticIpRequest = {
-      val __obj = js.Dynamic.literal(
-        "instanceName" -> instanceName.asInstanceOf[js.Any],
-        "staticIpName" -> staticIpName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AttachStaticIpRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AttachStaticIpResult extends js.Object {
     var operations: js.UndefOr[OperationList]
-  }
-
-  object AttachStaticIpResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): AttachStaticIpResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AttachStaticIpResult]
-    }
   }
 
   /**
     * Describes a block storage disk that is attached to an instance, and is included in an automatic snapshot.
     */
   @js.native
+  @Factory
   trait AttachedDisk extends js.Object {
     var path: js.UndefOr[String]
     var sizeInGb: js.UndefOr[Int]
-  }
-
-  object AttachedDisk {
-    @inline
-    def apply(
-        path: js.UndefOr[String] = js.undefined,
-        sizeInGb: js.UndefOr[Int] = js.undefined
-    ): AttachedDisk = {
-      val __obj = js.Dynamic.literal()
-      path.foreach(__v => __obj.updateDynamic("path")(__v.asInstanceOf[js.Any]))
-      sizeInGb.foreach(__v => __obj.updateDynamic("sizeInGb")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AttachedDisk]
-    }
   }
 
   /**
@@ -809,47 +648,21 @@ package lightsail {
     *  * If an automatic snapshot is scheduled to be created within 30 minutes from your current time and you change the snapshot time, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day, because 30 minutes is required between your current time and the new snapshot time that you specify.
     */
   @js.native
+  @Factory
   trait AutoSnapshotAddOnRequest extends js.Object {
     var snapshotTimeOfDay: js.UndefOr[TimeOfDay]
-  }
-
-  object AutoSnapshotAddOnRequest {
-    @inline
-    def apply(
-        snapshotTimeOfDay: js.UndefOr[TimeOfDay] = js.undefined
-    ): AutoSnapshotAddOnRequest = {
-      val __obj = js.Dynamic.literal()
-      snapshotTimeOfDay.foreach(__v => __obj.updateDynamic("snapshotTimeOfDay")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AutoSnapshotAddOnRequest]
-    }
   }
 
   /**
     * Describes an automatic snapshot.
     */
   @js.native
+  @Factory
   trait AutoSnapshotDetails extends js.Object {
     var createdAt: js.UndefOr[IsoDate]
     var date: js.UndefOr[String]
     var fromAttachedDisks: js.UndefOr[AttachedDiskList]
     var status: js.UndefOr[AutoSnapshotStatus]
-  }
-
-  object AutoSnapshotDetails {
-    @inline
-    def apply(
-        createdAt: js.UndefOr[IsoDate] = js.undefined,
-        date: js.UndefOr[String] = js.undefined,
-        fromAttachedDisks: js.UndefOr[AttachedDiskList] = js.undefined,
-        status: js.UndefOr[AutoSnapshotStatus] = js.undefined
-    ): AutoSnapshotDetails = {
-      val __obj = js.Dynamic.literal()
-      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      date.foreach(__v => __obj.updateDynamic("date")(__v.asInstanceOf[js.Any]))
-      fromAttachedDisks.foreach(__v => __obj.updateDynamic("fromAttachedDisks")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AutoSnapshotDetails]
-    }
   }
 
   @js.native
@@ -867,28 +680,17 @@ package lightsail {
     * Describes an Availability Zone.
     */
   @js.native
+  @Factory
   trait AvailabilityZone extends js.Object {
     var state: js.UndefOr[NonEmptyString]
     var zoneName: js.UndefOr[NonEmptyString]
-  }
-
-  object AvailabilityZone {
-    @inline
-    def apply(
-        state: js.UndefOr[NonEmptyString] = js.undefined,
-        zoneName: js.UndefOr[NonEmptyString] = js.undefined
-    ): AvailabilityZone = {
-      val __obj = js.Dynamic.literal()
-      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
-      zoneName.foreach(__v => __obj.updateDynamic("zoneName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AvailabilityZone]
-    }
   }
 
   /**
     * Describes a blueprint (a virtual private server image).
     */
   @js.native
+  @Factory
   trait Blueprint extends js.Object {
     var blueprintId: js.UndefOr[NonEmptyString]
     var description: js.UndefOr[String]
@@ -904,39 +706,6 @@ package lightsail {
     var versionCode: js.UndefOr[String]
   }
 
-  object Blueprint {
-    @inline
-    def apply(
-        blueprintId: js.UndefOr[NonEmptyString] = js.undefined,
-        description: js.UndefOr[String] = js.undefined,
-        group: js.UndefOr[NonEmptyString] = js.undefined,
-        isActive: js.UndefOr[Boolean] = js.undefined,
-        licenseUrl: js.UndefOr[String] = js.undefined,
-        minPower: js.UndefOr[Int] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined,
-        platform: js.UndefOr[InstancePlatform] = js.undefined,
-        productUrl: js.UndefOr[String] = js.undefined,
-        `type`: js.UndefOr[BlueprintType] = js.undefined,
-        version: js.UndefOr[String] = js.undefined,
-        versionCode: js.UndefOr[String] = js.undefined
-    ): Blueprint = {
-      val __obj = js.Dynamic.literal()
-      blueprintId.foreach(__v => __obj.updateDynamic("blueprintId")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      group.foreach(__v => __obj.updateDynamic("group")(__v.asInstanceOf[js.Any]))
-      isActive.foreach(__v => __obj.updateDynamic("isActive")(__v.asInstanceOf[js.Any]))
-      licenseUrl.foreach(__v => __obj.updateDynamic("licenseUrl")(__v.asInstanceOf[js.Any]))
-      minPower.foreach(__v => __obj.updateDynamic("minPower")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
-      productUrl.foreach(__v => __obj.updateDynamic("productUrl")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      versionCode.foreach(__v => __obj.updateDynamic("versionCode")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Blueprint]
-    }
-  }
-
   @js.native
   sealed trait BlueprintType extends js.Any
   object BlueprintType extends js.Object {
@@ -950,6 +719,7 @@ package lightsail {
     * Describes a bundle, which is a set of specs describing your virtual private server (or <i>instance</i>).
     */
   @js.native
+  @Factory
   trait Bundle extends js.Object {
     var bundleId: js.UndefOr[NonEmptyString]
     var cpuCount: js.UndefOr[Int]
@@ -964,72 +734,17 @@ package lightsail {
     var transferPerMonthInGb: js.UndefOr[Int]
   }
 
-  object Bundle {
-    @inline
-    def apply(
-        bundleId: js.UndefOr[NonEmptyString] = js.undefined,
-        cpuCount: js.UndefOr[Int] = js.undefined,
-        diskSizeInGb: js.UndefOr[Int] = js.undefined,
-        instanceType: js.UndefOr[String] = js.undefined,
-        isActive: js.UndefOr[Boolean] = js.undefined,
-        name: js.UndefOr[String] = js.undefined,
-        power: js.UndefOr[Int] = js.undefined,
-        price: js.UndefOr[Float] = js.undefined,
-        ramSizeInGb: js.UndefOr[Float] = js.undefined,
-        supportedPlatforms: js.UndefOr[InstancePlatformList] = js.undefined,
-        transferPerMonthInGb: js.UndefOr[Int] = js.undefined
-    ): Bundle = {
-      val __obj = js.Dynamic.literal()
-      bundleId.foreach(__v => __obj.updateDynamic("bundleId")(__v.asInstanceOf[js.Any]))
-      cpuCount.foreach(__v => __obj.updateDynamic("cpuCount")(__v.asInstanceOf[js.Any]))
-      diskSizeInGb.foreach(__v => __obj.updateDynamic("diskSizeInGb")(__v.asInstanceOf[js.Any]))
-      instanceType.foreach(__v => __obj.updateDynamic("instanceType")(__v.asInstanceOf[js.Any]))
-      isActive.foreach(__v => __obj.updateDynamic("isActive")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      power.foreach(__v => __obj.updateDynamic("power")(__v.asInstanceOf[js.Any]))
-      price.foreach(__v => __obj.updateDynamic("price")(__v.asInstanceOf[js.Any]))
-      ramSizeInGb.foreach(__v => __obj.updateDynamic("ramSizeInGb")(__v.asInstanceOf[js.Any]))
-      supportedPlatforms.foreach(__v => __obj.updateDynamic("supportedPlatforms")(__v.asInstanceOf[js.Any]))
-      transferPerMonthInGb.foreach(__v => __obj.updateDynamic("transferPerMonthInGb")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Bundle]
-    }
-  }
-
   @js.native
+  @Factory
   trait CloseInstancePublicPortsRequest extends js.Object {
     var instanceName: ResourceName
     var portInfo: PortInfo
   }
 
-  object CloseInstancePublicPortsRequest {
-    @inline
-    def apply(
-        instanceName: ResourceName,
-        portInfo: PortInfo
-    ): CloseInstancePublicPortsRequest = {
-      val __obj = js.Dynamic.literal(
-        "instanceName" -> instanceName.asInstanceOf[js.Any],
-        "portInfo"     -> portInfo.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CloseInstancePublicPortsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CloseInstancePublicPortsResult extends js.Object {
     var operation: js.UndefOr[Operation]
-  }
-
-  object CloseInstancePublicPortsResult {
-    @inline
-    def apply(
-        operation: js.UndefOr[Operation] = js.undefined
-    ): CloseInstancePublicPortsResult = {
-      val __obj = js.Dynamic.literal()
-      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CloseInstancePublicPortsResult]
-    }
   }
 
   /**
@@ -1037,6 +752,7 @@ package lightsail {
     *  A CloudFormation stack record provides information about the AWS CloudFormation stack used to create a new Amazon Elastic Compute Cloud instance from an exported Lightsail instance snapshot.
     */
   @js.native
+  @Factory
   trait CloudFormationStackRecord extends js.Object {
     var arn: js.UndefOr[NonEmptyString]
     var createdAt: js.UndefOr[IsoDate]
@@ -1048,54 +764,15 @@ package lightsail {
     var state: js.UndefOr[RecordState]
   }
 
-  object CloudFormationStackRecord {
-    @inline
-    def apply(
-        arn: js.UndefOr[NonEmptyString] = js.undefined,
-        createdAt: js.UndefOr[IsoDate] = js.undefined,
-        destinationInfo: js.UndefOr[DestinationInfo] = js.undefined,
-        location: js.UndefOr[ResourceLocation] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined,
-        resourceType: js.UndefOr[ResourceType] = js.undefined,
-        sourceInfo: js.UndefOr[CloudFormationStackRecordSourceInfoList] = js.undefined,
-        state: js.UndefOr[RecordState] = js.undefined
-    ): CloudFormationStackRecord = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      destinationInfo.foreach(__v => __obj.updateDynamic("destinationInfo")(__v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      sourceInfo.foreach(__v => __obj.updateDynamic("sourceInfo")(__v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CloudFormationStackRecord]
-    }
-  }
-
   /**
     * Describes the source of a CloudFormation stack record (i.e., the export snapshot record).
     */
   @js.native
+  @Factory
   trait CloudFormationStackRecordSourceInfo extends js.Object {
     var arn: js.UndefOr[NonEmptyString]
     var name: js.UndefOr[NonEmptyString]
     var resourceType: js.UndefOr[CloudFormationStackRecordSourceType]
-  }
-
-  object CloudFormationStackRecordSourceInfo {
-    @inline
-    def apply(
-        arn: js.UndefOr[NonEmptyString] = js.undefined,
-        name: js.UndefOr[NonEmptyString] = js.undefined,
-        resourceType: js.UndefOr[CloudFormationStackRecordSourceType] = js.undefined
-    ): CloudFormationStackRecordSourceInfo = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CloudFormationStackRecordSourceInfo]
-    }
   }
 
   @js.native
@@ -1107,6 +784,7 @@ package lightsail {
   }
 
   @js.native
+  @Factory
   trait CopySnapshotRequest extends js.Object {
     var sourceRegion: RegionName
     var targetSnapshotName: ResourceName
@@ -1116,82 +794,26 @@ package lightsail {
     var useLatestRestorableAutoSnapshot: js.UndefOr[Boolean]
   }
 
-  object CopySnapshotRequest {
-    @inline
-    def apply(
-        sourceRegion: RegionName,
-        targetSnapshotName: ResourceName,
-        restoreDate: js.UndefOr[String] = js.undefined,
-        sourceResourceName: js.UndefOr[String] = js.undefined,
-        sourceSnapshotName: js.UndefOr[ResourceName] = js.undefined,
-        useLatestRestorableAutoSnapshot: js.UndefOr[Boolean] = js.undefined
-    ): CopySnapshotRequest = {
-      val __obj = js.Dynamic.literal(
-        "sourceRegion"       -> sourceRegion.asInstanceOf[js.Any],
-        "targetSnapshotName" -> targetSnapshotName.asInstanceOf[js.Any]
-      )
-
-      restoreDate.foreach(__v => __obj.updateDynamic("restoreDate")(__v.asInstanceOf[js.Any]))
-      sourceResourceName.foreach(__v => __obj.updateDynamic("sourceResourceName")(__v.asInstanceOf[js.Any]))
-      sourceSnapshotName.foreach(__v => __obj.updateDynamic("sourceSnapshotName")(__v.asInstanceOf[js.Any]))
-      useLatestRestorableAutoSnapshot.foreach(__v =>
-        __obj.updateDynamic("useLatestRestorableAutoSnapshot")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[CopySnapshotRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CopySnapshotResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object CopySnapshotResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): CopySnapshotResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CopySnapshotResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateCloudFormationStackRequest extends js.Object {
     var instances: InstanceEntryList
   }
 
-  object CreateCloudFormationStackRequest {
-    @inline
-    def apply(
-        instances: InstanceEntryList
-    ): CreateCloudFormationStackRequest = {
-      val __obj = js.Dynamic.literal(
-        "instances" -> instances.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateCloudFormationStackRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateCloudFormationStackResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object CreateCloudFormationStackResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): CreateCloudFormationStackResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateCloudFormationStackResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateDiskFromSnapshotRequest extends js.Object {
     var availabilityZone: NonEmptyString
     var diskName: ResourceName
@@ -1204,54 +826,14 @@ package lightsail {
     var useLatestRestorableAutoSnapshot: js.UndefOr[Boolean]
   }
 
-  object CreateDiskFromSnapshotRequest {
-    @inline
-    def apply(
-        availabilityZone: NonEmptyString,
-        diskName: ResourceName,
-        sizeInGb: Int,
-        addOns: js.UndefOr[AddOnRequestList] = js.undefined,
-        diskSnapshotName: js.UndefOr[ResourceName] = js.undefined,
-        restoreDate: js.UndefOr[String] = js.undefined,
-        sourceDiskName: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined,
-        useLatestRestorableAutoSnapshot: js.UndefOr[Boolean] = js.undefined
-    ): CreateDiskFromSnapshotRequest = {
-      val __obj = js.Dynamic.literal(
-        "availabilityZone" -> availabilityZone.asInstanceOf[js.Any],
-        "diskName"         -> diskName.asInstanceOf[js.Any],
-        "sizeInGb"         -> sizeInGb.asInstanceOf[js.Any]
-      )
-
-      addOns.foreach(__v => __obj.updateDynamic("addOns")(__v.asInstanceOf[js.Any]))
-      diskSnapshotName.foreach(__v => __obj.updateDynamic("diskSnapshotName")(__v.asInstanceOf[js.Any]))
-      restoreDate.foreach(__v => __obj.updateDynamic("restoreDate")(__v.asInstanceOf[js.Any]))
-      sourceDiskName.foreach(__v => __obj.updateDynamic("sourceDiskName")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      useLatestRestorableAutoSnapshot.foreach(__v =>
-        __obj.updateDynamic("useLatestRestorableAutoSnapshot")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[CreateDiskFromSnapshotRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateDiskFromSnapshotResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object CreateDiskFromSnapshotResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): CreateDiskFromSnapshotResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDiskFromSnapshotResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateDiskRequest extends js.Object {
     var availabilityZone: NonEmptyString
     var diskName: ResourceName
@@ -1260,44 +842,14 @@ package lightsail {
     var tags: js.UndefOr[TagList]
   }
 
-  object CreateDiskRequest {
-    @inline
-    def apply(
-        availabilityZone: NonEmptyString,
-        diskName: ResourceName,
-        sizeInGb: Int,
-        addOns: js.UndefOr[AddOnRequestList] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): CreateDiskRequest = {
-      val __obj = js.Dynamic.literal(
-        "availabilityZone" -> availabilityZone.asInstanceOf[js.Any],
-        "diskName"         -> diskName.asInstanceOf[js.Any],
-        "sizeInGb"         -> sizeInGb.asInstanceOf[js.Any]
-      )
-
-      addOns.foreach(__v => __obj.updateDynamic("addOns")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDiskRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateDiskResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object CreateDiskResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): CreateDiskResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDiskResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateDiskSnapshotRequest extends js.Object {
     var diskSnapshotName: ResourceName
     var diskName: js.UndefOr[ResourceName]
@@ -1305,156 +857,54 @@ package lightsail {
     var tags: js.UndefOr[TagList]
   }
 
-  object CreateDiskSnapshotRequest {
-    @inline
-    def apply(
-        diskSnapshotName: ResourceName,
-        diskName: js.UndefOr[ResourceName] = js.undefined,
-        instanceName: js.UndefOr[ResourceName] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): CreateDiskSnapshotRequest = {
-      val __obj = js.Dynamic.literal(
-        "diskSnapshotName" -> diskSnapshotName.asInstanceOf[js.Any]
-      )
-
-      diskName.foreach(__v => __obj.updateDynamic("diskName")(__v.asInstanceOf[js.Any]))
-      instanceName.foreach(__v => __obj.updateDynamic("instanceName")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDiskSnapshotRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateDiskSnapshotResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object CreateDiskSnapshotResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): CreateDiskSnapshotResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDiskSnapshotResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateDomainEntryRequest extends js.Object {
     var domainEntry: DomainEntry
     var domainName: DomainName
   }
 
-  object CreateDomainEntryRequest {
-    @inline
-    def apply(
-        domainEntry: DomainEntry,
-        domainName: DomainName
-    ): CreateDomainEntryRequest = {
-      val __obj = js.Dynamic.literal(
-        "domainEntry" -> domainEntry.asInstanceOf[js.Any],
-        "domainName"  -> domainName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateDomainEntryRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateDomainEntryResult extends js.Object {
     var operation: js.UndefOr[Operation]
   }
 
-  object CreateDomainEntryResult {
-    @inline
-    def apply(
-        operation: js.UndefOr[Operation] = js.undefined
-    ): CreateDomainEntryResult = {
-      val __obj = js.Dynamic.literal()
-      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDomainEntryResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateDomainRequest extends js.Object {
     var domainName: DomainName
     var tags: js.UndefOr[TagList]
   }
 
-  object CreateDomainRequest {
-    @inline
-    def apply(
-        domainName: DomainName,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): CreateDomainRequest = {
-      val __obj = js.Dynamic.literal(
-        "domainName" -> domainName.asInstanceOf[js.Any]
-      )
-
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDomainRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateDomainResult extends js.Object {
     var operation: js.UndefOr[Operation]
   }
 
-  object CreateDomainResult {
-    @inline
-    def apply(
-        operation: js.UndefOr[Operation] = js.undefined
-    ): CreateDomainResult = {
-      val __obj = js.Dynamic.literal()
-      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDomainResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateInstanceSnapshotRequest extends js.Object {
     var instanceName: ResourceName
     var instanceSnapshotName: ResourceName
     var tags: js.UndefOr[TagList]
   }
 
-  object CreateInstanceSnapshotRequest {
-    @inline
-    def apply(
-        instanceName: ResourceName,
-        instanceSnapshotName: ResourceName,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): CreateInstanceSnapshotRequest = {
-      val __obj = js.Dynamic.literal(
-        "instanceName"         -> instanceName.asInstanceOf[js.Any],
-        "instanceSnapshotName" -> instanceSnapshotName.asInstanceOf[js.Any]
-      )
-
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateInstanceSnapshotRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateInstanceSnapshotResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object CreateInstanceSnapshotResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): CreateInstanceSnapshotResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateInstanceSnapshotResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateInstancesFromSnapshotRequest extends js.Object {
     var availabilityZone: String
     var bundleId: NonEmptyString
@@ -1470,60 +920,14 @@ package lightsail {
     var userData: js.UndefOr[String]
   }
 
-  object CreateInstancesFromSnapshotRequest {
-    @inline
-    def apply(
-        availabilityZone: String,
-        bundleId: NonEmptyString,
-        instanceNames: StringList,
-        addOns: js.UndefOr[AddOnRequestList] = js.undefined,
-        attachedDiskMapping: js.UndefOr[AttachedDiskMap] = js.undefined,
-        instanceSnapshotName: js.UndefOr[ResourceName] = js.undefined,
-        keyPairName: js.UndefOr[ResourceName] = js.undefined,
-        restoreDate: js.UndefOr[String] = js.undefined,
-        sourceInstanceName: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined,
-        useLatestRestorableAutoSnapshot: js.UndefOr[Boolean] = js.undefined,
-        userData: js.UndefOr[String] = js.undefined
-    ): CreateInstancesFromSnapshotRequest = {
-      val __obj = js.Dynamic.literal(
-        "availabilityZone" -> availabilityZone.asInstanceOf[js.Any],
-        "bundleId"         -> bundleId.asInstanceOf[js.Any],
-        "instanceNames"    -> instanceNames.asInstanceOf[js.Any]
-      )
-
-      addOns.foreach(__v => __obj.updateDynamic("addOns")(__v.asInstanceOf[js.Any]))
-      attachedDiskMapping.foreach(__v => __obj.updateDynamic("attachedDiskMapping")(__v.asInstanceOf[js.Any]))
-      instanceSnapshotName.foreach(__v => __obj.updateDynamic("instanceSnapshotName")(__v.asInstanceOf[js.Any]))
-      keyPairName.foreach(__v => __obj.updateDynamic("keyPairName")(__v.asInstanceOf[js.Any]))
-      restoreDate.foreach(__v => __obj.updateDynamic("restoreDate")(__v.asInstanceOf[js.Any]))
-      sourceInstanceName.foreach(__v => __obj.updateDynamic("sourceInstanceName")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      useLatestRestorableAutoSnapshot.foreach(__v =>
-        __obj.updateDynamic("useLatestRestorableAutoSnapshot")(__v.asInstanceOf[js.Any])
-      )
-      userData.foreach(__v => __obj.updateDynamic("userData")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateInstancesFromSnapshotRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateInstancesFromSnapshotResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object CreateInstancesFromSnapshotResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): CreateInstancesFromSnapshotResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateInstancesFromSnapshotResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateInstancesRequest extends js.Object {
     var availabilityZone: String
     var blueprintId: NonEmptyString
@@ -1536,73 +940,21 @@ package lightsail {
     var userData: js.UndefOr[String]
   }
 
-  object CreateInstancesRequest {
-    @inline
-    def apply(
-        availabilityZone: String,
-        blueprintId: NonEmptyString,
-        bundleId: NonEmptyString,
-        instanceNames: StringList,
-        addOns: js.UndefOr[AddOnRequestList] = js.undefined,
-        customImageName: js.UndefOr[ResourceName] = js.undefined,
-        keyPairName: js.UndefOr[ResourceName] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined,
-        userData: js.UndefOr[String] = js.undefined
-    ): CreateInstancesRequest = {
-      val __obj = js.Dynamic.literal(
-        "availabilityZone" -> availabilityZone.asInstanceOf[js.Any],
-        "blueprintId"      -> blueprintId.asInstanceOf[js.Any],
-        "bundleId"         -> bundleId.asInstanceOf[js.Any],
-        "instanceNames"    -> instanceNames.asInstanceOf[js.Any]
-      )
-
-      addOns.foreach(__v => __obj.updateDynamic("addOns")(__v.asInstanceOf[js.Any]))
-      customImageName.foreach(__v => __obj.updateDynamic("customImageName")(__v.asInstanceOf[js.Any]))
-      keyPairName.foreach(__v => __obj.updateDynamic("keyPairName")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      userData.foreach(__v => __obj.updateDynamic("userData")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateInstancesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateInstancesResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object CreateInstancesResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): CreateInstancesResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateInstancesResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateKeyPairRequest extends js.Object {
     var keyPairName: ResourceName
     var tags: js.UndefOr[TagList]
   }
 
-  object CreateKeyPairRequest {
-    @inline
-    def apply(
-        keyPairName: ResourceName,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): CreateKeyPairRequest = {
-      val __obj = js.Dynamic.literal(
-        "keyPairName" -> keyPairName.asInstanceOf[js.Any]
-      )
-
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateKeyPairRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateKeyPairResult extends js.Object {
     var keyPair: js.UndefOr[KeyPair]
     var operation: js.UndefOr[Operation]
@@ -1610,24 +962,8 @@ package lightsail {
     var publicKeyBase64: js.UndefOr[Base64]
   }
 
-  object CreateKeyPairResult {
-    @inline
-    def apply(
-        keyPair: js.UndefOr[KeyPair] = js.undefined,
-        operation: js.UndefOr[Operation] = js.undefined,
-        privateKeyBase64: js.UndefOr[Base64] = js.undefined,
-        publicKeyBase64: js.UndefOr[Base64] = js.undefined
-    ): CreateKeyPairResult = {
-      val __obj = js.Dynamic.literal()
-      keyPair.foreach(__v => __obj.updateDynamic("keyPair")(__v.asInstanceOf[js.Any]))
-      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
-      privateKeyBase64.foreach(__v => __obj.updateDynamic("privateKeyBase64")(__v.asInstanceOf[js.Any]))
-      publicKeyBase64.foreach(__v => __obj.updateDynamic("publicKeyBase64")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateKeyPairResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateLoadBalancerRequest extends js.Object {
     var instancePort: Port
     var loadBalancerName: ResourceName
@@ -1638,50 +974,14 @@ package lightsail {
     var tags: js.UndefOr[TagList]
   }
 
-  object CreateLoadBalancerRequest {
-    @inline
-    def apply(
-        instancePort: Port,
-        loadBalancerName: ResourceName,
-        certificateAlternativeNames: js.UndefOr[DomainNameList] = js.undefined,
-        certificateDomainName: js.UndefOr[DomainName] = js.undefined,
-        certificateName: js.UndefOr[ResourceName] = js.undefined,
-        healthCheckPath: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): CreateLoadBalancerRequest = {
-      val __obj = js.Dynamic.literal(
-        "instancePort"     -> instancePort.asInstanceOf[js.Any],
-        "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
-      )
-
-      certificateAlternativeNames.foreach(__v =>
-        __obj.updateDynamic("certificateAlternativeNames")(__v.asInstanceOf[js.Any])
-      )
-      certificateDomainName.foreach(__v => __obj.updateDynamic("certificateDomainName")(__v.asInstanceOf[js.Any]))
-      certificateName.foreach(__v => __obj.updateDynamic("certificateName")(__v.asInstanceOf[js.Any]))
-      healthCheckPath.foreach(__v => __obj.updateDynamic("healthCheckPath")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateLoadBalancerRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateLoadBalancerResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object CreateLoadBalancerResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): CreateLoadBalancerResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateLoadBalancerResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateLoadBalancerTlsCertificateRequest extends js.Object {
     var certificateDomainName: DomainName
     var certificateName: ResourceName
@@ -1690,46 +990,14 @@ package lightsail {
     var tags: js.UndefOr[TagList]
   }
 
-  object CreateLoadBalancerTlsCertificateRequest {
-    @inline
-    def apply(
-        certificateDomainName: DomainName,
-        certificateName: ResourceName,
-        loadBalancerName: ResourceName,
-        certificateAlternativeNames: js.UndefOr[DomainNameList] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): CreateLoadBalancerTlsCertificateRequest = {
-      val __obj = js.Dynamic.literal(
-        "certificateDomainName" -> certificateDomainName.asInstanceOf[js.Any],
-        "certificateName"       -> certificateName.asInstanceOf[js.Any],
-        "loadBalancerName"      -> loadBalancerName.asInstanceOf[js.Any]
-      )
-
-      certificateAlternativeNames.foreach(__v =>
-        __obj.updateDynamic("certificateAlternativeNames")(__v.asInstanceOf[js.Any])
-      )
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateLoadBalancerTlsCertificateRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateLoadBalancerTlsCertificateResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object CreateLoadBalancerTlsCertificateResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): CreateLoadBalancerTlsCertificateResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateLoadBalancerTlsCertificateResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateRelationalDatabaseFromSnapshotRequest extends js.Object {
     var relationalDatabaseName: ResourceName
     var availabilityZone: js.UndefOr[String]
@@ -1742,58 +1010,14 @@ package lightsail {
     var useLatestRestorableTime: js.UndefOr[Boolean]
   }
 
-  object CreateRelationalDatabaseFromSnapshotRequest {
-    @inline
-    def apply(
-        relationalDatabaseName: ResourceName,
-        availabilityZone: js.UndefOr[String] = js.undefined,
-        publiclyAccessible: js.UndefOr[Boolean] = js.undefined,
-        relationalDatabaseBundleId: js.UndefOr[String] = js.undefined,
-        relationalDatabaseSnapshotName: js.UndefOr[ResourceName] = js.undefined,
-        restoreTime: js.UndefOr[IsoDate] = js.undefined,
-        sourceRelationalDatabaseName: js.UndefOr[ResourceName] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined,
-        useLatestRestorableTime: js.UndefOr[Boolean] = js.undefined
-    ): CreateRelationalDatabaseFromSnapshotRequest = {
-      val __obj = js.Dynamic.literal(
-        "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
-      )
-
-      availabilityZone.foreach(__v => __obj.updateDynamic("availabilityZone")(__v.asInstanceOf[js.Any]))
-      publiclyAccessible.foreach(__v => __obj.updateDynamic("publiclyAccessible")(__v.asInstanceOf[js.Any]))
-      relationalDatabaseBundleId.foreach(__v =>
-        __obj.updateDynamic("relationalDatabaseBundleId")(__v.asInstanceOf[js.Any])
-      )
-      relationalDatabaseSnapshotName.foreach(__v =>
-        __obj.updateDynamic("relationalDatabaseSnapshotName")(__v.asInstanceOf[js.Any])
-      )
-      restoreTime.foreach(__v => __obj.updateDynamic("restoreTime")(__v.asInstanceOf[js.Any]))
-      sourceRelationalDatabaseName.foreach(__v =>
-        __obj.updateDynamic("sourceRelationalDatabaseName")(__v.asInstanceOf[js.Any])
-      )
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      useLatestRestorableTime.foreach(__v => __obj.updateDynamic("useLatestRestorableTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRelationalDatabaseFromSnapshotRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateRelationalDatabaseFromSnapshotResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object CreateRelationalDatabaseFromSnapshotResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): CreateRelationalDatabaseFromSnapshotResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRelationalDatabaseFromSnapshotResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateRelationalDatabaseRequest extends js.Object {
     var masterDatabaseName: String
     var masterUsername: String
@@ -1808,733 +1032,255 @@ package lightsail {
     var tags: js.UndefOr[TagList]
   }
 
-  object CreateRelationalDatabaseRequest {
-    @inline
-    def apply(
-        masterDatabaseName: String,
-        masterUsername: String,
-        relationalDatabaseBlueprintId: String,
-        relationalDatabaseBundleId: String,
-        relationalDatabaseName: ResourceName,
-        availabilityZone: js.UndefOr[String] = js.undefined,
-        masterUserPassword: js.UndefOr[SensitiveString] = js.undefined,
-        preferredBackupWindow: js.UndefOr[String] = js.undefined,
-        preferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
-        publiclyAccessible: js.UndefOr[Boolean] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): CreateRelationalDatabaseRequest = {
-      val __obj = js.Dynamic.literal(
-        "masterDatabaseName"            -> masterDatabaseName.asInstanceOf[js.Any],
-        "masterUsername"                -> masterUsername.asInstanceOf[js.Any],
-        "relationalDatabaseBlueprintId" -> relationalDatabaseBlueprintId.asInstanceOf[js.Any],
-        "relationalDatabaseBundleId"    -> relationalDatabaseBundleId.asInstanceOf[js.Any],
-        "relationalDatabaseName"        -> relationalDatabaseName.asInstanceOf[js.Any]
-      )
-
-      availabilityZone.foreach(__v => __obj.updateDynamic("availabilityZone")(__v.asInstanceOf[js.Any]))
-      masterUserPassword.foreach(__v => __obj.updateDynamic("masterUserPassword")(__v.asInstanceOf[js.Any]))
-      preferredBackupWindow.foreach(__v => __obj.updateDynamic("preferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      preferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("preferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
-      publiclyAccessible.foreach(__v => __obj.updateDynamic("publiclyAccessible")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRelationalDatabaseRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateRelationalDatabaseResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object CreateRelationalDatabaseResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): CreateRelationalDatabaseResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRelationalDatabaseResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateRelationalDatabaseSnapshotRequest extends js.Object {
     var relationalDatabaseName: ResourceName
     var relationalDatabaseSnapshotName: ResourceName
     var tags: js.UndefOr[TagList]
   }
 
-  object CreateRelationalDatabaseSnapshotRequest {
-    @inline
-    def apply(
-        relationalDatabaseName: ResourceName,
-        relationalDatabaseSnapshotName: ResourceName,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): CreateRelationalDatabaseSnapshotRequest = {
-      val __obj = js.Dynamic.literal(
-        "relationalDatabaseName"         -> relationalDatabaseName.asInstanceOf[js.Any],
-        "relationalDatabaseSnapshotName" -> relationalDatabaseSnapshotName.asInstanceOf[js.Any]
-      )
-
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRelationalDatabaseSnapshotRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateRelationalDatabaseSnapshotResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object CreateRelationalDatabaseSnapshotResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): CreateRelationalDatabaseSnapshotResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRelationalDatabaseSnapshotResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteAutoSnapshotRequest extends js.Object {
     var date: AutoSnapshotDate
     var resourceName: ResourceName
   }
 
-  object DeleteAutoSnapshotRequest {
-    @inline
-    def apply(
-        date: AutoSnapshotDate,
-        resourceName: ResourceName
-    ): DeleteAutoSnapshotRequest = {
-      val __obj = js.Dynamic.literal(
-        "date"         -> date.asInstanceOf[js.Any],
-        "resourceName" -> resourceName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteAutoSnapshotRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteAutoSnapshotResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object DeleteAutoSnapshotResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): DeleteAutoSnapshotResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteAutoSnapshotResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDiskRequest extends js.Object {
     var diskName: ResourceName
     var forceDeleteAddOns: js.UndefOr[Boolean]
   }
 
-  object DeleteDiskRequest {
-    @inline
-    def apply(
-        diskName: ResourceName,
-        forceDeleteAddOns: js.UndefOr[Boolean] = js.undefined
-    ): DeleteDiskRequest = {
-      val __obj = js.Dynamic.literal(
-        "diskName" -> diskName.asInstanceOf[js.Any]
-      )
-
-      forceDeleteAddOns.foreach(__v => __obj.updateDynamic("forceDeleteAddOns")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteDiskRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDiskResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object DeleteDiskResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): DeleteDiskResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteDiskResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDiskSnapshotRequest extends js.Object {
     var diskSnapshotName: ResourceName
   }
 
-  object DeleteDiskSnapshotRequest {
-    @inline
-    def apply(
-        diskSnapshotName: ResourceName
-    ): DeleteDiskSnapshotRequest = {
-      val __obj = js.Dynamic.literal(
-        "diskSnapshotName" -> diskSnapshotName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteDiskSnapshotRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDiskSnapshotResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object DeleteDiskSnapshotResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): DeleteDiskSnapshotResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteDiskSnapshotResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDomainEntryRequest extends js.Object {
     var domainEntry: DomainEntry
     var domainName: DomainName
   }
 
-  object DeleteDomainEntryRequest {
-    @inline
-    def apply(
-        domainEntry: DomainEntry,
-        domainName: DomainName
-    ): DeleteDomainEntryRequest = {
-      val __obj = js.Dynamic.literal(
-        "domainEntry" -> domainEntry.asInstanceOf[js.Any],
-        "domainName"  -> domainName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteDomainEntryRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDomainEntryResult extends js.Object {
     var operation: js.UndefOr[Operation]
   }
 
-  object DeleteDomainEntryResult {
-    @inline
-    def apply(
-        operation: js.UndefOr[Operation] = js.undefined
-    ): DeleteDomainEntryResult = {
-      val __obj = js.Dynamic.literal()
-      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteDomainEntryResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDomainRequest extends js.Object {
     var domainName: DomainName
   }
 
-  object DeleteDomainRequest {
-    @inline
-    def apply(
-        domainName: DomainName
-    ): DeleteDomainRequest = {
-      val __obj = js.Dynamic.literal(
-        "domainName" -> domainName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteDomainRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDomainResult extends js.Object {
     var operation: js.UndefOr[Operation]
   }
 
-  object DeleteDomainResult {
-    @inline
-    def apply(
-        operation: js.UndefOr[Operation] = js.undefined
-    ): DeleteDomainResult = {
-      val __obj = js.Dynamic.literal()
-      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteDomainResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteInstanceRequest extends js.Object {
     var instanceName: ResourceName
     var forceDeleteAddOns: js.UndefOr[Boolean]
   }
 
-  object DeleteInstanceRequest {
-    @inline
-    def apply(
-        instanceName: ResourceName,
-        forceDeleteAddOns: js.UndefOr[Boolean] = js.undefined
-    ): DeleteInstanceRequest = {
-      val __obj = js.Dynamic.literal(
-        "instanceName" -> instanceName.asInstanceOf[js.Any]
-      )
-
-      forceDeleteAddOns.foreach(__v => __obj.updateDynamic("forceDeleteAddOns")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteInstanceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteInstanceResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object DeleteInstanceResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): DeleteInstanceResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteInstanceResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteInstanceSnapshotRequest extends js.Object {
     var instanceSnapshotName: ResourceName
   }
 
-  object DeleteInstanceSnapshotRequest {
-    @inline
-    def apply(
-        instanceSnapshotName: ResourceName
-    ): DeleteInstanceSnapshotRequest = {
-      val __obj = js.Dynamic.literal(
-        "instanceSnapshotName" -> instanceSnapshotName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteInstanceSnapshotRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteInstanceSnapshotResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object DeleteInstanceSnapshotResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): DeleteInstanceSnapshotResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteInstanceSnapshotResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteKeyPairRequest extends js.Object {
     var keyPairName: ResourceName
   }
 
-  object DeleteKeyPairRequest {
-    @inline
-    def apply(
-        keyPairName: ResourceName
-    ): DeleteKeyPairRequest = {
-      val __obj = js.Dynamic.literal(
-        "keyPairName" -> keyPairName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteKeyPairRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteKeyPairResult extends js.Object {
     var operation: js.UndefOr[Operation]
   }
 
-  object DeleteKeyPairResult {
-    @inline
-    def apply(
-        operation: js.UndefOr[Operation] = js.undefined
-    ): DeleteKeyPairResult = {
-      val __obj = js.Dynamic.literal()
-      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteKeyPairResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteKnownHostKeysRequest extends js.Object {
     var instanceName: ResourceName
   }
 
-  object DeleteKnownHostKeysRequest {
-    @inline
-    def apply(
-        instanceName: ResourceName
-    ): DeleteKnownHostKeysRequest = {
-      val __obj = js.Dynamic.literal(
-        "instanceName" -> instanceName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteKnownHostKeysRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteKnownHostKeysResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object DeleteKnownHostKeysResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): DeleteKnownHostKeysResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteKnownHostKeysResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteLoadBalancerRequest extends js.Object {
     var loadBalancerName: ResourceName
   }
 
-  object DeleteLoadBalancerRequest {
-    @inline
-    def apply(
-        loadBalancerName: ResourceName
-    ): DeleteLoadBalancerRequest = {
-      val __obj = js.Dynamic.literal(
-        "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteLoadBalancerRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteLoadBalancerResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object DeleteLoadBalancerResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): DeleteLoadBalancerResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteLoadBalancerResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteLoadBalancerTlsCertificateRequest extends js.Object {
     var certificateName: ResourceName
     var loadBalancerName: ResourceName
     var force: js.UndefOr[Boolean]
   }
 
-  object DeleteLoadBalancerTlsCertificateRequest {
-    @inline
-    def apply(
-        certificateName: ResourceName,
-        loadBalancerName: ResourceName,
-        force: js.UndefOr[Boolean] = js.undefined
-    ): DeleteLoadBalancerTlsCertificateRequest = {
-      val __obj = js.Dynamic.literal(
-        "certificateName"  -> certificateName.asInstanceOf[js.Any],
-        "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
-      )
-
-      force.foreach(__v => __obj.updateDynamic("force")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteLoadBalancerTlsCertificateRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteLoadBalancerTlsCertificateResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object DeleteLoadBalancerTlsCertificateResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): DeleteLoadBalancerTlsCertificateResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteLoadBalancerTlsCertificateResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteRelationalDatabaseRequest extends js.Object {
     var relationalDatabaseName: ResourceName
     var finalRelationalDatabaseSnapshotName: js.UndefOr[ResourceName]
     var skipFinalSnapshot: js.UndefOr[Boolean]
   }
 
-  object DeleteRelationalDatabaseRequest {
-    @inline
-    def apply(
-        relationalDatabaseName: ResourceName,
-        finalRelationalDatabaseSnapshotName: js.UndefOr[ResourceName] = js.undefined,
-        skipFinalSnapshot: js.UndefOr[Boolean] = js.undefined
-    ): DeleteRelationalDatabaseRequest = {
-      val __obj = js.Dynamic.literal(
-        "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
-      )
-
-      finalRelationalDatabaseSnapshotName.foreach(__v =>
-        __obj.updateDynamic("finalRelationalDatabaseSnapshotName")(__v.asInstanceOf[js.Any])
-      )
-      skipFinalSnapshot.foreach(__v => __obj.updateDynamic("skipFinalSnapshot")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteRelationalDatabaseRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteRelationalDatabaseResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object DeleteRelationalDatabaseResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): DeleteRelationalDatabaseResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteRelationalDatabaseResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteRelationalDatabaseSnapshotRequest extends js.Object {
     var relationalDatabaseSnapshotName: ResourceName
   }
 
-  object DeleteRelationalDatabaseSnapshotRequest {
-    @inline
-    def apply(
-        relationalDatabaseSnapshotName: ResourceName
-    ): DeleteRelationalDatabaseSnapshotRequest = {
-      val __obj = js.Dynamic.literal(
-        "relationalDatabaseSnapshotName" -> relationalDatabaseSnapshotName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteRelationalDatabaseSnapshotRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteRelationalDatabaseSnapshotResult extends js.Object {
     var operations: js.UndefOr[OperationList]
-  }
-
-  object DeleteRelationalDatabaseSnapshotResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): DeleteRelationalDatabaseSnapshotResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteRelationalDatabaseSnapshotResult]
-    }
   }
 
   /**
     * Describes the destination of a record.
     */
   @js.native
+  @Factory
   trait DestinationInfo extends js.Object {
     var id: js.UndefOr[NonEmptyString]
     var service: js.UndefOr[NonEmptyString]
   }
 
-  object DestinationInfo {
-    @inline
-    def apply(
-        id: js.UndefOr[NonEmptyString] = js.undefined,
-        service: js.UndefOr[NonEmptyString] = js.undefined
-    ): DestinationInfo = {
-      val __obj = js.Dynamic.literal()
-      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
-      service.foreach(__v => __obj.updateDynamic("service")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DestinationInfo]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetachDiskRequest extends js.Object {
     var diskName: ResourceName
   }
 
-  object DetachDiskRequest {
-    @inline
-    def apply(
-        diskName: ResourceName
-    ): DetachDiskRequest = {
-      val __obj = js.Dynamic.literal(
-        "diskName" -> diskName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DetachDiskRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetachDiskResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object DetachDiskResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): DetachDiskResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DetachDiskResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetachInstancesFromLoadBalancerRequest extends js.Object {
     var instanceNames: ResourceNameList
     var loadBalancerName: ResourceName
   }
 
-  object DetachInstancesFromLoadBalancerRequest {
-    @inline
-    def apply(
-        instanceNames: ResourceNameList,
-        loadBalancerName: ResourceName
-    ): DetachInstancesFromLoadBalancerRequest = {
-      val __obj = js.Dynamic.literal(
-        "instanceNames"    -> instanceNames.asInstanceOf[js.Any],
-        "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DetachInstancesFromLoadBalancerRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetachInstancesFromLoadBalancerResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object DetachInstancesFromLoadBalancerResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): DetachInstancesFromLoadBalancerResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DetachInstancesFromLoadBalancerResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetachStaticIpRequest extends js.Object {
     var staticIpName: ResourceName
   }
 
-  object DetachStaticIpRequest {
-    @inline
-    def apply(
-        staticIpName: ResourceName
-    ): DetachStaticIpRequest = {
-      val __obj = js.Dynamic.literal(
-        "staticIpName" -> staticIpName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DetachStaticIpRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetachStaticIpResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object DetachStaticIpResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): DetachStaticIpResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DetachStaticIpResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisableAddOnRequest extends js.Object {
     var addOnType: AddOnType
     var resourceName: ResourceName
   }
 
-  object DisableAddOnRequest {
-    @inline
-    def apply(
-        addOnType: AddOnType,
-        resourceName: ResourceName
-    ): DisableAddOnRequest = {
-      val __obj = js.Dynamic.literal(
-        "addOnType"    -> addOnType.asInstanceOf[js.Any],
-        "resourceName" -> resourceName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisableAddOnRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisableAddOnResult extends js.Object {
     var operations: js.UndefOr[OperationList]
-  }
-
-  object DisableAddOnResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): DisableAddOnResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DisableAddOnResult]
-    }
   }
 
   /**
     * Describes a system disk or a block storage disk.
     */
   @js.native
+  @Factory
   trait Disk extends js.Object {
     var addOns: js.UndefOr[AddOnList]
     var arn: js.UndefOr[NonEmptyString]
@@ -2555,53 +1301,11 @@ package lightsail {
     var tags: js.UndefOr[TagList]
   }
 
-  object Disk {
-    @inline
-    def apply(
-        addOns: js.UndefOr[AddOnList] = js.undefined,
-        arn: js.UndefOr[NonEmptyString] = js.undefined,
-        attachedTo: js.UndefOr[ResourceName] = js.undefined,
-        attachmentState: js.UndefOr[String] = js.undefined,
-        createdAt: js.UndefOr[IsoDate] = js.undefined,
-        gbInUse: js.UndefOr[Int] = js.undefined,
-        iops: js.UndefOr[Int] = js.undefined,
-        isAttached: js.UndefOr[Boolean] = js.undefined,
-        isSystemDisk: js.UndefOr[Boolean] = js.undefined,
-        location: js.UndefOr[ResourceLocation] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined,
-        path: js.UndefOr[String] = js.undefined,
-        resourceType: js.UndefOr[ResourceType] = js.undefined,
-        sizeInGb: js.UndefOr[Int] = js.undefined,
-        state: js.UndefOr[DiskState] = js.undefined,
-        supportCode: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): Disk = {
-      val __obj = js.Dynamic.literal()
-      addOns.foreach(__v => __obj.updateDynamic("addOns")(__v.asInstanceOf[js.Any]))
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      attachedTo.foreach(__v => __obj.updateDynamic("attachedTo")(__v.asInstanceOf[js.Any]))
-      attachmentState.foreach(__v => __obj.updateDynamic("attachmentState")(__v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      gbInUse.foreach(__v => __obj.updateDynamic("gbInUse")(__v.asInstanceOf[js.Any]))
-      iops.foreach(__v => __obj.updateDynamic("iops")(__v.asInstanceOf[js.Any]))
-      isAttached.foreach(__v => __obj.updateDynamic("isAttached")(__v.asInstanceOf[js.Any]))
-      isSystemDisk.foreach(__v => __obj.updateDynamic("isSystemDisk")(__v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      path.foreach(__v => __obj.updateDynamic("path")(__v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      sizeInGb.foreach(__v => __obj.updateDynamic("sizeInGb")(__v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
-      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Disk]
-    }
-  }
-
   /**
     * Describes a disk.
     */
   @js.native
+  @Factory
   trait DiskInfo extends js.Object {
     var isSystemDisk: js.UndefOr[Boolean]
     var name: js.UndefOr[String]
@@ -2609,49 +1313,21 @@ package lightsail {
     var sizeInGb: js.UndefOr[Int]
   }
 
-  object DiskInfo {
-    @inline
-    def apply(
-        isSystemDisk: js.UndefOr[Boolean] = js.undefined,
-        name: js.UndefOr[String] = js.undefined,
-        path: js.UndefOr[NonEmptyString] = js.undefined,
-        sizeInGb: js.UndefOr[Int] = js.undefined
-    ): DiskInfo = {
-      val __obj = js.Dynamic.literal()
-      isSystemDisk.foreach(__v => __obj.updateDynamic("isSystemDisk")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      path.foreach(__v => __obj.updateDynamic("path")(__v.asInstanceOf[js.Any]))
-      sizeInGb.foreach(__v => __obj.updateDynamic("sizeInGb")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DiskInfo]
-    }
-  }
-
   /**
     * Describes a block storage disk mapping.
     */
   @js.native
+  @Factory
   trait DiskMap extends js.Object {
     var newDiskName: js.UndefOr[ResourceName]
     var originalDiskPath: js.UndefOr[NonEmptyString]
-  }
-
-  object DiskMap {
-    @inline
-    def apply(
-        newDiskName: js.UndefOr[ResourceName] = js.undefined,
-        originalDiskPath: js.UndefOr[NonEmptyString] = js.undefined
-    ): DiskMap = {
-      val __obj = js.Dynamic.literal()
-      newDiskName.foreach(__v => __obj.updateDynamic("newDiskName")(__v.asInstanceOf[js.Any]))
-      originalDiskPath.foreach(__v => __obj.updateDynamic("originalDiskPath")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DiskMap]
-    }
   }
 
   /**
     * Describes a block storage disk snapshot.
     */
   @js.native
+  @Factory
   trait DiskSnapshot extends js.Object {
     var arn: js.UndefOr[NonEmptyString]
     var createdAt: js.UndefOr[IsoDate]
@@ -2670,62 +1346,13 @@ package lightsail {
     var tags: js.UndefOr[TagList]
   }
 
-  object DiskSnapshot {
-    @inline
-    def apply(
-        arn: js.UndefOr[NonEmptyString] = js.undefined,
-        createdAt: js.UndefOr[IsoDate] = js.undefined,
-        fromDiskArn: js.UndefOr[NonEmptyString] = js.undefined,
-        fromDiskName: js.UndefOr[ResourceName] = js.undefined,
-        fromInstanceArn: js.UndefOr[NonEmptyString] = js.undefined,
-        fromInstanceName: js.UndefOr[ResourceName] = js.undefined,
-        isFromAutoSnapshot: js.UndefOr[Boolean] = js.undefined,
-        location: js.UndefOr[ResourceLocation] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined,
-        progress: js.UndefOr[String] = js.undefined,
-        resourceType: js.UndefOr[ResourceType] = js.undefined,
-        sizeInGb: js.UndefOr[Int] = js.undefined,
-        state: js.UndefOr[DiskSnapshotState] = js.undefined,
-        supportCode: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): DiskSnapshot = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      fromDiskArn.foreach(__v => __obj.updateDynamic("fromDiskArn")(__v.asInstanceOf[js.Any]))
-      fromDiskName.foreach(__v => __obj.updateDynamic("fromDiskName")(__v.asInstanceOf[js.Any]))
-      fromInstanceArn.foreach(__v => __obj.updateDynamic("fromInstanceArn")(__v.asInstanceOf[js.Any]))
-      fromInstanceName.foreach(__v => __obj.updateDynamic("fromInstanceName")(__v.asInstanceOf[js.Any]))
-      isFromAutoSnapshot.foreach(__v => __obj.updateDynamic("isFromAutoSnapshot")(__v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      progress.foreach(__v => __obj.updateDynamic("progress")(__v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      sizeInGb.foreach(__v => __obj.updateDynamic("sizeInGb")(__v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
-      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DiskSnapshot]
-    }
-  }
-
   /**
     * Describes a disk snapshot.
     */
   @js.native
+  @Factory
   trait DiskSnapshotInfo extends js.Object {
     var sizeInGb: js.UndefOr[Int]
-  }
-
-  object DiskSnapshotInfo {
-    @inline
-    def apply(
-        sizeInGb: js.UndefOr[Int] = js.undefined
-    ): DiskSnapshotInfo = {
-      val __obj = js.Dynamic.literal()
-      sizeInGb.foreach(__v => __obj.updateDynamic("sizeInGb")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DiskSnapshotInfo]
-    }
   }
 
   @js.native
@@ -2755,6 +1382,7 @@ package lightsail {
     * Describes a domain where you are storing recordsets in Lightsail.
     */
   @js.native
+  @Factory
   trait Domain extends js.Object {
     var arn: js.UndefOr[NonEmptyString]
     var createdAt: js.UndefOr[IsoDate]
@@ -2766,35 +1394,11 @@ package lightsail {
     var tags: js.UndefOr[TagList]
   }
 
-  object Domain {
-    @inline
-    def apply(
-        arn: js.UndefOr[NonEmptyString] = js.undefined,
-        createdAt: js.UndefOr[IsoDate] = js.undefined,
-        domainEntries: js.UndefOr[DomainEntryList] = js.undefined,
-        location: js.UndefOr[ResourceLocation] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined,
-        resourceType: js.UndefOr[ResourceType] = js.undefined,
-        supportCode: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): Domain = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      domainEntries.foreach(__v => __obj.updateDynamic("domainEntries")(__v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Domain]
-    }
-  }
-
   /**
     * Describes a domain recordset entry.
     */
   @js.native
+  @Factory
   trait DomainEntry extends js.Object {
     var id: js.UndefOr[NonEmptyString]
     var isAlias: js.UndefOr[Boolean]
@@ -2804,100 +1408,35 @@ package lightsail {
     var `type`: js.UndefOr[DomainEntryType]
   }
 
-  object DomainEntry {
-    @inline
-    def apply(
-        id: js.UndefOr[NonEmptyString] = js.undefined,
-        isAlias: js.UndefOr[Boolean] = js.undefined,
-        name: js.UndefOr[DomainName] = js.undefined,
-        options: js.UndefOr[DomainEntryOptions] = js.undefined,
-        target: js.UndefOr[String] = js.undefined,
-        `type`: js.UndefOr[DomainEntryType] = js.undefined
-    ): DomainEntry = {
-      val __obj = js.Dynamic.literal()
-      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
-      isAlias.foreach(__v => __obj.updateDynamic("isAlias")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      options.foreach(__v => __obj.updateDynamic("options")(__v.asInstanceOf[js.Any]))
-      target.foreach(__v => __obj.updateDynamic("target")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DomainEntry]
-    }
-  }
-
   @js.native
+  @Factory
   trait DownloadDefaultKeyPairRequest extends js.Object {}
 
-  object DownloadDefaultKeyPairRequest {
-    @inline
-    def apply(
-    ): DownloadDefaultKeyPairRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DownloadDefaultKeyPairRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DownloadDefaultKeyPairResult extends js.Object {
     var privateKeyBase64: js.UndefOr[Base64]
     var publicKeyBase64: js.UndefOr[Base64]
   }
 
-  object DownloadDefaultKeyPairResult {
-    @inline
-    def apply(
-        privateKeyBase64: js.UndefOr[Base64] = js.undefined,
-        publicKeyBase64: js.UndefOr[Base64] = js.undefined
-    ): DownloadDefaultKeyPairResult = {
-      val __obj = js.Dynamic.literal()
-      privateKeyBase64.foreach(__v => __obj.updateDynamic("privateKeyBase64")(__v.asInstanceOf[js.Any]))
-      publicKeyBase64.foreach(__v => __obj.updateDynamic("publicKeyBase64")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DownloadDefaultKeyPairResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait EnableAddOnRequest extends js.Object {
     var addOnRequest: AddOnRequest
     var resourceName: ResourceName
   }
 
-  object EnableAddOnRequest {
-    @inline
-    def apply(
-        addOnRequest: AddOnRequest,
-        resourceName: ResourceName
-    ): EnableAddOnRequest = {
-      val __obj = js.Dynamic.literal(
-        "addOnRequest" -> addOnRequest.asInstanceOf[js.Any],
-        "resourceName" -> resourceName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[EnableAddOnRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait EnableAddOnResult extends js.Object {
     var operations: js.UndefOr[OperationList]
-  }
-
-  object EnableAddOnResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): EnableAddOnResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EnableAddOnResult]
-    }
   }
 
   /**
     * Describes an export snapshot record.
     */
   @js.native
+  @Factory
   trait ExportSnapshotRecord extends js.Object {
     var arn: js.UndefOr[NonEmptyString]
     var createdAt: js.UndefOr[IsoDate]
@@ -2909,35 +1448,11 @@ package lightsail {
     var state: js.UndefOr[RecordState]
   }
 
-  object ExportSnapshotRecord {
-    @inline
-    def apply(
-        arn: js.UndefOr[NonEmptyString] = js.undefined,
-        createdAt: js.UndefOr[IsoDate] = js.undefined,
-        destinationInfo: js.UndefOr[DestinationInfo] = js.undefined,
-        location: js.UndefOr[ResourceLocation] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined,
-        resourceType: js.UndefOr[ResourceType] = js.undefined,
-        sourceInfo: js.UndefOr[ExportSnapshotRecordSourceInfo] = js.undefined,
-        state: js.UndefOr[RecordState] = js.undefined
-    ): ExportSnapshotRecord = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      destinationInfo.foreach(__v => __obj.updateDynamic("destinationInfo")(__v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      sourceInfo.foreach(__v => __obj.updateDynamic("sourceInfo")(__v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ExportSnapshotRecord]
-    }
-  }
-
   /**
     * Describes the source of an export snapshot record.
     */
   @js.native
+  @Factory
   trait ExportSnapshotRecordSourceInfo extends js.Object {
     var arn: js.UndefOr[NonEmptyString]
     var createdAt: js.UndefOr[IsoDate]
@@ -2947,31 +1462,6 @@ package lightsail {
     var instanceSnapshotInfo: js.UndefOr[InstanceSnapshotInfo]
     var name: js.UndefOr[NonEmptyString]
     var resourceType: js.UndefOr[ExportSnapshotRecordSourceType]
-  }
-
-  object ExportSnapshotRecordSourceInfo {
-    @inline
-    def apply(
-        arn: js.UndefOr[NonEmptyString] = js.undefined,
-        createdAt: js.UndefOr[IsoDate] = js.undefined,
-        diskSnapshotInfo: js.UndefOr[DiskSnapshotInfo] = js.undefined,
-        fromResourceArn: js.UndefOr[NonEmptyString] = js.undefined,
-        fromResourceName: js.UndefOr[NonEmptyString] = js.undefined,
-        instanceSnapshotInfo: js.UndefOr[InstanceSnapshotInfo] = js.undefined,
-        name: js.UndefOr[NonEmptyString] = js.undefined,
-        resourceType: js.UndefOr[ExportSnapshotRecordSourceType] = js.undefined
-    ): ExportSnapshotRecordSourceInfo = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      diskSnapshotInfo.foreach(__v => __obj.updateDynamic("diskSnapshotInfo")(__v.asInstanceOf[js.Any]))
-      fromResourceArn.foreach(__v => __obj.updateDynamic("fromResourceArn")(__v.asInstanceOf[js.Any]))
-      fromResourceName.foreach(__v => __obj.updateDynamic("fromResourceName")(__v.asInstanceOf[js.Any]))
-      instanceSnapshotInfo.foreach(__v => __obj.updateDynamic("instanceSnapshotInfo")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ExportSnapshotRecordSourceInfo]
-    }
   }
 
   @js.native
@@ -2984,507 +1474,188 @@ package lightsail {
   }
 
   @js.native
+  @Factory
   trait ExportSnapshotRequest extends js.Object {
     var sourceSnapshotName: ResourceName
   }
 
-  object ExportSnapshotRequest {
-    @inline
-    def apply(
-        sourceSnapshotName: ResourceName
-    ): ExportSnapshotRequest = {
-      val __obj = js.Dynamic.literal(
-        "sourceSnapshotName" -> sourceSnapshotName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ExportSnapshotRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ExportSnapshotResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object ExportSnapshotResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): ExportSnapshotResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ExportSnapshotResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetActiveNamesRequest extends js.Object {
     var pageToken: js.UndefOr[String]
   }
 
-  object GetActiveNamesRequest {
-    @inline
-    def apply(
-        pageToken: js.UndefOr[String] = js.undefined
-    ): GetActiveNamesRequest = {
-      val __obj = js.Dynamic.literal()
-      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetActiveNamesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetActiveNamesResult extends js.Object {
     var activeNames: js.UndefOr[StringList]
     var nextPageToken: js.UndefOr[String]
   }
 
-  object GetActiveNamesResult {
-    @inline
-    def apply(
-        activeNames: js.UndefOr[StringList] = js.undefined,
-        nextPageToken: js.UndefOr[String] = js.undefined
-    ): GetActiveNamesResult = {
-      val __obj = js.Dynamic.literal()
-      activeNames.foreach(__v => __obj.updateDynamic("activeNames")(__v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetActiveNamesResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetAutoSnapshotsRequest extends js.Object {
     var resourceName: ResourceName
   }
 
-  object GetAutoSnapshotsRequest {
-    @inline
-    def apply(
-        resourceName: ResourceName
-    ): GetAutoSnapshotsRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceName" -> resourceName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetAutoSnapshotsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetAutoSnapshotsResult extends js.Object {
     var autoSnapshots: js.UndefOr[AutoSnapshotDetailsList]
     var resourceName: js.UndefOr[ResourceName]
     var resourceType: js.UndefOr[ResourceType]
   }
 
-  object GetAutoSnapshotsResult {
-    @inline
-    def apply(
-        autoSnapshots: js.UndefOr[AutoSnapshotDetailsList] = js.undefined,
-        resourceName: js.UndefOr[ResourceName] = js.undefined,
-        resourceType: js.UndefOr[ResourceType] = js.undefined
-    ): GetAutoSnapshotsResult = {
-      val __obj = js.Dynamic.literal()
-      autoSnapshots.foreach(__v => __obj.updateDynamic("autoSnapshots")(__v.asInstanceOf[js.Any]))
-      resourceName.foreach(__v => __obj.updateDynamic("resourceName")(__v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetAutoSnapshotsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBlueprintsRequest extends js.Object {
     var includeInactive: js.UndefOr[Boolean]
     var pageToken: js.UndefOr[String]
   }
 
-  object GetBlueprintsRequest {
-    @inline
-    def apply(
-        includeInactive: js.UndefOr[Boolean] = js.undefined,
-        pageToken: js.UndefOr[String] = js.undefined
-    ): GetBlueprintsRequest = {
-      val __obj = js.Dynamic.literal()
-      includeInactive.foreach(__v => __obj.updateDynamic("includeInactive")(__v.asInstanceOf[js.Any]))
-      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBlueprintsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBlueprintsResult extends js.Object {
     var blueprints: js.UndefOr[BlueprintList]
     var nextPageToken: js.UndefOr[String]
   }
 
-  object GetBlueprintsResult {
-    @inline
-    def apply(
-        blueprints: js.UndefOr[BlueprintList] = js.undefined,
-        nextPageToken: js.UndefOr[String] = js.undefined
-    ): GetBlueprintsResult = {
-      val __obj = js.Dynamic.literal()
-      blueprints.foreach(__v => __obj.updateDynamic("blueprints")(__v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBlueprintsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBundlesRequest extends js.Object {
     var includeInactive: js.UndefOr[Boolean]
     var pageToken: js.UndefOr[String]
   }
 
-  object GetBundlesRequest {
-    @inline
-    def apply(
-        includeInactive: js.UndefOr[Boolean] = js.undefined,
-        pageToken: js.UndefOr[String] = js.undefined
-    ): GetBundlesRequest = {
-      val __obj = js.Dynamic.literal()
-      includeInactive.foreach(__v => __obj.updateDynamic("includeInactive")(__v.asInstanceOf[js.Any]))
-      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBundlesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetBundlesResult extends js.Object {
     var bundles: js.UndefOr[BundleList]
     var nextPageToken: js.UndefOr[String]
   }
 
-  object GetBundlesResult {
-    @inline
-    def apply(
-        bundles: js.UndefOr[BundleList] = js.undefined,
-        nextPageToken: js.UndefOr[String] = js.undefined
-    ): GetBundlesResult = {
-      val __obj = js.Dynamic.literal()
-      bundles.foreach(__v => __obj.updateDynamic("bundles")(__v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBundlesResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetCloudFormationStackRecordsRequest extends js.Object {
     var pageToken: js.UndefOr[String]
   }
 
-  object GetCloudFormationStackRecordsRequest {
-    @inline
-    def apply(
-        pageToken: js.UndefOr[String] = js.undefined
-    ): GetCloudFormationStackRecordsRequest = {
-      val __obj = js.Dynamic.literal()
-      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetCloudFormationStackRecordsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetCloudFormationStackRecordsResult extends js.Object {
     var cloudFormationStackRecords: js.UndefOr[CloudFormationStackRecordList]
     var nextPageToken: js.UndefOr[String]
   }
 
-  object GetCloudFormationStackRecordsResult {
-    @inline
-    def apply(
-        cloudFormationStackRecords: js.UndefOr[CloudFormationStackRecordList] = js.undefined,
-        nextPageToken: js.UndefOr[String] = js.undefined
-    ): GetCloudFormationStackRecordsResult = {
-      val __obj = js.Dynamic.literal()
-      cloudFormationStackRecords.foreach(__v =>
-        __obj.updateDynamic("cloudFormationStackRecords")(__v.asInstanceOf[js.Any])
-      )
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetCloudFormationStackRecordsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDiskRequest extends js.Object {
     var diskName: ResourceName
   }
 
-  object GetDiskRequest {
-    @inline
-    def apply(
-        diskName: ResourceName
-    ): GetDiskRequest = {
-      val __obj = js.Dynamic.literal(
-        "diskName" -> diskName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetDiskRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDiskResult extends js.Object {
     var disk: js.UndefOr[Disk]
   }
 
-  object GetDiskResult {
-    @inline
-    def apply(
-        disk: js.UndefOr[Disk] = js.undefined
-    ): GetDiskResult = {
-      val __obj = js.Dynamic.literal()
-      disk.foreach(__v => __obj.updateDynamic("disk")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDiskResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDiskSnapshotRequest extends js.Object {
     var diskSnapshotName: ResourceName
   }
 
-  object GetDiskSnapshotRequest {
-    @inline
-    def apply(
-        diskSnapshotName: ResourceName
-    ): GetDiskSnapshotRequest = {
-      val __obj = js.Dynamic.literal(
-        "diskSnapshotName" -> diskSnapshotName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetDiskSnapshotRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDiskSnapshotResult extends js.Object {
     var diskSnapshot: js.UndefOr[DiskSnapshot]
   }
 
-  object GetDiskSnapshotResult {
-    @inline
-    def apply(
-        diskSnapshot: js.UndefOr[DiskSnapshot] = js.undefined
-    ): GetDiskSnapshotResult = {
-      val __obj = js.Dynamic.literal()
-      diskSnapshot.foreach(__v => __obj.updateDynamic("diskSnapshot")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDiskSnapshotResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDiskSnapshotsRequest extends js.Object {
     var pageToken: js.UndefOr[String]
   }
 
-  object GetDiskSnapshotsRequest {
-    @inline
-    def apply(
-        pageToken: js.UndefOr[String] = js.undefined
-    ): GetDiskSnapshotsRequest = {
-      val __obj = js.Dynamic.literal()
-      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDiskSnapshotsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDiskSnapshotsResult extends js.Object {
     var diskSnapshots: js.UndefOr[DiskSnapshotList]
     var nextPageToken: js.UndefOr[String]
   }
 
-  object GetDiskSnapshotsResult {
-    @inline
-    def apply(
-        diskSnapshots: js.UndefOr[DiskSnapshotList] = js.undefined,
-        nextPageToken: js.UndefOr[String] = js.undefined
-    ): GetDiskSnapshotsResult = {
-      val __obj = js.Dynamic.literal()
-      diskSnapshots.foreach(__v => __obj.updateDynamic("diskSnapshots")(__v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDiskSnapshotsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDisksRequest extends js.Object {
     var pageToken: js.UndefOr[String]
   }
 
-  object GetDisksRequest {
-    @inline
-    def apply(
-        pageToken: js.UndefOr[String] = js.undefined
-    ): GetDisksRequest = {
-      val __obj = js.Dynamic.literal()
-      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDisksRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDisksResult extends js.Object {
     var disks: js.UndefOr[DiskList]
     var nextPageToken: js.UndefOr[String]
   }
 
-  object GetDisksResult {
-    @inline
-    def apply(
-        disks: js.UndefOr[DiskList] = js.undefined,
-        nextPageToken: js.UndefOr[String] = js.undefined
-    ): GetDisksResult = {
-      val __obj = js.Dynamic.literal()
-      disks.foreach(__v => __obj.updateDynamic("disks")(__v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDisksResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDomainRequest extends js.Object {
     var domainName: DomainName
   }
 
-  object GetDomainRequest {
-    @inline
-    def apply(
-        domainName: DomainName
-    ): GetDomainRequest = {
-      val __obj = js.Dynamic.literal(
-        "domainName" -> domainName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetDomainRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDomainResult extends js.Object {
     var domain: js.UndefOr[Domain]
   }
 
-  object GetDomainResult {
-    @inline
-    def apply(
-        domain: js.UndefOr[Domain] = js.undefined
-    ): GetDomainResult = {
-      val __obj = js.Dynamic.literal()
-      domain.foreach(__v => __obj.updateDynamic("domain")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDomainResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDomainsRequest extends js.Object {
     var pageToken: js.UndefOr[String]
   }
 
-  object GetDomainsRequest {
-    @inline
-    def apply(
-        pageToken: js.UndefOr[String] = js.undefined
-    ): GetDomainsRequest = {
-      val __obj = js.Dynamic.literal()
-      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDomainsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDomainsResult extends js.Object {
     var domains: js.UndefOr[DomainList]
     var nextPageToken: js.UndefOr[String]
   }
 
-  object GetDomainsResult {
-    @inline
-    def apply(
-        domains: js.UndefOr[DomainList] = js.undefined,
-        nextPageToken: js.UndefOr[String] = js.undefined
-    ): GetDomainsResult = {
-      val __obj = js.Dynamic.literal()
-      domains.foreach(__v => __obj.updateDynamic("domains")(__v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDomainsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetExportSnapshotRecordsRequest extends js.Object {
     var pageToken: js.UndefOr[String]
   }
 
-  object GetExportSnapshotRecordsRequest {
-    @inline
-    def apply(
-        pageToken: js.UndefOr[String] = js.undefined
-    ): GetExportSnapshotRecordsRequest = {
-      val __obj = js.Dynamic.literal()
-      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetExportSnapshotRecordsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetExportSnapshotRecordsResult extends js.Object {
     var exportSnapshotRecords: js.UndefOr[ExportSnapshotRecordList]
     var nextPageToken: js.UndefOr[String]
   }
 
-  object GetExportSnapshotRecordsResult {
-    @inline
-    def apply(
-        exportSnapshotRecords: js.UndefOr[ExportSnapshotRecordList] = js.undefined,
-        nextPageToken: js.UndefOr[String] = js.undefined
-    ): GetExportSnapshotRecordsResult = {
-      val __obj = js.Dynamic.literal()
-      exportSnapshotRecords.foreach(__v => __obj.updateDynamic("exportSnapshotRecords")(__v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetExportSnapshotRecordsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetInstanceAccessDetailsRequest extends js.Object {
     var instanceName: ResourceName
     var protocol: js.UndefOr[InstanceAccessProtocol]
   }
 
-  object GetInstanceAccessDetailsRequest {
-    @inline
-    def apply(
-        instanceName: ResourceName,
-        protocol: js.UndefOr[InstanceAccessProtocol] = js.undefined
-    ): GetInstanceAccessDetailsRequest = {
-      val __obj = js.Dynamic.literal(
-        "instanceName" -> instanceName.asInstanceOf[js.Any]
-      )
-
-      protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetInstanceAccessDetailsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetInstanceAccessDetailsResult extends js.Object {
     var accessDetails: js.UndefOr[InstanceAccessDetails]
   }
 
-  object GetInstanceAccessDetailsResult {
-    @inline
-    def apply(
-        accessDetails: js.UndefOr[InstanceAccessDetails] = js.undefined
-    ): GetInstanceAccessDetailsResult = {
-      val __obj = js.Dynamic.literal()
-      accessDetails.foreach(__v => __obj.updateDynamic("accessDetails")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetInstanceAccessDetailsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetInstanceMetricDataRequest extends js.Object {
     var endTime: timestamp
     var instanceName: ResourceName
@@ -3495,326 +1666,114 @@ package lightsail {
     var unit: MetricUnit
   }
 
-  object GetInstanceMetricDataRequest {
-    @inline
-    def apply(
-        endTime: timestamp,
-        instanceName: ResourceName,
-        metricName: InstanceMetricName,
-        period: MetricPeriod,
-        startTime: timestamp,
-        statistics: MetricStatisticList,
-        unit: MetricUnit
-    ): GetInstanceMetricDataRequest = {
-      val __obj = js.Dynamic.literal(
-        "endTime"      -> endTime.asInstanceOf[js.Any],
-        "instanceName" -> instanceName.asInstanceOf[js.Any],
-        "metricName"   -> metricName.asInstanceOf[js.Any],
-        "period"       -> period.asInstanceOf[js.Any],
-        "startTime"    -> startTime.asInstanceOf[js.Any],
-        "statistics"   -> statistics.asInstanceOf[js.Any],
-        "unit"         -> unit.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetInstanceMetricDataRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetInstanceMetricDataResult extends js.Object {
     var metricData: js.UndefOr[MetricDatapointList]
     var metricName: js.UndefOr[InstanceMetricName]
   }
 
-  object GetInstanceMetricDataResult {
-    @inline
-    def apply(
-        metricData: js.UndefOr[MetricDatapointList] = js.undefined,
-        metricName: js.UndefOr[InstanceMetricName] = js.undefined
-    ): GetInstanceMetricDataResult = {
-      val __obj = js.Dynamic.literal()
-      metricData.foreach(__v => __obj.updateDynamic("metricData")(__v.asInstanceOf[js.Any]))
-      metricName.foreach(__v => __obj.updateDynamic("metricName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetInstanceMetricDataResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetInstancePortStatesRequest extends js.Object {
     var instanceName: ResourceName
   }
 
-  object GetInstancePortStatesRequest {
-    @inline
-    def apply(
-        instanceName: ResourceName
-    ): GetInstancePortStatesRequest = {
-      val __obj = js.Dynamic.literal(
-        "instanceName" -> instanceName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetInstancePortStatesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetInstancePortStatesResult extends js.Object {
     var portStates: js.UndefOr[InstancePortStateList]
   }
 
-  object GetInstancePortStatesResult {
-    @inline
-    def apply(
-        portStates: js.UndefOr[InstancePortStateList] = js.undefined
-    ): GetInstancePortStatesResult = {
-      val __obj = js.Dynamic.literal()
-      portStates.foreach(__v => __obj.updateDynamic("portStates")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetInstancePortStatesResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetInstanceRequest extends js.Object {
     var instanceName: ResourceName
   }
 
-  object GetInstanceRequest {
-    @inline
-    def apply(
-        instanceName: ResourceName
-    ): GetInstanceRequest = {
-      val __obj = js.Dynamic.literal(
-        "instanceName" -> instanceName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetInstanceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetInstanceResult extends js.Object {
     var instance: js.UndefOr[Instance]
   }
 
-  object GetInstanceResult {
-    @inline
-    def apply(
-        instance: js.UndefOr[Instance] = js.undefined
-    ): GetInstanceResult = {
-      val __obj = js.Dynamic.literal()
-      instance.foreach(__v => __obj.updateDynamic("instance")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetInstanceResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetInstanceSnapshotRequest extends js.Object {
     var instanceSnapshotName: ResourceName
   }
 
-  object GetInstanceSnapshotRequest {
-    @inline
-    def apply(
-        instanceSnapshotName: ResourceName
-    ): GetInstanceSnapshotRequest = {
-      val __obj = js.Dynamic.literal(
-        "instanceSnapshotName" -> instanceSnapshotName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetInstanceSnapshotRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetInstanceSnapshotResult extends js.Object {
     var instanceSnapshot: js.UndefOr[InstanceSnapshot]
   }
 
-  object GetInstanceSnapshotResult {
-    @inline
-    def apply(
-        instanceSnapshot: js.UndefOr[InstanceSnapshot] = js.undefined
-    ): GetInstanceSnapshotResult = {
-      val __obj = js.Dynamic.literal()
-      instanceSnapshot.foreach(__v => __obj.updateDynamic("instanceSnapshot")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetInstanceSnapshotResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetInstanceSnapshotsRequest extends js.Object {
     var pageToken: js.UndefOr[String]
   }
 
-  object GetInstanceSnapshotsRequest {
-    @inline
-    def apply(
-        pageToken: js.UndefOr[String] = js.undefined
-    ): GetInstanceSnapshotsRequest = {
-      val __obj = js.Dynamic.literal()
-      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetInstanceSnapshotsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetInstanceSnapshotsResult extends js.Object {
     var instanceSnapshots: js.UndefOr[InstanceSnapshotList]
     var nextPageToken: js.UndefOr[String]
   }
 
-  object GetInstanceSnapshotsResult {
-    @inline
-    def apply(
-        instanceSnapshots: js.UndefOr[InstanceSnapshotList] = js.undefined,
-        nextPageToken: js.UndefOr[String] = js.undefined
-    ): GetInstanceSnapshotsResult = {
-      val __obj = js.Dynamic.literal()
-      instanceSnapshots.foreach(__v => __obj.updateDynamic("instanceSnapshots")(__v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetInstanceSnapshotsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetInstanceStateRequest extends js.Object {
     var instanceName: ResourceName
   }
 
-  object GetInstanceStateRequest {
-    @inline
-    def apply(
-        instanceName: ResourceName
-    ): GetInstanceStateRequest = {
-      val __obj = js.Dynamic.literal(
-        "instanceName" -> instanceName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetInstanceStateRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetInstanceStateResult extends js.Object {
     var state: js.UndefOr[InstanceState]
   }
 
-  object GetInstanceStateResult {
-    @inline
-    def apply(
-        state: js.UndefOr[InstanceState] = js.undefined
-    ): GetInstanceStateResult = {
-      val __obj = js.Dynamic.literal()
-      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetInstanceStateResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetInstancesRequest extends js.Object {
     var pageToken: js.UndefOr[String]
   }
 
-  object GetInstancesRequest {
-    @inline
-    def apply(
-        pageToken: js.UndefOr[String] = js.undefined
-    ): GetInstancesRequest = {
-      val __obj = js.Dynamic.literal()
-      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetInstancesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetInstancesResult extends js.Object {
     var instances: js.UndefOr[InstanceList]
     var nextPageToken: js.UndefOr[String]
   }
 
-  object GetInstancesResult {
-    @inline
-    def apply(
-        instances: js.UndefOr[InstanceList] = js.undefined,
-        nextPageToken: js.UndefOr[String] = js.undefined
-    ): GetInstancesResult = {
-      val __obj = js.Dynamic.literal()
-      instances.foreach(__v => __obj.updateDynamic("instances")(__v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetInstancesResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetKeyPairRequest extends js.Object {
     var keyPairName: ResourceName
   }
 
-  object GetKeyPairRequest {
-    @inline
-    def apply(
-        keyPairName: ResourceName
-    ): GetKeyPairRequest = {
-      val __obj = js.Dynamic.literal(
-        "keyPairName" -> keyPairName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetKeyPairRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetKeyPairResult extends js.Object {
     var keyPair: js.UndefOr[KeyPair]
   }
 
-  object GetKeyPairResult {
-    @inline
-    def apply(
-        keyPair: js.UndefOr[KeyPair] = js.undefined
-    ): GetKeyPairResult = {
-      val __obj = js.Dynamic.literal()
-      keyPair.foreach(__v => __obj.updateDynamic("keyPair")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetKeyPairResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetKeyPairsRequest extends js.Object {
     var pageToken: js.UndefOr[String]
   }
 
-  object GetKeyPairsRequest {
-    @inline
-    def apply(
-        pageToken: js.UndefOr[String] = js.undefined
-    ): GetKeyPairsRequest = {
-      val __obj = js.Dynamic.literal()
-      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetKeyPairsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetKeyPairsResult extends js.Object {
     var keyPairs: js.UndefOr[KeyPairList]
     var nextPageToken: js.UndefOr[String]
   }
 
-  object GetKeyPairsResult {
-    @inline
-    def apply(
-        keyPairs: js.UndefOr[KeyPairList] = js.undefined,
-        nextPageToken: js.UndefOr[String] = js.undefined
-    ): GetKeyPairsResult = {
-      val __obj = js.Dynamic.literal()
-      keyPairs.foreach(__v => __obj.updateDynamic("keyPairs")(__v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetKeyPairsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetLoadBalancerMetricDataRequest extends js.Object {
     var endTime: timestamp
     var loadBalancerName: ResourceName
@@ -3825,416 +1784,146 @@ package lightsail {
     var unit: MetricUnit
   }
 
-  object GetLoadBalancerMetricDataRequest {
-    @inline
-    def apply(
-        endTime: timestamp,
-        loadBalancerName: ResourceName,
-        metricName: LoadBalancerMetricName,
-        period: MetricPeriod,
-        startTime: timestamp,
-        statistics: MetricStatisticList,
-        unit: MetricUnit
-    ): GetLoadBalancerMetricDataRequest = {
-      val __obj = js.Dynamic.literal(
-        "endTime"          -> endTime.asInstanceOf[js.Any],
-        "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any],
-        "metricName"       -> metricName.asInstanceOf[js.Any],
-        "period"           -> period.asInstanceOf[js.Any],
-        "startTime"        -> startTime.asInstanceOf[js.Any],
-        "statistics"       -> statistics.asInstanceOf[js.Any],
-        "unit"             -> unit.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetLoadBalancerMetricDataRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetLoadBalancerMetricDataResult extends js.Object {
     var metricData: js.UndefOr[MetricDatapointList]
     var metricName: js.UndefOr[LoadBalancerMetricName]
   }
 
-  object GetLoadBalancerMetricDataResult {
-    @inline
-    def apply(
-        metricData: js.UndefOr[MetricDatapointList] = js.undefined,
-        metricName: js.UndefOr[LoadBalancerMetricName] = js.undefined
-    ): GetLoadBalancerMetricDataResult = {
-      val __obj = js.Dynamic.literal()
-      metricData.foreach(__v => __obj.updateDynamic("metricData")(__v.asInstanceOf[js.Any]))
-      metricName.foreach(__v => __obj.updateDynamic("metricName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetLoadBalancerMetricDataResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetLoadBalancerRequest extends js.Object {
     var loadBalancerName: ResourceName
   }
 
-  object GetLoadBalancerRequest {
-    @inline
-    def apply(
-        loadBalancerName: ResourceName
-    ): GetLoadBalancerRequest = {
-      val __obj = js.Dynamic.literal(
-        "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetLoadBalancerRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetLoadBalancerResult extends js.Object {
     var loadBalancer: js.UndefOr[LoadBalancer]
   }
 
-  object GetLoadBalancerResult {
-    @inline
-    def apply(
-        loadBalancer: js.UndefOr[LoadBalancer] = js.undefined
-    ): GetLoadBalancerResult = {
-      val __obj = js.Dynamic.literal()
-      loadBalancer.foreach(__v => __obj.updateDynamic("loadBalancer")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetLoadBalancerResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetLoadBalancerTlsCertificatesRequest extends js.Object {
     var loadBalancerName: ResourceName
   }
 
-  object GetLoadBalancerTlsCertificatesRequest {
-    @inline
-    def apply(
-        loadBalancerName: ResourceName
-    ): GetLoadBalancerTlsCertificatesRequest = {
-      val __obj = js.Dynamic.literal(
-        "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetLoadBalancerTlsCertificatesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetLoadBalancerTlsCertificatesResult extends js.Object {
     var tlsCertificates: js.UndefOr[LoadBalancerTlsCertificateList]
   }
 
-  object GetLoadBalancerTlsCertificatesResult {
-    @inline
-    def apply(
-        tlsCertificates: js.UndefOr[LoadBalancerTlsCertificateList] = js.undefined
-    ): GetLoadBalancerTlsCertificatesResult = {
-      val __obj = js.Dynamic.literal()
-      tlsCertificates.foreach(__v => __obj.updateDynamic("tlsCertificates")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetLoadBalancerTlsCertificatesResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetLoadBalancersRequest extends js.Object {
     var pageToken: js.UndefOr[String]
   }
 
-  object GetLoadBalancersRequest {
-    @inline
-    def apply(
-        pageToken: js.UndefOr[String] = js.undefined
-    ): GetLoadBalancersRequest = {
-      val __obj = js.Dynamic.literal()
-      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetLoadBalancersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetLoadBalancersResult extends js.Object {
     var loadBalancers: js.UndefOr[LoadBalancerList]
     var nextPageToken: js.UndefOr[String]
   }
 
-  object GetLoadBalancersResult {
-    @inline
-    def apply(
-        loadBalancers: js.UndefOr[LoadBalancerList] = js.undefined,
-        nextPageToken: js.UndefOr[String] = js.undefined
-    ): GetLoadBalancersResult = {
-      val __obj = js.Dynamic.literal()
-      loadBalancers.foreach(__v => __obj.updateDynamic("loadBalancers")(__v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetLoadBalancersResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetOperationRequest extends js.Object {
     var operationId: NonEmptyString
   }
 
-  object GetOperationRequest {
-    @inline
-    def apply(
-        operationId: NonEmptyString
-    ): GetOperationRequest = {
-      val __obj = js.Dynamic.literal(
-        "operationId" -> operationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetOperationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetOperationResult extends js.Object {
     var operation: js.UndefOr[Operation]
   }
 
-  object GetOperationResult {
-    @inline
-    def apply(
-        operation: js.UndefOr[Operation] = js.undefined
-    ): GetOperationResult = {
-      val __obj = js.Dynamic.literal()
-      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetOperationResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetOperationsForResourceRequest extends js.Object {
     var resourceName: ResourceName
     var pageToken: js.UndefOr[String]
   }
 
-  object GetOperationsForResourceRequest {
-    @inline
-    def apply(
-        resourceName: ResourceName,
-        pageToken: js.UndefOr[String] = js.undefined
-    ): GetOperationsForResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceName" -> resourceName.asInstanceOf[js.Any]
-      )
-
-      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetOperationsForResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetOperationsForResourceResult extends js.Object {
     var nextPageCount: js.UndefOr[String]
     var nextPageToken: js.UndefOr[String]
     var operations: js.UndefOr[OperationList]
   }
 
-  object GetOperationsForResourceResult {
-    @inline
-    def apply(
-        nextPageCount: js.UndefOr[String] = js.undefined,
-        nextPageToken: js.UndefOr[String] = js.undefined,
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): GetOperationsForResourceResult = {
-      val __obj = js.Dynamic.literal()
-      nextPageCount.foreach(__v => __obj.updateDynamic("nextPageCount")(__v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetOperationsForResourceResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetOperationsRequest extends js.Object {
     var pageToken: js.UndefOr[String]
   }
 
-  object GetOperationsRequest {
-    @inline
-    def apply(
-        pageToken: js.UndefOr[String] = js.undefined
-    ): GetOperationsRequest = {
-      val __obj = js.Dynamic.literal()
-      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetOperationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetOperationsResult extends js.Object {
     var nextPageToken: js.UndefOr[String]
     var operations: js.UndefOr[OperationList]
   }
 
-  object GetOperationsResult {
-    @inline
-    def apply(
-        nextPageToken: js.UndefOr[String] = js.undefined,
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): GetOperationsResult = {
-      val __obj = js.Dynamic.literal()
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetOperationsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRegionsRequest extends js.Object {
     var includeAvailabilityZones: js.UndefOr[Boolean]
     var includeRelationalDatabaseAvailabilityZones: js.UndefOr[Boolean]
   }
 
-  object GetRegionsRequest {
-    @inline
-    def apply(
-        includeAvailabilityZones: js.UndefOr[Boolean] = js.undefined,
-        includeRelationalDatabaseAvailabilityZones: js.UndefOr[Boolean] = js.undefined
-    ): GetRegionsRequest = {
-      val __obj = js.Dynamic.literal()
-      includeAvailabilityZones.foreach(__v => __obj.updateDynamic("includeAvailabilityZones")(__v.asInstanceOf[js.Any]))
-      includeRelationalDatabaseAvailabilityZones.foreach(__v =>
-        __obj.updateDynamic("includeRelationalDatabaseAvailabilityZones")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[GetRegionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRegionsResult extends js.Object {
     var regions: js.UndefOr[RegionList]
   }
 
-  object GetRegionsResult {
-    @inline
-    def apply(
-        regions: js.UndefOr[RegionList] = js.undefined
-    ): GetRegionsResult = {
-      val __obj = js.Dynamic.literal()
-      regions.foreach(__v => __obj.updateDynamic("regions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRegionsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRelationalDatabaseBlueprintsRequest extends js.Object {
     var pageToken: js.UndefOr[String]
   }
 
-  object GetRelationalDatabaseBlueprintsRequest {
-    @inline
-    def apply(
-        pageToken: js.UndefOr[String] = js.undefined
-    ): GetRelationalDatabaseBlueprintsRequest = {
-      val __obj = js.Dynamic.literal()
-      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRelationalDatabaseBlueprintsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRelationalDatabaseBlueprintsResult extends js.Object {
     var blueprints: js.UndefOr[RelationalDatabaseBlueprintList]
     var nextPageToken: js.UndefOr[String]
   }
 
-  object GetRelationalDatabaseBlueprintsResult {
-    @inline
-    def apply(
-        blueprints: js.UndefOr[RelationalDatabaseBlueprintList] = js.undefined,
-        nextPageToken: js.UndefOr[String] = js.undefined
-    ): GetRelationalDatabaseBlueprintsResult = {
-      val __obj = js.Dynamic.literal()
-      blueprints.foreach(__v => __obj.updateDynamic("blueprints")(__v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRelationalDatabaseBlueprintsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRelationalDatabaseBundlesRequest extends js.Object {
     var pageToken: js.UndefOr[String]
   }
 
-  object GetRelationalDatabaseBundlesRequest {
-    @inline
-    def apply(
-        pageToken: js.UndefOr[String] = js.undefined
-    ): GetRelationalDatabaseBundlesRequest = {
-      val __obj = js.Dynamic.literal()
-      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRelationalDatabaseBundlesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRelationalDatabaseBundlesResult extends js.Object {
     var bundles: js.UndefOr[RelationalDatabaseBundleList]
     var nextPageToken: js.UndefOr[String]
   }
 
-  object GetRelationalDatabaseBundlesResult {
-    @inline
-    def apply(
-        bundles: js.UndefOr[RelationalDatabaseBundleList] = js.undefined,
-        nextPageToken: js.UndefOr[String] = js.undefined
-    ): GetRelationalDatabaseBundlesResult = {
-      val __obj = js.Dynamic.literal()
-      bundles.foreach(__v => __obj.updateDynamic("bundles")(__v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRelationalDatabaseBundlesResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRelationalDatabaseEventsRequest extends js.Object {
     var relationalDatabaseName: ResourceName
     var durationInMinutes: js.UndefOr[Int]
     var pageToken: js.UndefOr[String]
   }
 
-  object GetRelationalDatabaseEventsRequest {
-    @inline
-    def apply(
-        relationalDatabaseName: ResourceName,
-        durationInMinutes: js.UndefOr[Int] = js.undefined,
-        pageToken: js.UndefOr[String] = js.undefined
-    ): GetRelationalDatabaseEventsRequest = {
-      val __obj = js.Dynamic.literal(
-        "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
-      )
-
-      durationInMinutes.foreach(__v => __obj.updateDynamic("durationInMinutes")(__v.asInstanceOf[js.Any]))
-      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRelationalDatabaseEventsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRelationalDatabaseEventsResult extends js.Object {
     var nextPageToken: js.UndefOr[String]
     var relationalDatabaseEvents: js.UndefOr[RelationalDatabaseEventList]
   }
 
-  object GetRelationalDatabaseEventsResult {
-    @inline
-    def apply(
-        nextPageToken: js.UndefOr[String] = js.undefined,
-        relationalDatabaseEvents: js.UndefOr[RelationalDatabaseEventList] = js.undefined
-    ): GetRelationalDatabaseEventsResult = {
-      val __obj = js.Dynamic.literal()
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      relationalDatabaseEvents.foreach(__v => __obj.updateDynamic("relationalDatabaseEvents")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRelationalDatabaseEventsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRelationalDatabaseLogEventsRequest extends js.Object {
     var logStreamName: String
     var relationalDatabaseName: ResourceName
@@ -4244,126 +1933,42 @@ package lightsail {
     var startTime: js.UndefOr[IsoDate]
   }
 
-  object GetRelationalDatabaseLogEventsRequest {
-    @inline
-    def apply(
-        logStreamName: String,
-        relationalDatabaseName: ResourceName,
-        endTime: js.UndefOr[IsoDate] = js.undefined,
-        pageToken: js.UndefOr[String] = js.undefined,
-        startFromHead: js.UndefOr[Boolean] = js.undefined,
-        startTime: js.UndefOr[IsoDate] = js.undefined
-    ): GetRelationalDatabaseLogEventsRequest = {
-      val __obj = js.Dynamic.literal(
-        "logStreamName"          -> logStreamName.asInstanceOf[js.Any],
-        "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
-      )
-
-      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
-      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
-      startFromHead.foreach(__v => __obj.updateDynamic("startFromHead")(__v.asInstanceOf[js.Any]))
-      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRelationalDatabaseLogEventsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRelationalDatabaseLogEventsResult extends js.Object {
     var nextBackwardToken: js.UndefOr[String]
     var nextForwardToken: js.UndefOr[String]
     var resourceLogEvents: js.UndefOr[LogEventList]
   }
 
-  object GetRelationalDatabaseLogEventsResult {
-    @inline
-    def apply(
-        nextBackwardToken: js.UndefOr[String] = js.undefined,
-        nextForwardToken: js.UndefOr[String] = js.undefined,
-        resourceLogEvents: js.UndefOr[LogEventList] = js.undefined
-    ): GetRelationalDatabaseLogEventsResult = {
-      val __obj = js.Dynamic.literal()
-      nextBackwardToken.foreach(__v => __obj.updateDynamic("nextBackwardToken")(__v.asInstanceOf[js.Any]))
-      nextForwardToken.foreach(__v => __obj.updateDynamic("nextForwardToken")(__v.asInstanceOf[js.Any]))
-      resourceLogEvents.foreach(__v => __obj.updateDynamic("resourceLogEvents")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRelationalDatabaseLogEventsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRelationalDatabaseLogStreamsRequest extends js.Object {
     var relationalDatabaseName: ResourceName
   }
 
-  object GetRelationalDatabaseLogStreamsRequest {
-    @inline
-    def apply(
-        relationalDatabaseName: ResourceName
-    ): GetRelationalDatabaseLogStreamsRequest = {
-      val __obj = js.Dynamic.literal(
-        "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetRelationalDatabaseLogStreamsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRelationalDatabaseLogStreamsResult extends js.Object {
     var logStreams: js.UndefOr[StringList]
   }
 
-  object GetRelationalDatabaseLogStreamsResult {
-    @inline
-    def apply(
-        logStreams: js.UndefOr[StringList] = js.undefined
-    ): GetRelationalDatabaseLogStreamsResult = {
-      val __obj = js.Dynamic.literal()
-      logStreams.foreach(__v => __obj.updateDynamic("logStreams")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRelationalDatabaseLogStreamsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRelationalDatabaseMasterUserPasswordRequest extends js.Object {
     var relationalDatabaseName: ResourceName
     var passwordVersion: js.UndefOr[RelationalDatabasePasswordVersion]
   }
 
-  object GetRelationalDatabaseMasterUserPasswordRequest {
-    @inline
-    def apply(
-        relationalDatabaseName: ResourceName,
-        passwordVersion: js.UndefOr[RelationalDatabasePasswordVersion] = js.undefined
-    ): GetRelationalDatabaseMasterUserPasswordRequest = {
-      val __obj = js.Dynamic.literal(
-        "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
-      )
-
-      passwordVersion.foreach(__v => __obj.updateDynamic("passwordVersion")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRelationalDatabaseMasterUserPasswordRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRelationalDatabaseMasterUserPasswordResult extends js.Object {
     var createdAt: js.UndefOr[IsoDate]
     var masterUserPassword: js.UndefOr[SensitiveString]
   }
 
-  object GetRelationalDatabaseMasterUserPasswordResult {
-    @inline
-    def apply(
-        createdAt: js.UndefOr[IsoDate] = js.undefined,
-        masterUserPassword: js.UndefOr[SensitiveString] = js.undefined
-    ): GetRelationalDatabaseMasterUserPasswordResult = {
-      val __obj = js.Dynamic.literal()
-      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      masterUserPassword.foreach(__v => __obj.updateDynamic("masterUserPassword")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRelationalDatabaseMasterUserPasswordResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRelationalDatabaseMetricDataRequest extends js.Object {
     var endTime: IsoDate
     var metricName: RelationalDatabaseMetricName
@@ -4374,305 +1979,107 @@ package lightsail {
     var unit: MetricUnit
   }
 
-  object GetRelationalDatabaseMetricDataRequest {
-    @inline
-    def apply(
-        endTime: IsoDate,
-        metricName: RelationalDatabaseMetricName,
-        period: MetricPeriod,
-        relationalDatabaseName: ResourceName,
-        startTime: IsoDate,
-        statistics: MetricStatisticList,
-        unit: MetricUnit
-    ): GetRelationalDatabaseMetricDataRequest = {
-      val __obj = js.Dynamic.literal(
-        "endTime"                -> endTime.asInstanceOf[js.Any],
-        "metricName"             -> metricName.asInstanceOf[js.Any],
-        "period"                 -> period.asInstanceOf[js.Any],
-        "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any],
-        "startTime"              -> startTime.asInstanceOf[js.Any],
-        "statistics"             -> statistics.asInstanceOf[js.Any],
-        "unit"                   -> unit.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetRelationalDatabaseMetricDataRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRelationalDatabaseMetricDataResult extends js.Object {
     var metricData: js.UndefOr[MetricDatapointList]
     var metricName: js.UndefOr[RelationalDatabaseMetricName]
   }
 
-  object GetRelationalDatabaseMetricDataResult {
-    @inline
-    def apply(
-        metricData: js.UndefOr[MetricDatapointList] = js.undefined,
-        metricName: js.UndefOr[RelationalDatabaseMetricName] = js.undefined
-    ): GetRelationalDatabaseMetricDataResult = {
-      val __obj = js.Dynamic.literal()
-      metricData.foreach(__v => __obj.updateDynamic("metricData")(__v.asInstanceOf[js.Any]))
-      metricName.foreach(__v => __obj.updateDynamic("metricName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRelationalDatabaseMetricDataResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRelationalDatabaseParametersRequest extends js.Object {
     var relationalDatabaseName: ResourceName
     var pageToken: js.UndefOr[String]
   }
 
-  object GetRelationalDatabaseParametersRequest {
-    @inline
-    def apply(
-        relationalDatabaseName: ResourceName,
-        pageToken: js.UndefOr[String] = js.undefined
-    ): GetRelationalDatabaseParametersRequest = {
-      val __obj = js.Dynamic.literal(
-        "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
-      )
-
-      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRelationalDatabaseParametersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRelationalDatabaseParametersResult extends js.Object {
     var nextPageToken: js.UndefOr[String]
     var parameters: js.UndefOr[RelationalDatabaseParameterList]
   }
 
-  object GetRelationalDatabaseParametersResult {
-    @inline
-    def apply(
-        nextPageToken: js.UndefOr[String] = js.undefined,
-        parameters: js.UndefOr[RelationalDatabaseParameterList] = js.undefined
-    ): GetRelationalDatabaseParametersResult = {
-      val __obj = js.Dynamic.literal()
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRelationalDatabaseParametersResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRelationalDatabaseRequest extends js.Object {
     var relationalDatabaseName: ResourceName
   }
 
-  object GetRelationalDatabaseRequest {
-    @inline
-    def apply(
-        relationalDatabaseName: ResourceName
-    ): GetRelationalDatabaseRequest = {
-      val __obj = js.Dynamic.literal(
-        "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetRelationalDatabaseRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRelationalDatabaseResult extends js.Object {
     var relationalDatabase: js.UndefOr[RelationalDatabase]
   }
 
-  object GetRelationalDatabaseResult {
-    @inline
-    def apply(
-        relationalDatabase: js.UndefOr[RelationalDatabase] = js.undefined
-    ): GetRelationalDatabaseResult = {
-      val __obj = js.Dynamic.literal()
-      relationalDatabase.foreach(__v => __obj.updateDynamic("relationalDatabase")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRelationalDatabaseResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRelationalDatabaseSnapshotRequest extends js.Object {
     var relationalDatabaseSnapshotName: ResourceName
   }
 
-  object GetRelationalDatabaseSnapshotRequest {
-    @inline
-    def apply(
-        relationalDatabaseSnapshotName: ResourceName
-    ): GetRelationalDatabaseSnapshotRequest = {
-      val __obj = js.Dynamic.literal(
-        "relationalDatabaseSnapshotName" -> relationalDatabaseSnapshotName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetRelationalDatabaseSnapshotRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRelationalDatabaseSnapshotResult extends js.Object {
     var relationalDatabaseSnapshot: js.UndefOr[RelationalDatabaseSnapshot]
   }
 
-  object GetRelationalDatabaseSnapshotResult {
-    @inline
-    def apply(
-        relationalDatabaseSnapshot: js.UndefOr[RelationalDatabaseSnapshot] = js.undefined
-    ): GetRelationalDatabaseSnapshotResult = {
-      val __obj = js.Dynamic.literal()
-      relationalDatabaseSnapshot.foreach(__v =>
-        __obj.updateDynamic("relationalDatabaseSnapshot")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[GetRelationalDatabaseSnapshotResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRelationalDatabaseSnapshotsRequest extends js.Object {
     var pageToken: js.UndefOr[String]
   }
 
-  object GetRelationalDatabaseSnapshotsRequest {
-    @inline
-    def apply(
-        pageToken: js.UndefOr[String] = js.undefined
-    ): GetRelationalDatabaseSnapshotsRequest = {
-      val __obj = js.Dynamic.literal()
-      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRelationalDatabaseSnapshotsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRelationalDatabaseSnapshotsResult extends js.Object {
     var nextPageToken: js.UndefOr[String]
     var relationalDatabaseSnapshots: js.UndefOr[RelationalDatabaseSnapshotList]
   }
 
-  object GetRelationalDatabaseSnapshotsResult {
-    @inline
-    def apply(
-        nextPageToken: js.UndefOr[String] = js.undefined,
-        relationalDatabaseSnapshots: js.UndefOr[RelationalDatabaseSnapshotList] = js.undefined
-    ): GetRelationalDatabaseSnapshotsResult = {
-      val __obj = js.Dynamic.literal()
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      relationalDatabaseSnapshots.foreach(__v =>
-        __obj.updateDynamic("relationalDatabaseSnapshots")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[GetRelationalDatabaseSnapshotsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRelationalDatabasesRequest extends js.Object {
     var pageToken: js.UndefOr[String]
   }
 
-  object GetRelationalDatabasesRequest {
-    @inline
-    def apply(
-        pageToken: js.UndefOr[String] = js.undefined
-    ): GetRelationalDatabasesRequest = {
-      val __obj = js.Dynamic.literal()
-      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRelationalDatabasesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRelationalDatabasesResult extends js.Object {
     var nextPageToken: js.UndefOr[String]
     var relationalDatabases: js.UndefOr[RelationalDatabaseList]
   }
 
-  object GetRelationalDatabasesResult {
-    @inline
-    def apply(
-        nextPageToken: js.UndefOr[String] = js.undefined,
-        relationalDatabases: js.UndefOr[RelationalDatabaseList] = js.undefined
-    ): GetRelationalDatabasesResult = {
-      val __obj = js.Dynamic.literal()
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      relationalDatabases.foreach(__v => __obj.updateDynamic("relationalDatabases")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRelationalDatabasesResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetStaticIpRequest extends js.Object {
     var staticIpName: ResourceName
   }
 
-  object GetStaticIpRequest {
-    @inline
-    def apply(
-        staticIpName: ResourceName
-    ): GetStaticIpRequest = {
-      val __obj = js.Dynamic.literal(
-        "staticIpName" -> staticIpName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetStaticIpRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetStaticIpResult extends js.Object {
     var staticIp: js.UndefOr[StaticIp]
   }
 
-  object GetStaticIpResult {
-    @inline
-    def apply(
-        staticIp: js.UndefOr[StaticIp] = js.undefined
-    ): GetStaticIpResult = {
-      val __obj = js.Dynamic.literal()
-      staticIp.foreach(__v => __obj.updateDynamic("staticIp")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetStaticIpResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetStaticIpsRequest extends js.Object {
     var pageToken: js.UndefOr[String]
   }
 
-  object GetStaticIpsRequest {
-    @inline
-    def apply(
-        pageToken: js.UndefOr[String] = js.undefined
-    ): GetStaticIpsRequest = {
-      val __obj = js.Dynamic.literal()
-      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetStaticIpsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetStaticIpsResult extends js.Object {
     var nextPageToken: js.UndefOr[String]
     var staticIps: js.UndefOr[StaticIpList]
-  }
-
-  object GetStaticIpsResult {
-    @inline
-    def apply(
-        nextPageToken: js.UndefOr[String] = js.undefined,
-        staticIps: js.UndefOr[StaticIpList] = js.undefined
-    ): GetStaticIpsResult = {
-      val __obj = js.Dynamic.literal()
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      staticIps.foreach(__v => __obj.updateDynamic("staticIps")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetStaticIpsResult]
-    }
   }
 
   /**
     * Describes the public SSH host keys or the RDP certificate.
     */
   @js.native
+  @Factory
   trait HostKeyAttributes extends js.Object {
     var algorithm: js.UndefOr[String]
     var fingerprintSHA1: js.UndefOr[String]
@@ -4683,70 +2090,24 @@ package lightsail {
     var witnessedAt: js.UndefOr[IsoDate]
   }
 
-  object HostKeyAttributes {
-    @inline
-    def apply(
-        algorithm: js.UndefOr[String] = js.undefined,
-        fingerprintSHA1: js.UndefOr[String] = js.undefined,
-        fingerprintSHA256: js.UndefOr[String] = js.undefined,
-        notValidAfter: js.UndefOr[IsoDate] = js.undefined,
-        notValidBefore: js.UndefOr[IsoDate] = js.undefined,
-        publicKey: js.UndefOr[String] = js.undefined,
-        witnessedAt: js.UndefOr[IsoDate] = js.undefined
-    ): HostKeyAttributes = {
-      val __obj = js.Dynamic.literal()
-      algorithm.foreach(__v => __obj.updateDynamic("algorithm")(__v.asInstanceOf[js.Any]))
-      fingerprintSHA1.foreach(__v => __obj.updateDynamic("fingerprintSHA1")(__v.asInstanceOf[js.Any]))
-      fingerprintSHA256.foreach(__v => __obj.updateDynamic("fingerprintSHA256")(__v.asInstanceOf[js.Any]))
-      notValidAfter.foreach(__v => __obj.updateDynamic("notValidAfter")(__v.asInstanceOf[js.Any]))
-      notValidBefore.foreach(__v => __obj.updateDynamic("notValidBefore")(__v.asInstanceOf[js.Any]))
-      publicKey.foreach(__v => __obj.updateDynamic("publicKey")(__v.asInstanceOf[js.Any]))
-      witnessedAt.foreach(__v => __obj.updateDynamic("witnessedAt")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HostKeyAttributes]
-    }
-  }
-
   @js.native
+  @Factory
   trait ImportKeyPairRequest extends js.Object {
     var keyPairName: ResourceName
     var publicKeyBase64: Base64
   }
 
-  object ImportKeyPairRequest {
-    @inline
-    def apply(
-        keyPairName: ResourceName,
-        publicKeyBase64: Base64
-    ): ImportKeyPairRequest = {
-      val __obj = js.Dynamic.literal(
-        "keyPairName"     -> keyPairName.asInstanceOf[js.Any],
-        "publicKeyBase64" -> publicKeyBase64.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ImportKeyPairRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ImportKeyPairResult extends js.Object {
     var operation: js.UndefOr[Operation]
-  }
-
-  object ImportKeyPairResult {
-    @inline
-    def apply(
-        operation: js.UndefOr[Operation] = js.undefined
-    ): ImportKeyPairResult = {
-      val __obj = js.Dynamic.literal()
-      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ImportKeyPairResult]
-    }
   }
 
   /**
     * Describes an instance (a virtual private server).
     */
   @js.native
+  @Factory
   trait Instance extends js.Object {
     var addOns: js.UndefOr[AddOnList]
     var arn: js.UndefOr[NonEmptyString]
@@ -4770,59 +2131,11 @@ package lightsail {
     var username: js.UndefOr[NonEmptyString]
   }
 
-  object Instance {
-    @inline
-    def apply(
-        addOns: js.UndefOr[AddOnList] = js.undefined,
-        arn: js.UndefOr[NonEmptyString] = js.undefined,
-        blueprintId: js.UndefOr[NonEmptyString] = js.undefined,
-        blueprintName: js.UndefOr[NonEmptyString] = js.undefined,
-        bundleId: js.UndefOr[NonEmptyString] = js.undefined,
-        createdAt: js.UndefOr[IsoDate] = js.undefined,
-        hardware: js.UndefOr[InstanceHardware] = js.undefined,
-        ipv6Address: js.UndefOr[IpV6Address] = js.undefined,
-        isStaticIp: js.UndefOr[Boolean] = js.undefined,
-        location: js.UndefOr[ResourceLocation] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined,
-        networking: js.UndefOr[InstanceNetworking] = js.undefined,
-        privateIpAddress: js.UndefOr[IpAddress] = js.undefined,
-        publicIpAddress: js.UndefOr[IpAddress] = js.undefined,
-        resourceType: js.UndefOr[ResourceType] = js.undefined,
-        sshKeyName: js.UndefOr[ResourceName] = js.undefined,
-        state: js.UndefOr[InstanceState] = js.undefined,
-        supportCode: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined,
-        username: js.UndefOr[NonEmptyString] = js.undefined
-    ): Instance = {
-      val __obj = js.Dynamic.literal()
-      addOns.foreach(__v => __obj.updateDynamic("addOns")(__v.asInstanceOf[js.Any]))
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      blueprintId.foreach(__v => __obj.updateDynamic("blueprintId")(__v.asInstanceOf[js.Any]))
-      blueprintName.foreach(__v => __obj.updateDynamic("blueprintName")(__v.asInstanceOf[js.Any]))
-      bundleId.foreach(__v => __obj.updateDynamic("bundleId")(__v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      hardware.foreach(__v => __obj.updateDynamic("hardware")(__v.asInstanceOf[js.Any]))
-      ipv6Address.foreach(__v => __obj.updateDynamic("ipv6Address")(__v.asInstanceOf[js.Any]))
-      isStaticIp.foreach(__v => __obj.updateDynamic("isStaticIp")(__v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      networking.foreach(__v => __obj.updateDynamic("networking")(__v.asInstanceOf[js.Any]))
-      privateIpAddress.foreach(__v => __obj.updateDynamic("privateIpAddress")(__v.asInstanceOf[js.Any]))
-      publicIpAddress.foreach(__v => __obj.updateDynamic("publicIpAddress")(__v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      sshKeyName.foreach(__v => __obj.updateDynamic("sshKeyName")(__v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
-      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      username.foreach(__v => __obj.updateDynamic("username")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Instance]
-    }
-  }
-
   /**
     * The parameters for gaining temporary access to one of your Amazon Lightsail instances.
     */
   @js.native
+  @Factory
   trait InstanceAccessDetails extends js.Object {
     var certKey: js.UndefOr[String]
     var expiresAt: js.UndefOr[IsoDate]
@@ -4834,35 +2147,6 @@ package lightsail {
     var privateKey: js.UndefOr[String]
     var protocol: js.UndefOr[InstanceAccessProtocol]
     var username: js.UndefOr[String]
-  }
-
-  object InstanceAccessDetails {
-    @inline
-    def apply(
-        certKey: js.UndefOr[String] = js.undefined,
-        expiresAt: js.UndefOr[IsoDate] = js.undefined,
-        hostKeys: js.UndefOr[HostKeysList] = js.undefined,
-        instanceName: js.UndefOr[ResourceName] = js.undefined,
-        ipAddress: js.UndefOr[IpAddress] = js.undefined,
-        password: js.UndefOr[String] = js.undefined,
-        passwordData: js.UndefOr[PasswordData] = js.undefined,
-        privateKey: js.UndefOr[String] = js.undefined,
-        protocol: js.UndefOr[InstanceAccessProtocol] = js.undefined,
-        username: js.UndefOr[String] = js.undefined
-    ): InstanceAccessDetails = {
-      val __obj = js.Dynamic.literal()
-      certKey.foreach(__v => __obj.updateDynamic("certKey")(__v.asInstanceOf[js.Any]))
-      expiresAt.foreach(__v => __obj.updateDynamic("expiresAt")(__v.asInstanceOf[js.Any]))
-      hostKeys.foreach(__v => __obj.updateDynamic("hostKeys")(__v.asInstanceOf[js.Any]))
-      instanceName.foreach(__v => __obj.updateDynamic("instanceName")(__v.asInstanceOf[js.Any]))
-      ipAddress.foreach(__v => __obj.updateDynamic("ipAddress")(__v.asInstanceOf[js.Any]))
-      password.foreach(__v => __obj.updateDynamic("password")(__v.asInstanceOf[js.Any]))
-      passwordData.foreach(__v => __obj.updateDynamic("passwordData")(__v.asInstanceOf[js.Any]))
-      privateKey.foreach(__v => __obj.updateDynamic("privateKey")(__v.asInstanceOf[js.Any]))
-      protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
-      username.foreach(__v => __obj.updateDynamic("username")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceAccessDetails]
-    }
   }
 
   @js.native
@@ -4878,6 +2162,7 @@ package lightsail {
     * Describes the Amazon Elastic Compute Cloud instance and related resources to be created using the <code>create cloud formation stack</code> operation.
     */
   @js.native
+  @Factory
   trait InstanceEntry extends js.Object {
     var availabilityZone: String
     var instanceType: NonEmptyString
@@ -4886,50 +2171,15 @@ package lightsail {
     var userData: js.UndefOr[String]
   }
 
-  object InstanceEntry {
-    @inline
-    def apply(
-        availabilityZone: String,
-        instanceType: NonEmptyString,
-        portInfoSource: PortInfoSourceType,
-        sourceName: ResourceName,
-        userData: js.UndefOr[String] = js.undefined
-    ): InstanceEntry = {
-      val __obj = js.Dynamic.literal(
-        "availabilityZone" -> availabilityZone.asInstanceOf[js.Any],
-        "instanceType"     -> instanceType.asInstanceOf[js.Any],
-        "portInfoSource"   -> portInfoSource.asInstanceOf[js.Any],
-        "sourceName"       -> sourceName.asInstanceOf[js.Any]
-      )
-
-      userData.foreach(__v => __obj.updateDynamic("userData")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceEntry]
-    }
-  }
-
   /**
     * Describes the hardware for the instance.
     */
   @js.native
+  @Factory
   trait InstanceHardware extends js.Object {
     var cpuCount: js.UndefOr[Int]
     var disks: js.UndefOr[DiskList]
     var ramSizeInGb: js.UndefOr[Float]
-  }
-
-  object InstanceHardware {
-    @inline
-    def apply(
-        cpuCount: js.UndefOr[Int] = js.undefined,
-        disks: js.UndefOr[DiskList] = js.undefined,
-        ramSizeInGb: js.UndefOr[Float] = js.undefined
-    ): InstanceHardware = {
-      val __obj = js.Dynamic.literal()
-      cpuCount.foreach(__v => __obj.updateDynamic("cpuCount")(__v.asInstanceOf[js.Any]))
-      disks.foreach(__v => __obj.updateDynamic("disks")(__v.asInstanceOf[js.Any]))
-      ramSizeInGb.foreach(__v => __obj.updateDynamic("ramSizeInGb")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceHardware]
-    }
   }
 
   @js.native
@@ -4981,25 +2231,11 @@ package lightsail {
     * Describes information about the health of the instance.
     */
   @js.native
+  @Factory
   trait InstanceHealthSummary extends js.Object {
     var instanceHealth: js.UndefOr[InstanceHealthState]
     var instanceHealthReason: js.UndefOr[InstanceHealthReason]
     var instanceName: js.UndefOr[ResourceName]
-  }
-
-  object InstanceHealthSummary {
-    @inline
-    def apply(
-        instanceHealth: js.UndefOr[InstanceHealthState] = js.undefined,
-        instanceHealthReason: js.UndefOr[InstanceHealthReason] = js.undefined,
-        instanceName: js.UndefOr[ResourceName] = js.undefined
-    ): InstanceHealthSummary = {
-      val __obj = js.Dynamic.literal()
-      instanceHealth.foreach(__v => __obj.updateDynamic("instanceHealth")(__v.asInstanceOf[js.Any]))
-      instanceHealthReason.foreach(__v => __obj.updateDynamic("instanceHealthReason")(__v.asInstanceOf[js.Any]))
-      instanceName.foreach(__v => __obj.updateDynamic("instanceName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceHealthSummary]
-    }
   }
 
   @js.native
@@ -5028,22 +2264,10 @@ package lightsail {
     * Describes monthly data transfer rates and port information for an instance.
     */
   @js.native
+  @Factory
   trait InstanceNetworking extends js.Object {
     var monthlyTransfer: js.UndefOr[MonthlyTransfer]
     var ports: js.UndefOr[InstancePortInfoList]
-  }
-
-  object InstanceNetworking {
-    @inline
-    def apply(
-        monthlyTransfer: js.UndefOr[MonthlyTransfer] = js.undefined,
-        ports: js.UndefOr[InstancePortInfoList] = js.undefined
-    ): InstanceNetworking = {
-      val __obj = js.Dynamic.literal()
-      monthlyTransfer.foreach(__v => __obj.updateDynamic("monthlyTransfer")(__v.asInstanceOf[js.Any]))
-      ports.foreach(__v => __obj.updateDynamic("ports")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceNetworking]
-    }
   }
 
   @js.native
@@ -5059,6 +2283,7 @@ package lightsail {
     * Describes information about the instance ports.
     */
   @js.native
+  @Factory
   trait InstancePortInfo extends js.Object {
     var accessDirection: js.UndefOr[AccessDirection]
     var accessFrom: js.UndefOr[String]
@@ -5069,33 +2294,11 @@ package lightsail {
     var toPort: js.UndefOr[Port]
   }
 
-  object InstancePortInfo {
-    @inline
-    def apply(
-        accessDirection: js.UndefOr[AccessDirection] = js.undefined,
-        accessFrom: js.UndefOr[String] = js.undefined,
-        accessType: js.UndefOr[PortAccessType] = js.undefined,
-        commonName: js.UndefOr[String] = js.undefined,
-        fromPort: js.UndefOr[Port] = js.undefined,
-        protocol: js.UndefOr[NetworkProtocol] = js.undefined,
-        toPort: js.UndefOr[Port] = js.undefined
-    ): InstancePortInfo = {
-      val __obj = js.Dynamic.literal()
-      accessDirection.foreach(__v => __obj.updateDynamic("accessDirection")(__v.asInstanceOf[js.Any]))
-      accessFrom.foreach(__v => __obj.updateDynamic("accessFrom")(__v.asInstanceOf[js.Any]))
-      accessType.foreach(__v => __obj.updateDynamic("accessType")(__v.asInstanceOf[js.Any]))
-      commonName.foreach(__v => __obj.updateDynamic("commonName")(__v.asInstanceOf[js.Any]))
-      fromPort.foreach(__v => __obj.updateDynamic("fromPort")(__v.asInstanceOf[js.Any]))
-      protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
-      toPort.foreach(__v => __obj.updateDynamic("toPort")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstancePortInfo]
-    }
-  }
-
   /**
     * Describes the port state.
     */
   @js.native
+  @Factory
   trait InstancePortState extends js.Object {
     var fromPort: js.UndefOr[Port]
     var protocol: js.UndefOr[NetworkProtocol]
@@ -5103,27 +2306,11 @@ package lightsail {
     var toPort: js.UndefOr[Port]
   }
 
-  object InstancePortState {
-    @inline
-    def apply(
-        fromPort: js.UndefOr[Port] = js.undefined,
-        protocol: js.UndefOr[NetworkProtocol] = js.undefined,
-        state: js.UndefOr[PortState] = js.undefined,
-        toPort: js.UndefOr[Port] = js.undefined
-    ): InstancePortState = {
-      val __obj = js.Dynamic.literal()
-      fromPort.foreach(__v => __obj.updateDynamic("fromPort")(__v.asInstanceOf[js.Any]))
-      protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
-      toPort.foreach(__v => __obj.updateDynamic("toPort")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstancePortState]
-    }
-  }
-
   /**
     * Describes an instance snapshot.
     */
   @js.native
+  @Factory
   trait InstanceSnapshot extends js.Object {
     var arn: js.UndefOr[NonEmptyString]
     var createdAt: js.UndefOr[IsoDate]
@@ -5143,70 +2330,15 @@ package lightsail {
     var tags: js.UndefOr[TagList]
   }
 
-  object InstanceSnapshot {
-    @inline
-    def apply(
-        arn: js.UndefOr[NonEmptyString] = js.undefined,
-        createdAt: js.UndefOr[IsoDate] = js.undefined,
-        fromAttachedDisks: js.UndefOr[DiskList] = js.undefined,
-        fromBlueprintId: js.UndefOr[String] = js.undefined,
-        fromBundleId: js.UndefOr[String] = js.undefined,
-        fromInstanceArn: js.UndefOr[NonEmptyString] = js.undefined,
-        fromInstanceName: js.UndefOr[ResourceName] = js.undefined,
-        isFromAutoSnapshot: js.UndefOr[Boolean] = js.undefined,
-        location: js.UndefOr[ResourceLocation] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined,
-        progress: js.UndefOr[String] = js.undefined,
-        resourceType: js.UndefOr[ResourceType] = js.undefined,
-        sizeInGb: js.UndefOr[Int] = js.undefined,
-        state: js.UndefOr[InstanceSnapshotState] = js.undefined,
-        supportCode: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): InstanceSnapshot = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      fromAttachedDisks.foreach(__v => __obj.updateDynamic("fromAttachedDisks")(__v.asInstanceOf[js.Any]))
-      fromBlueprintId.foreach(__v => __obj.updateDynamic("fromBlueprintId")(__v.asInstanceOf[js.Any]))
-      fromBundleId.foreach(__v => __obj.updateDynamic("fromBundleId")(__v.asInstanceOf[js.Any]))
-      fromInstanceArn.foreach(__v => __obj.updateDynamic("fromInstanceArn")(__v.asInstanceOf[js.Any]))
-      fromInstanceName.foreach(__v => __obj.updateDynamic("fromInstanceName")(__v.asInstanceOf[js.Any]))
-      isFromAutoSnapshot.foreach(__v => __obj.updateDynamic("isFromAutoSnapshot")(__v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      progress.foreach(__v => __obj.updateDynamic("progress")(__v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      sizeInGb.foreach(__v => __obj.updateDynamic("sizeInGb")(__v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
-      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceSnapshot]
-    }
-  }
-
   /**
     * Describes an instance snapshot.
     */
   @js.native
+  @Factory
   trait InstanceSnapshotInfo extends js.Object {
     var fromBlueprintId: js.UndefOr[NonEmptyString]
     var fromBundleId: js.UndefOr[NonEmptyString]
     var fromDiskInfo: js.UndefOr[DiskInfoList]
-  }
-
-  object InstanceSnapshotInfo {
-    @inline
-    def apply(
-        fromBlueprintId: js.UndefOr[NonEmptyString] = js.undefined,
-        fromBundleId: js.UndefOr[NonEmptyString] = js.undefined,
-        fromDiskInfo: js.UndefOr[DiskInfoList] = js.undefined
-    ): InstanceSnapshotInfo = {
-      val __obj = js.Dynamic.literal()
-      fromBlueprintId.foreach(__v => __obj.updateDynamic("fromBlueprintId")(__v.asInstanceOf[js.Any]))
-      fromBundleId.foreach(__v => __obj.updateDynamic("fromBundleId")(__v.asInstanceOf[js.Any]))
-      fromDiskInfo.foreach(__v => __obj.updateDynamic("fromDiskInfo")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceSnapshotInfo]
-    }
   }
 
   @js.native
@@ -5223,57 +2355,27 @@ package lightsail {
     * Describes the virtual private server (or <i>instance</i>) status.
     */
   @js.native
+  @Factory
   trait InstanceState extends js.Object {
     var code: js.UndefOr[Int]
     var name: js.UndefOr[String]
   }
 
-  object InstanceState {
-    @inline
-    def apply(
-        code: js.UndefOr[Int] = js.undefined,
-        name: js.UndefOr[String] = js.undefined
-    ): InstanceState = {
-      val __obj = js.Dynamic.literal()
-      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstanceState]
-    }
-  }
-
   @js.native
+  @Factory
   trait IsVpcPeeredRequest extends js.Object {}
 
-  object IsVpcPeeredRequest {
-    @inline
-    def apply(
-    ): IsVpcPeeredRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[IsVpcPeeredRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait IsVpcPeeredResult extends js.Object {
     var isPeered: js.UndefOr[Boolean]
-  }
-
-  object IsVpcPeeredResult {
-    @inline
-    def apply(
-        isPeered: js.UndefOr[Boolean] = js.undefined
-    ): IsVpcPeeredResult = {
-      val __obj = js.Dynamic.literal()
-      isPeered.foreach(__v => __obj.updateDynamic("isPeered")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[IsVpcPeeredResult]
-    }
   }
 
   /**
     * Describes the SSH key pair.
     */
   @js.native
+  @Factory
   trait KeyPair extends js.Object {
     var arn: js.UndefOr[NonEmptyString]
     var createdAt: js.UndefOr[IsoDate]
@@ -5285,35 +2387,11 @@ package lightsail {
     var tags: js.UndefOr[TagList]
   }
 
-  object KeyPair {
-    @inline
-    def apply(
-        arn: js.UndefOr[NonEmptyString] = js.undefined,
-        createdAt: js.UndefOr[IsoDate] = js.undefined,
-        fingerprint: js.UndefOr[Base64] = js.undefined,
-        location: js.UndefOr[ResourceLocation] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined,
-        resourceType: js.UndefOr[ResourceType] = js.undefined,
-        supportCode: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): KeyPair = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      fingerprint.foreach(__v => __obj.updateDynamic("fingerprint")(__v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[KeyPair]
-    }
-  }
-
   /**
     * Describes the Lightsail load balancer.
     */
   @js.native
+  @Factory
   trait LoadBalancer extends js.Object {
     var arn: js.UndefOr[NonEmptyString]
     var configurationOptions: js.UndefOr[LoadBalancerConfigurationOptions]
@@ -5331,47 +2409,6 @@ package lightsail {
     var supportCode: js.UndefOr[String]
     var tags: js.UndefOr[TagList]
     var tlsCertificateSummaries: js.UndefOr[LoadBalancerTlsCertificateSummaryList]
-  }
-
-  object LoadBalancer {
-    @inline
-    def apply(
-        arn: js.UndefOr[NonEmptyString] = js.undefined,
-        configurationOptions: js.UndefOr[LoadBalancerConfigurationOptions] = js.undefined,
-        createdAt: js.UndefOr[IsoDate] = js.undefined,
-        dnsName: js.UndefOr[NonEmptyString] = js.undefined,
-        healthCheckPath: js.UndefOr[NonEmptyString] = js.undefined,
-        instanceHealthSummary: js.UndefOr[InstanceHealthSummaryList] = js.undefined,
-        instancePort: js.UndefOr[Int] = js.undefined,
-        location: js.UndefOr[ResourceLocation] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined,
-        protocol: js.UndefOr[LoadBalancerProtocol] = js.undefined,
-        publicPorts: js.UndefOr[PortList] = js.undefined,
-        resourceType: js.UndefOr[ResourceType] = js.undefined,
-        state: js.UndefOr[LoadBalancerState] = js.undefined,
-        supportCode: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined,
-        tlsCertificateSummaries: js.UndefOr[LoadBalancerTlsCertificateSummaryList] = js.undefined
-    ): LoadBalancer = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      configurationOptions.foreach(__v => __obj.updateDynamic("configurationOptions")(__v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      dnsName.foreach(__v => __obj.updateDynamic("dnsName")(__v.asInstanceOf[js.Any]))
-      healthCheckPath.foreach(__v => __obj.updateDynamic("healthCheckPath")(__v.asInstanceOf[js.Any]))
-      instanceHealthSummary.foreach(__v => __obj.updateDynamic("instanceHealthSummary")(__v.asInstanceOf[js.Any]))
-      instancePort.foreach(__v => __obj.updateDynamic("instancePort")(__v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
-      publicPorts.foreach(__v => __obj.updateDynamic("publicPorts")(__v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
-      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      tlsCertificateSummaries.foreach(__v => __obj.updateDynamic("tlsCertificateSummaries")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LoadBalancer]
-    }
   }
 
   @js.native
@@ -5446,6 +2483,7 @@ package lightsail {
     *  TLS is just an updated, more secure version of Secure Socket Layer (SSL).
     */
   @js.native
+  @Factory
   trait LoadBalancerTlsCertificate extends js.Object {
     var arn: js.UndefOr[NonEmptyString]
     var createdAt: js.UndefOr[IsoDate]
@@ -5474,65 +2512,6 @@ package lightsail {
     var tags: js.UndefOr[TagList]
   }
 
-  object LoadBalancerTlsCertificate {
-    @inline
-    def apply(
-        arn: js.UndefOr[NonEmptyString] = js.undefined,
-        createdAt: js.UndefOr[IsoDate] = js.undefined,
-        domainName: js.UndefOr[DomainName] = js.undefined,
-        domainValidationRecords: js.UndefOr[LoadBalancerTlsCertificateDomainValidationRecordList] = js.undefined,
-        failureReason: js.UndefOr[LoadBalancerTlsCertificateFailureReason] = js.undefined,
-        isAttached: js.UndefOr[Boolean] = js.undefined,
-        issuedAt: js.UndefOr[IsoDate] = js.undefined,
-        issuer: js.UndefOr[NonEmptyString] = js.undefined,
-        keyAlgorithm: js.UndefOr[NonEmptyString] = js.undefined,
-        loadBalancerName: js.UndefOr[ResourceName] = js.undefined,
-        location: js.UndefOr[ResourceLocation] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined,
-        notAfter: js.UndefOr[IsoDate] = js.undefined,
-        notBefore: js.UndefOr[IsoDate] = js.undefined,
-        renewalSummary: js.UndefOr[LoadBalancerTlsCertificateRenewalSummary] = js.undefined,
-        resourceType: js.UndefOr[ResourceType] = js.undefined,
-        revocationReason: js.UndefOr[LoadBalancerTlsCertificateRevocationReason] = js.undefined,
-        revokedAt: js.UndefOr[IsoDate] = js.undefined,
-        serial: js.UndefOr[NonEmptyString] = js.undefined,
-        signatureAlgorithm: js.UndefOr[NonEmptyString] = js.undefined,
-        status: js.UndefOr[LoadBalancerTlsCertificateStatus] = js.undefined,
-        subject: js.UndefOr[NonEmptyString] = js.undefined,
-        subjectAlternativeNames: js.UndefOr[StringList] = js.undefined,
-        supportCode: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): LoadBalancerTlsCertificate = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      domainName.foreach(__v => __obj.updateDynamic("domainName")(__v.asInstanceOf[js.Any]))
-      domainValidationRecords.foreach(__v => __obj.updateDynamic("domainValidationRecords")(__v.asInstanceOf[js.Any]))
-      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
-      isAttached.foreach(__v => __obj.updateDynamic("isAttached")(__v.asInstanceOf[js.Any]))
-      issuedAt.foreach(__v => __obj.updateDynamic("issuedAt")(__v.asInstanceOf[js.Any]))
-      issuer.foreach(__v => __obj.updateDynamic("issuer")(__v.asInstanceOf[js.Any]))
-      keyAlgorithm.foreach(__v => __obj.updateDynamic("keyAlgorithm")(__v.asInstanceOf[js.Any]))
-      loadBalancerName.foreach(__v => __obj.updateDynamic("loadBalancerName")(__v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      notAfter.foreach(__v => __obj.updateDynamic("notAfter")(__v.asInstanceOf[js.Any]))
-      notBefore.foreach(__v => __obj.updateDynamic("notBefore")(__v.asInstanceOf[js.Any]))
-      renewalSummary.foreach(__v => __obj.updateDynamic("renewalSummary")(__v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      revocationReason.foreach(__v => __obj.updateDynamic("revocationReason")(__v.asInstanceOf[js.Any]))
-      revokedAt.foreach(__v => __obj.updateDynamic("revokedAt")(__v.asInstanceOf[js.Any]))
-      serial.foreach(__v => __obj.updateDynamic("serial")(__v.asInstanceOf[js.Any]))
-      signatureAlgorithm.foreach(__v => __obj.updateDynamic("signatureAlgorithm")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      subject.foreach(__v => __obj.updateDynamic("subject")(__v.asInstanceOf[js.Any]))
-      subjectAlternativeNames.foreach(__v => __obj.updateDynamic("subjectAlternativeNames")(__v.asInstanceOf[js.Any]))
-      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LoadBalancerTlsCertificate]
-    }
-  }
-
   @js.native
   sealed trait LoadBalancerTlsCertificateDomainStatus extends js.Any
   object LoadBalancerTlsCertificateDomainStatus extends js.Object {
@@ -5547,53 +2526,23 @@ package lightsail {
     * Contains information about the domain names on an SSL/TLS certificate that you will use to validate domain ownership.
     */
   @js.native
+  @Factory
   trait LoadBalancerTlsCertificateDomainValidationOption extends js.Object {
     var domainName: js.UndefOr[DomainName]
     var validationStatus: js.UndefOr[LoadBalancerTlsCertificateDomainStatus]
-  }
-
-  object LoadBalancerTlsCertificateDomainValidationOption {
-    @inline
-    def apply(
-        domainName: js.UndefOr[DomainName] = js.undefined,
-        validationStatus: js.UndefOr[LoadBalancerTlsCertificateDomainStatus] = js.undefined
-    ): LoadBalancerTlsCertificateDomainValidationOption = {
-      val __obj = js.Dynamic.literal()
-      domainName.foreach(__v => __obj.updateDynamic("domainName")(__v.asInstanceOf[js.Any]))
-      validationStatus.foreach(__v => __obj.updateDynamic("validationStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LoadBalancerTlsCertificateDomainValidationOption]
-    }
   }
 
   /**
     * Describes the validation record of each domain name in the SSL/TLS certificate.
     */
   @js.native
+  @Factory
   trait LoadBalancerTlsCertificateDomainValidationRecord extends js.Object {
     var domainName: js.UndefOr[DomainName]
     var name: js.UndefOr[NonEmptyString]
     var `type`: js.UndefOr[NonEmptyString]
     var validationStatus: js.UndefOr[LoadBalancerTlsCertificateDomainStatus]
     var value: js.UndefOr[NonEmptyString]
-  }
-
-  object LoadBalancerTlsCertificateDomainValidationRecord {
-    @inline
-    def apply(
-        domainName: js.UndefOr[DomainName] = js.undefined,
-        name: js.UndefOr[NonEmptyString] = js.undefined,
-        `type`: js.UndefOr[NonEmptyString] = js.undefined,
-        validationStatus: js.UndefOr[LoadBalancerTlsCertificateDomainStatus] = js.undefined,
-        value: js.UndefOr[NonEmptyString] = js.undefined
-    ): LoadBalancerTlsCertificateDomainValidationRecord = {
-      val __obj = js.Dynamic.literal()
-      domainName.foreach(__v => __obj.updateDynamic("domainName")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      validationStatus.foreach(__v => __obj.updateDynamic("validationStatus")(__v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LoadBalancerTlsCertificateDomainValidationRecord]
-    }
   }
 
   @js.native
@@ -5632,22 +2581,10 @@ package lightsail {
     * Contains information about the status of Lightsail's managed renewal for the certificate.
     */
   @js.native
+  @Factory
   trait LoadBalancerTlsCertificateRenewalSummary extends js.Object {
     var domainValidationOptions: js.UndefOr[LoadBalancerTlsCertificateDomainValidationOptionList]
     var renewalStatus: js.UndefOr[LoadBalancerTlsCertificateRenewalStatus]
-  }
-
-  object LoadBalancerTlsCertificateRenewalSummary {
-    @inline
-    def apply(
-        domainValidationOptions: js.UndefOr[LoadBalancerTlsCertificateDomainValidationOptionList] = js.undefined,
-        renewalStatus: js.UndefOr[LoadBalancerTlsCertificateRenewalStatus] = js.undefined
-    ): LoadBalancerTlsCertificateRenewalSummary = {
-      val __obj = js.Dynamic.literal()
-      domainValidationOptions.foreach(__v => __obj.updateDynamic("domainValidationOptions")(__v.asInstanceOf[js.Any]))
-      renewalStatus.foreach(__v => __obj.updateDynamic("renewalStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LoadBalancerTlsCertificateRenewalSummary]
-    }
   }
 
   @js.native
@@ -5701,50 +2638,27 @@ package lightsail {
     * Provides a summary of SSL/TLS certificate metadata.
     */
   @js.native
+  @Factory
   trait LoadBalancerTlsCertificateSummary extends js.Object {
     var isAttached: js.UndefOr[Boolean]
     var name: js.UndefOr[ResourceName]
-  }
-
-  object LoadBalancerTlsCertificateSummary {
-    @inline
-    def apply(
-        isAttached: js.UndefOr[Boolean] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined
-    ): LoadBalancerTlsCertificateSummary = {
-      val __obj = js.Dynamic.literal()
-      isAttached.foreach(__v => __obj.updateDynamic("isAttached")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LoadBalancerTlsCertificateSummary]
-    }
   }
 
   /**
     * Describes a database log event.
     */
   @js.native
+  @Factory
   trait LogEvent extends js.Object {
     var createdAt: js.UndefOr[IsoDate]
     var message: js.UndefOr[String]
-  }
-
-  object LogEvent {
-    @inline
-    def apply(
-        createdAt: js.UndefOr[IsoDate] = js.undefined,
-        message: js.UndefOr[String] = js.undefined
-    ): LogEvent = {
-      val __obj = js.Dynamic.literal()
-      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LogEvent]
-    }
   }
 
   /**
     * Describes the metric data point.
     */
   @js.native
+  @Factory
   trait MetricDatapoint extends js.Object {
     var average: js.UndefOr[double]
     var maximum: js.UndefOr[double]
@@ -5753,29 +2667,6 @@ package lightsail {
     var sum: js.UndefOr[double]
     var timestamp: js.UndefOr[timestamp]
     var unit: js.UndefOr[MetricUnit]
-  }
-
-  object MetricDatapoint {
-    @inline
-    def apply(
-        average: js.UndefOr[double] = js.undefined,
-        maximum: js.UndefOr[double] = js.undefined,
-        minimum: js.UndefOr[double] = js.undefined,
-        sampleCount: js.UndefOr[double] = js.undefined,
-        sum: js.UndefOr[double] = js.undefined,
-        timestamp: js.UndefOr[timestamp] = js.undefined,
-        unit: js.UndefOr[MetricUnit] = js.undefined
-    ): MetricDatapoint = {
-      val __obj = js.Dynamic.literal()
-      average.foreach(__v => __obj.updateDynamic("average")(__v.asInstanceOf[js.Any]))
-      maximum.foreach(__v => __obj.updateDynamic("maximum")(__v.asInstanceOf[js.Any]))
-      minimum.foreach(__v => __obj.updateDynamic("minimum")(__v.asInstanceOf[js.Any]))
-      sampleCount.foreach(__v => __obj.updateDynamic("sampleCount")(__v.asInstanceOf[js.Any]))
-      sum.foreach(__v => __obj.updateDynamic("sum")(__v.asInstanceOf[js.Any]))
-      timestamp.foreach(__v => __obj.updateDynamic("timestamp")(__v.asInstanceOf[js.Any]))
-      unit.foreach(__v => __obj.updateDynamic("unit")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MetricDatapoint]
-    }
   }
 
   @js.native
@@ -5858,19 +2749,9 @@ package lightsail {
     * Describes the monthly data transfer in and out of your virtual private server (or <i>instance</i>).
     */
   @js.native
+  @Factory
   trait MonthlyTransfer extends js.Object {
     var gbPerMonthAllocated: js.UndefOr[Int]
-  }
-
-  object MonthlyTransfer {
-    @inline
-    def apply(
-        gbPerMonthAllocated: js.UndefOr[Int] = js.undefined
-    ): MonthlyTransfer = {
-      val __obj = js.Dynamic.literal()
-      gbPerMonthAllocated.foreach(__v => __obj.updateDynamic("gbPerMonthAllocated")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MonthlyTransfer]
-    }
   }
 
   @js.native
@@ -5884,46 +2765,23 @@ package lightsail {
   }
 
   @js.native
+  @Factory
   trait OpenInstancePublicPortsRequest extends js.Object {
     var instanceName: ResourceName
     var portInfo: PortInfo
   }
 
-  object OpenInstancePublicPortsRequest {
-    @inline
-    def apply(
-        instanceName: ResourceName,
-        portInfo: PortInfo
-    ): OpenInstancePublicPortsRequest = {
-      val __obj = js.Dynamic.literal(
-        "instanceName" -> instanceName.asInstanceOf[js.Any],
-        "portInfo"     -> portInfo.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[OpenInstancePublicPortsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait OpenInstancePublicPortsResult extends js.Object {
     var operation: js.UndefOr[Operation]
-  }
-
-  object OpenInstancePublicPortsResult {
-    @inline
-    def apply(
-        operation: js.UndefOr[Operation] = js.undefined
-    ): OpenInstancePublicPortsResult = {
-      val __obj = js.Dynamic.literal()
-      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[OpenInstancePublicPortsResult]
-    }
   }
 
   /**
     * Describes the API operation.
     */
   @js.native
+  @Factory
   trait Operation extends js.Object {
     var createdAt: js.UndefOr[IsoDate]
     var errorCode: js.UndefOr[String]
@@ -5937,39 +2795,6 @@ package lightsail {
     var resourceType: js.UndefOr[ResourceType]
     var status: js.UndefOr[OperationStatus]
     var statusChangedAt: js.UndefOr[IsoDate]
-  }
-
-  object Operation {
-    @inline
-    def apply(
-        createdAt: js.UndefOr[IsoDate] = js.undefined,
-        errorCode: js.UndefOr[String] = js.undefined,
-        errorDetails: js.UndefOr[String] = js.undefined,
-        id: js.UndefOr[NonEmptyString] = js.undefined,
-        isTerminal: js.UndefOr[Boolean] = js.undefined,
-        location: js.UndefOr[ResourceLocation] = js.undefined,
-        operationDetails: js.UndefOr[String] = js.undefined,
-        operationType: js.UndefOr[OperationType] = js.undefined,
-        resourceName: js.UndefOr[ResourceName] = js.undefined,
-        resourceType: js.UndefOr[ResourceType] = js.undefined,
-        status: js.UndefOr[OperationStatus] = js.undefined,
-        statusChangedAt: js.UndefOr[IsoDate] = js.undefined
-    ): Operation = {
-      val __obj = js.Dynamic.literal()
-      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      errorCode.foreach(__v => __obj.updateDynamic("errorCode")(__v.asInstanceOf[js.Any]))
-      errorDetails.foreach(__v => __obj.updateDynamic("errorDetails")(__v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
-      isTerminal.foreach(__v => __obj.updateDynamic("isTerminal")(__v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
-      operationDetails.foreach(__v => __obj.updateDynamic("operationDetails")(__v.asInstanceOf[js.Any]))
-      operationType.foreach(__v => __obj.updateDynamic("operationType")(__v.asInstanceOf[js.Any]))
-      resourceName.foreach(__v => __obj.updateDynamic("resourceName")(__v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      statusChangedAt.foreach(__v => __obj.updateDynamic("statusChangedAt")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Operation]
-    }
   }
 
   @js.native
@@ -6092,101 +2917,42 @@ package lightsail {
     * The password data for the Windows Server-based instance, including the ciphertext and the key pair name.
     */
   @js.native
+  @Factory
   trait PasswordData extends js.Object {
     var ciphertext: js.UndefOr[String]
     var keyPairName: js.UndefOr[ResourceName]
   }
 
-  object PasswordData {
-    @inline
-    def apply(
-        ciphertext: js.UndefOr[String] = js.undefined,
-        keyPairName: js.UndefOr[ResourceName] = js.undefined
-    ): PasswordData = {
-      val __obj = js.Dynamic.literal()
-      ciphertext.foreach(__v => __obj.updateDynamic("ciphertext")(__v.asInstanceOf[js.Any]))
-      keyPairName.foreach(__v => __obj.updateDynamic("keyPairName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PasswordData]
-    }
-  }
-
   @js.native
+  @Factory
   trait PeerVpcRequest extends js.Object {}
 
-  object PeerVpcRequest {
-    @inline
-    def apply(
-    ): PeerVpcRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PeerVpcRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PeerVpcResult extends js.Object {
     var operation: js.UndefOr[Operation]
-  }
-
-  object PeerVpcResult {
-    @inline
-    def apply(
-        operation: js.UndefOr[Operation] = js.undefined
-    ): PeerVpcResult = {
-      val __obj = js.Dynamic.literal()
-      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PeerVpcResult]
-    }
   }
 
   /**
     * Describes a pending database maintenance action.
     */
   @js.native
+  @Factory
   trait PendingMaintenanceAction extends js.Object {
     var action: js.UndefOr[NonEmptyString]
     var currentApplyDate: js.UndefOr[IsoDate]
     var description: js.UndefOr[NonEmptyString]
   }
 
-  object PendingMaintenanceAction {
-    @inline
-    def apply(
-        action: js.UndefOr[NonEmptyString] = js.undefined,
-        currentApplyDate: js.UndefOr[IsoDate] = js.undefined,
-        description: js.UndefOr[NonEmptyString] = js.undefined
-    ): PendingMaintenanceAction = {
-      val __obj = js.Dynamic.literal()
-      action.foreach(__v => __obj.updateDynamic("action")(__v.asInstanceOf[js.Any]))
-      currentApplyDate.foreach(__v => __obj.updateDynamic("currentApplyDate")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PendingMaintenanceAction]
-    }
-  }
-
   /**
     * Describes a pending database value modification.
     */
   @js.native
+  @Factory
   trait PendingModifiedRelationalDatabaseValues extends js.Object {
     var backupRetentionEnabled: js.UndefOr[Boolean]
     var engineVersion: js.UndefOr[String]
     var masterUserPassword: js.UndefOr[String]
-  }
-
-  object PendingModifiedRelationalDatabaseValues {
-    @inline
-    def apply(
-        backupRetentionEnabled: js.UndefOr[Boolean] = js.undefined,
-        engineVersion: js.UndefOr[String] = js.undefined,
-        masterUserPassword: js.UndefOr[String] = js.undefined
-    ): PendingModifiedRelationalDatabaseValues = {
-      val __obj = js.Dynamic.literal()
-      backupRetentionEnabled.foreach(__v => __obj.updateDynamic("backupRetentionEnabled")(__v.asInstanceOf[js.Any]))
-      engineVersion.foreach(__v => __obj.updateDynamic("engineVersion")(__v.asInstanceOf[js.Any]))
-      masterUserPassword.foreach(__v => __obj.updateDynamic("masterUserPassword")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PendingModifiedRelationalDatabaseValues]
-    }
   }
 
   @js.native
@@ -6202,25 +2968,11 @@ package lightsail {
     * Describes information about the ports on your virtual private server (or <i>instance</i>).
     */
   @js.native
+  @Factory
   trait PortInfo extends js.Object {
     var fromPort: js.UndefOr[Port]
     var protocol: js.UndefOr[NetworkProtocol]
     var toPort: js.UndefOr[Port]
-  }
-
-  object PortInfo {
-    @inline
-    def apply(
-        fromPort: js.UndefOr[Port] = js.undefined,
-        protocol: js.UndefOr[NetworkProtocol] = js.undefined,
-        toPort: js.UndefOr[Port] = js.undefined
-    ): PortInfo = {
-      val __obj = js.Dynamic.literal()
-      fromPort.foreach(__v => __obj.updateDynamic("fromPort")(__v.asInstanceOf[js.Any]))
-      protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
-      toPort.foreach(__v => __obj.updateDynamic("toPort")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PortInfo]
-    }
   }
 
   @js.native
@@ -6244,108 +2996,40 @@ package lightsail {
   }
 
   @js.native
+  @Factory
   trait PutInstancePublicPortsRequest extends js.Object {
     var instanceName: ResourceName
     var portInfos: PortInfoList
   }
 
-  object PutInstancePublicPortsRequest {
-    @inline
-    def apply(
-        instanceName: ResourceName,
-        portInfos: PortInfoList
-    ): PutInstancePublicPortsRequest = {
-      val __obj = js.Dynamic.literal(
-        "instanceName" -> instanceName.asInstanceOf[js.Any],
-        "portInfos"    -> portInfos.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutInstancePublicPortsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutInstancePublicPortsResult extends js.Object {
     var operation: js.UndefOr[Operation]
   }
 
-  object PutInstancePublicPortsResult {
-    @inline
-    def apply(
-        operation: js.UndefOr[Operation] = js.undefined
-    ): PutInstancePublicPortsResult = {
-      val __obj = js.Dynamic.literal()
-      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutInstancePublicPortsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait RebootInstanceRequest extends js.Object {
     var instanceName: ResourceName
   }
 
-  object RebootInstanceRequest {
-    @inline
-    def apply(
-        instanceName: ResourceName
-    ): RebootInstanceRequest = {
-      val __obj = js.Dynamic.literal(
-        "instanceName" -> instanceName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RebootInstanceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait RebootInstanceResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object RebootInstanceResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): RebootInstanceResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RebootInstanceResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait RebootRelationalDatabaseRequest extends js.Object {
     var relationalDatabaseName: ResourceName
   }
 
-  object RebootRelationalDatabaseRequest {
-    @inline
-    def apply(
-        relationalDatabaseName: ResourceName
-    ): RebootRelationalDatabaseRequest = {
-      val __obj = js.Dynamic.literal(
-        "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RebootRelationalDatabaseRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait RebootRelationalDatabaseResult extends js.Object {
     var operations: js.UndefOr[OperationList]
-  }
-
-  object RebootRelationalDatabaseResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): RebootRelationalDatabaseResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RebootRelationalDatabaseResult]
-    }
   }
 
   @js.native
@@ -6362,6 +3046,7 @@ package lightsail {
     * Describes the AWS Region.
     */
   @js.native
+  @Factory
   trait Region extends js.Object {
     var availabilityZones: js.UndefOr[AvailabilityZoneList]
     var continentCode: js.UndefOr[String]
@@ -6369,29 +3054,6 @@ package lightsail {
     var displayName: js.UndefOr[String]
     var name: js.UndefOr[RegionName]
     var relationalDatabaseAvailabilityZones: js.UndefOr[AvailabilityZoneList]
-  }
-
-  object Region {
-    @inline
-    def apply(
-        availabilityZones: js.UndefOr[AvailabilityZoneList] = js.undefined,
-        continentCode: js.UndefOr[String] = js.undefined,
-        description: js.UndefOr[String] = js.undefined,
-        displayName: js.UndefOr[String] = js.undefined,
-        name: js.UndefOr[RegionName] = js.undefined,
-        relationalDatabaseAvailabilityZones: js.UndefOr[AvailabilityZoneList] = js.undefined
-    ): Region = {
-      val __obj = js.Dynamic.literal()
-      availabilityZones.foreach(__v => __obj.updateDynamic("availabilityZones")(__v.asInstanceOf[js.Any]))
-      continentCode.foreach(__v => __obj.updateDynamic("continentCode")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      displayName.foreach(__v => __obj.updateDynamic("displayName")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      relationalDatabaseAvailabilityZones.foreach(__v =>
-        __obj.updateDynamic("relationalDatabaseAvailabilityZones")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[Region]
-    }
   }
 
   @js.native
@@ -6436,6 +3098,7 @@ package lightsail {
     * Describes a database.
     */
   @js.native
+  @Factory
   trait RelationalDatabase extends js.Object {
     var arn: js.UndefOr[NonEmptyString]
     var backupRetentionEnabled: js.UndefOr[Boolean]
@@ -6465,81 +3128,11 @@ package lightsail {
     var tags: js.UndefOr[TagList]
   }
 
-  object RelationalDatabase {
-    @inline
-    def apply(
-        arn: js.UndefOr[NonEmptyString] = js.undefined,
-        backupRetentionEnabled: js.UndefOr[Boolean] = js.undefined,
-        caCertificateIdentifier: js.UndefOr[String] = js.undefined,
-        createdAt: js.UndefOr[IsoDate] = js.undefined,
-        engine: js.UndefOr[NonEmptyString] = js.undefined,
-        engineVersion: js.UndefOr[NonEmptyString] = js.undefined,
-        hardware: js.UndefOr[RelationalDatabaseHardware] = js.undefined,
-        latestRestorableTime: js.UndefOr[IsoDate] = js.undefined,
-        location: js.UndefOr[ResourceLocation] = js.undefined,
-        masterDatabaseName: js.UndefOr[String] = js.undefined,
-        masterEndpoint: js.UndefOr[RelationalDatabaseEndpoint] = js.undefined,
-        masterUsername: js.UndefOr[NonEmptyString] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined,
-        parameterApplyStatus: js.UndefOr[NonEmptyString] = js.undefined,
-        pendingMaintenanceActions: js.UndefOr[PendingMaintenanceActionList] = js.undefined,
-        pendingModifiedValues: js.UndefOr[PendingModifiedRelationalDatabaseValues] = js.undefined,
-        preferredBackupWindow: js.UndefOr[NonEmptyString] = js.undefined,
-        preferredMaintenanceWindow: js.UndefOr[NonEmptyString] = js.undefined,
-        publiclyAccessible: js.UndefOr[Boolean] = js.undefined,
-        relationalDatabaseBlueprintId: js.UndefOr[NonEmptyString] = js.undefined,
-        relationalDatabaseBundleId: js.UndefOr[NonEmptyString] = js.undefined,
-        resourceType: js.UndefOr[ResourceType] = js.undefined,
-        secondaryAvailabilityZone: js.UndefOr[String] = js.undefined,
-        state: js.UndefOr[NonEmptyString] = js.undefined,
-        supportCode: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): RelationalDatabase = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      backupRetentionEnabled.foreach(__v => __obj.updateDynamic("backupRetentionEnabled")(__v.asInstanceOf[js.Any]))
-      caCertificateIdentifier.foreach(__v => __obj.updateDynamic("caCertificateIdentifier")(__v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      engine.foreach(__v => __obj.updateDynamic("engine")(__v.asInstanceOf[js.Any]))
-      engineVersion.foreach(__v => __obj.updateDynamic("engineVersion")(__v.asInstanceOf[js.Any]))
-      hardware.foreach(__v => __obj.updateDynamic("hardware")(__v.asInstanceOf[js.Any]))
-      latestRestorableTime.foreach(__v => __obj.updateDynamic("latestRestorableTime")(__v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
-      masterDatabaseName.foreach(__v => __obj.updateDynamic("masterDatabaseName")(__v.asInstanceOf[js.Any]))
-      masterEndpoint.foreach(__v => __obj.updateDynamic("masterEndpoint")(__v.asInstanceOf[js.Any]))
-      masterUsername.foreach(__v => __obj.updateDynamic("masterUsername")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      parameterApplyStatus.foreach(__v => __obj.updateDynamic("parameterApplyStatus")(__v.asInstanceOf[js.Any]))
-      pendingMaintenanceActions.foreach(__v =>
-        __obj.updateDynamic("pendingMaintenanceActions")(__v.asInstanceOf[js.Any])
-      )
-      pendingModifiedValues.foreach(__v => __obj.updateDynamic("pendingModifiedValues")(__v.asInstanceOf[js.Any]))
-      preferredBackupWindow.foreach(__v => __obj.updateDynamic("preferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      preferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("preferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
-      publiclyAccessible.foreach(__v => __obj.updateDynamic("publiclyAccessible")(__v.asInstanceOf[js.Any]))
-      relationalDatabaseBlueprintId.foreach(__v =>
-        __obj.updateDynamic("relationalDatabaseBlueprintId")(__v.asInstanceOf[js.Any])
-      )
-      relationalDatabaseBundleId.foreach(__v =>
-        __obj.updateDynamic("relationalDatabaseBundleId")(__v.asInstanceOf[js.Any])
-      )
-      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      secondaryAvailabilityZone.foreach(__v =>
-        __obj.updateDynamic("secondaryAvailabilityZone")(__v.asInstanceOf[js.Any])
-      )
-      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
-      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RelationalDatabase]
-    }
-  }
-
   /**
     * Describes a database image, or blueprint. A blueprint describes the major engine version of a database.
     */
   @js.native
+  @Factory
   trait RelationalDatabaseBlueprint extends js.Object {
     var blueprintId: js.UndefOr[String]
     var engine: js.UndefOr[RelationalDatabaseEngine]
@@ -6549,31 +3142,11 @@ package lightsail {
     var isEngineDefault: js.UndefOr[Boolean]
   }
 
-  object RelationalDatabaseBlueprint {
-    @inline
-    def apply(
-        blueprintId: js.UndefOr[String] = js.undefined,
-        engine: js.UndefOr[RelationalDatabaseEngine] = js.undefined,
-        engineDescription: js.UndefOr[String] = js.undefined,
-        engineVersion: js.UndefOr[String] = js.undefined,
-        engineVersionDescription: js.UndefOr[String] = js.undefined,
-        isEngineDefault: js.UndefOr[Boolean] = js.undefined
-    ): RelationalDatabaseBlueprint = {
-      val __obj = js.Dynamic.literal()
-      blueprintId.foreach(__v => __obj.updateDynamic("blueprintId")(__v.asInstanceOf[js.Any]))
-      engine.foreach(__v => __obj.updateDynamic("engine")(__v.asInstanceOf[js.Any]))
-      engineDescription.foreach(__v => __obj.updateDynamic("engineDescription")(__v.asInstanceOf[js.Any]))
-      engineVersion.foreach(__v => __obj.updateDynamic("engineVersion")(__v.asInstanceOf[js.Any]))
-      engineVersionDescription.foreach(__v => __obj.updateDynamic("engineVersionDescription")(__v.asInstanceOf[js.Any]))
-      isEngineDefault.foreach(__v => __obj.updateDynamic("isEngineDefault")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RelationalDatabaseBlueprint]
-    }
-  }
-
   /**
     * Describes a database bundle. A bundle describes the performance specifications of the database.
     */
   @js.native
+  @Factory
   trait RelationalDatabaseBundle extends js.Object {
     var bundleId: js.UndefOr[String]
     var cpuCount: js.UndefOr[Int]
@@ -6586,53 +3159,14 @@ package lightsail {
     var transferPerMonthInGb: js.UndefOr[Int]
   }
 
-  object RelationalDatabaseBundle {
-    @inline
-    def apply(
-        bundleId: js.UndefOr[String] = js.undefined,
-        cpuCount: js.UndefOr[Int] = js.undefined,
-        diskSizeInGb: js.UndefOr[Int] = js.undefined,
-        isActive: js.UndefOr[Boolean] = js.undefined,
-        isEncrypted: js.UndefOr[Boolean] = js.undefined,
-        name: js.UndefOr[String] = js.undefined,
-        price: js.UndefOr[Float] = js.undefined,
-        ramSizeInGb: js.UndefOr[Float] = js.undefined,
-        transferPerMonthInGb: js.UndefOr[Int] = js.undefined
-    ): RelationalDatabaseBundle = {
-      val __obj = js.Dynamic.literal()
-      bundleId.foreach(__v => __obj.updateDynamic("bundleId")(__v.asInstanceOf[js.Any]))
-      cpuCount.foreach(__v => __obj.updateDynamic("cpuCount")(__v.asInstanceOf[js.Any]))
-      diskSizeInGb.foreach(__v => __obj.updateDynamic("diskSizeInGb")(__v.asInstanceOf[js.Any]))
-      isActive.foreach(__v => __obj.updateDynamic("isActive")(__v.asInstanceOf[js.Any]))
-      isEncrypted.foreach(__v => __obj.updateDynamic("isEncrypted")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      price.foreach(__v => __obj.updateDynamic("price")(__v.asInstanceOf[js.Any]))
-      ramSizeInGb.foreach(__v => __obj.updateDynamic("ramSizeInGb")(__v.asInstanceOf[js.Any]))
-      transferPerMonthInGb.foreach(__v => __obj.updateDynamic("transferPerMonthInGb")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RelationalDatabaseBundle]
-    }
-  }
-
   /**
     * Describes an endpoint for a database.
     */
   @js.native
+  @Factory
   trait RelationalDatabaseEndpoint extends js.Object {
     var address: js.UndefOr[NonEmptyString]
     var port: js.UndefOr[Int]
-  }
-
-  object RelationalDatabaseEndpoint {
-    @inline
-    def apply(
-        address: js.UndefOr[NonEmptyString] = js.undefined,
-        port: js.UndefOr[Int] = js.undefined
-    ): RelationalDatabaseEndpoint = {
-      val __obj = js.Dynamic.literal()
-      address.foreach(__v => __obj.updateDynamic("address")(__v.asInstanceOf[js.Any]))
-      port.foreach(__v => __obj.updateDynamic("port")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RelationalDatabaseEndpoint]
-    }
   }
 
   @js.native
@@ -6647,6 +3181,7 @@ package lightsail {
     * Describes an event for a database.
     */
   @js.native
+  @Factory
   trait RelationalDatabaseEvent extends js.Object {
     var createdAt: js.UndefOr[IsoDate]
     var eventCategories: js.UndefOr[StringList]
@@ -6654,46 +3189,15 @@ package lightsail {
     var resource: js.UndefOr[ResourceName]
   }
 
-  object RelationalDatabaseEvent {
-    @inline
-    def apply(
-        createdAt: js.UndefOr[IsoDate] = js.undefined,
-        eventCategories: js.UndefOr[StringList] = js.undefined,
-        message: js.UndefOr[String] = js.undefined,
-        resource: js.UndefOr[ResourceName] = js.undefined
-    ): RelationalDatabaseEvent = {
-      val __obj = js.Dynamic.literal()
-      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      eventCategories.foreach(__v => __obj.updateDynamic("eventCategories")(__v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
-      resource.foreach(__v => __obj.updateDynamic("resource")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RelationalDatabaseEvent]
-    }
-  }
-
   /**
     * Describes the hardware of a database.
     */
   @js.native
+  @Factory
   trait RelationalDatabaseHardware extends js.Object {
     var cpuCount: js.UndefOr[Int]
     var diskSizeInGb: js.UndefOr[Int]
     var ramSizeInGb: js.UndefOr[Float]
-  }
-
-  object RelationalDatabaseHardware {
-    @inline
-    def apply(
-        cpuCount: js.UndefOr[Int] = js.undefined,
-        diskSizeInGb: js.UndefOr[Int] = js.undefined,
-        ramSizeInGb: js.UndefOr[Float] = js.undefined
-    ): RelationalDatabaseHardware = {
-      val __obj = js.Dynamic.literal()
-      cpuCount.foreach(__v => __obj.updateDynamic("cpuCount")(__v.asInstanceOf[js.Any]))
-      diskSizeInGb.foreach(__v => __obj.updateDynamic("diskSizeInGb")(__v.asInstanceOf[js.Any]))
-      ramSizeInGb.foreach(__v => __obj.updateDynamic("ramSizeInGb")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RelationalDatabaseHardware]
-    }
   }
 
   @js.native
@@ -6722,6 +3226,7 @@ package lightsail {
     * Describes the parameters of a database.
     */
   @js.native
+  @Factory
   trait RelationalDatabaseParameter extends js.Object {
     var allowedValues: js.UndefOr[String]
     var applyMethod: js.UndefOr[String]
@@ -6731,31 +3236,6 @@ package lightsail {
     var isModifiable: js.UndefOr[Boolean]
     var parameterName: js.UndefOr[String]
     var parameterValue: js.UndefOr[String]
-  }
-
-  object RelationalDatabaseParameter {
-    @inline
-    def apply(
-        allowedValues: js.UndefOr[String] = js.undefined,
-        applyMethod: js.UndefOr[String] = js.undefined,
-        applyType: js.UndefOr[String] = js.undefined,
-        dataType: js.UndefOr[String] = js.undefined,
-        description: js.UndefOr[String] = js.undefined,
-        isModifiable: js.UndefOr[Boolean] = js.undefined,
-        parameterName: js.UndefOr[String] = js.undefined,
-        parameterValue: js.UndefOr[String] = js.undefined
-    ): RelationalDatabaseParameter = {
-      val __obj = js.Dynamic.literal()
-      allowedValues.foreach(__v => __obj.updateDynamic("allowedValues")(__v.asInstanceOf[js.Any]))
-      applyMethod.foreach(__v => __obj.updateDynamic("applyMethod")(__v.asInstanceOf[js.Any]))
-      applyType.foreach(__v => __obj.updateDynamic("applyType")(__v.asInstanceOf[js.Any]))
-      dataType.foreach(__v => __obj.updateDynamic("dataType")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      isModifiable.foreach(__v => __obj.updateDynamic("isModifiable")(__v.asInstanceOf[js.Any]))
-      parameterName.foreach(__v => __obj.updateDynamic("parameterName")(__v.asInstanceOf[js.Any]))
-      parameterValue.foreach(__v => __obj.updateDynamic("parameterValue")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RelationalDatabaseParameter]
-    }
   }
 
   @js.native
@@ -6772,6 +3252,7 @@ package lightsail {
     * Describes a database snapshot.
     */
   @js.native
+  @Factory
   trait RelationalDatabaseSnapshot extends js.Object {
     var arn: js.UndefOr[NonEmptyString]
     var createdAt: js.UndefOr[IsoDate]
@@ -6790,107 +3271,26 @@ package lightsail {
     var tags: js.UndefOr[TagList]
   }
 
-  object RelationalDatabaseSnapshot {
-    @inline
-    def apply(
-        arn: js.UndefOr[NonEmptyString] = js.undefined,
-        createdAt: js.UndefOr[IsoDate] = js.undefined,
-        engine: js.UndefOr[NonEmptyString] = js.undefined,
-        engineVersion: js.UndefOr[NonEmptyString] = js.undefined,
-        fromRelationalDatabaseArn: js.UndefOr[NonEmptyString] = js.undefined,
-        fromRelationalDatabaseBlueprintId: js.UndefOr[String] = js.undefined,
-        fromRelationalDatabaseBundleId: js.UndefOr[String] = js.undefined,
-        fromRelationalDatabaseName: js.UndefOr[NonEmptyString] = js.undefined,
-        location: js.UndefOr[ResourceLocation] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined,
-        resourceType: js.UndefOr[ResourceType] = js.undefined,
-        sizeInGb: js.UndefOr[Int] = js.undefined,
-        state: js.UndefOr[NonEmptyString] = js.undefined,
-        supportCode: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): RelationalDatabaseSnapshot = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      engine.foreach(__v => __obj.updateDynamic("engine")(__v.asInstanceOf[js.Any]))
-      engineVersion.foreach(__v => __obj.updateDynamic("engineVersion")(__v.asInstanceOf[js.Any]))
-      fromRelationalDatabaseArn.foreach(__v =>
-        __obj.updateDynamic("fromRelationalDatabaseArn")(__v.asInstanceOf[js.Any])
-      )
-      fromRelationalDatabaseBlueprintId.foreach(__v =>
-        __obj.updateDynamic("fromRelationalDatabaseBlueprintId")(__v.asInstanceOf[js.Any])
-      )
-      fromRelationalDatabaseBundleId.foreach(__v =>
-        __obj.updateDynamic("fromRelationalDatabaseBundleId")(__v.asInstanceOf[js.Any])
-      )
-      fromRelationalDatabaseName.foreach(__v =>
-        __obj.updateDynamic("fromRelationalDatabaseName")(__v.asInstanceOf[js.Any])
-      )
-      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      sizeInGb.foreach(__v => __obj.updateDynamic("sizeInGb")(__v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
-      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RelationalDatabaseSnapshot]
-    }
-  }
-
   @js.native
+  @Factory
   trait ReleaseStaticIpRequest extends js.Object {
     var staticIpName: ResourceName
   }
 
-  object ReleaseStaticIpRequest {
-    @inline
-    def apply(
-        staticIpName: ResourceName
-    ): ReleaseStaticIpRequest = {
-      val __obj = js.Dynamic.literal(
-        "staticIpName" -> staticIpName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ReleaseStaticIpRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ReleaseStaticIpResult extends js.Object {
     var operations: js.UndefOr[OperationList]
-  }
-
-  object ReleaseStaticIpResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): ReleaseStaticIpResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ReleaseStaticIpResult]
-    }
   }
 
   /**
     * Describes the resource location.
     */
   @js.native
+  @Factory
   trait ResourceLocation extends js.Object {
     var availabilityZone: js.UndefOr[String]
     var regionName: js.UndefOr[RegionName]
-  }
-
-  object ResourceLocation {
-    @inline
-    def apply(
-        availabilityZone: js.UndefOr[String] = js.undefined,
-        regionName: js.UndefOr[RegionName] = js.undefined
-    ): ResourceLocation = {
-      val __obj = js.Dynamic.literal()
-      availabilityZone.foreach(__v => __obj.updateDynamic("availabilityZone")(__v.asInstanceOf[js.Any]))
-      regionName.foreach(__v => __obj.updateDynamic("regionName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ResourceLocation]
-    }
   }
 
   @js.native
@@ -6932,77 +3332,34 @@ package lightsail {
   }
 
   @js.native
+  @Factory
   trait StartInstanceRequest extends js.Object {
     var instanceName: ResourceName
   }
 
-  object StartInstanceRequest {
-    @inline
-    def apply(
-        instanceName: ResourceName
-    ): StartInstanceRequest = {
-      val __obj = js.Dynamic.literal(
-        "instanceName" -> instanceName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StartInstanceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartInstanceResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object StartInstanceResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): StartInstanceResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartInstanceResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartRelationalDatabaseRequest extends js.Object {
     var relationalDatabaseName: ResourceName
   }
 
-  object StartRelationalDatabaseRequest {
-    @inline
-    def apply(
-        relationalDatabaseName: ResourceName
-    ): StartRelationalDatabaseRequest = {
-      val __obj = js.Dynamic.literal(
-        "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StartRelationalDatabaseRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartRelationalDatabaseResult extends js.Object {
     var operations: js.UndefOr[OperationList]
-  }
-
-  object StartRelationalDatabaseResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): StartRelationalDatabaseResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartRelationalDatabaseResult]
-    }
   }
 
   /**
     * Describes the static IP.
     */
   @js.native
+  @Factory
   trait StaticIp extends js.Object {
     var arn: js.UndefOr[NonEmptyString]
     var attachedTo: js.UndefOr[ResourceName]
@@ -7015,107 +3372,30 @@ package lightsail {
     var supportCode: js.UndefOr[String]
   }
 
-  object StaticIp {
-    @inline
-    def apply(
-        arn: js.UndefOr[NonEmptyString] = js.undefined,
-        attachedTo: js.UndefOr[ResourceName] = js.undefined,
-        createdAt: js.UndefOr[IsoDate] = js.undefined,
-        ipAddress: js.UndefOr[IpAddress] = js.undefined,
-        isAttached: js.UndefOr[Boolean] = js.undefined,
-        location: js.UndefOr[ResourceLocation] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined,
-        resourceType: js.UndefOr[ResourceType] = js.undefined,
-        supportCode: js.UndefOr[String] = js.undefined
-    ): StaticIp = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      attachedTo.foreach(__v => __obj.updateDynamic("attachedTo")(__v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      ipAddress.foreach(__v => __obj.updateDynamic("ipAddress")(__v.asInstanceOf[js.Any]))
-      isAttached.foreach(__v => __obj.updateDynamic("isAttached")(__v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StaticIp]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopInstanceRequest extends js.Object {
     var instanceName: ResourceName
     var force: js.UndefOr[Boolean]
   }
 
-  object StopInstanceRequest {
-    @inline
-    def apply(
-        instanceName: ResourceName,
-        force: js.UndefOr[Boolean] = js.undefined
-    ): StopInstanceRequest = {
-      val __obj = js.Dynamic.literal(
-        "instanceName" -> instanceName.asInstanceOf[js.Any]
-      )
-
-      force.foreach(__v => __obj.updateDynamic("force")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StopInstanceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopInstanceResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object StopInstanceResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): StopInstanceResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StopInstanceResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopRelationalDatabaseRequest extends js.Object {
     var relationalDatabaseName: ResourceName
     var relationalDatabaseSnapshotName: js.UndefOr[ResourceName]
   }
 
-  object StopRelationalDatabaseRequest {
-    @inline
-    def apply(
-        relationalDatabaseName: ResourceName,
-        relationalDatabaseSnapshotName: js.UndefOr[ResourceName] = js.undefined
-    ): StopRelationalDatabaseRequest = {
-      val __obj = js.Dynamic.literal(
-        "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
-      )
-
-      relationalDatabaseSnapshotName.foreach(__v =>
-        __obj.updateDynamic("relationalDatabaseSnapshotName")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[StopRelationalDatabaseRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopRelationalDatabaseResult extends js.Object {
     var operations: js.UndefOr[OperationList]
-  }
-
-  object StopRelationalDatabaseResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): StopRelationalDatabaseResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StopRelationalDatabaseResult]
-    }
   }
 
   /**
@@ -7123,248 +3403,92 @@ package lightsail {
     *  For more information about tags in Lightsail, see the [[https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags|Lightsail Dev Guide]].
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var key: js.UndefOr[TagKey]
     var value: js.UndefOr[TagValue]
   }
 
-  object Tag {
-    @inline
-    def apply(
-        key: js.UndefOr[TagKey] = js.undefined,
-        value: js.UndefOr[TagValue] = js.undefined
-    ): Tag = {
-      val __obj = js.Dynamic.literal()
-      key.foreach(__v => __obj.updateDynamic("key")(__v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Tag]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceRequest extends js.Object {
     var resourceName: ResourceName
     var tags: TagList
     var resourceArn: js.UndefOr[ResourceArn]
   }
 
-  object TagResourceRequest {
-    @inline
-    def apply(
-        resourceName: ResourceName,
-        tags: TagList,
-        resourceArn: js.UndefOr[ResourceArn] = js.undefined
-    ): TagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceName" -> resourceName.asInstanceOf[js.Any],
-        "tags"         -> tags.asInstanceOf[js.Any]
-      )
-
-      resourceArn.foreach(__v => __obj.updateDynamic("resourceArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object TagResourceResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): TagResourceResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TagResourceResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait UnpeerVpcRequest extends js.Object {}
 
-  object UnpeerVpcRequest {
-    @inline
-    def apply(
-    ): UnpeerVpcRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UnpeerVpcRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UnpeerVpcResult extends js.Object {
     var operation: js.UndefOr[Operation]
   }
 
-  object UnpeerVpcResult {
-    @inline
-    def apply(
-        operation: js.UndefOr[Operation] = js.undefined
-    ): UnpeerVpcResult = {
-      val __obj = js.Dynamic.literal()
-      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UnpeerVpcResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceRequest extends js.Object {
     var resourceName: ResourceName
     var tagKeys: TagKeyList
     var resourceArn: js.UndefOr[ResourceArn]
   }
 
-  object UntagResourceRequest {
-    @inline
-    def apply(
-        resourceName: ResourceName,
-        tagKeys: TagKeyList,
-        resourceArn: js.UndefOr[ResourceArn] = js.undefined
-    ): UntagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceName" -> resourceName.asInstanceOf[js.Any],
-        "tagKeys"      -> tagKeys.asInstanceOf[js.Any]
-      )
-
-      resourceArn.foreach(__v => __obj.updateDynamic("resourceArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UntagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object UntagResourceResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): UntagResourceResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UntagResourceResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateDomainEntryRequest extends js.Object {
     var domainEntry: DomainEntry
     var domainName: DomainName
   }
 
-  object UpdateDomainEntryRequest {
-    @inline
-    def apply(
-        domainEntry: DomainEntry,
-        domainName: DomainName
-    ): UpdateDomainEntryRequest = {
-      val __obj = js.Dynamic.literal(
-        "domainEntry" -> domainEntry.asInstanceOf[js.Any],
-        "domainName"  -> domainName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateDomainEntryRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateDomainEntryResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object UpdateDomainEntryResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): UpdateDomainEntryResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateDomainEntryResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateLoadBalancerAttributeRequest extends js.Object {
     var attributeName: LoadBalancerAttributeName
     var attributeValue: StringMax256
     var loadBalancerName: ResourceName
   }
 
-  object UpdateLoadBalancerAttributeRequest {
-    @inline
-    def apply(
-        attributeName: LoadBalancerAttributeName,
-        attributeValue: StringMax256,
-        loadBalancerName: ResourceName
-    ): UpdateLoadBalancerAttributeRequest = {
-      val __obj = js.Dynamic.literal(
-        "attributeName"    -> attributeName.asInstanceOf[js.Any],
-        "attributeValue"   -> attributeValue.asInstanceOf[js.Any],
-        "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateLoadBalancerAttributeRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateLoadBalancerAttributeResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object UpdateLoadBalancerAttributeResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): UpdateLoadBalancerAttributeResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateLoadBalancerAttributeResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateRelationalDatabaseParametersRequest extends js.Object {
     var parameters: RelationalDatabaseParameterList
     var relationalDatabaseName: ResourceName
   }
 
-  object UpdateRelationalDatabaseParametersRequest {
-    @inline
-    def apply(
-        parameters: RelationalDatabaseParameterList,
-        relationalDatabaseName: ResourceName
-    ): UpdateRelationalDatabaseParametersRequest = {
-      val __obj = js.Dynamic.literal(
-        "parameters"             -> parameters.asInstanceOf[js.Any],
-        "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateRelationalDatabaseParametersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateRelationalDatabaseParametersResult extends js.Object {
     var operations: js.UndefOr[OperationList]
   }
 
-  object UpdateRelationalDatabaseParametersResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): UpdateRelationalDatabaseParametersResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateRelationalDatabaseParametersResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateRelationalDatabaseRequest extends js.Object {
     var relationalDatabaseName: ResourceName
     var applyImmediately: js.UndefOr[Boolean]
@@ -7378,52 +3502,9 @@ package lightsail {
     var rotateMasterUserPassword: js.UndefOr[Boolean]
   }
 
-  object UpdateRelationalDatabaseRequest {
-    @inline
-    def apply(
-        relationalDatabaseName: ResourceName,
-        applyImmediately: js.UndefOr[Boolean] = js.undefined,
-        caCertificateIdentifier: js.UndefOr[String] = js.undefined,
-        disableBackupRetention: js.UndefOr[Boolean] = js.undefined,
-        enableBackupRetention: js.UndefOr[Boolean] = js.undefined,
-        masterUserPassword: js.UndefOr[SensitiveString] = js.undefined,
-        preferredBackupWindow: js.UndefOr[String] = js.undefined,
-        preferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
-        publiclyAccessible: js.UndefOr[Boolean] = js.undefined,
-        rotateMasterUserPassword: js.UndefOr[Boolean] = js.undefined
-    ): UpdateRelationalDatabaseRequest = {
-      val __obj = js.Dynamic.literal(
-        "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
-      )
-
-      applyImmediately.foreach(__v => __obj.updateDynamic("applyImmediately")(__v.asInstanceOf[js.Any]))
-      caCertificateIdentifier.foreach(__v => __obj.updateDynamic("caCertificateIdentifier")(__v.asInstanceOf[js.Any]))
-      disableBackupRetention.foreach(__v => __obj.updateDynamic("disableBackupRetention")(__v.asInstanceOf[js.Any]))
-      enableBackupRetention.foreach(__v => __obj.updateDynamic("enableBackupRetention")(__v.asInstanceOf[js.Any]))
-      masterUserPassword.foreach(__v => __obj.updateDynamic("masterUserPassword")(__v.asInstanceOf[js.Any]))
-      preferredBackupWindow.foreach(__v => __obj.updateDynamic("preferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      preferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("preferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
-      publiclyAccessible.foreach(__v => __obj.updateDynamic("publiclyAccessible")(__v.asInstanceOf[js.Any]))
-      rotateMasterUserPassword.foreach(__v => __obj.updateDynamic("rotateMasterUserPassword")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateRelationalDatabaseRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateRelationalDatabaseResult extends js.Object {
     var operations: js.UndefOr[OperationList]
-  }
-
-  object UpdateRelationalDatabaseResult {
-    @inline
-    def apply(
-        operations: js.UndefOr[OperationList] = js.undefined
-    ): UpdateRelationalDatabaseResult = {
-      val __obj = js.Dynamic.literal()
-      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateRelationalDatabaseResult]
-    }
   }
 }

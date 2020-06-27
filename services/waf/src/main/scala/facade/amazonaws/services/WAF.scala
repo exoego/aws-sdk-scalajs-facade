@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object waf {
   type Action                        = String
@@ -372,6 +373,7 @@ package waf {
     *  To specify whether to insert or delete a <code>Rule</code>, use the <code>Action</code> parameter in the <a>WebACLUpdate</a> data type.
     */
   @js.native
+  @Factory
   trait ActivatedRule extends js.Object {
     var Priority: RulePriority
     var RuleId: ResourceId
@@ -381,133 +383,48 @@ package waf {
     var Type: js.UndefOr[WafRuleType]
   }
 
-  object ActivatedRule {
-    @inline
-    def apply(
-        Priority: RulePriority,
-        RuleId: ResourceId,
-        Action: js.UndefOr[WafAction] = js.undefined,
-        ExcludedRules: js.UndefOr[ExcludedRules] = js.undefined,
-        OverrideAction: js.UndefOr[WafOverrideAction] = js.undefined,
-        Type: js.UndefOr[WafRuleType] = js.undefined
-    ): ActivatedRule = {
-      val __obj = js.Dynamic.literal(
-        "Priority" -> Priority.asInstanceOf[js.Any],
-        "RuleId"   -> RuleId.asInstanceOf[js.Any]
-      )
-
-      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
-      ExcludedRules.foreach(__v => __obj.updateDynamic("ExcludedRules")(__v.asInstanceOf[js.Any]))
-      OverrideAction.foreach(__v => __obj.updateDynamic("OverrideAction")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ActivatedRule]
-    }
-  }
-
   /**
     * In a <a>GetByteMatchSet</a> request, <code>ByteMatchSet</code> is a complex type that contains the <code>ByteMatchSetId</code> and <code>Name</code> of a <code>ByteMatchSet</code>, and the values that you specified when you updated the <code>ByteMatchSet</code>.
     *  A complex type that contains <code>ByteMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect and the values that you want AWS WAF to search for. If a <code>ByteMatchSet</code> contains more than one <code>ByteMatchTuple</code> object, a request needs to match the settings in only one <code>ByteMatchTuple</code> to be considered a match.
     */
   @js.native
+  @Factory
   trait ByteMatchSet extends js.Object {
     var ByteMatchSetId: ResourceId
     var ByteMatchTuples: ByteMatchTuples
     var Name: js.UndefOr[ResourceName]
   }
 
-  object ByteMatchSet {
-    @inline
-    def apply(
-        ByteMatchSetId: ResourceId,
-        ByteMatchTuples: ByteMatchTuples,
-        Name: js.UndefOr[ResourceName] = js.undefined
-    ): ByteMatchSet = {
-      val __obj = js.Dynamic.literal(
-        "ByteMatchSetId"  -> ByteMatchSetId.asInstanceOf[js.Any],
-        "ByteMatchTuples" -> ByteMatchTuples.asInstanceOf[js.Any]
-      )
-
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ByteMatchSet]
-    }
-  }
-
   /**
     * Returned by <a>ListByteMatchSets</a>. Each <code>ByteMatchSetSummary</code> object includes the <code>Name</code> and <code>ByteMatchSetId</code> for one <a>ByteMatchSet</a>.
     */
   @js.native
+  @Factory
   trait ByteMatchSetSummary extends js.Object {
     var ByteMatchSetId: ResourceId
     var Name: ResourceName
-  }
-
-  object ByteMatchSetSummary {
-    @inline
-    def apply(
-        ByteMatchSetId: ResourceId,
-        Name: ResourceName
-    ): ByteMatchSetSummary = {
-      val __obj = js.Dynamic.literal(
-        "ByteMatchSetId" -> ByteMatchSetId.asInstanceOf[js.Any],
-        "Name"           -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ByteMatchSetSummary]
-    }
   }
 
   /**
     * In an <a>UpdateByteMatchSet</a> request, <code>ByteMatchSetUpdate</code> specifies whether to insert or delete a <a>ByteMatchTuple</a> and includes the settings for the <code>ByteMatchTuple</code>.
     */
   @js.native
+  @Factory
   trait ByteMatchSetUpdate extends js.Object {
     var Action: ChangeAction
     var ByteMatchTuple: ByteMatchTuple
-  }
-
-  object ByteMatchSetUpdate {
-    @inline
-    def apply(
-        Action: ChangeAction,
-        ByteMatchTuple: ByteMatchTuple
-    ): ByteMatchSetUpdate = {
-      val __obj = js.Dynamic.literal(
-        "Action"         -> Action.asInstanceOf[js.Any],
-        "ByteMatchTuple" -> ByteMatchTuple.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ByteMatchSetUpdate]
-    }
   }
 
   /**
     * The bytes (typically a string that corresponds with ASCII characters) that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings.
     */
   @js.native
+  @Factory
   trait ByteMatchTuple extends js.Object {
     var FieldToMatch: FieldToMatch
     var PositionalConstraint: PositionalConstraint
     var TargetString: ByteMatchTargetString
     var TextTransformation: TextTransformation
-  }
-
-  object ByteMatchTuple {
-    @inline
-    def apply(
-        FieldToMatch: FieldToMatch,
-        PositionalConstraint: PositionalConstraint,
-        TargetString: ByteMatchTargetString,
-        TextTransformation: TextTransformation
-    ): ByteMatchTuple = {
-      val __obj = js.Dynamic.literal(
-        "FieldToMatch"         -> FieldToMatch.asInstanceOf[js.Any],
-        "PositionalConstraint" -> PositionalConstraint.asInstanceOf[js.Any],
-        "TargetString"         -> TargetString.asInstanceOf[js.Any],
-        "TextTransformation"   -> TextTransformation.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ByteMatchTuple]
-    }
   }
 
   @js.native
@@ -543,126 +460,49 @@ package waf {
   }
 
   @js.native
+  @Factory
   trait CreateByteMatchSetRequest extends js.Object {
     var ChangeToken: ChangeToken
     var Name: ResourceName
   }
 
-  object CreateByteMatchSetRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        Name: ResourceName
-    ): CreateByteMatchSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateByteMatchSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateByteMatchSetResponse extends js.Object {
     var ByteMatchSet: js.UndefOr[ByteMatchSet]
     var ChangeToken: js.UndefOr[ChangeToken]
   }
 
-  object CreateByteMatchSetResponse {
-    @inline
-    def apply(
-        ByteMatchSet: js.UndefOr[ByteMatchSet] = js.undefined,
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
-    ): CreateByteMatchSetResponse = {
-      val __obj = js.Dynamic.literal()
-      ByteMatchSet.foreach(__v => __obj.updateDynamic("ByteMatchSet")(__v.asInstanceOf[js.Any]))
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateByteMatchSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateGeoMatchSetRequest extends js.Object {
     var ChangeToken: ChangeToken
     var Name: ResourceName
   }
 
-  object CreateGeoMatchSetRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        Name: ResourceName
-    ): CreateGeoMatchSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateGeoMatchSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateGeoMatchSetResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
     var GeoMatchSet: js.UndefOr[GeoMatchSet]
   }
 
-  object CreateGeoMatchSetResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
-        GeoMatchSet: js.UndefOr[GeoMatchSet] = js.undefined
-    ): CreateGeoMatchSetResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      GeoMatchSet.foreach(__v => __obj.updateDynamic("GeoMatchSet")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateGeoMatchSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateIPSetRequest extends js.Object {
     var ChangeToken: ChangeToken
     var Name: ResourceName
   }
 
-  object CreateIPSetRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        Name: ResourceName
-    ): CreateIPSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateIPSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateIPSetResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
     var IPSet: js.UndefOr[IPSet]
   }
 
-  object CreateIPSetResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
-        IPSet: js.UndefOr[IPSet] = js.undefined
-    ): CreateIPSetResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      IPSet.foreach(__v => __obj.updateDynamic("IPSet")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateIPSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateRateBasedRuleRequest extends js.Object {
     var ChangeToken: ChangeToken
     var MetricName: MetricName
@@ -672,129 +512,43 @@ package waf {
     var Tags: js.UndefOr[TagList]
   }
 
-  object CreateRateBasedRuleRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        MetricName: MetricName,
-        Name: ResourceName,
-        RateKey: RateKey,
-        RateLimit: RateLimit,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateRateBasedRuleRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "MetricName"  -> MetricName.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any],
-        "RateKey"     -> RateKey.asInstanceOf[js.Any],
-        "RateLimit"   -> RateLimit.asInstanceOf[js.Any]
-      )
-
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRateBasedRuleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateRateBasedRuleResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
     var Rule: js.UndefOr[RateBasedRule]
   }
 
-  object CreateRateBasedRuleResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
-        Rule: js.UndefOr[RateBasedRule] = js.undefined
-    ): CreateRateBasedRuleResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      Rule.foreach(__v => __obj.updateDynamic("Rule")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRateBasedRuleResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateRegexMatchSetRequest extends js.Object {
     var ChangeToken: ChangeToken
     var Name: ResourceName
   }
 
-  object CreateRegexMatchSetRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        Name: ResourceName
-    ): CreateRegexMatchSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateRegexMatchSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateRegexMatchSetResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
     var RegexMatchSet: js.UndefOr[RegexMatchSet]
   }
 
-  object CreateRegexMatchSetResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
-        RegexMatchSet: js.UndefOr[RegexMatchSet] = js.undefined
-    ): CreateRegexMatchSetResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      RegexMatchSet.foreach(__v => __obj.updateDynamic("RegexMatchSet")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRegexMatchSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateRegexPatternSetRequest extends js.Object {
     var ChangeToken: ChangeToken
     var Name: ResourceName
   }
 
-  object CreateRegexPatternSetRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        Name: ResourceName
-    ): CreateRegexPatternSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateRegexPatternSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateRegexPatternSetResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
     var RegexPatternSet: js.UndefOr[RegexPatternSet]
   }
 
-  object CreateRegexPatternSetResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
-        RegexPatternSet: js.UndefOr[RegexPatternSet] = js.undefined
-    ): CreateRegexPatternSetResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      RegexPatternSet.foreach(__v => __obj.updateDynamic("RegexPatternSet")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRegexPatternSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateRuleGroupRequest extends js.Object {
     var ChangeToken: ChangeToken
     var MetricName: MetricName
@@ -802,45 +556,15 @@ package waf {
     var Tags: js.UndefOr[TagList]
   }
 
-  object CreateRuleGroupRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        MetricName: MetricName,
-        Name: ResourceName,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateRuleGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "MetricName"  -> MetricName.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any]
-      )
-
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRuleGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateRuleGroupResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
     var RuleGroup: js.UndefOr[RuleGroup]
   }
 
-  object CreateRuleGroupResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
-        RuleGroup: js.UndefOr[RuleGroup] = js.undefined
-    ): CreateRuleGroupResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      RuleGroup.foreach(__v => __obj.updateDynamic("RuleGroup")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRuleGroupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateRuleRequest extends js.Object {
     var ChangeToken: ChangeToken
     var MetricName: MetricName
@@ -848,131 +572,49 @@ package waf {
     var Tags: js.UndefOr[TagList]
   }
 
-  object CreateRuleRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        MetricName: MetricName,
-        Name: ResourceName,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateRuleRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "MetricName"  -> MetricName.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any]
-      )
-
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRuleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateRuleResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
     var Rule: js.UndefOr[Rule]
   }
 
-  object CreateRuleResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
-        Rule: js.UndefOr[Rule] = js.undefined
-    ): CreateRuleResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      Rule.foreach(__v => __obj.updateDynamic("Rule")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRuleResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateSizeConstraintSetRequest extends js.Object {
     var ChangeToken: ChangeToken
     var Name: ResourceName
   }
 
-  object CreateSizeConstraintSetRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        Name: ResourceName
-    ): CreateSizeConstraintSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateSizeConstraintSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateSizeConstraintSetResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
     var SizeConstraintSet: js.UndefOr[SizeConstraintSet]
-  }
-
-  object CreateSizeConstraintSetResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
-        SizeConstraintSet: js.UndefOr[SizeConstraintSet] = js.undefined
-    ): CreateSizeConstraintSetResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      SizeConstraintSet.foreach(__v => __obj.updateDynamic("SizeConstraintSet")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateSizeConstraintSetResponse]
-    }
   }
 
   /**
     * A request to create a <a>SqlInjectionMatchSet</a>.
     */
   @js.native
+  @Factory
   trait CreateSqlInjectionMatchSetRequest extends js.Object {
     var ChangeToken: ChangeToken
     var Name: ResourceName
-  }
-
-  object CreateSqlInjectionMatchSetRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        Name: ResourceName
-    ): CreateSqlInjectionMatchSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateSqlInjectionMatchSetRequest]
-    }
   }
 
   /**
     * The response to a <code>CreateSqlInjectionMatchSet</code> request.
     */
   @js.native
+  @Factory
   trait CreateSqlInjectionMatchSetResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
     var SqlInjectionMatchSet: js.UndefOr[SqlInjectionMatchSet]
   }
 
-  object CreateSqlInjectionMatchSetResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
-        SqlInjectionMatchSet: js.UndefOr[SqlInjectionMatchSet] = js.undefined
-    ): CreateSqlInjectionMatchSetResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      SqlInjectionMatchSet.foreach(__v => __obj.updateDynamic("SqlInjectionMatchSet")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateSqlInjectionMatchSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateWebACLRequest extends js.Object {
     var ChangeToken: ChangeToken
     var DefaultAction: WafAction
@@ -981,677 +623,248 @@ package waf {
     var Tags: js.UndefOr[TagList]
   }
 
-  object CreateWebACLRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        DefaultAction: WafAction,
-        MetricName: MetricName,
-        Name: ResourceName,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateWebACLRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken"   -> ChangeToken.asInstanceOf[js.Any],
-        "DefaultAction" -> DefaultAction.asInstanceOf[js.Any],
-        "MetricName"    -> MetricName.asInstanceOf[js.Any],
-        "Name"          -> Name.asInstanceOf[js.Any]
-      )
-
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateWebACLRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateWebACLResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
     var WebACL: js.UndefOr[WebACL]
-  }
-
-  object CreateWebACLResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
-        WebACL: js.UndefOr[WebACL] = js.undefined
-    ): CreateWebACLResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      WebACL.foreach(__v => __obj.updateDynamic("WebACL")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateWebACLResponse]
-    }
   }
 
   /**
     * A request to create an <a>XssMatchSet</a>.
     */
   @js.native
+  @Factory
   trait CreateXssMatchSetRequest extends js.Object {
     var ChangeToken: ChangeToken
     var Name: ResourceName
-  }
-
-  object CreateXssMatchSetRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        Name: ResourceName
-    ): CreateXssMatchSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateXssMatchSetRequest]
-    }
   }
 
   /**
     * The response to a <code>CreateXssMatchSet</code> request.
     */
   @js.native
+  @Factory
   trait CreateXssMatchSetResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
     var XssMatchSet: js.UndefOr[XssMatchSet]
   }
 
-  object CreateXssMatchSetResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
-        XssMatchSet: js.UndefOr[XssMatchSet] = js.undefined
-    ): CreateXssMatchSetResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      XssMatchSet.foreach(__v => __obj.updateDynamic("XssMatchSet")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateXssMatchSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteByteMatchSetRequest extends js.Object {
     var ByteMatchSetId: ResourceId
     var ChangeToken: ChangeToken
   }
 
-  object DeleteByteMatchSetRequest {
-    @inline
-    def apply(
-        ByteMatchSetId: ResourceId,
-        ChangeToken: ChangeToken
-    ): DeleteByteMatchSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ByteMatchSetId" -> ByteMatchSetId.asInstanceOf[js.Any],
-        "ChangeToken"    -> ChangeToken.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteByteMatchSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteByteMatchSetResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
   }
 
-  object DeleteByteMatchSetResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
-    ): DeleteByteMatchSetResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteByteMatchSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteGeoMatchSetRequest extends js.Object {
     var ChangeToken: ChangeToken
     var GeoMatchSetId: ResourceId
   }
 
-  object DeleteGeoMatchSetRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        GeoMatchSetId: ResourceId
-    ): DeleteGeoMatchSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken"   -> ChangeToken.asInstanceOf[js.Any],
-        "GeoMatchSetId" -> GeoMatchSetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteGeoMatchSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteGeoMatchSetResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
   }
 
-  object DeleteGeoMatchSetResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
-    ): DeleteGeoMatchSetResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteGeoMatchSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteIPSetRequest extends js.Object {
     var ChangeToken: ChangeToken
     var IPSetId: ResourceId
   }
 
-  object DeleteIPSetRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        IPSetId: ResourceId
-    ): DeleteIPSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "IPSetId"     -> IPSetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteIPSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteIPSetResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
   }
 
-  object DeleteIPSetResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
-    ): DeleteIPSetResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteIPSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteLoggingConfigurationRequest extends js.Object {
     var ResourceArn: ResourceArn
   }
 
-  object DeleteLoggingConfigurationRequest {
-    @inline
-    def apply(
-        ResourceArn: ResourceArn
-    ): DeleteLoggingConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteLoggingConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteLoggingConfigurationResponse extends js.Object {}
 
-  object DeleteLoggingConfigurationResponse {
-    @inline
-    def apply(
-    ): DeleteLoggingConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteLoggingConfigurationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeletePermissionPolicyRequest extends js.Object {
     var ResourceArn: ResourceArn
   }
 
-  object DeletePermissionPolicyRequest {
-    @inline
-    def apply(
-        ResourceArn: ResourceArn
-    ): DeletePermissionPolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeletePermissionPolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeletePermissionPolicyResponse extends js.Object {}
 
-  object DeletePermissionPolicyResponse {
-    @inline
-    def apply(
-    ): DeletePermissionPolicyResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeletePermissionPolicyResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteRateBasedRuleRequest extends js.Object {
     var ChangeToken: ChangeToken
     var RuleId: ResourceId
   }
 
-  object DeleteRateBasedRuleRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        RuleId: ResourceId
-    ): DeleteRateBasedRuleRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "RuleId"      -> RuleId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteRateBasedRuleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteRateBasedRuleResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
   }
 
-  object DeleteRateBasedRuleResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
-    ): DeleteRateBasedRuleResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteRateBasedRuleResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteRegexMatchSetRequest extends js.Object {
     var ChangeToken: ChangeToken
     var RegexMatchSetId: ResourceId
   }
 
-  object DeleteRegexMatchSetRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        RegexMatchSetId: ResourceId
-    ): DeleteRegexMatchSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken"     -> ChangeToken.asInstanceOf[js.Any],
-        "RegexMatchSetId" -> RegexMatchSetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteRegexMatchSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteRegexMatchSetResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
   }
 
-  object DeleteRegexMatchSetResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
-    ): DeleteRegexMatchSetResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteRegexMatchSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteRegexPatternSetRequest extends js.Object {
     var ChangeToken: ChangeToken
     var RegexPatternSetId: ResourceId
   }
 
-  object DeleteRegexPatternSetRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        RegexPatternSetId: ResourceId
-    ): DeleteRegexPatternSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken"       -> ChangeToken.asInstanceOf[js.Any],
-        "RegexPatternSetId" -> RegexPatternSetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteRegexPatternSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteRegexPatternSetResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
   }
 
-  object DeleteRegexPatternSetResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
-    ): DeleteRegexPatternSetResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteRegexPatternSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteRuleGroupRequest extends js.Object {
     var ChangeToken: ChangeToken
     var RuleGroupId: ResourceId
   }
 
-  object DeleteRuleGroupRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        RuleGroupId: ResourceId
-    ): DeleteRuleGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteRuleGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteRuleGroupResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
   }
 
-  object DeleteRuleGroupResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
-    ): DeleteRuleGroupResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteRuleGroupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteRuleRequest extends js.Object {
     var ChangeToken: ChangeToken
     var RuleId: ResourceId
   }
 
-  object DeleteRuleRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        RuleId: ResourceId
-    ): DeleteRuleRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "RuleId"      -> RuleId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteRuleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteRuleResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
   }
 
-  object DeleteRuleResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
-    ): DeleteRuleResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteRuleResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteSizeConstraintSetRequest extends js.Object {
     var ChangeToken: ChangeToken
     var SizeConstraintSetId: ResourceId
   }
 
-  object DeleteSizeConstraintSetRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        SizeConstraintSetId: ResourceId
-    ): DeleteSizeConstraintSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken"         -> ChangeToken.asInstanceOf[js.Any],
-        "SizeConstraintSetId" -> SizeConstraintSetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteSizeConstraintSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteSizeConstraintSetResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
-  }
-
-  object DeleteSizeConstraintSetResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
-    ): DeleteSizeConstraintSetResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteSizeConstraintSetResponse]
-    }
   }
 
   /**
     * A request to delete a <a>SqlInjectionMatchSet</a> from AWS WAF.
     */
   @js.native
+  @Factory
   trait DeleteSqlInjectionMatchSetRequest extends js.Object {
     var ChangeToken: ChangeToken
     var SqlInjectionMatchSetId: ResourceId
-  }
-
-  object DeleteSqlInjectionMatchSetRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        SqlInjectionMatchSetId: ResourceId
-    ): DeleteSqlInjectionMatchSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken"            -> ChangeToken.asInstanceOf[js.Any],
-        "SqlInjectionMatchSetId" -> SqlInjectionMatchSetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteSqlInjectionMatchSetRequest]
-    }
   }
 
   /**
     * The response to a request to delete a <a>SqlInjectionMatchSet</a> from AWS WAF.
     */
   @js.native
+  @Factory
   trait DeleteSqlInjectionMatchSetResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
   }
 
-  object DeleteSqlInjectionMatchSetResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
-    ): DeleteSqlInjectionMatchSetResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteSqlInjectionMatchSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteWebACLRequest extends js.Object {
     var ChangeToken: ChangeToken
     var WebACLId: ResourceId
   }
 
-  object DeleteWebACLRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        WebACLId: ResourceId
-    ): DeleteWebACLRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "WebACLId"    -> WebACLId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteWebACLRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteWebACLResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
-  }
-
-  object DeleteWebACLResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
-    ): DeleteWebACLResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteWebACLResponse]
-    }
   }
 
   /**
     * A request to delete an <a>XssMatchSet</a> from AWS WAF.
     */
   @js.native
+  @Factory
   trait DeleteXssMatchSetRequest extends js.Object {
     var ChangeToken: ChangeToken
     var XssMatchSetId: ResourceId
-  }
-
-  object DeleteXssMatchSetRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        XssMatchSetId: ResourceId
-    ): DeleteXssMatchSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken"   -> ChangeToken.asInstanceOf[js.Any],
-        "XssMatchSetId" -> XssMatchSetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteXssMatchSetRequest]
-    }
   }
 
   /**
     * The response to a request to delete an <a>XssMatchSet</a> from AWS WAF.
     */
   @js.native
+  @Factory
   trait DeleteXssMatchSetResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
-  }
-
-  object DeleteXssMatchSetResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
-    ): DeleteXssMatchSetResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteXssMatchSetResponse]
-    }
   }
 
   /**
     * The rule to exclude from a rule group. This is applicable only when the <code>ActivatedRule</code> refers to a <code>RuleGroup</code>. The rule must belong to the <code>RuleGroup</code> that is specified by the <code>ActivatedRule</code>.
     */
   @js.native
+  @Factory
   trait ExcludedRule extends js.Object {
     var RuleId: ResourceId
-  }
-
-  object ExcludedRule {
-    @inline
-    def apply(
-        RuleId: ResourceId
-    ): ExcludedRule = {
-      val __obj = js.Dynamic.literal(
-        "RuleId" -> RuleId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ExcludedRule]
-    }
   }
 
   /**
     * Specifies where in a web request to look for <code>TargetString</code>.
     */
   @js.native
+  @Factory
   trait FieldToMatch extends js.Object {
     var Type: MatchFieldType
     var Data: js.UndefOr[MatchFieldData]
-  }
-
-  object FieldToMatch {
-    @inline
-    def apply(
-        Type: MatchFieldType,
-        Data: js.UndefOr[MatchFieldData] = js.undefined
-    ): FieldToMatch = {
-      val __obj = js.Dynamic.literal(
-        "Type" -> Type.asInstanceOf[js.Any]
-      )
-
-      Data.foreach(__v => __obj.updateDynamic("Data")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[FieldToMatch]
-    }
   }
 
   /**
     * The country from which web requests originate that you want AWS WAF to search for.
     */
   @js.native
+  @Factory
   trait GeoMatchConstraint extends js.Object {
     var Type: GeoMatchConstraintType
     var Value: GeoMatchConstraintValue
-  }
-
-  object GeoMatchConstraint {
-    @inline
-    def apply(
-        Type: GeoMatchConstraintType,
-        Value: GeoMatchConstraintValue
-    ): GeoMatchConstraint = {
-      val __obj = js.Dynamic.literal(
-        "Type"  -> Type.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GeoMatchConstraint]
-    }
   }
 
   @js.native
@@ -2174,521 +1387,191 @@ package waf {
     * Contains one or more countries that AWS WAF will search for.
     */
   @js.native
+  @Factory
   trait GeoMatchSet extends js.Object {
     var GeoMatchConstraints: GeoMatchConstraints
     var GeoMatchSetId: ResourceId
     var Name: js.UndefOr[ResourceName]
   }
 
-  object GeoMatchSet {
-    @inline
-    def apply(
-        GeoMatchConstraints: GeoMatchConstraints,
-        GeoMatchSetId: ResourceId,
-        Name: js.UndefOr[ResourceName] = js.undefined
-    ): GeoMatchSet = {
-      val __obj = js.Dynamic.literal(
-        "GeoMatchConstraints" -> GeoMatchConstraints.asInstanceOf[js.Any],
-        "GeoMatchSetId"       -> GeoMatchSetId.asInstanceOf[js.Any]
-      )
-
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GeoMatchSet]
-    }
-  }
-
   /**
     * Contains the identifier and the name of the <code>GeoMatchSet</code>.
     */
   @js.native
+  @Factory
   trait GeoMatchSetSummary extends js.Object {
     var GeoMatchSetId: ResourceId
     var Name: ResourceName
-  }
-
-  object GeoMatchSetSummary {
-    @inline
-    def apply(
-        GeoMatchSetId: ResourceId,
-        Name: ResourceName
-    ): GeoMatchSetSummary = {
-      val __obj = js.Dynamic.literal(
-        "GeoMatchSetId" -> GeoMatchSetId.asInstanceOf[js.Any],
-        "Name"          -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GeoMatchSetSummary]
-    }
   }
 
   /**
     * Specifies the type of update to perform to an <a>GeoMatchSet</a> with <a>UpdateGeoMatchSet</a>.
     */
   @js.native
+  @Factory
   trait GeoMatchSetUpdate extends js.Object {
     var Action: ChangeAction
     var GeoMatchConstraint: GeoMatchConstraint
   }
 
-  object GeoMatchSetUpdate {
-    @inline
-    def apply(
-        Action: ChangeAction,
-        GeoMatchConstraint: GeoMatchConstraint
-    ): GeoMatchSetUpdate = {
-      val __obj = js.Dynamic.literal(
-        "Action"             -> Action.asInstanceOf[js.Any],
-        "GeoMatchConstraint" -> GeoMatchConstraint.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GeoMatchSetUpdate]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetByteMatchSetRequest extends js.Object {
     var ByteMatchSetId: ResourceId
   }
 
-  object GetByteMatchSetRequest {
-    @inline
-    def apply(
-        ByteMatchSetId: ResourceId
-    ): GetByteMatchSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ByteMatchSetId" -> ByteMatchSetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetByteMatchSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetByteMatchSetResponse extends js.Object {
     var ByteMatchSet: js.UndefOr[ByteMatchSet]
   }
 
-  object GetByteMatchSetResponse {
-    @inline
-    def apply(
-        ByteMatchSet: js.UndefOr[ByteMatchSet] = js.undefined
-    ): GetByteMatchSetResponse = {
-      val __obj = js.Dynamic.literal()
-      ByteMatchSet.foreach(__v => __obj.updateDynamic("ByteMatchSet")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetByteMatchSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetChangeTokenRequest extends js.Object {}
 
-  object GetChangeTokenRequest {
-    @inline
-    def apply(
-    ): GetChangeTokenRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[GetChangeTokenRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetChangeTokenResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
   }
 
-  object GetChangeTokenResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
-    ): GetChangeTokenResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetChangeTokenResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetChangeTokenStatusRequest extends js.Object {
     var ChangeToken: ChangeToken
   }
 
-  object GetChangeTokenStatusRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken
-    ): GetChangeTokenStatusRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetChangeTokenStatusRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetChangeTokenStatusResponse extends js.Object {
     var ChangeTokenStatus: js.UndefOr[ChangeTokenStatus]
   }
 
-  object GetChangeTokenStatusResponse {
-    @inline
-    def apply(
-        ChangeTokenStatus: js.UndefOr[ChangeTokenStatus] = js.undefined
-    ): GetChangeTokenStatusResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeTokenStatus.foreach(__v => __obj.updateDynamic("ChangeTokenStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetChangeTokenStatusResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetGeoMatchSetRequest extends js.Object {
     var GeoMatchSetId: ResourceId
   }
 
-  object GetGeoMatchSetRequest {
-    @inline
-    def apply(
-        GeoMatchSetId: ResourceId
-    ): GetGeoMatchSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "GeoMatchSetId" -> GeoMatchSetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetGeoMatchSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetGeoMatchSetResponse extends js.Object {
     var GeoMatchSet: js.UndefOr[GeoMatchSet]
   }
 
-  object GetGeoMatchSetResponse {
-    @inline
-    def apply(
-        GeoMatchSet: js.UndefOr[GeoMatchSet] = js.undefined
-    ): GetGeoMatchSetResponse = {
-      val __obj = js.Dynamic.literal()
-      GeoMatchSet.foreach(__v => __obj.updateDynamic("GeoMatchSet")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetGeoMatchSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetIPSetRequest extends js.Object {
     var IPSetId: ResourceId
   }
 
-  object GetIPSetRequest {
-    @inline
-    def apply(
-        IPSetId: ResourceId
-    ): GetIPSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "IPSetId" -> IPSetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetIPSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetIPSetResponse extends js.Object {
     var IPSet: js.UndefOr[IPSet]
   }
 
-  object GetIPSetResponse {
-    @inline
-    def apply(
-        IPSet: js.UndefOr[IPSet] = js.undefined
-    ): GetIPSetResponse = {
-      val __obj = js.Dynamic.literal()
-      IPSet.foreach(__v => __obj.updateDynamic("IPSet")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetIPSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetLoggingConfigurationRequest extends js.Object {
     var ResourceArn: ResourceArn
   }
 
-  object GetLoggingConfigurationRequest {
-    @inline
-    def apply(
-        ResourceArn: ResourceArn
-    ): GetLoggingConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetLoggingConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetLoggingConfigurationResponse extends js.Object {
     var LoggingConfiguration: js.UndefOr[LoggingConfiguration]
   }
 
-  object GetLoggingConfigurationResponse {
-    @inline
-    def apply(
-        LoggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined
-    ): GetLoggingConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-      LoggingConfiguration.foreach(__v => __obj.updateDynamic("LoggingConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetLoggingConfigurationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetPermissionPolicyRequest extends js.Object {
     var ResourceArn: ResourceArn
   }
 
-  object GetPermissionPolicyRequest {
-    @inline
-    def apply(
-        ResourceArn: ResourceArn
-    ): GetPermissionPolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetPermissionPolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetPermissionPolicyResponse extends js.Object {
     var Policy: js.UndefOr[PolicyString]
   }
 
-  object GetPermissionPolicyResponse {
-    @inline
-    def apply(
-        Policy: js.UndefOr[PolicyString] = js.undefined
-    ): GetPermissionPolicyResponse = {
-      val __obj = js.Dynamic.literal()
-      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetPermissionPolicyResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRateBasedRuleManagedKeysRequest extends js.Object {
     var RuleId: ResourceId
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object GetRateBasedRuleManagedKeysRequest {
-    @inline
-    def apply(
-        RuleId: ResourceId,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): GetRateBasedRuleManagedKeysRequest = {
-      val __obj = js.Dynamic.literal(
-        "RuleId" -> RuleId.asInstanceOf[js.Any]
-      )
-
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRateBasedRuleManagedKeysRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRateBasedRuleManagedKeysResponse extends js.Object {
     var ManagedKeys: js.UndefOr[ManagedKeys]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object GetRateBasedRuleManagedKeysResponse {
-    @inline
-    def apply(
-        ManagedKeys: js.UndefOr[ManagedKeys] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): GetRateBasedRuleManagedKeysResponse = {
-      val __obj = js.Dynamic.literal()
-      ManagedKeys.foreach(__v => __obj.updateDynamic("ManagedKeys")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRateBasedRuleManagedKeysResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRateBasedRuleRequest extends js.Object {
     var RuleId: ResourceId
   }
 
-  object GetRateBasedRuleRequest {
-    @inline
-    def apply(
-        RuleId: ResourceId
-    ): GetRateBasedRuleRequest = {
-      val __obj = js.Dynamic.literal(
-        "RuleId" -> RuleId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetRateBasedRuleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRateBasedRuleResponse extends js.Object {
     var Rule: js.UndefOr[RateBasedRule]
   }
 
-  object GetRateBasedRuleResponse {
-    @inline
-    def apply(
-        Rule: js.UndefOr[RateBasedRule] = js.undefined
-    ): GetRateBasedRuleResponse = {
-      val __obj = js.Dynamic.literal()
-      Rule.foreach(__v => __obj.updateDynamic("Rule")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRateBasedRuleResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRegexMatchSetRequest extends js.Object {
     var RegexMatchSetId: ResourceId
   }
 
-  object GetRegexMatchSetRequest {
-    @inline
-    def apply(
-        RegexMatchSetId: ResourceId
-    ): GetRegexMatchSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "RegexMatchSetId" -> RegexMatchSetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetRegexMatchSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRegexMatchSetResponse extends js.Object {
     var RegexMatchSet: js.UndefOr[RegexMatchSet]
   }
 
-  object GetRegexMatchSetResponse {
-    @inline
-    def apply(
-        RegexMatchSet: js.UndefOr[RegexMatchSet] = js.undefined
-    ): GetRegexMatchSetResponse = {
-      val __obj = js.Dynamic.literal()
-      RegexMatchSet.foreach(__v => __obj.updateDynamic("RegexMatchSet")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRegexMatchSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRegexPatternSetRequest extends js.Object {
     var RegexPatternSetId: ResourceId
   }
 
-  object GetRegexPatternSetRequest {
-    @inline
-    def apply(
-        RegexPatternSetId: ResourceId
-    ): GetRegexPatternSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "RegexPatternSetId" -> RegexPatternSetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetRegexPatternSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRegexPatternSetResponse extends js.Object {
     var RegexPatternSet: js.UndefOr[RegexPatternSet]
   }
 
-  object GetRegexPatternSetResponse {
-    @inline
-    def apply(
-        RegexPatternSet: js.UndefOr[RegexPatternSet] = js.undefined
-    ): GetRegexPatternSetResponse = {
-      val __obj = js.Dynamic.literal()
-      RegexPatternSet.foreach(__v => __obj.updateDynamic("RegexPatternSet")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRegexPatternSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRuleGroupRequest extends js.Object {
     var RuleGroupId: ResourceId
   }
 
-  object GetRuleGroupRequest {
-    @inline
-    def apply(
-        RuleGroupId: ResourceId
-    ): GetRuleGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetRuleGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRuleGroupResponse extends js.Object {
     var RuleGroup: js.UndefOr[RuleGroup]
   }
 
-  object GetRuleGroupResponse {
-    @inline
-    def apply(
-        RuleGroup: js.UndefOr[RuleGroup] = js.undefined
-    ): GetRuleGroupResponse = {
-      val __obj = js.Dynamic.literal()
-      RuleGroup.foreach(__v => __obj.updateDynamic("RuleGroup")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRuleGroupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRuleRequest extends js.Object {
     var RuleId: ResourceId
   }
 
-  object GetRuleRequest {
-    @inline
-    def apply(
-        RuleId: ResourceId
-    ): GetRuleRequest = {
-      val __obj = js.Dynamic.literal(
-        "RuleId" -> RuleId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetRuleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRuleResponse extends js.Object {
     var Rule: js.UndefOr[Rule]
   }
 
-  object GetRuleResponse {
-    @inline
-    def apply(
-        Rule: js.UndefOr[Rule] = js.undefined
-    ): GetRuleResponse = {
-      val __obj = js.Dynamic.literal()
-      Rule.foreach(__v => __obj.updateDynamic("Rule")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRuleResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetSampledRequestsRequest extends js.Object {
     var MaxItems: GetSampledRequestsMaxItems
     var RuleId: ResourceId
@@ -2696,221 +1579,89 @@ package waf {
     var WebAclId: ResourceId
   }
 
-  object GetSampledRequestsRequest {
-    @inline
-    def apply(
-        MaxItems: GetSampledRequestsMaxItems,
-        RuleId: ResourceId,
-        TimeWindow: TimeWindow,
-        WebAclId: ResourceId
-    ): GetSampledRequestsRequest = {
-      val __obj = js.Dynamic.literal(
-        "MaxItems"   -> MaxItems.asInstanceOf[js.Any],
-        "RuleId"     -> RuleId.asInstanceOf[js.Any],
-        "TimeWindow" -> TimeWindow.asInstanceOf[js.Any],
-        "WebAclId"   -> WebAclId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetSampledRequestsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetSampledRequestsResponse extends js.Object {
     var PopulationSize: js.UndefOr[PopulationSize]
     var SampledRequests: js.UndefOr[SampledHTTPRequests]
     var TimeWindow: js.UndefOr[TimeWindow]
   }
 
-  object GetSampledRequestsResponse {
-    @inline
-    def apply(
-        PopulationSize: js.UndefOr[PopulationSize] = js.undefined,
-        SampledRequests: js.UndefOr[SampledHTTPRequests] = js.undefined,
-        TimeWindow: js.UndefOr[TimeWindow] = js.undefined
-    ): GetSampledRequestsResponse = {
-      val __obj = js.Dynamic.literal()
-      PopulationSize.foreach(__v => __obj.updateDynamic("PopulationSize")(__v.asInstanceOf[js.Any]))
-      SampledRequests.foreach(__v => __obj.updateDynamic("SampledRequests")(__v.asInstanceOf[js.Any]))
-      TimeWindow.foreach(__v => __obj.updateDynamic("TimeWindow")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetSampledRequestsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetSizeConstraintSetRequest extends js.Object {
     var SizeConstraintSetId: ResourceId
   }
 
-  object GetSizeConstraintSetRequest {
-    @inline
-    def apply(
-        SizeConstraintSetId: ResourceId
-    ): GetSizeConstraintSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "SizeConstraintSetId" -> SizeConstraintSetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetSizeConstraintSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetSizeConstraintSetResponse extends js.Object {
     var SizeConstraintSet: js.UndefOr[SizeConstraintSet]
-  }
-
-  object GetSizeConstraintSetResponse {
-    @inline
-    def apply(
-        SizeConstraintSet: js.UndefOr[SizeConstraintSet] = js.undefined
-    ): GetSizeConstraintSetResponse = {
-      val __obj = js.Dynamic.literal()
-      SizeConstraintSet.foreach(__v => __obj.updateDynamic("SizeConstraintSet")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetSizeConstraintSetResponse]
-    }
   }
 
   /**
     * A request to get a <a>SqlInjectionMatchSet</a>.
     */
   @js.native
+  @Factory
   trait GetSqlInjectionMatchSetRequest extends js.Object {
     var SqlInjectionMatchSetId: ResourceId
-  }
-
-  object GetSqlInjectionMatchSetRequest {
-    @inline
-    def apply(
-        SqlInjectionMatchSetId: ResourceId
-    ): GetSqlInjectionMatchSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "SqlInjectionMatchSetId" -> SqlInjectionMatchSetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetSqlInjectionMatchSetRequest]
-    }
   }
 
   /**
     * The response to a <a>GetSqlInjectionMatchSet</a> request.
     */
   @js.native
+  @Factory
   trait GetSqlInjectionMatchSetResponse extends js.Object {
     var SqlInjectionMatchSet: js.UndefOr[SqlInjectionMatchSet]
   }
 
-  object GetSqlInjectionMatchSetResponse {
-    @inline
-    def apply(
-        SqlInjectionMatchSet: js.UndefOr[SqlInjectionMatchSet] = js.undefined
-    ): GetSqlInjectionMatchSetResponse = {
-      val __obj = js.Dynamic.literal()
-      SqlInjectionMatchSet.foreach(__v => __obj.updateDynamic("SqlInjectionMatchSet")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetSqlInjectionMatchSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetWebACLRequest extends js.Object {
     var WebACLId: ResourceId
   }
 
-  object GetWebACLRequest {
-    @inline
-    def apply(
-        WebACLId: ResourceId
-    ): GetWebACLRequest = {
-      val __obj = js.Dynamic.literal(
-        "WebACLId" -> WebACLId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetWebACLRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetWebACLResponse extends js.Object {
     var WebACL: js.UndefOr[WebACL]
-  }
-
-  object GetWebACLResponse {
-    @inline
-    def apply(
-        WebACL: js.UndefOr[WebACL] = js.undefined
-    ): GetWebACLResponse = {
-      val __obj = js.Dynamic.literal()
-      WebACL.foreach(__v => __obj.updateDynamic("WebACL")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetWebACLResponse]
-    }
   }
 
   /**
     * A request to get an <a>XssMatchSet</a>.
     */
   @js.native
+  @Factory
   trait GetXssMatchSetRequest extends js.Object {
     var XssMatchSetId: ResourceId
-  }
-
-  object GetXssMatchSetRequest {
-    @inline
-    def apply(
-        XssMatchSetId: ResourceId
-    ): GetXssMatchSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "XssMatchSetId" -> XssMatchSetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetXssMatchSetRequest]
-    }
   }
 
   /**
     * The response to a <a>GetXssMatchSet</a> request.
     */
   @js.native
+  @Factory
   trait GetXssMatchSetResponse extends js.Object {
     var XssMatchSet: js.UndefOr[XssMatchSet]
-  }
-
-  object GetXssMatchSetResponse {
-    @inline
-    def apply(
-        XssMatchSet: js.UndefOr[XssMatchSet] = js.undefined
-    ): GetXssMatchSetResponse = {
-      val __obj = js.Dynamic.literal()
-      XssMatchSet.foreach(__v => __obj.updateDynamic("XssMatchSet")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetXssMatchSetResponse]
-    }
   }
 
   /**
     * The response from a <a>GetSampledRequests</a> request includes an <code>HTTPHeader</code> complex type that appears as <code>Headers</code> in the response syntax. <code>HTTPHeader</code> contains the names and values of all of the headers that appear in one of the web requests that were returned by <code>GetSampledRequests</code>.
     */
   @js.native
+  @Factory
   trait HTTPHeader extends js.Object {
     var Name: js.UndefOr[HeaderName]
     var Value: js.UndefOr[HeaderValue]
-  }
-
-  object HTTPHeader {
-    @inline
-    def apply(
-        Name: js.UndefOr[HeaderName] = js.undefined,
-        Value: js.UndefOr[HeaderValue] = js.undefined
-    ): HTTPHeader = {
-      val __obj = js.Dynamic.literal()
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HTTPHeader]
-    }
   }
 
   /**
     * The response from a <a>GetSampledRequests</a> request includes an <code>HTTPRequest</code> complex type that appears as <code>Request</code> in the response syntax. <code>HTTPRequest</code> contains information about one of the web requests that were returned by <code>GetSampledRequests</code>.
     */
   @js.native
+  @Factory
   trait HTTPRequest extends js.Object {
     var ClientIP: js.UndefOr[IPString]
     var Country: js.UndefOr[Country]
@@ -2920,77 +1671,26 @@ package waf {
     var URI: js.UndefOr[URIString]
   }
 
-  object HTTPRequest {
-    @inline
-    def apply(
-        ClientIP: js.UndefOr[IPString] = js.undefined,
-        Country: js.UndefOr[Country] = js.undefined,
-        HTTPVersion: js.UndefOr[HTTPVersion] = js.undefined,
-        Headers: js.UndefOr[HTTPHeaders] = js.undefined,
-        Method: js.UndefOr[HTTPMethod] = js.undefined,
-        URI: js.UndefOr[URIString] = js.undefined
-    ): HTTPRequest = {
-      val __obj = js.Dynamic.literal()
-      ClientIP.foreach(__v => __obj.updateDynamic("ClientIP")(__v.asInstanceOf[js.Any]))
-      Country.foreach(__v => __obj.updateDynamic("Country")(__v.asInstanceOf[js.Any]))
-      HTTPVersion.foreach(__v => __obj.updateDynamic("HTTPVersion")(__v.asInstanceOf[js.Any]))
-      Headers.foreach(__v => __obj.updateDynamic("Headers")(__v.asInstanceOf[js.Any]))
-      Method.foreach(__v => __obj.updateDynamic("Method")(__v.asInstanceOf[js.Any]))
-      URI.foreach(__v => __obj.updateDynamic("URI")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HTTPRequest]
-    }
-  }
-
   /**
     * Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR) notation. AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address ranges: /24, /32, /48, /56, /64, and /128.
     *  To specify an individual IP address, you specify the four-part IP address followed by a <code>/32</code>, for example, 192.0.2.0/32. To block a range of IP addresses, you can specify /8 or any range between /16 through /32 (for IPv4) or /24, /32, /48, /56, /64, or /128 (for IPv6). For more information about CIDR notation, see the Wikipedia entry [[https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing|Classless Inter-Domain Routing]].
     */
   @js.native
+  @Factory
   trait IPSet extends js.Object {
     var IPSetDescriptors: IPSetDescriptors
     var IPSetId: ResourceId
     var Name: js.UndefOr[ResourceName]
   }
 
-  object IPSet {
-    @inline
-    def apply(
-        IPSetDescriptors: IPSetDescriptors,
-        IPSetId: ResourceId,
-        Name: js.UndefOr[ResourceName] = js.undefined
-    ): IPSet = {
-      val __obj = js.Dynamic.literal(
-        "IPSetDescriptors" -> IPSetDescriptors.asInstanceOf[js.Any],
-        "IPSetId"          -> IPSetId.asInstanceOf[js.Any]
-      )
-
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[IPSet]
-    }
-  }
-
   /**
     * Specifies the IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR format) that web requests originate from.
     */
   @js.native
+  @Factory
   trait IPSetDescriptor extends js.Object {
     var Type: IPSetDescriptorType
     var Value: IPSetDescriptorValue
-  }
-
-  object IPSetDescriptor {
-    @inline
-    def apply(
-        Type: IPSetDescriptorType,
-        Value: IPSetDescriptorValue
-    ): IPSetDescriptor = {
-      val __obj = js.Dynamic.literal(
-        "Type"  -> Type.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[IPSetDescriptor]
-    }
   }
 
   @js.native
@@ -3006,703 +1706,269 @@ package waf {
     * Contains the identifier and the name of the <code>IPSet</code>.
     */
   @js.native
+  @Factory
   trait IPSetSummary extends js.Object {
     var IPSetId: ResourceId
     var Name: ResourceName
-  }
-
-  object IPSetSummary {
-    @inline
-    def apply(
-        IPSetId: ResourceId,
-        Name: ResourceName
-    ): IPSetSummary = {
-      val __obj = js.Dynamic.literal(
-        "IPSetId" -> IPSetId.asInstanceOf[js.Any],
-        "Name"    -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[IPSetSummary]
-    }
   }
 
   /**
     * Specifies the type of update to perform to an <a>IPSet</a> with <a>UpdateIPSet</a>.
     */
   @js.native
+  @Factory
   trait IPSetUpdate extends js.Object {
     var Action: ChangeAction
     var IPSetDescriptor: IPSetDescriptor
   }
 
-  object IPSetUpdate {
-    @inline
-    def apply(
-        Action: ChangeAction,
-        IPSetDescriptor: IPSetDescriptor
-    ): IPSetUpdate = {
-      val __obj = js.Dynamic.literal(
-        "Action"          -> Action.asInstanceOf[js.Any],
-        "IPSetDescriptor" -> IPSetDescriptor.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[IPSetUpdate]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListActivatedRulesInRuleGroupRequest extends js.Object {
     var Limit: js.UndefOr[PaginationLimit]
     var NextMarker: js.UndefOr[NextMarker]
     var RuleGroupId: js.UndefOr[ResourceId]
   }
 
-  object ListActivatedRulesInRuleGroupRequest {
-    @inline
-    def apply(
-        Limit: js.UndefOr[PaginationLimit] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined,
-        RuleGroupId: js.UndefOr[ResourceId] = js.undefined
-    ): ListActivatedRulesInRuleGroupRequest = {
-      val __obj = js.Dynamic.literal()
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      RuleGroupId.foreach(__v => __obj.updateDynamic("RuleGroupId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListActivatedRulesInRuleGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListActivatedRulesInRuleGroupResponse extends js.Object {
     var ActivatedRules: js.UndefOr[ActivatedRules]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object ListActivatedRulesInRuleGroupResponse {
-    @inline
-    def apply(
-        ActivatedRules: js.UndefOr[ActivatedRules] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListActivatedRulesInRuleGroupResponse = {
-      val __obj = js.Dynamic.literal()
-      ActivatedRules.foreach(__v => __obj.updateDynamic("ActivatedRules")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListActivatedRulesInRuleGroupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListByteMatchSetsRequest extends js.Object {
     var Limit: js.UndefOr[PaginationLimit]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object ListByteMatchSetsRequest {
-    @inline
-    def apply(
-        Limit: js.UndefOr[PaginationLimit] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListByteMatchSetsRequest = {
-      val __obj = js.Dynamic.literal()
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListByteMatchSetsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListByteMatchSetsResponse extends js.Object {
     var ByteMatchSets: js.UndefOr[ByteMatchSetSummaries]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object ListByteMatchSetsResponse {
-    @inline
-    def apply(
-        ByteMatchSets: js.UndefOr[ByteMatchSetSummaries] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListByteMatchSetsResponse = {
-      val __obj = js.Dynamic.literal()
-      ByteMatchSets.foreach(__v => __obj.updateDynamic("ByteMatchSets")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListByteMatchSetsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListGeoMatchSetsRequest extends js.Object {
     var Limit: js.UndefOr[PaginationLimit]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object ListGeoMatchSetsRequest {
-    @inline
-    def apply(
-        Limit: js.UndefOr[PaginationLimit] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListGeoMatchSetsRequest = {
-      val __obj = js.Dynamic.literal()
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListGeoMatchSetsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListGeoMatchSetsResponse extends js.Object {
     var GeoMatchSets: js.UndefOr[GeoMatchSetSummaries]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object ListGeoMatchSetsResponse {
-    @inline
-    def apply(
-        GeoMatchSets: js.UndefOr[GeoMatchSetSummaries] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListGeoMatchSetsResponse = {
-      val __obj = js.Dynamic.literal()
-      GeoMatchSets.foreach(__v => __obj.updateDynamic("GeoMatchSets")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListGeoMatchSetsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListIPSetsRequest extends js.Object {
     var Limit: js.UndefOr[PaginationLimit]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object ListIPSetsRequest {
-    @inline
-    def apply(
-        Limit: js.UndefOr[PaginationLimit] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListIPSetsRequest = {
-      val __obj = js.Dynamic.literal()
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListIPSetsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListIPSetsResponse extends js.Object {
     var IPSets: js.UndefOr[IPSetSummaries]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object ListIPSetsResponse {
-    @inline
-    def apply(
-        IPSets: js.UndefOr[IPSetSummaries] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListIPSetsResponse = {
-      val __obj = js.Dynamic.literal()
-      IPSets.foreach(__v => __obj.updateDynamic("IPSets")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListIPSetsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListLoggingConfigurationsRequest extends js.Object {
     var Limit: js.UndefOr[PaginationLimit]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object ListLoggingConfigurationsRequest {
-    @inline
-    def apply(
-        Limit: js.UndefOr[PaginationLimit] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListLoggingConfigurationsRequest = {
-      val __obj = js.Dynamic.literal()
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListLoggingConfigurationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListLoggingConfigurationsResponse extends js.Object {
     var LoggingConfigurations: js.UndefOr[LoggingConfigurations]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object ListLoggingConfigurationsResponse {
-    @inline
-    def apply(
-        LoggingConfigurations: js.UndefOr[LoggingConfigurations] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListLoggingConfigurationsResponse = {
-      val __obj = js.Dynamic.literal()
-      LoggingConfigurations.foreach(__v => __obj.updateDynamic("LoggingConfigurations")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListLoggingConfigurationsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListRateBasedRulesRequest extends js.Object {
     var Limit: js.UndefOr[PaginationLimit]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object ListRateBasedRulesRequest {
-    @inline
-    def apply(
-        Limit: js.UndefOr[PaginationLimit] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListRateBasedRulesRequest = {
-      val __obj = js.Dynamic.literal()
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRateBasedRulesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListRateBasedRulesResponse extends js.Object {
     var NextMarker: js.UndefOr[NextMarker]
     var Rules: js.UndefOr[RuleSummaries]
   }
 
-  object ListRateBasedRulesResponse {
-    @inline
-    def apply(
-        NextMarker: js.UndefOr[NextMarker] = js.undefined,
-        Rules: js.UndefOr[RuleSummaries] = js.undefined
-    ): ListRateBasedRulesResponse = {
-      val __obj = js.Dynamic.literal()
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRateBasedRulesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListRegexMatchSetsRequest extends js.Object {
     var Limit: js.UndefOr[PaginationLimit]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object ListRegexMatchSetsRequest {
-    @inline
-    def apply(
-        Limit: js.UndefOr[PaginationLimit] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListRegexMatchSetsRequest = {
-      val __obj = js.Dynamic.literal()
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRegexMatchSetsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListRegexMatchSetsResponse extends js.Object {
     var NextMarker: js.UndefOr[NextMarker]
     var RegexMatchSets: js.UndefOr[RegexMatchSetSummaries]
   }
 
-  object ListRegexMatchSetsResponse {
-    @inline
-    def apply(
-        NextMarker: js.UndefOr[NextMarker] = js.undefined,
-        RegexMatchSets: js.UndefOr[RegexMatchSetSummaries] = js.undefined
-    ): ListRegexMatchSetsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      RegexMatchSets.foreach(__v => __obj.updateDynamic("RegexMatchSets")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRegexMatchSetsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListRegexPatternSetsRequest extends js.Object {
     var Limit: js.UndefOr[PaginationLimit]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object ListRegexPatternSetsRequest {
-    @inline
-    def apply(
-        Limit: js.UndefOr[PaginationLimit] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListRegexPatternSetsRequest = {
-      val __obj = js.Dynamic.literal()
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRegexPatternSetsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListRegexPatternSetsResponse extends js.Object {
     var NextMarker: js.UndefOr[NextMarker]
     var RegexPatternSets: js.UndefOr[RegexPatternSetSummaries]
   }
 
-  object ListRegexPatternSetsResponse {
-    @inline
-    def apply(
-        NextMarker: js.UndefOr[NextMarker] = js.undefined,
-        RegexPatternSets: js.UndefOr[RegexPatternSetSummaries] = js.undefined
-    ): ListRegexPatternSetsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      RegexPatternSets.foreach(__v => __obj.updateDynamic("RegexPatternSets")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRegexPatternSetsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListRuleGroupsRequest extends js.Object {
     var Limit: js.UndefOr[PaginationLimit]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object ListRuleGroupsRequest {
-    @inline
-    def apply(
-        Limit: js.UndefOr[PaginationLimit] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListRuleGroupsRequest = {
-      val __obj = js.Dynamic.literal()
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRuleGroupsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListRuleGroupsResponse extends js.Object {
     var NextMarker: js.UndefOr[NextMarker]
     var RuleGroups: js.UndefOr[RuleGroupSummaries]
   }
 
-  object ListRuleGroupsResponse {
-    @inline
-    def apply(
-        NextMarker: js.UndefOr[NextMarker] = js.undefined,
-        RuleGroups: js.UndefOr[RuleGroupSummaries] = js.undefined
-    ): ListRuleGroupsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      RuleGroups.foreach(__v => __obj.updateDynamic("RuleGroups")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRuleGroupsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListRulesRequest extends js.Object {
     var Limit: js.UndefOr[PaginationLimit]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object ListRulesRequest {
-    @inline
-    def apply(
-        Limit: js.UndefOr[PaginationLimit] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListRulesRequest = {
-      val __obj = js.Dynamic.literal()
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRulesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListRulesResponse extends js.Object {
     var NextMarker: js.UndefOr[NextMarker]
     var Rules: js.UndefOr[RuleSummaries]
   }
 
-  object ListRulesResponse {
-    @inline
-    def apply(
-        NextMarker: js.UndefOr[NextMarker] = js.undefined,
-        Rules: js.UndefOr[RuleSummaries] = js.undefined
-    ): ListRulesResponse = {
-      val __obj = js.Dynamic.literal()
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRulesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListSizeConstraintSetsRequest extends js.Object {
     var Limit: js.UndefOr[PaginationLimit]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object ListSizeConstraintSetsRequest {
-    @inline
-    def apply(
-        Limit: js.UndefOr[PaginationLimit] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListSizeConstraintSetsRequest = {
-      val __obj = js.Dynamic.literal()
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListSizeConstraintSetsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListSizeConstraintSetsResponse extends js.Object {
     var NextMarker: js.UndefOr[NextMarker]
     var SizeConstraintSets: js.UndefOr[SizeConstraintSetSummaries]
-  }
-
-  object ListSizeConstraintSetsResponse {
-    @inline
-    def apply(
-        NextMarker: js.UndefOr[NextMarker] = js.undefined,
-        SizeConstraintSets: js.UndefOr[SizeConstraintSetSummaries] = js.undefined
-    ): ListSizeConstraintSetsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      SizeConstraintSets.foreach(__v => __obj.updateDynamic("SizeConstraintSets")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListSizeConstraintSetsResponse]
-    }
   }
 
   /**
     * A request to list the <a>SqlInjectionMatchSet</a> objects created by the current AWS account.
     */
   @js.native
+  @Factory
   trait ListSqlInjectionMatchSetsRequest extends js.Object {
     var Limit: js.UndefOr[PaginationLimit]
     var NextMarker: js.UndefOr[NextMarker]
-  }
-
-  object ListSqlInjectionMatchSetsRequest {
-    @inline
-    def apply(
-        Limit: js.UndefOr[PaginationLimit] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListSqlInjectionMatchSetsRequest = {
-      val __obj = js.Dynamic.literal()
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListSqlInjectionMatchSetsRequest]
-    }
   }
 
   /**
     * The response to a <a>ListSqlInjectionMatchSets</a> request.
     */
   @js.native
+  @Factory
   trait ListSqlInjectionMatchSetsResponse extends js.Object {
     var NextMarker: js.UndefOr[NextMarker]
     var SqlInjectionMatchSets: js.UndefOr[SqlInjectionMatchSetSummaries]
   }
 
-  object ListSqlInjectionMatchSetsResponse {
-    @inline
-    def apply(
-        NextMarker: js.UndefOr[NextMarker] = js.undefined,
-        SqlInjectionMatchSets: js.UndefOr[SqlInjectionMatchSetSummaries] = js.undefined
-    ): ListSqlInjectionMatchSetsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      SqlInjectionMatchSets.foreach(__v => __obj.updateDynamic("SqlInjectionMatchSets")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListSqlInjectionMatchSetsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListSubscribedRuleGroupsRequest extends js.Object {
     var Limit: js.UndefOr[PaginationLimit]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object ListSubscribedRuleGroupsRequest {
-    @inline
-    def apply(
-        Limit: js.UndefOr[PaginationLimit] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListSubscribedRuleGroupsRequest = {
-      val __obj = js.Dynamic.literal()
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListSubscribedRuleGroupsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListSubscribedRuleGroupsResponse extends js.Object {
     var NextMarker: js.UndefOr[NextMarker]
     var RuleGroups: js.UndefOr[SubscribedRuleGroupSummaries]
   }
 
-  object ListSubscribedRuleGroupsResponse {
-    @inline
-    def apply(
-        NextMarker: js.UndefOr[NextMarker] = js.undefined,
-        RuleGroups: js.UndefOr[SubscribedRuleGroupSummaries] = js.undefined
-    ): ListSubscribedRuleGroupsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      RuleGroups.foreach(__v => __obj.updateDynamic("RuleGroups")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListSubscribedRuleGroupsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceRequest extends js.Object {
     var ResourceARN: ResourceArn
     var Limit: js.UndefOr[PaginationLimit]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object ListTagsForResourceRequest {
-    @inline
-    def apply(
-        ResourceARN: ResourceArn,
-        Limit: js.UndefOr[PaginationLimit] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListTagsForResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
-      )
-
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceResponse extends js.Object {
     var NextMarker: js.UndefOr[NextMarker]
     var TagInfoForResource: js.UndefOr[TagInfoForResource]
   }
 
-  object ListTagsForResourceResponse {
-    @inline
-    def apply(
-        NextMarker: js.UndefOr[NextMarker] = js.undefined,
-        TagInfoForResource: js.UndefOr[TagInfoForResource] = js.undefined
-    ): ListTagsForResourceResponse = {
-      val __obj = js.Dynamic.literal()
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      TagInfoForResource.foreach(__v => __obj.updateDynamic("TagInfoForResource")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListWebACLsRequest extends js.Object {
     var Limit: js.UndefOr[PaginationLimit]
     var NextMarker: js.UndefOr[NextMarker]
   }
 
-  object ListWebACLsRequest {
-    @inline
-    def apply(
-        Limit: js.UndefOr[PaginationLimit] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListWebACLsRequest = {
-      val __obj = js.Dynamic.literal()
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListWebACLsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListWebACLsResponse extends js.Object {
     var NextMarker: js.UndefOr[NextMarker]
     var WebACLs: js.UndefOr[WebACLSummaries]
-  }
-
-  object ListWebACLsResponse {
-    @inline
-    def apply(
-        NextMarker: js.UndefOr[NextMarker] = js.undefined,
-        WebACLs: js.UndefOr[WebACLSummaries] = js.undefined
-    ): ListWebACLsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      WebACLs.foreach(__v => __obj.updateDynamic("WebACLs")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListWebACLsResponse]
-    }
   }
 
   /**
     * A request to list the <a>XssMatchSet</a> objects created by the current AWS account.
     */
   @js.native
+  @Factory
   trait ListXssMatchSetsRequest extends js.Object {
     var Limit: js.UndefOr[PaginationLimit]
     var NextMarker: js.UndefOr[NextMarker]
-  }
-
-  object ListXssMatchSetsRequest {
-    @inline
-    def apply(
-        Limit: js.UndefOr[PaginationLimit] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined
-    ): ListXssMatchSetsRequest = {
-      val __obj = js.Dynamic.literal()
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListXssMatchSetsRequest]
-    }
   }
 
   /**
     * The response to a <a>ListXssMatchSets</a> request.
     */
   @js.native
+  @Factory
   trait ListXssMatchSetsResponse extends js.Object {
     var NextMarker: js.UndefOr[NextMarker]
     var XssMatchSets: js.UndefOr[XssMatchSetSummaries]
-  }
-
-  object ListXssMatchSetsResponse {
-    @inline
-    def apply(
-        NextMarker: js.UndefOr[NextMarker] = js.undefined,
-        XssMatchSets: js.UndefOr[XssMatchSetSummaries] = js.undefined
-    ): ListXssMatchSetsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      XssMatchSets.foreach(__v => __obj.updateDynamic("XssMatchSets")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListXssMatchSetsResponse]
-    }
   }
 
   /**
     * The Amazon Kinesis Data Firehose, <code>RedactedFields</code> information, and the web ACL Amazon Resource Name (ARN).
     */
   @js.native
+  @Factory
   trait LoggingConfiguration extends js.Object {
     var LogDestinationConfigs: LogDestinationConfigs
     var ResourceArn: ResourceArn
     var RedactedFields: js.UndefOr[RedactedFields]
-  }
-
-  object LoggingConfiguration {
-    @inline
-    def apply(
-        LogDestinationConfigs: LogDestinationConfigs,
-        ResourceArn: ResourceArn,
-        RedactedFields: js.UndefOr[RedactedFields] = js.undefined
-    ): LoggingConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "LogDestinationConfigs" -> LogDestinationConfigs.asInstanceOf[js.Any],
-        "ResourceArn"           -> ResourceArn.asInstanceOf[js.Any]
-      )
-
-      RedactedFields.foreach(__v => __obj.updateDynamic("RedactedFields")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LoggingConfiguration]
-    }
   }
 
   @js.native
@@ -3735,27 +2001,11 @@ package waf {
     * Specifies the <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>, <a>XssMatchSet</a>, <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, and <a>SizeConstraintSet</a> objects that you want to add to a <code>Rule</code> and, for each object, indicates whether you want to negate the settings, for example, requests that do NOT originate from the IP address 192.0.2.44.
     */
   @js.native
+  @Factory
   trait Predicate extends js.Object {
     var DataId: ResourceId
     var Negated: Negated
     var Type: PredicateType
-  }
-
-  object Predicate {
-    @inline
-    def apply(
-        DataId: ResourceId,
-        Negated: Negated,
-        Type: PredicateType
-    ): Predicate = {
-      val __obj = js.Dynamic.literal(
-        "DataId"  -> DataId.asInstanceOf[js.Any],
-        "Negated" -> Negated.asInstanceOf[js.Any],
-        "Type"    -> Type.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Predicate]
-    }
   }
 
   @js.native
@@ -3774,72 +2024,27 @@ package waf {
   }
 
   @js.native
+  @Factory
   trait PutLoggingConfigurationRequest extends js.Object {
     var LoggingConfiguration: LoggingConfiguration
   }
 
-  object PutLoggingConfigurationRequest {
-    @inline
-    def apply(
-        LoggingConfiguration: LoggingConfiguration
-    ): PutLoggingConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "LoggingConfiguration" -> LoggingConfiguration.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutLoggingConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutLoggingConfigurationResponse extends js.Object {
     var LoggingConfiguration: js.UndefOr[LoggingConfiguration]
   }
 
-  object PutLoggingConfigurationResponse {
-    @inline
-    def apply(
-        LoggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined
-    ): PutLoggingConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-      LoggingConfiguration.foreach(__v => __obj.updateDynamic("LoggingConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutLoggingConfigurationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutPermissionPolicyRequest extends js.Object {
     var Policy: PolicyString
     var ResourceArn: ResourceArn
   }
 
-  object PutPermissionPolicyRequest {
-    @inline
-    def apply(
-        Policy: PolicyString,
-        ResourceArn: ResourceArn
-    ): PutPermissionPolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "Policy"      -> Policy.asInstanceOf[js.Any],
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutPermissionPolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutPermissionPolicyResponse extends js.Object {}
-
-  object PutPermissionPolicyResponse {
-    @inline
-    def apply(
-    ): PutPermissionPolicyResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutPermissionPolicyResponse]
-    }
-  }
 
   /**
     * A <code>RateBasedRule</code> is identical to a regular <a>Rule</a>, with one addition: a <code>RateBasedRule</code> counts the number of requests that arrive from a specified IP address every five minutes. For example, based on recent requests that you've seen from an attacker, you might create a <code>RateBasedRule</code> that includes the following conditions:
@@ -3849,6 +2054,7 @@ package waf {
     *  Requests that meet both of these conditions and exceed 15,000 requests every five minutes trigger the rule's action (block or count), which is defined in the web ACL.
     */
   @js.native
+  @Factory
   trait RateBasedRule extends js.Object {
     var MatchPredicates: Predicates
     var RateKey: RateKey
@@ -3856,29 +2062,6 @@ package waf {
     var RuleId: ResourceId
     var MetricName: js.UndefOr[MetricName]
     var Name: js.UndefOr[ResourceName]
-  }
-
-  object RateBasedRule {
-    @inline
-    def apply(
-        MatchPredicates: Predicates,
-        RateKey: RateKey,
-        RateLimit: RateLimit,
-        RuleId: ResourceId,
-        MetricName: js.UndefOr[MetricName] = js.undefined,
-        Name: js.UndefOr[ResourceName] = js.undefined
-    ): RateBasedRule = {
-      val __obj = js.Dynamic.literal(
-        "MatchPredicates" -> MatchPredicates.asInstanceOf[js.Any],
-        "RateKey"         -> RateKey.asInstanceOf[js.Any],
-        "RateLimit"       -> RateLimit.asInstanceOf[js.Any],
-        "RuleId"          -> RuleId.asInstanceOf[js.Any]
-      )
-
-      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RateBasedRule]
-    }
   }
 
   @js.native
@@ -3894,73 +2077,31 @@ package waf {
     *  The values are contained in a <code>RegexMatchTuple</code> object, which specify the parts of web requests that you want AWS WAF to inspect and the values that you want AWS WAF to search for. If a <code>RegexMatchSet</code> contains more than one <code>RegexMatchTuple</code> object, a request needs to match the settings in only one <code>ByteMatchTuple</code> to be considered a match.
     */
   @js.native
+  @Factory
   trait RegexMatchSet extends js.Object {
     var Name: js.UndefOr[ResourceName]
     var RegexMatchSetId: js.UndefOr[ResourceId]
     var RegexMatchTuples: js.UndefOr[RegexMatchTuples]
   }
 
-  object RegexMatchSet {
-    @inline
-    def apply(
-        Name: js.UndefOr[ResourceName] = js.undefined,
-        RegexMatchSetId: js.UndefOr[ResourceId] = js.undefined,
-        RegexMatchTuples: js.UndefOr[RegexMatchTuples] = js.undefined
-    ): RegexMatchSet = {
-      val __obj = js.Dynamic.literal()
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      RegexMatchSetId.foreach(__v => __obj.updateDynamic("RegexMatchSetId")(__v.asInstanceOf[js.Any]))
-      RegexMatchTuples.foreach(__v => __obj.updateDynamic("RegexMatchTuples")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RegexMatchSet]
-    }
-  }
-
   /**
     * Returned by <a>ListRegexMatchSets</a>. Each <code>RegexMatchSetSummary</code> object includes the <code>Name</code> and <code>RegexMatchSetId</code> for one <a>RegexMatchSet</a>.
     */
   @js.native
+  @Factory
   trait RegexMatchSetSummary extends js.Object {
     var Name: ResourceName
     var RegexMatchSetId: ResourceId
-  }
-
-  object RegexMatchSetSummary {
-    @inline
-    def apply(
-        Name: ResourceName,
-        RegexMatchSetId: ResourceId
-    ): RegexMatchSetSummary = {
-      val __obj = js.Dynamic.literal(
-        "Name"            -> Name.asInstanceOf[js.Any],
-        "RegexMatchSetId" -> RegexMatchSetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RegexMatchSetSummary]
-    }
   }
 
   /**
     * In an <a>UpdateRegexMatchSet</a> request, <code>RegexMatchSetUpdate</code> specifies whether to insert or delete a <a>RegexMatchTuple</a> and includes the settings for the <code>RegexMatchTuple</code>.
     */
   @js.native
+  @Factory
   trait RegexMatchSetUpdate extends js.Object {
     var Action: ChangeAction
     var RegexMatchTuple: RegexMatchTuple
-  }
-
-  object RegexMatchSetUpdate {
-    @inline
-    def apply(
-        Action: ChangeAction,
-        RegexMatchTuple: RegexMatchTuple
-    ): RegexMatchSetUpdate = {
-      val __obj = js.Dynamic.literal(
-        "Action"          -> Action.asInstanceOf[js.Any],
-        "RegexMatchTuple" -> RegexMatchTuple.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RegexMatchSetUpdate]
-    }
   }
 
   /**
@@ -3970,102 +2111,42 @@ package waf {
     *  * Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.
     */
   @js.native
+  @Factory
   trait RegexMatchTuple extends js.Object {
     var FieldToMatch: FieldToMatch
     var RegexPatternSetId: ResourceId
     var TextTransformation: TextTransformation
   }
 
-  object RegexMatchTuple {
-    @inline
-    def apply(
-        FieldToMatch: FieldToMatch,
-        RegexPatternSetId: ResourceId,
-        TextTransformation: TextTransformation
-    ): RegexMatchTuple = {
-      val __obj = js.Dynamic.literal(
-        "FieldToMatch"       -> FieldToMatch.asInstanceOf[js.Any],
-        "RegexPatternSetId"  -> RegexPatternSetId.asInstanceOf[js.Any],
-        "TextTransformation" -> TextTransformation.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RegexMatchTuple]
-    }
-  }
-
   /**
     * The <code>RegexPatternSet</code> specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>. You can then configure AWS WAF to reject those requests.
     */
   @js.native
+  @Factory
   trait RegexPatternSet extends js.Object {
     var RegexPatternSetId: ResourceId
     var RegexPatternStrings: RegexPatternStrings
     var Name: js.UndefOr[ResourceName]
   }
 
-  object RegexPatternSet {
-    @inline
-    def apply(
-        RegexPatternSetId: ResourceId,
-        RegexPatternStrings: RegexPatternStrings,
-        Name: js.UndefOr[ResourceName] = js.undefined
-    ): RegexPatternSet = {
-      val __obj = js.Dynamic.literal(
-        "RegexPatternSetId"   -> RegexPatternSetId.asInstanceOf[js.Any],
-        "RegexPatternStrings" -> RegexPatternStrings.asInstanceOf[js.Any]
-      )
-
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RegexPatternSet]
-    }
-  }
-
   /**
     * Returned by <a>ListRegexPatternSets</a>. Each <code>RegexPatternSetSummary</code> object includes the <code>Name</code> and <code>RegexPatternSetId</code> for one <a>RegexPatternSet</a>.
     */
   @js.native
+  @Factory
   trait RegexPatternSetSummary extends js.Object {
     var Name: ResourceName
     var RegexPatternSetId: ResourceId
-  }
-
-  object RegexPatternSetSummary {
-    @inline
-    def apply(
-        Name: ResourceName,
-        RegexPatternSetId: ResourceId
-    ): RegexPatternSetSummary = {
-      val __obj = js.Dynamic.literal(
-        "Name"              -> Name.asInstanceOf[js.Any],
-        "RegexPatternSetId" -> RegexPatternSetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RegexPatternSetSummary]
-    }
   }
 
   /**
     * In an <a>UpdateRegexPatternSet</a> request, <code>RegexPatternSetUpdate</code> specifies whether to insert or delete a <code>RegexPatternString</code> and includes the settings for the <code>RegexPatternString</code>.
     */
   @js.native
+  @Factory
   trait RegexPatternSetUpdate extends js.Object {
     var Action: ChangeAction
     var RegexPatternString: RegexPatternString
-  }
-
-  object RegexPatternSetUpdate {
-    @inline
-    def apply(
-        Action: ChangeAction,
-        RegexPatternString: RegexPatternString
-    ): RegexPatternSetUpdate = {
-      val __obj = js.Dynamic.literal(
-        "Action"             -> Action.asInstanceOf[js.Any],
-        "RegexPatternString" -> RegexPatternString.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RegexPatternSetUpdate]
-    }
   }
 
   /**
@@ -4075,30 +2156,12 @@ package waf {
     * To match the settings in this <code>Rule</code>, a request must originate from <code>192.0.2.44</code> AND include a <code>User-Agent</code> header for which the value is <code>BadBot</code>.
     */
   @js.native
+  @Factory
   trait Rule extends js.Object {
     var Predicates: Predicates
     var RuleId: ResourceId
     var MetricName: js.UndefOr[MetricName]
     var Name: js.UndefOr[ResourceName]
-  }
-
-  object Rule {
-    @inline
-    def apply(
-        Predicates: Predicates,
-        RuleId: ResourceId,
-        MetricName: js.UndefOr[MetricName] = js.undefined,
-        Name: js.UndefOr[ResourceName] = js.undefined
-    ): Rule = {
-      val __obj = js.Dynamic.literal(
-        "Predicates" -> Predicates.asInstanceOf[js.Any],
-        "RuleId"     -> RuleId.asInstanceOf[js.Any]
-      )
-
-      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Rule]
-    }
   }
 
   /**
@@ -4109,129 +2172,58 @@ package waf {
     *  * Ten rules per rule group.
     */
   @js.native
+  @Factory
   trait RuleGroup extends js.Object {
     var RuleGroupId: ResourceId
     var MetricName: js.UndefOr[MetricName]
     var Name: js.UndefOr[ResourceName]
   }
 
-  object RuleGroup {
-    @inline
-    def apply(
-        RuleGroupId: ResourceId,
-        MetricName: js.UndefOr[MetricName] = js.undefined,
-        Name: js.UndefOr[ResourceName] = js.undefined
-    ): RuleGroup = {
-      val __obj = js.Dynamic.literal(
-        "RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any]
-      )
-
-      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RuleGroup]
-    }
-  }
-
   /**
     * Contains the identifier and the friendly name or description of the <code>RuleGroup</code>.
     */
   @js.native
+  @Factory
   trait RuleGroupSummary extends js.Object {
     var Name: ResourceName
     var RuleGroupId: ResourceId
-  }
-
-  object RuleGroupSummary {
-    @inline
-    def apply(
-        Name: ResourceName,
-        RuleGroupId: ResourceId
-    ): RuleGroupSummary = {
-      val __obj = js.Dynamic.literal(
-        "Name"        -> Name.asInstanceOf[js.Any],
-        "RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RuleGroupSummary]
-    }
   }
 
   /**
     * Specifies an <code>ActivatedRule</code> and indicates whether you want to add it to a <code>RuleGroup</code> or delete it from a <code>RuleGroup</code>.
     */
   @js.native
+  @Factory
   trait RuleGroupUpdate extends js.Object {
     var Action: ChangeAction
     var ActivatedRule: ActivatedRule
-  }
-
-  object RuleGroupUpdate {
-    @inline
-    def apply(
-        Action: ChangeAction,
-        ActivatedRule: ActivatedRule
-    ): RuleGroupUpdate = {
-      val __obj = js.Dynamic.literal(
-        "Action"        -> Action.asInstanceOf[js.Any],
-        "ActivatedRule" -> ActivatedRule.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RuleGroupUpdate]
-    }
   }
 
   /**
     * Contains the identifier and the friendly name or description of the <code>Rule</code>.
     */
   @js.native
+  @Factory
   trait RuleSummary extends js.Object {
     var Name: ResourceName
     var RuleId: ResourceId
-  }
-
-  object RuleSummary {
-    @inline
-    def apply(
-        Name: ResourceName,
-        RuleId: ResourceId
-    ): RuleSummary = {
-      val __obj = js.Dynamic.literal(
-        "Name"   -> Name.asInstanceOf[js.Any],
-        "RuleId" -> RuleId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RuleSummary]
-    }
   }
 
   /**
     * Specifies a <code>Predicate</code> (such as an <code>IPSet</code>) and indicates whether you want to add it to a <code>Rule</code> or delete it from a <code>Rule</code>.
     */
   @js.native
+  @Factory
   trait RuleUpdate extends js.Object {
     var Action: ChangeAction
     var Predicate: Predicate
-  }
-
-  object RuleUpdate {
-    @inline
-    def apply(
-        Action: ChangeAction,
-        Predicate: Predicate
-    ): RuleUpdate = {
-      val __obj = js.Dynamic.literal(
-        "Action"    -> Action.asInstanceOf[js.Any],
-        "Predicate" -> Predicate.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RuleUpdate]
-    }
   }
 
   /**
     * The response from a <a>GetSampledRequests</a> request includes a <code>SampledHTTPRequests</code> complex type that appears as <code>SampledRequests</code> in the response syntax. <code>SampledHTTPRequests</code> contains one <code>SampledHTTPRequest</code> object for each web request that is returned by <code>GetSampledRequests</code>.
     */
   @js.native
+  @Factory
   trait SampledHTTPRequest extends js.Object {
     var Request: HTTPRequest
     var Weight: SampleWeight
@@ -4240,31 +2232,11 @@ package waf {
     var Timestamp: js.UndefOr[Timestamp]
   }
 
-  object SampledHTTPRequest {
-    @inline
-    def apply(
-        Request: HTTPRequest,
-        Weight: SampleWeight,
-        Action: js.UndefOr[Action] = js.undefined,
-        RuleWithinRuleGroup: js.UndefOr[ResourceId] = js.undefined,
-        Timestamp: js.UndefOr[Timestamp] = js.undefined
-    ): SampledHTTPRequest = {
-      val __obj = js.Dynamic.literal(
-        "Request" -> Request.asInstanceOf[js.Any],
-        "Weight"  -> Weight.asInstanceOf[js.Any]
-      )
-
-      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
-      RuleWithinRuleGroup.foreach(__v => __obj.updateDynamic("RuleWithinRuleGroup")(__v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SampledHTTPRequest]
-    }
-  }
-
   /**
     * Specifies a constraint on the size of a part of the web request. AWS WAF uses the <code>Size</code>, <code>ComparisonOperator</code>, and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.
     */
   @js.native
+  @Factory
   trait SizeConstraint extends js.Object {
     var ComparisonOperator: ComparisonOperator
     var FieldToMatch: FieldToMatch
@@ -4272,297 +2244,113 @@ package waf {
     var TextTransformation: TextTransformation
   }
 
-  object SizeConstraint {
-    @inline
-    def apply(
-        ComparisonOperator: ComparisonOperator,
-        FieldToMatch: FieldToMatch,
-        Size: Size,
-        TextTransformation: TextTransformation
-    ): SizeConstraint = {
-      val __obj = js.Dynamic.literal(
-        "ComparisonOperator" -> ComparisonOperator.asInstanceOf[js.Any],
-        "FieldToMatch"       -> FieldToMatch.asInstanceOf[js.Any],
-        "Size"               -> Size.asInstanceOf[js.Any],
-        "TextTransformation" -> TextTransformation.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SizeConstraint]
-    }
-  }
-
   /**
     * A complex type that contains <code>SizeConstraint</code> objects, which specify the parts of web requests that you want AWS WAF to inspect the size of. If a <code>SizeConstraintSet</code> contains more than one <code>SizeConstraint</code> object, a request only needs to match one constraint to be considered a match.
     */
   @js.native
+  @Factory
   trait SizeConstraintSet extends js.Object {
     var SizeConstraintSetId: ResourceId
     var SizeConstraints: SizeConstraints
     var Name: js.UndefOr[ResourceName]
   }
 
-  object SizeConstraintSet {
-    @inline
-    def apply(
-        SizeConstraintSetId: ResourceId,
-        SizeConstraints: SizeConstraints,
-        Name: js.UndefOr[ResourceName] = js.undefined
-    ): SizeConstraintSet = {
-      val __obj = js.Dynamic.literal(
-        "SizeConstraintSetId" -> SizeConstraintSetId.asInstanceOf[js.Any],
-        "SizeConstraints"     -> SizeConstraints.asInstanceOf[js.Any]
-      )
-
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SizeConstraintSet]
-    }
-  }
-
   /**
     * The <code>Id</code> and <code>Name</code> of a <code>SizeConstraintSet</code>.
     */
   @js.native
+  @Factory
   trait SizeConstraintSetSummary extends js.Object {
     var Name: ResourceName
     var SizeConstraintSetId: ResourceId
-  }
-
-  object SizeConstraintSetSummary {
-    @inline
-    def apply(
-        Name: ResourceName,
-        SizeConstraintSetId: ResourceId
-    ): SizeConstraintSetSummary = {
-      val __obj = js.Dynamic.literal(
-        "Name"                -> Name.asInstanceOf[js.Any],
-        "SizeConstraintSetId" -> SizeConstraintSetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SizeConstraintSetSummary]
-    }
   }
 
   /**
     * Specifies the part of a web request that you want to inspect the size of and indicates whether you want to add the specification to a <a>SizeConstraintSet</a> or delete it from a <code>SizeConstraintSet</code>.
     */
   @js.native
+  @Factory
   trait SizeConstraintSetUpdate extends js.Object {
     var Action: ChangeAction
     var SizeConstraint: SizeConstraint
-  }
-
-  object SizeConstraintSetUpdate {
-    @inline
-    def apply(
-        Action: ChangeAction,
-        SizeConstraint: SizeConstraint
-    ): SizeConstraintSetUpdate = {
-      val __obj = js.Dynamic.literal(
-        "Action"         -> Action.asInstanceOf[js.Any],
-        "SizeConstraint" -> SizeConstraint.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SizeConstraintSetUpdate]
-    }
   }
 
   /**
     * A complex type that contains <code>SqlInjectionMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header. If a <code>SqlInjectionMatchSet</code> contains more than one <code>SqlInjectionMatchTuple</code> object, a request needs to include snippets of SQL code in only one of the specified parts of the request to be considered a match.
     */
   @js.native
+  @Factory
   trait SqlInjectionMatchSet extends js.Object {
     var SqlInjectionMatchSetId: ResourceId
     var SqlInjectionMatchTuples: SqlInjectionMatchTuples
     var Name: js.UndefOr[ResourceName]
   }
 
-  object SqlInjectionMatchSet {
-    @inline
-    def apply(
-        SqlInjectionMatchSetId: ResourceId,
-        SqlInjectionMatchTuples: SqlInjectionMatchTuples,
-        Name: js.UndefOr[ResourceName] = js.undefined
-    ): SqlInjectionMatchSet = {
-      val __obj = js.Dynamic.literal(
-        "SqlInjectionMatchSetId"  -> SqlInjectionMatchSetId.asInstanceOf[js.Any],
-        "SqlInjectionMatchTuples" -> SqlInjectionMatchTuples.asInstanceOf[js.Any]
-      )
-
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SqlInjectionMatchSet]
-    }
-  }
-
   /**
     * The <code>Id</code> and <code>Name</code> of a <code>SqlInjectionMatchSet</code>.
     */
   @js.native
+  @Factory
   trait SqlInjectionMatchSetSummary extends js.Object {
     var Name: ResourceName
     var SqlInjectionMatchSetId: ResourceId
-  }
-
-  object SqlInjectionMatchSetSummary {
-    @inline
-    def apply(
-        Name: ResourceName,
-        SqlInjectionMatchSetId: ResourceId
-    ): SqlInjectionMatchSetSummary = {
-      val __obj = js.Dynamic.literal(
-        "Name"                   -> Name.asInstanceOf[js.Any],
-        "SqlInjectionMatchSetId" -> SqlInjectionMatchSetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SqlInjectionMatchSetSummary]
-    }
   }
 
   /**
     * Specifies the part of a web request that you want to inspect for snippets of malicious SQL code and indicates whether you want to add the specification to a <a>SqlInjectionMatchSet</a> or delete it from a <code>SqlInjectionMatchSet</code>.
     */
   @js.native
+  @Factory
   trait SqlInjectionMatchSetUpdate extends js.Object {
     var Action: ChangeAction
     var SqlInjectionMatchTuple: SqlInjectionMatchTuple
-  }
-
-  object SqlInjectionMatchSetUpdate {
-    @inline
-    def apply(
-        Action: ChangeAction,
-        SqlInjectionMatchTuple: SqlInjectionMatchTuple
-    ): SqlInjectionMatchSetUpdate = {
-      val __obj = js.Dynamic.literal(
-        "Action"                 -> Action.asInstanceOf[js.Any],
-        "SqlInjectionMatchTuple" -> SqlInjectionMatchTuple.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SqlInjectionMatchSetUpdate]
-    }
   }
 
   /**
     * Specifies the part of a web request that you want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header.
     */
   @js.native
+  @Factory
   trait SqlInjectionMatchTuple extends js.Object {
     var FieldToMatch: FieldToMatch
     var TextTransformation: TextTransformation
-  }
-
-  object SqlInjectionMatchTuple {
-    @inline
-    def apply(
-        FieldToMatch: FieldToMatch,
-        TextTransformation: TextTransformation
-    ): SqlInjectionMatchTuple = {
-      val __obj = js.Dynamic.literal(
-        "FieldToMatch"       -> FieldToMatch.asInstanceOf[js.Any],
-        "TextTransformation" -> TextTransformation.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SqlInjectionMatchTuple]
-    }
   }
 
   /**
     * A summary of the rule groups you are subscribed to.
     */
   @js.native
+  @Factory
   trait SubscribedRuleGroupSummary extends js.Object {
     var MetricName: MetricName
     var Name: ResourceName
     var RuleGroupId: ResourceId
   }
 
-  object SubscribedRuleGroupSummary {
-    @inline
-    def apply(
-        MetricName: MetricName,
-        Name: ResourceName,
-        RuleGroupId: ResourceId
-    ): SubscribedRuleGroupSummary = {
-      val __obj = js.Dynamic.literal(
-        "MetricName"  -> MetricName.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any],
-        "RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SubscribedRuleGroupSummary]
-    }
-  }
-
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var Key: js.UndefOr[TagKey]
     var Value: js.UndefOr[TagValue]
   }
 
-  object Tag {
-    @inline
-    def apply(
-        Key: js.UndefOr[TagKey] = js.undefined,
-        Value: js.UndefOr[TagValue] = js.undefined
-    ): Tag = {
-      val __obj = js.Dynamic.literal()
-      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Tag]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagInfoForResource extends js.Object {
     var ResourceARN: js.UndefOr[ResourceArn]
     var TagList: js.UndefOr[TagList]
   }
 
-  object TagInfoForResource {
-    @inline
-    def apply(
-        ResourceARN: js.UndefOr[ResourceArn] = js.undefined,
-        TagList: js.UndefOr[TagList] = js.undefined
-    ): TagInfoForResource = {
-      val __obj = js.Dynamic.literal()
-      ResourceARN.foreach(__v => __obj.updateDynamic("ResourceARN")(__v.asInstanceOf[js.Any]))
-      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TagInfoForResource]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceRequest extends js.Object {
     var ResourceARN: ResourceArn
     var Tags: TagList
   }
 
-  object TagResourceRequest {
-    @inline
-    def apply(
-        ResourceARN: ResourceArn,
-        Tags: TagList
-    ): TagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceResponse extends js.Object {}
-
-  object TagResourceResponse {
-    @inline
-    def apply(
-    ): TagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[TagResourceResponse]
-    }
-  }
 
   @js.native
   sealed trait TextTransformation extends js.Any
@@ -4583,181 +2371,67 @@ package waf {
     *  In a <a>GetSampledRequests</a> response, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which AWS WAF actually returned a sample of web requests. AWS WAF gets the specified number of requests from among the first 5,000 requests that your AWS resource receives during the specified time period. If your resource receives more than 5,000 requests during that period, AWS WAF stops sampling after the 5,000th request. In that case, <code>EndTime</code> is the time that AWS WAF received the 5,000th request.
     */
   @js.native
+  @Factory
   trait TimeWindow extends js.Object {
     var EndTime: Timestamp
     var StartTime: Timestamp
   }
 
-  object TimeWindow {
-    @inline
-    def apply(
-        EndTime: Timestamp,
-        StartTime: Timestamp
-    ): TimeWindow = {
-      val __obj = js.Dynamic.literal(
-        "EndTime"   -> EndTime.asInstanceOf[js.Any],
-        "StartTime" -> StartTime.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TimeWindow]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceRequest extends js.Object {
     var ResourceARN: ResourceArn
     var TagKeys: TagKeyList
   }
 
-  object UntagResourceRequest {
-    @inline
-    def apply(
-        ResourceARN: ResourceArn,
-        TagKeys: TagKeyList
-    ): UntagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceResponse extends js.Object {}
 
-  object UntagResourceResponse {
-    @inline
-    def apply(
-    ): UntagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UntagResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateByteMatchSetRequest extends js.Object {
     var ByteMatchSetId: ResourceId
     var ChangeToken: ChangeToken
     var Updates: ByteMatchSetUpdates
   }
 
-  object UpdateByteMatchSetRequest {
-    @inline
-    def apply(
-        ByteMatchSetId: ResourceId,
-        ChangeToken: ChangeToken,
-        Updates: ByteMatchSetUpdates
-    ): UpdateByteMatchSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ByteMatchSetId" -> ByteMatchSetId.asInstanceOf[js.Any],
-        "ChangeToken"    -> ChangeToken.asInstanceOf[js.Any],
-        "Updates"        -> Updates.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateByteMatchSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateByteMatchSetResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
   }
 
-  object UpdateByteMatchSetResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
-    ): UpdateByteMatchSetResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateByteMatchSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateGeoMatchSetRequest extends js.Object {
     var ChangeToken: ChangeToken
     var GeoMatchSetId: ResourceId
     var Updates: GeoMatchSetUpdates
   }
 
-  object UpdateGeoMatchSetRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        GeoMatchSetId: ResourceId,
-        Updates: GeoMatchSetUpdates
-    ): UpdateGeoMatchSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken"   -> ChangeToken.asInstanceOf[js.Any],
-        "GeoMatchSetId" -> GeoMatchSetId.asInstanceOf[js.Any],
-        "Updates"       -> Updates.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateGeoMatchSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateGeoMatchSetResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
   }
 
-  object UpdateGeoMatchSetResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
-    ): UpdateGeoMatchSetResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateGeoMatchSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateIPSetRequest extends js.Object {
     var ChangeToken: ChangeToken
     var IPSetId: ResourceId
     var Updates: IPSetUpdates
   }
 
-  object UpdateIPSetRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        IPSetId: ResourceId,
-        Updates: IPSetUpdates
-    ): UpdateIPSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "IPSetId"     -> IPSetId.asInstanceOf[js.Any],
-        "Updates"     -> Updates.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateIPSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateIPSetResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
   }
 
-  object UpdateIPSetResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
-    ): UpdateIPSetResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateIPSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateRateBasedRuleRequest extends js.Object {
     var ChangeToken: ChangeToken
     var RateLimit: RateLimit
@@ -4765,288 +2439,104 @@ package waf {
     var Updates: RuleUpdates
   }
 
-  object UpdateRateBasedRuleRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        RateLimit: RateLimit,
-        RuleId: ResourceId,
-        Updates: RuleUpdates
-    ): UpdateRateBasedRuleRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "RateLimit"   -> RateLimit.asInstanceOf[js.Any],
-        "RuleId"      -> RuleId.asInstanceOf[js.Any],
-        "Updates"     -> Updates.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateRateBasedRuleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateRateBasedRuleResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
   }
 
-  object UpdateRateBasedRuleResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
-    ): UpdateRateBasedRuleResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateRateBasedRuleResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateRegexMatchSetRequest extends js.Object {
     var ChangeToken: ChangeToken
     var RegexMatchSetId: ResourceId
     var Updates: RegexMatchSetUpdates
   }
 
-  object UpdateRegexMatchSetRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        RegexMatchSetId: ResourceId,
-        Updates: RegexMatchSetUpdates
-    ): UpdateRegexMatchSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken"     -> ChangeToken.asInstanceOf[js.Any],
-        "RegexMatchSetId" -> RegexMatchSetId.asInstanceOf[js.Any],
-        "Updates"         -> Updates.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateRegexMatchSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateRegexMatchSetResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
   }
 
-  object UpdateRegexMatchSetResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
-    ): UpdateRegexMatchSetResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateRegexMatchSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateRegexPatternSetRequest extends js.Object {
     var ChangeToken: ChangeToken
     var RegexPatternSetId: ResourceId
     var Updates: RegexPatternSetUpdates
   }
 
-  object UpdateRegexPatternSetRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        RegexPatternSetId: ResourceId,
-        Updates: RegexPatternSetUpdates
-    ): UpdateRegexPatternSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken"       -> ChangeToken.asInstanceOf[js.Any],
-        "RegexPatternSetId" -> RegexPatternSetId.asInstanceOf[js.Any],
-        "Updates"           -> Updates.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateRegexPatternSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateRegexPatternSetResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
   }
 
-  object UpdateRegexPatternSetResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
-    ): UpdateRegexPatternSetResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateRegexPatternSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateRuleGroupRequest extends js.Object {
     var ChangeToken: ChangeToken
     var RuleGroupId: ResourceId
     var Updates: RuleGroupUpdates
   }
 
-  object UpdateRuleGroupRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        RuleGroupId: ResourceId,
-        Updates: RuleGroupUpdates
-    ): UpdateRuleGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any],
-        "Updates"     -> Updates.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateRuleGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateRuleGroupResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
   }
 
-  object UpdateRuleGroupResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
-    ): UpdateRuleGroupResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateRuleGroupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateRuleRequest extends js.Object {
     var ChangeToken: ChangeToken
     var RuleId: ResourceId
     var Updates: RuleUpdates
   }
 
-  object UpdateRuleRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        RuleId: ResourceId,
-        Updates: RuleUpdates
-    ): UpdateRuleRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "RuleId"      -> RuleId.asInstanceOf[js.Any],
-        "Updates"     -> Updates.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateRuleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateRuleResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
   }
 
-  object UpdateRuleResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
-    ): UpdateRuleResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateRuleResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateSizeConstraintSetRequest extends js.Object {
     var ChangeToken: ChangeToken
     var SizeConstraintSetId: ResourceId
     var Updates: SizeConstraintSetUpdates
   }
 
-  object UpdateSizeConstraintSetRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        SizeConstraintSetId: ResourceId,
-        Updates: SizeConstraintSetUpdates
-    ): UpdateSizeConstraintSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken"         -> ChangeToken.asInstanceOf[js.Any],
-        "SizeConstraintSetId" -> SizeConstraintSetId.asInstanceOf[js.Any],
-        "Updates"             -> Updates.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateSizeConstraintSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateSizeConstraintSetResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
-  }
-
-  object UpdateSizeConstraintSetResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
-    ): UpdateSizeConstraintSetResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateSizeConstraintSetResponse]
-    }
   }
 
   /**
     * A request to update a <a>SqlInjectionMatchSet</a>.
     */
   @js.native
+  @Factory
   trait UpdateSqlInjectionMatchSetRequest extends js.Object {
     var ChangeToken: ChangeToken
     var SqlInjectionMatchSetId: ResourceId
     var Updates: SqlInjectionMatchSetUpdates
   }
 
-  object UpdateSqlInjectionMatchSetRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        SqlInjectionMatchSetId: ResourceId,
-        Updates: SqlInjectionMatchSetUpdates
-    ): UpdateSqlInjectionMatchSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken"            -> ChangeToken.asInstanceOf[js.Any],
-        "SqlInjectionMatchSetId" -> SqlInjectionMatchSetId.asInstanceOf[js.Any],
-        "Updates"                -> Updates.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateSqlInjectionMatchSetRequest]
-    }
-  }
-
   /**
     * The response to an <a>UpdateSqlInjectionMatchSets</a> request.
     */
   @js.native
+  @Factory
   trait UpdateSqlInjectionMatchSetResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
   }
 
-  object UpdateSqlInjectionMatchSetResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
-    ): UpdateSqlInjectionMatchSetResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateSqlInjectionMatchSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateWebACLRequest extends js.Object {
     var ChangeToken: ChangeToken
     var WebACLId: ResourceId
@@ -5054,106 +2544,39 @@ package waf {
     var Updates: js.UndefOr[WebACLUpdates]
   }
 
-  object UpdateWebACLRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        WebACLId: ResourceId,
-        DefaultAction: js.UndefOr[WafAction] = js.undefined,
-        Updates: js.UndefOr[WebACLUpdates] = js.undefined
-    ): UpdateWebACLRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "WebACLId"    -> WebACLId.asInstanceOf[js.Any]
-      )
-
-      DefaultAction.foreach(__v => __obj.updateDynamic("DefaultAction")(__v.asInstanceOf[js.Any]))
-      Updates.foreach(__v => __obj.updateDynamic("Updates")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateWebACLRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateWebACLResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
-  }
-
-  object UpdateWebACLResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
-    ): UpdateWebACLResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateWebACLResponse]
-    }
   }
 
   /**
     * A request to update an <a>XssMatchSet</a>.
     */
   @js.native
+  @Factory
   trait UpdateXssMatchSetRequest extends js.Object {
     var ChangeToken: ChangeToken
     var Updates: XssMatchSetUpdates
     var XssMatchSetId: ResourceId
   }
 
-  object UpdateXssMatchSetRequest {
-    @inline
-    def apply(
-        ChangeToken: ChangeToken,
-        Updates: XssMatchSetUpdates,
-        XssMatchSetId: ResourceId
-    ): UpdateXssMatchSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChangeToken"   -> ChangeToken.asInstanceOf[js.Any],
-        "Updates"       -> Updates.asInstanceOf[js.Any],
-        "XssMatchSetId" -> XssMatchSetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateXssMatchSetRequest]
-    }
-  }
-
   /**
     * The response to an <a>UpdateXssMatchSets</a> request.
     */
   @js.native
+  @Factory
   trait UpdateXssMatchSetResponse extends js.Object {
     var ChangeToken: js.UndefOr[ChangeToken]
-  }
-
-  object UpdateXssMatchSetResponse {
-    @inline
-    def apply(
-        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
-    ): UpdateXssMatchSetResponse = {
-      val __obj = js.Dynamic.literal()
-      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateXssMatchSetResponse]
-    }
   }
 
   /**
     * For the action that is associated with a rule in a <code>WebACL</code>, specifies the action that you want AWS WAF to perform when a web request matches all of the conditions in a rule. For the default action in a <code>WebACL</code>, specifies the action that you want AWS WAF to take when a web request doesn't match all of the conditions in any of the rules in a <code>WebACL</code>.
     */
   @js.native
+  @Factory
   trait WafAction extends js.Object {
     var Type: WafActionType
-  }
-
-  object WafAction {
-    @inline
-    def apply(
-        Type: WafActionType
-    ): WafAction = {
-      val __obj = js.Dynamic.literal(
-        "Type" -> Type.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[WafAction]
-    }
   }
 
   @js.native
@@ -5170,21 +2593,9 @@ package waf {
     * The action to take if any rule within the <code>RuleGroup</code> matches a request.
     */
   @js.native
+  @Factory
   trait WafOverrideAction extends js.Object {
     var Type: WafOverrideActionType
-  }
-
-  object WafOverrideAction {
-    @inline
-    def apply(
-        Type: WafOverrideActionType
-    ): WafOverrideAction = {
-      val __obj = js.Dynamic.literal(
-        "Type" -> Type.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[WafOverrideAction]
-    }
   }
 
   @js.native
@@ -5210,6 +2621,7 @@ package waf {
     * Contains the <code>Rules</code> that identify the requests that you want to allow, block, or count. In a <code>WebACL</code>, you also specify a default action (<code>ALLOW</code> or <code>BLOCK</code>), and the action for each <code>Rule</code> that you add to a <code>WebACL</code>, for example, block requests from specified IP addresses or block requests from specified referrers. You also associate the <code>WebACL</code> with a CloudFront distribution to identify the requests that you want AWS WAF to filter. If you add more than one <code>Rule</code> to a <code>WebACL</code>, a request needs to match only one of the specifications to be allowed, blocked, or counted. For more information, see <a>UpdateWebACL</a>.
     */
   @js.native
+  @Factory
   trait WebACL extends js.Object {
     var DefaultAction: WafAction
     var Rules: ActivatedRules
@@ -5219,173 +2631,64 @@ package waf {
     var WebACLArn: js.UndefOr[ResourceArn]
   }
 
-  object WebACL {
-    @inline
-    def apply(
-        DefaultAction: WafAction,
-        Rules: ActivatedRules,
-        WebACLId: ResourceId,
-        MetricName: js.UndefOr[MetricName] = js.undefined,
-        Name: js.UndefOr[ResourceName] = js.undefined,
-        WebACLArn: js.UndefOr[ResourceArn] = js.undefined
-    ): WebACL = {
-      val __obj = js.Dynamic.literal(
-        "DefaultAction" -> DefaultAction.asInstanceOf[js.Any],
-        "Rules"         -> Rules.asInstanceOf[js.Any],
-        "WebACLId"      -> WebACLId.asInstanceOf[js.Any]
-      )
-
-      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      WebACLArn.foreach(__v => __obj.updateDynamic("WebACLArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[WebACL]
-    }
-  }
-
   /**
     * Contains the identifier and the name or description of the <a>WebACL</a>.
     */
   @js.native
+  @Factory
   trait WebACLSummary extends js.Object {
     var Name: ResourceName
     var WebACLId: ResourceId
-  }
-
-  object WebACLSummary {
-    @inline
-    def apply(
-        Name: ResourceName,
-        WebACLId: ResourceId
-    ): WebACLSummary = {
-      val __obj = js.Dynamic.literal(
-        "Name"     -> Name.asInstanceOf[js.Any],
-        "WebACLId" -> WebACLId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[WebACLSummary]
-    }
   }
 
   /**
     * Specifies whether to insert a <code>Rule</code> into or delete a <code>Rule</code> from a <code>WebACL</code>.
     */
   @js.native
+  @Factory
   trait WebACLUpdate extends js.Object {
     var Action: ChangeAction
     var ActivatedRule: ActivatedRule
-  }
-
-  object WebACLUpdate {
-    @inline
-    def apply(
-        Action: ChangeAction,
-        ActivatedRule: ActivatedRule
-    ): WebACLUpdate = {
-      val __obj = js.Dynamic.literal(
-        "Action"        -> Action.asInstanceOf[js.Any],
-        "ActivatedRule" -> ActivatedRule.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[WebACLUpdate]
-    }
   }
 
   /**
     * A complex type that contains <code>XssMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header. If a <code>XssMatchSet</code> contains more than one <code>XssMatchTuple</code> object, a request needs to include cross-site scripting attacks in only one of the specified parts of the request to be considered a match.
     */
   @js.native
+  @Factory
   trait XssMatchSet extends js.Object {
     var XssMatchSetId: ResourceId
     var XssMatchTuples: XssMatchTuples
     var Name: js.UndefOr[ResourceName]
   }
 
-  object XssMatchSet {
-    @inline
-    def apply(
-        XssMatchSetId: ResourceId,
-        XssMatchTuples: XssMatchTuples,
-        Name: js.UndefOr[ResourceName] = js.undefined
-    ): XssMatchSet = {
-      val __obj = js.Dynamic.literal(
-        "XssMatchSetId"  -> XssMatchSetId.asInstanceOf[js.Any],
-        "XssMatchTuples" -> XssMatchTuples.asInstanceOf[js.Any]
-      )
-
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[XssMatchSet]
-    }
-  }
-
   /**
     * The <code>Id</code> and <code>Name</code> of an <code>XssMatchSet</code>.
     */
   @js.native
+  @Factory
   trait XssMatchSetSummary extends js.Object {
     var Name: ResourceName
     var XssMatchSetId: ResourceId
-  }
-
-  object XssMatchSetSummary {
-    @inline
-    def apply(
-        Name: ResourceName,
-        XssMatchSetId: ResourceId
-    ): XssMatchSetSummary = {
-      val __obj = js.Dynamic.literal(
-        "Name"          -> Name.asInstanceOf[js.Any],
-        "XssMatchSetId" -> XssMatchSetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[XssMatchSetSummary]
-    }
   }
 
   /**
     * Specifies the part of a web request that you want to inspect for cross-site scripting attacks and indicates whether you want to add the specification to an <a>XssMatchSet</a> or delete it from an <code>XssMatchSet</code>.
     */
   @js.native
+  @Factory
   trait XssMatchSetUpdate extends js.Object {
     var Action: ChangeAction
     var XssMatchTuple: XssMatchTuple
-  }
-
-  object XssMatchSetUpdate {
-    @inline
-    def apply(
-        Action: ChangeAction,
-        XssMatchTuple: XssMatchTuple
-    ): XssMatchSetUpdate = {
-      val __obj = js.Dynamic.literal(
-        "Action"        -> Action.asInstanceOf[js.Any],
-        "XssMatchTuple" -> XssMatchTuple.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[XssMatchSetUpdate]
-    }
   }
 
   /**
     * Specifies the part of a web request that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header.
     */
   @js.native
+  @Factory
   trait XssMatchTuple extends js.Object {
     var FieldToMatch: FieldToMatch
     var TextTransformation: TextTransformation
-  }
-
-  object XssMatchTuple {
-    @inline
-    def apply(
-        FieldToMatch: FieldToMatch,
-        TextTransformation: TextTransformation
-    ): XssMatchTuple = {
-      val __obj = js.Dynamic.literal(
-        "FieldToMatch"       -> FieldToMatch.asInstanceOf[js.Any],
-        "TextTransformation" -> TextTransformation.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[XssMatchTuple]
-    }
   }
 }

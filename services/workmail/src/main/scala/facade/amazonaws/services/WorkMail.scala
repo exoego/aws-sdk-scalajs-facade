@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object workmail {
   type AccessControlRuleAction      = String
@@ -212,6 +213,7 @@ package workmail {
     * A rule that controls access to an Amazon WorkMail organization.
     */
   @js.native
+  @Factory
   trait AccessControlRule extends js.Object {
     var Actions: js.UndefOr[ActionsList]
     var DateCreated: js.UndefOr[Timestamp]
@@ -226,37 +228,6 @@ package workmail {
     var UserIds: js.UndefOr[UserIdList]
   }
 
-  object AccessControlRule {
-    @inline
-    def apply(
-        Actions: js.UndefOr[ActionsList] = js.undefined,
-        DateCreated: js.UndefOr[Timestamp] = js.undefined,
-        DateModified: js.UndefOr[Timestamp] = js.undefined,
-        Description: js.UndefOr[AccessControlRuleDescription] = js.undefined,
-        Effect: js.UndefOr[AccessControlRuleEffect] = js.undefined,
-        IpRanges: js.UndefOr[IpRangeList] = js.undefined,
-        Name: js.UndefOr[AccessControlRuleName] = js.undefined,
-        NotActions: js.UndefOr[ActionsList] = js.undefined,
-        NotIpRanges: js.UndefOr[IpRangeList] = js.undefined,
-        NotUserIds: js.UndefOr[UserIdList] = js.undefined,
-        UserIds: js.UndefOr[UserIdList] = js.undefined
-    ): AccessControlRule = {
-      val __obj = js.Dynamic.literal()
-      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
-      DateCreated.foreach(__v => __obj.updateDynamic("DateCreated")(__v.asInstanceOf[js.Any]))
-      DateModified.foreach(__v => __obj.updateDynamic("DateModified")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Effect.foreach(__v => __obj.updateDynamic("Effect")(__v.asInstanceOf[js.Any]))
-      IpRanges.foreach(__v => __obj.updateDynamic("IpRanges")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      NotActions.foreach(__v => __obj.updateDynamic("NotActions")(__v.asInstanceOf[js.Any]))
-      NotIpRanges.foreach(__v => __obj.updateDynamic("NotIpRanges")(__v.asInstanceOf[js.Any]))
-      NotUserIds.foreach(__v => __obj.updateDynamic("NotUserIds")(__v.asInstanceOf[js.Any]))
-      UserIds.foreach(__v => __obj.updateDynamic("UserIds")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AccessControlRule]
-    }
-  }
-
   @js.native
   sealed trait AccessControlRuleEffect extends js.Any
   object AccessControlRuleEffect extends js.Object {
@@ -267,223 +238,81 @@ package workmail {
   }
 
   @js.native
+  @Factory
   trait AssociateDelegateToResourceRequest extends js.Object {
     var EntityId: WorkMailIdentifier
     var OrganizationId: OrganizationId
     var ResourceId: ResourceId
   }
 
-  object AssociateDelegateToResourceRequest {
-    @inline
-    def apply(
-        EntityId: WorkMailIdentifier,
-        OrganizationId: OrganizationId,
-        ResourceId: ResourceId
-    ): AssociateDelegateToResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "EntityId"       -> EntityId.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "ResourceId"     -> ResourceId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AssociateDelegateToResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateDelegateToResourceResponse extends js.Object {}
 
-  object AssociateDelegateToResourceResponse {
-    @inline
-    def apply(
-    ): AssociateDelegateToResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[AssociateDelegateToResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateMemberToGroupRequest extends js.Object {
     var GroupId: WorkMailIdentifier
     var MemberId: WorkMailIdentifier
     var OrganizationId: OrganizationId
   }
 
-  object AssociateMemberToGroupRequest {
-    @inline
-    def apply(
-        GroupId: WorkMailIdentifier,
-        MemberId: WorkMailIdentifier,
-        OrganizationId: OrganizationId
-    ): AssociateMemberToGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "GroupId"        -> GroupId.asInstanceOf[js.Any],
-        "MemberId"       -> MemberId.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AssociateMemberToGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateMemberToGroupResponse extends js.Object {}
-
-  object AssociateMemberToGroupResponse {
-    @inline
-    def apply(
-    ): AssociateMemberToGroupResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[AssociateMemberToGroupResponse]
-    }
-  }
 
   /**
     * At least one delegate must be associated to the resource to disable automatic replies from the resource.
     */
   @js.native
+  @Factory
   trait BookingOptions extends js.Object {
     var AutoAcceptRequests: js.UndefOr[Boolean]
     var AutoDeclineConflictingRequests: js.UndefOr[Boolean]
     var AutoDeclineRecurringRequests: js.UndefOr[Boolean]
   }
 
-  object BookingOptions {
-    @inline
-    def apply(
-        AutoAcceptRequests: js.UndefOr[Boolean] = js.undefined,
-        AutoDeclineConflictingRequests: js.UndefOr[Boolean] = js.undefined,
-        AutoDeclineRecurringRequests: js.UndefOr[Boolean] = js.undefined
-    ): BookingOptions = {
-      val __obj = js.Dynamic.literal()
-      AutoAcceptRequests.foreach(__v => __obj.updateDynamic("AutoAcceptRequests")(__v.asInstanceOf[js.Any]))
-      AutoDeclineConflictingRequests.foreach(__v =>
-        __obj.updateDynamic("AutoDeclineConflictingRequests")(__v.asInstanceOf[js.Any])
-      )
-      AutoDeclineRecurringRequests.foreach(__v =>
-        __obj.updateDynamic("AutoDeclineRecurringRequests")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[BookingOptions]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateAliasRequest extends js.Object {
     var Alias: EmailAddress
     var EntityId: WorkMailIdentifier
     var OrganizationId: OrganizationId
   }
 
-  object CreateAliasRequest {
-    @inline
-    def apply(
-        Alias: EmailAddress,
-        EntityId: WorkMailIdentifier,
-        OrganizationId: OrganizationId
-    ): CreateAliasRequest = {
-      val __obj = js.Dynamic.literal(
-        "Alias"          -> Alias.asInstanceOf[js.Any],
-        "EntityId"       -> EntityId.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateAliasRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateAliasResponse extends js.Object {}
 
-  object CreateAliasResponse {
-    @inline
-    def apply(
-    ): CreateAliasResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[CreateAliasResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateGroupRequest extends js.Object {
     var Name: GroupName
     var OrganizationId: OrganizationId
   }
 
-  object CreateGroupRequest {
-    @inline
-    def apply(
-        Name: GroupName,
-        OrganizationId: OrganizationId
-    ): CreateGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name"           -> Name.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateGroupResponse extends js.Object {
     var GroupId: js.UndefOr[WorkMailIdentifier]
   }
 
-  object CreateGroupResponse {
-    @inline
-    def apply(
-        GroupId: js.UndefOr[WorkMailIdentifier] = js.undefined
-    ): CreateGroupResponse = {
-      val __obj = js.Dynamic.literal()
-      GroupId.foreach(__v => __obj.updateDynamic("GroupId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateGroupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateResourceRequest extends js.Object {
     var Name: ResourceName
     var OrganizationId: OrganizationId
     var Type: ResourceType
   }
 
-  object CreateResourceRequest {
-    @inline
-    def apply(
-        Name: ResourceName,
-        OrganizationId: OrganizationId,
-        Type: ResourceType
-    ): CreateResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name"           -> Name.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "Type"           -> Type.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateResourceResponse extends js.Object {
     var ResourceId: js.UndefOr[ResourceId]
   }
 
-  object CreateResourceResponse {
-    @inline
-    def apply(
-        ResourceId: js.UndefOr[ResourceId] = js.undefined
-    ): CreateResourceResponse = {
-      val __obj = js.Dynamic.literal()
-      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateUserRequest extends js.Object {
     var DisplayName: String
     var Name: UserName
@@ -491,331 +320,110 @@ package workmail {
     var Password: Password
   }
 
-  object CreateUserRequest {
-    @inline
-    def apply(
-        DisplayName: String,
-        Name: UserName,
-        OrganizationId: OrganizationId,
-        Password: Password
-    ): CreateUserRequest = {
-      val __obj = js.Dynamic.literal(
-        "DisplayName"    -> DisplayName.asInstanceOf[js.Any],
-        "Name"           -> Name.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "Password"       -> Password.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateUserRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateUserResponse extends js.Object {
     var UserId: js.UndefOr[WorkMailIdentifier]
-  }
-
-  object CreateUserResponse {
-    @inline
-    def apply(
-        UserId: js.UndefOr[WorkMailIdentifier] = js.undefined
-    ): CreateUserResponse = {
-      val __obj = js.Dynamic.literal()
-      UserId.foreach(__v => __obj.updateDynamic("UserId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateUserResponse]
-    }
   }
 
   /**
     * The name of the attribute, which is one of the values defined in the UserAttribute enumeration.
     */
   @js.native
+  @Factory
   trait Delegate extends js.Object {
     var Id: String
     var Type: MemberType
   }
 
-  object Delegate {
-    @inline
-    def apply(
-        Id: String,
-        Type: MemberType
-    ): Delegate = {
-      val __obj = js.Dynamic.literal(
-        "Id"   -> Id.asInstanceOf[js.Any],
-        "Type" -> Type.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Delegate]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteAccessControlRuleRequest extends js.Object {
     var Name: AccessControlRuleName
     var OrganizationId: js.UndefOr[OrganizationId]
   }
 
-  object DeleteAccessControlRuleRequest {
-    @inline
-    def apply(
-        Name: AccessControlRuleName,
-        OrganizationId: js.UndefOr[OrganizationId] = js.undefined
-    ): DeleteAccessControlRuleRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      OrganizationId.foreach(__v => __obj.updateDynamic("OrganizationId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteAccessControlRuleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteAccessControlRuleResponse extends js.Object {}
 
-  object DeleteAccessControlRuleResponse {
-    @inline
-    def apply(
-    ): DeleteAccessControlRuleResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteAccessControlRuleResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteAliasRequest extends js.Object {
     var Alias: EmailAddress
     var EntityId: WorkMailIdentifier
     var OrganizationId: OrganizationId
   }
 
-  object DeleteAliasRequest {
-    @inline
-    def apply(
-        Alias: EmailAddress,
-        EntityId: WorkMailIdentifier,
-        OrganizationId: OrganizationId
-    ): DeleteAliasRequest = {
-      val __obj = js.Dynamic.literal(
-        "Alias"          -> Alias.asInstanceOf[js.Any],
-        "EntityId"       -> EntityId.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteAliasRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteAliasResponse extends js.Object {}
 
-  object DeleteAliasResponse {
-    @inline
-    def apply(
-    ): DeleteAliasResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteAliasResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteGroupRequest extends js.Object {
     var GroupId: WorkMailIdentifier
     var OrganizationId: OrganizationId
   }
 
-  object DeleteGroupRequest {
-    @inline
-    def apply(
-        GroupId: WorkMailIdentifier,
-        OrganizationId: OrganizationId
-    ): DeleteGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "GroupId"        -> GroupId.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteGroupResponse extends js.Object {}
 
-  object DeleteGroupResponse {
-    @inline
-    def apply(
-    ): DeleteGroupResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteGroupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteMailboxPermissionsRequest extends js.Object {
     var EntityId: WorkMailIdentifier
     var GranteeId: WorkMailIdentifier
     var OrganizationId: OrganizationId
   }
 
-  object DeleteMailboxPermissionsRequest {
-    @inline
-    def apply(
-        EntityId: WorkMailIdentifier,
-        GranteeId: WorkMailIdentifier,
-        OrganizationId: OrganizationId
-    ): DeleteMailboxPermissionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "EntityId"       -> EntityId.asInstanceOf[js.Any],
-        "GranteeId"      -> GranteeId.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteMailboxPermissionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteMailboxPermissionsResponse extends js.Object {}
 
-  object DeleteMailboxPermissionsResponse {
-    @inline
-    def apply(
-    ): DeleteMailboxPermissionsResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteMailboxPermissionsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteResourceRequest extends js.Object {
     var OrganizationId: OrganizationId
     var ResourceId: ResourceId
   }
 
-  object DeleteResourceRequest {
-    @inline
-    def apply(
-        OrganizationId: OrganizationId,
-        ResourceId: ResourceId
-    ): DeleteResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "ResourceId"     -> ResourceId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteResourceResponse extends js.Object {}
 
-  object DeleteResourceResponse {
-    @inline
-    def apply(
-    ): DeleteResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteUserRequest extends js.Object {
     var OrganizationId: OrganizationId
     var UserId: WorkMailIdentifier
   }
 
-  object DeleteUserRequest {
-    @inline
-    def apply(
-        OrganizationId: OrganizationId,
-        UserId: WorkMailIdentifier
-    ): DeleteUserRequest = {
-      val __obj = js.Dynamic.literal(
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "UserId"         -> UserId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteUserRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteUserResponse extends js.Object {}
 
-  object DeleteUserResponse {
-    @inline
-    def apply(
-    ): DeleteUserResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteUserResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeregisterFromWorkMailRequest extends js.Object {
     var EntityId: WorkMailIdentifier
     var OrganizationId: OrganizationId
   }
 
-  object DeregisterFromWorkMailRequest {
-    @inline
-    def apply(
-        EntityId: WorkMailIdentifier,
-        OrganizationId: OrganizationId
-    ): DeregisterFromWorkMailRequest = {
-      val __obj = js.Dynamic.literal(
-        "EntityId"       -> EntityId.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeregisterFromWorkMailRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeregisterFromWorkMailResponse extends js.Object {}
 
-  object DeregisterFromWorkMailResponse {
-    @inline
-    def apply(
-    ): DeregisterFromWorkMailResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeregisterFromWorkMailResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeGroupRequest extends js.Object {
     var GroupId: WorkMailIdentifier
     var OrganizationId: OrganizationId
   }
 
-  object DescribeGroupRequest {
-    @inline
-    def apply(
-        GroupId: WorkMailIdentifier,
-        OrganizationId: OrganizationId
-    ): DescribeGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "GroupId"        -> GroupId.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeGroupResponse extends js.Object {
     var DisabledDate: js.UndefOr[Timestamp]
     var Email: js.UndefOr[EmailAddress]
@@ -825,46 +433,14 @@ package workmail {
     var State: js.UndefOr[EntityState]
   }
 
-  object DescribeGroupResponse {
-    @inline
-    def apply(
-        DisabledDate: js.UndefOr[Timestamp] = js.undefined,
-        Email: js.UndefOr[EmailAddress] = js.undefined,
-        EnabledDate: js.UndefOr[Timestamp] = js.undefined,
-        GroupId: js.UndefOr[WorkMailIdentifier] = js.undefined,
-        Name: js.UndefOr[GroupName] = js.undefined,
-        State: js.UndefOr[EntityState] = js.undefined
-    ): DescribeGroupResponse = {
-      val __obj = js.Dynamic.literal()
-      DisabledDate.foreach(__v => __obj.updateDynamic("DisabledDate")(__v.asInstanceOf[js.Any]))
-      Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
-      EnabledDate.foreach(__v => __obj.updateDynamic("EnabledDate")(__v.asInstanceOf[js.Any]))
-      GroupId.foreach(__v => __obj.updateDynamic("GroupId")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeGroupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeOrganizationRequest extends js.Object {
     var OrganizationId: OrganizationId
   }
 
-  object DescribeOrganizationRequest {
-    @inline
-    def apply(
-        OrganizationId: OrganizationId
-    ): DescribeOrganizationRequest = {
-      val __obj = js.Dynamic.literal(
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeOrganizationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeOrganizationResponse extends js.Object {
     var ARN: js.UndefOr[AmazonResourceName]
     var Alias: js.UndefOr[OrganizationName]
@@ -877,55 +453,15 @@ package workmail {
     var State: js.UndefOr[String]
   }
 
-  object DescribeOrganizationResponse {
-    @inline
-    def apply(
-        ARN: js.UndefOr[AmazonResourceName] = js.undefined,
-        Alias: js.UndefOr[OrganizationName] = js.undefined,
-        CompletedDate: js.UndefOr[Timestamp] = js.undefined,
-        DefaultMailDomain: js.UndefOr[String] = js.undefined,
-        DirectoryId: js.UndefOr[String] = js.undefined,
-        DirectoryType: js.UndefOr[String] = js.undefined,
-        ErrorMessage: js.UndefOr[String] = js.undefined,
-        OrganizationId: js.UndefOr[OrganizationId] = js.undefined,
-        State: js.UndefOr[String] = js.undefined
-    ): DescribeOrganizationResponse = {
-      val __obj = js.Dynamic.literal()
-      ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
-      Alias.foreach(__v => __obj.updateDynamic("Alias")(__v.asInstanceOf[js.Any]))
-      CompletedDate.foreach(__v => __obj.updateDynamic("CompletedDate")(__v.asInstanceOf[js.Any]))
-      DefaultMailDomain.foreach(__v => __obj.updateDynamic("DefaultMailDomain")(__v.asInstanceOf[js.Any]))
-      DirectoryId.foreach(__v => __obj.updateDynamic("DirectoryId")(__v.asInstanceOf[js.Any]))
-      DirectoryType.foreach(__v => __obj.updateDynamic("DirectoryType")(__v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
-      OrganizationId.foreach(__v => __obj.updateDynamic("OrganizationId")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeOrganizationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeResourceRequest extends js.Object {
     var OrganizationId: OrganizationId
     var ResourceId: ResourceId
   }
 
-  object DescribeResourceRequest {
-    @inline
-    def apply(
-        OrganizationId: OrganizationId,
-        ResourceId: ResourceId
-    ): DescribeResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "ResourceId"     -> ResourceId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeResourceResponse extends js.Object {
     var BookingOptions: js.UndefOr[BookingOptions]
     var DisabledDate: js.UndefOr[Timestamp]
@@ -937,53 +473,15 @@ package workmail {
     var Type: js.UndefOr[ResourceType]
   }
 
-  object DescribeResourceResponse {
-    @inline
-    def apply(
-        BookingOptions: js.UndefOr[BookingOptions] = js.undefined,
-        DisabledDate: js.UndefOr[Timestamp] = js.undefined,
-        Email: js.UndefOr[EmailAddress] = js.undefined,
-        EnabledDate: js.UndefOr[Timestamp] = js.undefined,
-        Name: js.UndefOr[ResourceName] = js.undefined,
-        ResourceId: js.UndefOr[ResourceId] = js.undefined,
-        State: js.UndefOr[EntityState] = js.undefined,
-        Type: js.UndefOr[ResourceType] = js.undefined
-    ): DescribeResourceResponse = {
-      val __obj = js.Dynamic.literal()
-      BookingOptions.foreach(__v => __obj.updateDynamic("BookingOptions")(__v.asInstanceOf[js.Any]))
-      DisabledDate.foreach(__v => __obj.updateDynamic("DisabledDate")(__v.asInstanceOf[js.Any]))
-      Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
-      EnabledDate.foreach(__v => __obj.updateDynamic("EnabledDate")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeUserRequest extends js.Object {
     var OrganizationId: OrganizationId
     var UserId: WorkMailIdentifier
   }
 
-  object DescribeUserRequest {
-    @inline
-    def apply(
-        OrganizationId: OrganizationId,
-        UserId: WorkMailIdentifier
-    ): DescribeUserRequest = {
-      val __obj = js.Dynamic.literal(
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "UserId"         -> UserId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeUserRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeUserResponse extends js.Object {
     var DisabledDate: js.UndefOr[Timestamp]
     var DisplayName: js.UndefOr[String]
@@ -995,104 +493,29 @@ package workmail {
     var UserRole: js.UndefOr[UserRole]
   }
 
-  object DescribeUserResponse {
-    @inline
-    def apply(
-        DisabledDate: js.UndefOr[Timestamp] = js.undefined,
-        DisplayName: js.UndefOr[String] = js.undefined,
-        Email: js.UndefOr[EmailAddress] = js.undefined,
-        EnabledDate: js.UndefOr[Timestamp] = js.undefined,
-        Name: js.UndefOr[UserName] = js.undefined,
-        State: js.UndefOr[EntityState] = js.undefined,
-        UserId: js.UndefOr[WorkMailIdentifier] = js.undefined,
-        UserRole: js.UndefOr[UserRole] = js.undefined
-    ): DescribeUserResponse = {
-      val __obj = js.Dynamic.literal()
-      DisabledDate.foreach(__v => __obj.updateDynamic("DisabledDate")(__v.asInstanceOf[js.Any]))
-      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
-      Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
-      EnabledDate.foreach(__v => __obj.updateDynamic("EnabledDate")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      UserId.foreach(__v => __obj.updateDynamic("UserId")(__v.asInstanceOf[js.Any]))
-      UserRole.foreach(__v => __obj.updateDynamic("UserRole")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeUserResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateDelegateFromResourceRequest extends js.Object {
     var EntityId: WorkMailIdentifier
     var OrganizationId: OrganizationId
     var ResourceId: ResourceId
   }
 
-  object DisassociateDelegateFromResourceRequest {
-    @inline
-    def apply(
-        EntityId: WorkMailIdentifier,
-        OrganizationId: OrganizationId,
-        ResourceId: ResourceId
-    ): DisassociateDelegateFromResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "EntityId"       -> EntityId.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "ResourceId"     -> ResourceId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisassociateDelegateFromResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateDelegateFromResourceResponse extends js.Object {}
 
-  object DisassociateDelegateFromResourceResponse {
-    @inline
-    def apply(
-    ): DisassociateDelegateFromResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DisassociateDelegateFromResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateMemberFromGroupRequest extends js.Object {
     var GroupId: WorkMailIdentifier
     var MemberId: WorkMailIdentifier
     var OrganizationId: OrganizationId
   }
 
-  object DisassociateMemberFromGroupRequest {
-    @inline
-    def apply(
-        GroupId: WorkMailIdentifier,
-        MemberId: WorkMailIdentifier,
-        OrganizationId: OrganizationId
-    ): DisassociateMemberFromGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "GroupId"        -> GroupId.asInstanceOf[js.Any],
-        "MemberId"       -> MemberId.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisassociateMemberFromGroupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateMemberFromGroupResponse extends js.Object {}
-
-  object DisassociateMemberFromGroupResponse {
-    @inline
-    def apply(
-    ): DisassociateMemberFromGroupResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DisassociateMemberFromGroupResponse]
-    }
-  }
 
   @js.native
   sealed trait EntityState extends js.Any
@@ -1105,6 +528,7 @@ package workmail {
   }
 
   @js.native
+  @Factory
   trait GetAccessControlEffectRequest extends js.Object {
     var Action: AccessControlRuleAction
     var IpAddress: IpAddress
@@ -1112,88 +536,32 @@ package workmail {
     var UserId: WorkMailIdentifier
   }
 
-  object GetAccessControlEffectRequest {
-    @inline
-    def apply(
-        Action: AccessControlRuleAction,
-        IpAddress: IpAddress,
-        OrganizationId: OrganizationId,
-        UserId: WorkMailIdentifier
-    ): GetAccessControlEffectRequest = {
-      val __obj = js.Dynamic.literal(
-        "Action"         -> Action.asInstanceOf[js.Any],
-        "IpAddress"      -> IpAddress.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "UserId"         -> UserId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetAccessControlEffectRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetAccessControlEffectResponse extends js.Object {
     var Effect: js.UndefOr[AccessControlRuleEffect]
     var MatchedRules: js.UndefOr[AccessControlRuleNameList]
   }
 
-  object GetAccessControlEffectResponse {
-    @inline
-    def apply(
-        Effect: js.UndefOr[AccessControlRuleEffect] = js.undefined,
-        MatchedRules: js.UndefOr[AccessControlRuleNameList] = js.undefined
-    ): GetAccessControlEffectResponse = {
-      val __obj = js.Dynamic.literal()
-      Effect.foreach(__v => __obj.updateDynamic("Effect")(__v.asInstanceOf[js.Any]))
-      MatchedRules.foreach(__v => __obj.updateDynamic("MatchedRules")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetAccessControlEffectResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetMailboxDetailsRequest extends js.Object {
     var OrganizationId: OrganizationId
     var UserId: WorkMailIdentifier
   }
 
-  object GetMailboxDetailsRequest {
-    @inline
-    def apply(
-        OrganizationId: OrganizationId,
-        UserId: WorkMailIdentifier
-    ): GetMailboxDetailsRequest = {
-      val __obj = js.Dynamic.literal(
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "UserId"         -> UserId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetMailboxDetailsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetMailboxDetailsResponse extends js.Object {
     var MailboxQuota: js.UndefOr[MailboxQuota]
     var MailboxSize: js.UndefOr[MailboxSize]
-  }
-
-  object GetMailboxDetailsResponse {
-    @inline
-    def apply(
-        MailboxQuota: js.UndefOr[MailboxQuota] = js.undefined,
-        MailboxSize: js.UndefOr[MailboxSize] = js.undefined
-    ): GetMailboxDetailsResponse = {
-      val __obj = js.Dynamic.literal()
-      MailboxQuota.foreach(__v => __obj.updateDynamic("MailboxQuota")(__v.asInstanceOf[js.Any]))
-      MailboxSize.foreach(__v => __obj.updateDynamic("MailboxSize")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetMailboxDetailsResponse]
-    }
   }
 
   /**
     * The representation of an Amazon WorkMail group.
     */
   @js.native
+  @Factory
   trait Group extends js.Object {
     var DisabledDate: js.UndefOr[Timestamp]
     var Email: js.UndefOr[EmailAddress]
@@ -1203,62 +571,20 @@ package workmail {
     var State: js.UndefOr[EntityState]
   }
 
-  object Group {
-    @inline
-    def apply(
-        DisabledDate: js.UndefOr[Timestamp] = js.undefined,
-        Email: js.UndefOr[EmailAddress] = js.undefined,
-        EnabledDate: js.UndefOr[Timestamp] = js.undefined,
-        Id: js.UndefOr[WorkMailIdentifier] = js.undefined,
-        Name: js.UndefOr[GroupName] = js.undefined,
-        State: js.UndefOr[EntityState] = js.undefined
-    ): Group = {
-      val __obj = js.Dynamic.literal()
-      DisabledDate.foreach(__v => __obj.updateDynamic("DisabledDate")(__v.asInstanceOf[js.Any]))
-      Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
-      EnabledDate.foreach(__v => __obj.updateDynamic("EnabledDate")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Group]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAccessControlRulesRequest extends js.Object {
     var OrganizationId: OrganizationId
   }
 
-  object ListAccessControlRulesRequest {
-    @inline
-    def apply(
-        OrganizationId: OrganizationId
-    ): ListAccessControlRulesRequest = {
-      val __obj = js.Dynamic.literal(
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListAccessControlRulesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAccessControlRulesResponse extends js.Object {
     var Rules: js.UndefOr[AccessControlRulesList]
   }
 
-  object ListAccessControlRulesResponse {
-    @inline
-    def apply(
-        Rules: js.UndefOr[AccessControlRulesList] = js.undefined
-    ): ListAccessControlRulesResponse = {
-      val __obj = js.Dynamic.literal()
-      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAccessControlRulesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAliasesRequest extends js.Object {
     var EntityId: WorkMailIdentifier
     var OrganizationId: OrganizationId
@@ -1266,45 +592,15 @@ package workmail {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListAliasesRequest {
-    @inline
-    def apply(
-        EntityId: WorkMailIdentifier,
-        OrganizationId: OrganizationId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListAliasesRequest = {
-      val __obj = js.Dynamic.literal(
-        "EntityId"       -> EntityId.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAliasesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAliasesResponse extends js.Object {
     var Aliases: js.UndefOr[Aliases]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListAliasesResponse {
-    @inline
-    def apply(
-        Aliases: js.UndefOr[Aliases] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListAliasesResponse = {
-      val __obj = js.Dynamic.literal()
-      Aliases.foreach(__v => __obj.updateDynamic("Aliases")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAliasesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListGroupMembersRequest extends js.Object {
     var GroupId: WorkMailIdentifier
     var OrganizationId: OrganizationId
@@ -1312,88 +608,30 @@ package workmail {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListGroupMembersRequest {
-    @inline
-    def apply(
-        GroupId: WorkMailIdentifier,
-        OrganizationId: OrganizationId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListGroupMembersRequest = {
-      val __obj = js.Dynamic.literal(
-        "GroupId"        -> GroupId.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListGroupMembersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListGroupMembersResponse extends js.Object {
     var Members: js.UndefOr[Members]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListGroupMembersResponse {
-    @inline
-    def apply(
-        Members: js.UndefOr[Members] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListGroupMembersResponse = {
-      val __obj = js.Dynamic.literal()
-      Members.foreach(__v => __obj.updateDynamic("Members")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListGroupMembersResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListGroupsRequest extends js.Object {
     var OrganizationId: OrganizationId
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListGroupsRequest {
-    @inline
-    def apply(
-        OrganizationId: OrganizationId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListGroupsRequest = {
-      val __obj = js.Dynamic.literal(
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListGroupsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListGroupsResponse extends js.Object {
     var Groups: js.UndefOr[Groups]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListGroupsResponse {
-    @inline
-    def apply(
-        Groups: js.UndefOr[Groups] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListGroupsResponse = {
-      val __obj = js.Dynamic.literal()
-      Groups.foreach(__v => __obj.updateDynamic("Groups")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListGroupsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListMailboxPermissionsRequest extends js.Object {
     var EntityId: WorkMailIdentifier
     var OrganizationId: OrganizationId
@@ -1401,83 +639,29 @@ package workmail {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListMailboxPermissionsRequest {
-    @inline
-    def apply(
-        EntityId: WorkMailIdentifier,
-        OrganizationId: OrganizationId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListMailboxPermissionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "EntityId"       -> EntityId.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListMailboxPermissionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListMailboxPermissionsResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var Permissions: js.UndefOr[Permissions]
   }
 
-  object ListMailboxPermissionsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        Permissions: js.UndefOr[Permissions] = js.undefined
-    ): ListMailboxPermissionsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListMailboxPermissionsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListOrganizationsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListOrganizationsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListOrganizationsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListOrganizationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListOrganizationsResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var OrganizationSummaries: js.UndefOr[OrganizationSummaries]
   }
 
-  object ListOrganizationsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        OrganizationSummaries: js.UndefOr[OrganizationSummaries] = js.undefined
-    ): ListOrganizationsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      OrganizationSummaries.foreach(__v => __obj.updateDynamic("OrganizationSummaries")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListOrganizationsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListResourceDelegatesRequest extends js.Object {
     var OrganizationId: OrganizationId
     var ResourceId: WorkMailIdentifier
@@ -1485,168 +669,60 @@ package workmail {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListResourceDelegatesRequest {
-    @inline
-    def apply(
-        OrganizationId: OrganizationId,
-        ResourceId: WorkMailIdentifier,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListResourceDelegatesRequest = {
-      val __obj = js.Dynamic.literal(
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "ResourceId"     -> ResourceId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListResourceDelegatesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListResourceDelegatesResponse extends js.Object {
     var Delegates: js.UndefOr[ResourceDelegates]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListResourceDelegatesResponse {
-    @inline
-    def apply(
-        Delegates: js.UndefOr[ResourceDelegates] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListResourceDelegatesResponse = {
-      val __obj = js.Dynamic.literal()
-      Delegates.foreach(__v => __obj.updateDynamic("Delegates")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListResourceDelegatesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListResourcesRequest extends js.Object {
     var OrganizationId: OrganizationId
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListResourcesRequest {
-    @inline
-    def apply(
-        OrganizationId: OrganizationId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListResourcesRequest = {
-      val __obj = js.Dynamic.literal(
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListResourcesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListResourcesResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var Resources: js.UndefOr[Resources]
   }
 
-  object ListResourcesResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        Resources: js.UndefOr[Resources] = js.undefined
-    ): ListResourcesResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListResourcesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceRequest extends js.Object {
     var ResourceARN: AmazonResourceName
   }
 
-  object ListTagsForResourceRequest {
-    @inline
-    def apply(
-        ResourceARN: AmazonResourceName
-    ): ListTagsForResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListTagsForResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceResponse extends js.Object {
     var Tags: js.UndefOr[TagList]
   }
 
-  object ListTagsForResourceResponse {
-    @inline
-    def apply(
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): ListTagsForResourceResponse = {
-      val __obj = js.Dynamic.literal()
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListUsersRequest extends js.Object {
     var OrganizationId: OrganizationId
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListUsersRequest {
-    @inline
-    def apply(
-        OrganizationId: OrganizationId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListUsersRequest = {
-      val __obj = js.Dynamic.literal(
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListUsersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListUsersResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var Users: js.UndefOr[Users]
-  }
-
-  object ListUsersResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        Users: js.UndefOr[Users] = js.undefined
-    ): ListUsersResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Users.foreach(__v => __obj.updateDynamic("Users")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListUsersResponse]
-    }
   }
 
   /**
     * The representation of a user or group.
     */
   @js.native
+  @Factory
   trait Member extends js.Object {
     var DisabledDate: js.UndefOr[Timestamp]
     var EnabledDate: js.UndefOr[Timestamp]
@@ -1654,27 +730,6 @@ package workmail {
     var Name: js.UndefOr[String]
     var State: js.UndefOr[EntityState]
     var Type: js.UndefOr[MemberType]
-  }
-
-  object Member {
-    @inline
-    def apply(
-        DisabledDate: js.UndefOr[Timestamp] = js.undefined,
-        EnabledDate: js.UndefOr[Timestamp] = js.undefined,
-        Id: js.UndefOr[String] = js.undefined,
-        Name: js.UndefOr[String] = js.undefined,
-        State: js.UndefOr[EntityState] = js.undefined,
-        Type: js.UndefOr[MemberType] = js.undefined
-    ): Member = {
-      val __obj = js.Dynamic.literal()
-      DisabledDate.foreach(__v => __obj.updateDynamic("DisabledDate")(__v.asInstanceOf[js.Any]))
-      EnabledDate.foreach(__v => __obj.updateDynamic("EnabledDate")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Member]
-    }
   }
 
   @js.native
@@ -1690,6 +745,7 @@ package workmail {
     * The representation of an organization.
     */
   @js.native
+  @Factory
   trait OrganizationSummary extends js.Object {
     var Alias: js.UndefOr[OrganizationName]
     var ErrorMessage: js.UndefOr[String]
@@ -1697,48 +753,15 @@ package workmail {
     var State: js.UndefOr[String]
   }
 
-  object OrganizationSummary {
-    @inline
-    def apply(
-        Alias: js.UndefOr[OrganizationName] = js.undefined,
-        ErrorMessage: js.UndefOr[String] = js.undefined,
-        OrganizationId: js.UndefOr[OrganizationId] = js.undefined,
-        State: js.UndefOr[String] = js.undefined
-    ): OrganizationSummary = {
-      val __obj = js.Dynamic.literal()
-      Alias.foreach(__v => __obj.updateDynamic("Alias")(__v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
-      OrganizationId.foreach(__v => __obj.updateDynamic("OrganizationId")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[OrganizationSummary]
-    }
-  }
-
   /**
     * Permission granted to a user, group, or resource to access a certain aspect of another user, group, or resource mailbox.
     */
   @js.native
+  @Factory
   trait Permission extends js.Object {
     var GranteeId: WorkMailIdentifier
     var GranteeType: MemberType
     var PermissionValues: PermissionValues
-  }
-
-  object Permission {
-    @inline
-    def apply(
-        GranteeId: WorkMailIdentifier,
-        GranteeType: MemberType,
-        PermissionValues: PermissionValues
-    ): Permission = {
-      val __obj = js.Dynamic.literal(
-        "GranteeId"        -> GranteeId.asInstanceOf[js.Any],
-        "GranteeType"      -> GranteeType.asInstanceOf[js.Any],
-        "PermissionValues" -> PermissionValues.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Permission]
-    }
   }
 
   @js.native
@@ -1752,6 +775,7 @@ package workmail {
   }
 
   @js.native
+  @Factory
   trait PutAccessControlRuleRequest extends js.Object {
     var Description: AccessControlRuleDescription
     var Effect: AccessControlRuleEffect
@@ -1765,51 +789,12 @@ package workmail {
     var UserIds: js.UndefOr[UserIdList]
   }
 
-  object PutAccessControlRuleRequest {
-    @inline
-    def apply(
-        Description: AccessControlRuleDescription,
-        Effect: AccessControlRuleEffect,
-        Name: AccessControlRuleName,
-        OrganizationId: OrganizationId,
-        Actions: js.UndefOr[ActionsList] = js.undefined,
-        IpRanges: js.UndefOr[IpRangeList] = js.undefined,
-        NotActions: js.UndefOr[ActionsList] = js.undefined,
-        NotIpRanges: js.UndefOr[IpRangeList] = js.undefined,
-        NotUserIds: js.UndefOr[UserIdList] = js.undefined,
-        UserIds: js.UndefOr[UserIdList] = js.undefined
-    ): PutAccessControlRuleRequest = {
-      val __obj = js.Dynamic.literal(
-        "Description"    -> Description.asInstanceOf[js.Any],
-        "Effect"         -> Effect.asInstanceOf[js.Any],
-        "Name"           -> Name.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
-      )
-
-      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
-      IpRanges.foreach(__v => __obj.updateDynamic("IpRanges")(__v.asInstanceOf[js.Any]))
-      NotActions.foreach(__v => __obj.updateDynamic("NotActions")(__v.asInstanceOf[js.Any]))
-      NotIpRanges.foreach(__v => __obj.updateDynamic("NotIpRanges")(__v.asInstanceOf[js.Any]))
-      NotUserIds.foreach(__v => __obj.updateDynamic("NotUserIds")(__v.asInstanceOf[js.Any]))
-      UserIds.foreach(__v => __obj.updateDynamic("UserIds")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutAccessControlRuleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutAccessControlRuleResponse extends js.Object {}
 
-  object PutAccessControlRuleResponse {
-    @inline
-    def apply(
-    ): PutAccessControlRuleResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutAccessControlRuleResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutMailboxPermissionsRequest extends js.Object {
     var EntityId: WorkMailIdentifier
     var GranteeId: WorkMailIdentifier
@@ -1817,116 +802,39 @@ package workmail {
     var PermissionValues: PermissionValues
   }
 
-  object PutMailboxPermissionsRequest {
-    @inline
-    def apply(
-        EntityId: WorkMailIdentifier,
-        GranteeId: WorkMailIdentifier,
-        OrganizationId: OrganizationId,
-        PermissionValues: PermissionValues
-    ): PutMailboxPermissionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "EntityId"         -> EntityId.asInstanceOf[js.Any],
-        "GranteeId"        -> GranteeId.asInstanceOf[js.Any],
-        "OrganizationId"   -> OrganizationId.asInstanceOf[js.Any],
-        "PermissionValues" -> PermissionValues.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutMailboxPermissionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutMailboxPermissionsResponse extends js.Object {}
 
-  object PutMailboxPermissionsResponse {
-    @inline
-    def apply(
-    ): PutMailboxPermissionsResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutMailboxPermissionsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait RegisterToWorkMailRequest extends js.Object {
     var Email: EmailAddress
     var EntityId: WorkMailIdentifier
     var OrganizationId: OrganizationId
   }
 
-  object RegisterToWorkMailRequest {
-    @inline
-    def apply(
-        Email: EmailAddress,
-        EntityId: WorkMailIdentifier,
-        OrganizationId: OrganizationId
-    ): RegisterToWorkMailRequest = {
-      val __obj = js.Dynamic.literal(
-        "Email"          -> Email.asInstanceOf[js.Any],
-        "EntityId"       -> EntityId.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RegisterToWorkMailRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait RegisterToWorkMailResponse extends js.Object {}
 
-  object RegisterToWorkMailResponse {
-    @inline
-    def apply(
-    ): RegisterToWorkMailResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[RegisterToWorkMailResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ResetPasswordRequest extends js.Object {
     var OrganizationId: OrganizationId
     var Password: Password
     var UserId: WorkMailIdentifier
   }
 
-  object ResetPasswordRequest {
-    @inline
-    def apply(
-        OrganizationId: OrganizationId,
-        Password: Password,
-        UserId: WorkMailIdentifier
-    ): ResetPasswordRequest = {
-      val __obj = js.Dynamic.literal(
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "Password"       -> Password.asInstanceOf[js.Any],
-        "UserId"         -> UserId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ResetPasswordRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ResetPasswordResponse extends js.Object {}
-
-  object ResetPasswordResponse {
-    @inline
-    def apply(
-    ): ResetPasswordResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[ResetPasswordResponse]
-    }
-  }
 
   /**
     * The representation of a resource.
     */
   @js.native
+  @Factory
   trait Resource extends js.Object {
     var DisabledDate: js.UndefOr[Timestamp]
     var Email: js.UndefOr[EmailAddress]
@@ -1935,29 +843,6 @@ package workmail {
     var Name: js.UndefOr[ResourceName]
     var State: js.UndefOr[EntityState]
     var Type: js.UndefOr[ResourceType]
-  }
-
-  object Resource {
-    @inline
-    def apply(
-        DisabledDate: js.UndefOr[Timestamp] = js.undefined,
-        Email: js.UndefOr[EmailAddress] = js.undefined,
-        EnabledDate: js.UndefOr[Timestamp] = js.undefined,
-        Id: js.UndefOr[WorkMailIdentifier] = js.undefined,
-        Name: js.UndefOr[ResourceName] = js.undefined,
-        State: js.UndefOr[EntityState] = js.undefined,
-        Type: js.UndefOr[ResourceType] = js.undefined
-    ): Resource = {
-      val __obj = js.Dynamic.literal()
-      DisabledDate.foreach(__v => __obj.updateDynamic("DisabledDate")(__v.asInstanceOf[js.Any]))
-      Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
-      EnabledDate.foreach(__v => __obj.updateDynamic("EnabledDate")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Resource]
-    }
   }
 
   @js.native
@@ -1973,169 +858,60 @@ package workmail {
     * Describes a tag applied to a resource.
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var Key: TagKey
     var Value: TagValue
   }
 
-  object Tag {
-    @inline
-    def apply(
-        Key: TagKey,
-        Value: TagValue
-    ): Tag = {
-      val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Tag]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceRequest extends js.Object {
     var ResourceARN: AmazonResourceName
     var Tags: TagList
   }
 
-  object TagResourceRequest {
-    @inline
-    def apply(
-        ResourceARN: AmazonResourceName,
-        Tags: TagList
-    ): TagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceResponse extends js.Object {}
 
-  object TagResourceResponse {
-    @inline
-    def apply(
-    ): TagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[TagResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceRequest extends js.Object {
     var ResourceARN: AmazonResourceName
     var TagKeys: TagKeyList
   }
 
-  object UntagResourceRequest {
-    @inline
-    def apply(
-        ResourceARN: AmazonResourceName,
-        TagKeys: TagKeyList
-    ): UntagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceResponse extends js.Object {}
 
-  object UntagResourceResponse {
-    @inline
-    def apply(
-    ): UntagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UntagResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateMailboxQuotaRequest extends js.Object {
     var MailboxQuota: MailboxQuota
     var OrganizationId: OrganizationId
     var UserId: WorkMailIdentifier
   }
 
-  object UpdateMailboxQuotaRequest {
-    @inline
-    def apply(
-        MailboxQuota: MailboxQuota,
-        OrganizationId: OrganizationId,
-        UserId: WorkMailIdentifier
-    ): UpdateMailboxQuotaRequest = {
-      val __obj = js.Dynamic.literal(
-        "MailboxQuota"   -> MailboxQuota.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "UserId"         -> UserId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateMailboxQuotaRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateMailboxQuotaResponse extends js.Object {}
 
-  object UpdateMailboxQuotaResponse {
-    @inline
-    def apply(
-    ): UpdateMailboxQuotaResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateMailboxQuotaResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdatePrimaryEmailAddressRequest extends js.Object {
     var Email: EmailAddress
     var EntityId: WorkMailIdentifier
     var OrganizationId: OrganizationId
   }
 
-  object UpdatePrimaryEmailAddressRequest {
-    @inline
-    def apply(
-        Email: EmailAddress,
-        EntityId: WorkMailIdentifier,
-        OrganizationId: OrganizationId
-    ): UpdatePrimaryEmailAddressRequest = {
-      val __obj = js.Dynamic.literal(
-        "Email"          -> Email.asInstanceOf[js.Any],
-        "EntityId"       -> EntityId.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdatePrimaryEmailAddressRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdatePrimaryEmailAddressResponse extends js.Object {}
 
-  object UpdatePrimaryEmailAddressResponse {
-    @inline
-    def apply(
-    ): UpdatePrimaryEmailAddressResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdatePrimaryEmailAddressResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateResourceRequest extends js.Object {
     var OrganizationId: OrganizationId
     var ResourceId: ResourceId
@@ -2143,42 +919,15 @@ package workmail {
     var Name: js.UndefOr[ResourceName]
   }
 
-  object UpdateResourceRequest {
-    @inline
-    def apply(
-        OrganizationId: OrganizationId,
-        ResourceId: ResourceId,
-        BookingOptions: js.UndefOr[BookingOptions] = js.undefined,
-        Name: js.UndefOr[ResourceName] = js.undefined
-    ): UpdateResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "ResourceId"     -> ResourceId.asInstanceOf[js.Any]
-      )
-
-      BookingOptions.foreach(__v => __obj.updateDynamic("BookingOptions")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateResourceResponse extends js.Object {}
-
-  object UpdateResourceResponse {
-    @inline
-    def apply(
-    ): UpdateResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateResourceResponse]
-    }
-  }
 
   /**
     * The representation of an Amazon WorkMail user.
     */
   @js.native
+  @Factory
   trait User extends js.Object {
     var DisabledDate: js.UndefOr[Timestamp]
     var DisplayName: js.UndefOr[String]
@@ -2188,31 +937,6 @@ package workmail {
     var Name: js.UndefOr[UserName]
     var State: js.UndefOr[EntityState]
     var UserRole: js.UndefOr[UserRole]
-  }
-
-  object User {
-    @inline
-    def apply(
-        DisabledDate: js.UndefOr[Timestamp] = js.undefined,
-        DisplayName: js.UndefOr[String] = js.undefined,
-        Email: js.UndefOr[EmailAddress] = js.undefined,
-        EnabledDate: js.UndefOr[Timestamp] = js.undefined,
-        Id: js.UndefOr[WorkMailIdentifier] = js.undefined,
-        Name: js.UndefOr[UserName] = js.undefined,
-        State: js.UndefOr[EntityState] = js.undefined,
-        UserRole: js.UndefOr[UserRole] = js.undefined
-    ): User = {
-      val __obj = js.Dynamic.literal()
-      DisabledDate.foreach(__v => __obj.updateDynamic("DisabledDate")(__v.asInstanceOf[js.Any]))
-      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
-      Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
-      EnabledDate.foreach(__v => __obj.updateDynamic("EnabledDate")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      UserRole.foreach(__v => __obj.updateDynamic("UserRole")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[User]
-    }
   }
 
   @js.native

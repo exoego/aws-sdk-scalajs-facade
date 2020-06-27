@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object apigateway {
   type Blob                                = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
@@ -422,22 +423,10 @@ package apigateway {
     * Access log settings, including the access log format and access log destination ARN.
     */
   @js.native
+  @Factory
   trait AccessLogSettings extends js.Object {
     var destinationArn: js.UndefOr[String]
     var format: js.UndefOr[String]
-  }
-
-  object AccessLogSettings {
-    @inline
-    def apply(
-        destinationArn: js.UndefOr[String] = js.undefined,
-        format: js.UndefOr[String] = js.undefined
-    ): AccessLogSettings = {
-      val __obj = js.Dynamic.literal()
-      destinationArn.foreach(__v => __obj.updateDynamic("destinationArn")(__v.asInstanceOf[js.Any]))
-      format.foreach(__v => __obj.updateDynamic("format")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AccessLogSettings]
-    }
   }
 
   /**
@@ -462,28 +451,12 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-limits.html|API Gateway Limits]] [[https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html|Developer Guide]], [[https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-account.html|AWS CLI]]
     */
   @js.native
+  @Factory
   trait Account extends js.Object {
     var apiKeyVersion: js.UndefOr[String]
     var cloudwatchRoleArn: js.UndefOr[String]
     var features: js.UndefOr[ListOfString]
     var throttleSettings: js.UndefOr[ThrottleSettings]
-  }
-
-  object Account {
-    @inline
-    def apply(
-        apiKeyVersion: js.UndefOr[String] = js.undefined,
-        cloudwatchRoleArn: js.UndefOr[String] = js.undefined,
-        features: js.UndefOr[ListOfString] = js.undefined,
-        throttleSettings: js.UndefOr[ThrottleSettings] = js.undefined
-    ): Account = {
-      val __obj = js.Dynamic.literal()
-      apiKeyVersion.foreach(__v => __obj.updateDynamic("apiKeyVersion")(__v.asInstanceOf[js.Any]))
-      cloudwatchRoleArn.foreach(__v => __obj.updateDynamic("cloudwatchRoleArn")(__v.asInstanceOf[js.Any]))
-      features.foreach(__v => __obj.updateDynamic("features")(__v.asInstanceOf[js.Any]))
-      throttleSettings.foreach(__v => __obj.updateDynamic("throttleSettings")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Account]
-    }
   }
 
   /**
@@ -492,6 +465,7 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-api-keys.html|Use API Keys]]
     */
   @js.native
+  @Factory
   trait ApiKey extends js.Object {
     var createdDate: js.UndefOr[Timestamp]
     var customerId: js.UndefOr[String]
@@ -505,55 +479,14 @@ package apigateway {
     var value: js.UndefOr[String]
   }
 
-  object ApiKey {
-    @inline
-    def apply(
-        createdDate: js.UndefOr[Timestamp] = js.undefined,
-        customerId: js.UndefOr[String] = js.undefined,
-        description: js.UndefOr[String] = js.undefined,
-        enabled: js.UndefOr[Boolean] = js.undefined,
-        id: js.UndefOr[String] = js.undefined,
-        lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-        name: js.UndefOr[String] = js.undefined,
-        stageKeys: js.UndefOr[ListOfString] = js.undefined,
-        tags: js.UndefOr[MapOfStringToString] = js.undefined,
-        value: js.UndefOr[String] = js.undefined
-    ): ApiKey = {
-      val __obj = js.Dynamic.literal()
-      createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
-      customerId.foreach(__v => __obj.updateDynamic("customerId")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      enabled.foreach(__v => __obj.updateDynamic("enabled")(__v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
-      lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      stageKeys.foreach(__v => __obj.updateDynamic("stageKeys")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ApiKey]
-    }
-  }
-
   /**
     * The identifier of an <a>ApiKey</a> used in a <a>UsagePlan</a>.
     */
   @js.native
+  @Factory
   trait ApiKeyIds extends js.Object {
     var ids: js.UndefOr[ListOfString]
     var warnings: js.UndefOr[ListOfString]
-  }
-
-  object ApiKeyIds {
-    @inline
-    def apply(
-        ids: js.UndefOr[ListOfString] = js.undefined,
-        warnings: js.UndefOr[ListOfString] = js.undefined
-    ): ApiKeyIds = {
-      val __obj = js.Dynamic.literal()
-      ids.foreach(__v => __obj.updateDynamic("ids")(__v.asInstanceOf[js.Any]))
-      warnings.foreach(__v => __obj.updateDynamic("warnings")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ApiKeyIds]
-    }
   }
 
   @js.native
@@ -571,25 +504,11 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-api-keys.html|Use API Keys]]
     */
   @js.native
+  @Factory
   trait ApiKeys extends js.Object {
     var items: js.UndefOr[ListOfApiKey]
     var position: js.UndefOr[String]
     var warnings: js.UndefOr[ListOfString]
-  }
-
-  object ApiKeys {
-    @inline
-    def apply(
-        items: js.UndefOr[ListOfApiKey] = js.undefined,
-        position: js.UndefOr[String] = js.undefined,
-        warnings: js.UndefOr[ListOfString] = js.undefined
-    ): ApiKeys = {
-      val __obj = js.Dynamic.literal()
-      items.foreach(__v => __obj.updateDynamic("items")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      warnings.foreach(__v => __obj.updateDynamic("warnings")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ApiKeys]
-    }
   }
 
   @js.native
@@ -604,25 +523,11 @@ package apigateway {
     * API stage name of the associated API stage in a usage plan.
     */
   @js.native
+  @Factory
   trait ApiStage extends js.Object {
     var apiId: js.UndefOr[String]
     var stage: js.UndefOr[String]
     var throttle: js.UndefOr[MapOfApiStageThrottleSettings]
-  }
-
-  object ApiStage {
-    @inline
-    def apply(
-        apiId: js.UndefOr[String] = js.undefined,
-        stage: js.UndefOr[String] = js.undefined,
-        throttle: js.UndefOr[MapOfApiStageThrottleSettings] = js.undefined
-    ): ApiStage = {
-      val __obj = js.Dynamic.literal()
-      apiId.foreach(__v => __obj.updateDynamic("apiId")(__v.asInstanceOf[js.Any]))
-      stage.foreach(__v => __obj.updateDynamic("stage")(__v.asInstanceOf[js.Any]))
-      throttle.foreach(__v => __obj.updateDynamic("throttle")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ApiStage]
-    }
   }
 
   /**
@@ -631,6 +536,7 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html|Use Lambda Function as Authorizer]] [[https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html|Use Cognito User Pool as Authorizer]]
     */
   @js.native
+  @Factory
   trait Authorizer extends js.Object {
     var authType: js.UndefOr[String]
     var authorizerCredentials: js.UndefOr[String]
@@ -642,39 +548,6 @@ package apigateway {
     var name: js.UndefOr[String]
     var providerARNs: js.UndefOr[ListOfARNs]
     var `type`: js.UndefOr[AuthorizerType]
-  }
-
-  object Authorizer {
-    @inline
-    def apply(
-        authType: js.UndefOr[String] = js.undefined,
-        authorizerCredentials: js.UndefOr[String] = js.undefined,
-        authorizerResultTtlInSeconds: js.UndefOr[NullableInteger] = js.undefined,
-        authorizerUri: js.UndefOr[String] = js.undefined,
-        id: js.UndefOr[String] = js.undefined,
-        identitySource: js.UndefOr[String] = js.undefined,
-        identityValidationExpression: js.UndefOr[String] = js.undefined,
-        name: js.UndefOr[String] = js.undefined,
-        providerARNs: js.UndefOr[ListOfARNs] = js.undefined,
-        `type`: js.UndefOr[AuthorizerType] = js.undefined
-    ): Authorizer = {
-      val __obj = js.Dynamic.literal()
-      authType.foreach(__v => __obj.updateDynamic("authType")(__v.asInstanceOf[js.Any]))
-      authorizerCredentials.foreach(__v => __obj.updateDynamic("authorizerCredentials")(__v.asInstanceOf[js.Any]))
-      authorizerResultTtlInSeconds.foreach(__v =>
-        __obj.updateDynamic("authorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any])
-      )
-      authorizerUri.foreach(__v => __obj.updateDynamic("authorizerUri")(__v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
-      identitySource.foreach(__v => __obj.updateDynamic("identitySource")(__v.asInstanceOf[js.Any]))
-      identityValidationExpression.foreach(__v =>
-        __obj.updateDynamic("identityValidationExpression")(__v.asInstanceOf[js.Any])
-      )
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      providerARNs.foreach(__v => __obj.updateDynamic("providerARNs")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Authorizer]
-    }
   }
 
   /**
@@ -696,22 +569,10 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html|Use Lambda Function as Authorizer]] [[https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html|Use Cognito User Pool as Authorizer]]
     */
   @js.native
+  @Factory
   trait Authorizers extends js.Object {
     var items: js.UndefOr[ListOfAuthorizer]
     var position: js.UndefOr[String]
-  }
-
-  object Authorizers {
-    @inline
-    def apply(
-        items: js.UndefOr[ListOfAuthorizer] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): Authorizers = {
-      val __obj = js.Dynamic.literal()
-      items.foreach(__v => __obj.updateDynamic("items")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Authorizers]
-    }
   }
 
   /**
@@ -720,25 +581,11 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html|Use Custom Domain Names]]
     */
   @js.native
+  @Factory
   trait BasePathMapping extends js.Object {
     var basePath: js.UndefOr[String]
     var restApiId: js.UndefOr[String]
     var stage: js.UndefOr[String]
-  }
-
-  object BasePathMapping {
-    @inline
-    def apply(
-        basePath: js.UndefOr[String] = js.undefined,
-        restApiId: js.UndefOr[String] = js.undefined,
-        stage: js.UndefOr[String] = js.undefined
-    ): BasePathMapping = {
-      val __obj = js.Dynamic.literal()
-      basePath.foreach(__v => __obj.updateDynamic("basePath")(__v.asInstanceOf[js.Any]))
-      restApiId.foreach(__v => __obj.updateDynamic("restApiId")(__v.asInstanceOf[js.Any]))
-      stage.foreach(__v => __obj.updateDynamic("stage")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BasePathMapping]
-    }
   }
 
   /**
@@ -747,22 +594,10 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html|Use Custom Domain Names]]
     */
   @js.native
+  @Factory
   trait BasePathMappings extends js.Object {
     var items: js.UndefOr[ListOfBasePathMapping]
     var position: js.UndefOr[String]
-  }
-
-  object BasePathMappings {
-    @inline
-    def apply(
-        items: js.UndefOr[ListOfBasePathMapping] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): BasePathMappings = {
-      val __obj = js.Dynamic.literal()
-      items.foreach(__v => __obj.updateDynamic("items")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BasePathMappings]
-    }
   }
 
   /**
@@ -803,28 +638,12 @@ package apigateway {
     * Configuration settings of a canary deployment.
     */
   @js.native
+  @Factory
   trait CanarySettings extends js.Object {
     var deploymentId: js.UndefOr[String]
     var percentTraffic: js.UndefOr[Double]
     var stageVariableOverrides: js.UndefOr[MapOfStringToString]
     var useStageCache: js.UndefOr[Boolean]
-  }
-
-  object CanarySettings {
-    @inline
-    def apply(
-        deploymentId: js.UndefOr[String] = js.undefined,
-        percentTraffic: js.UndefOr[Double] = js.undefined,
-        stageVariableOverrides: js.UndefOr[MapOfStringToString] = js.undefined,
-        useStageCache: js.UndefOr[Boolean] = js.undefined
-    ): CanarySettings = {
-      val __obj = js.Dynamic.literal()
-      deploymentId.foreach(__v => __obj.updateDynamic("deploymentId")(__v.asInstanceOf[js.Any]))
-      percentTraffic.foreach(__v => __obj.updateDynamic("percentTraffic")(__v.asInstanceOf[js.Any]))
-      stageVariableOverrides.foreach(__v => __obj.updateDynamic("stageVariableOverrides")(__v.asInstanceOf[js.Any]))
-      useStageCache.foreach(__v => __obj.updateDynamic("useStageCache")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CanarySettings]
-    }
   }
 
   /**
@@ -833,6 +652,7 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html|Use Client-Side Certificate]]
     */
   @js.native
+  @Factory
   trait ClientCertificate extends js.Object {
     var clientCertificateId: js.UndefOr[String]
     var createdDate: js.UndefOr[Timestamp]
@@ -842,49 +662,16 @@ package apigateway {
     var tags: js.UndefOr[MapOfStringToString]
   }
 
-  object ClientCertificate {
-    @inline
-    def apply(
-        clientCertificateId: js.UndefOr[String] = js.undefined,
-        createdDate: js.UndefOr[Timestamp] = js.undefined,
-        description: js.UndefOr[String] = js.undefined,
-        expirationDate: js.UndefOr[Timestamp] = js.undefined,
-        pemEncodedCertificate: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[MapOfStringToString] = js.undefined
-    ): ClientCertificate = {
-      val __obj = js.Dynamic.literal()
-      clientCertificateId.foreach(__v => __obj.updateDynamic("clientCertificateId")(__v.asInstanceOf[js.Any]))
-      createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      expirationDate.foreach(__v => __obj.updateDynamic("expirationDate")(__v.asInstanceOf[js.Any]))
-      pemEncodedCertificate.foreach(__v => __obj.updateDynamic("pemEncodedCertificate")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ClientCertificate]
-    }
-  }
-
   /**
     * Represents a collection of <a>ClientCertificate</a> resources.
     *
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html|Use Client-Side Certificate]]
     */
   @js.native
+  @Factory
   trait ClientCertificates extends js.Object {
     var items: js.UndefOr[ListOfClientCertificate]
     var position: js.UndefOr[String]
-  }
-
-  object ClientCertificates {
-    @inline
-    def apply(
-        items: js.UndefOr[ListOfClientCertificate] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): ClientCertificates = {
-      val __obj = js.Dynamic.literal()
-      items.foreach(__v => __obj.updateDynamic("items")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ClientCertificates]
-    }
   }
 
   @js.native
@@ -909,6 +696,7 @@ package apigateway {
     * Request to create an <a>ApiKey</a> resource.
     */
   @js.native
+  @Factory
   trait CreateApiKeyRequest extends js.Object {
     var customerId: js.UndefOr[String]
     var description: js.UndefOr[String]
@@ -920,35 +708,11 @@ package apigateway {
     var value: js.UndefOr[String]
   }
 
-  object CreateApiKeyRequest {
-    @inline
-    def apply(
-        customerId: js.UndefOr[String] = js.undefined,
-        description: js.UndefOr[String] = js.undefined,
-        enabled: js.UndefOr[Boolean] = js.undefined,
-        generateDistinctId: js.UndefOr[Boolean] = js.undefined,
-        name: js.UndefOr[String] = js.undefined,
-        stageKeys: js.UndefOr[ListOfStageKeys] = js.undefined,
-        tags: js.UndefOr[MapOfStringToString] = js.undefined,
-        value: js.UndefOr[String] = js.undefined
-    ): CreateApiKeyRequest = {
-      val __obj = js.Dynamic.literal()
-      customerId.foreach(__v => __obj.updateDynamic("customerId")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      enabled.foreach(__v => __obj.updateDynamic("enabled")(__v.asInstanceOf[js.Any]))
-      generateDistinctId.foreach(__v => __obj.updateDynamic("generateDistinctId")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      stageKeys.foreach(__v => __obj.updateDynamic("stageKeys")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateApiKeyRequest]
-    }
-  }
-
   /**
     * Request to add a new <a>Authorizer</a> to an existing <a>RestApi</a> resource.
     */
   @js.native
+  @Factory
   trait CreateAuthorizerRequest extends js.Object {
     var name: String
     var restApiId: String
@@ -962,45 +726,11 @@ package apigateway {
     var providerARNs: js.UndefOr[ListOfARNs]
   }
 
-  object CreateAuthorizerRequest {
-    @inline
-    def apply(
-        name: String,
-        restApiId: String,
-        `type`: AuthorizerType,
-        authType: js.UndefOr[String] = js.undefined,
-        authorizerCredentials: js.UndefOr[String] = js.undefined,
-        authorizerResultTtlInSeconds: js.UndefOr[NullableInteger] = js.undefined,
-        authorizerUri: js.UndefOr[String] = js.undefined,
-        identitySource: js.UndefOr[String] = js.undefined,
-        identityValidationExpression: js.UndefOr[String] = js.undefined,
-        providerARNs: js.UndefOr[ListOfARNs] = js.undefined
-    ): CreateAuthorizerRequest = {
-      val __obj = js.Dynamic.literal(
-        "name"      -> name.asInstanceOf[js.Any],
-        "restApiId" -> restApiId.asInstanceOf[js.Any],
-        "type"      -> `type`.asInstanceOf[js.Any]
-      )
-
-      authType.foreach(__v => __obj.updateDynamic("authType")(__v.asInstanceOf[js.Any]))
-      authorizerCredentials.foreach(__v => __obj.updateDynamic("authorizerCredentials")(__v.asInstanceOf[js.Any]))
-      authorizerResultTtlInSeconds.foreach(__v =>
-        __obj.updateDynamic("authorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any])
-      )
-      authorizerUri.foreach(__v => __obj.updateDynamic("authorizerUri")(__v.asInstanceOf[js.Any]))
-      identitySource.foreach(__v => __obj.updateDynamic("identitySource")(__v.asInstanceOf[js.Any]))
-      identityValidationExpression.foreach(__v =>
-        __obj.updateDynamic("identityValidationExpression")(__v.asInstanceOf[js.Any])
-      )
-      providerARNs.foreach(__v => __obj.updateDynamic("providerARNs")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateAuthorizerRequest]
-    }
-  }
-
   /**
     * Requests API Gateway to create a new <a>BasePathMapping</a> resource.
     */
   @js.native
+  @Factory
   trait CreateBasePathMappingRequest extends js.Object {
     var domainName: String
     var restApiId: String
@@ -1008,29 +738,11 @@ package apigateway {
     var stage: js.UndefOr[String]
   }
 
-  object CreateBasePathMappingRequest {
-    @inline
-    def apply(
-        domainName: String,
-        restApiId: String,
-        basePath: js.UndefOr[String] = js.undefined,
-        stage: js.UndefOr[String] = js.undefined
-    ): CreateBasePathMappingRequest = {
-      val __obj = js.Dynamic.literal(
-        "domainName" -> domainName.asInstanceOf[js.Any],
-        "restApiId"  -> restApiId.asInstanceOf[js.Any]
-      )
-
-      basePath.foreach(__v => __obj.updateDynamic("basePath")(__v.asInstanceOf[js.Any]))
-      stage.foreach(__v => __obj.updateDynamic("stage")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateBasePathMappingRequest]
-    }
-  }
-
   /**
     * Requests API Gateway to create a <a>Deployment</a> resource.
     */
   @js.native
+  @Factory
   trait CreateDeploymentRequest extends js.Object {
     var restApiId: String
     var cacheClusterEnabled: js.UndefOr[NullableBoolean]
@@ -1043,66 +755,22 @@ package apigateway {
     var variables: js.UndefOr[MapOfStringToString]
   }
 
-  object CreateDeploymentRequest {
-    @inline
-    def apply(
-        restApiId: String,
-        cacheClusterEnabled: js.UndefOr[NullableBoolean] = js.undefined,
-        cacheClusterSize: js.UndefOr[CacheClusterSize] = js.undefined,
-        canarySettings: js.UndefOr[DeploymentCanarySettings] = js.undefined,
-        description: js.UndefOr[String] = js.undefined,
-        stageDescription: js.UndefOr[String] = js.undefined,
-        stageName: js.UndefOr[String] = js.undefined,
-        tracingEnabled: js.UndefOr[NullableBoolean] = js.undefined,
-        variables: js.UndefOr[MapOfStringToString] = js.undefined
-    ): CreateDeploymentRequest = {
-      val __obj = js.Dynamic.literal(
-        "restApiId" -> restApiId.asInstanceOf[js.Any]
-      )
-
-      cacheClusterEnabled.foreach(__v => __obj.updateDynamic("cacheClusterEnabled")(__v.asInstanceOf[js.Any]))
-      cacheClusterSize.foreach(__v => __obj.updateDynamic("cacheClusterSize")(__v.asInstanceOf[js.Any]))
-      canarySettings.foreach(__v => __obj.updateDynamic("canarySettings")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      stageDescription.foreach(__v => __obj.updateDynamic("stageDescription")(__v.asInstanceOf[js.Any]))
-      stageName.foreach(__v => __obj.updateDynamic("stageName")(__v.asInstanceOf[js.Any]))
-      tracingEnabled.foreach(__v => __obj.updateDynamic("tracingEnabled")(__v.asInstanceOf[js.Any]))
-      variables.foreach(__v => __obj.updateDynamic("variables")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDeploymentRequest]
-    }
-  }
-
   /**
     * Creates a new documentation part of a given API.
     */
   @js.native
+  @Factory
   trait CreateDocumentationPartRequest extends js.Object {
     var location: DocumentationPartLocation
     var properties: String
     var restApiId: String
   }
 
-  object CreateDocumentationPartRequest {
-    @inline
-    def apply(
-        location: DocumentationPartLocation,
-        properties: String,
-        restApiId: String
-    ): CreateDocumentationPartRequest = {
-      val __obj = js.Dynamic.literal(
-        "location"   -> location.asInstanceOf[js.Any],
-        "properties" -> properties.asInstanceOf[js.Any],
-        "restApiId"  -> restApiId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateDocumentationPartRequest]
-    }
-  }
-
   /**
     * Creates a new documentation version of a given API.
     */
   @js.native
+  @Factory
   trait CreateDocumentationVersionRequest extends js.Object {
     var documentationVersion: String
     var restApiId: String
@@ -1110,29 +778,11 @@ package apigateway {
     var stageName: js.UndefOr[String]
   }
 
-  object CreateDocumentationVersionRequest {
-    @inline
-    def apply(
-        documentationVersion: String,
-        restApiId: String,
-        description: js.UndefOr[String] = js.undefined,
-        stageName: js.UndefOr[String] = js.undefined
-    ): CreateDocumentationVersionRequest = {
-      val __obj = js.Dynamic.literal(
-        "documentationVersion" -> documentationVersion.asInstanceOf[js.Any],
-        "restApiId"            -> restApiId.asInstanceOf[js.Any]
-      )
-
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      stageName.foreach(__v => __obj.updateDynamic("stageName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDocumentationVersionRequest]
-    }
-  }
-
   /**
     * A request to create a new domain name.
     */
   @js.native
+  @Factory
   trait CreateDomainNameRequest extends js.Object {
     var domainName: String
     var certificateArn: js.UndefOr[String]
@@ -1147,43 +797,11 @@ package apigateway {
     var tags: js.UndefOr[MapOfStringToString]
   }
 
-  object CreateDomainNameRequest {
-    @inline
-    def apply(
-        domainName: String,
-        certificateArn: js.UndefOr[String] = js.undefined,
-        certificateBody: js.UndefOr[String] = js.undefined,
-        certificateChain: js.UndefOr[String] = js.undefined,
-        certificateName: js.UndefOr[String] = js.undefined,
-        certificatePrivateKey: js.UndefOr[String] = js.undefined,
-        endpointConfiguration: js.UndefOr[EndpointConfiguration] = js.undefined,
-        regionalCertificateArn: js.UndefOr[String] = js.undefined,
-        regionalCertificateName: js.UndefOr[String] = js.undefined,
-        securityPolicy: js.UndefOr[SecurityPolicy] = js.undefined,
-        tags: js.UndefOr[MapOfStringToString] = js.undefined
-    ): CreateDomainNameRequest = {
-      val __obj = js.Dynamic.literal(
-        "domainName" -> domainName.asInstanceOf[js.Any]
-      )
-
-      certificateArn.foreach(__v => __obj.updateDynamic("certificateArn")(__v.asInstanceOf[js.Any]))
-      certificateBody.foreach(__v => __obj.updateDynamic("certificateBody")(__v.asInstanceOf[js.Any]))
-      certificateChain.foreach(__v => __obj.updateDynamic("certificateChain")(__v.asInstanceOf[js.Any]))
-      certificateName.foreach(__v => __obj.updateDynamic("certificateName")(__v.asInstanceOf[js.Any]))
-      certificatePrivateKey.foreach(__v => __obj.updateDynamic("certificatePrivateKey")(__v.asInstanceOf[js.Any]))
-      endpointConfiguration.foreach(__v => __obj.updateDynamic("endpointConfiguration")(__v.asInstanceOf[js.Any]))
-      regionalCertificateArn.foreach(__v => __obj.updateDynamic("regionalCertificateArn")(__v.asInstanceOf[js.Any]))
-      regionalCertificateName.foreach(__v => __obj.updateDynamic("regionalCertificateName")(__v.asInstanceOf[js.Any]))
-      securityPolicy.foreach(__v => __obj.updateDynamic("securityPolicy")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDomainNameRequest]
-    }
-  }
-
   /**
     * Request to add a new <a>Model</a> to an existing <a>RestApi</a> resource.
     */
   @js.native
+  @Factory
   trait CreateModelRequest extends js.Object {
     var contentType: String
     var name: String
@@ -1192,31 +810,11 @@ package apigateway {
     var schema: js.UndefOr[String]
   }
 
-  object CreateModelRequest {
-    @inline
-    def apply(
-        contentType: String,
-        name: String,
-        restApiId: String,
-        description: js.UndefOr[String] = js.undefined,
-        schema: js.UndefOr[String] = js.undefined
-    ): CreateModelRequest = {
-      val __obj = js.Dynamic.literal(
-        "contentType" -> contentType.asInstanceOf[js.Any],
-        "name"        -> name.asInstanceOf[js.Any],
-        "restApiId"   -> restApiId.asInstanceOf[js.Any]
-      )
-
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      schema.foreach(__v => __obj.updateDynamic("schema")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateModelRequest]
-    }
-  }
-
   /**
     * Creates a <a>RequestValidator</a> of a given <a>RestApi</a>.
     */
   @js.native
+  @Factory
   trait CreateRequestValidatorRequest extends js.Object {
     var restApiId: String
     var name: js.UndefOr[String]
@@ -1224,58 +822,22 @@ package apigateway {
     var validateRequestParameters: js.UndefOr[Boolean]
   }
 
-  object CreateRequestValidatorRequest {
-    @inline
-    def apply(
-        restApiId: String,
-        name: js.UndefOr[String] = js.undefined,
-        validateRequestBody: js.UndefOr[Boolean] = js.undefined,
-        validateRequestParameters: js.UndefOr[Boolean] = js.undefined
-    ): CreateRequestValidatorRequest = {
-      val __obj = js.Dynamic.literal(
-        "restApiId" -> restApiId.asInstanceOf[js.Any]
-      )
-
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      validateRequestBody.foreach(__v => __obj.updateDynamic("validateRequestBody")(__v.asInstanceOf[js.Any]))
-      validateRequestParameters.foreach(__v =>
-        __obj.updateDynamic("validateRequestParameters")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[CreateRequestValidatorRequest]
-    }
-  }
-
   /**
     * Requests API Gateway to create a <a>Resource</a> resource.
     */
   @js.native
+  @Factory
   trait CreateResourceRequest extends js.Object {
     var parentId: String
     var pathPart: String
     var restApiId: String
   }
 
-  object CreateResourceRequest {
-    @inline
-    def apply(
-        parentId: String,
-        pathPart: String,
-        restApiId: String
-    ): CreateResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "parentId"  -> parentId.asInstanceOf[js.Any],
-        "pathPart"  -> pathPart.asInstanceOf[js.Any],
-        "restApiId" -> restApiId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateResourceRequest]
-    }
-  }
-
   /**
     * The POST Request to add a new <a>RestApi</a> resource to your collection.
     */
   @js.native
+  @Factory
   trait CreateRestApiRequest extends js.Object {
     var name: String
     var apiKeySource: js.UndefOr[ApiKeySourceType]
@@ -1289,41 +851,11 @@ package apigateway {
     var version: js.UndefOr[String]
   }
 
-  object CreateRestApiRequest {
-    @inline
-    def apply(
-        name: String,
-        apiKeySource: js.UndefOr[ApiKeySourceType] = js.undefined,
-        binaryMediaTypes: js.UndefOr[ListOfString] = js.undefined,
-        cloneFrom: js.UndefOr[String] = js.undefined,
-        description: js.UndefOr[String] = js.undefined,
-        endpointConfiguration: js.UndefOr[EndpointConfiguration] = js.undefined,
-        minimumCompressionSize: js.UndefOr[NullableInteger] = js.undefined,
-        policy: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[MapOfStringToString] = js.undefined,
-        version: js.UndefOr[String] = js.undefined
-    ): CreateRestApiRequest = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      apiKeySource.foreach(__v => __obj.updateDynamic("apiKeySource")(__v.asInstanceOf[js.Any]))
-      binaryMediaTypes.foreach(__v => __obj.updateDynamic("binaryMediaTypes")(__v.asInstanceOf[js.Any]))
-      cloneFrom.foreach(__v => __obj.updateDynamic("cloneFrom")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      endpointConfiguration.foreach(__v => __obj.updateDynamic("endpointConfiguration")(__v.asInstanceOf[js.Any]))
-      minimumCompressionSize.foreach(__v => __obj.updateDynamic("minimumCompressionSize")(__v.asInstanceOf[js.Any]))
-      policy.foreach(__v => __obj.updateDynamic("policy")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRestApiRequest]
-    }
-  }
-
   /**
     * Requests API Gateway to create a <a>Stage</a> resource.
     */
   @js.native
+  @Factory
   trait CreateStageRequest extends js.Object {
     var deploymentId: String
     var restApiId: String
@@ -1338,70 +870,22 @@ package apigateway {
     var variables: js.UndefOr[MapOfStringToString]
   }
 
-  object CreateStageRequest {
-    @inline
-    def apply(
-        deploymentId: String,
-        restApiId: String,
-        stageName: String,
-        cacheClusterEnabled: js.UndefOr[Boolean] = js.undefined,
-        cacheClusterSize: js.UndefOr[CacheClusterSize] = js.undefined,
-        canarySettings: js.UndefOr[CanarySettings] = js.undefined,
-        description: js.UndefOr[String] = js.undefined,
-        documentationVersion: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[MapOfStringToString] = js.undefined,
-        tracingEnabled: js.UndefOr[Boolean] = js.undefined,
-        variables: js.UndefOr[MapOfStringToString] = js.undefined
-    ): CreateStageRequest = {
-      val __obj = js.Dynamic.literal(
-        "deploymentId" -> deploymentId.asInstanceOf[js.Any],
-        "restApiId"    -> restApiId.asInstanceOf[js.Any],
-        "stageName"    -> stageName.asInstanceOf[js.Any]
-      )
-
-      cacheClusterEnabled.foreach(__v => __obj.updateDynamic("cacheClusterEnabled")(__v.asInstanceOf[js.Any]))
-      cacheClusterSize.foreach(__v => __obj.updateDynamic("cacheClusterSize")(__v.asInstanceOf[js.Any]))
-      canarySettings.foreach(__v => __obj.updateDynamic("canarySettings")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      documentationVersion.foreach(__v => __obj.updateDynamic("documentationVersion")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      tracingEnabled.foreach(__v => __obj.updateDynamic("tracingEnabled")(__v.asInstanceOf[js.Any]))
-      variables.foreach(__v => __obj.updateDynamic("variables")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateStageRequest]
-    }
-  }
-
   /**
     * The POST request to create a usage plan key for adding an existing API key to a usage plan.
     */
   @js.native
+  @Factory
   trait CreateUsagePlanKeyRequest extends js.Object {
     var keyId: String
     var keyType: String
     var usagePlanId: String
   }
 
-  object CreateUsagePlanKeyRequest {
-    @inline
-    def apply(
-        keyId: String,
-        keyType: String,
-        usagePlanId: String
-    ): CreateUsagePlanKeyRequest = {
-      val __obj = js.Dynamic.literal(
-        "keyId"       -> keyId.asInstanceOf[js.Any],
-        "keyType"     -> keyType.asInstanceOf[js.Any],
-        "usagePlanId" -> usagePlanId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateUsagePlanKeyRequest]
-    }
-  }
-
   /**
     * The POST request to create a usage plan with the name, description, throttle limits and quota limits, as well as the associated API stages, specified in the payload.
     */
   @js.native
+  @Factory
   trait CreateUsagePlanRequest extends js.Object {
     var name: String
     var apiStages: js.UndefOr[ListOfApiStage]
@@ -1411,33 +895,11 @@ package apigateway {
     var throttle: js.UndefOr[ThrottleSettings]
   }
 
-  object CreateUsagePlanRequest {
-    @inline
-    def apply(
-        name: String,
-        apiStages: js.UndefOr[ListOfApiStage] = js.undefined,
-        description: js.UndefOr[String] = js.undefined,
-        quota: js.UndefOr[QuotaSettings] = js.undefined,
-        tags: js.UndefOr[MapOfStringToString] = js.undefined,
-        throttle: js.UndefOr[ThrottleSettings] = js.undefined
-    ): CreateUsagePlanRequest = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      apiStages.foreach(__v => __obj.updateDynamic("apiStages")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      quota.foreach(__v => __obj.updateDynamic("quota")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      throttle.foreach(__v => __obj.updateDynamic("throttle")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateUsagePlanRequest]
-    }
-  }
-
   /**
     * Creates a VPC link, under the caller's account in a selected region, in an asynchronous operation that typically takes 2-4 minutes to complete and become operational. The caller must have permissions to create and update VPC Endpoint services.
     */
   @js.native
+  @Factory
   trait CreateVpcLinkRequest extends js.Object {
     var name: String
     var targetArns: ListOfString
@@ -1445,263 +907,109 @@ package apigateway {
     var tags: js.UndefOr[MapOfStringToString]
   }
 
-  object CreateVpcLinkRequest {
-    @inline
-    def apply(
-        name: String,
-        targetArns: ListOfString,
-        description: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[MapOfStringToString] = js.undefined
-    ): CreateVpcLinkRequest = {
-      val __obj = js.Dynamic.literal(
-        "name"       -> name.asInstanceOf[js.Any],
-        "targetArns" -> targetArns.asInstanceOf[js.Any]
-      )
-
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateVpcLinkRequest]
-    }
-  }
-
   /**
     * A request to delete the <a>ApiKey</a> resource.
     */
   @js.native
+  @Factory
   trait DeleteApiKeyRequest extends js.Object {
     var apiKey: String
-  }
-
-  object DeleteApiKeyRequest {
-    @inline
-    def apply(
-        apiKey: String
-    ): DeleteApiKeyRequest = {
-      val __obj = js.Dynamic.literal(
-        "apiKey" -> apiKey.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteApiKeyRequest]
-    }
   }
 
   /**
     * Request to delete an existing <a>Authorizer</a> resource.
     */
   @js.native
+  @Factory
   trait DeleteAuthorizerRequest extends js.Object {
     var authorizerId: String
     var restApiId: String
-  }
-
-  object DeleteAuthorizerRequest {
-    @inline
-    def apply(
-        authorizerId: String,
-        restApiId: String
-    ): DeleteAuthorizerRequest = {
-      val __obj = js.Dynamic.literal(
-        "authorizerId" -> authorizerId.asInstanceOf[js.Any],
-        "restApiId"    -> restApiId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteAuthorizerRequest]
-    }
   }
 
   /**
     * A request to delete the <a>BasePathMapping</a> resource.
     */
   @js.native
+  @Factory
   trait DeleteBasePathMappingRequest extends js.Object {
     var basePath: String
     var domainName: String
-  }
-
-  object DeleteBasePathMappingRequest {
-    @inline
-    def apply(
-        basePath: String,
-        domainName: String
-    ): DeleteBasePathMappingRequest = {
-      val __obj = js.Dynamic.literal(
-        "basePath"   -> basePath.asInstanceOf[js.Any],
-        "domainName" -> domainName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteBasePathMappingRequest]
-    }
   }
 
   /**
     * A request to delete the <a>ClientCertificate</a> resource.
     */
   @js.native
+  @Factory
   trait DeleteClientCertificateRequest extends js.Object {
     var clientCertificateId: String
-  }
-
-  object DeleteClientCertificateRequest {
-    @inline
-    def apply(
-        clientCertificateId: String
-    ): DeleteClientCertificateRequest = {
-      val __obj = js.Dynamic.literal(
-        "clientCertificateId" -> clientCertificateId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteClientCertificateRequest]
-    }
   }
 
   /**
     * Requests API Gateway to delete a <a>Deployment</a> resource.
     */
   @js.native
+  @Factory
   trait DeleteDeploymentRequest extends js.Object {
     var deploymentId: String
     var restApiId: String
-  }
-
-  object DeleteDeploymentRequest {
-    @inline
-    def apply(
-        deploymentId: String,
-        restApiId: String
-    ): DeleteDeploymentRequest = {
-      val __obj = js.Dynamic.literal(
-        "deploymentId" -> deploymentId.asInstanceOf[js.Any],
-        "restApiId"    -> restApiId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteDeploymentRequest]
-    }
   }
 
   /**
     * Deletes an existing documentation part of an API.
     */
   @js.native
+  @Factory
   trait DeleteDocumentationPartRequest extends js.Object {
     var documentationPartId: String
     var restApiId: String
-  }
-
-  object DeleteDocumentationPartRequest {
-    @inline
-    def apply(
-        documentationPartId: String,
-        restApiId: String
-    ): DeleteDocumentationPartRequest = {
-      val __obj = js.Dynamic.literal(
-        "documentationPartId" -> documentationPartId.asInstanceOf[js.Any],
-        "restApiId"           -> restApiId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteDocumentationPartRequest]
-    }
   }
 
   /**
     * Deletes an existing documentation version of an API.
     */
   @js.native
+  @Factory
   trait DeleteDocumentationVersionRequest extends js.Object {
     var documentationVersion: String
     var restApiId: String
-  }
-
-  object DeleteDocumentationVersionRequest {
-    @inline
-    def apply(
-        documentationVersion: String,
-        restApiId: String
-    ): DeleteDocumentationVersionRequest = {
-      val __obj = js.Dynamic.literal(
-        "documentationVersion" -> documentationVersion.asInstanceOf[js.Any],
-        "restApiId"            -> restApiId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteDocumentationVersionRequest]
-    }
   }
 
   /**
     * A request to delete the <a>DomainName</a> resource.
     */
   @js.native
+  @Factory
   trait DeleteDomainNameRequest extends js.Object {
     var domainName: String
-  }
-
-  object DeleteDomainNameRequest {
-    @inline
-    def apply(
-        domainName: String
-    ): DeleteDomainNameRequest = {
-      val __obj = js.Dynamic.literal(
-        "domainName" -> domainName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteDomainNameRequest]
-    }
   }
 
   /**
     * Clears any customization of a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a> and resets it with the default settings.
     */
   @js.native
+  @Factory
   trait DeleteGatewayResponseRequest extends js.Object {
     var responseType: GatewayResponseType
     var restApiId: String
-  }
-
-  object DeleteGatewayResponseRequest {
-    @inline
-    def apply(
-        responseType: GatewayResponseType,
-        restApiId: String
-    ): DeleteGatewayResponseRequest = {
-      val __obj = js.Dynamic.literal(
-        "responseType" -> responseType.asInstanceOf[js.Any],
-        "restApiId"    -> restApiId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteGatewayResponseRequest]
-    }
   }
 
   /**
     * Represents a delete integration request.
     */
   @js.native
+  @Factory
   trait DeleteIntegrationRequest extends js.Object {
     var httpMethod: String
     var resourceId: String
     var restApiId: String
   }
 
-  object DeleteIntegrationRequest {
-    @inline
-    def apply(
-        httpMethod: String,
-        resourceId: String,
-        restApiId: String
-    ): DeleteIntegrationRequest = {
-      val __obj = js.Dynamic.literal(
-        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
-        "resourceId" -> resourceId.asInstanceOf[js.Any],
-        "restApiId"  -> restApiId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteIntegrationRequest]
-    }
-  }
-
   /**
     * Represents a delete integration response request.
     */
   @js.native
+  @Factory
   trait DeleteIntegrationResponseRequest extends js.Object {
     var httpMethod: String
     var resourceId: String
@@ -1709,56 +1017,22 @@ package apigateway {
     var statusCode: StatusCode
   }
 
-  object DeleteIntegrationResponseRequest {
-    @inline
-    def apply(
-        httpMethod: String,
-        resourceId: String,
-        restApiId: String,
-        statusCode: StatusCode
-    ): DeleteIntegrationResponseRequest = {
-      val __obj = js.Dynamic.literal(
-        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
-        "resourceId" -> resourceId.asInstanceOf[js.Any],
-        "restApiId"  -> restApiId.asInstanceOf[js.Any],
-        "statusCode" -> statusCode.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteIntegrationResponseRequest]
-    }
-  }
-
   /**
     * Request to delete an existing <a>Method</a> resource.
     */
   @js.native
+  @Factory
   trait DeleteMethodRequest extends js.Object {
     var httpMethod: String
     var resourceId: String
     var restApiId: String
   }
 
-  object DeleteMethodRequest {
-    @inline
-    def apply(
-        httpMethod: String,
-        resourceId: String,
-        restApiId: String
-    ): DeleteMethodRequest = {
-      val __obj = js.Dynamic.literal(
-        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
-        "resourceId" -> resourceId.asInstanceOf[js.Any],
-        "restApiId"  -> restApiId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteMethodRequest]
-    }
-  }
-
   /**
     * A request to delete an existing <a>MethodResponse</a> resource.
     */
   @js.native
+  @Factory
   trait DeleteMethodResponseRequest extends js.Object {
     var httpMethod: String
     var resourceId: String
@@ -1766,206 +1040,81 @@ package apigateway {
     var statusCode: StatusCode
   }
 
-  object DeleteMethodResponseRequest {
-    @inline
-    def apply(
-        httpMethod: String,
-        resourceId: String,
-        restApiId: String,
-        statusCode: StatusCode
-    ): DeleteMethodResponseRequest = {
-      val __obj = js.Dynamic.literal(
-        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
-        "resourceId" -> resourceId.asInstanceOf[js.Any],
-        "restApiId"  -> restApiId.asInstanceOf[js.Any],
-        "statusCode" -> statusCode.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteMethodResponseRequest]
-    }
-  }
-
   /**
     * Request to delete an existing model in an existing <a>RestApi</a> resource.
     */
   @js.native
+  @Factory
   trait DeleteModelRequest extends js.Object {
     var modelName: String
     var restApiId: String
-  }
-
-  object DeleteModelRequest {
-    @inline
-    def apply(
-        modelName: String,
-        restApiId: String
-    ): DeleteModelRequest = {
-      val __obj = js.Dynamic.literal(
-        "modelName" -> modelName.asInstanceOf[js.Any],
-        "restApiId" -> restApiId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteModelRequest]
-    }
   }
 
   /**
     * Deletes a specified <a>RequestValidator</a> of a given <a>RestApi</a>.
     */
   @js.native
+  @Factory
   trait DeleteRequestValidatorRequest extends js.Object {
     var requestValidatorId: String
     var restApiId: String
-  }
-
-  object DeleteRequestValidatorRequest {
-    @inline
-    def apply(
-        requestValidatorId: String,
-        restApiId: String
-    ): DeleteRequestValidatorRequest = {
-      val __obj = js.Dynamic.literal(
-        "requestValidatorId" -> requestValidatorId.asInstanceOf[js.Any],
-        "restApiId"          -> restApiId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteRequestValidatorRequest]
-    }
   }
 
   /**
     * Request to delete a <a>Resource</a>.
     */
   @js.native
+  @Factory
   trait DeleteResourceRequest extends js.Object {
     var resourceId: String
     var restApiId: String
-  }
-
-  object DeleteResourceRequest {
-    @inline
-    def apply(
-        resourceId: String,
-        restApiId: String
-    ): DeleteResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceId" -> resourceId.asInstanceOf[js.Any],
-        "restApiId"  -> restApiId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteResourceRequest]
-    }
   }
 
   /**
     * Request to delete the specified API from your collection.
     */
   @js.native
+  @Factory
   trait DeleteRestApiRequest extends js.Object {
     var restApiId: String
-  }
-
-  object DeleteRestApiRequest {
-    @inline
-    def apply(
-        restApiId: String
-    ): DeleteRestApiRequest = {
-      val __obj = js.Dynamic.literal(
-        "restApiId" -> restApiId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteRestApiRequest]
-    }
   }
 
   /**
     * Requests API Gateway to delete a <a>Stage</a> resource.
     */
   @js.native
+  @Factory
   trait DeleteStageRequest extends js.Object {
     var restApiId: String
     var stageName: String
-  }
-
-  object DeleteStageRequest {
-    @inline
-    def apply(
-        restApiId: String,
-        stageName: String
-    ): DeleteStageRequest = {
-      val __obj = js.Dynamic.literal(
-        "restApiId" -> restApiId.asInstanceOf[js.Any],
-        "stageName" -> stageName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteStageRequest]
-    }
   }
 
   /**
     * The DELETE request to delete a usage plan key and remove the underlying API key from the associated usage plan.
     */
   @js.native
+  @Factory
   trait DeleteUsagePlanKeyRequest extends js.Object {
     var keyId: String
     var usagePlanId: String
-  }
-
-  object DeleteUsagePlanKeyRequest {
-    @inline
-    def apply(
-        keyId: String,
-        usagePlanId: String
-    ): DeleteUsagePlanKeyRequest = {
-      val __obj = js.Dynamic.literal(
-        "keyId"       -> keyId.asInstanceOf[js.Any],
-        "usagePlanId" -> usagePlanId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteUsagePlanKeyRequest]
-    }
   }
 
   /**
     * The DELETE request to delete a usage plan of a given plan Id.
     */
   @js.native
+  @Factory
   trait DeleteUsagePlanRequest extends js.Object {
     var usagePlanId: String
-  }
-
-  object DeleteUsagePlanRequest {
-    @inline
-    def apply(
-        usagePlanId: String
-    ): DeleteUsagePlanRequest = {
-      val __obj = js.Dynamic.literal(
-        "usagePlanId" -> usagePlanId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteUsagePlanRequest]
-    }
   }
 
   /**
     * Deletes an existing <a>VpcLink</a> of a specified identifier.
     */
   @js.native
+  @Factory
   trait DeleteVpcLinkRequest extends js.Object {
     var vpcLinkId: String
-  }
-
-  object DeleteVpcLinkRequest {
-    @inline
-    def apply(
-        vpcLinkId: String
-    ): DeleteVpcLinkRequest = {
-      val __obj = js.Dynamic.literal(
-        "vpcLinkId" -> vpcLinkId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteVpcLinkRequest]
-    }
   }
 
   /**
@@ -1974,6 +1123,7 @@ package apigateway {
     * @see <a>RestApi</a>, <a>Deployments</a>, <a>Stage</a>, [[https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-deployment.html|AWS CLI]], [[https://aws.amazon.com/tools/|AWS SDKs]]
     */
   @js.native
+  @Factory
   trait Deployment extends js.Object {
     var apiSummary: js.UndefOr[PathToMapOfMethodSnapshot]
     var createdDate: js.UndefOr[Timestamp]
@@ -1981,46 +1131,15 @@ package apigateway {
     var id: js.UndefOr[String]
   }
 
-  object Deployment {
-    @inline
-    def apply(
-        apiSummary: js.UndefOr[PathToMapOfMethodSnapshot] = js.undefined,
-        createdDate: js.UndefOr[Timestamp] = js.undefined,
-        description: js.UndefOr[String] = js.undefined,
-        id: js.UndefOr[String] = js.undefined
-    ): Deployment = {
-      val __obj = js.Dynamic.literal()
-      apiSummary.foreach(__v => __obj.updateDynamic("apiSummary")(__v.asInstanceOf[js.Any]))
-      createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Deployment]
-    }
-  }
-
   /**
     * The input configuration for a canary deployment.
     */
   @js.native
+  @Factory
   trait DeploymentCanarySettings extends js.Object {
     var percentTraffic: js.UndefOr[Double]
     var stageVariableOverrides: js.UndefOr[MapOfStringToString]
     var useStageCache: js.UndefOr[Boolean]
-  }
-
-  object DeploymentCanarySettings {
-    @inline
-    def apply(
-        percentTraffic: js.UndefOr[Double] = js.undefined,
-        stageVariableOverrides: js.UndefOr[MapOfStringToString] = js.undefined,
-        useStageCache: js.UndefOr[Boolean] = js.undefined
-    ): DeploymentCanarySettings = {
-      val __obj = js.Dynamic.literal()
-      percentTraffic.foreach(__v => __obj.updateDynamic("percentTraffic")(__v.asInstanceOf[js.Any]))
-      stageVariableOverrides.foreach(__v => __obj.updateDynamic("stageVariableOverrides")(__v.asInstanceOf[js.Any]))
-      useStageCache.foreach(__v => __obj.updateDynamic("useStageCache")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeploymentCanarySettings]
-    }
   }
 
   /**
@@ -2029,22 +1148,10 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html|Deploying an API]], [[https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-deployment.html|AWS CLI]], [[https://aws.amazon.com/tools/|AWS SDKs]]
     */
   @js.native
+  @Factory
   trait Deployments extends js.Object {
     var items: js.UndefOr[ListOfDeployment]
     var position: js.UndefOr[String]
-  }
-
-  object Deployments {
-    @inline
-    def apply(
-        items: js.UndefOr[ListOfDeployment] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): Deployments = {
-      val __obj = js.Dynamic.literal()
-      items.foreach(__v => __obj.updateDynamic("items")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Deployments]
-    }
   }
 
   /**
@@ -2055,25 +1162,11 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html|Documenting an API]], <a>DocumentationParts</a>
     */
   @js.native
+  @Factory
   trait DocumentationPart extends js.Object {
     var id: js.UndefOr[String]
     var location: js.UndefOr[DocumentationPartLocation]
     var properties: js.UndefOr[String]
-  }
-
-  object DocumentationPart {
-    @inline
-    def apply(
-        id: js.UndefOr[String] = js.undefined,
-        location: js.UndefOr[DocumentationPartLocation] = js.undefined,
-        properties: js.UndefOr[String] = js.undefined
-    ): DocumentationPart = {
-      val __obj = js.Dynamic.literal()
-      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
-      properties.foreach(__v => __obj.updateDynamic("properties")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DocumentationPart]
-    }
   }
 
   /**
@@ -2082,55 +1175,23 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html|Documenting an API]], [[https://docs.aws.amazon.com/apigateway/api-reference/link-relation/documentationpart-import/|documentationpart:import]], <a>DocumentationPart</a>
     */
   @js.native
+  @Factory
   trait DocumentationPartIds extends js.Object {
     var ids: js.UndefOr[ListOfString]
     var warnings: js.UndefOr[ListOfString]
-  }
-
-  object DocumentationPartIds {
-    @inline
-    def apply(
-        ids: js.UndefOr[ListOfString] = js.undefined,
-        warnings: js.UndefOr[ListOfString] = js.undefined
-    ): DocumentationPartIds = {
-      val __obj = js.Dynamic.literal()
-      ids.foreach(__v => __obj.updateDynamic("ids")(__v.asInstanceOf[js.Any]))
-      warnings.foreach(__v => __obj.updateDynamic("warnings")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DocumentationPartIds]
-    }
   }
 
   /**
     * Specifies the target API entity to which the documentation applies.
     */
   @js.native
+  @Factory
   trait DocumentationPartLocation extends js.Object {
     var `type`: DocumentationPartType
     var method: js.UndefOr[String]
     var name: js.UndefOr[String]
     var path: js.UndefOr[String]
     var statusCode: js.UndefOr[DocumentationPartLocationStatusCode]
-  }
-
-  object DocumentationPartLocation {
-    @inline
-    def apply(
-        `type`: DocumentationPartType,
-        method: js.UndefOr[String] = js.undefined,
-        name: js.UndefOr[String] = js.undefined,
-        path: js.UndefOr[String] = js.undefined,
-        statusCode: js.UndefOr[DocumentationPartLocationStatusCode] = js.undefined
-    ): DocumentationPartLocation = {
-      val __obj = js.Dynamic.literal(
-        "type" -> `type`.asInstanceOf[js.Any]
-      )
-
-      method.foreach(__v => __obj.updateDynamic("method")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      path.foreach(__v => __obj.updateDynamic("path")(__v.asInstanceOf[js.Any]))
-      statusCode.foreach(__v => __obj.updateDynamic("statusCode")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DocumentationPartLocation]
-    }
   }
 
   @js.native
@@ -2173,22 +1234,10 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html|Documenting an API]], <a>DocumentationPart</a>
     */
   @js.native
+  @Factory
   trait DocumentationParts extends js.Object {
     var items: js.UndefOr[ListOfDocumentationPart]
     var position: js.UndefOr[String]
-  }
-
-  object DocumentationParts {
-    @inline
-    def apply(
-        items: js.UndefOr[ListOfDocumentationPart] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): DocumentationParts = {
-      val __obj = js.Dynamic.literal()
-      items.foreach(__v => __obj.updateDynamic("items")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DocumentationParts]
-    }
   }
 
   /**
@@ -2198,25 +1247,11 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html|Documenting an API]], <a>DocumentationPart</a>, <a>DocumentationVersions</a>
     */
   @js.native
+  @Factory
   trait DocumentationVersion extends js.Object {
     var createdDate: js.UndefOr[Timestamp]
     var description: js.UndefOr[String]
     var version: js.UndefOr[String]
-  }
-
-  object DocumentationVersion {
-    @inline
-    def apply(
-        createdDate: js.UndefOr[Timestamp] = js.undefined,
-        description: js.UndefOr[String] = js.undefined,
-        version: js.UndefOr[String] = js.undefined
-    ): DocumentationVersion = {
-      val __obj = js.Dynamic.literal()
-      createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DocumentationVersion]
-    }
   }
 
   /**
@@ -2226,22 +1261,10 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html|Documenting an API]], <a>DocumentationPart</a>, <a>DocumentationVersion</a>
     */
   @js.native
+  @Factory
   trait DocumentationVersions extends js.Object {
     var items: js.UndefOr[ListOfDocumentationVersion]
     var position: js.UndefOr[String]
-  }
-
-  object DocumentationVersions {
-    @inline
-    def apply(
-        items: js.UndefOr[ListOfDocumentationVersion] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): DocumentationVersions = {
-      val __obj = js.Dynamic.literal()
-      items.foreach(__v => __obj.updateDynamic("items")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DocumentationVersions]
-    }
   }
 
   /**
@@ -2251,6 +1274,7 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html|Set a Custom Host Name for an API]]
     */
   @js.native
+  @Factory
   trait DomainName extends js.Object {
     var certificateArn: js.UndefOr[String]
     var certificateName: js.UndefOr[String]
@@ -2269,45 +1293,6 @@ package apigateway {
     var tags: js.UndefOr[MapOfStringToString]
   }
 
-  object DomainName {
-    @inline
-    def apply(
-        certificateArn: js.UndefOr[String] = js.undefined,
-        certificateName: js.UndefOr[String] = js.undefined,
-        certificateUploadDate: js.UndefOr[Timestamp] = js.undefined,
-        distributionDomainName: js.UndefOr[String] = js.undefined,
-        distributionHostedZoneId: js.UndefOr[String] = js.undefined,
-        domainName: js.UndefOr[String] = js.undefined,
-        domainNameStatus: js.UndefOr[DomainNameStatus] = js.undefined,
-        domainNameStatusMessage: js.UndefOr[String] = js.undefined,
-        endpointConfiguration: js.UndefOr[EndpointConfiguration] = js.undefined,
-        regionalCertificateArn: js.UndefOr[String] = js.undefined,
-        regionalCertificateName: js.UndefOr[String] = js.undefined,
-        regionalDomainName: js.UndefOr[String] = js.undefined,
-        regionalHostedZoneId: js.UndefOr[String] = js.undefined,
-        securityPolicy: js.UndefOr[SecurityPolicy] = js.undefined,
-        tags: js.UndefOr[MapOfStringToString] = js.undefined
-    ): DomainName = {
-      val __obj = js.Dynamic.literal()
-      certificateArn.foreach(__v => __obj.updateDynamic("certificateArn")(__v.asInstanceOf[js.Any]))
-      certificateName.foreach(__v => __obj.updateDynamic("certificateName")(__v.asInstanceOf[js.Any]))
-      certificateUploadDate.foreach(__v => __obj.updateDynamic("certificateUploadDate")(__v.asInstanceOf[js.Any]))
-      distributionDomainName.foreach(__v => __obj.updateDynamic("distributionDomainName")(__v.asInstanceOf[js.Any]))
-      distributionHostedZoneId.foreach(__v => __obj.updateDynamic("distributionHostedZoneId")(__v.asInstanceOf[js.Any]))
-      domainName.foreach(__v => __obj.updateDynamic("domainName")(__v.asInstanceOf[js.Any]))
-      domainNameStatus.foreach(__v => __obj.updateDynamic("domainNameStatus")(__v.asInstanceOf[js.Any]))
-      domainNameStatusMessage.foreach(__v => __obj.updateDynamic("domainNameStatusMessage")(__v.asInstanceOf[js.Any]))
-      endpointConfiguration.foreach(__v => __obj.updateDynamic("endpointConfiguration")(__v.asInstanceOf[js.Any]))
-      regionalCertificateArn.foreach(__v => __obj.updateDynamic("regionalCertificateArn")(__v.asInstanceOf[js.Any]))
-      regionalCertificateName.foreach(__v => __obj.updateDynamic("regionalCertificateName")(__v.asInstanceOf[js.Any]))
-      regionalDomainName.foreach(__v => __obj.updateDynamic("regionalDomainName")(__v.asInstanceOf[js.Any]))
-      regionalHostedZoneId.foreach(__v => __obj.updateDynamic("regionalHostedZoneId")(__v.asInstanceOf[js.Any]))
-      securityPolicy.foreach(__v => __obj.updateDynamic("securityPolicy")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DomainName]
-    }
-  }
-
   @js.native
   sealed trait DomainNameStatus extends js.Any
   object DomainNameStatus extends js.Object {
@@ -2324,44 +1309,20 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html|Use Client-Side Certificate]]
     */
   @js.native
+  @Factory
   trait DomainNames extends js.Object {
     var items: js.UndefOr[ListOfDomainName]
     var position: js.UndefOr[String]
-  }
-
-  object DomainNames {
-    @inline
-    def apply(
-        items: js.UndefOr[ListOfDomainName] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): DomainNames = {
-      val __obj = js.Dynamic.literal()
-      items.foreach(__v => __obj.updateDynamic("items")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DomainNames]
-    }
   }
 
   /**
     * The endpoint configuration to indicate the types of endpoints an API (<a>RestApi</a>) or its custom domain name (<a>DomainName</a>) has.
     */
   @js.native
+  @Factory
   trait EndpointConfiguration extends js.Object {
     var types: js.UndefOr[ListOfEndpointType]
     var vpcEndpointIds: js.UndefOr[ListOfString]
-  }
-
-  object EndpointConfiguration {
-    @inline
-    def apply(
-        types: js.UndefOr[ListOfEndpointType] = js.undefined,
-        vpcEndpointIds: js.UndefOr[ListOfString] = js.undefined
-    ): EndpointConfiguration = {
-      val __obj = js.Dynamic.literal()
-      types.foreach(__v => __obj.updateDynamic("types")(__v.asInstanceOf[js.Any]))
-      vpcEndpointIds.foreach(__v => __obj.updateDynamic("vpcEndpointIds")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EndpointConfiguration]
-    }
   }
 
   /**
@@ -2381,73 +1342,31 @@ package apigateway {
     * The binary blob response to <a>GetExport</a>, which contains the generated SDK.
     */
   @js.native
+  @Factory
   trait ExportResponse extends js.Object {
     var body: js.UndefOr[Blob]
     var contentDisposition: js.UndefOr[String]
     var contentType: js.UndefOr[String]
   }
 
-  object ExportResponse {
-    @inline
-    def apply(
-        body: js.UndefOr[Blob] = js.undefined,
-        contentDisposition: js.UndefOr[String] = js.undefined,
-        contentType: js.UndefOr[String] = js.undefined
-    ): ExportResponse = {
-      val __obj = js.Dynamic.literal()
-      body.foreach(__v => __obj.updateDynamic("body")(__v.asInstanceOf[js.Any]))
-      contentDisposition.foreach(__v => __obj.updateDynamic("contentDisposition")(__v.asInstanceOf[js.Any]))
-      contentType.foreach(__v => __obj.updateDynamic("contentType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ExportResponse]
-    }
-  }
-
   /**
     * Request to flush authorizer cache entries on a specified stage.
     */
   @js.native
+  @Factory
   trait FlushStageAuthorizersCacheRequest extends js.Object {
     var restApiId: String
     var stageName: String
-  }
-
-  object FlushStageAuthorizersCacheRequest {
-    @inline
-    def apply(
-        restApiId: String,
-        stageName: String
-    ): FlushStageAuthorizersCacheRequest = {
-      val __obj = js.Dynamic.literal(
-        "restApiId" -> restApiId.asInstanceOf[js.Any],
-        "stageName" -> stageName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[FlushStageAuthorizersCacheRequest]
-    }
   }
 
   /**
     * Requests API Gateway to flush a stage's cache.
     */
   @js.native
+  @Factory
   trait FlushStageCacheRequest extends js.Object {
     var restApiId: String
     var stageName: String
-  }
-
-  object FlushStageCacheRequest {
-    @inline
-    def apply(
-        restApiId: String,
-        stageName: String
-    ): FlushStageCacheRequest = {
-      val __obj = js.Dynamic.literal(
-        "restApiId" -> restApiId.asInstanceOf[js.Any],
-        "stageName" -> stageName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[FlushStageCacheRequest]
-    }
   }
 
   /**
@@ -2466,31 +1385,13 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/customize-gateway-responses.html|Customize Gateway Responses]]
     */
   @js.native
+  @Factory
   trait GatewayResponse extends js.Object {
     var defaultResponse: js.UndefOr[Boolean]
     var responseParameters: js.UndefOr[MapOfStringToString]
     var responseTemplates: js.UndefOr[MapOfStringToString]
     var responseType: js.UndefOr[GatewayResponseType]
     var statusCode: js.UndefOr[StatusCode]
-  }
-
-  object GatewayResponse {
-    @inline
-    def apply(
-        defaultResponse: js.UndefOr[Boolean] = js.undefined,
-        responseParameters: js.UndefOr[MapOfStringToString] = js.undefined,
-        responseTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
-        responseType: js.UndefOr[GatewayResponseType] = js.undefined,
-        statusCode: js.UndefOr[StatusCode] = js.undefined
-    ): GatewayResponse = {
-      val __obj = js.Dynamic.literal()
-      defaultResponse.foreach(__v => __obj.updateDynamic("defaultResponse")(__v.asInstanceOf[js.Any]))
-      responseParameters.foreach(__v => __obj.updateDynamic("responseParameters")(__v.asInstanceOf[js.Any]))
-      responseTemplates.foreach(__v => __obj.updateDynamic("responseTemplates")(__v.asInstanceOf[js.Any]))
-      responseType.foreach(__v => __obj.updateDynamic("responseType")(__v.asInstanceOf[js.Any]))
-      statusCode.foreach(__v => __obj.updateDynamic("statusCode")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GatewayResponse]
-    }
   }
 
   @js.native
@@ -2559,90 +1460,44 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/customize-gateway-responses.html|Customize Gateway Responses]]
     */
   @js.native
+  @Factory
   trait GatewayResponses extends js.Object {
     var items: js.UndefOr[ListOfGatewayResponse]
     var position: js.UndefOr[String]
-  }
-
-  object GatewayResponses {
-    @inline
-    def apply(
-        items: js.UndefOr[ListOfGatewayResponse] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): GatewayResponses = {
-      val __obj = js.Dynamic.literal()
-      items.foreach(__v => __obj.updateDynamic("items")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GatewayResponses]
-    }
   }
 
   /**
     * A request to generate a <a>ClientCertificate</a> resource.
     */
   @js.native
+  @Factory
   trait GenerateClientCertificateRequest extends js.Object {
     var description: js.UndefOr[String]
     var tags: js.UndefOr[MapOfStringToString]
-  }
-
-  object GenerateClientCertificateRequest {
-    @inline
-    def apply(
-        description: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[MapOfStringToString] = js.undefined
-    ): GenerateClientCertificateRequest = {
-      val __obj = js.Dynamic.literal()
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GenerateClientCertificateRequest]
-    }
   }
 
   /**
     * Requests API Gateway to get information about the current <a>Account</a> resource.
     */
   @js.native
+  @Factory
   trait GetAccountRequest extends js.Object {}
-
-  object GetAccountRequest {
-    @inline
-    def apply(
-    ): GetAccountRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[GetAccountRequest]
-    }
-  }
 
   /**
     * A request to get information about the current <a>ApiKey</a> resource.
     */
   @js.native
+  @Factory
   trait GetApiKeyRequest extends js.Object {
     var apiKey: String
     var includeValue: js.UndefOr[NullableBoolean]
-  }
-
-  object GetApiKeyRequest {
-    @inline
-    def apply(
-        apiKey: String,
-        includeValue: js.UndefOr[NullableBoolean] = js.undefined
-    ): GetApiKeyRequest = {
-      val __obj = js.Dynamic.literal(
-        "apiKey" -> apiKey.asInstanceOf[js.Any]
-      )
-
-      includeValue.foreach(__v => __obj.updateDynamic("includeValue")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetApiKeyRequest]
-    }
   }
 
   /**
     * A request to get information about the current <a>ApiKeys</a> resource.
     */
   @js.native
+  @Factory
   trait GetApiKeysRequest extends js.Object {
     var customerId: js.UndefOr[String]
     var includeValues: js.UndefOr[NullableBoolean]
@@ -2651,252 +1506,104 @@ package apigateway {
     var position: js.UndefOr[String]
   }
 
-  object GetApiKeysRequest {
-    @inline
-    def apply(
-        customerId: js.UndefOr[String] = js.undefined,
-        includeValues: js.UndefOr[NullableBoolean] = js.undefined,
-        limit: js.UndefOr[NullableInteger] = js.undefined,
-        nameQuery: js.UndefOr[String] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): GetApiKeysRequest = {
-      val __obj = js.Dynamic.literal()
-      customerId.foreach(__v => __obj.updateDynamic("customerId")(__v.asInstanceOf[js.Any]))
-      includeValues.foreach(__v => __obj.updateDynamic("includeValues")(__v.asInstanceOf[js.Any]))
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      nameQuery.foreach(__v => __obj.updateDynamic("nameQuery")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetApiKeysRequest]
-    }
-  }
-
   /**
     * Request to describe an existing <a>Authorizer</a> resource.
     */
   @js.native
+  @Factory
   trait GetAuthorizerRequest extends js.Object {
     var authorizerId: String
     var restApiId: String
-  }
-
-  object GetAuthorizerRequest {
-    @inline
-    def apply(
-        authorizerId: String,
-        restApiId: String
-    ): GetAuthorizerRequest = {
-      val __obj = js.Dynamic.literal(
-        "authorizerId" -> authorizerId.asInstanceOf[js.Any],
-        "restApiId"    -> restApiId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetAuthorizerRequest]
-    }
   }
 
   /**
     * Request to describe an existing <a>Authorizers</a> resource.
     */
   @js.native
+  @Factory
   trait GetAuthorizersRequest extends js.Object {
     var restApiId: String
     var limit: js.UndefOr[NullableInteger]
     var position: js.UndefOr[String]
   }
 
-  object GetAuthorizersRequest {
-    @inline
-    def apply(
-        restApiId: String,
-        limit: js.UndefOr[NullableInteger] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): GetAuthorizersRequest = {
-      val __obj = js.Dynamic.literal(
-        "restApiId" -> restApiId.asInstanceOf[js.Any]
-      )
-
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetAuthorizersRequest]
-    }
-  }
-
   /**
     * Request to describe a <a>BasePathMapping</a> resource.
     */
   @js.native
+  @Factory
   trait GetBasePathMappingRequest extends js.Object {
     var basePath: String
     var domainName: String
-  }
-
-  object GetBasePathMappingRequest {
-    @inline
-    def apply(
-        basePath: String,
-        domainName: String
-    ): GetBasePathMappingRequest = {
-      val __obj = js.Dynamic.literal(
-        "basePath"   -> basePath.asInstanceOf[js.Any],
-        "domainName" -> domainName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBasePathMappingRequest]
-    }
   }
 
   /**
     * A request to get information about a collection of <a>BasePathMapping</a> resources.
     */
   @js.native
+  @Factory
   trait GetBasePathMappingsRequest extends js.Object {
     var domainName: String
     var limit: js.UndefOr[NullableInteger]
     var position: js.UndefOr[String]
   }
 
-  object GetBasePathMappingsRequest {
-    @inline
-    def apply(
-        domainName: String,
-        limit: js.UndefOr[NullableInteger] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): GetBasePathMappingsRequest = {
-      val __obj = js.Dynamic.literal(
-        "domainName" -> domainName.asInstanceOf[js.Any]
-      )
-
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBasePathMappingsRequest]
-    }
-  }
-
   /**
     * A request to get information about the current <a>ClientCertificate</a> resource.
     */
   @js.native
+  @Factory
   trait GetClientCertificateRequest extends js.Object {
     var clientCertificateId: String
-  }
-
-  object GetClientCertificateRequest {
-    @inline
-    def apply(
-        clientCertificateId: String
-    ): GetClientCertificateRequest = {
-      val __obj = js.Dynamic.literal(
-        "clientCertificateId" -> clientCertificateId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetClientCertificateRequest]
-    }
   }
 
   /**
     * A request to get information about a collection of <a>ClientCertificate</a> resources.
     */
   @js.native
+  @Factory
   trait GetClientCertificatesRequest extends js.Object {
     var limit: js.UndefOr[NullableInteger]
     var position: js.UndefOr[String]
-  }
-
-  object GetClientCertificatesRequest {
-    @inline
-    def apply(
-        limit: js.UndefOr[NullableInteger] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): GetClientCertificatesRequest = {
-      val __obj = js.Dynamic.literal()
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetClientCertificatesRequest]
-    }
   }
 
   /**
     * Requests API Gateway to get information about a <a>Deployment</a> resource.
     */
   @js.native
+  @Factory
   trait GetDeploymentRequest extends js.Object {
     var deploymentId: String
     var restApiId: String
     var embed: js.UndefOr[ListOfString]
   }
 
-  object GetDeploymentRequest {
-    @inline
-    def apply(
-        deploymentId: String,
-        restApiId: String,
-        embed: js.UndefOr[ListOfString] = js.undefined
-    ): GetDeploymentRequest = {
-      val __obj = js.Dynamic.literal(
-        "deploymentId" -> deploymentId.asInstanceOf[js.Any],
-        "restApiId"    -> restApiId.asInstanceOf[js.Any]
-      )
-
-      embed.foreach(__v => __obj.updateDynamic("embed")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDeploymentRequest]
-    }
-  }
-
   /**
     * Requests API Gateway to get information about a <a>Deployments</a> collection.
     */
   @js.native
+  @Factory
   trait GetDeploymentsRequest extends js.Object {
     var restApiId: String
     var limit: js.UndefOr[NullableInteger]
     var position: js.UndefOr[String]
   }
 
-  object GetDeploymentsRequest {
-    @inline
-    def apply(
-        restApiId: String,
-        limit: js.UndefOr[NullableInteger] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): GetDeploymentsRequest = {
-      val __obj = js.Dynamic.literal(
-        "restApiId" -> restApiId.asInstanceOf[js.Any]
-      )
-
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDeploymentsRequest]
-    }
-  }
-
   /**
     * Gets a specified documentation part of a given API.
     */
   @js.native
+  @Factory
   trait GetDocumentationPartRequest extends js.Object {
     var documentationPartId: String
     var restApiId: String
-  }
-
-  object GetDocumentationPartRequest {
-    @inline
-    def apply(
-        documentationPartId: String,
-        restApiId: String
-    ): GetDocumentationPartRequest = {
-      val __obj = js.Dynamic.literal(
-        "documentationPartId" -> documentationPartId.asInstanceOf[js.Any],
-        "restApiId"           -> restApiId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetDocumentationPartRequest]
-    }
   }
 
   /**
     * Gets the documentation parts of an API. The result may be filtered by the type, name, or path of API entities (targets).
     */
   @js.native
+  @Factory
   trait GetDocumentationPartsRequest extends js.Object {
     var restApiId: String
     var limit: js.UndefOr[NullableInteger]
@@ -2907,129 +1614,51 @@ package apigateway {
     var `type`: js.UndefOr[DocumentationPartType]
   }
 
-  object GetDocumentationPartsRequest {
-    @inline
-    def apply(
-        restApiId: String,
-        limit: js.UndefOr[NullableInteger] = js.undefined,
-        locationStatus: js.UndefOr[LocationStatusType] = js.undefined,
-        nameQuery: js.UndefOr[String] = js.undefined,
-        path: js.UndefOr[String] = js.undefined,
-        position: js.UndefOr[String] = js.undefined,
-        `type`: js.UndefOr[DocumentationPartType] = js.undefined
-    ): GetDocumentationPartsRequest = {
-      val __obj = js.Dynamic.literal(
-        "restApiId" -> restApiId.asInstanceOf[js.Any]
-      )
-
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      locationStatus.foreach(__v => __obj.updateDynamic("locationStatus")(__v.asInstanceOf[js.Any]))
-      nameQuery.foreach(__v => __obj.updateDynamic("nameQuery")(__v.asInstanceOf[js.Any]))
-      path.foreach(__v => __obj.updateDynamic("path")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDocumentationPartsRequest]
-    }
-  }
-
   /**
     * Gets a documentation snapshot of an API.
     */
   @js.native
+  @Factory
   trait GetDocumentationVersionRequest extends js.Object {
     var documentationVersion: String
     var restApiId: String
-  }
-
-  object GetDocumentationVersionRequest {
-    @inline
-    def apply(
-        documentationVersion: String,
-        restApiId: String
-    ): GetDocumentationVersionRequest = {
-      val __obj = js.Dynamic.literal(
-        "documentationVersion" -> documentationVersion.asInstanceOf[js.Any],
-        "restApiId"            -> restApiId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetDocumentationVersionRequest]
-    }
   }
 
   /**
     * Gets the documentation versions of an API.
     */
   @js.native
+  @Factory
   trait GetDocumentationVersionsRequest extends js.Object {
     var restApiId: String
     var limit: js.UndefOr[NullableInteger]
     var position: js.UndefOr[String]
   }
 
-  object GetDocumentationVersionsRequest {
-    @inline
-    def apply(
-        restApiId: String,
-        limit: js.UndefOr[NullableInteger] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): GetDocumentationVersionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "restApiId" -> restApiId.asInstanceOf[js.Any]
-      )
-
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDocumentationVersionsRequest]
-    }
-  }
-
   /**
     * Request to get the name of a <a>DomainName</a> resource.
     */
   @js.native
+  @Factory
   trait GetDomainNameRequest extends js.Object {
     var domainName: String
-  }
-
-  object GetDomainNameRequest {
-    @inline
-    def apply(
-        domainName: String
-    ): GetDomainNameRequest = {
-      val __obj = js.Dynamic.literal(
-        "domainName" -> domainName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetDomainNameRequest]
-    }
   }
 
   /**
     * Request to describe a collection of <a>DomainName</a> resources.
     */
   @js.native
+  @Factory
   trait GetDomainNamesRequest extends js.Object {
     var limit: js.UndefOr[NullableInteger]
     var position: js.UndefOr[String]
-  }
-
-  object GetDomainNamesRequest {
-    @inline
-    def apply(
-        limit: js.UndefOr[NullableInteger] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): GetDomainNamesRequest = {
-      val __obj = js.Dynamic.literal()
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDomainNamesRequest]
-    }
   }
 
   /**
     * Request a new export of a <a>RestApi</a> for a particular <a>Stage</a>.
     */
   @js.native
+  @Factory
   trait GetExportRequest extends js.Object {
     var exportType: String
     var restApiId: String
@@ -3038,109 +1667,43 @@ package apigateway {
     var parameters: js.UndefOr[MapOfStringToString]
   }
 
-  object GetExportRequest {
-    @inline
-    def apply(
-        exportType: String,
-        restApiId: String,
-        stageName: String,
-        accepts: js.UndefOr[String] = js.undefined,
-        parameters: js.UndefOr[MapOfStringToString] = js.undefined
-    ): GetExportRequest = {
-      val __obj = js.Dynamic.literal(
-        "exportType" -> exportType.asInstanceOf[js.Any],
-        "restApiId"  -> restApiId.asInstanceOf[js.Any],
-        "stageName"  -> stageName.asInstanceOf[js.Any]
-      )
-
-      accepts.foreach(__v => __obj.updateDynamic("accepts")(__v.asInstanceOf[js.Any]))
-      parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetExportRequest]
-    }
-  }
-
   /**
     * Gets a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
     */
   @js.native
+  @Factory
   trait GetGatewayResponseRequest extends js.Object {
     var responseType: GatewayResponseType
     var restApiId: String
-  }
-
-  object GetGatewayResponseRequest {
-    @inline
-    def apply(
-        responseType: GatewayResponseType,
-        restApiId: String
-    ): GetGatewayResponseRequest = {
-      val __obj = js.Dynamic.literal(
-        "responseType" -> responseType.asInstanceOf[js.Any],
-        "restApiId"    -> restApiId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetGatewayResponseRequest]
-    }
   }
 
   /**
     * Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If an API developer has not added any definitions for gateway responses, the result will be the API Gateway-generated default <a>GatewayResponses</a> collection for the supported response types.
     */
   @js.native
+  @Factory
   trait GetGatewayResponsesRequest extends js.Object {
     var restApiId: String
     var limit: js.UndefOr[NullableInteger]
     var position: js.UndefOr[String]
   }
 
-  object GetGatewayResponsesRequest {
-    @inline
-    def apply(
-        restApiId: String,
-        limit: js.UndefOr[NullableInteger] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): GetGatewayResponsesRequest = {
-      val __obj = js.Dynamic.literal(
-        "restApiId" -> restApiId.asInstanceOf[js.Any]
-      )
-
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetGatewayResponsesRequest]
-    }
-  }
-
   /**
     * Represents a request to get the integration configuration.
     */
   @js.native
+  @Factory
   trait GetIntegrationRequest extends js.Object {
     var httpMethod: String
     var resourceId: String
     var restApiId: String
   }
 
-  object GetIntegrationRequest {
-    @inline
-    def apply(
-        httpMethod: String,
-        resourceId: String,
-        restApiId: String
-    ): GetIntegrationRequest = {
-      val __obj = js.Dynamic.literal(
-        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
-        "resourceId" -> resourceId.asInstanceOf[js.Any],
-        "restApiId"  -> restApiId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetIntegrationRequest]
-    }
-  }
-
   /**
     * Represents a get integration response request.
     */
   @js.native
+  @Factory
   trait GetIntegrationResponseRequest extends js.Object {
     var httpMethod: String
     var resourceId: String
@@ -3148,56 +1711,22 @@ package apigateway {
     var statusCode: StatusCode
   }
 
-  object GetIntegrationResponseRequest {
-    @inline
-    def apply(
-        httpMethod: String,
-        resourceId: String,
-        restApiId: String,
-        statusCode: StatusCode
-    ): GetIntegrationResponseRequest = {
-      val __obj = js.Dynamic.literal(
-        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
-        "resourceId" -> resourceId.asInstanceOf[js.Any],
-        "restApiId"  -> restApiId.asInstanceOf[js.Any],
-        "statusCode" -> statusCode.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetIntegrationResponseRequest]
-    }
-  }
-
   /**
     * Request to describe an existing <a>Method</a> resource.
     */
   @js.native
+  @Factory
   trait GetMethodRequest extends js.Object {
     var httpMethod: String
     var resourceId: String
     var restApiId: String
   }
 
-  object GetMethodRequest {
-    @inline
-    def apply(
-        httpMethod: String,
-        resourceId: String,
-        restApiId: String
-    ): GetMethodRequest = {
-      val __obj = js.Dynamic.literal(
-        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
-        "resourceId" -> resourceId.asInstanceOf[js.Any],
-        "restApiId"  -> restApiId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetMethodRequest]
-    }
-  }
-
   /**
     * Request to describe a <a>MethodResponse</a> resource.
     */
   @js.native
+  @Factory
   trait GetMethodResponseRequest extends js.Object {
     var httpMethod: String
     var resourceId: String
@@ -3205,185 +1734,75 @@ package apigateway {
     var statusCode: StatusCode
   }
 
-  object GetMethodResponseRequest {
-    @inline
-    def apply(
-        httpMethod: String,
-        resourceId: String,
-        restApiId: String,
-        statusCode: StatusCode
-    ): GetMethodResponseRequest = {
-      val __obj = js.Dynamic.literal(
-        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
-        "resourceId" -> resourceId.asInstanceOf[js.Any],
-        "restApiId"  -> restApiId.asInstanceOf[js.Any],
-        "statusCode" -> statusCode.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetMethodResponseRequest]
-    }
-  }
-
   /**
     * Request to list information about a model in an existing <a>RestApi</a> resource.
     */
   @js.native
+  @Factory
   trait GetModelRequest extends js.Object {
     var modelName: String
     var restApiId: String
     var flatten: js.UndefOr[Boolean]
   }
 
-  object GetModelRequest {
-    @inline
-    def apply(
-        modelName: String,
-        restApiId: String,
-        flatten: js.UndefOr[Boolean] = js.undefined
-    ): GetModelRequest = {
-      val __obj = js.Dynamic.literal(
-        "modelName" -> modelName.asInstanceOf[js.Any],
-        "restApiId" -> restApiId.asInstanceOf[js.Any]
-      )
-
-      flatten.foreach(__v => __obj.updateDynamic("flatten")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetModelRequest]
-    }
-  }
-
   /**
     * Request to generate a sample mapping template used to transform the payload.
     */
   @js.native
+  @Factory
   trait GetModelTemplateRequest extends js.Object {
     var modelName: String
     var restApiId: String
-  }
-
-  object GetModelTemplateRequest {
-    @inline
-    def apply(
-        modelName: String,
-        restApiId: String
-    ): GetModelTemplateRequest = {
-      val __obj = js.Dynamic.literal(
-        "modelName" -> modelName.asInstanceOf[js.Any],
-        "restApiId" -> restApiId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetModelTemplateRequest]
-    }
   }
 
   /**
     * Request to list existing <a>Models</a> defined for a <a>RestApi</a> resource.
     */
   @js.native
+  @Factory
   trait GetModelsRequest extends js.Object {
     var restApiId: String
     var limit: js.UndefOr[NullableInteger]
     var position: js.UndefOr[String]
   }
 
-  object GetModelsRequest {
-    @inline
-    def apply(
-        restApiId: String,
-        limit: js.UndefOr[NullableInteger] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): GetModelsRequest = {
-      val __obj = js.Dynamic.literal(
-        "restApiId" -> restApiId.asInstanceOf[js.Any]
-      )
-
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetModelsRequest]
-    }
-  }
-
   /**
     * Gets a <a>RequestValidator</a> of a given <a>RestApi</a>.
     */
   @js.native
+  @Factory
   trait GetRequestValidatorRequest extends js.Object {
     var requestValidatorId: String
     var restApiId: String
-  }
-
-  object GetRequestValidatorRequest {
-    @inline
-    def apply(
-        requestValidatorId: String,
-        restApiId: String
-    ): GetRequestValidatorRequest = {
-      val __obj = js.Dynamic.literal(
-        "requestValidatorId" -> requestValidatorId.asInstanceOf[js.Any],
-        "restApiId"          -> restApiId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetRequestValidatorRequest]
-    }
   }
 
   /**
     * Gets the <a>RequestValidators</a> collection of a given <a>RestApi</a>.
     */
   @js.native
+  @Factory
   trait GetRequestValidatorsRequest extends js.Object {
     var restApiId: String
     var limit: js.UndefOr[NullableInteger]
     var position: js.UndefOr[String]
   }
 
-  object GetRequestValidatorsRequest {
-    @inline
-    def apply(
-        restApiId: String,
-        limit: js.UndefOr[NullableInteger] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): GetRequestValidatorsRequest = {
-      val __obj = js.Dynamic.literal(
-        "restApiId" -> restApiId.asInstanceOf[js.Any]
-      )
-
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRequestValidatorsRequest]
-    }
-  }
-
   /**
     * Request to list information about a resource.
     */
   @js.native
+  @Factory
   trait GetResourceRequest extends js.Object {
     var resourceId: String
     var restApiId: String
     var embed: js.UndefOr[ListOfString]
   }
 
-  object GetResourceRequest {
-    @inline
-    def apply(
-        resourceId: String,
-        restApiId: String,
-        embed: js.UndefOr[ListOfString] = js.undefined
-    ): GetResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceId" -> resourceId.asInstanceOf[js.Any],
-        "restApiId"  -> restApiId.asInstanceOf[js.Any]
-      )
-
-      embed.foreach(__v => __obj.updateDynamic("embed")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetResourceRequest]
-    }
-  }
-
   /**
     * Request to list information about a collection of resources.
     */
   @js.native
+  @Factory
   trait GetResourcesRequest extends js.Object {
     var restApiId: String
     var embed: js.UndefOr[ListOfString]
@@ -3391,72 +1810,30 @@ package apigateway {
     var position: js.UndefOr[String]
   }
 
-  object GetResourcesRequest {
-    @inline
-    def apply(
-        restApiId: String,
-        embed: js.UndefOr[ListOfString] = js.undefined,
-        limit: js.UndefOr[NullableInteger] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): GetResourcesRequest = {
-      val __obj = js.Dynamic.literal(
-        "restApiId" -> restApiId.asInstanceOf[js.Any]
-      )
-
-      embed.foreach(__v => __obj.updateDynamic("embed")(__v.asInstanceOf[js.Any]))
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetResourcesRequest]
-    }
-  }
-
   /**
     * The GET request to list an existing <a>RestApi</a> defined for your collection.
     */
   @js.native
+  @Factory
   trait GetRestApiRequest extends js.Object {
     var restApiId: String
-  }
-
-  object GetRestApiRequest {
-    @inline
-    def apply(
-        restApiId: String
-    ): GetRestApiRequest = {
-      val __obj = js.Dynamic.literal(
-        "restApiId" -> restApiId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetRestApiRequest]
-    }
   }
 
   /**
     * The GET request to list existing <a>RestApis</a> defined for your collection.
     */
   @js.native
+  @Factory
   trait GetRestApisRequest extends js.Object {
     var limit: js.UndefOr[NullableInteger]
     var position: js.UndefOr[String]
-  }
-
-  object GetRestApisRequest {
-    @inline
-    def apply(
-        limit: js.UndefOr[NullableInteger] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): GetRestApisRequest = {
-      val __obj = js.Dynamic.literal()
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRestApisRequest]
-    }
   }
 
   /**
     * Request a new generated client SDK for a <a>RestApi</a> and <a>Stage</a>.
     */
   @js.native
+  @Factory
   trait GetSdkRequest extends js.Object {
     var restApiId: String
     var sdkType: String
@@ -3464,171 +1841,71 @@ package apigateway {
     var parameters: js.UndefOr[MapOfStringToString]
   }
 
-  object GetSdkRequest {
-    @inline
-    def apply(
-        restApiId: String,
-        sdkType: String,
-        stageName: String,
-        parameters: js.UndefOr[MapOfStringToString] = js.undefined
-    ): GetSdkRequest = {
-      val __obj = js.Dynamic.literal(
-        "restApiId" -> restApiId.asInstanceOf[js.Any],
-        "sdkType"   -> sdkType.asInstanceOf[js.Any],
-        "stageName" -> stageName.asInstanceOf[js.Any]
-      )
-
-      parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetSdkRequest]
-    }
-  }
-
   /**
     * Get an <a>SdkType</a> instance.
     */
   @js.native
+  @Factory
   trait GetSdkTypeRequest extends js.Object {
     var id: String
-  }
-
-  object GetSdkTypeRequest {
-    @inline
-    def apply(
-        id: String
-    ): GetSdkTypeRequest = {
-      val __obj = js.Dynamic.literal(
-        "id" -> id.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetSdkTypeRequest]
-    }
   }
 
   /**
     * Get the <a>SdkTypes</a> collection.
     */
   @js.native
+  @Factory
   trait GetSdkTypesRequest extends js.Object {
     var limit: js.UndefOr[NullableInteger]
     var position: js.UndefOr[String]
-  }
-
-  object GetSdkTypesRequest {
-    @inline
-    def apply(
-        limit: js.UndefOr[NullableInteger] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): GetSdkTypesRequest = {
-      val __obj = js.Dynamic.literal()
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetSdkTypesRequest]
-    }
   }
 
   /**
     * Requests API Gateway to get information about a <a>Stage</a> resource.
     */
   @js.native
+  @Factory
   trait GetStageRequest extends js.Object {
     var restApiId: String
     var stageName: String
-  }
-
-  object GetStageRequest {
-    @inline
-    def apply(
-        restApiId: String,
-        stageName: String
-    ): GetStageRequest = {
-      val __obj = js.Dynamic.literal(
-        "restApiId" -> restApiId.asInstanceOf[js.Any],
-        "stageName" -> stageName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetStageRequest]
-    }
   }
 
   /**
     * Requests API Gateway to get information about one or more <a>Stage</a> resources.
     */
   @js.native
+  @Factory
   trait GetStagesRequest extends js.Object {
     var restApiId: String
     var deploymentId: js.UndefOr[String]
-  }
-
-  object GetStagesRequest {
-    @inline
-    def apply(
-        restApiId: String,
-        deploymentId: js.UndefOr[String] = js.undefined
-    ): GetStagesRequest = {
-      val __obj = js.Dynamic.literal(
-        "restApiId" -> restApiId.asInstanceOf[js.Any]
-      )
-
-      deploymentId.foreach(__v => __obj.updateDynamic("deploymentId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetStagesRequest]
-    }
   }
 
   /**
     * Gets the <a>Tags</a> collection for a given resource.
     */
   @js.native
+  @Factory
   trait GetTagsRequest extends js.Object {
     var resourceArn: String
     var limit: js.UndefOr[NullableInteger]
     var position: js.UndefOr[String]
   }
 
-  object GetTagsRequest {
-    @inline
-    def apply(
-        resourceArn: String,
-        limit: js.UndefOr[NullableInteger] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): GetTagsRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
-      )
-
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetTagsRequest]
-    }
-  }
-
   /**
     * The GET request to get a usage plan key of a given key identifier.
     */
   @js.native
+  @Factory
   trait GetUsagePlanKeyRequest extends js.Object {
     var keyId: String
     var usagePlanId: String
-  }
-
-  object GetUsagePlanKeyRequest {
-    @inline
-    def apply(
-        keyId: String,
-        usagePlanId: String
-    ): GetUsagePlanKeyRequest = {
-      val __obj = js.Dynamic.literal(
-        "keyId"       -> keyId.asInstanceOf[js.Any],
-        "usagePlanId" -> usagePlanId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetUsagePlanKeyRequest]
-    }
   }
 
   /**
     * The GET request to get all the usage plan keys representing the API keys added to a specified usage plan.
     */
   @js.native
+  @Factory
   trait GetUsagePlanKeysRequest extends js.Object {
     var usagePlanId: String
     var limit: js.UndefOr[NullableInteger]
@@ -3636,75 +1913,31 @@ package apigateway {
     var position: js.UndefOr[String]
   }
 
-  object GetUsagePlanKeysRequest {
-    @inline
-    def apply(
-        usagePlanId: String,
-        limit: js.UndefOr[NullableInteger] = js.undefined,
-        nameQuery: js.UndefOr[String] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): GetUsagePlanKeysRequest = {
-      val __obj = js.Dynamic.literal(
-        "usagePlanId" -> usagePlanId.asInstanceOf[js.Any]
-      )
-
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      nameQuery.foreach(__v => __obj.updateDynamic("nameQuery")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetUsagePlanKeysRequest]
-    }
-  }
-
   /**
     * The GET request to get a usage plan of a given plan identifier.
     */
   @js.native
+  @Factory
   trait GetUsagePlanRequest extends js.Object {
     var usagePlanId: String
-  }
-
-  object GetUsagePlanRequest {
-    @inline
-    def apply(
-        usagePlanId: String
-    ): GetUsagePlanRequest = {
-      val __obj = js.Dynamic.literal(
-        "usagePlanId" -> usagePlanId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetUsagePlanRequest]
-    }
   }
 
   /**
     * The GET request to get all the usage plans of the caller's account.
     */
   @js.native
+  @Factory
   trait GetUsagePlansRequest extends js.Object {
     var keyId: js.UndefOr[String]
     var limit: js.UndefOr[NullableInteger]
     var position: js.UndefOr[String]
   }
 
-  object GetUsagePlansRequest {
-    @inline
-    def apply(
-        keyId: js.UndefOr[String] = js.undefined,
-        limit: js.UndefOr[NullableInteger] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): GetUsagePlansRequest = {
-      val __obj = js.Dynamic.literal()
-      keyId.foreach(__v => __obj.updateDynamic("keyId")(__v.asInstanceOf[js.Any]))
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetUsagePlansRequest]
-    }
-  }
-
   /**
     * The GET request to get the usage data of a usage plan in a specified time interval.
     */
   @js.native
+  @Factory
   trait GetUsageRequest extends js.Object {
     var endDate: String
     var startDate: String
@@ -3714,103 +1947,41 @@ package apigateway {
     var position: js.UndefOr[String]
   }
 
-  object GetUsageRequest {
-    @inline
-    def apply(
-        endDate: String,
-        startDate: String,
-        usagePlanId: String,
-        keyId: js.UndefOr[String] = js.undefined,
-        limit: js.UndefOr[NullableInteger] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): GetUsageRequest = {
-      val __obj = js.Dynamic.literal(
-        "endDate"     -> endDate.asInstanceOf[js.Any],
-        "startDate"   -> startDate.asInstanceOf[js.Any],
-        "usagePlanId" -> usagePlanId.asInstanceOf[js.Any]
-      )
-
-      keyId.foreach(__v => __obj.updateDynamic("keyId")(__v.asInstanceOf[js.Any]))
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetUsageRequest]
-    }
-  }
-
   /**
     * Gets a specified VPC link under the caller's account in a region.
     */
   @js.native
+  @Factory
   trait GetVpcLinkRequest extends js.Object {
     var vpcLinkId: String
-  }
-
-  object GetVpcLinkRequest {
-    @inline
-    def apply(
-        vpcLinkId: String
-    ): GetVpcLinkRequest = {
-      val __obj = js.Dynamic.literal(
-        "vpcLinkId" -> vpcLinkId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetVpcLinkRequest]
-    }
   }
 
   /**
     * Gets the <a>VpcLinks</a> collection under the caller's account in a selected region.
     */
   @js.native
+  @Factory
   trait GetVpcLinksRequest extends js.Object {
     var limit: js.UndefOr[NullableInteger]
     var position: js.UndefOr[String]
-  }
-
-  object GetVpcLinksRequest {
-    @inline
-    def apply(
-        limit: js.UndefOr[NullableInteger] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): GetVpcLinksRequest = {
-      val __obj = js.Dynamic.literal()
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetVpcLinksRequest]
-    }
   }
 
   /**
     * The POST request to import API keys from an external source, such as a CSV-formatted file.
     */
   @js.native
+  @Factory
   trait ImportApiKeysRequest extends js.Object {
     var body: Blob
     var format: ApiKeysFormat
     var failOnWarnings: js.UndefOr[Boolean]
   }
 
-  object ImportApiKeysRequest {
-    @inline
-    def apply(
-        body: Blob,
-        format: ApiKeysFormat,
-        failOnWarnings: js.UndefOr[Boolean] = js.undefined
-    ): ImportApiKeysRequest = {
-      val __obj = js.Dynamic.literal(
-        "body"   -> body.asInstanceOf[js.Any],
-        "format" -> format.asInstanceOf[js.Any]
-      )
-
-      failOnWarnings.foreach(__v => __obj.updateDynamic("failOnWarnings")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ImportApiKeysRequest]
-    }
-  }
-
   /**
     * Import documentation parts from an external (e.g., OpenAPI) definition file.
     */
   @js.native
+  @Factory
   trait ImportDocumentationPartsRequest extends js.Object {
     var body: Blob
     var restApiId: String
@@ -3818,50 +1989,15 @@ package apigateway {
     var mode: js.UndefOr[PutMode]
   }
 
-  object ImportDocumentationPartsRequest {
-    @inline
-    def apply(
-        body: Blob,
-        restApiId: String,
-        failOnWarnings: js.UndefOr[Boolean] = js.undefined,
-        mode: js.UndefOr[PutMode] = js.undefined
-    ): ImportDocumentationPartsRequest = {
-      val __obj = js.Dynamic.literal(
-        "body"      -> body.asInstanceOf[js.Any],
-        "restApiId" -> restApiId.asInstanceOf[js.Any]
-      )
-
-      failOnWarnings.foreach(__v => __obj.updateDynamic("failOnWarnings")(__v.asInstanceOf[js.Any]))
-      mode.foreach(__v => __obj.updateDynamic("mode")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ImportDocumentationPartsRequest]
-    }
-  }
-
   /**
     * A POST request to import an API to API Gateway using an input of an API definition file.
     */
   @js.native
+  @Factory
   trait ImportRestApiRequest extends js.Object {
     var body: Blob
     var failOnWarnings: js.UndefOr[Boolean]
     var parameters: js.UndefOr[MapOfStringToString]
-  }
-
-  object ImportRestApiRequest {
-    @inline
-    def apply(
-        body: Blob,
-        failOnWarnings: js.UndefOr[Boolean] = js.undefined,
-        parameters: js.UndefOr[MapOfStringToString] = js.undefined
-    ): ImportRestApiRequest = {
-      val __obj = js.Dynamic.literal(
-        "body" -> body.asInstanceOf[js.Any]
-      )
-
-      failOnWarnings.foreach(__v => __obj.updateDynamic("failOnWarnings")(__v.asInstanceOf[js.Any]))
-      parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ImportRestApiRequest]
-    }
   }
 
   /**
@@ -3870,6 +2006,7 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html|Creating an API]]
     */
   @js.native
+  @Factory
   trait Integration extends js.Object {
     var cacheKeyParameters: js.UndefOr[ListOfString]
     var cacheNamespace: js.UndefOr[String]
@@ -3887,74 +2024,19 @@ package apigateway {
     var uri: js.UndefOr[String]
   }
 
-  object Integration {
-    @inline
-    def apply(
-        cacheKeyParameters: js.UndefOr[ListOfString] = js.undefined,
-        cacheNamespace: js.UndefOr[String] = js.undefined,
-        connectionId: js.UndefOr[String] = js.undefined,
-        connectionType: js.UndefOr[ConnectionType] = js.undefined,
-        contentHandling: js.UndefOr[ContentHandlingStrategy] = js.undefined,
-        credentials: js.UndefOr[String] = js.undefined,
-        httpMethod: js.UndefOr[String] = js.undefined,
-        integrationResponses: js.UndefOr[MapOfIntegrationResponse] = js.undefined,
-        passthroughBehavior: js.UndefOr[String] = js.undefined,
-        requestParameters: js.UndefOr[MapOfStringToString] = js.undefined,
-        requestTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
-        timeoutInMillis: js.UndefOr[Int] = js.undefined,
-        `type`: js.UndefOr[IntegrationType] = js.undefined,
-        uri: js.UndefOr[String] = js.undefined
-    ): Integration = {
-      val __obj = js.Dynamic.literal()
-      cacheKeyParameters.foreach(__v => __obj.updateDynamic("cacheKeyParameters")(__v.asInstanceOf[js.Any]))
-      cacheNamespace.foreach(__v => __obj.updateDynamic("cacheNamespace")(__v.asInstanceOf[js.Any]))
-      connectionId.foreach(__v => __obj.updateDynamic("connectionId")(__v.asInstanceOf[js.Any]))
-      connectionType.foreach(__v => __obj.updateDynamic("connectionType")(__v.asInstanceOf[js.Any]))
-      contentHandling.foreach(__v => __obj.updateDynamic("contentHandling")(__v.asInstanceOf[js.Any]))
-      credentials.foreach(__v => __obj.updateDynamic("credentials")(__v.asInstanceOf[js.Any]))
-      httpMethod.foreach(__v => __obj.updateDynamic("httpMethod")(__v.asInstanceOf[js.Any]))
-      integrationResponses.foreach(__v => __obj.updateDynamic("integrationResponses")(__v.asInstanceOf[js.Any]))
-      passthroughBehavior.foreach(__v => __obj.updateDynamic("passthroughBehavior")(__v.asInstanceOf[js.Any]))
-      requestParameters.foreach(__v => __obj.updateDynamic("requestParameters")(__v.asInstanceOf[js.Any]))
-      requestTemplates.foreach(__v => __obj.updateDynamic("requestTemplates")(__v.asInstanceOf[js.Any]))
-      timeoutInMillis.foreach(__v => __obj.updateDynamic("timeoutInMillis")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      uri.foreach(__v => __obj.updateDynamic("uri")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Integration]
-    }
-  }
-
   /**
     * Represents an integration response. The status code must map to an existing <a>MethodResponse</a>, and parameters and templates can be used to transform the back-end response.
     *
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html|Creating an API]]
     */
   @js.native
+  @Factory
   trait IntegrationResponse extends js.Object {
     var contentHandling: js.UndefOr[ContentHandlingStrategy]
     var responseParameters: js.UndefOr[MapOfStringToString]
     var responseTemplates: js.UndefOr[MapOfStringToString]
     var selectionPattern: js.UndefOr[String]
     var statusCode: js.UndefOr[StatusCode]
-  }
-
-  object IntegrationResponse {
-    @inline
-    def apply(
-        contentHandling: js.UndefOr[ContentHandlingStrategy] = js.undefined,
-        responseParameters: js.UndefOr[MapOfStringToString] = js.undefined,
-        responseTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
-        selectionPattern: js.UndefOr[String] = js.undefined,
-        statusCode: js.UndefOr[StatusCode] = js.undefined
-    ): IntegrationResponse = {
-      val __obj = js.Dynamic.literal()
-      contentHandling.foreach(__v => __obj.updateDynamic("contentHandling")(__v.asInstanceOf[js.Any]))
-      responseParameters.foreach(__v => __obj.updateDynamic("responseParameters")(__v.asInstanceOf[js.Any]))
-      responseTemplates.foreach(__v => __obj.updateDynamic("responseTemplates")(__v.asInstanceOf[js.Any]))
-      selectionPattern.foreach(__v => __obj.updateDynamic("selectionPattern")(__v.asInstanceOf[js.Any]))
-      statusCode.foreach(__v => __obj.updateDynamic("statusCode")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[IntegrationResponse]
-    }
   }
 
   /**
@@ -3996,6 +2078,7 @@ package apigateway {
     * @see <a>MethodResponse</a>, <a>Integration</a>, <a>IntegrationResponse</a>, <a>Resource</a>, [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-method-settings.html|Set up an API's method]]
     */
   @js.native
+  @Factory
   trait Method extends js.Object {
     var apiKeyRequired: js.UndefOr[NullableBoolean]
     var authorizationScopes: js.UndefOr[ListOfString]
@@ -4008,37 +2091,6 @@ package apigateway {
     var requestModels: js.UndefOr[MapOfStringToString]
     var requestParameters: js.UndefOr[MapOfStringToBoolean]
     var requestValidatorId: js.UndefOr[String]
-  }
-
-  object Method {
-    @inline
-    def apply(
-        apiKeyRequired: js.UndefOr[NullableBoolean] = js.undefined,
-        authorizationScopes: js.UndefOr[ListOfString] = js.undefined,
-        authorizationType: js.UndefOr[String] = js.undefined,
-        authorizerId: js.UndefOr[String] = js.undefined,
-        httpMethod: js.UndefOr[String] = js.undefined,
-        methodIntegration: js.UndefOr[Integration] = js.undefined,
-        methodResponses: js.UndefOr[MapOfMethodResponse] = js.undefined,
-        operationName: js.UndefOr[String] = js.undefined,
-        requestModels: js.UndefOr[MapOfStringToString] = js.undefined,
-        requestParameters: js.UndefOr[MapOfStringToBoolean] = js.undefined,
-        requestValidatorId: js.UndefOr[String] = js.undefined
-    ): Method = {
-      val __obj = js.Dynamic.literal()
-      apiKeyRequired.foreach(__v => __obj.updateDynamic("apiKeyRequired")(__v.asInstanceOf[js.Any]))
-      authorizationScopes.foreach(__v => __obj.updateDynamic("authorizationScopes")(__v.asInstanceOf[js.Any]))
-      authorizationType.foreach(__v => __obj.updateDynamic("authorizationType")(__v.asInstanceOf[js.Any]))
-      authorizerId.foreach(__v => __obj.updateDynamic("authorizerId")(__v.asInstanceOf[js.Any]))
-      httpMethod.foreach(__v => __obj.updateDynamic("httpMethod")(__v.asInstanceOf[js.Any]))
-      methodIntegration.foreach(__v => __obj.updateDynamic("methodIntegration")(__v.asInstanceOf[js.Any]))
-      methodResponses.foreach(__v => __obj.updateDynamic("methodResponses")(__v.asInstanceOf[js.Any]))
-      operationName.foreach(__v => __obj.updateDynamic("operationName")(__v.asInstanceOf[js.Any]))
-      requestModels.foreach(__v => __obj.updateDynamic("requestModels")(__v.asInstanceOf[js.Any]))
-      requestParameters.foreach(__v => __obj.updateDynamic("requestParameters")(__v.asInstanceOf[js.Any]))
-      requestValidatorId.foreach(__v => __obj.updateDynamic("requestValidatorId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Method]
-    }
   }
 
   /**
@@ -4055,31 +2107,18 @@ package apigateway {
     * @see <a>Method</a>, <a>IntegrationResponse</a>, <a>Integration</a> [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html|Creating an API]]
     */
   @js.native
+  @Factory
   trait MethodResponse extends js.Object {
     var responseModels: js.UndefOr[MapOfStringToString]
     var responseParameters: js.UndefOr[MapOfStringToBoolean]
     var statusCode: js.UndefOr[StatusCode]
   }
 
-  object MethodResponse {
-    @inline
-    def apply(
-        responseModels: js.UndefOr[MapOfStringToString] = js.undefined,
-        responseParameters: js.UndefOr[MapOfStringToBoolean] = js.undefined,
-        statusCode: js.UndefOr[StatusCode] = js.undefined
-    ): MethodResponse = {
-      val __obj = js.Dynamic.literal()
-      responseModels.foreach(__v => __obj.updateDynamic("responseModels")(__v.asInstanceOf[js.Any]))
-      responseParameters.foreach(__v => __obj.updateDynamic("responseParameters")(__v.asInstanceOf[js.Any]))
-      statusCode.foreach(__v => __obj.updateDynamic("statusCode")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MethodResponse]
-    }
-  }
-
   /**
     * Specifies the method setting properties.
     */
   @js.native
+  @Factory
   trait MethodSetting extends js.Object {
     var cacheDataEncrypted: js.UndefOr[Boolean]
     var cacheTtlInSeconds: js.UndefOr[Int]
@@ -4093,59 +2132,14 @@ package apigateway {
     var unauthorizedCacheControlHeaderStrategy: js.UndefOr[UnauthorizedCacheControlHeaderStrategy]
   }
 
-  object MethodSetting {
-    @inline
-    def apply(
-        cacheDataEncrypted: js.UndefOr[Boolean] = js.undefined,
-        cacheTtlInSeconds: js.UndefOr[Int] = js.undefined,
-        cachingEnabled: js.UndefOr[Boolean] = js.undefined,
-        dataTraceEnabled: js.UndefOr[Boolean] = js.undefined,
-        loggingLevel: js.UndefOr[String] = js.undefined,
-        metricsEnabled: js.UndefOr[Boolean] = js.undefined,
-        requireAuthorizationForCacheControl: js.UndefOr[Boolean] = js.undefined,
-        throttlingBurstLimit: js.UndefOr[Int] = js.undefined,
-        throttlingRateLimit: js.UndefOr[Double] = js.undefined,
-        unauthorizedCacheControlHeaderStrategy: js.UndefOr[UnauthorizedCacheControlHeaderStrategy] = js.undefined
-    ): MethodSetting = {
-      val __obj = js.Dynamic.literal()
-      cacheDataEncrypted.foreach(__v => __obj.updateDynamic("cacheDataEncrypted")(__v.asInstanceOf[js.Any]))
-      cacheTtlInSeconds.foreach(__v => __obj.updateDynamic("cacheTtlInSeconds")(__v.asInstanceOf[js.Any]))
-      cachingEnabled.foreach(__v => __obj.updateDynamic("cachingEnabled")(__v.asInstanceOf[js.Any]))
-      dataTraceEnabled.foreach(__v => __obj.updateDynamic("dataTraceEnabled")(__v.asInstanceOf[js.Any]))
-      loggingLevel.foreach(__v => __obj.updateDynamic("loggingLevel")(__v.asInstanceOf[js.Any]))
-      metricsEnabled.foreach(__v => __obj.updateDynamic("metricsEnabled")(__v.asInstanceOf[js.Any]))
-      requireAuthorizationForCacheControl.foreach(__v =>
-        __obj.updateDynamic("requireAuthorizationForCacheControl")(__v.asInstanceOf[js.Any])
-      )
-      throttlingBurstLimit.foreach(__v => __obj.updateDynamic("throttlingBurstLimit")(__v.asInstanceOf[js.Any]))
-      throttlingRateLimit.foreach(__v => __obj.updateDynamic("throttlingRateLimit")(__v.asInstanceOf[js.Any]))
-      unauthorizedCacheControlHeaderStrategy.foreach(__v =>
-        __obj.updateDynamic("unauthorizedCacheControlHeaderStrategy")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[MethodSetting]
-    }
-  }
-
   /**
     * Represents a summary of a <a>Method</a> resource, given a particular date and time.
     */
   @js.native
+  @Factory
   trait MethodSnapshot extends js.Object {
     var apiKeyRequired: js.UndefOr[Boolean]
     var authorizationType: js.UndefOr[String]
-  }
-
-  object MethodSnapshot {
-    @inline
-    def apply(
-        apiKeyRequired: js.UndefOr[Boolean] = js.undefined,
-        authorizationType: js.UndefOr[String] = js.undefined
-    ): MethodSnapshot = {
-      val __obj = js.Dynamic.literal()
-      apiKeyRequired.foreach(__v => __obj.updateDynamic("apiKeyRequired")(__v.asInstanceOf[js.Any]))
-      authorizationType.foreach(__v => __obj.updateDynamic("authorizationType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MethodSnapshot]
-    }
   }
 
   /**
@@ -4156,6 +2150,7 @@ package apigateway {
     * @see <a>Method</a>, <a>MethodResponse</a>, [[https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html|Models and Mappings]]
     */
   @js.native
+  @Factory
   trait Model extends js.Object {
     var contentType: js.UndefOr[String]
     var description: js.UndefOr[String]
@@ -4164,47 +2159,16 @@ package apigateway {
     var schema: js.UndefOr[String]
   }
 
-  object Model {
-    @inline
-    def apply(
-        contentType: js.UndefOr[String] = js.undefined,
-        description: js.UndefOr[String] = js.undefined,
-        id: js.UndefOr[String] = js.undefined,
-        name: js.UndefOr[String] = js.undefined,
-        schema: js.UndefOr[String] = js.undefined
-    ): Model = {
-      val __obj = js.Dynamic.literal()
-      contentType.foreach(__v => __obj.updateDynamic("contentType")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      schema.foreach(__v => __obj.updateDynamic("schema")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Model]
-    }
-  }
-
   /**
     * Represents a collection of <a>Model</a> resources.
     *
     * @see <a>Method</a>, <a>MethodResponse</a>, [[https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html|Models and Mappings]]
     */
   @js.native
+  @Factory
   trait Models extends js.Object {
     var items: js.UndefOr[ListOfModel]
     var position: js.UndefOr[String]
-  }
-
-  object Models {
-    @inline
-    def apply(
-        items: js.UndefOr[ListOfModel] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): Models = {
-      val __obj = js.Dynamic.literal()
-      items.foreach(__v => __obj.updateDynamic("items")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Models]
-    }
   }
 
   @js.native
@@ -4224,6 +2188,7 @@ package apigateway {
     * A single patch operation to apply to the specified resource. Please refer to http://tools.ietf.org/html/rfc6902#section-4 for an explanation of how each operation is used.
     */
   @js.native
+  @Factory
   trait PatchOperation extends js.Object {
     var from: js.UndefOr[String]
     var op: js.UndefOr[Op]
@@ -4231,27 +2196,11 @@ package apigateway {
     var value: js.UndefOr[String]
   }
 
-  object PatchOperation {
-    @inline
-    def apply(
-        from: js.UndefOr[String] = js.undefined,
-        op: js.UndefOr[Op] = js.undefined,
-        path: js.UndefOr[String] = js.undefined,
-        value: js.UndefOr[String] = js.undefined
-    ): PatchOperation = {
-      val __obj = js.Dynamic.literal()
-      from.foreach(__v => __obj.updateDynamic("from")(__v.asInstanceOf[js.Any]))
-      op.foreach(__v => __obj.updateDynamic("op")(__v.asInstanceOf[js.Any]))
-      path.foreach(__v => __obj.updateDynamic("path")(__v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PatchOperation]
-    }
-  }
-
   /**
     * Creates a customization of a <a>GatewayResponse</a> of a specified response type and status code on the given <a>RestApi</a>.
     */
   @js.native
+  @Factory
   trait PutGatewayResponseRequest extends js.Object {
     var responseType: GatewayResponseType
     var restApiId: String
@@ -4260,31 +2209,11 @@ package apigateway {
     var statusCode: js.UndefOr[StatusCode]
   }
 
-  object PutGatewayResponseRequest {
-    @inline
-    def apply(
-        responseType: GatewayResponseType,
-        restApiId: String,
-        responseParameters: js.UndefOr[MapOfStringToString] = js.undefined,
-        responseTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
-        statusCode: js.UndefOr[StatusCode] = js.undefined
-    ): PutGatewayResponseRequest = {
-      val __obj = js.Dynamic.literal(
-        "responseType" -> responseType.asInstanceOf[js.Any],
-        "restApiId"    -> restApiId.asInstanceOf[js.Any]
-      )
-
-      responseParameters.foreach(__v => __obj.updateDynamic("responseParameters")(__v.asInstanceOf[js.Any]))
-      responseTemplates.foreach(__v => __obj.updateDynamic("responseTemplates")(__v.asInstanceOf[js.Any]))
-      statusCode.foreach(__v => __obj.updateDynamic("statusCode")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutGatewayResponseRequest]
-    }
-  }
-
   /**
     * Sets up a method's integration.
     */
   @js.native
+  @Factory
   trait PutIntegrationRequest extends js.Object {
     var httpMethod: String
     var resourceId: String
@@ -4304,53 +2233,11 @@ package apigateway {
     var uri: js.UndefOr[String]
   }
 
-  object PutIntegrationRequest {
-    @inline
-    def apply(
-        httpMethod: String,
-        resourceId: String,
-        restApiId: String,
-        `type`: IntegrationType,
-        cacheKeyParameters: js.UndefOr[ListOfString] = js.undefined,
-        cacheNamespace: js.UndefOr[String] = js.undefined,
-        connectionId: js.UndefOr[String] = js.undefined,
-        connectionType: js.UndefOr[ConnectionType] = js.undefined,
-        contentHandling: js.UndefOr[ContentHandlingStrategy] = js.undefined,
-        credentials: js.UndefOr[String] = js.undefined,
-        integrationHttpMethod: js.UndefOr[String] = js.undefined,
-        passthroughBehavior: js.UndefOr[String] = js.undefined,
-        requestParameters: js.UndefOr[MapOfStringToString] = js.undefined,
-        requestTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
-        timeoutInMillis: js.UndefOr[NullableInteger] = js.undefined,
-        uri: js.UndefOr[String] = js.undefined
-    ): PutIntegrationRequest = {
-      val __obj = js.Dynamic.literal(
-        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
-        "resourceId" -> resourceId.asInstanceOf[js.Any],
-        "restApiId"  -> restApiId.asInstanceOf[js.Any],
-        "type"       -> `type`.asInstanceOf[js.Any]
-      )
-
-      cacheKeyParameters.foreach(__v => __obj.updateDynamic("cacheKeyParameters")(__v.asInstanceOf[js.Any]))
-      cacheNamespace.foreach(__v => __obj.updateDynamic("cacheNamespace")(__v.asInstanceOf[js.Any]))
-      connectionId.foreach(__v => __obj.updateDynamic("connectionId")(__v.asInstanceOf[js.Any]))
-      connectionType.foreach(__v => __obj.updateDynamic("connectionType")(__v.asInstanceOf[js.Any]))
-      contentHandling.foreach(__v => __obj.updateDynamic("contentHandling")(__v.asInstanceOf[js.Any]))
-      credentials.foreach(__v => __obj.updateDynamic("credentials")(__v.asInstanceOf[js.Any]))
-      integrationHttpMethod.foreach(__v => __obj.updateDynamic("integrationHttpMethod")(__v.asInstanceOf[js.Any]))
-      passthroughBehavior.foreach(__v => __obj.updateDynamic("passthroughBehavior")(__v.asInstanceOf[js.Any]))
-      requestParameters.foreach(__v => __obj.updateDynamic("requestParameters")(__v.asInstanceOf[js.Any]))
-      requestTemplates.foreach(__v => __obj.updateDynamic("requestTemplates")(__v.asInstanceOf[js.Any]))
-      timeoutInMillis.foreach(__v => __obj.updateDynamic("timeoutInMillis")(__v.asInstanceOf[js.Any]))
-      uri.foreach(__v => __obj.updateDynamic("uri")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutIntegrationRequest]
-    }
-  }
-
   /**
     * Represents a put integration response request.
     */
   @js.native
+  @Factory
   trait PutIntegrationResponseRequest extends js.Object {
     var httpMethod: String
     var resourceId: String
@@ -4362,37 +2249,11 @@ package apigateway {
     var selectionPattern: js.UndefOr[String]
   }
 
-  object PutIntegrationResponseRequest {
-    @inline
-    def apply(
-        httpMethod: String,
-        resourceId: String,
-        restApiId: String,
-        statusCode: StatusCode,
-        contentHandling: js.UndefOr[ContentHandlingStrategy] = js.undefined,
-        responseParameters: js.UndefOr[MapOfStringToString] = js.undefined,
-        responseTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
-        selectionPattern: js.UndefOr[String] = js.undefined
-    ): PutIntegrationResponseRequest = {
-      val __obj = js.Dynamic.literal(
-        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
-        "resourceId" -> resourceId.asInstanceOf[js.Any],
-        "restApiId"  -> restApiId.asInstanceOf[js.Any],
-        "statusCode" -> statusCode.asInstanceOf[js.Any]
-      )
-
-      contentHandling.foreach(__v => __obj.updateDynamic("contentHandling")(__v.asInstanceOf[js.Any]))
-      responseParameters.foreach(__v => __obj.updateDynamic("responseParameters")(__v.asInstanceOf[js.Any]))
-      responseTemplates.foreach(__v => __obj.updateDynamic("responseTemplates")(__v.asInstanceOf[js.Any]))
-      selectionPattern.foreach(__v => __obj.updateDynamic("selectionPattern")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutIntegrationResponseRequest]
-    }
-  }
-
   /**
     * Request to add a method to an existing <a>Resource</a> resource.
     */
   @js.native
+  @Factory
   trait PutMethodRequest extends js.Object {
     var authorizationType: String
     var httpMethod: String
@@ -4407,43 +2268,11 @@ package apigateway {
     var requestValidatorId: js.UndefOr[String]
   }
 
-  object PutMethodRequest {
-    @inline
-    def apply(
-        authorizationType: String,
-        httpMethod: String,
-        resourceId: String,
-        restApiId: String,
-        apiKeyRequired: js.UndefOr[Boolean] = js.undefined,
-        authorizationScopes: js.UndefOr[ListOfString] = js.undefined,
-        authorizerId: js.UndefOr[String] = js.undefined,
-        operationName: js.UndefOr[String] = js.undefined,
-        requestModels: js.UndefOr[MapOfStringToString] = js.undefined,
-        requestParameters: js.UndefOr[MapOfStringToBoolean] = js.undefined,
-        requestValidatorId: js.UndefOr[String] = js.undefined
-    ): PutMethodRequest = {
-      val __obj = js.Dynamic.literal(
-        "authorizationType" -> authorizationType.asInstanceOf[js.Any],
-        "httpMethod"        -> httpMethod.asInstanceOf[js.Any],
-        "resourceId"        -> resourceId.asInstanceOf[js.Any],
-        "restApiId"         -> restApiId.asInstanceOf[js.Any]
-      )
-
-      apiKeyRequired.foreach(__v => __obj.updateDynamic("apiKeyRequired")(__v.asInstanceOf[js.Any]))
-      authorizationScopes.foreach(__v => __obj.updateDynamic("authorizationScopes")(__v.asInstanceOf[js.Any]))
-      authorizerId.foreach(__v => __obj.updateDynamic("authorizerId")(__v.asInstanceOf[js.Any]))
-      operationName.foreach(__v => __obj.updateDynamic("operationName")(__v.asInstanceOf[js.Any]))
-      requestModels.foreach(__v => __obj.updateDynamic("requestModels")(__v.asInstanceOf[js.Any]))
-      requestParameters.foreach(__v => __obj.updateDynamic("requestParameters")(__v.asInstanceOf[js.Any]))
-      requestValidatorId.foreach(__v => __obj.updateDynamic("requestValidatorId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutMethodRequest]
-    }
-  }
-
   /**
     * Request to add a <a>MethodResponse</a> to an existing <a>Method</a> resource.
     */
   @js.native
+  @Factory
   trait PutMethodResponseRequest extends js.Object {
     var httpMethod: String
     var resourceId: String
@@ -4451,29 +2280,6 @@ package apigateway {
     var statusCode: StatusCode
     var responseModels: js.UndefOr[MapOfStringToString]
     var responseParameters: js.UndefOr[MapOfStringToBoolean]
-  }
-
-  object PutMethodResponseRequest {
-    @inline
-    def apply(
-        httpMethod: String,
-        resourceId: String,
-        restApiId: String,
-        statusCode: StatusCode,
-        responseModels: js.UndefOr[MapOfStringToString] = js.undefined,
-        responseParameters: js.UndefOr[MapOfStringToBoolean] = js.undefined
-    ): PutMethodResponseRequest = {
-      val __obj = js.Dynamic.literal(
-        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
-        "resourceId" -> resourceId.asInstanceOf[js.Any],
-        "restApiId"  -> restApiId.asInstanceOf[js.Any],
-        "statusCode" -> statusCode.asInstanceOf[js.Any]
-      )
-
-      responseModels.foreach(__v => __obj.updateDynamic("responseModels")(__v.asInstanceOf[js.Any]))
-      responseParameters.foreach(__v => __obj.updateDynamic("responseParameters")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutMethodResponseRequest]
-    }
   }
 
   @js.native
@@ -4489,33 +2295,13 @@ package apigateway {
     * A PUT request to update an existing API, with external API definitions specified as the request body.
     */
   @js.native
+  @Factory
   trait PutRestApiRequest extends js.Object {
     var body: Blob
     var restApiId: String
     var failOnWarnings: js.UndefOr[Boolean]
     var mode: js.UndefOr[PutMode]
     var parameters: js.UndefOr[MapOfStringToString]
-  }
-
-  object PutRestApiRequest {
-    @inline
-    def apply(
-        body: Blob,
-        restApiId: String,
-        failOnWarnings: js.UndefOr[Boolean] = js.undefined,
-        mode: js.UndefOr[PutMode] = js.undefined,
-        parameters: js.UndefOr[MapOfStringToString] = js.undefined
-    ): PutRestApiRequest = {
-      val __obj = js.Dynamic.literal(
-        "body"      -> body.asInstanceOf[js.Any],
-        "restApiId" -> restApiId.asInstanceOf[js.Any]
-      )
-
-      failOnWarnings.foreach(__v => __obj.updateDynamic("failOnWarnings")(__v.asInstanceOf[js.Any]))
-      mode.foreach(__v => __obj.updateDynamic("mode")(__v.asInstanceOf[js.Any]))
-      parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutRestApiRequest]
-    }
   }
 
   @js.native
@@ -4532,25 +2318,11 @@ package apigateway {
     * Quotas configured for a usage plan.
     */
   @js.native
+  @Factory
   trait QuotaSettings extends js.Object {
     var limit: js.UndefOr[Int]
     var offset: js.UndefOr[Int]
     var period: js.UndefOr[QuotaPeriodType]
-  }
-
-  object QuotaSettings {
-    @inline
-    def apply(
-        limit: js.UndefOr[Int] = js.undefined,
-        offset: js.UndefOr[Int] = js.undefined,
-        period: js.UndefOr[QuotaPeriodType] = js.undefined
-    ): QuotaSettings = {
-      val __obj = js.Dynamic.literal()
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      offset.foreach(__v => __obj.updateDynamic("offset")(__v.asInstanceOf[js.Any]))
-      period.foreach(__v => __obj.updateDynamic("period")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[QuotaSettings]
-    }
   }
 
   /**
@@ -4560,30 +2332,12 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html|Enable Basic Request Validation in API Gateway]]
     */
   @js.native
+  @Factory
   trait RequestValidator extends js.Object {
     var id: js.UndefOr[String]
     var name: js.UndefOr[String]
     var validateRequestBody: js.UndefOr[Boolean]
     var validateRequestParameters: js.UndefOr[Boolean]
-  }
-
-  object RequestValidator {
-    @inline
-    def apply(
-        id: js.UndefOr[String] = js.undefined,
-        name: js.UndefOr[String] = js.undefined,
-        validateRequestBody: js.UndefOr[Boolean] = js.undefined,
-        validateRequestParameters: js.UndefOr[Boolean] = js.undefined
-    ): RequestValidator = {
-      val __obj = js.Dynamic.literal()
-      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      validateRequestBody.foreach(__v => __obj.updateDynamic("validateRequestBody")(__v.asInstanceOf[js.Any]))
-      validateRequestParameters.foreach(__v =>
-        __obj.updateDynamic("validateRequestParameters")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[RequestValidator]
-    }
   }
 
   /**
@@ -4593,22 +2347,10 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html|Enable Basic Request Validation in API Gateway]]
     */
   @js.native
+  @Factory
   trait RequestValidators extends js.Object {
     var items: js.UndefOr[ListOfRequestValidator]
     var position: js.UndefOr[String]
-  }
-
-  object RequestValidators {
-    @inline
-    def apply(
-        items: js.UndefOr[ListOfRequestValidator] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): RequestValidators = {
-      val __obj = js.Dynamic.literal()
-      items.foreach(__v => __obj.updateDynamic("items")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RequestValidators]
-    }
   }
 
   /**
@@ -4617,6 +2359,7 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html|Create an API]]
     */
   @js.native
+  @Factory
   trait Resource extends js.Object {
     var id: js.UndefOr[String]
     var parentId: js.UndefOr[String]
@@ -4625,47 +2368,16 @@ package apigateway {
     var resourceMethods: js.UndefOr[MapOfMethod]
   }
 
-  object Resource {
-    @inline
-    def apply(
-        id: js.UndefOr[String] = js.undefined,
-        parentId: js.UndefOr[String] = js.undefined,
-        path: js.UndefOr[String] = js.undefined,
-        pathPart: js.UndefOr[String] = js.undefined,
-        resourceMethods: js.UndefOr[MapOfMethod] = js.undefined
-    ): Resource = {
-      val __obj = js.Dynamic.literal()
-      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
-      parentId.foreach(__v => __obj.updateDynamic("parentId")(__v.asInstanceOf[js.Any]))
-      path.foreach(__v => __obj.updateDynamic("path")(__v.asInstanceOf[js.Any]))
-      pathPart.foreach(__v => __obj.updateDynamic("pathPart")(__v.asInstanceOf[js.Any]))
-      resourceMethods.foreach(__v => __obj.updateDynamic("resourceMethods")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Resource]
-    }
-  }
-
   /**
     * Represents a collection of <a>Resource</a> resources.
     *
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html|Create an API]]
     */
   @js.native
+  @Factory
   trait Resources extends js.Object {
     var items: js.UndefOr[ListOfResource]
     var position: js.UndefOr[String]
-  }
-
-  object Resources {
-    @inline
-    def apply(
-        items: js.UndefOr[ListOfResource] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): Resources = {
-      val __obj = js.Dynamic.literal()
-      items.foreach(__v => __obj.updateDynamic("items")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Resources]
-    }
   }
 
   /**
@@ -4674,6 +2386,7 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html|Create an API]]
     */
   @js.native
+  @Factory
   trait RestApi extends js.Object {
     var apiKeySource: js.UndefOr[ApiKeySourceType]
     var binaryMediaTypes: js.UndefOr[ListOfString]
@@ -4689,67 +2402,23 @@ package apigateway {
     var warnings: js.UndefOr[ListOfString]
   }
 
-  object RestApi {
-    @inline
-    def apply(
-        apiKeySource: js.UndefOr[ApiKeySourceType] = js.undefined,
-        binaryMediaTypes: js.UndefOr[ListOfString] = js.undefined,
-        createdDate: js.UndefOr[Timestamp] = js.undefined,
-        description: js.UndefOr[String] = js.undefined,
-        endpointConfiguration: js.UndefOr[EndpointConfiguration] = js.undefined,
-        id: js.UndefOr[String] = js.undefined,
-        minimumCompressionSize: js.UndefOr[NullableInteger] = js.undefined,
-        name: js.UndefOr[String] = js.undefined,
-        policy: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[MapOfStringToString] = js.undefined,
-        version: js.UndefOr[String] = js.undefined,
-        warnings: js.UndefOr[ListOfString] = js.undefined
-    ): RestApi = {
-      val __obj = js.Dynamic.literal()
-      apiKeySource.foreach(__v => __obj.updateDynamic("apiKeySource")(__v.asInstanceOf[js.Any]))
-      binaryMediaTypes.foreach(__v => __obj.updateDynamic("binaryMediaTypes")(__v.asInstanceOf[js.Any]))
-      createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      endpointConfiguration.foreach(__v => __obj.updateDynamic("endpointConfiguration")(__v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
-      minimumCompressionSize.foreach(__v => __obj.updateDynamic("minimumCompressionSize")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      policy.foreach(__v => __obj.updateDynamic("policy")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      warnings.foreach(__v => __obj.updateDynamic("warnings")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RestApi]
-    }
-  }
-
   /**
     * Contains references to your APIs and links that guide you in how to interact with your collection. A collection offers a paginated view of your APIs.
     *
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html|Create an API]]
     */
   @js.native
+  @Factory
   trait RestApis extends js.Object {
     var items: js.UndefOr[ListOfRestApi]
     var position: js.UndefOr[String]
-  }
-
-  object RestApis {
-    @inline
-    def apply(
-        items: js.UndefOr[ListOfRestApi] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): RestApis = {
-      val __obj = js.Dynamic.literal()
-      items.foreach(__v => __obj.updateDynamic("items")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RestApis]
-    }
   }
 
   /**
     * A configuration property of an SDK type.
     */
   @js.native
+  @Factory
   trait SdkConfigurationProperty extends js.Object {
     var defaultValue: js.UndefOr[String]
     var description: js.UndefOr[String]
@@ -4758,54 +2427,22 @@ package apigateway {
     var required: js.UndefOr[Boolean]
   }
 
-  object SdkConfigurationProperty {
-    @inline
-    def apply(
-        defaultValue: js.UndefOr[String] = js.undefined,
-        description: js.UndefOr[String] = js.undefined,
-        friendlyName: js.UndefOr[String] = js.undefined,
-        name: js.UndefOr[String] = js.undefined,
-        required: js.UndefOr[Boolean] = js.undefined
-    ): SdkConfigurationProperty = {
-      val __obj = js.Dynamic.literal()
-      defaultValue.foreach(__v => __obj.updateDynamic("defaultValue")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      friendlyName.foreach(__v => __obj.updateDynamic("friendlyName")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      required.foreach(__v => __obj.updateDynamic("required")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SdkConfigurationProperty]
-    }
-  }
-
   /**
     * The binary blob response to <a>GetSdk</a>, which contains the generated SDK.
     */
   @js.native
+  @Factory
   trait SdkResponse extends js.Object {
     var body: js.UndefOr[Blob]
     var contentDisposition: js.UndefOr[String]
     var contentType: js.UndefOr[String]
   }
 
-  object SdkResponse {
-    @inline
-    def apply(
-        body: js.UndefOr[Blob] = js.undefined,
-        contentDisposition: js.UndefOr[String] = js.undefined,
-        contentType: js.UndefOr[String] = js.undefined
-    ): SdkResponse = {
-      val __obj = js.Dynamic.literal()
-      body.foreach(__v => __obj.updateDynamic("body")(__v.asInstanceOf[js.Any]))
-      contentDisposition.foreach(__v => __obj.updateDynamic("contentDisposition")(__v.asInstanceOf[js.Any]))
-      contentType.foreach(__v => __obj.updateDynamic("contentType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SdkResponse]
-    }
-  }
-
   /**
     * A type of SDK that API Gateway can generate.
     */
   @js.native
+  @Factory
   trait SdkType extends js.Object {
     var configurationProperties: js.UndefOr[ListOfSdkConfigurationProperty]
     var description: js.UndefOr[String]
@@ -4813,43 +2450,14 @@ package apigateway {
     var id: js.UndefOr[String]
   }
 
-  object SdkType {
-    @inline
-    def apply(
-        configurationProperties: js.UndefOr[ListOfSdkConfigurationProperty] = js.undefined,
-        description: js.UndefOr[String] = js.undefined,
-        friendlyName: js.UndefOr[String] = js.undefined,
-        id: js.UndefOr[String] = js.undefined
-    ): SdkType = {
-      val __obj = js.Dynamic.literal()
-      configurationProperties.foreach(__v => __obj.updateDynamic("configurationProperties")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      friendlyName.foreach(__v => __obj.updateDynamic("friendlyName")(__v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SdkType]
-    }
-  }
-
   /**
     * The collection of <a>SdkType</a> instances.
     */
   @js.native
+  @Factory
   trait SdkTypes extends js.Object {
     var items: js.UndefOr[ListOfSdkType]
     var position: js.UndefOr[String]
-  }
-
-  object SdkTypes {
-    @inline
-    def apply(
-        items: js.UndefOr[ListOfSdkType] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): SdkTypes = {
-      val __obj = js.Dynamic.literal()
-      items.foreach(__v => __obj.updateDynamic("items")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SdkTypes]
-    }
   }
 
   @js.native
@@ -4867,6 +2475,7 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html|Deploy an API]]
     */
   @js.native
+  @Factory
   trait Stage extends js.Object {
     var accessLogSettings: js.UndefOr[AccessLogSettings]
     var cacheClusterEnabled: js.UndefOr[Boolean]
@@ -4887,69 +2496,14 @@ package apigateway {
     var webAclArn: js.UndefOr[String]
   }
 
-  object Stage {
-    @inline
-    def apply(
-        accessLogSettings: js.UndefOr[AccessLogSettings] = js.undefined,
-        cacheClusterEnabled: js.UndefOr[Boolean] = js.undefined,
-        cacheClusterSize: js.UndefOr[CacheClusterSize] = js.undefined,
-        cacheClusterStatus: js.UndefOr[CacheClusterStatus] = js.undefined,
-        canarySettings: js.UndefOr[CanarySettings] = js.undefined,
-        clientCertificateId: js.UndefOr[String] = js.undefined,
-        createdDate: js.UndefOr[Timestamp] = js.undefined,
-        deploymentId: js.UndefOr[String] = js.undefined,
-        description: js.UndefOr[String] = js.undefined,
-        documentationVersion: js.UndefOr[String] = js.undefined,
-        lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-        methodSettings: js.UndefOr[MapOfMethodSettings] = js.undefined,
-        stageName: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[MapOfStringToString] = js.undefined,
-        tracingEnabled: js.UndefOr[Boolean] = js.undefined,
-        variables: js.UndefOr[MapOfStringToString] = js.undefined,
-        webAclArn: js.UndefOr[String] = js.undefined
-    ): Stage = {
-      val __obj = js.Dynamic.literal()
-      accessLogSettings.foreach(__v => __obj.updateDynamic("accessLogSettings")(__v.asInstanceOf[js.Any]))
-      cacheClusterEnabled.foreach(__v => __obj.updateDynamic("cacheClusterEnabled")(__v.asInstanceOf[js.Any]))
-      cacheClusterSize.foreach(__v => __obj.updateDynamic("cacheClusterSize")(__v.asInstanceOf[js.Any]))
-      cacheClusterStatus.foreach(__v => __obj.updateDynamic("cacheClusterStatus")(__v.asInstanceOf[js.Any]))
-      canarySettings.foreach(__v => __obj.updateDynamic("canarySettings")(__v.asInstanceOf[js.Any]))
-      clientCertificateId.foreach(__v => __obj.updateDynamic("clientCertificateId")(__v.asInstanceOf[js.Any]))
-      createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
-      deploymentId.foreach(__v => __obj.updateDynamic("deploymentId")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      documentationVersion.foreach(__v => __obj.updateDynamic("documentationVersion")(__v.asInstanceOf[js.Any]))
-      lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
-      methodSettings.foreach(__v => __obj.updateDynamic("methodSettings")(__v.asInstanceOf[js.Any]))
-      stageName.foreach(__v => __obj.updateDynamic("stageName")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      tracingEnabled.foreach(__v => __obj.updateDynamic("tracingEnabled")(__v.asInstanceOf[js.Any]))
-      variables.foreach(__v => __obj.updateDynamic("variables")(__v.asInstanceOf[js.Any]))
-      webAclArn.foreach(__v => __obj.updateDynamic("webAclArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Stage]
-    }
-  }
-
   /**
     * A reference to a unique stage identified in the format <code>{restApiId}/{stage}</code>.
     */
   @js.native
+  @Factory
   trait StageKey extends js.Object {
     var restApiId: js.UndefOr[String]
     var stageName: js.UndefOr[String]
-  }
-
-  object StageKey {
-    @inline
-    def apply(
-        restApiId: js.UndefOr[String] = js.undefined,
-        stageName: js.UndefOr[String] = js.undefined
-    ): StageKey = {
-      val __obj = js.Dynamic.literal()
-      restApiId.foreach(__v => __obj.updateDynamic("restApiId")(__v.asInstanceOf[js.Any]))
-      stageName.foreach(__v => __obj.updateDynamic("stageName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StageKey]
-    }
   }
 
   /**
@@ -4958,62 +2512,28 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/stages.html|Deploying API in Stages]]
     */
   @js.native
+  @Factory
   trait Stages extends js.Object {
     var item: js.UndefOr[ListOfStage]
-  }
-
-  object Stages {
-    @inline
-    def apply(
-        item: js.UndefOr[ListOfStage] = js.undefined
-    ): Stages = {
-      val __obj = js.Dynamic.literal()
-      item.foreach(__v => __obj.updateDynamic("item")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Stages]
-    }
   }
 
   /**
     * Adds or updates a tag on a given resource.
     */
   @js.native
+  @Factory
   trait TagResourceRequest extends js.Object {
     var resourceArn: String
     var tags: MapOfStringToString
-  }
-
-  object TagResourceRequest {
-    @inline
-    def apply(
-        resourceArn: String,
-        tags: MapOfStringToString
-    ): TagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceRequest]
-    }
   }
 
   /**
     * The collection of tags. Each tag element is associated with a given resource.
     */
   @js.native
+  @Factory
   trait Tags extends js.Object {
     var tags: js.UndefOr[MapOfStringToString]
-  }
-
-  object Tags {
-    @inline
-    def apply(
-        tags: js.UndefOr[MapOfStringToString] = js.undefined
-    ): Tags = {
-      val __obj = js.Dynamic.literal()
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Tags]
-    }
   }
 
   /**
@@ -5022,25 +2542,16 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html#models-mappings-mappings|Mapping Templates]]
     */
   @js.native
+  @Factory
   trait Template extends js.Object {
     var value: js.UndefOr[String]
-  }
-
-  object Template {
-    @inline
-    def apply(
-        value: js.UndefOr[String] = js.undefined
-    ): Template = {
-      val __obj = js.Dynamic.literal()
-      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Template]
-    }
   }
 
   /**
     * Make a request to simulate the execution of an <a>Authorizer</a>.
     */
   @js.native
+  @Factory
   trait TestInvokeAuthorizerRequest extends js.Object {
     var authorizerId: String
     var restApiId: String
@@ -5052,37 +2563,11 @@ package apigateway {
     var stageVariables: js.UndefOr[MapOfStringToString]
   }
 
-  object TestInvokeAuthorizerRequest {
-    @inline
-    def apply(
-        authorizerId: String,
-        restApiId: String,
-        additionalContext: js.UndefOr[MapOfStringToString] = js.undefined,
-        body: js.UndefOr[String] = js.undefined,
-        headers: js.UndefOr[MapOfStringToString] = js.undefined,
-        multiValueHeaders: js.UndefOr[MapOfStringToList] = js.undefined,
-        pathWithQueryString: js.UndefOr[String] = js.undefined,
-        stageVariables: js.UndefOr[MapOfStringToString] = js.undefined
-    ): TestInvokeAuthorizerRequest = {
-      val __obj = js.Dynamic.literal(
-        "authorizerId" -> authorizerId.asInstanceOf[js.Any],
-        "restApiId"    -> restApiId.asInstanceOf[js.Any]
-      )
-
-      additionalContext.foreach(__v => __obj.updateDynamic("additionalContext")(__v.asInstanceOf[js.Any]))
-      body.foreach(__v => __obj.updateDynamic("body")(__v.asInstanceOf[js.Any]))
-      headers.foreach(__v => __obj.updateDynamic("headers")(__v.asInstanceOf[js.Any]))
-      multiValueHeaders.foreach(__v => __obj.updateDynamic("multiValueHeaders")(__v.asInstanceOf[js.Any]))
-      pathWithQueryString.foreach(__v => __obj.updateDynamic("pathWithQueryString")(__v.asInstanceOf[js.Any]))
-      stageVariables.foreach(__v => __obj.updateDynamic("stageVariables")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TestInvokeAuthorizerRequest]
-    }
-  }
-
   /**
     * Represents the response of the test invoke request for a custom <a>Authorizer</a>
     */
   @js.native
+  @Factory
   trait TestInvokeAuthorizerResponse extends js.Object {
     var authorization: js.UndefOr[MapOfStringToList]
     var claims: js.UndefOr[MapOfStringToString]
@@ -5093,33 +2578,11 @@ package apigateway {
     var principalId: js.UndefOr[String]
   }
 
-  object TestInvokeAuthorizerResponse {
-    @inline
-    def apply(
-        authorization: js.UndefOr[MapOfStringToList] = js.undefined,
-        claims: js.UndefOr[MapOfStringToString] = js.undefined,
-        clientStatus: js.UndefOr[Int] = js.undefined,
-        latency: js.UndefOr[Double] = js.undefined,
-        log: js.UndefOr[String] = js.undefined,
-        policy: js.UndefOr[String] = js.undefined,
-        principalId: js.UndefOr[String] = js.undefined
-    ): TestInvokeAuthorizerResponse = {
-      val __obj = js.Dynamic.literal()
-      authorization.foreach(__v => __obj.updateDynamic("authorization")(__v.asInstanceOf[js.Any]))
-      claims.foreach(__v => __obj.updateDynamic("claims")(__v.asInstanceOf[js.Any]))
-      clientStatus.foreach(__v => __obj.updateDynamic("clientStatus")(__v.asInstanceOf[js.Any]))
-      latency.foreach(__v => __obj.updateDynamic("latency")(__v.asInstanceOf[js.Any]))
-      log.foreach(__v => __obj.updateDynamic("log")(__v.asInstanceOf[js.Any]))
-      policy.foreach(__v => __obj.updateDynamic("policy")(__v.asInstanceOf[js.Any]))
-      principalId.foreach(__v => __obj.updateDynamic("principalId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TestInvokeAuthorizerResponse]
-    }
-  }
-
   /**
     * Make a request to simulate the execution of a <a>Method</a>.
     */
   @js.native
+  @Factory
   trait TestInvokeMethodRequest extends js.Object {
     var httpMethod: String
     var resourceId: String
@@ -5132,41 +2595,13 @@ package apigateway {
     var stageVariables: js.UndefOr[MapOfStringToString]
   }
 
-  object TestInvokeMethodRequest {
-    @inline
-    def apply(
-        httpMethod: String,
-        resourceId: String,
-        restApiId: String,
-        body: js.UndefOr[String] = js.undefined,
-        clientCertificateId: js.UndefOr[String] = js.undefined,
-        headers: js.UndefOr[MapOfStringToString] = js.undefined,
-        multiValueHeaders: js.UndefOr[MapOfStringToList] = js.undefined,
-        pathWithQueryString: js.UndefOr[String] = js.undefined,
-        stageVariables: js.UndefOr[MapOfStringToString] = js.undefined
-    ): TestInvokeMethodRequest = {
-      val __obj = js.Dynamic.literal(
-        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
-        "resourceId" -> resourceId.asInstanceOf[js.Any],
-        "restApiId"  -> restApiId.asInstanceOf[js.Any]
-      )
-
-      body.foreach(__v => __obj.updateDynamic("body")(__v.asInstanceOf[js.Any]))
-      clientCertificateId.foreach(__v => __obj.updateDynamic("clientCertificateId")(__v.asInstanceOf[js.Any]))
-      headers.foreach(__v => __obj.updateDynamic("headers")(__v.asInstanceOf[js.Any]))
-      multiValueHeaders.foreach(__v => __obj.updateDynamic("multiValueHeaders")(__v.asInstanceOf[js.Any]))
-      pathWithQueryString.foreach(__v => __obj.updateDynamic("pathWithQueryString")(__v.asInstanceOf[js.Any]))
-      stageVariables.foreach(__v => __obj.updateDynamic("stageVariables")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TestInvokeMethodRequest]
-    }
-  }
-
   /**
     * Represents the response of the test invoke request in the HTTP method.
     *
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-test-method.html#how-to-test-method-console|Test API using the API Gateway console]]
     */
   @js.native
+  @Factory
   trait TestInvokeMethodResponse extends js.Object {
     var body: js.UndefOr[String]
     var headers: js.UndefOr[MapOfStringToString]
@@ -5176,47 +2611,14 @@ package apigateway {
     var status: js.UndefOr[Int]
   }
 
-  object TestInvokeMethodResponse {
-    @inline
-    def apply(
-        body: js.UndefOr[String] = js.undefined,
-        headers: js.UndefOr[MapOfStringToString] = js.undefined,
-        latency: js.UndefOr[Double] = js.undefined,
-        log: js.UndefOr[String] = js.undefined,
-        multiValueHeaders: js.UndefOr[MapOfStringToList] = js.undefined,
-        status: js.UndefOr[Int] = js.undefined
-    ): TestInvokeMethodResponse = {
-      val __obj = js.Dynamic.literal()
-      body.foreach(__v => __obj.updateDynamic("body")(__v.asInstanceOf[js.Any]))
-      headers.foreach(__v => __obj.updateDynamic("headers")(__v.asInstanceOf[js.Any]))
-      latency.foreach(__v => __obj.updateDynamic("latency")(__v.asInstanceOf[js.Any]))
-      log.foreach(__v => __obj.updateDynamic("log")(__v.asInstanceOf[js.Any]))
-      multiValueHeaders.foreach(__v => __obj.updateDynamic("multiValueHeaders")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TestInvokeMethodResponse]
-    }
-  }
-
   /**
     * The API request rate limits.
     */
   @js.native
+  @Factory
   trait ThrottleSettings extends js.Object {
     var burstLimit: js.UndefOr[Int]
     var rateLimit: js.UndefOr[Double]
-  }
-
-  object ThrottleSettings {
-    @inline
-    def apply(
-        burstLimit: js.UndefOr[Int] = js.undefined,
-        rateLimit: js.UndefOr[Double] = js.undefined
-    ): ThrottleSettings = {
-      val __obj = js.Dynamic.literal()
-      burstLimit.foreach(__v => __obj.updateDynamic("burstLimit")(__v.asInstanceOf[js.Any]))
-      rateLimit.foreach(__v => __obj.updateDynamic("rateLimit")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ThrottleSettings]
-    }
   }
 
   @js.native
@@ -5236,283 +2638,122 @@ package apigateway {
     * Removes a tag from a given resource.
     */
   @js.native
+  @Factory
   trait UntagResourceRequest extends js.Object {
     var resourceArn: String
     var tagKeys: ListOfString
-  }
-
-  object UntagResourceRequest {
-    @inline
-    def apply(
-        resourceArn: String,
-        tagKeys: ListOfString
-    ): UntagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceRequest]
-    }
   }
 
   /**
     * Requests API Gateway to change information about the current <a>Account</a> resource.
     */
   @js.native
+  @Factory
   trait UpdateAccountRequest extends js.Object {
     var patchOperations: js.UndefOr[ListOfPatchOperation]
-  }
-
-  object UpdateAccountRequest {
-    @inline
-    def apply(
-        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
-    ): UpdateAccountRequest = {
-      val __obj = js.Dynamic.literal()
-      patchOperations.foreach(__v => __obj.updateDynamic("patchOperations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateAccountRequest]
-    }
   }
 
   /**
     * A request to change information about an <a>ApiKey</a> resource.
     */
   @js.native
+  @Factory
   trait UpdateApiKeyRequest extends js.Object {
     var apiKey: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
-  }
-
-  object UpdateApiKeyRequest {
-    @inline
-    def apply(
-        apiKey: String,
-        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
-    ): UpdateApiKeyRequest = {
-      val __obj = js.Dynamic.literal(
-        "apiKey" -> apiKey.asInstanceOf[js.Any]
-      )
-
-      patchOperations.foreach(__v => __obj.updateDynamic("patchOperations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateApiKeyRequest]
-    }
   }
 
   /**
     * Request to update an existing <a>Authorizer</a> resource.
     */
   @js.native
+  @Factory
   trait UpdateAuthorizerRequest extends js.Object {
     var authorizerId: String
     var restApiId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
-  object UpdateAuthorizerRequest {
-    @inline
-    def apply(
-        authorizerId: String,
-        restApiId: String,
-        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
-    ): UpdateAuthorizerRequest = {
-      val __obj = js.Dynamic.literal(
-        "authorizerId" -> authorizerId.asInstanceOf[js.Any],
-        "restApiId"    -> restApiId.asInstanceOf[js.Any]
-      )
-
-      patchOperations.foreach(__v => __obj.updateDynamic("patchOperations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateAuthorizerRequest]
-    }
-  }
-
   /**
     * A request to change information about the <a>BasePathMapping</a> resource.
     */
   @js.native
+  @Factory
   trait UpdateBasePathMappingRequest extends js.Object {
     var basePath: String
     var domainName: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
-  object UpdateBasePathMappingRequest {
-    @inline
-    def apply(
-        basePath: String,
-        domainName: String,
-        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
-    ): UpdateBasePathMappingRequest = {
-      val __obj = js.Dynamic.literal(
-        "basePath"   -> basePath.asInstanceOf[js.Any],
-        "domainName" -> domainName.asInstanceOf[js.Any]
-      )
-
-      patchOperations.foreach(__v => __obj.updateDynamic("patchOperations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateBasePathMappingRequest]
-    }
-  }
-
   /**
     * A request to change information about an <a>ClientCertificate</a> resource.
     */
   @js.native
+  @Factory
   trait UpdateClientCertificateRequest extends js.Object {
     var clientCertificateId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
-  }
-
-  object UpdateClientCertificateRequest {
-    @inline
-    def apply(
-        clientCertificateId: String,
-        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
-    ): UpdateClientCertificateRequest = {
-      val __obj = js.Dynamic.literal(
-        "clientCertificateId" -> clientCertificateId.asInstanceOf[js.Any]
-      )
-
-      patchOperations.foreach(__v => __obj.updateDynamic("patchOperations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateClientCertificateRequest]
-    }
   }
 
   /**
     * Requests API Gateway to change information about a <a>Deployment</a> resource.
     */
   @js.native
+  @Factory
   trait UpdateDeploymentRequest extends js.Object {
     var deploymentId: String
     var restApiId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
-  object UpdateDeploymentRequest {
-    @inline
-    def apply(
-        deploymentId: String,
-        restApiId: String,
-        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
-    ): UpdateDeploymentRequest = {
-      val __obj = js.Dynamic.literal(
-        "deploymentId" -> deploymentId.asInstanceOf[js.Any],
-        "restApiId"    -> restApiId.asInstanceOf[js.Any]
-      )
-
-      patchOperations.foreach(__v => __obj.updateDynamic("patchOperations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateDeploymentRequest]
-    }
-  }
-
   /**
     * Updates an existing documentation part of a given API.
     */
   @js.native
+  @Factory
   trait UpdateDocumentationPartRequest extends js.Object {
     var documentationPartId: String
     var restApiId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
-  object UpdateDocumentationPartRequest {
-    @inline
-    def apply(
-        documentationPartId: String,
-        restApiId: String,
-        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
-    ): UpdateDocumentationPartRequest = {
-      val __obj = js.Dynamic.literal(
-        "documentationPartId" -> documentationPartId.asInstanceOf[js.Any],
-        "restApiId"           -> restApiId.asInstanceOf[js.Any]
-      )
-
-      patchOperations.foreach(__v => __obj.updateDynamic("patchOperations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateDocumentationPartRequest]
-    }
-  }
-
   /**
     * Updates an existing documentation version of an API.
     */
   @js.native
+  @Factory
   trait UpdateDocumentationVersionRequest extends js.Object {
     var documentationVersion: String
     var restApiId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
-  object UpdateDocumentationVersionRequest {
-    @inline
-    def apply(
-        documentationVersion: String,
-        restApiId: String,
-        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
-    ): UpdateDocumentationVersionRequest = {
-      val __obj = js.Dynamic.literal(
-        "documentationVersion" -> documentationVersion.asInstanceOf[js.Any],
-        "restApiId"            -> restApiId.asInstanceOf[js.Any]
-      )
-
-      patchOperations.foreach(__v => __obj.updateDynamic("patchOperations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateDocumentationVersionRequest]
-    }
-  }
-
   /**
     * A request to change information about the <a>DomainName</a> resource.
     */
   @js.native
+  @Factory
   trait UpdateDomainNameRequest extends js.Object {
     var domainName: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
-  }
-
-  object UpdateDomainNameRequest {
-    @inline
-    def apply(
-        domainName: String,
-        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
-    ): UpdateDomainNameRequest = {
-      val __obj = js.Dynamic.literal(
-        "domainName" -> domainName.asInstanceOf[js.Any]
-      )
-
-      patchOperations.foreach(__v => __obj.updateDynamic("patchOperations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateDomainNameRequest]
-    }
   }
 
   /**
     * Updates a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
     */
   @js.native
+  @Factory
   trait UpdateGatewayResponseRequest extends js.Object {
     var responseType: GatewayResponseType
     var restApiId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
-  object UpdateGatewayResponseRequest {
-    @inline
-    def apply(
-        responseType: GatewayResponseType,
-        restApiId: String,
-        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
-    ): UpdateGatewayResponseRequest = {
-      val __obj = js.Dynamic.literal(
-        "responseType" -> responseType.asInstanceOf[js.Any],
-        "restApiId"    -> restApiId.asInstanceOf[js.Any]
-      )
-
-      patchOperations.foreach(__v => __obj.updateDynamic("patchOperations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateGatewayResponseRequest]
-    }
-  }
-
   /**
     * Represents an update integration request.
     */
   @js.native
+  @Factory
   trait UpdateIntegrationRequest extends js.Object {
     var httpMethod: String
     var resourceId: String
@@ -5520,29 +2761,11 @@ package apigateway {
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
-  object UpdateIntegrationRequest {
-    @inline
-    def apply(
-        httpMethod: String,
-        resourceId: String,
-        restApiId: String,
-        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
-    ): UpdateIntegrationRequest = {
-      val __obj = js.Dynamic.literal(
-        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
-        "resourceId" -> resourceId.asInstanceOf[js.Any],
-        "restApiId"  -> restApiId.asInstanceOf[js.Any]
-      )
-
-      patchOperations.foreach(__v => __obj.updateDynamic("patchOperations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateIntegrationRequest]
-    }
-  }
-
   /**
     * Represents an update integration response request.
     */
   @js.native
+  @Factory
   trait UpdateIntegrationResponseRequest extends js.Object {
     var httpMethod: String
     var resourceId: String
@@ -5551,31 +2774,11 @@ package apigateway {
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
-  object UpdateIntegrationResponseRequest {
-    @inline
-    def apply(
-        httpMethod: String,
-        resourceId: String,
-        restApiId: String,
-        statusCode: StatusCode,
-        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
-    ): UpdateIntegrationResponseRequest = {
-      val __obj = js.Dynamic.literal(
-        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
-        "resourceId" -> resourceId.asInstanceOf[js.Any],
-        "restApiId"  -> restApiId.asInstanceOf[js.Any],
-        "statusCode" -> statusCode.asInstanceOf[js.Any]
-      )
-
-      patchOperations.foreach(__v => __obj.updateDynamic("patchOperations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateIntegrationResponseRequest]
-    }
-  }
-
   /**
     * Request to update an existing <a>Method</a> resource.
     */
   @js.native
+  @Factory
   trait UpdateMethodRequest extends js.Object {
     var httpMethod: String
     var resourceId: String
@@ -5583,29 +2786,11 @@ package apigateway {
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
-  object UpdateMethodRequest {
-    @inline
-    def apply(
-        httpMethod: String,
-        resourceId: String,
-        restApiId: String,
-        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
-    ): UpdateMethodRequest = {
-      val __obj = js.Dynamic.literal(
-        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
-        "resourceId" -> resourceId.asInstanceOf[js.Any],
-        "restApiId"  -> restApiId.asInstanceOf[js.Any]
-      )
-
-      patchOperations.foreach(__v => __obj.updateDynamic("patchOperations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateMethodRequest]
-    }
-  }
-
   /**
     * A request to update an existing <a>MethodResponse</a> resource.
     */
   @js.native
+  @Factory
   trait UpdateMethodResponseRequest extends js.Object {
     var httpMethod: String
     var resourceId: String
@@ -5614,232 +2799,89 @@ package apigateway {
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
-  object UpdateMethodResponseRequest {
-    @inline
-    def apply(
-        httpMethod: String,
-        resourceId: String,
-        restApiId: String,
-        statusCode: StatusCode,
-        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
-    ): UpdateMethodResponseRequest = {
-      val __obj = js.Dynamic.literal(
-        "httpMethod" -> httpMethod.asInstanceOf[js.Any],
-        "resourceId" -> resourceId.asInstanceOf[js.Any],
-        "restApiId"  -> restApiId.asInstanceOf[js.Any],
-        "statusCode" -> statusCode.asInstanceOf[js.Any]
-      )
-
-      patchOperations.foreach(__v => __obj.updateDynamic("patchOperations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateMethodResponseRequest]
-    }
-  }
-
   /**
     * Request to update an existing model in an existing <a>RestApi</a> resource.
     */
   @js.native
+  @Factory
   trait UpdateModelRequest extends js.Object {
     var modelName: String
     var restApiId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
-  object UpdateModelRequest {
-    @inline
-    def apply(
-        modelName: String,
-        restApiId: String,
-        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
-    ): UpdateModelRequest = {
-      val __obj = js.Dynamic.literal(
-        "modelName" -> modelName.asInstanceOf[js.Any],
-        "restApiId" -> restApiId.asInstanceOf[js.Any]
-      )
-
-      patchOperations.foreach(__v => __obj.updateDynamic("patchOperations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateModelRequest]
-    }
-  }
-
   /**
     * Updates a <a>RequestValidator</a> of a given <a>RestApi</a>.
     */
   @js.native
+  @Factory
   trait UpdateRequestValidatorRequest extends js.Object {
     var requestValidatorId: String
     var restApiId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
-  object UpdateRequestValidatorRequest {
-    @inline
-    def apply(
-        requestValidatorId: String,
-        restApiId: String,
-        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
-    ): UpdateRequestValidatorRequest = {
-      val __obj = js.Dynamic.literal(
-        "requestValidatorId" -> requestValidatorId.asInstanceOf[js.Any],
-        "restApiId"          -> restApiId.asInstanceOf[js.Any]
-      )
-
-      patchOperations.foreach(__v => __obj.updateDynamic("patchOperations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateRequestValidatorRequest]
-    }
-  }
-
   /**
     * Request to change information about a <a>Resource</a> resource.
     */
   @js.native
+  @Factory
   trait UpdateResourceRequest extends js.Object {
     var resourceId: String
     var restApiId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
-  object UpdateResourceRequest {
-    @inline
-    def apply(
-        resourceId: String,
-        restApiId: String,
-        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
-    ): UpdateResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceId" -> resourceId.asInstanceOf[js.Any],
-        "restApiId"  -> restApiId.asInstanceOf[js.Any]
-      )
-
-      patchOperations.foreach(__v => __obj.updateDynamic("patchOperations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateResourceRequest]
-    }
-  }
-
   /**
     * Request to update an existing <a>RestApi</a> resource in your collection.
     */
   @js.native
+  @Factory
   trait UpdateRestApiRequest extends js.Object {
     var restApiId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
-  }
-
-  object UpdateRestApiRequest {
-    @inline
-    def apply(
-        restApiId: String,
-        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
-    ): UpdateRestApiRequest = {
-      val __obj = js.Dynamic.literal(
-        "restApiId" -> restApiId.asInstanceOf[js.Any]
-      )
-
-      patchOperations.foreach(__v => __obj.updateDynamic("patchOperations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateRestApiRequest]
-    }
   }
 
   /**
     * Requests API Gateway to change information about a <a>Stage</a> resource.
     */
   @js.native
+  @Factory
   trait UpdateStageRequest extends js.Object {
     var restApiId: String
     var stageName: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
-  object UpdateStageRequest {
-    @inline
-    def apply(
-        restApiId: String,
-        stageName: String,
-        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
-    ): UpdateStageRequest = {
-      val __obj = js.Dynamic.literal(
-        "restApiId" -> restApiId.asInstanceOf[js.Any],
-        "stageName" -> stageName.asInstanceOf[js.Any]
-      )
-
-      patchOperations.foreach(__v => __obj.updateDynamic("patchOperations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateStageRequest]
-    }
-  }
-
   /**
     * The PATCH request to update a usage plan of a given plan Id.
     */
   @js.native
+  @Factory
   trait UpdateUsagePlanRequest extends js.Object {
     var usagePlanId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
-  }
-
-  object UpdateUsagePlanRequest {
-    @inline
-    def apply(
-        usagePlanId: String,
-        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
-    ): UpdateUsagePlanRequest = {
-      val __obj = js.Dynamic.literal(
-        "usagePlanId" -> usagePlanId.asInstanceOf[js.Any]
-      )
-
-      patchOperations.foreach(__v => __obj.updateDynamic("patchOperations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateUsagePlanRequest]
-    }
   }
 
   /**
     * The PATCH request to grant a temporary extension to the remaining quota of a usage plan associated with a specified API key.
     */
   @js.native
+  @Factory
   trait UpdateUsageRequest extends js.Object {
     var keyId: String
     var usagePlanId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
   }
 
-  object UpdateUsageRequest {
-    @inline
-    def apply(
-        keyId: String,
-        usagePlanId: String,
-        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
-    ): UpdateUsageRequest = {
-      val __obj = js.Dynamic.literal(
-        "keyId"       -> keyId.asInstanceOf[js.Any],
-        "usagePlanId" -> usagePlanId.asInstanceOf[js.Any]
-      )
-
-      patchOperations.foreach(__v => __obj.updateDynamic("patchOperations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateUsageRequest]
-    }
-  }
-
   /**
     * Updates an existing <a>VpcLink</a> of a specified identifier.
     */
   @js.native
+  @Factory
   trait UpdateVpcLinkRequest extends js.Object {
     var vpcLinkId: String
     var patchOperations: js.UndefOr[ListOfPatchOperation]
-  }
-
-  object UpdateVpcLinkRequest {
-    @inline
-    def apply(
-        vpcLinkId: String,
-        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
-    ): UpdateVpcLinkRequest = {
-      val __obj = js.Dynamic.literal(
-        "vpcLinkId" -> vpcLinkId.asInstanceOf[js.Any]
-      )
-
-      patchOperations.foreach(__v => __obj.updateDynamic("patchOperations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateVpcLinkRequest]
-    }
   }
 
   /**
@@ -5848,31 +2890,13 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html|Create and Use Usage Plans]], [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-usage-plans-with-console.html#api-gateway-usage-plan-manage-usage|Manage Usage in a Usage Plan]]
     */
   @js.native
+  @Factory
   trait Usage extends js.Object {
     var endDate: js.UndefOr[String]
     var items: js.UndefOr[MapOfKeyUsages]
     var position: js.UndefOr[String]
     var startDate: js.UndefOr[String]
     var usagePlanId: js.UndefOr[String]
-  }
-
-  object Usage {
-    @inline
-    def apply(
-        endDate: js.UndefOr[String] = js.undefined,
-        items: js.UndefOr[MapOfKeyUsages] = js.undefined,
-        position: js.UndefOr[String] = js.undefined,
-        startDate: js.UndefOr[String] = js.undefined,
-        usagePlanId: js.UndefOr[String] = js.undefined
-    ): Usage = {
-      val __obj = js.Dynamic.literal()
-      endDate.foreach(__v => __obj.updateDynamic("endDate")(__v.asInstanceOf[js.Any]))
-      items.foreach(__v => __obj.updateDynamic("items")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      startDate.foreach(__v => __obj.updateDynamic("startDate")(__v.asInstanceOf[js.Any]))
-      usagePlanId.foreach(__v => __obj.updateDynamic("usagePlanId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Usage]
-    }
   }
 
   /**
@@ -5882,6 +2906,7 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html|Create and Use Usage Plans]]
     */
   @js.native
+  @Factory
   trait UsagePlan extends js.Object {
     var apiStages: js.UndefOr[ListOfApiStage]
     var description: js.UndefOr[String]
@@ -5893,31 +2918,6 @@ package apigateway {
     var throttle: js.UndefOr[ThrottleSettings]
   }
 
-  object UsagePlan {
-    @inline
-    def apply(
-        apiStages: js.UndefOr[ListOfApiStage] = js.undefined,
-        description: js.UndefOr[String] = js.undefined,
-        id: js.UndefOr[String] = js.undefined,
-        name: js.UndefOr[String] = js.undefined,
-        productCode: js.UndefOr[String] = js.undefined,
-        quota: js.UndefOr[QuotaSettings] = js.undefined,
-        tags: js.UndefOr[MapOfStringToString] = js.undefined,
-        throttle: js.UndefOr[ThrottleSettings] = js.undefined
-    ): UsagePlan = {
-      val __obj = js.Dynamic.literal()
-      apiStages.foreach(__v => __obj.updateDynamic("apiStages")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      productCode.foreach(__v => __obj.updateDynamic("productCode")(__v.asInstanceOf[js.Any]))
-      quota.foreach(__v => __obj.updateDynamic("quota")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      throttle.foreach(__v => __obj.updateDynamic("throttle")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UsagePlan]
-    }
-  }
-
   /**
     * Represents a usage plan key to identify a plan customer.
     *  <div class="remarks"> To associate an API stage with a selected API key in a usage plan, you must create a UsagePlanKey resource to represent the selected <a>ApiKey</a>.
@@ -5925,28 +2925,12 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html|Create and Use Usage Plans]]
     */
   @js.native
+  @Factory
   trait UsagePlanKey extends js.Object {
     var id: js.UndefOr[String]
     var name: js.UndefOr[String]
     var `type`: js.UndefOr[String]
     var value: js.UndefOr[String]
-  }
-
-  object UsagePlanKey {
-    @inline
-    def apply(
-        id: js.UndefOr[String] = js.undefined,
-        name: js.UndefOr[String] = js.undefined,
-        `type`: js.UndefOr[String] = js.undefined,
-        value: js.UndefOr[String] = js.undefined
-    ): UsagePlanKey = {
-      val __obj = js.Dynamic.literal()
-      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UsagePlanKey]
-    }
   }
 
   /**
@@ -5955,22 +2939,10 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html|Create and Use Usage Plans]]
     */
   @js.native
+  @Factory
   trait UsagePlanKeys extends js.Object {
     var items: js.UndefOr[ListOfUsagePlanKey]
     var position: js.UndefOr[String]
-  }
-
-  object UsagePlanKeys {
-    @inline
-    def apply(
-        items: js.UndefOr[ListOfUsagePlanKey] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): UsagePlanKeys = {
-      val __obj = js.Dynamic.literal()
-      items.foreach(__v => __obj.updateDynamic("items")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UsagePlanKeys]
-    }
   }
 
   /**
@@ -5979,22 +2951,10 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html|Create and Use Usage Plans]]
     */
   @js.native
+  @Factory
   trait UsagePlans extends js.Object {
     var items: js.UndefOr[ListOfUsagePlan]
     var position: js.UndefOr[String]
-  }
-
-  object UsagePlans {
-    @inline
-    def apply(
-        items: js.UndefOr[ListOfUsagePlan] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): UsagePlans = {
-      val __obj = js.Dynamic.literal()
-      items.foreach(__v => __obj.updateDynamic("items")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UsagePlans]
-    }
   }
 
   /**
@@ -6003,6 +2963,7 @@ package apigateway {
     *  </p> </div>
     */
   @js.native
+  @Factory
   trait VpcLink extends js.Object {
     var description: js.UndefOr[String]
     var id: js.UndefOr[String]
@@ -6011,29 +2972,6 @@ package apigateway {
     var statusMessage: js.UndefOr[String]
     var tags: js.UndefOr[MapOfStringToString]
     var targetArns: js.UndefOr[ListOfString]
-  }
-
-  object VpcLink {
-    @inline
-    def apply(
-        description: js.UndefOr[String] = js.undefined,
-        id: js.UndefOr[String] = js.undefined,
-        name: js.UndefOr[String] = js.undefined,
-        status: js.UndefOr[VpcLinkStatus] = js.undefined,
-        statusMessage: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[MapOfStringToString] = js.undefined,
-        targetArns: js.UndefOr[ListOfString] = js.undefined
-    ): VpcLink = {
-      val __obj = js.Dynamic.literal()
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      statusMessage.foreach(__v => __obj.updateDynamic("statusMessage")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      targetArns.foreach(__v => __obj.updateDynamic("targetArns")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VpcLink]
-    }
   }
 
   @js.native
@@ -6053,21 +2991,9 @@ package apigateway {
     * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-with-private-integration.html|Getting Started with Private Integrations]], [[https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-private-integration.html|Set up Private Integrations]]
     */
   @js.native
+  @Factory
   trait VpcLinks extends js.Object {
     var items: js.UndefOr[ListOfVpcLink]
     var position: js.UndefOr[String]
-  }
-
-  object VpcLinks {
-    @inline
-    def apply(
-        items: js.UndefOr[ListOfVpcLink] = js.undefined,
-        position: js.UndefOr[String] = js.undefined
-    ): VpcLinks = {
-      val __obj = js.Dynamic.literal()
-      items.foreach(__v => __obj.updateDynamic("items")(__v.asInstanceOf[js.Any]))
-      position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VpcLinks]
-    }
   }
 }

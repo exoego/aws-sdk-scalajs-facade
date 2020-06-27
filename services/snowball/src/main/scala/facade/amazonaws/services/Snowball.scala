@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object snowball {
   type AddressId                  = String
@@ -102,6 +103,7 @@ package snowball {
     * The address that you want the Snowball or Snowballs associated with a specific job to be shipped to. Addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. Although no individual elements of the <code>Address</code> are required, if the address is invalid or unsupported, then an exception is thrown.
     */
   @js.native
+  @Factory
   trait Address extends js.Object {
     var AddressId: js.UndefOr[AddressId]
     var City: js.UndefOr[String]
@@ -119,109 +121,31 @@ package snowball {
     var Street3: js.UndefOr[String]
   }
 
-  object Address {
-    @inline
-    def apply(
-        AddressId: js.UndefOr[AddressId] = js.undefined,
-        City: js.UndefOr[String] = js.undefined,
-        Company: js.UndefOr[String] = js.undefined,
-        Country: js.UndefOr[String] = js.undefined,
-        IsRestricted: js.UndefOr[Boolean] = js.undefined,
-        Landmark: js.UndefOr[String] = js.undefined,
-        Name: js.UndefOr[String] = js.undefined,
-        PhoneNumber: js.UndefOr[String] = js.undefined,
-        PostalCode: js.UndefOr[String] = js.undefined,
-        PrefectureOrDistrict: js.UndefOr[String] = js.undefined,
-        StateOrProvince: js.UndefOr[String] = js.undefined,
-        Street1: js.UndefOr[String] = js.undefined,
-        Street2: js.UndefOr[String] = js.undefined,
-        Street3: js.UndefOr[String] = js.undefined
-    ): Address = {
-      val __obj = js.Dynamic.literal()
-      AddressId.foreach(__v => __obj.updateDynamic("AddressId")(__v.asInstanceOf[js.Any]))
-      City.foreach(__v => __obj.updateDynamic("City")(__v.asInstanceOf[js.Any]))
-      Company.foreach(__v => __obj.updateDynamic("Company")(__v.asInstanceOf[js.Any]))
-      Country.foreach(__v => __obj.updateDynamic("Country")(__v.asInstanceOf[js.Any]))
-      IsRestricted.foreach(__v => __obj.updateDynamic("IsRestricted")(__v.asInstanceOf[js.Any]))
-      Landmark.foreach(__v => __obj.updateDynamic("Landmark")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      PhoneNumber.foreach(__v => __obj.updateDynamic("PhoneNumber")(__v.asInstanceOf[js.Any]))
-      PostalCode.foreach(__v => __obj.updateDynamic("PostalCode")(__v.asInstanceOf[js.Any]))
-      PrefectureOrDistrict.foreach(__v => __obj.updateDynamic("PrefectureOrDistrict")(__v.asInstanceOf[js.Any]))
-      StateOrProvince.foreach(__v => __obj.updateDynamic("StateOrProvince")(__v.asInstanceOf[js.Any]))
-      Street1.foreach(__v => __obj.updateDynamic("Street1")(__v.asInstanceOf[js.Any]))
-      Street2.foreach(__v => __obj.updateDynamic("Street2")(__v.asInstanceOf[js.Any]))
-      Street3.foreach(__v => __obj.updateDynamic("Street3")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Address]
-    }
-  }
-
   @js.native
+  @Factory
   trait CancelClusterRequest extends js.Object {
     var ClusterId: ClusterId
   }
 
-  object CancelClusterRequest {
-    @inline
-    def apply(
-        ClusterId: ClusterId
-    ): CancelClusterRequest = {
-      val __obj = js.Dynamic.literal(
-        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CancelClusterRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CancelClusterResult extends js.Object {}
 
-  object CancelClusterResult {
-    @inline
-    def apply(
-    ): CancelClusterResult = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[CancelClusterResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait CancelJobRequest extends js.Object {
     var JobId: JobId
   }
 
-  object CancelJobRequest {
-    @inline
-    def apply(
-        JobId: JobId
-    ): CancelJobRequest = {
-      val __obj = js.Dynamic.literal(
-        "JobId" -> JobId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CancelJobRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CancelJobResult extends js.Object {}
-
-  object CancelJobResult {
-    @inline
-    def apply(
-    ): CancelJobResult = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[CancelJobResult]
-    }
-  }
 
   /**
     * Contains a cluster's state, a cluster's ID, and other important information.
     */
   @js.native
+  @Factory
   trait ClusterListEntry extends js.Object {
     var ClusterId: js.UndefOr[String]
     var ClusterState: js.UndefOr[ClusterState]
@@ -229,27 +153,11 @@ package snowball {
     var Description: js.UndefOr[String]
   }
 
-  object ClusterListEntry {
-    @inline
-    def apply(
-        ClusterId: js.UndefOr[String] = js.undefined,
-        ClusterState: js.UndefOr[ClusterState] = js.undefined,
-        CreationDate: js.UndefOr[Timestamp] = js.undefined,
-        Description: js.UndefOr[String] = js.undefined
-    ): ClusterListEntry = {
-      val __obj = js.Dynamic.literal()
-      ClusterId.foreach(__v => __obj.updateDynamic("ClusterId")(__v.asInstanceOf[js.Any]))
-      ClusterState.foreach(__v => __obj.updateDynamic("ClusterState")(__v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ClusterListEntry]
-    }
-  }
-
   /**
     * Contains metadata about a specific cluster.
     */
   @js.native
+  @Factory
   trait ClusterMetadata extends js.Object {
     var AddressId: js.UndefOr[AddressId]
     var ClusterId: js.UndefOr[String]
@@ -264,41 +172,6 @@ package snowball {
     var RoleARN: js.UndefOr[RoleARN]
     var ShippingOption: js.UndefOr[ShippingOption]
     var SnowballType: js.UndefOr[SnowballType]
-  }
-
-  object ClusterMetadata {
-    @inline
-    def apply(
-        AddressId: js.UndefOr[AddressId] = js.undefined,
-        ClusterId: js.UndefOr[String] = js.undefined,
-        ClusterState: js.UndefOr[ClusterState] = js.undefined,
-        CreationDate: js.UndefOr[Timestamp] = js.undefined,
-        Description: js.UndefOr[String] = js.undefined,
-        ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
-        JobType: js.UndefOr[JobType] = js.undefined,
-        KmsKeyARN: js.UndefOr[KmsKeyARN] = js.undefined,
-        Notification: js.UndefOr[Notification] = js.undefined,
-        Resources: js.UndefOr[JobResource] = js.undefined,
-        RoleARN: js.UndefOr[RoleARN] = js.undefined,
-        ShippingOption: js.UndefOr[ShippingOption] = js.undefined,
-        SnowballType: js.UndefOr[SnowballType] = js.undefined
-    ): ClusterMetadata = {
-      val __obj = js.Dynamic.literal()
-      AddressId.foreach(__v => __obj.updateDynamic("AddressId")(__v.asInstanceOf[js.Any]))
-      ClusterId.foreach(__v => __obj.updateDynamic("ClusterId")(__v.asInstanceOf[js.Any]))
-      ClusterState.foreach(__v => __obj.updateDynamic("ClusterState")(__v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      ForwardingAddressId.foreach(__v => __obj.updateDynamic("ForwardingAddressId")(__v.asInstanceOf[js.Any]))
-      JobType.foreach(__v => __obj.updateDynamic("JobType")(__v.asInstanceOf[js.Any]))
-      KmsKeyARN.foreach(__v => __obj.updateDynamic("KmsKeyARN")(__v.asInstanceOf[js.Any]))
-      Notification.foreach(__v => __obj.updateDynamic("Notification")(__v.asInstanceOf[js.Any]))
-      Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
-      RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
-      ShippingOption.foreach(__v => __obj.updateDynamic("ShippingOption")(__v.asInstanceOf[js.Any]))
-      SnowballType.foreach(__v => __obj.updateDynamic("SnowballType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ClusterMetadata]
-    }
   }
 
   @js.native
@@ -317,59 +190,26 @@ package snowball {
     * A JSON-formatted object that describes a compatible Amazon Machine Image (AMI), including the ID and name for a Snowball Edge AMI. This AMI is compatible with the device's physical hardware requirements, and it should be able to be run in an SBE1 instance on the device.
     */
   @js.native
+  @Factory
   trait CompatibleImage extends js.Object {
     var AmiId: js.UndefOr[String]
     var Name: js.UndefOr[String]
   }
 
-  object CompatibleImage {
-    @inline
-    def apply(
-        AmiId: js.UndefOr[String] = js.undefined,
-        Name: js.UndefOr[String] = js.undefined
-    ): CompatibleImage = {
-      val __obj = js.Dynamic.literal()
-      AmiId.foreach(__v => __obj.updateDynamic("AmiId")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CompatibleImage]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateAddressRequest extends js.Object {
     var Address: Address
   }
 
-  object CreateAddressRequest {
-    @inline
-    def apply(
-        Address: Address
-    ): CreateAddressRequest = {
-      val __obj = js.Dynamic.literal(
-        "Address" -> Address.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateAddressRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateAddressResult extends js.Object {
     var AddressId: js.UndefOr[String]
   }
 
-  object CreateAddressResult {
-    @inline
-    def apply(
-        AddressId: js.UndefOr[String] = js.undefined
-    ): CreateAddressResult = {
-      val __obj = js.Dynamic.literal()
-      AddressId.foreach(__v => __obj.updateDynamic("AddressId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateAddressResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateClusterRequest extends js.Object {
     var AddressId: AddressId
     var JobType: JobType
@@ -383,54 +223,14 @@ package snowball {
     var SnowballType: js.UndefOr[SnowballType]
   }
 
-  object CreateClusterRequest {
-    @inline
-    def apply(
-        AddressId: AddressId,
-        JobType: JobType,
-        Resources: JobResource,
-        RoleARN: RoleARN,
-        ShippingOption: ShippingOption,
-        Description: js.UndefOr[String] = js.undefined,
-        ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
-        KmsKeyARN: js.UndefOr[KmsKeyARN] = js.undefined,
-        Notification: js.UndefOr[Notification] = js.undefined,
-        SnowballType: js.UndefOr[SnowballType] = js.undefined
-    ): CreateClusterRequest = {
-      val __obj = js.Dynamic.literal(
-        "AddressId"      -> AddressId.asInstanceOf[js.Any],
-        "JobType"        -> JobType.asInstanceOf[js.Any],
-        "Resources"      -> Resources.asInstanceOf[js.Any],
-        "RoleARN"        -> RoleARN.asInstanceOf[js.Any],
-        "ShippingOption" -> ShippingOption.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      ForwardingAddressId.foreach(__v => __obj.updateDynamic("ForwardingAddressId")(__v.asInstanceOf[js.Any]))
-      KmsKeyARN.foreach(__v => __obj.updateDynamic("KmsKeyARN")(__v.asInstanceOf[js.Any]))
-      Notification.foreach(__v => __obj.updateDynamic("Notification")(__v.asInstanceOf[js.Any]))
-      SnowballType.foreach(__v => __obj.updateDynamic("SnowballType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateClusterRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateClusterResult extends js.Object {
     var ClusterId: js.UndefOr[ClusterId]
   }
 
-  object CreateClusterResult {
-    @inline
-    def apply(
-        ClusterId: js.UndefOr[ClusterId] = js.undefined
-    ): CreateClusterResult = {
-      val __obj = js.Dynamic.literal()
-      ClusterId.foreach(__v => __obj.updateDynamic("ClusterId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateClusterResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateJobRequest extends js.Object {
     var AddressId: js.UndefOr[AddressId]
     var ClusterId: js.UndefOr[ClusterId]
@@ -446,61 +246,17 @@ package snowball {
     var SnowballType: js.UndefOr[SnowballType]
   }
 
-  object CreateJobRequest {
-    @inline
-    def apply(
-        AddressId: js.UndefOr[AddressId] = js.undefined,
-        ClusterId: js.UndefOr[ClusterId] = js.undefined,
-        Description: js.UndefOr[String] = js.undefined,
-        ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
-        JobType: js.UndefOr[JobType] = js.undefined,
-        KmsKeyARN: js.UndefOr[KmsKeyARN] = js.undefined,
-        Notification: js.UndefOr[Notification] = js.undefined,
-        Resources: js.UndefOr[JobResource] = js.undefined,
-        RoleARN: js.UndefOr[RoleARN] = js.undefined,
-        ShippingOption: js.UndefOr[ShippingOption] = js.undefined,
-        SnowballCapacityPreference: js.UndefOr[SnowballCapacity] = js.undefined,
-        SnowballType: js.UndefOr[SnowballType] = js.undefined
-    ): CreateJobRequest = {
-      val __obj = js.Dynamic.literal()
-      AddressId.foreach(__v => __obj.updateDynamic("AddressId")(__v.asInstanceOf[js.Any]))
-      ClusterId.foreach(__v => __obj.updateDynamic("ClusterId")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      ForwardingAddressId.foreach(__v => __obj.updateDynamic("ForwardingAddressId")(__v.asInstanceOf[js.Any]))
-      JobType.foreach(__v => __obj.updateDynamic("JobType")(__v.asInstanceOf[js.Any]))
-      KmsKeyARN.foreach(__v => __obj.updateDynamic("KmsKeyARN")(__v.asInstanceOf[js.Any]))
-      Notification.foreach(__v => __obj.updateDynamic("Notification")(__v.asInstanceOf[js.Any]))
-      Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
-      RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
-      ShippingOption.foreach(__v => __obj.updateDynamic("ShippingOption")(__v.asInstanceOf[js.Any]))
-      SnowballCapacityPreference.foreach(__v =>
-        __obj.updateDynamic("SnowballCapacityPreference")(__v.asInstanceOf[js.Any])
-      )
-      SnowballType.foreach(__v => __obj.updateDynamic("SnowballType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateJobRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateJobResult extends js.Object {
     var JobId: js.UndefOr[JobId]
-  }
-
-  object CreateJobResult {
-    @inline
-    def apply(
-        JobId: js.UndefOr[JobId] = js.undefined
-    ): CreateJobResult = {
-      val __obj = js.Dynamic.literal()
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateJobResult]
-    }
   }
 
   /**
     * Defines the real-time status of a Snowball's data transfer while the device is at AWS. This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.
     */
   @js.native
+  @Factory
   trait DataTransfer extends js.Object {
     var BytesTransferred: js.UndefOr[Double]
     var ObjectsTransferred: js.UndefOr[Double]
@@ -508,347 +264,128 @@ package snowball {
     var TotalObjects: js.UndefOr[Double]
   }
 
-  object DataTransfer {
-    @inline
-    def apply(
-        BytesTransferred: js.UndefOr[Double] = js.undefined,
-        ObjectsTransferred: js.UndefOr[Double] = js.undefined,
-        TotalBytes: js.UndefOr[Double] = js.undefined,
-        TotalObjects: js.UndefOr[Double] = js.undefined
-    ): DataTransfer = {
-      val __obj = js.Dynamic.literal()
-      BytesTransferred.foreach(__v => __obj.updateDynamic("BytesTransferred")(__v.asInstanceOf[js.Any]))
-      ObjectsTransferred.foreach(__v => __obj.updateDynamic("ObjectsTransferred")(__v.asInstanceOf[js.Any]))
-      TotalBytes.foreach(__v => __obj.updateDynamic("TotalBytes")(__v.asInstanceOf[js.Any]))
-      TotalObjects.foreach(__v => __obj.updateDynamic("TotalObjects")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DataTransfer]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeAddressRequest extends js.Object {
     var AddressId: AddressId
   }
 
-  object DescribeAddressRequest {
-    @inline
-    def apply(
-        AddressId: AddressId
-    ): DescribeAddressRequest = {
-      val __obj = js.Dynamic.literal(
-        "AddressId" -> AddressId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeAddressRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeAddressResult extends js.Object {
     var Address: js.UndefOr[Address]
   }
 
-  object DescribeAddressResult {
-    @inline
-    def apply(
-        Address: js.UndefOr[Address] = js.undefined
-    ): DescribeAddressResult = {
-      val __obj = js.Dynamic.literal()
-      Address.foreach(__v => __obj.updateDynamic("Address")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeAddressResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeAddressesRequest extends js.Object {
     var MaxResults: js.UndefOr[ListLimit]
     var NextToken: js.UndefOr[String]
   }
 
-  object DescribeAddressesRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[ListLimit] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): DescribeAddressesRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeAddressesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeAddressesResult extends js.Object {
     var Addresses: js.UndefOr[AddressList]
     var NextToken: js.UndefOr[String]
   }
 
-  object DescribeAddressesResult {
-    @inline
-    def apply(
-        Addresses: js.UndefOr[AddressList] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): DescribeAddressesResult = {
-      val __obj = js.Dynamic.literal()
-      Addresses.foreach(__v => __obj.updateDynamic("Addresses")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeAddressesResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeClusterRequest extends js.Object {
     var ClusterId: ClusterId
   }
 
-  object DescribeClusterRequest {
-    @inline
-    def apply(
-        ClusterId: ClusterId
-    ): DescribeClusterRequest = {
-      val __obj = js.Dynamic.literal(
-        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeClusterRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeClusterResult extends js.Object {
     var ClusterMetadata: js.UndefOr[ClusterMetadata]
   }
 
-  object DescribeClusterResult {
-    @inline
-    def apply(
-        ClusterMetadata: js.UndefOr[ClusterMetadata] = js.undefined
-    ): DescribeClusterResult = {
-      val __obj = js.Dynamic.literal()
-      ClusterMetadata.foreach(__v => __obj.updateDynamic("ClusterMetadata")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeClusterResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeJobRequest extends js.Object {
     var JobId: JobId
   }
 
-  object DescribeJobRequest {
-    @inline
-    def apply(
-        JobId: JobId
-    ): DescribeJobRequest = {
-      val __obj = js.Dynamic.literal(
-        "JobId" -> JobId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeJobRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeJobResult extends js.Object {
     var JobMetadata: js.UndefOr[JobMetadata]
     var SubJobMetadata: js.UndefOr[JobMetadataList]
-  }
-
-  object DescribeJobResult {
-    @inline
-    def apply(
-        JobMetadata: js.UndefOr[JobMetadata] = js.undefined,
-        SubJobMetadata: js.UndefOr[JobMetadataList] = js.undefined
-    ): DescribeJobResult = {
-      val __obj = js.Dynamic.literal()
-      JobMetadata.foreach(__v => __obj.updateDynamic("JobMetadata")(__v.asInstanceOf[js.Any]))
-      SubJobMetadata.foreach(__v => __obj.updateDynamic("SubJobMetadata")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeJobResult]
-    }
   }
 
   /**
     * A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI), including the Amazon EC2 AMI ID and the Snowball Edge AMI ID. Each AMI has these two IDs to simplify identifying the AMI in both the AWS Cloud and on the device.
     */
   @js.native
+  @Factory
   trait Ec2AmiResource extends js.Object {
     var AmiId: AmiId
     var SnowballAmiId: js.UndefOr[String]
-  }
-
-  object Ec2AmiResource {
-    @inline
-    def apply(
-        AmiId: AmiId,
-        SnowballAmiId: js.UndefOr[String] = js.undefined
-    ): Ec2AmiResource = {
-      val __obj = js.Dynamic.literal(
-        "AmiId" -> AmiId.asInstanceOf[js.Any]
-      )
-
-      SnowballAmiId.foreach(__v => __obj.updateDynamic("SnowballAmiId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Ec2AmiResource]
-    }
   }
 
   /**
     * The container for the EventResourceARN.
     */
   @js.native
+  @Factory
   trait EventTriggerDefinition extends js.Object {
     var EventResourceARN: js.UndefOr[ResourceARN]
   }
 
-  object EventTriggerDefinition {
-    @inline
-    def apply(
-        EventResourceARN: js.UndefOr[ResourceARN] = js.undefined
-    ): EventTriggerDefinition = {
-      val __obj = js.Dynamic.literal()
-      EventResourceARN.foreach(__v => __obj.updateDynamic("EventResourceARN")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EventTriggerDefinition]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetJobManifestRequest extends js.Object {
     var JobId: JobId
   }
 
-  object GetJobManifestRequest {
-    @inline
-    def apply(
-        JobId: JobId
-    ): GetJobManifestRequest = {
-      val __obj = js.Dynamic.literal(
-        "JobId" -> JobId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetJobManifestRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetJobManifestResult extends js.Object {
     var ManifestURI: js.UndefOr[String]
   }
 
-  object GetJobManifestResult {
-    @inline
-    def apply(
-        ManifestURI: js.UndefOr[String] = js.undefined
-    ): GetJobManifestResult = {
-      val __obj = js.Dynamic.literal()
-      ManifestURI.foreach(__v => __obj.updateDynamic("ManifestURI")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetJobManifestResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetJobUnlockCodeRequest extends js.Object {
     var JobId: JobId
   }
 
-  object GetJobUnlockCodeRequest {
-    @inline
-    def apply(
-        JobId: JobId
-    ): GetJobUnlockCodeRequest = {
-      val __obj = js.Dynamic.literal(
-        "JobId" -> JobId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetJobUnlockCodeRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetJobUnlockCodeResult extends js.Object {
     var UnlockCode: js.UndefOr[String]
   }
 
-  object GetJobUnlockCodeResult {
-    @inline
-    def apply(
-        UnlockCode: js.UndefOr[String] = js.undefined
-    ): GetJobUnlockCodeResult = {
-      val __obj = js.Dynamic.literal()
-      UnlockCode.foreach(__v => __obj.updateDynamic("UnlockCode")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetJobUnlockCodeResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetSnowballUsageRequest extends js.Object {}
 
-  object GetSnowballUsageRequest {
-    @inline
-    def apply(
-    ): GetSnowballUsageRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[GetSnowballUsageRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetSnowballUsageResult extends js.Object {
     var SnowballLimit: js.UndefOr[Int]
     var SnowballsInUse: js.UndefOr[Int]
   }
 
-  object GetSnowballUsageResult {
-    @inline
-    def apply(
-        SnowballLimit: js.UndefOr[Int] = js.undefined,
-        SnowballsInUse: js.UndefOr[Int] = js.undefined
-    ): GetSnowballUsageResult = {
-      val __obj = js.Dynamic.literal()
-      SnowballLimit.foreach(__v => __obj.updateDynamic("SnowballLimit")(__v.asInstanceOf[js.Any]))
-      SnowballsInUse.foreach(__v => __obj.updateDynamic("SnowballsInUse")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetSnowballUsageResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetSoftwareUpdatesRequest extends js.Object {
     var JobId: JobId
   }
 
-  object GetSoftwareUpdatesRequest {
-    @inline
-    def apply(
-        JobId: JobId
-    ): GetSoftwareUpdatesRequest = {
-      val __obj = js.Dynamic.literal(
-        "JobId" -> JobId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetSoftwareUpdatesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetSoftwareUpdatesResult extends js.Object {
     var UpdatesURI: js.UndefOr[String]
-  }
-
-  object GetSoftwareUpdatesResult {
-    @inline
-    def apply(
-        UpdatesURI: js.UndefOr[String] = js.undefined
-    ): GetSoftwareUpdatesResult = {
-      val __obj = js.Dynamic.literal()
-      UpdatesURI.foreach(__v => __obj.updateDynamic("UpdatesURI")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetSoftwareUpdatesResult]
-    }
   }
 
   /**
     * Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of an export job.
     */
   @js.native
+  @Factory
   trait JobListEntry extends js.Object {
     var CreationDate: js.UndefOr[Timestamp]
     var Description: js.UndefOr[String]
@@ -859,29 +396,6 @@ package snowball {
     var SnowballType: js.UndefOr[SnowballType]
   }
 
-  object JobListEntry {
-    @inline
-    def apply(
-        CreationDate: js.UndefOr[Timestamp] = js.undefined,
-        Description: js.UndefOr[String] = js.undefined,
-        IsMaster: js.UndefOr[Boolean] = js.undefined,
-        JobId: js.UndefOr[String] = js.undefined,
-        JobState: js.UndefOr[JobState] = js.undefined,
-        JobType: js.UndefOr[JobType] = js.undefined,
-        SnowballType: js.UndefOr[SnowballType] = js.undefined
-    ): JobListEntry = {
-      val __obj = js.Dynamic.literal()
-      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      IsMaster.foreach(__v => __obj.updateDynamic("IsMaster")(__v.asInstanceOf[js.Any]))
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      JobState.foreach(__v => __obj.updateDynamic("JobState")(__v.asInstanceOf[js.Any]))
-      JobType.foreach(__v => __obj.updateDynamic("JobType")(__v.asInstanceOf[js.Any]))
-      SnowballType.foreach(__v => __obj.updateDynamic("SnowballType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[JobListEntry]
-    }
-  }
-
   /**
     * Contains job logs. Whenever Snowball is used to import data into or export data out of Amazon S3, you'll have the option of downloading a PDF job report. Job logs are returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type. The job logs can be accessed for up to 60 minutes after this request has been made. To access any of the job logs after 60 minutes have passed, you'll have to make another call to the <code>DescribeJob</code> action.
     *  For import jobs, the PDF job report becomes available at the end of the import process. For export jobs, your job report typically becomes available while the Snowball for your job part is being delivered to you.
@@ -889,31 +403,18 @@ package snowball {
     *  For deeper visibility into the status of your transferred objects, you can look at the two associated logs: a success log and a failure log. The logs are saved in comma-separated value (CSV) format, and the name of each log includes the ID of the job or job part that the log describes.
     */
   @js.native
+  @Factory
   trait JobLogs extends js.Object {
     var JobCompletionReportURI: js.UndefOr[String]
     var JobFailureLogURI: js.UndefOr[String]
     var JobSuccessLogURI: js.UndefOr[String]
   }
 
-  object JobLogs {
-    @inline
-    def apply(
-        JobCompletionReportURI: js.UndefOr[String] = js.undefined,
-        JobFailureLogURI: js.UndefOr[String] = js.undefined,
-        JobSuccessLogURI: js.UndefOr[String] = js.undefined
-    ): JobLogs = {
-      val __obj = js.Dynamic.literal()
-      JobCompletionReportURI.foreach(__v => __obj.updateDynamic("JobCompletionReportURI")(__v.asInstanceOf[js.Any]))
-      JobFailureLogURI.foreach(__v => __obj.updateDynamic("JobFailureLogURI")(__v.asInstanceOf[js.Any]))
-      JobSuccessLogURI.foreach(__v => __obj.updateDynamic("JobSuccessLogURI")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[JobLogs]
-    }
-  }
-
   /**
     * Contains information about a specific job including shipping information, job status, and other important metadata. This information is returned as a part of the response syntax of the <code>DescribeJob</code> action.
     */
   @js.native
+  @Factory
   trait JobMetadata extends js.Object {
     var AddressId: js.UndefOr[AddressId]
     var ClusterId: js.UndefOr[String]
@@ -934,74 +435,15 @@ package snowball {
     var SnowballType: js.UndefOr[SnowballType]
   }
 
-  object JobMetadata {
-    @inline
-    def apply(
-        AddressId: js.UndefOr[AddressId] = js.undefined,
-        ClusterId: js.UndefOr[String] = js.undefined,
-        CreationDate: js.UndefOr[Timestamp] = js.undefined,
-        DataTransferProgress: js.UndefOr[DataTransfer] = js.undefined,
-        Description: js.UndefOr[String] = js.undefined,
-        ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
-        JobId: js.UndefOr[String] = js.undefined,
-        JobLogInfo: js.UndefOr[JobLogs] = js.undefined,
-        JobState: js.UndefOr[JobState] = js.undefined,
-        JobType: js.UndefOr[JobType] = js.undefined,
-        KmsKeyARN: js.UndefOr[KmsKeyARN] = js.undefined,
-        Notification: js.UndefOr[Notification] = js.undefined,
-        Resources: js.UndefOr[JobResource] = js.undefined,
-        RoleARN: js.UndefOr[RoleARN] = js.undefined,
-        ShippingDetails: js.UndefOr[ShippingDetails] = js.undefined,
-        SnowballCapacityPreference: js.UndefOr[SnowballCapacity] = js.undefined,
-        SnowballType: js.UndefOr[SnowballType] = js.undefined
-    ): JobMetadata = {
-      val __obj = js.Dynamic.literal()
-      AddressId.foreach(__v => __obj.updateDynamic("AddressId")(__v.asInstanceOf[js.Any]))
-      ClusterId.foreach(__v => __obj.updateDynamic("ClusterId")(__v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      DataTransferProgress.foreach(__v => __obj.updateDynamic("DataTransferProgress")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      ForwardingAddressId.foreach(__v => __obj.updateDynamic("ForwardingAddressId")(__v.asInstanceOf[js.Any]))
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      JobLogInfo.foreach(__v => __obj.updateDynamic("JobLogInfo")(__v.asInstanceOf[js.Any]))
-      JobState.foreach(__v => __obj.updateDynamic("JobState")(__v.asInstanceOf[js.Any]))
-      JobType.foreach(__v => __obj.updateDynamic("JobType")(__v.asInstanceOf[js.Any]))
-      KmsKeyARN.foreach(__v => __obj.updateDynamic("KmsKeyARN")(__v.asInstanceOf[js.Any]))
-      Notification.foreach(__v => __obj.updateDynamic("Notification")(__v.asInstanceOf[js.Any]))
-      Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
-      RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
-      ShippingDetails.foreach(__v => __obj.updateDynamic("ShippingDetails")(__v.asInstanceOf[js.Any]))
-      SnowballCapacityPreference.foreach(__v =>
-        __obj.updateDynamic("SnowballCapacityPreference")(__v.asInstanceOf[js.Any])
-      )
-      SnowballType.foreach(__v => __obj.updateDynamic("SnowballType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[JobMetadata]
-    }
-  }
-
   /**
     * Contains an array of AWS resource objects. Each object represents an Amazon S3 bucket, an AWS Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job.
     */
   @js.native
+  @Factory
   trait JobResource extends js.Object {
     var Ec2AmiResources: js.UndefOr[Ec2AmiResourceList]
     var LambdaResources: js.UndefOr[LambdaResourceList]
     var S3Resources: js.UndefOr[S3ResourceList]
-  }
-
-  object JobResource {
-    @inline
-    def apply(
-        Ec2AmiResources: js.UndefOr[Ec2AmiResourceList] = js.undefined,
-        LambdaResources: js.UndefOr[LambdaResourceList] = js.undefined,
-        S3Resources: js.UndefOr[S3ResourceList] = js.undefined
-    ): JobResource = {
-      val __obj = js.Dynamic.literal()
-      Ec2AmiResources.foreach(__v => __obj.updateDynamic("Ec2AmiResources")(__v.asInstanceOf[js.Any]))
-      LambdaResources.foreach(__v => __obj.updateDynamic("LambdaResources")(__v.asInstanceOf[js.Any]))
-      S3Resources.foreach(__v => __obj.updateDynamic("S3Resources")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[JobResource]
-    }
   }
 
   @js.native
@@ -1054,201 +496,77 @@ package snowball {
     * Contains a key range. For export jobs, a <code>S3Resource</code> object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.
     */
   @js.native
+  @Factory
   trait KeyRange extends js.Object {
     var BeginMarker: js.UndefOr[String]
     var EndMarker: js.UndefOr[String]
-  }
-
-  object KeyRange {
-    @inline
-    def apply(
-        BeginMarker: js.UndefOr[String] = js.undefined,
-        EndMarker: js.UndefOr[String] = js.undefined
-    ): KeyRange = {
-      val __obj = js.Dynamic.literal()
-      BeginMarker.foreach(__v => __obj.updateDynamic("BeginMarker")(__v.asInstanceOf[js.Any]))
-      EndMarker.foreach(__v => __obj.updateDynamic("EndMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[KeyRange]
-    }
   }
 
   /**
     * Identifies
     */
   @js.native
+  @Factory
   trait LambdaResource extends js.Object {
     var EventTriggers: js.UndefOr[EventTriggerDefinitionList]
     var LambdaArn: js.UndefOr[ResourceARN]
   }
 
-  object LambdaResource {
-    @inline
-    def apply(
-        EventTriggers: js.UndefOr[EventTriggerDefinitionList] = js.undefined,
-        LambdaArn: js.UndefOr[ResourceARN] = js.undefined
-    ): LambdaResource = {
-      val __obj = js.Dynamic.literal()
-      EventTriggers.foreach(__v => __obj.updateDynamic("EventTriggers")(__v.asInstanceOf[js.Any]))
-      LambdaArn.foreach(__v => __obj.updateDynamic("LambdaArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LambdaResource]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListClusterJobsRequest extends js.Object {
     var ClusterId: ClusterId
     var MaxResults: js.UndefOr[ListLimit]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListClusterJobsRequest {
-    @inline
-    def apply(
-        ClusterId: ClusterId,
-        MaxResults: js.UndefOr[ListLimit] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListClusterJobsRequest = {
-      val __obj = js.Dynamic.literal(
-        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListClusterJobsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListClusterJobsResult extends js.Object {
     var JobListEntries: js.UndefOr[JobListEntryList]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListClusterJobsResult {
-    @inline
-    def apply(
-        JobListEntries: js.UndefOr[JobListEntryList] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListClusterJobsResult = {
-      val __obj = js.Dynamic.literal()
-      JobListEntries.foreach(__v => __obj.updateDynamic("JobListEntries")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListClusterJobsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListClustersRequest extends js.Object {
     var MaxResults: js.UndefOr[ListLimit]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListClustersRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[ListLimit] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListClustersRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListClustersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListClustersResult extends js.Object {
     var ClusterListEntries: js.UndefOr[ClusterListEntryList]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListClustersResult {
-    @inline
-    def apply(
-        ClusterListEntries: js.UndefOr[ClusterListEntryList] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListClustersResult = {
-      val __obj = js.Dynamic.literal()
-      ClusterListEntries.foreach(__v => __obj.updateDynamic("ClusterListEntries")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListClustersResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListCompatibleImagesRequest extends js.Object {
     var MaxResults: js.UndefOr[ListLimit]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListCompatibleImagesRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[ListLimit] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListCompatibleImagesRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListCompatibleImagesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListCompatibleImagesResult extends js.Object {
     var CompatibleImages: js.UndefOr[CompatibleImageList]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListCompatibleImagesResult {
-    @inline
-    def apply(
-        CompatibleImages: js.UndefOr[CompatibleImageList] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListCompatibleImagesResult = {
-      val __obj = js.Dynamic.literal()
-      CompatibleImages.foreach(__v => __obj.updateDynamic("CompatibleImages")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListCompatibleImagesResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListJobsRequest extends js.Object {
     var MaxResults: js.UndefOr[ListLimit]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListJobsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[ListLimit] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListJobsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListJobsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListJobsResult extends js.Object {
     var JobListEntries: js.UndefOr[JobListEntryList]
     var NextToken: js.UndefOr[String]
-  }
-
-  object ListJobsResult {
-    @inline
-    def apply(
-        JobListEntries: js.UndefOr[JobListEntryList] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListJobsResult = {
-      val __obj = js.Dynamic.literal()
-      JobListEntries.foreach(__v => __obj.updateDynamic("JobListEntries")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListJobsResult]
-    }
   }
 
   /**
@@ -1256,94 +574,42 @@ package snowball {
     *  When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.
     */
   @js.native
+  @Factory
   trait Notification extends js.Object {
     var JobStatesToNotify: js.UndefOr[JobStateList]
     var NotifyAll: js.UndefOr[Boolean]
     var SnsTopicARN: js.UndefOr[SnsTopicARN]
   }
 
-  object Notification {
-    @inline
-    def apply(
-        JobStatesToNotify: js.UndefOr[JobStateList] = js.undefined,
-        NotifyAll: js.UndefOr[Boolean] = js.undefined,
-        SnsTopicARN: js.UndefOr[SnsTopicARN] = js.undefined
-    ): Notification = {
-      val __obj = js.Dynamic.literal()
-      JobStatesToNotify.foreach(__v => __obj.updateDynamic("JobStatesToNotify")(__v.asInstanceOf[js.Any]))
-      NotifyAll.foreach(__v => __obj.updateDynamic("NotifyAll")(__v.asInstanceOf[js.Any]))
-      SnsTopicARN.foreach(__v => __obj.updateDynamic("SnsTopicARN")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Notification]
-    }
-  }
-
   /**
     * Each <code>S3Resource</code> object represents an Amazon S3 bucket that your transferred data will be exported from or imported into. For export jobs, this object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.
     */
   @js.native
+  @Factory
   trait S3Resource extends js.Object {
     var BucketArn: js.UndefOr[ResourceARN]
     var KeyRange: js.UndefOr[KeyRange]
-  }
-
-  object S3Resource {
-    @inline
-    def apply(
-        BucketArn: js.UndefOr[ResourceARN] = js.undefined,
-        KeyRange: js.UndefOr[KeyRange] = js.undefined
-    ): S3Resource = {
-      val __obj = js.Dynamic.literal()
-      BucketArn.foreach(__v => __obj.updateDynamic("BucketArn")(__v.asInstanceOf[js.Any]))
-      KeyRange.foreach(__v => __obj.updateDynamic("KeyRange")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[S3Resource]
-    }
   }
 
   /**
     * The <code>Status</code> and <code>TrackingNumber</code> information for an inbound or outbound shipment.
     */
   @js.native
+  @Factory
   trait Shipment extends js.Object {
     var Status: js.UndefOr[String]
     var TrackingNumber: js.UndefOr[String]
-  }
-
-  object Shipment {
-    @inline
-    def apply(
-        Status: js.UndefOr[String] = js.undefined,
-        TrackingNumber: js.UndefOr[String] = js.undefined
-    ): Shipment = {
-      val __obj = js.Dynamic.literal()
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      TrackingNumber.foreach(__v => __obj.updateDynamic("TrackingNumber")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Shipment]
-    }
   }
 
   /**
     * A job's shipping information, including inbound and outbound tracking numbers and shipping speed options.
     */
   @js.native
+  @Factory
   trait ShippingDetails extends js.Object {
     var InboundShipment: js.UndefOr[Shipment]
     var OutboundShipment: js.UndefOr[Shipment]
     var ShippingOption: js.UndefOr[ShippingOption]
-  }
-
-  object ShippingDetails {
-    @inline
-    def apply(
-        InboundShipment: js.UndefOr[Shipment] = js.undefined,
-        OutboundShipment: js.UndefOr[Shipment] = js.undefined,
-        ShippingOption: js.UndefOr[ShippingOption] = js.undefined
-    ): ShippingDetails = {
-      val __obj = js.Dynamic.literal()
-      InboundShipment.foreach(__v => __obj.updateDynamic("InboundShipment")(__v.asInstanceOf[js.Any]))
-      OutboundShipment.foreach(__v => __obj.updateDynamic("OutboundShipment")(__v.asInstanceOf[js.Any]))
-      ShippingOption.foreach(__v => __obj.updateDynamic("ShippingOption")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ShippingDetails]
-    }
   }
 
   @js.native
@@ -1381,6 +647,7 @@ package snowball {
   }
 
   @js.native
+  @Factory
   trait UpdateClusterRequest extends js.Object {
     var ClusterId: ClusterId
     var AddressId: js.UndefOr[AddressId]
@@ -1392,47 +659,12 @@ package snowball {
     var ShippingOption: js.UndefOr[ShippingOption]
   }
 
-  object UpdateClusterRequest {
-    @inline
-    def apply(
-        ClusterId: ClusterId,
-        AddressId: js.UndefOr[AddressId] = js.undefined,
-        Description: js.UndefOr[String] = js.undefined,
-        ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
-        Notification: js.UndefOr[Notification] = js.undefined,
-        Resources: js.UndefOr[JobResource] = js.undefined,
-        RoleARN: js.UndefOr[RoleARN] = js.undefined,
-        ShippingOption: js.UndefOr[ShippingOption] = js.undefined
-    ): UpdateClusterRequest = {
-      val __obj = js.Dynamic.literal(
-        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
-      )
-
-      AddressId.foreach(__v => __obj.updateDynamic("AddressId")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      ForwardingAddressId.foreach(__v => __obj.updateDynamic("ForwardingAddressId")(__v.asInstanceOf[js.Any]))
-      Notification.foreach(__v => __obj.updateDynamic("Notification")(__v.asInstanceOf[js.Any]))
-      Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
-      RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
-      ShippingOption.foreach(__v => __obj.updateDynamic("ShippingOption")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateClusterRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateClusterResult extends js.Object {}
 
-  object UpdateClusterResult {
-    @inline
-    def apply(
-    ): UpdateClusterResult = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateClusterResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateJobRequest extends js.Object {
     var JobId: JobId
     var AddressId: js.UndefOr[AddressId]
@@ -1445,47 +677,7 @@ package snowball {
     var SnowballCapacityPreference: js.UndefOr[SnowballCapacity]
   }
 
-  object UpdateJobRequest {
-    @inline
-    def apply(
-        JobId: JobId,
-        AddressId: js.UndefOr[AddressId] = js.undefined,
-        Description: js.UndefOr[String] = js.undefined,
-        ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
-        Notification: js.UndefOr[Notification] = js.undefined,
-        Resources: js.UndefOr[JobResource] = js.undefined,
-        RoleARN: js.UndefOr[RoleARN] = js.undefined,
-        ShippingOption: js.UndefOr[ShippingOption] = js.undefined,
-        SnowballCapacityPreference: js.UndefOr[SnowballCapacity] = js.undefined
-    ): UpdateJobRequest = {
-      val __obj = js.Dynamic.literal(
-        "JobId" -> JobId.asInstanceOf[js.Any]
-      )
-
-      AddressId.foreach(__v => __obj.updateDynamic("AddressId")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      ForwardingAddressId.foreach(__v => __obj.updateDynamic("ForwardingAddressId")(__v.asInstanceOf[js.Any]))
-      Notification.foreach(__v => __obj.updateDynamic("Notification")(__v.asInstanceOf[js.Any]))
-      Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
-      RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
-      ShippingOption.foreach(__v => __obj.updateDynamic("ShippingOption")(__v.asInstanceOf[js.Any]))
-      SnowballCapacityPreference.foreach(__v =>
-        __obj.updateDynamic("SnowballCapacityPreference")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[UpdateJobRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateJobResult extends js.Object {}
-
-  object UpdateJobResult {
-    @inline
-    def apply(
-    ): UpdateJobResult = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateJobResult]
-    }
-  }
 }

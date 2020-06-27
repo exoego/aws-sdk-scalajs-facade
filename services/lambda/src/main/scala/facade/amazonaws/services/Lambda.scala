@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object lambda {
   type Action                                   = String
@@ -302,6 +303,7 @@ package lambda {
     * Limits that are related to concurrency and storage. All file and storage sizes are in bytes.
     */
   @js.native
+  @Factory
   trait AccountLimit extends js.Object {
     var CodeSizeUnzipped: js.UndefOr[Double]
     var CodeSizeZipped: js.UndefOr[Double]
@@ -310,50 +312,18 @@ package lambda {
     var UnreservedConcurrentExecutions: js.UndefOr[UnreservedConcurrentExecutions]
   }
 
-  object AccountLimit {
-    @inline
-    def apply(
-        CodeSizeUnzipped: js.UndefOr[Double] = js.undefined,
-        CodeSizeZipped: js.UndefOr[Double] = js.undefined,
-        ConcurrentExecutions: js.UndefOr[Int] = js.undefined,
-        TotalCodeSize: js.UndefOr[Double] = js.undefined,
-        UnreservedConcurrentExecutions: js.UndefOr[UnreservedConcurrentExecutions] = js.undefined
-    ): AccountLimit = {
-      val __obj = js.Dynamic.literal()
-      CodeSizeUnzipped.foreach(__v => __obj.updateDynamic("CodeSizeUnzipped")(__v.asInstanceOf[js.Any]))
-      CodeSizeZipped.foreach(__v => __obj.updateDynamic("CodeSizeZipped")(__v.asInstanceOf[js.Any]))
-      ConcurrentExecutions.foreach(__v => __obj.updateDynamic("ConcurrentExecutions")(__v.asInstanceOf[js.Any]))
-      TotalCodeSize.foreach(__v => __obj.updateDynamic("TotalCodeSize")(__v.asInstanceOf[js.Any]))
-      UnreservedConcurrentExecutions.foreach(__v =>
-        __obj.updateDynamic("UnreservedConcurrentExecutions")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[AccountLimit]
-    }
-  }
-
   /**
     * The number of functions and amount of storage in use.
     */
   @js.native
+  @Factory
   trait AccountUsage extends js.Object {
     var FunctionCount: js.UndefOr[Double]
     var TotalCodeSize: js.UndefOr[Double]
   }
 
-  object AccountUsage {
-    @inline
-    def apply(
-        FunctionCount: js.UndefOr[Double] = js.undefined,
-        TotalCodeSize: js.UndefOr[Double] = js.undefined
-    ): AccountUsage = {
-      val __obj = js.Dynamic.literal()
-      FunctionCount.foreach(__v => __obj.updateDynamic("FunctionCount")(__v.asInstanceOf[js.Any]))
-      TotalCodeSize.foreach(__v => __obj.updateDynamic("TotalCodeSize")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AccountUsage]
-    }
-  }
-
   @js.native
+  @Factory
   trait AddLayerVersionPermissionRequest extends js.Object {
     var Action: LayerPermissionAllowedAction
     var LayerName: LayerName
@@ -364,51 +334,15 @@ package lambda {
     var RevisionId: js.UndefOr[String]
   }
 
-  object AddLayerVersionPermissionRequest {
-    @inline
-    def apply(
-        Action: LayerPermissionAllowedAction,
-        LayerName: LayerName,
-        Principal: LayerPermissionAllowedPrincipal,
-        StatementId: StatementId,
-        VersionNumber: LayerVersionNumber,
-        OrganizationId: js.UndefOr[OrganizationId] = js.undefined,
-        RevisionId: js.UndefOr[String] = js.undefined
-    ): AddLayerVersionPermissionRequest = {
-      val __obj = js.Dynamic.literal(
-        "Action"        -> Action.asInstanceOf[js.Any],
-        "LayerName"     -> LayerName.asInstanceOf[js.Any],
-        "Principal"     -> Principal.asInstanceOf[js.Any],
-        "StatementId"   -> StatementId.asInstanceOf[js.Any],
-        "VersionNumber" -> VersionNumber.asInstanceOf[js.Any]
-      )
-
-      OrganizationId.foreach(__v => __obj.updateDynamic("OrganizationId")(__v.asInstanceOf[js.Any]))
-      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AddLayerVersionPermissionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AddLayerVersionPermissionResponse extends js.Object {
     var RevisionId: js.UndefOr[String]
     var Statement: js.UndefOr[String]
   }
 
-  object AddLayerVersionPermissionResponse {
-    @inline
-    def apply(
-        RevisionId: js.UndefOr[String] = js.undefined,
-        Statement: js.UndefOr[String] = js.undefined
-    ): AddLayerVersionPermissionResponse = {
-      val __obj = js.Dynamic.literal()
-      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
-      Statement.foreach(__v => __obj.updateDynamic("Statement")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AddLayerVersionPermissionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait AddPermissionRequest extends js.Object {
     var Action: Action
     var FunctionName: FunctionName
@@ -421,55 +355,17 @@ package lambda {
     var SourceArn: js.UndefOr[Arn]
   }
 
-  object AddPermissionRequest {
-    @inline
-    def apply(
-        Action: Action,
-        FunctionName: FunctionName,
-        Principal: Principal,
-        StatementId: StatementId,
-        EventSourceToken: js.UndefOr[EventSourceToken] = js.undefined,
-        Qualifier: js.UndefOr[Qualifier] = js.undefined,
-        RevisionId: js.UndefOr[String] = js.undefined,
-        SourceAccount: js.UndefOr[SourceOwner] = js.undefined,
-        SourceArn: js.UndefOr[Arn] = js.undefined
-    ): AddPermissionRequest = {
-      val __obj = js.Dynamic.literal(
-        "Action"       -> Action.asInstanceOf[js.Any],
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
-        "Principal"    -> Principal.asInstanceOf[js.Any],
-        "StatementId"  -> StatementId.asInstanceOf[js.Any]
-      )
-
-      EventSourceToken.foreach(__v => __obj.updateDynamic("EventSourceToken")(__v.asInstanceOf[js.Any]))
-      Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
-      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
-      SourceAccount.foreach(__v => __obj.updateDynamic("SourceAccount")(__v.asInstanceOf[js.Any]))
-      SourceArn.foreach(__v => __obj.updateDynamic("SourceArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AddPermissionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AddPermissionResponse extends js.Object {
     var Statement: js.UndefOr[String]
-  }
-
-  object AddPermissionResponse {
-    @inline
-    def apply(
-        Statement: js.UndefOr[String] = js.undefined
-    ): AddPermissionResponse = {
-      val __obj = js.Dynamic.literal()
-      Statement.foreach(__v => __obj.updateDynamic("Statement")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AddPermissionResponse]
-    }
   }
 
   /**
     * Provides configuration information about a Lambda function [[https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html|alias]].
     */
   @js.native
+  @Factory
   trait AliasConfiguration extends js.Object {
     var AliasArn: js.UndefOr[FunctionArn]
     var Description: js.UndefOr[Description]
@@ -479,65 +375,23 @@ package lambda {
     var RoutingConfig: js.UndefOr[AliasRoutingConfiguration]
   }
 
-  object AliasConfiguration {
-    @inline
-    def apply(
-        AliasArn: js.UndefOr[FunctionArn] = js.undefined,
-        Description: js.UndefOr[Description] = js.undefined,
-        FunctionVersion: js.UndefOr[Version] = js.undefined,
-        Name: js.UndefOr[Alias] = js.undefined,
-        RevisionId: js.UndefOr[String] = js.undefined,
-        RoutingConfig: js.UndefOr[AliasRoutingConfiguration] = js.undefined
-    ): AliasConfiguration = {
-      val __obj = js.Dynamic.literal()
-      AliasArn.foreach(__v => __obj.updateDynamic("AliasArn")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      FunctionVersion.foreach(__v => __obj.updateDynamic("FunctionVersion")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
-      RoutingConfig.foreach(__v => __obj.updateDynamic("RoutingConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AliasConfiguration]
-    }
-  }
-
   /**
     * The [[https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html|traffic-shifting]] configuration of a Lambda function alias.
     */
   @js.native
+  @Factory
   trait AliasRoutingConfiguration extends js.Object {
     var AdditionalVersionWeights: js.UndefOr[AdditionalVersionWeights]
   }
 
-  object AliasRoutingConfiguration {
-    @inline
-    def apply(
-        AdditionalVersionWeights: js.UndefOr[AdditionalVersionWeights] = js.undefined
-    ): AliasRoutingConfiguration = {
-      val __obj = js.Dynamic.literal()
-      AdditionalVersionWeights.foreach(__v => __obj.updateDynamic("AdditionalVersionWeights")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AliasRoutingConfiguration]
-    }
-  }
-
   @js.native
+  @Factory
   trait Concurrency extends js.Object {
     var ReservedConcurrentExecutions: js.UndefOr[ReservedConcurrentExecutions]
   }
 
-  object Concurrency {
-    @inline
-    def apply(
-        ReservedConcurrentExecutions: js.UndefOr[ReservedConcurrentExecutions] = js.undefined
-    ): Concurrency = {
-      val __obj = js.Dynamic.literal()
-      ReservedConcurrentExecutions.foreach(__v =>
-        __obj.updateDynamic("ReservedConcurrentExecutions")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[Concurrency]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateAliasRequest extends js.Object {
     var FunctionName: FunctionName
     var FunctionVersion: Version
@@ -546,28 +400,8 @@ package lambda {
     var RoutingConfig: js.UndefOr[AliasRoutingConfiguration]
   }
 
-  object CreateAliasRequest {
-    @inline
-    def apply(
-        FunctionName: FunctionName,
-        FunctionVersion: Version,
-        Name: Alias,
-        Description: js.UndefOr[Description] = js.undefined,
-        RoutingConfig: js.UndefOr[AliasRoutingConfiguration] = js.undefined
-    ): CreateAliasRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName"    -> FunctionName.asInstanceOf[js.Any],
-        "FunctionVersion" -> FunctionVersion.asInstanceOf[js.Any],
-        "Name"            -> Name.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      RoutingConfig.foreach(__v => __obj.updateDynamic("RoutingConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateAliasRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateEventSourceMappingRequest extends js.Object {
     var EventSourceArn: Arn
     var FunctionName: FunctionName
@@ -583,50 +417,8 @@ package lambda {
     var StartingPositionTimestamp: js.UndefOr[Date]
   }
 
-  object CreateEventSourceMappingRequest {
-    @inline
-    def apply(
-        EventSourceArn: Arn,
-        FunctionName: FunctionName,
-        BatchSize: js.UndefOr[BatchSize] = js.undefined,
-        BisectBatchOnFunctionError: js.UndefOr[BisectBatchOnFunctionError] = js.undefined,
-        DestinationConfig: js.UndefOr[DestinationConfig] = js.undefined,
-        Enabled: js.UndefOr[Enabled] = js.undefined,
-        MaximumBatchingWindowInSeconds: js.UndefOr[MaximumBatchingWindowInSeconds] = js.undefined,
-        MaximumRecordAgeInSeconds: js.UndefOr[MaximumRecordAgeInSeconds] = js.undefined,
-        MaximumRetryAttempts: js.UndefOr[MaximumRetryAttemptsEventSourceMapping] = js.undefined,
-        ParallelizationFactor: js.UndefOr[ParallelizationFactor] = js.undefined,
-        StartingPosition: js.UndefOr[EventSourcePosition] = js.undefined,
-        StartingPositionTimestamp: js.UndefOr[Date] = js.undefined
-    ): CreateEventSourceMappingRequest = {
-      val __obj = js.Dynamic.literal(
-        "EventSourceArn" -> EventSourceArn.asInstanceOf[js.Any],
-        "FunctionName"   -> FunctionName.asInstanceOf[js.Any]
-      )
-
-      BatchSize.foreach(__v => __obj.updateDynamic("BatchSize")(__v.asInstanceOf[js.Any]))
-      BisectBatchOnFunctionError.foreach(__v =>
-        __obj.updateDynamic("BisectBatchOnFunctionError")(__v.asInstanceOf[js.Any])
-      )
-      DestinationConfig.foreach(__v => __obj.updateDynamic("DestinationConfig")(__v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      MaximumBatchingWindowInSeconds.foreach(__v =>
-        __obj.updateDynamic("MaximumBatchingWindowInSeconds")(__v.asInstanceOf[js.Any])
-      )
-      MaximumRecordAgeInSeconds.foreach(__v =>
-        __obj.updateDynamic("MaximumRecordAgeInSeconds")(__v.asInstanceOf[js.Any])
-      )
-      MaximumRetryAttempts.foreach(__v => __obj.updateDynamic("MaximumRetryAttempts")(__v.asInstanceOf[js.Any]))
-      ParallelizationFactor.foreach(__v => __obj.updateDynamic("ParallelizationFactor")(__v.asInstanceOf[js.Any]))
-      StartingPosition.foreach(__v => __obj.updateDynamic("StartingPosition")(__v.asInstanceOf[js.Any]))
-      StartingPositionTimestamp.foreach(__v =>
-        __obj.updateDynamic("StartingPositionTimestamp")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[CreateEventSourceMappingRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateFunctionRequest extends js.Object {
     var Code: FunctionCode
     var FunctionName: FunctionName
@@ -646,298 +438,106 @@ package lambda {
     var VpcConfig: js.UndefOr[VpcConfig]
   }
 
-  object CreateFunctionRequest {
-    @inline
-    def apply(
-        Code: FunctionCode,
-        FunctionName: FunctionName,
-        Handler: Handler,
-        Role: RoleArn,
-        Runtime: Runtime,
-        DeadLetterConfig: js.UndefOr[DeadLetterConfig] = js.undefined,
-        Description: js.UndefOr[Description] = js.undefined,
-        Environment: js.UndefOr[Environment] = js.undefined,
-        KMSKeyArn: js.UndefOr[KMSKeyArn] = js.undefined,
-        Layers: js.UndefOr[LayerList] = js.undefined,
-        MemorySize: js.UndefOr[MemorySize] = js.undefined,
-        Publish: js.UndefOr[Boolean] = js.undefined,
-        Tags: js.UndefOr[Tags] = js.undefined,
-        Timeout: js.UndefOr[Timeout] = js.undefined,
-        TracingConfig: js.UndefOr[TracingConfig] = js.undefined,
-        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
-    ): CreateFunctionRequest = {
-      val __obj = js.Dynamic.literal(
-        "Code"         -> Code.asInstanceOf[js.Any],
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
-        "Handler"      -> Handler.asInstanceOf[js.Any],
-        "Role"         -> Role.asInstanceOf[js.Any],
-        "Runtime"      -> Runtime.asInstanceOf[js.Any]
-      )
-
-      DeadLetterConfig.foreach(__v => __obj.updateDynamic("DeadLetterConfig")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
-      KMSKeyArn.foreach(__v => __obj.updateDynamic("KMSKeyArn")(__v.asInstanceOf[js.Any]))
-      Layers.foreach(__v => __obj.updateDynamic("Layers")(__v.asInstanceOf[js.Any]))
-      MemorySize.foreach(__v => __obj.updateDynamic("MemorySize")(__v.asInstanceOf[js.Any]))
-      Publish.foreach(__v => __obj.updateDynamic("Publish")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
-      TracingConfig.foreach(__v => __obj.updateDynamic("TracingConfig")(__v.asInstanceOf[js.Any]))
-      VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateFunctionRequest]
-    }
-  }
-
   /**
     * The [[https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq|dead-letter queue]] for failed asynchronous invocations.
     */
   @js.native
+  @Factory
   trait DeadLetterConfig extends js.Object {
     var TargetArn: js.UndefOr[ResourceArn]
   }
 
-  object DeadLetterConfig {
-    @inline
-    def apply(
-        TargetArn: js.UndefOr[ResourceArn] = js.undefined
-    ): DeadLetterConfig = {
-      val __obj = js.Dynamic.literal()
-      TargetArn.foreach(__v => __obj.updateDynamic("TargetArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeadLetterConfig]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteAliasRequest extends js.Object {
     var FunctionName: FunctionName
     var Name: Alias
   }
 
-  object DeleteAliasRequest {
-    @inline
-    def apply(
-        FunctionName: FunctionName,
-        Name: Alias
-    ): DeleteAliasRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
-        "Name"         -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteAliasRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteEventSourceMappingRequest extends js.Object {
     var UUID: String
   }
 
-  object DeleteEventSourceMappingRequest {
-    @inline
-    def apply(
-        UUID: String
-    ): DeleteEventSourceMappingRequest = {
-      val __obj = js.Dynamic.literal(
-        "UUID" -> UUID.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteEventSourceMappingRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteFunctionConcurrencyRequest extends js.Object {
     var FunctionName: FunctionName
   }
 
-  object DeleteFunctionConcurrencyRequest {
-    @inline
-    def apply(
-        FunctionName: FunctionName
-    ): DeleteFunctionConcurrencyRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteFunctionConcurrencyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteFunctionEventInvokeConfigRequest extends js.Object {
     var FunctionName: FunctionName
     var Qualifier: js.UndefOr[Qualifier]
   }
 
-  object DeleteFunctionEventInvokeConfigRequest {
-    @inline
-    def apply(
-        FunctionName: FunctionName,
-        Qualifier: js.UndefOr[Qualifier] = js.undefined
-    ): DeleteFunctionEventInvokeConfigRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
-      )
-
-      Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteFunctionEventInvokeConfigRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteFunctionRequest extends js.Object {
     var FunctionName: FunctionName
     var Qualifier: js.UndefOr[Qualifier]
   }
 
-  object DeleteFunctionRequest {
-    @inline
-    def apply(
-        FunctionName: FunctionName,
-        Qualifier: js.UndefOr[Qualifier] = js.undefined
-    ): DeleteFunctionRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
-      )
-
-      Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteFunctionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteLayerVersionRequest extends js.Object {
     var LayerName: LayerName
     var VersionNumber: LayerVersionNumber
   }
 
-  object DeleteLayerVersionRequest {
-    @inline
-    def apply(
-        LayerName: LayerName,
-        VersionNumber: LayerVersionNumber
-    ): DeleteLayerVersionRequest = {
-      val __obj = js.Dynamic.literal(
-        "LayerName"     -> LayerName.asInstanceOf[js.Any],
-        "VersionNumber" -> VersionNumber.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteLayerVersionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteProvisionedConcurrencyConfigRequest extends js.Object {
     var FunctionName: FunctionName
     var Qualifier: Qualifier
-  }
-
-  object DeleteProvisionedConcurrencyConfigRequest {
-    @inline
-    def apply(
-        FunctionName: FunctionName,
-        Qualifier: Qualifier
-    ): DeleteProvisionedConcurrencyConfigRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
-        "Qualifier"    -> Qualifier.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteProvisionedConcurrencyConfigRequest]
-    }
   }
 
   /**
     * A configuration object that specifies the destination of an event after Lambda processes it.
     */
   @js.native
+  @Factory
   trait DestinationConfig extends js.Object {
     var OnFailure: js.UndefOr[OnFailure]
     var OnSuccess: js.UndefOr[OnSuccess]
-  }
-
-  object DestinationConfig {
-    @inline
-    def apply(
-        OnFailure: js.UndefOr[OnFailure] = js.undefined,
-        OnSuccess: js.UndefOr[OnSuccess] = js.undefined
-    ): DestinationConfig = {
-      val __obj = js.Dynamic.literal()
-      OnFailure.foreach(__v => __obj.updateDynamic("OnFailure")(__v.asInstanceOf[js.Any]))
-      OnSuccess.foreach(__v => __obj.updateDynamic("OnSuccess")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DestinationConfig]
-    }
   }
 
   /**
     * A function's environment variable settings.
     */
   @js.native
+  @Factory
   trait Environment extends js.Object {
     var Variables: js.UndefOr[EnvironmentVariables]
-  }
-
-  object Environment {
-    @inline
-    def apply(
-        Variables: js.UndefOr[EnvironmentVariables] = js.undefined
-    ): Environment = {
-      val __obj = js.Dynamic.literal()
-      Variables.foreach(__v => __obj.updateDynamic("Variables")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Environment]
-    }
   }
 
   /**
     * Error messages for environment variables that couldn't be applied.
     */
   @js.native
+  @Factory
   trait EnvironmentError extends js.Object {
     var ErrorCode: js.UndefOr[String]
     var Message: js.UndefOr[SensitiveString]
-  }
-
-  object EnvironmentError {
-    @inline
-    def apply(
-        ErrorCode: js.UndefOr[String] = js.undefined,
-        Message: js.UndefOr[SensitiveString] = js.undefined
-    ): EnvironmentError = {
-      val __obj = js.Dynamic.literal()
-      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EnvironmentError]
-    }
   }
 
   /**
     * The results of an operation to update or read environment variables. If the operation is successful, the response contains the environment variables. If it failed, the response contains details about the error.
     */
   @js.native
+  @Factory
   trait EnvironmentResponse extends js.Object {
     var Error: js.UndefOr[EnvironmentError]
     var Variables: js.UndefOr[EnvironmentVariables]
-  }
-
-  object EnvironmentResponse {
-    @inline
-    def apply(
-        Error: js.UndefOr[EnvironmentError] = js.undefined,
-        Variables: js.UndefOr[EnvironmentVariables] = js.undefined
-    ): EnvironmentResponse = {
-      val __obj = js.Dynamic.literal()
-      Error.foreach(__v => __obj.updateDynamic("Error")(__v.asInstanceOf[js.Any]))
-      Variables.foreach(__v => __obj.updateDynamic("Variables")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EnvironmentResponse]
-    }
   }
 
   /**
     * A mapping between an AWS resource and an AWS Lambda function. See <a>CreateEventSourceMapping</a> for details.
     */
   @js.native
+  @Factory
   trait EventSourceMappingConfiguration extends js.Object {
     var BatchSize: js.UndefOr[BatchSize]
     var BisectBatchOnFunctionError: js.UndefOr[BisectBatchOnFunctionError]
@@ -955,49 +555,6 @@ package lambda {
     var UUID: js.UndefOr[String]
   }
 
-  object EventSourceMappingConfiguration {
-    @inline
-    def apply(
-        BatchSize: js.UndefOr[BatchSize] = js.undefined,
-        BisectBatchOnFunctionError: js.UndefOr[BisectBatchOnFunctionError] = js.undefined,
-        DestinationConfig: js.UndefOr[DestinationConfig] = js.undefined,
-        EventSourceArn: js.UndefOr[Arn] = js.undefined,
-        FunctionArn: js.UndefOr[FunctionArn] = js.undefined,
-        LastModified: js.UndefOr[Date] = js.undefined,
-        LastProcessingResult: js.UndefOr[String] = js.undefined,
-        MaximumBatchingWindowInSeconds: js.UndefOr[MaximumBatchingWindowInSeconds] = js.undefined,
-        MaximumRecordAgeInSeconds: js.UndefOr[MaximumRecordAgeInSeconds] = js.undefined,
-        MaximumRetryAttempts: js.UndefOr[MaximumRetryAttemptsEventSourceMapping] = js.undefined,
-        ParallelizationFactor: js.UndefOr[ParallelizationFactor] = js.undefined,
-        State: js.UndefOr[String] = js.undefined,
-        StateTransitionReason: js.UndefOr[String] = js.undefined,
-        UUID: js.UndefOr[String] = js.undefined
-    ): EventSourceMappingConfiguration = {
-      val __obj = js.Dynamic.literal()
-      BatchSize.foreach(__v => __obj.updateDynamic("BatchSize")(__v.asInstanceOf[js.Any]))
-      BisectBatchOnFunctionError.foreach(__v =>
-        __obj.updateDynamic("BisectBatchOnFunctionError")(__v.asInstanceOf[js.Any])
-      )
-      DestinationConfig.foreach(__v => __obj.updateDynamic("DestinationConfig")(__v.asInstanceOf[js.Any]))
-      EventSourceArn.foreach(__v => __obj.updateDynamic("EventSourceArn")(__v.asInstanceOf[js.Any]))
-      FunctionArn.foreach(__v => __obj.updateDynamic("FunctionArn")(__v.asInstanceOf[js.Any]))
-      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
-      LastProcessingResult.foreach(__v => __obj.updateDynamic("LastProcessingResult")(__v.asInstanceOf[js.Any]))
-      MaximumBatchingWindowInSeconds.foreach(__v =>
-        __obj.updateDynamic("MaximumBatchingWindowInSeconds")(__v.asInstanceOf[js.Any])
-      )
-      MaximumRecordAgeInSeconds.foreach(__v =>
-        __obj.updateDynamic("MaximumRecordAgeInSeconds")(__v.asInstanceOf[js.Any])
-      )
-      MaximumRetryAttempts.foreach(__v => __obj.updateDynamic("MaximumRetryAttempts")(__v.asInstanceOf[js.Any]))
-      ParallelizationFactor.foreach(__v => __obj.updateDynamic("ParallelizationFactor")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      StateTransitionReason.foreach(__v => __obj.updateDynamic("StateTransitionReason")(__v.asInstanceOf[js.Any]))
-      UUID.foreach(__v => __obj.updateDynamic("UUID")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EventSourceMappingConfiguration]
-    }
-  }
-
   @js.native
   sealed trait EventSourcePosition extends js.Any
   object EventSourcePosition extends js.Object {
@@ -1012,6 +569,7 @@ package lambda {
     * The code for the Lambda function. You can specify either an object in Amazon S3, or upload a deployment package directly.
     */
   @js.native
+  @Factory
   trait FunctionCode extends js.Object {
     var S3Bucket: js.UndefOr[S3Bucket]
     var S3Key: js.UndefOr[S3Key]
@@ -1019,49 +577,21 @@ package lambda {
     var ZipFile: js.UndefOr[Blob]
   }
 
-  object FunctionCode {
-    @inline
-    def apply(
-        S3Bucket: js.UndefOr[S3Bucket] = js.undefined,
-        S3Key: js.UndefOr[S3Key] = js.undefined,
-        S3ObjectVersion: js.UndefOr[S3ObjectVersion] = js.undefined,
-        ZipFile: js.UndefOr[Blob] = js.undefined
-    ): FunctionCode = {
-      val __obj = js.Dynamic.literal()
-      S3Bucket.foreach(__v => __obj.updateDynamic("S3Bucket")(__v.asInstanceOf[js.Any]))
-      S3Key.foreach(__v => __obj.updateDynamic("S3Key")(__v.asInstanceOf[js.Any]))
-      S3ObjectVersion.foreach(__v => __obj.updateDynamic("S3ObjectVersion")(__v.asInstanceOf[js.Any]))
-      ZipFile.foreach(__v => __obj.updateDynamic("ZipFile")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[FunctionCode]
-    }
-  }
-
   /**
     * Details about a function's deployment package.
     */
   @js.native
+  @Factory
   trait FunctionCodeLocation extends js.Object {
     var Location: js.UndefOr[String]
     var RepositoryType: js.UndefOr[String]
-  }
-
-  object FunctionCodeLocation {
-    @inline
-    def apply(
-        Location: js.UndefOr[String] = js.undefined,
-        RepositoryType: js.UndefOr[String] = js.undefined
-    ): FunctionCodeLocation = {
-      val __obj = js.Dynamic.literal()
-      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
-      RepositoryType.foreach(__v => __obj.updateDynamic("RepositoryType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[FunctionCodeLocation]
-    }
   }
 
   /**
     * Details about a function's configuration.
     */
   @js.native
+  @Factory
   trait FunctionConfiguration extends js.Object {
     var CodeSha256: js.UndefOr[String]
     var CodeSize: js.UndefOr[Double]
@@ -1091,95 +621,14 @@ package lambda {
     var VpcConfig: js.UndefOr[VpcConfigResponse]
   }
 
-  object FunctionConfiguration {
-    @inline
-    def apply(
-        CodeSha256: js.UndefOr[String] = js.undefined,
-        CodeSize: js.UndefOr[Double] = js.undefined,
-        DeadLetterConfig: js.UndefOr[DeadLetterConfig] = js.undefined,
-        Description: js.UndefOr[Description] = js.undefined,
-        Environment: js.UndefOr[EnvironmentResponse] = js.undefined,
-        FunctionArn: js.UndefOr[NameSpacedFunctionArn] = js.undefined,
-        FunctionName: js.UndefOr[NamespacedFunctionName] = js.undefined,
-        Handler: js.UndefOr[Handler] = js.undefined,
-        KMSKeyArn: js.UndefOr[KMSKeyArn] = js.undefined,
-        LastModified: js.UndefOr[Timestamp] = js.undefined,
-        LastUpdateStatus: js.UndefOr[LastUpdateStatus] = js.undefined,
-        LastUpdateStatusReason: js.UndefOr[LastUpdateStatusReason] = js.undefined,
-        LastUpdateStatusReasonCode: js.UndefOr[LastUpdateStatusReasonCode] = js.undefined,
-        Layers: js.UndefOr[LayersReferenceList] = js.undefined,
-        MasterArn: js.UndefOr[FunctionArn] = js.undefined,
-        MemorySize: js.UndefOr[MemorySize] = js.undefined,
-        RevisionId: js.UndefOr[String] = js.undefined,
-        Role: js.UndefOr[RoleArn] = js.undefined,
-        Runtime: js.UndefOr[Runtime] = js.undefined,
-        State: js.UndefOr[State] = js.undefined,
-        StateReason: js.UndefOr[StateReason] = js.undefined,
-        StateReasonCode: js.UndefOr[StateReasonCode] = js.undefined,
-        Timeout: js.UndefOr[Timeout] = js.undefined,
-        TracingConfig: js.UndefOr[TracingConfigResponse] = js.undefined,
-        Version: js.UndefOr[Version] = js.undefined,
-        VpcConfig: js.UndefOr[VpcConfigResponse] = js.undefined
-    ): FunctionConfiguration = {
-      val __obj = js.Dynamic.literal()
-      CodeSha256.foreach(__v => __obj.updateDynamic("CodeSha256")(__v.asInstanceOf[js.Any]))
-      CodeSize.foreach(__v => __obj.updateDynamic("CodeSize")(__v.asInstanceOf[js.Any]))
-      DeadLetterConfig.foreach(__v => __obj.updateDynamic("DeadLetterConfig")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
-      FunctionArn.foreach(__v => __obj.updateDynamic("FunctionArn")(__v.asInstanceOf[js.Any]))
-      FunctionName.foreach(__v => __obj.updateDynamic("FunctionName")(__v.asInstanceOf[js.Any]))
-      Handler.foreach(__v => __obj.updateDynamic("Handler")(__v.asInstanceOf[js.Any]))
-      KMSKeyArn.foreach(__v => __obj.updateDynamic("KMSKeyArn")(__v.asInstanceOf[js.Any]))
-      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
-      LastUpdateStatus.foreach(__v => __obj.updateDynamic("LastUpdateStatus")(__v.asInstanceOf[js.Any]))
-      LastUpdateStatusReason.foreach(__v => __obj.updateDynamic("LastUpdateStatusReason")(__v.asInstanceOf[js.Any]))
-      LastUpdateStatusReasonCode.foreach(__v =>
-        __obj.updateDynamic("LastUpdateStatusReasonCode")(__v.asInstanceOf[js.Any])
-      )
-      Layers.foreach(__v => __obj.updateDynamic("Layers")(__v.asInstanceOf[js.Any]))
-      MasterArn.foreach(__v => __obj.updateDynamic("MasterArn")(__v.asInstanceOf[js.Any]))
-      MemorySize.foreach(__v => __obj.updateDynamic("MemorySize")(__v.asInstanceOf[js.Any]))
-      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
-      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
-      Runtime.foreach(__v => __obj.updateDynamic("Runtime")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      StateReason.foreach(__v => __obj.updateDynamic("StateReason")(__v.asInstanceOf[js.Any]))
-      StateReasonCode.foreach(__v => __obj.updateDynamic("StateReasonCode")(__v.asInstanceOf[js.Any]))
-      Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
-      TracingConfig.foreach(__v => __obj.updateDynamic("TracingConfig")(__v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
-      VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[FunctionConfiguration]
-    }
-  }
-
   @js.native
+  @Factory
   trait FunctionEventInvokeConfig extends js.Object {
     var DestinationConfig: js.UndefOr[DestinationConfig]
     var FunctionArn: js.UndefOr[FunctionArn]
     var LastModified: js.UndefOr[Date]
     var MaximumEventAgeInSeconds: js.UndefOr[MaximumEventAgeInSeconds]
     var MaximumRetryAttempts: js.UndefOr[MaximumRetryAttempts]
-  }
-
-  object FunctionEventInvokeConfig {
-    @inline
-    def apply(
-        DestinationConfig: js.UndefOr[DestinationConfig] = js.undefined,
-        FunctionArn: js.UndefOr[FunctionArn] = js.undefined,
-        LastModified: js.UndefOr[Date] = js.undefined,
-        MaximumEventAgeInSeconds: js.UndefOr[MaximumEventAgeInSeconds] = js.undefined,
-        MaximumRetryAttempts: js.UndefOr[MaximumRetryAttempts] = js.undefined
-    ): FunctionEventInvokeConfig = {
-      val __obj = js.Dynamic.literal()
-      DestinationConfig.foreach(__v => __obj.updateDynamic("DestinationConfig")(__v.asInstanceOf[js.Any]))
-      FunctionArn.foreach(__v => __obj.updateDynamic("FunctionArn")(__v.asInstanceOf[js.Any]))
-      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
-      MaximumEventAgeInSeconds.foreach(__v => __obj.updateDynamic("MaximumEventAgeInSeconds")(__v.asInstanceOf[js.Any]))
-      MaximumRetryAttempts.foreach(__v => __obj.updateDynamic("MaximumRetryAttempts")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[FunctionEventInvokeConfig]
-    }
   }
 
   @js.native
@@ -1191,176 +640,64 @@ package lambda {
   }
 
   @js.native
+  @Factory
   trait GetAccountSettingsRequest extends js.Object {}
 
-  object GetAccountSettingsRequest {
-    @inline
-    def apply(
-    ): GetAccountSettingsRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[GetAccountSettingsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetAccountSettingsResponse extends js.Object {
     var AccountLimit: js.UndefOr[AccountLimit]
     var AccountUsage: js.UndefOr[AccountUsage]
   }
 
-  object GetAccountSettingsResponse {
-    @inline
-    def apply(
-        AccountLimit: js.UndefOr[AccountLimit] = js.undefined,
-        AccountUsage: js.UndefOr[AccountUsage] = js.undefined
-    ): GetAccountSettingsResponse = {
-      val __obj = js.Dynamic.literal()
-      AccountLimit.foreach(__v => __obj.updateDynamic("AccountLimit")(__v.asInstanceOf[js.Any]))
-      AccountUsage.foreach(__v => __obj.updateDynamic("AccountUsage")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetAccountSettingsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetAliasRequest extends js.Object {
     var FunctionName: FunctionName
     var Name: Alias
   }
 
-  object GetAliasRequest {
-    @inline
-    def apply(
-        FunctionName: FunctionName,
-        Name: Alias
-    ): GetAliasRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
-        "Name"         -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetAliasRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetEventSourceMappingRequest extends js.Object {
     var UUID: String
   }
 
-  object GetEventSourceMappingRequest {
-    @inline
-    def apply(
-        UUID: String
-    ): GetEventSourceMappingRequest = {
-      val __obj = js.Dynamic.literal(
-        "UUID" -> UUID.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetEventSourceMappingRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetFunctionConcurrencyRequest extends js.Object {
     var FunctionName: FunctionName
   }
 
-  object GetFunctionConcurrencyRequest {
-    @inline
-    def apply(
-        FunctionName: FunctionName
-    ): GetFunctionConcurrencyRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetFunctionConcurrencyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetFunctionConcurrencyResponse extends js.Object {
     var ReservedConcurrentExecutions: js.UndefOr[ReservedConcurrentExecutions]
   }
 
-  object GetFunctionConcurrencyResponse {
-    @inline
-    def apply(
-        ReservedConcurrentExecutions: js.UndefOr[ReservedConcurrentExecutions] = js.undefined
-    ): GetFunctionConcurrencyResponse = {
-      val __obj = js.Dynamic.literal()
-      ReservedConcurrentExecutions.foreach(__v =>
-        __obj.updateDynamic("ReservedConcurrentExecutions")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[GetFunctionConcurrencyResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetFunctionConfigurationRequest extends js.Object {
     var FunctionName: NamespacedFunctionName
     var Qualifier: js.UndefOr[Qualifier]
   }
 
-  object GetFunctionConfigurationRequest {
-    @inline
-    def apply(
-        FunctionName: NamespacedFunctionName,
-        Qualifier: js.UndefOr[Qualifier] = js.undefined
-    ): GetFunctionConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
-      )
-
-      Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetFunctionConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetFunctionEventInvokeConfigRequest extends js.Object {
     var FunctionName: FunctionName
     var Qualifier: js.UndefOr[Qualifier]
   }
 
-  object GetFunctionEventInvokeConfigRequest {
-    @inline
-    def apply(
-        FunctionName: FunctionName,
-        Qualifier: js.UndefOr[Qualifier] = js.undefined
-    ): GetFunctionEventInvokeConfigRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
-      )
-
-      Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetFunctionEventInvokeConfigRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetFunctionRequest extends js.Object {
     var FunctionName: NamespacedFunctionName
     var Qualifier: js.UndefOr[Qualifier]
   }
 
-  object GetFunctionRequest {
-    @inline
-    def apply(
-        FunctionName: NamespacedFunctionName,
-        Qualifier: js.UndefOr[Qualifier] = js.undefined
-    ): GetFunctionRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
-      )
-
-      Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetFunctionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetFunctionResponse extends js.Object {
     var Code: js.UndefOr[FunctionCodeLocation]
     var Concurrency: js.UndefOr[Concurrency]
@@ -1368,103 +705,35 @@ package lambda {
     var Tags: js.UndefOr[Tags]
   }
 
-  object GetFunctionResponse {
-    @inline
-    def apply(
-        Code: js.UndefOr[FunctionCodeLocation] = js.undefined,
-        Concurrency: js.UndefOr[Concurrency] = js.undefined,
-        Configuration: js.UndefOr[FunctionConfiguration] = js.undefined,
-        Tags: js.UndefOr[Tags] = js.undefined
-    ): GetFunctionResponse = {
-      val __obj = js.Dynamic.literal()
-      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
-      Concurrency.foreach(__v => __obj.updateDynamic("Concurrency")(__v.asInstanceOf[js.Any]))
-      Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetFunctionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetLayerVersionByArnRequest extends js.Object {
     var Arn: LayerVersionArn
   }
 
-  object GetLayerVersionByArnRequest {
-    @inline
-    def apply(
-        Arn: LayerVersionArn
-    ): GetLayerVersionByArnRequest = {
-      val __obj = js.Dynamic.literal(
-        "Arn" -> Arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetLayerVersionByArnRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetLayerVersionPolicyRequest extends js.Object {
     var LayerName: LayerName
     var VersionNumber: LayerVersionNumber
   }
 
-  object GetLayerVersionPolicyRequest {
-    @inline
-    def apply(
-        LayerName: LayerName,
-        VersionNumber: LayerVersionNumber
-    ): GetLayerVersionPolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "LayerName"     -> LayerName.asInstanceOf[js.Any],
-        "VersionNumber" -> VersionNumber.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetLayerVersionPolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetLayerVersionPolicyResponse extends js.Object {
     var Policy: js.UndefOr[String]
     var RevisionId: js.UndefOr[String]
   }
 
-  object GetLayerVersionPolicyResponse {
-    @inline
-    def apply(
-        Policy: js.UndefOr[String] = js.undefined,
-        RevisionId: js.UndefOr[String] = js.undefined
-    ): GetLayerVersionPolicyResponse = {
-      val __obj = js.Dynamic.literal()
-      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
-      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetLayerVersionPolicyResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetLayerVersionRequest extends js.Object {
     var LayerName: LayerName
     var VersionNumber: LayerVersionNumber
   }
 
-  object GetLayerVersionRequest {
-    @inline
-    def apply(
-        LayerName: LayerName,
-        VersionNumber: LayerVersionNumber
-    ): GetLayerVersionRequest = {
-      val __obj = js.Dynamic.literal(
-        "LayerName"     -> LayerName.asInstanceOf[js.Any],
-        "VersionNumber" -> VersionNumber.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetLayerVersionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetLayerVersionResponse extends js.Object {
     var CompatibleRuntimes: js.UndefOr[CompatibleRuntimes]
     var Content: js.UndefOr[LayerVersionContentOutput]
@@ -1476,93 +745,29 @@ package lambda {
     var Version: js.UndefOr[LayerVersionNumber]
   }
 
-  object GetLayerVersionResponse {
-    @inline
-    def apply(
-        CompatibleRuntimes: js.UndefOr[CompatibleRuntimes] = js.undefined,
-        Content: js.UndefOr[LayerVersionContentOutput] = js.undefined,
-        CreatedDate: js.UndefOr[Timestamp] = js.undefined,
-        Description: js.UndefOr[Description] = js.undefined,
-        LayerArn: js.UndefOr[LayerArn] = js.undefined,
-        LayerVersionArn: js.UndefOr[LayerVersionArn] = js.undefined,
-        LicenseInfo: js.UndefOr[LicenseInfo] = js.undefined,
-        Version: js.UndefOr[LayerVersionNumber] = js.undefined
-    ): GetLayerVersionResponse = {
-      val __obj = js.Dynamic.literal()
-      CompatibleRuntimes.foreach(__v => __obj.updateDynamic("CompatibleRuntimes")(__v.asInstanceOf[js.Any]))
-      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
-      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      LayerArn.foreach(__v => __obj.updateDynamic("LayerArn")(__v.asInstanceOf[js.Any]))
-      LayerVersionArn.foreach(__v => __obj.updateDynamic("LayerVersionArn")(__v.asInstanceOf[js.Any]))
-      LicenseInfo.foreach(__v => __obj.updateDynamic("LicenseInfo")(__v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetLayerVersionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetPolicyRequest extends js.Object {
     var FunctionName: NamespacedFunctionName
     var Qualifier: js.UndefOr[Qualifier]
   }
 
-  object GetPolicyRequest {
-    @inline
-    def apply(
-        FunctionName: NamespacedFunctionName,
-        Qualifier: js.UndefOr[Qualifier] = js.undefined
-    ): GetPolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
-      )
-
-      Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetPolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetPolicyResponse extends js.Object {
     var Policy: js.UndefOr[String]
     var RevisionId: js.UndefOr[String]
   }
 
-  object GetPolicyResponse {
-    @inline
-    def apply(
-        Policy: js.UndefOr[String] = js.undefined,
-        RevisionId: js.UndefOr[String] = js.undefined
-    ): GetPolicyResponse = {
-      val __obj = js.Dynamic.literal()
-      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
-      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetPolicyResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetProvisionedConcurrencyConfigRequest extends js.Object {
     var FunctionName: FunctionName
     var Qualifier: Qualifier
   }
 
-  object GetProvisionedConcurrencyConfigRequest {
-    @inline
-    def apply(
-        FunctionName: FunctionName,
-        Qualifier: Qualifier
-    ): GetProvisionedConcurrencyConfigRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
-        "Qualifier"    -> Qualifier.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetProvisionedConcurrencyConfigRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetProvisionedConcurrencyConfigResponse extends js.Object {
     var AllocatedProvisionedConcurrentExecutions: js.UndefOr[NonNegativeInteger]
     var AvailableProvisionedConcurrentExecutions: js.UndefOr[NonNegativeInteger]
@@ -1572,34 +777,8 @@ package lambda {
     var StatusReason: js.UndefOr[String]
   }
 
-  object GetProvisionedConcurrencyConfigResponse {
-    @inline
-    def apply(
-        AllocatedProvisionedConcurrentExecutions: js.UndefOr[NonNegativeInteger] = js.undefined,
-        AvailableProvisionedConcurrentExecutions: js.UndefOr[NonNegativeInteger] = js.undefined,
-        LastModified: js.UndefOr[Timestamp] = js.undefined,
-        RequestedProvisionedConcurrentExecutions: js.UndefOr[PositiveInteger] = js.undefined,
-        Status: js.UndefOr[ProvisionedConcurrencyStatusEnum] = js.undefined,
-        StatusReason: js.UndefOr[String] = js.undefined
-    ): GetProvisionedConcurrencyConfigResponse = {
-      val __obj = js.Dynamic.literal()
-      AllocatedProvisionedConcurrentExecutions.foreach(__v =>
-        __obj.updateDynamic("AllocatedProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any])
-      )
-      AvailableProvisionedConcurrentExecutions.foreach(__v =>
-        __obj.updateDynamic("AvailableProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any])
-      )
-      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
-      RequestedProvisionedConcurrentExecutions.foreach(__v =>
-        __obj.updateDynamic("RequestedProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any])
-      )
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetProvisionedConcurrencyConfigResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait InvocationRequest extends js.Object {
     var FunctionName: NamespacedFunctionName
     var ClientContext: js.UndefOr[String]
@@ -1609,55 +788,14 @@ package lambda {
     var Qualifier: js.UndefOr[Qualifier]
   }
 
-  object InvocationRequest {
-    @inline
-    def apply(
-        FunctionName: NamespacedFunctionName,
-        ClientContext: js.UndefOr[String] = js.undefined,
-        InvocationType: js.UndefOr[InvocationType] = js.undefined,
-        LogType: js.UndefOr[LogType] = js.undefined,
-        Payload: js.UndefOr[Blob] = js.undefined,
-        Qualifier: js.UndefOr[Qualifier] = js.undefined
-    ): InvocationRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
-      )
-
-      ClientContext.foreach(__v => __obj.updateDynamic("ClientContext")(__v.asInstanceOf[js.Any]))
-      InvocationType.foreach(__v => __obj.updateDynamic("InvocationType")(__v.asInstanceOf[js.Any]))
-      LogType.foreach(__v => __obj.updateDynamic("LogType")(__v.asInstanceOf[js.Any]))
-      Payload.foreach(__v => __obj.updateDynamic("Payload")(__v.asInstanceOf[js.Any]))
-      Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InvocationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait InvocationResponse extends js.Object {
     var ExecutedVersion: js.UndefOr[Version]
     var FunctionError: js.UndefOr[String]
     var LogResult: js.UndefOr[String]
     var Payload: js.UndefOr[Blob]
     var StatusCode: js.UndefOr[Int]
-  }
-
-  object InvocationResponse {
-    @inline
-    def apply(
-        ExecutedVersion: js.UndefOr[Version] = js.undefined,
-        FunctionError: js.UndefOr[String] = js.undefined,
-        LogResult: js.UndefOr[String] = js.undefined,
-        Payload: js.UndefOr[Blob] = js.undefined,
-        StatusCode: js.UndefOr[Int] = js.undefined
-    ): InvocationResponse = {
-      val __obj = js.Dynamic.literal()
-      ExecutedVersion.foreach(__v => __obj.updateDynamic("ExecutedVersion")(__v.asInstanceOf[js.Any]))
-      FunctionError.foreach(__v => __obj.updateDynamic("FunctionError")(__v.asInstanceOf[js.Any]))
-      LogResult.foreach(__v => __obj.updateDynamic("LogResult")(__v.asInstanceOf[js.Any]))
-      Payload.foreach(__v => __obj.updateDynamic("Payload")(__v.asInstanceOf[js.Any]))
-      StatusCode.foreach(__v => __obj.updateDynamic("StatusCode")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InvocationResponse]
-    }
   }
 
   @js.native
@@ -1672,24 +810,10 @@ package lambda {
 
   @deprecated("Deprecated in AWS SDK", "forever")
   @js.native
+  @Factory
   trait InvokeAsyncRequest extends js.Object {
     var FunctionName: NamespacedFunctionName
     var InvokeArgs: BlobStream
-  }
-
-  object InvokeAsyncRequest {
-    @inline
-    def apply(
-        FunctionName: NamespacedFunctionName,
-        InvokeArgs: BlobStream
-    ): InvokeAsyncRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
-        "InvokeArgs"   -> InvokeArgs.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[InvokeAsyncRequest]
-    }
   }
 
   /**
@@ -1697,19 +821,9 @@ package lambda {
     */
   @deprecated("Deprecated in AWS SDK", "forever")
   @js.native
+  @Factory
   trait InvokeAsyncResponse extends js.Object {
     var Status: js.UndefOr[HttpStatus]
-  }
-
-  object InvokeAsyncResponse {
-    @inline
-    def apply(
-        Status: js.UndefOr[HttpStatus] = js.undefined
-    ): InvokeAsyncResponse = {
-      val __obj = js.Dynamic.literal()
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InvokeAsyncResponse]
-    }
   }
 
   @js.native
@@ -1750,28 +864,17 @@ package lambda {
     * An [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|AWS Lambda layer]].
     */
   @js.native
+  @Factory
   trait Layer extends js.Object {
     var Arn: js.UndefOr[LayerVersionArn]
     var CodeSize: js.UndefOr[Double]
-  }
-
-  object Layer {
-    @inline
-    def apply(
-        Arn: js.UndefOr[LayerVersionArn] = js.undefined,
-        CodeSize: js.UndefOr[Double] = js.undefined
-    ): Layer = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      CodeSize.foreach(__v => __obj.updateDynamic("CodeSize")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Layer]
-    }
   }
 
   /**
     * A ZIP archive that contains the contents of an [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|AWS Lambda layer]]. You can specify either an Amazon S3 location, or upload a layer archive directly.
     */
   @js.native
+  @Factory
   trait LayerVersionContentInput extends js.Object {
     var S3Bucket: js.UndefOr[S3Bucket]
     var S3Key: js.UndefOr[S3Key]
@@ -1779,52 +882,22 @@ package lambda {
     var ZipFile: js.UndefOr[Blob]
   }
 
-  object LayerVersionContentInput {
-    @inline
-    def apply(
-        S3Bucket: js.UndefOr[S3Bucket] = js.undefined,
-        S3Key: js.UndefOr[S3Key] = js.undefined,
-        S3ObjectVersion: js.UndefOr[S3ObjectVersion] = js.undefined,
-        ZipFile: js.UndefOr[Blob] = js.undefined
-    ): LayerVersionContentInput = {
-      val __obj = js.Dynamic.literal()
-      S3Bucket.foreach(__v => __obj.updateDynamic("S3Bucket")(__v.asInstanceOf[js.Any]))
-      S3Key.foreach(__v => __obj.updateDynamic("S3Key")(__v.asInstanceOf[js.Any]))
-      S3ObjectVersion.foreach(__v => __obj.updateDynamic("S3ObjectVersion")(__v.asInstanceOf[js.Any]))
-      ZipFile.foreach(__v => __obj.updateDynamic("ZipFile")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LayerVersionContentInput]
-    }
-  }
-
   /**
     * Details about a version of an [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|AWS Lambda layer]].
     */
   @js.native
+  @Factory
   trait LayerVersionContentOutput extends js.Object {
     var CodeSha256: js.UndefOr[String]
     var CodeSize: js.UndefOr[Double]
     var Location: js.UndefOr[String]
   }
 
-  object LayerVersionContentOutput {
-    @inline
-    def apply(
-        CodeSha256: js.UndefOr[String] = js.undefined,
-        CodeSize: js.UndefOr[Double] = js.undefined,
-        Location: js.UndefOr[String] = js.undefined
-    ): LayerVersionContentOutput = {
-      val __obj = js.Dynamic.literal()
-      CodeSha256.foreach(__v => __obj.updateDynamic("CodeSha256")(__v.asInstanceOf[js.Any]))
-      CodeSize.foreach(__v => __obj.updateDynamic("CodeSize")(__v.asInstanceOf[js.Any]))
-      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LayerVersionContentOutput]
-    }
-  }
-
   /**
     * Details about a version of an [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|AWS Lambda layer]].
     */
   @js.native
+  @Factory
   trait LayerVersionsListItem extends js.Object {
     var CompatibleRuntimes: js.UndefOr[CompatibleRuntimes]
     var CreatedDate: js.UndefOr[Timestamp]
@@ -1834,53 +907,19 @@ package lambda {
     var Version: js.UndefOr[LayerVersionNumber]
   }
 
-  object LayerVersionsListItem {
-    @inline
-    def apply(
-        CompatibleRuntimes: js.UndefOr[CompatibleRuntimes] = js.undefined,
-        CreatedDate: js.UndefOr[Timestamp] = js.undefined,
-        Description: js.UndefOr[Description] = js.undefined,
-        LayerVersionArn: js.UndefOr[LayerVersionArn] = js.undefined,
-        LicenseInfo: js.UndefOr[LicenseInfo] = js.undefined,
-        Version: js.UndefOr[LayerVersionNumber] = js.undefined
-    ): LayerVersionsListItem = {
-      val __obj = js.Dynamic.literal()
-      CompatibleRuntimes.foreach(__v => __obj.updateDynamic("CompatibleRuntimes")(__v.asInstanceOf[js.Any]))
-      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      LayerVersionArn.foreach(__v => __obj.updateDynamic("LayerVersionArn")(__v.asInstanceOf[js.Any]))
-      LicenseInfo.foreach(__v => __obj.updateDynamic("LicenseInfo")(__v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LayerVersionsListItem]
-    }
-  }
-
   /**
     * Details about an [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|AWS Lambda layer]].
     */
   @js.native
+  @Factory
   trait LayersListItem extends js.Object {
     var LatestMatchingVersion: js.UndefOr[LayerVersionsListItem]
     var LayerArn: js.UndefOr[LayerArn]
     var LayerName: js.UndefOr[LayerName]
   }
 
-  object LayersListItem {
-    @inline
-    def apply(
-        LatestMatchingVersion: js.UndefOr[LayerVersionsListItem] = js.undefined,
-        LayerArn: js.UndefOr[LayerArn] = js.undefined,
-        LayerName: js.UndefOr[LayerName] = js.undefined
-    ): LayersListItem = {
-      val __obj = js.Dynamic.literal()
-      LatestMatchingVersion.foreach(__v => __obj.updateDynamic("LatestMatchingVersion")(__v.asInstanceOf[js.Any]))
-      LayerArn.foreach(__v => __obj.updateDynamic("LayerArn")(__v.asInstanceOf[js.Any]))
-      LayerName.foreach(__v => __obj.updateDynamic("LayerName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LayersListItem]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAliasesRequest extends js.Object {
     var FunctionName: FunctionName
     var FunctionVersion: js.UndefOr[Version]
@@ -1888,45 +927,15 @@ package lambda {
     var MaxItems: js.UndefOr[MaxListItems]
   }
 
-  object ListAliasesRequest {
-    @inline
-    def apply(
-        FunctionName: FunctionName,
-        FunctionVersion: js.UndefOr[Version] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined,
-        MaxItems: js.UndefOr[MaxListItems] = js.undefined
-    ): ListAliasesRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
-      )
-
-      FunctionVersion.foreach(__v => __obj.updateDynamic("FunctionVersion")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAliasesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAliasesResponse extends js.Object {
     var Aliases: js.UndefOr[AliasList]
     var NextMarker: js.UndefOr[String]
   }
 
-  object ListAliasesResponse {
-    @inline
-    def apply(
-        Aliases: js.UndefOr[AliasList] = js.undefined,
-        NextMarker: js.UndefOr[String] = js.undefined
-    ): ListAliasesResponse = {
-      val __obj = js.Dynamic.literal()
-      Aliases.foreach(__v => __obj.updateDynamic("Aliases")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAliasesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListEventSourceMappingsRequest extends js.Object {
     var EventSourceArn: js.UndefOr[Arn]
     var FunctionName: js.UndefOr[FunctionName]
@@ -1934,88 +943,30 @@ package lambda {
     var MaxItems: js.UndefOr[MaxListItems]
   }
 
-  object ListEventSourceMappingsRequest {
-    @inline
-    def apply(
-        EventSourceArn: js.UndefOr[Arn] = js.undefined,
-        FunctionName: js.UndefOr[FunctionName] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined,
-        MaxItems: js.UndefOr[MaxListItems] = js.undefined
-    ): ListEventSourceMappingsRequest = {
-      val __obj = js.Dynamic.literal()
-      EventSourceArn.foreach(__v => __obj.updateDynamic("EventSourceArn")(__v.asInstanceOf[js.Any]))
-      FunctionName.foreach(__v => __obj.updateDynamic("FunctionName")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListEventSourceMappingsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListEventSourceMappingsResponse extends js.Object {
     var EventSourceMappings: js.UndefOr[EventSourceMappingsList]
     var NextMarker: js.UndefOr[String]
   }
 
-  object ListEventSourceMappingsResponse {
-    @inline
-    def apply(
-        EventSourceMappings: js.UndefOr[EventSourceMappingsList] = js.undefined,
-        NextMarker: js.UndefOr[String] = js.undefined
-    ): ListEventSourceMappingsResponse = {
-      val __obj = js.Dynamic.literal()
-      EventSourceMappings.foreach(__v => __obj.updateDynamic("EventSourceMappings")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListEventSourceMappingsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListFunctionEventInvokeConfigsRequest extends js.Object {
     var FunctionName: FunctionName
     var Marker: js.UndefOr[String]
     var MaxItems: js.UndefOr[MaxFunctionEventInvokeConfigListItems]
   }
 
-  object ListFunctionEventInvokeConfigsRequest {
-    @inline
-    def apply(
-        FunctionName: FunctionName,
-        Marker: js.UndefOr[String] = js.undefined,
-        MaxItems: js.UndefOr[MaxFunctionEventInvokeConfigListItems] = js.undefined
-    ): ListFunctionEventInvokeConfigsRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
-      )
-
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListFunctionEventInvokeConfigsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListFunctionEventInvokeConfigsResponse extends js.Object {
     var FunctionEventInvokeConfigs: js.UndefOr[FunctionEventInvokeConfigList]
     var NextMarker: js.UndefOr[String]
   }
 
-  object ListFunctionEventInvokeConfigsResponse {
-    @inline
-    def apply(
-        FunctionEventInvokeConfigs: js.UndefOr[FunctionEventInvokeConfigList] = js.undefined,
-        NextMarker: js.UndefOr[String] = js.undefined
-    ): ListFunctionEventInvokeConfigsResponse = {
-      val __obj = js.Dynamic.literal()
-      FunctionEventInvokeConfigs.foreach(__v =>
-        __obj.updateDynamic("FunctionEventInvokeConfigs")(__v.asInstanceOf[js.Any])
-      )
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListFunctionEventInvokeConfigsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListFunctionsRequest extends js.Object {
     var FunctionVersion: js.UndefOr[FunctionVersion]
     var Marker: js.UndefOr[String]
@@ -2023,46 +974,18 @@ package lambda {
     var MaxItems: js.UndefOr[MaxListItems]
   }
 
-  object ListFunctionsRequest {
-    @inline
-    def apply(
-        FunctionVersion: js.UndefOr[FunctionVersion] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined,
-        MasterRegion: js.UndefOr[MasterRegion] = js.undefined,
-        MaxItems: js.UndefOr[MaxListItems] = js.undefined
-    ): ListFunctionsRequest = {
-      val __obj = js.Dynamic.literal()
-      FunctionVersion.foreach(__v => __obj.updateDynamic("FunctionVersion")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MasterRegion.foreach(__v => __obj.updateDynamic("MasterRegion")(__v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListFunctionsRequest]
-    }
-  }
-
   /**
     * A list of Lambda functions.
     */
   @js.native
+  @Factory
   trait ListFunctionsResponse extends js.Object {
     var Functions: js.UndefOr[FunctionList]
     var NextMarker: js.UndefOr[String]
   }
 
-  object ListFunctionsResponse {
-    @inline
-    def apply(
-        Functions: js.UndefOr[FunctionList] = js.undefined,
-        NextMarker: js.UndefOr[String] = js.undefined
-    ): ListFunctionsResponse = {
-      val __obj = js.Dynamic.literal()
-      Functions.foreach(__v => __obj.updateDynamic("Functions")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListFunctionsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListLayerVersionsRequest extends js.Object {
     var LayerName: LayerName
     var CompatibleRuntime: js.UndefOr[Runtime]
@@ -2070,205 +993,68 @@ package lambda {
     var MaxItems: js.UndefOr[MaxLayerListItems]
   }
 
-  object ListLayerVersionsRequest {
-    @inline
-    def apply(
-        LayerName: LayerName,
-        CompatibleRuntime: js.UndefOr[Runtime] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined,
-        MaxItems: js.UndefOr[MaxLayerListItems] = js.undefined
-    ): ListLayerVersionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "LayerName" -> LayerName.asInstanceOf[js.Any]
-      )
-
-      CompatibleRuntime.foreach(__v => __obj.updateDynamic("CompatibleRuntime")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListLayerVersionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListLayerVersionsResponse extends js.Object {
     var LayerVersions: js.UndefOr[LayerVersionsList]
     var NextMarker: js.UndefOr[String]
   }
 
-  object ListLayerVersionsResponse {
-    @inline
-    def apply(
-        LayerVersions: js.UndefOr[LayerVersionsList] = js.undefined,
-        NextMarker: js.UndefOr[String] = js.undefined
-    ): ListLayerVersionsResponse = {
-      val __obj = js.Dynamic.literal()
-      LayerVersions.foreach(__v => __obj.updateDynamic("LayerVersions")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListLayerVersionsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListLayersRequest extends js.Object {
     var CompatibleRuntime: js.UndefOr[Runtime]
     var Marker: js.UndefOr[String]
     var MaxItems: js.UndefOr[MaxLayerListItems]
   }
 
-  object ListLayersRequest {
-    @inline
-    def apply(
-        CompatibleRuntime: js.UndefOr[Runtime] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined,
-        MaxItems: js.UndefOr[MaxLayerListItems] = js.undefined
-    ): ListLayersRequest = {
-      val __obj = js.Dynamic.literal()
-      CompatibleRuntime.foreach(__v => __obj.updateDynamic("CompatibleRuntime")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListLayersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListLayersResponse extends js.Object {
     var Layers: js.UndefOr[LayersList]
     var NextMarker: js.UndefOr[String]
   }
 
-  object ListLayersResponse {
-    @inline
-    def apply(
-        Layers: js.UndefOr[LayersList] = js.undefined,
-        NextMarker: js.UndefOr[String] = js.undefined
-    ): ListLayersResponse = {
-      val __obj = js.Dynamic.literal()
-      Layers.foreach(__v => __obj.updateDynamic("Layers")(__v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListLayersResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListProvisionedConcurrencyConfigsRequest extends js.Object {
     var FunctionName: FunctionName
     var Marker: js.UndefOr[String]
     var MaxItems: js.UndefOr[MaxProvisionedConcurrencyConfigListItems]
   }
 
-  object ListProvisionedConcurrencyConfigsRequest {
-    @inline
-    def apply(
-        FunctionName: FunctionName,
-        Marker: js.UndefOr[String] = js.undefined,
-        MaxItems: js.UndefOr[MaxProvisionedConcurrencyConfigListItems] = js.undefined
-    ): ListProvisionedConcurrencyConfigsRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
-      )
-
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListProvisionedConcurrencyConfigsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListProvisionedConcurrencyConfigsResponse extends js.Object {
     var NextMarker: js.UndefOr[String]
     var ProvisionedConcurrencyConfigs: js.UndefOr[ProvisionedConcurrencyConfigList]
   }
 
-  object ListProvisionedConcurrencyConfigsResponse {
-    @inline
-    def apply(
-        NextMarker: js.UndefOr[String] = js.undefined,
-        ProvisionedConcurrencyConfigs: js.UndefOr[ProvisionedConcurrencyConfigList] = js.undefined
-    ): ListProvisionedConcurrencyConfigsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      ProvisionedConcurrencyConfigs.foreach(__v =>
-        __obj.updateDynamic("ProvisionedConcurrencyConfigs")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[ListProvisionedConcurrencyConfigsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsRequest extends js.Object {
     var Resource: FunctionArn
   }
 
-  object ListTagsRequest {
-    @inline
-    def apply(
-        Resource: FunctionArn
-    ): ListTagsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Resource" -> Resource.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListTagsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsResponse extends js.Object {
     var Tags: js.UndefOr[Tags]
   }
 
-  object ListTagsResponse {
-    @inline
-    def apply(
-        Tags: js.UndefOr[Tags] = js.undefined
-    ): ListTagsResponse = {
-      val __obj = js.Dynamic.literal()
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListVersionsByFunctionRequest extends js.Object {
     var FunctionName: NamespacedFunctionName
     var Marker: js.UndefOr[String]
     var MaxItems: js.UndefOr[MaxListItems]
   }
 
-  object ListVersionsByFunctionRequest {
-    @inline
-    def apply(
-        FunctionName: NamespacedFunctionName,
-        Marker: js.UndefOr[String] = js.undefined,
-        MaxItems: js.UndefOr[MaxListItems] = js.undefined
-    ): ListVersionsByFunctionRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
-      )
-
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListVersionsByFunctionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListVersionsByFunctionResponse extends js.Object {
     var NextMarker: js.UndefOr[String]
     var Versions: js.UndefOr[FunctionList]
-  }
-
-  object ListVersionsByFunctionResponse {
-    @inline
-    def apply(
-        NextMarker: js.UndefOr[String] = js.undefined,
-        Versions: js.UndefOr[FunctionList] = js.undefined
-    ): ListVersionsByFunctionResponse = {
-      val __obj = js.Dynamic.literal()
-      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      Versions.foreach(__v => __obj.updateDynamic("Versions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListVersionsByFunctionResponse]
-    }
   }
 
   @js.native
@@ -2284,44 +1070,25 @@ package lambda {
     * A destination for events that failed processing.
     */
   @js.native
+  @Factory
   trait OnFailure extends js.Object {
     var Destination: js.UndefOr[DestinationArn]
-  }
-
-  object OnFailure {
-    @inline
-    def apply(
-        Destination: js.UndefOr[DestinationArn] = js.undefined
-    ): OnFailure = {
-      val __obj = js.Dynamic.literal()
-      Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[OnFailure]
-    }
   }
 
   /**
     * A destination for events that were processed successfully.
     */
   @js.native
+  @Factory
   trait OnSuccess extends js.Object {
     var Destination: js.UndefOr[DestinationArn]
-  }
-
-  object OnSuccess {
-    @inline
-    def apply(
-        Destination: js.UndefOr[DestinationArn] = js.undefined
-    ): OnSuccess = {
-      val __obj = js.Dynamic.literal()
-      Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[OnSuccess]
-    }
   }
 
   /**
     * Details about the provisioned concurrency configuration for a function alias or version.
     */
   @js.native
+  @Factory
   trait ProvisionedConcurrencyConfigListItem extends js.Object {
     var AllocatedProvisionedConcurrentExecutions: js.UndefOr[NonNegativeInteger]
     var AvailableProvisionedConcurrentExecutions: js.UndefOr[NonNegativeInteger]
@@ -2330,35 +1097,6 @@ package lambda {
     var RequestedProvisionedConcurrentExecutions: js.UndefOr[PositiveInteger]
     var Status: js.UndefOr[ProvisionedConcurrencyStatusEnum]
     var StatusReason: js.UndefOr[String]
-  }
-
-  object ProvisionedConcurrencyConfigListItem {
-    @inline
-    def apply(
-        AllocatedProvisionedConcurrentExecutions: js.UndefOr[NonNegativeInteger] = js.undefined,
-        AvailableProvisionedConcurrentExecutions: js.UndefOr[NonNegativeInteger] = js.undefined,
-        FunctionArn: js.UndefOr[FunctionArn] = js.undefined,
-        LastModified: js.UndefOr[Timestamp] = js.undefined,
-        RequestedProvisionedConcurrentExecutions: js.UndefOr[PositiveInteger] = js.undefined,
-        Status: js.UndefOr[ProvisionedConcurrencyStatusEnum] = js.undefined,
-        StatusReason: js.UndefOr[String] = js.undefined
-    ): ProvisionedConcurrencyConfigListItem = {
-      val __obj = js.Dynamic.literal()
-      AllocatedProvisionedConcurrentExecutions.foreach(__v =>
-        __obj.updateDynamic("AllocatedProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any])
-      )
-      AvailableProvisionedConcurrentExecutions.foreach(__v =>
-        __obj.updateDynamic("AvailableProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any])
-      )
-      FunctionArn.foreach(__v => __obj.updateDynamic("FunctionArn")(__v.asInstanceOf[js.Any]))
-      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
-      RequestedProvisionedConcurrentExecutions.foreach(__v =>
-        __obj.updateDynamic("RequestedProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any])
-      )
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ProvisionedConcurrencyConfigListItem]
-    }
   }
 
   @js.native
@@ -2372,6 +1110,7 @@ package lambda {
   }
 
   @js.native
+  @Factory
   trait PublishLayerVersionRequest extends js.Object {
     var Content: LayerVersionContentInput
     var LayerName: LayerName
@@ -2380,28 +1119,8 @@ package lambda {
     var LicenseInfo: js.UndefOr[LicenseInfo]
   }
 
-  object PublishLayerVersionRequest {
-    @inline
-    def apply(
-        Content: LayerVersionContentInput,
-        LayerName: LayerName,
-        CompatibleRuntimes: js.UndefOr[CompatibleRuntimes] = js.undefined,
-        Description: js.UndefOr[Description] = js.undefined,
-        LicenseInfo: js.UndefOr[LicenseInfo] = js.undefined
-    ): PublishLayerVersionRequest = {
-      val __obj = js.Dynamic.literal(
-        "Content"   -> Content.asInstanceOf[js.Any],
-        "LayerName" -> LayerName.asInstanceOf[js.Any]
-      )
-
-      CompatibleRuntimes.foreach(__v => __obj.updateDynamic("CompatibleRuntimes")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      LicenseInfo.foreach(__v => __obj.updateDynamic("LicenseInfo")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PublishLayerVersionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PublishLayerVersionResponse extends js.Object {
     var CompatibleRuntimes: js.UndefOr[CompatibleRuntimes]
     var Content: js.UndefOr[LayerVersionContentOutput]
@@ -2413,32 +1132,8 @@ package lambda {
     var Version: js.UndefOr[LayerVersionNumber]
   }
 
-  object PublishLayerVersionResponse {
-    @inline
-    def apply(
-        CompatibleRuntimes: js.UndefOr[CompatibleRuntimes] = js.undefined,
-        Content: js.UndefOr[LayerVersionContentOutput] = js.undefined,
-        CreatedDate: js.UndefOr[Timestamp] = js.undefined,
-        Description: js.UndefOr[Description] = js.undefined,
-        LayerArn: js.UndefOr[LayerArn] = js.undefined,
-        LayerVersionArn: js.UndefOr[LayerVersionArn] = js.undefined,
-        LicenseInfo: js.UndefOr[LicenseInfo] = js.undefined,
-        Version: js.UndefOr[LayerVersionNumber] = js.undefined
-    ): PublishLayerVersionResponse = {
-      val __obj = js.Dynamic.literal()
-      CompatibleRuntimes.foreach(__v => __obj.updateDynamic("CompatibleRuntimes")(__v.asInstanceOf[js.Any]))
-      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
-      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      LayerArn.foreach(__v => __obj.updateDynamic("LayerArn")(__v.asInstanceOf[js.Any]))
-      LayerVersionArn.foreach(__v => __obj.updateDynamic("LayerVersionArn")(__v.asInstanceOf[js.Any]))
-      LicenseInfo.foreach(__v => __obj.updateDynamic("LicenseInfo")(__v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PublishLayerVersionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait PublishVersionRequest extends js.Object {
     var FunctionName: FunctionName
     var CodeSha256: js.UndefOr[String]
@@ -2446,47 +1141,15 @@ package lambda {
     var RevisionId: js.UndefOr[String]
   }
 
-  object PublishVersionRequest {
-    @inline
-    def apply(
-        FunctionName: FunctionName,
-        CodeSha256: js.UndefOr[String] = js.undefined,
-        Description: js.UndefOr[Description] = js.undefined,
-        RevisionId: js.UndefOr[String] = js.undefined
-    ): PublishVersionRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
-      )
-
-      CodeSha256.foreach(__v => __obj.updateDynamic("CodeSha256")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PublishVersionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutFunctionConcurrencyRequest extends js.Object {
     var FunctionName: FunctionName
     var ReservedConcurrentExecutions: ReservedConcurrentExecutions
   }
 
-  object PutFunctionConcurrencyRequest {
-    @inline
-    def apply(
-        FunctionName: FunctionName,
-        ReservedConcurrentExecutions: ReservedConcurrentExecutions
-    ): PutFunctionConcurrencyRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName"                 -> FunctionName.asInstanceOf[js.Any],
-        "ReservedConcurrentExecutions" -> ReservedConcurrentExecutions.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutFunctionConcurrencyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutFunctionEventInvokeConfigRequest extends js.Object {
     var FunctionName: FunctionName
     var DestinationConfig: js.UndefOr[DestinationConfig]
@@ -2495,52 +1158,16 @@ package lambda {
     var Qualifier: js.UndefOr[Qualifier]
   }
 
-  object PutFunctionEventInvokeConfigRequest {
-    @inline
-    def apply(
-        FunctionName: FunctionName,
-        DestinationConfig: js.UndefOr[DestinationConfig] = js.undefined,
-        MaximumEventAgeInSeconds: js.UndefOr[MaximumEventAgeInSeconds] = js.undefined,
-        MaximumRetryAttempts: js.UndefOr[MaximumRetryAttempts] = js.undefined,
-        Qualifier: js.UndefOr[Qualifier] = js.undefined
-    ): PutFunctionEventInvokeConfigRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
-      )
-
-      DestinationConfig.foreach(__v => __obj.updateDynamic("DestinationConfig")(__v.asInstanceOf[js.Any]))
-      MaximumEventAgeInSeconds.foreach(__v => __obj.updateDynamic("MaximumEventAgeInSeconds")(__v.asInstanceOf[js.Any]))
-      MaximumRetryAttempts.foreach(__v => __obj.updateDynamic("MaximumRetryAttempts")(__v.asInstanceOf[js.Any]))
-      Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutFunctionEventInvokeConfigRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutProvisionedConcurrencyConfigRequest extends js.Object {
     var FunctionName: FunctionName
     var ProvisionedConcurrentExecutions: PositiveInteger
     var Qualifier: Qualifier
   }
 
-  object PutProvisionedConcurrencyConfigRequest {
-    @inline
-    def apply(
-        FunctionName: FunctionName,
-        ProvisionedConcurrentExecutions: PositiveInteger,
-        Qualifier: Qualifier
-    ): PutProvisionedConcurrencyConfigRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName"                    -> FunctionName.asInstanceOf[js.Any],
-        "ProvisionedConcurrentExecutions" -> ProvisionedConcurrentExecutions.asInstanceOf[js.Any],
-        "Qualifier"                       -> Qualifier.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutProvisionedConcurrencyConfigRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutProvisionedConcurrencyConfigResponse extends js.Object {
     var AllocatedProvisionedConcurrentExecutions: js.UndefOr[NonNegativeInteger]
     var AvailableProvisionedConcurrentExecutions: js.UndefOr[NonNegativeInteger]
@@ -2550,34 +1177,8 @@ package lambda {
     var StatusReason: js.UndefOr[String]
   }
 
-  object PutProvisionedConcurrencyConfigResponse {
-    @inline
-    def apply(
-        AllocatedProvisionedConcurrentExecutions: js.UndefOr[NonNegativeInteger] = js.undefined,
-        AvailableProvisionedConcurrentExecutions: js.UndefOr[NonNegativeInteger] = js.undefined,
-        LastModified: js.UndefOr[Timestamp] = js.undefined,
-        RequestedProvisionedConcurrentExecutions: js.UndefOr[PositiveInteger] = js.undefined,
-        Status: js.UndefOr[ProvisionedConcurrencyStatusEnum] = js.undefined,
-        StatusReason: js.UndefOr[String] = js.undefined
-    ): PutProvisionedConcurrencyConfigResponse = {
-      val __obj = js.Dynamic.literal()
-      AllocatedProvisionedConcurrentExecutions.foreach(__v =>
-        __obj.updateDynamic("AllocatedProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any])
-      )
-      AvailableProvisionedConcurrentExecutions.foreach(__v =>
-        __obj.updateDynamic("AvailableProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any])
-      )
-      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
-      RequestedProvisionedConcurrentExecutions.foreach(__v =>
-        __obj.updateDynamic("RequestedProvisionedConcurrentExecutions")(__v.asInstanceOf[js.Any])
-      )
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutProvisionedConcurrencyConfigResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait RemoveLayerVersionPermissionRequest extends js.Object {
     var LayerName: LayerName
     var StatementId: StatementId
@@ -2585,50 +1186,13 @@ package lambda {
     var RevisionId: js.UndefOr[String]
   }
 
-  object RemoveLayerVersionPermissionRequest {
-    @inline
-    def apply(
-        LayerName: LayerName,
-        StatementId: StatementId,
-        VersionNumber: LayerVersionNumber,
-        RevisionId: js.UndefOr[String] = js.undefined
-    ): RemoveLayerVersionPermissionRequest = {
-      val __obj = js.Dynamic.literal(
-        "LayerName"     -> LayerName.asInstanceOf[js.Any],
-        "StatementId"   -> StatementId.asInstanceOf[js.Any],
-        "VersionNumber" -> VersionNumber.asInstanceOf[js.Any]
-      )
-
-      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RemoveLayerVersionPermissionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait RemovePermissionRequest extends js.Object {
     var FunctionName: FunctionName
     var StatementId: NamespacedStatementId
     var Qualifier: js.UndefOr[Qualifier]
     var RevisionId: js.UndefOr[String]
-  }
-
-  object RemovePermissionRequest {
-    @inline
-    def apply(
-        FunctionName: FunctionName,
-        StatementId: NamespacedStatementId,
-        Qualifier: js.UndefOr[Qualifier] = js.undefined,
-        RevisionId: js.UndefOr[String] = js.undefined
-    ): RemovePermissionRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
-        "StatementId"  -> StatementId.asInstanceOf[js.Any]
-      )
-
-      Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
-      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RemovePermissionRequest]
-    }
   }
 
   @js.native
@@ -2723,62 +1287,28 @@ package lambda {
   }
 
   @js.native
+  @Factory
   trait TagResourceRequest extends js.Object {
     var Resource: FunctionArn
     var Tags: Tags
-  }
-
-  object TagResourceRequest {
-    @inline
-    def apply(
-        Resource: FunctionArn,
-        Tags: Tags
-    ): TagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "Resource" -> Resource.asInstanceOf[js.Any],
-        "Tags"     -> Tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceRequest]
-    }
   }
 
   /**
     * The function's AWS X-Ray tracing configuration. To sample and record incoming requests, set <code>Mode</code> to <code>Active</code>.
     */
   @js.native
+  @Factory
   trait TracingConfig extends js.Object {
     var Mode: js.UndefOr[TracingMode]
-  }
-
-  object TracingConfig {
-    @inline
-    def apply(
-        Mode: js.UndefOr[TracingMode] = js.undefined
-    ): TracingConfig = {
-      val __obj = js.Dynamic.literal()
-      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TracingConfig]
-    }
   }
 
   /**
     * The function's AWS X-Ray tracing configuration.
     */
   @js.native
+  @Factory
   trait TracingConfigResponse extends js.Object {
     var Mode: js.UndefOr[TracingMode]
-  }
-
-  object TracingConfigResponse {
-    @inline
-    def apply(
-        Mode: js.UndefOr[TracingMode] = js.undefined
-    ): TracingConfigResponse = {
-      val __obj = js.Dynamic.literal()
-      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TracingConfigResponse]
-    }
   }
 
   @js.native
@@ -2791,27 +1321,14 @@ package lambda {
   }
 
   @js.native
+  @Factory
   trait UntagResourceRequest extends js.Object {
     var Resource: FunctionArn
     var TagKeys: TagKeyList
   }
 
-  object UntagResourceRequest {
-    @inline
-    def apply(
-        Resource: FunctionArn,
-        TagKeys: TagKeyList
-    ): UntagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "Resource" -> Resource.asInstanceOf[js.Any],
-        "TagKeys"  -> TagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateAliasRequest extends js.Object {
     var FunctionName: FunctionName
     var Name: Alias
@@ -2821,30 +1338,8 @@ package lambda {
     var RoutingConfig: js.UndefOr[AliasRoutingConfiguration]
   }
 
-  object UpdateAliasRequest {
-    @inline
-    def apply(
-        FunctionName: FunctionName,
-        Name: Alias,
-        Description: js.UndefOr[Description] = js.undefined,
-        FunctionVersion: js.UndefOr[Version] = js.undefined,
-        RevisionId: js.UndefOr[String] = js.undefined,
-        RoutingConfig: js.UndefOr[AliasRoutingConfiguration] = js.undefined
-    ): UpdateAliasRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
-        "Name"         -> Name.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      FunctionVersion.foreach(__v => __obj.updateDynamic("FunctionVersion")(__v.asInstanceOf[js.Any]))
-      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
-      RoutingConfig.foreach(__v => __obj.updateDynamic("RoutingConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateAliasRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateEventSourceMappingRequest extends js.Object {
     var UUID: String
     var BatchSize: js.UndefOr[BatchSize]
@@ -2858,44 +1353,8 @@ package lambda {
     var ParallelizationFactor: js.UndefOr[ParallelizationFactor]
   }
 
-  object UpdateEventSourceMappingRequest {
-    @inline
-    def apply(
-        UUID: String,
-        BatchSize: js.UndefOr[BatchSize] = js.undefined,
-        BisectBatchOnFunctionError: js.UndefOr[BisectBatchOnFunctionError] = js.undefined,
-        DestinationConfig: js.UndefOr[DestinationConfig] = js.undefined,
-        Enabled: js.UndefOr[Enabled] = js.undefined,
-        FunctionName: js.UndefOr[FunctionName] = js.undefined,
-        MaximumBatchingWindowInSeconds: js.UndefOr[MaximumBatchingWindowInSeconds] = js.undefined,
-        MaximumRecordAgeInSeconds: js.UndefOr[MaximumRecordAgeInSeconds] = js.undefined,
-        MaximumRetryAttempts: js.UndefOr[MaximumRetryAttemptsEventSourceMapping] = js.undefined,
-        ParallelizationFactor: js.UndefOr[ParallelizationFactor] = js.undefined
-    ): UpdateEventSourceMappingRequest = {
-      val __obj = js.Dynamic.literal(
-        "UUID" -> UUID.asInstanceOf[js.Any]
-      )
-
-      BatchSize.foreach(__v => __obj.updateDynamic("BatchSize")(__v.asInstanceOf[js.Any]))
-      BisectBatchOnFunctionError.foreach(__v =>
-        __obj.updateDynamic("BisectBatchOnFunctionError")(__v.asInstanceOf[js.Any])
-      )
-      DestinationConfig.foreach(__v => __obj.updateDynamic("DestinationConfig")(__v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      FunctionName.foreach(__v => __obj.updateDynamic("FunctionName")(__v.asInstanceOf[js.Any]))
-      MaximumBatchingWindowInSeconds.foreach(__v =>
-        __obj.updateDynamic("MaximumBatchingWindowInSeconds")(__v.asInstanceOf[js.Any])
-      )
-      MaximumRecordAgeInSeconds.foreach(__v =>
-        __obj.updateDynamic("MaximumRecordAgeInSeconds")(__v.asInstanceOf[js.Any])
-      )
-      MaximumRetryAttempts.foreach(__v => __obj.updateDynamic("MaximumRetryAttempts")(__v.asInstanceOf[js.Any]))
-      ParallelizationFactor.foreach(__v => __obj.updateDynamic("ParallelizationFactor")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateEventSourceMappingRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateFunctionCodeRequest extends js.Object {
     var FunctionName: FunctionName
     var DryRun: js.UndefOr[Boolean]
@@ -2907,34 +1366,8 @@ package lambda {
     var ZipFile: js.UndefOr[Blob]
   }
 
-  object UpdateFunctionCodeRequest {
-    @inline
-    def apply(
-        FunctionName: FunctionName,
-        DryRun: js.UndefOr[Boolean] = js.undefined,
-        Publish: js.UndefOr[Boolean] = js.undefined,
-        RevisionId: js.UndefOr[String] = js.undefined,
-        S3Bucket: js.UndefOr[S3Bucket] = js.undefined,
-        S3Key: js.UndefOr[S3Key] = js.undefined,
-        S3ObjectVersion: js.UndefOr[S3ObjectVersion] = js.undefined,
-        ZipFile: js.UndefOr[Blob] = js.undefined
-    ): UpdateFunctionCodeRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
-      )
-
-      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
-      Publish.foreach(__v => __obj.updateDynamic("Publish")(__v.asInstanceOf[js.Any]))
-      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
-      S3Bucket.foreach(__v => __obj.updateDynamic("S3Bucket")(__v.asInstanceOf[js.Any]))
-      S3Key.foreach(__v => __obj.updateDynamic("S3Key")(__v.asInstanceOf[js.Any]))
-      S3ObjectVersion.foreach(__v => __obj.updateDynamic("S3ObjectVersion")(__v.asInstanceOf[js.Any]))
-      ZipFile.foreach(__v => __obj.updateDynamic("ZipFile")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateFunctionCodeRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateFunctionConfigurationRequest extends js.Object {
     var FunctionName: FunctionName
     var DeadLetterConfig: js.UndefOr[DeadLetterConfig]
@@ -2952,46 +1385,8 @@ package lambda {
     var VpcConfig: js.UndefOr[VpcConfig]
   }
 
-  object UpdateFunctionConfigurationRequest {
-    @inline
-    def apply(
-        FunctionName: FunctionName,
-        DeadLetterConfig: js.UndefOr[DeadLetterConfig] = js.undefined,
-        Description: js.UndefOr[Description] = js.undefined,
-        Environment: js.UndefOr[Environment] = js.undefined,
-        Handler: js.UndefOr[Handler] = js.undefined,
-        KMSKeyArn: js.UndefOr[KMSKeyArn] = js.undefined,
-        Layers: js.UndefOr[LayerList] = js.undefined,
-        MemorySize: js.UndefOr[MemorySize] = js.undefined,
-        RevisionId: js.UndefOr[String] = js.undefined,
-        Role: js.UndefOr[RoleArn] = js.undefined,
-        Runtime: js.UndefOr[Runtime] = js.undefined,
-        Timeout: js.UndefOr[Timeout] = js.undefined,
-        TracingConfig: js.UndefOr[TracingConfig] = js.undefined,
-        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
-    ): UpdateFunctionConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
-      )
-
-      DeadLetterConfig.foreach(__v => __obj.updateDynamic("DeadLetterConfig")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
-      Handler.foreach(__v => __obj.updateDynamic("Handler")(__v.asInstanceOf[js.Any]))
-      KMSKeyArn.foreach(__v => __obj.updateDynamic("KMSKeyArn")(__v.asInstanceOf[js.Any]))
-      Layers.foreach(__v => __obj.updateDynamic("Layers")(__v.asInstanceOf[js.Any]))
-      MemorySize.foreach(__v => __obj.updateDynamic("MemorySize")(__v.asInstanceOf[js.Any]))
-      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
-      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
-      Runtime.foreach(__v => __obj.updateDynamic("Runtime")(__v.asInstanceOf[js.Any]))
-      Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
-      TracingConfig.foreach(__v => __obj.updateDynamic("TracingConfig")(__v.asInstanceOf[js.Any]))
-      VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateFunctionConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateFunctionEventInvokeConfigRequest extends js.Object {
     var FunctionName: FunctionName
     var DestinationConfig: js.UndefOr[DestinationConfig]
@@ -3000,71 +1395,24 @@ package lambda {
     var Qualifier: js.UndefOr[Qualifier]
   }
 
-  object UpdateFunctionEventInvokeConfigRequest {
-    @inline
-    def apply(
-        FunctionName: FunctionName,
-        DestinationConfig: js.UndefOr[DestinationConfig] = js.undefined,
-        MaximumEventAgeInSeconds: js.UndefOr[MaximumEventAgeInSeconds] = js.undefined,
-        MaximumRetryAttempts: js.UndefOr[MaximumRetryAttempts] = js.undefined,
-        Qualifier: js.UndefOr[Qualifier] = js.undefined
-    ): UpdateFunctionEventInvokeConfigRequest = {
-      val __obj = js.Dynamic.literal(
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
-      )
-
-      DestinationConfig.foreach(__v => __obj.updateDynamic("DestinationConfig")(__v.asInstanceOf[js.Any]))
-      MaximumEventAgeInSeconds.foreach(__v => __obj.updateDynamic("MaximumEventAgeInSeconds")(__v.asInstanceOf[js.Any]))
-      MaximumRetryAttempts.foreach(__v => __obj.updateDynamic("MaximumRetryAttempts")(__v.asInstanceOf[js.Any]))
-      Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateFunctionEventInvokeConfigRequest]
-    }
-  }
-
   /**
     * The VPC security groups and subnets that are attached to a Lambda function. For more information, see [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html|VPC Settings]].
     */
   @js.native
+  @Factory
   trait VpcConfig extends js.Object {
     var SecurityGroupIds: js.UndefOr[SecurityGroupIds]
     var SubnetIds: js.UndefOr[SubnetIds]
-  }
-
-  object VpcConfig {
-    @inline
-    def apply(
-        SecurityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
-        SubnetIds: js.UndefOr[SubnetIds] = js.undefined
-    ): VpcConfig = {
-      val __obj = js.Dynamic.literal()
-      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
-      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VpcConfig]
-    }
   }
 
   /**
     * The VPC security groups and subnets that are attached to a Lambda function.
     */
   @js.native
+  @Factory
   trait VpcConfigResponse extends js.Object {
     var SecurityGroupIds: js.UndefOr[SecurityGroupIds]
     var SubnetIds: js.UndefOr[SubnetIds]
     var VpcId: js.UndefOr[VpcId]
-  }
-
-  object VpcConfigResponse {
-    @inline
-    def apply(
-        SecurityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
-        SubnetIds: js.UndefOr[SubnetIds] = js.undefined,
-        VpcId: js.UndefOr[VpcId] = js.undefined
-    ): VpcConfigResponse = {
-      val __obj = js.Dynamic.literal()
-      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
-      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
-      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VpcConfigResponse]
-    }
   }
 }

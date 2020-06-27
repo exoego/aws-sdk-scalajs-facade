@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object s3control {
   type AccessPointList             = js.Array[AccessPoint]
@@ -121,6 +122,7 @@ package s3control {
     * An access point used to access a bucket.
     */
   @js.native
+  @Factory
   trait AccessPoint extends js.Object {
     var Bucket: BucketName
     var Name: AccessPointName
@@ -128,26 +130,8 @@ package s3control {
     var VpcConfiguration: js.UndefOr[VpcConfiguration]
   }
 
-  object AccessPoint {
-    @inline
-    def apply(
-        Bucket: BucketName,
-        Name: AccessPointName,
-        NetworkOrigin: NetworkOrigin,
-        VpcConfiguration: js.UndefOr[VpcConfiguration] = js.undefined
-    ): AccessPoint = {
-      val __obj = js.Dynamic.literal(
-        "Bucket"        -> Bucket.asInstanceOf[js.Any],
-        "Name"          -> Name.asInstanceOf[js.Any],
-        "NetworkOrigin" -> NetworkOrigin.asInstanceOf[js.Any]
-      )
-
-      VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AccessPoint]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateAccessPointRequest extends js.Object {
     var AccountId: AccountId
     var Bucket: BucketName
@@ -156,30 +140,8 @@ package s3control {
     var VpcConfiguration: js.UndefOr[VpcConfiguration]
   }
 
-  object CreateAccessPointRequest {
-    @inline
-    def apply(
-        AccountId: AccountId,
-        Bucket: BucketName,
-        Name: AccessPointName,
-        PublicAccessBlockConfiguration: js.UndefOr[PublicAccessBlockConfiguration] = js.undefined,
-        VpcConfiguration: js.UndefOr[VpcConfiguration] = js.undefined
-    ): CreateAccessPointRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "Bucket"    -> Bucket.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any]
-      )
-
-      PublicAccessBlockConfiguration.foreach(__v =>
-        __obj.updateDynamic("PublicAccessBlockConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateAccessPointRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateJobRequest extends js.Object {
     var AccountId: AccountId
     var ClientRequestToken: NonEmptyMaxLength64String
@@ -192,244 +154,80 @@ package s3control {
     var Description: js.UndefOr[NonEmptyMaxLength256String]
   }
 
-  object CreateJobRequest {
-    @inline
-    def apply(
-        AccountId: AccountId,
-        ClientRequestToken: NonEmptyMaxLength64String,
-        Manifest: JobManifest,
-        Operation: JobOperation,
-        Priority: JobPriority,
-        Report: JobReport,
-        RoleArn: IAMRoleArn,
-        ConfirmationRequired: js.UndefOr[ConfirmationRequired] = js.undefined,
-        Description: js.UndefOr[NonEmptyMaxLength256String] = js.undefined
-    ): CreateJobRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId"          -> AccountId.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any],
-        "Manifest"           -> Manifest.asInstanceOf[js.Any],
-        "Operation"          -> Operation.asInstanceOf[js.Any],
-        "Priority"           -> Priority.asInstanceOf[js.Any],
-        "Report"             -> Report.asInstanceOf[js.Any],
-        "RoleArn"            -> RoleArn.asInstanceOf[js.Any]
-      )
-
-      ConfirmationRequired.foreach(__v => __obj.updateDynamic("ConfirmationRequired")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateJobRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateJobResult extends js.Object {
     var JobId: js.UndefOr[JobId]
   }
 
-  object CreateJobResult {
-    @inline
-    def apply(
-        JobId: js.UndefOr[JobId] = js.undefined
-    ): CreateJobResult = {
-      val __obj = js.Dynamic.literal()
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateJobResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteAccessPointPolicyRequest extends js.Object {
     var AccountId: AccountId
     var Name: AccessPointName
   }
 
-  object DeleteAccessPointPolicyRequest {
-    @inline
-    def apply(
-        AccountId: AccountId,
-        Name: AccessPointName
-    ): DeleteAccessPointPolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteAccessPointPolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteAccessPointRequest extends js.Object {
     var AccountId: AccountId
     var Name: AccessPointName
   }
 
-  object DeleteAccessPointRequest {
-    @inline
-    def apply(
-        AccountId: AccountId,
-        Name: AccessPointName
-    ): DeleteAccessPointRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteAccessPointRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeletePublicAccessBlockRequest extends js.Object {
     var AccountId: AccountId
   }
 
-  object DeletePublicAccessBlockRequest {
-    @inline
-    def apply(
-        AccountId: AccountId
-    ): DeletePublicAccessBlockRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeletePublicAccessBlockRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeJobRequest extends js.Object {
     var AccountId: AccountId
     var JobId: JobId
   }
 
-  object DescribeJobRequest {
-    @inline
-    def apply(
-        AccountId: AccountId,
-        JobId: JobId
-    ): DescribeJobRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "JobId"     -> JobId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeJobRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeJobResult extends js.Object {
     var Job: js.UndefOr[JobDescriptor]
   }
 
-  object DescribeJobResult {
-    @inline
-    def apply(
-        Job: js.UndefOr[JobDescriptor] = js.undefined
-    ): DescribeJobResult = {
-      val __obj = js.Dynamic.literal()
-      Job.foreach(__v => __obj.updateDynamic("Job")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeJobResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetAccessPointPolicyRequest extends js.Object {
     var AccountId: AccountId
     var Name: AccessPointName
   }
 
-  object GetAccessPointPolicyRequest {
-    @inline
-    def apply(
-        AccountId: AccountId,
-        Name: AccessPointName
-    ): GetAccessPointPolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetAccessPointPolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetAccessPointPolicyResult extends js.Object {
     var Policy: js.UndefOr[Policy]
   }
 
-  object GetAccessPointPolicyResult {
-    @inline
-    def apply(
-        Policy: js.UndefOr[Policy] = js.undefined
-    ): GetAccessPointPolicyResult = {
-      val __obj = js.Dynamic.literal()
-      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetAccessPointPolicyResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetAccessPointPolicyStatusRequest extends js.Object {
     var AccountId: AccountId
     var Name: AccessPointName
   }
 
-  object GetAccessPointPolicyStatusRequest {
-    @inline
-    def apply(
-        AccountId: AccountId,
-        Name: AccessPointName
-    ): GetAccessPointPolicyStatusRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetAccessPointPolicyStatusRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetAccessPointPolicyStatusResult extends js.Object {
     var PolicyStatus: js.UndefOr[PolicyStatus]
   }
 
-  object GetAccessPointPolicyStatusResult {
-    @inline
-    def apply(
-        PolicyStatus: js.UndefOr[PolicyStatus] = js.undefined
-    ): GetAccessPointPolicyStatusResult = {
-      val __obj = js.Dynamic.literal()
-      PolicyStatus.foreach(__v => __obj.updateDynamic("PolicyStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetAccessPointPolicyStatusResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetAccessPointRequest extends js.Object {
     var AccountId: AccountId
     var Name: AccessPointName
   }
 
-  object GetAccessPointRequest {
-    @inline
-    def apply(
-        AccountId: AccountId,
-        Name: AccessPointName
-    ): GetAccessPointRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetAccessPointRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetAccessPointResult extends js.Object {
     var Bucket: js.UndefOr[BucketName]
     var CreationDate: js.UndefOr[CreationDate]
@@ -439,69 +237,23 @@ package s3control {
     var VpcConfiguration: js.UndefOr[VpcConfiguration]
   }
 
-  object GetAccessPointResult {
-    @inline
-    def apply(
-        Bucket: js.UndefOr[BucketName] = js.undefined,
-        CreationDate: js.UndefOr[CreationDate] = js.undefined,
-        Name: js.UndefOr[AccessPointName] = js.undefined,
-        NetworkOrigin: js.UndefOr[NetworkOrigin] = js.undefined,
-        PublicAccessBlockConfiguration: js.UndefOr[PublicAccessBlockConfiguration] = js.undefined,
-        VpcConfiguration: js.UndefOr[VpcConfiguration] = js.undefined
-    ): GetAccessPointResult = {
-      val __obj = js.Dynamic.literal()
-      Bucket.foreach(__v => __obj.updateDynamic("Bucket")(__v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      NetworkOrigin.foreach(__v => __obj.updateDynamic("NetworkOrigin")(__v.asInstanceOf[js.Any]))
-      PublicAccessBlockConfiguration.foreach(__v =>
-        __obj.updateDynamic("PublicAccessBlockConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetAccessPointResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetPublicAccessBlockOutput extends js.Object {
     var PublicAccessBlockConfiguration: js.UndefOr[PublicAccessBlockConfiguration]
   }
 
-  object GetPublicAccessBlockOutput {
-    @inline
-    def apply(
-        PublicAccessBlockConfiguration: js.UndefOr[PublicAccessBlockConfiguration] = js.undefined
-    ): GetPublicAccessBlockOutput = {
-      val __obj = js.Dynamic.literal()
-      PublicAccessBlockConfiguration.foreach(__v =>
-        __obj.updateDynamic("PublicAccessBlockConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[GetPublicAccessBlockOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetPublicAccessBlockRequest extends js.Object {
     var AccountId: AccountId
-  }
-
-  object GetPublicAccessBlockRequest {
-    @inline
-    def apply(
-        AccountId: AccountId
-    ): GetPublicAccessBlockRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetPublicAccessBlockRequest]
-    }
   }
 
   /**
     * A container element for the job configuration and status information returned by a <code>Describe Job</code> request.
     */
   @js.native
+  @Factory
   trait JobDescriptor extends js.Object {
     var ConfirmationRequired: js.UndefOr[ConfirmationRequired]
     var CreationTime: js.UndefOr[JobCreationTime]
@@ -522,75 +274,21 @@ package s3control {
     var TerminationDate: js.UndefOr[JobTerminationDate]
   }
 
-  object JobDescriptor {
-    @inline
-    def apply(
-        ConfirmationRequired: js.UndefOr[ConfirmationRequired] = js.undefined,
-        CreationTime: js.UndefOr[JobCreationTime] = js.undefined,
-        Description: js.UndefOr[NonEmptyMaxLength256String] = js.undefined,
-        FailureReasons: js.UndefOr[JobFailureList] = js.undefined,
-        JobArn: js.UndefOr[JobArn] = js.undefined,
-        JobId: js.UndefOr[JobId] = js.undefined,
-        Manifest: js.UndefOr[JobManifest] = js.undefined,
-        Operation: js.UndefOr[JobOperation] = js.undefined,
-        Priority: js.UndefOr[JobPriority] = js.undefined,
-        ProgressSummary: js.UndefOr[JobProgressSummary] = js.undefined,
-        Report: js.UndefOr[JobReport] = js.undefined,
-        RoleArn: js.UndefOr[IAMRoleArn] = js.undefined,
-        Status: js.UndefOr[JobStatus] = js.undefined,
-        StatusUpdateReason: js.UndefOr[JobStatusUpdateReason] = js.undefined,
-        SuspendedCause: js.UndefOr[SuspendedCause] = js.undefined,
-        SuspendedDate: js.UndefOr[SuspendedDate] = js.undefined,
-        TerminationDate: js.UndefOr[JobTerminationDate] = js.undefined
-    ): JobDescriptor = {
-      val __obj = js.Dynamic.literal()
-      ConfirmationRequired.foreach(__v => __obj.updateDynamic("ConfirmationRequired")(__v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      FailureReasons.foreach(__v => __obj.updateDynamic("FailureReasons")(__v.asInstanceOf[js.Any]))
-      JobArn.foreach(__v => __obj.updateDynamic("JobArn")(__v.asInstanceOf[js.Any]))
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      Manifest.foreach(__v => __obj.updateDynamic("Manifest")(__v.asInstanceOf[js.Any]))
-      Operation.foreach(__v => __obj.updateDynamic("Operation")(__v.asInstanceOf[js.Any]))
-      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
-      ProgressSummary.foreach(__v => __obj.updateDynamic("ProgressSummary")(__v.asInstanceOf[js.Any]))
-      Report.foreach(__v => __obj.updateDynamic("Report")(__v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      StatusUpdateReason.foreach(__v => __obj.updateDynamic("StatusUpdateReason")(__v.asInstanceOf[js.Any]))
-      SuspendedCause.foreach(__v => __obj.updateDynamic("SuspendedCause")(__v.asInstanceOf[js.Any]))
-      SuspendedDate.foreach(__v => __obj.updateDynamic("SuspendedDate")(__v.asInstanceOf[js.Any]))
-      TerminationDate.foreach(__v => __obj.updateDynamic("TerminationDate")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[JobDescriptor]
-    }
-  }
-
   /**
     * If this job failed, this element indicates why the job failed.
     */
   @js.native
+  @Factory
   trait JobFailure extends js.Object {
     var FailureCode: js.UndefOr[JobFailureCode]
     var FailureReason: js.UndefOr[JobFailureReason]
-  }
-
-  object JobFailure {
-    @inline
-    def apply(
-        FailureCode: js.UndefOr[JobFailureCode] = js.undefined,
-        FailureReason: js.UndefOr[JobFailureReason] = js.undefined
-    ): JobFailure = {
-      val __obj = js.Dynamic.literal()
-      FailureCode.foreach(__v => __obj.updateDynamic("FailureCode")(__v.asInstanceOf[js.Any]))
-      FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[JobFailure]
-    }
   }
 
   /**
     * Contains the configuration and status information for a single job retrieved as part of a job list.
     */
   @js.native
+  @Factory
   trait JobListDescriptor extends js.Object {
     var CreationTime: js.UndefOr[JobCreationTime]
     var Description: js.UndefOr[NonEmptyMaxLength256String]
@@ -602,53 +300,14 @@ package s3control {
     var TerminationDate: js.UndefOr[JobTerminationDate]
   }
 
-  object JobListDescriptor {
-    @inline
-    def apply(
-        CreationTime: js.UndefOr[JobCreationTime] = js.undefined,
-        Description: js.UndefOr[NonEmptyMaxLength256String] = js.undefined,
-        JobId: js.UndefOr[JobId] = js.undefined,
-        Operation: js.UndefOr[OperationName] = js.undefined,
-        Priority: js.UndefOr[JobPriority] = js.undefined,
-        ProgressSummary: js.UndefOr[JobProgressSummary] = js.undefined,
-        Status: js.UndefOr[JobStatus] = js.undefined,
-        TerminationDate: js.UndefOr[JobTerminationDate] = js.undefined
-    ): JobListDescriptor = {
-      val __obj = js.Dynamic.literal()
-      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      Operation.foreach(__v => __obj.updateDynamic("Operation")(__v.asInstanceOf[js.Any]))
-      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
-      ProgressSummary.foreach(__v => __obj.updateDynamic("ProgressSummary")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      TerminationDate.foreach(__v => __obj.updateDynamic("TerminationDate")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[JobListDescriptor]
-    }
-  }
-
   /**
     * Contains the configuration information for a job's manifest.
     */
   @js.native
+  @Factory
   trait JobManifest extends js.Object {
     var Location: JobManifestLocation
     var Spec: JobManifestSpec
-  }
-
-  object JobManifest {
-    @inline
-    def apply(
-        Location: JobManifestLocation,
-        Spec: JobManifestSpec
-    ): JobManifest = {
-      val __obj = js.Dynamic.literal(
-        "Location" -> Location.asInstanceOf[js.Any],
-        "Spec"     -> Spec.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[JobManifest]
-    }
   }
 
   @js.native
@@ -675,57 +334,28 @@ package s3control {
     * Contains the information required to locate a manifest object.
     */
   @js.native
+  @Factory
   trait JobManifestLocation extends js.Object {
     var ETag: NonEmptyMaxLength1024String
     var ObjectArn: S3KeyArnString
     var ObjectVersionId: js.UndefOr[S3ObjectVersionId]
   }
 
-  object JobManifestLocation {
-    @inline
-    def apply(
-        ETag: NonEmptyMaxLength1024String,
-        ObjectArn: S3KeyArnString,
-        ObjectVersionId: js.UndefOr[S3ObjectVersionId] = js.undefined
-    ): JobManifestLocation = {
-      val __obj = js.Dynamic.literal(
-        "ETag"      -> ETag.asInstanceOf[js.Any],
-        "ObjectArn" -> ObjectArn.asInstanceOf[js.Any]
-      )
-
-      ObjectVersionId.foreach(__v => __obj.updateDynamic("ObjectVersionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[JobManifestLocation]
-    }
-  }
-
   /**
     * Describes the format of a manifest. If the manifest is in CSV format, also describes the columns contained within the manifest.
     */
   @js.native
+  @Factory
   trait JobManifestSpec extends js.Object {
     var Format: JobManifestFormat
     var Fields: js.UndefOr[JobManifestFieldList]
-  }
-
-  object JobManifestSpec {
-    @inline
-    def apply(
-        Format: JobManifestFormat,
-        Fields: js.UndefOr[JobManifestFieldList] = js.undefined
-    ): JobManifestSpec = {
-      val __obj = js.Dynamic.literal(
-        "Format" -> Format.asInstanceOf[js.Any]
-      )
-
-      Fields.foreach(__v => __obj.updateDynamic("Fields")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[JobManifestSpec]
-    }
   }
 
   /**
     * The operation that you want this job to perform on each object listed in the manifest. For more information about the available operations, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html|Available Operations]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait JobOperation extends js.Object {
     var LambdaInvoke: js.UndefOr[LambdaInvokeOperation]
     var S3InitiateRestoreObject: js.UndefOr[S3InitiateRestoreObjectOperation]
@@ -734,81 +364,28 @@ package s3control {
     var S3PutObjectTagging: js.UndefOr[S3SetObjectTaggingOperation]
   }
 
-  object JobOperation {
-    @inline
-    def apply(
-        LambdaInvoke: js.UndefOr[LambdaInvokeOperation] = js.undefined,
-        S3InitiateRestoreObject: js.UndefOr[S3InitiateRestoreObjectOperation] = js.undefined,
-        S3PutObjectAcl: js.UndefOr[S3SetObjectAclOperation] = js.undefined,
-        S3PutObjectCopy: js.UndefOr[S3CopyObjectOperation] = js.undefined,
-        S3PutObjectTagging: js.UndefOr[S3SetObjectTaggingOperation] = js.undefined
-    ): JobOperation = {
-      val __obj = js.Dynamic.literal()
-      LambdaInvoke.foreach(__v => __obj.updateDynamic("LambdaInvoke")(__v.asInstanceOf[js.Any]))
-      S3InitiateRestoreObject.foreach(__v => __obj.updateDynamic("S3InitiateRestoreObject")(__v.asInstanceOf[js.Any]))
-      S3PutObjectAcl.foreach(__v => __obj.updateDynamic("S3PutObjectAcl")(__v.asInstanceOf[js.Any]))
-      S3PutObjectCopy.foreach(__v => __obj.updateDynamic("S3PutObjectCopy")(__v.asInstanceOf[js.Any]))
-      S3PutObjectTagging.foreach(__v => __obj.updateDynamic("S3PutObjectTagging")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[JobOperation]
-    }
-  }
-
   /**
     * Describes the total number of tasks that the specified job has executed, the number of tasks that succeeded, and the number of tasks that failed.
     */
   @js.native
+  @Factory
   trait JobProgressSummary extends js.Object {
     var NumberOfTasksFailed: js.UndefOr[JobNumberOfTasksFailed]
     var NumberOfTasksSucceeded: js.UndefOr[JobNumberOfTasksSucceeded]
     var TotalNumberOfTasks: js.UndefOr[JobTotalNumberOfTasks]
   }
 
-  object JobProgressSummary {
-    @inline
-    def apply(
-        NumberOfTasksFailed: js.UndefOr[JobNumberOfTasksFailed] = js.undefined,
-        NumberOfTasksSucceeded: js.UndefOr[JobNumberOfTasksSucceeded] = js.undefined,
-        TotalNumberOfTasks: js.UndefOr[JobTotalNumberOfTasks] = js.undefined
-    ): JobProgressSummary = {
-      val __obj = js.Dynamic.literal()
-      NumberOfTasksFailed.foreach(__v => __obj.updateDynamic("NumberOfTasksFailed")(__v.asInstanceOf[js.Any]))
-      NumberOfTasksSucceeded.foreach(__v => __obj.updateDynamic("NumberOfTasksSucceeded")(__v.asInstanceOf[js.Any]))
-      TotalNumberOfTasks.foreach(__v => __obj.updateDynamic("TotalNumberOfTasks")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[JobProgressSummary]
-    }
-  }
-
   /**
     * Contains the configuration parameters for a job-completion report.
     */
   @js.native
+  @Factory
   trait JobReport extends js.Object {
     var Enabled: Boolean
     var Bucket: js.UndefOr[S3BucketArnString]
     var Format: js.UndefOr[JobReportFormat]
     var Prefix: js.UndefOr[ReportPrefixString]
     var ReportScope: js.UndefOr[JobReportScope]
-  }
-
-  object JobReport {
-    @inline
-    def apply(
-        Enabled: Boolean,
-        Bucket: js.UndefOr[S3BucketArnString] = js.undefined,
-        Format: js.UndefOr[JobReportFormat] = js.undefined,
-        Prefix: js.UndefOr[ReportPrefixString] = js.undefined,
-        ReportScope: js.UndefOr[JobReportScope] = js.undefined
-    ): JobReport = {
-      val __obj = js.Dynamic.literal(
-        "Enabled" -> Enabled.asInstanceOf[js.Any]
-      )
-
-      Bucket.foreach(__v => __obj.updateDynamic("Bucket")(__v.asInstanceOf[js.Any]))
-      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
-      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
-      ReportScope.foreach(__v => __obj.updateDynamic("ReportScope")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[JobReport]
-    }
   }
 
   @js.native
@@ -868,22 +445,13 @@ package s3control {
     * Contains the configuration parameters for a <code>Lambda Invoke</code> operation.
     */
   @js.native
+  @Factory
   trait LambdaInvokeOperation extends js.Object {
     var FunctionArn: js.UndefOr[NonEmptyMaxLength1024String]
   }
 
-  object LambdaInvokeOperation {
-    @inline
-    def apply(
-        FunctionArn: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined
-    ): LambdaInvokeOperation = {
-      val __obj = js.Dynamic.literal()
-      FunctionArn.foreach(__v => __obj.updateDynamic("FunctionArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LambdaInvokeOperation]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAccessPointsRequest extends js.Object {
     var AccountId: AccountId
     var Bucket: js.UndefOr[BucketName]
@@ -891,45 +459,15 @@ package s3control {
     var NextToken: js.UndefOr[NonEmptyMaxLength1024String]
   }
 
-  object ListAccessPointsRequest {
-    @inline
-    def apply(
-        AccountId: AccountId,
-        Bucket: js.UndefOr[BucketName] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined
-    ): ListAccessPointsRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any]
-      )
-
-      Bucket.foreach(__v => __obj.updateDynamic("Bucket")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAccessPointsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAccessPointsResult extends js.Object {
     var AccessPointList: js.UndefOr[AccessPointList]
     var NextToken: js.UndefOr[NonEmptyMaxLength1024String]
   }
 
-  object ListAccessPointsResult {
-    @inline
-    def apply(
-        AccessPointList: js.UndefOr[AccessPointList] = js.undefined,
-        NextToken: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined
-    ): ListAccessPointsResult = {
-      val __obj = js.Dynamic.literal()
-      AccessPointList.foreach(__v => __obj.updateDynamic("AccessPointList")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAccessPointsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListJobsRequest extends js.Object {
     var AccountId: AccountId
     var JobStatuses: js.UndefOr[JobStatusList]
@@ -937,42 +475,11 @@ package s3control {
     var NextToken: js.UndefOr[NonEmptyMaxLength1024String]
   }
 
-  object ListJobsRequest {
-    @inline
-    def apply(
-        AccountId: AccountId,
-        JobStatuses: js.UndefOr[JobStatusList] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined
-    ): ListJobsRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any]
-      )
-
-      JobStatuses.foreach(__v => __obj.updateDynamic("JobStatuses")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListJobsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListJobsResult extends js.Object {
     var Jobs: js.UndefOr[JobListDescriptorList]
     var NextToken: js.UndefOr[NonEmptyMaxLength1024String]
-  }
-
-  object ListJobsResult {
-    @inline
-    def apply(
-        Jobs: js.UndefOr[JobListDescriptorList] = js.undefined,
-        NextToken: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined
-    ): ListJobsResult = {
-      val __obj = js.Dynamic.literal()
-      Jobs.foreach(__v => __obj.updateDynamic("Jobs")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListJobsResult]
-    }
   }
 
   @js.native
@@ -1002,25 +509,16 @@ package s3control {
     * Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status|The Meaning of "Public"]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait PolicyStatus extends js.Object {
     var IsPublic: js.UndefOr[IsPublic]
-  }
-
-  object PolicyStatus {
-    @inline
-    def apply(
-        IsPublic: js.UndefOr[IsPublic] = js.undefined
-    ): PolicyStatus = {
-      val __obj = js.Dynamic.literal()
-      IsPublic.foreach(__v => __obj.updateDynamic("IsPublic")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PolicyStatus]
-    }
   }
 
   /**
     * The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status|The Meaning of "Public"]] in the Amazon Simple Storage Service Developer Guide.
     */
   @js.native
+  @Factory
   trait PublicAccessBlockConfiguration extends js.Object {
     var BlockPublicAcls: js.UndefOr[Setting]
     var BlockPublicPolicy: js.UndefOr[Setting]
@@ -1028,66 +526,19 @@ package s3control {
     var RestrictPublicBuckets: js.UndefOr[Setting]
   }
 
-  object PublicAccessBlockConfiguration {
-    @inline
-    def apply(
-        BlockPublicAcls: js.UndefOr[Setting] = js.undefined,
-        BlockPublicPolicy: js.UndefOr[Setting] = js.undefined,
-        IgnorePublicAcls: js.UndefOr[Setting] = js.undefined,
-        RestrictPublicBuckets: js.UndefOr[Setting] = js.undefined
-    ): PublicAccessBlockConfiguration = {
-      val __obj = js.Dynamic.literal()
-      BlockPublicAcls.foreach(__v => __obj.updateDynamic("BlockPublicAcls")(__v.asInstanceOf[js.Any]))
-      BlockPublicPolicy.foreach(__v => __obj.updateDynamic("BlockPublicPolicy")(__v.asInstanceOf[js.Any]))
-      IgnorePublicAcls.foreach(__v => __obj.updateDynamic("IgnorePublicAcls")(__v.asInstanceOf[js.Any]))
-      RestrictPublicBuckets.foreach(__v => __obj.updateDynamic("RestrictPublicBuckets")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PublicAccessBlockConfiguration]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutAccessPointPolicyRequest extends js.Object {
     var AccountId: AccountId
     var Name: AccessPointName
     var Policy: Policy
   }
 
-  object PutAccessPointPolicyRequest {
-    @inline
-    def apply(
-        AccountId: AccountId,
-        Name: AccessPointName,
-        Policy: Policy
-    ): PutAccessPointPolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any],
-        "Policy"    -> Policy.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutAccessPointPolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutPublicAccessBlockRequest extends js.Object {
     var AccountId: AccountId
     var PublicAccessBlockConfiguration: PublicAccessBlockConfiguration
-  }
-
-  object PutPublicAccessBlockRequest {
-    @inline
-    def apply(
-        AccountId: AccountId,
-        PublicAccessBlockConfiguration: PublicAccessBlockConfiguration
-    ): PutPublicAccessBlockRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId"                      -> AccountId.asInstanceOf[js.Any],
-        "PublicAccessBlockConfiguration" -> PublicAccessBlockConfiguration.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutPublicAccessBlockRequest]
-    }
   }
 
   @js.native
@@ -1103,46 +554,20 @@ package s3control {
     * <p/>
     */
   @js.native
+  @Factory
   trait S3AccessControlList extends js.Object {
     var Owner: S3ObjectOwner
     var Grants: js.UndefOr[S3GrantList]
-  }
-
-  object S3AccessControlList {
-    @inline
-    def apply(
-        Owner: S3ObjectOwner,
-        Grants: js.UndefOr[S3GrantList] = js.undefined
-    ): S3AccessControlList = {
-      val __obj = js.Dynamic.literal(
-        "Owner" -> Owner.asInstanceOf[js.Any]
-      )
-
-      Grants.foreach(__v => __obj.updateDynamic("Grants")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[S3AccessControlList]
-    }
   }
 
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait S3AccessControlPolicy extends js.Object {
     var AccessControlList: js.UndefOr[S3AccessControlList]
     var CannedAccessControlList: js.UndefOr[S3CannedAccessControlList]
-  }
-
-  object S3AccessControlPolicy {
-    @inline
-    def apply(
-        AccessControlList: js.UndefOr[S3AccessControlList] = js.undefined,
-        CannedAccessControlList: js.UndefOr[S3CannedAccessControlList] = js.undefined
-    ): S3AccessControlPolicy = {
-      val __obj = js.Dynamic.literal()
-      AccessControlList.foreach(__v => __obj.updateDynamic("AccessControlList")(__v.asInstanceOf[js.Any]))
-      CannedAccessControlList.foreach(__v => __obj.updateDynamic("CannedAccessControlList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[S3AccessControlPolicy]
-    }
   }
 
   @js.native
@@ -1173,6 +598,7 @@ package s3control {
     * Contains the configuration parameters for a PUT Copy object operation. Amazon S3 batch operations passes each value through to the underlying PUT Copy object API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html|PUT Object - Copy]].
     */
   @js.native
+  @Factory
   trait S3CopyObjectOperation extends js.Object {
     var AccessControlGrants: js.UndefOr[S3GrantList]
     var CannedAccessControlList: js.UndefOr[S3CannedAccessControlList]
@@ -1192,53 +618,6 @@ package s3control {
     var UnModifiedSinceConstraint: js.UndefOr[TimeStamp]
   }
 
-  object S3CopyObjectOperation {
-    @inline
-    def apply(
-        AccessControlGrants: js.UndefOr[S3GrantList] = js.undefined,
-        CannedAccessControlList: js.UndefOr[S3CannedAccessControlList] = js.undefined,
-        MetadataDirective: js.UndefOr[S3MetadataDirective] = js.undefined,
-        ModifiedSinceConstraint: js.UndefOr[TimeStamp] = js.undefined,
-        NewObjectMetadata: js.UndefOr[S3ObjectMetadata] = js.undefined,
-        NewObjectTagging: js.UndefOr[S3TagSet] = js.undefined,
-        ObjectLockLegalHoldStatus: js.UndefOr[S3ObjectLockLegalHoldStatus] = js.undefined,
-        ObjectLockMode: js.UndefOr[S3ObjectLockMode] = js.undefined,
-        ObjectLockRetainUntilDate: js.UndefOr[TimeStamp] = js.undefined,
-        RedirectLocation: js.UndefOr[NonEmptyMaxLength2048String] = js.undefined,
-        RequesterPays: js.UndefOr[Boolean] = js.undefined,
-        SSEAwsKmsKeyId: js.UndefOr[KmsKeyArnString] = js.undefined,
-        StorageClass: js.UndefOr[S3StorageClass] = js.undefined,
-        TargetKeyPrefix: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined,
-        TargetResource: js.UndefOr[S3BucketArnString] = js.undefined,
-        UnModifiedSinceConstraint: js.UndefOr[TimeStamp] = js.undefined
-    ): S3CopyObjectOperation = {
-      val __obj = js.Dynamic.literal()
-      AccessControlGrants.foreach(__v => __obj.updateDynamic("AccessControlGrants")(__v.asInstanceOf[js.Any]))
-      CannedAccessControlList.foreach(__v => __obj.updateDynamic("CannedAccessControlList")(__v.asInstanceOf[js.Any]))
-      MetadataDirective.foreach(__v => __obj.updateDynamic("MetadataDirective")(__v.asInstanceOf[js.Any]))
-      ModifiedSinceConstraint.foreach(__v => __obj.updateDynamic("ModifiedSinceConstraint")(__v.asInstanceOf[js.Any]))
-      NewObjectMetadata.foreach(__v => __obj.updateDynamic("NewObjectMetadata")(__v.asInstanceOf[js.Any]))
-      NewObjectTagging.foreach(__v => __obj.updateDynamic("NewObjectTagging")(__v.asInstanceOf[js.Any]))
-      ObjectLockLegalHoldStatus.foreach(__v =>
-        __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any])
-      )
-      ObjectLockMode.foreach(__v => __obj.updateDynamic("ObjectLockMode")(__v.asInstanceOf[js.Any]))
-      ObjectLockRetainUntilDate.foreach(__v =>
-        __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any])
-      )
-      RedirectLocation.foreach(__v => __obj.updateDynamic("RedirectLocation")(__v.asInstanceOf[js.Any]))
-      RequesterPays.foreach(__v => __obj.updateDynamic("RequesterPays")(__v.asInstanceOf[js.Any]))
-      SSEAwsKmsKeyId.foreach(__v => __obj.updateDynamic("SSEAwsKmsKeyId")(__v.asInstanceOf[js.Any]))
-      StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
-      TargetKeyPrefix.foreach(__v => __obj.updateDynamic("TargetKeyPrefix")(__v.asInstanceOf[js.Any]))
-      TargetResource.foreach(__v => __obj.updateDynamic("TargetResource")(__v.asInstanceOf[js.Any]))
-      UnModifiedSinceConstraint.foreach(__v =>
-        __obj.updateDynamic("UnModifiedSinceConstraint")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[S3CopyObjectOperation]
-    }
-  }
-
   @js.native
   sealed trait S3GlacierJobTier extends js.Any
   object S3GlacierJobTier extends js.Object {
@@ -1252,47 +631,21 @@ package s3control {
     * <p/>
     */
   @js.native
+  @Factory
   trait S3Grant extends js.Object {
     var Grantee: js.UndefOr[S3Grantee]
     var Permission: js.UndefOr[S3Permission]
-  }
-
-  object S3Grant {
-    @inline
-    def apply(
-        Grantee: js.UndefOr[S3Grantee] = js.undefined,
-        Permission: js.UndefOr[S3Permission] = js.undefined
-    ): S3Grant = {
-      val __obj = js.Dynamic.literal()
-      Grantee.foreach(__v => __obj.updateDynamic("Grantee")(__v.asInstanceOf[js.Any]))
-      Permission.foreach(__v => __obj.updateDynamic("Permission")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[S3Grant]
-    }
   }
 
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait S3Grantee extends js.Object {
     var DisplayName: js.UndefOr[NonEmptyMaxLength1024String]
     var Identifier: js.UndefOr[NonEmptyMaxLength1024String]
     var TypeIdentifier: js.UndefOr[S3GranteeTypeIdentifier]
-  }
-
-  object S3Grantee {
-    @inline
-    def apply(
-        DisplayName: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined,
-        Identifier: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined,
-        TypeIdentifier: js.UndefOr[S3GranteeTypeIdentifier] = js.undefined
-    ): S3Grantee = {
-      val __obj = js.Dynamic.literal()
-      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
-      Identifier.foreach(__v => __obj.updateDynamic("Identifier")(__v.asInstanceOf[js.Any]))
-      TypeIdentifier.foreach(__v => __obj.updateDynamic("TypeIdentifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[S3Grantee]
-    }
   }
 
   @js.native
@@ -1309,22 +662,10 @@ package s3control {
     * Contains the configuration parameters for an Initiate Glacier Restore job. Amazon S3 batch operations passes each value through to the underlying POST Object restore API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html#RESTObjectPOSTrestore-restore-request|Restoring Archives]].
     */
   @js.native
+  @Factory
   trait S3InitiateRestoreObjectOperation extends js.Object {
     var ExpirationInDays: js.UndefOr[S3ExpirationInDays]
     var GlacierJobTier: js.UndefOr[S3GlacierJobTier]
-  }
-
-  object S3InitiateRestoreObjectOperation {
-    @inline
-    def apply(
-        ExpirationInDays: js.UndefOr[S3ExpirationInDays] = js.undefined,
-        GlacierJobTier: js.UndefOr[S3GlacierJobTier] = js.undefined
-    ): S3InitiateRestoreObjectOperation = {
-      val __obj = js.Dynamic.literal()
-      ExpirationInDays.foreach(__v => __obj.updateDynamic("ExpirationInDays")(__v.asInstanceOf[js.Any]))
-      GlacierJobTier.foreach(__v => __obj.updateDynamic("GlacierJobTier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[S3InitiateRestoreObjectOperation]
-    }
   }
 
   @js.native
@@ -1358,6 +699,7 @@ package s3control {
     * <p/>
     */
   @js.native
+  @Factory
   trait S3ObjectMetadata extends js.Object {
     var CacheControl: js.UndefOr[NonEmptyMaxLength1024String]
     var ContentDisposition: js.UndefOr[NonEmptyMaxLength1024String]
@@ -1372,57 +714,14 @@ package s3control {
     var UserMetadata: js.UndefOr[S3UserMetadata]
   }
 
-  object S3ObjectMetadata {
-    @inline
-    def apply(
-        CacheControl: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined,
-        ContentDisposition: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined,
-        ContentEncoding: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined,
-        ContentLanguage: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined,
-        ContentLength: js.UndefOr[S3ContentLength] = js.undefined,
-        ContentMD5: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined,
-        ContentType: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined,
-        HttpExpiresDate: js.UndefOr[TimeStamp] = js.undefined,
-        RequesterCharged: js.UndefOr[Boolean] = js.undefined,
-        SSEAlgorithm: js.UndefOr[S3SSEAlgorithm] = js.undefined,
-        UserMetadata: js.UndefOr[S3UserMetadata] = js.undefined
-    ): S3ObjectMetadata = {
-      val __obj = js.Dynamic.literal()
-      CacheControl.foreach(__v => __obj.updateDynamic("CacheControl")(__v.asInstanceOf[js.Any]))
-      ContentDisposition.foreach(__v => __obj.updateDynamic("ContentDisposition")(__v.asInstanceOf[js.Any]))
-      ContentEncoding.foreach(__v => __obj.updateDynamic("ContentEncoding")(__v.asInstanceOf[js.Any]))
-      ContentLanguage.foreach(__v => __obj.updateDynamic("ContentLanguage")(__v.asInstanceOf[js.Any]))
-      ContentLength.foreach(__v => __obj.updateDynamic("ContentLength")(__v.asInstanceOf[js.Any]))
-      ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
-      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
-      HttpExpiresDate.foreach(__v => __obj.updateDynamic("HttpExpiresDate")(__v.asInstanceOf[js.Any]))
-      RequesterCharged.foreach(__v => __obj.updateDynamic("RequesterCharged")(__v.asInstanceOf[js.Any]))
-      SSEAlgorithm.foreach(__v => __obj.updateDynamic("SSEAlgorithm")(__v.asInstanceOf[js.Any]))
-      UserMetadata.foreach(__v => __obj.updateDynamic("UserMetadata")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[S3ObjectMetadata]
-    }
-  }
-
   /**
     * <p/>
     */
   @js.native
+  @Factory
   trait S3ObjectOwner extends js.Object {
     var DisplayName: js.UndefOr[NonEmptyMaxLength1024String]
     var ID: js.UndefOr[NonEmptyMaxLength1024String]
-  }
-
-  object S3ObjectOwner {
-    @inline
-    def apply(
-        DisplayName: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined,
-        ID: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined
-    ): S3ObjectOwner = {
-      val __obj = js.Dynamic.literal()
-      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
-      ID.foreach(__v => __obj.updateDynamic("ID")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[S3ObjectOwner]
-    }
   }
 
   @js.native
@@ -1450,38 +749,18 @@ package s3control {
     * Contains the configuration parameters for a Set Object ACL operation. Amazon S3 batch operations passes each value through to the underlying PUT Object acl API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html|PUT Object acl]].
     */
   @js.native
+  @Factory
   trait S3SetObjectAclOperation extends js.Object {
     var AccessControlPolicy: js.UndefOr[S3AccessControlPolicy]
-  }
-
-  object S3SetObjectAclOperation {
-    @inline
-    def apply(
-        AccessControlPolicy: js.UndefOr[S3AccessControlPolicy] = js.undefined
-    ): S3SetObjectAclOperation = {
-      val __obj = js.Dynamic.literal()
-      AccessControlPolicy.foreach(__v => __obj.updateDynamic("AccessControlPolicy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[S3SetObjectAclOperation]
-    }
   }
 
   /**
     * Contains the configuration parameters for a Set Object Tagging operation. Amazon S3 batch operations passes each value through to the underlying PUT Object tagging API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html|PUT Object tagging]].
     */
   @js.native
+  @Factory
   trait S3SetObjectTaggingOperation extends js.Object {
     var TagSet: js.UndefOr[S3TagSet]
-  }
-
-  object S3SetObjectTaggingOperation {
-    @inline
-    def apply(
-        TagSet: js.UndefOr[S3TagSet] = js.undefined
-    ): S3SetObjectTaggingOperation = {
-      val __obj = js.Dynamic.literal()
-      TagSet.foreach(__v => __obj.updateDynamic("TagSet")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[S3SetObjectTaggingOperation]
-    }
   }
 
   @js.native
@@ -1502,72 +781,29 @@ package s3control {
     * <p/>
     */
   @js.native
+  @Factory
   trait S3Tag extends js.Object {
     var Key: NonEmptyMaxLength1024String
     var Value: MaxLength1024String
   }
 
-  object S3Tag {
-    @inline
-    def apply(
-        Key: NonEmptyMaxLength1024String,
-        Value: MaxLength1024String
-    ): S3Tag = {
-      val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[S3Tag]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateJobPriorityRequest extends js.Object {
     var AccountId: AccountId
     var JobId: JobId
     var Priority: JobPriority
   }
 
-  object UpdateJobPriorityRequest {
-    @inline
-    def apply(
-        AccountId: AccountId,
-        JobId: JobId,
-        Priority: JobPriority
-    ): UpdateJobPriorityRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "JobId"     -> JobId.asInstanceOf[js.Any],
-        "Priority"  -> Priority.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateJobPriorityRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateJobPriorityResult extends js.Object {
     var JobId: JobId
     var Priority: JobPriority
   }
 
-  object UpdateJobPriorityResult {
-    @inline
-    def apply(
-        JobId: JobId,
-        Priority: JobPriority
-    ): UpdateJobPriorityResult = {
-      val __obj = js.Dynamic.literal(
-        "JobId"    -> JobId.asInstanceOf[js.Any],
-        "Priority" -> Priority.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateJobPriorityResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateJobStatusRequest extends js.Object {
     var AccountId: AccountId
     var JobId: JobId
@@ -1575,65 +811,20 @@ package s3control {
     var StatusUpdateReason: js.UndefOr[JobStatusUpdateReason]
   }
 
-  object UpdateJobStatusRequest {
-    @inline
-    def apply(
-        AccountId: AccountId,
-        JobId: JobId,
-        RequestedJobStatus: RequestedJobStatus,
-        StatusUpdateReason: js.UndefOr[JobStatusUpdateReason] = js.undefined
-    ): UpdateJobStatusRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId"          -> AccountId.asInstanceOf[js.Any],
-        "JobId"              -> JobId.asInstanceOf[js.Any],
-        "RequestedJobStatus" -> RequestedJobStatus.asInstanceOf[js.Any]
-      )
-
-      StatusUpdateReason.foreach(__v => __obj.updateDynamic("StatusUpdateReason")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateJobStatusRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateJobStatusResult extends js.Object {
     var JobId: js.UndefOr[JobId]
     var Status: js.UndefOr[JobStatus]
     var StatusUpdateReason: js.UndefOr[JobStatusUpdateReason]
   }
 
-  object UpdateJobStatusResult {
-    @inline
-    def apply(
-        JobId: js.UndefOr[JobId] = js.undefined,
-        Status: js.UndefOr[JobStatus] = js.undefined,
-        StatusUpdateReason: js.UndefOr[JobStatusUpdateReason] = js.undefined
-    ): UpdateJobStatusResult = {
-      val __obj = js.Dynamic.literal()
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      StatusUpdateReason.foreach(__v => __obj.updateDynamic("StatusUpdateReason")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateJobStatusResult]
-    }
-  }
-
   /**
     * The Virtual Private Cloud (VPC) configuration for an access point.
     */
   @js.native
+  @Factory
   trait VpcConfiguration extends js.Object {
     var VpcId: VpcId
-  }
-
-  object VpcConfiguration {
-    @inline
-    def apply(
-        VpcId: VpcId
-    ): VpcConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "VpcId" -> VpcId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[VpcConfiguration]
-    }
   }
 }

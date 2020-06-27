@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object ram {
   type DateTime                       = js.Date
@@ -152,46 +153,21 @@ package ram {
   }
 
   @js.native
+  @Factory
   trait AcceptResourceShareInvitationRequest extends js.Object {
     var resourceShareInvitationArn: String
     var clientToken: js.UndefOr[String]
   }
 
-  object AcceptResourceShareInvitationRequest {
-    @inline
-    def apply(
-        resourceShareInvitationArn: String,
-        clientToken: js.UndefOr[String] = js.undefined
-    ): AcceptResourceShareInvitationRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceShareInvitationArn" -> resourceShareInvitationArn.asInstanceOf[js.Any]
-      )
-
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AcceptResourceShareInvitationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AcceptResourceShareInvitationResponse extends js.Object {
     var clientToken: js.UndefOr[String]
     var resourceShareInvitation: js.UndefOr[ResourceShareInvitation]
   }
 
-  object AcceptResourceShareInvitationResponse {
-    @inline
-    def apply(
-        clientToken: js.UndefOr[String] = js.undefined,
-        resourceShareInvitation: js.UndefOr[ResourceShareInvitation] = js.undefined
-    ): AcceptResourceShareInvitationResponse = {
-      val __obj = js.Dynamic.literal()
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      resourceShareInvitation.foreach(__v => __obj.updateDynamic("resourceShareInvitation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AcceptResourceShareInvitationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateResourceSharePermissionRequest extends js.Object {
     var permissionArn: String
     var resourceShareArn: String
@@ -199,45 +175,15 @@ package ram {
     var replace: js.UndefOr[Boolean]
   }
 
-  object AssociateResourceSharePermissionRequest {
-    @inline
-    def apply(
-        permissionArn: String,
-        resourceShareArn: String,
-        clientToken: js.UndefOr[String] = js.undefined,
-        replace: js.UndefOr[Boolean] = js.undefined
-    ): AssociateResourceSharePermissionRequest = {
-      val __obj = js.Dynamic.literal(
-        "permissionArn"    -> permissionArn.asInstanceOf[js.Any],
-        "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any]
-      )
-
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      replace.foreach(__v => __obj.updateDynamic("replace")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AssociateResourceSharePermissionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateResourceSharePermissionResponse extends js.Object {
     var clientToken: js.UndefOr[String]
     var returnValue: js.UndefOr[Boolean]
   }
 
-  object AssociateResourceSharePermissionResponse {
-    @inline
-    def apply(
-        clientToken: js.UndefOr[String] = js.undefined,
-        returnValue: js.UndefOr[Boolean] = js.undefined
-    ): AssociateResourceSharePermissionResponse = {
-      val __obj = js.Dynamic.literal()
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      returnValue.foreach(__v => __obj.updateDynamic("returnValue")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AssociateResourceSharePermissionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateResourceShareRequest extends js.Object {
     var resourceShareArn: String
     var clientToken: js.UndefOr[String]
@@ -245,47 +191,15 @@ package ram {
     var resourceArns: js.UndefOr[ResourceArnList]
   }
 
-  object AssociateResourceShareRequest {
-    @inline
-    def apply(
-        resourceShareArn: String,
-        clientToken: js.UndefOr[String] = js.undefined,
-        principals: js.UndefOr[PrincipalArnOrIdList] = js.undefined,
-        resourceArns: js.UndefOr[ResourceArnList] = js.undefined
-    ): AssociateResourceShareRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any]
-      )
-
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      principals.foreach(__v => __obj.updateDynamic("principals")(__v.asInstanceOf[js.Any]))
-      resourceArns.foreach(__v => __obj.updateDynamic("resourceArns")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AssociateResourceShareRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateResourceShareResponse extends js.Object {
     var clientToken: js.UndefOr[String]
     var resourceShareAssociations: js.UndefOr[ResourceShareAssociationList]
   }
 
-  object AssociateResourceShareResponse {
-    @inline
-    def apply(
-        clientToken: js.UndefOr[String] = js.undefined,
-        resourceShareAssociations: js.UndefOr[ResourceShareAssociationList] = js.undefined
-    ): AssociateResourceShareResponse = {
-      val __obj = js.Dynamic.literal()
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      resourceShareAssociations.foreach(__v =>
-        __obj.updateDynamic("resourceShareAssociations")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[AssociateResourceShareResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateResourceShareRequest extends js.Object {
     var name: String
     var allowExternalPrincipals: js.UndefOr[Boolean]
@@ -296,134 +210,44 @@ package ram {
     var tags: js.UndefOr[TagList]
   }
 
-  object CreateResourceShareRequest {
-    @inline
-    def apply(
-        name: String,
-        allowExternalPrincipals: js.UndefOr[Boolean] = js.undefined,
-        clientToken: js.UndefOr[String] = js.undefined,
-        permissionArns: js.UndefOr[PermissionArnList] = js.undefined,
-        principals: js.UndefOr[PrincipalArnOrIdList] = js.undefined,
-        resourceArns: js.UndefOr[ResourceArnList] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): CreateResourceShareRequest = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      allowExternalPrincipals.foreach(__v => __obj.updateDynamic("allowExternalPrincipals")(__v.asInstanceOf[js.Any]))
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      permissionArns.foreach(__v => __obj.updateDynamic("permissionArns")(__v.asInstanceOf[js.Any]))
-      principals.foreach(__v => __obj.updateDynamic("principals")(__v.asInstanceOf[js.Any]))
-      resourceArns.foreach(__v => __obj.updateDynamic("resourceArns")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateResourceShareRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateResourceShareResponse extends js.Object {
     var clientToken: js.UndefOr[String]
     var resourceShare: js.UndefOr[ResourceShare]
   }
 
-  object CreateResourceShareResponse {
-    @inline
-    def apply(
-        clientToken: js.UndefOr[String] = js.undefined,
-        resourceShare: js.UndefOr[ResourceShare] = js.undefined
-    ): CreateResourceShareResponse = {
-      val __obj = js.Dynamic.literal()
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      resourceShare.foreach(__v => __obj.updateDynamic("resourceShare")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateResourceShareResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteResourceShareRequest extends js.Object {
     var resourceShareArn: String
     var clientToken: js.UndefOr[String]
   }
 
-  object DeleteResourceShareRequest {
-    @inline
-    def apply(
-        resourceShareArn: String,
-        clientToken: js.UndefOr[String] = js.undefined
-    ): DeleteResourceShareRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any]
-      )
-
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteResourceShareRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteResourceShareResponse extends js.Object {
     var clientToken: js.UndefOr[String]
     var returnValue: js.UndefOr[Boolean]
   }
 
-  object DeleteResourceShareResponse {
-    @inline
-    def apply(
-        clientToken: js.UndefOr[String] = js.undefined,
-        returnValue: js.UndefOr[Boolean] = js.undefined
-    ): DeleteResourceShareResponse = {
-      val __obj = js.Dynamic.literal()
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      returnValue.foreach(__v => __obj.updateDynamic("returnValue")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteResourceShareResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateResourceSharePermissionRequest extends js.Object {
     var permissionArn: String
     var resourceShareArn: String
     var clientToken: js.UndefOr[String]
   }
 
-  object DisassociateResourceSharePermissionRequest {
-    @inline
-    def apply(
-        permissionArn: String,
-        resourceShareArn: String,
-        clientToken: js.UndefOr[String] = js.undefined
-    ): DisassociateResourceSharePermissionRequest = {
-      val __obj = js.Dynamic.literal(
-        "permissionArn"    -> permissionArn.asInstanceOf[js.Any],
-        "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any]
-      )
-
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DisassociateResourceSharePermissionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateResourceSharePermissionResponse extends js.Object {
     var clientToken: js.UndefOr[String]
     var returnValue: js.UndefOr[Boolean]
   }
 
-  object DisassociateResourceSharePermissionResponse {
-    @inline
-    def apply(
-        clientToken: js.UndefOr[String] = js.undefined,
-        returnValue: js.UndefOr[Boolean] = js.undefined
-    ): DisassociateResourceSharePermissionResponse = {
-      val __obj = js.Dynamic.literal()
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      returnValue.foreach(__v => __obj.updateDynamic("returnValue")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DisassociateResourceSharePermissionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateResourceShareRequest extends js.Object {
     var resourceShareArn: String
     var clientToken: js.UndefOr[String]
@@ -431,113 +255,38 @@ package ram {
     var resourceArns: js.UndefOr[ResourceArnList]
   }
 
-  object DisassociateResourceShareRequest {
-    @inline
-    def apply(
-        resourceShareArn: String,
-        clientToken: js.UndefOr[String] = js.undefined,
-        principals: js.UndefOr[PrincipalArnOrIdList] = js.undefined,
-        resourceArns: js.UndefOr[ResourceArnList] = js.undefined
-    ): DisassociateResourceShareRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any]
-      )
-
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      principals.foreach(__v => __obj.updateDynamic("principals")(__v.asInstanceOf[js.Any]))
-      resourceArns.foreach(__v => __obj.updateDynamic("resourceArns")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DisassociateResourceShareRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateResourceShareResponse extends js.Object {
     var clientToken: js.UndefOr[String]
     var resourceShareAssociations: js.UndefOr[ResourceShareAssociationList]
   }
 
-  object DisassociateResourceShareResponse {
-    @inline
-    def apply(
-        clientToken: js.UndefOr[String] = js.undefined,
-        resourceShareAssociations: js.UndefOr[ResourceShareAssociationList] = js.undefined
-    ): DisassociateResourceShareResponse = {
-      val __obj = js.Dynamic.literal()
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      resourceShareAssociations.foreach(__v =>
-        __obj.updateDynamic("resourceShareAssociations")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[DisassociateResourceShareResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait EnableSharingWithAwsOrganizationRequest extends js.Object {}
 
-  object EnableSharingWithAwsOrganizationRequest {
-    @inline
-    def apply(
-    ): EnableSharingWithAwsOrganizationRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[EnableSharingWithAwsOrganizationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait EnableSharingWithAwsOrganizationResponse extends js.Object {
     var returnValue: js.UndefOr[Boolean]
   }
 
-  object EnableSharingWithAwsOrganizationResponse {
-    @inline
-    def apply(
-        returnValue: js.UndefOr[Boolean] = js.undefined
-    ): EnableSharingWithAwsOrganizationResponse = {
-      val __obj = js.Dynamic.literal()
-      returnValue.foreach(__v => __obj.updateDynamic("returnValue")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EnableSharingWithAwsOrganizationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetPermissionRequest extends js.Object {
     var permissionArn: String
     var permissionVersion: js.UndefOr[Int]
   }
 
-  object GetPermissionRequest {
-    @inline
-    def apply(
-        permissionArn: String,
-        permissionVersion: js.UndefOr[Int] = js.undefined
-    ): GetPermissionRequest = {
-      val __obj = js.Dynamic.literal(
-        "permissionArn" -> permissionArn.asInstanceOf[js.Any]
-      )
-
-      permissionVersion.foreach(__v => __obj.updateDynamic("permissionVersion")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetPermissionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetPermissionResponse extends js.Object {
     var permission: js.UndefOr[ResourceSharePermissionDetail]
   }
 
-  object GetPermissionResponse {
-    @inline
-    def apply(
-        permission: js.UndefOr[ResourceSharePermissionDetail] = js.undefined
-    ): GetPermissionResponse = {
-      val __obj = js.Dynamic.literal()
-      permission.foreach(__v => __obj.updateDynamic("permission")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetPermissionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetResourcePoliciesRequest extends js.Object {
     var resourceArns: ResourceArnList
     var maxResults: js.UndefOr[MaxResults]
@@ -545,45 +294,15 @@ package ram {
     var principal: js.UndefOr[String]
   }
 
-  object GetResourcePoliciesRequest {
-    @inline
-    def apply(
-        resourceArns: ResourceArnList,
-        maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined,
-        principal: js.UndefOr[String] = js.undefined
-    ): GetResourcePoliciesRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceArns" -> resourceArns.asInstanceOf[js.Any]
-      )
-
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      principal.foreach(__v => __obj.updateDynamic("principal")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetResourcePoliciesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetResourcePoliciesResponse extends js.Object {
     var nextToken: js.UndefOr[String]
     var policies: js.UndefOr[PolicyList]
   }
 
-  object GetResourcePoliciesResponse {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[String] = js.undefined,
-        policies: js.UndefOr[PolicyList] = js.undefined
-    ): GetResourcePoliciesResponse = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      policies.foreach(__v => __obj.updateDynamic("policies")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetResourcePoliciesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetResourceShareAssociationsRequest extends js.Object {
     var associationType: ResourceShareAssociationType
     var associationStatus: js.UndefOr[ResourceShareAssociationStatus]
@@ -594,53 +313,15 @@ package ram {
     var resourceShareArns: js.UndefOr[ResourceShareArnList]
   }
 
-  object GetResourceShareAssociationsRequest {
-    @inline
-    def apply(
-        associationType: ResourceShareAssociationType,
-        associationStatus: js.UndefOr[ResourceShareAssociationStatus] = js.undefined,
-        maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined,
-        principal: js.UndefOr[String] = js.undefined,
-        resourceArn: js.UndefOr[String] = js.undefined,
-        resourceShareArns: js.UndefOr[ResourceShareArnList] = js.undefined
-    ): GetResourceShareAssociationsRequest = {
-      val __obj = js.Dynamic.literal(
-        "associationType" -> associationType.asInstanceOf[js.Any]
-      )
-
-      associationStatus.foreach(__v => __obj.updateDynamic("associationStatus")(__v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      principal.foreach(__v => __obj.updateDynamic("principal")(__v.asInstanceOf[js.Any]))
-      resourceArn.foreach(__v => __obj.updateDynamic("resourceArn")(__v.asInstanceOf[js.Any]))
-      resourceShareArns.foreach(__v => __obj.updateDynamic("resourceShareArns")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetResourceShareAssociationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetResourceShareAssociationsResponse extends js.Object {
     var nextToken: js.UndefOr[String]
     var resourceShareAssociations: js.UndefOr[ResourceShareAssociationList]
   }
 
-  object GetResourceShareAssociationsResponse {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[String] = js.undefined,
-        resourceShareAssociations: js.UndefOr[ResourceShareAssociationList] = js.undefined
-    ): GetResourceShareAssociationsResponse = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      resourceShareAssociations.foreach(__v =>
-        __obj.updateDynamic("resourceShareAssociations")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[GetResourceShareAssociationsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetResourceShareInvitationsRequest extends js.Object {
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[String]
@@ -648,45 +329,15 @@ package ram {
     var resourceShareInvitationArns: js.UndefOr[ResourceShareInvitationArnList]
   }
 
-  object GetResourceShareInvitationsRequest {
-    @inline
-    def apply(
-        maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined,
-        resourceShareArns: js.UndefOr[ResourceShareArnList] = js.undefined,
-        resourceShareInvitationArns: js.UndefOr[ResourceShareInvitationArnList] = js.undefined
-    ): GetResourceShareInvitationsRequest = {
-      val __obj = js.Dynamic.literal()
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      resourceShareArns.foreach(__v => __obj.updateDynamic("resourceShareArns")(__v.asInstanceOf[js.Any]))
-      resourceShareInvitationArns.foreach(__v =>
-        __obj.updateDynamic("resourceShareInvitationArns")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[GetResourceShareInvitationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetResourceShareInvitationsResponse extends js.Object {
     var nextToken: js.UndefOr[String]
     var resourceShareInvitations: js.UndefOr[ResourceShareInvitationList]
   }
 
-  object GetResourceShareInvitationsResponse {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[String] = js.undefined,
-        resourceShareInvitations: js.UndefOr[ResourceShareInvitationList] = js.undefined
-    ): GetResourceShareInvitationsResponse = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      resourceShareInvitations.foreach(__v => __obj.updateDynamic("resourceShareInvitations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetResourceShareInvitationsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetResourceSharesRequest extends js.Object {
     var resourceOwner: ResourceOwner
     var maxResults: js.UndefOr[MaxResults]
@@ -697,135 +348,45 @@ package ram {
     var tagFilters: js.UndefOr[TagFilters]
   }
 
-  object GetResourceSharesRequest {
-    @inline
-    def apply(
-        resourceOwner: ResourceOwner,
-        maxResults: js.UndefOr[MaxResults] = js.undefined,
-        name: js.UndefOr[String] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined,
-        resourceShareArns: js.UndefOr[ResourceShareArnList] = js.undefined,
-        resourceShareStatus: js.UndefOr[ResourceShareStatus] = js.undefined,
-        tagFilters: js.UndefOr[TagFilters] = js.undefined
-    ): GetResourceSharesRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceOwner" -> resourceOwner.asInstanceOf[js.Any]
-      )
-
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      resourceShareArns.foreach(__v => __obj.updateDynamic("resourceShareArns")(__v.asInstanceOf[js.Any]))
-      resourceShareStatus.foreach(__v => __obj.updateDynamic("resourceShareStatus")(__v.asInstanceOf[js.Any]))
-      tagFilters.foreach(__v => __obj.updateDynamic("tagFilters")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetResourceSharesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetResourceSharesResponse extends js.Object {
     var nextToken: js.UndefOr[String]
     var resourceShares: js.UndefOr[ResourceShareList]
   }
 
-  object GetResourceSharesResponse {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[String] = js.undefined,
-        resourceShares: js.UndefOr[ResourceShareList] = js.undefined
-    ): GetResourceSharesResponse = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      resourceShares.foreach(__v => __obj.updateDynamic("resourceShares")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetResourceSharesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPendingInvitationResourcesRequest extends js.Object {
     var resourceShareInvitationArn: String
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[String]
   }
 
-  object ListPendingInvitationResourcesRequest {
-    @inline
-    def apply(
-        resourceShareInvitationArn: String,
-        maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
-    ): ListPendingInvitationResourcesRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceShareInvitationArn" -> resourceShareInvitationArn.asInstanceOf[js.Any]
-      )
-
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPendingInvitationResourcesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPendingInvitationResourcesResponse extends js.Object {
     var nextToken: js.UndefOr[String]
     var resources: js.UndefOr[ResourceList]
   }
 
-  object ListPendingInvitationResourcesResponse {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[String] = js.undefined,
-        resources: js.UndefOr[ResourceList] = js.undefined
-    ): ListPendingInvitationResourcesResponse = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      resources.foreach(__v => __obj.updateDynamic("resources")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPendingInvitationResourcesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPermissionsRequest extends js.Object {
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[String]
     var resourceType: js.UndefOr[String]
   }
 
-  object ListPermissionsRequest {
-    @inline
-    def apply(
-        maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined,
-        resourceType: js.UndefOr[String] = js.undefined
-    ): ListPermissionsRequest = {
-      val __obj = js.Dynamic.literal()
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPermissionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPermissionsResponse extends js.Object {
     var nextToken: js.UndefOr[String]
     var permissions: js.UndefOr[ResourceSharePermissionList]
   }
 
-  object ListPermissionsResponse {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[String] = js.undefined,
-        permissions: js.UndefOr[ResourceSharePermissionList] = js.undefined
-    ): ListPermissionsResponse = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      permissions.foreach(__v => __obj.updateDynamic("permissions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPermissionsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPrincipalsRequest extends js.Object {
     var resourceOwner: ResourceOwner
     var maxResults: js.UndefOr[MaxResults]
@@ -836,94 +397,30 @@ package ram {
     var resourceType: js.UndefOr[String]
   }
 
-  object ListPrincipalsRequest {
-    @inline
-    def apply(
-        resourceOwner: ResourceOwner,
-        maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined,
-        principals: js.UndefOr[PrincipalArnOrIdList] = js.undefined,
-        resourceArn: js.UndefOr[String] = js.undefined,
-        resourceShareArns: js.UndefOr[ResourceShareArnList] = js.undefined,
-        resourceType: js.UndefOr[String] = js.undefined
-    ): ListPrincipalsRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceOwner" -> resourceOwner.asInstanceOf[js.Any]
-      )
-
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      principals.foreach(__v => __obj.updateDynamic("principals")(__v.asInstanceOf[js.Any]))
-      resourceArn.foreach(__v => __obj.updateDynamic("resourceArn")(__v.asInstanceOf[js.Any]))
-      resourceShareArns.foreach(__v => __obj.updateDynamic("resourceShareArns")(__v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPrincipalsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPrincipalsResponse extends js.Object {
     var nextToken: js.UndefOr[String]
     var principals: js.UndefOr[PrincipalList]
   }
 
-  object ListPrincipalsResponse {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[String] = js.undefined,
-        principals: js.UndefOr[PrincipalList] = js.undefined
-    ): ListPrincipalsResponse = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      principals.foreach(__v => __obj.updateDynamic("principals")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPrincipalsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListResourceSharePermissionsRequest extends js.Object {
     var resourceShareArn: String
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[String]
   }
 
-  object ListResourceSharePermissionsRequest {
-    @inline
-    def apply(
-        resourceShareArn: String,
-        maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
-    ): ListResourceSharePermissionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any]
-      )
-
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListResourceSharePermissionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListResourceSharePermissionsResponse extends js.Object {
     var nextToken: js.UndefOr[String]
     var permissions: js.UndefOr[ResourceSharePermissionList]
   }
 
-  object ListResourceSharePermissionsResponse {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[String] = js.undefined,
-        permissions: js.UndefOr[ResourceSharePermissionList] = js.undefined
-    ): ListResourceSharePermissionsResponse = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      permissions.foreach(__v => __obj.updateDynamic("permissions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListResourceSharePermissionsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListResourcesRequest extends js.Object {
     var resourceOwner: ResourceOwner
     var maxResults: js.UndefOr[MaxResults]
@@ -934,54 +431,18 @@ package ram {
     var resourceType: js.UndefOr[String]
   }
 
-  object ListResourcesRequest {
-    @inline
-    def apply(
-        resourceOwner: ResourceOwner,
-        maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined,
-        principal: js.UndefOr[String] = js.undefined,
-        resourceArns: js.UndefOr[ResourceArnList] = js.undefined,
-        resourceShareArns: js.UndefOr[ResourceShareArnList] = js.undefined,
-        resourceType: js.UndefOr[String] = js.undefined
-    ): ListResourcesRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceOwner" -> resourceOwner.asInstanceOf[js.Any]
-      )
-
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      principal.foreach(__v => __obj.updateDynamic("principal")(__v.asInstanceOf[js.Any]))
-      resourceArns.foreach(__v => __obj.updateDynamic("resourceArns")(__v.asInstanceOf[js.Any]))
-      resourceShareArns.foreach(__v => __obj.updateDynamic("resourceShareArns")(__v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListResourcesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListResourcesResponse extends js.Object {
     var nextToken: js.UndefOr[String]
     var resources: js.UndefOr[ResourceList]
-  }
-
-  object ListResourcesResponse {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[String] = js.undefined,
-        resources: js.UndefOr[ResourceList] = js.undefined
-    ): ListResourcesResponse = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      resources.foreach(__v => __obj.updateDynamic("resources")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListResourcesResponse]
-    }
   }
 
   /**
     * Describes a principal for use with AWS Resource Access Manager.
     */
   @js.native
+  @Factory
   trait Principal extends js.Object {
     var creationTime: js.UndefOr[DateTime]
     var external: js.UndefOr[Boolean]
@@ -990,103 +451,37 @@ package ram {
     var resourceShareArn: js.UndefOr[String]
   }
 
-  object Principal {
-    @inline
-    def apply(
-        creationTime: js.UndefOr[DateTime] = js.undefined,
-        external: js.UndefOr[Boolean] = js.undefined,
-        id: js.UndefOr[String] = js.undefined,
-        lastUpdatedTime: js.UndefOr[DateTime] = js.undefined,
-        resourceShareArn: js.UndefOr[String] = js.undefined
-    ): Principal = {
-      val __obj = js.Dynamic.literal()
-      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
-      external.foreach(__v => __obj.updateDynamic("external")(__v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
-      lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
-      resourceShareArn.foreach(__v => __obj.updateDynamic("resourceShareArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Principal]
-    }
-  }
-
   @js.native
+  @Factory
   trait PromoteResourceShareCreatedFromPolicyRequest extends js.Object {
     var resourceShareArn: String
   }
 
-  object PromoteResourceShareCreatedFromPolicyRequest {
-    @inline
-    def apply(
-        resourceShareArn: String
-    ): PromoteResourceShareCreatedFromPolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PromoteResourceShareCreatedFromPolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PromoteResourceShareCreatedFromPolicyResponse extends js.Object {
     var returnValue: js.UndefOr[Boolean]
   }
 
-  object PromoteResourceShareCreatedFromPolicyResponse {
-    @inline
-    def apply(
-        returnValue: js.UndefOr[Boolean] = js.undefined
-    ): PromoteResourceShareCreatedFromPolicyResponse = {
-      val __obj = js.Dynamic.literal()
-      returnValue.foreach(__v => __obj.updateDynamic("returnValue")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PromoteResourceShareCreatedFromPolicyResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait RejectResourceShareInvitationRequest extends js.Object {
     var resourceShareInvitationArn: String
     var clientToken: js.UndefOr[String]
   }
 
-  object RejectResourceShareInvitationRequest {
-    @inline
-    def apply(
-        resourceShareInvitationArn: String,
-        clientToken: js.UndefOr[String] = js.undefined
-    ): RejectResourceShareInvitationRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceShareInvitationArn" -> resourceShareInvitationArn.asInstanceOf[js.Any]
-      )
-
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RejectResourceShareInvitationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait RejectResourceShareInvitationResponse extends js.Object {
     var clientToken: js.UndefOr[String]
     var resourceShareInvitation: js.UndefOr[ResourceShareInvitation]
-  }
-
-  object RejectResourceShareInvitationResponse {
-    @inline
-    def apply(
-        clientToken: js.UndefOr[String] = js.undefined,
-        resourceShareInvitation: js.UndefOr[ResourceShareInvitation] = js.undefined
-    ): RejectResourceShareInvitationResponse = {
-      val __obj = js.Dynamic.literal()
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      resourceShareInvitation.foreach(__v => __obj.updateDynamic("resourceShareInvitation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RejectResourceShareInvitationResponse]
-    }
   }
 
   /**
     * Describes a resource associated with a resource share.
     */
   @js.native
+  @Factory
   trait Resource extends js.Object {
     var arn: js.UndefOr[String]
     var creationTime: js.UndefOr[DateTime]
@@ -1096,31 +491,6 @@ package ram {
     var status: js.UndefOr[ResourceStatus]
     var statusMessage: js.UndefOr[String]
     var `type`: js.UndefOr[String]
-  }
-
-  object Resource {
-    @inline
-    def apply(
-        arn: js.UndefOr[String] = js.undefined,
-        creationTime: js.UndefOr[DateTime] = js.undefined,
-        lastUpdatedTime: js.UndefOr[DateTime] = js.undefined,
-        resourceGroupArn: js.UndefOr[String] = js.undefined,
-        resourceShareArn: js.UndefOr[String] = js.undefined,
-        status: js.UndefOr[ResourceStatus] = js.undefined,
-        statusMessage: js.UndefOr[String] = js.undefined,
-        `type`: js.UndefOr[String] = js.undefined
-    ): Resource = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
-      lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
-      resourceGroupArn.foreach(__v => __obj.updateDynamic("resourceGroupArn")(__v.asInstanceOf[js.Any]))
-      resourceShareArn.foreach(__v => __obj.updateDynamic("resourceShareArn")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      statusMessage.foreach(__v => __obj.updateDynamic("statusMessage")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Resource]
-    }
   }
 
   @js.native
@@ -1136,6 +506,7 @@ package ram {
     * Describes a resource share.
     */
   @js.native
+  @Factory
   trait ResourceShare extends js.Object {
     var allowExternalPrincipals: js.UndefOr[Boolean]
     var creationTime: js.UndefOr[DateTime]
@@ -1149,39 +520,11 @@ package ram {
     var tags: js.UndefOr[TagList]
   }
 
-  object ResourceShare {
-    @inline
-    def apply(
-        allowExternalPrincipals: js.UndefOr[Boolean] = js.undefined,
-        creationTime: js.UndefOr[DateTime] = js.undefined,
-        featureSet: js.UndefOr[ResourceShareFeatureSet] = js.undefined,
-        lastUpdatedTime: js.UndefOr[DateTime] = js.undefined,
-        name: js.UndefOr[String] = js.undefined,
-        owningAccountId: js.UndefOr[String] = js.undefined,
-        resourceShareArn: js.UndefOr[String] = js.undefined,
-        status: js.UndefOr[ResourceShareStatus] = js.undefined,
-        statusMessage: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
-    ): ResourceShare = {
-      val __obj = js.Dynamic.literal()
-      allowExternalPrincipals.foreach(__v => __obj.updateDynamic("allowExternalPrincipals")(__v.asInstanceOf[js.Any]))
-      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
-      featureSet.foreach(__v => __obj.updateDynamic("featureSet")(__v.asInstanceOf[js.Any]))
-      lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      owningAccountId.foreach(__v => __obj.updateDynamic("owningAccountId")(__v.asInstanceOf[js.Any]))
-      resourceShareArn.foreach(__v => __obj.updateDynamic("resourceShareArn")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      statusMessage.foreach(__v => __obj.updateDynamic("statusMessage")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ResourceShare]
-    }
-  }
-
   /**
     * Describes an association with a resource share.
     */
   @js.native
+  @Factory
   trait ResourceShareAssociation extends js.Object {
     var associatedEntity: js.UndefOr[String]
     var associationType: js.UndefOr[ResourceShareAssociationType]
@@ -1192,33 +535,6 @@ package ram {
     var resourceShareName: js.UndefOr[String]
     var status: js.UndefOr[ResourceShareAssociationStatus]
     var statusMessage: js.UndefOr[String]
-  }
-
-  object ResourceShareAssociation {
-    @inline
-    def apply(
-        associatedEntity: js.UndefOr[String] = js.undefined,
-        associationType: js.UndefOr[ResourceShareAssociationType] = js.undefined,
-        creationTime: js.UndefOr[DateTime] = js.undefined,
-        external: js.UndefOr[Boolean] = js.undefined,
-        lastUpdatedTime: js.UndefOr[DateTime] = js.undefined,
-        resourceShareArn: js.UndefOr[String] = js.undefined,
-        resourceShareName: js.UndefOr[String] = js.undefined,
-        status: js.UndefOr[ResourceShareAssociationStatus] = js.undefined,
-        statusMessage: js.UndefOr[String] = js.undefined
-    ): ResourceShareAssociation = {
-      val __obj = js.Dynamic.literal()
-      associatedEntity.foreach(__v => __obj.updateDynamic("associatedEntity")(__v.asInstanceOf[js.Any]))
-      associationType.foreach(__v => __obj.updateDynamic("associationType")(__v.asInstanceOf[js.Any]))
-      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
-      external.foreach(__v => __obj.updateDynamic("external")(__v.asInstanceOf[js.Any]))
-      lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
-      resourceShareArn.foreach(__v => __obj.updateDynamic("resourceShareArn")(__v.asInstanceOf[js.Any]))
-      resourceShareName.foreach(__v => __obj.updateDynamic("resourceShareName")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      statusMessage.foreach(__v => __obj.updateDynamic("statusMessage")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ResourceShareAssociation]
-    }
   }
 
   @js.native
@@ -1256,6 +572,7 @@ package ram {
     * Describes an invitation to join a resource share.
     */
   @js.native
+  @Factory
   trait ResourceShareInvitation extends js.Object {
     var invitationTimestamp: js.UndefOr[DateTime]
     var receiverAccountId: js.UndefOr[String]
@@ -1265,35 +582,6 @@ package ram {
     var resourceShareName: js.UndefOr[String]
     var senderAccountId: js.UndefOr[String]
     var status: js.UndefOr[ResourceShareInvitationStatus]
-  }
-
-  object ResourceShareInvitation {
-    @inline
-    def apply(
-        invitationTimestamp: js.UndefOr[DateTime] = js.undefined,
-        receiverAccountId: js.UndefOr[String] = js.undefined,
-        resourceShareArn: js.UndefOr[String] = js.undefined,
-        resourceShareAssociations: js.UndefOr[ResourceShareAssociationList] = js.undefined,
-        resourceShareInvitationArn: js.UndefOr[String] = js.undefined,
-        resourceShareName: js.UndefOr[String] = js.undefined,
-        senderAccountId: js.UndefOr[String] = js.undefined,
-        status: js.UndefOr[ResourceShareInvitationStatus] = js.undefined
-    ): ResourceShareInvitation = {
-      val __obj = js.Dynamic.literal()
-      invitationTimestamp.foreach(__v => __obj.updateDynamic("invitationTimestamp")(__v.asInstanceOf[js.Any]))
-      receiverAccountId.foreach(__v => __obj.updateDynamic("receiverAccountId")(__v.asInstanceOf[js.Any]))
-      resourceShareArn.foreach(__v => __obj.updateDynamic("resourceShareArn")(__v.asInstanceOf[js.Any]))
-      resourceShareAssociations.foreach(__v =>
-        __obj.updateDynamic("resourceShareAssociations")(__v.asInstanceOf[js.Any])
-      )
-      resourceShareInvitationArn.foreach(__v =>
-        __obj.updateDynamic("resourceShareInvitationArn")(__v.asInstanceOf[js.Any])
-      )
-      resourceShareName.foreach(__v => __obj.updateDynamic("resourceShareName")(__v.asInstanceOf[js.Any]))
-      senderAccountId.foreach(__v => __obj.updateDynamic("senderAccountId")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ResourceShareInvitation]
-    }
   }
 
   @js.native
@@ -1311,6 +599,7 @@ package ram {
     * Information about an AWS RAM permission.
     */
   @js.native
+  @Factory
   trait ResourceSharePermissionDetail extends js.Object {
     var arn: js.UndefOr[String]
     var creationTime: js.UndefOr[DateTime]
@@ -1322,35 +611,11 @@ package ram {
     var version: js.UndefOr[String]
   }
 
-  object ResourceSharePermissionDetail {
-    @inline
-    def apply(
-        arn: js.UndefOr[String] = js.undefined,
-        creationTime: js.UndefOr[DateTime] = js.undefined,
-        defaultVersion: js.UndefOr[Boolean] = js.undefined,
-        lastUpdatedTime: js.UndefOr[DateTime] = js.undefined,
-        name: js.UndefOr[String] = js.undefined,
-        permission: js.UndefOr[String] = js.undefined,
-        resourceType: js.UndefOr[String] = js.undefined,
-        version: js.UndefOr[String] = js.undefined
-    ): ResourceSharePermissionDetail = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
-      defaultVersion.foreach(__v => __obj.updateDynamic("defaultVersion")(__v.asInstanceOf[js.Any]))
-      lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      permission.foreach(__v => __obj.updateDynamic("permission")(__v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ResourceSharePermissionDetail]
-    }
-  }
-
   /**
     * Information about a permission that is associated with a resource share.
     */
   @js.native
+  @Factory
   trait ResourceSharePermissionSummary extends js.Object {
     var arn: js.UndefOr[String]
     var creationTime: js.UndefOr[DateTime]
@@ -1360,31 +625,6 @@ package ram {
     var resourceType: js.UndefOr[String]
     var status: js.UndefOr[String]
     var version: js.UndefOr[String]
-  }
-
-  object ResourceSharePermissionSummary {
-    @inline
-    def apply(
-        arn: js.UndefOr[String] = js.undefined,
-        creationTime: js.UndefOr[DateTime] = js.undefined,
-        defaultVersion: js.UndefOr[Boolean] = js.undefined,
-        lastUpdatedTime: js.UndefOr[DateTime] = js.undefined,
-        name: js.UndefOr[String] = js.undefined,
-        resourceType: js.UndefOr[String] = js.undefined,
-        status: js.UndefOr[String] = js.undefined,
-        version: js.UndefOr[String] = js.undefined
-    ): ResourceSharePermissionSummary = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
-      defaultVersion.foreach(__v => __obj.updateDynamic("defaultVersion")(__v.asInstanceOf[js.Any]))
-      lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ResourceSharePermissionSummary]
-    }
   }
 
   @js.native
@@ -1416,115 +656,46 @@ package ram {
     * Information about a tag.
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var key: js.UndefOr[TagKey]
     var value: js.UndefOr[TagValue]
-  }
-
-  object Tag {
-    @inline
-    def apply(
-        key: js.UndefOr[TagKey] = js.undefined,
-        value: js.UndefOr[TagValue] = js.undefined
-    ): Tag = {
-      val __obj = js.Dynamic.literal()
-      key.foreach(__v => __obj.updateDynamic("key")(__v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Tag]
-    }
   }
 
   /**
     * Used to filter information based on tags.
     */
   @js.native
+  @Factory
   trait TagFilter extends js.Object {
     var tagKey: js.UndefOr[TagKey]
     var tagValues: js.UndefOr[TagValueList]
   }
 
-  object TagFilter {
-    @inline
-    def apply(
-        tagKey: js.UndefOr[TagKey] = js.undefined,
-        tagValues: js.UndefOr[TagValueList] = js.undefined
-    ): TagFilter = {
-      val __obj = js.Dynamic.literal()
-      tagKey.foreach(__v => __obj.updateDynamic("tagKey")(__v.asInstanceOf[js.Any]))
-      tagValues.foreach(__v => __obj.updateDynamic("tagValues")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TagFilter]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceRequest extends js.Object {
     var resourceShareArn: String
     var tags: TagList
   }
 
-  object TagResourceRequest {
-    @inline
-    def apply(
-        resourceShareArn: String,
-        tags: TagList
-    ): TagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any],
-        "tags"             -> tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceResponse extends js.Object {}
 
-  object TagResourceResponse {
-    @inline
-    def apply(
-    ): TagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[TagResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceRequest extends js.Object {
     var resourceShareArn: String
     var tagKeys: TagKeyList
   }
 
-  object UntagResourceRequest {
-    @inline
-    def apply(
-        resourceShareArn: String,
-        tagKeys: TagKeyList
-    ): UntagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any],
-        "tagKeys"          -> tagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceResponse extends js.Object {}
 
-  object UntagResourceResponse {
-    @inline
-    def apply(
-    ): UntagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UntagResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateResourceShareRequest extends js.Object {
     var resourceShareArn: String
     var allowExternalPrincipals: js.UndefOr[Boolean]
@@ -1532,41 +703,10 @@ package ram {
     var name: js.UndefOr[String]
   }
 
-  object UpdateResourceShareRequest {
-    @inline
-    def apply(
-        resourceShareArn: String,
-        allowExternalPrincipals: js.UndefOr[Boolean] = js.undefined,
-        clientToken: js.UndefOr[String] = js.undefined,
-        name: js.UndefOr[String] = js.undefined
-    ): UpdateResourceShareRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any]
-      )
-
-      allowExternalPrincipals.foreach(__v => __obj.updateDynamic("allowExternalPrincipals")(__v.asInstanceOf[js.Any]))
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateResourceShareRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateResourceShareResponse extends js.Object {
     var clientToken: js.UndefOr[String]
     var resourceShare: js.UndefOr[ResourceShare]
-  }
-
-  object UpdateResourceShareResponse {
-    @inline
-    def apply(
-        clientToken: js.UndefOr[String] = js.undefined,
-        resourceShare: js.UndefOr[ResourceShare] = js.undefined
-    ): UpdateResourceShareResponse = {
-      val __obj = js.Dynamic.literal()
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      resourceShare.foreach(__v => __obj.updateDynamic("resourceShare")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateResourceShareResponse]
-    }
   }
 }

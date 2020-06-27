@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object glacier {
   type AccessControlPolicyList = js.Array[Grant]
@@ -151,51 +152,21 @@ package glacier {
     *  For information about the underlying REST API, see [[https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html|Abort Multipart Upload]]. For conceptual information, see [[https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html|Working with Archives in Amazon S3 Glacier]].
     */
   @js.native
+  @Factory
   trait AbortMultipartUploadInput extends js.Object {
     var accountId: String
     var uploadId: String
     var vaultName: String
   }
 
-  object AbortMultipartUploadInput {
-    @inline
-    def apply(
-        accountId: String,
-        uploadId: String,
-        vaultName: String
-    ): AbortMultipartUploadInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "uploadId"  -> uploadId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AbortMultipartUploadInput]
-    }
-  }
-
   /**
     * The input values for <code>AbortVaultLock</code>.
     */
   @js.native
+  @Factory
   trait AbortVaultLockInput extends js.Object {
     var accountId: String
     var vaultName: String
-  }
-
-  object AbortVaultLockInput {
-    @inline
-    def apply(
-        accountId: String,
-        vaultName: String
-    ): AbortVaultLockInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AbortVaultLockInput]
-    }
   }
 
   @js.native
@@ -212,27 +183,11 @@ package glacier {
     * The input values for <code>AddTagsToVault</code>.
     */
   @js.native
+  @Factory
   trait AddTagsToVaultInput extends js.Object {
     var accountId: String
     var vaultName: String
     var Tags: js.UndefOr[TagMap]
-  }
-
-  object AddTagsToVaultInput {
-    @inline
-    def apply(
-        accountId: String,
-        vaultName: String,
-        Tags: js.UndefOr[TagMap] = js.undefined
-    ): AddTagsToVaultInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AddTagsToVaultInput]
-    }
   }
 
   /**
@@ -240,31 +195,18 @@ package glacier {
     *  For information about the underlying REST API, see [[https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html|Upload Archive]]. For conceptual information, see [[https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html|Working with Archives in Amazon S3 Glacier]].
     */
   @js.native
+  @Factory
   trait ArchiveCreationOutput extends js.Object {
     var archiveId: js.UndefOr[String]
     var checksum: js.UndefOr[String]
     var location: js.UndefOr[String]
   }
 
-  object ArchiveCreationOutput {
-    @inline
-    def apply(
-        archiveId: js.UndefOr[String] = js.undefined,
-        checksum: js.UndefOr[String] = js.undefined,
-        location: js.UndefOr[String] = js.undefined
-    ): ArchiveCreationOutput = {
-      val __obj = js.Dynamic.literal()
-      archiveId.foreach(__v => __obj.updateDynamic("archiveId")(__v.asInstanceOf[js.Any]))
-      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ArchiveCreationOutput]
-    }
-  }
-
   /**
     * Contains information about the comma-separated value (CSV) file to select from.
     */
   @js.native
+  @Factory
   trait CSVInput extends js.Object {
     var Comments: js.UndefOr[String]
     var FieldDelimiter: js.UndefOr[String]
@@ -274,56 +216,17 @@ package glacier {
     var RecordDelimiter: js.UndefOr[String]
   }
 
-  object CSVInput {
-    @inline
-    def apply(
-        Comments: js.UndefOr[String] = js.undefined,
-        FieldDelimiter: js.UndefOr[String] = js.undefined,
-        FileHeaderInfo: js.UndefOr[FileHeaderInfo] = js.undefined,
-        QuoteCharacter: js.UndefOr[String] = js.undefined,
-        QuoteEscapeCharacter: js.UndefOr[String] = js.undefined,
-        RecordDelimiter: js.UndefOr[String] = js.undefined
-    ): CSVInput = {
-      val __obj = js.Dynamic.literal()
-      Comments.foreach(__v => __obj.updateDynamic("Comments")(__v.asInstanceOf[js.Any]))
-      FieldDelimiter.foreach(__v => __obj.updateDynamic("FieldDelimiter")(__v.asInstanceOf[js.Any]))
-      FileHeaderInfo.foreach(__v => __obj.updateDynamic("FileHeaderInfo")(__v.asInstanceOf[js.Any]))
-      QuoteCharacter.foreach(__v => __obj.updateDynamic("QuoteCharacter")(__v.asInstanceOf[js.Any]))
-      QuoteEscapeCharacter.foreach(__v => __obj.updateDynamic("QuoteEscapeCharacter")(__v.asInstanceOf[js.Any]))
-      RecordDelimiter.foreach(__v => __obj.updateDynamic("RecordDelimiter")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CSVInput]
-    }
-  }
-
   /**
     * Contains information about the comma-separated value (CSV) file that the job results are stored in.
     */
   @js.native
+  @Factory
   trait CSVOutput extends js.Object {
     var FieldDelimiter: js.UndefOr[String]
     var QuoteCharacter: js.UndefOr[String]
     var QuoteEscapeCharacter: js.UndefOr[String]
     var QuoteFields: js.UndefOr[QuoteFields]
     var RecordDelimiter: js.UndefOr[String]
-  }
-
-  object CSVOutput {
-    @inline
-    def apply(
-        FieldDelimiter: js.UndefOr[String] = js.undefined,
-        QuoteCharacter: js.UndefOr[String] = js.undefined,
-        QuoteEscapeCharacter: js.UndefOr[String] = js.undefined,
-        QuoteFields: js.UndefOr[QuoteFields] = js.undefined,
-        RecordDelimiter: js.UndefOr[String] = js.undefined
-    ): CSVOutput = {
-      val __obj = js.Dynamic.literal()
-      FieldDelimiter.foreach(__v => __obj.updateDynamic("FieldDelimiter")(__v.asInstanceOf[js.Any]))
-      QuoteCharacter.foreach(__v => __obj.updateDynamic("QuoteCharacter")(__v.asInstanceOf[js.Any]))
-      QuoteEscapeCharacter.foreach(__v => __obj.updateDynamic("QuoteEscapeCharacter")(__v.asInstanceOf[js.Any]))
-      QuoteFields.foreach(__v => __obj.updateDynamic("QuoteFields")(__v.asInstanceOf[js.Any]))
-      RecordDelimiter.foreach(__v => __obj.updateDynamic("RecordDelimiter")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CSVOutput]
-    }
   }
 
   @js.native
@@ -354,6 +257,7 @@ package glacier {
     * Provides options to complete a multipart upload operation. This informs Amazon Glacier that all the archive parts have been uploaded and Amazon S3 Glacier (Glacier) can now assemble the archive from the uploaded parts. After assembling and saving the archive to the vault, Glacier returns the URI path of the newly created archive resource.
     */
   @js.native
+  @Factory
   trait CompleteMultipartUploadInput extends js.Object {
     var accountId: String
     var uploadId: String
@@ -362,292 +266,122 @@ package glacier {
     var checksum: js.UndefOr[String]
   }
 
-  object CompleteMultipartUploadInput {
-    @inline
-    def apply(
-        accountId: String,
-        uploadId: String,
-        vaultName: String,
-        archiveSize: js.UndefOr[String] = js.undefined,
-        checksum: js.UndefOr[String] = js.undefined
-    ): CompleteMultipartUploadInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "uploadId"  -> uploadId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      archiveSize.foreach(__v => __obj.updateDynamic("archiveSize")(__v.asInstanceOf[js.Any]))
-      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CompleteMultipartUploadInput]
-    }
-  }
-
   /**
     * The input values for <code>CompleteVaultLock</code>.
     */
   @js.native
+  @Factory
   trait CompleteVaultLockInput extends js.Object {
     var accountId: String
     var lockId: String
     var vaultName: String
   }
 
-  object CompleteVaultLockInput {
-    @inline
-    def apply(
-        accountId: String,
-        lockId: String,
-        vaultName: String
-    ): CompleteVaultLockInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "lockId"    -> lockId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CompleteVaultLockInput]
-    }
-  }
-
   /**
     * Provides options to create a vault.
     */
   @js.native
+  @Factory
   trait CreateVaultInput extends js.Object {
     var accountId: String
     var vaultName: String
-  }
-
-  object CreateVaultInput {
-    @inline
-    def apply(
-        accountId: String,
-        vaultName: String
-    ): CreateVaultInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateVaultInput]
-    }
   }
 
   /**
     * Contains the Amazon S3 Glacier response to your request.
     */
   @js.native
+  @Factory
   trait CreateVaultOutput extends js.Object {
     var location: js.UndefOr[String]
-  }
-
-  object CreateVaultOutput {
-    @inline
-    def apply(
-        location: js.UndefOr[String] = js.undefined
-    ): CreateVaultOutput = {
-      val __obj = js.Dynamic.literal()
-      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateVaultOutput]
-    }
   }
 
   /**
     * Data retrieval policy.
     */
   @js.native
+  @Factory
   trait DataRetrievalPolicy extends js.Object {
     var Rules: js.UndefOr[DataRetrievalRulesList]
-  }
-
-  object DataRetrievalPolicy {
-    @inline
-    def apply(
-        Rules: js.UndefOr[DataRetrievalRulesList] = js.undefined
-    ): DataRetrievalPolicy = {
-      val __obj = js.Dynamic.literal()
-      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DataRetrievalPolicy]
-    }
   }
 
   /**
     * Data retrieval policy rule.
     */
   @js.native
+  @Factory
   trait DataRetrievalRule extends js.Object {
     var BytesPerHour: js.UndefOr[NullableLong]
     var Strategy: js.UndefOr[String]
-  }
-
-  object DataRetrievalRule {
-    @inline
-    def apply(
-        BytesPerHour: js.UndefOr[NullableLong] = js.undefined,
-        Strategy: js.UndefOr[String] = js.undefined
-    ): DataRetrievalRule = {
-      val __obj = js.Dynamic.literal()
-      BytesPerHour.foreach(__v => __obj.updateDynamic("BytesPerHour")(__v.asInstanceOf[js.Any]))
-      Strategy.foreach(__v => __obj.updateDynamic("Strategy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DataRetrievalRule]
-    }
   }
 
   /**
     * Provides options for deleting an archive from an Amazon S3 Glacier vault.
     */
   @js.native
+  @Factory
   trait DeleteArchiveInput extends js.Object {
     var accountId: String
     var archiveId: String
     var vaultName: String
   }
 
-  object DeleteArchiveInput {
-    @inline
-    def apply(
-        accountId: String,
-        archiveId: String,
-        vaultName: String
-    ): DeleteArchiveInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "archiveId" -> archiveId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteArchiveInput]
-    }
-  }
-
   /**
     * DeleteVaultAccessPolicy input.
     */
   @js.native
+  @Factory
   trait DeleteVaultAccessPolicyInput extends js.Object {
     var accountId: String
     var vaultName: String
-  }
-
-  object DeleteVaultAccessPolicyInput {
-    @inline
-    def apply(
-        accountId: String,
-        vaultName: String
-    ): DeleteVaultAccessPolicyInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteVaultAccessPolicyInput]
-    }
   }
 
   /**
     * Provides options for deleting a vault from Amazon S3 Glacier.
     */
   @js.native
+  @Factory
   trait DeleteVaultInput extends js.Object {
     var accountId: String
     var vaultName: String
-  }
-
-  object DeleteVaultInput {
-    @inline
-    def apply(
-        accountId: String,
-        vaultName: String
-    ): DeleteVaultInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteVaultInput]
-    }
   }
 
   /**
     * Provides options for deleting a vault notification configuration from an Amazon Glacier vault.
     */
   @js.native
+  @Factory
   trait DeleteVaultNotificationsInput extends js.Object {
     var accountId: String
     var vaultName: String
-  }
-
-  object DeleteVaultNotificationsInput {
-    @inline
-    def apply(
-        accountId: String,
-        vaultName: String
-    ): DeleteVaultNotificationsInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteVaultNotificationsInput]
-    }
   }
 
   /**
     * Provides options for retrieving a job description.
     */
   @js.native
+  @Factory
   trait DescribeJobInput extends js.Object {
     var accountId: String
     var jobId: String
     var vaultName: String
   }
 
-  object DescribeJobInput {
-    @inline
-    def apply(
-        accountId: String,
-        jobId: String,
-        vaultName: String
-    ): DescribeJobInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "jobId"     -> jobId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeJobInput]
-    }
-  }
-
   /**
     * Provides options for retrieving metadata for a specific vault in Amazon Glacier.
     */
   @js.native
+  @Factory
   trait DescribeVaultInput extends js.Object {
     var accountId: String
     var vaultName: String
-  }
-
-  object DescribeVaultInput {
-    @inline
-    def apply(
-        accountId: String,
-        vaultName: String
-    ): DescribeVaultInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeVaultInput]
-    }
   }
 
   /**
     * Contains the Amazon S3 Glacier response to your request.
     */
   @js.native
+  @Factory
   trait DescribeVaultOutput extends js.Object {
     var CreationDate: js.UndefOr[String]
     var LastInventoryDate: js.UndefOr[String]
@@ -657,50 +391,15 @@ package glacier {
     var VaultName: js.UndefOr[String]
   }
 
-  object DescribeVaultOutput {
-    @inline
-    def apply(
-        CreationDate: js.UndefOr[String] = js.undefined,
-        LastInventoryDate: js.UndefOr[String] = js.undefined,
-        NumberOfArchives: js.UndefOr[Double] = js.undefined,
-        SizeInBytes: js.UndefOr[Double] = js.undefined,
-        VaultARN: js.UndefOr[String] = js.undefined,
-        VaultName: js.UndefOr[String] = js.undefined
-    ): DescribeVaultOutput = {
-      val __obj = js.Dynamic.literal()
-      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      LastInventoryDate.foreach(__v => __obj.updateDynamic("LastInventoryDate")(__v.asInstanceOf[js.Any]))
-      NumberOfArchives.foreach(__v => __obj.updateDynamic("NumberOfArchives")(__v.asInstanceOf[js.Any]))
-      SizeInBytes.foreach(__v => __obj.updateDynamic("SizeInBytes")(__v.asInstanceOf[js.Any]))
-      VaultARN.foreach(__v => __obj.updateDynamic("VaultARN")(__v.asInstanceOf[js.Any]))
-      VaultName.foreach(__v => __obj.updateDynamic("VaultName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeVaultOutput]
-    }
-  }
-
   /**
     * Contains information about the encryption used to store the job results in Amazon S3.
     */
   @js.native
+  @Factory
   trait Encryption extends js.Object {
     var EncryptionType: js.UndefOr[EncryptionType]
     var KMSContext: js.UndefOr[String]
     var KMSKeyId: js.UndefOr[String]
-  }
-
-  object Encryption {
-    @inline
-    def apply(
-        EncryptionType: js.UndefOr[EncryptionType] = js.undefined,
-        KMSContext: js.UndefOr[String] = js.undefined,
-        KMSKeyId: js.UndefOr[String] = js.undefined
-    ): Encryption = {
-      val __obj = js.Dynamic.literal()
-      EncryptionType.foreach(__v => __obj.updateDynamic("EncryptionType")(__v.asInstanceOf[js.Any]))
-      KMSContext.foreach(__v => __obj.updateDynamic("KMSContext")(__v.asInstanceOf[js.Any]))
-      KMSKeyId.foreach(__v => __obj.updateDynamic("KMSKeyId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Encryption]
-    }
   }
 
   @js.native
@@ -734,46 +433,25 @@ package glacier {
     * Input for GetDataRetrievalPolicy.
     */
   @js.native
+  @Factory
   trait GetDataRetrievalPolicyInput extends js.Object {
     var accountId: String
-  }
-
-  object GetDataRetrievalPolicyInput {
-    @inline
-    def apply(
-        accountId: String
-    ): GetDataRetrievalPolicyInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetDataRetrievalPolicyInput]
-    }
   }
 
   /**
     * Contains the Amazon S3 Glacier response to the <code>GetDataRetrievalPolicy</code> request.
     */
   @js.native
+  @Factory
   trait GetDataRetrievalPolicyOutput extends js.Object {
     var Policy: js.UndefOr[DataRetrievalPolicy]
-  }
-
-  object GetDataRetrievalPolicyOutput {
-    @inline
-    def apply(
-        Policy: js.UndefOr[DataRetrievalPolicy] = js.undefined
-    ): GetDataRetrievalPolicyOutput = {
-      val __obj = js.Dynamic.literal()
-      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDataRetrievalPolicyOutput]
-    }
   }
 
   /**
     * Provides options for downloading output of an Amazon S3 Glacier job.
     */
   @js.native
+  @Factory
   trait GetJobOutputInput extends js.Object {
     var accountId: String
     var jobId: String
@@ -781,29 +459,11 @@ package glacier {
     var range: js.UndefOr[String]
   }
 
-  object GetJobOutputInput {
-    @inline
-    def apply(
-        accountId: String,
-        jobId: String,
-        vaultName: String,
-        range: js.UndefOr[String] = js.undefined
-    ): GetJobOutputInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "jobId"     -> jobId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      range.foreach(__v => __obj.updateDynamic("range")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetJobOutputInput]
-    }
-  }
-
   /**
     * Contains the Amazon S3 Glacier response to your request.
     */
   @js.native
+  @Factory
   trait GetJobOutputOutput extends js.Object {
     var acceptRanges: js.UndefOr[String]
     var archiveDescription: js.UndefOr[String]
@@ -814,100 +474,40 @@ package glacier {
     var status: js.UndefOr[httpstatus]
   }
 
-  object GetJobOutputOutput {
-    @inline
-    def apply(
-        acceptRanges: js.UndefOr[String] = js.undefined,
-        archiveDescription: js.UndefOr[String] = js.undefined,
-        body: js.UndefOr[Stream] = js.undefined,
-        checksum: js.UndefOr[String] = js.undefined,
-        contentRange: js.UndefOr[String] = js.undefined,
-        contentType: js.UndefOr[String] = js.undefined,
-        status: js.UndefOr[httpstatus] = js.undefined
-    ): GetJobOutputOutput = {
-      val __obj = js.Dynamic.literal()
-      acceptRanges.foreach(__v => __obj.updateDynamic("acceptRanges")(__v.asInstanceOf[js.Any]))
-      archiveDescription.foreach(__v => __obj.updateDynamic("archiveDescription")(__v.asInstanceOf[js.Any]))
-      body.foreach(__v => __obj.updateDynamic("body")(__v.asInstanceOf[js.Any]))
-      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
-      contentRange.foreach(__v => __obj.updateDynamic("contentRange")(__v.asInstanceOf[js.Any]))
-      contentType.foreach(__v => __obj.updateDynamic("contentType")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetJobOutputOutput]
-    }
-  }
-
   /**
     * Input for GetVaultAccessPolicy.
     */
   @js.native
+  @Factory
   trait GetVaultAccessPolicyInput extends js.Object {
     var accountId: String
     var vaultName: String
-  }
-
-  object GetVaultAccessPolicyInput {
-    @inline
-    def apply(
-        accountId: String,
-        vaultName: String
-    ): GetVaultAccessPolicyInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetVaultAccessPolicyInput]
-    }
   }
 
   /**
     * Output for GetVaultAccessPolicy.
     */
   @js.native
+  @Factory
   trait GetVaultAccessPolicyOutput extends js.Object {
     var policy: js.UndefOr[VaultAccessPolicy]
-  }
-
-  object GetVaultAccessPolicyOutput {
-    @inline
-    def apply(
-        policy: js.UndefOr[VaultAccessPolicy] = js.undefined
-    ): GetVaultAccessPolicyOutput = {
-      val __obj = js.Dynamic.literal()
-      policy.foreach(__v => __obj.updateDynamic("policy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetVaultAccessPolicyOutput]
-    }
   }
 
   /**
     * The input values for <code>GetVaultLock</code>.
     */
   @js.native
+  @Factory
   trait GetVaultLockInput extends js.Object {
     var accountId: String
     var vaultName: String
-  }
-
-  object GetVaultLockInput {
-    @inline
-    def apply(
-        accountId: String,
-        vaultName: String
-    ): GetVaultLockInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetVaultLockInput]
-    }
   }
 
   /**
     * Contains the Amazon S3 Glacier response to your request.
     */
   @js.native
+  @Factory
   trait GetVaultLockOutput extends js.Object {
     var CreationDate: js.UndefOr[String]
     var ExpirationDate: js.UndefOr[String]
@@ -915,70 +515,30 @@ package glacier {
     var State: js.UndefOr[String]
   }
 
-  object GetVaultLockOutput {
-    @inline
-    def apply(
-        CreationDate: js.UndefOr[String] = js.undefined,
-        ExpirationDate: js.UndefOr[String] = js.undefined,
-        Policy: js.UndefOr[String] = js.undefined,
-        State: js.UndefOr[String] = js.undefined
-    ): GetVaultLockOutput = {
-      val __obj = js.Dynamic.literal()
-      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      ExpirationDate.foreach(__v => __obj.updateDynamic("ExpirationDate")(__v.asInstanceOf[js.Any]))
-      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetVaultLockOutput]
-    }
-  }
-
   /**
     * Provides options for retrieving the notification configuration set on an Amazon Glacier vault.
     */
   @js.native
+  @Factory
   trait GetVaultNotificationsInput extends js.Object {
     var accountId: String
     var vaultName: String
-  }
-
-  object GetVaultNotificationsInput {
-    @inline
-    def apply(
-        accountId: String,
-        vaultName: String
-    ): GetVaultNotificationsInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetVaultNotificationsInput]
-    }
   }
 
   /**
     * Contains the Amazon S3 Glacier response to your request.
     */
   @js.native
+  @Factory
   trait GetVaultNotificationsOutput extends js.Object {
     var vaultNotificationConfig: js.UndefOr[VaultNotificationConfig]
-  }
-
-  object GetVaultNotificationsOutput {
-    @inline
-    def apply(
-        vaultNotificationConfig: js.UndefOr[VaultNotificationConfig] = js.undefined
-    ): GetVaultNotificationsOutput = {
-      val __obj = js.Dynamic.literal()
-      vaultNotificationConfig.foreach(__v => __obj.updateDynamic("vaultNotificationConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetVaultNotificationsOutput]
-    }
   }
 
   /**
     * Contains the description of an Amazon S3 Glacier job.
     */
   @js.native
+  @Factory
   trait GlacierJobDescription extends js.Object {
     var Action: js.UndefOr[ActionCode]
     var ArchiveId: js.UndefOr[String]
@@ -1003,85 +563,21 @@ package glacier {
     var VaultARN: js.UndefOr[String]
   }
 
-  object GlacierJobDescription {
-    @inline
-    def apply(
-        Action: js.UndefOr[ActionCode] = js.undefined,
-        ArchiveId: js.UndefOr[String] = js.undefined,
-        ArchiveSHA256TreeHash: js.UndefOr[String] = js.undefined,
-        ArchiveSizeInBytes: js.UndefOr[Size] = js.undefined,
-        Completed: js.UndefOr[Boolean] = js.undefined,
-        CompletionDate: js.UndefOr[String] = js.undefined,
-        CreationDate: js.UndefOr[String] = js.undefined,
-        InventoryRetrievalParameters: js.UndefOr[InventoryRetrievalJobDescription] = js.undefined,
-        InventorySizeInBytes: js.UndefOr[Size] = js.undefined,
-        JobDescription: js.UndefOr[String] = js.undefined,
-        JobId: js.UndefOr[String] = js.undefined,
-        JobOutputPath: js.UndefOr[String] = js.undefined,
-        OutputLocation: js.UndefOr[OutputLocation] = js.undefined,
-        RetrievalByteRange: js.UndefOr[String] = js.undefined,
-        SHA256TreeHash: js.UndefOr[String] = js.undefined,
-        SNSTopic: js.UndefOr[String] = js.undefined,
-        SelectParameters: js.UndefOr[SelectParameters] = js.undefined,
-        StatusCode: js.UndefOr[StatusCode] = js.undefined,
-        StatusMessage: js.UndefOr[String] = js.undefined,
-        Tier: js.UndefOr[String] = js.undefined,
-        VaultARN: js.UndefOr[String] = js.undefined
-    ): GlacierJobDescription = {
-      val __obj = js.Dynamic.literal()
-      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
-      ArchiveId.foreach(__v => __obj.updateDynamic("ArchiveId")(__v.asInstanceOf[js.Any]))
-      ArchiveSHA256TreeHash.foreach(__v => __obj.updateDynamic("ArchiveSHA256TreeHash")(__v.asInstanceOf[js.Any]))
-      ArchiveSizeInBytes.foreach(__v => __obj.updateDynamic("ArchiveSizeInBytes")(__v.asInstanceOf[js.Any]))
-      Completed.foreach(__v => __obj.updateDynamic("Completed")(__v.asInstanceOf[js.Any]))
-      CompletionDate.foreach(__v => __obj.updateDynamic("CompletionDate")(__v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      InventoryRetrievalParameters.foreach(__v =>
-        __obj.updateDynamic("InventoryRetrievalParameters")(__v.asInstanceOf[js.Any])
-      )
-      InventorySizeInBytes.foreach(__v => __obj.updateDynamic("InventorySizeInBytes")(__v.asInstanceOf[js.Any]))
-      JobDescription.foreach(__v => __obj.updateDynamic("JobDescription")(__v.asInstanceOf[js.Any]))
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      JobOutputPath.foreach(__v => __obj.updateDynamic("JobOutputPath")(__v.asInstanceOf[js.Any]))
-      OutputLocation.foreach(__v => __obj.updateDynamic("OutputLocation")(__v.asInstanceOf[js.Any]))
-      RetrievalByteRange.foreach(__v => __obj.updateDynamic("RetrievalByteRange")(__v.asInstanceOf[js.Any]))
-      SHA256TreeHash.foreach(__v => __obj.updateDynamic("SHA256TreeHash")(__v.asInstanceOf[js.Any]))
-      SNSTopic.foreach(__v => __obj.updateDynamic("SNSTopic")(__v.asInstanceOf[js.Any]))
-      SelectParameters.foreach(__v => __obj.updateDynamic("SelectParameters")(__v.asInstanceOf[js.Any]))
-      StatusCode.foreach(__v => __obj.updateDynamic("StatusCode")(__v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
-      Tier.foreach(__v => __obj.updateDynamic("Tier")(__v.asInstanceOf[js.Any]))
-      VaultARN.foreach(__v => __obj.updateDynamic("VaultARN")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GlacierJobDescription]
-    }
-  }
-
   /**
     * Contains information about a grant.
     */
   @js.native
+  @Factory
   trait Grant extends js.Object {
     var Grantee: js.UndefOr[Grantee]
     var Permission: js.UndefOr[Permission]
-  }
-
-  object Grant {
-    @inline
-    def apply(
-        Grantee: js.UndefOr[Grantee] = js.undefined,
-        Permission: js.UndefOr[Permission] = js.undefined
-    ): Grant = {
-      val __obj = js.Dynamic.literal()
-      Grantee.foreach(__v => __obj.updateDynamic("Grantee")(__v.asInstanceOf[js.Any]))
-      Permission.foreach(__v => __obj.updateDynamic("Permission")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Grant]
-    }
   }
 
   /**
     * Contains information about the grantee.
     */
   @js.native
+  @Factory
   trait Grantee extends js.Object {
     var Type: Type
     var DisplayName: js.UndefOr[String]
@@ -1090,83 +586,33 @@ package glacier {
     var URI: js.UndefOr[String]
   }
 
-  object Grantee {
-    @inline
-    def apply(
-        Type: Type,
-        DisplayName: js.UndefOr[String] = js.undefined,
-        EmailAddress: js.UndefOr[String] = js.undefined,
-        ID: js.UndefOr[String] = js.undefined,
-        URI: js.UndefOr[String] = js.undefined
-    ): Grantee = {
-      val __obj = js.Dynamic.literal(
-        "Type" -> Type.asInstanceOf[js.Any]
-      )
-
-      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
-      EmailAddress.foreach(__v => __obj.updateDynamic("EmailAddress")(__v.asInstanceOf[js.Any]))
-      ID.foreach(__v => __obj.updateDynamic("ID")(__v.asInstanceOf[js.Any]))
-      URI.foreach(__v => __obj.updateDynamic("URI")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Grantee]
-    }
-  }
-
   /**
     * Provides options for initiating an Amazon S3 Glacier job.
     */
   @js.native
+  @Factory
   trait InitiateJobInput extends js.Object {
     var accountId: String
     var vaultName: String
     var jobParameters: js.UndefOr[JobParameters]
   }
 
-  object InitiateJobInput {
-    @inline
-    def apply(
-        accountId: String,
-        vaultName: String,
-        jobParameters: js.UndefOr[JobParameters] = js.undefined
-    ): InitiateJobInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      jobParameters.foreach(__v => __obj.updateDynamic("jobParameters")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InitiateJobInput]
-    }
-  }
-
   /**
     * Contains the Amazon S3 Glacier response to your request.
     */
   @js.native
+  @Factory
   trait InitiateJobOutput extends js.Object {
     var jobId: js.UndefOr[String]
     var jobOutputPath: js.UndefOr[String]
     var location: js.UndefOr[String]
   }
 
-  object InitiateJobOutput {
-    @inline
-    def apply(
-        jobId: js.UndefOr[String] = js.undefined,
-        jobOutputPath: js.UndefOr[String] = js.undefined,
-        location: js.UndefOr[String] = js.undefined
-    ): InitiateJobOutput = {
-      val __obj = js.Dynamic.literal()
-      jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
-      jobOutputPath.foreach(__v => __obj.updateDynamic("jobOutputPath")(__v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InitiateJobOutput]
-    }
-  }
-
   /**
     * Provides options for initiating a multipart upload to an Amazon S3 Glacier vault.
     */
   @js.native
+  @Factory
   trait InitiateMultipartUploadInput extends js.Object {
     var accountId: String
     var vaultName: String
@@ -1174,116 +620,50 @@ package glacier {
     var partSize: js.UndefOr[String]
   }
 
-  object InitiateMultipartUploadInput {
-    @inline
-    def apply(
-        accountId: String,
-        vaultName: String,
-        archiveDescription: js.UndefOr[String] = js.undefined,
-        partSize: js.UndefOr[String] = js.undefined
-    ): InitiateMultipartUploadInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      archiveDescription.foreach(__v => __obj.updateDynamic("archiveDescription")(__v.asInstanceOf[js.Any]))
-      partSize.foreach(__v => __obj.updateDynamic("partSize")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InitiateMultipartUploadInput]
-    }
-  }
-
   /**
     * The Amazon S3 Glacier response to your request.
     */
   @js.native
+  @Factory
   trait InitiateMultipartUploadOutput extends js.Object {
     var location: js.UndefOr[String]
     var uploadId: js.UndefOr[String]
-  }
-
-  object InitiateMultipartUploadOutput {
-    @inline
-    def apply(
-        location: js.UndefOr[String] = js.undefined,
-        uploadId: js.UndefOr[String] = js.undefined
-    ): InitiateMultipartUploadOutput = {
-      val __obj = js.Dynamic.literal()
-      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
-      uploadId.foreach(__v => __obj.updateDynamic("uploadId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InitiateMultipartUploadOutput]
-    }
   }
 
   /**
     * The input values for <code>InitiateVaultLock</code>.
     */
   @js.native
+  @Factory
   trait InitiateVaultLockInput extends js.Object {
     var accountId: String
     var vaultName: String
     var policy: js.UndefOr[VaultLockPolicy]
   }
 
-  object InitiateVaultLockInput {
-    @inline
-    def apply(
-        accountId: String,
-        vaultName: String,
-        policy: js.UndefOr[VaultLockPolicy] = js.undefined
-    ): InitiateVaultLockInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      policy.foreach(__v => __obj.updateDynamic("policy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InitiateVaultLockInput]
-    }
-  }
-
   /**
     * Contains the Amazon S3 Glacier response to your request.
     */
   @js.native
+  @Factory
   trait InitiateVaultLockOutput extends js.Object {
     var lockId: js.UndefOr[String]
-  }
-
-  object InitiateVaultLockOutput {
-    @inline
-    def apply(
-        lockId: js.UndefOr[String] = js.undefined
-    ): InitiateVaultLockOutput = {
-      val __obj = js.Dynamic.literal()
-      lockId.foreach(__v => __obj.updateDynamic("lockId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InitiateVaultLockOutput]
-    }
   }
 
   /**
     * Describes how the archive is serialized.
     */
   @js.native
+  @Factory
   trait InputSerialization extends js.Object {
     var csv: js.UndefOr[CSVInput]
-  }
-
-  object InputSerialization {
-    @inline
-    def apply(
-        csv: js.UndefOr[CSVInput] = js.undefined
-    ): InputSerialization = {
-      val __obj = js.Dynamic.literal()
-      csv.foreach(__v => __obj.updateDynamic("csv")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InputSerialization]
-    }
   }
 
   /**
     * Describes the options for a range inventory retrieval job.
     */
   @js.native
+  @Factory
   trait InventoryRetrievalJobDescription extends js.Object {
     var EndDate: js.UndefOr[DateTime]
     var Format: js.UndefOr[String]
@@ -1292,29 +672,11 @@ package glacier {
     var StartDate: js.UndefOr[DateTime]
   }
 
-  object InventoryRetrievalJobDescription {
-    @inline
-    def apply(
-        EndDate: js.UndefOr[DateTime] = js.undefined,
-        Format: js.UndefOr[String] = js.undefined,
-        Limit: js.UndefOr[String] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined,
-        StartDate: js.UndefOr[DateTime] = js.undefined
-    ): InventoryRetrievalJobDescription = {
-      val __obj = js.Dynamic.literal()
-      EndDate.foreach(__v => __obj.updateDynamic("EndDate")(__v.asInstanceOf[js.Any]))
-      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InventoryRetrievalJobDescription]
-    }
-  }
-
   /**
     * Provides options for specifying a range inventory retrieval job.
     */
   @js.native
+  @Factory
   trait InventoryRetrievalJobInput extends js.Object {
     var EndDate: js.UndefOr[String]
     var Limit: js.UndefOr[String]
@@ -1322,27 +684,11 @@ package glacier {
     var StartDate: js.UndefOr[String]
   }
 
-  object InventoryRetrievalJobInput {
-    @inline
-    def apply(
-        EndDate: js.UndefOr[String] = js.undefined,
-        Limit: js.UndefOr[String] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined,
-        StartDate: js.UndefOr[String] = js.undefined
-    ): InventoryRetrievalJobInput = {
-      val __obj = js.Dynamic.literal()
-      EndDate.foreach(__v => __obj.updateDynamic("EndDate")(__v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InventoryRetrievalJobInput]
-    }
-  }
-
   /**
     * Provides options for defining a job.
     */
   @js.native
+  @Factory
   trait JobParameters extends js.Object {
     var ArchiveId: js.UndefOr[String]
     var Description: js.UndefOr[String]
@@ -1356,41 +702,11 @@ package glacier {
     var Type: js.UndefOr[String]
   }
 
-  object JobParameters {
-    @inline
-    def apply(
-        ArchiveId: js.UndefOr[String] = js.undefined,
-        Description: js.UndefOr[String] = js.undefined,
-        Format: js.UndefOr[String] = js.undefined,
-        InventoryRetrievalParameters: js.UndefOr[InventoryRetrievalJobInput] = js.undefined,
-        OutputLocation: js.UndefOr[OutputLocation] = js.undefined,
-        RetrievalByteRange: js.UndefOr[String] = js.undefined,
-        SNSTopic: js.UndefOr[String] = js.undefined,
-        SelectParameters: js.UndefOr[SelectParameters] = js.undefined,
-        Tier: js.UndefOr[String] = js.undefined,
-        Type: js.UndefOr[String] = js.undefined
-    ): JobParameters = {
-      val __obj = js.Dynamic.literal()
-      ArchiveId.foreach(__v => __obj.updateDynamic("ArchiveId")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
-      InventoryRetrievalParameters.foreach(__v =>
-        __obj.updateDynamic("InventoryRetrievalParameters")(__v.asInstanceOf[js.Any])
-      )
-      OutputLocation.foreach(__v => __obj.updateDynamic("OutputLocation")(__v.asInstanceOf[js.Any]))
-      RetrievalByteRange.foreach(__v => __obj.updateDynamic("RetrievalByteRange")(__v.asInstanceOf[js.Any]))
-      SNSTopic.foreach(__v => __obj.updateDynamic("SNSTopic")(__v.asInstanceOf[js.Any]))
-      SelectParameters.foreach(__v => __obj.updateDynamic("SelectParameters")(__v.asInstanceOf[js.Any]))
-      Tier.foreach(__v => __obj.updateDynamic("Tier")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[JobParameters]
-    }
-  }
-
   /**
     * Provides options for retrieving a job list for an Amazon S3 Glacier vault.
     */
   @js.native
+  @Factory
   trait ListJobsInput extends js.Object {
     var accountId: String
     var vaultName: String
@@ -1400,55 +716,21 @@ package glacier {
     var statuscode: js.UndefOr[String]
   }
 
-  object ListJobsInput {
-    @inline
-    def apply(
-        accountId: String,
-        vaultName: String,
-        completed: js.UndefOr[String] = js.undefined,
-        limit: js.UndefOr[String] = js.undefined,
-        marker: js.UndefOr[String] = js.undefined,
-        statuscode: js.UndefOr[String] = js.undefined
-    ): ListJobsInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      completed.foreach(__v => __obj.updateDynamic("completed")(__v.asInstanceOf[js.Any]))
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      marker.foreach(__v => __obj.updateDynamic("marker")(__v.asInstanceOf[js.Any]))
-      statuscode.foreach(__v => __obj.updateDynamic("statuscode")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListJobsInput]
-    }
-  }
-
   /**
     * Contains the Amazon S3 Glacier response to your request.
     */
   @js.native
+  @Factory
   trait ListJobsOutput extends js.Object {
     var JobList: js.UndefOr[JobList]
     var Marker: js.UndefOr[String]
-  }
-
-  object ListJobsOutput {
-    @inline
-    def apply(
-        JobList: js.UndefOr[JobList] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined
-    ): ListJobsOutput = {
-      val __obj = js.Dynamic.literal()
-      JobList.foreach(__v => __obj.updateDynamic("JobList")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListJobsOutput]
-    }
   }
 
   /**
     * Provides options for retrieving list of in-progress multipart uploads for an Amazon Glacier vault.
     */
   @js.native
+  @Factory
   trait ListMultipartUploadsInput extends js.Object {
     var accountId: String
     var vaultName: String
@@ -1456,51 +738,21 @@ package glacier {
     var marker: js.UndefOr[String]
   }
 
-  object ListMultipartUploadsInput {
-    @inline
-    def apply(
-        accountId: String,
-        vaultName: String,
-        limit: js.UndefOr[String] = js.undefined,
-        marker: js.UndefOr[String] = js.undefined
-    ): ListMultipartUploadsInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      marker.foreach(__v => __obj.updateDynamic("marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListMultipartUploadsInput]
-    }
-  }
-
   /**
     * Contains the Amazon S3 Glacier response to your request.
     */
   @js.native
+  @Factory
   trait ListMultipartUploadsOutput extends js.Object {
     var Marker: js.UndefOr[String]
     var UploadsList: js.UndefOr[UploadsList]
-  }
-
-  object ListMultipartUploadsOutput {
-    @inline
-    def apply(
-        Marker: js.UndefOr[String] = js.undefined,
-        UploadsList: js.UndefOr[UploadsList] = js.undefined
-    ): ListMultipartUploadsOutput = {
-      val __obj = js.Dynamic.literal()
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      UploadsList.foreach(__v => __obj.updateDynamic("UploadsList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListMultipartUploadsOutput]
-    }
   }
 
   /**
     * Provides options for retrieving a list of parts of an archive that have been uploaded in a specific multipart upload.
     */
   @js.native
+  @Factory
   trait ListPartsInput extends js.Object {
     var accountId: String
     var uploadId: String
@@ -1509,31 +761,11 @@ package glacier {
     var marker: js.UndefOr[String]
   }
 
-  object ListPartsInput {
-    @inline
-    def apply(
-        accountId: String,
-        uploadId: String,
-        vaultName: String,
-        limit: js.UndefOr[String] = js.undefined,
-        marker: js.UndefOr[String] = js.undefined
-    ): ListPartsInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "uploadId"  -> uploadId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      marker.foreach(__v => __obj.updateDynamic("marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPartsInput]
-    }
-  }
-
   /**
     * Contains the Amazon S3 Glacier response to your request.
     */
   @js.native
+  @Factory
   trait ListPartsOutput extends js.Object {
     var ArchiveDescription: js.UndefOr[String]
     var CreationDate: js.UndefOr[String]
@@ -1544,213 +776,84 @@ package glacier {
     var VaultARN: js.UndefOr[String]
   }
 
-  object ListPartsOutput {
-    @inline
-    def apply(
-        ArchiveDescription: js.UndefOr[String] = js.undefined,
-        CreationDate: js.UndefOr[String] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined,
-        MultipartUploadId: js.UndefOr[String] = js.undefined,
-        PartSizeInBytes: js.UndefOr[Double] = js.undefined,
-        Parts: js.UndefOr[PartList] = js.undefined,
-        VaultARN: js.UndefOr[String] = js.undefined
-    ): ListPartsOutput = {
-      val __obj = js.Dynamic.literal()
-      ArchiveDescription.foreach(__v => __obj.updateDynamic("ArchiveDescription")(__v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MultipartUploadId.foreach(__v => __obj.updateDynamic("MultipartUploadId")(__v.asInstanceOf[js.Any]))
-      PartSizeInBytes.foreach(__v => __obj.updateDynamic("PartSizeInBytes")(__v.asInstanceOf[js.Any]))
-      Parts.foreach(__v => __obj.updateDynamic("Parts")(__v.asInstanceOf[js.Any]))
-      VaultARN.foreach(__v => __obj.updateDynamic("VaultARN")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPartsOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListProvisionedCapacityInput extends js.Object {
     var accountId: String
   }
 
-  object ListProvisionedCapacityInput {
-    @inline
-    def apply(
-        accountId: String
-    ): ListProvisionedCapacityInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListProvisionedCapacityInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListProvisionedCapacityOutput extends js.Object {
     var ProvisionedCapacityList: js.UndefOr[ProvisionedCapacityList]
-  }
-
-  object ListProvisionedCapacityOutput {
-    @inline
-    def apply(
-        ProvisionedCapacityList: js.UndefOr[ProvisionedCapacityList] = js.undefined
-    ): ListProvisionedCapacityOutput = {
-      val __obj = js.Dynamic.literal()
-      ProvisionedCapacityList.foreach(__v => __obj.updateDynamic("ProvisionedCapacityList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListProvisionedCapacityOutput]
-    }
   }
 
   /**
     * The input value for <code>ListTagsForVaultInput</code>.
     */
   @js.native
+  @Factory
   trait ListTagsForVaultInput extends js.Object {
     var accountId: String
     var vaultName: String
-  }
-
-  object ListTagsForVaultInput {
-    @inline
-    def apply(
-        accountId: String,
-        vaultName: String
-    ): ListTagsForVaultInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListTagsForVaultInput]
-    }
   }
 
   /**
     * Contains the Amazon S3 Glacier response to your request.
     */
   @js.native
+  @Factory
   trait ListTagsForVaultOutput extends js.Object {
     var Tags: js.UndefOr[TagMap]
-  }
-
-  object ListTagsForVaultOutput {
-    @inline
-    def apply(
-        Tags: js.UndefOr[TagMap] = js.undefined
-    ): ListTagsForVaultOutput = {
-      val __obj = js.Dynamic.literal()
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForVaultOutput]
-    }
   }
 
   /**
     * Provides options to retrieve the vault list owned by the calling user's account. The list provides metadata information for each vault.
     */
   @js.native
+  @Factory
   trait ListVaultsInput extends js.Object {
     var accountId: String
     var limit: js.UndefOr[String]
     var marker: js.UndefOr[String]
   }
 
-  object ListVaultsInput {
-    @inline
-    def apply(
-        accountId: String,
-        limit: js.UndefOr[String] = js.undefined,
-        marker: js.UndefOr[String] = js.undefined
-    ): ListVaultsInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any]
-      )
-
-      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
-      marker.foreach(__v => __obj.updateDynamic("marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListVaultsInput]
-    }
-  }
-
   /**
     * Contains the Amazon S3 Glacier response to your request.
     */
   @js.native
+  @Factory
   trait ListVaultsOutput extends js.Object {
     var Marker: js.UndefOr[String]
     var VaultList: js.UndefOr[VaultList]
-  }
-
-  object ListVaultsOutput {
-    @inline
-    def apply(
-        Marker: js.UndefOr[String] = js.undefined,
-        VaultList: js.UndefOr[VaultList] = js.undefined
-    ): ListVaultsOutput = {
-      val __obj = js.Dynamic.literal()
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      VaultList.foreach(__v => __obj.updateDynamic("VaultList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListVaultsOutput]
-    }
   }
 
   /**
     * Contains information about the location where the select job results are stored.
     */
   @js.native
+  @Factory
   trait OutputLocation extends js.Object {
     var S3: js.UndefOr[S3Location]
-  }
-
-  object OutputLocation {
-    @inline
-    def apply(
-        S3: js.UndefOr[S3Location] = js.undefined
-    ): OutputLocation = {
-      val __obj = js.Dynamic.literal()
-      S3.foreach(__v => __obj.updateDynamic("S3")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[OutputLocation]
-    }
   }
 
   /**
     * Describes how the select output is serialized.
     */
   @js.native
+  @Factory
   trait OutputSerialization extends js.Object {
     var csv: js.UndefOr[CSVOutput]
-  }
-
-  object OutputSerialization {
-    @inline
-    def apply(
-        csv: js.UndefOr[CSVOutput] = js.undefined
-    ): OutputSerialization = {
-      val __obj = js.Dynamic.literal()
-      csv.foreach(__v => __obj.updateDynamic("csv")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[OutputSerialization]
-    }
   }
 
   /**
     * A list of the part sizes of the multipart upload.
     */
   @js.native
+  @Factory
   trait PartListElement extends js.Object {
     var RangeInBytes: js.UndefOr[String]
     var SHA256TreeHash: js.UndefOr[String]
-  }
-
-  object PartListElement {
-    @inline
-    def apply(
-        RangeInBytes: js.UndefOr[String] = js.undefined,
-        SHA256TreeHash: js.UndefOr[String] = js.undefined
-    ): PartListElement = {
-      val __obj = js.Dynamic.literal()
-      RangeInBytes.foreach(__v => __obj.updateDynamic("RangeInBytes")(__v.asInstanceOf[js.Any]))
-      SHA256TreeHash.foreach(__v => __obj.updateDynamic("SHA256TreeHash")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PartListElement]
-    }
   }
 
   @js.native
@@ -1769,59 +872,23 @@ package glacier {
     * The definition for a provisioned capacity unit.
     */
   @js.native
+  @Factory
   trait ProvisionedCapacityDescription extends js.Object {
     var CapacityId: js.UndefOr[String]
     var ExpirationDate: js.UndefOr[String]
     var StartDate: js.UndefOr[String]
   }
 
-  object ProvisionedCapacityDescription {
-    @inline
-    def apply(
-        CapacityId: js.UndefOr[String] = js.undefined,
-        ExpirationDate: js.UndefOr[String] = js.undefined,
-        StartDate: js.UndefOr[String] = js.undefined
-    ): ProvisionedCapacityDescription = {
-      val __obj = js.Dynamic.literal()
-      CapacityId.foreach(__v => __obj.updateDynamic("CapacityId")(__v.asInstanceOf[js.Any]))
-      ExpirationDate.foreach(__v => __obj.updateDynamic("ExpirationDate")(__v.asInstanceOf[js.Any]))
-      StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ProvisionedCapacityDescription]
-    }
-  }
-
   @js.native
+  @Factory
   trait PurchaseProvisionedCapacityInput extends js.Object {
     var accountId: String
   }
 
-  object PurchaseProvisionedCapacityInput {
-    @inline
-    def apply(
-        accountId: String
-    ): PurchaseProvisionedCapacityInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PurchaseProvisionedCapacityInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait PurchaseProvisionedCapacityOutput extends js.Object {
     var capacityId: js.UndefOr[String]
-  }
-
-  object PurchaseProvisionedCapacityOutput {
-    @inline
-    def apply(
-        capacityId: js.UndefOr[String] = js.undefined
-    ): PurchaseProvisionedCapacityOutput = {
-      val __obj = js.Dynamic.literal()
-      capacityId.foreach(__v => __obj.updateDynamic("capacityId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PurchaseProvisionedCapacityOutput]
-    }
   }
 
   @js.native
@@ -1837,33 +904,18 @@ package glacier {
     * The input value for <code>RemoveTagsFromVaultInput</code>.
     */
   @js.native
+  @Factory
   trait RemoveTagsFromVaultInput extends js.Object {
     var accountId: String
     var vaultName: String
     var TagKeys: js.UndefOr[TagKeyList]
   }
 
-  object RemoveTagsFromVaultInput {
-    @inline
-    def apply(
-        accountId: String,
-        vaultName: String,
-        TagKeys: js.UndefOr[TagKeyList] = js.undefined
-    ): RemoveTagsFromVaultInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      TagKeys.foreach(__v => __obj.updateDynamic("TagKeys")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RemoveTagsFromVaultInput]
-    }
-  }
-
   /**
     * Contains information about the location in Amazon S3 where the select job results are stored.
     */
   @js.native
+  @Factory
   trait S3Location extends js.Object {
     var AccessControlList: js.UndefOr[AccessControlPolicyList]
     var BucketName: js.UndefOr[String]
@@ -1875,35 +927,11 @@ package glacier {
     var UserMetadata: js.UndefOr[hashmap]
   }
 
-  object S3Location {
-    @inline
-    def apply(
-        AccessControlList: js.UndefOr[AccessControlPolicyList] = js.undefined,
-        BucketName: js.UndefOr[String] = js.undefined,
-        CannedACL: js.UndefOr[CannedACL] = js.undefined,
-        Encryption: js.UndefOr[Encryption] = js.undefined,
-        Prefix: js.UndefOr[String] = js.undefined,
-        StorageClass: js.UndefOr[StorageClass] = js.undefined,
-        Tagging: js.UndefOr[hashmap] = js.undefined,
-        UserMetadata: js.UndefOr[hashmap] = js.undefined
-    ): S3Location = {
-      val __obj = js.Dynamic.literal()
-      AccessControlList.foreach(__v => __obj.updateDynamic("AccessControlList")(__v.asInstanceOf[js.Any]))
-      BucketName.foreach(__v => __obj.updateDynamic("BucketName")(__v.asInstanceOf[js.Any]))
-      CannedACL.foreach(__v => __obj.updateDynamic("CannedACL")(__v.asInstanceOf[js.Any]))
-      Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
-      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
-      StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
-      Tagging.foreach(__v => __obj.updateDynamic("Tagging")(__v.asInstanceOf[js.Any]))
-      UserMetadata.foreach(__v => __obj.updateDynamic("UserMetadata")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[S3Location]
-    }
-  }
-
   /**
     * Contains information about the parameters used for a select.
     */
   @js.native
+  @Factory
   trait SelectParameters extends js.Object {
     var Expression: js.UndefOr[String]
     var ExpressionType: js.UndefOr[ExpressionType]
@@ -1911,99 +939,36 @@ package glacier {
     var OutputSerialization: js.UndefOr[OutputSerialization]
   }
 
-  object SelectParameters {
-    @inline
-    def apply(
-        Expression: js.UndefOr[String] = js.undefined,
-        ExpressionType: js.UndefOr[ExpressionType] = js.undefined,
-        InputSerialization: js.UndefOr[InputSerialization] = js.undefined,
-        OutputSerialization: js.UndefOr[OutputSerialization] = js.undefined
-    ): SelectParameters = {
-      val __obj = js.Dynamic.literal()
-      Expression.foreach(__v => __obj.updateDynamic("Expression")(__v.asInstanceOf[js.Any]))
-      ExpressionType.foreach(__v => __obj.updateDynamic("ExpressionType")(__v.asInstanceOf[js.Any]))
-      InputSerialization.foreach(__v => __obj.updateDynamic("InputSerialization")(__v.asInstanceOf[js.Any]))
-      OutputSerialization.foreach(__v => __obj.updateDynamic("OutputSerialization")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SelectParameters]
-    }
-  }
-
   /**
     * SetDataRetrievalPolicy input.
     */
   @js.native
+  @Factory
   trait SetDataRetrievalPolicyInput extends js.Object {
     var accountId: String
     var Policy: js.UndefOr[DataRetrievalPolicy]
-  }
-
-  object SetDataRetrievalPolicyInput {
-    @inline
-    def apply(
-        accountId: String,
-        Policy: js.UndefOr[DataRetrievalPolicy] = js.undefined
-    ): SetDataRetrievalPolicyInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any]
-      )
-
-      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SetDataRetrievalPolicyInput]
-    }
   }
 
   /**
     * SetVaultAccessPolicy input.
     */
   @js.native
+  @Factory
   trait SetVaultAccessPolicyInput extends js.Object {
     var accountId: String
     var vaultName: String
     var policy: js.UndefOr[VaultAccessPolicy]
   }
 
-  object SetVaultAccessPolicyInput {
-    @inline
-    def apply(
-        accountId: String,
-        vaultName: String,
-        policy: js.UndefOr[VaultAccessPolicy] = js.undefined
-    ): SetVaultAccessPolicyInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      policy.foreach(__v => __obj.updateDynamic("policy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SetVaultAccessPolicyInput]
-    }
-  }
-
   /**
     * Provides options to configure notifications that will be sent when specific events happen to a vault.
     */
   @js.native
+  @Factory
   trait SetVaultNotificationsInput extends js.Object {
     var accountId: String
     var vaultName: String
     var vaultNotificationConfig: js.UndefOr[VaultNotificationConfig]
-  }
-
-  object SetVaultNotificationsInput {
-    @inline
-    def apply(
-        accountId: String,
-        vaultName: String,
-        vaultNotificationConfig: js.UndefOr[VaultNotificationConfig] = js.undefined
-    ): SetVaultNotificationsInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      vaultNotificationConfig.foreach(__v => __obj.updateDynamic("vaultNotificationConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SetVaultNotificationsInput]
-    }
   }
 
   @js.native
@@ -2040,6 +1005,7 @@ package glacier {
     * Provides options to add an archive to a vault.
     */
   @js.native
+  @Factory
   trait UploadArchiveInput extends js.Object {
     var accountId: String
     var vaultName: String
@@ -2048,31 +1014,11 @@ package glacier {
     var checksum: js.UndefOr[String]
   }
 
-  object UploadArchiveInput {
-    @inline
-    def apply(
-        accountId: String,
-        vaultName: String,
-        archiveDescription: js.UndefOr[String] = js.undefined,
-        body: js.UndefOr[Stream] = js.undefined,
-        checksum: js.UndefOr[String] = js.undefined
-    ): UploadArchiveInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      archiveDescription.foreach(__v => __obj.updateDynamic("archiveDescription")(__v.asInstanceOf[js.Any]))
-      body.foreach(__v => __obj.updateDynamic("body")(__v.asInstanceOf[js.Any]))
-      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UploadArchiveInput]
-    }
-  }
-
   /**
     * A list of in-progress multipart uploads for a vault.
     */
   @js.native
+  @Factory
   trait UploadListElement extends js.Object {
     var ArchiveDescription: js.UndefOr[String]
     var CreationDate: js.UndefOr[String]
@@ -2081,29 +1027,11 @@ package glacier {
     var VaultARN: js.UndefOr[String]
   }
 
-  object UploadListElement {
-    @inline
-    def apply(
-        ArchiveDescription: js.UndefOr[String] = js.undefined,
-        CreationDate: js.UndefOr[String] = js.undefined,
-        MultipartUploadId: js.UndefOr[String] = js.undefined,
-        PartSizeInBytes: js.UndefOr[Double] = js.undefined,
-        VaultARN: js.UndefOr[String] = js.undefined
-    ): UploadListElement = {
-      val __obj = js.Dynamic.literal()
-      ArchiveDescription.foreach(__v => __obj.updateDynamic("ArchiveDescription")(__v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      MultipartUploadId.foreach(__v => __obj.updateDynamic("MultipartUploadId")(__v.asInstanceOf[js.Any]))
-      PartSizeInBytes.foreach(__v => __obj.updateDynamic("PartSizeInBytes")(__v.asInstanceOf[js.Any]))
-      VaultARN.foreach(__v => __obj.updateDynamic("VaultARN")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UploadListElement]
-    }
-  }
-
   /**
     * Provides options to upload a part of an archive in a multipart upload operation.
     */
   @js.native
+  @Factory
   trait UploadMultipartPartInput extends js.Object {
     var accountId: String
     var uploadId: String
@@ -2113,105 +1041,40 @@ package glacier {
     var range: js.UndefOr[String]
   }
 
-  object UploadMultipartPartInput {
-    @inline
-    def apply(
-        accountId: String,
-        uploadId: String,
-        vaultName: String,
-        body: js.UndefOr[Stream] = js.undefined,
-        checksum: js.UndefOr[String] = js.undefined,
-        range: js.UndefOr[String] = js.undefined
-    ): UploadMultipartPartInput = {
-      val __obj = js.Dynamic.literal(
-        "accountId" -> accountId.asInstanceOf[js.Any],
-        "uploadId"  -> uploadId.asInstanceOf[js.Any],
-        "vaultName" -> vaultName.asInstanceOf[js.Any]
-      )
-
-      body.foreach(__v => __obj.updateDynamic("body")(__v.asInstanceOf[js.Any]))
-      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
-      range.foreach(__v => __obj.updateDynamic("range")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UploadMultipartPartInput]
-    }
-  }
-
   /**
     * Contains the Amazon S3 Glacier response to your request.
     */
   @js.native
+  @Factory
   trait UploadMultipartPartOutput extends js.Object {
     var checksum: js.UndefOr[String]
-  }
-
-  object UploadMultipartPartOutput {
-    @inline
-    def apply(
-        checksum: js.UndefOr[String] = js.undefined
-    ): UploadMultipartPartOutput = {
-      val __obj = js.Dynamic.literal()
-      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UploadMultipartPartOutput]
-    }
   }
 
   /**
     * Contains the vault access policy.
     */
   @js.native
+  @Factory
   trait VaultAccessPolicy extends js.Object {
     var Policy: js.UndefOr[String]
-  }
-
-  object VaultAccessPolicy {
-    @inline
-    def apply(
-        Policy: js.UndefOr[String] = js.undefined
-    ): VaultAccessPolicy = {
-      val __obj = js.Dynamic.literal()
-      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VaultAccessPolicy]
-    }
   }
 
   /**
     * Contains the vault lock policy.
     */
   @js.native
+  @Factory
   trait VaultLockPolicy extends js.Object {
     var Policy: js.UndefOr[String]
-  }
-
-  object VaultLockPolicy {
-    @inline
-    def apply(
-        Policy: js.UndefOr[String] = js.undefined
-    ): VaultLockPolicy = {
-      val __obj = js.Dynamic.literal()
-      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VaultLockPolicy]
-    }
   }
 
   /**
     * Represents a vault's notification configuration.
     */
   @js.native
+  @Factory
   trait VaultNotificationConfig extends js.Object {
     var Events: js.UndefOr[NotificationEventList]
     var SNSTopic: js.UndefOr[String]
-  }
-
-  object VaultNotificationConfig {
-    @inline
-    def apply(
-        Events: js.UndefOr[NotificationEventList] = js.undefined,
-        SNSTopic: js.UndefOr[String] = js.undefined
-    ): VaultNotificationConfig = {
-      val __obj = js.Dynamic.literal()
-      Events.foreach(__v => __obj.updateDynamic("Events")(__v.asInstanceOf[js.Any]))
-      SNSTopic.foreach(__v => __obj.updateDynamic("SNSTopic")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VaultNotificationConfig]
-    }
   }
 }

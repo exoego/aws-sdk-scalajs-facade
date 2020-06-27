@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object clouddirectory {
   type Arn                               = String
@@ -312,6 +313,7 @@ package clouddirectory {
   }
 
   @js.native
+  @Factory
   trait AddFacetToObjectRequest extends js.Object {
     var DirectoryArn: Arn
     var ObjectReference: ObjectReference
@@ -319,79 +321,26 @@ package clouddirectory {
     var ObjectAttributeList: js.UndefOr[AttributeKeyAndValueList]
   }
 
-  object AddFacetToObjectRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        ObjectReference: ObjectReference,
-        SchemaFacet: SchemaFacet,
-        ObjectAttributeList: js.UndefOr[AttributeKeyAndValueList] = js.undefined
-    ): AddFacetToObjectRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
-        "SchemaFacet"     -> SchemaFacet.asInstanceOf[js.Any]
-      )
-
-      ObjectAttributeList.foreach(__v => __obj.updateDynamic("ObjectAttributeList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AddFacetToObjectRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AddFacetToObjectResponse extends js.Object {}
 
-  object AddFacetToObjectResponse {
-    @inline
-    def apply(
-    ): AddFacetToObjectResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[AddFacetToObjectResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ApplySchemaRequest extends js.Object {
     var DirectoryArn: Arn
     var PublishedSchemaArn: Arn
   }
 
-  object ApplySchemaRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        PublishedSchemaArn: Arn
-    ): ApplySchemaRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn"       -> DirectoryArn.asInstanceOf[js.Any],
-        "PublishedSchemaArn" -> PublishedSchemaArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ApplySchemaRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ApplySchemaResponse extends js.Object {
     var AppliedSchemaArn: js.UndefOr[Arn]
     var DirectoryArn: js.UndefOr[Arn]
   }
 
-  object ApplySchemaResponse {
-    @inline
-    def apply(
-        AppliedSchemaArn: js.UndefOr[Arn] = js.undefined,
-        DirectoryArn: js.UndefOr[Arn] = js.undefined
-    ): ApplySchemaResponse = {
-      val __obj = js.Dynamic.literal()
-      AppliedSchemaArn.foreach(__v => __obj.updateDynamic("AppliedSchemaArn")(__v.asInstanceOf[js.Any]))
-      DirectoryArn.foreach(__v => __obj.updateDynamic("DirectoryArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ApplySchemaResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait AttachObjectRequest extends js.Object {
     var ChildReference: ObjectReference
     var DirectoryArn: Arn
@@ -399,119 +348,40 @@ package clouddirectory {
     var ParentReference: ObjectReference
   }
 
-  object AttachObjectRequest {
-    @inline
-    def apply(
-        ChildReference: ObjectReference,
-        DirectoryArn: Arn,
-        LinkName: LinkName,
-        ParentReference: ObjectReference
-    ): AttachObjectRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChildReference"  -> ChildReference.asInstanceOf[js.Any],
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
-        "LinkName"        -> LinkName.asInstanceOf[js.Any],
-        "ParentReference" -> ParentReference.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AttachObjectRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AttachObjectResponse extends js.Object {
     var AttachedObjectIdentifier: js.UndefOr[ObjectIdentifier]
   }
 
-  object AttachObjectResponse {
-    @inline
-    def apply(
-        AttachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
-    ): AttachObjectResponse = {
-      val __obj = js.Dynamic.literal()
-      AttachedObjectIdentifier.foreach(__v => __obj.updateDynamic("AttachedObjectIdentifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AttachObjectResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait AttachPolicyRequest extends js.Object {
     var DirectoryArn: Arn
     var ObjectReference: ObjectReference
     var PolicyReference: ObjectReference
   }
 
-  object AttachPolicyRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        ObjectReference: ObjectReference,
-        PolicyReference: ObjectReference
-    ): AttachPolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
-        "PolicyReference" -> PolicyReference.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AttachPolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AttachPolicyResponse extends js.Object {}
 
-  object AttachPolicyResponse {
-    @inline
-    def apply(
-    ): AttachPolicyResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[AttachPolicyResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait AttachToIndexRequest extends js.Object {
     var DirectoryArn: Arn
     var IndexReference: ObjectReference
     var TargetReference: ObjectReference
   }
 
-  object AttachToIndexRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        IndexReference: ObjectReference,
-        TargetReference: ObjectReference
-    ): AttachToIndexRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
-        "IndexReference"  -> IndexReference.asInstanceOf[js.Any],
-        "TargetReference" -> TargetReference.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AttachToIndexRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AttachToIndexResponse extends js.Object {
     var AttachedObjectIdentifier: js.UndefOr[ObjectIdentifier]
   }
 
-  object AttachToIndexResponse {
-    @inline
-    def apply(
-        AttachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
-    ): AttachToIndexResponse = {
-      val __obj = js.Dynamic.literal()
-      AttachedObjectIdentifier.foreach(__v => __obj.updateDynamic("AttachedObjectIdentifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AttachToIndexResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait AttachTypedLinkRequest extends js.Object {
     var Attributes: AttributeNameAndValueList
     var DirectoryArn: Arn
@@ -520,294 +390,122 @@ package clouddirectory {
     var TypedLinkFacet: TypedLinkSchemaAndFacetName
   }
 
-  object AttachTypedLinkRequest {
-    @inline
-    def apply(
-        Attributes: AttributeNameAndValueList,
-        DirectoryArn: Arn,
-        SourceObjectReference: ObjectReference,
-        TargetObjectReference: ObjectReference,
-        TypedLinkFacet: TypedLinkSchemaAndFacetName
-    ): AttachTypedLinkRequest = {
-      val __obj = js.Dynamic.literal(
-        "Attributes"            -> Attributes.asInstanceOf[js.Any],
-        "DirectoryArn"          -> DirectoryArn.asInstanceOf[js.Any],
-        "SourceObjectReference" -> SourceObjectReference.asInstanceOf[js.Any],
-        "TargetObjectReference" -> TargetObjectReference.asInstanceOf[js.Any],
-        "TypedLinkFacet"        -> TypedLinkFacet.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AttachTypedLinkRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AttachTypedLinkResponse extends js.Object {
     var TypedLinkSpecifier: js.UndefOr[TypedLinkSpecifier]
-  }
-
-  object AttachTypedLinkResponse {
-    @inline
-    def apply(
-        TypedLinkSpecifier: js.UndefOr[TypedLinkSpecifier] = js.undefined
-    ): AttachTypedLinkResponse = {
-      val __obj = js.Dynamic.literal()
-      TypedLinkSpecifier.foreach(__v => __obj.updateDynamic("TypedLinkSpecifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AttachTypedLinkResponse]
-    }
   }
 
   /**
     * A unique identifier for an attribute.
     */
   @js.native
+  @Factory
   trait AttributeKey extends js.Object {
     var FacetName: FacetName
     var Name: AttributeName
     var SchemaArn: Arn
   }
 
-  object AttributeKey {
-    @inline
-    def apply(
-        FacetName: FacetName,
-        Name: AttributeName,
-        SchemaArn: Arn
-    ): AttributeKey = {
-      val __obj = js.Dynamic.literal(
-        "FacetName" -> FacetName.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any],
-        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AttributeKey]
-    }
-  }
-
   /**
     * The combination of an attribute key and an attribute value.
     */
   @js.native
+  @Factory
   trait AttributeKeyAndValue extends js.Object {
     var Key: AttributeKey
     var Value: TypedAttributeValue
-  }
-
-  object AttributeKeyAndValue {
-    @inline
-    def apply(
-        Key: AttributeKey,
-        Value: TypedAttributeValue
-    ): AttributeKeyAndValue = {
-      val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AttributeKeyAndValue]
-    }
   }
 
   /**
     * Identifies the attribute name and value for a typed link.
     */
   @js.native
+  @Factory
   trait AttributeNameAndValue extends js.Object {
     var AttributeName: AttributeName
     var Value: TypedAttributeValue
-  }
-
-  object AttributeNameAndValue {
-    @inline
-    def apply(
-        AttributeName: AttributeName,
-        Value: TypedAttributeValue
-    ): AttributeNameAndValue = {
-      val __obj = js.Dynamic.literal(
-        "AttributeName" -> AttributeName.asInstanceOf[js.Any],
-        "Value"         -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AttributeNameAndValue]
-    }
   }
 
   /**
     * Represents the output of a batch add facet to object operation.
     */
   @js.native
+  @Factory
   trait BatchAddFacetToObject extends js.Object {
     var ObjectAttributeList: AttributeKeyAndValueList
     var ObjectReference: ObjectReference
     var SchemaFacet: SchemaFacet
   }
 
-  object BatchAddFacetToObject {
-    @inline
-    def apply(
-        ObjectAttributeList: AttributeKeyAndValueList,
-        ObjectReference: ObjectReference,
-        SchemaFacet: SchemaFacet
-    ): BatchAddFacetToObject = {
-      val __obj = js.Dynamic.literal(
-        "ObjectAttributeList" -> ObjectAttributeList.asInstanceOf[js.Any],
-        "ObjectReference"     -> ObjectReference.asInstanceOf[js.Any],
-        "SchemaFacet"         -> SchemaFacet.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchAddFacetToObject]
-    }
-  }
-
   /**
     * The result of a batch add facet to object operation.
     */
   @js.native
+  @Factory
   trait BatchAddFacetToObjectResponse extends js.Object {}
-
-  object BatchAddFacetToObjectResponse {
-    @inline
-    def apply(
-    ): BatchAddFacetToObjectResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[BatchAddFacetToObjectResponse]
-    }
-  }
 
   /**
     * Represents the output of an <a>AttachObject</a> operation.
     */
   @js.native
+  @Factory
   trait BatchAttachObject extends js.Object {
     var ChildReference: ObjectReference
     var LinkName: LinkName
     var ParentReference: ObjectReference
   }
 
-  object BatchAttachObject {
-    @inline
-    def apply(
-        ChildReference: ObjectReference,
-        LinkName: LinkName,
-        ParentReference: ObjectReference
-    ): BatchAttachObject = {
-      val __obj = js.Dynamic.literal(
-        "ChildReference"  -> ChildReference.asInstanceOf[js.Any],
-        "LinkName"        -> LinkName.asInstanceOf[js.Any],
-        "ParentReference" -> ParentReference.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchAttachObject]
-    }
-  }
-
   /**
     * Represents the output batch <a>AttachObject</a> response operation.
     */
   @js.native
+  @Factory
   trait BatchAttachObjectResponse extends js.Object {
     var attachedObjectIdentifier: js.UndefOr[ObjectIdentifier]
-  }
-
-  object BatchAttachObjectResponse {
-    @inline
-    def apply(
-        attachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
-    ): BatchAttachObjectResponse = {
-      val __obj = js.Dynamic.literal()
-      attachedObjectIdentifier.foreach(__v => __obj.updateDynamic("attachedObjectIdentifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchAttachObjectResponse]
-    }
   }
 
   /**
     * Attaches a policy object to a regular object inside a <a>BatchRead</a> operation. For more information, see <a>AttachPolicy</a> and [[BatchReadRequest.Operations]].
     */
   @js.native
+  @Factory
   trait BatchAttachPolicy extends js.Object {
     var ObjectReference: ObjectReference
     var PolicyReference: ObjectReference
-  }
-
-  object BatchAttachPolicy {
-    @inline
-    def apply(
-        ObjectReference: ObjectReference,
-        PolicyReference: ObjectReference
-    ): BatchAttachPolicy = {
-      val __obj = js.Dynamic.literal(
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
-        "PolicyReference" -> PolicyReference.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchAttachPolicy]
-    }
   }
 
   /**
     * Represents the output of an <a>AttachPolicy</a> response operation.
     */
   @js.native
+  @Factory
   trait BatchAttachPolicyResponse extends js.Object {}
-
-  object BatchAttachPolicyResponse {
-    @inline
-    def apply(
-    ): BatchAttachPolicyResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[BatchAttachPolicyResponse]
-    }
-  }
 
   /**
     * Attaches the specified object to the specified index inside a <a>BatchRead</a> operation. For more information, see <a>AttachToIndex</a> and [[BatchReadRequest.Operations]].
     */
   @js.native
+  @Factory
   trait BatchAttachToIndex extends js.Object {
     var IndexReference: ObjectReference
     var TargetReference: ObjectReference
-  }
-
-  object BatchAttachToIndex {
-    @inline
-    def apply(
-        IndexReference: ObjectReference,
-        TargetReference: ObjectReference
-    ): BatchAttachToIndex = {
-      val __obj = js.Dynamic.literal(
-        "IndexReference"  -> IndexReference.asInstanceOf[js.Any],
-        "TargetReference" -> TargetReference.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchAttachToIndex]
-    }
   }
 
   /**
     * Represents the output of a <a>AttachToIndex</a> response operation.
     */
   @js.native
+  @Factory
   trait BatchAttachToIndexResponse extends js.Object {
     var AttachedObjectIdentifier: js.UndefOr[ObjectIdentifier]
-  }
-
-  object BatchAttachToIndexResponse {
-    @inline
-    def apply(
-        AttachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
-    ): BatchAttachToIndexResponse = {
-      val __obj = js.Dynamic.literal()
-      AttachedObjectIdentifier.foreach(__v => __obj.updateDynamic("AttachedObjectIdentifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchAttachToIndexResponse]
-    }
   }
 
   /**
     * Attaches a typed link to a specified source and target object inside a <a>BatchRead</a> operation. For more information, see <a>AttachTypedLink</a> and [[BatchReadRequest.Operations]].
     */
   @js.native
+  @Factory
   trait BatchAttachTypedLink extends js.Object {
     var Attributes: AttributeNameAndValueList
     var SourceObjectReference: ObjectReference
@@ -815,48 +513,20 @@ package clouddirectory {
     var TypedLinkFacet: TypedLinkSchemaAndFacetName
   }
 
-  object BatchAttachTypedLink {
-    @inline
-    def apply(
-        Attributes: AttributeNameAndValueList,
-        SourceObjectReference: ObjectReference,
-        TargetObjectReference: ObjectReference,
-        TypedLinkFacet: TypedLinkSchemaAndFacetName
-    ): BatchAttachTypedLink = {
-      val __obj = js.Dynamic.literal(
-        "Attributes"            -> Attributes.asInstanceOf[js.Any],
-        "SourceObjectReference" -> SourceObjectReference.asInstanceOf[js.Any],
-        "TargetObjectReference" -> TargetObjectReference.asInstanceOf[js.Any],
-        "TypedLinkFacet"        -> TypedLinkFacet.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchAttachTypedLink]
-    }
-  }
-
   /**
     * Represents the output of a <a>AttachTypedLink</a> response operation.
     */
   @js.native
+  @Factory
   trait BatchAttachTypedLinkResponse extends js.Object {
     var TypedLinkSpecifier: js.UndefOr[TypedLinkSpecifier]
-  }
-
-  object BatchAttachTypedLinkResponse {
-    @inline
-    def apply(
-        TypedLinkSpecifier: js.UndefOr[TypedLinkSpecifier] = js.undefined
-    ): BatchAttachTypedLinkResponse = {
-      val __obj = js.Dynamic.literal()
-      TypedLinkSpecifier.foreach(__v => __obj.updateDynamic("TypedLinkSpecifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchAttachTypedLinkResponse]
-    }
   }
 
   /**
     * Creates an index object inside of a <a>BatchRead</a> operation. For more information, see <a>CreateIndex</a> and [[BatchReadRequest.Operations]].
     */
   @js.native
+  @Factory
   trait BatchCreateIndex extends js.Object {
     var IsUnique: Boolean
     var OrderedIndexedAttributeList: AttributeKeyList
@@ -865,50 +535,20 @@ package clouddirectory {
     var ParentReference: js.UndefOr[ObjectReference]
   }
 
-  object BatchCreateIndex {
-    @inline
-    def apply(
-        IsUnique: Boolean,
-        OrderedIndexedAttributeList: AttributeKeyList,
-        BatchReferenceName: js.UndefOr[BatchReferenceName] = js.undefined,
-        LinkName: js.UndefOr[LinkName] = js.undefined,
-        ParentReference: js.UndefOr[ObjectReference] = js.undefined
-    ): BatchCreateIndex = {
-      val __obj = js.Dynamic.literal(
-        "IsUnique"                    -> IsUnique.asInstanceOf[js.Any],
-        "OrderedIndexedAttributeList" -> OrderedIndexedAttributeList.asInstanceOf[js.Any]
-      )
-
-      BatchReferenceName.foreach(__v => __obj.updateDynamic("BatchReferenceName")(__v.asInstanceOf[js.Any]))
-      LinkName.foreach(__v => __obj.updateDynamic("LinkName")(__v.asInstanceOf[js.Any]))
-      ParentReference.foreach(__v => __obj.updateDynamic("ParentReference")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchCreateIndex]
-    }
-  }
-
   /**
     * Represents the output of a <a>CreateIndex</a> response operation.
     */
   @js.native
+  @Factory
   trait BatchCreateIndexResponse extends js.Object {
     var ObjectIdentifier: js.UndefOr[ObjectIdentifier]
-  }
-
-  object BatchCreateIndexResponse {
-    @inline
-    def apply(
-        ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
-    ): BatchCreateIndexResponse = {
-      val __obj = js.Dynamic.literal()
-      ObjectIdentifier.foreach(__v => __obj.updateDynamic("ObjectIdentifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchCreateIndexResponse]
-    }
   }
 
   /**
     * Represents the output of a <a>CreateObject</a> operation.
     */
   @js.native
+  @Factory
   trait BatchCreateObject extends js.Object {
     var ObjectAttributeList: AttributeKeyAndValueList
     var SchemaFacet: SchemaFacetList
@@ -917,434 +557,187 @@ package clouddirectory {
     var ParentReference: js.UndefOr[ObjectReference]
   }
 
-  object BatchCreateObject {
-    @inline
-    def apply(
-        ObjectAttributeList: AttributeKeyAndValueList,
-        SchemaFacet: SchemaFacetList,
-        BatchReferenceName: js.UndefOr[BatchReferenceName] = js.undefined,
-        LinkName: js.UndefOr[LinkName] = js.undefined,
-        ParentReference: js.UndefOr[ObjectReference] = js.undefined
-    ): BatchCreateObject = {
-      val __obj = js.Dynamic.literal(
-        "ObjectAttributeList" -> ObjectAttributeList.asInstanceOf[js.Any],
-        "SchemaFacet"         -> SchemaFacet.asInstanceOf[js.Any]
-      )
-
-      BatchReferenceName.foreach(__v => __obj.updateDynamic("BatchReferenceName")(__v.asInstanceOf[js.Any]))
-      LinkName.foreach(__v => __obj.updateDynamic("LinkName")(__v.asInstanceOf[js.Any]))
-      ParentReference.foreach(__v => __obj.updateDynamic("ParentReference")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchCreateObject]
-    }
-  }
-
   /**
     * Represents the output of a <a>CreateObject</a> response operation.
     */
   @js.native
+  @Factory
   trait BatchCreateObjectResponse extends js.Object {
     var ObjectIdentifier: js.UndefOr[ObjectIdentifier]
-  }
-
-  object BatchCreateObjectResponse {
-    @inline
-    def apply(
-        ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
-    ): BatchCreateObjectResponse = {
-      val __obj = js.Dynamic.literal()
-      ObjectIdentifier.foreach(__v => __obj.updateDynamic("ObjectIdentifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchCreateObjectResponse]
-    }
   }
 
   /**
     * Represents the output of a <a>DeleteObject</a> operation.
     */
   @js.native
+  @Factory
   trait BatchDeleteObject extends js.Object {
     var ObjectReference: ObjectReference
-  }
-
-  object BatchDeleteObject {
-    @inline
-    def apply(
-        ObjectReference: ObjectReference
-    ): BatchDeleteObject = {
-      val __obj = js.Dynamic.literal(
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchDeleteObject]
-    }
   }
 
   /**
     * Represents the output of a <a>DeleteObject</a> response operation.
     */
   @js.native
+  @Factory
   trait BatchDeleteObjectResponse extends js.Object {}
-
-  object BatchDeleteObjectResponse {
-    @inline
-    def apply(
-    ): BatchDeleteObjectResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[BatchDeleteObjectResponse]
-    }
-  }
 
   /**
     * Detaches the specified object from the specified index inside a <a>BatchRead</a> operation. For more information, see <a>DetachFromIndex</a> and [[BatchReadRequest.Operations]].
     */
   @js.native
+  @Factory
   trait BatchDetachFromIndex extends js.Object {
     var IndexReference: ObjectReference
     var TargetReference: ObjectReference
-  }
-
-  object BatchDetachFromIndex {
-    @inline
-    def apply(
-        IndexReference: ObjectReference,
-        TargetReference: ObjectReference
-    ): BatchDetachFromIndex = {
-      val __obj = js.Dynamic.literal(
-        "IndexReference"  -> IndexReference.asInstanceOf[js.Any],
-        "TargetReference" -> TargetReference.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchDetachFromIndex]
-    }
   }
 
   /**
     * Represents the output of a <a>DetachFromIndex</a> response operation.
     */
   @js.native
+  @Factory
   trait BatchDetachFromIndexResponse extends js.Object {
     var DetachedObjectIdentifier: js.UndefOr[ObjectIdentifier]
-  }
-
-  object BatchDetachFromIndexResponse {
-    @inline
-    def apply(
-        DetachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
-    ): BatchDetachFromIndexResponse = {
-      val __obj = js.Dynamic.literal()
-      DetachedObjectIdentifier.foreach(__v => __obj.updateDynamic("DetachedObjectIdentifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchDetachFromIndexResponse]
-    }
   }
 
   /**
     * Represents the output of a <a>DetachObject</a> operation.
     */
   @js.native
+  @Factory
   trait BatchDetachObject extends js.Object {
     var LinkName: LinkName
     var ParentReference: ObjectReference
     var BatchReferenceName: js.UndefOr[BatchReferenceName]
   }
 
-  object BatchDetachObject {
-    @inline
-    def apply(
-        LinkName: LinkName,
-        ParentReference: ObjectReference,
-        BatchReferenceName: js.UndefOr[BatchReferenceName] = js.undefined
-    ): BatchDetachObject = {
-      val __obj = js.Dynamic.literal(
-        "LinkName"        -> LinkName.asInstanceOf[js.Any],
-        "ParentReference" -> ParentReference.asInstanceOf[js.Any]
-      )
-
-      BatchReferenceName.foreach(__v => __obj.updateDynamic("BatchReferenceName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchDetachObject]
-    }
-  }
-
   /**
     * Represents the output of a <a>DetachObject</a> response operation.
     */
   @js.native
+  @Factory
   trait BatchDetachObjectResponse extends js.Object {
     var detachedObjectIdentifier: js.UndefOr[ObjectIdentifier]
-  }
-
-  object BatchDetachObjectResponse {
-    @inline
-    def apply(
-        detachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
-    ): BatchDetachObjectResponse = {
-      val __obj = js.Dynamic.literal()
-      detachedObjectIdentifier.foreach(__v => __obj.updateDynamic("detachedObjectIdentifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchDetachObjectResponse]
-    }
   }
 
   /**
     * Detaches the specified policy from the specified directory inside a <a>BatchWrite</a> operation. For more information, see <a>DetachPolicy</a> and [[BatchWriteRequest.Operations]].
     */
   @js.native
+  @Factory
   trait BatchDetachPolicy extends js.Object {
     var ObjectReference: ObjectReference
     var PolicyReference: ObjectReference
-  }
-
-  object BatchDetachPolicy {
-    @inline
-    def apply(
-        ObjectReference: ObjectReference,
-        PolicyReference: ObjectReference
-    ): BatchDetachPolicy = {
-      val __obj = js.Dynamic.literal(
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
-        "PolicyReference" -> PolicyReference.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchDetachPolicy]
-    }
   }
 
   /**
     * Represents the output of a <a>DetachPolicy</a> response operation.
     */
   @js.native
+  @Factory
   trait BatchDetachPolicyResponse extends js.Object {}
-
-  object BatchDetachPolicyResponse {
-    @inline
-    def apply(
-    ): BatchDetachPolicyResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[BatchDetachPolicyResponse]
-    }
-  }
 
   /**
     * Detaches a typed link from a specified source and target object inside a <a>BatchRead</a> operation. For more information, see <a>DetachTypedLink</a> and [[BatchReadRequest.Operations]].
     */
   @js.native
+  @Factory
   trait BatchDetachTypedLink extends js.Object {
     var TypedLinkSpecifier: TypedLinkSpecifier
-  }
-
-  object BatchDetachTypedLink {
-    @inline
-    def apply(
-        TypedLinkSpecifier: TypedLinkSpecifier
-    ): BatchDetachTypedLink = {
-      val __obj = js.Dynamic.literal(
-        "TypedLinkSpecifier" -> TypedLinkSpecifier.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchDetachTypedLink]
-    }
   }
 
   /**
     * Represents the output of a <a>DetachTypedLink</a> response operation.
     */
   @js.native
+  @Factory
   trait BatchDetachTypedLinkResponse extends js.Object {}
-
-  object BatchDetachTypedLinkResponse {
-    @inline
-    def apply(
-    ): BatchDetachTypedLinkResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[BatchDetachTypedLinkResponse]
-    }
-  }
 
   /**
     * Retrieves attributes that are associated with a typed link inside a <a>BatchRead</a> operation. For more information, see <a>GetLinkAttributes</a> and [[BatchReadRequest.Operations]].
     */
   @js.native
+  @Factory
   trait BatchGetLinkAttributes extends js.Object {
     var AttributeNames: AttributeNameList
     var TypedLinkSpecifier: TypedLinkSpecifier
-  }
-
-  object BatchGetLinkAttributes {
-    @inline
-    def apply(
-        AttributeNames: AttributeNameList,
-        TypedLinkSpecifier: TypedLinkSpecifier
-    ): BatchGetLinkAttributes = {
-      val __obj = js.Dynamic.literal(
-        "AttributeNames"     -> AttributeNames.asInstanceOf[js.Any],
-        "TypedLinkSpecifier" -> TypedLinkSpecifier.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchGetLinkAttributes]
-    }
   }
 
   /**
     * Represents the output of a <a>GetLinkAttributes</a> response operation.
     */
   @js.native
+  @Factory
   trait BatchGetLinkAttributesResponse extends js.Object {
     var Attributes: js.UndefOr[AttributeKeyAndValueList]
-  }
-
-  object BatchGetLinkAttributesResponse {
-    @inline
-    def apply(
-        Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined
-    ): BatchGetLinkAttributesResponse = {
-      val __obj = js.Dynamic.literal()
-      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchGetLinkAttributesResponse]
-    }
   }
 
   /**
     * Retrieves attributes within a facet that are associated with an object inside an <a>BatchRead</a> operation. For more information, see <a>GetObjectAttributes</a> and [[BatchReadRequest.Operations]].
     */
   @js.native
+  @Factory
   trait BatchGetObjectAttributes extends js.Object {
     var AttributeNames: AttributeNameList
     var ObjectReference: ObjectReference
     var SchemaFacet: SchemaFacet
   }
 
-  object BatchGetObjectAttributes {
-    @inline
-    def apply(
-        AttributeNames: AttributeNameList,
-        ObjectReference: ObjectReference,
-        SchemaFacet: SchemaFacet
-    ): BatchGetObjectAttributes = {
-      val __obj = js.Dynamic.literal(
-        "AttributeNames"  -> AttributeNames.asInstanceOf[js.Any],
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
-        "SchemaFacet"     -> SchemaFacet.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchGetObjectAttributes]
-    }
-  }
-
   /**
     * Represents the output of a <a>GetObjectAttributes</a> response operation.
     */
   @js.native
+  @Factory
   trait BatchGetObjectAttributesResponse extends js.Object {
     var Attributes: js.UndefOr[AttributeKeyAndValueList]
-  }
-
-  object BatchGetObjectAttributesResponse {
-    @inline
-    def apply(
-        Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined
-    ): BatchGetObjectAttributesResponse = {
-      val __obj = js.Dynamic.literal()
-      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchGetObjectAttributesResponse]
-    }
   }
 
   /**
     * Retrieves metadata about an object inside a <a>BatchRead</a> operation. For more information, see <a>GetObjectInformation</a> and [[BatchReadRequest.Operations]].
     */
   @js.native
+  @Factory
   trait BatchGetObjectInformation extends js.Object {
     var ObjectReference: ObjectReference
-  }
-
-  object BatchGetObjectInformation {
-    @inline
-    def apply(
-        ObjectReference: ObjectReference
-    ): BatchGetObjectInformation = {
-      val __obj = js.Dynamic.literal(
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchGetObjectInformation]
-    }
   }
 
   /**
     * Represents the output of a <a>GetObjectInformation</a> response operation.
     */
   @js.native
+  @Factory
   trait BatchGetObjectInformationResponse extends js.Object {
     var ObjectIdentifier: js.UndefOr[ObjectIdentifier]
     var SchemaFacets: js.UndefOr[SchemaFacetList]
-  }
-
-  object BatchGetObjectInformationResponse {
-    @inline
-    def apply(
-        ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined,
-        SchemaFacets: js.UndefOr[SchemaFacetList] = js.undefined
-    ): BatchGetObjectInformationResponse = {
-      val __obj = js.Dynamic.literal()
-      ObjectIdentifier.foreach(__v => __obj.updateDynamic("ObjectIdentifier")(__v.asInstanceOf[js.Any]))
-      SchemaFacets.foreach(__v => __obj.updateDynamic("SchemaFacets")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchGetObjectInformationResponse]
-    }
   }
 
   /**
     * Lists indices attached to an object inside a <a>BatchRead</a> operation. For more information, see <a>ListAttachedIndices</a> and [[BatchReadRequest.Operations]].
     */
   @js.native
+  @Factory
   trait BatchListAttachedIndices extends js.Object {
     var TargetReference: ObjectReference
     var MaxResults: js.UndefOr[NumberResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object BatchListAttachedIndices {
-    @inline
-    def apply(
-        TargetReference: ObjectReference,
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): BatchListAttachedIndices = {
-      val __obj = js.Dynamic.literal(
-        "TargetReference" -> TargetReference.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchListAttachedIndices]
-    }
-  }
-
   /**
     * Represents the output of a <a>ListAttachedIndices</a> response operation.
     */
   @js.native
+  @Factory
   trait BatchListAttachedIndicesResponse extends js.Object {
     var IndexAttachments: js.UndefOr[IndexAttachmentList]
     var NextToken: js.UndefOr[NextToken]
-  }
-
-  object BatchListAttachedIndicesResponse {
-    @inline
-    def apply(
-        IndexAttachments: js.UndefOr[IndexAttachmentList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): BatchListAttachedIndicesResponse = {
-      val __obj = js.Dynamic.literal()
-      IndexAttachments.foreach(__v => __obj.updateDynamic("IndexAttachments")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchListAttachedIndicesResponse]
-    }
   }
 
   /**
     * Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object inside a <a>BatchRead</a> operation. For more information, see <a>ListIncomingTypedLinks</a> and [[BatchReadRequest.Operations]].
     */
   @js.native
+  @Factory
   trait BatchListIncomingTypedLinks extends js.Object {
     var ObjectReference: ObjectReference
     var FilterAttributeRanges: js.UndefOr[TypedLinkAttributeRangeList]
@@ -1353,53 +746,21 @@ package clouddirectory {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object BatchListIncomingTypedLinks {
-    @inline
-    def apply(
-        ObjectReference: ObjectReference,
-        FilterAttributeRanges: js.UndefOr[TypedLinkAttributeRangeList] = js.undefined,
-        FilterTypedLink: js.UndefOr[TypedLinkSchemaAndFacetName] = js.undefined,
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): BatchListIncomingTypedLinks = {
-      val __obj = js.Dynamic.literal(
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
-      )
-
-      FilterAttributeRanges.foreach(__v => __obj.updateDynamic("FilterAttributeRanges")(__v.asInstanceOf[js.Any]))
-      FilterTypedLink.foreach(__v => __obj.updateDynamic("FilterTypedLink")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchListIncomingTypedLinks]
-    }
-  }
-
   /**
     * Represents the output of a <a>ListIncomingTypedLinks</a> response operation.
     */
   @js.native
+  @Factory
   trait BatchListIncomingTypedLinksResponse extends js.Object {
     var LinkSpecifiers: js.UndefOr[TypedLinkSpecifierList]
     var NextToken: js.UndefOr[NextToken]
-  }
-
-  object BatchListIncomingTypedLinksResponse {
-    @inline
-    def apply(
-        LinkSpecifiers: js.UndefOr[TypedLinkSpecifierList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): BatchListIncomingTypedLinksResponse = {
-      val __obj = js.Dynamic.literal()
-      LinkSpecifiers.foreach(__v => __obj.updateDynamic("LinkSpecifiers")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchListIncomingTypedLinksResponse]
-    }
   }
 
   /**
     * Lists objects attached to the specified index inside a <a>BatchRead</a> operation. For more information, see <a>ListIndex</a> and [[BatchReadRequest.Operations]].
     */
   @js.native
+  @Factory
   trait BatchListIndex extends js.Object {
     var IndexReference: ObjectReference
     var MaxResults: js.UndefOr[NumberResults]
@@ -1407,51 +768,21 @@ package clouddirectory {
     var RangesOnIndexedValues: js.UndefOr[ObjectAttributeRangeList]
   }
 
-  object BatchListIndex {
-    @inline
-    def apply(
-        IndexReference: ObjectReference,
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        RangesOnIndexedValues: js.UndefOr[ObjectAttributeRangeList] = js.undefined
-    ): BatchListIndex = {
-      val __obj = js.Dynamic.literal(
-        "IndexReference" -> IndexReference.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      RangesOnIndexedValues.foreach(__v => __obj.updateDynamic("RangesOnIndexedValues")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchListIndex]
-    }
-  }
-
   /**
     * Represents the output of a <a>ListIndex</a> response operation.
     */
   @js.native
+  @Factory
   trait BatchListIndexResponse extends js.Object {
     var IndexAttachments: js.UndefOr[IndexAttachmentList]
     var NextToken: js.UndefOr[NextToken]
-  }
-
-  object BatchListIndexResponse {
-    @inline
-    def apply(
-        IndexAttachments: js.UndefOr[IndexAttachmentList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): BatchListIndexResponse = {
-      val __obj = js.Dynamic.literal()
-      IndexAttachments.foreach(__v => __obj.updateDynamic("IndexAttachments")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchListIndexResponse]
-    }
   }
 
   /**
     * Represents the output of a <a>ListObjectAttributes</a> operation.
     */
   @js.native
+  @Factory
   trait BatchListObjectAttributes extends js.Object {
     var ObjectReference: ObjectReference
     var FacetFilter: js.UndefOr[SchemaFacet]
@@ -1459,243 +790,99 @@ package clouddirectory {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object BatchListObjectAttributes {
-    @inline
-    def apply(
-        ObjectReference: ObjectReference,
-        FacetFilter: js.UndefOr[SchemaFacet] = js.undefined,
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): BatchListObjectAttributes = {
-      val __obj = js.Dynamic.literal(
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
-      )
-
-      FacetFilter.foreach(__v => __obj.updateDynamic("FacetFilter")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchListObjectAttributes]
-    }
-  }
-
   /**
     * Represents the output of a <a>ListObjectAttributes</a> response operation.
     */
   @js.native
+  @Factory
   trait BatchListObjectAttributesResponse extends js.Object {
     var Attributes: js.UndefOr[AttributeKeyAndValueList]
     var NextToken: js.UndefOr[NextToken]
-  }
-
-  object BatchListObjectAttributesResponse {
-    @inline
-    def apply(
-        Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): BatchListObjectAttributesResponse = {
-      val __obj = js.Dynamic.literal()
-      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchListObjectAttributesResponse]
-    }
   }
 
   /**
     * Represents the output of a <a>ListObjectChildren</a> operation.
     */
   @js.native
+  @Factory
   trait BatchListObjectChildren extends js.Object {
     var ObjectReference: ObjectReference
     var MaxResults: js.UndefOr[NumberResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object BatchListObjectChildren {
-    @inline
-    def apply(
-        ObjectReference: ObjectReference,
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): BatchListObjectChildren = {
-      val __obj = js.Dynamic.literal(
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchListObjectChildren]
-    }
-  }
-
   /**
     * Represents the output of a <a>ListObjectChildren</a> response operation.
     */
   @js.native
+  @Factory
   trait BatchListObjectChildrenResponse extends js.Object {
     var Children: js.UndefOr[LinkNameToObjectIdentifierMap]
     var NextToken: js.UndefOr[NextToken]
-  }
-
-  object BatchListObjectChildrenResponse {
-    @inline
-    def apply(
-        Children: js.UndefOr[LinkNameToObjectIdentifierMap] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): BatchListObjectChildrenResponse = {
-      val __obj = js.Dynamic.literal()
-      Children.foreach(__v => __obj.updateDynamic("Children")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchListObjectChildrenResponse]
-    }
   }
 
   /**
     * Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects inside a <a>BatchRead</a> operation. For more information, see <a>ListObjectParentPaths</a> and [[BatchReadRequest.Operations]].
     */
   @js.native
+  @Factory
   trait BatchListObjectParentPaths extends js.Object {
     var ObjectReference: ObjectReference
     var MaxResults: js.UndefOr[NumberResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object BatchListObjectParentPaths {
-    @inline
-    def apply(
-        ObjectReference: ObjectReference,
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): BatchListObjectParentPaths = {
-      val __obj = js.Dynamic.literal(
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchListObjectParentPaths]
-    }
-  }
-
   /**
     * Represents the output of a <a>ListObjectParentPaths</a> response operation.
     */
   @js.native
+  @Factory
   trait BatchListObjectParentPathsResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var PathToObjectIdentifiersList: js.UndefOr[PathToObjectIdentifiersList]
   }
 
-  object BatchListObjectParentPathsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        PathToObjectIdentifiersList: js.UndefOr[PathToObjectIdentifiersList] = js.undefined
-    ): BatchListObjectParentPathsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PathToObjectIdentifiersList.foreach(__v =>
-        __obj.updateDynamic("PathToObjectIdentifiersList")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[BatchListObjectParentPathsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchListObjectParents extends js.Object {
     var ObjectReference: ObjectReference
     var MaxResults: js.UndefOr[NumberResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object BatchListObjectParents {
-    @inline
-    def apply(
-        ObjectReference: ObjectReference,
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): BatchListObjectParents = {
-      val __obj = js.Dynamic.literal(
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchListObjectParents]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchListObjectParentsResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var ParentLinks: js.UndefOr[ObjectIdentifierAndLinkNameList]
-  }
-
-  object BatchListObjectParentsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        ParentLinks: js.UndefOr[ObjectIdentifierAndLinkNameList] = js.undefined
-    ): BatchListObjectParentsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ParentLinks.foreach(__v => __obj.updateDynamic("ParentLinks")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchListObjectParentsResponse]
-    }
   }
 
   /**
     * Returns policies attached to an object in pagination fashion inside a <a>BatchRead</a> operation. For more information, see <a>ListObjectPolicies</a> and [[BatchReadRequest.Operations]].
     */
   @js.native
+  @Factory
   trait BatchListObjectPolicies extends js.Object {
     var ObjectReference: ObjectReference
     var MaxResults: js.UndefOr[NumberResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object BatchListObjectPolicies {
-    @inline
-    def apply(
-        ObjectReference: ObjectReference,
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): BatchListObjectPolicies = {
-      val __obj = js.Dynamic.literal(
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchListObjectPolicies]
-    }
-  }
-
   /**
     * Represents the output of a <a>ListObjectPolicies</a> response operation.
     */
   @js.native
+  @Factory
   trait BatchListObjectPoliciesResponse extends js.Object {
     var AttachedPolicyIds: js.UndefOr[ObjectIdentifierList]
     var NextToken: js.UndefOr[NextToken]
-  }
-
-  object BatchListObjectPoliciesResponse {
-    @inline
-    def apply(
-        AttachedPolicyIds: js.UndefOr[ObjectIdentifierList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): BatchListObjectPoliciesResponse = {
-      val __obj = js.Dynamic.literal()
-      AttachedPolicyIds.foreach(__v => __obj.updateDynamic("AttachedPolicyIds")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchListObjectPoliciesResponse]
-    }
   }
 
   /**
     * Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object inside a <a>BatchRead</a> operation. For more information, see <a>ListOutgoingTypedLinks</a> and [[BatchReadRequest.Operations]].
     */
   @js.native
+  @Factory
   trait BatchListOutgoingTypedLinks extends js.Object {
     var ObjectReference: ObjectReference
     var FilterAttributeRanges: js.UndefOr[TypedLinkAttributeRangeList]
@@ -1704,167 +891,66 @@ package clouddirectory {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object BatchListOutgoingTypedLinks {
-    @inline
-    def apply(
-        ObjectReference: ObjectReference,
-        FilterAttributeRanges: js.UndefOr[TypedLinkAttributeRangeList] = js.undefined,
-        FilterTypedLink: js.UndefOr[TypedLinkSchemaAndFacetName] = js.undefined,
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): BatchListOutgoingTypedLinks = {
-      val __obj = js.Dynamic.literal(
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
-      )
-
-      FilterAttributeRanges.foreach(__v => __obj.updateDynamic("FilterAttributeRanges")(__v.asInstanceOf[js.Any]))
-      FilterTypedLink.foreach(__v => __obj.updateDynamic("FilterTypedLink")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchListOutgoingTypedLinks]
-    }
-  }
-
   /**
     * Represents the output of a <a>ListOutgoingTypedLinks</a> response operation.
     */
   @js.native
+  @Factory
   trait BatchListOutgoingTypedLinksResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var TypedLinkSpecifiers: js.UndefOr[TypedLinkSpecifierList]
-  }
-
-  object BatchListOutgoingTypedLinksResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        TypedLinkSpecifiers: js.UndefOr[TypedLinkSpecifierList] = js.undefined
-    ): BatchListOutgoingTypedLinksResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      TypedLinkSpecifiers.foreach(__v => __obj.updateDynamic("TypedLinkSpecifiers")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchListOutgoingTypedLinksResponse]
-    }
   }
 
   /**
     * Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached inside a <a>BatchRead</a> operation. For more information, see <a>ListPolicyAttachments</a> and [[BatchReadRequest.Operations]].
     */
   @js.native
+  @Factory
   trait BatchListPolicyAttachments extends js.Object {
     var PolicyReference: ObjectReference
     var MaxResults: js.UndefOr[NumberResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object BatchListPolicyAttachments {
-    @inline
-    def apply(
-        PolicyReference: ObjectReference,
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): BatchListPolicyAttachments = {
-      val __obj = js.Dynamic.literal(
-        "PolicyReference" -> PolicyReference.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchListPolicyAttachments]
-    }
-  }
-
   /**
     * Represents the output of a <a>ListPolicyAttachments</a> response operation.
     */
   @js.native
+  @Factory
   trait BatchListPolicyAttachmentsResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var ObjectIdentifiers: js.UndefOr[ObjectIdentifierList]
-  }
-
-  object BatchListPolicyAttachmentsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        ObjectIdentifiers: js.UndefOr[ObjectIdentifierList] = js.undefined
-    ): BatchListPolicyAttachmentsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ObjectIdentifiers.foreach(__v => __obj.updateDynamic("ObjectIdentifiers")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchListPolicyAttachmentsResponse]
-    }
   }
 
   /**
     * Lists all policies from the root of the Directory to the object specified inside a <a>BatchRead</a> operation. For more information, see <a>LookupPolicy</a> and [[BatchReadRequest.Operations]].
     */
   @js.native
+  @Factory
   trait BatchLookupPolicy extends js.Object {
     var ObjectReference: ObjectReference
     var MaxResults: js.UndefOr[NumberResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object BatchLookupPolicy {
-    @inline
-    def apply(
-        ObjectReference: ObjectReference,
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): BatchLookupPolicy = {
-      val __obj = js.Dynamic.literal(
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchLookupPolicy]
-    }
-  }
-
   /**
     * Represents the output of a <a>LookupPolicy</a> response operation.
     */
   @js.native
+  @Factory
   trait BatchLookupPolicyResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var PolicyToPathList: js.UndefOr[PolicyToPathList]
-  }
-
-  object BatchLookupPolicyResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        PolicyToPathList: js.UndefOr[PolicyToPathList] = js.undefined
-    ): BatchLookupPolicyResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PolicyToPathList.foreach(__v => __obj.updateDynamic("PolicyToPathList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchLookupPolicyResponse]
-    }
   }
 
   /**
     * The batch read exception structure, which contains the exception type and message.
     */
   @js.native
+  @Factory
   trait BatchReadException extends js.Object {
     var Message: js.UndefOr[ExceptionMessage]
     var Type: js.UndefOr[BatchReadExceptionType]
-  }
-
-  object BatchReadException {
-    @inline
-    def apply(
-        Message: js.UndefOr[ExceptionMessage] = js.undefined,
-        Type: js.UndefOr[BatchReadExceptionType] = js.undefined
-    ): BatchReadException = {
-      val __obj = js.Dynamic.literal()
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchReadException]
-    }
   }
 
   @js.native
@@ -1907,6 +993,7 @@ package clouddirectory {
     * Represents the output of a <code>BatchRead</code> operation.
     */
   @js.native
+  @Factory
   trait BatchReadOperation extends js.Object {
     var GetLinkAttributes: js.UndefOr[BatchGetLinkAttributes]
     var GetObjectAttributes: js.UndefOr[BatchGetObjectAttributes]
@@ -1924,109 +1011,35 @@ package clouddirectory {
     var LookupPolicy: js.UndefOr[BatchLookupPolicy]
   }
 
-  object BatchReadOperation {
-    @inline
-    def apply(
-        GetLinkAttributes: js.UndefOr[BatchGetLinkAttributes] = js.undefined,
-        GetObjectAttributes: js.UndefOr[BatchGetObjectAttributes] = js.undefined,
-        GetObjectInformation: js.UndefOr[BatchGetObjectInformation] = js.undefined,
-        ListAttachedIndices: js.UndefOr[BatchListAttachedIndices] = js.undefined,
-        ListIncomingTypedLinks: js.UndefOr[BatchListIncomingTypedLinks] = js.undefined,
-        ListIndex: js.UndefOr[BatchListIndex] = js.undefined,
-        ListObjectAttributes: js.UndefOr[BatchListObjectAttributes] = js.undefined,
-        ListObjectChildren: js.UndefOr[BatchListObjectChildren] = js.undefined,
-        ListObjectParentPaths: js.UndefOr[BatchListObjectParentPaths] = js.undefined,
-        ListObjectParents: js.UndefOr[BatchListObjectParents] = js.undefined,
-        ListObjectPolicies: js.UndefOr[BatchListObjectPolicies] = js.undefined,
-        ListOutgoingTypedLinks: js.UndefOr[BatchListOutgoingTypedLinks] = js.undefined,
-        ListPolicyAttachments: js.UndefOr[BatchListPolicyAttachments] = js.undefined,
-        LookupPolicy: js.UndefOr[BatchLookupPolicy] = js.undefined
-    ): BatchReadOperation = {
-      val __obj = js.Dynamic.literal()
-      GetLinkAttributes.foreach(__v => __obj.updateDynamic("GetLinkAttributes")(__v.asInstanceOf[js.Any]))
-      GetObjectAttributes.foreach(__v => __obj.updateDynamic("GetObjectAttributes")(__v.asInstanceOf[js.Any]))
-      GetObjectInformation.foreach(__v => __obj.updateDynamic("GetObjectInformation")(__v.asInstanceOf[js.Any]))
-      ListAttachedIndices.foreach(__v => __obj.updateDynamic("ListAttachedIndices")(__v.asInstanceOf[js.Any]))
-      ListIncomingTypedLinks.foreach(__v => __obj.updateDynamic("ListIncomingTypedLinks")(__v.asInstanceOf[js.Any]))
-      ListIndex.foreach(__v => __obj.updateDynamic("ListIndex")(__v.asInstanceOf[js.Any]))
-      ListObjectAttributes.foreach(__v => __obj.updateDynamic("ListObjectAttributes")(__v.asInstanceOf[js.Any]))
-      ListObjectChildren.foreach(__v => __obj.updateDynamic("ListObjectChildren")(__v.asInstanceOf[js.Any]))
-      ListObjectParentPaths.foreach(__v => __obj.updateDynamic("ListObjectParentPaths")(__v.asInstanceOf[js.Any]))
-      ListObjectParents.foreach(__v => __obj.updateDynamic("ListObjectParents")(__v.asInstanceOf[js.Any]))
-      ListObjectPolicies.foreach(__v => __obj.updateDynamic("ListObjectPolicies")(__v.asInstanceOf[js.Any]))
-      ListOutgoingTypedLinks.foreach(__v => __obj.updateDynamic("ListOutgoingTypedLinks")(__v.asInstanceOf[js.Any]))
-      ListPolicyAttachments.foreach(__v => __obj.updateDynamic("ListPolicyAttachments")(__v.asInstanceOf[js.Any]))
-      LookupPolicy.foreach(__v => __obj.updateDynamic("LookupPolicy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchReadOperation]
-    }
-  }
-
   /**
     * Represents the output of a <code>BatchRead</code> response operation.
     */
   @js.native
+  @Factory
   trait BatchReadOperationResponse extends js.Object {
     var ExceptionResponse: js.UndefOr[BatchReadException]
     var SuccessfulResponse: js.UndefOr[BatchReadSuccessfulResponse]
   }
 
-  object BatchReadOperationResponse {
-    @inline
-    def apply(
-        ExceptionResponse: js.UndefOr[BatchReadException] = js.undefined,
-        SuccessfulResponse: js.UndefOr[BatchReadSuccessfulResponse] = js.undefined
-    ): BatchReadOperationResponse = {
-      val __obj = js.Dynamic.literal()
-      ExceptionResponse.foreach(__v => __obj.updateDynamic("ExceptionResponse")(__v.asInstanceOf[js.Any]))
-      SuccessfulResponse.foreach(__v => __obj.updateDynamic("SuccessfulResponse")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchReadOperationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchReadRequest extends js.Object {
     var DirectoryArn: Arn
     var Operations: BatchReadOperationList
     var ConsistencyLevel: js.UndefOr[ConsistencyLevel]
   }
 
-  object BatchReadRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        Operations: BatchReadOperationList,
-        ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined
-    ): BatchReadRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
-        "Operations"   -> Operations.asInstanceOf[js.Any]
-      )
-
-      ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchReadRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchReadResponse extends js.Object {
     var Responses: js.UndefOr[BatchReadOperationResponseList]
-  }
-
-  object BatchReadResponse {
-    @inline
-    def apply(
-        Responses: js.UndefOr[BatchReadOperationResponseList] = js.undefined
-    ): BatchReadResponse = {
-      val __obj = js.Dynamic.literal()
-      Responses.foreach(__v => __obj.updateDynamic("Responses")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchReadResponse]
-    }
   }
 
   /**
     * Represents the output of a <code>BatchRead</code> success response operation.
     */
   @js.native
+  @Factory
   trait BatchReadSuccessfulResponse extends js.Object {
     var GetLinkAttributes: js.UndefOr[BatchGetLinkAttributesResponse]
     var GetObjectAttributes: js.UndefOr[BatchGetObjectAttributesResponse]
@@ -2044,170 +1057,64 @@ package clouddirectory {
     var LookupPolicy: js.UndefOr[BatchLookupPolicyResponse]
   }
 
-  object BatchReadSuccessfulResponse {
-    @inline
-    def apply(
-        GetLinkAttributes: js.UndefOr[BatchGetLinkAttributesResponse] = js.undefined,
-        GetObjectAttributes: js.UndefOr[BatchGetObjectAttributesResponse] = js.undefined,
-        GetObjectInformation: js.UndefOr[BatchGetObjectInformationResponse] = js.undefined,
-        ListAttachedIndices: js.UndefOr[BatchListAttachedIndicesResponse] = js.undefined,
-        ListIncomingTypedLinks: js.UndefOr[BatchListIncomingTypedLinksResponse] = js.undefined,
-        ListIndex: js.UndefOr[BatchListIndexResponse] = js.undefined,
-        ListObjectAttributes: js.UndefOr[BatchListObjectAttributesResponse] = js.undefined,
-        ListObjectChildren: js.UndefOr[BatchListObjectChildrenResponse] = js.undefined,
-        ListObjectParentPaths: js.UndefOr[BatchListObjectParentPathsResponse] = js.undefined,
-        ListObjectParents: js.UndefOr[BatchListObjectParentsResponse] = js.undefined,
-        ListObjectPolicies: js.UndefOr[BatchListObjectPoliciesResponse] = js.undefined,
-        ListOutgoingTypedLinks: js.UndefOr[BatchListOutgoingTypedLinksResponse] = js.undefined,
-        ListPolicyAttachments: js.UndefOr[BatchListPolicyAttachmentsResponse] = js.undefined,
-        LookupPolicy: js.UndefOr[BatchLookupPolicyResponse] = js.undefined
-    ): BatchReadSuccessfulResponse = {
-      val __obj = js.Dynamic.literal()
-      GetLinkAttributes.foreach(__v => __obj.updateDynamic("GetLinkAttributes")(__v.asInstanceOf[js.Any]))
-      GetObjectAttributes.foreach(__v => __obj.updateDynamic("GetObjectAttributes")(__v.asInstanceOf[js.Any]))
-      GetObjectInformation.foreach(__v => __obj.updateDynamic("GetObjectInformation")(__v.asInstanceOf[js.Any]))
-      ListAttachedIndices.foreach(__v => __obj.updateDynamic("ListAttachedIndices")(__v.asInstanceOf[js.Any]))
-      ListIncomingTypedLinks.foreach(__v => __obj.updateDynamic("ListIncomingTypedLinks")(__v.asInstanceOf[js.Any]))
-      ListIndex.foreach(__v => __obj.updateDynamic("ListIndex")(__v.asInstanceOf[js.Any]))
-      ListObjectAttributes.foreach(__v => __obj.updateDynamic("ListObjectAttributes")(__v.asInstanceOf[js.Any]))
-      ListObjectChildren.foreach(__v => __obj.updateDynamic("ListObjectChildren")(__v.asInstanceOf[js.Any]))
-      ListObjectParentPaths.foreach(__v => __obj.updateDynamic("ListObjectParentPaths")(__v.asInstanceOf[js.Any]))
-      ListObjectParents.foreach(__v => __obj.updateDynamic("ListObjectParents")(__v.asInstanceOf[js.Any]))
-      ListObjectPolicies.foreach(__v => __obj.updateDynamic("ListObjectPolicies")(__v.asInstanceOf[js.Any]))
-      ListOutgoingTypedLinks.foreach(__v => __obj.updateDynamic("ListOutgoingTypedLinks")(__v.asInstanceOf[js.Any]))
-      ListPolicyAttachments.foreach(__v => __obj.updateDynamic("ListPolicyAttachments")(__v.asInstanceOf[js.Any]))
-      LookupPolicy.foreach(__v => __obj.updateDynamic("LookupPolicy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchReadSuccessfulResponse]
-    }
-  }
-
   /**
     * A batch operation to remove a facet from an object.
     */
   @js.native
+  @Factory
   trait BatchRemoveFacetFromObject extends js.Object {
     var ObjectReference: ObjectReference
     var SchemaFacet: SchemaFacet
-  }
-
-  object BatchRemoveFacetFromObject {
-    @inline
-    def apply(
-        ObjectReference: ObjectReference,
-        SchemaFacet: SchemaFacet
-    ): BatchRemoveFacetFromObject = {
-      val __obj = js.Dynamic.literal(
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
-        "SchemaFacet"     -> SchemaFacet.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchRemoveFacetFromObject]
-    }
   }
 
   /**
     * An empty result that represents success.
     */
   @js.native
+  @Factory
   trait BatchRemoveFacetFromObjectResponse extends js.Object {}
-
-  object BatchRemoveFacetFromObjectResponse {
-    @inline
-    def apply(
-    ): BatchRemoveFacetFromObjectResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[BatchRemoveFacetFromObjectResponse]
-    }
-  }
 
   /**
     * Updates a given typed link’s attributes inside a <a>BatchRead</a> operation. Attributes to be updated must not contribute to the typed link’s identity, as defined by its <code>IdentityAttributeOrder</code>. For more information, see <a>UpdateLinkAttributes</a> and [[BatchReadRequest.Operations]].
     */
   @js.native
+  @Factory
   trait BatchUpdateLinkAttributes extends js.Object {
     var AttributeUpdates: LinkAttributeUpdateList
     var TypedLinkSpecifier: TypedLinkSpecifier
-  }
-
-  object BatchUpdateLinkAttributes {
-    @inline
-    def apply(
-        AttributeUpdates: LinkAttributeUpdateList,
-        TypedLinkSpecifier: TypedLinkSpecifier
-    ): BatchUpdateLinkAttributes = {
-      val __obj = js.Dynamic.literal(
-        "AttributeUpdates"   -> AttributeUpdates.asInstanceOf[js.Any],
-        "TypedLinkSpecifier" -> TypedLinkSpecifier.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchUpdateLinkAttributes]
-    }
   }
 
   /**
     * Represents the output of a <a>UpdateLinkAttributes</a> response operation.
     */
   @js.native
+  @Factory
   trait BatchUpdateLinkAttributesResponse extends js.Object {}
-
-  object BatchUpdateLinkAttributesResponse {
-    @inline
-    def apply(
-    ): BatchUpdateLinkAttributesResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[BatchUpdateLinkAttributesResponse]
-    }
-  }
 
   /**
     * Represents the output of a <code>BatchUpdate</code> operation.
     */
   @js.native
+  @Factory
   trait BatchUpdateObjectAttributes extends js.Object {
     var AttributeUpdates: ObjectAttributeUpdateList
     var ObjectReference: ObjectReference
-  }
-
-  object BatchUpdateObjectAttributes {
-    @inline
-    def apply(
-        AttributeUpdates: ObjectAttributeUpdateList,
-        ObjectReference: ObjectReference
-    ): BatchUpdateObjectAttributes = {
-      val __obj = js.Dynamic.literal(
-        "AttributeUpdates" -> AttributeUpdates.asInstanceOf[js.Any],
-        "ObjectReference"  -> ObjectReference.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchUpdateObjectAttributes]
-    }
   }
 
   /**
     * Represents the output of a <code>BatchUpdate</code> response operation.
     */
   @js.native
+  @Factory
   trait BatchUpdateObjectAttributesResponse extends js.Object {
     var ObjectIdentifier: js.UndefOr[ObjectIdentifier]
-  }
-
-  object BatchUpdateObjectAttributesResponse {
-    @inline
-    def apply(
-        ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
-    ): BatchUpdateObjectAttributesResponse = {
-      val __obj = js.Dynamic.literal()
-      ObjectIdentifier.foreach(__v => __obj.updateDynamic("ObjectIdentifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchUpdateObjectAttributesResponse]
-    }
   }
 
   /**
     * Represents the output of a <code>BatchWrite</code> operation.
     */
   @js.native
+  @Factory
   trait BatchWriteOperation extends js.Object {
     var AddFacetToObject: js.UndefOr[BatchAddFacetToObject]
     var AttachObject: js.UndefOr[BatchAttachObject]
@@ -2226,49 +1133,11 @@ package clouddirectory {
     var UpdateObjectAttributes: js.UndefOr[BatchUpdateObjectAttributes]
   }
 
-  object BatchWriteOperation {
-    @inline
-    def apply(
-        AddFacetToObject: js.UndefOr[BatchAddFacetToObject] = js.undefined,
-        AttachObject: js.UndefOr[BatchAttachObject] = js.undefined,
-        AttachPolicy: js.UndefOr[BatchAttachPolicy] = js.undefined,
-        AttachToIndex: js.UndefOr[BatchAttachToIndex] = js.undefined,
-        AttachTypedLink: js.UndefOr[BatchAttachTypedLink] = js.undefined,
-        CreateIndex: js.UndefOr[BatchCreateIndex] = js.undefined,
-        CreateObject: js.UndefOr[BatchCreateObject] = js.undefined,
-        DeleteObject: js.UndefOr[BatchDeleteObject] = js.undefined,
-        DetachFromIndex: js.UndefOr[BatchDetachFromIndex] = js.undefined,
-        DetachObject: js.UndefOr[BatchDetachObject] = js.undefined,
-        DetachPolicy: js.UndefOr[BatchDetachPolicy] = js.undefined,
-        DetachTypedLink: js.UndefOr[BatchDetachTypedLink] = js.undefined,
-        RemoveFacetFromObject: js.UndefOr[BatchRemoveFacetFromObject] = js.undefined,
-        UpdateLinkAttributes: js.UndefOr[BatchUpdateLinkAttributes] = js.undefined,
-        UpdateObjectAttributes: js.UndefOr[BatchUpdateObjectAttributes] = js.undefined
-    ): BatchWriteOperation = {
-      val __obj = js.Dynamic.literal()
-      AddFacetToObject.foreach(__v => __obj.updateDynamic("AddFacetToObject")(__v.asInstanceOf[js.Any]))
-      AttachObject.foreach(__v => __obj.updateDynamic("AttachObject")(__v.asInstanceOf[js.Any]))
-      AttachPolicy.foreach(__v => __obj.updateDynamic("AttachPolicy")(__v.asInstanceOf[js.Any]))
-      AttachToIndex.foreach(__v => __obj.updateDynamic("AttachToIndex")(__v.asInstanceOf[js.Any]))
-      AttachTypedLink.foreach(__v => __obj.updateDynamic("AttachTypedLink")(__v.asInstanceOf[js.Any]))
-      CreateIndex.foreach(__v => __obj.updateDynamic("CreateIndex")(__v.asInstanceOf[js.Any]))
-      CreateObject.foreach(__v => __obj.updateDynamic("CreateObject")(__v.asInstanceOf[js.Any]))
-      DeleteObject.foreach(__v => __obj.updateDynamic("DeleteObject")(__v.asInstanceOf[js.Any]))
-      DetachFromIndex.foreach(__v => __obj.updateDynamic("DetachFromIndex")(__v.asInstanceOf[js.Any]))
-      DetachObject.foreach(__v => __obj.updateDynamic("DetachObject")(__v.asInstanceOf[js.Any]))
-      DetachPolicy.foreach(__v => __obj.updateDynamic("DetachPolicy")(__v.asInstanceOf[js.Any]))
-      DetachTypedLink.foreach(__v => __obj.updateDynamic("DetachTypedLink")(__v.asInstanceOf[js.Any]))
-      RemoveFacetFromObject.foreach(__v => __obj.updateDynamic("RemoveFacetFromObject")(__v.asInstanceOf[js.Any]))
-      UpdateLinkAttributes.foreach(__v => __obj.updateDynamic("UpdateLinkAttributes")(__v.asInstanceOf[js.Any]))
-      UpdateObjectAttributes.foreach(__v => __obj.updateDynamic("UpdateObjectAttributes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchWriteOperation]
-    }
-  }
-
   /**
     * Represents the output of a <code>BatchWrite</code> response operation.
     */
   @js.native
+  @Factory
   trait BatchWriteOperationResponse extends js.Object {
     var AddFacetToObject: js.UndefOr[BatchAddFacetToObjectResponse]
     var AttachObject: js.UndefOr[BatchAttachObjectResponse]
@@ -2287,80 +1156,17 @@ package clouddirectory {
     var UpdateObjectAttributes: js.UndefOr[BatchUpdateObjectAttributesResponse]
   }
 
-  object BatchWriteOperationResponse {
-    @inline
-    def apply(
-        AddFacetToObject: js.UndefOr[BatchAddFacetToObjectResponse] = js.undefined,
-        AttachObject: js.UndefOr[BatchAttachObjectResponse] = js.undefined,
-        AttachPolicy: js.UndefOr[BatchAttachPolicyResponse] = js.undefined,
-        AttachToIndex: js.UndefOr[BatchAttachToIndexResponse] = js.undefined,
-        AttachTypedLink: js.UndefOr[BatchAttachTypedLinkResponse] = js.undefined,
-        CreateIndex: js.UndefOr[BatchCreateIndexResponse] = js.undefined,
-        CreateObject: js.UndefOr[BatchCreateObjectResponse] = js.undefined,
-        DeleteObject: js.UndefOr[BatchDeleteObjectResponse] = js.undefined,
-        DetachFromIndex: js.UndefOr[BatchDetachFromIndexResponse] = js.undefined,
-        DetachObject: js.UndefOr[BatchDetachObjectResponse] = js.undefined,
-        DetachPolicy: js.UndefOr[BatchDetachPolicyResponse] = js.undefined,
-        DetachTypedLink: js.UndefOr[BatchDetachTypedLinkResponse] = js.undefined,
-        RemoveFacetFromObject: js.UndefOr[BatchRemoveFacetFromObjectResponse] = js.undefined,
-        UpdateLinkAttributes: js.UndefOr[BatchUpdateLinkAttributesResponse] = js.undefined,
-        UpdateObjectAttributes: js.UndefOr[BatchUpdateObjectAttributesResponse] = js.undefined
-    ): BatchWriteOperationResponse = {
-      val __obj = js.Dynamic.literal()
-      AddFacetToObject.foreach(__v => __obj.updateDynamic("AddFacetToObject")(__v.asInstanceOf[js.Any]))
-      AttachObject.foreach(__v => __obj.updateDynamic("AttachObject")(__v.asInstanceOf[js.Any]))
-      AttachPolicy.foreach(__v => __obj.updateDynamic("AttachPolicy")(__v.asInstanceOf[js.Any]))
-      AttachToIndex.foreach(__v => __obj.updateDynamic("AttachToIndex")(__v.asInstanceOf[js.Any]))
-      AttachTypedLink.foreach(__v => __obj.updateDynamic("AttachTypedLink")(__v.asInstanceOf[js.Any]))
-      CreateIndex.foreach(__v => __obj.updateDynamic("CreateIndex")(__v.asInstanceOf[js.Any]))
-      CreateObject.foreach(__v => __obj.updateDynamic("CreateObject")(__v.asInstanceOf[js.Any]))
-      DeleteObject.foreach(__v => __obj.updateDynamic("DeleteObject")(__v.asInstanceOf[js.Any]))
-      DetachFromIndex.foreach(__v => __obj.updateDynamic("DetachFromIndex")(__v.asInstanceOf[js.Any]))
-      DetachObject.foreach(__v => __obj.updateDynamic("DetachObject")(__v.asInstanceOf[js.Any]))
-      DetachPolicy.foreach(__v => __obj.updateDynamic("DetachPolicy")(__v.asInstanceOf[js.Any]))
-      DetachTypedLink.foreach(__v => __obj.updateDynamic("DetachTypedLink")(__v.asInstanceOf[js.Any]))
-      RemoveFacetFromObject.foreach(__v => __obj.updateDynamic("RemoveFacetFromObject")(__v.asInstanceOf[js.Any]))
-      UpdateLinkAttributes.foreach(__v => __obj.updateDynamic("UpdateLinkAttributes")(__v.asInstanceOf[js.Any]))
-      UpdateObjectAttributes.foreach(__v => __obj.updateDynamic("UpdateObjectAttributes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchWriteOperationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchWriteRequest extends js.Object {
     var DirectoryArn: Arn
     var Operations: BatchWriteOperationList
   }
 
-  object BatchWriteRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        Operations: BatchWriteOperationList
-    ): BatchWriteRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
-        "Operations"   -> Operations.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[BatchWriteRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait BatchWriteResponse extends js.Object {
     var Responses: js.UndefOr[BatchWriteOperationResponseList]
-  }
-
-  object BatchWriteResponse {
-    @inline
-    def apply(
-        Responses: js.UndefOr[BatchWriteOperationResponseList] = js.undefined
-    ): BatchWriteResponse = {
-      val __obj = js.Dynamic.literal()
-      Responses.foreach(__v => __obj.updateDynamic("Responses")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchWriteResponse]
-    }
   }
 
   @js.native
@@ -2373,27 +1179,14 @@ package clouddirectory {
   }
 
   @js.native
+  @Factory
   trait CreateDirectoryRequest extends js.Object {
     var Name: DirectoryName
     var SchemaArn: Arn
   }
 
-  object CreateDirectoryRequest {
-    @inline
-    def apply(
-        Name: DirectoryName,
-        SchemaArn: Arn
-    ): CreateDirectoryRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name"      -> Name.asInstanceOf[js.Any],
-        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateDirectoryRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateDirectoryResponse extends js.Object {
     var AppliedSchemaArn: Arn
     var DirectoryArn: DirectoryArn
@@ -2401,26 +1194,8 @@ package clouddirectory {
     var ObjectIdentifier: ObjectIdentifier
   }
 
-  object CreateDirectoryResponse {
-    @inline
-    def apply(
-        AppliedSchemaArn: Arn,
-        DirectoryArn: DirectoryArn,
-        Name: DirectoryName,
-        ObjectIdentifier: ObjectIdentifier
-    ): CreateDirectoryResponse = {
-      val __obj = js.Dynamic.literal(
-        "AppliedSchemaArn" -> AppliedSchemaArn.asInstanceOf[js.Any],
-        "DirectoryArn"     -> DirectoryArn.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any],
-        "ObjectIdentifier" -> ObjectIdentifier.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateDirectoryResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateFacetRequest extends js.Object {
     var Name: FacetName
     var SchemaArn: Arn
@@ -2429,41 +1204,12 @@ package clouddirectory {
     var ObjectType: js.UndefOr[ObjectType]
   }
 
-  object CreateFacetRequest {
-    @inline
-    def apply(
-        Name: FacetName,
-        SchemaArn: Arn,
-        Attributes: js.UndefOr[FacetAttributeList] = js.undefined,
-        FacetStyle: js.UndefOr[FacetStyle] = js.undefined,
-        ObjectType: js.UndefOr[ObjectType] = js.undefined
-    ): CreateFacetRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name"      -> Name.asInstanceOf[js.Any],
-        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
-      )
-
-      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
-      FacetStyle.foreach(__v => __obj.updateDynamic("FacetStyle")(__v.asInstanceOf[js.Any]))
-      ObjectType.foreach(__v => __obj.updateDynamic("ObjectType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateFacetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateFacetResponse extends js.Object {}
 
-  object CreateFacetResponse {
-    @inline
-    def apply(
-    ): CreateFacetResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[CreateFacetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateIndexRequest extends js.Object {
     var DirectoryArn: Arn
     var IsUnique: Boolean
@@ -2472,44 +1218,14 @@ package clouddirectory {
     var ParentReference: js.UndefOr[ObjectReference]
   }
 
-  object CreateIndexRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        IsUnique: Boolean,
-        OrderedIndexedAttributeList: AttributeKeyList,
-        LinkName: js.UndefOr[LinkName] = js.undefined,
-        ParentReference: js.UndefOr[ObjectReference] = js.undefined
-    ): CreateIndexRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn"                -> DirectoryArn.asInstanceOf[js.Any],
-        "IsUnique"                    -> IsUnique.asInstanceOf[js.Any],
-        "OrderedIndexedAttributeList" -> OrderedIndexedAttributeList.asInstanceOf[js.Any]
-      )
-
-      LinkName.foreach(__v => __obj.updateDynamic("LinkName")(__v.asInstanceOf[js.Any]))
-      ParentReference.foreach(__v => __obj.updateDynamic("ParentReference")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateIndexRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateIndexResponse extends js.Object {
     var ObjectIdentifier: js.UndefOr[ObjectIdentifier]
   }
 
-  object CreateIndexResponse {
-    @inline
-    def apply(
-        ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
-    ): CreateIndexResponse = {
-      val __obj = js.Dynamic.literal()
-      ObjectIdentifier.foreach(__v => __obj.updateDynamic("ObjectIdentifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateIndexResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateObjectRequest extends js.Object {
     var DirectoryArn: Arn
     var SchemaFacets: SchemaFacetList
@@ -2518,447 +1234,149 @@ package clouddirectory {
     var ParentReference: js.UndefOr[ObjectReference]
   }
 
-  object CreateObjectRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        SchemaFacets: SchemaFacetList,
-        LinkName: js.UndefOr[LinkName] = js.undefined,
-        ObjectAttributeList: js.UndefOr[AttributeKeyAndValueList] = js.undefined,
-        ParentReference: js.UndefOr[ObjectReference] = js.undefined
-    ): CreateObjectRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
-        "SchemaFacets" -> SchemaFacets.asInstanceOf[js.Any]
-      )
-
-      LinkName.foreach(__v => __obj.updateDynamic("LinkName")(__v.asInstanceOf[js.Any]))
-      ObjectAttributeList.foreach(__v => __obj.updateDynamic("ObjectAttributeList")(__v.asInstanceOf[js.Any]))
-      ParentReference.foreach(__v => __obj.updateDynamic("ParentReference")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateObjectRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateObjectResponse extends js.Object {
     var ObjectIdentifier: js.UndefOr[ObjectIdentifier]
   }
 
-  object CreateObjectResponse {
-    @inline
-    def apply(
-        ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
-    ): CreateObjectResponse = {
-      val __obj = js.Dynamic.literal()
-      ObjectIdentifier.foreach(__v => __obj.updateDynamic("ObjectIdentifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateObjectResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateSchemaRequest extends js.Object {
     var Name: SchemaName
   }
 
-  object CreateSchemaRequest {
-    @inline
-    def apply(
-        Name: SchemaName
-    ): CreateSchemaRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateSchemaRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateSchemaResponse extends js.Object {
     var SchemaArn: js.UndefOr[Arn]
   }
 
-  object CreateSchemaResponse {
-    @inline
-    def apply(
-        SchemaArn: js.UndefOr[Arn] = js.undefined
-    ): CreateSchemaResponse = {
-      val __obj = js.Dynamic.literal()
-      SchemaArn.foreach(__v => __obj.updateDynamic("SchemaArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateSchemaResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateTypedLinkFacetRequest extends js.Object {
     var Facet: TypedLinkFacet
     var SchemaArn: Arn
   }
 
-  object CreateTypedLinkFacetRequest {
-    @inline
-    def apply(
-        Facet: TypedLinkFacet,
-        SchemaArn: Arn
-    ): CreateTypedLinkFacetRequest = {
-      val __obj = js.Dynamic.literal(
-        "Facet"     -> Facet.asInstanceOf[js.Any],
-        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateTypedLinkFacetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateTypedLinkFacetResponse extends js.Object {}
 
-  object CreateTypedLinkFacetResponse {
-    @inline
-    def apply(
-    ): CreateTypedLinkFacetResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[CreateTypedLinkFacetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDirectoryRequest extends js.Object {
     var DirectoryArn: Arn
   }
 
-  object DeleteDirectoryRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn
-    ): DeleteDirectoryRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteDirectoryRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDirectoryResponse extends js.Object {
     var DirectoryArn: Arn
   }
 
-  object DeleteDirectoryResponse {
-    @inline
-    def apply(
-        DirectoryArn: Arn
-    ): DeleteDirectoryResponse = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteDirectoryResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteFacetRequest extends js.Object {
     var Name: FacetName
     var SchemaArn: Arn
   }
 
-  object DeleteFacetRequest {
-    @inline
-    def apply(
-        Name: FacetName,
-        SchemaArn: Arn
-    ): DeleteFacetRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name"      -> Name.asInstanceOf[js.Any],
-        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteFacetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteFacetResponse extends js.Object {}
 
-  object DeleteFacetResponse {
-    @inline
-    def apply(
-    ): DeleteFacetResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteFacetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteObjectRequest extends js.Object {
     var DirectoryArn: Arn
     var ObjectReference: ObjectReference
   }
 
-  object DeleteObjectRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        ObjectReference: ObjectReference
-    ): DeleteObjectRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteObjectRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteObjectResponse extends js.Object {}
 
-  object DeleteObjectResponse {
-    @inline
-    def apply(
-    ): DeleteObjectResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteObjectResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteSchemaRequest extends js.Object {
     var SchemaArn: Arn
   }
 
-  object DeleteSchemaRequest {
-    @inline
-    def apply(
-        SchemaArn: Arn
-    ): DeleteSchemaRequest = {
-      val __obj = js.Dynamic.literal(
-        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteSchemaRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteSchemaResponse extends js.Object {
     var SchemaArn: js.UndefOr[Arn]
   }
 
-  object DeleteSchemaResponse {
-    @inline
-    def apply(
-        SchemaArn: js.UndefOr[Arn] = js.undefined
-    ): DeleteSchemaResponse = {
-      val __obj = js.Dynamic.literal()
-      SchemaArn.foreach(__v => __obj.updateDynamic("SchemaArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteSchemaResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteTypedLinkFacetRequest extends js.Object {
     var Name: TypedLinkName
     var SchemaArn: Arn
   }
 
-  object DeleteTypedLinkFacetRequest {
-    @inline
-    def apply(
-        Name: TypedLinkName,
-        SchemaArn: Arn
-    ): DeleteTypedLinkFacetRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name"      -> Name.asInstanceOf[js.Any],
-        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteTypedLinkFacetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteTypedLinkFacetResponse extends js.Object {}
 
-  object DeleteTypedLinkFacetResponse {
-    @inline
-    def apply(
-    ): DeleteTypedLinkFacetResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteTypedLinkFacetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetachFromIndexRequest extends js.Object {
     var DirectoryArn: Arn
     var IndexReference: ObjectReference
     var TargetReference: ObjectReference
   }
 
-  object DetachFromIndexRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        IndexReference: ObjectReference,
-        TargetReference: ObjectReference
-    ): DetachFromIndexRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
-        "IndexReference"  -> IndexReference.asInstanceOf[js.Any],
-        "TargetReference" -> TargetReference.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DetachFromIndexRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetachFromIndexResponse extends js.Object {
     var DetachedObjectIdentifier: js.UndefOr[ObjectIdentifier]
   }
 
-  object DetachFromIndexResponse {
-    @inline
-    def apply(
-        DetachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
-    ): DetachFromIndexResponse = {
-      val __obj = js.Dynamic.literal()
-      DetachedObjectIdentifier.foreach(__v => __obj.updateDynamic("DetachedObjectIdentifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DetachFromIndexResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetachObjectRequest extends js.Object {
     var DirectoryArn: Arn
     var LinkName: LinkName
     var ParentReference: ObjectReference
   }
 
-  object DetachObjectRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        LinkName: LinkName,
-        ParentReference: ObjectReference
-    ): DetachObjectRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
-        "LinkName"        -> LinkName.asInstanceOf[js.Any],
-        "ParentReference" -> ParentReference.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DetachObjectRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetachObjectResponse extends js.Object {
     var DetachedObjectIdentifier: js.UndefOr[ObjectIdentifier]
   }
 
-  object DetachObjectResponse {
-    @inline
-    def apply(
-        DetachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
-    ): DetachObjectResponse = {
-      val __obj = js.Dynamic.literal()
-      DetachedObjectIdentifier.foreach(__v => __obj.updateDynamic("DetachedObjectIdentifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DetachObjectResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetachPolicyRequest extends js.Object {
     var DirectoryArn: Arn
     var ObjectReference: ObjectReference
     var PolicyReference: ObjectReference
   }
 
-  object DetachPolicyRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        ObjectReference: ObjectReference,
-        PolicyReference: ObjectReference
-    ): DetachPolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
-        "PolicyReference" -> PolicyReference.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DetachPolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetachPolicyResponse extends js.Object {}
 
-  object DetachPolicyResponse {
-    @inline
-    def apply(
-    ): DetachPolicyResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DetachPolicyResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetachTypedLinkRequest extends js.Object {
     var DirectoryArn: Arn
     var TypedLinkSpecifier: TypedLinkSpecifier
-  }
-
-  object DetachTypedLinkRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        TypedLinkSpecifier: TypedLinkSpecifier
-    ): DetachTypedLinkRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn"       -> DirectoryArn.asInstanceOf[js.Any],
-        "TypedLinkSpecifier" -> TypedLinkSpecifier.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DetachTypedLinkRequest]
-    }
   }
 
   /**
     * Directory structure that includes the directory name and directory ARN.
     */
   @js.native
+  @Factory
   trait Directory extends js.Object {
     var CreationDateTime: js.UndefOr[Date]
     var DirectoryArn: js.UndefOr[DirectoryArn]
     var Name: js.UndefOr[DirectoryName]
     var State: js.UndefOr[DirectoryState]
-  }
-
-  object Directory {
-    @inline
-    def apply(
-        CreationDateTime: js.UndefOr[Date] = js.undefined,
-        DirectoryArn: js.UndefOr[DirectoryArn] = js.undefined,
-        Name: js.UndefOr[DirectoryName] = js.undefined,
-        State: js.UndefOr[DirectoryState] = js.undefined
-    ): Directory = {
-      val __obj = js.Dynamic.literal()
-      CreationDateTime.foreach(__v => __obj.updateDynamic("CreationDateTime")(__v.asInstanceOf[js.Any]))
-      DirectoryArn.foreach(__v => __obj.updateDynamic("DirectoryArn")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Directory]
-    }
   }
 
   @js.native
@@ -2972,106 +1390,45 @@ package clouddirectory {
   }
 
   @js.native
+  @Factory
   trait DisableDirectoryRequest extends js.Object {
     var DirectoryArn: Arn
   }
 
-  object DisableDirectoryRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn
-    ): DisableDirectoryRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisableDirectoryRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisableDirectoryResponse extends js.Object {
     var DirectoryArn: Arn
   }
 
-  object DisableDirectoryResponse {
-    @inline
-    def apply(
-        DirectoryArn: Arn
-    ): DisableDirectoryResponse = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisableDirectoryResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait EnableDirectoryRequest extends js.Object {
     var DirectoryArn: Arn
   }
 
-  object EnableDirectoryRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn
-    ): EnableDirectoryRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[EnableDirectoryRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait EnableDirectoryResponse extends js.Object {
     var DirectoryArn: Arn
-  }
-
-  object EnableDirectoryResponse {
-    @inline
-    def apply(
-        DirectoryArn: Arn
-    ): EnableDirectoryResponse = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[EnableDirectoryResponse]
-    }
   }
 
   /**
     * A structure that contains <code>Name</code>, <code>ARN</code>, <code>Attributes</code>, <code> <a>Rule</a>s</code>, and <code>ObjectTypes</code>. See [[https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_whatarefacets.html|Facets]] for more information.
     */
   @js.native
+  @Factory
   trait Facet extends js.Object {
     var FacetStyle: js.UndefOr[FacetStyle]
     var Name: js.UndefOr[FacetName]
     var ObjectType: js.UndefOr[ObjectType]
   }
 
-  object Facet {
-    @inline
-    def apply(
-        FacetStyle: js.UndefOr[FacetStyle] = js.undefined,
-        Name: js.UndefOr[FacetName] = js.undefined,
-        ObjectType: js.UndefOr[ObjectType] = js.undefined
-    ): Facet = {
-      val __obj = js.Dynamic.literal()
-      FacetStyle.foreach(__v => __obj.updateDynamic("FacetStyle")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      ObjectType.foreach(__v => __obj.updateDynamic("ObjectType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Facet]
-    }
-  }
-
   /**
     * An attribute that is associated with the <a>Facet</a>.
     */
   @js.native
+  @Factory
   trait FacetAttribute extends js.Object {
     var Name: AttributeName
     var AttributeDefinition: js.UndefOr[FacetAttributeDefinition]
@@ -3079,29 +1436,11 @@ package clouddirectory {
     var RequiredBehavior: js.UndefOr[RequiredAttributeBehavior]
   }
 
-  object FacetAttribute {
-    @inline
-    def apply(
-        Name: AttributeName,
-        AttributeDefinition: js.UndefOr[FacetAttributeDefinition] = js.undefined,
-        AttributeReference: js.UndefOr[FacetAttributeReference] = js.undefined,
-        RequiredBehavior: js.UndefOr[RequiredAttributeBehavior] = js.undefined
-    ): FacetAttribute = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      AttributeDefinition.foreach(__v => __obj.updateDynamic("AttributeDefinition")(__v.asInstanceOf[js.Any]))
-      AttributeReference.foreach(__v => __obj.updateDynamic("AttributeReference")(__v.asInstanceOf[js.Any]))
-      RequiredBehavior.foreach(__v => __obj.updateDynamic("RequiredBehavior")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[FacetAttribute]
-    }
-  }
-
   /**
     * A facet attribute definition. See [[https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html|Attribute References]] for more information.
     */
   @js.native
+  @Factory
   trait FacetAttributeDefinition extends js.Object {
     var Type: FacetAttributeType
     var DefaultValue: js.UndefOr[TypedAttributeValue]
@@ -3109,47 +1448,14 @@ package clouddirectory {
     var Rules: js.UndefOr[RuleMap]
   }
 
-  object FacetAttributeDefinition {
-    @inline
-    def apply(
-        Type: FacetAttributeType,
-        DefaultValue: js.UndefOr[TypedAttributeValue] = js.undefined,
-        IsImmutable: js.UndefOr[Boolean] = js.undefined,
-        Rules: js.UndefOr[RuleMap] = js.undefined
-    ): FacetAttributeDefinition = {
-      val __obj = js.Dynamic.literal(
-        "Type" -> Type.asInstanceOf[js.Any]
-      )
-
-      DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
-      IsImmutable.foreach(__v => __obj.updateDynamic("IsImmutable")(__v.asInstanceOf[js.Any]))
-      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[FacetAttributeDefinition]
-    }
-  }
-
   /**
     * The facet attribute reference that specifies the attribute definition that contains the attribute facet name and attribute name.
     */
   @js.native
+  @Factory
   trait FacetAttributeReference extends js.Object {
     var TargetAttributeName: AttributeName
     var TargetFacetName: FacetName
-  }
-
-  object FacetAttributeReference {
-    @inline
-    def apply(
-        TargetAttributeName: AttributeName,
-        TargetFacetName: FacetName
-    ): FacetAttributeReference = {
-      val __obj = js.Dynamic.literal(
-        "TargetAttributeName" -> TargetAttributeName.asInstanceOf[js.Any],
-        "TargetFacetName"     -> TargetFacetName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[FacetAttributeReference]
-    }
   }
 
   @js.native
@@ -3169,22 +1475,10 @@ package clouddirectory {
     * A structure that contains information used to update an attribute.
     */
   @js.native
+  @Factory
   trait FacetAttributeUpdate extends js.Object {
     var Action: js.UndefOr[UpdateActionType]
     var Attribute: js.UndefOr[FacetAttribute]
-  }
-
-  object FacetAttributeUpdate {
-    @inline
-    def apply(
-        Action: js.UndefOr[UpdateActionType] = js.undefined,
-        Attribute: js.UndefOr[FacetAttribute] = js.undefined
-    ): FacetAttributeUpdate = {
-      val __obj = js.Dynamic.literal()
-      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
-      Attribute.foreach(__v => __obj.updateDynamic("Attribute")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[FacetAttributeUpdate]
-    }
   }
 
   @js.native
@@ -3197,113 +1491,44 @@ package clouddirectory {
   }
 
   @js.native
+  @Factory
   trait GetAppliedSchemaVersionRequest extends js.Object {
     var SchemaArn: Arn
   }
 
-  object GetAppliedSchemaVersionRequest {
-    @inline
-    def apply(
-        SchemaArn: Arn
-    ): GetAppliedSchemaVersionRequest = {
-      val __obj = js.Dynamic.literal(
-        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetAppliedSchemaVersionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetAppliedSchemaVersionResponse extends js.Object {
     var AppliedSchemaArn: js.UndefOr[Arn]
   }
 
-  object GetAppliedSchemaVersionResponse {
-    @inline
-    def apply(
-        AppliedSchemaArn: js.UndefOr[Arn] = js.undefined
-    ): GetAppliedSchemaVersionResponse = {
-      val __obj = js.Dynamic.literal()
-      AppliedSchemaArn.foreach(__v => __obj.updateDynamic("AppliedSchemaArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetAppliedSchemaVersionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDirectoryRequest extends js.Object {
     var DirectoryArn: DirectoryArn
   }
 
-  object GetDirectoryRequest {
-    @inline
-    def apply(
-        DirectoryArn: DirectoryArn
-    ): GetDirectoryRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetDirectoryRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDirectoryResponse extends js.Object {
     var Directory: Directory
   }
 
-  object GetDirectoryResponse {
-    @inline
-    def apply(
-        Directory: Directory
-    ): GetDirectoryResponse = {
-      val __obj = js.Dynamic.literal(
-        "Directory" -> Directory.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetDirectoryResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetFacetRequest extends js.Object {
     var Name: FacetName
     var SchemaArn: Arn
   }
 
-  object GetFacetRequest {
-    @inline
-    def apply(
-        Name: FacetName,
-        SchemaArn: Arn
-    ): GetFacetRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name"      -> Name.asInstanceOf[js.Any],
-        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetFacetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetFacetResponse extends js.Object {
     var Facet: js.UndefOr[Facet]
   }
 
-  object GetFacetResponse {
-    @inline
-    def apply(
-        Facet: js.UndefOr[Facet] = js.undefined
-    ): GetFacetResponse = {
-      val __obj = js.Dynamic.literal()
-      Facet.foreach(__v => __obj.updateDynamic("Facet")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetFacetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetLinkAttributesRequest extends js.Object {
     var AttributeNames: AttributeNameList
     var DirectoryArn: Arn
@@ -3311,42 +1536,14 @@ package clouddirectory {
     var ConsistencyLevel: js.UndefOr[ConsistencyLevel]
   }
 
-  object GetLinkAttributesRequest {
-    @inline
-    def apply(
-        AttributeNames: AttributeNameList,
-        DirectoryArn: Arn,
-        TypedLinkSpecifier: TypedLinkSpecifier,
-        ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined
-    ): GetLinkAttributesRequest = {
-      val __obj = js.Dynamic.literal(
-        "AttributeNames"     -> AttributeNames.asInstanceOf[js.Any],
-        "DirectoryArn"       -> DirectoryArn.asInstanceOf[js.Any],
-        "TypedLinkSpecifier" -> TypedLinkSpecifier.asInstanceOf[js.Any]
-      )
-
-      ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetLinkAttributesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetLinkAttributesResponse extends js.Object {
     var Attributes: js.UndefOr[AttributeKeyAndValueList]
   }
 
-  object GetLinkAttributesResponse {
-    @inline
-    def apply(
-        Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined
-    ): GetLinkAttributesResponse = {
-      val __obj = js.Dynamic.literal()
-      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetLinkAttributesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetObjectAttributesRequest extends js.Object {
     var AttributeNames: AttributeNameList
     var DirectoryArn: Arn
@@ -3355,227 +1552,85 @@ package clouddirectory {
     var ConsistencyLevel: js.UndefOr[ConsistencyLevel]
   }
 
-  object GetObjectAttributesRequest {
-    @inline
-    def apply(
-        AttributeNames: AttributeNameList,
-        DirectoryArn: Arn,
-        ObjectReference: ObjectReference,
-        SchemaFacet: SchemaFacet,
-        ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined
-    ): GetObjectAttributesRequest = {
-      val __obj = js.Dynamic.literal(
-        "AttributeNames"  -> AttributeNames.asInstanceOf[js.Any],
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
-        "SchemaFacet"     -> SchemaFacet.asInstanceOf[js.Any]
-      )
-
-      ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetObjectAttributesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetObjectAttributesResponse extends js.Object {
     var Attributes: js.UndefOr[AttributeKeyAndValueList]
   }
 
-  object GetObjectAttributesResponse {
-    @inline
-    def apply(
-        Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined
-    ): GetObjectAttributesResponse = {
-      val __obj = js.Dynamic.literal()
-      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetObjectAttributesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetObjectInformationRequest extends js.Object {
     var DirectoryArn: Arn
     var ObjectReference: ObjectReference
     var ConsistencyLevel: js.UndefOr[ConsistencyLevel]
   }
 
-  object GetObjectInformationRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        ObjectReference: ObjectReference,
-        ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined
-    ): GetObjectInformationRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
-      )
-
-      ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetObjectInformationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetObjectInformationResponse extends js.Object {
     var ObjectIdentifier: js.UndefOr[ObjectIdentifier]
     var SchemaFacets: js.UndefOr[SchemaFacetList]
   }
 
-  object GetObjectInformationResponse {
-    @inline
-    def apply(
-        ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined,
-        SchemaFacets: js.UndefOr[SchemaFacetList] = js.undefined
-    ): GetObjectInformationResponse = {
-      val __obj = js.Dynamic.literal()
-      ObjectIdentifier.foreach(__v => __obj.updateDynamic("ObjectIdentifier")(__v.asInstanceOf[js.Any]))
-      SchemaFacets.foreach(__v => __obj.updateDynamic("SchemaFacets")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetObjectInformationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetSchemaAsJsonRequest extends js.Object {
     var SchemaArn: Arn
   }
 
-  object GetSchemaAsJsonRequest {
-    @inline
-    def apply(
-        SchemaArn: Arn
-    ): GetSchemaAsJsonRequest = {
-      val __obj = js.Dynamic.literal(
-        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetSchemaAsJsonRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetSchemaAsJsonResponse extends js.Object {
     var Document: js.UndefOr[SchemaJsonDocument]
     var Name: js.UndefOr[SchemaName]
   }
 
-  object GetSchemaAsJsonResponse {
-    @inline
-    def apply(
-        Document: js.UndefOr[SchemaJsonDocument] = js.undefined,
-        Name: js.UndefOr[SchemaName] = js.undefined
-    ): GetSchemaAsJsonResponse = {
-      val __obj = js.Dynamic.literal()
-      Document.foreach(__v => __obj.updateDynamic("Document")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetSchemaAsJsonResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetTypedLinkFacetInformationRequest extends js.Object {
     var Name: TypedLinkName
     var SchemaArn: Arn
   }
 
-  object GetTypedLinkFacetInformationRequest {
-    @inline
-    def apply(
-        Name: TypedLinkName,
-        SchemaArn: Arn
-    ): GetTypedLinkFacetInformationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name"      -> Name.asInstanceOf[js.Any],
-        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetTypedLinkFacetInformationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetTypedLinkFacetInformationResponse extends js.Object {
     var IdentityAttributeOrder: js.UndefOr[AttributeNameList]
-  }
-
-  object GetTypedLinkFacetInformationResponse {
-    @inline
-    def apply(
-        IdentityAttributeOrder: js.UndefOr[AttributeNameList] = js.undefined
-    ): GetTypedLinkFacetInformationResponse = {
-      val __obj = js.Dynamic.literal()
-      IdentityAttributeOrder.foreach(__v => __obj.updateDynamic("IdentityAttributeOrder")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetTypedLinkFacetInformationResponse]
-    }
   }
 
   /**
     * Represents an index and an attached object.
     */
   @js.native
+  @Factory
   trait IndexAttachment extends js.Object {
     var IndexedAttributes: js.UndefOr[AttributeKeyAndValueList]
     var ObjectIdentifier: js.UndefOr[ObjectIdentifier]
-  }
-
-  object IndexAttachment {
-    @inline
-    def apply(
-        IndexedAttributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined,
-        ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
-    ): IndexAttachment = {
-      val __obj = js.Dynamic.literal()
-      IndexedAttributes.foreach(__v => __obj.updateDynamic("IndexedAttributes")(__v.asInstanceOf[js.Any]))
-      ObjectIdentifier.foreach(__v => __obj.updateDynamic("ObjectIdentifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[IndexAttachment]
-    }
   }
 
   /**
     * The action to take on a typed link attribute value. Updates are only supported for attributes which don’t contribute to link identity.
     */
   @js.native
+  @Factory
   trait LinkAttributeAction extends js.Object {
     var AttributeActionType: js.UndefOr[UpdateActionType]
     var AttributeUpdateValue: js.UndefOr[TypedAttributeValue]
-  }
-
-  object LinkAttributeAction {
-    @inline
-    def apply(
-        AttributeActionType: js.UndefOr[UpdateActionType] = js.undefined,
-        AttributeUpdateValue: js.UndefOr[TypedAttributeValue] = js.undefined
-    ): LinkAttributeAction = {
-      val __obj = js.Dynamic.literal()
-      AttributeActionType.foreach(__v => __obj.updateDynamic("AttributeActionType")(__v.asInstanceOf[js.Any]))
-      AttributeUpdateValue.foreach(__v => __obj.updateDynamic("AttributeUpdateValue")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LinkAttributeAction]
-    }
   }
 
   /**
     * Structure that contains attribute update information.
     */
   @js.native
+  @Factory
   trait LinkAttributeUpdate extends js.Object {
     var AttributeAction: js.UndefOr[LinkAttributeAction]
     var AttributeKey: js.UndefOr[AttributeKey]
   }
 
-  object LinkAttributeUpdate {
-    @inline
-    def apply(
-        AttributeAction: js.UndefOr[LinkAttributeAction] = js.undefined,
-        AttributeKey: js.UndefOr[AttributeKey] = js.undefined
-    ): LinkAttributeUpdate = {
-      val __obj = js.Dynamic.literal()
-      AttributeAction.foreach(__v => __obj.updateDynamic("AttributeAction")(__v.asInstanceOf[js.Any]))
-      AttributeKey.foreach(__v => __obj.updateDynamic("AttributeKey")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LinkAttributeUpdate]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAppliedSchemaArnsRequest extends js.Object {
     var DirectoryArn: Arn
     var MaxResults: js.UndefOr[NumberResults]
@@ -3583,45 +1638,15 @@ package clouddirectory {
     var SchemaArn: js.UndefOr[Arn]
   }
 
-  object ListAppliedSchemaArnsRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        SchemaArn: js.UndefOr[Arn] = js.undefined
-    ): ListAppliedSchemaArnsRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SchemaArn.foreach(__v => __obj.updateDynamic("SchemaArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAppliedSchemaArnsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAppliedSchemaArnsResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var SchemaArns: js.UndefOr[Arns]
   }
 
-  object ListAppliedSchemaArnsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        SchemaArns: js.UndefOr[Arns] = js.undefined
-    ): ListAppliedSchemaArnsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SchemaArns.foreach(__v => __obj.updateDynamic("SchemaArns")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAppliedSchemaArnsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAttachedIndicesRequest extends js.Object {
     var DirectoryArn: Arn
     var TargetReference: ObjectReference
@@ -3630,128 +1655,44 @@ package clouddirectory {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListAttachedIndicesRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        TargetReference: ObjectReference,
-        ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListAttachedIndicesRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
-        "TargetReference" -> TargetReference.asInstanceOf[js.Any]
-      )
-
-      ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAttachedIndicesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAttachedIndicesResponse extends js.Object {
     var IndexAttachments: js.UndefOr[IndexAttachmentList]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListAttachedIndicesResponse {
-    @inline
-    def apply(
-        IndexAttachments: js.UndefOr[IndexAttachmentList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListAttachedIndicesResponse = {
-      val __obj = js.Dynamic.literal()
-      IndexAttachments.foreach(__v => __obj.updateDynamic("IndexAttachments")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAttachedIndicesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListDevelopmentSchemaArnsRequest extends js.Object {
     var MaxResults: js.UndefOr[NumberResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListDevelopmentSchemaArnsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListDevelopmentSchemaArnsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDevelopmentSchemaArnsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListDevelopmentSchemaArnsResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var SchemaArns: js.UndefOr[Arns]
   }
 
-  object ListDevelopmentSchemaArnsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        SchemaArns: js.UndefOr[Arns] = js.undefined
-    ): ListDevelopmentSchemaArnsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SchemaArns.foreach(__v => __obj.updateDynamic("SchemaArns")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDevelopmentSchemaArnsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListDirectoriesRequest extends js.Object {
     var MaxResults: js.UndefOr[NumberResults]
     var NextToken: js.UndefOr[NextToken]
     var state: js.UndefOr[DirectoryState]
   }
 
-  object ListDirectoriesRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        state: js.UndefOr[DirectoryState] = js.undefined
-    ): ListDirectoriesRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDirectoriesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListDirectoriesResponse extends js.Object {
     var Directories: DirectoryList
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListDirectoriesResponse {
-    @inline
-    def apply(
-        Directories: DirectoryList,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListDirectoriesResponse = {
-      val __obj = js.Dynamic.literal(
-        "Directories" -> Directories.asInstanceOf[js.Any]
-      )
-
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDirectoriesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListFacetAttributesRequest extends js.Object {
     var Name: FacetName
     var SchemaArn: Arn
@@ -3759,88 +1700,30 @@ package clouddirectory {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListFacetAttributesRequest {
-    @inline
-    def apply(
-        Name: FacetName,
-        SchemaArn: Arn,
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListFacetAttributesRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name"      -> Name.asInstanceOf[js.Any],
-        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListFacetAttributesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListFacetAttributesResponse extends js.Object {
     var Attributes: js.UndefOr[FacetAttributeList]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListFacetAttributesResponse {
-    @inline
-    def apply(
-        Attributes: js.UndefOr[FacetAttributeList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListFacetAttributesResponse = {
-      val __obj = js.Dynamic.literal()
-      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListFacetAttributesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListFacetNamesRequest extends js.Object {
     var SchemaArn: Arn
     var MaxResults: js.UndefOr[NumberResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListFacetNamesRequest {
-    @inline
-    def apply(
-        SchemaArn: Arn,
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListFacetNamesRequest = {
-      val __obj = js.Dynamic.literal(
-        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListFacetNamesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListFacetNamesResponse extends js.Object {
     var FacetNames: js.UndefOr[FacetNameList]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListFacetNamesResponse {
-    @inline
-    def apply(
-        FacetNames: js.UndefOr[FacetNameList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListFacetNamesResponse = {
-      val __obj = js.Dynamic.literal()
-      FacetNames.foreach(__v => __obj.updateDynamic("FacetNames")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListFacetNamesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListIncomingTypedLinksRequest extends js.Object {
     var DirectoryArn: Arn
     var ObjectReference: ObjectReference
@@ -3851,51 +1734,15 @@ package clouddirectory {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListIncomingTypedLinksRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        ObjectReference: ObjectReference,
-        ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
-        FilterAttributeRanges: js.UndefOr[TypedLinkAttributeRangeList] = js.undefined,
-        FilterTypedLink: js.UndefOr[TypedLinkSchemaAndFacetName] = js.undefined,
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListIncomingTypedLinksRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
-      )
-
-      ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
-      FilterAttributeRanges.foreach(__v => __obj.updateDynamic("FilterAttributeRanges")(__v.asInstanceOf[js.Any]))
-      FilterTypedLink.foreach(__v => __obj.updateDynamic("FilterTypedLink")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListIncomingTypedLinksRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListIncomingTypedLinksResponse extends js.Object {
     var LinkSpecifiers: js.UndefOr[TypedLinkSpecifierList]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListIncomingTypedLinksResponse {
-    @inline
-    def apply(
-        LinkSpecifiers: js.UndefOr[TypedLinkSpecifierList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListIncomingTypedLinksResponse = {
-      val __obj = js.Dynamic.literal()
-      LinkSpecifiers.foreach(__v => __obj.updateDynamic("LinkSpecifiers")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListIncomingTypedLinksResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListIndexRequest extends js.Object {
     var DirectoryArn: Arn
     var IndexReference: ObjectReference
@@ -3905,90 +1752,30 @@ package clouddirectory {
     var RangesOnIndexedValues: js.UndefOr[ObjectAttributeRangeList]
   }
 
-  object ListIndexRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        IndexReference: ObjectReference,
-        ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        RangesOnIndexedValues: js.UndefOr[ObjectAttributeRangeList] = js.undefined
-    ): ListIndexRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn"   -> DirectoryArn.asInstanceOf[js.Any],
-        "IndexReference" -> IndexReference.asInstanceOf[js.Any]
-      )
-
-      ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      RangesOnIndexedValues.foreach(__v => __obj.updateDynamic("RangesOnIndexedValues")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListIndexRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListIndexResponse extends js.Object {
     var IndexAttachments: js.UndefOr[IndexAttachmentList]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListIndexResponse {
-    @inline
-    def apply(
-        IndexAttachments: js.UndefOr[IndexAttachmentList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListIndexResponse = {
-      val __obj = js.Dynamic.literal()
-      IndexAttachments.foreach(__v => __obj.updateDynamic("IndexAttachments")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListIndexResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListManagedSchemaArnsRequest extends js.Object {
     var MaxResults: js.UndefOr[NumberResults]
     var NextToken: js.UndefOr[NextToken]
     var SchemaArn: js.UndefOr[Arn]
   }
 
-  object ListManagedSchemaArnsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        SchemaArn: js.UndefOr[Arn] = js.undefined
-    ): ListManagedSchemaArnsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SchemaArn.foreach(__v => __obj.updateDynamic("SchemaArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListManagedSchemaArnsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListManagedSchemaArnsResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var SchemaArns: js.UndefOr[Arns]
   }
 
-  object ListManagedSchemaArnsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        SchemaArns: js.UndefOr[Arns] = js.undefined
-    ): ListManagedSchemaArnsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SchemaArns.foreach(__v => __obj.updateDynamic("SchemaArns")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListManagedSchemaArnsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListObjectAttributesRequest extends js.Object {
     var DirectoryArn: Arn
     var ObjectReference: ObjectReference
@@ -3998,49 +1785,15 @@ package clouddirectory {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListObjectAttributesRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        ObjectReference: ObjectReference,
-        ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
-        FacetFilter: js.UndefOr[SchemaFacet] = js.undefined,
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListObjectAttributesRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
-      )
-
-      ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
-      FacetFilter.foreach(__v => __obj.updateDynamic("FacetFilter")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListObjectAttributesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListObjectAttributesResponse extends js.Object {
     var Attributes: js.UndefOr[AttributeKeyAndValueList]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListObjectAttributesResponse {
-    @inline
-    def apply(
-        Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListObjectAttributesResponse = {
-      val __obj = js.Dynamic.literal()
-      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListObjectAttributesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListObjectChildrenRequest extends js.Object {
     var DirectoryArn: Arn
     var ObjectReference: ObjectReference
@@ -4049,47 +1802,15 @@ package clouddirectory {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListObjectChildrenRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        ObjectReference: ObjectReference,
-        ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListObjectChildrenRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
-      )
-
-      ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListObjectChildrenRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListObjectChildrenResponse extends js.Object {
     var Children: js.UndefOr[LinkNameToObjectIdentifierMap]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListObjectChildrenResponse {
-    @inline
-    def apply(
-        Children: js.UndefOr[LinkNameToObjectIdentifierMap] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListObjectChildrenResponse = {
-      val __obj = js.Dynamic.literal()
-      Children.foreach(__v => __obj.updateDynamic("Children")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListObjectChildrenResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListObjectParentPathsRequest extends js.Object {
     var DirectoryArn: Arn
     var ObjectReference: ObjectReference
@@ -4097,47 +1818,15 @@ package clouddirectory {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListObjectParentPathsRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        ObjectReference: ObjectReference,
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListObjectParentPathsRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListObjectParentPathsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListObjectParentPathsResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var PathToObjectIdentifiersList: js.UndefOr[PathToObjectIdentifiersList]
   }
 
-  object ListObjectParentPathsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        PathToObjectIdentifiersList: js.UndefOr[PathToObjectIdentifiersList] = js.undefined
-    ): ListObjectParentPathsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PathToObjectIdentifiersList.foreach(__v =>
-        __obj.updateDynamic("PathToObjectIdentifiersList")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[ListObjectParentPathsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListObjectParentsRequest extends js.Object {
     var DirectoryArn: Arn
     var ObjectReference: ObjectReference
@@ -4147,54 +1836,16 @@ package clouddirectory {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListObjectParentsRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        ObjectReference: ObjectReference,
-        ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
-        IncludeAllLinksToEachParent: js.UndefOr[Boolean] = js.undefined,
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListObjectParentsRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
-      )
-
-      ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
-      IncludeAllLinksToEachParent.foreach(__v =>
-        __obj.updateDynamic("IncludeAllLinksToEachParent")(__v.asInstanceOf[js.Any])
-      )
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListObjectParentsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListObjectParentsResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var ParentLinks: js.UndefOr[ObjectIdentifierAndLinkNameList]
     var Parents: js.UndefOr[ObjectIdentifierToLinkNameMap]
   }
 
-  object ListObjectParentsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        ParentLinks: js.UndefOr[ObjectIdentifierAndLinkNameList] = js.undefined,
-        Parents: js.UndefOr[ObjectIdentifierToLinkNameMap] = js.undefined
-    ): ListObjectParentsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ParentLinks.foreach(__v => __obj.updateDynamic("ParentLinks")(__v.asInstanceOf[js.Any]))
-      Parents.foreach(__v => __obj.updateDynamic("Parents")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListObjectParentsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListObjectPoliciesRequest extends js.Object {
     var DirectoryArn: Arn
     var ObjectReference: ObjectReference
@@ -4203,47 +1854,15 @@ package clouddirectory {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListObjectPoliciesRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        ObjectReference: ObjectReference,
-        ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListObjectPoliciesRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
-      )
-
-      ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListObjectPoliciesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListObjectPoliciesResponse extends js.Object {
     var AttachedPolicyIds: js.UndefOr[ObjectIdentifierList]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListObjectPoliciesResponse {
-    @inline
-    def apply(
-        AttachedPolicyIds: js.UndefOr[ObjectIdentifierList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListObjectPoliciesResponse = {
-      val __obj = js.Dynamic.literal()
-      AttachedPolicyIds.foreach(__v => __obj.updateDynamic("AttachedPolicyIds")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListObjectPoliciesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListOutgoingTypedLinksRequest extends js.Object {
     var DirectoryArn: Arn
     var ObjectReference: ObjectReference
@@ -4254,51 +1873,15 @@ package clouddirectory {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListOutgoingTypedLinksRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        ObjectReference: ObjectReference,
-        ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
-        FilterAttributeRanges: js.UndefOr[TypedLinkAttributeRangeList] = js.undefined,
-        FilterTypedLink: js.UndefOr[TypedLinkSchemaAndFacetName] = js.undefined,
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListOutgoingTypedLinksRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
-      )
-
-      ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
-      FilterAttributeRanges.foreach(__v => __obj.updateDynamic("FilterAttributeRanges")(__v.asInstanceOf[js.Any]))
-      FilterTypedLink.foreach(__v => __obj.updateDynamic("FilterTypedLink")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListOutgoingTypedLinksRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListOutgoingTypedLinksResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var TypedLinkSpecifiers: js.UndefOr[TypedLinkSpecifierList]
   }
 
-  object ListOutgoingTypedLinksResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        TypedLinkSpecifiers: js.UndefOr[TypedLinkSpecifierList] = js.undefined
-    ): ListOutgoingTypedLinksResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      TypedLinkSpecifiers.foreach(__v => __obj.updateDynamic("TypedLinkSpecifiers")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListOutgoingTypedLinksResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPolicyAttachmentsRequest extends js.Object {
     var DirectoryArn: Arn
     var PolicyReference: ObjectReference
@@ -4307,131 +1890,45 @@ package clouddirectory {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListPolicyAttachmentsRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        PolicyReference: ObjectReference,
-        ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListPolicyAttachmentsRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
-        "PolicyReference" -> PolicyReference.asInstanceOf[js.Any]
-      )
-
-      ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPolicyAttachmentsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPolicyAttachmentsResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var ObjectIdentifiers: js.UndefOr[ObjectIdentifierList]
   }
 
-  object ListPolicyAttachmentsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        ObjectIdentifiers: js.UndefOr[ObjectIdentifierList] = js.undefined
-    ): ListPolicyAttachmentsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ObjectIdentifiers.foreach(__v => __obj.updateDynamic("ObjectIdentifiers")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPolicyAttachmentsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPublishedSchemaArnsRequest extends js.Object {
     var MaxResults: js.UndefOr[NumberResults]
     var NextToken: js.UndefOr[NextToken]
     var SchemaArn: js.UndefOr[Arn]
   }
 
-  object ListPublishedSchemaArnsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        SchemaArn: js.UndefOr[Arn] = js.undefined
-    ): ListPublishedSchemaArnsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SchemaArn.foreach(__v => __obj.updateDynamic("SchemaArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPublishedSchemaArnsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPublishedSchemaArnsResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var SchemaArns: js.UndefOr[Arns]
   }
 
-  object ListPublishedSchemaArnsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        SchemaArns: js.UndefOr[Arns] = js.undefined
-    ): ListPublishedSchemaArnsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SchemaArns.foreach(__v => __obj.updateDynamic("SchemaArns")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPublishedSchemaArnsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceRequest extends js.Object {
     var ResourceArn: Arn
     var MaxResults: js.UndefOr[TagsNumberResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListTagsForResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: Arn,
-        MaxResults: js.UndefOr[TagsNumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListTagsForResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var Tags: js.UndefOr[TagList]
   }
 
-  object ListTagsForResourceResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): ListTagsForResourceResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTypedLinkFacetAttributesRequest extends js.Object {
     var Name: TypedLinkName
     var SchemaArn: Arn
@@ -4439,88 +1936,30 @@ package clouddirectory {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListTypedLinkFacetAttributesRequest {
-    @inline
-    def apply(
-        Name: TypedLinkName,
-        SchemaArn: Arn,
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListTypedLinkFacetAttributesRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name"      -> Name.asInstanceOf[js.Any],
-        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTypedLinkFacetAttributesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTypedLinkFacetAttributesResponse extends js.Object {
     var Attributes: js.UndefOr[TypedLinkAttributeDefinitionList]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListTypedLinkFacetAttributesResponse {
-    @inline
-    def apply(
-        Attributes: js.UndefOr[TypedLinkAttributeDefinitionList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListTypedLinkFacetAttributesResponse = {
-      val __obj = js.Dynamic.literal()
-      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTypedLinkFacetAttributesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTypedLinkFacetNamesRequest extends js.Object {
     var SchemaArn: Arn
     var MaxResults: js.UndefOr[NumberResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListTypedLinkFacetNamesRequest {
-    @inline
-    def apply(
-        SchemaArn: Arn,
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListTypedLinkFacetNamesRequest = {
-      val __obj = js.Dynamic.literal(
-        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTypedLinkFacetNamesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTypedLinkFacetNamesResponse extends js.Object {
     var FacetNames: js.UndefOr[TypedLinkNameList]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListTypedLinkFacetNamesResponse {
-    @inline
-    def apply(
-        FacetNames: js.UndefOr[TypedLinkNameList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListTypedLinkFacetNamesResponse = {
-      val __obj = js.Dynamic.literal()
-      FacetNames.foreach(__v => __obj.updateDynamic("FacetNames")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTypedLinkFacetNamesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait LookupPolicyRequest extends js.Object {
     var DirectoryArn: Arn
     var ObjectReference: ObjectReference
@@ -4528,153 +1967,60 @@ package clouddirectory {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object LookupPolicyRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        ObjectReference: ObjectReference,
-        MaxResults: js.UndefOr[NumberResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): LookupPolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LookupPolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait LookupPolicyResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var PolicyToPathList: js.UndefOr[PolicyToPathList]
-  }
-
-  object LookupPolicyResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        PolicyToPathList: js.UndefOr[PolicyToPathList] = js.undefined
-    ): LookupPolicyResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PolicyToPathList.foreach(__v => __obj.updateDynamic("PolicyToPathList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LookupPolicyResponse]
-    }
   }
 
   /**
     * The action to take on the object attribute.
     */
   @js.native
+  @Factory
   trait ObjectAttributeAction extends js.Object {
     var ObjectAttributeActionType: js.UndefOr[UpdateActionType]
     var ObjectAttributeUpdateValue: js.UndefOr[TypedAttributeValue]
-  }
-
-  object ObjectAttributeAction {
-    @inline
-    def apply(
-        ObjectAttributeActionType: js.UndefOr[UpdateActionType] = js.undefined,
-        ObjectAttributeUpdateValue: js.UndefOr[TypedAttributeValue] = js.undefined
-    ): ObjectAttributeAction = {
-      val __obj = js.Dynamic.literal()
-      ObjectAttributeActionType.foreach(__v =>
-        __obj.updateDynamic("ObjectAttributeActionType")(__v.asInstanceOf[js.Any])
-      )
-      ObjectAttributeUpdateValue.foreach(__v =>
-        __obj.updateDynamic("ObjectAttributeUpdateValue")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[ObjectAttributeAction]
-    }
   }
 
   /**
     * A range of attributes.
     */
   @js.native
+  @Factory
   trait ObjectAttributeRange extends js.Object {
     var AttributeKey: js.UndefOr[AttributeKey]
     var Range: js.UndefOr[TypedAttributeValueRange]
-  }
-
-  object ObjectAttributeRange {
-    @inline
-    def apply(
-        AttributeKey: js.UndefOr[AttributeKey] = js.undefined,
-        Range: js.UndefOr[TypedAttributeValueRange] = js.undefined
-    ): ObjectAttributeRange = {
-      val __obj = js.Dynamic.literal()
-      AttributeKey.foreach(__v => __obj.updateDynamic("AttributeKey")(__v.asInstanceOf[js.Any]))
-      Range.foreach(__v => __obj.updateDynamic("Range")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ObjectAttributeRange]
-    }
   }
 
   /**
     * Structure that contains attribute update information.
     */
   @js.native
+  @Factory
   trait ObjectAttributeUpdate extends js.Object {
     var ObjectAttributeAction: js.UndefOr[ObjectAttributeAction]
     var ObjectAttributeKey: js.UndefOr[AttributeKey]
-  }
-
-  object ObjectAttributeUpdate {
-    @inline
-    def apply(
-        ObjectAttributeAction: js.UndefOr[ObjectAttributeAction] = js.undefined,
-        ObjectAttributeKey: js.UndefOr[AttributeKey] = js.undefined
-    ): ObjectAttributeUpdate = {
-      val __obj = js.Dynamic.literal()
-      ObjectAttributeAction.foreach(__v => __obj.updateDynamic("ObjectAttributeAction")(__v.asInstanceOf[js.Any]))
-      ObjectAttributeKey.foreach(__v => __obj.updateDynamic("ObjectAttributeKey")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ObjectAttributeUpdate]
-    }
   }
 
   /**
     * A pair of ObjectIdentifier and LinkName.
     */
   @js.native
+  @Factory
   trait ObjectIdentifierAndLinkNameTuple extends js.Object {
     var LinkName: js.UndefOr[LinkName]
     var ObjectIdentifier: js.UndefOr[ObjectIdentifier]
-  }
-
-  object ObjectIdentifierAndLinkNameTuple {
-    @inline
-    def apply(
-        LinkName: js.UndefOr[LinkName] = js.undefined,
-        ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
-    ): ObjectIdentifierAndLinkNameTuple = {
-      val __obj = js.Dynamic.literal()
-      LinkName.foreach(__v => __obj.updateDynamic("LinkName")(__v.asInstanceOf[js.Any]))
-      ObjectIdentifier.foreach(__v => __obj.updateDynamic("ObjectIdentifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ObjectIdentifierAndLinkNameTuple]
-    }
   }
 
   /**
     * The reference that identifies an object.
     */
   @js.native
+  @Factory
   trait ObjectReference extends js.Object {
     var Selector: js.UndefOr[SelectorObjectReference]
-  }
-
-  object ObjectReference {
-    @inline
-    def apply(
-        Selector: js.UndefOr[SelectorObjectReference] = js.undefined
-    ): ObjectReference = {
-      val __obj = js.Dynamic.literal()
-      Selector.foreach(__v => __obj.updateDynamic("Selector")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ObjectReference]
-    }
   }
 
   @js.native
@@ -4692,72 +2038,35 @@ package clouddirectory {
     * Returns the path to the <code>ObjectIdentifiers</code> that is associated with the directory.
     */
   @js.native
+  @Factory
   trait PathToObjectIdentifiers extends js.Object {
     var ObjectIdentifiers: js.UndefOr[ObjectIdentifierList]
     var Path: js.UndefOr[PathString]
-  }
-
-  object PathToObjectIdentifiers {
-    @inline
-    def apply(
-        ObjectIdentifiers: js.UndefOr[ObjectIdentifierList] = js.undefined,
-        Path: js.UndefOr[PathString] = js.undefined
-    ): PathToObjectIdentifiers = {
-      val __obj = js.Dynamic.literal()
-      ObjectIdentifiers.foreach(__v => __obj.updateDynamic("ObjectIdentifiers")(__v.asInstanceOf[js.Any]))
-      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PathToObjectIdentifiers]
-    }
   }
 
   /**
     * Contains the <code>PolicyType</code>, <code>PolicyId</code>, and the <code>ObjectIdentifier</code> to which it is attached. For more information, see [[https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies|Policies]].
     */
   @js.native
+  @Factory
   trait PolicyAttachment extends js.Object {
     var ObjectIdentifier: js.UndefOr[ObjectIdentifier]
     var PolicyId: js.UndefOr[ObjectIdentifier]
     var PolicyType: js.UndefOr[PolicyType]
   }
 
-  object PolicyAttachment {
-    @inline
-    def apply(
-        ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined,
-        PolicyId: js.UndefOr[ObjectIdentifier] = js.undefined,
-        PolicyType: js.UndefOr[PolicyType] = js.undefined
-    ): PolicyAttachment = {
-      val __obj = js.Dynamic.literal()
-      ObjectIdentifier.foreach(__v => __obj.updateDynamic("ObjectIdentifier")(__v.asInstanceOf[js.Any]))
-      PolicyId.foreach(__v => __obj.updateDynamic("PolicyId")(__v.asInstanceOf[js.Any]))
-      PolicyType.foreach(__v => __obj.updateDynamic("PolicyType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PolicyAttachment]
-    }
-  }
-
   /**
     * Used when a regular object exists in a <a>Directory</a> and you want to find all of the policies that are associated with that object and the parent to that object.
     */
   @js.native
+  @Factory
   trait PolicyToPath extends js.Object {
     var Path: js.UndefOr[PathString]
     var Policies: js.UndefOr[PolicyAttachmentList]
   }
 
-  object PolicyToPath {
-    @inline
-    def apply(
-        Path: js.UndefOr[PathString] = js.undefined,
-        Policies: js.UndefOr[PolicyAttachmentList] = js.undefined
-    ): PolicyToPath = {
-      val __obj = js.Dynamic.literal()
-      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
-      Policies.foreach(__v => __obj.updateDynamic("Policies")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PolicyToPath]
-    }
-  }
-
   @js.native
+  @Factory
   trait PublishSchemaRequest extends js.Object {
     var DevelopmentSchemaArn: Arn
     var Version: Version
@@ -4765,76 +2074,23 @@ package clouddirectory {
     var Name: js.UndefOr[SchemaName]
   }
 
-  object PublishSchemaRequest {
-    @inline
-    def apply(
-        DevelopmentSchemaArn: Arn,
-        Version: Version,
-        MinorVersion: js.UndefOr[Version] = js.undefined,
-        Name: js.UndefOr[SchemaName] = js.undefined
-    ): PublishSchemaRequest = {
-      val __obj = js.Dynamic.literal(
-        "DevelopmentSchemaArn" -> DevelopmentSchemaArn.asInstanceOf[js.Any],
-        "Version"              -> Version.asInstanceOf[js.Any]
-      )
-
-      MinorVersion.foreach(__v => __obj.updateDynamic("MinorVersion")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PublishSchemaRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PublishSchemaResponse extends js.Object {
     var PublishedSchemaArn: js.UndefOr[Arn]
   }
 
-  object PublishSchemaResponse {
-    @inline
-    def apply(
-        PublishedSchemaArn: js.UndefOr[Arn] = js.undefined
-    ): PublishSchemaResponse = {
-      val __obj = js.Dynamic.literal()
-      PublishedSchemaArn.foreach(__v => __obj.updateDynamic("PublishedSchemaArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PublishSchemaResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutSchemaFromJsonRequest extends js.Object {
     var Document: SchemaJsonDocument
     var SchemaArn: Arn
   }
 
-  object PutSchemaFromJsonRequest {
-    @inline
-    def apply(
-        Document: SchemaJsonDocument,
-        SchemaArn: Arn
-    ): PutSchemaFromJsonRequest = {
-      val __obj = js.Dynamic.literal(
-        "Document"  -> Document.asInstanceOf[js.Any],
-        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutSchemaFromJsonRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutSchemaFromJsonResponse extends js.Object {
     var Arn: js.UndefOr[Arn]
-  }
-
-  object PutSchemaFromJsonResponse {
-    @inline
-    def apply(
-        Arn: js.UndefOr[Arn] = js.undefined
-    ): PutSchemaFromJsonResponse = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutSchemaFromJsonResponse]
-    }
   }
 
   @js.native
@@ -4850,41 +2106,16 @@ package clouddirectory {
   }
 
   @js.native
+  @Factory
   trait RemoveFacetFromObjectRequest extends js.Object {
     var DirectoryArn: Arn
     var ObjectReference: ObjectReference
     var SchemaFacet: SchemaFacet
   }
 
-  object RemoveFacetFromObjectRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        ObjectReference: ObjectReference,
-        SchemaFacet: SchemaFacet
-    ): RemoveFacetFromObjectRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
-        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
-        "SchemaFacet"     -> SchemaFacet.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RemoveFacetFromObjectRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait RemoveFacetFromObjectResponse extends js.Object {}
-
-  object RemoveFacetFromObjectResponse {
-    @inline
-    def apply(
-    ): RemoveFacetFromObjectResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[RemoveFacetFromObjectResponse]
-    }
-  }
 
   @js.native
   sealed trait RequiredAttributeBehavior extends js.Any
@@ -4899,22 +2130,10 @@ package clouddirectory {
     * Contains an Amazon Resource Name (ARN) and parameters that are associated with the rule.
     */
   @js.native
+  @Factory
   trait Rule extends js.Object {
     var Parameters: js.UndefOr[RuleParameterMap]
     var Type: js.UndefOr[RuleType]
-  }
-
-  object Rule {
-    @inline
-    def apply(
-        Parameters: js.UndefOr[RuleParameterMap] = js.undefined,
-        Type: js.UndefOr[RuleType] = js.undefined
-    ): Rule = {
-      val __obj = js.Dynamic.literal()
-      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Rule]
-    }
   }
 
   @js.native
@@ -4932,84 +2151,38 @@ package clouddirectory {
     * A facet.
     */
   @js.native
+  @Factory
   trait SchemaFacet extends js.Object {
     var FacetName: js.UndefOr[FacetName]
     var SchemaArn: js.UndefOr[Arn]
-  }
-
-  object SchemaFacet {
-    @inline
-    def apply(
-        FacetName: js.UndefOr[FacetName] = js.undefined,
-        SchemaArn: js.UndefOr[Arn] = js.undefined
-    ): SchemaFacet = {
-      val __obj = js.Dynamic.literal()
-      FacetName.foreach(__v => __obj.updateDynamic("FacetName")(__v.asInstanceOf[js.Any]))
-      SchemaArn.foreach(__v => __obj.updateDynamic("SchemaArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SchemaFacet]
-    }
   }
 
   /**
     * The tag structure that contains a tag key and value.
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var Key: js.UndefOr[TagKey]
     var Value: js.UndefOr[TagValue]
   }
 
-  object Tag {
-    @inline
-    def apply(
-        Key: js.UndefOr[TagKey] = js.undefined,
-        Value: js.UndefOr[TagValue] = js.undefined
-    ): Tag = {
-      val __obj = js.Dynamic.literal()
-      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Tag]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceRequest extends js.Object {
     var ResourceArn: Arn
     var Tags: TagList
   }
 
-  object TagResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: Arn,
-        Tags: TagList
-    ): TagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceResponse extends js.Object {}
-
-  object TagResourceResponse {
-    @inline
-    def apply(
-    ): TagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[TagResourceResponse]
-    }
-  }
 
   /**
     * Represents the data for a typed attribute. You can set one, and only one, of the elements. Each attribute in an item is a name-value pair. Attributes have a single value.
     */
   @js.native
+  @Factory
   trait TypedAttributeValue extends js.Object {
     var BinaryValue: js.UndefOr[BinaryAttributeValue]
     var BooleanValue: js.UndefOr[BooleanAttributeValue]
@@ -5018,29 +2191,11 @@ package clouddirectory {
     var StringValue: js.UndefOr[StringAttributeValue]
   }
 
-  object TypedAttributeValue {
-    @inline
-    def apply(
-        BinaryValue: js.UndefOr[BinaryAttributeValue] = js.undefined,
-        BooleanValue: js.UndefOr[BooleanAttributeValue] = js.undefined,
-        DatetimeValue: js.UndefOr[DatetimeAttributeValue] = js.undefined,
-        NumberValue: js.UndefOr[NumberAttributeValue] = js.undefined,
-        StringValue: js.UndefOr[StringAttributeValue] = js.undefined
-    ): TypedAttributeValue = {
-      val __obj = js.Dynamic.literal()
-      BinaryValue.foreach(__v => __obj.updateDynamic("BinaryValue")(__v.asInstanceOf[js.Any]))
-      BooleanValue.foreach(__v => __obj.updateDynamic("BooleanValue")(__v.asInstanceOf[js.Any]))
-      DatetimeValue.foreach(__v => __obj.updateDynamic("DatetimeValue")(__v.asInstanceOf[js.Any]))
-      NumberValue.foreach(__v => __obj.updateDynamic("NumberValue")(__v.asInstanceOf[js.Any]))
-      StringValue.foreach(__v => __obj.updateDynamic("StringValue")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TypedAttributeValue]
-    }
-  }
-
   /**
     * A range of attribute values. For more information, see [[https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_range_filters.html|Range Filters]].
     */
   @js.native
+  @Factory
   trait TypedAttributeValueRange extends js.Object {
     var EndMode: RangeMode
     var StartMode: RangeMode
@@ -5048,29 +2203,11 @@ package clouddirectory {
     var StartValue: js.UndefOr[TypedAttributeValue]
   }
 
-  object TypedAttributeValueRange {
-    @inline
-    def apply(
-        EndMode: RangeMode,
-        StartMode: RangeMode,
-        EndValue: js.UndefOr[TypedAttributeValue] = js.undefined,
-        StartValue: js.UndefOr[TypedAttributeValue] = js.undefined
-    ): TypedAttributeValueRange = {
-      val __obj = js.Dynamic.literal(
-        "EndMode"   -> EndMode.asInstanceOf[js.Any],
-        "StartMode" -> StartMode.asInstanceOf[js.Any]
-      )
-
-      EndValue.foreach(__v => __obj.updateDynamic("EndValue")(__v.asInstanceOf[js.Any]))
-      StartValue.foreach(__v => __obj.updateDynamic("StartValue")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TypedAttributeValueRange]
-    }
-  }
-
   /**
     * A typed link attribute definition.
     */
   @js.native
+  @Factory
   trait TypedLinkAttributeDefinition extends js.Object {
     var Name: AttributeName
     var RequiredBehavior: RequiredAttributeBehavior
@@ -5080,132 +2217,52 @@ package clouddirectory {
     var Rules: js.UndefOr[RuleMap]
   }
 
-  object TypedLinkAttributeDefinition {
-    @inline
-    def apply(
-        Name: AttributeName,
-        RequiredBehavior: RequiredAttributeBehavior,
-        Type: FacetAttributeType,
-        DefaultValue: js.UndefOr[TypedAttributeValue] = js.undefined,
-        IsImmutable: js.UndefOr[Boolean] = js.undefined,
-        Rules: js.UndefOr[RuleMap] = js.undefined
-    ): TypedLinkAttributeDefinition = {
-      val __obj = js.Dynamic.literal(
-        "Name"             -> Name.asInstanceOf[js.Any],
-        "RequiredBehavior" -> RequiredBehavior.asInstanceOf[js.Any],
-        "Type"             -> Type.asInstanceOf[js.Any]
-      )
-
-      DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
-      IsImmutable.foreach(__v => __obj.updateDynamic("IsImmutable")(__v.asInstanceOf[js.Any]))
-      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TypedLinkAttributeDefinition]
-    }
-  }
-
   /**
     * Identifies the range of attributes that are used by a specified filter.
     */
   @js.native
+  @Factory
   trait TypedLinkAttributeRange extends js.Object {
     var Range: TypedAttributeValueRange
     var AttributeName: js.UndefOr[AttributeName]
-  }
-
-  object TypedLinkAttributeRange {
-    @inline
-    def apply(
-        Range: TypedAttributeValueRange,
-        AttributeName: js.UndefOr[AttributeName] = js.undefined
-    ): TypedLinkAttributeRange = {
-      val __obj = js.Dynamic.literal(
-        "Range" -> Range.asInstanceOf[js.Any]
-      )
-
-      AttributeName.foreach(__v => __obj.updateDynamic("AttributeName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TypedLinkAttributeRange]
-    }
   }
 
   /**
     * Defines the typed links structure and its attributes. To create a typed link facet, use the <a>CreateTypedLinkFacet</a> API.
     */
   @js.native
+  @Factory
   trait TypedLinkFacet extends js.Object {
     var Attributes: TypedLinkAttributeDefinitionList
     var IdentityAttributeOrder: AttributeNameList
     var Name: TypedLinkName
   }
 
-  object TypedLinkFacet {
-    @inline
-    def apply(
-        Attributes: TypedLinkAttributeDefinitionList,
-        IdentityAttributeOrder: AttributeNameList,
-        Name: TypedLinkName
-    ): TypedLinkFacet = {
-      val __obj = js.Dynamic.literal(
-        "Attributes"             -> Attributes.asInstanceOf[js.Any],
-        "IdentityAttributeOrder" -> IdentityAttributeOrder.asInstanceOf[js.Any],
-        "Name"                   -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TypedLinkFacet]
-    }
-  }
-
   /**
     * A typed link facet attribute update.
     */
   @js.native
+  @Factory
   trait TypedLinkFacetAttributeUpdate extends js.Object {
     var Action: UpdateActionType
     var Attribute: TypedLinkAttributeDefinition
-  }
-
-  object TypedLinkFacetAttributeUpdate {
-    @inline
-    def apply(
-        Action: UpdateActionType,
-        Attribute: TypedLinkAttributeDefinition
-    ): TypedLinkFacetAttributeUpdate = {
-      val __obj = js.Dynamic.literal(
-        "Action"    -> Action.asInstanceOf[js.Any],
-        "Attribute" -> Attribute.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TypedLinkFacetAttributeUpdate]
-    }
   }
 
   /**
     * Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link.
     */
   @js.native
+  @Factory
   trait TypedLinkSchemaAndFacetName extends js.Object {
     var SchemaArn: Arn
     var TypedLinkName: TypedLinkName
-  }
-
-  object TypedLinkSchemaAndFacetName {
-    @inline
-    def apply(
-        SchemaArn: Arn,
-        TypedLinkName: TypedLinkName
-    ): TypedLinkSchemaAndFacetName = {
-      val __obj = js.Dynamic.literal(
-        "SchemaArn"     -> SchemaArn.asInstanceOf[js.Any],
-        "TypedLinkName" -> TypedLinkName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TypedLinkSchemaAndFacetName]
-    }
   }
 
   /**
     * Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <a>AttachTypedLink</a> API returns a typed link specifier while the <a>DetachTypedLink</a> API accepts one as input. Similarly, the <a>ListIncomingTypedLinks</a> and <a>ListOutgoingTypedLinks</a> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch.
     */
   @js.native
+  @Factory
   trait TypedLinkSpecifier extends js.Object {
     var IdentityAttributeValues: AttributeNameAndValueList
     var SourceObjectReference: ObjectReference
@@ -5213,58 +2270,16 @@ package clouddirectory {
     var TypedLinkFacet: TypedLinkSchemaAndFacetName
   }
 
-  object TypedLinkSpecifier {
-    @inline
-    def apply(
-        IdentityAttributeValues: AttributeNameAndValueList,
-        SourceObjectReference: ObjectReference,
-        TargetObjectReference: ObjectReference,
-        TypedLinkFacet: TypedLinkSchemaAndFacetName
-    ): TypedLinkSpecifier = {
-      val __obj = js.Dynamic.literal(
-        "IdentityAttributeValues" -> IdentityAttributeValues.asInstanceOf[js.Any],
-        "SourceObjectReference"   -> SourceObjectReference.asInstanceOf[js.Any],
-        "TargetObjectReference"   -> TargetObjectReference.asInstanceOf[js.Any],
-        "TypedLinkFacet"          -> TypedLinkFacet.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TypedLinkSpecifier]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceRequest extends js.Object {
     var ResourceArn: Arn
     var TagKeys: TagKeyList
   }
 
-  object UntagResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: Arn,
-        TagKeys: TagKeyList
-    ): UntagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceResponse extends js.Object {}
-
-  object UntagResourceResponse {
-    @inline
-    def apply(
-    ): UntagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UntagResourceResponse]
-    }
-  }
 
   @js.native
   sealed trait UpdateActionType extends js.Any
@@ -5276,6 +2291,7 @@ package clouddirectory {
   }
 
   @js.native
+  @Factory
   trait UpdateFacetRequest extends js.Object {
     var Name: FacetName
     var SchemaArn: Arn
@@ -5283,153 +2299,51 @@ package clouddirectory {
     var ObjectType: js.UndefOr[ObjectType]
   }
 
-  object UpdateFacetRequest {
-    @inline
-    def apply(
-        Name: FacetName,
-        SchemaArn: Arn,
-        AttributeUpdates: js.UndefOr[FacetAttributeUpdateList] = js.undefined,
-        ObjectType: js.UndefOr[ObjectType] = js.undefined
-    ): UpdateFacetRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name"      -> Name.asInstanceOf[js.Any],
-        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
-      )
-
-      AttributeUpdates.foreach(__v => __obj.updateDynamic("AttributeUpdates")(__v.asInstanceOf[js.Any]))
-      ObjectType.foreach(__v => __obj.updateDynamic("ObjectType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateFacetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateFacetResponse extends js.Object {}
 
-  object UpdateFacetResponse {
-    @inline
-    def apply(
-    ): UpdateFacetResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateFacetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateLinkAttributesRequest extends js.Object {
     var AttributeUpdates: LinkAttributeUpdateList
     var DirectoryArn: Arn
     var TypedLinkSpecifier: TypedLinkSpecifier
   }
 
-  object UpdateLinkAttributesRequest {
-    @inline
-    def apply(
-        AttributeUpdates: LinkAttributeUpdateList,
-        DirectoryArn: Arn,
-        TypedLinkSpecifier: TypedLinkSpecifier
-    ): UpdateLinkAttributesRequest = {
-      val __obj = js.Dynamic.literal(
-        "AttributeUpdates"   -> AttributeUpdates.asInstanceOf[js.Any],
-        "DirectoryArn"       -> DirectoryArn.asInstanceOf[js.Any],
-        "TypedLinkSpecifier" -> TypedLinkSpecifier.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateLinkAttributesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateLinkAttributesResponse extends js.Object {}
 
-  object UpdateLinkAttributesResponse {
-    @inline
-    def apply(
-    ): UpdateLinkAttributesResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateLinkAttributesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateObjectAttributesRequest extends js.Object {
     var AttributeUpdates: ObjectAttributeUpdateList
     var DirectoryArn: Arn
     var ObjectReference: ObjectReference
   }
 
-  object UpdateObjectAttributesRequest {
-    @inline
-    def apply(
-        AttributeUpdates: ObjectAttributeUpdateList,
-        DirectoryArn: Arn,
-        ObjectReference: ObjectReference
-    ): UpdateObjectAttributesRequest = {
-      val __obj = js.Dynamic.literal(
-        "AttributeUpdates" -> AttributeUpdates.asInstanceOf[js.Any],
-        "DirectoryArn"     -> DirectoryArn.asInstanceOf[js.Any],
-        "ObjectReference"  -> ObjectReference.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateObjectAttributesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateObjectAttributesResponse extends js.Object {
     var ObjectIdentifier: js.UndefOr[ObjectIdentifier]
   }
 
-  object UpdateObjectAttributesResponse {
-    @inline
-    def apply(
-        ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
-    ): UpdateObjectAttributesResponse = {
-      val __obj = js.Dynamic.literal()
-      ObjectIdentifier.foreach(__v => __obj.updateDynamic("ObjectIdentifier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateObjectAttributesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateSchemaRequest extends js.Object {
     var Name: SchemaName
     var SchemaArn: Arn
   }
 
-  object UpdateSchemaRequest {
-    @inline
-    def apply(
-        Name: SchemaName,
-        SchemaArn: Arn
-    ): UpdateSchemaRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name"      -> Name.asInstanceOf[js.Any],
-        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateSchemaRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateSchemaResponse extends js.Object {
     var SchemaArn: js.UndefOr[Arn]
   }
 
-  object UpdateSchemaResponse {
-    @inline
-    def apply(
-        SchemaArn: js.UndefOr[Arn] = js.undefined
-    ): UpdateSchemaResponse = {
-      val __obj = js.Dynamic.literal()
-      SchemaArn.foreach(__v => __obj.updateDynamic("SchemaArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateSchemaResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateTypedLinkFacetRequest extends js.Object {
     var AttributeUpdates: TypedLinkFacetAttributeUpdateList
     var IdentityAttributeOrder: AttributeNameList
@@ -5437,82 +2351,27 @@ package clouddirectory {
     var SchemaArn: Arn
   }
 
-  object UpdateTypedLinkFacetRequest {
-    @inline
-    def apply(
-        AttributeUpdates: TypedLinkFacetAttributeUpdateList,
-        IdentityAttributeOrder: AttributeNameList,
-        Name: TypedLinkName,
-        SchemaArn: Arn
-    ): UpdateTypedLinkFacetRequest = {
-      val __obj = js.Dynamic.literal(
-        "AttributeUpdates"       -> AttributeUpdates.asInstanceOf[js.Any],
-        "IdentityAttributeOrder" -> IdentityAttributeOrder.asInstanceOf[js.Any],
-        "Name"                   -> Name.asInstanceOf[js.Any],
-        "SchemaArn"              -> SchemaArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateTypedLinkFacetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateTypedLinkFacetResponse extends js.Object {}
 
-  object UpdateTypedLinkFacetResponse {
-    @inline
-    def apply(
-    ): UpdateTypedLinkFacetResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateTypedLinkFacetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpgradeAppliedSchemaRequest extends js.Object {
     var DirectoryArn: Arn
     var PublishedSchemaArn: Arn
     var DryRun: js.UndefOr[Boolean]
   }
 
-  object UpgradeAppliedSchemaRequest {
-    @inline
-    def apply(
-        DirectoryArn: Arn,
-        PublishedSchemaArn: Arn,
-        DryRun: js.UndefOr[Boolean] = js.undefined
-    ): UpgradeAppliedSchemaRequest = {
-      val __obj = js.Dynamic.literal(
-        "DirectoryArn"       -> DirectoryArn.asInstanceOf[js.Any],
-        "PublishedSchemaArn" -> PublishedSchemaArn.asInstanceOf[js.Any]
-      )
-
-      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpgradeAppliedSchemaRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpgradeAppliedSchemaResponse extends js.Object {
     var DirectoryArn: js.UndefOr[Arn]
     var UpgradedSchemaArn: js.UndefOr[Arn]
   }
 
-  object UpgradeAppliedSchemaResponse {
-    @inline
-    def apply(
-        DirectoryArn: js.UndefOr[Arn] = js.undefined,
-        UpgradedSchemaArn: js.UndefOr[Arn] = js.undefined
-    ): UpgradeAppliedSchemaResponse = {
-      val __obj = js.Dynamic.literal()
-      DirectoryArn.foreach(__v => __obj.updateDynamic("DirectoryArn")(__v.asInstanceOf[js.Any]))
-      UpgradedSchemaArn.foreach(__v => __obj.updateDynamic("UpgradedSchemaArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpgradeAppliedSchemaResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpgradePublishedSchemaRequest extends js.Object {
     var DevelopmentSchemaArn: Arn
     var MinorVersion: Version
@@ -5520,38 +2379,9 @@ package clouddirectory {
     var DryRun: js.UndefOr[Boolean]
   }
 
-  object UpgradePublishedSchemaRequest {
-    @inline
-    def apply(
-        DevelopmentSchemaArn: Arn,
-        MinorVersion: Version,
-        PublishedSchemaArn: Arn,
-        DryRun: js.UndefOr[Boolean] = js.undefined
-    ): UpgradePublishedSchemaRequest = {
-      val __obj = js.Dynamic.literal(
-        "DevelopmentSchemaArn" -> DevelopmentSchemaArn.asInstanceOf[js.Any],
-        "MinorVersion"         -> MinorVersion.asInstanceOf[js.Any],
-        "PublishedSchemaArn"   -> PublishedSchemaArn.asInstanceOf[js.Any]
-      )
-
-      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpgradePublishedSchemaRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpgradePublishedSchemaResponse extends js.Object {
     var UpgradedSchemaArn: js.UndefOr[Arn]
-  }
-
-  object UpgradePublishedSchemaResponse {
-    @inline
-    def apply(
-        UpgradedSchemaArn: js.UndefOr[Arn] = js.undefined
-    ): UpgradePublishedSchemaResponse = {
-      val __obj = js.Dynamic.literal()
-      UpgradedSchemaArn.foreach(__v => __obj.updateDynamic("UpgradedSchemaArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpgradePublishedSchemaResponse]
-    }
   }
 }

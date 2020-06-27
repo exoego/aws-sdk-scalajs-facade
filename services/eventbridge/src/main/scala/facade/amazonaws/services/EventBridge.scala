@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object eventbridge {
   type AccountId                        = String
@@ -186,21 +187,9 @@ package eventbridge {
   }
 
   @js.native
+  @Factory
   trait ActivateEventSourceRequest extends js.Object {
     var Name: EventSourceName
-  }
-
-  object ActivateEventSourceRequest {
-    @inline
-    def apply(
-        Name: EventSourceName
-    ): ActivateEventSourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ActivateEventSourceRequest]
-    }
   }
 
   @js.native
@@ -216,52 +205,27 @@ package eventbridge {
     * This structure specifies the VPC subnets and security groups for the task and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.
     */
   @js.native
+  @Factory
   trait AwsVpcConfiguration extends js.Object {
     var Subnets: StringList
     var AssignPublicIp: js.UndefOr[AssignPublicIp]
     var SecurityGroups: js.UndefOr[StringList]
   }
 
-  object AwsVpcConfiguration {
-    @inline
-    def apply(
-        Subnets: StringList,
-        AssignPublicIp: js.UndefOr[AssignPublicIp] = js.undefined,
-        SecurityGroups: js.UndefOr[StringList] = js.undefined
-    ): AwsVpcConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "Subnets" -> Subnets.asInstanceOf[js.Any]
-      )
-
-      AssignPublicIp.foreach(__v => __obj.updateDynamic("AssignPublicIp")(__v.asInstanceOf[js.Any]))
-      SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AwsVpcConfiguration]
-    }
-  }
-
   /**
     * The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an AWS Batch job.
     */
   @js.native
+  @Factory
   trait BatchArrayProperties extends js.Object {
     var Size: js.UndefOr[Int]
-  }
-
-  object BatchArrayProperties {
-    @inline
-    def apply(
-        Size: js.UndefOr[Int] = js.undefined
-    ): BatchArrayProperties = {
-      val __obj = js.Dynamic.literal()
-      Size.foreach(__v => __obj.updateDynamic("Size")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchArrayProperties]
-    }
   }
 
   /**
     * The custom parameters to be used when the target is an AWS Batch job.
     */
   @js.native
+  @Factory
   trait BatchParameters extends js.Object {
     var JobDefinition: String
     var JobName: String
@@ -269,42 +233,13 @@ package eventbridge {
     var RetryStrategy: js.UndefOr[BatchRetryStrategy]
   }
 
-  object BatchParameters {
-    @inline
-    def apply(
-        JobDefinition: String,
-        JobName: String,
-        ArrayProperties: js.UndefOr[BatchArrayProperties] = js.undefined,
-        RetryStrategy: js.UndefOr[BatchRetryStrategy] = js.undefined
-    ): BatchParameters = {
-      val __obj = js.Dynamic.literal(
-        "JobDefinition" -> JobDefinition.asInstanceOf[js.Any],
-        "JobName"       -> JobName.asInstanceOf[js.Any]
-      )
-
-      ArrayProperties.foreach(__v => __obj.updateDynamic("ArrayProperties")(__v.asInstanceOf[js.Any]))
-      RetryStrategy.foreach(__v => __obj.updateDynamic("RetryStrategy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchParameters]
-    }
-  }
-
   /**
     * The retry strategy to use for failed jobs if the target is an AWS Batch job. If you specify a retry strategy here, it overrides the retry strategy defined in the job definition.
     */
   @js.native
+  @Factory
   trait BatchRetryStrategy extends js.Object {
     var Attempts: js.UndefOr[Int]
-  }
-
-  object BatchRetryStrategy {
-    @inline
-    def apply(
-        Attempts: js.UndefOr[Int] = js.undefined
-    ): BatchRetryStrategy = {
-      val __obj = js.Dynamic.literal()
-      Attempts.foreach(__v => __obj.updateDynamic("Attempts")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchRetryStrategy]
-    }
   }
 
   /**
@@ -312,241 +247,88 @@ package eventbridge {
     *  <code>'{"Type" : "StringEquals", "Key": "aws:PrincipalOrgID", "Value": "o-1234567890"}'</code>
     */
   @js.native
+  @Factory
   trait Condition extends js.Object {
     var Key: String
     var Type: String
     var Value: String
   }
 
-  object Condition {
-    @inline
-    def apply(
-        Key: String,
-        Type: String,
-        Value: String
-    ): Condition = {
-      val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
-        "Type"  -> Type.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Condition]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateEventBusRequest extends js.Object {
     var Name: EventBusName
     var EventSourceName: js.UndefOr[EventSourceName]
   }
 
-  object CreateEventBusRequest {
-    @inline
-    def apply(
-        Name: EventBusName,
-        EventSourceName: js.UndefOr[EventSourceName] = js.undefined
-    ): CreateEventBusRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      EventSourceName.foreach(__v => __obj.updateDynamic("EventSourceName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateEventBusRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateEventBusResponse extends js.Object {
     var EventBusArn: js.UndefOr[String]
   }
 
-  object CreateEventBusResponse {
-    @inline
-    def apply(
-        EventBusArn: js.UndefOr[String] = js.undefined
-    ): CreateEventBusResponse = {
-      val __obj = js.Dynamic.literal()
-      EventBusArn.foreach(__v => __obj.updateDynamic("EventBusArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateEventBusResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreatePartnerEventSourceRequest extends js.Object {
     var Account: AccountId
     var Name: EventSourceName
   }
 
-  object CreatePartnerEventSourceRequest {
-    @inline
-    def apply(
-        Account: AccountId,
-        Name: EventSourceName
-    ): CreatePartnerEventSourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "Account" -> Account.asInstanceOf[js.Any],
-        "Name"    -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreatePartnerEventSourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreatePartnerEventSourceResponse extends js.Object {
     var EventSourceArn: js.UndefOr[String]
   }
 
-  object CreatePartnerEventSourceResponse {
-    @inline
-    def apply(
-        EventSourceArn: js.UndefOr[String] = js.undefined
-    ): CreatePartnerEventSourceResponse = {
-      val __obj = js.Dynamic.literal()
-      EventSourceArn.foreach(__v => __obj.updateDynamic("EventSourceArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreatePartnerEventSourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeactivateEventSourceRequest extends js.Object {
     var Name: EventSourceName
   }
 
-  object DeactivateEventSourceRequest {
-    @inline
-    def apply(
-        Name: EventSourceName
-    ): DeactivateEventSourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeactivateEventSourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteEventBusRequest extends js.Object {
     var Name: EventBusName
   }
 
-  object DeleteEventBusRequest {
-    @inline
-    def apply(
-        Name: EventBusName
-    ): DeleteEventBusRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteEventBusRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeletePartnerEventSourceRequest extends js.Object {
     var Account: AccountId
     var Name: EventSourceName
   }
 
-  object DeletePartnerEventSourceRequest {
-    @inline
-    def apply(
-        Account: AccountId,
-        Name: EventSourceName
-    ): DeletePartnerEventSourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "Account" -> Account.asInstanceOf[js.Any],
-        "Name"    -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeletePartnerEventSourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteRuleRequest extends js.Object {
     var Name: RuleName
     var EventBusName: js.UndefOr[EventBusName]
     var Force: js.UndefOr[Boolean]
   }
 
-  object DeleteRuleRequest {
-    @inline
-    def apply(
-        Name: RuleName,
-        EventBusName: js.UndefOr[EventBusName] = js.undefined,
-        Force: js.UndefOr[Boolean] = js.undefined
-    ): DeleteRuleRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
-      Force.foreach(__v => __obj.updateDynamic("Force")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteRuleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeEventBusRequest extends js.Object {
     var Name: js.UndefOr[EventBusName]
   }
 
-  object DescribeEventBusRequest {
-    @inline
-    def apply(
-        Name: js.UndefOr[EventBusName] = js.undefined
-    ): DescribeEventBusRequest = {
-      val __obj = js.Dynamic.literal()
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeEventBusRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeEventBusResponse extends js.Object {
     var Arn: js.UndefOr[String]
     var Name: js.UndefOr[String]
     var Policy: js.UndefOr[String]
   }
 
-  object DescribeEventBusResponse {
-    @inline
-    def apply(
-        Arn: js.UndefOr[String] = js.undefined,
-        Name: js.UndefOr[String] = js.undefined,
-        Policy: js.UndefOr[String] = js.undefined
-    ): DescribeEventBusResponse = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeEventBusResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeEventSourceRequest extends js.Object {
     var Name: EventSourceName
   }
 
-  object DescribeEventSourceRequest {
-    @inline
-    def apply(
-        Name: EventSourceName
-    ): DescribeEventSourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeEventSourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeEventSourceResponse extends js.Object {
     var Arn: js.UndefOr[String]
     var CreatedBy: js.UndefOr[String]
@@ -556,86 +338,28 @@ package eventbridge {
     var State: js.UndefOr[EventSourceState]
   }
 
-  object DescribeEventSourceResponse {
-    @inline
-    def apply(
-        Arn: js.UndefOr[String] = js.undefined,
-        CreatedBy: js.UndefOr[String] = js.undefined,
-        CreationTime: js.UndefOr[Timestamp] = js.undefined,
-        ExpirationTime: js.UndefOr[Timestamp] = js.undefined,
-        Name: js.UndefOr[String] = js.undefined,
-        State: js.UndefOr[EventSourceState] = js.undefined
-    ): DescribeEventSourceResponse = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
-      ExpirationTime.foreach(__v => __obj.updateDynamic("ExpirationTime")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeEventSourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribePartnerEventSourceRequest extends js.Object {
     var Name: EventSourceName
   }
 
-  object DescribePartnerEventSourceRequest {
-    @inline
-    def apply(
-        Name: EventSourceName
-    ): DescribePartnerEventSourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribePartnerEventSourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribePartnerEventSourceResponse extends js.Object {
     var Arn: js.UndefOr[String]
     var Name: js.UndefOr[String]
   }
 
-  object DescribePartnerEventSourceResponse {
-    @inline
-    def apply(
-        Arn: js.UndefOr[String] = js.undefined,
-        Name: js.UndefOr[String] = js.undefined
-    ): DescribePartnerEventSourceResponse = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribePartnerEventSourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeRuleRequest extends js.Object {
     var Name: RuleName
     var EventBusName: js.UndefOr[EventBusName]
   }
 
-  object DescribeRuleRequest {
-    @inline
-    def apply(
-        Name: RuleName,
-        EventBusName: js.UndefOr[EventBusName] = js.undefined
-    ): DescribeRuleRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeRuleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeRuleResponse extends js.Object {
     var Arn: js.UndefOr[RuleArn]
     var Description: js.UndefOr[RuleDescription]
@@ -648,58 +372,18 @@ package eventbridge {
     var State: js.UndefOr[RuleState]
   }
 
-  object DescribeRuleResponse {
-    @inline
-    def apply(
-        Arn: js.UndefOr[RuleArn] = js.undefined,
-        Description: js.UndefOr[RuleDescription] = js.undefined,
-        EventBusName: js.UndefOr[EventBusName] = js.undefined,
-        EventPattern: js.UndefOr[EventPattern] = js.undefined,
-        ManagedBy: js.UndefOr[ManagedBy] = js.undefined,
-        Name: js.UndefOr[RuleName] = js.undefined,
-        RoleArn: js.UndefOr[RoleArn] = js.undefined,
-        ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
-        State: js.UndefOr[RuleState] = js.undefined
-    ): DescribeRuleResponse = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
-      EventPattern.foreach(__v => __obj.updateDynamic("EventPattern")(__v.asInstanceOf[js.Any]))
-      ManagedBy.foreach(__v => __obj.updateDynamic("ManagedBy")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
-      ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeRuleResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisableRuleRequest extends js.Object {
     var Name: RuleName
     var EventBusName: js.UndefOr[EventBusName]
-  }
-
-  object DisableRuleRequest {
-    @inline
-    def apply(
-        Name: RuleName,
-        EventBusName: js.UndefOr[EventBusName] = js.undefined
-    ): DisableRuleRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DisableRuleRequest]
-    }
   }
 
   /**
     * The custom parameters to be used when the target is an Amazon ECS task.
     */
   @js.native
+  @Factory
   trait EcsParameters extends js.Object {
     var TaskDefinitionArn: Arn
     var Group: js.UndefOr[String]
@@ -709,79 +393,29 @@ package eventbridge {
     var TaskCount: js.UndefOr[LimitMin1]
   }
 
-  object EcsParameters {
-    @inline
-    def apply(
-        TaskDefinitionArn: Arn,
-        Group: js.UndefOr[String] = js.undefined,
-        LaunchType: js.UndefOr[LaunchType] = js.undefined,
-        NetworkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
-        PlatformVersion: js.UndefOr[String] = js.undefined,
-        TaskCount: js.UndefOr[LimitMin1] = js.undefined
-    ): EcsParameters = {
-      val __obj = js.Dynamic.literal(
-        "TaskDefinitionArn" -> TaskDefinitionArn.asInstanceOf[js.Any]
-      )
-
-      Group.foreach(__v => __obj.updateDynamic("Group")(__v.asInstanceOf[js.Any]))
-      LaunchType.foreach(__v => __obj.updateDynamic("LaunchType")(__v.asInstanceOf[js.Any]))
-      NetworkConfiguration.foreach(__v => __obj.updateDynamic("NetworkConfiguration")(__v.asInstanceOf[js.Any]))
-      PlatformVersion.foreach(__v => __obj.updateDynamic("PlatformVersion")(__v.asInstanceOf[js.Any]))
-      TaskCount.foreach(__v => __obj.updateDynamic("TaskCount")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EcsParameters]
-    }
-  }
-
   @js.native
+  @Factory
   trait EnableRuleRequest extends js.Object {
     var Name: RuleName
     var EventBusName: js.UndefOr[EventBusName]
-  }
-
-  object EnableRuleRequest {
-    @inline
-    def apply(
-        Name: RuleName,
-        EventBusName: js.UndefOr[EventBusName] = js.undefined
-    ): EnableRuleRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EnableRuleRequest]
-    }
   }
 
   /**
     * An event bus receives events from a source and routes them to rules associated with that event bus. Your account's default event bus receives rules from AWS services. A custom event bus can receive rules from AWS services as well as your custom applications and services. A partner event bus receives events from an event source created by an SaaS partner. These events come from the partners services or applications.
     */
   @js.native
+  @Factory
   trait EventBus extends js.Object {
     var Arn: js.UndefOr[String]
     var Name: js.UndefOr[String]
     var Policy: js.UndefOr[String]
   }
 
-  object EventBus {
-    @inline
-    def apply(
-        Arn: js.UndefOr[String] = js.undefined,
-        Name: js.UndefOr[String] = js.undefined,
-        Policy: js.UndefOr[String] = js.undefined
-    ): EventBus = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EventBus]
-    }
-  }
-
   /**
     * A partner event source is created by an SaaS partner. If a customer creates a partner event bus that matches this event source, that AWS account can receive events from the partner's applications or services.
     */
   @js.native
+  @Factory
   trait EventSource extends js.Object {
     var Arn: js.UndefOr[String]
     var CreatedBy: js.UndefOr[String]
@@ -789,27 +423,6 @@ package eventbridge {
     var ExpirationTime: js.UndefOr[Timestamp]
     var Name: js.UndefOr[String]
     var State: js.UndefOr[EventSourceState]
-  }
-
-  object EventSource {
-    @inline
-    def apply(
-        Arn: js.UndefOr[String] = js.undefined,
-        CreatedBy: js.UndefOr[String] = js.undefined,
-        CreationTime: js.UndefOr[Timestamp] = js.undefined,
-        ExpirationTime: js.UndefOr[Timestamp] = js.undefined,
-        Name: js.UndefOr[String] = js.undefined,
-        State: js.UndefOr[EventSourceState] = js.undefined
-    ): EventSource = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
-      ExpirationTime.foreach(__v => __obj.updateDynamic("ExpirationTime")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EventSource]
-    }
   }
 
   @js.native
@@ -826,45 +439,19 @@ package eventbridge {
     * Contains the parameters needed for you to provide custom input to a target based on one or more pieces of data extracted from the event.
     */
   @js.native
+  @Factory
   trait InputTransformer extends js.Object {
     var InputTemplate: TransformerInput
     var InputPathsMap: js.UndefOr[TransformerPaths]
-  }
-
-  object InputTransformer {
-    @inline
-    def apply(
-        InputTemplate: TransformerInput,
-        InputPathsMap: js.UndefOr[TransformerPaths] = js.undefined
-    ): InputTransformer = {
-      val __obj = js.Dynamic.literal(
-        "InputTemplate" -> InputTemplate.asInstanceOf[js.Any]
-      )
-
-      InputPathsMap.foreach(__v => __obj.updateDynamic("InputPathsMap")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InputTransformer]
-    }
   }
 
   /**
     * This object enables you to specify a JSON path to extract from the event and use as the partition key for the Amazon Kinesis data stream so that you can control the shard that the event goes to. If you don't include this parameter, the default is to use the <code>eventId</code> as the partition key.
     */
   @js.native
+  @Factory
   trait KinesisParameters extends js.Object {
     var PartitionKeyPath: TargetPartitionKeyPath
-  }
-
-  object KinesisParameters {
-    @inline
-    def apply(
-        PartitionKeyPath: TargetPartitionKeyPath
-    ): KinesisParameters = {
-      val __obj = js.Dynamic.literal(
-        "PartitionKeyPath" -> PartitionKeyPath.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[KinesisParameters]
-    }
   }
 
   @js.native
@@ -877,176 +464,67 @@ package eventbridge {
   }
 
   @js.native
+  @Factory
   trait ListEventBusesRequest extends js.Object {
     var Limit: js.UndefOr[LimitMax100]
     var NamePrefix: js.UndefOr[EventBusName]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListEventBusesRequest {
-    @inline
-    def apply(
-        Limit: js.UndefOr[LimitMax100] = js.undefined,
-        NamePrefix: js.UndefOr[EventBusName] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListEventBusesRequest = {
-      val __obj = js.Dynamic.literal()
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NamePrefix.foreach(__v => __obj.updateDynamic("NamePrefix")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListEventBusesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListEventBusesResponse extends js.Object {
     var EventBuses: js.UndefOr[EventBusList]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListEventBusesResponse {
-    @inline
-    def apply(
-        EventBuses: js.UndefOr[EventBusList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListEventBusesResponse = {
-      val __obj = js.Dynamic.literal()
-      EventBuses.foreach(__v => __obj.updateDynamic("EventBuses")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListEventBusesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListEventSourcesRequest extends js.Object {
     var Limit: js.UndefOr[LimitMax100]
     var NamePrefix: js.UndefOr[EventSourceNamePrefix]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListEventSourcesRequest {
-    @inline
-    def apply(
-        Limit: js.UndefOr[LimitMax100] = js.undefined,
-        NamePrefix: js.UndefOr[EventSourceNamePrefix] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListEventSourcesRequest = {
-      val __obj = js.Dynamic.literal()
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NamePrefix.foreach(__v => __obj.updateDynamic("NamePrefix")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListEventSourcesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListEventSourcesResponse extends js.Object {
     var EventSources: js.UndefOr[EventSourceList]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListEventSourcesResponse {
-    @inline
-    def apply(
-        EventSources: js.UndefOr[EventSourceList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListEventSourcesResponse = {
-      val __obj = js.Dynamic.literal()
-      EventSources.foreach(__v => __obj.updateDynamic("EventSources")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListEventSourcesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPartnerEventSourceAccountsRequest extends js.Object {
     var EventSourceName: EventSourceName
     var Limit: js.UndefOr[LimitMax100]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListPartnerEventSourceAccountsRequest {
-    @inline
-    def apply(
-        EventSourceName: EventSourceName,
-        Limit: js.UndefOr[LimitMax100] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListPartnerEventSourceAccountsRequest = {
-      val __obj = js.Dynamic.literal(
-        "EventSourceName" -> EventSourceName.asInstanceOf[js.Any]
-      )
-
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPartnerEventSourceAccountsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPartnerEventSourceAccountsResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var PartnerEventSourceAccounts: js.UndefOr[PartnerEventSourceAccountList]
   }
 
-  object ListPartnerEventSourceAccountsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        PartnerEventSourceAccounts: js.UndefOr[PartnerEventSourceAccountList] = js.undefined
-    ): ListPartnerEventSourceAccountsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PartnerEventSourceAccounts.foreach(__v =>
-        __obj.updateDynamic("PartnerEventSourceAccounts")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[ListPartnerEventSourceAccountsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPartnerEventSourcesRequest extends js.Object {
     var NamePrefix: PartnerEventSourceNamePrefix
     var Limit: js.UndefOr[LimitMax100]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListPartnerEventSourcesRequest {
-    @inline
-    def apply(
-        NamePrefix: PartnerEventSourceNamePrefix,
-        Limit: js.UndefOr[LimitMax100] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListPartnerEventSourcesRequest = {
-      val __obj = js.Dynamic.literal(
-        "NamePrefix" -> NamePrefix.asInstanceOf[js.Any]
-      )
-
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPartnerEventSourcesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPartnerEventSourcesResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var PartnerEventSources: js.UndefOr[PartnerEventSourceList]
   }
 
-  object ListPartnerEventSourcesResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        PartnerEventSources: js.UndefOr[PartnerEventSourceList] = js.undefined
-    ): ListPartnerEventSourcesResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PartnerEventSources.foreach(__v => __obj.updateDynamic("PartnerEventSources")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPartnerEventSourcesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListRuleNamesByTargetRequest extends js.Object {
     var TargetArn: TargetArn
     var EventBusName: js.UndefOr[EventBusName]
@@ -1054,45 +532,15 @@ package eventbridge {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListRuleNamesByTargetRequest {
-    @inline
-    def apply(
-        TargetArn: TargetArn,
-        EventBusName: js.UndefOr[EventBusName] = js.undefined,
-        Limit: js.UndefOr[LimitMax100] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListRuleNamesByTargetRequest = {
-      val __obj = js.Dynamic.literal(
-        "TargetArn" -> TargetArn.asInstanceOf[js.Any]
-      )
-
-      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRuleNamesByTargetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListRuleNamesByTargetResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var RuleNames: js.UndefOr[RuleNameList]
   }
 
-  object ListRuleNamesByTargetResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        RuleNames: js.UndefOr[RuleNameList] = js.undefined
-    ): ListRuleNamesByTargetResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      RuleNames.foreach(__v => __obj.updateDynamic("RuleNames")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRuleNamesByTargetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListRulesRequest extends js.Object {
     var EventBusName: js.UndefOr[EventBusName]
     var Limit: js.UndefOr[LimitMax100]
@@ -1100,77 +548,27 @@ package eventbridge {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListRulesRequest {
-    @inline
-    def apply(
-        EventBusName: js.UndefOr[EventBusName] = js.undefined,
-        Limit: js.UndefOr[LimitMax100] = js.undefined,
-        NamePrefix: js.UndefOr[RuleName] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListRulesRequest = {
-      val __obj = js.Dynamic.literal()
-      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NamePrefix.foreach(__v => __obj.updateDynamic("NamePrefix")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRulesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListRulesResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var Rules: js.UndefOr[RuleResponseList]
   }
 
-  object ListRulesResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        Rules: js.UndefOr[RuleResponseList] = js.undefined
-    ): ListRulesResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRulesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceRequest extends js.Object {
     var ResourceARN: Arn
   }
 
-  object ListTagsForResourceRequest {
-    @inline
-    def apply(
-        ResourceARN: Arn
-    ): ListTagsForResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListTagsForResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceResponse extends js.Object {
     var Tags: js.UndefOr[TagList]
   }
 
-  object ListTagsForResourceResponse {
-    @inline
-    def apply(
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): ListTagsForResourceResponse = {
-      val __obj = js.Dynamic.literal()
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTargetsByRuleRequest extends js.Object {
     var Rule: RuleName
     var EventBusName: js.UndefOr[EventBusName]
@@ -1178,89 +576,37 @@ package eventbridge {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListTargetsByRuleRequest {
-    @inline
-    def apply(
-        Rule: RuleName,
-        EventBusName: js.UndefOr[EventBusName] = js.undefined,
-        Limit: js.UndefOr[LimitMax100] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListTargetsByRuleRequest = {
-      val __obj = js.Dynamic.literal(
-        "Rule" -> Rule.asInstanceOf[js.Any]
-      )
-
-      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTargetsByRuleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTargetsByRuleResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var Targets: js.UndefOr[TargetList]
-  }
-
-  object ListTargetsByRuleResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        Targets: js.UndefOr[TargetList] = js.undefined
-    ): ListTargetsByRuleResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTargetsByRuleResponse]
-    }
   }
 
   /**
     * This structure specifies the network configuration for an ECS task.
     */
   @js.native
+  @Factory
   trait NetworkConfiguration extends js.Object {
     var awsvpcConfiguration: js.UndefOr[AwsVpcConfiguration]
-  }
-
-  object NetworkConfiguration {
-    @inline
-    def apply(
-        awsvpcConfiguration: js.UndefOr[AwsVpcConfiguration] = js.undefined
-    ): NetworkConfiguration = {
-      val __obj = js.Dynamic.literal()
-      awsvpcConfiguration.foreach(__v => __obj.updateDynamic("awsvpcConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NetworkConfiguration]
-    }
   }
 
   /**
     * A partner event source is created by an SaaS partner. If a customer creates a partner event bus that matches this event source, that AWS account can receive events from the partner's applications or services.
     */
   @js.native
+  @Factory
   trait PartnerEventSource extends js.Object {
     var Arn: js.UndefOr[String]
     var Name: js.UndefOr[String]
-  }
-
-  object PartnerEventSource {
-    @inline
-    def apply(
-        Arn: js.UndefOr[String] = js.undefined,
-        Name: js.UndefOr[String] = js.undefined
-    ): PartnerEventSource = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PartnerEventSource]
-    }
   }
 
   /**
     * The AWS account that a partner event source has been offered to.
     */
   @js.native
+  @Factory
   trait PartnerEventSourceAccount extends js.Object {
     var Account: js.UndefOr[AccountId]
     var CreationTime: js.UndefOr[Timestamp]
@@ -1268,45 +614,17 @@ package eventbridge {
     var State: js.UndefOr[EventSourceState]
   }
 
-  object PartnerEventSourceAccount {
-    @inline
-    def apply(
-        Account: js.UndefOr[AccountId] = js.undefined,
-        CreationTime: js.UndefOr[Timestamp] = js.undefined,
-        ExpirationTime: js.UndefOr[Timestamp] = js.undefined,
-        State: js.UndefOr[EventSourceState] = js.undefined
-    ): PartnerEventSourceAccount = {
-      val __obj = js.Dynamic.literal()
-      Account.foreach(__v => __obj.updateDynamic("Account")(__v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
-      ExpirationTime.foreach(__v => __obj.updateDynamic("ExpirationTime")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PartnerEventSourceAccount]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutEventsRequest extends js.Object {
     var Entries: PutEventsRequestEntryList
-  }
-
-  object PutEventsRequest {
-    @inline
-    def apply(
-        Entries: PutEventsRequestEntryList
-    ): PutEventsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Entries" -> Entries.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutEventsRequest]
-    }
   }
 
   /**
     * Represents an event to be submitted.
     */
   @js.native
+  @Factory
   trait PutEventsRequestEntry extends js.Object {
     var Detail: js.UndefOr[String]
     var DetailType: js.UndefOr[String]
@@ -1316,93 +634,35 @@ package eventbridge {
     var Time: js.UndefOr[EventTime]
   }
 
-  object PutEventsRequestEntry {
-    @inline
-    def apply(
-        Detail: js.UndefOr[String] = js.undefined,
-        DetailType: js.UndefOr[String] = js.undefined,
-        EventBusName: js.UndefOr[NonPartnerEventBusName] = js.undefined,
-        Resources: js.UndefOr[EventResourceList] = js.undefined,
-        Source: js.UndefOr[String] = js.undefined,
-        Time: js.UndefOr[EventTime] = js.undefined
-    ): PutEventsRequestEntry = {
-      val __obj = js.Dynamic.literal()
-      Detail.foreach(__v => __obj.updateDynamic("Detail")(__v.asInstanceOf[js.Any]))
-      DetailType.foreach(__v => __obj.updateDynamic("DetailType")(__v.asInstanceOf[js.Any]))
-      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
-      Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
-      Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
-      Time.foreach(__v => __obj.updateDynamic("Time")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutEventsRequestEntry]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutEventsResponse extends js.Object {
     var Entries: js.UndefOr[PutEventsResultEntryList]
     var FailedEntryCount: js.UndefOr[Int]
-  }
-
-  object PutEventsResponse {
-    @inline
-    def apply(
-        Entries: js.UndefOr[PutEventsResultEntryList] = js.undefined,
-        FailedEntryCount: js.UndefOr[Int] = js.undefined
-    ): PutEventsResponse = {
-      val __obj = js.Dynamic.literal()
-      Entries.foreach(__v => __obj.updateDynamic("Entries")(__v.asInstanceOf[js.Any]))
-      FailedEntryCount.foreach(__v => __obj.updateDynamic("FailedEntryCount")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutEventsResponse]
-    }
   }
 
   /**
     * Represents an event that failed to be submitted.
     */
   @js.native
+  @Factory
   trait PutEventsResultEntry extends js.Object {
     var ErrorCode: js.UndefOr[ErrorCode]
     var ErrorMessage: js.UndefOr[ErrorMessage]
     var EventId: js.UndefOr[EventId]
   }
 
-  object PutEventsResultEntry {
-    @inline
-    def apply(
-        ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
-        ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
-        EventId: js.UndefOr[EventId] = js.undefined
-    ): PutEventsResultEntry = {
-      val __obj = js.Dynamic.literal()
-      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
-      EventId.foreach(__v => __obj.updateDynamic("EventId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutEventsResultEntry]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutPartnerEventsRequest extends js.Object {
     var Entries: PutPartnerEventsRequestEntryList
-  }
-
-  object PutPartnerEventsRequest {
-    @inline
-    def apply(
-        Entries: PutPartnerEventsRequestEntryList
-    ): PutPartnerEventsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Entries" -> Entries.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutPartnerEventsRequest]
-    }
   }
 
   /**
     * The details about an event generated by an SaaS partner.
     */
   @js.native
+  @Factory
   trait PutPartnerEventsRequestEntry extends js.Object {
     var Detail: js.UndefOr[String]
     var DetailType: js.UndefOr[String]
@@ -1411,70 +671,26 @@ package eventbridge {
     var Time: js.UndefOr[EventTime]
   }
 
-  object PutPartnerEventsRequestEntry {
-    @inline
-    def apply(
-        Detail: js.UndefOr[String] = js.undefined,
-        DetailType: js.UndefOr[String] = js.undefined,
-        Resources: js.UndefOr[EventResourceList] = js.undefined,
-        Source: js.UndefOr[String] = js.undefined,
-        Time: js.UndefOr[EventTime] = js.undefined
-    ): PutPartnerEventsRequestEntry = {
-      val __obj = js.Dynamic.literal()
-      Detail.foreach(__v => __obj.updateDynamic("Detail")(__v.asInstanceOf[js.Any]))
-      DetailType.foreach(__v => __obj.updateDynamic("DetailType")(__v.asInstanceOf[js.Any]))
-      Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
-      Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
-      Time.foreach(__v => __obj.updateDynamic("Time")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutPartnerEventsRequestEntry]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutPartnerEventsResponse extends js.Object {
     var Entries: js.UndefOr[PutPartnerEventsResultEntryList]
     var FailedEntryCount: js.UndefOr[Int]
-  }
-
-  object PutPartnerEventsResponse {
-    @inline
-    def apply(
-        Entries: js.UndefOr[PutPartnerEventsResultEntryList] = js.undefined,
-        FailedEntryCount: js.UndefOr[Int] = js.undefined
-    ): PutPartnerEventsResponse = {
-      val __obj = js.Dynamic.literal()
-      Entries.foreach(__v => __obj.updateDynamic("Entries")(__v.asInstanceOf[js.Any]))
-      FailedEntryCount.foreach(__v => __obj.updateDynamic("FailedEntryCount")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutPartnerEventsResponse]
-    }
   }
 
   /**
     * Represents an event that a partner tried to generate but failed.
     */
   @js.native
+  @Factory
   trait PutPartnerEventsResultEntry extends js.Object {
     var ErrorCode: js.UndefOr[ErrorCode]
     var ErrorMessage: js.UndefOr[ErrorMessage]
     var EventId: js.UndefOr[EventId]
   }
 
-  object PutPartnerEventsResultEntry {
-    @inline
-    def apply(
-        ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
-        ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
-        EventId: js.UndefOr[EventId] = js.undefined
-    ): PutPartnerEventsResultEntry = {
-      val __obj = js.Dynamic.literal()
-      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
-      EventId.foreach(__v => __obj.updateDynamic("EventId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutPartnerEventsResultEntry]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutPermissionRequest extends js.Object {
     var Action: Action
     var Principal: Principal
@@ -1483,28 +699,8 @@ package eventbridge {
     var EventBusName: js.UndefOr[NonPartnerEventBusName]
   }
 
-  object PutPermissionRequest {
-    @inline
-    def apply(
-        Action: Action,
-        Principal: Principal,
-        StatementId: StatementId,
-        Condition: js.UndefOr[Condition] = js.undefined,
-        EventBusName: js.UndefOr[NonPartnerEventBusName] = js.undefined
-    ): PutPermissionRequest = {
-      val __obj = js.Dynamic.literal(
-        "Action"      -> Action.asInstanceOf[js.Any],
-        "Principal"   -> Principal.asInstanceOf[js.Any],
-        "StatementId" -> StatementId.asInstanceOf[js.Any]
-      )
-
-      Condition.foreach(__v => __obj.updateDynamic("Condition")(__v.asInstanceOf[js.Any]))
-      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutPermissionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutRuleRequest extends js.Object {
     var Name: RuleName
     var Description: js.UndefOr[RuleDescription]
@@ -1516,139 +712,47 @@ package eventbridge {
     var Tags: js.UndefOr[TagList]
   }
 
-  object PutRuleRequest {
-    @inline
-    def apply(
-        Name: RuleName,
-        Description: js.UndefOr[RuleDescription] = js.undefined,
-        EventBusName: js.UndefOr[EventBusName] = js.undefined,
-        EventPattern: js.UndefOr[EventPattern] = js.undefined,
-        RoleArn: js.UndefOr[RoleArn] = js.undefined,
-        ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
-        State: js.UndefOr[RuleState] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): PutRuleRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
-      EventPattern.foreach(__v => __obj.updateDynamic("EventPattern")(__v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
-      ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutRuleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutRuleResponse extends js.Object {
     var RuleArn: js.UndefOr[RuleArn]
   }
 
-  object PutRuleResponse {
-    @inline
-    def apply(
-        RuleArn: js.UndefOr[RuleArn] = js.undefined
-    ): PutRuleResponse = {
-      val __obj = js.Dynamic.literal()
-      RuleArn.foreach(__v => __obj.updateDynamic("RuleArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutRuleResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutTargetsRequest extends js.Object {
     var Rule: RuleName
     var Targets: TargetList
     var EventBusName: js.UndefOr[EventBusName]
   }
 
-  object PutTargetsRequest {
-    @inline
-    def apply(
-        Rule: RuleName,
-        Targets: TargetList,
-        EventBusName: js.UndefOr[EventBusName] = js.undefined
-    ): PutTargetsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Rule"    -> Rule.asInstanceOf[js.Any],
-        "Targets" -> Targets.asInstanceOf[js.Any]
-      )
-
-      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutTargetsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutTargetsResponse extends js.Object {
     var FailedEntries: js.UndefOr[PutTargetsResultEntryList]
     var FailedEntryCount: js.UndefOr[Int]
-  }
-
-  object PutTargetsResponse {
-    @inline
-    def apply(
-        FailedEntries: js.UndefOr[PutTargetsResultEntryList] = js.undefined,
-        FailedEntryCount: js.UndefOr[Int] = js.undefined
-    ): PutTargetsResponse = {
-      val __obj = js.Dynamic.literal()
-      FailedEntries.foreach(__v => __obj.updateDynamic("FailedEntries")(__v.asInstanceOf[js.Any]))
-      FailedEntryCount.foreach(__v => __obj.updateDynamic("FailedEntryCount")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutTargetsResponse]
-    }
   }
 
   /**
     * Represents a target that failed to be added to a rule.
     */
   @js.native
+  @Factory
   trait PutTargetsResultEntry extends js.Object {
     var ErrorCode: js.UndefOr[ErrorCode]
     var ErrorMessage: js.UndefOr[ErrorMessage]
     var TargetId: js.UndefOr[TargetId]
   }
 
-  object PutTargetsResultEntry {
-    @inline
-    def apply(
-        ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
-        ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
-        TargetId: js.UndefOr[TargetId] = js.undefined
-    ): PutTargetsResultEntry = {
-      val __obj = js.Dynamic.literal()
-      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
-      TargetId.foreach(__v => __obj.updateDynamic("TargetId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutTargetsResultEntry]
-    }
-  }
-
   @js.native
+  @Factory
   trait RemovePermissionRequest extends js.Object {
     var StatementId: StatementId
     var EventBusName: js.UndefOr[NonPartnerEventBusName]
   }
 
-  object RemovePermissionRequest {
-    @inline
-    def apply(
-        StatementId: StatementId,
-        EventBusName: js.UndefOr[NonPartnerEventBusName] = js.undefined
-    ): RemovePermissionRequest = {
-      val __obj = js.Dynamic.literal(
-        "StatementId" -> StatementId.asInstanceOf[js.Any]
-      )
-
-      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RemovePermissionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait RemoveTargetsRequest extends js.Object {
     var Ids: TargetIdList
     var Rule: RuleName
@@ -1656,73 +760,29 @@ package eventbridge {
     var Force: js.UndefOr[Boolean]
   }
 
-  object RemoveTargetsRequest {
-    @inline
-    def apply(
-        Ids: TargetIdList,
-        Rule: RuleName,
-        EventBusName: js.UndefOr[EventBusName] = js.undefined,
-        Force: js.UndefOr[Boolean] = js.undefined
-    ): RemoveTargetsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Ids"  -> Ids.asInstanceOf[js.Any],
-        "Rule" -> Rule.asInstanceOf[js.Any]
-      )
-
-      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
-      Force.foreach(__v => __obj.updateDynamic("Force")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RemoveTargetsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait RemoveTargetsResponse extends js.Object {
     var FailedEntries: js.UndefOr[RemoveTargetsResultEntryList]
     var FailedEntryCount: js.UndefOr[Int]
-  }
-
-  object RemoveTargetsResponse {
-    @inline
-    def apply(
-        FailedEntries: js.UndefOr[RemoveTargetsResultEntryList] = js.undefined,
-        FailedEntryCount: js.UndefOr[Int] = js.undefined
-    ): RemoveTargetsResponse = {
-      val __obj = js.Dynamic.literal()
-      FailedEntries.foreach(__v => __obj.updateDynamic("FailedEntries")(__v.asInstanceOf[js.Any]))
-      FailedEntryCount.foreach(__v => __obj.updateDynamic("FailedEntryCount")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RemoveTargetsResponse]
-    }
   }
 
   /**
     * Represents a target that failed to be removed from a rule.
     */
   @js.native
+  @Factory
   trait RemoveTargetsResultEntry extends js.Object {
     var ErrorCode: js.UndefOr[ErrorCode]
     var ErrorMessage: js.UndefOr[ErrorMessage]
     var TargetId: js.UndefOr[TargetId]
   }
 
-  object RemoveTargetsResultEntry {
-    @inline
-    def apply(
-        ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
-        ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
-        TargetId: js.UndefOr[TargetId] = js.undefined
-    ): RemoveTargetsResultEntry = {
-      val __obj = js.Dynamic.literal()
-      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
-      TargetId.foreach(__v => __obj.updateDynamic("TargetId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RemoveTargetsResultEntry]
-    }
-  }
-
   /**
     * Contains information about a rule in Amazon EventBridge.
     */
   @js.native
+  @Factory
   trait Rule extends js.Object {
     var Arn: js.UndefOr[RuleArn]
     var Description: js.UndefOr[RuleDescription]
@@ -1733,33 +793,6 @@ package eventbridge {
     var RoleArn: js.UndefOr[RoleArn]
     var ScheduleExpression: js.UndefOr[ScheduleExpression]
     var State: js.UndefOr[RuleState]
-  }
-
-  object Rule {
-    @inline
-    def apply(
-        Arn: js.UndefOr[RuleArn] = js.undefined,
-        Description: js.UndefOr[RuleDescription] = js.undefined,
-        EventBusName: js.UndefOr[EventBusName] = js.undefined,
-        EventPattern: js.UndefOr[EventPattern] = js.undefined,
-        ManagedBy: js.UndefOr[ManagedBy] = js.undefined,
-        Name: js.UndefOr[RuleName] = js.undefined,
-        RoleArn: js.UndefOr[RoleArn] = js.undefined,
-        ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
-        State: js.UndefOr[RuleState] = js.undefined
-    ): Rule = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
-      EventPattern.foreach(__v => __obj.updateDynamic("EventPattern")(__v.asInstanceOf[js.Any]))
-      ManagedBy.foreach(__v => __obj.updateDynamic("ManagedBy")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
-      ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Rule]
-    }
   }
 
   @js.native
@@ -1775,129 +808,57 @@ package eventbridge {
     * This parameter contains the criteria (either <code>InstanceIds</code> or a tag) used to specify which EC2 instances are to be sent the command.
     */
   @js.native
+  @Factory
   trait RunCommandParameters extends js.Object {
     var RunCommandTargets: RunCommandTargets
-  }
-
-  object RunCommandParameters {
-    @inline
-    def apply(
-        RunCommandTargets: RunCommandTargets
-    ): RunCommandParameters = {
-      val __obj = js.Dynamic.literal(
-        "RunCommandTargets" -> RunCommandTargets.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RunCommandParameters]
-    }
   }
 
   /**
     * Information about the EC2 instances that are to be sent the command, specified as key-value pairs. Each <code>RunCommandTarget</code> block can include only one key, but this key can specify multiple values.
     */
   @js.native
+  @Factory
   trait RunCommandTarget extends js.Object {
     var Key: RunCommandTargetKey
     var Values: RunCommandTargetValues
-  }
-
-  object RunCommandTarget {
-    @inline
-    def apply(
-        Key: RunCommandTargetKey,
-        Values: RunCommandTargetValues
-    ): RunCommandTarget = {
-      val __obj = js.Dynamic.literal(
-        "Key"    -> Key.asInstanceOf[js.Any],
-        "Values" -> Values.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RunCommandTarget]
-    }
   }
 
   /**
     * This structure includes the custom parameter to be used when the target is an SQS FIFO queue.
     */
   @js.native
+  @Factory
   trait SqsParameters extends js.Object {
     var MessageGroupId: js.UndefOr[MessageGroupId]
-  }
-
-  object SqsParameters {
-    @inline
-    def apply(
-        MessageGroupId: js.UndefOr[MessageGroupId] = js.undefined
-    ): SqsParameters = {
-      val __obj = js.Dynamic.literal()
-      MessageGroupId.foreach(__v => __obj.updateDynamic("MessageGroupId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SqsParameters]
-    }
   }
 
   /**
     * A key-value pair associated with an AWS resource. In EventBridge, rules support tagging.
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var Key: TagKey
     var Value: TagValue
   }
 
-  object Tag {
-    @inline
-    def apply(
-        Key: TagKey,
-        Value: TagValue
-    ): Tag = {
-      val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Tag]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceRequest extends js.Object {
     var ResourceARN: Arn
     var Tags: TagList
   }
 
-  object TagResourceRequest {
-    @inline
-    def apply(
-        ResourceARN: Arn,
-        Tags: TagList
-    ): TagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceResponse extends js.Object {}
-
-  object TagResourceResponse {
-    @inline
-    def apply(
-    ): TagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[TagResourceResponse]
-    }
-  }
 
   /**
     * Targets are the resources to be invoked when a rule is triggered. For a complete list of services and resources that can be set as a target, see <a>PutTargets</a>.
     *  If you're setting the event bus of another account as the target and that account granted permission to your account through an organization instead of directly by the account ID, you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure. For more information, see [[https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html|Sending and Receiving Events Between AWS Accounts]] in the <i>Amazon EventBridge User Guide</i>.
     */
   @js.native
+  @Factory
   trait Target extends js.Object {
     var Arn: TargetArn
     var Id: TargetId
@@ -1912,107 +873,27 @@ package eventbridge {
     var SqsParameters: js.UndefOr[SqsParameters]
   }
 
-  object Target {
-    @inline
-    def apply(
-        Arn: TargetArn,
-        Id: TargetId,
-        BatchParameters: js.UndefOr[BatchParameters] = js.undefined,
-        EcsParameters: js.UndefOr[EcsParameters] = js.undefined,
-        Input: js.UndefOr[TargetInput] = js.undefined,
-        InputPath: js.UndefOr[TargetInputPath] = js.undefined,
-        InputTransformer: js.UndefOr[InputTransformer] = js.undefined,
-        KinesisParameters: js.UndefOr[KinesisParameters] = js.undefined,
-        RoleArn: js.UndefOr[RoleArn] = js.undefined,
-        RunCommandParameters: js.UndefOr[RunCommandParameters] = js.undefined,
-        SqsParameters: js.UndefOr[SqsParameters] = js.undefined
-    ): Target = {
-      val __obj = js.Dynamic.literal(
-        "Arn" -> Arn.asInstanceOf[js.Any],
-        "Id"  -> Id.asInstanceOf[js.Any]
-      )
-
-      BatchParameters.foreach(__v => __obj.updateDynamic("BatchParameters")(__v.asInstanceOf[js.Any]))
-      EcsParameters.foreach(__v => __obj.updateDynamic("EcsParameters")(__v.asInstanceOf[js.Any]))
-      Input.foreach(__v => __obj.updateDynamic("Input")(__v.asInstanceOf[js.Any]))
-      InputPath.foreach(__v => __obj.updateDynamic("InputPath")(__v.asInstanceOf[js.Any]))
-      InputTransformer.foreach(__v => __obj.updateDynamic("InputTransformer")(__v.asInstanceOf[js.Any]))
-      KinesisParameters.foreach(__v => __obj.updateDynamic("KinesisParameters")(__v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
-      RunCommandParameters.foreach(__v => __obj.updateDynamic("RunCommandParameters")(__v.asInstanceOf[js.Any]))
-      SqsParameters.foreach(__v => __obj.updateDynamic("SqsParameters")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Target]
-    }
-  }
-
   @js.native
+  @Factory
   trait TestEventPatternRequest extends js.Object {
     var Event: String
     var EventPattern: EventPattern
   }
 
-  object TestEventPatternRequest {
-    @inline
-    def apply(
-        Event: String,
-        EventPattern: EventPattern
-    ): TestEventPatternRequest = {
-      val __obj = js.Dynamic.literal(
-        "Event"        -> Event.asInstanceOf[js.Any],
-        "EventPattern" -> EventPattern.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TestEventPatternRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait TestEventPatternResponse extends js.Object {
     var Result: js.UndefOr[Boolean]
   }
 
-  object TestEventPatternResponse {
-    @inline
-    def apply(
-        Result: js.UndefOr[Boolean] = js.undefined
-    ): TestEventPatternResponse = {
-      val __obj = js.Dynamic.literal()
-      Result.foreach(__v => __obj.updateDynamic("Result")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TestEventPatternResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceRequest extends js.Object {
     var ResourceARN: Arn
     var TagKeys: TagKeyList
   }
 
-  object UntagResourceRequest {
-    @inline
-    def apply(
-        ResourceARN: Arn,
-        TagKeys: TagKeyList
-    ): UntagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceResponse extends js.Object {}
-
-  object UntagResourceResponse {
-    @inline
-    def apply(
-    ): UntagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UntagResourceResponse]
-    }
-  }
 }

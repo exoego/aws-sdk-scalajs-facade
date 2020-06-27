@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object opsworkscm {
   type AWSOpsWorksCMResourceArn       = String
@@ -124,73 +125,32 @@ package opsworkscm {
     * Stores account attributes.
     */
   @js.native
+  @Factory
   trait AccountAttribute extends js.Object {
     var Maximum: js.UndefOr[Int]
     var Name: js.UndefOr[String]
     var Used: js.UndefOr[Int]
   }
 
-  object AccountAttribute {
-    @inline
-    def apply(
-        Maximum: js.UndefOr[Int] = js.undefined,
-        Name: js.UndefOr[String] = js.undefined,
-        Used: js.UndefOr[Int] = js.undefined
-    ): AccountAttribute = {
-      val __obj = js.Dynamic.literal()
-      Maximum.foreach(__v => __obj.updateDynamic("Maximum")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Used.foreach(__v => __obj.updateDynamic("Used")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AccountAttribute]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateNodeRequest extends js.Object {
     var EngineAttributes: EngineAttributes
     var NodeName: NodeName
     var ServerName: ServerName
   }
 
-  object AssociateNodeRequest {
-    @inline
-    def apply(
-        EngineAttributes: EngineAttributes,
-        NodeName: NodeName,
-        ServerName: ServerName
-    ): AssociateNodeRequest = {
-      val __obj = js.Dynamic.literal(
-        "EngineAttributes" -> EngineAttributes.asInstanceOf[js.Any],
-        "NodeName"         -> NodeName.asInstanceOf[js.Any],
-        "ServerName"       -> ServerName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AssociateNodeRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateNodeResponse extends js.Object {
     var NodeAssociationStatusToken: js.UndefOr[NodeAssociationStatusToken]
-  }
-
-  object AssociateNodeResponse {
-    @inline
-    def apply(
-        NodeAssociationStatusToken: js.UndefOr[NodeAssociationStatusToken] = js.undefined
-    ): AssociateNodeResponse = {
-      val __obj = js.Dynamic.literal()
-      NodeAssociationStatusToken.foreach(__v =>
-        __obj.updateDynamic("NodeAssociationStatusToken")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[AssociateNodeResponse]
-    }
   }
 
   /**
     * Describes a single backup.
     */
   @js.native
+  @Factory
   trait Backup extends js.Object {
     var BackupArn: js.UndefOr[String]
     var BackupId: js.UndefOr[BackupId]
@@ -218,65 +178,6 @@ package opsworkscm {
     var UserArn: js.UndefOr[String]
   }
 
-  object Backup {
-    @inline
-    def apply(
-        BackupArn: js.UndefOr[String] = js.undefined,
-        BackupId: js.UndefOr[BackupId] = js.undefined,
-        BackupType: js.UndefOr[BackupType] = js.undefined,
-        CreatedAt: js.UndefOr[Timestamp] = js.undefined,
-        Description: js.UndefOr[String] = js.undefined,
-        Engine: js.UndefOr[String] = js.undefined,
-        EngineModel: js.UndefOr[String] = js.undefined,
-        EngineVersion: js.UndefOr[String] = js.undefined,
-        InstanceProfileArn: js.UndefOr[String] = js.undefined,
-        InstanceType: js.UndefOr[String] = js.undefined,
-        KeyPair: js.UndefOr[String] = js.undefined,
-        PreferredBackupWindow: js.UndefOr[TimeWindowDefinition] = js.undefined,
-        PreferredMaintenanceWindow: js.UndefOr[TimeWindowDefinition] = js.undefined,
-        S3DataSize: js.UndefOr[Int] = js.undefined,
-        S3DataUrl: js.UndefOr[String] = js.undefined,
-        S3LogUrl: js.UndefOr[String] = js.undefined,
-        SecurityGroupIds: js.UndefOr[Strings] = js.undefined,
-        ServerName: js.UndefOr[ServerName] = js.undefined,
-        ServiceRoleArn: js.UndefOr[String] = js.undefined,
-        Status: js.UndefOr[BackupStatus] = js.undefined,
-        StatusDescription: js.UndefOr[String] = js.undefined,
-        SubnetIds: js.UndefOr[Strings] = js.undefined,
-        ToolsVersion: js.UndefOr[String] = js.undefined,
-        UserArn: js.UndefOr[String] = js.undefined
-    ): Backup = {
-      val __obj = js.Dynamic.literal()
-      BackupArn.foreach(__v => __obj.updateDynamic("BackupArn")(__v.asInstanceOf[js.Any]))
-      BackupId.foreach(__v => __obj.updateDynamic("BackupId")(__v.asInstanceOf[js.Any]))
-      BackupType.foreach(__v => __obj.updateDynamic("BackupType")(__v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
-      EngineModel.foreach(__v => __obj.updateDynamic("EngineModel")(__v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
-      InstanceProfileArn.foreach(__v => __obj.updateDynamic("InstanceProfileArn")(__v.asInstanceOf[js.Any]))
-      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
-      KeyPair.foreach(__v => __obj.updateDynamic("KeyPair")(__v.asInstanceOf[js.Any]))
-      PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
-      S3DataSize.foreach(__v => __obj.updateDynamic("S3DataSize")(__v.asInstanceOf[js.Any]))
-      S3DataUrl.foreach(__v => __obj.updateDynamic("S3DataUrl")(__v.asInstanceOf[js.Any]))
-      S3LogUrl.foreach(__v => __obj.updateDynamic("S3LogUrl")(__v.asInstanceOf[js.Any]))
-      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
-      ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
-      ServiceRoleArn.foreach(__v => __obj.updateDynamic("ServiceRoleArn")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      StatusDescription.foreach(__v => __obj.updateDynamic("StatusDescription")(__v.asInstanceOf[js.Any]))
-      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
-      ToolsVersion.foreach(__v => __obj.updateDynamic("ToolsVersion")(__v.asInstanceOf[js.Any]))
-      UserArn.foreach(__v => __obj.updateDynamic("UserArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Backup]
-    }
-  }
-
   @js.native
   sealed trait BackupStatus extends js.Any
   object BackupStatus extends js.Object {
@@ -298,46 +199,21 @@ package opsworkscm {
   }
 
   @js.native
+  @Factory
   trait CreateBackupRequest extends js.Object {
     var ServerName: ServerName
     var Description: js.UndefOr[String]
     var Tags: js.UndefOr[TagList]
   }
 
-  object CreateBackupRequest {
-    @inline
-    def apply(
-        ServerName: ServerName,
-        Description: js.UndefOr[String] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateBackupRequest = {
-      val __obj = js.Dynamic.literal(
-        "ServerName" -> ServerName.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateBackupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateBackupResponse extends js.Object {
     var Backup: js.UndefOr[Backup]
   }
 
-  object CreateBackupResponse {
-    @inline
-    def apply(
-        Backup: js.UndefOr[Backup] = js.undefined
-    ): CreateBackupResponse = {
-      val __obj = js.Dynamic.literal()
-      Backup.foreach(__v => __obj.updateDynamic("Backup")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateBackupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateServerRequest extends js.Object {
     var InstanceProfileArn: InstanceProfileArn
     var InstanceType: String
@@ -362,169 +238,44 @@ package opsworkscm {
     var Tags: js.UndefOr[TagList]
   }
 
-  object CreateServerRequest {
-    @inline
-    def apply(
-        InstanceProfileArn: InstanceProfileArn,
-        InstanceType: String,
-        ServerName: ServerName,
-        ServiceRoleArn: ServiceRoleArn,
-        AssociatePublicIpAddress: js.UndefOr[Boolean] = js.undefined,
-        BackupId: js.UndefOr[BackupId] = js.undefined,
-        BackupRetentionCount: js.UndefOr[BackupRetentionCountDefinition] = js.undefined,
-        CustomCertificate: js.UndefOr[CustomCertificate] = js.undefined,
-        CustomDomain: js.UndefOr[CustomDomain] = js.undefined,
-        CustomPrivateKey: js.UndefOr[CustomPrivateKey] = js.undefined,
-        DisableAutomatedBackup: js.UndefOr[Boolean] = js.undefined,
-        Engine: js.UndefOr[String] = js.undefined,
-        EngineAttributes: js.UndefOr[EngineAttributes] = js.undefined,
-        EngineModel: js.UndefOr[String] = js.undefined,
-        EngineVersion: js.UndefOr[String] = js.undefined,
-        KeyPair: js.UndefOr[KeyPair] = js.undefined,
-        PreferredBackupWindow: js.UndefOr[TimeWindowDefinition] = js.undefined,
-        PreferredMaintenanceWindow: js.UndefOr[TimeWindowDefinition] = js.undefined,
-        SecurityGroupIds: js.UndefOr[Strings] = js.undefined,
-        SubnetIds: js.UndefOr[Strings] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateServerRequest = {
-      val __obj = js.Dynamic.literal(
-        "InstanceProfileArn" -> InstanceProfileArn.asInstanceOf[js.Any],
-        "InstanceType"       -> InstanceType.asInstanceOf[js.Any],
-        "ServerName"         -> ServerName.asInstanceOf[js.Any],
-        "ServiceRoleArn"     -> ServiceRoleArn.asInstanceOf[js.Any]
-      )
-
-      AssociatePublicIpAddress.foreach(__v => __obj.updateDynamic("AssociatePublicIpAddress")(__v.asInstanceOf[js.Any]))
-      BackupId.foreach(__v => __obj.updateDynamic("BackupId")(__v.asInstanceOf[js.Any]))
-      BackupRetentionCount.foreach(__v => __obj.updateDynamic("BackupRetentionCount")(__v.asInstanceOf[js.Any]))
-      CustomCertificate.foreach(__v => __obj.updateDynamic("CustomCertificate")(__v.asInstanceOf[js.Any]))
-      CustomDomain.foreach(__v => __obj.updateDynamic("CustomDomain")(__v.asInstanceOf[js.Any]))
-      CustomPrivateKey.foreach(__v => __obj.updateDynamic("CustomPrivateKey")(__v.asInstanceOf[js.Any]))
-      DisableAutomatedBackup.foreach(__v => __obj.updateDynamic("DisableAutomatedBackup")(__v.asInstanceOf[js.Any]))
-      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
-      EngineAttributes.foreach(__v => __obj.updateDynamic("EngineAttributes")(__v.asInstanceOf[js.Any]))
-      EngineModel.foreach(__v => __obj.updateDynamic("EngineModel")(__v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
-      KeyPair.foreach(__v => __obj.updateDynamic("KeyPair")(__v.asInstanceOf[js.Any]))
-      PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
-      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
-      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateServerRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateServerResponse extends js.Object {
     var Server: js.UndefOr[Server]
   }
 
-  object CreateServerResponse {
-    @inline
-    def apply(
-        Server: js.UndefOr[Server] = js.undefined
-    ): CreateServerResponse = {
-      val __obj = js.Dynamic.literal()
-      Server.foreach(__v => __obj.updateDynamic("Server")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateServerResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteBackupRequest extends js.Object {
     var BackupId: BackupId
   }
 
-  object DeleteBackupRequest {
-    @inline
-    def apply(
-        BackupId: BackupId
-    ): DeleteBackupRequest = {
-      val __obj = js.Dynamic.literal(
-        "BackupId" -> BackupId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteBackupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteBackupResponse extends js.Object {}
 
-  object DeleteBackupResponse {
-    @inline
-    def apply(
-    ): DeleteBackupResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteBackupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteServerRequest extends js.Object {
     var ServerName: ServerName
   }
 
-  object DeleteServerRequest {
-    @inline
-    def apply(
-        ServerName: ServerName
-    ): DeleteServerRequest = {
-      val __obj = js.Dynamic.literal(
-        "ServerName" -> ServerName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteServerRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteServerResponse extends js.Object {}
 
-  object DeleteServerResponse {
-    @inline
-    def apply(
-    ): DeleteServerResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteServerResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeAccountAttributesRequest extends js.Object {}
 
-  object DescribeAccountAttributesRequest {
-    @inline
-    def apply(
-    ): DescribeAccountAttributesRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DescribeAccountAttributesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeAccountAttributesResponse extends js.Object {
     var Attributes: js.UndefOr[AccountAttributes]
   }
 
-  object DescribeAccountAttributesResponse {
-    @inline
-    def apply(
-        Attributes: js.UndefOr[AccountAttributes] = js.undefined
-    ): DescribeAccountAttributesResponse = {
-      val __obj = js.Dynamic.literal()
-      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeAccountAttributesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeBackupsRequest extends js.Object {
     var BackupId: js.UndefOr[BackupId]
     var MaxResults: js.UndefOr[MaxResults]
@@ -532,314 +283,109 @@ package opsworkscm {
     var ServerName: js.UndefOr[ServerName]
   }
 
-  object DescribeBackupsRequest {
-    @inline
-    def apply(
-        BackupId: js.UndefOr[BackupId] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        ServerName: js.UndefOr[ServerName] = js.undefined
-    ): DescribeBackupsRequest = {
-      val __obj = js.Dynamic.literal()
-      BackupId.foreach(__v => __obj.updateDynamic("BackupId")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeBackupsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeBackupsResponse extends js.Object {
     var Backups: js.UndefOr[Backups]
     var NextToken: js.UndefOr[String]
   }
 
-  object DescribeBackupsResponse {
-    @inline
-    def apply(
-        Backups: js.UndefOr[Backups] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): DescribeBackupsResponse = {
-      val __obj = js.Dynamic.literal()
-      Backups.foreach(__v => __obj.updateDynamic("Backups")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeBackupsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeEventsRequest extends js.Object {
     var ServerName: ServerName
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object DescribeEventsRequest {
-    @inline
-    def apply(
-        ServerName: ServerName,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): DescribeEventsRequest = {
-      val __obj = js.Dynamic.literal(
-        "ServerName" -> ServerName.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeEventsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeEventsResponse extends js.Object {
     var NextToken: js.UndefOr[String]
     var ServerEvents: js.UndefOr[ServerEvents]
   }
 
-  object DescribeEventsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[String] = js.undefined,
-        ServerEvents: js.UndefOr[ServerEvents] = js.undefined
-    ): DescribeEventsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ServerEvents.foreach(__v => __obj.updateDynamic("ServerEvents")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeEventsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeNodeAssociationStatusRequest extends js.Object {
     var NodeAssociationStatusToken: NodeAssociationStatusToken
     var ServerName: ServerName
   }
 
-  object DescribeNodeAssociationStatusRequest {
-    @inline
-    def apply(
-        NodeAssociationStatusToken: NodeAssociationStatusToken,
-        ServerName: ServerName
-    ): DescribeNodeAssociationStatusRequest = {
-      val __obj = js.Dynamic.literal(
-        "NodeAssociationStatusToken" -> NodeAssociationStatusToken.asInstanceOf[js.Any],
-        "ServerName"                 -> ServerName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeNodeAssociationStatusRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeNodeAssociationStatusResponse extends js.Object {
     var EngineAttributes: js.UndefOr[EngineAttributes]
     var NodeAssociationStatus: js.UndefOr[NodeAssociationStatus]
   }
 
-  object DescribeNodeAssociationStatusResponse {
-    @inline
-    def apply(
-        EngineAttributes: js.UndefOr[EngineAttributes] = js.undefined,
-        NodeAssociationStatus: js.UndefOr[NodeAssociationStatus] = js.undefined
-    ): DescribeNodeAssociationStatusResponse = {
-      val __obj = js.Dynamic.literal()
-      EngineAttributes.foreach(__v => __obj.updateDynamic("EngineAttributes")(__v.asInstanceOf[js.Any]))
-      NodeAssociationStatus.foreach(__v => __obj.updateDynamic("NodeAssociationStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeNodeAssociationStatusResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeServersRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
     var ServerName: js.UndefOr[ServerName]
   }
 
-  object DescribeServersRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        ServerName: js.UndefOr[ServerName] = js.undefined
-    ): DescribeServersRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeServersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeServersResponse extends js.Object {
     var NextToken: js.UndefOr[String]
     var Servers: js.UndefOr[Servers]
   }
 
-  object DescribeServersResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[String] = js.undefined,
-        Servers: js.UndefOr[Servers] = js.undefined
-    ): DescribeServersResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Servers.foreach(__v => __obj.updateDynamic("Servers")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeServersResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateNodeRequest extends js.Object {
     var NodeName: NodeName
     var ServerName: ServerName
     var EngineAttributes: js.UndefOr[EngineAttributes]
   }
 
-  object DisassociateNodeRequest {
-    @inline
-    def apply(
-        NodeName: NodeName,
-        ServerName: ServerName,
-        EngineAttributes: js.UndefOr[EngineAttributes] = js.undefined
-    ): DisassociateNodeRequest = {
-      val __obj = js.Dynamic.literal(
-        "NodeName"   -> NodeName.asInstanceOf[js.Any],
-        "ServerName" -> ServerName.asInstanceOf[js.Any]
-      )
-
-      EngineAttributes.foreach(__v => __obj.updateDynamic("EngineAttributes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DisassociateNodeRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateNodeResponse extends js.Object {
     var NodeAssociationStatusToken: js.UndefOr[NodeAssociationStatusToken]
-  }
-
-  object DisassociateNodeResponse {
-    @inline
-    def apply(
-        NodeAssociationStatusToken: js.UndefOr[NodeAssociationStatusToken] = js.undefined
-    ): DisassociateNodeResponse = {
-      val __obj = js.Dynamic.literal()
-      NodeAssociationStatusToken.foreach(__v =>
-        __obj.updateDynamic("NodeAssociationStatusToken")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[DisassociateNodeResponse]
-    }
   }
 
   /**
     * A name and value pair that is specific to the engine of the server.
     */
   @js.native
+  @Factory
   trait EngineAttribute extends js.Object {
     var Name: js.UndefOr[EngineAttributeName]
     var Value: js.UndefOr[EngineAttributeValue]
   }
 
-  object EngineAttribute {
-    @inline
-    def apply(
-        Name: js.UndefOr[EngineAttributeName] = js.undefined,
-        Value: js.UndefOr[EngineAttributeValue] = js.undefined
-    ): EngineAttribute = {
-      val __obj = js.Dynamic.literal()
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EngineAttribute]
-    }
-  }
-
   @js.native
+  @Factory
   trait ExportServerEngineAttributeRequest extends js.Object {
     var ExportAttributeName: String
     var ServerName: ServerName
     var InputAttributes: js.UndefOr[EngineAttributes]
   }
 
-  object ExportServerEngineAttributeRequest {
-    @inline
-    def apply(
-        ExportAttributeName: String,
-        ServerName: ServerName,
-        InputAttributes: js.UndefOr[EngineAttributes] = js.undefined
-    ): ExportServerEngineAttributeRequest = {
-      val __obj = js.Dynamic.literal(
-        "ExportAttributeName" -> ExportAttributeName.asInstanceOf[js.Any],
-        "ServerName"          -> ServerName.asInstanceOf[js.Any]
-      )
-
-      InputAttributes.foreach(__v => __obj.updateDynamic("InputAttributes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ExportServerEngineAttributeRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ExportServerEngineAttributeResponse extends js.Object {
     var EngineAttribute: js.UndefOr[EngineAttribute]
     var ServerName: js.UndefOr[ServerName]
   }
 
-  object ExportServerEngineAttributeResponse {
-    @inline
-    def apply(
-        EngineAttribute: js.UndefOr[EngineAttribute] = js.undefined,
-        ServerName: js.UndefOr[ServerName] = js.undefined
-    ): ExportServerEngineAttributeResponse = {
-      val __obj = js.Dynamic.literal()
-      EngineAttribute.foreach(__v => __obj.updateDynamic("EngineAttribute")(__v.asInstanceOf[js.Any]))
-      ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ExportServerEngineAttributeResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceRequest extends js.Object {
     var ResourceArn: AWSOpsWorksCMResourceArn
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListTagsForResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: AWSOpsWorksCMResourceArn,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListTagsForResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var Tags: js.UndefOr[TagList]
-  }
-
-  object ListTagsForResourceResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): ListTagsForResourceResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceResponse]
-    }
   }
 
   @js.native
@@ -868,6 +414,7 @@ package opsworkscm {
   }
 
   @js.native
+  @Factory
   trait RestoreServerRequest extends js.Object {
     var BackupId: BackupId
     var ServerName: ServerName
@@ -875,42 +422,15 @@ package opsworkscm {
     var KeyPair: js.UndefOr[KeyPair]
   }
 
-  object RestoreServerRequest {
-    @inline
-    def apply(
-        BackupId: BackupId,
-        ServerName: ServerName,
-        InstanceType: js.UndefOr[String] = js.undefined,
-        KeyPair: js.UndefOr[KeyPair] = js.undefined
-    ): RestoreServerRequest = {
-      val __obj = js.Dynamic.literal(
-        "BackupId"   -> BackupId.asInstanceOf[js.Any],
-        "ServerName" -> ServerName.asInstanceOf[js.Any]
-      )
-
-      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
-      KeyPair.foreach(__v => __obj.updateDynamic("KeyPair")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RestoreServerRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait RestoreServerResponse extends js.Object {}
-
-  object RestoreServerResponse {
-    @inline
-    def apply(
-    ): RestoreServerResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[RestoreServerResponse]
-    }
-  }
 
   /**
     * Describes a configuration management server.
     */
   @js.native
+  @Factory
   trait Server extends js.Object {
     var AssociatePublicIpAddress: js.UndefOr[Boolean]
     var BackupRetentionCount: js.UndefOr[Int]
@@ -938,91 +458,16 @@ package opsworkscm {
     var SubnetIds: js.UndefOr[Strings]
   }
 
-  object Server {
-    @inline
-    def apply(
-        AssociatePublicIpAddress: js.UndefOr[Boolean] = js.undefined,
-        BackupRetentionCount: js.UndefOr[Int] = js.undefined,
-        CloudFormationStackArn: js.UndefOr[String] = js.undefined,
-        CreatedAt: js.UndefOr[Timestamp] = js.undefined,
-        CustomDomain: js.UndefOr[CustomDomain] = js.undefined,
-        DisableAutomatedBackup: js.UndefOr[Boolean] = js.undefined,
-        Endpoint: js.UndefOr[String] = js.undefined,
-        Engine: js.UndefOr[String] = js.undefined,
-        EngineAttributes: js.UndefOr[EngineAttributes] = js.undefined,
-        EngineModel: js.UndefOr[String] = js.undefined,
-        EngineVersion: js.UndefOr[String] = js.undefined,
-        InstanceProfileArn: js.UndefOr[String] = js.undefined,
-        InstanceType: js.UndefOr[String] = js.undefined,
-        KeyPair: js.UndefOr[String] = js.undefined,
-        MaintenanceStatus: js.UndefOr[MaintenanceStatus] = js.undefined,
-        PreferredBackupWindow: js.UndefOr[TimeWindowDefinition] = js.undefined,
-        PreferredMaintenanceWindow: js.UndefOr[TimeWindowDefinition] = js.undefined,
-        SecurityGroupIds: js.UndefOr[Strings] = js.undefined,
-        ServerArn: js.UndefOr[String] = js.undefined,
-        ServerName: js.UndefOr[String] = js.undefined,
-        ServiceRoleArn: js.UndefOr[String] = js.undefined,
-        Status: js.UndefOr[ServerStatus] = js.undefined,
-        StatusReason: js.UndefOr[String] = js.undefined,
-        SubnetIds: js.UndefOr[Strings] = js.undefined
-    ): Server = {
-      val __obj = js.Dynamic.literal()
-      AssociatePublicIpAddress.foreach(__v => __obj.updateDynamic("AssociatePublicIpAddress")(__v.asInstanceOf[js.Any]))
-      BackupRetentionCount.foreach(__v => __obj.updateDynamic("BackupRetentionCount")(__v.asInstanceOf[js.Any]))
-      CloudFormationStackArn.foreach(__v => __obj.updateDynamic("CloudFormationStackArn")(__v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
-      CustomDomain.foreach(__v => __obj.updateDynamic("CustomDomain")(__v.asInstanceOf[js.Any]))
-      DisableAutomatedBackup.foreach(__v => __obj.updateDynamic("DisableAutomatedBackup")(__v.asInstanceOf[js.Any]))
-      Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
-      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
-      EngineAttributes.foreach(__v => __obj.updateDynamic("EngineAttributes")(__v.asInstanceOf[js.Any]))
-      EngineModel.foreach(__v => __obj.updateDynamic("EngineModel")(__v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
-      InstanceProfileArn.foreach(__v => __obj.updateDynamic("InstanceProfileArn")(__v.asInstanceOf[js.Any]))
-      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
-      KeyPair.foreach(__v => __obj.updateDynamic("KeyPair")(__v.asInstanceOf[js.Any]))
-      MaintenanceStatus.foreach(__v => __obj.updateDynamic("MaintenanceStatus")(__v.asInstanceOf[js.Any]))
-      PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
-      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
-      ServerArn.foreach(__v => __obj.updateDynamic("ServerArn")(__v.asInstanceOf[js.Any]))
-      ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
-      ServiceRoleArn.foreach(__v => __obj.updateDynamic("ServiceRoleArn")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
-      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Server]
-    }
-  }
-
   /**
     * An event that is related to the server, such as the start of maintenance or backup.
     */
   @js.native
+  @Factory
   trait ServerEvent extends js.Object {
     var CreatedAt: js.UndefOr[Timestamp]
     var LogUrl: js.UndefOr[String]
     var Message: js.UndefOr[String]
     var ServerName: js.UndefOr[String]
-  }
-
-  object ServerEvent {
-    @inline
-    def apply(
-        CreatedAt: js.UndefOr[Timestamp] = js.undefined,
-        LogUrl: js.UndefOr[String] = js.undefined,
-        Message: js.UndefOr[String] = js.undefined,
-        ServerName: js.UndefOr[String] = js.undefined
-    ): ServerEvent = {
-      val __obj = js.Dynamic.literal()
-      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
-      LogUrl.foreach(__v => __obj.updateDynamic("LogUrl")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ServerEvent]
-    }
   }
 
   @js.native
@@ -1062,175 +507,66 @@ package opsworkscm {
   }
 
   @js.native
+  @Factory
   trait StartMaintenanceRequest extends js.Object {
     var ServerName: ServerName
     var EngineAttributes: js.UndefOr[EngineAttributes]
   }
 
-  object StartMaintenanceRequest {
-    @inline
-    def apply(
-        ServerName: ServerName,
-        EngineAttributes: js.UndefOr[EngineAttributes] = js.undefined
-    ): StartMaintenanceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ServerName" -> ServerName.asInstanceOf[js.Any]
-      )
-
-      EngineAttributes.foreach(__v => __obj.updateDynamic("EngineAttributes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartMaintenanceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartMaintenanceResponse extends js.Object {
     var Server: js.UndefOr[Server]
-  }
-
-  object StartMaintenanceResponse {
-    @inline
-    def apply(
-        Server: js.UndefOr[Server] = js.undefined
-    ): StartMaintenanceResponse = {
-      val __obj = js.Dynamic.literal()
-      Server.foreach(__v => __obj.updateDynamic("Server")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartMaintenanceResponse]
-    }
   }
 
   /**
     * A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server. Leading and trailing white spaces are trimmed from both the key and value. A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var Key: TagKey
     var Value: TagValue
   }
 
-  object Tag {
-    @inline
-    def apply(
-        Key: TagKey,
-        Value: TagValue
-    ): Tag = {
-      val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Tag]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceRequest extends js.Object {
     var ResourceArn: AWSOpsWorksCMResourceArn
     var Tags: TagList
   }
 
-  object TagResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: AWSOpsWorksCMResourceArn,
-        Tags: TagList
-    ): TagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceResponse extends js.Object {}
 
-  object TagResourceResponse {
-    @inline
-    def apply(
-    ): TagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[TagResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceRequest extends js.Object {
     var ResourceArn: AWSOpsWorksCMResourceArn
     var TagKeys: TagKeyList
   }
 
-  object UntagResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: AWSOpsWorksCMResourceArn,
-        TagKeys: TagKeyList
-    ): UntagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceResponse extends js.Object {}
 
-  object UntagResourceResponse {
-    @inline
-    def apply(
-    ): UntagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UntagResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateServerEngineAttributesRequest extends js.Object {
     var AttributeName: AttributeName
     var ServerName: ServerName
     var AttributeValue: js.UndefOr[AttributeValue]
   }
 
-  object UpdateServerEngineAttributesRequest {
-    @inline
-    def apply(
-        AttributeName: AttributeName,
-        ServerName: ServerName,
-        AttributeValue: js.UndefOr[AttributeValue] = js.undefined
-    ): UpdateServerEngineAttributesRequest = {
-      val __obj = js.Dynamic.literal(
-        "AttributeName" -> AttributeName.asInstanceOf[js.Any],
-        "ServerName"    -> ServerName.asInstanceOf[js.Any]
-      )
-
-      AttributeValue.foreach(__v => __obj.updateDynamic("AttributeValue")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateServerEngineAttributesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateServerEngineAttributesResponse extends js.Object {
     var Server: js.UndefOr[Server]
   }
 
-  object UpdateServerEngineAttributesResponse {
-    @inline
-    def apply(
-        Server: js.UndefOr[Server] = js.undefined
-    ): UpdateServerEngineAttributesResponse = {
-      val __obj = js.Dynamic.literal()
-      Server.foreach(__v => __obj.updateDynamic("Server")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateServerEngineAttributesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateServerRequest extends js.Object {
     var ServerName: ServerName
     var BackupRetentionCount: js.UndefOr[Int]
@@ -1239,42 +575,9 @@ package opsworkscm {
     var PreferredMaintenanceWindow: js.UndefOr[TimeWindowDefinition]
   }
 
-  object UpdateServerRequest {
-    @inline
-    def apply(
-        ServerName: ServerName,
-        BackupRetentionCount: js.UndefOr[Int] = js.undefined,
-        DisableAutomatedBackup: js.UndefOr[Boolean] = js.undefined,
-        PreferredBackupWindow: js.UndefOr[TimeWindowDefinition] = js.undefined,
-        PreferredMaintenanceWindow: js.UndefOr[TimeWindowDefinition] = js.undefined
-    ): UpdateServerRequest = {
-      val __obj = js.Dynamic.literal(
-        "ServerName" -> ServerName.asInstanceOf[js.Any]
-      )
-
-      BackupRetentionCount.foreach(__v => __obj.updateDynamic("BackupRetentionCount")(__v.asInstanceOf[js.Any]))
-      DisableAutomatedBackup.foreach(__v => __obj.updateDynamic("DisableAutomatedBackup")(__v.asInstanceOf[js.Any]))
-      PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v =>
-        __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[UpdateServerRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateServerResponse extends js.Object {
     var Server: js.UndefOr[Server]
-  }
-
-  object UpdateServerResponse {
-    @inline
-    def apply(
-        Server: js.UndefOr[Server] = js.undefined
-    ): UpdateServerResponse = {
-      val __obj = js.Dynamic.literal()
-      Server.foreach(__v => __obj.updateDynamic("Server")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateServerResponse]
-    }
   }
 }

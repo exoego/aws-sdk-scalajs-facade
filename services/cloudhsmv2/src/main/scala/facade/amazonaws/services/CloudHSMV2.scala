@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object cloudhsmv2 {
   type BackupId              = String
@@ -94,6 +95,7 @@ package cloudhsmv2 {
     * Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the BackupId, BackupState, ClusterId, and CreateTimestamp parameters. Backups that were copied into a destination region additionally contain the CopyTimestamp, SourceBackup, SourceCluster, and SourceRegion paramters. A backup that is pending deletion will include the DeleteTimestamp parameter.
     */
   @js.native
+  @Factory
   trait Backup extends js.Object {
     var BackupId: BackupId
     var BackupState: js.UndefOr[BackupState]
@@ -105,37 +107,6 @@ package cloudhsmv2 {
     var SourceCluster: js.UndefOr[ClusterId]
     var SourceRegion: js.UndefOr[Region]
     var TagList: js.UndefOr[TagList]
-  }
-
-  object Backup {
-    @inline
-    def apply(
-        BackupId: BackupId,
-        BackupState: js.UndefOr[BackupState] = js.undefined,
-        ClusterId: js.UndefOr[ClusterId] = js.undefined,
-        CopyTimestamp: js.UndefOr[Timestamp] = js.undefined,
-        CreateTimestamp: js.UndefOr[Timestamp] = js.undefined,
-        DeleteTimestamp: js.UndefOr[Timestamp] = js.undefined,
-        SourceBackup: js.UndefOr[BackupId] = js.undefined,
-        SourceCluster: js.UndefOr[ClusterId] = js.undefined,
-        SourceRegion: js.UndefOr[Region] = js.undefined,
-        TagList: js.UndefOr[TagList] = js.undefined
-    ): Backup = {
-      val __obj = js.Dynamic.literal(
-        "BackupId" -> BackupId.asInstanceOf[js.Any]
-      )
-
-      BackupState.foreach(__v => __obj.updateDynamic("BackupState")(__v.asInstanceOf[js.Any]))
-      ClusterId.foreach(__v => __obj.updateDynamic("ClusterId")(__v.asInstanceOf[js.Any]))
-      CopyTimestamp.foreach(__v => __obj.updateDynamic("CopyTimestamp")(__v.asInstanceOf[js.Any]))
-      CreateTimestamp.foreach(__v => __obj.updateDynamic("CreateTimestamp")(__v.asInstanceOf[js.Any]))
-      DeleteTimestamp.foreach(__v => __obj.updateDynamic("DeleteTimestamp")(__v.asInstanceOf[js.Any]))
-      SourceBackup.foreach(__v => __obj.updateDynamic("SourceBackup")(__v.asInstanceOf[js.Any]))
-      SourceCluster.foreach(__v => __obj.updateDynamic("SourceCluster")(__v.asInstanceOf[js.Any]))
-      SourceRegion.foreach(__v => __obj.updateDynamic("SourceRegion")(__v.asInstanceOf[js.Any]))
-      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Backup]
-    }
   }
 
   @js.native
@@ -161,6 +132,7 @@ package cloudhsmv2 {
     * Contains one or more certificates or a certificate signing request (CSR).
     */
   @js.native
+  @Factory
   trait Certificates extends js.Object {
     var AwsHardwareCertificate: js.UndefOr[Cert]
     var ClusterCertificate: js.UndefOr[Cert]
@@ -169,31 +141,11 @@ package cloudhsmv2 {
     var ManufacturerHardwareCertificate: js.UndefOr[Cert]
   }
 
-  object Certificates {
-    @inline
-    def apply(
-        AwsHardwareCertificate: js.UndefOr[Cert] = js.undefined,
-        ClusterCertificate: js.UndefOr[Cert] = js.undefined,
-        ClusterCsr: js.UndefOr[Cert] = js.undefined,
-        HsmCertificate: js.UndefOr[Cert] = js.undefined,
-        ManufacturerHardwareCertificate: js.UndefOr[Cert] = js.undefined
-    ): Certificates = {
-      val __obj = js.Dynamic.literal()
-      AwsHardwareCertificate.foreach(__v => __obj.updateDynamic("AwsHardwareCertificate")(__v.asInstanceOf[js.Any]))
-      ClusterCertificate.foreach(__v => __obj.updateDynamic("ClusterCertificate")(__v.asInstanceOf[js.Any]))
-      ClusterCsr.foreach(__v => __obj.updateDynamic("ClusterCsr")(__v.asInstanceOf[js.Any]))
-      HsmCertificate.foreach(__v => __obj.updateDynamic("HsmCertificate")(__v.asInstanceOf[js.Any]))
-      ManufacturerHardwareCertificate.foreach(__v =>
-        __obj.updateDynamic("ManufacturerHardwareCertificate")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[Certificates]
-    }
-  }
-
   /**
     * Contains information about an AWS CloudHSM cluster.
     */
   @js.native
+  @Factory
   trait Cluster extends js.Object {
     var BackupPolicy: js.UndefOr[BackupPolicy]
     var Certificates: js.UndefOr[Certificates]
@@ -209,43 +161,6 @@ package cloudhsmv2 {
     var SubnetMapping: js.UndefOr[ExternalSubnetMapping]
     var TagList: js.UndefOr[TagList]
     var VpcId: js.UndefOr[VpcId]
-  }
-
-  object Cluster {
-    @inline
-    def apply(
-        BackupPolicy: js.UndefOr[BackupPolicy] = js.undefined,
-        Certificates: js.UndefOr[Certificates] = js.undefined,
-        ClusterId: js.UndefOr[ClusterId] = js.undefined,
-        CreateTimestamp: js.UndefOr[Timestamp] = js.undefined,
-        HsmType: js.UndefOr[HsmType] = js.undefined,
-        Hsms: js.UndefOr[Hsms] = js.undefined,
-        PreCoPassword: js.UndefOr[PreCoPassword] = js.undefined,
-        SecurityGroup: js.UndefOr[SecurityGroup] = js.undefined,
-        SourceBackupId: js.UndefOr[BackupId] = js.undefined,
-        State: js.UndefOr[ClusterState] = js.undefined,
-        StateMessage: js.UndefOr[StateMessage] = js.undefined,
-        SubnetMapping: js.UndefOr[ExternalSubnetMapping] = js.undefined,
-        TagList: js.UndefOr[TagList] = js.undefined,
-        VpcId: js.UndefOr[VpcId] = js.undefined
-    ): Cluster = {
-      val __obj = js.Dynamic.literal()
-      BackupPolicy.foreach(__v => __obj.updateDynamic("BackupPolicy")(__v.asInstanceOf[js.Any]))
-      Certificates.foreach(__v => __obj.updateDynamic("Certificates")(__v.asInstanceOf[js.Any]))
-      ClusterId.foreach(__v => __obj.updateDynamic("ClusterId")(__v.asInstanceOf[js.Any]))
-      CreateTimestamp.foreach(__v => __obj.updateDynamic("CreateTimestamp")(__v.asInstanceOf[js.Any]))
-      HsmType.foreach(__v => __obj.updateDynamic("HsmType")(__v.asInstanceOf[js.Any]))
-      Hsms.foreach(__v => __obj.updateDynamic("Hsms")(__v.asInstanceOf[js.Any]))
-      PreCoPassword.foreach(__v => __obj.updateDynamic("PreCoPassword")(__v.asInstanceOf[js.Any]))
-      SecurityGroup.foreach(__v => __obj.updateDynamic("SecurityGroup")(__v.asInstanceOf[js.Any]))
-      SourceBackupId.foreach(__v => __obj.updateDynamic("SourceBackupId")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      StateMessage.foreach(__v => __obj.updateDynamic("StateMessage")(__v.asInstanceOf[js.Any]))
-      SubnetMapping.foreach(__v => __obj.updateDynamic("SubnetMapping")(__v.asInstanceOf[js.Any]))
-      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
-      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Cluster]
-    }
   }
 
   @js.native
@@ -277,46 +192,21 @@ package cloudhsmv2 {
   }
 
   @js.native
+  @Factory
   trait CopyBackupToRegionRequest extends js.Object {
     var BackupId: BackupId
     var DestinationRegion: Region
     var TagList: js.UndefOr[TagList]
   }
 
-  object CopyBackupToRegionRequest {
-    @inline
-    def apply(
-        BackupId: BackupId,
-        DestinationRegion: Region,
-        TagList: js.UndefOr[TagList] = js.undefined
-    ): CopyBackupToRegionRequest = {
-      val __obj = js.Dynamic.literal(
-        "BackupId"          -> BackupId.asInstanceOf[js.Any],
-        "DestinationRegion" -> DestinationRegion.asInstanceOf[js.Any]
-      )
-
-      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CopyBackupToRegionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CopyBackupToRegionResponse extends js.Object {
     var DestinationBackup: js.UndefOr[DestinationBackup]
   }
 
-  object CopyBackupToRegionResponse {
-    @inline
-    def apply(
-        DestinationBackup: js.UndefOr[DestinationBackup] = js.undefined
-    ): CopyBackupToRegionResponse = {
-      val __obj = js.Dynamic.literal()
-      DestinationBackup.foreach(__v => __obj.updateDynamic("DestinationBackup")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CopyBackupToRegionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateClusterRequest extends js.Object {
     var HsmType: HsmType
     var SubnetIds: SubnetIds
@@ -324,150 +214,52 @@ package cloudhsmv2 {
     var TagList: js.UndefOr[TagList]
   }
 
-  object CreateClusterRequest {
-    @inline
-    def apply(
-        HsmType: HsmType,
-        SubnetIds: SubnetIds,
-        SourceBackupId: js.UndefOr[BackupId] = js.undefined,
-        TagList: js.UndefOr[TagList] = js.undefined
-    ): CreateClusterRequest = {
-      val __obj = js.Dynamic.literal(
-        "HsmType"   -> HsmType.asInstanceOf[js.Any],
-        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any]
-      )
-
-      SourceBackupId.foreach(__v => __obj.updateDynamic("SourceBackupId")(__v.asInstanceOf[js.Any]))
-      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateClusterRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateClusterResponse extends js.Object {
     var Cluster: js.UndefOr[Cluster]
   }
 
-  object CreateClusterResponse {
-    @inline
-    def apply(
-        Cluster: js.UndefOr[Cluster] = js.undefined
-    ): CreateClusterResponse = {
-      val __obj = js.Dynamic.literal()
-      Cluster.foreach(__v => __obj.updateDynamic("Cluster")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateClusterResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateHsmRequest extends js.Object {
     var AvailabilityZone: ExternalAz
     var ClusterId: ClusterId
     var IpAddress: js.UndefOr[IpAddress]
   }
 
-  object CreateHsmRequest {
-    @inline
-    def apply(
-        AvailabilityZone: ExternalAz,
-        ClusterId: ClusterId,
-        IpAddress: js.UndefOr[IpAddress] = js.undefined
-    ): CreateHsmRequest = {
-      val __obj = js.Dynamic.literal(
-        "AvailabilityZone" -> AvailabilityZone.asInstanceOf[js.Any],
-        "ClusterId"        -> ClusterId.asInstanceOf[js.Any]
-      )
-
-      IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateHsmRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateHsmResponse extends js.Object {
     var Hsm: js.UndefOr[Hsm]
   }
 
-  object CreateHsmResponse {
-    @inline
-    def apply(
-        Hsm: js.UndefOr[Hsm] = js.undefined
-    ): CreateHsmResponse = {
-      val __obj = js.Dynamic.literal()
-      Hsm.foreach(__v => __obj.updateDynamic("Hsm")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateHsmResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteBackupRequest extends js.Object {
     var BackupId: BackupId
   }
 
-  object DeleteBackupRequest {
-    @inline
-    def apply(
-        BackupId: BackupId
-    ): DeleteBackupRequest = {
-      val __obj = js.Dynamic.literal(
-        "BackupId" -> BackupId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteBackupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteBackupResponse extends js.Object {
     var Backup: js.UndefOr[Backup]
   }
 
-  object DeleteBackupResponse {
-    @inline
-    def apply(
-        Backup: js.UndefOr[Backup] = js.undefined
-    ): DeleteBackupResponse = {
-      val __obj = js.Dynamic.literal()
-      Backup.foreach(__v => __obj.updateDynamic("Backup")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteBackupResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteClusterRequest extends js.Object {
     var ClusterId: ClusterId
   }
 
-  object DeleteClusterRequest {
-    @inline
-    def apply(
-        ClusterId: ClusterId
-    ): DeleteClusterRequest = {
-      val __obj = js.Dynamic.literal(
-        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteClusterRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteClusterResponse extends js.Object {
     var Cluster: js.UndefOr[Cluster]
   }
 
-  object DeleteClusterResponse {
-    @inline
-    def apply(
-        Cluster: js.UndefOr[Cluster] = js.undefined
-    ): DeleteClusterResponse = {
-      val __obj = js.Dynamic.literal()
-      Cluster.foreach(__v => __obj.updateDynamic("Cluster")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteClusterResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteHsmRequest extends js.Object {
     var ClusterId: ClusterId
     var EniId: js.UndefOr[EniId]
@@ -475,42 +267,14 @@ package cloudhsmv2 {
     var HsmId: js.UndefOr[HsmId]
   }
 
-  object DeleteHsmRequest {
-    @inline
-    def apply(
-        ClusterId: ClusterId,
-        EniId: js.UndefOr[EniId] = js.undefined,
-        EniIp: js.UndefOr[IpAddress] = js.undefined,
-        HsmId: js.UndefOr[HsmId] = js.undefined
-    ): DeleteHsmRequest = {
-      val __obj = js.Dynamic.literal(
-        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
-      )
-
-      EniId.foreach(__v => __obj.updateDynamic("EniId")(__v.asInstanceOf[js.Any]))
-      EniIp.foreach(__v => __obj.updateDynamic("EniIp")(__v.asInstanceOf[js.Any]))
-      HsmId.foreach(__v => __obj.updateDynamic("HsmId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteHsmRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteHsmResponse extends js.Object {
     var HsmId: js.UndefOr[HsmId]
   }
 
-  object DeleteHsmResponse {
-    @inline
-    def apply(
-        HsmId: js.UndefOr[HsmId] = js.undefined
-    ): DeleteHsmResponse = {
-      val __obj = js.Dynamic.literal()
-      HsmId.foreach(__v => __obj.updateDynamic("HsmId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteHsmResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeBackupsRequest extends js.Object {
     var Filters: js.UndefOr[Filters]
     var MaxResults: js.UndefOr[MaxSize]
@@ -518,87 +282,33 @@ package cloudhsmv2 {
     var SortAscending: js.UndefOr[Boolean]
   }
 
-  object DescribeBackupsRequest {
-    @inline
-    def apply(
-        Filters: js.UndefOr[Filters] = js.undefined,
-        MaxResults: js.UndefOr[MaxSize] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        SortAscending: js.UndefOr[Boolean] = js.undefined
-    ): DescribeBackupsRequest = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SortAscending.foreach(__v => __obj.updateDynamic("SortAscending")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeBackupsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeBackupsResponse extends js.Object {
     var Backups: js.UndefOr[Backups]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object DescribeBackupsResponse {
-    @inline
-    def apply(
-        Backups: js.UndefOr[Backups] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): DescribeBackupsResponse = {
-      val __obj = js.Dynamic.literal()
-      Backups.foreach(__v => __obj.updateDynamic("Backups")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeBackupsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeClustersRequest extends js.Object {
     var Filters: js.UndefOr[Filters]
     var MaxResults: js.UndefOr[MaxSize]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object DescribeClustersRequest {
-    @inline
-    def apply(
-        Filters: js.UndefOr[Filters] = js.undefined,
-        MaxResults: js.UndefOr[MaxSize] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): DescribeClustersRequest = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeClustersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeClustersResponse extends js.Object {
     var Clusters: js.UndefOr[Clusters]
     var NextToken: js.UndefOr[NextToken]
-  }
-
-  object DescribeClustersResponse {
-    @inline
-    def apply(
-        Clusters: js.UndefOr[Clusters] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): DescribeClustersResponse = {
-      val __obj = js.Dynamic.literal()
-      Clusters.foreach(__v => __obj.updateDynamic("Clusters")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeClustersResponse]
-    }
   }
 
   /**
     * Contains information about the backup that will be copied and created by the <a>CopyBackupToRegion</a> operation.
     */
   @js.native
+  @Factory
   trait DestinationBackup extends js.Object {
     var CreateTimestamp: js.UndefOr[Timestamp]
     var SourceBackup: js.UndefOr[BackupId]
@@ -606,27 +316,11 @@ package cloudhsmv2 {
     var SourceRegion: js.UndefOr[Region]
   }
 
-  object DestinationBackup {
-    @inline
-    def apply(
-        CreateTimestamp: js.UndefOr[Timestamp] = js.undefined,
-        SourceBackup: js.UndefOr[BackupId] = js.undefined,
-        SourceCluster: js.UndefOr[ClusterId] = js.undefined,
-        SourceRegion: js.UndefOr[Region] = js.undefined
-    ): DestinationBackup = {
-      val __obj = js.Dynamic.literal()
-      CreateTimestamp.foreach(__v => __obj.updateDynamic("CreateTimestamp")(__v.asInstanceOf[js.Any]))
-      SourceBackup.foreach(__v => __obj.updateDynamic("SourceBackup")(__v.asInstanceOf[js.Any]))
-      SourceCluster.foreach(__v => __obj.updateDynamic("SourceCluster")(__v.asInstanceOf[js.Any]))
-      SourceRegion.foreach(__v => __obj.updateDynamic("SourceRegion")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DestinationBackup]
-    }
-  }
-
   /**
     * Contains information about a hardware security module (HSM) in an AWS CloudHSM cluster.
     */
   @js.native
+  @Factory
   trait Hsm extends js.Object {
     var HsmId: HsmId
     var AvailabilityZone: js.UndefOr[ExternalAz]
@@ -636,33 +330,6 @@ package cloudhsmv2 {
     var State: js.UndefOr[HsmState]
     var StateMessage: js.UndefOr[String]
     var SubnetId: js.UndefOr[SubnetId]
-  }
-
-  object Hsm {
-    @inline
-    def apply(
-        HsmId: HsmId,
-        AvailabilityZone: js.UndefOr[ExternalAz] = js.undefined,
-        ClusterId: js.UndefOr[ClusterId] = js.undefined,
-        EniId: js.UndefOr[EniId] = js.undefined,
-        EniIp: js.UndefOr[IpAddress] = js.undefined,
-        State: js.UndefOr[HsmState] = js.undefined,
-        StateMessage: js.UndefOr[String] = js.undefined,
-        SubnetId: js.UndefOr[SubnetId] = js.undefined
-    ): Hsm = {
-      val __obj = js.Dynamic.literal(
-        "HsmId" -> HsmId.asInstanceOf[js.Any]
-      )
-
-      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
-      ClusterId.foreach(__v => __obj.updateDynamic("ClusterId")(__v.asInstanceOf[js.Any]))
-      EniId.foreach(__v => __obj.updateDynamic("EniId")(__v.asInstanceOf[js.Any]))
-      EniIp.foreach(__v => __obj.updateDynamic("EniIp")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      StateMessage.foreach(__v => __obj.updateDynamic("StateMessage")(__v.asInstanceOf[js.Any]))
-      SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Hsm]
-    }
   }
 
   @js.native
@@ -678,216 +345,76 @@ package cloudhsmv2 {
   }
 
   @js.native
+  @Factory
   trait InitializeClusterRequest extends js.Object {
     var ClusterId: ClusterId
     var SignedCert: Cert
     var TrustAnchor: Cert
   }
 
-  object InitializeClusterRequest {
-    @inline
-    def apply(
-        ClusterId: ClusterId,
-        SignedCert: Cert,
-        TrustAnchor: Cert
-    ): InitializeClusterRequest = {
-      val __obj = js.Dynamic.literal(
-        "ClusterId"   -> ClusterId.asInstanceOf[js.Any],
-        "SignedCert"  -> SignedCert.asInstanceOf[js.Any],
-        "TrustAnchor" -> TrustAnchor.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[InitializeClusterRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait InitializeClusterResponse extends js.Object {
     var State: js.UndefOr[ClusterState]
     var StateMessage: js.UndefOr[StateMessage]
   }
 
-  object InitializeClusterResponse {
-    @inline
-    def apply(
-        State: js.UndefOr[ClusterState] = js.undefined,
-        StateMessage: js.UndefOr[StateMessage] = js.undefined
-    ): InitializeClusterResponse = {
-      val __obj = js.Dynamic.literal()
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      StateMessage.foreach(__v => __obj.updateDynamic("StateMessage")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InitializeClusterResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsRequest extends js.Object {
     var ResourceId: ResourceId
     var MaxResults: js.UndefOr[MaxSize]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListTagsRequest {
-    @inline
-    def apply(
-        ResourceId: ResourceId,
-        MaxResults: js.UndefOr[MaxSize] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListTagsRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsResponse extends js.Object {
     var TagList: TagList
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListTagsResponse {
-    @inline
-    def apply(
-        TagList: TagList,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListTagsResponse = {
-      val __obj = js.Dynamic.literal(
-        "TagList" -> TagList.asInstanceOf[js.Any]
-      )
-
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait RestoreBackupRequest extends js.Object {
     var BackupId: BackupId
   }
 
-  object RestoreBackupRequest {
-    @inline
-    def apply(
-        BackupId: BackupId
-    ): RestoreBackupRequest = {
-      val __obj = js.Dynamic.literal(
-        "BackupId" -> BackupId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RestoreBackupRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait RestoreBackupResponse extends js.Object {
     var Backup: js.UndefOr[Backup]
-  }
-
-  object RestoreBackupResponse {
-    @inline
-    def apply(
-        Backup: js.UndefOr[Backup] = js.undefined
-    ): RestoreBackupResponse = {
-      val __obj = js.Dynamic.literal()
-      Backup.foreach(__v => __obj.updateDynamic("Backup")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RestoreBackupResponse]
-    }
   }
 
   /**
     * Contains a tag. A tag is a key-value pair.
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var Key: TagKey
     var Value: TagValue
   }
 
-  object Tag {
-    @inline
-    def apply(
-        Key: TagKey,
-        Value: TagValue
-    ): Tag = {
-      val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Tag]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceRequest extends js.Object {
     var ResourceId: ResourceId
     var TagList: TagList
   }
 
-  object TagResourceRequest {
-    @inline
-    def apply(
-        ResourceId: ResourceId,
-        TagList: TagList
-    ): TagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "TagList"    -> TagList.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceResponse extends js.Object {}
 
-  object TagResourceResponse {
-    @inline
-    def apply(
-    ): TagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[TagResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceRequest extends js.Object {
     var ResourceId: ResourceId
     var TagKeyList: TagKeyList
   }
 
-  object UntagResourceRequest {
-    @inline
-    def apply(
-        ResourceId: ResourceId,
-        TagKeyList: TagKeyList
-    ): UntagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "TagKeyList" -> TagKeyList.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceResponse extends js.Object {}
-
-  object UntagResourceResponse {
-    @inline
-    def apply(
-    ): UntagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UntagResourceResponse]
-    }
-  }
 }

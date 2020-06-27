@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object sesv2 {
   type AmazonResourceName                  = String
@@ -375,168 +376,76 @@ package sesv2 {
     * An object that contains information about a blacklisting event that impacts one of the dedicated IP addresses that is associated with your account.
     */
   @js.native
+  @Factory
   trait BlacklistEntry extends js.Object {
     var Description: js.UndefOr[BlacklistingDescription]
     var ListingTime: js.UndefOr[Timestamp]
     var RblName: js.UndefOr[RblName]
   }
 
-  object BlacklistEntry {
-    @inline
-    def apply(
-        Description: js.UndefOr[BlacklistingDescription] = js.undefined,
-        ListingTime: js.UndefOr[Timestamp] = js.undefined,
-        RblName: js.UndefOr[RblName] = js.undefined
-    ): BlacklistEntry = {
-      val __obj = js.Dynamic.literal()
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      ListingTime.foreach(__v => __obj.updateDynamic("ListingTime")(__v.asInstanceOf[js.Any]))
-      RblName.foreach(__v => __obj.updateDynamic("RblName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BlacklistEntry]
-    }
-  }
-
   /**
     * Represents the body of the email message.
     */
   @js.native
+  @Factory
   trait Body extends js.Object {
     var Html: js.UndefOr[Content]
     var Text: js.UndefOr[Content]
-  }
-
-  object Body {
-    @inline
-    def apply(
-        Html: js.UndefOr[Content] = js.undefined,
-        Text: js.UndefOr[Content] = js.undefined
-    ): Body = {
-      val __obj = js.Dynamic.literal()
-      Html.foreach(__v => __obj.updateDynamic("Html")(__v.asInstanceOf[js.Any]))
-      Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Body]
-    }
   }
 
   /**
     * An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics.
     */
   @js.native
+  @Factory
   trait CloudWatchDestination extends js.Object {
     var DimensionConfigurations: CloudWatchDimensionConfigurations
-  }
-
-  object CloudWatchDestination {
-    @inline
-    def apply(
-        DimensionConfigurations: CloudWatchDimensionConfigurations
-    ): CloudWatchDestination = {
-      val __obj = js.Dynamic.literal(
-        "DimensionConfigurations" -> DimensionConfigurations.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CloudWatchDestination]
-    }
   }
 
   /**
     * An object that defines the dimension configuration to use when you send email events to Amazon CloudWatch.
     */
   @js.native
+  @Factory
   trait CloudWatchDimensionConfiguration extends js.Object {
     var DefaultDimensionValue: DefaultDimensionValue
     var DimensionName: DimensionName
     var DimensionValueSource: DimensionValueSource
   }
 
-  object CloudWatchDimensionConfiguration {
-    @inline
-    def apply(
-        DefaultDimensionValue: DefaultDimensionValue,
-        DimensionName: DimensionName,
-        DimensionValueSource: DimensionValueSource
-    ): CloudWatchDimensionConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "DefaultDimensionValue" -> DefaultDimensionValue.asInstanceOf[js.Any],
-        "DimensionName"         -> DimensionName.asInstanceOf[js.Any],
-        "DimensionValueSource"  -> DimensionValueSource.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CloudWatchDimensionConfiguration]
-    }
-  }
-
   /**
     * An object that represents the content of the email, and optionally a character set specification.
     */
   @js.native
+  @Factory
   trait Content extends js.Object {
     var Data: MessageData
     var Charset: js.UndefOr[Charset]
-  }
-
-  object Content {
-    @inline
-    def apply(
-        Data: MessageData,
-        Charset: js.UndefOr[Charset] = js.undefined
-    ): Content = {
-      val __obj = js.Dynamic.literal(
-        "Data" -> Data.asInstanceOf[js.Any]
-      )
-
-      Charset.foreach(__v => __obj.updateDynamic("Charset")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Content]
-    }
   }
 
   /**
     * A request to add an event destination to a configuration set.
     */
   @js.native
+  @Factory
   trait CreateConfigurationSetEventDestinationRequest extends js.Object {
     var ConfigurationSetName: ConfigurationSetName
     var EventDestination: EventDestinationDefinition
     var EventDestinationName: EventDestinationName
   }
 
-  object CreateConfigurationSetEventDestinationRequest {
-    @inline
-    def apply(
-        ConfigurationSetName: ConfigurationSetName,
-        EventDestination: EventDestinationDefinition,
-        EventDestinationName: EventDestinationName
-    ): CreateConfigurationSetEventDestinationRequest = {
-      val __obj = js.Dynamic.literal(
-        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
-        "EventDestination"     -> EventDestination.asInstanceOf[js.Any],
-        "EventDestinationName" -> EventDestinationName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateConfigurationSetEventDestinationRequest]
-    }
-  }
-
   /**
     * An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
+  @Factory
   trait CreateConfigurationSetEventDestinationResponse extends js.Object {}
-
-  object CreateConfigurationSetEventDestinationResponse {
-    @inline
-    def apply(
-    ): CreateConfigurationSetEventDestinationResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[CreateConfigurationSetEventDestinationResponse]
-    }
-  }
 
   /**
     * A request to create a configuration set.
     */
   @js.native
+  @Factory
   trait CreateConfigurationSetRequest extends js.Object {
     var ConfigurationSetName: ConfigurationSetName
     var DeliveryOptions: js.UndefOr[DeliveryOptions]
@@ -547,91 +456,35 @@ package sesv2 {
     var TrackingOptions: js.UndefOr[TrackingOptions]
   }
 
-  object CreateConfigurationSetRequest {
-    @inline
-    def apply(
-        ConfigurationSetName: ConfigurationSetName,
-        DeliveryOptions: js.UndefOr[DeliveryOptions] = js.undefined,
-        ReputationOptions: js.UndefOr[ReputationOptions] = js.undefined,
-        SendingOptions: js.UndefOr[SendingOptions] = js.undefined,
-        SuppressionOptions: js.UndefOr[SuppressionOptions] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined,
-        TrackingOptions: js.UndefOr[TrackingOptions] = js.undefined
-    ): CreateConfigurationSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
-      )
-
-      DeliveryOptions.foreach(__v => __obj.updateDynamic("DeliveryOptions")(__v.asInstanceOf[js.Any]))
-      ReputationOptions.foreach(__v => __obj.updateDynamic("ReputationOptions")(__v.asInstanceOf[js.Any]))
-      SendingOptions.foreach(__v => __obj.updateDynamic("SendingOptions")(__v.asInstanceOf[js.Any]))
-      SuppressionOptions.foreach(__v => __obj.updateDynamic("SuppressionOptions")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      TrackingOptions.foreach(__v => __obj.updateDynamic("TrackingOptions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateConfigurationSetRequest]
-    }
-  }
-
   /**
     * An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
+  @Factory
   trait CreateConfigurationSetResponse extends js.Object {}
-
-  object CreateConfigurationSetResponse {
-    @inline
-    def apply(
-    ): CreateConfigurationSetResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[CreateConfigurationSetResponse]
-    }
-  }
 
   /**
     * A request to create a new dedicated IP pool.
     */
   @js.native
+  @Factory
   trait CreateDedicatedIpPoolRequest extends js.Object {
     var PoolName: PoolName
     var Tags: js.UndefOr[TagList]
-  }
-
-  object CreateDedicatedIpPoolRequest {
-    @inline
-    def apply(
-        PoolName: PoolName,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateDedicatedIpPoolRequest = {
-      val __obj = js.Dynamic.literal(
-        "PoolName" -> PoolName.asInstanceOf[js.Any]
-      )
-
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDedicatedIpPoolRequest]
-    }
   }
 
   /**
     * An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
+  @Factory
   trait CreateDedicatedIpPoolResponse extends js.Object {}
-
-  object CreateDedicatedIpPoolResponse {
-    @inline
-    def apply(
-    ): CreateDedicatedIpPoolResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[CreateDedicatedIpPoolResponse]
-    }
-  }
 
   /**
     * A request to perform a predictive inbox placement test. Predictive inbox placement tests can help you predict how your messages will be handled by various email providers around the world. When you perform a predictive inbox placement test, you provide a sample message that contains the content that you plan to send to your customers. We send that message to special email addresses spread across several major email providers around the world. The test takes about 24 hours to complete. When the test is complete, you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test.
     */
   @js.native
+  @Factory
   trait CreateDeliverabilityTestReportRequest extends js.Object {
     var Content: EmailContent
     var FromEmailAddress: EmailAddress
@@ -639,74 +492,25 @@ package sesv2 {
     var Tags: js.UndefOr[TagList]
   }
 
-  object CreateDeliverabilityTestReportRequest {
-    @inline
-    def apply(
-        Content: EmailContent,
-        FromEmailAddress: EmailAddress,
-        ReportName: js.UndefOr[ReportName] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateDeliverabilityTestReportRequest = {
-      val __obj = js.Dynamic.literal(
-        "Content"          -> Content.asInstanceOf[js.Any],
-        "FromEmailAddress" -> FromEmailAddress.asInstanceOf[js.Any]
-      )
-
-      ReportName.foreach(__v => __obj.updateDynamic("ReportName")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDeliverabilityTestReportRequest]
-    }
-  }
-
   /**
     * Information about the predictive inbox placement test that you created.
     */
   @js.native
+  @Factory
   trait CreateDeliverabilityTestReportResponse extends js.Object {
     var DeliverabilityTestStatus: DeliverabilityTestStatus
     var ReportId: ReportId
-  }
-
-  object CreateDeliverabilityTestReportResponse {
-    @inline
-    def apply(
-        DeliverabilityTestStatus: DeliverabilityTestStatus,
-        ReportId: ReportId
-    ): CreateDeliverabilityTestReportResponse = {
-      val __obj = js.Dynamic.literal(
-        "DeliverabilityTestStatus" -> DeliverabilityTestStatus.asInstanceOf[js.Any],
-        "ReportId"                 -> ReportId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateDeliverabilityTestReportResponse]
-    }
   }
 
   /**
     * A request to begin the verification process for an email identity (an email address or domain).
     */
   @js.native
+  @Factory
   trait CreateEmailIdentityRequest extends js.Object {
     var EmailIdentity: Identity
     var DkimSigningAttributes: js.UndefOr[DkimSigningAttributes]
     var Tags: js.UndefOr[TagList]
-  }
-
-  object CreateEmailIdentityRequest {
-    @inline
-    def apply(
-        EmailIdentity: Identity,
-        DkimSigningAttributes: js.UndefOr[DkimSigningAttributes] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateEmailIdentityRequest = {
-      val __obj = js.Dynamic.literal(
-        "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any]
-      )
-
-      DkimSigningAttributes.foreach(__v => __obj.updateDynamic("DkimSigningAttributes")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateEmailIdentityRequest]
-    }
   }
 
   /**
@@ -714,50 +518,22 @@ package sesv2 {
     *  If the email identity is an email address, this object is empty.
     */
   @js.native
+  @Factory
   trait CreateEmailIdentityResponse extends js.Object {
     var DkimAttributes: js.UndefOr[DkimAttributes]
     var IdentityType: js.UndefOr[IdentityType]
     var VerifiedForSendingStatus: js.UndefOr[Enabled]
   }
 
-  object CreateEmailIdentityResponse {
-    @inline
-    def apply(
-        DkimAttributes: js.UndefOr[DkimAttributes] = js.undefined,
-        IdentityType: js.UndefOr[IdentityType] = js.undefined,
-        VerifiedForSendingStatus: js.UndefOr[Enabled] = js.undefined
-    ): CreateEmailIdentityResponse = {
-      val __obj = js.Dynamic.literal()
-      DkimAttributes.foreach(__v => __obj.updateDynamic("DkimAttributes")(__v.asInstanceOf[js.Any]))
-      IdentityType.foreach(__v => __obj.updateDynamic("IdentityType")(__v.asInstanceOf[js.Any]))
-      VerifiedForSendingStatus.foreach(__v => __obj.updateDynamic("VerifiedForSendingStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateEmailIdentityResponse]
-    }
-  }
-
   /**
     * An object that contains information about the volume of email sent on each day of the analysis period.
     */
   @js.native
+  @Factory
   trait DailyVolume extends js.Object {
     var DomainIspPlacements: js.UndefOr[DomainIspPlacements]
     var StartDate: js.UndefOr[Timestamp]
     var VolumeStatistics: js.UndefOr[VolumeStatistics]
-  }
-
-  object DailyVolume {
-    @inline
-    def apply(
-        DomainIspPlacements: js.UndefOr[DomainIspPlacements] = js.undefined,
-        StartDate: js.UndefOr[Timestamp] = js.undefined,
-        VolumeStatistics: js.UndefOr[VolumeStatistics] = js.undefined
-    ): DailyVolume = {
-      val __obj = js.Dynamic.literal()
-      DomainIspPlacements.foreach(__v => __obj.updateDynamic("DomainIspPlacements")(__v.asInstanceOf[js.Any]))
-      StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
-      VolumeStatistics.foreach(__v => __obj.updateDynamic("VolumeStatistics")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DailyVolume]
-    }
   }
 
   /**
@@ -765,6 +541,7 @@ package sesv2 {
     *  To learn more about requesting dedicated IP addresses, see [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/dedicated-ip-case.html|Requesting and Relinquishing Dedicated IP Addresses]] in the <i>Amazon SES Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait DedicatedIp extends js.Object {
     var Ip: Ip
     var WarmupPercentage: Percentage100Wrapper
@@ -772,212 +549,86 @@ package sesv2 {
     var PoolName: js.UndefOr[PoolName]
   }
 
-  object DedicatedIp {
-    @inline
-    def apply(
-        Ip: Ip,
-        WarmupPercentage: Percentage100Wrapper,
-        WarmupStatus: WarmupStatus,
-        PoolName: js.UndefOr[PoolName] = js.undefined
-    ): DedicatedIp = {
-      val __obj = js.Dynamic.literal(
-        "Ip"               -> Ip.asInstanceOf[js.Any],
-        "WarmupPercentage" -> WarmupPercentage.asInstanceOf[js.Any],
-        "WarmupStatus"     -> WarmupStatus.asInstanceOf[js.Any]
-      )
-
-      PoolName.foreach(__v => __obj.updateDynamic("PoolName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DedicatedIp]
-    }
-  }
-
   /**
     * A request to delete an event destination from a configuration set.
     */
   @js.native
+  @Factory
   trait DeleteConfigurationSetEventDestinationRequest extends js.Object {
     var ConfigurationSetName: ConfigurationSetName
     var EventDestinationName: EventDestinationName
   }
 
-  object DeleteConfigurationSetEventDestinationRequest {
-    @inline
-    def apply(
-        ConfigurationSetName: ConfigurationSetName,
-        EventDestinationName: EventDestinationName
-    ): DeleteConfigurationSetEventDestinationRequest = {
-      val __obj = js.Dynamic.literal(
-        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
-        "EventDestinationName" -> EventDestinationName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteConfigurationSetEventDestinationRequest]
-    }
-  }
-
   /**
     * An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
+  @Factory
   trait DeleteConfigurationSetEventDestinationResponse extends js.Object {}
-
-  object DeleteConfigurationSetEventDestinationResponse {
-    @inline
-    def apply(
-    ): DeleteConfigurationSetEventDestinationResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteConfigurationSetEventDestinationResponse]
-    }
-  }
 
   /**
     * A request to delete a configuration set.
     */
   @js.native
+  @Factory
   trait DeleteConfigurationSetRequest extends js.Object {
     var ConfigurationSetName: ConfigurationSetName
-  }
-
-  object DeleteConfigurationSetRequest {
-    @inline
-    def apply(
-        ConfigurationSetName: ConfigurationSetName
-    ): DeleteConfigurationSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteConfigurationSetRequest]
-    }
   }
 
   /**
     * An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
+  @Factory
   trait DeleteConfigurationSetResponse extends js.Object {}
-
-  object DeleteConfigurationSetResponse {
-    @inline
-    def apply(
-    ): DeleteConfigurationSetResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteConfigurationSetResponse]
-    }
-  }
 
   /**
     * A request to delete a dedicated IP pool.
     */
   @js.native
+  @Factory
   trait DeleteDedicatedIpPoolRequest extends js.Object {
     var PoolName: PoolName
-  }
-
-  object DeleteDedicatedIpPoolRequest {
-    @inline
-    def apply(
-        PoolName: PoolName
-    ): DeleteDedicatedIpPoolRequest = {
-      val __obj = js.Dynamic.literal(
-        "PoolName" -> PoolName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteDedicatedIpPoolRequest]
-    }
   }
 
   /**
     * An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
+  @Factory
   trait DeleteDedicatedIpPoolResponse extends js.Object {}
-
-  object DeleteDedicatedIpPoolResponse {
-    @inline
-    def apply(
-    ): DeleteDedicatedIpPoolResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteDedicatedIpPoolResponse]
-    }
-  }
 
   /**
     * A request to delete an existing email identity. When you delete an identity, you lose the ability to send email from that identity. You can restore your ability to send email by completing the verification process for the identity again.
     */
   @js.native
+  @Factory
   trait DeleteEmailIdentityRequest extends js.Object {
     var EmailIdentity: Identity
-  }
-
-  object DeleteEmailIdentityRequest {
-    @inline
-    def apply(
-        EmailIdentity: Identity
-    ): DeleteEmailIdentityRequest = {
-      val __obj = js.Dynamic.literal(
-        "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteEmailIdentityRequest]
-    }
   }
 
   /**
     * An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
+  @Factory
   trait DeleteEmailIdentityResponse extends js.Object {}
-
-  object DeleteEmailIdentityResponse {
-    @inline
-    def apply(
-    ): DeleteEmailIdentityResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteEmailIdentityResponse]
-    }
-  }
 
   /**
     * A request to remove an email address from the suppression list for your account.
     */
   @js.native
+  @Factory
   trait DeleteSuppressedDestinationRequest extends js.Object {
     var EmailAddress: EmailAddress
-  }
-
-  object DeleteSuppressedDestinationRequest {
-    @inline
-    def apply(
-        EmailAddress: EmailAddress
-    ): DeleteSuppressedDestinationRequest = {
-      val __obj = js.Dynamic.literal(
-        "EmailAddress" -> EmailAddress.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteSuppressedDestinationRequest]
-    }
   }
 
   /**
     * An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
+  @Factory
   trait DeleteSuppressedDestinationResponse extends js.Object {}
-
-  object DeleteSuppressedDestinationResponse {
-    @inline
-    def apply(
-    ): DeleteSuppressedDestinationResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteSuppressedDestinationResponse]
-    }
-  }
 
   /**
     * The current status of your Deliverability dashboard subscription. If this value is <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end of the current calendar month.
@@ -996,6 +647,7 @@ package sesv2 {
     * An object that contains metadata related to a predictive inbox placement test.
     */
   @js.native
+  @Factory
   trait DeliverabilityTestReport extends js.Object {
     var CreateDate: js.UndefOr[Timestamp]
     var DeliverabilityTestStatus: js.UndefOr[DeliverabilityTestStatus]
@@ -1003,27 +655,6 @@ package sesv2 {
     var ReportId: js.UndefOr[ReportId]
     var ReportName: js.UndefOr[ReportName]
     var Subject: js.UndefOr[DeliverabilityTestSubject]
-  }
-
-  object DeliverabilityTestReport {
-    @inline
-    def apply(
-        CreateDate: js.UndefOr[Timestamp] = js.undefined,
-        DeliverabilityTestStatus: js.UndefOr[DeliverabilityTestStatus] = js.undefined,
-        FromEmailAddress: js.UndefOr[EmailAddress] = js.undefined,
-        ReportId: js.UndefOr[ReportId] = js.undefined,
-        ReportName: js.UndefOr[ReportName] = js.undefined,
-        Subject: js.UndefOr[DeliverabilityTestSubject] = js.undefined
-    ): DeliverabilityTestReport = {
-      val __obj = js.Dynamic.literal()
-      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
-      DeliverabilityTestStatus.foreach(__v => __obj.updateDynamic("DeliverabilityTestStatus")(__v.asInstanceOf[js.Any]))
-      FromEmailAddress.foreach(__v => __obj.updateDynamic("FromEmailAddress")(__v.asInstanceOf[js.Any]))
-      ReportId.foreach(__v => __obj.updateDynamic("ReportId")(__v.asInstanceOf[js.Any]))
-      ReportName.foreach(__v => __obj.updateDynamic("ReportName")(__v.asInstanceOf[js.Any]))
-      Subject.foreach(__v => __obj.updateDynamic("Subject")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeliverabilityTestReport]
-    }
   }
 
   /**
@@ -1042,47 +673,21 @@ package sesv2 {
     * Used to associate a configuration set with a dedicated IP pool.
     */
   @js.native
+  @Factory
   trait DeliveryOptions extends js.Object {
     var SendingPoolName: js.UndefOr[PoolName]
     var TlsPolicy: js.UndefOr[TlsPolicy]
-  }
-
-  object DeliveryOptions {
-    @inline
-    def apply(
-        SendingPoolName: js.UndefOr[PoolName] = js.undefined,
-        TlsPolicy: js.UndefOr[TlsPolicy] = js.undefined
-    ): DeliveryOptions = {
-      val __obj = js.Dynamic.literal()
-      SendingPoolName.foreach(__v => __obj.updateDynamic("SendingPoolName")(__v.asInstanceOf[js.Any]))
-      TlsPolicy.foreach(__v => __obj.updateDynamic("TlsPolicy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeliveryOptions]
-    }
   }
 
   /**
     * An object that describes the recipients for an email.
     */
   @js.native
+  @Factory
   trait Destination extends js.Object {
     var BccAddresses: js.UndefOr[EmailAddressList]
     var CcAddresses: js.UndefOr[EmailAddressList]
     var ToAddresses: js.UndefOr[EmailAddressList]
-  }
-
-  object Destination {
-    @inline
-    def apply(
-        BccAddresses: js.UndefOr[EmailAddressList] = js.undefined,
-        CcAddresses: js.UndefOr[EmailAddressList] = js.undefined,
-        ToAddresses: js.UndefOr[EmailAddressList] = js.undefined
-    ): Destination = {
-      val __obj = js.Dynamic.literal()
-      BccAddresses.foreach(__v => __obj.updateDynamic("BccAddresses")(__v.asInstanceOf[js.Any]))
-      CcAddresses.foreach(__v => __obj.updateDynamic("CcAddresses")(__v.asInstanceOf[js.Any]))
-      ToAddresses.foreach(__v => __obj.updateDynamic("ToAddresses")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Destination]
-    }
   }
 
   /**
@@ -1103,6 +708,7 @@ package sesv2 {
     *  Amazon SES determines the authentication status by searching for specific records in the DNS configuration for the domain. If you used [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html|Easy DKIM]] to set up DKIM authentication, Amazon SES tries to find three unique CNAME records in the DNS configuration for your domain. If you provided a public key to perform DKIM authentication, Amazon SES tries to find a TXT record that uses the selector that you specified. The value of the TXT record must be a public key that's paired with the private key that you specified in the process of creating the identity
     */
   @js.native
+  @Factory
   trait DkimAttributes extends js.Object {
     var SigningAttributesOrigin: js.UndefOr[DkimSigningAttributesOrigin]
     var SigningEnabled: js.UndefOr[Enabled]
@@ -1110,45 +716,14 @@ package sesv2 {
     var Tokens: js.UndefOr[DnsTokenList]
   }
 
-  object DkimAttributes {
-    @inline
-    def apply(
-        SigningAttributesOrigin: js.UndefOr[DkimSigningAttributesOrigin] = js.undefined,
-        SigningEnabled: js.UndefOr[Enabled] = js.undefined,
-        Status: js.UndefOr[DkimStatus] = js.undefined,
-        Tokens: js.UndefOr[DnsTokenList] = js.undefined
-    ): DkimAttributes = {
-      val __obj = js.Dynamic.literal()
-      SigningAttributesOrigin.foreach(__v => __obj.updateDynamic("SigningAttributesOrigin")(__v.asInstanceOf[js.Any]))
-      SigningEnabled.foreach(__v => __obj.updateDynamic("SigningEnabled")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      Tokens.foreach(__v => __obj.updateDynamic("Tokens")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DkimAttributes]
-    }
-  }
-
   /**
     * An object that contains information about the tokens used for setting up Bring Your Own DKIM (BYODKIM).
     */
   @js.native
+  @Factory
   trait DkimSigningAttributes extends js.Object {
     var DomainSigningPrivateKey: PrivateKey
     var DomainSigningSelector: Selector
-  }
-
-  object DkimSigningAttributes {
-    @inline
-    def apply(
-        DomainSigningPrivateKey: PrivateKey,
-        DomainSigningSelector: Selector
-    ): DkimSigningAttributes = {
-      val __obj = js.Dynamic.literal(
-        "DomainSigningPrivateKey" -> DomainSigningPrivateKey.asInstanceOf[js.Any],
-        "DomainSigningSelector"   -> DomainSigningSelector.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DkimSigningAttributes]
-    }
   }
 
   @js.native
@@ -1184,6 +759,7 @@ package sesv2 {
     * An object that contains the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code> operation).
     */
   @js.native
+  @Factory
   trait DomainDeliverabilityCampaign extends js.Object {
     var CampaignId: js.UndefOr[CampaignId]
     var DeleteRate: js.UndefOr[Percentage]
@@ -1201,74 +777,22 @@ package sesv2 {
     var Subject: js.UndefOr[Subject]
   }
 
-  object DomainDeliverabilityCampaign {
-    @inline
-    def apply(
-        CampaignId: js.UndefOr[CampaignId] = js.undefined,
-        DeleteRate: js.UndefOr[Percentage] = js.undefined,
-        Esps: js.UndefOr[Esps] = js.undefined,
-        FirstSeenDateTime: js.UndefOr[Timestamp] = js.undefined,
-        FromAddress: js.UndefOr[Identity] = js.undefined,
-        ImageUrl: js.UndefOr[ImageUrl] = js.undefined,
-        InboxCount: js.UndefOr[Volume] = js.undefined,
-        LastSeenDateTime: js.UndefOr[Timestamp] = js.undefined,
-        ProjectedVolume: js.UndefOr[Volume] = js.undefined,
-        ReadDeleteRate: js.UndefOr[Percentage] = js.undefined,
-        ReadRate: js.UndefOr[Percentage] = js.undefined,
-        SendingIps: js.UndefOr[IpList] = js.undefined,
-        SpamCount: js.UndefOr[Volume] = js.undefined,
-        Subject: js.UndefOr[Subject] = js.undefined
-    ): DomainDeliverabilityCampaign = {
-      val __obj = js.Dynamic.literal()
-      CampaignId.foreach(__v => __obj.updateDynamic("CampaignId")(__v.asInstanceOf[js.Any]))
-      DeleteRate.foreach(__v => __obj.updateDynamic("DeleteRate")(__v.asInstanceOf[js.Any]))
-      Esps.foreach(__v => __obj.updateDynamic("Esps")(__v.asInstanceOf[js.Any]))
-      FirstSeenDateTime.foreach(__v => __obj.updateDynamic("FirstSeenDateTime")(__v.asInstanceOf[js.Any]))
-      FromAddress.foreach(__v => __obj.updateDynamic("FromAddress")(__v.asInstanceOf[js.Any]))
-      ImageUrl.foreach(__v => __obj.updateDynamic("ImageUrl")(__v.asInstanceOf[js.Any]))
-      InboxCount.foreach(__v => __obj.updateDynamic("InboxCount")(__v.asInstanceOf[js.Any]))
-      LastSeenDateTime.foreach(__v => __obj.updateDynamic("LastSeenDateTime")(__v.asInstanceOf[js.Any]))
-      ProjectedVolume.foreach(__v => __obj.updateDynamic("ProjectedVolume")(__v.asInstanceOf[js.Any]))
-      ReadDeleteRate.foreach(__v => __obj.updateDynamic("ReadDeleteRate")(__v.asInstanceOf[js.Any]))
-      ReadRate.foreach(__v => __obj.updateDynamic("ReadRate")(__v.asInstanceOf[js.Any]))
-      SendingIps.foreach(__v => __obj.updateDynamic("SendingIps")(__v.asInstanceOf[js.Any]))
-      SpamCount.foreach(__v => __obj.updateDynamic("SpamCount")(__v.asInstanceOf[js.Any]))
-      Subject.foreach(__v => __obj.updateDynamic("Subject")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DomainDeliverabilityCampaign]
-    }
-  }
-
   /**
     * An object that contains information about the Deliverability dashboard subscription for a verified domain that you use to send email and currently has an active Deliverability dashboard subscription. If a Deliverability dashboard subscription is active for a domain, you gain access to reputation, inbox placement, and other metrics for the domain.
     */
   @js.native
+  @Factory
   trait DomainDeliverabilityTrackingOption extends js.Object {
     var Domain: js.UndefOr[Domain]
     var InboxPlacementTrackingOption: js.UndefOr[InboxPlacementTrackingOption]
     var SubscriptionStartDate: js.UndefOr[Timestamp]
   }
 
-  object DomainDeliverabilityTrackingOption {
-    @inline
-    def apply(
-        Domain: js.UndefOr[Domain] = js.undefined,
-        InboxPlacementTrackingOption: js.UndefOr[InboxPlacementTrackingOption] = js.undefined,
-        SubscriptionStartDate: js.UndefOr[Timestamp] = js.undefined
-    ): DomainDeliverabilityTrackingOption = {
-      val __obj = js.Dynamic.literal()
-      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
-      InboxPlacementTrackingOption.foreach(__v =>
-        __obj.updateDynamic("InboxPlacementTrackingOption")(__v.asInstanceOf[js.Any])
-      )
-      SubscriptionStartDate.foreach(__v => __obj.updateDynamic("SubscriptionStartDate")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DomainDeliverabilityTrackingOption]
-    }
-  }
-
   /**
     * An object that contains inbox placement data for email sent from one of your email domains to a specific email provider.
     */
   @js.native
+  @Factory
   trait DomainIspPlacement extends js.Object {
     var InboxPercentage: js.UndefOr[Percentage]
     var InboxRawCount: js.UndefOr[Volume]
@@ -1277,54 +801,22 @@ package sesv2 {
     var SpamRawCount: js.UndefOr[Volume]
   }
 
-  object DomainIspPlacement {
-    @inline
-    def apply(
-        InboxPercentage: js.UndefOr[Percentage] = js.undefined,
-        InboxRawCount: js.UndefOr[Volume] = js.undefined,
-        IspName: js.UndefOr[IspName] = js.undefined,
-        SpamPercentage: js.UndefOr[Percentage] = js.undefined,
-        SpamRawCount: js.UndefOr[Volume] = js.undefined
-    ): DomainIspPlacement = {
-      val __obj = js.Dynamic.literal()
-      InboxPercentage.foreach(__v => __obj.updateDynamic("InboxPercentage")(__v.asInstanceOf[js.Any]))
-      InboxRawCount.foreach(__v => __obj.updateDynamic("InboxRawCount")(__v.asInstanceOf[js.Any]))
-      IspName.foreach(__v => __obj.updateDynamic("IspName")(__v.asInstanceOf[js.Any]))
-      SpamPercentage.foreach(__v => __obj.updateDynamic("SpamPercentage")(__v.asInstanceOf[js.Any]))
-      SpamRawCount.foreach(__v => __obj.updateDynamic("SpamRawCount")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DomainIspPlacement]
-    }
-  }
-
   /**
     * An object that defines the entire content of the email, including the message headers and the body content. You can create a simple email message, in which you specify the subject and the text and HTML versions of the message body. You can also create raw messages, in which you specify a complete MIME-formatted message. Raw messages can include attachments and custom headers.
     */
   @js.native
+  @Factory
   trait EmailContent extends js.Object {
     var Raw: js.UndefOr[RawMessage]
     var Simple: js.UndefOr[Message]
     var Template: js.UndefOr[Template]
   }
 
-  object EmailContent {
-    @inline
-    def apply(
-        Raw: js.UndefOr[RawMessage] = js.undefined,
-        Simple: js.UndefOr[Message] = js.undefined,
-        Template: js.UndefOr[Template] = js.undefined
-    ): EmailContent = {
-      val __obj = js.Dynamic.literal()
-      Raw.foreach(__v => __obj.updateDynamic("Raw")(__v.asInstanceOf[js.Any]))
-      Simple.foreach(__v => __obj.updateDynamic("Simple")(__v.asInstanceOf[js.Any]))
-      Template.foreach(__v => __obj.updateDynamic("Template")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EmailContent]
-    }
-  }
-
   /**
     * In the Amazon SES API v2, <i>events</i> include message sends, deliveries, opens, clicks, bounces, and complaints. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.
     */
   @js.native
+  @Factory
   trait EventDestination extends js.Object {
     var MatchingEventTypes: EventTypes
     var Name: EventDestinationName
@@ -1335,37 +827,11 @@ package sesv2 {
     var SnsDestination: js.UndefOr[SnsDestination]
   }
 
-  object EventDestination {
-    @inline
-    def apply(
-        MatchingEventTypes: EventTypes,
-        Name: EventDestinationName,
-        CloudWatchDestination: js.UndefOr[CloudWatchDestination] = js.undefined,
-        Enabled: js.UndefOr[Enabled] = js.undefined,
-        KinesisFirehoseDestination: js.UndefOr[KinesisFirehoseDestination] = js.undefined,
-        PinpointDestination: js.UndefOr[PinpointDestination] = js.undefined,
-        SnsDestination: js.UndefOr[SnsDestination] = js.undefined
-    ): EventDestination = {
-      val __obj = js.Dynamic.literal(
-        "MatchingEventTypes" -> MatchingEventTypes.asInstanceOf[js.Any],
-        "Name"               -> Name.asInstanceOf[js.Any]
-      )
-
-      CloudWatchDestination.foreach(__v => __obj.updateDynamic("CloudWatchDestination")(__v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      KinesisFirehoseDestination.foreach(__v =>
-        __obj.updateDynamic("KinesisFirehoseDestination")(__v.asInstanceOf[js.Any])
-      )
-      PinpointDestination.foreach(__v => __obj.updateDynamic("PinpointDestination")(__v.asInstanceOf[js.Any]))
-      SnsDestination.foreach(__v => __obj.updateDynamic("SnsDestination")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EventDestination]
-    }
-  }
-
   /**
     * An object that defines the event destination. Specifically, it defines which services receive events from emails sent using the configuration set that the event destination is associated with. Also defines the types of events that are sent to the event destination.
     */
   @js.native
+  @Factory
   trait EventDestinationDefinition extends js.Object {
     var CloudWatchDestination: js.UndefOr[CloudWatchDestination]
     var Enabled: js.UndefOr[Enabled]
@@ -1373,29 +839,6 @@ package sesv2 {
     var MatchingEventTypes: js.UndefOr[EventTypes]
     var PinpointDestination: js.UndefOr[PinpointDestination]
     var SnsDestination: js.UndefOr[SnsDestination]
-  }
-
-  object EventDestinationDefinition {
-    @inline
-    def apply(
-        CloudWatchDestination: js.UndefOr[CloudWatchDestination] = js.undefined,
-        Enabled: js.UndefOr[Enabled] = js.undefined,
-        KinesisFirehoseDestination: js.UndefOr[KinesisFirehoseDestination] = js.undefined,
-        MatchingEventTypes: js.UndefOr[EventTypes] = js.undefined,
-        PinpointDestination: js.UndefOr[PinpointDestination] = js.undefined,
-        SnsDestination: js.UndefOr[SnsDestination] = js.undefined
-    ): EventDestinationDefinition = {
-      val __obj = js.Dynamic.literal()
-      CloudWatchDestination.foreach(__v => __obj.updateDynamic("CloudWatchDestination")(__v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
-      KinesisFirehoseDestination.foreach(__v =>
-        __obj.updateDynamic("KinesisFirehoseDestination")(__v.asInstanceOf[js.Any])
-      )
-      MatchingEventTypes.foreach(__v => __obj.updateDynamic("MatchingEventTypes")(__v.asInstanceOf[js.Any]))
-      PinpointDestination.foreach(__v => __obj.updateDynamic("PinpointDestination")(__v.asInstanceOf[js.Any]))
-      SnsDestination.foreach(__v => __obj.updateDynamic("SnsDestination")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EventDestinationDefinition]
-    }
   }
 
   /**
@@ -1420,22 +863,14 @@ package sesv2 {
     * A request to obtain information about the email-sending capabilities of your Amazon SES account.
     */
   @js.native
+  @Factory
   trait GetAccountRequest extends js.Object {}
-
-  object GetAccountRequest {
-    @inline
-    def apply(
-    ): GetAccountRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[GetAccountRequest]
-    }
-  }
 
   /**
     * A list of details about the email-sending capabilities of your Amazon SES account in the current AWS Region.
     */
   @js.native
+  @Factory
   trait GetAccountResponse extends js.Object {
     var DedicatedIpAutoWarmupEnabled: js.UndefOr[Enabled]
     var EnforcementStatus: js.UndefOr[GeneralEnforcementStatus]
@@ -1445,136 +880,56 @@ package sesv2 {
     var SuppressionAttributes: js.UndefOr[SuppressionAttributes]
   }
 
-  object GetAccountResponse {
-    @inline
-    def apply(
-        DedicatedIpAutoWarmupEnabled: js.UndefOr[Enabled] = js.undefined,
-        EnforcementStatus: js.UndefOr[GeneralEnforcementStatus] = js.undefined,
-        ProductionAccessEnabled: js.UndefOr[Enabled] = js.undefined,
-        SendQuota: js.UndefOr[SendQuota] = js.undefined,
-        SendingEnabled: js.UndefOr[Enabled] = js.undefined,
-        SuppressionAttributes: js.UndefOr[SuppressionAttributes] = js.undefined
-    ): GetAccountResponse = {
-      val __obj = js.Dynamic.literal()
-      DedicatedIpAutoWarmupEnabled.foreach(__v =>
-        __obj.updateDynamic("DedicatedIpAutoWarmupEnabled")(__v.asInstanceOf[js.Any])
-      )
-      EnforcementStatus.foreach(__v => __obj.updateDynamic("EnforcementStatus")(__v.asInstanceOf[js.Any]))
-      ProductionAccessEnabled.foreach(__v => __obj.updateDynamic("ProductionAccessEnabled")(__v.asInstanceOf[js.Any]))
-      SendQuota.foreach(__v => __obj.updateDynamic("SendQuota")(__v.asInstanceOf[js.Any]))
-      SendingEnabled.foreach(__v => __obj.updateDynamic("SendingEnabled")(__v.asInstanceOf[js.Any]))
-      SuppressionAttributes.foreach(__v => __obj.updateDynamic("SuppressionAttributes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetAccountResponse]
-    }
-  }
-
   /**
     * A request to retrieve a list of the blacklists that your dedicated IP addresses appear on.
     */
   @js.native
+  @Factory
   trait GetBlacklistReportsRequest extends js.Object {
     var BlacklistItemNames: BlacklistItemNames
-  }
-
-  object GetBlacklistReportsRequest {
-    @inline
-    def apply(
-        BlacklistItemNames: BlacklistItemNames
-    ): GetBlacklistReportsRequest = {
-      val __obj = js.Dynamic.literal(
-        "BlacklistItemNames" -> BlacklistItemNames.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBlacklistReportsRequest]
-    }
   }
 
   /**
     * An object that contains information about blacklist events.
     */
   @js.native
+  @Factory
   trait GetBlacklistReportsResponse extends js.Object {
     var BlacklistReport: BlacklistReport
-  }
-
-  object GetBlacklistReportsResponse {
-    @inline
-    def apply(
-        BlacklistReport: BlacklistReport
-    ): GetBlacklistReportsResponse = {
-      val __obj = js.Dynamic.literal(
-        "BlacklistReport" -> BlacklistReport.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBlacklistReportsResponse]
-    }
   }
 
   /**
     * A request to obtain information about the event destinations for a configuration set.
     */
   @js.native
+  @Factory
   trait GetConfigurationSetEventDestinationsRequest extends js.Object {
     var ConfigurationSetName: ConfigurationSetName
-  }
-
-  object GetConfigurationSetEventDestinationsRequest {
-    @inline
-    def apply(
-        ConfigurationSetName: ConfigurationSetName
-    ): GetConfigurationSetEventDestinationsRequest = {
-      val __obj = js.Dynamic.literal(
-        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetConfigurationSetEventDestinationsRequest]
-    }
   }
 
   /**
     * Information about an event destination for a configuration set.
     */
   @js.native
+  @Factory
   trait GetConfigurationSetEventDestinationsResponse extends js.Object {
     var EventDestinations: js.UndefOr[EventDestinations]
-  }
-
-  object GetConfigurationSetEventDestinationsResponse {
-    @inline
-    def apply(
-        EventDestinations: js.UndefOr[EventDestinations] = js.undefined
-    ): GetConfigurationSetEventDestinationsResponse = {
-      val __obj = js.Dynamic.literal()
-      EventDestinations.foreach(__v => __obj.updateDynamic("EventDestinations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetConfigurationSetEventDestinationsResponse]
-    }
   }
 
   /**
     * A request to obtain information about a configuration set.
     */
   @js.native
+  @Factory
   trait GetConfigurationSetRequest extends js.Object {
     var ConfigurationSetName: ConfigurationSetName
-  }
-
-  object GetConfigurationSetRequest {
-    @inline
-    def apply(
-        ConfigurationSetName: ConfigurationSetName
-    ): GetConfigurationSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetConfigurationSetRequest]
-    }
   }
 
   /**
     * Information about a configuration set.
     */
   @js.native
+  @Factory
   trait GetConfigurationSetResponse extends js.Object {
     var ConfigurationSetName: js.UndefOr[ConfigurationSetName]
     var DeliveryOptions: js.UndefOr[DeliveryOptions]
@@ -1585,114 +940,43 @@ package sesv2 {
     var TrackingOptions: js.UndefOr[TrackingOptions]
   }
 
-  object GetConfigurationSetResponse {
-    @inline
-    def apply(
-        ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined,
-        DeliveryOptions: js.UndefOr[DeliveryOptions] = js.undefined,
-        ReputationOptions: js.UndefOr[ReputationOptions] = js.undefined,
-        SendingOptions: js.UndefOr[SendingOptions] = js.undefined,
-        SuppressionOptions: js.UndefOr[SuppressionOptions] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined,
-        TrackingOptions: js.UndefOr[TrackingOptions] = js.undefined
-    ): GetConfigurationSetResponse = {
-      val __obj = js.Dynamic.literal()
-      ConfigurationSetName.foreach(__v => __obj.updateDynamic("ConfigurationSetName")(__v.asInstanceOf[js.Any]))
-      DeliveryOptions.foreach(__v => __obj.updateDynamic("DeliveryOptions")(__v.asInstanceOf[js.Any]))
-      ReputationOptions.foreach(__v => __obj.updateDynamic("ReputationOptions")(__v.asInstanceOf[js.Any]))
-      SendingOptions.foreach(__v => __obj.updateDynamic("SendingOptions")(__v.asInstanceOf[js.Any]))
-      SuppressionOptions.foreach(__v => __obj.updateDynamic("SuppressionOptions")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      TrackingOptions.foreach(__v => __obj.updateDynamic("TrackingOptions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetConfigurationSetResponse]
-    }
-  }
-
   /**
     * A request to obtain more information about a dedicated IP address.
     */
   @js.native
+  @Factory
   trait GetDedicatedIpRequest extends js.Object {
     var Ip: Ip
-  }
-
-  object GetDedicatedIpRequest {
-    @inline
-    def apply(
-        Ip: Ip
-    ): GetDedicatedIpRequest = {
-      val __obj = js.Dynamic.literal(
-        "Ip" -> Ip.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetDedicatedIpRequest]
-    }
   }
 
   /**
     * Information about a dedicated IP address.
     */
   @js.native
+  @Factory
   trait GetDedicatedIpResponse extends js.Object {
     var DedicatedIp: js.UndefOr[DedicatedIp]
-  }
-
-  object GetDedicatedIpResponse {
-    @inline
-    def apply(
-        DedicatedIp: js.UndefOr[DedicatedIp] = js.undefined
-    ): GetDedicatedIpResponse = {
-      val __obj = js.Dynamic.literal()
-      DedicatedIp.foreach(__v => __obj.updateDynamic("DedicatedIp")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDedicatedIpResponse]
-    }
   }
 
   /**
     * A request to obtain more information about dedicated IP pools.
     */
   @js.native
+  @Factory
   trait GetDedicatedIpsRequest extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var PageSize: js.UndefOr[MaxItems]
     var PoolName: js.UndefOr[PoolName]
   }
 
-  object GetDedicatedIpsRequest {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        PageSize: js.UndefOr[MaxItems] = js.undefined,
-        PoolName: js.UndefOr[PoolName] = js.undefined
-    ): GetDedicatedIpsRequest = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
-      PoolName.foreach(__v => __obj.updateDynamic("PoolName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDedicatedIpsRequest]
-    }
-  }
-
   /**
     * Information about the dedicated IP addresses that are associated with your AWS account.
     */
   @js.native
+  @Factory
   trait GetDedicatedIpsResponse extends js.Object {
     var DedicatedIps: js.UndefOr[DedicatedIpList]
     var NextToken: js.UndefOr[NextToken]
-  }
-
-  object GetDedicatedIpsResponse {
-    @inline
-    def apply(
-        DedicatedIps: js.UndefOr[DedicatedIpList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): GetDedicatedIpsResponse = {
-      val __obj = js.Dynamic.literal()
-      DedicatedIps.foreach(__v => __obj.updateDynamic("DedicatedIps")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDedicatedIpsResponse]
-    }
   }
 
   /**
@@ -1700,22 +984,14 @@ package sesv2 {
     *  When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other AWS services. For more information about the features and cost of a Deliverability dashboard subscription, see [[http://aws.amazon.com/pinpoint/pricing/|Amazon Pinpoint Pricing]].
     */
   @js.native
+  @Factory
   trait GetDeliverabilityDashboardOptionsRequest extends js.Object {}
-
-  object GetDeliverabilityDashboardOptionsRequest {
-    @inline
-    def apply(
-    ): GetDeliverabilityDashboardOptionsRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[GetDeliverabilityDashboardOptionsRequest]
-    }
-  }
 
   /**
     * An object that shows the status of the Deliverability dashboard.
     */
   @js.native
+  @Factory
   trait GetDeliverabilityDashboardOptionsResponse extends js.Object {
     var DashboardEnabled: Enabled
     var AccountStatus: js.UndefOr[DeliverabilityDashboardAccountStatus]
@@ -1724,54 +1000,20 @@ package sesv2 {
     var SubscriptionExpiryDate: js.UndefOr[Timestamp]
   }
 
-  object GetDeliverabilityDashboardOptionsResponse {
-    @inline
-    def apply(
-        DashboardEnabled: Enabled,
-        AccountStatus: js.UndefOr[DeliverabilityDashboardAccountStatus] = js.undefined,
-        ActiveSubscribedDomains: js.UndefOr[DomainDeliverabilityTrackingOptions] = js.undefined,
-        PendingExpirationSubscribedDomains: js.UndefOr[DomainDeliverabilityTrackingOptions] = js.undefined,
-        SubscriptionExpiryDate: js.UndefOr[Timestamp] = js.undefined
-    ): GetDeliverabilityDashboardOptionsResponse = {
-      val __obj = js.Dynamic.literal(
-        "DashboardEnabled" -> DashboardEnabled.asInstanceOf[js.Any]
-      )
-
-      AccountStatus.foreach(__v => __obj.updateDynamic("AccountStatus")(__v.asInstanceOf[js.Any]))
-      ActiveSubscribedDomains.foreach(__v => __obj.updateDynamic("ActiveSubscribedDomains")(__v.asInstanceOf[js.Any]))
-      PendingExpirationSubscribedDomains.foreach(__v =>
-        __obj.updateDynamic("PendingExpirationSubscribedDomains")(__v.asInstanceOf[js.Any])
-      )
-      SubscriptionExpiryDate.foreach(__v => __obj.updateDynamic("SubscriptionExpiryDate")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDeliverabilityDashboardOptionsResponse]
-    }
-  }
-
   /**
     * A request to retrieve the results of a predictive inbox placement test.
     */
   @js.native
+  @Factory
   trait GetDeliverabilityTestReportRequest extends js.Object {
     var ReportId: ReportId
-  }
-
-  object GetDeliverabilityTestReportRequest {
-    @inline
-    def apply(
-        ReportId: ReportId
-    ): GetDeliverabilityTestReportRequest = {
-      val __obj = js.Dynamic.literal(
-        "ReportId" -> ReportId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetDeliverabilityTestReportRequest]
-    }
   }
 
   /**
     * The results of the predictive inbox placement test.
     */
   @js.native
+  @Factory
   trait GetDeliverabilityTestReportResponse extends js.Object {
     var DeliverabilityTestReport: DeliverabilityTestReport
     var IspPlacements: IspPlacements
@@ -1780,145 +1022,59 @@ package sesv2 {
     var Tags: js.UndefOr[TagList]
   }
 
-  object GetDeliverabilityTestReportResponse {
-    @inline
-    def apply(
-        DeliverabilityTestReport: DeliverabilityTestReport,
-        IspPlacements: IspPlacements,
-        OverallPlacement: PlacementStatistics,
-        Message: js.UndefOr[MessageContent] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): GetDeliverabilityTestReportResponse = {
-      val __obj = js.Dynamic.literal(
-        "DeliverabilityTestReport" -> DeliverabilityTestReport.asInstanceOf[js.Any],
-        "IspPlacements"            -> IspPlacements.asInstanceOf[js.Any],
-        "OverallPlacement"         -> OverallPlacement.asInstanceOf[js.Any]
-      )
-
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDeliverabilityTestReportResponse]
-    }
-  }
-
   /**
     * Retrieve all the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code> operation).
     */
   @js.native
+  @Factory
   trait GetDomainDeliverabilityCampaignRequest extends js.Object {
     var CampaignId: CampaignId
-  }
-
-  object GetDomainDeliverabilityCampaignRequest {
-    @inline
-    def apply(
-        CampaignId: CampaignId
-    ): GetDomainDeliverabilityCampaignRequest = {
-      val __obj = js.Dynamic.literal(
-        "CampaignId" -> CampaignId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetDomainDeliverabilityCampaignRequest]
-    }
   }
 
   /**
     * An object that contains all the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for.
     */
   @js.native
+  @Factory
   trait GetDomainDeliverabilityCampaignResponse extends js.Object {
     var DomainDeliverabilityCampaign: DomainDeliverabilityCampaign
-  }
-
-  object GetDomainDeliverabilityCampaignResponse {
-    @inline
-    def apply(
-        DomainDeliverabilityCampaign: DomainDeliverabilityCampaign
-    ): GetDomainDeliverabilityCampaignResponse = {
-      val __obj = js.Dynamic.literal(
-        "DomainDeliverabilityCampaign" -> DomainDeliverabilityCampaign.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetDomainDeliverabilityCampaignResponse]
-    }
   }
 
   /**
     * A request to obtain deliverability metrics for a domain.
     */
   @js.native
+  @Factory
   trait GetDomainStatisticsReportRequest extends js.Object {
     var Domain: Identity
     var EndDate: Timestamp
     var StartDate: Timestamp
   }
 
-  object GetDomainStatisticsReportRequest {
-    @inline
-    def apply(
-        Domain: Identity,
-        EndDate: Timestamp,
-        StartDate: Timestamp
-    ): GetDomainStatisticsReportRequest = {
-      val __obj = js.Dynamic.literal(
-        "Domain"    -> Domain.asInstanceOf[js.Any],
-        "EndDate"   -> EndDate.asInstanceOf[js.Any],
-        "StartDate" -> StartDate.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetDomainStatisticsReportRequest]
-    }
-  }
-
   /**
     * An object that includes statistics that are related to the domain that you specified.
     */
   @js.native
+  @Factory
   trait GetDomainStatisticsReportResponse extends js.Object {
     var DailyVolumes: DailyVolumes
     var OverallVolume: OverallVolume
-  }
-
-  object GetDomainStatisticsReportResponse {
-    @inline
-    def apply(
-        DailyVolumes: DailyVolumes,
-        OverallVolume: OverallVolume
-    ): GetDomainStatisticsReportResponse = {
-      val __obj = js.Dynamic.literal(
-        "DailyVolumes"  -> DailyVolumes.asInstanceOf[js.Any],
-        "OverallVolume" -> OverallVolume.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetDomainStatisticsReportResponse]
-    }
   }
 
   /**
     * A request to return details about an email identity.
     */
   @js.native
+  @Factory
   trait GetEmailIdentityRequest extends js.Object {
     var EmailIdentity: Identity
-  }
-
-  object GetEmailIdentityRequest {
-    @inline
-    def apply(
-        EmailIdentity: Identity
-    ): GetEmailIdentityRequest = {
-      val __obj = js.Dynamic.literal(
-        "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetEmailIdentityRequest]
-    }
   }
 
   /**
     * Details about an email identity.
     */
   @js.native
+  @Factory
   trait GetEmailIdentityResponse extends js.Object {
     var DkimAttributes: js.UndefOr[DkimAttributes]
     var FeedbackForwardingStatus: js.UndefOr[Enabled]
@@ -1928,92 +1084,33 @@ package sesv2 {
     var VerifiedForSendingStatus: js.UndefOr[Enabled]
   }
 
-  object GetEmailIdentityResponse {
-    @inline
-    def apply(
-        DkimAttributes: js.UndefOr[DkimAttributes] = js.undefined,
-        FeedbackForwardingStatus: js.UndefOr[Enabled] = js.undefined,
-        IdentityType: js.UndefOr[IdentityType] = js.undefined,
-        MailFromAttributes: js.UndefOr[MailFromAttributes] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined,
-        VerifiedForSendingStatus: js.UndefOr[Enabled] = js.undefined
-    ): GetEmailIdentityResponse = {
-      val __obj = js.Dynamic.literal()
-      DkimAttributes.foreach(__v => __obj.updateDynamic("DkimAttributes")(__v.asInstanceOf[js.Any]))
-      FeedbackForwardingStatus.foreach(__v => __obj.updateDynamic("FeedbackForwardingStatus")(__v.asInstanceOf[js.Any]))
-      IdentityType.foreach(__v => __obj.updateDynamic("IdentityType")(__v.asInstanceOf[js.Any]))
-      MailFromAttributes.foreach(__v => __obj.updateDynamic("MailFromAttributes")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      VerifiedForSendingStatus.foreach(__v => __obj.updateDynamic("VerifiedForSendingStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetEmailIdentityResponse]
-    }
-  }
-
   /**
     * A request to retrieve information about an email address that's on the suppression list for your account.
     */
   @js.native
+  @Factory
   trait GetSuppressedDestinationRequest extends js.Object {
     var EmailAddress: EmailAddress
-  }
-
-  object GetSuppressedDestinationRequest {
-    @inline
-    def apply(
-        EmailAddress: EmailAddress
-    ): GetSuppressedDestinationRequest = {
-      val __obj = js.Dynamic.literal(
-        "EmailAddress" -> EmailAddress.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetSuppressedDestinationRequest]
-    }
   }
 
   /**
     * Information about the suppressed email address.
     */
   @js.native
+  @Factory
   trait GetSuppressedDestinationResponse extends js.Object {
     var SuppressedDestination: SuppressedDestination
-  }
-
-  object GetSuppressedDestinationResponse {
-    @inline
-    def apply(
-        SuppressedDestination: SuppressedDestination
-    ): GetSuppressedDestinationResponse = {
-      val __obj = js.Dynamic.literal(
-        "SuppressedDestination" -> SuppressedDestination.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetSuppressedDestinationResponse]
-    }
   }
 
   /**
     * Information about an email identity.
     */
   @js.native
+  @Factory
   trait IdentityInfo extends js.Object {
     var IdentityName: js.UndefOr[Identity]
     var IdentityType: js.UndefOr[IdentityType]
     var SendingEnabled: js.UndefOr[Enabled]
-  }
-
-  object IdentityInfo {
-    @inline
-    def apply(
-        IdentityName: js.UndefOr[Identity] = js.undefined,
-        IdentityType: js.UndefOr[IdentityType] = js.undefined,
-        SendingEnabled: js.UndefOr[Enabled] = js.undefined
-    ): IdentityInfo = {
-      val __obj = js.Dynamic.literal()
-      IdentityName.foreach(__v => __obj.updateDynamic("IdentityName")(__v.asInstanceOf[js.Any]))
-      IdentityType.foreach(__v => __obj.updateDynamic("IdentityType")(__v.asInstanceOf[js.Any]))
-      SendingEnabled.foreach(__v => __obj.updateDynamic("SendingEnabled")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[IdentityInfo]
-    }
   }
 
   /**
@@ -2035,208 +1132,97 @@ package sesv2 {
     * An object that contains information about the inbox placement data settings for a verified domain that’s associated with your AWS account. This data is available only if you enabled the Deliverability dashboard for the domain.
     */
   @js.native
+  @Factory
   trait InboxPlacementTrackingOption extends js.Object {
     var Global: js.UndefOr[Enabled]
     var TrackedIsps: js.UndefOr[IspNameList]
-  }
-
-  object InboxPlacementTrackingOption {
-    @inline
-    def apply(
-        Global: js.UndefOr[Enabled] = js.undefined,
-        TrackedIsps: js.UndefOr[IspNameList] = js.undefined
-    ): InboxPlacementTrackingOption = {
-      val __obj = js.Dynamic.literal()
-      Global.foreach(__v => __obj.updateDynamic("Global")(__v.asInstanceOf[js.Any]))
-      TrackedIsps.foreach(__v => __obj.updateDynamic("TrackedIsps")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InboxPlacementTrackingOption]
-    }
   }
 
   /**
     * An object that describes how email sent during the predictive inbox placement test was handled by a certain email provider.
     */
   @js.native
+  @Factory
   trait IspPlacement extends js.Object {
     var IspName: js.UndefOr[IspName]
     var PlacementStatistics: js.UndefOr[PlacementStatistics]
-  }
-
-  object IspPlacement {
-    @inline
-    def apply(
-        IspName: js.UndefOr[IspName] = js.undefined,
-        PlacementStatistics: js.UndefOr[PlacementStatistics] = js.undefined
-    ): IspPlacement = {
-      val __obj = js.Dynamic.literal()
-      IspName.foreach(__v => __obj.updateDynamic("IspName")(__v.asInstanceOf[js.Any]))
-      PlacementStatistics.foreach(__v => __obj.updateDynamic("PlacementStatistics")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[IspPlacement]
-    }
   }
 
   /**
     * An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.
     */
   @js.native
+  @Factory
   trait KinesisFirehoseDestination extends js.Object {
     var DeliveryStreamArn: AmazonResourceName
     var IamRoleArn: AmazonResourceName
-  }
-
-  object KinesisFirehoseDestination {
-    @inline
-    def apply(
-        DeliveryStreamArn: AmazonResourceName,
-        IamRoleArn: AmazonResourceName
-    ): KinesisFirehoseDestination = {
-      val __obj = js.Dynamic.literal(
-        "DeliveryStreamArn" -> DeliveryStreamArn.asInstanceOf[js.Any],
-        "IamRoleArn"        -> IamRoleArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[KinesisFirehoseDestination]
-    }
   }
 
   /**
     * A request to obtain a list of configuration sets for your Amazon SES account in the current AWS Region.
     */
   @js.native
+  @Factory
   trait ListConfigurationSetsRequest extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var PageSize: js.UndefOr[MaxItems]
-  }
-
-  object ListConfigurationSetsRequest {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        PageSize: js.UndefOr[MaxItems] = js.undefined
-    ): ListConfigurationSetsRequest = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListConfigurationSetsRequest]
-    }
   }
 
   /**
     * A list of configuration sets in your Amazon SES account in the current AWS Region.
     */
   @js.native
+  @Factory
   trait ListConfigurationSetsResponse extends js.Object {
     var ConfigurationSets: js.UndefOr[ConfigurationSetNameList]
     var NextToken: js.UndefOr[NextToken]
-  }
-
-  object ListConfigurationSetsResponse {
-    @inline
-    def apply(
-        ConfigurationSets: js.UndefOr[ConfigurationSetNameList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListConfigurationSetsResponse = {
-      val __obj = js.Dynamic.literal()
-      ConfigurationSets.foreach(__v => __obj.updateDynamic("ConfigurationSets")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListConfigurationSetsResponse]
-    }
   }
 
   /**
     * A request to obtain a list of dedicated IP pools.
     */
   @js.native
+  @Factory
   trait ListDedicatedIpPoolsRequest extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var PageSize: js.UndefOr[MaxItems]
-  }
-
-  object ListDedicatedIpPoolsRequest {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        PageSize: js.UndefOr[MaxItems] = js.undefined
-    ): ListDedicatedIpPoolsRequest = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDedicatedIpPoolsRequest]
-    }
   }
 
   /**
     * A list of dedicated IP pools.
     */
   @js.native
+  @Factory
   trait ListDedicatedIpPoolsResponse extends js.Object {
     var DedicatedIpPools: js.UndefOr[ListOfDedicatedIpPools]
     var NextToken: js.UndefOr[NextToken]
-  }
-
-  object ListDedicatedIpPoolsResponse {
-    @inline
-    def apply(
-        DedicatedIpPools: js.UndefOr[ListOfDedicatedIpPools] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListDedicatedIpPoolsResponse = {
-      val __obj = js.Dynamic.literal()
-      DedicatedIpPools.foreach(__v => __obj.updateDynamic("DedicatedIpPools")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDedicatedIpPoolsResponse]
-    }
   }
 
   /**
     * A request to list all of the predictive inbox placement tests that you've performed.
     */
   @js.native
+  @Factory
   trait ListDeliverabilityTestReportsRequest extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var PageSize: js.UndefOr[MaxItems]
-  }
-
-  object ListDeliverabilityTestReportsRequest {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        PageSize: js.UndefOr[MaxItems] = js.undefined
-    ): ListDeliverabilityTestReportsRequest = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDeliverabilityTestReportsRequest]
-    }
   }
 
   /**
     * A list of the predictive inbox placement test reports that are available for your account, regardless of whether or not those tests are complete.
     */
   @js.native
+  @Factory
   trait ListDeliverabilityTestReportsResponse extends js.Object {
     var DeliverabilityTestReports: DeliverabilityTestReports
     var NextToken: js.UndefOr[NextToken]
-  }
-
-  object ListDeliverabilityTestReportsResponse {
-    @inline
-    def apply(
-        DeliverabilityTestReports: DeliverabilityTestReports,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListDeliverabilityTestReportsResponse = {
-      val __obj = js.Dynamic.literal(
-        "DeliverabilityTestReports" -> DeliverabilityTestReports.asInstanceOf[js.Any]
-      )
-
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDeliverabilityTestReportsResponse]
-    }
   }
 
   /**
     * Retrieve deliverability data for all the campaigns that used a specific domain to send email during a specified time range. This data is available for a domain only if you enabled the Deliverability dashboard.
     */
   @js.native
+  @Factory
   trait ListDomainDeliverabilityCampaignsRequest extends js.Object {
     var EndDate: Timestamp
     var StartDate: Timestamp
@@ -2245,99 +1231,41 @@ package sesv2 {
     var PageSize: js.UndefOr[MaxItems]
   }
 
-  object ListDomainDeliverabilityCampaignsRequest {
-    @inline
-    def apply(
-        EndDate: Timestamp,
-        StartDate: Timestamp,
-        SubscribedDomain: Domain,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        PageSize: js.UndefOr[MaxItems] = js.undefined
-    ): ListDomainDeliverabilityCampaignsRequest = {
-      val __obj = js.Dynamic.literal(
-        "EndDate"          -> EndDate.asInstanceOf[js.Any],
-        "StartDate"        -> StartDate.asInstanceOf[js.Any],
-        "SubscribedDomain" -> SubscribedDomain.asInstanceOf[js.Any]
-      )
-
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDomainDeliverabilityCampaignsRequest]
-    }
-  }
-
   /**
     * An array of objects that provide deliverability data for all the campaigns that used a specific domain to send email during a specified time range. This data is available for a domain only if you enabled the Deliverability dashboard for the domain.
     */
   @js.native
+  @Factory
   trait ListDomainDeliverabilityCampaignsResponse extends js.Object {
     var DomainDeliverabilityCampaigns: DomainDeliverabilityCampaignList
     var NextToken: js.UndefOr[NextToken]
-  }
-
-  object ListDomainDeliverabilityCampaignsResponse {
-    @inline
-    def apply(
-        DomainDeliverabilityCampaigns: DomainDeliverabilityCampaignList,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListDomainDeliverabilityCampaignsResponse = {
-      val __obj = js.Dynamic.literal(
-        "DomainDeliverabilityCampaigns" -> DomainDeliverabilityCampaigns.asInstanceOf[js.Any]
-      )
-
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDomainDeliverabilityCampaignsResponse]
-    }
   }
 
   /**
     * A request to list all of the email identities associated with your AWS account. This list includes identities that you've already verified, identities that are unverified, and identities that were verified in the past, but are no longer verified.
     */
   @js.native
+  @Factory
   trait ListEmailIdentitiesRequest extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var PageSize: js.UndefOr[MaxItems]
-  }
-
-  object ListEmailIdentitiesRequest {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        PageSize: js.UndefOr[MaxItems] = js.undefined
-    ): ListEmailIdentitiesRequest = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListEmailIdentitiesRequest]
-    }
   }
 
   /**
     * A list of all of the identities that you've attempted to verify, regardless of whether or not those identities were successfully verified.
     */
   @js.native
+  @Factory
   trait ListEmailIdentitiesResponse extends js.Object {
     var EmailIdentities: js.UndefOr[IdentityInfoList]
     var NextToken: js.UndefOr[NextToken]
-  }
-
-  object ListEmailIdentitiesResponse {
-    @inline
-    def apply(
-        EmailIdentities: js.UndefOr[IdentityInfoList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListEmailIdentitiesResponse = {
-      val __obj = js.Dynamic.literal()
-      EmailIdentities.foreach(__v => __obj.updateDynamic("EmailIdentities")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListEmailIdentitiesResponse]
-    }
   }
 
   /**
     * A request to obtain a list of email destinations that are on the suppression list for your account.
     */
   @js.native
+  @Factory
   trait ListSuppressedDestinationsRequest extends js.Object {
     var EndDate: js.UndefOr[Timestamp]
     var NextToken: js.UndefOr[NextToken]
@@ -2346,110 +1274,37 @@ package sesv2 {
     var StartDate: js.UndefOr[Timestamp]
   }
 
-  object ListSuppressedDestinationsRequest {
-    @inline
-    def apply(
-        EndDate: js.UndefOr[Timestamp] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        PageSize: js.UndefOr[MaxItems] = js.undefined,
-        Reasons: js.UndefOr[SuppressionListReasons] = js.undefined,
-        StartDate: js.UndefOr[Timestamp] = js.undefined
-    ): ListSuppressedDestinationsRequest = {
-      val __obj = js.Dynamic.literal()
-      EndDate.foreach(__v => __obj.updateDynamic("EndDate")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
-      Reasons.foreach(__v => __obj.updateDynamic("Reasons")(__v.asInstanceOf[js.Any]))
-      StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListSuppressedDestinationsRequest]
-    }
-  }
-
   /**
     * A list of suppressed email addresses.
     */
   @js.native
+  @Factory
   trait ListSuppressedDestinationsResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var SuppressedDestinationSummaries: js.UndefOr[SuppressedDestinationSummaries]
   }
 
-  object ListSuppressedDestinationsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        SuppressedDestinationSummaries: js.UndefOr[SuppressedDestinationSummaries] = js.undefined
-    ): ListSuppressedDestinationsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SuppressedDestinationSummaries.foreach(__v =>
-        __obj.updateDynamic("SuppressedDestinationSummaries")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[ListSuppressedDestinationsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceRequest extends js.Object {
     var ResourceArn: AmazonResourceName
   }
 
-  object ListTagsForResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: AmazonResourceName
-    ): ListTagsForResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListTagsForResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceResponse extends js.Object {
     var Tags: TagList
-  }
-
-  object ListTagsForResourceResponse {
-    @inline
-    def apply(
-        Tags: TagList
-    ): ListTagsForResourceResponse = {
-      val __obj = js.Dynamic.literal(
-        "Tags" -> Tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListTagsForResourceResponse]
-    }
   }
 
   /**
     * A list of attributes that are associated with a MAIL FROM domain.
     */
   @js.native
+  @Factory
   trait MailFromAttributes extends js.Object {
     var BehaviorOnMxFailure: BehaviorOnMxFailure
     var MailFromDomain: MailFromDomainName
     var MailFromDomainStatus: MailFromDomainStatus
-  }
-
-  object MailFromAttributes {
-    @inline
-    def apply(
-        BehaviorOnMxFailure: BehaviorOnMxFailure,
-        MailFromDomain: MailFromDomainName,
-        MailFromDomainStatus: MailFromDomainStatus
-    ): MailFromAttributes = {
-      val __obj = js.Dynamic.literal(
-        "BehaviorOnMxFailure"  -> BehaviorOnMxFailure.asInstanceOf[js.Any],
-        "MailFromDomain"       -> MailFromDomain.asInstanceOf[js.Any],
-        "MailFromDomainStatus" -> MailFromDomainStatus.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[MailFromAttributes]
-    }
   }
 
   /**
@@ -2474,98 +1329,47 @@ package sesv2 {
     * Represents the email message that you're sending. The <code>Message</code> object consists of a subject line and a message body.
     */
   @js.native
+  @Factory
   trait Message extends js.Object {
     var Body: Body
     var Subject: Content
-  }
-
-  object Message {
-    @inline
-    def apply(
-        Body: Body,
-        Subject: Content
-    ): Message = {
-      val __obj = js.Dynamic.literal(
-        "Body"    -> Body.asInstanceOf[js.Any],
-        "Subject" -> Subject.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Message]
-    }
   }
 
   /**
     * Contains the name and value of a tag that you apply to an email. You can use message tags when you publish email sending events.
     */
   @js.native
+  @Factory
   trait MessageTag extends js.Object {
     var Name: MessageTagName
     var Value: MessageTagValue
-  }
-
-  object MessageTag {
-    @inline
-    def apply(
-        Name: MessageTagName,
-        Value: MessageTagValue
-    ): MessageTag = {
-      val __obj = js.Dynamic.literal(
-        "Name"  -> Name.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[MessageTag]
-    }
   }
 
   /**
     * An object that contains information about email that was sent from the selected domain.
     */
   @js.native
+  @Factory
   trait OverallVolume extends js.Object {
     var DomainIspPlacements: js.UndefOr[DomainIspPlacements]
     var ReadRatePercent: js.UndefOr[Percentage]
     var VolumeStatistics: js.UndefOr[VolumeStatistics]
   }
 
-  object OverallVolume {
-    @inline
-    def apply(
-        DomainIspPlacements: js.UndefOr[DomainIspPlacements] = js.undefined,
-        ReadRatePercent: js.UndefOr[Percentage] = js.undefined,
-        VolumeStatistics: js.UndefOr[VolumeStatistics] = js.undefined
-    ): OverallVolume = {
-      val __obj = js.Dynamic.literal()
-      DomainIspPlacements.foreach(__v => __obj.updateDynamic("DomainIspPlacements")(__v.asInstanceOf[js.Any]))
-      ReadRatePercent.foreach(__v => __obj.updateDynamic("ReadRatePercent")(__v.asInstanceOf[js.Any]))
-      VolumeStatistics.foreach(__v => __obj.updateDynamic("VolumeStatistics")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[OverallVolume]
-    }
-  }
-
   /**
     * An object that defines an Amazon Pinpoint project destination for email events. You can send email event data to a Amazon Pinpoint project to view metrics using the Transactional Messaging dashboards that are built in to Amazon Pinpoint. For more information, see [[https://docs.aws.amazon.com/pinpoint/latest/userguide/analytics-transactional-messages.html|Transactional Messaging Charts]] in the <i>Amazon Pinpoint User Guide</i>.
     */
   @js.native
+  @Factory
   trait PinpointDestination extends js.Object {
     var ApplicationArn: js.UndefOr[AmazonResourceName]
-  }
-
-  object PinpointDestination {
-    @inline
-    def apply(
-        ApplicationArn: js.UndefOr[AmazonResourceName] = js.undefined
-    ): PinpointDestination = {
-      val __obj = js.Dynamic.literal()
-      ApplicationArn.foreach(__v => __obj.updateDynamic("ApplicationArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PinpointDestination]
-    }
   }
 
   /**
     * An object that contains inbox placement data for an email provider.
     */
   @js.native
+  @Factory
   trait PlacementStatistics extends js.Object {
     var DkimPercentage: js.UndefOr[Percentage]
     var InboxPercentage: js.UndefOr[Percentage]
@@ -2574,519 +1378,218 @@ package sesv2 {
     var SpfPercentage: js.UndefOr[Percentage]
   }
 
-  object PlacementStatistics {
-    @inline
-    def apply(
-        DkimPercentage: js.UndefOr[Percentage] = js.undefined,
-        InboxPercentage: js.UndefOr[Percentage] = js.undefined,
-        MissingPercentage: js.UndefOr[Percentage] = js.undefined,
-        SpamPercentage: js.UndefOr[Percentage] = js.undefined,
-        SpfPercentage: js.UndefOr[Percentage] = js.undefined
-    ): PlacementStatistics = {
-      val __obj = js.Dynamic.literal()
-      DkimPercentage.foreach(__v => __obj.updateDynamic("DkimPercentage")(__v.asInstanceOf[js.Any]))
-      InboxPercentage.foreach(__v => __obj.updateDynamic("InboxPercentage")(__v.asInstanceOf[js.Any]))
-      MissingPercentage.foreach(__v => __obj.updateDynamic("MissingPercentage")(__v.asInstanceOf[js.Any]))
-      SpamPercentage.foreach(__v => __obj.updateDynamic("SpamPercentage")(__v.asInstanceOf[js.Any]))
-      SpfPercentage.foreach(__v => __obj.updateDynamic("SpfPercentage")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PlacementStatistics]
-    }
-  }
-
   /**
     * A request to enable or disable the automatic IP address warm-up feature.
     */
   @js.native
+  @Factory
   trait PutAccountDedicatedIpWarmupAttributesRequest extends js.Object {
     var AutoWarmupEnabled: js.UndefOr[Enabled]
-  }
-
-  object PutAccountDedicatedIpWarmupAttributesRequest {
-    @inline
-    def apply(
-        AutoWarmupEnabled: js.UndefOr[Enabled] = js.undefined
-    ): PutAccountDedicatedIpWarmupAttributesRequest = {
-      val __obj = js.Dynamic.literal()
-      AutoWarmupEnabled.foreach(__v => __obj.updateDynamic("AutoWarmupEnabled")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutAccountDedicatedIpWarmupAttributesRequest]
-    }
   }
 
   /**
     * An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
+  @Factory
   trait PutAccountDedicatedIpWarmupAttributesResponse extends js.Object {}
-
-  object PutAccountDedicatedIpWarmupAttributesResponse {
-    @inline
-    def apply(
-    ): PutAccountDedicatedIpWarmupAttributesResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutAccountDedicatedIpWarmupAttributesResponse]
-    }
-  }
 
   /**
     * A request to change the ability of your account to send email.
     */
   @js.native
+  @Factory
   trait PutAccountSendingAttributesRequest extends js.Object {
     var SendingEnabled: js.UndefOr[Enabled]
-  }
-
-  object PutAccountSendingAttributesRequest {
-    @inline
-    def apply(
-        SendingEnabled: js.UndefOr[Enabled] = js.undefined
-    ): PutAccountSendingAttributesRequest = {
-      val __obj = js.Dynamic.literal()
-      SendingEnabled.foreach(__v => __obj.updateDynamic("SendingEnabled")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutAccountSendingAttributesRequest]
-    }
   }
 
   /**
     * An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
+  @Factory
   trait PutAccountSendingAttributesResponse extends js.Object {}
-
-  object PutAccountSendingAttributesResponse {
-    @inline
-    def apply(
-    ): PutAccountSendingAttributesResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutAccountSendingAttributesResponse]
-    }
-  }
 
   /**
     * A request to change your account's suppression preferences.
     */
   @js.native
+  @Factory
   trait PutAccountSuppressionAttributesRequest extends js.Object {
     var SuppressedReasons: js.UndefOr[SuppressionListReasons]
-  }
-
-  object PutAccountSuppressionAttributesRequest {
-    @inline
-    def apply(
-        SuppressedReasons: js.UndefOr[SuppressionListReasons] = js.undefined
-    ): PutAccountSuppressionAttributesRequest = {
-      val __obj = js.Dynamic.literal()
-      SuppressedReasons.foreach(__v => __obj.updateDynamic("SuppressedReasons")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutAccountSuppressionAttributesRequest]
-    }
   }
 
   /**
     * An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
+  @Factory
   trait PutAccountSuppressionAttributesResponse extends js.Object {}
-
-  object PutAccountSuppressionAttributesResponse {
-    @inline
-    def apply(
-    ): PutAccountSuppressionAttributesResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutAccountSuppressionAttributesResponse]
-    }
-  }
 
   /**
     * A request to associate a configuration set with a dedicated IP pool.
     */
   @js.native
+  @Factory
   trait PutConfigurationSetDeliveryOptionsRequest extends js.Object {
     var ConfigurationSetName: ConfigurationSetName
     var SendingPoolName: js.UndefOr[SendingPoolName]
     var TlsPolicy: js.UndefOr[TlsPolicy]
   }
 
-  object PutConfigurationSetDeliveryOptionsRequest {
-    @inline
-    def apply(
-        ConfigurationSetName: ConfigurationSetName,
-        SendingPoolName: js.UndefOr[SendingPoolName] = js.undefined,
-        TlsPolicy: js.UndefOr[TlsPolicy] = js.undefined
-    ): PutConfigurationSetDeliveryOptionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
-      )
-
-      SendingPoolName.foreach(__v => __obj.updateDynamic("SendingPoolName")(__v.asInstanceOf[js.Any]))
-      TlsPolicy.foreach(__v => __obj.updateDynamic("TlsPolicy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutConfigurationSetDeliveryOptionsRequest]
-    }
-  }
-
   /**
     * An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
+  @Factory
   trait PutConfigurationSetDeliveryOptionsResponse extends js.Object {}
-
-  object PutConfigurationSetDeliveryOptionsResponse {
-    @inline
-    def apply(
-    ): PutConfigurationSetDeliveryOptionsResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutConfigurationSetDeliveryOptionsResponse]
-    }
-  }
 
   /**
     * A request to enable or disable tracking of reputation metrics for a configuration set.
     */
   @js.native
+  @Factory
   trait PutConfigurationSetReputationOptionsRequest extends js.Object {
     var ConfigurationSetName: ConfigurationSetName
     var ReputationMetricsEnabled: js.UndefOr[Enabled]
   }
 
-  object PutConfigurationSetReputationOptionsRequest {
-    @inline
-    def apply(
-        ConfigurationSetName: ConfigurationSetName,
-        ReputationMetricsEnabled: js.UndefOr[Enabled] = js.undefined
-    ): PutConfigurationSetReputationOptionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
-      )
-
-      ReputationMetricsEnabled.foreach(__v => __obj.updateDynamic("ReputationMetricsEnabled")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutConfigurationSetReputationOptionsRequest]
-    }
-  }
-
   /**
     * An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
+  @Factory
   trait PutConfigurationSetReputationOptionsResponse extends js.Object {}
-
-  object PutConfigurationSetReputationOptionsResponse {
-    @inline
-    def apply(
-    ): PutConfigurationSetReputationOptionsResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutConfigurationSetReputationOptionsResponse]
-    }
-  }
 
   /**
     * A request to enable or disable the ability of Amazon SES to send emails that use a specific configuration set.
     */
   @js.native
+  @Factory
   trait PutConfigurationSetSendingOptionsRequest extends js.Object {
     var ConfigurationSetName: ConfigurationSetName
     var SendingEnabled: js.UndefOr[Enabled]
   }
 
-  object PutConfigurationSetSendingOptionsRequest {
-    @inline
-    def apply(
-        ConfigurationSetName: ConfigurationSetName,
-        SendingEnabled: js.UndefOr[Enabled] = js.undefined
-    ): PutConfigurationSetSendingOptionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
-      )
-
-      SendingEnabled.foreach(__v => __obj.updateDynamic("SendingEnabled")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutConfigurationSetSendingOptionsRequest]
-    }
-  }
-
   /**
     * An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
+  @Factory
   trait PutConfigurationSetSendingOptionsResponse extends js.Object {}
-
-  object PutConfigurationSetSendingOptionsResponse {
-    @inline
-    def apply(
-    ): PutConfigurationSetSendingOptionsResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutConfigurationSetSendingOptionsResponse]
-    }
-  }
 
   /**
     * A request to change the account suppression list preferences for a specific configuration set.
     */
   @js.native
+  @Factory
   trait PutConfigurationSetSuppressionOptionsRequest extends js.Object {
     var ConfigurationSetName: ConfigurationSetName
     var SuppressedReasons: js.UndefOr[SuppressionListReasons]
   }
 
-  object PutConfigurationSetSuppressionOptionsRequest {
-    @inline
-    def apply(
-        ConfigurationSetName: ConfigurationSetName,
-        SuppressedReasons: js.UndefOr[SuppressionListReasons] = js.undefined
-    ): PutConfigurationSetSuppressionOptionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
-      )
-
-      SuppressedReasons.foreach(__v => __obj.updateDynamic("SuppressedReasons")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutConfigurationSetSuppressionOptionsRequest]
-    }
-  }
-
   /**
     * An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
+  @Factory
   trait PutConfigurationSetSuppressionOptionsResponse extends js.Object {}
-
-  object PutConfigurationSetSuppressionOptionsResponse {
-    @inline
-    def apply(
-    ): PutConfigurationSetSuppressionOptionsResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutConfigurationSetSuppressionOptionsResponse]
-    }
-  }
 
   /**
     * A request to add a custom domain for tracking open and click events to a configuration set.
     */
   @js.native
+  @Factory
   trait PutConfigurationSetTrackingOptionsRequest extends js.Object {
     var ConfigurationSetName: ConfigurationSetName
     var CustomRedirectDomain: js.UndefOr[CustomRedirectDomain]
   }
 
-  object PutConfigurationSetTrackingOptionsRequest {
-    @inline
-    def apply(
-        ConfigurationSetName: ConfigurationSetName,
-        CustomRedirectDomain: js.UndefOr[CustomRedirectDomain] = js.undefined
-    ): PutConfigurationSetTrackingOptionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
-      )
-
-      CustomRedirectDomain.foreach(__v => __obj.updateDynamic("CustomRedirectDomain")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutConfigurationSetTrackingOptionsRequest]
-    }
-  }
-
   /**
     * An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
+  @Factory
   trait PutConfigurationSetTrackingOptionsResponse extends js.Object {}
-
-  object PutConfigurationSetTrackingOptionsResponse {
-    @inline
-    def apply(
-    ): PutConfigurationSetTrackingOptionsResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutConfigurationSetTrackingOptionsResponse]
-    }
-  }
 
   /**
     * A request to move a dedicated IP address to a dedicated IP pool.
     */
   @js.native
+  @Factory
   trait PutDedicatedIpInPoolRequest extends js.Object {
     var DestinationPoolName: PoolName
     var Ip: Ip
   }
 
-  object PutDedicatedIpInPoolRequest {
-    @inline
-    def apply(
-        DestinationPoolName: PoolName,
-        Ip: Ip
-    ): PutDedicatedIpInPoolRequest = {
-      val __obj = js.Dynamic.literal(
-        "DestinationPoolName" -> DestinationPoolName.asInstanceOf[js.Any],
-        "Ip"                  -> Ip.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutDedicatedIpInPoolRequest]
-    }
-  }
-
   /**
     * An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
+  @Factory
   trait PutDedicatedIpInPoolResponse extends js.Object {}
-
-  object PutDedicatedIpInPoolResponse {
-    @inline
-    def apply(
-    ): PutDedicatedIpInPoolResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutDedicatedIpInPoolResponse]
-    }
-  }
 
   /**
     * A request to change the warm-up attributes for a dedicated IP address. This operation is useful when you want to resume the warm-up process for an existing IP address.
     */
   @js.native
+  @Factory
   trait PutDedicatedIpWarmupAttributesRequest extends js.Object {
     var Ip: Ip
     var WarmupPercentage: Percentage100Wrapper
-  }
-
-  object PutDedicatedIpWarmupAttributesRequest {
-    @inline
-    def apply(
-        Ip: Ip,
-        WarmupPercentage: Percentage100Wrapper
-    ): PutDedicatedIpWarmupAttributesRequest = {
-      val __obj = js.Dynamic.literal(
-        "Ip"               -> Ip.asInstanceOf[js.Any],
-        "WarmupPercentage" -> WarmupPercentage.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutDedicatedIpWarmupAttributesRequest]
-    }
   }
 
   /**
     * An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
+  @Factory
   trait PutDedicatedIpWarmupAttributesResponse extends js.Object {}
-
-  object PutDedicatedIpWarmupAttributesResponse {
-    @inline
-    def apply(
-    ): PutDedicatedIpWarmupAttributesResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutDedicatedIpWarmupAttributesResponse]
-    }
-  }
 
   /**
     * Enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon SES API v2. You also gain the ability to perform predictive inbox placement tests.
     *  When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other AWS services. For more information about the features and cost of a Deliverability dashboard subscription, see [[http://aws.amazon.com/pinpoint/pricing/|Amazon Pinpoint Pricing]].
     */
   @js.native
+  @Factory
   trait PutDeliverabilityDashboardOptionRequest extends js.Object {
     var DashboardEnabled: Enabled
     var SubscribedDomains: js.UndefOr[DomainDeliverabilityTrackingOptions]
-  }
-
-  object PutDeliverabilityDashboardOptionRequest {
-    @inline
-    def apply(
-        DashboardEnabled: Enabled,
-        SubscribedDomains: js.UndefOr[DomainDeliverabilityTrackingOptions] = js.undefined
-    ): PutDeliverabilityDashboardOptionRequest = {
-      val __obj = js.Dynamic.literal(
-        "DashboardEnabled" -> DashboardEnabled.asInstanceOf[js.Any]
-      )
-
-      SubscribedDomains.foreach(__v => __obj.updateDynamic("SubscribedDomains")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutDeliverabilityDashboardOptionRequest]
-    }
   }
 
   /**
     * A response that indicates whether the Deliverability dashboard is enabled.
     */
   @js.native
+  @Factory
   trait PutDeliverabilityDashboardOptionResponse extends js.Object {}
-
-  object PutDeliverabilityDashboardOptionResponse {
-    @inline
-    def apply(
-    ): PutDeliverabilityDashboardOptionResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutDeliverabilityDashboardOptionResponse]
-    }
-  }
 
   /**
     * A request to enable or disable DKIM signing of email that you send from an email identity.
     */
   @js.native
+  @Factory
   trait PutEmailIdentityDkimAttributesRequest extends js.Object {
     var EmailIdentity: Identity
     var SigningEnabled: js.UndefOr[Enabled]
-  }
-
-  object PutEmailIdentityDkimAttributesRequest {
-    @inline
-    def apply(
-        EmailIdentity: Identity,
-        SigningEnabled: js.UndefOr[Enabled] = js.undefined
-    ): PutEmailIdentityDkimAttributesRequest = {
-      val __obj = js.Dynamic.literal(
-        "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any]
-      )
-
-      SigningEnabled.foreach(__v => __obj.updateDynamic("SigningEnabled")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutEmailIdentityDkimAttributesRequest]
-    }
   }
 
   /**
     * An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
+  @Factory
   trait PutEmailIdentityDkimAttributesResponse extends js.Object {}
-
-  object PutEmailIdentityDkimAttributesResponse {
-    @inline
-    def apply(
-    ): PutEmailIdentityDkimAttributesResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutEmailIdentityDkimAttributesResponse]
-    }
-  }
 
   /**
     * A request to change the DKIM attributes for an email identity.
     */
   @js.native
+  @Factory
   trait PutEmailIdentityDkimSigningAttributesRequest extends js.Object {
     var EmailIdentity: Identity
     var SigningAttributesOrigin: DkimSigningAttributesOrigin
     var SigningAttributes: js.UndefOr[DkimSigningAttributes]
-  }
-
-  object PutEmailIdentityDkimSigningAttributesRequest {
-    @inline
-    def apply(
-        EmailIdentity: Identity,
-        SigningAttributesOrigin: DkimSigningAttributesOrigin,
-        SigningAttributes: js.UndefOr[DkimSigningAttributes] = js.undefined
-    ): PutEmailIdentityDkimSigningAttributesRequest = {
-      val __obj = js.Dynamic.literal(
-        "EmailIdentity"           -> EmailIdentity.asInstanceOf[js.Any],
-        "SigningAttributesOrigin" -> SigningAttributesOrigin.asInstanceOf[js.Any]
-      )
-
-      SigningAttributes.foreach(__v => __obj.updateDynamic("SigningAttributes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutEmailIdentityDkimSigningAttributesRequest]
-    }
   }
 
   /**
@@ -3094,194 +1597,88 @@ package sesv2 {
     *  The following data is returned in JSON format by the service.
     */
   @js.native
+  @Factory
   trait PutEmailIdentityDkimSigningAttributesResponse extends js.Object {
     var DkimStatus: js.UndefOr[DkimStatus]
     var DkimTokens: js.UndefOr[DnsTokenList]
-  }
-
-  object PutEmailIdentityDkimSigningAttributesResponse {
-    @inline
-    def apply(
-        DkimStatus: js.UndefOr[DkimStatus] = js.undefined,
-        DkimTokens: js.UndefOr[DnsTokenList] = js.undefined
-    ): PutEmailIdentityDkimSigningAttributesResponse = {
-      val __obj = js.Dynamic.literal()
-      DkimStatus.foreach(__v => __obj.updateDynamic("DkimStatus")(__v.asInstanceOf[js.Any]))
-      DkimTokens.foreach(__v => __obj.updateDynamic("DkimTokens")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutEmailIdentityDkimSigningAttributesResponse]
-    }
   }
 
   /**
     * A request to set the attributes that control how bounce and complaint events are processed.
     */
   @js.native
+  @Factory
   trait PutEmailIdentityFeedbackAttributesRequest extends js.Object {
     var EmailIdentity: Identity
     var EmailForwardingEnabled: js.UndefOr[Enabled]
-  }
-
-  object PutEmailIdentityFeedbackAttributesRequest {
-    @inline
-    def apply(
-        EmailIdentity: Identity,
-        EmailForwardingEnabled: js.UndefOr[Enabled] = js.undefined
-    ): PutEmailIdentityFeedbackAttributesRequest = {
-      val __obj = js.Dynamic.literal(
-        "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any]
-      )
-
-      EmailForwardingEnabled.foreach(__v => __obj.updateDynamic("EmailForwardingEnabled")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutEmailIdentityFeedbackAttributesRequest]
-    }
   }
 
   /**
     * An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
+  @Factory
   trait PutEmailIdentityFeedbackAttributesResponse extends js.Object {}
-
-  object PutEmailIdentityFeedbackAttributesResponse {
-    @inline
-    def apply(
-    ): PutEmailIdentityFeedbackAttributesResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutEmailIdentityFeedbackAttributesResponse]
-    }
-  }
 
   /**
     * A request to configure the custom MAIL FROM domain for a verified identity.
     */
   @js.native
+  @Factory
   trait PutEmailIdentityMailFromAttributesRequest extends js.Object {
     var EmailIdentity: Identity
     var BehaviorOnMxFailure: js.UndefOr[BehaviorOnMxFailure]
     var MailFromDomain: js.UndefOr[MailFromDomainName]
   }
 
-  object PutEmailIdentityMailFromAttributesRequest {
-    @inline
-    def apply(
-        EmailIdentity: Identity,
-        BehaviorOnMxFailure: js.UndefOr[BehaviorOnMxFailure] = js.undefined,
-        MailFromDomain: js.UndefOr[MailFromDomainName] = js.undefined
-    ): PutEmailIdentityMailFromAttributesRequest = {
-      val __obj = js.Dynamic.literal(
-        "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any]
-      )
-
-      BehaviorOnMxFailure.foreach(__v => __obj.updateDynamic("BehaviorOnMxFailure")(__v.asInstanceOf[js.Any]))
-      MailFromDomain.foreach(__v => __obj.updateDynamic("MailFromDomain")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutEmailIdentityMailFromAttributesRequest]
-    }
-  }
-
   /**
     * An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
+  @Factory
   trait PutEmailIdentityMailFromAttributesResponse extends js.Object {}
-
-  object PutEmailIdentityMailFromAttributesResponse {
-    @inline
-    def apply(
-    ): PutEmailIdentityMailFromAttributesResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutEmailIdentityMailFromAttributesResponse]
-    }
-  }
 
   /**
     * A request to add an email destination to the suppression list for your account.
     */
   @js.native
+  @Factory
   trait PutSuppressedDestinationRequest extends js.Object {
     var EmailAddress: EmailAddress
     var Reason: SuppressionListReason
-  }
-
-  object PutSuppressedDestinationRequest {
-    @inline
-    def apply(
-        EmailAddress: EmailAddress,
-        Reason: SuppressionListReason
-    ): PutSuppressedDestinationRequest = {
-      val __obj = js.Dynamic.literal(
-        "EmailAddress" -> EmailAddress.asInstanceOf[js.Any],
-        "Reason"       -> Reason.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutSuppressedDestinationRequest]
-    }
   }
 
   /**
     * An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
+  @Factory
   trait PutSuppressedDestinationResponse extends js.Object {}
-
-  object PutSuppressedDestinationResponse {
-    @inline
-    def apply(
-    ): PutSuppressedDestinationResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutSuppressedDestinationResponse]
-    }
-  }
 
   /**
     * Represents the raw content of an email message.
     */
   @js.native
+  @Factory
   trait RawMessage extends js.Object {
     var Data: RawMessageData
-  }
-
-  object RawMessage {
-    @inline
-    def apply(
-        Data: RawMessageData
-    ): RawMessage = {
-      val __obj = js.Dynamic.literal(
-        "Data" -> Data.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RawMessage]
-    }
   }
 
   /**
     * Enable or disable collection of reputation metrics for emails that you send using this configuration set in the current AWS Region.
     */
   @js.native
+  @Factory
   trait ReputationOptions extends js.Object {
     var LastFreshStart: js.UndefOr[LastFreshStart]
     var ReputationMetricsEnabled: js.UndefOr[Enabled]
-  }
-
-  object ReputationOptions {
-    @inline
-    def apply(
-        LastFreshStart: js.UndefOr[LastFreshStart] = js.undefined,
-        ReputationMetricsEnabled: js.UndefOr[Enabled] = js.undefined
-    ): ReputationOptions = {
-      val __obj = js.Dynamic.literal()
-      LastFreshStart.foreach(__v => __obj.updateDynamic("LastFreshStart")(__v.asInstanceOf[js.Any]))
-      ReputationMetricsEnabled.foreach(__v => __obj.updateDynamic("ReputationMetricsEnabled")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ReputationOptions]
-    }
   }
 
   /**
     * A request to send an email message.
     */
   @js.native
+  @Factory
   trait SendEmailRequest extends js.Object {
     var Content: EmailContent
     var Destination: Destination
@@ -3292,121 +1689,49 @@ package sesv2 {
     var ReplyToAddresses: js.UndefOr[EmailAddressList]
   }
 
-  object SendEmailRequest {
-    @inline
-    def apply(
-        Content: EmailContent,
-        Destination: Destination,
-        ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined,
-        EmailTags: js.UndefOr[MessageTagList] = js.undefined,
-        FeedbackForwardingEmailAddress: js.UndefOr[EmailAddress] = js.undefined,
-        FromEmailAddress: js.UndefOr[EmailAddress] = js.undefined,
-        ReplyToAddresses: js.UndefOr[EmailAddressList] = js.undefined
-    ): SendEmailRequest = {
-      val __obj = js.Dynamic.literal(
-        "Content"     -> Content.asInstanceOf[js.Any],
-        "Destination" -> Destination.asInstanceOf[js.Any]
-      )
-
-      ConfigurationSetName.foreach(__v => __obj.updateDynamic("ConfigurationSetName")(__v.asInstanceOf[js.Any]))
-      EmailTags.foreach(__v => __obj.updateDynamic("EmailTags")(__v.asInstanceOf[js.Any]))
-      FeedbackForwardingEmailAddress.foreach(__v =>
-        __obj.updateDynamic("FeedbackForwardingEmailAddress")(__v.asInstanceOf[js.Any])
-      )
-      FromEmailAddress.foreach(__v => __obj.updateDynamic("FromEmailAddress")(__v.asInstanceOf[js.Any]))
-      ReplyToAddresses.foreach(__v => __obj.updateDynamic("ReplyToAddresses")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SendEmailRequest]
-    }
-  }
-
   /**
     * A unique message ID that you receive when an email is accepted for sending.
     */
   @js.native
+  @Factory
   trait SendEmailResponse extends js.Object {
     var MessageId: js.UndefOr[OutboundMessageId]
-  }
-
-  object SendEmailResponse {
-    @inline
-    def apply(
-        MessageId: js.UndefOr[OutboundMessageId] = js.undefined
-    ): SendEmailResponse = {
-      val __obj = js.Dynamic.literal()
-      MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SendEmailResponse]
-    }
   }
 
   /**
     * An object that contains information about the per-day and per-second sending limits for your Amazon SES account in the current AWS Region.
     */
   @js.native
+  @Factory
   trait SendQuota extends js.Object {
     var Max24HourSend: js.UndefOr[Max24HourSend]
     var MaxSendRate: js.UndefOr[MaxSendRate]
     var SentLast24Hours: js.UndefOr[SentLast24Hours]
   }
 
-  object SendQuota {
-    @inline
-    def apply(
-        Max24HourSend: js.UndefOr[Max24HourSend] = js.undefined,
-        MaxSendRate: js.UndefOr[MaxSendRate] = js.undefined,
-        SentLast24Hours: js.UndefOr[SentLast24Hours] = js.undefined
-    ): SendQuota = {
-      val __obj = js.Dynamic.literal()
-      Max24HourSend.foreach(__v => __obj.updateDynamic("Max24HourSend")(__v.asInstanceOf[js.Any]))
-      MaxSendRate.foreach(__v => __obj.updateDynamic("MaxSendRate")(__v.asInstanceOf[js.Any]))
-      SentLast24Hours.foreach(__v => __obj.updateDynamic("SentLast24Hours")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SendQuota]
-    }
-  }
-
   /**
     * Used to enable or disable email sending for messages that use this configuration set in the current AWS Region.
     */
   @js.native
+  @Factory
   trait SendingOptions extends js.Object {
     var SendingEnabled: js.UndefOr[Enabled]
-  }
-
-  object SendingOptions {
-    @inline
-    def apply(
-        SendingEnabled: js.UndefOr[Enabled] = js.undefined
-    ): SendingOptions = {
-      val __obj = js.Dynamic.literal()
-      SendingEnabled.foreach(__v => __obj.updateDynamic("SendingEnabled")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SendingOptions]
-    }
   }
 
   /**
     * An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.
     */
   @js.native
+  @Factory
   trait SnsDestination extends js.Object {
     var TopicArn: AmazonResourceName
-  }
-
-  object SnsDestination {
-    @inline
-    def apply(
-        TopicArn: AmazonResourceName
-    ): SnsDestination = {
-      val __obj = js.Dynamic.literal(
-        "TopicArn" -> TopicArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SnsDestination]
-    }
   }
 
   /**
     * An object that contains information about an email address that is on the suppression list for your account.
     */
   @js.native
+  @Factory
   trait SuppressedDestination extends js.Object {
     var EmailAddress: EmailAddress
     var LastUpdateTime: Timestamp
@@ -3414,91 +1739,34 @@ package sesv2 {
     var Attributes: js.UndefOr[SuppressedDestinationAttributes]
   }
 
-  object SuppressedDestination {
-    @inline
-    def apply(
-        EmailAddress: EmailAddress,
-        LastUpdateTime: Timestamp,
-        Reason: SuppressionListReason,
-        Attributes: js.UndefOr[SuppressedDestinationAttributes] = js.undefined
-    ): SuppressedDestination = {
-      val __obj = js.Dynamic.literal(
-        "EmailAddress"   -> EmailAddress.asInstanceOf[js.Any],
-        "LastUpdateTime" -> LastUpdateTime.asInstanceOf[js.Any],
-        "Reason"         -> Reason.asInstanceOf[js.Any]
-      )
-
-      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SuppressedDestination]
-    }
-  }
-
   /**
     * An object that contains additional attributes that are related an email address that is on the suppression list for your account.
     */
   @js.native
+  @Factory
   trait SuppressedDestinationAttributes extends js.Object {
     var FeedbackId: js.UndefOr[FeedbackId]
     var MessageId: js.UndefOr[OutboundMessageId]
-  }
-
-  object SuppressedDestinationAttributes {
-    @inline
-    def apply(
-        FeedbackId: js.UndefOr[FeedbackId] = js.undefined,
-        MessageId: js.UndefOr[OutboundMessageId] = js.undefined
-    ): SuppressedDestinationAttributes = {
-      val __obj = js.Dynamic.literal()
-      FeedbackId.foreach(__v => __obj.updateDynamic("FeedbackId")(__v.asInstanceOf[js.Any]))
-      MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SuppressedDestinationAttributes]
-    }
   }
 
   /**
     * A summary that describes the suppressed email address.
     */
   @js.native
+  @Factory
   trait SuppressedDestinationSummary extends js.Object {
     var EmailAddress: EmailAddress
     var LastUpdateTime: Timestamp
     var Reason: SuppressionListReason
   }
 
-  object SuppressedDestinationSummary {
-    @inline
-    def apply(
-        EmailAddress: EmailAddress,
-        LastUpdateTime: Timestamp,
-        Reason: SuppressionListReason
-    ): SuppressedDestinationSummary = {
-      val __obj = js.Dynamic.literal(
-        "EmailAddress"   -> EmailAddress.asInstanceOf[js.Any],
-        "LastUpdateTime" -> LastUpdateTime.asInstanceOf[js.Any],
-        "Reason"         -> Reason.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[SuppressedDestinationSummary]
-    }
-  }
-
   /**
     * An object that contains information about the email address suppression preferences for your account in the current AWS Region.
     */
   @js.native
+  @Factory
   trait SuppressionAttributes extends js.Object {
     var SuppressedReasons: js.UndefOr[SuppressionListReasons]
-  }
-
-  object SuppressionAttributes {
-    @inline
-    def apply(
-        SuppressedReasons: js.UndefOr[SuppressionListReasons] = js.undefined
-    ): SuppressionAttributes = {
-      val __obj = js.Dynamic.literal()
-      SuppressedReasons.foreach(__v => __obj.updateDynamic("SuppressedReasons")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SuppressionAttributes]
-    }
   }
 
   /**
@@ -3519,19 +1787,9 @@ package sesv2 {
     * An object that contains information about the suppression list preferences for your account.
     */
   @js.native
+  @Factory
   trait SuppressionOptions extends js.Object {
     var SuppressedReasons: js.UndefOr[SuppressionListReasons]
-  }
-
-  object SuppressionOptions {
-    @inline
-    def apply(
-        SuppressedReasons: js.UndefOr[SuppressionListReasons] = js.undefined
-    ): SuppressionOptions = {
-      val __obj = js.Dynamic.literal()
-      SuppressedReasons.foreach(__v => __obj.updateDynamic("SuppressedReasons")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SuppressionOptions]
-    }
   }
 
   /**
@@ -3543,80 +1801,31 @@ package sesv2 {
     *  * You can associate tags with public or shared resources, but the tags are available only for your AWS account, not any other accounts that share the resource. In addition, the tags are available only for resources that are located in the specified AWS Region for your AWS account.
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var Key: TagKey
     var Value: TagValue
   }
 
-  object Tag {
-    @inline
-    def apply(
-        Key: TagKey,
-        Value: TagValue
-    ): Tag = {
-      val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Tag]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceRequest extends js.Object {
     var ResourceArn: AmazonResourceName
     var Tags: TagList
   }
 
-  object TagResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: AmazonResourceName,
-        Tags: TagList
-    ): TagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceResponse extends js.Object {}
-
-  object TagResourceResponse {
-    @inline
-    def apply(
-    ): TagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[TagResourceResponse]
-    }
-  }
 
   /**
     * An object that defines the email template to use for an email message, and the values to use for any message variables in that template. An <i>email template</i> is a type of message template that contains content that you want to define, save, and reuse in email messages that you send.
     */
   @js.native
+  @Factory
   trait Template extends js.Object {
     var TemplateArn: js.UndefOr[TemplateArn]
     var TemplateData: js.UndefOr[TemplateData]
-  }
-
-  object Template {
-    @inline
-    def apply(
-        TemplateArn: js.UndefOr[TemplateArn] = js.undefined,
-        TemplateData: js.UndefOr[TemplateData] = js.undefined
-    ): Template = {
-      val __obj = js.Dynamic.literal()
-      TemplateArn.foreach(__v => __obj.updateDynamic("TemplateArn")(__v.asInstanceOf[js.Any]))
-      TemplateData.foreach(__v => __obj.updateDynamic("TemplateData")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Template]
-    }
   }
 
   /**
@@ -3636,126 +1845,50 @@ package sesv2 {
     *  These images and links include references to a domain operated by AWS. You can optionally configure the Amazon SES to use a domain that you operate for these images and links.
     */
   @js.native
+  @Factory
   trait TrackingOptions extends js.Object {
     var CustomRedirectDomain: CustomRedirectDomain
   }
 
-  object TrackingOptions {
-    @inline
-    def apply(
-        CustomRedirectDomain: CustomRedirectDomain
-    ): TrackingOptions = {
-      val __obj = js.Dynamic.literal(
-        "CustomRedirectDomain" -> CustomRedirectDomain.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TrackingOptions]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceRequest extends js.Object {
     var ResourceArn: AmazonResourceName
     var TagKeys: TagKeyList
   }
 
-  object UntagResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: AmazonResourceName,
-        TagKeys: TagKeyList
-    ): UntagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceResponse extends js.Object {}
-
-  object UntagResourceResponse {
-    @inline
-    def apply(
-    ): UntagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UntagResourceResponse]
-    }
-  }
 
   /**
     * A request to change the settings for an event destination for a configuration set.
     */
   @js.native
+  @Factory
   trait UpdateConfigurationSetEventDestinationRequest extends js.Object {
     var ConfigurationSetName: ConfigurationSetName
     var EventDestination: EventDestinationDefinition
     var EventDestinationName: EventDestinationName
   }
 
-  object UpdateConfigurationSetEventDestinationRequest {
-    @inline
-    def apply(
-        ConfigurationSetName: ConfigurationSetName,
-        EventDestination: EventDestinationDefinition,
-        EventDestinationName: EventDestinationName
-    ): UpdateConfigurationSetEventDestinationRequest = {
-      val __obj = js.Dynamic.literal(
-        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
-        "EventDestination"     -> EventDestination.asInstanceOf[js.Any],
-        "EventDestinationName" -> EventDestinationName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateConfigurationSetEventDestinationRequest]
-    }
-  }
-
   /**
     * An HTTP 200 response if the request succeeds, or an error message if the request fails.
     */
   @js.native
+  @Factory
   trait UpdateConfigurationSetEventDestinationResponse extends js.Object {}
-
-  object UpdateConfigurationSetEventDestinationResponse {
-    @inline
-    def apply(
-    ): UpdateConfigurationSetEventDestinationResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateConfigurationSetEventDestinationResponse]
-    }
-  }
 
   /**
     * An object that contains information about the amount of email that was delivered to recipients.
     */
   @js.native
+  @Factory
   trait VolumeStatistics extends js.Object {
     var InboxRawCount: js.UndefOr[Volume]
     var ProjectedInbox: js.UndefOr[Volume]
     var ProjectedSpam: js.UndefOr[Volume]
     var SpamRawCount: js.UndefOr[Volume]
-  }
-
-  object VolumeStatistics {
-    @inline
-    def apply(
-        InboxRawCount: js.UndefOr[Volume] = js.undefined,
-        ProjectedInbox: js.UndefOr[Volume] = js.undefined,
-        ProjectedSpam: js.UndefOr[Volume] = js.undefined,
-        SpamRawCount: js.UndefOr[Volume] = js.undefined
-    ): VolumeStatistics = {
-      val __obj = js.Dynamic.literal()
-      InboxRawCount.foreach(__v => __obj.updateDynamic("InboxRawCount")(__v.asInstanceOf[js.Any]))
-      ProjectedInbox.foreach(__v => __obj.updateDynamic("ProjectedInbox")(__v.asInstanceOf[js.Any]))
-      ProjectedSpam.foreach(__v => __obj.updateDynamic("ProjectedSpam")(__v.asInstanceOf[js.Any]))
-      SpamRawCount.foreach(__v => __obj.updateDynamic("SpamRawCount")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VolumeStatistics]
-    }
   }
 
   /**

@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object rekognition {
   type Assets                                         = js.Array[Asset]
@@ -257,41 +258,19 @@ package rekognition {
     *  Amazon Rekognition estimates an age range for faces detected in the input image. Estimated age ranges can overlap. A face of a 5-year-old might have an estimated range of 4-6, while the face of a 6-year-old might have an estimated range of 4-8.
     */
   @js.native
+  @Factory
   trait AgeRange extends js.Object {
     var High: js.UndefOr[UInteger]
     var Low: js.UndefOr[UInteger]
-  }
-
-  object AgeRange {
-    @inline
-    def apply(
-        High: js.UndefOr[UInteger] = js.undefined,
-        Low: js.UndefOr[UInteger] = js.undefined
-    ): AgeRange = {
-      val __obj = js.Dynamic.literal()
-      High.foreach(__v => __obj.updateDynamic("High")(__v.asInstanceOf[js.Any]))
-      Low.foreach(__v => __obj.updateDynamic("Low")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AgeRange]
-    }
   }
 
   /**
     * Assets are the images that you use to train and evaluate a model version. Assets are referenced by Sagemaker GroundTruth manifest files.
     */
   @js.native
+  @Factory
   trait Asset extends js.Object {
     var GroundTruthManifest: js.UndefOr[GroundTruthManifest]
-  }
-
-  object Asset {
-    @inline
-    def apply(
-        GroundTruthManifest: js.UndefOr[GroundTruthManifest] = js.undefined
-    ): Asset = {
-      val __obj = js.Dynamic.literal()
-      GroundTruthManifest.foreach(__v => __obj.updateDynamic("GroundTruthManifest")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Asset]
-    }
   }
 
   @js.native
@@ -307,22 +286,10 @@ package rekognition {
     * Indicates whether or not the face has a beard, and the confidence level in the determination.
     */
   @js.native
+  @Factory
   trait Beard extends js.Object {
     var Confidence: js.UndefOr[Percent]
     var Value: js.UndefOr[Boolean]
-  }
-
-  object Beard {
-    @inline
-    def apply(
-        Confidence: js.UndefOr[Percent] = js.undefined,
-        Value: js.UndefOr[Boolean] = js.undefined
-    ): Beard = {
-      val __obj = js.Dynamic.literal()
-      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Beard]
-    }
   }
 
   /**
@@ -333,6 +300,7 @@ package rekognition {
     * '''Note:'''The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values.
     */
   @js.native
+  @Factory
   trait BoundingBox extends js.Object {
     var Height: js.UndefOr[Float]
     var Left: js.UndefOr[Float]
@@ -340,27 +308,11 @@ package rekognition {
     var Width: js.UndefOr[Float]
   }
 
-  object BoundingBox {
-    @inline
-    def apply(
-        Height: js.UndefOr[Float] = js.undefined,
-        Left: js.UndefOr[Float] = js.undefined,
-        Top: js.UndefOr[Float] = js.undefined,
-        Width: js.UndefOr[Float] = js.undefined
-    ): BoundingBox = {
-      val __obj = js.Dynamic.literal()
-      Height.foreach(__v => __obj.updateDynamic("Height")(__v.asInstanceOf[js.Any]))
-      Left.foreach(__v => __obj.updateDynamic("Left")(__v.asInstanceOf[js.Any]))
-      Top.foreach(__v => __obj.updateDynamic("Top")(__v.asInstanceOf[js.Any]))
-      Width.foreach(__v => __obj.updateDynamic("Width")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BoundingBox]
-    }
-  }
-
   /**
     * Provides information about a celebrity recognized by the <a>RecognizeCelebrities</a> operation.
     */
   @js.native
+  @Factory
   trait Celebrity extends js.Object {
     var Face: js.UndefOr[ComparedFace]
     var Id: js.UndefOr[RekognitionUniqueId]
@@ -369,29 +321,11 @@ package rekognition {
     var Urls: js.UndefOr[Urls]
   }
 
-  object Celebrity {
-    @inline
-    def apply(
-        Face: js.UndefOr[ComparedFace] = js.undefined,
-        Id: js.UndefOr[RekognitionUniqueId] = js.undefined,
-        MatchConfidence: js.UndefOr[Percent] = js.undefined,
-        Name: js.UndefOr[String] = js.undefined,
-        Urls: js.UndefOr[Urls] = js.undefined
-    ): Celebrity = {
-      val __obj = js.Dynamic.literal()
-      Face.foreach(__v => __obj.updateDynamic("Face")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      MatchConfidence.foreach(__v => __obj.updateDynamic("MatchConfidence")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Urls.foreach(__v => __obj.updateDynamic("Urls")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Celebrity]
-    }
-  }
-
   /**
     * Information about a recognized celebrity.
     */
   @js.native
+  @Factory
   trait CelebrityDetail extends js.Object {
     var BoundingBox: js.UndefOr[BoundingBox]
     var Confidence: js.UndefOr[Percent]
@@ -401,47 +335,14 @@ package rekognition {
     var Urls: js.UndefOr[Urls]
   }
 
-  object CelebrityDetail {
-    @inline
-    def apply(
-        BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
-        Confidence: js.UndefOr[Percent] = js.undefined,
-        Face: js.UndefOr[FaceDetail] = js.undefined,
-        Id: js.UndefOr[RekognitionUniqueId] = js.undefined,
-        Name: js.UndefOr[String] = js.undefined,
-        Urls: js.UndefOr[Urls] = js.undefined
-    ): CelebrityDetail = {
-      val __obj = js.Dynamic.literal()
-      BoundingBox.foreach(__v => __obj.updateDynamic("BoundingBox")(__v.asInstanceOf[js.Any]))
-      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
-      Face.foreach(__v => __obj.updateDynamic("Face")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Urls.foreach(__v => __obj.updateDynamic("Urls")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CelebrityDetail]
-    }
-  }
-
   /**
     * Information about a detected celebrity and the time the celebrity was detected in a stored video. For more information, see GetCelebrityRecognition in the Amazon Rekognition Developer Guide.
     */
   @js.native
+  @Factory
   trait CelebrityRecognition extends js.Object {
     var Celebrity: js.UndefOr[CelebrityDetail]
     var Timestamp: js.UndefOr[Timestamp]
-  }
-
-  object CelebrityRecognition {
-    @inline
-    def apply(
-        Celebrity: js.UndefOr[CelebrityDetail] = js.undefined,
-        Timestamp: js.UndefOr[Timestamp] = js.undefined
-    ): CelebrityRecognition = {
-      val __obj = js.Dynamic.literal()
-      Celebrity.foreach(__v => __obj.updateDynamic("Celebrity")(__v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CelebrityRecognition]
-    }
   }
 
   @js.native
@@ -457,25 +358,14 @@ package rekognition {
     * Provides information about a face in a target image that matches the source image face analyzed by <code>CompareFaces</code>. The <code>Face</code> property contains the bounding box of the face in the target image. The <code>Similarity</code> property is the confidence that the source image face matches the face in the bounding box.
     */
   @js.native
+  @Factory
   trait CompareFacesMatch extends js.Object {
     var Face: js.UndefOr[ComparedFace]
     var Similarity: js.UndefOr[Percent]
   }
 
-  object CompareFacesMatch {
-    @inline
-    def apply(
-        Face: js.UndefOr[ComparedFace] = js.undefined,
-        Similarity: js.UndefOr[Percent] = js.undefined
-    ): CompareFacesMatch = {
-      val __obj = js.Dynamic.literal()
-      Face.foreach(__v => __obj.updateDynamic("Face")(__v.asInstanceOf[js.Any]))
-      Similarity.foreach(__v => __obj.updateDynamic("Similarity")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CompareFacesMatch]
-    }
-  }
-
   @js.native
+  @Factory
   trait CompareFacesRequest extends js.Object {
     var SourceImage: Image
     var TargetImage: Image
@@ -483,26 +373,8 @@ package rekognition {
     var SimilarityThreshold: js.UndefOr[Percent]
   }
 
-  object CompareFacesRequest {
-    @inline
-    def apply(
-        SourceImage: Image,
-        TargetImage: Image,
-        QualityFilter: js.UndefOr[QualityFilter] = js.undefined,
-        SimilarityThreshold: js.UndefOr[Percent] = js.undefined
-    ): CompareFacesRequest = {
-      val __obj = js.Dynamic.literal(
-        "SourceImage" -> SourceImage.asInstanceOf[js.Any],
-        "TargetImage" -> TargetImage.asInstanceOf[js.Any]
-      )
-
-      QualityFilter.foreach(__v => __obj.updateDynamic("QualityFilter")(__v.asInstanceOf[js.Any]))
-      SimilarityThreshold.foreach(__v => __obj.updateDynamic("SimilarityThreshold")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CompareFacesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CompareFacesResponse extends js.Object {
     var FaceMatches: js.UndefOr[CompareFacesMatchList]
     var SourceImageFace: js.UndefOr[ComparedSourceImageFace]
@@ -511,33 +383,11 @@ package rekognition {
     var UnmatchedFaces: js.UndefOr[CompareFacesUnmatchList]
   }
 
-  object CompareFacesResponse {
-    @inline
-    def apply(
-        FaceMatches: js.UndefOr[CompareFacesMatchList] = js.undefined,
-        SourceImageFace: js.UndefOr[ComparedSourceImageFace] = js.undefined,
-        SourceImageOrientationCorrection: js.UndefOr[OrientationCorrection] = js.undefined,
-        TargetImageOrientationCorrection: js.UndefOr[OrientationCorrection] = js.undefined,
-        UnmatchedFaces: js.UndefOr[CompareFacesUnmatchList] = js.undefined
-    ): CompareFacesResponse = {
-      val __obj = js.Dynamic.literal()
-      FaceMatches.foreach(__v => __obj.updateDynamic("FaceMatches")(__v.asInstanceOf[js.Any]))
-      SourceImageFace.foreach(__v => __obj.updateDynamic("SourceImageFace")(__v.asInstanceOf[js.Any]))
-      SourceImageOrientationCorrection.foreach(__v =>
-        __obj.updateDynamic("SourceImageOrientationCorrection")(__v.asInstanceOf[js.Any])
-      )
-      TargetImageOrientationCorrection.foreach(__v =>
-        __obj.updateDynamic("TargetImageOrientationCorrection")(__v.asInstanceOf[js.Any])
-      )
-      UnmatchedFaces.foreach(__v => __obj.updateDynamic("UnmatchedFaces")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CompareFacesResponse]
-    }
-  }
-
   /**
     * Provides face metadata for target image faces that are analyzed by <code>CompareFaces</code> and <code>RecognizeCelebrities</code>.
     */
   @js.native
+  @Factory
   trait ComparedFace extends js.Object {
     var BoundingBox: js.UndefOr[BoundingBox]
     var Confidence: js.UndefOr[Percent]
@@ -546,45 +396,14 @@ package rekognition {
     var Quality: js.UndefOr[ImageQuality]
   }
 
-  object ComparedFace {
-    @inline
-    def apply(
-        BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
-        Confidence: js.UndefOr[Percent] = js.undefined,
-        Landmarks: js.UndefOr[Landmarks] = js.undefined,
-        Pose: js.UndefOr[Pose] = js.undefined,
-        Quality: js.UndefOr[ImageQuality] = js.undefined
-    ): ComparedFace = {
-      val __obj = js.Dynamic.literal()
-      BoundingBox.foreach(__v => __obj.updateDynamic("BoundingBox")(__v.asInstanceOf[js.Any]))
-      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
-      Landmarks.foreach(__v => __obj.updateDynamic("Landmarks")(__v.asInstanceOf[js.Any]))
-      Pose.foreach(__v => __obj.updateDynamic("Pose")(__v.asInstanceOf[js.Any]))
-      Quality.foreach(__v => __obj.updateDynamic("Quality")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ComparedFace]
-    }
-  }
-
   /**
     * Type that describes the face Amazon Rekognition chose to compare with the faces in the target. This contains a bounding box for the selected face and confidence level that the bounding box contains a face. Note that Amazon Rekognition selects the largest face in the source image for this comparison.
     */
   @js.native
+  @Factory
   trait ComparedSourceImageFace extends js.Object {
     var BoundingBox: js.UndefOr[BoundingBox]
     var Confidence: js.UndefOr[Percent]
-  }
-
-  object ComparedSourceImageFace {
-    @inline
-    def apply(
-        BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
-        Confidence: js.UndefOr[Percent] = js.undefined
-    ): ComparedSourceImageFace = {
-      val __obj = js.Dynamic.literal()
-      BoundingBox.foreach(__v => __obj.updateDynamic("BoundingBox")(__v.asInstanceOf[js.Any]))
-      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ComparedSourceImageFace]
-    }
   }
 
   @js.native
@@ -601,22 +420,10 @@ package rekognition {
     * Information about an unsafe content label detection in a stored video.
     */
   @js.native
+  @Factory
   trait ContentModerationDetection extends js.Object {
     var ModerationLabel: js.UndefOr[ModerationLabel]
     var Timestamp: js.UndefOr[Timestamp]
-  }
-
-  object ContentModerationDetection {
-    @inline
-    def apply(
-        ModerationLabel: js.UndefOr[ModerationLabel] = js.undefined,
-        Timestamp: js.UndefOr[Timestamp] = js.undefined
-    ): ContentModerationDetection = {
-      val __obj = js.Dynamic.literal()
-      ModerationLabel.foreach(__v => __obj.updateDynamic("ModerationLabel")(__v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ContentModerationDetection]
-    }
   }
 
   @js.native
@@ -629,80 +436,33 @@ package rekognition {
   }
 
   @js.native
+  @Factory
   trait CreateCollectionRequest extends js.Object {
     var CollectionId: CollectionId
   }
 
-  object CreateCollectionRequest {
-    @inline
-    def apply(
-        CollectionId: CollectionId
-    ): CreateCollectionRequest = {
-      val __obj = js.Dynamic.literal(
-        "CollectionId" -> CollectionId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateCollectionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateCollectionResponse extends js.Object {
     var CollectionArn: js.UndefOr[String]
     var FaceModelVersion: js.UndefOr[String]
     var StatusCode: js.UndefOr[UInteger]
   }
 
-  object CreateCollectionResponse {
-    @inline
-    def apply(
-        CollectionArn: js.UndefOr[String] = js.undefined,
-        FaceModelVersion: js.UndefOr[String] = js.undefined,
-        StatusCode: js.UndefOr[UInteger] = js.undefined
-    ): CreateCollectionResponse = {
-      val __obj = js.Dynamic.literal()
-      CollectionArn.foreach(__v => __obj.updateDynamic("CollectionArn")(__v.asInstanceOf[js.Any]))
-      FaceModelVersion.foreach(__v => __obj.updateDynamic("FaceModelVersion")(__v.asInstanceOf[js.Any]))
-      StatusCode.foreach(__v => __obj.updateDynamic("StatusCode")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateCollectionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateProjectRequest extends js.Object {
     var ProjectName: ProjectName
   }
 
-  object CreateProjectRequest {
-    @inline
-    def apply(
-        ProjectName: ProjectName
-    ): CreateProjectRequest = {
-      val __obj = js.Dynamic.literal(
-        "ProjectName" -> ProjectName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateProjectRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateProjectResponse extends js.Object {
     var ProjectArn: js.UndefOr[ProjectArn]
   }
 
-  object CreateProjectResponse {
-    @inline
-    def apply(
-        ProjectArn: js.UndefOr[ProjectArn] = js.undefined
-    ): CreateProjectResponse = {
-      val __obj = js.Dynamic.literal()
-      ProjectArn.foreach(__v => __obj.updateDynamic("ProjectArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateProjectResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateProjectVersionRequest extends js.Object {
     var OutputConfig: OutputConfig
     var ProjectArn: ProjectArn
@@ -711,44 +471,14 @@ package rekognition {
     var VersionName: VersionName
   }
 
-  object CreateProjectVersionRequest {
-    @inline
-    def apply(
-        OutputConfig: OutputConfig,
-        ProjectArn: ProjectArn,
-        TestingData: TestingData,
-        TrainingData: TrainingData,
-        VersionName: VersionName
-    ): CreateProjectVersionRequest = {
-      val __obj = js.Dynamic.literal(
-        "OutputConfig" -> OutputConfig.asInstanceOf[js.Any],
-        "ProjectArn"   -> ProjectArn.asInstanceOf[js.Any],
-        "TestingData"  -> TestingData.asInstanceOf[js.Any],
-        "TrainingData" -> TrainingData.asInstanceOf[js.Any],
-        "VersionName"  -> VersionName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateProjectVersionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateProjectVersionResponse extends js.Object {
     var ProjectVersionArn: js.UndefOr[ProjectVersionArn]
   }
 
-  object CreateProjectVersionResponse {
-    @inline
-    def apply(
-        ProjectVersionArn: js.UndefOr[ProjectVersionArn] = js.undefined
-    ): CreateProjectVersionResponse = {
-      val __obj = js.Dynamic.literal()
-      ProjectVersionArn.foreach(__v => __obj.updateDynamic("ProjectVersionArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateProjectVersionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateStreamProcessorRequest extends js.Object {
     var Input: StreamProcessorInput
     var Name: StreamProcessorName
@@ -757,189 +487,66 @@ package rekognition {
     var Settings: StreamProcessorSettings
   }
 
-  object CreateStreamProcessorRequest {
-    @inline
-    def apply(
-        Input: StreamProcessorInput,
-        Name: StreamProcessorName,
-        Output: StreamProcessorOutput,
-        RoleArn: RoleArn,
-        Settings: StreamProcessorSettings
-    ): CreateStreamProcessorRequest = {
-      val __obj = js.Dynamic.literal(
-        "Input"    -> Input.asInstanceOf[js.Any],
-        "Name"     -> Name.asInstanceOf[js.Any],
-        "Output"   -> Output.asInstanceOf[js.Any],
-        "RoleArn"  -> RoleArn.asInstanceOf[js.Any],
-        "Settings" -> Settings.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateStreamProcessorRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateStreamProcessorResponse extends js.Object {
     var StreamProcessorArn: js.UndefOr[StreamProcessorArn]
-  }
-
-  object CreateStreamProcessorResponse {
-    @inline
-    def apply(
-        StreamProcessorArn: js.UndefOr[StreamProcessorArn] = js.undefined
-    ): CreateStreamProcessorResponse = {
-      val __obj = js.Dynamic.literal()
-      StreamProcessorArn.foreach(__v => __obj.updateDynamic("StreamProcessorArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateStreamProcessorResponse]
-    }
   }
 
   /**
     * A custom label detected in an image by a call to <a>DetectCustomLabels</a>.
     */
   @js.native
+  @Factory
   trait CustomLabel extends js.Object {
     var Confidence: js.UndefOr[Percent]
     var Geometry: js.UndefOr[Geometry]
     var Name: js.UndefOr[String]
   }
 
-  object CustomLabel {
-    @inline
-    def apply(
-        Confidence: js.UndefOr[Percent] = js.undefined,
-        Geometry: js.UndefOr[Geometry] = js.undefined,
-        Name: js.UndefOr[String] = js.undefined
-    ): CustomLabel = {
-      val __obj = js.Dynamic.literal()
-      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
-      Geometry.foreach(__v => __obj.updateDynamic("Geometry")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CustomLabel]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteCollectionRequest extends js.Object {
     var CollectionId: CollectionId
   }
 
-  object DeleteCollectionRequest {
-    @inline
-    def apply(
-        CollectionId: CollectionId
-    ): DeleteCollectionRequest = {
-      val __obj = js.Dynamic.literal(
-        "CollectionId" -> CollectionId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteCollectionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteCollectionResponse extends js.Object {
     var StatusCode: js.UndefOr[UInteger]
   }
 
-  object DeleteCollectionResponse {
-    @inline
-    def apply(
-        StatusCode: js.UndefOr[UInteger] = js.undefined
-    ): DeleteCollectionResponse = {
-      val __obj = js.Dynamic.literal()
-      StatusCode.foreach(__v => __obj.updateDynamic("StatusCode")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteCollectionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteFacesRequest extends js.Object {
     var CollectionId: CollectionId
     var FaceIds: FaceIdList
   }
 
-  object DeleteFacesRequest {
-    @inline
-    def apply(
-        CollectionId: CollectionId,
-        FaceIds: FaceIdList
-    ): DeleteFacesRequest = {
-      val __obj = js.Dynamic.literal(
-        "CollectionId" -> CollectionId.asInstanceOf[js.Any],
-        "FaceIds"      -> FaceIds.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteFacesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteFacesResponse extends js.Object {
     var DeletedFaces: js.UndefOr[FaceIdList]
   }
 
-  object DeleteFacesResponse {
-    @inline
-    def apply(
-        DeletedFaces: js.UndefOr[FaceIdList] = js.undefined
-    ): DeleteFacesResponse = {
-      val __obj = js.Dynamic.literal()
-      DeletedFaces.foreach(__v => __obj.updateDynamic("DeletedFaces")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteFacesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteStreamProcessorRequest extends js.Object {
     var Name: StreamProcessorName
   }
 
-  object DeleteStreamProcessorRequest {
-    @inline
-    def apply(
-        Name: StreamProcessorName
-    ): DeleteStreamProcessorRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteStreamProcessorRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteStreamProcessorResponse extends js.Object {}
 
-  object DeleteStreamProcessorResponse {
-    @inline
-    def apply(
-    ): DeleteStreamProcessorResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteStreamProcessorResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeCollectionRequest extends js.Object {
     var CollectionId: CollectionId
   }
 
-  object DescribeCollectionRequest {
-    @inline
-    def apply(
-        CollectionId: CollectionId
-    ): DescribeCollectionRequest = {
-      val __obj = js.Dynamic.literal(
-        "CollectionId" -> CollectionId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeCollectionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeCollectionResponse extends js.Object {
     var CollectionARN: js.UndefOr[String]
     var CreationTimestamp: js.UndefOr[DateTime]
@@ -947,24 +554,8 @@ package rekognition {
     var FaceModelVersion: js.UndefOr[String]
   }
 
-  object DescribeCollectionResponse {
-    @inline
-    def apply(
-        CollectionARN: js.UndefOr[String] = js.undefined,
-        CreationTimestamp: js.UndefOr[DateTime] = js.undefined,
-        FaceCount: js.UndefOr[ULong] = js.undefined,
-        FaceModelVersion: js.UndefOr[String] = js.undefined
-    ): DescribeCollectionResponse = {
-      val __obj = js.Dynamic.literal()
-      CollectionARN.foreach(__v => __obj.updateDynamic("CollectionARN")(__v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
-      FaceCount.foreach(__v => __obj.updateDynamic("FaceCount")(__v.asInstanceOf[js.Any]))
-      FaceModelVersion.foreach(__v => __obj.updateDynamic("FaceModelVersion")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeCollectionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeProjectVersionsRequest extends js.Object {
     var ProjectArn: ProjectArn
     var MaxResults: js.UndefOr[ProjectVersionsPageSize]
@@ -972,103 +563,35 @@ package rekognition {
     var VersionNames: js.UndefOr[VersionNames]
   }
 
-  object DescribeProjectVersionsRequest {
-    @inline
-    def apply(
-        ProjectArn: ProjectArn,
-        MaxResults: js.UndefOr[ProjectVersionsPageSize] = js.undefined,
-        NextToken: js.UndefOr[ExtendedPaginationToken] = js.undefined,
-        VersionNames: js.UndefOr[VersionNames] = js.undefined
-    ): DescribeProjectVersionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "ProjectArn" -> ProjectArn.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      VersionNames.foreach(__v => __obj.updateDynamic("VersionNames")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeProjectVersionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeProjectVersionsResponse extends js.Object {
     var NextToken: js.UndefOr[ExtendedPaginationToken]
     var ProjectVersionDescriptions: js.UndefOr[ProjectVersionDescriptions]
   }
 
-  object DescribeProjectVersionsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[ExtendedPaginationToken] = js.undefined,
-        ProjectVersionDescriptions: js.UndefOr[ProjectVersionDescriptions] = js.undefined
-    ): DescribeProjectVersionsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ProjectVersionDescriptions.foreach(__v =>
-        __obj.updateDynamic("ProjectVersionDescriptions")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[DescribeProjectVersionsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeProjectsRequest extends js.Object {
     var MaxResults: js.UndefOr[ProjectsPageSize]
     var NextToken: js.UndefOr[ExtendedPaginationToken]
   }
 
-  object DescribeProjectsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[ProjectsPageSize] = js.undefined,
-        NextToken: js.UndefOr[ExtendedPaginationToken] = js.undefined
-    ): DescribeProjectsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeProjectsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeProjectsResponse extends js.Object {
     var NextToken: js.UndefOr[ExtendedPaginationToken]
     var ProjectDescriptions: js.UndefOr[ProjectDescriptions]
   }
 
-  object DescribeProjectsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[ExtendedPaginationToken] = js.undefined,
-        ProjectDescriptions: js.UndefOr[ProjectDescriptions] = js.undefined
-    ): DescribeProjectsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ProjectDescriptions.foreach(__v => __obj.updateDynamic("ProjectDescriptions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeProjectsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeStreamProcessorRequest extends js.Object {
     var Name: StreamProcessorName
   }
 
-  object DescribeStreamProcessorRequest {
-    @inline
-    def apply(
-        Name: StreamProcessorName
-    ): DescribeStreamProcessorRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeStreamProcessorRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeStreamProcessorResponse extends js.Object {
     var CreationTimestamp: js.UndefOr[DateTime]
     var Input: js.UndefOr[StreamProcessorInput]
@@ -1082,36 +605,8 @@ package rekognition {
     var StreamProcessorArn: js.UndefOr[StreamProcessorArn]
   }
 
-  object DescribeStreamProcessorResponse {
-    @inline
-    def apply(
-        CreationTimestamp: js.UndefOr[DateTime] = js.undefined,
-        Input: js.UndefOr[StreamProcessorInput] = js.undefined,
-        LastUpdateTimestamp: js.UndefOr[DateTime] = js.undefined,
-        Name: js.UndefOr[StreamProcessorName] = js.undefined,
-        Output: js.UndefOr[StreamProcessorOutput] = js.undefined,
-        RoleArn: js.UndefOr[RoleArn] = js.undefined,
-        Settings: js.UndefOr[StreamProcessorSettings] = js.undefined,
-        Status: js.UndefOr[StreamProcessorStatus] = js.undefined,
-        StatusMessage: js.UndefOr[String] = js.undefined,
-        StreamProcessorArn: js.UndefOr[StreamProcessorArn] = js.undefined
-    ): DescribeStreamProcessorResponse = {
-      val __obj = js.Dynamic.literal()
-      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
-      Input.foreach(__v => __obj.updateDynamic("Input")(__v.asInstanceOf[js.Any]))
-      LastUpdateTimestamp.foreach(__v => __obj.updateDynamic("LastUpdateTimestamp")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Output.foreach(__v => __obj.updateDynamic("Output")(__v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
-      Settings.foreach(__v => __obj.updateDynamic("Settings")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
-      StreamProcessorArn.foreach(__v => __obj.updateDynamic("StreamProcessorArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeStreamProcessorResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetectCustomLabelsRequest extends js.Object {
     var Image: Image
     var ProjectVersionArn: ProjectVersionArn
@@ -1119,282 +614,101 @@ package rekognition {
     var MinConfidence: js.UndefOr[Percent]
   }
 
-  object DetectCustomLabelsRequest {
-    @inline
-    def apply(
-        Image: Image,
-        ProjectVersionArn: ProjectVersionArn,
-        MaxResults: js.UndefOr[UInteger] = js.undefined,
-        MinConfidence: js.UndefOr[Percent] = js.undefined
-    ): DetectCustomLabelsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Image"             -> Image.asInstanceOf[js.Any],
-        "ProjectVersionArn" -> ProjectVersionArn.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      MinConfidence.foreach(__v => __obj.updateDynamic("MinConfidence")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DetectCustomLabelsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetectCustomLabelsResponse extends js.Object {
     var CustomLabels: js.UndefOr[CustomLabels]
   }
 
-  object DetectCustomLabelsResponse {
-    @inline
-    def apply(
-        CustomLabels: js.UndefOr[CustomLabels] = js.undefined
-    ): DetectCustomLabelsResponse = {
-      val __obj = js.Dynamic.literal()
-      CustomLabels.foreach(__v => __obj.updateDynamic("CustomLabels")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DetectCustomLabelsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetectFacesRequest extends js.Object {
     var Image: Image
     var Attributes: js.UndefOr[Attributes]
   }
 
-  object DetectFacesRequest {
-    @inline
-    def apply(
-        Image: Image,
-        Attributes: js.UndefOr[Attributes] = js.undefined
-    ): DetectFacesRequest = {
-      val __obj = js.Dynamic.literal(
-        "Image" -> Image.asInstanceOf[js.Any]
-      )
-
-      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DetectFacesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetectFacesResponse extends js.Object {
     var FaceDetails: js.UndefOr[FaceDetailList]
     var OrientationCorrection: js.UndefOr[OrientationCorrection]
   }
 
-  object DetectFacesResponse {
-    @inline
-    def apply(
-        FaceDetails: js.UndefOr[FaceDetailList] = js.undefined,
-        OrientationCorrection: js.UndefOr[OrientationCorrection] = js.undefined
-    ): DetectFacesResponse = {
-      val __obj = js.Dynamic.literal()
-      FaceDetails.foreach(__v => __obj.updateDynamic("FaceDetails")(__v.asInstanceOf[js.Any]))
-      OrientationCorrection.foreach(__v => __obj.updateDynamic("OrientationCorrection")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DetectFacesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetectLabelsRequest extends js.Object {
     var Image: Image
     var MaxLabels: js.UndefOr[UInteger]
     var MinConfidence: js.UndefOr[Percent]
   }
 
-  object DetectLabelsRequest {
-    @inline
-    def apply(
-        Image: Image,
-        MaxLabels: js.UndefOr[UInteger] = js.undefined,
-        MinConfidence: js.UndefOr[Percent] = js.undefined
-    ): DetectLabelsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Image" -> Image.asInstanceOf[js.Any]
-      )
-
-      MaxLabels.foreach(__v => __obj.updateDynamic("MaxLabels")(__v.asInstanceOf[js.Any]))
-      MinConfidence.foreach(__v => __obj.updateDynamic("MinConfidence")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DetectLabelsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetectLabelsResponse extends js.Object {
     var LabelModelVersion: js.UndefOr[String]
     var Labels: js.UndefOr[Labels]
     var OrientationCorrection: js.UndefOr[OrientationCorrection]
   }
 
-  object DetectLabelsResponse {
-    @inline
-    def apply(
-        LabelModelVersion: js.UndefOr[String] = js.undefined,
-        Labels: js.UndefOr[Labels] = js.undefined,
-        OrientationCorrection: js.UndefOr[OrientationCorrection] = js.undefined
-    ): DetectLabelsResponse = {
-      val __obj = js.Dynamic.literal()
-      LabelModelVersion.foreach(__v => __obj.updateDynamic("LabelModelVersion")(__v.asInstanceOf[js.Any]))
-      Labels.foreach(__v => __obj.updateDynamic("Labels")(__v.asInstanceOf[js.Any]))
-      OrientationCorrection.foreach(__v => __obj.updateDynamic("OrientationCorrection")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DetectLabelsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetectModerationLabelsRequest extends js.Object {
     var Image: Image
     var HumanLoopConfig: js.UndefOr[HumanLoopConfig]
     var MinConfidence: js.UndefOr[Percent]
   }
 
-  object DetectModerationLabelsRequest {
-    @inline
-    def apply(
-        Image: Image,
-        HumanLoopConfig: js.UndefOr[HumanLoopConfig] = js.undefined,
-        MinConfidence: js.UndefOr[Percent] = js.undefined
-    ): DetectModerationLabelsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Image" -> Image.asInstanceOf[js.Any]
-      )
-
-      HumanLoopConfig.foreach(__v => __obj.updateDynamic("HumanLoopConfig")(__v.asInstanceOf[js.Any]))
-      MinConfidence.foreach(__v => __obj.updateDynamic("MinConfidence")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DetectModerationLabelsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetectModerationLabelsResponse extends js.Object {
     var HumanLoopActivationOutput: js.UndefOr[HumanLoopActivationOutput]
     var ModerationLabels: js.UndefOr[ModerationLabels]
     var ModerationModelVersion: js.UndefOr[String]
   }
 
-  object DetectModerationLabelsResponse {
-    @inline
-    def apply(
-        HumanLoopActivationOutput: js.UndefOr[HumanLoopActivationOutput] = js.undefined,
-        ModerationLabels: js.UndefOr[ModerationLabels] = js.undefined,
-        ModerationModelVersion: js.UndefOr[String] = js.undefined
-    ): DetectModerationLabelsResponse = {
-      val __obj = js.Dynamic.literal()
-      HumanLoopActivationOutput.foreach(__v =>
-        __obj.updateDynamic("HumanLoopActivationOutput")(__v.asInstanceOf[js.Any])
-      )
-      ModerationLabels.foreach(__v => __obj.updateDynamic("ModerationLabels")(__v.asInstanceOf[js.Any]))
-      ModerationModelVersion.foreach(__v => __obj.updateDynamic("ModerationModelVersion")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DetectModerationLabelsResponse]
-    }
-  }
-
   /**
     * A set of optional parameters that you can use to set the criteria that the text must meet to be included in your response. <code>WordFilter</code> looks at a word’s height, width, and minimum confidence. <code>RegionOfInterest</code> lets you set a specific region of the image to look for text in.
     */
   @js.native
+  @Factory
   trait DetectTextFilters extends js.Object {
     var RegionsOfInterest: js.UndefOr[RegionsOfInterest]
     var WordFilter: js.UndefOr[DetectionFilter]
   }
 
-  object DetectTextFilters {
-    @inline
-    def apply(
-        RegionsOfInterest: js.UndefOr[RegionsOfInterest] = js.undefined,
-        WordFilter: js.UndefOr[DetectionFilter] = js.undefined
-    ): DetectTextFilters = {
-      val __obj = js.Dynamic.literal()
-      RegionsOfInterest.foreach(__v => __obj.updateDynamic("RegionsOfInterest")(__v.asInstanceOf[js.Any]))
-      WordFilter.foreach(__v => __obj.updateDynamic("WordFilter")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DetectTextFilters]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetectTextRequest extends js.Object {
     var Image: Image
     var Filters: js.UndefOr[DetectTextFilters]
   }
 
-  object DetectTextRequest {
-    @inline
-    def apply(
-        Image: Image,
-        Filters: js.UndefOr[DetectTextFilters] = js.undefined
-    ): DetectTextRequest = {
-      val __obj = js.Dynamic.literal(
-        "Image" -> Image.asInstanceOf[js.Any]
-      )
-
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DetectTextRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetectTextResponse extends js.Object {
     var TextDetections: js.UndefOr[TextDetectionList]
     var TextModelVersion: js.UndefOr[String]
-  }
-
-  object DetectTextResponse {
-    @inline
-    def apply(
-        TextDetections: js.UndefOr[TextDetectionList] = js.undefined,
-        TextModelVersion: js.UndefOr[String] = js.undefined
-    ): DetectTextResponse = {
-      val __obj = js.Dynamic.literal()
-      TextDetections.foreach(__v => __obj.updateDynamic("TextDetections")(__v.asInstanceOf[js.Any]))
-      TextModelVersion.foreach(__v => __obj.updateDynamic("TextModelVersion")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DetectTextResponse]
-    }
   }
 
   /**
     * A set of parameters that allow you to filter out certain results from your returned results.
     */
   @js.native
+  @Factory
   trait DetectionFilter extends js.Object {
     var MinBoundingBoxHeight: js.UndefOr[BoundingBoxHeight]
     var MinBoundingBoxWidth: js.UndefOr[BoundingBoxWidth]
     var MinConfidence: js.UndefOr[Percent]
   }
 
-  object DetectionFilter {
-    @inline
-    def apply(
-        MinBoundingBoxHeight: js.UndefOr[BoundingBoxHeight] = js.undefined,
-        MinBoundingBoxWidth: js.UndefOr[BoundingBoxWidth] = js.undefined,
-        MinConfidence: js.UndefOr[Percent] = js.undefined
-    ): DetectionFilter = {
-      val __obj = js.Dynamic.literal()
-      MinBoundingBoxHeight.foreach(__v => __obj.updateDynamic("MinBoundingBoxHeight")(__v.asInstanceOf[js.Any]))
-      MinBoundingBoxWidth.foreach(__v => __obj.updateDynamic("MinBoundingBoxWidth")(__v.asInstanceOf[js.Any]))
-      MinConfidence.foreach(__v => __obj.updateDynamic("MinConfidence")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DetectionFilter]
-    }
-  }
-
   /**
     * The emotions that appear to be expressed on the face, and the confidence level in the determination. The API is only making a determination of the physical appearance of a person's face. It is not a determination of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have a sad face might not be sad emotionally.
     */
   @js.native
+  @Factory
   trait Emotion extends js.Object {
     var Confidence: js.UndefOr[Percent]
     var Type: js.UndefOr[EmotionName]
-  }
-
-  object Emotion {
-    @inline
-    def apply(
-        Confidence: js.UndefOr[Percent] = js.undefined,
-        Type: js.UndefOr[EmotionName] = js.undefined
-    ): Emotion = {
-      val __obj = js.Dynamic.literal()
-      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Emotion]
-    }
   }
 
   @js.native
@@ -1417,97 +731,43 @@ package rekognition {
     * The evaluation results for the training of a model.
     */
   @js.native
+  @Factory
   trait EvaluationResult extends js.Object {
     var F1Score: js.UndefOr[Float]
     var Summary: js.UndefOr[Summary]
-  }
-
-  object EvaluationResult {
-    @inline
-    def apply(
-        F1Score: js.UndefOr[Float] = js.undefined,
-        Summary: js.UndefOr[Summary] = js.undefined
-    ): EvaluationResult = {
-      val __obj = js.Dynamic.literal()
-      F1Score.foreach(__v => __obj.updateDynamic("F1Score")(__v.asInstanceOf[js.Any]))
-      Summary.foreach(__v => __obj.updateDynamic("Summary")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EvaluationResult]
-    }
   }
 
   /**
     * Indicates whether or not the eyes on the face are open, and the confidence level in the determination.
     */
   @js.native
+  @Factory
   trait EyeOpen extends js.Object {
     var Confidence: js.UndefOr[Percent]
     var Value: js.UndefOr[Boolean]
-  }
-
-  object EyeOpen {
-    @inline
-    def apply(
-        Confidence: js.UndefOr[Percent] = js.undefined,
-        Value: js.UndefOr[Boolean] = js.undefined
-    ): EyeOpen = {
-      val __obj = js.Dynamic.literal()
-      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EyeOpen]
-    }
   }
 
   /**
     * Indicates whether or not the face is wearing eye glasses, and the confidence level in the determination.
     */
   @js.native
+  @Factory
   trait Eyeglasses extends js.Object {
     var Confidence: js.UndefOr[Percent]
     var Value: js.UndefOr[Boolean]
-  }
-
-  object Eyeglasses {
-    @inline
-    def apply(
-        Confidence: js.UndefOr[Percent] = js.undefined,
-        Value: js.UndefOr[Boolean] = js.undefined
-    ): Eyeglasses = {
-      val __obj = js.Dynamic.literal()
-      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Eyeglasses]
-    }
   }
 
   /**
     * Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned.
     */
   @js.native
+  @Factory
   trait Face extends js.Object {
     var BoundingBox: js.UndefOr[BoundingBox]
     var Confidence: js.UndefOr[Percent]
     var ExternalImageId: js.UndefOr[ExternalImageId]
     var FaceId: js.UndefOr[FaceId]
     var ImageId: js.UndefOr[ImageId]
-  }
-
-  object Face {
-    @inline
-    def apply(
-        BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
-        Confidence: js.UndefOr[Percent] = js.undefined,
-        ExternalImageId: js.UndefOr[ExternalImageId] = js.undefined,
-        FaceId: js.UndefOr[FaceId] = js.undefined,
-        ImageId: js.UndefOr[ImageId] = js.undefined
-    ): Face = {
-      val __obj = js.Dynamic.literal()
-      BoundingBox.foreach(__v => __obj.updateDynamic("BoundingBox")(__v.asInstanceOf[js.Any]))
-      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
-      ExternalImageId.foreach(__v => __obj.updateDynamic("ExternalImageId")(__v.asInstanceOf[js.Any]))
-      FaceId.foreach(__v => __obj.updateDynamic("FaceId")(__v.asInstanceOf[js.Any]))
-      ImageId.foreach(__v => __obj.updateDynamic("ImageId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Face]
-    }
   }
 
   @js.native
@@ -1529,6 +789,7 @@ package rekognition {
     * The Amazon Rekognition Image <a>DetectFaces</a> and <a>IndexFaces</a> operations can return all facial attributes. To specify which attributes to return, use the <code>Attributes</code> input parameter for <code>DetectFaces</code>. For <code>IndexFaces</code>, use the <code>DetectAttributes</code> input parameter.
     */
   @js.native
+  @Factory
   trait FaceDetail extends js.Object {
     var AgeRange: js.UndefOr[AgeRange]
     var Beard: js.UndefOr[Beard]
@@ -1547,131 +808,44 @@ package rekognition {
     var Sunglasses: js.UndefOr[Sunglasses]
   }
 
-  object FaceDetail {
-    @inline
-    def apply(
-        AgeRange: js.UndefOr[AgeRange] = js.undefined,
-        Beard: js.UndefOr[Beard] = js.undefined,
-        BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
-        Confidence: js.UndefOr[Percent] = js.undefined,
-        Emotions: js.UndefOr[Emotions] = js.undefined,
-        Eyeglasses: js.UndefOr[Eyeglasses] = js.undefined,
-        EyesOpen: js.UndefOr[EyeOpen] = js.undefined,
-        Gender: js.UndefOr[Gender] = js.undefined,
-        Landmarks: js.UndefOr[Landmarks] = js.undefined,
-        MouthOpen: js.UndefOr[MouthOpen] = js.undefined,
-        Mustache: js.UndefOr[Mustache] = js.undefined,
-        Pose: js.UndefOr[Pose] = js.undefined,
-        Quality: js.UndefOr[ImageQuality] = js.undefined,
-        Smile: js.UndefOr[Smile] = js.undefined,
-        Sunglasses: js.UndefOr[Sunglasses] = js.undefined
-    ): FaceDetail = {
-      val __obj = js.Dynamic.literal()
-      AgeRange.foreach(__v => __obj.updateDynamic("AgeRange")(__v.asInstanceOf[js.Any]))
-      Beard.foreach(__v => __obj.updateDynamic("Beard")(__v.asInstanceOf[js.Any]))
-      BoundingBox.foreach(__v => __obj.updateDynamic("BoundingBox")(__v.asInstanceOf[js.Any]))
-      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
-      Emotions.foreach(__v => __obj.updateDynamic("Emotions")(__v.asInstanceOf[js.Any]))
-      Eyeglasses.foreach(__v => __obj.updateDynamic("Eyeglasses")(__v.asInstanceOf[js.Any]))
-      EyesOpen.foreach(__v => __obj.updateDynamic("EyesOpen")(__v.asInstanceOf[js.Any]))
-      Gender.foreach(__v => __obj.updateDynamic("Gender")(__v.asInstanceOf[js.Any]))
-      Landmarks.foreach(__v => __obj.updateDynamic("Landmarks")(__v.asInstanceOf[js.Any]))
-      MouthOpen.foreach(__v => __obj.updateDynamic("MouthOpen")(__v.asInstanceOf[js.Any]))
-      Mustache.foreach(__v => __obj.updateDynamic("Mustache")(__v.asInstanceOf[js.Any]))
-      Pose.foreach(__v => __obj.updateDynamic("Pose")(__v.asInstanceOf[js.Any]))
-      Quality.foreach(__v => __obj.updateDynamic("Quality")(__v.asInstanceOf[js.Any]))
-      Smile.foreach(__v => __obj.updateDynamic("Smile")(__v.asInstanceOf[js.Any]))
-      Sunglasses.foreach(__v => __obj.updateDynamic("Sunglasses")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[FaceDetail]
-    }
-  }
-
   /**
     * Information about a face detected in a video analysis request and the time the face was detected in the video.
     */
   @js.native
+  @Factory
   trait FaceDetection extends js.Object {
     var Face: js.UndefOr[FaceDetail]
     var Timestamp: js.UndefOr[Timestamp]
-  }
-
-  object FaceDetection {
-    @inline
-    def apply(
-        Face: js.UndefOr[FaceDetail] = js.undefined,
-        Timestamp: js.UndefOr[Timestamp] = js.undefined
-    ): FaceDetection = {
-      val __obj = js.Dynamic.literal()
-      Face.foreach(__v => __obj.updateDynamic("Face")(__v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[FaceDetection]
-    }
   }
 
   /**
     * Provides face metadata. In addition, it also provides the confidence in the match of this face with the input face.
     */
   @js.native
+  @Factory
   trait FaceMatch extends js.Object {
     var Face: js.UndefOr[Face]
     var Similarity: js.UndefOr[Percent]
-  }
-
-  object FaceMatch {
-    @inline
-    def apply(
-        Face: js.UndefOr[Face] = js.undefined,
-        Similarity: js.UndefOr[Percent] = js.undefined
-    ): FaceMatch = {
-      val __obj = js.Dynamic.literal()
-      Face.foreach(__v => __obj.updateDynamic("Face")(__v.asInstanceOf[js.Any]))
-      Similarity.foreach(__v => __obj.updateDynamic("Similarity")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[FaceMatch]
-    }
   }
 
   /**
     * Object containing both the face metadata (stored in the backend database), and facial attributes that are detected but aren't stored in the database.
     */
   @js.native
+  @Factory
   trait FaceRecord extends js.Object {
     var Face: js.UndefOr[Face]
     var FaceDetail: js.UndefOr[FaceDetail]
-  }
-
-  object FaceRecord {
-    @inline
-    def apply(
-        Face: js.UndefOr[Face] = js.undefined,
-        FaceDetail: js.UndefOr[FaceDetail] = js.undefined
-    ): FaceRecord = {
-      val __obj = js.Dynamic.literal()
-      Face.foreach(__v => __obj.updateDynamic("Face")(__v.asInstanceOf[js.Any]))
-      FaceDetail.foreach(__v => __obj.updateDynamic("FaceDetail")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[FaceRecord]
-    }
   }
 
   /**
     * Input face recognition parameters for an Amazon Rekognition stream processor. <code>FaceRecognitionSettings</code> is a request parameter for <a>CreateStreamProcessor</a>.
     */
   @js.native
+  @Factory
   trait FaceSearchSettings extends js.Object {
     var CollectionId: js.UndefOr[CollectionId]
     var FaceMatchThreshold: js.UndefOr[Percent]
-  }
-
-  object FaceSearchSettings {
-    @inline
-    def apply(
-        CollectionId: js.UndefOr[CollectionId] = js.undefined,
-        FaceMatchThreshold: js.UndefOr[Percent] = js.undefined
-    ): FaceSearchSettings = {
-      val __obj = js.Dynamic.literal()
-      CollectionId.foreach(__v => __obj.updateDynamic("CollectionId")(__v.asInstanceOf[js.Any]))
-      FaceMatchThreshold.foreach(__v => __obj.updateDynamic("FaceMatchThreshold")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[FaceSearchSettings]
-    }
   }
 
   @js.native
@@ -1690,22 +864,10 @@ package rekognition {
     *  We don't recommend using gender binary predictions to make decisions that impact&#x2028; an individual's rights, privacy, or access to services.
     */
   @js.native
+  @Factory
   trait Gender extends js.Object {
     var Confidence: js.UndefOr[Percent]
     var Value: js.UndefOr[GenderType]
-  }
-
-  object Gender {
-    @inline
-    def apply(
-        Confidence: js.UndefOr[Percent] = js.undefined,
-        Value: js.UndefOr[GenderType] = js.undefined
-    ): Gender = {
-      val __obj = js.Dynamic.literal()
-      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Gender]
-    }
   }
 
   @js.native
@@ -1721,62 +883,27 @@ package rekognition {
     * Information about where an object (<a>DetectCustomLabels</a>) or text (<a>DetectText</a>) is located on an image.
     */
   @js.native
+  @Factory
   trait Geometry extends js.Object {
     var BoundingBox: js.UndefOr[BoundingBox]
     var Polygon: js.UndefOr[Polygon]
   }
 
-  object Geometry {
-    @inline
-    def apply(
-        BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
-        Polygon: js.UndefOr[Polygon] = js.undefined
-    ): Geometry = {
-      val __obj = js.Dynamic.literal()
-      BoundingBox.foreach(__v => __obj.updateDynamic("BoundingBox")(__v.asInstanceOf[js.Any]))
-      Polygon.foreach(__v => __obj.updateDynamic("Polygon")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Geometry]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetCelebrityInfoRequest extends js.Object {
     var Id: RekognitionUniqueId
   }
 
-  object GetCelebrityInfoRequest {
-    @inline
-    def apply(
-        Id: RekognitionUniqueId
-    ): GetCelebrityInfoRequest = {
-      val __obj = js.Dynamic.literal(
-        "Id" -> Id.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetCelebrityInfoRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetCelebrityInfoResponse extends js.Object {
     var Name: js.UndefOr[String]
     var Urls: js.UndefOr[Urls]
   }
 
-  object GetCelebrityInfoResponse {
-    @inline
-    def apply(
-        Name: js.UndefOr[String] = js.undefined,
-        Urls: js.UndefOr[Urls] = js.undefined
-    ): GetCelebrityInfoResponse = {
-      val __obj = js.Dynamic.literal()
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Urls.foreach(__v => __obj.updateDynamic("Urls")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetCelebrityInfoResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetCelebrityRecognitionRequest extends js.Object {
     var JobId: JobId
     var MaxResults: js.UndefOr[MaxResults]
@@ -1784,26 +911,8 @@ package rekognition {
     var SortBy: js.UndefOr[CelebrityRecognitionSortBy]
   }
 
-  object GetCelebrityRecognitionRequest {
-    @inline
-    def apply(
-        JobId: JobId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        SortBy: js.UndefOr[CelebrityRecognitionSortBy] = js.undefined
-    ): GetCelebrityRecognitionRequest = {
-      val __obj = js.Dynamic.literal(
-        "JobId" -> JobId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SortBy.foreach(__v => __obj.updateDynamic("SortBy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetCelebrityRecognitionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetCelebrityRecognitionResponse extends js.Object {
     var Celebrities: js.UndefOr[CelebrityRecognitions]
     var JobStatus: js.UndefOr[VideoJobStatus]
@@ -1812,26 +921,8 @@ package rekognition {
     var VideoMetadata: js.UndefOr[VideoMetadata]
   }
 
-  object GetCelebrityRecognitionResponse {
-    @inline
-    def apply(
-        Celebrities: js.UndefOr[CelebrityRecognitions] = js.undefined,
-        JobStatus: js.UndefOr[VideoJobStatus] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
-        VideoMetadata: js.UndefOr[VideoMetadata] = js.undefined
-    ): GetCelebrityRecognitionResponse = {
-      val __obj = js.Dynamic.literal()
-      Celebrities.foreach(__v => __obj.updateDynamic("Celebrities")(__v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
-      VideoMetadata.foreach(__v => __obj.updateDynamic("VideoMetadata")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetCelebrityRecognitionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetContentModerationRequest extends js.Object {
     var JobId: JobId
     var MaxResults: js.UndefOr[MaxResults]
@@ -1839,26 +930,8 @@ package rekognition {
     var SortBy: js.UndefOr[ContentModerationSortBy]
   }
 
-  object GetContentModerationRequest {
-    @inline
-    def apply(
-        JobId: JobId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        SortBy: js.UndefOr[ContentModerationSortBy] = js.undefined
-    ): GetContentModerationRequest = {
-      val __obj = js.Dynamic.literal(
-        "JobId" -> JobId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SortBy.foreach(__v => __obj.updateDynamic("SortBy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetContentModerationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetContentModerationResponse extends js.Object {
     var JobStatus: js.UndefOr[VideoJobStatus]
     var ModerationLabels: js.UndefOr[ContentModerationDetections]
@@ -1868,52 +941,16 @@ package rekognition {
     var VideoMetadata: js.UndefOr[VideoMetadata]
   }
 
-  object GetContentModerationResponse {
-    @inline
-    def apply(
-        JobStatus: js.UndefOr[VideoJobStatus] = js.undefined,
-        ModerationLabels: js.UndefOr[ContentModerationDetections] = js.undefined,
-        ModerationModelVersion: js.UndefOr[String] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
-        VideoMetadata: js.UndefOr[VideoMetadata] = js.undefined
-    ): GetContentModerationResponse = {
-      val __obj = js.Dynamic.literal()
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      ModerationLabels.foreach(__v => __obj.updateDynamic("ModerationLabels")(__v.asInstanceOf[js.Any]))
-      ModerationModelVersion.foreach(__v => __obj.updateDynamic("ModerationModelVersion")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
-      VideoMetadata.foreach(__v => __obj.updateDynamic("VideoMetadata")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetContentModerationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetFaceDetectionRequest extends js.Object {
     var JobId: JobId
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object GetFaceDetectionRequest {
-    @inline
-    def apply(
-        JobId: JobId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): GetFaceDetectionRequest = {
-      val __obj = js.Dynamic.literal(
-        "JobId" -> JobId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetFaceDetectionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetFaceDetectionResponse extends js.Object {
     var Faces: js.UndefOr[FaceDetections]
     var JobStatus: js.UndefOr[VideoJobStatus]
@@ -1922,26 +959,8 @@ package rekognition {
     var VideoMetadata: js.UndefOr[VideoMetadata]
   }
 
-  object GetFaceDetectionResponse {
-    @inline
-    def apply(
-        Faces: js.UndefOr[FaceDetections] = js.undefined,
-        JobStatus: js.UndefOr[VideoJobStatus] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
-        VideoMetadata: js.UndefOr[VideoMetadata] = js.undefined
-    ): GetFaceDetectionResponse = {
-      val __obj = js.Dynamic.literal()
-      Faces.foreach(__v => __obj.updateDynamic("Faces")(__v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
-      VideoMetadata.foreach(__v => __obj.updateDynamic("VideoMetadata")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetFaceDetectionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetFaceSearchRequest extends js.Object {
     var JobId: JobId
     var MaxResults: js.UndefOr[MaxResults]
@@ -1949,26 +968,8 @@ package rekognition {
     var SortBy: js.UndefOr[FaceSearchSortBy]
   }
 
-  object GetFaceSearchRequest {
-    @inline
-    def apply(
-        JobId: JobId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        SortBy: js.UndefOr[FaceSearchSortBy] = js.undefined
-    ): GetFaceSearchRequest = {
-      val __obj = js.Dynamic.literal(
-        "JobId" -> JobId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SortBy.foreach(__v => __obj.updateDynamic("SortBy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetFaceSearchRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetFaceSearchResponse extends js.Object {
     var JobStatus: js.UndefOr[VideoJobStatus]
     var NextToken: js.UndefOr[PaginationToken]
@@ -1977,26 +978,8 @@ package rekognition {
     var VideoMetadata: js.UndefOr[VideoMetadata]
   }
 
-  object GetFaceSearchResponse {
-    @inline
-    def apply(
-        JobStatus: js.UndefOr[VideoJobStatus] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        Persons: js.UndefOr[PersonMatches] = js.undefined,
-        StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
-        VideoMetadata: js.UndefOr[VideoMetadata] = js.undefined
-    ): GetFaceSearchResponse = {
-      val __obj = js.Dynamic.literal()
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Persons.foreach(__v => __obj.updateDynamic("Persons")(__v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
-      VideoMetadata.foreach(__v => __obj.updateDynamic("VideoMetadata")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetFaceSearchResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetLabelDetectionRequest extends js.Object {
     var JobId: JobId
     var MaxResults: js.UndefOr[MaxResults]
@@ -2004,26 +987,8 @@ package rekognition {
     var SortBy: js.UndefOr[LabelDetectionSortBy]
   }
 
-  object GetLabelDetectionRequest {
-    @inline
-    def apply(
-        JobId: JobId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        SortBy: js.UndefOr[LabelDetectionSortBy] = js.undefined
-    ): GetLabelDetectionRequest = {
-      val __obj = js.Dynamic.literal(
-        "JobId" -> JobId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SortBy.foreach(__v => __obj.updateDynamic("SortBy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetLabelDetectionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetLabelDetectionResponse extends js.Object {
     var JobStatus: js.UndefOr[VideoJobStatus]
     var LabelModelVersion: js.UndefOr[String]
@@ -2033,28 +998,8 @@ package rekognition {
     var VideoMetadata: js.UndefOr[VideoMetadata]
   }
 
-  object GetLabelDetectionResponse {
-    @inline
-    def apply(
-        JobStatus: js.UndefOr[VideoJobStatus] = js.undefined,
-        LabelModelVersion: js.UndefOr[String] = js.undefined,
-        Labels: js.UndefOr[LabelDetections] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
-        VideoMetadata: js.UndefOr[VideoMetadata] = js.undefined
-    ): GetLabelDetectionResponse = {
-      val __obj = js.Dynamic.literal()
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      LabelModelVersion.foreach(__v => __obj.updateDynamic("LabelModelVersion")(__v.asInstanceOf[js.Any]))
-      Labels.foreach(__v => __obj.updateDynamic("Labels")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
-      VideoMetadata.foreach(__v => __obj.updateDynamic("VideoMetadata")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetLabelDetectionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetPersonTrackingRequest extends js.Object {
     var JobId: JobId
     var MaxResults: js.UndefOr[MaxResults]
@@ -2062,26 +1007,8 @@ package rekognition {
     var SortBy: js.UndefOr[PersonTrackingSortBy]
   }
 
-  object GetPersonTrackingRequest {
-    @inline
-    def apply(
-        JobId: JobId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        SortBy: js.UndefOr[PersonTrackingSortBy] = js.undefined
-    ): GetPersonTrackingRequest = {
-      val __obj = js.Dynamic.literal(
-        "JobId" -> JobId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      SortBy.foreach(__v => __obj.updateDynamic("SortBy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetPersonTrackingRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetPersonTrackingResponse extends js.Object {
     var JobStatus: js.UndefOr[VideoJobStatus]
     var NextToken: js.UndefOr[PaginationToken]
@@ -2090,50 +1017,16 @@ package rekognition {
     var VideoMetadata: js.UndefOr[VideoMetadata]
   }
 
-  object GetPersonTrackingResponse {
-    @inline
-    def apply(
-        JobStatus: js.UndefOr[VideoJobStatus] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        Persons: js.UndefOr[PersonDetections] = js.undefined,
-        StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
-        VideoMetadata: js.UndefOr[VideoMetadata] = js.undefined
-    ): GetPersonTrackingResponse = {
-      val __obj = js.Dynamic.literal()
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Persons.foreach(__v => __obj.updateDynamic("Persons")(__v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
-      VideoMetadata.foreach(__v => __obj.updateDynamic("VideoMetadata")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetPersonTrackingResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetTextDetectionRequest extends js.Object {
     var JobId: JobId
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object GetTextDetectionRequest {
-    @inline
-    def apply(
-        JobId: JobId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): GetTextDetectionRequest = {
-      val __obj = js.Dynamic.literal(
-        "JobId" -> JobId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetTextDetectionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetTextDetectionResponse extends js.Object {
     var JobStatus: js.UndefOr[VideoJobStatus]
     var NextToken: js.UndefOr[PaginationToken]
@@ -2143,120 +1036,44 @@ package rekognition {
     var VideoMetadata: js.UndefOr[VideoMetadata]
   }
 
-  object GetTextDetectionResponse {
-    @inline
-    def apply(
-        JobStatus: js.UndefOr[VideoJobStatus] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
-        TextDetections: js.UndefOr[TextDetectionResults] = js.undefined,
-        TextModelVersion: js.UndefOr[String] = js.undefined,
-        VideoMetadata: js.UndefOr[VideoMetadata] = js.undefined
-    ): GetTextDetectionResponse = {
-      val __obj = js.Dynamic.literal()
-      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
-      TextDetections.foreach(__v => __obj.updateDynamic("TextDetections")(__v.asInstanceOf[js.Any]))
-      TextModelVersion.foreach(__v => __obj.updateDynamic("TextModelVersion")(__v.asInstanceOf[js.Any]))
-      VideoMetadata.foreach(__v => __obj.updateDynamic("VideoMetadata")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetTextDetectionResponse]
-    }
-  }
-
   /**
     * The S3 bucket that contains the Ground Truth manifest file.
     */
   @js.native
+  @Factory
   trait GroundTruthManifest extends js.Object {
     var S3Object: js.UndefOr[S3Object]
-  }
-
-  object GroundTruthManifest {
-    @inline
-    def apply(
-        S3Object: js.UndefOr[S3Object] = js.undefined
-    ): GroundTruthManifest = {
-      val __obj = js.Dynamic.literal()
-      S3Object.foreach(__v => __obj.updateDynamic("S3Object")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GroundTruthManifest]
-    }
   }
 
   /**
     * Shows the results of the human in the loop evaluation. If there is no HumanLoopArn, the input did not trigger human review.
     */
   @js.native
+  @Factory
   trait HumanLoopActivationOutput extends js.Object {
     var HumanLoopActivationConditionsEvaluationResults: js.UndefOr[HumanLoopActivationConditionsEvaluationResults]
     var HumanLoopActivationReasons: js.UndefOr[HumanLoopActivationReasons]
     var HumanLoopArn: js.UndefOr[HumanLoopArn]
   }
 
-  object HumanLoopActivationOutput {
-    @inline
-    def apply(
-        HumanLoopActivationConditionsEvaluationResults: js.UndefOr[HumanLoopActivationConditionsEvaluationResults] =
-          js.undefined,
-        HumanLoopActivationReasons: js.UndefOr[HumanLoopActivationReasons] = js.undefined,
-        HumanLoopArn: js.UndefOr[HumanLoopArn] = js.undefined
-    ): HumanLoopActivationOutput = {
-      val __obj = js.Dynamic.literal()
-      HumanLoopActivationConditionsEvaluationResults.foreach(__v =>
-        __obj.updateDynamic("HumanLoopActivationConditionsEvaluationResults")(__v.asInstanceOf[js.Any])
-      )
-      HumanLoopActivationReasons.foreach(__v =>
-        __obj.updateDynamic("HumanLoopActivationReasons")(__v.asInstanceOf[js.Any])
-      )
-      HumanLoopArn.foreach(__v => __obj.updateDynamic("HumanLoopArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HumanLoopActivationOutput]
-    }
-  }
-
   /**
     * Sets up the flow definition the image will be sent to if one of the conditions is met. You can also set certain attributes of the image before review.
     */
   @js.native
+  @Factory
   trait HumanLoopConfig extends js.Object {
     var FlowDefinitionArn: FlowDefinitionArn
     var HumanLoopName: HumanLoopName
     var DataAttributes: js.UndefOr[HumanLoopDataAttributes]
   }
 
-  object HumanLoopConfig {
-    @inline
-    def apply(
-        FlowDefinitionArn: FlowDefinitionArn,
-        HumanLoopName: HumanLoopName,
-        DataAttributes: js.UndefOr[HumanLoopDataAttributes] = js.undefined
-    ): HumanLoopConfig = {
-      val __obj = js.Dynamic.literal(
-        "FlowDefinitionArn" -> FlowDefinitionArn.asInstanceOf[js.Any],
-        "HumanLoopName"     -> HumanLoopName.asInstanceOf[js.Any]
-      )
-
-      DataAttributes.foreach(__v => __obj.updateDynamic("DataAttributes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HumanLoopConfig]
-    }
-  }
-
   /**
     * Allows you to set attributes of the image. Currently, you can declare an image as free of personally identifiable information.
     */
   @js.native
+  @Factory
   trait HumanLoopDataAttributes extends js.Object {
     var ContentClassifiers: js.UndefOr[ContentClassifiers]
-  }
-
-  object HumanLoopDataAttributes {
-    @inline
-    def apply(
-        ContentClassifiers: js.UndefOr[ContentClassifiers] = js.undefined
-    ): HumanLoopDataAttributes = {
-      val __obj = js.Dynamic.literal()
-      ContentClassifiers.foreach(__v => __obj.updateDynamic("ContentClassifiers")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HumanLoopDataAttributes]
-    }
   }
 
   /**
@@ -2269,47 +1086,24 @@ package rekognition {
     *  For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource Based Policies in the Amazon Rekognition Developer Guide.
     */
   @js.native
+  @Factory
   trait Image extends js.Object {
     var Bytes: js.UndefOr[ImageBlob]
     var S3Object: js.UndefOr[S3Object]
-  }
-
-  object Image {
-    @inline
-    def apply(
-        Bytes: js.UndefOr[ImageBlob] = js.undefined,
-        S3Object: js.UndefOr[S3Object] = js.undefined
-    ): Image = {
-      val __obj = js.Dynamic.literal()
-      Bytes.foreach(__v => __obj.updateDynamic("Bytes")(__v.asInstanceOf[js.Any]))
-      S3Object.foreach(__v => __obj.updateDynamic("S3Object")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Image]
-    }
   }
 
   /**
     * Identifies face image brightness and sharpness.
     */
   @js.native
+  @Factory
   trait ImageQuality extends js.Object {
     var Brightness: js.UndefOr[Float]
     var Sharpness: js.UndefOr[Float]
   }
 
-  object ImageQuality {
-    @inline
-    def apply(
-        Brightness: js.UndefOr[Float] = js.undefined,
-        Sharpness: js.UndefOr[Float] = js.undefined
-    ): ImageQuality = {
-      val __obj = js.Dynamic.literal()
-      Brightness.foreach(__v => __obj.updateDynamic("Brightness")(__v.asInstanceOf[js.Any]))
-      Sharpness.foreach(__v => __obj.updateDynamic("Sharpness")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ImageQuality]
-    }
-  }
-
   @js.native
+  @Factory
   trait IndexFacesRequest extends js.Object {
     var CollectionId: CollectionId
     var Image: Image
@@ -2319,30 +1113,8 @@ package rekognition {
     var QualityFilter: js.UndefOr[QualityFilter]
   }
 
-  object IndexFacesRequest {
-    @inline
-    def apply(
-        CollectionId: CollectionId,
-        Image: Image,
-        DetectionAttributes: js.UndefOr[Attributes] = js.undefined,
-        ExternalImageId: js.UndefOr[ExternalImageId] = js.undefined,
-        MaxFaces: js.UndefOr[MaxFacesToIndex] = js.undefined,
-        QualityFilter: js.UndefOr[QualityFilter] = js.undefined
-    ): IndexFacesRequest = {
-      val __obj = js.Dynamic.literal(
-        "CollectionId" -> CollectionId.asInstanceOf[js.Any],
-        "Image"        -> Image.asInstanceOf[js.Any]
-      )
-
-      DetectionAttributes.foreach(__v => __obj.updateDynamic("DetectionAttributes")(__v.asInstanceOf[js.Any]))
-      ExternalImageId.foreach(__v => __obj.updateDynamic("ExternalImageId")(__v.asInstanceOf[js.Any]))
-      MaxFaces.foreach(__v => __obj.updateDynamic("MaxFaces")(__v.asInstanceOf[js.Any]))
-      QualityFilter.foreach(__v => __obj.updateDynamic("QualityFilter")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[IndexFacesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait IndexFacesResponse extends js.Object {
     var FaceModelVersion: js.UndefOr[String]
     var FaceRecords: js.UndefOr[FaceRecordList]
@@ -2350,87 +1122,39 @@ package rekognition {
     var UnindexedFaces: js.UndefOr[UnindexedFaces]
   }
 
-  object IndexFacesResponse {
-    @inline
-    def apply(
-        FaceModelVersion: js.UndefOr[String] = js.undefined,
-        FaceRecords: js.UndefOr[FaceRecordList] = js.undefined,
-        OrientationCorrection: js.UndefOr[OrientationCorrection] = js.undefined,
-        UnindexedFaces: js.UndefOr[UnindexedFaces] = js.undefined
-    ): IndexFacesResponse = {
-      val __obj = js.Dynamic.literal()
-      FaceModelVersion.foreach(__v => __obj.updateDynamic("FaceModelVersion")(__v.asInstanceOf[js.Any]))
-      FaceRecords.foreach(__v => __obj.updateDynamic("FaceRecords")(__v.asInstanceOf[js.Any]))
-      OrientationCorrection.foreach(__v => __obj.updateDynamic("OrientationCorrection")(__v.asInstanceOf[js.Any]))
-      UnindexedFaces.foreach(__v => __obj.updateDynamic("UnindexedFaces")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[IndexFacesResponse]
-    }
-  }
-
   /**
     * An instance of a label returned by Amazon Rekognition Image (<a>DetectLabels</a>) or by Amazon Rekognition Video (<a>GetLabelDetection</a>).
     */
   @js.native
+  @Factory
   trait Instance extends js.Object {
     var BoundingBox: js.UndefOr[BoundingBox]
     var Confidence: js.UndefOr[Percent]
-  }
-
-  object Instance {
-    @inline
-    def apply(
-        BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
-        Confidence: js.UndefOr[Percent] = js.undefined
-    ): Instance = {
-      val __obj = js.Dynamic.literal()
-      BoundingBox.foreach(__v => __obj.updateDynamic("BoundingBox")(__v.asInstanceOf[js.Any]))
-      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Instance]
-    }
   }
 
   /**
     * The Kinesis data stream Amazon Rekognition to which the analysis results of a Amazon Rekognition stream processor are streamed. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide.
     */
   @js.native
+  @Factory
   trait KinesisDataStream extends js.Object {
     var Arn: js.UndefOr[KinesisDataArn]
-  }
-
-  object KinesisDataStream {
-    @inline
-    def apply(
-        Arn: js.UndefOr[KinesisDataArn] = js.undefined
-    ): KinesisDataStream = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[KinesisDataStream]
-    }
   }
 
   /**
     * Kinesis video stream stream that provides the source streaming video for a Amazon Rekognition Video stream processor. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide.
     */
   @js.native
+  @Factory
   trait KinesisVideoStream extends js.Object {
     var Arn: js.UndefOr[KinesisVideoArn]
-  }
-
-  object KinesisVideoStream {
-    @inline
-    def apply(
-        Arn: js.UndefOr[KinesisVideoArn] = js.undefined
-    ): KinesisVideoStream = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[KinesisVideoStream]
-    }
   }
 
   /**
     * Structure containing details about the detected label, including the name, detected instances, parent labels, and level of confidence.
     */
   @js.native
+  @Factory
   trait Label extends js.Object {
     var Confidence: js.UndefOr[Percent]
     var Instances: js.UndefOr[Instances]
@@ -2438,43 +1162,14 @@ package rekognition {
     var Parents: js.UndefOr[Parents]
   }
 
-  object Label {
-    @inline
-    def apply(
-        Confidence: js.UndefOr[Percent] = js.undefined,
-        Instances: js.UndefOr[Instances] = js.undefined,
-        Name: js.UndefOr[String] = js.undefined,
-        Parents: js.UndefOr[Parents] = js.undefined
-    ): Label = {
-      val __obj = js.Dynamic.literal()
-      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
-      Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Parents.foreach(__v => __obj.updateDynamic("Parents")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Label]
-    }
-  }
-
   /**
     * Information about a label detected in a video analysis request and the time the label was detected in the video.
     */
   @js.native
+  @Factory
   trait LabelDetection extends js.Object {
     var Label: js.UndefOr[Label]
     var Timestamp: js.UndefOr[Timestamp]
-  }
-
-  object LabelDetection {
-    @inline
-    def apply(
-        Label: js.UndefOr[Label] = js.undefined,
-        Timestamp: js.UndefOr[Timestamp] = js.undefined
-    ): LabelDetection = {
-      val __obj = js.Dynamic.literal()
-      Label.foreach(__v => __obj.updateDynamic("Label")(__v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LabelDetection]
-    }
   }
 
   @js.native
@@ -2490,25 +1185,11 @@ package rekognition {
     * Indicates the location of the landmark on the face.
     */
   @js.native
+  @Factory
   trait Landmark extends js.Object {
     var Type: js.UndefOr[LandmarkType]
     var X: js.UndefOr[Float]
     var Y: js.UndefOr[Float]
-  }
-
-  object Landmark {
-    @inline
-    def apply(
-        Type: js.UndefOr[LandmarkType] = js.undefined,
-        X: js.UndefOr[Float] = js.undefined,
-        Y: js.UndefOr[Float] = js.undefined
-    ): Landmark = {
-      val __obj = js.Dynamic.literal()
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      X.foreach(__v => __obj.updateDynamic("X")(__v.asInstanceOf[js.Any]))
-      Y.foreach(__v => __obj.updateDynamic("Y")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Landmark]
-    }
   }
 
   @js.native
@@ -2582,221 +1263,89 @@ package rekognition {
   }
 
   @js.native
+  @Factory
   trait ListCollectionsRequest extends js.Object {
     var MaxResults: js.UndefOr[PageSize]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListCollectionsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[PageSize] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListCollectionsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListCollectionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListCollectionsResponse extends js.Object {
     var CollectionIds: js.UndefOr[CollectionIdList]
     var FaceModelVersions: js.UndefOr[FaceModelVersionList]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListCollectionsResponse {
-    @inline
-    def apply(
-        CollectionIds: js.UndefOr[CollectionIdList] = js.undefined,
-        FaceModelVersions: js.UndefOr[FaceModelVersionList] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListCollectionsResponse = {
-      val __obj = js.Dynamic.literal()
-      CollectionIds.foreach(__v => __obj.updateDynamic("CollectionIds")(__v.asInstanceOf[js.Any]))
-      FaceModelVersions.foreach(__v => __obj.updateDynamic("FaceModelVersions")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListCollectionsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListFacesRequest extends js.Object {
     var CollectionId: CollectionId
     var MaxResults: js.UndefOr[PageSize]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListFacesRequest {
-    @inline
-    def apply(
-        CollectionId: CollectionId,
-        MaxResults: js.UndefOr[PageSize] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListFacesRequest = {
-      val __obj = js.Dynamic.literal(
-        "CollectionId" -> CollectionId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListFacesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListFacesResponse extends js.Object {
     var FaceModelVersion: js.UndefOr[String]
     var Faces: js.UndefOr[FaceList]
     var NextToken: js.UndefOr[String]
   }
 
-  object ListFacesResponse {
-    @inline
-    def apply(
-        FaceModelVersion: js.UndefOr[String] = js.undefined,
-        Faces: js.UndefOr[FaceList] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
-    ): ListFacesResponse = {
-      val __obj = js.Dynamic.literal()
-      FaceModelVersion.foreach(__v => __obj.updateDynamic("FaceModelVersion")(__v.asInstanceOf[js.Any]))
-      Faces.foreach(__v => __obj.updateDynamic("Faces")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListFacesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListStreamProcessorsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListStreamProcessorsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListStreamProcessorsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListStreamProcessorsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListStreamProcessorsResponse extends js.Object {
     var NextToken: js.UndefOr[PaginationToken]
     var StreamProcessors: js.UndefOr[StreamProcessorList]
-  }
-
-  object ListStreamProcessorsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        StreamProcessors: js.UndefOr[StreamProcessorList] = js.undefined
-    ): ListStreamProcessorsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      StreamProcessors.foreach(__v => __obj.updateDynamic("StreamProcessors")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListStreamProcessorsResponse]
-    }
   }
 
   /**
     * Provides information about a single type of unsafe content found in an image or video. Each type of moderated content has a label within a hierarchical taxonomy. For more information, see Detecting Unsafe Content in the Amazon Rekognition Developer Guide.
     */
   @js.native
+  @Factory
   trait ModerationLabel extends js.Object {
     var Confidence: js.UndefOr[Percent]
     var Name: js.UndefOr[String]
     var ParentName: js.UndefOr[String]
   }
 
-  object ModerationLabel {
-    @inline
-    def apply(
-        Confidence: js.UndefOr[Percent] = js.undefined,
-        Name: js.UndefOr[String] = js.undefined,
-        ParentName: js.UndefOr[String] = js.undefined
-    ): ModerationLabel = {
-      val __obj = js.Dynamic.literal()
-      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      ParentName.foreach(__v => __obj.updateDynamic("ParentName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ModerationLabel]
-    }
-  }
-
   /**
     * Indicates whether or not the mouth on the face is open, and the confidence level in the determination.
     */
   @js.native
+  @Factory
   trait MouthOpen extends js.Object {
     var Confidence: js.UndefOr[Percent]
     var Value: js.UndefOr[Boolean]
-  }
-
-  object MouthOpen {
-    @inline
-    def apply(
-        Confidence: js.UndefOr[Percent] = js.undefined,
-        Value: js.UndefOr[Boolean] = js.undefined
-    ): MouthOpen = {
-      val __obj = js.Dynamic.literal()
-      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MouthOpen]
-    }
   }
 
   /**
     * Indicates whether or not the face has a mustache, and the confidence level in the determination.
     */
   @js.native
+  @Factory
   trait Mustache extends js.Object {
     var Confidence: js.UndefOr[Percent]
     var Value: js.UndefOr[Boolean]
-  }
-
-  object Mustache {
-    @inline
-    def apply(
-        Confidence: js.UndefOr[Percent] = js.undefined,
-        Value: js.UndefOr[Boolean] = js.undefined
-    ): Mustache = {
-      val __obj = js.Dynamic.literal()
-      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Mustache]
-    }
   }
 
   /**
     * The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>.
     */
   @js.native
+  @Factory
   trait NotificationChannel extends js.Object {
     var RoleArn: RoleArn
     var SNSTopicArn: SNSTopicArn
-  }
-
-  object NotificationChannel {
-    @inline
-    def apply(
-        RoleArn: RoleArn,
-        SNSTopicArn: SNSTopicArn
-    ): NotificationChannel = {
-      val __obj = js.Dynamic.literal(
-        "RoleArn"     -> RoleArn.asInstanceOf[js.Any],
-        "SNSTopicArn" -> SNSTopicArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[NotificationChannel]
-    }
   }
 
   @js.native
@@ -2814,66 +1363,30 @@ package rekognition {
     * The S3 bucket and folder location where training output is placed.
     */
   @js.native
+  @Factory
   trait OutputConfig extends js.Object {
     var S3Bucket: js.UndefOr[S3Bucket]
     var S3KeyPrefix: js.UndefOr[S3KeyPrefix]
-  }
-
-  object OutputConfig {
-    @inline
-    def apply(
-        S3Bucket: js.UndefOr[S3Bucket] = js.undefined,
-        S3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined
-    ): OutputConfig = {
-      val __obj = js.Dynamic.literal()
-      S3Bucket.foreach(__v => __obj.updateDynamic("S3Bucket")(__v.asInstanceOf[js.Any]))
-      S3KeyPrefix.foreach(__v => __obj.updateDynamic("S3KeyPrefix")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[OutputConfig]
-    }
   }
 
   /**
     * A parent label for a label. A label can have 0, 1, or more parents.
     */
   @js.native
+  @Factory
   trait Parent extends js.Object {
     var Name: js.UndefOr[String]
-  }
-
-  object Parent {
-    @inline
-    def apply(
-        Name: js.UndefOr[String] = js.undefined
-    ): Parent = {
-      val __obj = js.Dynamic.literal()
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Parent]
-    }
   }
 
   /**
     * Details about a person detected in a video analysis request.
     */
   @js.native
+  @Factory
   trait PersonDetail extends js.Object {
     var BoundingBox: js.UndefOr[BoundingBox]
     var Face: js.UndefOr[FaceDetail]
     var Index: js.UndefOr[PersonIndex]
-  }
-
-  object PersonDetail {
-    @inline
-    def apply(
-        BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
-        Face: js.UndefOr[FaceDetail] = js.undefined,
-        Index: js.UndefOr[PersonIndex] = js.undefined
-    ): PersonDetail = {
-      val __obj = js.Dynamic.literal()
-      BoundingBox.foreach(__v => __obj.updateDynamic("BoundingBox")(__v.asInstanceOf[js.Any]))
-      Face.foreach(__v => __obj.updateDynamic("Face")(__v.asInstanceOf[js.Any]))
-      Index.foreach(__v => __obj.updateDynamic("Index")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PersonDetail]
-    }
   }
 
   /**
@@ -2881,47 +1394,21 @@ package rekognition {
     *  For more information, see GetPersonTracking in the Amazon Rekognition Developer Guide.
     */
   @js.native
+  @Factory
   trait PersonDetection extends js.Object {
     var Person: js.UndefOr[PersonDetail]
     var Timestamp: js.UndefOr[Timestamp]
-  }
-
-  object PersonDetection {
-    @inline
-    def apply(
-        Person: js.UndefOr[PersonDetail] = js.undefined,
-        Timestamp: js.UndefOr[Timestamp] = js.undefined
-    ): PersonDetection = {
-      val __obj = js.Dynamic.literal()
-      Person.foreach(__v => __obj.updateDynamic("Person")(__v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PersonDetection]
-    }
   }
 
   /**
     * Information about a person whose face matches a face(s) in an Amazon Rekognition collection. Includes information about the faces in the Amazon Rekognition collection (<a>FaceMatch</a>), information about the person (<a>PersonDetail</a>), and the time stamp for when the person was detected in a video. An array of <code>PersonMatch</code> objects is returned by <a>GetFaceSearch</a>.
     */
   @js.native
+  @Factory
   trait PersonMatch extends js.Object {
     var FaceMatches: js.UndefOr[FaceMatchList]
     var Person: js.UndefOr[PersonDetail]
     var Timestamp: js.UndefOr[Timestamp]
-  }
-
-  object PersonMatch {
-    @inline
-    def apply(
-        FaceMatches: js.UndefOr[FaceMatchList] = js.undefined,
-        Person: js.UndefOr[PersonDetail] = js.undefined,
-        Timestamp: js.UndefOr[Timestamp] = js.undefined
-    ): PersonMatch = {
-      val __obj = js.Dynamic.literal()
-      FaceMatches.foreach(__v => __obj.updateDynamic("FaceMatches")(__v.asInstanceOf[js.Any]))
-      Person.foreach(__v => __obj.updateDynamic("Person")(__v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PersonMatch]
-    }
   }
 
   @js.native
@@ -2938,72 +1425,32 @@ package rekognition {
     *  An array of <code>Point</code> objects, <code>Polygon</code>, is returned by <a>DetectText</a> and by <a>DetectCustomLabels</a>. <code>Polygon</code> represents a fine-grained polygon around a detected item. For more information, see Geometry in the Amazon Rekognition Developer Guide.
     */
   @js.native
+  @Factory
   trait Point extends js.Object {
     var X: js.UndefOr[Float]
     var Y: js.UndefOr[Float]
-  }
-
-  object Point {
-    @inline
-    def apply(
-        X: js.UndefOr[Float] = js.undefined,
-        Y: js.UndefOr[Float] = js.undefined
-    ): Point = {
-      val __obj = js.Dynamic.literal()
-      X.foreach(__v => __obj.updateDynamic("X")(__v.asInstanceOf[js.Any]))
-      Y.foreach(__v => __obj.updateDynamic("Y")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Point]
-    }
   }
 
   /**
     * Indicates the pose of the face as determined by its pitch, roll, and yaw.
     */
   @js.native
+  @Factory
   trait Pose extends js.Object {
     var Pitch: js.UndefOr[Degree]
     var Roll: js.UndefOr[Degree]
     var Yaw: js.UndefOr[Degree]
   }
 
-  object Pose {
-    @inline
-    def apply(
-        Pitch: js.UndefOr[Degree] = js.undefined,
-        Roll: js.UndefOr[Degree] = js.undefined,
-        Yaw: js.UndefOr[Degree] = js.undefined
-    ): Pose = {
-      val __obj = js.Dynamic.literal()
-      Pitch.foreach(__v => __obj.updateDynamic("Pitch")(__v.asInstanceOf[js.Any]))
-      Roll.foreach(__v => __obj.updateDynamic("Roll")(__v.asInstanceOf[js.Any]))
-      Yaw.foreach(__v => __obj.updateDynamic("Yaw")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Pose]
-    }
-  }
-
   /**
     * A description of a Amazon Rekognition Custom Labels project.
     */
   @js.native
+  @Factory
   trait ProjectDescription extends js.Object {
     var CreationTimestamp: js.UndefOr[DateTime]
     var ProjectArn: js.UndefOr[ProjectArn]
     var Status: js.UndefOr[ProjectStatus]
-  }
-
-  object ProjectDescription {
-    @inline
-    def apply(
-        CreationTimestamp: js.UndefOr[DateTime] = js.undefined,
-        ProjectArn: js.UndefOr[ProjectArn] = js.undefined,
-        Status: js.UndefOr[ProjectStatus] = js.undefined
-    ): ProjectDescription = {
-      val __obj = js.Dynamic.literal()
-      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
-      ProjectArn.foreach(__v => __obj.updateDynamic("ProjectArn")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ProjectDescription]
-    }
   }
 
   @js.native
@@ -3020,6 +1467,7 @@ package rekognition {
     * The description of a version of a model.
     */
   @js.native
+  @Factory
   trait ProjectVersionDescription extends js.Object {
     var BillableTrainingTimeInSeconds: js.UndefOr[ULong]
     var CreationTimestamp: js.UndefOr[DateTime]
@@ -3032,39 +1480,6 @@ package rekognition {
     var TestingDataResult: js.UndefOr[TestingDataResult]
     var TrainingDataResult: js.UndefOr[TrainingDataResult]
     var TrainingEndTimestamp: js.UndefOr[DateTime]
-  }
-
-  object ProjectVersionDescription {
-    @inline
-    def apply(
-        BillableTrainingTimeInSeconds: js.UndefOr[ULong] = js.undefined,
-        CreationTimestamp: js.UndefOr[DateTime] = js.undefined,
-        EvaluationResult: js.UndefOr[EvaluationResult] = js.undefined,
-        MinInferenceUnits: js.UndefOr[InferenceUnits] = js.undefined,
-        OutputConfig: js.UndefOr[OutputConfig] = js.undefined,
-        ProjectVersionArn: js.UndefOr[ProjectVersionArn] = js.undefined,
-        Status: js.UndefOr[ProjectVersionStatus] = js.undefined,
-        StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
-        TestingDataResult: js.UndefOr[TestingDataResult] = js.undefined,
-        TrainingDataResult: js.UndefOr[TrainingDataResult] = js.undefined,
-        TrainingEndTimestamp: js.UndefOr[DateTime] = js.undefined
-    ): ProjectVersionDescription = {
-      val __obj = js.Dynamic.literal()
-      BillableTrainingTimeInSeconds.foreach(__v =>
-        __obj.updateDynamic("BillableTrainingTimeInSeconds")(__v.asInstanceOf[js.Any])
-      )
-      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
-      EvaluationResult.foreach(__v => __obj.updateDynamic("EvaluationResult")(__v.asInstanceOf[js.Any]))
-      MinInferenceUnits.foreach(__v => __obj.updateDynamic("MinInferenceUnits")(__v.asInstanceOf[js.Any]))
-      OutputConfig.foreach(__v => __obj.updateDynamic("OutputConfig")(__v.asInstanceOf[js.Any]))
-      ProjectVersionArn.foreach(__v => __obj.updateDynamic("ProjectVersionArn")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
-      TestingDataResult.foreach(__v => __obj.updateDynamic("TestingDataResult")(__v.asInstanceOf[js.Any]))
-      TrainingDataResult.foreach(__v => __obj.updateDynamic("TrainingDataResult")(__v.asInstanceOf[js.Any]))
-      TrainingEndTimestamp.foreach(__v => __obj.updateDynamic("TrainingEndTimestamp")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ProjectVersionDescription]
-    }
   }
 
   @js.native
@@ -3132,43 +1547,17 @@ package rekognition {
   }
 
   @js.native
+  @Factory
   trait RecognizeCelebritiesRequest extends js.Object {
     var Image: Image
   }
 
-  object RecognizeCelebritiesRequest {
-    @inline
-    def apply(
-        Image: Image
-    ): RecognizeCelebritiesRequest = {
-      val __obj = js.Dynamic.literal(
-        "Image" -> Image.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RecognizeCelebritiesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait RecognizeCelebritiesResponse extends js.Object {
     var CelebrityFaces: js.UndefOr[CelebrityList]
     var OrientationCorrection: js.UndefOr[OrientationCorrection]
     var UnrecognizedFaces: js.UndefOr[ComparedFaceList]
-  }
-
-  object RecognizeCelebritiesResponse {
-    @inline
-    def apply(
-        CelebrityFaces: js.UndefOr[CelebrityList] = js.undefined,
-        OrientationCorrection: js.UndefOr[OrientationCorrection] = js.undefined,
-        UnrecognizedFaces: js.UndefOr[ComparedFaceList] = js.undefined
-    ): RecognizeCelebritiesResponse = {
-      val __obj = js.Dynamic.literal()
-      CelebrityFaces.foreach(__v => __obj.updateDynamic("CelebrityFaces")(__v.asInstanceOf[js.Any]))
-      OrientationCorrection.foreach(__v => __obj.updateDynamic("OrientationCorrection")(__v.asInstanceOf[js.Any]))
-      UnrecognizedFaces.foreach(__v => __obj.updateDynamic("UnrecognizedFaces")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RecognizeCelebritiesResponse]
-    }
   }
 
   /**
@@ -3176,19 +1565,9 @@ package rekognition {
     *  A word is included in the region if the word is more than half in that region. If there is more than one region, the word will be compared with all regions of the screen. Any word more than half in a region is kept in the results.
     */
   @js.native
+  @Factory
   trait RegionOfInterest extends js.Object {
     var BoundingBox: js.UndefOr[BoundingBox]
-  }
-
-  object RegionOfInterest {
-    @inline
-    def apply(
-        BoundingBox: js.UndefOr[BoundingBox] = js.undefined
-    ): RegionOfInterest = {
-      val __obj = js.Dynamic.literal()
-      BoundingBox.foreach(__v => __obj.updateDynamic("BoundingBox")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RegionOfInterest]
-    }
   }
 
   /**
@@ -3197,28 +1576,15 @@ package rekognition {
     *  For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource-Based Policies in the Amazon Rekognition Developer Guide.
     */
   @js.native
+  @Factory
   trait S3Object extends js.Object {
     var Bucket: js.UndefOr[S3Bucket]
     var Name: js.UndefOr[S3ObjectName]
     var Version: js.UndefOr[S3ObjectVersion]
   }
 
-  object S3Object {
-    @inline
-    def apply(
-        Bucket: js.UndefOr[S3Bucket] = js.undefined,
-        Name: js.UndefOr[S3ObjectName] = js.undefined,
-        Version: js.UndefOr[S3ObjectVersion] = js.undefined
-    ): S3Object = {
-      val __obj = js.Dynamic.literal()
-      Bucket.foreach(__v => __obj.updateDynamic("Bucket")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[S3Object]
-    }
-  }
-
   @js.native
+  @Factory
   trait SearchFacesByImageRequest extends js.Object {
     var CollectionId: CollectionId
     var Image: Image
@@ -3227,28 +1593,8 @@ package rekognition {
     var QualityFilter: js.UndefOr[QualityFilter]
   }
 
-  object SearchFacesByImageRequest {
-    @inline
-    def apply(
-        CollectionId: CollectionId,
-        Image: Image,
-        FaceMatchThreshold: js.UndefOr[Percent] = js.undefined,
-        MaxFaces: js.UndefOr[MaxFaces] = js.undefined,
-        QualityFilter: js.UndefOr[QualityFilter] = js.undefined
-    ): SearchFacesByImageRequest = {
-      val __obj = js.Dynamic.literal(
-        "CollectionId" -> CollectionId.asInstanceOf[js.Any],
-        "Image"        -> Image.asInstanceOf[js.Any]
-      )
-
-      FaceMatchThreshold.foreach(__v => __obj.updateDynamic("FaceMatchThreshold")(__v.asInstanceOf[js.Any]))
-      MaxFaces.foreach(__v => __obj.updateDynamic("MaxFaces")(__v.asInstanceOf[js.Any]))
-      QualityFilter.foreach(__v => __obj.updateDynamic("QualityFilter")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SearchFacesByImageRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait SearchFacesByImageResponse extends js.Object {
     var FaceMatches: js.UndefOr[FaceMatchList]
     var FaceModelVersion: js.UndefOr[String]
@@ -3256,24 +1602,8 @@ package rekognition {
     var SearchedFaceConfidence: js.UndefOr[Percent]
   }
 
-  object SearchFacesByImageResponse {
-    @inline
-    def apply(
-        FaceMatches: js.UndefOr[FaceMatchList] = js.undefined,
-        FaceModelVersion: js.UndefOr[String] = js.undefined,
-        SearchedFaceBoundingBox: js.UndefOr[BoundingBox] = js.undefined,
-        SearchedFaceConfidence: js.UndefOr[Percent] = js.undefined
-    ): SearchFacesByImageResponse = {
-      val __obj = js.Dynamic.literal()
-      FaceMatches.foreach(__v => __obj.updateDynamic("FaceMatches")(__v.asInstanceOf[js.Any]))
-      FaceModelVersion.foreach(__v => __obj.updateDynamic("FaceModelVersion")(__v.asInstanceOf[js.Any]))
-      SearchedFaceBoundingBox.foreach(__v => __obj.updateDynamic("SearchedFaceBoundingBox")(__v.asInstanceOf[js.Any]))
-      SearchedFaceConfidence.foreach(__v => __obj.updateDynamic("SearchedFaceConfidence")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SearchFacesByImageResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait SearchFacesRequest extends js.Object {
     var CollectionId: CollectionId
     var FaceId: FaceId
@@ -3281,70 +1611,26 @@ package rekognition {
     var MaxFaces: js.UndefOr[MaxFaces]
   }
 
-  object SearchFacesRequest {
-    @inline
-    def apply(
-        CollectionId: CollectionId,
-        FaceId: FaceId,
-        FaceMatchThreshold: js.UndefOr[Percent] = js.undefined,
-        MaxFaces: js.UndefOr[MaxFaces] = js.undefined
-    ): SearchFacesRequest = {
-      val __obj = js.Dynamic.literal(
-        "CollectionId" -> CollectionId.asInstanceOf[js.Any],
-        "FaceId"       -> FaceId.asInstanceOf[js.Any]
-      )
-
-      FaceMatchThreshold.foreach(__v => __obj.updateDynamic("FaceMatchThreshold")(__v.asInstanceOf[js.Any]))
-      MaxFaces.foreach(__v => __obj.updateDynamic("MaxFaces")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SearchFacesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait SearchFacesResponse extends js.Object {
     var FaceMatches: js.UndefOr[FaceMatchList]
     var FaceModelVersion: js.UndefOr[String]
     var SearchedFaceId: js.UndefOr[FaceId]
   }
 
-  object SearchFacesResponse {
-    @inline
-    def apply(
-        FaceMatches: js.UndefOr[FaceMatchList] = js.undefined,
-        FaceModelVersion: js.UndefOr[String] = js.undefined,
-        SearchedFaceId: js.UndefOr[FaceId] = js.undefined
-    ): SearchFacesResponse = {
-      val __obj = js.Dynamic.literal()
-      FaceMatches.foreach(__v => __obj.updateDynamic("FaceMatches")(__v.asInstanceOf[js.Any]))
-      FaceModelVersion.foreach(__v => __obj.updateDynamic("FaceModelVersion")(__v.asInstanceOf[js.Any]))
-      SearchedFaceId.foreach(__v => __obj.updateDynamic("SearchedFaceId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SearchFacesResponse]
-    }
-  }
-
   /**
     * Indicates whether or not the face is smiling, and the confidence level in the determination.
     */
   @js.native
+  @Factory
   trait Smile extends js.Object {
     var Confidence: js.UndefOr[Percent]
     var Value: js.UndefOr[Boolean]
   }
 
-  object Smile {
-    @inline
-    def apply(
-        Confidence: js.UndefOr[Percent] = js.undefined,
-        Value: js.UndefOr[Boolean] = js.undefined
-    ): Smile = {
-      val __obj = js.Dynamic.literal()
-      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Smile]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartCelebrityRecognitionRequest extends js.Object {
     var Video: Video
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
@@ -3352,42 +1638,14 @@ package rekognition {
     var NotificationChannel: js.UndefOr[NotificationChannel]
   }
 
-  object StartCelebrityRecognitionRequest {
-    @inline
-    def apply(
-        Video: Video,
-        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-        JobTag: js.UndefOr[JobTag] = js.undefined,
-        NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined
-    ): StartCelebrityRecognitionRequest = {
-      val __obj = js.Dynamic.literal(
-        "Video" -> Video.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      JobTag.foreach(__v => __obj.updateDynamic("JobTag")(__v.asInstanceOf[js.Any]))
-      NotificationChannel.foreach(__v => __obj.updateDynamic("NotificationChannel")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartCelebrityRecognitionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartCelebrityRecognitionResponse extends js.Object {
     var JobId: js.UndefOr[JobId]
   }
 
-  object StartCelebrityRecognitionResponse {
-    @inline
-    def apply(
-        JobId: js.UndefOr[JobId] = js.undefined
-    ): StartCelebrityRecognitionResponse = {
-      val __obj = js.Dynamic.literal()
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartCelebrityRecognitionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartContentModerationRequest extends js.Object {
     var Video: Video
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
@@ -3396,44 +1654,14 @@ package rekognition {
     var NotificationChannel: js.UndefOr[NotificationChannel]
   }
 
-  object StartContentModerationRequest {
-    @inline
-    def apply(
-        Video: Video,
-        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-        JobTag: js.UndefOr[JobTag] = js.undefined,
-        MinConfidence: js.UndefOr[Percent] = js.undefined,
-        NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined
-    ): StartContentModerationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Video" -> Video.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      JobTag.foreach(__v => __obj.updateDynamic("JobTag")(__v.asInstanceOf[js.Any]))
-      MinConfidence.foreach(__v => __obj.updateDynamic("MinConfidence")(__v.asInstanceOf[js.Any]))
-      NotificationChannel.foreach(__v => __obj.updateDynamic("NotificationChannel")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartContentModerationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartContentModerationResponse extends js.Object {
     var JobId: js.UndefOr[JobId]
   }
 
-  object StartContentModerationResponse {
-    @inline
-    def apply(
-        JobId: js.UndefOr[JobId] = js.undefined
-    ): StartContentModerationResponse = {
-      val __obj = js.Dynamic.literal()
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartContentModerationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartFaceDetectionRequest extends js.Object {
     var Video: Video
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
@@ -3442,44 +1670,14 @@ package rekognition {
     var NotificationChannel: js.UndefOr[NotificationChannel]
   }
 
-  object StartFaceDetectionRequest {
-    @inline
-    def apply(
-        Video: Video,
-        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-        FaceAttributes: js.UndefOr[FaceAttributes] = js.undefined,
-        JobTag: js.UndefOr[JobTag] = js.undefined,
-        NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined
-    ): StartFaceDetectionRequest = {
-      val __obj = js.Dynamic.literal(
-        "Video" -> Video.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      FaceAttributes.foreach(__v => __obj.updateDynamic("FaceAttributes")(__v.asInstanceOf[js.Any]))
-      JobTag.foreach(__v => __obj.updateDynamic("JobTag")(__v.asInstanceOf[js.Any]))
-      NotificationChannel.foreach(__v => __obj.updateDynamic("NotificationChannel")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartFaceDetectionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartFaceDetectionResponse extends js.Object {
     var JobId: js.UndefOr[JobId]
   }
 
-  object StartFaceDetectionResponse {
-    @inline
-    def apply(
-        JobId: js.UndefOr[JobId] = js.undefined
-    ): StartFaceDetectionResponse = {
-      val __obj = js.Dynamic.literal()
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartFaceDetectionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartFaceSearchRequest extends js.Object {
     var CollectionId: CollectionId
     var Video: Video
@@ -3489,46 +1687,14 @@ package rekognition {
     var NotificationChannel: js.UndefOr[NotificationChannel]
   }
 
-  object StartFaceSearchRequest {
-    @inline
-    def apply(
-        CollectionId: CollectionId,
-        Video: Video,
-        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-        FaceMatchThreshold: js.UndefOr[Percent] = js.undefined,
-        JobTag: js.UndefOr[JobTag] = js.undefined,
-        NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined
-    ): StartFaceSearchRequest = {
-      val __obj = js.Dynamic.literal(
-        "CollectionId" -> CollectionId.asInstanceOf[js.Any],
-        "Video"        -> Video.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      FaceMatchThreshold.foreach(__v => __obj.updateDynamic("FaceMatchThreshold")(__v.asInstanceOf[js.Any]))
-      JobTag.foreach(__v => __obj.updateDynamic("JobTag")(__v.asInstanceOf[js.Any]))
-      NotificationChannel.foreach(__v => __obj.updateDynamic("NotificationChannel")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartFaceSearchRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartFaceSearchResponse extends js.Object {
     var JobId: js.UndefOr[JobId]
   }
 
-  object StartFaceSearchResponse {
-    @inline
-    def apply(
-        JobId: js.UndefOr[JobId] = js.undefined
-    ): StartFaceSearchResponse = {
-      val __obj = js.Dynamic.literal()
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartFaceSearchResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartLabelDetectionRequest extends js.Object {
     var Video: Video
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
@@ -3537,44 +1703,14 @@ package rekognition {
     var NotificationChannel: js.UndefOr[NotificationChannel]
   }
 
-  object StartLabelDetectionRequest {
-    @inline
-    def apply(
-        Video: Video,
-        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-        JobTag: js.UndefOr[JobTag] = js.undefined,
-        MinConfidence: js.UndefOr[Percent] = js.undefined,
-        NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined
-    ): StartLabelDetectionRequest = {
-      val __obj = js.Dynamic.literal(
-        "Video" -> Video.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      JobTag.foreach(__v => __obj.updateDynamic("JobTag")(__v.asInstanceOf[js.Any]))
-      MinConfidence.foreach(__v => __obj.updateDynamic("MinConfidence")(__v.asInstanceOf[js.Any]))
-      NotificationChannel.foreach(__v => __obj.updateDynamic("NotificationChannel")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartLabelDetectionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartLabelDetectionResponse extends js.Object {
     var JobId: js.UndefOr[JobId]
   }
 
-  object StartLabelDetectionResponse {
-    @inline
-    def apply(
-        JobId: js.UndefOr[JobId] = js.undefined
-    ): StartLabelDetectionResponse = {
-      val __obj = js.Dynamic.literal()
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartLabelDetectionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartPersonTrackingRequest extends js.Object {
     var Video: Video
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
@@ -3582,132 +1718,47 @@ package rekognition {
     var NotificationChannel: js.UndefOr[NotificationChannel]
   }
 
-  object StartPersonTrackingRequest {
-    @inline
-    def apply(
-        Video: Video,
-        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-        JobTag: js.UndefOr[JobTag] = js.undefined,
-        NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined
-    ): StartPersonTrackingRequest = {
-      val __obj = js.Dynamic.literal(
-        "Video" -> Video.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      JobTag.foreach(__v => __obj.updateDynamic("JobTag")(__v.asInstanceOf[js.Any]))
-      NotificationChannel.foreach(__v => __obj.updateDynamic("NotificationChannel")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartPersonTrackingRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartPersonTrackingResponse extends js.Object {
     var JobId: js.UndefOr[JobId]
   }
 
-  object StartPersonTrackingResponse {
-    @inline
-    def apply(
-        JobId: js.UndefOr[JobId] = js.undefined
-    ): StartPersonTrackingResponse = {
-      val __obj = js.Dynamic.literal()
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartPersonTrackingResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartProjectVersionRequest extends js.Object {
     var MinInferenceUnits: InferenceUnits
     var ProjectVersionArn: ProjectVersionArn
   }
 
-  object StartProjectVersionRequest {
-    @inline
-    def apply(
-        MinInferenceUnits: InferenceUnits,
-        ProjectVersionArn: ProjectVersionArn
-    ): StartProjectVersionRequest = {
-      val __obj = js.Dynamic.literal(
-        "MinInferenceUnits" -> MinInferenceUnits.asInstanceOf[js.Any],
-        "ProjectVersionArn" -> ProjectVersionArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StartProjectVersionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartProjectVersionResponse extends js.Object {
     var Status: js.UndefOr[ProjectVersionStatus]
   }
 
-  object StartProjectVersionResponse {
-    @inline
-    def apply(
-        Status: js.UndefOr[ProjectVersionStatus] = js.undefined
-    ): StartProjectVersionResponse = {
-      val __obj = js.Dynamic.literal()
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartProjectVersionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartStreamProcessorRequest extends js.Object {
     var Name: StreamProcessorName
   }
 
-  object StartStreamProcessorRequest {
-    @inline
-    def apply(
-        Name: StreamProcessorName
-    ): StartStreamProcessorRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StartStreamProcessorRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartStreamProcessorResponse extends js.Object {}
-
-  object StartStreamProcessorResponse {
-    @inline
-    def apply(
-    ): StartStreamProcessorResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[StartStreamProcessorResponse]
-    }
-  }
 
   /**
     * Set of optional parameters that let you set the criteria text must meet to be included in your response. <code>WordFilter</code> looks at a word's height, width and minimum confidence. <code>RegionOfInterest</code> lets you set a specific region of the screen to look for text in.
     */
   @js.native
+  @Factory
   trait StartTextDetectionFilters extends js.Object {
     var RegionsOfInterest: js.UndefOr[RegionsOfInterest]
     var WordFilter: js.UndefOr[DetectionFilter]
   }
 
-  object StartTextDetectionFilters {
-    @inline
-    def apply(
-        RegionsOfInterest: js.UndefOr[RegionsOfInterest] = js.undefined,
-        WordFilter: js.UndefOr[DetectionFilter] = js.undefined
-    ): StartTextDetectionFilters = {
-      val __obj = js.Dynamic.literal()
-      RegionsOfInterest.foreach(__v => __obj.updateDynamic("RegionsOfInterest")(__v.asInstanceOf[js.Any]))
-      WordFilter.foreach(__v => __obj.updateDynamic("WordFilter")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartTextDetectionFilters]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartTextDetectionRequest extends js.Object {
     var Video: Video
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
@@ -3716,185 +1767,69 @@ package rekognition {
     var NotificationChannel: js.UndefOr[NotificationChannel]
   }
 
-  object StartTextDetectionRequest {
-    @inline
-    def apply(
-        Video: Video,
-        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-        Filters: js.UndefOr[StartTextDetectionFilters] = js.undefined,
-        JobTag: js.UndefOr[JobTag] = js.undefined,
-        NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined
-    ): StartTextDetectionRequest = {
-      val __obj = js.Dynamic.literal(
-        "Video" -> Video.asInstanceOf[js.Any]
-      )
-
-      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      JobTag.foreach(__v => __obj.updateDynamic("JobTag")(__v.asInstanceOf[js.Any]))
-      NotificationChannel.foreach(__v => __obj.updateDynamic("NotificationChannel")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartTextDetectionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartTextDetectionResponse extends js.Object {
     var JobId: js.UndefOr[JobId]
   }
 
-  object StartTextDetectionResponse {
-    @inline
-    def apply(
-        JobId: js.UndefOr[JobId] = js.undefined
-    ): StartTextDetectionResponse = {
-      val __obj = js.Dynamic.literal()
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartTextDetectionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopProjectVersionRequest extends js.Object {
     var ProjectVersionArn: ProjectVersionArn
   }
 
-  object StopProjectVersionRequest {
-    @inline
-    def apply(
-        ProjectVersionArn: ProjectVersionArn
-    ): StopProjectVersionRequest = {
-      val __obj = js.Dynamic.literal(
-        "ProjectVersionArn" -> ProjectVersionArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StopProjectVersionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopProjectVersionResponse extends js.Object {
     var Status: js.UndefOr[ProjectVersionStatus]
   }
 
-  object StopProjectVersionResponse {
-    @inline
-    def apply(
-        Status: js.UndefOr[ProjectVersionStatus] = js.undefined
-    ): StopProjectVersionResponse = {
-      val __obj = js.Dynamic.literal()
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StopProjectVersionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopStreamProcessorRequest extends js.Object {
     var Name: StreamProcessorName
   }
 
-  object StopStreamProcessorRequest {
-    @inline
-    def apply(
-        Name: StreamProcessorName
-    ): StopStreamProcessorRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StopStreamProcessorRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopStreamProcessorResponse extends js.Object {}
-
-  object StopStreamProcessorResponse {
-    @inline
-    def apply(
-    ): StopStreamProcessorResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[StopStreamProcessorResponse]
-    }
-  }
 
   /**
     * An object that recognizes faces in a streaming video. An Amazon Rekognition stream processor is created by a call to <a>CreateStreamProcessor</a>. The request parameters for <code>CreateStreamProcessor</code> describe the Kinesis video stream source for the streaming video, face recognition parameters, and where to stream the analysis resullts.
     */
   @js.native
+  @Factory
   trait StreamProcessor extends js.Object {
     var Name: js.UndefOr[StreamProcessorName]
     var Status: js.UndefOr[StreamProcessorStatus]
-  }
-
-  object StreamProcessor {
-    @inline
-    def apply(
-        Name: js.UndefOr[StreamProcessorName] = js.undefined,
-        Status: js.UndefOr[StreamProcessorStatus] = js.undefined
-    ): StreamProcessor = {
-      val __obj = js.Dynamic.literal()
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StreamProcessor]
-    }
   }
 
   /**
     * Information about the source streaming video.
     */
   @js.native
+  @Factory
   trait StreamProcessorInput extends js.Object {
     var KinesisVideoStream: js.UndefOr[KinesisVideoStream]
-  }
-
-  object StreamProcessorInput {
-    @inline
-    def apply(
-        KinesisVideoStream: js.UndefOr[KinesisVideoStream] = js.undefined
-    ): StreamProcessorInput = {
-      val __obj = js.Dynamic.literal()
-      KinesisVideoStream.foreach(__v => __obj.updateDynamic("KinesisVideoStream")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StreamProcessorInput]
-    }
   }
 
   /**
     * Information about the Amazon Kinesis Data Streams stream to which a Amazon Rekognition Video stream processor streams the results of a video analysis. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide.
     */
   @js.native
+  @Factory
   trait StreamProcessorOutput extends js.Object {
     var KinesisDataStream: js.UndefOr[KinesisDataStream]
-  }
-
-  object StreamProcessorOutput {
-    @inline
-    def apply(
-        KinesisDataStream: js.UndefOr[KinesisDataStream] = js.undefined
-    ): StreamProcessorOutput = {
-      val __obj = js.Dynamic.literal()
-      KinesisDataStream.foreach(__v => __obj.updateDynamic("KinesisDataStream")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StreamProcessorOutput]
-    }
   }
 
   /**
     * Input parameters used to recognize faces in a streaming video analyzed by a Amazon Rekognition stream processor.
     */
   @js.native
+  @Factory
   trait StreamProcessorSettings extends js.Object {
     var FaceSearch: js.UndefOr[FaceSearchSettings]
-  }
-
-  object StreamProcessorSettings {
-    @inline
-    def apply(
-        FaceSearch: js.UndefOr[FaceSearchSettings] = js.undefined
-    ): StreamProcessorSettings = {
-      val __obj = js.Dynamic.literal()
-      FaceSearch.foreach(__v => __obj.updateDynamic("FaceSearch")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StreamProcessorSettings]
-    }
   }
 
   @js.native
@@ -3914,85 +1849,39 @@ package rekognition {
     *  You get the training summary S3 bucket location by calling <a>DescribeProjectVersions</a>.
     */
   @js.native
+  @Factory
   trait Summary extends js.Object {
     var S3Object: js.UndefOr[S3Object]
-  }
-
-  object Summary {
-    @inline
-    def apply(
-        S3Object: js.UndefOr[S3Object] = js.undefined
-    ): Summary = {
-      val __obj = js.Dynamic.literal()
-      S3Object.foreach(__v => __obj.updateDynamic("S3Object")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Summary]
-    }
   }
 
   /**
     * Indicates whether or not the face is wearing sunglasses, and the confidence level in the determination.
     */
   @js.native
+  @Factory
   trait Sunglasses extends js.Object {
     var Confidence: js.UndefOr[Percent]
     var Value: js.UndefOr[Boolean]
-  }
-
-  object Sunglasses {
-    @inline
-    def apply(
-        Confidence: js.UndefOr[Percent] = js.undefined,
-        Value: js.UndefOr[Boolean] = js.undefined
-    ): Sunglasses = {
-      val __obj = js.Dynamic.literal()
-      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Sunglasses]
-    }
   }
 
   /**
     * The dataset used for testing. Optionally, if <code>AutoCreate</code> is set, Amazon Rekognition Custom Labels creates a testing dataset using an 80/20 split of the training dataset.
     */
   @js.native
+  @Factory
   trait TestingData extends js.Object {
     var Assets: js.UndefOr[Assets]
     var AutoCreate: js.UndefOr[Boolean]
-  }
-
-  object TestingData {
-    @inline
-    def apply(
-        Assets: js.UndefOr[Assets] = js.undefined,
-        AutoCreate: js.UndefOr[Boolean] = js.undefined
-    ): TestingData = {
-      val __obj = js.Dynamic.literal()
-      Assets.foreach(__v => __obj.updateDynamic("Assets")(__v.asInstanceOf[js.Any]))
-      AutoCreate.foreach(__v => __obj.updateDynamic("AutoCreate")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TestingData]
-    }
   }
 
   /**
     * A Sagemaker Groundtruth format manifest file representing the dataset used for testing.
     */
   @js.native
+  @Factory
   trait TestingDataResult extends js.Object {
     var Input: js.UndefOr[TestingData]
     var Output: js.UndefOr[TestingData]
-  }
-
-  object TestingDataResult {
-    @inline
-    def apply(
-        Input: js.UndefOr[TestingData] = js.undefined,
-        Output: js.UndefOr[TestingData] = js.undefined
-    ): TestingDataResult = {
-      val __obj = js.Dynamic.literal()
-      Input.foreach(__v => __obj.updateDynamic("Input")(__v.asInstanceOf[js.Any]))
-      Output.foreach(__v => __obj.updateDynamic("Output")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TestingDataResult]
-    }
   }
 
   /**
@@ -4002,6 +1891,7 @@ package rekognition {
     *  For more information, see Detecting Text in the Amazon Rekognition Developer Guide.
     */
   @js.native
+  @Factory
   trait TextDetection extends js.Object {
     var Confidence: js.UndefOr[Percent]
     var DetectedText: js.UndefOr[String]
@@ -4011,47 +1901,14 @@ package rekognition {
     var Type: js.UndefOr[TextTypes]
   }
 
-  object TextDetection {
-    @inline
-    def apply(
-        Confidence: js.UndefOr[Percent] = js.undefined,
-        DetectedText: js.UndefOr[String] = js.undefined,
-        Geometry: js.UndefOr[Geometry] = js.undefined,
-        Id: js.UndefOr[UInteger] = js.undefined,
-        ParentId: js.UndefOr[UInteger] = js.undefined,
-        Type: js.UndefOr[TextTypes] = js.undefined
-    ): TextDetection = {
-      val __obj = js.Dynamic.literal()
-      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
-      DetectedText.foreach(__v => __obj.updateDynamic("DetectedText")(__v.asInstanceOf[js.Any]))
-      Geometry.foreach(__v => __obj.updateDynamic("Geometry")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      ParentId.foreach(__v => __obj.updateDynamic("ParentId")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TextDetection]
-    }
-  }
-
   /**
     * Information about text detected in a video. Incudes the detected text, the time in milliseconds from the start of the video that the text was detected, and where it was detected on the screen.
     */
   @js.native
+  @Factory
   trait TextDetectionResult extends js.Object {
     var TextDetection: js.UndefOr[TextDetection]
     var Timestamp: js.UndefOr[Timestamp]
-  }
-
-  object TextDetectionResult {
-    @inline
-    def apply(
-        TextDetection: js.UndefOr[TextDetection] = js.undefined,
-        Timestamp: js.UndefOr[Timestamp] = js.undefined
-    ): TextDetectionResult = {
-      val __obj = js.Dynamic.literal()
-      TextDetection.foreach(__v => __obj.updateDynamic("TextDetection")(__v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TextDetectionResult]
-    }
   }
 
   @js.native
@@ -4067,82 +1924,38 @@ package rekognition {
     * The dataset used for training.
     */
   @js.native
+  @Factory
   trait TrainingData extends js.Object {
     var Assets: js.UndefOr[Assets]
-  }
-
-  object TrainingData {
-    @inline
-    def apply(
-        Assets: js.UndefOr[Assets] = js.undefined
-    ): TrainingData = {
-      val __obj = js.Dynamic.literal()
-      Assets.foreach(__v => __obj.updateDynamic("Assets")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TrainingData]
-    }
   }
 
   /**
     * A Sagemaker Groundtruth format manifest file that represents the dataset used for training.
     */
   @js.native
+  @Factory
   trait TrainingDataResult extends js.Object {
     var Input: js.UndefOr[TrainingData]
     var Output: js.UndefOr[TrainingData]
-  }
-
-  object TrainingDataResult {
-    @inline
-    def apply(
-        Input: js.UndefOr[TrainingData] = js.undefined,
-        Output: js.UndefOr[TrainingData] = js.undefined
-    ): TrainingDataResult = {
-      val __obj = js.Dynamic.literal()
-      Input.foreach(__v => __obj.updateDynamic("Input")(__v.asInstanceOf[js.Any]))
-      Output.foreach(__v => __obj.updateDynamic("Output")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TrainingDataResult]
-    }
   }
 
   /**
     * A face that <a>IndexFaces</a> detected, but didn't index. Use the <code>Reasons</code> response attribute to determine why a face wasn't indexed.
     */
   @js.native
+  @Factory
   trait UnindexedFace extends js.Object {
     var FaceDetail: js.UndefOr[FaceDetail]
     var Reasons: js.UndefOr[Reasons]
-  }
-
-  object UnindexedFace {
-    @inline
-    def apply(
-        FaceDetail: js.UndefOr[FaceDetail] = js.undefined,
-        Reasons: js.UndefOr[Reasons] = js.undefined
-    ): UnindexedFace = {
-      val __obj = js.Dynamic.literal()
-      FaceDetail.foreach(__v => __obj.updateDynamic("FaceDetail")(__v.asInstanceOf[js.Any]))
-      Reasons.foreach(__v => __obj.updateDynamic("Reasons")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UnindexedFace]
-    }
   }
 
   /**
     * Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <a>StartLabelDetection</a> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.
     */
   @js.native
+  @Factory
   trait Video extends js.Object {
     var S3Object: js.UndefOr[S3Object]
-  }
-
-  object Video {
-    @inline
-    def apply(
-        S3Object: js.UndefOr[S3Object] = js.undefined
-    ): Video = {
-      val __obj = js.Dynamic.literal()
-      S3Object.foreach(__v => __obj.updateDynamic("S3Object")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Video]
-    }
   }
 
   @js.native
@@ -4159,6 +1972,7 @@ package rekognition {
     * Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.
     */
   @js.native
+  @Factory
   trait VideoMetadata extends js.Object {
     var Codec: js.UndefOr[String]
     var DurationMillis: js.UndefOr[ULong]
@@ -4166,26 +1980,5 @@ package rekognition {
     var FrameHeight: js.UndefOr[ULong]
     var FrameRate: js.UndefOr[Float]
     var FrameWidth: js.UndefOr[ULong]
-  }
-
-  object VideoMetadata {
-    @inline
-    def apply(
-        Codec: js.UndefOr[String] = js.undefined,
-        DurationMillis: js.UndefOr[ULong] = js.undefined,
-        Format: js.UndefOr[String] = js.undefined,
-        FrameHeight: js.UndefOr[ULong] = js.undefined,
-        FrameRate: js.UndefOr[Float] = js.undefined,
-        FrameWidth: js.UndefOr[ULong] = js.undefined
-    ): VideoMetadata = {
-      val __obj = js.Dynamic.literal()
-      Codec.foreach(__v => __obj.updateDynamic("Codec")(__v.asInstanceOf[js.Any]))
-      DurationMillis.foreach(__v => __obj.updateDynamic("DurationMillis")(__v.asInstanceOf[js.Any]))
-      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
-      FrameHeight.foreach(__v => __obj.updateDynamic("FrameHeight")(__v.asInstanceOf[js.Any]))
-      FrameRate.foreach(__v => __obj.updateDynamic("FrameRate")(__v.asInstanceOf[js.Any]))
-      FrameWidth.foreach(__v => __obj.updateDynamic("FrameWidth")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VideoMetadata]
-    }
   }
 }

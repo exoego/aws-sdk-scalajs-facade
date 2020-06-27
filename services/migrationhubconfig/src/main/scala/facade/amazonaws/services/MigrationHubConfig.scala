@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object migrationhubconfig {
   type ControlId                            = String
@@ -44,46 +45,21 @@ package migrationhubconfig {
   }
 
   @js.native
+  @Factory
   trait CreateHomeRegionControlRequest extends js.Object {
     var HomeRegion: HomeRegion
     var Target: Target
     var DryRun: js.UndefOr[DryRun]
   }
 
-  object CreateHomeRegionControlRequest {
-    @inline
-    def apply(
-        HomeRegion: HomeRegion,
-        Target: Target,
-        DryRun: js.UndefOr[DryRun] = js.undefined
-    ): CreateHomeRegionControlRequest = {
-      val __obj = js.Dynamic.literal(
-        "HomeRegion" -> HomeRegion.asInstanceOf[js.Any],
-        "Target"     -> Target.asInstanceOf[js.Any]
-      )
-
-      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateHomeRegionControlRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateHomeRegionControlResult extends js.Object {
     var HomeRegionControl: js.UndefOr[HomeRegionControl]
   }
 
-  object CreateHomeRegionControlResult {
-    @inline
-    def apply(
-        HomeRegionControl: js.UndefOr[HomeRegionControl] = js.undefined
-    ): CreateHomeRegionControlResult = {
-      val __obj = js.Dynamic.literal()
-      HomeRegionControl.foreach(__v => __obj.updateDynamic("HomeRegionControl")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateHomeRegionControlResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeHomeRegionControlsRequest extends js.Object {
     var ControlId: js.UndefOr[ControlId]
     var HomeRegion: js.UndefOr[HomeRegion]
@@ -92,77 +68,28 @@ package migrationhubconfig {
     var Target: js.UndefOr[Target]
   }
 
-  object DescribeHomeRegionControlsRequest {
-    @inline
-    def apply(
-        ControlId: js.UndefOr[ControlId] = js.undefined,
-        HomeRegion: js.UndefOr[HomeRegion] = js.undefined,
-        MaxResults: js.UndefOr[DescribeHomeRegionControlsMaxResults] = js.undefined,
-        NextToken: js.UndefOr[Token] = js.undefined,
-        Target: js.UndefOr[Target] = js.undefined
-    ): DescribeHomeRegionControlsRequest = {
-      val __obj = js.Dynamic.literal()
-      ControlId.foreach(__v => __obj.updateDynamic("ControlId")(__v.asInstanceOf[js.Any]))
-      HomeRegion.foreach(__v => __obj.updateDynamic("HomeRegion")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeHomeRegionControlsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeHomeRegionControlsResult extends js.Object {
     var HomeRegionControls: js.UndefOr[HomeRegionControls]
     var NextToken: js.UndefOr[Token]
   }
 
-  object DescribeHomeRegionControlsResult {
-    @inline
-    def apply(
-        HomeRegionControls: js.UndefOr[HomeRegionControls] = js.undefined,
-        NextToken: js.UndefOr[Token] = js.undefined
-    ): DescribeHomeRegionControlsResult = {
-      val __obj = js.Dynamic.literal()
-      HomeRegionControls.foreach(__v => __obj.updateDynamic("HomeRegionControls")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeHomeRegionControlsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetHomeRegionRequest extends js.Object {}
 
-  object GetHomeRegionRequest {
-    @inline
-    def apply(
-    ): GetHomeRegionRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[GetHomeRegionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetHomeRegionResult extends js.Object {
     var HomeRegion: js.UndefOr[HomeRegion]
-  }
-
-  object GetHomeRegionResult {
-    @inline
-    def apply(
-        HomeRegion: js.UndefOr[HomeRegion] = js.undefined
-    ): GetHomeRegionResult = {
-      val __obj = js.Dynamic.literal()
-      HomeRegion.foreach(__v => __obj.updateDynamic("HomeRegion")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetHomeRegionResult]
-    }
   }
 
   /**
     * A home region control is an object that specifies the home region for an account, with some additional information. It contains a target (always of type <code>ACCOUNT</code>), an ID, and a time at which the home region was set.
     */
   @js.native
+  @Factory
   trait HomeRegionControl extends js.Object {
     var ControlId: js.UndefOr[ControlId]
     var HomeRegion: js.UndefOr[HomeRegion]
@@ -170,45 +97,14 @@ package migrationhubconfig {
     var Target: js.UndefOr[Target]
   }
 
-  object HomeRegionControl {
-    @inline
-    def apply(
-        ControlId: js.UndefOr[ControlId] = js.undefined,
-        HomeRegion: js.UndefOr[HomeRegion] = js.undefined,
-        RequestedTime: js.UndefOr[RequestedTime] = js.undefined,
-        Target: js.UndefOr[Target] = js.undefined
-    ): HomeRegionControl = {
-      val __obj = js.Dynamic.literal()
-      ControlId.foreach(__v => __obj.updateDynamic("ControlId")(__v.asInstanceOf[js.Any]))
-      HomeRegion.foreach(__v => __obj.updateDynamic("HomeRegion")(__v.asInstanceOf[js.Any]))
-      RequestedTime.foreach(__v => __obj.updateDynamic("RequestedTime")(__v.asInstanceOf[js.Any]))
-      Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HomeRegionControl]
-    }
-  }
-
   /**
     * The target parameter specifies the identifier to which the home region is applied, which is always an <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.
     */
   @js.native
+  @Factory
   trait Target extends js.Object {
     var Type: TargetType
     var Id: js.UndefOr[TargetId]
-  }
-
-  object Target {
-    @inline
-    def apply(
-        Type: TargetType,
-        Id: js.UndefOr[TargetId] = js.undefined
-    ): Target = {
-      val __obj = js.Dynamic.literal(
-        "Type" -> Type.asInstanceOf[js.Any]
-      )
-
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Target]
-    }
   }
 
   @js.native

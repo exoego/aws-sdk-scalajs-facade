@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object personalizeevents {
   type Date                = js.Date
@@ -33,6 +34,7 @@ package personalizeevents {
     * Represents user interaction event information sent using the <code>PutEvents</code> API.
     */
   @js.native
+  @Factory
   trait Event extends js.Object {
     var eventType: StringType
     var properties: EventPropertiesJSON
@@ -40,49 +42,12 @@ package personalizeevents {
     var eventId: js.UndefOr[StringType]
   }
 
-  object Event {
-    @inline
-    def apply(
-        eventType: StringType,
-        properties: EventPropertiesJSON,
-        sentAt: Date,
-        eventId: js.UndefOr[StringType] = js.undefined
-    ): Event = {
-      val __obj = js.Dynamic.literal(
-        "eventType"  -> eventType.asInstanceOf[js.Any],
-        "properties" -> properties.asInstanceOf[js.Any],
-        "sentAt"     -> sentAt.asInstanceOf[js.Any]
-      )
-
-      eventId.foreach(__v => __obj.updateDynamic("eventId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Event]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutEventsRequest extends js.Object {
     var eventList: EventList
     var sessionId: StringType
     var trackingId: StringType
     var userId: js.UndefOr[UserId]
-  }
-
-  object PutEventsRequest {
-    @inline
-    def apply(
-        eventList: EventList,
-        sessionId: StringType,
-        trackingId: StringType,
-        userId: js.UndefOr[UserId] = js.undefined
-    ): PutEventsRequest = {
-      val __obj = js.Dynamic.literal(
-        "eventList"  -> eventList.asInstanceOf[js.Any],
-        "sessionId"  -> sessionId.asInstanceOf[js.Any],
-        "trackingId" -> trackingId.asInstanceOf[js.Any]
-      )
-
-      userId.foreach(__v => __obj.updateDynamic("userId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutEventsRequest]
-    }
   }
 }

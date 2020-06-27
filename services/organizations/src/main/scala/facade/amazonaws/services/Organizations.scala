@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object organizations {
   type AccountArn               = String
@@ -247,43 +248,22 @@ package organizations {
   }
 
   @js.native
+  @Factory
   trait AcceptHandshakeRequest extends js.Object {
     var HandshakeId: HandshakeId
   }
 
-  object AcceptHandshakeRequest {
-    @inline
-    def apply(
-        HandshakeId: HandshakeId
-    ): AcceptHandshakeRequest = {
-      val __obj = js.Dynamic.literal(
-        "HandshakeId" -> HandshakeId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AcceptHandshakeRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AcceptHandshakeResponse extends js.Object {
     var Handshake: js.UndefOr[Handshake]
-  }
-
-  object AcceptHandshakeResponse {
-    @inline
-    def apply(
-        Handshake: js.UndefOr[Handshake] = js.undefined
-    ): AcceptHandshakeResponse = {
-      val __obj = js.Dynamic.literal()
-      Handshake.foreach(__v => __obj.updateDynamic("Handshake")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AcceptHandshakeResponse]
-    }
   }
 
   /**
     * Contains information about an AWS account that is a member of an organization.
     */
   @js.native
+  @Factory
   trait Account extends js.Object {
     var Arn: js.UndefOr[AccountArn]
     var Email: js.UndefOr[Email]
@@ -292,29 +272,6 @@ package organizations {
     var JoinedTimestamp: js.UndefOr[Timestamp]
     var Name: js.UndefOr[AccountName]
     var Status: js.UndefOr[AccountStatus]
-  }
-
-  object Account {
-    @inline
-    def apply(
-        Arn: js.UndefOr[AccountArn] = js.undefined,
-        Email: js.UndefOr[Email] = js.undefined,
-        Id: js.UndefOr[AccountId] = js.undefined,
-        JoinedMethod: js.UndefOr[AccountJoinedMethod] = js.undefined,
-        JoinedTimestamp: js.UndefOr[Timestamp] = js.undefined,
-        Name: js.UndefOr[AccountName] = js.undefined,
-        Status: js.UndefOr[AccountStatus] = js.undefined
-    ): Account = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      JoinedMethod.foreach(__v => __obj.updateDynamic("JoinedMethod")(__v.asInstanceOf[js.Any]))
-      JoinedTimestamp.foreach(__v => __obj.updateDynamic("JoinedTimestamp")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Account]
-    }
   }
 
   @js.native
@@ -349,80 +306,32 @@ package organizations {
   }
 
   @js.native
+  @Factory
   trait AttachPolicyRequest extends js.Object {
     var PolicyId: PolicyId
     var TargetId: PolicyTargetId
   }
 
-  object AttachPolicyRequest {
-    @inline
-    def apply(
-        PolicyId: PolicyId,
-        TargetId: PolicyTargetId
-    ): AttachPolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "PolicyId" -> PolicyId.asInstanceOf[js.Any],
-        "TargetId" -> TargetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AttachPolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CancelHandshakeRequest extends js.Object {
     var HandshakeId: HandshakeId
   }
 
-  object CancelHandshakeRequest {
-    @inline
-    def apply(
-        HandshakeId: HandshakeId
-    ): CancelHandshakeRequest = {
-      val __obj = js.Dynamic.literal(
-        "HandshakeId" -> HandshakeId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CancelHandshakeRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CancelHandshakeResponse extends js.Object {
     var Handshake: js.UndefOr[Handshake]
-  }
-
-  object CancelHandshakeResponse {
-    @inline
-    def apply(
-        Handshake: js.UndefOr[Handshake] = js.undefined
-    ): CancelHandshakeResponse = {
-      val __obj = js.Dynamic.literal()
-      Handshake.foreach(__v => __obj.updateDynamic("Handshake")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CancelHandshakeResponse]
-    }
   }
 
   /**
     * Contains a list of child entities, either OUs or accounts.
     */
   @js.native
+  @Factory
   trait Child extends js.Object {
     var Id: js.UndefOr[ChildId]
     var Type: js.UndefOr[ChildType]
-  }
-
-  object Child {
-    @inline
-    def apply(
-        Id: js.UndefOr[ChildId] = js.undefined,
-        Type: js.UndefOr[ChildType] = js.undefined
-    ): Child = {
-      val __obj = js.Dynamic.literal()
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Child]
-    }
   }
 
   @js.native
@@ -459,6 +368,7 @@ package organizations {
   }
 
   @js.native
+  @Factory
   trait CreateAccountRequest extends js.Object {
     var AccountName: AccountName
     var Email: Email
@@ -466,39 +376,10 @@ package organizations {
     var RoleName: js.UndefOr[RoleName]
   }
 
-  object CreateAccountRequest {
-    @inline
-    def apply(
-        AccountName: AccountName,
-        Email: Email,
-        IamUserAccessToBilling: js.UndefOr[IAMUserAccessToBilling] = js.undefined,
-        RoleName: js.UndefOr[RoleName] = js.undefined
-    ): CreateAccountRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountName" -> AccountName.asInstanceOf[js.Any],
-        "Email"       -> Email.asInstanceOf[js.Any]
-      )
-
-      IamUserAccessToBilling.foreach(__v => __obj.updateDynamic("IamUserAccessToBilling")(__v.asInstanceOf[js.Any]))
-      RoleName.foreach(__v => __obj.updateDynamic("RoleName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateAccountRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateAccountResponse extends js.Object {
     var CreateAccountStatus: js.UndefOr[CreateAccountStatus]
-  }
-
-  object CreateAccountResponse {
-    @inline
-    def apply(
-        CreateAccountStatus: js.UndefOr[CreateAccountStatus] = js.undefined
-    ): CreateAccountResponse = {
-      val __obj = js.Dynamic.literal()
-      CreateAccountStatus.foreach(__v => __obj.updateDynamic("CreateAccountStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateAccountResponse]
-    }
   }
 
   @js.native
@@ -515,6 +396,7 @@ package organizations {
     * Contains the status about a <a>CreateAccount</a> or <a>CreateGovCloudAccount</a> request to create an AWS account or an AWS GovCloud (US) account in an organization.
     */
   @js.native
+  @Factory
   trait CreateAccountStatus extends js.Object {
     var AccountId: js.UndefOr[AccountId]
     var AccountName: js.UndefOr[AccountName]
@@ -526,32 +408,8 @@ package organizations {
     var State: js.UndefOr[CreateAccountState]
   }
 
-  object CreateAccountStatus {
-    @inline
-    def apply(
-        AccountId: js.UndefOr[AccountId] = js.undefined,
-        AccountName: js.UndefOr[AccountName] = js.undefined,
-        CompletedTimestamp: js.UndefOr[Timestamp] = js.undefined,
-        FailureReason: js.UndefOr[CreateAccountFailureReason] = js.undefined,
-        GovCloudAccountId: js.UndefOr[AccountId] = js.undefined,
-        Id: js.UndefOr[CreateAccountRequestId] = js.undefined,
-        RequestedTimestamp: js.UndefOr[Timestamp] = js.undefined,
-        State: js.UndefOr[CreateAccountState] = js.undefined
-    ): CreateAccountStatus = {
-      val __obj = js.Dynamic.literal()
-      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
-      AccountName.foreach(__v => __obj.updateDynamic("AccountName")(__v.asInstanceOf[js.Any]))
-      CompletedTimestamp.foreach(__v => __obj.updateDynamic("CompletedTimestamp")(__v.asInstanceOf[js.Any]))
-      FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
-      GovCloudAccountId.foreach(__v => __obj.updateDynamic("GovCloudAccountId")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      RequestedTimestamp.foreach(__v => __obj.updateDynamic("RequestedTimestamp")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateAccountStatus]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateGovCloudAccountRequest extends js.Object {
     var AccountName: AccountName
     var Email: Email
@@ -559,111 +417,39 @@ package organizations {
     var RoleName: js.UndefOr[RoleName]
   }
 
-  object CreateGovCloudAccountRequest {
-    @inline
-    def apply(
-        AccountName: AccountName,
-        Email: Email,
-        IamUserAccessToBilling: js.UndefOr[IAMUserAccessToBilling] = js.undefined,
-        RoleName: js.UndefOr[RoleName] = js.undefined
-    ): CreateGovCloudAccountRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountName" -> AccountName.asInstanceOf[js.Any],
-        "Email"       -> Email.asInstanceOf[js.Any]
-      )
-
-      IamUserAccessToBilling.foreach(__v => __obj.updateDynamic("IamUserAccessToBilling")(__v.asInstanceOf[js.Any]))
-      RoleName.foreach(__v => __obj.updateDynamic("RoleName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateGovCloudAccountRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateGovCloudAccountResponse extends js.Object {
     var CreateAccountStatus: js.UndefOr[CreateAccountStatus]
   }
 
-  object CreateGovCloudAccountResponse {
-    @inline
-    def apply(
-        CreateAccountStatus: js.UndefOr[CreateAccountStatus] = js.undefined
-    ): CreateGovCloudAccountResponse = {
-      val __obj = js.Dynamic.literal()
-      CreateAccountStatus.foreach(__v => __obj.updateDynamic("CreateAccountStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateGovCloudAccountResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateOrganizationRequest extends js.Object {
     var FeatureSet: js.UndefOr[OrganizationFeatureSet]
   }
 
-  object CreateOrganizationRequest {
-    @inline
-    def apply(
-        FeatureSet: js.UndefOr[OrganizationFeatureSet] = js.undefined
-    ): CreateOrganizationRequest = {
-      val __obj = js.Dynamic.literal()
-      FeatureSet.foreach(__v => __obj.updateDynamic("FeatureSet")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateOrganizationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateOrganizationResponse extends js.Object {
     var Organization: js.UndefOr[Organization]
   }
 
-  object CreateOrganizationResponse {
-    @inline
-    def apply(
-        Organization: js.UndefOr[Organization] = js.undefined
-    ): CreateOrganizationResponse = {
-      val __obj = js.Dynamic.literal()
-      Organization.foreach(__v => __obj.updateDynamic("Organization")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateOrganizationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateOrganizationalUnitRequest extends js.Object {
     var Name: OrganizationalUnitName
     var ParentId: ParentId
   }
 
-  object CreateOrganizationalUnitRequest {
-    @inline
-    def apply(
-        Name: OrganizationalUnitName,
-        ParentId: ParentId
-    ): CreateOrganizationalUnitRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name"     -> Name.asInstanceOf[js.Any],
-        "ParentId" -> ParentId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateOrganizationalUnitRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateOrganizationalUnitResponse extends js.Object {
     var OrganizationalUnit: js.UndefOr[OrganizationalUnit]
   }
 
-  object CreateOrganizationalUnitResponse {
-    @inline
-    def apply(
-        OrganizationalUnit: js.UndefOr[OrganizationalUnit] = js.undefined
-    ): CreateOrganizationalUnitResponse = {
-      val __obj = js.Dynamic.literal()
-      OrganizationalUnit.foreach(__v => __obj.updateDynamic("OrganizationalUnit")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateOrganizationalUnitResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreatePolicyRequest extends js.Object {
     var Content: PolicyContent
     var Description: PolicyDescription
@@ -671,436 +457,151 @@ package organizations {
     var Type: PolicyType
   }
 
-  object CreatePolicyRequest {
-    @inline
-    def apply(
-        Content: PolicyContent,
-        Description: PolicyDescription,
-        Name: PolicyName,
-        Type: PolicyType
-    ): CreatePolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "Content"     -> Content.asInstanceOf[js.Any],
-        "Description" -> Description.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any],
-        "Type"        -> Type.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreatePolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreatePolicyResponse extends js.Object {
     var Policy: js.UndefOr[Policy]
   }
 
-  object CreatePolicyResponse {
-    @inline
-    def apply(
-        Policy: js.UndefOr[Policy] = js.undefined
-    ): CreatePolicyResponse = {
-      val __obj = js.Dynamic.literal()
-      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreatePolicyResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeclineHandshakeRequest extends js.Object {
     var HandshakeId: HandshakeId
   }
 
-  object DeclineHandshakeRequest {
-    @inline
-    def apply(
-        HandshakeId: HandshakeId
-    ): DeclineHandshakeRequest = {
-      val __obj = js.Dynamic.literal(
-        "HandshakeId" -> HandshakeId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeclineHandshakeRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeclineHandshakeResponse extends js.Object {
     var Handshake: js.UndefOr[Handshake]
   }
 
-  object DeclineHandshakeResponse {
-    @inline
-    def apply(
-        Handshake: js.UndefOr[Handshake] = js.undefined
-    ): DeclineHandshakeResponse = {
-      val __obj = js.Dynamic.literal()
-      Handshake.foreach(__v => __obj.updateDynamic("Handshake")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeclineHandshakeResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteOrganizationalUnitRequest extends js.Object {
     var OrganizationalUnitId: OrganizationalUnitId
   }
 
-  object DeleteOrganizationalUnitRequest {
-    @inline
-    def apply(
-        OrganizationalUnitId: OrganizationalUnitId
-    ): DeleteOrganizationalUnitRequest = {
-      val __obj = js.Dynamic.literal(
-        "OrganizationalUnitId" -> OrganizationalUnitId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteOrganizationalUnitRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeletePolicyRequest extends js.Object {
     var PolicyId: PolicyId
   }
 
-  object DeletePolicyRequest {
-    @inline
-    def apply(
-        PolicyId: PolicyId
-    ): DeletePolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "PolicyId" -> PolicyId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeletePolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeAccountRequest extends js.Object {
     var AccountId: AccountId
   }
 
-  object DescribeAccountRequest {
-    @inline
-    def apply(
-        AccountId: AccountId
-    ): DescribeAccountRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeAccountRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeAccountResponse extends js.Object {
     var Account: js.UndefOr[Account]
   }
 
-  object DescribeAccountResponse {
-    @inline
-    def apply(
-        Account: js.UndefOr[Account] = js.undefined
-    ): DescribeAccountResponse = {
-      val __obj = js.Dynamic.literal()
-      Account.foreach(__v => __obj.updateDynamic("Account")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeAccountResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeCreateAccountStatusRequest extends js.Object {
     var CreateAccountRequestId: CreateAccountRequestId
   }
 
-  object DescribeCreateAccountStatusRequest {
-    @inline
-    def apply(
-        CreateAccountRequestId: CreateAccountRequestId
-    ): DescribeCreateAccountStatusRequest = {
-      val __obj = js.Dynamic.literal(
-        "CreateAccountRequestId" -> CreateAccountRequestId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeCreateAccountStatusRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeCreateAccountStatusResponse extends js.Object {
     var CreateAccountStatus: js.UndefOr[CreateAccountStatus]
   }
 
-  object DescribeCreateAccountStatusResponse {
-    @inline
-    def apply(
-        CreateAccountStatus: js.UndefOr[CreateAccountStatus] = js.undefined
-    ): DescribeCreateAccountStatusResponse = {
-      val __obj = js.Dynamic.literal()
-      CreateAccountStatus.foreach(__v => __obj.updateDynamic("CreateAccountStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeCreateAccountStatusResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeEffectivePolicyRequest extends js.Object {
     var PolicyType: EffectivePolicyType
     var TargetId: js.UndefOr[PolicyTargetId]
   }
 
-  object DescribeEffectivePolicyRequest {
-    @inline
-    def apply(
-        PolicyType: EffectivePolicyType,
-        TargetId: js.UndefOr[PolicyTargetId] = js.undefined
-    ): DescribeEffectivePolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "PolicyType" -> PolicyType.asInstanceOf[js.Any]
-      )
-
-      TargetId.foreach(__v => __obj.updateDynamic("TargetId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeEffectivePolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeEffectivePolicyResponse extends js.Object {
     var EffectivePolicy: js.UndefOr[EffectivePolicy]
   }
 
-  object DescribeEffectivePolicyResponse {
-    @inline
-    def apply(
-        EffectivePolicy: js.UndefOr[EffectivePolicy] = js.undefined
-    ): DescribeEffectivePolicyResponse = {
-      val __obj = js.Dynamic.literal()
-      EffectivePolicy.foreach(__v => __obj.updateDynamic("EffectivePolicy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeEffectivePolicyResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeHandshakeRequest extends js.Object {
     var HandshakeId: HandshakeId
   }
 
-  object DescribeHandshakeRequest {
-    @inline
-    def apply(
-        HandshakeId: HandshakeId
-    ): DescribeHandshakeRequest = {
-      val __obj = js.Dynamic.literal(
-        "HandshakeId" -> HandshakeId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeHandshakeRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeHandshakeResponse extends js.Object {
     var Handshake: js.UndefOr[Handshake]
   }
 
-  object DescribeHandshakeResponse {
-    @inline
-    def apply(
-        Handshake: js.UndefOr[Handshake] = js.undefined
-    ): DescribeHandshakeResponse = {
-      val __obj = js.Dynamic.literal()
-      Handshake.foreach(__v => __obj.updateDynamic("Handshake")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeHandshakeResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeOrganizationResponse extends js.Object {
     var Organization: js.UndefOr[Organization]
   }
 
-  object DescribeOrganizationResponse {
-    @inline
-    def apply(
-        Organization: js.UndefOr[Organization] = js.undefined
-    ): DescribeOrganizationResponse = {
-      val __obj = js.Dynamic.literal()
-      Organization.foreach(__v => __obj.updateDynamic("Organization")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeOrganizationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeOrganizationalUnitRequest extends js.Object {
     var OrganizationalUnitId: OrganizationalUnitId
   }
 
-  object DescribeOrganizationalUnitRequest {
-    @inline
-    def apply(
-        OrganizationalUnitId: OrganizationalUnitId
-    ): DescribeOrganizationalUnitRequest = {
-      val __obj = js.Dynamic.literal(
-        "OrganizationalUnitId" -> OrganizationalUnitId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeOrganizationalUnitRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeOrganizationalUnitResponse extends js.Object {
     var OrganizationalUnit: js.UndefOr[OrganizationalUnit]
   }
 
-  object DescribeOrganizationalUnitResponse {
-    @inline
-    def apply(
-        OrganizationalUnit: js.UndefOr[OrganizationalUnit] = js.undefined
-    ): DescribeOrganizationalUnitResponse = {
-      val __obj = js.Dynamic.literal()
-      OrganizationalUnit.foreach(__v => __obj.updateDynamic("OrganizationalUnit")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeOrganizationalUnitResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribePolicyRequest extends js.Object {
     var PolicyId: PolicyId
   }
 
-  object DescribePolicyRequest {
-    @inline
-    def apply(
-        PolicyId: PolicyId
-    ): DescribePolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "PolicyId" -> PolicyId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribePolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribePolicyResponse extends js.Object {
     var Policy: js.UndefOr[Policy]
   }
 
-  object DescribePolicyResponse {
-    @inline
-    def apply(
-        Policy: js.UndefOr[Policy] = js.undefined
-    ): DescribePolicyResponse = {
-      val __obj = js.Dynamic.literal()
-      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribePolicyResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DetachPolicyRequest extends js.Object {
     var PolicyId: PolicyId
     var TargetId: PolicyTargetId
   }
 
-  object DetachPolicyRequest {
-    @inline
-    def apply(
-        PolicyId: PolicyId,
-        TargetId: PolicyTargetId
-    ): DetachPolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "PolicyId" -> PolicyId.asInstanceOf[js.Any],
-        "TargetId" -> TargetId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DetachPolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisableAWSServiceAccessRequest extends js.Object {
     var ServicePrincipal: ServicePrincipal
   }
 
-  object DisableAWSServiceAccessRequest {
-    @inline
-    def apply(
-        ServicePrincipal: ServicePrincipal
-    ): DisableAWSServiceAccessRequest = {
-      val __obj = js.Dynamic.literal(
-        "ServicePrincipal" -> ServicePrincipal.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisableAWSServiceAccessRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisablePolicyTypeRequest extends js.Object {
     var PolicyType: PolicyType
     var RootId: RootId
   }
 
-  object DisablePolicyTypeRequest {
-    @inline
-    def apply(
-        PolicyType: PolicyType,
-        RootId: RootId
-    ): DisablePolicyTypeRequest = {
-      val __obj = js.Dynamic.literal(
-        "PolicyType" -> PolicyType.asInstanceOf[js.Any],
-        "RootId"     -> RootId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisablePolicyTypeRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisablePolicyTypeResponse extends js.Object {
     var Root: js.UndefOr[Root]
-  }
-
-  object DisablePolicyTypeResponse {
-    @inline
-    def apply(
-        Root: js.UndefOr[Root] = js.undefined
-    ): DisablePolicyTypeResponse = {
-      val __obj = js.Dynamic.literal()
-      Root.foreach(__v => __obj.updateDynamic("Root")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DisablePolicyTypeResponse]
-    }
   }
 
   /**
     * Contains rules to be applied to the affected accounts. The effective policy is the aggregation of any policies the account inherits, plus any policy directly attached to the account.
     */
   @js.native
+  @Factory
   trait EffectivePolicy extends js.Object {
     var LastUpdatedTimestamp: js.UndefOr[Timestamp]
     var PolicyContent: js.UndefOr[PolicyContent]
     var PolicyType: js.UndefOr[EffectivePolicyType]
     var TargetId: js.UndefOr[PolicyTargetId]
-  }
-
-  object EffectivePolicy {
-    @inline
-    def apply(
-        LastUpdatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
-        PolicyContent: js.UndefOr[PolicyContent] = js.undefined,
-        PolicyType: js.UndefOr[EffectivePolicyType] = js.undefined,
-        TargetId: js.UndefOr[PolicyTargetId] = js.undefined
-    ): EffectivePolicy = {
-      val __obj = js.Dynamic.literal()
-      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
-      PolicyContent.foreach(__v => __obj.updateDynamic("PolicyContent")(__v.asInstanceOf[js.Any]))
-      PolicyType.foreach(__v => __obj.updateDynamic("PolicyType")(__v.asInstanceOf[js.Any]))
-      TargetId.foreach(__v => __obj.updateDynamic("TargetId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EffectivePolicy]
-    }
   }
 
   @js.native
@@ -1112,109 +613,42 @@ package organizations {
   }
 
   @js.native
+  @Factory
   trait EnableAWSServiceAccessRequest extends js.Object {
     var ServicePrincipal: ServicePrincipal
   }
 
-  object EnableAWSServiceAccessRequest {
-    @inline
-    def apply(
-        ServicePrincipal: ServicePrincipal
-    ): EnableAWSServiceAccessRequest = {
-      val __obj = js.Dynamic.literal(
-        "ServicePrincipal" -> ServicePrincipal.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[EnableAWSServiceAccessRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait EnableAllFeaturesRequest extends js.Object {}
 
-  object EnableAllFeaturesRequest {
-    @inline
-    def apply(
-    ): EnableAllFeaturesRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[EnableAllFeaturesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait EnableAllFeaturesResponse extends js.Object {
     var Handshake: js.UndefOr[Handshake]
   }
 
-  object EnableAllFeaturesResponse {
-    @inline
-    def apply(
-        Handshake: js.UndefOr[Handshake] = js.undefined
-    ): EnableAllFeaturesResponse = {
-      val __obj = js.Dynamic.literal()
-      Handshake.foreach(__v => __obj.updateDynamic("Handshake")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EnableAllFeaturesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait EnablePolicyTypeRequest extends js.Object {
     var PolicyType: PolicyType
     var RootId: RootId
   }
 
-  object EnablePolicyTypeRequest {
-    @inline
-    def apply(
-        PolicyType: PolicyType,
-        RootId: RootId
-    ): EnablePolicyTypeRequest = {
-      val __obj = js.Dynamic.literal(
-        "PolicyType" -> PolicyType.asInstanceOf[js.Any],
-        "RootId"     -> RootId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[EnablePolicyTypeRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait EnablePolicyTypeResponse extends js.Object {
     var Root: js.UndefOr[Root]
-  }
-
-  object EnablePolicyTypeResponse {
-    @inline
-    def apply(
-        Root: js.UndefOr[Root] = js.undefined
-    ): EnablePolicyTypeResponse = {
-      val __obj = js.Dynamic.literal()
-      Root.foreach(__v => __obj.updateDynamic("Root")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EnablePolicyTypeResponse]
-    }
   }
 
   /**
     * A structure that contains details of a service principal that is enabled to integrate with AWS Organizations.
     */
   @js.native
+  @Factory
   trait EnabledServicePrincipal extends js.Object {
     var DateEnabled: js.UndefOr[Timestamp]
     var ServicePrincipal: js.UndefOr[ServicePrincipal]
-  }
-
-  object EnabledServicePrincipal {
-    @inline
-    def apply(
-        DateEnabled: js.UndefOr[Timestamp] = js.undefined,
-        ServicePrincipal: js.UndefOr[ServicePrincipal] = js.undefined
-    ): EnabledServicePrincipal = {
-      val __obj = js.Dynamic.literal()
-      DateEnabled.foreach(__v => __obj.updateDynamic("DateEnabled")(__v.asInstanceOf[js.Any]))
-      ServicePrincipal.foreach(__v => __obj.updateDynamic("ServicePrincipal")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EnabledServicePrincipal]
-    }
   }
 
   /**
@@ -1222,6 +656,7 @@ package organizations {
     *  ```Note:``` Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering that state. After that, they are deleted.
     */
   @js.native
+  @Factory
   trait Handshake extends js.Object {
     var Action: js.UndefOr[ActionType]
     var Arn: js.UndefOr[HandshakeArn]
@@ -1233,75 +668,24 @@ package organizations {
     var State: js.UndefOr[HandshakeState]
   }
 
-  object Handshake {
-    @inline
-    def apply(
-        Action: js.UndefOr[ActionType] = js.undefined,
-        Arn: js.UndefOr[HandshakeArn] = js.undefined,
-        ExpirationTimestamp: js.UndefOr[Timestamp] = js.undefined,
-        Id: js.UndefOr[HandshakeId] = js.undefined,
-        Parties: js.UndefOr[HandshakeParties] = js.undefined,
-        RequestedTimestamp: js.UndefOr[Timestamp] = js.undefined,
-        Resources: js.UndefOr[HandshakeResources] = js.undefined,
-        State: js.UndefOr[HandshakeState] = js.undefined
-    ): Handshake = {
-      val __obj = js.Dynamic.literal()
-      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      ExpirationTimestamp.foreach(__v => __obj.updateDynamic("ExpirationTimestamp")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Parties.foreach(__v => __obj.updateDynamic("Parties")(__v.asInstanceOf[js.Any]))
-      RequestedTimestamp.foreach(__v => __obj.updateDynamic("RequestedTimestamp")(__v.asInstanceOf[js.Any]))
-      Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Handshake]
-    }
-  }
-
   /**
     * Specifies the criteria that are used to select the handshakes for the operation.
     */
   @js.native
+  @Factory
   trait HandshakeFilter extends js.Object {
     var ActionType: js.UndefOr[ActionType]
     var ParentHandshakeId: js.UndefOr[HandshakeId]
-  }
-
-  object HandshakeFilter {
-    @inline
-    def apply(
-        ActionType: js.UndefOr[ActionType] = js.undefined,
-        ParentHandshakeId: js.UndefOr[HandshakeId] = js.undefined
-    ): HandshakeFilter = {
-      val __obj = js.Dynamic.literal()
-      ActionType.foreach(__v => __obj.updateDynamic("ActionType")(__v.asInstanceOf[js.Any]))
-      ParentHandshakeId.foreach(__v => __obj.updateDynamic("ParentHandshakeId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HandshakeFilter]
-    }
   }
 
   /**
     * Identifies a participant in a handshake.
     */
   @js.native
+  @Factory
   trait HandshakeParty extends js.Object {
     var Id: HandshakePartyId
     var Type: HandshakePartyType
-  }
-
-  object HandshakeParty {
-    @inline
-    def apply(
-        Id: HandshakePartyId,
-        Type: HandshakePartyType
-    ): HandshakeParty = {
-      val __obj = js.Dynamic.literal(
-        "Id"   -> Id.asInstanceOf[js.Any],
-        "Type" -> Type.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[HandshakeParty]
-    }
   }
 
   @js.native
@@ -1318,25 +702,11 @@ package organizations {
     * Contains additional data that is needed to process a handshake.
     */
   @js.native
+  @Factory
   trait HandshakeResource extends js.Object {
     var Resources: js.UndefOr[HandshakeResources]
     var Type: js.UndefOr[HandshakeResourceType]
     var Value: js.UndefOr[HandshakeResourceValue]
-  }
-
-  object HandshakeResource {
-    @inline
-    def apply(
-        Resources: js.UndefOr[HandshakeResources] = js.undefined,
-        Type: js.UndefOr[HandshakeResourceType] = js.undefined,
-        Value: js.UndefOr[HandshakeResourceValue] = js.undefined
-    ): HandshakeResource = {
-      val __obj = js.Dynamic.literal()
-      Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HandshakeResource]
-    }
   }
 
   @js.native
@@ -1388,162 +758,63 @@ package organizations {
   }
 
   @js.native
+  @Factory
   trait InviteAccountToOrganizationRequest extends js.Object {
     var Target: HandshakeParty
     var Notes: js.UndefOr[HandshakeNotes]
   }
 
-  object InviteAccountToOrganizationRequest {
-    @inline
-    def apply(
-        Target: HandshakeParty,
-        Notes: js.UndefOr[HandshakeNotes] = js.undefined
-    ): InviteAccountToOrganizationRequest = {
-      val __obj = js.Dynamic.literal(
-        "Target" -> Target.asInstanceOf[js.Any]
-      )
-
-      Notes.foreach(__v => __obj.updateDynamic("Notes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InviteAccountToOrganizationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait InviteAccountToOrganizationResponse extends js.Object {
     var Handshake: js.UndefOr[Handshake]
   }
 
-  object InviteAccountToOrganizationResponse {
-    @inline
-    def apply(
-        Handshake: js.UndefOr[Handshake] = js.undefined
-    ): InviteAccountToOrganizationResponse = {
-      val __obj = js.Dynamic.literal()
-      Handshake.foreach(__v => __obj.updateDynamic("Handshake")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InviteAccountToOrganizationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAWSServiceAccessForOrganizationRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListAWSServiceAccessForOrganizationRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListAWSServiceAccessForOrganizationRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAWSServiceAccessForOrganizationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAWSServiceAccessForOrganizationResponse extends js.Object {
     var EnabledServicePrincipals: js.UndefOr[EnabledServicePrincipals]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListAWSServiceAccessForOrganizationResponse {
-    @inline
-    def apply(
-        EnabledServicePrincipals: js.UndefOr[EnabledServicePrincipals] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListAWSServiceAccessForOrganizationResponse = {
-      val __obj = js.Dynamic.literal()
-      EnabledServicePrincipals.foreach(__v => __obj.updateDynamic("EnabledServicePrincipals")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAWSServiceAccessForOrganizationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAccountsForParentRequest extends js.Object {
     var ParentId: ParentId
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListAccountsForParentRequest {
-    @inline
-    def apply(
-        ParentId: ParentId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListAccountsForParentRequest = {
-      val __obj = js.Dynamic.literal(
-        "ParentId" -> ParentId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAccountsForParentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAccountsForParentResponse extends js.Object {
     var Accounts: js.UndefOr[Accounts]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListAccountsForParentResponse {
-    @inline
-    def apply(
-        Accounts: js.UndefOr[Accounts] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListAccountsForParentResponse = {
-      val __obj = js.Dynamic.literal()
-      Accounts.foreach(__v => __obj.updateDynamic("Accounts")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAccountsForParentResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAccountsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListAccountsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListAccountsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAccountsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAccountsResponse extends js.Object {
     var Accounts: js.UndefOr[Accounts]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListAccountsResponse {
-    @inline
-    def apply(
-        Accounts: js.UndefOr[Accounts] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListAccountsResponse = {
-      val __obj = js.Dynamic.literal()
-      Accounts.foreach(__v => __obj.updateDynamic("Accounts")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAccountsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListChildrenRequest extends js.Object {
     var ChildType: ChildType
     var ParentId: ParentId
@@ -1551,254 +822,90 @@ package organizations {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListChildrenRequest {
-    @inline
-    def apply(
-        ChildType: ChildType,
-        ParentId: ParentId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListChildrenRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChildType" -> ChildType.asInstanceOf[js.Any],
-        "ParentId"  -> ParentId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListChildrenRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListChildrenResponse extends js.Object {
     var Children: js.UndefOr[Children]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListChildrenResponse {
-    @inline
-    def apply(
-        Children: js.UndefOr[Children] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListChildrenResponse = {
-      val __obj = js.Dynamic.literal()
-      Children.foreach(__v => __obj.updateDynamic("Children")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListChildrenResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListCreateAccountStatusRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
     var States: js.UndefOr[CreateAccountStates]
   }
 
-  object ListCreateAccountStatusRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        States: js.UndefOr[CreateAccountStates] = js.undefined
-    ): ListCreateAccountStatusRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      States.foreach(__v => __obj.updateDynamic("States")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListCreateAccountStatusRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListCreateAccountStatusResponse extends js.Object {
     var CreateAccountStatuses: js.UndefOr[CreateAccountStatuses]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListCreateAccountStatusResponse {
-    @inline
-    def apply(
-        CreateAccountStatuses: js.UndefOr[CreateAccountStatuses] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListCreateAccountStatusResponse = {
-      val __obj = js.Dynamic.literal()
-      CreateAccountStatuses.foreach(__v => __obj.updateDynamic("CreateAccountStatuses")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListCreateAccountStatusResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListHandshakesForAccountRequest extends js.Object {
     var Filter: js.UndefOr[HandshakeFilter]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListHandshakesForAccountRequest {
-    @inline
-    def apply(
-        Filter: js.UndefOr[HandshakeFilter] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListHandshakesForAccountRequest = {
-      val __obj = js.Dynamic.literal()
-      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListHandshakesForAccountRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListHandshakesForAccountResponse extends js.Object {
     var Handshakes: js.UndefOr[Handshakes]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListHandshakesForAccountResponse {
-    @inline
-    def apply(
-        Handshakes: js.UndefOr[Handshakes] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListHandshakesForAccountResponse = {
-      val __obj = js.Dynamic.literal()
-      Handshakes.foreach(__v => __obj.updateDynamic("Handshakes")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListHandshakesForAccountResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListHandshakesForOrganizationRequest extends js.Object {
     var Filter: js.UndefOr[HandshakeFilter]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListHandshakesForOrganizationRequest {
-    @inline
-    def apply(
-        Filter: js.UndefOr[HandshakeFilter] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListHandshakesForOrganizationRequest = {
-      val __obj = js.Dynamic.literal()
-      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListHandshakesForOrganizationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListHandshakesForOrganizationResponse extends js.Object {
     var Handshakes: js.UndefOr[Handshakes]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListHandshakesForOrganizationResponse {
-    @inline
-    def apply(
-        Handshakes: js.UndefOr[Handshakes] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListHandshakesForOrganizationResponse = {
-      val __obj = js.Dynamic.literal()
-      Handshakes.foreach(__v => __obj.updateDynamic("Handshakes")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListHandshakesForOrganizationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListOrganizationalUnitsForParentRequest extends js.Object {
     var ParentId: ParentId
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListOrganizationalUnitsForParentRequest {
-    @inline
-    def apply(
-        ParentId: ParentId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListOrganizationalUnitsForParentRequest = {
-      val __obj = js.Dynamic.literal(
-        "ParentId" -> ParentId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListOrganizationalUnitsForParentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListOrganizationalUnitsForParentResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var OrganizationalUnits: js.UndefOr[OrganizationalUnits]
   }
 
-  object ListOrganizationalUnitsForParentResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        OrganizationalUnits: js.UndefOr[OrganizationalUnits] = js.undefined
-    ): ListOrganizationalUnitsForParentResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      OrganizationalUnits.foreach(__v => __obj.updateDynamic("OrganizationalUnits")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListOrganizationalUnitsForParentResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListParentsRequest extends js.Object {
     var ChildId: ChildId
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListParentsRequest {
-    @inline
-    def apply(
-        ChildId: ChildId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListParentsRequest = {
-      val __obj = js.Dynamic.literal(
-        "ChildId" -> ChildId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListParentsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListParentsResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var Parents: js.UndefOr[Parents]
   }
 
-  object ListParentsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        Parents: js.UndefOr[Parents] = js.undefined
-    ): ListParentsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Parents.foreach(__v => __obj.updateDynamic("Parents")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListParentsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPoliciesForTargetRequest extends js.Object {
     var Filter: PolicyType
     var TargetId: PolicyTargetId
@@ -1806,236 +913,84 @@ package organizations {
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListPoliciesForTargetRequest {
-    @inline
-    def apply(
-        Filter: PolicyType,
-        TargetId: PolicyTargetId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListPoliciesForTargetRequest = {
-      val __obj = js.Dynamic.literal(
-        "Filter"   -> Filter.asInstanceOf[js.Any],
-        "TargetId" -> TargetId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPoliciesForTargetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPoliciesForTargetResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var Policies: js.UndefOr[Policies]
   }
 
-  object ListPoliciesForTargetResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        Policies: js.UndefOr[Policies] = js.undefined
-    ): ListPoliciesForTargetResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Policies.foreach(__v => __obj.updateDynamic("Policies")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPoliciesForTargetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPoliciesRequest extends js.Object {
     var Filter: PolicyType
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListPoliciesRequest {
-    @inline
-    def apply(
-        Filter: PolicyType,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListPoliciesRequest = {
-      val __obj = js.Dynamic.literal(
-        "Filter" -> Filter.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPoliciesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListPoliciesResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var Policies: js.UndefOr[Policies]
   }
 
-  object ListPoliciesResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        Policies: js.UndefOr[Policies] = js.undefined
-    ): ListPoliciesResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Policies.foreach(__v => __obj.updateDynamic("Policies")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListPoliciesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListRootsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListRootsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListRootsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRootsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListRootsResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var Roots: js.UndefOr[Roots]
   }
 
-  object ListRootsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        Roots: js.UndefOr[Roots] = js.undefined
-    ): ListRootsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Roots.foreach(__v => __obj.updateDynamic("Roots")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListRootsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceRequest extends js.Object {
     var ResourceId: TaggableResourceId
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListTagsForResourceRequest {
-    @inline
-    def apply(
-        ResourceId: TaggableResourceId,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListTagsForResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
-      )
-
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var Tags: js.UndefOr[Tags]
   }
 
-  object ListTagsForResourceResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        Tags: js.UndefOr[Tags] = js.undefined
-    ): ListTagsForResourceResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTargetsForPolicyRequest extends js.Object {
     var PolicyId: PolicyId
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListTargetsForPolicyRequest {
-    @inline
-    def apply(
-        PolicyId: PolicyId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListTargetsForPolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "PolicyId" -> PolicyId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTargetsForPolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTargetsForPolicyResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var Targets: js.UndefOr[PolicyTargets]
   }
 
-  object ListTargetsForPolicyResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        Targets: js.UndefOr[PolicyTargets] = js.undefined
-    ): ListTargetsForPolicyResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTargetsForPolicyResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait MoveAccountRequest extends js.Object {
     var AccountId: AccountId
     var DestinationParentId: ParentId
     var SourceParentId: ParentId
   }
 
-  object MoveAccountRequest {
-    @inline
-    def apply(
-        AccountId: AccountId,
-        DestinationParentId: ParentId,
-        SourceParentId: ParentId
-    ): MoveAccountRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId"           -> AccountId.asInstanceOf[js.Any],
-        "DestinationParentId" -> DestinationParentId.asInstanceOf[js.Any],
-        "SourceParentId"      -> SourceParentId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[MoveAccountRequest]
-    }
-  }
-
   /**
     * Contains details about an organization. An organization is a collection of accounts that are centrally managed together using consolidated billing, organized hierarchically with organizational units (OUs), and controlled with policies.
     */
   @js.native
+  @Factory
   trait Organization extends js.Object {
     var Arn: js.UndefOr[OrganizationArn]
     var AvailablePolicyTypes: js.UndefOr[PolicyTypes]
@@ -2044,29 +999,6 @@ package organizations {
     var MasterAccountArn: js.UndefOr[AccountArn]
     var MasterAccountEmail: js.UndefOr[Email]
     var MasterAccountId: js.UndefOr[AccountId]
-  }
-
-  object Organization {
-    @inline
-    def apply(
-        Arn: js.UndefOr[OrganizationArn] = js.undefined,
-        AvailablePolicyTypes: js.UndefOr[PolicyTypes] = js.undefined,
-        FeatureSet: js.UndefOr[OrganizationFeatureSet] = js.undefined,
-        Id: js.UndefOr[OrganizationId] = js.undefined,
-        MasterAccountArn: js.UndefOr[AccountArn] = js.undefined,
-        MasterAccountEmail: js.UndefOr[Email] = js.undefined,
-        MasterAccountId: js.UndefOr[AccountId] = js.undefined
-    ): Organization = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      AvailablePolicyTypes.foreach(__v => __obj.updateDynamic("AvailablePolicyTypes")(__v.asInstanceOf[js.Any]))
-      FeatureSet.foreach(__v => __obj.updateDynamic("FeatureSet")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      MasterAccountArn.foreach(__v => __obj.updateDynamic("MasterAccountArn")(__v.asInstanceOf[js.Any]))
-      MasterAccountEmail.foreach(__v => __obj.updateDynamic("MasterAccountEmail")(__v.asInstanceOf[js.Any]))
-      MasterAccountId.foreach(__v => __obj.updateDynamic("MasterAccountId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Organization]
-    }
   }
 
   @js.native
@@ -2082,47 +1014,21 @@ package organizations {
     * Contains details about an organizational unit (OU). An OU is a container of AWS accounts within a root of an organization. Policies that are attached to an OU apply to all accounts contained in that OU and in any child OUs.
     */
   @js.native
+  @Factory
   trait OrganizationalUnit extends js.Object {
     var Arn: js.UndefOr[OrganizationalUnitArn]
     var Id: js.UndefOr[OrganizationalUnitId]
     var Name: js.UndefOr[OrganizationalUnitName]
   }
 
-  object OrganizationalUnit {
-    @inline
-    def apply(
-        Arn: js.UndefOr[OrganizationalUnitArn] = js.undefined,
-        Id: js.UndefOr[OrganizationalUnitId] = js.undefined,
-        Name: js.UndefOr[OrganizationalUnitName] = js.undefined
-    ): OrganizationalUnit = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[OrganizationalUnit]
-    }
-  }
-
   /**
     * Contains information about either a root or an organizational unit (OU) that can contain OUs or accounts in an organization.
     */
   @js.native
+  @Factory
   trait Parent extends js.Object {
     var Id: js.UndefOr[ParentId]
     var Type: js.UndefOr[ParentType]
-  }
-
-  object Parent {
-    @inline
-    def apply(
-        Id: js.UndefOr[ParentId] = js.undefined,
-        Type: js.UndefOr[ParentType] = js.undefined
-    ): Parent = {
-      val __obj = js.Dynamic.literal()
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Parent]
-    }
   }
 
   @js.native
@@ -2138,28 +1044,17 @@ package organizations {
     * Contains rules to be applied to the affected accounts. Policies can be attached directly to accounts, or to roots and OUs to affect all accounts in those hierarchies.
     */
   @js.native
+  @Factory
   trait Policy extends js.Object {
     var Content: js.UndefOr[PolicyContent]
     var PolicySummary: js.UndefOr[PolicySummary]
-  }
-
-  object Policy {
-    @inline
-    def apply(
-        Content: js.UndefOr[PolicyContent] = js.undefined,
-        PolicySummary: js.UndefOr[PolicySummary] = js.undefined
-    ): Policy = {
-      val __obj = js.Dynamic.literal()
-      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
-      PolicySummary.foreach(__v => __obj.updateDynamic("PolicySummary")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Policy]
-    }
   }
 
   /**
     * Contains information about a policy, but does not include the content. To see the content of a policy, see <a>DescribePolicy</a>.
     */
   @js.native
+  @Factory
   trait PolicySummary extends js.Object {
     var Arn: js.UndefOr[PolicyArn]
     var AwsManaged: js.UndefOr[AwsManagedPolicy]
@@ -2169,53 +1064,16 @@ package organizations {
     var Type: js.UndefOr[PolicyType]
   }
 
-  object PolicySummary {
-    @inline
-    def apply(
-        Arn: js.UndefOr[PolicyArn] = js.undefined,
-        AwsManaged: js.UndefOr[AwsManagedPolicy] = js.undefined,
-        Description: js.UndefOr[PolicyDescription] = js.undefined,
-        Id: js.UndefOr[PolicyId] = js.undefined,
-        Name: js.UndefOr[PolicyName] = js.undefined,
-        Type: js.UndefOr[PolicyType] = js.undefined
-    ): PolicySummary = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      AwsManaged.foreach(__v => __obj.updateDynamic("AwsManaged")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PolicySummary]
-    }
-  }
-
   /**
     * Contains information about a root, OU, or account that a policy is attached to.
     */
   @js.native
+  @Factory
   trait PolicyTargetSummary extends js.Object {
     var Arn: js.UndefOr[GenericArn]
     var Name: js.UndefOr[TargetName]
     var TargetId: js.UndefOr[PolicyTargetId]
     var Type: js.UndefOr[TargetType]
-  }
-
-  object PolicyTargetSummary {
-    @inline
-    def apply(
-        Arn: js.UndefOr[GenericArn] = js.undefined,
-        Name: js.UndefOr[TargetName] = js.undefined,
-        TargetId: js.UndefOr[PolicyTargetId] = js.undefined,
-        Type: js.UndefOr[TargetType] = js.undefined
-    ): PolicyTargetSummary = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      TargetId.foreach(__v => __obj.updateDynamic("TargetId")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PolicyTargetSummary]
-    }
   }
 
   @js.native
@@ -2241,46 +1099,23 @@ package organizations {
     * Contains information about a policy type and its status in the associated root.
     */
   @js.native
+  @Factory
   trait PolicyTypeSummary extends js.Object {
     var Status: js.UndefOr[PolicyTypeStatus]
     var Type: js.UndefOr[PolicyType]
   }
 
-  object PolicyTypeSummary {
-    @inline
-    def apply(
-        Status: js.UndefOr[PolicyTypeStatus] = js.undefined,
-        Type: js.UndefOr[PolicyType] = js.undefined
-    ): PolicyTypeSummary = {
-      val __obj = js.Dynamic.literal()
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PolicyTypeSummary]
-    }
-  }
-
   @js.native
+  @Factory
   trait RemoveAccountFromOrganizationRequest extends js.Object {
     var AccountId: AccountId
-  }
-
-  object RemoveAccountFromOrganizationRequest {
-    @inline
-    def apply(
-        AccountId: AccountId
-    ): RemoveAccountFromOrganizationRequest = {
-      val __obj = js.Dynamic.literal(
-        "AccountId" -> AccountId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RemoveAccountFromOrganizationRequest]
-    }
   }
 
   /**
     * Contains details about a root. A root is a top-level parent node in the hierarchy of an organization that can contain organizational units (OUs) and accounts. Every root contains every AWS account in the organization. Each root enables the accounts to be organized in a different way and to have different policy types enabled for use in that root.
     */
   @js.native
+  @Factory
   trait Root extends js.Object {
     var Arn: js.UndefOr[RootArn]
     var Id: js.UndefOr[RootId]
@@ -2288,66 +1123,21 @@ package organizations {
     var PolicyTypes: js.UndefOr[PolicyTypes]
   }
 
-  object Root {
-    @inline
-    def apply(
-        Arn: js.UndefOr[RootArn] = js.undefined,
-        Id: js.UndefOr[RootId] = js.undefined,
-        Name: js.UndefOr[RootName] = js.undefined,
-        PolicyTypes: js.UndefOr[PolicyTypes] = js.undefined
-    ): Root = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      PolicyTypes.foreach(__v => __obj.updateDynamic("PolicyTypes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Root]
-    }
-  }
-
   /**
     * A custom key-value pair associated with a resource such as an account within your organization.
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var Key: TagKey
     var Value: TagValue
   }
 
-  object Tag {
-    @inline
-    def apply(
-        Key: TagKey,
-        Value: TagValue
-    ): Tag = {
-      val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Tag]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceRequest extends js.Object {
     var ResourceId: TaggableResourceId
     var Tags: Tags
-  }
-
-  object TagResourceRequest {
-    @inline
-    def apply(
-        ResourceId: TaggableResourceId,
-        Tags: Tags
-    ): TagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "Tags"       -> Tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceRequest]
-    }
   }
 
   @js.native
@@ -2361,64 +1151,27 @@ package organizations {
   }
 
   @js.native
+  @Factory
   trait UntagResourceRequest extends js.Object {
     var ResourceId: TaggableResourceId
     var TagKeys: TagKeys
   }
 
-  object UntagResourceRequest {
-    @inline
-    def apply(
-        ResourceId: TaggableResourceId,
-        TagKeys: TagKeys
-    ): UntagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "TagKeys"    -> TagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateOrganizationalUnitRequest extends js.Object {
     var OrganizationalUnitId: OrganizationalUnitId
     var Name: js.UndefOr[OrganizationalUnitName]
   }
 
-  object UpdateOrganizationalUnitRequest {
-    @inline
-    def apply(
-        OrganizationalUnitId: OrganizationalUnitId,
-        Name: js.UndefOr[OrganizationalUnitName] = js.undefined
-    ): UpdateOrganizationalUnitRequest = {
-      val __obj = js.Dynamic.literal(
-        "OrganizationalUnitId" -> OrganizationalUnitId.asInstanceOf[js.Any]
-      )
-
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateOrganizationalUnitRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateOrganizationalUnitResponse extends js.Object {
     var OrganizationalUnit: js.UndefOr[OrganizationalUnit]
   }
 
-  object UpdateOrganizationalUnitResponse {
-    @inline
-    def apply(
-        OrganizationalUnit: js.UndefOr[OrganizationalUnit] = js.undefined
-    ): UpdateOrganizationalUnitResponse = {
-      val __obj = js.Dynamic.literal()
-      OrganizationalUnit.foreach(__v => __obj.updateDynamic("OrganizationalUnit")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateOrganizationalUnitResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdatePolicyRequest extends js.Object {
     var PolicyId: PolicyId
     var Content: js.UndefOr[PolicyContent]
@@ -2426,38 +1179,9 @@ package organizations {
     var Name: js.UndefOr[PolicyName]
   }
 
-  object UpdatePolicyRequest {
-    @inline
-    def apply(
-        PolicyId: PolicyId,
-        Content: js.UndefOr[PolicyContent] = js.undefined,
-        Description: js.UndefOr[PolicyDescription] = js.undefined,
-        Name: js.UndefOr[PolicyName] = js.undefined
-    ): UpdatePolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "PolicyId" -> PolicyId.asInstanceOf[js.Any]
-      )
-
-      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdatePolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdatePolicyResponse extends js.Object {
     var Policy: js.UndefOr[Policy]
-  }
-
-  object UpdatePolicyResponse {
-    @inline
-    def apply(
-        Policy: js.UndefOr[Policy] = js.undefined
-    ): UpdatePolicyResponse = {
-      val __obj = js.Dynamic.literal()
-      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdatePolicyResponse]
-    }
   }
 }

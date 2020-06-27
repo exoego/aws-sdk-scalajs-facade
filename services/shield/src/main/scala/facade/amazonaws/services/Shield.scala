@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object shield {
   type AttackId                    = String
@@ -123,105 +124,41 @@ package shield {
   }
 
   @js.native
+  @Factory
   trait AssociateDRTLogBucketRequest extends js.Object {
     var LogBucket: LogBucket
   }
 
-  object AssociateDRTLogBucketRequest {
-    @inline
-    def apply(
-        LogBucket: LogBucket
-    ): AssociateDRTLogBucketRequest = {
-      val __obj = js.Dynamic.literal(
-        "LogBucket" -> LogBucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AssociateDRTLogBucketRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateDRTLogBucketResponse extends js.Object {}
 
-  object AssociateDRTLogBucketResponse {
-    @inline
-    def apply(
-    ): AssociateDRTLogBucketResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[AssociateDRTLogBucketResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateDRTRoleRequest extends js.Object {
     var RoleArn: RoleArn
   }
 
-  object AssociateDRTRoleRequest {
-    @inline
-    def apply(
-        RoleArn: RoleArn
-    ): AssociateDRTRoleRequest = {
-      val __obj = js.Dynamic.literal(
-        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AssociateDRTRoleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateDRTRoleResponse extends js.Object {}
 
-  object AssociateDRTRoleResponse {
-    @inline
-    def apply(
-    ): AssociateDRTRoleResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[AssociateDRTRoleResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateHealthCheckRequest extends js.Object {
     var HealthCheckArn: HealthCheckArn
     var ProtectionId: ProtectionId
   }
 
-  object AssociateHealthCheckRequest {
-    @inline
-    def apply(
-        HealthCheckArn: HealthCheckArn,
-        ProtectionId: ProtectionId
-    ): AssociateHealthCheckRequest = {
-      val __obj = js.Dynamic.literal(
-        "HealthCheckArn" -> HealthCheckArn.asInstanceOf[js.Any],
-        "ProtectionId"   -> ProtectionId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AssociateHealthCheckRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateHealthCheckResponse extends js.Object {}
-
-  object AssociateHealthCheckResponse {
-    @inline
-    def apply(
-    ): AssociateHealthCheckResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[AssociateHealthCheckResponse]
-    }
-  }
 
   /**
     * The details of a DDoS attack.
     */
   @js.native
+  @Factory
   trait AttackDetail extends js.Object {
     var AttackCounters: js.UndefOr[SummarizedCounterList]
     var AttackId: js.UndefOr[AttackId]
@@ -231,31 +168,6 @@ package shield {
     var ResourceArn: js.UndefOr[ResourceArn]
     var StartTime: js.UndefOr[AttackTimestamp]
     var SubResources: js.UndefOr[SubResourceSummaryList]
-  }
-
-  object AttackDetail {
-    @inline
-    def apply(
-        AttackCounters: js.UndefOr[SummarizedCounterList] = js.undefined,
-        AttackId: js.UndefOr[AttackId] = js.undefined,
-        AttackProperties: js.UndefOr[AttackProperties] = js.undefined,
-        EndTime: js.UndefOr[AttackTimestamp] = js.undefined,
-        Mitigations: js.UndefOr[MitigationList] = js.undefined,
-        ResourceArn: js.UndefOr[ResourceArn] = js.undefined,
-        StartTime: js.UndefOr[AttackTimestamp] = js.undefined,
-        SubResources: js.UndefOr[SubResourceSummaryList] = js.undefined
-    ): AttackDetail = {
-      val __obj = js.Dynamic.literal()
-      AttackCounters.foreach(__v => __obj.updateDynamic("AttackCounters")(__v.asInstanceOf[js.Any]))
-      AttackId.foreach(__v => __obj.updateDynamic("AttackId")(__v.asInstanceOf[js.Any]))
-      AttackProperties.foreach(__v => __obj.updateDynamic("AttackProperties")(__v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      Mitigations.foreach(__v => __obj.updateDynamic("Mitigations")(__v.asInstanceOf[js.Any]))
-      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
-      SubResources.foreach(__v => __obj.updateDynamic("SubResources")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AttackDetail]
-    }
   }
 
   @js.native
@@ -271,31 +183,13 @@ package shield {
     * Details of the described attack.
     */
   @js.native
+  @Factory
   trait AttackProperty extends js.Object {
     var AttackLayer: js.UndefOr[AttackLayer]
     var AttackPropertyIdentifier: js.UndefOr[AttackPropertyIdentifier]
     var TopContributors: js.UndefOr[TopContributors]
     var Total: js.UndefOr[Double]
     var Unit: js.UndefOr[Unit]
-  }
-
-  object AttackProperty {
-    @inline
-    def apply(
-        AttackLayer: js.UndefOr[AttackLayer] = js.undefined,
-        AttackPropertyIdentifier: js.UndefOr[AttackPropertyIdentifier] = js.undefined,
-        TopContributors: js.UndefOr[TopContributors] = js.undefined,
-        Total: js.UndefOr[Double] = js.undefined,
-        Unit: js.UndefOr[Unit] = js.undefined
-    ): AttackProperty = {
-      val __obj = js.Dynamic.literal()
-      AttackLayer.foreach(__v => __obj.updateDynamic("AttackLayer")(__v.asInstanceOf[js.Any]))
-      AttackPropertyIdentifier.foreach(__v => __obj.updateDynamic("AttackPropertyIdentifier")(__v.asInstanceOf[js.Any]))
-      TopContributors.foreach(__v => __obj.updateDynamic("TopContributors")(__v.asInstanceOf[js.Any]))
-      Total.foreach(__v => __obj.updateDynamic("Total")(__v.asInstanceOf[js.Any]))
-      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AttackProperty]
-    }
   }
 
   @js.native
@@ -328,6 +222,7 @@ package shield {
     * Summarizes all DDoS attacks for a specified time period.
     */
   @js.native
+  @Factory
   trait AttackSummary extends js.Object {
     var AttackId: js.UndefOr[String]
     var AttackVectors: js.UndefOr[AttackVectorDescriptionList]
@@ -336,44 +231,13 @@ package shield {
     var StartTime: js.UndefOr[AttackTimestamp]
   }
 
-  object AttackSummary {
-    @inline
-    def apply(
-        AttackId: js.UndefOr[String] = js.undefined,
-        AttackVectors: js.UndefOr[AttackVectorDescriptionList] = js.undefined,
-        EndTime: js.UndefOr[AttackTimestamp] = js.undefined,
-        ResourceArn: js.UndefOr[String] = js.undefined,
-        StartTime: js.UndefOr[AttackTimestamp] = js.undefined
-    ): AttackSummary = {
-      val __obj = js.Dynamic.literal()
-      AttackId.foreach(__v => __obj.updateDynamic("AttackId")(__v.asInstanceOf[js.Any]))
-      AttackVectors.foreach(__v => __obj.updateDynamic("AttackVectors")(__v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AttackSummary]
-    }
-  }
-
   /**
     * Describes the attack.
     */
   @js.native
+  @Factory
   trait AttackVectorDescription extends js.Object {
     var VectorType: String
-  }
-
-  object AttackVectorDescription {
-    @inline
-    def apply(
-        VectorType: String
-    ): AttackVectorDescription = {
-      val __obj = js.Dynamic.literal(
-        "VectorType" -> VectorType.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AttackVectorDescription]
-    }
   }
 
   @js.native
@@ -389,471 +253,169 @@ package shield {
     * A contributor to the attack and their contribution.
     */
   @js.native
+  @Factory
   trait Contributor extends js.Object {
     var Name: js.UndefOr[String]
     var Value: js.UndefOr[Double]
   }
 
-  object Contributor {
-    @inline
-    def apply(
-        Name: js.UndefOr[String] = js.undefined,
-        Value: js.UndefOr[Double] = js.undefined
-    ): Contributor = {
-      val __obj = js.Dynamic.literal()
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Contributor]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateProtectionRequest extends js.Object {
     var Name: ProtectionName
     var ResourceArn: ResourceArn
   }
 
-  object CreateProtectionRequest {
-    @inline
-    def apply(
-        Name: ProtectionName,
-        ResourceArn: ResourceArn
-    ): CreateProtectionRequest = {
-      val __obj = js.Dynamic.literal(
-        "Name"        -> Name.asInstanceOf[js.Any],
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateProtectionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateProtectionResponse extends js.Object {
     var ProtectionId: js.UndefOr[ProtectionId]
   }
 
-  object CreateProtectionResponse {
-    @inline
-    def apply(
-        ProtectionId: js.UndefOr[ProtectionId] = js.undefined
-    ): CreateProtectionResponse = {
-      val __obj = js.Dynamic.literal()
-      ProtectionId.foreach(__v => __obj.updateDynamic("ProtectionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateProtectionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateSubscriptionRequest extends js.Object {}
 
-  object CreateSubscriptionRequest {
-    @inline
-    def apply(
-    ): CreateSubscriptionRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[CreateSubscriptionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateSubscriptionResponse extends js.Object {}
 
-  object CreateSubscriptionResponse {
-    @inline
-    def apply(
-    ): CreateSubscriptionResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[CreateSubscriptionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteProtectionRequest extends js.Object {
     var ProtectionId: ProtectionId
   }
 
-  object DeleteProtectionRequest {
-    @inline
-    def apply(
-        ProtectionId: ProtectionId
-    ): DeleteProtectionRequest = {
-      val __obj = js.Dynamic.literal(
-        "ProtectionId" -> ProtectionId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteProtectionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteProtectionResponse extends js.Object {}
 
-  object DeleteProtectionResponse {
-    @inline
-    def apply(
-    ): DeleteProtectionResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteProtectionResponse]
-    }
-  }
-
   @deprecated("Deprecated in AWS SDK", "forever")
   @js.native
+  @Factory
   trait DeleteSubscriptionRequest extends js.Object {}
 
-  object DeleteSubscriptionRequest {
-    @inline
-    def apply(
-    ): DeleteSubscriptionRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteSubscriptionRequest]
-    }
-  }
-
   @deprecated("Deprecated in AWS SDK", "forever")
   @js.native
+  @Factory
   trait DeleteSubscriptionResponse extends js.Object {}
 
-  object DeleteSubscriptionResponse {
-    @inline
-    def apply(
-    ): DeleteSubscriptionResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteSubscriptionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeAttackRequest extends js.Object {
     var AttackId: AttackId
   }
 
-  object DescribeAttackRequest {
-    @inline
-    def apply(
-        AttackId: AttackId
-    ): DescribeAttackRequest = {
-      val __obj = js.Dynamic.literal(
-        "AttackId" -> AttackId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeAttackRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeAttackResponse extends js.Object {
     var Attack: js.UndefOr[AttackDetail]
   }
 
-  object DescribeAttackResponse {
-    @inline
-    def apply(
-        Attack: js.UndefOr[AttackDetail] = js.undefined
-    ): DescribeAttackResponse = {
-      val __obj = js.Dynamic.literal()
-      Attack.foreach(__v => __obj.updateDynamic("Attack")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeAttackResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeDRTAccessRequest extends js.Object {}
 
-  object DescribeDRTAccessRequest {
-    @inline
-    def apply(
-    ): DescribeDRTAccessRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DescribeDRTAccessRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeDRTAccessResponse extends js.Object {
     var LogBucketList: js.UndefOr[LogBucketList]
     var RoleArn: js.UndefOr[RoleArn]
   }
 
-  object DescribeDRTAccessResponse {
-    @inline
-    def apply(
-        LogBucketList: js.UndefOr[LogBucketList] = js.undefined,
-        RoleArn: js.UndefOr[RoleArn] = js.undefined
-    ): DescribeDRTAccessResponse = {
-      val __obj = js.Dynamic.literal()
-      LogBucketList.foreach(__v => __obj.updateDynamic("LogBucketList")(__v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeDRTAccessResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeEmergencyContactSettingsRequest extends js.Object {}
 
-  object DescribeEmergencyContactSettingsRequest {
-    @inline
-    def apply(
-    ): DescribeEmergencyContactSettingsRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DescribeEmergencyContactSettingsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeEmergencyContactSettingsResponse extends js.Object {
     var EmergencyContactList: js.UndefOr[EmergencyContactList]
   }
 
-  object DescribeEmergencyContactSettingsResponse {
-    @inline
-    def apply(
-        EmergencyContactList: js.UndefOr[EmergencyContactList] = js.undefined
-    ): DescribeEmergencyContactSettingsResponse = {
-      val __obj = js.Dynamic.literal()
-      EmergencyContactList.foreach(__v => __obj.updateDynamic("EmergencyContactList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeEmergencyContactSettingsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeProtectionRequest extends js.Object {
     var ProtectionId: js.UndefOr[ProtectionId]
     var ResourceArn: js.UndefOr[ResourceArn]
   }
 
-  object DescribeProtectionRequest {
-    @inline
-    def apply(
-        ProtectionId: js.UndefOr[ProtectionId] = js.undefined,
-        ResourceArn: js.UndefOr[ResourceArn] = js.undefined
-    ): DescribeProtectionRequest = {
-      val __obj = js.Dynamic.literal()
-      ProtectionId.foreach(__v => __obj.updateDynamic("ProtectionId")(__v.asInstanceOf[js.Any]))
-      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeProtectionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeProtectionResponse extends js.Object {
     var Protection: js.UndefOr[Protection]
   }
 
-  object DescribeProtectionResponse {
-    @inline
-    def apply(
-        Protection: js.UndefOr[Protection] = js.undefined
-    ): DescribeProtectionResponse = {
-      val __obj = js.Dynamic.literal()
-      Protection.foreach(__v => __obj.updateDynamic("Protection")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeProtectionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeSubscriptionRequest extends js.Object {}
 
-  object DescribeSubscriptionRequest {
-    @inline
-    def apply(
-    ): DescribeSubscriptionRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DescribeSubscriptionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeSubscriptionResponse extends js.Object {
     var Subscription: js.UndefOr[Subscription]
   }
 
-  object DescribeSubscriptionResponse {
-    @inline
-    def apply(
-        Subscription: js.UndefOr[Subscription] = js.undefined
-    ): DescribeSubscriptionResponse = {
-      val __obj = js.Dynamic.literal()
-      Subscription.foreach(__v => __obj.updateDynamic("Subscription")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeSubscriptionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateDRTLogBucketRequest extends js.Object {
     var LogBucket: LogBucket
   }
 
-  object DisassociateDRTLogBucketRequest {
-    @inline
-    def apply(
-        LogBucket: LogBucket
-    ): DisassociateDRTLogBucketRequest = {
-      val __obj = js.Dynamic.literal(
-        "LogBucket" -> LogBucket.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisassociateDRTLogBucketRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateDRTLogBucketResponse extends js.Object {}
 
-  object DisassociateDRTLogBucketResponse {
-    @inline
-    def apply(
-    ): DisassociateDRTLogBucketResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DisassociateDRTLogBucketResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateDRTRoleRequest extends js.Object {}
 
-  object DisassociateDRTRoleRequest {
-    @inline
-    def apply(
-    ): DisassociateDRTRoleRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DisassociateDRTRoleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateDRTRoleResponse extends js.Object {}
 
-  object DisassociateDRTRoleResponse {
-    @inline
-    def apply(
-    ): DisassociateDRTRoleResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DisassociateDRTRoleResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateHealthCheckRequest extends js.Object {
     var HealthCheckArn: HealthCheckArn
     var ProtectionId: ProtectionId
   }
 
-  object DisassociateHealthCheckRequest {
-    @inline
-    def apply(
-        HealthCheckArn: HealthCheckArn,
-        ProtectionId: ProtectionId
-    ): DisassociateHealthCheckRequest = {
-      val __obj = js.Dynamic.literal(
-        "HealthCheckArn" -> HealthCheckArn.asInstanceOf[js.Any],
-        "ProtectionId"   -> ProtectionId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisassociateHealthCheckRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateHealthCheckResponse extends js.Object {}
-
-  object DisassociateHealthCheckResponse {
-    @inline
-    def apply(
-    ): DisassociateHealthCheckResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DisassociateHealthCheckResponse]
-    }
-  }
 
   /**
     * Contact information that the DRT can use to contact you during a suspected attack.
     */
   @js.native
+  @Factory
   trait EmergencyContact extends js.Object {
     var EmailAddress: EmailAddress
   }
 
-  object EmergencyContact {
-    @inline
-    def apply(
-        EmailAddress: EmailAddress
-    ): EmergencyContact = {
-      val __obj = js.Dynamic.literal(
-        "EmailAddress" -> EmailAddress.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[EmergencyContact]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetSubscriptionStateRequest extends js.Object {}
 
-  object GetSubscriptionStateRequest {
-    @inline
-    def apply(
-    ): GetSubscriptionStateRequest = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[GetSubscriptionStateRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetSubscriptionStateResponse extends js.Object {
     var SubscriptionState: SubscriptionState
-  }
-
-  object GetSubscriptionStateResponse {
-    @inline
-    def apply(
-        SubscriptionState: SubscriptionState
-    ): GetSubscriptionStateResponse = {
-      val __obj = js.Dynamic.literal(
-        "SubscriptionState" -> SubscriptionState.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetSubscriptionStateResponse]
-    }
   }
 
   /**
     * Specifies how many protections of a given type you can create.
     */
   @js.native
+  @Factory
   trait Limit extends js.Object {
     var Max: js.UndefOr[Double]
     var Type: js.UndefOr[String]
   }
 
-  object Limit {
-    @inline
-    def apply(
-        Max: js.UndefOr[Double] = js.undefined,
-        Type: js.UndefOr[String] = js.undefined
-    ): Limit = {
-      val __obj = js.Dynamic.literal()
-      Max.foreach(__v => __obj.updateDynamic("Max")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Limit]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAttacksRequest extends js.Object {
     var EndTime: js.UndefOr[TimeRange]
     var MaxResults: js.UndefOr[MaxResults]
@@ -862,105 +424,41 @@ package shield {
     var StartTime: js.UndefOr[TimeRange]
   }
 
-  object ListAttacksRequest {
-    @inline
-    def apply(
-        EndTime: js.UndefOr[TimeRange] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[Token] = js.undefined,
-        ResourceArns: js.UndefOr[ResourceArnFilterList] = js.undefined,
-        StartTime: js.UndefOr[TimeRange] = js.undefined
-    ): ListAttacksRequest = {
-      val __obj = js.Dynamic.literal()
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ResourceArns.foreach(__v => __obj.updateDynamic("ResourceArns")(__v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAttacksRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAttacksResponse extends js.Object {
     var AttackSummaries: js.UndefOr[AttackSummaries]
     var NextToken: js.UndefOr[Token]
   }
 
-  object ListAttacksResponse {
-    @inline
-    def apply(
-        AttackSummaries: js.UndefOr[AttackSummaries] = js.undefined,
-        NextToken: js.UndefOr[Token] = js.undefined
-    ): ListAttacksResponse = {
-      val __obj = js.Dynamic.literal()
-      AttackSummaries.foreach(__v => __obj.updateDynamic("AttackSummaries")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAttacksResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListProtectionsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[Token]
   }
 
-  object ListProtectionsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[Token] = js.undefined
-    ): ListProtectionsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListProtectionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListProtectionsResponse extends js.Object {
     var NextToken: js.UndefOr[Token]
     var Protections: js.UndefOr[Protections]
-  }
-
-  object ListProtectionsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[Token] = js.undefined,
-        Protections: js.UndefOr[Protections] = js.undefined
-    ): ListProtectionsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Protections.foreach(__v => __obj.updateDynamic("Protections")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListProtectionsResponse]
-    }
   }
 
   /**
     * The mitigation applied to a DDoS attack.
     */
   @js.native
+  @Factory
   trait Mitigation extends js.Object {
     var MitigationName: js.UndefOr[String]
-  }
-
-  object Mitigation {
-    @inline
-    def apply(
-        MitigationName: js.UndefOr[String] = js.undefined
-    ): Mitigation = {
-      val __obj = js.Dynamic.literal()
-      MitigationName.foreach(__v => __obj.updateDynamic("MitigationName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Mitigation]
-    }
   }
 
   /**
     * An object that represents a resource that is under DDoS protection.
     */
   @js.native
+  @Factory
   trait Protection extends js.Object {
     var HealthCheckIds: js.UndefOr[HealthCheckIds]
     var Id: js.UndefOr[ProtectionId]
@@ -968,49 +466,16 @@ package shield {
     var ResourceArn: js.UndefOr[ResourceArn]
   }
 
-  object Protection {
-    @inline
-    def apply(
-        HealthCheckIds: js.UndefOr[HealthCheckIds] = js.undefined,
-        Id: js.UndefOr[ProtectionId] = js.undefined,
-        Name: js.UndefOr[ProtectionName] = js.undefined,
-        ResourceArn: js.UndefOr[ResourceArn] = js.undefined
-    ): Protection = {
-      val __obj = js.Dynamic.literal()
-      HealthCheckIds.foreach(__v => __obj.updateDynamic("HealthCheckIds")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Protection]
-    }
-  }
-
   /**
     * The attack information for the specified SubResource.
     */
   @js.native
+  @Factory
   trait SubResourceSummary extends js.Object {
     var AttackVectors: js.UndefOr[SummarizedAttackVectorList]
     var Counters: js.UndefOr[SummarizedCounterList]
     var Id: js.UndefOr[String]
     var Type: js.UndefOr[SubResourceType]
-  }
-
-  object SubResourceSummary {
-    @inline
-    def apply(
-        AttackVectors: js.UndefOr[SummarizedAttackVectorList] = js.undefined,
-        Counters: js.UndefOr[SummarizedCounterList] = js.undefined,
-        Id: js.UndefOr[String] = js.undefined,
-        Type: js.UndefOr[SubResourceType] = js.undefined
-    ): SubResourceSummary = {
-      val __obj = js.Dynamic.literal()
-      AttackVectors.foreach(__v => __obj.updateDynamic("AttackVectors")(__v.asInstanceOf[js.Any]))
-      Counters.foreach(__v => __obj.updateDynamic("Counters")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SubResourceSummary]
-    }
   }
 
   @js.native
@@ -1026,31 +491,13 @@ package shield {
     * Information about the AWS Shield Advanced subscription for an account.
     */
   @js.native
+  @Factory
   trait Subscription extends js.Object {
     var AutoRenew: js.UndefOr[AutoRenew]
     var EndTime: js.UndefOr[Timestamp]
     var Limits: js.UndefOr[Limits]
     var StartTime: js.UndefOr[Timestamp]
     var TimeCommitmentInSeconds: js.UndefOr[DurationInSeconds]
-  }
-
-  object Subscription {
-    @inline
-    def apply(
-        AutoRenew: js.UndefOr[AutoRenew] = js.undefined,
-        EndTime: js.UndefOr[Timestamp] = js.undefined,
-        Limits: js.UndefOr[Limits] = js.undefined,
-        StartTime: js.UndefOr[Timestamp] = js.undefined,
-        TimeCommitmentInSeconds: js.UndefOr[DurationInSeconds] = js.undefined
-    ): Subscription = {
-      val __obj = js.Dynamic.literal()
-      AutoRenew.foreach(__v => __obj.updateDynamic("AutoRenew")(__v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      Limits.foreach(__v => __obj.updateDynamic("Limits")(__v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
-      TimeCommitmentInSeconds.foreach(__v => __obj.updateDynamic("TimeCommitmentInSeconds")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Subscription]
-    }
   }
 
   @js.native
@@ -1066,30 +513,17 @@ package shield {
     * A summary of information about the attack.
     */
   @js.native
+  @Factory
   trait SummarizedAttackVector extends js.Object {
     var VectorType: String
     var VectorCounters: js.UndefOr[SummarizedCounterList]
-  }
-
-  object SummarizedAttackVector {
-    @inline
-    def apply(
-        VectorType: String,
-        VectorCounters: js.UndefOr[SummarizedCounterList] = js.undefined
-    ): SummarizedAttackVector = {
-      val __obj = js.Dynamic.literal(
-        "VectorType" -> VectorType.asInstanceOf[js.Any]
-      )
-
-      VectorCounters.foreach(__v => __obj.updateDynamic("VectorCounters")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SummarizedAttackVector]
-    }
   }
 
   /**
     * The counter that describes a DDoS attack.
     */
   @js.native
+  @Factory
   trait SummarizedCounter extends js.Object {
     var Average: js.UndefOr[Double]
     var Max: js.UndefOr[Double]
@@ -1099,47 +533,14 @@ package shield {
     var Unit: js.UndefOr[String]
   }
 
-  object SummarizedCounter {
-    @inline
-    def apply(
-        Average: js.UndefOr[Double] = js.undefined,
-        Max: js.UndefOr[Double] = js.undefined,
-        N: js.UndefOr[Int] = js.undefined,
-        Name: js.UndefOr[String] = js.undefined,
-        Sum: js.UndefOr[Double] = js.undefined,
-        Unit: js.UndefOr[String] = js.undefined
-    ): SummarizedCounter = {
-      val __obj = js.Dynamic.literal()
-      Average.foreach(__v => __obj.updateDynamic("Average")(__v.asInstanceOf[js.Any]))
-      Max.foreach(__v => __obj.updateDynamic("Max")(__v.asInstanceOf[js.Any]))
-      N.foreach(__v => __obj.updateDynamic("N")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Sum.foreach(__v => __obj.updateDynamic("Sum")(__v.asInstanceOf[js.Any]))
-      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SummarizedCounter]
-    }
-  }
-
   /**
     * The time range.
     */
   @js.native
+  @Factory
   trait TimeRange extends js.Object {
     var FromInclusive: js.UndefOr[AttackTimestamp]
     var ToExclusive: js.UndefOr[AttackTimestamp]
-  }
-
-  object TimeRange {
-    @inline
-    def apply(
-        FromInclusive: js.UndefOr[AttackTimestamp] = js.undefined,
-        ToExclusive: js.UndefOr[AttackTimestamp] = js.undefined
-    ): TimeRange = {
-      val __obj = js.Dynamic.literal()
-      FromInclusive.foreach(__v => __obj.updateDynamic("FromInclusive")(__v.asInstanceOf[js.Any]))
-      ToExclusive.foreach(__v => __obj.updateDynamic("ToExclusive")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TimeRange]
-    }
   }
 
   @js.native
@@ -1154,60 +555,22 @@ package shield {
   }
 
   @js.native
+  @Factory
   trait UpdateEmergencyContactSettingsRequest extends js.Object {
     var EmergencyContactList: js.UndefOr[EmergencyContactList]
   }
 
-  object UpdateEmergencyContactSettingsRequest {
-    @inline
-    def apply(
-        EmergencyContactList: js.UndefOr[EmergencyContactList] = js.undefined
-    ): UpdateEmergencyContactSettingsRequest = {
-      val __obj = js.Dynamic.literal()
-      EmergencyContactList.foreach(__v => __obj.updateDynamic("EmergencyContactList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateEmergencyContactSettingsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateEmergencyContactSettingsResponse extends js.Object {}
 
-  object UpdateEmergencyContactSettingsResponse {
-    @inline
-    def apply(
-    ): UpdateEmergencyContactSettingsResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateEmergencyContactSettingsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateSubscriptionRequest extends js.Object {
     var AutoRenew: js.UndefOr[AutoRenew]
   }
 
-  object UpdateSubscriptionRequest {
-    @inline
-    def apply(
-        AutoRenew: js.UndefOr[AutoRenew] = js.undefined
-    ): UpdateSubscriptionRequest = {
-      val __obj = js.Dynamic.literal()
-      AutoRenew.foreach(__v => __obj.updateDynamic("AutoRenew")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateSubscriptionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateSubscriptionResponse extends js.Object {}
-
-  object UpdateSubscriptionResponse {
-    @inline
-    def apply(
-    ): UpdateSubscriptionResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateSubscriptionResponse]
-    }
-  }
 }

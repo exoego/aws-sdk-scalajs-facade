@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object swf {
   type ActivityId                = String
@@ -193,6 +194,7 @@ package swf {
     * Unit of work sent to an activity worker.
     */
   @js.native
+  @Factory
   trait ActivityTask extends js.Object {
     var activityId: ActivityId
     var activityType: ActivityType
@@ -202,57 +204,21 @@ package swf {
     var input: js.UndefOr[Data]
   }
 
-  object ActivityTask {
-    @inline
-    def apply(
-        activityId: ActivityId,
-        activityType: ActivityType,
-        startedEventId: EventId,
-        taskToken: TaskToken,
-        workflowExecution: WorkflowExecution,
-        input: js.UndefOr[Data] = js.undefined
-    ): ActivityTask = {
-      val __obj = js.Dynamic.literal(
-        "activityId"        -> activityId.asInstanceOf[js.Any],
-        "activityType"      -> activityType.asInstanceOf[js.Any],
-        "startedEventId"    -> startedEventId.asInstanceOf[js.Any],
-        "taskToken"         -> taskToken.asInstanceOf[js.Any],
-        "workflowExecution" -> workflowExecution.asInstanceOf[js.Any]
-      )
-
-      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ActivityTask]
-    }
-  }
-
   /**
     * Provides the details of the <code>ActivityTaskCancelRequested</code> event.
     */
   @js.native
+  @Factory
   trait ActivityTaskCancelRequestedEventAttributes extends js.Object {
     var activityId: ActivityId
     var decisionTaskCompletedEventId: EventId
-  }
-
-  object ActivityTaskCancelRequestedEventAttributes {
-    @inline
-    def apply(
-        activityId: ActivityId,
-        decisionTaskCompletedEventId: EventId
-    ): ActivityTaskCancelRequestedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "activityId"                   -> activityId.asInstanceOf[js.Any],
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ActivityTaskCancelRequestedEventAttributes]
-    }
   }
 
   /**
     * Provides the details of the <code>ActivityTaskCanceled</code> event.
     */
   @js.native
+  @Factory
   trait ActivityTaskCanceledEventAttributes extends js.Object {
     var scheduledEventId: EventId
     var startedEventId: EventId
@@ -260,58 +226,22 @@ package swf {
     var latestCancelRequestedEventId: js.UndefOr[EventId]
   }
 
-  object ActivityTaskCanceledEventAttributes {
-    @inline
-    def apply(
-        scheduledEventId: EventId,
-        startedEventId: EventId,
-        details: js.UndefOr[Data] = js.undefined,
-        latestCancelRequestedEventId: js.UndefOr[EventId] = js.undefined
-    ): ActivityTaskCanceledEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
-        "startedEventId"   -> startedEventId.asInstanceOf[js.Any]
-      )
-
-      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
-      latestCancelRequestedEventId.foreach(__v =>
-        __obj.updateDynamic("latestCancelRequestedEventId")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[ActivityTaskCanceledEventAttributes]
-    }
-  }
-
   /**
     * Provides the details of the <code>ActivityTaskCompleted</code> event.
     */
   @js.native
+  @Factory
   trait ActivityTaskCompletedEventAttributes extends js.Object {
     var scheduledEventId: EventId
     var startedEventId: EventId
     var result: js.UndefOr[Data]
   }
 
-  object ActivityTaskCompletedEventAttributes {
-    @inline
-    def apply(
-        scheduledEventId: EventId,
-        startedEventId: EventId,
-        result: js.UndefOr[Data] = js.undefined
-    ): ActivityTaskCompletedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
-        "startedEventId"   -> startedEventId.asInstanceOf[js.Any]
-      )
-
-      result.foreach(__v => __obj.updateDynamic("result")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ActivityTaskCompletedEventAttributes]
-    }
-  }
-
   /**
     * Provides the details of the <code>ActivityTaskFailed</code> event.
     */
   @js.native
+  @Factory
   trait ActivityTaskFailedEventAttributes extends js.Object {
     var scheduledEventId: EventId
     var startedEventId: EventId
@@ -319,29 +249,11 @@ package swf {
     var reason: js.UndefOr[FailureReason]
   }
 
-  object ActivityTaskFailedEventAttributes {
-    @inline
-    def apply(
-        scheduledEventId: EventId,
-        startedEventId: EventId,
-        details: js.UndefOr[Data] = js.undefined,
-        reason: js.UndefOr[FailureReason] = js.undefined
-    ): ActivityTaskFailedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
-        "startedEventId"   -> startedEventId.asInstanceOf[js.Any]
-      )
-
-      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
-      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ActivityTaskFailedEventAttributes]
-    }
-  }
-
   /**
     * Provides the details of the <code>ActivityTaskScheduled</code> event.
     */
   @js.native
+  @Factory
   trait ActivityTaskScheduledEventAttributes extends js.Object {
     var activityId: ActivityId
     var activityType: ActivityType
@@ -356,112 +268,35 @@ package swf {
     var taskPriority: js.UndefOr[TaskPriority]
   }
 
-  object ActivityTaskScheduledEventAttributes {
-    @inline
-    def apply(
-        activityId: ActivityId,
-        activityType: ActivityType,
-        decisionTaskCompletedEventId: EventId,
-        taskList: TaskList,
-        control: js.UndefOr[Data] = js.undefined,
-        heartbeatTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-        input: js.UndefOr[Data] = js.undefined,
-        scheduleToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-        scheduleToStartTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-        startToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-        taskPriority: js.UndefOr[TaskPriority] = js.undefined
-    ): ActivityTaskScheduledEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "activityId"                   -> activityId.asInstanceOf[js.Any],
-        "activityType"                 -> activityType.asInstanceOf[js.Any],
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
-        "taskList"                     -> taskList.asInstanceOf[js.Any]
-      )
-
-      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
-      heartbeatTimeout.foreach(__v => __obj.updateDynamic("heartbeatTimeout")(__v.asInstanceOf[js.Any]))
-      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
-      scheduleToCloseTimeout.foreach(__v => __obj.updateDynamic("scheduleToCloseTimeout")(__v.asInstanceOf[js.Any]))
-      scheduleToStartTimeout.foreach(__v => __obj.updateDynamic("scheduleToStartTimeout")(__v.asInstanceOf[js.Any]))
-      startToCloseTimeout.foreach(__v => __obj.updateDynamic("startToCloseTimeout")(__v.asInstanceOf[js.Any]))
-      taskPriority.foreach(__v => __obj.updateDynamic("taskPriority")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ActivityTaskScheduledEventAttributes]
-    }
-  }
-
   /**
     * Provides the details of the <code>ActivityTaskStarted</code> event.
     */
   @js.native
+  @Factory
   trait ActivityTaskStartedEventAttributes extends js.Object {
     var scheduledEventId: EventId
     var identity: js.UndefOr[Identity]
-  }
-
-  object ActivityTaskStartedEventAttributes {
-    @inline
-    def apply(
-        scheduledEventId: EventId,
-        identity: js.UndefOr[Identity] = js.undefined
-    ): ActivityTaskStartedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any]
-      )
-
-      identity.foreach(__v => __obj.updateDynamic("identity")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ActivityTaskStartedEventAttributes]
-    }
   }
 
   /**
     * Status information about an activity task.
     */
   @js.native
+  @Factory
   trait ActivityTaskStatus extends js.Object {
     var cancelRequested: Canceled
-  }
-
-  object ActivityTaskStatus {
-    @inline
-    def apply(
-        cancelRequested: Canceled
-    ): ActivityTaskStatus = {
-      val __obj = js.Dynamic.literal(
-        "cancelRequested" -> cancelRequested.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ActivityTaskStatus]
-    }
   }
 
   /**
     * Provides the details of the <code>ActivityTaskTimedOut</code> event.
     */
   @js.native
+  @Factory
   trait ActivityTaskTimedOutEventAttributes extends js.Object {
     var scheduledEventId: EventId
     var startedEventId: EventId
     var timeoutType: ActivityTaskTimeoutType
     var details: js.UndefOr[LimitedData]
-  }
-
-  object ActivityTaskTimedOutEventAttributes {
-    @inline
-    def apply(
-        scheduledEventId: EventId,
-        startedEventId: EventId,
-        timeoutType: ActivityTaskTimeoutType,
-        details: js.UndefOr[LimitedData] = js.undefined
-    ): ActivityTaskTimedOutEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
-        "startedEventId"   -> startedEventId.asInstanceOf[js.Any],
-        "timeoutType"      -> timeoutType.asInstanceOf[js.Any]
-      )
-
-      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ActivityTaskTimedOutEventAttributes]
-    }
   }
 
   @js.native
@@ -479,30 +314,17 @@ package swf {
     * Represents an activity type.
     */
   @js.native
+  @Factory
   trait ActivityType extends js.Object {
     var name: Name
     var version: Version
-  }
-
-  object ActivityType {
-    @inline
-    def apply(
-        name: Name,
-        version: Version
-    ): ActivityType = {
-      val __obj = js.Dynamic.literal(
-        "name"    -> name.asInstanceOf[js.Any],
-        "version" -> version.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ActivityType]
-    }
   }
 
   /**
     * Configuration settings registered with the activity type.
     */
   @js.native
+  @Factory
   trait ActivityTypeConfiguration extends js.Object {
     var defaultTaskHeartbeatTimeout: js.UndefOr[DurationInSecondsOptional]
     var defaultTaskList: js.UndefOr[TaskList]
@@ -512,63 +334,21 @@ package swf {
     var defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
   }
 
-  object ActivityTypeConfiguration {
-    @inline
-    def apply(
-        defaultTaskHeartbeatTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-        defaultTaskList: js.UndefOr[TaskList] = js.undefined,
-        defaultTaskPriority: js.UndefOr[TaskPriority] = js.undefined,
-        defaultTaskScheduleToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-        defaultTaskScheduleToStartTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-        defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined
-    ): ActivityTypeConfiguration = {
-      val __obj = js.Dynamic.literal()
-      defaultTaskHeartbeatTimeout.foreach(__v =>
-        __obj.updateDynamic("defaultTaskHeartbeatTimeout")(__v.asInstanceOf[js.Any])
-      )
-      defaultTaskList.foreach(__v => __obj.updateDynamic("defaultTaskList")(__v.asInstanceOf[js.Any]))
-      defaultTaskPriority.foreach(__v => __obj.updateDynamic("defaultTaskPriority")(__v.asInstanceOf[js.Any]))
-      defaultTaskScheduleToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("defaultTaskScheduleToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
-      defaultTaskScheduleToStartTimeout.foreach(__v =>
-        __obj.updateDynamic("defaultTaskScheduleToStartTimeout")(__v.asInstanceOf[js.Any])
-      )
-      defaultTaskStartToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("defaultTaskStartToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[ActivityTypeConfiguration]
-    }
-  }
-
   /**
     * Detailed information about an activity type.
     */
   @js.native
+  @Factory
   trait ActivityTypeDetail extends js.Object {
     var configuration: ActivityTypeConfiguration
     var typeInfo: ActivityTypeInfo
   }
 
-  object ActivityTypeDetail {
-    @inline
-    def apply(
-        configuration: ActivityTypeConfiguration,
-        typeInfo: ActivityTypeInfo
-    ): ActivityTypeDetail = {
-      val __obj = js.Dynamic.literal(
-        "configuration" -> configuration.asInstanceOf[js.Any],
-        "typeInfo"      -> typeInfo.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ActivityTypeDetail]
-    }
-  }
-
   /**
     * Detailed information about an activity type.
     */
   @js.native
+  @Factory
   trait ActivityTypeInfo extends js.Object {
     var activityType: ActivityType
     var creationDate: Timestamp
@@ -577,49 +357,14 @@ package swf {
     var description: js.UndefOr[Description]
   }
 
-  object ActivityTypeInfo {
-    @inline
-    def apply(
-        activityType: ActivityType,
-        creationDate: Timestamp,
-        status: RegistrationStatus,
-        deprecationDate: js.UndefOr[Timestamp] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined
-    ): ActivityTypeInfo = {
-      val __obj = js.Dynamic.literal(
-        "activityType" -> activityType.asInstanceOf[js.Any],
-        "creationDate" -> creationDate.asInstanceOf[js.Any],
-        "status"       -> status.asInstanceOf[js.Any]
-      )
-
-      deprecationDate.foreach(__v => __obj.updateDynamic("deprecationDate")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ActivityTypeInfo]
-    }
-  }
-
   /**
     * Contains a paginated list of activity type information structures.
     */
   @js.native
+  @Factory
   trait ActivityTypeInfos extends js.Object {
     var typeInfos: ActivityTypeInfoList
     var nextPageToken: js.UndefOr[PageToken]
-  }
-
-  object ActivityTypeInfos {
-    @inline
-    def apply(
-        typeInfos: ActivityTypeInfoList,
-        nextPageToken: js.UndefOr[PageToken] = js.undefined
-    ): ActivityTypeInfos = {
-      val __obj = js.Dynamic.literal(
-        "typeInfos" -> typeInfos.asInstanceOf[js.Any]
-      )
-
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ActivityTypeInfos]
-    }
   }
 
   /**
@@ -632,21 +377,9 @@ package swf {
     * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait CancelTimerDecisionAttributes extends js.Object {
     var timerId: TimerId
-  }
-
-  object CancelTimerDecisionAttributes {
-    @inline
-    def apply(
-        timerId: TimerId
-    ): CancelTimerDecisionAttributes = {
-      val __obj = js.Dynamic.literal(
-        "timerId" -> timerId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CancelTimerDecisionAttributes]
-    }
   }
 
   @js.native
@@ -662,27 +395,11 @@ package swf {
     * Provides the details of the <code>CancelTimerFailed</code> event.
     */
   @js.native
+  @Factory
   trait CancelTimerFailedEventAttributes extends js.Object {
     var cause: CancelTimerFailedCause
     var decisionTaskCompletedEventId: EventId
     var timerId: TimerId
-  }
-
-  object CancelTimerFailedEventAttributes {
-    @inline
-    def apply(
-        cause: CancelTimerFailedCause,
-        decisionTaskCompletedEventId: EventId,
-        timerId: TimerId
-    ): CancelTimerFailedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "cause"                        -> cause.asInstanceOf[js.Any],
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
-        "timerId"                      -> timerId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CancelTimerFailedEventAttributes]
-    }
   }
 
   /**
@@ -695,19 +412,9 @@ package swf {
     * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait CancelWorkflowExecutionDecisionAttributes extends js.Object {
     var details: js.UndefOr[Data]
-  }
-
-  object CancelWorkflowExecutionDecisionAttributes {
-    @inline
-    def apply(
-        details: js.UndefOr[Data] = js.undefined
-    ): CancelWorkflowExecutionDecisionAttributes = {
-      val __obj = js.Dynamic.literal()
-      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CancelWorkflowExecutionDecisionAttributes]
-    }
   }
 
   @js.native
@@ -723,24 +430,10 @@ package swf {
     * Provides the details of the <code>CancelWorkflowExecutionFailed</code> event.
     */
   @js.native
+  @Factory
   trait CancelWorkflowExecutionFailedEventAttributes extends js.Object {
     var cause: CancelWorkflowExecutionFailedCause
     var decisionTaskCompletedEventId: EventId
-  }
-
-  object CancelWorkflowExecutionFailedEventAttributes {
-    @inline
-    def apply(
-        cause: CancelWorkflowExecutionFailedCause,
-        decisionTaskCompletedEventId: EventId
-    ): CancelWorkflowExecutionFailedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "cause"                        -> cause.asInstanceOf[js.Any],
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CancelWorkflowExecutionFailedEventAttributes]
-    }
   }
 
   @js.native
@@ -757,6 +450,7 @@ package swf {
     * Provide details of the <code>ChildWorkflowExecutionCanceled</code> event.
     */
   @js.native
+  @Factory
   trait ChildWorkflowExecutionCanceledEventAttributes extends js.Object {
     var initiatedEventId: EventId
     var startedEventId: EventId
@@ -765,31 +459,11 @@ package swf {
     var details: js.UndefOr[Data]
   }
 
-  object ChildWorkflowExecutionCanceledEventAttributes {
-    @inline
-    def apply(
-        initiatedEventId: EventId,
-        startedEventId: EventId,
-        workflowExecution: WorkflowExecution,
-        workflowType: WorkflowType,
-        details: js.UndefOr[Data] = js.undefined
-    ): ChildWorkflowExecutionCanceledEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "initiatedEventId"  -> initiatedEventId.asInstanceOf[js.Any],
-        "startedEventId"    -> startedEventId.asInstanceOf[js.Any],
-        "workflowExecution" -> workflowExecution.asInstanceOf[js.Any],
-        "workflowType"      -> workflowType.asInstanceOf[js.Any]
-      )
-
-      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ChildWorkflowExecutionCanceledEventAttributes]
-    }
-  }
-
   /**
     * Provides the details of the <code>ChildWorkflowExecutionCompleted</code> event.
     */
   @js.native
+  @Factory
   trait ChildWorkflowExecutionCompletedEventAttributes extends js.Object {
     var initiatedEventId: EventId
     var startedEventId: EventId
@@ -798,31 +472,11 @@ package swf {
     var result: js.UndefOr[Data]
   }
 
-  object ChildWorkflowExecutionCompletedEventAttributes {
-    @inline
-    def apply(
-        initiatedEventId: EventId,
-        startedEventId: EventId,
-        workflowExecution: WorkflowExecution,
-        workflowType: WorkflowType,
-        result: js.UndefOr[Data] = js.undefined
-    ): ChildWorkflowExecutionCompletedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "initiatedEventId"  -> initiatedEventId.asInstanceOf[js.Any],
-        "startedEventId"    -> startedEventId.asInstanceOf[js.Any],
-        "workflowExecution" -> workflowExecution.asInstanceOf[js.Any],
-        "workflowType"      -> workflowType.asInstanceOf[js.Any]
-      )
-
-      result.foreach(__v => __obj.updateDynamic("result")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ChildWorkflowExecutionCompletedEventAttributes]
-    }
-  }
-
   /**
     * Provides the details of the <code>ChildWorkflowExecutionFailed</code> event.
     */
   @js.native
+  @Factory
   trait ChildWorkflowExecutionFailedEventAttributes extends js.Object {
     var initiatedEventId: EventId
     var startedEventId: EventId
@@ -832,60 +486,22 @@ package swf {
     var reason: js.UndefOr[FailureReason]
   }
 
-  object ChildWorkflowExecutionFailedEventAttributes {
-    @inline
-    def apply(
-        initiatedEventId: EventId,
-        startedEventId: EventId,
-        workflowExecution: WorkflowExecution,
-        workflowType: WorkflowType,
-        details: js.UndefOr[Data] = js.undefined,
-        reason: js.UndefOr[FailureReason] = js.undefined
-    ): ChildWorkflowExecutionFailedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "initiatedEventId"  -> initiatedEventId.asInstanceOf[js.Any],
-        "startedEventId"    -> startedEventId.asInstanceOf[js.Any],
-        "workflowExecution" -> workflowExecution.asInstanceOf[js.Any],
-        "workflowType"      -> workflowType.asInstanceOf[js.Any]
-      )
-
-      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
-      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ChildWorkflowExecutionFailedEventAttributes]
-    }
-  }
-
   /**
     * Provides the details of the <code>ChildWorkflowExecutionStarted</code> event.
     */
   @js.native
+  @Factory
   trait ChildWorkflowExecutionStartedEventAttributes extends js.Object {
     var initiatedEventId: EventId
     var workflowExecution: WorkflowExecution
     var workflowType: WorkflowType
   }
 
-  object ChildWorkflowExecutionStartedEventAttributes {
-    @inline
-    def apply(
-        initiatedEventId: EventId,
-        workflowExecution: WorkflowExecution,
-        workflowType: WorkflowType
-    ): ChildWorkflowExecutionStartedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "initiatedEventId"  -> initiatedEventId.asInstanceOf[js.Any],
-        "workflowExecution" -> workflowExecution.asInstanceOf[js.Any],
-        "workflowType"      -> workflowType.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ChildWorkflowExecutionStartedEventAttributes]
-    }
-  }
-
   /**
     * Provides the details of the <code>ChildWorkflowExecutionTerminated</code> event.
     */
   @js.native
+  @Factory
   trait ChildWorkflowExecutionTerminatedEventAttributes extends js.Object {
     var initiatedEventId: EventId
     var startedEventId: EventId
@@ -893,56 +509,17 @@ package swf {
     var workflowType: WorkflowType
   }
 
-  object ChildWorkflowExecutionTerminatedEventAttributes {
-    @inline
-    def apply(
-        initiatedEventId: EventId,
-        startedEventId: EventId,
-        workflowExecution: WorkflowExecution,
-        workflowType: WorkflowType
-    ): ChildWorkflowExecutionTerminatedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "initiatedEventId"  -> initiatedEventId.asInstanceOf[js.Any],
-        "startedEventId"    -> startedEventId.asInstanceOf[js.Any],
-        "workflowExecution" -> workflowExecution.asInstanceOf[js.Any],
-        "workflowType"      -> workflowType.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ChildWorkflowExecutionTerminatedEventAttributes]
-    }
-  }
-
   /**
     * Provides the details of the <code>ChildWorkflowExecutionTimedOut</code> event.
     */
   @js.native
+  @Factory
   trait ChildWorkflowExecutionTimedOutEventAttributes extends js.Object {
     var initiatedEventId: EventId
     var startedEventId: EventId
     var timeoutType: WorkflowExecutionTimeoutType
     var workflowExecution: WorkflowExecution
     var workflowType: WorkflowType
-  }
-
-  object ChildWorkflowExecutionTimedOutEventAttributes {
-    @inline
-    def apply(
-        initiatedEventId: EventId,
-        startedEventId: EventId,
-        timeoutType: WorkflowExecutionTimeoutType,
-        workflowExecution: WorkflowExecution,
-        workflowType: WorkflowType
-    ): ChildWorkflowExecutionTimedOutEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "initiatedEventId"  -> initiatedEventId.asInstanceOf[js.Any],
-        "startedEventId"    -> startedEventId.asInstanceOf[js.Any],
-        "timeoutType"       -> timeoutType.asInstanceOf[js.Any],
-        "workflowExecution" -> workflowExecution.asInstanceOf[js.Any],
-        "workflowType"      -> workflowType.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ChildWorkflowExecutionTimedOutEventAttributes]
-    }
   }
 
   @js.native
@@ -962,21 +539,9 @@ package swf {
     * Used to filter the closed workflow executions in visibility APIs by their close status.
     */
   @js.native
+  @Factory
   trait CloseStatusFilter extends js.Object {
     var status: CloseStatus
-  }
-
-  object CloseStatusFilter {
-    @inline
-    def apply(
-        status: CloseStatus
-    ): CloseStatusFilter = {
-      val __obj = js.Dynamic.literal(
-        "status" -> status.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CloseStatusFilter]
-    }
   }
 
   /**
@@ -989,19 +554,9 @@ package swf {
     * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait CompleteWorkflowExecutionDecisionAttributes extends js.Object {
     var result: js.UndefOr[Data]
-  }
-
-  object CompleteWorkflowExecutionDecisionAttributes {
-    @inline
-    def apply(
-        result: js.UndefOr[Data] = js.undefined
-    ): CompleteWorkflowExecutionDecisionAttributes = {
-      val __obj = js.Dynamic.literal()
-      result.foreach(__v => __obj.updateDynamic("result")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CompleteWorkflowExecutionDecisionAttributes]
-    }
   }
 
   @js.native
@@ -1017,24 +572,10 @@ package swf {
     * Provides the details of the <code>CompleteWorkflowExecutionFailed</code> event.
     */
   @js.native
+  @Factory
   trait CompleteWorkflowExecutionFailedEventAttributes extends js.Object {
     var cause: CompleteWorkflowExecutionFailedCause
     var decisionTaskCompletedEventId: EventId
-  }
-
-  object CompleteWorkflowExecutionFailedEventAttributes {
-    @inline
-    def apply(
-        cause: CompleteWorkflowExecutionFailedCause,
-        decisionTaskCompletedEventId: EventId
-    ): CompleteWorkflowExecutionFailedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "cause"                        -> cause.asInstanceOf[js.Any],
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CompleteWorkflowExecutionFailedEventAttributes]
-    }
   }
 
   /**
@@ -1050,6 +591,7 @@ package swf {
     * </li>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait ContinueAsNewWorkflowExecutionDecisionAttributes extends js.Object {
     var childPolicy: js.UndefOr[ChildPolicy]
     var executionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
@@ -1060,35 +602,6 @@ package swf {
     var taskPriority: js.UndefOr[TaskPriority]
     var taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
     var workflowTypeVersion: js.UndefOr[Version]
-  }
-
-  object ContinueAsNewWorkflowExecutionDecisionAttributes {
-    @inline
-    def apply(
-        childPolicy: js.UndefOr[ChildPolicy] = js.undefined,
-        executionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-        input: js.UndefOr[Data] = js.undefined,
-        lambdaRole: js.UndefOr[Arn] = js.undefined,
-        tagList: js.UndefOr[TagList] = js.undefined,
-        taskList: js.UndefOr[TaskList] = js.undefined,
-        taskPriority: js.UndefOr[TaskPriority] = js.undefined,
-        taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-        workflowTypeVersion: js.UndefOr[Version] = js.undefined
-    ): ContinueAsNewWorkflowExecutionDecisionAttributes = {
-      val __obj = js.Dynamic.literal()
-      childPolicy.foreach(__v => __obj.updateDynamic("childPolicy")(__v.asInstanceOf[js.Any]))
-      executionStartToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
-      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
-      lambdaRole.foreach(__v => __obj.updateDynamic("lambdaRole")(__v.asInstanceOf[js.Any]))
-      tagList.foreach(__v => __obj.updateDynamic("tagList")(__v.asInstanceOf[js.Any]))
-      taskList.foreach(__v => __obj.updateDynamic("taskList")(__v.asInstanceOf[js.Any]))
-      taskPriority.foreach(__v => __obj.updateDynamic("taskPriority")(__v.asInstanceOf[js.Any]))
-      taskStartToCloseTimeout.foreach(__v => __obj.updateDynamic("taskStartToCloseTimeout")(__v.asInstanceOf[js.Any]))
-      workflowTypeVersion.foreach(__v => __obj.updateDynamic("workflowTypeVersion")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ContinueAsNewWorkflowExecutionDecisionAttributes]
-    }
   }
 
   @js.native
@@ -1129,27 +642,14 @@ package swf {
     * Provides the details of the <code>ContinueAsNewWorkflowExecutionFailed</code> event.
     */
   @js.native
+  @Factory
   trait ContinueAsNewWorkflowExecutionFailedEventAttributes extends js.Object {
     var cause: ContinueAsNewWorkflowExecutionFailedCause
     var decisionTaskCompletedEventId: EventId
   }
 
-  object ContinueAsNewWorkflowExecutionFailedEventAttributes {
-    @inline
-    def apply(
-        cause: ContinueAsNewWorkflowExecutionFailedCause,
-        decisionTaskCompletedEventId: EventId
-    ): ContinueAsNewWorkflowExecutionFailedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "cause"                        -> cause.asInstanceOf[js.Any],
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ContinueAsNewWorkflowExecutionFailedEventAttributes]
-    }
-  }
-
   @js.native
+  @Factory
   trait CountClosedWorkflowExecutionsInput extends js.Object {
     var domain: DomainName
     var closeStatusFilter: js.UndefOr[CloseStatusFilter]
@@ -1160,32 +660,8 @@ package swf {
     var typeFilter: js.UndefOr[WorkflowTypeFilter]
   }
 
-  object CountClosedWorkflowExecutionsInput {
-    @inline
-    def apply(
-        domain: DomainName,
-        closeStatusFilter: js.UndefOr[CloseStatusFilter] = js.undefined,
-        closeTimeFilter: js.UndefOr[ExecutionTimeFilter] = js.undefined,
-        executionFilter: js.UndefOr[WorkflowExecutionFilter] = js.undefined,
-        startTimeFilter: js.UndefOr[ExecutionTimeFilter] = js.undefined,
-        tagFilter: js.UndefOr[TagFilter] = js.undefined,
-        typeFilter: js.UndefOr[WorkflowTypeFilter] = js.undefined
-    ): CountClosedWorkflowExecutionsInput = {
-      val __obj = js.Dynamic.literal(
-        "domain" -> domain.asInstanceOf[js.Any]
-      )
-
-      closeStatusFilter.foreach(__v => __obj.updateDynamic("closeStatusFilter")(__v.asInstanceOf[js.Any]))
-      closeTimeFilter.foreach(__v => __obj.updateDynamic("closeTimeFilter")(__v.asInstanceOf[js.Any]))
-      executionFilter.foreach(__v => __obj.updateDynamic("executionFilter")(__v.asInstanceOf[js.Any]))
-      startTimeFilter.foreach(__v => __obj.updateDynamic("startTimeFilter")(__v.asInstanceOf[js.Any]))
-      tagFilter.foreach(__v => __obj.updateDynamic("tagFilter")(__v.asInstanceOf[js.Any]))
-      typeFilter.foreach(__v => __obj.updateDynamic("typeFilter")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CountClosedWorkflowExecutionsInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait CountOpenWorkflowExecutionsInput extends js.Object {
     var domain: DomainName
     var startTimeFilter: ExecutionTimeFilter
@@ -1194,67 +670,18 @@ package swf {
     var typeFilter: js.UndefOr[WorkflowTypeFilter]
   }
 
-  object CountOpenWorkflowExecutionsInput {
-    @inline
-    def apply(
-        domain: DomainName,
-        startTimeFilter: ExecutionTimeFilter,
-        executionFilter: js.UndefOr[WorkflowExecutionFilter] = js.undefined,
-        tagFilter: js.UndefOr[TagFilter] = js.undefined,
-        typeFilter: js.UndefOr[WorkflowTypeFilter] = js.undefined
-    ): CountOpenWorkflowExecutionsInput = {
-      val __obj = js.Dynamic.literal(
-        "domain"          -> domain.asInstanceOf[js.Any],
-        "startTimeFilter" -> startTimeFilter.asInstanceOf[js.Any]
-      )
-
-      executionFilter.foreach(__v => __obj.updateDynamic("executionFilter")(__v.asInstanceOf[js.Any]))
-      tagFilter.foreach(__v => __obj.updateDynamic("tagFilter")(__v.asInstanceOf[js.Any]))
-      typeFilter.foreach(__v => __obj.updateDynamic("typeFilter")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CountOpenWorkflowExecutionsInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait CountPendingActivityTasksInput extends js.Object {
     var domain: DomainName
     var taskList: TaskList
   }
 
-  object CountPendingActivityTasksInput {
-    @inline
-    def apply(
-        domain: DomainName,
-        taskList: TaskList
-    ): CountPendingActivityTasksInput = {
-      val __obj = js.Dynamic.literal(
-        "domain"   -> domain.asInstanceOf[js.Any],
-        "taskList" -> taskList.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CountPendingActivityTasksInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait CountPendingDecisionTasksInput extends js.Object {
     var domain: DomainName
     var taskList: TaskList
-  }
-
-  object CountPendingDecisionTasksInput {
-    @inline
-    def apply(
-        domain: DomainName,
-        taskList: TaskList
-    ): CountPendingDecisionTasksInput = {
-      val __obj = js.Dynamic.literal(
-        "domain"   -> domain.asInstanceOf[js.Any],
-        "taskList" -> taskList.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CountPendingDecisionTasksInput]
-    }
   }
 
   /**
@@ -1309,6 +736,7 @@ package swf {
     *  * <code> <a>StartChildWorkflowExecutionDecisionAttributes</a> </code>
     */
   @js.native
+  @Factory
   trait Decision extends js.Object {
     var decisionType: DecisionType
     var cancelTimerDecisionAttributes: js.UndefOr[CancelTimerDecisionAttributes]
@@ -1328,83 +756,11 @@ package swf {
     var startTimerDecisionAttributes: js.UndefOr[StartTimerDecisionAttributes]
   }
 
-  object Decision {
-    @inline
-    def apply(
-        decisionType: DecisionType,
-        cancelTimerDecisionAttributes: js.UndefOr[CancelTimerDecisionAttributes] = js.undefined,
-        cancelWorkflowExecutionDecisionAttributes: js.UndefOr[CancelWorkflowExecutionDecisionAttributes] = js.undefined,
-        completeWorkflowExecutionDecisionAttributes: js.UndefOr[CompleteWorkflowExecutionDecisionAttributes] =
-          js.undefined,
-        continueAsNewWorkflowExecutionDecisionAttributes: js.UndefOr[ContinueAsNewWorkflowExecutionDecisionAttributes] =
-          js.undefined,
-        failWorkflowExecutionDecisionAttributes: js.UndefOr[FailWorkflowExecutionDecisionAttributes] = js.undefined,
-        recordMarkerDecisionAttributes: js.UndefOr[RecordMarkerDecisionAttributes] = js.undefined,
-        requestCancelActivityTaskDecisionAttributes: js.UndefOr[RequestCancelActivityTaskDecisionAttributes] =
-          js.undefined,
-        requestCancelExternalWorkflowExecutionDecisionAttributes: js.UndefOr[
-          RequestCancelExternalWorkflowExecutionDecisionAttributes
-        ] = js.undefined,
-        scheduleActivityTaskDecisionAttributes: js.UndefOr[ScheduleActivityTaskDecisionAttributes] = js.undefined,
-        scheduleLambdaFunctionDecisionAttributes: js.UndefOr[ScheduleLambdaFunctionDecisionAttributes] = js.undefined,
-        signalExternalWorkflowExecutionDecisionAttributes: js.UndefOr[
-          SignalExternalWorkflowExecutionDecisionAttributes
-        ] = js.undefined,
-        startChildWorkflowExecutionDecisionAttributes: js.UndefOr[StartChildWorkflowExecutionDecisionAttributes] =
-          js.undefined,
-        startTimerDecisionAttributes: js.UndefOr[StartTimerDecisionAttributes] = js.undefined
-    ): Decision = {
-      val __obj = js.Dynamic.literal(
-        "decisionType" -> decisionType.asInstanceOf[js.Any]
-      )
-
-      cancelTimerDecisionAttributes.foreach(__v =>
-        __obj.updateDynamic("cancelTimerDecisionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      cancelWorkflowExecutionDecisionAttributes.foreach(__v =>
-        __obj.updateDynamic("cancelWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      completeWorkflowExecutionDecisionAttributes.foreach(__v =>
-        __obj.updateDynamic("completeWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      continueAsNewWorkflowExecutionDecisionAttributes.foreach(__v =>
-        __obj.updateDynamic("continueAsNewWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      failWorkflowExecutionDecisionAttributes.foreach(__v =>
-        __obj.updateDynamic("failWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      recordMarkerDecisionAttributes.foreach(__v =>
-        __obj.updateDynamic("recordMarkerDecisionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      requestCancelActivityTaskDecisionAttributes.foreach(__v =>
-        __obj.updateDynamic("requestCancelActivityTaskDecisionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      requestCancelExternalWorkflowExecutionDecisionAttributes.foreach(__v =>
-        __obj.updateDynamic("requestCancelExternalWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      scheduleActivityTaskDecisionAttributes.foreach(__v =>
-        __obj.updateDynamic("scheduleActivityTaskDecisionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      scheduleLambdaFunctionDecisionAttributes.foreach(__v =>
-        __obj.updateDynamic("scheduleLambdaFunctionDecisionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      signalExternalWorkflowExecutionDecisionAttributes.foreach(__v =>
-        __obj.updateDynamic("signalExternalWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      startChildWorkflowExecutionDecisionAttributes.foreach(__v =>
-        __obj.updateDynamic("startChildWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      startTimerDecisionAttributes.foreach(__v =>
-        __obj.updateDynamic("startTimerDecisionAttributes")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[Decision]
-    }
-  }
-
   /**
     * A structure that represents a decision task. Decision tasks are sent to deciders in order for them to make decisions.
     */
   @js.native
+  @Factory
   trait DecisionTask extends js.Object {
     var events: HistoryEventList
     var startedEventId: EventId
@@ -1415,134 +771,47 @@ package swf {
     var previousStartedEventId: js.UndefOr[EventId]
   }
 
-  object DecisionTask {
-    @inline
-    def apply(
-        events: HistoryEventList,
-        startedEventId: EventId,
-        taskToken: TaskToken,
-        workflowExecution: WorkflowExecution,
-        workflowType: WorkflowType,
-        nextPageToken: js.UndefOr[PageToken] = js.undefined,
-        previousStartedEventId: js.UndefOr[EventId] = js.undefined
-    ): DecisionTask = {
-      val __obj = js.Dynamic.literal(
-        "events"            -> events.asInstanceOf[js.Any],
-        "startedEventId"    -> startedEventId.asInstanceOf[js.Any],
-        "taskToken"         -> taskToken.asInstanceOf[js.Any],
-        "workflowExecution" -> workflowExecution.asInstanceOf[js.Any],
-        "workflowType"      -> workflowType.asInstanceOf[js.Any]
-      )
-
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      previousStartedEventId.foreach(__v => __obj.updateDynamic("previousStartedEventId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DecisionTask]
-    }
-  }
-
   /**
     * Provides the details of the <code>DecisionTaskCompleted</code> event.
     */
   @js.native
+  @Factory
   trait DecisionTaskCompletedEventAttributes extends js.Object {
     var scheduledEventId: EventId
     var startedEventId: EventId
     var executionContext: js.UndefOr[Data]
   }
 
-  object DecisionTaskCompletedEventAttributes {
-    @inline
-    def apply(
-        scheduledEventId: EventId,
-        startedEventId: EventId,
-        executionContext: js.UndefOr[Data] = js.undefined
-    ): DecisionTaskCompletedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
-        "startedEventId"   -> startedEventId.asInstanceOf[js.Any]
-      )
-
-      executionContext.foreach(__v => __obj.updateDynamic("executionContext")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DecisionTaskCompletedEventAttributes]
-    }
-  }
-
   /**
     * Provides details about the <code>DecisionTaskScheduled</code> event.
     */
   @js.native
+  @Factory
   trait DecisionTaskScheduledEventAttributes extends js.Object {
     var taskList: TaskList
     var startToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
     var taskPriority: js.UndefOr[TaskPriority]
   }
 
-  object DecisionTaskScheduledEventAttributes {
-    @inline
-    def apply(
-        taskList: TaskList,
-        startToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-        taskPriority: js.UndefOr[TaskPriority] = js.undefined
-    ): DecisionTaskScheduledEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "taskList" -> taskList.asInstanceOf[js.Any]
-      )
-
-      startToCloseTimeout.foreach(__v => __obj.updateDynamic("startToCloseTimeout")(__v.asInstanceOf[js.Any]))
-      taskPriority.foreach(__v => __obj.updateDynamic("taskPriority")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DecisionTaskScheduledEventAttributes]
-    }
-  }
-
   /**
     * Provides the details of the <code>DecisionTaskStarted</code> event.
     */
   @js.native
+  @Factory
   trait DecisionTaskStartedEventAttributes extends js.Object {
     var scheduledEventId: EventId
     var identity: js.UndefOr[Identity]
-  }
-
-  object DecisionTaskStartedEventAttributes {
-    @inline
-    def apply(
-        scheduledEventId: EventId,
-        identity: js.UndefOr[Identity] = js.undefined
-    ): DecisionTaskStartedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any]
-      )
-
-      identity.foreach(__v => __obj.updateDynamic("identity")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DecisionTaskStartedEventAttributes]
-    }
   }
 
   /**
     * Provides the details of the <code>DecisionTaskTimedOut</code> event.
     */
   @js.native
+  @Factory
   trait DecisionTaskTimedOutEventAttributes extends js.Object {
     var scheduledEventId: EventId
     var startedEventId: EventId
     var timeoutType: DecisionTaskTimeoutType
-  }
-
-  object DecisionTaskTimedOutEventAttributes {
-    @inline
-    def apply(
-        scheduledEventId: EventId,
-        startedEventId: EventId,
-        timeoutType: DecisionTaskTimeoutType
-    ): DecisionTaskTimedOutEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
-        "startedEventId"   -> startedEventId.asInstanceOf[js.Any],
-        "timeoutType"      -> timeoutType.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DecisionTaskTimedOutEventAttributes]
-    }
   }
 
   @js.native
@@ -1590,195 +859,76 @@ package swf {
   }
 
   @js.native
+  @Factory
   trait DeprecateActivityTypeInput extends js.Object {
     var activityType: ActivityType
     var domain: DomainName
   }
 
-  object DeprecateActivityTypeInput {
-    @inline
-    def apply(
-        activityType: ActivityType,
-        domain: DomainName
-    ): DeprecateActivityTypeInput = {
-      val __obj = js.Dynamic.literal(
-        "activityType" -> activityType.asInstanceOf[js.Any],
-        "domain"       -> domain.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeprecateActivityTypeInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeprecateDomainInput extends js.Object {
     var name: DomainName
   }
 
-  object DeprecateDomainInput {
-    @inline
-    def apply(
-        name: DomainName
-    ): DeprecateDomainInput = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeprecateDomainInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeprecateWorkflowTypeInput extends js.Object {
     var domain: DomainName
     var workflowType: WorkflowType
   }
 
-  object DeprecateWorkflowTypeInput {
-    @inline
-    def apply(
-        domain: DomainName,
-        workflowType: WorkflowType
-    ): DeprecateWorkflowTypeInput = {
-      val __obj = js.Dynamic.literal(
-        "domain"       -> domain.asInstanceOf[js.Any],
-        "workflowType" -> workflowType.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeprecateWorkflowTypeInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeActivityTypeInput extends js.Object {
     var activityType: ActivityType
     var domain: DomainName
   }
 
-  object DescribeActivityTypeInput {
-    @inline
-    def apply(
-        activityType: ActivityType,
-        domain: DomainName
-    ): DescribeActivityTypeInput = {
-      val __obj = js.Dynamic.literal(
-        "activityType" -> activityType.asInstanceOf[js.Any],
-        "domain"       -> domain.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeActivityTypeInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeDomainInput extends js.Object {
     var name: DomainName
   }
 
-  object DescribeDomainInput {
-    @inline
-    def apply(
-        name: DomainName
-    ): DescribeDomainInput = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeDomainInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeWorkflowExecutionInput extends js.Object {
     var domain: DomainName
     var execution: WorkflowExecution
   }
 
-  object DescribeWorkflowExecutionInput {
-    @inline
-    def apply(
-        domain: DomainName,
-        execution: WorkflowExecution
-    ): DescribeWorkflowExecutionInput = {
-      val __obj = js.Dynamic.literal(
-        "domain"    -> domain.asInstanceOf[js.Any],
-        "execution" -> execution.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeWorkflowExecutionInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeWorkflowTypeInput extends js.Object {
     var domain: DomainName
     var workflowType: WorkflowType
-  }
-
-  object DescribeWorkflowTypeInput {
-    @inline
-    def apply(
-        domain: DomainName,
-        workflowType: WorkflowType
-    ): DescribeWorkflowTypeInput = {
-      val __obj = js.Dynamic.literal(
-        "domain"       -> domain.asInstanceOf[js.Any],
-        "workflowType" -> workflowType.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeWorkflowTypeInput]
-    }
   }
 
   /**
     * Contains the configuration settings of a domain.
     */
   @js.native
+  @Factory
   trait DomainConfiguration extends js.Object {
     var workflowExecutionRetentionPeriodInDays: DurationInDays
-  }
-
-  object DomainConfiguration {
-    @inline
-    def apply(
-        workflowExecutionRetentionPeriodInDays: DurationInDays
-    ): DomainConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "workflowExecutionRetentionPeriodInDays" -> workflowExecutionRetentionPeriodInDays.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DomainConfiguration]
-    }
   }
 
   /**
     * Contains details of a domain.
     */
   @js.native
+  @Factory
   trait DomainDetail extends js.Object {
     var configuration: DomainConfiguration
     var domainInfo: DomainInfo
-  }
-
-  object DomainDetail {
-    @inline
-    def apply(
-        configuration: DomainConfiguration,
-        domainInfo: DomainInfo
-    ): DomainDetail = {
-      val __obj = js.Dynamic.literal(
-        "configuration" -> configuration.asInstanceOf[js.Any],
-        "domainInfo"    -> domainInfo.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DomainDetail]
-    }
   }
 
   /**
     * Contains general information about a domain.
     */
   @js.native
+  @Factory
   trait DomainInfo extends js.Object {
     var name: DomainName
     var status: RegistrationStatus
@@ -1786,47 +936,14 @@ package swf {
     var description: js.UndefOr[Description]
   }
 
-  object DomainInfo {
-    @inline
-    def apply(
-        name: DomainName,
-        status: RegistrationStatus,
-        arn: js.UndefOr[Arn] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined
-    ): DomainInfo = {
-      val __obj = js.Dynamic.literal(
-        "name"   -> name.asInstanceOf[js.Any],
-        "status" -> status.asInstanceOf[js.Any]
-      )
-
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DomainInfo]
-    }
-  }
-
   /**
     * Contains a paginated collection of DomainInfo structures.
     */
   @js.native
+  @Factory
   trait DomainInfos extends js.Object {
     var domainInfos: DomainInfoList
     var nextPageToken: js.UndefOr[PageToken]
-  }
-
-  object DomainInfos {
-    @inline
-    def apply(
-        domainInfos: DomainInfoList,
-        nextPageToken: js.UndefOr[PageToken] = js.undefined
-    ): DomainInfos = {
-      val __obj = js.Dynamic.literal(
-        "domainInfos" -> domainInfos.asInstanceOf[js.Any]
-      )
-
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DomainInfos]
-    }
   }
 
   @js.native
@@ -1962,72 +1079,30 @@ package swf {
     * Used to filter the workflow executions in visibility APIs by various time-based rules. Each parameter, if specified, defines a rule that must be satisfied by each returned query result. The parameter values are in the [[https://en.wikipedia.org/wiki/Unix_time|Unix Time format]]. For example: <code>"oldestDate": 1325376070.</code>
     */
   @js.native
+  @Factory
   trait ExecutionTimeFilter extends js.Object {
     var oldestDate: Timestamp
     var latestDate: js.UndefOr[Timestamp]
-  }
-
-  object ExecutionTimeFilter {
-    @inline
-    def apply(
-        oldestDate: Timestamp,
-        latestDate: js.UndefOr[Timestamp] = js.undefined
-    ): ExecutionTimeFilter = {
-      val __obj = js.Dynamic.literal(
-        "oldestDate" -> oldestDate.asInstanceOf[js.Any]
-      )
-
-      latestDate.foreach(__v => __obj.updateDynamic("latestDate")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ExecutionTimeFilter]
-    }
   }
 
   /**
     * Provides the details of the <code>ExternalWorkflowExecutionCancelRequested</code> event.
     */
   @js.native
+  @Factory
   trait ExternalWorkflowExecutionCancelRequestedEventAttributes extends js.Object {
     var initiatedEventId: EventId
     var workflowExecution: WorkflowExecution
-  }
-
-  object ExternalWorkflowExecutionCancelRequestedEventAttributes {
-    @inline
-    def apply(
-        initiatedEventId: EventId,
-        workflowExecution: WorkflowExecution
-    ): ExternalWorkflowExecutionCancelRequestedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "initiatedEventId"  -> initiatedEventId.asInstanceOf[js.Any],
-        "workflowExecution" -> workflowExecution.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ExternalWorkflowExecutionCancelRequestedEventAttributes]
-    }
   }
 
   /**
     * Provides the details of the <code>ExternalWorkflowExecutionSignaled</code> event.
     */
   @js.native
+  @Factory
   trait ExternalWorkflowExecutionSignaledEventAttributes extends js.Object {
     var initiatedEventId: EventId
     var workflowExecution: WorkflowExecution
-  }
-
-  object ExternalWorkflowExecutionSignaledEventAttributes {
-    @inline
-    def apply(
-        initiatedEventId: EventId,
-        workflowExecution: WorkflowExecution
-    ): ExternalWorkflowExecutionSignaledEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "initiatedEventId"  -> initiatedEventId.asInstanceOf[js.Any],
-        "workflowExecution" -> workflowExecution.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ExternalWorkflowExecutionSignaledEventAttributes]
-    }
   }
 
   /**
@@ -2040,22 +1115,10 @@ package swf {
     * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait FailWorkflowExecutionDecisionAttributes extends js.Object {
     var details: js.UndefOr[Data]
     var reason: js.UndefOr[FailureReason]
-  }
-
-  object FailWorkflowExecutionDecisionAttributes {
-    @inline
-    def apply(
-        details: js.UndefOr[Data] = js.undefined,
-        reason: js.UndefOr[FailureReason] = js.undefined
-    ): FailWorkflowExecutionDecisionAttributes = {
-      val __obj = js.Dynamic.literal()
-      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
-      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[FailWorkflowExecutionDecisionAttributes]
-    }
   }
 
   @js.native
@@ -2071,27 +1134,14 @@ package swf {
     * Provides the details of the <code>FailWorkflowExecutionFailed</code> event.
     */
   @js.native
+  @Factory
   trait FailWorkflowExecutionFailedEventAttributes extends js.Object {
     var cause: FailWorkflowExecutionFailedCause
     var decisionTaskCompletedEventId: EventId
   }
 
-  object FailWorkflowExecutionFailedEventAttributes {
-    @inline
-    def apply(
-        cause: FailWorkflowExecutionFailedCause,
-        decisionTaskCompletedEventId: EventId
-    ): FailWorkflowExecutionFailedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "cause"                        -> cause.asInstanceOf[js.Any],
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[FailWorkflowExecutionFailedEventAttributes]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetWorkflowExecutionHistoryInput extends js.Object {
     var domain: DomainName
     var execution: WorkflowExecution
@@ -2100,49 +1150,14 @@ package swf {
     var reverseOrder: js.UndefOr[ReverseOrder]
   }
 
-  object GetWorkflowExecutionHistoryInput {
-    @inline
-    def apply(
-        domain: DomainName,
-        execution: WorkflowExecution,
-        maximumPageSize: js.UndefOr[PageSize] = js.undefined,
-        nextPageToken: js.UndefOr[PageToken] = js.undefined,
-        reverseOrder: js.UndefOr[ReverseOrder] = js.undefined
-    ): GetWorkflowExecutionHistoryInput = {
-      val __obj = js.Dynamic.literal(
-        "domain"    -> domain.asInstanceOf[js.Any],
-        "execution" -> execution.asInstanceOf[js.Any]
-      )
-
-      maximumPageSize.foreach(__v => __obj.updateDynamic("maximumPageSize")(__v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      reverseOrder.foreach(__v => __obj.updateDynamic("reverseOrder")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetWorkflowExecutionHistoryInput]
-    }
-  }
-
   /**
     * Paginated representation of a workflow history for a workflow execution. This is the up to date, complete and authoritative record of the events related to all tasks and events in the life of the workflow execution.
     */
   @js.native
+  @Factory
   trait History extends js.Object {
     var events: HistoryEventList
     var nextPageToken: js.UndefOr[PageToken]
-  }
-
-  object History {
-    @inline
-    def apply(
-        events: HistoryEventList,
-        nextPageToken: js.UndefOr[PageToken] = js.undefined
-    ): History = {
-      val __obj = js.Dynamic.literal(
-        "events" -> events.asInstanceOf[js.Any]
-      )
-
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[History]
-    }
   }
 
   /**
@@ -2197,6 +1212,7 @@ package swf {
     *  * <code>WorkflowExecutionTimedOut</code> – The workflow execution was closed because a time out was exceeded.
     */
   @js.native
+  @Factory
   trait HistoryEvent extends js.Object {
     var eventId: EventId
     var eventTimestamp: Timestamp
@@ -2271,301 +1287,22 @@ package swf {
     var workflowExecutionTimedOutEventAttributes: js.UndefOr[WorkflowExecutionTimedOutEventAttributes]
   }
 
-  object HistoryEvent {
-    @inline
-    def apply(
-        eventId: EventId,
-        eventTimestamp: Timestamp,
-        eventType: EventType,
-        activityTaskCancelRequestedEventAttributes: js.UndefOr[ActivityTaskCancelRequestedEventAttributes] =
-          js.undefined,
-        activityTaskCanceledEventAttributes: js.UndefOr[ActivityTaskCanceledEventAttributes] = js.undefined,
-        activityTaskCompletedEventAttributes: js.UndefOr[ActivityTaskCompletedEventAttributes] = js.undefined,
-        activityTaskFailedEventAttributes: js.UndefOr[ActivityTaskFailedEventAttributes] = js.undefined,
-        activityTaskScheduledEventAttributes: js.UndefOr[ActivityTaskScheduledEventAttributes] = js.undefined,
-        activityTaskStartedEventAttributes: js.UndefOr[ActivityTaskStartedEventAttributes] = js.undefined,
-        activityTaskTimedOutEventAttributes: js.UndefOr[ActivityTaskTimedOutEventAttributes] = js.undefined,
-        cancelTimerFailedEventAttributes: js.UndefOr[CancelTimerFailedEventAttributes] = js.undefined,
-        cancelWorkflowExecutionFailedEventAttributes: js.UndefOr[CancelWorkflowExecutionFailedEventAttributes] =
-          js.undefined,
-        childWorkflowExecutionCanceledEventAttributes: js.UndefOr[ChildWorkflowExecutionCanceledEventAttributes] =
-          js.undefined,
-        childWorkflowExecutionCompletedEventAttributes: js.UndefOr[ChildWorkflowExecutionCompletedEventAttributes] =
-          js.undefined,
-        childWorkflowExecutionFailedEventAttributes: js.UndefOr[ChildWorkflowExecutionFailedEventAttributes] =
-          js.undefined,
-        childWorkflowExecutionStartedEventAttributes: js.UndefOr[ChildWorkflowExecutionStartedEventAttributes] =
-          js.undefined,
-        childWorkflowExecutionTerminatedEventAttributes: js.UndefOr[ChildWorkflowExecutionTerminatedEventAttributes] =
-          js.undefined,
-        childWorkflowExecutionTimedOutEventAttributes: js.UndefOr[ChildWorkflowExecutionTimedOutEventAttributes] =
-          js.undefined,
-        completeWorkflowExecutionFailedEventAttributes: js.UndefOr[CompleteWorkflowExecutionFailedEventAttributes] =
-          js.undefined,
-        continueAsNewWorkflowExecutionFailedEventAttributes: js.UndefOr[
-          ContinueAsNewWorkflowExecutionFailedEventAttributes
-        ] = js.undefined,
-        decisionTaskCompletedEventAttributes: js.UndefOr[DecisionTaskCompletedEventAttributes] = js.undefined,
-        decisionTaskScheduledEventAttributes: js.UndefOr[DecisionTaskScheduledEventAttributes] = js.undefined,
-        decisionTaskStartedEventAttributes: js.UndefOr[DecisionTaskStartedEventAttributes] = js.undefined,
-        decisionTaskTimedOutEventAttributes: js.UndefOr[DecisionTaskTimedOutEventAttributes] = js.undefined,
-        externalWorkflowExecutionCancelRequestedEventAttributes: js.UndefOr[
-          ExternalWorkflowExecutionCancelRequestedEventAttributes
-        ] = js.undefined,
-        externalWorkflowExecutionSignaledEventAttributes: js.UndefOr[ExternalWorkflowExecutionSignaledEventAttributes] =
-          js.undefined,
-        failWorkflowExecutionFailedEventAttributes: js.UndefOr[FailWorkflowExecutionFailedEventAttributes] =
-          js.undefined,
-        lambdaFunctionCompletedEventAttributes: js.UndefOr[LambdaFunctionCompletedEventAttributes] = js.undefined,
-        lambdaFunctionFailedEventAttributes: js.UndefOr[LambdaFunctionFailedEventAttributes] = js.undefined,
-        lambdaFunctionScheduledEventAttributes: js.UndefOr[LambdaFunctionScheduledEventAttributes] = js.undefined,
-        lambdaFunctionStartedEventAttributes: js.UndefOr[LambdaFunctionStartedEventAttributes] = js.undefined,
-        lambdaFunctionTimedOutEventAttributes: js.UndefOr[LambdaFunctionTimedOutEventAttributes] = js.undefined,
-        markerRecordedEventAttributes: js.UndefOr[MarkerRecordedEventAttributes] = js.undefined,
-        recordMarkerFailedEventAttributes: js.UndefOr[RecordMarkerFailedEventAttributes] = js.undefined,
-        requestCancelActivityTaskFailedEventAttributes: js.UndefOr[RequestCancelActivityTaskFailedEventAttributes] =
-          js.undefined,
-        requestCancelExternalWorkflowExecutionFailedEventAttributes: js.UndefOr[
-          RequestCancelExternalWorkflowExecutionFailedEventAttributes
-        ] = js.undefined,
-        requestCancelExternalWorkflowExecutionInitiatedEventAttributes: js.UndefOr[
-          RequestCancelExternalWorkflowExecutionInitiatedEventAttributes
-        ] = js.undefined,
-        scheduleActivityTaskFailedEventAttributes: js.UndefOr[ScheduleActivityTaskFailedEventAttributes] = js.undefined,
-        scheduleLambdaFunctionFailedEventAttributes: js.UndefOr[ScheduleLambdaFunctionFailedEventAttributes] =
-          js.undefined,
-        signalExternalWorkflowExecutionFailedEventAttributes: js.UndefOr[
-          SignalExternalWorkflowExecutionFailedEventAttributes
-        ] = js.undefined,
-        signalExternalWorkflowExecutionInitiatedEventAttributes: js.UndefOr[
-          SignalExternalWorkflowExecutionInitiatedEventAttributes
-        ] = js.undefined,
-        startChildWorkflowExecutionFailedEventAttributes: js.UndefOr[StartChildWorkflowExecutionFailedEventAttributes] =
-          js.undefined,
-        startChildWorkflowExecutionInitiatedEventAttributes: js.UndefOr[
-          StartChildWorkflowExecutionInitiatedEventAttributes
-        ] = js.undefined,
-        startLambdaFunctionFailedEventAttributes: js.UndefOr[StartLambdaFunctionFailedEventAttributes] = js.undefined,
-        startTimerFailedEventAttributes: js.UndefOr[StartTimerFailedEventAttributes] = js.undefined,
-        timerCanceledEventAttributes: js.UndefOr[TimerCanceledEventAttributes] = js.undefined,
-        timerFiredEventAttributes: js.UndefOr[TimerFiredEventAttributes] = js.undefined,
-        timerStartedEventAttributes: js.UndefOr[TimerStartedEventAttributes] = js.undefined,
-        workflowExecutionCancelRequestedEventAttributes: js.UndefOr[WorkflowExecutionCancelRequestedEventAttributes] =
-          js.undefined,
-        workflowExecutionCanceledEventAttributes: js.UndefOr[WorkflowExecutionCanceledEventAttributes] = js.undefined,
-        workflowExecutionCompletedEventAttributes: js.UndefOr[WorkflowExecutionCompletedEventAttributes] = js.undefined,
-        workflowExecutionContinuedAsNewEventAttributes: js.UndefOr[WorkflowExecutionContinuedAsNewEventAttributes] =
-          js.undefined,
-        workflowExecutionFailedEventAttributes: js.UndefOr[WorkflowExecutionFailedEventAttributes] = js.undefined,
-        workflowExecutionSignaledEventAttributes: js.UndefOr[WorkflowExecutionSignaledEventAttributes] = js.undefined,
-        workflowExecutionStartedEventAttributes: js.UndefOr[WorkflowExecutionStartedEventAttributes] = js.undefined,
-        workflowExecutionTerminatedEventAttributes: js.UndefOr[WorkflowExecutionTerminatedEventAttributes] =
-          js.undefined,
-        workflowExecutionTimedOutEventAttributes: js.UndefOr[WorkflowExecutionTimedOutEventAttributes] = js.undefined
-    ): HistoryEvent = {
-      val __obj = js.Dynamic.literal(
-        "eventId"        -> eventId.asInstanceOf[js.Any],
-        "eventTimestamp" -> eventTimestamp.asInstanceOf[js.Any],
-        "eventType"      -> eventType.asInstanceOf[js.Any]
-      )
-
-      activityTaskCancelRequestedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("activityTaskCancelRequestedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      activityTaskCanceledEventAttributes.foreach(__v =>
-        __obj.updateDynamic("activityTaskCanceledEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      activityTaskCompletedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("activityTaskCompletedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      activityTaskFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("activityTaskFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      activityTaskScheduledEventAttributes.foreach(__v =>
-        __obj.updateDynamic("activityTaskScheduledEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      activityTaskStartedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("activityTaskStartedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      activityTaskTimedOutEventAttributes.foreach(__v =>
-        __obj.updateDynamic("activityTaskTimedOutEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      cancelTimerFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("cancelTimerFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      cancelWorkflowExecutionFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("cancelWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      childWorkflowExecutionCanceledEventAttributes.foreach(__v =>
-        __obj.updateDynamic("childWorkflowExecutionCanceledEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      childWorkflowExecutionCompletedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("childWorkflowExecutionCompletedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      childWorkflowExecutionFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("childWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      childWorkflowExecutionStartedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("childWorkflowExecutionStartedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      childWorkflowExecutionTerminatedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("childWorkflowExecutionTerminatedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      childWorkflowExecutionTimedOutEventAttributes.foreach(__v =>
-        __obj.updateDynamic("childWorkflowExecutionTimedOutEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      completeWorkflowExecutionFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("completeWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      continueAsNewWorkflowExecutionFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("continueAsNewWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      decisionTaskCompletedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("decisionTaskCompletedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      decisionTaskScheduledEventAttributes.foreach(__v =>
-        __obj.updateDynamic("decisionTaskScheduledEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      decisionTaskStartedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("decisionTaskStartedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      decisionTaskTimedOutEventAttributes.foreach(__v =>
-        __obj.updateDynamic("decisionTaskTimedOutEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      externalWorkflowExecutionCancelRequestedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("externalWorkflowExecutionCancelRequestedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      externalWorkflowExecutionSignaledEventAttributes.foreach(__v =>
-        __obj.updateDynamic("externalWorkflowExecutionSignaledEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      failWorkflowExecutionFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("failWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      lambdaFunctionCompletedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("lambdaFunctionCompletedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      lambdaFunctionFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("lambdaFunctionFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      lambdaFunctionScheduledEventAttributes.foreach(__v =>
-        __obj.updateDynamic("lambdaFunctionScheduledEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      lambdaFunctionStartedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("lambdaFunctionStartedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      lambdaFunctionTimedOutEventAttributes.foreach(__v =>
-        __obj.updateDynamic("lambdaFunctionTimedOutEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      markerRecordedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("markerRecordedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      recordMarkerFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("recordMarkerFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      requestCancelActivityTaskFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("requestCancelActivityTaskFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      requestCancelExternalWorkflowExecutionFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("requestCancelExternalWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      requestCancelExternalWorkflowExecutionInitiatedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("requestCancelExternalWorkflowExecutionInitiatedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      scheduleActivityTaskFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("scheduleActivityTaskFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      scheduleLambdaFunctionFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("scheduleLambdaFunctionFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      signalExternalWorkflowExecutionFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("signalExternalWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      signalExternalWorkflowExecutionInitiatedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("signalExternalWorkflowExecutionInitiatedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      startChildWorkflowExecutionFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("startChildWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      startChildWorkflowExecutionInitiatedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("startChildWorkflowExecutionInitiatedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      startLambdaFunctionFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("startLambdaFunctionFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      startTimerFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("startTimerFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      timerCanceledEventAttributes.foreach(__v =>
-        __obj.updateDynamic("timerCanceledEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      timerFiredEventAttributes.foreach(__v =>
-        __obj.updateDynamic("timerFiredEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      timerStartedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("timerStartedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      workflowExecutionCancelRequestedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("workflowExecutionCancelRequestedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      workflowExecutionCanceledEventAttributes.foreach(__v =>
-        __obj.updateDynamic("workflowExecutionCanceledEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      workflowExecutionCompletedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("workflowExecutionCompletedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      workflowExecutionContinuedAsNewEventAttributes.foreach(__v =>
-        __obj.updateDynamic("workflowExecutionContinuedAsNewEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      workflowExecutionFailedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("workflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      workflowExecutionSignaledEventAttributes.foreach(__v =>
-        __obj.updateDynamic("workflowExecutionSignaledEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      workflowExecutionStartedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("workflowExecutionStartedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      workflowExecutionTerminatedEventAttributes.foreach(__v =>
-        __obj.updateDynamic("workflowExecutionTerminatedEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      workflowExecutionTimedOutEventAttributes.foreach(__v =>
-        __obj.updateDynamic("workflowExecutionTimedOutEventAttributes")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[HistoryEvent]
-    }
-  }
-
   /**
     * Provides the details of the <code>LambdaFunctionCompleted</code> event. It isn't set for other event types.
     */
   @js.native
+  @Factory
   trait LambdaFunctionCompletedEventAttributes extends js.Object {
     var scheduledEventId: EventId
     var startedEventId: EventId
     var result: js.UndefOr[Data]
   }
 
-  object LambdaFunctionCompletedEventAttributes {
-    @inline
-    def apply(
-        scheduledEventId: EventId,
-        startedEventId: EventId,
-        result: js.UndefOr[Data] = js.undefined
-    ): LambdaFunctionCompletedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
-        "startedEventId"   -> startedEventId.asInstanceOf[js.Any]
-      )
-
-      result.foreach(__v => __obj.updateDynamic("result")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LambdaFunctionCompletedEventAttributes]
-    }
-  }
-
   /**
     * Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't set for other event types.
     */
   @js.native
+  @Factory
   trait LambdaFunctionFailedEventAttributes extends js.Object {
     var scheduledEventId: EventId
     var startedEventId: EventId
@@ -2573,29 +1310,11 @@ package swf {
     var reason: js.UndefOr[FailureReason]
   }
 
-  object LambdaFunctionFailedEventAttributes {
-    @inline
-    def apply(
-        scheduledEventId: EventId,
-        startedEventId: EventId,
-        details: js.UndefOr[Data] = js.undefined,
-        reason: js.UndefOr[FailureReason] = js.undefined
-    ): LambdaFunctionFailedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
-        "startedEventId"   -> startedEventId.asInstanceOf[js.Any]
-      )
-
-      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
-      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LambdaFunctionFailedEventAttributes]
-    }
-  }
-
   /**
     * Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set for other event types.
     */
   @js.native
+  @Factory
   trait LambdaFunctionScheduledEventAttributes extends js.Object {
     var decisionTaskCompletedEventId: EventId
     var id: FunctionId
@@ -2605,75 +1324,24 @@ package swf {
     var startToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
   }
 
-  object LambdaFunctionScheduledEventAttributes {
-    @inline
-    def apply(
-        decisionTaskCompletedEventId: EventId,
-        id: FunctionId,
-        name: FunctionName,
-        control: js.UndefOr[Data] = js.undefined,
-        input: js.UndefOr[FunctionInput] = js.undefined,
-        startToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined
-    ): LambdaFunctionScheduledEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
-        "id"                           -> id.asInstanceOf[js.Any],
-        "name"                         -> name.asInstanceOf[js.Any]
-      )
-
-      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
-      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
-      startToCloseTimeout.foreach(__v => __obj.updateDynamic("startToCloseTimeout")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LambdaFunctionScheduledEventAttributes]
-    }
-  }
-
   /**
     * Provides the details of the <code>LambdaFunctionStarted</code> event. It isn't set for other event types.
     */
   @js.native
+  @Factory
   trait LambdaFunctionStartedEventAttributes extends js.Object {
     var scheduledEventId: EventId
-  }
-
-  object LambdaFunctionStartedEventAttributes {
-    @inline
-    def apply(
-        scheduledEventId: EventId
-    ): LambdaFunctionStartedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[LambdaFunctionStartedEventAttributes]
-    }
   }
 
   /**
     * Provides details of the <code>LambdaFunctionTimedOut</code> event.
     */
   @js.native
+  @Factory
   trait LambdaFunctionTimedOutEventAttributes extends js.Object {
     var scheduledEventId: EventId
     var startedEventId: EventId
     var timeoutType: js.UndefOr[LambdaFunctionTimeoutType]
-  }
-
-  object LambdaFunctionTimedOutEventAttributes {
-    @inline
-    def apply(
-        scheduledEventId: EventId,
-        startedEventId: EventId,
-        timeoutType: js.UndefOr[LambdaFunctionTimeoutType] = js.undefined
-    ): LambdaFunctionTimedOutEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
-        "startedEventId"   -> startedEventId.asInstanceOf[js.Any]
-      )
-
-      timeoutType.foreach(__v => __obj.updateDynamic("timeoutType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LambdaFunctionTimedOutEventAttributes]
-    }
   }
 
   @js.native
@@ -2685,6 +1353,7 @@ package swf {
   }
 
   @js.native
+  @Factory
   trait ListActivityTypesInput extends js.Object {
     var domain: DomainName
     var registrationStatus: RegistrationStatus
@@ -2694,30 +1363,8 @@ package swf {
     var reverseOrder: js.UndefOr[ReverseOrder]
   }
 
-  object ListActivityTypesInput {
-    @inline
-    def apply(
-        domain: DomainName,
-        registrationStatus: RegistrationStatus,
-        maximumPageSize: js.UndefOr[PageSize] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined,
-        nextPageToken: js.UndefOr[PageToken] = js.undefined,
-        reverseOrder: js.UndefOr[ReverseOrder] = js.undefined
-    ): ListActivityTypesInput = {
-      val __obj = js.Dynamic.literal(
-        "domain"             -> domain.asInstanceOf[js.Any],
-        "registrationStatus" -> registrationStatus.asInstanceOf[js.Any]
-      )
-
-      maximumPageSize.foreach(__v => __obj.updateDynamic("maximumPageSize")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      reverseOrder.foreach(__v => __obj.updateDynamic("reverseOrder")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListActivityTypesInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListClosedWorkflowExecutionsInput extends js.Object {
     var domain: DomainName
     var closeStatusFilter: js.UndefOr[CloseStatusFilter]
@@ -2731,38 +1378,8 @@ package swf {
     var typeFilter: js.UndefOr[WorkflowTypeFilter]
   }
 
-  object ListClosedWorkflowExecutionsInput {
-    @inline
-    def apply(
-        domain: DomainName,
-        closeStatusFilter: js.UndefOr[CloseStatusFilter] = js.undefined,
-        closeTimeFilter: js.UndefOr[ExecutionTimeFilter] = js.undefined,
-        executionFilter: js.UndefOr[WorkflowExecutionFilter] = js.undefined,
-        maximumPageSize: js.UndefOr[PageSize] = js.undefined,
-        nextPageToken: js.UndefOr[PageToken] = js.undefined,
-        reverseOrder: js.UndefOr[ReverseOrder] = js.undefined,
-        startTimeFilter: js.UndefOr[ExecutionTimeFilter] = js.undefined,
-        tagFilter: js.UndefOr[TagFilter] = js.undefined,
-        typeFilter: js.UndefOr[WorkflowTypeFilter] = js.undefined
-    ): ListClosedWorkflowExecutionsInput = {
-      val __obj = js.Dynamic.literal(
-        "domain" -> domain.asInstanceOf[js.Any]
-      )
-
-      closeStatusFilter.foreach(__v => __obj.updateDynamic("closeStatusFilter")(__v.asInstanceOf[js.Any]))
-      closeTimeFilter.foreach(__v => __obj.updateDynamic("closeTimeFilter")(__v.asInstanceOf[js.Any]))
-      executionFilter.foreach(__v => __obj.updateDynamic("executionFilter")(__v.asInstanceOf[js.Any]))
-      maximumPageSize.foreach(__v => __obj.updateDynamic("maximumPageSize")(__v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      reverseOrder.foreach(__v => __obj.updateDynamic("reverseOrder")(__v.asInstanceOf[js.Any]))
-      startTimeFilter.foreach(__v => __obj.updateDynamic("startTimeFilter")(__v.asInstanceOf[js.Any]))
-      tagFilter.foreach(__v => __obj.updateDynamic("tagFilter")(__v.asInstanceOf[js.Any]))
-      typeFilter.foreach(__v => __obj.updateDynamic("typeFilter")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListClosedWorkflowExecutionsInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListDomainsInput extends js.Object {
     var registrationStatus: RegistrationStatus
     var maximumPageSize: js.UndefOr[PageSize]
@@ -2770,26 +1387,8 @@ package swf {
     var reverseOrder: js.UndefOr[ReverseOrder]
   }
 
-  object ListDomainsInput {
-    @inline
-    def apply(
-        registrationStatus: RegistrationStatus,
-        maximumPageSize: js.UndefOr[PageSize] = js.undefined,
-        nextPageToken: js.UndefOr[PageToken] = js.undefined,
-        reverseOrder: js.UndefOr[ReverseOrder] = js.undefined
-    ): ListDomainsInput = {
-      val __obj = js.Dynamic.literal(
-        "registrationStatus" -> registrationStatus.asInstanceOf[js.Any]
-      )
-
-      maximumPageSize.foreach(__v => __obj.updateDynamic("maximumPageSize")(__v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      reverseOrder.foreach(__v => __obj.updateDynamic("reverseOrder")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDomainsInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListOpenWorkflowExecutionsInput extends js.Object {
     var domain: DomainName
     var startTimeFilter: ExecutionTimeFilter
@@ -2801,68 +1400,20 @@ package swf {
     var typeFilter: js.UndefOr[WorkflowTypeFilter]
   }
 
-  object ListOpenWorkflowExecutionsInput {
-    @inline
-    def apply(
-        domain: DomainName,
-        startTimeFilter: ExecutionTimeFilter,
-        executionFilter: js.UndefOr[WorkflowExecutionFilter] = js.undefined,
-        maximumPageSize: js.UndefOr[PageSize] = js.undefined,
-        nextPageToken: js.UndefOr[PageToken] = js.undefined,
-        reverseOrder: js.UndefOr[ReverseOrder] = js.undefined,
-        tagFilter: js.UndefOr[TagFilter] = js.undefined,
-        typeFilter: js.UndefOr[WorkflowTypeFilter] = js.undefined
-    ): ListOpenWorkflowExecutionsInput = {
-      val __obj = js.Dynamic.literal(
-        "domain"          -> domain.asInstanceOf[js.Any],
-        "startTimeFilter" -> startTimeFilter.asInstanceOf[js.Any]
-      )
-
-      executionFilter.foreach(__v => __obj.updateDynamic("executionFilter")(__v.asInstanceOf[js.Any]))
-      maximumPageSize.foreach(__v => __obj.updateDynamic("maximumPageSize")(__v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      reverseOrder.foreach(__v => __obj.updateDynamic("reverseOrder")(__v.asInstanceOf[js.Any]))
-      tagFilter.foreach(__v => __obj.updateDynamic("tagFilter")(__v.asInstanceOf[js.Any]))
-      typeFilter.foreach(__v => __obj.updateDynamic("typeFilter")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListOpenWorkflowExecutionsInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceInput extends js.Object {
     var resourceArn: Arn
   }
 
-  object ListTagsForResourceInput {
-    @inline
-    def apply(
-        resourceArn: Arn
-    ): ListTagsForResourceInput = {
-      val __obj = js.Dynamic.literal(
-        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListTagsForResourceInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceOutput extends js.Object {
     var tags: js.UndefOr[ResourceTagList]
   }
 
-  object ListTagsForResourceOutput {
-    @inline
-    def apply(
-        tags: js.UndefOr[ResourceTagList] = js.undefined
-    ): ListTagsForResourceOutput = {
-      val __obj = js.Dynamic.literal()
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListWorkflowTypesInput extends js.Object {
     var domain: DomainName
     var registrationStatus: RegistrationStatus
@@ -2872,105 +1423,37 @@ package swf {
     var reverseOrder: js.UndefOr[ReverseOrder]
   }
 
-  object ListWorkflowTypesInput {
-    @inline
-    def apply(
-        domain: DomainName,
-        registrationStatus: RegistrationStatus,
-        maximumPageSize: js.UndefOr[PageSize] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined,
-        nextPageToken: js.UndefOr[PageToken] = js.undefined,
-        reverseOrder: js.UndefOr[ReverseOrder] = js.undefined
-    ): ListWorkflowTypesInput = {
-      val __obj = js.Dynamic.literal(
-        "domain"             -> domain.asInstanceOf[js.Any],
-        "registrationStatus" -> registrationStatus.asInstanceOf[js.Any]
-      )
-
-      maximumPageSize.foreach(__v => __obj.updateDynamic("maximumPageSize")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      reverseOrder.foreach(__v => __obj.updateDynamic("reverseOrder")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListWorkflowTypesInput]
-    }
-  }
-
   /**
     * Provides the details of the <code>MarkerRecorded</code> event.
     */
   @js.native
+  @Factory
   trait MarkerRecordedEventAttributes extends js.Object {
     var decisionTaskCompletedEventId: EventId
     var markerName: MarkerName
     var details: js.UndefOr[Data]
   }
 
-  object MarkerRecordedEventAttributes {
-    @inline
-    def apply(
-        decisionTaskCompletedEventId: EventId,
-        markerName: MarkerName,
-        details: js.UndefOr[Data] = js.undefined
-    ): MarkerRecordedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
-        "markerName"                   -> markerName.asInstanceOf[js.Any]
-      )
-
-      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MarkerRecordedEventAttributes]
-    }
-  }
-
   /**
     * Contains the count of tasks in a task list.
     */
   @js.native
+  @Factory
   trait PendingTaskCount extends js.Object {
     var count: Count
     var truncated: js.UndefOr[Truncated]
   }
 
-  object PendingTaskCount {
-    @inline
-    def apply(
-        count: Count,
-        truncated: js.UndefOr[Truncated] = js.undefined
-    ): PendingTaskCount = {
-      val __obj = js.Dynamic.literal(
-        "count" -> count.asInstanceOf[js.Any]
-      )
-
-      truncated.foreach(__v => __obj.updateDynamic("truncated")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PendingTaskCount]
-    }
-  }
-
   @js.native
+  @Factory
   trait PollForActivityTaskInput extends js.Object {
     var domain: DomainName
     var taskList: TaskList
     var identity: js.UndefOr[Identity]
   }
 
-  object PollForActivityTaskInput {
-    @inline
-    def apply(
-        domain: DomainName,
-        taskList: TaskList,
-        identity: js.UndefOr[Identity] = js.undefined
-    ): PollForActivityTaskInput = {
-      val __obj = js.Dynamic.literal(
-        "domain"   -> domain.asInstanceOf[js.Any],
-        "taskList" -> taskList.asInstanceOf[js.Any]
-      )
-
-      identity.foreach(__v => __obj.updateDynamic("identity")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PollForActivityTaskInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait PollForDecisionTaskInput extends js.Object {
     var domain: DomainName
     var taskList: TaskList
@@ -2980,48 +1463,11 @@ package swf {
     var reverseOrder: js.UndefOr[ReverseOrder]
   }
 
-  object PollForDecisionTaskInput {
-    @inline
-    def apply(
-        domain: DomainName,
-        taskList: TaskList,
-        identity: js.UndefOr[Identity] = js.undefined,
-        maximumPageSize: js.UndefOr[PageSize] = js.undefined,
-        nextPageToken: js.UndefOr[PageToken] = js.undefined,
-        reverseOrder: js.UndefOr[ReverseOrder] = js.undefined
-    ): PollForDecisionTaskInput = {
-      val __obj = js.Dynamic.literal(
-        "domain"   -> domain.asInstanceOf[js.Any],
-        "taskList" -> taskList.asInstanceOf[js.Any]
-      )
-
-      identity.foreach(__v => __obj.updateDynamic("identity")(__v.asInstanceOf[js.Any]))
-      maximumPageSize.foreach(__v => __obj.updateDynamic("maximumPageSize")(__v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      reverseOrder.foreach(__v => __obj.updateDynamic("reverseOrder")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PollForDecisionTaskInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait RecordActivityTaskHeartbeatInput extends js.Object {
     var taskToken: TaskToken
     var details: js.UndefOr[LimitedData]
-  }
-
-  object RecordActivityTaskHeartbeatInput {
-    @inline
-    def apply(
-        taskToken: TaskToken,
-        details: js.UndefOr[LimitedData] = js.undefined
-    ): RecordActivityTaskHeartbeatInput = {
-      val __obj = js.Dynamic.literal(
-        "taskToken" -> taskToken.asInstanceOf[js.Any]
-      )
-
-      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RecordActivityTaskHeartbeatInput]
-    }
   }
 
   /**
@@ -3034,24 +1480,10 @@ package swf {
     * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait RecordMarkerDecisionAttributes extends js.Object {
     var markerName: MarkerName
     var details: js.UndefOr[Data]
-  }
-
-  object RecordMarkerDecisionAttributes {
-    @inline
-    def apply(
-        markerName: MarkerName,
-        details: js.UndefOr[Data] = js.undefined
-    ): RecordMarkerDecisionAttributes = {
-      val __obj = js.Dynamic.literal(
-        "markerName" -> markerName.asInstanceOf[js.Any]
-      )
-
-      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RecordMarkerDecisionAttributes]
-    }
   }
 
   @js.native
@@ -3066,30 +1498,15 @@ package swf {
     * Provides the details of the <code>RecordMarkerFailed</code> event.
     */
   @js.native
+  @Factory
   trait RecordMarkerFailedEventAttributes extends js.Object {
     var cause: RecordMarkerFailedCause
     var decisionTaskCompletedEventId: EventId
     var markerName: MarkerName
   }
 
-  object RecordMarkerFailedEventAttributes {
-    @inline
-    def apply(
-        cause: RecordMarkerFailedCause,
-        decisionTaskCompletedEventId: EventId,
-        markerName: MarkerName
-    ): RecordMarkerFailedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "cause"                        -> cause.asInstanceOf[js.Any],
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
-        "markerName"                   -> markerName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RecordMarkerFailedEventAttributes]
-    }
-  }
-
   @js.native
+  @Factory
   trait RegisterActivityTypeInput extends js.Object {
     var domain: DomainName
     var name: Name
@@ -3103,46 +1520,8 @@ package swf {
     var description: js.UndefOr[Description]
   }
 
-  object RegisterActivityTypeInput {
-    @inline
-    def apply(
-        domain: DomainName,
-        name: Name,
-        version: Version,
-        defaultTaskHeartbeatTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-        defaultTaskList: js.UndefOr[TaskList] = js.undefined,
-        defaultTaskPriority: js.UndefOr[TaskPriority] = js.undefined,
-        defaultTaskScheduleToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-        defaultTaskScheduleToStartTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-        defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined
-    ): RegisterActivityTypeInput = {
-      val __obj = js.Dynamic.literal(
-        "domain"  -> domain.asInstanceOf[js.Any],
-        "name"    -> name.asInstanceOf[js.Any],
-        "version" -> version.asInstanceOf[js.Any]
-      )
-
-      defaultTaskHeartbeatTimeout.foreach(__v =>
-        __obj.updateDynamic("defaultTaskHeartbeatTimeout")(__v.asInstanceOf[js.Any])
-      )
-      defaultTaskList.foreach(__v => __obj.updateDynamic("defaultTaskList")(__v.asInstanceOf[js.Any]))
-      defaultTaskPriority.foreach(__v => __obj.updateDynamic("defaultTaskPriority")(__v.asInstanceOf[js.Any]))
-      defaultTaskScheduleToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("defaultTaskScheduleToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
-      defaultTaskScheduleToStartTimeout.foreach(__v =>
-        __obj.updateDynamic("defaultTaskScheduleToStartTimeout")(__v.asInstanceOf[js.Any])
-      )
-      defaultTaskStartToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("defaultTaskStartToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RegisterActivityTypeInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait RegisterDomainInput extends js.Object {
     var name: DomainName
     var workflowExecutionRetentionPeriodInDays: DurationInDays
@@ -3150,26 +1529,8 @@ package swf {
     var tags: js.UndefOr[ResourceTagList]
   }
 
-  object RegisterDomainInput {
-    @inline
-    def apply(
-        name: DomainName,
-        workflowExecutionRetentionPeriodInDays: DurationInDays,
-        description: js.UndefOr[Description] = js.undefined,
-        tags: js.UndefOr[ResourceTagList] = js.undefined
-    ): RegisterDomainInput = {
-      val __obj = js.Dynamic.literal(
-        "name"                                   -> name.asInstanceOf[js.Any],
-        "workflowExecutionRetentionPeriodInDays" -> workflowExecutionRetentionPeriodInDays.asInstanceOf[js.Any]
-      )
-
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RegisterDomainInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait RegisterWorkflowTypeInput extends js.Object {
     var domain: DomainName
     var name: Name
@@ -3181,41 +1542,6 @@ package swf {
     var defaultTaskPriority: js.UndefOr[TaskPriority]
     var defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
     var description: js.UndefOr[Description]
-  }
-
-  object RegisterWorkflowTypeInput {
-    @inline
-    def apply(
-        domain: DomainName,
-        name: Name,
-        version: Version,
-        defaultChildPolicy: js.UndefOr[ChildPolicy] = js.undefined,
-        defaultExecutionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-        defaultLambdaRole: js.UndefOr[Arn] = js.undefined,
-        defaultTaskList: js.UndefOr[TaskList] = js.undefined,
-        defaultTaskPriority: js.UndefOr[TaskPriority] = js.undefined,
-        defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined
-    ): RegisterWorkflowTypeInput = {
-      val __obj = js.Dynamic.literal(
-        "domain"  -> domain.asInstanceOf[js.Any],
-        "name"    -> name.asInstanceOf[js.Any],
-        "version" -> version.asInstanceOf[js.Any]
-      )
-
-      defaultChildPolicy.foreach(__v => __obj.updateDynamic("defaultChildPolicy")(__v.asInstanceOf[js.Any]))
-      defaultExecutionStartToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("defaultExecutionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
-      defaultLambdaRole.foreach(__v => __obj.updateDynamic("defaultLambdaRole")(__v.asInstanceOf[js.Any]))
-      defaultTaskList.foreach(__v => __obj.updateDynamic("defaultTaskList")(__v.asInstanceOf[js.Any]))
-      defaultTaskPriority.foreach(__v => __obj.updateDynamic("defaultTaskPriority")(__v.asInstanceOf[js.Any]))
-      defaultTaskStartToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("defaultTaskStartToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RegisterWorkflowTypeInput]
-    }
   }
 
   @js.native
@@ -3237,21 +1563,9 @@ package swf {
     * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait RequestCancelActivityTaskDecisionAttributes extends js.Object {
     var activityId: ActivityId
-  }
-
-  object RequestCancelActivityTaskDecisionAttributes {
-    @inline
-    def apply(
-        activityId: ActivityId
-    ): RequestCancelActivityTaskDecisionAttributes = {
-      val __obj = js.Dynamic.literal(
-        "activityId" -> activityId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RequestCancelActivityTaskDecisionAttributes]
-    }
   }
 
   @js.native
@@ -3267,27 +1581,11 @@ package swf {
     * Provides the details of the <code>RequestCancelActivityTaskFailed</code> event.
     */
   @js.native
+  @Factory
   trait RequestCancelActivityTaskFailedEventAttributes extends js.Object {
     var activityId: ActivityId
     var cause: RequestCancelActivityTaskFailedCause
     var decisionTaskCompletedEventId: EventId
-  }
-
-  object RequestCancelActivityTaskFailedEventAttributes {
-    @inline
-    def apply(
-        activityId: ActivityId,
-        cause: RequestCancelActivityTaskFailedCause,
-        decisionTaskCompletedEventId: EventId
-    ): RequestCancelActivityTaskFailedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "activityId"                   -> activityId.asInstanceOf[js.Any],
-        "cause"                        -> cause.asInstanceOf[js.Any],
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RequestCancelActivityTaskFailedEventAttributes]
-    }
   }
 
   /**
@@ -3300,27 +1598,11 @@ package swf {
     * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait RequestCancelExternalWorkflowExecutionDecisionAttributes extends js.Object {
     var workflowId: WorkflowId
     var control: js.UndefOr[Data]
     var runId: js.UndefOr[WorkflowRunIdOptional]
-  }
-
-  object RequestCancelExternalWorkflowExecutionDecisionAttributes {
-    @inline
-    def apply(
-        workflowId: WorkflowId,
-        control: js.UndefOr[Data] = js.undefined,
-        runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined
-    ): RequestCancelExternalWorkflowExecutionDecisionAttributes = {
-      val __obj = js.Dynamic.literal(
-        "workflowId" -> workflowId.asInstanceOf[js.Any]
-      )
-
-      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
-      runId.foreach(__v => __obj.updateDynamic("runId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RequestCancelExternalWorkflowExecutionDecisionAttributes]
-    }
   }
 
   @js.native
@@ -3347,6 +1629,7 @@ package swf {
     * Provides the details of the <code>RequestCancelExternalWorkflowExecutionFailed</code> event.
     */
   @js.native
+  @Factory
   trait RequestCancelExternalWorkflowExecutionFailedEventAttributes extends js.Object {
     var cause: RequestCancelExternalWorkflowExecutionFailedCause
     var decisionTaskCompletedEventId: EventId
@@ -3356,33 +1639,11 @@ package swf {
     var runId: js.UndefOr[WorkflowRunIdOptional]
   }
 
-  object RequestCancelExternalWorkflowExecutionFailedEventAttributes {
-    @inline
-    def apply(
-        cause: RequestCancelExternalWorkflowExecutionFailedCause,
-        decisionTaskCompletedEventId: EventId,
-        initiatedEventId: EventId,
-        workflowId: WorkflowId,
-        control: js.UndefOr[Data] = js.undefined,
-        runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined
-    ): RequestCancelExternalWorkflowExecutionFailedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "cause"                        -> cause.asInstanceOf[js.Any],
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
-        "initiatedEventId"             -> initiatedEventId.asInstanceOf[js.Any],
-        "workflowId"                   -> workflowId.asInstanceOf[js.Any]
-      )
-
-      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
-      runId.foreach(__v => __obj.updateDynamic("runId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RequestCancelExternalWorkflowExecutionFailedEventAttributes]
-    }
-  }
-
   /**
     * Provides the details of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event.
     */
   @js.native
+  @Factory
   trait RequestCancelExternalWorkflowExecutionInitiatedEventAttributes extends js.Object {
     var decisionTaskCompletedEventId: EventId
     var workflowId: WorkflowId
@@ -3390,47 +1651,12 @@ package swf {
     var runId: js.UndefOr[WorkflowRunIdOptional]
   }
 
-  object RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
-    @inline
-    def apply(
-        decisionTaskCompletedEventId: EventId,
-        workflowId: WorkflowId,
-        control: js.UndefOr[Data] = js.undefined,
-        runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined
-    ): RequestCancelExternalWorkflowExecutionInitiatedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
-        "workflowId"                   -> workflowId.asInstanceOf[js.Any]
-      )
-
-      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
-      runId.foreach(__v => __obj.updateDynamic("runId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RequestCancelExternalWorkflowExecutionInitiatedEventAttributes]
-    }
-  }
-
   @js.native
+  @Factory
   trait RequestCancelWorkflowExecutionInput extends js.Object {
     var domain: DomainName
     var workflowId: WorkflowId
     var runId: js.UndefOr[WorkflowRunIdOptional]
-  }
-
-  object RequestCancelWorkflowExecutionInput {
-    @inline
-    def apply(
-        domain: DomainName,
-        workflowId: WorkflowId,
-        runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined
-    ): RequestCancelWorkflowExecutionInput = {
-      val __obj = js.Dynamic.literal(
-        "domain"     -> domain.asInstanceOf[js.Any],
-        "workflowId" -> workflowId.asInstanceOf[js.Any]
-      )
-
-      runId.foreach(__v => __obj.updateDynamic("runId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RequestCancelWorkflowExecutionInput]
-    }
   }
 
   /**
@@ -3438,136 +1664,52 @@ package swf {
     *  Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
     */
   @js.native
+  @Factory
   trait ResourceTag extends js.Object {
     var key: ResourceTagKey
     var value: js.UndefOr[ResourceTagValue]
   }
 
-  object ResourceTag {
-    @inline
-    def apply(
-        key: ResourceTagKey,
-        value: js.UndefOr[ResourceTagValue] = js.undefined
-    ): ResourceTag = {
-      val __obj = js.Dynamic.literal(
-        "key" -> key.asInstanceOf[js.Any]
-      )
-
-      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ResourceTag]
-    }
-  }
-
   @js.native
+  @Factory
   trait RespondActivityTaskCanceledInput extends js.Object {
     var taskToken: TaskToken
     var details: js.UndefOr[Data]
   }
 
-  object RespondActivityTaskCanceledInput {
-    @inline
-    def apply(
-        taskToken: TaskToken,
-        details: js.UndefOr[Data] = js.undefined
-    ): RespondActivityTaskCanceledInput = {
-      val __obj = js.Dynamic.literal(
-        "taskToken" -> taskToken.asInstanceOf[js.Any]
-      )
-
-      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RespondActivityTaskCanceledInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait RespondActivityTaskCompletedInput extends js.Object {
     var taskToken: TaskToken
     var result: js.UndefOr[Data]
   }
 
-  object RespondActivityTaskCompletedInput {
-    @inline
-    def apply(
-        taskToken: TaskToken,
-        result: js.UndefOr[Data] = js.undefined
-    ): RespondActivityTaskCompletedInput = {
-      val __obj = js.Dynamic.literal(
-        "taskToken" -> taskToken.asInstanceOf[js.Any]
-      )
-
-      result.foreach(__v => __obj.updateDynamic("result")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RespondActivityTaskCompletedInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait RespondActivityTaskFailedInput extends js.Object {
     var taskToken: TaskToken
     var details: js.UndefOr[Data]
     var reason: js.UndefOr[FailureReason]
   }
 
-  object RespondActivityTaskFailedInput {
-    @inline
-    def apply(
-        taskToken: TaskToken,
-        details: js.UndefOr[Data] = js.undefined,
-        reason: js.UndefOr[FailureReason] = js.undefined
-    ): RespondActivityTaskFailedInput = {
-      val __obj = js.Dynamic.literal(
-        "taskToken" -> taskToken.asInstanceOf[js.Any]
-      )
-
-      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
-      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RespondActivityTaskFailedInput]
-    }
-  }
-
   /**
     * Input data for a TaskCompleted response to a decision task.
     */
   @js.native
+  @Factory
   trait RespondDecisionTaskCompletedInput extends js.Object {
     var taskToken: TaskToken
     var decisions: js.UndefOr[DecisionList]
     var executionContext: js.UndefOr[Data]
   }
 
-  object RespondDecisionTaskCompletedInput {
-    @inline
-    def apply(
-        taskToken: TaskToken,
-        decisions: js.UndefOr[DecisionList] = js.undefined,
-        executionContext: js.UndefOr[Data] = js.undefined
-    ): RespondDecisionTaskCompletedInput = {
-      val __obj = js.Dynamic.literal(
-        "taskToken" -> taskToken.asInstanceOf[js.Any]
-      )
-
-      decisions.foreach(__v => __obj.updateDynamic("decisions")(__v.asInstanceOf[js.Any]))
-      executionContext.foreach(__v => __obj.updateDynamic("executionContext")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RespondDecisionTaskCompletedInput]
-    }
-  }
-
   /**
     * Specifies the <code>runId</code> of a workflow execution.
     */
   @js.native
+  @Factory
   trait Run extends js.Object {
     var runId: js.UndefOr[WorkflowRunId]
-  }
-
-  object Run {
-    @inline
-    def apply(
-        runId: js.UndefOr[WorkflowRunId] = js.undefined
-    ): Run = {
-      val __obj = js.Dynamic.literal()
-      runId.foreach(__v => __obj.updateDynamic("runId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Run]
-    }
   }
 
   /**
@@ -3583,6 +1725,7 @@ package swf {
     * </li>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait ScheduleActivityTaskDecisionAttributes extends js.Object {
     var activityId: ActivityId
     var activityType: ActivityType
@@ -3594,37 +1737,6 @@ package swf {
     var startToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
     var taskList: js.UndefOr[TaskList]
     var taskPriority: js.UndefOr[TaskPriority]
-  }
-
-  object ScheduleActivityTaskDecisionAttributes {
-    @inline
-    def apply(
-        activityId: ActivityId,
-        activityType: ActivityType,
-        control: js.UndefOr[Data] = js.undefined,
-        heartbeatTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-        input: js.UndefOr[Data] = js.undefined,
-        scheduleToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-        scheduleToStartTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-        startToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-        taskList: js.UndefOr[TaskList] = js.undefined,
-        taskPriority: js.UndefOr[TaskPriority] = js.undefined
-    ): ScheduleActivityTaskDecisionAttributes = {
-      val __obj = js.Dynamic.literal(
-        "activityId"   -> activityId.asInstanceOf[js.Any],
-        "activityType" -> activityType.asInstanceOf[js.Any]
-      )
-
-      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
-      heartbeatTimeout.foreach(__v => __obj.updateDynamic("heartbeatTimeout")(__v.asInstanceOf[js.Any]))
-      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
-      scheduleToCloseTimeout.foreach(__v => __obj.updateDynamic("scheduleToCloseTimeout")(__v.asInstanceOf[js.Any]))
-      scheduleToStartTimeout.foreach(__v => __obj.updateDynamic("scheduleToStartTimeout")(__v.asInstanceOf[js.Any]))
-      startToCloseTimeout.foreach(__v => __obj.updateDynamic("startToCloseTimeout")(__v.asInstanceOf[js.Any]))
-      taskList.foreach(__v => __obj.updateDynamic("taskList")(__v.asInstanceOf[js.Any]))
-      taskPriority.foreach(__v => __obj.updateDynamic("taskPriority")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ScheduleActivityTaskDecisionAttributes]
-    }
   }
 
   @js.native
@@ -3668,6 +1780,7 @@ package swf {
     * Provides the details of the <code>ScheduleActivityTaskFailed</code> event.
     */
   @js.native
+  @Factory
   trait ScheduleActivityTaskFailedEventAttributes extends js.Object {
     var activityId: ActivityId
     var activityType: ActivityType
@@ -3675,56 +1788,17 @@ package swf {
     var decisionTaskCompletedEventId: EventId
   }
 
-  object ScheduleActivityTaskFailedEventAttributes {
-    @inline
-    def apply(
-        activityId: ActivityId,
-        activityType: ActivityType,
-        cause: ScheduleActivityTaskFailedCause,
-        decisionTaskCompletedEventId: EventId
-    ): ScheduleActivityTaskFailedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "activityId"                   -> activityId.asInstanceOf[js.Any],
-        "activityType"                 -> activityType.asInstanceOf[js.Any],
-        "cause"                        -> cause.asInstanceOf[js.Any],
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ScheduleActivityTaskFailedEventAttributes]
-    }
-  }
-
   /**
     * Decision attributes specified in <code>scheduleLambdaFunctionDecisionAttributes</code> within the list of decisions <code>decisions</code> passed to <a>RespondDecisionTaskCompleted</a>.
     */
   @js.native
+  @Factory
   trait ScheduleLambdaFunctionDecisionAttributes extends js.Object {
     var id: FunctionId
     var name: FunctionName
     var control: js.UndefOr[Data]
     var input: js.UndefOr[FunctionInput]
     var startToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
-  }
-
-  object ScheduleLambdaFunctionDecisionAttributes {
-    @inline
-    def apply(
-        id: FunctionId,
-        name: FunctionName,
-        control: js.UndefOr[Data] = js.undefined,
-        input: js.UndefOr[FunctionInput] = js.undefined,
-        startToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined
-    ): ScheduleLambdaFunctionDecisionAttributes = {
-      val __obj = js.Dynamic.literal(
-        "id"   -> id.asInstanceOf[js.Any],
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
-      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
-      startToCloseTimeout.foreach(__v => __obj.updateDynamic("startToCloseTimeout")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ScheduleLambdaFunctionDecisionAttributes]
-    }
   }
 
   @js.native
@@ -3752,30 +1826,12 @@ package swf {
     * Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event. It isn't set for other event types.
     */
   @js.native
+  @Factory
   trait ScheduleLambdaFunctionFailedEventAttributes extends js.Object {
     var cause: ScheduleLambdaFunctionFailedCause
     var decisionTaskCompletedEventId: EventId
     var id: FunctionId
     var name: FunctionName
-  }
-
-  object ScheduleLambdaFunctionFailedEventAttributes {
-    @inline
-    def apply(
-        cause: ScheduleLambdaFunctionFailedCause,
-        decisionTaskCompletedEventId: EventId,
-        id: FunctionId,
-        name: FunctionName
-    ): ScheduleLambdaFunctionFailedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "cause"                        -> cause.asInstanceOf[js.Any],
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
-        "id"                           -> id.asInstanceOf[js.Any],
-        "name"                         -> name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ScheduleLambdaFunctionFailedEventAttributes]
-    }
   }
 
   /**
@@ -3788,33 +1844,13 @@ package swf {
     * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait SignalExternalWorkflowExecutionDecisionAttributes extends js.Object {
     var signalName: SignalName
     var workflowId: WorkflowId
     var control: js.UndefOr[Data]
     var input: js.UndefOr[Data]
     var runId: js.UndefOr[WorkflowRunIdOptional]
-  }
-
-  object SignalExternalWorkflowExecutionDecisionAttributes {
-    @inline
-    def apply(
-        signalName: SignalName,
-        workflowId: WorkflowId,
-        control: js.UndefOr[Data] = js.undefined,
-        input: js.UndefOr[Data] = js.undefined,
-        runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined
-    ): SignalExternalWorkflowExecutionDecisionAttributes = {
-      val __obj = js.Dynamic.literal(
-        "signalName" -> signalName.asInstanceOf[js.Any],
-        "workflowId" -> workflowId.asInstanceOf[js.Any]
-      )
-
-      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
-      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
-      runId.foreach(__v => __obj.updateDynamic("runId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SignalExternalWorkflowExecutionDecisionAttributes]
-    }
   }
 
   @js.native
@@ -3839,6 +1875,7 @@ package swf {
     * Provides the details of the <code>SignalExternalWorkflowExecutionFailed</code> event.
     */
   @js.native
+  @Factory
   trait SignalExternalWorkflowExecutionFailedEventAttributes extends js.Object {
     var cause: SignalExternalWorkflowExecutionFailedCause
     var decisionTaskCompletedEventId: EventId
@@ -3848,33 +1885,11 @@ package swf {
     var runId: js.UndefOr[WorkflowRunIdOptional]
   }
 
-  object SignalExternalWorkflowExecutionFailedEventAttributes {
-    @inline
-    def apply(
-        cause: SignalExternalWorkflowExecutionFailedCause,
-        decisionTaskCompletedEventId: EventId,
-        initiatedEventId: EventId,
-        workflowId: WorkflowId,
-        control: js.UndefOr[Data] = js.undefined,
-        runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined
-    ): SignalExternalWorkflowExecutionFailedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "cause"                        -> cause.asInstanceOf[js.Any],
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
-        "initiatedEventId"             -> initiatedEventId.asInstanceOf[js.Any],
-        "workflowId"                   -> workflowId.asInstanceOf[js.Any]
-      )
-
-      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
-      runId.foreach(__v => __obj.updateDynamic("runId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SignalExternalWorkflowExecutionFailedEventAttributes]
-    }
-  }
-
   /**
     * Provides the details of the <code>SignalExternalWorkflowExecutionInitiated</code> event.
     */
   @js.native
+  @Factory
   trait SignalExternalWorkflowExecutionInitiatedEventAttributes extends js.Object {
     var decisionTaskCompletedEventId: EventId
     var signalName: SignalName
@@ -3884,57 +1899,14 @@ package swf {
     var runId: js.UndefOr[WorkflowRunIdOptional]
   }
 
-  object SignalExternalWorkflowExecutionInitiatedEventAttributes {
-    @inline
-    def apply(
-        decisionTaskCompletedEventId: EventId,
-        signalName: SignalName,
-        workflowId: WorkflowId,
-        control: js.UndefOr[Data] = js.undefined,
-        input: js.UndefOr[Data] = js.undefined,
-        runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined
-    ): SignalExternalWorkflowExecutionInitiatedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
-        "signalName"                   -> signalName.asInstanceOf[js.Any],
-        "workflowId"                   -> workflowId.asInstanceOf[js.Any]
-      )
-
-      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
-      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
-      runId.foreach(__v => __obj.updateDynamic("runId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SignalExternalWorkflowExecutionInitiatedEventAttributes]
-    }
-  }
-
   @js.native
+  @Factory
   trait SignalWorkflowExecutionInput extends js.Object {
     var domain: DomainName
     var signalName: SignalName
     var workflowId: WorkflowId
     var input: js.UndefOr[Data]
     var runId: js.UndefOr[WorkflowRunIdOptional]
-  }
-
-  object SignalWorkflowExecutionInput {
-    @inline
-    def apply(
-        domain: DomainName,
-        signalName: SignalName,
-        workflowId: WorkflowId,
-        input: js.UndefOr[Data] = js.undefined,
-        runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined
-    ): SignalWorkflowExecutionInput = {
-      val __obj = js.Dynamic.literal(
-        "domain"     -> domain.asInstanceOf[js.Any],
-        "signalName" -> signalName.asInstanceOf[js.Any],
-        "workflowId" -> workflowId.asInstanceOf[js.Any]
-      )
-
-      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
-      runId.foreach(__v => __obj.updateDynamic("runId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SignalWorkflowExecutionInput]
-    }
   }
 
   /**
@@ -3951,6 +1923,7 @@ package swf {
     * </li>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait StartChildWorkflowExecutionDecisionAttributes extends js.Object {
     var workflowId: WorkflowId
     var workflowType: WorkflowType
@@ -3963,41 +1936,6 @@ package swf {
     var taskList: js.UndefOr[TaskList]
     var taskPriority: js.UndefOr[TaskPriority]
     var taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
-  }
-
-  object StartChildWorkflowExecutionDecisionAttributes {
-    @inline
-    def apply(
-        workflowId: WorkflowId,
-        workflowType: WorkflowType,
-        childPolicy: js.UndefOr[ChildPolicy] = js.undefined,
-        control: js.UndefOr[Data] = js.undefined,
-        executionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-        input: js.UndefOr[Data] = js.undefined,
-        lambdaRole: js.UndefOr[Arn] = js.undefined,
-        tagList: js.UndefOr[TagList] = js.undefined,
-        taskList: js.UndefOr[TaskList] = js.undefined,
-        taskPriority: js.UndefOr[TaskPriority] = js.undefined,
-        taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined
-    ): StartChildWorkflowExecutionDecisionAttributes = {
-      val __obj = js.Dynamic.literal(
-        "workflowId"   -> workflowId.asInstanceOf[js.Any],
-        "workflowType" -> workflowType.asInstanceOf[js.Any]
-      )
-
-      childPolicy.foreach(__v => __obj.updateDynamic("childPolicy")(__v.asInstanceOf[js.Any]))
-      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
-      executionStartToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
-      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
-      lambdaRole.foreach(__v => __obj.updateDynamic("lambdaRole")(__v.asInstanceOf[js.Any]))
-      tagList.foreach(__v => __obj.updateDynamic("tagList")(__v.asInstanceOf[js.Any]))
-      taskList.foreach(__v => __obj.updateDynamic("taskList")(__v.asInstanceOf[js.Any]))
-      taskPriority.foreach(__v => __obj.updateDynamic("taskPriority")(__v.asInstanceOf[js.Any]))
-      taskStartToCloseTimeout.foreach(__v => __obj.updateDynamic("taskStartToCloseTimeout")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartChildWorkflowExecutionDecisionAttributes]
-    }
   }
 
   @js.native
@@ -4043,6 +1981,7 @@ package swf {
     * Provides the details of the <code>StartChildWorkflowExecutionFailed</code> event.
     */
   @js.native
+  @Factory
   trait StartChildWorkflowExecutionFailedEventAttributes extends js.Object {
     var cause: StartChildWorkflowExecutionFailedCause
     var decisionTaskCompletedEventId: EventId
@@ -4052,33 +1991,11 @@ package swf {
     var control: js.UndefOr[Data]
   }
 
-  object StartChildWorkflowExecutionFailedEventAttributes {
-    @inline
-    def apply(
-        cause: StartChildWorkflowExecutionFailedCause,
-        decisionTaskCompletedEventId: EventId,
-        initiatedEventId: EventId,
-        workflowId: WorkflowId,
-        workflowType: WorkflowType,
-        control: js.UndefOr[Data] = js.undefined
-    ): StartChildWorkflowExecutionFailedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "cause"                        -> cause.asInstanceOf[js.Any],
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
-        "initiatedEventId"             -> initiatedEventId.asInstanceOf[js.Any],
-        "workflowId"                   -> workflowId.asInstanceOf[js.Any],
-        "workflowType"                 -> workflowType.asInstanceOf[js.Any]
-      )
-
-      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartChildWorkflowExecutionFailedEventAttributes]
-    }
-  }
-
   /**
     * Provides the details of the <code>StartChildWorkflowExecutionInitiated</code> event.
     */
   @js.native
+  @Factory
   trait StartChildWorkflowExecutionInitiatedEventAttributes extends js.Object {
     var childPolicy: ChildPolicy
     var decisionTaskCompletedEventId: EventId
@@ -4094,43 +2011,6 @@ package swf {
     var taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
   }
 
-  object StartChildWorkflowExecutionInitiatedEventAttributes {
-    @inline
-    def apply(
-        childPolicy: ChildPolicy,
-        decisionTaskCompletedEventId: EventId,
-        taskList: TaskList,
-        workflowId: WorkflowId,
-        workflowType: WorkflowType,
-        control: js.UndefOr[Data] = js.undefined,
-        executionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-        input: js.UndefOr[Data] = js.undefined,
-        lambdaRole: js.UndefOr[Arn] = js.undefined,
-        tagList: js.UndefOr[TagList] = js.undefined,
-        taskPriority: js.UndefOr[TaskPriority] = js.undefined,
-        taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined
-    ): StartChildWorkflowExecutionInitiatedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "childPolicy"                  -> childPolicy.asInstanceOf[js.Any],
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
-        "taskList"                     -> taskList.asInstanceOf[js.Any],
-        "workflowId"                   -> workflowId.asInstanceOf[js.Any],
-        "workflowType"                 -> workflowType.asInstanceOf[js.Any]
-      )
-
-      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
-      executionStartToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
-      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
-      lambdaRole.foreach(__v => __obj.updateDynamic("lambdaRole")(__v.asInstanceOf[js.Any]))
-      tagList.foreach(__v => __obj.updateDynamic("tagList")(__v.asInstanceOf[js.Any]))
-      taskPriority.foreach(__v => __obj.updateDynamic("taskPriority")(__v.asInstanceOf[js.Any]))
-      taskStartToCloseTimeout.foreach(__v => __obj.updateDynamic("taskStartToCloseTimeout")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartChildWorkflowExecutionInitiatedEventAttributes]
-    }
-  }
-
   @js.native
   sealed trait StartLambdaFunctionFailedCause extends js.Any
   object StartLambdaFunctionFailedCause extends js.Object {
@@ -4143,25 +2023,11 @@ package swf {
     * Provides the details of the <code>StartLambdaFunctionFailed</code> event. It isn't set for other event types.
     */
   @js.native
+  @Factory
   trait StartLambdaFunctionFailedEventAttributes extends js.Object {
     var cause: js.UndefOr[StartLambdaFunctionFailedCause]
     var message: js.UndefOr[CauseMessage]
     var scheduledEventId: js.UndefOr[EventId]
-  }
-
-  object StartLambdaFunctionFailedEventAttributes {
-    @inline
-    def apply(
-        cause: js.UndefOr[StartLambdaFunctionFailedCause] = js.undefined,
-        message: js.UndefOr[CauseMessage] = js.undefined,
-        scheduledEventId: js.UndefOr[EventId] = js.undefined
-    ): StartLambdaFunctionFailedEventAttributes = {
-      val __obj = js.Dynamic.literal()
-      cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
-      scheduledEventId.foreach(__v => __obj.updateDynamic("scheduledEventId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartLambdaFunctionFailedEventAttributes]
-    }
   }
 
   /**
@@ -4174,27 +2040,11 @@ package swf {
     * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait StartTimerDecisionAttributes extends js.Object {
     var startToFireTimeout: DurationInSeconds
     var timerId: TimerId
     var control: js.UndefOr[Data]
-  }
-
-  object StartTimerDecisionAttributes {
-    @inline
-    def apply(
-        startToFireTimeout: DurationInSeconds,
-        timerId: TimerId,
-        control: js.UndefOr[Data] = js.undefined
-    ): StartTimerDecisionAttributes = {
-      val __obj = js.Dynamic.literal(
-        "startToFireTimeout" -> startToFireTimeout.asInstanceOf[js.Any],
-        "timerId"            -> timerId.asInstanceOf[js.Any]
-      )
-
-      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartTimerDecisionAttributes]
-    }
   }
 
   @js.native
@@ -4219,30 +2069,15 @@ package swf {
     * Provides the details of the <code>StartTimerFailed</code> event.
     */
   @js.native
+  @Factory
   trait StartTimerFailedEventAttributes extends js.Object {
     var cause: StartTimerFailedCause
     var decisionTaskCompletedEventId: EventId
     var timerId: TimerId
   }
 
-  object StartTimerFailedEventAttributes {
-    @inline
-    def apply(
-        cause: StartTimerFailedCause,
-        decisionTaskCompletedEventId: EventId,
-        timerId: TimerId
-    ): StartTimerFailedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "cause"                        -> cause.asInstanceOf[js.Any],
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
-        "timerId"                      -> timerId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[StartTimerFailedEventAttributes]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartWorkflowExecutionInput extends js.Object {
     var domain: DomainName
     var workflowId: WorkflowId
@@ -4257,105 +2092,33 @@ package swf {
     var taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
   }
 
-  object StartWorkflowExecutionInput {
-    @inline
-    def apply(
-        domain: DomainName,
-        workflowId: WorkflowId,
-        workflowType: WorkflowType,
-        childPolicy: js.UndefOr[ChildPolicy] = js.undefined,
-        executionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-        input: js.UndefOr[Data] = js.undefined,
-        lambdaRole: js.UndefOr[Arn] = js.undefined,
-        tagList: js.UndefOr[TagList] = js.undefined,
-        taskList: js.UndefOr[TaskList] = js.undefined,
-        taskPriority: js.UndefOr[TaskPriority] = js.undefined,
-        taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined
-    ): StartWorkflowExecutionInput = {
-      val __obj = js.Dynamic.literal(
-        "domain"       -> domain.asInstanceOf[js.Any],
-        "workflowId"   -> workflowId.asInstanceOf[js.Any],
-        "workflowType" -> workflowType.asInstanceOf[js.Any]
-      )
-
-      childPolicy.foreach(__v => __obj.updateDynamic("childPolicy")(__v.asInstanceOf[js.Any]))
-      executionStartToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
-      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
-      lambdaRole.foreach(__v => __obj.updateDynamic("lambdaRole")(__v.asInstanceOf[js.Any]))
-      tagList.foreach(__v => __obj.updateDynamic("tagList")(__v.asInstanceOf[js.Any]))
-      taskList.foreach(__v => __obj.updateDynamic("taskList")(__v.asInstanceOf[js.Any]))
-      taskPriority.foreach(__v => __obj.updateDynamic("taskPriority")(__v.asInstanceOf[js.Any]))
-      taskStartToCloseTimeout.foreach(__v => __obj.updateDynamic("taskStartToCloseTimeout")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartWorkflowExecutionInput]
-    }
-  }
-
   /**
     * Used to filter the workflow executions in visibility APIs based on a tag.
     */
   @js.native
+  @Factory
   trait TagFilter extends js.Object {
     var tag: Tag
   }
 
-  object TagFilter {
-    @inline
-    def apply(
-        tag: Tag
-    ): TagFilter = {
-      val __obj = js.Dynamic.literal(
-        "tag" -> tag.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagFilter]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceInput extends js.Object {
     var resourceArn: Arn
     var tags: ResourceTagList
-  }
-
-  object TagResourceInput {
-    @inline
-    def apply(
-        resourceArn: Arn,
-        tags: ResourceTagList
-    ): TagResourceInput = {
-      val __obj = js.Dynamic.literal(
-        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceInput]
-    }
   }
 
   /**
     * Represents a task list.
     */
   @js.native
+  @Factory
   trait TaskList extends js.Object {
     var name: Name
   }
 
-  object TaskList {
-    @inline
-    def apply(
-        name: Name
-    ): TaskList = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TaskList]
-    }
-  }
-
   @js.native
+  @Factory
   trait TerminateWorkflowExecutionInput extends js.Object {
     var domain: DomainName
     var workflowId: WorkflowId
@@ -4365,84 +2128,32 @@ package swf {
     var runId: js.UndefOr[WorkflowRunIdOptional]
   }
 
-  object TerminateWorkflowExecutionInput {
-    @inline
-    def apply(
-        domain: DomainName,
-        workflowId: WorkflowId,
-        childPolicy: js.UndefOr[ChildPolicy] = js.undefined,
-        details: js.UndefOr[Data] = js.undefined,
-        reason: js.UndefOr[TerminateReason] = js.undefined,
-        runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined
-    ): TerminateWorkflowExecutionInput = {
-      val __obj = js.Dynamic.literal(
-        "domain"     -> domain.asInstanceOf[js.Any],
-        "workflowId" -> workflowId.asInstanceOf[js.Any]
-      )
-
-      childPolicy.foreach(__v => __obj.updateDynamic("childPolicy")(__v.asInstanceOf[js.Any]))
-      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
-      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
-      runId.foreach(__v => __obj.updateDynamic("runId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TerminateWorkflowExecutionInput]
-    }
-  }
-
   /**
     * Provides the details of the <code>TimerCanceled</code> event.
     */
   @js.native
+  @Factory
   trait TimerCanceledEventAttributes extends js.Object {
     var decisionTaskCompletedEventId: EventId
     var startedEventId: EventId
     var timerId: TimerId
   }
 
-  object TimerCanceledEventAttributes {
-    @inline
-    def apply(
-        decisionTaskCompletedEventId: EventId,
-        startedEventId: EventId,
-        timerId: TimerId
-    ): TimerCanceledEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
-        "startedEventId"               -> startedEventId.asInstanceOf[js.Any],
-        "timerId"                      -> timerId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TimerCanceledEventAttributes]
-    }
-  }
-
   /**
     * Provides the details of the <code>TimerFired</code> event.
     */
   @js.native
+  @Factory
   trait TimerFiredEventAttributes extends js.Object {
     var startedEventId: EventId
     var timerId: TimerId
-  }
-
-  object TimerFiredEventAttributes {
-    @inline
-    def apply(
-        startedEventId: EventId,
-        timerId: TimerId
-    ): TimerFiredEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "startedEventId" -> startedEventId.asInstanceOf[js.Any],
-        "timerId"        -> timerId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TimerFiredEventAttributes]
-    }
   }
 
   /**
     * Provides the details of the <code>TimerStarted</code> event.
     */
   @js.native
+  @Factory
   trait TimerStartedEventAttributes extends js.Object {
     var decisionTaskCompletedEventId: EventId
     var startToFireTimeout: DurationInSeconds
@@ -4450,128 +2161,41 @@ package swf {
     var control: js.UndefOr[Data]
   }
 
-  object TimerStartedEventAttributes {
-    @inline
-    def apply(
-        decisionTaskCompletedEventId: EventId,
-        startToFireTimeout: DurationInSeconds,
-        timerId: TimerId,
-        control: js.UndefOr[Data] = js.undefined
-    ): TimerStartedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
-        "startToFireTimeout"           -> startToFireTimeout.asInstanceOf[js.Any],
-        "timerId"                      -> timerId.asInstanceOf[js.Any]
-      )
-
-      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TimerStartedEventAttributes]
-    }
-  }
-
   @js.native
+  @Factory
   trait UndeprecateActivityTypeInput extends js.Object {
     var activityType: ActivityType
     var domain: DomainName
   }
 
-  object UndeprecateActivityTypeInput {
-    @inline
-    def apply(
-        activityType: ActivityType,
-        domain: DomainName
-    ): UndeprecateActivityTypeInput = {
-      val __obj = js.Dynamic.literal(
-        "activityType" -> activityType.asInstanceOf[js.Any],
-        "domain"       -> domain.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UndeprecateActivityTypeInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait UndeprecateDomainInput extends js.Object {
     var name: DomainName
   }
 
-  object UndeprecateDomainInput {
-    @inline
-    def apply(
-        name: DomainName
-    ): UndeprecateDomainInput = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UndeprecateDomainInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait UndeprecateWorkflowTypeInput extends js.Object {
     var domain: DomainName
     var workflowType: WorkflowType
   }
 
-  object UndeprecateWorkflowTypeInput {
-    @inline
-    def apply(
-        domain: DomainName,
-        workflowType: WorkflowType
-    ): UndeprecateWorkflowTypeInput = {
-      val __obj = js.Dynamic.literal(
-        "domain"       -> domain.asInstanceOf[js.Any],
-        "workflowType" -> workflowType.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UndeprecateWorkflowTypeInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceInput extends js.Object {
     var resourceArn: Arn
     var tagKeys: ResourceTagKeyList
-  }
-
-  object UntagResourceInput {
-    @inline
-    def apply(
-        resourceArn: Arn,
-        tagKeys: ResourceTagKeyList
-    ): UntagResourceInput = {
-      val __obj = js.Dynamic.literal(
-        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceInput]
-    }
   }
 
   /**
     * Represents a workflow execution.
     */
   @js.native
+  @Factory
   trait WorkflowExecution extends js.Object {
     var runId: WorkflowRunId
     var workflowId: WorkflowId
-  }
-
-  object WorkflowExecution {
-    @inline
-    def apply(
-        runId: WorkflowRunId,
-        workflowId: WorkflowId
-    ): WorkflowExecution = {
-      val __obj = js.Dynamic.literal(
-        "runId"      -> runId.asInstanceOf[js.Any],
-        "workflowId" -> workflowId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[WorkflowExecution]
-    }
   }
 
   @js.native
@@ -4586,81 +2210,38 @@ package swf {
     * Provides the details of the <code>WorkflowExecutionCancelRequested</code> event.
     */
   @js.native
+  @Factory
   trait WorkflowExecutionCancelRequestedEventAttributes extends js.Object {
     var cause: js.UndefOr[WorkflowExecutionCancelRequestedCause]
     var externalInitiatedEventId: js.UndefOr[EventId]
     var externalWorkflowExecution: js.UndefOr[WorkflowExecution]
   }
 
-  object WorkflowExecutionCancelRequestedEventAttributes {
-    @inline
-    def apply(
-        cause: js.UndefOr[WorkflowExecutionCancelRequestedCause] = js.undefined,
-        externalInitiatedEventId: js.UndefOr[EventId] = js.undefined,
-        externalWorkflowExecution: js.UndefOr[WorkflowExecution] = js.undefined
-    ): WorkflowExecutionCancelRequestedEventAttributes = {
-      val __obj = js.Dynamic.literal()
-      cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
-      externalInitiatedEventId.foreach(__v => __obj.updateDynamic("externalInitiatedEventId")(__v.asInstanceOf[js.Any]))
-      externalWorkflowExecution.foreach(__v =>
-        __obj.updateDynamic("externalWorkflowExecution")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[WorkflowExecutionCancelRequestedEventAttributes]
-    }
-  }
-
   /**
     * Provides the details of the <code>WorkflowExecutionCanceled</code> event.
     */
   @js.native
+  @Factory
   trait WorkflowExecutionCanceledEventAttributes extends js.Object {
     var decisionTaskCompletedEventId: EventId
     var details: js.UndefOr[Data]
-  }
-
-  object WorkflowExecutionCanceledEventAttributes {
-    @inline
-    def apply(
-        decisionTaskCompletedEventId: EventId,
-        details: js.UndefOr[Data] = js.undefined
-    ): WorkflowExecutionCanceledEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any]
-      )
-
-      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[WorkflowExecutionCanceledEventAttributes]
-    }
   }
 
   /**
     * Provides the details of the <code>WorkflowExecutionCompleted</code> event.
     */
   @js.native
+  @Factory
   trait WorkflowExecutionCompletedEventAttributes extends js.Object {
     var decisionTaskCompletedEventId: EventId
     var result: js.UndefOr[Data]
-  }
-
-  object WorkflowExecutionCompletedEventAttributes {
-    @inline
-    def apply(
-        decisionTaskCompletedEventId: EventId,
-        result: js.UndefOr[Data] = js.undefined
-    ): WorkflowExecutionCompletedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any]
-      )
-
-      result.foreach(__v => __obj.updateDynamic("result")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[WorkflowExecutionCompletedEventAttributes]
-    }
   }
 
   /**
     * The configuration settings for a workflow execution including timeout values, tasklist etc. These configuration settings are determined from the defaults specified when registering the workflow type and those specified when starting the workflow execution.
     */
   @js.native
+  @Factory
   trait WorkflowExecutionConfiguration extends js.Object {
     var childPolicy: ChildPolicy
     var executionStartToCloseTimeout: DurationInSeconds
@@ -4670,33 +2251,11 @@ package swf {
     var taskPriority: js.UndefOr[TaskPriority]
   }
 
-  object WorkflowExecutionConfiguration {
-    @inline
-    def apply(
-        childPolicy: ChildPolicy,
-        executionStartToCloseTimeout: DurationInSeconds,
-        taskList: TaskList,
-        taskStartToCloseTimeout: DurationInSeconds,
-        lambdaRole: js.UndefOr[Arn] = js.undefined,
-        taskPriority: js.UndefOr[TaskPriority] = js.undefined
-    ): WorkflowExecutionConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "childPolicy"                  -> childPolicy.asInstanceOf[js.Any],
-        "executionStartToCloseTimeout" -> executionStartToCloseTimeout.asInstanceOf[js.Any],
-        "taskList"                     -> taskList.asInstanceOf[js.Any],
-        "taskStartToCloseTimeout"      -> taskStartToCloseTimeout.asInstanceOf[js.Any]
-      )
-
-      lambdaRole.foreach(__v => __obj.updateDynamic("lambdaRole")(__v.asInstanceOf[js.Any]))
-      taskPriority.foreach(__v => __obj.updateDynamic("taskPriority")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[WorkflowExecutionConfiguration]
-    }
-  }
-
   /**
     * Provides the details of the <code>WorkflowExecutionContinuedAsNew</code> event.
     */
   @js.native
+  @Factory
   trait WorkflowExecutionContinuedAsNewEventAttributes extends js.Object {
     var childPolicy: ChildPolicy
     var decisionTaskCompletedEventId: EventId
@@ -4711,69 +2270,21 @@ package swf {
     var taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
   }
 
-  object WorkflowExecutionContinuedAsNewEventAttributes {
-    @inline
-    def apply(
-        childPolicy: ChildPolicy,
-        decisionTaskCompletedEventId: EventId,
-        newExecutionRunId: WorkflowRunId,
-        taskList: TaskList,
-        workflowType: WorkflowType,
-        executionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-        input: js.UndefOr[Data] = js.undefined,
-        lambdaRole: js.UndefOr[Arn] = js.undefined,
-        tagList: js.UndefOr[TagList] = js.undefined,
-        taskPriority: js.UndefOr[TaskPriority] = js.undefined,
-        taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined
-    ): WorkflowExecutionContinuedAsNewEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "childPolicy"                  -> childPolicy.asInstanceOf[js.Any],
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
-        "newExecutionRunId"            -> newExecutionRunId.asInstanceOf[js.Any],
-        "taskList"                     -> taskList.asInstanceOf[js.Any],
-        "workflowType"                 -> workflowType.asInstanceOf[js.Any]
-      )
-
-      executionStartToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
-      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
-      lambdaRole.foreach(__v => __obj.updateDynamic("lambdaRole")(__v.asInstanceOf[js.Any]))
-      tagList.foreach(__v => __obj.updateDynamic("tagList")(__v.asInstanceOf[js.Any]))
-      taskPriority.foreach(__v => __obj.updateDynamic("taskPriority")(__v.asInstanceOf[js.Any]))
-      taskStartToCloseTimeout.foreach(__v => __obj.updateDynamic("taskStartToCloseTimeout")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[WorkflowExecutionContinuedAsNewEventAttributes]
-    }
-  }
-
   /**
     * Contains the count of workflow executions returned from <a>CountOpenWorkflowExecutions</a> or <a>CountClosedWorkflowExecutions</a>
     */
   @js.native
+  @Factory
   trait WorkflowExecutionCount extends js.Object {
     var count: Count
     var truncated: js.UndefOr[Truncated]
-  }
-
-  object WorkflowExecutionCount {
-    @inline
-    def apply(
-        count: Count,
-        truncated: js.UndefOr[Truncated] = js.undefined
-    ): WorkflowExecutionCount = {
-      val __obj = js.Dynamic.literal(
-        "count" -> count.asInstanceOf[js.Any]
-      )
-
-      truncated.foreach(__v => __obj.updateDynamic("truncated")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[WorkflowExecutionCount]
-    }
   }
 
   /**
     * Contains details about a workflow execution.
     */
   @js.native
+  @Factory
   trait WorkflowExecutionDetail extends js.Object {
     var executionConfiguration: WorkflowExecutionConfiguration
     var executionInfo: WorkflowExecutionInfo
@@ -4782,81 +2293,31 @@ package swf {
     var latestExecutionContext: js.UndefOr[Data]
   }
 
-  object WorkflowExecutionDetail {
-    @inline
-    def apply(
-        executionConfiguration: WorkflowExecutionConfiguration,
-        executionInfo: WorkflowExecutionInfo,
-        openCounts: WorkflowExecutionOpenCounts,
-        latestActivityTaskTimestamp: js.UndefOr[Timestamp] = js.undefined,
-        latestExecutionContext: js.UndefOr[Data] = js.undefined
-    ): WorkflowExecutionDetail = {
-      val __obj = js.Dynamic.literal(
-        "executionConfiguration" -> executionConfiguration.asInstanceOf[js.Any],
-        "executionInfo"          -> executionInfo.asInstanceOf[js.Any],
-        "openCounts"             -> openCounts.asInstanceOf[js.Any]
-      )
-
-      latestActivityTaskTimestamp.foreach(__v =>
-        __obj.updateDynamic("latestActivityTaskTimestamp")(__v.asInstanceOf[js.Any])
-      )
-      latestExecutionContext.foreach(__v => __obj.updateDynamic("latestExecutionContext")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[WorkflowExecutionDetail]
-    }
-  }
-
   /**
     * Provides the details of the <code>WorkflowExecutionFailed</code> event.
     */
   @js.native
+  @Factory
   trait WorkflowExecutionFailedEventAttributes extends js.Object {
     var decisionTaskCompletedEventId: EventId
     var details: js.UndefOr[Data]
     var reason: js.UndefOr[FailureReason]
   }
 
-  object WorkflowExecutionFailedEventAttributes {
-    @inline
-    def apply(
-        decisionTaskCompletedEventId: EventId,
-        details: js.UndefOr[Data] = js.undefined,
-        reason: js.UndefOr[FailureReason] = js.undefined
-    ): WorkflowExecutionFailedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any]
-      )
-
-      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
-      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[WorkflowExecutionFailedEventAttributes]
-    }
-  }
-
   /**
     * Used to filter the workflow executions in visibility APIs by their <code>workflowId</code>.
     */
   @js.native
+  @Factory
   trait WorkflowExecutionFilter extends js.Object {
     var workflowId: WorkflowId
-  }
-
-  object WorkflowExecutionFilter {
-    @inline
-    def apply(
-        workflowId: WorkflowId
-    ): WorkflowExecutionFilter = {
-      val __obj = js.Dynamic.literal(
-        "workflowId" -> workflowId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[WorkflowExecutionFilter]
-    }
   }
 
   /**
     * Contains information about a workflow execution.
     */
   @js.native
+  @Factory
   trait WorkflowExecutionInfo extends js.Object {
     var execution: WorkflowExecution
     var executionStatus: ExecutionStatus
@@ -4869,63 +2330,21 @@ package swf {
     var tagList: js.UndefOr[TagList]
   }
 
-  object WorkflowExecutionInfo {
-    @inline
-    def apply(
-        execution: WorkflowExecution,
-        executionStatus: ExecutionStatus,
-        startTimestamp: Timestamp,
-        workflowType: WorkflowType,
-        cancelRequested: js.UndefOr[Canceled] = js.undefined,
-        closeStatus: js.UndefOr[CloseStatus] = js.undefined,
-        closeTimestamp: js.UndefOr[Timestamp] = js.undefined,
-        parent: js.UndefOr[WorkflowExecution] = js.undefined,
-        tagList: js.UndefOr[TagList] = js.undefined
-    ): WorkflowExecutionInfo = {
-      val __obj = js.Dynamic.literal(
-        "execution"       -> execution.asInstanceOf[js.Any],
-        "executionStatus" -> executionStatus.asInstanceOf[js.Any],
-        "startTimestamp"  -> startTimestamp.asInstanceOf[js.Any],
-        "workflowType"    -> workflowType.asInstanceOf[js.Any]
-      )
-
-      cancelRequested.foreach(__v => __obj.updateDynamic("cancelRequested")(__v.asInstanceOf[js.Any]))
-      closeStatus.foreach(__v => __obj.updateDynamic("closeStatus")(__v.asInstanceOf[js.Any]))
-      closeTimestamp.foreach(__v => __obj.updateDynamic("closeTimestamp")(__v.asInstanceOf[js.Any]))
-      parent.foreach(__v => __obj.updateDynamic("parent")(__v.asInstanceOf[js.Any]))
-      tagList.foreach(__v => __obj.updateDynamic("tagList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[WorkflowExecutionInfo]
-    }
-  }
-
   /**
     * Contains a paginated list of information about workflow executions.
     */
   @js.native
+  @Factory
   trait WorkflowExecutionInfos extends js.Object {
     var executionInfos: WorkflowExecutionInfoList
     var nextPageToken: js.UndefOr[PageToken]
-  }
-
-  object WorkflowExecutionInfos {
-    @inline
-    def apply(
-        executionInfos: WorkflowExecutionInfoList,
-        nextPageToken: js.UndefOr[PageToken] = js.undefined
-    ): WorkflowExecutionInfos = {
-      val __obj = js.Dynamic.literal(
-        "executionInfos" -> executionInfos.asInstanceOf[js.Any]
-      )
-
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[WorkflowExecutionInfos]
-    }
   }
 
   /**
     * Contains the counts of open tasks, child workflow executions and timers for a workflow execution.
     */
   @js.native
+  @Factory
   trait WorkflowExecutionOpenCounts extends js.Object {
     var openActivityTasks: Count
     var openChildWorkflowExecutions: Count
@@ -4934,31 +2353,11 @@ package swf {
     var openLambdaFunctions: js.UndefOr[Count]
   }
 
-  object WorkflowExecutionOpenCounts {
-    @inline
-    def apply(
-        openActivityTasks: Count,
-        openChildWorkflowExecutions: Count,
-        openDecisionTasks: OpenDecisionTasksCount,
-        openTimers: Count,
-        openLambdaFunctions: js.UndefOr[Count] = js.undefined
-    ): WorkflowExecutionOpenCounts = {
-      val __obj = js.Dynamic.literal(
-        "openActivityTasks"           -> openActivityTasks.asInstanceOf[js.Any],
-        "openChildWorkflowExecutions" -> openChildWorkflowExecutions.asInstanceOf[js.Any],
-        "openDecisionTasks"           -> openDecisionTasks.asInstanceOf[js.Any],
-        "openTimers"                  -> openTimers.asInstanceOf[js.Any]
-      )
-
-      openLambdaFunctions.foreach(__v => __obj.updateDynamic("openLambdaFunctions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[WorkflowExecutionOpenCounts]
-    }
-  }
-
   /**
     * Provides the details of the <code>WorkflowExecutionSignaled</code> event.
     */
   @js.native
+  @Factory
   trait WorkflowExecutionSignaledEventAttributes extends js.Object {
     var signalName: SignalName
     var externalInitiatedEventId: js.UndefOr[EventId]
@@ -4966,31 +2365,11 @@ package swf {
     var input: js.UndefOr[Data]
   }
 
-  object WorkflowExecutionSignaledEventAttributes {
-    @inline
-    def apply(
-        signalName: SignalName,
-        externalInitiatedEventId: js.UndefOr[EventId] = js.undefined,
-        externalWorkflowExecution: js.UndefOr[WorkflowExecution] = js.undefined,
-        input: js.UndefOr[Data] = js.undefined
-    ): WorkflowExecutionSignaledEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "signalName" -> signalName.asInstanceOf[js.Any]
-      )
-
-      externalInitiatedEventId.foreach(__v => __obj.updateDynamic("externalInitiatedEventId")(__v.asInstanceOf[js.Any]))
-      externalWorkflowExecution.foreach(__v =>
-        __obj.updateDynamic("externalWorkflowExecution")(__v.asInstanceOf[js.Any])
-      )
-      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[WorkflowExecutionSignaledEventAttributes]
-    }
-  }
-
   /**
     * Provides details of <code>WorkflowExecutionStarted</code> event.
     */
   @js.native
+  @Factory
   trait WorkflowExecutionStartedEventAttributes extends js.Object {
     var childPolicy: ChildPolicy
     var taskList: TaskList
@@ -5004,43 +2383,6 @@ package swf {
     var tagList: js.UndefOr[TagList]
     var taskPriority: js.UndefOr[TaskPriority]
     var taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
-  }
-
-  object WorkflowExecutionStartedEventAttributes {
-    @inline
-    def apply(
-        childPolicy: ChildPolicy,
-        taskList: TaskList,
-        workflowType: WorkflowType,
-        continuedExecutionRunId: js.UndefOr[WorkflowRunIdOptional] = js.undefined,
-        executionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-        input: js.UndefOr[Data] = js.undefined,
-        lambdaRole: js.UndefOr[Arn] = js.undefined,
-        parentInitiatedEventId: js.UndefOr[EventId] = js.undefined,
-        parentWorkflowExecution: js.UndefOr[WorkflowExecution] = js.undefined,
-        tagList: js.UndefOr[TagList] = js.undefined,
-        taskPriority: js.UndefOr[TaskPriority] = js.undefined,
-        taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined
-    ): WorkflowExecutionStartedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "childPolicy"  -> childPolicy.asInstanceOf[js.Any],
-        "taskList"     -> taskList.asInstanceOf[js.Any],
-        "workflowType" -> workflowType.asInstanceOf[js.Any]
-      )
-
-      continuedExecutionRunId.foreach(__v => __obj.updateDynamic("continuedExecutionRunId")(__v.asInstanceOf[js.Any]))
-      executionStartToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
-      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
-      lambdaRole.foreach(__v => __obj.updateDynamic("lambdaRole")(__v.asInstanceOf[js.Any]))
-      parentInitiatedEventId.foreach(__v => __obj.updateDynamic("parentInitiatedEventId")(__v.asInstanceOf[js.Any]))
-      parentWorkflowExecution.foreach(__v => __obj.updateDynamic("parentWorkflowExecution")(__v.asInstanceOf[js.Any]))
-      tagList.foreach(__v => __obj.updateDynamic("tagList")(__v.asInstanceOf[js.Any]))
-      taskPriority.foreach(__v => __obj.updateDynamic("taskPriority")(__v.asInstanceOf[js.Any]))
-      taskStartToCloseTimeout.foreach(__v => __obj.updateDynamic("taskStartToCloseTimeout")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[WorkflowExecutionStartedEventAttributes]
-    }
   }
 
   @js.native
@@ -5057,6 +2399,7 @@ package swf {
     * Provides the details of the <code>WorkflowExecutionTerminated</code> event.
     */
   @js.native
+  @Factory
   trait WorkflowExecutionTerminatedEventAttributes extends js.Object {
     var childPolicy: ChildPolicy
     var cause: js.UndefOr[WorkflowExecutionTerminatedCause]
@@ -5064,47 +2407,14 @@ package swf {
     var reason: js.UndefOr[TerminateReason]
   }
 
-  object WorkflowExecutionTerminatedEventAttributes {
-    @inline
-    def apply(
-        childPolicy: ChildPolicy,
-        cause: js.UndefOr[WorkflowExecutionTerminatedCause] = js.undefined,
-        details: js.UndefOr[Data] = js.undefined,
-        reason: js.UndefOr[TerminateReason] = js.undefined
-    ): WorkflowExecutionTerminatedEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "childPolicy" -> childPolicy.asInstanceOf[js.Any]
-      )
-
-      cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
-      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
-      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[WorkflowExecutionTerminatedEventAttributes]
-    }
-  }
-
   /**
     * Provides the details of the <code>WorkflowExecutionTimedOut</code> event.
     */
   @js.native
+  @Factory
   trait WorkflowExecutionTimedOutEventAttributes extends js.Object {
     var childPolicy: ChildPolicy
     var timeoutType: WorkflowExecutionTimeoutType
-  }
-
-  object WorkflowExecutionTimedOutEventAttributes {
-    @inline
-    def apply(
-        childPolicy: ChildPolicy,
-        timeoutType: WorkflowExecutionTimeoutType
-    ): WorkflowExecutionTimedOutEventAttributes = {
-      val __obj = js.Dynamic.literal(
-        "childPolicy" -> childPolicy.asInstanceOf[js.Any],
-        "timeoutType" -> timeoutType.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[WorkflowExecutionTimedOutEventAttributes]
-    }
   }
 
   @js.native
@@ -5119,30 +2429,17 @@ package swf {
     * Represents a workflow type.
     */
   @js.native
+  @Factory
   trait WorkflowType extends js.Object {
     var name: Name
     var version: Version
-  }
-
-  object WorkflowType {
-    @inline
-    def apply(
-        name: Name,
-        version: Version
-    ): WorkflowType = {
-      val __obj = js.Dynamic.literal(
-        "name"    -> name.asInstanceOf[js.Any],
-        "version" -> version.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[WorkflowType]
-    }
   }
 
   /**
     * The configuration settings of a workflow type.
     */
   @js.native
+  @Factory
   trait WorkflowTypeConfiguration extends js.Object {
     var defaultChildPolicy: js.UndefOr[ChildPolicy]
     var defaultExecutionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
@@ -5152,83 +2449,31 @@ package swf {
     var defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional]
   }
 
-  object WorkflowTypeConfiguration {
-    @inline
-    def apply(
-        defaultChildPolicy: js.UndefOr[ChildPolicy] = js.undefined,
-        defaultExecutionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
-        defaultLambdaRole: js.UndefOr[Arn] = js.undefined,
-        defaultTaskList: js.UndefOr[TaskList] = js.undefined,
-        defaultTaskPriority: js.UndefOr[TaskPriority] = js.undefined,
-        defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined
-    ): WorkflowTypeConfiguration = {
-      val __obj = js.Dynamic.literal()
-      defaultChildPolicy.foreach(__v => __obj.updateDynamic("defaultChildPolicy")(__v.asInstanceOf[js.Any]))
-      defaultExecutionStartToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("defaultExecutionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
-      defaultLambdaRole.foreach(__v => __obj.updateDynamic("defaultLambdaRole")(__v.asInstanceOf[js.Any]))
-      defaultTaskList.foreach(__v => __obj.updateDynamic("defaultTaskList")(__v.asInstanceOf[js.Any]))
-      defaultTaskPriority.foreach(__v => __obj.updateDynamic("defaultTaskPriority")(__v.asInstanceOf[js.Any]))
-      defaultTaskStartToCloseTimeout.foreach(__v =>
-        __obj.updateDynamic("defaultTaskStartToCloseTimeout")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[WorkflowTypeConfiguration]
-    }
-  }
-
   /**
     * Contains details about a workflow type.
     */
   @js.native
+  @Factory
   trait WorkflowTypeDetail extends js.Object {
     var configuration: WorkflowTypeConfiguration
     var typeInfo: WorkflowTypeInfo
-  }
-
-  object WorkflowTypeDetail {
-    @inline
-    def apply(
-        configuration: WorkflowTypeConfiguration,
-        typeInfo: WorkflowTypeInfo
-    ): WorkflowTypeDetail = {
-      val __obj = js.Dynamic.literal(
-        "configuration" -> configuration.asInstanceOf[js.Any],
-        "typeInfo"      -> typeInfo.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[WorkflowTypeDetail]
-    }
   }
 
   /**
     * Used to filter workflow execution query results by type. Each parameter, if specified, defines a rule that must be satisfied by each returned result.
     */
   @js.native
+  @Factory
   trait WorkflowTypeFilter extends js.Object {
     var name: Name
     var version: js.UndefOr[VersionOptional]
-  }
-
-  object WorkflowTypeFilter {
-    @inline
-    def apply(
-        name: Name,
-        version: js.UndefOr[VersionOptional] = js.undefined
-    ): WorkflowTypeFilter = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[WorkflowTypeFilter]
-    }
   }
 
   /**
     * Contains information about a workflow type.
     */
   @js.native
+  @Factory
   trait WorkflowTypeInfo extends js.Object {
     var creationDate: Timestamp
     var status: RegistrationStatus
@@ -5237,48 +2482,13 @@ package swf {
     var description: js.UndefOr[Description]
   }
 
-  object WorkflowTypeInfo {
-    @inline
-    def apply(
-        creationDate: Timestamp,
-        status: RegistrationStatus,
-        workflowType: WorkflowType,
-        deprecationDate: js.UndefOr[Timestamp] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined
-    ): WorkflowTypeInfo = {
-      val __obj = js.Dynamic.literal(
-        "creationDate" -> creationDate.asInstanceOf[js.Any],
-        "status"       -> status.asInstanceOf[js.Any],
-        "workflowType" -> workflowType.asInstanceOf[js.Any]
-      )
-
-      deprecationDate.foreach(__v => __obj.updateDynamic("deprecationDate")(__v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[WorkflowTypeInfo]
-    }
-  }
-
   /**
     * Contains a paginated list of information structures about workflow types.
     */
   @js.native
+  @Factory
   trait WorkflowTypeInfos extends js.Object {
     var typeInfos: WorkflowTypeInfoList
     var nextPageToken: js.UndefOr[PageToken]
-  }
-
-  object WorkflowTypeInfos {
-    @inline
-    def apply(
-        typeInfos: WorkflowTypeInfoList,
-        nextPageToken: js.UndefOr[PageToken] = js.undefined
-    ): WorkflowTypeInfos = {
-      val __obj = js.Dynamic.literal(
-        "typeInfos" -> typeInfos.asInstanceOf[js.Any]
-      )
-
-      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[WorkflowTypeInfos]
-    }
   }
 }

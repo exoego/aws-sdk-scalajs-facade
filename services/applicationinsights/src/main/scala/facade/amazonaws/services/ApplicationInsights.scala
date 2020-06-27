@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object applicationinsights {
   type AffectedResource                       = String
@@ -174,6 +175,7 @@ package applicationinsights {
     * Describes a standalone resource or similarly grouped resources that the application is made up of.
     */
   @js.native
+  @Factory
   trait ApplicationComponent extends js.Object {
     var ComponentName: js.UndefOr[ComponentName]
     var Monitor: js.UndefOr[Monitor]
@@ -181,27 +183,11 @@ package applicationinsights {
     var Tier: js.UndefOr[Tier]
   }
 
-  object ApplicationComponent {
-    @inline
-    def apply(
-        ComponentName: js.UndefOr[ComponentName] = js.undefined,
-        Monitor: js.UndefOr[Monitor] = js.undefined,
-        ResourceType: js.UndefOr[ResourceType] = js.undefined,
-        Tier: js.UndefOr[Tier] = js.undefined
-    ): ApplicationComponent = {
-      val __obj = js.Dynamic.literal()
-      ComponentName.foreach(__v => __obj.updateDynamic("ComponentName")(__v.asInstanceOf[js.Any]))
-      Monitor.foreach(__v => __obj.updateDynamic("Monitor")(__v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
-      Tier.foreach(__v => __obj.updateDynamic("Tier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ApplicationComponent]
-    }
-  }
-
   /**
     * Describes the status of the application.
     */
   @js.native
+  @Factory
   trait ApplicationInfo extends js.Object {
     var LifeCycle: js.UndefOr[LifeCycle]
     var OpsCenterEnabled: js.UndefOr[OpsCenterEnabled]
@@ -210,29 +196,11 @@ package applicationinsights {
     var ResourceGroupName: js.UndefOr[ResourceGroupName]
   }
 
-  object ApplicationInfo {
-    @inline
-    def apply(
-        LifeCycle: js.UndefOr[LifeCycle] = js.undefined,
-        OpsCenterEnabled: js.UndefOr[OpsCenterEnabled] = js.undefined,
-        OpsItemSNSTopicArn: js.UndefOr[OpsItemSNSTopicArn] = js.undefined,
-        Remarks: js.UndefOr[Remarks] = js.undefined,
-        ResourceGroupName: js.UndefOr[ResourceGroupName] = js.undefined
-    ): ApplicationInfo = {
-      val __obj = js.Dynamic.literal()
-      LifeCycle.foreach(__v => __obj.updateDynamic("LifeCycle")(__v.asInstanceOf[js.Any]))
-      OpsCenterEnabled.foreach(__v => __obj.updateDynamic("OpsCenterEnabled")(__v.asInstanceOf[js.Any]))
-      OpsItemSNSTopicArn.foreach(__v => __obj.updateDynamic("OpsItemSNSTopicArn")(__v.asInstanceOf[js.Any]))
-      Remarks.foreach(__v => __obj.updateDynamic("Remarks")(__v.asInstanceOf[js.Any]))
-      ResourceGroupName.foreach(__v => __obj.updateDynamic("ResourceGroupName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ApplicationInfo]
-    }
-  }
-
   /**
     * The event information.
     */
   @js.native
+  @Factory
   trait ConfigurationEvent extends js.Object {
     var EventDetail: js.UndefOr[ConfigurationEventDetail]
     var EventResourceName: js.UndefOr[ConfigurationEventResourceName]
@@ -240,27 +208,6 @@ package applicationinsights {
     var EventStatus: js.UndefOr[ConfigurationEventStatus]
     var EventTime: js.UndefOr[ConfigurationEventTime]
     var MonitoredResourceARN: js.UndefOr[ConfigurationEventMonitoredResourceARN]
-  }
-
-  object ConfigurationEvent {
-    @inline
-    def apply(
-        EventDetail: js.UndefOr[ConfigurationEventDetail] = js.undefined,
-        EventResourceName: js.UndefOr[ConfigurationEventResourceName] = js.undefined,
-        EventResourceType: js.UndefOr[ConfigurationEventResourceType] = js.undefined,
-        EventStatus: js.UndefOr[ConfigurationEventStatus] = js.undefined,
-        EventTime: js.UndefOr[ConfigurationEventTime] = js.undefined,
-        MonitoredResourceARN: js.UndefOr[ConfigurationEventMonitoredResourceARN] = js.undefined
-    ): ConfigurationEvent = {
-      val __obj = js.Dynamic.literal()
-      EventDetail.foreach(__v => __obj.updateDynamic("EventDetail")(__v.asInstanceOf[js.Any]))
-      EventResourceName.foreach(__v => __obj.updateDynamic("EventResourceName")(__v.asInstanceOf[js.Any]))
-      EventResourceType.foreach(__v => __obj.updateDynamic("EventResourceType")(__v.asInstanceOf[js.Any]))
-      EventStatus.foreach(__v => __obj.updateDynamic("EventStatus")(__v.asInstanceOf[js.Any]))
-      EventTime.foreach(__v => __obj.updateDynamic("EventTime")(__v.asInstanceOf[js.Any]))
-      MonitoredResourceARN.foreach(__v => __obj.updateDynamic("MonitoredResourceARN")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ConfigurationEvent]
-    }
   }
 
   @js.native
@@ -284,6 +231,7 @@ package applicationinsights {
   }
 
   @js.native
+  @Factory
   trait CreateApplicationRequest extends js.Object {
     var ResourceGroupName: ResourceGroupName
     var OpsCenterEnabled: js.UndefOr[OpsCenterEnabled]
@@ -291,79 +239,26 @@ package applicationinsights {
     var Tags: js.UndefOr[TagList]
   }
 
-  object CreateApplicationRequest {
-    @inline
-    def apply(
-        ResourceGroupName: ResourceGroupName,
-        OpsCenterEnabled: js.UndefOr[OpsCenterEnabled] = js.undefined,
-        OpsItemSNSTopicArn: js.UndefOr[OpsItemSNSTopicArn] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateApplicationRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
-      )
-
-      OpsCenterEnabled.foreach(__v => __obj.updateDynamic("OpsCenterEnabled")(__v.asInstanceOf[js.Any]))
-      OpsItemSNSTopicArn.foreach(__v => __obj.updateDynamic("OpsItemSNSTopicArn")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateApplicationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateApplicationResponse extends js.Object {
     var ApplicationInfo: js.UndefOr[ApplicationInfo]
   }
 
-  object CreateApplicationResponse {
-    @inline
-    def apply(
-        ApplicationInfo: js.UndefOr[ApplicationInfo] = js.undefined
-    ): CreateApplicationResponse = {
-      val __obj = js.Dynamic.literal()
-      ApplicationInfo.foreach(__v => __obj.updateDynamic("ApplicationInfo")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateApplicationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateComponentRequest extends js.Object {
     var ComponentName: ComponentName
     var ResourceGroupName: ResourceGroupName
     var ResourceList: ResourceList
   }
 
-  object CreateComponentRequest {
-    @inline
-    def apply(
-        ComponentName: ComponentName,
-        ResourceGroupName: ResourceGroupName,
-        ResourceList: ResourceList
-    ): CreateComponentRequest = {
-      val __obj = js.Dynamic.literal(
-        "ComponentName"     -> ComponentName.asInstanceOf[js.Any],
-        "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any],
-        "ResourceList"      -> ResourceList.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateComponentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateComponentResponse extends js.Object {}
 
-  object CreateComponentResponse {
-    @inline
-    def apply(
-    ): CreateComponentResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[CreateComponentResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateLogPatternRequest extends js.Object {
     var Pattern: LogPatternRegex
     var PatternName: LogPatternName
@@ -372,448 +267,150 @@ package applicationinsights {
     var ResourceGroupName: ResourceGroupName
   }
 
-  object CreateLogPatternRequest {
-    @inline
-    def apply(
-        Pattern: LogPatternRegex,
-        PatternName: LogPatternName,
-        PatternSetName: LogPatternSetName,
-        Rank: LogPatternRank,
-        ResourceGroupName: ResourceGroupName
-    ): CreateLogPatternRequest = {
-      val __obj = js.Dynamic.literal(
-        "Pattern"           -> Pattern.asInstanceOf[js.Any],
-        "PatternName"       -> PatternName.asInstanceOf[js.Any],
-        "PatternSetName"    -> PatternSetName.asInstanceOf[js.Any],
-        "Rank"              -> Rank.asInstanceOf[js.Any],
-        "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateLogPatternRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateLogPatternResponse extends js.Object {
     var LogPattern: js.UndefOr[LogPattern]
     var ResourceGroupName: js.UndefOr[ResourceGroupName]
   }
 
-  object CreateLogPatternResponse {
-    @inline
-    def apply(
-        LogPattern: js.UndefOr[LogPattern] = js.undefined,
-        ResourceGroupName: js.UndefOr[ResourceGroupName] = js.undefined
-    ): CreateLogPatternResponse = {
-      val __obj = js.Dynamic.literal()
-      LogPattern.foreach(__v => __obj.updateDynamic("LogPattern")(__v.asInstanceOf[js.Any]))
-      ResourceGroupName.foreach(__v => __obj.updateDynamic("ResourceGroupName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateLogPatternResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteApplicationRequest extends js.Object {
     var ResourceGroupName: ResourceGroupName
   }
 
-  object DeleteApplicationRequest {
-    @inline
-    def apply(
-        ResourceGroupName: ResourceGroupName
-    ): DeleteApplicationRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteApplicationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteApplicationResponse extends js.Object {}
 
-  object DeleteApplicationResponse {
-    @inline
-    def apply(
-    ): DeleteApplicationResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteApplicationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteComponentRequest extends js.Object {
     var ComponentName: ComponentName
     var ResourceGroupName: ResourceGroupName
   }
 
-  object DeleteComponentRequest {
-    @inline
-    def apply(
-        ComponentName: ComponentName,
-        ResourceGroupName: ResourceGroupName
-    ): DeleteComponentRequest = {
-      val __obj = js.Dynamic.literal(
-        "ComponentName"     -> ComponentName.asInstanceOf[js.Any],
-        "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteComponentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteComponentResponse extends js.Object {}
 
-  object DeleteComponentResponse {
-    @inline
-    def apply(
-    ): DeleteComponentResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteComponentResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteLogPatternRequest extends js.Object {
     var PatternName: LogPatternName
     var PatternSetName: LogPatternSetName
     var ResourceGroupName: ResourceGroupName
   }
 
-  object DeleteLogPatternRequest {
-    @inline
-    def apply(
-        PatternName: LogPatternName,
-        PatternSetName: LogPatternSetName,
-        ResourceGroupName: ResourceGroupName
-    ): DeleteLogPatternRequest = {
-      val __obj = js.Dynamic.literal(
-        "PatternName"       -> PatternName.asInstanceOf[js.Any],
-        "PatternSetName"    -> PatternSetName.asInstanceOf[js.Any],
-        "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteLogPatternRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteLogPatternResponse extends js.Object {}
 
-  object DeleteLogPatternResponse {
-    @inline
-    def apply(
-    ): DeleteLogPatternResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteLogPatternResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeApplicationRequest extends js.Object {
     var ResourceGroupName: ResourceGroupName
   }
 
-  object DescribeApplicationRequest {
-    @inline
-    def apply(
-        ResourceGroupName: ResourceGroupName
-    ): DescribeApplicationRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeApplicationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeApplicationResponse extends js.Object {
     var ApplicationInfo: js.UndefOr[ApplicationInfo]
   }
 
-  object DescribeApplicationResponse {
-    @inline
-    def apply(
-        ApplicationInfo: js.UndefOr[ApplicationInfo] = js.undefined
-    ): DescribeApplicationResponse = {
-      val __obj = js.Dynamic.literal()
-      ApplicationInfo.foreach(__v => __obj.updateDynamic("ApplicationInfo")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeApplicationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeComponentConfigurationRecommendationRequest extends js.Object {
     var ComponentName: ComponentName
     var ResourceGroupName: ResourceGroupName
     var Tier: Tier
   }
 
-  object DescribeComponentConfigurationRecommendationRequest {
-    @inline
-    def apply(
-        ComponentName: ComponentName,
-        ResourceGroupName: ResourceGroupName,
-        Tier: Tier
-    ): DescribeComponentConfigurationRecommendationRequest = {
-      val __obj = js.Dynamic.literal(
-        "ComponentName"     -> ComponentName.asInstanceOf[js.Any],
-        "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any],
-        "Tier"              -> Tier.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeComponentConfigurationRecommendationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeComponentConfigurationRecommendationResponse extends js.Object {
     var ComponentConfiguration: js.UndefOr[ComponentConfiguration]
   }
 
-  object DescribeComponentConfigurationRecommendationResponse {
-    @inline
-    def apply(
-        ComponentConfiguration: js.UndefOr[ComponentConfiguration] = js.undefined
-    ): DescribeComponentConfigurationRecommendationResponse = {
-      val __obj = js.Dynamic.literal()
-      ComponentConfiguration.foreach(__v => __obj.updateDynamic("ComponentConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeComponentConfigurationRecommendationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeComponentConfigurationRequest extends js.Object {
     var ComponentName: ComponentName
     var ResourceGroupName: ResourceGroupName
   }
 
-  object DescribeComponentConfigurationRequest {
-    @inline
-    def apply(
-        ComponentName: ComponentName,
-        ResourceGroupName: ResourceGroupName
-    ): DescribeComponentConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "ComponentName"     -> ComponentName.asInstanceOf[js.Any],
-        "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeComponentConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeComponentConfigurationResponse extends js.Object {
     var ComponentConfiguration: js.UndefOr[ComponentConfiguration]
     var Monitor: js.UndefOr[Monitor]
     var Tier: js.UndefOr[Tier]
   }
 
-  object DescribeComponentConfigurationResponse {
-    @inline
-    def apply(
-        ComponentConfiguration: js.UndefOr[ComponentConfiguration] = js.undefined,
-        Monitor: js.UndefOr[Monitor] = js.undefined,
-        Tier: js.UndefOr[Tier] = js.undefined
-    ): DescribeComponentConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-      ComponentConfiguration.foreach(__v => __obj.updateDynamic("ComponentConfiguration")(__v.asInstanceOf[js.Any]))
-      Monitor.foreach(__v => __obj.updateDynamic("Monitor")(__v.asInstanceOf[js.Any]))
-      Tier.foreach(__v => __obj.updateDynamic("Tier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeComponentConfigurationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeComponentRequest extends js.Object {
     var ComponentName: ComponentName
     var ResourceGroupName: ResourceGroupName
   }
 
-  object DescribeComponentRequest {
-    @inline
-    def apply(
-        ComponentName: ComponentName,
-        ResourceGroupName: ResourceGroupName
-    ): DescribeComponentRequest = {
-      val __obj = js.Dynamic.literal(
-        "ComponentName"     -> ComponentName.asInstanceOf[js.Any],
-        "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeComponentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeComponentResponse extends js.Object {
     var ApplicationComponent: js.UndefOr[ApplicationComponent]
     var ResourceList: js.UndefOr[ResourceList]
   }
 
-  object DescribeComponentResponse {
-    @inline
-    def apply(
-        ApplicationComponent: js.UndefOr[ApplicationComponent] = js.undefined,
-        ResourceList: js.UndefOr[ResourceList] = js.undefined
-    ): DescribeComponentResponse = {
-      val __obj = js.Dynamic.literal()
-      ApplicationComponent.foreach(__v => __obj.updateDynamic("ApplicationComponent")(__v.asInstanceOf[js.Any]))
-      ResourceList.foreach(__v => __obj.updateDynamic("ResourceList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeComponentResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeLogPatternRequest extends js.Object {
     var PatternName: LogPatternName
     var PatternSetName: LogPatternSetName
     var ResourceGroupName: ResourceGroupName
   }
 
-  object DescribeLogPatternRequest {
-    @inline
-    def apply(
-        PatternName: LogPatternName,
-        PatternSetName: LogPatternSetName,
-        ResourceGroupName: ResourceGroupName
-    ): DescribeLogPatternRequest = {
-      val __obj = js.Dynamic.literal(
-        "PatternName"       -> PatternName.asInstanceOf[js.Any],
-        "PatternSetName"    -> PatternSetName.asInstanceOf[js.Any],
-        "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeLogPatternRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeLogPatternResponse extends js.Object {
     var LogPattern: js.UndefOr[LogPattern]
     var ResourceGroupName: js.UndefOr[ResourceGroupName]
   }
 
-  object DescribeLogPatternResponse {
-    @inline
-    def apply(
-        LogPattern: js.UndefOr[LogPattern] = js.undefined,
-        ResourceGroupName: js.UndefOr[ResourceGroupName] = js.undefined
-    ): DescribeLogPatternResponse = {
-      val __obj = js.Dynamic.literal()
-      LogPattern.foreach(__v => __obj.updateDynamic("LogPattern")(__v.asInstanceOf[js.Any]))
-      ResourceGroupName.foreach(__v => __obj.updateDynamic("ResourceGroupName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeLogPatternResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeObservationRequest extends js.Object {
     var ObservationId: ObservationId
   }
 
-  object DescribeObservationRequest {
-    @inline
-    def apply(
-        ObservationId: ObservationId
-    ): DescribeObservationRequest = {
-      val __obj = js.Dynamic.literal(
-        "ObservationId" -> ObservationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeObservationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeObservationResponse extends js.Object {
     var Observation: js.UndefOr[Observation]
   }
 
-  object DescribeObservationResponse {
-    @inline
-    def apply(
-        Observation: js.UndefOr[Observation] = js.undefined
-    ): DescribeObservationResponse = {
-      val __obj = js.Dynamic.literal()
-      Observation.foreach(__v => __obj.updateDynamic("Observation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeObservationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeProblemObservationsRequest extends js.Object {
     var ProblemId: ProblemId
   }
 
-  object DescribeProblemObservationsRequest {
-    @inline
-    def apply(
-        ProblemId: ProblemId
-    ): DescribeProblemObservationsRequest = {
-      val __obj = js.Dynamic.literal(
-        "ProblemId" -> ProblemId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeProblemObservationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeProblemObservationsResponse extends js.Object {
     var RelatedObservations: js.UndefOr[RelatedObservations]
   }
 
-  object DescribeProblemObservationsResponse {
-    @inline
-    def apply(
-        RelatedObservations: js.UndefOr[RelatedObservations] = js.undefined
-    ): DescribeProblemObservationsResponse = {
-      val __obj = js.Dynamic.literal()
-      RelatedObservations.foreach(__v => __obj.updateDynamic("RelatedObservations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeProblemObservationsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeProblemRequest extends js.Object {
     var ProblemId: ProblemId
   }
 
-  object DescribeProblemRequest {
-    @inline
-    def apply(
-        ProblemId: ProblemId
-    ): DescribeProblemRequest = {
-      val __obj = js.Dynamic.literal(
-        "ProblemId" -> ProblemId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeProblemRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeProblemResponse extends js.Object {
     var Problem: js.UndefOr[Problem]
-  }
-
-  object DescribeProblemResponse {
-    @inline
-    def apply(
-        Problem: js.UndefOr[Problem] = js.undefined
-    ): DescribeProblemResponse = {
-      val __obj = js.Dynamic.literal()
-      Problem.foreach(__v => __obj.updateDynamic("Problem")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeProblemResponse]
-    }
   }
 
   @js.native
@@ -835,87 +432,36 @@ package applicationinsights {
   }
 
   @js.native
+  @Factory
   trait ListApplicationsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxEntities]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListApplicationsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxEntities] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListApplicationsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListApplicationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListApplicationsResponse extends js.Object {
     var ApplicationInfoList: js.UndefOr[ApplicationInfoList]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListApplicationsResponse {
-    @inline
-    def apply(
-        ApplicationInfoList: js.UndefOr[ApplicationInfoList] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListApplicationsResponse = {
-      val __obj = js.Dynamic.literal()
-      ApplicationInfoList.foreach(__v => __obj.updateDynamic("ApplicationInfoList")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListApplicationsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListComponentsRequest extends js.Object {
     var ResourceGroupName: ResourceGroupName
     var MaxResults: js.UndefOr[MaxEntities]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListComponentsRequest {
-    @inline
-    def apply(
-        ResourceGroupName: ResourceGroupName,
-        MaxResults: js.UndefOr[MaxEntities] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListComponentsRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListComponentsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListComponentsResponse extends js.Object {
     var ApplicationComponentList: js.UndefOr[ApplicationComponentList]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListComponentsResponse {
-    @inline
-    def apply(
-        ApplicationComponentList: js.UndefOr[ApplicationComponentList] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListComponentsResponse = {
-      val __obj = js.Dynamic.literal()
-      ApplicationComponentList.foreach(__v => __obj.updateDynamic("ApplicationComponentList")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListComponentsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListConfigurationHistoryRequest extends js.Object {
     var EndTime: js.UndefOr[EndTime]
     var EventStatus: js.UndefOr[ConfigurationEventStatus]
@@ -925,93 +471,31 @@ package applicationinsights {
     var StartTime: js.UndefOr[StartTime]
   }
 
-  object ListConfigurationHistoryRequest {
-    @inline
-    def apply(
-        EndTime: js.UndefOr[EndTime] = js.undefined,
-        EventStatus: js.UndefOr[ConfigurationEventStatus] = js.undefined,
-        MaxResults: js.UndefOr[MaxEntities] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        ResourceGroupName: js.UndefOr[ResourceGroupName] = js.undefined,
-        StartTime: js.UndefOr[StartTime] = js.undefined
-    ): ListConfigurationHistoryRequest = {
-      val __obj = js.Dynamic.literal()
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      EventStatus.foreach(__v => __obj.updateDynamic("EventStatus")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ResourceGroupName.foreach(__v => __obj.updateDynamic("ResourceGroupName")(__v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListConfigurationHistoryRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListConfigurationHistoryResponse extends js.Object {
     var EventList: js.UndefOr[ConfigurationEventList]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListConfigurationHistoryResponse {
-    @inline
-    def apply(
-        EventList: js.UndefOr[ConfigurationEventList] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListConfigurationHistoryResponse = {
-      val __obj = js.Dynamic.literal()
-      EventList.foreach(__v => __obj.updateDynamic("EventList")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListConfigurationHistoryResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListLogPatternSetsRequest extends js.Object {
     var ResourceGroupName: ResourceGroupName
     var MaxResults: js.UndefOr[MaxEntities]
     var NextToken: js.UndefOr[PaginationToken]
   }
 
-  object ListLogPatternSetsRequest {
-    @inline
-    def apply(
-        ResourceGroupName: ResourceGroupName,
-        MaxResults: js.UndefOr[MaxEntities] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined
-    ): ListLogPatternSetsRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListLogPatternSetsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListLogPatternSetsResponse extends js.Object {
     var LogPatternSets: js.UndefOr[LogPatternSetList]
     var NextToken: js.UndefOr[PaginationToken]
     var ResourceGroupName: js.UndefOr[ResourceGroupName]
   }
 
-  object ListLogPatternSetsResponse {
-    @inline
-    def apply(
-        LogPatternSets: js.UndefOr[LogPatternSetList] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        ResourceGroupName: js.UndefOr[ResourceGroupName] = js.undefined
-    ): ListLogPatternSetsResponse = {
-      val __obj = js.Dynamic.literal()
-      LogPatternSets.foreach(__v => __obj.updateDynamic("LogPatternSets")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ResourceGroupName.foreach(__v => __obj.updateDynamic("ResourceGroupName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListLogPatternSetsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListLogPatternsRequest extends js.Object {
     var ResourceGroupName: ResourceGroupName
     var MaxResults: js.UndefOr[MaxEntities]
@@ -1019,48 +503,16 @@ package applicationinsights {
     var PatternSetName: js.UndefOr[LogPatternSetName]
   }
 
-  object ListLogPatternsRequest {
-    @inline
-    def apply(
-        ResourceGroupName: ResourceGroupName,
-        MaxResults: js.UndefOr[MaxEntities] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        PatternSetName: js.UndefOr[LogPatternSetName] = js.undefined
-    ): ListLogPatternsRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      PatternSetName.foreach(__v => __obj.updateDynamic("PatternSetName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListLogPatternsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListLogPatternsResponse extends js.Object {
     var LogPatterns: js.UndefOr[LogPatternList]
     var NextToken: js.UndefOr[PaginationToken]
     var ResourceGroupName: js.UndefOr[ResourceGroupName]
   }
 
-  object ListLogPatternsResponse {
-    @inline
-    def apply(
-        LogPatterns: js.UndefOr[LogPatternList] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        ResourceGroupName: js.UndefOr[ResourceGroupName] = js.undefined
-    ): ListLogPatternsResponse = {
-      val __obj = js.Dynamic.literal()
-      LogPatterns.foreach(__v => __obj.updateDynamic("LogPatterns")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ResourceGroupName.foreach(__v => __obj.updateDynamic("ResourceGroupName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListLogPatternsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListProblemsRequest extends js.Object {
     var EndTime: js.UndefOr[EndTime]
     var MaxResults: js.UndefOr[MaxEntities]
@@ -1069,76 +521,23 @@ package applicationinsights {
     var StartTime: js.UndefOr[StartTime]
   }
 
-  object ListProblemsRequest {
-    @inline
-    def apply(
-        EndTime: js.UndefOr[EndTime] = js.undefined,
-        MaxResults: js.UndefOr[MaxEntities] = js.undefined,
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        ResourceGroupName: js.UndefOr[ResourceGroupName] = js.undefined,
-        StartTime: js.UndefOr[StartTime] = js.undefined
-    ): ListProblemsRequest = {
-      val __obj = js.Dynamic.literal()
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ResourceGroupName.foreach(__v => __obj.updateDynamic("ResourceGroupName")(__v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListProblemsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListProblemsResponse extends js.Object {
     var NextToken: js.UndefOr[PaginationToken]
     var ProblemList: js.UndefOr[ProblemList]
   }
 
-  object ListProblemsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        ProblemList: js.UndefOr[ProblemList] = js.undefined
-    ): ListProblemsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ProblemList.foreach(__v => __obj.updateDynamic("ProblemList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListProblemsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceRequest extends js.Object {
     var ResourceARN: AmazonResourceName
   }
 
-  object ListTagsForResourceRequest {
-    @inline
-    def apply(
-        ResourceARN: AmazonResourceName
-    ): ListTagsForResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListTagsForResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceResponse extends js.Object {
     var Tags: js.UndefOr[TagList]
-  }
-
-  object ListTagsForResourceResponse {
-    @inline
-    def apply(
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): ListTagsForResourceResponse = {
-      val __obj = js.Dynamic.literal()
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceResponse]
-    }
   }
 
   @js.native
@@ -1155,6 +554,7 @@ package applicationinsights {
     * An object that defines the log patterns that belongs to a <code>LogPatternSet</code>.
     */
   @js.native
+  @Factory
   trait LogPattern extends js.Object {
     var Pattern: js.UndefOr[LogPatternRegex]
     var PatternName: js.UndefOr[LogPatternName]
@@ -1162,27 +562,11 @@ package applicationinsights {
     var Rank: js.UndefOr[LogPatternRank]
   }
 
-  object LogPattern {
-    @inline
-    def apply(
-        Pattern: js.UndefOr[LogPatternRegex] = js.undefined,
-        PatternName: js.UndefOr[LogPatternName] = js.undefined,
-        PatternSetName: js.UndefOr[LogPatternSetName] = js.undefined,
-        Rank: js.UndefOr[LogPatternRank] = js.undefined
-    ): LogPattern = {
-      val __obj = js.Dynamic.literal()
-      Pattern.foreach(__v => __obj.updateDynamic("Pattern")(__v.asInstanceOf[js.Any]))
-      PatternName.foreach(__v => __obj.updateDynamic("PatternName")(__v.asInstanceOf[js.Any]))
-      PatternSetName.foreach(__v => __obj.updateDynamic("PatternSetName")(__v.asInstanceOf[js.Any]))
-      Rank.foreach(__v => __obj.updateDynamic("Rank")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LogPattern]
-    }
-  }
-
   /**
     * Describes an anomaly or error with the application.
     */
   @js.native
+  @Factory
   trait Observation extends js.Object {
     var EndTime: js.UndefOr[EndTime]
     var Id: js.UndefOr[ObservationId]
@@ -1199,45 +583,11 @@ package applicationinsights {
     var Value: js.UndefOr[Value]
   }
 
-  object Observation {
-    @inline
-    def apply(
-        EndTime: js.UndefOr[EndTime] = js.undefined,
-        Id: js.UndefOr[ObservationId] = js.undefined,
-        LineTime: js.UndefOr[LineTime] = js.undefined,
-        LogFilter: js.UndefOr[LogFilter] = js.undefined,
-        LogGroup: js.UndefOr[LogGroup] = js.undefined,
-        LogText: js.UndefOr[LogText] = js.undefined,
-        MetricName: js.UndefOr[MetricName] = js.undefined,
-        MetricNamespace: js.UndefOr[MetricNamespace] = js.undefined,
-        SourceARN: js.UndefOr[SourceARN] = js.undefined,
-        SourceType: js.UndefOr[SourceType] = js.undefined,
-        StartTime: js.UndefOr[StartTime] = js.undefined,
-        Unit: js.UndefOr[Unit] = js.undefined,
-        Value: js.UndefOr[Value] = js.undefined
-    ): Observation = {
-      val __obj = js.Dynamic.literal()
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      LineTime.foreach(__v => __obj.updateDynamic("LineTime")(__v.asInstanceOf[js.Any]))
-      LogFilter.foreach(__v => __obj.updateDynamic("LogFilter")(__v.asInstanceOf[js.Any]))
-      LogGroup.foreach(__v => __obj.updateDynamic("LogGroup")(__v.asInstanceOf[js.Any]))
-      LogText.foreach(__v => __obj.updateDynamic("LogText")(__v.asInstanceOf[js.Any]))
-      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
-      MetricNamespace.foreach(__v => __obj.updateDynamic("MetricNamespace")(__v.asInstanceOf[js.Any]))
-      SourceARN.foreach(__v => __obj.updateDynamic("SourceARN")(__v.asInstanceOf[js.Any]))
-      SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
-      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Observation]
-    }
-  }
-
   /**
     * Describes a problem that is detected by correlating observations.
     */
   @js.native
+  @Factory
   trait Problem extends js.Object {
     var AffectedResource: js.UndefOr[AffectedResource]
     var EndTime: js.UndefOr[EndTime]
@@ -1251,52 +601,13 @@ package applicationinsights {
     var Title: js.UndefOr[Title]
   }
 
-  object Problem {
-    @inline
-    def apply(
-        AffectedResource: js.UndefOr[AffectedResource] = js.undefined,
-        EndTime: js.UndefOr[EndTime] = js.undefined,
-        Feedback: js.UndefOr[Feedback] = js.undefined,
-        Id: js.UndefOr[ProblemId] = js.undefined,
-        Insights: js.UndefOr[Insights] = js.undefined,
-        ResourceGroupName: js.UndefOr[ResourceGroupName] = js.undefined,
-        SeverityLevel: js.UndefOr[SeverityLevel] = js.undefined,
-        StartTime: js.UndefOr[StartTime] = js.undefined,
-        Status: js.UndefOr[Status] = js.undefined,
-        Title: js.UndefOr[Title] = js.undefined
-    ): Problem = {
-      val __obj = js.Dynamic.literal()
-      AffectedResource.foreach(__v => __obj.updateDynamic("AffectedResource")(__v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
-      Feedback.foreach(__v => __obj.updateDynamic("Feedback")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Insights.foreach(__v => __obj.updateDynamic("Insights")(__v.asInstanceOf[js.Any]))
-      ResourceGroupName.foreach(__v => __obj.updateDynamic("ResourceGroupName")(__v.asInstanceOf[js.Any]))
-      SeverityLevel.foreach(__v => __obj.updateDynamic("SeverityLevel")(__v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Problem]
-    }
-  }
-
   /**
     * Describes observations related to the problem.
     */
   @js.native
+  @Factory
   trait RelatedObservations extends js.Object {
     var ObservationList: js.UndefOr[ObservationList]
-  }
-
-  object RelatedObservations {
-    @inline
-    def apply(
-        ObservationList: js.UndefOr[ObservationList] = js.undefined
-    ): RelatedObservations = {
-      val __obj = js.Dynamic.literal()
-      ObservationList.foreach(__v => __obj.updateDynamic("ObservationList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RelatedObservations]
-    }
   }
 
   @js.native
@@ -1327,59 +638,22 @@ package applicationinsights {
     *  * The <code>aws:</code> prefix is reserved for use by AWS; you can’t use it in any tag keys or values that you define. In addition, you can't edit or remove tag keys or values that use this prefix.
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var Key: TagKey
     var Value: TagValue
   }
 
-  object Tag {
-    @inline
-    def apply(
-        Key: TagKey,
-        Value: TagValue
-    ): Tag = {
-      val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Tag]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceRequest extends js.Object {
     var ResourceARN: AmazonResourceName
     var Tags: TagList
   }
 
-  object TagResourceRequest {
-    @inline
-    def apply(
-        ResourceARN: AmazonResourceName,
-        Tags: TagList
-    ): TagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceResponse extends js.Object {}
-
-  object TagResourceResponse {
-    @inline
-    def apply(
-    ): TagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[TagResourceResponse]
-    }
-  }
 
   @js.native
   sealed trait Tier extends js.Any
@@ -1394,40 +668,18 @@ package applicationinsights {
   }
 
   @js.native
+  @Factory
   trait UntagResourceRequest extends js.Object {
     var ResourceARN: AmazonResourceName
     var TagKeys: TagKeyList
   }
 
-  object UntagResourceRequest {
-    @inline
-    def apply(
-        ResourceARN: AmazonResourceName,
-        TagKeys: TagKeyList
-    ): UntagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceResponse extends js.Object {}
 
-  object UntagResourceResponse {
-    @inline
-    def apply(
-    ): UntagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UntagResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateApplicationRequest extends js.Object {
     var ResourceGroupName: ResourceGroupName
     var OpsCenterEnabled: js.UndefOr[OpsCenterEnabled]
@@ -1435,42 +687,14 @@ package applicationinsights {
     var RemoveSNSTopic: js.UndefOr[RemoveSNSTopic]
   }
 
-  object UpdateApplicationRequest {
-    @inline
-    def apply(
-        ResourceGroupName: ResourceGroupName,
-        OpsCenterEnabled: js.UndefOr[OpsCenterEnabled] = js.undefined,
-        OpsItemSNSTopicArn: js.UndefOr[OpsItemSNSTopicArn] = js.undefined,
-        RemoveSNSTopic: js.UndefOr[RemoveSNSTopic] = js.undefined
-    ): UpdateApplicationRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
-      )
-
-      OpsCenterEnabled.foreach(__v => __obj.updateDynamic("OpsCenterEnabled")(__v.asInstanceOf[js.Any]))
-      OpsItemSNSTopicArn.foreach(__v => __obj.updateDynamic("OpsItemSNSTopicArn")(__v.asInstanceOf[js.Any]))
-      RemoveSNSTopic.foreach(__v => __obj.updateDynamic("RemoveSNSTopic")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateApplicationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateApplicationResponse extends js.Object {
     var ApplicationInfo: js.UndefOr[ApplicationInfo]
   }
 
-  object UpdateApplicationResponse {
-    @inline
-    def apply(
-        ApplicationInfo: js.UndefOr[ApplicationInfo] = js.undefined
-    ): UpdateApplicationResponse = {
-      val __obj = js.Dynamic.literal()
-      ApplicationInfo.foreach(__v => __obj.updateDynamic("ApplicationInfo")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateApplicationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateComponentConfigurationRequest extends js.Object {
     var ComponentName: ComponentName
     var ResourceGroupName: ResourceGroupName
@@ -1479,41 +703,12 @@ package applicationinsights {
     var Tier: js.UndefOr[Tier]
   }
 
-  object UpdateComponentConfigurationRequest {
-    @inline
-    def apply(
-        ComponentName: ComponentName,
-        ResourceGroupName: ResourceGroupName,
-        ComponentConfiguration: js.UndefOr[ComponentConfiguration] = js.undefined,
-        Monitor: js.UndefOr[Monitor] = js.undefined,
-        Tier: js.UndefOr[Tier] = js.undefined
-    ): UpdateComponentConfigurationRequest = {
-      val __obj = js.Dynamic.literal(
-        "ComponentName"     -> ComponentName.asInstanceOf[js.Any],
-        "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
-      )
-
-      ComponentConfiguration.foreach(__v => __obj.updateDynamic("ComponentConfiguration")(__v.asInstanceOf[js.Any]))
-      Monitor.foreach(__v => __obj.updateDynamic("Monitor")(__v.asInstanceOf[js.Any]))
-      Tier.foreach(__v => __obj.updateDynamic("Tier")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateComponentConfigurationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateComponentConfigurationResponse extends js.Object {}
 
-  object UpdateComponentConfigurationResponse {
-    @inline
-    def apply(
-    ): UpdateComponentConfigurationResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateComponentConfigurationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateComponentRequest extends js.Object {
     var ComponentName: ComponentName
     var ResourceGroupName: ResourceGroupName
@@ -1521,39 +716,12 @@ package applicationinsights {
     var ResourceList: js.UndefOr[ResourceList]
   }
 
-  object UpdateComponentRequest {
-    @inline
-    def apply(
-        ComponentName: ComponentName,
-        ResourceGroupName: ResourceGroupName,
-        NewComponentName: js.UndefOr[NewComponentName] = js.undefined,
-        ResourceList: js.UndefOr[ResourceList] = js.undefined
-    ): UpdateComponentRequest = {
-      val __obj = js.Dynamic.literal(
-        "ComponentName"     -> ComponentName.asInstanceOf[js.Any],
-        "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
-      )
-
-      NewComponentName.foreach(__v => __obj.updateDynamic("NewComponentName")(__v.asInstanceOf[js.Any]))
-      ResourceList.foreach(__v => __obj.updateDynamic("ResourceList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateComponentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateComponentResponse extends js.Object {}
 
-  object UpdateComponentResponse {
-    @inline
-    def apply(
-    ): UpdateComponentResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateComponentResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateLogPatternRequest extends js.Object {
     var PatternName: LogPatternName
     var PatternSetName: LogPatternSetName
@@ -1562,43 +730,10 @@ package applicationinsights {
     var Rank: js.UndefOr[LogPatternRank]
   }
 
-  object UpdateLogPatternRequest {
-    @inline
-    def apply(
-        PatternName: LogPatternName,
-        PatternSetName: LogPatternSetName,
-        ResourceGroupName: ResourceGroupName,
-        Pattern: js.UndefOr[LogPatternRegex] = js.undefined,
-        Rank: js.UndefOr[LogPatternRank] = js.undefined
-    ): UpdateLogPatternRequest = {
-      val __obj = js.Dynamic.literal(
-        "PatternName"       -> PatternName.asInstanceOf[js.Any],
-        "PatternSetName"    -> PatternSetName.asInstanceOf[js.Any],
-        "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
-      )
-
-      Pattern.foreach(__v => __obj.updateDynamic("Pattern")(__v.asInstanceOf[js.Any]))
-      Rank.foreach(__v => __obj.updateDynamic("Rank")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateLogPatternRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateLogPatternResponse extends js.Object {
     var LogPattern: js.UndefOr[LogPattern]
     var ResourceGroupName: js.UndefOr[ResourceGroupName]
-  }
-
-  object UpdateLogPatternResponse {
-    @inline
-    def apply(
-        LogPattern: js.UndefOr[LogPattern] = js.undefined,
-        ResourceGroupName: js.UndefOr[ResourceGroupName] = js.undefined
-    ): UpdateLogPatternResponse = {
-      val __obj = js.Dynamic.literal()
-      LogPattern.foreach(__v => __obj.updateDynamic("LogPattern")(__v.asInstanceOf[js.Any]))
-      ResourceGroupName.foreach(__v => __obj.updateDynamic("ResourceGroupName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateLogPatternResponse]
-    }
   }
 }

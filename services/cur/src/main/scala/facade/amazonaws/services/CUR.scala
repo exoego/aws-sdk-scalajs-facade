@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object cur {
   type AdditionalArtifactList = js.Array[AdditionalArtifact]
@@ -115,159 +116,72 @@ package cur {
     * Deletes the specified report.
     */
   @js.native
+  @Factory
   trait DeleteReportDefinitionRequest extends js.Object {
     var ReportName: js.UndefOr[ReportName]
-  }
-
-  object DeleteReportDefinitionRequest {
-    @inline
-    def apply(
-        ReportName: js.UndefOr[ReportName] = js.undefined
-    ): DeleteReportDefinitionRequest = {
-      val __obj = js.Dynamic.literal()
-      ReportName.foreach(__v => __obj.updateDynamic("ReportName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteReportDefinitionRequest]
-    }
   }
 
   /**
     * If the action is successful, the service sends back an HTTP 200 response.
     */
   @js.native
+  @Factory
   trait DeleteReportDefinitionResponse extends js.Object {
     var ResponseMessage: js.UndefOr[DeleteResponseMessage]
-  }
-
-  object DeleteReportDefinitionResponse {
-    @inline
-    def apply(
-        ResponseMessage: js.UndefOr[DeleteResponseMessage] = js.undefined
-    ): DeleteReportDefinitionResponse = {
-      val __obj = js.Dynamic.literal()
-      ResponseMessage.foreach(__v => __obj.updateDynamic("ResponseMessage")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteReportDefinitionResponse]
-    }
   }
 
   /**
     * Requests a list of AWS Cost and Usage reports owned by the account.
     */
   @js.native
+  @Factory
   trait DescribeReportDefinitionsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[GenericString]
-  }
-
-  object DescribeReportDefinitionsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[GenericString] = js.undefined
-    ): DescribeReportDefinitionsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeReportDefinitionsRequest]
-    }
   }
 
   /**
     * If the action is successful, the service sends back an HTTP 200 response.
     */
   @js.native
+  @Factory
   trait DescribeReportDefinitionsResponse extends js.Object {
     var NextToken: js.UndefOr[GenericString]
     var ReportDefinitions: js.UndefOr[ReportDefinitionList]
   }
 
-  object DescribeReportDefinitionsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[GenericString] = js.undefined,
-        ReportDefinitions: js.UndefOr[ReportDefinitionList] = js.undefined
-    ): DescribeReportDefinitionsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ReportDefinitions.foreach(__v => __obj.updateDynamic("ReportDefinitions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeReportDefinitionsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ModifyReportDefinitionRequest extends js.Object {
     var ReportDefinition: ReportDefinition
     var ReportName: ReportName
   }
 
-  object ModifyReportDefinitionRequest {
-    @inline
-    def apply(
-        ReportDefinition: ReportDefinition,
-        ReportName: ReportName
-    ): ModifyReportDefinitionRequest = {
-      val __obj = js.Dynamic.literal(
-        "ReportDefinition" -> ReportDefinition.asInstanceOf[js.Any],
-        "ReportName"       -> ReportName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ModifyReportDefinitionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ModifyReportDefinitionResponse extends js.Object {}
-
-  object ModifyReportDefinitionResponse {
-    @inline
-    def apply(
-    ): ModifyReportDefinitionResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[ModifyReportDefinitionResponse]
-    }
-  }
 
   /**
     * Creates a Cost and Usage Report.
     */
   @js.native
+  @Factory
   trait PutReportDefinitionRequest extends js.Object {
     var ReportDefinition: ReportDefinition
-  }
-
-  object PutReportDefinitionRequest {
-    @inline
-    def apply(
-        ReportDefinition: ReportDefinition
-    ): PutReportDefinitionRequest = {
-      val __obj = js.Dynamic.literal(
-        "ReportDefinition" -> ReportDefinition.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutReportDefinitionRequest]
-    }
   }
 
   /**
     * If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
     */
   @js.native
+  @Factory
   trait PutReportDefinitionResponse extends js.Object {}
-
-  object PutReportDefinitionResponse {
-    @inline
-    def apply(
-    ): PutReportDefinitionResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutReportDefinitionResponse]
-    }
-  }
 
   /**
     * The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition.
     */
   @js.native
+  @Factory
   trait ReportDefinition extends js.Object {
     var AdditionalSchemaElements: SchemaElementList
     var Compression: CompressionFormat
@@ -280,39 +194,6 @@ package cur {
     var AdditionalArtifacts: js.UndefOr[AdditionalArtifactList]
     var RefreshClosedReports: js.UndefOr[RefreshClosedReports]
     var ReportVersioning: js.UndefOr[ReportVersioning]
-  }
-
-  object ReportDefinition {
-    @inline
-    def apply(
-        AdditionalSchemaElements: SchemaElementList,
-        Compression: CompressionFormat,
-        Format: ReportFormat,
-        ReportName: ReportName,
-        S3Bucket: S3Bucket,
-        S3Prefix: S3Prefix,
-        S3Region: AWSRegion,
-        TimeUnit: TimeUnit,
-        AdditionalArtifacts: js.UndefOr[AdditionalArtifactList] = js.undefined,
-        RefreshClosedReports: js.UndefOr[RefreshClosedReports] = js.undefined,
-        ReportVersioning: js.UndefOr[ReportVersioning] = js.undefined
-    ): ReportDefinition = {
-      val __obj = js.Dynamic.literal(
-        "AdditionalSchemaElements" -> AdditionalSchemaElements.asInstanceOf[js.Any],
-        "Compression"              -> Compression.asInstanceOf[js.Any],
-        "Format"                   -> Format.asInstanceOf[js.Any],
-        "ReportName"               -> ReportName.asInstanceOf[js.Any],
-        "S3Bucket"                 -> S3Bucket.asInstanceOf[js.Any],
-        "S3Prefix"                 -> S3Prefix.asInstanceOf[js.Any],
-        "S3Region"                 -> S3Region.asInstanceOf[js.Any],
-        "TimeUnit"                 -> TimeUnit.asInstanceOf[js.Any]
-      )
-
-      AdditionalArtifacts.foreach(__v => __obj.updateDynamic("AdditionalArtifacts")(__v.asInstanceOf[js.Any]))
-      RefreshClosedReports.foreach(__v => __obj.updateDynamic("RefreshClosedReports")(__v.asInstanceOf[js.Any]))
-      ReportVersioning.foreach(__v => __obj.updateDynamic("ReportVersioning")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ReportDefinition]
-    }
   }
 
   /**

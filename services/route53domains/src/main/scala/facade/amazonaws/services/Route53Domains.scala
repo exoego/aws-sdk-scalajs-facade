@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object route53domains {
   type AddressLine           = String
@@ -166,6 +167,7 @@ package route53domains {
     * Information for one billing record.
     */
   @js.native
+  @Factory
   trait BillingRecord extends js.Object {
     var BillDate: js.UndefOr[Timestamp]
     var DomainName: js.UndefOr[DomainName]
@@ -174,119 +176,49 @@ package route53domains {
     var Price: js.UndefOr[Price]
   }
 
-  object BillingRecord {
-    @inline
-    def apply(
-        BillDate: js.UndefOr[Timestamp] = js.undefined,
-        DomainName: js.UndefOr[DomainName] = js.undefined,
-        InvoiceId: js.UndefOr[InvoiceId] = js.undefined,
-        Operation: js.UndefOr[OperationType] = js.undefined,
-        Price: js.UndefOr[Price] = js.undefined
-    ): BillingRecord = {
-      val __obj = js.Dynamic.literal()
-      BillDate.foreach(__v => __obj.updateDynamic("BillDate")(__v.asInstanceOf[js.Any]))
-      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
-      InvoiceId.foreach(__v => __obj.updateDynamic("InvoiceId")(__v.asInstanceOf[js.Any]))
-      Operation.foreach(__v => __obj.updateDynamic("Operation")(__v.asInstanceOf[js.Any]))
-      Price.foreach(__v => __obj.updateDynamic("Price")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BillingRecord]
-    }
-  }
-
   /**
     * The CheckDomainAvailability request contains the following elements.
     */
   @js.native
+  @Factory
   trait CheckDomainAvailabilityRequest extends js.Object {
     var DomainName: DomainName
     var IdnLangCode: js.UndefOr[LangCode]
-  }
-
-  object CheckDomainAvailabilityRequest {
-    @inline
-    def apply(
-        DomainName: DomainName,
-        IdnLangCode: js.UndefOr[LangCode] = js.undefined
-    ): CheckDomainAvailabilityRequest = {
-      val __obj = js.Dynamic.literal(
-        "DomainName" -> DomainName.asInstanceOf[js.Any]
-      )
-
-      IdnLangCode.foreach(__v => __obj.updateDynamic("IdnLangCode")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CheckDomainAvailabilityRequest]
-    }
   }
 
   /**
     * The CheckDomainAvailability response includes the following elements.
     */
   @js.native
+  @Factory
   trait CheckDomainAvailabilityResponse extends js.Object {
     var Availability: DomainAvailability
-  }
-
-  object CheckDomainAvailabilityResponse {
-    @inline
-    def apply(
-        Availability: DomainAvailability
-    ): CheckDomainAvailabilityResponse = {
-      val __obj = js.Dynamic.literal(
-        "Availability" -> Availability.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CheckDomainAvailabilityResponse]
-    }
   }
 
   /**
     * The CheckDomainTransferability request contains the following elements.
     */
   @js.native
+  @Factory
   trait CheckDomainTransferabilityRequest extends js.Object {
     var DomainName: DomainName
     var AuthCode: js.UndefOr[DomainAuthCode]
-  }
-
-  object CheckDomainTransferabilityRequest {
-    @inline
-    def apply(
-        DomainName: DomainName,
-        AuthCode: js.UndefOr[DomainAuthCode] = js.undefined
-    ): CheckDomainTransferabilityRequest = {
-      val __obj = js.Dynamic.literal(
-        "DomainName" -> DomainName.asInstanceOf[js.Any]
-      )
-
-      AuthCode.foreach(__v => __obj.updateDynamic("AuthCode")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CheckDomainTransferabilityRequest]
-    }
   }
 
   /**
     * The CheckDomainTransferability response includes the following elements.
     */
   @js.native
+  @Factory
   trait CheckDomainTransferabilityResponse extends js.Object {
     var Transferability: DomainTransferability
-  }
-
-  object CheckDomainTransferabilityResponse {
-    @inline
-    def apply(
-        Transferability: DomainTransferability
-    ): CheckDomainTransferabilityResponse = {
-      val __obj = js.Dynamic.literal(
-        "Transferability" -> Transferability.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CheckDomainTransferabilityResponse]
-    }
   }
 
   /**
     * ContactDetail includes the following elements.
     */
   @js.native
+  @Factory
   trait ContactDetail extends js.Object {
     var AddressLine1: js.UndefOr[AddressLine]
     var AddressLine2: js.UndefOr[AddressLine]
@@ -302,43 +234,6 @@ package route53domains {
     var PhoneNumber: js.UndefOr[ContactNumber]
     var State: js.UndefOr[State]
     var ZipCode: js.UndefOr[ZipCode]
-  }
-
-  object ContactDetail {
-    @inline
-    def apply(
-        AddressLine1: js.UndefOr[AddressLine] = js.undefined,
-        AddressLine2: js.UndefOr[AddressLine] = js.undefined,
-        City: js.UndefOr[City] = js.undefined,
-        ContactType: js.UndefOr[ContactType] = js.undefined,
-        CountryCode: js.UndefOr[CountryCode] = js.undefined,
-        Email: js.UndefOr[Email] = js.undefined,
-        ExtraParams: js.UndefOr[ExtraParamList] = js.undefined,
-        Fax: js.UndefOr[ContactNumber] = js.undefined,
-        FirstName: js.UndefOr[ContactName] = js.undefined,
-        LastName: js.UndefOr[ContactName] = js.undefined,
-        OrganizationName: js.UndefOr[ContactName] = js.undefined,
-        PhoneNumber: js.UndefOr[ContactNumber] = js.undefined,
-        State: js.UndefOr[State] = js.undefined,
-        ZipCode: js.UndefOr[ZipCode] = js.undefined
-    ): ContactDetail = {
-      val __obj = js.Dynamic.literal()
-      AddressLine1.foreach(__v => __obj.updateDynamic("AddressLine1")(__v.asInstanceOf[js.Any]))
-      AddressLine2.foreach(__v => __obj.updateDynamic("AddressLine2")(__v.asInstanceOf[js.Any]))
-      City.foreach(__v => __obj.updateDynamic("City")(__v.asInstanceOf[js.Any]))
-      ContactType.foreach(__v => __obj.updateDynamic("ContactType")(__v.asInstanceOf[js.Any]))
-      CountryCode.foreach(__v => __obj.updateDynamic("CountryCode")(__v.asInstanceOf[js.Any]))
-      Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
-      ExtraParams.foreach(__v => __obj.updateDynamic("ExtraParams")(__v.asInstanceOf[js.Any]))
-      Fax.foreach(__v => __obj.updateDynamic("Fax")(__v.asInstanceOf[js.Any]))
-      FirstName.foreach(__v => __obj.updateDynamic("FirstName")(__v.asInstanceOf[js.Any]))
-      LastName.foreach(__v => __obj.updateDynamic("LastName")(__v.asInstanceOf[js.Any]))
-      OrganizationName.foreach(__v => __obj.updateDynamic("OrganizationName")(__v.asInstanceOf[js.Any]))
-      PhoneNumber.foreach(__v => __obj.updateDynamic("PhoneNumber")(__v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
-      ZipCode.foreach(__v => __obj.updateDynamic("ZipCode")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ContactDetail]
-    }
   }
 
   @js.native
@@ -825,110 +720,42 @@ package route53domains {
     * The DeleteTagsForDomainRequest includes the following elements.
     */
   @js.native
+  @Factory
   trait DeleteTagsForDomainRequest extends js.Object {
     var DomainName: DomainName
     var TagsToDelete: TagKeyList
   }
 
-  object DeleteTagsForDomainRequest {
-    @inline
-    def apply(
-        DomainName: DomainName,
-        TagsToDelete: TagKeyList
-    ): DeleteTagsForDomainRequest = {
-      val __obj = js.Dynamic.literal(
-        "DomainName"   -> DomainName.asInstanceOf[js.Any],
-        "TagsToDelete" -> TagsToDelete.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteTagsForDomainRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteTagsForDomainResponse extends js.Object {}
 
-  object DeleteTagsForDomainResponse {
-    @inline
-    def apply(
-    ): DeleteTagsForDomainResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteTagsForDomainResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisableDomainAutoRenewRequest extends js.Object {
     var DomainName: DomainName
   }
 
-  object DisableDomainAutoRenewRequest {
-    @inline
-    def apply(
-        DomainName: DomainName
-    ): DisableDomainAutoRenewRequest = {
-      val __obj = js.Dynamic.literal(
-        "DomainName" -> DomainName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisableDomainAutoRenewRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisableDomainAutoRenewResponse extends js.Object {}
-
-  object DisableDomainAutoRenewResponse {
-    @inline
-    def apply(
-    ): DisableDomainAutoRenewResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DisableDomainAutoRenewResponse]
-    }
-  }
 
   /**
     * The DisableDomainTransferLock request includes the following element.
     */
   @js.native
+  @Factory
   trait DisableDomainTransferLockRequest extends js.Object {
     var DomainName: DomainName
-  }
-
-  object DisableDomainTransferLockRequest {
-    @inline
-    def apply(
-        DomainName: DomainName
-    ): DisableDomainTransferLockRequest = {
-      val __obj = js.Dynamic.literal(
-        "DomainName" -> DomainName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisableDomainTransferLockRequest]
-    }
   }
 
   /**
     * The DisableDomainTransferLock response includes the following element.
     */
   @js.native
+  @Factory
   trait DisableDomainTransferLockResponse extends js.Object {
     var OperationId: OperationId
-  }
-
-  object DisableDomainTransferLockResponse {
-    @inline
-    def apply(
-        OperationId: OperationId
-    ): DisableDomainTransferLockResponse = {
-      val __obj = js.Dynamic.literal(
-        "OperationId" -> OperationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisableDomainTransferLockResponse]
-    }
   }
 
   @js.native
@@ -969,28 +796,17 @@ package route53domains {
     * Information about one suggested domain name.
     */
   @js.native
+  @Factory
   trait DomainSuggestion extends js.Object {
     var Availability: js.UndefOr[String]
     var DomainName: js.UndefOr[DomainName]
-  }
-
-  object DomainSuggestion {
-    @inline
-    def apply(
-        Availability: js.UndefOr[String] = js.undefined,
-        DomainName: js.UndefOr[DomainName] = js.undefined
-    ): DomainSuggestion = {
-      val __obj = js.Dynamic.literal()
-      Availability.foreach(__v => __obj.updateDynamic("Availability")(__v.asInstanceOf[js.Any]))
-      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DomainSuggestion]
-    }
   }
 
   /**
     * Summary information about one domain.
     */
   @js.native
+  @Factory
   trait DomainSummary extends js.Object {
     var DomainName: DomainName
     var AutoRenew: js.UndefOr[Boolean]
@@ -998,42 +814,13 @@ package route53domains {
     var TransferLock: js.UndefOr[Boolean]
   }
 
-  object DomainSummary {
-    @inline
-    def apply(
-        DomainName: DomainName,
-        AutoRenew: js.UndefOr[Boolean] = js.undefined,
-        Expiry: js.UndefOr[Timestamp] = js.undefined,
-        TransferLock: js.UndefOr[Boolean] = js.undefined
-    ): DomainSummary = {
-      val __obj = js.Dynamic.literal(
-        "DomainName" -> DomainName.asInstanceOf[js.Any]
-      )
-
-      AutoRenew.foreach(__v => __obj.updateDynamic("AutoRenew")(__v.asInstanceOf[js.Any]))
-      Expiry.foreach(__v => __obj.updateDynamic("Expiry")(__v.asInstanceOf[js.Any]))
-      TransferLock.foreach(__v => __obj.updateDynamic("TransferLock")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DomainSummary]
-    }
-  }
-
   /**
     * A complex type that contains information about whether the specified domain can be transferred to Amazon Route 53.
     */
   @js.native
+  @Factory
   trait DomainTransferability extends js.Object {
     var Transferable: js.UndefOr[Transferable]
-  }
-
-  object DomainTransferability {
-    @inline
-    def apply(
-        Transferable: js.UndefOr[Transferable] = js.undefined
-    ): DomainTransferability = {
-      val __obj = js.Dynamic.literal()
-      Transferable.foreach(__v => __obj.updateDynamic("Transferable")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DomainTransferability]
-    }
   }
 
   /**
@@ -1045,100 +832,41 @@ package route53domains {
   }
 
   @js.native
+  @Factory
   trait EnableDomainAutoRenewRequest extends js.Object {
     var DomainName: DomainName
   }
 
-  object EnableDomainAutoRenewRequest {
-    @inline
-    def apply(
-        DomainName: DomainName
-    ): EnableDomainAutoRenewRequest = {
-      val __obj = js.Dynamic.literal(
-        "DomainName" -> DomainName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[EnableDomainAutoRenewRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait EnableDomainAutoRenewResponse extends js.Object {}
-
-  object EnableDomainAutoRenewResponse {
-    @inline
-    def apply(
-    ): EnableDomainAutoRenewResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[EnableDomainAutoRenewResponse]
-    }
-  }
 
   /**
     * A request to set the transfer lock for the specified domain.
     */
   @js.native
+  @Factory
   trait EnableDomainTransferLockRequest extends js.Object {
     var DomainName: DomainName
-  }
-
-  object EnableDomainTransferLockRequest {
-    @inline
-    def apply(
-        DomainName: DomainName
-    ): EnableDomainTransferLockRequest = {
-      val __obj = js.Dynamic.literal(
-        "DomainName" -> DomainName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[EnableDomainTransferLockRequest]
-    }
   }
 
   /**
     * The EnableDomainTransferLock response includes the following elements.
     */
   @js.native
+  @Factory
   trait EnableDomainTransferLockResponse extends js.Object {
     var OperationId: OperationId
-  }
-
-  object EnableDomainTransferLockResponse {
-    @inline
-    def apply(
-        OperationId: OperationId
-    ): EnableDomainTransferLockResponse = {
-      val __obj = js.Dynamic.literal(
-        "OperationId" -> OperationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[EnableDomainTransferLockResponse]
-    }
   }
 
   /**
     * ExtraParam includes the following elements.
     */
   @js.native
+  @Factory
   trait ExtraParam extends js.Object {
     var Name: ExtraParamName
     var Value: ExtraParamValue
-  }
-
-  object ExtraParam {
-    @inline
-    def apply(
-        Name: ExtraParamName,
-        Value: ExtraParamValue
-    ): ExtraParam = {
-      val __obj = js.Dynamic.literal(
-        "Name"  -> Name.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ExtraParam]
-    }
   }
 
   @js.native
@@ -1204,65 +932,32 @@ package route53domains {
   }
 
   @js.native
+  @Factory
   trait GetContactReachabilityStatusRequest extends js.Object {
     var domainName: js.UndefOr[DomainName]
   }
 
-  object GetContactReachabilityStatusRequest {
-    @inline
-    def apply(
-        domainName: js.UndefOr[DomainName] = js.undefined
-    ): GetContactReachabilityStatusRequest = {
-      val __obj = js.Dynamic.literal()
-      domainName.foreach(__v => __obj.updateDynamic("domainName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetContactReachabilityStatusRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetContactReachabilityStatusResponse extends js.Object {
     var domainName: js.UndefOr[DomainName]
     var status: js.UndefOr[ReachabilityStatus]
-  }
-
-  object GetContactReachabilityStatusResponse {
-    @inline
-    def apply(
-        domainName: js.UndefOr[DomainName] = js.undefined,
-        status: js.UndefOr[ReachabilityStatus] = js.undefined
-    ): GetContactReachabilityStatusResponse = {
-      val __obj = js.Dynamic.literal()
-      domainName.foreach(__v => __obj.updateDynamic("domainName")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetContactReachabilityStatusResponse]
-    }
   }
 
   /**
     * The GetDomainDetail request includes the following element.
     */
   @js.native
+  @Factory
   trait GetDomainDetailRequest extends js.Object {
     var DomainName: DomainName
-  }
-
-  object GetDomainDetailRequest {
-    @inline
-    def apply(
-        DomainName: DomainName
-    ): GetDomainDetailRequest = {
-      val __obj = js.Dynamic.literal(
-        "DomainName" -> DomainName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetDomainDetailRequest]
-    }
   }
 
   /**
     * The GetDomainDetail response includes the following elements.
     */
   @js.native
+  @Factory
   trait GetDomainDetailResponse extends js.Object {
     var AdminContact: ContactDetail
     var DomainName: DomainName
@@ -1287,124 +982,34 @@ package route53domains {
     var WhoIsServer: js.UndefOr[RegistrarWhoIsServer]
   }
 
-  object GetDomainDetailResponse {
-    @inline
-    def apply(
-        AdminContact: ContactDetail,
-        DomainName: DomainName,
-        Nameservers: NameserverList,
-        RegistrantContact: ContactDetail,
-        TechContact: ContactDetail,
-        AbuseContactEmail: js.UndefOr[Email] = js.undefined,
-        AbuseContactPhone: js.UndefOr[ContactNumber] = js.undefined,
-        AdminPrivacy: js.UndefOr[Boolean] = js.undefined,
-        AutoRenew: js.UndefOr[Boolean] = js.undefined,
-        CreationDate: js.UndefOr[Timestamp] = js.undefined,
-        DnsSec: js.UndefOr[DNSSec] = js.undefined,
-        ExpirationDate: js.UndefOr[Timestamp] = js.undefined,
-        RegistrantPrivacy: js.UndefOr[Boolean] = js.undefined,
-        RegistrarName: js.UndefOr[RegistrarName] = js.undefined,
-        RegistrarUrl: js.UndefOr[RegistrarUrl] = js.undefined,
-        RegistryDomainId: js.UndefOr[RegistryDomainId] = js.undefined,
-        Reseller: js.UndefOr[Reseller] = js.undefined,
-        StatusList: js.UndefOr[DomainStatusList] = js.undefined,
-        TechPrivacy: js.UndefOr[Boolean] = js.undefined,
-        UpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-        WhoIsServer: js.UndefOr[RegistrarWhoIsServer] = js.undefined
-    ): GetDomainDetailResponse = {
-      val __obj = js.Dynamic.literal(
-        "AdminContact"      -> AdminContact.asInstanceOf[js.Any],
-        "DomainName"        -> DomainName.asInstanceOf[js.Any],
-        "Nameservers"       -> Nameservers.asInstanceOf[js.Any],
-        "RegistrantContact" -> RegistrantContact.asInstanceOf[js.Any],
-        "TechContact"       -> TechContact.asInstanceOf[js.Any]
-      )
-
-      AbuseContactEmail.foreach(__v => __obj.updateDynamic("AbuseContactEmail")(__v.asInstanceOf[js.Any]))
-      AbuseContactPhone.foreach(__v => __obj.updateDynamic("AbuseContactPhone")(__v.asInstanceOf[js.Any]))
-      AdminPrivacy.foreach(__v => __obj.updateDynamic("AdminPrivacy")(__v.asInstanceOf[js.Any]))
-      AutoRenew.foreach(__v => __obj.updateDynamic("AutoRenew")(__v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
-      DnsSec.foreach(__v => __obj.updateDynamic("DnsSec")(__v.asInstanceOf[js.Any]))
-      ExpirationDate.foreach(__v => __obj.updateDynamic("ExpirationDate")(__v.asInstanceOf[js.Any]))
-      RegistrantPrivacy.foreach(__v => __obj.updateDynamic("RegistrantPrivacy")(__v.asInstanceOf[js.Any]))
-      RegistrarName.foreach(__v => __obj.updateDynamic("RegistrarName")(__v.asInstanceOf[js.Any]))
-      RegistrarUrl.foreach(__v => __obj.updateDynamic("RegistrarUrl")(__v.asInstanceOf[js.Any]))
-      RegistryDomainId.foreach(__v => __obj.updateDynamic("RegistryDomainId")(__v.asInstanceOf[js.Any]))
-      Reseller.foreach(__v => __obj.updateDynamic("Reseller")(__v.asInstanceOf[js.Any]))
-      StatusList.foreach(__v => __obj.updateDynamic("StatusList")(__v.asInstanceOf[js.Any]))
-      TechPrivacy.foreach(__v => __obj.updateDynamic("TechPrivacy")(__v.asInstanceOf[js.Any]))
-      UpdatedDate.foreach(__v => __obj.updateDynamic("UpdatedDate")(__v.asInstanceOf[js.Any]))
-      WhoIsServer.foreach(__v => __obj.updateDynamic("WhoIsServer")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDomainDetailResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDomainSuggestionsRequest extends js.Object {
     var DomainName: DomainName
     var OnlyAvailable: Boolean
     var SuggestionCount: Int
   }
 
-  object GetDomainSuggestionsRequest {
-    @inline
-    def apply(
-        DomainName: DomainName,
-        OnlyAvailable: Boolean,
-        SuggestionCount: Int
-    ): GetDomainSuggestionsRequest = {
-      val __obj = js.Dynamic.literal(
-        "DomainName"      -> DomainName.asInstanceOf[js.Any],
-        "OnlyAvailable"   -> OnlyAvailable.asInstanceOf[js.Any],
-        "SuggestionCount" -> SuggestionCount.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetDomainSuggestionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDomainSuggestionsResponse extends js.Object {
     var SuggestionsList: js.UndefOr[DomainSuggestionsList]
-  }
-
-  object GetDomainSuggestionsResponse {
-    @inline
-    def apply(
-        SuggestionsList: js.UndefOr[DomainSuggestionsList] = js.undefined
-    ): GetDomainSuggestionsResponse = {
-      val __obj = js.Dynamic.literal()
-      SuggestionsList.foreach(__v => __obj.updateDynamic("SuggestionsList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDomainSuggestionsResponse]
-    }
   }
 
   /**
     * The <a>GetOperationDetail</a> request includes the following element.
     */
   @js.native
+  @Factory
   trait GetOperationDetailRequest extends js.Object {
     var OperationId: OperationId
-  }
-
-  object GetOperationDetailRequest {
-    @inline
-    def apply(
-        OperationId: OperationId
-    ): GetOperationDetailRequest = {
-      val __obj = js.Dynamic.literal(
-        "OperationId" -> OperationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetOperationDetailRequest]
-    }
   }
 
   /**
     * The GetOperationDetail response includes the following elements.
     */
   @js.native
+  @Factory
   trait GetOperationDetailResponse extends js.Object {
     var DomainName: js.UndefOr[DomainName]
     var Message: js.UndefOr[ErrorMessage]
@@ -1412,27 +1017,6 @@ package route53domains {
     var Status: js.UndefOr[OperationStatus]
     var SubmittedDate: js.UndefOr[Timestamp]
     var Type: js.UndefOr[OperationType]
-  }
-
-  object GetOperationDetailResponse {
-    @inline
-    def apply(
-        DomainName: js.UndefOr[DomainName] = js.undefined,
-        Message: js.UndefOr[ErrorMessage] = js.undefined,
-        OperationId: js.UndefOr[OperationId] = js.undefined,
-        Status: js.UndefOr[OperationStatus] = js.undefined,
-        SubmittedDate: js.UndefOr[Timestamp] = js.undefined,
-        Type: js.UndefOr[OperationType] = js.undefined
-    ): GetOperationDetailResponse = {
-      val __obj = js.Dynamic.literal()
-      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      SubmittedDate.foreach(__v => __obj.updateDynamic("SubmittedDate")(__v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetOperationDetailResponse]
-    }
   }
 
   /**
@@ -1447,161 +1031,69 @@ package route53domains {
     * The ListDomains request includes the following elements.
     */
   @js.native
+  @Factory
   trait ListDomainsRequest extends js.Object {
     var Marker: js.UndefOr[PageMarker]
     var MaxItems: js.UndefOr[PageMaxItems]
-  }
-
-  object ListDomainsRequest {
-    @inline
-    def apply(
-        Marker: js.UndefOr[PageMarker] = js.undefined,
-        MaxItems: js.UndefOr[PageMaxItems] = js.undefined
-    ): ListDomainsRequest = {
-      val __obj = js.Dynamic.literal()
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDomainsRequest]
-    }
   }
 
   /**
     * The ListDomains response includes the following elements.
     */
   @js.native
+  @Factory
   trait ListDomainsResponse extends js.Object {
     var Domains: DomainSummaryList
     var NextPageMarker: js.UndefOr[PageMarker]
-  }
-
-  object ListDomainsResponse {
-    @inline
-    def apply(
-        Domains: DomainSummaryList,
-        NextPageMarker: js.UndefOr[PageMarker] = js.undefined
-    ): ListDomainsResponse = {
-      val __obj = js.Dynamic.literal(
-        "Domains" -> Domains.asInstanceOf[js.Any]
-      )
-
-      NextPageMarker.foreach(__v => __obj.updateDynamic("NextPageMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDomainsResponse]
-    }
   }
 
   /**
     * The ListOperations request includes the following elements.
     */
   @js.native
+  @Factory
   trait ListOperationsRequest extends js.Object {
     var Marker: js.UndefOr[PageMarker]
     var MaxItems: js.UndefOr[PageMaxItems]
     var SubmittedSince: js.UndefOr[Timestamp]
   }
 
-  object ListOperationsRequest {
-    @inline
-    def apply(
-        Marker: js.UndefOr[PageMarker] = js.undefined,
-        MaxItems: js.UndefOr[PageMaxItems] = js.undefined,
-        SubmittedSince: js.UndefOr[Timestamp] = js.undefined
-    ): ListOperationsRequest = {
-      val __obj = js.Dynamic.literal()
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
-      SubmittedSince.foreach(__v => __obj.updateDynamic("SubmittedSince")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListOperationsRequest]
-    }
-  }
-
   /**
     * The ListOperations response includes the following elements.
     */
   @js.native
+  @Factory
   trait ListOperationsResponse extends js.Object {
     var Operations: OperationSummaryList
     var NextPageMarker: js.UndefOr[PageMarker]
-  }
-
-  object ListOperationsResponse {
-    @inline
-    def apply(
-        Operations: OperationSummaryList,
-        NextPageMarker: js.UndefOr[PageMarker] = js.undefined
-    ): ListOperationsResponse = {
-      val __obj = js.Dynamic.literal(
-        "Operations" -> Operations.asInstanceOf[js.Any]
-      )
-
-      NextPageMarker.foreach(__v => __obj.updateDynamic("NextPageMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListOperationsResponse]
-    }
   }
 
   /**
     * The ListTagsForDomainRequest includes the following elements.
     */
   @js.native
+  @Factory
   trait ListTagsForDomainRequest extends js.Object {
     var DomainName: DomainName
-  }
-
-  object ListTagsForDomainRequest {
-    @inline
-    def apply(
-        DomainName: DomainName
-    ): ListTagsForDomainRequest = {
-      val __obj = js.Dynamic.literal(
-        "DomainName" -> DomainName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListTagsForDomainRequest]
-    }
   }
 
   /**
     * The ListTagsForDomain response includes the following elements.
     */
   @js.native
+  @Factory
   trait ListTagsForDomainResponse extends js.Object {
     var TagList: TagList
-  }
-
-  object ListTagsForDomainResponse {
-    @inline
-    def apply(
-        TagList: TagList
-    ): ListTagsForDomainResponse = {
-      val __obj = js.Dynamic.literal(
-        "TagList" -> TagList.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListTagsForDomainResponse]
-    }
   }
 
   /**
     * Nameserver includes the following elements.
     */
   @js.native
+  @Factory
   trait Nameserver extends js.Object {
     var Name: HostName
     var GlueIps: js.UndefOr[GlueIpList]
-  }
-
-  object Nameserver {
-    @inline
-    def apply(
-        Name: HostName,
-        GlueIps: js.UndefOr[GlueIpList] = js.undefined
-    ): Nameserver = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      GlueIps.foreach(__v => __obj.updateDynamic("GlueIps")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Nameserver]
-    }
   }
 
   /**
@@ -1628,30 +1120,12 @@ package route53domains {
     * OperationSummary includes the following elements.
     */
   @js.native
+  @Factory
   trait OperationSummary extends js.Object {
     var OperationId: OperationId
     var Status: OperationStatus
     var SubmittedDate: Timestamp
     var Type: OperationType
-  }
-
-  object OperationSummary {
-    @inline
-    def apply(
-        OperationId: OperationId,
-        Status: OperationStatus,
-        SubmittedDate: Timestamp,
-        Type: OperationType
-    ): OperationSummary = {
-      val __obj = js.Dynamic.literal(
-        "OperationId"   -> OperationId.asInstanceOf[js.Any],
-        "Status"        -> Status.asInstanceOf[js.Any],
-        "SubmittedDate" -> SubmittedDate.asInstanceOf[js.Any],
-        "Type"          -> Type.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[OperationSummary]
-    }
   }
 
   @js.native
@@ -1710,6 +1184,7 @@ package route53domains {
     * The RegisterDomain request includes the following elements.
     */
   @js.native
+  @Factory
   trait RegisterDomainRequest extends js.Object {
     var AdminContact: ContactDetail
     var DomainName: DomainName
@@ -1723,187 +1198,62 @@ package route53domains {
     var PrivacyProtectTechContact: js.UndefOr[Boolean]
   }
 
-  object RegisterDomainRequest {
-    @inline
-    def apply(
-        AdminContact: ContactDetail,
-        DomainName: DomainName,
-        DurationInYears: DurationInYears,
-        RegistrantContact: ContactDetail,
-        TechContact: ContactDetail,
-        AutoRenew: js.UndefOr[Boolean] = js.undefined,
-        IdnLangCode: js.UndefOr[LangCode] = js.undefined,
-        PrivacyProtectAdminContact: js.UndefOr[Boolean] = js.undefined,
-        PrivacyProtectRegistrantContact: js.UndefOr[Boolean] = js.undefined,
-        PrivacyProtectTechContact: js.UndefOr[Boolean] = js.undefined
-    ): RegisterDomainRequest = {
-      val __obj = js.Dynamic.literal(
-        "AdminContact"      -> AdminContact.asInstanceOf[js.Any],
-        "DomainName"        -> DomainName.asInstanceOf[js.Any],
-        "DurationInYears"   -> DurationInYears.asInstanceOf[js.Any],
-        "RegistrantContact" -> RegistrantContact.asInstanceOf[js.Any],
-        "TechContact"       -> TechContact.asInstanceOf[js.Any]
-      )
-
-      AutoRenew.foreach(__v => __obj.updateDynamic("AutoRenew")(__v.asInstanceOf[js.Any]))
-      IdnLangCode.foreach(__v => __obj.updateDynamic("IdnLangCode")(__v.asInstanceOf[js.Any]))
-      PrivacyProtectAdminContact.foreach(__v =>
-        __obj.updateDynamic("PrivacyProtectAdminContact")(__v.asInstanceOf[js.Any])
-      )
-      PrivacyProtectRegistrantContact.foreach(__v =>
-        __obj.updateDynamic("PrivacyProtectRegistrantContact")(__v.asInstanceOf[js.Any])
-      )
-      PrivacyProtectTechContact.foreach(__v =>
-        __obj.updateDynamic("PrivacyProtectTechContact")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[RegisterDomainRequest]
-    }
-  }
-
   /**
     * The RegisterDomain response includes the following element.
     */
   @js.native
+  @Factory
   trait RegisterDomainResponse extends js.Object {
     var OperationId: OperationId
-  }
-
-  object RegisterDomainResponse {
-    @inline
-    def apply(
-        OperationId: OperationId
-    ): RegisterDomainResponse = {
-      val __obj = js.Dynamic.literal(
-        "OperationId" -> OperationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RegisterDomainResponse]
-    }
   }
 
   /**
     * A <code>RenewDomain</code> request includes the number of years that you want to renew for and the current expiration year.
     */
   @js.native
+  @Factory
   trait RenewDomainRequest extends js.Object {
     var CurrentExpiryYear: CurrentExpiryYear
     var DomainName: DomainName
     var DurationInYears: js.UndefOr[DurationInYears]
   }
 
-  object RenewDomainRequest {
-    @inline
-    def apply(
-        CurrentExpiryYear: CurrentExpiryYear,
-        DomainName: DomainName,
-        DurationInYears: js.UndefOr[DurationInYears] = js.undefined
-    ): RenewDomainRequest = {
-      val __obj = js.Dynamic.literal(
-        "CurrentExpiryYear" -> CurrentExpiryYear.asInstanceOf[js.Any],
-        "DomainName"        -> DomainName.asInstanceOf[js.Any]
-      )
-
-      DurationInYears.foreach(__v => __obj.updateDynamic("DurationInYears")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RenewDomainRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait RenewDomainResponse extends js.Object {
     var OperationId: OperationId
   }
 
-  object RenewDomainResponse {
-    @inline
-    def apply(
-        OperationId: OperationId
-    ): RenewDomainResponse = {
-      val __obj = js.Dynamic.literal(
-        "OperationId" -> OperationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RenewDomainResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ResendContactReachabilityEmailRequest extends js.Object {
     var domainName: js.UndefOr[DomainName]
   }
 
-  object ResendContactReachabilityEmailRequest {
-    @inline
-    def apply(
-        domainName: js.UndefOr[DomainName] = js.undefined
-    ): ResendContactReachabilityEmailRequest = {
-      val __obj = js.Dynamic.literal()
-      domainName.foreach(__v => __obj.updateDynamic("domainName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ResendContactReachabilityEmailRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ResendContactReachabilityEmailResponse extends js.Object {
     var domainName: js.UndefOr[DomainName]
     var emailAddress: js.UndefOr[Email]
     var isAlreadyVerified: js.UndefOr[Boolean]
   }
 
-  object ResendContactReachabilityEmailResponse {
-    @inline
-    def apply(
-        domainName: js.UndefOr[DomainName] = js.undefined,
-        emailAddress: js.UndefOr[Email] = js.undefined,
-        isAlreadyVerified: js.UndefOr[Boolean] = js.undefined
-    ): ResendContactReachabilityEmailResponse = {
-      val __obj = js.Dynamic.literal()
-      domainName.foreach(__v => __obj.updateDynamic("domainName")(__v.asInstanceOf[js.Any]))
-      emailAddress.foreach(__v => __obj.updateDynamic("emailAddress")(__v.asInstanceOf[js.Any]))
-      isAlreadyVerified.foreach(__v => __obj.updateDynamic("isAlreadyVerified")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ResendContactReachabilityEmailResponse]
-    }
-  }
-
   /**
     * A request for the authorization code for the specified domain. To transfer a domain to another registrar, you provide this value to the new registrar.
     */
   @js.native
+  @Factory
   trait RetrieveDomainAuthCodeRequest extends js.Object {
     var DomainName: DomainName
-  }
-
-  object RetrieveDomainAuthCodeRequest {
-    @inline
-    def apply(
-        DomainName: DomainName
-    ): RetrieveDomainAuthCodeRequest = {
-      val __obj = js.Dynamic.literal(
-        "DomainName" -> DomainName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RetrieveDomainAuthCodeRequest]
-    }
   }
 
   /**
     * The RetrieveDomainAuthCode response includes the following element.
     */
   @js.native
+  @Factory
   trait RetrieveDomainAuthCodeResponse extends js.Object {
     var AuthCode: DomainAuthCode
-  }
-
-  object RetrieveDomainAuthCodeResponse {
-    @inline
-    def apply(
-        AuthCode: DomainAuthCode
-    ): RetrieveDomainAuthCodeResponse = {
-      val __obj = js.Dynamic.literal(
-        "AuthCode" -> AuthCode.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RetrieveDomainAuthCodeResponse]
-    }
   }
 
   /**
@@ -1918,28 +1268,17 @@ package route53domains {
     * Each tag includes the following elements.
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var Key: js.UndefOr[TagKey]
     var Value: js.UndefOr[TagValue]
-  }
-
-  object Tag {
-    @inline
-    def apply(
-        Key: js.UndefOr[TagKey] = js.undefined,
-        Value: js.UndefOr[TagValue] = js.undefined
-    ): Tag = {
-      val __obj = js.Dynamic.literal()
-      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Tag]
-    }
   }
 
   /**
     * The TransferDomain request includes the following elements.
     */
   @js.native
+  @Factory
   trait TransferDomainRequest extends js.Object {
     var AdminContact: ContactDetail
     var DomainName: DomainName
@@ -1955,66 +1294,13 @@ package route53domains {
     var PrivacyProtectTechContact: js.UndefOr[Boolean]
   }
 
-  object TransferDomainRequest {
-    @inline
-    def apply(
-        AdminContact: ContactDetail,
-        DomainName: DomainName,
-        DurationInYears: DurationInYears,
-        RegistrantContact: ContactDetail,
-        TechContact: ContactDetail,
-        AuthCode: js.UndefOr[DomainAuthCode] = js.undefined,
-        AutoRenew: js.UndefOr[Boolean] = js.undefined,
-        IdnLangCode: js.UndefOr[LangCode] = js.undefined,
-        Nameservers: js.UndefOr[NameserverList] = js.undefined,
-        PrivacyProtectAdminContact: js.UndefOr[Boolean] = js.undefined,
-        PrivacyProtectRegistrantContact: js.UndefOr[Boolean] = js.undefined,
-        PrivacyProtectTechContact: js.UndefOr[Boolean] = js.undefined
-    ): TransferDomainRequest = {
-      val __obj = js.Dynamic.literal(
-        "AdminContact"      -> AdminContact.asInstanceOf[js.Any],
-        "DomainName"        -> DomainName.asInstanceOf[js.Any],
-        "DurationInYears"   -> DurationInYears.asInstanceOf[js.Any],
-        "RegistrantContact" -> RegistrantContact.asInstanceOf[js.Any],
-        "TechContact"       -> TechContact.asInstanceOf[js.Any]
-      )
-
-      AuthCode.foreach(__v => __obj.updateDynamic("AuthCode")(__v.asInstanceOf[js.Any]))
-      AutoRenew.foreach(__v => __obj.updateDynamic("AutoRenew")(__v.asInstanceOf[js.Any]))
-      IdnLangCode.foreach(__v => __obj.updateDynamic("IdnLangCode")(__v.asInstanceOf[js.Any]))
-      Nameservers.foreach(__v => __obj.updateDynamic("Nameservers")(__v.asInstanceOf[js.Any]))
-      PrivacyProtectAdminContact.foreach(__v =>
-        __obj.updateDynamic("PrivacyProtectAdminContact")(__v.asInstanceOf[js.Any])
-      )
-      PrivacyProtectRegistrantContact.foreach(__v =>
-        __obj.updateDynamic("PrivacyProtectRegistrantContact")(__v.asInstanceOf[js.Any])
-      )
-      PrivacyProtectTechContact.foreach(__v =>
-        __obj.updateDynamic("PrivacyProtectTechContact")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[TransferDomainRequest]
-    }
-  }
-
   /**
     * The TranserDomain response includes the following element.
     */
   @js.native
+  @Factory
   trait TransferDomainResponse extends js.Object {
     var OperationId: OperationId
-  }
-
-  object TransferDomainResponse {
-    @inline
-    def apply(
-        OperationId: OperationId
-    ): TransferDomainResponse = {
-      val __obj = js.Dynamic.literal(
-        "OperationId" -> OperationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TransferDomainResponse]
-    }
   }
 
   /**
@@ -2049,6 +1335,7 @@ package route53domains {
     * The UpdateDomainContactPrivacy request includes the following elements.
     */
   @js.native
+  @Factory
   trait UpdateDomainContactPrivacyRequest extends js.Object {
     var DomainName: DomainName
     var AdminPrivacy: js.UndefOr[Boolean]
@@ -2056,50 +1343,20 @@ package route53domains {
     var TechPrivacy: js.UndefOr[Boolean]
   }
 
-  object UpdateDomainContactPrivacyRequest {
-    @inline
-    def apply(
-        DomainName: DomainName,
-        AdminPrivacy: js.UndefOr[Boolean] = js.undefined,
-        RegistrantPrivacy: js.UndefOr[Boolean] = js.undefined,
-        TechPrivacy: js.UndefOr[Boolean] = js.undefined
-    ): UpdateDomainContactPrivacyRequest = {
-      val __obj = js.Dynamic.literal(
-        "DomainName" -> DomainName.asInstanceOf[js.Any]
-      )
-
-      AdminPrivacy.foreach(__v => __obj.updateDynamic("AdminPrivacy")(__v.asInstanceOf[js.Any]))
-      RegistrantPrivacy.foreach(__v => __obj.updateDynamic("RegistrantPrivacy")(__v.asInstanceOf[js.Any]))
-      TechPrivacy.foreach(__v => __obj.updateDynamic("TechPrivacy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateDomainContactPrivacyRequest]
-    }
-  }
-
   /**
     * The UpdateDomainContactPrivacy response includes the following element.
     */
   @js.native
+  @Factory
   trait UpdateDomainContactPrivacyResponse extends js.Object {
     var OperationId: OperationId
-  }
-
-  object UpdateDomainContactPrivacyResponse {
-    @inline
-    def apply(
-        OperationId: OperationId
-    ): UpdateDomainContactPrivacyResponse = {
-      val __obj = js.Dynamic.literal(
-        "OperationId" -> OperationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateDomainContactPrivacyResponse]
-    }
   }
 
   /**
     * The UpdateDomainContact request includes the following elements.
     */
   @js.native
+  @Factory
   trait UpdateDomainContactRequest extends js.Object {
     var DomainName: DomainName
     var AdminContact: js.UndefOr[ContactDetail]
@@ -2107,44 +1364,13 @@ package route53domains {
     var TechContact: js.UndefOr[ContactDetail]
   }
 
-  object UpdateDomainContactRequest {
-    @inline
-    def apply(
-        DomainName: DomainName,
-        AdminContact: js.UndefOr[ContactDetail] = js.undefined,
-        RegistrantContact: js.UndefOr[ContactDetail] = js.undefined,
-        TechContact: js.UndefOr[ContactDetail] = js.undefined
-    ): UpdateDomainContactRequest = {
-      val __obj = js.Dynamic.literal(
-        "DomainName" -> DomainName.asInstanceOf[js.Any]
-      )
-
-      AdminContact.foreach(__v => __obj.updateDynamic("AdminContact")(__v.asInstanceOf[js.Any]))
-      RegistrantContact.foreach(__v => __obj.updateDynamic("RegistrantContact")(__v.asInstanceOf[js.Any]))
-      TechContact.foreach(__v => __obj.updateDynamic("TechContact")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateDomainContactRequest]
-    }
-  }
-
   /**
     * The UpdateDomainContact response includes the following element.
     */
   @js.native
+  @Factory
   trait UpdateDomainContactResponse extends js.Object {
     var OperationId: OperationId
-  }
-
-  object UpdateDomainContactResponse {
-    @inline
-    def apply(
-        OperationId: OperationId
-    ): UpdateDomainContactResponse = {
-      val __obj = js.Dynamic.literal(
-        "OperationId" -> OperationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateDomainContactResponse]
-    }
   }
 
   /**
@@ -2152,91 +1378,41 @@ package route53domains {
     *  If successful, this operation returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant will be notified by email.
     */
   @js.native
+  @Factory
   trait UpdateDomainNameserversRequest extends js.Object {
     var DomainName: DomainName
     var Nameservers: NameserverList
     var FIAuthKey: js.UndefOr[FIAuthKey]
   }
 
-  object UpdateDomainNameserversRequest {
-    @inline
-    def apply(
-        DomainName: DomainName,
-        Nameservers: NameserverList,
-        FIAuthKey: js.UndefOr[FIAuthKey] = js.undefined
-    ): UpdateDomainNameserversRequest = {
-      val __obj = js.Dynamic.literal(
-        "DomainName"  -> DomainName.asInstanceOf[js.Any],
-        "Nameservers" -> Nameservers.asInstanceOf[js.Any]
-      )
-
-      FIAuthKey.foreach(__v => __obj.updateDynamic("FIAuthKey")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateDomainNameserversRequest]
-    }
-  }
-
   /**
     * The UpdateDomainNameservers response includes the following element.
     */
   @js.native
+  @Factory
   trait UpdateDomainNameserversResponse extends js.Object {
     var OperationId: OperationId
-  }
-
-  object UpdateDomainNameserversResponse {
-    @inline
-    def apply(
-        OperationId: OperationId
-    ): UpdateDomainNameserversResponse = {
-      val __obj = js.Dynamic.literal(
-        "OperationId" -> OperationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateDomainNameserversResponse]
-    }
   }
 
   /**
     * The UpdateTagsForDomainRequest includes the following elements.
     */
   @js.native
+  @Factory
   trait UpdateTagsForDomainRequest extends js.Object {
     var DomainName: DomainName
     var TagsToUpdate: js.UndefOr[TagList]
   }
 
-  object UpdateTagsForDomainRequest {
-    @inline
-    def apply(
-        DomainName: DomainName,
-        TagsToUpdate: js.UndefOr[TagList] = js.undefined
-    ): UpdateTagsForDomainRequest = {
-      val __obj = js.Dynamic.literal(
-        "DomainName" -> DomainName.asInstanceOf[js.Any]
-      )
-
-      TagsToUpdate.foreach(__v => __obj.updateDynamic("TagsToUpdate")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateTagsForDomainRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateTagsForDomainResponse extends js.Object {}
-
-  object UpdateTagsForDomainResponse {
-    @inline
-    def apply(
-    ): UpdateTagsForDomainResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateTagsForDomainResponse]
-    }
-  }
 
   /**
     * The ViewBilling request includes the following elements.
     */
   @js.native
+  @Factory
   trait ViewBillingRequest extends js.Object {
     var End: js.UndefOr[Timestamp]
     var Marker: js.UndefOr[PageMarker]
@@ -2244,42 +1420,13 @@ package route53domains {
     var Start: js.UndefOr[Timestamp]
   }
 
-  object ViewBillingRequest {
-    @inline
-    def apply(
-        End: js.UndefOr[Timestamp] = js.undefined,
-        Marker: js.UndefOr[PageMarker] = js.undefined,
-        MaxItems: js.UndefOr[PageMaxItems] = js.undefined,
-        Start: js.UndefOr[Timestamp] = js.undefined
-    ): ViewBillingRequest = {
-      val __obj = js.Dynamic.literal()
-      End.foreach(__v => __obj.updateDynamic("End")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
-      Start.foreach(__v => __obj.updateDynamic("Start")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ViewBillingRequest]
-    }
-  }
-
   /**
     * The ViewBilling response includes the following elements.
     */
   @js.native
+  @Factory
   trait ViewBillingResponse extends js.Object {
     var BillingRecords: js.UndefOr[BillingRecords]
     var NextPageMarker: js.UndefOr[PageMarker]
-  }
-
-  object ViewBillingResponse {
-    @inline
-    def apply(
-        BillingRecords: js.UndefOr[BillingRecords] = js.undefined,
-        NextPageMarker: js.UndefOr[PageMarker] = js.undefined
-    ): ViewBillingResponse = {
-      val __obj = js.Dynamic.literal()
-      BillingRecords.foreach(__v => __obj.updateDynamic("BillingRecords")(__v.asInstanceOf[js.Any]))
-      NextPageMarker.foreach(__v => __obj.updateDynamic("NextPageMarker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ViewBillingResponse]
-    }
   }
 }

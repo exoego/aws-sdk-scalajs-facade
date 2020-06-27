@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object machinelearning {
   type AwsUserArn                      = String
@@ -174,49 +175,21 @@ package machinelearning {
   }
 
   @js.native
+  @Factory
   trait AddTagsInput extends js.Object {
     var ResourceId: EntityId
     var ResourceType: TaggableResourceType
     var Tags: TagList
   }
 
-  object AddTagsInput {
-    @inline
-    def apply(
-        ResourceId: EntityId,
-        ResourceType: TaggableResourceType,
-        Tags: TagList
-    ): AddTagsInput = {
-      val __obj = js.Dynamic.literal(
-        "ResourceId"   -> ResourceId.asInstanceOf[js.Any],
-        "ResourceType" -> ResourceType.asInstanceOf[js.Any],
-        "Tags"         -> Tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AddTagsInput]
-    }
-  }
-
   /**
     * Amazon ML returns the following elements.
     */
   @js.native
+  @Factory
   trait AddTagsOutput extends js.Object {
     var ResourceId: js.UndefOr[EntityId]
     var ResourceType: js.UndefOr[TaggableResourceType]
-  }
-
-  object AddTagsOutput {
-    @inline
-    def apply(
-        ResourceId: js.UndefOr[EntityId] = js.undefined,
-        ResourceType: js.UndefOr[TaggableResourceType] = js.undefined
-    ): AddTagsOutput = {
-      val __obj = js.Dynamic.literal()
-      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AddTagsOutput]
-    }
   }
 
   /**
@@ -237,6 +210,7 @@ package machinelearning {
     *  The content consists of the detailed metadata, the status, and the data file information of a <code>Batch Prediction</code>.
     */
   @js.native
+  @Factory
   trait BatchPrediction extends js.Object {
     var BatchPredictionDataSourceId: js.UndefOr[EntityId]
     var BatchPredictionId: js.UndefOr[EntityId]
@@ -254,49 +228,6 @@ package machinelearning {
     var StartedAt: js.UndefOr[EpochTime]
     var Status: js.UndefOr[EntityStatus]
     var TotalRecordCount: js.UndefOr[LongType]
-  }
-
-  object BatchPrediction {
-    @inline
-    def apply(
-        BatchPredictionDataSourceId: js.UndefOr[EntityId] = js.undefined,
-        BatchPredictionId: js.UndefOr[EntityId] = js.undefined,
-        ComputeTime: js.UndefOr[LongType] = js.undefined,
-        CreatedAt: js.UndefOr[EpochTime] = js.undefined,
-        CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
-        FinishedAt: js.UndefOr[EpochTime] = js.undefined,
-        InputDataLocationS3: js.UndefOr[S3Url] = js.undefined,
-        InvalidRecordCount: js.UndefOr[LongType] = js.undefined,
-        LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
-        MLModelId: js.UndefOr[EntityId] = js.undefined,
-        Message: js.UndefOr[Message] = js.undefined,
-        Name: js.UndefOr[EntityName] = js.undefined,
-        OutputUri: js.UndefOr[S3Url] = js.undefined,
-        StartedAt: js.UndefOr[EpochTime] = js.undefined,
-        Status: js.UndefOr[EntityStatus] = js.undefined,
-        TotalRecordCount: js.UndefOr[LongType] = js.undefined
-    ): BatchPrediction = {
-      val __obj = js.Dynamic.literal()
-      BatchPredictionDataSourceId.foreach(__v =>
-        __obj.updateDynamic("BatchPredictionDataSourceId")(__v.asInstanceOf[js.Any])
-      )
-      BatchPredictionId.foreach(__v => __obj.updateDynamic("BatchPredictionId")(__v.asInstanceOf[js.Any]))
-      ComputeTime.foreach(__v => __obj.updateDynamic("ComputeTime")(__v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
-      CreatedByIamUser.foreach(__v => __obj.updateDynamic("CreatedByIamUser")(__v.asInstanceOf[js.Any]))
-      FinishedAt.foreach(__v => __obj.updateDynamic("FinishedAt")(__v.asInstanceOf[js.Any]))
-      InputDataLocationS3.foreach(__v => __obj.updateDynamic("InputDataLocationS3")(__v.asInstanceOf[js.Any]))
-      InvalidRecordCount.foreach(__v => __obj.updateDynamic("InvalidRecordCount")(__v.asInstanceOf[js.Any]))
-      LastUpdatedAt.foreach(__v => __obj.updateDynamic("LastUpdatedAt")(__v.asInstanceOf[js.Any]))
-      MLModelId.foreach(__v => __obj.updateDynamic("MLModelId")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      OutputUri.foreach(__v => __obj.updateDynamic("OutputUri")(__v.asInstanceOf[js.Any]))
-      StartedAt.foreach(__v => __obj.updateDynamic("StartedAt")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      TotalRecordCount.foreach(__v => __obj.updateDynamic("TotalRecordCount")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[BatchPrediction]
-    }
   }
 
   /**
@@ -326,6 +257,7 @@ package machinelearning {
   }
 
   @js.native
+  @Factory
   trait CreateBatchPredictionInput extends js.Object {
     var BatchPredictionDataSourceId: EntityId
     var BatchPredictionId: EntityId
@@ -334,48 +266,18 @@ package machinelearning {
     var BatchPredictionName: js.UndefOr[EntityName]
   }
 
-  object CreateBatchPredictionInput {
-    @inline
-    def apply(
-        BatchPredictionDataSourceId: EntityId,
-        BatchPredictionId: EntityId,
-        MLModelId: EntityId,
-        OutputUri: S3Url,
-        BatchPredictionName: js.UndefOr[EntityName] = js.undefined
-    ): CreateBatchPredictionInput = {
-      val __obj = js.Dynamic.literal(
-        "BatchPredictionDataSourceId" -> BatchPredictionDataSourceId.asInstanceOf[js.Any],
-        "BatchPredictionId"           -> BatchPredictionId.asInstanceOf[js.Any],
-        "MLModelId"                   -> MLModelId.asInstanceOf[js.Any],
-        "OutputUri"                   -> OutputUri.asInstanceOf[js.Any]
-      )
-
-      BatchPredictionName.foreach(__v => __obj.updateDynamic("BatchPredictionName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateBatchPredictionInput]
-    }
-  }
-
   /**
     * Represents the output of a <code>CreateBatchPrediction</code> operation, and is an acknowledgement that Amazon ML received the request.
     *  The <code>CreateBatchPrediction</code> operation is asynchronous. You can poll for status updates by using the <code>&gt;GetBatchPrediction</code> operation and checking the <code>Status</code> parameter of the result.
     */
   @js.native
+  @Factory
   trait CreateBatchPredictionOutput extends js.Object {
     var BatchPredictionId: js.UndefOr[EntityId]
   }
 
-  object CreateBatchPredictionOutput {
-    @inline
-    def apply(
-        BatchPredictionId: js.UndefOr[EntityId] = js.undefined
-    ): CreateBatchPredictionOutput = {
-      val __obj = js.Dynamic.literal()
-      BatchPredictionId.foreach(__v => __obj.updateDynamic("BatchPredictionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateBatchPredictionOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateDataSourceFromRDSInput extends js.Object {
     var DataSourceId: EntityId
     var RDSData: RDSDataSpec
@@ -384,48 +286,18 @@ package machinelearning {
     var DataSourceName: js.UndefOr[EntityName]
   }
 
-  object CreateDataSourceFromRDSInput {
-    @inline
-    def apply(
-        DataSourceId: EntityId,
-        RDSData: RDSDataSpec,
-        RoleARN: RoleARN,
-        ComputeStatistics: js.UndefOr[ComputeStatistics] = js.undefined,
-        DataSourceName: js.UndefOr[EntityName] = js.undefined
-    ): CreateDataSourceFromRDSInput = {
-      val __obj = js.Dynamic.literal(
-        "DataSourceId" -> DataSourceId.asInstanceOf[js.Any],
-        "RDSData"      -> RDSData.asInstanceOf[js.Any],
-        "RoleARN"      -> RoleARN.asInstanceOf[js.Any]
-      )
-
-      ComputeStatistics.foreach(__v => __obj.updateDynamic("ComputeStatistics")(__v.asInstanceOf[js.Any]))
-      DataSourceName.foreach(__v => __obj.updateDynamic("DataSourceName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDataSourceFromRDSInput]
-    }
-  }
-
   /**
     * Represents the output of a <code>CreateDataSourceFromRDS</code> operation, and is an acknowledgement that Amazon ML received the request.
     *  The <code>CreateDataSourceFromRDS</code>&gt; operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. You can inspect the <code>Message</code> when <code>Status</code> shows up as <code>FAILED</code>. You can also check the progress of the copy operation by going to the <code>DataPipeline</code> console and looking up the pipeline using the <code>pipelineId </code> from the describe call.
     */
   @js.native
+  @Factory
   trait CreateDataSourceFromRDSOutput extends js.Object {
     var DataSourceId: js.UndefOr[EntityId]
   }
 
-  object CreateDataSourceFromRDSOutput {
-    @inline
-    def apply(
-        DataSourceId: js.UndefOr[EntityId] = js.undefined
-    ): CreateDataSourceFromRDSOutput = {
-      val __obj = js.Dynamic.literal()
-      DataSourceId.foreach(__v => __obj.updateDynamic("DataSourceId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDataSourceFromRDSOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateDataSourceFromRedshiftInput extends js.Object {
     var DataSourceId: EntityId
     var DataSpec: RedshiftDataSpec
@@ -434,48 +306,18 @@ package machinelearning {
     var DataSourceName: js.UndefOr[EntityName]
   }
 
-  object CreateDataSourceFromRedshiftInput {
-    @inline
-    def apply(
-        DataSourceId: EntityId,
-        DataSpec: RedshiftDataSpec,
-        RoleARN: RoleARN,
-        ComputeStatistics: js.UndefOr[ComputeStatistics] = js.undefined,
-        DataSourceName: js.UndefOr[EntityName] = js.undefined
-    ): CreateDataSourceFromRedshiftInput = {
-      val __obj = js.Dynamic.literal(
-        "DataSourceId" -> DataSourceId.asInstanceOf[js.Any],
-        "DataSpec"     -> DataSpec.asInstanceOf[js.Any],
-        "RoleARN"      -> RoleARN.asInstanceOf[js.Any]
-      )
-
-      ComputeStatistics.foreach(__v => __obj.updateDynamic("ComputeStatistics")(__v.asInstanceOf[js.Any]))
-      DataSourceName.foreach(__v => __obj.updateDynamic("DataSourceName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDataSourceFromRedshiftInput]
-    }
-  }
-
   /**
     * Represents the output of a <code>CreateDataSourceFromRedshift</code> operation, and is an acknowledgement that Amazon ML received the request.
     *  The <code>CreateDataSourceFromRedshift</code> operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter.
     */
   @js.native
+  @Factory
   trait CreateDataSourceFromRedshiftOutput extends js.Object {
     var DataSourceId: js.UndefOr[EntityId]
   }
 
-  object CreateDataSourceFromRedshiftOutput {
-    @inline
-    def apply(
-        DataSourceId: js.UndefOr[EntityId] = js.undefined
-    ): CreateDataSourceFromRedshiftOutput = {
-      val __obj = js.Dynamic.literal()
-      DataSourceId.foreach(__v => __obj.updateDynamic("DataSourceId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDataSourceFromRedshiftOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateDataSourceFromS3Input extends js.Object {
     var DataSourceId: EntityId
     var DataSpec: S3DataSpec
@@ -483,46 +325,18 @@ package machinelearning {
     var DataSourceName: js.UndefOr[EntityName]
   }
 
-  object CreateDataSourceFromS3Input {
-    @inline
-    def apply(
-        DataSourceId: EntityId,
-        DataSpec: S3DataSpec,
-        ComputeStatistics: js.UndefOr[ComputeStatistics] = js.undefined,
-        DataSourceName: js.UndefOr[EntityName] = js.undefined
-    ): CreateDataSourceFromS3Input = {
-      val __obj = js.Dynamic.literal(
-        "DataSourceId" -> DataSourceId.asInstanceOf[js.Any],
-        "DataSpec"     -> DataSpec.asInstanceOf[js.Any]
-      )
-
-      ComputeStatistics.foreach(__v => __obj.updateDynamic("ComputeStatistics")(__v.asInstanceOf[js.Any]))
-      DataSourceName.foreach(__v => __obj.updateDynamic("DataSourceName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDataSourceFromS3Input]
-    }
-  }
-
   /**
     * Represents the output of a <code>CreateDataSourceFromS3</code> operation, and is an acknowledgement that Amazon ML received the request.
     *  The <code>CreateDataSourceFromS3</code> operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter.
     */
   @js.native
+  @Factory
   trait CreateDataSourceFromS3Output extends js.Object {
     var DataSourceId: js.UndefOr[EntityId]
   }
 
-  object CreateDataSourceFromS3Output {
-    @inline
-    def apply(
-        DataSourceId: js.UndefOr[EntityId] = js.undefined
-    ): CreateDataSourceFromS3Output = {
-      val __obj = js.Dynamic.literal()
-      DataSourceId.foreach(__v => __obj.updateDynamic("DataSourceId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateDataSourceFromS3Output]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateEvaluationInput extends js.Object {
     var EvaluationDataSourceId: EntityId
     var EvaluationId: EntityId
@@ -530,46 +344,18 @@ package machinelearning {
     var EvaluationName: js.UndefOr[EntityName]
   }
 
-  object CreateEvaluationInput {
-    @inline
-    def apply(
-        EvaluationDataSourceId: EntityId,
-        EvaluationId: EntityId,
-        MLModelId: EntityId,
-        EvaluationName: js.UndefOr[EntityName] = js.undefined
-    ): CreateEvaluationInput = {
-      val __obj = js.Dynamic.literal(
-        "EvaluationDataSourceId" -> EvaluationDataSourceId.asInstanceOf[js.Any],
-        "EvaluationId"           -> EvaluationId.asInstanceOf[js.Any],
-        "MLModelId"              -> MLModelId.asInstanceOf[js.Any]
-      )
-
-      EvaluationName.foreach(__v => __obj.updateDynamic("EvaluationName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateEvaluationInput]
-    }
-  }
-
   /**
     * Represents the output of a <code>CreateEvaluation</code> operation, and is an acknowledgement that Amazon ML received the request.
     *  <code>CreateEvaluation</code> operation is asynchronous. You can poll for status updates by using the <code>GetEvcaluation</code> operation and checking the <code>Status</code> parameter.
     */
   @js.native
+  @Factory
   trait CreateEvaluationOutput extends js.Object {
     var EvaluationId: js.UndefOr[EntityId]
   }
 
-  object CreateEvaluationOutput {
-    @inline
-    def apply(
-        EvaluationId: js.UndefOr[EntityId] = js.undefined
-    ): CreateEvaluationOutput = {
-      val __obj = js.Dynamic.literal()
-      EvaluationId.foreach(__v => __obj.updateDynamic("EvaluationId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateEvaluationOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateMLModelInput extends js.Object {
     var MLModelId: EntityId
     var MLModelType: MLModelType
@@ -580,67 +366,20 @@ package machinelearning {
     var RecipeUri: js.UndefOr[S3Url]
   }
 
-  object CreateMLModelInput {
-    @inline
-    def apply(
-        MLModelId: EntityId,
-        MLModelType: MLModelType,
-        TrainingDataSourceId: EntityId,
-        MLModelName: js.UndefOr[EntityName] = js.undefined,
-        Parameters: js.UndefOr[TrainingParameters] = js.undefined,
-        Recipe: js.UndefOr[Recipe] = js.undefined,
-        RecipeUri: js.UndefOr[S3Url] = js.undefined
-    ): CreateMLModelInput = {
-      val __obj = js.Dynamic.literal(
-        "MLModelId"            -> MLModelId.asInstanceOf[js.Any],
-        "MLModelType"          -> MLModelType.asInstanceOf[js.Any],
-        "TrainingDataSourceId" -> TrainingDataSourceId.asInstanceOf[js.Any]
-      )
-
-      MLModelName.foreach(__v => __obj.updateDynamic("MLModelName")(__v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
-      Recipe.foreach(__v => __obj.updateDynamic("Recipe")(__v.asInstanceOf[js.Any]))
-      RecipeUri.foreach(__v => __obj.updateDynamic("RecipeUri")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateMLModelInput]
-    }
-  }
-
   /**
     * Represents the output of a <code>CreateMLModel</code> operation, and is an acknowledgement that Amazon ML received the request.
     *  The <code>CreateMLModel</code> operation is asynchronous. You can poll for status updates by using the <code>GetMLModel</code> operation and checking the <code>Status</code> parameter.
     */
   @js.native
+  @Factory
   trait CreateMLModelOutput extends js.Object {
     var MLModelId: js.UndefOr[EntityId]
   }
 
-  object CreateMLModelOutput {
-    @inline
-    def apply(
-        MLModelId: js.UndefOr[EntityId] = js.undefined
-    ): CreateMLModelOutput = {
-      val __obj = js.Dynamic.literal()
-      MLModelId.foreach(__v => __obj.updateDynamic("MLModelId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateMLModelOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateRealtimeEndpointInput extends js.Object {
     var MLModelId: EntityId
-  }
-
-  object CreateRealtimeEndpointInput {
-    @inline
-    def apply(
-        MLModelId: EntityId
-    ): CreateRealtimeEndpointInput = {
-      val __obj = js.Dynamic.literal(
-        "MLModelId" -> MLModelId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CreateRealtimeEndpointInput]
-    }
   }
 
   /**
@@ -650,22 +389,10 @@ package machinelearning {
     * '''Note:'''The endpoint information includes the URI of the <code>MLModel</code>; that is, the location to send online prediction requests for the specified <code>MLModel</code>.
     */
   @js.native
+  @Factory
   trait CreateRealtimeEndpointOutput extends js.Object {
     var MLModelId: js.UndefOr[EntityId]
     var RealtimeEndpointInfo: js.UndefOr[RealtimeEndpointInfo]
-  }
-
-  object CreateRealtimeEndpointOutput {
-    @inline
-    def apply(
-        MLModelId: js.UndefOr[EntityId] = js.undefined,
-        RealtimeEndpointInfo: js.UndefOr[RealtimeEndpointInfo] = js.undefined
-    ): CreateRealtimeEndpointOutput = {
-      val __obj = js.Dynamic.literal()
-      MLModelId.foreach(__v => __obj.updateDynamic("MLModelId")(__v.asInstanceOf[js.Any]))
-      RealtimeEndpointInfo.foreach(__v => __obj.updateDynamic("RealtimeEndpointInfo")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateRealtimeEndpointOutput]
-    }
   }
 
   /**
@@ -673,6 +400,7 @@ package machinelearning {
     *  The content consists of the detailed metadata and data file information and the current status of the <code>DataSource</code>.
     */
   @js.native
+  @Factory
   trait DataSource extends js.Object {
     var ComputeStatistics: js.UndefOr[ComputeStatistics]
     var ComputeTime: js.UndefOr[LongType]
@@ -692,51 +420,6 @@ package machinelearning {
     var RoleARN: js.UndefOr[RoleARN]
     var StartedAt: js.UndefOr[EpochTime]
     var Status: js.UndefOr[EntityStatus]
-  }
-
-  object DataSource {
-    @inline
-    def apply(
-        ComputeStatistics: js.UndefOr[ComputeStatistics] = js.undefined,
-        ComputeTime: js.UndefOr[LongType] = js.undefined,
-        CreatedAt: js.UndefOr[EpochTime] = js.undefined,
-        CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
-        DataLocationS3: js.UndefOr[S3Url] = js.undefined,
-        DataRearrangement: js.UndefOr[DataRearrangement] = js.undefined,
-        DataSizeInBytes: js.UndefOr[LongType] = js.undefined,
-        DataSourceId: js.UndefOr[EntityId] = js.undefined,
-        FinishedAt: js.UndefOr[EpochTime] = js.undefined,
-        LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
-        Message: js.UndefOr[Message] = js.undefined,
-        Name: js.UndefOr[EntityName] = js.undefined,
-        NumberOfFiles: js.UndefOr[LongType] = js.undefined,
-        RDSMetadata: js.UndefOr[RDSMetadata] = js.undefined,
-        RedshiftMetadata: js.UndefOr[RedshiftMetadata] = js.undefined,
-        RoleARN: js.UndefOr[RoleARN] = js.undefined,
-        StartedAt: js.UndefOr[EpochTime] = js.undefined,
-        Status: js.UndefOr[EntityStatus] = js.undefined
-    ): DataSource = {
-      val __obj = js.Dynamic.literal()
-      ComputeStatistics.foreach(__v => __obj.updateDynamic("ComputeStatistics")(__v.asInstanceOf[js.Any]))
-      ComputeTime.foreach(__v => __obj.updateDynamic("ComputeTime")(__v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
-      CreatedByIamUser.foreach(__v => __obj.updateDynamic("CreatedByIamUser")(__v.asInstanceOf[js.Any]))
-      DataLocationS3.foreach(__v => __obj.updateDynamic("DataLocationS3")(__v.asInstanceOf[js.Any]))
-      DataRearrangement.foreach(__v => __obj.updateDynamic("DataRearrangement")(__v.asInstanceOf[js.Any]))
-      DataSizeInBytes.foreach(__v => __obj.updateDynamic("DataSizeInBytes")(__v.asInstanceOf[js.Any]))
-      DataSourceId.foreach(__v => __obj.updateDynamic("DataSourceId")(__v.asInstanceOf[js.Any]))
-      FinishedAt.foreach(__v => __obj.updateDynamic("FinishedAt")(__v.asInstanceOf[js.Any]))
-      LastUpdatedAt.foreach(__v => __obj.updateDynamic("LastUpdatedAt")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      NumberOfFiles.foreach(__v => __obj.updateDynamic("NumberOfFiles")(__v.asInstanceOf[js.Any]))
-      RDSMetadata.foreach(__v => __obj.updateDynamic("RDSMetadata")(__v.asInstanceOf[js.Any]))
-      RedshiftMetadata.foreach(__v => __obj.updateDynamic("RedshiftMetadata")(__v.asInstanceOf[js.Any]))
-      RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
-      StartedAt.foreach(__v => __obj.updateDynamic("StartedAt")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DataSource]
-    }
   }
 
   /**
@@ -762,21 +445,9 @@ package machinelearning {
   }
 
   @js.native
+  @Factory
   trait DeleteBatchPredictionInput extends js.Object {
     var BatchPredictionId: EntityId
-  }
-
-  object DeleteBatchPredictionInput {
-    @inline
-    def apply(
-        BatchPredictionId: EntityId
-    ): DeleteBatchPredictionInput = {
-      val __obj = js.Dynamic.literal(
-        "BatchPredictionId" -> BatchPredictionId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteBatchPredictionInput]
-    }
   }
 
   /**
@@ -784,74 +455,30 @@ package machinelearning {
     *  You can use the <code>GetBatchPrediction</code> operation and check the value of the <code>Status</code> parameter to see whether a <code>BatchPrediction</code> is marked as <code>DELETED</code>.
     */
   @js.native
+  @Factory
   trait DeleteBatchPredictionOutput extends js.Object {
     var BatchPredictionId: js.UndefOr[EntityId]
   }
 
-  object DeleteBatchPredictionOutput {
-    @inline
-    def apply(
-        BatchPredictionId: js.UndefOr[EntityId] = js.undefined
-    ): DeleteBatchPredictionOutput = {
-      val __obj = js.Dynamic.literal()
-      BatchPredictionId.foreach(__v => __obj.updateDynamic("BatchPredictionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteBatchPredictionOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteDataSourceInput extends js.Object {
     var DataSourceId: EntityId
-  }
-
-  object DeleteDataSourceInput {
-    @inline
-    def apply(
-        DataSourceId: EntityId
-    ): DeleteDataSourceInput = {
-      val __obj = js.Dynamic.literal(
-        "DataSourceId" -> DataSourceId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteDataSourceInput]
-    }
   }
 
   /**
     * Represents the output of a <code>DeleteDataSource</code> operation.
     */
   @js.native
+  @Factory
   trait DeleteDataSourceOutput extends js.Object {
     var DataSourceId: js.UndefOr[EntityId]
   }
 
-  object DeleteDataSourceOutput {
-    @inline
-    def apply(
-        DataSourceId: js.UndefOr[EntityId] = js.undefined
-    ): DeleteDataSourceOutput = {
-      val __obj = js.Dynamic.literal()
-      DataSourceId.foreach(__v => __obj.updateDynamic("DataSourceId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteDataSourceOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteEvaluationInput extends js.Object {
     var EvaluationId: EntityId
-  }
-
-  object DeleteEvaluationInput {
-    @inline
-    def apply(
-        EvaluationId: EntityId
-    ): DeleteEvaluationInput = {
-      val __obj = js.Dynamic.literal(
-        "EvaluationId" -> EvaluationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteEvaluationInput]
-    }
   }
 
   /**
@@ -859,37 +486,15 @@ package machinelearning {
     *  You can use the <code>GetEvaluation</code> operation and check the value of the <code>Status</code> parameter to see whether an <code>Evaluation</code> is marked as <code>DELETED</code>.
     */
   @js.native
+  @Factory
   trait DeleteEvaluationOutput extends js.Object {
     var EvaluationId: js.UndefOr[EntityId]
   }
 
-  object DeleteEvaluationOutput {
-    @inline
-    def apply(
-        EvaluationId: js.UndefOr[EntityId] = js.undefined
-    ): DeleteEvaluationOutput = {
-      val __obj = js.Dynamic.literal()
-      EvaluationId.foreach(__v => __obj.updateDynamic("EvaluationId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteEvaluationOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteMLModelInput extends js.Object {
     var MLModelId: EntityId
-  }
-
-  object DeleteMLModelInput {
-    @inline
-    def apply(
-        MLModelId: EntityId
-    ): DeleteMLModelInput = {
-      val __obj = js.Dynamic.literal(
-        "MLModelId" -> MLModelId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteMLModelInput]
-    }
   }
 
   /**
@@ -897,37 +502,15 @@ package machinelearning {
     *  You can use the <code>GetMLModel</code> operation and check the value of the <code>Status</code> parameter to see whether an <code>MLModel</code> is marked as <code>DELETED</code>.
     */
   @js.native
+  @Factory
   trait DeleteMLModelOutput extends js.Object {
     var MLModelId: js.UndefOr[EntityId]
   }
 
-  object DeleteMLModelOutput {
-    @inline
-    def apply(
-        MLModelId: js.UndefOr[EntityId] = js.undefined
-    ): DeleteMLModelOutput = {
-      val __obj = js.Dynamic.literal()
-      MLModelId.foreach(__v => __obj.updateDynamic("MLModelId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteMLModelOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteRealtimeEndpointInput extends js.Object {
     var MLModelId: EntityId
-  }
-
-  object DeleteRealtimeEndpointInput {
-    @inline
-    def apply(
-        MLModelId: EntityId
-    ): DeleteRealtimeEndpointInput = {
-      val __obj = js.Dynamic.literal(
-        "MLModelId" -> MLModelId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteRealtimeEndpointInput]
-    }
   }
 
   /**
@@ -935,71 +518,32 @@ package machinelearning {
     *  The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>.
     */
   @js.native
+  @Factory
   trait DeleteRealtimeEndpointOutput extends js.Object {
     var MLModelId: js.UndefOr[EntityId]
     var RealtimeEndpointInfo: js.UndefOr[RealtimeEndpointInfo]
   }
 
-  object DeleteRealtimeEndpointOutput {
-    @inline
-    def apply(
-        MLModelId: js.UndefOr[EntityId] = js.undefined,
-        RealtimeEndpointInfo: js.UndefOr[RealtimeEndpointInfo] = js.undefined
-    ): DeleteRealtimeEndpointOutput = {
-      val __obj = js.Dynamic.literal()
-      MLModelId.foreach(__v => __obj.updateDynamic("MLModelId")(__v.asInstanceOf[js.Any]))
-      RealtimeEndpointInfo.foreach(__v => __obj.updateDynamic("RealtimeEndpointInfo")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteRealtimeEndpointOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteTagsInput extends js.Object {
     var ResourceId: EntityId
     var ResourceType: TaggableResourceType
     var TagKeys: TagKeyList
   }
 
-  object DeleteTagsInput {
-    @inline
-    def apply(
-        ResourceId: EntityId,
-        ResourceType: TaggableResourceType,
-        TagKeys: TagKeyList
-    ): DeleteTagsInput = {
-      val __obj = js.Dynamic.literal(
-        "ResourceId"   -> ResourceId.asInstanceOf[js.Any],
-        "ResourceType" -> ResourceType.asInstanceOf[js.Any],
-        "TagKeys"      -> TagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteTagsInput]
-    }
-  }
-
   /**
     * Amazon ML returns the following elements.
     */
   @js.native
+  @Factory
   trait DeleteTagsOutput extends js.Object {
     var ResourceId: js.UndefOr[EntityId]
     var ResourceType: js.UndefOr[TaggableResourceType]
   }
 
-  object DeleteTagsOutput {
-    @inline
-    def apply(
-        ResourceId: js.UndefOr[EntityId] = js.undefined,
-        ResourceType: js.UndefOr[TaggableResourceType] = js.undefined
-    ): DeleteTagsOutput = {
-      val __obj = js.Dynamic.literal()
-      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteTagsOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeBatchPredictionsInput extends js.Object {
     var EQ: js.UndefOr[ComparatorValue]
     var FilterVariable: js.UndefOr[BatchPredictionFilterVariable]
@@ -1014,60 +558,18 @@ package machinelearning {
     var SortOrder: js.UndefOr[SortOrder]
   }
 
-  object DescribeBatchPredictionsInput {
-    @inline
-    def apply(
-        EQ: js.UndefOr[ComparatorValue] = js.undefined,
-        FilterVariable: js.UndefOr[BatchPredictionFilterVariable] = js.undefined,
-        GE: js.UndefOr[ComparatorValue] = js.undefined,
-        GT: js.UndefOr[ComparatorValue] = js.undefined,
-        LE: js.UndefOr[ComparatorValue] = js.undefined,
-        LT: js.UndefOr[ComparatorValue] = js.undefined,
-        Limit: js.UndefOr[PageLimit] = js.undefined,
-        NE: js.UndefOr[ComparatorValue] = js.undefined,
-        NextToken: js.UndefOr[StringType] = js.undefined,
-        Prefix: js.UndefOr[ComparatorValue] = js.undefined,
-        SortOrder: js.UndefOr[SortOrder] = js.undefined
-    ): DescribeBatchPredictionsInput = {
-      val __obj = js.Dynamic.literal()
-      EQ.foreach(__v => __obj.updateDynamic("EQ")(__v.asInstanceOf[js.Any]))
-      FilterVariable.foreach(__v => __obj.updateDynamic("FilterVariable")(__v.asInstanceOf[js.Any]))
-      GE.foreach(__v => __obj.updateDynamic("GE")(__v.asInstanceOf[js.Any]))
-      GT.foreach(__v => __obj.updateDynamic("GT")(__v.asInstanceOf[js.Any]))
-      LE.foreach(__v => __obj.updateDynamic("LE")(__v.asInstanceOf[js.Any]))
-      LT.foreach(__v => __obj.updateDynamic("LT")(__v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NE.foreach(__v => __obj.updateDynamic("NE")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
-      SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeBatchPredictionsInput]
-    }
-  }
-
   /**
     * Represents the output of a <code>DescribeBatchPredictions</code> operation. The content is essentially a list of <code>BatchPrediction</code>s.
     */
   @js.native
+  @Factory
   trait DescribeBatchPredictionsOutput extends js.Object {
     var NextToken: js.UndefOr[StringType]
     var Results: js.UndefOr[BatchPredictions]
   }
 
-  object DescribeBatchPredictionsOutput {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[StringType] = js.undefined,
-        Results: js.UndefOr[BatchPredictions] = js.undefined
-    ): DescribeBatchPredictionsOutput = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Results.foreach(__v => __obj.updateDynamic("Results")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeBatchPredictionsOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeDataSourcesInput extends js.Object {
     var EQ: js.UndefOr[ComparatorValue]
     var FilterVariable: js.UndefOr[DataSourceFilterVariable]
@@ -1082,60 +584,18 @@ package machinelearning {
     var SortOrder: js.UndefOr[SortOrder]
   }
 
-  object DescribeDataSourcesInput {
-    @inline
-    def apply(
-        EQ: js.UndefOr[ComparatorValue] = js.undefined,
-        FilterVariable: js.UndefOr[DataSourceFilterVariable] = js.undefined,
-        GE: js.UndefOr[ComparatorValue] = js.undefined,
-        GT: js.UndefOr[ComparatorValue] = js.undefined,
-        LE: js.UndefOr[ComparatorValue] = js.undefined,
-        LT: js.UndefOr[ComparatorValue] = js.undefined,
-        Limit: js.UndefOr[PageLimit] = js.undefined,
-        NE: js.UndefOr[ComparatorValue] = js.undefined,
-        NextToken: js.UndefOr[StringType] = js.undefined,
-        Prefix: js.UndefOr[ComparatorValue] = js.undefined,
-        SortOrder: js.UndefOr[SortOrder] = js.undefined
-    ): DescribeDataSourcesInput = {
-      val __obj = js.Dynamic.literal()
-      EQ.foreach(__v => __obj.updateDynamic("EQ")(__v.asInstanceOf[js.Any]))
-      FilterVariable.foreach(__v => __obj.updateDynamic("FilterVariable")(__v.asInstanceOf[js.Any]))
-      GE.foreach(__v => __obj.updateDynamic("GE")(__v.asInstanceOf[js.Any]))
-      GT.foreach(__v => __obj.updateDynamic("GT")(__v.asInstanceOf[js.Any]))
-      LE.foreach(__v => __obj.updateDynamic("LE")(__v.asInstanceOf[js.Any]))
-      LT.foreach(__v => __obj.updateDynamic("LT")(__v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NE.foreach(__v => __obj.updateDynamic("NE")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
-      SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeDataSourcesInput]
-    }
-  }
-
   /**
     * Represents the query results from a <a>DescribeDataSources</a> operation. The content is essentially a list of <code>DataSource</code>.
     */
   @js.native
+  @Factory
   trait DescribeDataSourcesOutput extends js.Object {
     var NextToken: js.UndefOr[StringType]
     var Results: js.UndefOr[DataSources]
   }
 
-  object DescribeDataSourcesOutput {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[StringType] = js.undefined,
-        Results: js.UndefOr[DataSources] = js.undefined
-    ): DescribeDataSourcesOutput = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Results.foreach(__v => __obj.updateDynamic("Results")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeDataSourcesOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeEvaluationsInput extends js.Object {
     var EQ: js.UndefOr[ComparatorValue]
     var FilterVariable: js.UndefOr[EvaluationFilterVariable]
@@ -1150,60 +610,18 @@ package machinelearning {
     var SortOrder: js.UndefOr[SortOrder]
   }
 
-  object DescribeEvaluationsInput {
-    @inline
-    def apply(
-        EQ: js.UndefOr[ComparatorValue] = js.undefined,
-        FilterVariable: js.UndefOr[EvaluationFilterVariable] = js.undefined,
-        GE: js.UndefOr[ComparatorValue] = js.undefined,
-        GT: js.UndefOr[ComparatorValue] = js.undefined,
-        LE: js.UndefOr[ComparatorValue] = js.undefined,
-        LT: js.UndefOr[ComparatorValue] = js.undefined,
-        Limit: js.UndefOr[PageLimit] = js.undefined,
-        NE: js.UndefOr[ComparatorValue] = js.undefined,
-        NextToken: js.UndefOr[StringType] = js.undefined,
-        Prefix: js.UndefOr[ComparatorValue] = js.undefined,
-        SortOrder: js.UndefOr[SortOrder] = js.undefined
-    ): DescribeEvaluationsInput = {
-      val __obj = js.Dynamic.literal()
-      EQ.foreach(__v => __obj.updateDynamic("EQ")(__v.asInstanceOf[js.Any]))
-      FilterVariable.foreach(__v => __obj.updateDynamic("FilterVariable")(__v.asInstanceOf[js.Any]))
-      GE.foreach(__v => __obj.updateDynamic("GE")(__v.asInstanceOf[js.Any]))
-      GT.foreach(__v => __obj.updateDynamic("GT")(__v.asInstanceOf[js.Any]))
-      LE.foreach(__v => __obj.updateDynamic("LE")(__v.asInstanceOf[js.Any]))
-      LT.foreach(__v => __obj.updateDynamic("LT")(__v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NE.foreach(__v => __obj.updateDynamic("NE")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
-      SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeEvaluationsInput]
-    }
-  }
-
   /**
     * Represents the query results from a <code>DescribeEvaluations</code> operation. The content is essentially a list of <code>Evaluation</code>.
     */
   @js.native
+  @Factory
   trait DescribeEvaluationsOutput extends js.Object {
     var NextToken: js.UndefOr[StringType]
     var Results: js.UndefOr[Evaluations]
   }
 
-  object DescribeEvaluationsOutput {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[StringType] = js.undefined,
-        Results: js.UndefOr[Evaluations] = js.undefined
-    ): DescribeEvaluationsOutput = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Results.foreach(__v => __obj.updateDynamic("Results")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeEvaluationsOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeMLModelsInput extends js.Object {
     var EQ: js.UndefOr[ComparatorValue]
     var FilterVariable: js.UndefOr[MLModelFilterVariable]
@@ -1218,103 +636,32 @@ package machinelearning {
     var SortOrder: js.UndefOr[SortOrder]
   }
 
-  object DescribeMLModelsInput {
-    @inline
-    def apply(
-        EQ: js.UndefOr[ComparatorValue] = js.undefined,
-        FilterVariable: js.UndefOr[MLModelFilterVariable] = js.undefined,
-        GE: js.UndefOr[ComparatorValue] = js.undefined,
-        GT: js.UndefOr[ComparatorValue] = js.undefined,
-        LE: js.UndefOr[ComparatorValue] = js.undefined,
-        LT: js.UndefOr[ComparatorValue] = js.undefined,
-        Limit: js.UndefOr[PageLimit] = js.undefined,
-        NE: js.UndefOr[ComparatorValue] = js.undefined,
-        NextToken: js.UndefOr[StringType] = js.undefined,
-        Prefix: js.UndefOr[ComparatorValue] = js.undefined,
-        SortOrder: js.UndefOr[SortOrder] = js.undefined
-    ): DescribeMLModelsInput = {
-      val __obj = js.Dynamic.literal()
-      EQ.foreach(__v => __obj.updateDynamic("EQ")(__v.asInstanceOf[js.Any]))
-      FilterVariable.foreach(__v => __obj.updateDynamic("FilterVariable")(__v.asInstanceOf[js.Any]))
-      GE.foreach(__v => __obj.updateDynamic("GE")(__v.asInstanceOf[js.Any]))
-      GT.foreach(__v => __obj.updateDynamic("GT")(__v.asInstanceOf[js.Any]))
-      LE.foreach(__v => __obj.updateDynamic("LE")(__v.asInstanceOf[js.Any]))
-      LT.foreach(__v => __obj.updateDynamic("LT")(__v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
-      NE.foreach(__v => __obj.updateDynamic("NE")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
-      SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeMLModelsInput]
-    }
-  }
-
   /**
     * Represents the output of a <code>DescribeMLModels</code> operation. The content is essentially a list of <code>MLModel</code>.
     */
   @js.native
+  @Factory
   trait DescribeMLModelsOutput extends js.Object {
     var NextToken: js.UndefOr[StringType]
     var Results: js.UndefOr[MLModels]
   }
 
-  object DescribeMLModelsOutput {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[StringType] = js.undefined,
-        Results: js.UndefOr[MLModels] = js.undefined
-    ): DescribeMLModelsOutput = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Results.foreach(__v => __obj.updateDynamic("Results")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeMLModelsOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeTagsInput extends js.Object {
     var ResourceId: EntityId
     var ResourceType: TaggableResourceType
-  }
-
-  object DescribeTagsInput {
-    @inline
-    def apply(
-        ResourceId: EntityId,
-        ResourceType: TaggableResourceType
-    ): DescribeTagsInput = {
-      val __obj = js.Dynamic.literal(
-        "ResourceId"   -> ResourceId.asInstanceOf[js.Any],
-        "ResourceType" -> ResourceType.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeTagsInput]
-    }
   }
 
   /**
     * Amazon ML returns the following elements.
     */
   @js.native
+  @Factory
   trait DescribeTagsOutput extends js.Object {
     var ResourceId: js.UndefOr[EntityId]
     var ResourceType: js.UndefOr[TaggableResourceType]
     var Tags: js.UndefOr[TagList]
-  }
-
-  object DescribeTagsOutput {
-    @inline
-    def apply(
-        ResourceId: js.UndefOr[EntityId] = js.undefined,
-        ResourceType: js.UndefOr[TaggableResourceType] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): DescribeTagsOutput = {
-      val __obj = js.Dynamic.literal()
-      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeTagsOutput]
-    }
   }
 
   /**
@@ -1354,6 +701,7 @@ package machinelearning {
     *  The content consists of the detailed metadata and data file information and the current status of the <code>Evaluation</code>.
     */
   @js.native
+  @Factory
   trait Evaluation extends js.Object {
     var ComputeTime: js.UndefOr[LongType]
     var CreatedAt: js.UndefOr[EpochTime]
@@ -1369,43 +717,6 @@ package machinelearning {
     var PerformanceMetrics: js.UndefOr[PerformanceMetrics]
     var StartedAt: js.UndefOr[EpochTime]
     var Status: js.UndefOr[EntityStatus]
-  }
-
-  object Evaluation {
-    @inline
-    def apply(
-        ComputeTime: js.UndefOr[LongType] = js.undefined,
-        CreatedAt: js.UndefOr[EpochTime] = js.undefined,
-        CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
-        EvaluationDataSourceId: js.UndefOr[EntityId] = js.undefined,
-        EvaluationId: js.UndefOr[EntityId] = js.undefined,
-        FinishedAt: js.UndefOr[EpochTime] = js.undefined,
-        InputDataLocationS3: js.UndefOr[S3Url] = js.undefined,
-        LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
-        MLModelId: js.UndefOr[EntityId] = js.undefined,
-        Message: js.UndefOr[Message] = js.undefined,
-        Name: js.UndefOr[EntityName] = js.undefined,
-        PerformanceMetrics: js.UndefOr[PerformanceMetrics] = js.undefined,
-        StartedAt: js.UndefOr[EpochTime] = js.undefined,
-        Status: js.UndefOr[EntityStatus] = js.undefined
-    ): Evaluation = {
-      val __obj = js.Dynamic.literal()
-      ComputeTime.foreach(__v => __obj.updateDynamic("ComputeTime")(__v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
-      CreatedByIamUser.foreach(__v => __obj.updateDynamic("CreatedByIamUser")(__v.asInstanceOf[js.Any]))
-      EvaluationDataSourceId.foreach(__v => __obj.updateDynamic("EvaluationDataSourceId")(__v.asInstanceOf[js.Any]))
-      EvaluationId.foreach(__v => __obj.updateDynamic("EvaluationId")(__v.asInstanceOf[js.Any]))
-      FinishedAt.foreach(__v => __obj.updateDynamic("FinishedAt")(__v.asInstanceOf[js.Any]))
-      InputDataLocationS3.foreach(__v => __obj.updateDynamic("InputDataLocationS3")(__v.asInstanceOf[js.Any]))
-      LastUpdatedAt.foreach(__v => __obj.updateDynamic("LastUpdatedAt")(__v.asInstanceOf[js.Any]))
-      MLModelId.foreach(__v => __obj.updateDynamic("MLModelId")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      PerformanceMetrics.foreach(__v => __obj.updateDynamic("PerformanceMetrics")(__v.asInstanceOf[js.Any]))
-      StartedAt.foreach(__v => __obj.updateDynamic("StartedAt")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Evaluation]
-    }
   }
 
   /**
@@ -1435,27 +746,16 @@ package machinelearning {
   }
 
   @js.native
+  @Factory
   trait GetBatchPredictionInput extends js.Object {
     var BatchPredictionId: EntityId
-  }
-
-  object GetBatchPredictionInput {
-    @inline
-    def apply(
-        BatchPredictionId: EntityId
-    ): GetBatchPredictionInput = {
-      val __obj = js.Dynamic.literal(
-        "BatchPredictionId" -> BatchPredictionId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetBatchPredictionInput]
-    }
   }
 
   /**
     * Represents the output of a <code>GetBatchPrediction</code> operation and describes a <code>BatchPrediction</code>.
     */
   @js.native
+  @Factory
   trait GetBatchPredictionOutput extends js.Object {
     var BatchPredictionDataSourceId: js.UndefOr[EntityId]
     var BatchPredictionId: js.UndefOr[EntityId]
@@ -1476,76 +776,18 @@ package machinelearning {
     var TotalRecordCount: js.UndefOr[LongType]
   }
 
-  object GetBatchPredictionOutput {
-    @inline
-    def apply(
-        BatchPredictionDataSourceId: js.UndefOr[EntityId] = js.undefined,
-        BatchPredictionId: js.UndefOr[EntityId] = js.undefined,
-        ComputeTime: js.UndefOr[LongType] = js.undefined,
-        CreatedAt: js.UndefOr[EpochTime] = js.undefined,
-        CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
-        FinishedAt: js.UndefOr[EpochTime] = js.undefined,
-        InputDataLocationS3: js.UndefOr[S3Url] = js.undefined,
-        InvalidRecordCount: js.UndefOr[LongType] = js.undefined,
-        LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
-        LogUri: js.UndefOr[PresignedS3Url] = js.undefined,
-        MLModelId: js.UndefOr[EntityId] = js.undefined,
-        Message: js.UndefOr[Message] = js.undefined,
-        Name: js.UndefOr[EntityName] = js.undefined,
-        OutputUri: js.UndefOr[S3Url] = js.undefined,
-        StartedAt: js.UndefOr[EpochTime] = js.undefined,
-        Status: js.UndefOr[EntityStatus] = js.undefined,
-        TotalRecordCount: js.UndefOr[LongType] = js.undefined
-    ): GetBatchPredictionOutput = {
-      val __obj = js.Dynamic.literal()
-      BatchPredictionDataSourceId.foreach(__v =>
-        __obj.updateDynamic("BatchPredictionDataSourceId")(__v.asInstanceOf[js.Any])
-      )
-      BatchPredictionId.foreach(__v => __obj.updateDynamic("BatchPredictionId")(__v.asInstanceOf[js.Any]))
-      ComputeTime.foreach(__v => __obj.updateDynamic("ComputeTime")(__v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
-      CreatedByIamUser.foreach(__v => __obj.updateDynamic("CreatedByIamUser")(__v.asInstanceOf[js.Any]))
-      FinishedAt.foreach(__v => __obj.updateDynamic("FinishedAt")(__v.asInstanceOf[js.Any]))
-      InputDataLocationS3.foreach(__v => __obj.updateDynamic("InputDataLocationS3")(__v.asInstanceOf[js.Any]))
-      InvalidRecordCount.foreach(__v => __obj.updateDynamic("InvalidRecordCount")(__v.asInstanceOf[js.Any]))
-      LastUpdatedAt.foreach(__v => __obj.updateDynamic("LastUpdatedAt")(__v.asInstanceOf[js.Any]))
-      LogUri.foreach(__v => __obj.updateDynamic("LogUri")(__v.asInstanceOf[js.Any]))
-      MLModelId.foreach(__v => __obj.updateDynamic("MLModelId")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      OutputUri.foreach(__v => __obj.updateDynamic("OutputUri")(__v.asInstanceOf[js.Any]))
-      StartedAt.foreach(__v => __obj.updateDynamic("StartedAt")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      TotalRecordCount.foreach(__v => __obj.updateDynamic("TotalRecordCount")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetBatchPredictionOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetDataSourceInput extends js.Object {
     var DataSourceId: EntityId
     var Verbose: js.UndefOr[Verbose]
-  }
-
-  object GetDataSourceInput {
-    @inline
-    def apply(
-        DataSourceId: EntityId,
-        Verbose: js.UndefOr[Verbose] = js.undefined
-    ): GetDataSourceInput = {
-      val __obj = js.Dynamic.literal(
-        "DataSourceId" -> DataSourceId.asInstanceOf[js.Any]
-      )
-
-      Verbose.foreach(__v => __obj.updateDynamic("Verbose")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDataSourceInput]
-    }
   }
 
   /**
     * Represents the output of a <code>GetDataSource</code> operation and describes a <code>DataSource</code>.
     */
   @js.native
+  @Factory
   trait GetDataSourceOutput extends js.Object {
     var ComputeStatistics: js.UndefOr[ComputeStatistics]
     var ComputeTime: js.UndefOr[LongType]
@@ -1569,77 +811,17 @@ package machinelearning {
     var Status: js.UndefOr[EntityStatus]
   }
 
-  object GetDataSourceOutput {
-    @inline
-    def apply(
-        ComputeStatistics: js.UndefOr[ComputeStatistics] = js.undefined,
-        ComputeTime: js.UndefOr[LongType] = js.undefined,
-        CreatedAt: js.UndefOr[EpochTime] = js.undefined,
-        CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
-        DataLocationS3: js.UndefOr[S3Url] = js.undefined,
-        DataRearrangement: js.UndefOr[DataRearrangement] = js.undefined,
-        DataSizeInBytes: js.UndefOr[LongType] = js.undefined,
-        DataSourceId: js.UndefOr[EntityId] = js.undefined,
-        DataSourceSchema: js.UndefOr[DataSchema] = js.undefined,
-        FinishedAt: js.UndefOr[EpochTime] = js.undefined,
-        LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
-        LogUri: js.UndefOr[PresignedS3Url] = js.undefined,
-        Message: js.UndefOr[Message] = js.undefined,
-        Name: js.UndefOr[EntityName] = js.undefined,
-        NumberOfFiles: js.UndefOr[LongType] = js.undefined,
-        RDSMetadata: js.UndefOr[RDSMetadata] = js.undefined,
-        RedshiftMetadata: js.UndefOr[RedshiftMetadata] = js.undefined,
-        RoleARN: js.UndefOr[RoleARN] = js.undefined,
-        StartedAt: js.UndefOr[EpochTime] = js.undefined,
-        Status: js.UndefOr[EntityStatus] = js.undefined
-    ): GetDataSourceOutput = {
-      val __obj = js.Dynamic.literal()
-      ComputeStatistics.foreach(__v => __obj.updateDynamic("ComputeStatistics")(__v.asInstanceOf[js.Any]))
-      ComputeTime.foreach(__v => __obj.updateDynamic("ComputeTime")(__v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
-      CreatedByIamUser.foreach(__v => __obj.updateDynamic("CreatedByIamUser")(__v.asInstanceOf[js.Any]))
-      DataLocationS3.foreach(__v => __obj.updateDynamic("DataLocationS3")(__v.asInstanceOf[js.Any]))
-      DataRearrangement.foreach(__v => __obj.updateDynamic("DataRearrangement")(__v.asInstanceOf[js.Any]))
-      DataSizeInBytes.foreach(__v => __obj.updateDynamic("DataSizeInBytes")(__v.asInstanceOf[js.Any]))
-      DataSourceId.foreach(__v => __obj.updateDynamic("DataSourceId")(__v.asInstanceOf[js.Any]))
-      DataSourceSchema.foreach(__v => __obj.updateDynamic("DataSourceSchema")(__v.asInstanceOf[js.Any]))
-      FinishedAt.foreach(__v => __obj.updateDynamic("FinishedAt")(__v.asInstanceOf[js.Any]))
-      LastUpdatedAt.foreach(__v => __obj.updateDynamic("LastUpdatedAt")(__v.asInstanceOf[js.Any]))
-      LogUri.foreach(__v => __obj.updateDynamic("LogUri")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      NumberOfFiles.foreach(__v => __obj.updateDynamic("NumberOfFiles")(__v.asInstanceOf[js.Any]))
-      RDSMetadata.foreach(__v => __obj.updateDynamic("RDSMetadata")(__v.asInstanceOf[js.Any]))
-      RedshiftMetadata.foreach(__v => __obj.updateDynamic("RedshiftMetadata")(__v.asInstanceOf[js.Any]))
-      RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
-      StartedAt.foreach(__v => __obj.updateDynamic("StartedAt")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetDataSourceOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetEvaluationInput extends js.Object {
     var EvaluationId: EntityId
-  }
-
-  object GetEvaluationInput {
-    @inline
-    def apply(
-        EvaluationId: EntityId
-    ): GetEvaluationInput = {
-      val __obj = js.Dynamic.literal(
-        "EvaluationId" -> EvaluationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetEvaluationInput]
-    }
   }
 
   /**
     * Represents the output of a <code>GetEvaluation</code> operation and describes an <code>Evaluation</code>.
     */
   @js.native
+  @Factory
   trait GetEvaluationOutput extends js.Object {
     var ComputeTime: js.UndefOr[LongType]
     var CreatedAt: js.UndefOr[EpochTime]
@@ -1658,70 +840,18 @@ package machinelearning {
     var Status: js.UndefOr[EntityStatus]
   }
 
-  object GetEvaluationOutput {
-    @inline
-    def apply(
-        ComputeTime: js.UndefOr[LongType] = js.undefined,
-        CreatedAt: js.UndefOr[EpochTime] = js.undefined,
-        CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
-        EvaluationDataSourceId: js.UndefOr[EntityId] = js.undefined,
-        EvaluationId: js.UndefOr[EntityId] = js.undefined,
-        FinishedAt: js.UndefOr[EpochTime] = js.undefined,
-        InputDataLocationS3: js.UndefOr[S3Url] = js.undefined,
-        LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
-        LogUri: js.UndefOr[PresignedS3Url] = js.undefined,
-        MLModelId: js.UndefOr[EntityId] = js.undefined,
-        Message: js.UndefOr[Message] = js.undefined,
-        Name: js.UndefOr[EntityName] = js.undefined,
-        PerformanceMetrics: js.UndefOr[PerformanceMetrics] = js.undefined,
-        StartedAt: js.UndefOr[EpochTime] = js.undefined,
-        Status: js.UndefOr[EntityStatus] = js.undefined
-    ): GetEvaluationOutput = {
-      val __obj = js.Dynamic.literal()
-      ComputeTime.foreach(__v => __obj.updateDynamic("ComputeTime")(__v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
-      CreatedByIamUser.foreach(__v => __obj.updateDynamic("CreatedByIamUser")(__v.asInstanceOf[js.Any]))
-      EvaluationDataSourceId.foreach(__v => __obj.updateDynamic("EvaluationDataSourceId")(__v.asInstanceOf[js.Any]))
-      EvaluationId.foreach(__v => __obj.updateDynamic("EvaluationId")(__v.asInstanceOf[js.Any]))
-      FinishedAt.foreach(__v => __obj.updateDynamic("FinishedAt")(__v.asInstanceOf[js.Any]))
-      InputDataLocationS3.foreach(__v => __obj.updateDynamic("InputDataLocationS3")(__v.asInstanceOf[js.Any]))
-      LastUpdatedAt.foreach(__v => __obj.updateDynamic("LastUpdatedAt")(__v.asInstanceOf[js.Any]))
-      LogUri.foreach(__v => __obj.updateDynamic("LogUri")(__v.asInstanceOf[js.Any]))
-      MLModelId.foreach(__v => __obj.updateDynamic("MLModelId")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      PerformanceMetrics.foreach(__v => __obj.updateDynamic("PerformanceMetrics")(__v.asInstanceOf[js.Any]))
-      StartedAt.foreach(__v => __obj.updateDynamic("StartedAt")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetEvaluationOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetMLModelInput extends js.Object {
     var MLModelId: EntityId
     var Verbose: js.UndefOr[Verbose]
-  }
-
-  object GetMLModelInput {
-    @inline
-    def apply(
-        MLModelId: EntityId,
-        Verbose: js.UndefOr[Verbose] = js.undefined
-    ): GetMLModelInput = {
-      val __obj = js.Dynamic.literal(
-        "MLModelId" -> MLModelId.asInstanceOf[js.Any]
-      )
-
-      Verbose.foreach(__v => __obj.updateDynamic("Verbose")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetMLModelInput]
-    }
   }
 
   /**
     * Represents the output of a <code>GetMLModel</code> operation, and provides detailed information about a <code>MLModel</code>.
     */
   @js.native
+  @Factory
   trait GetMLModelOutput extends js.Object {
     var ComputeTime: js.UndefOr[LongType]
     var CreatedAt: js.UndefOr[EpochTime]
@@ -1744,59 +874,6 @@ package machinelearning {
     var Status: js.UndefOr[EntityStatus]
     var TrainingDataSourceId: js.UndefOr[EntityId]
     var TrainingParameters: js.UndefOr[TrainingParameters]
-  }
-
-  object GetMLModelOutput {
-    @inline
-    def apply(
-        ComputeTime: js.UndefOr[LongType] = js.undefined,
-        CreatedAt: js.UndefOr[EpochTime] = js.undefined,
-        CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
-        EndpointInfo: js.UndefOr[RealtimeEndpointInfo] = js.undefined,
-        FinishedAt: js.UndefOr[EpochTime] = js.undefined,
-        InputDataLocationS3: js.UndefOr[S3Url] = js.undefined,
-        LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
-        LogUri: js.UndefOr[PresignedS3Url] = js.undefined,
-        MLModelId: js.UndefOr[EntityId] = js.undefined,
-        MLModelType: js.UndefOr[MLModelType] = js.undefined,
-        Message: js.UndefOr[Message] = js.undefined,
-        Name: js.UndefOr[MLModelName] = js.undefined,
-        Recipe: js.UndefOr[Recipe] = js.undefined,
-        Schema: js.UndefOr[DataSchema] = js.undefined,
-        ScoreThreshold: js.UndefOr[ScoreThreshold] = js.undefined,
-        ScoreThresholdLastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
-        SizeInBytes: js.UndefOr[LongType] = js.undefined,
-        StartedAt: js.UndefOr[EpochTime] = js.undefined,
-        Status: js.UndefOr[EntityStatus] = js.undefined,
-        TrainingDataSourceId: js.UndefOr[EntityId] = js.undefined,
-        TrainingParameters: js.UndefOr[TrainingParameters] = js.undefined
-    ): GetMLModelOutput = {
-      val __obj = js.Dynamic.literal()
-      ComputeTime.foreach(__v => __obj.updateDynamic("ComputeTime")(__v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
-      CreatedByIamUser.foreach(__v => __obj.updateDynamic("CreatedByIamUser")(__v.asInstanceOf[js.Any]))
-      EndpointInfo.foreach(__v => __obj.updateDynamic("EndpointInfo")(__v.asInstanceOf[js.Any]))
-      FinishedAt.foreach(__v => __obj.updateDynamic("FinishedAt")(__v.asInstanceOf[js.Any]))
-      InputDataLocationS3.foreach(__v => __obj.updateDynamic("InputDataLocationS3")(__v.asInstanceOf[js.Any]))
-      LastUpdatedAt.foreach(__v => __obj.updateDynamic("LastUpdatedAt")(__v.asInstanceOf[js.Any]))
-      LogUri.foreach(__v => __obj.updateDynamic("LogUri")(__v.asInstanceOf[js.Any]))
-      MLModelId.foreach(__v => __obj.updateDynamic("MLModelId")(__v.asInstanceOf[js.Any]))
-      MLModelType.foreach(__v => __obj.updateDynamic("MLModelType")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Recipe.foreach(__v => __obj.updateDynamic("Recipe")(__v.asInstanceOf[js.Any]))
-      Schema.foreach(__v => __obj.updateDynamic("Schema")(__v.asInstanceOf[js.Any]))
-      ScoreThreshold.foreach(__v => __obj.updateDynamic("ScoreThreshold")(__v.asInstanceOf[js.Any]))
-      ScoreThresholdLastUpdatedAt.foreach(__v =>
-        __obj.updateDynamic("ScoreThresholdLastUpdatedAt")(__v.asInstanceOf[js.Any])
-      )
-      SizeInBytes.foreach(__v => __obj.updateDynamic("SizeInBytes")(__v.asInstanceOf[js.Any]))
-      StartedAt.foreach(__v => __obj.updateDynamic("StartedAt")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      TrainingDataSourceId.foreach(__v => __obj.updateDynamic("TrainingDataSourceId")(__v.asInstanceOf[js.Any]))
-      TrainingParameters.foreach(__v => __obj.updateDynamic("TrainingParameters")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetMLModelOutput]
-    }
   }
 
   /**
@@ -1845,6 +922,7 @@ package machinelearning {
     *  The content consists of the detailed metadata and the current status of the <code>MLModel</code>.
     */
   @js.native
+  @Factory
   trait MLModel extends js.Object {
     var Algorithm: js.UndefOr[Algorithm]
     var ComputeTime: js.UndefOr[LongType]
@@ -1865,55 +943,6 @@ package machinelearning {
     var Status: js.UndefOr[EntityStatus]
     var TrainingDataSourceId: js.UndefOr[EntityId]
     var TrainingParameters: js.UndefOr[TrainingParameters]
-  }
-
-  object MLModel {
-    @inline
-    def apply(
-        Algorithm: js.UndefOr[Algorithm] = js.undefined,
-        ComputeTime: js.UndefOr[LongType] = js.undefined,
-        CreatedAt: js.UndefOr[EpochTime] = js.undefined,
-        CreatedByIamUser: js.UndefOr[AwsUserArn] = js.undefined,
-        EndpointInfo: js.UndefOr[RealtimeEndpointInfo] = js.undefined,
-        FinishedAt: js.UndefOr[EpochTime] = js.undefined,
-        InputDataLocationS3: js.UndefOr[S3Url] = js.undefined,
-        LastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
-        MLModelId: js.UndefOr[EntityId] = js.undefined,
-        MLModelType: js.UndefOr[MLModelType] = js.undefined,
-        Message: js.UndefOr[Message] = js.undefined,
-        Name: js.UndefOr[MLModelName] = js.undefined,
-        ScoreThreshold: js.UndefOr[ScoreThreshold] = js.undefined,
-        ScoreThresholdLastUpdatedAt: js.UndefOr[EpochTime] = js.undefined,
-        SizeInBytes: js.UndefOr[LongType] = js.undefined,
-        StartedAt: js.UndefOr[EpochTime] = js.undefined,
-        Status: js.UndefOr[EntityStatus] = js.undefined,
-        TrainingDataSourceId: js.UndefOr[EntityId] = js.undefined,
-        TrainingParameters: js.UndefOr[TrainingParameters] = js.undefined
-    ): MLModel = {
-      val __obj = js.Dynamic.literal()
-      Algorithm.foreach(__v => __obj.updateDynamic("Algorithm")(__v.asInstanceOf[js.Any]))
-      ComputeTime.foreach(__v => __obj.updateDynamic("ComputeTime")(__v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
-      CreatedByIamUser.foreach(__v => __obj.updateDynamic("CreatedByIamUser")(__v.asInstanceOf[js.Any]))
-      EndpointInfo.foreach(__v => __obj.updateDynamic("EndpointInfo")(__v.asInstanceOf[js.Any]))
-      FinishedAt.foreach(__v => __obj.updateDynamic("FinishedAt")(__v.asInstanceOf[js.Any]))
-      InputDataLocationS3.foreach(__v => __obj.updateDynamic("InputDataLocationS3")(__v.asInstanceOf[js.Any]))
-      LastUpdatedAt.foreach(__v => __obj.updateDynamic("LastUpdatedAt")(__v.asInstanceOf[js.Any]))
-      MLModelId.foreach(__v => __obj.updateDynamic("MLModelId")(__v.asInstanceOf[js.Any]))
-      MLModelType.foreach(__v => __obj.updateDynamic("MLModelType")(__v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      ScoreThreshold.foreach(__v => __obj.updateDynamic("ScoreThreshold")(__v.asInstanceOf[js.Any]))
-      ScoreThresholdLastUpdatedAt.foreach(__v =>
-        __obj.updateDynamic("ScoreThresholdLastUpdatedAt")(__v.asInstanceOf[js.Any])
-      )
-      SizeInBytes.foreach(__v => __obj.updateDynamic("SizeInBytes")(__v.asInstanceOf[js.Any]))
-      StartedAt.foreach(__v => __obj.updateDynamic("StartedAt")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      TrainingDataSourceId.foreach(__v => __obj.updateDynamic("TrainingDataSourceId")(__v.asInstanceOf[js.Any]))
-      TrainingParameters.foreach(__v => __obj.updateDynamic("TrainingParameters")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MLModel]
-    }
   }
 
   @js.native
@@ -1964,59 +993,23 @@ package machinelearning {
     * For more information about performance metrics, please see the [[http://docs.aws.amazon.com/machine-learning/latest/dg|Amazon Machine Learning Developer Guide]].
     */
   @js.native
+  @Factory
   trait PerformanceMetrics extends js.Object {
     var Properties: js.UndefOr[PerformanceMetricsProperties]
   }
 
-  object PerformanceMetrics {
-    @inline
-    def apply(
-        Properties: js.UndefOr[PerformanceMetricsProperties] = js.undefined
-    ): PerformanceMetrics = {
-      val __obj = js.Dynamic.literal()
-      Properties.foreach(__v => __obj.updateDynamic("Properties")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PerformanceMetrics]
-    }
-  }
-
   @js.native
+  @Factory
   trait PredictInput extends js.Object {
     var MLModelId: EntityId
     var PredictEndpoint: VipURL
     var Record: Record
   }
 
-  object PredictInput {
-    @inline
-    def apply(
-        MLModelId: EntityId,
-        PredictEndpoint: VipURL,
-        Record: Record
-    ): PredictInput = {
-      val __obj = js.Dynamic.literal(
-        "MLModelId"       -> MLModelId.asInstanceOf[js.Any],
-        "PredictEndpoint" -> PredictEndpoint.asInstanceOf[js.Any],
-        "Record"          -> Record.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PredictInput]
-    }
-  }
-
   @js.native
+  @Factory
   trait PredictOutput extends js.Object {
     var Prediction: js.UndefOr[Prediction]
-  }
-
-  object PredictOutput {
-    @inline
-    def apply(
-        Prediction: js.UndefOr[Prediction] = js.undefined
-    ): PredictOutput = {
-      val __obj = js.Dynamic.literal()
-      Prediction.foreach(__v => __obj.updateDynamic("Prediction")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PredictOutput]
-    }
   }
 
   /**
@@ -2027,28 +1020,12 @@ package machinelearning {
     *  * <code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request.
     */
   @js.native
+  @Factory
   trait Prediction extends js.Object {
     var details: js.UndefOr[DetailsMap]
     var predictedLabel: js.UndefOr[Label]
     var predictedScores: js.UndefOr[ScoreValuePerLabelMap]
     var predictedValue: js.UndefOr[floatLabel]
-  }
-
-  object Prediction {
-    @inline
-    def apply(
-        details: js.UndefOr[DetailsMap] = js.undefined,
-        predictedLabel: js.UndefOr[Label] = js.undefined,
-        predictedScores: js.UndefOr[ScoreValuePerLabelMap] = js.undefined,
-        predictedValue: js.UndefOr[floatLabel] = js.undefined
-    ): Prediction = {
-      val __obj = js.Dynamic.literal()
-      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
-      predictedLabel.foreach(__v => __obj.updateDynamic("predictedLabel")(__v.asInstanceOf[js.Any]))
-      predictedScores.foreach(__v => __obj.updateDynamic("predictedScores")(__v.asInstanceOf[js.Any]))
-      predictedValue.foreach(__v => __obj.updateDynamic("predictedValue")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Prediction]
-    }
   }
 
   /**
@@ -2063,6 +1040,7 @@ package machinelearning {
     * The data specification of an Amazon Relational Database Service (Amazon RDS) <code>DataSource</code>.
     */
   @js.native
+  @Factory
   trait RDSDataSpec extends js.Object {
     var DatabaseCredentials: RDSDatabaseCredentials
     var DatabaseInformation: RDSDatabase
@@ -2077,91 +1055,31 @@ package machinelearning {
     var DataSchemaUri: js.UndefOr[S3Url]
   }
 
-  object RDSDataSpec {
-    @inline
-    def apply(
-        DatabaseCredentials: RDSDatabaseCredentials,
-        DatabaseInformation: RDSDatabase,
-        ResourceRole: EDPResourceRole,
-        S3StagingLocation: S3Url,
-        SecurityGroupIds: EDPSecurityGroupIds,
-        SelectSqlQuery: RDSSelectSqlQuery,
-        ServiceRole: EDPServiceRole,
-        SubnetId: EDPSubnetId,
-        DataRearrangement: js.UndefOr[DataRearrangement] = js.undefined,
-        DataSchema: js.UndefOr[DataSchema] = js.undefined,
-        DataSchemaUri: js.UndefOr[S3Url] = js.undefined
-    ): RDSDataSpec = {
-      val __obj = js.Dynamic.literal(
-        "DatabaseCredentials" -> DatabaseCredentials.asInstanceOf[js.Any],
-        "DatabaseInformation" -> DatabaseInformation.asInstanceOf[js.Any],
-        "ResourceRole"        -> ResourceRole.asInstanceOf[js.Any],
-        "S3StagingLocation"   -> S3StagingLocation.asInstanceOf[js.Any],
-        "SecurityGroupIds"    -> SecurityGroupIds.asInstanceOf[js.Any],
-        "SelectSqlQuery"      -> SelectSqlQuery.asInstanceOf[js.Any],
-        "ServiceRole"         -> ServiceRole.asInstanceOf[js.Any],
-        "SubnetId"            -> SubnetId.asInstanceOf[js.Any]
-      )
-
-      DataRearrangement.foreach(__v => __obj.updateDynamic("DataRearrangement")(__v.asInstanceOf[js.Any]))
-      DataSchema.foreach(__v => __obj.updateDynamic("DataSchema")(__v.asInstanceOf[js.Any]))
-      DataSchemaUri.foreach(__v => __obj.updateDynamic("DataSchemaUri")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RDSDataSpec]
-    }
-  }
-
   /**
     * The database details of an Amazon RDS database.
     */
   @js.native
+  @Factory
   trait RDSDatabase extends js.Object {
     var DatabaseName: RDSDatabaseName
     var InstanceIdentifier: RDSInstanceIdentifier
-  }
-
-  object RDSDatabase {
-    @inline
-    def apply(
-        DatabaseName: RDSDatabaseName,
-        InstanceIdentifier: RDSInstanceIdentifier
-    ): RDSDatabase = {
-      val __obj = js.Dynamic.literal(
-        "DatabaseName"       -> DatabaseName.asInstanceOf[js.Any],
-        "InstanceIdentifier" -> InstanceIdentifier.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RDSDatabase]
-    }
   }
 
   /**
     * The database credentials to connect to a database on an RDS DB instance.
     */
   @js.native
+  @Factory
   trait RDSDatabaseCredentials extends js.Object {
     var Password: RDSDatabasePassword
     var Username: RDSDatabaseUsername
-  }
-
-  object RDSDatabaseCredentials {
-    @inline
-    def apply(
-        Password: RDSDatabasePassword,
-        Username: RDSDatabaseUsername
-    ): RDSDatabaseCredentials = {
-      val __obj = js.Dynamic.literal(
-        "Password" -> Password.asInstanceOf[js.Any],
-        "Username" -> Username.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RDSDatabaseCredentials]
-    }
   }
 
   /**
     * The datasource details that are specific to Amazon RDS.
     */
   @js.native
+  @Factory
   trait RDSMetadata extends js.Object {
     var DataPipelineId: js.UndefOr[EDPPipelineId]
     var Database: js.UndefOr[RDSDatabase]
@@ -2171,53 +1089,16 @@ package machinelearning {
     var ServiceRole: js.UndefOr[EDPServiceRole]
   }
 
-  object RDSMetadata {
-    @inline
-    def apply(
-        DataPipelineId: js.UndefOr[EDPPipelineId] = js.undefined,
-        Database: js.UndefOr[RDSDatabase] = js.undefined,
-        DatabaseUserName: js.UndefOr[RDSDatabaseUsername] = js.undefined,
-        ResourceRole: js.UndefOr[EDPResourceRole] = js.undefined,
-        SelectSqlQuery: js.UndefOr[RDSSelectSqlQuery] = js.undefined,
-        ServiceRole: js.UndefOr[EDPServiceRole] = js.undefined
-    ): RDSMetadata = {
-      val __obj = js.Dynamic.literal()
-      DataPipelineId.foreach(__v => __obj.updateDynamic("DataPipelineId")(__v.asInstanceOf[js.Any]))
-      Database.foreach(__v => __obj.updateDynamic("Database")(__v.asInstanceOf[js.Any]))
-      DatabaseUserName.foreach(__v => __obj.updateDynamic("DatabaseUserName")(__v.asInstanceOf[js.Any]))
-      ResourceRole.foreach(__v => __obj.updateDynamic("ResourceRole")(__v.asInstanceOf[js.Any]))
-      SelectSqlQuery.foreach(__v => __obj.updateDynamic("SelectSqlQuery")(__v.asInstanceOf[js.Any]))
-      ServiceRole.foreach(__v => __obj.updateDynamic("ServiceRole")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RDSMetadata]
-    }
-  }
-
   /**
     * Describes the real-time endpoint information for an <code>MLModel</code>.
     */
   @js.native
+  @Factory
   trait RealtimeEndpointInfo extends js.Object {
     var CreatedAt: js.UndefOr[EpochTime]
     var EndpointStatus: js.UndefOr[RealtimeEndpointStatus]
     var EndpointUrl: js.UndefOr[VipURL]
     var PeakRequestsPerSecond: js.UndefOr[IntegerType]
-  }
-
-  object RealtimeEndpointInfo {
-    @inline
-    def apply(
-        CreatedAt: js.UndefOr[EpochTime] = js.undefined,
-        EndpointStatus: js.UndefOr[RealtimeEndpointStatus] = js.undefined,
-        EndpointUrl: js.UndefOr[VipURL] = js.undefined,
-        PeakRequestsPerSecond: js.UndefOr[IntegerType] = js.undefined
-    ): RealtimeEndpointInfo = {
-      val __obj = js.Dynamic.literal()
-      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
-      EndpointStatus.foreach(__v => __obj.updateDynamic("EndpointStatus")(__v.asInstanceOf[js.Any]))
-      EndpointUrl.foreach(__v => __obj.updateDynamic("EndpointUrl")(__v.asInstanceOf[js.Any]))
-      PeakRequestsPerSecond.foreach(__v => __obj.updateDynamic("PeakRequestsPerSecond")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RealtimeEndpointInfo]
-    }
   }
 
   @js.native
@@ -2235,6 +1116,7 @@ package machinelearning {
     * Describes the data specification of an Amazon Redshift <code>DataSource</code>.
     */
   @js.native
+  @Factory
   trait RedshiftDataSpec extends js.Object {
     var DatabaseCredentials: RedshiftDatabaseCredentials
     var DatabaseInformation: RedshiftDatabase
@@ -2245,102 +1127,35 @@ package machinelearning {
     var DataSchemaUri: js.UndefOr[S3Url]
   }
 
-  object RedshiftDataSpec {
-    @inline
-    def apply(
-        DatabaseCredentials: RedshiftDatabaseCredentials,
-        DatabaseInformation: RedshiftDatabase,
-        S3StagingLocation: S3Url,
-        SelectSqlQuery: RedshiftSelectSqlQuery,
-        DataRearrangement: js.UndefOr[DataRearrangement] = js.undefined,
-        DataSchema: js.UndefOr[DataSchema] = js.undefined,
-        DataSchemaUri: js.UndefOr[S3Url] = js.undefined
-    ): RedshiftDataSpec = {
-      val __obj = js.Dynamic.literal(
-        "DatabaseCredentials" -> DatabaseCredentials.asInstanceOf[js.Any],
-        "DatabaseInformation" -> DatabaseInformation.asInstanceOf[js.Any],
-        "S3StagingLocation"   -> S3StagingLocation.asInstanceOf[js.Any],
-        "SelectSqlQuery"      -> SelectSqlQuery.asInstanceOf[js.Any]
-      )
-
-      DataRearrangement.foreach(__v => __obj.updateDynamic("DataRearrangement")(__v.asInstanceOf[js.Any]))
-      DataSchema.foreach(__v => __obj.updateDynamic("DataSchema")(__v.asInstanceOf[js.Any]))
-      DataSchemaUri.foreach(__v => __obj.updateDynamic("DataSchemaUri")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RedshiftDataSpec]
-    }
-  }
-
   /**
     * Describes the database details required to connect to an Amazon Redshift database.
     */
   @js.native
+  @Factory
   trait RedshiftDatabase extends js.Object {
     var ClusterIdentifier: RedshiftClusterIdentifier
     var DatabaseName: RedshiftDatabaseName
-  }
-
-  object RedshiftDatabase {
-    @inline
-    def apply(
-        ClusterIdentifier: RedshiftClusterIdentifier,
-        DatabaseName: RedshiftDatabaseName
-    ): RedshiftDatabase = {
-      val __obj = js.Dynamic.literal(
-        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
-        "DatabaseName"      -> DatabaseName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RedshiftDatabase]
-    }
   }
 
   /**
     * Describes the database credentials for connecting to a database on an Amazon Redshift cluster.
     */
   @js.native
+  @Factory
   trait RedshiftDatabaseCredentials extends js.Object {
     var Password: RedshiftDatabasePassword
     var Username: RedshiftDatabaseUsername
-  }
-
-  object RedshiftDatabaseCredentials {
-    @inline
-    def apply(
-        Password: RedshiftDatabasePassword,
-        Username: RedshiftDatabaseUsername
-    ): RedshiftDatabaseCredentials = {
-      val __obj = js.Dynamic.literal(
-        "Password" -> Password.asInstanceOf[js.Any],
-        "Username" -> Username.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RedshiftDatabaseCredentials]
-    }
   }
 
   /**
     * Describes the <code>DataSource</code> details specific to Amazon Redshift.
     */
   @js.native
+  @Factory
   trait RedshiftMetadata extends js.Object {
     var DatabaseUserName: js.UndefOr[RedshiftDatabaseUsername]
     var RedshiftDatabase: js.UndefOr[RedshiftDatabase]
     var SelectSqlQuery: js.UndefOr[RedshiftSelectSqlQuery]
-  }
-
-  object RedshiftMetadata {
-    @inline
-    def apply(
-        DatabaseUserName: js.UndefOr[RedshiftDatabaseUsername] = js.undefined,
-        RedshiftDatabase: js.UndefOr[RedshiftDatabase] = js.undefined,
-        SelectSqlQuery: js.UndefOr[RedshiftSelectSqlQuery] = js.undefined
-    ): RedshiftMetadata = {
-      val __obj = js.Dynamic.literal()
-      DatabaseUserName.foreach(__v => __obj.updateDynamic("DatabaseUserName")(__v.asInstanceOf[js.Any]))
-      RedshiftDatabase.foreach(__v => __obj.updateDynamic("RedshiftDatabase")(__v.asInstanceOf[js.Any]))
-      SelectSqlQuery.foreach(__v => __obj.updateDynamic("SelectSqlQuery")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RedshiftMetadata]
-    }
   }
 
   /**
@@ -2356,30 +1171,12 @@ package machinelearning {
     * Describes the data specification of a <code>DataSource</code>.
     */
   @js.native
+  @Factory
   trait S3DataSpec extends js.Object {
     var DataLocationS3: S3Url
     var DataRearrangement: js.UndefOr[DataRearrangement]
     var DataSchema: js.UndefOr[DataSchema]
     var DataSchemaLocationS3: js.UndefOr[S3Url]
-  }
-
-  object S3DataSpec {
-    @inline
-    def apply(
-        DataLocationS3: S3Url,
-        DataRearrangement: js.UndefOr[DataRearrangement] = js.undefined,
-        DataSchema: js.UndefOr[DataSchema] = js.undefined,
-        DataSchemaLocationS3: js.UndefOr[S3Url] = js.undefined
-    ): S3DataSpec = {
-      val __obj = js.Dynamic.literal(
-        "DataLocationS3" -> DataLocationS3.asInstanceOf[js.Any]
-      )
-
-      DataRearrangement.foreach(__v => __obj.updateDynamic("DataRearrangement")(__v.asInstanceOf[js.Any]))
-      DataSchema.foreach(__v => __obj.updateDynamic("DataSchema")(__v.asInstanceOf[js.Any]))
-      DataSchemaLocationS3.foreach(__v => __obj.updateDynamic("DataSchemaLocationS3")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[S3DataSpec]
-    }
   }
 
   /**
@@ -2400,22 +1197,10 @@ package machinelearning {
     * A custom key-value pair associated with an ML object, such as an ML model.
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var Key: js.UndefOr[TagKey]
     var Value: js.UndefOr[TagValue]
-  }
-
-  object Tag {
-    @inline
-    def apply(
-        Key: js.UndefOr[TagKey] = js.undefined,
-        Value: js.UndefOr[TagValue] = js.undefined
-    ): Tag = {
-      val __obj = js.Dynamic.literal()
-      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Tag]
-    }
   }
 
   @js.native
@@ -2435,24 +1220,10 @@ package machinelearning {
   }
 
   @js.native
+  @Factory
   trait UpdateBatchPredictionInput extends js.Object {
     var BatchPredictionId: EntityId
     var BatchPredictionName: EntityName
-  }
-
-  object UpdateBatchPredictionInput {
-    @inline
-    def apply(
-        BatchPredictionId: EntityId,
-        BatchPredictionName: EntityName
-    ): UpdateBatchPredictionInput = {
-      val __obj = js.Dynamic.literal(
-        "BatchPredictionId"   -> BatchPredictionId.asInstanceOf[js.Any],
-        "BatchPredictionName" -> BatchPredictionName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateBatchPredictionInput]
-    }
   }
 
   /**
@@ -2460,40 +1231,16 @@ package machinelearning {
     *  You can see the updated content by using the <code>GetBatchPrediction</code> operation.
     */
   @js.native
+  @Factory
   trait UpdateBatchPredictionOutput extends js.Object {
     var BatchPredictionId: js.UndefOr[EntityId]
   }
 
-  object UpdateBatchPredictionOutput {
-    @inline
-    def apply(
-        BatchPredictionId: js.UndefOr[EntityId] = js.undefined
-    ): UpdateBatchPredictionOutput = {
-      val __obj = js.Dynamic.literal()
-      BatchPredictionId.foreach(__v => __obj.updateDynamic("BatchPredictionId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateBatchPredictionOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateDataSourceInput extends js.Object {
     var DataSourceId: EntityId
     var DataSourceName: EntityName
-  }
-
-  object UpdateDataSourceInput {
-    @inline
-    def apply(
-        DataSourceId: EntityId,
-        DataSourceName: EntityName
-    ): UpdateDataSourceInput = {
-      val __obj = js.Dynamic.literal(
-        "DataSourceId"   -> DataSourceId.asInstanceOf[js.Any],
-        "DataSourceName" -> DataSourceName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateDataSourceInput]
-    }
   }
 
   /**
@@ -2501,40 +1248,16 @@ package machinelearning {
     *  You can see the updated content by using the <code>GetBatchPrediction</code> operation.
     */
   @js.native
+  @Factory
   trait UpdateDataSourceOutput extends js.Object {
     var DataSourceId: js.UndefOr[EntityId]
   }
 
-  object UpdateDataSourceOutput {
-    @inline
-    def apply(
-        DataSourceId: js.UndefOr[EntityId] = js.undefined
-    ): UpdateDataSourceOutput = {
-      val __obj = js.Dynamic.literal()
-      DataSourceId.foreach(__v => __obj.updateDynamic("DataSourceId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateDataSourceOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateEvaluationInput extends js.Object {
     var EvaluationId: EntityId
     var EvaluationName: EntityName
-  }
-
-  object UpdateEvaluationInput {
-    @inline
-    def apply(
-        EvaluationId: EntityId,
-        EvaluationName: EntityName
-    ): UpdateEvaluationInput = {
-      val __obj = js.Dynamic.literal(
-        "EvaluationId"   -> EvaluationId.asInstanceOf[js.Any],
-        "EvaluationName" -> EvaluationName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateEvaluationInput]
-    }
   }
 
   /**
@@ -2542,43 +1265,17 @@ package machinelearning {
     *  You can see the updated content by using the <code>GetEvaluation</code> operation.
     */
   @js.native
+  @Factory
   trait UpdateEvaluationOutput extends js.Object {
     var EvaluationId: js.UndefOr[EntityId]
   }
 
-  object UpdateEvaluationOutput {
-    @inline
-    def apply(
-        EvaluationId: js.UndefOr[EntityId] = js.undefined
-    ): UpdateEvaluationOutput = {
-      val __obj = js.Dynamic.literal()
-      EvaluationId.foreach(__v => __obj.updateDynamic("EvaluationId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateEvaluationOutput]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateMLModelInput extends js.Object {
     var MLModelId: EntityId
     var MLModelName: js.UndefOr[EntityName]
     var ScoreThreshold: js.UndefOr[ScoreThreshold]
-  }
-
-  object UpdateMLModelInput {
-    @inline
-    def apply(
-        MLModelId: EntityId,
-        MLModelName: js.UndefOr[EntityName] = js.undefined,
-        ScoreThreshold: js.UndefOr[ScoreThreshold] = js.undefined
-    ): UpdateMLModelInput = {
-      val __obj = js.Dynamic.literal(
-        "MLModelId" -> MLModelId.asInstanceOf[js.Any]
-      )
-
-      MLModelName.foreach(__v => __obj.updateDynamic("MLModelName")(__v.asInstanceOf[js.Any]))
-      ScoreThreshold.foreach(__v => __obj.updateDynamic("ScoreThreshold")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateMLModelInput]
-    }
   }
 
   /**
@@ -2586,18 +1283,8 @@ package machinelearning {
     *  You can see the updated content by using the <code>GetMLModel</code> operation.
     */
   @js.native
+  @Factory
   trait UpdateMLModelOutput extends js.Object {
     var MLModelId: js.UndefOr[EntityId]
-  }
-
-  object UpdateMLModelOutput {
-    @inline
-    def apply(
-        MLModelId: js.UndefOr[EntityId] = js.undefined
-    ): UpdateMLModelOutput = {
-      val __obj = js.Dynamic.literal()
-      MLModelId.foreach(__v => __obj.updateDynamic("MLModelId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateMLModelOutput]
-    }
   }
 }

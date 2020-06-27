@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object ecs {
   type AttachmentDetails                  = js.Array[KeyValuePair]
@@ -308,6 +309,7 @@ package ecs {
     * An object representing a container instance or task attachment.
     */
   @js.native
+  @Factory
   trait Attachment extends js.Object {
     var details: js.UndefOr[AttachmentDetails]
     var id: js.UndefOr[String]
@@ -315,51 +317,21 @@ package ecs {
     var `type`: js.UndefOr[String]
   }
 
-  object Attachment {
-    @inline
-    def apply(
-        details: js.UndefOr[AttachmentDetails] = js.undefined,
-        id: js.UndefOr[String] = js.undefined,
-        status: js.UndefOr[String] = js.undefined,
-        `type`: js.UndefOr[String] = js.undefined
-    ): Attachment = {
-      val __obj = js.Dynamic.literal()
-      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Attachment]
-    }
-  }
-
   /**
     * An object representing a change in state for a task attachment.
     */
   @js.native
+  @Factory
   trait AttachmentStateChange extends js.Object {
     var attachmentArn: String
     var status: String
-  }
-
-  object AttachmentStateChange {
-    @inline
-    def apply(
-        attachmentArn: String,
-        status: String
-    ): AttachmentStateChange = {
-      val __obj = js.Dynamic.literal(
-        "attachmentArn" -> attachmentArn.asInstanceOf[js.Any],
-        "status"        -> status.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AttachmentStateChange]
-    }
   }
 
   /**
     * An attribute is a name-value pair associated with an Amazon ECS object. Attributes enable you to extend the Amazon ECS data model by adding custom metadata to your resources. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes|Attributes]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait Attribute extends js.Object {
     var name: String
     var targetId: js.UndefOr[String]
@@ -367,110 +339,39 @@ package ecs {
     var value: js.UndefOr[String]
   }
 
-  object Attribute {
-    @inline
-    def apply(
-        name: String,
-        targetId: js.UndefOr[String] = js.undefined,
-        targetType: js.UndefOr[TargetType] = js.undefined,
-        value: js.UndefOr[String] = js.undefined
-    ): Attribute = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      targetId.foreach(__v => __obj.updateDynamic("targetId")(__v.asInstanceOf[js.Any]))
-      targetType.foreach(__v => __obj.updateDynamic("targetType")(__v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Attribute]
-    }
-  }
-
   /**
     * The details of the Auto Scaling group for the capacity provider.
     */
   @js.native
+  @Factory
   trait AutoScalingGroupProvider extends js.Object {
     var autoScalingGroupArn: String
     var managedScaling: js.UndefOr[ManagedScaling]
     var managedTerminationProtection: js.UndefOr[ManagedTerminationProtection]
   }
 
-  object AutoScalingGroupProvider {
-    @inline
-    def apply(
-        autoScalingGroupArn: String,
-        managedScaling: js.UndefOr[ManagedScaling] = js.undefined,
-        managedTerminationProtection: js.UndefOr[ManagedTerminationProtection] = js.undefined
-    ): AutoScalingGroupProvider = {
-      val __obj = js.Dynamic.literal(
-        "autoScalingGroupArn" -> autoScalingGroupArn.asInstanceOf[js.Any]
-      )
-
-      managedScaling.foreach(__v => __obj.updateDynamic("managedScaling")(__v.asInstanceOf[js.Any]))
-      managedTerminationProtection.foreach(__v =>
-        __obj.updateDynamic("managedTerminationProtection")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[AutoScalingGroupProvider]
-    }
-  }
-
   /**
     * An object representing the networking details for a task or service.
     */
   @js.native
+  @Factory
   trait AwsVpcConfiguration extends js.Object {
     var subnets: StringList
     var assignPublicIp: js.UndefOr[AssignPublicIp]
     var securityGroups: js.UndefOr[StringList]
   }
 
-  object AwsVpcConfiguration {
-    @inline
-    def apply(
-        subnets: StringList,
-        assignPublicIp: js.UndefOr[AssignPublicIp] = js.undefined,
-        securityGroups: js.UndefOr[StringList] = js.undefined
-    ): AwsVpcConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "subnets" -> subnets.asInstanceOf[js.Any]
-      )
-
-      assignPublicIp.foreach(__v => __obj.updateDynamic("assignPublicIp")(__v.asInstanceOf[js.Any]))
-      securityGroups.foreach(__v => __obj.updateDynamic("securityGroups")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AwsVpcConfiguration]
-    }
-  }
-
   /**
     * The details of a capacity provider.
     */
   @js.native
+  @Factory
   trait CapacityProvider extends js.Object {
     var autoScalingGroupProvider: js.UndefOr[AutoScalingGroupProvider]
     var capacityProviderArn: js.UndefOr[String]
     var name: js.UndefOr[String]
     var status: js.UndefOr[CapacityProviderStatus]
     var tags: js.UndefOr[Tags]
-  }
-
-  object CapacityProvider {
-    @inline
-    def apply(
-        autoScalingGroupProvider: js.UndefOr[AutoScalingGroupProvider] = js.undefined,
-        capacityProviderArn: js.UndefOr[String] = js.undefined,
-        name: js.UndefOr[String] = js.undefined,
-        status: js.UndefOr[CapacityProviderStatus] = js.undefined,
-        tags: js.UndefOr[Tags] = js.undefined
-    ): CapacityProvider = {
-      val __obj = js.Dynamic.literal()
-      autoScalingGroupProvider.foreach(__v => __obj.updateDynamic("autoScalingGroupProvider")(__v.asInstanceOf[js.Any]))
-      capacityProviderArn.foreach(__v => __obj.updateDynamic("capacityProviderArn")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CapacityProvider]
-    }
   }
 
   @js.native
@@ -493,33 +394,18 @@ package ecs {
     * The details of a capacity provider strategy.
     */
   @js.native
+  @Factory
   trait CapacityProviderStrategyItem extends js.Object {
     var capacityProvider: String
     var base: js.UndefOr[CapacityProviderStrategyItemBase]
     var weight: js.UndefOr[CapacityProviderStrategyItemWeight]
   }
 
-  object CapacityProviderStrategyItem {
-    @inline
-    def apply(
-        capacityProvider: String,
-        base: js.UndefOr[CapacityProviderStrategyItemBase] = js.undefined,
-        weight: js.UndefOr[CapacityProviderStrategyItemWeight] = js.undefined
-    ): CapacityProviderStrategyItem = {
-      val __obj = js.Dynamic.literal(
-        "capacityProvider" -> capacityProvider.asInstanceOf[js.Any]
-      )
-
-      base.foreach(__v => __obj.updateDynamic("base")(__v.asInstanceOf[js.Any]))
-      weight.foreach(__v => __obj.updateDynamic("weight")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CapacityProviderStrategyItem]
-    }
-  }
-
   /**
     * A regional grouping of one or more container instances on which you can run task requests. Each account receives a default cluster the first time you use the Amazon ECS service, but you may also create other clusters. Clusters may contain more than one instance type simultaneously.
     */
   @js.native
+  @Factory
   trait Cluster extends js.Object {
     var activeServicesCount: js.UndefOr[Int]
     var attachments: js.UndefOr[Attachments]
@@ -537,47 +423,6 @@ package ecs {
     var tags: js.UndefOr[Tags]
   }
 
-  object Cluster {
-    @inline
-    def apply(
-        activeServicesCount: js.UndefOr[Int] = js.undefined,
-        attachments: js.UndefOr[Attachments] = js.undefined,
-        attachmentsStatus: js.UndefOr[String] = js.undefined,
-        capacityProviders: js.UndefOr[StringList] = js.undefined,
-        clusterArn: js.UndefOr[String] = js.undefined,
-        clusterName: js.UndefOr[String] = js.undefined,
-        defaultCapacityProviderStrategy: js.UndefOr[CapacityProviderStrategy] = js.undefined,
-        pendingTasksCount: js.UndefOr[Int] = js.undefined,
-        registeredContainerInstancesCount: js.UndefOr[Int] = js.undefined,
-        runningTasksCount: js.UndefOr[Int] = js.undefined,
-        settings: js.UndefOr[ClusterSettings] = js.undefined,
-        statistics: js.UndefOr[Statistics] = js.undefined,
-        status: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[Tags] = js.undefined
-    ): Cluster = {
-      val __obj = js.Dynamic.literal()
-      activeServicesCount.foreach(__v => __obj.updateDynamic("activeServicesCount")(__v.asInstanceOf[js.Any]))
-      attachments.foreach(__v => __obj.updateDynamic("attachments")(__v.asInstanceOf[js.Any]))
-      attachmentsStatus.foreach(__v => __obj.updateDynamic("attachmentsStatus")(__v.asInstanceOf[js.Any]))
-      capacityProviders.foreach(__v => __obj.updateDynamic("capacityProviders")(__v.asInstanceOf[js.Any]))
-      clusterArn.foreach(__v => __obj.updateDynamic("clusterArn")(__v.asInstanceOf[js.Any]))
-      clusterName.foreach(__v => __obj.updateDynamic("clusterName")(__v.asInstanceOf[js.Any]))
-      defaultCapacityProviderStrategy.foreach(__v =>
-        __obj.updateDynamic("defaultCapacityProviderStrategy")(__v.asInstanceOf[js.Any])
-      )
-      pendingTasksCount.foreach(__v => __obj.updateDynamic("pendingTasksCount")(__v.asInstanceOf[js.Any]))
-      registeredContainerInstancesCount.foreach(__v =>
-        __obj.updateDynamic("registeredContainerInstancesCount")(__v.asInstanceOf[js.Any])
-      )
-      runningTasksCount.foreach(__v => __obj.updateDynamic("runningTasksCount")(__v.asInstanceOf[js.Any]))
-      settings.foreach(__v => __obj.updateDynamic("settings")(__v.asInstanceOf[js.Any]))
-      statistics.foreach(__v => __obj.updateDynamic("statistics")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Cluster]
-    }
-  }
-
   @js.native
   sealed trait ClusterField extends js.Any
   object ClusterField extends js.Object {
@@ -593,22 +438,10 @@ package ecs {
     * The settings to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights for a cluster.
     */
   @js.native
+  @Factory
   trait ClusterSetting extends js.Object {
     var name: js.UndefOr[ClusterSettingName]
     var value: js.UndefOr[String]
-  }
-
-  object ClusterSetting {
-    @inline
-    def apply(
-        name: js.UndefOr[ClusterSettingName] = js.undefined,
-        value: js.UndefOr[String] = js.undefined
-    ): ClusterSetting = {
-      val __obj = js.Dynamic.literal()
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ClusterSetting]
-    }
   }
 
   @js.native
@@ -641,6 +474,7 @@ package ecs {
     * A Docker container that is part of a task.
     */
   @js.native
+  @Factory
   trait Container extends js.Object {
     var containerArn: js.UndefOr[String]
     var cpu: js.UndefOr[String]
@@ -660,47 +494,6 @@ package ecs {
     var taskArn: js.UndefOr[String]
   }
 
-  object Container {
-    @inline
-    def apply(
-        containerArn: js.UndefOr[String] = js.undefined,
-        cpu: js.UndefOr[String] = js.undefined,
-        exitCode: js.UndefOr[BoxedInteger] = js.undefined,
-        gpuIds: js.UndefOr[GpuIds] = js.undefined,
-        healthStatus: js.UndefOr[HealthStatus] = js.undefined,
-        image: js.UndefOr[String] = js.undefined,
-        imageDigest: js.UndefOr[String] = js.undefined,
-        lastStatus: js.UndefOr[String] = js.undefined,
-        memory: js.UndefOr[String] = js.undefined,
-        memoryReservation: js.UndefOr[String] = js.undefined,
-        name: js.UndefOr[String] = js.undefined,
-        networkBindings: js.UndefOr[NetworkBindings] = js.undefined,
-        networkInterfaces: js.UndefOr[NetworkInterfaces] = js.undefined,
-        reason: js.UndefOr[String] = js.undefined,
-        runtimeId: js.UndefOr[String] = js.undefined,
-        taskArn: js.UndefOr[String] = js.undefined
-    ): Container = {
-      val __obj = js.Dynamic.literal()
-      containerArn.foreach(__v => __obj.updateDynamic("containerArn")(__v.asInstanceOf[js.Any]))
-      cpu.foreach(__v => __obj.updateDynamic("cpu")(__v.asInstanceOf[js.Any]))
-      exitCode.foreach(__v => __obj.updateDynamic("exitCode")(__v.asInstanceOf[js.Any]))
-      gpuIds.foreach(__v => __obj.updateDynamic("gpuIds")(__v.asInstanceOf[js.Any]))
-      healthStatus.foreach(__v => __obj.updateDynamic("healthStatus")(__v.asInstanceOf[js.Any]))
-      image.foreach(__v => __obj.updateDynamic("image")(__v.asInstanceOf[js.Any]))
-      imageDigest.foreach(__v => __obj.updateDynamic("imageDigest")(__v.asInstanceOf[js.Any]))
-      lastStatus.foreach(__v => __obj.updateDynamic("lastStatus")(__v.asInstanceOf[js.Any]))
-      memory.foreach(__v => __obj.updateDynamic("memory")(__v.asInstanceOf[js.Any]))
-      memoryReservation.foreach(__v => __obj.updateDynamic("memoryReservation")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      networkBindings.foreach(__v => __obj.updateDynamic("networkBindings")(__v.asInstanceOf[js.Any]))
-      networkInterfaces.foreach(__v => __obj.updateDynamic("networkInterfaces")(__v.asInstanceOf[js.Any]))
-      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
-      runtimeId.foreach(__v => __obj.updateDynamic("runtimeId")(__v.asInstanceOf[js.Any]))
-      taskArn.foreach(__v => __obj.updateDynamic("taskArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Container]
-    }
-  }
-
   @js.native
   sealed trait ContainerCondition extends js.Any
   object ContainerCondition extends js.Object {
@@ -716,6 +509,7 @@ package ecs {
     * Container definitions are used in task definitions to describe the different containers that are launched as part of a task.
     */
   @js.native
+  @Factory
   trait ContainerDefinition extends js.Object {
     var command: js.UndefOr[StringList]
     var cpu: js.UndefOr[Int]
@@ -757,91 +551,6 @@ package ecs {
     var workingDirectory: js.UndefOr[String]
   }
 
-  object ContainerDefinition {
-    @inline
-    def apply(
-        command: js.UndefOr[StringList] = js.undefined,
-        cpu: js.UndefOr[Int] = js.undefined,
-        dependsOn: js.UndefOr[ContainerDependencies] = js.undefined,
-        disableNetworking: js.UndefOr[BoxedBoolean] = js.undefined,
-        dnsSearchDomains: js.UndefOr[StringList] = js.undefined,
-        dnsServers: js.UndefOr[StringList] = js.undefined,
-        dockerLabels: js.UndefOr[DockerLabelsMap] = js.undefined,
-        dockerSecurityOptions: js.UndefOr[StringList] = js.undefined,
-        entryPoint: js.UndefOr[StringList] = js.undefined,
-        environment: js.UndefOr[EnvironmentVariables] = js.undefined,
-        essential: js.UndefOr[BoxedBoolean] = js.undefined,
-        extraHosts: js.UndefOr[HostEntryList] = js.undefined,
-        firelensConfiguration: js.UndefOr[FirelensConfiguration] = js.undefined,
-        healthCheck: js.UndefOr[HealthCheck] = js.undefined,
-        hostname: js.UndefOr[String] = js.undefined,
-        image: js.UndefOr[String] = js.undefined,
-        interactive: js.UndefOr[BoxedBoolean] = js.undefined,
-        links: js.UndefOr[StringList] = js.undefined,
-        linuxParameters: js.UndefOr[LinuxParameters] = js.undefined,
-        logConfiguration: js.UndefOr[LogConfiguration] = js.undefined,
-        memory: js.UndefOr[BoxedInteger] = js.undefined,
-        memoryReservation: js.UndefOr[BoxedInteger] = js.undefined,
-        mountPoints: js.UndefOr[MountPointList] = js.undefined,
-        name: js.UndefOr[String] = js.undefined,
-        portMappings: js.UndefOr[PortMappingList] = js.undefined,
-        privileged: js.UndefOr[BoxedBoolean] = js.undefined,
-        pseudoTerminal: js.UndefOr[BoxedBoolean] = js.undefined,
-        readonlyRootFilesystem: js.UndefOr[BoxedBoolean] = js.undefined,
-        repositoryCredentials: js.UndefOr[RepositoryCredentials] = js.undefined,
-        resourceRequirements: js.UndefOr[ResourceRequirements] = js.undefined,
-        secrets: js.UndefOr[SecretList] = js.undefined,
-        startTimeout: js.UndefOr[BoxedInteger] = js.undefined,
-        stopTimeout: js.UndefOr[BoxedInteger] = js.undefined,
-        systemControls: js.UndefOr[SystemControls] = js.undefined,
-        ulimits: js.UndefOr[UlimitList] = js.undefined,
-        user: js.UndefOr[String] = js.undefined,
-        volumesFrom: js.UndefOr[VolumeFromList] = js.undefined,
-        workingDirectory: js.UndefOr[String] = js.undefined
-    ): ContainerDefinition = {
-      val __obj = js.Dynamic.literal()
-      command.foreach(__v => __obj.updateDynamic("command")(__v.asInstanceOf[js.Any]))
-      cpu.foreach(__v => __obj.updateDynamic("cpu")(__v.asInstanceOf[js.Any]))
-      dependsOn.foreach(__v => __obj.updateDynamic("dependsOn")(__v.asInstanceOf[js.Any]))
-      disableNetworking.foreach(__v => __obj.updateDynamic("disableNetworking")(__v.asInstanceOf[js.Any]))
-      dnsSearchDomains.foreach(__v => __obj.updateDynamic("dnsSearchDomains")(__v.asInstanceOf[js.Any]))
-      dnsServers.foreach(__v => __obj.updateDynamic("dnsServers")(__v.asInstanceOf[js.Any]))
-      dockerLabels.foreach(__v => __obj.updateDynamic("dockerLabels")(__v.asInstanceOf[js.Any]))
-      dockerSecurityOptions.foreach(__v => __obj.updateDynamic("dockerSecurityOptions")(__v.asInstanceOf[js.Any]))
-      entryPoint.foreach(__v => __obj.updateDynamic("entryPoint")(__v.asInstanceOf[js.Any]))
-      environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
-      essential.foreach(__v => __obj.updateDynamic("essential")(__v.asInstanceOf[js.Any]))
-      extraHosts.foreach(__v => __obj.updateDynamic("extraHosts")(__v.asInstanceOf[js.Any]))
-      firelensConfiguration.foreach(__v => __obj.updateDynamic("firelensConfiguration")(__v.asInstanceOf[js.Any]))
-      healthCheck.foreach(__v => __obj.updateDynamic("healthCheck")(__v.asInstanceOf[js.Any]))
-      hostname.foreach(__v => __obj.updateDynamic("hostname")(__v.asInstanceOf[js.Any]))
-      image.foreach(__v => __obj.updateDynamic("image")(__v.asInstanceOf[js.Any]))
-      interactive.foreach(__v => __obj.updateDynamic("interactive")(__v.asInstanceOf[js.Any]))
-      links.foreach(__v => __obj.updateDynamic("links")(__v.asInstanceOf[js.Any]))
-      linuxParameters.foreach(__v => __obj.updateDynamic("linuxParameters")(__v.asInstanceOf[js.Any]))
-      logConfiguration.foreach(__v => __obj.updateDynamic("logConfiguration")(__v.asInstanceOf[js.Any]))
-      memory.foreach(__v => __obj.updateDynamic("memory")(__v.asInstanceOf[js.Any]))
-      memoryReservation.foreach(__v => __obj.updateDynamic("memoryReservation")(__v.asInstanceOf[js.Any]))
-      mountPoints.foreach(__v => __obj.updateDynamic("mountPoints")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      portMappings.foreach(__v => __obj.updateDynamic("portMappings")(__v.asInstanceOf[js.Any]))
-      privileged.foreach(__v => __obj.updateDynamic("privileged")(__v.asInstanceOf[js.Any]))
-      pseudoTerminal.foreach(__v => __obj.updateDynamic("pseudoTerminal")(__v.asInstanceOf[js.Any]))
-      readonlyRootFilesystem.foreach(__v => __obj.updateDynamic("readonlyRootFilesystem")(__v.asInstanceOf[js.Any]))
-      repositoryCredentials.foreach(__v => __obj.updateDynamic("repositoryCredentials")(__v.asInstanceOf[js.Any]))
-      resourceRequirements.foreach(__v => __obj.updateDynamic("resourceRequirements")(__v.asInstanceOf[js.Any]))
-      secrets.foreach(__v => __obj.updateDynamic("secrets")(__v.asInstanceOf[js.Any]))
-      startTimeout.foreach(__v => __obj.updateDynamic("startTimeout")(__v.asInstanceOf[js.Any]))
-      stopTimeout.foreach(__v => __obj.updateDynamic("stopTimeout")(__v.asInstanceOf[js.Any]))
-      systemControls.foreach(__v => __obj.updateDynamic("systemControls")(__v.asInstanceOf[js.Any]))
-      ulimits.foreach(__v => __obj.updateDynamic("ulimits")(__v.asInstanceOf[js.Any]))
-      user.foreach(__v => __obj.updateDynamic("user")(__v.asInstanceOf[js.Any]))
-      volumesFrom.foreach(__v => __obj.updateDynamic("volumesFrom")(__v.asInstanceOf[js.Any]))
-      workingDirectory.foreach(__v => __obj.updateDynamic("workingDirectory")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ContainerDefinition]
-    }
-  }
-
   /**
     * The dependencies defined for container startup and shutdown. A container can contain multiple dependencies. When a dependency is defined for container startup, for container shutdown it is reversed.
     *  Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable container dependencies. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html|Updating the Amazon ECS Container Agent]] in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html|Amazon ECS-optimized Linux AMI]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -849,30 +558,17 @@ package ecs {
     * '''Note:'''For tasks using the Fargate launch type, this parameter requires that the task or service uses platform version 1.3.0 or later.
     */
   @js.native
+  @Factory
   trait ContainerDependency extends js.Object {
     var condition: ContainerCondition
     var containerName: String
-  }
-
-  object ContainerDependency {
-    @inline
-    def apply(
-        condition: ContainerCondition,
-        containerName: String
-    ): ContainerDependency = {
-      val __obj = js.Dynamic.literal(
-        "condition"     -> condition.asInstanceOf[js.Any],
-        "containerName" -> containerName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ContainerDependency]
-    }
   }
 
   /**
     * An EC2 instance that is running the Amazon ECS agent and has been registered with a cluster.
     */
   @js.native
+  @Factory
   trait ContainerInstance extends js.Object {
     var agentConnected: js.UndefOr[Boolean]
     var agentUpdateStatus: js.UndefOr[AgentUpdateStatus]
@@ -891,49 +587,6 @@ package ecs {
     var tags: js.UndefOr[Tags]
     var version: js.UndefOr[Double]
     var versionInfo: js.UndefOr[VersionInfo]
-  }
-
-  object ContainerInstance {
-    @inline
-    def apply(
-        agentConnected: js.UndefOr[Boolean] = js.undefined,
-        agentUpdateStatus: js.UndefOr[AgentUpdateStatus] = js.undefined,
-        attachments: js.UndefOr[Attachments] = js.undefined,
-        attributes: js.UndefOr[Attributes] = js.undefined,
-        capacityProviderName: js.UndefOr[String] = js.undefined,
-        containerInstanceArn: js.UndefOr[String] = js.undefined,
-        ec2InstanceId: js.UndefOr[String] = js.undefined,
-        pendingTasksCount: js.UndefOr[Int] = js.undefined,
-        registeredAt: js.UndefOr[Timestamp] = js.undefined,
-        registeredResources: js.UndefOr[Resources] = js.undefined,
-        remainingResources: js.UndefOr[Resources] = js.undefined,
-        runningTasksCount: js.UndefOr[Int] = js.undefined,
-        status: js.UndefOr[String] = js.undefined,
-        statusReason: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[Tags] = js.undefined,
-        version: js.UndefOr[Double] = js.undefined,
-        versionInfo: js.UndefOr[VersionInfo] = js.undefined
-    ): ContainerInstance = {
-      val __obj = js.Dynamic.literal()
-      agentConnected.foreach(__v => __obj.updateDynamic("agentConnected")(__v.asInstanceOf[js.Any]))
-      agentUpdateStatus.foreach(__v => __obj.updateDynamic("agentUpdateStatus")(__v.asInstanceOf[js.Any]))
-      attachments.foreach(__v => __obj.updateDynamic("attachments")(__v.asInstanceOf[js.Any]))
-      attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
-      capacityProviderName.foreach(__v => __obj.updateDynamic("capacityProviderName")(__v.asInstanceOf[js.Any]))
-      containerInstanceArn.foreach(__v => __obj.updateDynamic("containerInstanceArn")(__v.asInstanceOf[js.Any]))
-      ec2InstanceId.foreach(__v => __obj.updateDynamic("ec2InstanceId")(__v.asInstanceOf[js.Any]))
-      pendingTasksCount.foreach(__v => __obj.updateDynamic("pendingTasksCount")(__v.asInstanceOf[js.Any]))
-      registeredAt.foreach(__v => __obj.updateDynamic("registeredAt")(__v.asInstanceOf[js.Any]))
-      registeredResources.foreach(__v => __obj.updateDynamic("registeredResources")(__v.asInstanceOf[js.Any]))
-      remainingResources.foreach(__v => __obj.updateDynamic("remainingResources")(__v.asInstanceOf[js.Any]))
-      runningTasksCount.foreach(__v => __obj.updateDynamic("runningTasksCount")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      versionInfo.foreach(__v => __obj.updateDynamic("versionInfo")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ContainerInstance]
-    }
   }
 
   @js.native
@@ -960,6 +613,7 @@ package ecs {
     * The overrides that should be sent to a container. An empty container override can be passed in. An example of an empty container override would be <code>{"containerOverrides": [ ] }</code>. If a non-empty container override is specified, the <code>name</code> parameter must be included.
     */
   @js.native
+  @Factory
   trait ContainerOverride extends js.Object {
     var command: js.UndefOr[StringList]
     var cpu: js.UndefOr[BoxedInteger]
@@ -970,33 +624,11 @@ package ecs {
     var resourceRequirements: js.UndefOr[ResourceRequirements]
   }
 
-  object ContainerOverride {
-    @inline
-    def apply(
-        command: js.UndefOr[StringList] = js.undefined,
-        cpu: js.UndefOr[BoxedInteger] = js.undefined,
-        environment: js.UndefOr[EnvironmentVariables] = js.undefined,
-        memory: js.UndefOr[BoxedInteger] = js.undefined,
-        memoryReservation: js.UndefOr[BoxedInteger] = js.undefined,
-        name: js.UndefOr[String] = js.undefined,
-        resourceRequirements: js.UndefOr[ResourceRequirements] = js.undefined
-    ): ContainerOverride = {
-      val __obj = js.Dynamic.literal()
-      command.foreach(__v => __obj.updateDynamic("command")(__v.asInstanceOf[js.Any]))
-      cpu.foreach(__v => __obj.updateDynamic("cpu")(__v.asInstanceOf[js.Any]))
-      environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
-      memory.foreach(__v => __obj.updateDynamic("memory")(__v.asInstanceOf[js.Any]))
-      memoryReservation.foreach(__v => __obj.updateDynamic("memoryReservation")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      resourceRequirements.foreach(__v => __obj.updateDynamic("resourceRequirements")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ContainerOverride]
-    }
-  }
-
   /**
     * An object representing a change in state for a container.
     */
   @js.native
+  @Factory
   trait ContainerStateChange extends js.Object {
     var containerName: js.UndefOr[String]
     var exitCode: js.UndefOr[BoxedInteger]
@@ -1007,70 +639,22 @@ package ecs {
     var status: js.UndefOr[String]
   }
 
-  object ContainerStateChange {
-    @inline
-    def apply(
-        containerName: js.UndefOr[String] = js.undefined,
-        exitCode: js.UndefOr[BoxedInteger] = js.undefined,
-        imageDigest: js.UndefOr[String] = js.undefined,
-        networkBindings: js.UndefOr[NetworkBindings] = js.undefined,
-        reason: js.UndefOr[String] = js.undefined,
-        runtimeId: js.UndefOr[String] = js.undefined,
-        status: js.UndefOr[String] = js.undefined
-    ): ContainerStateChange = {
-      val __obj = js.Dynamic.literal()
-      containerName.foreach(__v => __obj.updateDynamic("containerName")(__v.asInstanceOf[js.Any]))
-      exitCode.foreach(__v => __obj.updateDynamic("exitCode")(__v.asInstanceOf[js.Any]))
-      imageDigest.foreach(__v => __obj.updateDynamic("imageDigest")(__v.asInstanceOf[js.Any]))
-      networkBindings.foreach(__v => __obj.updateDynamic("networkBindings")(__v.asInstanceOf[js.Any]))
-      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
-      runtimeId.foreach(__v => __obj.updateDynamic("runtimeId")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ContainerStateChange]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateCapacityProviderRequest extends js.Object {
     var autoScalingGroupProvider: AutoScalingGroupProvider
     var name: String
     var tags: js.UndefOr[Tags]
   }
 
-  object CreateCapacityProviderRequest {
-    @inline
-    def apply(
-        autoScalingGroupProvider: AutoScalingGroupProvider,
-        name: String,
-        tags: js.UndefOr[Tags] = js.undefined
-    ): CreateCapacityProviderRequest = {
-      val __obj = js.Dynamic.literal(
-        "autoScalingGroupProvider" -> autoScalingGroupProvider.asInstanceOf[js.Any],
-        "name"                     -> name.asInstanceOf[js.Any]
-      )
-
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateCapacityProviderRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateCapacityProviderResponse extends js.Object {
     var capacityProvider: js.UndefOr[CapacityProvider]
   }
 
-  object CreateCapacityProviderResponse {
-    @inline
-    def apply(
-        capacityProvider: js.UndefOr[CapacityProvider] = js.undefined
-    ): CreateCapacityProviderResponse = {
-      val __obj = js.Dynamic.literal()
-      capacityProvider.foreach(__v => __obj.updateDynamic("capacityProvider")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateCapacityProviderResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateClusterRequest extends js.Object {
     var capacityProviders: js.UndefOr[StringList]
     var clusterName: js.UndefOr[String]
@@ -1079,44 +663,14 @@ package ecs {
     var tags: js.UndefOr[Tags]
   }
 
-  object CreateClusterRequest {
-    @inline
-    def apply(
-        capacityProviders: js.UndefOr[StringList] = js.undefined,
-        clusterName: js.UndefOr[String] = js.undefined,
-        defaultCapacityProviderStrategy: js.UndefOr[CapacityProviderStrategy] = js.undefined,
-        settings: js.UndefOr[ClusterSettings] = js.undefined,
-        tags: js.UndefOr[Tags] = js.undefined
-    ): CreateClusterRequest = {
-      val __obj = js.Dynamic.literal()
-      capacityProviders.foreach(__v => __obj.updateDynamic("capacityProviders")(__v.asInstanceOf[js.Any]))
-      clusterName.foreach(__v => __obj.updateDynamic("clusterName")(__v.asInstanceOf[js.Any]))
-      defaultCapacityProviderStrategy.foreach(__v =>
-        __obj.updateDynamic("defaultCapacityProviderStrategy")(__v.asInstanceOf[js.Any])
-      )
-      settings.foreach(__v => __obj.updateDynamic("settings")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateClusterRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateClusterResponse extends js.Object {
     var cluster: js.UndefOr[Cluster]
   }
 
-  object CreateClusterResponse {
-    @inline
-    def apply(
-        cluster: js.UndefOr[Cluster] = js.undefined
-    ): CreateClusterResponse = {
-      val __obj = js.Dynamic.literal()
-      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateClusterResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateServiceRequest extends js.Object {
     var serviceName: String
     var capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy]
@@ -1141,78 +695,14 @@ package ecs {
     var taskDefinition: js.UndefOr[String]
   }
 
-  object CreateServiceRequest {
-    @inline
-    def apply(
-        serviceName: String,
-        capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy] = js.undefined,
-        clientToken: js.UndefOr[String] = js.undefined,
-        cluster: js.UndefOr[String] = js.undefined,
-        deploymentConfiguration: js.UndefOr[DeploymentConfiguration] = js.undefined,
-        deploymentController: js.UndefOr[DeploymentController] = js.undefined,
-        desiredCount: js.UndefOr[BoxedInteger] = js.undefined,
-        enableECSManagedTags: js.UndefOr[Boolean] = js.undefined,
-        healthCheckGracePeriodSeconds: js.UndefOr[BoxedInteger] = js.undefined,
-        launchType: js.UndefOr[LaunchType] = js.undefined,
-        loadBalancers: js.UndefOr[LoadBalancers] = js.undefined,
-        networkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
-        placementConstraints: js.UndefOr[PlacementConstraints] = js.undefined,
-        placementStrategy: js.UndefOr[PlacementStrategies] = js.undefined,
-        platformVersion: js.UndefOr[String] = js.undefined,
-        propagateTags: js.UndefOr[PropagateTags] = js.undefined,
-        role: js.UndefOr[String] = js.undefined,
-        schedulingStrategy: js.UndefOr[SchedulingStrategy] = js.undefined,
-        serviceRegistries: js.UndefOr[ServiceRegistries] = js.undefined,
-        tags: js.UndefOr[Tags] = js.undefined,
-        taskDefinition: js.UndefOr[String] = js.undefined
-    ): CreateServiceRequest = {
-      val __obj = js.Dynamic.literal(
-        "serviceName" -> serviceName.asInstanceOf[js.Any]
-      )
-
-      capacityProviderStrategy.foreach(__v => __obj.updateDynamic("capacityProviderStrategy")(__v.asInstanceOf[js.Any]))
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
-      deploymentConfiguration.foreach(__v => __obj.updateDynamic("deploymentConfiguration")(__v.asInstanceOf[js.Any]))
-      deploymentController.foreach(__v => __obj.updateDynamic("deploymentController")(__v.asInstanceOf[js.Any]))
-      desiredCount.foreach(__v => __obj.updateDynamic("desiredCount")(__v.asInstanceOf[js.Any]))
-      enableECSManagedTags.foreach(__v => __obj.updateDynamic("enableECSManagedTags")(__v.asInstanceOf[js.Any]))
-      healthCheckGracePeriodSeconds.foreach(__v =>
-        __obj.updateDynamic("healthCheckGracePeriodSeconds")(__v.asInstanceOf[js.Any])
-      )
-      launchType.foreach(__v => __obj.updateDynamic("launchType")(__v.asInstanceOf[js.Any]))
-      loadBalancers.foreach(__v => __obj.updateDynamic("loadBalancers")(__v.asInstanceOf[js.Any]))
-      networkConfiguration.foreach(__v => __obj.updateDynamic("networkConfiguration")(__v.asInstanceOf[js.Any]))
-      placementConstraints.foreach(__v => __obj.updateDynamic("placementConstraints")(__v.asInstanceOf[js.Any]))
-      placementStrategy.foreach(__v => __obj.updateDynamic("placementStrategy")(__v.asInstanceOf[js.Any]))
-      platformVersion.foreach(__v => __obj.updateDynamic("platformVersion")(__v.asInstanceOf[js.Any]))
-      propagateTags.foreach(__v => __obj.updateDynamic("propagateTags")(__v.asInstanceOf[js.Any]))
-      role.foreach(__v => __obj.updateDynamic("role")(__v.asInstanceOf[js.Any]))
-      schedulingStrategy.foreach(__v => __obj.updateDynamic("schedulingStrategy")(__v.asInstanceOf[js.Any]))
-      serviceRegistries.foreach(__v => __obj.updateDynamic("serviceRegistries")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      taskDefinition.foreach(__v => __obj.updateDynamic("taskDefinition")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateServiceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateServiceResponse extends js.Object {
     var service: js.UndefOr[Service]
   }
 
-  object CreateServiceResponse {
-    @inline
-    def apply(
-        service: js.UndefOr[Service] = js.undefined
-    ): CreateServiceResponse = {
-      val __obj = js.Dynamic.literal()
-      service.foreach(__v => __obj.updateDynamic("service")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateServiceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateTaskSetRequest extends js.Object {
     var cluster: String
     var service: String
@@ -1229,208 +719,66 @@ package ecs {
     var tags: js.UndefOr[Tags]
   }
 
-  object CreateTaskSetRequest {
-    @inline
-    def apply(
-        cluster: String,
-        service: String,
-        taskDefinition: String,
-        capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy] = js.undefined,
-        clientToken: js.UndefOr[String] = js.undefined,
-        externalId: js.UndefOr[String] = js.undefined,
-        launchType: js.UndefOr[LaunchType] = js.undefined,
-        loadBalancers: js.UndefOr[LoadBalancers] = js.undefined,
-        networkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
-        platformVersion: js.UndefOr[String] = js.undefined,
-        scale: js.UndefOr[Scale] = js.undefined,
-        serviceRegistries: js.UndefOr[ServiceRegistries] = js.undefined,
-        tags: js.UndefOr[Tags] = js.undefined
-    ): CreateTaskSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "cluster"        -> cluster.asInstanceOf[js.Any],
-        "service"        -> service.asInstanceOf[js.Any],
-        "taskDefinition" -> taskDefinition.asInstanceOf[js.Any]
-      )
-
-      capacityProviderStrategy.foreach(__v => __obj.updateDynamic("capacityProviderStrategy")(__v.asInstanceOf[js.Any]))
-      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
-      externalId.foreach(__v => __obj.updateDynamic("externalId")(__v.asInstanceOf[js.Any]))
-      launchType.foreach(__v => __obj.updateDynamic("launchType")(__v.asInstanceOf[js.Any]))
-      loadBalancers.foreach(__v => __obj.updateDynamic("loadBalancers")(__v.asInstanceOf[js.Any]))
-      networkConfiguration.foreach(__v => __obj.updateDynamic("networkConfiguration")(__v.asInstanceOf[js.Any]))
-      platformVersion.foreach(__v => __obj.updateDynamic("platformVersion")(__v.asInstanceOf[js.Any]))
-      scale.foreach(__v => __obj.updateDynamic("scale")(__v.asInstanceOf[js.Any]))
-      serviceRegistries.foreach(__v => __obj.updateDynamic("serviceRegistries")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateTaskSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateTaskSetResponse extends js.Object {
     var taskSet: js.UndefOr[TaskSet]
   }
 
-  object CreateTaskSetResponse {
-    @inline
-    def apply(
-        taskSet: js.UndefOr[TaskSet] = js.undefined
-    ): CreateTaskSetResponse = {
-      val __obj = js.Dynamic.literal()
-      taskSet.foreach(__v => __obj.updateDynamic("taskSet")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateTaskSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteAccountSettingRequest extends js.Object {
     var name: SettingName
     var principalArn: js.UndefOr[String]
   }
 
-  object DeleteAccountSettingRequest {
-    @inline
-    def apply(
-        name: SettingName,
-        principalArn: js.UndefOr[String] = js.undefined
-    ): DeleteAccountSettingRequest = {
-      val __obj = js.Dynamic.literal(
-        "name" -> name.asInstanceOf[js.Any]
-      )
-
-      principalArn.foreach(__v => __obj.updateDynamic("principalArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteAccountSettingRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteAccountSettingResponse extends js.Object {
     var setting: js.UndefOr[Setting]
   }
 
-  object DeleteAccountSettingResponse {
-    @inline
-    def apply(
-        setting: js.UndefOr[Setting] = js.undefined
-    ): DeleteAccountSettingResponse = {
-      val __obj = js.Dynamic.literal()
-      setting.foreach(__v => __obj.updateDynamic("setting")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteAccountSettingResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteAttributesRequest extends js.Object {
     var attributes: Attributes
     var cluster: js.UndefOr[String]
   }
 
-  object DeleteAttributesRequest {
-    @inline
-    def apply(
-        attributes: Attributes,
-        cluster: js.UndefOr[String] = js.undefined
-    ): DeleteAttributesRequest = {
-      val __obj = js.Dynamic.literal(
-        "attributes" -> attributes.asInstanceOf[js.Any]
-      )
-
-      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteAttributesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteAttributesResponse extends js.Object {
     var attributes: js.UndefOr[Attributes]
   }
 
-  object DeleteAttributesResponse {
-    @inline
-    def apply(
-        attributes: js.UndefOr[Attributes] = js.undefined
-    ): DeleteAttributesResponse = {
-      val __obj = js.Dynamic.literal()
-      attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteAttributesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteClusterRequest extends js.Object {
     var cluster: String
   }
 
-  object DeleteClusterRequest {
-    @inline
-    def apply(
-        cluster: String
-    ): DeleteClusterRequest = {
-      val __obj = js.Dynamic.literal(
-        "cluster" -> cluster.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteClusterRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteClusterResponse extends js.Object {
     var cluster: js.UndefOr[Cluster]
   }
 
-  object DeleteClusterResponse {
-    @inline
-    def apply(
-        cluster: js.UndefOr[Cluster] = js.undefined
-    ): DeleteClusterResponse = {
-      val __obj = js.Dynamic.literal()
-      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteClusterResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteServiceRequest extends js.Object {
     var service: String
     var cluster: js.UndefOr[String]
     var force: js.UndefOr[BoxedBoolean]
   }
 
-  object DeleteServiceRequest {
-    @inline
-    def apply(
-        service: String,
-        cluster: js.UndefOr[String] = js.undefined,
-        force: js.UndefOr[BoxedBoolean] = js.undefined
-    ): DeleteServiceRequest = {
-      val __obj = js.Dynamic.literal(
-        "service" -> service.asInstanceOf[js.Any]
-      )
-
-      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
-      force.foreach(__v => __obj.updateDynamic("force")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteServiceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteServiceResponse extends js.Object {
     var service: js.UndefOr[Service]
   }
 
-  object DeleteServiceResponse {
-    @inline
-    def apply(
-        service: js.UndefOr[Service] = js.undefined
-    ): DeleteServiceResponse = {
-      val __obj = js.Dynamic.literal()
-      service.foreach(__v => __obj.updateDynamic("service")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteServiceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteTaskSetRequest extends js.Object {
     var cluster: String
     var service: String
@@ -1438,45 +786,17 @@ package ecs {
     var force: js.UndefOr[BoxedBoolean]
   }
 
-  object DeleteTaskSetRequest {
-    @inline
-    def apply(
-        cluster: String,
-        service: String,
-        taskSet: String,
-        force: js.UndefOr[BoxedBoolean] = js.undefined
-    ): DeleteTaskSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "cluster" -> cluster.asInstanceOf[js.Any],
-        "service" -> service.asInstanceOf[js.Any],
-        "taskSet" -> taskSet.asInstanceOf[js.Any]
-      )
-
-      force.foreach(__v => __obj.updateDynamic("force")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteTaskSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteTaskSetResponse extends js.Object {
     var taskSet: js.UndefOr[TaskSet]
-  }
-
-  object DeleteTaskSetResponse {
-    @inline
-    def apply(
-        taskSet: js.UndefOr[TaskSet] = js.undefined
-    ): DeleteTaskSetResponse = {
-      val __obj = js.Dynamic.literal()
-      taskSet.foreach(__v => __obj.updateDynamic("taskSet")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteTaskSetResponse]
-    }
   }
 
   /**
     * The details of an Amazon ECS service deployment. This is used only when a service uses the <code>ECS</code> deployment controller type.
     */
   @js.native
+  @Factory
   trait Deployment extends js.Object {
     var capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy]
     var createdAt: js.UndefOr[Timestamp]
@@ -1492,80 +812,23 @@ package ecs {
     var updatedAt: js.UndefOr[Timestamp]
   }
 
-  object Deployment {
-    @inline
-    def apply(
-        capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy] = js.undefined,
-        createdAt: js.UndefOr[Timestamp] = js.undefined,
-        desiredCount: js.UndefOr[Int] = js.undefined,
-        id: js.UndefOr[String] = js.undefined,
-        launchType: js.UndefOr[LaunchType] = js.undefined,
-        networkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
-        pendingCount: js.UndefOr[Int] = js.undefined,
-        platformVersion: js.UndefOr[String] = js.undefined,
-        runningCount: js.UndefOr[Int] = js.undefined,
-        status: js.UndefOr[String] = js.undefined,
-        taskDefinition: js.UndefOr[String] = js.undefined,
-        updatedAt: js.UndefOr[Timestamp] = js.undefined
-    ): Deployment = {
-      val __obj = js.Dynamic.literal()
-      capacityProviderStrategy.foreach(__v => __obj.updateDynamic("capacityProviderStrategy")(__v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      desiredCount.foreach(__v => __obj.updateDynamic("desiredCount")(__v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
-      launchType.foreach(__v => __obj.updateDynamic("launchType")(__v.asInstanceOf[js.Any]))
-      networkConfiguration.foreach(__v => __obj.updateDynamic("networkConfiguration")(__v.asInstanceOf[js.Any]))
-      pendingCount.foreach(__v => __obj.updateDynamic("pendingCount")(__v.asInstanceOf[js.Any]))
-      platformVersion.foreach(__v => __obj.updateDynamic("platformVersion")(__v.asInstanceOf[js.Any]))
-      runningCount.foreach(__v => __obj.updateDynamic("runningCount")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      taskDefinition.foreach(__v => __obj.updateDynamic("taskDefinition")(__v.asInstanceOf[js.Any]))
-      updatedAt.foreach(__v => __obj.updateDynamic("updatedAt")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Deployment]
-    }
-  }
-
   /**
     * Optional deployment parameters that control how many tasks run during a deployment and the ordering of stopping and starting tasks.
     */
   @js.native
+  @Factory
   trait DeploymentConfiguration extends js.Object {
     var maximumPercent: js.UndefOr[BoxedInteger]
     var minimumHealthyPercent: js.UndefOr[BoxedInteger]
-  }
-
-  object DeploymentConfiguration {
-    @inline
-    def apply(
-        maximumPercent: js.UndefOr[BoxedInteger] = js.undefined,
-        minimumHealthyPercent: js.UndefOr[BoxedInteger] = js.undefined
-    ): DeploymentConfiguration = {
-      val __obj = js.Dynamic.literal()
-      maximumPercent.foreach(__v => __obj.updateDynamic("maximumPercent")(__v.asInstanceOf[js.Any]))
-      minimumHealthyPercent.foreach(__v => __obj.updateDynamic("minimumHealthyPercent")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeploymentConfiguration]
-    }
   }
 
   /**
     * The deployment controller to use for the service. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html|Amazon ECS Deployment Types]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait DeploymentController extends js.Object {
     var `type`: DeploymentControllerType
-  }
-
-  object DeploymentController {
-    @inline
-    def apply(
-        `type`: DeploymentControllerType
-    ): DeploymentController = {
-      val __obj = js.Dynamic.literal(
-        "type" -> `type`.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeploymentController]
-    }
   }
 
   @js.native
@@ -1579,80 +842,33 @@ package ecs {
   }
 
   @js.native
+  @Factory
   trait DeregisterContainerInstanceRequest extends js.Object {
     var containerInstance: String
     var cluster: js.UndefOr[String]
     var force: js.UndefOr[BoxedBoolean]
   }
 
-  object DeregisterContainerInstanceRequest {
-    @inline
-    def apply(
-        containerInstance: String,
-        cluster: js.UndefOr[String] = js.undefined,
-        force: js.UndefOr[BoxedBoolean] = js.undefined
-    ): DeregisterContainerInstanceRequest = {
-      val __obj = js.Dynamic.literal(
-        "containerInstance" -> containerInstance.asInstanceOf[js.Any]
-      )
-
-      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
-      force.foreach(__v => __obj.updateDynamic("force")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeregisterContainerInstanceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeregisterContainerInstanceResponse extends js.Object {
     var containerInstance: js.UndefOr[ContainerInstance]
   }
 
-  object DeregisterContainerInstanceResponse {
-    @inline
-    def apply(
-        containerInstance: js.UndefOr[ContainerInstance] = js.undefined
-    ): DeregisterContainerInstanceResponse = {
-      val __obj = js.Dynamic.literal()
-      containerInstance.foreach(__v => __obj.updateDynamic("containerInstance")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeregisterContainerInstanceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeregisterTaskDefinitionRequest extends js.Object {
     var taskDefinition: String
   }
 
-  object DeregisterTaskDefinitionRequest {
-    @inline
-    def apply(
-        taskDefinition: String
-    ): DeregisterTaskDefinitionRequest = {
-      val __obj = js.Dynamic.literal(
-        "taskDefinition" -> taskDefinition.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeregisterTaskDefinitionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeregisterTaskDefinitionResponse extends js.Object {
     var taskDefinition: js.UndefOr[TaskDefinition]
   }
 
-  object DeregisterTaskDefinitionResponse {
-    @inline
-    def apply(
-        taskDefinition: js.UndefOr[TaskDefinition] = js.undefined
-    ): DeregisterTaskDefinitionResponse = {
-      val __obj = js.Dynamic.literal()
-      taskDefinition.foreach(__v => __obj.updateDynamic("taskDefinition")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeregisterTaskDefinitionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeCapacityProvidersRequest extends js.Object {
     var capacityProviders: js.UndefOr[StringList]
     var include: js.UndefOr[CapacityProviderFieldList]
@@ -1660,210 +876,74 @@ package ecs {
     var nextToken: js.UndefOr[String]
   }
 
-  object DescribeCapacityProvidersRequest {
-    @inline
-    def apply(
-        capacityProviders: js.UndefOr[StringList] = js.undefined,
-        include: js.UndefOr[CapacityProviderFieldList] = js.undefined,
-        maxResults: js.UndefOr[BoxedInteger] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
-    ): DescribeCapacityProvidersRequest = {
-      val __obj = js.Dynamic.literal()
-      capacityProviders.foreach(__v => __obj.updateDynamic("capacityProviders")(__v.asInstanceOf[js.Any]))
-      include.foreach(__v => __obj.updateDynamic("include")(__v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeCapacityProvidersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeCapacityProvidersResponse extends js.Object {
     var capacityProviders: js.UndefOr[CapacityProviders]
     var failures: js.UndefOr[Failures]
     var nextToken: js.UndefOr[String]
   }
 
-  object DescribeCapacityProvidersResponse {
-    @inline
-    def apply(
-        capacityProviders: js.UndefOr[CapacityProviders] = js.undefined,
-        failures: js.UndefOr[Failures] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
-    ): DescribeCapacityProvidersResponse = {
-      val __obj = js.Dynamic.literal()
-      capacityProviders.foreach(__v => __obj.updateDynamic("capacityProviders")(__v.asInstanceOf[js.Any]))
-      failures.foreach(__v => __obj.updateDynamic("failures")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeCapacityProvidersResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeClustersRequest extends js.Object {
     var clusters: js.UndefOr[StringList]
     var include: js.UndefOr[ClusterFieldList]
   }
 
-  object DescribeClustersRequest {
-    @inline
-    def apply(
-        clusters: js.UndefOr[StringList] = js.undefined,
-        include: js.UndefOr[ClusterFieldList] = js.undefined
-    ): DescribeClustersRequest = {
-      val __obj = js.Dynamic.literal()
-      clusters.foreach(__v => __obj.updateDynamic("clusters")(__v.asInstanceOf[js.Any]))
-      include.foreach(__v => __obj.updateDynamic("include")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeClustersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeClustersResponse extends js.Object {
     var clusters: js.UndefOr[Clusters]
     var failures: js.UndefOr[Failures]
   }
 
-  object DescribeClustersResponse {
-    @inline
-    def apply(
-        clusters: js.UndefOr[Clusters] = js.undefined,
-        failures: js.UndefOr[Failures] = js.undefined
-    ): DescribeClustersResponse = {
-      val __obj = js.Dynamic.literal()
-      clusters.foreach(__v => __obj.updateDynamic("clusters")(__v.asInstanceOf[js.Any]))
-      failures.foreach(__v => __obj.updateDynamic("failures")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeClustersResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeContainerInstancesRequest extends js.Object {
     var containerInstances: StringList
     var cluster: js.UndefOr[String]
     var include: js.UndefOr[ContainerInstanceFieldList]
   }
 
-  object DescribeContainerInstancesRequest {
-    @inline
-    def apply(
-        containerInstances: StringList,
-        cluster: js.UndefOr[String] = js.undefined,
-        include: js.UndefOr[ContainerInstanceFieldList] = js.undefined
-    ): DescribeContainerInstancesRequest = {
-      val __obj = js.Dynamic.literal(
-        "containerInstances" -> containerInstances.asInstanceOf[js.Any]
-      )
-
-      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
-      include.foreach(__v => __obj.updateDynamic("include")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeContainerInstancesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeContainerInstancesResponse extends js.Object {
     var containerInstances: js.UndefOr[ContainerInstances]
     var failures: js.UndefOr[Failures]
   }
 
-  object DescribeContainerInstancesResponse {
-    @inline
-    def apply(
-        containerInstances: js.UndefOr[ContainerInstances] = js.undefined,
-        failures: js.UndefOr[Failures] = js.undefined
-    ): DescribeContainerInstancesResponse = {
-      val __obj = js.Dynamic.literal()
-      containerInstances.foreach(__v => __obj.updateDynamic("containerInstances")(__v.asInstanceOf[js.Any]))
-      failures.foreach(__v => __obj.updateDynamic("failures")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeContainerInstancesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeServicesRequest extends js.Object {
     var services: StringList
     var cluster: js.UndefOr[String]
     var include: js.UndefOr[ServiceFieldList]
   }
 
-  object DescribeServicesRequest {
-    @inline
-    def apply(
-        services: StringList,
-        cluster: js.UndefOr[String] = js.undefined,
-        include: js.UndefOr[ServiceFieldList] = js.undefined
-    ): DescribeServicesRequest = {
-      val __obj = js.Dynamic.literal(
-        "services" -> services.asInstanceOf[js.Any]
-      )
-
-      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
-      include.foreach(__v => __obj.updateDynamic("include")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeServicesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeServicesResponse extends js.Object {
     var failures: js.UndefOr[Failures]
     var services: js.UndefOr[Services]
   }
 
-  object DescribeServicesResponse {
-    @inline
-    def apply(
-        failures: js.UndefOr[Failures] = js.undefined,
-        services: js.UndefOr[Services] = js.undefined
-    ): DescribeServicesResponse = {
-      val __obj = js.Dynamic.literal()
-      failures.foreach(__v => __obj.updateDynamic("failures")(__v.asInstanceOf[js.Any]))
-      services.foreach(__v => __obj.updateDynamic("services")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeServicesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeTaskDefinitionRequest extends js.Object {
     var taskDefinition: String
     var include: js.UndefOr[TaskDefinitionFieldList]
   }
 
-  object DescribeTaskDefinitionRequest {
-    @inline
-    def apply(
-        taskDefinition: String,
-        include: js.UndefOr[TaskDefinitionFieldList] = js.undefined
-    ): DescribeTaskDefinitionRequest = {
-      val __obj = js.Dynamic.literal(
-        "taskDefinition" -> taskDefinition.asInstanceOf[js.Any]
-      )
-
-      include.foreach(__v => __obj.updateDynamic("include")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeTaskDefinitionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeTaskDefinitionResponse extends js.Object {
     var tags: js.UndefOr[Tags]
     var taskDefinition: js.UndefOr[TaskDefinition]
   }
 
-  object DescribeTaskDefinitionResponse {
-    @inline
-    def apply(
-        tags: js.UndefOr[Tags] = js.undefined,
-        taskDefinition: js.UndefOr[TaskDefinition] = js.undefined
-    ): DescribeTaskDefinitionResponse = {
-      val __obj = js.Dynamic.literal()
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      taskDefinition.foreach(__v => __obj.updateDynamic("taskDefinition")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeTaskDefinitionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeTaskSetsRequest extends js.Object {
     var cluster: String
     var service: String
@@ -1871,85 +951,26 @@ package ecs {
     var taskSets: js.UndefOr[StringList]
   }
 
-  object DescribeTaskSetsRequest {
-    @inline
-    def apply(
-        cluster: String,
-        service: String,
-        include: js.UndefOr[TaskSetFieldList] = js.undefined,
-        taskSets: js.UndefOr[StringList] = js.undefined
-    ): DescribeTaskSetsRequest = {
-      val __obj = js.Dynamic.literal(
-        "cluster" -> cluster.asInstanceOf[js.Any],
-        "service" -> service.asInstanceOf[js.Any]
-      )
-
-      include.foreach(__v => __obj.updateDynamic("include")(__v.asInstanceOf[js.Any]))
-      taskSets.foreach(__v => __obj.updateDynamic("taskSets")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeTaskSetsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeTaskSetsResponse extends js.Object {
     var failures: js.UndefOr[Failures]
     var taskSets: js.UndefOr[TaskSets]
   }
 
-  object DescribeTaskSetsResponse {
-    @inline
-    def apply(
-        failures: js.UndefOr[Failures] = js.undefined,
-        taskSets: js.UndefOr[TaskSets] = js.undefined
-    ): DescribeTaskSetsResponse = {
-      val __obj = js.Dynamic.literal()
-      failures.foreach(__v => __obj.updateDynamic("failures")(__v.asInstanceOf[js.Any]))
-      taskSets.foreach(__v => __obj.updateDynamic("taskSets")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeTaskSetsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeTasksRequest extends js.Object {
     var tasks: StringList
     var cluster: js.UndefOr[String]
     var include: js.UndefOr[TaskFieldList]
   }
 
-  object DescribeTasksRequest {
-    @inline
-    def apply(
-        tasks: StringList,
-        cluster: js.UndefOr[String] = js.undefined,
-        include: js.UndefOr[TaskFieldList] = js.undefined
-    ): DescribeTasksRequest = {
-      val __obj = js.Dynamic.literal(
-        "tasks" -> tasks.asInstanceOf[js.Any]
-      )
-
-      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
-      include.foreach(__v => __obj.updateDynamic("include")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeTasksRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeTasksResponse extends js.Object {
     var failures: js.UndefOr[Failures]
     var tasks: js.UndefOr[Tasks]
-  }
-
-  object DescribeTasksResponse {
-    @inline
-    def apply(
-        failures: js.UndefOr[Failures] = js.undefined,
-        tasks: js.UndefOr[Tasks] = js.undefined
-    ): DescribeTasksResponse = {
-      val __obj = js.Dynamic.literal()
-      failures.foreach(__v => __obj.updateDynamic("failures")(__v.asInstanceOf[js.Any]))
-      tasks.foreach(__v => __obj.updateDynamic("tasks")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeTasksResponse]
-    }
   }
 
   @js.native
@@ -1966,27 +987,11 @@ package ecs {
     * An object representing a container instance host device.
     */
   @js.native
+  @Factory
   trait Device extends js.Object {
     var hostPath: String
     var containerPath: js.UndefOr[String]
     var permissions: js.UndefOr[DeviceCgroupPermissions]
-  }
-
-  object Device {
-    @inline
-    def apply(
-        hostPath: String,
-        containerPath: js.UndefOr[String] = js.undefined,
-        permissions: js.UndefOr[DeviceCgroupPermissions] = js.undefined
-    ): Device = {
-      val __obj = js.Dynamic.literal(
-        "hostPath" -> hostPath.asInstanceOf[js.Any]
-      )
-
-      containerPath.foreach(__v => __obj.updateDynamic("containerPath")(__v.asInstanceOf[js.Any]))
-      permissions.foreach(__v => __obj.updateDynamic("permissions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Device]
-    }
   }
 
   @js.native
@@ -2000,47 +1005,24 @@ package ecs {
   }
 
   @js.native
+  @Factory
   trait DiscoverPollEndpointRequest extends js.Object {
     var cluster: js.UndefOr[String]
     var containerInstance: js.UndefOr[String]
   }
 
-  object DiscoverPollEndpointRequest {
-    @inline
-    def apply(
-        cluster: js.UndefOr[String] = js.undefined,
-        containerInstance: js.UndefOr[String] = js.undefined
-    ): DiscoverPollEndpointRequest = {
-      val __obj = js.Dynamic.literal()
-      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
-      containerInstance.foreach(__v => __obj.updateDynamic("containerInstance")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DiscoverPollEndpointRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DiscoverPollEndpointResponse extends js.Object {
     var endpoint: js.UndefOr[String]
     var telemetryEndpoint: js.UndefOr[String]
-  }
-
-  object DiscoverPollEndpointResponse {
-    @inline
-    def apply(
-        endpoint: js.UndefOr[String] = js.undefined,
-        telemetryEndpoint: js.UndefOr[String] = js.undefined
-    ): DiscoverPollEndpointResponse = {
-      val __obj = js.Dynamic.literal()
-      endpoint.foreach(__v => __obj.updateDynamic("endpoint")(__v.asInstanceOf[js.Any]))
-      telemetryEndpoint.foreach(__v => __obj.updateDynamic("telemetryEndpoint")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DiscoverPollEndpointResponse]
-    }
   }
 
   /**
     * This parameter is specified when you are using Docker volumes. Docker volumes are only supported when you are using the EC2 launch type. Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify a <code>host</code> instead.
     */
   @js.native
+  @Factory
   trait DockerVolumeConfiguration extends js.Object {
     var autoprovision: js.UndefOr[BoxedBoolean]
     var driver: js.UndefOr[String]
@@ -2049,98 +1031,37 @@ package ecs {
     var scope: js.UndefOr[Scope]
   }
 
-  object DockerVolumeConfiguration {
-    @inline
-    def apply(
-        autoprovision: js.UndefOr[BoxedBoolean] = js.undefined,
-        driver: js.UndefOr[String] = js.undefined,
-        driverOpts: js.UndefOr[StringMap] = js.undefined,
-        labels: js.UndefOr[StringMap] = js.undefined,
-        scope: js.UndefOr[Scope] = js.undefined
-    ): DockerVolumeConfiguration = {
-      val __obj = js.Dynamic.literal()
-      autoprovision.foreach(__v => __obj.updateDynamic("autoprovision")(__v.asInstanceOf[js.Any]))
-      driver.foreach(__v => __obj.updateDynamic("driver")(__v.asInstanceOf[js.Any]))
-      driverOpts.foreach(__v => __obj.updateDynamic("driverOpts")(__v.asInstanceOf[js.Any]))
-      labels.foreach(__v => __obj.updateDynamic("labels")(__v.asInstanceOf[js.Any]))
-      scope.foreach(__v => __obj.updateDynamic("scope")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DockerVolumeConfiguration]
-    }
-  }
-
   /**
     * This parameter is specified when you are using an Amazon Elastic File System (Amazon EFS) file storage. Amazon EFS file systems are only supported when you are using the EC2 launch type.
     *  <important> <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as defined by and subject to the Beta Service Participation Service Terms located at [[https://aws.amazon.com/service-terms|https://aws.amazon.com/service-terms]] ("Beta Terms"). These Beta Terms apply to your participation in this preview of <code>EFSVolumeConfiguration</code>.
     *  </important>
     */
   @js.native
+  @Factory
   trait EFSVolumeConfiguration extends js.Object {
     var fileSystemId: String
     var rootDirectory: js.UndefOr[String]
-  }
-
-  object EFSVolumeConfiguration {
-    @inline
-    def apply(
-        fileSystemId: String,
-        rootDirectory: js.UndefOr[String] = js.undefined
-    ): EFSVolumeConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "fileSystemId" -> fileSystemId.asInstanceOf[js.Any]
-      )
-
-      rootDirectory.foreach(__v => __obj.updateDynamic("rootDirectory")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[EFSVolumeConfiguration]
-    }
   }
 
   /**
     * A failed resource.
     */
   @js.native
+  @Factory
   trait Failure extends js.Object {
     var arn: js.UndefOr[String]
     var detail: js.UndefOr[String]
     var reason: js.UndefOr[String]
   }
 
-  object Failure {
-    @inline
-    def apply(
-        arn: js.UndefOr[String] = js.undefined,
-        detail: js.UndefOr[String] = js.undefined,
-        reason: js.UndefOr[String] = js.undefined
-    ): Failure = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
-      detail.foreach(__v => __obj.updateDynamic("detail")(__v.asInstanceOf[js.Any]))
-      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Failure]
-    }
-  }
-
   /**
     * The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html|Custom Log Routing]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait FirelensConfiguration extends js.Object {
     var `type`: FirelensConfigurationType
     var options: js.UndefOr[FirelensConfigurationOptionsMap]
-  }
-
-  object FirelensConfiguration {
-    @inline
-    def apply(
-        `type`: FirelensConfigurationType,
-        options: js.UndefOr[FirelensConfigurationOptionsMap] = js.undefined
-    ): FirelensConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "type" -> `type`.asInstanceOf[js.Any]
-      )
-
-      options.foreach(__v => __obj.updateDynamic("options")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[FirelensConfiguration]
-    }
   }
 
   @js.native
@@ -2160,33 +1081,13 @@ package ecs {
     *  * Container health checks are not supported for tasks that are part of a service that is configured to use a Classic Load Balancer.
     */
   @js.native
+  @Factory
   trait HealthCheck extends js.Object {
     var command: StringList
     var interval: js.UndefOr[BoxedInteger]
     var retries: js.UndefOr[BoxedInteger]
     var startPeriod: js.UndefOr[BoxedInteger]
     var timeout: js.UndefOr[BoxedInteger]
-  }
-
-  object HealthCheck {
-    @inline
-    def apply(
-        command: StringList,
-        interval: js.UndefOr[BoxedInteger] = js.undefined,
-        retries: js.UndefOr[BoxedInteger] = js.undefined,
-        startPeriod: js.UndefOr[BoxedInteger] = js.undefined,
-        timeout: js.UndefOr[BoxedInteger] = js.undefined
-    ): HealthCheck = {
-      val __obj = js.Dynamic.literal(
-        "command" -> command.asInstanceOf[js.Any]
-      )
-
-      interval.foreach(__v => __obj.updateDynamic("interval")(__v.asInstanceOf[js.Any]))
-      retries.foreach(__v => __obj.updateDynamic("retries")(__v.asInstanceOf[js.Any]))
-      startPeriod.foreach(__v => __obj.updateDynamic("startPeriod")(__v.asInstanceOf[js.Any]))
-      timeout.foreach(__v => __obj.updateDynamic("timeout")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HealthCheck]
-    }
   }
 
   @js.native
@@ -2203,89 +1104,39 @@ package ecs {
     * Hostnames and IP address entries that are added to the <code>/etc/hosts</code> file of a container via the <code>extraHosts</code> parameter of its <a>ContainerDefinition</a>.
     */
   @js.native
+  @Factory
   trait HostEntry extends js.Object {
     var hostname: String
     var ipAddress: String
-  }
-
-  object HostEntry {
-    @inline
-    def apply(
-        hostname: String,
-        ipAddress: String
-    ): HostEntry = {
-      val __obj = js.Dynamic.literal(
-        "hostname"  -> hostname.asInstanceOf[js.Any],
-        "ipAddress" -> ipAddress.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[HostEntry]
-    }
   }
 
   /**
     * Details on a container instance bind mount host volume.
     */
   @js.native
+  @Factory
   trait HostVolumeProperties extends js.Object {
     var sourcePath: js.UndefOr[String]
-  }
-
-  object HostVolumeProperties {
-    @inline
-    def apply(
-        sourcePath: js.UndefOr[String] = js.undefined
-    ): HostVolumeProperties = {
-      val __obj = js.Dynamic.literal()
-      sourcePath.foreach(__v => __obj.updateDynamic("sourcePath")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[HostVolumeProperties]
-    }
   }
 
   /**
     * Details on a Elastic Inference accelerator. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html|Working with Amazon Elastic Inference on Amazon ECS]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait InferenceAccelerator extends js.Object {
     var deviceName: String
     var deviceType: String
-  }
-
-  object InferenceAccelerator {
-    @inline
-    def apply(
-        deviceName: String,
-        deviceType: String
-    ): InferenceAccelerator = {
-      val __obj = js.Dynamic.literal(
-        "deviceName" -> deviceName.asInstanceOf[js.Any],
-        "deviceType" -> deviceType.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[InferenceAccelerator]
-    }
   }
 
   /**
     * Details on an Elastic Inference accelerator task override. This parameter is used to override the Elastic Inference accelerator specified in the task definition. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html|Working with Amazon Elastic Inference on Amazon ECS]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait InferenceAcceleratorOverride extends js.Object {
     var deviceName: js.UndefOr[String]
     var deviceType: js.UndefOr[String]
-  }
-
-  object InferenceAcceleratorOverride {
-    @inline
-    def apply(
-        deviceName: js.UndefOr[String] = js.undefined,
-        deviceType: js.UndefOr[String] = js.undefined
-    ): InferenceAcceleratorOverride = {
-      val __obj = js.Dynamic.literal()
-      deviceName.foreach(__v => __obj.updateDynamic("deviceName")(__v.asInstanceOf[js.Any]))
-      deviceType.foreach(__v => __obj.updateDynamic("deviceType")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InferenceAcceleratorOverride]
-    }
   }
 
   @js.native
@@ -2302,44 +1153,20 @@ package ecs {
     * The Linux capabilities for the container that are added to or dropped from the default configuration provided by Docker. For more information on the default capabilities and the non-default available capabilities, see [[https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities|Runtime privilege and Linux capabilities]] in the <i>Docker run reference</i>. For more detailed information on these Linux capabilities, see the [[http://man7.org/linux/man-pages/man7/capabilities.7.html|capabilities(7)]] Linux manual page.
     */
   @js.native
+  @Factory
   trait KernelCapabilities extends js.Object {
     var add: js.UndefOr[StringList]
     var drop: js.UndefOr[StringList]
-  }
-
-  object KernelCapabilities {
-    @inline
-    def apply(
-        add: js.UndefOr[StringList] = js.undefined,
-        drop: js.UndefOr[StringList] = js.undefined
-    ): KernelCapabilities = {
-      val __obj = js.Dynamic.literal()
-      add.foreach(__v => __obj.updateDynamic("add")(__v.asInstanceOf[js.Any]))
-      drop.foreach(__v => __obj.updateDynamic("drop")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[KernelCapabilities]
-    }
   }
 
   /**
     * A key-value pair object.
     */
   @js.native
+  @Factory
   trait KeyValuePair extends js.Object {
     var name: js.UndefOr[String]
     var value: js.UndefOr[String]
-  }
-
-  object KeyValuePair {
-    @inline
-    def apply(
-        name: js.UndefOr[String] = js.undefined,
-        value: js.UndefOr[String] = js.undefined
-    ): KeyValuePair = {
-      val __obj = js.Dynamic.literal()
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[KeyValuePair]
-    }
   }
 
   @js.native
@@ -2355,6 +1182,7 @@ package ecs {
     * Linux-specific options that are applied to the container, such as Linux <a>KernelCapabilities</a>.
     */
   @js.native
+  @Factory
   trait LinuxParameters extends js.Object {
     var capabilities: js.UndefOr[KernelCapabilities]
     var devices: js.UndefOr[DevicesList]
@@ -2365,30 +1193,8 @@ package ecs {
     var tmpfs: js.UndefOr[TmpfsList]
   }
 
-  object LinuxParameters {
-    @inline
-    def apply(
-        capabilities: js.UndefOr[KernelCapabilities] = js.undefined,
-        devices: js.UndefOr[DevicesList] = js.undefined,
-        initProcessEnabled: js.UndefOr[BoxedBoolean] = js.undefined,
-        maxSwap: js.UndefOr[BoxedInteger] = js.undefined,
-        sharedMemorySize: js.UndefOr[BoxedInteger] = js.undefined,
-        swappiness: js.UndefOr[BoxedInteger] = js.undefined,
-        tmpfs: js.UndefOr[TmpfsList] = js.undefined
-    ): LinuxParameters = {
-      val __obj = js.Dynamic.literal()
-      capabilities.foreach(__v => __obj.updateDynamic("capabilities")(__v.asInstanceOf[js.Any]))
-      devices.foreach(__v => __obj.updateDynamic("devices")(__v.asInstanceOf[js.Any]))
-      initProcessEnabled.foreach(__v => __obj.updateDynamic("initProcessEnabled")(__v.asInstanceOf[js.Any]))
-      maxSwap.foreach(__v => __obj.updateDynamic("maxSwap")(__v.asInstanceOf[js.Any]))
-      sharedMemorySize.foreach(__v => __obj.updateDynamic("sharedMemorySize")(__v.asInstanceOf[js.Any]))
-      swappiness.foreach(__v => __obj.updateDynamic("swappiness")(__v.asInstanceOf[js.Any]))
-      tmpfs.foreach(__v => __obj.updateDynamic("tmpfs")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LinuxParameters]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAccountSettingsRequest extends js.Object {
     var effectiveSettings: js.UndefOr[Boolean]
     var maxResults: js.UndefOr[Int]
@@ -2398,47 +1204,15 @@ package ecs {
     var value: js.UndefOr[String]
   }
 
-  object ListAccountSettingsRequest {
-    @inline
-    def apply(
-        effectiveSettings: js.UndefOr[Boolean] = js.undefined,
-        maxResults: js.UndefOr[Int] = js.undefined,
-        name: js.UndefOr[SettingName] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined,
-        principalArn: js.UndefOr[String] = js.undefined,
-        value: js.UndefOr[String] = js.undefined
-    ): ListAccountSettingsRequest = {
-      val __obj = js.Dynamic.literal()
-      effectiveSettings.foreach(__v => __obj.updateDynamic("effectiveSettings")(__v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      principalArn.foreach(__v => __obj.updateDynamic("principalArn")(__v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAccountSettingsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAccountSettingsResponse extends js.Object {
     var nextToken: js.UndefOr[String]
     var settings: js.UndefOr[Settings]
   }
 
-  object ListAccountSettingsResponse {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[String] = js.undefined,
-        settings: js.UndefOr[Settings] = js.undefined
-    ): ListAccountSettingsResponse = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      settings.foreach(__v => __obj.updateDynamic("settings")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAccountSettingsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAttributesRequest extends js.Object {
     var targetType: TargetType
     var attributeName: js.UndefOr[String]
@@ -2448,87 +1222,29 @@ package ecs {
     var nextToken: js.UndefOr[String]
   }
 
-  object ListAttributesRequest {
-    @inline
-    def apply(
-        targetType: TargetType,
-        attributeName: js.UndefOr[String] = js.undefined,
-        attributeValue: js.UndefOr[String] = js.undefined,
-        cluster: js.UndefOr[String] = js.undefined,
-        maxResults: js.UndefOr[BoxedInteger] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
-    ): ListAttributesRequest = {
-      val __obj = js.Dynamic.literal(
-        "targetType" -> targetType.asInstanceOf[js.Any]
-      )
-
-      attributeName.foreach(__v => __obj.updateDynamic("attributeName")(__v.asInstanceOf[js.Any]))
-      attributeValue.foreach(__v => __obj.updateDynamic("attributeValue")(__v.asInstanceOf[js.Any]))
-      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAttributesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAttributesResponse extends js.Object {
     var attributes: js.UndefOr[Attributes]
     var nextToken: js.UndefOr[String]
   }
 
-  object ListAttributesResponse {
-    @inline
-    def apply(
-        attributes: js.UndefOr[Attributes] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
-    ): ListAttributesResponse = {
-      val __obj = js.Dynamic.literal()
-      attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAttributesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListClustersRequest extends js.Object {
     var maxResults: js.UndefOr[BoxedInteger]
     var nextToken: js.UndefOr[String]
   }
 
-  object ListClustersRequest {
-    @inline
-    def apply(
-        maxResults: js.UndefOr[BoxedInteger] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
-    ): ListClustersRequest = {
-      val __obj = js.Dynamic.literal()
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListClustersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListClustersResponse extends js.Object {
     var clusterArns: js.UndefOr[StringList]
     var nextToken: js.UndefOr[String]
   }
 
-  object ListClustersResponse {
-    @inline
-    def apply(
-        clusterArns: js.UndefOr[StringList] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
-    ): ListClustersResponse = {
-      val __obj = js.Dynamic.literal()
-      clusterArns.foreach(__v => __obj.updateDynamic("clusterArns")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListClustersResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListContainerInstancesRequest extends js.Object {
     var cluster: js.UndefOr[String]
     var filter: js.UndefOr[String]
@@ -2537,45 +1253,15 @@ package ecs {
     var status: js.UndefOr[ContainerInstanceStatus]
   }
 
-  object ListContainerInstancesRequest {
-    @inline
-    def apply(
-        cluster: js.UndefOr[String] = js.undefined,
-        filter: js.UndefOr[String] = js.undefined,
-        maxResults: js.UndefOr[BoxedInteger] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined,
-        status: js.UndefOr[ContainerInstanceStatus] = js.undefined
-    ): ListContainerInstancesRequest = {
-      val __obj = js.Dynamic.literal()
-      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
-      filter.foreach(__v => __obj.updateDynamic("filter")(__v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListContainerInstancesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListContainerInstancesResponse extends js.Object {
     var containerInstanceArns: js.UndefOr[StringList]
     var nextToken: js.UndefOr[String]
   }
 
-  object ListContainerInstancesResponse {
-    @inline
-    def apply(
-        containerInstanceArns: js.UndefOr[StringList] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
-    ): ListContainerInstancesResponse = {
-      val __obj = js.Dynamic.literal()
-      containerInstanceArns.foreach(__v => __obj.updateDynamic("containerInstanceArns")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListContainerInstancesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListServicesRequest extends js.Object {
     var cluster: js.UndefOr[String]
     var launchType: js.UndefOr[LaunchType]
@@ -2584,79 +1270,27 @@ package ecs {
     var schedulingStrategy: js.UndefOr[SchedulingStrategy]
   }
 
-  object ListServicesRequest {
-    @inline
-    def apply(
-        cluster: js.UndefOr[String] = js.undefined,
-        launchType: js.UndefOr[LaunchType] = js.undefined,
-        maxResults: js.UndefOr[BoxedInteger] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined,
-        schedulingStrategy: js.UndefOr[SchedulingStrategy] = js.undefined
-    ): ListServicesRequest = {
-      val __obj = js.Dynamic.literal()
-      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
-      launchType.foreach(__v => __obj.updateDynamic("launchType")(__v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      schedulingStrategy.foreach(__v => __obj.updateDynamic("schedulingStrategy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListServicesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListServicesResponse extends js.Object {
     var nextToken: js.UndefOr[String]
     var serviceArns: js.UndefOr[StringList]
   }
 
-  object ListServicesResponse {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[String] = js.undefined,
-        serviceArns: js.UndefOr[StringList] = js.undefined
-    ): ListServicesResponse = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      serviceArns.foreach(__v => __obj.updateDynamic("serviceArns")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListServicesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceRequest extends js.Object {
     var resourceArn: String
   }
 
-  object ListTagsForResourceRequest {
-    @inline
-    def apply(
-        resourceArn: String
-    ): ListTagsForResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ListTagsForResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceResponse extends js.Object {
     var tags: js.UndefOr[Tags]
   }
 
-  object ListTagsForResourceResponse {
-    @inline
-    def apply(
-        tags: js.UndefOr[Tags] = js.undefined
-    ): ListTagsForResourceResponse = {
-      val __obj = js.Dynamic.literal()
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTaskDefinitionFamiliesRequest extends js.Object {
     var familyPrefix: js.UndefOr[String]
     var maxResults: js.UndefOr[BoxedInteger]
@@ -2664,43 +1298,15 @@ package ecs {
     var status: js.UndefOr[TaskDefinitionFamilyStatus]
   }
 
-  object ListTaskDefinitionFamiliesRequest {
-    @inline
-    def apply(
-        familyPrefix: js.UndefOr[String] = js.undefined,
-        maxResults: js.UndefOr[BoxedInteger] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined,
-        status: js.UndefOr[TaskDefinitionFamilyStatus] = js.undefined
-    ): ListTaskDefinitionFamiliesRequest = {
-      val __obj = js.Dynamic.literal()
-      familyPrefix.foreach(__v => __obj.updateDynamic("familyPrefix")(__v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTaskDefinitionFamiliesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTaskDefinitionFamiliesResponse extends js.Object {
     var families: js.UndefOr[StringList]
     var nextToken: js.UndefOr[String]
   }
 
-  object ListTaskDefinitionFamiliesResponse {
-    @inline
-    def apply(
-        families: js.UndefOr[StringList] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
-    ): ListTaskDefinitionFamiliesResponse = {
-      val __obj = js.Dynamic.literal()
-      families.foreach(__v => __obj.updateDynamic("families")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTaskDefinitionFamiliesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTaskDefinitionsRequest extends js.Object {
     var familyPrefix: js.UndefOr[String]
     var maxResults: js.UndefOr[BoxedInteger]
@@ -2709,45 +1315,15 @@ package ecs {
     var status: js.UndefOr[TaskDefinitionStatus]
   }
 
-  object ListTaskDefinitionsRequest {
-    @inline
-    def apply(
-        familyPrefix: js.UndefOr[String] = js.undefined,
-        maxResults: js.UndefOr[BoxedInteger] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined,
-        sort: js.UndefOr[SortOrder] = js.undefined,
-        status: js.UndefOr[TaskDefinitionStatus] = js.undefined
-    ): ListTaskDefinitionsRequest = {
-      val __obj = js.Dynamic.literal()
-      familyPrefix.foreach(__v => __obj.updateDynamic("familyPrefix")(__v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      sort.foreach(__v => __obj.updateDynamic("sort")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTaskDefinitionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTaskDefinitionsResponse extends js.Object {
     var nextToken: js.UndefOr[String]
     var taskDefinitionArns: js.UndefOr[StringList]
   }
 
-  object ListTaskDefinitionsResponse {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[String] = js.undefined,
-        taskDefinitionArns: js.UndefOr[StringList] = js.undefined
-    ): ListTaskDefinitionsResponse = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      taskDefinitionArns.foreach(__v => __obj.updateDynamic("taskDefinitionArns")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTaskDefinitionsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTasksRequest extends js.Object {
     var cluster: js.UndefOr[String]
     var containerInstance: js.UndefOr[String]
@@ -2760,78 +1336,23 @@ package ecs {
     var startedBy: js.UndefOr[String]
   }
 
-  object ListTasksRequest {
-    @inline
-    def apply(
-        cluster: js.UndefOr[String] = js.undefined,
-        containerInstance: js.UndefOr[String] = js.undefined,
-        desiredStatus: js.UndefOr[DesiredStatus] = js.undefined,
-        family: js.UndefOr[String] = js.undefined,
-        launchType: js.UndefOr[LaunchType] = js.undefined,
-        maxResults: js.UndefOr[BoxedInteger] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined,
-        serviceName: js.UndefOr[String] = js.undefined,
-        startedBy: js.UndefOr[String] = js.undefined
-    ): ListTasksRequest = {
-      val __obj = js.Dynamic.literal()
-      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
-      containerInstance.foreach(__v => __obj.updateDynamic("containerInstance")(__v.asInstanceOf[js.Any]))
-      desiredStatus.foreach(__v => __obj.updateDynamic("desiredStatus")(__v.asInstanceOf[js.Any]))
-      family.foreach(__v => __obj.updateDynamic("family")(__v.asInstanceOf[js.Any]))
-      launchType.foreach(__v => __obj.updateDynamic("launchType")(__v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      serviceName.foreach(__v => __obj.updateDynamic("serviceName")(__v.asInstanceOf[js.Any]))
-      startedBy.foreach(__v => __obj.updateDynamic("startedBy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTasksRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTasksResponse extends js.Object {
     var nextToken: js.UndefOr[String]
     var taskArns: js.UndefOr[StringList]
-  }
-
-  object ListTasksResponse {
-    @inline
-    def apply(
-        nextToken: js.UndefOr[String] = js.undefined,
-        taskArns: js.UndefOr[StringList] = js.undefined
-    ): ListTasksResponse = {
-      val __obj = js.Dynamic.literal()
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      taskArns.foreach(__v => __obj.updateDynamic("taskArns")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTasksResponse]
-    }
   }
 
   /**
     * Details on the load balancer or load balancers to use with a service or task set.
     */
   @js.native
+  @Factory
   trait LoadBalancer extends js.Object {
     var containerName: js.UndefOr[String]
     var containerPort: js.UndefOr[BoxedInteger]
     var loadBalancerName: js.UndefOr[String]
     var targetGroupArn: js.UndefOr[String]
-  }
-
-  object LoadBalancer {
-    @inline
-    def apply(
-        containerName: js.UndefOr[String] = js.undefined,
-        containerPort: js.UndefOr[BoxedInteger] = js.undefined,
-        loadBalancerName: js.UndefOr[String] = js.undefined,
-        targetGroupArn: js.UndefOr[String] = js.undefined
-    ): LoadBalancer = {
-      val __obj = js.Dynamic.literal()
-      containerName.foreach(__v => __obj.updateDynamic("containerName")(__v.asInstanceOf[js.Any]))
-      containerPort.foreach(__v => __obj.updateDynamic("containerPort")(__v.asInstanceOf[js.Any]))
-      loadBalancerName.foreach(__v => __obj.updateDynamic("loadBalancerName")(__v.asInstanceOf[js.Any]))
-      targetGroupArn.foreach(__v => __obj.updateDynamic("targetGroupArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LoadBalancer]
-    }
   }
 
   /**
@@ -2844,27 +1365,11 @@ package ecs {
     *  * For tasks using the Fargate launch type, because you do not have access to the underlying infrastructure your tasks are hosted on, any additional software needed will have to be installed outside of the task. For example, the Fluentd output aggregators or a remote host running Logstash to send Gelf logs to.
     */
   @js.native
+  @Factory
   trait LogConfiguration extends js.Object {
     var logDriver: LogDriver
     var options: js.UndefOr[LogConfigurationOptionsMap]
     var secretOptions: js.UndefOr[SecretList]
-  }
-
-  object LogConfiguration {
-    @inline
-    def apply(
-        logDriver: LogDriver,
-        options: js.UndefOr[LogConfigurationOptionsMap] = js.undefined,
-        secretOptions: js.UndefOr[SecretList] = js.undefined
-    ): LogConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "logDriver" -> logDriver.asInstanceOf[js.Any]
-      )
-
-      options.foreach(__v => __obj.updateDynamic("options")(__v.asInstanceOf[js.Any]))
-      secretOptions.foreach(__v => __obj.updateDynamic("secretOptions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LogConfiguration]
-    }
   }
 
   @js.native
@@ -2888,28 +1393,12 @@ package ecs {
     *  If managed scaling is disabled, the user must manage the scaling of the Auto Scaling group.
     */
   @js.native
+  @Factory
   trait ManagedScaling extends js.Object {
     var maximumScalingStepSize: js.UndefOr[ManagedScalingStepSize]
     var minimumScalingStepSize: js.UndefOr[ManagedScalingStepSize]
     var status: js.UndefOr[ManagedScalingStatus]
     var targetCapacity: js.UndefOr[ManagedScalingTargetCapacity]
-  }
-
-  object ManagedScaling {
-    @inline
-    def apply(
-        maximumScalingStepSize: js.UndefOr[ManagedScalingStepSize] = js.undefined,
-        minimumScalingStepSize: js.UndefOr[ManagedScalingStepSize] = js.undefined,
-        status: js.UndefOr[ManagedScalingStatus] = js.undefined,
-        targetCapacity: js.UndefOr[ManagedScalingTargetCapacity] = js.undefined
-    ): ManagedScaling = {
-      val __obj = js.Dynamic.literal()
-      maximumScalingStepSize.foreach(__v => __obj.updateDynamic("maximumScalingStepSize")(__v.asInstanceOf[js.Any]))
-      minimumScalingStepSize.foreach(__v => __obj.updateDynamic("minimumScalingStepSize")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      targetCapacity.foreach(__v => __obj.updateDynamic("targetCapacity")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ManagedScaling]
-    }
   }
 
   @js.native
@@ -2934,31 +1423,18 @@ package ecs {
     * Details on a volume mount point that is used in a container definition.
     */
   @js.native
+  @Factory
   trait MountPoint extends js.Object {
     var containerPath: js.UndefOr[String]
     var readOnly: js.UndefOr[BoxedBoolean]
     var sourceVolume: js.UndefOr[String]
   }
 
-  object MountPoint {
-    @inline
-    def apply(
-        containerPath: js.UndefOr[String] = js.undefined,
-        readOnly: js.UndefOr[BoxedBoolean] = js.undefined,
-        sourceVolume: js.UndefOr[String] = js.undefined
-    ): MountPoint = {
-      val __obj = js.Dynamic.literal()
-      containerPath.foreach(__v => __obj.updateDynamic("containerPath")(__v.asInstanceOf[js.Any]))
-      readOnly.foreach(__v => __obj.updateDynamic("readOnly")(__v.asInstanceOf[js.Any]))
-      sourceVolume.foreach(__v => __obj.updateDynamic("sourceVolume")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MountPoint]
-    }
-  }
-
   /**
     * Details on the network bindings between a container and its host container instance. After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <code>networkBindings</code> section of <a>DescribeTasks</a> API responses.
     */
   @js.native
+  @Factory
   trait NetworkBinding extends js.Object {
     var bindIP: js.UndefOr[String]
     var containerPort: js.UndefOr[BoxedInteger]
@@ -2966,65 +1442,24 @@ package ecs {
     var protocol: js.UndefOr[TransportProtocol]
   }
 
-  object NetworkBinding {
-    @inline
-    def apply(
-        bindIP: js.UndefOr[String] = js.undefined,
-        containerPort: js.UndefOr[BoxedInteger] = js.undefined,
-        hostPort: js.UndefOr[BoxedInteger] = js.undefined,
-        protocol: js.UndefOr[TransportProtocol] = js.undefined
-    ): NetworkBinding = {
-      val __obj = js.Dynamic.literal()
-      bindIP.foreach(__v => __obj.updateDynamic("bindIP")(__v.asInstanceOf[js.Any]))
-      containerPort.foreach(__v => __obj.updateDynamic("containerPort")(__v.asInstanceOf[js.Any]))
-      hostPort.foreach(__v => __obj.updateDynamic("hostPort")(__v.asInstanceOf[js.Any]))
-      protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NetworkBinding]
-    }
-  }
-
   /**
     * An object representing the network configuration for a task or service.
     */
   @js.native
+  @Factory
   trait NetworkConfiguration extends js.Object {
     var awsvpcConfiguration: js.UndefOr[AwsVpcConfiguration]
-  }
-
-  object NetworkConfiguration {
-    @inline
-    def apply(
-        awsvpcConfiguration: js.UndefOr[AwsVpcConfiguration] = js.undefined
-    ): NetworkConfiguration = {
-      val __obj = js.Dynamic.literal()
-      awsvpcConfiguration.foreach(__v => __obj.updateDynamic("awsvpcConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NetworkConfiguration]
-    }
   }
 
   /**
     * An object representing the elastic network interface for tasks that use the <code>awsvpc</code> network mode.
     */
   @js.native
+  @Factory
   trait NetworkInterface extends js.Object {
     var attachmentId: js.UndefOr[String]
     var ipv6Address: js.UndefOr[String]
     var privateIpv4Address: js.UndefOr[String]
-  }
-
-  object NetworkInterface {
-    @inline
-    def apply(
-        attachmentId: js.UndefOr[String] = js.undefined,
-        ipv6Address: js.UndefOr[String] = js.undefined,
-        privateIpv4Address: js.UndefOr[String] = js.undefined
-    ): NetworkInterface = {
-      val __obj = js.Dynamic.literal()
-      attachmentId.foreach(__v => __obj.updateDynamic("attachmentId")(__v.asInstanceOf[js.Any]))
-      ipv6Address.foreach(__v => __obj.updateDynamic("ipv6Address")(__v.asInstanceOf[js.Any]))
-      privateIpv4Address.foreach(__v => __obj.updateDynamic("privateIpv4Address")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NetworkInterface]
-    }
   }
 
   @js.native
@@ -3053,22 +1488,10 @@ package ecs {
     * '''Note:'''If you are using the Fargate launch type, task placement constraints are not supported.
     */
   @js.native
+  @Factory
   trait PlacementConstraint extends js.Object {
     var expression: js.UndefOr[String]
     var `type`: js.UndefOr[PlacementConstraintType]
-  }
-
-  object PlacementConstraint {
-    @inline
-    def apply(
-        expression: js.UndefOr[String] = js.undefined,
-        `type`: js.UndefOr[PlacementConstraintType] = js.undefined
-    ): PlacementConstraint = {
-      val __obj = js.Dynamic.literal()
-      expression.foreach(__v => __obj.updateDynamic("expression")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PlacementConstraint]
-    }
   }
 
   @js.native
@@ -3084,22 +1507,10 @@ package ecs {
     * The task placement strategy for a task or service. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html|Task Placement Strategies]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait PlacementStrategy extends js.Object {
     var field: js.UndefOr[String]
     var `type`: js.UndefOr[PlacementStrategyType]
-  }
-
-  object PlacementStrategy {
-    @inline
-    def apply(
-        field: js.UndefOr[String] = js.undefined,
-        `type`: js.UndefOr[PlacementStrategyType] = js.undefined
-    ): PlacementStrategy = {
-      val __obj = js.Dynamic.literal()
-      field.foreach(__v => __obj.updateDynamic("field")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PlacementStrategy]
-    }
   }
 
   @js.native
@@ -3116,24 +1527,10 @@ package ecs {
     * The devices that are available on the container instance. The only supported device type is a GPU.
     */
   @js.native
+  @Factory
   trait PlatformDevice extends js.Object {
     var id: String
     var `type`: PlatformDeviceType
-  }
-
-  object PlatformDevice {
-    @inline
-    def apply(
-        id: String,
-        `type`: PlatformDeviceType
-    ): PlatformDevice = {
-      val __obj = js.Dynamic.literal(
-        "id"   -> id.asInstanceOf[js.Any],
-        "type" -> `type`.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PlatformDevice]
-    }
   }
 
   @js.native
@@ -3150,25 +1547,11 @@ package ecs {
     *  After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <code>networkBindings</code> section of <a>DescribeTasks</a> API responses.
     */
   @js.native
+  @Factory
   trait PortMapping extends js.Object {
     var containerPort: js.UndefOr[BoxedInteger]
     var hostPort: js.UndefOr[BoxedInteger]
     var protocol: js.UndefOr[TransportProtocol]
-  }
-
-  object PortMapping {
-    @inline
-    def apply(
-        containerPort: js.UndefOr[BoxedInteger] = js.undefined,
-        hostPort: js.UndefOr[BoxedInteger] = js.undefined,
-        protocol: js.UndefOr[TransportProtocol] = js.undefined
-    ): PortMapping = {
-      val __obj = js.Dynamic.literal()
-      containerPort.foreach(__v => __obj.updateDynamic("containerPort")(__v.asInstanceOf[js.Any]))
-      hostPort.foreach(__v => __obj.updateDynamic("hostPort")(__v.asInstanceOf[js.Any]))
-      protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PortMapping]
-    }
   }
 
   @js.native
@@ -3186,27 +1569,11 @@ package ecs {
     *  For tasks using the Fargate launch type, the task or service requires platform version 1.3.0 or later.
     */
   @js.native
+  @Factory
   trait ProxyConfiguration extends js.Object {
     var containerName: String
     var properties: js.UndefOr[ProxyConfigurationProperties]
     var `type`: js.UndefOr[ProxyConfigurationType]
-  }
-
-  object ProxyConfiguration {
-    @inline
-    def apply(
-        containerName: String,
-        properties: js.UndefOr[ProxyConfigurationProperties] = js.undefined,
-        `type`: js.UndefOr[ProxyConfigurationType] = js.undefined
-    ): ProxyConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "containerName" -> containerName.asInstanceOf[js.Any]
-      )
-
-      properties.foreach(__v => __obj.updateDynamic("properties")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ProxyConfiguration]
-    }
   }
 
   @js.native
@@ -3218,160 +1585,61 @@ package ecs {
   }
 
   @js.native
+  @Factory
   trait PutAccountSettingDefaultRequest extends js.Object {
     var name: SettingName
     var value: String
   }
 
-  object PutAccountSettingDefaultRequest {
-    @inline
-    def apply(
-        name: SettingName,
-        value: String
-    ): PutAccountSettingDefaultRequest = {
-      val __obj = js.Dynamic.literal(
-        "name"  -> name.asInstanceOf[js.Any],
-        "value" -> value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutAccountSettingDefaultRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutAccountSettingDefaultResponse extends js.Object {
     var setting: js.UndefOr[Setting]
   }
 
-  object PutAccountSettingDefaultResponse {
-    @inline
-    def apply(
-        setting: js.UndefOr[Setting] = js.undefined
-    ): PutAccountSettingDefaultResponse = {
-      val __obj = js.Dynamic.literal()
-      setting.foreach(__v => __obj.updateDynamic("setting")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutAccountSettingDefaultResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutAccountSettingRequest extends js.Object {
     var name: SettingName
     var value: String
     var principalArn: js.UndefOr[String]
   }
 
-  object PutAccountSettingRequest {
-    @inline
-    def apply(
-        name: SettingName,
-        value: String,
-        principalArn: js.UndefOr[String] = js.undefined
-    ): PutAccountSettingRequest = {
-      val __obj = js.Dynamic.literal(
-        "name"  -> name.asInstanceOf[js.Any],
-        "value" -> value.asInstanceOf[js.Any]
-      )
-
-      principalArn.foreach(__v => __obj.updateDynamic("principalArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutAccountSettingRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutAccountSettingResponse extends js.Object {
     var setting: js.UndefOr[Setting]
   }
 
-  object PutAccountSettingResponse {
-    @inline
-    def apply(
-        setting: js.UndefOr[Setting] = js.undefined
-    ): PutAccountSettingResponse = {
-      val __obj = js.Dynamic.literal()
-      setting.foreach(__v => __obj.updateDynamic("setting")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutAccountSettingResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutAttributesRequest extends js.Object {
     var attributes: Attributes
     var cluster: js.UndefOr[String]
   }
 
-  object PutAttributesRequest {
-    @inline
-    def apply(
-        attributes: Attributes,
-        cluster: js.UndefOr[String] = js.undefined
-    ): PutAttributesRequest = {
-      val __obj = js.Dynamic.literal(
-        "attributes" -> attributes.asInstanceOf[js.Any]
-      )
-
-      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutAttributesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutAttributesResponse extends js.Object {
     var attributes: js.UndefOr[Attributes]
   }
 
-  object PutAttributesResponse {
-    @inline
-    def apply(
-        attributes: js.UndefOr[Attributes] = js.undefined
-    ): PutAttributesResponse = {
-      val __obj = js.Dynamic.literal()
-      attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutAttributesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutClusterCapacityProvidersRequest extends js.Object {
     var capacityProviders: StringList
     var cluster: String
     var defaultCapacityProviderStrategy: CapacityProviderStrategy
   }
 
-  object PutClusterCapacityProvidersRequest {
-    @inline
-    def apply(
-        capacityProviders: StringList,
-        cluster: String,
-        defaultCapacityProviderStrategy: CapacityProviderStrategy
-    ): PutClusterCapacityProvidersRequest = {
-      val __obj = js.Dynamic.literal(
-        "capacityProviders"               -> capacityProviders.asInstanceOf[js.Any],
-        "cluster"                         -> cluster.asInstanceOf[js.Any],
-        "defaultCapacityProviderStrategy" -> defaultCapacityProviderStrategy.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutClusterCapacityProvidersRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutClusterCapacityProvidersResponse extends js.Object {
     var cluster: js.UndefOr[Cluster]
   }
 
-  object PutClusterCapacityProvidersResponse {
-    @inline
-    def apply(
-        cluster: js.UndefOr[Cluster] = js.undefined
-    ): PutClusterCapacityProvidersResponse = {
-      val __obj = js.Dynamic.literal()
-      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutClusterCapacityProvidersResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait RegisterContainerInstanceRequest extends js.Object {
     var attributes: js.UndefOr[Attributes]
     var cluster: js.UndefOr[String]
@@ -3384,52 +1652,14 @@ package ecs {
     var versionInfo: js.UndefOr[VersionInfo]
   }
 
-  object RegisterContainerInstanceRequest {
-    @inline
-    def apply(
-        attributes: js.UndefOr[Attributes] = js.undefined,
-        cluster: js.UndefOr[String] = js.undefined,
-        containerInstanceArn: js.UndefOr[String] = js.undefined,
-        instanceIdentityDocument: js.UndefOr[String] = js.undefined,
-        instanceIdentityDocumentSignature: js.UndefOr[String] = js.undefined,
-        platformDevices: js.UndefOr[PlatformDevices] = js.undefined,
-        tags: js.UndefOr[Tags] = js.undefined,
-        totalResources: js.UndefOr[Resources] = js.undefined,
-        versionInfo: js.UndefOr[VersionInfo] = js.undefined
-    ): RegisterContainerInstanceRequest = {
-      val __obj = js.Dynamic.literal()
-      attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
-      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
-      containerInstanceArn.foreach(__v => __obj.updateDynamic("containerInstanceArn")(__v.asInstanceOf[js.Any]))
-      instanceIdentityDocument.foreach(__v => __obj.updateDynamic("instanceIdentityDocument")(__v.asInstanceOf[js.Any]))
-      instanceIdentityDocumentSignature.foreach(__v =>
-        __obj.updateDynamic("instanceIdentityDocumentSignature")(__v.asInstanceOf[js.Any])
-      )
-      platformDevices.foreach(__v => __obj.updateDynamic("platformDevices")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      totalResources.foreach(__v => __obj.updateDynamic("totalResources")(__v.asInstanceOf[js.Any]))
-      versionInfo.foreach(__v => __obj.updateDynamic("versionInfo")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RegisterContainerInstanceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait RegisterContainerInstanceResponse extends js.Object {
     var containerInstance: js.UndefOr[ContainerInstance]
   }
 
-  object RegisterContainerInstanceResponse {
-    @inline
-    def apply(
-        containerInstance: js.UndefOr[ContainerInstance] = js.undefined
-    ): RegisterContainerInstanceResponse = {
-      val __obj = js.Dynamic.literal()
-      containerInstance.foreach(__v => __obj.updateDynamic("containerInstance")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RegisterContainerInstanceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait RegisterTaskDefinitionRequest extends js.Object {
     var containerDefinitions: ContainerDefinitions
     var family: String
@@ -3448,91 +1678,27 @@ package ecs {
     var volumes: js.UndefOr[VolumeList]
   }
 
-  object RegisterTaskDefinitionRequest {
-    @inline
-    def apply(
-        containerDefinitions: ContainerDefinitions,
-        family: String,
-        cpu: js.UndefOr[String] = js.undefined,
-        executionRoleArn: js.UndefOr[String] = js.undefined,
-        inferenceAccelerators: js.UndefOr[InferenceAccelerators] = js.undefined,
-        ipcMode: js.UndefOr[IpcMode] = js.undefined,
-        memory: js.UndefOr[String] = js.undefined,
-        networkMode: js.UndefOr[NetworkMode] = js.undefined,
-        pidMode: js.UndefOr[PidMode] = js.undefined,
-        placementConstraints: js.UndefOr[TaskDefinitionPlacementConstraints] = js.undefined,
-        proxyConfiguration: js.UndefOr[ProxyConfiguration] = js.undefined,
-        requiresCompatibilities: js.UndefOr[CompatibilityList] = js.undefined,
-        tags: js.UndefOr[Tags] = js.undefined,
-        taskRoleArn: js.UndefOr[String] = js.undefined,
-        volumes: js.UndefOr[VolumeList] = js.undefined
-    ): RegisterTaskDefinitionRequest = {
-      val __obj = js.Dynamic.literal(
-        "containerDefinitions" -> containerDefinitions.asInstanceOf[js.Any],
-        "family"               -> family.asInstanceOf[js.Any]
-      )
-
-      cpu.foreach(__v => __obj.updateDynamic("cpu")(__v.asInstanceOf[js.Any]))
-      executionRoleArn.foreach(__v => __obj.updateDynamic("executionRoleArn")(__v.asInstanceOf[js.Any]))
-      inferenceAccelerators.foreach(__v => __obj.updateDynamic("inferenceAccelerators")(__v.asInstanceOf[js.Any]))
-      ipcMode.foreach(__v => __obj.updateDynamic("ipcMode")(__v.asInstanceOf[js.Any]))
-      memory.foreach(__v => __obj.updateDynamic("memory")(__v.asInstanceOf[js.Any]))
-      networkMode.foreach(__v => __obj.updateDynamic("networkMode")(__v.asInstanceOf[js.Any]))
-      pidMode.foreach(__v => __obj.updateDynamic("pidMode")(__v.asInstanceOf[js.Any]))
-      placementConstraints.foreach(__v => __obj.updateDynamic("placementConstraints")(__v.asInstanceOf[js.Any]))
-      proxyConfiguration.foreach(__v => __obj.updateDynamic("proxyConfiguration")(__v.asInstanceOf[js.Any]))
-      requiresCompatibilities.foreach(__v => __obj.updateDynamic("requiresCompatibilities")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      taskRoleArn.foreach(__v => __obj.updateDynamic("taskRoleArn")(__v.asInstanceOf[js.Any]))
-      volumes.foreach(__v => __obj.updateDynamic("volumes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RegisterTaskDefinitionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait RegisterTaskDefinitionResponse extends js.Object {
     var tags: js.UndefOr[Tags]
     var taskDefinition: js.UndefOr[TaskDefinition]
-  }
-
-  object RegisterTaskDefinitionResponse {
-    @inline
-    def apply(
-        tags: js.UndefOr[Tags] = js.undefined,
-        taskDefinition: js.UndefOr[TaskDefinition] = js.undefined
-    ): RegisterTaskDefinitionResponse = {
-      val __obj = js.Dynamic.literal()
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      taskDefinition.foreach(__v => __obj.updateDynamic("taskDefinition")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RegisterTaskDefinitionResponse]
-    }
   }
 
   /**
     * The repository credentials for private registry authentication.
     */
   @js.native
+  @Factory
   trait RepositoryCredentials extends js.Object {
     var credentialsParameter: String
-  }
-
-  object RepositoryCredentials {
-    @inline
-    def apply(
-        credentialsParameter: String
-    ): RepositoryCredentials = {
-      val __obj = js.Dynamic.literal(
-        "credentialsParameter" -> credentialsParameter.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[RepositoryCredentials]
-    }
   }
 
   /**
     * Describes the resources available for a container instance.
     */
   @js.native
+  @Factory
   trait Resource extends js.Object {
     var doubleValue: js.UndefOr[Double]
     var integerValue: js.UndefOr[Int]
@@ -3542,49 +1708,14 @@ package ecs {
     var `type`: js.UndefOr[String]
   }
 
-  object Resource {
-    @inline
-    def apply(
-        doubleValue: js.UndefOr[Double] = js.undefined,
-        integerValue: js.UndefOr[Int] = js.undefined,
-        longValue: js.UndefOr[Double] = js.undefined,
-        name: js.UndefOr[String] = js.undefined,
-        stringSetValue: js.UndefOr[StringList] = js.undefined,
-        `type`: js.UndefOr[String] = js.undefined
-    ): Resource = {
-      val __obj = js.Dynamic.literal()
-      doubleValue.foreach(__v => __obj.updateDynamic("doubleValue")(__v.asInstanceOf[js.Any]))
-      integerValue.foreach(__v => __obj.updateDynamic("integerValue")(__v.asInstanceOf[js.Any]))
-      longValue.foreach(__v => __obj.updateDynamic("longValue")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      stringSetValue.foreach(__v => __obj.updateDynamic("stringSetValue")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Resource]
-    }
-  }
-
   /**
     * The type and amount of a resource to assign to a container. The supported resource types are GPUs and Elastic Inference accelerators. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html|Working with GPUs on Amazon ECS]] or [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html|Working with Amazon Elastic Inference on Amazon ECS]] in the <i>Amazon Elastic Container Service Developer Guide</i>
     */
   @js.native
+  @Factory
   trait ResourceRequirement extends js.Object {
     var `type`: ResourceType
     var value: String
-  }
-
-  object ResourceRequirement {
-    @inline
-    def apply(
-        `type`: ResourceType,
-        value: String
-    ): ResourceRequirement = {
-      val __obj = js.Dynamic.literal(
-        "type"  -> `type`.asInstanceOf[js.Any],
-        "value" -> value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ResourceRequirement]
-    }
   }
 
   @js.native
@@ -3597,6 +1728,7 @@ package ecs {
   }
 
   @js.native
+  @Factory
   trait RunTaskRequest extends js.Object {
     var taskDefinition: String
     var capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy]
@@ -3616,88 +1748,21 @@ package ecs {
     var tags: js.UndefOr[Tags]
   }
 
-  object RunTaskRequest {
-    @inline
-    def apply(
-        taskDefinition: String,
-        capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy] = js.undefined,
-        cluster: js.UndefOr[String] = js.undefined,
-        count: js.UndefOr[BoxedInteger] = js.undefined,
-        enableECSManagedTags: js.UndefOr[Boolean] = js.undefined,
-        group: js.UndefOr[String] = js.undefined,
-        launchType: js.UndefOr[LaunchType] = js.undefined,
-        networkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
-        overrides: js.UndefOr[TaskOverride] = js.undefined,
-        placementConstraints: js.UndefOr[PlacementConstraints] = js.undefined,
-        placementStrategy: js.UndefOr[PlacementStrategies] = js.undefined,
-        platformVersion: js.UndefOr[String] = js.undefined,
-        propagateTags: js.UndefOr[PropagateTags] = js.undefined,
-        referenceId: js.UndefOr[String] = js.undefined,
-        startedBy: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[Tags] = js.undefined
-    ): RunTaskRequest = {
-      val __obj = js.Dynamic.literal(
-        "taskDefinition" -> taskDefinition.asInstanceOf[js.Any]
-      )
-
-      capacityProviderStrategy.foreach(__v => __obj.updateDynamic("capacityProviderStrategy")(__v.asInstanceOf[js.Any]))
-      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
-      count.foreach(__v => __obj.updateDynamic("count")(__v.asInstanceOf[js.Any]))
-      enableECSManagedTags.foreach(__v => __obj.updateDynamic("enableECSManagedTags")(__v.asInstanceOf[js.Any]))
-      group.foreach(__v => __obj.updateDynamic("group")(__v.asInstanceOf[js.Any]))
-      launchType.foreach(__v => __obj.updateDynamic("launchType")(__v.asInstanceOf[js.Any]))
-      networkConfiguration.foreach(__v => __obj.updateDynamic("networkConfiguration")(__v.asInstanceOf[js.Any]))
-      overrides.foreach(__v => __obj.updateDynamic("overrides")(__v.asInstanceOf[js.Any]))
-      placementConstraints.foreach(__v => __obj.updateDynamic("placementConstraints")(__v.asInstanceOf[js.Any]))
-      placementStrategy.foreach(__v => __obj.updateDynamic("placementStrategy")(__v.asInstanceOf[js.Any]))
-      platformVersion.foreach(__v => __obj.updateDynamic("platformVersion")(__v.asInstanceOf[js.Any]))
-      propagateTags.foreach(__v => __obj.updateDynamic("propagateTags")(__v.asInstanceOf[js.Any]))
-      referenceId.foreach(__v => __obj.updateDynamic("referenceId")(__v.asInstanceOf[js.Any]))
-      startedBy.foreach(__v => __obj.updateDynamic("startedBy")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RunTaskRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait RunTaskResponse extends js.Object {
     var failures: js.UndefOr[Failures]
     var tasks: js.UndefOr[Tasks]
-  }
-
-  object RunTaskResponse {
-    @inline
-    def apply(
-        failures: js.UndefOr[Failures] = js.undefined,
-        tasks: js.UndefOr[Tasks] = js.undefined
-    ): RunTaskResponse = {
-      val __obj = js.Dynamic.literal()
-      failures.foreach(__v => __obj.updateDynamic("failures")(__v.asInstanceOf[js.Any]))
-      tasks.foreach(__v => __obj.updateDynamic("tasks")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[RunTaskResponse]
-    }
   }
 
   /**
     * A floating-point percentage of the desired number of tasks to place and keep running in the task set.
     */
   @js.native
+  @Factory
   trait Scale extends js.Object {
     var unit: js.UndefOr[ScaleUnit]
     var value: js.UndefOr[Double]
-  }
-
-  object Scale {
-    @inline
-    def apply(
-        unit: js.UndefOr[ScaleUnit] = js.undefined,
-        value: js.UndefOr[Double] = js.undefined
-    ): Scale = {
-      val __obj = js.Dynamic.literal()
-      unit.foreach(__v => __obj.updateDynamic("unit")(__v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Scale]
-    }
   }
 
   @js.native
@@ -3733,30 +1798,17 @@ package ecs {
     * For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html|Specifying Sensitive Data]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
+  @Factory
   trait Secret extends js.Object {
     var name: String
     var valueFrom: String
-  }
-
-  object Secret {
-    @inline
-    def apply(
-        name: String,
-        valueFrom: String
-    ): Secret = {
-      val __obj = js.Dynamic.literal(
-        "name"      -> name.asInstanceOf[js.Any],
-        "valueFrom" -> valueFrom.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Secret]
-    }
   }
 
   /**
     * Details on a service within a cluster
     */
   @js.native
+  @Factory
   trait Service extends js.Object {
     var capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy]
     var clusterArn: js.UndefOr[String]
@@ -3789,98 +1841,15 @@ package ecs {
     var taskSets: js.UndefOr[TaskSets]
   }
 
-  object Service {
-    @inline
-    def apply(
-        capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy] = js.undefined,
-        clusterArn: js.UndefOr[String] = js.undefined,
-        createdAt: js.UndefOr[Timestamp] = js.undefined,
-        createdBy: js.UndefOr[String] = js.undefined,
-        deploymentConfiguration: js.UndefOr[DeploymentConfiguration] = js.undefined,
-        deploymentController: js.UndefOr[DeploymentController] = js.undefined,
-        deployments: js.UndefOr[Deployments] = js.undefined,
-        desiredCount: js.UndefOr[Int] = js.undefined,
-        enableECSManagedTags: js.UndefOr[Boolean] = js.undefined,
-        events: js.UndefOr[ServiceEvents] = js.undefined,
-        healthCheckGracePeriodSeconds: js.UndefOr[BoxedInteger] = js.undefined,
-        launchType: js.UndefOr[LaunchType] = js.undefined,
-        loadBalancers: js.UndefOr[LoadBalancers] = js.undefined,
-        networkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
-        pendingCount: js.UndefOr[Int] = js.undefined,
-        placementConstraints: js.UndefOr[PlacementConstraints] = js.undefined,
-        placementStrategy: js.UndefOr[PlacementStrategies] = js.undefined,
-        platformVersion: js.UndefOr[String] = js.undefined,
-        propagateTags: js.UndefOr[PropagateTags] = js.undefined,
-        roleArn: js.UndefOr[String] = js.undefined,
-        runningCount: js.UndefOr[Int] = js.undefined,
-        schedulingStrategy: js.UndefOr[SchedulingStrategy] = js.undefined,
-        serviceArn: js.UndefOr[String] = js.undefined,
-        serviceName: js.UndefOr[String] = js.undefined,
-        serviceRegistries: js.UndefOr[ServiceRegistries] = js.undefined,
-        status: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[Tags] = js.undefined,
-        taskDefinition: js.UndefOr[String] = js.undefined,
-        taskSets: js.UndefOr[TaskSets] = js.undefined
-    ): Service = {
-      val __obj = js.Dynamic.literal()
-      capacityProviderStrategy.foreach(__v => __obj.updateDynamic("capacityProviderStrategy")(__v.asInstanceOf[js.Any]))
-      clusterArn.foreach(__v => __obj.updateDynamic("clusterArn")(__v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      createdBy.foreach(__v => __obj.updateDynamic("createdBy")(__v.asInstanceOf[js.Any]))
-      deploymentConfiguration.foreach(__v => __obj.updateDynamic("deploymentConfiguration")(__v.asInstanceOf[js.Any]))
-      deploymentController.foreach(__v => __obj.updateDynamic("deploymentController")(__v.asInstanceOf[js.Any]))
-      deployments.foreach(__v => __obj.updateDynamic("deployments")(__v.asInstanceOf[js.Any]))
-      desiredCount.foreach(__v => __obj.updateDynamic("desiredCount")(__v.asInstanceOf[js.Any]))
-      enableECSManagedTags.foreach(__v => __obj.updateDynamic("enableECSManagedTags")(__v.asInstanceOf[js.Any]))
-      events.foreach(__v => __obj.updateDynamic("events")(__v.asInstanceOf[js.Any]))
-      healthCheckGracePeriodSeconds.foreach(__v =>
-        __obj.updateDynamic("healthCheckGracePeriodSeconds")(__v.asInstanceOf[js.Any])
-      )
-      launchType.foreach(__v => __obj.updateDynamic("launchType")(__v.asInstanceOf[js.Any]))
-      loadBalancers.foreach(__v => __obj.updateDynamic("loadBalancers")(__v.asInstanceOf[js.Any]))
-      networkConfiguration.foreach(__v => __obj.updateDynamic("networkConfiguration")(__v.asInstanceOf[js.Any]))
-      pendingCount.foreach(__v => __obj.updateDynamic("pendingCount")(__v.asInstanceOf[js.Any]))
-      placementConstraints.foreach(__v => __obj.updateDynamic("placementConstraints")(__v.asInstanceOf[js.Any]))
-      placementStrategy.foreach(__v => __obj.updateDynamic("placementStrategy")(__v.asInstanceOf[js.Any]))
-      platformVersion.foreach(__v => __obj.updateDynamic("platformVersion")(__v.asInstanceOf[js.Any]))
-      propagateTags.foreach(__v => __obj.updateDynamic("propagateTags")(__v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
-      runningCount.foreach(__v => __obj.updateDynamic("runningCount")(__v.asInstanceOf[js.Any]))
-      schedulingStrategy.foreach(__v => __obj.updateDynamic("schedulingStrategy")(__v.asInstanceOf[js.Any]))
-      serviceArn.foreach(__v => __obj.updateDynamic("serviceArn")(__v.asInstanceOf[js.Any]))
-      serviceName.foreach(__v => __obj.updateDynamic("serviceName")(__v.asInstanceOf[js.Any]))
-      serviceRegistries.foreach(__v => __obj.updateDynamic("serviceRegistries")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      taskDefinition.foreach(__v => __obj.updateDynamic("taskDefinition")(__v.asInstanceOf[js.Any]))
-      taskSets.foreach(__v => __obj.updateDynamic("taskSets")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Service]
-    }
-  }
-
   /**
     * Details on an event associated with a service.
     */
   @js.native
+  @Factory
   trait ServiceEvent extends js.Object {
     var createdAt: js.UndefOr[Timestamp]
     var id: js.UndefOr[String]
     var message: js.UndefOr[String]
-  }
-
-  object ServiceEvent {
-    @inline
-    def apply(
-        createdAt: js.UndefOr[Timestamp] = js.undefined,
-        id: js.UndefOr[String] = js.undefined,
-        message: js.UndefOr[String] = js.undefined
-    ): ServiceEvent = {
-      val __obj = js.Dynamic.literal()
-      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ServiceEvent]
-    }
   }
 
   @js.native
@@ -3895,6 +1864,7 @@ package ecs {
     * Details of the service registry.
     */
   @js.native
+  @Factory
   trait ServiceRegistry extends js.Object {
     var containerName: js.UndefOr[String]
     var containerPort: js.UndefOr[BoxedInteger]
@@ -3902,46 +1872,15 @@ package ecs {
     var registryArn: js.UndefOr[String]
   }
 
-  object ServiceRegistry {
-    @inline
-    def apply(
-        containerName: js.UndefOr[String] = js.undefined,
-        containerPort: js.UndefOr[BoxedInteger] = js.undefined,
-        port: js.UndefOr[BoxedInteger] = js.undefined,
-        registryArn: js.UndefOr[String] = js.undefined
-    ): ServiceRegistry = {
-      val __obj = js.Dynamic.literal()
-      containerName.foreach(__v => __obj.updateDynamic("containerName")(__v.asInstanceOf[js.Any]))
-      containerPort.foreach(__v => __obj.updateDynamic("containerPort")(__v.asInstanceOf[js.Any]))
-      port.foreach(__v => __obj.updateDynamic("port")(__v.asInstanceOf[js.Any]))
-      registryArn.foreach(__v => __obj.updateDynamic("registryArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ServiceRegistry]
-    }
-  }
-
   /**
     * The current account setting for a resource.
     */
   @js.native
+  @Factory
   trait Setting extends js.Object {
     var name: js.UndefOr[SettingName]
     var principalArn: js.UndefOr[String]
     var value: js.UndefOr[String]
-  }
-
-  object Setting {
-    @inline
-    def apply(
-        name: js.UndefOr[SettingName] = js.undefined,
-        principalArn: js.UndefOr[String] = js.undefined,
-        value: js.UndefOr[String] = js.undefined
-    ): Setting = {
-      val __obj = js.Dynamic.literal()
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      principalArn.foreach(__v => __obj.updateDynamic("principalArn")(__v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Setting]
-    }
   }
 
   @js.native
@@ -3983,6 +1922,7 @@ package ecs {
   }
 
   @js.native
+  @Factory
   trait StartTaskRequest extends js.Object {
     var containerInstances: StringList
     var taskDefinition: String
@@ -3997,136 +1937,42 @@ package ecs {
     var tags: js.UndefOr[Tags]
   }
 
-  object StartTaskRequest {
-    @inline
-    def apply(
-        containerInstances: StringList,
-        taskDefinition: String,
-        cluster: js.UndefOr[String] = js.undefined,
-        enableECSManagedTags: js.UndefOr[Boolean] = js.undefined,
-        group: js.UndefOr[String] = js.undefined,
-        networkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
-        overrides: js.UndefOr[TaskOverride] = js.undefined,
-        propagateTags: js.UndefOr[PropagateTags] = js.undefined,
-        referenceId: js.UndefOr[String] = js.undefined,
-        startedBy: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[Tags] = js.undefined
-    ): StartTaskRequest = {
-      val __obj = js.Dynamic.literal(
-        "containerInstances" -> containerInstances.asInstanceOf[js.Any],
-        "taskDefinition"     -> taskDefinition.asInstanceOf[js.Any]
-      )
-
-      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
-      enableECSManagedTags.foreach(__v => __obj.updateDynamic("enableECSManagedTags")(__v.asInstanceOf[js.Any]))
-      group.foreach(__v => __obj.updateDynamic("group")(__v.asInstanceOf[js.Any]))
-      networkConfiguration.foreach(__v => __obj.updateDynamic("networkConfiguration")(__v.asInstanceOf[js.Any]))
-      overrides.foreach(__v => __obj.updateDynamic("overrides")(__v.asInstanceOf[js.Any]))
-      propagateTags.foreach(__v => __obj.updateDynamic("propagateTags")(__v.asInstanceOf[js.Any]))
-      referenceId.foreach(__v => __obj.updateDynamic("referenceId")(__v.asInstanceOf[js.Any]))
-      startedBy.foreach(__v => __obj.updateDynamic("startedBy")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartTaskRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartTaskResponse extends js.Object {
     var failures: js.UndefOr[Failures]
     var tasks: js.UndefOr[Tasks]
   }
 
-  object StartTaskResponse {
-    @inline
-    def apply(
-        failures: js.UndefOr[Failures] = js.undefined,
-        tasks: js.UndefOr[Tasks] = js.undefined
-    ): StartTaskResponse = {
-      val __obj = js.Dynamic.literal()
-      failures.foreach(__v => __obj.updateDynamic("failures")(__v.asInstanceOf[js.Any]))
-      tasks.foreach(__v => __obj.updateDynamic("tasks")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartTaskResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopTaskRequest extends js.Object {
     var task: String
     var cluster: js.UndefOr[String]
     var reason: js.UndefOr[String]
   }
 
-  object StopTaskRequest {
-    @inline
-    def apply(
-        task: String,
-        cluster: js.UndefOr[String] = js.undefined,
-        reason: js.UndefOr[String] = js.undefined
-    ): StopTaskRequest = {
-      val __obj = js.Dynamic.literal(
-        "task" -> task.asInstanceOf[js.Any]
-      )
-
-      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
-      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StopTaskRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StopTaskResponse extends js.Object {
     var task: js.UndefOr[Task]
   }
 
-  object StopTaskResponse {
-    @inline
-    def apply(
-        task: js.UndefOr[Task] = js.undefined
-    ): StopTaskResponse = {
-      val __obj = js.Dynamic.literal()
-      task.foreach(__v => __obj.updateDynamic("task")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StopTaskResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait SubmitAttachmentStateChangesRequest extends js.Object {
     var attachments: AttachmentStateChanges
     var cluster: js.UndefOr[String]
   }
 
-  object SubmitAttachmentStateChangesRequest {
-    @inline
-    def apply(
-        attachments: AttachmentStateChanges,
-        cluster: js.UndefOr[String] = js.undefined
-    ): SubmitAttachmentStateChangesRequest = {
-      val __obj = js.Dynamic.literal(
-        "attachments" -> attachments.asInstanceOf[js.Any]
-      )
-
-      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SubmitAttachmentStateChangesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait SubmitAttachmentStateChangesResponse extends js.Object {
     var acknowledgment: js.UndefOr[String]
   }
 
-  object SubmitAttachmentStateChangesResponse {
-    @inline
-    def apply(
-        acknowledgment: js.UndefOr[String] = js.undefined
-    ): SubmitAttachmentStateChangesResponse = {
-      val __obj = js.Dynamic.literal()
-      acknowledgment.foreach(__v => __obj.updateDynamic("acknowledgment")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SubmitAttachmentStateChangesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait SubmitContainerStateChangeRequest extends js.Object {
     var cluster: js.UndefOr[String]
     var containerName: js.UndefOr[String]
@@ -4138,48 +1984,14 @@ package ecs {
     var task: js.UndefOr[String]
   }
 
-  object SubmitContainerStateChangeRequest {
-    @inline
-    def apply(
-        cluster: js.UndefOr[String] = js.undefined,
-        containerName: js.UndefOr[String] = js.undefined,
-        exitCode: js.UndefOr[BoxedInteger] = js.undefined,
-        networkBindings: js.UndefOr[NetworkBindings] = js.undefined,
-        reason: js.UndefOr[String] = js.undefined,
-        runtimeId: js.UndefOr[String] = js.undefined,
-        status: js.UndefOr[String] = js.undefined,
-        task: js.UndefOr[String] = js.undefined
-    ): SubmitContainerStateChangeRequest = {
-      val __obj = js.Dynamic.literal()
-      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
-      containerName.foreach(__v => __obj.updateDynamic("containerName")(__v.asInstanceOf[js.Any]))
-      exitCode.foreach(__v => __obj.updateDynamic("exitCode")(__v.asInstanceOf[js.Any]))
-      networkBindings.foreach(__v => __obj.updateDynamic("networkBindings")(__v.asInstanceOf[js.Any]))
-      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
-      runtimeId.foreach(__v => __obj.updateDynamic("runtimeId")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      task.foreach(__v => __obj.updateDynamic("task")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SubmitContainerStateChangeRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait SubmitContainerStateChangeResponse extends js.Object {
     var acknowledgment: js.UndefOr[String]
   }
 
-  object SubmitContainerStateChangeResponse {
-    @inline
-    def apply(
-        acknowledgment: js.UndefOr[String] = js.undefined
-    ): SubmitContainerStateChangeResponse = {
-      val __obj = js.Dynamic.literal()
-      acknowledgment.foreach(__v => __obj.updateDynamic("acknowledgment")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SubmitContainerStateChangeResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait SubmitTaskStateChangeRequest extends js.Object {
     var attachments: js.UndefOr[AttachmentStateChanges]
     var cluster: js.UndefOr[String]
@@ -4192,47 +2004,10 @@ package ecs {
     var task: js.UndefOr[String]
   }
 
-  object SubmitTaskStateChangeRequest {
-    @inline
-    def apply(
-        attachments: js.UndefOr[AttachmentStateChanges] = js.undefined,
-        cluster: js.UndefOr[String] = js.undefined,
-        containers: js.UndefOr[ContainerStateChanges] = js.undefined,
-        executionStoppedAt: js.UndefOr[Timestamp] = js.undefined,
-        pullStartedAt: js.UndefOr[Timestamp] = js.undefined,
-        pullStoppedAt: js.UndefOr[Timestamp] = js.undefined,
-        reason: js.UndefOr[String] = js.undefined,
-        status: js.UndefOr[String] = js.undefined,
-        task: js.UndefOr[String] = js.undefined
-    ): SubmitTaskStateChangeRequest = {
-      val __obj = js.Dynamic.literal()
-      attachments.foreach(__v => __obj.updateDynamic("attachments")(__v.asInstanceOf[js.Any]))
-      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
-      containers.foreach(__v => __obj.updateDynamic("containers")(__v.asInstanceOf[js.Any]))
-      executionStoppedAt.foreach(__v => __obj.updateDynamic("executionStoppedAt")(__v.asInstanceOf[js.Any]))
-      pullStartedAt.foreach(__v => __obj.updateDynamic("pullStartedAt")(__v.asInstanceOf[js.Any]))
-      pullStoppedAt.foreach(__v => __obj.updateDynamic("pullStoppedAt")(__v.asInstanceOf[js.Any]))
-      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      task.foreach(__v => __obj.updateDynamic("task")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SubmitTaskStateChangeRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait SubmitTaskStateChangeResponse extends js.Object {
     var acknowledgment: js.UndefOr[String]
-  }
-
-  object SubmitTaskStateChangeResponse {
-    @inline
-    def apply(
-        acknowledgment: js.UndefOr[String] = js.undefined
-    ): SubmitTaskStateChangeResponse = {
-      val __obj = js.Dynamic.literal()
-      acknowledgment.foreach(__v => __obj.updateDynamic("acknowledgment")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SubmitTaskStateChangeResponse]
-    }
   }
 
   /**
@@ -4242,22 +2017,10 @@ package ecs {
     *  * For tasks that use the <code>host</code> network mode, the <code>systemControls</code> parameter applies to the container instance's kernel parameter as well as that of all containers of any tasks running on that container instance.
     */
   @js.native
+  @Factory
   trait SystemControl extends js.Object {
     var namespace: js.UndefOr[String]
     var value: js.UndefOr[String]
-  }
-
-  object SystemControl {
-    @inline
-    def apply(
-        namespace: js.UndefOr[String] = js.undefined,
-        value: js.UndefOr[String] = js.undefined
-    ): SystemControl = {
-      val __obj = js.Dynamic.literal()
-      namespace.foreach(__v => __obj.updateDynamic("namespace")(__v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SystemControl]
-    }
   }
 
   /**
@@ -4272,57 +2035,22 @@ package ecs {
     *  * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var key: js.UndefOr[TagKey]
     var value: js.UndefOr[TagValue]
   }
 
-  object Tag {
-    @inline
-    def apply(
-        key: js.UndefOr[TagKey] = js.undefined,
-        value: js.UndefOr[TagValue] = js.undefined
-    ): Tag = {
-      val __obj = js.Dynamic.literal()
-      key.foreach(__v => __obj.updateDynamic("key")(__v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Tag]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceRequest extends js.Object {
     var resourceArn: String
     var tags: Tags
   }
 
-  object TagResourceRequest {
-    @inline
-    def apply(
-        resourceArn: String,
-        tags: Tags
-    ): TagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceResponse extends js.Object {}
-
-  object TagResourceResponse {
-    @inline
-    def apply(
-    ): TagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[TagResourceResponse]
-    }
-  }
 
   @js.native
   sealed trait TargetType extends js.Any
@@ -4336,6 +2064,7 @@ package ecs {
     * Details on a task in a cluster.
     */
   @js.native
+  @Factory
   trait Task extends js.Object {
     var attachments: js.UndefOr[Attachments]
     var attributes: js.UndefOr[Attributes]
@@ -4372,85 +2101,11 @@ package ecs {
     var version: js.UndefOr[Double]
   }
 
-  object Task {
-    @inline
-    def apply(
-        attachments: js.UndefOr[Attachments] = js.undefined,
-        attributes: js.UndefOr[Attributes] = js.undefined,
-        availabilityZone: js.UndefOr[String] = js.undefined,
-        capacityProviderName: js.UndefOr[String] = js.undefined,
-        clusterArn: js.UndefOr[String] = js.undefined,
-        connectivity: js.UndefOr[Connectivity] = js.undefined,
-        connectivityAt: js.UndefOr[Timestamp] = js.undefined,
-        containerInstanceArn: js.UndefOr[String] = js.undefined,
-        containers: js.UndefOr[Containers] = js.undefined,
-        cpu: js.UndefOr[String] = js.undefined,
-        createdAt: js.UndefOr[Timestamp] = js.undefined,
-        desiredStatus: js.UndefOr[String] = js.undefined,
-        executionStoppedAt: js.UndefOr[Timestamp] = js.undefined,
-        group: js.UndefOr[String] = js.undefined,
-        healthStatus: js.UndefOr[HealthStatus] = js.undefined,
-        inferenceAccelerators: js.UndefOr[InferenceAccelerators] = js.undefined,
-        lastStatus: js.UndefOr[String] = js.undefined,
-        launchType: js.UndefOr[LaunchType] = js.undefined,
-        memory: js.UndefOr[String] = js.undefined,
-        overrides: js.UndefOr[TaskOverride] = js.undefined,
-        platformVersion: js.UndefOr[String] = js.undefined,
-        pullStartedAt: js.UndefOr[Timestamp] = js.undefined,
-        pullStoppedAt: js.UndefOr[Timestamp] = js.undefined,
-        startedAt: js.UndefOr[Timestamp] = js.undefined,
-        startedBy: js.UndefOr[String] = js.undefined,
-        stopCode: js.UndefOr[TaskStopCode] = js.undefined,
-        stoppedAt: js.UndefOr[Timestamp] = js.undefined,
-        stoppedReason: js.UndefOr[String] = js.undefined,
-        stoppingAt: js.UndefOr[Timestamp] = js.undefined,
-        tags: js.UndefOr[Tags] = js.undefined,
-        taskArn: js.UndefOr[String] = js.undefined,
-        taskDefinitionArn: js.UndefOr[String] = js.undefined,
-        version: js.UndefOr[Double] = js.undefined
-    ): Task = {
-      val __obj = js.Dynamic.literal()
-      attachments.foreach(__v => __obj.updateDynamic("attachments")(__v.asInstanceOf[js.Any]))
-      attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
-      availabilityZone.foreach(__v => __obj.updateDynamic("availabilityZone")(__v.asInstanceOf[js.Any]))
-      capacityProviderName.foreach(__v => __obj.updateDynamic("capacityProviderName")(__v.asInstanceOf[js.Any]))
-      clusterArn.foreach(__v => __obj.updateDynamic("clusterArn")(__v.asInstanceOf[js.Any]))
-      connectivity.foreach(__v => __obj.updateDynamic("connectivity")(__v.asInstanceOf[js.Any]))
-      connectivityAt.foreach(__v => __obj.updateDynamic("connectivityAt")(__v.asInstanceOf[js.Any]))
-      containerInstanceArn.foreach(__v => __obj.updateDynamic("containerInstanceArn")(__v.asInstanceOf[js.Any]))
-      containers.foreach(__v => __obj.updateDynamic("containers")(__v.asInstanceOf[js.Any]))
-      cpu.foreach(__v => __obj.updateDynamic("cpu")(__v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      desiredStatus.foreach(__v => __obj.updateDynamic("desiredStatus")(__v.asInstanceOf[js.Any]))
-      executionStoppedAt.foreach(__v => __obj.updateDynamic("executionStoppedAt")(__v.asInstanceOf[js.Any]))
-      group.foreach(__v => __obj.updateDynamic("group")(__v.asInstanceOf[js.Any]))
-      healthStatus.foreach(__v => __obj.updateDynamic("healthStatus")(__v.asInstanceOf[js.Any]))
-      inferenceAccelerators.foreach(__v => __obj.updateDynamic("inferenceAccelerators")(__v.asInstanceOf[js.Any]))
-      lastStatus.foreach(__v => __obj.updateDynamic("lastStatus")(__v.asInstanceOf[js.Any]))
-      launchType.foreach(__v => __obj.updateDynamic("launchType")(__v.asInstanceOf[js.Any]))
-      memory.foreach(__v => __obj.updateDynamic("memory")(__v.asInstanceOf[js.Any]))
-      overrides.foreach(__v => __obj.updateDynamic("overrides")(__v.asInstanceOf[js.Any]))
-      platformVersion.foreach(__v => __obj.updateDynamic("platformVersion")(__v.asInstanceOf[js.Any]))
-      pullStartedAt.foreach(__v => __obj.updateDynamic("pullStartedAt")(__v.asInstanceOf[js.Any]))
-      pullStoppedAt.foreach(__v => __obj.updateDynamic("pullStoppedAt")(__v.asInstanceOf[js.Any]))
-      startedAt.foreach(__v => __obj.updateDynamic("startedAt")(__v.asInstanceOf[js.Any]))
-      startedBy.foreach(__v => __obj.updateDynamic("startedBy")(__v.asInstanceOf[js.Any]))
-      stopCode.foreach(__v => __obj.updateDynamic("stopCode")(__v.asInstanceOf[js.Any]))
-      stoppedAt.foreach(__v => __obj.updateDynamic("stoppedAt")(__v.asInstanceOf[js.Any]))
-      stoppedReason.foreach(__v => __obj.updateDynamic("stoppedReason")(__v.asInstanceOf[js.Any]))
-      stoppingAt.foreach(__v => __obj.updateDynamic("stoppingAt")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      taskArn.foreach(__v => __obj.updateDynamic("taskArn")(__v.asInstanceOf[js.Any]))
-      taskDefinitionArn.foreach(__v => __obj.updateDynamic("taskDefinitionArn")(__v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Task]
-    }
-  }
-
   /**
     * The details of a task definition which describes the container and volume definitions of an Amazon Elastic Container Service task. You can specify which Docker images to use, the required resources, and other configurations related to launching the task definition through an Amazon ECS service or task.
     */
   @js.native
+  @Factory
   trait TaskDefinition extends js.Object {
     var compatibilities: js.UndefOr[CompatibilityList]
     var containerDefinitions: js.UndefOr[ContainerDefinitions]
@@ -4471,53 +2126,6 @@ package ecs {
     var taskDefinitionArn: js.UndefOr[String]
     var taskRoleArn: js.UndefOr[String]
     var volumes: js.UndefOr[VolumeList]
-  }
-
-  object TaskDefinition {
-    @inline
-    def apply(
-        compatibilities: js.UndefOr[CompatibilityList] = js.undefined,
-        containerDefinitions: js.UndefOr[ContainerDefinitions] = js.undefined,
-        cpu: js.UndefOr[String] = js.undefined,
-        executionRoleArn: js.UndefOr[String] = js.undefined,
-        family: js.UndefOr[String] = js.undefined,
-        inferenceAccelerators: js.UndefOr[InferenceAccelerators] = js.undefined,
-        ipcMode: js.UndefOr[IpcMode] = js.undefined,
-        memory: js.UndefOr[String] = js.undefined,
-        networkMode: js.UndefOr[NetworkMode] = js.undefined,
-        pidMode: js.UndefOr[PidMode] = js.undefined,
-        placementConstraints: js.UndefOr[TaskDefinitionPlacementConstraints] = js.undefined,
-        proxyConfiguration: js.UndefOr[ProxyConfiguration] = js.undefined,
-        requiresAttributes: js.UndefOr[RequiresAttributes] = js.undefined,
-        requiresCompatibilities: js.UndefOr[CompatibilityList] = js.undefined,
-        revision: js.UndefOr[Int] = js.undefined,
-        status: js.UndefOr[TaskDefinitionStatus] = js.undefined,
-        taskDefinitionArn: js.UndefOr[String] = js.undefined,
-        taskRoleArn: js.UndefOr[String] = js.undefined,
-        volumes: js.UndefOr[VolumeList] = js.undefined
-    ): TaskDefinition = {
-      val __obj = js.Dynamic.literal()
-      compatibilities.foreach(__v => __obj.updateDynamic("compatibilities")(__v.asInstanceOf[js.Any]))
-      containerDefinitions.foreach(__v => __obj.updateDynamic("containerDefinitions")(__v.asInstanceOf[js.Any]))
-      cpu.foreach(__v => __obj.updateDynamic("cpu")(__v.asInstanceOf[js.Any]))
-      executionRoleArn.foreach(__v => __obj.updateDynamic("executionRoleArn")(__v.asInstanceOf[js.Any]))
-      family.foreach(__v => __obj.updateDynamic("family")(__v.asInstanceOf[js.Any]))
-      inferenceAccelerators.foreach(__v => __obj.updateDynamic("inferenceAccelerators")(__v.asInstanceOf[js.Any]))
-      ipcMode.foreach(__v => __obj.updateDynamic("ipcMode")(__v.asInstanceOf[js.Any]))
-      memory.foreach(__v => __obj.updateDynamic("memory")(__v.asInstanceOf[js.Any]))
-      networkMode.foreach(__v => __obj.updateDynamic("networkMode")(__v.asInstanceOf[js.Any]))
-      pidMode.foreach(__v => __obj.updateDynamic("pidMode")(__v.asInstanceOf[js.Any]))
-      placementConstraints.foreach(__v => __obj.updateDynamic("placementConstraints")(__v.asInstanceOf[js.Any]))
-      proxyConfiguration.foreach(__v => __obj.updateDynamic("proxyConfiguration")(__v.asInstanceOf[js.Any]))
-      requiresAttributes.foreach(__v => __obj.updateDynamic("requiresAttributes")(__v.asInstanceOf[js.Any]))
-      requiresCompatibilities.foreach(__v => __obj.updateDynamic("requiresCompatibilities")(__v.asInstanceOf[js.Any]))
-      revision.foreach(__v => __obj.updateDynamic("revision")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      taskDefinitionArn.foreach(__v => __obj.updateDynamic("taskDefinitionArn")(__v.asInstanceOf[js.Any]))
-      taskRoleArn.foreach(__v => __obj.updateDynamic("taskRoleArn")(__v.asInstanceOf[js.Any]))
-      volumes.foreach(__v => __obj.updateDynamic("volumes")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TaskDefinition]
-    }
   }
 
   @js.native
@@ -4544,22 +2152,10 @@ package ecs {
     * '''Note:'''If you are using the Fargate launch type, task placement constraints are not supported.
     */
   @js.native
+  @Factory
   trait TaskDefinitionPlacementConstraint extends js.Object {
     var expression: js.UndefOr[String]
     var `type`: js.UndefOr[TaskDefinitionPlacementConstraintType]
-  }
-
-  object TaskDefinitionPlacementConstraint {
-    @inline
-    def apply(
-        expression: js.UndefOr[String] = js.undefined,
-        `type`: js.UndefOr[TaskDefinitionPlacementConstraintType] = js.undefined
-    ): TaskDefinitionPlacementConstraint = {
-      val __obj = js.Dynamic.literal()
-      expression.foreach(__v => __obj.updateDynamic("expression")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TaskDefinitionPlacementConstraint]
-    }
   }
 
   @js.native
@@ -4591,6 +2187,7 @@ package ecs {
     * The overrides associated with a task.
     */
   @js.native
+  @Factory
   trait TaskOverride extends js.Object {
     var containerOverrides: js.UndefOr[ContainerOverrides]
     var cpu: js.UndefOr[String]
@@ -4600,33 +2197,11 @@ package ecs {
     var taskRoleArn: js.UndefOr[String]
   }
 
-  object TaskOverride {
-    @inline
-    def apply(
-        containerOverrides: js.UndefOr[ContainerOverrides] = js.undefined,
-        cpu: js.UndefOr[String] = js.undefined,
-        executionRoleArn: js.UndefOr[String] = js.undefined,
-        inferenceAcceleratorOverrides: js.UndefOr[InferenceAcceleratorOverrides] = js.undefined,
-        memory: js.UndefOr[String] = js.undefined,
-        taskRoleArn: js.UndefOr[String] = js.undefined
-    ): TaskOverride = {
-      val __obj = js.Dynamic.literal()
-      containerOverrides.foreach(__v => __obj.updateDynamic("containerOverrides")(__v.asInstanceOf[js.Any]))
-      cpu.foreach(__v => __obj.updateDynamic("cpu")(__v.asInstanceOf[js.Any]))
-      executionRoleArn.foreach(__v => __obj.updateDynamic("executionRoleArn")(__v.asInstanceOf[js.Any]))
-      inferenceAcceleratorOverrides.foreach(__v =>
-        __obj.updateDynamic("inferenceAcceleratorOverrides")(__v.asInstanceOf[js.Any])
-      )
-      memory.foreach(__v => __obj.updateDynamic("memory")(__v.asInstanceOf[js.Any]))
-      taskRoleArn.foreach(__v => __obj.updateDynamic("taskRoleArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TaskOverride]
-    }
-  }
-
   /**
     * Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic.
     */
   @js.native
+  @Factory
   trait TaskSet extends js.Object {
     var capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy]
     var clusterArn: js.UndefOr[String]
@@ -4653,61 +2228,6 @@ package ecs {
     var updatedAt: js.UndefOr[Timestamp]
   }
 
-  object TaskSet {
-    @inline
-    def apply(
-        capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy] = js.undefined,
-        clusterArn: js.UndefOr[String] = js.undefined,
-        computedDesiredCount: js.UndefOr[Int] = js.undefined,
-        createdAt: js.UndefOr[Timestamp] = js.undefined,
-        externalId: js.UndefOr[String] = js.undefined,
-        id: js.UndefOr[String] = js.undefined,
-        launchType: js.UndefOr[LaunchType] = js.undefined,
-        loadBalancers: js.UndefOr[LoadBalancers] = js.undefined,
-        networkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
-        pendingCount: js.UndefOr[Int] = js.undefined,
-        platformVersion: js.UndefOr[String] = js.undefined,
-        runningCount: js.UndefOr[Int] = js.undefined,
-        scale: js.UndefOr[Scale] = js.undefined,
-        serviceArn: js.UndefOr[String] = js.undefined,
-        serviceRegistries: js.UndefOr[ServiceRegistries] = js.undefined,
-        stabilityStatus: js.UndefOr[StabilityStatus] = js.undefined,
-        stabilityStatusAt: js.UndefOr[Timestamp] = js.undefined,
-        startedBy: js.UndefOr[String] = js.undefined,
-        status: js.UndefOr[String] = js.undefined,
-        tags: js.UndefOr[Tags] = js.undefined,
-        taskDefinition: js.UndefOr[String] = js.undefined,
-        taskSetArn: js.UndefOr[String] = js.undefined,
-        updatedAt: js.UndefOr[Timestamp] = js.undefined
-    ): TaskSet = {
-      val __obj = js.Dynamic.literal()
-      capacityProviderStrategy.foreach(__v => __obj.updateDynamic("capacityProviderStrategy")(__v.asInstanceOf[js.Any]))
-      clusterArn.foreach(__v => __obj.updateDynamic("clusterArn")(__v.asInstanceOf[js.Any]))
-      computedDesiredCount.foreach(__v => __obj.updateDynamic("computedDesiredCount")(__v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
-      externalId.foreach(__v => __obj.updateDynamic("externalId")(__v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
-      launchType.foreach(__v => __obj.updateDynamic("launchType")(__v.asInstanceOf[js.Any]))
-      loadBalancers.foreach(__v => __obj.updateDynamic("loadBalancers")(__v.asInstanceOf[js.Any]))
-      networkConfiguration.foreach(__v => __obj.updateDynamic("networkConfiguration")(__v.asInstanceOf[js.Any]))
-      pendingCount.foreach(__v => __obj.updateDynamic("pendingCount")(__v.asInstanceOf[js.Any]))
-      platformVersion.foreach(__v => __obj.updateDynamic("platformVersion")(__v.asInstanceOf[js.Any]))
-      runningCount.foreach(__v => __obj.updateDynamic("runningCount")(__v.asInstanceOf[js.Any]))
-      scale.foreach(__v => __obj.updateDynamic("scale")(__v.asInstanceOf[js.Any]))
-      serviceArn.foreach(__v => __obj.updateDynamic("serviceArn")(__v.asInstanceOf[js.Any]))
-      serviceRegistries.foreach(__v => __obj.updateDynamic("serviceRegistries")(__v.asInstanceOf[js.Any]))
-      stabilityStatus.foreach(__v => __obj.updateDynamic("stabilityStatus")(__v.asInstanceOf[js.Any]))
-      stabilityStatusAt.foreach(__v => __obj.updateDynamic("stabilityStatusAt")(__v.asInstanceOf[js.Any]))
-      startedBy.foreach(__v => __obj.updateDynamic("startedBy")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
-      taskDefinition.foreach(__v => __obj.updateDynamic("taskDefinition")(__v.asInstanceOf[js.Any]))
-      taskSetArn.foreach(__v => __obj.updateDynamic("taskSetArn")(__v.asInstanceOf[js.Any]))
-      updatedAt.foreach(__v => __obj.updateDynamic("updatedAt")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TaskSet]
-    }
-  }
-
   @js.native
   sealed trait TaskSetField extends js.Any
   object TaskSetField extends js.Object {
@@ -4730,27 +2250,11 @@ package ecs {
     * The container path, mount options, and size of the tmpfs mount.
     */
   @js.native
+  @Factory
   trait Tmpfs extends js.Object {
     var containerPath: String
     var size: Int
     var mountOptions: js.UndefOr[StringList]
-  }
-
-  object Tmpfs {
-    @inline
-    def apply(
-        containerPath: String,
-        size: Int,
-        mountOptions: js.UndefOr[StringList] = js.undefined
-    ): Tmpfs = {
-      val __obj = js.Dynamic.literal(
-        "containerPath" -> containerPath.asInstanceOf[js.Any],
-        "size"          -> size.asInstanceOf[js.Any]
-      )
-
-      mountOptions.foreach(__v => __obj.updateDynamic("mountOptions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Tmpfs]
-    }
   }
 
   @js.native
@@ -4766,27 +2270,11 @@ package ecs {
     * The <code>ulimit</code> settings to pass to the container.
     */
   @js.native
+  @Factory
   trait Ulimit extends js.Object {
     var hardLimit: Int
     var name: UlimitName
     var softLimit: Int
-  }
-
-  object Ulimit {
-    @inline
-    def apply(
-        hardLimit: Int,
-        name: UlimitName,
-        softLimit: Int
-    ): Ulimit = {
-      val __obj = js.Dynamic.literal(
-        "hardLimit" -> hardLimit.asInstanceOf[js.Any],
-        "name"      -> name.asInstanceOf[js.Any],
-        "softLimit" -> softLimit.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Ulimit]
-    }
   }
 
   @js.native
@@ -4830,197 +2318,73 @@ package ecs {
   }
 
   @js.native
+  @Factory
   trait UntagResourceRequest extends js.Object {
     var resourceArn: String
     var tagKeys: TagKeys
   }
 
-  object UntagResourceRequest {
-    @inline
-    def apply(
-        resourceArn: String,
-        tagKeys: TagKeys
-    ): UntagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceResponse extends js.Object {}
 
-  object UntagResourceResponse {
-    @inline
-    def apply(
-    ): UntagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UntagResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateClusterSettingsRequest extends js.Object {
     var cluster: String
     var settings: ClusterSettings
   }
 
-  object UpdateClusterSettingsRequest {
-    @inline
-    def apply(
-        cluster: String,
-        settings: ClusterSettings
-    ): UpdateClusterSettingsRequest = {
-      val __obj = js.Dynamic.literal(
-        "cluster"  -> cluster.asInstanceOf[js.Any],
-        "settings" -> settings.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateClusterSettingsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateClusterSettingsResponse extends js.Object {
     var cluster: js.UndefOr[Cluster]
   }
 
-  object UpdateClusterSettingsResponse {
-    @inline
-    def apply(
-        cluster: js.UndefOr[Cluster] = js.undefined
-    ): UpdateClusterSettingsResponse = {
-      val __obj = js.Dynamic.literal()
-      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateClusterSettingsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateContainerAgentRequest extends js.Object {
     var containerInstance: String
     var cluster: js.UndefOr[String]
   }
 
-  object UpdateContainerAgentRequest {
-    @inline
-    def apply(
-        containerInstance: String,
-        cluster: js.UndefOr[String] = js.undefined
-    ): UpdateContainerAgentRequest = {
-      val __obj = js.Dynamic.literal(
-        "containerInstance" -> containerInstance.asInstanceOf[js.Any]
-      )
-
-      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateContainerAgentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateContainerAgentResponse extends js.Object {
     var containerInstance: js.UndefOr[ContainerInstance]
   }
 
-  object UpdateContainerAgentResponse {
-    @inline
-    def apply(
-        containerInstance: js.UndefOr[ContainerInstance] = js.undefined
-    ): UpdateContainerAgentResponse = {
-      val __obj = js.Dynamic.literal()
-      containerInstance.foreach(__v => __obj.updateDynamic("containerInstance")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateContainerAgentResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateContainerInstancesStateRequest extends js.Object {
     var containerInstances: StringList
     var status: ContainerInstanceStatus
     var cluster: js.UndefOr[String]
   }
 
-  object UpdateContainerInstancesStateRequest {
-    @inline
-    def apply(
-        containerInstances: StringList,
-        status: ContainerInstanceStatus,
-        cluster: js.UndefOr[String] = js.undefined
-    ): UpdateContainerInstancesStateRequest = {
-      val __obj = js.Dynamic.literal(
-        "containerInstances" -> containerInstances.asInstanceOf[js.Any],
-        "status"             -> status.asInstanceOf[js.Any]
-      )
-
-      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateContainerInstancesStateRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateContainerInstancesStateResponse extends js.Object {
     var containerInstances: js.UndefOr[ContainerInstances]
     var failures: js.UndefOr[Failures]
   }
 
-  object UpdateContainerInstancesStateResponse {
-    @inline
-    def apply(
-        containerInstances: js.UndefOr[ContainerInstances] = js.undefined,
-        failures: js.UndefOr[Failures] = js.undefined
-    ): UpdateContainerInstancesStateResponse = {
-      val __obj = js.Dynamic.literal()
-      containerInstances.foreach(__v => __obj.updateDynamic("containerInstances")(__v.asInstanceOf[js.Any]))
-      failures.foreach(__v => __obj.updateDynamic("failures")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateContainerInstancesStateResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateServicePrimaryTaskSetRequest extends js.Object {
     var cluster: String
     var primaryTaskSet: String
     var service: String
   }
 
-  object UpdateServicePrimaryTaskSetRequest {
-    @inline
-    def apply(
-        cluster: String,
-        primaryTaskSet: String,
-        service: String
-    ): UpdateServicePrimaryTaskSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "cluster"        -> cluster.asInstanceOf[js.Any],
-        "primaryTaskSet" -> primaryTaskSet.asInstanceOf[js.Any],
-        "service"        -> service.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateServicePrimaryTaskSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateServicePrimaryTaskSetResponse extends js.Object {
     var taskSet: js.UndefOr[TaskSet]
   }
 
-  object UpdateServicePrimaryTaskSetResponse {
-    @inline
-    def apply(
-        taskSet: js.UndefOr[TaskSet] = js.undefined
-    ): UpdateServicePrimaryTaskSetResponse = {
-      val __obj = js.Dynamic.literal()
-      taskSet.foreach(__v => __obj.updateDynamic("taskSet")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateServicePrimaryTaskSetResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateServiceRequest extends js.Object {
     var service: String
     var capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy]
@@ -5034,56 +2398,14 @@ package ecs {
     var taskDefinition: js.UndefOr[String]
   }
 
-  object UpdateServiceRequest {
-    @inline
-    def apply(
-        service: String,
-        capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy] = js.undefined,
-        cluster: js.UndefOr[String] = js.undefined,
-        deploymentConfiguration: js.UndefOr[DeploymentConfiguration] = js.undefined,
-        desiredCount: js.UndefOr[BoxedInteger] = js.undefined,
-        forceNewDeployment: js.UndefOr[Boolean] = js.undefined,
-        healthCheckGracePeriodSeconds: js.UndefOr[BoxedInteger] = js.undefined,
-        networkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
-        platformVersion: js.UndefOr[String] = js.undefined,
-        taskDefinition: js.UndefOr[String] = js.undefined
-    ): UpdateServiceRequest = {
-      val __obj = js.Dynamic.literal(
-        "service" -> service.asInstanceOf[js.Any]
-      )
-
-      capacityProviderStrategy.foreach(__v => __obj.updateDynamic("capacityProviderStrategy")(__v.asInstanceOf[js.Any]))
-      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
-      deploymentConfiguration.foreach(__v => __obj.updateDynamic("deploymentConfiguration")(__v.asInstanceOf[js.Any]))
-      desiredCount.foreach(__v => __obj.updateDynamic("desiredCount")(__v.asInstanceOf[js.Any]))
-      forceNewDeployment.foreach(__v => __obj.updateDynamic("forceNewDeployment")(__v.asInstanceOf[js.Any]))
-      healthCheckGracePeriodSeconds.foreach(__v =>
-        __obj.updateDynamic("healthCheckGracePeriodSeconds")(__v.asInstanceOf[js.Any])
-      )
-      networkConfiguration.foreach(__v => __obj.updateDynamic("networkConfiguration")(__v.asInstanceOf[js.Any]))
-      platformVersion.foreach(__v => __obj.updateDynamic("platformVersion")(__v.asInstanceOf[js.Any]))
-      taskDefinition.foreach(__v => __obj.updateDynamic("taskDefinition")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateServiceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateServiceResponse extends js.Object {
     var service: js.UndefOr[Service]
   }
 
-  object UpdateServiceResponse {
-    @inline
-    def apply(
-        service: js.UndefOr[Service] = js.undefined
-    ): UpdateServiceResponse = {
-      val __obj = js.Dynamic.literal()
-      service.foreach(__v => __obj.updateDynamic("service")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateServiceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateTaskSetRequest extends js.Object {
     var cluster: String
     var scale: Scale
@@ -5091,70 +2413,28 @@ package ecs {
     var taskSet: String
   }
 
-  object UpdateTaskSetRequest {
-    @inline
-    def apply(
-        cluster: String,
-        scale: Scale,
-        service: String,
-        taskSet: String
-    ): UpdateTaskSetRequest = {
-      val __obj = js.Dynamic.literal(
-        "cluster" -> cluster.asInstanceOf[js.Any],
-        "scale"   -> scale.asInstanceOf[js.Any],
-        "service" -> service.asInstanceOf[js.Any],
-        "taskSet" -> taskSet.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateTaskSetRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateTaskSetResponse extends js.Object {
     var taskSet: js.UndefOr[TaskSet]
-  }
-
-  object UpdateTaskSetResponse {
-    @inline
-    def apply(
-        taskSet: js.UndefOr[TaskSet] = js.undefined
-    ): UpdateTaskSetResponse = {
-      val __obj = js.Dynamic.literal()
-      taskSet.foreach(__v => __obj.updateDynamic("taskSet")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateTaskSetResponse]
-    }
   }
 
   /**
     * The Docker and Amazon ECS container agent version information about a container instance.
     */
   @js.native
+  @Factory
   trait VersionInfo extends js.Object {
     var agentHash: js.UndefOr[String]
     var agentVersion: js.UndefOr[String]
     var dockerVersion: js.UndefOr[String]
   }
 
-  object VersionInfo {
-    @inline
-    def apply(
-        agentHash: js.UndefOr[String] = js.undefined,
-        agentVersion: js.UndefOr[String] = js.undefined,
-        dockerVersion: js.UndefOr[String] = js.undefined
-    ): VersionInfo = {
-      val __obj = js.Dynamic.literal()
-      agentHash.foreach(__v => __obj.updateDynamic("agentHash")(__v.asInstanceOf[js.Any]))
-      agentVersion.foreach(__v => __obj.updateDynamic("agentVersion")(__v.asInstanceOf[js.Any]))
-      dockerVersion.foreach(__v => __obj.updateDynamic("dockerVersion")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VersionInfo]
-    }
-  }
-
   /**
     * A data volume used in a task definition. For tasks that use a Docker volume, specify a <code>DockerVolumeConfiguration</code>. For tasks that use a bind mount host volume, specify a <code>host</code> and optional <code>sourcePath</code>. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html|Using Data Volumes in Tasks]].
     */
   @js.native
+  @Factory
   trait Volume extends js.Object {
     var dockerVolumeConfiguration: js.UndefOr[DockerVolumeConfiguration]
     var efsVolumeConfiguration: js.UndefOr[EFSVolumeConfiguration]
@@ -5162,44 +2442,13 @@ package ecs {
     var name: js.UndefOr[String]
   }
 
-  object Volume {
-    @inline
-    def apply(
-        dockerVolumeConfiguration: js.UndefOr[DockerVolumeConfiguration] = js.undefined,
-        efsVolumeConfiguration: js.UndefOr[EFSVolumeConfiguration] = js.undefined,
-        host: js.UndefOr[HostVolumeProperties] = js.undefined,
-        name: js.UndefOr[String] = js.undefined
-    ): Volume = {
-      val __obj = js.Dynamic.literal()
-      dockerVolumeConfiguration.foreach(__v =>
-        __obj.updateDynamic("dockerVolumeConfiguration")(__v.asInstanceOf[js.Any])
-      )
-      efsVolumeConfiguration.foreach(__v => __obj.updateDynamic("efsVolumeConfiguration")(__v.asInstanceOf[js.Any]))
-      host.foreach(__v => __obj.updateDynamic("host")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Volume]
-    }
-  }
-
   /**
     * Details on a data volume from another container in the same task definition.
     */
   @js.native
+  @Factory
   trait VolumeFrom extends js.Object {
     var readOnly: js.UndefOr[BoxedBoolean]
     var sourceContainer: js.UndefOr[String]
-  }
-
-  object VolumeFrom {
-    @inline
-    def apply(
-        readOnly: js.UndefOr[BoxedBoolean] = js.undefined,
-        sourceContainer: js.UndefOr[String] = js.undefined
-    ): VolumeFrom = {
-      val __obj = js.Dynamic.literal()
-      readOnly.foreach(__v => __obj.updateDynamic("readOnly")(__v.asInstanceOf[js.Any]))
-      sourceContainer.foreach(__v => __obj.updateDynamic("sourceContainer")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VolumeFrom]
-    }
   }
 }

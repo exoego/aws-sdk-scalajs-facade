@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object iotdata {
   type ErrorMessage = String
@@ -51,82 +52,36 @@ package iotdata {
     * The input for the DeleteThingShadow operation.
     */
   @js.native
+  @Factory
   trait DeleteThingShadowRequest extends js.Object {
     var thingName: ThingName
-  }
-
-  object DeleteThingShadowRequest {
-    @inline
-    def apply(
-        thingName: ThingName
-    ): DeleteThingShadowRequest = {
-      val __obj = js.Dynamic.literal(
-        "thingName" -> thingName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteThingShadowRequest]
-    }
   }
 
   /**
     * The output from the DeleteThingShadow operation.
     */
   @js.native
+  @Factory
   trait DeleteThingShadowResponse extends js.Object {
     var payload: JsonDocument
-  }
-
-  object DeleteThingShadowResponse {
-    @inline
-    def apply(
-        payload: JsonDocument
-    ): DeleteThingShadowResponse = {
-      val __obj = js.Dynamic.literal(
-        "payload" -> payload.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteThingShadowResponse]
-    }
   }
 
   /**
     * The input for the GetThingShadow operation.
     */
   @js.native
+  @Factory
   trait GetThingShadowRequest extends js.Object {
     var thingName: ThingName
-  }
-
-  object GetThingShadowRequest {
-    @inline
-    def apply(
-        thingName: ThingName
-    ): GetThingShadowRequest = {
-      val __obj = js.Dynamic.literal(
-        "thingName" -> thingName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetThingShadowRequest]
-    }
   }
 
   /**
     * The output from the GetThingShadow operation.
     */
   @js.native
+  @Factory
   trait GetThingShadowResponse extends js.Object {
     var payload: js.UndefOr[JsonDocument]
-  }
-
-  object GetThingShadowResponse {
-    @inline
-    def apply(
-        payload: js.UndefOr[JsonDocument] = js.undefined
-    ): GetThingShadowResponse = {
-      val __obj = js.Dynamic.literal()
-      payload.foreach(__v => __obj.updateDynamic("payload")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetThingShadowResponse]
-    }
   }
 
   /**
@@ -157,27 +112,11 @@ package iotdata {
     * The input for the Publish operation.
     */
   @js.native
+  @Factory
   trait PublishRequest extends js.Object {
     var topic: Topic
     var payload: js.UndefOr[Payload]
     var qos: js.UndefOr[Qos]
-  }
-
-  object PublishRequest {
-    @inline
-    def apply(
-        topic: Topic,
-        payload: js.UndefOr[Payload] = js.undefined,
-        qos: js.UndefOr[Qos] = js.undefined
-    ): PublishRequest = {
-      val __obj = js.Dynamic.literal(
-        "topic" -> topic.asInstanceOf[js.Any]
-      )
-
-      payload.foreach(__v => __obj.updateDynamic("payload")(__v.asInstanceOf[js.Any]))
-      qos.foreach(__v => __obj.updateDynamic("qos")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PublishRequest]
-    }
   }
 
   /**
@@ -232,42 +171,18 @@ package iotdata {
     * The input for the UpdateThingShadow operation.
     */
   @js.native
+  @Factory
   trait UpdateThingShadowRequest extends js.Object {
     var payload: JsonDocument
     var thingName: ThingName
-  }
-
-  object UpdateThingShadowRequest {
-    @inline
-    def apply(
-        payload: JsonDocument,
-        thingName: ThingName
-    ): UpdateThingShadowRequest = {
-      val __obj = js.Dynamic.literal(
-        "payload"   -> payload.asInstanceOf[js.Any],
-        "thingName" -> thingName.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateThingShadowRequest]
-    }
   }
 
   /**
     * The output from the UpdateThingShadow operation.
     */
   @js.native
+  @Factory
   trait UpdateThingShadowResponse extends js.Object {
     var payload: js.UndefOr[JsonDocument]
-  }
-
-  object UpdateThingShadowResponse {
-    @inline
-    def apply(
-        payload: js.UndefOr[JsonDocument] = js.undefined
-    ): UpdateThingShadowResponse = {
-      val __obj = js.Dynamic.literal()
-      payload.foreach(__v => __obj.updateDynamic("payload")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateThingShadowResponse]
-    }
   }
 }

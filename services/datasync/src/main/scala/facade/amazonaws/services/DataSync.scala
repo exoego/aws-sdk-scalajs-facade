@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object datasync {
   type ActivationKey                   = String
@@ -166,25 +167,11 @@ package datasync {
     * Represents a single entry in a list of agents. <code>AgentListEntry</code> returns an array that contains a list of agents when the <a>ListAgents</a> operation is called.
     */
   @js.native
+  @Factory
   trait AgentListEntry extends js.Object {
     var AgentArn: js.UndefOr[AgentArn]
     var Name: js.UndefOr[TagValue]
     var Status: js.UndefOr[AgentStatus]
-  }
-
-  object AgentListEntry {
-    @inline
-    def apply(
-        AgentArn: js.UndefOr[AgentArn] = js.undefined,
-        Name: js.UndefOr[TagValue] = js.undefined,
-        Status: js.UndefOr[AgentStatus] = js.undefined
-    ): AgentListEntry = {
-      val __obj = js.Dynamic.literal()
-      AgentArn.foreach(__v => __obj.updateDynamic("AgentArn")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AgentListEntry]
-    }
   }
 
   @js.native
@@ -206,37 +193,17 @@ package datasync {
   }
 
   @js.native
+  @Factory
   trait CancelTaskExecutionRequest extends js.Object {
     var TaskExecutionArn: TaskExecutionArn
   }
 
-  object CancelTaskExecutionRequest {
-    @inline
-    def apply(
-        TaskExecutionArn: TaskExecutionArn
-    ): CancelTaskExecutionRequest = {
-      val __obj = js.Dynamic.literal(
-        "TaskExecutionArn" -> TaskExecutionArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[CancelTaskExecutionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CancelTaskExecutionResponse extends js.Object {}
 
-  object CancelTaskExecutionResponse {
-    @inline
-    def apply(
-    ): CancelTaskExecutionResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[CancelTaskExecutionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateAgentRequest extends js.Object {
     var ActivationKey: ActivationKey
     var AgentName: js.UndefOr[TagValue]
@@ -246,46 +213,14 @@ package datasync {
     var VpcEndpointId: js.UndefOr[VpcEndpointId]
   }
 
-  object CreateAgentRequest {
-    @inline
-    def apply(
-        ActivationKey: ActivationKey,
-        AgentName: js.UndefOr[TagValue] = js.undefined,
-        SecurityGroupArns: js.UndefOr[PLSecurityGroupArnList] = js.undefined,
-        SubnetArns: js.UndefOr[PLSubnetArnList] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined,
-        VpcEndpointId: js.UndefOr[VpcEndpointId] = js.undefined
-    ): CreateAgentRequest = {
-      val __obj = js.Dynamic.literal(
-        "ActivationKey" -> ActivationKey.asInstanceOf[js.Any]
-      )
-
-      AgentName.foreach(__v => __obj.updateDynamic("AgentName")(__v.asInstanceOf[js.Any]))
-      SecurityGroupArns.foreach(__v => __obj.updateDynamic("SecurityGroupArns")(__v.asInstanceOf[js.Any]))
-      SubnetArns.foreach(__v => __obj.updateDynamic("SubnetArns")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      VpcEndpointId.foreach(__v => __obj.updateDynamic("VpcEndpointId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateAgentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateAgentResponse extends js.Object {
     var AgentArn: js.UndefOr[AgentArn]
   }
 
-  object CreateAgentResponse {
-    @inline
-    def apply(
-        AgentArn: js.UndefOr[AgentArn] = js.undefined
-    ): CreateAgentResponse = {
-      val __obj = js.Dynamic.literal()
-      AgentArn.foreach(__v => __obj.updateDynamic("AgentArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateAgentResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateLocationEfsRequest extends js.Object {
     var Ec2Config: Ec2Config
     var EfsFilesystemArn: EfsFilesystemArn
@@ -293,45 +228,17 @@ package datasync {
     var Tags: js.UndefOr[TagList]
   }
 
-  object CreateLocationEfsRequest {
-    @inline
-    def apply(
-        Ec2Config: Ec2Config,
-        EfsFilesystemArn: EfsFilesystemArn,
-        Subdirectory: js.UndefOr[EfsSubdirectory] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateLocationEfsRequest = {
-      val __obj = js.Dynamic.literal(
-        "Ec2Config"        -> Ec2Config.asInstanceOf[js.Any],
-        "EfsFilesystemArn" -> EfsFilesystemArn.asInstanceOf[js.Any]
-      )
-
-      Subdirectory.foreach(__v => __obj.updateDynamic("Subdirectory")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateLocationEfsRequest]
-    }
-  }
-
   /**
     * CreateLocationEfs
     */
   @js.native
+  @Factory
   trait CreateLocationEfsResponse extends js.Object {
     var LocationArn: js.UndefOr[LocationArn]
   }
 
-  object CreateLocationEfsResponse {
-    @inline
-    def apply(
-        LocationArn: js.UndefOr[LocationArn] = js.undefined
-    ): CreateLocationEfsResponse = {
-      val __obj = js.Dynamic.literal()
-      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateLocationEfsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateLocationFsxWindowsRequest extends js.Object {
     var FsxFilesystemArn: FsxFilesystemArn
     var Password: SmbPassword
@@ -342,48 +249,14 @@ package datasync {
     var Tags: js.UndefOr[TagList]
   }
 
-  object CreateLocationFsxWindowsRequest {
-    @inline
-    def apply(
-        FsxFilesystemArn: FsxFilesystemArn,
-        Password: SmbPassword,
-        SecurityGroupArns: Ec2SecurityGroupArnList,
-        User: SmbUser,
-        Domain: js.UndefOr[SmbDomain] = js.undefined,
-        Subdirectory: js.UndefOr[FsxWindowsSubdirectory] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateLocationFsxWindowsRequest = {
-      val __obj = js.Dynamic.literal(
-        "FsxFilesystemArn"  -> FsxFilesystemArn.asInstanceOf[js.Any],
-        "Password"          -> Password.asInstanceOf[js.Any],
-        "SecurityGroupArns" -> SecurityGroupArns.asInstanceOf[js.Any],
-        "User"              -> User.asInstanceOf[js.Any]
-      )
-
-      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
-      Subdirectory.foreach(__v => __obj.updateDynamic("Subdirectory")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateLocationFsxWindowsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateLocationFsxWindowsResponse extends js.Object {
     var LocationArn: js.UndefOr[LocationArn]
   }
 
-  object CreateLocationFsxWindowsResponse {
-    @inline
-    def apply(
-        LocationArn: js.UndefOr[LocationArn] = js.undefined
-    ): CreateLocationFsxWindowsResponse = {
-      val __obj = js.Dynamic.literal()
-      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateLocationFsxWindowsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateLocationNfsRequest extends js.Object {
     var OnPremConfig: OnPremConfig
     var ServerHostname: ServerHostname
@@ -392,44 +265,14 @@ package datasync {
     var Tags: js.UndefOr[TagList]
   }
 
-  object CreateLocationNfsRequest {
-    @inline
-    def apply(
-        OnPremConfig: OnPremConfig,
-        ServerHostname: ServerHostname,
-        Subdirectory: NfsSubdirectory,
-        MountOptions: js.UndefOr[NfsMountOptions] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateLocationNfsRequest = {
-      val __obj = js.Dynamic.literal(
-        "OnPremConfig"   -> OnPremConfig.asInstanceOf[js.Any],
-        "ServerHostname" -> ServerHostname.asInstanceOf[js.Any],
-        "Subdirectory"   -> Subdirectory.asInstanceOf[js.Any]
-      )
-
-      MountOptions.foreach(__v => __obj.updateDynamic("MountOptions")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateLocationNfsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateLocationNfsResponse extends js.Object {
     var LocationArn: js.UndefOr[LocationArn]
   }
 
-  object CreateLocationNfsResponse {
-    @inline
-    def apply(
-        LocationArn: js.UndefOr[LocationArn] = js.undefined
-    ): CreateLocationNfsResponse = {
-      val __obj = js.Dynamic.literal()
-      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateLocationNfsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateLocationS3Request extends js.Object {
     var S3BucketArn: S3BucketArn
     var S3Config: S3Config
@@ -438,44 +281,14 @@ package datasync {
     var Tags: js.UndefOr[TagList]
   }
 
-  object CreateLocationS3Request {
-    @inline
-    def apply(
-        S3BucketArn: S3BucketArn,
-        S3Config: S3Config,
-        S3StorageClass: js.UndefOr[S3StorageClass] = js.undefined,
-        Subdirectory: js.UndefOr[S3Subdirectory] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateLocationS3Request = {
-      val __obj = js.Dynamic.literal(
-        "S3BucketArn" -> S3BucketArn.asInstanceOf[js.Any],
-        "S3Config"    -> S3Config.asInstanceOf[js.Any]
-      )
-
-      S3StorageClass.foreach(__v => __obj.updateDynamic("S3StorageClass")(__v.asInstanceOf[js.Any]))
-      Subdirectory.foreach(__v => __obj.updateDynamic("Subdirectory")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateLocationS3Request]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateLocationS3Response extends js.Object {
     var LocationArn: js.UndefOr[LocationArn]
   }
 
-  object CreateLocationS3Response {
-    @inline
-    def apply(
-        LocationArn: js.UndefOr[LocationArn] = js.undefined
-    ): CreateLocationS3Response = {
-      val __obj = js.Dynamic.literal()
-      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateLocationS3Response]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateLocationSmbRequest extends js.Object {
     var AgentArns: AgentArnList
     var Password: SmbPassword
@@ -487,50 +300,14 @@ package datasync {
     var Tags: js.UndefOr[TagList]
   }
 
-  object CreateLocationSmbRequest {
-    @inline
-    def apply(
-        AgentArns: AgentArnList,
-        Password: SmbPassword,
-        ServerHostname: ServerHostname,
-        Subdirectory: SmbSubdirectory,
-        User: SmbUser,
-        Domain: js.UndefOr[SmbDomain] = js.undefined,
-        MountOptions: js.UndefOr[SmbMountOptions] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateLocationSmbRequest = {
-      val __obj = js.Dynamic.literal(
-        "AgentArns"      -> AgentArns.asInstanceOf[js.Any],
-        "Password"       -> Password.asInstanceOf[js.Any],
-        "ServerHostname" -> ServerHostname.asInstanceOf[js.Any],
-        "Subdirectory"   -> Subdirectory.asInstanceOf[js.Any],
-        "User"           -> User.asInstanceOf[js.Any]
-      )
-
-      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
-      MountOptions.foreach(__v => __obj.updateDynamic("MountOptions")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateLocationSmbRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateLocationSmbResponse extends js.Object {
     var LocationArn: js.UndefOr[LocationArn]
   }
 
-  object CreateLocationSmbResponse {
-    @inline
-    def apply(
-        LocationArn: js.UndefOr[LocationArn] = js.undefined
-    ): CreateLocationSmbResponse = {
-      val __obj = js.Dynamic.literal()
-      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateLocationSmbResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateTaskRequest extends js.Object {
     var DestinationLocationArn: LocationArn
     var SourceLocationArn: LocationArn
@@ -542,170 +319,59 @@ package datasync {
     var Tags: js.UndefOr[TagList]
   }
 
-  object CreateTaskRequest {
-    @inline
-    def apply(
-        DestinationLocationArn: LocationArn,
-        SourceLocationArn: LocationArn,
-        CloudWatchLogGroupArn: js.UndefOr[LogGroupArn] = js.undefined,
-        Excludes: js.UndefOr[FilterList] = js.undefined,
-        Name: js.UndefOr[TagValue] = js.undefined,
-        Options: js.UndefOr[Options] = js.undefined,
-        Schedule: js.UndefOr[TaskSchedule] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateTaskRequest = {
-      val __obj = js.Dynamic.literal(
-        "DestinationLocationArn" -> DestinationLocationArn.asInstanceOf[js.Any],
-        "SourceLocationArn"      -> SourceLocationArn.asInstanceOf[js.Any]
-      )
-
-      CloudWatchLogGroupArn.foreach(__v => __obj.updateDynamic("CloudWatchLogGroupArn")(__v.asInstanceOf[js.Any]))
-      Excludes.foreach(__v => __obj.updateDynamic("Excludes")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Options.foreach(__v => __obj.updateDynamic("Options")(__v.asInstanceOf[js.Any]))
-      Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateTaskRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateTaskResponse extends js.Object {
     var TaskArn: js.UndefOr[TaskArn]
   }
 
-  object CreateTaskResponse {
-    @inline
-    def apply(
-        TaskArn: js.UndefOr[TaskArn] = js.undefined
-    ): CreateTaskResponse = {
-      val __obj = js.Dynamic.literal()
-      TaskArn.foreach(__v => __obj.updateDynamic("TaskArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateTaskResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteAgentRequest extends js.Object {
     var AgentArn: AgentArn
   }
 
-  object DeleteAgentRequest {
-    @inline
-    def apply(
-        AgentArn: AgentArn
-    ): DeleteAgentRequest = {
-      val __obj = js.Dynamic.literal(
-        "AgentArn" -> AgentArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteAgentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteAgentResponse extends js.Object {}
-
-  object DeleteAgentResponse {
-    @inline
-    def apply(
-    ): DeleteAgentResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteAgentResponse]
-    }
-  }
 
   /**
     * DeleteLocation
     */
   @js.native
+  @Factory
   trait DeleteLocationRequest extends js.Object {
     var LocationArn: LocationArn
   }
 
-  object DeleteLocationRequest {
-    @inline
-    def apply(
-        LocationArn: LocationArn
-    ): DeleteLocationRequest = {
-      val __obj = js.Dynamic.literal(
-        "LocationArn" -> LocationArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteLocationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteLocationResponse extends js.Object {}
-
-  object DeleteLocationResponse {
-    @inline
-    def apply(
-    ): DeleteLocationResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteLocationResponse]
-    }
-  }
 
   /**
     * DeleteTask
     */
   @js.native
+  @Factory
   trait DeleteTaskRequest extends js.Object {
     var TaskArn: TaskArn
   }
 
-  object DeleteTaskRequest {
-    @inline
-    def apply(
-        TaskArn: TaskArn
-    ): DeleteTaskRequest = {
-      val __obj = js.Dynamic.literal(
-        "TaskArn" -> TaskArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteTaskRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteTaskResponse extends js.Object {}
-
-  object DeleteTaskResponse {
-    @inline
-    def apply(
-    ): DeleteTaskResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteTaskResponse]
-    }
-  }
 
   /**
     * DescribeAgent
     */
   @js.native
+  @Factory
   trait DescribeAgentRequest extends js.Object {
     var AgentArn: AgentArn
   }
 
-  object DescribeAgentRequest {
-    @inline
-    def apply(
-        AgentArn: AgentArn
-    ): DescribeAgentRequest = {
-      val __obj = js.Dynamic.literal(
-        "AgentArn" -> AgentArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeAgentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeAgentResponse extends js.Object {
     var AgentArn: js.UndefOr[AgentArn]
     var CreationTime: js.UndefOr[Time]
@@ -716,48 +382,14 @@ package datasync {
     var Status: js.UndefOr[AgentStatus]
   }
 
-  object DescribeAgentResponse {
-    @inline
-    def apply(
-        AgentArn: js.UndefOr[AgentArn] = js.undefined,
-        CreationTime: js.UndefOr[Time] = js.undefined,
-        EndpointType: js.UndefOr[EndpointType] = js.undefined,
-        LastConnectionTime: js.UndefOr[Time] = js.undefined,
-        Name: js.UndefOr[TagValue] = js.undefined,
-        PrivateLinkConfig: js.UndefOr[PrivateLinkConfig] = js.undefined,
-        Status: js.UndefOr[AgentStatus] = js.undefined
-    ): DescribeAgentResponse = {
-      val __obj = js.Dynamic.literal()
-      AgentArn.foreach(__v => __obj.updateDynamic("AgentArn")(__v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
-      EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
-      LastConnectionTime.foreach(__v => __obj.updateDynamic("LastConnectionTime")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      PrivateLinkConfig.foreach(__v => __obj.updateDynamic("PrivateLinkConfig")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeAgentResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeLocationEfsRequest extends js.Object {
     var LocationArn: LocationArn
   }
 
-  object DescribeLocationEfsRequest {
-    @inline
-    def apply(
-        LocationArn: LocationArn
-    ): DescribeLocationEfsRequest = {
-      val __obj = js.Dynamic.literal(
-        "LocationArn" -> LocationArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeLocationEfsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeLocationEfsResponse extends js.Object {
     var CreationTime: js.UndefOr[Time]
     var Ec2Config: js.UndefOr[Ec2Config]
@@ -765,42 +397,14 @@ package datasync {
     var LocationUri: js.UndefOr[LocationUri]
   }
 
-  object DescribeLocationEfsResponse {
-    @inline
-    def apply(
-        CreationTime: js.UndefOr[Time] = js.undefined,
-        Ec2Config: js.UndefOr[Ec2Config] = js.undefined,
-        LocationArn: js.UndefOr[LocationArn] = js.undefined,
-        LocationUri: js.UndefOr[LocationUri] = js.undefined
-    ): DescribeLocationEfsResponse = {
-      val __obj = js.Dynamic.literal()
-      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
-      Ec2Config.foreach(__v => __obj.updateDynamic("Ec2Config")(__v.asInstanceOf[js.Any]))
-      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
-      LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeLocationEfsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeLocationFsxWindowsRequest extends js.Object {
     var LocationArn: LocationArn
   }
 
-  object DescribeLocationFsxWindowsRequest {
-    @inline
-    def apply(
-        LocationArn: LocationArn
-    ): DescribeLocationFsxWindowsRequest = {
-      val __obj = js.Dynamic.literal(
-        "LocationArn" -> LocationArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeLocationFsxWindowsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeLocationFsxWindowsResponse extends js.Object {
     var CreationTime: js.UndefOr[Time]
     var Domain: js.UndefOr[SmbDomain]
@@ -810,46 +414,14 @@ package datasync {
     var User: js.UndefOr[SmbUser]
   }
 
-  object DescribeLocationFsxWindowsResponse {
-    @inline
-    def apply(
-        CreationTime: js.UndefOr[Time] = js.undefined,
-        Domain: js.UndefOr[SmbDomain] = js.undefined,
-        LocationArn: js.UndefOr[LocationArn] = js.undefined,
-        LocationUri: js.UndefOr[LocationUri] = js.undefined,
-        SecurityGroupArns: js.UndefOr[Ec2SecurityGroupArnList] = js.undefined,
-        User: js.UndefOr[SmbUser] = js.undefined
-    ): DescribeLocationFsxWindowsResponse = {
-      val __obj = js.Dynamic.literal()
-      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
-      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
-      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
-      LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
-      SecurityGroupArns.foreach(__v => __obj.updateDynamic("SecurityGroupArns")(__v.asInstanceOf[js.Any]))
-      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeLocationFsxWindowsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeLocationNfsRequest extends js.Object {
     var LocationArn: LocationArn
   }
 
-  object DescribeLocationNfsRequest {
-    @inline
-    def apply(
-        LocationArn: LocationArn
-    ): DescribeLocationNfsRequest = {
-      val __obj = js.Dynamic.literal(
-        "LocationArn" -> LocationArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeLocationNfsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeLocationNfsResponse extends js.Object {
     var CreationTime: js.UndefOr[Time]
     var LocationArn: js.UndefOr[LocationArn]
@@ -858,44 +430,14 @@ package datasync {
     var OnPremConfig: js.UndefOr[OnPremConfig]
   }
 
-  object DescribeLocationNfsResponse {
-    @inline
-    def apply(
-        CreationTime: js.UndefOr[Time] = js.undefined,
-        LocationArn: js.UndefOr[LocationArn] = js.undefined,
-        LocationUri: js.UndefOr[LocationUri] = js.undefined,
-        MountOptions: js.UndefOr[NfsMountOptions] = js.undefined,
-        OnPremConfig: js.UndefOr[OnPremConfig] = js.undefined
-    ): DescribeLocationNfsResponse = {
-      val __obj = js.Dynamic.literal()
-      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
-      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
-      LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
-      MountOptions.foreach(__v => __obj.updateDynamic("MountOptions")(__v.asInstanceOf[js.Any]))
-      OnPremConfig.foreach(__v => __obj.updateDynamic("OnPremConfig")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeLocationNfsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeLocationS3Request extends js.Object {
     var LocationArn: LocationArn
   }
 
-  object DescribeLocationS3Request {
-    @inline
-    def apply(
-        LocationArn: LocationArn
-    ): DescribeLocationS3Request = {
-      val __obj = js.Dynamic.literal(
-        "LocationArn" -> LocationArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeLocationS3Request]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeLocationS3Response extends js.Object {
     var CreationTime: js.UndefOr[Time]
     var LocationArn: js.UndefOr[LocationArn]
@@ -904,44 +446,14 @@ package datasync {
     var S3StorageClass: js.UndefOr[S3StorageClass]
   }
 
-  object DescribeLocationS3Response {
-    @inline
-    def apply(
-        CreationTime: js.UndefOr[Time] = js.undefined,
-        LocationArn: js.UndefOr[LocationArn] = js.undefined,
-        LocationUri: js.UndefOr[LocationUri] = js.undefined,
-        S3Config: js.UndefOr[S3Config] = js.undefined,
-        S3StorageClass: js.UndefOr[S3StorageClass] = js.undefined
-    ): DescribeLocationS3Response = {
-      val __obj = js.Dynamic.literal()
-      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
-      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
-      LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
-      S3Config.foreach(__v => __obj.updateDynamic("S3Config")(__v.asInstanceOf[js.Any]))
-      S3StorageClass.foreach(__v => __obj.updateDynamic("S3StorageClass")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeLocationS3Response]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeLocationSmbRequest extends js.Object {
     var LocationArn: LocationArn
   }
 
-  object DescribeLocationSmbRequest {
-    @inline
-    def apply(
-        LocationArn: LocationArn
-    ): DescribeLocationSmbRequest = {
-      val __obj = js.Dynamic.literal(
-        "LocationArn" -> LocationArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeLocationSmbRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeLocationSmbResponse extends js.Object {
     var AgentArns: js.UndefOr[AgentArnList]
     var CreationTime: js.UndefOr[Time]
@@ -952,48 +464,14 @@ package datasync {
     var User: js.UndefOr[SmbUser]
   }
 
-  object DescribeLocationSmbResponse {
-    @inline
-    def apply(
-        AgentArns: js.UndefOr[AgentArnList] = js.undefined,
-        CreationTime: js.UndefOr[Time] = js.undefined,
-        Domain: js.UndefOr[SmbDomain] = js.undefined,
-        LocationArn: js.UndefOr[LocationArn] = js.undefined,
-        LocationUri: js.UndefOr[LocationUri] = js.undefined,
-        MountOptions: js.UndefOr[SmbMountOptions] = js.undefined,
-        User: js.UndefOr[SmbUser] = js.undefined
-    ): DescribeLocationSmbResponse = {
-      val __obj = js.Dynamic.literal()
-      AgentArns.foreach(__v => __obj.updateDynamic("AgentArns")(__v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
-      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
-      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
-      LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
-      MountOptions.foreach(__v => __obj.updateDynamic("MountOptions")(__v.asInstanceOf[js.Any]))
-      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeLocationSmbResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeTaskExecutionRequest extends js.Object {
     var TaskExecutionArn: TaskExecutionArn
   }
 
-  object DescribeTaskExecutionRequest {
-    @inline
-    def apply(
-        TaskExecutionArn: TaskExecutionArn
-    ): DescribeTaskExecutionRequest = {
-      val __obj = js.Dynamic.literal(
-        "TaskExecutionArn" -> TaskExecutionArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeTaskExecutionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeTaskExecutionResponse extends js.Object {
     var BytesTransferred: js.UndefOr[Double]
     var BytesWritten: js.UndefOr[Double]
@@ -1009,58 +487,14 @@ package datasync {
     var TaskExecutionArn: js.UndefOr[TaskExecutionArn]
   }
 
-  object DescribeTaskExecutionResponse {
-    @inline
-    def apply(
-        BytesTransferred: js.UndefOr[Double] = js.undefined,
-        BytesWritten: js.UndefOr[Double] = js.undefined,
-        EstimatedBytesToTransfer: js.UndefOr[Double] = js.undefined,
-        EstimatedFilesToTransfer: js.UndefOr[Double] = js.undefined,
-        Excludes: js.UndefOr[FilterList] = js.undefined,
-        FilesTransferred: js.UndefOr[Double] = js.undefined,
-        Includes: js.UndefOr[FilterList] = js.undefined,
-        Options: js.UndefOr[Options] = js.undefined,
-        Result: js.UndefOr[TaskExecutionResultDetail] = js.undefined,
-        StartTime: js.UndefOr[Time] = js.undefined,
-        Status: js.UndefOr[TaskExecutionStatus] = js.undefined,
-        TaskExecutionArn: js.UndefOr[TaskExecutionArn] = js.undefined
-    ): DescribeTaskExecutionResponse = {
-      val __obj = js.Dynamic.literal()
-      BytesTransferred.foreach(__v => __obj.updateDynamic("BytesTransferred")(__v.asInstanceOf[js.Any]))
-      BytesWritten.foreach(__v => __obj.updateDynamic("BytesWritten")(__v.asInstanceOf[js.Any]))
-      EstimatedBytesToTransfer.foreach(__v => __obj.updateDynamic("EstimatedBytesToTransfer")(__v.asInstanceOf[js.Any]))
-      EstimatedFilesToTransfer.foreach(__v => __obj.updateDynamic("EstimatedFilesToTransfer")(__v.asInstanceOf[js.Any]))
-      Excludes.foreach(__v => __obj.updateDynamic("Excludes")(__v.asInstanceOf[js.Any]))
-      FilesTransferred.foreach(__v => __obj.updateDynamic("FilesTransferred")(__v.asInstanceOf[js.Any]))
-      Includes.foreach(__v => __obj.updateDynamic("Includes")(__v.asInstanceOf[js.Any]))
-      Options.foreach(__v => __obj.updateDynamic("Options")(__v.asInstanceOf[js.Any]))
-      Result.foreach(__v => __obj.updateDynamic("Result")(__v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      TaskExecutionArn.foreach(__v => __obj.updateDynamic("TaskExecutionArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeTaskExecutionResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeTaskRequest extends js.Object {
     var TaskArn: TaskArn
   }
 
-  object DescribeTaskRequest {
-    @inline
-    def apply(
-        TaskArn: TaskArn
-    ): DescribeTaskRequest = {
-      val __obj = js.Dynamic.literal(
-        "TaskArn" -> TaskArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeTaskRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeTaskResponse extends js.Object {
     var CloudWatchLogGroupArn: js.UndefOr[LogGroupArn]
     var CreationTime: js.UndefOr[Time]
@@ -1079,71 +513,14 @@ package datasync {
     var TaskArn: js.UndefOr[TaskArn]
   }
 
-  object DescribeTaskResponse {
-    @inline
-    def apply(
-        CloudWatchLogGroupArn: js.UndefOr[LogGroupArn] = js.undefined,
-        CreationTime: js.UndefOr[Time] = js.undefined,
-        CurrentTaskExecutionArn: js.UndefOr[TaskExecutionArn] = js.undefined,
-        DestinationLocationArn: js.UndefOr[LocationArn] = js.undefined,
-        DestinationNetworkInterfaceArns: js.UndefOr[DestinationNetworkInterfaceArns] = js.undefined,
-        ErrorCode: js.UndefOr[String] = js.undefined,
-        ErrorDetail: js.UndefOr[String] = js.undefined,
-        Excludes: js.UndefOr[FilterList] = js.undefined,
-        Name: js.UndefOr[TagValue] = js.undefined,
-        Options: js.UndefOr[Options] = js.undefined,
-        Schedule: js.UndefOr[TaskSchedule] = js.undefined,
-        SourceLocationArn: js.UndefOr[LocationArn] = js.undefined,
-        SourceNetworkInterfaceArns: js.UndefOr[SourceNetworkInterfaceArns] = js.undefined,
-        Status: js.UndefOr[TaskStatus] = js.undefined,
-        TaskArn: js.UndefOr[TaskArn] = js.undefined
-    ): DescribeTaskResponse = {
-      val __obj = js.Dynamic.literal()
-      CloudWatchLogGroupArn.foreach(__v => __obj.updateDynamic("CloudWatchLogGroupArn")(__v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
-      CurrentTaskExecutionArn.foreach(__v => __obj.updateDynamic("CurrentTaskExecutionArn")(__v.asInstanceOf[js.Any]))
-      DestinationLocationArn.foreach(__v => __obj.updateDynamic("DestinationLocationArn")(__v.asInstanceOf[js.Any]))
-      DestinationNetworkInterfaceArns.foreach(__v =>
-        __obj.updateDynamic("DestinationNetworkInterfaceArns")(__v.asInstanceOf[js.Any])
-      )
-      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
-      ErrorDetail.foreach(__v => __obj.updateDynamic("ErrorDetail")(__v.asInstanceOf[js.Any]))
-      Excludes.foreach(__v => __obj.updateDynamic("Excludes")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Options.foreach(__v => __obj.updateDynamic("Options")(__v.asInstanceOf[js.Any]))
-      Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
-      SourceLocationArn.foreach(__v => __obj.updateDynamic("SourceLocationArn")(__v.asInstanceOf[js.Any]))
-      SourceNetworkInterfaceArns.foreach(__v =>
-        __obj.updateDynamic("SourceNetworkInterfaceArns")(__v.asInstanceOf[js.Any])
-      )
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      TaskArn.foreach(__v => __obj.updateDynamic("TaskArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeTaskResponse]
-    }
-  }
-
   /**
     * The subnet and the security group that DataSync uses to access target EFS file system. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified.
     */
   @js.native
+  @Factory
   trait Ec2Config extends js.Object {
     var SecurityGroupArns: Ec2SecurityGroupArnList
     var SubnetArn: Ec2SubnetArn
-  }
-
-  object Ec2Config {
-    @inline
-    def apply(
-        SecurityGroupArns: Ec2SecurityGroupArnList,
-        SubnetArn: Ec2SubnetArn
-    ): Ec2Config = {
-      val __obj = js.Dynamic.literal(
-        "SecurityGroupArns" -> SecurityGroupArns.asInstanceOf[js.Any],
-        "SubnetArn"         -> SubnetArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[Ec2Config]
-    }
   }
 
   @js.native
@@ -1160,22 +537,10 @@ package datasync {
     * Specifies which files, folders and objects to include or exclude when transferring files from source to destination.
     */
   @js.native
+  @Factory
   trait FilterRule extends js.Object {
     var FilterType: js.UndefOr[FilterType]
     var Value: js.UndefOr[FilterValue]
-  }
-
-  object FilterRule {
-    @inline
-    def apply(
-        FilterType: js.UndefOr[FilterType] = js.undefined,
-        Value: js.UndefOr[FilterValue] = js.undefined
-    ): FilterRule = {
-      val __obj = js.Dynamic.literal()
-      FilterType.foreach(__v => __obj.updateDynamic("FilterType")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[FilterRule]
-    }
   }
 
   @js.native
@@ -1198,226 +563,88 @@ package datasync {
   }
 
   @js.native
+  @Factory
   trait ListAgentsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListAgentsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListAgentsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAgentsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListAgentsResponse extends js.Object {
     var Agents: js.UndefOr[AgentList]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListAgentsResponse {
-    @inline
-    def apply(
-        Agents: js.UndefOr[AgentList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListAgentsResponse = {
-      val __obj = js.Dynamic.literal()
-      Agents.foreach(__v => __obj.updateDynamic("Agents")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListAgentsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListLocationsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListLocationsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListLocationsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListLocationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListLocationsResponse extends js.Object {
     var Locations: js.UndefOr[LocationList]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListLocationsResponse {
-    @inline
-    def apply(
-        Locations: js.UndefOr[LocationList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListLocationsResponse = {
-      val __obj = js.Dynamic.literal()
-      Locations.foreach(__v => __obj.updateDynamic("Locations")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListLocationsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceRequest extends js.Object {
     var ResourceArn: TaggableResourceArn
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListTagsForResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: TaggableResourceArn,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListTagsForResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var Tags: js.UndefOr[TagList]
-  }
-
-  object ListTagsForResourceResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): ListTagsForResourceResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceResponse]
-    }
   }
 
   /**
     * ListTaskExecutions
     */
   @js.native
+  @Factory
   trait ListTaskExecutionsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
     var TaskArn: js.UndefOr[TaskArn]
   }
 
-  object ListTaskExecutionsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        TaskArn: js.UndefOr[TaskArn] = js.undefined
-    ): ListTaskExecutionsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      TaskArn.foreach(__v => __obj.updateDynamic("TaskArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTaskExecutionsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTaskExecutionsResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var TaskExecutions: js.UndefOr[TaskExecutionList]
   }
 
-  object ListTaskExecutionsResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        TaskExecutions: js.UndefOr[TaskExecutionList] = js.undefined
-    ): ListTaskExecutionsResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      TaskExecutions.foreach(__v => __obj.updateDynamic("TaskExecutions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTaskExecutionsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTasksRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListTasksRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListTasksRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTasksRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTasksResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var Tasks: js.UndefOr[TaskList]
-  }
-
-  object ListTasksResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        Tasks: js.UndefOr[TaskList] = js.undefined
-    ): ListTasksResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Tasks.foreach(__v => __obj.updateDynamic("Tasks")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTasksResponse]
-    }
   }
 
   /**
     * Represents a single entry in a list of locations. <code>LocationListEntry</code> returns an array that contains a list of locations when the <a>ListLocations</a> operation is called.
     */
   @js.native
+  @Factory
   trait LocationListEntry extends js.Object {
     var LocationArn: js.UndefOr[LocationArn]
     var LocationUri: js.UndefOr[LocationUri]
-  }
-
-  object LocationListEntry {
-    @inline
-    def apply(
-        LocationArn: js.UndefOr[LocationArn] = js.undefined,
-        LocationUri: js.UndefOr[LocationUri] = js.undefined
-    ): LocationListEntry = {
-      val __obj = js.Dynamic.literal()
-      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
-      LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[LocationListEntry]
-    }
   }
 
   @js.native
@@ -1443,19 +670,9 @@ package datasync {
     * Represents the mount options that are available for DataSync to access an NFS location.
     */
   @js.native
+  @Factory
   trait NfsMountOptions extends js.Object {
     var Version: js.UndefOr[NfsVersion]
-  }
-
-  object NfsMountOptions {
-    @inline
-    def apply(
-        Version: js.UndefOr[NfsVersion] = js.undefined
-    ): NfsMountOptions = {
-      val __obj = js.Dynamic.literal()
-      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NfsMountOptions]
-    }
   }
 
   @js.native
@@ -1473,21 +690,9 @@ package datasync {
     * A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.
     */
   @js.native
+  @Factory
   trait OnPremConfig extends js.Object {
     var AgentArns: AgentArnList
-  }
-
-  object OnPremConfig {
-    @inline
-    def apply(
-        AgentArns: AgentArnList
-    ): OnPremConfig = {
-      val __obj = js.Dynamic.literal(
-        "AgentArns" -> AgentArns.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[OnPremConfig]
-    }
   }
 
   /**
@@ -1495,6 +700,7 @@ package datasync {
     *  A task has a set of default options associated with it. If you don't specify an option in <a>StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a>StartTaskExecution</a>.
     */
   @js.native
+  @Factory
   trait Options extends js.Object {
     var Atime: js.UndefOr[Atime]
     var BytesPerSecond: js.UndefOr[BytesPerSecond]
@@ -1508,39 +714,6 @@ package datasync {
     var TaskQueueing: js.UndefOr[TaskQueueing]
     var Uid: js.UndefOr[Uid]
     var VerifyMode: js.UndefOr[VerifyMode]
-  }
-
-  object Options {
-    @inline
-    def apply(
-        Atime: js.UndefOr[Atime] = js.undefined,
-        BytesPerSecond: js.UndefOr[BytesPerSecond] = js.undefined,
-        Gid: js.UndefOr[Gid] = js.undefined,
-        LogLevel: js.UndefOr[LogLevel] = js.undefined,
-        Mtime: js.UndefOr[Mtime] = js.undefined,
-        OverwriteMode: js.UndefOr[OverwriteMode] = js.undefined,
-        PosixPermissions: js.UndefOr[PosixPermissions] = js.undefined,
-        PreserveDeletedFiles: js.UndefOr[PreserveDeletedFiles] = js.undefined,
-        PreserveDevices: js.UndefOr[PreserveDevices] = js.undefined,
-        TaskQueueing: js.UndefOr[TaskQueueing] = js.undefined,
-        Uid: js.UndefOr[Uid] = js.undefined,
-        VerifyMode: js.UndefOr[VerifyMode] = js.undefined
-    ): Options = {
-      val __obj = js.Dynamic.literal()
-      Atime.foreach(__v => __obj.updateDynamic("Atime")(__v.asInstanceOf[js.Any]))
-      BytesPerSecond.foreach(__v => __obj.updateDynamic("BytesPerSecond")(__v.asInstanceOf[js.Any]))
-      Gid.foreach(__v => __obj.updateDynamic("Gid")(__v.asInstanceOf[js.Any]))
-      LogLevel.foreach(__v => __obj.updateDynamic("LogLevel")(__v.asInstanceOf[js.Any]))
-      Mtime.foreach(__v => __obj.updateDynamic("Mtime")(__v.asInstanceOf[js.Any]))
-      OverwriteMode.foreach(__v => __obj.updateDynamic("OverwriteMode")(__v.asInstanceOf[js.Any]))
-      PosixPermissions.foreach(__v => __obj.updateDynamic("PosixPermissions")(__v.asInstanceOf[js.Any]))
-      PreserveDeletedFiles.foreach(__v => __obj.updateDynamic("PreserveDeletedFiles")(__v.asInstanceOf[js.Any]))
-      PreserveDevices.foreach(__v => __obj.updateDynamic("PreserveDevices")(__v.asInstanceOf[js.Any]))
-      TaskQueueing.foreach(__v => __obj.updateDynamic("TaskQueueing")(__v.asInstanceOf[js.Any]))
-      Uid.foreach(__v => __obj.updateDynamic("Uid")(__v.asInstanceOf[js.Any]))
-      VerifyMode.foreach(__v => __obj.updateDynamic("VerifyMode")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Options]
-    }
   }
 
   @js.native
@@ -1593,6 +766,7 @@ package datasync {
     * The VPC endpoint, subnet and security group that an agent uses to access IP addresses in a VPC (Virtual Private Cloud).
     */
   @js.native
+  @Factory
   trait PrivateLinkConfig extends js.Object {
     var PrivateLinkEndpoint: js.UndefOr[Endpoint]
     var SecurityGroupArns: js.UndefOr[PLSecurityGroupArnList]
@@ -1600,43 +774,14 @@ package datasync {
     var VpcEndpointId: js.UndefOr[VpcEndpointId]
   }
 
-  object PrivateLinkConfig {
-    @inline
-    def apply(
-        PrivateLinkEndpoint: js.UndefOr[Endpoint] = js.undefined,
-        SecurityGroupArns: js.UndefOr[PLSecurityGroupArnList] = js.undefined,
-        SubnetArns: js.UndefOr[PLSubnetArnList] = js.undefined,
-        VpcEndpointId: js.UndefOr[VpcEndpointId] = js.undefined
-    ): PrivateLinkConfig = {
-      val __obj = js.Dynamic.literal()
-      PrivateLinkEndpoint.foreach(__v => __obj.updateDynamic("PrivateLinkEndpoint")(__v.asInstanceOf[js.Any]))
-      SecurityGroupArns.foreach(__v => __obj.updateDynamic("SecurityGroupArns")(__v.asInstanceOf[js.Any]))
-      SubnetArns.foreach(__v => __obj.updateDynamic("SubnetArns")(__v.asInstanceOf[js.Any]))
-      VpcEndpointId.foreach(__v => __obj.updateDynamic("VpcEndpointId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PrivateLinkConfig]
-    }
-  }
-
   /**
     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket.
     *  For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>AWS DataSync User Guide</i>.
     */
   @js.native
+  @Factory
   trait S3Config extends js.Object {
     var BucketAccessRoleArn: IamRoleArn
-  }
-
-  object S3Config {
-    @inline
-    def apply(
-        BucketAccessRoleArn: IamRoleArn
-    ): S3Config = {
-      val __obj = js.Dynamic.literal(
-        "BucketAccessRoleArn" -> BucketAccessRoleArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[S3Config]
-    }
   }
 
   @js.native
@@ -1657,19 +802,9 @@ package datasync {
     * Represents the mount options that are available for DataSync to access an SMB location.
     */
   @js.native
+  @Factory
   trait SmbMountOptions extends js.Object {
     var Version: js.UndefOr[SmbVersion]
-  }
-
-  object SmbMountOptions {
-    @inline
-    def apply(
-        Version: js.UndefOr[SmbVersion] = js.undefined
-    ): SmbMountOptions = {
-      val __obj = js.Dynamic.literal()
-      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SmbMountOptions]
-    }
   }
 
   @js.native
@@ -1683,129 +818,55 @@ package datasync {
   }
 
   @js.native
+  @Factory
   trait StartTaskExecutionRequest extends js.Object {
     var TaskArn: TaskArn
     var Includes: js.UndefOr[FilterList]
     var OverrideOptions: js.UndefOr[Options]
   }
 
-  object StartTaskExecutionRequest {
-    @inline
-    def apply(
-        TaskArn: TaskArn,
-        Includes: js.UndefOr[FilterList] = js.undefined,
-        OverrideOptions: js.UndefOr[Options] = js.undefined
-    ): StartTaskExecutionRequest = {
-      val __obj = js.Dynamic.literal(
-        "TaskArn" -> TaskArn.asInstanceOf[js.Any]
-      )
-
-      Includes.foreach(__v => __obj.updateDynamic("Includes")(__v.asInstanceOf[js.Any]))
-      OverrideOptions.foreach(__v => __obj.updateDynamic("OverrideOptions")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartTaskExecutionRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait StartTaskExecutionResponse extends js.Object {
     var TaskExecutionArn: js.UndefOr[TaskExecutionArn]
-  }
-
-  object StartTaskExecutionResponse {
-    @inline
-    def apply(
-        TaskExecutionArn: js.UndefOr[TaskExecutionArn] = js.undefined
-    ): StartTaskExecutionResponse = {
-      val __obj = js.Dynamic.literal()
-      TaskExecutionArn.foreach(__v => __obj.updateDynamic("TaskExecutionArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[StartTaskExecutionResponse]
-    }
   }
 
   /**
     * Represents a single entry in a list of AWS resource tags. <code>TagListEntry</code> returns an array that contains a list of tasks when the <a>ListTagsForResource</a> operation is called.
     */
   @js.native
+  @Factory
   trait TagListEntry extends js.Object {
     var Key: TagKey
     var Value: js.UndefOr[TagValue]
   }
 
-  object TagListEntry {
-    @inline
-    def apply(
-        Key: TagKey,
-        Value: js.UndefOr[TagValue] = js.undefined
-    ): TagListEntry = {
-      val __obj = js.Dynamic.literal(
-        "Key" -> Key.asInstanceOf[js.Any]
-      )
-
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TagListEntry]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceRequest extends js.Object {
     var ResourceArn: TaggableResourceArn
     var Tags: TagList
   }
 
-  object TagResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: TaggableResourceArn,
-        Tags: TagList
-    ): TagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceResponse extends js.Object {}
-
-  object TagResourceResponse {
-    @inline
-    def apply(
-    ): TagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[TagResourceResponse]
-    }
-  }
 
   /**
     * Represents a single entry in a list of task executions. <code>TaskExecutionListEntry</code> returns an array that contains a list of specific invocations of a task when <a>ListTaskExecutions</a> operation is called.
     */
   @js.native
+  @Factory
   trait TaskExecutionListEntry extends js.Object {
     var Status: js.UndefOr[TaskExecutionStatus]
     var TaskExecutionArn: js.UndefOr[TaskExecutionArn]
-  }
-
-  object TaskExecutionListEntry {
-    @inline
-    def apply(
-        Status: js.UndefOr[TaskExecutionStatus] = js.undefined,
-        TaskExecutionArn: js.UndefOr[TaskExecutionArn] = js.undefined
-    ): TaskExecutionListEntry = {
-      val __obj = js.Dynamic.literal()
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      TaskExecutionArn.foreach(__v => __obj.updateDynamic("TaskExecutionArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TaskExecutionListEntry]
-    }
   }
 
   /**
     * Describes the detailed result of a <code>TaskExecution</code> operation. This result includes the time in milliseconds spent in each phase, the status of the task execution, and the errors encountered.
     */
   @js.native
+  @Factory
   trait TaskExecutionResultDetail extends js.Object {
     var ErrorCode: js.UndefOr[String]
     var ErrorDetail: js.UndefOr[String]
@@ -1816,33 +877,6 @@ package datasync {
     var TransferStatus: js.UndefOr[PhaseStatus]
     var VerifyDuration: js.UndefOr[Duration]
     var VerifyStatus: js.UndefOr[PhaseStatus]
-  }
-
-  object TaskExecutionResultDetail {
-    @inline
-    def apply(
-        ErrorCode: js.UndefOr[String] = js.undefined,
-        ErrorDetail: js.UndefOr[String] = js.undefined,
-        PrepareDuration: js.UndefOr[Duration] = js.undefined,
-        PrepareStatus: js.UndefOr[PhaseStatus] = js.undefined,
-        TotalDuration: js.UndefOr[Duration] = js.undefined,
-        TransferDuration: js.UndefOr[Duration] = js.undefined,
-        TransferStatus: js.UndefOr[PhaseStatus] = js.undefined,
-        VerifyDuration: js.UndefOr[Duration] = js.undefined,
-        VerifyStatus: js.UndefOr[PhaseStatus] = js.undefined
-    ): TaskExecutionResultDetail = {
-      val __obj = js.Dynamic.literal()
-      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
-      ErrorDetail.foreach(__v => __obj.updateDynamic("ErrorDetail")(__v.asInstanceOf[js.Any]))
-      PrepareDuration.foreach(__v => __obj.updateDynamic("PrepareDuration")(__v.asInstanceOf[js.Any]))
-      PrepareStatus.foreach(__v => __obj.updateDynamic("PrepareStatus")(__v.asInstanceOf[js.Any]))
-      TotalDuration.foreach(__v => __obj.updateDynamic("TotalDuration")(__v.asInstanceOf[js.Any]))
-      TransferDuration.foreach(__v => __obj.updateDynamic("TransferDuration")(__v.asInstanceOf[js.Any]))
-      TransferStatus.foreach(__v => __obj.updateDynamic("TransferStatus")(__v.asInstanceOf[js.Any]))
-      VerifyDuration.foreach(__v => __obj.updateDynamic("VerifyDuration")(__v.asInstanceOf[js.Any]))
-      VerifyStatus.foreach(__v => __obj.updateDynamic("VerifyStatus")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TaskExecutionResultDetail]
-    }
   }
 
   @js.native
@@ -1863,25 +897,11 @@ package datasync {
     * Represents a single entry in a list of tasks. <code>TaskListEntry</code> returns an array that contains a list of tasks when the <a>ListTasks</a> operation is called. A task includes the source and destination file systems to sync and the options to use for the tasks.
     */
   @js.native
+  @Factory
   trait TaskListEntry extends js.Object {
     var Name: js.UndefOr[TagValue]
     var Status: js.UndefOr[TaskStatus]
     var TaskArn: js.UndefOr[TaskArn]
-  }
-
-  object TaskListEntry {
-    @inline
-    def apply(
-        Name: js.UndefOr[TagValue] = js.undefined,
-        Status: js.UndefOr[TaskStatus] = js.undefined,
-        TaskArn: js.UndefOr[TaskArn] = js.undefined
-    ): TaskListEntry = {
-      val __obj = js.Dynamic.literal()
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      TaskArn.foreach(__v => __obj.updateDynamic("TaskArn")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TaskListEntry]
-    }
   }
 
   @js.native
@@ -1897,21 +917,9 @@ package datasync {
     * Specifies the schedule you want your task to use for repeated executions. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html|Schedule Expressions for Rules]].
     */
   @js.native
+  @Factory
   trait TaskSchedule extends js.Object {
     var ScheduleExpression: ScheduleExpressionCron
-  }
-
-  object TaskSchedule {
-    @inline
-    def apply(
-        ScheduleExpression: ScheduleExpressionCron
-    ): TaskSchedule = {
-      val __obj = js.Dynamic.literal(
-        "ScheduleExpression" -> ScheduleExpression.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TaskSchedule]
-    }
   }
 
   @js.native
@@ -1938,77 +946,32 @@ package datasync {
   }
 
   @js.native
+  @Factory
   trait UntagResourceRequest extends js.Object {
     var Keys: TagKeyList
     var ResourceArn: TaggableResourceArn
   }
 
-  object UntagResourceRequest {
-    @inline
-    def apply(
-        Keys: TagKeyList,
-        ResourceArn: TaggableResourceArn
-    ): UntagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "Keys"        -> Keys.asInstanceOf[js.Any],
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceResponse extends js.Object {}
 
-  object UntagResourceResponse {
-    @inline
-    def apply(
-    ): UntagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UntagResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateAgentRequest extends js.Object {
     var AgentArn: AgentArn
     var Name: js.UndefOr[TagValue]
   }
 
-  object UpdateAgentRequest {
-    @inline
-    def apply(
-        AgentArn: AgentArn,
-        Name: js.UndefOr[TagValue] = js.undefined
-    ): UpdateAgentRequest = {
-      val __obj = js.Dynamic.literal(
-        "AgentArn" -> AgentArn.asInstanceOf[js.Any]
-      )
-
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateAgentRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateAgentResponse extends js.Object {}
-
-  object UpdateAgentResponse {
-    @inline
-    def apply(
-    ): UpdateAgentResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateAgentResponse]
-    }
-  }
 
   /**
     * UpdateTaskResponse
     */
   @js.native
+  @Factory
   trait UpdateTaskRequest extends js.Object {
     var TaskArn: TaskArn
     var CloudWatchLogGroupArn: js.UndefOr[LogGroupArn]
@@ -2018,41 +981,9 @@ package datasync {
     var Schedule: js.UndefOr[TaskSchedule]
   }
 
-  object UpdateTaskRequest {
-    @inline
-    def apply(
-        TaskArn: TaskArn,
-        CloudWatchLogGroupArn: js.UndefOr[LogGroupArn] = js.undefined,
-        Excludes: js.UndefOr[FilterList] = js.undefined,
-        Name: js.UndefOr[TagValue] = js.undefined,
-        Options: js.UndefOr[Options] = js.undefined,
-        Schedule: js.UndefOr[TaskSchedule] = js.undefined
-    ): UpdateTaskRequest = {
-      val __obj = js.Dynamic.literal(
-        "TaskArn" -> TaskArn.asInstanceOf[js.Any]
-      )
-
-      CloudWatchLogGroupArn.foreach(__v => __obj.updateDynamic("CloudWatchLogGroupArn")(__v.asInstanceOf[js.Any]))
-      Excludes.foreach(__v => __obj.updateDynamic("Excludes")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Options.foreach(__v => __obj.updateDynamic("Options")(__v.asInstanceOf[js.Any]))
-      Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateTaskRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateTaskResponse extends js.Object {}
-
-  object UpdateTaskResponse {
-    @inline
-    def apply(
-    ): UpdateTaskResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UpdateTaskResponse]
-    }
-  }
 
   @js.native
   sealed trait VerifyMode extends js.Any

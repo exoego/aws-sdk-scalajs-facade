@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object personalizeruntime {
   type Arn            = String
@@ -39,6 +40,7 @@ package personalizeruntime {
   }
 
   @js.native
+  @Factory
   trait GetPersonalizedRankingRequest extends js.Object {
     var campaignArn: Arn
     var inputList: InputList
@@ -46,42 +48,14 @@ package personalizeruntime {
     var context: js.UndefOr[Context]
   }
 
-  object GetPersonalizedRankingRequest {
-    @inline
-    def apply(
-        campaignArn: Arn,
-        inputList: InputList,
-        userId: UserID,
-        context: js.UndefOr[Context] = js.undefined
-    ): GetPersonalizedRankingRequest = {
-      val __obj = js.Dynamic.literal(
-        "campaignArn" -> campaignArn.asInstanceOf[js.Any],
-        "inputList"   -> inputList.asInstanceOf[js.Any],
-        "userId"      -> userId.asInstanceOf[js.Any]
-      )
-
-      context.foreach(__v => __obj.updateDynamic("context")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetPersonalizedRankingRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetPersonalizedRankingResponse extends js.Object {
     var personalizedRanking: js.UndefOr[ItemList]
   }
 
-  object GetPersonalizedRankingResponse {
-    @inline
-    def apply(
-        personalizedRanking: js.UndefOr[ItemList] = js.undefined
-    ): GetPersonalizedRankingResponse = {
-      val __obj = js.Dynamic.literal()
-      personalizedRanking.foreach(__v => __obj.updateDynamic("personalizedRanking")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetPersonalizedRankingResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRecommendationsRequest extends js.Object {
     var campaignArn: Arn
     var context: js.UndefOr[Context]
@@ -90,41 +64,10 @@ package personalizeruntime {
     var userId: js.UndefOr[UserID]
   }
 
-  object GetRecommendationsRequest {
-    @inline
-    def apply(
-        campaignArn: Arn,
-        context: js.UndefOr[Context] = js.undefined,
-        itemId: js.UndefOr[ItemID] = js.undefined,
-        numResults: js.UndefOr[NumResults] = js.undefined,
-        userId: js.UndefOr[UserID] = js.undefined
-    ): GetRecommendationsRequest = {
-      val __obj = js.Dynamic.literal(
-        "campaignArn" -> campaignArn.asInstanceOf[js.Any]
-      )
-
-      context.foreach(__v => __obj.updateDynamic("context")(__v.asInstanceOf[js.Any]))
-      itemId.foreach(__v => __obj.updateDynamic("itemId")(__v.asInstanceOf[js.Any]))
-      numResults.foreach(__v => __obj.updateDynamic("numResults")(__v.asInstanceOf[js.Any]))
-      userId.foreach(__v => __obj.updateDynamic("userId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRecommendationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetRecommendationsResponse extends js.Object {
     var itemList: js.UndefOr[ItemList]
-  }
-
-  object GetRecommendationsResponse {
-    @inline
-    def apply(
-        itemList: js.UndefOr[ItemList] = js.undefined
-    ): GetRecommendationsResponse = {
-      val __obj = js.Dynamic.literal()
-      itemList.foreach(__v => __obj.updateDynamic("itemList")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetRecommendationsResponse]
-    }
   }
 
   /**
@@ -132,18 +75,8 @@ package personalizeruntime {
     *  The and APIs return a list of <code>PredictedItem</code>s.
     */
   @js.native
+  @Factory
   trait PredictedItem extends js.Object {
     var itemId: js.UndefOr[ItemID]
-  }
-
-  object PredictedItem {
-    @inline
-    def apply(
-        itemId: js.UndefOr[ItemID] = js.undefined
-    ): PredictedItem = {
-      val __obj = js.Dynamic.literal()
-      itemId.foreach(__v => __obj.updateDynamic("itemId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PredictedItem]
-    }
   }
 }

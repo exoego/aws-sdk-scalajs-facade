@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object route53resolver {
   type AccountId                = String
@@ -148,83 +149,34 @@ package route53resolver {
   }
 
   @js.native
+  @Factory
   trait AssociateResolverEndpointIpAddressRequest extends js.Object {
     var IpAddress: IpAddressUpdate
     var ResolverEndpointId: ResourceId
   }
 
-  object AssociateResolverEndpointIpAddressRequest {
-    @inline
-    def apply(
-        IpAddress: IpAddressUpdate,
-        ResolverEndpointId: ResourceId
-    ): AssociateResolverEndpointIpAddressRequest = {
-      val __obj = js.Dynamic.literal(
-        "IpAddress"          -> IpAddress.asInstanceOf[js.Any],
-        "ResolverEndpointId" -> ResolverEndpointId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[AssociateResolverEndpointIpAddressRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateResolverEndpointIpAddressResponse extends js.Object {
     var ResolverEndpoint: js.UndefOr[ResolverEndpoint]
   }
 
-  object AssociateResolverEndpointIpAddressResponse {
-    @inline
-    def apply(
-        ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined
-    ): AssociateResolverEndpointIpAddressResponse = {
-      val __obj = js.Dynamic.literal()
-      ResolverEndpoint.foreach(__v => __obj.updateDynamic("ResolverEndpoint")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AssociateResolverEndpointIpAddressResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateResolverRuleRequest extends js.Object {
     var ResolverRuleId: ResourceId
     var VPCId: ResourceId
     var Name: js.UndefOr[Name]
   }
 
-  object AssociateResolverRuleRequest {
-    @inline
-    def apply(
-        ResolverRuleId: ResourceId,
-        VPCId: ResourceId,
-        Name: js.UndefOr[Name] = js.undefined
-    ): AssociateResolverRuleRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResolverRuleId" -> ResolverRuleId.asInstanceOf[js.Any],
-        "VPCId"          -> VPCId.asInstanceOf[js.Any]
-      )
-
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AssociateResolverRuleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateResolverRuleResponse extends js.Object {
     var ResolverRuleAssociation: js.UndefOr[ResolverRuleAssociation]
   }
 
-  object AssociateResolverRuleResponse {
-    @inline
-    def apply(
-        ResolverRuleAssociation: js.UndefOr[ResolverRuleAssociation] = js.undefined
-    ): AssociateResolverRuleResponse = {
-      val __obj = js.Dynamic.literal()
-      ResolverRuleAssociation.foreach(__v => __obj.updateDynamic("ResolverRuleAssociation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AssociateResolverRuleResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateResolverEndpointRequest extends js.Object {
     var CreatorRequestId: CreatorRequestId
     var Direction: ResolverEndpointDirection
@@ -234,46 +186,14 @@ package route53resolver {
     var Tags: js.UndefOr[TagList]
   }
 
-  object CreateResolverEndpointRequest {
-    @inline
-    def apply(
-        CreatorRequestId: CreatorRequestId,
-        Direction: ResolverEndpointDirection,
-        IpAddresses: IpAddressesRequest,
-        SecurityGroupIds: SecurityGroupIds,
-        Name: js.UndefOr[Name] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): CreateResolverEndpointRequest = {
-      val __obj = js.Dynamic.literal(
-        "CreatorRequestId" -> CreatorRequestId.asInstanceOf[js.Any],
-        "Direction"        -> Direction.asInstanceOf[js.Any],
-        "IpAddresses"      -> IpAddresses.asInstanceOf[js.Any],
-        "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any]
-      )
-
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateResolverEndpointRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateResolverEndpointResponse extends js.Object {
     var ResolverEndpoint: js.UndefOr[ResolverEndpoint]
   }
 
-  object CreateResolverEndpointResponse {
-    @inline
-    def apply(
-        ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined
-    ): CreateResolverEndpointResponse = {
-      val __obj = js.Dynamic.literal()
-      ResolverEndpoint.foreach(__v => __obj.updateDynamic("ResolverEndpoint")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateResolverEndpointResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateResolverRuleRequest extends js.Object {
     var CreatorRequestId: CreatorRequestId
     var DomainName: DomainName
@@ -284,375 +204,135 @@ package route53resolver {
     var TargetIps: js.UndefOr[TargetList]
   }
 
-  object CreateResolverRuleRequest {
-    @inline
-    def apply(
-        CreatorRequestId: CreatorRequestId,
-        DomainName: DomainName,
-        RuleType: RuleTypeOption,
-        Name: js.UndefOr[Name] = js.undefined,
-        ResolverEndpointId: js.UndefOr[ResourceId] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined,
-        TargetIps: js.UndefOr[TargetList] = js.undefined
-    ): CreateResolverRuleRequest = {
-      val __obj = js.Dynamic.literal(
-        "CreatorRequestId" -> CreatorRequestId.asInstanceOf[js.Any],
-        "DomainName"       -> DomainName.asInstanceOf[js.Any],
-        "RuleType"         -> RuleType.asInstanceOf[js.Any]
-      )
-
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      ResolverEndpointId.foreach(__v => __obj.updateDynamic("ResolverEndpointId")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      TargetIps.foreach(__v => __obj.updateDynamic("TargetIps")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateResolverRuleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateResolverRuleResponse extends js.Object {
     var ResolverRule: js.UndefOr[ResolverRule]
   }
 
-  object CreateResolverRuleResponse {
-    @inline
-    def apply(
-        ResolverRule: js.UndefOr[ResolverRule] = js.undefined
-    ): CreateResolverRuleResponse = {
-      val __obj = js.Dynamic.literal()
-      ResolverRule.foreach(__v => __obj.updateDynamic("ResolverRule")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateResolverRuleResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteResolverEndpointRequest extends js.Object {
     var ResolverEndpointId: ResourceId
   }
 
-  object DeleteResolverEndpointRequest {
-    @inline
-    def apply(
-        ResolverEndpointId: ResourceId
-    ): DeleteResolverEndpointRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResolverEndpointId" -> ResolverEndpointId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteResolverEndpointRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteResolverEndpointResponse extends js.Object {
     var ResolverEndpoint: js.UndefOr[ResolverEndpoint]
   }
 
-  object DeleteResolverEndpointResponse {
-    @inline
-    def apply(
-        ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined
-    ): DeleteResolverEndpointResponse = {
-      val __obj = js.Dynamic.literal()
-      ResolverEndpoint.foreach(__v => __obj.updateDynamic("ResolverEndpoint")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteResolverEndpointResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteResolverRuleRequest extends js.Object {
     var ResolverRuleId: ResourceId
   }
 
-  object DeleteResolverRuleRequest {
-    @inline
-    def apply(
-        ResolverRuleId: ResourceId
-    ): DeleteResolverRuleRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResolverRuleId" -> ResolverRuleId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DeleteResolverRuleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteResolverRuleResponse extends js.Object {
     var ResolverRule: js.UndefOr[ResolverRule]
   }
 
-  object DeleteResolverRuleResponse {
-    @inline
-    def apply(
-        ResolverRule: js.UndefOr[ResolverRule] = js.undefined
-    ): DeleteResolverRuleResponse = {
-      val __obj = js.Dynamic.literal()
-      ResolverRule.foreach(__v => __obj.updateDynamic("ResolverRule")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteResolverRuleResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateResolverEndpointIpAddressRequest extends js.Object {
     var IpAddress: IpAddressUpdate
     var ResolverEndpointId: ResourceId
   }
 
-  object DisassociateResolverEndpointIpAddressRequest {
-    @inline
-    def apply(
-        IpAddress: IpAddressUpdate,
-        ResolverEndpointId: ResourceId
-    ): DisassociateResolverEndpointIpAddressRequest = {
-      val __obj = js.Dynamic.literal(
-        "IpAddress"          -> IpAddress.asInstanceOf[js.Any],
-        "ResolverEndpointId" -> ResolverEndpointId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisassociateResolverEndpointIpAddressRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateResolverEndpointIpAddressResponse extends js.Object {
     var ResolverEndpoint: js.UndefOr[ResolverEndpoint]
   }
 
-  object DisassociateResolverEndpointIpAddressResponse {
-    @inline
-    def apply(
-        ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined
-    ): DisassociateResolverEndpointIpAddressResponse = {
-      val __obj = js.Dynamic.literal()
-      ResolverEndpoint.foreach(__v => __obj.updateDynamic("ResolverEndpoint")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DisassociateResolverEndpointIpAddressResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateResolverRuleRequest extends js.Object {
     var ResolverRuleId: ResourceId
     var VPCId: ResourceId
   }
 
-  object DisassociateResolverRuleRequest {
-    @inline
-    def apply(
-        ResolverRuleId: ResourceId,
-        VPCId: ResourceId
-    ): DisassociateResolverRuleRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResolverRuleId" -> ResolverRuleId.asInstanceOf[js.Any],
-        "VPCId"          -> VPCId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DisassociateResolverRuleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateResolverRuleResponse extends js.Object {
     var ResolverRuleAssociation: js.UndefOr[ResolverRuleAssociation]
-  }
-
-  object DisassociateResolverRuleResponse {
-    @inline
-    def apply(
-        ResolverRuleAssociation: js.UndefOr[ResolverRuleAssociation] = js.undefined
-    ): DisassociateResolverRuleResponse = {
-      val __obj = js.Dynamic.literal()
-      ResolverRuleAssociation.foreach(__v => __obj.updateDynamic("ResolverRuleAssociation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DisassociateResolverRuleResponse]
-    }
   }
 
   /**
     * For <code>List</code> operations, an optional specification to return a subset of objects, such as resolver endpoints or resolver rules.
     */
   @js.native
+  @Factory
   trait Filter extends js.Object {
     var Name: js.UndefOr[FilterName]
     var Values: js.UndefOr[FilterValues]
   }
 
-  object Filter {
-    @inline
-    def apply(
-        Name: js.UndefOr[FilterName] = js.undefined,
-        Values: js.UndefOr[FilterValues] = js.undefined
-    ): Filter = {
-      val __obj = js.Dynamic.literal()
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Filter]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetResolverEndpointRequest extends js.Object {
     var ResolverEndpointId: ResourceId
   }
 
-  object GetResolverEndpointRequest {
-    @inline
-    def apply(
-        ResolverEndpointId: ResourceId
-    ): GetResolverEndpointRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResolverEndpointId" -> ResolverEndpointId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetResolverEndpointRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetResolverEndpointResponse extends js.Object {
     var ResolverEndpoint: js.UndefOr[ResolverEndpoint]
   }
 
-  object GetResolverEndpointResponse {
-    @inline
-    def apply(
-        ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined
-    ): GetResolverEndpointResponse = {
-      val __obj = js.Dynamic.literal()
-      ResolverEndpoint.foreach(__v => __obj.updateDynamic("ResolverEndpoint")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetResolverEndpointResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetResolverRuleAssociationRequest extends js.Object {
     var ResolverRuleAssociationId: ResourceId
   }
 
-  object GetResolverRuleAssociationRequest {
-    @inline
-    def apply(
-        ResolverRuleAssociationId: ResourceId
-    ): GetResolverRuleAssociationRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResolverRuleAssociationId" -> ResolverRuleAssociationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetResolverRuleAssociationRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetResolverRuleAssociationResponse extends js.Object {
     var ResolverRuleAssociation: js.UndefOr[ResolverRuleAssociation]
   }
 
-  object GetResolverRuleAssociationResponse {
-    @inline
-    def apply(
-        ResolverRuleAssociation: js.UndefOr[ResolverRuleAssociation] = js.undefined
-    ): GetResolverRuleAssociationResponse = {
-      val __obj = js.Dynamic.literal()
-      ResolverRuleAssociation.foreach(__v => __obj.updateDynamic("ResolverRuleAssociation")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetResolverRuleAssociationResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetResolverRulePolicyRequest extends js.Object {
     var Arn: Arn
   }
 
-  object GetResolverRulePolicyRequest {
-    @inline
-    def apply(
-        Arn: Arn
-    ): GetResolverRulePolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "Arn" -> Arn.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetResolverRulePolicyRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetResolverRulePolicyResponse extends js.Object {
     var ResolverRulePolicy: js.UndefOr[ResolverRulePolicy]
   }
 
-  object GetResolverRulePolicyResponse {
-    @inline
-    def apply(
-        ResolverRulePolicy: js.UndefOr[ResolverRulePolicy] = js.undefined
-    ): GetResolverRulePolicyResponse = {
-      val __obj = js.Dynamic.literal()
-      ResolverRulePolicy.foreach(__v => __obj.updateDynamic("ResolverRulePolicy")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetResolverRulePolicyResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetResolverRuleRequest extends js.Object {
     var ResolverRuleId: ResourceId
   }
 
-  object GetResolverRuleRequest {
-    @inline
-    def apply(
-        ResolverRuleId: ResourceId
-    ): GetResolverRuleRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResolverRuleId" -> ResolverRuleId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[GetResolverRuleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait GetResolverRuleResponse extends js.Object {
     var ResolverRule: js.UndefOr[ResolverRule]
-  }
-
-  object GetResolverRuleResponse {
-    @inline
-    def apply(
-        ResolverRule: js.UndefOr[ResolverRule] = js.undefined
-    ): GetResolverRuleResponse = {
-      val __obj = js.Dynamic.literal()
-      ResolverRule.foreach(__v => __obj.updateDynamic("ResolverRule")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[GetResolverRuleResponse]
-    }
   }
 
   /**
     * In an <a>CreateResolverEndpoint</a> request, a subnet and IP address that you want to use for DNS queries.
     */
   @js.native
+  @Factory
   trait IpAddressRequest extends js.Object {
     var SubnetId: SubnetId
     var Ip: js.UndefOr[Ip]
-  }
-
-  object IpAddressRequest {
-    @inline
-    def apply(
-        SubnetId: SubnetId,
-        Ip: js.UndefOr[Ip] = js.undefined
-    ): IpAddressRequest = {
-      val __obj = js.Dynamic.literal(
-        "SubnetId" -> SubnetId.asInstanceOf[js.Any]
-      )
-
-      Ip.foreach(__v => __obj.updateDynamic("Ip")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[IpAddressRequest]
-    }
   }
 
   /**
     * In the response to a <a>GetResolverEndpoint</a> request, information about the IP addresses that the resolver endpoint uses for DNS queries.
     */
   @js.native
+  @Factory
   trait IpAddressResponse extends js.Object {
     var CreationTime: js.UndefOr[Rfc3339TimeString]
     var Ip: js.UndefOr[Ip]
@@ -661,29 +341,6 @@ package route53resolver {
     var Status: js.UndefOr[IpAddressStatus]
     var StatusMessage: js.UndefOr[StatusMessage]
     var SubnetId: js.UndefOr[SubnetId]
-  }
-
-  object IpAddressResponse {
-    @inline
-    def apply(
-        CreationTime: js.UndefOr[Rfc3339TimeString] = js.undefined,
-        Ip: js.UndefOr[Ip] = js.undefined,
-        IpId: js.UndefOr[ResourceId] = js.undefined,
-        ModificationTime: js.UndefOr[Rfc3339TimeString] = js.undefined,
-        Status: js.UndefOr[IpAddressStatus] = js.undefined,
-        StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
-        SubnetId: js.UndefOr[SubnetId] = js.undefined
-    ): IpAddressResponse = {
-      val __obj = js.Dynamic.literal()
-      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
-      Ip.foreach(__v => __obj.updateDynamic("Ip")(__v.asInstanceOf[js.Any]))
-      IpId.foreach(__v => __obj.updateDynamic("IpId")(__v.asInstanceOf[js.Any]))
-      ModificationTime.foreach(__v => __obj.updateDynamic("ModificationTime")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
-      SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[IpAddressResponse]
-    }
   }
 
   @js.native
@@ -720,292 +377,113 @@ package route53resolver {
     * In an <a>UpdateResolverEndpoint</a> request, information about an IP address to update.
     */
   @js.native
+  @Factory
   trait IpAddressUpdate extends js.Object {
     var Ip: js.UndefOr[Ip]
     var IpId: js.UndefOr[ResourceId]
     var SubnetId: js.UndefOr[SubnetId]
   }
 
-  object IpAddressUpdate {
-    @inline
-    def apply(
-        Ip: js.UndefOr[Ip] = js.undefined,
-        IpId: js.UndefOr[ResourceId] = js.undefined,
-        SubnetId: js.UndefOr[SubnetId] = js.undefined
-    ): IpAddressUpdate = {
-      val __obj = js.Dynamic.literal()
-      Ip.foreach(__v => __obj.updateDynamic("Ip")(__v.asInstanceOf[js.Any]))
-      IpId.foreach(__v => __obj.updateDynamic("IpId")(__v.asInstanceOf[js.Any]))
-      SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[IpAddressUpdate]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListResolverEndpointIpAddressesRequest extends js.Object {
     var ResolverEndpointId: ResourceId
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListResolverEndpointIpAddressesRequest {
-    @inline
-    def apply(
-        ResolverEndpointId: ResourceId,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListResolverEndpointIpAddressesRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResolverEndpointId" -> ResolverEndpointId.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListResolverEndpointIpAddressesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListResolverEndpointIpAddressesResponse extends js.Object {
     var IpAddresses: js.UndefOr[IpAddressesResponse]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListResolverEndpointIpAddressesResponse {
-    @inline
-    def apply(
-        IpAddresses: js.UndefOr[IpAddressesResponse] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListResolverEndpointIpAddressesResponse = {
-      val __obj = js.Dynamic.literal()
-      IpAddresses.foreach(__v => __obj.updateDynamic("IpAddresses")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListResolverEndpointIpAddressesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListResolverEndpointsRequest extends js.Object {
     var Filters: js.UndefOr[Filters]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListResolverEndpointsRequest {
-    @inline
-    def apply(
-        Filters: js.UndefOr[Filters] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListResolverEndpointsRequest = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListResolverEndpointsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListResolverEndpointsResponse extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
     var ResolverEndpoints: js.UndefOr[ResolverEndpoints]
   }
 
-  object ListResolverEndpointsResponse {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        ResolverEndpoints: js.UndefOr[ResolverEndpoints] = js.undefined
-    ): ListResolverEndpointsResponse = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ResolverEndpoints.foreach(__v => __obj.updateDynamic("ResolverEndpoints")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListResolverEndpointsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListResolverRuleAssociationsRequest extends js.Object {
     var Filters: js.UndefOr[Filters]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListResolverRuleAssociationsRequest {
-    @inline
-    def apply(
-        Filters: js.UndefOr[Filters] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListResolverRuleAssociationsRequest = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListResolverRuleAssociationsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListResolverRuleAssociationsResponse extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
     var ResolverRuleAssociations: js.UndefOr[ResolverRuleAssociations]
   }
 
-  object ListResolverRuleAssociationsResponse {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        ResolverRuleAssociations: js.UndefOr[ResolverRuleAssociations] = js.undefined
-    ): ListResolverRuleAssociationsResponse = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ResolverRuleAssociations.foreach(__v => __obj.updateDynamic("ResolverRuleAssociations")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListResolverRuleAssociationsResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListResolverRulesRequest extends js.Object {
     var Filters: js.UndefOr[Filters]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListResolverRulesRequest {
-    @inline
-    def apply(
-        Filters: js.UndefOr[Filters] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListResolverRulesRequest = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListResolverRulesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListResolverRulesResponse extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
     var ResolverRules: js.UndefOr[ResolverRules]
   }
 
-  object ListResolverRulesResponse {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        ResolverRules: js.UndefOr[ResolverRules] = js.undefined
-    ): ListResolverRulesResponse = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ResolverRules.foreach(__v => __obj.updateDynamic("ResolverRules")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListResolverRulesResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceRequest extends js.Object {
     var ResourceArn: Arn
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
-  object ListTagsForResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: Arn,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
-    ): ListTagsForResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListTagsForResourceResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var Tags: js.UndefOr[TagList]
   }
 
-  object ListTagsForResourceResponse {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
-    ): ListTagsForResourceResponse = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTagsForResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutResolverRulePolicyRequest extends js.Object {
     var Arn: Arn
     var ResolverRulePolicy: ResolverRulePolicy
-  }
-
-  object PutResolverRulePolicyRequest {
-    @inline
-    def apply(
-        Arn: Arn,
-        ResolverRulePolicy: ResolverRulePolicy
-    ): PutResolverRulePolicyRequest = {
-      val __obj = js.Dynamic.literal(
-        "Arn"                -> Arn.asInstanceOf[js.Any],
-        "ResolverRulePolicy" -> ResolverRulePolicy.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[PutResolverRulePolicyRequest]
-    }
   }
 
   /**
     * The response to a <code>PutResolverRulePolicy</code> request.
     */
   @js.native
+  @Factory
   trait PutResolverRulePolicyResponse extends js.Object {
     var ReturnValue: js.UndefOr[Boolean]
-  }
-
-  object PutResolverRulePolicyResponse {
-    @inline
-    def apply(
-        ReturnValue: js.UndefOr[Boolean] = js.undefined
-    ): PutResolverRulePolicyResponse = {
-      val __obj = js.Dynamic.literal()
-      ReturnValue.foreach(__v => __obj.updateDynamic("ReturnValue")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutResolverRulePolicyResponse]
-    }
   }
 
   /**
     * In the response to a <a>CreateResolverEndpoint</a>, <a>DeleteResolverEndpoint</a>, <a>GetResolverEndpoint</a>, <a>ListResolverEndpoints</a>, or <a>UpdateResolverEndpoint</a> request, a complex type that contains settings for an existing inbound or outbound resolver endpoint.
     */
   @js.native
+  @Factory
   trait ResolverEndpoint extends js.Object {
     var Arn: js.UndefOr[Arn]
     var CreationTime: js.UndefOr[Rfc3339TimeString]
@@ -1019,39 +497,6 @@ package route53resolver {
     var SecurityGroupIds: js.UndefOr[SecurityGroupIds]
     var Status: js.UndefOr[ResolverEndpointStatus]
     var StatusMessage: js.UndefOr[StatusMessage]
-  }
-
-  object ResolverEndpoint {
-    @inline
-    def apply(
-        Arn: js.UndefOr[Arn] = js.undefined,
-        CreationTime: js.UndefOr[Rfc3339TimeString] = js.undefined,
-        CreatorRequestId: js.UndefOr[CreatorRequestId] = js.undefined,
-        Direction: js.UndefOr[ResolverEndpointDirection] = js.undefined,
-        HostVPCId: js.UndefOr[ResourceId] = js.undefined,
-        Id: js.UndefOr[ResourceId] = js.undefined,
-        IpAddressCount: js.UndefOr[IpAddressCount] = js.undefined,
-        ModificationTime: js.UndefOr[Rfc3339TimeString] = js.undefined,
-        Name: js.UndefOr[Name] = js.undefined,
-        SecurityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
-        Status: js.UndefOr[ResolverEndpointStatus] = js.undefined,
-        StatusMessage: js.UndefOr[StatusMessage] = js.undefined
-    ): ResolverEndpoint = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
-      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
-      Direction.foreach(__v => __obj.updateDynamic("Direction")(__v.asInstanceOf[js.Any]))
-      HostVPCId.foreach(__v => __obj.updateDynamic("HostVPCId")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      IpAddressCount.foreach(__v => __obj.updateDynamic("IpAddressCount")(__v.asInstanceOf[js.Any]))
-      ModificationTime.foreach(__v => __obj.updateDynamic("ModificationTime")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ResolverEndpoint]
-    }
   }
 
   @js.native
@@ -1080,6 +525,7 @@ package route53resolver {
     * For queries that originate in your VPC, detailed information about a resolver rule, which specifies how to route DNS queries out of the VPC. The <code>ResolverRule</code> parameter appears in the response to a <a>CreateResolverRule</a>, <a>DeleteResolverRule</a>, <a>GetResolverRule</a>, <a>ListResolverRules</a>, or <a>UpdateResolverRule</a> request.
     */
   @js.native
+  @Factory
   trait ResolverRule extends js.Object {
     var Arn: js.UndefOr[Arn]
     var CreatorRequestId: js.UndefOr[CreatorRequestId]
@@ -1095,43 +541,11 @@ package route53resolver {
     var TargetIps: js.UndefOr[TargetList]
   }
 
-  object ResolverRule {
-    @inline
-    def apply(
-        Arn: js.UndefOr[Arn] = js.undefined,
-        CreatorRequestId: js.UndefOr[CreatorRequestId] = js.undefined,
-        DomainName: js.UndefOr[DomainName] = js.undefined,
-        Id: js.UndefOr[ResourceId] = js.undefined,
-        Name: js.UndefOr[Name] = js.undefined,
-        OwnerId: js.UndefOr[AccountId] = js.undefined,
-        ResolverEndpointId: js.UndefOr[ResourceId] = js.undefined,
-        RuleType: js.UndefOr[RuleTypeOption] = js.undefined,
-        ShareStatus: js.UndefOr[ShareStatus] = js.undefined,
-        Status: js.UndefOr[ResolverRuleStatus] = js.undefined,
-        StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
-        TargetIps: js.UndefOr[TargetList] = js.undefined
-    ): ResolverRule = {
-      val __obj = js.Dynamic.literal()
-      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
-      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
-      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
-      ResolverEndpointId.foreach(__v => __obj.updateDynamic("ResolverEndpointId")(__v.asInstanceOf[js.Any]))
-      RuleType.foreach(__v => __obj.updateDynamic("RuleType")(__v.asInstanceOf[js.Any]))
-      ShareStatus.foreach(__v => __obj.updateDynamic("ShareStatus")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
-      TargetIps.foreach(__v => __obj.updateDynamic("TargetIps")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ResolverRule]
-    }
-  }
-
   /**
     * In the response to an <a>AssociateResolverRule</a>, <a>DisassociateResolverRule</a>, or <a>ListResolverRuleAssociations</a> request, information about an association between a resolver rule and a VPC.
     */
   @js.native
+  @Factory
   trait ResolverRuleAssociation extends js.Object {
     var Id: js.UndefOr[ResourceId]
     var Name: js.UndefOr[Name]
@@ -1139,27 +553,6 @@ package route53resolver {
     var Status: js.UndefOr[ResolverRuleAssociationStatus]
     var StatusMessage: js.UndefOr[StatusMessage]
     var VPCId: js.UndefOr[ResourceId]
-  }
-
-  object ResolverRuleAssociation {
-    @inline
-    def apply(
-        Id: js.UndefOr[ResourceId] = js.undefined,
-        Name: js.UndefOr[Name] = js.undefined,
-        ResolverRuleId: js.UndefOr[ResourceId] = js.undefined,
-        Status: js.UndefOr[ResolverRuleAssociationStatus] = js.undefined,
-        StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
-        VPCId: js.UndefOr[ResourceId] = js.undefined
-    ): ResolverRuleAssociation = {
-      val __obj = js.Dynamic.literal()
-      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      ResolverRuleId.foreach(__v => __obj.updateDynamic("ResolverRuleId")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
-      VPCId.foreach(__v => __obj.updateDynamic("VPCId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ResolverRuleAssociation]
-    }
   }
 
   @js.native
@@ -1178,25 +571,11 @@ package route53resolver {
     * In an <a>UpdateResolverRule</a> request, information about the changes that you want to make.
     */
   @js.native
+  @Factory
   trait ResolverRuleConfig extends js.Object {
     var Name: js.UndefOr[Name]
     var ResolverEndpointId: js.UndefOr[ResourceId]
     var TargetIps: js.UndefOr[TargetList]
-  }
-
-  object ResolverRuleConfig {
-    @inline
-    def apply(
-        Name: js.UndefOr[Name] = js.undefined,
-        ResolverEndpointId: js.UndefOr[ResourceId] = js.undefined,
-        TargetIps: js.UndefOr[TargetList] = js.undefined
-    ): ResolverRuleConfig = {
-      val __obj = js.Dynamic.literal()
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      ResolverEndpointId.foreach(__v => __obj.updateDynamic("ResolverEndpointId")(__v.asInstanceOf[js.Any]))
-      TargetIps.foreach(__v => __obj.updateDynamic("TargetIps")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ResolverRuleConfig]
-    }
   }
 
   @js.native
@@ -1234,187 +613,67 @@ package route53resolver {
     * One tag that you want to add to the specified resource. A tag consists of a <code>Key</code> (a name for the tag) and a <code>Value</code>.
     */
   @js.native
+  @Factory
   trait Tag extends js.Object {
     var Key: js.UndefOr[TagKey]
     var Value: js.UndefOr[TagValue]
   }
 
-  object Tag {
-    @inline
-    def apply(
-        Key: js.UndefOr[TagKey] = js.undefined,
-        Value: js.UndefOr[TagValue] = js.undefined
-    ): Tag = {
-      val __obj = js.Dynamic.literal()
-      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Tag]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceRequest extends js.Object {
     var ResourceArn: Arn
     var Tags: TagList
   }
 
-  object TagResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: Arn,
-        Tags: TagList
-    ): TagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[TagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait TagResourceResponse extends js.Object {}
-
-  object TagResourceResponse {
-    @inline
-    def apply(
-    ): TagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[TagResourceResponse]
-    }
-  }
 
   /**
     * In a <a>CreateResolverRule</a> request, an array of the IPs that you want to forward DNS queries to.
     */
   @js.native
+  @Factory
   trait TargetAddress extends js.Object {
     var Ip: Ip
     var Port: js.UndefOr[Port]
   }
 
-  object TargetAddress {
-    @inline
-    def apply(
-        Ip: Ip,
-        Port: js.UndefOr[Port] = js.undefined
-    ): TargetAddress = {
-      val __obj = js.Dynamic.literal(
-        "Ip" -> Ip.asInstanceOf[js.Any]
-      )
-
-      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TargetAddress]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceRequest extends js.Object {
     var ResourceArn: Arn
     var TagKeys: TagKeyList
   }
 
-  object UntagResourceRequest {
-    @inline
-    def apply(
-        ResourceArn: Arn,
-        TagKeys: TagKeyList
-    ): UntagResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UntagResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UntagResourceResponse extends js.Object {}
 
-  object UntagResourceResponse {
-    @inline
-    def apply(
-    ): UntagResourceResponse = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[UntagResourceResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateResolverEndpointRequest extends js.Object {
     var ResolverEndpointId: ResourceId
     var Name: js.UndefOr[Name]
   }
 
-  object UpdateResolverEndpointRequest {
-    @inline
-    def apply(
-        ResolverEndpointId: ResourceId,
-        Name: js.UndefOr[Name] = js.undefined
-    ): UpdateResolverEndpointRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResolverEndpointId" -> ResolverEndpointId.asInstanceOf[js.Any]
-      )
-
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateResolverEndpointRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateResolverEndpointResponse extends js.Object {
     var ResolverEndpoint: js.UndefOr[ResolverEndpoint]
   }
 
-  object UpdateResolverEndpointResponse {
-    @inline
-    def apply(
-        ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined
-    ): UpdateResolverEndpointResponse = {
-      val __obj = js.Dynamic.literal()
-      ResolverEndpoint.foreach(__v => __obj.updateDynamic("ResolverEndpoint")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateResolverEndpointResponse]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateResolverRuleRequest extends js.Object {
     var Config: ResolverRuleConfig
     var ResolverRuleId: ResourceId
   }
 
-  object UpdateResolverRuleRequest {
-    @inline
-    def apply(
-        Config: ResolverRuleConfig,
-        ResolverRuleId: ResourceId
-    ): UpdateResolverRuleRequest = {
-      val __obj = js.Dynamic.literal(
-        "Config"         -> Config.asInstanceOf[js.Any],
-        "ResolverRuleId" -> ResolverRuleId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[UpdateResolverRuleRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait UpdateResolverRuleResponse extends js.Object {
     var ResolverRule: js.UndefOr[ResolverRule]
-  }
-
-  object UpdateResolverRuleResponse {
-    @inline
-    def apply(
-        ResolverRule: js.UndefOr[ResolverRule] = js.undefined
-    ): UpdateResolverRuleResponse = {
-      val __obj = js.Dynamic.literal()
-      ResolverRule.foreach(__v => __obj.updateDynamic("ResolverRule")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[UpdateResolverRuleResponse]
-    }
   }
 }

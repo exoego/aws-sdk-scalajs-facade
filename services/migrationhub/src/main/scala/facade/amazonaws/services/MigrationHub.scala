@@ -5,6 +5,7 @@ import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
 import facade.amazonaws._
+import net.exoego.scalajs.types.util.Factory
 
 package object migrationhub {
   type ApplicationId                   = String
@@ -128,25 +129,11 @@ package migrationhub {
     * The state of an application discovered through Migration Hub import, the AWS Agentless Discovery Connector, or the AWS Application Discovery Agent.
     */
   @js.native
+  @Factory
   trait ApplicationState extends js.Object {
     var ApplicationId: js.UndefOr[ApplicationId]
     var ApplicationStatus: js.UndefOr[ApplicationStatus]
     var LastUpdatedTime: js.UndefOr[UpdateDateTime]
-  }
-
-  object ApplicationState {
-    @inline
-    def apply(
-        ApplicationId: js.UndefOr[ApplicationId] = js.undefined,
-        ApplicationStatus: js.UndefOr[ApplicationStatus] = js.undefined,
-        LastUpdatedTime: js.UndefOr[UpdateDateTime] = js.undefined
-    ): ApplicationState = {
-      val __obj = js.Dynamic.literal()
-      ApplicationId.foreach(__v => __obj.updateDynamic("ApplicationId")(__v.asInstanceOf[js.Any]))
-      ApplicationStatus.foreach(__v => __obj.updateDynamic("ApplicationStatus")(__v.asInstanceOf[js.Any]))
-      LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ApplicationState]
-    }
   }
 
   @js.native
@@ -160,6 +147,7 @@ package migrationhub {
   }
 
   @js.native
+  @Factory
   trait AssociateCreatedArtifactRequest extends js.Object {
     var CreatedArtifact: CreatedArtifact
     var MigrationTaskName: MigrationTaskName
@@ -167,39 +155,12 @@ package migrationhub {
     var DryRun: js.UndefOr[DryRun]
   }
 
-  object AssociateCreatedArtifactRequest {
-    @inline
-    def apply(
-        CreatedArtifact: CreatedArtifact,
-        MigrationTaskName: MigrationTaskName,
-        ProgressUpdateStream: ProgressUpdateStream,
-        DryRun: js.UndefOr[DryRun] = js.undefined
-    ): AssociateCreatedArtifactRequest = {
-      val __obj = js.Dynamic.literal(
-        "CreatedArtifact"      -> CreatedArtifact.asInstanceOf[js.Any],
-        "MigrationTaskName"    -> MigrationTaskName.asInstanceOf[js.Any],
-        "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any]
-      )
-
-      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AssociateCreatedArtifactRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateCreatedArtifactResult extends js.Object {}
 
-  object AssociateCreatedArtifactResult {
-    @inline
-    def apply(
-    ): AssociateCreatedArtifactResult = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[AssociateCreatedArtifactResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateDiscoveredResourceRequest extends js.Object {
     var DiscoveredResource: DiscoveredResource
     var MigrationTaskName: MigrationTaskName
@@ -207,205 +168,70 @@ package migrationhub {
     var DryRun: js.UndefOr[DryRun]
   }
 
-  object AssociateDiscoveredResourceRequest {
-    @inline
-    def apply(
-        DiscoveredResource: DiscoveredResource,
-        MigrationTaskName: MigrationTaskName,
-        ProgressUpdateStream: ProgressUpdateStream,
-        DryRun: js.UndefOr[DryRun] = js.undefined
-    ): AssociateDiscoveredResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "DiscoveredResource"   -> DiscoveredResource.asInstanceOf[js.Any],
-        "MigrationTaskName"    -> MigrationTaskName.asInstanceOf[js.Any],
-        "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any]
-      )
-
-      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AssociateDiscoveredResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait AssociateDiscoveredResourceResult extends js.Object {}
 
-  object AssociateDiscoveredResourceResult {
-    @inline
-    def apply(
-    ): AssociateDiscoveredResourceResult = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[AssociateDiscoveredResourceResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateProgressUpdateStreamRequest extends js.Object {
     var ProgressUpdateStreamName: ProgressUpdateStream
     var DryRun: js.UndefOr[DryRun]
   }
 
-  object CreateProgressUpdateStreamRequest {
-    @inline
-    def apply(
-        ProgressUpdateStreamName: ProgressUpdateStream,
-        DryRun: js.UndefOr[DryRun] = js.undefined
-    ): CreateProgressUpdateStreamRequest = {
-      val __obj = js.Dynamic.literal(
-        "ProgressUpdateStreamName" -> ProgressUpdateStreamName.asInstanceOf[js.Any]
-      )
-
-      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateProgressUpdateStreamRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait CreateProgressUpdateStreamResult extends js.Object {}
-
-  object CreateProgressUpdateStreamResult {
-    @inline
-    def apply(
-    ): CreateProgressUpdateStreamResult = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[CreateProgressUpdateStreamResult]
-    }
-  }
 
   /**
     * An ARN of the AWS cloud resource target receiving the migration (e.g., AMI, EC2 instance, RDS instance, etc.).
     */
   @js.native
+  @Factory
   trait CreatedArtifact extends js.Object {
     var Name: CreatedArtifactName
     var Description: js.UndefOr[CreatedArtifactDescription]
   }
 
-  object CreatedArtifact {
-    @inline
-    def apply(
-        Name: CreatedArtifactName,
-        Description: js.UndefOr[CreatedArtifactDescription] = js.undefined
-    ): CreatedArtifact = {
-      val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreatedArtifact]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteProgressUpdateStreamRequest extends js.Object {
     var ProgressUpdateStreamName: ProgressUpdateStream
     var DryRun: js.UndefOr[DryRun]
   }
 
-  object DeleteProgressUpdateStreamRequest {
-    @inline
-    def apply(
-        ProgressUpdateStreamName: ProgressUpdateStream,
-        DryRun: js.UndefOr[DryRun] = js.undefined
-    ): DeleteProgressUpdateStreamRequest = {
-      val __obj = js.Dynamic.literal(
-        "ProgressUpdateStreamName" -> ProgressUpdateStreamName.asInstanceOf[js.Any]
-      )
-
-      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteProgressUpdateStreamRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DeleteProgressUpdateStreamResult extends js.Object {}
 
-  object DeleteProgressUpdateStreamResult {
-    @inline
-    def apply(
-    ): DeleteProgressUpdateStreamResult = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DeleteProgressUpdateStreamResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeApplicationStateRequest extends js.Object {
     var ApplicationId: ApplicationId
   }
 
-  object DescribeApplicationStateRequest {
-    @inline
-    def apply(
-        ApplicationId: ApplicationId
-    ): DescribeApplicationStateRequest = {
-      val __obj = js.Dynamic.literal(
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeApplicationStateRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeApplicationStateResult extends js.Object {
     var ApplicationStatus: js.UndefOr[ApplicationStatus]
     var LastUpdatedTime: js.UndefOr[UpdateDateTime]
   }
 
-  object DescribeApplicationStateResult {
-    @inline
-    def apply(
-        ApplicationStatus: js.UndefOr[ApplicationStatus] = js.undefined,
-        LastUpdatedTime: js.UndefOr[UpdateDateTime] = js.undefined
-    ): DescribeApplicationStateResult = {
-      val __obj = js.Dynamic.literal()
-      ApplicationStatus.foreach(__v => __obj.updateDynamic("ApplicationStatus")(__v.asInstanceOf[js.Any]))
-      LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeApplicationStateResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeMigrationTaskRequest extends js.Object {
     var MigrationTaskName: MigrationTaskName
     var ProgressUpdateStream: ProgressUpdateStream
   }
 
-  object DescribeMigrationTaskRequest {
-    @inline
-    def apply(
-        MigrationTaskName: MigrationTaskName,
-        ProgressUpdateStream: ProgressUpdateStream
-    ): DescribeMigrationTaskRequest = {
-      val __obj = js.Dynamic.literal(
-        "MigrationTaskName"    -> MigrationTaskName.asInstanceOf[js.Any],
-        "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[DescribeMigrationTaskRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DescribeMigrationTaskResult extends js.Object {
     var MigrationTask: js.UndefOr[MigrationTask]
   }
 
-  object DescribeMigrationTaskResult {
-    @inline
-    def apply(
-        MigrationTask: js.UndefOr[MigrationTask] = js.undefined
-    ): DescribeMigrationTaskResult = {
-      val __obj = js.Dynamic.literal()
-      MigrationTask.foreach(__v => __obj.updateDynamic("MigrationTask")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeMigrationTaskResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateCreatedArtifactRequest extends js.Object {
     var CreatedArtifactName: CreatedArtifactName
     var MigrationTaskName: MigrationTaskName
@@ -413,39 +239,12 @@ package migrationhub {
     var DryRun: js.UndefOr[DryRun]
   }
 
-  object DisassociateCreatedArtifactRequest {
-    @inline
-    def apply(
-        CreatedArtifactName: CreatedArtifactName,
-        MigrationTaskName: MigrationTaskName,
-        ProgressUpdateStream: ProgressUpdateStream,
-        DryRun: js.UndefOr[DryRun] = js.undefined
-    ): DisassociateCreatedArtifactRequest = {
-      val __obj = js.Dynamic.literal(
-        "CreatedArtifactName"  -> CreatedArtifactName.asInstanceOf[js.Any],
-        "MigrationTaskName"    -> MigrationTaskName.asInstanceOf[js.Any],
-        "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any]
-      )
-
-      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DisassociateCreatedArtifactRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateCreatedArtifactResult extends js.Object {}
 
-  object DisassociateCreatedArtifactResult {
-    @inline
-    def apply(
-    ): DisassociateCreatedArtifactResult = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DisassociateCreatedArtifactResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateDiscoveredResourceRequest extends js.Object {
     var ConfigurationId: ConfigurationId
     var MigrationTaskName: MigrationTaskName
@@ -453,141 +252,49 @@ package migrationhub {
     var DryRun: js.UndefOr[DryRun]
   }
 
-  object DisassociateDiscoveredResourceRequest {
-    @inline
-    def apply(
-        ConfigurationId: ConfigurationId,
-        MigrationTaskName: MigrationTaskName,
-        ProgressUpdateStream: ProgressUpdateStream,
-        DryRun: js.UndefOr[DryRun] = js.undefined
-    ): DisassociateDiscoveredResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ConfigurationId"      -> ConfigurationId.asInstanceOf[js.Any],
-        "MigrationTaskName"    -> MigrationTaskName.asInstanceOf[js.Any],
-        "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any]
-      )
-
-      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DisassociateDiscoveredResourceRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait DisassociateDiscoveredResourceResult extends js.Object {}
-
-  object DisassociateDiscoveredResourceResult {
-    @inline
-    def apply(
-    ): DisassociateDiscoveredResourceResult = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[DisassociateDiscoveredResourceResult]
-    }
-  }
 
   /**
     * Object representing the on-premises resource being migrated.
     */
   @js.native
+  @Factory
   trait DiscoveredResource extends js.Object {
     var ConfigurationId: ConfigurationId
     var Description: js.UndefOr[DiscoveredResourceDescription]
   }
 
-  object DiscoveredResource {
-    @inline
-    def apply(
-        ConfigurationId: ConfigurationId,
-        Description: js.UndefOr[DiscoveredResourceDescription] = js.undefined
-    ): DiscoveredResource = {
-      val __obj = js.Dynamic.literal(
-        "ConfigurationId" -> ConfigurationId.asInstanceOf[js.Any]
-      )
-
-      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DiscoveredResource]
-    }
-  }
-
   @js.native
+  @Factory
   trait ImportMigrationTaskRequest extends js.Object {
     var MigrationTaskName: MigrationTaskName
     var ProgressUpdateStream: ProgressUpdateStream
     var DryRun: js.UndefOr[DryRun]
   }
 
-  object ImportMigrationTaskRequest {
-    @inline
-    def apply(
-        MigrationTaskName: MigrationTaskName,
-        ProgressUpdateStream: ProgressUpdateStream,
-        DryRun: js.UndefOr[DryRun] = js.undefined
-    ): ImportMigrationTaskRequest = {
-      val __obj = js.Dynamic.literal(
-        "MigrationTaskName"    -> MigrationTaskName.asInstanceOf[js.Any],
-        "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any]
-      )
-
-      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ImportMigrationTaskRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ImportMigrationTaskResult extends js.Object {}
 
-  object ImportMigrationTaskResult {
-    @inline
-    def apply(
-    ): ImportMigrationTaskResult = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[ImportMigrationTaskResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListApplicationStatesRequest extends js.Object {
     var ApplicationIds: js.UndefOr[ApplicationIds]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[Token]
   }
 
-  object ListApplicationStatesRequest {
-    @inline
-    def apply(
-        ApplicationIds: js.UndefOr[ApplicationIds] = js.undefined,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[Token] = js.undefined
-    ): ListApplicationStatesRequest = {
-      val __obj = js.Dynamic.literal()
-      ApplicationIds.foreach(__v => __obj.updateDynamic("ApplicationIds")(__v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListApplicationStatesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListApplicationStatesResult extends js.Object {
     var ApplicationStateList: js.UndefOr[ApplicationStateList]
     var NextToken: js.UndefOr[Token]
   }
 
-  object ListApplicationStatesResult {
-    @inline
-    def apply(
-        ApplicationStateList: js.UndefOr[ApplicationStateList] = js.undefined,
-        NextToken: js.UndefOr[Token] = js.undefined
-    ): ListApplicationStatesResult = {
-      val __obj = js.Dynamic.literal()
-      ApplicationStateList.foreach(__v => __obj.updateDynamic("ApplicationStateList")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListApplicationStatesResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListCreatedArtifactsRequest extends js.Object {
     var MigrationTaskName: MigrationTaskName
     var ProgressUpdateStream: ProgressUpdateStream
@@ -595,45 +302,15 @@ package migrationhub {
     var NextToken: js.UndefOr[Token]
   }
 
-  object ListCreatedArtifactsRequest {
-    @inline
-    def apply(
-        MigrationTaskName: MigrationTaskName,
-        ProgressUpdateStream: ProgressUpdateStream,
-        MaxResults: js.UndefOr[MaxResultsCreatedArtifacts] = js.undefined,
-        NextToken: js.UndefOr[Token] = js.undefined
-    ): ListCreatedArtifactsRequest = {
-      val __obj = js.Dynamic.literal(
-        "MigrationTaskName"    -> MigrationTaskName.asInstanceOf[js.Any],
-        "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListCreatedArtifactsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListCreatedArtifactsResult extends js.Object {
     var CreatedArtifactList: js.UndefOr[CreatedArtifactList]
     var NextToken: js.UndefOr[Token]
   }
 
-  object ListCreatedArtifactsResult {
-    @inline
-    def apply(
-        CreatedArtifactList: js.UndefOr[CreatedArtifactList] = js.undefined,
-        NextToken: js.UndefOr[Token] = js.undefined
-    ): ListCreatedArtifactsResult = {
-      val __obj = js.Dynamic.literal()
-      CreatedArtifactList.foreach(__v => __obj.updateDynamic("CreatedArtifactList")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListCreatedArtifactsResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListDiscoveredResourcesRequest extends js.Object {
     var MigrationTaskName: MigrationTaskName
     var ProgressUpdateStream: ProgressUpdateStream
@@ -641,129 +318,47 @@ package migrationhub {
     var NextToken: js.UndefOr[Token]
   }
 
-  object ListDiscoveredResourcesRequest {
-    @inline
-    def apply(
-        MigrationTaskName: MigrationTaskName,
-        ProgressUpdateStream: ProgressUpdateStream,
-        MaxResults: js.UndefOr[MaxResultsResources] = js.undefined,
-        NextToken: js.UndefOr[Token] = js.undefined
-    ): ListDiscoveredResourcesRequest = {
-      val __obj = js.Dynamic.literal(
-        "MigrationTaskName"    -> MigrationTaskName.asInstanceOf[js.Any],
-        "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any]
-      )
-
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDiscoveredResourcesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListDiscoveredResourcesResult extends js.Object {
     var DiscoveredResourceList: js.UndefOr[DiscoveredResourceList]
     var NextToken: js.UndefOr[Token]
   }
 
-  object ListDiscoveredResourcesResult {
-    @inline
-    def apply(
-        DiscoveredResourceList: js.UndefOr[DiscoveredResourceList] = js.undefined,
-        NextToken: js.UndefOr[Token] = js.undefined
-    ): ListDiscoveredResourcesResult = {
-      val __obj = js.Dynamic.literal()
-      DiscoveredResourceList.foreach(__v => __obj.updateDynamic("DiscoveredResourceList")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListDiscoveredResourcesResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListMigrationTasksRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[Token]
     var ResourceName: js.UndefOr[ResourceName]
   }
 
-  object ListMigrationTasksRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[Token] = js.undefined,
-        ResourceName: js.UndefOr[ResourceName] = js.undefined
-    ): ListMigrationTasksRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ResourceName.foreach(__v => __obj.updateDynamic("ResourceName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListMigrationTasksRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListMigrationTasksResult extends js.Object {
     var MigrationTaskSummaryList: js.UndefOr[MigrationTaskSummaryList]
     var NextToken: js.UndefOr[Token]
   }
 
-  object ListMigrationTasksResult {
-    @inline
-    def apply(
-        MigrationTaskSummaryList: js.UndefOr[MigrationTaskSummaryList] = js.undefined,
-        NextToken: js.UndefOr[Token] = js.undefined
-    ): ListMigrationTasksResult = {
-      val __obj = js.Dynamic.literal()
-      MigrationTaskSummaryList.foreach(__v => __obj.updateDynamic("MigrationTaskSummaryList")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListMigrationTasksResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListProgressUpdateStreamsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[Token]
   }
 
-  object ListProgressUpdateStreamsRequest {
-    @inline
-    def apply(
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[Token] = js.undefined
-    ): ListProgressUpdateStreamsRequest = {
-      val __obj = js.Dynamic.literal()
-      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListProgressUpdateStreamsRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait ListProgressUpdateStreamsResult extends js.Object {
     var NextToken: js.UndefOr[Token]
     var ProgressUpdateStreamSummaryList: js.UndefOr[ProgressUpdateStreamSummaryList]
-  }
-
-  object ListProgressUpdateStreamsResult {
-    @inline
-    def apply(
-        NextToken: js.UndefOr[Token] = js.undefined,
-        ProgressUpdateStreamSummaryList: js.UndefOr[ProgressUpdateStreamSummaryList] = js.undefined
-    ): ListProgressUpdateStreamsResult = {
-      val __obj = js.Dynamic.literal()
-      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ProgressUpdateStreamSummaryList.foreach(__v =>
-        __obj.updateDynamic("ProgressUpdateStreamSummaryList")(__v.asInstanceOf[js.Any])
-      )
-      __obj.asInstanceOf[ListProgressUpdateStreamsResult]
-    }
   }
 
   /**
     * Represents a migration task in a migration tool.
     */
   @js.native
+  @Factory
   trait MigrationTask extends js.Object {
     var MigrationTaskName: js.UndefOr[MigrationTaskName]
     var ProgressUpdateStream: js.UndefOr[ProgressUpdateStream]
@@ -772,29 +367,11 @@ package migrationhub {
     var UpdateDateTime: js.UndefOr[UpdateDateTime]
   }
 
-  object MigrationTask {
-    @inline
-    def apply(
-        MigrationTaskName: js.UndefOr[MigrationTaskName] = js.undefined,
-        ProgressUpdateStream: js.UndefOr[ProgressUpdateStream] = js.undefined,
-        ResourceAttributeList: js.UndefOr[LatestResourceAttributeList] = js.undefined,
-        Task: js.UndefOr[Task] = js.undefined,
-        UpdateDateTime: js.UndefOr[UpdateDateTime] = js.undefined
-    ): MigrationTask = {
-      val __obj = js.Dynamic.literal()
-      MigrationTaskName.foreach(__v => __obj.updateDynamic("MigrationTaskName")(__v.asInstanceOf[js.Any]))
-      ProgressUpdateStream.foreach(__v => __obj.updateDynamic("ProgressUpdateStream")(__v.asInstanceOf[js.Any]))
-      ResourceAttributeList.foreach(__v => __obj.updateDynamic("ResourceAttributeList")(__v.asInstanceOf[js.Any]))
-      Task.foreach(__v => __obj.updateDynamic("Task")(__v.asInstanceOf[js.Any]))
-      UpdateDateTime.foreach(__v => __obj.updateDynamic("UpdateDateTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MigrationTask]
-    }
-  }
-
   /**
     * MigrationTaskSummary includes <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and <code>UpdateDateTime</code> for each task.
     */
   @js.native
+  @Factory
   trait MigrationTaskSummary extends js.Object {
     var MigrationTaskName: js.UndefOr[MigrationTaskName]
     var ProgressPercent: js.UndefOr[ProgressPercent]
@@ -804,28 +381,8 @@ package migrationhub {
     var UpdateDateTime: js.UndefOr[UpdateDateTime]
   }
 
-  object MigrationTaskSummary {
-    @inline
-    def apply(
-        MigrationTaskName: js.UndefOr[MigrationTaskName] = js.undefined,
-        ProgressPercent: js.UndefOr[ProgressPercent] = js.undefined,
-        ProgressUpdateStream: js.UndefOr[ProgressUpdateStream] = js.undefined,
-        Status: js.UndefOr[Status] = js.undefined,
-        StatusDetail: js.UndefOr[StatusDetail] = js.undefined,
-        UpdateDateTime: js.UndefOr[UpdateDateTime] = js.undefined
-    ): MigrationTaskSummary = {
-      val __obj = js.Dynamic.literal()
-      MigrationTaskName.foreach(__v => __obj.updateDynamic("MigrationTaskName")(__v.asInstanceOf[js.Any]))
-      ProgressPercent.foreach(__v => __obj.updateDynamic("ProgressPercent")(__v.asInstanceOf[js.Any]))
-      ProgressUpdateStream.foreach(__v => __obj.updateDynamic("ProgressUpdateStream")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      StatusDetail.foreach(__v => __obj.updateDynamic("StatusDetail")(__v.asInstanceOf[js.Any]))
-      UpdateDateTime.foreach(__v => __obj.updateDynamic("UpdateDateTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[MigrationTaskSummary]
-    }
-  }
-
   @js.native
+  @Factory
   trait NotifyApplicationStateRequest extends js.Object {
     var ApplicationId: ApplicationId
     var Status: ApplicationStatus
@@ -833,39 +390,12 @@ package migrationhub {
     var UpdateDateTime: js.UndefOr[UpdateDateTime]
   }
 
-  object NotifyApplicationStateRequest {
-    @inline
-    def apply(
-        ApplicationId: ApplicationId,
-        Status: ApplicationStatus,
-        DryRun: js.UndefOr[DryRun] = js.undefined,
-        UpdateDateTime: js.UndefOr[UpdateDateTime] = js.undefined
-    ): NotifyApplicationStateRequest = {
-      val __obj = js.Dynamic.literal(
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "Status"        -> Status.asInstanceOf[js.Any]
-      )
-
-      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
-      UpdateDateTime.foreach(__v => __obj.updateDynamic("UpdateDateTime")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NotifyApplicationStateRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait NotifyApplicationStateResult extends js.Object {}
 
-  object NotifyApplicationStateResult {
-    @inline
-    def apply(
-    ): NotifyApplicationStateResult = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[NotifyApplicationStateResult]
-    }
-  }
-
   @js.native
+  @Factory
   trait NotifyMigrationTaskStateRequest extends js.Object {
     var MigrationTaskName: MigrationTaskName
     var NextUpdateSeconds: NextUpdateSeconds
@@ -875,62 +405,21 @@ package migrationhub {
     var DryRun: js.UndefOr[DryRun]
   }
 
-  object NotifyMigrationTaskStateRequest {
-    @inline
-    def apply(
-        MigrationTaskName: MigrationTaskName,
-        NextUpdateSeconds: NextUpdateSeconds,
-        ProgressUpdateStream: ProgressUpdateStream,
-        Task: Task,
-        UpdateDateTime: UpdateDateTime,
-        DryRun: js.UndefOr[DryRun] = js.undefined
-    ): NotifyMigrationTaskStateRequest = {
-      val __obj = js.Dynamic.literal(
-        "MigrationTaskName"    -> MigrationTaskName.asInstanceOf[js.Any],
-        "NextUpdateSeconds"    -> NextUpdateSeconds.asInstanceOf[js.Any],
-        "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any],
-        "Task"                 -> Task.asInstanceOf[js.Any],
-        "UpdateDateTime"       -> UpdateDateTime.asInstanceOf[js.Any]
-      )
-
-      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[NotifyMigrationTaskStateRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait NotifyMigrationTaskStateResult extends js.Object {}
-
-  object NotifyMigrationTaskStateResult {
-    @inline
-    def apply(
-    ): NotifyMigrationTaskStateResult = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[NotifyMigrationTaskStateResult]
-    }
-  }
 
   /**
     * Summary of the AWS resource used for access control that is implicitly linked to your AWS account.
     */
   @js.native
+  @Factory
   trait ProgressUpdateStreamSummary extends js.Object {
     var ProgressUpdateStreamName: js.UndefOr[ProgressUpdateStream]
   }
 
-  object ProgressUpdateStreamSummary {
-    @inline
-    def apply(
-        ProgressUpdateStreamName: js.UndefOr[ProgressUpdateStream] = js.undefined
-    ): ProgressUpdateStreamSummary = {
-      val __obj = js.Dynamic.literal()
-      ProgressUpdateStreamName.foreach(__v => __obj.updateDynamic("ProgressUpdateStreamName")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ProgressUpdateStreamSummary]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutResourceAttributesRequest extends js.Object {
     var MigrationTaskName: MigrationTaskName
     var ProgressUpdateStream: ProgressUpdateStream
@@ -938,37 +427,9 @@ package migrationhub {
     var DryRun: js.UndefOr[DryRun]
   }
 
-  object PutResourceAttributesRequest {
-    @inline
-    def apply(
-        MigrationTaskName: MigrationTaskName,
-        ProgressUpdateStream: ProgressUpdateStream,
-        ResourceAttributeList: ResourceAttributeList,
-        DryRun: js.UndefOr[DryRun] = js.undefined
-    ): PutResourceAttributesRequest = {
-      val __obj = js.Dynamic.literal(
-        "MigrationTaskName"     -> MigrationTaskName.asInstanceOf[js.Any],
-        "ProgressUpdateStream"  -> ProgressUpdateStream.asInstanceOf[js.Any],
-        "ResourceAttributeList" -> ResourceAttributeList.asInstanceOf[js.Any]
-      )
-
-      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[PutResourceAttributesRequest]
-    }
-  }
-
   @js.native
+  @Factory
   trait PutResourceAttributesResult extends js.Object {}
-
-  object PutResourceAttributesResult {
-    @inline
-    def apply(
-    ): PutResourceAttributesResult = {
-      val __obj = js.Dynamic.literal()
-
-      __obj.asInstanceOf[PutResourceAttributesResult]
-    }
-  }
 
   /**
     * Attribute associated with a resource.
@@ -982,24 +443,10 @@ package migrationhub {
     *  </dd> </dl>
     */
   @js.native
+  @Factory
   trait ResourceAttribute extends js.Object {
     var Type: ResourceAttributeType
     var Value: ResourceAttributeValue
-  }
-
-  object ResourceAttribute {
-    @inline
-    def apply(
-        Type: ResourceAttributeType,
-        Value: ResourceAttributeValue
-    ): ResourceAttribute = {
-      val __obj = js.Dynamic.literal(
-        "Type"  -> Type.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
-
-      __obj.asInstanceOf[ResourceAttribute]
-    }
   }
 
   @js.native
@@ -1047,26 +494,10 @@ package migrationhub {
     * Task object encapsulating task information.
     */
   @js.native
+  @Factory
   trait Task extends js.Object {
     var Status: Status
     var ProgressPercent: js.UndefOr[ProgressPercent]
     var StatusDetail: js.UndefOr[StatusDetail]
-  }
-
-  object Task {
-    @inline
-    def apply(
-        Status: Status,
-        ProgressPercent: js.UndefOr[ProgressPercent] = js.undefined,
-        StatusDetail: js.UndefOr[StatusDetail] = js.undefined
-    ): Task = {
-      val __obj = js.Dynamic.literal(
-        "Status" -> Status.asInstanceOf[js.Any]
-      )
-
-      ProgressPercent.foreach(__v => __obj.updateDynamic("ProgressPercent")(__v.asInstanceOf[js.Any]))
-      StatusDetail.foreach(__v => __obj.updateDynamic("StatusDetail")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[Task]
-    }
   }
 }
