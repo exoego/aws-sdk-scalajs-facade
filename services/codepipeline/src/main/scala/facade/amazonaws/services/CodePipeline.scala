@@ -118,86 +118,87 @@ package object codepipeline {
   implicit final class CodePipelineOps(private val service: CodePipeline) extends AnyVal {
 
     @inline def acknowledgeJobFuture(params: AcknowledgeJobInput): Future[AcknowledgeJobOutput] =
-      service.acknowledgeJob(params).promise.toFuture
+      service.acknowledgeJob(params).promise().toFuture
     @inline def acknowledgeThirdPartyJobFuture(
         params: AcknowledgeThirdPartyJobInput
-    ): Future[AcknowledgeThirdPartyJobOutput] = service.acknowledgeThirdPartyJob(params).promise.toFuture
+    ): Future[AcknowledgeThirdPartyJobOutput] = service.acknowledgeThirdPartyJob(params).promise().toFuture
     @inline def createCustomActionTypeFuture(
         params: CreateCustomActionTypeInput
-    ): Future[CreateCustomActionTypeOutput] = service.createCustomActionType(params).promise.toFuture
+    ): Future[CreateCustomActionTypeOutput] = service.createCustomActionType(params).promise().toFuture
     @inline def createPipelineFuture(params: CreatePipelineInput): Future[CreatePipelineOutput] =
-      service.createPipeline(params).promise.toFuture
+      service.createPipeline(params).promise().toFuture
     @inline def deleteCustomActionTypeFuture(params: DeleteCustomActionTypeInput): Future[js.Object] =
-      service.deleteCustomActionType(params).promise.toFuture
+      service.deleteCustomActionType(params).promise().toFuture
     @inline def deletePipelineFuture(params: DeletePipelineInput): Future[js.Object] =
-      service.deletePipeline(params).promise.toFuture
+      service.deletePipeline(params).promise().toFuture
     @inline def deleteWebhookFuture(params: DeleteWebhookInput): Future[DeleteWebhookOutput] =
-      service.deleteWebhook(params).promise.toFuture
+      service.deleteWebhook(params).promise().toFuture
     @inline def deregisterWebhookWithThirdPartyFuture(
         params: DeregisterWebhookWithThirdPartyInput
-    ): Future[DeregisterWebhookWithThirdPartyOutput] = service.deregisterWebhookWithThirdParty(params).promise.toFuture
+    ): Future[DeregisterWebhookWithThirdPartyOutput] =
+      service.deregisterWebhookWithThirdParty(params).promise().toFuture
     @inline def disableStageTransitionFuture(params: DisableStageTransitionInput): Future[js.Object] =
-      service.disableStageTransition(params).promise.toFuture
+      service.disableStageTransition(params).promise().toFuture
     @inline def enableStageTransitionFuture(params: EnableStageTransitionInput): Future[js.Object] =
-      service.enableStageTransition(params).promise.toFuture
+      service.enableStageTransition(params).promise().toFuture
     @inline def getJobDetailsFuture(params: GetJobDetailsInput): Future[GetJobDetailsOutput] =
-      service.getJobDetails(params).promise.toFuture
+      service.getJobDetails(params).promise().toFuture
     @inline def getPipelineExecutionFuture(params: GetPipelineExecutionInput): Future[GetPipelineExecutionOutput] =
-      service.getPipelineExecution(params).promise.toFuture
+      service.getPipelineExecution(params).promise().toFuture
     @inline def getPipelineFuture(params: GetPipelineInput): Future[GetPipelineOutput] =
-      service.getPipeline(params).promise.toFuture
+      service.getPipeline(params).promise().toFuture
     @inline def getPipelineStateFuture(params: GetPipelineStateInput): Future[GetPipelineStateOutput] =
-      service.getPipelineState(params).promise.toFuture
+      service.getPipelineState(params).promise().toFuture
     @inline def getThirdPartyJobDetailsFuture(
         params: GetThirdPartyJobDetailsInput
-    ): Future[GetThirdPartyJobDetailsOutput] = service.getThirdPartyJobDetails(params).promise.toFuture
+    ): Future[GetThirdPartyJobDetailsOutput] = service.getThirdPartyJobDetails(params).promise().toFuture
     @inline def listActionExecutionsFuture(params: ListActionExecutionsInput): Future[ListActionExecutionsOutput] =
-      service.listActionExecutions(params).promise.toFuture
+      service.listActionExecutions(params).promise().toFuture
     @inline def listActionTypesFuture(params: ListActionTypesInput): Future[ListActionTypesOutput] =
-      service.listActionTypes(params).promise.toFuture
+      service.listActionTypes(params).promise().toFuture
     @inline def listPipelineExecutionsFuture(
         params: ListPipelineExecutionsInput
-    ): Future[ListPipelineExecutionsOutput] = service.listPipelineExecutions(params).promise.toFuture
+    ): Future[ListPipelineExecutionsOutput] = service.listPipelineExecutions(params).promise().toFuture
     @inline def listPipelinesFuture(params: ListPipelinesInput): Future[ListPipelinesOutput] =
-      service.listPipelines(params).promise.toFuture
+      service.listPipelines(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def listWebhooksFuture(params: ListWebhooksInput): Future[ListWebhooksOutput] =
-      service.listWebhooks(params).promise.toFuture
+      service.listWebhooks(params).promise().toFuture
     @inline def pollForJobsFuture(params: PollForJobsInput): Future[PollForJobsOutput] =
-      service.pollForJobs(params).promise.toFuture
+      service.pollForJobs(params).promise().toFuture
     @inline def pollForThirdPartyJobsFuture(params: PollForThirdPartyJobsInput): Future[PollForThirdPartyJobsOutput] =
-      service.pollForThirdPartyJobs(params).promise.toFuture
+      service.pollForThirdPartyJobs(params).promise().toFuture
     @inline def putActionRevisionFuture(params: PutActionRevisionInput): Future[PutActionRevisionOutput] =
-      service.putActionRevision(params).promise.toFuture
+      service.putActionRevision(params).promise().toFuture
     @inline def putApprovalResultFuture(params: PutApprovalResultInput): Future[PutApprovalResultOutput] =
-      service.putApprovalResult(params).promise.toFuture
+      service.putApprovalResult(params).promise().toFuture
     @inline def putJobFailureResultFuture(params: PutJobFailureResultInput): Future[js.Object] =
-      service.putJobFailureResult(params).promise.toFuture
+      service.putJobFailureResult(params).promise().toFuture
     @inline def putJobSuccessResultFuture(params: PutJobSuccessResultInput): Future[js.Object] =
-      service.putJobSuccessResult(params).promise.toFuture
+      service.putJobSuccessResult(params).promise().toFuture
     @inline def putThirdPartyJobFailureResultFuture(params: PutThirdPartyJobFailureResultInput): Future[js.Object] =
-      service.putThirdPartyJobFailureResult(params).promise.toFuture
+      service.putThirdPartyJobFailureResult(params).promise().toFuture
     @inline def putThirdPartyJobSuccessResultFuture(params: PutThirdPartyJobSuccessResultInput): Future[js.Object] =
-      service.putThirdPartyJobSuccessResult(params).promise.toFuture
+      service.putThirdPartyJobSuccessResult(params).promise().toFuture
     @inline def putWebhookFuture(params: PutWebhookInput): Future[PutWebhookOutput] =
-      service.putWebhook(params).promise.toFuture
+      service.putWebhook(params).promise().toFuture
     @inline def registerWebhookWithThirdPartyFuture(
         params: RegisterWebhookWithThirdPartyInput
-    ): Future[RegisterWebhookWithThirdPartyOutput] = service.registerWebhookWithThirdParty(params).promise.toFuture
+    ): Future[RegisterWebhookWithThirdPartyOutput] = service.registerWebhookWithThirdParty(params).promise().toFuture
     @inline def retryStageExecutionFuture(params: RetryStageExecutionInput): Future[RetryStageExecutionOutput] =
-      service.retryStageExecution(params).promise.toFuture
+      service.retryStageExecution(params).promise().toFuture
     @inline def startPipelineExecutionFuture(
         params: StartPipelineExecutionInput
-    ): Future[StartPipelineExecutionOutput] = service.startPipelineExecution(params).promise.toFuture
+    ): Future[StartPipelineExecutionOutput] = service.startPipelineExecution(params).promise().toFuture
     @inline def stopPipelineExecutionFuture(params: StopPipelineExecutionInput): Future[StopPipelineExecutionOutput] =
-      service.stopPipelineExecution(params).promise.toFuture
+      service.stopPipelineExecution(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updatePipelineFuture(params: UpdatePipelineInput): Future[UpdatePipelineOutput] =
-      service.updatePipeline(params).promise.toFuture
+      service.updatePipeline(params).promise().toFuture
   }
 }
 

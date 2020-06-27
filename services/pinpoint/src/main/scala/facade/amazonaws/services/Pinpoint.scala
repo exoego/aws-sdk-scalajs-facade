@@ -56,236 +56,236 @@ package object pinpoint {
   implicit final class PinpointOps(private val service: Pinpoint) extends AnyVal {
 
     @inline def createAppFuture(params: CreateAppRequest): Future[CreateAppResponse] =
-      service.createApp(params).promise.toFuture
+      service.createApp(params).promise().toFuture
     @inline def createCampaignFuture(params: CreateCampaignRequest): Future[CreateCampaignResponse] =
-      service.createCampaign(params).promise.toFuture
+      service.createCampaign(params).promise().toFuture
     @inline def createEmailTemplateFuture(params: CreateEmailTemplateRequest): Future[CreateEmailTemplateResponse] =
-      service.createEmailTemplate(params).promise.toFuture
+      service.createEmailTemplate(params).promise().toFuture
     @inline def createExportJobFuture(params: CreateExportJobRequest): Future[CreateExportJobResponse] =
-      service.createExportJob(params).promise.toFuture
+      service.createExportJob(params).promise().toFuture
     @inline def createImportJobFuture(params: CreateImportJobRequest): Future[CreateImportJobResponse] =
-      service.createImportJob(params).promise.toFuture
+      service.createImportJob(params).promise().toFuture
     @inline def createJourneyFuture(params: CreateJourneyRequest): Future[CreateJourneyResponse] =
-      service.createJourney(params).promise.toFuture
+      service.createJourney(params).promise().toFuture
     @inline def createPushTemplateFuture(params: CreatePushTemplateRequest): Future[CreatePushTemplateResponse] =
-      service.createPushTemplate(params).promise.toFuture
+      service.createPushTemplate(params).promise().toFuture
     @inline def createSegmentFuture(params: CreateSegmentRequest): Future[CreateSegmentResponse] =
-      service.createSegment(params).promise.toFuture
+      service.createSegment(params).promise().toFuture
     @inline def createSmsTemplateFuture(params: CreateSmsTemplateRequest): Future[CreateSmsTemplateResponse] =
-      service.createSmsTemplate(params).promise.toFuture
+      service.createSmsTemplate(params).promise().toFuture
     @inline def createVoiceTemplateFuture(params: CreateVoiceTemplateRequest): Future[CreateVoiceTemplateResponse] =
-      service.createVoiceTemplate(params).promise.toFuture
+      service.createVoiceTemplate(params).promise().toFuture
     @inline def deleteAdmChannelFuture(params: DeleteAdmChannelRequest): Future[DeleteAdmChannelResponse] =
-      service.deleteAdmChannel(params).promise.toFuture
+      service.deleteAdmChannel(params).promise().toFuture
     @inline def deleteApnsChannelFuture(params: DeleteApnsChannelRequest): Future[DeleteApnsChannelResponse] =
-      service.deleteApnsChannel(params).promise.toFuture
+      service.deleteApnsChannel(params).promise().toFuture
     @inline def deleteApnsSandboxChannelFuture(
         params: DeleteApnsSandboxChannelRequest
-    ): Future[DeleteApnsSandboxChannelResponse] = service.deleteApnsSandboxChannel(params).promise.toFuture
+    ): Future[DeleteApnsSandboxChannelResponse] = service.deleteApnsSandboxChannel(params).promise().toFuture
     @inline def deleteApnsVoipChannelFuture(
         params: DeleteApnsVoipChannelRequest
-    ): Future[DeleteApnsVoipChannelResponse] = service.deleteApnsVoipChannel(params).promise.toFuture
+    ): Future[DeleteApnsVoipChannelResponse] = service.deleteApnsVoipChannel(params).promise().toFuture
     @inline def deleteApnsVoipSandboxChannelFuture(
         params: DeleteApnsVoipSandboxChannelRequest
-    ): Future[DeleteApnsVoipSandboxChannelResponse] = service.deleteApnsVoipSandboxChannel(params).promise.toFuture
+    ): Future[DeleteApnsVoipSandboxChannelResponse] = service.deleteApnsVoipSandboxChannel(params).promise().toFuture
     @inline def deleteAppFuture(params: DeleteAppRequest): Future[DeleteAppResponse] =
-      service.deleteApp(params).promise.toFuture
+      service.deleteApp(params).promise().toFuture
     @inline def deleteBaiduChannelFuture(params: DeleteBaiduChannelRequest): Future[DeleteBaiduChannelResponse] =
-      service.deleteBaiduChannel(params).promise.toFuture
+      service.deleteBaiduChannel(params).promise().toFuture
     @inline def deleteCampaignFuture(params: DeleteCampaignRequest): Future[DeleteCampaignResponse] =
-      service.deleteCampaign(params).promise.toFuture
+      service.deleteCampaign(params).promise().toFuture
     @inline def deleteEmailChannelFuture(params: DeleteEmailChannelRequest): Future[DeleteEmailChannelResponse] =
-      service.deleteEmailChannel(params).promise.toFuture
+      service.deleteEmailChannel(params).promise().toFuture
     @inline def deleteEmailTemplateFuture(params: DeleteEmailTemplateRequest): Future[DeleteEmailTemplateResponse] =
-      service.deleteEmailTemplate(params).promise.toFuture
+      service.deleteEmailTemplate(params).promise().toFuture
     @inline def deleteEndpointFuture(params: DeleteEndpointRequest): Future[DeleteEndpointResponse] =
-      service.deleteEndpoint(params).promise.toFuture
+      service.deleteEndpoint(params).promise().toFuture
     @inline def deleteEventStreamFuture(params: DeleteEventStreamRequest): Future[DeleteEventStreamResponse] =
-      service.deleteEventStream(params).promise.toFuture
+      service.deleteEventStream(params).promise().toFuture
     @inline def deleteGcmChannelFuture(params: DeleteGcmChannelRequest): Future[DeleteGcmChannelResponse] =
-      service.deleteGcmChannel(params).promise.toFuture
+      service.deleteGcmChannel(params).promise().toFuture
     @inline def deleteJourneyFuture(params: DeleteJourneyRequest): Future[DeleteJourneyResponse] =
-      service.deleteJourney(params).promise.toFuture
+      service.deleteJourney(params).promise().toFuture
     @inline def deletePushTemplateFuture(params: DeletePushTemplateRequest): Future[DeletePushTemplateResponse] =
-      service.deletePushTemplate(params).promise.toFuture
+      service.deletePushTemplate(params).promise().toFuture
     @inline def deleteSegmentFuture(params: DeleteSegmentRequest): Future[DeleteSegmentResponse] =
-      service.deleteSegment(params).promise.toFuture
+      service.deleteSegment(params).promise().toFuture
     @inline def deleteSmsChannelFuture(params: DeleteSmsChannelRequest): Future[DeleteSmsChannelResponse] =
-      service.deleteSmsChannel(params).promise.toFuture
+      service.deleteSmsChannel(params).promise().toFuture
     @inline def deleteSmsTemplateFuture(params: DeleteSmsTemplateRequest): Future[DeleteSmsTemplateResponse] =
-      service.deleteSmsTemplate(params).promise.toFuture
+      service.deleteSmsTemplate(params).promise().toFuture
     @inline def deleteUserEndpointsFuture(params: DeleteUserEndpointsRequest): Future[DeleteUserEndpointsResponse] =
-      service.deleteUserEndpoints(params).promise.toFuture
+      service.deleteUserEndpoints(params).promise().toFuture
     @inline def deleteVoiceChannelFuture(params: DeleteVoiceChannelRequest): Future[DeleteVoiceChannelResponse] =
-      service.deleteVoiceChannel(params).promise.toFuture
+      service.deleteVoiceChannel(params).promise().toFuture
     @inline def deleteVoiceTemplateFuture(params: DeleteVoiceTemplateRequest): Future[DeleteVoiceTemplateResponse] =
-      service.deleteVoiceTemplate(params).promise.toFuture
+      service.deleteVoiceTemplate(params).promise().toFuture
     @inline def getAdmChannelFuture(params: GetAdmChannelRequest): Future[GetAdmChannelResponse] =
-      service.getAdmChannel(params).promise.toFuture
+      service.getAdmChannel(params).promise().toFuture
     @inline def getApnsChannelFuture(params: GetApnsChannelRequest): Future[GetApnsChannelResponse] =
-      service.getApnsChannel(params).promise.toFuture
+      service.getApnsChannel(params).promise().toFuture
     @inline def getApnsSandboxChannelFuture(
         params: GetApnsSandboxChannelRequest
-    ): Future[GetApnsSandboxChannelResponse] = service.getApnsSandboxChannel(params).promise.toFuture
+    ): Future[GetApnsSandboxChannelResponse] = service.getApnsSandboxChannel(params).promise().toFuture
     @inline def getApnsVoipChannelFuture(params: GetApnsVoipChannelRequest): Future[GetApnsVoipChannelResponse] =
-      service.getApnsVoipChannel(params).promise.toFuture
+      service.getApnsVoipChannel(params).promise().toFuture
     @inline def getApnsVoipSandboxChannelFuture(
         params: GetApnsVoipSandboxChannelRequest
-    ): Future[GetApnsVoipSandboxChannelResponse]                            = service.getApnsVoipSandboxChannel(params).promise.toFuture
-    @inline def getAppFuture(params: GetAppRequest): Future[GetAppResponse] = service.getApp(params).promise.toFuture
+    ): Future[GetApnsVoipSandboxChannelResponse]                            = service.getApnsVoipSandboxChannel(params).promise().toFuture
+    @inline def getAppFuture(params: GetAppRequest): Future[GetAppResponse] = service.getApp(params).promise().toFuture
     @inline def getApplicationDateRangeKpiFuture(
         params: GetApplicationDateRangeKpiRequest
-    ): Future[GetApplicationDateRangeKpiResponse] = service.getApplicationDateRangeKpi(params).promise.toFuture
+    ): Future[GetApplicationDateRangeKpiResponse] = service.getApplicationDateRangeKpi(params).promise().toFuture
     @inline def getApplicationSettingsFuture(
         params: GetApplicationSettingsRequest
-    ): Future[GetApplicationSettingsResponse] = service.getApplicationSettings(params).promise.toFuture
+    ): Future[GetApplicationSettingsResponse] = service.getApplicationSettings(params).promise().toFuture
     @inline def getAppsFuture(params: GetAppsRequest): Future[GetAppsResponse] =
-      service.getApps(params).promise.toFuture
+      service.getApps(params).promise().toFuture
     @inline def getBaiduChannelFuture(params: GetBaiduChannelRequest): Future[GetBaiduChannelResponse] =
-      service.getBaiduChannel(params).promise.toFuture
+      service.getBaiduChannel(params).promise().toFuture
     @inline def getCampaignActivitiesFuture(
         params: GetCampaignActivitiesRequest
-    ): Future[GetCampaignActivitiesResponse] = service.getCampaignActivities(params).promise.toFuture
+    ): Future[GetCampaignActivitiesResponse] = service.getCampaignActivities(params).promise().toFuture
     @inline def getCampaignDateRangeKpiFuture(
         params: GetCampaignDateRangeKpiRequest
-    ): Future[GetCampaignDateRangeKpiResponse] = service.getCampaignDateRangeKpi(params).promise.toFuture
+    ): Future[GetCampaignDateRangeKpiResponse] = service.getCampaignDateRangeKpi(params).promise().toFuture
     @inline def getCampaignFuture(params: GetCampaignRequest): Future[GetCampaignResponse] =
-      service.getCampaign(params).promise.toFuture
+      service.getCampaign(params).promise().toFuture
     @inline def getCampaignVersionFuture(params: GetCampaignVersionRequest): Future[GetCampaignVersionResponse] =
-      service.getCampaignVersion(params).promise.toFuture
+      service.getCampaignVersion(params).promise().toFuture
     @inline def getCampaignVersionsFuture(params: GetCampaignVersionsRequest): Future[GetCampaignVersionsResponse] =
-      service.getCampaignVersions(params).promise.toFuture
+      service.getCampaignVersions(params).promise().toFuture
     @inline def getCampaignsFuture(params: GetCampaignsRequest): Future[GetCampaignsResponse] =
-      service.getCampaigns(params).promise.toFuture
+      service.getCampaigns(params).promise().toFuture
     @inline def getChannelsFuture(params: GetChannelsRequest): Future[GetChannelsResponse] =
-      service.getChannels(params).promise.toFuture
+      service.getChannels(params).promise().toFuture
     @inline def getEmailChannelFuture(params: GetEmailChannelRequest): Future[GetEmailChannelResponse] =
-      service.getEmailChannel(params).promise.toFuture
+      service.getEmailChannel(params).promise().toFuture
     @inline def getEmailTemplateFuture(params: GetEmailTemplateRequest): Future[GetEmailTemplateResponse] =
-      service.getEmailTemplate(params).promise.toFuture
+      service.getEmailTemplate(params).promise().toFuture
     @inline def getEndpointFuture(params: GetEndpointRequest): Future[GetEndpointResponse] =
-      service.getEndpoint(params).promise.toFuture
+      service.getEndpoint(params).promise().toFuture
     @inline def getEventStreamFuture(params: GetEventStreamRequest): Future[GetEventStreamResponse] =
-      service.getEventStream(params).promise.toFuture
+      service.getEventStream(params).promise().toFuture
     @inline def getExportJobFuture(params: GetExportJobRequest): Future[GetExportJobResponse] =
-      service.getExportJob(params).promise.toFuture
+      service.getExportJob(params).promise().toFuture
     @inline def getExportJobsFuture(params: GetExportJobsRequest): Future[GetExportJobsResponse] =
-      service.getExportJobs(params).promise.toFuture
+      service.getExportJobs(params).promise().toFuture
     @inline def getGcmChannelFuture(params: GetGcmChannelRequest): Future[GetGcmChannelResponse] =
-      service.getGcmChannel(params).promise.toFuture
+      service.getGcmChannel(params).promise().toFuture
     @inline def getImportJobFuture(params: GetImportJobRequest): Future[GetImportJobResponse] =
-      service.getImportJob(params).promise.toFuture
+      service.getImportJob(params).promise().toFuture
     @inline def getImportJobsFuture(params: GetImportJobsRequest): Future[GetImportJobsResponse] =
-      service.getImportJobs(params).promise.toFuture
+      service.getImportJobs(params).promise().toFuture
     @inline def getJourneyDateRangeKpiFuture(
         params: GetJourneyDateRangeKpiRequest
-    ): Future[GetJourneyDateRangeKpiResponse] = service.getJourneyDateRangeKpi(params).promise.toFuture
+    ): Future[GetJourneyDateRangeKpiResponse] = service.getJourneyDateRangeKpi(params).promise().toFuture
     @inline def getJourneyExecutionActivityMetricsFuture(
         params: GetJourneyExecutionActivityMetricsRequest
     ): Future[GetJourneyExecutionActivityMetricsResponse] =
-      service.getJourneyExecutionActivityMetrics(params).promise.toFuture
+      service.getJourneyExecutionActivityMetrics(params).promise().toFuture
     @inline def getJourneyExecutionMetricsFuture(
         params: GetJourneyExecutionMetricsRequest
-    ): Future[GetJourneyExecutionMetricsResponse] = service.getJourneyExecutionMetrics(params).promise.toFuture
+    ): Future[GetJourneyExecutionMetricsResponse] = service.getJourneyExecutionMetrics(params).promise().toFuture
     @inline def getJourneyFuture(params: GetJourneyRequest): Future[GetJourneyResponse] =
-      service.getJourney(params).promise.toFuture
+      service.getJourney(params).promise().toFuture
     @inline def getPushTemplateFuture(params: GetPushTemplateRequest): Future[GetPushTemplateResponse] =
-      service.getPushTemplate(params).promise.toFuture
+      service.getPushTemplate(params).promise().toFuture
     @inline def getSegmentExportJobsFuture(params: GetSegmentExportJobsRequest): Future[GetSegmentExportJobsResponse] =
-      service.getSegmentExportJobs(params).promise.toFuture
+      service.getSegmentExportJobs(params).promise().toFuture
     @inline def getSegmentFuture(params: GetSegmentRequest): Future[GetSegmentResponse] =
-      service.getSegment(params).promise.toFuture
+      service.getSegment(params).promise().toFuture
     @inline def getSegmentImportJobsFuture(params: GetSegmentImportJobsRequest): Future[GetSegmentImportJobsResponse] =
-      service.getSegmentImportJobs(params).promise.toFuture
+      service.getSegmentImportJobs(params).promise().toFuture
     @inline def getSegmentVersionFuture(params: GetSegmentVersionRequest): Future[GetSegmentVersionResponse] =
-      service.getSegmentVersion(params).promise.toFuture
+      service.getSegmentVersion(params).promise().toFuture
     @inline def getSegmentVersionsFuture(params: GetSegmentVersionsRequest): Future[GetSegmentVersionsResponse] =
-      service.getSegmentVersions(params).promise.toFuture
+      service.getSegmentVersions(params).promise().toFuture
     @inline def getSegmentsFuture(params: GetSegmentsRequest): Future[GetSegmentsResponse] =
-      service.getSegments(params).promise.toFuture
+      service.getSegments(params).promise().toFuture
     @inline def getSmsChannelFuture(params: GetSmsChannelRequest): Future[GetSmsChannelResponse] =
-      service.getSmsChannel(params).promise.toFuture
+      service.getSmsChannel(params).promise().toFuture
     @inline def getSmsTemplateFuture(params: GetSmsTemplateRequest): Future[GetSmsTemplateResponse] =
-      service.getSmsTemplate(params).promise.toFuture
+      service.getSmsTemplate(params).promise().toFuture
     @inline def getUserEndpointsFuture(params: GetUserEndpointsRequest): Future[GetUserEndpointsResponse] =
-      service.getUserEndpoints(params).promise.toFuture
+      service.getUserEndpoints(params).promise().toFuture
     @inline def getVoiceChannelFuture(params: GetVoiceChannelRequest): Future[GetVoiceChannelResponse] =
-      service.getVoiceChannel(params).promise.toFuture
+      service.getVoiceChannel(params).promise().toFuture
     @inline def getVoiceTemplateFuture(params: GetVoiceTemplateRequest): Future[GetVoiceTemplateResponse] =
-      service.getVoiceTemplate(params).promise.toFuture
+      service.getVoiceTemplate(params).promise().toFuture
     @inline def listJourneysFuture(params: ListJourneysRequest): Future[ListJourneysResponse] =
-      service.listJourneys(params).promise.toFuture
+      service.listJourneys(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def listTemplateVersionsFuture(params: ListTemplateVersionsRequest): Future[ListTemplateVersionsResponse] =
-      service.listTemplateVersions(params).promise.toFuture
+      service.listTemplateVersions(params).promise().toFuture
     @inline def listTemplatesFuture(params: ListTemplatesRequest): Future[ListTemplatesResponse] =
-      service.listTemplates(params).promise.toFuture
+      service.listTemplates(params).promise().toFuture
     @inline def phoneNumberValidateFuture(params: PhoneNumberValidateRequest): Future[PhoneNumberValidateResponse] =
-      service.phoneNumberValidate(params).promise.toFuture
+      service.phoneNumberValidate(params).promise().toFuture
     @inline def putEventStreamFuture(params: PutEventStreamRequest): Future[PutEventStreamResponse] =
-      service.putEventStream(params).promise.toFuture
+      service.putEventStream(params).promise().toFuture
     @inline def putEventsFuture(params: PutEventsRequest): Future[PutEventsResponse] =
-      service.putEvents(params).promise.toFuture
+      service.putEvents(params).promise().toFuture
     @inline def removeAttributesFuture(params: RemoveAttributesRequest): Future[RemoveAttributesResponse] =
-      service.removeAttributes(params).promise.toFuture
+      service.removeAttributes(params).promise().toFuture
     @inline def sendMessagesFuture(params: SendMessagesRequest): Future[SendMessagesResponse] =
-      service.sendMessages(params).promise.toFuture
+      service.sendMessages(params).promise().toFuture
     @inline def sendUsersMessagesFuture(params: SendUsersMessagesRequest): Future[SendUsersMessagesResponse] =
-      service.sendUsersMessages(params).promise.toFuture
+      service.sendUsersMessages(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateAdmChannelFuture(params: UpdateAdmChannelRequest): Future[UpdateAdmChannelResponse] =
-      service.updateAdmChannel(params).promise.toFuture
+      service.updateAdmChannel(params).promise().toFuture
     @inline def updateApnsChannelFuture(params: UpdateApnsChannelRequest): Future[UpdateApnsChannelResponse] =
-      service.updateApnsChannel(params).promise.toFuture
+      service.updateApnsChannel(params).promise().toFuture
     @inline def updateApnsSandboxChannelFuture(
         params: UpdateApnsSandboxChannelRequest
-    ): Future[UpdateApnsSandboxChannelResponse] = service.updateApnsSandboxChannel(params).promise.toFuture
+    ): Future[UpdateApnsSandboxChannelResponse] = service.updateApnsSandboxChannel(params).promise().toFuture
     @inline def updateApnsVoipChannelFuture(
         params: UpdateApnsVoipChannelRequest
-    ): Future[UpdateApnsVoipChannelResponse] = service.updateApnsVoipChannel(params).promise.toFuture
+    ): Future[UpdateApnsVoipChannelResponse] = service.updateApnsVoipChannel(params).promise().toFuture
     @inline def updateApnsVoipSandboxChannelFuture(
         params: UpdateApnsVoipSandboxChannelRequest
-    ): Future[UpdateApnsVoipSandboxChannelResponse] = service.updateApnsVoipSandboxChannel(params).promise.toFuture
+    ): Future[UpdateApnsVoipSandboxChannelResponse] = service.updateApnsVoipSandboxChannel(params).promise().toFuture
     @inline def updateApplicationSettingsFuture(
         params: UpdateApplicationSettingsRequest
-    ): Future[UpdateApplicationSettingsResponse] = service.updateApplicationSettings(params).promise.toFuture
+    ): Future[UpdateApplicationSettingsResponse] = service.updateApplicationSettings(params).promise().toFuture
     @inline def updateBaiduChannelFuture(params: UpdateBaiduChannelRequest): Future[UpdateBaiduChannelResponse] =
-      service.updateBaiduChannel(params).promise.toFuture
+      service.updateBaiduChannel(params).promise().toFuture
     @inline def updateCampaignFuture(params: UpdateCampaignRequest): Future[UpdateCampaignResponse] =
-      service.updateCampaign(params).promise.toFuture
+      service.updateCampaign(params).promise().toFuture
     @inline def updateEmailChannelFuture(params: UpdateEmailChannelRequest): Future[UpdateEmailChannelResponse] =
-      service.updateEmailChannel(params).promise.toFuture
+      service.updateEmailChannel(params).promise().toFuture
     @inline def updateEmailTemplateFuture(params: UpdateEmailTemplateRequest): Future[UpdateEmailTemplateResponse] =
-      service.updateEmailTemplate(params).promise.toFuture
+      service.updateEmailTemplate(params).promise().toFuture
     @inline def updateEndpointFuture(params: UpdateEndpointRequest): Future[UpdateEndpointResponse] =
-      service.updateEndpoint(params).promise.toFuture
+      service.updateEndpoint(params).promise().toFuture
     @inline def updateEndpointsBatchFuture(params: UpdateEndpointsBatchRequest): Future[UpdateEndpointsBatchResponse] =
-      service.updateEndpointsBatch(params).promise.toFuture
+      service.updateEndpointsBatch(params).promise().toFuture
     @inline def updateGcmChannelFuture(params: UpdateGcmChannelRequest): Future[UpdateGcmChannelResponse] =
-      service.updateGcmChannel(params).promise.toFuture
+      service.updateGcmChannel(params).promise().toFuture
     @inline def updateJourneyFuture(params: UpdateJourneyRequest): Future[UpdateJourneyResponse] =
-      service.updateJourney(params).promise.toFuture
+      service.updateJourney(params).promise().toFuture
     @inline def updateJourneyStateFuture(params: UpdateJourneyStateRequest): Future[UpdateJourneyStateResponse] =
-      service.updateJourneyState(params).promise.toFuture
+      service.updateJourneyState(params).promise().toFuture
     @inline def updatePushTemplateFuture(params: UpdatePushTemplateRequest): Future[UpdatePushTemplateResponse] =
-      service.updatePushTemplate(params).promise.toFuture
+      service.updatePushTemplate(params).promise().toFuture
     @inline def updateSegmentFuture(params: UpdateSegmentRequest): Future[UpdateSegmentResponse] =
-      service.updateSegment(params).promise.toFuture
+      service.updateSegment(params).promise().toFuture
     @inline def updateSmsChannelFuture(params: UpdateSmsChannelRequest): Future[UpdateSmsChannelResponse] =
-      service.updateSmsChannel(params).promise.toFuture
+      service.updateSmsChannel(params).promise().toFuture
     @inline def updateSmsTemplateFuture(params: UpdateSmsTemplateRequest): Future[UpdateSmsTemplateResponse] =
-      service.updateSmsTemplate(params).promise.toFuture
+      service.updateSmsTemplate(params).promise().toFuture
     @inline def updateTemplateActiveVersionFuture(
         params: UpdateTemplateActiveVersionRequest
-    ): Future[UpdateTemplateActiveVersionResponse] = service.updateTemplateActiveVersion(params).promise.toFuture
+    ): Future[UpdateTemplateActiveVersionResponse] = service.updateTemplateActiveVersion(params).promise().toFuture
     @inline def updateVoiceChannelFuture(params: UpdateVoiceChannelRequest): Future[UpdateVoiceChannelResponse] =
-      service.updateVoiceChannel(params).promise.toFuture
+      service.updateVoiceChannel(params).promise().toFuture
     @inline def updateVoiceTemplateFuture(params: UpdateVoiceTemplateRequest): Future[UpdateVoiceTemplateResponse] =
-      service.updateVoiceTemplate(params).promise.toFuture
+      service.updateVoiceTemplate(params).promise().toFuture
   }
 }
 

@@ -16,11 +16,11 @@ package object elasticinference {
   implicit final class ElasticInferenceOps(private val service: ElasticInference) extends AnyVal {
 
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResult] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResult] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResult] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
   }
 }
 

@@ -35,53 +35,53 @@ package object licensemanager {
 
     @inline def createLicenseConfigurationFuture(
         params: CreateLicenseConfigurationRequest
-    ): Future[CreateLicenseConfigurationResponse] = service.createLicenseConfiguration(params).promise.toFuture
+    ): Future[CreateLicenseConfigurationResponse] = service.createLicenseConfiguration(params).promise().toFuture
     @inline def deleteLicenseConfigurationFuture(
         params: DeleteLicenseConfigurationRequest
-    ): Future[DeleteLicenseConfigurationResponse] = service.deleteLicenseConfiguration(params).promise.toFuture
+    ): Future[DeleteLicenseConfigurationResponse] = service.deleteLicenseConfiguration(params).promise().toFuture
     @inline def getLicenseConfigurationFuture(
         params: GetLicenseConfigurationRequest
-    ): Future[GetLicenseConfigurationResponse] = service.getLicenseConfiguration(params).promise.toFuture
+    ): Future[GetLicenseConfigurationResponse] = service.getLicenseConfiguration(params).promise().toFuture
     @inline def getServiceSettingsFuture(params: GetServiceSettingsRequest): Future[GetServiceSettingsResponse] =
-      service.getServiceSettings(params).promise.toFuture
+      service.getServiceSettings(params).promise().toFuture
     @inline def listAssociationsForLicenseConfigurationFuture(
         params: ListAssociationsForLicenseConfigurationRequest
     ): Future[ListAssociationsForLicenseConfigurationResponse] =
-      service.listAssociationsForLicenseConfiguration(params).promise.toFuture
+      service.listAssociationsForLicenseConfiguration(params).promise().toFuture
     @inline def listFailuresForLicenseConfigurationOperationsFuture(
         params: ListFailuresForLicenseConfigurationOperationsRequest
     ): Future[ListFailuresForLicenseConfigurationOperationsResponse] =
-      service.listFailuresForLicenseConfigurationOperations(params).promise.toFuture
+      service.listFailuresForLicenseConfigurationOperations(params).promise().toFuture
     @inline def listLicenseConfigurationsFuture(
         params: ListLicenseConfigurationsRequest
-    ): Future[ListLicenseConfigurationsResponse] = service.listLicenseConfigurations(params).promise.toFuture
+    ): Future[ListLicenseConfigurationsResponse] = service.listLicenseConfigurations(params).promise().toFuture
     @inline def listLicenseSpecificationsForResourceFuture(
         params: ListLicenseSpecificationsForResourceRequest
     ): Future[ListLicenseSpecificationsForResourceResponse] =
-      service.listLicenseSpecificationsForResource(params).promise.toFuture
+      service.listLicenseSpecificationsForResource(params).promise().toFuture
     @inline def listResourceInventoryFuture(
         params: ListResourceInventoryRequest
-    ): Future[ListResourceInventoryResponse] = service.listResourceInventory(params).promise.toFuture
+    ): Future[ListResourceInventoryResponse] = service.listResourceInventory(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def listUsageForLicenseConfigurationFuture(
         params: ListUsageForLicenseConfigurationRequest
     ): Future[ListUsageForLicenseConfigurationResponse] =
-      service.listUsageForLicenseConfiguration(params).promise.toFuture
+      service.listUsageForLicenseConfiguration(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateLicenseConfigurationFuture(
         params: UpdateLicenseConfigurationRequest
-    ): Future[UpdateLicenseConfigurationResponse] = service.updateLicenseConfiguration(params).promise.toFuture
+    ): Future[UpdateLicenseConfigurationResponse] = service.updateLicenseConfiguration(params).promise().toFuture
     @inline def updateLicenseSpecificationsForResourceFuture(
         params: UpdateLicenseSpecificationsForResourceRequest
     ): Future[UpdateLicenseSpecificationsForResourceResponse] =
-      service.updateLicenseSpecificationsForResource(params).promise.toFuture
+      service.updateLicenseSpecificationsForResource(params).promise().toFuture
     @inline def updateServiceSettingsFuture(
         params: UpdateServiceSettingsRequest
-    ): Future[UpdateServiceSettingsResponse] = service.updateServiceSettings(params).promise.toFuture
+    ): Future[UpdateServiceSettingsResponse] = service.updateServiceSettings(params).promise().toFuture
   }
 }
 

@@ -22,15 +22,15 @@ package object cur {
 
     @inline def deleteReportDefinitionFuture(
         params: DeleteReportDefinitionRequest
-    ): Future[DeleteReportDefinitionResponse] = service.deleteReportDefinition(params).promise.toFuture
+    ): Future[DeleteReportDefinitionResponse] = service.deleteReportDefinition(params).promise().toFuture
     @inline def describeReportDefinitionsFuture(
         params: DescribeReportDefinitionsRequest
-    ): Future[DescribeReportDefinitionsResponse] = service.describeReportDefinitions(params).promise.toFuture
+    ): Future[DescribeReportDefinitionsResponse] = service.describeReportDefinitions(params).promise().toFuture
     @inline def modifyReportDefinitionFuture(
         params: ModifyReportDefinitionRequest
-    ): Future[ModifyReportDefinitionResponse] = service.modifyReportDefinition(params).promise.toFuture
+    ): Future[ModifyReportDefinitionResponse] = service.modifyReportDefinition(params).promise().toFuture
     @inline def putReportDefinitionFuture(params: PutReportDefinitionRequest): Future[PutReportDefinitionResponse] =
-      service.putReportDefinition(params).promise.toFuture
+      service.putReportDefinition(params).promise().toFuture
   }
 }
 

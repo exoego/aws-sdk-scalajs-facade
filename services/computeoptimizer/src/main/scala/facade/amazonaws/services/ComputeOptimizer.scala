@@ -61,22 +61,22 @@ package object computeoptimizer {
     @inline def getAutoScalingGroupRecommendationsFuture(
         params: GetAutoScalingGroupRecommendationsRequest
     ): Future[GetAutoScalingGroupRecommendationsResponse] =
-      service.getAutoScalingGroupRecommendations(params).promise.toFuture
+      service.getAutoScalingGroupRecommendations(params).promise().toFuture
     @inline def getEC2InstanceRecommendationsFuture(
         params: GetEC2InstanceRecommendationsRequest
-    ): Future[GetEC2InstanceRecommendationsResponse] = service.getEC2InstanceRecommendations(params).promise.toFuture
+    ): Future[GetEC2InstanceRecommendationsResponse] = service.getEC2InstanceRecommendations(params).promise().toFuture
     @inline def getEC2RecommendationProjectedMetricsFuture(
         params: GetEC2RecommendationProjectedMetricsRequest
     ): Future[GetEC2RecommendationProjectedMetricsResponse] =
-      service.getEC2RecommendationProjectedMetrics(params).promise.toFuture
+      service.getEC2RecommendationProjectedMetrics(params).promise().toFuture
     @inline def getEnrollmentStatusFuture(params: GetEnrollmentStatusRequest): Future[GetEnrollmentStatusResponse] =
-      service.getEnrollmentStatus(params).promise.toFuture
+      service.getEnrollmentStatus(params).promise().toFuture
     @inline def getRecommendationSummariesFuture(
         params: GetRecommendationSummariesRequest
-    ): Future[GetRecommendationSummariesResponse] = service.getRecommendationSummaries(params).promise.toFuture
+    ): Future[GetRecommendationSummariesResponse] = service.getRecommendationSummaries(params).promise().toFuture
     @inline def updateEnrollmentStatusFuture(
         params: UpdateEnrollmentStatusRequest
-    ): Future[UpdateEnrollmentStatusResponse] = service.updateEnrollmentStatus(params).promise.toFuture
+    ): Future[UpdateEnrollmentStatusResponse] = service.updateEnrollmentStatus(params).promise().toFuture
   }
 }
 

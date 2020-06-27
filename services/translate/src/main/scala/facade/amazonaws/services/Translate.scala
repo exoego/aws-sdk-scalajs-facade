@@ -35,27 +35,27 @@ package object translate {
   implicit final class TranslateOps(private val service: Translate) extends AnyVal {
 
     @inline def deleteTerminologyFuture(params: DeleteTerminologyRequest): Future[js.Object] =
-      service.deleteTerminology(params).promise.toFuture
+      service.deleteTerminology(params).promise().toFuture
     @inline def describeTextTranslationJobFuture(
         params: DescribeTextTranslationJobRequest
-    ): Future[DescribeTextTranslationJobResponse] = service.describeTextTranslationJob(params).promise.toFuture
+    ): Future[DescribeTextTranslationJobResponse] = service.describeTextTranslationJob(params).promise().toFuture
     @inline def getTerminologyFuture(params: GetTerminologyRequest): Future[GetTerminologyResponse] =
-      service.getTerminology(params).promise.toFuture
+      service.getTerminology(params).promise().toFuture
     @inline def importTerminologyFuture(params: ImportTerminologyRequest): Future[ImportTerminologyResponse] =
-      service.importTerminology(params).promise.toFuture
+      service.importTerminology(params).promise().toFuture
     @inline def listTerminologiesFuture(params: ListTerminologiesRequest): Future[ListTerminologiesResponse] =
-      service.listTerminologies(params).promise.toFuture
+      service.listTerminologies(params).promise().toFuture
     @inline def listTextTranslationJobsFuture(
         params: ListTextTranslationJobsRequest
-    ): Future[ListTextTranslationJobsResponse] = service.listTextTranslationJobs(params).promise.toFuture
+    ): Future[ListTextTranslationJobsResponse] = service.listTextTranslationJobs(params).promise().toFuture
     @inline def startTextTranslationJobFuture(
         params: StartTextTranslationJobRequest
-    ): Future[StartTextTranslationJobResponse] = service.startTextTranslationJob(params).promise.toFuture
+    ): Future[StartTextTranslationJobResponse] = service.startTextTranslationJob(params).promise().toFuture
     @inline def stopTextTranslationJobFuture(
         params: StopTextTranslationJobRequest
-    ): Future[StopTextTranslationJobResponse] = service.stopTextTranslationJob(params).promise.toFuture
+    ): Future[StopTextTranslationJobResponse] = service.stopTextTranslationJob(params).promise().toFuture
     @inline def translateTextFuture(params: TranslateTextRequest): Future[TranslateTextResponse] =
-      service.translateText(params).promise.toFuture
+      service.translateText(params).promise().toFuture
   }
 }
 

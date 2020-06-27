@@ -20,30 +20,30 @@ package object pinpointsmsvoice {
     @inline def createConfigurationSetEventDestinationFuture(
         params: CreateConfigurationSetEventDestinationRequest
     ): Future[CreateConfigurationSetEventDestinationResponse] =
-      service.createConfigurationSetEventDestination(params).promise.toFuture
+      service.createConfigurationSetEventDestination(params).promise().toFuture
     @inline def createConfigurationSetFuture(
         params: CreateConfigurationSetRequest
-    ): Future[CreateConfigurationSetResponse] = service.createConfigurationSet(params).promise.toFuture
+    ): Future[CreateConfigurationSetResponse] = service.createConfigurationSet(params).promise().toFuture
     @inline def deleteConfigurationSetEventDestinationFuture(
         params: DeleteConfigurationSetEventDestinationRequest
     ): Future[DeleteConfigurationSetEventDestinationResponse] =
-      service.deleteConfigurationSetEventDestination(params).promise.toFuture
+      service.deleteConfigurationSetEventDestination(params).promise().toFuture
     @inline def deleteConfigurationSetFuture(
         params: DeleteConfigurationSetRequest
-    ): Future[DeleteConfigurationSetResponse] = service.deleteConfigurationSet(params).promise.toFuture
+    ): Future[DeleteConfigurationSetResponse] = service.deleteConfigurationSet(params).promise().toFuture
     @inline def getConfigurationSetEventDestinationsFuture(
         params: GetConfigurationSetEventDestinationsRequest
     ): Future[GetConfigurationSetEventDestinationsResponse] =
-      service.getConfigurationSetEventDestinations(params).promise.toFuture
+      service.getConfigurationSetEventDestinations(params).promise().toFuture
     @inline def listConfigurationSetsFuture(
         params: ListConfigurationSetsRequest
-    ): Future[ListConfigurationSetsResponse] = service.listConfigurationSets(params).promise.toFuture
+    ): Future[ListConfigurationSetsResponse] = service.listConfigurationSets(params).promise().toFuture
     @inline def sendVoiceMessageFuture(params: SendVoiceMessageRequest): Future[SendVoiceMessageResponse] =
-      service.sendVoiceMessage(params).promise.toFuture
+      service.sendVoiceMessage(params).promise().toFuture
     @inline def updateConfigurationSetEventDestinationFuture(
         params: UpdateConfigurationSetEventDestinationRequest
     ): Future[UpdateConfigurationSetEventDestinationResponse] =
-      service.updateConfigurationSetEventDestination(params).promise.toFuture
+      service.updateConfigurationSetEventDestination(params).promise().toFuture
   }
 }
 

@@ -32,54 +32,54 @@ package object mq {
   implicit final class MQOps(private val service: MQ) extends AnyVal {
 
     @inline def createBrokerFuture(params: CreateBrokerRequest): Future[CreateBrokerResponse] =
-      service.createBroker(params).promise.toFuture
+      service.createBroker(params).promise().toFuture
     @inline def createConfigurationFuture(params: CreateConfigurationRequest): Future[CreateConfigurationResponse] =
-      service.createConfiguration(params).promise.toFuture
+      service.createConfiguration(params).promise().toFuture
     @inline def createTagsFuture(params: CreateTagsRequest): Future[js.Object] =
-      service.createTags(params).promise.toFuture
+      service.createTags(params).promise().toFuture
     @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] =
-      service.createUser(params).promise.toFuture
+      service.createUser(params).promise().toFuture
     @inline def deleteBrokerFuture(params: DeleteBrokerRequest): Future[DeleteBrokerResponse] =
-      service.deleteBroker(params).promise.toFuture
+      service.deleteBroker(params).promise().toFuture
     @inline def deleteTagsFuture(params: DeleteTagsRequest): Future[js.Object] =
-      service.deleteTags(params).promise.toFuture
+      service.deleteTags(params).promise().toFuture
     @inline def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResponse] =
-      service.deleteUser(params).promise.toFuture
+      service.deleteUser(params).promise().toFuture
     @inline def describeBrokerEngineTypesFuture(
         params: DescribeBrokerEngineTypesRequest
-    ): Future[DescribeBrokerEngineTypesResponse] = service.describeBrokerEngineTypes(params).promise.toFuture
+    ): Future[DescribeBrokerEngineTypesResponse] = service.describeBrokerEngineTypes(params).promise().toFuture
     @inline def describeBrokerFuture(params: DescribeBrokerRequest): Future[DescribeBrokerResponse] =
-      service.describeBroker(params).promise.toFuture
+      service.describeBroker(params).promise().toFuture
     @inline def describeBrokerInstanceOptionsFuture(
         params: DescribeBrokerInstanceOptionsRequest
-    ): Future[DescribeBrokerInstanceOptionsResponse] = service.describeBrokerInstanceOptions(params).promise.toFuture
+    ): Future[DescribeBrokerInstanceOptionsResponse] = service.describeBrokerInstanceOptions(params).promise().toFuture
     @inline def describeConfigurationFuture(
         params: DescribeConfigurationRequest
-    ): Future[DescribeConfigurationResponse] = service.describeConfiguration(params).promise.toFuture
+    ): Future[DescribeConfigurationResponse] = service.describeConfiguration(params).promise().toFuture
     @inline def describeConfigurationRevisionFuture(
         params: DescribeConfigurationRevisionRequest
-    ): Future[DescribeConfigurationRevisionResponse] = service.describeConfigurationRevision(params).promise.toFuture
+    ): Future[DescribeConfigurationRevisionResponse] = service.describeConfigurationRevision(params).promise().toFuture
     @inline def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] =
-      service.describeUser(params).promise.toFuture
+      service.describeUser(params).promise().toFuture
     @inline def listBrokersFuture(params: ListBrokersRequest): Future[ListBrokersResponse] =
-      service.listBrokers(params).promise.toFuture
+      service.listBrokers(params).promise().toFuture
     @inline def listConfigurationRevisionsFuture(
         params: ListConfigurationRevisionsRequest
-    ): Future[ListConfigurationRevisionsResponse] = service.listConfigurationRevisions(params).promise.toFuture
+    ): Future[ListConfigurationRevisionsResponse] = service.listConfigurationRevisions(params).promise().toFuture
     @inline def listConfigurationsFuture(params: ListConfigurationsRequest): Future[ListConfigurationsResponse] =
-      service.listConfigurations(params).promise.toFuture
+      service.listConfigurations(params).promise().toFuture
     @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] =
-      service.listTags(params).promise.toFuture
+      service.listTags(params).promise().toFuture
     @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
-      service.listUsers(params).promise.toFuture
+      service.listUsers(params).promise().toFuture
     @inline def rebootBrokerFuture(params: RebootBrokerRequest): Future[RebootBrokerResponse] =
-      service.rebootBroker(params).promise.toFuture
+      service.rebootBroker(params).promise().toFuture
     @inline def updateBrokerFuture(params: UpdateBrokerRequest): Future[UpdateBrokerResponse] =
-      service.updateBroker(params).promise.toFuture
+      service.updateBroker(params).promise().toFuture
     @inline def updateConfigurationFuture(params: UpdateConfigurationRequest): Future[UpdateConfigurationResponse] =
-      service.updateConfiguration(params).promise.toFuture
+      service.updateConfiguration(params).promise().toFuture
     @inline def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] =
-      service.updateUser(params).promise.toFuture
+      service.updateUser(params).promise().toFuture
   }
 }
 

@@ -114,65 +114,65 @@ package object cloudwatch {
   implicit final class CloudWatchOps(private val service: CloudWatch) extends AnyVal {
 
     @inline def deleteAlarmsFuture(params: DeleteAlarmsInput): Future[js.Object] =
-      service.deleteAlarms(params).promise.toFuture
+      service.deleteAlarms(params).promise().toFuture
     @inline def deleteAnomalyDetectorFuture(params: DeleteAnomalyDetectorInput): Future[DeleteAnomalyDetectorOutput] =
-      service.deleteAnomalyDetector(params).promise.toFuture
+      service.deleteAnomalyDetector(params).promise().toFuture
     @inline def deleteDashboardsFuture(params: DeleteDashboardsInput): Future[DeleteDashboardsOutput] =
-      service.deleteDashboards(params).promise.toFuture
+      service.deleteDashboards(params).promise().toFuture
     @inline def deleteInsightRulesFuture(params: DeleteInsightRulesInput): Future[DeleteInsightRulesOutput] =
-      service.deleteInsightRules(params).promise.toFuture
+      service.deleteInsightRules(params).promise().toFuture
     @inline def describeAlarmHistoryFuture(params: DescribeAlarmHistoryInput): Future[DescribeAlarmHistoryOutput] =
-      service.describeAlarmHistory(params).promise.toFuture
+      service.describeAlarmHistory(params).promise().toFuture
     @inline def describeAlarmsForMetricFuture(
         params: DescribeAlarmsForMetricInput
-    ): Future[DescribeAlarmsForMetricOutput] = service.describeAlarmsForMetric(params).promise.toFuture
+    ): Future[DescribeAlarmsForMetricOutput] = service.describeAlarmsForMetric(params).promise().toFuture
     @inline def describeAlarmsFuture(params: DescribeAlarmsInput): Future[DescribeAlarmsOutput] =
-      service.describeAlarms(params).promise.toFuture
+      service.describeAlarms(params).promise().toFuture
     @inline def describeAnomalyDetectorsFuture(
         params: DescribeAnomalyDetectorsInput
-    ): Future[DescribeAnomalyDetectorsOutput] = service.describeAnomalyDetectors(params).promise.toFuture
+    ): Future[DescribeAnomalyDetectorsOutput] = service.describeAnomalyDetectors(params).promise().toFuture
     @inline def describeInsightRulesFuture(params: DescribeInsightRulesInput): Future[DescribeInsightRulesOutput] =
-      service.describeInsightRules(params).promise.toFuture
+      service.describeInsightRules(params).promise().toFuture
     @inline def disableAlarmActionsFuture(params: DisableAlarmActionsInput): Future[js.Object] =
-      service.disableAlarmActions(params).promise.toFuture
+      service.disableAlarmActions(params).promise().toFuture
     @inline def disableInsightRulesFuture(params: DisableInsightRulesInput): Future[DisableInsightRulesOutput] =
-      service.disableInsightRules(params).promise.toFuture
+      service.disableInsightRules(params).promise().toFuture
     @inline def enableAlarmActionsFuture(params: EnableAlarmActionsInput): Future[js.Object] =
-      service.enableAlarmActions(params).promise.toFuture
+      service.enableAlarmActions(params).promise().toFuture
     @inline def enableInsightRulesFuture(params: EnableInsightRulesInput): Future[EnableInsightRulesOutput] =
-      service.enableInsightRules(params).promise.toFuture
+      service.enableInsightRules(params).promise().toFuture
     @inline def getDashboardFuture(params: GetDashboardInput): Future[GetDashboardOutput] =
-      service.getDashboard(params).promise.toFuture
+      service.getDashboard(params).promise().toFuture
     @inline def getInsightRuleReportFuture(params: GetInsightRuleReportInput): Future[GetInsightRuleReportOutput] =
-      service.getInsightRuleReport(params).promise.toFuture
+      service.getInsightRuleReport(params).promise().toFuture
     @inline def getMetricDataFuture(params: GetMetricDataInput): Future[GetMetricDataOutput] =
-      service.getMetricData(params).promise.toFuture
+      service.getMetricData(params).promise().toFuture
     @inline def getMetricStatisticsFuture(params: GetMetricStatisticsInput): Future[GetMetricStatisticsOutput] =
-      service.getMetricStatistics(params).promise.toFuture
+      service.getMetricStatistics(params).promise().toFuture
     @inline def getMetricWidgetImageFuture(params: GetMetricWidgetImageInput): Future[GetMetricWidgetImageOutput] =
-      service.getMetricWidgetImage(params).promise.toFuture
+      service.getMetricWidgetImage(params).promise().toFuture
     @inline def listDashboardsFuture(params: ListDashboardsInput): Future[ListDashboardsOutput] =
-      service.listDashboards(params).promise.toFuture
+      service.listDashboards(params).promise().toFuture
     @inline def listMetricsFuture(params: ListMetricsInput): Future[ListMetricsOutput] =
-      service.listMetrics(params).promise.toFuture
+      service.listMetrics(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def putAnomalyDetectorFuture(params: PutAnomalyDetectorInput): Future[PutAnomalyDetectorOutput] =
-      service.putAnomalyDetector(params).promise.toFuture
+      service.putAnomalyDetector(params).promise().toFuture
     @inline def putDashboardFuture(params: PutDashboardInput): Future[PutDashboardOutput] =
-      service.putDashboard(params).promise.toFuture
+      service.putDashboard(params).promise().toFuture
     @inline def putInsightRuleFuture(params: PutInsightRuleInput): Future[PutInsightRuleOutput] =
-      service.putInsightRule(params).promise.toFuture
+      service.putInsightRule(params).promise().toFuture
     @inline def putMetricAlarmFuture(params: PutMetricAlarmInput): Future[js.Object] =
-      service.putMetricAlarm(params).promise.toFuture
+      service.putMetricAlarm(params).promise().toFuture
     @inline def putMetricDataFuture(params: PutMetricDataInput): Future[js.Object] =
-      service.putMetricData(params).promise.toFuture
+      service.putMetricData(params).promise().toFuture
     @inline def setAlarmStateFuture(params: SetAlarmStateInput): Future[js.Object] =
-      service.setAlarmState(params).promise.toFuture
+      service.setAlarmState(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
   }
 }
 

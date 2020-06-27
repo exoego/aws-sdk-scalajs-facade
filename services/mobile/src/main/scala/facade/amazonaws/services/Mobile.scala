@@ -39,23 +39,23 @@ package object mobile {
   implicit final class MobileOps(private val service: Mobile) extends AnyVal {
 
     @inline def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResult] =
-      service.createProject(params).promise.toFuture
+      service.createProject(params).promise().toFuture
     @inline def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResult] =
-      service.deleteProject(params).promise.toFuture
+      service.deleteProject(params).promise().toFuture
     @inline def describeBundleFuture(params: DescribeBundleRequest): Future[DescribeBundleResult] =
-      service.describeBundle(params).promise.toFuture
+      service.describeBundle(params).promise().toFuture
     @inline def describeProjectFuture(params: DescribeProjectRequest): Future[DescribeProjectResult] =
-      service.describeProject(params).promise.toFuture
+      service.describeProject(params).promise().toFuture
     @inline def exportBundleFuture(params: ExportBundleRequest): Future[ExportBundleResult] =
-      service.exportBundle(params).promise.toFuture
+      service.exportBundle(params).promise().toFuture
     @inline def exportProjectFuture(params: ExportProjectRequest): Future[ExportProjectResult] =
-      service.exportProject(params).promise.toFuture
+      service.exportProject(params).promise().toFuture
     @inline def listBundlesFuture(params: ListBundlesRequest): Future[ListBundlesResult] =
-      service.listBundles(params).promise.toFuture
+      service.listBundles(params).promise().toFuture
     @inline def listProjectsFuture(params: ListProjectsRequest): Future[ListProjectsResult] =
-      service.listProjects(params).promise.toFuture
+      service.listProjects(params).promise().toFuture
     @inline def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResult] =
-      service.updateProject(params).promise.toFuture
+      service.updateProject(params).promise().toFuture
   }
 }
 

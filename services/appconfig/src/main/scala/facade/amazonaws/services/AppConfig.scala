@@ -39,66 +39,66 @@ package object appconfig {
   implicit final class AppConfigOps(private val service: AppConfig) extends AnyVal {
 
     @inline def createApplicationFuture(params: CreateApplicationRequest): Future[Application] =
-      service.createApplication(params).promise.toFuture
+      service.createApplication(params).promise().toFuture
     @inline def createConfigurationProfileFuture(
         params: CreateConfigurationProfileRequest
-    ): Future[ConfigurationProfile] = service.createConfigurationProfile(params).promise.toFuture
+    ): Future[ConfigurationProfile] = service.createConfigurationProfile(params).promise().toFuture
     @inline def createDeploymentStrategyFuture(params: CreateDeploymentStrategyRequest): Future[DeploymentStrategy] =
-      service.createDeploymentStrategy(params).promise.toFuture
+      service.createDeploymentStrategy(params).promise().toFuture
     @inline def createEnvironmentFuture(params: CreateEnvironmentRequest): Future[Environment] =
-      service.createEnvironment(params).promise.toFuture
+      service.createEnvironment(params).promise().toFuture
     @inline def deleteApplicationFuture(params: DeleteApplicationRequest): Future[js.Object] =
-      service.deleteApplication(params).promise.toFuture
+      service.deleteApplication(params).promise().toFuture
     @inline def deleteConfigurationProfileFuture(params: DeleteConfigurationProfileRequest): Future[js.Object] =
-      service.deleteConfigurationProfile(params).promise.toFuture
+      service.deleteConfigurationProfile(params).promise().toFuture
     @inline def deleteDeploymentStrategyFuture(params: DeleteDeploymentStrategyRequest): Future[js.Object] =
-      service.deleteDeploymentStrategy(params).promise.toFuture
+      service.deleteDeploymentStrategy(params).promise().toFuture
     @inline def deleteEnvironmentFuture(params: DeleteEnvironmentRequest): Future[js.Object] =
-      service.deleteEnvironment(params).promise.toFuture
+      service.deleteEnvironment(params).promise().toFuture
     @inline def getApplicationFuture(params: GetApplicationRequest): Future[Application] =
-      service.getApplication(params).promise.toFuture
+      service.getApplication(params).promise().toFuture
     @inline def getConfigurationFuture(params: GetConfigurationRequest): Future[Configuration] =
-      service.getConfiguration(params).promise.toFuture
+      service.getConfiguration(params).promise().toFuture
     @inline def getConfigurationProfileFuture(params: GetConfigurationProfileRequest): Future[ConfigurationProfile] =
-      service.getConfigurationProfile(params).promise.toFuture
+      service.getConfigurationProfile(params).promise().toFuture
     @inline def getDeploymentFuture(params: GetDeploymentRequest): Future[Deployment] =
-      service.getDeployment(params).promise.toFuture
+      service.getDeployment(params).promise().toFuture
     @inline def getDeploymentStrategyFuture(params: GetDeploymentStrategyRequest): Future[DeploymentStrategy] =
-      service.getDeploymentStrategy(params).promise.toFuture
+      service.getDeploymentStrategy(params).promise().toFuture
     @inline def getEnvironmentFuture(params: GetEnvironmentRequest): Future[Environment] =
-      service.getEnvironment(params).promise.toFuture
+      service.getEnvironment(params).promise().toFuture
     @inline def listApplicationsFuture(params: ListApplicationsRequest): Future[Applications] =
-      service.listApplications(params).promise.toFuture
+      service.listApplications(params).promise().toFuture
     @inline def listConfigurationProfilesFuture(
         params: ListConfigurationProfilesRequest
-    ): Future[ConfigurationProfiles] = service.listConfigurationProfiles(params).promise.toFuture
+    ): Future[ConfigurationProfiles] = service.listConfigurationProfiles(params).promise().toFuture
     @inline def listDeploymentStrategiesFuture(params: ListDeploymentStrategiesRequest): Future[DeploymentStrategies] =
-      service.listDeploymentStrategies(params).promise.toFuture
+      service.listDeploymentStrategies(params).promise().toFuture
     @inline def listDeploymentsFuture(params: ListDeploymentsRequest): Future[Deployments] =
-      service.listDeployments(params).promise.toFuture
+      service.listDeployments(params).promise().toFuture
     @inline def listEnvironmentsFuture(params: ListEnvironmentsRequest): Future[Environments] =
-      service.listEnvironments(params).promise.toFuture
+      service.listEnvironments(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ResourceTags] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def startDeploymentFuture(params: StartDeploymentRequest): Future[Deployment] =
-      service.startDeployment(params).promise.toFuture
+      service.startDeployment(params).promise().toFuture
     @inline def stopDeploymentFuture(params: StopDeploymentRequest): Future[Deployment] =
-      service.stopDeployment(params).promise.toFuture
+      service.stopDeployment(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[Application] =
-      service.updateApplication(params).promise.toFuture
+      service.updateApplication(params).promise().toFuture
     @inline def updateConfigurationProfileFuture(
         params: UpdateConfigurationProfileRequest
-    ): Future[ConfigurationProfile] = service.updateConfigurationProfile(params).promise.toFuture
+    ): Future[ConfigurationProfile] = service.updateConfigurationProfile(params).promise().toFuture
     @inline def updateDeploymentStrategyFuture(params: UpdateDeploymentStrategyRequest): Future[DeploymentStrategy] =
-      service.updateDeploymentStrategy(params).promise.toFuture
+      service.updateDeploymentStrategy(params).promise().toFuture
     @inline def updateEnvironmentFuture(params: UpdateEnvironmentRequest): Future[Environment] =
-      service.updateEnvironment(params).promise.toFuture
+      service.updateEnvironment(params).promise().toFuture
     @inline def validateConfigurationFuture(params: ValidateConfigurationRequest): Future[js.Object] =
-      service.validateConfiguration(params).promise.toFuture
+      service.validateConfiguration(params).promise().toFuture
   }
 }
 

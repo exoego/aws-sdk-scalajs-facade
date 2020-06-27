@@ -41,31 +41,31 @@ package object cloudhsmv2 {
   implicit final class CloudHSMV2Ops(private val service: CloudHSMV2) extends AnyVal {
 
     @inline def copyBackupToRegionFuture(params: CopyBackupToRegionRequest): Future[CopyBackupToRegionResponse] =
-      service.copyBackupToRegion(params).promise.toFuture
+      service.copyBackupToRegion(params).promise().toFuture
     @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
-      service.createCluster(params).promise.toFuture
+      service.createCluster(params).promise().toFuture
     @inline def createHsmFuture(params: CreateHsmRequest): Future[CreateHsmResponse] =
-      service.createHsm(params).promise.toFuture
+      service.createHsm(params).promise().toFuture
     @inline def deleteBackupFuture(params: DeleteBackupRequest): Future[DeleteBackupResponse] =
-      service.deleteBackup(params).promise.toFuture
+      service.deleteBackup(params).promise().toFuture
     @inline def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] =
-      service.deleteCluster(params).promise.toFuture
+      service.deleteCluster(params).promise().toFuture
     @inline def deleteHsmFuture(params: DeleteHsmRequest): Future[DeleteHsmResponse] =
-      service.deleteHsm(params).promise.toFuture
+      service.deleteHsm(params).promise().toFuture
     @inline def describeBackupsFuture(params: DescribeBackupsRequest): Future[DescribeBackupsResponse] =
-      service.describeBackups(params).promise.toFuture
+      service.describeBackups(params).promise().toFuture
     @inline def describeClustersFuture(params: DescribeClustersRequest): Future[DescribeClustersResponse] =
-      service.describeClusters(params).promise.toFuture
+      service.describeClusters(params).promise().toFuture
     @inline def initializeClusterFuture(params: InitializeClusterRequest): Future[InitializeClusterResponse] =
-      service.initializeCluster(params).promise.toFuture
+      service.initializeCluster(params).promise().toFuture
     @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] =
-      service.listTags(params).promise.toFuture
+      service.listTags(params).promise().toFuture
     @inline def restoreBackupFuture(params: RestoreBackupRequest): Future[RestoreBackupResponse] =
-      service.restoreBackup(params).promise.toFuture
+      service.restoreBackup(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
   }
 }
 

@@ -599,1097 +599,1104 @@ package object ec2 {
     @inline def acceptReservedInstancesExchangeQuoteFuture(
         params: AcceptReservedInstancesExchangeQuoteRequest
     ): Future[AcceptReservedInstancesExchangeQuoteResult] =
-      service.acceptReservedInstancesExchangeQuote(params).promise.toFuture
+      service.acceptReservedInstancesExchangeQuote(params).promise().toFuture
     @inline def acceptTransitGatewayPeeringAttachmentFuture(
         params: AcceptTransitGatewayPeeringAttachmentRequest
     ): Future[AcceptTransitGatewayPeeringAttachmentResult] =
-      service.acceptTransitGatewayPeeringAttachment(params).promise.toFuture
+      service.acceptTransitGatewayPeeringAttachment(params).promise().toFuture
     @inline def acceptTransitGatewayVpcAttachmentFuture(
         params: AcceptTransitGatewayVpcAttachmentRequest
     ): Future[AcceptTransitGatewayVpcAttachmentResult] =
-      service.acceptTransitGatewayVpcAttachment(params).promise.toFuture
+      service.acceptTransitGatewayVpcAttachment(params).promise().toFuture
     @inline def acceptVpcEndpointConnectionsFuture(
         params: AcceptVpcEndpointConnectionsRequest
-    ): Future[AcceptVpcEndpointConnectionsResult] = service.acceptVpcEndpointConnections(params).promise.toFuture
+    ): Future[AcceptVpcEndpointConnectionsResult] = service.acceptVpcEndpointConnections(params).promise().toFuture
     @inline def acceptVpcPeeringConnectionFuture(
         params: AcceptVpcPeeringConnectionRequest
-    ): Future[AcceptVpcPeeringConnectionResult] = service.acceptVpcPeeringConnection(params).promise.toFuture
+    ): Future[AcceptVpcPeeringConnectionResult] = service.acceptVpcPeeringConnection(params).promise().toFuture
     @inline def advertiseByoipCidrFuture(params: AdvertiseByoipCidrRequest): Future[AdvertiseByoipCidrResult] =
-      service.advertiseByoipCidr(params).promise.toFuture
+      service.advertiseByoipCidr(params).promise().toFuture
     @inline def allocateAddressFuture(params: AllocateAddressRequest): Future[AllocateAddressResult] =
-      service.allocateAddress(params).promise.toFuture
+      service.allocateAddress(params).promise().toFuture
     @inline def allocateHostsFuture(params: AllocateHostsRequest): Future[AllocateHostsResult] =
-      service.allocateHosts(params).promise.toFuture
+      service.allocateHosts(params).promise().toFuture
     @inline def applySecurityGroupsToClientVpnTargetNetworkFuture(
         params: ApplySecurityGroupsToClientVpnTargetNetworkRequest
     ): Future[ApplySecurityGroupsToClientVpnTargetNetworkResult] =
-      service.applySecurityGroupsToClientVpnTargetNetwork(params).promise.toFuture
+      service.applySecurityGroupsToClientVpnTargetNetwork(params).promise().toFuture
     @inline def assignIpv6AddressesFuture(params: AssignIpv6AddressesRequest): Future[AssignIpv6AddressesResult] =
-      service.assignIpv6Addresses(params).promise.toFuture
+      service.assignIpv6Addresses(params).promise().toFuture
     @inline def assignPrivateIpAddressesFuture(
         params: AssignPrivateIpAddressesRequest
-    ): Future[AssignPrivateIpAddressesResult] = service.assignPrivateIpAddresses(params).promise.toFuture
+    ): Future[AssignPrivateIpAddressesResult] = service.assignPrivateIpAddresses(params).promise().toFuture
     @inline def associateAddressFuture(params: AssociateAddressRequest): Future[AssociateAddressResult] =
-      service.associateAddress(params).promise.toFuture
+      service.associateAddress(params).promise().toFuture
     @inline def associateClientVpnTargetNetworkFuture(
         params: AssociateClientVpnTargetNetworkRequest
-    ): Future[AssociateClientVpnTargetNetworkResult] = service.associateClientVpnTargetNetwork(params).promise.toFuture
+    ): Future[AssociateClientVpnTargetNetworkResult] =
+      service.associateClientVpnTargetNetwork(params).promise().toFuture
     @inline def associateDhcpOptionsFuture(params: AssociateDhcpOptionsRequest): Future[js.Object] =
-      service.associateDhcpOptions(params).promise.toFuture
+      service.associateDhcpOptions(params).promise().toFuture
     @inline def associateIamInstanceProfileFuture(
         params: AssociateIamInstanceProfileRequest
-    ): Future[AssociateIamInstanceProfileResult] = service.associateIamInstanceProfile(params).promise.toFuture
+    ): Future[AssociateIamInstanceProfileResult] = service.associateIamInstanceProfile(params).promise().toFuture
     @inline def associateRouteTableFuture(params: AssociateRouteTableRequest): Future[AssociateRouteTableResult] =
-      service.associateRouteTable(params).promise.toFuture
+      service.associateRouteTable(params).promise().toFuture
     @inline def associateSubnetCidrBlockFuture(
         params: AssociateSubnetCidrBlockRequest
-    ): Future[AssociateSubnetCidrBlockResult] = service.associateSubnetCidrBlock(params).promise.toFuture
+    ): Future[AssociateSubnetCidrBlockResult] = service.associateSubnetCidrBlock(params).promise().toFuture
     @inline def associateTransitGatewayMulticastDomainFuture(
         params: AssociateTransitGatewayMulticastDomainRequest
     ): Future[AssociateTransitGatewayMulticastDomainResult] =
-      service.associateTransitGatewayMulticastDomain(params).promise.toFuture
+      service.associateTransitGatewayMulticastDomain(params).promise().toFuture
     @inline def associateTransitGatewayRouteTableFuture(
         params: AssociateTransitGatewayRouteTableRequest
     ): Future[AssociateTransitGatewayRouteTableResult] =
-      service.associateTransitGatewayRouteTable(params).promise.toFuture
+      service.associateTransitGatewayRouteTable(params).promise().toFuture
     @inline def associateVpcCidrBlockFuture(params: AssociateVpcCidrBlockRequest): Future[AssociateVpcCidrBlockResult] =
-      service.associateVpcCidrBlock(params).promise.toFuture
+      service.associateVpcCidrBlock(params).promise().toFuture
     @inline def attachClassicLinkVpcFuture(params: AttachClassicLinkVpcRequest): Future[AttachClassicLinkVpcResult] =
-      service.attachClassicLinkVpc(params).promise.toFuture
+      service.attachClassicLinkVpc(params).promise().toFuture
     @inline def attachInternetGatewayFuture(params: AttachInternetGatewayRequest): Future[js.Object] =
-      service.attachInternetGateway(params).promise.toFuture
+      service.attachInternetGateway(params).promise().toFuture
     @inline def attachNetworkInterfaceFuture(
         params: AttachNetworkInterfaceRequest
-    ): Future[AttachNetworkInterfaceResult] = service.attachNetworkInterface(params).promise.toFuture
+    ): Future[AttachNetworkInterfaceResult] = service.attachNetworkInterface(params).promise().toFuture
     @inline def attachVolumeFuture(params: AttachVolumeRequest): Future[VolumeAttachment] =
-      service.attachVolume(params).promise.toFuture
+      service.attachVolume(params).promise().toFuture
     @inline def attachVpnGatewayFuture(params: AttachVpnGatewayRequest): Future[AttachVpnGatewayResult] =
-      service.attachVpnGateway(params).promise.toFuture
+      service.attachVpnGateway(params).promise().toFuture
     @inline def authorizeClientVpnIngressFuture(
         params: AuthorizeClientVpnIngressRequest
-    ): Future[AuthorizeClientVpnIngressResult] = service.authorizeClientVpnIngress(params).promise.toFuture
+    ): Future[AuthorizeClientVpnIngressResult] = service.authorizeClientVpnIngress(params).promise().toFuture
     @inline def authorizeSecurityGroupEgressFuture(params: AuthorizeSecurityGroupEgressRequest): Future[js.Object] =
-      service.authorizeSecurityGroupEgress(params).promise.toFuture
+      service.authorizeSecurityGroupEgress(params).promise().toFuture
     @inline def authorizeSecurityGroupIngressFuture(params: AuthorizeSecurityGroupIngressRequest): Future[js.Object] =
-      service.authorizeSecurityGroupIngress(params).promise.toFuture
+      service.authorizeSecurityGroupIngress(params).promise().toFuture
     @inline def bundleInstanceFuture(params: BundleInstanceRequest): Future[BundleInstanceResult] =
-      service.bundleInstance(params).promise.toFuture
+      service.bundleInstance(params).promise().toFuture
     @inline def cancelBundleTaskFuture(params: CancelBundleTaskRequest): Future[CancelBundleTaskResult] =
-      service.cancelBundleTask(params).promise.toFuture
+      service.cancelBundleTask(params).promise().toFuture
     @inline def cancelCapacityReservationFuture(
         params: CancelCapacityReservationRequest
-    ): Future[CancelCapacityReservationResult] = service.cancelCapacityReservation(params).promise.toFuture
+    ): Future[CancelCapacityReservationResult] = service.cancelCapacityReservation(params).promise().toFuture
     @inline def cancelConversionTaskFuture(params: CancelConversionRequest): Future[js.Object] =
-      service.cancelConversionTask(params).promise.toFuture
+      service.cancelConversionTask(params).promise().toFuture
     @inline def cancelExportTaskFuture(params: CancelExportTaskRequest): Future[js.Object] =
-      service.cancelExportTask(params).promise.toFuture
+      service.cancelExportTask(params).promise().toFuture
     @inline def cancelImportTaskFuture(params: CancelImportTaskRequest): Future[CancelImportTaskResult] =
-      service.cancelImportTask(params).promise.toFuture
+      service.cancelImportTask(params).promise().toFuture
     @inline def cancelReservedInstancesListingFuture(
         params: CancelReservedInstancesListingRequest
-    ): Future[CancelReservedInstancesListingResult] = service.cancelReservedInstancesListing(params).promise.toFuture
+    ): Future[CancelReservedInstancesListingResult] = service.cancelReservedInstancesListing(params).promise().toFuture
     @inline def cancelSpotFleetRequestsFuture(
         params: CancelSpotFleetRequestsRequest
-    ): Future[CancelSpotFleetRequestsResponse] = service.cancelSpotFleetRequests(params).promise.toFuture
+    ): Future[CancelSpotFleetRequestsResponse] = service.cancelSpotFleetRequests(params).promise().toFuture
     @inline def cancelSpotInstanceRequestsFuture(
         params: CancelSpotInstanceRequestsRequest
-    ): Future[CancelSpotInstanceRequestsResult] = service.cancelSpotInstanceRequests(params).promise.toFuture
+    ): Future[CancelSpotInstanceRequestsResult] = service.cancelSpotInstanceRequests(params).promise().toFuture
     @inline def confirmProductInstanceFuture(
         params: ConfirmProductInstanceRequest
-    ): Future[ConfirmProductInstanceResult] = service.confirmProductInstance(params).promise.toFuture
+    ): Future[ConfirmProductInstanceResult] = service.confirmProductInstance(params).promise().toFuture
     @inline def copyFpgaImageFuture(params: CopyFpgaImageRequest): Future[CopyFpgaImageResult] =
-      service.copyFpgaImage(params).promise.toFuture
+      service.copyFpgaImage(params).promise().toFuture
     @inline def copyImageFuture(params: CopyImageRequest): Future[CopyImageResult] =
-      service.copyImage(params).promise.toFuture
+      service.copyImage(params).promise().toFuture
     @inline def copySnapshotFuture(params: CopySnapshotRequest): Future[CopySnapshotResult] =
-      service.copySnapshot(params).promise.toFuture
+      service.copySnapshot(params).promise().toFuture
     @inline def createCapacityReservationFuture(
         params: CreateCapacityReservationRequest
-    ): Future[CreateCapacityReservationResult] = service.createCapacityReservation(params).promise.toFuture
+    ): Future[CreateCapacityReservationResult] = service.createCapacityReservation(params).promise().toFuture
     @inline def createClientVpnEndpointFuture(
         params: CreateClientVpnEndpointRequest
-    ): Future[CreateClientVpnEndpointResult] = service.createClientVpnEndpoint(params).promise.toFuture
+    ): Future[CreateClientVpnEndpointResult] = service.createClientVpnEndpoint(params).promise().toFuture
     @inline def createClientVpnRouteFuture(params: CreateClientVpnRouteRequest): Future[CreateClientVpnRouteResult] =
-      service.createClientVpnRoute(params).promise.toFuture
+      service.createClientVpnRoute(params).promise().toFuture
     @inline def createCustomerGatewayFuture(params: CreateCustomerGatewayRequest): Future[CreateCustomerGatewayResult] =
-      service.createCustomerGateway(params).promise.toFuture
+      service.createCustomerGateway(params).promise().toFuture
     @inline def createDefaultSubnetFuture(params: CreateDefaultSubnetRequest): Future[CreateDefaultSubnetResult] =
-      service.createDefaultSubnet(params).promise.toFuture
+      service.createDefaultSubnet(params).promise().toFuture
     @inline def createDefaultVpcFuture(params: CreateDefaultVpcRequest): Future[CreateDefaultVpcResult] =
-      service.createDefaultVpc(params).promise.toFuture
+      service.createDefaultVpc(params).promise().toFuture
     @inline def createDhcpOptionsFuture(params: CreateDhcpOptionsRequest): Future[CreateDhcpOptionsResult] =
-      service.createDhcpOptions(params).promise.toFuture
+      service.createDhcpOptions(params).promise().toFuture
     @inline def createEgressOnlyInternetGatewayFuture(
         params: CreateEgressOnlyInternetGatewayRequest
-    ): Future[CreateEgressOnlyInternetGatewayResult] = service.createEgressOnlyInternetGateway(params).promise.toFuture
+    ): Future[CreateEgressOnlyInternetGatewayResult] =
+      service.createEgressOnlyInternetGateway(params).promise().toFuture
     @inline def createFleetFuture(params: CreateFleetRequest): Future[CreateFleetResult] =
-      service.createFleet(params).promise.toFuture
+      service.createFleet(params).promise().toFuture
     @inline def createFlowLogsFuture(params: CreateFlowLogsRequest): Future[CreateFlowLogsResult] =
-      service.createFlowLogs(params).promise.toFuture
+      service.createFlowLogs(params).promise().toFuture
     @inline def createFpgaImageFuture(params: CreateFpgaImageRequest): Future[CreateFpgaImageResult] =
-      service.createFpgaImage(params).promise.toFuture
+      service.createFpgaImage(params).promise().toFuture
     @inline def createImageFuture(params: CreateImageRequest): Future[CreateImageResult] =
-      service.createImage(params).promise.toFuture
+      service.createImage(params).promise().toFuture
     @inline def createInstanceExportTaskFuture(
         params: CreateInstanceExportTaskRequest
-    ): Future[CreateInstanceExportTaskResult] = service.createInstanceExportTask(params).promise.toFuture
+    ): Future[CreateInstanceExportTaskResult] = service.createInstanceExportTask(params).promise().toFuture
     @inline def createInternetGatewayFuture(params: CreateInternetGatewayRequest): Future[CreateInternetGatewayResult] =
-      service.createInternetGateway(params).promise.toFuture
+      service.createInternetGateway(params).promise().toFuture
     @inline def createKeyPairFuture(params: CreateKeyPairRequest): Future[KeyPair] =
-      service.createKeyPair(params).promise.toFuture
+      service.createKeyPair(params).promise().toFuture
     @inline def createLaunchTemplateFuture(params: CreateLaunchTemplateRequest): Future[CreateLaunchTemplateResult] =
-      service.createLaunchTemplate(params).promise.toFuture
+      service.createLaunchTemplate(params).promise().toFuture
     @inline def createLaunchTemplateVersionFuture(
         params: CreateLaunchTemplateVersionRequest
-    ): Future[CreateLaunchTemplateVersionResult] = service.createLaunchTemplateVersion(params).promise.toFuture
+    ): Future[CreateLaunchTemplateVersionResult] = service.createLaunchTemplateVersion(params).promise().toFuture
     @inline def createLocalGatewayRouteFuture(
         params: CreateLocalGatewayRouteRequest
-    ): Future[CreateLocalGatewayRouteResult] = service.createLocalGatewayRoute(params).promise.toFuture
+    ): Future[CreateLocalGatewayRouteResult] = service.createLocalGatewayRoute(params).promise().toFuture
     @inline def createLocalGatewayRouteTableVpcAssociationFuture(
         params: CreateLocalGatewayRouteTableVpcAssociationRequest
     ): Future[CreateLocalGatewayRouteTableVpcAssociationResult] =
-      service.createLocalGatewayRouteTableVpcAssociation(params).promise.toFuture
+      service.createLocalGatewayRouteTableVpcAssociation(params).promise().toFuture
     @inline def createNatGatewayFuture(params: CreateNatGatewayRequest): Future[CreateNatGatewayResult] =
-      service.createNatGateway(params).promise.toFuture
+      service.createNatGateway(params).promise().toFuture
     @inline def createNetworkAclEntryFuture(params: CreateNetworkAclEntryRequest): Future[js.Object] =
-      service.createNetworkAclEntry(params).promise.toFuture
+      service.createNetworkAclEntry(params).promise().toFuture
     @inline def createNetworkAclFuture(params: CreateNetworkAclRequest): Future[CreateNetworkAclResult] =
-      service.createNetworkAcl(params).promise.toFuture
+      service.createNetworkAcl(params).promise().toFuture
     @inline def createNetworkInterfaceFuture(
         params: CreateNetworkInterfaceRequest
-    ): Future[CreateNetworkInterfaceResult] = service.createNetworkInterface(params).promise.toFuture
+    ): Future[CreateNetworkInterfaceResult] = service.createNetworkInterface(params).promise().toFuture
     @inline def createNetworkInterfacePermissionFuture(
         params: CreateNetworkInterfacePermissionRequest
     ): Future[CreateNetworkInterfacePermissionResult] =
-      service.createNetworkInterfacePermission(params).promise.toFuture
+      service.createNetworkInterfacePermission(params).promise().toFuture
     @inline def createPlacementGroupFuture(params: CreatePlacementGroupRequest): Future[js.Object] =
-      service.createPlacementGroup(params).promise.toFuture
+      service.createPlacementGroup(params).promise().toFuture
     @inline def createReservedInstancesListingFuture(
         params: CreateReservedInstancesListingRequest
-    ): Future[CreateReservedInstancesListingResult] = service.createReservedInstancesListing(params).promise.toFuture
+    ): Future[CreateReservedInstancesListingResult] = service.createReservedInstancesListing(params).promise().toFuture
     @inline def createRouteFuture(params: CreateRouteRequest): Future[CreateRouteResult] =
-      service.createRoute(params).promise.toFuture
+      service.createRoute(params).promise().toFuture
     @inline def createRouteTableFuture(params: CreateRouteTableRequest): Future[CreateRouteTableResult] =
-      service.createRouteTable(params).promise.toFuture
+      service.createRouteTable(params).promise().toFuture
     @inline def createSecurityGroupFuture(params: CreateSecurityGroupRequest): Future[CreateSecurityGroupResult] =
-      service.createSecurityGroup(params).promise.toFuture
+      service.createSecurityGroup(params).promise().toFuture
     @inline def createSnapshotFuture(params: CreateSnapshotRequest): Future[Snapshot] =
-      service.createSnapshot(params).promise.toFuture
+      service.createSnapshot(params).promise().toFuture
     @inline def createSnapshotsFuture(params: CreateSnapshotsRequest): Future[CreateSnapshotsResult] =
-      service.createSnapshots(params).promise.toFuture
+      service.createSnapshots(params).promise().toFuture
     @inline def createSpotDatafeedSubscriptionFuture(
         params: CreateSpotDatafeedSubscriptionRequest
-    ): Future[CreateSpotDatafeedSubscriptionResult] = service.createSpotDatafeedSubscription(params).promise.toFuture
+    ): Future[CreateSpotDatafeedSubscriptionResult] = service.createSpotDatafeedSubscription(params).promise().toFuture
     @inline def createSubnetFuture(params: CreateSubnetRequest): Future[CreateSubnetResult] =
-      service.createSubnet(params).promise.toFuture
+      service.createSubnet(params).promise().toFuture
     @inline def createTagsFuture(params: CreateTagsRequest): Future[js.Object] =
-      service.createTags(params).promise.toFuture
+      service.createTags(params).promise().toFuture
     @inline def createTrafficMirrorFilterFuture(
         params: CreateTrafficMirrorFilterRequest
-    ): Future[CreateTrafficMirrorFilterResult] = service.createTrafficMirrorFilter(params).promise.toFuture
+    ): Future[CreateTrafficMirrorFilterResult] = service.createTrafficMirrorFilter(params).promise().toFuture
     @inline def createTrafficMirrorFilterRuleFuture(
         params: CreateTrafficMirrorFilterRuleRequest
-    ): Future[CreateTrafficMirrorFilterRuleResult] = service.createTrafficMirrorFilterRule(params).promise.toFuture
+    ): Future[CreateTrafficMirrorFilterRuleResult] = service.createTrafficMirrorFilterRule(params).promise().toFuture
     @inline def createTrafficMirrorSessionFuture(
         params: CreateTrafficMirrorSessionRequest
-    ): Future[CreateTrafficMirrorSessionResult] = service.createTrafficMirrorSession(params).promise.toFuture
+    ): Future[CreateTrafficMirrorSessionResult] = service.createTrafficMirrorSession(params).promise().toFuture
     @inline def createTrafficMirrorTargetFuture(
         params: CreateTrafficMirrorTargetRequest
-    ): Future[CreateTrafficMirrorTargetResult] = service.createTrafficMirrorTarget(params).promise.toFuture
+    ): Future[CreateTrafficMirrorTargetResult] = service.createTrafficMirrorTarget(params).promise().toFuture
     @inline def createTransitGatewayFuture(params: CreateTransitGatewayRequest): Future[CreateTransitGatewayResult] =
-      service.createTransitGateway(params).promise.toFuture
+      service.createTransitGateway(params).promise().toFuture
     @inline def createTransitGatewayMulticastDomainFuture(
         params: CreateTransitGatewayMulticastDomainRequest
     ): Future[CreateTransitGatewayMulticastDomainResult] =
-      service.createTransitGatewayMulticastDomain(params).promise.toFuture
+      service.createTransitGatewayMulticastDomain(params).promise().toFuture
     @inline def createTransitGatewayPeeringAttachmentFuture(
         params: CreateTransitGatewayPeeringAttachmentRequest
     ): Future[CreateTransitGatewayPeeringAttachmentResult] =
-      service.createTransitGatewayPeeringAttachment(params).promise.toFuture
+      service.createTransitGatewayPeeringAttachment(params).promise().toFuture
     @inline def createTransitGatewayRouteFuture(
         params: CreateTransitGatewayRouteRequest
-    ): Future[CreateTransitGatewayRouteResult] = service.createTransitGatewayRoute(params).promise.toFuture
+    ): Future[CreateTransitGatewayRouteResult] = service.createTransitGatewayRoute(params).promise().toFuture
     @inline def createTransitGatewayRouteTableFuture(
         params: CreateTransitGatewayRouteTableRequest
-    ): Future[CreateTransitGatewayRouteTableResult] = service.createTransitGatewayRouteTable(params).promise.toFuture
+    ): Future[CreateTransitGatewayRouteTableResult] = service.createTransitGatewayRouteTable(params).promise().toFuture
     @inline def createTransitGatewayVpcAttachmentFuture(
         params: CreateTransitGatewayVpcAttachmentRequest
     ): Future[CreateTransitGatewayVpcAttachmentResult] =
-      service.createTransitGatewayVpcAttachment(params).promise.toFuture
+      service.createTransitGatewayVpcAttachment(params).promise().toFuture
     @inline def createVolumeFuture(params: CreateVolumeRequest): Future[Volume] =
-      service.createVolume(params).promise.toFuture
+      service.createVolume(params).promise().toFuture
     @inline def createVpcEndpointConnectionNotificationFuture(
         params: CreateVpcEndpointConnectionNotificationRequest
     ): Future[CreateVpcEndpointConnectionNotificationResult] =
-      service.createVpcEndpointConnectionNotification(params).promise.toFuture
+      service.createVpcEndpointConnectionNotification(params).promise().toFuture
     @inline def createVpcEndpointFuture(params: CreateVpcEndpointRequest): Future[CreateVpcEndpointResult] =
-      service.createVpcEndpoint(params).promise.toFuture
+      service.createVpcEndpoint(params).promise().toFuture
     @inline def createVpcEndpointServiceConfigurationFuture(
         params: CreateVpcEndpointServiceConfigurationRequest
     ): Future[CreateVpcEndpointServiceConfigurationResult] =
-      service.createVpcEndpointServiceConfiguration(params).promise.toFuture
+      service.createVpcEndpointServiceConfiguration(params).promise().toFuture
     @inline def createVpcFuture(params: CreateVpcRequest): Future[CreateVpcResult] =
-      service.createVpc(params).promise.toFuture
+      service.createVpc(params).promise().toFuture
     @inline def createVpcPeeringConnectionFuture(
         params: CreateVpcPeeringConnectionRequest
-    ): Future[CreateVpcPeeringConnectionResult] = service.createVpcPeeringConnection(params).promise.toFuture
+    ): Future[CreateVpcPeeringConnectionResult] = service.createVpcPeeringConnection(params).promise().toFuture
     @inline def createVpnConnectionFuture(params: CreateVpnConnectionRequest): Future[CreateVpnConnectionResult] =
-      service.createVpnConnection(params).promise.toFuture
+      service.createVpnConnection(params).promise().toFuture
     @inline def createVpnConnectionRouteFuture(params: CreateVpnConnectionRouteRequest): Future[js.Object] =
-      service.createVpnConnectionRoute(params).promise.toFuture
+      service.createVpnConnectionRoute(params).promise().toFuture
     @inline def createVpnGatewayFuture(params: CreateVpnGatewayRequest): Future[CreateVpnGatewayResult] =
-      service.createVpnGateway(params).promise.toFuture
+      service.createVpnGateway(params).promise().toFuture
     @inline def deleteClientVpnEndpointFuture(
         params: DeleteClientVpnEndpointRequest
-    ): Future[DeleteClientVpnEndpointResult] = service.deleteClientVpnEndpoint(params).promise.toFuture
+    ): Future[DeleteClientVpnEndpointResult] = service.deleteClientVpnEndpoint(params).promise().toFuture
     @inline def deleteClientVpnRouteFuture(params: DeleteClientVpnRouteRequest): Future[DeleteClientVpnRouteResult] =
-      service.deleteClientVpnRoute(params).promise.toFuture
+      service.deleteClientVpnRoute(params).promise().toFuture
     @inline def deleteCustomerGatewayFuture(params: DeleteCustomerGatewayRequest): Future[js.Object] =
-      service.deleteCustomerGateway(params).promise.toFuture
+      service.deleteCustomerGateway(params).promise().toFuture
     @inline def deleteDhcpOptionsFuture(params: DeleteDhcpOptionsRequest): Future[js.Object] =
-      service.deleteDhcpOptions(params).promise.toFuture
+      service.deleteDhcpOptions(params).promise().toFuture
     @inline def deleteEgressOnlyInternetGatewayFuture(
         params: DeleteEgressOnlyInternetGatewayRequest
-    ): Future[DeleteEgressOnlyInternetGatewayResult] = service.deleteEgressOnlyInternetGateway(params).promise.toFuture
+    ): Future[DeleteEgressOnlyInternetGatewayResult] =
+      service.deleteEgressOnlyInternetGateway(params).promise().toFuture
     @inline def deleteFleetsFuture(params: DeleteFleetsRequest): Future[DeleteFleetsResult] =
-      service.deleteFleets(params).promise.toFuture
+      service.deleteFleets(params).promise().toFuture
     @inline def deleteFlowLogsFuture(params: DeleteFlowLogsRequest): Future[DeleteFlowLogsResult] =
-      service.deleteFlowLogs(params).promise.toFuture
+      service.deleteFlowLogs(params).promise().toFuture
     @inline def deleteFpgaImageFuture(params: DeleteFpgaImageRequest): Future[DeleteFpgaImageResult] =
-      service.deleteFpgaImage(params).promise.toFuture
+      service.deleteFpgaImage(params).promise().toFuture
     @inline def deleteInternetGatewayFuture(params: DeleteInternetGatewayRequest): Future[js.Object] =
-      service.deleteInternetGateway(params).promise.toFuture
+      service.deleteInternetGateway(params).promise().toFuture
     @inline def deleteKeyPairFuture(params: DeleteKeyPairRequest): Future[js.Object] =
-      service.deleteKeyPair(params).promise.toFuture
+      service.deleteKeyPair(params).promise().toFuture
     @inline def deleteLaunchTemplateFuture(params: DeleteLaunchTemplateRequest): Future[DeleteLaunchTemplateResult] =
-      service.deleteLaunchTemplate(params).promise.toFuture
+      service.deleteLaunchTemplate(params).promise().toFuture
     @inline def deleteLaunchTemplateVersionsFuture(
         params: DeleteLaunchTemplateVersionsRequest
-    ): Future[DeleteLaunchTemplateVersionsResult] = service.deleteLaunchTemplateVersions(params).promise.toFuture
+    ): Future[DeleteLaunchTemplateVersionsResult] = service.deleteLaunchTemplateVersions(params).promise().toFuture
     @inline def deleteLocalGatewayRouteFuture(
         params: DeleteLocalGatewayRouteRequest
-    ): Future[DeleteLocalGatewayRouteResult] = service.deleteLocalGatewayRoute(params).promise.toFuture
+    ): Future[DeleteLocalGatewayRouteResult] = service.deleteLocalGatewayRoute(params).promise().toFuture
     @inline def deleteLocalGatewayRouteTableVpcAssociationFuture(
         params: DeleteLocalGatewayRouteTableVpcAssociationRequest
     ): Future[DeleteLocalGatewayRouteTableVpcAssociationResult] =
-      service.deleteLocalGatewayRouteTableVpcAssociation(params).promise.toFuture
+      service.deleteLocalGatewayRouteTableVpcAssociation(params).promise().toFuture
     @inline def deleteNatGatewayFuture(params: DeleteNatGatewayRequest): Future[DeleteNatGatewayResult] =
-      service.deleteNatGateway(params).promise.toFuture
+      service.deleteNatGateway(params).promise().toFuture
     @inline def deleteNetworkAclEntryFuture(params: DeleteNetworkAclEntryRequest): Future[js.Object] =
-      service.deleteNetworkAclEntry(params).promise.toFuture
+      service.deleteNetworkAclEntry(params).promise().toFuture
     @inline def deleteNetworkAclFuture(params: DeleteNetworkAclRequest): Future[js.Object] =
-      service.deleteNetworkAcl(params).promise.toFuture
+      service.deleteNetworkAcl(params).promise().toFuture
     @inline def deleteNetworkInterfaceFuture(params: DeleteNetworkInterfaceRequest): Future[js.Object] =
-      service.deleteNetworkInterface(params).promise.toFuture
+      service.deleteNetworkInterface(params).promise().toFuture
     @inline def deleteNetworkInterfacePermissionFuture(
         params: DeleteNetworkInterfacePermissionRequest
     ): Future[DeleteNetworkInterfacePermissionResult] =
-      service.deleteNetworkInterfacePermission(params).promise.toFuture
+      service.deleteNetworkInterfacePermission(params).promise().toFuture
     @inline def deletePlacementGroupFuture(params: DeletePlacementGroupRequest): Future[js.Object] =
-      service.deletePlacementGroup(params).promise.toFuture
+      service.deletePlacementGroup(params).promise().toFuture
     @inline def deleteQueuedReservedInstancesFuture(
         params: DeleteQueuedReservedInstancesRequest
-    ): Future[DeleteQueuedReservedInstancesResult] = service.deleteQueuedReservedInstances(params).promise.toFuture
+    ): Future[DeleteQueuedReservedInstancesResult] = service.deleteQueuedReservedInstances(params).promise().toFuture
     @inline def deleteRouteFuture(params: DeleteRouteRequest): Future[js.Object] =
-      service.deleteRoute(params).promise.toFuture
+      service.deleteRoute(params).promise().toFuture
     @inline def deleteRouteTableFuture(params: DeleteRouteTableRequest): Future[js.Object] =
-      service.deleteRouteTable(params).promise.toFuture
+      service.deleteRouteTable(params).promise().toFuture
     @inline def deleteSecurityGroupFuture(params: DeleteSecurityGroupRequest): Future[js.Object] =
-      service.deleteSecurityGroup(params).promise.toFuture
+      service.deleteSecurityGroup(params).promise().toFuture
     @inline def deleteSnapshotFuture(params: DeleteSnapshotRequest): Future[js.Object] =
-      service.deleteSnapshot(params).promise.toFuture
+      service.deleteSnapshot(params).promise().toFuture
     @inline def deleteSpotDatafeedSubscriptionFuture(params: DeleteSpotDatafeedSubscriptionRequest): Future[js.Object] =
-      service.deleteSpotDatafeedSubscription(params).promise.toFuture
+      service.deleteSpotDatafeedSubscription(params).promise().toFuture
     @inline def deleteSubnetFuture(params: DeleteSubnetRequest): Future[js.Object] =
-      service.deleteSubnet(params).promise.toFuture
+      service.deleteSubnet(params).promise().toFuture
     @inline def deleteTagsFuture(params: DeleteTagsRequest): Future[js.Object] =
-      service.deleteTags(params).promise.toFuture
+      service.deleteTags(params).promise().toFuture
     @inline def deleteTrafficMirrorFilterFuture(
         params: DeleteTrafficMirrorFilterRequest
-    ): Future[DeleteTrafficMirrorFilterResult] = service.deleteTrafficMirrorFilter(params).promise.toFuture
+    ): Future[DeleteTrafficMirrorFilterResult] = service.deleteTrafficMirrorFilter(params).promise().toFuture
     @inline def deleteTrafficMirrorFilterRuleFuture(
         params: DeleteTrafficMirrorFilterRuleRequest
-    ): Future[DeleteTrafficMirrorFilterRuleResult] = service.deleteTrafficMirrorFilterRule(params).promise.toFuture
+    ): Future[DeleteTrafficMirrorFilterRuleResult] = service.deleteTrafficMirrorFilterRule(params).promise().toFuture
     @inline def deleteTrafficMirrorSessionFuture(
         params: DeleteTrafficMirrorSessionRequest
-    ): Future[DeleteTrafficMirrorSessionResult] = service.deleteTrafficMirrorSession(params).promise.toFuture
+    ): Future[DeleteTrafficMirrorSessionResult] = service.deleteTrafficMirrorSession(params).promise().toFuture
     @inline def deleteTrafficMirrorTargetFuture(
         params: DeleteTrafficMirrorTargetRequest
-    ): Future[DeleteTrafficMirrorTargetResult] = service.deleteTrafficMirrorTarget(params).promise.toFuture
+    ): Future[DeleteTrafficMirrorTargetResult] = service.deleteTrafficMirrorTarget(params).promise().toFuture
     @inline def deleteTransitGatewayFuture(params: DeleteTransitGatewayRequest): Future[DeleteTransitGatewayResult] =
-      service.deleteTransitGateway(params).promise.toFuture
+      service.deleteTransitGateway(params).promise().toFuture
     @inline def deleteTransitGatewayMulticastDomainFuture(
         params: DeleteTransitGatewayMulticastDomainRequest
     ): Future[DeleteTransitGatewayMulticastDomainResult] =
-      service.deleteTransitGatewayMulticastDomain(params).promise.toFuture
+      service.deleteTransitGatewayMulticastDomain(params).promise().toFuture
     @inline def deleteTransitGatewayPeeringAttachmentFuture(
         params: DeleteTransitGatewayPeeringAttachmentRequest
     ): Future[DeleteTransitGatewayPeeringAttachmentResult] =
-      service.deleteTransitGatewayPeeringAttachment(params).promise.toFuture
+      service.deleteTransitGatewayPeeringAttachment(params).promise().toFuture
     @inline def deleteTransitGatewayRouteFuture(
         params: DeleteTransitGatewayRouteRequest
-    ): Future[DeleteTransitGatewayRouteResult] = service.deleteTransitGatewayRoute(params).promise.toFuture
+    ): Future[DeleteTransitGatewayRouteResult] = service.deleteTransitGatewayRoute(params).promise().toFuture
     @inline def deleteTransitGatewayRouteTableFuture(
         params: DeleteTransitGatewayRouteTableRequest
-    ): Future[DeleteTransitGatewayRouteTableResult] = service.deleteTransitGatewayRouteTable(params).promise.toFuture
+    ): Future[DeleteTransitGatewayRouteTableResult] = service.deleteTransitGatewayRouteTable(params).promise().toFuture
     @inline def deleteTransitGatewayVpcAttachmentFuture(
         params: DeleteTransitGatewayVpcAttachmentRequest
     ): Future[DeleteTransitGatewayVpcAttachmentResult] =
-      service.deleteTransitGatewayVpcAttachment(params).promise.toFuture
+      service.deleteTransitGatewayVpcAttachment(params).promise().toFuture
     @inline def deleteVolumeFuture(params: DeleteVolumeRequest): Future[js.Object] =
-      service.deleteVolume(params).promise.toFuture
+      service.deleteVolume(params).promise().toFuture
     @inline def deleteVpcEndpointConnectionNotificationsFuture(
         params: DeleteVpcEndpointConnectionNotificationsRequest
     ): Future[DeleteVpcEndpointConnectionNotificationsResult] =
-      service.deleteVpcEndpointConnectionNotifications(params).promise.toFuture
+      service.deleteVpcEndpointConnectionNotifications(params).promise().toFuture
     @inline def deleteVpcEndpointServiceConfigurationsFuture(
         params: DeleteVpcEndpointServiceConfigurationsRequest
     ): Future[DeleteVpcEndpointServiceConfigurationsResult] =
-      service.deleteVpcEndpointServiceConfigurations(params).promise.toFuture
+      service.deleteVpcEndpointServiceConfigurations(params).promise().toFuture
     @inline def deleteVpcEndpointsFuture(params: DeleteVpcEndpointsRequest): Future[DeleteVpcEndpointsResult] =
-      service.deleteVpcEndpoints(params).promise.toFuture
+      service.deleteVpcEndpoints(params).promise().toFuture
     @inline def deleteVpcFuture(params: DeleteVpcRequest): Future[js.Object] =
-      service.deleteVpc(params).promise.toFuture
+      service.deleteVpc(params).promise().toFuture
     @inline def deleteVpcPeeringConnectionFuture(
         params: DeleteVpcPeeringConnectionRequest
-    ): Future[DeleteVpcPeeringConnectionResult] = service.deleteVpcPeeringConnection(params).promise.toFuture
+    ): Future[DeleteVpcPeeringConnectionResult] = service.deleteVpcPeeringConnection(params).promise().toFuture
     @inline def deleteVpnConnectionFuture(params: DeleteVpnConnectionRequest): Future[js.Object] =
-      service.deleteVpnConnection(params).promise.toFuture
+      service.deleteVpnConnection(params).promise().toFuture
     @inline def deleteVpnConnectionRouteFuture(params: DeleteVpnConnectionRouteRequest): Future[js.Object] =
-      service.deleteVpnConnectionRoute(params).promise.toFuture
+      service.deleteVpnConnectionRoute(params).promise().toFuture
     @inline def deleteVpnGatewayFuture(params: DeleteVpnGatewayRequest): Future[js.Object] =
-      service.deleteVpnGateway(params).promise.toFuture
+      service.deleteVpnGateway(params).promise().toFuture
     @inline def deprovisionByoipCidrFuture(params: DeprovisionByoipCidrRequest): Future[DeprovisionByoipCidrResult] =
-      service.deprovisionByoipCidr(params).promise.toFuture
+      service.deprovisionByoipCidr(params).promise().toFuture
     @inline def deregisterImageFuture(params: DeregisterImageRequest): Future[js.Object] =
-      service.deregisterImage(params).promise.toFuture
+      service.deregisterImage(params).promise().toFuture
     @inline def deregisterTransitGatewayMulticastGroupMembersFuture(
         params: DeregisterTransitGatewayMulticastGroupMembersRequest
     ): Future[DeregisterTransitGatewayMulticastGroupMembersResult] =
-      service.deregisterTransitGatewayMulticastGroupMembers(params).promise.toFuture
+      service.deregisterTransitGatewayMulticastGroupMembers(params).promise().toFuture
     @inline def deregisterTransitGatewayMulticastGroupSourcesFuture(
         params: DeregisterTransitGatewayMulticastGroupSourcesRequest
     ): Future[DeregisterTransitGatewayMulticastGroupSourcesResult] =
-      service.deregisterTransitGatewayMulticastGroupSources(params).promise.toFuture
+      service.deregisterTransitGatewayMulticastGroupSources(params).promise().toFuture
     @inline def describeAccountAttributesFuture(
         params: DescribeAccountAttributesRequest
-    ): Future[DescribeAccountAttributesResult] = service.describeAccountAttributes(params).promise.toFuture
+    ): Future[DescribeAccountAttributesResult] = service.describeAccountAttributes(params).promise().toFuture
     @inline def describeAddressesFuture(params: DescribeAddressesRequest): Future[DescribeAddressesResult] =
-      service.describeAddresses(params).promise.toFuture
+      service.describeAddresses(params).promise().toFuture
     @inline def describeAggregateIdFormatFuture(
         params: DescribeAggregateIdFormatRequest
-    ): Future[DescribeAggregateIdFormatResult] = service.describeAggregateIdFormat(params).promise.toFuture
+    ): Future[DescribeAggregateIdFormatResult] = service.describeAggregateIdFormat(params).promise().toFuture
     @inline def describeAvailabilityZonesFuture(
         params: DescribeAvailabilityZonesRequest
-    ): Future[DescribeAvailabilityZonesResult] = service.describeAvailabilityZones(params).promise.toFuture
+    ): Future[DescribeAvailabilityZonesResult] = service.describeAvailabilityZones(params).promise().toFuture
     @inline def describeBundleTasksFuture(params: DescribeBundleTasksRequest): Future[DescribeBundleTasksResult] =
-      service.describeBundleTasks(params).promise.toFuture
+      service.describeBundleTasks(params).promise().toFuture
     @inline def describeByoipCidrsFuture(params: DescribeByoipCidrsRequest): Future[DescribeByoipCidrsResult] =
-      service.describeByoipCidrs(params).promise.toFuture
+      service.describeByoipCidrs(params).promise().toFuture
     @inline def describeCapacityReservationsFuture(
         params: DescribeCapacityReservationsRequest
-    ): Future[DescribeCapacityReservationsResult] = service.describeCapacityReservations(params).promise.toFuture
+    ): Future[DescribeCapacityReservationsResult] = service.describeCapacityReservations(params).promise().toFuture
     @inline def describeClassicLinkInstancesFuture(
         params: DescribeClassicLinkInstancesRequest
-    ): Future[DescribeClassicLinkInstancesResult] = service.describeClassicLinkInstances(params).promise.toFuture
+    ): Future[DescribeClassicLinkInstancesResult] = service.describeClassicLinkInstances(params).promise().toFuture
     @inline def describeClientVpnAuthorizationRulesFuture(
         params: DescribeClientVpnAuthorizationRulesRequest
     ): Future[DescribeClientVpnAuthorizationRulesResult] =
-      service.describeClientVpnAuthorizationRules(params).promise.toFuture
+      service.describeClientVpnAuthorizationRules(params).promise().toFuture
     @inline def describeClientVpnConnectionsFuture(
         params: DescribeClientVpnConnectionsRequest
-    ): Future[DescribeClientVpnConnectionsResult] = service.describeClientVpnConnections(params).promise.toFuture
+    ): Future[DescribeClientVpnConnectionsResult] = service.describeClientVpnConnections(params).promise().toFuture
     @inline def describeClientVpnEndpointsFuture(
         params: DescribeClientVpnEndpointsRequest
-    ): Future[DescribeClientVpnEndpointsResult] = service.describeClientVpnEndpoints(params).promise.toFuture
+    ): Future[DescribeClientVpnEndpointsResult] = service.describeClientVpnEndpoints(params).promise().toFuture
     @inline def describeClientVpnRoutesFuture(
         params: DescribeClientVpnRoutesRequest
-    ): Future[DescribeClientVpnRoutesResult] = service.describeClientVpnRoutes(params).promise.toFuture
+    ): Future[DescribeClientVpnRoutesResult] = service.describeClientVpnRoutes(params).promise().toFuture
     @inline def describeClientVpnTargetNetworksFuture(
         params: DescribeClientVpnTargetNetworksRequest
-    ): Future[DescribeClientVpnTargetNetworksResult] = service.describeClientVpnTargetNetworks(params).promise.toFuture
+    ): Future[DescribeClientVpnTargetNetworksResult] =
+      service.describeClientVpnTargetNetworks(params).promise().toFuture
     @inline def describeCoipPoolsFuture(params: DescribeCoipPoolsRequest): Future[DescribeCoipPoolsResult] =
-      service.describeCoipPools(params).promise.toFuture
+      service.describeCoipPools(params).promise().toFuture
     @inline def describeConversionTasksFuture(
         params: DescribeConversionTasksRequest
-    ): Future[DescribeConversionTasksResult] = service.describeConversionTasks(params).promise.toFuture
+    ): Future[DescribeConversionTasksResult] = service.describeConversionTasks(params).promise().toFuture
     @inline def describeCustomerGatewaysFuture(
         params: DescribeCustomerGatewaysRequest
-    ): Future[DescribeCustomerGatewaysResult] = service.describeCustomerGateways(params).promise.toFuture
+    ): Future[DescribeCustomerGatewaysResult] = service.describeCustomerGateways(params).promise().toFuture
     @inline def describeDhcpOptionsFuture(params: DescribeDhcpOptionsRequest): Future[DescribeDhcpOptionsResult] =
-      service.describeDhcpOptions(params).promise.toFuture
+      service.describeDhcpOptions(params).promise().toFuture
     @inline def describeEgressOnlyInternetGatewaysFuture(
         params: DescribeEgressOnlyInternetGatewaysRequest
     ): Future[DescribeEgressOnlyInternetGatewaysResult] =
-      service.describeEgressOnlyInternetGateways(params).promise.toFuture
+      service.describeEgressOnlyInternetGateways(params).promise().toFuture
     @inline def describeElasticGpusFuture(params: DescribeElasticGpusRequest): Future[DescribeElasticGpusResult] =
-      service.describeElasticGpus(params).promise.toFuture
+      service.describeElasticGpus(params).promise().toFuture
     @inline def describeExportImageTasksFuture(
         params: DescribeExportImageTasksRequest
-    ): Future[DescribeExportImageTasksResult] = service.describeExportImageTasks(params).promise.toFuture
+    ): Future[DescribeExportImageTasksResult] = service.describeExportImageTasks(params).promise().toFuture
     @inline def describeExportTasksFuture(params: DescribeExportTasksRequest): Future[DescribeExportTasksResult] =
-      service.describeExportTasks(params).promise.toFuture
+      service.describeExportTasks(params).promise().toFuture
     @inline def describeFastSnapshotRestoresFuture(
         params: DescribeFastSnapshotRestoresRequest
-    ): Future[DescribeFastSnapshotRestoresResult] = service.describeFastSnapshotRestores(params).promise.toFuture
+    ): Future[DescribeFastSnapshotRestoresResult] = service.describeFastSnapshotRestores(params).promise().toFuture
     @inline def describeFleetHistoryFuture(params: DescribeFleetHistoryRequest): Future[DescribeFleetHistoryResult] =
-      service.describeFleetHistory(params).promise.toFuture
+      service.describeFleetHistory(params).promise().toFuture
     @inline def describeFleetInstancesFuture(
         params: DescribeFleetInstancesRequest
-    ): Future[DescribeFleetInstancesResult] = service.describeFleetInstances(params).promise.toFuture
+    ): Future[DescribeFleetInstancesResult] = service.describeFleetInstances(params).promise().toFuture
     @inline def describeFleetsFuture(params: DescribeFleetsRequest): Future[DescribeFleetsResult] =
-      service.describeFleets(params).promise.toFuture
+      service.describeFleets(params).promise().toFuture
     @inline def describeFlowLogsFuture(params: DescribeFlowLogsRequest): Future[DescribeFlowLogsResult] =
-      service.describeFlowLogs(params).promise.toFuture
+      service.describeFlowLogs(params).promise().toFuture
     @inline def describeFpgaImageAttributeFuture(
         params: DescribeFpgaImageAttributeRequest
-    ): Future[DescribeFpgaImageAttributeResult] = service.describeFpgaImageAttribute(params).promise.toFuture
+    ): Future[DescribeFpgaImageAttributeResult] = service.describeFpgaImageAttribute(params).promise().toFuture
     @inline def describeFpgaImagesFuture(params: DescribeFpgaImagesRequest): Future[DescribeFpgaImagesResult] =
-      service.describeFpgaImages(params).promise.toFuture
+      service.describeFpgaImages(params).promise().toFuture
     @inline def describeHostReservationOfferingsFuture(
         params: DescribeHostReservationOfferingsRequest
     ): Future[DescribeHostReservationOfferingsResult] =
-      service.describeHostReservationOfferings(params).promise.toFuture
+      service.describeHostReservationOfferings(params).promise().toFuture
     @inline def describeHostReservationsFuture(
         params: DescribeHostReservationsRequest
-    ): Future[DescribeHostReservationsResult] = service.describeHostReservations(params).promise.toFuture
+    ): Future[DescribeHostReservationsResult] = service.describeHostReservations(params).promise().toFuture
     @inline def describeHostsFuture(params: DescribeHostsRequest): Future[DescribeHostsResult] =
-      service.describeHosts(params).promise.toFuture
+      service.describeHosts(params).promise().toFuture
     @inline def describeIamInstanceProfileAssociationsFuture(
         params: DescribeIamInstanceProfileAssociationsRequest
     ): Future[DescribeIamInstanceProfileAssociationsResult] =
-      service.describeIamInstanceProfileAssociations(params).promise.toFuture
+      service.describeIamInstanceProfileAssociations(params).promise().toFuture
     @inline def describeIdFormatFuture(params: DescribeIdFormatRequest): Future[DescribeIdFormatResult] =
-      service.describeIdFormat(params).promise.toFuture
+      service.describeIdFormat(params).promise().toFuture
     @inline def describeIdentityIdFormatFuture(
         params: DescribeIdentityIdFormatRequest
-    ): Future[DescribeIdentityIdFormatResult] = service.describeIdentityIdFormat(params).promise.toFuture
+    ): Future[DescribeIdentityIdFormatResult] = service.describeIdentityIdFormat(params).promise().toFuture
     @inline def describeImageAttributeFuture(params: DescribeImageAttributeRequest): Future[ImageAttribute] =
-      service.describeImageAttribute(params).promise.toFuture
+      service.describeImageAttribute(params).promise().toFuture
     @inline def describeImagesFuture(params: DescribeImagesRequest): Future[DescribeImagesResult] =
-      service.describeImages(params).promise.toFuture
+      service.describeImages(params).promise().toFuture
     @inline def describeImportImageTasksFuture(
         params: DescribeImportImageTasksRequest
-    ): Future[DescribeImportImageTasksResult] = service.describeImportImageTasks(params).promise.toFuture
+    ): Future[DescribeImportImageTasksResult] = service.describeImportImageTasks(params).promise().toFuture
     @inline def describeImportSnapshotTasksFuture(
         params: DescribeImportSnapshotTasksRequest
-    ): Future[DescribeImportSnapshotTasksResult] = service.describeImportSnapshotTasks(params).promise.toFuture
+    ): Future[DescribeImportSnapshotTasksResult] = service.describeImportSnapshotTasks(params).promise().toFuture
     @inline def describeInstanceAttributeFuture(params: DescribeInstanceAttributeRequest): Future[InstanceAttribute] =
-      service.describeInstanceAttribute(params).promise.toFuture
+      service.describeInstanceAttribute(params).promise().toFuture
     @inline def describeInstanceCreditSpecificationsFuture(
         params: DescribeInstanceCreditSpecificationsRequest
     ): Future[DescribeInstanceCreditSpecificationsResult] =
-      service.describeInstanceCreditSpecifications(params).promise.toFuture
+      service.describeInstanceCreditSpecifications(params).promise().toFuture
     @inline def describeInstanceStatusFuture(
         params: DescribeInstanceStatusRequest
-    ): Future[DescribeInstanceStatusResult] = service.describeInstanceStatus(params).promise.toFuture
+    ): Future[DescribeInstanceStatusResult] = service.describeInstanceStatus(params).promise().toFuture
     @inline def describeInstanceTypeOfferingsFuture(
         params: DescribeInstanceTypeOfferingsRequest
-    ): Future[DescribeInstanceTypeOfferingsResult] = service.describeInstanceTypeOfferings(params).promise.toFuture
+    ): Future[DescribeInstanceTypeOfferingsResult] = service.describeInstanceTypeOfferings(params).promise().toFuture
     @inline def describeInstanceTypesFuture(params: DescribeInstanceTypesRequest): Future[DescribeInstanceTypesResult] =
-      service.describeInstanceTypes(params).promise.toFuture
+      service.describeInstanceTypes(params).promise().toFuture
     @inline def describeInstancesFuture(params: DescribeInstancesRequest): Future[DescribeInstancesResult] =
-      service.describeInstances(params).promise.toFuture
+      service.describeInstances(params).promise().toFuture
     @inline def describeInternetGatewaysFuture(
         params: DescribeInternetGatewaysRequest
-    ): Future[DescribeInternetGatewaysResult] = service.describeInternetGateways(params).promise.toFuture
+    ): Future[DescribeInternetGatewaysResult] = service.describeInternetGateways(params).promise().toFuture
     @inline def describeIpv6PoolsFuture(params: DescribeIpv6PoolsRequest): Future[DescribeIpv6PoolsResult] =
-      service.describeIpv6Pools(params).promise.toFuture
+      service.describeIpv6Pools(params).promise().toFuture
     @inline def describeKeyPairsFuture(params: DescribeKeyPairsRequest): Future[DescribeKeyPairsResult] =
-      service.describeKeyPairs(params).promise.toFuture
+      service.describeKeyPairs(params).promise().toFuture
     @inline def describeLaunchTemplateVersionsFuture(
         params: DescribeLaunchTemplateVersionsRequest
-    ): Future[DescribeLaunchTemplateVersionsResult] = service.describeLaunchTemplateVersions(params).promise.toFuture
+    ): Future[DescribeLaunchTemplateVersionsResult] = service.describeLaunchTemplateVersions(params).promise().toFuture
     @inline def describeLaunchTemplatesFuture(
         params: DescribeLaunchTemplatesRequest
-    ): Future[DescribeLaunchTemplatesResult] = service.describeLaunchTemplates(params).promise.toFuture
+    ): Future[DescribeLaunchTemplatesResult] = service.describeLaunchTemplates(params).promise().toFuture
     @inline def describeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsFuture(
         params: DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest
     ): Future[DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResult] =
-      service.describeLocalGatewayRouteTableVirtualInterfaceGroupAssociations(params).promise.toFuture
+      service.describeLocalGatewayRouteTableVirtualInterfaceGroupAssociations(params).promise().toFuture
     @inline def describeLocalGatewayRouteTableVpcAssociationsFuture(
         params: DescribeLocalGatewayRouteTableVpcAssociationsRequest
     ): Future[DescribeLocalGatewayRouteTableVpcAssociationsResult] =
-      service.describeLocalGatewayRouteTableVpcAssociations(params).promise.toFuture
+      service.describeLocalGatewayRouteTableVpcAssociations(params).promise().toFuture
     @inline def describeLocalGatewayRouteTablesFuture(
         params: DescribeLocalGatewayRouteTablesRequest
-    ): Future[DescribeLocalGatewayRouteTablesResult] = service.describeLocalGatewayRouteTables(params).promise.toFuture
+    ): Future[DescribeLocalGatewayRouteTablesResult] =
+      service.describeLocalGatewayRouteTables(params).promise().toFuture
     @inline def describeLocalGatewayVirtualInterfaceGroupsFuture(
         params: DescribeLocalGatewayVirtualInterfaceGroupsRequest
     ): Future[DescribeLocalGatewayVirtualInterfaceGroupsResult] =
-      service.describeLocalGatewayVirtualInterfaceGroups(params).promise.toFuture
+      service.describeLocalGatewayVirtualInterfaceGroups(params).promise().toFuture
     @inline def describeLocalGatewayVirtualInterfacesFuture(
         params: DescribeLocalGatewayVirtualInterfacesRequest
     ): Future[DescribeLocalGatewayVirtualInterfacesResult] =
-      service.describeLocalGatewayVirtualInterfaces(params).promise.toFuture
+      service.describeLocalGatewayVirtualInterfaces(params).promise().toFuture
     @inline def describeLocalGatewaysFuture(params: DescribeLocalGatewaysRequest): Future[DescribeLocalGatewaysResult] =
-      service.describeLocalGateways(params).promise.toFuture
+      service.describeLocalGateways(params).promise().toFuture
     @inline def describeMovingAddressesFuture(
         params: DescribeMovingAddressesRequest
-    ): Future[DescribeMovingAddressesResult] = service.describeMovingAddresses(params).promise.toFuture
+    ): Future[DescribeMovingAddressesResult] = service.describeMovingAddresses(params).promise().toFuture
     @inline def describeNatGatewaysFuture(params: DescribeNatGatewaysRequest): Future[DescribeNatGatewaysResult] =
-      service.describeNatGateways(params).promise.toFuture
+      service.describeNatGateways(params).promise().toFuture
     @inline def describeNetworkAclsFuture(params: DescribeNetworkAclsRequest): Future[DescribeNetworkAclsResult] =
-      service.describeNetworkAcls(params).promise.toFuture
+      service.describeNetworkAcls(params).promise().toFuture
     @inline def describeNetworkInterfaceAttributeFuture(
         params: DescribeNetworkInterfaceAttributeRequest
     ): Future[DescribeNetworkInterfaceAttributeResult] =
-      service.describeNetworkInterfaceAttribute(params).promise.toFuture
+      service.describeNetworkInterfaceAttribute(params).promise().toFuture
     @inline def describeNetworkInterfacePermissionsFuture(
         params: DescribeNetworkInterfacePermissionsRequest
     ): Future[DescribeNetworkInterfacePermissionsResult] =
-      service.describeNetworkInterfacePermissions(params).promise.toFuture
+      service.describeNetworkInterfacePermissions(params).promise().toFuture
     @inline def describeNetworkInterfacesFuture(
         params: DescribeNetworkInterfacesRequest
-    ): Future[DescribeNetworkInterfacesResult] = service.describeNetworkInterfaces(params).promise.toFuture
+    ): Future[DescribeNetworkInterfacesResult] = service.describeNetworkInterfaces(params).promise().toFuture
     @inline def describePlacementGroupsFuture(
         params: DescribePlacementGroupsRequest
-    ): Future[DescribePlacementGroupsResult] = service.describePlacementGroups(params).promise.toFuture
+    ): Future[DescribePlacementGroupsResult] = service.describePlacementGroups(params).promise().toFuture
     @inline def describePrefixListsFuture(params: DescribePrefixListsRequest): Future[DescribePrefixListsResult] =
-      service.describePrefixLists(params).promise.toFuture
+      service.describePrefixLists(params).promise().toFuture
     @inline def describePrincipalIdFormatFuture(
         params: DescribePrincipalIdFormatRequest
-    ): Future[DescribePrincipalIdFormatResult] = service.describePrincipalIdFormat(params).promise.toFuture
+    ): Future[DescribePrincipalIdFormatResult] = service.describePrincipalIdFormat(params).promise().toFuture
     @inline def describePublicIpv4PoolsFuture(
         params: DescribePublicIpv4PoolsRequest
-    ): Future[DescribePublicIpv4PoolsResult] = service.describePublicIpv4Pools(params).promise.toFuture
+    ): Future[DescribePublicIpv4PoolsResult] = service.describePublicIpv4Pools(params).promise().toFuture
     @inline def describeRegionsFuture(params: DescribeRegionsRequest): Future[DescribeRegionsResult] =
-      service.describeRegions(params).promise.toFuture
+      service.describeRegions(params).promise().toFuture
     @inline def describeReservedInstancesFuture(
         params: DescribeReservedInstancesRequest
-    ): Future[DescribeReservedInstancesResult] = service.describeReservedInstances(params).promise.toFuture
+    ): Future[DescribeReservedInstancesResult] = service.describeReservedInstances(params).promise().toFuture
     @inline def describeReservedInstancesListingsFuture(
         params: DescribeReservedInstancesListingsRequest
     ): Future[DescribeReservedInstancesListingsResult] =
-      service.describeReservedInstancesListings(params).promise.toFuture
+      service.describeReservedInstancesListings(params).promise().toFuture
     @inline def describeReservedInstancesModificationsFuture(
         params: DescribeReservedInstancesModificationsRequest
     ): Future[DescribeReservedInstancesModificationsResult] =
-      service.describeReservedInstancesModifications(params).promise.toFuture
+      service.describeReservedInstancesModifications(params).promise().toFuture
     @inline def describeReservedInstancesOfferingsFuture(
         params: DescribeReservedInstancesOfferingsRequest
     ): Future[DescribeReservedInstancesOfferingsResult] =
-      service.describeReservedInstancesOfferings(params).promise.toFuture
+      service.describeReservedInstancesOfferings(params).promise().toFuture
     @inline def describeRouteTablesFuture(params: DescribeRouteTablesRequest): Future[DescribeRouteTablesResult] =
-      service.describeRouteTables(params).promise.toFuture
+      service.describeRouteTables(params).promise().toFuture
     @inline def describeScheduledInstanceAvailabilityFuture(
         params: DescribeScheduledInstanceAvailabilityRequest
     ): Future[DescribeScheduledInstanceAvailabilityResult] =
-      service.describeScheduledInstanceAvailability(params).promise.toFuture
+      service.describeScheduledInstanceAvailability(params).promise().toFuture
     @inline def describeScheduledInstancesFuture(
         params: DescribeScheduledInstancesRequest
-    ): Future[DescribeScheduledInstancesResult] = service.describeScheduledInstances(params).promise.toFuture
+    ): Future[DescribeScheduledInstancesResult] = service.describeScheduledInstances(params).promise().toFuture
     @inline def describeSecurityGroupReferencesFuture(
         params: DescribeSecurityGroupReferencesRequest
-    ): Future[DescribeSecurityGroupReferencesResult] = service.describeSecurityGroupReferences(params).promise.toFuture
+    ): Future[DescribeSecurityGroupReferencesResult] =
+      service.describeSecurityGroupReferences(params).promise().toFuture
     @inline def describeSecurityGroupsFuture(
         params: DescribeSecurityGroupsRequest
-    ): Future[DescribeSecurityGroupsResult] = service.describeSecurityGroups(params).promise.toFuture
+    ): Future[DescribeSecurityGroupsResult] = service.describeSecurityGroups(params).promise().toFuture
     @inline def describeSnapshotAttributeFuture(
         params: DescribeSnapshotAttributeRequest
-    ): Future[DescribeSnapshotAttributeResult] = service.describeSnapshotAttribute(params).promise.toFuture
+    ): Future[DescribeSnapshotAttributeResult] = service.describeSnapshotAttribute(params).promise().toFuture
     @inline def describeSnapshotsFuture(params: DescribeSnapshotsRequest): Future[DescribeSnapshotsResult] =
-      service.describeSnapshots(params).promise.toFuture
+      service.describeSnapshots(params).promise().toFuture
     @inline def describeSpotDatafeedSubscriptionFuture(
         params: DescribeSpotDatafeedSubscriptionRequest
     ): Future[DescribeSpotDatafeedSubscriptionResult] =
-      service.describeSpotDatafeedSubscription(params).promise.toFuture
+      service.describeSpotDatafeedSubscription(params).promise().toFuture
     @inline def describeSpotFleetInstancesFuture(
         params: DescribeSpotFleetInstancesRequest
-    ): Future[DescribeSpotFleetInstancesResponse] = service.describeSpotFleetInstances(params).promise.toFuture
+    ): Future[DescribeSpotFleetInstancesResponse] = service.describeSpotFleetInstances(params).promise().toFuture
     @inline def describeSpotFleetRequestHistoryFuture(
         params: DescribeSpotFleetRequestHistoryRequest
     ): Future[DescribeSpotFleetRequestHistoryResponse] =
-      service.describeSpotFleetRequestHistory(params).promise.toFuture
+      service.describeSpotFleetRequestHistory(params).promise().toFuture
     @inline def describeSpotFleetRequestsFuture(
         params: DescribeSpotFleetRequestsRequest
-    ): Future[DescribeSpotFleetRequestsResponse] = service.describeSpotFleetRequests(params).promise.toFuture
+    ): Future[DescribeSpotFleetRequestsResponse] = service.describeSpotFleetRequests(params).promise().toFuture
     @inline def describeSpotInstanceRequestsFuture(
         params: DescribeSpotInstanceRequestsRequest
-    ): Future[DescribeSpotInstanceRequestsResult] = service.describeSpotInstanceRequests(params).promise.toFuture
+    ): Future[DescribeSpotInstanceRequestsResult] = service.describeSpotInstanceRequests(params).promise().toFuture
     @inline def describeSpotPriceHistoryFuture(
         params: DescribeSpotPriceHistoryRequest
-    ): Future[DescribeSpotPriceHistoryResult] = service.describeSpotPriceHistory(params).promise.toFuture
+    ): Future[DescribeSpotPriceHistoryResult] = service.describeSpotPriceHistory(params).promise().toFuture
     @inline def describeStaleSecurityGroupsFuture(
         params: DescribeStaleSecurityGroupsRequest
-    ): Future[DescribeStaleSecurityGroupsResult] = service.describeStaleSecurityGroups(params).promise.toFuture
+    ): Future[DescribeStaleSecurityGroupsResult] = service.describeStaleSecurityGroups(params).promise().toFuture
     @inline def describeSubnetsFuture(params: DescribeSubnetsRequest): Future[DescribeSubnetsResult] =
-      service.describeSubnets(params).promise.toFuture
+      service.describeSubnets(params).promise().toFuture
     @inline def describeTagsFuture(params: DescribeTagsRequest): Future[DescribeTagsResult] =
-      service.describeTags(params).promise.toFuture
+      service.describeTags(params).promise().toFuture
     @inline def describeTrafficMirrorFiltersFuture(
         params: DescribeTrafficMirrorFiltersRequest
-    ): Future[DescribeTrafficMirrorFiltersResult] = service.describeTrafficMirrorFilters(params).promise.toFuture
+    ): Future[DescribeTrafficMirrorFiltersResult] = service.describeTrafficMirrorFilters(params).promise().toFuture
     @inline def describeTrafficMirrorSessionsFuture(
         params: DescribeTrafficMirrorSessionsRequest
-    ): Future[DescribeTrafficMirrorSessionsResult] = service.describeTrafficMirrorSessions(params).promise.toFuture
+    ): Future[DescribeTrafficMirrorSessionsResult] = service.describeTrafficMirrorSessions(params).promise().toFuture
     @inline def describeTrafficMirrorTargetsFuture(
         params: DescribeTrafficMirrorTargetsRequest
-    ): Future[DescribeTrafficMirrorTargetsResult] = service.describeTrafficMirrorTargets(params).promise.toFuture
+    ): Future[DescribeTrafficMirrorTargetsResult] = service.describeTrafficMirrorTargets(params).promise().toFuture
     @inline def describeTransitGatewayAttachmentsFuture(
         params: DescribeTransitGatewayAttachmentsRequest
     ): Future[DescribeTransitGatewayAttachmentsResult] =
-      service.describeTransitGatewayAttachments(params).promise.toFuture
+      service.describeTransitGatewayAttachments(params).promise().toFuture
     @inline def describeTransitGatewayMulticastDomainsFuture(
         params: DescribeTransitGatewayMulticastDomainsRequest
     ): Future[DescribeTransitGatewayMulticastDomainsResult] =
-      service.describeTransitGatewayMulticastDomains(params).promise.toFuture
+      service.describeTransitGatewayMulticastDomains(params).promise().toFuture
     @inline def describeTransitGatewayPeeringAttachmentsFuture(
         params: DescribeTransitGatewayPeeringAttachmentsRequest
     ): Future[DescribeTransitGatewayPeeringAttachmentsResult] =
-      service.describeTransitGatewayPeeringAttachments(params).promise.toFuture
+      service.describeTransitGatewayPeeringAttachments(params).promise().toFuture
     @inline def describeTransitGatewayRouteTablesFuture(
         params: DescribeTransitGatewayRouteTablesRequest
     ): Future[DescribeTransitGatewayRouteTablesResult] =
-      service.describeTransitGatewayRouteTables(params).promise.toFuture
+      service.describeTransitGatewayRouteTables(params).promise().toFuture
     @inline def describeTransitGatewayVpcAttachmentsFuture(
         params: DescribeTransitGatewayVpcAttachmentsRequest
     ): Future[DescribeTransitGatewayVpcAttachmentsResult] =
-      service.describeTransitGatewayVpcAttachments(params).promise.toFuture
+      service.describeTransitGatewayVpcAttachments(params).promise().toFuture
     @inline def describeTransitGatewaysFuture(
         params: DescribeTransitGatewaysRequest
-    ): Future[DescribeTransitGatewaysResult] = service.describeTransitGateways(params).promise.toFuture
+    ): Future[DescribeTransitGatewaysResult] = service.describeTransitGateways(params).promise().toFuture
     @inline def describeVolumeAttributeFuture(
         params: DescribeVolumeAttributeRequest
-    ): Future[DescribeVolumeAttributeResult] = service.describeVolumeAttribute(params).promise.toFuture
+    ): Future[DescribeVolumeAttributeResult] = service.describeVolumeAttribute(params).promise().toFuture
     @inline def describeVolumeStatusFuture(params: DescribeVolumeStatusRequest): Future[DescribeVolumeStatusResult] =
-      service.describeVolumeStatus(params).promise.toFuture
+      service.describeVolumeStatus(params).promise().toFuture
     @inline def describeVolumesFuture(params: DescribeVolumesRequest): Future[DescribeVolumesResult] =
-      service.describeVolumes(params).promise.toFuture
+      service.describeVolumes(params).promise().toFuture
     @inline def describeVolumesModificationsFuture(
         params: DescribeVolumesModificationsRequest
-    ): Future[DescribeVolumesModificationsResult] = service.describeVolumesModifications(params).promise.toFuture
+    ): Future[DescribeVolumesModificationsResult] = service.describeVolumesModifications(params).promise().toFuture
     @inline def describeVpcAttributeFuture(params: DescribeVpcAttributeRequest): Future[DescribeVpcAttributeResult] =
-      service.describeVpcAttribute(params).promise.toFuture
+      service.describeVpcAttribute(params).promise().toFuture
     @inline def describeVpcClassicLinkDnsSupportFuture(
         params: DescribeVpcClassicLinkDnsSupportRequest
     ): Future[DescribeVpcClassicLinkDnsSupportResult] =
-      service.describeVpcClassicLinkDnsSupport(params).promise.toFuture
+      service.describeVpcClassicLinkDnsSupport(params).promise().toFuture
     @inline def describeVpcClassicLinkFuture(
         params: DescribeVpcClassicLinkRequest
-    ): Future[DescribeVpcClassicLinkResult] = service.describeVpcClassicLink(params).promise.toFuture
+    ): Future[DescribeVpcClassicLinkResult] = service.describeVpcClassicLink(params).promise().toFuture
     @inline def describeVpcEndpointConnectionNotificationsFuture(
         params: DescribeVpcEndpointConnectionNotificationsRequest
     ): Future[DescribeVpcEndpointConnectionNotificationsResult] =
-      service.describeVpcEndpointConnectionNotifications(params).promise.toFuture
+      service.describeVpcEndpointConnectionNotifications(params).promise().toFuture
     @inline def describeVpcEndpointConnectionsFuture(
         params: DescribeVpcEndpointConnectionsRequest
-    ): Future[DescribeVpcEndpointConnectionsResult] = service.describeVpcEndpointConnections(params).promise.toFuture
+    ): Future[DescribeVpcEndpointConnectionsResult] = service.describeVpcEndpointConnections(params).promise().toFuture
     @inline def describeVpcEndpointServiceConfigurationsFuture(
         params: DescribeVpcEndpointServiceConfigurationsRequest
     ): Future[DescribeVpcEndpointServiceConfigurationsResult] =
-      service.describeVpcEndpointServiceConfigurations(params).promise.toFuture
+      service.describeVpcEndpointServiceConfigurations(params).promise().toFuture
     @inline def describeVpcEndpointServicePermissionsFuture(
         params: DescribeVpcEndpointServicePermissionsRequest
     ): Future[DescribeVpcEndpointServicePermissionsResult] =
-      service.describeVpcEndpointServicePermissions(params).promise.toFuture
+      service.describeVpcEndpointServicePermissions(params).promise().toFuture
     @inline def describeVpcEndpointServicesFuture(
         params: DescribeVpcEndpointServicesRequest
-    ): Future[DescribeVpcEndpointServicesResult] = service.describeVpcEndpointServices(params).promise.toFuture
+    ): Future[DescribeVpcEndpointServicesResult] = service.describeVpcEndpointServices(params).promise().toFuture
     @inline def describeVpcEndpointsFuture(params: DescribeVpcEndpointsRequest): Future[DescribeVpcEndpointsResult] =
-      service.describeVpcEndpoints(params).promise.toFuture
+      service.describeVpcEndpoints(params).promise().toFuture
     @inline def describeVpcPeeringConnectionsFuture(
         params: DescribeVpcPeeringConnectionsRequest
-    ): Future[DescribeVpcPeeringConnectionsResult] = service.describeVpcPeeringConnections(params).promise.toFuture
+    ): Future[DescribeVpcPeeringConnectionsResult] = service.describeVpcPeeringConnections(params).promise().toFuture
     @inline def describeVpcsFuture(params: DescribeVpcsRequest): Future[DescribeVpcsResult] =
-      service.describeVpcs(params).promise.toFuture
+      service.describeVpcs(params).promise().toFuture
     @inline def describeVpnConnectionsFuture(
         params: DescribeVpnConnectionsRequest
-    ): Future[DescribeVpnConnectionsResult] = service.describeVpnConnections(params).promise.toFuture
+    ): Future[DescribeVpnConnectionsResult] = service.describeVpnConnections(params).promise().toFuture
     @inline def describeVpnGatewaysFuture(params: DescribeVpnGatewaysRequest): Future[DescribeVpnGatewaysResult] =
-      service.describeVpnGateways(params).promise.toFuture
+      service.describeVpnGateways(params).promise().toFuture
     @inline def detachClassicLinkVpcFuture(params: DetachClassicLinkVpcRequest): Future[DetachClassicLinkVpcResult] =
-      service.detachClassicLinkVpc(params).promise.toFuture
+      service.detachClassicLinkVpc(params).promise().toFuture
     @inline def detachInternetGatewayFuture(params: DetachInternetGatewayRequest): Future[js.Object] =
-      service.detachInternetGateway(params).promise.toFuture
+      service.detachInternetGateway(params).promise().toFuture
     @inline def detachNetworkInterfaceFuture(params: DetachNetworkInterfaceRequest): Future[js.Object] =
-      service.detachNetworkInterface(params).promise.toFuture
+      service.detachNetworkInterface(params).promise().toFuture
     @inline def detachVolumeFuture(params: DetachVolumeRequest): Future[VolumeAttachment] =
-      service.detachVolume(params).promise.toFuture
+      service.detachVolume(params).promise().toFuture
     @inline def detachVpnGatewayFuture(params: DetachVpnGatewayRequest): Future[js.Object] =
-      service.detachVpnGateway(params).promise.toFuture
+      service.detachVpnGateway(params).promise().toFuture
     @inline def disableEbsEncryptionByDefaultFuture(
         params: DisableEbsEncryptionByDefaultRequest
-    ): Future[DisableEbsEncryptionByDefaultResult] = service.disableEbsEncryptionByDefault(params).promise.toFuture
+    ): Future[DisableEbsEncryptionByDefaultResult] = service.disableEbsEncryptionByDefault(params).promise().toFuture
     @inline def disableFastSnapshotRestoresFuture(
         params: DisableFastSnapshotRestoresRequest
-    ): Future[DisableFastSnapshotRestoresResult] = service.disableFastSnapshotRestores(params).promise.toFuture
+    ): Future[DisableFastSnapshotRestoresResult] = service.disableFastSnapshotRestores(params).promise().toFuture
     @inline def disableTransitGatewayRouteTablePropagationFuture(
         params: DisableTransitGatewayRouteTablePropagationRequest
     ): Future[DisableTransitGatewayRouteTablePropagationResult] =
-      service.disableTransitGatewayRouteTablePropagation(params).promise.toFuture
+      service.disableTransitGatewayRouteTablePropagation(params).promise().toFuture
     @inline def disableVgwRoutePropagationFuture(params: DisableVgwRoutePropagationRequest): Future[js.Object] =
-      service.disableVgwRoutePropagation(params).promise.toFuture
+      service.disableVgwRoutePropagation(params).promise().toFuture
     @inline def disableVpcClassicLinkDnsSupportFuture(
         params: DisableVpcClassicLinkDnsSupportRequest
-    ): Future[DisableVpcClassicLinkDnsSupportResult] = service.disableVpcClassicLinkDnsSupport(params).promise.toFuture
+    ): Future[DisableVpcClassicLinkDnsSupportResult] =
+      service.disableVpcClassicLinkDnsSupport(params).promise().toFuture
     @inline def disableVpcClassicLinkFuture(params: DisableVpcClassicLinkRequest): Future[DisableVpcClassicLinkResult] =
-      service.disableVpcClassicLink(params).promise.toFuture
+      service.disableVpcClassicLink(params).promise().toFuture
     @inline def disassociateAddressFuture(params: DisassociateAddressRequest): Future[js.Object] =
-      service.disassociateAddress(params).promise.toFuture
+      service.disassociateAddress(params).promise().toFuture
     @inline def disassociateClientVpnTargetNetworkFuture(
         params: DisassociateClientVpnTargetNetworkRequest
     ): Future[DisassociateClientVpnTargetNetworkResult] =
-      service.disassociateClientVpnTargetNetwork(params).promise.toFuture
+      service.disassociateClientVpnTargetNetwork(params).promise().toFuture
     @inline def disassociateIamInstanceProfileFuture(
         params: DisassociateIamInstanceProfileRequest
-    ): Future[DisassociateIamInstanceProfileResult] = service.disassociateIamInstanceProfile(params).promise.toFuture
+    ): Future[DisassociateIamInstanceProfileResult] = service.disassociateIamInstanceProfile(params).promise().toFuture
     @inline def disassociateRouteTableFuture(params: DisassociateRouteTableRequest): Future[js.Object] =
-      service.disassociateRouteTable(params).promise.toFuture
+      service.disassociateRouteTable(params).promise().toFuture
     @inline def disassociateSubnetCidrBlockFuture(
         params: DisassociateSubnetCidrBlockRequest
-    ): Future[DisassociateSubnetCidrBlockResult] = service.disassociateSubnetCidrBlock(params).promise.toFuture
+    ): Future[DisassociateSubnetCidrBlockResult] = service.disassociateSubnetCidrBlock(params).promise().toFuture
     @inline def disassociateTransitGatewayMulticastDomainFuture(
         params: DisassociateTransitGatewayMulticastDomainRequest
     ): Future[DisassociateTransitGatewayMulticastDomainResult] =
-      service.disassociateTransitGatewayMulticastDomain(params).promise.toFuture
+      service.disassociateTransitGatewayMulticastDomain(params).promise().toFuture
     @inline def disassociateTransitGatewayRouteTableFuture(
         params: DisassociateTransitGatewayRouteTableRequest
     ): Future[DisassociateTransitGatewayRouteTableResult] =
-      service.disassociateTransitGatewayRouteTable(params).promise.toFuture
+      service.disassociateTransitGatewayRouteTable(params).promise().toFuture
     @inline def disassociateVpcCidrBlockFuture(
         params: DisassociateVpcCidrBlockRequest
-    ): Future[DisassociateVpcCidrBlockResult] = service.disassociateVpcCidrBlock(params).promise.toFuture
+    ): Future[DisassociateVpcCidrBlockResult] = service.disassociateVpcCidrBlock(params).promise().toFuture
     @inline def enableEbsEncryptionByDefaultFuture(
         params: EnableEbsEncryptionByDefaultRequest
-    ): Future[EnableEbsEncryptionByDefaultResult] = service.enableEbsEncryptionByDefault(params).promise.toFuture
+    ): Future[EnableEbsEncryptionByDefaultResult] = service.enableEbsEncryptionByDefault(params).promise().toFuture
     @inline def enableFastSnapshotRestoresFuture(
         params: EnableFastSnapshotRestoresRequest
-    ): Future[EnableFastSnapshotRestoresResult] = service.enableFastSnapshotRestores(params).promise.toFuture
+    ): Future[EnableFastSnapshotRestoresResult] = service.enableFastSnapshotRestores(params).promise().toFuture
     @inline def enableTransitGatewayRouteTablePropagationFuture(
         params: EnableTransitGatewayRouteTablePropagationRequest
     ): Future[EnableTransitGatewayRouteTablePropagationResult] =
-      service.enableTransitGatewayRouteTablePropagation(params).promise.toFuture
+      service.enableTransitGatewayRouteTablePropagation(params).promise().toFuture
     @inline def enableVgwRoutePropagationFuture(params: EnableVgwRoutePropagationRequest): Future[js.Object] =
-      service.enableVgwRoutePropagation(params).promise.toFuture
+      service.enableVgwRoutePropagation(params).promise().toFuture
     @inline def enableVolumeIOFuture(params: EnableVolumeIORequest): Future[js.Object] =
-      service.enableVolumeIO(params).promise.toFuture
+      service.enableVolumeIO(params).promise().toFuture
     @inline def enableVpcClassicLinkDnsSupportFuture(
         params: EnableVpcClassicLinkDnsSupportRequest
-    ): Future[EnableVpcClassicLinkDnsSupportResult] = service.enableVpcClassicLinkDnsSupport(params).promise.toFuture
+    ): Future[EnableVpcClassicLinkDnsSupportResult] = service.enableVpcClassicLinkDnsSupport(params).promise().toFuture
     @inline def enableVpcClassicLinkFuture(params: EnableVpcClassicLinkRequest): Future[EnableVpcClassicLinkResult] =
-      service.enableVpcClassicLink(params).promise.toFuture
+      service.enableVpcClassicLink(params).promise().toFuture
     @inline def exportClientVpnClientCertificateRevocationListFuture(
         params: ExportClientVpnClientCertificateRevocationListRequest
     ): Future[ExportClientVpnClientCertificateRevocationListResult] =
-      service.exportClientVpnClientCertificateRevocationList(params).promise.toFuture
+      service.exportClientVpnClientCertificateRevocationList(params).promise().toFuture
     @inline def exportClientVpnClientConfigurationFuture(
         params: ExportClientVpnClientConfigurationRequest
     ): Future[ExportClientVpnClientConfigurationResult] =
-      service.exportClientVpnClientConfiguration(params).promise.toFuture
+      service.exportClientVpnClientConfiguration(params).promise().toFuture
     @inline def exportImageFuture(params: ExportImageRequest): Future[ExportImageResult] =
-      service.exportImage(params).promise.toFuture
+      service.exportImage(params).promise().toFuture
     @inline def exportTransitGatewayRoutesFuture(
         params: ExportTransitGatewayRoutesRequest
-    ): Future[ExportTransitGatewayRoutesResult] = service.exportTransitGatewayRoutes(params).promise.toFuture
+    ): Future[ExportTransitGatewayRoutesResult] = service.exportTransitGatewayRoutes(params).promise().toFuture
     @inline def getAssociatedIpv6PoolCidrsFuture(
         params: GetAssociatedIpv6PoolCidrsRequest
-    ): Future[GetAssociatedIpv6PoolCidrsResult] = service.getAssociatedIpv6PoolCidrs(params).promise.toFuture
+    ): Future[GetAssociatedIpv6PoolCidrsResult] = service.getAssociatedIpv6PoolCidrs(params).promise().toFuture
     @inline def getCapacityReservationUsageFuture(
         params: GetCapacityReservationUsageRequest
-    ): Future[GetCapacityReservationUsageResult] = service.getCapacityReservationUsage(params).promise.toFuture
+    ): Future[GetCapacityReservationUsageResult] = service.getCapacityReservationUsage(params).promise().toFuture
     @inline def getCoipPoolUsageFuture(params: GetCoipPoolUsageRequest): Future[GetCoipPoolUsageResult] =
-      service.getCoipPoolUsage(params).promise.toFuture
+      service.getCoipPoolUsage(params).promise().toFuture
     @inline def getConsoleOutputFuture(params: GetConsoleOutputRequest): Future[GetConsoleOutputResult] =
-      service.getConsoleOutput(params).promise.toFuture
+      service.getConsoleOutput(params).promise().toFuture
     @inline def getConsoleScreenshotFuture(params: GetConsoleScreenshotRequest): Future[GetConsoleScreenshotResult] =
-      service.getConsoleScreenshot(params).promise.toFuture
+      service.getConsoleScreenshot(params).promise().toFuture
     @inline def getDefaultCreditSpecificationFuture(
         params: GetDefaultCreditSpecificationRequest
-    ): Future[GetDefaultCreditSpecificationResult] = service.getDefaultCreditSpecification(params).promise.toFuture
+    ): Future[GetDefaultCreditSpecificationResult] = service.getDefaultCreditSpecification(params).promise().toFuture
     @inline def getEbsDefaultKmsKeyIdFuture(params: GetEbsDefaultKmsKeyIdRequest): Future[GetEbsDefaultKmsKeyIdResult] =
-      service.getEbsDefaultKmsKeyId(params).promise.toFuture
+      service.getEbsDefaultKmsKeyId(params).promise().toFuture
     @inline def getEbsEncryptionByDefaultFuture(
         params: GetEbsEncryptionByDefaultRequest
-    ): Future[GetEbsEncryptionByDefaultResult] = service.getEbsEncryptionByDefault(params).promise.toFuture
+    ): Future[GetEbsEncryptionByDefaultResult] = service.getEbsEncryptionByDefault(params).promise().toFuture
     @inline def getHostReservationPurchasePreviewFuture(
         params: GetHostReservationPurchasePreviewRequest
     ): Future[GetHostReservationPurchasePreviewResult] =
-      service.getHostReservationPurchasePreview(params).promise.toFuture
+      service.getHostReservationPurchasePreview(params).promise().toFuture
     @inline def getLaunchTemplateDataFuture(params: GetLaunchTemplateDataRequest): Future[GetLaunchTemplateDataResult] =
-      service.getLaunchTemplateData(params).promise.toFuture
+      service.getLaunchTemplateData(params).promise().toFuture
     @inline def getPasswordDataFuture(params: GetPasswordDataRequest): Future[GetPasswordDataResult] =
-      service.getPasswordData(params).promise.toFuture
+      service.getPasswordData(params).promise().toFuture
     @inline def getReservedInstancesExchangeQuoteFuture(
         params: GetReservedInstancesExchangeQuoteRequest
     ): Future[GetReservedInstancesExchangeQuoteResult] =
-      service.getReservedInstancesExchangeQuote(params).promise.toFuture
+      service.getReservedInstancesExchangeQuote(params).promise().toFuture
     @inline def getTransitGatewayAttachmentPropagationsFuture(
         params: GetTransitGatewayAttachmentPropagationsRequest
     ): Future[GetTransitGatewayAttachmentPropagationsResult] =
-      service.getTransitGatewayAttachmentPropagations(params).promise.toFuture
+      service.getTransitGatewayAttachmentPropagations(params).promise().toFuture
     @inline def getTransitGatewayMulticastDomainAssociationsFuture(
         params: GetTransitGatewayMulticastDomainAssociationsRequest
     ): Future[GetTransitGatewayMulticastDomainAssociationsResult] =
-      service.getTransitGatewayMulticastDomainAssociations(params).promise.toFuture
+      service.getTransitGatewayMulticastDomainAssociations(params).promise().toFuture
     @inline def getTransitGatewayRouteTableAssociationsFuture(
         params: GetTransitGatewayRouteTableAssociationsRequest
     ): Future[GetTransitGatewayRouteTableAssociationsResult] =
-      service.getTransitGatewayRouteTableAssociations(params).promise.toFuture
+      service.getTransitGatewayRouteTableAssociations(params).promise().toFuture
     @inline def getTransitGatewayRouteTablePropagationsFuture(
         params: GetTransitGatewayRouteTablePropagationsRequest
     ): Future[GetTransitGatewayRouteTablePropagationsResult] =
-      service.getTransitGatewayRouteTablePropagations(params).promise.toFuture
+      service.getTransitGatewayRouteTablePropagations(params).promise().toFuture
     @inline def importClientVpnClientCertificateRevocationListFuture(
         params: ImportClientVpnClientCertificateRevocationListRequest
     ): Future[ImportClientVpnClientCertificateRevocationListResult] =
-      service.importClientVpnClientCertificateRevocationList(params).promise.toFuture
+      service.importClientVpnClientCertificateRevocationList(params).promise().toFuture
     @inline def importImageFuture(params: ImportImageRequest): Future[ImportImageResult] =
-      service.importImage(params).promise.toFuture
+      service.importImage(params).promise().toFuture
     @inline def importInstanceFuture(params: ImportInstanceRequest): Future[ImportInstanceResult] =
-      service.importInstance(params).promise.toFuture
+      service.importInstance(params).promise().toFuture
     @inline def importKeyPairFuture(params: ImportKeyPairRequest): Future[ImportKeyPairResult] =
-      service.importKeyPair(params).promise.toFuture
+      service.importKeyPair(params).promise().toFuture
     @inline def importSnapshotFuture(params: ImportSnapshotRequest): Future[ImportSnapshotResult] =
-      service.importSnapshot(params).promise.toFuture
+      service.importSnapshot(params).promise().toFuture
     @inline def importVolumeFuture(params: ImportVolumeRequest): Future[ImportVolumeResult] =
-      service.importVolume(params).promise.toFuture
+      service.importVolume(params).promise().toFuture
     @inline def modifyCapacityReservationFuture(
         params: ModifyCapacityReservationRequest
-    ): Future[ModifyCapacityReservationResult] = service.modifyCapacityReservation(params).promise.toFuture
+    ): Future[ModifyCapacityReservationResult] = service.modifyCapacityReservation(params).promise().toFuture
     @inline def modifyClientVpnEndpointFuture(
         params: ModifyClientVpnEndpointRequest
-    ): Future[ModifyClientVpnEndpointResult] = service.modifyClientVpnEndpoint(params).promise.toFuture
+    ): Future[ModifyClientVpnEndpointResult] = service.modifyClientVpnEndpoint(params).promise().toFuture
     @inline def modifyDefaultCreditSpecificationFuture(
         params: ModifyDefaultCreditSpecificationRequest
     ): Future[ModifyDefaultCreditSpecificationResult] =
-      service.modifyDefaultCreditSpecification(params).promise.toFuture
+      service.modifyDefaultCreditSpecification(params).promise().toFuture
     @inline def modifyEbsDefaultKmsKeyIdFuture(
         params: ModifyEbsDefaultKmsKeyIdRequest
-    ): Future[ModifyEbsDefaultKmsKeyIdResult] = service.modifyEbsDefaultKmsKeyId(params).promise.toFuture
+    ): Future[ModifyEbsDefaultKmsKeyIdResult] = service.modifyEbsDefaultKmsKeyId(params).promise().toFuture
     @inline def modifyFleetFuture(params: ModifyFleetRequest): Future[ModifyFleetResult] =
-      service.modifyFleet(params).promise.toFuture
+      service.modifyFleet(params).promise().toFuture
     @inline def modifyFpgaImageAttributeFuture(
         params: ModifyFpgaImageAttributeRequest
-    ): Future[ModifyFpgaImageAttributeResult] = service.modifyFpgaImageAttribute(params).promise.toFuture
+    ): Future[ModifyFpgaImageAttributeResult] = service.modifyFpgaImageAttribute(params).promise().toFuture
     @inline def modifyHostsFuture(params: ModifyHostsRequest): Future[ModifyHostsResult] =
-      service.modifyHosts(params).promise.toFuture
+      service.modifyHosts(params).promise().toFuture
     @inline def modifyIdFormatFuture(params: ModifyIdFormatRequest): Future[js.Object] =
-      service.modifyIdFormat(params).promise.toFuture
+      service.modifyIdFormat(params).promise().toFuture
     @inline def modifyIdentityIdFormatFuture(params: ModifyIdentityIdFormatRequest): Future[js.Object] =
-      service.modifyIdentityIdFormat(params).promise.toFuture
+      service.modifyIdentityIdFormat(params).promise().toFuture
     @inline def modifyImageAttributeFuture(params: ModifyImageAttributeRequest): Future[js.Object] =
-      service.modifyImageAttribute(params).promise.toFuture
+      service.modifyImageAttribute(params).promise().toFuture
     @inline def modifyInstanceAttributeFuture(params: ModifyInstanceAttributeRequest): Future[js.Object] =
-      service.modifyInstanceAttribute(params).promise.toFuture
+      service.modifyInstanceAttribute(params).promise().toFuture
     @inline def modifyInstanceCapacityReservationAttributesFuture(
         params: ModifyInstanceCapacityReservationAttributesRequest
     ): Future[ModifyInstanceCapacityReservationAttributesResult] =
-      service.modifyInstanceCapacityReservationAttributes(params).promise.toFuture
+      service.modifyInstanceCapacityReservationAttributes(params).promise().toFuture
     @inline def modifyInstanceCreditSpecificationFuture(
         params: ModifyInstanceCreditSpecificationRequest
     ): Future[ModifyInstanceCreditSpecificationResult] =
-      service.modifyInstanceCreditSpecification(params).promise.toFuture
+      service.modifyInstanceCreditSpecification(params).promise().toFuture
     @inline def modifyInstanceEventStartTimeFuture(
         params: ModifyInstanceEventStartTimeRequest
-    ): Future[ModifyInstanceEventStartTimeResult] = service.modifyInstanceEventStartTime(params).promise.toFuture
+    ): Future[ModifyInstanceEventStartTimeResult] = service.modifyInstanceEventStartTime(params).promise().toFuture
     @inline def modifyInstanceMetadataOptionsFuture(
         params: ModifyInstanceMetadataOptionsRequest
-    ): Future[ModifyInstanceMetadataOptionsResult] = service.modifyInstanceMetadataOptions(params).promise.toFuture
+    ): Future[ModifyInstanceMetadataOptionsResult] = service.modifyInstanceMetadataOptions(params).promise().toFuture
     @inline def modifyInstancePlacementFuture(
         params: ModifyInstancePlacementRequest
-    ): Future[ModifyInstancePlacementResult] = service.modifyInstancePlacement(params).promise.toFuture
+    ): Future[ModifyInstancePlacementResult] = service.modifyInstancePlacement(params).promise().toFuture
     @inline def modifyLaunchTemplateFuture(params: ModifyLaunchTemplateRequest): Future[ModifyLaunchTemplateResult] =
-      service.modifyLaunchTemplate(params).promise.toFuture
+      service.modifyLaunchTemplate(params).promise().toFuture
     @inline def modifyNetworkInterfaceAttributeFuture(
         params: ModifyNetworkInterfaceAttributeRequest
-    ): Future[js.Object] = service.modifyNetworkInterfaceAttribute(params).promise.toFuture
+    ): Future[js.Object] = service.modifyNetworkInterfaceAttribute(params).promise().toFuture
     @inline def modifyReservedInstancesFuture(
         params: ModifyReservedInstancesRequest
-    ): Future[ModifyReservedInstancesResult] = service.modifyReservedInstances(params).promise.toFuture
+    ): Future[ModifyReservedInstancesResult] = service.modifyReservedInstances(params).promise().toFuture
     @inline def modifySnapshotAttributeFuture(params: ModifySnapshotAttributeRequest): Future[js.Object] =
-      service.modifySnapshotAttribute(params).promise.toFuture
+      service.modifySnapshotAttribute(params).promise().toFuture
     @inline def modifySpotFleetRequestFuture(
         params: ModifySpotFleetRequestRequest
-    ): Future[ModifySpotFleetRequestResponse] = service.modifySpotFleetRequest(params).promise.toFuture
+    ): Future[ModifySpotFleetRequestResponse] = service.modifySpotFleetRequest(params).promise().toFuture
     @inline def modifySubnetAttributeFuture(params: ModifySubnetAttributeRequest): Future[js.Object] =
-      service.modifySubnetAttribute(params).promise.toFuture
+      service.modifySubnetAttribute(params).promise().toFuture
     @inline def modifyTrafficMirrorFilterNetworkServicesFuture(
         params: ModifyTrafficMirrorFilterNetworkServicesRequest
     ): Future[ModifyTrafficMirrorFilterNetworkServicesResult] =
-      service.modifyTrafficMirrorFilterNetworkServices(params).promise.toFuture
+      service.modifyTrafficMirrorFilterNetworkServices(params).promise().toFuture
     @inline def modifyTrafficMirrorFilterRuleFuture(
         params: ModifyTrafficMirrorFilterRuleRequest
-    ): Future[ModifyTrafficMirrorFilterRuleResult] = service.modifyTrafficMirrorFilterRule(params).promise.toFuture
+    ): Future[ModifyTrafficMirrorFilterRuleResult] = service.modifyTrafficMirrorFilterRule(params).promise().toFuture
     @inline def modifyTrafficMirrorSessionFuture(
         params: ModifyTrafficMirrorSessionRequest
-    ): Future[ModifyTrafficMirrorSessionResult] = service.modifyTrafficMirrorSession(params).promise.toFuture
+    ): Future[ModifyTrafficMirrorSessionResult] = service.modifyTrafficMirrorSession(params).promise().toFuture
     @inline def modifyTransitGatewayVpcAttachmentFuture(
         params: ModifyTransitGatewayVpcAttachmentRequest
     ): Future[ModifyTransitGatewayVpcAttachmentResult] =
-      service.modifyTransitGatewayVpcAttachment(params).promise.toFuture
+      service.modifyTransitGatewayVpcAttachment(params).promise().toFuture
     @inline def modifyVolumeAttributeFuture(params: ModifyVolumeAttributeRequest): Future[js.Object] =
-      service.modifyVolumeAttribute(params).promise.toFuture
+      service.modifyVolumeAttribute(params).promise().toFuture
     @inline def modifyVolumeFuture(params: ModifyVolumeRequest): Future[ModifyVolumeResult] =
-      service.modifyVolume(params).promise.toFuture
+      service.modifyVolume(params).promise().toFuture
     @inline def modifyVpcAttributeFuture(params: ModifyVpcAttributeRequest): Future[js.Object] =
-      service.modifyVpcAttribute(params).promise.toFuture
+      service.modifyVpcAttribute(params).promise().toFuture
     @inline def modifyVpcEndpointConnectionNotificationFuture(
         params: ModifyVpcEndpointConnectionNotificationRequest
     ): Future[ModifyVpcEndpointConnectionNotificationResult] =
-      service.modifyVpcEndpointConnectionNotification(params).promise.toFuture
+      service.modifyVpcEndpointConnectionNotification(params).promise().toFuture
     @inline def modifyVpcEndpointFuture(params: ModifyVpcEndpointRequest): Future[ModifyVpcEndpointResult] =
-      service.modifyVpcEndpoint(params).promise.toFuture
+      service.modifyVpcEndpoint(params).promise().toFuture
     @inline def modifyVpcEndpointServiceConfigurationFuture(
         params: ModifyVpcEndpointServiceConfigurationRequest
     ): Future[ModifyVpcEndpointServiceConfigurationResult] =
-      service.modifyVpcEndpointServiceConfiguration(params).promise.toFuture
+      service.modifyVpcEndpointServiceConfiguration(params).promise().toFuture
     @inline def modifyVpcEndpointServicePermissionsFuture(
         params: ModifyVpcEndpointServicePermissionsRequest
     ): Future[ModifyVpcEndpointServicePermissionsResult] =
-      service.modifyVpcEndpointServicePermissions(params).promise.toFuture
+      service.modifyVpcEndpointServicePermissions(params).promise().toFuture
     @inline def modifyVpcPeeringConnectionOptionsFuture(
         params: ModifyVpcPeeringConnectionOptionsRequest
     ): Future[ModifyVpcPeeringConnectionOptionsResult] =
-      service.modifyVpcPeeringConnectionOptions(params).promise.toFuture
+      service.modifyVpcPeeringConnectionOptions(params).promise().toFuture
     @inline def modifyVpcTenancyFuture(params: ModifyVpcTenancyRequest): Future[ModifyVpcTenancyResult] =
-      service.modifyVpcTenancy(params).promise.toFuture
+      service.modifyVpcTenancy(params).promise().toFuture
     @inline def modifyVpnConnectionFuture(params: ModifyVpnConnectionRequest): Future[ModifyVpnConnectionResult] =
-      service.modifyVpnConnection(params).promise.toFuture
+      service.modifyVpnConnection(params).promise().toFuture
     @inline def modifyVpnTunnelCertificateFuture(
         params: ModifyVpnTunnelCertificateRequest
-    ): Future[ModifyVpnTunnelCertificateResult] = service.modifyVpnTunnelCertificate(params).promise.toFuture
+    ): Future[ModifyVpnTunnelCertificateResult] = service.modifyVpnTunnelCertificate(params).promise().toFuture
     @inline def modifyVpnTunnelOptionsFuture(
         params: ModifyVpnTunnelOptionsRequest
-    ): Future[ModifyVpnTunnelOptionsResult] = service.modifyVpnTunnelOptions(params).promise.toFuture
+    ): Future[ModifyVpnTunnelOptionsResult] = service.modifyVpnTunnelOptions(params).promise().toFuture
     @inline def monitorInstancesFuture(params: MonitorInstancesRequest): Future[MonitorInstancesResult] =
-      service.monitorInstances(params).promise.toFuture
+      service.monitorInstances(params).promise().toFuture
     @inline def moveAddressToVpcFuture(params: MoveAddressToVpcRequest): Future[MoveAddressToVpcResult] =
-      service.moveAddressToVpc(params).promise.toFuture
+      service.moveAddressToVpc(params).promise().toFuture
     @inline def provisionByoipCidrFuture(params: ProvisionByoipCidrRequest): Future[ProvisionByoipCidrResult] =
-      service.provisionByoipCidr(params).promise.toFuture
+      service.provisionByoipCidr(params).promise().toFuture
     @inline def purchaseHostReservationFuture(
         params: PurchaseHostReservationRequest
-    ): Future[PurchaseHostReservationResult] = service.purchaseHostReservation(params).promise.toFuture
+    ): Future[PurchaseHostReservationResult] = service.purchaseHostReservation(params).promise().toFuture
     @inline def purchaseReservedInstancesOfferingFuture(
         params: PurchaseReservedInstancesOfferingRequest
     ): Future[PurchaseReservedInstancesOfferingResult] =
-      service.purchaseReservedInstancesOffering(params).promise.toFuture
+      service.purchaseReservedInstancesOffering(params).promise().toFuture
     @inline def purchaseScheduledInstancesFuture(
         params: PurchaseScheduledInstancesRequest
-    ): Future[PurchaseScheduledInstancesResult] = service.purchaseScheduledInstances(params).promise.toFuture
+    ): Future[PurchaseScheduledInstancesResult] = service.purchaseScheduledInstances(params).promise().toFuture
     @inline def rebootInstancesFuture(params: RebootInstancesRequest): Future[js.Object] =
-      service.rebootInstances(params).promise.toFuture
+      service.rebootInstances(params).promise().toFuture
     @inline def registerImageFuture(params: RegisterImageRequest): Future[RegisterImageResult] =
-      service.registerImage(params).promise.toFuture
+      service.registerImage(params).promise().toFuture
     @inline def registerTransitGatewayMulticastGroupMembersFuture(
         params: RegisterTransitGatewayMulticastGroupMembersRequest
     ): Future[RegisterTransitGatewayMulticastGroupMembersResult] =
-      service.registerTransitGatewayMulticastGroupMembers(params).promise.toFuture
+      service.registerTransitGatewayMulticastGroupMembers(params).promise().toFuture
     @inline def registerTransitGatewayMulticastGroupSourcesFuture(
         params: RegisterTransitGatewayMulticastGroupSourcesRequest
     ): Future[RegisterTransitGatewayMulticastGroupSourcesResult] =
-      service.registerTransitGatewayMulticastGroupSources(params).promise.toFuture
+      service.registerTransitGatewayMulticastGroupSources(params).promise().toFuture
     @inline def rejectTransitGatewayPeeringAttachmentFuture(
         params: RejectTransitGatewayPeeringAttachmentRequest
     ): Future[RejectTransitGatewayPeeringAttachmentResult] =
-      service.rejectTransitGatewayPeeringAttachment(params).promise.toFuture
+      service.rejectTransitGatewayPeeringAttachment(params).promise().toFuture
     @inline def rejectTransitGatewayVpcAttachmentFuture(
         params: RejectTransitGatewayVpcAttachmentRequest
     ): Future[RejectTransitGatewayVpcAttachmentResult] =
-      service.rejectTransitGatewayVpcAttachment(params).promise.toFuture
+      service.rejectTransitGatewayVpcAttachment(params).promise().toFuture
     @inline def rejectVpcEndpointConnectionsFuture(
         params: RejectVpcEndpointConnectionsRequest
-    ): Future[RejectVpcEndpointConnectionsResult] = service.rejectVpcEndpointConnections(params).promise.toFuture
+    ): Future[RejectVpcEndpointConnectionsResult] = service.rejectVpcEndpointConnections(params).promise().toFuture
     @inline def rejectVpcPeeringConnectionFuture(
         params: RejectVpcPeeringConnectionRequest
-    ): Future[RejectVpcPeeringConnectionResult] = service.rejectVpcPeeringConnection(params).promise.toFuture
+    ): Future[RejectVpcPeeringConnectionResult] = service.rejectVpcPeeringConnection(params).promise().toFuture
     @inline def releaseAddressFuture(params: ReleaseAddressRequest): Future[js.Object] =
-      service.releaseAddress(params).promise.toFuture
+      service.releaseAddress(params).promise().toFuture
     @inline def releaseHostsFuture(params: ReleaseHostsRequest): Future[ReleaseHostsResult] =
-      service.releaseHosts(params).promise.toFuture
+      service.releaseHosts(params).promise().toFuture
     @inline def replaceIamInstanceProfileAssociationFuture(
         params: ReplaceIamInstanceProfileAssociationRequest
     ): Future[ReplaceIamInstanceProfileAssociationResult] =
-      service.replaceIamInstanceProfileAssociation(params).promise.toFuture
+      service.replaceIamInstanceProfileAssociation(params).promise().toFuture
     @inline def replaceNetworkAclAssociationFuture(
         params: ReplaceNetworkAclAssociationRequest
-    ): Future[ReplaceNetworkAclAssociationResult] = service.replaceNetworkAclAssociation(params).promise.toFuture
+    ): Future[ReplaceNetworkAclAssociationResult] = service.replaceNetworkAclAssociation(params).promise().toFuture
     @inline def replaceNetworkAclEntryFuture(params: ReplaceNetworkAclEntryRequest): Future[js.Object] =
-      service.replaceNetworkAclEntry(params).promise.toFuture
+      service.replaceNetworkAclEntry(params).promise().toFuture
     @inline def replaceRouteFuture(params: ReplaceRouteRequest): Future[js.Object] =
-      service.replaceRoute(params).promise.toFuture
+      service.replaceRoute(params).promise().toFuture
     @inline def replaceRouteTableAssociationFuture(
         params: ReplaceRouteTableAssociationRequest
-    ): Future[ReplaceRouteTableAssociationResult] = service.replaceRouteTableAssociation(params).promise.toFuture
+    ): Future[ReplaceRouteTableAssociationResult] = service.replaceRouteTableAssociation(params).promise().toFuture
     @inline def replaceTransitGatewayRouteFuture(
         params: ReplaceTransitGatewayRouteRequest
-    ): Future[ReplaceTransitGatewayRouteResult] = service.replaceTransitGatewayRoute(params).promise.toFuture
+    ): Future[ReplaceTransitGatewayRouteResult] = service.replaceTransitGatewayRoute(params).promise().toFuture
     @inline def reportInstanceStatusFuture(params: ReportInstanceStatusRequest): Future[js.Object] =
-      service.reportInstanceStatus(params).promise.toFuture
+      service.reportInstanceStatus(params).promise().toFuture
     @inline def requestSpotFleetFuture(params: RequestSpotFleetRequest): Future[RequestSpotFleetResponse] =
-      service.requestSpotFleet(params).promise.toFuture
+      service.requestSpotFleet(params).promise().toFuture
     @inline def requestSpotInstancesFuture(params: RequestSpotInstancesRequest): Future[RequestSpotInstancesResult] =
-      service.requestSpotInstances(params).promise.toFuture
+      service.requestSpotInstances(params).promise().toFuture
     @inline def resetEbsDefaultKmsKeyIdFuture(
         params: ResetEbsDefaultKmsKeyIdRequest
-    ): Future[ResetEbsDefaultKmsKeyIdResult] = service.resetEbsDefaultKmsKeyId(params).promise.toFuture
+    ): Future[ResetEbsDefaultKmsKeyIdResult] = service.resetEbsDefaultKmsKeyId(params).promise().toFuture
     @inline def resetFpgaImageAttributeFuture(
         params: ResetFpgaImageAttributeRequest
-    ): Future[ResetFpgaImageAttributeResult] = service.resetFpgaImageAttribute(params).promise.toFuture
+    ): Future[ResetFpgaImageAttributeResult] = service.resetFpgaImageAttribute(params).promise().toFuture
     @inline def resetImageAttributeFuture(params: ResetImageAttributeRequest): Future[js.Object] =
-      service.resetImageAttribute(params).promise.toFuture
+      service.resetImageAttribute(params).promise().toFuture
     @inline def resetInstanceAttributeFuture(params: ResetInstanceAttributeRequest): Future[js.Object] =
-      service.resetInstanceAttribute(params).promise.toFuture
+      service.resetInstanceAttribute(params).promise().toFuture
     @inline def resetNetworkInterfaceAttributeFuture(params: ResetNetworkInterfaceAttributeRequest): Future[js.Object] =
-      service.resetNetworkInterfaceAttribute(params).promise.toFuture
+      service.resetNetworkInterfaceAttribute(params).promise().toFuture
     @inline def resetSnapshotAttributeFuture(params: ResetSnapshotAttributeRequest): Future[js.Object] =
-      service.resetSnapshotAttribute(params).promise.toFuture
+      service.resetSnapshotAttribute(params).promise().toFuture
     @inline def restoreAddressToClassicFuture(
         params: RestoreAddressToClassicRequest
-    ): Future[RestoreAddressToClassicResult] = service.restoreAddressToClassic(params).promise.toFuture
+    ): Future[RestoreAddressToClassicResult] = service.restoreAddressToClassic(params).promise().toFuture
     @inline def revokeClientVpnIngressFuture(
         params: RevokeClientVpnIngressRequest
-    ): Future[RevokeClientVpnIngressResult] = service.revokeClientVpnIngress(params).promise.toFuture
+    ): Future[RevokeClientVpnIngressResult] = service.revokeClientVpnIngress(params).promise().toFuture
     @inline def revokeSecurityGroupEgressFuture(params: RevokeSecurityGroupEgressRequest): Future[js.Object] =
-      service.revokeSecurityGroupEgress(params).promise.toFuture
+      service.revokeSecurityGroupEgress(params).promise().toFuture
     @inline def revokeSecurityGroupIngressFuture(params: RevokeSecurityGroupIngressRequest): Future[js.Object] =
-      service.revokeSecurityGroupIngress(params).promise.toFuture
+      service.revokeSecurityGroupIngress(params).promise().toFuture
     @inline def runInstancesFuture(params: RunInstancesRequest): Future[Reservation] =
-      service.runInstances(params).promise.toFuture
+      service.runInstances(params).promise().toFuture
     @inline def runScheduledInstancesFuture(params: RunScheduledInstancesRequest): Future[RunScheduledInstancesResult] =
-      service.runScheduledInstances(params).promise.toFuture
+      service.runScheduledInstances(params).promise().toFuture
     @inline def searchLocalGatewayRoutesFuture(
         params: SearchLocalGatewayRoutesRequest
-    ): Future[SearchLocalGatewayRoutesResult] = service.searchLocalGatewayRoutes(params).promise.toFuture
+    ): Future[SearchLocalGatewayRoutesResult] = service.searchLocalGatewayRoutes(params).promise().toFuture
     @inline def searchTransitGatewayMulticastGroupsFuture(
         params: SearchTransitGatewayMulticastGroupsRequest
     ): Future[SearchTransitGatewayMulticastGroupsResult] =
-      service.searchTransitGatewayMulticastGroups(params).promise.toFuture
+      service.searchTransitGatewayMulticastGroups(params).promise().toFuture
     @inline def searchTransitGatewayRoutesFuture(
         params: SearchTransitGatewayRoutesRequest
-    ): Future[SearchTransitGatewayRoutesResult] = service.searchTransitGatewayRoutes(params).promise.toFuture
+    ): Future[SearchTransitGatewayRoutesResult] = service.searchTransitGatewayRoutes(params).promise().toFuture
     @inline def sendDiagnosticInterruptFuture(params: SendDiagnosticInterruptRequest): Future[js.Object] =
-      service.sendDiagnosticInterrupt(params).promise.toFuture
+      service.sendDiagnosticInterrupt(params).promise().toFuture
     @inline def startInstancesFuture(params: StartInstancesRequest): Future[StartInstancesResult] =
-      service.startInstances(params).promise.toFuture
+      service.startInstances(params).promise().toFuture
     @inline def startVpcEndpointServicePrivateDnsVerificationFuture(
         params: StartVpcEndpointServicePrivateDnsVerificationRequest
     ): Future[StartVpcEndpointServicePrivateDnsVerificationResult] =
-      service.startVpcEndpointServicePrivateDnsVerification(params).promise.toFuture
+      service.startVpcEndpointServicePrivateDnsVerification(params).promise().toFuture
     @inline def stopInstancesFuture(params: StopInstancesRequest): Future[StopInstancesResult] =
-      service.stopInstances(params).promise.toFuture
+      service.stopInstances(params).promise().toFuture
     @inline def terminateClientVpnConnectionsFuture(
         params: TerminateClientVpnConnectionsRequest
-    ): Future[TerminateClientVpnConnectionsResult] = service.terminateClientVpnConnections(params).promise.toFuture
+    ): Future[TerminateClientVpnConnectionsResult] = service.terminateClientVpnConnections(params).promise().toFuture
     @inline def terminateInstancesFuture(params: TerminateInstancesRequest): Future[TerminateInstancesResult] =
-      service.terminateInstances(params).promise.toFuture
+      service.terminateInstances(params).promise().toFuture
     @inline def unassignIpv6AddressesFuture(params: UnassignIpv6AddressesRequest): Future[UnassignIpv6AddressesResult] =
-      service.unassignIpv6Addresses(params).promise.toFuture
+      service.unassignIpv6Addresses(params).promise().toFuture
     @inline def unassignPrivateIpAddressesFuture(params: UnassignPrivateIpAddressesRequest): Future[js.Object] =
-      service.unassignPrivateIpAddresses(params).promise.toFuture
+      service.unassignPrivateIpAddresses(params).promise().toFuture
     @inline def unmonitorInstancesFuture(params: UnmonitorInstancesRequest): Future[UnmonitorInstancesResult] =
-      service.unmonitorInstances(params).promise.toFuture
+      service.unmonitorInstances(params).promise().toFuture
     @inline def updateSecurityGroupRuleDescriptionsEgressFuture(
         params: UpdateSecurityGroupRuleDescriptionsEgressRequest
     ): Future[UpdateSecurityGroupRuleDescriptionsEgressResult] =
-      service.updateSecurityGroupRuleDescriptionsEgress(params).promise.toFuture
+      service.updateSecurityGroupRuleDescriptionsEgress(params).promise().toFuture
     @inline def updateSecurityGroupRuleDescriptionsIngressFuture(
         params: UpdateSecurityGroupRuleDescriptionsIngressRequest
     ): Future[UpdateSecurityGroupRuleDescriptionsIngressResult] =
-      service.updateSecurityGroupRuleDescriptionsIngress(params).promise.toFuture
+      service.updateSecurityGroupRuleDescriptionsIngress(params).promise().toFuture
     @inline def withdrawByoipCidrFuture(params: WithdrawByoipCidrRequest): Future[WithdrawByoipCidrResult] =
-      service.withdrawByoipCidr(params).promise.toFuture
+      service.withdrawByoipCidr(params).promise().toFuture
   }
 }
 

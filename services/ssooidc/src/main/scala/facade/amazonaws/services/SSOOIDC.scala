@@ -29,12 +29,12 @@ package object ssooidc {
   implicit final class SSOOIDCOps(private val service: SSOOIDC) extends AnyVal {
 
     @inline def createTokenFuture(params: CreateTokenRequest): Future[CreateTokenResponse] =
-      service.createToken(params).promise.toFuture
+      service.createToken(params).promise().toFuture
     @inline def registerClientFuture(params: RegisterClientRequest): Future[RegisterClientResponse] =
-      service.registerClient(params).promise.toFuture
+      service.registerClient(params).promise().toFuture
     @inline def startDeviceAuthorizationFuture(
         params: StartDeviceAuthorizationRequest
-    ): Future[StartDeviceAuthorizationResponse] = service.startDeviceAuthorization(params).promise.toFuture
+    ): Future[StartDeviceAuthorizationResponse] = service.startDeviceAuthorization(params).promise().toFuture
   }
 }
 

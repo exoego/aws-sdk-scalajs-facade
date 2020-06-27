@@ -33,66 +33,67 @@ package object ram {
 
     @inline def acceptResourceShareInvitationFuture(
         params: AcceptResourceShareInvitationRequest
-    ): Future[AcceptResourceShareInvitationResponse] = service.acceptResourceShareInvitation(params).promise.toFuture
+    ): Future[AcceptResourceShareInvitationResponse] = service.acceptResourceShareInvitation(params).promise().toFuture
     @inline def associateResourceShareFuture(
         params: AssociateResourceShareRequest
-    ): Future[AssociateResourceShareResponse] = service.associateResourceShare(params).promise.toFuture
+    ): Future[AssociateResourceShareResponse] = service.associateResourceShare(params).promise().toFuture
     @inline def associateResourceSharePermissionFuture(
         params: AssociateResourceSharePermissionRequest
     ): Future[AssociateResourceSharePermissionResponse] =
-      service.associateResourceSharePermission(params).promise.toFuture
+      service.associateResourceSharePermission(params).promise().toFuture
     @inline def createResourceShareFuture(params: CreateResourceShareRequest): Future[CreateResourceShareResponse] =
-      service.createResourceShare(params).promise.toFuture
+      service.createResourceShare(params).promise().toFuture
     @inline def deleteResourceShareFuture(params: DeleteResourceShareRequest): Future[DeleteResourceShareResponse] =
-      service.deleteResourceShare(params).promise.toFuture
+      service.deleteResourceShare(params).promise().toFuture
     @inline def disassociateResourceShareFuture(
         params: DisassociateResourceShareRequest
-    ): Future[DisassociateResourceShareResponse] = service.disassociateResourceShare(params).promise.toFuture
+    ): Future[DisassociateResourceShareResponse] = service.disassociateResourceShare(params).promise().toFuture
     @inline def disassociateResourceSharePermissionFuture(
         params: DisassociateResourceSharePermissionRequest
     ): Future[DisassociateResourceSharePermissionResponse] =
-      service.disassociateResourceSharePermission(params).promise.toFuture
+      service.disassociateResourceSharePermission(params).promise().toFuture
     @inline def enableSharingWithAwsOrganizationFuture(
         params: EnableSharingWithAwsOrganizationRequest
     ): Future[EnableSharingWithAwsOrganizationResponse] =
-      service.enableSharingWithAwsOrganization(params).promise.toFuture
+      service.enableSharingWithAwsOrganization(params).promise().toFuture
     @inline def getPermissionFuture(params: GetPermissionRequest): Future[GetPermissionResponse] =
-      service.getPermission(params).promise.toFuture
+      service.getPermission(params).promise().toFuture
     @inline def getResourcePoliciesFuture(params: GetResourcePoliciesRequest): Future[GetResourcePoliciesResponse] =
-      service.getResourcePolicies(params).promise.toFuture
+      service.getResourcePolicies(params).promise().toFuture
     @inline def getResourceShareAssociationsFuture(
         params: GetResourceShareAssociationsRequest
-    ): Future[GetResourceShareAssociationsResponse] = service.getResourceShareAssociations(params).promise.toFuture
+    ): Future[GetResourceShareAssociationsResponse] = service.getResourceShareAssociations(params).promise().toFuture
     @inline def getResourceShareInvitationsFuture(
         params: GetResourceShareInvitationsRequest
-    ): Future[GetResourceShareInvitationsResponse] = service.getResourceShareInvitations(params).promise.toFuture
+    ): Future[GetResourceShareInvitationsResponse] = service.getResourceShareInvitations(params).promise().toFuture
     @inline def getResourceSharesFuture(params: GetResourceSharesRequest): Future[GetResourceSharesResponse] =
-      service.getResourceShares(params).promise.toFuture
+      service.getResourceShares(params).promise().toFuture
     @inline def listPendingInvitationResourcesFuture(
         params: ListPendingInvitationResourcesRequest
-    ): Future[ListPendingInvitationResourcesResponse] = service.listPendingInvitationResources(params).promise.toFuture
+    ): Future[ListPendingInvitationResourcesResponse] =
+      service.listPendingInvitationResources(params).promise().toFuture
     @inline def listPermissionsFuture(params: ListPermissionsRequest): Future[ListPermissionsResponse] =
-      service.listPermissions(params).promise.toFuture
+      service.listPermissions(params).promise().toFuture
     @inline def listPrincipalsFuture(params: ListPrincipalsRequest): Future[ListPrincipalsResponse] =
-      service.listPrincipals(params).promise.toFuture
+      service.listPrincipals(params).promise().toFuture
     @inline def listResourceSharePermissionsFuture(
         params: ListResourceSharePermissionsRequest
-    ): Future[ListResourceSharePermissionsResponse] = service.listResourceSharePermissions(params).promise.toFuture
+    ): Future[ListResourceSharePermissionsResponse] = service.listResourceSharePermissions(params).promise().toFuture
     @inline def listResourcesFuture(params: ListResourcesRequest): Future[ListResourcesResponse] =
-      service.listResources(params).promise.toFuture
+      service.listResources(params).promise().toFuture
     @inline def promoteResourceShareCreatedFromPolicyFuture(
         params: PromoteResourceShareCreatedFromPolicyRequest
     ): Future[PromoteResourceShareCreatedFromPolicyResponse] =
-      service.promoteResourceShareCreatedFromPolicy(params).promise.toFuture
+      service.promoteResourceShareCreatedFromPolicy(params).promise().toFuture
     @inline def rejectResourceShareInvitationFuture(
         params: RejectResourceShareInvitationRequest
-    ): Future[RejectResourceShareInvitationResponse] = service.rejectResourceShareInvitation(params).promise.toFuture
+    ): Future[RejectResourceShareInvitationResponse] = service.rejectResourceShareInvitation(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateResourceShareFuture(params: UpdateResourceShareRequest): Future[UpdateResourceShareResponse] =
-      service.updateResourceShare(params).promise.toFuture
+      service.updateResourceShare(params).promise().toFuture
   }
 }
 

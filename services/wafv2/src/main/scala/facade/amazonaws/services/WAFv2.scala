@@ -65,89 +65,90 @@ package object wafv2 {
   implicit final class WAFv2Ops(private val service: WAFv2) extends AnyVal {
 
     @inline def associateWebACLFuture(params: AssociateWebACLRequest): Future[AssociateWebACLResponse] =
-      service.associateWebACL(params).promise.toFuture
+      service.associateWebACL(params).promise().toFuture
     @inline def checkCapacityFuture(params: CheckCapacityRequest): Future[CheckCapacityResponse] =
-      service.checkCapacity(params).promise.toFuture
+      service.checkCapacity(params).promise().toFuture
     @inline def createIPSetFuture(params: CreateIPSetRequest): Future[CreateIPSetResponse] =
-      service.createIPSet(params).promise.toFuture
+      service.createIPSet(params).promise().toFuture
     @inline def createRegexPatternSetFuture(
         params: CreateRegexPatternSetRequest
-    ): Future[CreateRegexPatternSetResponse] = service.createRegexPatternSet(params).promise.toFuture
+    ): Future[CreateRegexPatternSetResponse] = service.createRegexPatternSet(params).promise().toFuture
     @inline def createRuleGroupFuture(params: CreateRuleGroupRequest): Future[CreateRuleGroupResponse] =
-      service.createRuleGroup(params).promise.toFuture
+      service.createRuleGroup(params).promise().toFuture
     @inline def createWebACLFuture(params: CreateWebACLRequest): Future[CreateWebACLResponse] =
-      service.createWebACL(params).promise.toFuture
+      service.createWebACL(params).promise().toFuture
     @inline def deleteIPSetFuture(params: DeleteIPSetRequest): Future[DeleteIPSetResponse] =
-      service.deleteIPSet(params).promise.toFuture
+      service.deleteIPSet(params).promise().toFuture
     @inline def deleteLoggingConfigurationFuture(
         params: DeleteLoggingConfigurationRequest
-    ): Future[DeleteLoggingConfigurationResponse] = service.deleteLoggingConfiguration(params).promise.toFuture
+    ): Future[DeleteLoggingConfigurationResponse] = service.deleteLoggingConfiguration(params).promise().toFuture
     @inline def deleteRegexPatternSetFuture(
         params: DeleteRegexPatternSetRequest
-    ): Future[DeleteRegexPatternSetResponse] = service.deleteRegexPatternSet(params).promise.toFuture
+    ): Future[DeleteRegexPatternSetResponse] = service.deleteRegexPatternSet(params).promise().toFuture
     @inline def deleteRuleGroupFuture(params: DeleteRuleGroupRequest): Future[DeleteRuleGroupResponse] =
-      service.deleteRuleGroup(params).promise.toFuture
+      service.deleteRuleGroup(params).promise().toFuture
     @inline def deleteWebACLFuture(params: DeleteWebACLRequest): Future[DeleteWebACLResponse] =
-      service.deleteWebACL(params).promise.toFuture
+      service.deleteWebACL(params).promise().toFuture
     @inline def describeManagedRuleGroupFuture(
         params: DescribeManagedRuleGroupRequest
-    ): Future[DescribeManagedRuleGroupResponse] = service.describeManagedRuleGroup(params).promise.toFuture
+    ): Future[DescribeManagedRuleGroupResponse] = service.describeManagedRuleGroup(params).promise().toFuture
     @inline def disassociateWebACLFuture(params: DisassociateWebACLRequest): Future[DisassociateWebACLResponse] =
-      service.disassociateWebACL(params).promise.toFuture
+      service.disassociateWebACL(params).promise().toFuture
     @inline def getIPSetFuture(params: GetIPSetRequest): Future[GetIPSetResponse] =
-      service.getIPSet(params).promise.toFuture
+      service.getIPSet(params).promise().toFuture
     @inline def getLoggingConfigurationFuture(
         params: GetLoggingConfigurationRequest
-    ): Future[GetLoggingConfigurationResponse] = service.getLoggingConfiguration(params).promise.toFuture
+    ): Future[GetLoggingConfigurationResponse] = service.getLoggingConfiguration(params).promise().toFuture
     @inline def getRateBasedStatementManagedKeysFuture(
         params: GetRateBasedStatementManagedKeysRequest
     ): Future[GetRateBasedStatementManagedKeysResponse] =
-      service.getRateBasedStatementManagedKeys(params).promise.toFuture
+      service.getRateBasedStatementManagedKeys(params).promise().toFuture
     @inline def getRegexPatternSetFuture(params: GetRegexPatternSetRequest): Future[GetRegexPatternSetResponse] =
-      service.getRegexPatternSet(params).promise.toFuture
+      service.getRegexPatternSet(params).promise().toFuture
     @inline def getRuleGroupFuture(params: GetRuleGroupRequest): Future[GetRuleGroupResponse] =
-      service.getRuleGroup(params).promise.toFuture
+      service.getRuleGroup(params).promise().toFuture
     @inline def getSampledRequestsFuture(params: GetSampledRequestsRequest): Future[GetSampledRequestsResponse] =
-      service.getSampledRequests(params).promise.toFuture
+      service.getSampledRequests(params).promise().toFuture
     @inline def getWebACLForResourceFuture(params: GetWebACLForResourceRequest): Future[GetWebACLForResourceResponse] =
-      service.getWebACLForResource(params).promise.toFuture
+      service.getWebACLForResource(params).promise().toFuture
     @inline def getWebACLFuture(params: GetWebACLRequest): Future[GetWebACLResponse] =
-      service.getWebACL(params).promise.toFuture
+      service.getWebACL(params).promise().toFuture
     @inline def listAvailableManagedRuleGroupsFuture(
         params: ListAvailableManagedRuleGroupsRequest
-    ): Future[ListAvailableManagedRuleGroupsResponse] = service.listAvailableManagedRuleGroups(params).promise.toFuture
+    ): Future[ListAvailableManagedRuleGroupsResponse] =
+      service.listAvailableManagedRuleGroups(params).promise().toFuture
     @inline def listIPSetsFuture(params: ListIPSetsRequest): Future[ListIPSetsResponse] =
-      service.listIPSets(params).promise.toFuture
+      service.listIPSets(params).promise().toFuture
     @inline def listLoggingConfigurationsFuture(
         params: ListLoggingConfigurationsRequest
-    ): Future[ListLoggingConfigurationsResponse] = service.listLoggingConfigurations(params).promise.toFuture
+    ): Future[ListLoggingConfigurationsResponse] = service.listLoggingConfigurations(params).promise().toFuture
     @inline def listRegexPatternSetsFuture(params: ListRegexPatternSetsRequest): Future[ListRegexPatternSetsResponse] =
-      service.listRegexPatternSets(params).promise.toFuture
+      service.listRegexPatternSets(params).promise().toFuture
     @inline def listResourcesForWebACLFuture(
         params: ListResourcesForWebACLRequest
-    ): Future[ListResourcesForWebACLResponse] = service.listResourcesForWebACL(params).promise.toFuture
+    ): Future[ListResourcesForWebACLResponse] = service.listResourcesForWebACL(params).promise().toFuture
     @inline def listRuleGroupsFuture(params: ListRuleGroupsRequest): Future[ListRuleGroupsResponse] =
-      service.listRuleGroups(params).promise.toFuture
+      service.listRuleGroups(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def listWebACLsFuture(params: ListWebACLsRequest): Future[ListWebACLsResponse] =
-      service.listWebACLs(params).promise.toFuture
+      service.listWebACLs(params).promise().toFuture
     @inline def putLoggingConfigurationFuture(
         params: PutLoggingConfigurationRequest
-    ): Future[PutLoggingConfigurationResponse] = service.putLoggingConfiguration(params).promise.toFuture
+    ): Future[PutLoggingConfigurationResponse] = service.putLoggingConfiguration(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateIPSetFuture(params: UpdateIPSetRequest): Future[UpdateIPSetResponse] =
-      service.updateIPSet(params).promise.toFuture
+      service.updateIPSet(params).promise().toFuture
     @inline def updateRegexPatternSetFuture(
         params: UpdateRegexPatternSetRequest
-    ): Future[UpdateRegexPatternSetResponse] = service.updateRegexPatternSet(params).promise.toFuture
+    ): Future[UpdateRegexPatternSetResponse] = service.updateRegexPatternSet(params).promise().toFuture
     @inline def updateRuleGroupFuture(params: UpdateRuleGroupRequest): Future[UpdateRuleGroupResponse] =
-      service.updateRuleGroup(params).promise.toFuture
+      service.updateRuleGroup(params).promise().toFuture
     @inline def updateWebACLFuture(params: UpdateWebACLRequest): Future[UpdateWebACLResponse] =
-      service.updateWebACL(params).promise.toFuture
+      service.updateWebACL(params).promise().toFuture
   }
 }
 

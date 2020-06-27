@@ -57,115 +57,115 @@ package object guardduty {
   implicit final class GuardDutyOps(private val service: GuardDuty) extends AnyVal {
 
     @inline def acceptInvitationFuture(params: AcceptInvitationRequest): Future[AcceptInvitationResponse] =
-      service.acceptInvitation(params).promise.toFuture
+      service.acceptInvitation(params).promise().toFuture
     @inline def archiveFindingsFuture(params: ArchiveFindingsRequest): Future[ArchiveFindingsResponse] =
-      service.archiveFindings(params).promise.toFuture
+      service.archiveFindings(params).promise().toFuture
     @inline def createDetectorFuture(params: CreateDetectorRequest): Future[CreateDetectorResponse] =
-      service.createDetector(params).promise.toFuture
+      service.createDetector(params).promise().toFuture
     @inline def createFilterFuture(params: CreateFilterRequest): Future[CreateFilterResponse] =
-      service.createFilter(params).promise.toFuture
+      service.createFilter(params).promise().toFuture
     @inline def createIPSetFuture(params: CreateIPSetRequest): Future[CreateIPSetResponse] =
-      service.createIPSet(params).promise.toFuture
+      service.createIPSet(params).promise().toFuture
     @inline def createMembersFuture(params: CreateMembersRequest): Future[CreateMembersResponse] =
-      service.createMembers(params).promise.toFuture
+      service.createMembers(params).promise().toFuture
     @inline def createPublishingDestinationFuture(
         params: CreatePublishingDestinationRequest
-    ): Future[CreatePublishingDestinationResponse] = service.createPublishingDestination(params).promise.toFuture
+    ): Future[CreatePublishingDestinationResponse] = service.createPublishingDestination(params).promise().toFuture
     @inline def createSampleFindingsFuture(params: CreateSampleFindingsRequest): Future[CreateSampleFindingsResponse] =
-      service.createSampleFindings(params).promise.toFuture
+      service.createSampleFindings(params).promise().toFuture
     @inline def createThreatIntelSetFuture(params: CreateThreatIntelSetRequest): Future[CreateThreatIntelSetResponse] =
-      service.createThreatIntelSet(params).promise.toFuture
+      service.createThreatIntelSet(params).promise().toFuture
     @inline def declineInvitationsFuture(params: DeclineInvitationsRequest): Future[DeclineInvitationsResponse] =
-      service.declineInvitations(params).promise.toFuture
+      service.declineInvitations(params).promise().toFuture
     @inline def deleteDetectorFuture(params: DeleteDetectorRequest): Future[DeleteDetectorResponse] =
-      service.deleteDetector(params).promise.toFuture
+      service.deleteDetector(params).promise().toFuture
     @inline def deleteFilterFuture(params: DeleteFilterRequest): Future[DeleteFilterResponse] =
-      service.deleteFilter(params).promise.toFuture
+      service.deleteFilter(params).promise().toFuture
     @inline def deleteIPSetFuture(params: DeleteIPSetRequest): Future[DeleteIPSetResponse] =
-      service.deleteIPSet(params).promise.toFuture
+      service.deleteIPSet(params).promise().toFuture
     @inline def deleteInvitationsFuture(params: DeleteInvitationsRequest): Future[DeleteInvitationsResponse] =
-      service.deleteInvitations(params).promise.toFuture
+      service.deleteInvitations(params).promise().toFuture
     @inline def deleteMembersFuture(params: DeleteMembersRequest): Future[DeleteMembersResponse] =
-      service.deleteMembers(params).promise.toFuture
+      service.deleteMembers(params).promise().toFuture
     @inline def deletePublishingDestinationFuture(
         params: DeletePublishingDestinationRequest
-    ): Future[DeletePublishingDestinationResponse] = service.deletePublishingDestination(params).promise.toFuture
+    ): Future[DeletePublishingDestinationResponse] = service.deletePublishingDestination(params).promise().toFuture
     @inline def deleteThreatIntelSetFuture(params: DeleteThreatIntelSetRequest): Future[DeleteThreatIntelSetResponse] =
-      service.deleteThreatIntelSet(params).promise.toFuture
+      service.deleteThreatIntelSet(params).promise().toFuture
     @inline def describePublishingDestinationFuture(
         params: DescribePublishingDestinationRequest
-    ): Future[DescribePublishingDestinationResponse] = service.describePublishingDestination(params).promise.toFuture
+    ): Future[DescribePublishingDestinationResponse] = service.describePublishingDestination(params).promise().toFuture
     @inline def disassociateFromMasterAccountFuture(
         params: DisassociateFromMasterAccountRequest
-    ): Future[DisassociateFromMasterAccountResponse] = service.disassociateFromMasterAccount(params).promise.toFuture
+    ): Future[DisassociateFromMasterAccountResponse] = service.disassociateFromMasterAccount(params).promise().toFuture
     @inline def disassociateMembersFuture(params: DisassociateMembersRequest): Future[DisassociateMembersResponse] =
-      service.disassociateMembers(params).promise.toFuture
+      service.disassociateMembers(params).promise().toFuture
     @inline def getDetectorFuture(params: GetDetectorRequest): Future[GetDetectorResponse] =
-      service.getDetector(params).promise.toFuture
+      service.getDetector(params).promise().toFuture
     @inline def getFilterFuture(params: GetFilterRequest): Future[GetFilterResponse] =
-      service.getFilter(params).promise.toFuture
+      service.getFilter(params).promise().toFuture
     @inline def getFindingsFuture(params: GetFindingsRequest): Future[GetFindingsResponse] =
-      service.getFindings(params).promise.toFuture
+      service.getFindings(params).promise().toFuture
     @inline def getFindingsStatisticsFuture(
         params: GetFindingsStatisticsRequest
-    ): Future[GetFindingsStatisticsResponse] = service.getFindingsStatistics(params).promise.toFuture
+    ): Future[GetFindingsStatisticsResponse] = service.getFindingsStatistics(params).promise().toFuture
     @inline def getIPSetFuture(params: GetIPSetRequest): Future[GetIPSetResponse] =
-      service.getIPSet(params).promise.toFuture
+      service.getIPSet(params).promise().toFuture
     @inline def getInvitationsCountFuture(params: GetInvitationsCountRequest): Future[GetInvitationsCountResponse] =
-      service.getInvitationsCount(params).promise.toFuture
+      service.getInvitationsCount(params).promise().toFuture
     @inline def getMasterAccountFuture(params: GetMasterAccountRequest): Future[GetMasterAccountResponse] =
-      service.getMasterAccount(params).promise.toFuture
+      service.getMasterAccount(params).promise().toFuture
     @inline def getMembersFuture(params: GetMembersRequest): Future[GetMembersResponse] =
-      service.getMembers(params).promise.toFuture
+      service.getMembers(params).promise().toFuture
     @inline def getThreatIntelSetFuture(params: GetThreatIntelSetRequest): Future[GetThreatIntelSetResponse] =
-      service.getThreatIntelSet(params).promise.toFuture
+      service.getThreatIntelSet(params).promise().toFuture
     @inline def inviteMembersFuture(params: InviteMembersRequest): Future[InviteMembersResponse] =
-      service.inviteMembers(params).promise.toFuture
+      service.inviteMembers(params).promise().toFuture
     @inline def listDetectorsFuture(params: ListDetectorsRequest): Future[ListDetectorsResponse] =
-      service.listDetectors(params).promise.toFuture
+      service.listDetectors(params).promise().toFuture
     @inline def listFiltersFuture(params: ListFiltersRequest): Future[ListFiltersResponse] =
-      service.listFilters(params).promise.toFuture
+      service.listFilters(params).promise().toFuture
     @inline def listFindingsFuture(params: ListFindingsRequest): Future[ListFindingsResponse] =
-      service.listFindings(params).promise.toFuture
+      service.listFindings(params).promise().toFuture
     @inline def listIPSetsFuture(params: ListIPSetsRequest): Future[ListIPSetsResponse] =
-      service.listIPSets(params).promise.toFuture
+      service.listIPSets(params).promise().toFuture
     @inline def listInvitationsFuture(params: ListInvitationsRequest): Future[ListInvitationsResponse] =
-      service.listInvitations(params).promise.toFuture
+      service.listInvitations(params).promise().toFuture
     @inline def listMembersFuture(params: ListMembersRequest): Future[ListMembersResponse] =
-      service.listMembers(params).promise.toFuture
+      service.listMembers(params).promise().toFuture
     @inline def listPublishingDestinationsFuture(
         params: ListPublishingDestinationsRequest
-    ): Future[ListPublishingDestinationsResponse] = service.listPublishingDestinations(params).promise.toFuture
+    ): Future[ListPublishingDestinationsResponse] = service.listPublishingDestinations(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def listThreatIntelSetsFuture(params: ListThreatIntelSetsRequest): Future[ListThreatIntelSetsResponse] =
-      service.listThreatIntelSets(params).promise.toFuture
+      service.listThreatIntelSets(params).promise().toFuture
     @inline def startMonitoringMembersFuture(
         params: StartMonitoringMembersRequest
-    ): Future[StartMonitoringMembersResponse] = service.startMonitoringMembers(params).promise.toFuture
+    ): Future[StartMonitoringMembersResponse] = service.startMonitoringMembers(params).promise().toFuture
     @inline def stopMonitoringMembersFuture(
         params: StopMonitoringMembersRequest
-    ): Future[StopMonitoringMembersResponse] = service.stopMonitoringMembers(params).promise.toFuture
+    ): Future[StopMonitoringMembersResponse] = service.stopMonitoringMembers(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def unarchiveFindingsFuture(params: UnarchiveFindingsRequest): Future[UnarchiveFindingsResponse] =
-      service.unarchiveFindings(params).promise.toFuture
+      service.unarchiveFindings(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateDetectorFuture(params: UpdateDetectorRequest): Future[UpdateDetectorResponse] =
-      service.updateDetector(params).promise.toFuture
+      service.updateDetector(params).promise().toFuture
     @inline def updateFilterFuture(params: UpdateFilterRequest): Future[UpdateFilterResponse] =
-      service.updateFilter(params).promise.toFuture
+      service.updateFilter(params).promise().toFuture
     @inline def updateFindingsFeedbackFuture(
         params: UpdateFindingsFeedbackRequest
-    ): Future[UpdateFindingsFeedbackResponse] = service.updateFindingsFeedback(params).promise.toFuture
+    ): Future[UpdateFindingsFeedbackResponse] = service.updateFindingsFeedback(params).promise().toFuture
     @inline def updateIPSetFuture(params: UpdateIPSetRequest): Future[UpdateIPSetResponse] =
-      service.updateIPSet(params).promise.toFuture
+      service.updateIPSet(params).promise().toFuture
     @inline def updatePublishingDestinationFuture(
         params: UpdatePublishingDestinationRequest
-    ): Future[UpdatePublishingDestinationResponse] = service.updatePublishingDestination(params).promise.toFuture
+    ): Future[UpdatePublishingDestinationResponse] = service.updatePublishingDestination(params).promise().toFuture
     @inline def updateThreatIntelSetFuture(params: UpdateThreatIntelSetRequest): Future[UpdateThreatIntelSetResponse] =
-      service.updateThreatIntelSet(params).promise.toFuture
+      service.updateThreatIntelSet(params).promise().toFuture
   }
 }
 

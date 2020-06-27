@@ -17,13 +17,13 @@ package object codestarconnections {
   implicit final class CodeStarconnectionsOps(private val service: CodeStarconnections) extends AnyVal {
 
     @inline def createConnectionFuture(params: CreateConnectionInput): Future[CreateConnectionOutput] =
-      service.createConnection(params).promise.toFuture
+      service.createConnection(params).promise().toFuture
     @inline def deleteConnectionFuture(params: DeleteConnectionInput): Future[DeleteConnectionOutput] =
-      service.deleteConnection(params).promise.toFuture
+      service.deleteConnection(params).promise().toFuture
     @inline def getConnectionFuture(params: GetConnectionInput): Future[GetConnectionOutput] =
-      service.getConnection(params).promise.toFuture
+      service.getConnection(params).promise().toFuture
     @inline def listConnectionsFuture(params: ListConnectionsInput): Future[ListConnectionsOutput] =
-      service.listConnections(params).promise.toFuture
+      service.listConnections(params).promise().toFuture
   }
 }
 

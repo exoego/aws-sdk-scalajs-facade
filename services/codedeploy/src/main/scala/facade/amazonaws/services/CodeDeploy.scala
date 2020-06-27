@@ -116,102 +116,102 @@ package object codedeploy {
   implicit final class CodeDeployOps(private val service: CodeDeploy) extends AnyVal {
 
     @inline def addTagsToOnPremisesInstancesFuture(params: AddTagsToOnPremisesInstancesInput): Future[js.Object] =
-      service.addTagsToOnPremisesInstances(params).promise.toFuture
+      service.addTagsToOnPremisesInstances(params).promise().toFuture
     @inline def batchGetApplicationRevisionsFuture(
         params: BatchGetApplicationRevisionsInput
-    ): Future[BatchGetApplicationRevisionsOutput] = service.batchGetApplicationRevisions(params).promise.toFuture
+    ): Future[BatchGetApplicationRevisionsOutput] = service.batchGetApplicationRevisions(params).promise().toFuture
     @inline def batchGetApplicationsFuture(params: BatchGetApplicationsInput): Future[BatchGetApplicationsOutput] =
-      service.batchGetApplications(params).promise.toFuture
+      service.batchGetApplications(params).promise().toFuture
     @inline def batchGetDeploymentGroupsFuture(
         params: BatchGetDeploymentGroupsInput
-    ): Future[BatchGetDeploymentGroupsOutput] = service.batchGetDeploymentGroups(params).promise.toFuture
+    ): Future[BatchGetDeploymentGroupsOutput] = service.batchGetDeploymentGroups(params).promise().toFuture
     @inline def batchGetDeploymentTargetsFuture(
         params: BatchGetDeploymentTargetsInput
-    ): Future[BatchGetDeploymentTargetsOutput] = service.batchGetDeploymentTargets(params).promise.toFuture
+    ): Future[BatchGetDeploymentTargetsOutput] = service.batchGetDeploymentTargets(params).promise().toFuture
     @inline def batchGetDeploymentsFuture(params: BatchGetDeploymentsInput): Future[BatchGetDeploymentsOutput] =
-      service.batchGetDeployments(params).promise.toFuture
+      service.batchGetDeployments(params).promise().toFuture
     @inline def batchGetOnPremisesInstancesFuture(
         params: BatchGetOnPremisesInstancesInput
-    ): Future[BatchGetOnPremisesInstancesOutput] = service.batchGetOnPremisesInstances(params).promise.toFuture
+    ): Future[BatchGetOnPremisesInstancesOutput] = service.batchGetOnPremisesInstances(params).promise().toFuture
     @inline def continueDeploymentFuture(params: ContinueDeploymentInput): Future[js.Object] =
-      service.continueDeployment(params).promise.toFuture
+      service.continueDeployment(params).promise().toFuture
     @inline def createApplicationFuture(params: CreateApplicationInput): Future[CreateApplicationOutput] =
-      service.createApplication(params).promise.toFuture
+      service.createApplication(params).promise().toFuture
     @inline def createDeploymentConfigFuture(
         params: CreateDeploymentConfigInput
-    ): Future[CreateDeploymentConfigOutput] = service.createDeploymentConfig(params).promise.toFuture
+    ): Future[CreateDeploymentConfigOutput] = service.createDeploymentConfig(params).promise().toFuture
     @inline def createDeploymentFuture(params: CreateDeploymentInput): Future[CreateDeploymentOutput] =
-      service.createDeployment(params).promise.toFuture
+      service.createDeployment(params).promise().toFuture
     @inline def createDeploymentGroupFuture(params: CreateDeploymentGroupInput): Future[CreateDeploymentGroupOutput] =
-      service.createDeploymentGroup(params).promise.toFuture
+      service.createDeploymentGroup(params).promise().toFuture
     @inline def deleteApplicationFuture(params: DeleteApplicationInput): Future[js.Object] =
-      service.deleteApplication(params).promise.toFuture
+      service.deleteApplication(params).promise().toFuture
     @inline def deleteDeploymentConfigFuture(params: DeleteDeploymentConfigInput): Future[js.Object] =
-      service.deleteDeploymentConfig(params).promise.toFuture
+      service.deleteDeploymentConfig(params).promise().toFuture
     @inline def deleteDeploymentGroupFuture(params: DeleteDeploymentGroupInput): Future[DeleteDeploymentGroupOutput] =
-      service.deleteDeploymentGroup(params).promise.toFuture
+      service.deleteDeploymentGroup(params).promise().toFuture
     @inline def deleteGitHubAccountTokenFuture(
         params: DeleteGitHubAccountTokenInput
-    ): Future[DeleteGitHubAccountTokenOutput] = service.deleteGitHubAccountToken(params).promise.toFuture
+    ): Future[DeleteGitHubAccountTokenOutput] = service.deleteGitHubAccountToken(params).promise().toFuture
     @inline def deregisterOnPremisesInstanceFuture(params: DeregisterOnPremisesInstanceInput): Future[js.Object] =
-      service.deregisterOnPremisesInstance(params).promise.toFuture
+      service.deregisterOnPremisesInstance(params).promise().toFuture
     @inline def getApplicationFuture(params: GetApplicationInput): Future[GetApplicationOutput] =
-      service.getApplication(params).promise.toFuture
+      service.getApplication(params).promise().toFuture
     @inline def getApplicationRevisionFuture(
         params: GetApplicationRevisionInput
-    ): Future[GetApplicationRevisionOutput] = service.getApplicationRevision(params).promise.toFuture
+    ): Future[GetApplicationRevisionOutput] = service.getApplicationRevision(params).promise().toFuture
     @inline def getDeploymentConfigFuture(params: GetDeploymentConfigInput): Future[GetDeploymentConfigOutput] =
-      service.getDeploymentConfig(params).promise.toFuture
+      service.getDeploymentConfig(params).promise().toFuture
     @inline def getDeploymentFuture(params: GetDeploymentInput): Future[GetDeploymentOutput] =
-      service.getDeployment(params).promise.toFuture
+      service.getDeployment(params).promise().toFuture
     @inline def getDeploymentGroupFuture(params: GetDeploymentGroupInput): Future[GetDeploymentGroupOutput] =
-      service.getDeploymentGroup(params).promise.toFuture
+      service.getDeploymentGroup(params).promise().toFuture
     @inline def getDeploymentTargetFuture(params: GetDeploymentTargetInput): Future[GetDeploymentTargetOutput] =
-      service.getDeploymentTarget(params).promise.toFuture
+      service.getDeploymentTarget(params).promise().toFuture
     @inline def getOnPremisesInstanceFuture(params: GetOnPremisesInstanceInput): Future[GetOnPremisesInstanceOutput] =
-      service.getOnPremisesInstance(params).promise.toFuture
+      service.getOnPremisesInstance(params).promise().toFuture
     @inline def listApplicationRevisionsFuture(
         params: ListApplicationRevisionsInput
-    ): Future[ListApplicationRevisionsOutput] = service.listApplicationRevisions(params).promise.toFuture
+    ): Future[ListApplicationRevisionsOutput] = service.listApplicationRevisions(params).promise().toFuture
     @inline def listApplicationsFuture(params: ListApplicationsInput): Future[ListApplicationsOutput] =
-      service.listApplications(params).promise.toFuture
+      service.listApplications(params).promise().toFuture
     @inline def listDeploymentConfigsFuture(params: ListDeploymentConfigsInput): Future[ListDeploymentConfigsOutput] =
-      service.listDeploymentConfigs(params).promise.toFuture
+      service.listDeploymentConfigs(params).promise().toFuture
     @inline def listDeploymentGroupsFuture(params: ListDeploymentGroupsInput): Future[ListDeploymentGroupsOutput] =
-      service.listDeploymentGroups(params).promise.toFuture
+      service.listDeploymentGroups(params).promise().toFuture
     @inline def listDeploymentTargetsFuture(params: ListDeploymentTargetsInput): Future[ListDeploymentTargetsOutput] =
-      service.listDeploymentTargets(params).promise.toFuture
+      service.listDeploymentTargets(params).promise().toFuture
     @inline def listDeploymentsFuture(params: ListDeploymentsInput): Future[ListDeploymentsOutput] =
-      service.listDeployments(params).promise.toFuture
+      service.listDeployments(params).promise().toFuture
     @inline def listGitHubAccountTokenNamesFuture(
         params: ListGitHubAccountTokenNamesInput
-    ): Future[ListGitHubAccountTokenNamesOutput] = service.listGitHubAccountTokenNames(params).promise.toFuture
+    ): Future[ListGitHubAccountTokenNamesOutput] = service.listGitHubAccountTokenNames(params).promise().toFuture
     @inline def listOnPremisesInstancesFuture(
         params: ListOnPremisesInstancesInput
-    ): Future[ListOnPremisesInstancesOutput] = service.listOnPremisesInstances(params).promise.toFuture
+    ): Future[ListOnPremisesInstancesOutput] = service.listOnPremisesInstances(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def putLifecycleEventHookExecutionStatusFuture(
         params: PutLifecycleEventHookExecutionStatusInput
     ): Future[PutLifecycleEventHookExecutionStatusOutput] =
-      service.putLifecycleEventHookExecutionStatus(params).promise.toFuture
+      service.putLifecycleEventHookExecutionStatus(params).promise().toFuture
     @inline def registerApplicationRevisionFuture(params: RegisterApplicationRevisionInput): Future[js.Object] =
-      service.registerApplicationRevision(params).promise.toFuture
+      service.registerApplicationRevision(params).promise().toFuture
     @inline def registerOnPremisesInstanceFuture(params: RegisterOnPremisesInstanceInput): Future[js.Object] =
-      service.registerOnPremisesInstance(params).promise.toFuture
+      service.registerOnPremisesInstance(params).promise().toFuture
     @inline def removeTagsFromOnPremisesInstancesFuture(
         params: RemoveTagsFromOnPremisesInstancesInput
-    ): Future[js.Object] = service.removeTagsFromOnPremisesInstances(params).promise.toFuture
+    ): Future[js.Object] = service.removeTagsFromOnPremisesInstances(params).promise().toFuture
     @inline def stopDeploymentFuture(params: StopDeploymentInput): Future[StopDeploymentOutput] =
-      service.stopDeployment(params).promise.toFuture
+      service.stopDeployment(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateApplicationFuture(params: UpdateApplicationInput): Future[js.Object] =
-      service.updateApplication(params).promise.toFuture
+      service.updateApplication(params).promise().toFuture
     @inline def updateDeploymentGroupFuture(params: UpdateDeploymentGroupInput): Future[UpdateDeploymentGroupOutput] =
-      service.updateDeploymentGroup(params).promise.toFuture
+      service.updateDeploymentGroup(params).promise().toFuture
   }
 }
 

@@ -24,26 +24,26 @@ package object detective {
   implicit final class DetectiveOps(private val service: Detective) extends AnyVal {
 
     @inline def acceptInvitationFuture(params: AcceptInvitationRequest): Future[js.Object] =
-      service.acceptInvitation(params).promise.toFuture
-    @inline def createGraphFuture(): Future[CreateGraphResponse] = service.createGraph().promise.toFuture
+      service.acceptInvitation(params).promise().toFuture
+    @inline def createGraphFuture(): Future[CreateGraphResponse] = service.createGraph().promise().toFuture
     @inline def createMembersFuture(params: CreateMembersRequest): Future[CreateMembersResponse] =
-      service.createMembers(params).promise.toFuture
+      service.createMembers(params).promise().toFuture
     @inline def deleteGraphFuture(params: DeleteGraphRequest): Future[js.Object] =
-      service.deleteGraph(params).promise.toFuture
+      service.deleteGraph(params).promise().toFuture
     @inline def deleteMembersFuture(params: DeleteMembersRequest): Future[DeleteMembersResponse] =
-      service.deleteMembers(params).promise.toFuture
+      service.deleteMembers(params).promise().toFuture
     @inline def disassociateMembershipFuture(params: DisassociateMembershipRequest): Future[js.Object] =
-      service.disassociateMembership(params).promise.toFuture
+      service.disassociateMembership(params).promise().toFuture
     @inline def getMembersFuture(params: GetMembersRequest): Future[GetMembersResponse] =
-      service.getMembers(params).promise.toFuture
+      service.getMembers(params).promise().toFuture
     @inline def listGraphsFuture(params: ListGraphsRequest): Future[ListGraphsResponse] =
-      service.listGraphs(params).promise.toFuture
+      service.listGraphs(params).promise().toFuture
     @inline def listInvitationsFuture(params: ListInvitationsRequest): Future[ListInvitationsResponse] =
-      service.listInvitations(params).promise.toFuture
+      service.listInvitations(params).promise().toFuture
     @inline def listMembersFuture(params: ListMembersRequest): Future[ListMembersResponse] =
-      service.listMembers(params).promise.toFuture
+      service.listMembers(params).promise().toFuture
     @inline def rejectInvitationFuture(params: RejectInvitationRequest): Future[js.Object] =
-      service.rejectInvitation(params).promise.toFuture
+      service.rejectInvitation(params).promise().toFuture
   }
 }
 

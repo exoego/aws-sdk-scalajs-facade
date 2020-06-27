@@ -37,47 +37,47 @@ package object kinesisvideo {
 
     @inline def createSignalingChannelFuture(
         params: CreateSignalingChannelInput
-    ): Future[CreateSignalingChannelOutput] = service.createSignalingChannel(params).promise.toFuture
+    ): Future[CreateSignalingChannelOutput] = service.createSignalingChannel(params).promise().toFuture
     @inline def createStreamFuture(params: CreateStreamInput): Future[CreateStreamOutput] =
-      service.createStream(params).promise.toFuture
+      service.createStream(params).promise().toFuture
     @inline def deleteSignalingChannelFuture(
         params: DeleteSignalingChannelInput
-    ): Future[DeleteSignalingChannelOutput] = service.deleteSignalingChannel(params).promise.toFuture
+    ): Future[DeleteSignalingChannelOutput] = service.deleteSignalingChannel(params).promise().toFuture
     @inline def deleteStreamFuture(params: DeleteStreamInput): Future[DeleteStreamOutput] =
-      service.deleteStream(params).promise.toFuture
+      service.deleteStream(params).promise().toFuture
     @inline def describeSignalingChannelFuture(
         params: DescribeSignalingChannelInput
-    ): Future[DescribeSignalingChannelOutput] = service.describeSignalingChannel(params).promise.toFuture
+    ): Future[DescribeSignalingChannelOutput] = service.describeSignalingChannel(params).promise().toFuture
     @inline def describeStreamFuture(params: DescribeStreamInput): Future[DescribeStreamOutput] =
-      service.describeStream(params).promise.toFuture
+      service.describeStream(params).promise().toFuture
     @inline def getDataEndpointFuture(params: GetDataEndpointInput): Future[GetDataEndpointOutput] =
-      service.getDataEndpoint(params).promise.toFuture
+      service.getDataEndpoint(params).promise().toFuture
     @inline def getSignalingChannelEndpointFuture(
         params: GetSignalingChannelEndpointInput
-    ): Future[GetSignalingChannelEndpointOutput] = service.getSignalingChannelEndpoint(params).promise.toFuture
+    ): Future[GetSignalingChannelEndpointOutput] = service.getSignalingChannelEndpoint(params).promise().toFuture
     @inline def listSignalingChannelsFuture(params: ListSignalingChannelsInput): Future[ListSignalingChannelsOutput] =
-      service.listSignalingChannels(params).promise.toFuture
+      service.listSignalingChannels(params).promise().toFuture
     @inline def listStreamsFuture(params: ListStreamsInput): Future[ListStreamsOutput] =
-      service.listStreams(params).promise.toFuture
+      service.listStreams(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def listTagsForStreamFuture(params: ListTagsForStreamInput): Future[ListTagsForStreamOutput] =
-      service.listTagsForStream(params).promise.toFuture
+      service.listTagsForStream(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def tagStreamFuture(params: TagStreamInput): Future[TagStreamOutput] =
-      service.tagStream(params).promise.toFuture
+      service.tagStream(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def untagStreamFuture(params: UntagStreamInput): Future[UntagStreamOutput] =
-      service.untagStream(params).promise.toFuture
+      service.untagStream(params).promise().toFuture
     @inline def updateDataRetentionFuture(params: UpdateDataRetentionInput): Future[UpdateDataRetentionOutput] =
-      service.updateDataRetention(params).promise.toFuture
+      service.updateDataRetention(params).promise().toFuture
     @inline def updateSignalingChannelFuture(
         params: UpdateSignalingChannelInput
-    ): Future[UpdateSignalingChannelOutput] = service.updateSignalingChannel(params).promise.toFuture
+    ): Future[UpdateSignalingChannelOutput] = service.updateSignalingChannel(params).promise().toFuture
     @inline def updateStreamFuture(params: UpdateStreamInput): Future[UpdateStreamOutput] =
-      service.updateStream(params).promise.toFuture
+      service.updateStream(params).promise().toFuture
   }
 }
 

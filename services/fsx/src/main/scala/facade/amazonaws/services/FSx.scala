@@ -73,36 +73,36 @@ package object fsx {
 
     @inline def cancelDataRepositoryTaskFuture(
         params: CancelDataRepositoryTaskRequest
-    ): Future[CancelDataRepositoryTaskResponse] = service.cancelDataRepositoryTask(params).promise.toFuture
+    ): Future[CancelDataRepositoryTaskResponse] = service.cancelDataRepositoryTask(params).promise().toFuture
     @inline def createBackupFuture(params: CreateBackupRequest): Future[CreateBackupResponse] =
-      service.createBackup(params).promise.toFuture
+      service.createBackup(params).promise().toFuture
     @inline def createDataRepositoryTaskFuture(
         params: CreateDataRepositoryTaskRequest
-    ): Future[CreateDataRepositoryTaskResponse] = service.createDataRepositoryTask(params).promise.toFuture
+    ): Future[CreateDataRepositoryTaskResponse] = service.createDataRepositoryTask(params).promise().toFuture
     @inline def createFileSystemFromBackupFuture(
         params: CreateFileSystemFromBackupRequest
-    ): Future[CreateFileSystemFromBackupResponse] = service.createFileSystemFromBackup(params).promise.toFuture
+    ): Future[CreateFileSystemFromBackupResponse] = service.createFileSystemFromBackup(params).promise().toFuture
     @inline def createFileSystemFuture(params: CreateFileSystemRequest): Future[CreateFileSystemResponse] =
-      service.createFileSystem(params).promise.toFuture
+      service.createFileSystem(params).promise().toFuture
     @inline def deleteBackupFuture(params: DeleteBackupRequest): Future[DeleteBackupResponse] =
-      service.deleteBackup(params).promise.toFuture
+      service.deleteBackup(params).promise().toFuture
     @inline def deleteFileSystemFuture(params: DeleteFileSystemRequest): Future[DeleteFileSystemResponse] =
-      service.deleteFileSystem(params).promise.toFuture
+      service.deleteFileSystem(params).promise().toFuture
     @inline def describeBackupsFuture(params: DescribeBackupsRequest): Future[DescribeBackupsResponse] =
-      service.describeBackups(params).promise.toFuture
+      service.describeBackups(params).promise().toFuture
     @inline def describeDataRepositoryTasksFuture(
         params: DescribeDataRepositoryTasksRequest
-    ): Future[DescribeDataRepositoryTasksResponse] = service.describeDataRepositoryTasks(params).promise.toFuture
+    ): Future[DescribeDataRepositoryTasksResponse] = service.describeDataRepositoryTasks(params).promise().toFuture
     @inline def describeFileSystemsFuture(params: DescribeFileSystemsRequest): Future[DescribeFileSystemsResponse] =
-      service.describeFileSystems(params).promise.toFuture
+      service.describeFileSystems(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateFileSystemFuture(params: UpdateFileSystemRequest): Future[UpdateFileSystemResponse] =
-      service.updateFileSystem(params).promise.toFuture
+      service.updateFileSystem(params).promise().toFuture
   }
 }
 

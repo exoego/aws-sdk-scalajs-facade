@@ -66,75 +66,76 @@ package object es {
 
   implicit final class ESOps(private val service: ES) extends AnyVal {
 
-    @inline def addTagsFuture(params: AddTagsRequest): Future[js.Object] = service.addTags(params).promise.toFuture
+    @inline def addTagsFuture(params: AddTagsRequest): Future[js.Object] = service.addTags(params).promise().toFuture
     @inline def cancelElasticsearchServiceSoftwareUpdateFuture(
         params: CancelElasticsearchServiceSoftwareUpdateRequest
     ): Future[CancelElasticsearchServiceSoftwareUpdateResponse] =
-      service.cancelElasticsearchServiceSoftwareUpdate(params).promise.toFuture
+      service.cancelElasticsearchServiceSoftwareUpdate(params).promise().toFuture
     @inline def createElasticsearchDomainFuture(
         params: CreateElasticsearchDomainRequest
-    ): Future[CreateElasticsearchDomainResponse] = service.createElasticsearchDomain(params).promise.toFuture
+    ): Future[CreateElasticsearchDomainResponse] = service.createElasticsearchDomain(params).promise().toFuture
     @inline def deleteElasticsearchDomainFuture(
         params: DeleteElasticsearchDomainRequest
-    ): Future[DeleteElasticsearchDomainResponse] = service.deleteElasticsearchDomain(params).promise.toFuture
+    ): Future[DeleteElasticsearchDomainResponse] = service.deleteElasticsearchDomain(params).promise().toFuture
     @inline def deleteElasticsearchServiceRoleFuture(): Future[js.Object] =
-      service.deleteElasticsearchServiceRole().promise.toFuture
+      service.deleteElasticsearchServiceRole().promise().toFuture
     @inline def describeElasticsearchDomainConfigFuture(
         params: DescribeElasticsearchDomainConfigRequest
     ): Future[DescribeElasticsearchDomainConfigResponse] =
-      service.describeElasticsearchDomainConfig(params).promise.toFuture
+      service.describeElasticsearchDomainConfig(params).promise().toFuture
     @inline def describeElasticsearchDomainFuture(
         params: DescribeElasticsearchDomainRequest
-    ): Future[DescribeElasticsearchDomainResponse] = service.describeElasticsearchDomain(params).promise.toFuture
+    ): Future[DescribeElasticsearchDomainResponse] = service.describeElasticsearchDomain(params).promise().toFuture
     @inline def describeElasticsearchDomainsFuture(
         params: DescribeElasticsearchDomainsRequest
-    ): Future[DescribeElasticsearchDomainsResponse] = service.describeElasticsearchDomains(params).promise.toFuture
+    ): Future[DescribeElasticsearchDomainsResponse] = service.describeElasticsearchDomains(params).promise().toFuture
     @inline def describeElasticsearchInstanceTypeLimitsFuture(
         params: DescribeElasticsearchInstanceTypeLimitsRequest
     ): Future[DescribeElasticsearchInstanceTypeLimitsResponse] =
-      service.describeElasticsearchInstanceTypeLimits(params).promise.toFuture
+      service.describeElasticsearchInstanceTypeLimits(params).promise().toFuture
     @inline def describeReservedElasticsearchInstanceOfferingsFuture(
         params: DescribeReservedElasticsearchInstanceOfferingsRequest
     ): Future[DescribeReservedElasticsearchInstanceOfferingsResponse] =
-      service.describeReservedElasticsearchInstanceOfferings(params).promise.toFuture
+      service.describeReservedElasticsearchInstanceOfferings(params).promise().toFuture
     @inline def describeReservedElasticsearchInstancesFuture(
         params: DescribeReservedElasticsearchInstancesRequest
     ): Future[DescribeReservedElasticsearchInstancesResponse] =
-      service.describeReservedElasticsearchInstances(params).promise.toFuture
+      service.describeReservedElasticsearchInstances(params).promise().toFuture
     @inline def getCompatibleElasticsearchVersionsFuture(
         params: GetCompatibleElasticsearchVersionsRequest
     ): Future[GetCompatibleElasticsearchVersionsResponse] =
-      service.getCompatibleElasticsearchVersions(params).promise.toFuture
+      service.getCompatibleElasticsearchVersions(params).promise().toFuture
     @inline def getUpgradeHistoryFuture(params: GetUpgradeHistoryRequest): Future[GetUpgradeHistoryResponse] =
-      service.getUpgradeHistory(params).promise.toFuture
+      service.getUpgradeHistory(params).promise().toFuture
     @inline def getUpgradeStatusFuture(params: GetUpgradeStatusRequest): Future[GetUpgradeStatusResponse] =
-      service.getUpgradeStatus(params).promise.toFuture
-    @inline def listDomainNamesFuture(): Future[ListDomainNamesResponse] = service.listDomainNames().promise.toFuture
+      service.getUpgradeStatus(params).promise().toFuture
+    @inline def listDomainNamesFuture(): Future[ListDomainNamesResponse] = service.listDomainNames().promise().toFuture
     @inline def listElasticsearchInstanceTypesFuture(
         params: ListElasticsearchInstanceTypesRequest
-    ): Future[ListElasticsearchInstanceTypesResponse] = service.listElasticsearchInstanceTypes(params).promise.toFuture
+    ): Future[ListElasticsearchInstanceTypesResponse] =
+      service.listElasticsearchInstanceTypes(params).promise().toFuture
     @inline def listElasticsearchVersionsFuture(
         params: ListElasticsearchVersionsRequest
-    ): Future[ListElasticsearchVersionsResponse] = service.listElasticsearchVersions(params).promise.toFuture
+    ): Future[ListElasticsearchVersionsResponse] = service.listElasticsearchVersions(params).promise().toFuture
     @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] =
-      service.listTags(params).promise.toFuture
+      service.listTags(params).promise().toFuture
     @inline def purchaseReservedElasticsearchInstanceOfferingFuture(
         params: PurchaseReservedElasticsearchInstanceOfferingRequest
     ): Future[PurchaseReservedElasticsearchInstanceOfferingResponse] =
-      service.purchaseReservedElasticsearchInstanceOffering(params).promise.toFuture
+      service.purchaseReservedElasticsearchInstanceOffering(params).promise().toFuture
     @inline def removeTagsFuture(params: RemoveTagsRequest): Future[js.Object] =
-      service.removeTags(params).promise.toFuture
+      service.removeTags(params).promise().toFuture
     @inline def startElasticsearchServiceSoftwareUpdateFuture(
         params: StartElasticsearchServiceSoftwareUpdateRequest
     ): Future[StartElasticsearchServiceSoftwareUpdateResponse] =
-      service.startElasticsearchServiceSoftwareUpdate(params).promise.toFuture
+      service.startElasticsearchServiceSoftwareUpdate(params).promise().toFuture
     @inline def updateElasticsearchDomainConfigFuture(
         params: UpdateElasticsearchDomainConfigRequest
     ): Future[UpdateElasticsearchDomainConfigResponse] =
-      service.updateElasticsearchDomainConfig(params).promise.toFuture
+      service.updateElasticsearchDomainConfig(params).promise().toFuture
     @inline def upgradeElasticsearchDomainFuture(
         params: UpgradeElasticsearchDomainRequest
-    ): Future[UpgradeElasticsearchDomainResponse] = service.upgradeElasticsearchDomain(params).promise.toFuture
+    ): Future[UpgradeElasticsearchDomainResponse] = service.upgradeElasticsearchDomain(params).promise().toFuture
   }
 }
 

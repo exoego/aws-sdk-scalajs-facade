@@ -58,79 +58,79 @@ package object codebuild {
   implicit final class CodeBuildOps(private val service: CodeBuild) extends AnyVal {
 
     @inline def batchDeleteBuildsFuture(params: BatchDeleteBuildsInput): Future[BatchDeleteBuildsOutput] =
-      service.batchDeleteBuilds(params).promise.toFuture
+      service.batchDeleteBuilds(params).promise().toFuture
     @inline def batchGetBuildsFuture(params: BatchGetBuildsInput): Future[BatchGetBuildsOutput] =
-      service.batchGetBuilds(params).promise.toFuture
+      service.batchGetBuilds(params).promise().toFuture
     @inline def batchGetProjectsFuture(params: BatchGetProjectsInput): Future[BatchGetProjectsOutput] =
-      service.batchGetProjects(params).promise.toFuture
+      service.batchGetProjects(params).promise().toFuture
     @inline def batchGetReportGroupsFuture(params: BatchGetReportGroupsInput): Future[BatchGetReportGroupsOutput] =
-      service.batchGetReportGroups(params).promise.toFuture
+      service.batchGetReportGroups(params).promise().toFuture
     @inline def batchGetReportsFuture(params: BatchGetReportsInput): Future[BatchGetReportsOutput] =
-      service.batchGetReports(params).promise.toFuture
+      service.batchGetReports(params).promise().toFuture
     @inline def createProjectFuture(params: CreateProjectInput): Future[CreateProjectOutput] =
-      service.createProject(params).promise.toFuture
+      service.createProject(params).promise().toFuture
     @inline def createReportGroupFuture(params: CreateReportGroupInput): Future[CreateReportGroupOutput] =
-      service.createReportGroup(params).promise.toFuture
+      service.createReportGroup(params).promise().toFuture
     @inline def createWebhookFuture(params: CreateWebhookInput): Future[CreateWebhookOutput] =
-      service.createWebhook(params).promise.toFuture
+      service.createWebhook(params).promise().toFuture
     @inline def deleteProjectFuture(params: DeleteProjectInput): Future[DeleteProjectOutput] =
-      service.deleteProject(params).promise.toFuture
+      service.deleteProject(params).promise().toFuture
     @inline def deleteReportFuture(params: DeleteReportInput): Future[DeleteReportOutput] =
-      service.deleteReport(params).promise.toFuture
+      service.deleteReport(params).promise().toFuture
     @inline def deleteReportGroupFuture(params: DeleteReportGroupInput): Future[DeleteReportGroupOutput] =
-      service.deleteReportGroup(params).promise.toFuture
+      service.deleteReportGroup(params).promise().toFuture
     @inline def deleteResourcePolicyFuture(params: DeleteResourcePolicyInput): Future[DeleteResourcePolicyOutput] =
-      service.deleteResourcePolicy(params).promise.toFuture
+      service.deleteResourcePolicy(params).promise().toFuture
     @inline def deleteSourceCredentialsFuture(
         params: DeleteSourceCredentialsInput
-    ): Future[DeleteSourceCredentialsOutput] = service.deleteSourceCredentials(params).promise.toFuture
+    ): Future[DeleteSourceCredentialsOutput] = service.deleteSourceCredentials(params).promise().toFuture
     @inline def deleteWebhookFuture(params: DeleteWebhookInput): Future[DeleteWebhookOutput] =
-      service.deleteWebhook(params).promise.toFuture
+      service.deleteWebhook(params).promise().toFuture
     @inline def describeTestCasesFuture(params: DescribeTestCasesInput): Future[DescribeTestCasesOutput] =
-      service.describeTestCases(params).promise.toFuture
+      service.describeTestCases(params).promise().toFuture
     @inline def getResourcePolicyFuture(params: GetResourcePolicyInput): Future[GetResourcePolicyOutput] =
-      service.getResourcePolicy(params).promise.toFuture
+      service.getResourcePolicy(params).promise().toFuture
     @inline def importSourceCredentialsFuture(
         params: ImportSourceCredentialsInput
-    ): Future[ImportSourceCredentialsOutput] = service.importSourceCredentials(params).promise.toFuture
+    ): Future[ImportSourceCredentialsOutput] = service.importSourceCredentials(params).promise().toFuture
     @inline def invalidateProjectCacheFuture(
         params: InvalidateProjectCacheInput
-    ): Future[InvalidateProjectCacheOutput] = service.invalidateProjectCache(params).promise.toFuture
+    ): Future[InvalidateProjectCacheOutput] = service.invalidateProjectCache(params).promise().toFuture
     @inline def listBuildsForProjectFuture(params: ListBuildsForProjectInput): Future[ListBuildsForProjectOutput] =
-      service.listBuildsForProject(params).promise.toFuture
+      service.listBuildsForProject(params).promise().toFuture
     @inline def listBuildsFuture(params: ListBuildsInput): Future[ListBuildsOutput] =
-      service.listBuilds(params).promise.toFuture
+      service.listBuilds(params).promise().toFuture
     @inline def listCuratedEnvironmentImagesFuture(
         params: ListCuratedEnvironmentImagesInput
-    ): Future[ListCuratedEnvironmentImagesOutput] = service.listCuratedEnvironmentImages(params).promise.toFuture
+    ): Future[ListCuratedEnvironmentImagesOutput] = service.listCuratedEnvironmentImages(params).promise().toFuture
     @inline def listProjectsFuture(params: ListProjectsInput): Future[ListProjectsOutput] =
-      service.listProjects(params).promise.toFuture
+      service.listProjects(params).promise().toFuture
     @inline def listReportGroupsFuture(params: ListReportGroupsInput): Future[ListReportGroupsOutput] =
-      service.listReportGroups(params).promise.toFuture
+      service.listReportGroups(params).promise().toFuture
     @inline def listReportsForReportGroupFuture(
         params: ListReportsForReportGroupInput
-    ): Future[ListReportsForReportGroupOutput] = service.listReportsForReportGroup(params).promise.toFuture
+    ): Future[ListReportsForReportGroupOutput] = service.listReportsForReportGroup(params).promise().toFuture
     @inline def listReportsFuture(params: ListReportsInput): Future[ListReportsOutput] =
-      service.listReports(params).promise.toFuture
+      service.listReports(params).promise().toFuture
     @inline def listSharedProjectsFuture(params: ListSharedProjectsInput): Future[ListSharedProjectsOutput] =
-      service.listSharedProjects(params).promise.toFuture
+      service.listSharedProjects(params).promise().toFuture
     @inline def listSharedReportGroupsFuture(
         params: ListSharedReportGroupsInput
-    ): Future[ListSharedReportGroupsOutput] = service.listSharedReportGroups(params).promise.toFuture
+    ): Future[ListSharedReportGroupsOutput] = service.listSharedReportGroups(params).promise().toFuture
     @inline def listSourceCredentialsFuture(params: ListSourceCredentialsInput): Future[ListSourceCredentialsOutput] =
-      service.listSourceCredentials(params).promise.toFuture
+      service.listSourceCredentials(params).promise().toFuture
     @inline def putResourcePolicyFuture(params: PutResourcePolicyInput): Future[PutResourcePolicyOutput] =
-      service.putResourcePolicy(params).promise.toFuture
+      service.putResourcePolicy(params).promise().toFuture
     @inline def startBuildFuture(params: StartBuildInput): Future[StartBuildOutput] =
-      service.startBuild(params).promise.toFuture
+      service.startBuild(params).promise().toFuture
     @inline def stopBuildFuture(params: StopBuildInput): Future[StopBuildOutput] =
-      service.stopBuild(params).promise.toFuture
+      service.stopBuild(params).promise().toFuture
     @inline def updateProjectFuture(params: UpdateProjectInput): Future[UpdateProjectOutput] =
-      service.updateProject(params).promise.toFuture
+      service.updateProject(params).promise().toFuture
     @inline def updateReportGroupFuture(params: UpdateReportGroupInput): Future[UpdateReportGroupOutput] =
-      service.updateReportGroup(params).promise.toFuture
+      service.updateReportGroup(params).promise().toFuture
     @inline def updateWebhookFuture(params: UpdateWebhookInput): Future[UpdateWebhookOutput] =
-      service.updateWebhook(params).promise.toFuture
+      service.updateWebhook(params).promise().toFuture
   }
 }
 

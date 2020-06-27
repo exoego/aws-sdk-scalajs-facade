@@ -88,46 +88,46 @@ package object kendra {
   implicit final class KendraOps(private val service: Kendra) extends AnyVal {
 
     @inline def batchDeleteDocumentFuture(params: BatchDeleteDocumentRequest): Future[BatchDeleteDocumentResponse] =
-      service.batchDeleteDocument(params).promise.toFuture
+      service.batchDeleteDocument(params).promise().toFuture
     @inline def batchPutDocumentFuture(params: BatchPutDocumentRequest): Future[BatchPutDocumentResponse] =
-      service.batchPutDocument(params).promise.toFuture
+      service.batchPutDocument(params).promise().toFuture
     @inline def createDataSourceFuture(params: CreateDataSourceRequest): Future[CreateDataSourceResponse] =
-      service.createDataSource(params).promise.toFuture
+      service.createDataSource(params).promise().toFuture
     @inline def createFaqFuture(params: CreateFaqRequest): Future[CreateFaqResponse] =
-      service.createFaq(params).promise.toFuture
+      service.createFaq(params).promise().toFuture
     @inline def createIndexFuture(params: CreateIndexRequest): Future[CreateIndexResponse] =
-      service.createIndex(params).promise.toFuture
+      service.createIndex(params).promise().toFuture
     @inline def deleteFaqFuture(params: DeleteFaqRequest): Future[js.Object] =
-      service.deleteFaq(params).promise.toFuture
+      service.deleteFaq(params).promise().toFuture
     @inline def deleteIndexFuture(params: DeleteIndexRequest): Future[js.Object] =
-      service.deleteIndex(params).promise.toFuture
+      service.deleteIndex(params).promise().toFuture
     @inline def describeDataSourceFuture(params: DescribeDataSourceRequest): Future[DescribeDataSourceResponse] =
-      service.describeDataSource(params).promise.toFuture
+      service.describeDataSource(params).promise().toFuture
     @inline def describeFaqFuture(params: DescribeFaqRequest): Future[DescribeFaqResponse] =
-      service.describeFaq(params).promise.toFuture
+      service.describeFaq(params).promise().toFuture
     @inline def describeIndexFuture(params: DescribeIndexRequest): Future[DescribeIndexResponse] =
-      service.describeIndex(params).promise.toFuture
+      service.describeIndex(params).promise().toFuture
     @inline def listDataSourceSyncJobsFuture(
         params: ListDataSourceSyncJobsRequest
-    ): Future[ListDataSourceSyncJobsResponse] = service.listDataSourceSyncJobs(params).promise.toFuture
+    ): Future[ListDataSourceSyncJobsResponse] = service.listDataSourceSyncJobs(params).promise().toFuture
     @inline def listDataSourcesFuture(params: ListDataSourcesRequest): Future[ListDataSourcesResponse] =
-      service.listDataSources(params).promise.toFuture
+      service.listDataSources(params).promise().toFuture
     @inline def listFaqsFuture(params: ListFaqsRequest): Future[ListFaqsResponse] =
-      service.listFaqs(params).promise.toFuture
+      service.listFaqs(params).promise().toFuture
     @inline def listIndicesFuture(params: ListIndicesRequest): Future[ListIndicesResponse] =
-      service.listIndices(params).promise.toFuture
-    @inline def queryFuture(params: QueryRequest): Future[QueryResult] = service.query(params).promise.toFuture
+      service.listIndices(params).promise().toFuture
+    @inline def queryFuture(params: QueryRequest): Future[QueryResult] = service.query(params).promise().toFuture
     @inline def startDataSourceSyncJobFuture(
         params: StartDataSourceSyncJobRequest
-    ): Future[StartDataSourceSyncJobResponse] = service.startDataSourceSyncJob(params).promise.toFuture
+    ): Future[StartDataSourceSyncJobResponse] = service.startDataSourceSyncJob(params).promise().toFuture
     @inline def stopDataSourceSyncJobFuture(params: StopDataSourceSyncJobRequest): Future[js.Object] =
-      service.stopDataSourceSyncJob(params).promise.toFuture
+      service.stopDataSourceSyncJob(params).promise().toFuture
     @inline def submitFeedbackFuture(params: SubmitFeedbackRequest): Future[js.Object] =
-      service.submitFeedback(params).promise.toFuture
+      service.submitFeedback(params).promise().toFuture
     @inline def updateDataSourceFuture(params: UpdateDataSourceRequest): Future[js.Object] =
-      service.updateDataSource(params).promise.toFuture
+      service.updateDataSource(params).promise().toFuture
     @inline def updateIndexFuture(params: UpdateIndexRequest): Future[js.Object] =
-      service.updateIndex(params).promise.toFuture
+      service.updateIndex(params).promise().toFuture
   }
 }
 

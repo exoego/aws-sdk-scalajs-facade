@@ -25,24 +25,24 @@ package object codeguruprofiler {
   implicit final class CodeGuruProfilerOps(private val service: CodeGuruProfiler) extends AnyVal {
 
     @inline def configureAgentFuture(params: ConfigureAgentRequest): Future[ConfigureAgentResponse] =
-      service.configureAgent(params).promise.toFuture
+      service.configureAgent(params).promise().toFuture
     @inline def createProfilingGroupFuture(params: CreateProfilingGroupRequest): Future[CreateProfilingGroupResponse] =
-      service.createProfilingGroup(params).promise.toFuture
+      service.createProfilingGroup(params).promise().toFuture
     @inline def deleteProfilingGroupFuture(params: DeleteProfilingGroupRequest): Future[DeleteProfilingGroupResponse] =
-      service.deleteProfilingGroup(params).promise.toFuture
+      service.deleteProfilingGroup(params).promise().toFuture
     @inline def describeProfilingGroupFuture(
         params: DescribeProfilingGroupRequest
-    ): Future[DescribeProfilingGroupResponse] = service.describeProfilingGroup(params).promise.toFuture
+    ): Future[DescribeProfilingGroupResponse] = service.describeProfilingGroup(params).promise().toFuture
     @inline def getProfileFuture(params: GetProfileRequest): Future[GetProfileResponse] =
-      service.getProfile(params).promise.toFuture
+      service.getProfile(params).promise().toFuture
     @inline def listProfileTimesFuture(params: ListProfileTimesRequest): Future[ListProfileTimesResponse] =
-      service.listProfileTimes(params).promise.toFuture
+      service.listProfileTimes(params).promise().toFuture
     @inline def listProfilingGroupsFuture(params: ListProfilingGroupsRequest): Future[ListProfilingGroupsResponse] =
-      service.listProfilingGroups(params).promise.toFuture
+      service.listProfilingGroups(params).promise().toFuture
     @inline def postAgentProfileFuture(params: PostAgentProfileRequest): Future[PostAgentProfileResponse] =
-      service.postAgentProfile(params).promise.toFuture
+      service.postAgentProfile(params).promise().toFuture
     @inline def updateProfilingGroupFuture(params: UpdateProfilingGroupRequest): Future[UpdateProfilingGroupResponse] =
-      service.updateProfilingGroup(params).promise.toFuture
+      service.updateProfilingGroup(params).promise().toFuture
   }
 }
 

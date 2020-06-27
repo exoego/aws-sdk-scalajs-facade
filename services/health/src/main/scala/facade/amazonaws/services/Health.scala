@@ -67,40 +67,40 @@ package object health {
     @inline def describeAffectedAccountsForOrganizationFuture(
         params: DescribeAffectedAccountsForOrganizationRequest
     ): Future[DescribeAffectedAccountsForOrganizationResponse] =
-      service.describeAffectedAccountsForOrganization(params).promise.toFuture
+      service.describeAffectedAccountsForOrganization(params).promise().toFuture
     @inline def describeAffectedEntitiesForOrganizationFuture(
         params: DescribeAffectedEntitiesForOrganizationRequest
     ): Future[DescribeAffectedEntitiesForOrganizationResponse] =
-      service.describeAffectedEntitiesForOrganization(params).promise.toFuture
+      service.describeAffectedEntitiesForOrganization(params).promise().toFuture
     @inline def describeAffectedEntitiesFuture(
         params: DescribeAffectedEntitiesRequest
-    ): Future[DescribeAffectedEntitiesResponse] = service.describeAffectedEntities(params).promise.toFuture
+    ): Future[DescribeAffectedEntitiesResponse] = service.describeAffectedEntities(params).promise().toFuture
     @inline def describeEntityAggregatesFuture(
         params: DescribeEntityAggregatesRequest
-    ): Future[DescribeEntityAggregatesResponse] = service.describeEntityAggregates(params).promise.toFuture
+    ): Future[DescribeEntityAggregatesResponse] = service.describeEntityAggregates(params).promise().toFuture
     @inline def describeEventAggregatesFuture(
         params: DescribeEventAggregatesRequest
-    ): Future[DescribeEventAggregatesResponse] = service.describeEventAggregates(params).promise.toFuture
+    ): Future[DescribeEventAggregatesResponse] = service.describeEventAggregates(params).promise().toFuture
     @inline def describeEventDetailsForOrganizationFuture(
         params: DescribeEventDetailsForOrganizationRequest
     ): Future[DescribeEventDetailsForOrganizationResponse] =
-      service.describeEventDetailsForOrganization(params).promise.toFuture
+      service.describeEventDetailsForOrganization(params).promise().toFuture
     @inline def describeEventDetailsFuture(params: DescribeEventDetailsRequest): Future[DescribeEventDetailsResponse] =
-      service.describeEventDetails(params).promise.toFuture
+      service.describeEventDetails(params).promise().toFuture
     @inline def describeEventTypesFuture(params: DescribeEventTypesRequest): Future[DescribeEventTypesResponse] =
-      service.describeEventTypes(params).promise.toFuture
+      service.describeEventTypes(params).promise().toFuture
     @inline def describeEventsForOrganizationFuture(
         params: DescribeEventsForOrganizationRequest
-    ): Future[DescribeEventsForOrganizationResponse] = service.describeEventsForOrganization(params).promise.toFuture
+    ): Future[DescribeEventsForOrganizationResponse] = service.describeEventsForOrganization(params).promise().toFuture
     @inline def describeEventsFuture(params: DescribeEventsRequest): Future[DescribeEventsResponse] =
-      service.describeEvents(params).promise.toFuture
+      service.describeEvents(params).promise().toFuture
     @inline def describeHealthServiceStatusForOrganizationFuture()
         : Future[DescribeHealthServiceStatusForOrganizationResponse] =
-      service.describeHealthServiceStatusForOrganization().promise.toFuture
+      service.describeHealthServiceStatusForOrganization().promise().toFuture
     @inline def disableHealthServiceAccessForOrganizationFuture(): Future[js.Object] =
-      service.disableHealthServiceAccessForOrganization().promise.toFuture
+      service.disableHealthServiceAccessForOrganization().promise().toFuture
     @inline def enableHealthServiceAccessForOrganizationFuture(): Future[js.Object] =
-      service.enableHealthServiceAccessForOrganization().promise.toFuture
+      service.enableHealthServiceAccessForOrganization().promise().toFuture
   }
 }
 

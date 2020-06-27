@@ -46,23 +46,23 @@ package object dlm {
 
     @inline def createLifecyclePolicyFuture(
         params: CreateLifecyclePolicyRequest
-    ): Future[CreateLifecyclePolicyResponse] = service.createLifecyclePolicy(params).promise.toFuture
+    ): Future[CreateLifecyclePolicyResponse] = service.createLifecyclePolicy(params).promise().toFuture
     @inline def deleteLifecyclePolicyFuture(
         params: DeleteLifecyclePolicyRequest
-    ): Future[DeleteLifecyclePolicyResponse] = service.deleteLifecyclePolicy(params).promise.toFuture
+    ): Future[DeleteLifecyclePolicyResponse] = service.deleteLifecyclePolicy(params).promise().toFuture
     @inline def getLifecyclePoliciesFuture(params: GetLifecyclePoliciesRequest): Future[GetLifecyclePoliciesResponse] =
-      service.getLifecyclePolicies(params).promise.toFuture
+      service.getLifecyclePolicies(params).promise().toFuture
     @inline def getLifecyclePolicyFuture(params: GetLifecyclePolicyRequest): Future[GetLifecyclePolicyResponse] =
-      service.getLifecyclePolicy(params).promise.toFuture
+      service.getLifecyclePolicy(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateLifecyclePolicyFuture(
         params: UpdateLifecyclePolicyRequest
-    ): Future[UpdateLifecyclePolicyResponse] = service.updateLifecyclePolicy(params).promise.toFuture
+    ): Future[UpdateLifecyclePolicyResponse] = service.updateLifecyclePolicy(params).promise().toFuture
   }
 }
 

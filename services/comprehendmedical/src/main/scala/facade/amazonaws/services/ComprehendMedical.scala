@@ -39,33 +39,34 @@ package object comprehendmedical {
 
     @inline def describeEntitiesDetectionV2JobFuture(
         params: DescribeEntitiesDetectionV2JobRequest
-    ): Future[DescribeEntitiesDetectionV2JobResponse] = service.describeEntitiesDetectionV2Job(params).promise.toFuture
+    ): Future[DescribeEntitiesDetectionV2JobResponse] =
+      service.describeEntitiesDetectionV2Job(params).promise().toFuture
     @inline def describePHIDetectionJobFuture(
         params: DescribePHIDetectionJobRequest
-    ): Future[DescribePHIDetectionJobResponse] = service.describePHIDetectionJob(params).promise.toFuture
+    ): Future[DescribePHIDetectionJobResponse] = service.describePHIDetectionJob(params).promise().toFuture
     @inline def detectEntitiesV2Future(params: DetectEntitiesV2Request): Future[DetectEntitiesV2Response] =
-      service.detectEntitiesV2(params).promise.toFuture
+      service.detectEntitiesV2(params).promise().toFuture
     @inline def detectPHIFuture(params: DetectPHIRequest): Future[DetectPHIResponse] =
-      service.detectPHI(params).promise.toFuture
+      service.detectPHI(params).promise().toFuture
     @inline def inferICD10CMFuture(params: InferICD10CMRequest): Future[InferICD10CMResponse] =
-      service.inferICD10CM(params).promise.toFuture
+      service.inferICD10CM(params).promise().toFuture
     @inline def inferRxNormFuture(params: InferRxNormRequest): Future[InferRxNormResponse] =
-      service.inferRxNorm(params).promise.toFuture
+      service.inferRxNorm(params).promise().toFuture
     @inline def listEntitiesDetectionV2JobsFuture(
         params: ListEntitiesDetectionV2JobsRequest
-    ): Future[ListEntitiesDetectionV2JobsResponse] = service.listEntitiesDetectionV2Jobs(params).promise.toFuture
+    ): Future[ListEntitiesDetectionV2JobsResponse] = service.listEntitiesDetectionV2Jobs(params).promise().toFuture
     @inline def listPHIDetectionJobsFuture(params: ListPHIDetectionJobsRequest): Future[ListPHIDetectionJobsResponse] =
-      service.listPHIDetectionJobs(params).promise.toFuture
+      service.listPHIDetectionJobs(params).promise().toFuture
     @inline def startEntitiesDetectionV2JobFuture(
         params: StartEntitiesDetectionV2JobRequest
-    ): Future[StartEntitiesDetectionV2JobResponse] = service.startEntitiesDetectionV2Job(params).promise.toFuture
+    ): Future[StartEntitiesDetectionV2JobResponse] = service.startEntitiesDetectionV2Job(params).promise().toFuture
     @inline def startPHIDetectionJobFuture(params: StartPHIDetectionJobRequest): Future[StartPHIDetectionJobResponse] =
-      service.startPHIDetectionJob(params).promise.toFuture
+      service.startPHIDetectionJob(params).promise().toFuture
     @inline def stopEntitiesDetectionV2JobFuture(
         params: StopEntitiesDetectionV2JobRequest
-    ): Future[StopEntitiesDetectionV2JobResponse] = service.stopEntitiesDetectionV2Job(params).promise.toFuture
+    ): Future[StopEntitiesDetectionV2JobResponse] = service.stopEntitiesDetectionV2Job(params).promise().toFuture
     @inline def stopPHIDetectionJobFuture(params: StopPHIDetectionJobRequest): Future[StopPHIDetectionJobResponse] =
-      service.stopPHIDetectionJob(params).promise.toFuture
+      service.stopPHIDetectionJob(params).promise().toFuture
   }
 }
 

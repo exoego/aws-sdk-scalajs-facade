@@ -65,25 +65,25 @@ package object savingsplans {
   implicit final class SavingsPlansOps(private val service: SavingsPlans) extends AnyVal {
 
     @inline def createSavingsPlanFuture(params: CreateSavingsPlanRequest): Future[CreateSavingsPlanResponse] =
-      service.createSavingsPlan(params).promise.toFuture
+      service.createSavingsPlan(params).promise().toFuture
     @inline def describeSavingsPlanRatesFuture(
         params: DescribeSavingsPlanRatesRequest
-    ): Future[DescribeSavingsPlanRatesResponse] = service.describeSavingsPlanRates(params).promise.toFuture
+    ): Future[DescribeSavingsPlanRatesResponse] = service.describeSavingsPlanRates(params).promise().toFuture
     @inline def describeSavingsPlansFuture(params: DescribeSavingsPlansRequest): Future[DescribeSavingsPlansResponse] =
-      service.describeSavingsPlans(params).promise.toFuture
+      service.describeSavingsPlans(params).promise().toFuture
     @inline def describeSavingsPlansOfferingRatesFuture(
         params: DescribeSavingsPlansOfferingRatesRequest
     ): Future[DescribeSavingsPlansOfferingRatesResponse] =
-      service.describeSavingsPlansOfferingRates(params).promise.toFuture
+      service.describeSavingsPlansOfferingRates(params).promise().toFuture
     @inline def describeSavingsPlansOfferingsFuture(
         params: DescribeSavingsPlansOfferingsRequest
-    ): Future[DescribeSavingsPlansOfferingsResponse] = service.describeSavingsPlansOfferings(params).promise.toFuture
+    ): Future[DescribeSavingsPlansOfferingsResponse] = service.describeSavingsPlansOfferings(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
   }
 }
 

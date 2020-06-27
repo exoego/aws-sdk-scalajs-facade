@@ -119,127 +119,128 @@ package object directoryservice {
   implicit final class DirectoryServiceOps(private val service: DirectoryService) extends AnyVal {
 
     @inline def acceptSharedDirectoryFuture(params: AcceptSharedDirectoryRequest): Future[AcceptSharedDirectoryResult] =
-      service.acceptSharedDirectory(params).promise.toFuture
+      service.acceptSharedDirectory(params).promise().toFuture
     @inline def addIpRoutesFuture(params: AddIpRoutesRequest): Future[AddIpRoutesResult] =
-      service.addIpRoutes(params).promise.toFuture
+      service.addIpRoutes(params).promise().toFuture
     @inline def addTagsToResourceFuture(params: AddTagsToResourceRequest): Future[AddTagsToResourceResult] =
-      service.addTagsToResource(params).promise.toFuture
+      service.addTagsToResource(params).promise().toFuture
     @inline def cancelSchemaExtensionFuture(params: CancelSchemaExtensionRequest): Future[CancelSchemaExtensionResult] =
-      service.cancelSchemaExtension(params).promise.toFuture
+      service.cancelSchemaExtension(params).promise().toFuture
     @inline def connectDirectoryFuture(params: ConnectDirectoryRequest): Future[ConnectDirectoryResult] =
-      service.connectDirectory(params).promise.toFuture
+      service.connectDirectory(params).promise().toFuture
     @inline def createAliasFuture(params: CreateAliasRequest): Future[CreateAliasResult] =
-      service.createAlias(params).promise.toFuture
+      service.createAlias(params).promise().toFuture
     @inline def createComputerFuture(params: CreateComputerRequest): Future[CreateComputerResult] =
-      service.createComputer(params).promise.toFuture
+      service.createComputer(params).promise().toFuture
     @inline def createConditionalForwarderFuture(
         params: CreateConditionalForwarderRequest
-    ): Future[CreateConditionalForwarderResult] = service.createConditionalForwarder(params).promise.toFuture
+    ): Future[CreateConditionalForwarderResult] = service.createConditionalForwarder(params).promise().toFuture
     @inline def createDirectoryFuture(params: CreateDirectoryRequest): Future[CreateDirectoryResult] =
-      service.createDirectory(params).promise.toFuture
+      service.createDirectory(params).promise().toFuture
     @inline def createLogSubscriptionFuture(params: CreateLogSubscriptionRequest): Future[CreateLogSubscriptionResult] =
-      service.createLogSubscription(params).promise.toFuture
+      service.createLogSubscription(params).promise().toFuture
     @inline def createMicrosoftADFuture(params: CreateMicrosoftADRequest): Future[CreateMicrosoftADResult] =
-      service.createMicrosoftAD(params).promise.toFuture
+      service.createMicrosoftAD(params).promise().toFuture
     @inline def createSnapshotFuture(params: CreateSnapshotRequest): Future[CreateSnapshotResult] =
-      service.createSnapshot(params).promise.toFuture
+      service.createSnapshot(params).promise().toFuture
     @inline def createTrustFuture(params: CreateTrustRequest): Future[CreateTrustResult] =
-      service.createTrust(params).promise.toFuture
+      service.createTrust(params).promise().toFuture
     @inline def deleteConditionalForwarderFuture(
         params: DeleteConditionalForwarderRequest
-    ): Future[DeleteConditionalForwarderResult] = service.deleteConditionalForwarder(params).promise.toFuture
+    ): Future[DeleteConditionalForwarderResult] = service.deleteConditionalForwarder(params).promise().toFuture
     @inline def deleteDirectoryFuture(params: DeleteDirectoryRequest): Future[DeleteDirectoryResult] =
-      service.deleteDirectory(params).promise.toFuture
+      service.deleteDirectory(params).promise().toFuture
     @inline def deleteLogSubscriptionFuture(params: DeleteLogSubscriptionRequest): Future[DeleteLogSubscriptionResult] =
-      service.deleteLogSubscription(params).promise.toFuture
+      service.deleteLogSubscription(params).promise().toFuture
     @inline def deleteSnapshotFuture(params: DeleteSnapshotRequest): Future[DeleteSnapshotResult] =
-      service.deleteSnapshot(params).promise.toFuture
+      service.deleteSnapshot(params).promise().toFuture
     @inline def deleteTrustFuture(params: DeleteTrustRequest): Future[DeleteTrustResult] =
-      service.deleteTrust(params).promise.toFuture
+      service.deleteTrust(params).promise().toFuture
     @inline def deregisterCertificateFuture(params: DeregisterCertificateRequest): Future[DeregisterCertificateResult] =
-      service.deregisterCertificate(params).promise.toFuture
+      service.deregisterCertificate(params).promise().toFuture
     @inline def deregisterEventTopicFuture(params: DeregisterEventTopicRequest): Future[DeregisterEventTopicResult] =
-      service.deregisterEventTopic(params).promise.toFuture
+      service.deregisterEventTopic(params).promise().toFuture
     @inline def describeCertificateFuture(params: DescribeCertificateRequest): Future[DescribeCertificateResult] =
-      service.describeCertificate(params).promise.toFuture
+      service.describeCertificate(params).promise().toFuture
     @inline def describeConditionalForwardersFuture(
         params: DescribeConditionalForwardersRequest
-    ): Future[DescribeConditionalForwardersResult] = service.describeConditionalForwarders(params).promise.toFuture
+    ): Future[DescribeConditionalForwardersResult] = service.describeConditionalForwarders(params).promise().toFuture
     @inline def describeDirectoriesFuture(params: DescribeDirectoriesRequest): Future[DescribeDirectoriesResult] =
-      service.describeDirectories(params).promise.toFuture
+      service.describeDirectories(params).promise().toFuture
     @inline def describeDomainControllersFuture(
         params: DescribeDomainControllersRequest
-    ): Future[DescribeDomainControllersResult] = service.describeDomainControllers(params).promise.toFuture
+    ): Future[DescribeDomainControllersResult] = service.describeDomainControllers(params).promise().toFuture
     @inline def describeEventTopicsFuture(params: DescribeEventTopicsRequest): Future[DescribeEventTopicsResult] =
-      service.describeEventTopics(params).promise.toFuture
+      service.describeEventTopics(params).promise().toFuture
     @inline def describeLDAPSSettingsFuture(params: DescribeLDAPSSettingsRequest): Future[DescribeLDAPSSettingsResult] =
-      service.describeLDAPSSettings(params).promise.toFuture
+      service.describeLDAPSSettings(params).promise().toFuture
     @inline def describeSharedDirectoriesFuture(
         params: DescribeSharedDirectoriesRequest
-    ): Future[DescribeSharedDirectoriesResult] = service.describeSharedDirectories(params).promise.toFuture
+    ): Future[DescribeSharedDirectoriesResult] = service.describeSharedDirectories(params).promise().toFuture
     @inline def describeSnapshotsFuture(params: DescribeSnapshotsRequest): Future[DescribeSnapshotsResult] =
-      service.describeSnapshots(params).promise.toFuture
+      service.describeSnapshots(params).promise().toFuture
     @inline def describeTrustsFuture(params: DescribeTrustsRequest): Future[DescribeTrustsResult] =
-      service.describeTrusts(params).promise.toFuture
+      service.describeTrusts(params).promise().toFuture
     @inline def disableLDAPSFuture(params: DisableLDAPSRequest): Future[DisableLDAPSResult] =
-      service.disableLDAPS(params).promise.toFuture
+      service.disableLDAPS(params).promise().toFuture
     @inline def disableRadiusFuture(params: DisableRadiusRequest): Future[DisableRadiusResult] =
-      service.disableRadius(params).promise.toFuture
+      service.disableRadius(params).promise().toFuture
     @inline def disableSsoFuture(params: DisableSsoRequest): Future[DisableSsoResult] =
-      service.disableSso(params).promise.toFuture
+      service.disableSso(params).promise().toFuture
     @inline def enableLDAPSFuture(params: EnableLDAPSRequest): Future[EnableLDAPSResult] =
-      service.enableLDAPS(params).promise.toFuture
+      service.enableLDAPS(params).promise().toFuture
     @inline def enableRadiusFuture(params: EnableRadiusRequest): Future[EnableRadiusResult] =
-      service.enableRadius(params).promise.toFuture
+      service.enableRadius(params).promise().toFuture
     @inline def enableSsoFuture(params: EnableSsoRequest): Future[EnableSsoResult] =
-      service.enableSso(params).promise.toFuture
+      service.enableSso(params).promise().toFuture
     @inline def getDirectoryLimitsFuture(params: GetDirectoryLimitsRequest): Future[GetDirectoryLimitsResult] =
-      service.getDirectoryLimits(params).promise.toFuture
+      service.getDirectoryLimits(params).promise().toFuture
     @inline def getSnapshotLimitsFuture(params: GetSnapshotLimitsRequest): Future[GetSnapshotLimitsResult] =
-      service.getSnapshotLimits(params).promise.toFuture
+      service.getSnapshotLimits(params).promise().toFuture
     @inline def listCertificatesFuture(params: ListCertificatesRequest): Future[ListCertificatesResult] =
-      service.listCertificates(params).promise.toFuture
+      service.listCertificates(params).promise().toFuture
     @inline def listIpRoutesFuture(params: ListIpRoutesRequest): Future[ListIpRoutesResult] =
-      service.listIpRoutes(params).promise.toFuture
+      service.listIpRoutes(params).promise().toFuture
     @inline def listLogSubscriptionsFuture(params: ListLogSubscriptionsRequest): Future[ListLogSubscriptionsResult] =
-      service.listLogSubscriptions(params).promise.toFuture
+      service.listLogSubscriptions(params).promise().toFuture
     @inline def listSchemaExtensionsFuture(params: ListSchemaExtensionsRequest): Future[ListSchemaExtensionsResult] =
-      service.listSchemaExtensions(params).promise.toFuture
+      service.listSchemaExtensions(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResult] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def registerCertificateFuture(params: RegisterCertificateRequest): Future[RegisterCertificateResult] =
-      service.registerCertificate(params).promise.toFuture
+      service.registerCertificate(params).promise().toFuture
     @inline def registerEventTopicFuture(params: RegisterEventTopicRequest): Future[RegisterEventTopicResult] =
-      service.registerEventTopic(params).promise.toFuture
+      service.registerEventTopic(params).promise().toFuture
     @inline def rejectSharedDirectoryFuture(params: RejectSharedDirectoryRequest): Future[RejectSharedDirectoryResult] =
-      service.rejectSharedDirectory(params).promise.toFuture
+      service.rejectSharedDirectory(params).promise().toFuture
     @inline def removeIpRoutesFuture(params: RemoveIpRoutesRequest): Future[RemoveIpRoutesResult] =
-      service.removeIpRoutes(params).promise.toFuture
+      service.removeIpRoutes(params).promise().toFuture
     @inline def removeTagsFromResourceFuture(
         params: RemoveTagsFromResourceRequest
-    ): Future[RemoveTagsFromResourceResult] = service.removeTagsFromResource(params).promise.toFuture
+    ): Future[RemoveTagsFromResourceResult] = service.removeTagsFromResource(params).promise().toFuture
     @inline def resetUserPasswordFuture(params: ResetUserPasswordRequest): Future[ResetUserPasswordResult] =
-      service.resetUserPassword(params).promise.toFuture
+      service.resetUserPassword(params).promise().toFuture
     @inline def restoreFromSnapshotFuture(params: RestoreFromSnapshotRequest): Future[RestoreFromSnapshotResult] =
-      service.restoreFromSnapshot(params).promise.toFuture
+      service.restoreFromSnapshot(params).promise().toFuture
     @inline def shareDirectoryFuture(params: ShareDirectoryRequest): Future[ShareDirectoryResult] =
-      service.shareDirectory(params).promise.toFuture
+      service.shareDirectory(params).promise().toFuture
     @inline def startSchemaExtensionFuture(params: StartSchemaExtensionRequest): Future[StartSchemaExtensionResult] =
-      service.startSchemaExtension(params).promise.toFuture
+      service.startSchemaExtension(params).promise().toFuture
     @inline def unshareDirectoryFuture(params: UnshareDirectoryRequest): Future[UnshareDirectoryResult] =
-      service.unshareDirectory(params).promise.toFuture
+      service.unshareDirectory(params).promise().toFuture
     @inline def updateConditionalForwarderFuture(
         params: UpdateConditionalForwarderRequest
-    ): Future[UpdateConditionalForwarderResult] = service.updateConditionalForwarder(params).promise.toFuture
+    ): Future[UpdateConditionalForwarderResult] = service.updateConditionalForwarder(params).promise().toFuture
     @inline def updateNumberOfDomainControllersFuture(
         params: UpdateNumberOfDomainControllersRequest
-    ): Future[UpdateNumberOfDomainControllersResult] = service.updateNumberOfDomainControllers(params).promise.toFuture
+    ): Future[UpdateNumberOfDomainControllersResult] =
+      service.updateNumberOfDomainControllers(params).promise().toFuture
     @inline def updateRadiusFuture(params: UpdateRadiusRequest): Future[UpdateRadiusResult] =
-      service.updateRadius(params).promise.toFuture
+      service.updateRadius(params).promise().toFuture
     @inline def updateTrustFuture(params: UpdateTrustRequest): Future[UpdateTrustResult] =
-      service.updateTrust(params).promise.toFuture
+      service.updateTrust(params).promise().toFuture
     @inline def verifyTrustFuture(params: VerifyTrustRequest): Future[VerifyTrustResult] =
-      service.verifyTrust(params).promise.toFuture
+      service.verifyTrust(params).promise().toFuture
   }
 }
 

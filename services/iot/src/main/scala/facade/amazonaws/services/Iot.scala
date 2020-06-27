@@ -425,488 +425,488 @@ package object iot {
   implicit final class IotOps(private val service: Iot) extends AnyVal {
 
     @inline def acceptCertificateTransferFuture(params: AcceptCertificateTransferRequest): Future[js.Object] =
-      service.acceptCertificateTransfer(params).promise.toFuture
+      service.acceptCertificateTransfer(params).promise().toFuture
     @inline def addThingToBillingGroupFuture(
         params: AddThingToBillingGroupRequest
-    ): Future[AddThingToBillingGroupResponse] = service.addThingToBillingGroup(params).promise.toFuture
+    ): Future[AddThingToBillingGroupResponse] = service.addThingToBillingGroup(params).promise().toFuture
     @inline def addThingToThingGroupFuture(params: AddThingToThingGroupRequest): Future[AddThingToThingGroupResponse] =
-      service.addThingToThingGroup(params).promise.toFuture
+      service.addThingToThingGroup(params).promise().toFuture
     @inline def associateTargetsWithJobFuture(
         params: AssociateTargetsWithJobRequest
-    ): Future[AssociateTargetsWithJobResponse] = service.associateTargetsWithJob(params).promise.toFuture
+    ): Future[AssociateTargetsWithJobResponse] = service.associateTargetsWithJob(params).promise().toFuture
     @inline def attachPolicyFuture(params: AttachPolicyRequest): Future[js.Object] =
-      service.attachPolicy(params).promise.toFuture
+      service.attachPolicy(params).promise().toFuture
     @inline def attachSecurityProfileFuture(
         params: AttachSecurityProfileRequest
-    ): Future[AttachSecurityProfileResponse] = service.attachSecurityProfile(params).promise.toFuture
+    ): Future[AttachSecurityProfileResponse] = service.attachSecurityProfile(params).promise().toFuture
     @inline def attachThingPrincipalFuture(params: AttachThingPrincipalRequest): Future[AttachThingPrincipalResponse] =
-      service.attachThingPrincipal(params).promise.toFuture
+      service.attachThingPrincipal(params).promise().toFuture
     @inline def cancelAuditMitigationActionsTaskFuture(
         params: CancelAuditMitigationActionsTaskRequest
     ): Future[CancelAuditMitigationActionsTaskResponse] =
-      service.cancelAuditMitigationActionsTask(params).promise.toFuture
+      service.cancelAuditMitigationActionsTask(params).promise().toFuture
     @inline def cancelAuditTaskFuture(params: CancelAuditTaskRequest): Future[CancelAuditTaskResponse] =
-      service.cancelAuditTask(params).promise.toFuture
+      service.cancelAuditTask(params).promise().toFuture
     @inline def cancelCertificateTransferFuture(params: CancelCertificateTransferRequest): Future[js.Object] =
-      service.cancelCertificateTransfer(params).promise.toFuture
+      service.cancelCertificateTransfer(params).promise().toFuture
     @inline def cancelJobExecutionFuture(params: CancelJobExecutionRequest): Future[js.Object] =
-      service.cancelJobExecution(params).promise.toFuture
+      service.cancelJobExecution(params).promise().toFuture
     @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] =
-      service.cancelJob(params).promise.toFuture
+      service.cancelJob(params).promise().toFuture
     @inline def clearDefaultAuthorizerFuture(
         params: ClearDefaultAuthorizerRequest
-    ): Future[ClearDefaultAuthorizerResponse] = service.clearDefaultAuthorizer(params).promise.toFuture
+    ): Future[ClearDefaultAuthorizerResponse] = service.clearDefaultAuthorizer(params).promise().toFuture
     @inline def confirmTopicRuleDestinationFuture(
         params: ConfirmTopicRuleDestinationRequest
-    ): Future[ConfirmTopicRuleDestinationResponse] = service.confirmTopicRuleDestination(params).promise.toFuture
+    ): Future[ConfirmTopicRuleDestinationResponse] = service.confirmTopicRuleDestination(params).promise().toFuture
     @inline def createAuthorizerFuture(params: CreateAuthorizerRequest): Future[CreateAuthorizerResponse] =
-      service.createAuthorizer(params).promise.toFuture
+      service.createAuthorizer(params).promise().toFuture
     @inline def createBillingGroupFuture(params: CreateBillingGroupRequest): Future[CreateBillingGroupResponse] =
-      service.createBillingGroup(params).promise.toFuture
+      service.createBillingGroup(params).promise().toFuture
     @inline def createCertificateFromCsrFuture(
         params: CreateCertificateFromCsrRequest
-    ): Future[CreateCertificateFromCsrResponse] = service.createCertificateFromCsr(params).promise.toFuture
+    ): Future[CreateCertificateFromCsrResponse] = service.createCertificateFromCsr(params).promise().toFuture
     @inline def createDomainConfigurationFuture(
         params: CreateDomainConfigurationRequest
-    ): Future[CreateDomainConfigurationResponse] = service.createDomainConfiguration(params).promise.toFuture
+    ): Future[CreateDomainConfigurationResponse] = service.createDomainConfiguration(params).promise().toFuture
     @inline def createDynamicThingGroupFuture(
         params: CreateDynamicThingGroupRequest
-    ): Future[CreateDynamicThingGroupResponse] = service.createDynamicThingGroup(params).promise.toFuture
+    ): Future[CreateDynamicThingGroupResponse] = service.createDynamicThingGroup(params).promise().toFuture
     @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResponse] =
-      service.createJob(params).promise.toFuture
+      service.createJob(params).promise().toFuture
     @inline def createKeysAndCertificateFuture(
         params: CreateKeysAndCertificateRequest
-    ): Future[CreateKeysAndCertificateResponse] = service.createKeysAndCertificate(params).promise.toFuture
+    ): Future[CreateKeysAndCertificateResponse] = service.createKeysAndCertificate(params).promise().toFuture
     @inline def createMitigationActionFuture(
         params: CreateMitigationActionRequest
-    ): Future[CreateMitigationActionResponse] = service.createMitigationAction(params).promise.toFuture
+    ): Future[CreateMitigationActionResponse] = service.createMitigationAction(params).promise().toFuture
     @inline def createOTAUpdateFuture(params: CreateOTAUpdateRequest): Future[CreateOTAUpdateResponse] =
-      service.createOTAUpdate(params).promise.toFuture
+      service.createOTAUpdate(params).promise().toFuture
     @inline def createPolicyFuture(params: CreatePolicyRequest): Future[CreatePolicyResponse] =
-      service.createPolicy(params).promise.toFuture
+      service.createPolicy(params).promise().toFuture
     @inline def createPolicyVersionFuture(params: CreatePolicyVersionRequest): Future[CreatePolicyVersionResponse] =
-      service.createPolicyVersion(params).promise.toFuture
+      service.createPolicyVersion(params).promise().toFuture
     @inline def createProvisioningClaimFuture(
         params: CreateProvisioningClaimRequest
-    ): Future[CreateProvisioningClaimResponse] = service.createProvisioningClaim(params).promise.toFuture
+    ): Future[CreateProvisioningClaimResponse] = service.createProvisioningClaim(params).promise().toFuture
     @inline def createProvisioningTemplateFuture(
         params: CreateProvisioningTemplateRequest
-    ): Future[CreateProvisioningTemplateResponse] = service.createProvisioningTemplate(params).promise.toFuture
+    ): Future[CreateProvisioningTemplateResponse] = service.createProvisioningTemplate(params).promise().toFuture
     @inline def createProvisioningTemplateVersionFuture(
         params: CreateProvisioningTemplateVersionRequest
     ): Future[CreateProvisioningTemplateVersionResponse] =
-      service.createProvisioningTemplateVersion(params).promise.toFuture
+      service.createProvisioningTemplateVersion(params).promise().toFuture
     @inline def createRoleAliasFuture(params: CreateRoleAliasRequest): Future[CreateRoleAliasResponse] =
-      service.createRoleAlias(params).promise.toFuture
+      service.createRoleAlias(params).promise().toFuture
     @inline def createScheduledAuditFuture(params: CreateScheduledAuditRequest): Future[CreateScheduledAuditResponse] =
-      service.createScheduledAudit(params).promise.toFuture
+      service.createScheduledAudit(params).promise().toFuture
     @inline def createSecurityProfileFuture(
         params: CreateSecurityProfileRequest
-    ): Future[CreateSecurityProfileResponse] = service.createSecurityProfile(params).promise.toFuture
+    ): Future[CreateSecurityProfileResponse] = service.createSecurityProfile(params).promise().toFuture
     @inline def createStreamFuture(params: CreateStreamRequest): Future[CreateStreamResponse] =
-      service.createStream(params).promise.toFuture
+      service.createStream(params).promise().toFuture
     @inline def createThingFuture(params: CreateThingRequest): Future[CreateThingResponse] =
-      service.createThing(params).promise.toFuture
+      service.createThing(params).promise().toFuture
     @inline def createThingGroupFuture(params: CreateThingGroupRequest): Future[CreateThingGroupResponse] =
-      service.createThingGroup(params).promise.toFuture
+      service.createThingGroup(params).promise().toFuture
     @inline def createThingTypeFuture(params: CreateThingTypeRequest): Future[CreateThingTypeResponse] =
-      service.createThingType(params).promise.toFuture
+      service.createThingType(params).promise().toFuture
     @inline def createTopicRuleDestinationFuture(
         params: CreateTopicRuleDestinationRequest
-    ): Future[CreateTopicRuleDestinationResponse] = service.createTopicRuleDestination(params).promise.toFuture
+    ): Future[CreateTopicRuleDestinationResponse] = service.createTopicRuleDestination(params).promise().toFuture
     @inline def createTopicRuleFuture(params: CreateTopicRuleRequest): Future[js.Object] =
-      service.createTopicRule(params).promise.toFuture
+      service.createTopicRule(params).promise().toFuture
     @inline def deleteAccountAuditConfigurationFuture(
         params: DeleteAccountAuditConfigurationRequest
     ): Future[DeleteAccountAuditConfigurationResponse] =
-      service.deleteAccountAuditConfiguration(params).promise.toFuture
+      service.deleteAccountAuditConfiguration(params).promise().toFuture
     @inline def deleteAuthorizerFuture(params: DeleteAuthorizerRequest): Future[DeleteAuthorizerResponse] =
-      service.deleteAuthorizer(params).promise.toFuture
+      service.deleteAuthorizer(params).promise().toFuture
     @inline def deleteBillingGroupFuture(params: DeleteBillingGroupRequest): Future[DeleteBillingGroupResponse] =
-      service.deleteBillingGroup(params).promise.toFuture
+      service.deleteBillingGroup(params).promise().toFuture
     @inline def deleteCACertificateFuture(params: DeleteCACertificateRequest): Future[DeleteCACertificateResponse] =
-      service.deleteCACertificate(params).promise.toFuture
+      service.deleteCACertificate(params).promise().toFuture
     @inline def deleteCertificateFuture(params: DeleteCertificateRequest): Future[js.Object] =
-      service.deleteCertificate(params).promise.toFuture
+      service.deleteCertificate(params).promise().toFuture
     @inline def deleteDomainConfigurationFuture(
         params: DeleteDomainConfigurationRequest
-    ): Future[DeleteDomainConfigurationResponse] = service.deleteDomainConfiguration(params).promise.toFuture
+    ): Future[DeleteDomainConfigurationResponse] = service.deleteDomainConfiguration(params).promise().toFuture
     @inline def deleteDynamicThingGroupFuture(
         params: DeleteDynamicThingGroupRequest
-    ): Future[DeleteDynamicThingGroupResponse] = service.deleteDynamicThingGroup(params).promise.toFuture
+    ): Future[DeleteDynamicThingGroupResponse] = service.deleteDynamicThingGroup(params).promise().toFuture
     @inline def deleteJobExecutionFuture(params: DeleteJobExecutionRequest): Future[js.Object] =
-      service.deleteJobExecution(params).promise.toFuture
+      service.deleteJobExecution(params).promise().toFuture
     @inline def deleteJobFuture(params: DeleteJobRequest): Future[js.Object] =
-      service.deleteJob(params).promise.toFuture
+      service.deleteJob(params).promise().toFuture
     @inline def deleteMitigationActionFuture(
         params: DeleteMitigationActionRequest
-    ): Future[DeleteMitigationActionResponse] = service.deleteMitigationAction(params).promise.toFuture
+    ): Future[DeleteMitigationActionResponse] = service.deleteMitigationAction(params).promise().toFuture
     @inline def deleteOTAUpdateFuture(params: DeleteOTAUpdateRequest): Future[DeleteOTAUpdateResponse] =
-      service.deleteOTAUpdate(params).promise.toFuture
+      service.deleteOTAUpdate(params).promise().toFuture
     @inline def deletePolicyFuture(params: DeletePolicyRequest): Future[js.Object] =
-      service.deletePolicy(params).promise.toFuture
+      service.deletePolicy(params).promise().toFuture
     @inline def deletePolicyVersionFuture(params: DeletePolicyVersionRequest): Future[js.Object] =
-      service.deletePolicyVersion(params).promise.toFuture
+      service.deletePolicyVersion(params).promise().toFuture
     @inline def deleteProvisioningTemplateFuture(
         params: DeleteProvisioningTemplateRequest
-    ): Future[DeleteProvisioningTemplateResponse] = service.deleteProvisioningTemplate(params).promise.toFuture
+    ): Future[DeleteProvisioningTemplateResponse] = service.deleteProvisioningTemplate(params).promise().toFuture
     @inline def deleteProvisioningTemplateVersionFuture(
         params: DeleteProvisioningTemplateVersionRequest
     ): Future[DeleteProvisioningTemplateVersionResponse] =
-      service.deleteProvisioningTemplateVersion(params).promise.toFuture
+      service.deleteProvisioningTemplateVersion(params).promise().toFuture
     @inline def deleteRegistrationCodeFuture(
         params: DeleteRegistrationCodeRequest
-    ): Future[DeleteRegistrationCodeResponse] = service.deleteRegistrationCode(params).promise.toFuture
+    ): Future[DeleteRegistrationCodeResponse] = service.deleteRegistrationCode(params).promise().toFuture
     @inline def deleteRoleAliasFuture(params: DeleteRoleAliasRequest): Future[DeleteRoleAliasResponse] =
-      service.deleteRoleAlias(params).promise.toFuture
+      service.deleteRoleAlias(params).promise().toFuture
     @inline def deleteScheduledAuditFuture(params: DeleteScheduledAuditRequest): Future[DeleteScheduledAuditResponse] =
-      service.deleteScheduledAudit(params).promise.toFuture
+      service.deleteScheduledAudit(params).promise().toFuture
     @inline def deleteSecurityProfileFuture(
         params: DeleteSecurityProfileRequest
-    ): Future[DeleteSecurityProfileResponse] = service.deleteSecurityProfile(params).promise.toFuture
+    ): Future[DeleteSecurityProfileResponse] = service.deleteSecurityProfile(params).promise().toFuture
     @inline def deleteStreamFuture(params: DeleteStreamRequest): Future[DeleteStreamResponse] =
-      service.deleteStream(params).promise.toFuture
+      service.deleteStream(params).promise().toFuture
     @inline def deleteThingFuture(params: DeleteThingRequest): Future[DeleteThingResponse] =
-      service.deleteThing(params).promise.toFuture
+      service.deleteThing(params).promise().toFuture
     @inline def deleteThingGroupFuture(params: DeleteThingGroupRequest): Future[DeleteThingGroupResponse] =
-      service.deleteThingGroup(params).promise.toFuture
+      service.deleteThingGroup(params).promise().toFuture
     @inline def deleteThingTypeFuture(params: DeleteThingTypeRequest): Future[DeleteThingTypeResponse] =
-      service.deleteThingType(params).promise.toFuture
+      service.deleteThingType(params).promise().toFuture
     @inline def deleteTopicRuleDestinationFuture(
         params: DeleteTopicRuleDestinationRequest
-    ): Future[DeleteTopicRuleDestinationResponse] = service.deleteTopicRuleDestination(params).promise.toFuture
+    ): Future[DeleteTopicRuleDestinationResponse] = service.deleteTopicRuleDestination(params).promise().toFuture
     @inline def deleteTopicRuleFuture(params: DeleteTopicRuleRequest): Future[js.Object] =
-      service.deleteTopicRule(params).promise.toFuture
+      service.deleteTopicRule(params).promise().toFuture
     @inline def deleteV2LoggingLevelFuture(params: DeleteV2LoggingLevelRequest): Future[js.Object] =
-      service.deleteV2LoggingLevel(params).promise.toFuture
+      service.deleteV2LoggingLevel(params).promise().toFuture
     @inline def deprecateThingTypeFuture(params: DeprecateThingTypeRequest): Future[DeprecateThingTypeResponse] =
-      service.deprecateThingType(params).promise.toFuture
+      service.deprecateThingType(params).promise().toFuture
     @inline def describeAccountAuditConfigurationFuture(
         params: DescribeAccountAuditConfigurationRequest
     ): Future[DescribeAccountAuditConfigurationResponse] =
-      service.describeAccountAuditConfiguration(params).promise.toFuture
+      service.describeAccountAuditConfiguration(params).promise().toFuture
     @inline def describeAuditFindingFuture(params: DescribeAuditFindingRequest): Future[DescribeAuditFindingResponse] =
-      service.describeAuditFinding(params).promise.toFuture
+      service.describeAuditFinding(params).promise().toFuture
     @inline def describeAuditMitigationActionsTaskFuture(
         params: DescribeAuditMitigationActionsTaskRequest
     ): Future[DescribeAuditMitigationActionsTaskResponse] =
-      service.describeAuditMitigationActionsTask(params).promise.toFuture
+      service.describeAuditMitigationActionsTask(params).promise().toFuture
     @inline def describeAuditTaskFuture(params: DescribeAuditTaskRequest): Future[DescribeAuditTaskResponse] =
-      service.describeAuditTask(params).promise.toFuture
+      service.describeAuditTask(params).promise().toFuture
     @inline def describeAuthorizerFuture(params: DescribeAuthorizerRequest): Future[DescribeAuthorizerResponse] =
-      service.describeAuthorizer(params).promise.toFuture
+      service.describeAuthorizer(params).promise().toFuture
     @inline def describeBillingGroupFuture(params: DescribeBillingGroupRequest): Future[DescribeBillingGroupResponse] =
-      service.describeBillingGroup(params).promise.toFuture
+      service.describeBillingGroup(params).promise().toFuture
     @inline def describeCACertificateFuture(
         params: DescribeCACertificateRequest
-    ): Future[DescribeCACertificateResponse] = service.describeCACertificate(params).promise.toFuture
+    ): Future[DescribeCACertificateResponse] = service.describeCACertificate(params).promise().toFuture
     @inline def describeCertificateFuture(params: DescribeCertificateRequest): Future[DescribeCertificateResponse] =
-      service.describeCertificate(params).promise.toFuture
+      service.describeCertificate(params).promise().toFuture
     @inline def describeDefaultAuthorizerFuture(
         params: DescribeDefaultAuthorizerRequest
-    ): Future[DescribeDefaultAuthorizerResponse] = service.describeDefaultAuthorizer(params).promise.toFuture
+    ): Future[DescribeDefaultAuthorizerResponse] = service.describeDefaultAuthorizer(params).promise().toFuture
     @inline def describeDomainConfigurationFuture(
         params: DescribeDomainConfigurationRequest
-    ): Future[DescribeDomainConfigurationResponse] = service.describeDomainConfiguration(params).promise.toFuture
+    ): Future[DescribeDomainConfigurationResponse] = service.describeDomainConfiguration(params).promise().toFuture
     @inline def describeEndpointFuture(params: DescribeEndpointRequest): Future[DescribeEndpointResponse] =
-      service.describeEndpoint(params).promise.toFuture
+      service.describeEndpoint(params).promise().toFuture
     @inline def describeEventConfigurationsFuture(
         params: DescribeEventConfigurationsRequest
-    ): Future[DescribeEventConfigurationsResponse] = service.describeEventConfigurations(params).promise.toFuture
+    ): Future[DescribeEventConfigurationsResponse] = service.describeEventConfigurations(params).promise().toFuture
     @inline def describeIndexFuture(params: DescribeIndexRequest): Future[DescribeIndexResponse] =
-      service.describeIndex(params).promise.toFuture
+      service.describeIndex(params).promise().toFuture
     @inline def describeJobExecutionFuture(params: DescribeJobExecutionRequest): Future[DescribeJobExecutionResponse] =
-      service.describeJobExecution(params).promise.toFuture
+      service.describeJobExecution(params).promise().toFuture
     @inline def describeJobFuture(params: DescribeJobRequest): Future[DescribeJobResponse] =
-      service.describeJob(params).promise.toFuture
+      service.describeJob(params).promise().toFuture
     @inline def describeMitigationActionFuture(
         params: DescribeMitigationActionRequest
-    ): Future[DescribeMitigationActionResponse] = service.describeMitigationAction(params).promise.toFuture
+    ): Future[DescribeMitigationActionResponse] = service.describeMitigationAction(params).promise().toFuture
     @inline def describeProvisioningTemplateFuture(
         params: DescribeProvisioningTemplateRequest
-    ): Future[DescribeProvisioningTemplateResponse] = service.describeProvisioningTemplate(params).promise.toFuture
+    ): Future[DescribeProvisioningTemplateResponse] = service.describeProvisioningTemplate(params).promise().toFuture
     @inline def describeProvisioningTemplateVersionFuture(
         params: DescribeProvisioningTemplateVersionRequest
     ): Future[DescribeProvisioningTemplateVersionResponse] =
-      service.describeProvisioningTemplateVersion(params).promise.toFuture
+      service.describeProvisioningTemplateVersion(params).promise().toFuture
     @inline def describeRoleAliasFuture(params: DescribeRoleAliasRequest): Future[DescribeRoleAliasResponse] =
-      service.describeRoleAlias(params).promise.toFuture
+      service.describeRoleAlias(params).promise().toFuture
     @inline def describeScheduledAuditFuture(
         params: DescribeScheduledAuditRequest
-    ): Future[DescribeScheduledAuditResponse] = service.describeScheduledAudit(params).promise.toFuture
+    ): Future[DescribeScheduledAuditResponse] = service.describeScheduledAudit(params).promise().toFuture
     @inline def describeSecurityProfileFuture(
         params: DescribeSecurityProfileRequest
-    ): Future[DescribeSecurityProfileResponse] = service.describeSecurityProfile(params).promise.toFuture
+    ): Future[DescribeSecurityProfileResponse] = service.describeSecurityProfile(params).promise().toFuture
     @inline def describeStreamFuture(params: DescribeStreamRequest): Future[DescribeStreamResponse] =
-      service.describeStream(params).promise.toFuture
+      service.describeStream(params).promise().toFuture
     @inline def describeThingFuture(params: DescribeThingRequest): Future[DescribeThingResponse] =
-      service.describeThing(params).promise.toFuture
+      service.describeThing(params).promise().toFuture
     @inline def describeThingGroupFuture(params: DescribeThingGroupRequest): Future[DescribeThingGroupResponse] =
-      service.describeThingGroup(params).promise.toFuture
+      service.describeThingGroup(params).promise().toFuture
     @inline def describeThingRegistrationTaskFuture(
         params: DescribeThingRegistrationTaskRequest
-    ): Future[DescribeThingRegistrationTaskResponse] = service.describeThingRegistrationTask(params).promise.toFuture
+    ): Future[DescribeThingRegistrationTaskResponse] = service.describeThingRegistrationTask(params).promise().toFuture
     @inline def describeThingTypeFuture(params: DescribeThingTypeRequest): Future[DescribeThingTypeResponse] =
-      service.describeThingType(params).promise.toFuture
+      service.describeThingType(params).promise().toFuture
     @inline def detachPolicyFuture(params: DetachPolicyRequest): Future[js.Object] =
-      service.detachPolicy(params).promise.toFuture
+      service.detachPolicy(params).promise().toFuture
     @inline def detachSecurityProfileFuture(
         params: DetachSecurityProfileRequest
-    ): Future[DetachSecurityProfileResponse] = service.detachSecurityProfile(params).promise.toFuture
+    ): Future[DetachSecurityProfileResponse] = service.detachSecurityProfile(params).promise().toFuture
     @inline def detachThingPrincipalFuture(params: DetachThingPrincipalRequest): Future[DetachThingPrincipalResponse] =
-      service.detachThingPrincipal(params).promise.toFuture
+      service.detachThingPrincipal(params).promise().toFuture
     @inline def disableTopicRuleFuture(params: DisableTopicRuleRequest): Future[js.Object] =
-      service.disableTopicRule(params).promise.toFuture
+      service.disableTopicRule(params).promise().toFuture
     @inline def enableTopicRuleFuture(params: EnableTopicRuleRequest): Future[js.Object] =
-      service.enableTopicRule(params).promise.toFuture
+      service.enableTopicRule(params).promise().toFuture
     @inline def getCardinalityFuture(params: GetCardinalityRequest): Future[GetCardinalityResponse] =
-      service.getCardinality(params).promise.toFuture
+      service.getCardinality(params).promise().toFuture
     @inline def getEffectivePoliciesFuture(params: GetEffectivePoliciesRequest): Future[GetEffectivePoliciesResponse] =
-      service.getEffectivePolicies(params).promise.toFuture
+      service.getEffectivePolicies(params).promise().toFuture
     @inline def getIndexingConfigurationFuture(
         params: GetIndexingConfigurationRequest
-    ): Future[GetIndexingConfigurationResponse] = service.getIndexingConfiguration(params).promise.toFuture
+    ): Future[GetIndexingConfigurationResponse] = service.getIndexingConfiguration(params).promise().toFuture
     @inline def getJobDocumentFuture(params: GetJobDocumentRequest): Future[GetJobDocumentResponse] =
-      service.getJobDocument(params).promise.toFuture
+      service.getJobDocument(params).promise().toFuture
     @inline def getLoggingOptionsFuture(params: GetLoggingOptionsRequest): Future[GetLoggingOptionsResponse] =
-      service.getLoggingOptions(params).promise.toFuture
+      service.getLoggingOptions(params).promise().toFuture
     @inline def getOTAUpdateFuture(params: GetOTAUpdateRequest): Future[GetOTAUpdateResponse] =
-      service.getOTAUpdate(params).promise.toFuture
+      service.getOTAUpdate(params).promise().toFuture
     @inline def getPercentilesFuture(params: GetPercentilesRequest): Future[GetPercentilesResponse] =
-      service.getPercentiles(params).promise.toFuture
+      service.getPercentiles(params).promise().toFuture
     @inline def getPolicyFuture(params: GetPolicyRequest): Future[GetPolicyResponse] =
-      service.getPolicy(params).promise.toFuture
+      service.getPolicy(params).promise().toFuture
     @inline def getPolicyVersionFuture(params: GetPolicyVersionRequest): Future[GetPolicyVersionResponse] =
-      service.getPolicyVersion(params).promise.toFuture
+      service.getPolicyVersion(params).promise().toFuture
     @inline def getRegistrationCodeFuture(params: GetRegistrationCodeRequest): Future[GetRegistrationCodeResponse] =
-      service.getRegistrationCode(params).promise.toFuture
+      service.getRegistrationCode(params).promise().toFuture
     @inline def getStatisticsFuture(params: GetStatisticsRequest): Future[GetStatisticsResponse] =
-      service.getStatistics(params).promise.toFuture
+      service.getStatistics(params).promise().toFuture
     @inline def getTopicRuleDestinationFuture(
         params: GetTopicRuleDestinationRequest
-    ): Future[GetTopicRuleDestinationResponse] = service.getTopicRuleDestination(params).promise.toFuture
+    ): Future[GetTopicRuleDestinationResponse] = service.getTopicRuleDestination(params).promise().toFuture
     @inline def getTopicRuleFuture(params: GetTopicRuleRequest): Future[GetTopicRuleResponse] =
-      service.getTopicRule(params).promise.toFuture
+      service.getTopicRule(params).promise().toFuture
     @inline def getV2LoggingOptionsFuture(params: GetV2LoggingOptionsRequest): Future[GetV2LoggingOptionsResponse] =
-      service.getV2LoggingOptions(params).promise.toFuture
+      service.getV2LoggingOptions(params).promise().toFuture
     @inline def listActiveViolationsFuture(params: ListActiveViolationsRequest): Future[ListActiveViolationsResponse] =
-      service.listActiveViolations(params).promise.toFuture
+      service.listActiveViolations(params).promise().toFuture
     @inline def listAttachedPoliciesFuture(params: ListAttachedPoliciesRequest): Future[ListAttachedPoliciesResponse] =
-      service.listAttachedPolicies(params).promise.toFuture
+      service.listAttachedPolicies(params).promise().toFuture
     @inline def listAuditFindingsFuture(params: ListAuditFindingsRequest): Future[ListAuditFindingsResponse] =
-      service.listAuditFindings(params).promise.toFuture
+      service.listAuditFindings(params).promise().toFuture
     @inline def listAuditMitigationActionsExecutionsFuture(
         params: ListAuditMitigationActionsExecutionsRequest
     ): Future[ListAuditMitigationActionsExecutionsResponse] =
-      service.listAuditMitigationActionsExecutions(params).promise.toFuture
+      service.listAuditMitigationActionsExecutions(params).promise().toFuture
     @inline def listAuditMitigationActionsTasksFuture(
         params: ListAuditMitigationActionsTasksRequest
     ): Future[ListAuditMitigationActionsTasksResponse] =
-      service.listAuditMitigationActionsTasks(params).promise.toFuture
+      service.listAuditMitigationActionsTasks(params).promise().toFuture
     @inline def listAuditTasksFuture(params: ListAuditTasksRequest): Future[ListAuditTasksResponse] =
-      service.listAuditTasks(params).promise.toFuture
+      service.listAuditTasks(params).promise().toFuture
     @inline def listAuthorizersFuture(params: ListAuthorizersRequest): Future[ListAuthorizersResponse] =
-      service.listAuthorizers(params).promise.toFuture
+      service.listAuthorizers(params).promise().toFuture
     @inline def listBillingGroupsFuture(params: ListBillingGroupsRequest): Future[ListBillingGroupsResponse] =
-      service.listBillingGroups(params).promise.toFuture
+      service.listBillingGroups(params).promise().toFuture
     @inline def listCACertificatesFuture(params: ListCACertificatesRequest): Future[ListCACertificatesResponse] =
-      service.listCACertificates(params).promise.toFuture
+      service.listCACertificates(params).promise().toFuture
     @inline def listCertificatesByCAFuture(params: ListCertificatesByCARequest): Future[ListCertificatesByCAResponse] =
-      service.listCertificatesByCA(params).promise.toFuture
+      service.listCertificatesByCA(params).promise().toFuture
     @inline def listCertificatesFuture(params: ListCertificatesRequest): Future[ListCertificatesResponse] =
-      service.listCertificates(params).promise.toFuture
+      service.listCertificates(params).promise().toFuture
     @inline def listDomainConfigurationsFuture(
         params: ListDomainConfigurationsRequest
-    ): Future[ListDomainConfigurationsResponse] = service.listDomainConfigurations(params).promise.toFuture
+    ): Future[ListDomainConfigurationsResponse] = service.listDomainConfigurations(params).promise().toFuture
     @inline def listIndicesFuture(params: ListIndicesRequest): Future[ListIndicesResponse] =
-      service.listIndices(params).promise.toFuture
+      service.listIndices(params).promise().toFuture
     @inline def listJobExecutionsForJobFuture(
         params: ListJobExecutionsForJobRequest
-    ): Future[ListJobExecutionsForJobResponse] = service.listJobExecutionsForJob(params).promise.toFuture
+    ): Future[ListJobExecutionsForJobResponse] = service.listJobExecutionsForJob(params).promise().toFuture
     @inline def listJobExecutionsForThingFuture(
         params: ListJobExecutionsForThingRequest
-    ): Future[ListJobExecutionsForThingResponse] = service.listJobExecutionsForThing(params).promise.toFuture
+    ): Future[ListJobExecutionsForThingResponse] = service.listJobExecutionsForThing(params).promise().toFuture
     @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResponse] =
-      service.listJobs(params).promise.toFuture
+      service.listJobs(params).promise().toFuture
     @inline def listMitigationActionsFuture(
         params: ListMitigationActionsRequest
-    ): Future[ListMitigationActionsResponse] = service.listMitigationActions(params).promise.toFuture
+    ): Future[ListMitigationActionsResponse] = service.listMitigationActions(params).promise().toFuture
     @inline def listOTAUpdatesFuture(params: ListOTAUpdatesRequest): Future[ListOTAUpdatesResponse] =
-      service.listOTAUpdates(params).promise.toFuture
+      service.listOTAUpdates(params).promise().toFuture
     @inline def listOutgoingCertificatesFuture(
         params: ListOutgoingCertificatesRequest
-    ): Future[ListOutgoingCertificatesResponse] = service.listOutgoingCertificates(params).promise.toFuture
+    ): Future[ListOutgoingCertificatesResponse] = service.listOutgoingCertificates(params).promise().toFuture
     @inline def listPoliciesFuture(params: ListPoliciesRequest): Future[ListPoliciesResponse] =
-      service.listPolicies(params).promise.toFuture
+      service.listPolicies(params).promise().toFuture
     @inline def listPolicyVersionsFuture(params: ListPolicyVersionsRequest): Future[ListPolicyVersionsResponse] =
-      service.listPolicyVersions(params).promise.toFuture
+      service.listPolicyVersions(params).promise().toFuture
     @inline def listPrincipalThingsFuture(params: ListPrincipalThingsRequest): Future[ListPrincipalThingsResponse] =
-      service.listPrincipalThings(params).promise.toFuture
+      service.listPrincipalThings(params).promise().toFuture
     @inline def listProvisioningTemplateVersionsFuture(
         params: ListProvisioningTemplateVersionsRequest
     ): Future[ListProvisioningTemplateVersionsResponse] =
-      service.listProvisioningTemplateVersions(params).promise.toFuture
+      service.listProvisioningTemplateVersions(params).promise().toFuture
     @inline def listProvisioningTemplatesFuture(
         params: ListProvisioningTemplatesRequest
-    ): Future[ListProvisioningTemplatesResponse] = service.listProvisioningTemplates(params).promise.toFuture
+    ): Future[ListProvisioningTemplatesResponse] = service.listProvisioningTemplates(params).promise().toFuture
     @inline def listRoleAliasesFuture(params: ListRoleAliasesRequest): Future[ListRoleAliasesResponse] =
-      service.listRoleAliases(params).promise.toFuture
+      service.listRoleAliases(params).promise().toFuture
     @inline def listScheduledAuditsFuture(params: ListScheduledAuditsRequest): Future[ListScheduledAuditsResponse] =
-      service.listScheduledAudits(params).promise.toFuture
+      service.listScheduledAudits(params).promise().toFuture
     @inline def listSecurityProfilesForTargetFuture(
         params: ListSecurityProfilesForTargetRequest
-    ): Future[ListSecurityProfilesForTargetResponse] = service.listSecurityProfilesForTarget(params).promise.toFuture
+    ): Future[ListSecurityProfilesForTargetResponse] = service.listSecurityProfilesForTarget(params).promise().toFuture
     @inline def listSecurityProfilesFuture(params: ListSecurityProfilesRequest): Future[ListSecurityProfilesResponse] =
-      service.listSecurityProfiles(params).promise.toFuture
+      service.listSecurityProfiles(params).promise().toFuture
     @inline def listStreamsFuture(params: ListStreamsRequest): Future[ListStreamsResponse] =
-      service.listStreams(params).promise.toFuture
+      service.listStreams(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def listTargetsForPolicyFuture(params: ListTargetsForPolicyRequest): Future[ListTargetsForPolicyResponse] =
-      service.listTargetsForPolicy(params).promise.toFuture
+      service.listTargetsForPolicy(params).promise().toFuture
     @inline def listTargetsForSecurityProfileFuture(
         params: ListTargetsForSecurityProfileRequest
-    ): Future[ListTargetsForSecurityProfileResponse] = service.listTargetsForSecurityProfile(params).promise.toFuture
+    ): Future[ListTargetsForSecurityProfileResponse] = service.listTargetsForSecurityProfile(params).promise().toFuture
     @inline def listThingGroupsForThingFuture(
         params: ListThingGroupsForThingRequest
-    ): Future[ListThingGroupsForThingResponse] = service.listThingGroupsForThing(params).promise.toFuture
+    ): Future[ListThingGroupsForThingResponse] = service.listThingGroupsForThing(params).promise().toFuture
     @inline def listThingGroupsFuture(params: ListThingGroupsRequest): Future[ListThingGroupsResponse] =
-      service.listThingGroups(params).promise.toFuture
+      service.listThingGroups(params).promise().toFuture
     @inline def listThingPrincipalsFuture(params: ListThingPrincipalsRequest): Future[ListThingPrincipalsResponse] =
-      service.listThingPrincipals(params).promise.toFuture
+      service.listThingPrincipals(params).promise().toFuture
     @inline def listThingRegistrationTaskReportsFuture(
         params: ListThingRegistrationTaskReportsRequest
     ): Future[ListThingRegistrationTaskReportsResponse] =
-      service.listThingRegistrationTaskReports(params).promise.toFuture
+      service.listThingRegistrationTaskReports(params).promise().toFuture
     @inline def listThingRegistrationTasksFuture(
         params: ListThingRegistrationTasksRequest
-    ): Future[ListThingRegistrationTasksResponse] = service.listThingRegistrationTasks(params).promise.toFuture
+    ): Future[ListThingRegistrationTasksResponse] = service.listThingRegistrationTasks(params).promise().toFuture
     @inline def listThingTypesFuture(params: ListThingTypesRequest): Future[ListThingTypesResponse] =
-      service.listThingTypes(params).promise.toFuture
+      service.listThingTypes(params).promise().toFuture
     @inline def listThingsFuture(params: ListThingsRequest): Future[ListThingsResponse] =
-      service.listThings(params).promise.toFuture
+      service.listThings(params).promise().toFuture
     @inline def listThingsInBillingGroupFuture(
         params: ListThingsInBillingGroupRequest
-    ): Future[ListThingsInBillingGroupResponse] = service.listThingsInBillingGroup(params).promise.toFuture
+    ): Future[ListThingsInBillingGroupResponse] = service.listThingsInBillingGroup(params).promise().toFuture
     @inline def listThingsInThingGroupFuture(
         params: ListThingsInThingGroupRequest
-    ): Future[ListThingsInThingGroupResponse] = service.listThingsInThingGroup(params).promise.toFuture
+    ): Future[ListThingsInThingGroupResponse] = service.listThingsInThingGroup(params).promise().toFuture
     @inline def listTopicRuleDestinationsFuture(
         params: ListTopicRuleDestinationsRequest
-    ): Future[ListTopicRuleDestinationsResponse] = service.listTopicRuleDestinations(params).promise.toFuture
+    ): Future[ListTopicRuleDestinationsResponse] = service.listTopicRuleDestinations(params).promise().toFuture
     @inline def listTopicRulesFuture(params: ListTopicRulesRequest): Future[ListTopicRulesResponse] =
-      service.listTopicRules(params).promise.toFuture
+      service.listTopicRules(params).promise().toFuture
     @inline def listV2LoggingLevelsFuture(params: ListV2LoggingLevelsRequest): Future[ListV2LoggingLevelsResponse] =
-      service.listV2LoggingLevels(params).promise.toFuture
+      service.listV2LoggingLevels(params).promise().toFuture
     @inline def listViolationEventsFuture(params: ListViolationEventsRequest): Future[ListViolationEventsResponse] =
-      service.listViolationEvents(params).promise.toFuture
+      service.listViolationEvents(params).promise().toFuture
     @inline def registerCACertificateFuture(
         params: RegisterCACertificateRequest
-    ): Future[RegisterCACertificateResponse] = service.registerCACertificate(params).promise.toFuture
+    ): Future[RegisterCACertificateResponse] = service.registerCACertificate(params).promise().toFuture
     @inline def registerCertificateFuture(params: RegisterCertificateRequest): Future[RegisterCertificateResponse] =
-      service.registerCertificate(params).promise.toFuture
+      service.registerCertificate(params).promise().toFuture
     @inline def registerThingFuture(params: RegisterThingRequest): Future[RegisterThingResponse] =
-      service.registerThing(params).promise.toFuture
+      service.registerThing(params).promise().toFuture
     @inline def rejectCertificateTransferFuture(params: RejectCertificateTransferRequest): Future[js.Object] =
-      service.rejectCertificateTransfer(params).promise.toFuture
+      service.rejectCertificateTransfer(params).promise().toFuture
     @inline def removeThingFromBillingGroupFuture(
         params: RemoveThingFromBillingGroupRequest
-    ): Future[RemoveThingFromBillingGroupResponse] = service.removeThingFromBillingGroup(params).promise.toFuture
+    ): Future[RemoveThingFromBillingGroupResponse] = service.removeThingFromBillingGroup(params).promise().toFuture
     @inline def removeThingFromThingGroupFuture(
         params: RemoveThingFromThingGroupRequest
-    ): Future[RemoveThingFromThingGroupResponse] = service.removeThingFromThingGroup(params).promise.toFuture
+    ): Future[RemoveThingFromThingGroupResponse] = service.removeThingFromThingGroup(params).promise().toFuture
     @inline def replaceTopicRuleFuture(params: ReplaceTopicRuleRequest): Future[js.Object] =
-      service.replaceTopicRule(params).promise.toFuture
+      service.replaceTopicRule(params).promise().toFuture
     @inline def searchIndexFuture(params: SearchIndexRequest): Future[SearchIndexResponse] =
-      service.searchIndex(params).promise.toFuture
+      service.searchIndex(params).promise().toFuture
     @inline def setDefaultAuthorizerFuture(params: SetDefaultAuthorizerRequest): Future[SetDefaultAuthorizerResponse] =
-      service.setDefaultAuthorizer(params).promise.toFuture
+      service.setDefaultAuthorizer(params).promise().toFuture
     @inline def setDefaultPolicyVersionFuture(params: SetDefaultPolicyVersionRequest): Future[js.Object] =
-      service.setDefaultPolicyVersion(params).promise.toFuture
+      service.setDefaultPolicyVersion(params).promise().toFuture
     @inline def setLoggingOptionsFuture(params: SetLoggingOptionsRequest): Future[js.Object] =
-      service.setLoggingOptions(params).promise.toFuture
+      service.setLoggingOptions(params).promise().toFuture
     @inline def setV2LoggingLevelFuture(params: SetV2LoggingLevelRequest): Future[js.Object] =
-      service.setV2LoggingLevel(params).promise.toFuture
+      service.setV2LoggingLevel(params).promise().toFuture
     @inline def setV2LoggingOptionsFuture(params: SetV2LoggingOptionsRequest): Future[js.Object] =
-      service.setV2LoggingOptions(params).promise.toFuture
+      service.setV2LoggingOptions(params).promise().toFuture
     @inline def startAuditMitigationActionsTaskFuture(
         params: StartAuditMitigationActionsTaskRequest
     ): Future[StartAuditMitigationActionsTaskResponse] =
-      service.startAuditMitigationActionsTask(params).promise.toFuture
+      service.startAuditMitigationActionsTask(params).promise().toFuture
     @inline def startOnDemandAuditTaskFuture(
         params: StartOnDemandAuditTaskRequest
-    ): Future[StartOnDemandAuditTaskResponse] = service.startOnDemandAuditTask(params).promise.toFuture
+    ): Future[StartOnDemandAuditTaskResponse] = service.startOnDemandAuditTask(params).promise().toFuture
     @inline def startThingRegistrationTaskFuture(
         params: StartThingRegistrationTaskRequest
-    ): Future[StartThingRegistrationTaskResponse] = service.startThingRegistrationTask(params).promise.toFuture
+    ): Future[StartThingRegistrationTaskResponse] = service.startThingRegistrationTask(params).promise().toFuture
     @inline def stopThingRegistrationTaskFuture(
         params: StopThingRegistrationTaskRequest
-    ): Future[StopThingRegistrationTaskResponse] = service.stopThingRegistrationTask(params).promise.toFuture
+    ): Future[StopThingRegistrationTaskResponse] = service.stopThingRegistrationTask(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def testAuthorizationFuture(params: TestAuthorizationRequest): Future[TestAuthorizationResponse] =
-      service.testAuthorization(params).promise.toFuture
+      service.testAuthorization(params).promise().toFuture
     @inline def testInvokeAuthorizerFuture(params: TestInvokeAuthorizerRequest): Future[TestInvokeAuthorizerResponse] =
-      service.testInvokeAuthorizer(params).promise.toFuture
+      service.testInvokeAuthorizer(params).promise().toFuture
     @inline def transferCertificateFuture(params: TransferCertificateRequest): Future[TransferCertificateResponse] =
-      service.transferCertificate(params).promise.toFuture
+      service.transferCertificate(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateAccountAuditConfigurationFuture(
         params: UpdateAccountAuditConfigurationRequest
     ): Future[UpdateAccountAuditConfigurationResponse] =
-      service.updateAccountAuditConfiguration(params).promise.toFuture
+      service.updateAccountAuditConfiguration(params).promise().toFuture
     @inline def updateAuthorizerFuture(params: UpdateAuthorizerRequest): Future[UpdateAuthorizerResponse] =
-      service.updateAuthorizer(params).promise.toFuture
+      service.updateAuthorizer(params).promise().toFuture
     @inline def updateBillingGroupFuture(params: UpdateBillingGroupRequest): Future[UpdateBillingGroupResponse] =
-      service.updateBillingGroup(params).promise.toFuture
+      service.updateBillingGroup(params).promise().toFuture
     @inline def updateCACertificateFuture(params: UpdateCACertificateRequest): Future[js.Object] =
-      service.updateCACertificate(params).promise.toFuture
+      service.updateCACertificate(params).promise().toFuture
     @inline def updateCertificateFuture(params: UpdateCertificateRequest): Future[js.Object] =
-      service.updateCertificate(params).promise.toFuture
+      service.updateCertificate(params).promise().toFuture
     @inline def updateDomainConfigurationFuture(
         params: UpdateDomainConfigurationRequest
-    ): Future[UpdateDomainConfigurationResponse] = service.updateDomainConfiguration(params).promise.toFuture
+    ): Future[UpdateDomainConfigurationResponse] = service.updateDomainConfiguration(params).promise().toFuture
     @inline def updateDynamicThingGroupFuture(
         params: UpdateDynamicThingGroupRequest
-    ): Future[UpdateDynamicThingGroupResponse] = service.updateDynamicThingGroup(params).promise.toFuture
+    ): Future[UpdateDynamicThingGroupResponse] = service.updateDynamicThingGroup(params).promise().toFuture
     @inline def updateEventConfigurationsFuture(
         params: UpdateEventConfigurationsRequest
-    ): Future[UpdateEventConfigurationsResponse] = service.updateEventConfigurations(params).promise.toFuture
+    ): Future[UpdateEventConfigurationsResponse] = service.updateEventConfigurations(params).promise().toFuture
     @inline def updateIndexingConfigurationFuture(
         params: UpdateIndexingConfigurationRequest
-    ): Future[UpdateIndexingConfigurationResponse] = service.updateIndexingConfiguration(params).promise.toFuture
+    ): Future[UpdateIndexingConfigurationResponse] = service.updateIndexingConfiguration(params).promise().toFuture
     @inline def updateJobFuture(params: UpdateJobRequest): Future[js.Object] =
-      service.updateJob(params).promise.toFuture
+      service.updateJob(params).promise().toFuture
     @inline def updateMitigationActionFuture(
         params: UpdateMitigationActionRequest
-    ): Future[UpdateMitigationActionResponse] = service.updateMitigationAction(params).promise.toFuture
+    ): Future[UpdateMitigationActionResponse] = service.updateMitigationAction(params).promise().toFuture
     @inline def updateProvisioningTemplateFuture(
         params: UpdateProvisioningTemplateRequest
-    ): Future[UpdateProvisioningTemplateResponse] = service.updateProvisioningTemplate(params).promise.toFuture
+    ): Future[UpdateProvisioningTemplateResponse] = service.updateProvisioningTemplate(params).promise().toFuture
     @inline def updateRoleAliasFuture(params: UpdateRoleAliasRequest): Future[UpdateRoleAliasResponse] =
-      service.updateRoleAlias(params).promise.toFuture
+      service.updateRoleAlias(params).promise().toFuture
     @inline def updateScheduledAuditFuture(params: UpdateScheduledAuditRequest): Future[UpdateScheduledAuditResponse] =
-      service.updateScheduledAudit(params).promise.toFuture
+      service.updateScheduledAudit(params).promise().toFuture
     @inline def updateSecurityProfileFuture(
         params: UpdateSecurityProfileRequest
-    ): Future[UpdateSecurityProfileResponse] = service.updateSecurityProfile(params).promise.toFuture
+    ): Future[UpdateSecurityProfileResponse] = service.updateSecurityProfile(params).promise().toFuture
     @inline def updateStreamFuture(params: UpdateStreamRequest): Future[UpdateStreamResponse] =
-      service.updateStream(params).promise.toFuture
+      service.updateStream(params).promise().toFuture
     @inline def updateThingFuture(params: UpdateThingRequest): Future[UpdateThingResponse] =
-      service.updateThing(params).promise.toFuture
+      service.updateThing(params).promise().toFuture
     @inline def updateThingGroupFuture(params: UpdateThingGroupRequest): Future[UpdateThingGroupResponse] =
-      service.updateThingGroup(params).promise.toFuture
+      service.updateThingGroup(params).promise().toFuture
     @inline def updateThingGroupsForThingFuture(
         params: UpdateThingGroupsForThingRequest
-    ): Future[UpdateThingGroupsForThingResponse] = service.updateThingGroupsForThing(params).promise.toFuture
+    ): Future[UpdateThingGroupsForThingResponse] = service.updateThingGroupsForThing(params).promise().toFuture
     @inline def updateTopicRuleDestinationFuture(
         params: UpdateTopicRuleDestinationRequest
-    ): Future[UpdateTopicRuleDestinationResponse] = service.updateTopicRuleDestination(params).promise.toFuture
+    ): Future[UpdateTopicRuleDestinationResponse] = service.updateTopicRuleDestination(params).promise().toFuture
     @inline def validateSecurityProfileBehaviorsFuture(
         params: ValidateSecurityProfileBehaviorsRequest
     ): Future[ValidateSecurityProfileBehaviorsResponse] =
-      service.validateSecurityProfileBehaviors(params).promise.toFuture
+      service.validateSecurityProfileBehaviors(params).promise().toFuture
   }
 }
 

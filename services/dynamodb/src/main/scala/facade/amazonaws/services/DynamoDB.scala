@@ -143,94 +143,95 @@ package object dynamodb {
   implicit final class DynamoDBOps(private val service: DynamoDB) extends AnyVal {
 
     @inline def batchGetItemFuture(params: BatchGetItemInput): Future[BatchGetItemOutput] =
-      service.batchGetItem(params).promise.toFuture
+      service.batchGetItem(params).promise().toFuture
     @inline def batchWriteItemFuture(params: BatchWriteItemInput): Future[BatchWriteItemOutput] =
-      service.batchWriteItem(params).promise.toFuture
+      service.batchWriteItem(params).promise().toFuture
     @inline def createBackupFuture(params: CreateBackupInput): Future[CreateBackupOutput] =
-      service.createBackup(params).promise.toFuture
+      service.createBackup(params).promise().toFuture
     @inline def createGlobalTableFuture(params: CreateGlobalTableInput): Future[CreateGlobalTableOutput] =
-      service.createGlobalTable(params).promise.toFuture
+      service.createGlobalTable(params).promise().toFuture
     @inline def createTableFuture(params: CreateTableInput): Future[CreateTableOutput] =
-      service.createTable(params).promise.toFuture
+      service.createTable(params).promise().toFuture
     @inline def deleteBackupFuture(params: DeleteBackupInput): Future[DeleteBackupOutput] =
-      service.deleteBackup(params).promise.toFuture
+      service.deleteBackup(params).promise().toFuture
     @inline def deleteItemFuture(params: DeleteItemInput): Future[DeleteItemOutput] =
-      service.deleteItem(params).promise.toFuture
+      service.deleteItem(params).promise().toFuture
     @inline def deleteTableFuture(params: DeleteTableInput): Future[DeleteTableOutput] =
-      service.deleteTable(params).promise.toFuture
+      service.deleteTable(params).promise().toFuture
     @inline def describeBackupFuture(params: DescribeBackupInput): Future[DescribeBackupOutput] =
-      service.describeBackup(params).promise.toFuture
+      service.describeBackup(params).promise().toFuture
     @inline def describeContinuousBackupsFuture(
         params: DescribeContinuousBackupsInput
-    ): Future[DescribeContinuousBackupsOutput] = service.describeContinuousBackups(params).promise.toFuture
+    ): Future[DescribeContinuousBackupsOutput] = service.describeContinuousBackups(params).promise().toFuture
     @inline def describeContributorInsightsFuture(
         params: DescribeContributorInsightsInput
-    ): Future[DescribeContributorInsightsOutput] = service.describeContributorInsights(params).promise.toFuture
+    ): Future[DescribeContributorInsightsOutput] = service.describeContributorInsights(params).promise().toFuture
     @inline def describeEndpointsFuture(params: DescribeEndpointsRequest): Future[DescribeEndpointsResponse] =
-      service.describeEndpoints(params).promise.toFuture
+      service.describeEndpoints(params).promise().toFuture
     @inline def describeGlobalTableFuture(params: DescribeGlobalTableInput): Future[DescribeGlobalTableOutput] =
-      service.describeGlobalTable(params).promise.toFuture
+      service.describeGlobalTable(params).promise().toFuture
     @inline def describeGlobalTableSettingsFuture(
         params: DescribeGlobalTableSettingsInput
-    ): Future[DescribeGlobalTableSettingsOutput] = service.describeGlobalTableSettings(params).promise.toFuture
+    ): Future[DescribeGlobalTableSettingsOutput] = service.describeGlobalTableSettings(params).promise().toFuture
     @inline def describeLimitsFuture(params: DescribeLimitsInput): Future[DescribeLimitsOutput] =
-      service.describeLimits(params).promise.toFuture
+      service.describeLimits(params).promise().toFuture
     @inline def describeTableFuture(params: DescribeTableInput): Future[DescribeTableOutput] =
-      service.describeTable(params).promise.toFuture
+      service.describeTable(params).promise().toFuture
     @inline def describeTableReplicaAutoScalingFuture(
         params: DescribeTableReplicaAutoScalingInput
-    ): Future[DescribeTableReplicaAutoScalingOutput] = service.describeTableReplicaAutoScaling(params).promise.toFuture
+    ): Future[DescribeTableReplicaAutoScalingOutput] =
+      service.describeTableReplicaAutoScaling(params).promise().toFuture
     @inline def describeTimeToLiveFuture(params: DescribeTimeToLiveInput): Future[DescribeTimeToLiveOutput] =
-      service.describeTimeToLive(params).promise.toFuture
-    @inline def getItemFuture(params: GetItemInput): Future[GetItemOutput] = service.getItem(params).promise.toFuture
+      service.describeTimeToLive(params).promise().toFuture
+    @inline def getItemFuture(params: GetItemInput): Future[GetItemOutput] = service.getItem(params).promise().toFuture
     @inline def listBackupsFuture(params: ListBackupsInput): Future[ListBackupsOutput] =
-      service.listBackups(params).promise.toFuture
+      service.listBackups(params).promise().toFuture
     @inline def listContributorInsightsFuture(
         params: ListContributorInsightsInput
-    ): Future[ListContributorInsightsOutput] = service.listContributorInsights(params).promise.toFuture
+    ): Future[ListContributorInsightsOutput] = service.listContributorInsights(params).promise().toFuture
     @inline def listGlobalTablesFuture(params: ListGlobalTablesInput): Future[ListGlobalTablesOutput] =
-      service.listGlobalTables(params).promise.toFuture
+      service.listGlobalTables(params).promise().toFuture
     @inline def listTablesFuture(params: ListTablesInput): Future[ListTablesOutput] =
-      service.listTables(params).promise.toFuture
+      service.listTables(params).promise().toFuture
     @inline def listTagsOfResourceFuture(params: ListTagsOfResourceInput): Future[ListTagsOfResourceOutput] =
-      service.listTagsOfResource(params).promise.toFuture
-    @inline def putItemFuture(params: PutItemInput): Future[PutItemOutput] = service.putItem(params).promise.toFuture
-    @inline def queryFuture(params: QueryInput): Future[QueryOutput]       = service.query(params).promise.toFuture
+      service.listTagsOfResource(params).promise().toFuture
+    @inline def putItemFuture(params: PutItemInput): Future[PutItemOutput] = service.putItem(params).promise().toFuture
+    @inline def queryFuture(params: QueryInput): Future[QueryOutput]       = service.query(params).promise().toFuture
     @inline def restoreTableFromBackupFuture(
         params: RestoreTableFromBackupInput
-    ): Future[RestoreTableFromBackupOutput] = service.restoreTableFromBackup(params).promise.toFuture
+    ): Future[RestoreTableFromBackupOutput] = service.restoreTableFromBackup(params).promise().toFuture
     @inline def restoreTableToPointInTimeFuture(
         params: RestoreTableToPointInTimeInput
-    ): Future[RestoreTableToPointInTimeOutput]                    = service.restoreTableToPointInTime(params).promise.toFuture
-    @inline def scanFuture(params: ScanInput): Future[ScanOutput] = service.scan(params).promise.toFuture
+    ): Future[RestoreTableToPointInTimeOutput]                    = service.restoreTableToPointInTime(params).promise().toFuture
+    @inline def scanFuture(params: ScanInput): Future[ScanOutput] = service.scan(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceInput): Future[js.Object] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def transactGetItemsFuture(params: TransactGetItemsInput): Future[TransactGetItemsOutput] =
-      service.transactGetItems(params).promise.toFuture
+      service.transactGetItems(params).promise().toFuture
     @inline def transactWriteItemsFuture(params: TransactWriteItemsInput): Future[TransactWriteItemsOutput] =
-      service.transactWriteItems(params).promise.toFuture
+      service.transactWriteItems(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[js.Object] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateContinuousBackupsFuture(
         params: UpdateContinuousBackupsInput
-    ): Future[UpdateContinuousBackupsOutput] = service.updateContinuousBackups(params).promise.toFuture
+    ): Future[UpdateContinuousBackupsOutput] = service.updateContinuousBackups(params).promise().toFuture
     @inline def updateContributorInsightsFuture(
         params: UpdateContributorInsightsInput
-    ): Future[UpdateContributorInsightsOutput] = service.updateContributorInsights(params).promise.toFuture
+    ): Future[UpdateContributorInsightsOutput] = service.updateContributorInsights(params).promise().toFuture
     @inline def updateGlobalTableFuture(params: UpdateGlobalTableInput): Future[UpdateGlobalTableOutput] =
-      service.updateGlobalTable(params).promise.toFuture
+      service.updateGlobalTable(params).promise().toFuture
     @inline def updateGlobalTableSettingsFuture(
         params: UpdateGlobalTableSettingsInput
-    ): Future[UpdateGlobalTableSettingsOutput] = service.updateGlobalTableSettings(params).promise.toFuture
+    ): Future[UpdateGlobalTableSettingsOutput] = service.updateGlobalTableSettings(params).promise().toFuture
     @inline def updateItemFuture(params: UpdateItemInput): Future[UpdateItemOutput] =
-      service.updateItem(params).promise.toFuture
+      service.updateItem(params).promise().toFuture
     @inline def updateTableFuture(params: UpdateTableInput): Future[UpdateTableOutput] =
-      service.updateTable(params).promise.toFuture
+      service.updateTable(params).promise().toFuture
     @inline def updateTableReplicaAutoScalingFuture(
         params: UpdateTableReplicaAutoScalingInput
-    ): Future[UpdateTableReplicaAutoScalingOutput] = service.updateTableReplicaAutoScaling(params).promise.toFuture
+    ): Future[UpdateTableReplicaAutoScalingOutput] = service.updateTableReplicaAutoScaling(params).promise().toFuture
     @inline def updateTimeToLiveFuture(params: UpdateTimeToLiveInput): Future[UpdateTimeToLiveOutput] =
-      service.updateTimeToLive(params).promise.toFuture
+      service.updateTimeToLive(params).promise().toFuture
   }
 }
 

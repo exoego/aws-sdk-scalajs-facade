@@ -118,157 +118,157 @@ package object quicksight {
   implicit final class QuickSightOps(private val service: QuickSight) extends AnyVal {
 
     @inline def cancelIngestionFuture(params: CancelIngestionRequest): Future[CancelIngestionResponse] =
-      service.cancelIngestion(params).promise.toFuture
+      service.cancelIngestion(params).promise().toFuture
     @inline def createDashboardFuture(params: CreateDashboardRequest): Future[CreateDashboardResponse] =
-      service.createDashboard(params).promise.toFuture
+      service.createDashboard(params).promise().toFuture
     @inline def createDataSetFuture(params: CreateDataSetRequest): Future[CreateDataSetResponse] =
-      service.createDataSet(params).promise.toFuture
+      service.createDataSet(params).promise().toFuture
     @inline def createDataSourceFuture(params: CreateDataSourceRequest): Future[CreateDataSourceResponse] =
-      service.createDataSource(params).promise.toFuture
+      service.createDataSource(params).promise().toFuture
     @inline def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] =
-      service.createGroup(params).promise.toFuture
+      service.createGroup(params).promise().toFuture
     @inline def createGroupMembershipFuture(
         params: CreateGroupMembershipRequest
-    ): Future[CreateGroupMembershipResponse] = service.createGroupMembership(params).promise.toFuture
+    ): Future[CreateGroupMembershipResponse] = service.createGroupMembership(params).promise().toFuture
     @inline def createIAMPolicyAssignmentFuture(
         params: CreateIAMPolicyAssignmentRequest
-    ): Future[CreateIAMPolicyAssignmentResponse] = service.createIAMPolicyAssignment(params).promise.toFuture
+    ): Future[CreateIAMPolicyAssignmentResponse] = service.createIAMPolicyAssignment(params).promise().toFuture
     @inline def createIngestionFuture(params: CreateIngestionRequest): Future[CreateIngestionResponse] =
-      service.createIngestion(params).promise.toFuture
+      service.createIngestion(params).promise().toFuture
     @inline def createTemplateAliasFuture(params: CreateTemplateAliasRequest): Future[CreateTemplateAliasResponse] =
-      service.createTemplateAlias(params).promise.toFuture
+      service.createTemplateAlias(params).promise().toFuture
     @inline def createTemplateFuture(params: CreateTemplateRequest): Future[CreateTemplateResponse] =
-      service.createTemplate(params).promise.toFuture
+      service.createTemplate(params).promise().toFuture
     @inline def deleteDashboardFuture(params: DeleteDashboardRequest): Future[DeleteDashboardResponse] =
-      service.deleteDashboard(params).promise.toFuture
+      service.deleteDashboard(params).promise().toFuture
     @inline def deleteDataSetFuture(params: DeleteDataSetRequest): Future[DeleteDataSetResponse] =
-      service.deleteDataSet(params).promise.toFuture
+      service.deleteDataSet(params).promise().toFuture
     @inline def deleteDataSourceFuture(params: DeleteDataSourceRequest): Future[DeleteDataSourceResponse] =
-      service.deleteDataSource(params).promise.toFuture
+      service.deleteDataSource(params).promise().toFuture
     @inline def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResponse] =
-      service.deleteGroup(params).promise.toFuture
+      service.deleteGroup(params).promise().toFuture
     @inline def deleteGroupMembershipFuture(
         params: DeleteGroupMembershipRequest
-    ): Future[DeleteGroupMembershipResponse] = service.deleteGroupMembership(params).promise.toFuture
+    ): Future[DeleteGroupMembershipResponse] = service.deleteGroupMembership(params).promise().toFuture
     @inline def deleteIAMPolicyAssignmentFuture(
         params: DeleteIAMPolicyAssignmentRequest
-    ): Future[DeleteIAMPolicyAssignmentResponse] = service.deleteIAMPolicyAssignment(params).promise.toFuture
+    ): Future[DeleteIAMPolicyAssignmentResponse] = service.deleteIAMPolicyAssignment(params).promise().toFuture
     @inline def deleteTemplateAliasFuture(params: DeleteTemplateAliasRequest): Future[DeleteTemplateAliasResponse] =
-      service.deleteTemplateAlias(params).promise.toFuture
+      service.deleteTemplateAlias(params).promise().toFuture
     @inline def deleteTemplateFuture(params: DeleteTemplateRequest): Future[DeleteTemplateResponse] =
-      service.deleteTemplate(params).promise.toFuture
+      service.deleteTemplate(params).promise().toFuture
     @inline def deleteUserByPrincipalIdFuture(
         params: DeleteUserByPrincipalIdRequest
-    ): Future[DeleteUserByPrincipalIdResponse] = service.deleteUserByPrincipalId(params).promise.toFuture
+    ): Future[DeleteUserByPrincipalIdResponse] = service.deleteUserByPrincipalId(params).promise().toFuture
     @inline def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResponse] =
-      service.deleteUser(params).promise.toFuture
+      service.deleteUser(params).promise().toFuture
     @inline def describeDashboardFuture(params: DescribeDashboardRequest): Future[DescribeDashboardResponse] =
-      service.describeDashboard(params).promise.toFuture
+      service.describeDashboard(params).promise().toFuture
     @inline def describeDashboardPermissionsFuture(
         params: DescribeDashboardPermissionsRequest
-    ): Future[DescribeDashboardPermissionsResponse] = service.describeDashboardPermissions(params).promise.toFuture
+    ): Future[DescribeDashboardPermissionsResponse] = service.describeDashboardPermissions(params).promise().toFuture
     @inline def describeDataSetFuture(params: DescribeDataSetRequest): Future[DescribeDataSetResponse] =
-      service.describeDataSet(params).promise.toFuture
+      service.describeDataSet(params).promise().toFuture
     @inline def describeDataSetPermissionsFuture(
         params: DescribeDataSetPermissionsRequest
-    ): Future[DescribeDataSetPermissionsResponse] = service.describeDataSetPermissions(params).promise.toFuture
+    ): Future[DescribeDataSetPermissionsResponse] = service.describeDataSetPermissions(params).promise().toFuture
     @inline def describeDataSourceFuture(params: DescribeDataSourceRequest): Future[DescribeDataSourceResponse] =
-      service.describeDataSource(params).promise.toFuture
+      service.describeDataSource(params).promise().toFuture
     @inline def describeDataSourcePermissionsFuture(
         params: DescribeDataSourcePermissionsRequest
-    ): Future[DescribeDataSourcePermissionsResponse] = service.describeDataSourcePermissions(params).promise.toFuture
+    ): Future[DescribeDataSourcePermissionsResponse] = service.describeDataSourcePermissions(params).promise().toFuture
     @inline def describeGroupFuture(params: DescribeGroupRequest): Future[DescribeGroupResponse] =
-      service.describeGroup(params).promise.toFuture
+      service.describeGroup(params).promise().toFuture
     @inline def describeIAMPolicyAssignmentFuture(
         params: DescribeIAMPolicyAssignmentRequest
-    ): Future[DescribeIAMPolicyAssignmentResponse] = service.describeIAMPolicyAssignment(params).promise.toFuture
+    ): Future[DescribeIAMPolicyAssignmentResponse] = service.describeIAMPolicyAssignment(params).promise().toFuture
     @inline def describeIngestionFuture(params: DescribeIngestionRequest): Future[DescribeIngestionResponse] =
-      service.describeIngestion(params).promise.toFuture
+      service.describeIngestion(params).promise().toFuture
     @inline def describeTemplateAliasFuture(
         params: DescribeTemplateAliasRequest
-    ): Future[DescribeTemplateAliasResponse] = service.describeTemplateAlias(params).promise.toFuture
+    ): Future[DescribeTemplateAliasResponse] = service.describeTemplateAlias(params).promise().toFuture
     @inline def describeTemplateFuture(params: DescribeTemplateRequest): Future[DescribeTemplateResponse] =
-      service.describeTemplate(params).promise.toFuture
+      service.describeTemplate(params).promise().toFuture
     @inline def describeTemplatePermissionsFuture(
         params: DescribeTemplatePermissionsRequest
-    ): Future[DescribeTemplatePermissionsResponse] = service.describeTemplatePermissions(params).promise.toFuture
+    ): Future[DescribeTemplatePermissionsResponse] = service.describeTemplatePermissions(params).promise().toFuture
     @inline def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] =
-      service.describeUser(params).promise.toFuture
+      service.describeUser(params).promise().toFuture
     @inline def getDashboardEmbedUrlFuture(params: GetDashboardEmbedUrlRequest): Future[GetDashboardEmbedUrlResponse] =
-      service.getDashboardEmbedUrl(params).promise.toFuture
+      service.getDashboardEmbedUrl(params).promise().toFuture
     @inline def listDashboardVersionsFuture(
         params: ListDashboardVersionsRequest
-    ): Future[ListDashboardVersionsResponse] = service.listDashboardVersions(params).promise.toFuture
+    ): Future[ListDashboardVersionsResponse] = service.listDashboardVersions(params).promise().toFuture
     @inline def listDashboardsFuture(params: ListDashboardsRequest): Future[ListDashboardsResponse] =
-      service.listDashboards(params).promise.toFuture
+      service.listDashboards(params).promise().toFuture
     @inline def listDataSetsFuture(params: ListDataSetsRequest): Future[ListDataSetsResponse] =
-      service.listDataSets(params).promise.toFuture
+      service.listDataSets(params).promise().toFuture
     @inline def listDataSourcesFuture(params: ListDataSourcesRequest): Future[ListDataSourcesResponse] =
-      service.listDataSources(params).promise.toFuture
+      service.listDataSources(params).promise().toFuture
     @inline def listGroupMembershipsFuture(params: ListGroupMembershipsRequest): Future[ListGroupMembershipsResponse] =
-      service.listGroupMemberships(params).promise.toFuture
+      service.listGroupMemberships(params).promise().toFuture
     @inline def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] =
-      service.listGroups(params).promise.toFuture
+      service.listGroups(params).promise().toFuture
     @inline def listIAMPolicyAssignmentsForUserFuture(
         params: ListIAMPolicyAssignmentsForUserRequest
     ): Future[ListIAMPolicyAssignmentsForUserResponse] =
-      service.listIAMPolicyAssignmentsForUser(params).promise.toFuture
+      service.listIAMPolicyAssignmentsForUser(params).promise().toFuture
     @inline def listIAMPolicyAssignmentsFuture(
         params: ListIAMPolicyAssignmentsRequest
-    ): Future[ListIAMPolicyAssignmentsResponse] = service.listIAMPolicyAssignments(params).promise.toFuture
+    ): Future[ListIAMPolicyAssignmentsResponse] = service.listIAMPolicyAssignments(params).promise().toFuture
     @inline def listIngestionsFuture(params: ListIngestionsRequest): Future[ListIngestionsResponse] =
-      service.listIngestions(params).promise.toFuture
+      service.listIngestions(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def listTemplateAliasesFuture(params: ListTemplateAliasesRequest): Future[ListTemplateAliasesResponse] =
-      service.listTemplateAliases(params).promise.toFuture
+      service.listTemplateAliases(params).promise().toFuture
     @inline def listTemplateVersionsFuture(params: ListTemplateVersionsRequest): Future[ListTemplateVersionsResponse] =
-      service.listTemplateVersions(params).promise.toFuture
+      service.listTemplateVersions(params).promise().toFuture
     @inline def listTemplatesFuture(params: ListTemplatesRequest): Future[ListTemplatesResponse] =
-      service.listTemplates(params).promise.toFuture
+      service.listTemplates(params).promise().toFuture
     @inline def listUserGroupsFuture(params: ListUserGroupsRequest): Future[ListUserGroupsResponse] =
-      service.listUserGroups(params).promise.toFuture
+      service.listUserGroups(params).promise().toFuture
     @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
-      service.listUsers(params).promise.toFuture
+      service.listUsers(params).promise().toFuture
     @inline def registerUserFuture(params: RegisterUserRequest): Future[RegisterUserResponse] =
-      service.registerUser(params).promise.toFuture
+      service.registerUser(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateDashboardFuture(params: UpdateDashboardRequest): Future[UpdateDashboardResponse] =
-      service.updateDashboard(params).promise.toFuture
+      service.updateDashboard(params).promise().toFuture
     @inline def updateDashboardPermissionsFuture(
         params: UpdateDashboardPermissionsRequest
-    ): Future[UpdateDashboardPermissionsResponse] = service.updateDashboardPermissions(params).promise.toFuture
+    ): Future[UpdateDashboardPermissionsResponse] = service.updateDashboardPermissions(params).promise().toFuture
     @inline def updateDashboardPublishedVersionFuture(
         params: UpdateDashboardPublishedVersionRequest
     ): Future[UpdateDashboardPublishedVersionResponse] =
-      service.updateDashboardPublishedVersion(params).promise.toFuture
+      service.updateDashboardPublishedVersion(params).promise().toFuture
     @inline def updateDataSetFuture(params: UpdateDataSetRequest): Future[UpdateDataSetResponse] =
-      service.updateDataSet(params).promise.toFuture
+      service.updateDataSet(params).promise().toFuture
     @inline def updateDataSetPermissionsFuture(
         params: UpdateDataSetPermissionsRequest
-    ): Future[UpdateDataSetPermissionsResponse] = service.updateDataSetPermissions(params).promise.toFuture
+    ): Future[UpdateDataSetPermissionsResponse] = service.updateDataSetPermissions(params).promise().toFuture
     @inline def updateDataSourceFuture(params: UpdateDataSourceRequest): Future[UpdateDataSourceResponse] =
-      service.updateDataSource(params).promise.toFuture
+      service.updateDataSource(params).promise().toFuture
     @inline def updateDataSourcePermissionsFuture(
         params: UpdateDataSourcePermissionsRequest
-    ): Future[UpdateDataSourcePermissionsResponse] = service.updateDataSourcePermissions(params).promise.toFuture
+    ): Future[UpdateDataSourcePermissionsResponse] = service.updateDataSourcePermissions(params).promise().toFuture
     @inline def updateGroupFuture(params: UpdateGroupRequest): Future[UpdateGroupResponse] =
-      service.updateGroup(params).promise.toFuture
+      service.updateGroup(params).promise().toFuture
     @inline def updateIAMPolicyAssignmentFuture(
         params: UpdateIAMPolicyAssignmentRequest
-    ): Future[UpdateIAMPolicyAssignmentResponse] = service.updateIAMPolicyAssignment(params).promise.toFuture
+    ): Future[UpdateIAMPolicyAssignmentResponse] = service.updateIAMPolicyAssignment(params).promise().toFuture
     @inline def updateTemplateAliasFuture(params: UpdateTemplateAliasRequest): Future[UpdateTemplateAliasResponse] =
-      service.updateTemplateAlias(params).promise.toFuture
+      service.updateTemplateAlias(params).promise().toFuture
     @inline def updateTemplateFuture(params: UpdateTemplateRequest): Future[UpdateTemplateResponse] =
-      service.updateTemplate(params).promise.toFuture
+      service.updateTemplate(params).promise().toFuture
     @inline def updateTemplatePermissionsFuture(
         params: UpdateTemplatePermissionsRequest
-    ): Future[UpdateTemplatePermissionsResponse] = service.updateTemplatePermissions(params).promise.toFuture
+    ): Future[UpdateTemplatePermissionsResponse] = service.updateTemplatePermissions(params).promise().toFuture
     @inline def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] =
-      service.updateUser(params).promise.toFuture
+      service.updateUser(params).promise().toFuture
   }
 }
 

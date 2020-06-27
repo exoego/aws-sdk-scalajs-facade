@@ -37,50 +37,50 @@ package object eks {
   implicit final class EKSOps(private val service: EKS) extends AnyVal {
 
     @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
-      service.createCluster(params).promise.toFuture
+      service.createCluster(params).promise().toFuture
     @inline def createFargateProfileFuture(params: CreateFargateProfileRequest): Future[CreateFargateProfileResponse] =
-      service.createFargateProfile(params).promise.toFuture
+      service.createFargateProfile(params).promise().toFuture
     @inline def createNodegroupFuture(params: CreateNodegroupRequest): Future[CreateNodegroupResponse] =
-      service.createNodegroup(params).promise.toFuture
+      service.createNodegroup(params).promise().toFuture
     @inline def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] =
-      service.deleteCluster(params).promise.toFuture
+      service.deleteCluster(params).promise().toFuture
     @inline def deleteFargateProfileFuture(params: DeleteFargateProfileRequest): Future[DeleteFargateProfileResponse] =
-      service.deleteFargateProfile(params).promise.toFuture
+      service.deleteFargateProfile(params).promise().toFuture
     @inline def deleteNodegroupFuture(params: DeleteNodegroupRequest): Future[DeleteNodegroupResponse] =
-      service.deleteNodegroup(params).promise.toFuture
+      service.deleteNodegroup(params).promise().toFuture
     @inline def describeClusterFuture(params: DescribeClusterRequest): Future[DescribeClusterResponse] =
-      service.describeCluster(params).promise.toFuture
+      service.describeCluster(params).promise().toFuture
     @inline def describeFargateProfileFuture(
         params: DescribeFargateProfileRequest
-    ): Future[DescribeFargateProfileResponse] = service.describeFargateProfile(params).promise.toFuture
+    ): Future[DescribeFargateProfileResponse] = service.describeFargateProfile(params).promise().toFuture
     @inline def describeNodegroupFuture(params: DescribeNodegroupRequest): Future[DescribeNodegroupResponse] =
-      service.describeNodegroup(params).promise.toFuture
+      service.describeNodegroup(params).promise().toFuture
     @inline def describeUpdateFuture(params: DescribeUpdateRequest): Future[DescribeUpdateResponse] =
-      service.describeUpdate(params).promise.toFuture
+      service.describeUpdate(params).promise().toFuture
     @inline def listClustersFuture(params: ListClustersRequest): Future[ListClustersResponse] =
-      service.listClusters(params).promise.toFuture
+      service.listClusters(params).promise().toFuture
     @inline def listFargateProfilesFuture(params: ListFargateProfilesRequest): Future[ListFargateProfilesResponse] =
-      service.listFargateProfiles(params).promise.toFuture
+      service.listFargateProfiles(params).promise().toFuture
     @inline def listNodegroupsFuture(params: ListNodegroupsRequest): Future[ListNodegroupsResponse] =
-      service.listNodegroups(params).promise.toFuture
+      service.listNodegroups(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def listUpdatesFuture(params: ListUpdatesRequest): Future[ListUpdatesResponse] =
-      service.listUpdates(params).promise.toFuture
+      service.listUpdates(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateClusterConfigFuture(params: UpdateClusterConfigRequest): Future[UpdateClusterConfigResponse] =
-      service.updateClusterConfig(params).promise.toFuture
+      service.updateClusterConfig(params).promise().toFuture
     @inline def updateClusterVersionFuture(params: UpdateClusterVersionRequest): Future[UpdateClusterVersionResponse] =
-      service.updateClusterVersion(params).promise.toFuture
+      service.updateClusterVersion(params).promise().toFuture
     @inline def updateNodegroupConfigFuture(
         params: UpdateNodegroupConfigRequest
-    ): Future[UpdateNodegroupConfigResponse] = service.updateNodegroupConfig(params).promise.toFuture
+    ): Future[UpdateNodegroupConfigResponse] = service.updateNodegroupConfig(params).promise().toFuture
     @inline def updateNodegroupVersionFuture(
         params: UpdateNodegroupVersionRequest
-    ): Future[UpdateNodegroupVersionResponse] = service.updateNodegroupVersion(params).promise.toFuture
+    ): Future[UpdateNodegroupVersionResponse] = service.updateNodegroupVersion(params).promise().toFuture
   }
 }
 

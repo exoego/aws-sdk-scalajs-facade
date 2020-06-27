@@ -26,42 +26,42 @@ package object mediapackage {
   implicit final class MediaPackageOps(private val service: MediaPackage) extends AnyVal {
 
     @inline def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] =
-      service.createChannel(params).promise.toFuture
+      service.createChannel(params).promise().toFuture
     @inline def createHarvestJobFuture(params: CreateHarvestJobRequest): Future[CreateHarvestJobResponse] =
-      service.createHarvestJob(params).promise.toFuture
+      service.createHarvestJob(params).promise().toFuture
     @inline def createOriginEndpointFuture(params: CreateOriginEndpointRequest): Future[CreateOriginEndpointResponse] =
-      service.createOriginEndpoint(params).promise.toFuture
+      service.createOriginEndpoint(params).promise().toFuture
     @inline def deleteChannelFuture(params: DeleteChannelRequest): Future[DeleteChannelResponse] =
-      service.deleteChannel(params).promise.toFuture
+      service.deleteChannel(params).promise().toFuture
     @inline def deleteOriginEndpointFuture(params: DeleteOriginEndpointRequest): Future[DeleteOriginEndpointResponse] =
-      service.deleteOriginEndpoint(params).promise.toFuture
+      service.deleteOriginEndpoint(params).promise().toFuture
     @inline def describeChannelFuture(params: DescribeChannelRequest): Future[DescribeChannelResponse] =
-      service.describeChannel(params).promise.toFuture
+      service.describeChannel(params).promise().toFuture
     @inline def describeHarvestJobFuture(params: DescribeHarvestJobRequest): Future[DescribeHarvestJobResponse] =
-      service.describeHarvestJob(params).promise.toFuture
+      service.describeHarvestJob(params).promise().toFuture
     @inline def describeOriginEndpointFuture(
         params: DescribeOriginEndpointRequest
-    ): Future[DescribeOriginEndpointResponse] = service.describeOriginEndpoint(params).promise.toFuture
+    ): Future[DescribeOriginEndpointResponse] = service.describeOriginEndpoint(params).promise().toFuture
     @inline def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] =
-      service.listChannels(params).promise.toFuture
+      service.listChannels(params).promise().toFuture
     @inline def listHarvestJobsFuture(params: ListHarvestJobsRequest): Future[ListHarvestJobsResponse] =
-      service.listHarvestJobs(params).promise.toFuture
+      service.listHarvestJobs(params).promise().toFuture
     @inline def listOriginEndpointsFuture(params: ListOriginEndpointsRequest): Future[ListOriginEndpointsResponse] =
-      service.listOriginEndpoints(params).promise.toFuture
+      service.listOriginEndpoints(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def rotateIngestEndpointCredentialsFuture(
         params: RotateIngestEndpointCredentialsRequest
     ): Future[RotateIngestEndpointCredentialsResponse] =
-      service.rotateIngestEndpointCredentials(params).promise.toFuture
+      service.rotateIngestEndpointCredentials(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateChannelFuture(params: UpdateChannelRequest): Future[UpdateChannelResponse] =
-      service.updateChannel(params).promise.toFuture
+      service.updateChannel(params).promise().toFuture
     @inline def updateOriginEndpointFuture(params: UpdateOriginEndpointRequest): Future[UpdateOriginEndpointResponse] =
-      service.updateOriginEndpoint(params).promise.toFuture
+      service.updateOriginEndpoint(params).promise().toFuture
   }
 }
 

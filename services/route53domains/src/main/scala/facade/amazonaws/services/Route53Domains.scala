@@ -54,63 +54,64 @@ package object route53domains {
 
     @inline def checkDomainAvailabilityFuture(
         params: CheckDomainAvailabilityRequest
-    ): Future[CheckDomainAvailabilityResponse] = service.checkDomainAvailability(params).promise.toFuture
+    ): Future[CheckDomainAvailabilityResponse] = service.checkDomainAvailability(params).promise().toFuture
     @inline def checkDomainTransferabilityFuture(
         params: CheckDomainTransferabilityRequest
-    ): Future[CheckDomainTransferabilityResponse] = service.checkDomainTransferability(params).promise.toFuture
+    ): Future[CheckDomainTransferabilityResponse] = service.checkDomainTransferability(params).promise().toFuture
     @inline def deleteTagsForDomainFuture(params: DeleteTagsForDomainRequest): Future[DeleteTagsForDomainResponse] =
-      service.deleteTagsForDomain(params).promise.toFuture
+      service.deleteTagsForDomain(params).promise().toFuture
     @inline def disableDomainAutoRenewFuture(
         params: DisableDomainAutoRenewRequest
-    ): Future[DisableDomainAutoRenewResponse] = service.disableDomainAutoRenew(params).promise.toFuture
+    ): Future[DisableDomainAutoRenewResponse] = service.disableDomainAutoRenew(params).promise().toFuture
     @inline def disableDomainTransferLockFuture(
         params: DisableDomainTransferLockRequest
-    ): Future[DisableDomainTransferLockResponse] = service.disableDomainTransferLock(params).promise.toFuture
+    ): Future[DisableDomainTransferLockResponse] = service.disableDomainTransferLock(params).promise().toFuture
     @inline def enableDomainAutoRenewFuture(
         params: EnableDomainAutoRenewRequest
-    ): Future[EnableDomainAutoRenewResponse] = service.enableDomainAutoRenew(params).promise.toFuture
+    ): Future[EnableDomainAutoRenewResponse] = service.enableDomainAutoRenew(params).promise().toFuture
     @inline def enableDomainTransferLockFuture(
         params: EnableDomainTransferLockRequest
-    ): Future[EnableDomainTransferLockResponse] = service.enableDomainTransferLock(params).promise.toFuture
+    ): Future[EnableDomainTransferLockResponse] = service.enableDomainTransferLock(params).promise().toFuture
     @inline def getContactReachabilityStatusFuture(
         params: GetContactReachabilityStatusRequest
-    ): Future[GetContactReachabilityStatusResponse] = service.getContactReachabilityStatus(params).promise.toFuture
+    ): Future[GetContactReachabilityStatusResponse] = service.getContactReachabilityStatus(params).promise().toFuture
     @inline def getDomainDetailFuture(params: GetDomainDetailRequest): Future[GetDomainDetailResponse] =
-      service.getDomainDetail(params).promise.toFuture
+      service.getDomainDetail(params).promise().toFuture
     @inline def getDomainSuggestionsFuture(params: GetDomainSuggestionsRequest): Future[GetDomainSuggestionsResponse] =
-      service.getDomainSuggestions(params).promise.toFuture
+      service.getDomainSuggestions(params).promise().toFuture
     @inline def getOperationDetailFuture(params: GetOperationDetailRequest): Future[GetOperationDetailResponse] =
-      service.getOperationDetail(params).promise.toFuture
+      service.getOperationDetail(params).promise().toFuture
     @inline def listDomainsFuture(params: ListDomainsRequest): Future[ListDomainsResponse] =
-      service.listDomains(params).promise.toFuture
+      service.listDomains(params).promise().toFuture
     @inline def listOperationsFuture(params: ListOperationsRequest): Future[ListOperationsResponse] =
-      service.listOperations(params).promise.toFuture
+      service.listOperations(params).promise().toFuture
     @inline def listTagsForDomainFuture(params: ListTagsForDomainRequest): Future[ListTagsForDomainResponse] =
-      service.listTagsForDomain(params).promise.toFuture
+      service.listTagsForDomain(params).promise().toFuture
     @inline def registerDomainFuture(params: RegisterDomainRequest): Future[RegisterDomainResponse] =
-      service.registerDomain(params).promise.toFuture
+      service.registerDomain(params).promise().toFuture
     @inline def renewDomainFuture(params: RenewDomainRequest): Future[RenewDomainResponse] =
-      service.renewDomain(params).promise.toFuture
+      service.renewDomain(params).promise().toFuture
     @inline def resendContactReachabilityEmailFuture(
         params: ResendContactReachabilityEmailRequest
-    ): Future[ResendContactReachabilityEmailResponse] = service.resendContactReachabilityEmail(params).promise.toFuture
+    ): Future[ResendContactReachabilityEmailResponse] =
+      service.resendContactReachabilityEmail(params).promise().toFuture
     @inline def retrieveDomainAuthCodeFuture(
         params: RetrieveDomainAuthCodeRequest
-    ): Future[RetrieveDomainAuthCodeResponse] = service.retrieveDomainAuthCode(params).promise.toFuture
+    ): Future[RetrieveDomainAuthCodeResponse] = service.retrieveDomainAuthCode(params).promise().toFuture
     @inline def transferDomainFuture(params: TransferDomainRequest): Future[TransferDomainResponse] =
-      service.transferDomain(params).promise.toFuture
+      service.transferDomain(params).promise().toFuture
     @inline def updateDomainContactFuture(params: UpdateDomainContactRequest): Future[UpdateDomainContactResponse] =
-      service.updateDomainContact(params).promise.toFuture
+      service.updateDomainContact(params).promise().toFuture
     @inline def updateDomainContactPrivacyFuture(
         params: UpdateDomainContactPrivacyRequest
-    ): Future[UpdateDomainContactPrivacyResponse] = service.updateDomainContactPrivacy(params).promise.toFuture
+    ): Future[UpdateDomainContactPrivacyResponse] = service.updateDomainContactPrivacy(params).promise().toFuture
     @inline def updateDomainNameserversFuture(
         params: UpdateDomainNameserversRequest
-    ): Future[UpdateDomainNameserversResponse] = service.updateDomainNameservers(params).promise.toFuture
+    ): Future[UpdateDomainNameserversResponse] = service.updateDomainNameservers(params).promise().toFuture
     @inline def updateTagsForDomainFuture(params: UpdateTagsForDomainRequest): Future[UpdateTagsForDomainResponse] =
-      service.updateTagsForDomain(params).promise.toFuture
+      service.updateTagsForDomain(params).promise().toFuture
     @inline def viewBillingFuture(params: ViewBillingRequest): Future[ViewBillingResponse] =
-      service.viewBilling(params).promise.toFuture
+      service.viewBilling(params).promise().toFuture
   }
 }
 

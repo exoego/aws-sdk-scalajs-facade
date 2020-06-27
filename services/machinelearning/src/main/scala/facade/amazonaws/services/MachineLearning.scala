@@ -70,66 +70,66 @@ package object machinelearning {
 
   implicit final class MachineLearningOps(private val service: MachineLearning) extends AnyVal {
 
-    @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise.toFuture
+    @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise().toFuture
     @inline def createBatchPredictionFuture(params: CreateBatchPredictionInput): Future[CreateBatchPredictionOutput] =
-      service.createBatchPrediction(params).promise.toFuture
+      service.createBatchPrediction(params).promise().toFuture
     @inline def createDataSourceFromRDSFuture(
         params: CreateDataSourceFromRDSInput
-    ): Future[CreateDataSourceFromRDSOutput] = service.createDataSourceFromRDS(params).promise.toFuture
+    ): Future[CreateDataSourceFromRDSOutput] = service.createDataSourceFromRDS(params).promise().toFuture
     @inline def createDataSourceFromRedshiftFuture(
         params: CreateDataSourceFromRedshiftInput
-    ): Future[CreateDataSourceFromRedshiftOutput] = service.createDataSourceFromRedshift(params).promise.toFuture
+    ): Future[CreateDataSourceFromRedshiftOutput] = service.createDataSourceFromRedshift(params).promise().toFuture
     @inline def createDataSourceFromS3Future(
         params: CreateDataSourceFromS3Input
-    ): Future[CreateDataSourceFromS3Output] = service.createDataSourceFromS3(params).promise.toFuture
+    ): Future[CreateDataSourceFromS3Output] = service.createDataSourceFromS3(params).promise().toFuture
     @inline def createEvaluationFuture(params: CreateEvaluationInput): Future[CreateEvaluationOutput] =
-      service.createEvaluation(params).promise.toFuture
+      service.createEvaluation(params).promise().toFuture
     @inline def createMLModelFuture(params: CreateMLModelInput): Future[CreateMLModelOutput] =
-      service.createMLModel(params).promise.toFuture
+      service.createMLModel(params).promise().toFuture
     @inline def createRealtimeEndpointFuture(
         params: CreateRealtimeEndpointInput
-    ): Future[CreateRealtimeEndpointOutput] = service.createRealtimeEndpoint(params).promise.toFuture
+    ): Future[CreateRealtimeEndpointOutput] = service.createRealtimeEndpoint(params).promise().toFuture
     @inline def deleteBatchPredictionFuture(params: DeleteBatchPredictionInput): Future[DeleteBatchPredictionOutput] =
-      service.deleteBatchPrediction(params).promise.toFuture
+      service.deleteBatchPrediction(params).promise().toFuture
     @inline def deleteDataSourceFuture(params: DeleteDataSourceInput): Future[DeleteDataSourceOutput] =
-      service.deleteDataSource(params).promise.toFuture
+      service.deleteDataSource(params).promise().toFuture
     @inline def deleteEvaluationFuture(params: DeleteEvaluationInput): Future[DeleteEvaluationOutput] =
-      service.deleteEvaluation(params).promise.toFuture
+      service.deleteEvaluation(params).promise().toFuture
     @inline def deleteMLModelFuture(params: DeleteMLModelInput): Future[DeleteMLModelOutput] =
-      service.deleteMLModel(params).promise.toFuture
+      service.deleteMLModel(params).promise().toFuture
     @inline def deleteRealtimeEndpointFuture(
         params: DeleteRealtimeEndpointInput
-    ): Future[DeleteRealtimeEndpointOutput] = service.deleteRealtimeEndpoint(params).promise.toFuture
+    ): Future[DeleteRealtimeEndpointOutput] = service.deleteRealtimeEndpoint(params).promise().toFuture
     @inline def deleteTagsFuture(params: DeleteTagsInput): Future[DeleteTagsOutput] =
-      service.deleteTags(params).promise.toFuture
+      service.deleteTags(params).promise().toFuture
     @inline def describeBatchPredictionsFuture(
         params: DescribeBatchPredictionsInput
-    ): Future[DescribeBatchPredictionsOutput] = service.describeBatchPredictions(params).promise.toFuture
+    ): Future[DescribeBatchPredictionsOutput] = service.describeBatchPredictions(params).promise().toFuture
     @inline def describeDataSourcesFuture(params: DescribeDataSourcesInput): Future[DescribeDataSourcesOutput] =
-      service.describeDataSources(params).promise.toFuture
+      service.describeDataSources(params).promise().toFuture
     @inline def describeEvaluationsFuture(params: DescribeEvaluationsInput): Future[DescribeEvaluationsOutput] =
-      service.describeEvaluations(params).promise.toFuture
+      service.describeEvaluations(params).promise().toFuture
     @inline def describeMLModelsFuture(params: DescribeMLModelsInput): Future[DescribeMLModelsOutput] =
-      service.describeMLModels(params).promise.toFuture
+      service.describeMLModels(params).promise().toFuture
     @inline def describeTagsFuture(params: DescribeTagsInput): Future[DescribeTagsOutput] =
-      service.describeTags(params).promise.toFuture
+      service.describeTags(params).promise().toFuture
     @inline def getBatchPredictionFuture(params: GetBatchPredictionInput): Future[GetBatchPredictionOutput] =
-      service.getBatchPrediction(params).promise.toFuture
+      service.getBatchPrediction(params).promise().toFuture
     @inline def getDataSourceFuture(params: GetDataSourceInput): Future[GetDataSourceOutput] =
-      service.getDataSource(params).promise.toFuture
+      service.getDataSource(params).promise().toFuture
     @inline def getEvaluationFuture(params: GetEvaluationInput): Future[GetEvaluationOutput] =
-      service.getEvaluation(params).promise.toFuture
+      service.getEvaluation(params).promise().toFuture
     @inline def getMLModelFuture(params: GetMLModelInput): Future[GetMLModelOutput] =
-      service.getMLModel(params).promise.toFuture
-    @inline def predictFuture(params: PredictInput): Future[PredictOutput] = service.predict(params).promise.toFuture
+      service.getMLModel(params).promise().toFuture
+    @inline def predictFuture(params: PredictInput): Future[PredictOutput] = service.predict(params).promise().toFuture
     @inline def updateBatchPredictionFuture(params: UpdateBatchPredictionInput): Future[UpdateBatchPredictionOutput] =
-      service.updateBatchPrediction(params).promise.toFuture
+      service.updateBatchPrediction(params).promise().toFuture
     @inline def updateDataSourceFuture(params: UpdateDataSourceInput): Future[UpdateDataSourceOutput] =
-      service.updateDataSource(params).promise.toFuture
+      service.updateDataSource(params).promise().toFuture
     @inline def updateEvaluationFuture(params: UpdateEvaluationInput): Future[UpdateEvaluationOutput] =
-      service.updateEvaluation(params).promise.toFuture
+      service.updateEvaluation(params).promise().toFuture
     @inline def updateMLModelFuture(params: UpdateMLModelInput): Future[UpdateMLModelOutput] =
-      service.updateMLModel(params).promise.toFuture
+      service.updateMLModel(params).promise().toFuture
   }
 }
 

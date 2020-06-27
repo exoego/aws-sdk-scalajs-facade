@@ -110,38 +110,38 @@ package object elastictranscoder {
   implicit final class ElasticTranscoderOps(private val service: ElasticTranscoder) extends AnyVal {
 
     @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] =
-      service.cancelJob(params).promise.toFuture
+      service.cancelJob(params).promise().toFuture
     @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResponse] =
-      service.createJob(params).promise.toFuture
+      service.createJob(params).promise().toFuture
     @inline def createPipelineFuture(params: CreatePipelineRequest): Future[CreatePipelineResponse] =
-      service.createPipeline(params).promise.toFuture
+      service.createPipeline(params).promise().toFuture
     @inline def createPresetFuture(params: CreatePresetRequest): Future[CreatePresetResponse] =
-      service.createPreset(params).promise.toFuture
+      service.createPreset(params).promise().toFuture
     @inline def deletePipelineFuture(params: DeletePipelineRequest): Future[DeletePipelineResponse] =
-      service.deletePipeline(params).promise.toFuture
+      service.deletePipeline(params).promise().toFuture
     @inline def deletePresetFuture(params: DeletePresetRequest): Future[DeletePresetResponse] =
-      service.deletePreset(params).promise.toFuture
+      service.deletePreset(params).promise().toFuture
     @inline def listJobsByPipelineFuture(params: ListJobsByPipelineRequest): Future[ListJobsByPipelineResponse] =
-      service.listJobsByPipeline(params).promise.toFuture
+      service.listJobsByPipeline(params).promise().toFuture
     @inline def listJobsByStatusFuture(params: ListJobsByStatusRequest): Future[ListJobsByStatusResponse] =
-      service.listJobsByStatus(params).promise.toFuture
+      service.listJobsByStatus(params).promise().toFuture
     @inline def listPipelinesFuture(params: ListPipelinesRequest): Future[ListPipelinesResponse] =
-      service.listPipelines(params).promise.toFuture
+      service.listPipelines(params).promise().toFuture
     @inline def listPresetsFuture(params: ListPresetsRequest): Future[ListPresetsResponse] =
-      service.listPresets(params).promise.toFuture
+      service.listPresets(params).promise().toFuture
     @inline def readJobFuture(params: ReadJobRequest): Future[ReadJobResponse] =
-      service.readJob(params).promise.toFuture
+      service.readJob(params).promise().toFuture
     @inline def readPipelineFuture(params: ReadPipelineRequest): Future[ReadPipelineResponse] =
-      service.readPipeline(params).promise.toFuture
+      service.readPipeline(params).promise().toFuture
     @inline def readPresetFuture(params: ReadPresetRequest): Future[ReadPresetResponse] =
-      service.readPreset(params).promise.toFuture
+      service.readPreset(params).promise().toFuture
     @inline def updatePipelineFuture(params: UpdatePipelineRequest): Future[UpdatePipelineResponse] =
-      service.updatePipeline(params).promise.toFuture
+      service.updatePipeline(params).promise().toFuture
     @inline def updatePipelineNotificationsFuture(
         params: UpdatePipelineNotificationsRequest
-    ): Future[UpdatePipelineNotificationsResponse] = service.updatePipelineNotifications(params).promise.toFuture
+    ): Future[UpdatePipelineNotificationsResponse] = service.updatePipelineNotifications(params).promise().toFuture
     @inline def updatePipelineStatusFuture(params: UpdatePipelineStatusRequest): Future[UpdatePipelineStatusResponse] =
-      service.updatePipelineStatus(params).promise.toFuture
+      service.updatePipelineStatus(params).promise().toFuture
   }
 }
 

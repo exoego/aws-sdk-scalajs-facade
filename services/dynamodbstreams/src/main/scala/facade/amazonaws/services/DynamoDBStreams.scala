@@ -37,13 +37,13 @@ package object dynamodbstreams {
   implicit final class DynamoDBStreamsOps(private val service: DynamoDBStreams) extends AnyVal {
 
     @inline def describeStreamFuture(params: DescribeStreamInput): Future[DescribeStreamOutput] =
-      service.describeStream(params).promise.toFuture
+      service.describeStream(params).promise().toFuture
     @inline def getRecordsFuture(params: GetRecordsInput): Future[GetRecordsOutput] =
-      service.getRecords(params).promise.toFuture
+      service.getRecords(params).promise().toFuture
     @inline def getShardIteratorFuture(params: GetShardIteratorInput): Future[GetShardIteratorOutput] =
-      service.getShardIterator(params).promise.toFuture
+      service.getShardIterator(params).promise().toFuture
     @inline def listStreamsFuture(params: ListStreamsInput): Future[ListStreamsOutput] =
-      service.listStreams(params).promise.toFuture
+      service.listStreams(params).promise().toFuture
   }
 }
 

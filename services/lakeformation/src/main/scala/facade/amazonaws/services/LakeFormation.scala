@@ -34,33 +34,34 @@ package object lakeformation {
 
     @inline def batchGrantPermissionsFuture(
         params: BatchGrantPermissionsRequest
-    ): Future[BatchGrantPermissionsResponse] = service.batchGrantPermissions(params).promise.toFuture
+    ): Future[BatchGrantPermissionsResponse] = service.batchGrantPermissions(params).promise().toFuture
     @inline def batchRevokePermissionsFuture(
         params: BatchRevokePermissionsRequest
-    ): Future[BatchRevokePermissionsResponse] = service.batchRevokePermissions(params).promise.toFuture
+    ): Future[BatchRevokePermissionsResponse] = service.batchRevokePermissions(params).promise().toFuture
     @inline def deregisterResourceFuture(params: DeregisterResourceRequest): Future[DeregisterResourceResponse] =
-      service.deregisterResource(params).promise.toFuture
+      service.deregisterResource(params).promise().toFuture
     @inline def describeResourceFuture(params: DescribeResourceRequest): Future[DescribeResourceResponse] =
-      service.describeResource(params).promise.toFuture
+      service.describeResource(params).promise().toFuture
     @inline def getDataLakeSettingsFuture(params: GetDataLakeSettingsRequest): Future[GetDataLakeSettingsResponse] =
-      service.getDataLakeSettings(params).promise.toFuture
+      service.getDataLakeSettings(params).promise().toFuture
     @inline def getEffectivePermissionsForPathFuture(
         params: GetEffectivePermissionsForPathRequest
-    ): Future[GetEffectivePermissionsForPathResponse] = service.getEffectivePermissionsForPath(params).promise.toFuture
+    ): Future[GetEffectivePermissionsForPathResponse] =
+      service.getEffectivePermissionsForPath(params).promise().toFuture
     @inline def grantPermissionsFuture(params: GrantPermissionsRequest): Future[GrantPermissionsResponse] =
-      service.grantPermissions(params).promise.toFuture
+      service.grantPermissions(params).promise().toFuture
     @inline def listPermissionsFuture(params: ListPermissionsRequest): Future[ListPermissionsResponse] =
-      service.listPermissions(params).promise.toFuture
+      service.listPermissions(params).promise().toFuture
     @inline def listResourcesFuture(params: ListResourcesRequest): Future[ListResourcesResponse] =
-      service.listResources(params).promise.toFuture
+      service.listResources(params).promise().toFuture
     @inline def putDataLakeSettingsFuture(params: PutDataLakeSettingsRequest): Future[PutDataLakeSettingsResponse] =
-      service.putDataLakeSettings(params).promise.toFuture
+      service.putDataLakeSettings(params).promise().toFuture
     @inline def registerResourceFuture(params: RegisterResourceRequest): Future[RegisterResourceResponse] =
-      service.registerResource(params).promise.toFuture
+      service.registerResource(params).promise().toFuture
     @inline def revokePermissionsFuture(params: RevokePermissionsRequest): Future[RevokePermissionsResponse] =
-      service.revokePermissions(params).promise.toFuture
+      service.revokePermissions(params).promise().toFuture
     @inline def updateResourceFuture(params: UpdateResourceRequest): Future[UpdateResourceResponse] =
-      service.updateResource(params).promise.toFuture
+      service.updateResource(params).promise().toFuture
   }
 }
 

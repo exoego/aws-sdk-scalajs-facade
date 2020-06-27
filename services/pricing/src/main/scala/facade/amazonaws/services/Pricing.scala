@@ -19,11 +19,11 @@ package object pricing {
   implicit final class PricingOps(private val service: Pricing) extends AnyVal {
 
     @inline def describeServicesFuture(params: DescribeServicesRequest): Future[DescribeServicesResponse] =
-      service.describeServices(params).promise.toFuture
+      service.describeServices(params).promise().toFuture
     @inline def getAttributeValuesFuture(params: GetAttributeValuesRequest): Future[GetAttributeValuesResponse] =
-      service.getAttributeValues(params).promise.toFuture
+      service.getAttributeValues(params).promise().toFuture
     @inline def getProductsFuture(params: GetProductsRequest): Future[GetProductsResponse] =
-      service.getProducts(params).promise.toFuture
+      service.getProducts(params).promise().toFuture
   }
 }
 

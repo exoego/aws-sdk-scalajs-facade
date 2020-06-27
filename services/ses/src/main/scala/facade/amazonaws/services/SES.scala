@@ -102,194 +102,194 @@ package object ses {
   implicit final class SESOps(private val service: SES) extends AnyVal {
 
     @inline def cloneReceiptRuleSetFuture(params: CloneReceiptRuleSetRequest): Future[CloneReceiptRuleSetResponse] =
-      service.cloneReceiptRuleSet(params).promise.toFuture
+      service.cloneReceiptRuleSet(params).promise().toFuture
     @inline def createConfigurationSetEventDestinationFuture(
         params: CreateConfigurationSetEventDestinationRequest
     ): Future[CreateConfigurationSetEventDestinationResponse] =
-      service.createConfigurationSetEventDestination(params).promise.toFuture
+      service.createConfigurationSetEventDestination(params).promise().toFuture
     @inline def createConfigurationSetFuture(
         params: CreateConfigurationSetRequest
-    ): Future[CreateConfigurationSetResponse] = service.createConfigurationSet(params).promise.toFuture
+    ): Future[CreateConfigurationSetResponse] = service.createConfigurationSet(params).promise().toFuture
     @inline def createConfigurationSetTrackingOptionsFuture(
         params: CreateConfigurationSetTrackingOptionsRequest
     ): Future[CreateConfigurationSetTrackingOptionsResponse] =
-      service.createConfigurationSetTrackingOptions(params).promise.toFuture
+      service.createConfigurationSetTrackingOptions(params).promise().toFuture
     @inline def createCustomVerificationEmailTemplateFuture(
         params: CreateCustomVerificationEmailTemplateRequest
-    ): Future[js.Object] = service.createCustomVerificationEmailTemplate(params).promise.toFuture
+    ): Future[js.Object] = service.createCustomVerificationEmailTemplate(params).promise().toFuture
     @inline def createReceiptFilterFuture(params: CreateReceiptFilterRequest): Future[CreateReceiptFilterResponse] =
-      service.createReceiptFilter(params).promise.toFuture
+      service.createReceiptFilter(params).promise().toFuture
     @inline def createReceiptRuleFuture(params: CreateReceiptRuleRequest): Future[CreateReceiptRuleResponse] =
-      service.createReceiptRule(params).promise.toFuture
+      service.createReceiptRule(params).promise().toFuture
     @inline def createReceiptRuleSetFuture(params: CreateReceiptRuleSetRequest): Future[CreateReceiptRuleSetResponse] =
-      service.createReceiptRuleSet(params).promise.toFuture
+      service.createReceiptRuleSet(params).promise().toFuture
     @inline def createTemplateFuture(params: CreateTemplateRequest): Future[CreateTemplateResponse] =
-      service.createTemplate(params).promise.toFuture
+      service.createTemplate(params).promise().toFuture
     @inline def deleteConfigurationSetEventDestinationFuture(
         params: DeleteConfigurationSetEventDestinationRequest
     ): Future[DeleteConfigurationSetEventDestinationResponse] =
-      service.deleteConfigurationSetEventDestination(params).promise.toFuture
+      service.deleteConfigurationSetEventDestination(params).promise().toFuture
     @inline def deleteConfigurationSetFuture(
         params: DeleteConfigurationSetRequest
-    ): Future[DeleteConfigurationSetResponse] = service.deleteConfigurationSet(params).promise.toFuture
+    ): Future[DeleteConfigurationSetResponse] = service.deleteConfigurationSet(params).promise().toFuture
     @inline def deleteConfigurationSetTrackingOptionsFuture(
         params: DeleteConfigurationSetTrackingOptionsRequest
     ): Future[DeleteConfigurationSetTrackingOptionsResponse] =
-      service.deleteConfigurationSetTrackingOptions(params).promise.toFuture
+      service.deleteConfigurationSetTrackingOptions(params).promise().toFuture
     @inline def deleteCustomVerificationEmailTemplateFuture(
         params: DeleteCustomVerificationEmailTemplateRequest
-    ): Future[js.Object] = service.deleteCustomVerificationEmailTemplate(params).promise.toFuture
+    ): Future[js.Object] = service.deleteCustomVerificationEmailTemplate(params).promise().toFuture
     @inline def deleteIdentityFuture(params: DeleteIdentityRequest): Future[DeleteIdentityResponse] =
-      service.deleteIdentity(params).promise.toFuture
+      service.deleteIdentity(params).promise().toFuture
     @inline def deleteIdentityPolicyFuture(params: DeleteIdentityPolicyRequest): Future[DeleteIdentityPolicyResponse] =
-      service.deleteIdentityPolicy(params).promise.toFuture
+      service.deleteIdentityPolicy(params).promise().toFuture
     @inline def deleteReceiptFilterFuture(params: DeleteReceiptFilterRequest): Future[DeleteReceiptFilterResponse] =
-      service.deleteReceiptFilter(params).promise.toFuture
+      service.deleteReceiptFilter(params).promise().toFuture
     @inline def deleteReceiptRuleFuture(params: DeleteReceiptRuleRequest): Future[DeleteReceiptRuleResponse] =
-      service.deleteReceiptRule(params).promise.toFuture
+      service.deleteReceiptRule(params).promise().toFuture
     @inline def deleteReceiptRuleSetFuture(params: DeleteReceiptRuleSetRequest): Future[DeleteReceiptRuleSetResponse] =
-      service.deleteReceiptRuleSet(params).promise.toFuture
+      service.deleteReceiptRuleSet(params).promise().toFuture
     @inline def deleteTemplateFuture(params: DeleteTemplateRequest): Future[DeleteTemplateResponse] =
-      service.deleteTemplate(params).promise.toFuture
+      service.deleteTemplate(params).promise().toFuture
     @inline def deleteVerifiedEmailAddressFuture(params: DeleteVerifiedEmailAddressRequest): Future[js.Object] =
-      service.deleteVerifiedEmailAddress(params).promise.toFuture
+      service.deleteVerifiedEmailAddress(params).promise().toFuture
     @inline def describeActiveReceiptRuleSetFuture(
         params: DescribeActiveReceiptRuleSetRequest
-    ): Future[DescribeActiveReceiptRuleSetResponse] = service.describeActiveReceiptRuleSet(params).promise.toFuture
+    ): Future[DescribeActiveReceiptRuleSetResponse] = service.describeActiveReceiptRuleSet(params).promise().toFuture
     @inline def describeConfigurationSetFuture(
         params: DescribeConfigurationSetRequest
-    ): Future[DescribeConfigurationSetResponse] = service.describeConfigurationSet(params).promise.toFuture
+    ): Future[DescribeConfigurationSetResponse] = service.describeConfigurationSet(params).promise().toFuture
     @inline def describeReceiptRuleFuture(params: DescribeReceiptRuleRequest): Future[DescribeReceiptRuleResponse] =
-      service.describeReceiptRule(params).promise.toFuture
+      service.describeReceiptRule(params).promise().toFuture
     @inline def describeReceiptRuleSetFuture(
         params: DescribeReceiptRuleSetRequest
-    ): Future[DescribeReceiptRuleSetResponse] = service.describeReceiptRuleSet(params).promise.toFuture
+    ): Future[DescribeReceiptRuleSetResponse] = service.describeReceiptRuleSet(params).promise().toFuture
     @inline def getAccountSendingEnabledFuture(): Future[GetAccountSendingEnabledResponse] =
-      service.getAccountSendingEnabled().promise.toFuture
+      service.getAccountSendingEnabled().promise().toFuture
     @inline def getCustomVerificationEmailTemplateFuture(
         params: GetCustomVerificationEmailTemplateRequest
     ): Future[GetCustomVerificationEmailTemplateResponse] =
-      service.getCustomVerificationEmailTemplate(params).promise.toFuture
+      service.getCustomVerificationEmailTemplate(params).promise().toFuture
     @inline def getIdentityDkimAttributesFuture(
         params: GetIdentityDkimAttributesRequest
-    ): Future[GetIdentityDkimAttributesResponse] = service.getIdentityDkimAttributes(params).promise.toFuture
+    ): Future[GetIdentityDkimAttributesResponse] = service.getIdentityDkimAttributes(params).promise().toFuture
     @inline def getIdentityMailFromDomainAttributesFuture(
         params: GetIdentityMailFromDomainAttributesRequest
     ): Future[GetIdentityMailFromDomainAttributesResponse] =
-      service.getIdentityMailFromDomainAttributes(params).promise.toFuture
+      service.getIdentityMailFromDomainAttributes(params).promise().toFuture
     @inline def getIdentityNotificationAttributesFuture(
         params: GetIdentityNotificationAttributesRequest
     ): Future[GetIdentityNotificationAttributesResponse] =
-      service.getIdentityNotificationAttributes(params).promise.toFuture
+      service.getIdentityNotificationAttributes(params).promise().toFuture
     @inline def getIdentityPoliciesFuture(params: GetIdentityPoliciesRequest): Future[GetIdentityPoliciesResponse] =
-      service.getIdentityPolicies(params).promise.toFuture
+      service.getIdentityPolicies(params).promise().toFuture
     @inline def getIdentityVerificationAttributesFuture(
         params: GetIdentityVerificationAttributesRequest
     ): Future[GetIdentityVerificationAttributesResponse] =
-      service.getIdentityVerificationAttributes(params).promise.toFuture
-    @inline def getSendQuotaFuture(): Future[GetSendQuotaResponse] = service.getSendQuota().promise.toFuture
+      service.getIdentityVerificationAttributes(params).promise().toFuture
+    @inline def getSendQuotaFuture(): Future[GetSendQuotaResponse] = service.getSendQuota().promise().toFuture
     @inline def getSendStatisticsFuture(): Future[GetSendStatisticsResponse] =
-      service.getSendStatistics().promise.toFuture
+      service.getSendStatistics().promise().toFuture
     @inline def getTemplateFuture(params: GetTemplateRequest): Future[GetTemplateResponse] =
-      service.getTemplate(params).promise.toFuture
+      service.getTemplate(params).promise().toFuture
     @inline def listConfigurationSetsFuture(
         params: ListConfigurationSetsRequest
-    ): Future[ListConfigurationSetsResponse] = service.listConfigurationSets(params).promise.toFuture
+    ): Future[ListConfigurationSetsResponse] = service.listConfigurationSets(params).promise().toFuture
     @inline def listCustomVerificationEmailTemplatesFuture(
         params: ListCustomVerificationEmailTemplatesRequest
     ): Future[ListCustomVerificationEmailTemplatesResponse] =
-      service.listCustomVerificationEmailTemplates(params).promise.toFuture
+      service.listCustomVerificationEmailTemplates(params).promise().toFuture
     @inline def listIdentitiesFuture(params: ListIdentitiesRequest): Future[ListIdentitiesResponse] =
-      service.listIdentities(params).promise.toFuture
+      service.listIdentities(params).promise().toFuture
     @inline def listIdentityPoliciesFuture(params: ListIdentityPoliciesRequest): Future[ListIdentityPoliciesResponse] =
-      service.listIdentityPolicies(params).promise.toFuture
+      service.listIdentityPolicies(params).promise().toFuture
     @inline def listReceiptFiltersFuture(params: ListReceiptFiltersRequest): Future[ListReceiptFiltersResponse] =
-      service.listReceiptFilters(params).promise.toFuture
+      service.listReceiptFilters(params).promise().toFuture
     @inline def listReceiptRuleSetsFuture(params: ListReceiptRuleSetsRequest): Future[ListReceiptRuleSetsResponse] =
-      service.listReceiptRuleSets(params).promise.toFuture
+      service.listReceiptRuleSets(params).promise().toFuture
     @inline def listTemplatesFuture(params: ListTemplatesRequest): Future[ListTemplatesResponse] =
-      service.listTemplates(params).promise.toFuture
+      service.listTemplates(params).promise().toFuture
     @inline def listVerifiedEmailAddressesFuture(): Future[ListVerifiedEmailAddressesResponse] =
-      service.listVerifiedEmailAddresses().promise.toFuture
+      service.listVerifiedEmailAddresses().promise().toFuture
     @inline def putConfigurationSetDeliveryOptionsFuture(
         params: PutConfigurationSetDeliveryOptionsRequest
     ): Future[PutConfigurationSetDeliveryOptionsResponse] =
-      service.putConfigurationSetDeliveryOptions(params).promise.toFuture
+      service.putConfigurationSetDeliveryOptions(params).promise().toFuture
     @inline def putIdentityPolicyFuture(params: PutIdentityPolicyRequest): Future[PutIdentityPolicyResponse] =
-      service.putIdentityPolicy(params).promise.toFuture
+      service.putIdentityPolicy(params).promise().toFuture
     @inline def reorderReceiptRuleSetFuture(
         params: ReorderReceiptRuleSetRequest
-    ): Future[ReorderReceiptRuleSetResponse] = service.reorderReceiptRuleSet(params).promise.toFuture
+    ): Future[ReorderReceiptRuleSetResponse] = service.reorderReceiptRuleSet(params).promise().toFuture
     @inline def sendBounceFuture(params: SendBounceRequest): Future[SendBounceResponse] =
-      service.sendBounce(params).promise.toFuture
+      service.sendBounce(params).promise().toFuture
     @inline def sendBulkTemplatedEmailFuture(
         params: SendBulkTemplatedEmailRequest
-    ): Future[SendBulkTemplatedEmailResponse] = service.sendBulkTemplatedEmail(params).promise.toFuture
+    ): Future[SendBulkTemplatedEmailResponse] = service.sendBulkTemplatedEmail(params).promise().toFuture
     @inline def sendCustomVerificationEmailFuture(
         params: SendCustomVerificationEmailRequest
-    ): Future[SendCustomVerificationEmailResponse] = service.sendCustomVerificationEmail(params).promise.toFuture
+    ): Future[SendCustomVerificationEmailResponse] = service.sendCustomVerificationEmail(params).promise().toFuture
     @inline def sendEmailFuture(params: SendEmailRequest): Future[SendEmailResponse] =
-      service.sendEmail(params).promise.toFuture
+      service.sendEmail(params).promise().toFuture
     @inline def sendRawEmailFuture(params: SendRawEmailRequest): Future[SendRawEmailResponse] =
-      service.sendRawEmail(params).promise.toFuture
+      service.sendRawEmail(params).promise().toFuture
     @inline def sendTemplatedEmailFuture(params: SendTemplatedEmailRequest): Future[SendTemplatedEmailResponse] =
-      service.sendTemplatedEmail(params).promise.toFuture
+      service.sendTemplatedEmail(params).promise().toFuture
     @inline def setActiveReceiptRuleSetFuture(
         params: SetActiveReceiptRuleSetRequest
-    ): Future[SetActiveReceiptRuleSetResponse] = service.setActiveReceiptRuleSet(params).promise.toFuture
+    ): Future[SetActiveReceiptRuleSetResponse] = service.setActiveReceiptRuleSet(params).promise().toFuture
     @inline def setIdentityDkimEnabledFuture(
         params: SetIdentityDkimEnabledRequest
-    ): Future[SetIdentityDkimEnabledResponse] = service.setIdentityDkimEnabled(params).promise.toFuture
+    ): Future[SetIdentityDkimEnabledResponse] = service.setIdentityDkimEnabled(params).promise().toFuture
     @inline def setIdentityFeedbackForwardingEnabledFuture(
         params: SetIdentityFeedbackForwardingEnabledRequest
     ): Future[SetIdentityFeedbackForwardingEnabledResponse] =
-      service.setIdentityFeedbackForwardingEnabled(params).promise.toFuture
+      service.setIdentityFeedbackForwardingEnabled(params).promise().toFuture
     @inline def setIdentityHeadersInNotificationsEnabledFuture(
         params: SetIdentityHeadersInNotificationsEnabledRequest
     ): Future[SetIdentityHeadersInNotificationsEnabledResponse] =
-      service.setIdentityHeadersInNotificationsEnabled(params).promise.toFuture
+      service.setIdentityHeadersInNotificationsEnabled(params).promise().toFuture
     @inline def setIdentityMailFromDomainFuture(
         params: SetIdentityMailFromDomainRequest
-    ): Future[SetIdentityMailFromDomainResponse] = service.setIdentityMailFromDomain(params).promise.toFuture
+    ): Future[SetIdentityMailFromDomainResponse] = service.setIdentityMailFromDomain(params).promise().toFuture
     @inline def setIdentityNotificationTopicFuture(
         params: SetIdentityNotificationTopicRequest
-    ): Future[SetIdentityNotificationTopicResponse] = service.setIdentityNotificationTopic(params).promise.toFuture
+    ): Future[SetIdentityNotificationTopicResponse] = service.setIdentityNotificationTopic(params).promise().toFuture
     @inline def setReceiptRulePositionFuture(
         params: SetReceiptRulePositionRequest
-    ): Future[SetReceiptRulePositionResponse] = service.setReceiptRulePosition(params).promise.toFuture
+    ): Future[SetReceiptRulePositionResponse] = service.setReceiptRulePosition(params).promise().toFuture
     @inline def testRenderTemplateFuture(params: TestRenderTemplateRequest): Future[TestRenderTemplateResponse] =
-      service.testRenderTemplate(params).promise.toFuture
+      service.testRenderTemplate(params).promise().toFuture
     @inline def updateAccountSendingEnabledFuture(params: UpdateAccountSendingEnabledRequest): Future[js.Object] =
-      service.updateAccountSendingEnabled(params).promise.toFuture
+      service.updateAccountSendingEnabled(params).promise().toFuture
     @inline def updateConfigurationSetEventDestinationFuture(
         params: UpdateConfigurationSetEventDestinationRequest
     ): Future[UpdateConfigurationSetEventDestinationResponse] =
-      service.updateConfigurationSetEventDestination(params).promise.toFuture
+      service.updateConfigurationSetEventDestination(params).promise().toFuture
     @inline def updateConfigurationSetReputationMetricsEnabledFuture(
         params: UpdateConfigurationSetReputationMetricsEnabledRequest
-    ): Future[js.Object] = service.updateConfigurationSetReputationMetricsEnabled(params).promise.toFuture
+    ): Future[js.Object] = service.updateConfigurationSetReputationMetricsEnabled(params).promise().toFuture
     @inline def updateConfigurationSetSendingEnabledFuture(
         params: UpdateConfigurationSetSendingEnabledRequest
-    ): Future[js.Object] = service.updateConfigurationSetSendingEnabled(params).promise.toFuture
+    ): Future[js.Object] = service.updateConfigurationSetSendingEnabled(params).promise().toFuture
     @inline def updateConfigurationSetTrackingOptionsFuture(
         params: UpdateConfigurationSetTrackingOptionsRequest
     ): Future[UpdateConfigurationSetTrackingOptionsResponse] =
-      service.updateConfigurationSetTrackingOptions(params).promise.toFuture
+      service.updateConfigurationSetTrackingOptions(params).promise().toFuture
     @inline def updateCustomVerificationEmailTemplateFuture(
         params: UpdateCustomVerificationEmailTemplateRequest
-    ): Future[js.Object] = service.updateCustomVerificationEmailTemplate(params).promise.toFuture
+    ): Future[js.Object] = service.updateCustomVerificationEmailTemplate(params).promise().toFuture
     @inline def updateReceiptRuleFuture(params: UpdateReceiptRuleRequest): Future[UpdateReceiptRuleResponse] =
-      service.updateReceiptRule(params).promise.toFuture
+      service.updateReceiptRule(params).promise().toFuture
     @inline def updateTemplateFuture(params: UpdateTemplateRequest): Future[UpdateTemplateResponse] =
-      service.updateTemplate(params).promise.toFuture
+      service.updateTemplate(params).promise().toFuture
     @inline def verifyDomainDkimFuture(params: VerifyDomainDkimRequest): Future[VerifyDomainDkimResponse] =
-      service.verifyDomainDkim(params).promise.toFuture
+      service.verifyDomainDkim(params).promise().toFuture
     @inline def verifyDomainIdentityFuture(params: VerifyDomainIdentityRequest): Future[VerifyDomainIdentityResponse] =
-      service.verifyDomainIdentity(params).promise.toFuture
+      service.verifyDomainIdentity(params).promise().toFuture
     @inline def verifyEmailAddressFuture(params: VerifyEmailAddressRequest): Future[js.Object] =
-      service.verifyEmailAddress(params).promise.toFuture
+      service.verifyEmailAddress(params).promise().toFuture
     @inline def verifyEmailIdentityFuture(params: VerifyEmailIdentityRequest): Future[VerifyEmailIdentityResponse] =
-      service.verifyEmailIdentity(params).promise.toFuture
+      service.verifyEmailIdentity(params).promise().toFuture
   }
 }
 

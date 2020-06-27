@@ -113,153 +113,153 @@ package object route53 {
 
     @inline def associateVPCWithHostedZoneFuture(
         params: AssociateVPCWithHostedZoneRequest
-    ): Future[AssociateVPCWithHostedZoneResponse] = service.associateVPCWithHostedZone(params).promise.toFuture
+    ): Future[AssociateVPCWithHostedZoneResponse] = service.associateVPCWithHostedZone(params).promise().toFuture
     @inline def changeResourceRecordSetsFuture(
         params: ChangeResourceRecordSetsRequest
-    ): Future[ChangeResourceRecordSetsResponse] = service.changeResourceRecordSets(params).promise.toFuture
+    ): Future[ChangeResourceRecordSetsResponse] = service.changeResourceRecordSets(params).promise().toFuture
     @inline def changeTagsForResourceFuture(
         params: ChangeTagsForResourceRequest
-    ): Future[ChangeTagsForResourceResponse] = service.changeTagsForResource(params).promise.toFuture
+    ): Future[ChangeTagsForResourceResponse] = service.changeTagsForResource(params).promise().toFuture
     @inline def createHealthCheckFuture(params: CreateHealthCheckRequest): Future[CreateHealthCheckResponse] =
-      service.createHealthCheck(params).promise.toFuture
+      service.createHealthCheck(params).promise().toFuture
     @inline def createHostedZoneFuture(params: CreateHostedZoneRequest): Future[CreateHostedZoneResponse] =
-      service.createHostedZone(params).promise.toFuture
+      service.createHostedZone(params).promise().toFuture
     @inline def createQueryLoggingConfigFuture(
         params: CreateQueryLoggingConfigRequest
-    ): Future[CreateQueryLoggingConfigResponse] = service.createQueryLoggingConfig(params).promise.toFuture
+    ): Future[CreateQueryLoggingConfigResponse] = service.createQueryLoggingConfig(params).promise().toFuture
     @inline def createReusableDelegationSetFuture(
         params: CreateReusableDelegationSetRequest
-    ): Future[CreateReusableDelegationSetResponse] = service.createReusableDelegationSet(params).promise.toFuture
+    ): Future[CreateReusableDelegationSetResponse] = service.createReusableDelegationSet(params).promise().toFuture
     @inline def createTrafficPolicyFuture(params: CreateTrafficPolicyRequest): Future[CreateTrafficPolicyResponse] =
-      service.createTrafficPolicy(params).promise.toFuture
+      service.createTrafficPolicy(params).promise().toFuture
     @inline def createTrafficPolicyInstanceFuture(
         params: CreateTrafficPolicyInstanceRequest
-    ): Future[CreateTrafficPolicyInstanceResponse] = service.createTrafficPolicyInstance(params).promise.toFuture
+    ): Future[CreateTrafficPolicyInstanceResponse] = service.createTrafficPolicyInstance(params).promise().toFuture
     @inline def createTrafficPolicyVersionFuture(
         params: CreateTrafficPolicyVersionRequest
-    ): Future[CreateTrafficPolicyVersionResponse] = service.createTrafficPolicyVersion(params).promise.toFuture
+    ): Future[CreateTrafficPolicyVersionResponse] = service.createTrafficPolicyVersion(params).promise().toFuture
     @inline def createVPCAssociationAuthorizationFuture(
         params: CreateVPCAssociationAuthorizationRequest
     ): Future[CreateVPCAssociationAuthorizationResponse] =
-      service.createVPCAssociationAuthorization(params).promise.toFuture
+      service.createVPCAssociationAuthorization(params).promise().toFuture
     @inline def deleteHealthCheckFuture(params: DeleteHealthCheckRequest): Future[DeleteHealthCheckResponse] =
-      service.deleteHealthCheck(params).promise.toFuture
+      service.deleteHealthCheck(params).promise().toFuture
     @inline def deleteHostedZoneFuture(params: DeleteHostedZoneRequest): Future[DeleteHostedZoneResponse] =
-      service.deleteHostedZone(params).promise.toFuture
+      service.deleteHostedZone(params).promise().toFuture
     @inline def deleteQueryLoggingConfigFuture(
         params: DeleteQueryLoggingConfigRequest
-    ): Future[DeleteQueryLoggingConfigResponse] = service.deleteQueryLoggingConfig(params).promise.toFuture
+    ): Future[DeleteQueryLoggingConfigResponse] = service.deleteQueryLoggingConfig(params).promise().toFuture
     @inline def deleteReusableDelegationSetFuture(
         params: DeleteReusableDelegationSetRequest
-    ): Future[DeleteReusableDelegationSetResponse] = service.deleteReusableDelegationSet(params).promise.toFuture
+    ): Future[DeleteReusableDelegationSetResponse] = service.deleteReusableDelegationSet(params).promise().toFuture
     @inline def deleteTrafficPolicyFuture(params: DeleteTrafficPolicyRequest): Future[DeleteTrafficPolicyResponse] =
-      service.deleteTrafficPolicy(params).promise.toFuture
+      service.deleteTrafficPolicy(params).promise().toFuture
     @inline def deleteTrafficPolicyInstanceFuture(
         params: DeleteTrafficPolicyInstanceRequest
-    ): Future[DeleteTrafficPolicyInstanceResponse] = service.deleteTrafficPolicyInstance(params).promise.toFuture
+    ): Future[DeleteTrafficPolicyInstanceResponse] = service.deleteTrafficPolicyInstance(params).promise().toFuture
     @inline def deleteVPCAssociationAuthorizationFuture(
         params: DeleteVPCAssociationAuthorizationRequest
     ): Future[DeleteVPCAssociationAuthorizationResponse] =
-      service.deleteVPCAssociationAuthorization(params).promise.toFuture
+      service.deleteVPCAssociationAuthorization(params).promise().toFuture
     @inline def disassociateVPCFromHostedZoneFuture(
         params: DisassociateVPCFromHostedZoneRequest
-    ): Future[DisassociateVPCFromHostedZoneResponse] = service.disassociateVPCFromHostedZone(params).promise.toFuture
+    ): Future[DisassociateVPCFromHostedZoneResponse] = service.disassociateVPCFromHostedZone(params).promise().toFuture
     @inline def getAccountLimitFuture(params: GetAccountLimitRequest): Future[GetAccountLimitResponse] =
-      service.getAccountLimit(params).promise.toFuture
+      service.getAccountLimit(params).promise().toFuture
     @inline def getChangeFuture(params: GetChangeRequest): Future[GetChangeResponse] =
-      service.getChange(params).promise.toFuture
+      service.getChange(params).promise().toFuture
     @inline def getCheckerIpRangesFuture(params: GetCheckerIpRangesRequest): Future[GetCheckerIpRangesResponse] =
-      service.getCheckerIpRanges(params).promise.toFuture
+      service.getCheckerIpRanges(params).promise().toFuture
     @inline def getGeoLocationFuture(params: GetGeoLocationRequest): Future[GetGeoLocationResponse] =
-      service.getGeoLocation(params).promise.toFuture
+      service.getGeoLocation(params).promise().toFuture
     @inline def getHealthCheckCountFuture(params: GetHealthCheckCountRequest): Future[GetHealthCheckCountResponse] =
-      service.getHealthCheckCount(params).promise.toFuture
+      service.getHealthCheckCount(params).promise().toFuture
     @inline def getHealthCheckFuture(params: GetHealthCheckRequest): Future[GetHealthCheckResponse] =
-      service.getHealthCheck(params).promise.toFuture
+      service.getHealthCheck(params).promise().toFuture
     @inline def getHealthCheckLastFailureReasonFuture(
         params: GetHealthCheckLastFailureReasonRequest
     ): Future[GetHealthCheckLastFailureReasonResponse] =
-      service.getHealthCheckLastFailureReason(params).promise.toFuture
+      service.getHealthCheckLastFailureReason(params).promise().toFuture
     @inline def getHealthCheckStatusFuture(params: GetHealthCheckStatusRequest): Future[GetHealthCheckStatusResponse] =
-      service.getHealthCheckStatus(params).promise.toFuture
+      service.getHealthCheckStatus(params).promise().toFuture
     @inline def getHostedZoneCountFuture(params: GetHostedZoneCountRequest): Future[GetHostedZoneCountResponse] =
-      service.getHostedZoneCount(params).promise.toFuture
+      service.getHostedZoneCount(params).promise().toFuture
     @inline def getHostedZoneFuture(params: GetHostedZoneRequest): Future[GetHostedZoneResponse] =
-      service.getHostedZone(params).promise.toFuture
+      service.getHostedZone(params).promise().toFuture
     @inline def getHostedZoneLimitFuture(params: GetHostedZoneLimitRequest): Future[GetHostedZoneLimitResponse] =
-      service.getHostedZoneLimit(params).promise.toFuture
+      service.getHostedZoneLimit(params).promise().toFuture
     @inline def getQueryLoggingConfigFuture(
         params: GetQueryLoggingConfigRequest
-    ): Future[GetQueryLoggingConfigResponse] = service.getQueryLoggingConfig(params).promise.toFuture
+    ): Future[GetQueryLoggingConfigResponse] = service.getQueryLoggingConfig(params).promise().toFuture
     @inline def getReusableDelegationSetFuture(
         params: GetReusableDelegationSetRequest
-    ): Future[GetReusableDelegationSetResponse] = service.getReusableDelegationSet(params).promise.toFuture
+    ): Future[GetReusableDelegationSetResponse] = service.getReusableDelegationSet(params).promise().toFuture
     @inline def getReusableDelegationSetLimitFuture(
         params: GetReusableDelegationSetLimitRequest
-    ): Future[GetReusableDelegationSetLimitResponse] = service.getReusableDelegationSetLimit(params).promise.toFuture
+    ): Future[GetReusableDelegationSetLimitResponse] = service.getReusableDelegationSetLimit(params).promise().toFuture
     @inline def getTrafficPolicyFuture(params: GetTrafficPolicyRequest): Future[GetTrafficPolicyResponse] =
-      service.getTrafficPolicy(params).promise.toFuture
+      service.getTrafficPolicy(params).promise().toFuture
     @inline def getTrafficPolicyInstanceCountFuture(
         params: GetTrafficPolicyInstanceCountRequest
-    ): Future[GetTrafficPolicyInstanceCountResponse] = service.getTrafficPolicyInstanceCount(params).promise.toFuture
+    ): Future[GetTrafficPolicyInstanceCountResponse] = service.getTrafficPolicyInstanceCount(params).promise().toFuture
     @inline def getTrafficPolicyInstanceFuture(
         params: GetTrafficPolicyInstanceRequest
-    ): Future[GetTrafficPolicyInstanceResponse] = service.getTrafficPolicyInstance(params).promise.toFuture
+    ): Future[GetTrafficPolicyInstanceResponse] = service.getTrafficPolicyInstance(params).promise().toFuture
     @inline def listGeoLocationsFuture(params: ListGeoLocationsRequest): Future[ListGeoLocationsResponse] =
-      service.listGeoLocations(params).promise.toFuture
+      service.listGeoLocations(params).promise().toFuture
     @inline def listHealthChecksFuture(params: ListHealthChecksRequest): Future[ListHealthChecksResponse] =
-      service.listHealthChecks(params).promise.toFuture
+      service.listHealthChecks(params).promise().toFuture
     @inline def listHostedZonesByNameFuture(
         params: ListHostedZonesByNameRequest
-    ): Future[ListHostedZonesByNameResponse] = service.listHostedZonesByName(params).promise.toFuture
+    ): Future[ListHostedZonesByNameResponse] = service.listHostedZonesByName(params).promise().toFuture
     @inline def listHostedZonesFuture(params: ListHostedZonesRequest): Future[ListHostedZonesResponse] =
-      service.listHostedZones(params).promise.toFuture
+      service.listHostedZones(params).promise().toFuture
     @inline def listQueryLoggingConfigsFuture(
         params: ListQueryLoggingConfigsRequest
-    ): Future[ListQueryLoggingConfigsResponse] = service.listQueryLoggingConfigs(params).promise.toFuture
+    ): Future[ListQueryLoggingConfigsResponse] = service.listQueryLoggingConfigs(params).promise().toFuture
     @inline def listResourceRecordSetsFuture(
         params: ListResourceRecordSetsRequest
-    ): Future[ListResourceRecordSetsResponse] = service.listResourceRecordSets(params).promise.toFuture
+    ): Future[ListResourceRecordSetsResponse] = service.listResourceRecordSets(params).promise().toFuture
     @inline def listReusableDelegationSetsFuture(
         params: ListReusableDelegationSetsRequest
-    ): Future[ListReusableDelegationSetsResponse] = service.listReusableDelegationSets(params).promise.toFuture
+    ): Future[ListReusableDelegationSetsResponse] = service.listReusableDelegationSets(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def listTagsForResourcesFuture(params: ListTagsForResourcesRequest): Future[ListTagsForResourcesResponse] =
-      service.listTagsForResources(params).promise.toFuture
+      service.listTagsForResources(params).promise().toFuture
     @inline def listTrafficPoliciesFuture(params: ListTrafficPoliciesRequest): Future[ListTrafficPoliciesResponse] =
-      service.listTrafficPolicies(params).promise.toFuture
+      service.listTrafficPolicies(params).promise().toFuture
     @inline def listTrafficPolicyInstancesByHostedZoneFuture(
         params: ListTrafficPolicyInstancesByHostedZoneRequest
     ): Future[ListTrafficPolicyInstancesByHostedZoneResponse] =
-      service.listTrafficPolicyInstancesByHostedZone(params).promise.toFuture
+      service.listTrafficPolicyInstancesByHostedZone(params).promise().toFuture
     @inline def listTrafficPolicyInstancesByPolicyFuture(
         params: ListTrafficPolicyInstancesByPolicyRequest
     ): Future[ListTrafficPolicyInstancesByPolicyResponse] =
-      service.listTrafficPolicyInstancesByPolicy(params).promise.toFuture
+      service.listTrafficPolicyInstancesByPolicy(params).promise().toFuture
     @inline def listTrafficPolicyInstancesFuture(
         params: ListTrafficPolicyInstancesRequest
-    ): Future[ListTrafficPolicyInstancesResponse] = service.listTrafficPolicyInstances(params).promise.toFuture
+    ): Future[ListTrafficPolicyInstancesResponse] = service.listTrafficPolicyInstances(params).promise().toFuture
     @inline def listTrafficPolicyVersionsFuture(
         params: ListTrafficPolicyVersionsRequest
-    ): Future[ListTrafficPolicyVersionsResponse] = service.listTrafficPolicyVersions(params).promise.toFuture
+    ): Future[ListTrafficPolicyVersionsResponse] = service.listTrafficPolicyVersions(params).promise().toFuture
     @inline def listVPCAssociationAuthorizationsFuture(
         params: ListVPCAssociationAuthorizationsRequest
     ): Future[ListVPCAssociationAuthorizationsResponse] =
-      service.listVPCAssociationAuthorizations(params).promise.toFuture
+      service.listVPCAssociationAuthorizations(params).promise().toFuture
     @inline def testDNSAnswerFuture(params: TestDNSAnswerRequest): Future[TestDNSAnswerResponse] =
-      service.testDNSAnswer(params).promise.toFuture
+      service.testDNSAnswer(params).promise().toFuture
     @inline def updateHealthCheckFuture(params: UpdateHealthCheckRequest): Future[UpdateHealthCheckResponse] =
-      service.updateHealthCheck(params).promise.toFuture
+      service.updateHealthCheck(params).promise().toFuture
     @inline def updateHostedZoneCommentFuture(
         params: UpdateHostedZoneCommentRequest
-    ): Future[UpdateHostedZoneCommentResponse] = service.updateHostedZoneComment(params).promise.toFuture
+    ): Future[UpdateHostedZoneCommentResponse] = service.updateHostedZoneComment(params).promise().toFuture
     @inline def updateTrafficPolicyCommentFuture(
         params: UpdateTrafficPolicyCommentRequest
-    ): Future[UpdateTrafficPolicyCommentResponse] = service.updateTrafficPolicyComment(params).promise.toFuture
+    ): Future[UpdateTrafficPolicyCommentResponse] = service.updateTrafficPolicyComment(params).promise().toFuture
     @inline def updateTrafficPolicyInstanceFuture(
         params: UpdateTrafficPolicyInstanceRequest
-    ): Future[UpdateTrafficPolicyInstanceResponse] = service.updateTrafficPolicyInstance(params).promise.toFuture
+    ): Future[UpdateTrafficPolicyInstanceResponse] = service.updateTrafficPolicyInstance(params).promise().toFuture
   }
 }
 

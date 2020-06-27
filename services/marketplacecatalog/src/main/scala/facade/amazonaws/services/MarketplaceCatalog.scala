@@ -34,17 +34,17 @@ package object marketplacecatalog {
   implicit final class MarketplaceCatalogOps(private val service: MarketplaceCatalog) extends AnyVal {
 
     @inline def cancelChangeSetFuture(params: CancelChangeSetRequest): Future[CancelChangeSetResponse] =
-      service.cancelChangeSet(params).promise.toFuture
+      service.cancelChangeSet(params).promise().toFuture
     @inline def describeChangeSetFuture(params: DescribeChangeSetRequest): Future[DescribeChangeSetResponse] =
-      service.describeChangeSet(params).promise.toFuture
+      service.describeChangeSet(params).promise().toFuture
     @inline def describeEntityFuture(params: DescribeEntityRequest): Future[DescribeEntityResponse] =
-      service.describeEntity(params).promise.toFuture
+      service.describeEntity(params).promise().toFuture
     @inline def listChangeSetsFuture(params: ListChangeSetsRequest): Future[ListChangeSetsResponse] =
-      service.listChangeSets(params).promise.toFuture
+      service.listChangeSets(params).promise().toFuture
     @inline def listEntitiesFuture(params: ListEntitiesRequest): Future[ListEntitiesResponse] =
-      service.listEntities(params).promise.toFuture
+      service.listEntities(params).promise().toFuture
     @inline def startChangeSetFuture(params: StartChangeSetRequest): Future[StartChangeSetResponse] =
-      service.startChangeSet(params).promise.toFuture
+      service.startChangeSet(params).promise().toFuture
   }
 }
 

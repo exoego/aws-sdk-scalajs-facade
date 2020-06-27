@@ -40,15 +40,15 @@ package object rdsdataservice {
 
     @inline def batchExecuteStatementFuture(
         params: BatchExecuteStatementRequest
-    ): Future[BatchExecuteStatementResponse] = service.batchExecuteStatement(params).promise.toFuture
+    ): Future[BatchExecuteStatementResponse] = service.batchExecuteStatement(params).promise().toFuture
     @inline def beginTransactionFuture(params: BeginTransactionRequest): Future[BeginTransactionResponse] =
-      service.beginTransaction(params).promise.toFuture
+      service.beginTransaction(params).promise().toFuture
     @inline def commitTransactionFuture(params: CommitTransactionRequest): Future[CommitTransactionResponse] =
-      service.commitTransaction(params).promise.toFuture
+      service.commitTransaction(params).promise().toFuture
     @inline def executeStatementFuture(params: ExecuteStatementRequest): Future[ExecuteStatementResponse] =
-      service.executeStatement(params).promise.toFuture
+      service.executeStatement(params).promise().toFuture
     @inline def rollbackTransactionFuture(params: RollbackTransactionRequest): Future[RollbackTransactionResponse] =
-      service.rollbackTransaction(params).promise.toFuture
+      service.rollbackTransaction(params).promise().toFuture
   }
 }
 

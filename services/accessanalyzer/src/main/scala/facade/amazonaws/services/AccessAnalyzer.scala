@@ -31,42 +31,42 @@ package object accessanalyzer {
   implicit final class AccessAnalyzerOps(private val service: AccessAnalyzer) extends AnyVal {
 
     @inline def createAnalyzerFuture(params: CreateAnalyzerRequest): Future[CreateAnalyzerResponse] =
-      service.createAnalyzer(params).promise.toFuture
+      service.createAnalyzer(params).promise().toFuture
     @inline def createArchiveRuleFuture(params: CreateArchiveRuleRequest): Future[js.Object] =
-      service.createArchiveRule(params).promise.toFuture
+      service.createArchiveRule(params).promise().toFuture
     @inline def deleteAnalyzerFuture(params: DeleteAnalyzerRequest): Future[js.Object] =
-      service.deleteAnalyzer(params).promise.toFuture
+      service.deleteAnalyzer(params).promise().toFuture
     @inline def deleteArchiveRuleFuture(params: DeleteArchiveRuleRequest): Future[js.Object] =
-      service.deleteArchiveRule(params).promise.toFuture
+      service.deleteArchiveRule(params).promise().toFuture
     @inline def getAnalyzedResourceFuture(params: GetAnalyzedResourceRequest): Future[GetAnalyzedResourceResponse] =
-      service.getAnalyzedResource(params).promise.toFuture
+      service.getAnalyzedResource(params).promise().toFuture
     @inline def getAnalyzerFuture(params: GetAnalyzerRequest): Future[GetAnalyzerResponse] =
-      service.getAnalyzer(params).promise.toFuture
+      service.getAnalyzer(params).promise().toFuture
     @inline def getArchiveRuleFuture(params: GetArchiveRuleRequest): Future[GetArchiveRuleResponse] =
-      service.getArchiveRule(params).promise.toFuture
+      service.getArchiveRule(params).promise().toFuture
     @inline def getFindingFuture(params: GetFindingRequest): Future[GetFindingResponse] =
-      service.getFinding(params).promise.toFuture
+      service.getFinding(params).promise().toFuture
     @inline def listAnalyzedResourcesFuture(
         params: ListAnalyzedResourcesRequest
-    ): Future[ListAnalyzedResourcesResponse] = service.listAnalyzedResources(params).promise.toFuture
+    ): Future[ListAnalyzedResourcesResponse] = service.listAnalyzedResources(params).promise().toFuture
     @inline def listAnalyzersFuture(params: ListAnalyzersRequest): Future[ListAnalyzersResponse] =
-      service.listAnalyzers(params).promise.toFuture
+      service.listAnalyzers(params).promise().toFuture
     @inline def listArchiveRulesFuture(params: ListArchiveRulesRequest): Future[ListArchiveRulesResponse] =
-      service.listArchiveRules(params).promise.toFuture
+      service.listArchiveRules(params).promise().toFuture
     @inline def listFindingsFuture(params: ListFindingsRequest): Future[ListFindingsResponse] =
-      service.listFindings(params).promise.toFuture
+      service.listFindings(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
-      service.listTagsForResource(params).promise.toFuture
+      service.listTagsForResource(params).promise().toFuture
     @inline def startResourceScanFuture(params: StartResourceScanRequest): Future[js.Object] =
-      service.startResourceScan(params).promise.toFuture
+      service.startResourceScan(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
-      service.tagResource(params).promise.toFuture
+      service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
-      service.untagResource(params).promise.toFuture
+      service.untagResource(params).promise().toFuture
     @inline def updateArchiveRuleFuture(params: UpdateArchiveRuleRequest): Future[js.Object] =
-      service.updateArchiveRule(params).promise.toFuture
+      service.updateArchiveRule(params).promise().toFuture
     @inline def updateFindingsFuture(params: UpdateFindingsRequest): Future[js.Object] =
-      service.updateFindings(params).promise.toFuture
+      service.updateFindings(params).promise().toFuture
   }
 }
 

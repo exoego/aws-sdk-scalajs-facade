@@ -30,41 +30,41 @@ package object cloudtrail {
   implicit final class CloudTrailOps(private val service: CloudTrail) extends AnyVal {
 
     @inline def addTagsFuture(params: AddTagsRequest): Future[AddTagsResponse] =
-      service.addTags(params).promise.toFuture
+      service.addTags(params).promise().toFuture
     @inline def createTrailFuture(params: CreateTrailRequest): Future[CreateTrailResponse] =
-      service.createTrail(params).promise.toFuture
+      service.createTrail(params).promise().toFuture
     @inline def deleteTrailFuture(params: DeleteTrailRequest): Future[DeleteTrailResponse] =
-      service.deleteTrail(params).promise.toFuture
+      service.deleteTrail(params).promise().toFuture
     @inline def describeTrailsFuture(params: DescribeTrailsRequest): Future[DescribeTrailsResponse] =
-      service.describeTrails(params).promise.toFuture
+      service.describeTrails(params).promise().toFuture
     @inline def getEventSelectorsFuture(params: GetEventSelectorsRequest): Future[GetEventSelectorsResponse] =
-      service.getEventSelectors(params).promise.toFuture
+      service.getEventSelectors(params).promise().toFuture
     @inline def getInsightSelectorsFuture(params: GetInsightSelectorsRequest): Future[GetInsightSelectorsResponse] =
-      service.getInsightSelectors(params).promise.toFuture
+      service.getInsightSelectors(params).promise().toFuture
     @inline def getTrailFuture(params: GetTrailRequest): Future[GetTrailResponse] =
-      service.getTrail(params).promise.toFuture
+      service.getTrail(params).promise().toFuture
     @inline def getTrailStatusFuture(params: GetTrailStatusRequest): Future[GetTrailStatusResponse] =
-      service.getTrailStatus(params).promise.toFuture
+      service.getTrailStatus(params).promise().toFuture
     @inline def listPublicKeysFuture(params: ListPublicKeysRequest): Future[ListPublicKeysResponse] =
-      service.listPublicKeys(params).promise.toFuture
+      service.listPublicKeys(params).promise().toFuture
     @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] =
-      service.listTags(params).promise.toFuture
+      service.listTags(params).promise().toFuture
     @inline def listTrailsFuture(params: ListTrailsRequest): Future[ListTrailsResponse] =
-      service.listTrails(params).promise.toFuture
+      service.listTrails(params).promise().toFuture
     @inline def lookupEventsFuture(params: LookupEventsRequest): Future[LookupEventsResponse] =
-      service.lookupEvents(params).promise.toFuture
+      service.lookupEvents(params).promise().toFuture
     @inline def putEventSelectorsFuture(params: PutEventSelectorsRequest): Future[PutEventSelectorsResponse] =
-      service.putEventSelectors(params).promise.toFuture
+      service.putEventSelectors(params).promise().toFuture
     @inline def putInsightSelectorsFuture(params: PutInsightSelectorsRequest): Future[PutInsightSelectorsResponse] =
-      service.putInsightSelectors(params).promise.toFuture
+      service.putInsightSelectors(params).promise().toFuture
     @inline def removeTagsFuture(params: RemoveTagsRequest): Future[RemoveTagsResponse] =
-      service.removeTags(params).promise.toFuture
+      service.removeTags(params).promise().toFuture
     @inline def startLoggingFuture(params: StartLoggingRequest): Future[StartLoggingResponse] =
-      service.startLogging(params).promise.toFuture
+      service.startLogging(params).promise().toFuture
     @inline def stopLoggingFuture(params: StopLoggingRequest): Future[StopLoggingResponse] =
-      service.stopLogging(params).promise.toFuture
+      service.stopLogging(params).promise().toFuture
     @inline def updateTrailFuture(params: UpdateTrailRequest): Future[UpdateTrailResponse] =
-      service.updateTrail(params).promise.toFuture
+      service.updateTrail(params).promise().toFuture
   }
 }
 
