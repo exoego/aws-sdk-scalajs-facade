@@ -1,5 +1,5 @@
 val scalaJSVersion =
-  Option(System.getenv("SCALAJS_VERSION")).filter(_.nonEmpty).getOrElse("1.1.0")
+  Option(System.getenv("SCALAJS_VERSION")).filter(_.nonEmpty).getOrElse("1.1.1")
 val scalaJSBundlerArtifactId = if (scalaJSVersion.startsWith("0.6")) {
   "sbt-scalajs-bundler-sjs06"
 } else {
