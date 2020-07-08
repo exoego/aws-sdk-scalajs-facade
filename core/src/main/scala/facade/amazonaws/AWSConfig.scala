@@ -3,38 +3,38 @@ package facade.amazonaws
 import scala.scalajs.js
 
 trait AWSConfig extends js.Object {
-  var computeChecksums: js.UndefOr[Boolean]            = js.undefined
-  var convertResponseTypes: js.UndefOr[Boolean]        = js.undefined
-  var correctClockSkew: js.UndefOr[Boolean]            = js.undefined
-  var customUserAgent: js.UndefOr[String]              = js.undefined
-  var credentials: js.UndefOr[AWSCredentials]          = js.undefined
-  var credentialProvider: js.UndefOr[js.Any]           = js.undefined
-  var accessKeyId: js.UndefOr[String]                  = js.undefined
-  var secretAccessKey: js.UndefOr[String]              = js.undefined
-  var sessionToken: js.UndefOr[String]                 = js.undefined
-  var httpOptions: js.UndefOr[HttpOptions]             = js.undefined
-  var logger: js.UndefOr[Logger]                       = js.undefined
-  var maxRetries: js.UndefOr[Int]                      = js.undefined
-  var maxRedirects: js.UndefOr[Int]                    = js.undefined
-  var paramValidation: js.UndefOr[ParamValidation]     = js.undefined
-  var region: js.UndefOr[String]                       = js.undefined
+  var computeChecksums: js.UndefOr[Boolean] = js.undefined
+  var convertResponseTypes: js.UndefOr[Boolean] = js.undefined
+  var correctClockSkew: js.UndefOr[Boolean] = js.undefined
+  var customUserAgent: js.UndefOr[String] = js.undefined
+  var credentials: js.UndefOr[AWSCredentials] = js.undefined
+  var credentialProvider: js.UndefOr[js.Any] = js.undefined
+  var accessKeyId: js.UndefOr[String] = js.undefined
+  var secretAccessKey: js.UndefOr[String] = js.undefined
+  var sessionToken: js.UndefOr[String] = js.undefined
+  var httpOptions: js.UndefOr[HttpOptions] = js.undefined
+  var logger: js.UndefOr[Logger] = js.undefined
+  var maxRetries: js.UndefOr[Int] = js.undefined
+  var maxRedirects: js.UndefOr[Int] = js.undefined
+  var paramValidation: js.UndefOr[ParamValidation] = js.undefined
+  var region: js.UndefOr[String] = js.undefined
   var retryDelayOptions: js.UndefOr[RetryDelayOptions] = js.undefined
-  var s3BucketEndpoint: js.UndefOr[Boolean]            = js.undefined
-  var s3DisableBodySigning: js.UndefOr[Boolean]        = js.undefined
-  var s3ForcePathStyle: js.UndefOr[Boolean]            = js.undefined
-  var signatureCache: js.UndefOr[Boolean]              = js.undefined
-  var signatureVersion: js.UndefOr[String]             = js.undefined
-  var sslEnabled: js.UndefOr[Boolean]                  = js.undefined
-  var systemClockOffset: js.UndefOr[Double]            = js.undefined
-  var useAccelerateEndpoint: js.UndefOr[Boolean]       = js.undefined
-  var dynamoDbCrc32: js.UndefOr[Boolean]               = js.undefined
-  var endpointDiscoveryEnabled: js.UndefOr[Boolean]    = js.undefined
-  var endpointCacheSize: js.UndefOr[Double]            = js.undefined
-  var hostPrefixEnabled: js.UndefOr[Boolean]           = js.undefined
-  var endpoint: js.UndefOr[String]                     = js.undefined
-  var apiVersion: js.UndefOr[String]                   = js.undefined
-  var apiVersions: js.UndefOr[js.Dictionary[String]]   = js.undefined
-  var clientSideMonitoring: js.UndefOr[Boolean]        = js.undefined
+  var s3BucketEndpoint: js.UndefOr[Boolean] = js.undefined
+  var s3DisableBodySigning: js.UndefOr[Boolean] = js.undefined
+  var s3ForcePathStyle: js.UndefOr[Boolean] = js.undefined
+  var signatureCache: js.UndefOr[Boolean] = js.undefined
+  var signatureVersion: js.UndefOr[String] = js.undefined
+  var sslEnabled: js.UndefOr[Boolean] = js.undefined
+  var systemClockOffset: js.UndefOr[Double] = js.undefined
+  var useAccelerateEndpoint: js.UndefOr[Boolean] = js.undefined
+  var dynamoDbCrc32: js.UndefOr[Boolean] = js.undefined
+  var endpointDiscoveryEnabled: js.UndefOr[Boolean] = js.undefined
+  var endpointCacheSize: js.UndefOr[Double] = js.undefined
+  var hostPrefixEnabled: js.UndefOr[Boolean] = js.undefined
+  var endpoint: js.UndefOr[String] = js.undefined
+  var apiVersion: js.UndefOr[String] = js.undefined
+  var apiVersions: js.UndefOr[js.Dictionary[String]] = js.undefined
+  var clientSideMonitoring: js.UndefOr[Boolean] = js.undefined
 }
 
 object AWSConfig {
@@ -110,11 +110,11 @@ object AWSConfig {
 }
 
 trait HttpOptions extends js.Object {
-  var proxy: js.UndefOr[String]               = js.undefined
-  var agent: js.UndefOr[js.Any]               = js.undefined
-  var connectTimeout: js.UndefOr[Int]         = js.undefined
-  var timeout: js.UndefOr[Int]                = js.undefined
-  var xhrAsync: js.UndefOr[Boolean]           = js.undefined
+  var proxy: js.UndefOr[String] = js.undefined
+  var agent: js.UndefOr[js.Any] = js.undefined
+  var connectTimeout: js.UndefOr[Int] = js.undefined
+  var timeout: js.UndefOr[Int] = js.undefined
+  var xhrAsync: js.UndefOr[Boolean] = js.undefined
   var xhrWithCredentials: js.UndefOr[Boolean] = js.undefined
 }
 
@@ -145,10 +145,10 @@ trait Logger extends js.Object {
 }
 
 trait ParamValidation extends js.Object {
-  var min: js.UndefOr[Boolean]     = js.undefined
-  var max: js.UndefOr[Boolean]     = js.undefined
+  var min: js.UndefOr[Boolean] = js.undefined
+  var max: js.UndefOr[Boolean] = js.undefined
   var pattern: js.UndefOr[Boolean] = js.undefined
-  var enum: js.UndefOr[Boolean]    = js.undefined
+  var enum: js.UndefOr[Boolean] = js.undefined
 }
 
 object ParamValidation {
@@ -168,7 +168,7 @@ object ParamValidation {
 }
 
 trait RetryDelayOptions extends js.Object {
-  var base: js.UndefOr[Double]                    = js.undefined
+  var base: js.UndefOr[Double] = js.undefined
   var customBackoff: js.UndefOr[Double => Double] = js.undefined
 }
 object RetryDelayOptions {

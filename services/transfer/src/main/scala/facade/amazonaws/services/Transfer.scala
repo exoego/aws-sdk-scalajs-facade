@@ -7,43 +7,46 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object transfer {
-  type AddressAllocationId   = String
-  type AddressAllocationIds  = js.Array[AddressAllocationId]
-  type Arn                   = String
-  type DateImported          = js.Date
-  type HomeDirectory         = String
+  type AddressAllocationId = String
+  type AddressAllocationIds = js.Array[AddressAllocationId]
+  type Arn = String
+  type Certificate = String
+  type DateImported = js.Date
+  type HomeDirectory = String
   type HomeDirectoryMappings = js.Array[HomeDirectoryMapEntry]
-  type HostKey               = String
-  type HostKeyFingerprint    = String
-  type ListedServers         = js.Array[ListedServer]
-  type ListedUsers           = js.Array[ListedUser]
-  type MapEntry              = String
-  type MapTarget             = String
-  type MaxResults            = Int
-  type Message               = String
-  type NextToken             = String
-  type NullableRole          = String
-  type Policy                = String
-  type Response              = String
-  type Role                  = String
-  type ServerId              = String
-  type SshPublicKeyBody      = String
-  type SshPublicKeyCount     = Int
-  type SshPublicKeyId        = String
-  type SshPublicKeys         = js.Array[SshPublicKey]
-  type StatusCode            = Int
-  type SubnetId              = String
-  type SubnetIds             = js.Array[SubnetId]
-  type TagKey                = String
-  type TagKeys               = js.Array[TagKey]
-  type TagValue              = String
-  type Tags                  = js.Array[Tag]
-  type Url                   = String
-  type UserCount             = Int
-  type UserName              = String
-  type UserPassword          = String
-  type VpcEndpointId         = String
-  type VpcId                 = String
+  type HostKey = String
+  type HostKeyFingerprint = String
+  type ListedServers = js.Array[ListedServer]
+  type ListedUsers = js.Array[ListedUser]
+  type MapEntry = String
+  type MapTarget = String
+  type MaxResults = Int
+  type Message = String
+  type NextToken = String
+  type NullableRole = String
+  type Policy = String
+  type Protocols = js.Array[Protocol]
+  type Response = String
+  type Role = String
+  type ServerId = String
+  type SourceIp = String
+  type SshPublicKeyBody = String
+  type SshPublicKeyCount = Int
+  type SshPublicKeyId = String
+  type SshPublicKeys = js.Array[SshPublicKey]
+  type StatusCode = Int
+  type SubnetId = String
+  type SubnetIds = js.Array[SubnetId]
+  type TagKey = String
+  type TagKeys = js.Array[TagKey]
+  type TagValue = String
+  type Tags = js.Array[Tag]
+  type Url = String
+  type UserCount = Int
+  type UserName = String
+  type UserPassword = String
+  type VpcEndpointId = String
+  type VpcId = String
 
   implicit final class TransferOps(private val service: Transfer) extends AnyVal {
 
@@ -92,55 +95,61 @@ package transfer {
   class Transfer() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createServer(params: CreateServerRequest): Request[CreateServerResponse]                         = js.native
-    def createUser(params: CreateUserRequest): Request[CreateUserResponse]                               = js.native
-    def deleteServer(params: DeleteServerRequest): Request[js.Object]                                    = js.native
-    def deleteSshPublicKey(params: DeleteSshPublicKeyRequest): Request[js.Object]                        = js.native
-    def deleteUser(params: DeleteUserRequest): Request[js.Object]                                        = js.native
-    def describeServer(params: DescribeServerRequest): Request[DescribeServerResponse]                   = js.native
-    def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse]                         = js.native
-    def importSshPublicKey(params: ImportSshPublicKeyRequest): Request[ImportSshPublicKeyResponse]       = js.native
-    def listServers(params: ListServersRequest): Request[ListServersResponse]                            = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]    = js.native
-    def listUsers(params: ListUsersRequest): Request[ListUsersResponse]                                  = js.native
-    def startServer(params: StartServerRequest): Request[js.Object]                                      = js.native
-    def stopServer(params: StopServerRequest): Request[js.Object]                                        = js.native
-    def tagResource(params: TagResourceRequest): Request[js.Object]                                      = js.native
+    def createServer(params: CreateServerRequest): Request[CreateServerResponse] = js.native
+    def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native
+    def deleteServer(params: DeleteServerRequest): Request[js.Object] = js.native
+    def deleteSshPublicKey(params: DeleteSshPublicKeyRequest): Request[js.Object] = js.native
+    def deleteUser(params: DeleteUserRequest): Request[js.Object] = js.native
+    def describeServer(params: DescribeServerRequest): Request[DescribeServerResponse] = js.native
+    def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse] = js.native
+    def importSshPublicKey(params: ImportSshPublicKeyRequest): Request[ImportSshPublicKeyResponse] = js.native
+    def listServers(params: ListServersRequest): Request[ListServersResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def listUsers(params: ListUsersRequest): Request[ListUsersResponse] = js.native
+    def startServer(params: StartServerRequest): Request[js.Object] = js.native
+    def stopServer(params: StopServerRequest): Request[js.Object] = js.native
+    def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def testIdentityProvider(params: TestIdentityProviderRequest): Request[TestIdentityProviderResponse] = js.native
-    def untagResource(params: UntagResourceRequest): Request[js.Object]                                  = js.native
-    def updateServer(params: UpdateServerRequest): Request[UpdateServerResponse]                         = js.native
-    def updateUser(params: UpdateUserRequest): Request[UpdateUserResponse]                               = js.native
+    def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
+    def updateServer(params: UpdateServerRequest): Request[UpdateServerResponse] = js.native
+    def updateUser(params: UpdateUserRequest): Request[UpdateUserResponse] = js.native
   }
 
   @js.native
   trait CreateServerRequest extends js.Object {
+    var Certificate: js.UndefOr[Certificate]
     var EndpointDetails: js.UndefOr[EndpointDetails]
     var EndpointType: js.UndefOr[EndpointType]
     var HostKey: js.UndefOr[HostKey]
     var IdentityProviderDetails: js.UndefOr[IdentityProviderDetails]
     var IdentityProviderType: js.UndefOr[IdentityProviderType]
     var LoggingRole: js.UndefOr[Role]
+    var Protocols: js.UndefOr[Protocols]
     var Tags: js.UndefOr[Tags]
   }
 
   object CreateServerRequest {
     @inline
     def apply(
+        Certificate: js.UndefOr[Certificate] = js.undefined,
         EndpointDetails: js.UndefOr[EndpointDetails] = js.undefined,
         EndpointType: js.UndefOr[EndpointType] = js.undefined,
         HostKey: js.UndefOr[HostKey] = js.undefined,
         IdentityProviderDetails: js.UndefOr[IdentityProviderDetails] = js.undefined,
         IdentityProviderType: js.UndefOr[IdentityProviderType] = js.undefined,
         LoggingRole: js.UndefOr[Role] = js.undefined,
+        Protocols: js.UndefOr[Protocols] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateServerRequest = {
       val __obj = js.Dynamic.literal()
+      Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
       EndpointDetails.foreach(__v => __obj.updateDynamic("EndpointDetails")(__v.asInstanceOf[js.Any]))
       EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
       HostKey.foreach(__v => __obj.updateDynamic("HostKey")(__v.asInstanceOf[js.Any]))
       IdentityProviderDetails.foreach(__v => __obj.updateDynamic("IdentityProviderDetails")(__v.asInstanceOf[js.Any]))
       IdentityProviderType.foreach(__v => __obj.updateDynamic("IdentityProviderType")(__v.asInstanceOf[js.Any]))
       LoggingRole.foreach(__v => __obj.updateDynamic("LoggingRole")(__v.asInstanceOf[js.Any]))
+      Protocols.foreach(__v => __obj.updateDynamic("Protocols")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateServerRequest]
     }
@@ -191,7 +200,7 @@ package transfer {
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateUserRequest = {
       val __obj = js.Dynamic.literal(
-        "Role"     -> Role.asInstanceOf[js.Any],
+        "Role" -> Role.asInstanceOf[js.Any],
         "ServerId" -> ServerId.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
@@ -260,9 +269,9 @@ package transfer {
         UserName: UserName
     ): DeleteSshPublicKeyRequest = {
       val __obj = js.Dynamic.literal(
-        "ServerId"       -> ServerId.asInstanceOf[js.Any],
+        "ServerId" -> ServerId.asInstanceOf[js.Any],
         "SshPublicKeyId" -> SshPublicKeyId.asInstanceOf[js.Any],
-        "UserName"       -> UserName.asInstanceOf[js.Any]
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteSshPublicKeyRequest]
@@ -361,7 +370,7 @@ package transfer {
     ): DescribeUserResponse = {
       val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any],
-        "User"     -> User.asInstanceOf[js.Any]
+        "User" -> User.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeUserResponse]
@@ -369,17 +378,19 @@ package transfer {
   }
 
   /**
-    * Describes the properties of the server that was specified. Information returned includes the following: the server Amazon Resource Name (ARN), the authentication configuration and type, the logging role, the server ID and state, and assigned tags or metadata.
+    * Describes the properties of a file transfer protocol-enabled server that was specified. Information returned includes the following: the server Amazon Resource Name (ARN), the certificate ARN (if the FTPS protocol was selected), the endpoint type and details, the authentication configuration and type, the logging role, the file transfer protocol or protocols, the server ID and state, and assigned tags or metadata.
     */
   @js.native
   trait DescribedServer extends js.Object {
     var Arn: Arn
+    var Certificate: js.UndefOr[Certificate]
     var EndpointDetails: js.UndefOr[EndpointDetails]
     var EndpointType: js.UndefOr[EndpointType]
     var HostKeyFingerprint: js.UndefOr[HostKeyFingerprint]
     var IdentityProviderDetails: js.UndefOr[IdentityProviderDetails]
     var IdentityProviderType: js.UndefOr[IdentityProviderType]
     var LoggingRole: js.UndefOr[Role]
+    var Protocols: js.UndefOr[Protocols]
     var ServerId: js.UndefOr[ServerId]
     var State: js.UndefOr[State]
     var Tags: js.UndefOr[Tags]
@@ -390,12 +401,14 @@ package transfer {
     @inline
     def apply(
         Arn: Arn,
+        Certificate: js.UndefOr[Certificate] = js.undefined,
         EndpointDetails: js.UndefOr[EndpointDetails] = js.undefined,
         EndpointType: js.UndefOr[EndpointType] = js.undefined,
         HostKeyFingerprint: js.UndefOr[HostKeyFingerprint] = js.undefined,
         IdentityProviderDetails: js.UndefOr[IdentityProviderDetails] = js.undefined,
         IdentityProviderType: js.UndefOr[IdentityProviderType] = js.undefined,
         LoggingRole: js.UndefOr[Role] = js.undefined,
+        Protocols: js.UndefOr[Protocols] = js.undefined,
         ServerId: js.UndefOr[ServerId] = js.undefined,
         State: js.UndefOr[State] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
@@ -405,12 +418,14 @@ package transfer {
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
 
+      Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
       EndpointDetails.foreach(__v => __obj.updateDynamic("EndpointDetails")(__v.asInstanceOf[js.Any]))
       EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
       HostKeyFingerprint.foreach(__v => __obj.updateDynamic("HostKeyFingerprint")(__v.asInstanceOf[js.Any]))
       IdentityProviderDetails.foreach(__v => __obj.updateDynamic("IdentityProviderDetails")(__v.asInstanceOf[js.Any]))
       IdentityProviderType.foreach(__v => __obj.updateDynamic("IdentityProviderType")(__v.asInstanceOf[js.Any]))
       LoggingRole.foreach(__v => __obj.updateDynamic("LoggingRole")(__v.asInstanceOf[js.Any]))
+      Protocols.foreach(__v => __obj.updateDynamic("Protocols")(__v.asInstanceOf[js.Any]))
       ServerId.foreach(__v => __obj.updateDynamic("ServerId")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -465,7 +480,7 @@ package transfer {
   }
 
   /**
-    * The virtual private cloud (VPC) endpoint settings that are configured for your SFTP server. With a VPC endpoint, you can restrict access to your SFTP server and resources only within your VPC. To control incoming internet traffic, invoke the <code>UpdateServer</code> API and attach an Elastic IP to your server's endpoint.
+    * The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled server. With a VPC endpoint, you can restrict access to your server and resources only within your VPC. To control incoming internet traffic, invoke the <code>UpdateServer</code> API and attach an Elastic IP to your server's endpoint.
     */
   @js.native
   trait EndpointDetails extends js.Object {
@@ -495,8 +510,8 @@ package transfer {
   @js.native
   sealed trait EndpointType extends js.Any
   object EndpointType extends js.Object {
-    val PUBLIC       = "PUBLIC".asInstanceOf[EndpointType]
-    val VPC          = "VPC".asInstanceOf[EndpointType]
+    val PUBLIC = "PUBLIC".asInstanceOf[EndpointType]
+    val VPC = "VPC".asInstanceOf[EndpointType]
     val VPC_ENDPOINT = "VPC_ENDPOINT".asInstanceOf[EndpointType]
 
     val values = js.Object.freeze(js.Array(PUBLIC, VPC, VPC_ENDPOINT))
@@ -518,7 +533,7 @@ package transfer {
         Target: MapTarget
     ): HomeDirectoryMapEntry = {
       val __obj = js.Dynamic.literal(
-        "Entry"  -> Entry.asInstanceOf[js.Any],
+        "Entry" -> Entry.asInstanceOf[js.Any],
         "Target" -> Target.asInstanceOf[js.Any]
       )
 
@@ -529,14 +544,14 @@ package transfer {
   @js.native
   sealed trait HomeDirectoryType extends js.Any
   object HomeDirectoryType extends js.Object {
-    val PATH    = "PATH".asInstanceOf[HomeDirectoryType]
+    val PATH = "PATH".asInstanceOf[HomeDirectoryType]
     val LOGICAL = "LOGICAL".asInstanceOf[HomeDirectoryType]
 
     val values = js.Object.freeze(js.Array(PATH, LOGICAL))
   }
 
   /**
-    * Returns information related to the type of user authentication that is in use for a server's users. A server can have only one method of authentication.
+    * Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. A server can have only one method of authentication.
     */
   @js.native
   trait IdentityProviderDetails extends js.Object {
@@ -558,13 +573,13 @@ package transfer {
   }
 
   /**
-    * Returns information related to the type of user authentication that is in use for a server's users. For <code>SERVICE_MANAGED</code> authentication, the Secure Shell (SSH) public keys are stored with a user on an SFTP server instance. For <code>API_GATEWAY</code> authentication, your custom authentication method is implemented by using an API call. A server can have only one method of authentication.
+    * Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. For <code>SERVICE_MANAGED</code> authentication, the Secure Shell (SSH) public keys are stored with a user on the server instance. For <code>API_GATEWAY</code> authentication, your custom authentication method is implemented by using an API call. The server can have only one method of authentication.
     */
   @js.native
   sealed trait IdentityProviderType extends js.Any
   object IdentityProviderType extends js.Object {
     val SERVICE_MANAGED = "SERVICE_MANAGED".asInstanceOf[IdentityProviderType]
-    val API_GATEWAY     = "API_GATEWAY".asInstanceOf[IdentityProviderType]
+    val API_GATEWAY = "API_GATEWAY".asInstanceOf[IdentityProviderType]
 
     val values = js.Object.freeze(js.Array(SERVICE_MANAGED, API_GATEWAY))
   }
@@ -584,9 +599,9 @@ package transfer {
         UserName: UserName
     ): ImportSshPublicKeyRequest = {
       val __obj = js.Dynamic.literal(
-        "ServerId"         -> ServerId.asInstanceOf[js.Any],
+        "ServerId" -> ServerId.asInstanceOf[js.Any],
         "SshPublicKeyBody" -> SshPublicKeyBody.asInstanceOf[js.Any],
-        "UserName"         -> UserName.asInstanceOf[js.Any]
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ImportSshPublicKeyRequest]
@@ -594,7 +609,7 @@ package transfer {
   }
 
   /**
-    * This response identifies the user, the server they belong to, and the identifier of the SSH public key associated with that user. A user can have more than one key on each server that they are associated with.
+    * Identifies the user, the file transfer protocol-enabled server they belong to, and the identifier of the SSH public key associated with that user. A user can have more than one key on each server that they are associated with.
     */
   @js.native
   trait ImportSshPublicKeyResponse extends js.Object {
@@ -611,9 +626,9 @@ package transfer {
         UserName: UserName
     ): ImportSshPublicKeyResponse = {
       val __obj = js.Dynamic.literal(
-        "ServerId"       -> ServerId.asInstanceOf[js.Any],
+        "ServerId" -> ServerId.asInstanceOf[js.Any],
         "SshPublicKeyId" -> SshPublicKeyId.asInstanceOf[js.Any],
-        "UserName"       -> UserName.asInstanceOf[js.Any]
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ImportSshPublicKeyResponse]
@@ -746,7 +761,7 @@ package transfer {
     ): ListUsersResponse = {
       val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any],
-        "Users"    -> Users.asInstanceOf[js.Any]
+        "Users" -> Users.asInstanceOf[js.Any]
       )
 
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
@@ -755,7 +770,7 @@ package transfer {
   }
 
   /**
-    * Returns properties of the server that was specified.
+    * Returns properties of a file transfer protocol-enabled server that was specified.
     */
   @js.native
   trait ListedServer extends js.Object {
@@ -829,8 +844,18 @@ package transfer {
     }
   }
 
+  @js.native
+  sealed trait Protocol extends js.Any
+  object Protocol extends js.Object {
+    val SFTP = "SFTP".asInstanceOf[Protocol]
+    val FTP = "FTP".asInstanceOf[Protocol]
+    val FTPS = "FTPS".asInstanceOf[Protocol]
+
+    val values = js.Object.freeze(js.Array(SFTP, FTP, FTPS))
+  }
+
   /**
-    * Provides information about the public Secure Shell (SSH) key that is associated with a user account for a specific server (as identified by <code>ServerId</code>). The information returned includes the date the key was imported, the public key contents, and the public key ID. A user can store more than one SSH public key associated with their user name on a specific SFTP server.
+    * Provides information about the public Secure Shell (SSH) key that is associated with a user account for the specific file transfer protocol-enabled server (as identified by <code>ServerId</code>). The information returned includes the date the key was imported, the public key contents, and the public key ID. A user can store more than one SSH public key associated with their user name on a specific server.
     */
   @js.native
   trait SshPublicKey extends js.Object {
@@ -847,9 +872,9 @@ package transfer {
         SshPublicKeyId: SshPublicKeyId
     ): SshPublicKey = {
       val __obj = js.Dynamic.literal(
-        "DateImported"     -> DateImported.asInstanceOf[js.Any],
+        "DateImported" -> DateImported.asInstanceOf[js.Any],
         "SshPublicKeyBody" -> SshPublicKeyBody.asInstanceOf[js.Any],
-        "SshPublicKeyId"   -> SshPublicKeyId.asInstanceOf[js.Any]
+        "SshPublicKeyId" -> SshPublicKeyId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[SshPublicKey]
@@ -875,18 +900,18 @@ package transfer {
   }
 
   /**
-    * Describes the condition of the SFTP server with respect to its ability to perform file operations. There are six possible states: <code>OFFLINE</code>, <code>ONLINE</code>, <code>STARTING</code>, <code>STOPPING</code>, <code>START_FAILED</code>, and <code>STOP_FAILED</code>.
-    *  <code>OFFLINE</code> indicates that the SFTP server exists, but that it is not available for file operations. <code>ONLINE</code> indicates that the SFTP server is available to perform file operations. <code>STARTING</code> indicates that the SFTP server's was instantiated, but the server is not yet available to perform file operations. Under normal conditions, it can take a couple of minutes for an SFTP server to be completely operational. Both <code>START_FAILED</code> and <code>STOP_FAILED</code> are error conditions.
+    * Describes the condition of a file transfer protocol-enabled server with respect to its ability to perform file operations. There are six possible states: <code>OFFLINE</code>, <code>ONLINE</code>, <code>STARTING</code>, <code>STOPPING</code>, <code>START_FAILED</code>, and <code>STOP_FAILED</code>.
+    *  <code>OFFLINE</code> indicates that the server exists, but that it is not available for file operations. <code>ONLINE</code> indicates that the server is available to perform file operations. <code>STARTING</code> indicates that the server's was instantiated, but the server is not yet available to perform file operations. Under normal conditions, it can take a couple of minutes for the server to be completely operational. Both <code>START_FAILED</code> and <code>STOP_FAILED</code> are error conditions.
     */
   @js.native
   sealed trait State extends js.Any
   object State extends js.Object {
-    val OFFLINE      = "OFFLINE".asInstanceOf[State]
-    val ONLINE       = "ONLINE".asInstanceOf[State]
-    val STARTING     = "STARTING".asInstanceOf[State]
-    val STOPPING     = "STOPPING".asInstanceOf[State]
+    val OFFLINE = "OFFLINE".asInstanceOf[State]
+    val ONLINE = "ONLINE".asInstanceOf[State]
+    val STARTING = "STARTING".asInstanceOf[State]
+    val STOPPING = "STOPPING".asInstanceOf[State]
     val START_FAILED = "START_FAILED".asInstanceOf[State]
-    val STOP_FAILED  = "STOP_FAILED".asInstanceOf[State]
+    val STOP_FAILED = "STOP_FAILED".asInstanceOf[State]
 
     val values = js.Object.freeze(js.Array(OFFLINE, ONLINE, STARTING, STOPPING, START_FAILED, STOP_FAILED))
   }
@@ -925,7 +950,7 @@ package transfer {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -946,7 +971,7 @@ package transfer {
         Tags: Tags
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
-        "Arn"  -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
@@ -958,6 +983,8 @@ package transfer {
   trait TestIdentityProviderRequest extends js.Object {
     var ServerId: ServerId
     var UserName: UserName
+    var ServerProtocol: js.UndefOr[Protocol]
+    var SourceIp: js.UndefOr[SourceIp]
     var UserPassword: js.UndefOr[UserPassword]
   }
 
@@ -966,6 +993,8 @@ package transfer {
     def apply(
         ServerId: ServerId,
         UserName: UserName,
+        ServerProtocol: js.UndefOr[Protocol] = js.undefined,
+        SourceIp: js.UndefOr[SourceIp] = js.undefined,
         UserPassword: js.UndefOr[UserPassword] = js.undefined
     ): TestIdentityProviderRequest = {
       val __obj = js.Dynamic.literal(
@@ -973,6 +1002,8 @@ package transfer {
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
+      ServerProtocol.foreach(__v => __obj.updateDynamic("ServerProtocol")(__v.asInstanceOf[js.Any]))
+      SourceIp.foreach(__v => __obj.updateDynamic("SourceIp")(__v.asInstanceOf[js.Any]))
       UserPassword.foreach(__v => __obj.updateDynamic("UserPassword")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TestIdentityProviderRequest]
     }
@@ -996,7 +1027,7 @@ package transfer {
     ): TestIdentityProviderResponse = {
       val __obj = js.Dynamic.literal(
         "StatusCode" -> StatusCode.asInstanceOf[js.Any],
-        "Url"        -> Url.asInstanceOf[js.Any]
+        "Url" -> Url.asInstanceOf[js.Any]
       )
 
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
@@ -1018,7 +1049,7 @@ package transfer {
         TagKeys: TagKeys
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
-        "Arn"     -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
@@ -1029,32 +1060,38 @@ package transfer {
   @js.native
   trait UpdateServerRequest extends js.Object {
     var ServerId: ServerId
+    var Certificate: js.UndefOr[Certificate]
     var EndpointDetails: js.UndefOr[EndpointDetails]
     var EndpointType: js.UndefOr[EndpointType]
     var HostKey: js.UndefOr[HostKey]
     var IdentityProviderDetails: js.UndefOr[IdentityProviderDetails]
     var LoggingRole: js.UndefOr[NullableRole]
+    var Protocols: js.UndefOr[Protocols]
   }
 
   object UpdateServerRequest {
     @inline
     def apply(
         ServerId: ServerId,
+        Certificate: js.UndefOr[Certificate] = js.undefined,
         EndpointDetails: js.UndefOr[EndpointDetails] = js.undefined,
         EndpointType: js.UndefOr[EndpointType] = js.undefined,
         HostKey: js.UndefOr[HostKey] = js.undefined,
         IdentityProviderDetails: js.UndefOr[IdentityProviderDetails] = js.undefined,
-        LoggingRole: js.UndefOr[NullableRole] = js.undefined
+        LoggingRole: js.UndefOr[NullableRole] = js.undefined,
+        Protocols: js.UndefOr[Protocols] = js.undefined
     ): UpdateServerRequest = {
       val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any]
       )
 
+      Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
       EndpointDetails.foreach(__v => __obj.updateDynamic("EndpointDetails")(__v.asInstanceOf[js.Any]))
       EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
       HostKey.foreach(__v => __obj.updateDynamic("HostKey")(__v.asInstanceOf[js.Any]))
       IdentityProviderDetails.foreach(__v => __obj.updateDynamic("IdentityProviderDetails")(__v.asInstanceOf[js.Any]))
       LoggingRole.foreach(__v => __obj.updateDynamic("LoggingRole")(__v.asInstanceOf[js.Any]))
+      Protocols.foreach(__v => __obj.updateDynamic("Protocols")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateServerRequest]
     }
   }
@@ -1114,7 +1151,7 @@ package transfer {
   }
 
   /**
-    * <code>UpdateUserResponse</code> returns the user name and server identifier for the request to update a user's properties.
+    * <code>UpdateUserResponse</code> returns the user name and file transfer protocol-enabled server identifier for the request to update a user's properties.
     */
   @js.native
   trait UpdateUserResponse extends js.Object {

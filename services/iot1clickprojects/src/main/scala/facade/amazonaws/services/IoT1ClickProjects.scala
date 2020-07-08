@@ -7,32 +7,32 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object iot1clickprojects {
-  type AttributeDefaultValue        = String
-  type AttributeName                = String
-  type AttributeValue               = String
+  type AttributeDefaultValue = String
+  type AttributeName = String
+  type AttributeValue = String
   type DefaultPlacementAttributeMap = js.Dictionary[AttributeDefaultValue]
-  type Description                  = String
-  type DeviceCallbackKey            = String
-  type DeviceCallbackOverrideMap    = js.Dictionary[DeviceCallbackValue]
-  type DeviceCallbackValue          = String
-  type DeviceId                     = String
-  type DeviceMap                    = js.Dictionary[DeviceId]
-  type DeviceTemplateMap            = js.Dictionary[DeviceTemplate]
-  type DeviceTemplateName           = String
-  type DeviceType                   = String
-  type MaxResults                   = Int
-  type NextToken                    = String
-  type PlacementAttributeMap        = js.Dictionary[AttributeValue]
-  type PlacementName                = String
-  type PlacementSummaryList         = js.Array[PlacementSummary]
-  type ProjectArn                   = String
-  type ProjectName                  = String
-  type ProjectSummaryList           = js.Array[ProjectSummary]
-  type TagKey                       = String
-  type TagKeyList                   = js.Array[TagKey]
-  type TagMap                       = js.Dictionary[TagValue]
-  type TagValue                     = String
-  type Time                         = js.Date
+  type Description = String
+  type DeviceCallbackKey = String
+  type DeviceCallbackOverrideMap = js.Dictionary[DeviceCallbackValue]
+  type DeviceCallbackValue = String
+  type DeviceId = String
+  type DeviceMap = js.Dictionary[DeviceId]
+  type DeviceTemplateMap = js.Dictionary[DeviceTemplate]
+  type DeviceTemplateName = String
+  type DeviceType = String
+  type MaxResults = Int
+  type NextToken = String
+  type PlacementAttributeMap = js.Dictionary[AttributeValue]
+  type PlacementName = String
+  type PlacementSummaryList = js.Array[PlacementSummary]
+  type ProjectArn = String
+  type ProjectName = String
+  type ProjectSummaryList = js.Array[ProjectSummary]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagMap = js.Dictionary[TagValue]
+  type TagValue = String
+  type Time = js.Date
 
   implicit final class IoT1ClickProjectsOps(private val service: IoT1ClickProjects) extends AnyVal {
 
@@ -83,24 +83,24 @@ package iot1clickprojects {
 
     def associateDeviceWithPlacement(
         params: AssociateDeviceWithPlacementRequest
-    ): Request[AssociateDeviceWithPlacementResponse]                                            = js.native
-    def createPlacement(params: CreatePlacementRequest): Request[CreatePlacementResponse]       = js.native
-    def createProject(params: CreateProjectRequest): Request[CreateProjectResponse]             = js.native
-    def deletePlacement(params: DeletePlacementRequest): Request[DeletePlacementResponse]       = js.native
-    def deleteProject(params: DeleteProjectRequest): Request[DeleteProjectResponse]             = js.native
+    ): Request[AssociateDeviceWithPlacementResponse] = js.native
+    def createPlacement(params: CreatePlacementRequest): Request[CreatePlacementResponse] = js.native
+    def createProject(params: CreateProjectRequest): Request[CreateProjectResponse] = js.native
+    def deletePlacement(params: DeletePlacementRequest): Request[DeletePlacementResponse] = js.native
+    def deleteProject(params: DeleteProjectRequest): Request[DeleteProjectResponse] = js.native
     def describePlacement(params: DescribePlacementRequest): Request[DescribePlacementResponse] = js.native
-    def describeProject(params: DescribeProjectRequest): Request[DescribeProjectResponse]       = js.native
+    def describeProject(params: DescribeProjectRequest): Request[DescribeProjectResponse] = js.native
     def disassociateDeviceFromPlacement(
         params: DisassociateDeviceFromPlacementRequest
-    ): Request[DisassociateDeviceFromPlacementResponse]                                                     = js.native
+    ): Request[DisassociateDeviceFromPlacementResponse] = js.native
     def getDevicesInPlacement(params: GetDevicesInPlacementRequest): Request[GetDevicesInPlacementResponse] = js.native
-    def listPlacements(params: ListPlacementsRequest): Request[ListPlacementsResponse]                      = js.native
-    def listProjects(params: ListProjectsRequest): Request[ListProjectsResponse]                            = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                         = js.native
-    def updatePlacement(params: UpdatePlacementRequest): Request[UpdatePlacementResponse]                   = js.native
-    def updateProject(params: UpdateProjectRequest): Request[UpdateProjectResponse]                         = js.native
+    def listPlacements(params: ListPlacementsRequest): Request[ListPlacementsResponse] = js.native
+    def listProjects(params: ListProjectsRequest): Request[ListProjectsResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updatePlacement(params: UpdatePlacementRequest): Request[UpdatePlacementResponse] = js.native
+    def updateProject(params: UpdateProjectRequest): Request[UpdateProjectResponse] = js.native
   }
 
   @js.native
@@ -120,10 +120,10 @@ package iot1clickprojects {
         projectName: ProjectName
     ): AssociateDeviceWithPlacementRequest = {
       val __obj = js.Dynamic.literal(
-        "deviceId"           -> deviceId.asInstanceOf[js.Any],
+        "deviceId" -> deviceId.asInstanceOf[js.Any],
         "deviceTemplateName" -> deviceTemplateName.asInstanceOf[js.Any],
-        "placementName"      -> placementName.asInstanceOf[js.Any],
-        "projectName"        -> projectName.asInstanceOf[js.Any]
+        "placementName" -> placementName.asInstanceOf[js.Any],
+        "projectName" -> projectName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AssociateDeviceWithPlacementRequest]
@@ -159,7 +159,7 @@ package iot1clickprojects {
     ): CreatePlacementRequest = {
       val __obj = js.Dynamic.literal(
         "placementName" -> placementName.asInstanceOf[js.Any],
-        "projectName"   -> projectName.asInstanceOf[js.Any]
+        "projectName" -> projectName.asInstanceOf[js.Any]
       )
 
       attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
@@ -234,7 +234,7 @@ package iot1clickprojects {
     ): DeletePlacementRequest = {
       val __obj = js.Dynamic.literal(
         "placementName" -> placementName.asInstanceOf[js.Any],
-        "projectName"   -> projectName.asInstanceOf[js.Any]
+        "projectName" -> projectName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeletePlacementRequest]
@@ -299,7 +299,7 @@ package iot1clickprojects {
     ): DescribePlacementRequest = {
       val __obj = js.Dynamic.literal(
         "placementName" -> placementName.asInstanceOf[js.Any],
-        "projectName"   -> projectName.asInstanceOf[js.Any]
+        "projectName" -> projectName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribePlacementRequest]
@@ -398,8 +398,8 @@ package iot1clickprojects {
     ): DisassociateDeviceFromPlacementRequest = {
       val __obj = js.Dynamic.literal(
         "deviceTemplateName" -> deviceTemplateName.asInstanceOf[js.Any],
-        "placementName"      -> placementName.asInstanceOf[js.Any],
-        "projectName"        -> projectName.asInstanceOf[js.Any]
+        "placementName" -> placementName.asInstanceOf[js.Any],
+        "projectName" -> projectName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DisassociateDeviceFromPlacementRequest]
@@ -433,7 +433,7 @@ package iot1clickprojects {
     ): GetDevicesInPlacementRequest = {
       val __obj = js.Dynamic.literal(
         "placementName" -> placementName.asInstanceOf[js.Any],
-        "projectName"   -> projectName.asInstanceOf[js.Any]
+        "projectName" -> projectName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetDevicesInPlacementRequest]
@@ -599,11 +599,11 @@ package iot1clickprojects {
         updatedDate: Time
     ): PlacementDescription = {
       val __obj = js.Dynamic.literal(
-        "attributes"    -> attributes.asInstanceOf[js.Any],
-        "createdDate"   -> createdDate.asInstanceOf[js.Any],
+        "attributes" -> attributes.asInstanceOf[js.Any],
+        "createdDate" -> createdDate.asInstanceOf[js.Any],
         "placementName" -> placementName.asInstanceOf[js.Any],
-        "projectName"   -> projectName.asInstanceOf[js.Any],
-        "updatedDate"   -> updatedDate.asInstanceOf[js.Any]
+        "projectName" -> projectName.asInstanceOf[js.Any],
+        "updatedDate" -> updatedDate.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PlacementDescription]
@@ -630,10 +630,10 @@ package iot1clickprojects {
         updatedDate: Time
     ): PlacementSummary = {
       val __obj = js.Dynamic.literal(
-        "createdDate"   -> createdDate.asInstanceOf[js.Any],
+        "createdDate" -> createdDate.asInstanceOf[js.Any],
         "placementName" -> placementName.asInstanceOf[js.Any],
-        "projectName"   -> projectName.asInstanceOf[js.Any],
-        "updatedDate"   -> updatedDate.asInstanceOf[js.Any]
+        "projectName" -> projectName.asInstanceOf[js.Any],
+        "updatedDate" -> updatedDate.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PlacementSummary]
@@ -748,7 +748,7 @@ package iot1clickprojects {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -782,7 +782,7 @@ package iot1clickprojects {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -818,7 +818,7 @@ package iot1clickprojects {
     ): UpdatePlacementRequest = {
       val __obj = js.Dynamic.literal(
         "placementName" -> placementName.asInstanceOf[js.Any],
-        "projectName"   -> projectName.asInstanceOf[js.Any]
+        "projectName" -> projectName.asInstanceOf[js.Any]
       )
 
       attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))

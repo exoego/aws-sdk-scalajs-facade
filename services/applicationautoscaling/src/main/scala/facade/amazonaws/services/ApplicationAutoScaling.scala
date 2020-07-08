@@ -7,34 +7,34 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object applicationautoscaling {
-  type Alarms                 = js.Array[Alarm]
-  type Cooldown               = Int
-  type DisableScaleIn         = Boolean
-  type MaxResults             = Int
-  type MetricDimensionName    = String
-  type MetricDimensionValue   = String
-  type MetricDimensions       = js.Array[MetricDimension]
-  type MetricName             = String
-  type MetricNamespace        = String
-  type MetricScale            = Double
-  type MetricUnit             = String
+  type Alarms = js.Array[Alarm]
+  type Cooldown = Int
+  type DisableScaleIn = Boolean
+  type MaxResults = Int
+  type MetricDimensionName = String
+  type MetricDimensionValue = String
+  type MetricDimensions = js.Array[MetricDimension]
+  type MetricName = String
+  type MetricNamespace = String
+  type MetricScale = Double
+  type MetricUnit = String
   type MinAdjustmentMagnitude = Int
-  type PolicyName             = String
-  type ResourceCapacity       = Int
-  type ResourceId             = String
-  type ResourceIdMaxLen1600   = String
-  type ResourceIdsMaxLen1600  = js.Array[ResourceIdMaxLen1600]
-  type ResourceLabel          = String
-  type ScalableTargets        = js.Array[ScalableTarget]
-  type ScalingActivities      = js.Array[ScalingActivity]
-  type ScalingAdjustment      = Int
-  type ScalingPolicies        = js.Array[ScalingPolicy]
-  type ScalingSuspended       = Boolean
-  type ScheduledActionName    = String
-  type ScheduledActions       = js.Array[ScheduledAction]
-  type StepAdjustments        = js.Array[StepAdjustment]
-  type TimestampType          = js.Date
-  type XmlString              = String
+  type PolicyName = String
+  type ResourceCapacity = Int
+  type ResourceId = String
+  type ResourceIdMaxLen1600 = String
+  type ResourceIdsMaxLen1600 = js.Array[ResourceIdMaxLen1600]
+  type ResourceLabel = String
+  type ScalableTargets = js.Array[ScalableTarget]
+  type ScalingActivities = js.Array[ScalingActivity]
+  type ScalingAdjustment = Int
+  type ScalingPolicies = js.Array[ScalingPolicy]
+  type ScalingSuspended = Boolean
+  type ScheduledActionName = String
+  type ScheduledActions = js.Array[ScheduledAction]
+  type StepAdjustments = js.Array[StepAdjustment]
+  type TimestampType = js.Date
+  type XmlString = String
 
   implicit final class ApplicationAutoScalingOps(private val service: ApplicationAutoScaling) extends AnyVal {
 
@@ -74,7 +74,7 @@ package applicationautoscaling {
   class ApplicationAutoScaling() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def deleteScalingPolicy(params: DeleteScalingPolicyRequest): Request[DeleteScalingPolicyResponse]       = js.native
+    def deleteScalingPolicy(params: DeleteScalingPolicyRequest): Request[DeleteScalingPolicyResponse] = js.native
     def deleteScheduledAction(params: DeleteScheduledActionRequest): Request[DeleteScheduledActionResponse] = js.native
     def deregisterScalableTarget(params: DeregisterScalableTargetRequest): Request[DeregisterScalableTargetResponse] =
       js.native
@@ -87,7 +87,7 @@ package applicationautoscaling {
       js.native
     def describeScheduledActions(params: DescribeScheduledActionsRequest): Request[DescribeScheduledActionsResponse] =
       js.native
-    def putScalingPolicy(params: PutScalingPolicyRequest): Request[PutScalingPolicyResponse]       = js.native
+    def putScalingPolicy(params: PutScalingPolicyRequest): Request[PutScalingPolicyResponse] = js.native
     def putScheduledAction(params: PutScheduledActionRequest): Request[PutScheduledActionResponse] = js.native
     def registerScalableTarget(params: RegisterScalableTargetRequest): Request[RegisterScalableTargetResponse] =
       js.native
@@ -96,9 +96,9 @@ package applicationautoscaling {
   @js.native
   sealed trait AdjustmentType extends js.Any
   object AdjustmentType extends js.Object {
-    val ChangeInCapacity        = "ChangeInCapacity".asInstanceOf[AdjustmentType]
+    val ChangeInCapacity = "ChangeInCapacity".asInstanceOf[AdjustmentType]
     val PercentChangeInCapacity = "PercentChangeInCapacity".asInstanceOf[AdjustmentType]
-    val ExactCapacity           = "ExactCapacity".asInstanceOf[AdjustmentType]
+    val ExactCapacity = "ExactCapacity".asInstanceOf[AdjustmentType]
 
     val values = js.Object.freeze(js.Array(ChangeInCapacity, PercentChangeInCapacity, ExactCapacity))
   }
@@ -119,7 +119,7 @@ package applicationautoscaling {
         AlarmName: ResourceId
     ): Alarm = {
       val __obj = js.Dynamic.literal(
-        "AlarmARN"  -> AlarmARN.asInstanceOf[js.Any],
+        "AlarmARN" -> AlarmARN.asInstanceOf[js.Any],
         "AlarmName" -> AlarmName.asInstanceOf[js.Any]
       )
 
@@ -129,9 +129,10 @@ package applicationautoscaling {
 
   /**
     * Represents a CloudWatch metric of your choosing for a target tracking scaling policy to use with Application Auto Scaling.
+    *  For information about the available metrics for a service, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html|AWS Services That Publish CloudWatch Metrics]] in the <i>Amazon CloudWatch User Guide</i>.
     *  To create your customized metric specification:
     * * Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html|Publish Custom Metrics]] in the <i>Amazon CloudWatch User Guide</i>.
-    *  * Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases.
+    *  * Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases, and increase when capacity decreases.
     * For more information about CloudWatch, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html|Amazon CloudWatch Concepts]].
     */
   @js.native
@@ -154,8 +155,8 @@ package applicationautoscaling {
     ): CustomizedMetricSpecification = {
       val __obj = js.Dynamic.literal(
         "MetricName" -> MetricName.asInstanceOf[js.Any],
-        "Namespace"  -> Namespace.asInstanceOf[js.Any],
-        "Statistic"  -> Statistic.asInstanceOf[js.Any]
+        "Namespace" -> Namespace.asInstanceOf[js.Any],
+        "Statistic" -> Statistic.asInstanceOf[js.Any]
       )
 
       Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
@@ -181,10 +182,10 @@ package applicationautoscaling {
         ServiceNamespace: ServiceNamespace
     ): DeleteScalingPolicyRequest = {
       val __obj = js.Dynamic.literal(
-        "PolicyName"        -> PolicyName.asInstanceOf[js.Any],
-        "ResourceId"        -> ResourceId.asInstanceOf[js.Any],
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "ScalableDimension" -> ScalableDimension.asInstanceOf[js.Any],
-        "ServiceNamespace"  -> ServiceNamespace.asInstanceOf[js.Any]
+        "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteScalingPolicyRequest]
@@ -221,10 +222,10 @@ package applicationautoscaling {
         ServiceNamespace: ServiceNamespace
     ): DeleteScheduledActionRequest = {
       val __obj = js.Dynamic.literal(
-        "ResourceId"          -> ResourceId.asInstanceOf[js.Any],
-        "ScalableDimension"   -> ScalableDimension.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
+        "ScalableDimension" -> ScalableDimension.asInstanceOf[js.Any],
         "ScheduledActionName" -> ScheduledActionName.asInstanceOf[js.Any],
-        "ServiceNamespace"    -> ServiceNamespace.asInstanceOf[js.Any]
+        "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteScheduledActionRequest]
@@ -259,9 +260,9 @@ package applicationautoscaling {
         ServiceNamespace: ServiceNamespace
     ): DeregisterScalableTargetRequest = {
       val __obj = js.Dynamic.literal(
-        "ResourceId"        -> ResourceId.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "ScalableDimension" -> ScalableDimension.asInstanceOf[js.Any],
-        "ServiceNamespace"  -> ServiceNamespace.asInstanceOf[js.Any]
+        "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeregisterScalableTargetRequest]
@@ -509,7 +510,7 @@ package applicationautoscaling {
         Value: MetricDimensionValue
     ): MetricDimension = {
       val __obj = js.Dynamic.literal(
-        "Name"  -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -520,11 +521,11 @@ package applicationautoscaling {
   @js.native
   sealed trait MetricStatistic extends js.Any
   object MetricStatistic extends js.Object {
-    val Average     = "Average".asInstanceOf[MetricStatistic]
-    val Minimum     = "Minimum".asInstanceOf[MetricStatistic]
-    val Maximum     = "Maximum".asInstanceOf[MetricStatistic]
+    val Average = "Average".asInstanceOf[MetricStatistic]
+    val Minimum = "Minimum".asInstanceOf[MetricStatistic]
+    val Maximum = "Maximum".asInstanceOf[MetricStatistic]
     val SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
-    val Sum         = "Sum".asInstanceOf[MetricStatistic]
+    val Sum = "Sum".asInstanceOf[MetricStatistic]
 
     val values = js.Object.freeze(js.Array(Average, Minimum, Maximum, SampleCount, Sum))
   }
@@ -532,20 +533,22 @@ package applicationautoscaling {
   @js.native
   sealed trait MetricType extends js.Any
   object MetricType extends js.Object {
-    val DynamoDBReadCapacityUtilization          = "DynamoDBReadCapacityUtilization".asInstanceOf[MetricType]
-    val DynamoDBWriteCapacityUtilization         = "DynamoDBWriteCapacityUtilization".asInstanceOf[MetricType]
-    val ALBRequestCountPerTarget                 = "ALBRequestCountPerTarget".asInstanceOf[MetricType]
-    val RDSReaderAverageCPUUtilization           = "RDSReaderAverageCPUUtilization".asInstanceOf[MetricType]
-    val RDSReaderAverageDatabaseConnections      = "RDSReaderAverageDatabaseConnections".asInstanceOf[MetricType]
+    val DynamoDBReadCapacityUtilization = "DynamoDBReadCapacityUtilization".asInstanceOf[MetricType]
+    val DynamoDBWriteCapacityUtilization = "DynamoDBWriteCapacityUtilization".asInstanceOf[MetricType]
+    val ALBRequestCountPerTarget = "ALBRequestCountPerTarget".asInstanceOf[MetricType]
+    val RDSReaderAverageCPUUtilization = "RDSReaderAverageCPUUtilization".asInstanceOf[MetricType]
+    val RDSReaderAverageDatabaseConnections = "RDSReaderAverageDatabaseConnections".asInstanceOf[MetricType]
     val EC2SpotFleetRequestAverageCPUUtilization = "EC2SpotFleetRequestAverageCPUUtilization".asInstanceOf[MetricType]
-    val EC2SpotFleetRequestAverageNetworkIn      = "EC2SpotFleetRequestAverageNetworkIn".asInstanceOf[MetricType]
-    val EC2SpotFleetRequestAverageNetworkOut     = "EC2SpotFleetRequestAverageNetworkOut".asInstanceOf[MetricType]
-    val SageMakerVariantInvocationsPerInstance   = "SageMakerVariantInvocationsPerInstance".asInstanceOf[MetricType]
-    val ECSServiceAverageCPUUtilization          = "ECSServiceAverageCPUUtilization".asInstanceOf[MetricType]
-    val ECSServiceAverageMemoryUtilization       = "ECSServiceAverageMemoryUtilization".asInstanceOf[MetricType]
-    val AppStreamAverageCapacityUtilization      = "AppStreamAverageCapacityUtilization".asInstanceOf[MetricType]
-    val ComprehendInferenceUtilization           = "ComprehendInferenceUtilization".asInstanceOf[MetricType]
-    val LambdaProvisionedConcurrencyUtilization  = "LambdaProvisionedConcurrencyUtilization".asInstanceOf[MetricType]
+    val EC2SpotFleetRequestAverageNetworkIn = "EC2SpotFleetRequestAverageNetworkIn".asInstanceOf[MetricType]
+    val EC2SpotFleetRequestAverageNetworkOut = "EC2SpotFleetRequestAverageNetworkOut".asInstanceOf[MetricType]
+    val SageMakerVariantInvocationsPerInstance = "SageMakerVariantInvocationsPerInstance".asInstanceOf[MetricType]
+    val ECSServiceAverageCPUUtilization = "ECSServiceAverageCPUUtilization".asInstanceOf[MetricType]
+    val ECSServiceAverageMemoryUtilization = "ECSServiceAverageMemoryUtilization".asInstanceOf[MetricType]
+    val AppStreamAverageCapacityUtilization = "AppStreamAverageCapacityUtilization".asInstanceOf[MetricType]
+    val ComprehendInferenceUtilization = "ComprehendInferenceUtilization".asInstanceOf[MetricType]
+    val LambdaProvisionedConcurrencyUtilization = "LambdaProvisionedConcurrencyUtilization".asInstanceOf[MetricType]
+    val CassandraReadCapacityUtilization = "CassandraReadCapacityUtilization".asInstanceOf[MetricType]
+    val CassandraWriteCapacityUtilization = "CassandraWriteCapacityUtilization".asInstanceOf[MetricType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -562,7 +565,9 @@ package applicationautoscaling {
         ECSServiceAverageMemoryUtilization,
         AppStreamAverageCapacityUtilization,
         ComprehendInferenceUtilization,
-        LambdaProvisionedConcurrencyUtilization
+        LambdaProvisionedConcurrencyUtilization,
+        CassandraReadCapacityUtilization,
+        CassandraWriteCapacityUtilization
       )
     )
   }
@@ -570,7 +575,7 @@ package applicationautoscaling {
   @js.native
   sealed trait PolicyType extends js.Any
   object PolicyType extends js.Object {
-    val StepScaling           = "StepScaling".asInstanceOf[PolicyType]
+    val StepScaling = "StepScaling".asInstanceOf[PolicyType]
     val TargetTrackingScaling = "TargetTrackingScaling".asInstanceOf[PolicyType]
 
     val values = js.Object.freeze(js.Array(StepScaling, TargetTrackingScaling))
@@ -578,6 +583,7 @@ package applicationautoscaling {
 
   /**
     * Represents a predefined metric for a target tracking scaling policy to use with Application Auto Scaling.
+    *  Only the AWS services that you're using send metrics to Amazon CloudWatch. To determine whether a desired metric already exists by looking up its namespace and dimension using the CloudWatch metrics dashboard in the console, follow the procedure in [[https://docs.aws.amazon.com/autoscaling/application/userguide/monitoring-cloudwatch.html|Building Dashboards with CloudWatch]] in the <i>Application Auto Scaling User Guide</i>.
     */
   @js.native
   trait PredefinedMetricSpecification extends js.Object {
@@ -623,10 +629,10 @@ package applicationautoscaling {
         TargetTrackingScalingPolicyConfiguration: js.UndefOr[TargetTrackingScalingPolicyConfiguration] = js.undefined
     ): PutScalingPolicyRequest = {
       val __obj = js.Dynamic.literal(
-        "PolicyName"        -> PolicyName.asInstanceOf[js.Any],
-        "ResourceId"        -> ResourceId.asInstanceOf[js.Any],
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "ScalableDimension" -> ScalableDimension.asInstanceOf[js.Any],
-        "ServiceNamespace"  -> ServiceNamespace.asInstanceOf[js.Any]
+        "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any]
       )
 
       PolicyType.foreach(__v => __obj.updateDynamic("PolicyType")(__v.asInstanceOf[js.Any]))
@@ -686,10 +692,10 @@ package applicationautoscaling {
         StartTime: js.UndefOr[TimestampType] = js.undefined
     ): PutScheduledActionRequest = {
       val __obj = js.Dynamic.literal(
-        "ResourceId"          -> ResourceId.asInstanceOf[js.Any],
-        "ScalableDimension"   -> ScalableDimension.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
+        "ScalableDimension" -> ScalableDimension.asInstanceOf[js.Any],
         "ScheduledActionName" -> ScheduledActionName.asInstanceOf[js.Any],
-        "ServiceNamespace"    -> ServiceNamespace.asInstanceOf[js.Any]
+        "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any]
       )
 
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
@@ -736,9 +742,9 @@ package applicationautoscaling {
         SuspendedState: js.UndefOr[SuspendedState] = js.undefined
     ): RegisterScalableTargetRequest = {
       val __obj = js.Dynamic.literal(
-        "ResourceId"        -> ResourceId.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "ScalableDimension" -> ScalableDimension.asInstanceOf[js.Any],
-        "ServiceNamespace"  -> ServiceNamespace.asInstanceOf[js.Any]
+        "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any]
       )
 
       MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
@@ -770,12 +776,12 @@ package applicationautoscaling {
       "ec2:spot-fleet-request:TargetCapacity".asInstanceOf[ScalableDimension]
     val `elasticmapreduce:instancegroup:InstanceCount` =
       "elasticmapreduce:instancegroup:InstanceCount".asInstanceOf[ScalableDimension]
-    val `appstream:fleet:DesiredCapacity`   = "appstream:fleet:DesiredCapacity".asInstanceOf[ScalableDimension]
-    val `dynamodb:table:ReadCapacityUnits`  = "dynamodb:table:ReadCapacityUnits".asInstanceOf[ScalableDimension]
+    val `appstream:fleet:DesiredCapacity` = "appstream:fleet:DesiredCapacity".asInstanceOf[ScalableDimension]
+    val `dynamodb:table:ReadCapacityUnits` = "dynamodb:table:ReadCapacityUnits".asInstanceOf[ScalableDimension]
     val `dynamodb:table:WriteCapacityUnits` = "dynamodb:table:WriteCapacityUnits".asInstanceOf[ScalableDimension]
-    val `dynamodb:index:ReadCapacityUnits`  = "dynamodb:index:ReadCapacityUnits".asInstanceOf[ScalableDimension]
+    val `dynamodb:index:ReadCapacityUnits` = "dynamodb:index:ReadCapacityUnits".asInstanceOf[ScalableDimension]
     val `dynamodb:index:WriteCapacityUnits` = "dynamodb:index:WriteCapacityUnits".asInstanceOf[ScalableDimension]
-    val `rds:cluster:ReadReplicaCount`      = "rds:cluster:ReadReplicaCount".asInstanceOf[ScalableDimension]
+    val `rds:cluster:ReadReplicaCount` = "rds:cluster:ReadReplicaCount".asInstanceOf[ScalableDimension]
     val `sagemaker:variant:DesiredInstanceCount` =
       "sagemaker:variant:DesiredInstanceCount".asInstanceOf[ScalableDimension]
     val `custom-resource:ResourceType:Property` =
@@ -784,6 +790,8 @@ package applicationautoscaling {
       "comprehend:document-classifier-endpoint:DesiredInferenceUnits".asInstanceOf[ScalableDimension]
     val `lambda:function:ProvisionedConcurrency` =
       "lambda:function:ProvisionedConcurrency".asInstanceOf[ScalableDimension]
+    val `cassandra:table:ReadCapacityUnits` = "cassandra:table:ReadCapacityUnits".asInstanceOf[ScalableDimension]
+    val `cassandra:table:WriteCapacityUnits` = "cassandra:table:WriteCapacityUnits".asInstanceOf[ScalableDimension]
 
     val values = js.Object.freeze(
       js.Array(
@@ -799,7 +807,9 @@ package applicationautoscaling {
         `sagemaker:variant:DesiredInstanceCount`,
         `custom-resource:ResourceType:Property`,
         `comprehend:document-classifier-endpoint:DesiredInferenceUnits`,
-        `lambda:function:ProvisionedConcurrency`
+        `lambda:function:ProvisionedConcurrency`,
+        `cassandra:table:ReadCapacityUnits`,
+        `cassandra:table:WriteCapacityUnits`
       )
     )
   }
@@ -832,13 +842,13 @@ package applicationautoscaling {
         SuspendedState: js.UndefOr[SuspendedState] = js.undefined
     ): ScalableTarget = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"      -> CreationTime.asInstanceOf[js.Any],
-        "MaxCapacity"       -> MaxCapacity.asInstanceOf[js.Any],
-        "MinCapacity"       -> MinCapacity.asInstanceOf[js.Any],
-        "ResourceId"        -> ResourceId.asInstanceOf[js.Any],
-        "RoleARN"           -> RoleARN.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "MaxCapacity" -> MaxCapacity.asInstanceOf[js.Any],
+        "MinCapacity" -> MinCapacity.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any],
         "ScalableDimension" -> ScalableDimension.asInstanceOf[js.Any],
-        "ServiceNamespace"  -> ServiceNamespace.asInstanceOf[js.Any]
+        "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any]
       )
 
       SuspendedState.foreach(__v => __obj.updateDynamic("SuspendedState")(__v.asInstanceOf[js.Any]))
@@ -902,14 +912,14 @@ package applicationautoscaling {
         StatusMessage: js.UndefOr[XmlString] = js.undefined
     ): ScalingActivity = {
       val __obj = js.Dynamic.literal(
-        "ActivityId"        -> ActivityId.asInstanceOf[js.Any],
-        "Cause"             -> Cause.asInstanceOf[js.Any],
-        "Description"       -> Description.asInstanceOf[js.Any],
-        "ResourceId"        -> ResourceId.asInstanceOf[js.Any],
+        "ActivityId" -> ActivityId.asInstanceOf[js.Any],
+        "Cause" -> Cause.asInstanceOf[js.Any],
+        "Description" -> Description.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "ScalableDimension" -> ScalableDimension.asInstanceOf[js.Any],
-        "ServiceNamespace"  -> ServiceNamespace.asInstanceOf[js.Any],
-        "StartTime"         -> StartTime.asInstanceOf[js.Any],
-        "StatusCode"        -> StatusCode.asInstanceOf[js.Any]
+        "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any],
+        "StartTime" -> StartTime.asInstanceOf[js.Any],
+        "StatusCode" -> StatusCode.asInstanceOf[js.Any]
       )
 
       Details.foreach(__v => __obj.updateDynamic("Details")(__v.asInstanceOf[js.Any]))
@@ -922,12 +932,12 @@ package applicationautoscaling {
   @js.native
   sealed trait ScalingActivityStatusCode extends js.Any
   object ScalingActivityStatusCode extends js.Object {
-    val Pending     = "Pending".asInstanceOf[ScalingActivityStatusCode]
-    val InProgress  = "InProgress".asInstanceOf[ScalingActivityStatusCode]
-    val Successful  = "Successful".asInstanceOf[ScalingActivityStatusCode]
-    val Overridden  = "Overridden".asInstanceOf[ScalingActivityStatusCode]
+    val Pending = "Pending".asInstanceOf[ScalingActivityStatusCode]
+    val InProgress = "InProgress".asInstanceOf[ScalingActivityStatusCode]
+    val Successful = "Successful".asInstanceOf[ScalingActivityStatusCode]
+    val Overridden = "Overridden".asInstanceOf[ScalingActivityStatusCode]
     val Unfulfilled = "Unfulfilled".asInstanceOf[ScalingActivityStatusCode]
-    val Failed      = "Failed".asInstanceOf[ScalingActivityStatusCode]
+    val Failed = "Failed".asInstanceOf[ScalingActivityStatusCode]
 
     val values = js.Object.freeze(js.Array(Pending, InProgress, Successful, Overridden, Unfulfilled, Failed))
   }
@@ -964,13 +974,13 @@ package applicationautoscaling {
         TargetTrackingScalingPolicyConfiguration: js.UndefOr[TargetTrackingScalingPolicyConfiguration] = js.undefined
     ): ScalingPolicy = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"      -> CreationTime.asInstanceOf[js.Any],
-        "PolicyARN"         -> PolicyARN.asInstanceOf[js.Any],
-        "PolicyName"        -> PolicyName.asInstanceOf[js.Any],
-        "PolicyType"        -> PolicyType.asInstanceOf[js.Any],
-        "ResourceId"        -> ResourceId.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "PolicyARN" -> PolicyARN.asInstanceOf[js.Any],
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
+        "PolicyType" -> PolicyType.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "ScalableDimension" -> ScalableDimension.asInstanceOf[js.Any],
-        "ServiceNamespace"  -> ServiceNamespace.asInstanceOf[js.Any]
+        "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any]
       )
 
       Alarms.foreach(__v => __obj.updateDynamic("Alarms")(__v.asInstanceOf[js.Any]))
@@ -1016,12 +1026,12 @@ package applicationautoscaling {
         StartTime: js.UndefOr[TimestampType] = js.undefined
     ): ScheduledAction = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"        -> CreationTime.asInstanceOf[js.Any],
-        "ResourceId"          -> ResourceId.asInstanceOf[js.Any],
-        "Schedule"            -> Schedule.asInstanceOf[js.Any],
-        "ScheduledActionARN"  -> ScheduledActionARN.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
+        "Schedule" -> Schedule.asInstanceOf[js.Any],
+        "ScheduledActionARN" -> ScheduledActionARN.asInstanceOf[js.Any],
         "ScheduledActionName" -> ScheduledActionName.asInstanceOf[js.Any],
-        "ServiceNamespace"    -> ServiceNamespace.asInstanceOf[js.Any]
+        "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any]
       )
 
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
@@ -1035,24 +1045,37 @@ package applicationautoscaling {
   @js.native
   sealed trait ServiceNamespace extends js.Any
   object ServiceNamespace extends js.Object {
-    val ecs               = "ecs".asInstanceOf[ServiceNamespace]
-    val elasticmapreduce  = "elasticmapreduce".asInstanceOf[ServiceNamespace]
-    val ec2               = "ec2".asInstanceOf[ServiceNamespace]
-    val appstream         = "appstream".asInstanceOf[ServiceNamespace]
-    val dynamodb          = "dynamodb".asInstanceOf[ServiceNamespace]
-    val rds               = "rds".asInstanceOf[ServiceNamespace]
-    val sagemaker         = "sagemaker".asInstanceOf[ServiceNamespace]
+    val ecs = "ecs".asInstanceOf[ServiceNamespace]
+    val elasticmapreduce = "elasticmapreduce".asInstanceOf[ServiceNamespace]
+    val ec2 = "ec2".asInstanceOf[ServiceNamespace]
+    val appstream = "appstream".asInstanceOf[ServiceNamespace]
+    val dynamodb = "dynamodb".asInstanceOf[ServiceNamespace]
+    val rds = "rds".asInstanceOf[ServiceNamespace]
+    val sagemaker = "sagemaker".asInstanceOf[ServiceNamespace]
     val `custom-resource` = "custom-resource".asInstanceOf[ServiceNamespace]
-    val comprehend        = "comprehend".asInstanceOf[ServiceNamespace]
-    val lambda            = "lambda".asInstanceOf[ServiceNamespace]
+    val comprehend = "comprehend".asInstanceOf[ServiceNamespace]
+    val lambda = "lambda".asInstanceOf[ServiceNamespace]
+    val cassandra = "cassandra".asInstanceOf[ServiceNamespace]
 
     val values = js.Object.freeze(
-      js.Array(ecs, elasticmapreduce, ec2, appstream, dynamodb, rds, sagemaker, `custom-resource`, comprehend, lambda)
+      js.Array(
+        ecs,
+        elasticmapreduce,
+        ec2,
+        appstream,
+        dynamodb,
+        rds,
+        sagemaker,
+        `custom-resource`,
+        comprehend,
+        lambda,
+        cassandra
+      )
     )
   }
 
   /**
-    * Represents a step adjustment for a <a>StepScalingPolicyConfiguration</a>. Describes an adjustment based on the difference between the value of the aggregated CloudWatch metric and the breach threshold that you've defined for the alarm.
+    * Represents a step adjustment for a [[https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepScalingPolicyConfiguration.html|StepScalingPolicyConfiguration]]. Describes an adjustment based on the difference between the value of the aggregated CloudWatch metric and the breach threshold that you've defined for the alarm.
     *  For the following examples, suppose that you have an alarm with a breach threshold of 50:
     * * To trigger the adjustment when the metric is greater than or equal to 50 and less than 60, specify a lower bound of 0 and an upper bound of 10.
     *  * To trigger the adjustment when the metric is greater than 40 and less than or equal to 50, specify a lower bound of -10 and an upper bound of 0.

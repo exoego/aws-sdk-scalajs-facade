@@ -7,13 +7,13 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object kinesisvideomedia {
-  type ContentType          = String
-  type ContinuationToken    = String
+  type ContentType = String
+  type ContinuationToken = String
   type FragmentNumberString = String
-  type Payload              = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type ResourceARN          = String
-  type StreamName           = String
-  type Timestamp            = js.Date
+  type Payload = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type ResourceARN = String
+  type StreamName = String
+  type Timestamp = js.Date
 
   implicit final class KinesisVideoMediaOps(private val service: KinesisVideoMedia) extends AnyVal {
 
@@ -110,11 +110,11 @@ package kinesisvideomedia {
   @js.native
   sealed trait StartSelectorType extends js.Any
   object StartSelectorType extends js.Object {
-    val FRAGMENT_NUMBER    = "FRAGMENT_NUMBER".asInstanceOf[StartSelectorType]
-    val SERVER_TIMESTAMP   = "SERVER_TIMESTAMP".asInstanceOf[StartSelectorType]
+    val FRAGMENT_NUMBER = "FRAGMENT_NUMBER".asInstanceOf[StartSelectorType]
+    val SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[StartSelectorType]
     val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[StartSelectorType]
-    val NOW                = "NOW".asInstanceOf[StartSelectorType]
-    val EARLIEST           = "EARLIEST".asInstanceOf[StartSelectorType]
+    val NOW = "NOW".asInstanceOf[StartSelectorType]
+    val EARLIEST = "EARLIEST".asInstanceOf[StartSelectorType]
     val CONTINUATION_TOKEN = "CONTINUATION_TOKEN".asInstanceOf[StartSelectorType]
 
     val values = js.Object.freeze(

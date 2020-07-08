@@ -8,21 +8,21 @@ import facade.amazonaws._
 
 package object mediastoredata {
   type ContentRangePattern = String
-  type ContentType         = String
-  type ETag                = String
-  type ItemList            = js.Array[Item]
-  type ItemName            = String
-  type ListLimit           = Int
-  type ListPathNaming      = String
-  type NonNegativeLong     = Double
-  type PaginationToken     = String
-  type PathNaming          = String
-  type PayloadBlob         = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type RangePattern        = String
-  type SHA256Hash          = String
-  type StringPrimitive     = String
-  type TimeStamp           = js.Date
-  type statusCode          = Int
+  type ContentType = String
+  type ETag = String
+  type ItemList = js.Array[Item]
+  type ItemName = String
+  type ListLimit = Int
+  type ListPathNaming = String
+  type NonNegativeLong = Double
+  type PaginationToken = String
+  type PathNaming = String
+  type PayloadBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type RangePattern = String
+  type SHA256Hash = String
+  type StringPrimitive = String
+  type TimeStamp = js.Date
+  type statusCode = Int
 
   implicit final class MediaStoreDataOps(private val service: MediaStoreData) extends AnyVal {
 
@@ -45,11 +45,11 @@ package mediastoredata {
   class MediaStoreData() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def deleteObject(params: DeleteObjectRequest): Request[DeleteObjectResponse]       = js.native
+    def deleteObject(params: DeleteObjectRequest): Request[DeleteObjectResponse] = js.native
     def describeObject(params: DescribeObjectRequest): Request[DescribeObjectResponse] = js.native
-    def getObject(params: GetObjectRequest): Request[GetObjectResponse]                = js.native
-    def listItems(params: ListItemsRequest): Request[ListItemsResponse]                = js.native
-    def putObject(params: PutObjectRequest): Request[PutObjectResponse]                = js.native
+    def getObject(params: GetObjectRequest): Request[GetObjectResponse] = js.native
+    def listItems(params: ListItemsRequest): Request[ListItemsResponse] = js.native
+    def putObject(params: PutObjectRequest): Request[PutObjectResponse] = js.native
   }
 
   @js.native
@@ -339,7 +339,7 @@ package mediastoredata {
   @js.native
   sealed trait UploadAvailability extends js.Any
   object UploadAvailability extends js.Object {
-    val STANDARD  = "STANDARD".asInstanceOf[UploadAvailability]
+    val STANDARD = "STANDARD".asInstanceOf[UploadAvailability]
     val STREAMING = "STREAMING".asInstanceOf[UploadAvailability]
 
     val values = js.Object.freeze(js.Array(STANDARD, STREAMING))

@@ -7,19 +7,19 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object iot1clickdevicesservice {
-  type DeviceAttributes          = js.Dictionary[__string]
-  type MaxResults                = Int
-  type __boolean                 = Boolean
-  type __doubleMin0Max100        = Double
-  type __integer                 = Int
+  type DeviceAttributes = js.Dictionary[__string]
+  type MaxResults = Int
+  type __boolean = Boolean
+  type __doubleMin0Max100 = Double
+  type __integer = Int
   type __listOfDeviceDescription = js.Array[DeviceDescription]
-  type __listOfDeviceEvent       = js.Array[DeviceEvent]
-  type __listOfDeviceMethod      = js.Array[DeviceMethod]
-  type __listOf__string          = js.Array[__string]
-  type __mapOf__string           = js.Dictionary[__string]
-  type __string                  = String
-  type __stringMin12Max40        = String
-  type __timestampIso8601        = js.Date
+  type __listOfDeviceEvent = js.Array[DeviceEvent]
+  type __listOfDeviceMethod = js.Array[DeviceMethod]
+  type __listOf__string = js.Array[__string]
+  type __mapOf__string = js.Dictionary[__string]
+  type __string = String
+  type __stringMin12Max40 = String
+  type __timestampIso8601 = js.Date
 
   implicit final class IoT1ClickDevicesServiceOps(private val service: IoT1ClickDevicesService) extends AnyVal {
 
@@ -61,18 +61,18 @@ package iot1clickdevicesservice {
 
     def claimDevicesByClaimCode(params: ClaimDevicesByClaimCodeRequest): Request[ClaimDevicesByClaimCodeResponse] =
       js.native
-    def describeDevice(params: DescribeDeviceRequest): Request[DescribeDeviceResponse]                = js.native
+    def describeDevice(params: DescribeDeviceRequest): Request[DescribeDeviceResponse] = js.native
     def finalizeDeviceClaim(params: FinalizeDeviceClaimRequest): Request[FinalizeDeviceClaimResponse] = js.native
-    def getDeviceMethods(params: GetDeviceMethodsRequest): Request[GetDeviceMethodsResponse]          = js.native
+    def getDeviceMethods(params: GetDeviceMethodsRequest): Request[GetDeviceMethodsResponse] = js.native
     def initiateDeviceClaim(params: InitiateDeviceClaimRequest): Request[InitiateDeviceClaimResponse] = js.native
-    def invokeDeviceMethod(params: InvokeDeviceMethodRequest): Request[InvokeDeviceMethodResponse]    = js.native
-    def listDeviceEvents(params: ListDeviceEventsRequest): Request[ListDeviceEventsResponse]          = js.native
-    def listDevices(params: ListDevicesRequest): Request[ListDevicesResponse]                         = js.native
+    def invokeDeviceMethod(params: InvokeDeviceMethodRequest): Request[InvokeDeviceMethodResponse] = js.native
+    def listDeviceEvents(params: ListDeviceEventsRequest): Request[ListDeviceEventsResponse] = js.native
+    def listDevices(params: ListDevicesRequest): Request[ListDevicesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def tagResource(params: TagResourceRequest): Request[js.Object]                                   = js.native
-    def unclaimDevice(params: UnclaimDeviceRequest): Request[UnclaimDeviceResponse]                   = js.native
-    def untagResource(params: UntagResourceRequest): Request[js.Object]                               = js.native
-    def updateDeviceState(params: UpdateDeviceStateRequest): Request[UpdateDeviceStateResponse]       = js.native
+    def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
+    def unclaimDevice(params: UnclaimDeviceRequest): Request[UnclaimDeviceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
+    def updateDeviceState(params: UpdateDeviceStateRequest): Request[UpdateDeviceStateResponse] = js.native
   }
 
   @js.native
@@ -417,9 +417,9 @@ package iot1clickdevicesservice {
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListDeviceEventsRequest = {
       val __obj = js.Dynamic.literal(
-        "DeviceId"      -> DeviceId.asInstanceOf[js.Any],
+        "DeviceId" -> DeviceId.asInstanceOf[js.Any],
         "FromTimeStamp" -> FromTimeStamp.asInstanceOf[js.Any],
-        "ToTimeStamp"   -> ToTimeStamp.asInstanceOf[js.Any]
+        "ToTimeStamp" -> ToTimeStamp.asInstanceOf[js.Any]
       )
 
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
@@ -536,7 +536,7 @@ package iot1clickdevicesservice {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -591,7 +591,7 @@ package iot1clickdevicesservice {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]

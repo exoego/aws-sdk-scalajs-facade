@@ -7,27 +7,27 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object mq {
-  type MaxResults                    = Int
-  type __boolean                     = Boolean
-  type __integer                     = Int
-  type __integerMin5Max100           = Int
-  type __listOfAvailabilityZone      = js.Array[AvailabilityZone]
-  type __listOfBrokerEngineType      = js.Array[BrokerEngineType]
-  type __listOfBrokerInstance        = js.Array[BrokerInstance]
-  type __listOfBrokerInstanceOption  = js.Array[BrokerInstanceOption]
-  type __listOfBrokerSummary         = js.Array[BrokerSummary]
-  type __listOfConfiguration         = js.Array[Configuration]
-  type __listOfConfigurationId       = js.Array[ConfigurationId]
+  type MaxResults = Int
+  type __boolean = Boolean
+  type __integer = Int
+  type __integerMin5Max100 = Int
+  type __listOfAvailabilityZone = js.Array[AvailabilityZone]
+  type __listOfBrokerEngineType = js.Array[BrokerEngineType]
+  type __listOfBrokerInstance = js.Array[BrokerInstance]
+  type __listOfBrokerInstanceOption = js.Array[BrokerInstanceOption]
+  type __listOfBrokerSummary = js.Array[BrokerSummary]
+  type __listOfConfiguration = js.Array[Configuration]
+  type __listOfConfigurationId = js.Array[ConfigurationId]
   type __listOfConfigurationRevision = js.Array[ConfigurationRevision]
-  type __listOfDeploymentMode        = js.Array[DeploymentMode]
-  type __listOfEngineVersion         = js.Array[EngineVersion]
-  type __listOfSanitizationWarning   = js.Array[SanitizationWarning]
-  type __listOfUser                  = js.Array[User]
-  type __listOfUserSummary           = js.Array[UserSummary]
-  type __listOf__string              = js.Array[__string]
-  type __mapOf__string               = js.Dictionary[__string]
-  type __string                      = String
-  type __timestampIso8601            = js.Date
+  type __listOfDeploymentMode = js.Array[DeploymentMode]
+  type __listOfEngineVersion = js.Array[EngineVersion]
+  type __listOfSanitizationWarning = js.Array[SanitizationWarning]
+  type __listOfUser = js.Array[User]
+  type __listOfUserSummary = js.Array[UserSummary]
+  type __listOf__string = js.Array[__string]
+  type __mapOf__string = js.Dictionary[__string]
+  type __string = String
+  type __timestampIso8601 = js.Date
 
   implicit final class MQOps(private val service: MQ) extends AnyVal {
 
@@ -89,36 +89,36 @@ package mq {
   class MQ() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createBroker(params: CreateBrokerRequest): Request[CreateBrokerResponse]                      = js.native
+    def createBroker(params: CreateBrokerRequest): Request[CreateBrokerResponse] = js.native
     def createConfiguration(params: CreateConfigurationRequest): Request[CreateConfigurationResponse] = js.native
-    def createTags(params: CreateTagsRequest): Request[js.Object]                                     = js.native
-    def createUser(params: CreateUserRequest): Request[CreateUserResponse]                            = js.native
-    def deleteBroker(params: DeleteBrokerRequest): Request[DeleteBrokerResponse]                      = js.native
-    def deleteTags(params: DeleteTagsRequest): Request[js.Object]                                     = js.native
-    def deleteUser(params: DeleteUserRequest): Request[DeleteUserResponse]                            = js.native
-    def describeBroker(params: DescribeBrokerRequest): Request[DescribeBrokerResponse]                = js.native
+    def createTags(params: CreateTagsRequest): Request[js.Object] = js.native
+    def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native
+    def deleteBroker(params: DeleteBrokerRequest): Request[DeleteBrokerResponse] = js.native
+    def deleteTags(params: DeleteTagsRequest): Request[js.Object] = js.native
+    def deleteUser(params: DeleteUserRequest): Request[DeleteUserResponse] = js.native
+    def describeBroker(params: DescribeBrokerRequest): Request[DescribeBrokerResponse] = js.native
     def describeBrokerEngineTypes(
         params: DescribeBrokerEngineTypesRequest
     ): Request[DescribeBrokerEngineTypesResponse] = js.native
     def describeBrokerInstanceOptions(
         params: DescribeBrokerInstanceOptionsRequest
-    ): Request[DescribeBrokerInstanceOptionsResponse]                                                       = js.native
+    ): Request[DescribeBrokerInstanceOptionsResponse] = js.native
     def describeConfiguration(params: DescribeConfigurationRequest): Request[DescribeConfigurationResponse] = js.native
     def describeConfigurationRevision(
         params: DescribeConfigurationRevisionRequest
-    ): Request[DescribeConfigurationRevisionResponse]                            = js.native
+    ): Request[DescribeConfigurationRevisionResponse] = js.native
     def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse] = js.native
-    def listBrokers(params: ListBrokersRequest): Request[ListBrokersResponse]    = js.native
+    def listBrokers(params: ListBrokersRequest): Request[ListBrokersResponse] = js.native
     def listConfigurationRevisions(
         params: ListConfigurationRevisionsRequest
-    ): Request[ListConfigurationRevisionsResponse]                                                    = js.native
-    def listConfigurations(params: ListConfigurationsRequest): Request[ListConfigurationsResponse]    = js.native
-    def listTags(params: ListTagsRequest): Request[ListTagsResponse]                                  = js.native
-    def listUsers(params: ListUsersRequest): Request[ListUsersResponse]                               = js.native
-    def rebootBroker(params: RebootBrokerRequest): Request[RebootBrokerResponse]                      = js.native
-    def updateBroker(params: UpdateBrokerRequest): Request[UpdateBrokerResponse]                      = js.native
+    ): Request[ListConfigurationRevisionsResponse] = js.native
+    def listConfigurations(params: ListConfigurationsRequest): Request[ListConfigurationsResponse] = js.native
+    def listTags(params: ListTagsRequest): Request[ListTagsResponse] = js.native
+    def listUsers(params: ListUsersRequest): Request[ListUsersResponse] = js.native
+    def rebootBroker(params: RebootBrokerRequest): Request[RebootBrokerResponse] = js.native
+    def updateBroker(params: UpdateBrokerRequest): Request[UpdateBrokerResponse] = js.native
     def updateConfiguration(params: UpdateConfigurationRequest): Request[UpdateConfigurationResponse] = js.native
-    def updateUser(params: UpdateUserRequest): Request[UpdateUserResponse]                            = js.native
+    def updateUser(params: UpdateUserRequest): Request[UpdateUserResponse] = js.native
   }
 
   /**
@@ -228,10 +228,10 @@ package mq {
   sealed trait BrokerState extends js.Any
   object BrokerState extends js.Object {
     val CREATION_IN_PROGRESS = "CREATION_IN_PROGRESS".asInstanceOf[BrokerState]
-    val CREATION_FAILED      = "CREATION_FAILED".asInstanceOf[BrokerState]
+    val CREATION_FAILED = "CREATION_FAILED".asInstanceOf[BrokerState]
     val DELETION_IN_PROGRESS = "DELETION_IN_PROGRESS".asInstanceOf[BrokerState]
-    val RUNNING              = "RUNNING".asInstanceOf[BrokerState]
-    val REBOOT_IN_PROGRESS   = "REBOOT_IN_PROGRESS".asInstanceOf[BrokerState]
+    val RUNNING = "RUNNING".asInstanceOf[BrokerState]
+    val REBOOT_IN_PROGRESS = "REBOOT_IN_PROGRESS".asInstanceOf[BrokerState]
 
     val values = js.Object.freeze(
       js.Array(CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS, RUNNING, REBOOT_IN_PROGRESS)
@@ -632,13 +632,13 @@ package mq {
   @js.native
   sealed trait DayOfWeek extends js.Any
   object DayOfWeek extends js.Object {
-    val MONDAY    = "MONDAY".asInstanceOf[DayOfWeek]
-    val TUESDAY   = "TUESDAY".asInstanceOf[DayOfWeek]
+    val MONDAY = "MONDAY".asInstanceOf[DayOfWeek]
+    val TUESDAY = "TUESDAY".asInstanceOf[DayOfWeek]
     val WEDNESDAY = "WEDNESDAY".asInstanceOf[DayOfWeek]
-    val THURSDAY  = "THURSDAY".asInstanceOf[DayOfWeek]
-    val FRIDAY    = "FRIDAY".asInstanceOf[DayOfWeek]
-    val SATURDAY  = "SATURDAY".asInstanceOf[DayOfWeek]
-    val SUNDAY    = "SUNDAY".asInstanceOf[DayOfWeek]
+    val THURSDAY = "THURSDAY".asInstanceOf[DayOfWeek]
+    val FRIDAY = "FRIDAY".asInstanceOf[DayOfWeek]
+    val SATURDAY = "SATURDAY".asInstanceOf[DayOfWeek]
+    val SUNDAY = "SUNDAY".asInstanceOf[DayOfWeek]
 
     val values = js.Object.freeze(js.Array(MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY))
   }
@@ -691,7 +691,7 @@ package mq {
     ): DeleteTagsRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteTagsRequest]
@@ -738,7 +738,7 @@ package mq {
   @js.native
   sealed trait DeploymentMode extends js.Any
   object DeploymentMode extends js.Object {
-    val SINGLE_INSTANCE         = "SINGLE_INSTANCE".asInstanceOf[DeploymentMode]
+    val SINGLE_INSTANCE = "SINGLE_INSTANCE".asInstanceOf[DeploymentMode]
     val ACTIVE_STANDBY_MULTI_AZ = "ACTIVE_STANDBY_MULTI_AZ".asInstanceOf[DeploymentMode]
 
     val values = js.Object.freeze(js.Array(SINGLE_INSTANCE, ACTIVE_STANDBY_MULTI_AZ))
@@ -1014,7 +1014,7 @@ package mq {
         ConfigurationRevision: __string
     ): DescribeConfigurationRevisionRequest = {
       val __obj = js.Dynamic.literal(
-        "ConfigurationId"       -> ConfigurationId.asInstanceOf[js.Any],
+        "ConfigurationId" -> ConfigurationId.asInstanceOf[js.Any],
         "ConfigurationRevision" -> ConfigurationRevision.asInstanceOf[js.Any]
       )
 
@@ -1498,8 +1498,8 @@ package mq {
   @js.native
   sealed trait SanitizationWarningReason extends js.Any
   object SanitizationWarningReason extends js.Object {
-    val DISALLOWED_ELEMENT_REMOVED      = "DISALLOWED_ELEMENT_REMOVED".asInstanceOf[SanitizationWarningReason]
-    val DISALLOWED_ATTRIBUTE_REMOVED    = "DISALLOWED_ATTRIBUTE_REMOVED".asInstanceOf[SanitizationWarningReason]
+    val DISALLOWED_ELEMENT_REMOVED = "DISALLOWED_ELEMENT_REMOVED".asInstanceOf[SanitizationWarningReason]
+    val DISALLOWED_ATTRIBUTE_REMOVED = "DISALLOWED_ATTRIBUTE_REMOVED".asInstanceOf[SanitizationWarningReason]
     val INVALID_ATTRIBUTE_VALUE_REMOVED = "INVALID_ATTRIBUTE_VALUE_REMOVED".asInstanceOf[SanitizationWarningReason]
 
     val values = js.Object.freeze(

@@ -7,37 +7,37 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object textract {
-  type BlockList                                      = js.Array[Block]
-  type ClientRequestToken                             = String
-  type ContentClassifiers                             = js.Array[ContentClassifier]
-  type EntityTypes                                    = js.Array[EntityType]
-  type ErrorCode                                      = String
-  type FeatureTypes                                   = js.Array[FeatureType]
-  type FlowDefinitionArn                              = String
+  type BlockList = js.Array[Block]
+  type ClientRequestToken = String
+  type ContentClassifiers = js.Array[ContentClassifier]
+  type EntityTypes = js.Array[EntityType]
+  type ErrorCode = String
+  type FeatureTypes = js.Array[FeatureType]
+  type FlowDefinitionArn = String
   type HumanLoopActivationConditionsEvaluationResults = String
-  type HumanLoopActivationReason                      = String
-  type HumanLoopActivationReasons                     = js.Array[HumanLoopActivationReason]
-  type HumanLoopArn                                   = String
-  type HumanLoopName                                  = String
-  type IdList                                         = js.Array[NonEmptyString]
-  type ImageBlob                                      = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type JobId                                          = String
-  type JobTag                                         = String
-  type MaxResults                                     = Int
-  type NonEmptyString                                 = String
-  type Pages                                          = js.Array[UInteger]
-  type PaginationToken                                = String
-  type Percent                                        = Float
-  type Polygon                                        = js.Array[Point]
-  type RelationshipList                               = js.Array[Relationship]
-  type RoleArn                                        = String
-  type S3Bucket                                       = String
-  type S3ObjectName                                   = String
-  type S3ObjectVersion                                = String
-  type SNSTopicArn                                    = String
-  type StatusMessage                                  = String
-  type UInteger                                       = Int
-  type Warnings                                       = js.Array[Warning]
+  type HumanLoopActivationReason = String
+  type HumanLoopActivationReasons = js.Array[HumanLoopActivationReason]
+  type HumanLoopArn = String
+  type HumanLoopName = String
+  type IdList = js.Array[NonEmptyString]
+  type ImageBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type JobId = String
+  type JobTag = String
+  type MaxResults = Int
+  type NonEmptyString = String
+  type Pages = js.Array[UInteger]
+  type PaginationToken = String
+  type Percent = Float
+  type Polygon = js.Array[Point]
+  type RelationshipList = js.Array[Relationship]
+  type RoleArn = String
+  type S3Bucket = String
+  type S3ObjectName = String
+  type S3ObjectVersion = String
+  type SNSTopicArn = String
+  type StatusMessage = String
+  type UInteger = Int
+  type Warnings = js.Array[Warning]
 
   implicit final class TextractOps(private val service: Textract) extends AnyVal {
 
@@ -65,8 +65,8 @@ package textract {
   class Textract() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def analyzeDocument(params: AnalyzeDocumentRequest): Request[AnalyzeDocumentResponse]             = js.native
-    def detectDocumentText(params: DetectDocumentTextRequest): Request[DetectDocumentTextResponse]    = js.native
+    def analyzeDocument(params: AnalyzeDocumentRequest): Request[AnalyzeDocumentResponse] = js.native
+    def detectDocumentText(params: DetectDocumentTextRequest): Request[DetectDocumentTextResponse] = js.native
     def getDocumentAnalysis(params: GetDocumentAnalysisRequest): Request[GetDocumentAnalysisResponse] = js.native
     def getDocumentTextDetection(params: GetDocumentTextDetectionRequest): Request[GetDocumentTextDetectionResponse] =
       js.native
@@ -91,7 +91,7 @@ package textract {
         HumanLoopConfig: js.UndefOr[HumanLoopConfig] = js.undefined
     ): AnalyzeDocumentRequest = {
       val __obj = js.Dynamic.literal(
-        "Document"     -> Document.asInstanceOf[js.Any],
+        "Document" -> Document.asInstanceOf[js.Any],
         "FeatureTypes" -> FeatureTypes.asInstanceOf[js.Any]
       )
 
@@ -189,12 +189,12 @@ package textract {
   @js.native
   sealed trait BlockType extends js.Any
   object BlockType extends js.Object {
-    val KEY_VALUE_SET     = "KEY_VALUE_SET".asInstanceOf[BlockType]
-    val PAGE              = "PAGE".asInstanceOf[BlockType]
-    val LINE              = "LINE".asInstanceOf[BlockType]
-    val WORD              = "WORD".asInstanceOf[BlockType]
-    val TABLE             = "TABLE".asInstanceOf[BlockType]
-    val CELL              = "CELL".asInstanceOf[BlockType]
+    val KEY_VALUE_SET = "KEY_VALUE_SET".asInstanceOf[BlockType]
+    val PAGE = "PAGE".asInstanceOf[BlockType]
+    val LINE = "LINE".asInstanceOf[BlockType]
+    val WORD = "WORD".asInstanceOf[BlockType]
+    val TABLE = "TABLE".asInstanceOf[BlockType]
+    val CELL = "CELL".asInstanceOf[BlockType]
     val SELECTION_ELEMENT = "SELECTION_ELEMENT".asInstanceOf[BlockType]
 
     val values = js.Object.freeze(js.Array(KEY_VALUE_SET, PAGE, LINE, WORD, TABLE, CELL, SELECTION_ELEMENT))
@@ -351,7 +351,7 @@ package textract {
   @js.native
   sealed trait EntityType extends js.Any
   object EntityType extends js.Object {
-    val KEY   = "KEY".asInstanceOf[EntityType]
+    val KEY = "KEY".asInstanceOf[EntityType]
     val VALUE = "VALUE".asInstanceOf[EntityType]
 
     val values = js.Object.freeze(js.Array(KEY, VALUE))
@@ -361,7 +361,7 @@ package textract {
   sealed trait FeatureType extends js.Any
   object FeatureType extends js.Object {
     val TABLES = "TABLES".asInstanceOf[FeatureType]
-    val FORMS  = "FORMS".asInstanceOf[FeatureType]
+    val FORMS = "FORMS".asInstanceOf[FeatureType]
 
     val values = js.Object.freeze(js.Array(TABLES, FORMS))
   }
@@ -557,7 +557,7 @@ package textract {
     ): HumanLoopConfig = {
       val __obj = js.Dynamic.literal(
         "FlowDefinitionArn" -> FlowDefinitionArn.asInstanceOf[js.Any],
-        "HumanLoopName"     -> HumanLoopName.asInstanceOf[js.Any]
+        "HumanLoopName" -> HumanLoopName.asInstanceOf[js.Any]
       )
 
       DataAttributes.foreach(__v => __obj.updateDynamic("DataAttributes")(__v.asInstanceOf[js.Any]))
@@ -587,9 +587,9 @@ package textract {
   @js.native
   sealed trait JobStatus extends js.Any
   object JobStatus extends js.Object {
-    val IN_PROGRESS     = "IN_PROGRESS".asInstanceOf[JobStatus]
-    val SUCCEEDED       = "SUCCEEDED".asInstanceOf[JobStatus]
-    val FAILED          = "FAILED".asInstanceOf[JobStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[JobStatus]
+    val FAILED = "FAILED".asInstanceOf[JobStatus]
     val PARTIAL_SUCCESS = "PARTIAL_SUCCESS".asInstanceOf[JobStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED, PARTIAL_SUCCESS))
@@ -611,7 +611,7 @@ package textract {
         SNSTopicArn: SNSTopicArn
     ): NotificationChannel = {
       val __obj = js.Dynamic.literal(
-        "RoleArn"     -> RoleArn.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
         "SNSTopicArn" -> SNSTopicArn.asInstanceOf[js.Any]
       )
 
@@ -704,7 +704,7 @@ package textract {
   @js.native
   sealed trait SelectionStatus extends js.Any
   object SelectionStatus extends js.Object {
-    val SELECTED     = "SELECTED".asInstanceOf[SelectionStatus]
+    val SELECTED = "SELECTED".asInstanceOf[SelectionStatus]
     val NOT_SELECTED = "NOT_SELECTED".asInstanceOf[SelectionStatus]
 
     val values = js.Object.freeze(js.Array(SELECTED, NOT_SELECTED))
@@ -730,7 +730,7 @@ package textract {
     ): StartDocumentAnalysisRequest = {
       val __obj = js.Dynamic.literal(
         "DocumentLocation" -> DocumentLocation.asInstanceOf[js.Any],
-        "FeatureTypes"     -> FeatureTypes.asInstanceOf[js.Any]
+        "FeatureTypes" -> FeatureTypes.asInstanceOf[js.Any]
       )
 
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))

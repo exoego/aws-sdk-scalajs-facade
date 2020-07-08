@@ -7,36 +7,36 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object route53resolver {
-  type AccountId                = String
-  type Arn                      = String
-  type CreatorRequestId         = String
-  type DomainName               = String
-  type FilterName               = String
-  type FilterValue              = String
-  type FilterValues             = js.Array[FilterValue]
-  type Filters                  = js.Array[Filter]
-  type Ip                       = String
-  type IpAddressCount           = Int
-  type IpAddressesRequest       = js.Array[IpAddressRequest]
-  type IpAddressesResponse      = js.Array[IpAddressResponse]
-  type MaxResults               = Int
-  type Name                     = String
-  type NextToken                = String
-  type Port                     = Int
-  type ResolverEndpoints        = js.Array[ResolverEndpoint]
+  type AccountId = String
+  type Arn = String
+  type CreatorRequestId = String
+  type DomainName = String
+  type FilterName = String
+  type FilterValue = String
+  type FilterValues = js.Array[FilterValue]
+  type Filters = js.Array[Filter]
+  type Ip = String
+  type IpAddressCount = Int
+  type IpAddressesRequest = js.Array[IpAddressRequest]
+  type IpAddressesResponse = js.Array[IpAddressResponse]
+  type MaxResults = Int
+  type Name = String
+  type NextToken = String
+  type Port = Int
+  type ResolverEndpoints = js.Array[ResolverEndpoint]
   type ResolverRuleAssociations = js.Array[ResolverRuleAssociation]
-  type ResolverRulePolicy       = String
-  type ResolverRules            = js.Array[ResolverRule]
-  type ResourceId               = String
-  type Rfc3339TimeString        = String
-  type SecurityGroupIds         = js.Array[ResourceId]
-  type StatusMessage            = String
-  type SubnetId                 = String
-  type TagKey                   = String
-  type TagKeyList               = js.Array[TagKey]
-  type TagList                  = js.Array[Tag]
-  type TagValue                 = String
-  type TargetList               = js.Array[TargetAddress]
+  type ResolverRulePolicy = String
+  type ResolverRules = js.Array[ResolverRule]
+  type ResourceId = String
+  type Rfc3339TimeString = String
+  type SecurityGroupIds = js.Array[ResourceId]
+  type StatusMessage = String
+  type SubnetId = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type TargetList = js.Array[TargetAddress]
 
   implicit final class Route53ResolverOps(private val service: Route53Resolver) extends AnyVal {
 
@@ -111,7 +111,7 @@ package route53resolver {
 
     def associateResolverEndpointIpAddress(
         params: AssociateResolverEndpointIpAddressRequest
-    ): Request[AssociateResolverEndpointIpAddressResponse]                                                  = js.native
+    ): Request[AssociateResolverEndpointIpAddressResponse] = js.native
     def associateResolverRule(params: AssociateResolverRuleRequest): Request[AssociateResolverRuleResponse] = js.native
     def createResolverEndpoint(params: CreateResolverEndpointRequest): Request[CreateResolverEndpointResponse] =
       js.native
@@ -125,23 +125,23 @@ package route53resolver {
     def disassociateResolverRule(params: DisassociateResolverRuleRequest): Request[DisassociateResolverRuleResponse] =
       js.native
     def getResolverEndpoint(params: GetResolverEndpointRequest): Request[GetResolverEndpointResponse] = js.native
-    def getResolverRule(params: GetResolverRuleRequest): Request[GetResolverRuleResponse]             = js.native
+    def getResolverRule(params: GetResolverRuleRequest): Request[GetResolverRuleResponse] = js.native
     def getResolverRuleAssociation(
         params: GetResolverRuleAssociationRequest
-    ): Request[GetResolverRuleAssociationResponse]                                                          = js.native
+    ): Request[GetResolverRuleAssociationResponse] = js.native
     def getResolverRulePolicy(params: GetResolverRulePolicyRequest): Request[GetResolverRulePolicyResponse] = js.native
     def listResolverEndpointIpAddresses(
         params: ListResolverEndpointIpAddressesRequest
-    ): Request[ListResolverEndpointIpAddressesResponse]                                                     = js.native
+    ): Request[ListResolverEndpointIpAddressesResponse] = js.native
     def listResolverEndpoints(params: ListResolverEndpointsRequest): Request[ListResolverEndpointsResponse] = js.native
     def listResolverRuleAssociations(
         params: ListResolverRuleAssociationsRequest
-    ): Request[ListResolverRuleAssociationsResponse]                                                        = js.native
-    def listResolverRules(params: ListResolverRulesRequest): Request[ListResolverRulesResponse]             = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
+    ): Request[ListResolverRuleAssociationsResponse] = js.native
+    def listResolverRules(params: ListResolverRulesRequest): Request[ListResolverRulesResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putResolverRulePolicy(params: PutResolverRulePolicyRequest): Request[PutResolverRulePolicyResponse] = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                         = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateResolverEndpoint(params: UpdateResolverEndpointRequest): Request[UpdateResolverEndpointResponse] =
       js.native
     def updateResolverRule(params: UpdateResolverRuleRequest): Request[UpdateResolverRuleResponse] = js.native
@@ -160,7 +160,7 @@ package route53resolver {
         ResolverEndpointId: ResourceId
     ): AssociateResolverEndpointIpAddressRequest = {
       val __obj = js.Dynamic.literal(
-        "IpAddress"          -> IpAddress.asInstanceOf[js.Any],
+        "IpAddress" -> IpAddress.asInstanceOf[js.Any],
         "ResolverEndpointId" -> ResolverEndpointId.asInstanceOf[js.Any]
       )
 
@@ -200,7 +200,7 @@ package route53resolver {
     ): AssociateResolverRuleRequest = {
       val __obj = js.Dynamic.literal(
         "ResolverRuleId" -> ResolverRuleId.asInstanceOf[js.Any],
-        "VPCId"          -> VPCId.asInstanceOf[js.Any]
+        "VPCId" -> VPCId.asInstanceOf[js.Any]
       )
 
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -246,8 +246,8 @@ package route53resolver {
     ): CreateResolverEndpointRequest = {
       val __obj = js.Dynamic.literal(
         "CreatorRequestId" -> CreatorRequestId.asInstanceOf[js.Any],
-        "Direction"        -> Direction.asInstanceOf[js.Any],
-        "IpAddresses"      -> IpAddresses.asInstanceOf[js.Any],
+        "Direction" -> Direction.asInstanceOf[js.Any],
+        "IpAddresses" -> IpAddresses.asInstanceOf[js.Any],
         "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any]
       )
 
@@ -297,8 +297,8 @@ package route53resolver {
     ): CreateResolverRuleRequest = {
       val __obj = js.Dynamic.literal(
         "CreatorRequestId" -> CreatorRequestId.asInstanceOf[js.Any],
-        "DomainName"       -> DomainName.asInstanceOf[js.Any],
-        "RuleType"         -> RuleType.asInstanceOf[js.Any]
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "RuleType" -> RuleType.asInstanceOf[js.Any]
       )
 
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -406,7 +406,7 @@ package route53resolver {
         ResolverEndpointId: ResourceId
     ): DisassociateResolverEndpointIpAddressRequest = {
       val __obj = js.Dynamic.literal(
-        "IpAddress"          -> IpAddress.asInstanceOf[js.Any],
+        "IpAddress" -> IpAddress.asInstanceOf[js.Any],
         "ResolverEndpointId" -> ResolverEndpointId.asInstanceOf[js.Any]
       )
 
@@ -444,7 +444,7 @@ package route53resolver {
     ): DisassociateResolverRuleRequest = {
       val __obj = js.Dynamic.literal(
         "ResolverRuleId" -> ResolverRuleId.asInstanceOf[js.Any],
-        "VPCId"          -> VPCId.asInstanceOf[js.Any]
+        "VPCId" -> VPCId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DisassociateResolverRuleRequest]
@@ -689,15 +689,15 @@ package route53resolver {
   @js.native
   sealed trait IpAddressStatus extends js.Any
   object IpAddressStatus extends js.Object {
-    val CREATING                  = "CREATING".asInstanceOf[IpAddressStatus]
-    val FAILED_CREATION           = "FAILED_CREATION".asInstanceOf[IpAddressStatus]
-    val ATTACHING                 = "ATTACHING".asInstanceOf[IpAddressStatus]
-    val ATTACHED                  = "ATTACHED".asInstanceOf[IpAddressStatus]
-    val REMAP_DETACHING           = "REMAP_DETACHING".asInstanceOf[IpAddressStatus]
-    val REMAP_ATTACHING           = "REMAP_ATTACHING".asInstanceOf[IpAddressStatus]
-    val DETACHING                 = "DETACHING".asInstanceOf[IpAddressStatus]
-    val FAILED_RESOURCE_GONE      = "FAILED_RESOURCE_GONE".asInstanceOf[IpAddressStatus]
-    val DELETING                  = "DELETING".asInstanceOf[IpAddressStatus]
+    val CREATING = "CREATING".asInstanceOf[IpAddressStatus]
+    val FAILED_CREATION = "FAILED_CREATION".asInstanceOf[IpAddressStatus]
+    val ATTACHING = "ATTACHING".asInstanceOf[IpAddressStatus]
+    val ATTACHED = "ATTACHED".asInstanceOf[IpAddressStatus]
+    val REMAP_DETACHING = "REMAP_DETACHING".asInstanceOf[IpAddressStatus]
+    val REMAP_ATTACHING = "REMAP_ATTACHING".asInstanceOf[IpAddressStatus]
+    val DETACHING = "DETACHING".asInstanceOf[IpAddressStatus]
+    val FAILED_RESOURCE_GONE = "FAILED_RESOURCE_GONE".asInstanceOf[IpAddressStatus]
+    val DELETING = "DELETING".asInstanceOf[IpAddressStatus]
     val DELETE_FAILED_FAS_EXPIRED = "DELETE_FAILED_FAS_EXPIRED".asInstanceOf[IpAddressStatus]
 
     val values = js.Object.freeze(
@@ -975,7 +975,7 @@ package route53resolver {
         ResolverRulePolicy: ResolverRulePolicy
     ): PutResolverRulePolicyRequest = {
       val __obj = js.Dynamic.literal(
-        "Arn"                -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "ResolverRulePolicy" -> ResolverRulePolicy.asInstanceOf[js.Any]
       )
 
@@ -1057,7 +1057,7 @@ package route53resolver {
   @js.native
   sealed trait ResolverEndpointDirection extends js.Any
   object ResolverEndpointDirection extends js.Object {
-    val INBOUND  = "INBOUND".asInstanceOf[ResolverEndpointDirection]
+    val INBOUND = "INBOUND".asInstanceOf[ResolverEndpointDirection]
     val OUTBOUND = "OUTBOUND".asInstanceOf[ResolverEndpointDirection]
 
     val values = js.Object.freeze(js.Array(INBOUND, OUTBOUND))
@@ -1066,12 +1066,12 @@ package route53resolver {
   @js.native
   sealed trait ResolverEndpointStatus extends js.Any
   object ResolverEndpointStatus extends js.Object {
-    val CREATING        = "CREATING".asInstanceOf[ResolverEndpointStatus]
-    val OPERATIONAL     = "OPERATIONAL".asInstanceOf[ResolverEndpointStatus]
-    val UPDATING        = "UPDATING".asInstanceOf[ResolverEndpointStatus]
+    val CREATING = "CREATING".asInstanceOf[ResolverEndpointStatus]
+    val OPERATIONAL = "OPERATIONAL".asInstanceOf[ResolverEndpointStatus]
+    val UPDATING = "UPDATING".asInstanceOf[ResolverEndpointStatus]
     val AUTO_RECOVERING = "AUTO_RECOVERING".asInstanceOf[ResolverEndpointStatus]
-    val ACTION_NEEDED   = "ACTION_NEEDED".asInstanceOf[ResolverEndpointStatus]
-    val DELETING        = "DELETING".asInstanceOf[ResolverEndpointStatus]
+    val ACTION_NEEDED = "ACTION_NEEDED".asInstanceOf[ResolverEndpointStatus]
+    val DELETING = "DELETING".asInstanceOf[ResolverEndpointStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, OPERATIONAL, UPDATING, AUTO_RECOVERING, ACTION_NEEDED, DELETING))
   }
@@ -1165,10 +1165,10 @@ package route53resolver {
   @js.native
   sealed trait ResolverRuleAssociationStatus extends js.Any
   object ResolverRuleAssociationStatus extends js.Object {
-    val CREATING   = "CREATING".asInstanceOf[ResolverRuleAssociationStatus]
-    val COMPLETE   = "COMPLETE".asInstanceOf[ResolverRuleAssociationStatus]
-    val DELETING   = "DELETING".asInstanceOf[ResolverRuleAssociationStatus]
-    val FAILED     = "FAILED".asInstanceOf[ResolverRuleAssociationStatus]
+    val CREATING = "CREATING".asInstanceOf[ResolverRuleAssociationStatus]
+    val COMPLETE = "COMPLETE".asInstanceOf[ResolverRuleAssociationStatus]
+    val DELETING = "DELETING".asInstanceOf[ResolverRuleAssociationStatus]
+    val FAILED = "FAILED".asInstanceOf[ResolverRuleAssociationStatus]
     val OVERRIDDEN = "OVERRIDDEN".asInstanceOf[ResolverRuleAssociationStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, COMPLETE, DELETING, FAILED, OVERRIDDEN))
@@ -1205,7 +1205,7 @@ package route53resolver {
     val COMPLETE = "COMPLETE".asInstanceOf[ResolverRuleStatus]
     val DELETING = "DELETING".asInstanceOf[ResolverRuleStatus]
     val UPDATING = "UPDATING".asInstanceOf[ResolverRuleStatus]
-    val FAILED   = "FAILED".asInstanceOf[ResolverRuleStatus]
+    val FAILED = "FAILED".asInstanceOf[ResolverRuleStatus]
 
     val values = js.Object.freeze(js.Array(COMPLETE, DELETING, UPDATING, FAILED))
   }
@@ -1213,8 +1213,8 @@ package route53resolver {
   @js.native
   sealed trait RuleTypeOption extends js.Any
   object RuleTypeOption extends js.Object {
-    val FORWARD   = "FORWARD".asInstanceOf[RuleTypeOption]
-    val SYSTEM    = "SYSTEM".asInstanceOf[RuleTypeOption]
+    val FORWARD = "FORWARD".asInstanceOf[RuleTypeOption]
+    val SYSTEM = "SYSTEM".asInstanceOf[RuleTypeOption]
     val RECURSIVE = "RECURSIVE".asInstanceOf[RuleTypeOption]
 
     val values = js.Object.freeze(js.Array(FORWARD, SYSTEM, RECURSIVE))
@@ -1223,9 +1223,9 @@ package route53resolver {
   @js.native
   sealed trait ShareStatus extends js.Any
   object ShareStatus extends js.Object {
-    val NOT_SHARED     = "NOT_SHARED".asInstanceOf[ShareStatus]
+    val NOT_SHARED = "NOT_SHARED".asInstanceOf[ShareStatus]
     val SHARED_WITH_ME = "SHARED_WITH_ME".asInstanceOf[ShareStatus]
-    val SHARED_BY_ME   = "SHARED_BY_ME".asInstanceOf[ShareStatus]
+    val SHARED_BY_ME = "SHARED_BY_ME".asInstanceOf[ShareStatus]
 
     val values = js.Object.freeze(js.Array(NOT_SHARED, SHARED_WITH_ME, SHARED_BY_ME))
   }
@@ -1266,7 +1266,7 @@ package route53resolver {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1324,7 +1324,7 @@ package route53resolver {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -1394,7 +1394,7 @@ package route53resolver {
         ResolverRuleId: ResourceId
     ): UpdateResolverRuleRequest = {
       val __obj = js.Dynamic.literal(
-        "Config"         -> Config.asInstanceOf[js.Any],
+        "Config" -> Config.asInstanceOf[js.Any],
         "ResolverRuleId" -> ResolverRuleId.asInstanceOf[js.Any]
       )
 

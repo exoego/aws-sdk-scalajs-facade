@@ -7,351 +7,353 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object sagemaker {
-  type Accept                                          = String
-  type AccountId                                       = String
-  type AdditionalCodeRepositoryNamesOrUrls             = js.Array[CodeRepositoryNameOrUrl]
-  type AlgorithmArn                                    = String
-  type AlgorithmImage                                  = String
-  type AlgorithmStatusItemList                         = js.Array[AlgorithmStatusItem]
-  type AlgorithmSummaryList                            = js.Array[AlgorithmSummary]
-  type AlgorithmValidationProfiles                     = js.Array[AlgorithmValidationProfile]
-  type AppArn                                          = String
-  type AppList                                         = js.Array[AppDetails]
-  type AppName                                         = String
-  type ArnOrName                                       = String
-  type AttributeName                                   = String
-  type AttributeNames                                  = js.Array[AttributeName]
-  type AutoMLCandidates                                = js.Array[AutoMLCandidate]
-  type AutoMLContainerDefinitions                      = js.Array[AutoMLContainerDefinition]
-  type AutoMLFailureReason                             = String
-  type AutoMLInputDataConfig                           = js.Array[AutoMLChannel]
-  type AutoMLJobArn                                    = String
-  type AutoMLJobName                                   = String
-  type AutoMLJobSummaries                              = js.Array[AutoMLJobSummary]
-  type AutoMLMaxResults                                = Int
-  type AutoMLNameContains                              = String
-  type BillableTimeInSeconds                           = Int
-  type Branch                                          = String
-  type CandidateDefinitionNotebookLocation             = String
-  type CandidateName                                   = String
-  type CandidateStepArn                                = String
-  type CandidateStepName                               = String
-  type CandidateSteps                                  = js.Array[AutoMLCandidateStep]
-  type CaptureOptionList                               = js.Array[CaptureOption]
-  type CategoricalParameterRanges                      = js.Array[CategoricalParameterRange]
-  type Cents                                           = Int
-  type CertifyForMarketplace                           = Boolean
-  type ChannelName                                     = String
-  type ChannelSpecifications                           = js.Array[ChannelSpecification]
-  type Cidr                                            = String
-  type Cidrs                                           = js.Array[Cidr]
-  type CodeRepositoryArn                               = String
-  type CodeRepositoryContains                          = String
-  type CodeRepositoryNameContains                      = String
-  type CodeRepositoryNameOrUrl                         = String
-  type CodeRepositorySummaryList                       = js.Array[CodeRepositorySummary]
-  type CognitoClientId                                 = String
-  type CognitoUserGroup                                = String
-  type CognitoUserPool                                 = String
-  type CollectionConfigurations                        = js.Array[CollectionConfiguration]
-  type CollectionName                                  = String
-  type CollectionParameters                            = js.Dictionary[ConfigValue]
-  type CompilationJobArn                               = String
-  type CompilationJobSummaries                         = js.Array[CompilationJobSummary]
-  type CompressionTypes                                = js.Array[CompressionType]
-  type ConfigKey                                       = String
-  type ConfigValue                                     = String
-  type ContainerArgument                               = String
-  type ContainerArguments                              = js.Array[ContainerArgument]
-  type ContainerDefinitionList                         = js.Array[ContainerDefinition]
-  type ContainerEntrypoint                             = js.Array[ContainerEntrypointString]
-  type ContainerEntrypointString                       = String
-  type ContainerHostname                               = String
-  type ContentClassifiers                              = js.Array[ContentClassifier]
-  type ContentType                                     = String
-  type ContentTypes                                    = js.Array[ContentType]
-  type ContinuousParameterRanges                       = js.Array[ContinuousParameterRange]
-  type CreationTime                                    = js.Date
-  type CsvContentType                                  = String
-  type CsvContentTypes                                 = js.Array[CsvContentType]
-  type DataExplorationNotebookLocation                 = String
-  type DataInputConfig                                 = String
-  type DebugRuleConfigurations                         = js.Array[DebugRuleConfiguration]
-  type DebugRuleEvaluationStatuses                     = js.Array[DebugRuleEvaluationStatus]
-  type DeployedImages                                  = js.Array[DeployedImage]
-  type DesiredWeightAndCapacityList                    = js.Array[DesiredWeightAndCapacity]
-  type DestinationS3Uri                                = String
-  type DirectoryPath                                   = String
-  type DisassociateAdditionalCodeRepositories          = Boolean
-  type DisassociateDefaultCodeRepository               = Boolean
-  type DisassociateNotebookInstanceAcceleratorTypes    = Boolean
-  type DisassociateNotebookInstanceLifecycleConfig     = Boolean
-  type Dollars                                         = Int
-  type DomainArn                                       = String
-  type DomainId                                        = String
-  type DomainList                                      = js.Array[DomainDetails]
-  type DomainName                                      = String
-  type DoubleParameterValue                            = Double
-  type EfsUid                                          = String
-  type EnableCapture                                   = Boolean
-  type EndpointArn                                     = String
-  type EndpointConfigArn                               = String
-  type EndpointConfigName                              = String
-  type EndpointConfigNameContains                      = String
-  type EndpointConfigSummaryList                       = js.Array[EndpointConfigSummary]
-  type EndpointName                                    = String
-  type EndpointNameContains                            = String
-  type EndpointSummaryList                             = js.Array[EndpointSummary]
-  type EntityDescription                               = String
-  type EntityName                                      = String
-  type EnvironmentArn                                  = String
-  type EnvironmentKey                                  = String
-  type EnvironmentMap                                  = js.Dictionary[EnvironmentValue]
-  type EnvironmentValue                                = String
-  type ExitMessage                                     = String
-  type ExperimentArn                                   = String
-  type ExperimentConfigName                            = String
-  type ExperimentDescription                           = String
-  type ExperimentEntityName                            = String
-  type ExperimentSourceArn                             = String
-  type ExperimentSummaries                             = js.Array[ExperimentSummary]
-  type FailureReason                                   = String
-  type FileSystemId                                    = String
-  type FilterList                                      = js.Array[Filter]
-  type FilterValue                                     = String
-  type FinalMetricDataList                             = js.Array[MetricData]
-  type FlowDefinitionArn                               = String
-  type FlowDefinitionName                              = String
-  type FlowDefinitionSummaries                         = js.Array[FlowDefinitionSummary]
+  type Accept = String
+  type AccountId = String
+  type AdditionalCodeRepositoryNamesOrUrls = js.Array[CodeRepositoryNameOrUrl]
+  type AlgorithmArn = String
+  type AlgorithmImage = String
+  type AlgorithmStatusItemList = js.Array[AlgorithmStatusItem]
+  type AlgorithmSummaryList = js.Array[AlgorithmSummary]
+  type AlgorithmValidationProfiles = js.Array[AlgorithmValidationProfile]
+  type AppArn = String
+  type AppList = js.Array[AppDetails]
+  type AppName = String
+  type ArnOrName = String
+  type AttributeName = String
+  type AttributeNames = js.Array[AttributeName]
+  type AutoMLCandidates = js.Array[AutoMLCandidate]
+  type AutoMLContainerDefinitions = js.Array[AutoMLContainerDefinition]
+  type AutoMLFailureReason = String
+  type AutoMLInputDataConfig = js.Array[AutoMLChannel]
+  type AutoMLJobArn = String
+  type AutoMLJobName = String
+  type AutoMLJobSummaries = js.Array[AutoMLJobSummary]
+  type AutoMLMaxResults = Int
+  type AutoMLNameContains = String
+  type BillableTimeInSeconds = Int
+  type Branch = String
+  type CandidateDefinitionNotebookLocation = String
+  type CandidateName = String
+  type CandidateStepArn = String
+  type CandidateStepName = String
+  type CandidateSteps = js.Array[AutoMLCandidateStep]
+  type CaptureOptionList = js.Array[CaptureOption]
+  type CategoricalParameterRanges = js.Array[CategoricalParameterRange]
+  type Cents = Int
+  type CertifyForMarketplace = Boolean
+  type ChannelName = String
+  type ChannelSpecifications = js.Array[ChannelSpecification]
+  type Cidr = String
+  type Cidrs = js.Array[Cidr]
+  type CodeRepositoryArn = String
+  type CodeRepositoryContains = String
+  type CodeRepositoryNameContains = String
+  type CodeRepositoryNameOrUrl = String
+  type CodeRepositorySummaryList = js.Array[CodeRepositorySummary]
+  type CognitoClientId = String
+  type CognitoUserGroup = String
+  type CognitoUserPool = String
+  type CollectionConfigurations = js.Array[CollectionConfiguration]
+  type CollectionName = String
+  type CollectionParameters = js.Dictionary[ConfigValue]
+  type CompilationJobArn = String
+  type CompilationJobSummaries = js.Array[CompilationJobSummary]
+  type CompressionTypes = js.Array[CompressionType]
+  type ConfigKey = String
+  type ConfigValue = String
+  type ContainerArgument = String
+  type ContainerArguments = js.Array[ContainerArgument]
+  type ContainerDefinitionList = js.Array[ContainerDefinition]
+  type ContainerEntrypoint = js.Array[ContainerEntrypointString]
+  type ContainerEntrypointString = String
+  type ContainerHostname = String
+  type ContentClassifiers = js.Array[ContentClassifier]
+  type ContentType = String
+  type ContentTypes = js.Array[ContentType]
+  type ContinuousParameterRanges = js.Array[ContinuousParameterRange]
+  type CreationTime = js.Date
+  type CsvContentType = String
+  type CsvContentTypes = js.Array[CsvContentType]
+  type DataExplorationNotebookLocation = String
+  type DataInputConfig = String
+  type DebugRuleConfigurations = js.Array[DebugRuleConfiguration]
+  type DebugRuleEvaluationStatuses = js.Array[DebugRuleEvaluationStatus]
+  type DeployedImages = js.Array[DeployedImage]
+  type DesiredWeightAndCapacityList = js.Array[DesiredWeightAndCapacity]
+  type DestinationS3Uri = String
+  type DirectoryPath = String
+  type DisassociateAdditionalCodeRepositories = Boolean
+  type DisassociateDefaultCodeRepository = Boolean
+  type DisassociateNotebookInstanceAcceleratorTypes = Boolean
+  type DisassociateNotebookInstanceLifecycleConfig = Boolean
+  type Dollars = Int
+  type DomainArn = String
+  type DomainId = String
+  type DomainList = js.Array[DomainDetails]
+  type DomainName = String
+  type DoubleParameterValue = Double
+  type EfsUid = String
+  type EnableCapture = Boolean
+  type EndpointArn = String
+  type EndpointConfigArn = String
+  type EndpointConfigName = String
+  type EndpointConfigNameContains = String
+  type EndpointConfigSummaryList = js.Array[EndpointConfigSummary]
+  type EndpointName = String
+  type EndpointNameContains = String
+  type EndpointSummaryList = js.Array[EndpointSummary]
+  type EntityDescription = String
+  type EntityName = String
+  type EnvironmentKey = String
+  type EnvironmentMap = js.Dictionary[EnvironmentValue]
+  type EnvironmentValue = String
+  type ExitMessage = String
+  type ExperimentArn = String
+  type ExperimentDescription = String
+  type ExperimentEntityName = String
+  type ExperimentSourceArn = String
+  type ExperimentSummaries = js.Array[ExperimentSummary]
+  type FailureReason = String
+  type FileSystemId = String
+  type FilterList = js.Array[Filter]
+  type FilterValue = String
+  type FinalMetricDataList = js.Array[MetricData]
+  type FlowDefinitionArn = String
+  type FlowDefinitionName = String
+  type FlowDefinitionSummaries = js.Array[FlowDefinitionSummary]
   type FlowDefinitionTaskAvailabilityLifetimeInSeconds = Int
-  type FlowDefinitionTaskCount                         = Int
-  type FlowDefinitionTaskDescription                   = String
-  type FlowDefinitionTaskKeyword                       = String
-  type FlowDefinitionTaskKeywords                      = js.Array[FlowDefinitionTaskKeyword]
-  type FlowDefinitionTaskTimeLimitInSeconds            = Int
-  type FlowDefinitionTaskTitle                         = String
-  type GenerateCandidateDefinitionsOnly                = Boolean
-  type GitConfigUrl                                    = String
-  type HookParameters                                  = js.Dictionary[ConfigValue]
-  type HumanLoopActivationConditions                   = String
-  type HumanTaskUiArn                                  = String
-  type HumanTaskUiName                                 = String
-  type HumanTaskUiSummaries                            = js.Array[HumanTaskUiSummary]
-  type HyperParameterSpecifications                    = js.Array[HyperParameterSpecification]
-  type HyperParameterTrainingJobDefinitionName         = String
-  type HyperParameterTrainingJobDefinitions            = js.Array[HyperParameterTrainingJobDefinition]
-  type HyperParameterTrainingJobSummaries              = js.Array[HyperParameterTrainingJobSummary]
-  type HyperParameterTuningJobArn                      = String
-  type HyperParameterTuningJobName                     = String
-  type HyperParameterTuningJobObjectives               = js.Array[HyperParameterTuningJobObjective]
-  type HyperParameterTuningJobSummaries                = js.Array[HyperParameterTuningJobSummary]
-  type HyperParameters                                 = js.Dictionary[ParameterValue]
-  type Image                                           = String
-  type ImageDigest                                     = String
-  type ImageUri                                        = String
-  type InputDataConfig                                 = js.Array[Channel]
-  type InputModes                                      = js.Array[TrainingInputMode]
-  type IntegerParameterRanges                          = js.Array[IntegerParameterRange]
-  type JobReferenceCode                                = String
-  type JobReferenceCodeContains                        = String
-  type JsonContentType                                 = String
-  type JsonContentTypes                                = js.Array[JsonContentType]
-  type JsonPath                                        = String
-  type KmsKeyId                                        = String
-  type LabelAttributeName                              = String
-  type LabelCounter                                    = Int
-  type LabelingJobAlgorithmSpecificationArn            = String
-  type LabelingJobArn                                  = String
-  type LabelingJobForWorkteamSummaryList               = js.Array[LabelingJobForWorkteamSummary]
-  type LabelingJobName                                 = String
-  type LabelingJobSummaryList                          = js.Array[LabelingJobSummary]
-  type LambdaFunctionArn                               = String
-  type LastModifiedTime                                = js.Date
-  type ListTagsMaxResults                              = Int
-  type ListTrialComponentKey256                        = js.Array[TrialComponentKey256]
-  type MaxAutoMLJobRuntimeInSeconds                    = Int
-  type MaxCandidates                                   = Int
-  type MaxConcurrentTaskCount                          = Int
-  type MaxConcurrentTransforms                         = Int
-  type MaxHumanLabeledObjectCount                      = Int
-  type MaxNumberOfTrainingJobs                         = Int
-  type MaxParallelTrainingJobs                         = Int
-  type MaxPayloadInMB                                  = Int
-  type MaxPercentageOfInputDatasetLabeled              = Int
-  type MaxResults                                      = Int
-  type MaxRuntimeInSeconds                             = Int
-  type MaxRuntimePerTrainingJobInSeconds               = Int
-  type MaxWaitTimeInSeconds                            = Int
-  type MediaType                                       = String
-  type MemberDefinitions                               = js.Array[MemberDefinition]
-  type MetricDefinitionList                            = js.Array[MetricDefinition]
-  type MetricName                                      = String
-  type MetricRegex                                     = String
-  type MetricValue                                     = Float
-  type ModelArn                                        = String
-  type ModelName                                       = String
-  type ModelNameContains                               = String
-  type ModelPackageArn                                 = String
-  type ModelPackageContainerDefinitionList             = js.Array[ModelPackageContainerDefinition]
-  type ModelPackageStatusItemList                      = js.Array[ModelPackageStatusItem]
-  type ModelPackageSummaryList                         = js.Array[ModelPackageSummary]
-  type ModelPackageValidationProfiles                  = js.Array[ModelPackageValidationProfile]
-  type ModelSummaryList                                = js.Array[ModelSummary]
-  type MonitoringContainerArguments                    = js.Array[ContainerArgument]
-  type MonitoringEnvironmentMap                        = js.Dictionary[ProcessingEnvironmentValue]
-  type MonitoringExecutionSummaryList                  = js.Array[MonitoringExecutionSummary]
-  type MonitoringInputs                                = js.Array[MonitoringInput]
-  type MonitoringMaxRuntimeInSeconds                   = Int
-  type MonitoringOutputs                               = js.Array[MonitoringOutput]
-  type MonitoringS3Uri                                 = String
-  type MonitoringScheduleArn                           = String
-  type MonitoringScheduleName                          = String
-  type MonitoringScheduleSummaryList                   = js.Array[MonitoringScheduleSummary]
-  type NameContains                                    = String
-  type NestedFiltersList                               = js.Array[NestedFilters]
-  type NetworkInterfaceId                              = String
-  type NextToken                                       = String
-  type NotebookInstanceAcceleratorTypes                = js.Array[NotebookInstanceAcceleratorType]
-  type NotebookInstanceArn                             = String
-  type NotebookInstanceLifecycleConfigArn              = String
-  type NotebookInstanceLifecycleConfigContent          = String
-  type NotebookInstanceLifecycleConfigList             = js.Array[NotebookInstanceLifecycleHook]
-  type NotebookInstanceLifecycleConfigName             = String
-  type NotebookInstanceLifecycleConfigNameContains     = String
-  type NotebookInstanceLifecycleConfigSummaryList      = js.Array[NotebookInstanceLifecycleConfigSummary]
-  type NotebookInstanceName                            = String
-  type NotebookInstanceNameContains                    = String
-  type NotebookInstanceSummaryList                     = js.Array[NotebookInstanceSummary]
-  type NotebookInstanceUrl                             = String
-  type NotebookInstanceVolumeSizeInGB                  = Int
-  type NotificationTopicArn                            = String
-  type NumberOfHumanWorkersPerDataObject               = Int
-  type ObjectiveStatusCounter                          = Int
-  type OptionalDouble                                  = Double
-  type OptionalInteger                                 = Int
-  type OptionalVolumeSizeInGB                          = Int
-  type PaginationToken                                 = String
-  type ParameterKey                                    = String
-  type ParameterName                                   = String
-  type ParameterValue                                  = String
-  type ParameterValues                                 = js.Array[ParameterValue]
-  type ParentHyperParameterTuningJobs                  = js.Array[ParentHyperParameterTuningJob]
-  type Parents                                         = js.Array[Parent]
-  type PresignedDomainUrl                              = String
-  type ProcessingEnvironmentKey                        = String
-  type ProcessingEnvironmentMap                        = js.Dictionary[ProcessingEnvironmentValue]
-  type ProcessingEnvironmentValue                      = String
-  type ProcessingInputs                                = js.Array[ProcessingInput]
-  type ProcessingInstanceCount                         = Int
-  type ProcessingJobArn                                = String
-  type ProcessingJobName                               = String
-  type ProcessingJobSummaries                          = js.Array[ProcessingJobSummary]
-  type ProcessingLocalPath                             = String
-  type ProcessingMaxRuntimeInSeconds                   = Int
-  type ProcessingOutputs                               = js.Array[ProcessingOutput]
-  type ProcessingVolumeSizeInGB                        = Int
-  type ProductId                                       = String
-  type ProductListings                                 = js.Array[String]
-  type ProductionVariantList                           = js.Array[ProductionVariant]
-  type ProductionVariantSummaryList                    = js.Array[ProductionVariantSummary]
-  type PropertyNameHint                                = String
-  type PropertyNameSuggestionList                      = js.Array[PropertyNameSuggestion]
-  type RealtimeInferenceInstanceTypes                  = js.Array[ProductionVariantInstanceType]
-  type RenderingErrorList                              = js.Array[RenderingError]
-  type ResourceArn                                     = String
-  type ResourceId                                      = String
-  type ResourcePropertyName                            = String
-  type ResponseMIMEType                                = String
-  type ResponseMIMETypes                               = js.Array[ResponseMIMEType]
-  type RoleArn                                         = String
-  type RuleConfigurationName                           = String
-  type RuleParameters                                  = js.Dictionary[ConfigValue]
-  type S3Uri                                           = String
-  type SamplingPercentage                              = Int
-  type ScheduleExpression                              = String
-  type SearchExpressionList                            = js.Array[SearchExpression]
-  type SearchResultsList                               = js.Array[SearchRecord]
-  type SecondaryStatusTransitions                      = js.Array[SecondaryStatusTransition]
-  type SecretArn                                       = String
-  type SecurityGroupId                                 = String
-  type SecurityGroupIds                                = js.Array[SecurityGroupId]
-  type Seed                                            = Double
-  type SessionExpirationDurationInSeconds              = Int
-  type SingleSignOnUserIdentifier                      = String
-  type SourceAlgorithmList                             = js.Array[SourceAlgorithm]
-  type SourceType                                      = String
-  type StatusDetails                                   = String
-  type StatusMessage                                   = String
-  type String1024                                      = String
-  type String200                                       = String
-  type String256                                       = String
-  type StringParameterValue                            = String
-  type SubnetId                                        = String
-  type Subnets                                         = js.Array[SubnetId]
-  type SubscribedWorkteams                             = js.Array[SubscribedWorkteam]
-  type Success                                         = Boolean
-  type TagKey                                          = String
-  type TagKeyList                                      = js.Array[TagKey]
-  type TagList                                         = js.Array[Tag]
-  type TagValue                                        = String
-  type TargetAttributeName                             = String
-  type TargetObjectiveMetricValue                      = Float
-  type TaskAvailabilityLifetimeInSeconds               = Int
-  type TaskCount                                       = Int
-  type TaskDescription                                 = String
-  type TaskInput                                       = String
-  type TaskKeyword                                     = String
-  type TaskKeywords                                    = js.Array[TaskKeyword]
-  type TaskTimeLimitInSeconds                          = Int
-  type TaskTitle                                       = String
-  type TemplateContent                                 = String
-  type TemplateContentSha256                           = String
-  type TemplateUrl                                     = String
-  type TenthFractionsOfACent                           = Int
-  type Timestamp                                       = js.Date
-  type TrainingInstanceCount                           = Int
-  type TrainingInstanceTypes                           = js.Array[TrainingInstanceType]
-  type TrainingJobArn                                  = String
-  type TrainingJobName                                 = String
-  type TrainingJobStatusCounter                        = Int
-  type TrainingJobSummaries                            = js.Array[TrainingJobSummary]
-  type TrainingTimeInSeconds                           = Int
-  type TransformEnvironmentKey                         = String
-  type TransformEnvironmentMap                         = js.Dictionary[TransformEnvironmentValue]
-  type TransformEnvironmentValue                       = String
-  type TransformInstanceCount                          = Int
-  type TransformInstanceTypes                          = js.Array[TransformInstanceType]
-  type TransformJobArn                                 = String
-  type TransformJobName                                = String
-  type TransformJobSummaries                           = js.Array[TransformJobSummary]
-  type TrialArn                                        = String
-  type TrialComponentArn                               = String
-  type TrialComponentArtifactValue                     = String
-  type TrialComponentArtifacts                         = js.Dictionary[TrialComponentArtifact]
-  type TrialComponentKey256                            = String
-  type TrialComponentKey64                             = String
-  type TrialComponentMetricSummaries                   = js.Array[TrialComponentMetricSummary]
-  type TrialComponentParameters                        = js.Dictionary[TrialComponentParameterValue]
-  type TrialComponentSimpleSummaries                   = js.Array[TrialComponentSimpleSummary]
-  type TrialComponentSourceArn                         = String
-  type TrialComponentStatusMessage                     = String
-  type TrialComponentSummaries                         = js.Array[TrialComponentSummary]
-  type TrialSourceArn                                  = String
-  type TrialSummaries                                  = js.Array[TrialSummary]
-  type Url                                             = String
-  type UserProfileArn                                  = String
-  type UserProfileList                                 = js.Array[UserProfileDetails]
-  type UserProfileName                                 = String
-  type VariantName                                     = String
-  type VariantWeight                                   = Float
-  type VolumeSizeInGB                                  = Int
-  type VpcId                                           = String
-  type VpcSecurityGroupIds                             = js.Array[SecurityGroupId]
-  type WorkforceArn                                    = String
-  type WorkforceName                                   = String
-  type WorkteamArn                                     = String
-  type WorkteamName                                    = String
-  type Workteams                                       = js.Array[Workteam]
+  type FlowDefinitionTaskCount = Int
+  type FlowDefinitionTaskDescription = String
+  type FlowDefinitionTaskKeyword = String
+  type FlowDefinitionTaskKeywords = js.Array[FlowDefinitionTaskKeyword]
+  type FlowDefinitionTaskTimeLimitInSeconds = Int
+  type FlowDefinitionTaskTitle = String
+  type GenerateCandidateDefinitionsOnly = Boolean
+  type GitConfigUrl = String
+  type HookParameters = js.Dictionary[ConfigValue]
+  type HumanLoopActivationConditions = String
+  type HumanTaskUiArn = String
+  type HumanTaskUiName = String
+  type HumanTaskUiSummaries = js.Array[HumanTaskUiSummary]
+  type HyperParameterSpecifications = js.Array[HyperParameterSpecification]
+  type HyperParameterTrainingJobDefinitionName = String
+  type HyperParameterTrainingJobDefinitions = js.Array[HyperParameterTrainingJobDefinition]
+  type HyperParameterTrainingJobSummaries = js.Array[HyperParameterTrainingJobSummary]
+  type HyperParameterTuningJobArn = String
+  type HyperParameterTuningJobName = String
+  type HyperParameterTuningJobObjectives = js.Array[HyperParameterTuningJobObjective]
+  type HyperParameterTuningJobSummaries = js.Array[HyperParameterTuningJobSummary]
+  type HyperParameters = js.Dictionary[ParameterValue]
+  type Image = String
+  type ImageDigest = String
+  type ImageUri = String
+  type InputDataConfig = js.Array[Channel]
+  type InputModes = js.Array[TrainingInputMode]
+  type IntegerParameterRanges = js.Array[IntegerParameterRange]
+  type InvocationsMaxRetries = Int
+  type InvocationsTimeoutInSeconds = Int
+  type JobReferenceCode = String
+  type JobReferenceCodeContains = String
+  type JsonContentType = String
+  type JsonContentTypes = js.Array[JsonContentType]
+  type JsonPath = String
+  type KmsKeyId = String
+  type LabelAttributeName = String
+  type LabelCounter = Int
+  type LabelingJobAlgorithmSpecificationArn = String
+  type LabelingJobArn = String
+  type LabelingJobForWorkteamSummaryList = js.Array[LabelingJobForWorkteamSummary]
+  type LabelingJobName = String
+  type LabelingJobSummaryList = js.Array[LabelingJobSummary]
+  type LambdaFunctionArn = String
+  type LastModifiedTime = js.Date
+  type ListTagsMaxResults = Int
+  type ListTrialComponentKey256 = js.Array[TrialComponentKey256]
+  type MaxAutoMLJobRuntimeInSeconds = Int
+  type MaxCandidates = Int
+  type MaxConcurrentTaskCount = Int
+  type MaxConcurrentTransforms = Int
+  type MaxHumanLabeledObjectCount = Int
+  type MaxNumberOfTrainingJobs = Int
+  type MaxParallelTrainingJobs = Int
+  type MaxPayloadInMB = Int
+  type MaxPercentageOfInputDatasetLabeled = Int
+  type MaxResults = Int
+  type MaxRuntimeInSeconds = Int
+  type MaxRuntimePerTrainingJobInSeconds = Int
+  type MaxWaitTimeInSeconds = Int
+  type MediaType = String
+  type MemberDefinitions = js.Array[MemberDefinition]
+  type MetricDefinitionList = js.Array[MetricDefinition]
+  type MetricName = String
+  type MetricRegex = String
+  type MetricValue = Float
+  type ModelArn = String
+  type ModelName = String
+  type ModelNameContains = String
+  type ModelPackageArn = String
+  type ModelPackageContainerDefinitionList = js.Array[ModelPackageContainerDefinition]
+  type ModelPackageStatusItemList = js.Array[ModelPackageStatusItem]
+  type ModelPackageSummaryList = js.Array[ModelPackageSummary]
+  type ModelPackageValidationProfiles = js.Array[ModelPackageValidationProfile]
+  type ModelSummaryList = js.Array[ModelSummary]
+  type MonitoringContainerArguments = js.Array[ContainerArgument]
+  type MonitoringEnvironmentMap = js.Dictionary[ProcessingEnvironmentValue]
+  type MonitoringExecutionSummaryList = js.Array[MonitoringExecutionSummary]
+  type MonitoringInputs = js.Array[MonitoringInput]
+  type MonitoringMaxRuntimeInSeconds = Int
+  type MonitoringOutputs = js.Array[MonitoringOutput]
+  type MonitoringS3Uri = String
+  type MonitoringScheduleArn = String
+  type MonitoringScheduleName = String
+  type MonitoringScheduleSummaryList = js.Array[MonitoringScheduleSummary]
+  type NameContains = String
+  type NestedFiltersList = js.Array[NestedFilters]
+  type NetworkInterfaceId = String
+  type NextToken = String
+  type NotebookInstanceAcceleratorTypes = js.Array[NotebookInstanceAcceleratorType]
+  type NotebookInstanceArn = String
+  type NotebookInstanceLifecycleConfigArn = String
+  type NotebookInstanceLifecycleConfigContent = String
+  type NotebookInstanceLifecycleConfigList = js.Array[NotebookInstanceLifecycleHook]
+  type NotebookInstanceLifecycleConfigName = String
+  type NotebookInstanceLifecycleConfigNameContains = String
+  type NotebookInstanceLifecycleConfigSummaryList = js.Array[NotebookInstanceLifecycleConfigSummary]
+  type NotebookInstanceName = String
+  type NotebookInstanceNameContains = String
+  type NotebookInstanceSummaryList = js.Array[NotebookInstanceSummary]
+  type NotebookInstanceUrl = String
+  type NotebookInstanceVolumeSizeInGB = Int
+  type NotificationTopicArn = String
+  type NumberOfHumanWorkersPerDataObject = Int
+  type ObjectiveStatusCounter = Int
+  type OptionalDouble = Double
+  type OptionalInteger = Int
+  type OptionalVolumeSizeInGB = Int
+  type PaginationToken = String
+  type ParameterKey = String
+  type ParameterName = String
+  type ParameterValue = String
+  type ParameterValues = js.Array[ParameterValue]
+  type ParentHyperParameterTuningJobs = js.Array[ParentHyperParameterTuningJob]
+  type Parents = js.Array[Parent]
+  type PresignedDomainUrl = String
+  type ProcessingEnvironmentKey = String
+  type ProcessingEnvironmentMap = js.Dictionary[ProcessingEnvironmentValue]
+  type ProcessingEnvironmentValue = String
+  type ProcessingInputs = js.Array[ProcessingInput]
+  type ProcessingInstanceCount = Int
+  type ProcessingJobArn = String
+  type ProcessingJobName = String
+  type ProcessingJobSummaries = js.Array[ProcessingJobSummary]
+  type ProcessingLocalPath = String
+  type ProcessingMaxRuntimeInSeconds = Int
+  type ProcessingOutputs = js.Array[ProcessingOutput]
+  type ProcessingVolumeSizeInGB = Int
+  type ProductId = String
+  type ProductListings = js.Array[String]
+  type ProductionVariantList = js.Array[ProductionVariant]
+  type ProductionVariantSummaryList = js.Array[ProductionVariantSummary]
+  type PropertyNameHint = String
+  type PropertyNameSuggestionList = js.Array[PropertyNameSuggestion]
+  type RealtimeInferenceInstanceTypes = js.Array[ProductionVariantInstanceType]
+  type RenderingErrorList = js.Array[RenderingError]
+  type ResourceArn = String
+  type ResourceId = String
+  type ResourcePropertyName = String
+  type ResponseMIMEType = String
+  type ResponseMIMETypes = js.Array[ResponseMIMEType]
+  type RoleArn = String
+  type RuleConfigurationName = String
+  type RuleParameters = js.Dictionary[ConfigValue]
+  type S3Uri = String
+  type SageMakerImageArn = String
+  type SamplingPercentage = Int
+  type ScheduleExpression = String
+  type SearchExpressionList = js.Array[SearchExpression]
+  type SearchResultsList = js.Array[SearchRecord]
+  type SecondaryStatusTransitions = js.Array[SecondaryStatusTransition]
+  type SecretArn = String
+  type SecurityGroupId = String
+  type SecurityGroupIds = js.Array[SecurityGroupId]
+  type Seed = Double
+  type SessionExpirationDurationInSeconds = Int
+  type SingleSignOnUserIdentifier = String
+  type SourceAlgorithmList = js.Array[SourceAlgorithm]
+  type SourceType = String
+  type StatusDetails = String
+  type StatusMessage = String
+  type String1024 = String
+  type String200 = String
+  type String256 = String
+  type StringParameterValue = String
+  type SubnetId = String
+  type Subnets = js.Array[SubnetId]
+  type SubscribedWorkteams = js.Array[SubscribedWorkteam]
+  type Success = Boolean
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type TargetAttributeName = String
+  type TargetObjectiveMetricValue = Float
+  type TaskAvailabilityLifetimeInSeconds = Int
+  type TaskCount = Int
+  type TaskDescription = String
+  type TaskInput = String
+  type TaskKeyword = String
+  type TaskKeywords = js.Array[TaskKeyword]
+  type TaskTimeLimitInSeconds = Int
+  type TaskTitle = String
+  type TemplateContent = String
+  type TemplateContentSha256 = String
+  type TemplateUrl = String
+  type TenthFractionsOfACent = Int
+  type Timestamp = js.Date
+  type TrainingInstanceCount = Int
+  type TrainingInstanceTypes = js.Array[TrainingInstanceType]
+  type TrainingJobArn = String
+  type TrainingJobName = String
+  type TrainingJobStatusCounter = Int
+  type TrainingJobSummaries = js.Array[TrainingJobSummary]
+  type TrainingTimeInSeconds = Int
+  type TransformEnvironmentKey = String
+  type TransformEnvironmentMap = js.Dictionary[TransformEnvironmentValue]
+  type TransformEnvironmentValue = String
+  type TransformInstanceCount = Int
+  type TransformInstanceTypes = js.Array[TransformInstanceType]
+  type TransformJobArn = String
+  type TransformJobName = String
+  type TransformJobSummaries = js.Array[TransformJobSummary]
+  type TrialArn = String
+  type TrialComponentArn = String
+  type TrialComponentArtifactValue = String
+  type TrialComponentArtifacts = js.Dictionary[TrialComponentArtifact]
+  type TrialComponentKey256 = String
+  type TrialComponentKey64 = String
+  type TrialComponentMetricSummaries = js.Array[TrialComponentMetricSummary]
+  type TrialComponentParameters = js.Dictionary[TrialComponentParameterValue]
+  type TrialComponentSimpleSummaries = js.Array[TrialComponentSimpleSummary]
+  type TrialComponentSourceArn = String
+  type TrialComponentStatusMessage = String
+  type TrialComponentSummaries = js.Array[TrialComponentSummary]
+  type TrialSourceArn = String
+  type TrialSummaries = js.Array[TrialSummary]
+  type Url = String
+  type UserProfileArn = String
+  type UserProfileList = js.Array[UserProfileDetails]
+  type UserProfileName = String
+  type VariantName = String
+  type VariantPropertyList = js.Array[VariantProperty]
+  type VariantWeight = Float
+  type VolumeSizeInGB = Int
+  type VpcId = String
+  type VpcSecurityGroupIds = js.Array[SecurityGroupId]
+  type WorkforceArn = String
+  type WorkforceName = String
+  type WorkteamArn = String
+  type WorkteamName = String
+  type Workteams = js.Array[Workteam]
 
   implicit final class SageMakerOps(private val service: SageMaker) extends AnyVal {
 
@@ -671,23 +673,23 @@ package sagemaker {
     def addTags(params: AddTagsInput): Request[AddTagsOutput] = js.native
     def associateTrialComponent(params: AssociateTrialComponentRequest): Request[AssociateTrialComponentResponse] =
       js.native
-    def createAlgorithm(params: CreateAlgorithmInput): Request[CreateAlgorithmOutput]                    = js.native
-    def createApp(params: CreateAppRequest): Request[CreateAppResponse]                                  = js.native
-    def createAutoMLJob(params: CreateAutoMLJobRequest): Request[CreateAutoMLJobResponse]                = js.native
-    def createCodeRepository(params: CreateCodeRepositoryInput): Request[CreateCodeRepositoryOutput]     = js.native
+    def createAlgorithm(params: CreateAlgorithmInput): Request[CreateAlgorithmOutput] = js.native
+    def createApp(params: CreateAppRequest): Request[CreateAppResponse] = js.native
+    def createAutoMLJob(params: CreateAutoMLJobRequest): Request[CreateAutoMLJobResponse] = js.native
+    def createCodeRepository(params: CreateCodeRepositoryInput): Request[CreateCodeRepositoryOutput] = js.native
     def createCompilationJob(params: CreateCompilationJobRequest): Request[CreateCompilationJobResponse] = js.native
-    def createDomain(params: CreateDomainRequest): Request[CreateDomainResponse]                         = js.native
-    def createEndpoint(params: CreateEndpointInput): Request[CreateEndpointOutput]                       = js.native
-    def createEndpointConfig(params: CreateEndpointConfigInput): Request[CreateEndpointConfigOutput]     = js.native
-    def createExperiment(params: CreateExperimentRequest): Request[CreateExperimentResponse]             = js.native
+    def createDomain(params: CreateDomainRequest): Request[CreateDomainResponse] = js.native
+    def createEndpoint(params: CreateEndpointInput): Request[CreateEndpointOutput] = js.native
+    def createEndpointConfig(params: CreateEndpointConfigInput): Request[CreateEndpointConfigOutput] = js.native
+    def createExperiment(params: CreateExperimentRequest): Request[CreateExperimentResponse] = js.native
     def createFlowDefinition(params: CreateFlowDefinitionRequest): Request[CreateFlowDefinitionResponse] = js.native
-    def createHumanTaskUi(params: CreateHumanTaskUiRequest): Request[CreateHumanTaskUiResponse]          = js.native
+    def createHumanTaskUi(params: CreateHumanTaskUiRequest): Request[CreateHumanTaskUiResponse] = js.native
     def createHyperParameterTuningJob(
         params: CreateHyperParameterTuningJobRequest
-    ): Request[CreateHyperParameterTuningJobResponse]                                           = js.native
+    ): Request[CreateHyperParameterTuningJobResponse] = js.native
     def createLabelingJob(params: CreateLabelingJobRequest): Request[CreateLabelingJobResponse] = js.native
-    def createModel(params: CreateModelInput): Request[CreateModelOutput]                       = js.native
-    def createModelPackage(params: CreateModelPackageInput): Request[CreateModelPackageOutput]  = js.native
+    def createModel(params: CreateModelInput): Request[CreateModelOutput] = js.native
+    def createModelPackage(params: CreateModelPackageInput): Request[CreateModelPackageOutput] = js.native
     def createMonitoringSchedule(params: CreateMonitoringScheduleRequest): Request[CreateMonitoringScheduleResponse] =
       js.native
     def createNotebookInstance(params: CreateNotebookInstanceInput): Request[CreateNotebookInstanceOutput] = js.native
@@ -698,52 +700,52 @@ package sagemaker {
       js.native
     def createPresignedNotebookInstanceUrl(
         params: CreatePresignedNotebookInstanceUrlInput
-    ): Request[CreatePresignedNotebookInstanceUrlOutput]                                                 = js.native
-    def createProcessingJob(params: CreateProcessingJobRequest): Request[CreateProcessingJobResponse]    = js.native
-    def createTrainingJob(params: CreateTrainingJobRequest): Request[CreateTrainingJobResponse]          = js.native
-    def createTransformJob(params: CreateTransformJobRequest): Request[CreateTransformJobResponse]       = js.native
-    def createTrial(params: CreateTrialRequest): Request[CreateTrialResponse]                            = js.native
+    ): Request[CreatePresignedNotebookInstanceUrlOutput] = js.native
+    def createProcessingJob(params: CreateProcessingJobRequest): Request[CreateProcessingJobResponse] = js.native
+    def createTrainingJob(params: CreateTrainingJobRequest): Request[CreateTrainingJobResponse] = js.native
+    def createTransformJob(params: CreateTransformJobRequest): Request[CreateTransformJobResponse] = js.native
+    def createTrial(params: CreateTrialRequest): Request[CreateTrialResponse] = js.native
     def createTrialComponent(params: CreateTrialComponentRequest): Request[CreateTrialComponentResponse] = js.native
-    def createUserProfile(params: CreateUserProfileRequest): Request[CreateUserProfileResponse]          = js.native
-    def createWorkteam(params: CreateWorkteamRequest): Request[CreateWorkteamResponse]                   = js.native
-    def deleteAlgorithm(params: DeleteAlgorithmInput): Request[js.Object]                                = js.native
-    def deleteApp(params: DeleteAppRequest): Request[js.Object]                                          = js.native
-    def deleteCodeRepository(params: DeleteCodeRepositoryInput): Request[js.Object]                      = js.native
-    def deleteDomain(params: DeleteDomainRequest): Request[js.Object]                                    = js.native
-    def deleteEndpoint(params: DeleteEndpointInput): Request[js.Object]                                  = js.native
-    def deleteEndpointConfig(params: DeleteEndpointConfigInput): Request[js.Object]                      = js.native
-    def deleteExperiment(params: DeleteExperimentRequest): Request[DeleteExperimentResponse]             = js.native
+    def createUserProfile(params: CreateUserProfileRequest): Request[CreateUserProfileResponse] = js.native
+    def createWorkteam(params: CreateWorkteamRequest): Request[CreateWorkteamResponse] = js.native
+    def deleteAlgorithm(params: DeleteAlgorithmInput): Request[js.Object] = js.native
+    def deleteApp(params: DeleteAppRequest): Request[js.Object] = js.native
+    def deleteCodeRepository(params: DeleteCodeRepositoryInput): Request[js.Object] = js.native
+    def deleteDomain(params: DeleteDomainRequest): Request[js.Object] = js.native
+    def deleteEndpoint(params: DeleteEndpointInput): Request[js.Object] = js.native
+    def deleteEndpointConfig(params: DeleteEndpointConfigInput): Request[js.Object] = js.native
+    def deleteExperiment(params: DeleteExperimentRequest): Request[DeleteExperimentResponse] = js.native
     def deleteFlowDefinition(params: DeleteFlowDefinitionRequest): Request[DeleteFlowDefinitionResponse] = js.native
-    def deleteModel(params: DeleteModelInput): Request[js.Object]                                        = js.native
-    def deleteModelPackage(params: DeleteModelPackageInput): Request[js.Object]                          = js.native
-    def deleteMonitoringSchedule(params: DeleteMonitoringScheduleRequest): Request[js.Object]            = js.native
-    def deleteNotebookInstance(params: DeleteNotebookInstanceInput): Request[js.Object]                  = js.native
+    def deleteModel(params: DeleteModelInput): Request[js.Object] = js.native
+    def deleteModelPackage(params: DeleteModelPackageInput): Request[js.Object] = js.native
+    def deleteMonitoringSchedule(params: DeleteMonitoringScheduleRequest): Request[js.Object] = js.native
+    def deleteNotebookInstance(params: DeleteNotebookInstanceInput): Request[js.Object] = js.native
     def deleteNotebookInstanceLifecycleConfig(params: DeleteNotebookInstanceLifecycleConfigInput): Request[js.Object] =
       js.native
-    def deleteTags(params: DeleteTagsInput): Request[DeleteTagsOutput]                                     = js.native
-    def deleteTrial(params: DeleteTrialRequest): Request[DeleteTrialResponse]                              = js.native
-    def deleteTrialComponent(params: DeleteTrialComponentRequest): Request[DeleteTrialComponentResponse]   = js.native
-    def deleteUserProfile(params: DeleteUserProfileRequest): Request[js.Object]                            = js.native
-    def deleteWorkteam(params: DeleteWorkteamRequest): Request[DeleteWorkteamResponse]                     = js.native
-    def describeAlgorithm(params: DescribeAlgorithmInput): Request[DescribeAlgorithmOutput]                = js.native
-    def describeApp(params: DescribeAppRequest): Request[DescribeAppResponse]                              = js.native
-    def describeAutoMLJob(params: DescribeAutoMLJobRequest): Request[DescribeAutoMLJobResponse]            = js.native
+    def deleteTags(params: DeleteTagsInput): Request[DeleteTagsOutput] = js.native
+    def deleteTrial(params: DeleteTrialRequest): Request[DeleteTrialResponse] = js.native
+    def deleteTrialComponent(params: DeleteTrialComponentRequest): Request[DeleteTrialComponentResponse] = js.native
+    def deleteUserProfile(params: DeleteUserProfileRequest): Request[js.Object] = js.native
+    def deleteWorkteam(params: DeleteWorkteamRequest): Request[DeleteWorkteamResponse] = js.native
+    def describeAlgorithm(params: DescribeAlgorithmInput): Request[DescribeAlgorithmOutput] = js.native
+    def describeApp(params: DescribeAppRequest): Request[DescribeAppResponse] = js.native
+    def describeAutoMLJob(params: DescribeAutoMLJobRequest): Request[DescribeAutoMLJobResponse] = js.native
     def describeCodeRepository(params: DescribeCodeRepositoryInput): Request[DescribeCodeRepositoryOutput] = js.native
     def describeCompilationJob(params: DescribeCompilationJobRequest): Request[DescribeCompilationJobResponse] =
       js.native
-    def describeDomain(params: DescribeDomainRequest): Request[DescribeDomainResponse]                     = js.native
-    def describeEndpoint(params: DescribeEndpointInput): Request[DescribeEndpointOutput]                   = js.native
+    def describeDomain(params: DescribeDomainRequest): Request[DescribeDomainResponse] = js.native
+    def describeEndpoint(params: DescribeEndpointInput): Request[DescribeEndpointOutput] = js.native
     def describeEndpointConfig(params: DescribeEndpointConfigInput): Request[DescribeEndpointConfigOutput] = js.native
-    def describeExperiment(params: DescribeExperimentRequest): Request[DescribeExperimentResponse]         = js.native
+    def describeExperiment(params: DescribeExperimentRequest): Request[DescribeExperimentResponse] = js.native
     def describeFlowDefinition(params: DescribeFlowDefinitionRequest): Request[DescribeFlowDefinitionResponse] =
       js.native
     def describeHumanTaskUi(params: DescribeHumanTaskUiRequest): Request[DescribeHumanTaskUiResponse] = js.native
     def describeHyperParameterTuningJob(
         params: DescribeHyperParameterTuningJobRequest
-    ): Request[DescribeHyperParameterTuningJobResponse]                                               = js.native
+    ): Request[DescribeHyperParameterTuningJobResponse] = js.native
     def describeLabelingJob(params: DescribeLabelingJobRequest): Request[DescribeLabelingJobResponse] = js.native
-    def describeModel(params: DescribeModelInput): Request[DescribeModelOutput]                       = js.native
-    def describeModelPackage(params: DescribeModelPackageInput): Request[DescribeModelPackageOutput]  = js.native
+    def describeModel(params: DescribeModelInput): Request[DescribeModelOutput] = js.native
+    def describeModelPackage(params: DescribeModelPackageInput): Request[DescribeModelPackageOutput] = js.native
     def describeMonitoringSchedule(
         params: DescribeMonitoringScheduleRequest
     ): Request[DescribeMonitoringScheduleResponse] = js.native
@@ -751,98 +753,98 @@ package sagemaker {
       js.native
     def describeNotebookInstanceLifecycleConfig(
         params: DescribeNotebookInstanceLifecycleConfigInput
-    ): Request[DescribeNotebookInstanceLifecycleConfigOutput]                                               = js.native
+    ): Request[DescribeNotebookInstanceLifecycleConfigOutput] = js.native
     def describeProcessingJob(params: DescribeProcessingJobRequest): Request[DescribeProcessingJobResponse] = js.native
     def describeSubscribedWorkteam(
         params: DescribeSubscribedWorkteamRequest
-    ): Request[DescribeSubscribedWorkteamResponse]                                                       = js.native
-    def describeTrainingJob(params: DescribeTrainingJobRequest): Request[DescribeTrainingJobResponse]    = js.native
+    ): Request[DescribeSubscribedWorkteamResponse] = js.native
+    def describeTrainingJob(params: DescribeTrainingJobRequest): Request[DescribeTrainingJobResponse] = js.native
     def describeTransformJob(params: DescribeTransformJobRequest): Request[DescribeTransformJobResponse] = js.native
-    def describeTrial(params: DescribeTrialRequest): Request[DescribeTrialResponse]                      = js.native
+    def describeTrial(params: DescribeTrialRequest): Request[DescribeTrialResponse] = js.native
     def describeTrialComponent(params: DescribeTrialComponentRequest): Request[DescribeTrialComponentResponse] =
       js.native
     def describeUserProfile(params: DescribeUserProfileRequest): Request[DescribeUserProfileResponse] = js.native
-    def describeWorkforce(params: DescribeWorkforceRequest): Request[DescribeWorkforceResponse]       = js.native
-    def describeWorkteam(params: DescribeWorkteamRequest): Request[DescribeWorkteamResponse]          = js.native
+    def describeWorkforce(params: DescribeWorkforceRequest): Request[DescribeWorkforceResponse] = js.native
+    def describeWorkteam(params: DescribeWorkteamRequest): Request[DescribeWorkteamResponse] = js.native
     def disassociateTrialComponent(
         params: DisassociateTrialComponentRequest
-    ): Request[DisassociateTrialComponentResponse]                                                       = js.native
+    ): Request[DisassociateTrialComponentResponse] = js.native
     def getSearchSuggestions(params: GetSearchSuggestionsRequest): Request[GetSearchSuggestionsResponse] = js.native
-    def listAlgorithms(params: ListAlgorithmsInput): Request[ListAlgorithmsOutput]                       = js.native
-    def listApps(params: ListAppsRequest): Request[ListAppsResponse]                                     = js.native
-    def listAutoMLJobs(params: ListAutoMLJobsRequest): Request[ListAutoMLJobsResponse]                   = js.native
+    def listAlgorithms(params: ListAlgorithmsInput): Request[ListAlgorithmsOutput] = js.native
+    def listApps(params: ListAppsRequest): Request[ListAppsResponse] = js.native
+    def listAutoMLJobs(params: ListAutoMLJobsRequest): Request[ListAutoMLJobsResponse] = js.native
     def listCandidatesForAutoMLJob(
         params: ListCandidatesForAutoMLJobRequest
-    ): Request[ListCandidatesForAutoMLJobResponse]                                                    = js.native
-    def listCodeRepositories(params: ListCodeRepositoriesInput): Request[ListCodeRepositoriesOutput]  = js.native
+    ): Request[ListCandidatesForAutoMLJobResponse] = js.native
+    def listCodeRepositories(params: ListCodeRepositoriesInput): Request[ListCodeRepositoriesOutput] = js.native
     def listCompilationJobs(params: ListCompilationJobsRequest): Request[ListCompilationJobsResponse] = js.native
-    def listDomains(params: ListDomainsRequest): Request[ListDomainsResponse]                         = js.native
-    def listEndpointConfigs(params: ListEndpointConfigsInput): Request[ListEndpointConfigsOutput]     = js.native
-    def listEndpoints(params: ListEndpointsInput): Request[ListEndpointsOutput]                       = js.native
-    def listExperiments(params: ListExperimentsRequest): Request[ListExperimentsResponse]             = js.native
+    def listDomains(params: ListDomainsRequest): Request[ListDomainsResponse] = js.native
+    def listEndpointConfigs(params: ListEndpointConfigsInput): Request[ListEndpointConfigsOutput] = js.native
+    def listEndpoints(params: ListEndpointsInput): Request[ListEndpointsOutput] = js.native
+    def listExperiments(params: ListExperimentsRequest): Request[ListExperimentsResponse] = js.native
     def listFlowDefinitions(params: ListFlowDefinitionsRequest): Request[ListFlowDefinitionsResponse] = js.native
-    def listHumanTaskUis(params: ListHumanTaskUisRequest): Request[ListHumanTaskUisResponse]          = js.native
+    def listHumanTaskUis(params: ListHumanTaskUisRequest): Request[ListHumanTaskUisResponse] = js.native
     def listHyperParameterTuningJobs(
         params: ListHyperParameterTuningJobsRequest
-    ): Request[ListHyperParameterTuningJobsResponse]                                         = js.native
+    ): Request[ListHyperParameterTuningJobsResponse] = js.native
     def listLabelingJobs(params: ListLabelingJobsRequest): Request[ListLabelingJobsResponse] = js.native
     def listLabelingJobsForWorkteam(
         params: ListLabelingJobsForWorkteamRequest
-    ): Request[ListLabelingJobsForWorkteamResponse]                                         = js.native
+    ): Request[ListLabelingJobsForWorkteamResponse] = js.native
     def listModelPackages(params: ListModelPackagesInput): Request[ListModelPackagesOutput] = js.native
-    def listModels(params: ListModelsInput): Request[ListModelsOutput]                      = js.native
+    def listModels(params: ListModelsInput): Request[ListModelsOutput] = js.native
     def listMonitoringExecutions(params: ListMonitoringExecutionsRequest): Request[ListMonitoringExecutionsResponse] =
       js.native
     def listMonitoringSchedules(params: ListMonitoringSchedulesRequest): Request[ListMonitoringSchedulesResponse] =
       js.native
     def listNotebookInstanceLifecycleConfigs(
         params: ListNotebookInstanceLifecycleConfigsInput
-    ): Request[ListNotebookInstanceLifecycleConfigsOutput]                                              = js.native
+    ): Request[ListNotebookInstanceLifecycleConfigsOutput] = js.native
     def listNotebookInstances(params: ListNotebookInstancesInput): Request[ListNotebookInstancesOutput] = js.native
-    def listProcessingJobs(params: ListProcessingJobsRequest): Request[ListProcessingJobsResponse]      = js.native
+    def listProcessingJobs(params: ListProcessingJobsRequest): Request[ListProcessingJobsResponse] = js.native
     def listSubscribedWorkteams(params: ListSubscribedWorkteamsRequest): Request[ListSubscribedWorkteamsResponse] =
       js.native
-    def listTags(params: ListTagsInput): Request[ListTagsOutput]                             = js.native
+    def listTags(params: ListTagsInput): Request[ListTagsOutput] = js.native
     def listTrainingJobs(params: ListTrainingJobsRequest): Request[ListTrainingJobsResponse] = js.native
     def listTrainingJobsForHyperParameterTuningJob(
         params: ListTrainingJobsForHyperParameterTuningJobRequest
-    ): Request[ListTrainingJobsForHyperParameterTuningJobResponse]                                    = js.native
-    def listTransformJobs(params: ListTransformJobsRequest): Request[ListTransformJobsResponse]       = js.native
+    ): Request[ListTrainingJobsForHyperParameterTuningJobResponse] = js.native
+    def listTransformJobs(params: ListTransformJobsRequest): Request[ListTransformJobsResponse] = js.native
     def listTrialComponents(params: ListTrialComponentsRequest): Request[ListTrialComponentsResponse] = js.native
-    def listTrials(params: ListTrialsRequest): Request[ListTrialsResponse]                            = js.native
-    def listUserProfiles(params: ListUserProfilesRequest): Request[ListUserProfilesResponse]          = js.native
-    def listWorkteams(params: ListWorkteamsRequest): Request[ListWorkteamsResponse]                   = js.native
-    def renderUiTemplate(params: RenderUiTemplateRequest): Request[RenderUiTemplateResponse]          = js.native
-    def search(params: SearchRequest): Request[SearchResponse]                                        = js.native
-    def startMonitoringSchedule(params: StartMonitoringScheduleRequest): Request[js.Object]           = js.native
-    def startNotebookInstance(params: StartNotebookInstanceInput): Request[js.Object]                 = js.native
-    def stopAutoMLJob(params: StopAutoMLJobRequest): Request[js.Object]                               = js.native
-    def stopCompilationJob(params: StopCompilationJobRequest): Request[js.Object]                     = js.native
-    def stopHyperParameterTuningJob(params: StopHyperParameterTuningJobRequest): Request[js.Object]   = js.native
-    def stopLabelingJob(params: StopLabelingJobRequest): Request[js.Object]                           = js.native
-    def stopMonitoringSchedule(params: StopMonitoringScheduleRequest): Request[js.Object]             = js.native
-    def stopNotebookInstance(params: StopNotebookInstanceInput): Request[js.Object]                   = js.native
-    def stopProcessingJob(params: StopProcessingJobRequest): Request[js.Object]                       = js.native
-    def stopTrainingJob(params: StopTrainingJobRequest): Request[js.Object]                           = js.native
-    def stopTransformJob(params: StopTransformJobRequest): Request[js.Object]                         = js.native
-    def updateCodeRepository(params: UpdateCodeRepositoryInput): Request[UpdateCodeRepositoryOutput]  = js.native
-    def updateDomain(params: UpdateDomainRequest): Request[UpdateDomainResponse]                      = js.native
-    def updateEndpoint(params: UpdateEndpointInput): Request[UpdateEndpointOutput]                    = js.native
+    def listTrials(params: ListTrialsRequest): Request[ListTrialsResponse] = js.native
+    def listUserProfiles(params: ListUserProfilesRequest): Request[ListUserProfilesResponse] = js.native
+    def listWorkteams(params: ListWorkteamsRequest): Request[ListWorkteamsResponse] = js.native
+    def renderUiTemplate(params: RenderUiTemplateRequest): Request[RenderUiTemplateResponse] = js.native
+    def search(params: SearchRequest): Request[SearchResponse] = js.native
+    def startMonitoringSchedule(params: StartMonitoringScheduleRequest): Request[js.Object] = js.native
+    def startNotebookInstance(params: StartNotebookInstanceInput): Request[js.Object] = js.native
+    def stopAutoMLJob(params: StopAutoMLJobRequest): Request[js.Object] = js.native
+    def stopCompilationJob(params: StopCompilationJobRequest): Request[js.Object] = js.native
+    def stopHyperParameterTuningJob(params: StopHyperParameterTuningJobRequest): Request[js.Object] = js.native
+    def stopLabelingJob(params: StopLabelingJobRequest): Request[js.Object] = js.native
+    def stopMonitoringSchedule(params: StopMonitoringScheduleRequest): Request[js.Object] = js.native
+    def stopNotebookInstance(params: StopNotebookInstanceInput): Request[js.Object] = js.native
+    def stopProcessingJob(params: StopProcessingJobRequest): Request[js.Object] = js.native
+    def stopTrainingJob(params: StopTrainingJobRequest): Request[js.Object] = js.native
+    def stopTransformJob(params: StopTransformJobRequest): Request[js.Object] = js.native
+    def updateCodeRepository(params: UpdateCodeRepositoryInput): Request[UpdateCodeRepositoryOutput] = js.native
+    def updateDomain(params: UpdateDomainRequest): Request[UpdateDomainResponse] = js.native
+    def updateEndpoint(params: UpdateEndpointInput): Request[UpdateEndpointOutput] = js.native
     def updateEndpointWeightsAndCapacities(
         params: UpdateEndpointWeightsAndCapacitiesInput
-    ): Request[UpdateEndpointWeightsAndCapacitiesOutput]                                     = js.native
+    ): Request[UpdateEndpointWeightsAndCapacitiesOutput] = js.native
     def updateExperiment(params: UpdateExperimentRequest): Request[UpdateExperimentResponse] = js.native
     def updateMonitoringSchedule(params: UpdateMonitoringScheduleRequest): Request[UpdateMonitoringScheduleResponse] =
       js.native
     def updateNotebookInstance(params: UpdateNotebookInstanceInput): Request[UpdateNotebookInstanceOutput] = js.native
     def updateNotebookInstanceLifecycleConfig(
         params: UpdateNotebookInstanceLifecycleConfigInput
-    ): Request[UpdateNotebookInstanceLifecycleConfigOutput]                                              = js.native
-    def updateTrial(params: UpdateTrialRequest): Request[UpdateTrialResponse]                            = js.native
+    ): Request[UpdateNotebookInstanceLifecycleConfigOutput] = js.native
+    def updateTrial(params: UpdateTrialRequest): Request[UpdateTrialResponse] = js.native
     def updateTrialComponent(params: UpdateTrialComponentRequest): Request[UpdateTrialComponentResponse] = js.native
-    def updateUserProfile(params: UpdateUserProfileRequest): Request[UpdateUserProfileResponse]          = js.native
-    def updateWorkforce(params: UpdateWorkforceRequest): Request[UpdateWorkforceResponse]                = js.native
-    def updateWorkteam(params: UpdateWorkteamRequest): Request[UpdateWorkteamResponse]                   = js.native
+    def updateUserProfile(params: UpdateUserProfileRequest): Request[UpdateUserProfileResponse] = js.native
+    def updateWorkforce(params: UpdateWorkforceRequest): Request[UpdateWorkforceResponse] = js.native
+    def updateWorkteam(params: UpdateWorkteamRequest): Request[UpdateWorkteamResponse] = js.native
   }
 
   @js.native
@@ -859,7 +861,7 @@ package sagemaker {
     ): AddTagsInput = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddTagsInput]
@@ -885,14 +887,14 @@ package sagemaker {
   @js.native
   sealed trait AlgorithmSortBy extends js.Any
   object AlgorithmSortBy extends js.Object {
-    val Name         = "Name".asInstanceOf[AlgorithmSortBy]
+    val Name = "Name".asInstanceOf[AlgorithmSortBy]
     val CreationTime = "CreationTime".asInstanceOf[AlgorithmSortBy]
 
     val values = js.Object.freeze(js.Array(Name, CreationTime))
   }
 
   /**
-    * Specifies the training algorithm to use in a [[https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrainingJob.html|CreateTrainingJob]] request.
+    * Specifies the training algorithm to use in a <a>CreateTrainingJob</a> request.
     *  For more information about algorithms provided by Amazon SageMaker, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html|Algorithms]]. For information about using your own algorithms, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html|Using Your Own Algorithms with Amazon SageMaker]].
     */
   @js.native
@@ -930,11 +932,11 @@ package sagemaker {
   @js.native
   sealed trait AlgorithmStatus extends js.Any
   object AlgorithmStatus extends js.Object {
-    val Pending    = "Pending".asInstanceOf[AlgorithmStatus]
+    val Pending = "Pending".asInstanceOf[AlgorithmStatus]
     val InProgress = "InProgress".asInstanceOf[AlgorithmStatus]
-    val Completed  = "Completed".asInstanceOf[AlgorithmStatus]
-    val Failed     = "Failed".asInstanceOf[AlgorithmStatus]
-    val Deleting   = "Deleting".asInstanceOf[AlgorithmStatus]
+    val Completed = "Completed".asInstanceOf[AlgorithmStatus]
+    val Failed = "Failed".asInstanceOf[AlgorithmStatus]
+    val Deleting = "Deleting".asInstanceOf[AlgorithmStatus]
 
     val values = js.Object.freeze(js.Array(Pending, InProgress, Completed, Failed, Deleting))
   }
@@ -979,7 +981,7 @@ package sagemaker {
         FailureReason: js.UndefOr[String] = js.undefined
     ): AlgorithmStatusItem = {
       val __obj = js.Dynamic.literal(
-        "Name"   -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Status" -> Status.asInstanceOf[js.Any]
       )
 
@@ -1010,10 +1012,10 @@ package sagemaker {
         AlgorithmDescription: js.UndefOr[EntityDescription] = js.undefined
     ): AlgorithmSummary = {
       val __obj = js.Dynamic.literal(
-        "AlgorithmArn"    -> AlgorithmArn.asInstanceOf[js.Any],
-        "AlgorithmName"   -> AlgorithmName.asInstanceOf[js.Any],
+        "AlgorithmArn" -> AlgorithmArn.asInstanceOf[js.Any],
+        "AlgorithmName" -> AlgorithmName.asInstanceOf[js.Any],
         "AlgorithmStatus" -> AlgorithmStatus.asInstanceOf[js.Any],
-        "CreationTime"    -> CreationTime.asInstanceOf[js.Any]
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any]
       )
 
       AlgorithmDescription.foreach(__v => __obj.updateDynamic("AlgorithmDescription")(__v.asInstanceOf[js.Any]))
@@ -1040,7 +1042,7 @@ package sagemaker {
         TransformJobDefinition: js.UndefOr[TransformJobDefinition] = js.undefined
     ): AlgorithmValidationProfile = {
       val __obj = js.Dynamic.literal(
-        "ProfileName"           -> ProfileName.asInstanceOf[js.Any],
+        "ProfileName" -> ProfileName.asInstanceOf[js.Any],
         "TrainingJobDefinition" -> TrainingJobDefinition.asInstanceOf[js.Any]
       )
 
@@ -1066,7 +1068,7 @@ package sagemaker {
     ): AlgorithmValidationSpecification = {
       val __obj = js.Dynamic.literal(
         "ValidationProfiles" -> ValidationProfiles.asInstanceOf[js.Any],
-        "ValidationRole"     -> ValidationRole.asInstanceOf[js.Any]
+        "ValidationRole" -> ValidationRole.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AlgorithmValidationSpecification]
@@ -1131,36 +1133,36 @@ package sagemaker {
   @js.native
   sealed trait AppInstanceType extends js.Any
   object AppInstanceType extends js.Object {
-    val system             = "system".asInstanceOf[AppInstanceType]
-    val `ml.t3.micro`      = "ml.t3.micro".asInstanceOf[AppInstanceType]
-    val `ml.t3.small`      = "ml.t3.small".asInstanceOf[AppInstanceType]
-    val `ml.t3.medium`     = "ml.t3.medium".asInstanceOf[AppInstanceType]
-    val `ml.t3.large`      = "ml.t3.large".asInstanceOf[AppInstanceType]
-    val `ml.t3.xlarge`     = "ml.t3.xlarge".asInstanceOf[AppInstanceType]
-    val `ml.t3.2xlarge`    = "ml.t3.2xlarge".asInstanceOf[AppInstanceType]
-    val `ml.m5.large`      = "ml.m5.large".asInstanceOf[AppInstanceType]
-    val `ml.m5.xlarge`     = "ml.m5.xlarge".asInstanceOf[AppInstanceType]
-    val `ml.m5.2xlarge`    = "ml.m5.2xlarge".asInstanceOf[AppInstanceType]
-    val `ml.m5.4xlarge`    = "ml.m5.4xlarge".asInstanceOf[AppInstanceType]
-    val `ml.m5.8xlarge`    = "ml.m5.8xlarge".asInstanceOf[AppInstanceType]
-    val `ml.m5.12xlarge`   = "ml.m5.12xlarge".asInstanceOf[AppInstanceType]
-    val `ml.m5.16xlarge`   = "ml.m5.16xlarge".asInstanceOf[AppInstanceType]
-    val `ml.m5.24xlarge`   = "ml.m5.24xlarge".asInstanceOf[AppInstanceType]
-    val `ml.c5.large`      = "ml.c5.large".asInstanceOf[AppInstanceType]
-    val `ml.c5.xlarge`     = "ml.c5.xlarge".asInstanceOf[AppInstanceType]
-    val `ml.c5.2xlarge`    = "ml.c5.2xlarge".asInstanceOf[AppInstanceType]
-    val `ml.c5.4xlarge`    = "ml.c5.4xlarge".asInstanceOf[AppInstanceType]
-    val `ml.c5.9xlarge`    = "ml.c5.9xlarge".asInstanceOf[AppInstanceType]
-    val `ml.c5.12xlarge`   = "ml.c5.12xlarge".asInstanceOf[AppInstanceType]
-    val `ml.c5.18xlarge`   = "ml.c5.18xlarge".asInstanceOf[AppInstanceType]
-    val `ml.c5.24xlarge`   = "ml.c5.24xlarge".asInstanceOf[AppInstanceType]
-    val `ml.p3.2xlarge`    = "ml.p3.2xlarge".asInstanceOf[AppInstanceType]
-    val `ml.p3.8xlarge`    = "ml.p3.8xlarge".asInstanceOf[AppInstanceType]
-    val `ml.p3.16xlarge`   = "ml.p3.16xlarge".asInstanceOf[AppInstanceType]
-    val `ml.g4dn.xlarge`   = "ml.g4dn.xlarge".asInstanceOf[AppInstanceType]
-    val `ml.g4dn.2xlarge`  = "ml.g4dn.2xlarge".asInstanceOf[AppInstanceType]
-    val `ml.g4dn.4xlarge`  = "ml.g4dn.4xlarge".asInstanceOf[AppInstanceType]
-    val `ml.g4dn.8xlarge`  = "ml.g4dn.8xlarge".asInstanceOf[AppInstanceType]
+    val system = "system".asInstanceOf[AppInstanceType]
+    val `ml.t3.micro` = "ml.t3.micro".asInstanceOf[AppInstanceType]
+    val `ml.t3.small` = "ml.t3.small".asInstanceOf[AppInstanceType]
+    val `ml.t3.medium` = "ml.t3.medium".asInstanceOf[AppInstanceType]
+    val `ml.t3.large` = "ml.t3.large".asInstanceOf[AppInstanceType]
+    val `ml.t3.xlarge` = "ml.t3.xlarge".asInstanceOf[AppInstanceType]
+    val `ml.t3.2xlarge` = "ml.t3.2xlarge".asInstanceOf[AppInstanceType]
+    val `ml.m5.large` = "ml.m5.large".asInstanceOf[AppInstanceType]
+    val `ml.m5.xlarge` = "ml.m5.xlarge".asInstanceOf[AppInstanceType]
+    val `ml.m5.2xlarge` = "ml.m5.2xlarge".asInstanceOf[AppInstanceType]
+    val `ml.m5.4xlarge` = "ml.m5.4xlarge".asInstanceOf[AppInstanceType]
+    val `ml.m5.8xlarge` = "ml.m5.8xlarge".asInstanceOf[AppInstanceType]
+    val `ml.m5.12xlarge` = "ml.m5.12xlarge".asInstanceOf[AppInstanceType]
+    val `ml.m5.16xlarge` = "ml.m5.16xlarge".asInstanceOf[AppInstanceType]
+    val `ml.m5.24xlarge` = "ml.m5.24xlarge".asInstanceOf[AppInstanceType]
+    val `ml.c5.large` = "ml.c5.large".asInstanceOf[AppInstanceType]
+    val `ml.c5.xlarge` = "ml.c5.xlarge".asInstanceOf[AppInstanceType]
+    val `ml.c5.2xlarge` = "ml.c5.2xlarge".asInstanceOf[AppInstanceType]
+    val `ml.c5.4xlarge` = "ml.c5.4xlarge".asInstanceOf[AppInstanceType]
+    val `ml.c5.9xlarge` = "ml.c5.9xlarge".asInstanceOf[AppInstanceType]
+    val `ml.c5.12xlarge` = "ml.c5.12xlarge".asInstanceOf[AppInstanceType]
+    val `ml.c5.18xlarge` = "ml.c5.18xlarge".asInstanceOf[AppInstanceType]
+    val `ml.c5.24xlarge` = "ml.c5.24xlarge".asInstanceOf[AppInstanceType]
+    val `ml.p3.2xlarge` = "ml.p3.2xlarge".asInstanceOf[AppInstanceType]
+    val `ml.p3.8xlarge` = "ml.p3.8xlarge".asInstanceOf[AppInstanceType]
+    val `ml.p3.16xlarge` = "ml.p3.16xlarge".asInstanceOf[AppInstanceType]
+    val `ml.g4dn.xlarge` = "ml.g4dn.xlarge".asInstanceOf[AppInstanceType]
+    val `ml.g4dn.2xlarge` = "ml.g4dn.2xlarge".asInstanceOf[AppInstanceType]
+    val `ml.g4dn.4xlarge` = "ml.g4dn.4xlarge".asInstanceOf[AppInstanceType]
+    val `ml.g4dn.8xlarge` = "ml.g4dn.8xlarge".asInstanceOf[AppInstanceType]
     val `ml.g4dn.12xlarge` = "ml.g4dn.12xlarge".asInstanceOf[AppInstanceType]
     val `ml.g4dn.16xlarge` = "ml.g4dn.16xlarge".asInstanceOf[AppInstanceType]
 
@@ -1240,11 +1242,11 @@ package sagemaker {
   @js.native
   sealed trait AppStatus extends js.Any
   object AppStatus extends js.Object {
-    val Deleted   = "Deleted".asInstanceOf[AppStatus]
-    val Deleting  = "Deleting".asInstanceOf[AppStatus]
-    val Failed    = "Failed".asInstanceOf[AppStatus]
+    val Deleted = "Deleted".asInstanceOf[AppStatus]
+    val Deleting = "Deleting".asInstanceOf[AppStatus]
+    val Failed = "Failed".asInstanceOf[AppStatus]
     val InService = "InService".asInstanceOf[AppStatus]
-    val Pending   = "Pending".asInstanceOf[AppStatus]
+    val Pending = "Pending".asInstanceOf[AppStatus]
 
     val values = js.Object.freeze(js.Array(Deleted, Deleting, Failed, InService, Pending))
   }
@@ -1254,7 +1256,7 @@ package sagemaker {
   object AppType extends js.Object {
     val JupyterServer = "JupyterServer".asInstanceOf[AppType]
     val KernelGateway = "KernelGateway".asInstanceOf[AppType]
-    val TensorBoard   = "TensorBoard".asInstanceOf[AppType]
+    val TensorBoard = "TensorBoard".asInstanceOf[AppType]
 
     val values = js.Object.freeze(js.Array(JupyterServer, KernelGateway, TensorBoard))
   }
@@ -1282,7 +1284,7 @@ package sagemaker {
     ): AssociateTrialComponentRequest = {
       val __obj = js.Dynamic.literal(
         "TrialComponentName" -> TrialComponentName.asInstanceOf[js.Any],
-        "TrialName"          -> TrialName.asInstanceOf[js.Any]
+        "TrialName" -> TrialName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AssociateTrialComponentRequest]
@@ -1349,12 +1351,12 @@ package sagemaker {
         InferenceContainers: js.UndefOr[AutoMLContainerDefinitions] = js.undefined
     ): AutoMLCandidate = {
       val __obj = js.Dynamic.literal(
-        "CandidateName"    -> CandidateName.asInstanceOf[js.Any],
-        "CandidateStatus"  -> CandidateStatus.asInstanceOf[js.Any],
-        "CandidateSteps"   -> CandidateSteps.asInstanceOf[js.Any],
-        "CreationTime"     -> CreationTime.asInstanceOf[js.Any],
+        "CandidateName" -> CandidateName.asInstanceOf[js.Any],
+        "CandidateStatus" -> CandidateStatus.asInstanceOf[js.Any],
+        "CandidateSteps" -> CandidateSteps.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
         "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any],
-        "ObjectiveStatus"  -> ObjectiveStatus.asInstanceOf[js.Any]
+        "ObjectiveStatus" -> ObjectiveStatus.asInstanceOf[js.Any]
       )
 
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
@@ -1385,7 +1387,7 @@ package sagemaker {
         CandidateStepType: CandidateStepType
     ): AutoMLCandidateStep = {
       val __obj = js.Dynamic.literal(
-        "CandidateStepArn"  -> CandidateStepArn.asInstanceOf[js.Any],
+        "CandidateStepArn" -> CandidateStepArn.asInstanceOf[js.Any],
         "CandidateStepName" -> CandidateStepName.asInstanceOf[js.Any],
         "CandidateStepType" -> CandidateStepType.asInstanceOf[js.Any]
       )
@@ -1412,7 +1414,7 @@ package sagemaker {
         CompressionType: js.UndefOr[CompressionType] = js.undefined
     ): AutoMLChannel = {
       val __obj = js.Dynamic.literal(
-        "DataSource"          -> DataSource.asInstanceOf[js.Any],
+        "DataSource" -> DataSource.asInstanceOf[js.Any],
         "TargetAttributeName" -> TargetAttributeName.asInstanceOf[js.Any]
       )
 
@@ -1439,7 +1441,7 @@ package sagemaker {
         Environment: js.UndefOr[EnvironmentMap] = js.undefined
     ): AutoMLContainerDefinition = {
       val __obj = js.Dynamic.literal(
-        "Image"        -> Image.asInstanceOf[js.Any],
+        "Image" -> Image.asInstanceOf[js.Any],
         "ModelDataUrl" -> ModelDataUrl.asInstanceOf[js.Any]
       )
 
@@ -1579,15 +1581,15 @@ package sagemaker {
   @js.native
   sealed trait AutoMLJobSecondaryStatus extends js.Any
   object AutoMLJobSecondaryStatus extends js.Object {
-    val Starting                      = "Starting".asInstanceOf[AutoMLJobSecondaryStatus]
-    val AnalyzingData                 = "AnalyzingData".asInstanceOf[AutoMLJobSecondaryStatus]
-    val FeatureEngineering            = "FeatureEngineering".asInstanceOf[AutoMLJobSecondaryStatus]
-    val ModelTuning                   = "ModelTuning".asInstanceOf[AutoMLJobSecondaryStatus]
-    val MaxCandidatesReached          = "MaxCandidatesReached".asInstanceOf[AutoMLJobSecondaryStatus]
-    val Failed                        = "Failed".asInstanceOf[AutoMLJobSecondaryStatus]
-    val Stopped                       = "Stopped".asInstanceOf[AutoMLJobSecondaryStatus]
-    val MaxAutoMLJobRuntimeReached    = "MaxAutoMLJobRuntimeReached".asInstanceOf[AutoMLJobSecondaryStatus]
-    val Stopping                      = "Stopping".asInstanceOf[AutoMLJobSecondaryStatus]
+    val Starting = "Starting".asInstanceOf[AutoMLJobSecondaryStatus]
+    val AnalyzingData = "AnalyzingData".asInstanceOf[AutoMLJobSecondaryStatus]
+    val FeatureEngineering = "FeatureEngineering".asInstanceOf[AutoMLJobSecondaryStatus]
+    val ModelTuning = "ModelTuning".asInstanceOf[AutoMLJobSecondaryStatus]
+    val MaxCandidatesReached = "MaxCandidatesReached".asInstanceOf[AutoMLJobSecondaryStatus]
+    val Failed = "Failed".asInstanceOf[AutoMLJobSecondaryStatus]
+    val Stopped = "Stopped".asInstanceOf[AutoMLJobSecondaryStatus]
+    val MaxAutoMLJobRuntimeReached = "MaxAutoMLJobRuntimeReached".asInstanceOf[AutoMLJobSecondaryStatus]
+    val Stopping = "Stopping".asInstanceOf[AutoMLJobSecondaryStatus]
     val CandidateDefinitionsGenerated = "CandidateDefinitionsGenerated".asInstanceOf[AutoMLJobSecondaryStatus]
 
     val values = js.Object.freeze(
@@ -1609,11 +1611,11 @@ package sagemaker {
   @js.native
   sealed trait AutoMLJobStatus extends js.Any
   object AutoMLJobStatus extends js.Object {
-    val Completed  = "Completed".asInstanceOf[AutoMLJobStatus]
+    val Completed = "Completed".asInstanceOf[AutoMLJobStatus]
     val InProgress = "InProgress".asInstanceOf[AutoMLJobStatus]
-    val Failed     = "Failed".asInstanceOf[AutoMLJobStatus]
-    val Stopped    = "Stopped".asInstanceOf[AutoMLJobStatus]
-    val Stopping   = "Stopping".asInstanceOf[AutoMLJobStatus]
+    val Failed = "Failed".asInstanceOf[AutoMLJobStatus]
+    val Stopped = "Stopped".asInstanceOf[AutoMLJobStatus]
+    val Stopping = "Stopping".asInstanceOf[AutoMLJobStatus]
 
     val values = js.Object.freeze(js.Array(Completed, InProgress, Failed, Stopped, Stopping))
   }
@@ -1646,12 +1648,12 @@ package sagemaker {
         FailureReason: js.UndefOr[AutoMLFailureReason] = js.undefined
     ): AutoMLJobSummary = {
       val __obj = js.Dynamic.literal(
-        "AutoMLJobArn"             -> AutoMLJobArn.asInstanceOf[js.Any],
-        "AutoMLJobName"            -> AutoMLJobName.asInstanceOf[js.Any],
+        "AutoMLJobArn" -> AutoMLJobArn.asInstanceOf[js.Any],
+        "AutoMLJobName" -> AutoMLJobName.asInstanceOf[js.Any],
         "AutoMLJobSecondaryStatus" -> AutoMLJobSecondaryStatus.asInstanceOf[js.Any],
-        "AutoMLJobStatus"          -> AutoMLJobStatus.asInstanceOf[js.Any],
-        "CreationTime"             -> CreationTime.asInstanceOf[js.Any],
-        "LastModifiedTime"         -> LastModifiedTime.asInstanceOf[js.Any]
+        "AutoMLJobStatus" -> AutoMLJobStatus.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any]
       )
 
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
@@ -1664,9 +1666,9 @@ package sagemaker {
   sealed trait AutoMLMetricEnum extends js.Any
   object AutoMLMetricEnum extends js.Object {
     val Accuracy = "Accuracy".asInstanceOf[AutoMLMetricEnum]
-    val MSE      = "MSE".asInstanceOf[AutoMLMetricEnum]
-    val F1       = "F1".asInstanceOf[AutoMLMetricEnum]
-    val F1macro  = "F1macro".asInstanceOf[AutoMLMetricEnum]
+    val MSE = "MSE".asInstanceOf[AutoMLMetricEnum]
+    val F1 = "F1".asInstanceOf[AutoMLMetricEnum]
+    val F1macro = "F1macro".asInstanceOf[AutoMLMetricEnum]
 
     val values = js.Object.freeze(js.Array(Accuracy, MSE, F1, F1macro))
   }
@@ -1712,7 +1714,7 @@ package sagemaker {
     ): AutoMLS3DataSource = {
       val __obj = js.Dynamic.literal(
         "S3DataType" -> S3DataType.asInstanceOf[js.Any],
-        "S3Uri"      -> S3Uri.asInstanceOf[js.Any]
+        "S3Uri" -> S3Uri.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AutoMLS3DataSource]
@@ -1723,7 +1725,7 @@ package sagemaker {
   sealed trait AutoMLS3DataType extends js.Any
   object AutoMLS3DataType extends js.Object {
     val ManifestFile = "ManifestFile".asInstanceOf[AutoMLS3DataType]
-    val S3Prefix     = "S3Prefix".asInstanceOf[AutoMLS3DataType]
+    val S3Prefix = "S3Prefix".asInstanceOf[AutoMLS3DataType]
 
     val values = js.Object.freeze(js.Array(ManifestFile, S3Prefix))
   }
@@ -1758,9 +1760,9 @@ package sagemaker {
   @js.native
   sealed trait AutoMLSortBy extends js.Any
   object AutoMLSortBy extends js.Object {
-    val Name         = "Name".asInstanceOf[AutoMLSortBy]
+    val Name = "Name".asInstanceOf[AutoMLSortBy]
     val CreationTime = "CreationTime".asInstanceOf[AutoMLSortBy]
-    val Status       = "Status".asInstanceOf[AutoMLSortBy]
+    val Status = "Status".asInstanceOf[AutoMLSortBy]
 
     val values = js.Object.freeze(js.Array(Name, CreationTime, Status))
   }
@@ -1768,7 +1770,7 @@ package sagemaker {
   @js.native
   sealed trait AutoMLSortOrder extends js.Any
   object AutoMLSortOrder extends js.Object {
-    val Ascending  = "Ascending".asInstanceOf[AutoMLSortOrder]
+    val Ascending = "Ascending".asInstanceOf[AutoMLSortOrder]
     val Descending = "Descending".asInstanceOf[AutoMLSortOrder]
 
     val values = js.Object.freeze(js.Array(Ascending, Descending))
@@ -1790,7 +1792,7 @@ package sagemaker {
   @js.native
   sealed trait BatchStrategy extends js.Any
   object BatchStrategy extends js.Object {
-    val MultiRecord  = "MultiRecord".asInstanceOf[BatchStrategy]
+    val MultiRecord = "MultiRecord".asInstanceOf[BatchStrategy]
     val SingleRecord = "SingleRecord".asInstanceOf[BatchStrategy]
 
     val values = js.Object.freeze(js.Array(MultiRecord, SingleRecord))
@@ -1800,7 +1802,7 @@ package sagemaker {
   sealed trait BooleanOperator extends js.Any
   object BooleanOperator extends js.Object {
     val And = "And".asInstanceOf[BooleanOperator]
-    val Or  = "Or".asInstanceOf[BooleanOperator]
+    val Or = "Or".asInstanceOf[BooleanOperator]
 
     val values = js.Object.freeze(js.Array(And, Or))
   }
@@ -1808,8 +1810,8 @@ package sagemaker {
   @js.native
   sealed trait CandidateSortBy extends js.Any
   object CandidateSortBy extends js.Object {
-    val CreationTime              = "CreationTime".asInstanceOf[CandidateSortBy]
-    val Status                    = "Status".asInstanceOf[CandidateSortBy]
+    val CreationTime = "CreationTime".asInstanceOf[CandidateSortBy]
+    val Status = "Status".asInstanceOf[CandidateSortBy]
     val FinalObjectiveMetricValue = "FinalObjectiveMetricValue".asInstanceOf[CandidateSortBy]
 
     val values = js.Object.freeze(js.Array(CreationTime, Status, FinalObjectiveMetricValue))
@@ -1818,11 +1820,11 @@ package sagemaker {
   @js.native
   sealed trait CandidateStatus extends js.Any
   object CandidateStatus extends js.Object {
-    val Completed  = "Completed".asInstanceOf[CandidateStatus]
+    val Completed = "Completed".asInstanceOf[CandidateStatus]
     val InProgress = "InProgress".asInstanceOf[CandidateStatus]
-    val Failed     = "Failed".asInstanceOf[CandidateStatus]
-    val Stopped    = "Stopped".asInstanceOf[CandidateStatus]
-    val Stopping   = "Stopping".asInstanceOf[CandidateStatus]
+    val Failed = "Failed".asInstanceOf[CandidateStatus]
+    val Stopped = "Stopped".asInstanceOf[CandidateStatus]
+    val Stopping = "Stopping".asInstanceOf[CandidateStatus]
 
     val values = js.Object.freeze(js.Array(Completed, InProgress, Failed, Stopped, Stopping))
   }
@@ -1830,8 +1832,8 @@ package sagemaker {
   @js.native
   sealed trait CandidateStepType extends js.Any
   object CandidateStepType extends js.Object {
-    val `AWS::SageMaker::TrainingJob`   = "AWS::SageMaker::TrainingJob".asInstanceOf[CandidateStepType]
-    val `AWS::SageMaker::TransformJob`  = "AWS::SageMaker::TransformJob".asInstanceOf[CandidateStepType]
+    val `AWS::SageMaker::TrainingJob` = "AWS::SageMaker::TrainingJob".asInstanceOf[CandidateStepType]
+    val `AWS::SageMaker::TransformJob` = "AWS::SageMaker::TransformJob".asInstanceOf[CandidateStepType]
     val `AWS::SageMaker::ProcessingJob` = "AWS::SageMaker::ProcessingJob".asInstanceOf[CandidateStepType]
 
     val values = js.Object.freeze(
@@ -1864,7 +1866,7 @@ package sagemaker {
   @js.native
   sealed trait CaptureMode extends js.Any
   object CaptureMode extends js.Object {
-    val Input  = "Input".asInstanceOf[CaptureMode]
+    val Input = "Input".asInstanceOf[CaptureMode]
     val Output = "Output".asInstanceOf[CaptureMode]
 
     val values = js.Object.freeze(js.Array(Input, Output))
@@ -1916,7 +1918,7 @@ package sagemaker {
         Values: ParameterValues
     ): CategoricalParameterRange = {
       val __obj = js.Dynamic.literal(
-        "Name"   -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
@@ -1972,7 +1974,7 @@ package sagemaker {
     ): Channel = {
       val __obj = js.Dynamic.literal(
         "ChannelName" -> ChannelName.asInstanceOf[js.Any],
-        "DataSource"  -> DataSource.asInstanceOf[js.Any]
+        "DataSource" -> DataSource.asInstanceOf[js.Any]
       )
 
       CompressionType.foreach(__v => __obj.updateDynamic("CompressionType")(__v.asInstanceOf[js.Any]))
@@ -2008,9 +2010,9 @@ package sagemaker {
         SupportedCompressionTypes: js.UndefOr[CompressionTypes] = js.undefined
     ): ChannelSpecification = {
       val __obj = js.Dynamic.literal(
-        "Name"                  -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "SupportedContentTypes" -> SupportedContentTypes.asInstanceOf[js.Any],
-        "SupportedInputModes"   -> SupportedInputModes.asInstanceOf[js.Any]
+        "SupportedInputModes" -> SupportedInputModes.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -2049,8 +2051,8 @@ package sagemaker {
   @js.native
   sealed trait CodeRepositorySortBy extends js.Any
   object CodeRepositorySortBy extends js.Object {
-    val Name             = "Name".asInstanceOf[CodeRepositorySortBy]
-    val CreationTime     = "CreationTime".asInstanceOf[CodeRepositorySortBy]
+    val Name = "Name".asInstanceOf[CodeRepositorySortBy]
+    val CreationTime = "CreationTime".asInstanceOf[CodeRepositorySortBy]
     val LastModifiedTime = "LastModifiedTime".asInstanceOf[CodeRepositorySortBy]
 
     val values = js.Object.freeze(js.Array(Name, CreationTime, LastModifiedTime))
@@ -2059,7 +2061,7 @@ package sagemaker {
   @js.native
   sealed trait CodeRepositorySortOrder extends js.Any
   object CodeRepositorySortOrder extends js.Object {
-    val Ascending  = "Ascending".asInstanceOf[CodeRepositorySortOrder]
+    val Ascending = "Ascending".asInstanceOf[CodeRepositorySortOrder]
     val Descending = "Descending".asInstanceOf[CodeRepositorySortOrder]
 
     val values = js.Object.freeze(js.Array(Ascending, Descending))
@@ -2087,10 +2089,10 @@ package sagemaker {
         GitConfig: js.UndefOr[GitConfig] = js.undefined
     ): CodeRepositorySummary = {
       val __obj = js.Dynamic.literal(
-        "CodeRepositoryArn"  -> CodeRepositoryArn.asInstanceOf[js.Any],
+        "CodeRepositoryArn" -> CodeRepositoryArn.asInstanceOf[js.Any],
         "CodeRepositoryName" -> CodeRepositoryName.asInstanceOf[js.Any],
-        "CreationTime"       -> CreationTime.asInstanceOf[js.Any],
-        "LastModifiedTime"   -> LastModifiedTime.asInstanceOf[js.Any]
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any]
       )
 
       GitConfig.foreach(__v => __obj.updateDynamic("GitConfig")(__v.asInstanceOf[js.Any]))
@@ -2116,9 +2118,9 @@ package sagemaker {
         UserPool: CognitoUserPool
     ): CognitoMemberDefinition = {
       val __obj = js.Dynamic.literal(
-        "ClientId"  -> ClientId.asInstanceOf[js.Any],
+        "ClientId" -> ClientId.asInstanceOf[js.Any],
         "UserGroup" -> UserGroup.asInstanceOf[js.Any],
-        "UserPool"  -> UserPool.asInstanceOf[js.Any]
+        "UserPool" -> UserPool.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CognitoMemberDefinition]
@@ -2151,11 +2153,11 @@ package sagemaker {
   sealed trait CompilationJobStatus extends js.Any
   object CompilationJobStatus extends js.Object {
     val INPROGRESS = "INPROGRESS".asInstanceOf[CompilationJobStatus]
-    val COMPLETED  = "COMPLETED".asInstanceOf[CompilationJobStatus]
-    val FAILED     = "FAILED".asInstanceOf[CompilationJobStatus]
-    val STARTING   = "STARTING".asInstanceOf[CompilationJobStatus]
-    val STOPPING   = "STOPPING".asInstanceOf[CompilationJobStatus]
-    val STOPPED    = "STOPPED".asInstanceOf[CompilationJobStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[CompilationJobStatus]
+    val FAILED = "FAILED".asInstanceOf[CompilationJobStatus]
+    val STARTING = "STARTING".asInstanceOf[CompilationJobStatus]
+    val STOPPING = "STOPPING".asInstanceOf[CompilationJobStatus]
+    val STOPPED = "STOPPED".asInstanceOf[CompilationJobStatus]
 
     val values = js.Object.freeze(js.Array(INPROGRESS, COMPLETED, FAILED, STARTING, STOPPING, STOPPED))
   }
@@ -2188,11 +2190,11 @@ package sagemaker {
         LastModifiedTime: js.UndefOr[LastModifiedTime] = js.undefined
     ): CompilationJobSummary = {
       val __obj = js.Dynamic.literal(
-        "CompilationJobArn"       -> CompilationJobArn.asInstanceOf[js.Any],
-        "CompilationJobName"      -> CompilationJobName.asInstanceOf[js.Any],
-        "CompilationJobStatus"    -> CompilationJobStatus.asInstanceOf[js.Any],
+        "CompilationJobArn" -> CompilationJobArn.asInstanceOf[js.Any],
+        "CompilationJobName" -> CompilationJobName.asInstanceOf[js.Any],
+        "CompilationJobStatus" -> CompilationJobStatus.asInstanceOf[js.Any],
         "CompilationTargetDevice" -> CompilationTargetDevice.asInstanceOf[js.Any],
-        "CreationTime"            -> CreationTime.asInstanceOf[js.Any]
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any]
       )
 
       CompilationEndTime.foreach(__v => __obj.updateDynamic("CompilationEndTime")(__v.asInstanceOf[js.Any]))
@@ -2249,7 +2251,7 @@ package sagemaker {
   sealed trait ContainerMode extends js.Any
   object ContainerMode extends js.Object {
     val SingleModel = "SingleModel".asInstanceOf[ContainerMode]
-    val MultiModel  = "MultiModel".asInstanceOf[ContainerMode]
+    val MultiModel = "MultiModel".asInstanceOf[ContainerMode]
 
     val values = js.Object.freeze(js.Array(SingleModel, MultiModel))
   }
@@ -2286,7 +2288,7 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "MaxValue" -> MaxValue.asInstanceOf[js.Any],
         "MinValue" -> MinValue.asInstanceOf[js.Any],
-        "Name"     -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       ScalingType.foreach(__v => __obj.updateDynamic("ScalingType")(__v.asInstanceOf[js.Any]))
@@ -2339,7 +2341,7 @@ package sagemaker {
         ValidationSpecification: js.UndefOr[AlgorithmValidationSpecification] = js.undefined
     ): CreateAlgorithmInput = {
       val __obj = js.Dynamic.literal(
-        "AlgorithmName"         -> AlgorithmName.asInstanceOf[js.Any],
+        "AlgorithmName" -> AlgorithmName.asInstanceOf[js.Any],
         "TrainingSpecification" -> TrainingSpecification.asInstanceOf[js.Any]
       )
 
@@ -2390,9 +2392,9 @@ package sagemaker {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateAppRequest = {
       val __obj = js.Dynamic.literal(
-        "AppName"         -> AppName.asInstanceOf[js.Any],
-        "AppType"         -> AppType.asInstanceOf[js.Any],
-        "DomainId"        -> DomainId.asInstanceOf[js.Any],
+        "AppName" -> AppName.asInstanceOf[js.Any],
+        "AppType" -> AppType.asInstanceOf[js.Any],
+        "DomainId" -> DomainId.asInstanceOf[js.Any],
         "UserProfileName" -> UserProfileName.asInstanceOf[js.Any]
       )
 
@@ -2445,10 +2447,10 @@ package sagemaker {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateAutoMLJobRequest = {
       val __obj = js.Dynamic.literal(
-        "AutoMLJobName"    -> AutoMLJobName.asInstanceOf[js.Any],
-        "InputDataConfig"  -> InputDataConfig.asInstanceOf[js.Any],
+        "AutoMLJobName" -> AutoMLJobName.asInstanceOf[js.Any],
+        "InputDataConfig" -> InputDataConfig.asInstanceOf[js.Any],
         "OutputDataConfig" -> OutputDataConfig.asInstanceOf[js.Any],
-        "RoleArn"          -> RoleArn.asInstanceOf[js.Any]
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
       AutoMLJobConfig.foreach(__v => __obj.updateDynamic("AutoMLJobConfig")(__v.asInstanceOf[js.Any]))
@@ -2494,7 +2496,7 @@ package sagemaker {
     ): CreateCodeRepositoryInput = {
       val __obj = js.Dynamic.literal(
         "CodeRepositoryName" -> CodeRepositoryName.asInstanceOf[js.Any],
-        "GitConfig"          -> GitConfig.asInstanceOf[js.Any]
+        "GitConfig" -> GitConfig.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateCodeRepositoryInput]
@@ -2539,10 +2541,10 @@ package sagemaker {
     ): CreateCompilationJobRequest = {
       val __obj = js.Dynamic.literal(
         "CompilationJobName" -> CompilationJobName.asInstanceOf[js.Any],
-        "InputConfig"        -> InputConfig.asInstanceOf[js.Any],
-        "OutputConfig"       -> OutputConfig.asInstanceOf[js.Any],
-        "RoleArn"            -> RoleArn.asInstanceOf[js.Any],
-        "StoppingCondition"  -> StoppingCondition.asInstanceOf[js.Any]
+        "InputConfig" -> InputConfig.asInstanceOf[js.Any],
+        "OutputConfig" -> OutputConfig.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
+        "StoppingCondition" -> StoppingCondition.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateCompilationJobRequest]
@@ -2590,11 +2592,11 @@ package sagemaker {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDomainRequest = {
       val __obj = js.Dynamic.literal(
-        "AuthMode"            -> AuthMode.asInstanceOf[js.Any],
+        "AuthMode" -> AuthMode.asInstanceOf[js.Any],
         "DefaultUserSettings" -> DefaultUserSettings.asInstanceOf[js.Any],
-        "DomainName"          -> DomainName.asInstanceOf[js.Any],
-        "SubnetIds"           -> SubnetIds.asInstanceOf[js.Any],
-        "VpcId"               -> VpcId.asInstanceOf[js.Any]
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any],
+        "VpcId" -> VpcId.asInstanceOf[js.Any]
       )
 
       HomeEfsFileSystemKmsKeyId.foreach(__v =>
@@ -2688,7 +2690,7 @@ package sagemaker {
     ): CreateEndpointInput = {
       val __obj = js.Dynamic.literal(
         "EndpointConfigName" -> EndpointConfigName.asInstanceOf[js.Any],
-        "EndpointName"       -> EndpointName.asInstanceOf[js.Any]
+        "EndpointName" -> EndpointName.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -2764,6 +2766,7 @@ package sagemaker {
     var OutputConfig: FlowDefinitionOutputConfig
     var RoleArn: RoleArn
     var HumanLoopActivationConfig: js.UndefOr[HumanLoopActivationConfig]
+    var HumanLoopRequestSource: js.UndefOr[HumanLoopRequestSource]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -2775,18 +2778,20 @@ package sagemaker {
         OutputConfig: FlowDefinitionOutputConfig,
         RoleArn: RoleArn,
         HumanLoopActivationConfig: js.UndefOr[HumanLoopActivationConfig] = js.undefined,
+        HumanLoopRequestSource: js.UndefOr[HumanLoopRequestSource] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateFlowDefinitionRequest = {
       val __obj = js.Dynamic.literal(
         "FlowDefinitionName" -> FlowDefinitionName.asInstanceOf[js.Any],
-        "HumanLoopConfig"    -> HumanLoopConfig.asInstanceOf[js.Any],
-        "OutputConfig"       -> OutputConfig.asInstanceOf[js.Any],
-        "RoleArn"            -> RoleArn.asInstanceOf[js.Any]
+        "HumanLoopConfig" -> HumanLoopConfig.asInstanceOf[js.Any],
+        "OutputConfig" -> OutputConfig.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
       HumanLoopActivationConfig.foreach(__v =>
         __obj.updateDynamic("HumanLoopActivationConfig")(__v.asInstanceOf[js.Any])
       )
+      HumanLoopRequestSource.foreach(__v => __obj.updateDynamic("HumanLoopRequestSource")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFlowDefinitionRequest]
     }
@@ -2826,7 +2831,7 @@ package sagemaker {
     ): CreateHumanTaskUiRequest = {
       val __obj = js.Dynamic.literal(
         "HumanTaskUiName" -> HumanTaskUiName.asInstanceOf[js.Any],
-        "UiTemplate"      -> UiTemplate.asInstanceOf[js.Any]
+        "UiTemplate" -> UiTemplate.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -2874,7 +2879,7 @@ package sagemaker {
     ): CreateHyperParameterTuningJobRequest = {
       val __obj = js.Dynamic.literal(
         "HyperParameterTuningJobConfig" -> HyperParameterTuningJobConfig.asInstanceOf[js.Any],
-        "HyperParameterTuningJobName"   -> HyperParameterTuningJobName.asInstanceOf[js.Any]
+        "HyperParameterTuningJobName" -> HyperParameterTuningJobName.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -2932,12 +2937,12 @@ package sagemaker {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateLabelingJobRequest = {
       val __obj = js.Dynamic.literal(
-        "HumanTaskConfig"    -> HumanTaskConfig.asInstanceOf[js.Any],
-        "InputConfig"        -> InputConfig.asInstanceOf[js.Any],
+        "HumanTaskConfig" -> HumanTaskConfig.asInstanceOf[js.Any],
+        "InputConfig" -> InputConfig.asInstanceOf[js.Any],
         "LabelAttributeName" -> LabelAttributeName.asInstanceOf[js.Any],
-        "LabelingJobName"    -> LabelingJobName.asInstanceOf[js.Any],
-        "OutputConfig"       -> OutputConfig.asInstanceOf[js.Any],
-        "RoleArn"            -> RoleArn.asInstanceOf[js.Any]
+        "LabelingJobName" -> LabelingJobName.asInstanceOf[js.Any],
+        "OutputConfig" -> OutputConfig.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
       LabelCategoryConfigS3Uri.foreach(__v => __obj.updateDynamic("LabelCategoryConfigS3Uri")(__v.asInstanceOf[js.Any]))
@@ -2992,7 +2997,7 @@ package sagemaker {
     ): CreateModelInput = {
       val __obj = js.Dynamic.literal(
         "ExecutionRoleArn" -> ExecutionRoleArn.asInstanceOf[js.Any],
-        "ModelName"        -> ModelName.asInstanceOf[js.Any]
+        "ModelName" -> ModelName.asInstanceOf[js.Any]
       )
 
       Containers.foreach(__v => __obj.updateDynamic("Containers")(__v.asInstanceOf[js.Any]))
@@ -3091,7 +3096,7 @@ package sagemaker {
     ): CreateMonitoringScheduleRequest = {
       val __obj = js.Dynamic.literal(
         "MonitoringScheduleConfig" -> MonitoringScheduleConfig.asInstanceOf[js.Any],
-        "MonitoringScheduleName"   -> MonitoringScheduleName.asInstanceOf[js.Any]
+        "MonitoringScheduleName" -> MonitoringScheduleName.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -3154,9 +3159,9 @@ package sagemaker {
         VolumeSizeInGB: js.UndefOr[NotebookInstanceVolumeSizeInGB] = js.undefined
     ): CreateNotebookInstanceInput = {
       val __obj = js.Dynamic.literal(
-        "InstanceType"         -> InstanceType.asInstanceOf[js.Any],
+        "InstanceType" -> InstanceType.asInstanceOf[js.Any],
         "NotebookInstanceName" -> NotebookInstanceName.asInstanceOf[js.Any],
-        "RoleArn"              -> RoleArn.asInstanceOf[js.Any]
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
       AcceleratorTypes.foreach(__v => __obj.updateDynamic("AcceleratorTypes")(__v.asInstanceOf[js.Any]))
@@ -3249,7 +3254,7 @@ package sagemaker {
         SessionExpirationDurationInSeconds: js.UndefOr[SessionExpirationDurationInSeconds] = js.undefined
     ): CreatePresignedDomainUrlRequest = {
       val __obj = js.Dynamic.literal(
-        "DomainId"        -> DomainId.asInstanceOf[js.Any],
+        "DomainId" -> DomainId.asInstanceOf[js.Any],
         "UserProfileName" -> UserProfileName.asInstanceOf[js.Any]
       )
 
@@ -3346,10 +3351,10 @@ package sagemaker {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateProcessingJobRequest = {
       val __obj = js.Dynamic.literal(
-        "AppSpecification"    -> AppSpecification.asInstanceOf[js.Any],
-        "ProcessingJobName"   -> ProcessingJobName.asInstanceOf[js.Any],
+        "AppSpecification" -> AppSpecification.asInstanceOf[js.Any],
+        "ProcessingJobName" -> ProcessingJobName.asInstanceOf[js.Any],
         "ProcessingResources" -> ProcessingResources.asInstanceOf[js.Any],
-        "RoleArn"             -> RoleArn.asInstanceOf[js.Any]
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
       Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
@@ -3427,11 +3432,11 @@ package sagemaker {
     ): CreateTrainingJobRequest = {
       val __obj = js.Dynamic.literal(
         "AlgorithmSpecification" -> AlgorithmSpecification.asInstanceOf[js.Any],
-        "OutputDataConfig"       -> OutputDataConfig.asInstanceOf[js.Any],
-        "ResourceConfig"         -> ResourceConfig.asInstanceOf[js.Any],
-        "RoleArn"                -> RoleArn.asInstanceOf[js.Any],
-        "StoppingCondition"      -> StoppingCondition.asInstanceOf[js.Any],
-        "TrainingJobName"        -> TrainingJobName.asInstanceOf[js.Any]
+        "OutputDataConfig" -> OutputDataConfig.asInstanceOf[js.Any],
+        "ResourceConfig" -> ResourceConfig.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
+        "StoppingCondition" -> StoppingCondition.asInstanceOf[js.Any],
+        "TrainingJobName" -> TrainingJobName.asInstanceOf[js.Any]
       )
 
       CheckpointConfig.foreach(__v => __obj.updateDynamic("CheckpointConfig")(__v.asInstanceOf[js.Any]))
@@ -3485,6 +3490,7 @@ package sagemaker {
     var ExperimentConfig: js.UndefOr[ExperimentConfig]
     var MaxConcurrentTransforms: js.UndefOr[MaxConcurrentTransforms]
     var MaxPayloadInMB: js.UndefOr[MaxPayloadInMB]
+    var ModelClientConfig: js.UndefOr[ModelClientConfig]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -3502,13 +3508,14 @@ package sagemaker {
         ExperimentConfig: js.UndefOr[ExperimentConfig] = js.undefined,
         MaxConcurrentTransforms: js.UndefOr[MaxConcurrentTransforms] = js.undefined,
         MaxPayloadInMB: js.UndefOr[MaxPayloadInMB] = js.undefined,
+        ModelClientConfig: js.UndefOr[ModelClientConfig] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateTransformJobRequest = {
       val __obj = js.Dynamic.literal(
-        "ModelName"          -> ModelName.asInstanceOf[js.Any],
-        "TransformInput"     -> TransformInput.asInstanceOf[js.Any],
-        "TransformJobName"   -> TransformJobName.asInstanceOf[js.Any],
-        "TransformOutput"    -> TransformOutput.asInstanceOf[js.Any],
+        "ModelName" -> ModelName.asInstanceOf[js.Any],
+        "TransformInput" -> TransformInput.asInstanceOf[js.Any],
+        "TransformJobName" -> TransformJobName.asInstanceOf[js.Any],
+        "TransformOutput" -> TransformOutput.asInstanceOf[js.Any],
         "TransformResources" -> TransformResources.asInstanceOf[js.Any]
       )
 
@@ -3518,6 +3525,7 @@ package sagemaker {
       ExperimentConfig.foreach(__v => __obj.updateDynamic("ExperimentConfig")(__v.asInstanceOf[js.Any]))
       MaxConcurrentTransforms.foreach(__v => __obj.updateDynamic("MaxConcurrentTransforms")(__v.asInstanceOf[js.Any]))
       MaxPayloadInMB.foreach(__v => __obj.updateDynamic("MaxPayloadInMB")(__v.asInstanceOf[js.Any]))
+      ModelClientConfig.foreach(__v => __obj.updateDynamic("ModelClientConfig")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTransformJobRequest]
     }
@@ -3617,7 +3625,7 @@ package sagemaker {
     ): CreateTrialRequest = {
       val __obj = js.Dynamic.literal(
         "ExperimentName" -> ExperimentName.asInstanceOf[js.Any],
-        "TrialName"      -> TrialName.asInstanceOf[js.Any]
+        "TrialName" -> TrialName.asInstanceOf[js.Any]
       )
 
       DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
@@ -3663,7 +3671,7 @@ package sagemaker {
         UserSettings: js.UndefOr[UserSettings] = js.undefined
     ): CreateUserProfileRequest = {
       val __obj = js.Dynamic.literal(
-        "DomainId"        -> DomainId.asInstanceOf[js.Any],
+        "DomainId" -> DomainId.asInstanceOf[js.Any],
         "UserProfileName" -> UserProfileName.asInstanceOf[js.Any]
       )
 
@@ -3712,9 +3720,9 @@ package sagemaker {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateWorkteamRequest = {
       val __obj = js.Dynamic.literal(
-        "Description"       -> Description.asInstanceOf[js.Any],
+        "Description" -> Description.asInstanceOf[js.Any],
         "MemberDefinitions" -> MemberDefinitions.asInstanceOf[js.Any],
-        "WorkteamName"      -> WorkteamName.asInstanceOf[js.Any]
+        "WorkteamName" -> WorkteamName.asInstanceOf[js.Any]
       )
 
       NotificationConfiguration.foreach(__v =>
@@ -3765,8 +3773,8 @@ package sagemaker {
         KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
     ): DataCaptureConfig = {
       val __obj = js.Dynamic.literal(
-        "CaptureOptions"            -> CaptureOptions.asInstanceOf[js.Any],
-        "DestinationS3Uri"          -> DestinationS3Uri.asInstanceOf[js.Any],
+        "CaptureOptions" -> CaptureOptions.asInstanceOf[js.Any],
+        "DestinationS3Uri" -> DestinationS3Uri.asInstanceOf[js.Any],
         "InitialSamplingPercentage" -> InitialSamplingPercentage.asInstanceOf[js.Any]
       )
 
@@ -3799,11 +3807,11 @@ package sagemaker {
         KmsKeyId: KmsKeyId
     ): DataCaptureConfigSummary = {
       val __obj = js.Dynamic.literal(
-        "CaptureStatus"             -> CaptureStatus.asInstanceOf[js.Any],
+        "CaptureStatus" -> CaptureStatus.asInstanceOf[js.Any],
         "CurrentSamplingPercentage" -> CurrentSamplingPercentage.asInstanceOf[js.Any],
-        "DestinationS3Uri"          -> DestinationS3Uri.asInstanceOf[js.Any],
-        "EnableCapture"             -> EnableCapture.asInstanceOf[js.Any],
-        "KmsKeyId"                  -> KmsKeyId.asInstanceOf[js.Any]
+        "DestinationS3Uri" -> DestinationS3Uri.asInstanceOf[js.Any],
+        "EnableCapture" -> EnableCapture.asInstanceOf[js.Any],
+        "KmsKeyId" -> KmsKeyId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DataCaptureConfigSummary]
@@ -3914,7 +3922,7 @@ package sagemaker {
     ): DebugRuleConfiguration = {
       val __obj = js.Dynamic.literal(
         "RuleConfigurationName" -> RuleConfigurationName.asInstanceOf[js.Any],
-        "RuleEvaluatorImage"    -> RuleEvaluatorImage.asInstanceOf[js.Any]
+        "RuleEvaluatorImage" -> RuleEvaluatorImage.asInstanceOf[js.Any]
       )
 
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
@@ -3992,9 +4000,9 @@ package sagemaker {
         UserProfileName: UserProfileName
     ): DeleteAppRequest = {
       val __obj = js.Dynamic.literal(
-        "AppName"         -> AppName.asInstanceOf[js.Any],
-        "AppType"         -> AppType.asInstanceOf[js.Any],
-        "DomainId"        -> DomainId.asInstanceOf[js.Any],
+        "AppName" -> AppName.asInstanceOf[js.Any],
+        "AppType" -> AppType.asInstanceOf[js.Any],
+        "DomainId" -> DomainId.asInstanceOf[js.Any],
         "UserProfileName" -> UserProfileName.asInstanceOf[js.Any]
       )
 
@@ -4246,7 +4254,7 @@ package sagemaker {
     ): DeleteTagsInput = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteTagsInput]
@@ -4347,7 +4355,7 @@ package sagemaker {
         UserProfileName: UserProfileName
     ): DeleteUserProfileRequest = {
       val __obj = js.Dynamic.literal(
-        "DomainId"        -> DomainId.asInstanceOf[js.Any],
+        "DomainId" -> DomainId.asInstanceOf[js.Any],
         "UserProfileName" -> UserProfileName.asInstanceOf[js.Any]
       )
 
@@ -4466,12 +4474,12 @@ package sagemaker {
         ValidationSpecification: js.UndefOr[AlgorithmValidationSpecification] = js.undefined
     ): DescribeAlgorithmOutput = {
       val __obj = js.Dynamic.literal(
-        "AlgorithmArn"           -> AlgorithmArn.asInstanceOf[js.Any],
-        "AlgorithmName"          -> AlgorithmName.asInstanceOf[js.Any],
-        "AlgorithmStatus"        -> AlgorithmStatus.asInstanceOf[js.Any],
+        "AlgorithmArn" -> AlgorithmArn.asInstanceOf[js.Any],
+        "AlgorithmName" -> AlgorithmName.asInstanceOf[js.Any],
+        "AlgorithmStatus" -> AlgorithmStatus.asInstanceOf[js.Any],
         "AlgorithmStatusDetails" -> AlgorithmStatusDetails.asInstanceOf[js.Any],
-        "CreationTime"           -> CreationTime.asInstanceOf[js.Any],
-        "TrainingSpecification"  -> TrainingSpecification.asInstanceOf[js.Any]
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "TrainingSpecification" -> TrainingSpecification.asInstanceOf[js.Any]
       )
 
       AlgorithmDescription.foreach(__v => __obj.updateDynamic("AlgorithmDescription")(__v.asInstanceOf[js.Any]))
@@ -4500,9 +4508,9 @@ package sagemaker {
         UserProfileName: UserProfileName
     ): DescribeAppRequest = {
       val __obj = js.Dynamic.literal(
-        "AppName"         -> AppName.asInstanceOf[js.Any],
-        "AppType"         -> AppType.asInstanceOf[js.Any],
-        "DomainId"        -> DomainId.asInstanceOf[js.Any],
+        "AppName" -> AppName.asInstanceOf[js.Any],
+        "AppType" -> AppType.asInstanceOf[js.Any],
+        "DomainId" -> DomainId.asInstanceOf[js.Any],
         "UserProfileName" -> UserProfileName.asInstanceOf[js.Any]
       )
 
@@ -4621,15 +4629,15 @@ package sagemaker {
         ResolvedAttributes: js.UndefOr[ResolvedAttributes] = js.undefined
     ): DescribeAutoMLJobResponse = {
       val __obj = js.Dynamic.literal(
-        "AutoMLJobArn"             -> AutoMLJobArn.asInstanceOf[js.Any],
-        "AutoMLJobName"            -> AutoMLJobName.asInstanceOf[js.Any],
+        "AutoMLJobArn" -> AutoMLJobArn.asInstanceOf[js.Any],
+        "AutoMLJobName" -> AutoMLJobName.asInstanceOf[js.Any],
         "AutoMLJobSecondaryStatus" -> AutoMLJobSecondaryStatus.asInstanceOf[js.Any],
-        "AutoMLJobStatus"          -> AutoMLJobStatus.asInstanceOf[js.Any],
-        "CreationTime"             -> CreationTime.asInstanceOf[js.Any],
-        "InputDataConfig"          -> InputDataConfig.asInstanceOf[js.Any],
-        "LastModifiedTime"         -> LastModifiedTime.asInstanceOf[js.Any],
-        "OutputDataConfig"         -> OutputDataConfig.asInstanceOf[js.Any],
-        "RoleArn"                  -> RoleArn.asInstanceOf[js.Any]
+        "AutoMLJobStatus" -> AutoMLJobStatus.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "InputDataConfig" -> InputDataConfig.asInstanceOf[js.Any],
+        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any],
+        "OutputDataConfig" -> OutputDataConfig.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
       AutoMLJobArtifacts.foreach(__v => __obj.updateDynamic("AutoMLJobArtifacts")(__v.asInstanceOf[js.Any]))
@@ -4684,10 +4692,10 @@ package sagemaker {
         GitConfig: js.UndefOr[GitConfig] = js.undefined
     ): DescribeCodeRepositoryOutput = {
       val __obj = js.Dynamic.literal(
-        "CodeRepositoryArn"  -> CodeRepositoryArn.asInstanceOf[js.Any],
+        "CodeRepositoryArn" -> CodeRepositoryArn.asInstanceOf[js.Any],
         "CodeRepositoryName" -> CodeRepositoryName.asInstanceOf[js.Any],
-        "CreationTime"       -> CreationTime.asInstanceOf[js.Any],
-        "LastModifiedTime"   -> LastModifiedTime.asInstanceOf[js.Any]
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any]
       )
 
       GitConfig.foreach(__v => __obj.updateDynamic("GitConfig")(__v.asInstanceOf[js.Any]))
@@ -4748,17 +4756,17 @@ package sagemaker {
         CompilationStartTime: js.UndefOr[Timestamp] = js.undefined
     ): DescribeCompilationJobResponse = {
       val __obj = js.Dynamic.literal(
-        "CompilationJobArn"    -> CompilationJobArn.asInstanceOf[js.Any],
-        "CompilationJobName"   -> CompilationJobName.asInstanceOf[js.Any],
+        "CompilationJobArn" -> CompilationJobArn.asInstanceOf[js.Any],
+        "CompilationJobName" -> CompilationJobName.asInstanceOf[js.Any],
         "CompilationJobStatus" -> CompilationJobStatus.asInstanceOf[js.Any],
-        "CreationTime"         -> CreationTime.asInstanceOf[js.Any],
-        "FailureReason"        -> FailureReason.asInstanceOf[js.Any],
-        "InputConfig"          -> InputConfig.asInstanceOf[js.Any],
-        "LastModifiedTime"     -> LastModifiedTime.asInstanceOf[js.Any],
-        "ModelArtifacts"       -> ModelArtifacts.asInstanceOf[js.Any],
-        "OutputConfig"         -> OutputConfig.asInstanceOf[js.Any],
-        "RoleArn"              -> RoleArn.asInstanceOf[js.Any],
-        "StoppingCondition"    -> StoppingCondition.asInstanceOf[js.Any]
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "FailureReason" -> FailureReason.asInstanceOf[js.Any],
+        "InputConfig" -> InputConfig.asInstanceOf[js.Any],
+        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any],
+        "ModelArtifacts" -> ModelArtifacts.asInstanceOf[js.Any],
+        "OutputConfig" -> OutputConfig.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
+        "StoppingCondition" -> StoppingCondition.asInstanceOf[js.Any]
       )
 
       CompilationEndTime.foreach(__v => __obj.updateDynamic("CompilationEndTime")(__v.asInstanceOf[js.Any]))
@@ -4886,8 +4894,8 @@ package sagemaker {
         KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
     ): DescribeEndpointConfigOutput = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"       -> CreationTime.asInstanceOf[js.Any],
-        "EndpointConfigArn"  -> EndpointConfigArn.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "EndpointConfigArn" -> EndpointConfigArn.asInstanceOf[js.Any],
         "EndpointConfigName" -> EndpointConfigName.asInstanceOf[js.Any],
         "ProductionVariants" -> ProductionVariants.asInstanceOf[js.Any]
       )
@@ -4943,12 +4951,12 @@ package sagemaker {
         ProductionVariants: js.UndefOr[ProductionVariantSummaryList] = js.undefined
     ): DescribeEndpointOutput = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"       -> CreationTime.asInstanceOf[js.Any],
-        "EndpointArn"        -> EndpointArn.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any],
         "EndpointConfigName" -> EndpointConfigName.asInstanceOf[js.Any],
-        "EndpointName"       -> EndpointName.asInstanceOf[js.Any],
-        "EndpointStatus"     -> EndpointStatus.asInstanceOf[js.Any],
-        "LastModifiedTime"   -> LastModifiedTime.asInstanceOf[js.Any]
+        "EndpointName" -> EndpointName.asInstanceOf[js.Any],
+        "EndpointStatus" -> EndpointStatus.asInstanceOf[js.Any],
+        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any]
       )
 
       DataCaptureConfig.foreach(__v => __obj.updateDynamic("DataCaptureConfig")(__v.asInstanceOf[js.Any]))
@@ -5045,6 +5053,7 @@ package sagemaker {
     var RoleArn: RoleArn
     var FailureReason: js.UndefOr[FailureReason]
     var HumanLoopActivationConfig: js.UndefOr[HumanLoopActivationConfig]
+    var HumanLoopRequestSource: js.UndefOr[HumanLoopRequestSource]
   }
 
   object DescribeFlowDefinitionResponse {
@@ -5058,22 +5067,24 @@ package sagemaker {
         OutputConfig: FlowDefinitionOutputConfig,
         RoleArn: RoleArn,
         FailureReason: js.UndefOr[FailureReason] = js.undefined,
-        HumanLoopActivationConfig: js.UndefOr[HumanLoopActivationConfig] = js.undefined
+        HumanLoopActivationConfig: js.UndefOr[HumanLoopActivationConfig] = js.undefined,
+        HumanLoopRequestSource: js.UndefOr[HumanLoopRequestSource] = js.undefined
     ): DescribeFlowDefinitionResponse = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"         -> CreationTime.asInstanceOf[js.Any],
-        "FlowDefinitionArn"    -> FlowDefinitionArn.asInstanceOf[js.Any],
-        "FlowDefinitionName"   -> FlowDefinitionName.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "FlowDefinitionArn" -> FlowDefinitionArn.asInstanceOf[js.Any],
+        "FlowDefinitionName" -> FlowDefinitionName.asInstanceOf[js.Any],
         "FlowDefinitionStatus" -> FlowDefinitionStatus.asInstanceOf[js.Any],
-        "HumanLoopConfig"      -> HumanLoopConfig.asInstanceOf[js.Any],
-        "OutputConfig"         -> OutputConfig.asInstanceOf[js.Any],
-        "RoleArn"              -> RoleArn.asInstanceOf[js.Any]
+        "HumanLoopConfig" -> HumanLoopConfig.asInstanceOf[js.Any],
+        "OutputConfig" -> OutputConfig.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
       HumanLoopActivationConfig.foreach(__v =>
         __obj.updateDynamic("HumanLoopActivationConfig")(__v.asInstanceOf[js.Any])
       )
+      HumanLoopRequestSource.foreach(__v => __obj.updateDynamic("HumanLoopRequestSource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeFlowDefinitionResponse]
     }
   }
@@ -5113,10 +5124,10 @@ package sagemaker {
         UiTemplate: UiTemplateInfo
     ): DescribeHumanTaskUiResponse = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"    -> CreationTime.asInstanceOf[js.Any],
-        "HumanTaskUiArn"  -> HumanTaskUiArn.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "HumanTaskUiArn" -> HumanTaskUiArn.asInstanceOf[js.Any],
         "HumanTaskUiName" -> HumanTaskUiName.asInstanceOf[js.Any],
-        "UiTemplate"      -> UiTemplate.asInstanceOf[js.Any]
+        "UiTemplate" -> UiTemplate.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeHumanTaskUiResponse]
@@ -5180,13 +5191,13 @@ package sagemaker {
         WarmStartConfig: js.UndefOr[HyperParameterTuningJobWarmStartConfig] = js.undefined
     ): DescribeHyperParameterTuningJobResponse = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"                  -> CreationTime.asInstanceOf[js.Any],
-        "HyperParameterTuningJobArn"    -> HyperParameterTuningJobArn.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "HyperParameterTuningJobArn" -> HyperParameterTuningJobArn.asInstanceOf[js.Any],
         "HyperParameterTuningJobConfig" -> HyperParameterTuningJobConfig.asInstanceOf[js.Any],
-        "HyperParameterTuningJobName"   -> HyperParameterTuningJobName.asInstanceOf[js.Any],
+        "HyperParameterTuningJobName" -> HyperParameterTuningJobName.asInstanceOf[js.Any],
         "HyperParameterTuningJobStatus" -> HyperParameterTuningJobStatus.asInstanceOf[js.Any],
-        "ObjectiveStatusCounters"       -> ObjectiveStatusCounters.asInstanceOf[js.Any],
-        "TrainingJobStatusCounters"     -> TrainingJobStatusCounters.asInstanceOf[js.Any]
+        "ObjectiveStatusCounters" -> ObjectiveStatusCounters.asInstanceOf[js.Any],
+        "TrainingJobStatusCounters" -> TrainingJobStatusCounters.asInstanceOf[js.Any]
       )
 
       BestTrainingJob.foreach(__v => __obj.updateDynamic("BestTrainingJob")(__v.asInstanceOf[js.Any]))
@@ -5266,17 +5277,17 @@ package sagemaker {
         Tags: js.UndefOr[TagList] = js.undefined
     ): DescribeLabelingJobResponse = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"      -> CreationTime.asInstanceOf[js.Any],
-        "HumanTaskConfig"   -> HumanTaskConfig.asInstanceOf[js.Any],
-        "InputConfig"       -> InputConfig.asInstanceOf[js.Any],
-        "JobReferenceCode"  -> JobReferenceCode.asInstanceOf[js.Any],
-        "LabelCounters"     -> LabelCounters.asInstanceOf[js.Any],
-        "LabelingJobArn"    -> LabelingJobArn.asInstanceOf[js.Any],
-        "LabelingJobName"   -> LabelingJobName.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "HumanTaskConfig" -> HumanTaskConfig.asInstanceOf[js.Any],
+        "InputConfig" -> InputConfig.asInstanceOf[js.Any],
+        "JobReferenceCode" -> JobReferenceCode.asInstanceOf[js.Any],
+        "LabelCounters" -> LabelCounters.asInstanceOf[js.Any],
+        "LabelingJobArn" -> LabelingJobArn.asInstanceOf[js.Any],
+        "LabelingJobName" -> LabelingJobName.asInstanceOf[js.Any],
         "LabelingJobStatus" -> LabelingJobStatus.asInstanceOf[js.Any],
-        "LastModifiedTime"  -> LastModifiedTime.asInstanceOf[js.Any],
-        "OutputConfig"      -> OutputConfig.asInstanceOf[js.Any],
-        "RoleArn"           -> RoleArn.asInstanceOf[js.Any]
+        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any],
+        "OutputConfig" -> OutputConfig.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
@@ -5335,10 +5346,10 @@ package sagemaker {
         VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): DescribeModelOutput = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"     -> CreationTime.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
         "ExecutionRoleArn" -> ExecutionRoleArn.asInstanceOf[js.Any],
-        "ModelArn"         -> ModelArn.asInstanceOf[js.Any],
-        "ModelName"        -> ModelName.asInstanceOf[js.Any]
+        "ModelArn" -> ModelArn.asInstanceOf[js.Any],
+        "ModelName" -> ModelName.asInstanceOf[js.Any]
       )
 
       Containers.foreach(__v => __obj.updateDynamic("Containers")(__v.asInstanceOf[js.Any]))
@@ -5396,10 +5407,10 @@ package sagemaker {
         ValidationSpecification: js.UndefOr[ModelPackageValidationSpecification] = js.undefined
     ): DescribeModelPackageOutput = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"              -> CreationTime.asInstanceOf[js.Any],
-        "ModelPackageArn"           -> ModelPackageArn.asInstanceOf[js.Any],
-        "ModelPackageName"          -> ModelPackageName.asInstanceOf[js.Any],
-        "ModelPackageStatus"        -> ModelPackageStatus.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "ModelPackageArn" -> ModelPackageArn.asInstanceOf[js.Any],
+        "ModelPackageName" -> ModelPackageName.asInstanceOf[js.Any],
+        "ModelPackageStatus" -> ModelPackageStatus.asInstanceOf[js.Any],
         "ModelPackageStatusDetails" -> ModelPackageStatusDetails.asInstanceOf[js.Any]
       )
 
@@ -5459,11 +5470,11 @@ package sagemaker {
         LastMonitoringExecutionSummary: js.UndefOr[MonitoringExecutionSummary] = js.undefined
     ): DescribeMonitoringScheduleResponse = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"             -> CreationTime.asInstanceOf[js.Any],
-        "LastModifiedTime"         -> LastModifiedTime.asInstanceOf[js.Any],
-        "MonitoringScheduleArn"    -> MonitoringScheduleArn.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any],
+        "MonitoringScheduleArn" -> MonitoringScheduleArn.asInstanceOf[js.Any],
         "MonitoringScheduleConfig" -> MonitoringScheduleConfig.asInstanceOf[js.Any],
-        "MonitoringScheduleName"   -> MonitoringScheduleName.asInstanceOf[js.Any],
+        "MonitoringScheduleName" -> MonitoringScheduleName.asInstanceOf[js.Any],
         "MonitoringScheduleStatus" -> MonitoringScheduleStatus.asInstanceOf[js.Any]
       )
 
@@ -5693,10 +5704,10 @@ package sagemaker {
         TrainingJobArn: js.UndefOr[TrainingJobArn] = js.undefined
     ): DescribeProcessingJobResponse = {
       val __obj = js.Dynamic.literal(
-        "AppSpecification"    -> AppSpecification.asInstanceOf[js.Any],
-        "CreationTime"        -> CreationTime.asInstanceOf[js.Any],
-        "ProcessingJobArn"    -> ProcessingJobArn.asInstanceOf[js.Any],
-        "ProcessingJobName"   -> ProcessingJobName.asInstanceOf[js.Any],
+        "AppSpecification" -> AppSpecification.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "ProcessingJobArn" -> ProcessingJobArn.asInstanceOf[js.Any],
+        "ProcessingJobName" -> ProcessingJobName.asInstanceOf[js.Any],
         "ProcessingJobStatus" -> ProcessingJobStatus.asInstanceOf[js.Any],
         "ProcessingResources" -> ProcessingResources.asInstanceOf[js.Any]
       )
@@ -5852,14 +5863,14 @@ package sagemaker {
     ): DescribeTrainingJobResponse = {
       val __obj = js.Dynamic.literal(
         "AlgorithmSpecification" -> AlgorithmSpecification.asInstanceOf[js.Any],
-        "CreationTime"           -> CreationTime.asInstanceOf[js.Any],
-        "ModelArtifacts"         -> ModelArtifacts.asInstanceOf[js.Any],
-        "ResourceConfig"         -> ResourceConfig.asInstanceOf[js.Any],
-        "SecondaryStatus"        -> SecondaryStatus.asInstanceOf[js.Any],
-        "StoppingCondition"      -> StoppingCondition.asInstanceOf[js.Any],
-        "TrainingJobArn"         -> TrainingJobArn.asInstanceOf[js.Any],
-        "TrainingJobName"        -> TrainingJobName.asInstanceOf[js.Any],
-        "TrainingJobStatus"      -> TrainingJobStatus.asInstanceOf[js.Any]
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "ModelArtifacts" -> ModelArtifacts.asInstanceOf[js.Any],
+        "ResourceConfig" -> ResourceConfig.asInstanceOf[js.Any],
+        "SecondaryStatus" -> SecondaryStatus.asInstanceOf[js.Any],
+        "StoppingCondition" -> StoppingCondition.asInstanceOf[js.Any],
+        "TrainingJobArn" -> TrainingJobArn.asInstanceOf[js.Any],
+        "TrainingJobName" -> TrainingJobName.asInstanceOf[js.Any],
+        "TrainingJobStatus" -> TrainingJobStatus.asInstanceOf[js.Any]
       )
 
       AutoMLJobArn.foreach(__v => __obj.updateDynamic("AutoMLJobArn")(__v.asInstanceOf[js.Any]))
@@ -5935,6 +5946,7 @@ package sagemaker {
     var LabelingJobArn: js.UndefOr[LabelingJobArn]
     var MaxConcurrentTransforms: js.UndefOr[MaxConcurrentTransforms]
     var MaxPayloadInMB: js.UndefOr[MaxPayloadInMB]
+    var ModelClientConfig: js.UndefOr[ModelClientConfig]
     var TransformEndTime: js.UndefOr[Timestamp]
     var TransformOutput: js.UndefOr[TransformOutput]
     var TransformStartTime: js.UndefOr[Timestamp]
@@ -5959,16 +5971,17 @@ package sagemaker {
         LabelingJobArn: js.UndefOr[LabelingJobArn] = js.undefined,
         MaxConcurrentTransforms: js.UndefOr[MaxConcurrentTransforms] = js.undefined,
         MaxPayloadInMB: js.UndefOr[MaxPayloadInMB] = js.undefined,
+        ModelClientConfig: js.UndefOr[ModelClientConfig] = js.undefined,
         TransformEndTime: js.UndefOr[Timestamp] = js.undefined,
         TransformOutput: js.UndefOr[TransformOutput] = js.undefined,
         TransformStartTime: js.UndefOr[Timestamp] = js.undefined
     ): DescribeTransformJobResponse = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"       -> CreationTime.asInstanceOf[js.Any],
-        "ModelName"          -> ModelName.asInstanceOf[js.Any],
-        "TransformInput"     -> TransformInput.asInstanceOf[js.Any],
-        "TransformJobArn"    -> TransformJobArn.asInstanceOf[js.Any],
-        "TransformJobName"   -> TransformJobName.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "ModelName" -> ModelName.asInstanceOf[js.Any],
+        "TransformInput" -> TransformInput.asInstanceOf[js.Any],
+        "TransformJobArn" -> TransformJobArn.asInstanceOf[js.Any],
+        "TransformJobName" -> TransformJobName.asInstanceOf[js.Any],
         "TransformJobStatus" -> TransformJobStatus.asInstanceOf[js.Any],
         "TransformResources" -> TransformResources.asInstanceOf[js.Any]
       )
@@ -5982,6 +5995,7 @@ package sagemaker {
       LabelingJobArn.foreach(__v => __obj.updateDynamic("LabelingJobArn")(__v.asInstanceOf[js.Any]))
       MaxConcurrentTransforms.foreach(__v => __obj.updateDynamic("MaxConcurrentTransforms")(__v.asInstanceOf[js.Any]))
       MaxPayloadInMB.foreach(__v => __obj.updateDynamic("MaxPayloadInMB")(__v.asInstanceOf[js.Any]))
+      ModelClientConfig.foreach(__v => __obj.updateDynamic("ModelClientConfig")(__v.asInstanceOf[js.Any]))
       TransformEndTime.foreach(__v => __obj.updateDynamic("TransformEndTime")(__v.asInstanceOf[js.Any]))
       TransformOutput.foreach(__v => __obj.updateDynamic("TransformOutput")(__v.asInstanceOf[js.Any]))
       TransformStartTime.foreach(__v => __obj.updateDynamic("TransformStartTime")(__v.asInstanceOf[js.Any]))
@@ -6136,7 +6150,7 @@ package sagemaker {
         UserProfileName: UserProfileName
     ): DescribeUserProfileRequest = {
       val __obj = js.Dynamic.literal(
-        "DomainId"        -> DomainId.asInstanceOf[js.Any],
+        "DomainId" -> DomainId.asInstanceOf[js.Any],
         "UserProfileName" -> UserProfileName.asInstanceOf[js.Any]
       )
 
@@ -6296,8 +6310,8 @@ package sagemaker {
   object DetailedAlgorithmStatus extends js.Object {
     val NotStarted = "NotStarted".asInstanceOf[DetailedAlgorithmStatus]
     val InProgress = "InProgress".asInstanceOf[DetailedAlgorithmStatus]
-    val Completed  = "Completed".asInstanceOf[DetailedAlgorithmStatus]
-    val Failed     = "Failed".asInstanceOf[DetailedAlgorithmStatus]
+    val Completed = "Completed".asInstanceOf[DetailedAlgorithmStatus]
+    val Failed = "Failed".asInstanceOf[DetailedAlgorithmStatus]
 
     val values = js.Object.freeze(js.Array(NotStarted, InProgress, Completed, Failed))
   }
@@ -6307,8 +6321,8 @@ package sagemaker {
   object DetailedModelPackageStatus extends js.Object {
     val NotStarted = "NotStarted".asInstanceOf[DetailedModelPackageStatus]
     val InProgress = "InProgress".asInstanceOf[DetailedModelPackageStatus]
-    val Completed  = "Completed".asInstanceOf[DetailedModelPackageStatus]
-    val Failed     = "Failed".asInstanceOf[DetailedModelPackageStatus]
+    val Completed = "Completed".asInstanceOf[DetailedModelPackageStatus]
+    val Failed = "Failed".asInstanceOf[DetailedModelPackageStatus]
 
     val values = js.Object.freeze(js.Array(NotStarted, InProgress, Completed, Failed))
   }
@@ -6316,7 +6330,7 @@ package sagemaker {
   @js.native
   sealed trait DirectInternetAccess extends js.Any
   object DirectInternetAccess extends js.Object {
-    val Enabled  = "Enabled".asInstanceOf[DirectInternetAccess]
+    val Enabled = "Enabled".asInstanceOf[DirectInternetAccess]
     val Disabled = "Disabled".asInstanceOf[DirectInternetAccess]
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
@@ -6336,7 +6350,7 @@ package sagemaker {
     ): DisassociateTrialComponentRequest = {
       val __obj = js.Dynamic.literal(
         "TrialComponentName" -> TrialComponentName.asInstanceOf[js.Any],
-        "TrialName"          -> TrialName.asInstanceOf[js.Any]
+        "TrialName" -> TrialName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DisassociateTrialComponentRequest]
@@ -6402,10 +6416,10 @@ package sagemaker {
   @js.native
   sealed trait DomainStatus extends js.Any
   object DomainStatus extends js.Object {
-    val Deleting  = "Deleting".asInstanceOf[DomainStatus]
-    val Failed    = "Failed".asInstanceOf[DomainStatus]
+    val Deleting = "Deleting".asInstanceOf[DomainStatus]
+    val Failed = "Failed".asInstanceOf[DomainStatus]
     val InService = "InService".asInstanceOf[DomainStatus]
-    val Pending   = "Pending".asInstanceOf[DomainStatus]
+    val Pending = "Pending".asInstanceOf[DomainStatus]
 
     val values = js.Object.freeze(js.Array(Deleting, Failed, InService, Pending))
   }
@@ -6413,7 +6427,7 @@ package sagemaker {
   @js.native
   sealed trait EndpointConfigSortKey extends js.Any
   object EndpointConfigSortKey extends js.Object {
-    val Name         = "Name".asInstanceOf[EndpointConfigSortKey]
+    val Name = "Name".asInstanceOf[EndpointConfigSortKey]
     val CreationTime = "CreationTime".asInstanceOf[EndpointConfigSortKey]
 
     val values = js.Object.freeze(js.Array(Name, CreationTime))
@@ -6437,8 +6451,8 @@ package sagemaker {
         EndpointConfigName: EndpointConfigName
     ): EndpointConfigSummary = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"       -> CreationTime.asInstanceOf[js.Any],
-        "EndpointConfigArn"  -> EndpointConfigArn.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "EndpointConfigArn" -> EndpointConfigArn.asInstanceOf[js.Any],
         "EndpointConfigName" -> EndpointConfigName.asInstanceOf[js.Any]
       )
 
@@ -6467,7 +6481,7 @@ package sagemaker {
     ): EndpointInput = {
       val __obj = js.Dynamic.literal(
         "EndpointName" -> EndpointName.asInstanceOf[js.Any],
-        "LocalPath"    -> LocalPath.asInstanceOf[js.Any]
+        "LocalPath" -> LocalPath.asInstanceOf[js.Any]
       )
 
       S3DataDistributionType.foreach(__v => __obj.updateDynamic("S3DataDistributionType")(__v.asInstanceOf[js.Any]))
@@ -6479,9 +6493,9 @@ package sagemaker {
   @js.native
   sealed trait EndpointSortKey extends js.Any
   object EndpointSortKey extends js.Object {
-    val Name         = "Name".asInstanceOf[EndpointSortKey]
+    val Name = "Name".asInstanceOf[EndpointSortKey]
     val CreationTime = "CreationTime".asInstanceOf[EndpointSortKey]
-    val Status       = "Status".asInstanceOf[EndpointSortKey]
+    val Status = "Status".asInstanceOf[EndpointSortKey]
 
     val values = js.Object.freeze(js.Array(Name, CreationTime, Status))
   }
@@ -6489,14 +6503,14 @@ package sagemaker {
   @js.native
   sealed trait EndpointStatus extends js.Any
   object EndpointStatus extends js.Object {
-    val OutOfService   = "OutOfService".asInstanceOf[EndpointStatus]
-    val Creating       = "Creating".asInstanceOf[EndpointStatus]
-    val Updating       = "Updating".asInstanceOf[EndpointStatus]
+    val OutOfService = "OutOfService".asInstanceOf[EndpointStatus]
+    val Creating = "Creating".asInstanceOf[EndpointStatus]
+    val Updating = "Updating".asInstanceOf[EndpointStatus]
     val SystemUpdating = "SystemUpdating".asInstanceOf[EndpointStatus]
-    val RollingBack    = "RollingBack".asInstanceOf[EndpointStatus]
-    val InService      = "InService".asInstanceOf[EndpointStatus]
-    val Deleting       = "Deleting".asInstanceOf[EndpointStatus]
-    val Failed         = "Failed".asInstanceOf[EndpointStatus]
+    val RollingBack = "RollingBack".asInstanceOf[EndpointStatus]
+    val InService = "InService".asInstanceOf[EndpointStatus]
+    val Deleting = "Deleting".asInstanceOf[EndpointStatus]
+    val Failed = "Failed".asInstanceOf[EndpointStatus]
 
     val values = js.Object.freeze(
       js.Array(OutOfService, Creating, Updating, SystemUpdating, RollingBack, InService, Deleting, Failed)
@@ -6525,10 +6539,10 @@ package sagemaker {
         LastModifiedTime: Timestamp
     ): EndpointSummary = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"     -> CreationTime.asInstanceOf[js.Any],
-        "EndpointArn"      -> EndpointArn.asInstanceOf[js.Any],
-        "EndpointName"     -> EndpointName.asInstanceOf[js.Any],
-        "EndpointStatus"   -> EndpointStatus.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any],
+        "EndpointName" -> EndpointName.asInstanceOf[js.Any],
+        "EndpointStatus" -> EndpointStatus.asInstanceOf[js.Any],
         "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any]
       )
 
@@ -6539,20 +6553,20 @@ package sagemaker {
   @js.native
   sealed trait ExecutionStatus extends js.Any
   object ExecutionStatus extends js.Object {
-    val Pending                 = "Pending".asInstanceOf[ExecutionStatus]
-    val Completed               = "Completed".asInstanceOf[ExecutionStatus]
+    val Pending = "Pending".asInstanceOf[ExecutionStatus]
+    val Completed = "Completed".asInstanceOf[ExecutionStatus]
     val CompletedWithViolations = "CompletedWithViolations".asInstanceOf[ExecutionStatus]
-    val InProgress              = "InProgress".asInstanceOf[ExecutionStatus]
-    val Failed                  = "Failed".asInstanceOf[ExecutionStatus]
-    val Stopping                = "Stopping".asInstanceOf[ExecutionStatus]
-    val Stopped                 = "Stopped".asInstanceOf[ExecutionStatus]
+    val InProgress = "InProgress".asInstanceOf[ExecutionStatus]
+    val Failed = "Failed".asInstanceOf[ExecutionStatus]
+    val Stopping = "Stopping".asInstanceOf[ExecutionStatus]
+    val Stopped = "Stopped".asInstanceOf[ExecutionStatus]
 
     val values =
       js.Object.freeze(js.Array(Pending, Completed, CompletedWithViolations, InProgress, Failed, Stopping, Stopped))
   }
 
   /**
-    * A summary of the properties of an experiment as returned by the <a>Search</a> API.
+    * The properties of an experiment as returned by the <a>Search</a> API.
     */
   @js.native
   trait Experiment extends js.Object {
@@ -6602,17 +6616,17 @@ package sagemaker {
     */
   @js.native
   trait ExperimentConfig extends js.Object {
-    var ExperimentName: js.UndefOr[ExperimentConfigName]
-    var TrialComponentDisplayName: js.UndefOr[ExperimentConfigName]
-    var TrialName: js.UndefOr[ExperimentConfigName]
+    var ExperimentName: js.UndefOr[ExperimentEntityName]
+    var TrialComponentDisplayName: js.UndefOr[ExperimentEntityName]
+    var TrialName: js.UndefOr[ExperimentEntityName]
   }
 
   object ExperimentConfig {
     @inline
     def apply(
-        ExperimentName: js.UndefOr[ExperimentConfigName] = js.undefined,
-        TrialComponentDisplayName: js.UndefOr[ExperimentConfigName] = js.undefined,
-        TrialName: js.UndefOr[ExperimentConfigName] = js.undefined
+        ExperimentName: js.UndefOr[ExperimentEntityName] = js.undefined,
+        TrialComponentDisplayName: js.UndefOr[ExperimentEntityName] = js.undefined,
+        TrialName: js.UndefOr[ExperimentEntityName] = js.undefined
     ): ExperimentConfig = {
       val __obj = js.Dynamic.literal()
       ExperimentName.foreach(__v => __obj.updateDynamic("ExperimentName")(__v.asInstanceOf[js.Any]))
@@ -6711,10 +6725,10 @@ package sagemaker {
         FileSystemType: FileSystemType
     ): FileSystemDataSource = {
       val __obj = js.Dynamic.literal(
-        "DirectoryPath"        -> DirectoryPath.asInstanceOf[js.Any],
+        "DirectoryPath" -> DirectoryPath.asInstanceOf[js.Any],
         "FileSystemAccessMode" -> FileSystemAccessMode.asInstanceOf[js.Any],
-        "FileSystemId"         -> FileSystemId.asInstanceOf[js.Any],
-        "FileSystemType"       -> FileSystemType.asInstanceOf[js.Any]
+        "FileSystemId" -> FileSystemId.asInstanceOf[js.Any],
+        "FileSystemType" -> FileSystemType.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[FileSystemDataSource]
@@ -6724,30 +6738,29 @@ package sagemaker {
   @js.native
   sealed trait FileSystemType extends js.Any
   object FileSystemType extends js.Object {
-    val EFS       = "EFS".asInstanceOf[FileSystemType]
+    val EFS = "EFS".asInstanceOf[FileSystemType]
     val FSxLustre = "FSxLustre".asInstanceOf[FileSystemType]
 
     val values = js.Object.freeze(js.Array(EFS, FSxLustre))
   }
 
   /**
-    * A conditional statement for a search expression that includes a resource property, a Boolean operator, and a value.
-    *  If you don't specify an <code>Operator</code> and a <code>Value</code>, the filter searches for only the specified property. For example, defining a <code>Filter</code> for the <code>FailureReason</code> for the <code>TrainingJob</code> <code>Resource</code> searches for training job objects that have a value in the <code>FailureReason</code> field.
-    *  If you specify a <code>Value</code>, but not an <code>Operator</code>, Amazon SageMaker uses the equals operator as the default.
+    * A conditional statement for a search expression that includes a resource property, a Boolean operator, and a value. Resources that match the statement are returned in the results from the <a>Search</a> API.
+    *  If you specify a <code>Value</code>, but not an <code>Operator</code>, Amazon SageMaker uses the equals operator.
     *  In search, there are several property types:
     *  <dl> <dt>Metrics</dt> <dd> To define a metric filter, enter a value using the form <code>"Metrics.&lt;name&gt;"</code>, where <code>&lt;name&gt;</code> is a metric name. For example, the following filter searches for training jobs with an <code>"accuracy"</code> metric greater than <code>"0.9"</code>:
     *  <code>{</code>
     *  <code>"Name": "Metrics.accuracy",</code>
-    *  <code>"Operator": "GREATER_THAN",</code>
+    *  <code>"Operator": "GreaterThan",</code>
     *  <code>"Value": "0.9"</code>
     *  <code>}</code>
     *  </dd> <dt>HyperParameters</dt> <dd> To define a hyperparameter filter, enter a value with the form <code>"HyperParameters.&lt;name&gt;"</code>. Decimal hyperparameter values are treated as a decimal in a comparison if the specified <code>Value</code> is also a decimal value. If the specified <code>Value</code> is an integer, the decimal hyperparameter values are treated as integers. For example, the following filter is satisfied by training jobs with a <code>"learning_rate"</code> hyperparameter that is less than <code>"0.5"</code>:
     *  <code> {</code>
     *  <code> "Name": "HyperParameters.learning_rate",</code>
-    *  <code> "Operator": "LESS_THAN",</code>
+    *  <code> "Operator": "LessThan",</code>
     *  <code> "Value": "0.5"</code>
     *  <code> }</code>
-    *  </dd> <dt>Tags</dt> <dd> To define a tag filter, enter a value with the form <code>"Tags.&lt;key&gt;"</code>.
+    *  </dd> <dt>Tags</dt> <dd> To define a tag filter, enter a value with the form <code>Tags.&lt;key&gt;</code>.
     *  </dd> </dl>
     */
   @js.native
@@ -6793,7 +6806,7 @@ package sagemaker {
     ): FinalAutoMLJobObjectiveMetric = {
       val __obj = js.Dynamic.literal(
         "MetricName" -> MetricName.asInstanceOf[js.Any],
-        "Value"      -> Value.asInstanceOf[js.Any]
+        "Value" -> Value.asInstanceOf[js.Any]
       )
 
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
@@ -6820,7 +6833,7 @@ package sagemaker {
     ): FinalHyperParameterTuningJobObjectiveMetric = {
       val __obj = js.Dynamic.literal(
         "MetricName" -> MetricName.asInstanceOf[js.Any],
-        "Value"      -> Value.asInstanceOf[js.Any]
+        "Value" -> Value.asInstanceOf[js.Any]
       )
 
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
@@ -6856,12 +6869,11 @@ package sagemaker {
   sealed trait FlowDefinitionStatus extends js.Any
   object FlowDefinitionStatus extends js.Object {
     val Initializing = "Initializing".asInstanceOf[FlowDefinitionStatus]
-    val Active       = "Active".asInstanceOf[FlowDefinitionStatus]
-    val Failed       = "Failed".asInstanceOf[FlowDefinitionStatus]
-    val Deleting     = "Deleting".asInstanceOf[FlowDefinitionStatus]
-    val Deleted      = "Deleted".asInstanceOf[FlowDefinitionStatus]
+    val Active = "Active".asInstanceOf[FlowDefinitionStatus]
+    val Failed = "Failed".asInstanceOf[FlowDefinitionStatus]
+    val Deleting = "Deleting".asInstanceOf[FlowDefinitionStatus]
 
-    val values = js.Object.freeze(js.Array(Initializing, Active, Failed, Deleting, Deleted))
+    val values = js.Object.freeze(js.Array(Initializing, Active, Failed, Deleting))
   }
 
   /**
@@ -6886,9 +6898,9 @@ package sagemaker {
         FailureReason: js.UndefOr[FailureReason] = js.undefined
     ): FlowDefinitionSummary = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"         -> CreationTime.asInstanceOf[js.Any],
-        "FlowDefinitionArn"    -> FlowDefinitionArn.asInstanceOf[js.Any],
-        "FlowDefinitionName"   -> FlowDefinitionName.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "FlowDefinitionArn" -> FlowDefinitionArn.asInstanceOf[js.Any],
+        "FlowDefinitionName" -> FlowDefinitionName.asInstanceOf[js.Any],
         "FlowDefinitionStatus" -> FlowDefinitionStatus.asInstanceOf[js.Any]
       )
 
@@ -6901,13 +6913,14 @@ package sagemaker {
   sealed trait Framework extends js.Any
   object Framework extends js.Object {
     val TENSORFLOW = "TENSORFLOW".asInstanceOf[Framework]
-    val KERAS      = "KERAS".asInstanceOf[Framework]
-    val MXNET      = "MXNET".asInstanceOf[Framework]
-    val ONNX       = "ONNX".asInstanceOf[Framework]
-    val PYTORCH    = "PYTORCH".asInstanceOf[Framework]
-    val XGBOOST    = "XGBOOST".asInstanceOf[Framework]
+    val KERAS = "KERAS".asInstanceOf[Framework]
+    val MXNET = "MXNET".asInstanceOf[Framework]
+    val ONNX = "ONNX".asInstanceOf[Framework]
+    val PYTORCH = "PYTORCH".asInstanceOf[Framework]
+    val XGBOOST = "XGBOOST".asInstanceOf[Framework]
+    val TFLITE = "TFLITE".asInstanceOf[Framework]
 
-    val values = js.Object.freeze(js.Array(TENSORFLOW, KERAS, MXNET, ONNX, PYTORCH, XGBOOST))
+    val values = js.Object.freeze(js.Array(TENSORFLOW, KERAS, MXNET, ONNX, PYTORCH, XGBOOST, TFLITE))
   }
 
   @js.native
@@ -6994,7 +7007,7 @@ package sagemaker {
   }
 
   /**
-    * Defines under what conditions SageMaker creates a human loop. Used within .
+    * Defines under what conditions SageMaker creates a human loop. Used within . See for the required format of activation conditions.
     */
   @js.native
   trait HumanLoopActivationConditionsConfig extends js.Object {
@@ -7020,18 +7033,15 @@ package sagemaker {
   @js.native
   trait HumanLoopActivationConfig extends js.Object {
     var HumanLoopActivationConditionsConfig: HumanLoopActivationConditionsConfig
-    var HumanLoopRequestSource: HumanLoopRequestSource
   }
 
   object HumanLoopActivationConfig {
     @inline
     def apply(
-        HumanLoopActivationConditionsConfig: HumanLoopActivationConditionsConfig,
-        HumanLoopRequestSource: HumanLoopRequestSource
+        HumanLoopActivationConditionsConfig: HumanLoopActivationConditionsConfig
     ): HumanLoopActivationConfig = {
       val __obj = js.Dynamic.literal(
-        "HumanLoopActivationConditionsConfig" -> HumanLoopActivationConditionsConfig.asInstanceOf[js.Any],
-        "HumanLoopRequestSource"              -> HumanLoopRequestSource.asInstanceOf[js.Any]
+        "HumanLoopActivationConditionsConfig" -> HumanLoopActivationConditionsConfig.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[HumanLoopActivationConfig]
@@ -7068,11 +7078,11 @@ package sagemaker {
         TaskTimeLimitInSeconds: js.UndefOr[FlowDefinitionTaskTimeLimitInSeconds] = js.undefined
     ): HumanLoopConfig = {
       val __obj = js.Dynamic.literal(
-        "HumanTaskUiArn"  -> HumanTaskUiArn.asInstanceOf[js.Any],
-        "TaskCount"       -> TaskCount.asInstanceOf[js.Any],
+        "HumanTaskUiArn" -> HumanTaskUiArn.asInstanceOf[js.Any],
+        "TaskCount" -> TaskCount.asInstanceOf[js.Any],
         "TaskDescription" -> TaskDescription.asInstanceOf[js.Any],
-        "TaskTitle"       -> TaskTitle.asInstanceOf[js.Any],
-        "WorkteamArn"     -> WorkteamArn.asInstanceOf[js.Any]
+        "TaskTitle" -> TaskTitle.asInstanceOf[js.Any],
+        "WorkteamArn" -> WorkteamArn.asInstanceOf[js.Any]
       )
 
       PublicWorkforceTaskPrice.foreach(__v => __obj.updateDynamic("PublicWorkforceTaskPrice")(__v.asInstanceOf[js.Any]))
@@ -7142,14 +7152,14 @@ package sagemaker {
         TaskKeywords: js.UndefOr[TaskKeywords] = js.undefined
     ): HumanTaskConfig = {
       val __obj = js.Dynamic.literal(
-        "AnnotationConsolidationConfig"     -> AnnotationConsolidationConfig.asInstanceOf[js.Any],
+        "AnnotationConsolidationConfig" -> AnnotationConsolidationConfig.asInstanceOf[js.Any],
         "NumberOfHumanWorkersPerDataObject" -> NumberOfHumanWorkersPerDataObject.asInstanceOf[js.Any],
-        "PreHumanTaskLambdaArn"             -> PreHumanTaskLambdaArn.asInstanceOf[js.Any],
-        "TaskDescription"                   -> TaskDescription.asInstanceOf[js.Any],
-        "TaskTimeLimitInSeconds"            -> TaskTimeLimitInSeconds.asInstanceOf[js.Any],
-        "TaskTitle"                         -> TaskTitle.asInstanceOf[js.Any],
-        "UiConfig"                          -> UiConfig.asInstanceOf[js.Any],
-        "WorkteamArn"                       -> WorkteamArn.asInstanceOf[js.Any]
+        "PreHumanTaskLambdaArn" -> PreHumanTaskLambdaArn.asInstanceOf[js.Any],
+        "TaskDescription" -> TaskDescription.asInstanceOf[js.Any],
+        "TaskTimeLimitInSeconds" -> TaskTimeLimitInSeconds.asInstanceOf[js.Any],
+        "TaskTitle" -> TaskTitle.asInstanceOf[js.Any],
+        "UiConfig" -> UiConfig.asInstanceOf[js.Any],
+        "WorkteamArn" -> WorkteamArn.asInstanceOf[js.Any]
       )
 
       MaxConcurrentTaskCount.foreach(__v => __obj.updateDynamic("MaxConcurrentTaskCount")(__v.asInstanceOf[js.Any]))
@@ -7180,8 +7190,8 @@ package sagemaker {
         HumanTaskUiName: HumanTaskUiName
     ): HumanTaskUiSummary = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"    -> CreationTime.asInstanceOf[js.Any],
-        "HumanTaskUiArn"  -> HumanTaskUiArn.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "HumanTaskUiArn" -> HumanTaskUiArn.asInstanceOf[js.Any],
         "HumanTaskUiName" -> HumanTaskUiName.asInstanceOf[js.Any]
       )
 
@@ -7222,9 +7232,9 @@ package sagemaker {
   @js.native
   sealed trait HyperParameterScalingType extends js.Any
   object HyperParameterScalingType extends js.Object {
-    val Auto               = "Auto".asInstanceOf[HyperParameterScalingType]
-    val Linear             = "Linear".asInstanceOf[HyperParameterScalingType]
-    val Logarithmic        = "Logarithmic".asInstanceOf[HyperParameterScalingType]
+    val Auto = "Auto".asInstanceOf[HyperParameterScalingType]
+    val Linear = "Linear".asInstanceOf[HyperParameterScalingType]
+    val Logarithmic = "Logarithmic".asInstanceOf[HyperParameterScalingType]
     val ReverseLogarithmic = "ReverseLogarithmic".asInstanceOf[HyperParameterScalingType]
 
     val values = js.Object.freeze(js.Array(Auto, Linear, Logarithmic, ReverseLogarithmic))
@@ -7312,10 +7322,10 @@ package sagemaker {
     ): HyperParameterTrainingJobDefinition = {
       val __obj = js.Dynamic.literal(
         "AlgorithmSpecification" -> AlgorithmSpecification.asInstanceOf[js.Any],
-        "OutputDataConfig"       -> OutputDataConfig.asInstanceOf[js.Any],
-        "ResourceConfig"         -> ResourceConfig.asInstanceOf[js.Any],
-        "RoleArn"                -> RoleArn.asInstanceOf[js.Any],
-        "StoppingCondition"      -> StoppingCondition.asInstanceOf[js.Any]
+        "OutputDataConfig" -> OutputDataConfig.asInstanceOf[js.Any],
+        "ResourceConfig" -> ResourceConfig.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
+        "StoppingCondition" -> StoppingCondition.asInstanceOf[js.Any]
       )
 
       CheckpointConfig.foreach(__v => __obj.updateDynamic("CheckpointConfig")(__v.asInstanceOf[js.Any]))
@@ -7373,10 +7383,10 @@ package sagemaker {
         TuningJobName: js.UndefOr[HyperParameterTuningJobName] = js.undefined
     ): HyperParameterTrainingJobSummary = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"         -> CreationTime.asInstanceOf[js.Any],
-        "TrainingJobArn"       -> TrainingJobArn.asInstanceOf[js.Any],
-        "TrainingJobName"      -> TrainingJobName.asInstanceOf[js.Any],
-        "TrainingJobStatus"    -> TrainingJobStatus.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "TrainingJobArn" -> TrainingJobArn.asInstanceOf[js.Any],
+        "TrainingJobName" -> TrainingJobName.asInstanceOf[js.Any],
+        "TrainingJobStatus" -> TrainingJobStatus.asInstanceOf[js.Any],
         "TunedHyperParameters" -> TunedHyperParameters.asInstanceOf[js.Any]
       )
 
@@ -7420,7 +7430,7 @@ package sagemaker {
     ): HyperParameterTuningJobConfig = {
       val __obj = js.Dynamic.literal(
         "ResourceLimits" -> ResourceLimits.asInstanceOf[js.Any],
-        "Strategy"       -> Strategy.asInstanceOf[js.Any]
+        "Strategy" -> Strategy.asInstanceOf[js.Any]
       )
 
       HyperParameterTuningJobObjective.foreach(__v =>
@@ -7454,7 +7464,7 @@ package sagemaker {
     ): HyperParameterTuningJobObjective = {
       val __obj = js.Dynamic.literal(
         "MetricName" -> MetricName.asInstanceOf[js.Any],
-        "Type"       -> Type.asInstanceOf[js.Any]
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[HyperParameterTuningJobObjective]
@@ -7473,8 +7483,8 @@ package sagemaker {
   @js.native
   sealed trait HyperParameterTuningJobSortByOptions extends js.Any
   object HyperParameterTuningJobSortByOptions extends js.Object {
-    val Name         = "Name".asInstanceOf[HyperParameterTuningJobSortByOptions]
-    val Status       = "Status".asInstanceOf[HyperParameterTuningJobSortByOptions]
+    val Name = "Name".asInstanceOf[HyperParameterTuningJobSortByOptions]
+    val Status = "Status".asInstanceOf[HyperParameterTuningJobSortByOptions]
     val CreationTime = "CreationTime".asInstanceOf[HyperParameterTuningJobSortByOptions]
 
     val values = js.Object.freeze(js.Array(Name, Status, CreationTime))
@@ -7483,11 +7493,11 @@ package sagemaker {
   @js.native
   sealed trait HyperParameterTuningJobStatus extends js.Any
   object HyperParameterTuningJobStatus extends js.Object {
-    val Completed  = "Completed".asInstanceOf[HyperParameterTuningJobStatus]
+    val Completed = "Completed".asInstanceOf[HyperParameterTuningJobStatus]
     val InProgress = "InProgress".asInstanceOf[HyperParameterTuningJobStatus]
-    val Failed     = "Failed".asInstanceOf[HyperParameterTuningJobStatus]
-    val Stopped    = "Stopped".asInstanceOf[HyperParameterTuningJobStatus]
-    val Stopping   = "Stopping".asInstanceOf[HyperParameterTuningJobStatus]
+    val Failed = "Failed".asInstanceOf[HyperParameterTuningJobStatus]
+    val Stopped = "Stopped".asInstanceOf[HyperParameterTuningJobStatus]
+    val Stopping = "Stopping".asInstanceOf[HyperParameterTuningJobStatus]
 
     val values = js.Object.freeze(js.Array(Completed, InProgress, Failed, Stopped, Stopping))
   }
@@ -7499,7 +7509,7 @@ package sagemaker {
   sealed trait HyperParameterTuningJobStrategyType extends js.Any
   object HyperParameterTuningJobStrategyType extends js.Object {
     val Bayesian = "Bayesian".asInstanceOf[HyperParameterTuningJobStrategyType]
-    val Random   = "Random".asInstanceOf[HyperParameterTuningJobStrategyType]
+    val Random = "Random".asInstanceOf[HyperParameterTuningJobStrategyType]
 
     val values = js.Object.freeze(js.Array(Bayesian, Random))
   }
@@ -7536,13 +7546,13 @@ package sagemaker {
         ResourceLimits: js.UndefOr[ResourceLimits] = js.undefined
     ): HyperParameterTuningJobSummary = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"                  -> CreationTime.asInstanceOf[js.Any],
-        "HyperParameterTuningJobArn"    -> HyperParameterTuningJobArn.asInstanceOf[js.Any],
-        "HyperParameterTuningJobName"   -> HyperParameterTuningJobName.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "HyperParameterTuningJobArn" -> HyperParameterTuningJobArn.asInstanceOf[js.Any],
+        "HyperParameterTuningJobName" -> HyperParameterTuningJobName.asInstanceOf[js.Any],
         "HyperParameterTuningJobStatus" -> HyperParameterTuningJobStatus.asInstanceOf[js.Any],
-        "ObjectiveStatusCounters"       -> ObjectiveStatusCounters.asInstanceOf[js.Any],
-        "Strategy"                      -> Strategy.asInstanceOf[js.Any],
-        "TrainingJobStatusCounters"     -> TrainingJobStatusCounters.asInstanceOf[js.Any]
+        "ObjectiveStatusCounters" -> ObjectiveStatusCounters.asInstanceOf[js.Any],
+        "Strategy" -> Strategy.asInstanceOf[js.Any],
+        "TrainingJobStatusCounters" -> TrainingJobStatusCounters.asInstanceOf[js.Any]
       )
 
       HyperParameterTuningEndTime.foreach(__v =>
@@ -7574,7 +7584,7 @@ package sagemaker {
     ): HyperParameterTuningJobWarmStartConfig = {
       val __obj = js.Dynamic.literal(
         "ParentHyperParameterTuningJobs" -> ParentHyperParameterTuningJobs.asInstanceOf[js.Any],
-        "WarmStartType"                  -> WarmStartType.asInstanceOf[js.Any]
+        "WarmStartType" -> WarmStartType.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[HyperParameterTuningJobWarmStartConfig]
@@ -7585,7 +7595,7 @@ package sagemaker {
   sealed trait HyperParameterTuningJobWarmStartType extends js.Any
   object HyperParameterTuningJobWarmStartType extends js.Object {
     val IdenticalDataAndAlgorithm = "IdenticalDataAndAlgorithm".asInstanceOf[HyperParameterTuningJobWarmStartType]
-    val TransferLearning          = "TransferLearning".asInstanceOf[HyperParameterTuningJobWarmStartType]
+    val TransferLearning = "TransferLearning".asInstanceOf[HyperParameterTuningJobWarmStartType]
 
     val values = js.Object.freeze(js.Array(IdenticalDataAndAlgorithm, TransferLearning))
   }
@@ -7612,11 +7622,11 @@ package sagemaker {
         SupportedTransformInstanceTypes: TransformInstanceTypes
     ): InferenceSpecification = {
       val __obj = js.Dynamic.literal(
-        "Containers"                              -> Containers.asInstanceOf[js.Any],
-        "SupportedContentTypes"                   -> SupportedContentTypes.asInstanceOf[js.Any],
+        "Containers" -> Containers.asInstanceOf[js.Any],
+        "SupportedContentTypes" -> SupportedContentTypes.asInstanceOf[js.Any],
         "SupportedRealtimeInferenceInstanceTypes" -> SupportedRealtimeInferenceInstanceTypes.asInstanceOf[js.Any],
-        "SupportedResponseMIMETypes"              -> SupportedResponseMIMETypes.asInstanceOf[js.Any],
-        "SupportedTransformInstanceTypes"         -> SupportedTransformInstanceTypes.asInstanceOf[js.Any]
+        "SupportedResponseMIMETypes" -> SupportedResponseMIMETypes.asInstanceOf[js.Any],
+        "SupportedTransformInstanceTypes" -> SupportedTransformInstanceTypes.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[InferenceSpecification]
@@ -7642,8 +7652,8 @@ package sagemaker {
     ): InputConfig = {
       val __obj = js.Dynamic.literal(
         "DataInputConfig" -> DataInputConfig.asInstanceOf[js.Any],
-        "Framework"       -> Framework.asInstanceOf[js.Any],
-        "S3Uri"           -> S3Uri.asInstanceOf[js.Any]
+        "Framework" -> Framework.asInstanceOf[js.Any],
+        "S3Uri" -> S3Uri.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[InputConfig]
@@ -7653,44 +7663,44 @@ package sagemaker {
   @js.native
   sealed trait InstanceType extends js.Any
   object InstanceType extends js.Object {
-    val `ml.t2.medium`    = "ml.t2.medium".asInstanceOf[InstanceType]
-    val `ml.t2.large`     = "ml.t2.large".asInstanceOf[InstanceType]
-    val `ml.t2.xlarge`    = "ml.t2.xlarge".asInstanceOf[InstanceType]
-    val `ml.t2.2xlarge`   = "ml.t2.2xlarge".asInstanceOf[InstanceType]
-    val `ml.t3.medium`    = "ml.t3.medium".asInstanceOf[InstanceType]
-    val `ml.t3.large`     = "ml.t3.large".asInstanceOf[InstanceType]
-    val `ml.t3.xlarge`    = "ml.t3.xlarge".asInstanceOf[InstanceType]
-    val `ml.t3.2xlarge`   = "ml.t3.2xlarge".asInstanceOf[InstanceType]
-    val `ml.m4.xlarge`    = "ml.m4.xlarge".asInstanceOf[InstanceType]
-    val `ml.m4.2xlarge`   = "ml.m4.2xlarge".asInstanceOf[InstanceType]
-    val `ml.m4.4xlarge`   = "ml.m4.4xlarge".asInstanceOf[InstanceType]
-    val `ml.m4.10xlarge`  = "ml.m4.10xlarge".asInstanceOf[InstanceType]
-    val `ml.m4.16xlarge`  = "ml.m4.16xlarge".asInstanceOf[InstanceType]
-    val `ml.m5.xlarge`    = "ml.m5.xlarge".asInstanceOf[InstanceType]
-    val `ml.m5.2xlarge`   = "ml.m5.2xlarge".asInstanceOf[InstanceType]
-    val `ml.m5.4xlarge`   = "ml.m5.4xlarge".asInstanceOf[InstanceType]
-    val `ml.m5.12xlarge`  = "ml.m5.12xlarge".asInstanceOf[InstanceType]
-    val `ml.m5.24xlarge`  = "ml.m5.24xlarge".asInstanceOf[InstanceType]
-    val `ml.c4.xlarge`    = "ml.c4.xlarge".asInstanceOf[InstanceType]
-    val `ml.c4.2xlarge`   = "ml.c4.2xlarge".asInstanceOf[InstanceType]
-    val `ml.c4.4xlarge`   = "ml.c4.4xlarge".asInstanceOf[InstanceType]
-    val `ml.c4.8xlarge`   = "ml.c4.8xlarge".asInstanceOf[InstanceType]
-    val `ml.c5.xlarge`    = "ml.c5.xlarge".asInstanceOf[InstanceType]
-    val `ml.c5.2xlarge`   = "ml.c5.2xlarge".asInstanceOf[InstanceType]
-    val `ml.c5.4xlarge`   = "ml.c5.4xlarge".asInstanceOf[InstanceType]
-    val `ml.c5.9xlarge`   = "ml.c5.9xlarge".asInstanceOf[InstanceType]
-    val `ml.c5.18xlarge`  = "ml.c5.18xlarge".asInstanceOf[InstanceType]
-    val `ml.c5d.xlarge`   = "ml.c5d.xlarge".asInstanceOf[InstanceType]
-    val `ml.c5d.2xlarge`  = "ml.c5d.2xlarge".asInstanceOf[InstanceType]
-    val `ml.c5d.4xlarge`  = "ml.c5d.4xlarge".asInstanceOf[InstanceType]
-    val `ml.c5d.9xlarge`  = "ml.c5d.9xlarge".asInstanceOf[InstanceType]
+    val `ml.t2.medium` = "ml.t2.medium".asInstanceOf[InstanceType]
+    val `ml.t2.large` = "ml.t2.large".asInstanceOf[InstanceType]
+    val `ml.t2.xlarge` = "ml.t2.xlarge".asInstanceOf[InstanceType]
+    val `ml.t2.2xlarge` = "ml.t2.2xlarge".asInstanceOf[InstanceType]
+    val `ml.t3.medium` = "ml.t3.medium".asInstanceOf[InstanceType]
+    val `ml.t3.large` = "ml.t3.large".asInstanceOf[InstanceType]
+    val `ml.t3.xlarge` = "ml.t3.xlarge".asInstanceOf[InstanceType]
+    val `ml.t3.2xlarge` = "ml.t3.2xlarge".asInstanceOf[InstanceType]
+    val `ml.m4.xlarge` = "ml.m4.xlarge".asInstanceOf[InstanceType]
+    val `ml.m4.2xlarge` = "ml.m4.2xlarge".asInstanceOf[InstanceType]
+    val `ml.m4.4xlarge` = "ml.m4.4xlarge".asInstanceOf[InstanceType]
+    val `ml.m4.10xlarge` = "ml.m4.10xlarge".asInstanceOf[InstanceType]
+    val `ml.m4.16xlarge` = "ml.m4.16xlarge".asInstanceOf[InstanceType]
+    val `ml.m5.xlarge` = "ml.m5.xlarge".asInstanceOf[InstanceType]
+    val `ml.m5.2xlarge` = "ml.m5.2xlarge".asInstanceOf[InstanceType]
+    val `ml.m5.4xlarge` = "ml.m5.4xlarge".asInstanceOf[InstanceType]
+    val `ml.m5.12xlarge` = "ml.m5.12xlarge".asInstanceOf[InstanceType]
+    val `ml.m5.24xlarge` = "ml.m5.24xlarge".asInstanceOf[InstanceType]
+    val `ml.c4.xlarge` = "ml.c4.xlarge".asInstanceOf[InstanceType]
+    val `ml.c4.2xlarge` = "ml.c4.2xlarge".asInstanceOf[InstanceType]
+    val `ml.c4.4xlarge` = "ml.c4.4xlarge".asInstanceOf[InstanceType]
+    val `ml.c4.8xlarge` = "ml.c4.8xlarge".asInstanceOf[InstanceType]
+    val `ml.c5.xlarge` = "ml.c5.xlarge".asInstanceOf[InstanceType]
+    val `ml.c5.2xlarge` = "ml.c5.2xlarge".asInstanceOf[InstanceType]
+    val `ml.c5.4xlarge` = "ml.c5.4xlarge".asInstanceOf[InstanceType]
+    val `ml.c5.9xlarge` = "ml.c5.9xlarge".asInstanceOf[InstanceType]
+    val `ml.c5.18xlarge` = "ml.c5.18xlarge".asInstanceOf[InstanceType]
+    val `ml.c5d.xlarge` = "ml.c5d.xlarge".asInstanceOf[InstanceType]
+    val `ml.c5d.2xlarge` = "ml.c5d.2xlarge".asInstanceOf[InstanceType]
+    val `ml.c5d.4xlarge` = "ml.c5d.4xlarge".asInstanceOf[InstanceType]
+    val `ml.c5d.9xlarge` = "ml.c5d.9xlarge".asInstanceOf[InstanceType]
     val `ml.c5d.18xlarge` = "ml.c5d.18xlarge".asInstanceOf[InstanceType]
-    val `ml.p2.xlarge`    = "ml.p2.xlarge".asInstanceOf[InstanceType]
-    val `ml.p2.8xlarge`   = "ml.p2.8xlarge".asInstanceOf[InstanceType]
-    val `ml.p2.16xlarge`  = "ml.p2.16xlarge".asInstanceOf[InstanceType]
-    val `ml.p3.2xlarge`   = "ml.p3.2xlarge".asInstanceOf[InstanceType]
-    val `ml.p3.8xlarge`   = "ml.p3.8xlarge".asInstanceOf[InstanceType]
-    val `ml.p3.16xlarge`  = "ml.p3.16xlarge".asInstanceOf[InstanceType]
+    val `ml.p2.xlarge` = "ml.p2.xlarge".asInstanceOf[InstanceType]
+    val `ml.p2.8xlarge` = "ml.p2.8xlarge".asInstanceOf[InstanceType]
+    val `ml.p2.16xlarge` = "ml.p2.16xlarge".asInstanceOf[InstanceType]
+    val `ml.p3.2xlarge` = "ml.p3.2xlarge".asInstanceOf[InstanceType]
+    val `ml.p3.8xlarge` = "ml.p3.8xlarge".asInstanceOf[InstanceType]
+    val `ml.p3.16xlarge` = "ml.p3.16xlarge".asInstanceOf[InstanceType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -7758,7 +7768,7 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "MaxValue" -> MaxValue.asInstanceOf[js.Any],
         "MinValue" -> MinValue.asInstanceOf[js.Any],
-        "Name"     -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       ScalingType.foreach(__v => __obj.updateDynamic("ScalingType")(__v.asInstanceOf[js.Any]))
@@ -7794,7 +7804,7 @@ package sagemaker {
   sealed trait JoinSource extends js.Any
   object JoinSource extends js.Object {
     val Input = "Input".asInstanceOf[JoinSource]
-    val None  = "None".asInstanceOf[JoinSource]
+    val None = "None".asInstanceOf[JoinSource]
 
     val values = js.Object.freeze(js.Array(Input, None))
   }
@@ -7988,8 +7998,8 @@ package sagemaker {
         NumberOfHumanWorkersPerDataObject: js.UndefOr[NumberOfHumanWorkersPerDataObject] = js.undefined
     ): LabelingJobForWorkteamSummary = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"           -> CreationTime.asInstanceOf[js.Any],
-        "JobReferenceCode"       -> JobReferenceCode.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "JobReferenceCode" -> JobReferenceCode.asInstanceOf[js.Any],
         "WorkRequesterAccountId" -> WorkRequesterAccountId.asInstanceOf[js.Any]
       )
 
@@ -8120,10 +8130,10 @@ package sagemaker {
   sealed trait LabelingJobStatus extends js.Any
   object LabelingJobStatus extends js.Object {
     val InProgress = "InProgress".asInstanceOf[LabelingJobStatus]
-    val Completed  = "Completed".asInstanceOf[LabelingJobStatus]
-    val Failed     = "Failed".asInstanceOf[LabelingJobStatus]
-    val Stopping   = "Stopping".asInstanceOf[LabelingJobStatus]
-    val Stopped    = "Stopped".asInstanceOf[LabelingJobStatus]
+    val Completed = "Completed".asInstanceOf[LabelingJobStatus]
+    val Failed = "Failed".asInstanceOf[LabelingJobStatus]
+    val Stopping = "Stopping".asInstanceOf[LabelingJobStatus]
+    val Stopped = "Stopped".asInstanceOf[LabelingJobStatus]
 
     val values = js.Object.freeze(js.Array(InProgress, Completed, Failed, Stopping, Stopped))
   }
@@ -8192,14 +8202,14 @@ package sagemaker {
         LabelingJobOutput: js.UndefOr[LabelingJobOutput] = js.undefined
     ): LabelingJobSummary = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"          -> CreationTime.asInstanceOf[js.Any],
-        "LabelCounters"         -> LabelCounters.asInstanceOf[js.Any],
-        "LabelingJobArn"        -> LabelingJobArn.asInstanceOf[js.Any],
-        "LabelingJobName"       -> LabelingJobName.asInstanceOf[js.Any],
-        "LabelingJobStatus"     -> LabelingJobStatus.asInstanceOf[js.Any],
-        "LastModifiedTime"      -> LastModifiedTime.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "LabelCounters" -> LabelCounters.asInstanceOf[js.Any],
+        "LabelingJobArn" -> LabelingJobArn.asInstanceOf[js.Any],
+        "LabelingJobName" -> LabelingJobName.asInstanceOf[js.Any],
+        "LabelingJobStatus" -> LabelingJobStatus.asInstanceOf[js.Any],
+        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any],
         "PreHumanTaskLambdaArn" -> PreHumanTaskLambdaArn.asInstanceOf[js.Any],
-        "WorkteamArn"           -> WorkteamArn.asInstanceOf[js.Any]
+        "WorkteamArn" -> WorkteamArn.asInstanceOf[js.Any]
       )
 
       AnnotationConsolidationLambdaArn.foreach(__v =>
@@ -8566,9 +8576,9 @@ package sagemaker {
   @js.native
   sealed trait ListCompilationJobsSortBy extends js.Any
   object ListCompilationJobsSortBy extends js.Object {
-    val Name         = "Name".asInstanceOf[ListCompilationJobsSortBy]
+    val Name = "Name".asInstanceOf[ListCompilationJobsSortBy]
     val CreationTime = "CreationTime".asInstanceOf[ListCompilationJobsSortBy]
-    val Status       = "Status".asInstanceOf[ListCompilationJobsSortBy]
+    val Status = "Status".asInstanceOf[ListCompilationJobsSortBy]
 
     val values = js.Object.freeze(js.Array(Name, CreationTime, Status))
   }
@@ -9860,6 +9870,7 @@ package sagemaker {
     var NextToken: js.UndefOr[NextToken]
     var SortBy: js.UndefOr[SortTrialsBy]
     var SortOrder: js.UndefOr[SortOrder]
+    var TrialComponentName: js.UndefOr[ExperimentEntityName]
   }
 
   object ListTrialsRequest {
@@ -9871,7 +9882,8 @@ package sagemaker {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SortBy: js.UndefOr[SortTrialsBy] = js.undefined,
-        SortOrder: js.UndefOr[SortOrder] = js.undefined
+        SortOrder: js.UndefOr[SortOrder] = js.undefined,
+        TrialComponentName: js.UndefOr[ExperimentEntityName] = js.undefined
     ): ListTrialsRequest = {
       val __obj = js.Dynamic.literal()
       CreatedAfter.foreach(__v => __obj.updateDynamic("CreatedAfter")(__v.asInstanceOf[js.Any]))
@@ -9881,6 +9893,7 @@ package sagemaker {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       SortBy.foreach(__v => __obj.updateDynamic("SortBy")(__v.asInstanceOf[js.Any]))
       SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
+      TrialComponentName.foreach(__v => __obj.updateDynamic("TrialComponentName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTrialsRequest]
     }
   }
@@ -10006,7 +10019,7 @@ package sagemaker {
   @js.native
   sealed trait ListWorkteamsSortByOptions extends js.Any
   object ListWorkteamsSortByOptions extends js.Object {
-    val Name       = "Name".asInstanceOf[ListWorkteamsSortByOptions]
+    val Name = "Name".asInstanceOf[ListWorkteamsSortByOptions]
     val CreateDate = "CreateDate".asInstanceOf[ListWorkteamsSortByOptions]
 
     val values = js.Object.freeze(js.Array(Name, CreateDate))
@@ -10072,7 +10085,7 @@ package sagemaker {
         Regex: MetricRegex
     ): MetricDefinition = {
       val __obj = js.Dynamic.literal(
-        "Name"  -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Regex" -> Regex.asInstanceOf[js.Any]
       )
 
@@ -10082,6 +10095,7 @@ package sagemaker {
 
   /**
     * Provides information about the location that is configured for storing model artifacts.
+    *  Model artifacts are the output that results from training a model, and typically consist of trained parameters, a model defintion that desribes how to compute inferences, and other metadata.
     */
   @js.native
   trait ModelArtifacts extends js.Object {
@@ -10098,6 +10112,30 @@ package sagemaker {
       )
 
       __obj.asInstanceOf[ModelArtifacts]
+    }
+  }
+
+  /**
+    * Configures the timeout and maximum number of retries for processing a transform job invocation.
+    */
+  @js.native
+  trait ModelClientConfig extends js.Object {
+    var InvocationsMaxRetries: js.UndefOr[InvocationsMaxRetries]
+    var InvocationsTimeoutInSeconds: js.UndefOr[InvocationsTimeoutInSeconds]
+  }
+
+  object ModelClientConfig {
+    @inline
+    def apply(
+        InvocationsMaxRetries: js.UndefOr[InvocationsMaxRetries] = js.undefined,
+        InvocationsTimeoutInSeconds: js.UndefOr[InvocationsTimeoutInSeconds] = js.undefined
+    ): ModelClientConfig = {
+      val __obj = js.Dynamic.literal()
+      InvocationsMaxRetries.foreach(__v => __obj.updateDynamic("InvocationsMaxRetries")(__v.asInstanceOf[js.Any]))
+      InvocationsTimeoutInSeconds.foreach(__v =>
+        __obj.updateDynamic("InvocationsTimeoutInSeconds")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ModelClientConfig]
     }
   }
 
@@ -10137,7 +10175,7 @@ package sagemaker {
   @js.native
   sealed trait ModelPackageSortBy extends js.Any
   object ModelPackageSortBy extends js.Object {
-    val Name         = "Name".asInstanceOf[ModelPackageSortBy]
+    val Name = "Name".asInstanceOf[ModelPackageSortBy]
     val CreationTime = "CreationTime".asInstanceOf[ModelPackageSortBy]
 
     val values = js.Object.freeze(js.Array(Name, CreationTime))
@@ -10146,11 +10184,11 @@ package sagemaker {
   @js.native
   sealed trait ModelPackageStatus extends js.Any
   object ModelPackageStatus extends js.Object {
-    val Pending    = "Pending".asInstanceOf[ModelPackageStatus]
+    val Pending = "Pending".asInstanceOf[ModelPackageStatus]
     val InProgress = "InProgress".asInstanceOf[ModelPackageStatus]
-    val Completed  = "Completed".asInstanceOf[ModelPackageStatus]
-    val Failed     = "Failed".asInstanceOf[ModelPackageStatus]
-    val Deleting   = "Deleting".asInstanceOf[ModelPackageStatus]
+    val Completed = "Completed".asInstanceOf[ModelPackageStatus]
+    val Failed = "Failed".asInstanceOf[ModelPackageStatus]
+    val Deleting = "Deleting".asInstanceOf[ModelPackageStatus]
 
     val values = js.Object.freeze(js.Array(Pending, InProgress, Completed, Failed, Deleting))
   }
@@ -10197,7 +10235,7 @@ package sagemaker {
         FailureReason: js.UndefOr[String] = js.undefined
     ): ModelPackageStatusItem = {
       val __obj = js.Dynamic.literal(
-        "Name"   -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Status" -> Status.asInstanceOf[js.Any]
       )
 
@@ -10228,9 +10266,9 @@ package sagemaker {
         ModelPackageDescription: js.UndefOr[EntityDescription] = js.undefined
     ): ModelPackageSummary = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"       -> CreationTime.asInstanceOf[js.Any],
-        "ModelPackageArn"    -> ModelPackageArn.asInstanceOf[js.Any],
-        "ModelPackageName"   -> ModelPackageName.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "ModelPackageArn" -> ModelPackageArn.asInstanceOf[js.Any],
+        "ModelPackageName" -> ModelPackageName.asInstanceOf[js.Any],
         "ModelPackageStatus" -> ModelPackageStatus.asInstanceOf[js.Any]
       )
 
@@ -10256,7 +10294,7 @@ package sagemaker {
         TransformJobDefinition: TransformJobDefinition
     ): ModelPackageValidationProfile = {
       val __obj = js.Dynamic.literal(
-        "ProfileName"            -> ProfileName.asInstanceOf[js.Any],
+        "ProfileName" -> ProfileName.asInstanceOf[js.Any],
         "TransformJobDefinition" -> TransformJobDefinition.asInstanceOf[js.Any]
       )
 
@@ -10281,7 +10319,7 @@ package sagemaker {
     ): ModelPackageValidationSpecification = {
       val __obj = js.Dynamic.literal(
         "ValidationProfiles" -> ValidationProfiles.asInstanceOf[js.Any],
-        "ValidationRole"     -> ValidationRole.asInstanceOf[js.Any]
+        "ValidationRole" -> ValidationRole.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ModelPackageValidationSpecification]
@@ -10291,7 +10329,7 @@ package sagemaker {
   @js.native
   sealed trait ModelSortKey extends js.Any
   object ModelSortKey extends js.Object {
-    val Name         = "Name".asInstanceOf[ModelSortKey]
+    val Name = "Name".asInstanceOf[ModelSortKey]
     val CreationTime = "CreationTime".asInstanceOf[ModelSortKey]
 
     val values = js.Object.freeze(js.Array(Name, CreationTime))
@@ -10316,8 +10354,8 @@ package sagemaker {
     ): ModelSummary = {
       val __obj = js.Dynamic.literal(
         "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "ModelArn"     -> ModelArn.asInstanceOf[js.Any],
-        "ModelName"    -> ModelName.asInstanceOf[js.Any]
+        "ModelArn" -> ModelArn.asInstanceOf[js.Any],
+        "ModelName" -> ModelName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ModelSummary]
@@ -10403,8 +10441,8 @@ package sagemaker {
         VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
     ): MonitoringClusterConfig = {
       val __obj = js.Dynamic.literal(
-        "InstanceCount"  -> InstanceCount.asInstanceOf[js.Any],
-        "InstanceType"   -> InstanceType.asInstanceOf[js.Any],
+        "InstanceCount" -> InstanceCount.asInstanceOf[js.Any],
+        "InstanceType" -> InstanceType.asInstanceOf[js.Any],
         "VolumeSizeInGB" -> VolumeSizeInGB.asInstanceOf[js.Any]
       )
 
@@ -10435,9 +10473,9 @@ package sagemaker {
   @js.native
   sealed trait MonitoringExecutionSortKey extends js.Any
   object MonitoringExecutionSortKey extends js.Object {
-    val CreationTime  = "CreationTime".asInstanceOf[MonitoringExecutionSortKey]
+    val CreationTime = "CreationTime".asInstanceOf[MonitoringExecutionSortKey]
     val ScheduledTime = "ScheduledTime".asInstanceOf[MonitoringExecutionSortKey]
-    val Status        = "Status".asInstanceOf[MonitoringExecutionSortKey]
+    val Status = "Status".asInstanceOf[MonitoringExecutionSortKey]
 
     val values = js.Object.freeze(js.Array(CreationTime, ScheduledTime, Status))
   }
@@ -10470,11 +10508,11 @@ package sagemaker {
         ProcessingJobArn: js.UndefOr[ProcessingJobArn] = js.undefined
     ): MonitoringExecutionSummary = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"              -> CreationTime.asInstanceOf[js.Any],
-        "LastModifiedTime"          -> LastModifiedTime.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any],
         "MonitoringExecutionStatus" -> MonitoringExecutionStatus.asInstanceOf[js.Any],
-        "MonitoringScheduleName"    -> MonitoringScheduleName.asInstanceOf[js.Any],
-        "ScheduledTime"             -> ScheduledTime.asInstanceOf[js.Any]
+        "MonitoringScheduleName" -> MonitoringScheduleName.asInstanceOf[js.Any],
+        "ScheduledTime" -> ScheduledTime.asInstanceOf[js.Any]
       )
 
       EndpointName.foreach(__v => __obj.updateDynamic("EndpointName")(__v.asInstanceOf[js.Any]))
@@ -10536,10 +10574,10 @@ package sagemaker {
     ): MonitoringJobDefinition = {
       val __obj = js.Dynamic.literal(
         "MonitoringAppSpecification" -> MonitoringAppSpecification.asInstanceOf[js.Any],
-        "MonitoringInputs"           -> MonitoringInputs.asInstanceOf[js.Any],
-        "MonitoringOutputConfig"     -> MonitoringOutputConfig.asInstanceOf[js.Any],
-        "MonitoringResources"        -> MonitoringResources.asInstanceOf[js.Any],
-        "RoleArn"                    -> RoleArn.asInstanceOf[js.Any]
+        "MonitoringInputs" -> MonitoringInputs.asInstanceOf[js.Any],
+        "MonitoringOutputConfig" -> MonitoringOutputConfig.asInstanceOf[js.Any],
+        "MonitoringResources" -> MonitoringResources.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
       BaselineConfig.foreach(__v => __obj.updateDynamic("BaselineConfig")(__v.asInstanceOf[js.Any]))
@@ -10635,7 +10673,7 @@ package sagemaker {
     ): MonitoringS3Output = {
       val __obj = js.Dynamic.literal(
         "LocalPath" -> LocalPath.asInstanceOf[js.Any],
-        "S3Uri"     -> S3Uri.asInstanceOf[js.Any]
+        "S3Uri" -> S3Uri.asInstanceOf[js.Any]
       )
 
       S3UploadMode.foreach(__v => __obj.updateDynamic("S3UploadMode")(__v.asInstanceOf[js.Any]))
@@ -10670,9 +10708,9 @@ package sagemaker {
   @js.native
   sealed trait MonitoringScheduleSortKey extends js.Any
   object MonitoringScheduleSortKey extends js.Object {
-    val Name         = "Name".asInstanceOf[MonitoringScheduleSortKey]
+    val Name = "Name".asInstanceOf[MonitoringScheduleSortKey]
     val CreationTime = "CreationTime".asInstanceOf[MonitoringScheduleSortKey]
-    val Status       = "Status".asInstanceOf[MonitoringScheduleSortKey]
+    val Status = "Status".asInstanceOf[MonitoringScheduleSortKey]
 
     val values = js.Object.freeze(js.Array(Name, CreationTime, Status))
   }
@@ -10701,10 +10739,10 @@ package sagemaker {
         EndpointName: js.UndefOr[EndpointName] = js.undefined
     ): MonitoringScheduleSummary = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"             -> CreationTime.asInstanceOf[js.Any],
-        "LastModifiedTime"         -> LastModifiedTime.asInstanceOf[js.Any],
-        "MonitoringScheduleArn"    -> MonitoringScheduleArn.asInstanceOf[js.Any],
-        "MonitoringScheduleName"   -> MonitoringScheduleName.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any],
+        "MonitoringScheduleArn" -> MonitoringScheduleArn.asInstanceOf[js.Any],
+        "MonitoringScheduleName" -> MonitoringScheduleName.asInstanceOf[js.Any],
         "MonitoringScheduleStatus" -> MonitoringScheduleStatus.asInstanceOf[js.Any]
       )
 
@@ -10754,11 +10792,10 @@ package sagemaker {
   }
 
   /**
-    * Defines a list of <code>NestedFilters</code> objects. To satisfy the conditions specified in the <code>NestedFilters</code> call, a resource must satisfy the conditions of all of the filters.
-    *  For example, you could define a <code>NestedFilters</code> using the training job's <code>InputDataConfig</code> property to filter on <code>Channel</code> objects.
-    *  A <code>NestedFilters</code> object contains multiple filters. For example, to find all training jobs whose name contains <code>train</code> and that have <code>cat/data</code> in their <code>S3Uri</code> (specified in <code>InputDataConfig</code>), you need to create a <code>NestedFilters</code> object that specifies the <code>InputDataConfig</code> property with the following <code>Filter</code> objects:
-    * * <code>'{Name:"InputDataConfig.ChannelName", "Operator":"EQUALS", "Value":"train"}',</code>
-    *  * <code>'{Name:"InputDataConfig.DataSource.S3DataSource.S3Uri", "Operator":"CONTAINS", "Value":"cat/data"}'</code>
+    * A list of nested <a>Filter</a> objects. A resource must satisfy the conditions of all filters to be included in the results returned from the <a>Search</a> API.
+    *  For example, to filter on a training job's <code>InputDataConfig</code> property with a specific channel name and <code>S3Uri</code> prefix, define the following filters:
+    * * <code>'{Name:"InputDataConfig.ChannelName", "Operator":"Equals", "Value":"train"}',</code>
+    *  * <code>'{Name:"InputDataConfig.DataSource.S3DataSource.S3Uri", "Operator":"Contains", "Value":"mybucket/catdata"}'</code>
     */
   @js.native
   trait NestedFilters extends js.Object {
@@ -10773,7 +10810,7 @@ package sagemaker {
         NestedPropertyName: ResourcePropertyName
     ): NestedFilters = {
       val __obj = js.Dynamic.literal(
-        "Filters"            -> Filters.asInstanceOf[js.Any],
+        "Filters" -> Filters.asInstanceOf[js.Any],
         "NestedPropertyName" -> NestedPropertyName.asInstanceOf[js.Any]
       )
 
@@ -10786,6 +10823,7 @@ package sagemaker {
     */
   @js.native
   trait NetworkConfig extends js.Object {
+    var EnableInterContainerTrafficEncryption: js.UndefOr[Boolean]
     var EnableNetworkIsolation: js.UndefOr[Boolean]
     var VpcConfig: js.UndefOr[VpcConfig]
   }
@@ -10793,10 +10831,14 @@ package sagemaker {
   object NetworkConfig {
     @inline
     def apply(
+        EnableInterContainerTrafficEncryption: js.UndefOr[Boolean] = js.undefined,
         EnableNetworkIsolation: js.UndefOr[Boolean] = js.undefined,
         VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): NetworkConfig = {
       val __obj = js.Dynamic.literal()
+      EnableInterContainerTrafficEncryption.foreach(__v =>
+        __obj.updateDynamic("EnableInterContainerTrafficEncryption")(__v.asInstanceOf[js.Any])
+      )
       EnableNetworkIsolation.foreach(__v => __obj.updateDynamic("EnableNetworkIsolation")(__v.asInstanceOf[js.Any]))
       VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NetworkConfig]
@@ -10807,10 +10849,10 @@ package sagemaker {
   sealed trait NotebookInstanceAcceleratorType extends js.Any
   object NotebookInstanceAcceleratorType extends js.Object {
     val `ml.eia1.medium` = "ml.eia1.medium".asInstanceOf[NotebookInstanceAcceleratorType]
-    val `ml.eia1.large`  = "ml.eia1.large".asInstanceOf[NotebookInstanceAcceleratorType]
+    val `ml.eia1.large` = "ml.eia1.large".asInstanceOf[NotebookInstanceAcceleratorType]
     val `ml.eia1.xlarge` = "ml.eia1.xlarge".asInstanceOf[NotebookInstanceAcceleratorType]
     val `ml.eia2.medium` = "ml.eia2.medium".asInstanceOf[NotebookInstanceAcceleratorType]
-    val `ml.eia2.large`  = "ml.eia2.large".asInstanceOf[NotebookInstanceAcceleratorType]
+    val `ml.eia2.large` = "ml.eia2.large".asInstanceOf[NotebookInstanceAcceleratorType]
     val `ml.eia2.xlarge` = "ml.eia2.xlarge".asInstanceOf[NotebookInstanceAcceleratorType]
 
     val values = js.Object.freeze(
@@ -10821,8 +10863,8 @@ package sagemaker {
   @js.native
   sealed trait NotebookInstanceLifecycleConfigSortKey extends js.Any
   object NotebookInstanceLifecycleConfigSortKey extends js.Object {
-    val Name             = "Name".asInstanceOf[NotebookInstanceLifecycleConfigSortKey]
-    val CreationTime     = "CreationTime".asInstanceOf[NotebookInstanceLifecycleConfigSortKey]
+    val Name = "Name".asInstanceOf[NotebookInstanceLifecycleConfigSortKey]
+    val CreationTime = "CreationTime".asInstanceOf[NotebookInstanceLifecycleConfigSortKey]
     val LastModifiedTime = "LastModifiedTime".asInstanceOf[NotebookInstanceLifecycleConfigSortKey]
 
     val values = js.Object.freeze(js.Array(Name, CreationTime, LastModifiedTime))
@@ -10831,7 +10873,7 @@ package sagemaker {
   @js.native
   sealed trait NotebookInstanceLifecycleConfigSortOrder extends js.Any
   object NotebookInstanceLifecycleConfigSortOrder extends js.Object {
-    val Ascending  = "Ascending".asInstanceOf[NotebookInstanceLifecycleConfigSortOrder]
+    val Ascending = "Ascending".asInstanceOf[NotebookInstanceLifecycleConfigSortOrder]
     val Descending = "Descending".asInstanceOf[NotebookInstanceLifecycleConfigSortOrder]
 
     val values = js.Object.freeze(js.Array(Ascending, Descending))
@@ -10857,7 +10899,7 @@ package sagemaker {
         LastModifiedTime: js.UndefOr[LastModifiedTime] = js.undefined
     ): NotebookInstanceLifecycleConfigSummary = {
       val __obj = js.Dynamic.literal(
-        "NotebookInstanceLifecycleConfigArn"  -> NotebookInstanceLifecycleConfigArn.asInstanceOf[js.Any],
+        "NotebookInstanceLifecycleConfigArn" -> NotebookInstanceLifecycleConfigArn.asInstanceOf[js.Any],
         "NotebookInstanceLifecycleConfigName" -> NotebookInstanceLifecycleConfigName.asInstanceOf[js.Any]
       )
 
@@ -10894,9 +10936,9 @@ package sagemaker {
   @js.native
   sealed trait NotebookInstanceSortKey extends js.Any
   object NotebookInstanceSortKey extends js.Object {
-    val Name         = "Name".asInstanceOf[NotebookInstanceSortKey]
+    val Name = "Name".asInstanceOf[NotebookInstanceSortKey]
     val CreationTime = "CreationTime".asInstanceOf[NotebookInstanceSortKey]
-    val Status       = "Status".asInstanceOf[NotebookInstanceSortKey]
+    val Status = "Status".asInstanceOf[NotebookInstanceSortKey]
 
     val values = js.Object.freeze(js.Array(Name, CreationTime, Status))
   }
@@ -10904,7 +10946,7 @@ package sagemaker {
   @js.native
   sealed trait NotebookInstanceSortOrder extends js.Any
   object NotebookInstanceSortOrder extends js.Object {
-    val Ascending  = "Ascending".asInstanceOf[NotebookInstanceSortOrder]
+    val Ascending = "Ascending".asInstanceOf[NotebookInstanceSortOrder]
     val Descending = "Descending".asInstanceOf[NotebookInstanceSortOrder]
 
     val values = js.Object.freeze(js.Array(Ascending, Descending))
@@ -10913,13 +10955,13 @@ package sagemaker {
   @js.native
   sealed trait NotebookInstanceStatus extends js.Any
   object NotebookInstanceStatus extends js.Object {
-    val Pending   = "Pending".asInstanceOf[NotebookInstanceStatus]
+    val Pending = "Pending".asInstanceOf[NotebookInstanceStatus]
     val InService = "InService".asInstanceOf[NotebookInstanceStatus]
-    val Stopping  = "Stopping".asInstanceOf[NotebookInstanceStatus]
-    val Stopped   = "Stopped".asInstanceOf[NotebookInstanceStatus]
-    val Failed    = "Failed".asInstanceOf[NotebookInstanceStatus]
-    val Deleting  = "Deleting".asInstanceOf[NotebookInstanceStatus]
-    val Updating  = "Updating".asInstanceOf[NotebookInstanceStatus]
+    val Stopping = "Stopping".asInstanceOf[NotebookInstanceStatus]
+    val Stopped = "Stopped".asInstanceOf[NotebookInstanceStatus]
+    val Failed = "Failed".asInstanceOf[NotebookInstanceStatus]
+    val Deleting = "Deleting".asInstanceOf[NotebookInstanceStatus]
+    val Updating = "Updating".asInstanceOf[NotebookInstanceStatus]
 
     val values = js.Object.freeze(js.Array(Pending, InService, Stopping, Stopped, Failed, Deleting, Updating))
   }
@@ -10956,7 +10998,7 @@ package sagemaker {
         Url: js.UndefOr[NotebookInstanceUrl] = js.undefined
     ): NotebookInstanceSummary = {
       val __obj = js.Dynamic.literal(
-        "NotebookInstanceArn"  -> NotebookInstanceArn.asInstanceOf[js.Any],
+        "NotebookInstanceArn" -> NotebookInstanceArn.asInstanceOf[js.Any],
         "NotebookInstanceName" -> NotebookInstanceName.asInstanceOf[js.Any]
       )
 
@@ -10979,7 +11021,7 @@ package sagemaker {
   @js.native
   sealed trait NotebookOutputOption extends js.Any
   object NotebookOutputOption extends js.Object {
-    val Allowed  = "Allowed".asInstanceOf[NotebookOutputOption]
+    val Allowed = "Allowed".asInstanceOf[NotebookOutputOption]
     val Disabled = "Disabled".asInstanceOf[NotebookOutputOption]
 
     val values = js.Object.freeze(js.Array(Allowed, Disabled))
@@ -11008,8 +11050,8 @@ package sagemaker {
   sealed trait ObjectiveStatus extends js.Any
   object ObjectiveStatus extends js.Object {
     val Succeeded = "Succeeded".asInstanceOf[ObjectiveStatus]
-    val Pending   = "Pending".asInstanceOf[ObjectiveStatus]
-    val Failed    = "Failed".asInstanceOf[ObjectiveStatus]
+    val Pending = "Pending".asInstanceOf[ObjectiveStatus]
+    val Failed = "Failed".asInstanceOf[ObjectiveStatus]
 
     val values = js.Object.freeze(js.Array(Succeeded, Pending, Failed))
   }
@@ -11042,15 +11084,16 @@ package sagemaker {
   @js.native
   sealed trait Operator extends js.Any
   object Operator extends js.Object {
-    val Equals               = "Equals".asInstanceOf[Operator]
-    val NotEquals            = "NotEquals".asInstanceOf[Operator]
-    val GreaterThan          = "GreaterThan".asInstanceOf[Operator]
+    val Equals = "Equals".asInstanceOf[Operator]
+    val NotEquals = "NotEquals".asInstanceOf[Operator]
+    val GreaterThan = "GreaterThan".asInstanceOf[Operator]
     val GreaterThanOrEqualTo = "GreaterThanOrEqualTo".asInstanceOf[Operator]
-    val LessThan             = "LessThan".asInstanceOf[Operator]
-    val LessThanOrEqualTo    = "LessThanOrEqualTo".asInstanceOf[Operator]
-    val Contains             = "Contains".asInstanceOf[Operator]
-    val Exists               = "Exists".asInstanceOf[Operator]
-    val NotExists            = "NotExists".asInstanceOf[Operator]
+    val LessThan = "LessThan".asInstanceOf[Operator]
+    val LessThanOrEqualTo = "LessThanOrEqualTo".asInstanceOf[Operator]
+    val Contains = "Contains".asInstanceOf[Operator]
+    val Exists = "Exists".asInstanceOf[Operator]
+    val NotExists = "NotExists".asInstanceOf[Operator]
+    val In = "In".asInstanceOf[Operator]
 
     val values = js.Object.freeze(
       js.Array(
@@ -11062,7 +11105,8 @@ package sagemaker {
         LessThanOrEqualTo,
         Contains,
         Exists,
-        NotExists
+        NotExists,
+        In
       )
     )
   }
@@ -11070,7 +11114,7 @@ package sagemaker {
   @js.native
   sealed trait OrderKey extends js.Any
   object OrderKey extends js.Object {
-    val Ascending  = "Ascending".asInstanceOf[OrderKey]
+    val Ascending = "Ascending".asInstanceOf[OrderKey]
     val Descending = "Descending".asInstanceOf[OrderKey]
 
     val values = js.Object.freeze(js.Array(Ascending, Descending))
@@ -11093,7 +11137,7 @@ package sagemaker {
     ): OutputConfig = {
       val __obj = js.Dynamic.literal(
         "S3OutputLocation" -> S3OutputLocation.asInstanceOf[js.Any],
-        "TargetDevice"     -> TargetDevice.asInstanceOf[js.Any]
+        "TargetDevice" -> TargetDevice.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[OutputConfig]
@@ -11189,10 +11233,10 @@ package sagemaker {
   @js.native
   sealed trait ParameterType extends js.Any
   object ParameterType extends js.Object {
-    val Integer     = "Integer".asInstanceOf[ParameterType]
-    val Continuous  = "Continuous".asInstanceOf[ParameterType]
+    val Integer = "Integer".asInstanceOf[ParameterType]
+    val Continuous = "Continuous".asInstanceOf[ParameterType]
     val Categorical = "Categorical".asInstanceOf[ParameterType]
-    val FreeText    = "FreeText".asInstanceOf[ParameterType]
+    val FreeText = "FreeText".asInstanceOf[ParameterType]
 
     val values = js.Object.freeze(js.Array(Integer, Continuous, Categorical, FreeText))
   }
@@ -11243,9 +11287,9 @@ package sagemaker {
   @js.native
   sealed trait ProblemType extends js.Any
   object ProblemType extends js.Object {
-    val BinaryClassification     = "BinaryClassification".asInstanceOf[ProblemType]
+    val BinaryClassification = "BinaryClassification".asInstanceOf[ProblemType]
     val MulticlassClassification = "MulticlassClassification".asInstanceOf[ProblemType]
-    val Regression               = "Regression".asInstanceOf[ProblemType]
+    val Regression = "Regression".asInstanceOf[ProblemType]
 
     val values = js.Object.freeze(js.Array(BinaryClassification, MulticlassClassification, Regression))
   }
@@ -11270,8 +11314,8 @@ package sagemaker {
         VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
     ): ProcessingClusterConfig = {
       val __obj = js.Dynamic.literal(
-        "InstanceCount"  -> InstanceCount.asInstanceOf[js.Any],
-        "InstanceType"   -> InstanceType.asInstanceOf[js.Any],
+        "InstanceCount" -> InstanceCount.asInstanceOf[js.Any],
+        "InstanceType" -> InstanceType.asInstanceOf[js.Any],
         "VolumeSizeInGB" -> VolumeSizeInGB.asInstanceOf[js.Any]
       )
 
@@ -11297,7 +11341,7 @@ package sagemaker {
     ): ProcessingInput = {
       val __obj = js.Dynamic.literal(
         "InputName" -> InputName.asInstanceOf[js.Any],
-        "S3Input"   -> S3Input.asInstanceOf[js.Any]
+        "S3Input" -> S3Input.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ProcessingInput]
@@ -11307,41 +11351,41 @@ package sagemaker {
   @js.native
   sealed trait ProcessingInstanceType extends js.Any
   object ProcessingInstanceType extends js.Object {
-    val `ml.t3.medium`   = "ml.t3.medium".asInstanceOf[ProcessingInstanceType]
-    val `ml.t3.large`    = "ml.t3.large".asInstanceOf[ProcessingInstanceType]
-    val `ml.t3.xlarge`   = "ml.t3.xlarge".asInstanceOf[ProcessingInstanceType]
-    val `ml.t3.2xlarge`  = "ml.t3.2xlarge".asInstanceOf[ProcessingInstanceType]
-    val `ml.m4.xlarge`   = "ml.m4.xlarge".asInstanceOf[ProcessingInstanceType]
-    val `ml.m4.2xlarge`  = "ml.m4.2xlarge".asInstanceOf[ProcessingInstanceType]
-    val `ml.m4.4xlarge`  = "ml.m4.4xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.t3.medium` = "ml.t3.medium".asInstanceOf[ProcessingInstanceType]
+    val `ml.t3.large` = "ml.t3.large".asInstanceOf[ProcessingInstanceType]
+    val `ml.t3.xlarge` = "ml.t3.xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.t3.2xlarge` = "ml.t3.2xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.m4.xlarge` = "ml.m4.xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.m4.2xlarge` = "ml.m4.2xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.m4.4xlarge` = "ml.m4.4xlarge".asInstanceOf[ProcessingInstanceType]
     val `ml.m4.10xlarge` = "ml.m4.10xlarge".asInstanceOf[ProcessingInstanceType]
     val `ml.m4.16xlarge` = "ml.m4.16xlarge".asInstanceOf[ProcessingInstanceType]
-    val `ml.c4.xlarge`   = "ml.c4.xlarge".asInstanceOf[ProcessingInstanceType]
-    val `ml.c4.2xlarge`  = "ml.c4.2xlarge".asInstanceOf[ProcessingInstanceType]
-    val `ml.c4.4xlarge`  = "ml.c4.4xlarge".asInstanceOf[ProcessingInstanceType]
-    val `ml.c4.8xlarge`  = "ml.c4.8xlarge".asInstanceOf[ProcessingInstanceType]
-    val `ml.p2.xlarge`   = "ml.p2.xlarge".asInstanceOf[ProcessingInstanceType]
-    val `ml.p2.8xlarge`  = "ml.p2.8xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.c4.xlarge` = "ml.c4.xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.c4.2xlarge` = "ml.c4.2xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.c4.4xlarge` = "ml.c4.4xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.c4.8xlarge` = "ml.c4.8xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.p2.xlarge` = "ml.p2.xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.p2.8xlarge` = "ml.p2.8xlarge".asInstanceOf[ProcessingInstanceType]
     val `ml.p2.16xlarge` = "ml.p2.16xlarge".asInstanceOf[ProcessingInstanceType]
-    val `ml.p3.2xlarge`  = "ml.p3.2xlarge".asInstanceOf[ProcessingInstanceType]
-    val `ml.p3.8xlarge`  = "ml.p3.8xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.p3.2xlarge` = "ml.p3.2xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.p3.8xlarge` = "ml.p3.8xlarge".asInstanceOf[ProcessingInstanceType]
     val `ml.p3.16xlarge` = "ml.p3.16xlarge".asInstanceOf[ProcessingInstanceType]
-    val `ml.c5.xlarge`   = "ml.c5.xlarge".asInstanceOf[ProcessingInstanceType]
-    val `ml.c5.2xlarge`  = "ml.c5.2xlarge".asInstanceOf[ProcessingInstanceType]
-    val `ml.c5.4xlarge`  = "ml.c5.4xlarge".asInstanceOf[ProcessingInstanceType]
-    val `ml.c5.9xlarge`  = "ml.c5.9xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.c5.xlarge` = "ml.c5.xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.c5.2xlarge` = "ml.c5.2xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.c5.4xlarge` = "ml.c5.4xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.c5.9xlarge` = "ml.c5.9xlarge".asInstanceOf[ProcessingInstanceType]
     val `ml.c5.18xlarge` = "ml.c5.18xlarge".asInstanceOf[ProcessingInstanceType]
-    val `ml.m5.large`    = "ml.m5.large".asInstanceOf[ProcessingInstanceType]
-    val `ml.m5.xlarge`   = "ml.m5.xlarge".asInstanceOf[ProcessingInstanceType]
-    val `ml.m5.2xlarge`  = "ml.m5.2xlarge".asInstanceOf[ProcessingInstanceType]
-    val `ml.m5.4xlarge`  = "ml.m5.4xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.m5.large` = "ml.m5.large".asInstanceOf[ProcessingInstanceType]
+    val `ml.m5.xlarge` = "ml.m5.xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.m5.2xlarge` = "ml.m5.2xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.m5.4xlarge` = "ml.m5.4xlarge".asInstanceOf[ProcessingInstanceType]
     val `ml.m5.12xlarge` = "ml.m5.12xlarge".asInstanceOf[ProcessingInstanceType]
     val `ml.m5.24xlarge` = "ml.m5.24xlarge".asInstanceOf[ProcessingInstanceType]
-    val `ml.r5.large`    = "ml.r5.large".asInstanceOf[ProcessingInstanceType]
-    val `ml.r5.xlarge`   = "ml.r5.xlarge".asInstanceOf[ProcessingInstanceType]
-    val `ml.r5.2xlarge`  = "ml.r5.2xlarge".asInstanceOf[ProcessingInstanceType]
-    val `ml.r5.4xlarge`  = "ml.r5.4xlarge".asInstanceOf[ProcessingInstanceType]
-    val `ml.r5.8xlarge`  = "ml.r5.8xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.r5.large` = "ml.r5.large".asInstanceOf[ProcessingInstanceType]
+    val `ml.r5.xlarge` = "ml.r5.xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.r5.2xlarge` = "ml.r5.2xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.r5.4xlarge` = "ml.r5.4xlarge".asInstanceOf[ProcessingInstanceType]
+    val `ml.r5.8xlarge` = "ml.r5.8xlarge".asInstanceOf[ProcessingInstanceType]
     val `ml.r5.12xlarge` = "ml.r5.12xlarge".asInstanceOf[ProcessingInstanceType]
     val `ml.r5.16xlarge` = "ml.r5.16xlarge".asInstanceOf[ProcessingInstanceType]
     val `ml.r5.24xlarge` = "ml.r5.24xlarge".asInstanceOf[ProcessingInstanceType]
@@ -11390,14 +11434,96 @@ package sagemaker {
     )
   }
 
+  /**
+    * An Amazon SageMaker processing job that is used to analyze data and evaluate models. For more information, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/processing-job.html|Process Data and Evaluate Models]].
+    */
+  @js.native
+  trait ProcessingJob extends js.Object {
+    var AppSpecification: js.UndefOr[AppSpecification]
+    var AutoMLJobArn: js.UndefOr[AutoMLJobArn]
+    var CreationTime: js.UndefOr[Timestamp]
+    var Environment: js.UndefOr[ProcessingEnvironmentMap]
+    var ExitMessage: js.UndefOr[ExitMessage]
+    var ExperimentConfig: js.UndefOr[ExperimentConfig]
+    var FailureReason: js.UndefOr[FailureReason]
+    var LastModifiedTime: js.UndefOr[Timestamp]
+    var MonitoringScheduleArn: js.UndefOr[MonitoringScheduleArn]
+    var NetworkConfig: js.UndefOr[NetworkConfig]
+    var ProcessingEndTime: js.UndefOr[Timestamp]
+    var ProcessingInputs: js.UndefOr[ProcessingInputs]
+    var ProcessingJobArn: js.UndefOr[ProcessingJobArn]
+    var ProcessingJobName: js.UndefOr[ProcessingJobName]
+    var ProcessingJobStatus: js.UndefOr[ProcessingJobStatus]
+    var ProcessingOutputConfig: js.UndefOr[ProcessingOutputConfig]
+    var ProcessingResources: js.UndefOr[ProcessingResources]
+    var ProcessingStartTime: js.UndefOr[Timestamp]
+    var RoleArn: js.UndefOr[RoleArn]
+    var StoppingCondition: js.UndefOr[ProcessingStoppingCondition]
+    var Tags: js.UndefOr[TagList]
+    var TrainingJobArn: js.UndefOr[TrainingJobArn]
+  }
+
+  object ProcessingJob {
+    @inline
+    def apply(
+        AppSpecification: js.UndefOr[AppSpecification] = js.undefined,
+        AutoMLJobArn: js.UndefOr[AutoMLJobArn] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        Environment: js.UndefOr[ProcessingEnvironmentMap] = js.undefined,
+        ExitMessage: js.UndefOr[ExitMessage] = js.undefined,
+        ExperimentConfig: js.UndefOr[ExperimentConfig] = js.undefined,
+        FailureReason: js.UndefOr[FailureReason] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+        MonitoringScheduleArn: js.UndefOr[MonitoringScheduleArn] = js.undefined,
+        NetworkConfig: js.UndefOr[NetworkConfig] = js.undefined,
+        ProcessingEndTime: js.UndefOr[Timestamp] = js.undefined,
+        ProcessingInputs: js.UndefOr[ProcessingInputs] = js.undefined,
+        ProcessingJobArn: js.UndefOr[ProcessingJobArn] = js.undefined,
+        ProcessingJobName: js.UndefOr[ProcessingJobName] = js.undefined,
+        ProcessingJobStatus: js.UndefOr[ProcessingJobStatus] = js.undefined,
+        ProcessingOutputConfig: js.UndefOr[ProcessingOutputConfig] = js.undefined,
+        ProcessingResources: js.UndefOr[ProcessingResources] = js.undefined,
+        ProcessingStartTime: js.UndefOr[Timestamp] = js.undefined,
+        RoleArn: js.UndefOr[RoleArn] = js.undefined,
+        StoppingCondition: js.UndefOr[ProcessingStoppingCondition] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        TrainingJobArn: js.UndefOr[TrainingJobArn] = js.undefined
+    ): ProcessingJob = {
+      val __obj = js.Dynamic.literal()
+      AppSpecification.foreach(__v => __obj.updateDynamic("AppSpecification")(__v.asInstanceOf[js.Any]))
+      AutoMLJobArn.foreach(__v => __obj.updateDynamic("AutoMLJobArn")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
+      ExitMessage.foreach(__v => __obj.updateDynamic("ExitMessage")(__v.asInstanceOf[js.Any]))
+      ExperimentConfig.foreach(__v => __obj.updateDynamic("ExperimentConfig")(__v.asInstanceOf[js.Any]))
+      FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      MonitoringScheduleArn.foreach(__v => __obj.updateDynamic("MonitoringScheduleArn")(__v.asInstanceOf[js.Any]))
+      NetworkConfig.foreach(__v => __obj.updateDynamic("NetworkConfig")(__v.asInstanceOf[js.Any]))
+      ProcessingEndTime.foreach(__v => __obj.updateDynamic("ProcessingEndTime")(__v.asInstanceOf[js.Any]))
+      ProcessingInputs.foreach(__v => __obj.updateDynamic("ProcessingInputs")(__v.asInstanceOf[js.Any]))
+      ProcessingJobArn.foreach(__v => __obj.updateDynamic("ProcessingJobArn")(__v.asInstanceOf[js.Any]))
+      ProcessingJobName.foreach(__v => __obj.updateDynamic("ProcessingJobName")(__v.asInstanceOf[js.Any]))
+      ProcessingJobStatus.foreach(__v => __obj.updateDynamic("ProcessingJobStatus")(__v.asInstanceOf[js.Any]))
+      ProcessingOutputConfig.foreach(__v => __obj.updateDynamic("ProcessingOutputConfig")(__v.asInstanceOf[js.Any]))
+      ProcessingResources.foreach(__v => __obj.updateDynamic("ProcessingResources")(__v.asInstanceOf[js.Any]))
+      ProcessingStartTime.foreach(__v => __obj.updateDynamic("ProcessingStartTime")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      StoppingCondition.foreach(__v => __obj.updateDynamic("StoppingCondition")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TrainingJobArn.foreach(__v => __obj.updateDynamic("TrainingJobArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProcessingJob]
+    }
+  }
+
   @js.native
   sealed trait ProcessingJobStatus extends js.Any
   object ProcessingJobStatus extends js.Object {
     val InProgress = "InProgress".asInstanceOf[ProcessingJobStatus]
-    val Completed  = "Completed".asInstanceOf[ProcessingJobStatus]
-    val Failed     = "Failed".asInstanceOf[ProcessingJobStatus]
-    val Stopping   = "Stopping".asInstanceOf[ProcessingJobStatus]
-    val Stopped    = "Stopped".asInstanceOf[ProcessingJobStatus]
+    val Completed = "Completed".asInstanceOf[ProcessingJobStatus]
+    val Failed = "Failed".asInstanceOf[ProcessingJobStatus]
+    val Stopping = "Stopping".asInstanceOf[ProcessingJobStatus]
+    val Stopped = "Stopped".asInstanceOf[ProcessingJobStatus]
 
     val values = js.Object.freeze(js.Array(InProgress, Completed, Failed, Stopping, Stopped))
   }
@@ -11430,9 +11556,9 @@ package sagemaker {
         ProcessingEndTime: js.UndefOr[Timestamp] = js.undefined
     ): ProcessingJobSummary = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"        -> CreationTime.asInstanceOf[js.Any],
-        "ProcessingJobArn"    -> ProcessingJobArn.asInstanceOf[js.Any],
-        "ProcessingJobName"   -> ProcessingJobName.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "ProcessingJobArn" -> ProcessingJobArn.asInstanceOf[js.Any],
+        "ProcessingJobName" -> ProcessingJobName.asInstanceOf[js.Any],
         "ProcessingJobStatus" -> ProcessingJobStatus.asInstanceOf[js.Any]
       )
 
@@ -11461,7 +11587,7 @@ package sagemaker {
     ): ProcessingOutput = {
       val __obj = js.Dynamic.literal(
         "OutputName" -> OutputName.asInstanceOf[js.Any],
-        "S3Output"   -> S3Output.asInstanceOf[js.Any]
+        "S3Output" -> S3Output.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ProcessingOutput]
@@ -11526,7 +11652,7 @@ package sagemaker {
   sealed trait ProcessingS3DataDistributionType extends js.Any
   object ProcessingS3DataDistributionType extends js.Object {
     val FullyReplicated = "FullyReplicated".asInstanceOf[ProcessingS3DataDistributionType]
-    val ShardedByS3Key  = "ShardedByS3Key".asInstanceOf[ProcessingS3DataDistributionType]
+    val ShardedByS3Key = "ShardedByS3Key".asInstanceOf[ProcessingS3DataDistributionType]
 
     val values = js.Object.freeze(js.Array(FullyReplicated, ShardedByS3Key))
   }
@@ -11535,7 +11661,7 @@ package sagemaker {
   sealed trait ProcessingS3DataType extends js.Any
   object ProcessingS3DataType extends js.Object {
     val ManifestFile = "ManifestFile".asInstanceOf[ProcessingS3DataType]
-    val S3Prefix     = "S3Prefix".asInstanceOf[ProcessingS3DataType]
+    val S3Prefix = "S3Prefix".asInstanceOf[ProcessingS3DataType]
 
     val values = js.Object.freeze(js.Array(ManifestFile, S3Prefix))
   }
@@ -11564,10 +11690,10 @@ package sagemaker {
         S3DataDistributionType: js.UndefOr[ProcessingS3DataDistributionType] = js.undefined
     ): ProcessingS3Input = {
       val __obj = js.Dynamic.literal(
-        "LocalPath"   -> LocalPath.asInstanceOf[js.Any],
-        "S3DataType"  -> S3DataType.asInstanceOf[js.Any],
+        "LocalPath" -> LocalPath.asInstanceOf[js.Any],
+        "S3DataType" -> S3DataType.asInstanceOf[js.Any],
         "S3InputMode" -> S3InputMode.asInstanceOf[js.Any],
-        "S3Uri"       -> S3Uri.asInstanceOf[js.Any]
+        "S3Uri" -> S3Uri.asInstanceOf[js.Any]
       )
 
       S3CompressionType.foreach(__v => __obj.updateDynamic("S3CompressionType")(__v.asInstanceOf[js.Any]))
@@ -11603,9 +11729,9 @@ package sagemaker {
         S3Uri: S3Uri
     ): ProcessingS3Output = {
       val __obj = js.Dynamic.literal(
-        "LocalPath"    -> LocalPath.asInstanceOf[js.Any],
+        "LocalPath" -> LocalPath.asInstanceOf[js.Any],
         "S3UploadMode" -> S3UploadMode.asInstanceOf[js.Any],
-        "S3Uri"        -> S3Uri.asInstanceOf[js.Any]
+        "S3Uri" -> S3Uri.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ProcessingS3Output]
@@ -11616,7 +11742,7 @@ package sagemaker {
   sealed trait ProcessingS3UploadMode extends js.Any
   object ProcessingS3UploadMode extends js.Object {
     val Continuous = "Continuous".asInstanceOf[ProcessingS3UploadMode]
-    val EndOfJob   = "EndOfJob".asInstanceOf[ProcessingS3UploadMode]
+    val EndOfJob = "EndOfJob".asInstanceOf[ProcessingS3UploadMode]
 
     val values = js.Object.freeze(js.Array(Continuous, EndOfJob))
   }
@@ -11667,9 +11793,9 @@ package sagemaker {
     ): ProductionVariant = {
       val __obj = js.Dynamic.literal(
         "InitialInstanceCount" -> InitialInstanceCount.asInstanceOf[js.Any],
-        "InstanceType"         -> InstanceType.asInstanceOf[js.Any],
-        "ModelName"            -> ModelName.asInstanceOf[js.Any],
-        "VariantName"          -> VariantName.asInstanceOf[js.Any]
+        "InstanceType" -> InstanceType.asInstanceOf[js.Any],
+        "ModelName" -> ModelName.asInstanceOf[js.Any],
+        "VariantName" -> VariantName.asInstanceOf[js.Any]
       )
 
       AcceleratorType.foreach(__v => __obj.updateDynamic("AcceleratorType")(__v.asInstanceOf[js.Any]))
@@ -11682,10 +11808,10 @@ package sagemaker {
   sealed trait ProductionVariantAcceleratorType extends js.Any
   object ProductionVariantAcceleratorType extends js.Object {
     val `ml.eia1.medium` = "ml.eia1.medium".asInstanceOf[ProductionVariantAcceleratorType]
-    val `ml.eia1.large`  = "ml.eia1.large".asInstanceOf[ProductionVariantAcceleratorType]
+    val `ml.eia1.large` = "ml.eia1.large".asInstanceOf[ProductionVariantAcceleratorType]
     val `ml.eia1.xlarge` = "ml.eia1.xlarge".asInstanceOf[ProductionVariantAcceleratorType]
     val `ml.eia2.medium` = "ml.eia2.medium".asInstanceOf[ProductionVariantAcceleratorType]
-    val `ml.eia2.large`  = "ml.eia2.large".asInstanceOf[ProductionVariantAcceleratorType]
+    val `ml.eia2.large` = "ml.eia2.large".asInstanceOf[ProductionVariantAcceleratorType]
     val `ml.eia2.xlarge` = "ml.eia2.xlarge".asInstanceOf[ProductionVariantAcceleratorType]
 
     val values = js.Object.freeze(
@@ -11696,71 +11822,71 @@ package sagemaker {
   @js.native
   sealed trait ProductionVariantInstanceType extends js.Any
   object ProductionVariantInstanceType extends js.Object {
-    val `ml.t2.medium`     = "ml.t2.medium".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.t2.large`      = "ml.t2.large".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.t2.xlarge`     = "ml.t2.xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.t2.2xlarge`    = "ml.t2.2xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.m4.xlarge`     = "ml.m4.xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.m4.2xlarge`    = "ml.m4.2xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.m4.4xlarge`    = "ml.m4.4xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.m4.10xlarge`   = "ml.m4.10xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.m4.16xlarge`   = "ml.m4.16xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.m5.large`      = "ml.m5.large".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.m5.xlarge`     = "ml.m5.xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.m5.2xlarge`    = "ml.m5.2xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.m5.4xlarge`    = "ml.m5.4xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.m5.12xlarge`   = "ml.m5.12xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.m5.24xlarge`   = "ml.m5.24xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.m5d.large`     = "ml.m5d.large".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.m5d.xlarge`    = "ml.m5d.xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.m5d.2xlarge`   = "ml.m5d.2xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.m5d.4xlarge`   = "ml.m5d.4xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.m5d.12xlarge`  = "ml.m5d.12xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.m5d.24xlarge`  = "ml.m5d.24xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.c4.large`      = "ml.c4.large".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.c4.xlarge`     = "ml.c4.xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.c4.2xlarge`    = "ml.c4.2xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.c4.4xlarge`    = "ml.c4.4xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.c4.8xlarge`    = "ml.c4.8xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.p2.xlarge`     = "ml.p2.xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.p2.8xlarge`    = "ml.p2.8xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.p2.16xlarge`   = "ml.p2.16xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.p3.2xlarge`    = "ml.p3.2xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.p3.8xlarge`    = "ml.p3.8xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.p3.16xlarge`   = "ml.p3.16xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.c5.large`      = "ml.c5.large".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.c5.xlarge`     = "ml.c5.xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.c5.2xlarge`    = "ml.c5.2xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.c5.4xlarge`    = "ml.c5.4xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.c5.9xlarge`    = "ml.c5.9xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.c5.18xlarge`   = "ml.c5.18xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.c5d.large`     = "ml.c5d.large".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.c5d.xlarge`    = "ml.c5d.xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.c5d.2xlarge`   = "ml.c5d.2xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.c5d.4xlarge`   = "ml.c5d.4xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.c5d.9xlarge`   = "ml.c5d.9xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.c5d.18xlarge`  = "ml.c5d.18xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.g4dn.xlarge`   = "ml.g4dn.xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.g4dn.2xlarge`  = "ml.g4dn.2xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.g4dn.4xlarge`  = "ml.g4dn.4xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.g4dn.8xlarge`  = "ml.g4dn.8xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.t2.medium` = "ml.t2.medium".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.t2.large` = "ml.t2.large".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.t2.xlarge` = "ml.t2.xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.t2.2xlarge` = "ml.t2.2xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m4.xlarge` = "ml.m4.xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m4.2xlarge` = "ml.m4.2xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m4.4xlarge` = "ml.m4.4xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m4.10xlarge` = "ml.m4.10xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m4.16xlarge` = "ml.m4.16xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m5.large` = "ml.m5.large".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m5.xlarge` = "ml.m5.xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m5.2xlarge` = "ml.m5.2xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m5.4xlarge` = "ml.m5.4xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m5.12xlarge` = "ml.m5.12xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m5.24xlarge` = "ml.m5.24xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m5d.large` = "ml.m5d.large".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m5d.xlarge` = "ml.m5d.xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m5d.2xlarge` = "ml.m5d.2xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m5d.4xlarge` = "ml.m5d.4xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m5d.12xlarge` = "ml.m5d.12xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.m5d.24xlarge` = "ml.m5d.24xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c4.large` = "ml.c4.large".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c4.xlarge` = "ml.c4.xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c4.2xlarge` = "ml.c4.2xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c4.4xlarge` = "ml.c4.4xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c4.8xlarge` = "ml.c4.8xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.p2.xlarge` = "ml.p2.xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.p2.8xlarge` = "ml.p2.8xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.p2.16xlarge` = "ml.p2.16xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.p3.2xlarge` = "ml.p3.2xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.p3.8xlarge` = "ml.p3.8xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.p3.16xlarge` = "ml.p3.16xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c5.large` = "ml.c5.large".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c5.xlarge` = "ml.c5.xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c5.2xlarge` = "ml.c5.2xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c5.4xlarge` = "ml.c5.4xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c5.9xlarge` = "ml.c5.9xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c5.18xlarge` = "ml.c5.18xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c5d.large` = "ml.c5d.large".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c5d.xlarge` = "ml.c5d.xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c5d.2xlarge` = "ml.c5d.2xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c5d.4xlarge` = "ml.c5d.4xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c5d.9xlarge` = "ml.c5d.9xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.c5d.18xlarge` = "ml.c5d.18xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.g4dn.xlarge` = "ml.g4dn.xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.g4dn.2xlarge` = "ml.g4dn.2xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.g4dn.4xlarge` = "ml.g4dn.4xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.g4dn.8xlarge` = "ml.g4dn.8xlarge".asInstanceOf[ProductionVariantInstanceType]
     val `ml.g4dn.12xlarge` = "ml.g4dn.12xlarge".asInstanceOf[ProductionVariantInstanceType]
     val `ml.g4dn.16xlarge` = "ml.g4dn.16xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.r5.large`      = "ml.r5.large".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.r5.xlarge`     = "ml.r5.xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.r5.2xlarge`    = "ml.r5.2xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.r5.4xlarge`    = "ml.r5.4xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.r5.12xlarge`   = "ml.r5.12xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.r5.24xlarge`   = "ml.r5.24xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.r5d.large`     = "ml.r5d.large".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.r5d.xlarge`    = "ml.r5d.xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.r5d.2xlarge`   = "ml.r5d.2xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.r5d.4xlarge`   = "ml.r5d.4xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.r5d.12xlarge`  = "ml.r5d.12xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.r5d.24xlarge`  = "ml.r5d.24xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.inf1.xlarge`   = "ml.inf1.xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.inf1.2xlarge`  = "ml.inf1.2xlarge".asInstanceOf[ProductionVariantInstanceType]
-    val `ml.inf1.6xlarge`  = "ml.inf1.6xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.r5.large` = "ml.r5.large".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.r5.xlarge` = "ml.r5.xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.r5.2xlarge` = "ml.r5.2xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.r5.4xlarge` = "ml.r5.4xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.r5.12xlarge` = "ml.r5.12xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.r5.24xlarge` = "ml.r5.24xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.r5d.large` = "ml.r5d.large".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.r5d.xlarge` = "ml.r5d.xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.r5d.2xlarge` = "ml.r5d.2xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.r5d.4xlarge` = "ml.r5d.4xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.r5d.12xlarge` = "ml.r5d.12xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.r5d.24xlarge` = "ml.r5d.24xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.inf1.xlarge` = "ml.inf1.xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.inf1.2xlarge` = "ml.inf1.2xlarge".asInstanceOf[ProductionVariantInstanceType]
+    val `ml.inf1.6xlarge` = "ml.inf1.6xlarge".asInstanceOf[ProductionVariantInstanceType]
     val `ml.inf1.24xlarge` = "ml.inf1.24xlarge".asInstanceOf[ProductionVariantInstanceType]
 
     val values = js.Object.freeze(
@@ -12031,7 +12157,7 @@ package sagemaker {
   @js.native
   sealed trait RecordWrapper extends js.Any
   object RecordWrapper extends js.Object {
-    val None     = "None".asInstanceOf[RecordWrapper]
+    val None = "None".asInstanceOf[RecordWrapper]
     val RecordIO = "RecordIO".asInstanceOf[RecordWrapper]
 
     val values = js.Object.freeze(js.Array(None, RecordIO))
@@ -12041,7 +12167,8 @@ package sagemaker {
   trait RenderUiTemplateRequest extends js.Object {
     var RoleArn: RoleArn
     var Task: RenderableTask
-    var UiTemplate: UiTemplate
+    var HumanTaskUiArn: js.UndefOr[HumanTaskUiArn]
+    var UiTemplate: js.UndefOr[UiTemplate]
   }
 
   object RenderUiTemplateRequest {
@@ -12049,14 +12176,16 @@ package sagemaker {
     def apply(
         RoleArn: RoleArn,
         Task: RenderableTask,
-        UiTemplate: UiTemplate
+        HumanTaskUiArn: js.UndefOr[HumanTaskUiArn] = js.undefined,
+        UiTemplate: js.UndefOr[UiTemplate] = js.undefined
     ): RenderUiTemplateRequest = {
       val __obj = js.Dynamic.literal(
-        "RoleArn"    -> RoleArn.asInstanceOf[js.Any],
-        "Task"       -> Task.asInstanceOf[js.Any],
-        "UiTemplate" -> UiTemplate.asInstanceOf[js.Any]
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
+        "Task" -> Task.asInstanceOf[js.Any]
       )
 
+      HumanTaskUiArn.foreach(__v => __obj.updateDynamic("HumanTaskUiArn")(__v.asInstanceOf[js.Any]))
+      UiTemplate.foreach(__v => __obj.updateDynamic("UiTemplate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RenderUiTemplateRequest]
     }
   }
@@ -12074,7 +12203,7 @@ package sagemaker {
         RenderedContent: String
     ): RenderUiTemplateResponse = {
       val __obj = js.Dynamic.literal(
-        "Errors"          -> Errors.asInstanceOf[js.Any],
+        "Errors" -> Errors.asInstanceOf[js.Any],
         "RenderedContent" -> RenderedContent.asInstanceOf[js.Any]
       )
 
@@ -12119,7 +12248,7 @@ package sagemaker {
         Message: String
     ): RenderingError = {
       val __obj = js.Dynamic.literal(
-        "Code"    -> Code.asInstanceOf[js.Any],
+        "Code" -> Code.asInstanceOf[js.Any],
         "Message" -> Message.asInstanceOf[js.Any]
       )
 
@@ -12172,8 +12301,8 @@ package sagemaker {
         VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
     ): ResourceConfig = {
       val __obj = js.Dynamic.literal(
-        "InstanceCount"  -> InstanceCount.asInstanceOf[js.Any],
-        "InstanceType"   -> InstanceType.asInstanceOf[js.Any],
+        "InstanceCount" -> InstanceCount.asInstanceOf[js.Any],
+        "InstanceType" -> InstanceType.asInstanceOf[js.Any],
         "VolumeSizeInGB" -> VolumeSizeInGB.asInstanceOf[js.Any]
       )
 
@@ -12207,23 +12336,23 @@ package sagemaker {
   }
 
   /**
-    * The instance type and quantity.
+    * The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. The ARN is stored as metadata in SageMaker Studio notebooks.
     */
   @js.native
   trait ResourceSpec extends js.Object {
-    var EnvironmentArn: js.UndefOr[EnvironmentArn]
     var InstanceType: js.UndefOr[AppInstanceType]
+    var SageMakerImageArn: js.UndefOr[SageMakerImageArn]
   }
 
   object ResourceSpec {
     @inline
     def apply(
-        EnvironmentArn: js.UndefOr[EnvironmentArn] = js.undefined,
-        InstanceType: js.UndefOr[AppInstanceType] = js.undefined
+        InstanceType: js.UndefOr[AppInstanceType] = js.undefined,
+        SageMakerImageArn: js.UndefOr[SageMakerImageArn] = js.undefined
     ): ResourceSpec = {
       val __obj = js.Dynamic.literal()
-      EnvironmentArn.foreach(__v => __obj.updateDynamic("EnvironmentArn")(__v.asInstanceOf[js.Any]))
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
+      SageMakerImageArn.foreach(__v => __obj.updateDynamic("SageMakerImageArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceSpec]
     }
   }
@@ -12231,16 +12360,16 @@ package sagemaker {
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {
-    val TrainingJob              = "TrainingJob".asInstanceOf[ResourceType]
-    val Experiment               = "Experiment".asInstanceOf[ResourceType]
-    val ExperimentTrial          = "ExperimentTrial".asInstanceOf[ResourceType]
+    val TrainingJob = "TrainingJob".asInstanceOf[ResourceType]
+    val Experiment = "Experiment".asInstanceOf[ResourceType]
+    val ExperimentTrial = "ExperimentTrial".asInstanceOf[ResourceType]
     val ExperimentTrialComponent = "ExperimentTrialComponent".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(js.Array(TrainingJob, Experiment, ExperimentTrial, ExperimentTrialComponent))
   }
 
   /**
-    * The retention policy.
+    * The retention policy for data stored on an Amazon Elastic File System (EFS) volume.
     */
   @js.native
   trait RetentionPolicy extends js.Object {
@@ -12270,7 +12399,7 @@ package sagemaker {
   @js.native
   sealed trait RootAccess extends js.Any
   object RootAccess extends js.Object {
-    val Enabled  = "Enabled".asInstanceOf[RootAccess]
+    val Enabled = "Enabled".asInstanceOf[RootAccess]
     val Disabled = "Disabled".asInstanceOf[RootAccess]
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
@@ -12279,12 +12408,12 @@ package sagemaker {
   @js.native
   sealed trait RuleEvaluationStatus extends js.Any
   object RuleEvaluationStatus extends js.Object {
-    val InProgress    = "InProgress".asInstanceOf[RuleEvaluationStatus]
+    val InProgress = "InProgress".asInstanceOf[RuleEvaluationStatus]
     val NoIssuesFound = "NoIssuesFound".asInstanceOf[RuleEvaluationStatus]
-    val IssuesFound   = "IssuesFound".asInstanceOf[RuleEvaluationStatus]
-    val Error         = "Error".asInstanceOf[RuleEvaluationStatus]
-    val Stopping      = "Stopping".asInstanceOf[RuleEvaluationStatus]
-    val Stopped       = "Stopped".asInstanceOf[RuleEvaluationStatus]
+    val IssuesFound = "IssuesFound".asInstanceOf[RuleEvaluationStatus]
+    val Error = "Error".asInstanceOf[RuleEvaluationStatus]
+    val Stopping = "Stopping".asInstanceOf[RuleEvaluationStatus]
+    val Stopped = "Stopped".asInstanceOf[RuleEvaluationStatus]
 
     val values = js.Object.freeze(js.Array(InProgress, NoIssuesFound, IssuesFound, Error, Stopping, Stopped))
   }
@@ -12293,7 +12422,7 @@ package sagemaker {
   sealed trait S3DataDistribution extends js.Any
   object S3DataDistribution extends js.Object {
     val FullyReplicated = "FullyReplicated".asInstanceOf[S3DataDistribution]
-    val ShardedByS3Key  = "ShardedByS3Key".asInstanceOf[S3DataDistribution]
+    val ShardedByS3Key = "ShardedByS3Key".asInstanceOf[S3DataDistribution]
 
     val values = js.Object.freeze(js.Array(FullyReplicated, ShardedByS3Key))
   }
@@ -12319,7 +12448,7 @@ package sagemaker {
     ): S3DataSource = {
       val __obj = js.Dynamic.literal(
         "S3DataType" -> S3DataType.asInstanceOf[js.Any],
-        "S3Uri"      -> S3Uri.asInstanceOf[js.Any]
+        "S3Uri" -> S3Uri.asInstanceOf[js.Any]
       )
 
       AttributeNames.foreach(__v => __obj.updateDynamic("AttributeNames")(__v.asInstanceOf[js.Any]))
@@ -12331,8 +12460,8 @@ package sagemaker {
   @js.native
   sealed trait S3DataType extends js.Any
   object S3DataType extends js.Object {
-    val ManifestFile          = "ManifestFile".asInstanceOf[S3DataType]
-    val S3Prefix              = "S3Prefix".asInstanceOf[S3DataType]
+    val ManifestFile = "ManifestFile".asInstanceOf[S3DataType]
+    val S3Prefix = "S3Prefix".asInstanceOf[S3DataType]
     val AugmentedManifestFile = "AugmentedManifestFile".asInstanceOf[S3DataType]
 
     val values = js.Object.freeze(js.Array(ManifestFile, S3Prefix, AugmentedManifestFile))
@@ -12362,10 +12491,10 @@ package sagemaker {
   @js.native
   sealed trait ScheduleStatus extends js.Any
   object ScheduleStatus extends js.Object {
-    val Pending   = "Pending".asInstanceOf[ScheduleStatus]
-    val Failed    = "Failed".asInstanceOf[ScheduleStatus]
+    val Pending = "Pending".asInstanceOf[ScheduleStatus]
+    val Failed = "Failed".asInstanceOf[ScheduleStatus]
     val Scheduled = "Scheduled".asInstanceOf[ScheduleStatus]
-    val Stopped   = "Stopped".asInstanceOf[ScheduleStatus]
+    val Stopped = "Stopped".asInstanceOf[ScheduleStatus]
 
     val values = js.Object.freeze(js.Array(Pending, Failed, Scheduled, Stopped))
   }
@@ -12373,7 +12502,7 @@ package sagemaker {
   /**
     * A multi-expression that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. You must specify at least one subexpression, filter, or nested filter. A <code>SearchExpression</code> can contain up to twenty elements.
     *  A <code>SearchExpression</code> contains the following components:
-    * * A list of <code>Filter</code> objects. Each filter defines a simple Boolean expression comprised of a resource property name, Boolean operator, and value. A <code>SearchExpression</code> can include only one <code>Contains</code> operator.
+    * * A list of <code>Filter</code> objects. Each filter defines a simple Boolean expression comprised of a resource property name, Boolean operator, and value.
     *  * A list of <code>NestedFilter</code> objects. Each nested filter defines a list of Boolean expressions using a list of resource properties. A nested filter is satisfied if a single object in the list satisfies all Boolean expressions.
     *  * A list of <code>SearchExpression</code> objects. A search expression object can be nested in a list of search expression objects.
     *  * A Boolean operator: <code>And</code> or <code>Or</code>.
@@ -12404,7 +12533,7 @@ package sagemaker {
   }
 
   /**
-    * An individual search result record that contains a single resource object.
+    * A single resource returned as part of the <a>Search</a> API response.
     */
   @js.native
   trait SearchRecord extends js.Object {
@@ -12486,7 +12615,7 @@ package sagemaker {
   @js.native
   sealed trait SearchSortOrder extends js.Any
   object SearchSortOrder extends js.Object {
-    val Ascending  = "Ascending".asInstanceOf[SearchSortOrder]
+    val Ascending = "Ascending".asInstanceOf[SearchSortOrder]
     val Descending = "Descending".asInstanceOf[SearchSortOrder]
 
     val values = js.Object.freeze(js.Array(Ascending, Descending))
@@ -12495,20 +12624,20 @@ package sagemaker {
   @js.native
   sealed trait SecondaryStatus extends js.Any
   object SecondaryStatus extends js.Object {
-    val Starting                 = "Starting".asInstanceOf[SecondaryStatus]
-    val LaunchingMLInstances     = "LaunchingMLInstances".asInstanceOf[SecondaryStatus]
-    val PreparingTrainingStack   = "PreparingTrainingStack".asInstanceOf[SecondaryStatus]
-    val Downloading              = "Downloading".asInstanceOf[SecondaryStatus]
+    val Starting = "Starting".asInstanceOf[SecondaryStatus]
+    val LaunchingMLInstances = "LaunchingMLInstances".asInstanceOf[SecondaryStatus]
+    val PreparingTrainingStack = "PreparingTrainingStack".asInstanceOf[SecondaryStatus]
+    val Downloading = "Downloading".asInstanceOf[SecondaryStatus]
     val DownloadingTrainingImage = "DownloadingTrainingImage".asInstanceOf[SecondaryStatus]
-    val Training                 = "Training".asInstanceOf[SecondaryStatus]
-    val Uploading                = "Uploading".asInstanceOf[SecondaryStatus]
-    val Stopping                 = "Stopping".asInstanceOf[SecondaryStatus]
-    val Stopped                  = "Stopped".asInstanceOf[SecondaryStatus]
-    val MaxRuntimeExceeded       = "MaxRuntimeExceeded".asInstanceOf[SecondaryStatus]
-    val Completed                = "Completed".asInstanceOf[SecondaryStatus]
-    val Failed                   = "Failed".asInstanceOf[SecondaryStatus]
-    val Interrupted              = "Interrupted".asInstanceOf[SecondaryStatus]
-    val MaxWaitTimeExceeded      = "MaxWaitTimeExceeded".asInstanceOf[SecondaryStatus]
+    val Training = "Training".asInstanceOf[SecondaryStatus]
+    val Uploading = "Uploading".asInstanceOf[SecondaryStatus]
+    val Stopping = "Stopping".asInstanceOf[SecondaryStatus]
+    val Stopped = "Stopped".asInstanceOf[SecondaryStatus]
+    val MaxRuntimeExceeded = "MaxRuntimeExceeded".asInstanceOf[SecondaryStatus]
+    val Completed = "Completed".asInstanceOf[SecondaryStatus]
+    val Failed = "Failed".asInstanceOf[SecondaryStatus]
+    val Interrupted = "Interrupted".asInstanceOf[SecondaryStatus]
+    val MaxWaitTimeExceeded = "MaxWaitTimeExceeded".asInstanceOf[SecondaryStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -12552,7 +12681,7 @@ package sagemaker {
     ): SecondaryStatusTransition = {
       val __obj = js.Dynamic.literal(
         "StartTime" -> StartTime.asInstanceOf[js.Any],
-        "Status"    -> Status.asInstanceOf[js.Any]
+        "Status" -> Status.asInstanceOf[js.Any]
       )
 
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
@@ -12562,7 +12691,7 @@ package sagemaker {
   }
 
   /**
-    * The sharing settings.
+    * Specifies options when sharing an Amazon SageMaker Studio notebook. These settings are specified as part of <code>DefaultUserSettings</code> when the <a>CreateDomain</a> API is called, and as part of <code>UserSettings</code> when the <a>CreateUserProfile</a> API is called.
     */
   @js.native
   trait SharingSettings extends js.Object {
@@ -12611,9 +12740,9 @@ package sagemaker {
   @js.native
   sealed trait SortBy extends js.Any
   object SortBy extends js.Object {
-    val Name         = "Name".asInstanceOf[SortBy]
+    val Name = "Name".asInstanceOf[SortBy]
     val CreationTime = "CreationTime".asInstanceOf[SortBy]
-    val Status       = "Status".asInstanceOf[SortBy]
+    val Status = "Status".asInstanceOf[SortBy]
 
     val values = js.Object.freeze(js.Array(Name, CreationTime, Status))
   }
@@ -12621,7 +12750,7 @@ package sagemaker {
   @js.native
   sealed trait SortExperimentsBy extends js.Any
   object SortExperimentsBy extends js.Object {
-    val Name         = "Name".asInstanceOf[SortExperimentsBy]
+    val Name = "Name".asInstanceOf[SortExperimentsBy]
     val CreationTime = "CreationTime".asInstanceOf[SortExperimentsBy]
 
     val values = js.Object.freeze(js.Array(Name, CreationTime))
@@ -12630,7 +12759,7 @@ package sagemaker {
   @js.native
   sealed trait SortOrder extends js.Any
   object SortOrder extends js.Object {
-    val Ascending  = "Ascending".asInstanceOf[SortOrder]
+    val Ascending = "Ascending".asInstanceOf[SortOrder]
     val Descending = "Descending".asInstanceOf[SortOrder]
 
     val values = js.Object.freeze(js.Array(Ascending, Descending))
@@ -12639,7 +12768,7 @@ package sagemaker {
   @js.native
   sealed trait SortTrialComponentsBy extends js.Any
   object SortTrialComponentsBy extends js.Object {
-    val Name         = "Name".asInstanceOf[SortTrialComponentsBy]
+    val Name = "Name".asInstanceOf[SortTrialComponentsBy]
     val CreationTime = "CreationTime".asInstanceOf[SortTrialComponentsBy]
 
     val values = js.Object.freeze(js.Array(Name, CreationTime))
@@ -12648,7 +12777,7 @@ package sagemaker {
   @js.native
   sealed trait SortTrialsBy extends js.Any
   object SortTrialsBy extends js.Object {
-    val Name         = "Name".asInstanceOf[SortTrialsBy]
+    val Name = "Name".asInstanceOf[SortTrialsBy]
     val CreationTime = "CreationTime".asInstanceOf[SortTrialsBy]
 
     val values = js.Object.freeze(js.Array(Name, CreationTime))
@@ -12723,8 +12852,8 @@ package sagemaker {
   @js.native
   sealed trait SplitType extends js.Any
   object SplitType extends js.Object {
-    val None     = "None".asInstanceOf[SplitType]
-    val Line     = "Line".asInstanceOf[SplitType]
+    val None = "None".asInstanceOf[SplitType]
+    val Line = "Line".asInstanceOf[SplitType]
     val RecordIO = "RecordIO".asInstanceOf[SplitType]
     val TFRecord = "TFRecord".asInstanceOf[SplitType]
 
@@ -13023,7 +13152,7 @@ package sagemaker {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -13034,25 +13163,29 @@ package sagemaker {
   @js.native
   sealed trait TargetDevice extends js.Any
   object TargetDevice extends js.Object {
-    val lambda      = "lambda".asInstanceOf[TargetDevice]
-    val ml_m4       = "ml_m4".asInstanceOf[TargetDevice]
-    val ml_m5       = "ml_m5".asInstanceOf[TargetDevice]
-    val ml_c4       = "ml_c4".asInstanceOf[TargetDevice]
-    val ml_c5       = "ml_c5".asInstanceOf[TargetDevice]
-    val ml_p2       = "ml_p2".asInstanceOf[TargetDevice]
-    val ml_p3       = "ml_p3".asInstanceOf[TargetDevice]
-    val ml_inf1     = "ml_inf1".asInstanceOf[TargetDevice]
-    val jetson_tx1  = "jetson_tx1".asInstanceOf[TargetDevice]
-    val jetson_tx2  = "jetson_tx2".asInstanceOf[TargetDevice]
+    val lambda = "lambda".asInstanceOf[TargetDevice]
+    val ml_m4 = "ml_m4".asInstanceOf[TargetDevice]
+    val ml_m5 = "ml_m5".asInstanceOf[TargetDevice]
+    val ml_c4 = "ml_c4".asInstanceOf[TargetDevice]
+    val ml_c5 = "ml_c5".asInstanceOf[TargetDevice]
+    val ml_p2 = "ml_p2".asInstanceOf[TargetDevice]
+    val ml_p3 = "ml_p3".asInstanceOf[TargetDevice]
+    val ml_inf1 = "ml_inf1".asInstanceOf[TargetDevice]
+    val jetson_tx1 = "jetson_tx1".asInstanceOf[TargetDevice]
+    val jetson_tx2 = "jetson_tx2".asInstanceOf[TargetDevice]
     val jetson_nano = "jetson_nano".asInstanceOf[TargetDevice]
-    val rasp3b      = "rasp3b".asInstanceOf[TargetDevice]
-    val deeplens    = "deeplens".asInstanceOf[TargetDevice]
-    val rk3399      = "rk3399".asInstanceOf[TargetDevice]
-    val rk3288      = "rk3288".asInstanceOf[TargetDevice]
-    val aisage      = "aisage".asInstanceOf[TargetDevice]
-    val sbe_c       = "sbe_c".asInstanceOf[TargetDevice]
-    val qcs605      = "qcs605".asInstanceOf[TargetDevice]
-    val qcs603      = "qcs603".asInstanceOf[TargetDevice]
+    val jetson_xavier = "jetson_xavier".asInstanceOf[TargetDevice]
+    val rasp3b = "rasp3b".asInstanceOf[TargetDevice]
+    val imx8qm = "imx8qm".asInstanceOf[TargetDevice]
+    val deeplens = "deeplens".asInstanceOf[TargetDevice]
+    val rk3399 = "rk3399".asInstanceOf[TargetDevice]
+    val rk3288 = "rk3288".asInstanceOf[TargetDevice]
+    val aisage = "aisage".asInstanceOf[TargetDevice]
+    val sbe_c = "sbe_c".asInstanceOf[TargetDevice]
+    val qcs605 = "qcs605".asInstanceOf[TargetDevice]
+    val qcs603 = "qcs603".asInstanceOf[TargetDevice]
+    val sitara_am57x = "sitara_am57x".asInstanceOf[TargetDevice]
+    val amba_cv22 = "amba_cv22".asInstanceOf[TargetDevice]
 
     val values = js.Object.freeze(
       js.Array(
@@ -13067,14 +13200,18 @@ package sagemaker {
         jetson_tx1,
         jetson_tx2,
         jetson_nano,
+        jetson_xavier,
         rasp3b,
+        imx8qm,
         deeplens,
         rk3399,
         rk3288,
         aisage,
         sbe_c,
         qcs605,
-        qcs603
+        qcs603,
+        sitara_am57x,
+        amba_cv22
       )
     )
   }
@@ -13134,39 +13271,44 @@ package sagemaker {
   @js.native
   sealed trait TrainingInstanceType extends js.Any
   object TrainingInstanceType extends js.Object {
-    val `ml.m4.xlarge`     = "ml.m4.xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.m4.2xlarge`    = "ml.m4.2xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.m4.4xlarge`    = "ml.m4.4xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.m4.10xlarge`   = "ml.m4.10xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.m4.16xlarge`   = "ml.m4.16xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.g4dn.xlarge`   = "ml.g4dn.xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.g4dn.2xlarge`  = "ml.g4dn.2xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.g4dn.4xlarge`  = "ml.g4dn.4xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.g4dn.8xlarge`  = "ml.g4dn.8xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.m4.xlarge` = "ml.m4.xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.m4.2xlarge` = "ml.m4.2xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.m4.4xlarge` = "ml.m4.4xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.m4.10xlarge` = "ml.m4.10xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.m4.16xlarge` = "ml.m4.16xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.g4dn.xlarge` = "ml.g4dn.xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.g4dn.2xlarge` = "ml.g4dn.2xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.g4dn.4xlarge` = "ml.g4dn.4xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.g4dn.8xlarge` = "ml.g4dn.8xlarge".asInstanceOf[TrainingInstanceType]
     val `ml.g4dn.12xlarge` = "ml.g4dn.12xlarge".asInstanceOf[TrainingInstanceType]
     val `ml.g4dn.16xlarge` = "ml.g4dn.16xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.m5.large`      = "ml.m5.large".asInstanceOf[TrainingInstanceType]
-    val `ml.m5.xlarge`     = "ml.m5.xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.m5.2xlarge`    = "ml.m5.2xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.m5.4xlarge`    = "ml.m5.4xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.m5.12xlarge`   = "ml.m5.12xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.m5.24xlarge`   = "ml.m5.24xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.c4.xlarge`     = "ml.c4.xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.c4.2xlarge`    = "ml.c4.2xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.c4.4xlarge`    = "ml.c4.4xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.c4.8xlarge`    = "ml.c4.8xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.p2.xlarge`     = "ml.p2.xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.p2.8xlarge`    = "ml.p2.8xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.p2.16xlarge`   = "ml.p2.16xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.p3.2xlarge`    = "ml.p3.2xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.p3.8xlarge`    = "ml.p3.8xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.p3.16xlarge`   = "ml.p3.16xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.m5.large` = "ml.m5.large".asInstanceOf[TrainingInstanceType]
+    val `ml.m5.xlarge` = "ml.m5.xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.m5.2xlarge` = "ml.m5.2xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.m5.4xlarge` = "ml.m5.4xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.m5.12xlarge` = "ml.m5.12xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.m5.24xlarge` = "ml.m5.24xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c4.xlarge` = "ml.c4.xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c4.2xlarge` = "ml.c4.2xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c4.4xlarge` = "ml.c4.4xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c4.8xlarge` = "ml.c4.8xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.p2.xlarge` = "ml.p2.xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.p2.8xlarge` = "ml.p2.8xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.p2.16xlarge` = "ml.p2.16xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.p3.2xlarge` = "ml.p3.2xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.p3.8xlarge` = "ml.p3.8xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.p3.16xlarge` = "ml.p3.16xlarge".asInstanceOf[TrainingInstanceType]
     val `ml.p3dn.24xlarge` = "ml.p3dn.24xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.c5.xlarge`     = "ml.c5.xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.c5.2xlarge`    = "ml.c5.2xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.c5.4xlarge`    = "ml.c5.4xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.c5.9xlarge`    = "ml.c5.9xlarge".asInstanceOf[TrainingInstanceType]
-    val `ml.c5.18xlarge`   = "ml.c5.18xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c5.xlarge` = "ml.c5.xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c5.2xlarge` = "ml.c5.2xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c5.4xlarge` = "ml.c5.4xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c5.9xlarge` = "ml.c5.9xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c5.18xlarge` = "ml.c5.18xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c5n.xlarge` = "ml.c5n.xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c5n.2xlarge` = "ml.c5n.2xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c5n.4xlarge` = "ml.c5n.4xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c5n.9xlarge` = "ml.c5n.9xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.c5n.18xlarge` = "ml.c5n.18xlarge".asInstanceOf[TrainingInstanceType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -13202,7 +13344,12 @@ package sagemaker {
         `ml.c5.2xlarge`,
         `ml.c5.4xlarge`,
         `ml.c5.9xlarge`,
-        `ml.c5.18xlarge`
+        `ml.c5.18xlarge`,
+        `ml.c5n.xlarge`,
+        `ml.c5n.2xlarge`,
+        `ml.c5n.4xlarge`,
+        `ml.c5n.9xlarge`,
+        `ml.c5n.18xlarge`
       )
     )
   }
@@ -13360,9 +13507,9 @@ package sagemaker {
         HyperParameters: js.UndefOr[HyperParameters] = js.undefined
     ): TrainingJobDefinition = {
       val __obj = js.Dynamic.literal(
-        "InputDataConfig"   -> InputDataConfig.asInstanceOf[js.Any],
-        "OutputDataConfig"  -> OutputDataConfig.asInstanceOf[js.Any],
-        "ResourceConfig"    -> ResourceConfig.asInstanceOf[js.Any],
+        "InputDataConfig" -> InputDataConfig.asInstanceOf[js.Any],
+        "OutputDataConfig" -> OutputDataConfig.asInstanceOf[js.Any],
+        "ResourceConfig" -> ResourceConfig.asInstanceOf[js.Any],
         "StoppingCondition" -> StoppingCondition.asInstanceOf[js.Any],
         "TrainingInputMode" -> TrainingInputMode.asInstanceOf[js.Any]
       )
@@ -13375,7 +13522,7 @@ package sagemaker {
   @js.native
   sealed trait TrainingJobEarlyStoppingType extends js.Any
   object TrainingJobEarlyStoppingType extends js.Object {
-    val Off  = "Off".asInstanceOf[TrainingJobEarlyStoppingType]
+    val Off = "Off".asInstanceOf[TrainingJobEarlyStoppingType]
     val Auto = "Auto".asInstanceOf[TrainingJobEarlyStoppingType]
 
     val values = js.Object.freeze(js.Array(Off, Auto))
@@ -13384,9 +13531,9 @@ package sagemaker {
   @js.native
   sealed trait TrainingJobSortByOptions extends js.Any
   object TrainingJobSortByOptions extends js.Object {
-    val Name                      = "Name".asInstanceOf[TrainingJobSortByOptions]
-    val CreationTime              = "CreationTime".asInstanceOf[TrainingJobSortByOptions]
-    val Status                    = "Status".asInstanceOf[TrainingJobSortByOptions]
+    val Name = "Name".asInstanceOf[TrainingJobSortByOptions]
+    val CreationTime = "CreationTime".asInstanceOf[TrainingJobSortByOptions]
+    val Status = "Status".asInstanceOf[TrainingJobSortByOptions]
     val FinalObjectiveMetricValue = "FinalObjectiveMetricValue".asInstanceOf[TrainingJobSortByOptions]
 
     val values = js.Object.freeze(js.Array(Name, CreationTime, Status, FinalObjectiveMetricValue))
@@ -13396,10 +13543,10 @@ package sagemaker {
   sealed trait TrainingJobStatus extends js.Any
   object TrainingJobStatus extends js.Object {
     val InProgress = "InProgress".asInstanceOf[TrainingJobStatus]
-    val Completed  = "Completed".asInstanceOf[TrainingJobStatus]
-    val Failed     = "Failed".asInstanceOf[TrainingJobStatus]
-    val Stopping   = "Stopping".asInstanceOf[TrainingJobStatus]
-    val Stopped    = "Stopped".asInstanceOf[TrainingJobStatus]
+    val Completed = "Completed".asInstanceOf[TrainingJobStatus]
+    val Failed = "Failed".asInstanceOf[TrainingJobStatus]
+    val Stopping = "Stopping".asInstanceOf[TrainingJobStatus]
+    val Stopped = "Stopped".asInstanceOf[TrainingJobStatus]
 
     val values = js.Object.freeze(js.Array(InProgress, Completed, Failed, Stopping, Stopped))
   }
@@ -13459,9 +13606,9 @@ package sagemaker {
         TrainingEndTime: js.UndefOr[Timestamp] = js.undefined
     ): TrainingJobSummary = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"      -> CreationTime.asInstanceOf[js.Any],
-        "TrainingJobArn"    -> TrainingJobArn.asInstanceOf[js.Any],
-        "TrainingJobName"   -> TrainingJobName.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "TrainingJobArn" -> TrainingJobArn.asInstanceOf[js.Any],
+        "TrainingJobName" -> TrainingJobName.asInstanceOf[js.Any],
         "TrainingJobStatus" -> TrainingJobStatus.asInstanceOf[js.Any]
       )
 
@@ -13500,8 +13647,8 @@ package sagemaker {
     ): TrainingSpecification = {
       val __obj = js.Dynamic.literal(
         "SupportedTrainingInstanceTypes" -> SupportedTrainingInstanceTypes.asInstanceOf[js.Any],
-        "TrainingChannels"               -> TrainingChannels.asInstanceOf[js.Any],
-        "TrainingImage"                  -> TrainingImage.asInstanceOf[js.Any]
+        "TrainingChannels" -> TrainingChannels.asInstanceOf[js.Any],
+        "TrainingImage" -> TrainingImage.asInstanceOf[js.Any]
       )
 
       MetricDefinitions.foreach(__v => __obj.updateDynamic("MetricDefinitions")(__v.asInstanceOf[js.Any]))
@@ -13571,30 +13718,30 @@ package sagemaker {
   @js.native
   sealed trait TransformInstanceType extends js.Any
   object TransformInstanceType extends js.Object {
-    val `ml.m4.xlarge`   = "ml.m4.xlarge".asInstanceOf[TransformInstanceType]
-    val `ml.m4.2xlarge`  = "ml.m4.2xlarge".asInstanceOf[TransformInstanceType]
-    val `ml.m4.4xlarge`  = "ml.m4.4xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.m4.xlarge` = "ml.m4.xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.m4.2xlarge` = "ml.m4.2xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.m4.4xlarge` = "ml.m4.4xlarge".asInstanceOf[TransformInstanceType]
     val `ml.m4.10xlarge` = "ml.m4.10xlarge".asInstanceOf[TransformInstanceType]
     val `ml.m4.16xlarge` = "ml.m4.16xlarge".asInstanceOf[TransformInstanceType]
-    val `ml.c4.xlarge`   = "ml.c4.xlarge".asInstanceOf[TransformInstanceType]
-    val `ml.c4.2xlarge`  = "ml.c4.2xlarge".asInstanceOf[TransformInstanceType]
-    val `ml.c4.4xlarge`  = "ml.c4.4xlarge".asInstanceOf[TransformInstanceType]
-    val `ml.c4.8xlarge`  = "ml.c4.8xlarge".asInstanceOf[TransformInstanceType]
-    val `ml.p2.xlarge`   = "ml.p2.xlarge".asInstanceOf[TransformInstanceType]
-    val `ml.p2.8xlarge`  = "ml.p2.8xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.c4.xlarge` = "ml.c4.xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.c4.2xlarge` = "ml.c4.2xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.c4.4xlarge` = "ml.c4.4xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.c4.8xlarge` = "ml.c4.8xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.p2.xlarge` = "ml.p2.xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.p2.8xlarge` = "ml.p2.8xlarge".asInstanceOf[TransformInstanceType]
     val `ml.p2.16xlarge` = "ml.p2.16xlarge".asInstanceOf[TransformInstanceType]
-    val `ml.p3.2xlarge`  = "ml.p3.2xlarge".asInstanceOf[TransformInstanceType]
-    val `ml.p3.8xlarge`  = "ml.p3.8xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.p3.2xlarge` = "ml.p3.2xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.p3.8xlarge` = "ml.p3.8xlarge".asInstanceOf[TransformInstanceType]
     val `ml.p3.16xlarge` = "ml.p3.16xlarge".asInstanceOf[TransformInstanceType]
-    val `ml.c5.xlarge`   = "ml.c5.xlarge".asInstanceOf[TransformInstanceType]
-    val `ml.c5.2xlarge`  = "ml.c5.2xlarge".asInstanceOf[TransformInstanceType]
-    val `ml.c5.4xlarge`  = "ml.c5.4xlarge".asInstanceOf[TransformInstanceType]
-    val `ml.c5.9xlarge`  = "ml.c5.9xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.c5.xlarge` = "ml.c5.xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.c5.2xlarge` = "ml.c5.2xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.c5.4xlarge` = "ml.c5.4xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.c5.9xlarge` = "ml.c5.9xlarge".asInstanceOf[TransformInstanceType]
     val `ml.c5.18xlarge` = "ml.c5.18xlarge".asInstanceOf[TransformInstanceType]
-    val `ml.m5.large`    = "ml.m5.large".asInstanceOf[TransformInstanceType]
-    val `ml.m5.xlarge`   = "ml.m5.xlarge".asInstanceOf[TransformInstanceType]
-    val `ml.m5.2xlarge`  = "ml.m5.2xlarge".asInstanceOf[TransformInstanceType]
-    val `ml.m5.4xlarge`  = "ml.m5.4xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.m5.large` = "ml.m5.large".asInstanceOf[TransformInstanceType]
+    val `ml.m5.xlarge` = "ml.m5.xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.m5.2xlarge` = "ml.m5.2xlarge".asInstanceOf[TransformInstanceType]
+    val `ml.m5.4xlarge` = "ml.m5.4xlarge".asInstanceOf[TransformInstanceType]
     val `ml.m5.12xlarge` = "ml.m5.12xlarge".asInstanceOf[TransformInstanceType]
     val `ml.m5.24xlarge` = "ml.m5.24xlarge".asInstanceOf[TransformInstanceType]
 
@@ -13656,8 +13803,8 @@ package sagemaker {
         MaxPayloadInMB: js.UndefOr[MaxPayloadInMB] = js.undefined
     ): TransformJobDefinition = {
       val __obj = js.Dynamic.literal(
-        "TransformInput"     -> TransformInput.asInstanceOf[js.Any],
-        "TransformOutput"    -> TransformOutput.asInstanceOf[js.Any],
+        "TransformInput" -> TransformInput.asInstanceOf[js.Any],
+        "TransformOutput" -> TransformOutput.asInstanceOf[js.Any],
         "TransformResources" -> TransformResources.asInstanceOf[js.Any]
       )
 
@@ -13673,10 +13820,10 @@ package sagemaker {
   sealed trait TransformJobStatus extends js.Any
   object TransformJobStatus extends js.Object {
     val InProgress = "InProgress".asInstanceOf[TransformJobStatus]
-    val Completed  = "Completed".asInstanceOf[TransformJobStatus]
-    val Failed     = "Failed".asInstanceOf[TransformJobStatus]
-    val Stopping   = "Stopping".asInstanceOf[TransformJobStatus]
-    val Stopped    = "Stopped".asInstanceOf[TransformJobStatus]
+    val Completed = "Completed".asInstanceOf[TransformJobStatus]
+    val Failed = "Failed".asInstanceOf[TransformJobStatus]
+    val Stopping = "Stopping".asInstanceOf[TransformJobStatus]
+    val Stopped = "Stopped".asInstanceOf[TransformJobStatus]
 
     val values = js.Object.freeze(js.Array(InProgress, Completed, Failed, Stopping, Stopped))
   }
@@ -13707,9 +13854,9 @@ package sagemaker {
         TransformEndTime: js.UndefOr[Timestamp] = js.undefined
     ): TransformJobSummary = {
       val __obj = js.Dynamic.literal(
-        "CreationTime"       -> CreationTime.asInstanceOf[js.Any],
-        "TransformJobArn"    -> TransformJobArn.asInstanceOf[js.Any],
-        "TransformJobName"   -> TransformJobName.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "TransformJobArn" -> TransformJobArn.asInstanceOf[js.Any],
+        "TransformJobName" -> TransformJobName.asInstanceOf[js.Any],
         "TransformJobStatus" -> TransformJobStatus.asInstanceOf[js.Any]
       )
 
@@ -13769,7 +13916,7 @@ package sagemaker {
     ): TransformResources = {
       val __obj = js.Dynamic.literal(
         "InstanceCount" -> InstanceCount.asInstanceOf[js.Any],
-        "InstanceType"  -> InstanceType.asInstanceOf[js.Any]
+        "InstanceType" -> InstanceType.asInstanceOf[js.Any]
       )
 
       VolumeKmsKeyId.foreach(__v => __obj.updateDynamic("VolumeKmsKeyId")(__v.asInstanceOf[js.Any]))
@@ -13794,7 +13941,7 @@ package sagemaker {
     ): TransformS3DataSource = {
       val __obj = js.Dynamic.literal(
         "S3DataType" -> S3DataType.asInstanceOf[js.Any],
-        "S3Uri"      -> S3Uri.asInstanceOf[js.Any]
+        "S3Uri" -> S3Uri.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TransformS3DataSource]
@@ -13802,7 +13949,7 @@ package sagemaker {
   }
 
   /**
-    * A summary of the properties of a trial as returned by the <a>Search</a> API.
+    * The properties of a trial as returned by the <a>Search</a> API.
     */
   @js.native
   trait Trial extends js.Object {
@@ -13851,7 +13998,7 @@ package sagemaker {
   }
 
   /**
-    * A summary of the properties of a trial component as returned by the <a>Search</a> API.
+    * The properties of a trial component as returned by the <a>Search</a> API.
     */
   @js.native
   trait TrialComponent extends js.Object {
@@ -14015,10 +14162,12 @@ package sagemaker {
   sealed trait TrialComponentPrimaryStatus extends js.Any
   object TrialComponentPrimaryStatus extends js.Object {
     val InProgress = "InProgress".asInstanceOf[TrialComponentPrimaryStatus]
-    val Completed  = "Completed".asInstanceOf[TrialComponentPrimaryStatus]
-    val Failed     = "Failed".asInstanceOf[TrialComponentPrimaryStatus]
+    val Completed = "Completed".asInstanceOf[TrialComponentPrimaryStatus]
+    val Failed = "Failed".asInstanceOf[TrialComponentPrimaryStatus]
+    val Stopping = "Stopping".asInstanceOf[TrialComponentPrimaryStatus]
+    val Stopped = "Stopped".asInstanceOf[TrialComponentPrimaryStatus]
 
-    val values = js.Object.freeze(js.Array(InProgress, Completed, Failed))
+    val values = js.Object.freeze(js.Array(InProgress, Completed, Failed, Stopping, Stopped))
   }
 
   /**
@@ -14053,7 +14202,7 @@ package sagemaker {
   }
 
   /**
-    * The source of the trial component.
+    * The Amazon Resource Name (ARN) and job type of the source of a trial component.
     */
   @js.native
   trait TrialComponentSource extends js.Object {
@@ -14077,10 +14226,11 @@ package sagemaker {
   }
 
   /**
-    * Detailed information about the source of a trial component.
+    * Detailed information about the source of a trial component. Either <code>ProcessingJob</code> or <code>TrainingJob</code> is returned.
     */
   @js.native
   trait TrialComponentSourceDetail extends js.Object {
+    var ProcessingJob: js.UndefOr[ProcessingJob]
     var SourceArn: js.UndefOr[TrialComponentSourceArn]
     var TrainingJob: js.UndefOr[TrainingJob]
   }
@@ -14088,10 +14238,12 @@ package sagemaker {
   object TrialComponentSourceDetail {
     @inline
     def apply(
+        ProcessingJob: js.UndefOr[ProcessingJob] = js.undefined,
         SourceArn: js.UndefOr[TrialComponentSourceArn] = js.undefined,
         TrainingJob: js.UndefOr[TrainingJob] = js.undefined
     ): TrialComponentSourceDetail = {
       val __obj = js.Dynamic.literal()
+      ProcessingJob.foreach(__v => __obj.updateDynamic("ProcessingJob")(__v.asInstanceOf[js.Any]))
       SourceArn.foreach(__v => __obj.updateDynamic("SourceArn")(__v.asInstanceOf[js.Any]))
       TrainingJob.foreach(__v => __obj.updateDynamic("TrainingJob")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TrialComponentSourceDetail]
@@ -14278,18 +14430,19 @@ package sagemaker {
     */
   @js.native
   trait UiConfig extends js.Object {
-    var UiTemplateS3Uri: S3Uri
+    var HumanTaskUiArn: js.UndefOr[HumanTaskUiArn]
+    var UiTemplateS3Uri: js.UndefOr[S3Uri]
   }
 
   object UiConfig {
     @inline
     def apply(
-        UiTemplateS3Uri: S3Uri
+        HumanTaskUiArn: js.UndefOr[HumanTaskUiArn] = js.undefined,
+        UiTemplateS3Uri: js.UndefOr[S3Uri] = js.undefined
     ): UiConfig = {
-      val __obj = js.Dynamic.literal(
-        "UiTemplateS3Uri" -> UiTemplateS3Uri.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
+      HumanTaskUiArn.foreach(__v => __obj.updateDynamic("HumanTaskUiArn")(__v.asInstanceOf[js.Any]))
+      UiTemplateS3Uri.foreach(__v => __obj.updateDynamic("UiTemplateS3Uri")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UiConfig]
     }
   }
@@ -14417,19 +14570,29 @@ package sagemaker {
   trait UpdateEndpointInput extends js.Object {
     var EndpointConfigName: EndpointConfigName
     var EndpointName: EndpointName
+    var ExcludeRetainedVariantProperties: js.UndefOr[VariantPropertyList]
+    var RetainAllVariantProperties: js.UndefOr[Boolean]
   }
 
   object UpdateEndpointInput {
     @inline
     def apply(
         EndpointConfigName: EndpointConfigName,
-        EndpointName: EndpointName
+        EndpointName: EndpointName,
+        ExcludeRetainedVariantProperties: js.UndefOr[VariantPropertyList] = js.undefined,
+        RetainAllVariantProperties: js.UndefOr[Boolean] = js.undefined
     ): UpdateEndpointInput = {
       val __obj = js.Dynamic.literal(
         "EndpointConfigName" -> EndpointConfigName.asInstanceOf[js.Any],
-        "EndpointName"       -> EndpointName.asInstanceOf[js.Any]
+        "EndpointName" -> EndpointName.asInstanceOf[js.Any]
       )
 
+      ExcludeRetainedVariantProperties.foreach(__v =>
+        __obj.updateDynamic("ExcludeRetainedVariantProperties")(__v.asInstanceOf[js.Any])
+      )
+      RetainAllVariantProperties.foreach(__v =>
+        __obj.updateDynamic("RetainAllVariantProperties")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[UpdateEndpointInput]
     }
   }
@@ -14466,7 +14629,7 @@ package sagemaker {
     ): UpdateEndpointWeightsAndCapacitiesInput = {
       val __obj = js.Dynamic.literal(
         "DesiredWeightsAndCapacities" -> DesiredWeightsAndCapacities.asInstanceOf[js.Any],
-        "EndpointName"                -> EndpointName.asInstanceOf[js.Any]
+        "EndpointName" -> EndpointName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateEndpointWeightsAndCapacitiesInput]
@@ -14545,7 +14708,7 @@ package sagemaker {
     ): UpdateMonitoringScheduleRequest = {
       val __obj = js.Dynamic.literal(
         "MonitoringScheduleConfig" -> MonitoringScheduleConfig.asInstanceOf[js.Any],
-        "MonitoringScheduleName"   -> MonitoringScheduleName.asInstanceOf[js.Any]
+        "MonitoringScheduleName" -> MonitoringScheduleName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateMonitoringScheduleRequest]
@@ -14800,7 +14963,7 @@ package sagemaker {
         UserSettings: js.UndefOr[UserSettings] = js.undefined
     ): UpdateUserProfileRequest = {
       val __obj = js.Dynamic.literal(
-        "DomainId"        -> DomainId.asInstanceOf[js.Any],
+        "DomainId" -> DomainId.asInstanceOf[js.Any],
         "UserProfileName" -> UserProfileName.asInstanceOf[js.Any]
       )
 
@@ -14970,7 +15133,7 @@ package sagemaker {
   @js.native
   sealed trait UserProfileSortKey extends js.Any
   object UserProfileSortKey extends js.Object {
-    val CreationTime     = "CreationTime".asInstanceOf[UserProfileSortKey]
+    val CreationTime = "CreationTime".asInstanceOf[UserProfileSortKey]
     val LastModifiedTime = "LastModifiedTime".asInstanceOf[UserProfileSortKey]
 
     val values = js.Object.freeze(js.Array(CreationTime, LastModifiedTime))
@@ -14979,10 +15142,10 @@ package sagemaker {
   @js.native
   sealed trait UserProfileStatus extends js.Any
   object UserProfileStatus extends js.Object {
-    val Deleting  = "Deleting".asInstanceOf[UserProfileStatus]
-    val Failed    = "Failed".asInstanceOf[UserProfileStatus]
+    val Deleting = "Deleting".asInstanceOf[UserProfileStatus]
+    val Failed = "Failed".asInstanceOf[UserProfileStatus]
     val InService = "InService".asInstanceOf[UserProfileStatus]
-    val Pending   = "Pending".asInstanceOf[UserProfileStatus]
+    val Pending = "Pending".asInstanceOf[UserProfileStatus]
 
     val values = js.Object.freeze(js.Array(Deleting, Failed, InService, Pending))
   }
@@ -15022,6 +15185,38 @@ package sagemaker {
   }
 
   /**
+    * Specifies a production variant property type for an Endpoint.
+    *  If you are updating an endpoint with the [[UpdateEndpointInput.RetainAllVariantProperties]] option set to <code>true</code>, the <code>VariantProperty</code> objects listed in [[UpdateEndpointInput.ExcludeRetainedVariantProperties]] override the existing variant properties of the endpoint.
+    */
+  @js.native
+  trait VariantProperty extends js.Object {
+    var VariantPropertyType: VariantPropertyType
+  }
+
+  object VariantProperty {
+    @inline
+    def apply(
+        VariantPropertyType: VariantPropertyType
+    ): VariantProperty = {
+      val __obj = js.Dynamic.literal(
+        "VariantPropertyType" -> VariantPropertyType.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[VariantProperty]
+    }
+  }
+
+  @js.native
+  sealed trait VariantPropertyType extends js.Any
+  object VariantPropertyType extends js.Object {
+    val DesiredInstanceCount = "DesiredInstanceCount".asInstanceOf[VariantPropertyType]
+    val DesiredWeight = "DesiredWeight".asInstanceOf[VariantPropertyType]
+    val DataCaptureConfig = "DataCaptureConfig".asInstanceOf[VariantPropertyType]
+
+    val values = js.Object.freeze(js.Array(DesiredInstanceCount, DesiredWeight, DataCaptureConfig))
+  }
+
+  /**
     * Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html|Protect Endpoints by Using an Amazon Virtual Private Cloud]] and [[https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html|Protect Training Jobs by Using an Amazon Virtual Private Cloud]].
     */
   @js.native
@@ -15038,7 +15233,7 @@ package sagemaker {
     ): VpcConfig = {
       val __obj = js.Dynamic.literal(
         "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any],
-        "Subnets"          -> Subnets.asInstanceOf[js.Any]
+        "Subnets" -> Subnets.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[VpcConfig]
@@ -15046,7 +15241,7 @@ package sagemaker {
   }
 
   /**
-    * A single private workforce, which is automatically created when you create your first private work team. You can create one private work force in each AWS Region. By default, any workforce related API operation used in a specific region will apply to the workforce created in that region. To learn how to create a private workforce, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html|Create a Private Workforce]].
+    * A single private workforce, which is automatically created when you create your first private work team. You can create one private work force in each AWS Region. By default, any workforce-related API operation used in a specific region will apply to the workforce created in that region. To learn how to create a private workforce, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html|Create a Private Workforce]].
     */
   @js.native
   trait Workforce extends js.Object {
@@ -15065,7 +15260,7 @@ package sagemaker {
         SourceIpConfig: js.UndefOr[SourceIpConfig] = js.undefined
     ): Workforce = {
       val __obj = js.Dynamic.literal(
-        "WorkforceArn"  -> WorkforceArn.asInstanceOf[js.Any],
+        "WorkforceArn" -> WorkforceArn.asInstanceOf[js.Any],
         "WorkforceName" -> WorkforceName.asInstanceOf[js.Any]
       )
 
@@ -15105,10 +15300,10 @@ package sagemaker {
         SubDomain: js.UndefOr[String] = js.undefined
     ): Workteam = {
       val __obj = js.Dynamic.literal(
-        "Description"       -> Description.asInstanceOf[js.Any],
+        "Description" -> Description.asInstanceOf[js.Any],
         "MemberDefinitions" -> MemberDefinitions.asInstanceOf[js.Any],
-        "WorkteamArn"       -> WorkteamArn.asInstanceOf[js.Any],
-        "WorkteamName"      -> WorkteamName.asInstanceOf[js.Any]
+        "WorkteamArn" -> WorkteamArn.asInstanceOf[js.Any],
+        "WorkteamName" -> WorkteamName.asInstanceOf[js.Any]
       )
 
       CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))

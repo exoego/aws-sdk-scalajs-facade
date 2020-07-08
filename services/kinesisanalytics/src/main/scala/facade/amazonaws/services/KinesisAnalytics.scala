@@ -7,56 +7,56 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object kinesisanalytics {
-  type ApplicationCode                     = String
-  type ApplicationDescription              = String
-  type ApplicationName                     = String
-  type ApplicationSummaries                = js.Array[ApplicationSummary]
-  type ApplicationVersionId                = Double
-  type BooleanObject                       = Boolean
-  type BucketARN                           = String
+  type ApplicationCode = String
+  type ApplicationDescription = String
+  type ApplicationName = String
+  type ApplicationSummaries = js.Array[ApplicationSummary]
+  type ApplicationVersionId = Double
+  type BooleanObject = Boolean
+  type BucketARN = String
   type CloudWatchLoggingOptionDescriptions = js.Array[CloudWatchLoggingOptionDescription]
-  type CloudWatchLoggingOptionUpdates      = js.Array[CloudWatchLoggingOptionUpdate]
-  type CloudWatchLoggingOptions            = js.Array[CloudWatchLoggingOption]
-  type FileKey                             = String
-  type Id                                  = String
-  type InAppStreamName                     = String
-  type InAppStreamNames                    = js.Array[InAppStreamName]
-  type InAppTableName                      = String
-  type InputConfigurations                 = js.Array[InputConfiguration]
-  type InputDescriptions                   = js.Array[InputDescription]
-  type InputParallelismCount               = Int
-  type InputUpdates                        = js.Array[InputUpdate]
-  type Inputs                              = js.Array[Input]
-  type KinesisAnalyticsARN                 = String
-  type ListApplicationsInputLimit          = Int
-  type LogStreamARN                        = String
-  type OutputDescriptions                  = js.Array[OutputDescription]
-  type OutputUpdates                       = js.Array[OutputUpdate]
-  type Outputs                             = js.Array[Output]
-  type ParsedInputRecord                   = js.Array[ParsedInputRecordField]
-  type ParsedInputRecordField              = String
-  type ParsedInputRecords                  = js.Array[ParsedInputRecord]
-  type ProcessedInputRecord                = String
-  type ProcessedInputRecords               = js.Array[ProcessedInputRecord]
-  type RawInputRecord                      = String
-  type RawInputRecords                     = js.Array[RawInputRecord]
-  type RecordColumnDelimiter               = String
-  type RecordColumnMapping                 = String
-  type RecordColumnName                    = String
-  type RecordColumnSqlType                 = String
-  type RecordColumns                       = js.Array[RecordColumn]
-  type RecordEncoding                      = String
-  type RecordRowDelimiter                  = String
-  type RecordRowPath                       = String
-  type ReferenceDataSourceDescriptions     = js.Array[ReferenceDataSourceDescription]
-  type ReferenceDataSourceUpdates          = js.Array[ReferenceDataSourceUpdate]
-  type ResourceARN                         = String
-  type RoleARN                             = String
-  type TagKey                              = String
-  type TagKeys                             = js.Array[TagKey]
-  type TagValue                            = String
-  type Tags                                = js.Array[Tag]
-  type Timestamp                           = js.Date
+  type CloudWatchLoggingOptionUpdates = js.Array[CloudWatchLoggingOptionUpdate]
+  type CloudWatchLoggingOptions = js.Array[CloudWatchLoggingOption]
+  type FileKey = String
+  type Id = String
+  type InAppStreamName = String
+  type InAppStreamNames = js.Array[InAppStreamName]
+  type InAppTableName = String
+  type InputConfigurations = js.Array[InputConfiguration]
+  type InputDescriptions = js.Array[InputDescription]
+  type InputParallelismCount = Int
+  type InputUpdates = js.Array[InputUpdate]
+  type Inputs = js.Array[Input]
+  type KinesisAnalyticsARN = String
+  type ListApplicationsInputLimit = Int
+  type LogStreamARN = String
+  type OutputDescriptions = js.Array[OutputDescription]
+  type OutputUpdates = js.Array[OutputUpdate]
+  type Outputs = js.Array[Output]
+  type ParsedInputRecord = js.Array[ParsedInputRecordField]
+  type ParsedInputRecordField = String
+  type ParsedInputRecords = js.Array[ParsedInputRecord]
+  type ProcessedInputRecord = String
+  type ProcessedInputRecords = js.Array[ProcessedInputRecord]
+  type RawInputRecord = String
+  type RawInputRecords = js.Array[RawInputRecord]
+  type RecordColumnDelimiter = String
+  type RecordColumnMapping = String
+  type RecordColumnName = String
+  type RecordColumnSqlType = String
+  type RecordColumns = js.Array[RecordColumn]
+  type RecordEncoding = String
+  type RecordRowDelimiter = String
+  type RecordRowPath = String
+  type ReferenceDataSourceDescriptions = js.Array[ReferenceDataSourceDescription]
+  type ReferenceDataSourceUpdates = js.Array[ReferenceDataSourceUpdate]
+  type ResourceARN = String
+  type RoleARN = String
+  type TagKey = String
+  type TagKeys = js.Array[TagKey]
+  type TagValue = String
+  type Tags = js.Array[Tag]
+  type Timestamp = js.Date
 
   implicit final class KinesisAnalyticsOps(private val service: KinesisAnalytics) extends AnyVal {
 
@@ -124,15 +124,15 @@ package kinesisanalytics {
 
     def addApplicationCloudWatchLoggingOption(
         params: AddApplicationCloudWatchLoggingOptionRequest
-    ): Request[AddApplicationCloudWatchLoggingOptionResponse]                                         = js.native
+    ): Request[AddApplicationCloudWatchLoggingOptionResponse] = js.native
     def addApplicationInput(params: AddApplicationInputRequest): Request[AddApplicationInputResponse] = js.native
     def addApplicationInputProcessingConfiguration(
         params: AddApplicationInputProcessingConfigurationRequest
-    ): Request[AddApplicationInputProcessingConfigurationResponse]                                       = js.native
+    ): Request[AddApplicationInputProcessingConfigurationResponse] = js.native
     def addApplicationOutput(params: AddApplicationOutputRequest): Request[AddApplicationOutputResponse] = js.native
     def addApplicationReferenceDataSource(
         params: AddApplicationReferenceDataSourceRequest
-    ): Request[AddApplicationReferenceDataSourceResponse]                                       = js.native
+    ): Request[AddApplicationReferenceDataSourceResponse] = js.native
     def createApplication(params: CreateApplicationRequest): Request[CreateApplicationResponse] = js.native
     def deleteApplication(params: DeleteApplicationRequest): Request[DeleteApplicationResponse] = js.native
     def deleteApplicationCloudWatchLoggingOption(
@@ -145,16 +145,16 @@ package kinesisanalytics {
       js.native
     def deleteApplicationReferenceDataSource(
         params: DeleteApplicationReferenceDataSourceRequest
-    ): Request[DeleteApplicationReferenceDataSourceResponse]                                          = js.native
+    ): Request[DeleteApplicationReferenceDataSourceResponse] = js.native
     def describeApplication(params: DescribeApplicationRequest): Request[DescribeApplicationResponse] = js.native
     def discoverInputSchema(params: DiscoverInputSchemaRequest): Request[DiscoverInputSchemaResponse] = js.native
-    def listApplications(params: ListApplicationsRequest): Request[ListApplicationsResponse]          = js.native
+    def listApplications(params: ListApplicationsRequest): Request[ListApplicationsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def startApplication(params: StartApplicationRequest): Request[StartApplicationResponse]          = js.native
-    def stopApplication(params: StopApplicationRequest): Request[StopApplicationResponse]             = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
-    def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse]       = js.native
+    def startApplication(params: StartApplicationRequest): Request[StartApplicationResponse] = js.native
+    def stopApplication(params: StopApplicationRequest): Request[StopApplicationResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse] = js.native
   }
 
   @js.native
@@ -172,8 +172,8 @@ package kinesisanalytics {
         CurrentApplicationVersionId: ApplicationVersionId
     ): AddApplicationCloudWatchLoggingOptionRequest = {
       val __obj = js.Dynamic.literal(
-        "ApplicationName"             -> ApplicationName.asInstanceOf[js.Any],
-        "CloudWatchLoggingOption"     -> CloudWatchLoggingOption.asInstanceOf[js.Any],
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
+        "CloudWatchLoggingOption" -> CloudWatchLoggingOption.asInstanceOf[js.Any],
         "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any]
       )
 
@@ -211,9 +211,9 @@ package kinesisanalytics {
         InputProcessingConfiguration: InputProcessingConfiguration
     ): AddApplicationInputProcessingConfigurationRequest = {
       val __obj = js.Dynamic.literal(
-        "ApplicationName"              -> ApplicationName.asInstanceOf[js.Any],
-        "CurrentApplicationVersionId"  -> CurrentApplicationVersionId.asInstanceOf[js.Any],
-        "InputId"                      -> InputId.asInstanceOf[js.Any],
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
+        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any],
+        "InputId" -> InputId.asInstanceOf[js.Any],
         "InputProcessingConfiguration" -> InputProcessingConfiguration.asInstanceOf[js.Any]
       )
 
@@ -252,9 +252,9 @@ package kinesisanalytics {
         Input: Input
     ): AddApplicationInputRequest = {
       val __obj = js.Dynamic.literal(
-        "ApplicationName"             -> ApplicationName.asInstanceOf[js.Any],
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any],
-        "Input"                       -> Input.asInstanceOf[js.Any]
+        "Input" -> Input.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddApplicationInputRequest]
@@ -295,9 +295,9 @@ package kinesisanalytics {
         Output: Output
     ): AddApplicationOutputRequest = {
       val __obj = js.Dynamic.literal(
-        "ApplicationName"             -> ApplicationName.asInstanceOf[js.Any],
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any],
-        "Output"                      -> Output.asInstanceOf[js.Any]
+        "Output" -> Output.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddApplicationOutputRequest]
@@ -338,9 +338,9 @@ package kinesisanalytics {
         ReferenceDataSource: ReferenceDataSource
     ): AddApplicationReferenceDataSourceRequest = {
       val __obj = js.Dynamic.literal(
-        "ApplicationName"             -> ApplicationName.asInstanceOf[js.Any],
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any],
-        "ReferenceDataSource"         -> ReferenceDataSource.asInstanceOf[js.Any]
+        "ReferenceDataSource" -> ReferenceDataSource.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddApplicationReferenceDataSourceRequest]
@@ -400,9 +400,9 @@ package kinesisanalytics {
         ReferenceDataSourceDescriptions: js.UndefOr[ReferenceDataSourceDescriptions] = js.undefined
     ): ApplicationDetail = {
       val __obj = js.Dynamic.literal(
-        "ApplicationARN"       -> ApplicationARN.asInstanceOf[js.Any],
-        "ApplicationName"      -> ApplicationName.asInstanceOf[js.Any],
-        "ApplicationStatus"    -> ApplicationStatus.asInstanceOf[js.Any],
+        "ApplicationARN" -> ApplicationARN.asInstanceOf[js.Any],
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
+        "ApplicationStatus" -> ApplicationStatus.asInstanceOf[js.Any],
         "ApplicationVersionId" -> ApplicationVersionId.asInstanceOf[js.Any]
       )
 
@@ -428,8 +428,8 @@ package kinesisanalytics {
     val DELETING = "DELETING".asInstanceOf[ApplicationStatus]
     val STARTING = "STARTING".asInstanceOf[ApplicationStatus]
     val STOPPING = "STOPPING".asInstanceOf[ApplicationStatus]
-    val READY    = "READY".asInstanceOf[ApplicationStatus]
-    val RUNNING  = "RUNNING".asInstanceOf[ApplicationStatus]
+    val READY = "READY".asInstanceOf[ApplicationStatus]
+    val RUNNING = "RUNNING".asInstanceOf[ApplicationStatus]
     val UPDATING = "UPDATING".asInstanceOf[ApplicationStatus]
 
     val values = js.Object.freeze(js.Array(DELETING, STARTING, STOPPING, READY, RUNNING, UPDATING))
@@ -454,8 +454,8 @@ package kinesisanalytics {
         ApplicationStatus: ApplicationStatus
     ): ApplicationSummary = {
       val __obj = js.Dynamic.literal(
-        "ApplicationARN"    -> ApplicationARN.asInstanceOf[js.Any],
-        "ApplicationName"   -> ApplicationName.asInstanceOf[js.Any],
+        "ApplicationARN" -> ApplicationARN.asInstanceOf[js.Any],
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "ApplicationStatus" -> ApplicationStatus.asInstanceOf[js.Any]
       )
 
@@ -517,7 +517,7 @@ package kinesisanalytics {
     ): CSVMappingParameters = {
       val __obj = js.Dynamic.literal(
         "RecordColumnDelimiter" -> RecordColumnDelimiter.asInstanceOf[js.Any],
-        "RecordRowDelimiter"    -> RecordRowDelimiter.asInstanceOf[js.Any]
+        "RecordRowDelimiter" -> RecordRowDelimiter.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CSVMappingParameters]
@@ -541,7 +541,7 @@ package kinesisanalytics {
     ): CloudWatchLoggingOption = {
       val __obj = js.Dynamic.literal(
         "LogStreamARN" -> LogStreamARN.asInstanceOf[js.Any],
-        "RoleARN"      -> RoleARN.asInstanceOf[js.Any]
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CloudWatchLoggingOption]
@@ -567,7 +567,7 @@ package kinesisanalytics {
     ): CloudWatchLoggingOptionDescription = {
       val __obj = js.Dynamic.literal(
         "LogStreamARN" -> LogStreamARN.asInstanceOf[js.Any],
-        "RoleARN"      -> RoleARN.asInstanceOf[js.Any]
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any]
       )
 
       CloudWatchLoggingOptionId.foreach(__v =>
@@ -679,8 +679,8 @@ package kinesisanalytics {
         CurrentApplicationVersionId: ApplicationVersionId
     ): DeleteApplicationCloudWatchLoggingOptionRequest = {
       val __obj = js.Dynamic.literal(
-        "ApplicationName"             -> ApplicationName.asInstanceOf[js.Any],
-        "CloudWatchLoggingOptionId"   -> CloudWatchLoggingOptionId.asInstanceOf[js.Any],
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
+        "CloudWatchLoggingOptionId" -> CloudWatchLoggingOptionId.asInstanceOf[js.Any],
         "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any]
       )
 
@@ -716,9 +716,9 @@ package kinesisanalytics {
         InputId: Id
     ): DeleteApplicationInputProcessingConfigurationRequest = {
       val __obj = js.Dynamic.literal(
-        "ApplicationName"             -> ApplicationName.asInstanceOf[js.Any],
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any],
-        "InputId"                     -> InputId.asInstanceOf[js.Any]
+        "InputId" -> InputId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteApplicationInputProcessingConfigurationRequest]
@@ -756,9 +756,9 @@ package kinesisanalytics {
         OutputId: Id
     ): DeleteApplicationOutputRequest = {
       val __obj = js.Dynamic.literal(
-        "ApplicationName"             -> ApplicationName.asInstanceOf[js.Any],
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any],
-        "OutputId"                    -> OutputId.asInstanceOf[js.Any]
+        "OutputId" -> OutputId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteApplicationOutputRequest]
@@ -796,9 +796,9 @@ package kinesisanalytics {
         ReferenceId: Id
     ): DeleteApplicationReferenceDataSourceRequest = {
       val __obj = js.Dynamic.literal(
-        "ApplicationName"             -> ApplicationName.asInstanceOf[js.Any],
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any],
-        "ReferenceId"                 -> ReferenceId.asInstanceOf[js.Any]
+        "ReferenceId" -> ReferenceId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteApplicationReferenceDataSourceRequest]
@@ -1006,7 +1006,7 @@ package kinesisanalytics {
     ): Input = {
       val __obj = js.Dynamic.literal(
         "InputSchema" -> InputSchema.asInstanceOf[js.Any],
-        "NamePrefix"  -> NamePrefix.asInstanceOf[js.Any]
+        "NamePrefix" -> NamePrefix.asInstanceOf[js.Any]
       )
 
       InputParallelism.foreach(__v => __obj.updateDynamic("InputParallelism")(__v.asInstanceOf[js.Any]))
@@ -1035,7 +1035,7 @@ package kinesisanalytics {
         InputStartingPositionConfiguration: InputStartingPositionConfiguration
     ): InputConfiguration = {
       val __obj = js.Dynamic.literal(
-        "Id"                                 -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "InputStartingPositionConfiguration" -> InputStartingPositionConfiguration.asInstanceOf[js.Any]
       )
 
@@ -1111,7 +1111,7 @@ package kinesisanalytics {
     ): InputLambdaProcessor = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "RoleARN"     -> RoleARN.asInstanceOf[js.Any]
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[InputLambdaProcessor]
@@ -1291,8 +1291,8 @@ package kinesisanalytics {
   @js.native
   sealed trait InputStartingPosition extends js.Any
   object InputStartingPosition extends js.Object {
-    val NOW                = "NOW".asInstanceOf[InputStartingPosition]
-    val TRIM_HORIZON       = "TRIM_HORIZON".asInstanceOf[InputStartingPosition]
+    val NOW = "NOW".asInstanceOf[InputStartingPosition]
+    val TRIM_HORIZON = "TRIM_HORIZON".asInstanceOf[InputStartingPosition]
     val LAST_STOPPED_POINT = "LAST_STOPPED_POINT".asInstanceOf[InputStartingPosition]
 
     val values = js.Object.freeze(js.Array(NOW, TRIM_HORIZON, LAST_STOPPED_POINT))
@@ -1400,7 +1400,7 @@ package kinesisanalytics {
     ): KinesisFirehoseInput = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "RoleARN"     -> RoleARN.asInstanceOf[js.Any]
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[KinesisFirehoseInput]
@@ -1468,7 +1468,7 @@ package kinesisanalytics {
     ): KinesisFirehoseOutput = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "RoleARN"     -> RoleARN.asInstanceOf[js.Any]
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[KinesisFirehoseOutput]
@@ -1536,7 +1536,7 @@ package kinesisanalytics {
     ): KinesisStreamsInput = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "RoleARN"     -> RoleARN.asInstanceOf[js.Any]
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[KinesisStreamsInput]
@@ -1604,7 +1604,7 @@ package kinesisanalytics {
     ): KinesisStreamsOutput = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "RoleARN"     -> RoleARN.asInstanceOf[js.Any]
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[KinesisStreamsOutput]
@@ -1672,7 +1672,7 @@ package kinesisanalytics {
     ): LambdaOutput = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "RoleARN"     -> RoleARN.asInstanceOf[js.Any]
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[LambdaOutput]
@@ -1764,7 +1764,7 @@ package kinesisanalytics {
     ): ListApplicationsResponse = {
       val __obj = js.Dynamic.literal(
         "ApplicationSummaries" -> ApplicationSummaries.asInstanceOf[js.Any],
-        "HasMoreApplications"  -> HasMoreApplications.asInstanceOf[js.Any]
+        "HasMoreApplications" -> HasMoreApplications.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ListApplicationsResponse]
@@ -1851,7 +1851,7 @@ package kinesisanalytics {
     ): Output = {
       val __obj = js.Dynamic.literal(
         "DestinationSchema" -> DestinationSchema.asInstanceOf[js.Any],
-        "Name"              -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       KinesisFirehoseOutput.foreach(__v => __obj.updateDynamic("KinesisFirehoseOutput")(__v.asInstanceOf[js.Any]))
@@ -1958,7 +1958,7 @@ package kinesisanalytics {
         Mapping: js.UndefOr[RecordColumnMapping] = js.undefined
     ): RecordColumn = {
       val __obj = js.Dynamic.literal(
-        "Name"    -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "SqlType" -> SqlType.asInstanceOf[js.Any]
       )
 
@@ -1995,7 +1995,7 @@ package kinesisanalytics {
   sealed trait RecordFormatType extends js.Any
   object RecordFormatType extends js.Object {
     val JSON = "JSON".asInstanceOf[RecordFormatType]
-    val CSV  = "CSV".asInstanceOf[RecordFormatType]
+    val CSV = "CSV".asInstanceOf[RecordFormatType]
 
     val values = js.Object.freeze(js.Array(JSON, CSV))
   }
@@ -2019,7 +2019,7 @@ package kinesisanalytics {
     ): ReferenceDataSource = {
       val __obj = js.Dynamic.literal(
         "ReferenceSchema" -> ReferenceSchema.asInstanceOf[js.Any],
-        "TableName"       -> TableName.asInstanceOf[js.Any]
+        "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
       S3ReferenceDataSource.foreach(__v => __obj.updateDynamic("S3ReferenceDataSource")(__v.asInstanceOf[js.Any]))
@@ -2047,9 +2047,9 @@ package kinesisanalytics {
         ReferenceSchema: js.UndefOr[SourceSchema] = js.undefined
     ): ReferenceDataSourceDescription = {
       val __obj = js.Dynamic.literal(
-        "ReferenceId"                      -> ReferenceId.asInstanceOf[js.Any],
+        "ReferenceId" -> ReferenceId.asInstanceOf[js.Any],
         "S3ReferenceDataSourceDescription" -> S3ReferenceDataSourceDescription.asInstanceOf[js.Any],
-        "TableName"                        -> TableName.asInstanceOf[js.Any]
+        "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
       ReferenceSchema.foreach(__v => __obj.updateDynamic("ReferenceSchema")(__v.asInstanceOf[js.Any]))
@@ -2108,8 +2108,8 @@ package kinesisanalytics {
     ): S3Configuration = {
       val __obj = js.Dynamic.literal(
         "BucketARN" -> BucketARN.asInstanceOf[js.Any],
-        "FileKey"   -> FileKey.asInstanceOf[js.Any],
-        "RoleARN"   -> RoleARN.asInstanceOf[js.Any]
+        "FileKey" -> FileKey.asInstanceOf[js.Any],
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[S3Configuration]
@@ -2135,8 +2135,8 @@ package kinesisanalytics {
         ReferenceRoleARN: RoleARN
     ): S3ReferenceDataSource = {
       val __obj = js.Dynamic.literal(
-        "BucketARN"        -> BucketARN.asInstanceOf[js.Any],
-        "FileKey"          -> FileKey.asInstanceOf[js.Any],
+        "BucketARN" -> BucketARN.asInstanceOf[js.Any],
+        "FileKey" -> FileKey.asInstanceOf[js.Any],
         "ReferenceRoleARN" -> ReferenceRoleARN.asInstanceOf[js.Any]
       )
 
@@ -2162,8 +2162,8 @@ package kinesisanalytics {
         ReferenceRoleARN: RoleARN
     ): S3ReferenceDataSourceDescription = {
       val __obj = js.Dynamic.literal(
-        "BucketARN"        -> BucketARN.asInstanceOf[js.Any],
-        "FileKey"          -> FileKey.asInstanceOf[js.Any],
+        "BucketARN" -> BucketARN.asInstanceOf[js.Any],
+        "FileKey" -> FileKey.asInstanceOf[js.Any],
         "ReferenceRoleARN" -> ReferenceRoleARN.asInstanceOf[js.Any]
       )
 
@@ -2215,7 +2215,7 @@ package kinesisanalytics {
     ): SourceSchema = {
       val __obj = js.Dynamic.literal(
         "RecordColumns" -> RecordColumns.asInstanceOf[js.Any],
-        "RecordFormat"  -> RecordFormat.asInstanceOf[js.Any]
+        "RecordFormat" -> RecordFormat.asInstanceOf[js.Any]
       )
 
       RecordEncoding.foreach(__v => __obj.updateDynamic("RecordEncoding")(__v.asInstanceOf[js.Any]))
@@ -2239,7 +2239,7 @@ package kinesisanalytics {
         InputConfigurations: InputConfigurations
     ): StartApplicationRequest = {
       val __obj = js.Dynamic.literal(
-        "ApplicationName"     -> ApplicationName.asInstanceOf[js.Any],
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "InputConfigurations" -> InputConfigurations.asInstanceOf[js.Any]
       )
 
@@ -2338,7 +2338,7 @@ package kinesisanalytics {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -2372,7 +2372,7 @@ package kinesisanalytics {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -2407,8 +2407,8 @@ package kinesisanalytics {
         CurrentApplicationVersionId: ApplicationVersionId
     ): UpdateApplicationRequest = {
       val __obj = js.Dynamic.literal(
-        "ApplicationName"             -> ApplicationName.asInstanceOf[js.Any],
-        "ApplicationUpdate"           -> ApplicationUpdate.asInstanceOf[js.Any],
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
+        "ApplicationUpdate" -> ApplicationUpdate.asInstanceOf[js.Any],
         "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any]
       )
 

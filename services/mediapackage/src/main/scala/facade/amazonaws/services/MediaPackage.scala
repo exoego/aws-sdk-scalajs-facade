@@ -7,21 +7,21 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object mediapackage {
-  type AdTriggers                                  = js.Array[__AdTriggersElement]
-  type MaxResults                                  = Int
-  type Tags                                        = js.Dictionary[__string]
-  type __boolean                                   = Boolean
-  type __integer                                   = Int
-  type __listOfChannel                             = js.Array[Channel]
-  type __listOfHarvestJob                          = js.Array[HarvestJob]
-  type __listOfHlsManifest                         = js.Array[HlsManifest]
+  type AdTriggers = js.Array[__AdTriggersElement]
+  type MaxResults = Int
+  type Tags = js.Dictionary[__string]
+  type __boolean = Boolean
+  type __integer = Int
+  type __listOfChannel = js.Array[Channel]
+  type __listOfHarvestJob = js.Array[HarvestJob]
+  type __listOfHlsManifest = js.Array[HlsManifest]
   type __listOfHlsManifestCreateOrUpdateParameters = js.Array[HlsManifestCreateOrUpdateParameters]
-  type __listOfIngestEndpoint                      = js.Array[IngestEndpoint]
-  type __listOfOriginEndpoint                      = js.Array[OriginEndpoint]
-  type __listOf__PeriodTriggersElement             = js.Array[__PeriodTriggersElement]
-  type __listOf__string                            = js.Array[__string]
-  type __mapOf__string                             = js.Dictionary[__string]
-  type __string                                    = String
+  type __listOfIngestEndpoint = js.Array[IngestEndpoint]
+  type __listOfOriginEndpoint = js.Array[OriginEndpoint]
+  type __listOf__PeriodTriggersElement = js.Array[__PeriodTriggersElement]
+  type __listOf__string = js.Array[__string]
+  type __mapOf__string = js.Dictionary[__string]
+  type __string = String
 
   implicit final class MediaPackageOps(private val service: MediaPackage) extends AnyVal {
 
@@ -71,25 +71,25 @@ package mediapackage {
   class MediaPackage() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createChannel(params: CreateChannelRequest): Request[CreateChannelResponse]                      = js.native
-    def createHarvestJob(params: CreateHarvestJobRequest): Request[CreateHarvestJobResponse]             = js.native
+    def createChannel(params: CreateChannelRequest): Request[CreateChannelResponse] = js.native
+    def createHarvestJob(params: CreateHarvestJobRequest): Request[CreateHarvestJobResponse] = js.native
     def createOriginEndpoint(params: CreateOriginEndpointRequest): Request[CreateOriginEndpointResponse] = js.native
-    def deleteChannel(params: DeleteChannelRequest): Request[DeleteChannelResponse]                      = js.native
+    def deleteChannel(params: DeleteChannelRequest): Request[DeleteChannelResponse] = js.native
     def deleteOriginEndpoint(params: DeleteOriginEndpointRequest): Request[DeleteOriginEndpointResponse] = js.native
-    def describeChannel(params: DescribeChannelRequest): Request[DescribeChannelResponse]                = js.native
-    def describeHarvestJob(params: DescribeHarvestJobRequest): Request[DescribeHarvestJobResponse]       = js.native
+    def describeChannel(params: DescribeChannelRequest): Request[DescribeChannelResponse] = js.native
+    def describeHarvestJob(params: DescribeHarvestJobRequest): Request[DescribeHarvestJobResponse] = js.native
     def describeOriginEndpoint(params: DescribeOriginEndpointRequest): Request[DescribeOriginEndpointResponse] =
       js.native
-    def listChannels(params: ListChannelsRequest): Request[ListChannelsResponse]                      = js.native
-    def listHarvestJobs(params: ListHarvestJobsRequest): Request[ListHarvestJobsResponse]             = js.native
+    def listChannels(params: ListChannelsRequest): Request[ListChannelsResponse] = js.native
+    def listHarvestJobs(params: ListHarvestJobsRequest): Request[ListHarvestJobsResponse] = js.native
     def listOriginEndpoints(params: ListOriginEndpointsRequest): Request[ListOriginEndpointsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def rotateIngestEndpointCredentials(
         params: RotateIngestEndpointCredentialsRequest
-    ): Request[RotateIngestEndpointCredentialsResponse]                                                  = js.native
-    def tagResource(params: TagResourceRequest): Request[js.Object]                                      = js.native
-    def untagResource(params: UntagResourceRequest): Request[js.Object]                                  = js.native
-    def updateChannel(params: UpdateChannelRequest): Request[UpdateChannelResponse]                      = js.native
+    ): Request[RotateIngestEndpointCredentialsResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
+    def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
+    def updateChannel(params: UpdateChannelRequest): Request[UpdateChannelResponse] = js.native
     def updateOriginEndpoint(params: UpdateOriginEndpointRequest): Request[UpdateOriginEndpointResponse] = js.native
     @deprecated(
       "This API is deprecated. Please use RotateIngestEndpointCredentials instead",
@@ -101,9 +101,9 @@ package mediapackage {
   @js.native
   sealed trait AdMarkers extends js.Any
   object AdMarkers extends js.Object {
-    val NONE            = "NONE".asInstanceOf[AdMarkers]
+    val NONE = "NONE".asInstanceOf[AdMarkers]
     val SCTE35_ENHANCED = "SCTE35_ENHANCED".asInstanceOf[AdMarkers]
-    val PASSTHROUGH     = "PASSTHROUGH".asInstanceOf[AdMarkers]
+    val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[AdMarkers]
 
     val values = js.Object.freeze(js.Array(NONE, SCTE35_ENHANCED, PASSTHROUGH))
   }
@@ -121,10 +121,10 @@ package mediapackage {
   @js.native
   sealed trait AdsOnDeliveryRestrictions extends js.Any
   object AdsOnDeliveryRestrictions extends js.Object {
-    val NONE         = "NONE".asInstanceOf[AdsOnDeliveryRestrictions]
-    val RESTRICTED   = "RESTRICTED".asInstanceOf[AdsOnDeliveryRestrictions]
+    val NONE = "NONE".asInstanceOf[AdsOnDeliveryRestrictions]
+    val RESTRICTED = "RESTRICTED".asInstanceOf[AdsOnDeliveryRestrictions]
     val UNRESTRICTED = "UNRESTRICTED".asInstanceOf[AdsOnDeliveryRestrictions]
-    val BOTH         = "BOTH".asInstanceOf[AdsOnDeliveryRestrictions]
+    val BOTH = "BOTH".asInstanceOf[AdsOnDeliveryRestrictions]
 
     val values = js.Object.freeze(js.Array(NONE, RESTRICTED, UNRESTRICTED, BOTH))
   }
@@ -146,7 +146,7 @@ package mediapackage {
     ): Authorization = {
       val __obj = js.Dynamic.literal(
         "CdnIdentifierSecret" -> CdnIdentifierSecret.asInstanceOf[js.Any],
-        "SecretsRoleArn"      -> SecretsRoleArn.asInstanceOf[js.Any]
+        "SecretsRoleArn" -> SecretsRoleArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Authorization]
@@ -349,11 +349,11 @@ package mediapackage {
         StartTime: __string
     ): CreateHarvestJobRequest = {
       val __obj = js.Dynamic.literal(
-        "EndTime"          -> EndTime.asInstanceOf[js.Any],
-        "Id"               -> Id.asInstanceOf[js.Any],
+        "EndTime" -> EndTime.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "OriginEndpointId" -> OriginEndpointId.asInstanceOf[js.Any],
-        "S3Destination"    -> S3Destination.asInstanceOf[js.Any],
-        "StartTime"        -> StartTime.asInstanceOf[js.Any]
+        "S3Destination" -> S3Destination.asInstanceOf[js.Any],
+        "StartTime" -> StartTime.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateHarvestJobRequest]
@@ -441,7 +441,7 @@ package mediapackage {
     ): CreateOriginEndpointRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelId" -> ChannelId.asInstanceOf[js.Any],
-        "Id"        -> Id.asInstanceOf[js.Any]
+        "Id" -> Id.asInstanceOf[js.Any]
       )
 
       Authorization.foreach(__v => __obj.updateDynamic("Authorization")(__v.asInstanceOf[js.Any]))
@@ -854,7 +854,7 @@ package mediapackage {
   @js.native
   sealed trait EncryptionMethod extends js.Any
   object EncryptionMethod extends js.Object {
-    val AES_128    = "AES_128".asInstanceOf[EncryptionMethod]
+    val AES_128 = "AES_128".asInstanceOf[EncryptionMethod]
     val SAMPLE_AES = "SAMPLE_AES".asInstanceOf[EncryptionMethod]
 
     val values = js.Object.freeze(js.Array(AES_128, SAMPLE_AES))
@@ -1293,7 +1293,7 @@ package mediapackage {
   @js.native
   sealed trait ManifestLayout extends js.Any
   object ManifestLayout extends js.Object {
-    val FULL    = "FULL".asInstanceOf[ManifestLayout]
+    val FULL = "FULL".asInstanceOf[ManifestLayout]
     val COMPACT = "COMPACT".asInstanceOf[ManifestLayout]
 
     val values = js.Object.freeze(js.Array(FULL, COMPACT))
@@ -1416,7 +1416,7 @@ package mediapackage {
   sealed trait Origination extends js.Any
   object Origination extends js.Object {
     val ALLOW = "ALLOW".asInstanceOf[Origination]
-    val DENY  = "DENY".asInstanceOf[Origination]
+    val DENY = "DENY".asInstanceOf[Origination]
 
     val values = js.Object.freeze(js.Array(ALLOW, DENY))
   }
@@ -1424,9 +1424,9 @@ package mediapackage {
   @js.native
   sealed trait PlaylistType extends js.Any
   object PlaylistType extends js.Object {
-    val NONE  = "NONE".asInstanceOf[PlaylistType]
+    val NONE = "NONE".asInstanceOf[PlaylistType]
     val EVENT = "EVENT".asInstanceOf[PlaylistType]
-    val VOD   = "VOD".asInstanceOf[PlaylistType]
+    val VOD = "VOD".asInstanceOf[PlaylistType]
 
     val values = js.Object.freeze(js.Array(NONE, EVENT, VOD))
   }
@@ -1434,7 +1434,7 @@ package mediapackage {
   @js.native
   sealed trait Profile extends js.Any
   object Profile extends js.Object {
-    val NONE      = "NONE".asInstanceOf[Profile]
+    val NONE = "NONE".asInstanceOf[Profile]
     val HBBTV_1_5 = "HBBTV_1_5".asInstanceOf[Profile]
 
     val values = js.Object.freeze(js.Array(NONE, HBBTV_1_5))
@@ -1501,7 +1501,7 @@ package mediapackage {
         IngestEndpointId: __string
     ): RotateIngestEndpointCredentialsRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"               -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "IngestEndpointId" -> IngestEndpointId.asInstanceOf[js.Any]
       )
 
@@ -1555,9 +1555,9 @@ package mediapackage {
         RoleArn: __string
     ): S3Destination = {
       val __obj = js.Dynamic.literal(
-        "BucketName"  -> BucketName.asInstanceOf[js.Any],
+        "BucketName" -> BucketName.asInstanceOf[js.Any],
         "ManifestKey" -> ManifestKey.asInstanceOf[js.Any],
-        "RoleArn"     -> RoleArn.asInstanceOf[js.Any]
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[S3Destination]
@@ -1568,7 +1568,7 @@ package mediapackage {
   sealed trait SegmentTemplateFormat extends js.Any
   object SegmentTemplateFormat extends js.Object {
     val NUMBER_WITH_TIMELINE = "NUMBER_WITH_TIMELINE".asInstanceOf[SegmentTemplateFormat]
-    val TIME_WITH_TIMELINE   = "TIME_WITH_TIMELINE".asInstanceOf[SegmentTemplateFormat]
+    val TIME_WITH_TIMELINE = "TIME_WITH_TIMELINE".asInstanceOf[SegmentTemplateFormat]
     val NUMBER_WITH_DURATION = "NUMBER_WITH_DURATION".asInstanceOf[SegmentTemplateFormat]
 
     val values = js.Object.freeze(js.Array(NUMBER_WITH_TIMELINE, TIME_WITH_TIMELINE, NUMBER_WITH_DURATION))
@@ -1597,9 +1597,9 @@ package mediapackage {
     ): SpekeKeyProvider = {
       val __obj = js.Dynamic.literal(
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "RoleArn"    -> RoleArn.asInstanceOf[js.Any],
-        "SystemIds"  -> SystemIds.asInstanceOf[js.Any],
-        "Url"        -> Url.asInstanceOf[js.Any]
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
+        "SystemIds" -> SystemIds.asInstanceOf[js.Any],
+        "Url" -> Url.asInstanceOf[js.Any]
       )
 
       CertificateArn.foreach(__v => __obj.updateDynamic("CertificateArn")(__v.asInstanceOf[js.Any]))
@@ -1611,8 +1611,8 @@ package mediapackage {
   sealed trait Status extends js.Any
   object Status extends js.Object {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[Status]
-    val SUCCEEDED   = "SUCCEEDED".asInstanceOf[Status]
-    val FAILED      = "FAILED".asInstanceOf[Status]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[Status]
+    val FAILED = "FAILED".asInstanceOf[Status]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED))
   }
@@ -1620,8 +1620,8 @@ package mediapackage {
   @js.native
   sealed trait StreamOrder extends js.Any
   object StreamOrder extends js.Object {
-    val ORIGINAL                 = "ORIGINAL".asInstanceOf[StreamOrder]
-    val VIDEO_BITRATE_ASCENDING  = "VIDEO_BITRATE_ASCENDING".asInstanceOf[StreamOrder]
+    val ORIGINAL = "ORIGINAL".asInstanceOf[StreamOrder]
+    val VIDEO_BITRATE_ASCENDING = "VIDEO_BITRATE_ASCENDING".asInstanceOf[StreamOrder]
     val VIDEO_BITRATE_DESCENDING = "VIDEO_BITRATE_DESCENDING".asInstanceOf[StreamOrder]
 
     val values = js.Object.freeze(js.Array(ORIGINAL, VIDEO_BITRATE_ASCENDING, VIDEO_BITRATE_DESCENDING))
@@ -1666,7 +1666,7 @@ package mediapackage {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1687,7 +1687,7 @@ package mediapackage {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -1864,11 +1864,11 @@ package mediapackage {
   @js.native
   sealed trait __AdTriggersElement extends js.Any
   object __AdTriggersElement extends js.Object {
-    val SPLICE_INSERT                     = "SPLICE_INSERT".asInstanceOf[__AdTriggersElement]
-    val BREAK                             = "BREAK".asInstanceOf[__AdTriggersElement]
-    val PROVIDER_ADVERTISEMENT            = "PROVIDER_ADVERTISEMENT".asInstanceOf[__AdTriggersElement]
-    val DISTRIBUTOR_ADVERTISEMENT         = "DISTRIBUTOR_ADVERTISEMENT".asInstanceOf[__AdTriggersElement]
-    val PROVIDER_PLACEMENT_OPPORTUNITY    = "PROVIDER_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
+    val SPLICE_INSERT = "SPLICE_INSERT".asInstanceOf[__AdTriggersElement]
+    val BREAK = "BREAK".asInstanceOf[__AdTriggersElement]
+    val PROVIDER_ADVERTISEMENT = "PROVIDER_ADVERTISEMENT".asInstanceOf[__AdTriggersElement]
+    val DISTRIBUTOR_ADVERTISEMENT = "DISTRIBUTOR_ADVERTISEMENT".asInstanceOf[__AdTriggersElement]
+    val PROVIDER_PLACEMENT_OPPORTUNITY = "PROVIDER_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
     val DISTRIBUTOR_PLACEMENT_OPPORTUNITY = "DISTRIBUTOR_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]
     val PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY =
       "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY".asInstanceOf[__AdTriggersElement]

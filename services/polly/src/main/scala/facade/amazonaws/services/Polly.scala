@@ -7,37 +7,37 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object polly {
-  type Alphabet                       = String
-  type AudioStream                    = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type ContentType                    = String
-  type DateTime                       = js.Date
-  type EngineList                     = js.Array[Engine]
+  type Alphabet = String
+  type AudioStream = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type ContentType = String
+  type DateTime = js.Date
+  type EngineList = js.Array[Engine]
   type IncludeAdditionalLanguageCodes = Boolean
-  type LanguageCodeList               = js.Array[LanguageCode]
-  type LanguageName                   = String
-  type LastModified                   = js.Date
-  type LexemesCount                   = Int
-  type LexiconArn                     = String
-  type LexiconContent                 = String
-  type LexiconDescriptionList         = js.Array[LexiconDescription]
-  type LexiconName                    = String
-  type LexiconNameList                = js.Array[LexiconName]
-  type MaxResults                     = Int
-  type NextToken                      = String
-  type OutputS3BucketName             = String
-  type OutputS3KeyPrefix              = String
-  type OutputUri                      = String
-  type RequestCharacters              = Int
-  type SampleRate                     = String
-  type Size                           = Int
-  type SnsTopicArn                    = String
-  type SpeechMarkTypeList             = js.Array[SpeechMarkType]
-  type SynthesisTasks                 = js.Array[SynthesisTask]
-  type TaskId                         = String
-  type TaskStatusReason               = String
-  type Text                           = String
-  type VoiceList                      = js.Array[Voice]
-  type VoiceName                      = String
+  type LanguageCodeList = js.Array[LanguageCode]
+  type LanguageName = String
+  type LastModified = js.Date
+  type LexemesCount = Int
+  type LexiconArn = String
+  type LexiconContent = String
+  type LexiconDescriptionList = js.Array[LexiconDescription]
+  type LexiconName = String
+  type LexiconNameList = js.Array[LexiconName]
+  type MaxResults = Int
+  type NextToken = String
+  type OutputS3BucketName = String
+  type OutputS3KeyPrefix = String
+  type OutputUri = String
+  type RequestCharacters = Int
+  type SampleRate = String
+  type Size = Int
+  type SnsTopicArn = String
+  type SpeechMarkTypeList = js.Array[SpeechMarkType]
+  type SynthesisTasks = js.Array[SynthesisTask]
+  type TaskId = String
+  type TaskStatusReason = String
+  type Text = String
+  type VoiceList = js.Array[Voice]
+  type VoiceName = String
 
   implicit final class PollyOps(private val service: Polly) extends AnyVal {
 
@@ -71,11 +71,11 @@ package polly {
   class Polly() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def deleteLexicon(params: DeleteLexiconInput): Request[DeleteLexiconOutput]                            = js.native
-    def describeVoices(params: DescribeVoicesInput): Request[DescribeVoicesOutput]                         = js.native
-    def getLexicon(params: GetLexiconInput): Request[GetLexiconOutput]                                     = js.native
+    def deleteLexicon(params: DeleteLexiconInput): Request[DeleteLexiconOutput] = js.native
+    def describeVoices(params: DescribeVoicesInput): Request[DescribeVoicesOutput] = js.native
+    def getLexicon(params: GetLexiconInput): Request[GetLexiconOutput] = js.native
     def getSpeechSynthesisTask(params: GetSpeechSynthesisTaskInput): Request[GetSpeechSynthesisTaskOutput] = js.native
-    def listLexicons(params: ListLexiconsInput): Request[ListLexiconsOutput]                               = js.native
+    def listLexicons(params: ListLexiconsInput): Request[ListLexiconsOutput] = js.native
     def listSpeechSynthesisTasks(params: ListSpeechSynthesisTasksInput): Request[ListSpeechSynthesisTasksOutput] =
       js.native
     def putLexicon(params: PutLexiconInput): Request[PutLexiconOutput] = js.native
@@ -165,7 +165,7 @@ package polly {
   sealed trait Engine extends js.Any
   object Engine extends js.Object {
     val standard = "standard".asInstanceOf[Engine]
-    val neural   = "neural".asInstanceOf[Engine]
+    val neural = "neural".asInstanceOf[Engine]
 
     val values = js.Object.freeze(js.Array(standard, neural))
   }
@@ -174,7 +174,7 @@ package polly {
   sealed trait Gender extends js.Any
   object Gender extends js.Object {
     val Female = "Female".asInstanceOf[Gender]
-    val Male   = "Male".asInstanceOf[Gender]
+    val Male = "Male".asInstanceOf[Gender]
 
     val values = js.Object.freeze(js.Array(Female, Male))
   }
@@ -253,35 +253,35 @@ package polly {
   @js.native
   sealed trait LanguageCode extends js.Any
   object LanguageCode extends js.Object {
-    val arb         = "arb".asInstanceOf[LanguageCode]
-    val `cmn-CN`    = "cmn-CN".asInstanceOf[LanguageCode]
-    val `cy-GB`     = "cy-GB".asInstanceOf[LanguageCode]
-    val `da-DK`     = "da-DK".asInstanceOf[LanguageCode]
-    val `de-DE`     = "de-DE".asInstanceOf[LanguageCode]
-    val `en-AU`     = "en-AU".asInstanceOf[LanguageCode]
-    val `en-GB`     = "en-GB".asInstanceOf[LanguageCode]
+    val arb = "arb".asInstanceOf[LanguageCode]
+    val `cmn-CN` = "cmn-CN".asInstanceOf[LanguageCode]
+    val `cy-GB` = "cy-GB".asInstanceOf[LanguageCode]
+    val `da-DK` = "da-DK".asInstanceOf[LanguageCode]
+    val `de-DE` = "de-DE".asInstanceOf[LanguageCode]
+    val `en-AU` = "en-AU".asInstanceOf[LanguageCode]
+    val `en-GB` = "en-GB".asInstanceOf[LanguageCode]
     val `en-GB-WLS` = "en-GB-WLS".asInstanceOf[LanguageCode]
-    val `en-IN`     = "en-IN".asInstanceOf[LanguageCode]
-    val `en-US`     = "en-US".asInstanceOf[LanguageCode]
-    val `es-ES`     = "es-ES".asInstanceOf[LanguageCode]
-    val `es-MX`     = "es-MX".asInstanceOf[LanguageCode]
-    val `es-US`     = "es-US".asInstanceOf[LanguageCode]
-    val `fr-CA`     = "fr-CA".asInstanceOf[LanguageCode]
-    val `fr-FR`     = "fr-FR".asInstanceOf[LanguageCode]
-    val `is-IS`     = "is-IS".asInstanceOf[LanguageCode]
-    val `it-IT`     = "it-IT".asInstanceOf[LanguageCode]
-    val `ja-JP`     = "ja-JP".asInstanceOf[LanguageCode]
-    val `hi-IN`     = "hi-IN".asInstanceOf[LanguageCode]
-    val `ko-KR`     = "ko-KR".asInstanceOf[LanguageCode]
-    val `nb-NO`     = "nb-NO".asInstanceOf[LanguageCode]
-    val `nl-NL`     = "nl-NL".asInstanceOf[LanguageCode]
-    val `pl-PL`     = "pl-PL".asInstanceOf[LanguageCode]
-    val `pt-BR`     = "pt-BR".asInstanceOf[LanguageCode]
-    val `pt-PT`     = "pt-PT".asInstanceOf[LanguageCode]
-    val `ro-RO`     = "ro-RO".asInstanceOf[LanguageCode]
-    val `ru-RU`     = "ru-RU".asInstanceOf[LanguageCode]
-    val `sv-SE`     = "sv-SE".asInstanceOf[LanguageCode]
-    val `tr-TR`     = "tr-TR".asInstanceOf[LanguageCode]
+    val `en-IN` = "en-IN".asInstanceOf[LanguageCode]
+    val `en-US` = "en-US".asInstanceOf[LanguageCode]
+    val `es-ES` = "es-ES".asInstanceOf[LanguageCode]
+    val `es-MX` = "es-MX".asInstanceOf[LanguageCode]
+    val `es-US` = "es-US".asInstanceOf[LanguageCode]
+    val `fr-CA` = "fr-CA".asInstanceOf[LanguageCode]
+    val `fr-FR` = "fr-FR".asInstanceOf[LanguageCode]
+    val `is-IS` = "is-IS".asInstanceOf[LanguageCode]
+    val `it-IT` = "it-IT".asInstanceOf[LanguageCode]
+    val `ja-JP` = "ja-JP".asInstanceOf[LanguageCode]
+    val `hi-IN` = "hi-IN".asInstanceOf[LanguageCode]
+    val `ko-KR` = "ko-KR".asInstanceOf[LanguageCode]
+    val `nb-NO` = "nb-NO".asInstanceOf[LanguageCode]
+    val `nl-NL` = "nl-NL".asInstanceOf[LanguageCode]
+    val `pl-PL` = "pl-PL".asInstanceOf[LanguageCode]
+    val `pt-BR` = "pt-BR".asInstanceOf[LanguageCode]
+    val `pt-PT` = "pt-PT".asInstanceOf[LanguageCode]
+    val `ro-RO` = "ro-RO".asInstanceOf[LanguageCode]
+    val `ru-RU` = "ru-RU".asInstanceOf[LanguageCode]
+    val `sv-SE` = "sv-SE".asInstanceOf[LanguageCode]
+    val `tr-TR` = "tr-TR".asInstanceOf[LanguageCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -475,10 +475,10 @@ package polly {
   @js.native
   sealed trait OutputFormat extends js.Any
   object OutputFormat extends js.Object {
-    val json       = "json".asInstanceOf[OutputFormat]
-    val mp3        = "mp3".asInstanceOf[OutputFormat]
+    val json = "json".asInstanceOf[OutputFormat]
+    val mp3 = "mp3".asInstanceOf[OutputFormat]
     val ogg_vorbis = "ogg_vorbis".asInstanceOf[OutputFormat]
-    val pcm        = "pcm".asInstanceOf[OutputFormat]
+    val pcm = "pcm".asInstanceOf[OutputFormat]
 
     val values = js.Object.freeze(js.Array(json, mp3, ogg_vorbis, pcm))
   }
@@ -497,7 +497,7 @@ package polly {
     ): PutLexiconInput = {
       val __obj = js.Dynamic.literal(
         "Content" -> Content.asInstanceOf[js.Any],
-        "Name"    -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutLexiconInput]
@@ -521,9 +521,9 @@ package polly {
   sealed trait SpeechMarkType extends js.Any
   object SpeechMarkType extends js.Object {
     val sentence = "sentence".asInstanceOf[SpeechMarkType]
-    val ssml     = "ssml".asInstanceOf[SpeechMarkType]
-    val viseme   = "viseme".asInstanceOf[SpeechMarkType]
-    val word     = "word".asInstanceOf[SpeechMarkType]
+    val ssml = "ssml".asInstanceOf[SpeechMarkType]
+    val viseme = "viseme".asInstanceOf[SpeechMarkType]
+    val word = "word".asInstanceOf[SpeechMarkType]
 
     val values = js.Object.freeze(js.Array(sentence, ssml, viseme, word))
   }
@@ -561,10 +561,10 @@ package polly {
         TextType: js.UndefOr[TextType] = js.undefined
     ): StartSpeechSynthesisTaskInput = {
       val __obj = js.Dynamic.literal(
-        "OutputFormat"       -> OutputFormat.asInstanceOf[js.Any],
+        "OutputFormat" -> OutputFormat.asInstanceOf[js.Any],
         "OutputS3BucketName" -> OutputS3BucketName.asInstanceOf[js.Any],
-        "Text"               -> Text.asInstanceOf[js.Any],
-        "VoiceId"            -> VoiceId.asInstanceOf[js.Any]
+        "Text" -> Text.asInstanceOf[js.Any],
+        "VoiceId" -> VoiceId.asInstanceOf[js.Any]
       )
 
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
@@ -684,8 +684,8 @@ package polly {
     ): SynthesizeSpeechInput = {
       val __obj = js.Dynamic.literal(
         "OutputFormat" -> OutputFormat.asInstanceOf[js.Any],
-        "Text"         -> Text.asInstanceOf[js.Any],
-        "VoiceId"      -> VoiceId.asInstanceOf[js.Any]
+        "Text" -> Text.asInstanceOf[js.Any],
+        "VoiceId" -> VoiceId.asInstanceOf[js.Any]
       )
 
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
@@ -723,10 +723,10 @@ package polly {
   @js.native
   sealed trait TaskStatus extends js.Any
   object TaskStatus extends js.Object {
-    val scheduled  = "scheduled".asInstanceOf[TaskStatus]
+    val scheduled = "scheduled".asInstanceOf[TaskStatus]
     val inProgress = "inProgress".asInstanceOf[TaskStatus]
-    val completed  = "completed".asInstanceOf[TaskStatus]
-    val failed     = "failed".asInstanceOf[TaskStatus]
+    val completed = "completed".asInstanceOf[TaskStatus]
+    val failed = "failed".asInstanceOf[TaskStatus]
 
     val values = js.Object.freeze(js.Array(scheduled, inProgress, completed, failed))
   }
@@ -780,66 +780,67 @@ package polly {
   @js.native
   sealed trait VoiceId extends js.Any
   object VoiceId extends js.Object {
-    val Aditi     = "Aditi".asInstanceOf[VoiceId]
-    val Amy       = "Amy".asInstanceOf[VoiceId]
-    val Astrid    = "Astrid".asInstanceOf[VoiceId]
-    val Bianca    = "Bianca".asInstanceOf[VoiceId]
-    val Brian     = "Brian".asInstanceOf[VoiceId]
-    val Camila    = "Camila".asInstanceOf[VoiceId]
-    val Carla     = "Carla".asInstanceOf[VoiceId]
-    val Carmen    = "Carmen".asInstanceOf[VoiceId]
-    val Celine    = "Celine".asInstanceOf[VoiceId]
-    val Chantal   = "Chantal".asInstanceOf[VoiceId]
-    val Conchita  = "Conchita".asInstanceOf[VoiceId]
+    val Aditi = "Aditi".asInstanceOf[VoiceId]
+    val Amy = "Amy".asInstanceOf[VoiceId]
+    val Astrid = "Astrid".asInstanceOf[VoiceId]
+    val Bianca = "Bianca".asInstanceOf[VoiceId]
+    val Brian = "Brian".asInstanceOf[VoiceId]
+    val Camila = "Camila".asInstanceOf[VoiceId]
+    val Carla = "Carla".asInstanceOf[VoiceId]
+    val Carmen = "Carmen".asInstanceOf[VoiceId]
+    val Celine = "Celine".asInstanceOf[VoiceId]
+    val Chantal = "Chantal".asInstanceOf[VoiceId]
+    val Conchita = "Conchita".asInstanceOf[VoiceId]
     val Cristiano = "Cristiano".asInstanceOf[VoiceId]
-    val Dora      = "Dora".asInstanceOf[VoiceId]
-    val Emma      = "Emma".asInstanceOf[VoiceId]
-    val Enrique   = "Enrique".asInstanceOf[VoiceId]
-    val Ewa       = "Ewa".asInstanceOf[VoiceId]
-    val Filiz     = "Filiz".asInstanceOf[VoiceId]
-    val Geraint   = "Geraint".asInstanceOf[VoiceId]
-    val Giorgio   = "Giorgio".asInstanceOf[VoiceId]
-    val Gwyneth   = "Gwyneth".asInstanceOf[VoiceId]
-    val Hans      = "Hans".asInstanceOf[VoiceId]
-    val Ines      = "Ines".asInstanceOf[VoiceId]
-    val Ivy       = "Ivy".asInstanceOf[VoiceId]
-    val Jacek     = "Jacek".asInstanceOf[VoiceId]
-    val Jan       = "Jan".asInstanceOf[VoiceId]
-    val Joanna    = "Joanna".asInstanceOf[VoiceId]
-    val Joey      = "Joey".asInstanceOf[VoiceId]
-    val Justin    = "Justin".asInstanceOf[VoiceId]
-    val Karl      = "Karl".asInstanceOf[VoiceId]
-    val Kendra    = "Kendra".asInstanceOf[VoiceId]
-    val Kimberly  = "Kimberly".asInstanceOf[VoiceId]
-    val Lea       = "Lea".asInstanceOf[VoiceId]
-    val Liv       = "Liv".asInstanceOf[VoiceId]
-    val Lotte     = "Lotte".asInstanceOf[VoiceId]
-    val Lucia     = "Lucia".asInstanceOf[VoiceId]
-    val Lupe      = "Lupe".asInstanceOf[VoiceId]
-    val Mads      = "Mads".asInstanceOf[VoiceId]
-    val Maja      = "Maja".asInstanceOf[VoiceId]
-    val Marlene   = "Marlene".asInstanceOf[VoiceId]
-    val Mathieu   = "Mathieu".asInstanceOf[VoiceId]
-    val Matthew   = "Matthew".asInstanceOf[VoiceId]
-    val Maxim     = "Maxim".asInstanceOf[VoiceId]
-    val Mia       = "Mia".asInstanceOf[VoiceId]
-    val Miguel    = "Miguel".asInstanceOf[VoiceId]
-    val Mizuki    = "Mizuki".asInstanceOf[VoiceId]
-    val Naja      = "Naja".asInstanceOf[VoiceId]
-    val Nicole    = "Nicole".asInstanceOf[VoiceId]
-    val Penelope  = "Penelope".asInstanceOf[VoiceId]
-    val Raveena   = "Raveena".asInstanceOf[VoiceId]
-    val Ricardo   = "Ricardo".asInstanceOf[VoiceId]
-    val Ruben     = "Ruben".asInstanceOf[VoiceId]
-    val Russell   = "Russell".asInstanceOf[VoiceId]
-    val Salli     = "Salli".asInstanceOf[VoiceId]
-    val Seoyeon   = "Seoyeon".asInstanceOf[VoiceId]
-    val Takumi    = "Takumi".asInstanceOf[VoiceId]
-    val Tatyana   = "Tatyana".asInstanceOf[VoiceId]
-    val Vicki     = "Vicki".asInstanceOf[VoiceId]
-    val Vitoria   = "Vitoria".asInstanceOf[VoiceId]
-    val Zeina     = "Zeina".asInstanceOf[VoiceId]
-    val Zhiyu     = "Zhiyu".asInstanceOf[VoiceId]
+    val Dora = "Dora".asInstanceOf[VoiceId]
+    val Emma = "Emma".asInstanceOf[VoiceId]
+    val Enrique = "Enrique".asInstanceOf[VoiceId]
+    val Ewa = "Ewa".asInstanceOf[VoiceId]
+    val Filiz = "Filiz".asInstanceOf[VoiceId]
+    val Geraint = "Geraint".asInstanceOf[VoiceId]
+    val Giorgio = "Giorgio".asInstanceOf[VoiceId]
+    val Gwyneth = "Gwyneth".asInstanceOf[VoiceId]
+    val Hans = "Hans".asInstanceOf[VoiceId]
+    val Ines = "Ines".asInstanceOf[VoiceId]
+    val Ivy = "Ivy".asInstanceOf[VoiceId]
+    val Jacek = "Jacek".asInstanceOf[VoiceId]
+    val Jan = "Jan".asInstanceOf[VoiceId]
+    val Joanna = "Joanna".asInstanceOf[VoiceId]
+    val Joey = "Joey".asInstanceOf[VoiceId]
+    val Justin = "Justin".asInstanceOf[VoiceId]
+    val Karl = "Karl".asInstanceOf[VoiceId]
+    val Kendra = "Kendra".asInstanceOf[VoiceId]
+    val Kevin = "Kevin".asInstanceOf[VoiceId]
+    val Kimberly = "Kimberly".asInstanceOf[VoiceId]
+    val Lea = "Lea".asInstanceOf[VoiceId]
+    val Liv = "Liv".asInstanceOf[VoiceId]
+    val Lotte = "Lotte".asInstanceOf[VoiceId]
+    val Lucia = "Lucia".asInstanceOf[VoiceId]
+    val Lupe = "Lupe".asInstanceOf[VoiceId]
+    val Mads = "Mads".asInstanceOf[VoiceId]
+    val Maja = "Maja".asInstanceOf[VoiceId]
+    val Marlene = "Marlene".asInstanceOf[VoiceId]
+    val Mathieu = "Mathieu".asInstanceOf[VoiceId]
+    val Matthew = "Matthew".asInstanceOf[VoiceId]
+    val Maxim = "Maxim".asInstanceOf[VoiceId]
+    val Mia = "Mia".asInstanceOf[VoiceId]
+    val Miguel = "Miguel".asInstanceOf[VoiceId]
+    val Mizuki = "Mizuki".asInstanceOf[VoiceId]
+    val Naja = "Naja".asInstanceOf[VoiceId]
+    val Nicole = "Nicole".asInstanceOf[VoiceId]
+    val Penelope = "Penelope".asInstanceOf[VoiceId]
+    val Raveena = "Raveena".asInstanceOf[VoiceId]
+    val Ricardo = "Ricardo".asInstanceOf[VoiceId]
+    val Ruben = "Ruben".asInstanceOf[VoiceId]
+    val Russell = "Russell".asInstanceOf[VoiceId]
+    val Salli = "Salli".asInstanceOf[VoiceId]
+    val Seoyeon = "Seoyeon".asInstanceOf[VoiceId]
+    val Takumi = "Takumi".asInstanceOf[VoiceId]
+    val Tatyana = "Tatyana".asInstanceOf[VoiceId]
+    val Vicki = "Vicki".asInstanceOf[VoiceId]
+    val Vitoria = "Vitoria".asInstanceOf[VoiceId]
+    val Zeina = "Zeina".asInstanceOf[VoiceId]
+    val Zhiyu = "Zhiyu".asInstanceOf[VoiceId]
 
     val values = js.Object.freeze(
       js.Array(
@@ -873,6 +874,7 @@ package polly {
         Justin,
         Karl,
         Kendra,
+        Kevin,
         Kimberly,
         Lea,
         Liv,

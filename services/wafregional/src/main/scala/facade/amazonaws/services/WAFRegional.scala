@@ -7,80 +7,83 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object wafregional {
-  type Action                        = String
-  type ActivatedRules                = js.Array[ActivatedRule]
-  type ByteMatchSetSummaries         = js.Array[ByteMatchSetSummary]
-  type ByteMatchSetUpdates           = js.Array[ByteMatchSetUpdate]
-  type ByteMatchTargetString         = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type ByteMatchTuples               = js.Array[ByteMatchTuple]
-  type ChangeToken                   = String
-  type Country                       = String
-  type ExcludedRules                 = js.Array[ExcludedRule]
-  type GeoMatchConstraints           = js.Array[GeoMatchConstraint]
-  type GeoMatchSetSummaries          = js.Array[GeoMatchSetSummary]
-  type GeoMatchSetUpdates            = js.Array[GeoMatchSetUpdate]
-  type GetSampledRequestsMaxItems    = Double
-  type HTTPHeaders                   = js.Array[HTTPHeader]
-  type HTTPMethod                    = String
-  type HTTPVersion                   = String
-  type HeaderName                    = String
-  type HeaderValue                   = String
-  type IPSetDescriptorValue          = String
-  type IPSetDescriptors              = js.Array[IPSetDescriptor]
-  type IPSetSummaries                = js.Array[IPSetSummary]
-  type IPSetUpdates                  = js.Array[IPSetUpdate]
-  type IPString                      = String
-  type LogDestinationConfigs         = js.Array[ResourceArn]
-  type LoggingConfigurations         = js.Array[LoggingConfiguration]
-  type ManagedKey                    = String
-  type ManagedKeys                   = js.Array[ManagedKey]
-  type MatchFieldData                = String
-  type MetricName                    = String
-  type Negated                       = Boolean
-  type NextMarker                    = String
-  type PaginationLimit               = Int
-  type PolicyString                  = String
-  type PopulationSize                = Double
-  type Predicates                    = js.Array[Predicate]
-  type RateLimit                     = Double
-  type RedactedFields                = js.Array[FieldToMatch]
-  type RegexMatchSetSummaries        = js.Array[RegexMatchSetSummary]
-  type RegexMatchSetUpdates          = js.Array[RegexMatchSetUpdate]
-  type RegexMatchTuples              = js.Array[RegexMatchTuple]
-  type RegexPatternSetSummaries      = js.Array[RegexPatternSetSummary]
-  type RegexPatternSetUpdates        = js.Array[RegexPatternSetUpdate]
-  type RegexPatternString            = String
-  type RegexPatternStrings           = js.Array[RegexPatternString]
-  type ResourceArn                   = String
-  type ResourceArns                  = js.Array[ResourceArn]
-  type ResourceId                    = String
-  type ResourceName                  = String
-  type RuleGroupSummaries            = js.Array[RuleGroupSummary]
-  type RuleGroupUpdates              = js.Array[RuleGroupUpdate]
-  type RulePriority                  = Int
-  type RuleSummaries                 = js.Array[RuleSummary]
-  type RuleUpdates                   = js.Array[RuleUpdate]
-  type SampleWeight                  = Double
-  type SampledHTTPRequests           = js.Array[SampledHTTPRequest]
-  type Size                          = Double
-  type SizeConstraintSetSummaries    = js.Array[SizeConstraintSetSummary]
-  type SizeConstraintSetUpdates      = js.Array[SizeConstraintSetUpdate]
-  type SizeConstraints               = js.Array[SizeConstraint]
+  type Action = String
+  type ActivatedRules = js.Array[ActivatedRule]
+  type ByteMatchSetSummaries = js.Array[ByteMatchSetSummary]
+  type ByteMatchSetUpdates = js.Array[ByteMatchSetUpdate]
+  type ByteMatchTargetString = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type ByteMatchTuples = js.Array[ByteMatchTuple]
+  type ChangeToken = String
+  type Country = String
+  type ExcludedRules = js.Array[ExcludedRule]
+  type GeoMatchConstraints = js.Array[GeoMatchConstraint]
+  type GeoMatchSetSummaries = js.Array[GeoMatchSetSummary]
+  type GeoMatchSetUpdates = js.Array[GeoMatchSetUpdate]
+  type GetSampledRequestsMaxItems = Double
+  type HTTPHeaders = js.Array[HTTPHeader]
+  type HTTPMethod = String
+  type HTTPVersion = String
+  type HeaderName = String
+  type HeaderValue = String
+  type IPSetDescriptorValue = String
+  type IPSetDescriptors = js.Array[IPSetDescriptor]
+  type IPSetSummaries = js.Array[IPSetSummary]
+  type IPSetUpdates = js.Array[IPSetUpdate]
+  type IPString = String
+  type IgnoreUnsupportedType = Boolean
+  type LogDestinationConfigs = js.Array[ResourceArn]
+  type LoggingConfigurations = js.Array[LoggingConfiguration]
+  type ManagedKey = String
+  type ManagedKeys = js.Array[ManagedKey]
+  type MatchFieldData = String
+  type MetricName = String
+  type Negated = Boolean
+  type NextMarker = String
+  type PaginationLimit = Int
+  type PolicyString = String
+  type PopulationSize = Double
+  type Predicates = js.Array[Predicate]
+  type RateLimit = Double
+  type RedactedFields = js.Array[FieldToMatch]
+  type RegexMatchSetSummaries = js.Array[RegexMatchSetSummary]
+  type RegexMatchSetUpdates = js.Array[RegexMatchSetUpdate]
+  type RegexMatchTuples = js.Array[RegexMatchTuple]
+  type RegexPatternSetSummaries = js.Array[RegexPatternSetSummary]
+  type RegexPatternSetUpdates = js.Array[RegexPatternSetUpdate]
+  type RegexPatternString = String
+  type RegexPatternStrings = js.Array[RegexPatternString]
+  type ResourceArn = String
+  type ResourceArns = js.Array[ResourceArn]
+  type ResourceId = String
+  type ResourceName = String
+  type RuleGroupSummaries = js.Array[RuleGroupSummary]
+  type RuleGroupUpdates = js.Array[RuleGroupUpdate]
+  type RulePriority = Int
+  type RuleSummaries = js.Array[RuleSummary]
+  type RuleUpdates = js.Array[RuleUpdate]
+  type S3BucketName = String
+  type S3ObjectUrl = String
+  type SampleWeight = Double
+  type SampledHTTPRequests = js.Array[SampledHTTPRequest]
+  type Size = Double
+  type SizeConstraintSetSummaries = js.Array[SizeConstraintSetSummary]
+  type SizeConstraintSetUpdates = js.Array[SizeConstraintSetUpdate]
+  type SizeConstraints = js.Array[SizeConstraint]
   type SqlInjectionMatchSetSummaries = js.Array[SqlInjectionMatchSetSummary]
-  type SqlInjectionMatchSetUpdates   = js.Array[SqlInjectionMatchSetUpdate]
-  type SqlInjectionMatchTuples       = js.Array[SqlInjectionMatchTuple]
-  type SubscribedRuleGroupSummaries  = js.Array[SubscribedRuleGroupSummary]
-  type TagKey                        = String
-  type TagKeyList                    = js.Array[TagKey]
-  type TagList                       = js.Array[Tag]
-  type TagValue                      = String
-  type Timestamp                     = js.Date
-  type URIString                     = String
-  type WebACLSummaries               = js.Array[WebACLSummary]
-  type WebACLUpdates                 = js.Array[WebACLUpdate]
-  type XssMatchSetSummaries          = js.Array[XssMatchSetSummary]
-  type XssMatchSetUpdates            = js.Array[XssMatchSetUpdate]
-  type XssMatchTuples                = js.Array[XssMatchTuple]
+  type SqlInjectionMatchSetUpdates = js.Array[SqlInjectionMatchSetUpdate]
+  type SqlInjectionMatchTuples = js.Array[SqlInjectionMatchTuple]
+  type SubscribedRuleGroupSummaries = js.Array[SubscribedRuleGroupSummary]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type Timestamp = js.Date
+  type URIString = String
+  type WebACLSummaries = js.Array[WebACLSummary]
+  type WebACLUpdates = js.Array[WebACLUpdate]
+  type XssMatchSetSummaries = js.Array[XssMatchSetSummary]
+  type XssMatchSetUpdates = js.Array[XssMatchSetUpdate]
+  type XssMatchTuples = js.Array[XssMatchTuple]
 
   implicit final class WAFRegionalOps(private val service: WAFRegional) extends AnyVal {
 
@@ -111,6 +114,9 @@ package object wafregional {
     ): Future[CreateSqlInjectionMatchSetResponse] = service.createSqlInjectionMatchSet(params).promise().toFuture
     @inline def createWebACLFuture(params: CreateWebACLRequest): Future[CreateWebACLResponse] =
       service.createWebACL(params).promise().toFuture
+    @inline def createWebACLMigrationStackFuture(
+        params: CreateWebACLMigrationStackRequest
+    ): Future[CreateWebACLMigrationStackResponse] = service.createWebACLMigrationStack(params).promise().toFuture
     @inline def createXssMatchSetFuture(params: CreateXssMatchSetRequest): Future[CreateXssMatchSetResponse] =
       service.createXssMatchSet(params).promise().toFuture
     @inline def deleteByteMatchSetFuture(params: DeleteByteMatchSetRequest): Future[DeleteByteMatchSetResponse] =
@@ -274,82 +280,85 @@ package wafregional {
   class WAFRegional() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def associateWebACL(params: AssociateWebACLRequest): Request[AssociateWebACLResponse]                   = js.native
-    def createByteMatchSet(params: CreateByteMatchSetRequest): Request[CreateByteMatchSetResponse]          = js.native
-    def createGeoMatchSet(params: CreateGeoMatchSetRequest): Request[CreateGeoMatchSetResponse]             = js.native
-    def createIPSet(params: CreateIPSetRequest): Request[CreateIPSetResponse]                               = js.native
-    def createRateBasedRule(params: CreateRateBasedRuleRequest): Request[CreateRateBasedRuleResponse]       = js.native
-    def createRegexMatchSet(params: CreateRegexMatchSetRequest): Request[CreateRegexMatchSetResponse]       = js.native
+    def associateWebACL(params: AssociateWebACLRequest): Request[AssociateWebACLResponse] = js.native
+    def createByteMatchSet(params: CreateByteMatchSetRequest): Request[CreateByteMatchSetResponse] = js.native
+    def createGeoMatchSet(params: CreateGeoMatchSetRequest): Request[CreateGeoMatchSetResponse] = js.native
+    def createIPSet(params: CreateIPSetRequest): Request[CreateIPSetResponse] = js.native
+    def createRateBasedRule(params: CreateRateBasedRuleRequest): Request[CreateRateBasedRuleResponse] = js.native
+    def createRegexMatchSet(params: CreateRegexMatchSetRequest): Request[CreateRegexMatchSetResponse] = js.native
     def createRegexPatternSet(params: CreateRegexPatternSetRequest): Request[CreateRegexPatternSetResponse] = js.native
-    def createRule(params: CreateRuleRequest): Request[CreateRuleResponse]                                  = js.native
-    def createRuleGroup(params: CreateRuleGroupRequest): Request[CreateRuleGroupResponse]                   = js.native
+    def createRule(params: CreateRuleRequest): Request[CreateRuleResponse] = js.native
+    def createRuleGroup(params: CreateRuleGroupRequest): Request[CreateRuleGroupResponse] = js.native
     def createSizeConstraintSet(params: CreateSizeConstraintSetRequest): Request[CreateSizeConstraintSetResponse] =
       js.native
     def createSqlInjectionMatchSet(
         params: CreateSqlInjectionMatchSetRequest
-    ): Request[CreateSqlInjectionMatchSetResponse]                                                 = js.native
-    def createWebACL(params: CreateWebACLRequest): Request[CreateWebACLResponse]                   = js.native
-    def createXssMatchSet(params: CreateXssMatchSetRequest): Request[CreateXssMatchSetResponse]    = js.native
+    ): Request[CreateSqlInjectionMatchSetResponse] = js.native
+    def createWebACL(params: CreateWebACLRequest): Request[CreateWebACLResponse] = js.native
+    def createWebACLMigrationStack(
+        params: CreateWebACLMigrationStackRequest
+    ): Request[CreateWebACLMigrationStackResponse] = js.native
+    def createXssMatchSet(params: CreateXssMatchSetRequest): Request[CreateXssMatchSetResponse] = js.native
     def deleteByteMatchSet(params: DeleteByteMatchSetRequest): Request[DeleteByteMatchSetResponse] = js.native
-    def deleteGeoMatchSet(params: DeleteGeoMatchSetRequest): Request[DeleteGeoMatchSetResponse]    = js.native
-    def deleteIPSet(params: DeleteIPSetRequest): Request[DeleteIPSetResponse]                      = js.native
+    def deleteGeoMatchSet(params: DeleteGeoMatchSetRequest): Request[DeleteGeoMatchSetResponse] = js.native
+    def deleteIPSet(params: DeleteIPSetRequest): Request[DeleteIPSetResponse] = js.native
     def deleteLoggingConfiguration(
         params: DeleteLoggingConfigurationRequest
     ): Request[DeleteLoggingConfigurationResponse] = js.native
     def deletePermissionPolicy(params: DeletePermissionPolicyRequest): Request[DeletePermissionPolicyResponse] =
       js.native
-    def deleteRateBasedRule(params: DeleteRateBasedRuleRequest): Request[DeleteRateBasedRuleResponse]       = js.native
-    def deleteRegexMatchSet(params: DeleteRegexMatchSetRequest): Request[DeleteRegexMatchSetResponse]       = js.native
+    def deleteRateBasedRule(params: DeleteRateBasedRuleRequest): Request[DeleteRateBasedRuleResponse] = js.native
+    def deleteRegexMatchSet(params: DeleteRegexMatchSetRequest): Request[DeleteRegexMatchSetResponse] = js.native
     def deleteRegexPatternSet(params: DeleteRegexPatternSetRequest): Request[DeleteRegexPatternSetResponse] = js.native
-    def deleteRule(params: DeleteRuleRequest): Request[DeleteRuleResponse]                                  = js.native
-    def deleteRuleGroup(params: DeleteRuleGroupRequest): Request[DeleteRuleGroupResponse]                   = js.native
+    def deleteRule(params: DeleteRuleRequest): Request[DeleteRuleResponse] = js.native
+    def deleteRuleGroup(params: DeleteRuleGroupRequest): Request[DeleteRuleGroupResponse] = js.native
     def deleteSizeConstraintSet(params: DeleteSizeConstraintSetRequest): Request[DeleteSizeConstraintSetResponse] =
       js.native
     def deleteSqlInjectionMatchSet(
         params: DeleteSqlInjectionMatchSetRequest
-    ): Request[DeleteSqlInjectionMatchSetResponse]                                                       = js.native
-    def deleteWebACL(params: DeleteWebACLRequest): Request[DeleteWebACLResponse]                         = js.native
-    def deleteXssMatchSet(params: DeleteXssMatchSetRequest): Request[DeleteXssMatchSetResponse]          = js.native
-    def disassociateWebACL(params: DisassociateWebACLRequest): Request[DisassociateWebACLResponse]       = js.native
-    def getByteMatchSet(params: GetByteMatchSetRequest): Request[GetByteMatchSetResponse]                = js.native
-    def getChangeToken(params: GetChangeTokenRequest): Request[GetChangeTokenResponse]                   = js.native
+    ): Request[DeleteSqlInjectionMatchSetResponse] = js.native
+    def deleteWebACL(params: DeleteWebACLRequest): Request[DeleteWebACLResponse] = js.native
+    def deleteXssMatchSet(params: DeleteXssMatchSetRequest): Request[DeleteXssMatchSetResponse] = js.native
+    def disassociateWebACL(params: DisassociateWebACLRequest): Request[DisassociateWebACLResponse] = js.native
+    def getByteMatchSet(params: GetByteMatchSetRequest): Request[GetByteMatchSetResponse] = js.native
+    def getChangeToken(params: GetChangeTokenRequest): Request[GetChangeTokenResponse] = js.native
     def getChangeTokenStatus(params: GetChangeTokenStatusRequest): Request[GetChangeTokenStatusResponse] = js.native
-    def getGeoMatchSet(params: GetGeoMatchSetRequest): Request[GetGeoMatchSetResponse]                   = js.native
-    def getIPSet(params: GetIPSetRequest): Request[GetIPSetResponse]                                     = js.native
+    def getGeoMatchSet(params: GetGeoMatchSetRequest): Request[GetGeoMatchSetResponse] = js.native
+    def getIPSet(params: GetIPSetRequest): Request[GetIPSetResponse] = js.native
     def getLoggingConfiguration(params: GetLoggingConfigurationRequest): Request[GetLoggingConfigurationResponse] =
       js.native
     def getPermissionPolicy(params: GetPermissionPolicyRequest): Request[GetPermissionPolicyResponse] = js.native
-    def getRateBasedRule(params: GetRateBasedRuleRequest): Request[GetRateBasedRuleResponse]          = js.native
+    def getRateBasedRule(params: GetRateBasedRuleRequest): Request[GetRateBasedRuleResponse] = js.native
     def getRateBasedRuleManagedKeys(
         params: GetRateBasedRuleManagedKeysRequest
-    ): Request[GetRateBasedRuleManagedKeysResponse]                                                      = js.native
-    def getRegexMatchSet(params: GetRegexMatchSetRequest): Request[GetRegexMatchSetResponse]             = js.native
-    def getRegexPatternSet(params: GetRegexPatternSetRequest): Request[GetRegexPatternSetResponse]       = js.native
-    def getRule(params: GetRuleRequest): Request[GetRuleResponse]                                        = js.native
-    def getRuleGroup(params: GetRuleGroupRequest): Request[GetRuleGroupResponse]                         = js.native
-    def getSampledRequests(params: GetSampledRequestsRequest): Request[GetSampledRequestsResponse]       = js.native
+    ): Request[GetRateBasedRuleManagedKeysResponse] = js.native
+    def getRegexMatchSet(params: GetRegexMatchSetRequest): Request[GetRegexMatchSetResponse] = js.native
+    def getRegexPatternSet(params: GetRegexPatternSetRequest): Request[GetRegexPatternSetResponse] = js.native
+    def getRule(params: GetRuleRequest): Request[GetRuleResponse] = js.native
+    def getRuleGroup(params: GetRuleGroupRequest): Request[GetRuleGroupResponse] = js.native
+    def getSampledRequests(params: GetSampledRequestsRequest): Request[GetSampledRequestsResponse] = js.native
     def getSizeConstraintSet(params: GetSizeConstraintSetRequest): Request[GetSizeConstraintSetResponse] = js.native
     def getSqlInjectionMatchSet(params: GetSqlInjectionMatchSetRequest): Request[GetSqlInjectionMatchSetResponse] =
       js.native
-    def getWebACL(params: GetWebACLRequest): Request[GetWebACLResponse]                                  = js.native
+    def getWebACL(params: GetWebACLRequest): Request[GetWebACLResponse] = js.native
     def getWebACLForResource(params: GetWebACLForResourceRequest): Request[GetWebACLForResourceResponse] = js.native
-    def getXssMatchSet(params: GetXssMatchSetRequest): Request[GetXssMatchSetResponse]                   = js.native
+    def getXssMatchSet(params: GetXssMatchSetRequest): Request[GetXssMatchSetResponse] = js.native
     def listActivatedRulesInRuleGroup(
         params: ListActivatedRulesInRuleGroupRequest
-    ): Request[ListActivatedRulesInRuleGroupResponse]                                           = js.native
+    ): Request[ListActivatedRulesInRuleGroupResponse] = js.native
     def listByteMatchSets(params: ListByteMatchSetsRequest): Request[ListByteMatchSetsResponse] = js.native
-    def listGeoMatchSets(params: ListGeoMatchSetsRequest): Request[ListGeoMatchSetsResponse]    = js.native
-    def listIPSets(params: ListIPSetsRequest): Request[ListIPSetsResponse]                      = js.native
+    def listGeoMatchSets(params: ListGeoMatchSetsRequest): Request[ListGeoMatchSetsResponse] = js.native
+    def listIPSets(params: ListIPSetsRequest): Request[ListIPSetsResponse] = js.native
     def listLoggingConfigurations(
         params: ListLoggingConfigurationsRequest
-    ): Request[ListLoggingConfigurationsResponse]                                                        = js.native
-    def listRateBasedRules(params: ListRateBasedRulesRequest): Request[ListRateBasedRulesResponse]       = js.native
-    def listRegexMatchSets(params: ListRegexMatchSetsRequest): Request[ListRegexMatchSetsResponse]       = js.native
+    ): Request[ListLoggingConfigurationsResponse] = js.native
+    def listRateBasedRules(params: ListRateBasedRulesRequest): Request[ListRateBasedRulesResponse] = js.native
+    def listRegexMatchSets(params: ListRegexMatchSetsRequest): Request[ListRegexMatchSetsResponse] = js.native
     def listRegexPatternSets(params: ListRegexPatternSetsRequest): Request[ListRegexPatternSetsResponse] = js.native
     def listResourcesForWebACL(params: ListResourcesForWebACLRequest): Request[ListResourcesForWebACLResponse] =
       js.native
     def listRuleGroups(params: ListRuleGroupsRequest): Request[ListRuleGroupsResponse] = js.native
-    def listRules(params: ListRulesRequest): Request[ListRulesResponse]                = js.native
+    def listRules(params: ListRulesRequest): Request[ListRulesResponse] = js.native
     def listSizeConstraintSets(params: ListSizeConstraintSetsRequest): Request[ListSizeConstraintSetsResponse] =
       js.native
     def listSqlInjectionMatchSets(
@@ -358,31 +367,33 @@ package wafregional {
     def listSubscribedRuleGroups(params: ListSubscribedRuleGroupsRequest): Request[ListSubscribedRuleGroupsResponse] =
       js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def listWebACLs(params: ListWebACLsRequest): Request[ListWebACLsResponse]                         = js.native
-    def listXssMatchSets(params: ListXssMatchSetsRequest): Request[ListXssMatchSetsResponse]          = js.native
+    def listWebACLs(params: ListWebACLsRequest): Request[ListWebACLsResponse] = js.native
+    def listXssMatchSets(params: ListXssMatchSetsRequest): Request[ListXssMatchSetsResponse] = js.native
     def putLoggingConfiguration(params: PutLoggingConfigurationRequest): Request[PutLoggingConfigurationResponse] =
       js.native
-    def putPermissionPolicy(params: PutPermissionPolicyRequest): Request[PutPermissionPolicyResponse]       = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                         = js.native
-    def updateByteMatchSet(params: UpdateByteMatchSetRequest): Request[UpdateByteMatchSetResponse]          = js.native
-    def updateGeoMatchSet(params: UpdateGeoMatchSetRequest): Request[UpdateGeoMatchSetResponse]             = js.native
-    def updateIPSet(params: UpdateIPSetRequest): Request[UpdateIPSetResponse]                               = js.native
-    def updateRateBasedRule(params: UpdateRateBasedRuleRequest): Request[UpdateRateBasedRuleResponse]       = js.native
-    def updateRegexMatchSet(params: UpdateRegexMatchSetRequest): Request[UpdateRegexMatchSetResponse]       = js.native
+    def putPermissionPolicy(params: PutPermissionPolicyRequest): Request[PutPermissionPolicyResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateByteMatchSet(params: UpdateByteMatchSetRequest): Request[UpdateByteMatchSetResponse] = js.native
+    def updateGeoMatchSet(params: UpdateGeoMatchSetRequest): Request[UpdateGeoMatchSetResponse] = js.native
+    def updateIPSet(params: UpdateIPSetRequest): Request[UpdateIPSetResponse] = js.native
+    def updateRateBasedRule(params: UpdateRateBasedRuleRequest): Request[UpdateRateBasedRuleResponse] = js.native
+    def updateRegexMatchSet(params: UpdateRegexMatchSetRequest): Request[UpdateRegexMatchSetResponse] = js.native
     def updateRegexPatternSet(params: UpdateRegexPatternSetRequest): Request[UpdateRegexPatternSetResponse] = js.native
-    def updateRule(params: UpdateRuleRequest): Request[UpdateRuleResponse]                                  = js.native
-    def updateRuleGroup(params: UpdateRuleGroupRequest): Request[UpdateRuleGroupResponse]                   = js.native
+    def updateRule(params: UpdateRuleRequest): Request[UpdateRuleResponse] = js.native
+    def updateRuleGroup(params: UpdateRuleGroupRequest): Request[UpdateRuleGroupResponse] = js.native
     def updateSizeConstraintSet(params: UpdateSizeConstraintSetRequest): Request[UpdateSizeConstraintSetResponse] =
       js.native
     def updateSqlInjectionMatchSet(
         params: UpdateSqlInjectionMatchSetRequest
-    ): Request[UpdateSqlInjectionMatchSetResponse]                                              = js.native
-    def updateWebACL(params: UpdateWebACLRequest): Request[UpdateWebACLResponse]                = js.native
+    ): Request[UpdateSqlInjectionMatchSetResponse] = js.native
+    def updateWebACL(params: UpdateWebACLRequest): Request[UpdateWebACLResponse] = js.native
     def updateXssMatchSet(params: UpdateXssMatchSetRequest): Request[UpdateXssMatchSetResponse] = js.native
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The <code>ActivatedRule</code> object in an <a>UpdateWebACL</a> request specifies a <code>Rule</code> that you want to insert or delete, the priority of the <code>Rule</code> in the <code>WebACL</code>, and the action that you want AWS WAF to take when a web request matches the <code>Rule</code> (<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>).
     *  To specify whether to insert or delete a <code>Rule</code>, use the <code>Action</code> parameter in the <a>WebACLUpdate</a> data type.
     */
@@ -408,7 +419,7 @@ package wafregional {
     ): ActivatedRule = {
       val __obj = js.Dynamic.literal(
         "Priority" -> Priority.asInstanceOf[js.Any],
-        "RuleId"   -> RuleId.asInstanceOf[js.Any]
+        "RuleId" -> RuleId.asInstanceOf[js.Any]
       )
 
       Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
@@ -433,7 +444,7 @@ package wafregional {
     ): AssociateWebACLRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "WebACLId"    -> WebACLId.asInstanceOf[js.Any]
+        "WebACLId" -> WebACLId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AssociateWebACLRequest]
@@ -454,6 +465,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * In a <a>GetByteMatchSet</a> request, <code>ByteMatchSet</code> is a complex type that contains the <code>ByteMatchSetId</code> and <code>Name</code> of a <code>ByteMatchSet</code>, and the values that you specified when you updated the <code>ByteMatchSet</code>.
     *  A complex type that contains <code>ByteMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect and the values that you want AWS WAF to search for. If a <code>ByteMatchSet</code> contains more than one <code>ByteMatchTuple</code> object, a request needs to match the settings in only one <code>ByteMatchTuple</code> to be considered a match.
     */
@@ -472,7 +485,7 @@ package wafregional {
         Name: js.UndefOr[ResourceName] = js.undefined
     ): ByteMatchSet = {
       val __obj = js.Dynamic.literal(
-        "ByteMatchSetId"  -> ByteMatchSetId.asInstanceOf[js.Any],
+        "ByteMatchSetId" -> ByteMatchSetId.asInstanceOf[js.Any],
         "ByteMatchTuples" -> ByteMatchTuples.asInstanceOf[js.Any]
       )
 
@@ -482,6 +495,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Returned by <a>ListByteMatchSets</a>. Each <code>ByteMatchSetSummary</code> object includes the <code>Name</code> and <code>ByteMatchSetId</code> for one <a>ByteMatchSet</a>.
     */
   @js.native
@@ -498,7 +513,7 @@ package wafregional {
     ): ByteMatchSetSummary = {
       val __obj = js.Dynamic.literal(
         "ByteMatchSetId" -> ByteMatchSetId.asInstanceOf[js.Any],
-        "Name"           -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ByteMatchSetSummary]
@@ -506,6 +521,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * In an <a>UpdateByteMatchSet</a> request, <code>ByteMatchSetUpdate</code> specifies whether to insert or delete a <a>ByteMatchTuple</a> and includes the settings for the <code>ByteMatchTuple</code>.
     */
   @js.native
@@ -521,7 +538,7 @@ package wafregional {
         ByteMatchTuple: ByteMatchTuple
     ): ByteMatchSetUpdate = {
       val __obj = js.Dynamic.literal(
-        "Action"         -> Action.asInstanceOf[js.Any],
+        "Action" -> Action.asInstanceOf[js.Any],
         "ByteMatchTuple" -> ByteMatchTuple.asInstanceOf[js.Any]
       )
 
@@ -530,6 +547,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The bytes (typically a string that corresponds with ASCII characters) that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings.
     */
   @js.native
@@ -549,10 +568,10 @@ package wafregional {
         TextTransformation: TextTransformation
     ): ByteMatchTuple = {
       val __obj = js.Dynamic.literal(
-        "FieldToMatch"         -> FieldToMatch.asInstanceOf[js.Any],
+        "FieldToMatch" -> FieldToMatch.asInstanceOf[js.Any],
         "PositionalConstraint" -> PositionalConstraint.asInstanceOf[js.Any],
-        "TargetString"         -> TargetString.asInstanceOf[js.Any],
-        "TextTransformation"   -> TextTransformation.asInstanceOf[js.Any]
+        "TargetString" -> TargetString.asInstanceOf[js.Any],
+        "TextTransformation" -> TextTransformation.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ByteMatchTuple]
@@ -572,8 +591,8 @@ package wafregional {
   sealed trait ChangeTokenStatus extends js.Any
   object ChangeTokenStatus extends js.Object {
     val PROVISIONED = "PROVISIONED".asInstanceOf[ChangeTokenStatus]
-    val PENDING     = "PENDING".asInstanceOf[ChangeTokenStatus]
-    val INSYNC      = "INSYNC".asInstanceOf[ChangeTokenStatus]
+    val PENDING = "PENDING".asInstanceOf[ChangeTokenStatus]
+    val INSYNC = "INSYNC".asInstanceOf[ChangeTokenStatus]
 
     val values = js.Object.freeze(js.Array(PROVISIONED, PENDING, INSYNC))
   }
@@ -605,7 +624,7 @@ package wafregional {
     ): CreateByteMatchSetRequest = {
       val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateByteMatchSetRequest]
@@ -645,7 +664,7 @@ package wafregional {
     ): CreateGeoMatchSetRequest = {
       val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateGeoMatchSetRequest]
@@ -685,7 +704,7 @@ package wafregional {
     ): CreateIPSetRequest = {
       val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateIPSetRequest]
@@ -733,10 +752,10 @@ package wafregional {
     ): CreateRateBasedRuleRequest = {
       val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "MetricName"  -> MetricName.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any],
-        "RateKey"     -> RateKey.asInstanceOf[js.Any],
-        "RateLimit"   -> RateLimit.asInstanceOf[js.Any]
+        "MetricName" -> MetricName.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "RateKey" -> RateKey.asInstanceOf[js.Any],
+        "RateLimit" -> RateLimit.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -777,7 +796,7 @@ package wafregional {
     ): CreateRegexMatchSetRequest = {
       val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateRegexMatchSetRequest]
@@ -817,7 +836,7 @@ package wafregional {
     ): CreateRegexPatternSetRequest = {
       val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateRegexPatternSetRequest]
@@ -861,8 +880,8 @@ package wafregional {
     ): CreateRuleGroupRequest = {
       val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "MetricName"  -> MetricName.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any]
+        "MetricName" -> MetricName.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -907,8 +926,8 @@ package wafregional {
     ): CreateRuleRequest = {
       val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "MetricName"  -> MetricName.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any]
+        "MetricName" -> MetricName.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -949,7 +968,7 @@ package wafregional {
     ): CreateSizeConstraintSetRequest = {
       val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateSizeConstraintSetRequest]
@@ -992,7 +1011,7 @@ package wafregional {
     ): CreateSqlInjectionMatchSetRequest = {
       val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateSqlInjectionMatchSetRequest]
@@ -1022,6 +1041,48 @@ package wafregional {
   }
 
   @js.native
+  trait CreateWebACLMigrationStackRequest extends js.Object {
+    var IgnoreUnsupportedType: IgnoreUnsupportedType
+    var S3BucketName: S3BucketName
+    var WebACLId: ResourceId
+  }
+
+  object CreateWebACLMigrationStackRequest {
+    @inline
+    def apply(
+        IgnoreUnsupportedType: IgnoreUnsupportedType,
+        S3BucketName: S3BucketName,
+        WebACLId: ResourceId
+    ): CreateWebACLMigrationStackRequest = {
+      val __obj = js.Dynamic.literal(
+        "IgnoreUnsupportedType" -> IgnoreUnsupportedType.asInstanceOf[js.Any],
+        "S3BucketName" -> S3BucketName.asInstanceOf[js.Any],
+        "WebACLId" -> WebACLId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateWebACLMigrationStackRequest]
+    }
+  }
+
+  @js.native
+  trait CreateWebACLMigrationStackResponse extends js.Object {
+    var S3ObjectUrl: S3ObjectUrl
+  }
+
+  object CreateWebACLMigrationStackResponse {
+    @inline
+    def apply(
+        S3ObjectUrl: S3ObjectUrl
+    ): CreateWebACLMigrationStackResponse = {
+      val __obj = js.Dynamic.literal(
+        "S3ObjectUrl" -> S3ObjectUrl.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateWebACLMigrationStackResponse]
+    }
+  }
+
+  @js.native
   trait CreateWebACLRequest extends js.Object {
     var ChangeToken: ChangeToken
     var DefaultAction: WafAction
@@ -1040,10 +1101,10 @@ package wafregional {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateWebACLRequest = {
       val __obj = js.Dynamic.literal(
-        "ChangeToken"   -> ChangeToken.asInstanceOf[js.Any],
+        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "DefaultAction" -> DefaultAction.asInstanceOf[js.Any],
-        "MetricName"    -> MetricName.asInstanceOf[js.Any],
-        "Name"          -> Name.asInstanceOf[js.Any]
+        "MetricName" -> MetricName.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -1087,7 +1148,7 @@ package wafregional {
     ): CreateXssMatchSetRequest = {
       val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateXssMatchSetRequest]
@@ -1130,7 +1191,7 @@ package wafregional {
     ): DeleteByteMatchSetRequest = {
       val __obj = js.Dynamic.literal(
         "ByteMatchSetId" -> ByteMatchSetId.asInstanceOf[js.Any],
-        "ChangeToken"    -> ChangeToken.asInstanceOf[js.Any]
+        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteByteMatchSetRequest]
@@ -1166,7 +1227,7 @@ package wafregional {
         GeoMatchSetId: ResourceId
     ): DeleteGeoMatchSetRequest = {
       val __obj = js.Dynamic.literal(
-        "ChangeToken"   -> ChangeToken.asInstanceOf[js.Any],
+        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "GeoMatchSetId" -> GeoMatchSetId.asInstanceOf[js.Any]
       )
 
@@ -1204,7 +1265,7 @@ package wafregional {
     ): DeleteIPSetRequest = {
       val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "IPSetId"     -> IPSetId.asInstanceOf[js.Any]
+        "IPSetId" -> IPSetId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteIPSetRequest]
@@ -1303,7 +1364,7 @@ package wafregional {
     ): DeleteRateBasedRuleRequest = {
       val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "RuleId"      -> RuleId.asInstanceOf[js.Any]
+        "RuleId" -> RuleId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteRateBasedRuleRequest]
@@ -1339,7 +1400,7 @@ package wafregional {
         RegexMatchSetId: ResourceId
     ): DeleteRegexMatchSetRequest = {
       val __obj = js.Dynamic.literal(
-        "ChangeToken"     -> ChangeToken.asInstanceOf[js.Any],
+        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "RegexMatchSetId" -> RegexMatchSetId.asInstanceOf[js.Any]
       )
 
@@ -1376,7 +1437,7 @@ package wafregional {
         RegexPatternSetId: ResourceId
     ): DeleteRegexPatternSetRequest = {
       val __obj = js.Dynamic.literal(
-        "ChangeToken"       -> ChangeToken.asInstanceOf[js.Any],
+        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "RegexPatternSetId" -> RegexPatternSetId.asInstanceOf[js.Any]
       )
 
@@ -1451,7 +1512,7 @@ package wafregional {
     ): DeleteRuleRequest = {
       val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "RuleId"      -> RuleId.asInstanceOf[js.Any]
+        "RuleId" -> RuleId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteRuleRequest]
@@ -1487,7 +1548,7 @@ package wafregional {
         SizeConstraintSetId: ResourceId
     ): DeleteSizeConstraintSetRequest = {
       val __obj = js.Dynamic.literal(
-        "ChangeToken"         -> ChangeToken.asInstanceOf[js.Any],
+        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "SizeConstraintSetId" -> SizeConstraintSetId.asInstanceOf[js.Any]
       )
 
@@ -1527,7 +1588,7 @@ package wafregional {
         SqlInjectionMatchSetId: ResourceId
     ): DeleteSqlInjectionMatchSetRequest = {
       val __obj = js.Dynamic.literal(
-        "ChangeToken"            -> ChangeToken.asInstanceOf[js.Any],
+        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "SqlInjectionMatchSetId" -> SqlInjectionMatchSetId.asInstanceOf[js.Any]
       )
 
@@ -1568,7 +1629,7 @@ package wafregional {
     ): DeleteWebACLRequest = {
       val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "WebACLId"    -> WebACLId.asInstanceOf[js.Any]
+        "WebACLId" -> WebACLId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteWebACLRequest]
@@ -1607,7 +1668,7 @@ package wafregional {
         XssMatchSetId: ResourceId
     ): DeleteXssMatchSetRequest = {
       val __obj = js.Dynamic.literal(
-        "ChangeToken"   -> ChangeToken.asInstanceOf[js.Any],
+        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "XssMatchSetId" -> XssMatchSetId.asInstanceOf[js.Any]
       )
 
@@ -1666,6 +1727,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The rule to exclude from a rule group. This is applicable only when the <code>ActivatedRule</code> refers to a <code>RuleGroup</code>. The rule must belong to the <code>RuleGroup</code> that is specified by the <code>ActivatedRule</code>.
     */
   @js.native
@@ -1687,6 +1750,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies where in a web request to look for <code>TargetString</code>.
     */
   @js.native
@@ -1711,6 +1776,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The country from which web requests originate that you want AWS WAF to search for.
     */
   @js.native
@@ -1726,7 +1793,7 @@ package wafregional {
         Value: GeoMatchConstraintValue
     ): GeoMatchConstraint = {
       val __obj = js.Dynamic.literal(
-        "Type"  -> Type.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -2251,6 +2318,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Contains one or more countries that AWS WAF will search for.
     */
   @js.native
@@ -2269,7 +2338,7 @@ package wafregional {
     ): GeoMatchSet = {
       val __obj = js.Dynamic.literal(
         "GeoMatchConstraints" -> GeoMatchConstraints.asInstanceOf[js.Any],
-        "GeoMatchSetId"       -> GeoMatchSetId.asInstanceOf[js.Any]
+        "GeoMatchSetId" -> GeoMatchSetId.asInstanceOf[js.Any]
       )
 
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -2278,6 +2347,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Contains the identifier and the name of the <code>GeoMatchSet</code>.
     */
   @js.native
@@ -2294,7 +2365,7 @@ package wafregional {
     ): GeoMatchSetSummary = {
       val __obj = js.Dynamic.literal(
         "GeoMatchSetId" -> GeoMatchSetId.asInstanceOf[js.Any],
-        "Name"          -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GeoMatchSetSummary]
@@ -2302,6 +2373,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies the type of update to perform to an <a>GeoMatchSet</a> with <a>UpdateGeoMatchSet</a>.
     */
   @js.native
@@ -2317,7 +2390,7 @@ package wafregional {
         GeoMatchConstraint: GeoMatchConstraint
     ): GeoMatchSetUpdate = {
       val __obj = js.Dynamic.literal(
-        "Action"             -> Action.asInstanceOf[js.Any],
+        "Action" -> Action.asInstanceOf[js.Any],
         "GeoMatchConstraint" -> GeoMatchConstraint.asInstanceOf[js.Any]
       )
 
@@ -2785,10 +2858,10 @@ package wafregional {
         WebAclId: ResourceId
     ): GetSampledRequestsRequest = {
       val __obj = js.Dynamic.literal(
-        "MaxItems"   -> MaxItems.asInstanceOf[js.Any],
-        "RuleId"     -> RuleId.asInstanceOf[js.Any],
+        "MaxItems" -> MaxItems.asInstanceOf[js.Any],
+        "RuleId" -> RuleId.asInstanceOf[js.Any],
         "TimeWindow" -> TimeWindow.asInstanceOf[js.Any],
-        "WebAclId"   -> WebAclId.asInstanceOf[js.Any]
+        "WebAclId" -> WebAclId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetSampledRequestsRequest]
@@ -3000,6 +3073,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The response from a <a>GetSampledRequests</a> request includes an <code>HTTPHeader</code> complex type that appears as <code>Headers</code> in the response syntax. <code>HTTPHeader</code> contains the names and values of all of the headers that appear in one of the web requests that were returned by <code>GetSampledRequests</code>.
     */
   @js.native
@@ -3022,6 +3097,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The response from a <a>GetSampledRequests</a> request includes an <code>HTTPRequest</code> complex type that appears as <code>Request</code> in the response syntax. <code>HTTPRequest</code> contains information about one of the web requests that were returned by <code>GetSampledRequests</code>.
     */
   @js.native
@@ -3056,6 +3133,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR) notation. AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address ranges: /24, /32, /48, /56, /64, and /128.
     *  To specify an individual IP address, you specify the four-part IP address followed by a <code>/32</code>, for example, 192.0.2.0/32. To block a range of IP addresses, you can specify /8 or any range between /16 through /32 (for IPv4) or /24, /32, /48, /56, /64, or /128 (for IPv6). For more information about CIDR notation, see the Wikipedia entry [[https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing|Classless Inter-Domain Routing]].
     */
@@ -3075,7 +3154,7 @@ package wafregional {
     ): IPSet = {
       val __obj = js.Dynamic.literal(
         "IPSetDescriptors" -> IPSetDescriptors.asInstanceOf[js.Any],
-        "IPSetId"          -> IPSetId.asInstanceOf[js.Any]
+        "IPSetId" -> IPSetId.asInstanceOf[js.Any]
       )
 
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -3084,6 +3163,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies the IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR format) that web requests originate from.
     */
   @js.native
@@ -3099,7 +3180,7 @@ package wafregional {
         Value: IPSetDescriptorValue
     ): IPSetDescriptor = {
       val __obj = js.Dynamic.literal(
-        "Type"  -> Type.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -3117,6 +3198,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Contains the identifier and the name of the <code>IPSet</code>.
     */
   @js.native
@@ -3133,7 +3216,7 @@ package wafregional {
     ): IPSetSummary = {
       val __obj = js.Dynamic.literal(
         "IPSetId" -> IPSetId.asInstanceOf[js.Any],
-        "Name"    -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[IPSetSummary]
@@ -3141,6 +3224,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies the type of update to perform to an <a>IPSet</a> with <a>UpdateIPSet</a>.
     */
   @js.native
@@ -3156,7 +3241,7 @@ package wafregional {
         IPSetDescriptor: IPSetDescriptor
     ): IPSetUpdate = {
       val __obj = js.Dynamic.literal(
-        "Action"          -> Action.asInstanceOf[js.Any],
+        "Action" -> Action.asInstanceOf[js.Any],
         "IPSetDescriptor" -> IPSetDescriptor.asInstanceOf[js.Any]
       )
 
@@ -3830,6 +3915,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The Amazon Kinesis Data Firehose, <code>RedactedFields</code> information, and the web ACL Amazon Resource Name (ARN).
     */
   @js.native
@@ -3848,7 +3935,7 @@ package wafregional {
     ): LoggingConfiguration = {
       val __obj = js.Dynamic.literal(
         "LogDestinationConfigs" -> LogDestinationConfigs.asInstanceOf[js.Any],
-        "ResourceArn"           -> ResourceArn.asInstanceOf[js.Any]
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
       RedactedFields.foreach(__v => __obj.updateDynamic("RedactedFields")(__v.asInstanceOf[js.Any]))
@@ -3859,13 +3946,13 @@ package wafregional {
   @js.native
   sealed trait MatchFieldType extends js.Any
   object MatchFieldType extends js.Object {
-    val URI              = "URI".asInstanceOf[MatchFieldType]
-    val QUERY_STRING     = "QUERY_STRING".asInstanceOf[MatchFieldType]
-    val HEADER           = "HEADER".asInstanceOf[MatchFieldType]
-    val METHOD           = "METHOD".asInstanceOf[MatchFieldType]
-    val BODY             = "BODY".asInstanceOf[MatchFieldType]
+    val URI = "URI".asInstanceOf[MatchFieldType]
+    val QUERY_STRING = "QUERY_STRING".asInstanceOf[MatchFieldType]
+    val HEADER = "HEADER".asInstanceOf[MatchFieldType]
+    val METHOD = "METHOD".asInstanceOf[MatchFieldType]
+    val BODY = "BODY".asInstanceOf[MatchFieldType]
     val SINGLE_QUERY_ARG = "SINGLE_QUERY_ARG".asInstanceOf[MatchFieldType]
-    val ALL_QUERY_ARGS   = "ALL_QUERY_ARGS".asInstanceOf[MatchFieldType]
+    val ALL_QUERY_ARGS = "ALL_QUERY_ARGS".asInstanceOf[MatchFieldType]
 
     val values = js.Object.freeze(js.Array(URI, QUERY_STRING, HEADER, METHOD, BODY, SINGLE_QUERY_ARG, ALL_QUERY_ARGS))
   }
@@ -3873,16 +3960,18 @@ package wafregional {
   @js.native
   sealed trait PositionalConstraint extends js.Any
   object PositionalConstraint extends js.Object {
-    val EXACTLY       = "EXACTLY".asInstanceOf[PositionalConstraint]
-    val STARTS_WITH   = "STARTS_WITH".asInstanceOf[PositionalConstraint]
-    val ENDS_WITH     = "ENDS_WITH".asInstanceOf[PositionalConstraint]
-    val CONTAINS      = "CONTAINS".asInstanceOf[PositionalConstraint]
+    val EXACTLY = "EXACTLY".asInstanceOf[PositionalConstraint]
+    val STARTS_WITH = "STARTS_WITH".asInstanceOf[PositionalConstraint]
+    val ENDS_WITH = "ENDS_WITH".asInstanceOf[PositionalConstraint]
+    val CONTAINS = "CONTAINS".asInstanceOf[PositionalConstraint]
     val CONTAINS_WORD = "CONTAINS_WORD".asInstanceOf[PositionalConstraint]
 
     val values = js.Object.freeze(js.Array(EXACTLY, STARTS_WITH, ENDS_WITH, CONTAINS, CONTAINS_WORD))
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies the <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>, <a>XssMatchSet</a>, <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, and <a>SizeConstraintSet</a> objects that you want to add to a <code>Rule</code> and, for each object, indicates whether you want to negate the settings, for example, requests that do NOT originate from the IP address 192.0.2.44.
     */
   @js.native
@@ -3900,9 +3989,9 @@ package wafregional {
         Type: PredicateType
     ): Predicate = {
       val __obj = js.Dynamic.literal(
-        "DataId"  -> DataId.asInstanceOf[js.Any],
+        "DataId" -> DataId.asInstanceOf[js.Any],
         "Negated" -> Negated.asInstanceOf[js.Any],
-        "Type"    -> Type.asInstanceOf[js.Any]
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Predicate]
@@ -3912,13 +4001,13 @@ package wafregional {
   @js.native
   sealed trait PredicateType extends js.Any
   object PredicateType extends js.Object {
-    val IPMatch           = "IPMatch".asInstanceOf[PredicateType]
-    val ByteMatch         = "ByteMatch".asInstanceOf[PredicateType]
+    val IPMatch = "IPMatch".asInstanceOf[PredicateType]
+    val ByteMatch = "ByteMatch".asInstanceOf[PredicateType]
     val SqlInjectionMatch = "SqlInjectionMatch".asInstanceOf[PredicateType]
-    val GeoMatch          = "GeoMatch".asInstanceOf[PredicateType]
-    val SizeConstraint    = "SizeConstraint".asInstanceOf[PredicateType]
-    val XssMatch          = "XssMatch".asInstanceOf[PredicateType]
-    val RegexMatch        = "RegexMatch".asInstanceOf[PredicateType]
+    val GeoMatch = "GeoMatch".asInstanceOf[PredicateType]
+    val SizeConstraint = "SizeConstraint".asInstanceOf[PredicateType]
+    val XssMatch = "XssMatch".asInstanceOf[PredicateType]
+    val RegexMatch = "RegexMatch".asInstanceOf[PredicateType]
 
     val values =
       js.Object.freeze(js.Array(IPMatch, ByteMatch, SqlInjectionMatch, GeoMatch, SizeConstraint, XssMatch, RegexMatch))
@@ -3971,7 +4060,7 @@ package wafregional {
         ResourceArn: ResourceArn
     ): PutPermissionPolicyRequest = {
       val __obj = js.Dynamic.literal(
-        "Policy"      -> Policy.asInstanceOf[js.Any],
+        "Policy" -> Policy.asInstanceOf[js.Any],
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -3993,11 +4082,13 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * A <code>RateBasedRule</code> is identical to a regular <a>Rule</a>, with one addition: a <code>RateBasedRule</code> counts the number of requests that arrive from a specified IP address every five minutes. For example, based on recent requests that you've seen from an attacker, you might create a <code>RateBasedRule</code> that includes the following conditions:
     * * The requests come from 192.0.2.44.
     *  * They contain the value <code>BadBot</code> in the <code>User-Agent</code> header.
-    * In the rule, you also define the rate limit as 15,000.
-    *  Requests that meet both of these conditions and exceed 15,000 requests every five minutes trigger the rule's action (block or count), which is defined in the web ACL.
+    * In the rule, you also define the rate limit as 1,000.
+    *  Requests that meet both of these conditions and exceed 1,000 requests every five minutes trigger the rule's action (block or count), which is defined in the web ACL.
     */
   @js.native
   trait RateBasedRule extends js.Object {
@@ -4021,9 +4112,9 @@ package wafregional {
     ): RateBasedRule = {
       val __obj = js.Dynamic.literal(
         "MatchPredicates" -> MatchPredicates.asInstanceOf[js.Any],
-        "RateKey"         -> RateKey.asInstanceOf[js.Any],
-        "RateLimit"       -> RateLimit.asInstanceOf[js.Any],
-        "RuleId"          -> RuleId.asInstanceOf[js.Any]
+        "RateKey" -> RateKey.asInstanceOf[js.Any],
+        "RateLimit" -> RateLimit.asInstanceOf[js.Any],
+        "RuleId" -> RuleId.asInstanceOf[js.Any]
       )
 
       MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
@@ -4041,6 +4132,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * In a <a>GetRegexMatchSet</a> request, <code>RegexMatchSet</code> is a complex type that contains the <code>RegexMatchSetId</code> and <code>Name</code> of a <code>RegexMatchSet</code>, and the values that you specified when you updated the <code>RegexMatchSet</code>.
     *  The values are contained in a <code>RegexMatchTuple</code> object, which specify the parts of web requests that you want AWS WAF to inspect and the values that you want AWS WAF to search for. If a <code>RegexMatchSet</code> contains more than one <code>RegexMatchTuple</code> object, a request needs to match the settings in only one <code>ByteMatchTuple</code> to be considered a match.
     */
@@ -4067,6 +4160,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Returned by <a>ListRegexMatchSets</a>. Each <code>RegexMatchSetSummary</code> object includes the <code>Name</code> and <code>RegexMatchSetId</code> for one <a>RegexMatchSet</a>.
     */
   @js.native
@@ -4082,7 +4177,7 @@ package wafregional {
         RegexMatchSetId: ResourceId
     ): RegexMatchSetSummary = {
       val __obj = js.Dynamic.literal(
-        "Name"            -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "RegexMatchSetId" -> RegexMatchSetId.asInstanceOf[js.Any]
       )
 
@@ -4091,6 +4186,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * In an <a>UpdateRegexMatchSet</a> request, <code>RegexMatchSetUpdate</code> specifies whether to insert or delete a <a>RegexMatchTuple</a> and includes the settings for the <code>RegexMatchTuple</code>.
     */
   @js.native
@@ -4106,7 +4203,7 @@ package wafregional {
         RegexMatchTuple: RegexMatchTuple
     ): RegexMatchSetUpdate = {
       val __obj = js.Dynamic.literal(
-        "Action"          -> Action.asInstanceOf[js.Any],
+        "Action" -> Action.asInstanceOf[js.Any],
         "RegexMatchTuple" -> RegexMatchTuple.asInstanceOf[js.Any]
       )
 
@@ -4115,6 +4212,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The regular expression pattern that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings. Each <code>RegexMatchTuple</code> object contains:
     * * The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the <code>User-Agent</code> header.
     *  * The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <a>RegexPatternSet</a>.
@@ -4135,8 +4234,8 @@ package wafregional {
         TextTransformation: TextTransformation
     ): RegexMatchTuple = {
       val __obj = js.Dynamic.literal(
-        "FieldToMatch"       -> FieldToMatch.asInstanceOf[js.Any],
-        "RegexPatternSetId"  -> RegexPatternSetId.asInstanceOf[js.Any],
+        "FieldToMatch" -> FieldToMatch.asInstanceOf[js.Any],
+        "RegexPatternSetId" -> RegexPatternSetId.asInstanceOf[js.Any],
         "TextTransformation" -> TextTransformation.asInstanceOf[js.Any]
       )
 
@@ -4145,6 +4244,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The <code>RegexPatternSet</code> specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>. You can then configure AWS WAF to reject those requests.
     */
   @js.native
@@ -4162,7 +4263,7 @@ package wafregional {
         Name: js.UndefOr[ResourceName] = js.undefined
     ): RegexPatternSet = {
       val __obj = js.Dynamic.literal(
-        "RegexPatternSetId"   -> RegexPatternSetId.asInstanceOf[js.Any],
+        "RegexPatternSetId" -> RegexPatternSetId.asInstanceOf[js.Any],
         "RegexPatternStrings" -> RegexPatternStrings.asInstanceOf[js.Any]
       )
 
@@ -4172,6 +4273,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Returned by <a>ListRegexPatternSets</a>. Each <code>RegexPatternSetSummary</code> object includes the <code>Name</code> and <code>RegexPatternSetId</code> for one <a>RegexPatternSet</a>.
     */
   @js.native
@@ -4187,7 +4290,7 @@ package wafregional {
         RegexPatternSetId: ResourceId
     ): RegexPatternSetSummary = {
       val __obj = js.Dynamic.literal(
-        "Name"              -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "RegexPatternSetId" -> RegexPatternSetId.asInstanceOf[js.Any]
       )
 
@@ -4196,6 +4299,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * In an <a>UpdateRegexPatternSet</a> request, <code>RegexPatternSetUpdate</code> specifies whether to insert or delete a <code>RegexPatternString</code> and includes the settings for the <code>RegexPatternString</code>.
     */
   @js.native
@@ -4211,7 +4316,7 @@ package wafregional {
         RegexPatternString: RegexPatternString
     ): RegexPatternSetUpdate = {
       val __obj = js.Dynamic.literal(
-        "Action"             -> Action.asInstanceOf[js.Any],
+        "Action" -> Action.asInstanceOf[js.Any],
         "RegexPatternString" -> RegexPatternString.asInstanceOf[js.Any]
       )
 
@@ -4223,12 +4328,14 @@ package wafregional {
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {
     val APPLICATION_LOAD_BALANCER = "APPLICATION_LOAD_BALANCER".asInstanceOf[ResourceType]
-    val API_GATEWAY               = "API_GATEWAY".asInstanceOf[ResourceType]
+    val API_GATEWAY = "API_GATEWAY".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(js.Array(APPLICATION_LOAD_BALANCER, API_GATEWAY))
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * A combination of <a>ByteMatchSet</a>, <a>IPSet</a>, and/or <a>SqlInjectionMatchSet</a> objects that identify the web requests that you want to allow, block, or count. For example, you might create a <code>Rule</code> that includes the following predicates:
     * * An <code>IPSet</code> that causes AWS WAF to search for web requests that originate from the IP address <code>192.0.2.44</code>
     *  * A <code>ByteMatchSet</code> that causes AWS WAF to search for web requests for which the value of the <code>User-Agent</code> header is <code>BadBot</code>.
@@ -4252,7 +4359,7 @@ package wafregional {
     ): Rule = {
       val __obj = js.Dynamic.literal(
         "Predicates" -> Predicates.asInstanceOf[js.Any],
-        "RuleId"     -> RuleId.asInstanceOf[js.Any]
+        "RuleId" -> RuleId.asInstanceOf[js.Any]
       )
 
       MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
@@ -4262,6 +4369,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * A collection of predefined rules that you can add to a web ACL.
     *  Rule groups are subject to the following limits:
     * * Three rule groups per account. You can request an increase to this limit by contacting customer support.
@@ -4293,6 +4402,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Contains the identifier and the friendly name or description of the <code>RuleGroup</code>.
     */
   @js.native
@@ -4308,7 +4419,7 @@ package wafregional {
         RuleGroupId: ResourceId
     ): RuleGroupSummary = {
       val __obj = js.Dynamic.literal(
-        "Name"        -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any]
       )
 
@@ -4317,6 +4428,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies an <code>ActivatedRule</code> and indicates whether you want to add it to a <code>RuleGroup</code> or delete it from a <code>RuleGroup</code>.
     */
   @js.native
@@ -4332,7 +4445,7 @@ package wafregional {
         ActivatedRule: ActivatedRule
     ): RuleGroupUpdate = {
       val __obj = js.Dynamic.literal(
-        "Action"        -> Action.asInstanceOf[js.Any],
+        "Action" -> Action.asInstanceOf[js.Any],
         "ActivatedRule" -> ActivatedRule.asInstanceOf[js.Any]
       )
 
@@ -4341,6 +4454,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Contains the identifier and the friendly name or description of the <code>Rule</code>.
     */
   @js.native
@@ -4356,7 +4471,7 @@ package wafregional {
         RuleId: ResourceId
     ): RuleSummary = {
       val __obj = js.Dynamic.literal(
-        "Name"   -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "RuleId" -> RuleId.asInstanceOf[js.Any]
       )
 
@@ -4365,6 +4480,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies a <code>Predicate</code> (such as an <code>IPSet</code>) and indicates whether you want to add it to a <code>Rule</code> or delete it from a <code>Rule</code>.
     */
   @js.native
@@ -4380,7 +4497,7 @@ package wafregional {
         Predicate: Predicate
     ): RuleUpdate = {
       val __obj = js.Dynamic.literal(
-        "Action"    -> Action.asInstanceOf[js.Any],
+        "Action" -> Action.asInstanceOf[js.Any],
         "Predicate" -> Predicate.asInstanceOf[js.Any]
       )
 
@@ -4389,6 +4506,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The response from a <a>GetSampledRequests</a> request includes a <code>SampledHTTPRequests</code> complex type that appears as <code>SampledRequests</code> in the response syntax. <code>SampledHTTPRequests</code> contains one <code>SampledHTTPRequest</code> object for each web request that is returned by <code>GetSampledRequests</code>.
     */
   @js.native
@@ -4411,7 +4530,7 @@ package wafregional {
     ): SampledHTTPRequest = {
       val __obj = js.Dynamic.literal(
         "Request" -> Request.asInstanceOf[js.Any],
-        "Weight"  -> Weight.asInstanceOf[js.Any]
+        "Weight" -> Weight.asInstanceOf[js.Any]
       )
 
       Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
@@ -4422,6 +4541,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies a constraint on the size of a part of the web request. AWS WAF uses the <code>Size</code>, <code>ComparisonOperator</code>, and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.
     */
   @js.native
@@ -4442,8 +4563,8 @@ package wafregional {
     ): SizeConstraint = {
       val __obj = js.Dynamic.literal(
         "ComparisonOperator" -> ComparisonOperator.asInstanceOf[js.Any],
-        "FieldToMatch"       -> FieldToMatch.asInstanceOf[js.Any],
-        "Size"               -> Size.asInstanceOf[js.Any],
+        "FieldToMatch" -> FieldToMatch.asInstanceOf[js.Any],
+        "Size" -> Size.asInstanceOf[js.Any],
         "TextTransformation" -> TextTransformation.asInstanceOf[js.Any]
       )
 
@@ -4452,6 +4573,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * A complex type that contains <code>SizeConstraint</code> objects, which specify the parts of web requests that you want AWS WAF to inspect the size of. If a <code>SizeConstraintSet</code> contains more than one <code>SizeConstraint</code> object, a request only needs to match one constraint to be considered a match.
     */
   @js.native
@@ -4470,7 +4593,7 @@ package wafregional {
     ): SizeConstraintSet = {
       val __obj = js.Dynamic.literal(
         "SizeConstraintSetId" -> SizeConstraintSetId.asInstanceOf[js.Any],
-        "SizeConstraints"     -> SizeConstraints.asInstanceOf[js.Any]
+        "SizeConstraints" -> SizeConstraints.asInstanceOf[js.Any]
       )
 
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -4479,6 +4602,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The <code>Id</code> and <code>Name</code> of a <code>SizeConstraintSet</code>.
     */
   @js.native
@@ -4494,7 +4619,7 @@ package wafregional {
         SizeConstraintSetId: ResourceId
     ): SizeConstraintSetSummary = {
       val __obj = js.Dynamic.literal(
-        "Name"                -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "SizeConstraintSetId" -> SizeConstraintSetId.asInstanceOf[js.Any]
       )
 
@@ -4503,6 +4628,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies the part of a web request that you want to inspect the size of and indicates whether you want to add the specification to a <a>SizeConstraintSet</a> or delete it from a <code>SizeConstraintSet</code>.
     */
   @js.native
@@ -4518,7 +4645,7 @@ package wafregional {
         SizeConstraint: SizeConstraint
     ): SizeConstraintSetUpdate = {
       val __obj = js.Dynamic.literal(
-        "Action"         -> Action.asInstanceOf[js.Any],
+        "Action" -> Action.asInstanceOf[js.Any],
         "SizeConstraint" -> SizeConstraint.asInstanceOf[js.Any]
       )
 
@@ -4527,6 +4654,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * A complex type that contains <code>SqlInjectionMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header. If a <code>SqlInjectionMatchSet</code> contains more than one <code>SqlInjectionMatchTuple</code> object, a request needs to include snippets of SQL code in only one of the specified parts of the request to be considered a match.
     */
   @js.native
@@ -4544,7 +4673,7 @@ package wafregional {
         Name: js.UndefOr[ResourceName] = js.undefined
     ): SqlInjectionMatchSet = {
       val __obj = js.Dynamic.literal(
-        "SqlInjectionMatchSetId"  -> SqlInjectionMatchSetId.asInstanceOf[js.Any],
+        "SqlInjectionMatchSetId" -> SqlInjectionMatchSetId.asInstanceOf[js.Any],
         "SqlInjectionMatchTuples" -> SqlInjectionMatchTuples.asInstanceOf[js.Any]
       )
 
@@ -4554,6 +4683,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The <code>Id</code> and <code>Name</code> of a <code>SqlInjectionMatchSet</code>.
     */
   @js.native
@@ -4569,7 +4700,7 @@ package wafregional {
         SqlInjectionMatchSetId: ResourceId
     ): SqlInjectionMatchSetSummary = {
       val __obj = js.Dynamic.literal(
-        "Name"                   -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "SqlInjectionMatchSetId" -> SqlInjectionMatchSetId.asInstanceOf[js.Any]
       )
 
@@ -4578,6 +4709,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies the part of a web request that you want to inspect for snippets of malicious SQL code and indicates whether you want to add the specification to a <a>SqlInjectionMatchSet</a> or delete it from a <code>SqlInjectionMatchSet</code>.
     */
   @js.native
@@ -4593,7 +4726,7 @@ package wafregional {
         SqlInjectionMatchTuple: SqlInjectionMatchTuple
     ): SqlInjectionMatchSetUpdate = {
       val __obj = js.Dynamic.literal(
-        "Action"                 -> Action.asInstanceOf[js.Any],
+        "Action" -> Action.asInstanceOf[js.Any],
         "SqlInjectionMatchTuple" -> SqlInjectionMatchTuple.asInstanceOf[js.Any]
       )
 
@@ -4602,6 +4735,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies the part of a web request that you want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header.
     */
   @js.native
@@ -4617,7 +4752,7 @@ package wafregional {
         TextTransformation: TextTransformation
     ): SqlInjectionMatchTuple = {
       val __obj = js.Dynamic.literal(
-        "FieldToMatch"       -> FieldToMatch.asInstanceOf[js.Any],
+        "FieldToMatch" -> FieldToMatch.asInstanceOf[js.Any],
         "TextTransformation" -> TextTransformation.asInstanceOf[js.Any]
       )
 
@@ -4626,6 +4761,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * A summary of the rule groups you are subscribed to.
     */
   @js.native
@@ -4643,8 +4780,8 @@ package wafregional {
         RuleGroupId: ResourceId
     ): SubscribedRuleGroupSummary = {
       val __obj = js.Dynamic.literal(
-        "MetricName"  -> MetricName.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any],
+        "MetricName" -> MetricName.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any]
       )
 
@@ -4652,25 +4789,39 @@ package wafregional {
     }
   }
 
+  /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * A tag associated with an AWS resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource.
+    *  Tagging is only available through the API, SDKs, and CLI. You can't manage or view tags through the AWS WAF Classic console. You can tag the AWS resources that you manage through AWS WAF Classic: web ACLs, rule groups, and rules.
+    */
   @js.native
   trait Tag extends js.Object {
-    var Key: js.UndefOr[TagKey]
-    var Value: js.UndefOr[TagValue]
+    var Key: TagKey
+    var Value: TagValue
   }
 
   object Tag {
     @inline
     def apply(
-        Key: js.UndefOr[TagKey] = js.undefined,
-        Value: js.UndefOr[TagValue] = js.undefined
+        Key: TagKey,
+        Value: TagValue
     ): Tag = {
-      val __obj = js.Dynamic.literal()
-      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal(
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[Tag]
     }
   }
 
+  /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+    * Information for a tag associated with an AWS resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource.
+    *  Tagging is only available through the API, SDKs, and CLI. You can't manage or view tags through the AWS WAF Classic console. You can tag the AWS resources that you manage through AWS WAF Classic: web ACLs, rule groups, and rules.
+    */
   @js.native
   trait TagInfoForResource extends js.Object {
     var ResourceARN: js.UndefOr[ResourceArn]
@@ -4704,7 +4855,7 @@ package wafregional {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -4727,19 +4878,22 @@ package wafregional {
   @js.native
   sealed trait TextTransformation extends js.Any
   object TextTransformation extends js.Object {
-    val NONE                 = "NONE".asInstanceOf[TextTransformation]
+    val NONE = "NONE".asInstanceOf[TextTransformation]
     val COMPRESS_WHITE_SPACE = "COMPRESS_WHITE_SPACE".asInstanceOf[TextTransformation]
-    val HTML_ENTITY_DECODE   = "HTML_ENTITY_DECODE".asInstanceOf[TextTransformation]
-    val LOWERCASE            = "LOWERCASE".asInstanceOf[TextTransformation]
-    val CMD_LINE             = "CMD_LINE".asInstanceOf[TextTransformation]
-    val URL_DECODE           = "URL_DECODE".asInstanceOf[TextTransformation]
+    val HTML_ENTITY_DECODE = "HTML_ENTITY_DECODE".asInstanceOf[TextTransformation]
+    val LOWERCASE = "LOWERCASE".asInstanceOf[TextTransformation]
+    val CMD_LINE = "CMD_LINE".asInstanceOf[TextTransformation]
+    val URL_DECODE = "URL_DECODE".asInstanceOf[TextTransformation]
 
     val values =
       js.Object.freeze(js.Array(NONE, COMPRESS_WHITE_SPACE, HTML_ENTITY_DECODE, LOWERCASE, CMD_LINE, URL_DECODE))
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * In a <a>GetSampledRequests</a> request, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which you want AWS WAF to return a sample of web requests.
+    *  You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>.
     *  In a <a>GetSampledRequests</a> response, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which AWS WAF actually returned a sample of web requests. AWS WAF gets the specified number of requests from among the first 5,000 requests that your AWS resource receives during the specified time period. If your resource receives more than 5,000 requests during that period, AWS WAF stops sampling after the 5,000th request. In that case, <code>EndTime</code> is the time that AWS WAF received the 5,000th request.
     */
   @js.native
@@ -4755,7 +4909,7 @@ package wafregional {
         StartTime: Timestamp
     ): TimeWindow = {
       val __obj = js.Dynamic.literal(
-        "EndTime"   -> EndTime.asInstanceOf[js.Any],
+        "EndTime" -> EndTime.asInstanceOf[js.Any],
         "StartTime" -> StartTime.asInstanceOf[js.Any]
       )
 
@@ -4777,7 +4931,7 @@ package wafregional {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -4813,8 +4967,8 @@ package wafregional {
     ): UpdateByteMatchSetRequest = {
       val __obj = js.Dynamic.literal(
         "ByteMatchSetId" -> ByteMatchSetId.asInstanceOf[js.Any],
-        "ChangeToken"    -> ChangeToken.asInstanceOf[js.Any],
-        "Updates"        -> Updates.asInstanceOf[js.Any]
+        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
+        "Updates" -> Updates.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateByteMatchSetRequest]
@@ -4852,9 +5006,9 @@ package wafregional {
         Updates: GeoMatchSetUpdates
     ): UpdateGeoMatchSetRequest = {
       val __obj = js.Dynamic.literal(
-        "ChangeToken"   -> ChangeToken.asInstanceOf[js.Any],
+        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "GeoMatchSetId" -> GeoMatchSetId.asInstanceOf[js.Any],
-        "Updates"       -> Updates.asInstanceOf[js.Any]
+        "Updates" -> Updates.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateGeoMatchSetRequest]
@@ -4893,8 +5047,8 @@ package wafregional {
     ): UpdateIPSetRequest = {
       val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "IPSetId"     -> IPSetId.asInstanceOf[js.Any],
-        "Updates"     -> Updates.asInstanceOf[js.Any]
+        "IPSetId" -> IPSetId.asInstanceOf[js.Any],
+        "Updates" -> Updates.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateIPSetRequest]
@@ -4935,9 +5089,9 @@ package wafregional {
     ): UpdateRateBasedRuleRequest = {
       val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "RateLimit"   -> RateLimit.asInstanceOf[js.Any],
-        "RuleId"      -> RuleId.asInstanceOf[js.Any],
-        "Updates"     -> Updates.asInstanceOf[js.Any]
+        "RateLimit" -> RateLimit.asInstanceOf[js.Any],
+        "RuleId" -> RuleId.asInstanceOf[js.Any],
+        "Updates" -> Updates.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateRateBasedRuleRequest]
@@ -4975,9 +5129,9 @@ package wafregional {
         Updates: RegexMatchSetUpdates
     ): UpdateRegexMatchSetRequest = {
       val __obj = js.Dynamic.literal(
-        "ChangeToken"     -> ChangeToken.asInstanceOf[js.Any],
+        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "RegexMatchSetId" -> RegexMatchSetId.asInstanceOf[js.Any],
-        "Updates"         -> Updates.asInstanceOf[js.Any]
+        "Updates" -> Updates.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateRegexMatchSetRequest]
@@ -5015,9 +5169,9 @@ package wafregional {
         Updates: RegexPatternSetUpdates
     ): UpdateRegexPatternSetRequest = {
       val __obj = js.Dynamic.literal(
-        "ChangeToken"       -> ChangeToken.asInstanceOf[js.Any],
+        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "RegexPatternSetId" -> RegexPatternSetId.asInstanceOf[js.Any],
-        "Updates"           -> Updates.asInstanceOf[js.Any]
+        "Updates" -> Updates.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateRegexPatternSetRequest]
@@ -5057,7 +5211,7 @@ package wafregional {
       val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any],
-        "Updates"     -> Updates.asInstanceOf[js.Any]
+        "Updates" -> Updates.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateRuleGroupRequest]
@@ -5096,8 +5250,8 @@ package wafregional {
     ): UpdateRuleRequest = {
       val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "RuleId"      -> RuleId.asInstanceOf[js.Any],
-        "Updates"     -> Updates.asInstanceOf[js.Any]
+        "RuleId" -> RuleId.asInstanceOf[js.Any],
+        "Updates" -> Updates.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateRuleRequest]
@@ -5135,9 +5289,9 @@ package wafregional {
         Updates: SizeConstraintSetUpdates
     ): UpdateSizeConstraintSetRequest = {
       val __obj = js.Dynamic.literal(
-        "ChangeToken"         -> ChangeToken.asInstanceOf[js.Any],
+        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "SizeConstraintSetId" -> SizeConstraintSetId.asInstanceOf[js.Any],
-        "Updates"             -> Updates.asInstanceOf[js.Any]
+        "Updates" -> Updates.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateSizeConstraintSetRequest]
@@ -5178,9 +5332,9 @@ package wafregional {
         Updates: SqlInjectionMatchSetUpdates
     ): UpdateSqlInjectionMatchSetRequest = {
       val __obj = js.Dynamic.literal(
-        "ChangeToken"            -> ChangeToken.asInstanceOf[js.Any],
+        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "SqlInjectionMatchSetId" -> SqlInjectionMatchSetId.asInstanceOf[js.Any],
-        "Updates"                -> Updates.asInstanceOf[js.Any]
+        "Updates" -> Updates.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateSqlInjectionMatchSetRequest]
@@ -5224,7 +5378,7 @@ package wafregional {
     ): UpdateWebACLRequest = {
       val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "WebACLId"    -> WebACLId.asInstanceOf[js.Any]
+        "WebACLId" -> WebACLId.asInstanceOf[js.Any]
       )
 
       DefaultAction.foreach(__v => __obj.updateDynamic("DefaultAction")(__v.asInstanceOf[js.Any]))
@@ -5267,8 +5421,8 @@ package wafregional {
         XssMatchSetId: ResourceId
     ): UpdateXssMatchSetRequest = {
       val __obj = js.Dynamic.literal(
-        "ChangeToken"   -> ChangeToken.asInstanceOf[js.Any],
-        "Updates"       -> Updates.asInstanceOf[js.Any],
+        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
+        "Updates" -> Updates.asInstanceOf[js.Any],
         "XssMatchSetId" -> XssMatchSetId.asInstanceOf[js.Any]
       )
 
@@ -5296,6 +5450,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * For the action that is associated with a rule in a <code>WebACL</code>, specifies the action that you want AWS WAF to perform when a web request matches all of the conditions in a rule. For the default action in a <code>WebACL</code>, specifies the action that you want AWS WAF to take when a web request doesn't match all of the conditions in any of the rules in a <code>WebACL</code>.
     */
   @js.native
@@ -5327,6 +5483,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The action to take if any rule within the <code>RuleGroup</code> matches a request.
     */
   @js.native
@@ -5350,7 +5508,7 @@ package wafregional {
   @js.native
   sealed trait WafOverrideActionType extends js.Any
   object WafOverrideActionType extends js.Object {
-    val NONE  = "NONE".asInstanceOf[WafOverrideActionType]
+    val NONE = "NONE".asInstanceOf[WafOverrideActionType]
     val COUNT = "COUNT".asInstanceOf[WafOverrideActionType]
 
     val values = js.Object.freeze(js.Array(NONE, COUNT))
@@ -5359,14 +5517,16 @@ package wafregional {
   @js.native
   sealed trait WafRuleType extends js.Any
   object WafRuleType extends js.Object {
-    val REGULAR    = "REGULAR".asInstanceOf[WafRuleType]
+    val REGULAR = "REGULAR".asInstanceOf[WafRuleType]
     val RATE_BASED = "RATE_BASED".asInstanceOf[WafRuleType]
-    val GROUP      = "GROUP".asInstanceOf[WafRuleType]
+    val GROUP = "GROUP".asInstanceOf[WafRuleType]
 
     val values = js.Object.freeze(js.Array(REGULAR, RATE_BASED, GROUP))
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Contains the <code>Rules</code> that identify the requests that you want to allow, block, or count. In a <code>WebACL</code>, you also specify a default action (<code>ALLOW</code> or <code>BLOCK</code>), and the action for each <code>Rule</code> that you add to a <code>WebACL</code>, for example, block requests from specified IP addresses or block requests from specified referrers. You also associate the <code>WebACL</code> with a CloudFront distribution to identify the requests that you want AWS WAF to filter. If you add more than one <code>Rule</code> to a <code>WebACL</code>, a request needs to match only one of the specifications to be allowed, blocked, or counted. For more information, see <a>UpdateWebACL</a>.
     */
   @js.native
@@ -5391,8 +5551,8 @@ package wafregional {
     ): WebACL = {
       val __obj = js.Dynamic.literal(
         "DefaultAction" -> DefaultAction.asInstanceOf[js.Any],
-        "Rules"         -> Rules.asInstanceOf[js.Any],
-        "WebACLId"      -> WebACLId.asInstanceOf[js.Any]
+        "Rules" -> Rules.asInstanceOf[js.Any],
+        "WebACLId" -> WebACLId.asInstanceOf[js.Any]
       )
 
       MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
@@ -5403,6 +5563,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Contains the identifier and the name or description of the <a>WebACL</a>.
     */
   @js.native
@@ -5418,7 +5580,7 @@ package wafregional {
         WebACLId: ResourceId
     ): WebACLSummary = {
       val __obj = js.Dynamic.literal(
-        "Name"     -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "WebACLId" -> WebACLId.asInstanceOf[js.Any]
       )
 
@@ -5427,6 +5589,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies whether to insert a <code>Rule</code> into or delete a <code>Rule</code> from a <code>WebACL</code>.
     */
   @js.native
@@ -5442,7 +5606,7 @@ package wafregional {
         ActivatedRule: ActivatedRule
     ): WebACLUpdate = {
       val __obj = js.Dynamic.literal(
-        "Action"        -> Action.asInstanceOf[js.Any],
+        "Action" -> Action.asInstanceOf[js.Any],
         "ActivatedRule" -> ActivatedRule.asInstanceOf[js.Any]
       )
 
@@ -5451,6 +5615,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * A complex type that contains <code>XssMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header. If a <code>XssMatchSet</code> contains more than one <code>XssMatchTuple</code> object, a request needs to include cross-site scripting attacks in only one of the specified parts of the request to be considered a match.
     */
   @js.native
@@ -5468,7 +5634,7 @@ package wafregional {
         Name: js.UndefOr[ResourceName] = js.undefined
     ): XssMatchSet = {
       val __obj = js.Dynamic.literal(
-        "XssMatchSetId"  -> XssMatchSetId.asInstanceOf[js.Any],
+        "XssMatchSetId" -> XssMatchSetId.asInstanceOf[js.Any],
         "XssMatchTuples" -> XssMatchTuples.asInstanceOf[js.Any]
       )
 
@@ -5478,6 +5644,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * The <code>Id</code> and <code>Name</code> of an <code>XssMatchSet</code>.
     */
   @js.native
@@ -5493,7 +5661,7 @@ package wafregional {
         XssMatchSetId: ResourceId
     ): XssMatchSetSummary = {
       val __obj = js.Dynamic.literal(
-        "Name"          -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "XssMatchSetId" -> XssMatchSetId.asInstanceOf[js.Any]
       )
 
@@ -5502,6 +5670,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies the part of a web request that you want to inspect for cross-site scripting attacks and indicates whether you want to add the specification to an <a>XssMatchSet</a> or delete it from an <code>XssMatchSet</code>.
     */
   @js.native
@@ -5517,7 +5687,7 @@ package wafregional {
         XssMatchTuple: XssMatchTuple
     ): XssMatchSetUpdate = {
       val __obj = js.Dynamic.literal(
-        "Action"        -> Action.asInstanceOf[js.Any],
+        "Action" -> Action.asInstanceOf[js.Any],
         "XssMatchTuple" -> XssMatchTuple.asInstanceOf[js.Any]
       )
 
@@ -5526,6 +5696,8 @@ package wafregional {
   }
 
   /**
+    * '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.
+    *  ```For the latest version of AWS WAF```, use the AWS WAFV2 API and see the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]]. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
     * Specifies the part of a web request that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header.
     */
   @js.native
@@ -5541,7 +5713,7 @@ package wafregional {
         TextTransformation: TextTransformation
     ): XssMatchTuple = {
       val __obj = js.Dynamic.literal(
-        "FieldToMatch"       -> FieldToMatch.asInstanceOf[js.Any],
+        "FieldToMatch" -> FieldToMatch.asInstanceOf[js.Any],
         "TextTransformation" -> TextTransformation.asInstanceOf[js.Any]
       )
 

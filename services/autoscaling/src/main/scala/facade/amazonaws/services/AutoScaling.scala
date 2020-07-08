@@ -7,120 +7,125 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object autoscaling {
-  type Activities                               = js.Array[Activity]
-  type ActivityIds                              = js.Array[XmlString]
-  type AdjustmentTypes                          = js.Array[AdjustmentType]
-  type Alarms                                   = js.Array[Alarm]
-  type AsciiStringMaxLen255                     = String
-  type AssociatePublicIpAddress                 = Boolean
-  type AutoScalingGroupDesiredCapacity          = Int
-  type AutoScalingGroupMaxSize                  = Int
-  type AutoScalingGroupMinSize                  = Int
-  type AutoScalingGroupNames                    = js.Array[ResourceName]
-  type AutoScalingGroups                        = js.Array[AutoScalingGroup]
-  type AutoScalingInstances                     = js.Array[AutoScalingInstanceDetails]
-  type AutoScalingNotificationTypes             = js.Array[XmlStringMaxLen255]
-  type AvailabilityZones                        = js.Array[XmlStringMaxLen255]
-  type BlockDeviceEbsDeleteOnTermination        = Boolean
-  type BlockDeviceEbsEncrypted                  = Boolean
-  type BlockDeviceEbsIops                       = Int
-  type BlockDeviceEbsVolumeSize                 = Int
-  type BlockDeviceEbsVolumeType                 = String
-  type BlockDeviceMappings                      = js.Array[BlockDeviceMapping]
-  type ClassicLinkVPCSecurityGroups             = js.Array[XmlStringMaxLen255]
-  type Cooldown                                 = Int
-  type DisableScaleIn                           = Boolean
-  type EbsOptimized                             = Boolean
-  type EnabledMetrics                           = js.Array[EnabledMetric]
-  type EstimatedInstanceWarmup                  = Int
+  type Activities = js.Array[Activity]
+  type ActivityIds = js.Array[XmlString]
+  type AdjustmentTypes = js.Array[AdjustmentType]
+  type Alarms = js.Array[Alarm]
+  type AsciiStringMaxLen255 = String
+  type AssociatePublicIpAddress = Boolean
+  type AutoScalingGroupDesiredCapacity = Int
+  type AutoScalingGroupMaxSize = Int
+  type AutoScalingGroupMinSize = Int
+  type AutoScalingGroupNames = js.Array[ResourceName]
+  type AutoScalingGroups = js.Array[AutoScalingGroup]
+  type AutoScalingInstances = js.Array[AutoScalingInstanceDetails]
+  type AutoScalingNotificationTypes = js.Array[XmlStringMaxLen255]
+  type AvailabilityZones = js.Array[XmlStringMaxLen255]
+  type BlockDeviceEbsDeleteOnTermination = Boolean
+  type BlockDeviceEbsEncrypted = Boolean
+  type BlockDeviceEbsIops = Int
+  type BlockDeviceEbsVolumeSize = Int
+  type BlockDeviceEbsVolumeType = String
+  type BlockDeviceMappings = js.Array[BlockDeviceMapping]
+  type ClassicLinkVPCSecurityGroups = js.Array[XmlStringMaxLen255]
+  type Cooldown = Int
+  type DisableScaleIn = Boolean
+  type EbsOptimized = Boolean
+  type EnabledMetrics = js.Array[EnabledMetric]
+  type EstimatedInstanceWarmup = Int
   type FailedScheduledUpdateGroupActionRequests = js.Array[FailedScheduledUpdateGroupActionRequest]
-  type Filters                                  = js.Array[Filter]
-  type ForceDelete                              = Boolean
-  type GlobalTimeout                            = Int
-  type HealthCheckGracePeriod                   = Int
-  type HeartbeatTimeout                         = Int
-  type HonorCooldown                            = Boolean
-  type InstanceIds                              = js.Array[XmlStringMaxLen19]
-  type InstanceProtected                        = Boolean
-  type Instances                                = js.Array[Instance]
-  type LaunchConfigurationNames                 = js.Array[ResourceName]
-  type LaunchConfigurations                     = js.Array[LaunchConfiguration]
-  type LaunchTemplateName                       = String
-  type LifecycleActionResult                    = String
-  type LifecycleActionToken                     = String
-  type LifecycleHookNames                       = js.Array[AsciiStringMaxLen255]
-  type LifecycleHookSpecifications              = js.Array[LifecycleHookSpecification]
-  type LifecycleHooks                           = js.Array[LifecycleHook]
-  type LifecycleTransition                      = String
-  type LoadBalancerNames                        = js.Array[XmlStringMaxLen255]
-  type LoadBalancerStates                       = js.Array[LoadBalancerState]
-  type LoadBalancerTargetGroupStates            = js.Array[LoadBalancerTargetGroupState]
-  type MaxInstanceLifetime                      = Int
-  type MaxNumberOfAutoScalingGroups             = Int
-  type MaxNumberOfLaunchConfigurations          = Int
-  type MaxRecords                               = Int
-  type MetricCollectionTypes                    = js.Array[MetricCollectionType]
-  type MetricDimensionName                      = String
-  type MetricDimensionValue                     = String
-  type MetricDimensions                         = js.Array[MetricDimension]
-  type MetricGranularityTypes                   = js.Array[MetricGranularityType]
-  type MetricName                               = String
-  type MetricNamespace                          = String
-  type MetricScale                              = Double
-  type MetricUnit                               = String
-  type Metrics                                  = js.Array[XmlStringMaxLen255]
-  type MinAdjustmentMagnitude                   = Int
+  type Filters = js.Array[Filter]
+  type ForceDelete = Boolean
+  type GlobalTimeout = Int
+  type HealthCheckGracePeriod = Int
+  type HeartbeatTimeout = Int
+  type HonorCooldown = Boolean
+  type InstanceIds = js.Array[XmlStringMaxLen19]
+  type InstanceProtected = Boolean
+  type InstanceRefreshIds = js.Array[XmlStringMaxLen255]
+  type InstanceRefreshes = js.Array[InstanceRefresh]
+  type Instances = js.Array[Instance]
+  type InstancesToUpdate = Int
+  type IntPercent = Int
+  type LaunchConfigurationNames = js.Array[ResourceName]
+  type LaunchConfigurations = js.Array[LaunchConfiguration]
+  type LaunchTemplateName = String
+  type LifecycleActionResult = String
+  type LifecycleActionToken = String
+  type LifecycleHookNames = js.Array[AsciiStringMaxLen255]
+  type LifecycleHookSpecifications = js.Array[LifecycleHookSpecification]
+  type LifecycleHooks = js.Array[LifecycleHook]
+  type LifecycleTransition = String
+  type LoadBalancerNames = js.Array[XmlStringMaxLen255]
+  type LoadBalancerStates = js.Array[LoadBalancerState]
+  type LoadBalancerTargetGroupStates = js.Array[LoadBalancerTargetGroupState]
+  type MaxInstanceLifetime = Int
+  type MaxNumberOfAutoScalingGroups = Int
+  type MaxNumberOfLaunchConfigurations = Int
+  type MaxRecords = Int
+  type MetricCollectionTypes = js.Array[MetricCollectionType]
+  type MetricDimensionName = String
+  type MetricDimensionValue = String
+  type MetricDimensions = js.Array[MetricDimension]
+  type MetricGranularityTypes = js.Array[MetricGranularityType]
+  type MetricName = String
+  type MetricNamespace = String
+  type MetricScale = Double
+  type MetricUnit = String
+  type Metrics = js.Array[XmlStringMaxLen255]
+  type MinAdjustmentMagnitude = Int
   @deprecated("Deprecated in AWS SDK", "forever")
-  type MinAdjustmentStep                   = Int
-  type MixedInstanceSpotPrice              = String
-  type MonitoringEnabled                   = Boolean
-  type NoDevice                            = Boolean
-  type NotificationConfigurations          = js.Array[NotificationConfiguration]
-  type NotificationTargetResourceName      = String
-  type NumberOfAutoScalingGroups           = Int
-  type NumberOfLaunchConfigurations        = Int
-  type OnDemandBaseCapacity                = Int
+  type MinAdjustmentStep = Int
+  type MixedInstanceSpotPrice = String
+  type MonitoringEnabled = Boolean
+  type NoDevice = Boolean
+  type NotificationConfigurations = js.Array[NotificationConfiguration]
+  type NotificationTargetResourceName = String
+  type NumberOfAutoScalingGroups = Int
+  type NumberOfLaunchConfigurations = Int
+  type OnDemandBaseCapacity = Int
   type OnDemandPercentageAboveBaseCapacity = Int
-  type Overrides                           = js.Array[LaunchTemplateOverrides]
-  type PolicyIncrement                     = Int
-  type PolicyNames                         = js.Array[ResourceName]
-  type PolicyTypes                         = js.Array[XmlStringMaxLen64]
-  type ProcessNames                        = js.Array[XmlStringMaxLen255]
-  type Processes                           = js.Array[ProcessType]
-  type Progress                            = Int
-  type PropagateAtLaunch                   = Boolean
-  type ProtectedFromScaleIn                = Boolean
-  type ResourceName                        = String
-  type ScalingPolicies                     = js.Array[ScalingPolicy]
-  type ScalingPolicyEnabled                = Boolean
-  type ScheduledActionNames                = js.Array[ResourceName]
-  type ScheduledUpdateGroupActionRequests  = js.Array[ScheduledUpdateGroupActionRequest]
-  type ScheduledUpdateGroupActions         = js.Array[ScheduledUpdateGroupAction]
-  type SecurityGroups                      = js.Array[XmlString]
-  type ShouldDecrementDesiredCapacity      = Boolean
-  type ShouldRespectGracePeriod            = Boolean
-  type SpotInstancePools                   = Int
-  type SpotPrice                           = String
-  type StepAdjustments                     = js.Array[StepAdjustment]
-  type SuspendedProcesses                  = js.Array[SuspendedProcess]
-  type TagDescriptionList                  = js.Array[TagDescription]
-  type TagKey                              = String
-  type TagValue                            = String
-  type Tags                                = js.Array[Tag]
-  type TargetGroupARNs                     = js.Array[XmlStringMaxLen511]
-  type TerminationPolicies                 = js.Array[XmlStringMaxLen1600]
-  type TimestampType                       = js.Date
-  type Values                              = js.Array[XmlString]
-  type XmlString                           = String
-  type XmlStringMaxLen1023                 = String
-  type XmlStringMaxLen1600                 = String
-  type XmlStringMaxLen19                   = String
-  type XmlStringMaxLen2047                 = String
-  type XmlStringMaxLen255                  = String
-  type XmlStringMaxLen32                   = String
-  type XmlStringMaxLen511                  = String
-  type XmlStringMaxLen64                   = String
-  type XmlStringUserData                   = String
+  type Overrides = js.Array[LaunchTemplateOverrides]
+  type PolicyIncrement = Int
+  type PolicyNames = js.Array[ResourceName]
+  type PolicyTypes = js.Array[XmlStringMaxLen64]
+  type ProcessNames = js.Array[XmlStringMaxLen255]
+  type Processes = js.Array[ProcessType]
+  type Progress = Int
+  type PropagateAtLaunch = Boolean
+  type ProtectedFromScaleIn = Boolean
+  type RefreshInstanceWarmup = Int
+  type ResourceName = String
+  type ScalingPolicies = js.Array[ScalingPolicy]
+  type ScalingPolicyEnabled = Boolean
+  type ScheduledActionNames = js.Array[ResourceName]
+  type ScheduledUpdateGroupActionRequests = js.Array[ScheduledUpdateGroupActionRequest]
+  type ScheduledUpdateGroupActions = js.Array[ScheduledUpdateGroupAction]
+  type SecurityGroups = js.Array[XmlString]
+  type ShouldDecrementDesiredCapacity = Boolean
+  type ShouldRespectGracePeriod = Boolean
+  type SpotInstancePools = Int
+  type SpotPrice = String
+  type StepAdjustments = js.Array[StepAdjustment]
+  type SuspendedProcesses = js.Array[SuspendedProcess]
+  type TagDescriptionList = js.Array[TagDescription]
+  type TagKey = String
+  type TagValue = String
+  type Tags = js.Array[Tag]
+  type TargetGroupARNs = js.Array[XmlStringMaxLen511]
+  type TerminationPolicies = js.Array[XmlStringMaxLen1600]
+  type TimestampType = js.Date
+  type Values = js.Array[XmlString]
+  type XmlString = String
+  type XmlStringMaxLen1023 = String
+  type XmlStringMaxLen1600 = String
+  type XmlStringMaxLen19 = String
+  type XmlStringMaxLen2047 = String
+  type XmlStringMaxLen255 = String
+  type XmlStringMaxLen32 = String
+  type XmlStringMaxLen511 = String
+  type XmlStringMaxLen64 = String
+  type XmlStringUserData = String
 
   implicit final class AutoScalingOps(private val service: AutoScaling) extends AnyVal {
 
@@ -139,6 +144,8 @@ package object autoscaling {
         params: BatchPutScheduledUpdateGroupActionType
     ): Future[BatchPutScheduledUpdateGroupActionAnswer] =
       service.batchPutScheduledUpdateGroupAction(params).promise().toFuture
+    @inline def cancelInstanceRefreshFuture(params: CancelInstanceRefreshType): Future[CancelInstanceRefreshAnswer] =
+      service.cancelInstanceRefresh(params).promise().toFuture
     @inline def completeLifecycleActionFuture(
         params: CompleteLifecycleActionType
     ): Future[CompleteLifecycleActionAnswer] = service.completeLifecycleAction(params).promise().toFuture
@@ -173,6 +180,9 @@ package object autoscaling {
     ): Future[AutoScalingInstancesType] = service.describeAutoScalingInstances(params).promise().toFuture
     @inline def describeAutoScalingNotificationTypesFuture(): Future[DescribeAutoScalingNotificationTypesAnswer] =
       service.describeAutoScalingNotificationTypes().promise().toFuture
+    @inline def describeInstanceRefreshesFuture(
+        params: DescribeInstanceRefreshesType
+    ): Future[DescribeInstanceRefreshesAnswer] = service.describeInstanceRefreshes(params).promise().toFuture
     @inline def describeLaunchConfigurationsFuture(
         params: LaunchConfigurationNamesType
     ): Future[LaunchConfigurationsType] = service.describeLaunchConfigurations(params).promise().toFuture
@@ -242,6 +252,8 @@ package object autoscaling {
       service.setInstanceHealth(params).promise().toFuture
     @inline def setInstanceProtectionFuture(params: SetInstanceProtectionQuery): Future[SetInstanceProtectionAnswer] =
       service.setInstanceProtection(params).promise().toFuture
+    @inline def startInstanceRefreshFuture(params: StartInstanceRefreshType): Future[StartInstanceRefreshAnswer] =
+      service.startInstanceRefresh(params).promise().toFuture
     @inline def suspendProcessesFuture(params: ScalingProcessQuery): Future[js.Object] =
       service.suspendProcesses(params).promise().toFuture
     @inline def terminateInstanceInAutoScalingGroupFuture(
@@ -261,70 +273,74 @@ package autoscaling {
     def attachInstances(params: AttachInstancesQuery): Request[js.Object] = js.native
     def attachLoadBalancerTargetGroups(
         params: AttachLoadBalancerTargetGroupsType
-    ): Request[AttachLoadBalancerTargetGroupsResultType]                                             = js.native
+    ): Request[AttachLoadBalancerTargetGroupsResultType] = js.native
     def attachLoadBalancers(params: AttachLoadBalancersType): Request[AttachLoadBalancersResultType] = js.native
     def batchDeleteScheduledAction(params: BatchDeleteScheduledActionType): Request[BatchDeleteScheduledActionAnswer] =
       js.native
     def batchPutScheduledUpdateGroupAction(
         params: BatchPutScheduledUpdateGroupActionType
-    ): Request[BatchPutScheduledUpdateGroupActionAnswer]                                                     = js.native
+    ): Request[BatchPutScheduledUpdateGroupActionAnswer] = js.native
+    def cancelInstanceRefresh(params: CancelInstanceRefreshType): Request[CancelInstanceRefreshAnswer] = js.native
     def completeLifecycleAction(params: CompleteLifecycleActionType): Request[CompleteLifecycleActionAnswer] = js.native
-    def createAutoScalingGroup(params: CreateAutoScalingGroupType): Request[js.Object]                       = js.native
-    def createLaunchConfiguration(params: CreateLaunchConfigurationType): Request[js.Object]                 = js.native
-    def createOrUpdateTags(params: CreateOrUpdateTagsType): Request[js.Object]                               = js.native
-    def deleteAutoScalingGroup(params: DeleteAutoScalingGroupType): Request[js.Object]                       = js.native
-    def deleteLaunchConfiguration(params: LaunchConfigurationNameType): Request[js.Object]                   = js.native
-    def deleteLifecycleHook(params: DeleteLifecycleHookType): Request[DeleteLifecycleHookAnswer]             = js.native
-    def deleteNotificationConfiguration(params: DeleteNotificationConfigurationType): Request[js.Object]     = js.native
-    def deletePolicy(params: DeletePolicyType): Request[js.Object]                                           = js.native
-    def deleteScheduledAction(params: DeleteScheduledActionType): Request[js.Object]                         = js.native
-    def deleteTags(params: DeleteTagsType): Request[js.Object]                                               = js.native
-    def describeAccountLimits(): Request[DescribeAccountLimitsAnswer]                                        = js.native
-    def describeAdjustmentTypes(): Request[DescribeAdjustmentTypesAnswer]                                    = js.native
-    def describeAutoScalingGroups(params: AutoScalingGroupNamesType): Request[AutoScalingGroupsType]         = js.native
+    def createAutoScalingGroup(params: CreateAutoScalingGroupType): Request[js.Object] = js.native
+    def createLaunchConfiguration(params: CreateLaunchConfigurationType): Request[js.Object] = js.native
+    def createOrUpdateTags(params: CreateOrUpdateTagsType): Request[js.Object] = js.native
+    def deleteAutoScalingGroup(params: DeleteAutoScalingGroupType): Request[js.Object] = js.native
+    def deleteLaunchConfiguration(params: LaunchConfigurationNameType): Request[js.Object] = js.native
+    def deleteLifecycleHook(params: DeleteLifecycleHookType): Request[DeleteLifecycleHookAnswer] = js.native
+    def deleteNotificationConfiguration(params: DeleteNotificationConfigurationType): Request[js.Object] = js.native
+    def deletePolicy(params: DeletePolicyType): Request[js.Object] = js.native
+    def deleteScheduledAction(params: DeleteScheduledActionType): Request[js.Object] = js.native
+    def deleteTags(params: DeleteTagsType): Request[js.Object] = js.native
+    def describeAccountLimits(): Request[DescribeAccountLimitsAnswer] = js.native
+    def describeAdjustmentTypes(): Request[DescribeAdjustmentTypesAnswer] = js.native
+    def describeAutoScalingGroups(params: AutoScalingGroupNamesType): Request[AutoScalingGroupsType] = js.native
     def describeAutoScalingInstances(params: DescribeAutoScalingInstancesType): Request[AutoScalingInstancesType] =
       js.native
     def describeAutoScalingNotificationTypes(): Request[DescribeAutoScalingNotificationTypesAnswer] = js.native
+    def describeInstanceRefreshes(params: DescribeInstanceRefreshesType): Request[DescribeInstanceRefreshesAnswer] =
+      js.native
     def describeLaunchConfigurations(params: LaunchConfigurationNamesType): Request[LaunchConfigurationsType] =
       js.native
-    def describeLifecycleHookTypes(): Request[DescribeLifecycleHookTypesAnswer]                           = js.native
+    def describeLifecycleHookTypes(): Request[DescribeLifecycleHookTypesAnswer] = js.native
     def describeLifecycleHooks(params: DescribeLifecycleHooksType): Request[DescribeLifecycleHooksAnswer] = js.native
     def describeLoadBalancerTargetGroups(
         params: DescribeLoadBalancerTargetGroupsRequest
-    ): Request[DescribeLoadBalancerTargetGroupsResponse]                                                    = js.native
+    ): Request[DescribeLoadBalancerTargetGroupsResponse] = js.native
     def describeLoadBalancers(params: DescribeLoadBalancersRequest): Request[DescribeLoadBalancersResponse] = js.native
-    def describeMetricCollectionTypes(): Request[DescribeMetricCollectionTypesAnswer]                       = js.native
+    def describeMetricCollectionTypes(): Request[DescribeMetricCollectionTypesAnswer] = js.native
     def describeNotificationConfigurations(
         params: DescribeNotificationConfigurationsType
-    ): Request[DescribeNotificationConfigurationsAnswer]                                              = js.native
-    def describePolicies(params: DescribePoliciesType): Request[PoliciesType]                         = js.native
-    def describeScalingActivities(params: DescribeScalingActivitiesType): Request[ActivitiesType]     = js.native
-    def describeScalingProcessTypes(): Request[ProcessesType]                                         = js.native
+    ): Request[DescribeNotificationConfigurationsAnswer] = js.native
+    def describePolicies(params: DescribePoliciesType): Request[PoliciesType] = js.native
+    def describeScalingActivities(params: DescribeScalingActivitiesType): Request[ActivitiesType] = js.native
+    def describeScalingProcessTypes(): Request[ProcessesType] = js.native
     def describeScheduledActions(params: DescribeScheduledActionsType): Request[ScheduledActionsType] = js.native
-    def describeTags(params: DescribeTagsType): Request[TagsType]                                     = js.native
-    def describeTerminationPolicyTypes(): Request[DescribeTerminationPolicyTypesAnswer]               = js.native
-    def detachInstances(params: DetachInstancesQuery): Request[DetachInstancesAnswer]                 = js.native
+    def describeTags(params: DescribeTagsType): Request[TagsType] = js.native
+    def describeTerminationPolicyTypes(): Request[DescribeTerminationPolicyTypesAnswer] = js.native
+    def detachInstances(params: DetachInstancesQuery): Request[DetachInstancesAnswer] = js.native
     def detachLoadBalancerTargetGroups(
         params: DetachLoadBalancerTargetGroupsType
-    ): Request[DetachLoadBalancerTargetGroupsResultType]                                             = js.native
+    ): Request[DetachLoadBalancerTargetGroupsResultType] = js.native
     def detachLoadBalancers(params: DetachLoadBalancersType): Request[DetachLoadBalancersResultType] = js.native
-    def disableMetricsCollection(params: DisableMetricsCollectionQuery): Request[js.Object]          = js.native
-    def enableMetricsCollection(params: EnableMetricsCollectionQuery): Request[js.Object]            = js.native
-    def enterStandby(params: EnterStandbyQuery): Request[EnterStandbyAnswer]                         = js.native
-    def executePolicy(params: ExecutePolicyType): Request[js.Object]                                 = js.native
-    def exitStandby(params: ExitStandbyQuery): Request[ExitStandbyAnswer]                            = js.native
-    def putLifecycleHook(params: PutLifecycleHookType): Request[PutLifecycleHookAnswer]              = js.native
-    def putNotificationConfiguration(params: PutNotificationConfigurationType): Request[js.Object]   = js.native
-    def putScalingPolicy(params: PutScalingPolicyType): Request[PolicyARNType]                       = js.native
+    def disableMetricsCollection(params: DisableMetricsCollectionQuery): Request[js.Object] = js.native
+    def enableMetricsCollection(params: EnableMetricsCollectionQuery): Request[js.Object] = js.native
+    def enterStandby(params: EnterStandbyQuery): Request[EnterStandbyAnswer] = js.native
+    def executePolicy(params: ExecutePolicyType): Request[js.Object] = js.native
+    def exitStandby(params: ExitStandbyQuery): Request[ExitStandbyAnswer] = js.native
+    def putLifecycleHook(params: PutLifecycleHookType): Request[PutLifecycleHookAnswer] = js.native
+    def putNotificationConfiguration(params: PutNotificationConfigurationType): Request[js.Object] = js.native
+    def putScalingPolicy(params: PutScalingPolicyType): Request[PolicyARNType] = js.native
     def putScheduledUpdateGroupAction(params: PutScheduledUpdateGroupActionType): Request[js.Object] = js.native
     def recordLifecycleActionHeartbeat(
         params: RecordLifecycleActionHeartbeatType
-    ): Request[RecordLifecycleActionHeartbeatAnswer]                                                    = js.native
-    def resumeProcesses(params: ScalingProcessQuery): Request[js.Object]                                = js.native
-    def setDesiredCapacity(params: SetDesiredCapacityType): Request[js.Object]                          = js.native
-    def setInstanceHealth(params: SetInstanceHealthQuery): Request[js.Object]                           = js.native
+    ): Request[RecordLifecycleActionHeartbeatAnswer] = js.native
+    def resumeProcesses(params: ScalingProcessQuery): Request[js.Object] = js.native
+    def setDesiredCapacity(params: SetDesiredCapacityType): Request[js.Object] = js.native
+    def setInstanceHealth(params: SetInstanceHealthQuery): Request[js.Object] = js.native
     def setInstanceProtection(params: SetInstanceProtectionQuery): Request[SetInstanceProtectionAnswer] = js.native
-    def suspendProcesses(params: ScalingProcessQuery): Request[js.Object]                               = js.native
+    def startInstanceRefresh(params: StartInstanceRefreshType): Request[StartInstanceRefreshAnswer] = js.native
+    def suspendProcesses(params: ScalingProcessQuery): Request[js.Object] = js.native
     def terminateInstanceInAutoScalingGroup(params: TerminateInstanceInAutoScalingGroupType): Request[ActivityType] =
       js.native
     def updateAutoScalingGroup(params: UpdateAutoScalingGroupType): Request[js.Object] = js.native
@@ -383,11 +399,11 @@ package autoscaling {
         StatusMessage: js.UndefOr[XmlStringMaxLen255] = js.undefined
     ): Activity = {
       val __obj = js.Dynamic.literal(
-        "ActivityId"           -> ActivityId.asInstanceOf[js.Any],
+        "ActivityId" -> ActivityId.asInstanceOf[js.Any],
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "Cause"                -> Cause.asInstanceOf[js.Any],
-        "StartTime"            -> StartTime.asInstanceOf[js.Any],
-        "StatusCode"           -> StatusCode.asInstanceOf[js.Any]
+        "Cause" -> Cause.asInstanceOf[js.Any],
+        "StartTime" -> StartTime.asInstanceOf[js.Any],
+        "StatusCode" -> StatusCode.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -504,7 +520,7 @@ package autoscaling {
     ): AttachLoadBalancerTargetGroupsType = {
       val __obj = js.Dynamic.literal(
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "TargetGroupARNs"      -> TargetGroupARNs.asInstanceOf[js.Any]
+        "TargetGroupARNs" -> TargetGroupARNs.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AttachLoadBalancerTargetGroupsType]
@@ -538,7 +554,7 @@ package autoscaling {
     ): AttachLoadBalancersType = {
       val __obj = js.Dynamic.literal(
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "LoadBalancerNames"    -> LoadBalancerNames.asInstanceOf[js.Any]
+        "LoadBalancerNames" -> LoadBalancerNames.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AttachLoadBalancersType]
@@ -610,13 +626,13 @@ package autoscaling {
     ): AutoScalingGroup = {
       val __obj = js.Dynamic.literal(
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "AvailabilityZones"    -> AvailabilityZones.asInstanceOf[js.Any],
-        "CreatedTime"          -> CreatedTime.asInstanceOf[js.Any],
-        "DefaultCooldown"      -> DefaultCooldown.asInstanceOf[js.Any],
-        "DesiredCapacity"      -> DesiredCapacity.asInstanceOf[js.Any],
-        "HealthCheckType"      -> HealthCheckType.asInstanceOf[js.Any],
-        "MaxSize"              -> MaxSize.asInstanceOf[js.Any],
-        "MinSize"              -> MinSize.asInstanceOf[js.Any]
+        "AvailabilityZones" -> AvailabilityZones.asInstanceOf[js.Any],
+        "CreatedTime" -> CreatedTime.asInstanceOf[js.Any],
+        "DefaultCooldown" -> DefaultCooldown.asInstanceOf[js.Any],
+        "DesiredCapacity" -> DesiredCapacity.asInstanceOf[js.Any],
+        "HealthCheckType" -> HealthCheckType.asInstanceOf[js.Any],
+        "MaxSize" -> MaxSize.asInstanceOf[js.Any],
+        "MinSize" -> MinSize.asInstanceOf[js.Any]
       )
 
       AutoScalingGroupARN.foreach(__v => __obj.updateDynamic("AutoScalingGroupARN")(__v.asInstanceOf[js.Any]))
@@ -719,10 +735,10 @@ package autoscaling {
     ): AutoScalingInstanceDetails = {
       val __obj = js.Dynamic.literal(
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "AvailabilityZone"     -> AvailabilityZone.asInstanceOf[js.Any],
-        "HealthStatus"         -> HealthStatus.asInstanceOf[js.Any],
-        "InstanceId"           -> InstanceId.asInstanceOf[js.Any],
-        "LifecycleState"       -> LifecycleState.asInstanceOf[js.Any],
+        "AvailabilityZone" -> AvailabilityZone.asInstanceOf[js.Any],
+        "HealthStatus" -> HealthStatus.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "LifecycleState" -> LifecycleState.asInstanceOf[js.Any],
         "ProtectedFromScaleIn" -> ProtectedFromScaleIn.asInstanceOf[js.Any]
       )
 
@@ -821,7 +837,7 @@ package autoscaling {
         ScheduledUpdateGroupActions: ScheduledUpdateGroupActionRequests
     ): BatchPutScheduledUpdateGroupActionType = {
       val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName"        -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
         "ScheduledUpdateGroupActions" -> ScheduledUpdateGroupActions.asInstanceOf[js.Any]
       )
 
@@ -860,6 +876,40 @@ package autoscaling {
   }
 
   @js.native
+  trait CancelInstanceRefreshAnswer extends js.Object {
+    var InstanceRefreshId: js.UndefOr[XmlStringMaxLen255]
+  }
+
+  object CancelInstanceRefreshAnswer {
+    @inline
+    def apply(
+        InstanceRefreshId: js.UndefOr[XmlStringMaxLen255] = js.undefined
+    ): CancelInstanceRefreshAnswer = {
+      val __obj = js.Dynamic.literal()
+      InstanceRefreshId.foreach(__v => __obj.updateDynamic("InstanceRefreshId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CancelInstanceRefreshAnswer]
+    }
+  }
+
+  @js.native
+  trait CancelInstanceRefreshType extends js.Object {
+    var AutoScalingGroupName: XmlStringMaxLen255
+  }
+
+  object CancelInstanceRefreshType {
+    @inline
+    def apply(
+        AutoScalingGroupName: XmlStringMaxLen255
+    ): CancelInstanceRefreshType = {
+      val __obj = js.Dynamic.literal(
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CancelInstanceRefreshType]
+    }
+  }
+
+  @js.native
   trait CompleteLifecycleActionAnswer extends js.Object {}
 
   object CompleteLifecycleActionAnswer {
@@ -891,9 +941,9 @@ package autoscaling {
         LifecycleActionToken: js.UndefOr[LifecycleActionToken] = js.undefined
     ): CompleteLifecycleActionType = {
       val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName"  -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
         "LifecycleActionResult" -> LifecycleActionResult.asInstanceOf[js.Any],
-        "LifecycleHookName"     -> LifecycleHookName.asInstanceOf[js.Any]
+        "LifecycleHookName" -> LifecycleHookName.asInstanceOf[js.Any]
       )
 
       InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
@@ -956,8 +1006,8 @@ package autoscaling {
     ): CreateAutoScalingGroupType = {
       val __obj = js.Dynamic.literal(
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "MaxSize"              -> MaxSize.asInstanceOf[js.Any],
-        "MinSize"              -> MinSize.asInstanceOf[js.Any]
+        "MaxSize" -> MaxSize.asInstanceOf[js.Any],
+        "MinSize" -> MinSize.asInstanceOf[js.Any]
       )
 
       AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
@@ -1103,8 +1153,8 @@ package autoscaling {
     ): CustomizedMetricSpecification = {
       val __obj = js.Dynamic.literal(
         "MetricName" -> MetricName.asInstanceOf[js.Any],
-        "Namespace"  -> Namespace.asInstanceOf[js.Any],
-        "Statistic"  -> Statistic.asInstanceOf[js.Any]
+        "Namespace" -> Namespace.asInstanceOf[js.Any],
+        "Statistic" -> Statistic.asInstanceOf[js.Any]
       )
 
       Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
@@ -1161,7 +1211,7 @@ package autoscaling {
     ): DeleteLifecycleHookType = {
       val __obj = js.Dynamic.literal(
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "LifecycleHookName"    -> LifecycleHookName.asInstanceOf[js.Any]
+        "LifecycleHookName" -> LifecycleHookName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteLifecycleHookType]
@@ -1182,7 +1232,7 @@ package autoscaling {
     ): DeleteNotificationConfigurationType = {
       val __obj = js.Dynamic.literal(
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "TopicARN"             -> TopicARN.asInstanceOf[js.Any]
+        "TopicARN" -> TopicARN.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteNotificationConfigurationType]
@@ -1224,7 +1274,7 @@ package autoscaling {
     ): DeleteScheduledActionType = {
       val __obj = js.Dynamic.literal(
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "ScheduledActionName"  -> ScheduledActionName.asInstanceOf[js.Any]
+        "ScheduledActionName" -> ScheduledActionName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteScheduledActionType]
@@ -1335,6 +1385,52 @@ package autoscaling {
         __obj.updateDynamic("AutoScalingNotificationTypes")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeAutoScalingNotificationTypesAnswer]
+    }
+  }
+
+  @js.native
+  trait DescribeInstanceRefreshesAnswer extends js.Object {
+    var InstanceRefreshes: js.UndefOr[InstanceRefreshes]
+    var NextToken: js.UndefOr[XmlString]
+  }
+
+  object DescribeInstanceRefreshesAnswer {
+    @inline
+    def apply(
+        InstanceRefreshes: js.UndefOr[InstanceRefreshes] = js.undefined,
+        NextToken: js.UndefOr[XmlString] = js.undefined
+    ): DescribeInstanceRefreshesAnswer = {
+      val __obj = js.Dynamic.literal()
+      InstanceRefreshes.foreach(__v => __obj.updateDynamic("InstanceRefreshes")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeInstanceRefreshesAnswer]
+    }
+  }
+
+  @js.native
+  trait DescribeInstanceRefreshesType extends js.Object {
+    var AutoScalingGroupName: XmlStringMaxLen255
+    var InstanceRefreshIds: js.UndefOr[InstanceRefreshIds]
+    var MaxRecords: js.UndefOr[MaxRecords]
+    var NextToken: js.UndefOr[XmlString]
+  }
+
+  object DescribeInstanceRefreshesType {
+    @inline
+    def apply(
+        AutoScalingGroupName: XmlStringMaxLen255,
+        InstanceRefreshIds: js.UndefOr[InstanceRefreshIds] = js.undefined,
+        MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
+        NextToken: js.UndefOr[XmlString] = js.undefined
+    ): DescribeInstanceRefreshesType = {
+      val __obj = js.Dynamic.literal(
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any]
+      )
+
+      InstanceRefreshIds.foreach(__v => __obj.updateDynamic("InstanceRefreshIds")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeInstanceRefreshesType]
     }
   }
 
@@ -1692,7 +1788,7 @@ package autoscaling {
         InstanceIds: js.UndefOr[InstanceIds] = js.undefined
     ): DetachInstancesQuery = {
       val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName"           -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
         "ShouldDecrementDesiredCapacity" -> ShouldDecrementDesiredCapacity.asInstanceOf[js.Any]
       )
 
@@ -1728,7 +1824,7 @@ package autoscaling {
     ): DetachLoadBalancerTargetGroupsType = {
       val __obj = js.Dynamic.literal(
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "TargetGroupARNs"      -> TargetGroupARNs.asInstanceOf[js.Any]
+        "TargetGroupARNs" -> TargetGroupARNs.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DetachLoadBalancerTargetGroupsType]
@@ -1762,7 +1858,7 @@ package autoscaling {
     ): DetachLoadBalancersType = {
       val __obj = js.Dynamic.literal(
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "LoadBalancerNames"    -> LoadBalancerNames.asInstanceOf[js.Any]
+        "LoadBalancerNames" -> LoadBalancerNames.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DetachLoadBalancersType]
@@ -1791,7 +1887,7 @@ package autoscaling {
   }
 
   /**
-    * Describes an Amazon EBS volume. Used in combination with <a>BlockDeviceMapping</a>.
+    * Describes information used to set up an Amazon EBS volume specified in a block device mapping.
     */
   @js.native
   trait Ebs extends js.Object {
@@ -1840,7 +1936,7 @@ package autoscaling {
     ): EnableMetricsCollectionQuery = {
       val __obj = js.Dynamic.literal(
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "Granularity"          -> Granularity.asInstanceOf[js.Any]
+        "Granularity" -> Granularity.asInstanceOf[js.Any]
       )
 
       Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
@@ -1901,7 +1997,7 @@ package autoscaling {
         InstanceIds: js.UndefOr[InstanceIds] = js.undefined
     ): EnterStandbyQuery = {
       val __obj = js.Dynamic.literal(
-        "AutoScalingGroupName"           -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
         "ShouldDecrementDesiredCapacity" -> ShouldDecrementDesiredCapacity.asInstanceOf[js.Any]
       )
 
@@ -2005,7 +2101,8 @@ package autoscaling {
   }
 
   /**
-    * Describes a filter.
+    * Describes a filter that is used to return a more specific list of results when describing tags.
+    *  For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html|Tagging Auto Scaling Groups and Instances]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     */
   @js.native
   trait Filter extends js.Object {
@@ -2056,10 +2153,10 @@ package autoscaling {
         WeightedCapacity: js.UndefOr[XmlStringMaxLen32] = js.undefined
     ): Instance = {
       val __obj = js.Dynamic.literal(
-        "AvailabilityZone"     -> AvailabilityZone.asInstanceOf[js.Any],
-        "HealthStatus"         -> HealthStatus.asInstanceOf[js.Any],
-        "InstanceId"           -> InstanceId.asInstanceOf[js.Any],
-        "LifecycleState"       -> LifecycleState.asInstanceOf[js.Any],
+        "AvailabilityZone" -> AvailabilityZone.asInstanceOf[js.Any],
+        "HealthStatus" -> HealthStatus.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "LifecycleState" -> LifecycleState.asInstanceOf[js.Any],
         "ProtectedFromScaleIn" -> ProtectedFromScaleIn.asInstanceOf[js.Any]
       )
 
@@ -2091,7 +2188,60 @@ package autoscaling {
   }
 
   /**
-    * Describes an instances distribution for an Auto Scaling group with <a>MixedInstancesPolicy</a>.
+    * Describes an instance refresh for an Auto Scaling group.
+    */
+  @js.native
+  trait InstanceRefresh extends js.Object {
+    var AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255]
+    var EndTime: js.UndefOr[TimestampType]
+    var InstanceRefreshId: js.UndefOr[XmlStringMaxLen255]
+    var InstancesToUpdate: js.UndefOr[InstancesToUpdate]
+    var PercentageComplete: js.UndefOr[IntPercent]
+    var StartTime: js.UndefOr[TimestampType]
+    var Status: js.UndefOr[InstanceRefreshStatus]
+    var StatusReason: js.UndefOr[XmlStringMaxLen1023]
+  }
+
+  object InstanceRefresh {
+    @inline
+    def apply(
+        AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+        EndTime: js.UndefOr[TimestampType] = js.undefined,
+        InstanceRefreshId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+        InstancesToUpdate: js.UndefOr[InstancesToUpdate] = js.undefined,
+        PercentageComplete: js.UndefOr[IntPercent] = js.undefined,
+        StartTime: js.UndefOr[TimestampType] = js.undefined,
+        Status: js.UndefOr[InstanceRefreshStatus] = js.undefined,
+        StatusReason: js.UndefOr[XmlStringMaxLen1023] = js.undefined
+    ): InstanceRefresh = {
+      val __obj = js.Dynamic.literal()
+      AutoScalingGroupName.foreach(__v => __obj.updateDynamic("AutoScalingGroupName")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      InstanceRefreshId.foreach(__v => __obj.updateDynamic("InstanceRefreshId")(__v.asInstanceOf[js.Any]))
+      InstancesToUpdate.foreach(__v => __obj.updateDynamic("InstancesToUpdate")(__v.asInstanceOf[js.Any]))
+      PercentageComplete.foreach(__v => __obj.updateDynamic("PercentageComplete")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InstanceRefresh]
+    }
+  }
+
+  @js.native
+  sealed trait InstanceRefreshStatus extends js.Any
+  object InstanceRefreshStatus extends js.Object {
+    val Pending = "Pending".asInstanceOf[InstanceRefreshStatus]
+    val InProgress = "InProgress".asInstanceOf[InstanceRefreshStatus]
+    val Successful = "Successful".asInstanceOf[InstanceRefreshStatus]
+    val Failed = "Failed".asInstanceOf[InstanceRefreshStatus]
+    val Cancelling = "Cancelling".asInstanceOf[InstanceRefreshStatus]
+    val Cancelled = "Cancelled".asInstanceOf[InstanceRefreshStatus]
+
+    val values = js.Object.freeze(js.Array(Pending, InProgress, Successful, Failed, Cancelling, Cancelled))
+  }
+
+  /**
+    * Describes an instances distribution for an Auto Scaling group with a <a>MixedInstancesPolicy</a>.
     *  The instances distribution specifies the distribution of On-Demand Instances and Spot Instances, the maximum price to pay for Spot Instances, and how the Auto Scaling group allocates instance types to fulfill On-Demand and Spot capacity.
     *  When you update <code>SpotAllocationStrategy</code>, <code>SpotInstancePools</code>, or <code>SpotMaxPrice</code>, this update action does not deploy any changes across the running Amazon EC2 instances in the group. Your existing Spot Instances continue to run as long as the maximum price for those instances is higher than the current Spot price. When scale out occurs, Amazon EC2 Auto Scaling launches instances based on the new settings. When scale in occurs, Amazon EC2 Auto Scaling terminates instances according to the group's termination policies.
     */
@@ -2180,9 +2330,9 @@ package autoscaling {
         UserData: js.UndefOr[XmlStringUserData] = js.undefined
     ): LaunchConfiguration = {
       val __obj = js.Dynamic.literal(
-        "CreatedTime"             -> CreatedTime.asInstanceOf[js.Any],
-        "ImageId"                 -> ImageId.asInstanceOf[js.Any],
-        "InstanceType"            -> InstanceType.asInstanceOf[js.Any],
+        "CreatedTime" -> CreatedTime.asInstanceOf[js.Any],
+        "ImageId" -> ImageId.asInstanceOf[js.Any],
+        "InstanceType" -> InstanceType.asInstanceOf[js.Any],
         "LaunchConfigurationName" -> LaunchConfigurationName.asInstanceOf[js.Any]
       )
 
@@ -2295,7 +2445,8 @@ package autoscaling {
   }
 
   /**
-    * Describes an override for a launch template.
+    * Describes an override for a launch template. Currently, the only supported override is instance type.
+    *  The maximum number of instance type overrides that can be associated with an Auto Scaling group is 20.
     */
   @js.native
   trait LaunchTemplateOverrides extends js.Object {
@@ -2317,7 +2468,7 @@ package autoscaling {
   }
 
   /**
-    * Describes a launch template and the launch template version.
+    * Describes the Amazon EC2 launch template and the launch template version that can be used by an Auto Scaling group to configure Amazon EC2 instances.
     *  The launch template that is specified must be configured for use with an Auto Scaling group. For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html|Creating a Launch Template for an Auto Scaling Group]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     */
   @js.native
@@ -2343,7 +2494,7 @@ package autoscaling {
   }
 
   /**
-    * Describes a lifecycle hook, which tells Amazon EC2 Auto Scaling that you want to perform an action whenever it launches instances or terminates instances. Used in response to <a>DescribeLifecycleHooks</a>.
+    * Describes a lifecycle hook, which tells Amazon EC2 Auto Scaling that you want to perform an action whenever it launches instances or terminates instances.
     */
   @js.native
   trait LifecycleHook extends js.Object {
@@ -2386,16 +2537,15 @@ package autoscaling {
   }
 
   /**
-    * Describes a lifecycle hook. Used in combination with <a>CreateAutoScalingGroup</a>.
+    * Describes information used to specify a lifecycle hook for an Auto Scaling group.
     *  A lifecycle hook tells Amazon EC2 Auto Scaling to perform an action on an instance when the instance launches (before it is put into service) or as the instance terminates (before it is fully terminated).
     *  This step is a part of the procedure for creating a lifecycle hook for an Auto Scaling group:
     *  <ol> * (Optional) Create a Lambda function and a rule that allows CloudWatch Events to invoke your Lambda function when Amazon EC2 Auto Scaling launches or terminates instances.
     *  * (Optional) Create a notification target and an IAM role. The target can be either an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling to publish lifecycle notifications to the target.
     *  * ```Create the lifecycle hook. Specify whether the hook is used when the instances launch or terminate.```
-    *  * If you need more time, record the lifecycle action heartbeat to keep the instance in a pending state using <a>RecordLifecycleActionHeartbeat</a>.
-    *  * If you finish before the timeout period ends, complete the lifecycle action using <a>CompleteLifecycleAction</a>.
+    *  * If you need more time, record the lifecycle action heartbeat to keep the instance in a pending state.
+    *  * If you finish before the timeout period ends, complete the lifecycle action.
     *  </ol> For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html|Amazon EC2 Auto Scaling Lifecycle Hooks]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-    *  You can view the lifecycle hooks for an Auto Scaling group using <a>DescribeLifecycleHooks</a>. You can modify an existing lifecycle hook or create new lifecycle hooks using <a>PutLifecycleHook</a>. If you are no longer using a lifecycle hook, you can delete it using <a>DeleteLifecycleHook</a>.
     */
   @js.native
   trait LifecycleHookSpecification extends js.Object {
@@ -2420,7 +2570,7 @@ package autoscaling {
         RoleARN: js.UndefOr[ResourceName] = js.undefined
     ): LifecycleHookSpecification = {
       val __obj = js.Dynamic.literal(
-        "LifecycleHookName"   -> LifecycleHookName.asInstanceOf[js.Any],
+        "LifecycleHookName" -> LifecycleHookName.asInstanceOf[js.Any],
         "LifecycleTransition" -> LifecycleTransition.asInstanceOf[js.Any]
       )
 
@@ -2436,19 +2586,19 @@ package autoscaling {
   @js.native
   sealed trait LifecycleState extends js.Any
   object LifecycleState extends js.Object {
-    val Pending               = "Pending".asInstanceOf[LifecycleState]
-    val `Pending:Wait`        = "Pending:Wait".asInstanceOf[LifecycleState]
-    val `Pending:Proceed`     = "Pending:Proceed".asInstanceOf[LifecycleState]
-    val Quarantined           = "Quarantined".asInstanceOf[LifecycleState]
-    val InService             = "InService".asInstanceOf[LifecycleState]
-    val Terminating           = "Terminating".asInstanceOf[LifecycleState]
-    val `Terminating:Wait`    = "Terminating:Wait".asInstanceOf[LifecycleState]
+    val Pending = "Pending".asInstanceOf[LifecycleState]
+    val `Pending:Wait` = "Pending:Wait".asInstanceOf[LifecycleState]
+    val `Pending:Proceed` = "Pending:Proceed".asInstanceOf[LifecycleState]
+    val Quarantined = "Quarantined".asInstanceOf[LifecycleState]
+    val InService = "InService".asInstanceOf[LifecycleState]
+    val Terminating = "Terminating".asInstanceOf[LifecycleState]
+    val `Terminating:Wait` = "Terminating:Wait".asInstanceOf[LifecycleState]
     val `Terminating:Proceed` = "Terminating:Proceed".asInstanceOf[LifecycleState]
-    val Terminated            = "Terminated".asInstanceOf[LifecycleState]
-    val Detaching             = "Detaching".asInstanceOf[LifecycleState]
-    val Detached              = "Detached".asInstanceOf[LifecycleState]
-    val EnteringStandby       = "EnteringStandby".asInstanceOf[LifecycleState]
-    val Standby               = "Standby".asInstanceOf[LifecycleState]
+    val Terminated = "Terminated".asInstanceOf[LifecycleState]
+    val Detaching = "Detaching".asInstanceOf[LifecycleState]
+    val Detached = "Detached".asInstanceOf[LifecycleState]
+    val EnteringStandby = "EnteringStandby".asInstanceOf[LifecycleState]
+    val Standby = "Standby".asInstanceOf[LifecycleState]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2553,7 +2703,7 @@ package autoscaling {
         Value: MetricDimensionValue
     ): MetricDimension = {
       val __obj = js.Dynamic.literal(
-        "Name"  -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -2583,11 +2733,11 @@ package autoscaling {
   @js.native
   sealed trait MetricStatistic extends js.Any
   object MetricStatistic extends js.Object {
-    val Average     = "Average".asInstanceOf[MetricStatistic]
-    val Minimum     = "Minimum".asInstanceOf[MetricStatistic]
-    val Maximum     = "Maximum".asInstanceOf[MetricStatistic]
+    val Average = "Average".asInstanceOf[MetricStatistic]
+    val Minimum = "Minimum".asInstanceOf[MetricStatistic]
+    val Maximum = "Maximum".asInstanceOf[MetricStatistic]
     val SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
-    val Sum         = "Sum".asInstanceOf[MetricStatistic]
+    val Sum = "Sum".asInstanceOf[MetricStatistic]
 
     val values = js.Object.freeze(js.Array(Average, Minimum, Maximum, SampleCount, Sum))
   }
@@ -2596,8 +2746,8 @@ package autoscaling {
   sealed trait MetricType extends js.Any
   object MetricType extends js.Object {
     val ASGAverageCPUUtilization = "ASGAverageCPUUtilization".asInstanceOf[MetricType]
-    val ASGAverageNetworkIn      = "ASGAverageNetworkIn".asInstanceOf[MetricType]
-    val ASGAverageNetworkOut     = "ASGAverageNetworkOut".asInstanceOf[MetricType]
+    val ASGAverageNetworkIn = "ASGAverageNetworkIn".asInstanceOf[MetricType]
+    val ASGAverageNetworkOut = "ASGAverageNetworkOut".asInstanceOf[MetricType]
     val ALBRequestCountPerTarget = "ALBRequestCountPerTarget".asInstanceOf[MetricType]
 
     val values = js.Object.freeze(
@@ -2607,7 +2757,7 @@ package autoscaling {
 
   /**
     * Describes a mixed instances policy for an Auto Scaling group. With mixed instances, your Auto Scaling group can provision a combination of On-Demand Instances and Spot Instances across multiple instance types. For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html|Auto Scaling Groups with Multiple Instance Types and Purchase Options]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-    *  You can create a mixed instances policy for a new Auto Scaling group, or you can create it for an existing group by updating the group to specify <code>MixedInstancesPolicy</code> as the top-level parameter instead of a launch configuration or template. For more information, see <a>CreateAutoScalingGroup</a> and <a>UpdateAutoScalingGroup</a>.
+    *  You can create a mixed instances policy for a new Auto Scaling group, or you can create it for an existing group by updating the group to specify <code>MixedInstancesPolicy</code> as the top-level parameter instead of a launch configuration or launch template. For more information, see <a>CreateAutoScalingGroup</a> and <a>UpdateAutoScalingGroup</a>.
     */
   @js.native
   trait MixedInstancesPolicy extends js.Object {
@@ -2795,7 +2945,7 @@ package autoscaling {
     ): PutLifecycleHookType = {
       val __obj = js.Dynamic.literal(
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "LifecycleHookName"    -> LifecycleHookName.asInstanceOf[js.Any]
+        "LifecycleHookName" -> LifecycleHookName.asInstanceOf[js.Any]
       )
 
       DefaultResult.foreach(__v => __obj.updateDynamic("DefaultResult")(__v.asInstanceOf[js.Any]))
@@ -2824,8 +2974,8 @@ package autoscaling {
     ): PutNotificationConfigurationType = {
       val __obj = js.Dynamic.literal(
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "NotificationTypes"    -> NotificationTypes.asInstanceOf[js.Any],
-        "TopicARN"             -> TopicARN.asInstanceOf[js.Any]
+        "NotificationTypes" -> NotificationTypes.asInstanceOf[js.Any],
+        "TopicARN" -> TopicARN.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutNotificationConfigurationType]
@@ -2868,7 +3018,7 @@ package autoscaling {
     ): PutScalingPolicyType = {
       val __obj = js.Dynamic.literal(
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "PolicyName"           -> PolicyName.asInstanceOf[js.Any]
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any]
       )
 
       AdjustmentType.foreach(__v => __obj.updateDynamic("AdjustmentType")(__v.asInstanceOf[js.Any]))
@@ -2916,7 +3066,7 @@ package autoscaling {
     ): PutScheduledUpdateGroupActionType = {
       val __obj = js.Dynamic.literal(
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "ScheduledActionName"  -> ScheduledActionName.asInstanceOf[js.Any]
+        "ScheduledActionName" -> ScheduledActionName.asInstanceOf[js.Any]
       )
 
       DesiredCapacity.foreach(__v => __obj.updateDynamic("DesiredCapacity")(__v.asInstanceOf[js.Any]))
@@ -2961,7 +3111,7 @@ package autoscaling {
     ): RecordLifecycleActionHeartbeatType = {
       val __obj = js.Dynamic.literal(
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "LifecycleHookName"    -> LifecycleHookName.asInstanceOf[js.Any]
+        "LifecycleHookName" -> LifecycleHookName.asInstanceOf[js.Any]
       )
 
       InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
@@ -2970,21 +3120,51 @@ package autoscaling {
     }
   }
 
+  /**
+    * Describes information used to start an instance refresh.
+    */
+  @js.native
+  trait RefreshPreferences extends js.Object {
+    var InstanceWarmup: js.UndefOr[RefreshInstanceWarmup]
+    var MinHealthyPercentage: js.UndefOr[IntPercent]
+  }
+
+  object RefreshPreferences {
+    @inline
+    def apply(
+        InstanceWarmup: js.UndefOr[RefreshInstanceWarmup] = js.undefined,
+        MinHealthyPercentage: js.UndefOr[IntPercent] = js.undefined
+    ): RefreshPreferences = {
+      val __obj = js.Dynamic.literal()
+      InstanceWarmup.foreach(__v => __obj.updateDynamic("InstanceWarmup")(__v.asInstanceOf[js.Any]))
+      MinHealthyPercentage.foreach(__v => __obj.updateDynamic("MinHealthyPercentage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RefreshPreferences]
+    }
+  }
+
+  @js.native
+  sealed trait RefreshStrategy extends js.Any
+  object RefreshStrategy extends js.Object {
+    val Rolling = "Rolling".asInstanceOf[RefreshStrategy]
+
+    val values = js.Object.freeze(js.Array(Rolling))
+  }
+
   @js.native
   sealed trait ScalingActivityStatusCode extends js.Any
   object ScalingActivityStatusCode extends js.Object {
-    val PendingSpotBidPlacement         = "PendingSpotBidPlacement".asInstanceOf[ScalingActivityStatusCode]
+    val PendingSpotBidPlacement = "PendingSpotBidPlacement".asInstanceOf[ScalingActivityStatusCode]
     val WaitingForSpotInstanceRequestId = "WaitingForSpotInstanceRequestId".asInstanceOf[ScalingActivityStatusCode]
-    val WaitingForSpotInstanceId        = "WaitingForSpotInstanceId".asInstanceOf[ScalingActivityStatusCode]
-    val WaitingForInstanceId            = "WaitingForInstanceId".asInstanceOf[ScalingActivityStatusCode]
-    val PreInService                    = "PreInService".asInstanceOf[ScalingActivityStatusCode]
-    val InProgress                      = "InProgress".asInstanceOf[ScalingActivityStatusCode]
+    val WaitingForSpotInstanceId = "WaitingForSpotInstanceId".asInstanceOf[ScalingActivityStatusCode]
+    val WaitingForInstanceId = "WaitingForInstanceId".asInstanceOf[ScalingActivityStatusCode]
+    val PreInService = "PreInService".asInstanceOf[ScalingActivityStatusCode]
+    val InProgress = "InProgress".asInstanceOf[ScalingActivityStatusCode]
     val WaitingForELBConnectionDraining = "WaitingForELBConnectionDraining".asInstanceOf[ScalingActivityStatusCode]
-    val MidLifecycleAction              = "MidLifecycleAction".asInstanceOf[ScalingActivityStatusCode]
-    val WaitingForInstanceWarmup        = "WaitingForInstanceWarmup".asInstanceOf[ScalingActivityStatusCode]
-    val Successful                      = "Successful".asInstanceOf[ScalingActivityStatusCode]
-    val Failed                          = "Failed".asInstanceOf[ScalingActivityStatusCode]
-    val Cancelled                       = "Cancelled".asInstanceOf[ScalingActivityStatusCode]
+    val MidLifecycleAction = "MidLifecycleAction".asInstanceOf[ScalingActivityStatusCode]
+    val WaitingForInstanceWarmup = "WaitingForInstanceWarmup".asInstanceOf[ScalingActivityStatusCode]
+    val Successful = "Successful".asInstanceOf[ScalingActivityStatusCode]
+    val Failed = "Failed".asInstanceOf[ScalingActivityStatusCode]
+    val Cancelled = "Cancelled".asInstanceOf[ScalingActivityStatusCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3110,7 +3290,7 @@ package autoscaling {
   }
 
   /**
-    * Describes a scheduled scaling action. Used in response to <a>DescribeScheduledActions</a>.
+    * Describes a scheduled scaling action.
     */
   @js.native
   trait ScheduledUpdateGroupAction extends js.Object {
@@ -3156,7 +3336,7 @@ package autoscaling {
   }
 
   /**
-    * Describes one or more scheduled scaling action updates for a specified Auto Scaling group. Used in combination with <a>BatchPutScheduledUpdateGroupAction</a>.
+    * Describes information used for one or more scheduled scaling action updates in a <a>BatchPutScheduledUpdateGroupAction</a> operation.
     *  When updating a scheduled scaling action, all optional parameters are left unchanged if not specified.
     */
   @js.native
@@ -3211,7 +3391,7 @@ package autoscaling {
     ): SetDesiredCapacityType = {
       val __obj = js.Dynamic.literal(
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "DesiredCapacity"      -> DesiredCapacity.asInstanceOf[js.Any]
+        "DesiredCapacity" -> DesiredCapacity.asInstanceOf[js.Any]
       )
 
       HonorCooldown.foreach(__v => __obj.updateDynamic("HonorCooldown")(__v.asInstanceOf[js.Any]))
@@ -3235,7 +3415,7 @@ package autoscaling {
     ): SetInstanceHealthQuery = {
       val __obj = js.Dynamic.literal(
         "HealthStatus" -> HealthStatus.asInstanceOf[js.Any],
-        "InstanceId"   -> InstanceId.asInstanceOf[js.Any]
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
       ShouldRespectGracePeriod.foreach(__v => __obj.updateDynamic("ShouldRespectGracePeriod")(__v.asInstanceOf[js.Any]))
@@ -3272,7 +3452,7 @@ package autoscaling {
     ): SetInstanceProtectionQuery = {
       val __obj = js.Dynamic.literal(
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
-        "InstanceIds"          -> InstanceIds.asInstanceOf[js.Any],
+        "InstanceIds" -> InstanceIds.asInstanceOf[js.Any],
         "ProtectedFromScaleIn" -> ProtectedFromScaleIn.asInstanceOf[js.Any]
       )
 
@@ -3280,8 +3460,48 @@ package autoscaling {
     }
   }
 
+  @js.native
+  trait StartInstanceRefreshAnswer extends js.Object {
+    var InstanceRefreshId: js.UndefOr[XmlStringMaxLen255]
+  }
+
+  object StartInstanceRefreshAnswer {
+    @inline
+    def apply(
+        InstanceRefreshId: js.UndefOr[XmlStringMaxLen255] = js.undefined
+    ): StartInstanceRefreshAnswer = {
+      val __obj = js.Dynamic.literal()
+      InstanceRefreshId.foreach(__v => __obj.updateDynamic("InstanceRefreshId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartInstanceRefreshAnswer]
+    }
+  }
+
+  @js.native
+  trait StartInstanceRefreshType extends js.Object {
+    var AutoScalingGroupName: XmlStringMaxLen255
+    var Preferences: js.UndefOr[RefreshPreferences]
+    var Strategy: js.UndefOr[RefreshStrategy]
+  }
+
+  object StartInstanceRefreshType {
+    @inline
+    def apply(
+        AutoScalingGroupName: XmlStringMaxLen255,
+        Preferences: js.UndefOr[RefreshPreferences] = js.undefined,
+        Strategy: js.UndefOr[RefreshStrategy] = js.undefined
+    ): StartInstanceRefreshType = {
+      val __obj = js.Dynamic.literal(
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any]
+      )
+
+      Preferences.foreach(__v => __obj.updateDynamic("Preferences")(__v.asInstanceOf[js.Any]))
+      Strategy.foreach(__v => __obj.updateDynamic("Strategy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartInstanceRefreshType]
+    }
+  }
+
   /**
-    * Describes an adjustment based on the difference between the value of the aggregated CloudWatch metric and the breach threshold that you've defined for the alarm. Used in combination with <a>PutScalingPolicy</a>.
+    * Describes information used to create a step adjustment for a step scaling policy.
     *  For the following examples, suppose that you have an alarm with a breach threshold of 50:
     * * To trigger the adjustment when the metric is greater than or equal to 50 and less than 60, specify a lower bound of 0 and an upper bound of 10.
     *  * To trigger the adjustment when the metric is greater than 40 and less than or equal to 50, specify a lower bound of -10 and an upper bound of 0.
@@ -3290,6 +3510,7 @@ package autoscaling {
     *  * At most, one step adjustment can have a null lower bound. If one step adjustment has a negative lower bound, then there must be a step adjustment with a null lower bound.
     *  * At most, one step adjustment can have a null upper bound. If one step adjustment has a positive upper bound, then there must be a step adjustment with a null upper bound.
     *  * The upper and lower bound can't be null in the same step adjustment.
+    * For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-steps|Step Adjustments]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     */
   @js.native
   trait StepAdjustment extends js.Object {
@@ -3316,7 +3537,8 @@ package autoscaling {
   }
 
   /**
-    * Describes an automatic scaling process that has been suspended. For more information, see <a>ProcessType</a>.
+    * Describes an automatic scaling process that has been suspended.
+    *  For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types|Scaling Processes]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     */
   @js.native
   trait SuspendedProcess extends js.Object {
@@ -3467,7 +3689,7 @@ package autoscaling {
         ShouldDecrementDesiredCapacity: ShouldDecrementDesiredCapacity
     ): TerminateInstanceInAutoScalingGroupType = {
       val __obj = js.Dynamic.literal(
-        "InstanceId"                     -> InstanceId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "ShouldDecrementDesiredCapacity" -> ShouldDecrementDesiredCapacity.asInstanceOf[js.Any]
       )
 

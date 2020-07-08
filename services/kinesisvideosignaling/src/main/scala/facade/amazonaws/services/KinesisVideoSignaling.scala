@@ -7,16 +7,16 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object kinesisvideosignaling {
-  type Answer         = String
-  type ClientId       = String
-  type IceServerList  = js.Array[IceServer]
+  type Answer = String
+  type ClientId = String
+  type IceServerList = js.Array[IceServer]
   type MessagePayload = String
-  type Password       = String
-  type ResourceARN    = String
-  type Ttl            = Int
-  type Uri            = String
-  type Uris           = js.Array[Uri]
-  type Username       = String
+  type Password = String
+  type ResourceARN = String
+  type Ttl = Int
+  type Uri = String
+  type Uris = js.Array[Uri]
+  type Username = String
 
   implicit final class KinesisVideoSignalingOps(private val service: KinesisVideoSignaling) extends AnyVal {
 
@@ -125,7 +125,7 @@ package kinesisvideosignaling {
         SenderClientId: ClientId
     ): SendAlexaOfferToMasterRequest = {
       val __obj = js.Dynamic.literal(
-        "ChannelARN"     -> ChannelARN.asInstanceOf[js.Any],
+        "ChannelARN" -> ChannelARN.asInstanceOf[js.Any],
         "MessagePayload" -> MessagePayload.asInstanceOf[js.Any],
         "SenderClientId" -> SenderClientId.asInstanceOf[js.Any]
       )

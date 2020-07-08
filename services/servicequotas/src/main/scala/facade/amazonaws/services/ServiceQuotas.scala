@@ -7,34 +7,34 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object servicequotas {
-  type AwsRegion                                        = String
-  type CustomerServiceEngagementId                      = String
-  type DateTime                                         = js.Date
-  type ErrorMessage                                     = String
-  type GlobalQuota                                      = Boolean
-  type MaxResults                                       = Int
-  type MetricDimensionName                              = String
-  type MetricDimensionValue                             = String
-  type MetricDimensionsMapDefinition                    = js.Dictionary[MetricDimensionValue]
-  type NextToken                                        = String
-  type PeriodValue                                      = Int
-  type QuotaAdjustable                                  = Boolean
-  type QuotaArn                                         = String
-  type QuotaCode                                        = String
-  type QuotaMetricName                                  = String
-  type QuotaMetricNamespace                             = String
-  type QuotaName                                        = String
-  type QuotaUnit                                        = String
-  type QuotaValue                                       = Double
-  type RequestId                                        = String
+  type AwsRegion = String
+  type CustomerServiceEngagementId = String
+  type DateTime = js.Date
+  type ErrorMessage = String
+  type GlobalQuota = Boolean
+  type MaxResults = Int
+  type MetricDimensionName = String
+  type MetricDimensionValue = String
+  type MetricDimensionsMapDefinition = js.Dictionary[MetricDimensionValue]
+  type NextToken = String
+  type PeriodValue = Int
+  type QuotaAdjustable = Boolean
+  type QuotaArn = String
+  type QuotaCode = String
+  type QuotaMetricName = String
+  type QuotaMetricNamespace = String
+  type QuotaName = String
+  type QuotaUnit = String
+  type QuotaValue = Double
+  type RequestId = String
   type RequestedServiceQuotaChangeHistoryListDefinition = js.Array[RequestedServiceQuotaChange]
-  type Requester                                        = String
-  type ServiceCode                                      = String
-  type ServiceInfoListDefinition                        = js.Array[ServiceInfo]
-  type ServiceName                                      = String
-  type ServiceQuotaIncreaseRequestInTemplateList        = js.Array[ServiceQuotaIncreaseRequestInTemplate]
-  type ServiceQuotaListDefinition                       = js.Array[ServiceQuota]
-  type Statistic                                        = String
+  type Requester = String
+  type ServiceCode = String
+  type ServiceInfoListDefinition = js.Array[ServiceInfo]
+  type ServiceName = String
+  type ServiceQuotaIncreaseRequestInTemplateList = js.Array[ServiceQuotaIncreaseRequestInTemplate]
+  type ServiceQuotaListDefinition = js.Array[ServiceQuota]
+  type Statistic = String
 
   implicit final class ServiceQuotasOps(private val service: ServiceQuotas) extends AnyVal {
 
@@ -118,7 +118,7 @@ package servicequotas {
     ): Request[GetAssociationForServiceQuotaTemplateResponse] = js.native
     def getRequestedServiceQuotaChange(
         params: GetRequestedServiceQuotaChangeRequest
-    ): Request[GetRequestedServiceQuotaChangeResponse]                                    = js.native
+    ): Request[GetRequestedServiceQuotaChangeResponse] = js.native
     def getServiceQuota(params: GetServiceQuotaRequest): Request[GetServiceQuotaResponse] = js.native
     def getServiceQuotaIncreaseRequestFromTemplate(
         params: GetServiceQuotaIncreaseRequestFromTemplateRequest
@@ -134,9 +134,9 @@ package servicequotas {
     ): Request[ListRequestedServiceQuotaChangeHistoryByQuotaResponse] = js.native
     def listServiceQuotaIncreaseRequestsInTemplate(
         params: ListServiceQuotaIncreaseRequestsInTemplateRequest
-    ): Request[ListServiceQuotaIncreaseRequestsInTemplateResponse]                              = js.native
+    ): Request[ListServiceQuotaIncreaseRequestsInTemplateResponse] = js.native
     def listServiceQuotas(params: ListServiceQuotasRequest): Request[ListServiceQuotasResponse] = js.native
-    def listServices(params: ListServicesRequest): Request[ListServicesResponse]                = js.native
+    def listServices(params: ListServicesRequest): Request[ListServicesResponse] = js.native
     def putServiceQuotaIncreaseRequestIntoTemplate(
         params: PutServiceQuotaIncreaseRequestIntoTemplateRequest
     ): Request[PutServiceQuotaIncreaseRequestIntoTemplateResponse] = js.native
@@ -186,8 +186,8 @@ package servicequotas {
         ServiceCode: ServiceCode
     ): DeleteServiceQuotaIncreaseRequestFromTemplateRequest = {
       val __obj = js.Dynamic.literal(
-        "AwsRegion"   -> AwsRegion.asInstanceOf[js.Any],
-        "QuotaCode"   -> QuotaCode.asInstanceOf[js.Any],
+        "AwsRegion" -> AwsRegion.asInstanceOf[js.Any],
+        "QuotaCode" -> QuotaCode.asInstanceOf[js.Any],
         "ServiceCode" -> ServiceCode.asInstanceOf[js.Any]
       )
 
@@ -237,9 +237,9 @@ package servicequotas {
   @js.native
   sealed trait ErrorCode extends js.Any
   object ErrorCode extends js.Object {
-    val DEPENDENCY_ACCESS_DENIED_ERROR    = "DEPENDENCY_ACCESS_DENIED_ERROR".asInstanceOf[ErrorCode]
-    val DEPENDENCY_THROTTLING_ERROR       = "DEPENDENCY_THROTTLING_ERROR".asInstanceOf[ErrorCode]
-    val DEPENDENCY_SERVICE_ERROR          = "DEPENDENCY_SERVICE_ERROR".asInstanceOf[ErrorCode]
+    val DEPENDENCY_ACCESS_DENIED_ERROR = "DEPENDENCY_ACCESS_DENIED_ERROR".asInstanceOf[ErrorCode]
+    val DEPENDENCY_THROTTLING_ERROR = "DEPENDENCY_THROTTLING_ERROR".asInstanceOf[ErrorCode]
+    val DEPENDENCY_SERVICE_ERROR = "DEPENDENCY_SERVICE_ERROR".asInstanceOf[ErrorCode]
     val SERVICE_QUOTA_NOT_AVAILABLE_ERROR = "SERVICE_QUOTA_NOT_AVAILABLE_ERROR".asInstanceOf[ErrorCode]
 
     val values = js.Object.freeze(
@@ -287,7 +287,7 @@ package servicequotas {
         ServiceCode: ServiceCode
     ): GetAWSDefaultServiceQuotaRequest = {
       val __obj = js.Dynamic.literal(
-        "QuotaCode"   -> QuotaCode.asInstanceOf[js.Any],
+        "QuotaCode" -> QuotaCode.asInstanceOf[js.Any],
         "ServiceCode" -> ServiceCode.asInstanceOf[js.Any]
       )
 
@@ -391,8 +391,8 @@ package servicequotas {
         ServiceCode: ServiceCode
     ): GetServiceQuotaIncreaseRequestFromTemplateRequest = {
       val __obj = js.Dynamic.literal(
-        "AwsRegion"   -> AwsRegion.asInstanceOf[js.Any],
-        "QuotaCode"   -> QuotaCode.asInstanceOf[js.Any],
+        "AwsRegion" -> AwsRegion.asInstanceOf[js.Any],
+        "QuotaCode" -> QuotaCode.asInstanceOf[js.Any],
         "ServiceCode" -> ServiceCode.asInstanceOf[js.Any]
       )
 
@@ -431,7 +431,7 @@ package servicequotas {
         ServiceCode: ServiceCode
     ): GetServiceQuotaRequest = {
       val __obj = js.Dynamic.literal(
-        "QuotaCode"   -> QuotaCode.asInstanceOf[js.Any],
+        "QuotaCode" -> QuotaCode.asInstanceOf[js.Any],
         "ServiceCode" -> ServiceCode.asInstanceOf[js.Any]
       )
 
@@ -517,7 +517,7 @@ package servicequotas {
         Status: js.UndefOr[RequestStatus] = js.undefined
     ): ListRequestedServiceQuotaChangeHistoryByQuotaRequest = {
       val __obj = js.Dynamic.literal(
-        "QuotaCode"   -> QuotaCode.asInstanceOf[js.Any],
+        "QuotaCode" -> QuotaCode.asInstanceOf[js.Any],
         "ServiceCode" -> ServiceCode.asInstanceOf[js.Any]
       )
 
@@ -753,11 +753,11 @@ package servicequotas {
   object PeriodUnit extends js.Object {
     val MICROSECOND = "MICROSECOND".asInstanceOf[PeriodUnit]
     val MILLISECOND = "MILLISECOND".asInstanceOf[PeriodUnit]
-    val SECOND      = "SECOND".asInstanceOf[PeriodUnit]
-    val MINUTE      = "MINUTE".asInstanceOf[PeriodUnit]
-    val HOUR        = "HOUR".asInstanceOf[PeriodUnit]
-    val DAY         = "DAY".asInstanceOf[PeriodUnit]
-    val WEEK        = "WEEK".asInstanceOf[PeriodUnit]
+    val SECOND = "SECOND".asInstanceOf[PeriodUnit]
+    val MINUTE = "MINUTE".asInstanceOf[PeriodUnit]
+    val HOUR = "HOUR".asInstanceOf[PeriodUnit]
+    val DAY = "DAY".asInstanceOf[PeriodUnit]
+    val WEEK = "WEEK".asInstanceOf[PeriodUnit]
 
     val values = js.Object.freeze(js.Array(MICROSECOND, MILLISECOND, SECOND, MINUTE, HOUR, DAY, WEEK))
   }
@@ -779,10 +779,10 @@ package servicequotas {
         ServiceCode: ServiceCode
     ): PutServiceQuotaIncreaseRequestIntoTemplateRequest = {
       val __obj = js.Dynamic.literal(
-        "AwsRegion"    -> AwsRegion.asInstanceOf[js.Any],
+        "AwsRegion" -> AwsRegion.asInstanceOf[js.Any],
         "DesiredValue" -> DesiredValue.asInstanceOf[js.Any],
-        "QuotaCode"    -> QuotaCode.asInstanceOf[js.Any],
-        "ServiceCode"  -> ServiceCode.asInstanceOf[js.Any]
+        "QuotaCode" -> QuotaCode.asInstanceOf[js.Any],
+        "ServiceCode" -> ServiceCode.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutServiceQuotaIncreaseRequestIntoTemplateRequest]
@@ -845,8 +845,8 @@ package servicequotas {
     ): RequestServiceQuotaIncreaseRequest = {
       val __obj = js.Dynamic.literal(
         "DesiredValue" -> DesiredValue.asInstanceOf[js.Any],
-        "QuotaCode"    -> QuotaCode.asInstanceOf[js.Any],
-        "ServiceCode"  -> ServiceCode.asInstanceOf[js.Any]
+        "QuotaCode" -> QuotaCode.asInstanceOf[js.Any],
+        "ServiceCode" -> ServiceCode.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RequestServiceQuotaIncreaseRequest]
@@ -872,10 +872,10 @@ package servicequotas {
   @js.native
   sealed trait RequestStatus extends js.Any
   object RequestStatus extends js.Object {
-    val PENDING     = "PENDING".asInstanceOf[RequestStatus]
+    val PENDING = "PENDING".asInstanceOf[RequestStatus]
     val CASE_OPENED = "CASE_OPENED".asInstanceOf[RequestStatus]
-    val APPROVED    = "APPROVED".asInstanceOf[RequestStatus]
-    val DENIED      = "DENIED".asInstanceOf[RequestStatus]
+    val APPROVED = "APPROVED".asInstanceOf[RequestStatus]
+    val DENIED = "DENIED".asInstanceOf[RequestStatus]
     val CASE_CLOSED = "CASE_CLOSED".asInstanceOf[RequestStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, CASE_OPENED, APPROVED, DENIED, CASE_CLOSED))
@@ -1056,7 +1056,7 @@ package servicequotas {
   @js.native
   sealed trait ServiceQuotaTemplateAssociationStatus extends js.Any
   object ServiceQuotaTemplateAssociationStatus extends js.Object {
-    val ASSOCIATED    = "ASSOCIATED".asInstanceOf[ServiceQuotaTemplateAssociationStatus]
+    val ASSOCIATED = "ASSOCIATED".asInstanceOf[ServiceQuotaTemplateAssociationStatus]
     val DISASSOCIATED = "DISASSOCIATED".asInstanceOf[ServiceQuotaTemplateAssociationStatus]
 
     val values = js.Object.freeze(js.Array(ASSOCIATED, DISASSOCIATED))

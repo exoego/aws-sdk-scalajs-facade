@@ -7,8 +7,8 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object apigatewaymanagementapi {
-  type Data               = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type __string           = String
+  type Data = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type __string = String
   type __timestampIso8601 = js.Date
 
   implicit final class ApiGatewayManagementApiOps(private val service: ApiGatewayManagementApi) extends AnyVal {
@@ -28,9 +28,9 @@ package apigatewaymanagementapi {
   class ApiGatewayManagementApi() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def deleteConnection(params: DeleteConnectionRequest): Request[js.Object]       = js.native
+    def deleteConnection(params: DeleteConnectionRequest): Request[js.Object] = js.native
     def getConnection(params: GetConnectionRequest): Request[GetConnectionResponse] = js.native
-    def postToConnection(params: PostToConnectionRequest): Request[js.Object]       = js.native
+    def postToConnection(params: PostToConnectionRequest): Request[js.Object] = js.native
   }
 
   @js.native
@@ -104,7 +104,7 @@ package apigatewaymanagementapi {
         UserAgent: __string
     ): Identity = {
       val __obj = js.Dynamic.literal(
-        "SourceIp"  -> SourceIp.asInstanceOf[js.Any],
+        "SourceIp" -> SourceIp.asInstanceOf[js.Any],
         "UserAgent" -> UserAgent.asInstanceOf[js.Any]
       )
 
@@ -126,7 +126,7 @@ package apigatewaymanagementapi {
     ): PostToConnectionRequest = {
       val __obj = js.Dynamic.literal(
         "ConnectionId" -> ConnectionId.asInstanceOf[js.Any],
-        "Data"         -> Data.asInstanceOf[js.Any]
+        "Data" -> Data.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PostToConnectionRequest]

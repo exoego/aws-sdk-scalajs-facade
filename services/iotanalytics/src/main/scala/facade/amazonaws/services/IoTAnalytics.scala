@@ -7,85 +7,85 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object iotanalytics {
-  type ActivityBatchSize           = Int
-  type ActivityName                = String
-  type AttributeName               = String
-  type AttributeNameMapping        = js.Dictionary[AttributeName]
-  type AttributeNames              = js.Array[AttributeName]
+  type ActivityBatchSize = Int
+  type ActivityName = String
+  type AttributeName = String
+  type AttributeNameMapping = js.Dictionary[AttributeName]
+  type AttributeNames = js.Array[AttributeName]
   type BatchPutMessageErrorEntries = js.Array[BatchPutMessageErrorEntry]
-  type BucketKeyExpression         = String
-  type BucketName                  = String
-  type ChannelArn                  = String
-  type ChannelName                 = String
-  type ChannelSummaries            = js.Array[ChannelSummary]
-  type DatasetActionName           = String
-  type DatasetActionSummaries      = js.Array[DatasetActionSummary]
-  type DatasetActions              = js.Array[DatasetAction]
-  type DatasetArn                  = String
+  type BucketKeyExpression = String
+  type BucketName = String
+  type ChannelArn = String
+  type ChannelName = String
+  type ChannelSummaries = js.Array[ChannelSummary]
+  type DatasetActionName = String
+  type DatasetActionSummaries = js.Array[DatasetActionSummary]
+  type DatasetActions = js.Array[DatasetAction]
+  type DatasetArn = String
   type DatasetContentDeliveryRules = js.Array[DatasetContentDeliveryRule]
-  type DatasetContentSummaries     = js.Array[DatasetContentSummary]
-  type DatasetContentVersion       = String
-  type DatasetEntries              = js.Array[DatasetEntry]
-  type DatasetName                 = String
-  type DatasetSummaries            = js.Array[DatasetSummary]
-  type DatasetTriggers             = js.Array[DatasetTrigger]
-  type DatastoreArn                = String
-  type DatastoreName               = String
-  type DatastoreSummaries          = js.Array[DatastoreSummary]
-  type DoubleValue                 = Double
-  type EndTime                     = js.Date
-  type EntryName                   = String
-  type ErrorCode                   = String
-  type ErrorMessage                = String
-  type FilterExpression            = String
-  type GlueDatabaseName            = String
-  type GlueTableName               = String
-  type Image                       = String
-  type IncludeStatisticsFlag       = Boolean
-  type IotEventsInputName          = String
-  type LambdaName                  = String
-  type LogResult                   = String
-  type LoggingEnabled              = Boolean
-  type MathExpression              = String
-  type MaxMessages                 = Int
-  type MaxResults                  = Int
-  type MaxVersions                 = Int
-  type MessageId                   = String
-  type MessagePayload              = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type MessagePayloads             = js.Array[MessagePayload]
-  type Messages                    = js.Array[Message]
-  type NextToken                   = String
-  type OffsetSeconds               = Int
-  type OutputFileName              = String
-  type PipelineActivities          = js.Array[PipelineActivity]
-  type PipelineArn                 = String
-  type PipelineName                = String
-  type PipelineSummaries           = js.Array[PipelineSummary]
-  type PresignedURI                = String
-  type QueryFilters                = js.Array[QueryFilter]
-  type Reason                      = String
-  type ReprocessingId              = String
-  type ReprocessingSummaries       = js.Array[ReprocessingSummary]
-  type ResourceArn                 = String
-  type RetentionPeriodInDays       = Int
-  type RoleArn                     = String
-  type S3KeyPrefix                 = String
-  type ScheduleExpression          = String
-  type SizeInBytes                 = Double
-  type SqlQuery                    = String
-  type StartTime                   = js.Date
-  type StringValue                 = String
-  type TagKey                      = String
-  type TagKeyList                  = js.Array[TagKey]
-  type TagList                     = js.Array[Tag]
-  type TagValue                    = String
-  type TimeExpression              = String
-  type Timestamp                   = js.Date
-  type UnlimitedRetentionPeriod    = Boolean
-  type UnlimitedVersioning         = Boolean
-  type VariableName                = String
-  type Variables                   = js.Array[Variable]
-  type VolumeSizeInGB              = Int
+  type DatasetContentSummaries = js.Array[DatasetContentSummary]
+  type DatasetContentVersion = String
+  type DatasetEntries = js.Array[DatasetEntry]
+  type DatasetName = String
+  type DatasetSummaries = js.Array[DatasetSummary]
+  type DatasetTriggers = js.Array[DatasetTrigger]
+  type DatastoreArn = String
+  type DatastoreName = String
+  type DatastoreSummaries = js.Array[DatastoreSummary]
+  type DoubleValue = Double
+  type EndTime = js.Date
+  type EntryName = String
+  type ErrorCode = String
+  type ErrorMessage = String
+  type FilterExpression = String
+  type GlueDatabaseName = String
+  type GlueTableName = String
+  type Image = String
+  type IncludeStatisticsFlag = Boolean
+  type IotEventsInputName = String
+  type LambdaName = String
+  type LogResult = String
+  type LoggingEnabled = Boolean
+  type MathExpression = String
+  type MaxMessages = Int
+  type MaxResults = Int
+  type MaxVersions = Int
+  type MessageId = String
+  type MessagePayload = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type MessagePayloads = js.Array[MessagePayload]
+  type Messages = js.Array[Message]
+  type NextToken = String
+  type OffsetSeconds = Int
+  type OutputFileName = String
+  type PipelineActivities = js.Array[PipelineActivity]
+  type PipelineArn = String
+  type PipelineName = String
+  type PipelineSummaries = js.Array[PipelineSummary]
+  type PresignedURI = String
+  type QueryFilters = js.Array[QueryFilter]
+  type Reason = String
+  type ReprocessingId = String
+  type ReprocessingSummaries = js.Array[ReprocessingSummary]
+  type ResourceArn = String
+  type RetentionPeriodInDays = Int
+  type RoleArn = String
+  type S3KeyPrefix = String
+  type ScheduleExpression = String
+  type SizeInBytes = Double
+  type SqlQuery = String
+  type StartTime = js.Date
+  type StringValue = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type TimeExpression = String
+  type Timestamp = js.Date
+  type UnlimitedRetentionPeriod = Boolean
+  type UnlimitedVersioning = Boolean
+  type VariableName = String
+  type Variables = js.Array[Variable]
+  type VolumeSizeInGB = Int
 
   implicit final class IoTAnalyticsOps(private val service: IoTAnalytics) extends AnyVal {
 
@@ -172,42 +172,42 @@ package iotanalytics {
     def batchPutMessage(params: BatchPutMessageRequest): Request[BatchPutMessageResponse] = js.native
     def cancelPipelineReprocessing(
         params: CancelPipelineReprocessingRequest
-    ): Request[CancelPipelineReprocessingResponse]                                                       = js.native
-    def createChannel(params: CreateChannelRequest): Request[CreateChannelResponse]                      = js.native
-    def createDataset(params: CreateDatasetRequest): Request[CreateDatasetResponse]                      = js.native
+    ): Request[CancelPipelineReprocessingResponse] = js.native
+    def createChannel(params: CreateChannelRequest): Request[CreateChannelResponse] = js.native
+    def createDataset(params: CreateDatasetRequest): Request[CreateDatasetResponse] = js.native
     def createDatasetContent(params: CreateDatasetContentRequest): Request[CreateDatasetContentResponse] = js.native
-    def createDatastore(params: CreateDatastoreRequest): Request[CreateDatastoreResponse]                = js.native
-    def createPipeline(params: CreatePipelineRequest): Request[CreatePipelineResponse]                   = js.native
-    def deleteChannel(params: DeleteChannelRequest): Request[js.Object]                                  = js.native
-    def deleteDataset(params: DeleteDatasetRequest): Request[js.Object]                                  = js.native
-    def deleteDatasetContent(params: DeleteDatasetContentRequest): Request[js.Object]                    = js.native
-    def deleteDatastore(params: DeleteDatastoreRequest): Request[js.Object]                              = js.native
-    def deletePipeline(params: DeletePipelineRequest): Request[js.Object]                                = js.native
-    def describeChannel(params: DescribeChannelRequest): Request[DescribeChannelResponse]                = js.native
-    def describeDataset(params: DescribeDatasetRequest): Request[DescribeDatasetResponse]                = js.native
-    def describeDatastore(params: DescribeDatastoreRequest): Request[DescribeDatastoreResponse]          = js.native
+    def createDatastore(params: CreateDatastoreRequest): Request[CreateDatastoreResponse] = js.native
+    def createPipeline(params: CreatePipelineRequest): Request[CreatePipelineResponse] = js.native
+    def deleteChannel(params: DeleteChannelRequest): Request[js.Object] = js.native
+    def deleteDataset(params: DeleteDatasetRequest): Request[js.Object] = js.native
+    def deleteDatasetContent(params: DeleteDatasetContentRequest): Request[js.Object] = js.native
+    def deleteDatastore(params: DeleteDatastoreRequest): Request[js.Object] = js.native
+    def deletePipeline(params: DeletePipelineRequest): Request[js.Object] = js.native
+    def describeChannel(params: DescribeChannelRequest): Request[DescribeChannelResponse] = js.native
+    def describeDataset(params: DescribeDatasetRequest): Request[DescribeDatasetResponse] = js.native
+    def describeDatastore(params: DescribeDatastoreRequest): Request[DescribeDatastoreResponse] = js.native
     def describeLoggingOptions(params: DescribeLoggingOptionsRequest): Request[DescribeLoggingOptionsResponse] =
       js.native
-    def describePipeline(params: DescribePipelineRequest): Request[DescribePipelineResponse]          = js.native
-    def getDatasetContent(params: GetDatasetContentRequest): Request[GetDatasetContentResponse]       = js.native
-    def listChannels(params: ListChannelsRequest): Request[ListChannelsResponse]                      = js.native
+    def describePipeline(params: DescribePipelineRequest): Request[DescribePipelineResponse] = js.native
+    def getDatasetContent(params: GetDatasetContentRequest): Request[GetDatasetContentResponse] = js.native
+    def listChannels(params: ListChannelsRequest): Request[ListChannelsResponse] = js.native
     def listDatasetContents(params: ListDatasetContentsRequest): Request[ListDatasetContentsResponse] = js.native
-    def listDatasets(params: ListDatasetsRequest): Request[ListDatasetsResponse]                      = js.native
-    def listDatastores(params: ListDatastoresRequest): Request[ListDatastoresResponse]                = js.native
-    def listPipelines(params: ListPipelinesRequest): Request[ListPipelinesResponse]                   = js.native
+    def listDatasets(params: ListDatasetsRequest): Request[ListDatasetsResponse] = js.native
+    def listDatastores(params: ListDatastoresRequest): Request[ListDatastoresResponse] = js.native
+    def listPipelines(params: ListPipelinesRequest): Request[ListPipelinesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def putLoggingOptions(params: PutLoggingOptionsRequest): Request[js.Object]                       = js.native
+    def putLoggingOptions(params: PutLoggingOptionsRequest): Request[js.Object] = js.native
     def runPipelineActivity(params: RunPipelineActivityRequest): Request[RunPipelineActivityResponse] = js.native
-    def sampleChannelData(params: SampleChannelDataRequest): Request[SampleChannelDataResponse]       = js.native
+    def sampleChannelData(params: SampleChannelDataRequest): Request[SampleChannelDataResponse] = js.native
     def startPipelineReprocessing(
         params: StartPipelineReprocessingRequest
-    ): Request[StartPipelineReprocessingResponse]                                   = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]       = js.native
+    ): Request[StartPipelineReprocessingResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
-    def updateChannel(params: UpdateChannelRequest): Request[js.Object]             = js.native
-    def updateDataset(params: UpdateDatasetRequest): Request[js.Object]             = js.native
-    def updateDatastore(params: UpdateDatastoreRequest): Request[js.Object]         = js.native
-    def updatePipeline(params: UpdatePipelineRequest): Request[js.Object]           = js.native
+    def updateChannel(params: UpdateChannelRequest): Request[js.Object] = js.native
+    def updateDataset(params: UpdateDatasetRequest): Request[js.Object] = js.native
+    def updateDatastore(params: UpdateDatastoreRequest): Request[js.Object] = js.native
+    def updatePipeline(params: UpdatePipelineRequest): Request[js.Object] = js.native
   }
 
   /**
@@ -229,7 +229,7 @@ package iotanalytics {
     ): AddAttributesActivity = {
       val __obj = js.Dynamic.literal(
         "attributes" -> attributes.asInstanceOf[js.Any],
-        "name"       -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       next.foreach(__v => __obj.updateDynamic("next")(__v.asInstanceOf[js.Any]))
@@ -276,7 +276,7 @@ package iotanalytics {
     ): BatchPutMessageRequest = {
       val __obj = js.Dynamic.literal(
         "channelName" -> channelName.asInstanceOf[js.Any],
-        "messages"    -> messages.asInstanceOf[js.Any]
+        "messages" -> messages.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[BatchPutMessageRequest]
@@ -314,7 +314,7 @@ package iotanalytics {
         reprocessingId: ReprocessingId
     ): CancelPipelineReprocessingRequest = {
       val __obj = js.Dynamic.literal(
-        "pipelineName"   -> pipelineName.asInstanceOf[js.Any],
+        "pipelineName" -> pipelineName.asInstanceOf[js.Any],
         "reprocessingId" -> reprocessingId.asInstanceOf[js.Any]
       )
 
@@ -391,7 +391,7 @@ package iotanalytics {
     ): ChannelActivity = {
       val __obj = js.Dynamic.literal(
         "channelName" -> channelName.asInstanceOf[js.Any],
-        "name"        -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       next.foreach(__v => __obj.updateDynamic("next")(__v.asInstanceOf[js.Any]))
@@ -422,7 +422,7 @@ package iotanalytics {
   sealed trait ChannelStatus extends js.Any
   object ChannelStatus extends js.Object {
     val CREATING = "CREATING".asInstanceOf[ChannelStatus]
-    val ACTIVE   = "ACTIVE".asInstanceOf[ChannelStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[ChannelStatus]
     val DELETING = "DELETING".asInstanceOf[ChannelStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING))
@@ -532,8 +532,8 @@ package iotanalytics {
         variables: js.UndefOr[Variables] = js.undefined
     ): ContainerDatasetAction = {
       val __obj = js.Dynamic.literal(
-        "executionRoleArn"      -> executionRoleArn.asInstanceOf[js.Any],
-        "image"                 -> image.asInstanceOf[js.Any],
+        "executionRoleArn" -> executionRoleArn.asInstanceOf[js.Any],
+        "image" -> image.asInstanceOf[js.Any],
         "resourceConfiguration" -> resourceConfiguration.asInstanceOf[js.Any]
       )
 
@@ -648,7 +648,7 @@ package iotanalytics {
         versioningConfiguration: js.UndefOr[VersioningConfiguration] = js.undefined
     ): CreateDatasetRequest = {
       val __obj = js.Dynamic.literal(
-        "actions"     -> actions.asInstanceOf[js.Any],
+        "actions" -> actions.asInstanceOf[js.Any],
         "datasetName" -> datasetName.asInstanceOf[js.Any]
       )
 
@@ -748,7 +748,7 @@ package iotanalytics {
     ): CreatePipelineRequest = {
       val __obj = js.Dynamic.literal(
         "pipelineActivities" -> pipelineActivities.asInstanceOf[js.Any],
-        "pipelineName"       -> pipelineName.asInstanceOf[js.Any]
+        "pipelineName" -> pipelineName.asInstanceOf[js.Any]
       )
 
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -793,7 +793,7 @@ package iotanalytics {
         keyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined
     ): CustomerManagedChannelS3Storage = {
       val __obj = js.Dynamic.literal(
-        "bucket"  -> bucket.asInstanceOf[js.Any],
+        "bucket" -> bucket.asInstanceOf[js.Any],
         "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
@@ -845,7 +845,7 @@ package iotanalytics {
         keyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined
     ): CustomerManagedDatastoreS3Storage = {
       val __obj = js.Dynamic.literal(
-        "bucket"  -> bucket.asInstanceOf[js.Any],
+        "bucket" -> bucket.asInstanceOf[js.Any],
         "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
@@ -975,7 +975,7 @@ package iotanalytics {
   @js.native
   sealed trait DatasetActionType extends js.Any
   object DatasetActionType extends js.Object {
-    val QUERY     = "QUERY".asInstanceOf[DatasetActionType]
+    val QUERY = "QUERY".asInstanceOf[DatasetActionType]
     val CONTAINER = "CONTAINER".asInstanceOf[DatasetActionType]
 
     val values = js.Object.freeze(js.Array(QUERY, CONTAINER))
@@ -1034,9 +1034,9 @@ package iotanalytics {
   @js.native
   sealed trait DatasetContentState extends js.Any
   object DatasetContentState extends js.Object {
-    val CREATING  = "CREATING".asInstanceOf[DatasetContentState]
+    val CREATING = "CREATING".asInstanceOf[DatasetContentState]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[DatasetContentState]
-    val FAILED    = "FAILED".asInstanceOf[DatasetContentState]
+    val FAILED = "FAILED".asInstanceOf[DatasetContentState]
 
     val values = js.Object.freeze(js.Array(CREATING, SUCCEEDED, FAILED))
   }
@@ -1141,7 +1141,7 @@ package iotanalytics {
   sealed trait DatasetStatus extends js.Any
   object DatasetStatus extends js.Object {
     val CREATING = "CREATING".asInstanceOf[DatasetStatus]
-    val ACTIVE   = "ACTIVE".asInstanceOf[DatasetStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[DatasetStatus]
     val DELETING = "DELETING".asInstanceOf[DatasetStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING))
@@ -1257,7 +1257,7 @@ package iotanalytics {
     ): DatastoreActivity = {
       val __obj = js.Dynamic.literal(
         "datastoreName" -> datastoreName.asInstanceOf[js.Any],
-        "name"          -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DatastoreActivity]
@@ -1287,7 +1287,7 @@ package iotanalytics {
   sealed trait DatastoreStatus extends js.Any
   object DatastoreStatus extends js.Object {
     val CREATING = "CREATING".asInstanceOf[DatastoreStatus]
-    val ACTIVE   = "ACTIVE".asInstanceOf[DatastoreStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[DatastoreStatus]
     val DELETING = "DELETING".asInstanceOf[DatastoreStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING))
@@ -1477,7 +1477,7 @@ package iotanalytics {
         timeExpression: TimeExpression
     ): DeltaTime = {
       val __obj = js.Dynamic.literal(
-        "offsetSeconds"  -> offsetSeconds.asInstanceOf[js.Any],
+        "offsetSeconds" -> offsetSeconds.asInstanceOf[js.Any],
         "timeExpression" -> timeExpression.asInstanceOf[js.Any]
       )
 
@@ -1685,8 +1685,8 @@ package iotanalytics {
     ): DeviceRegistryEnrichActivity = {
       val __obj = js.Dynamic.literal(
         "attribute" -> attribute.asInstanceOf[js.Any],
-        "name"      -> name.asInstanceOf[js.Any],
-        "roleArn"   -> roleArn.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
 
@@ -1718,8 +1718,8 @@ package iotanalytics {
     ): DeviceShadowEnrichActivity = {
       val __obj = js.Dynamic.literal(
         "attribute" -> attribute.asInstanceOf[js.Any],
-        "name"      -> name.asInstanceOf[js.Any],
-        "roleArn"   -> roleArn.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
 
@@ -1769,7 +1769,7 @@ package iotanalytics {
     ): FilterActivity = {
       val __obj = js.Dynamic.literal(
         "filter" -> filter.asInstanceOf[js.Any],
-        "name"   -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       next.foreach(__v => __obj.updateDynamic("next")(__v.asInstanceOf[js.Any]))
@@ -1837,7 +1837,7 @@ package iotanalytics {
     ): GlueConfiguration = {
       val __obj = js.Dynamic.literal(
         "databaseName" -> databaseName.asInstanceOf[js.Any],
-        "tableName"    -> tableName.asInstanceOf[js.Any]
+        "tableName" -> tableName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GlueConfiguration]
@@ -1861,7 +1861,7 @@ package iotanalytics {
     ): IotEventsDestinationConfiguration = {
       val __obj = js.Dynamic.literal(
         "inputName" -> inputName.asInstanceOf[js.Any],
-        "roleArn"   -> roleArn.asInstanceOf[js.Any]
+        "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[IotEventsDestinationConfiguration]
@@ -1888,9 +1888,9 @@ package iotanalytics {
         next: js.UndefOr[ActivityName] = js.undefined
     ): LambdaActivity = {
       val __obj = js.Dynamic.literal(
-        "batchSize"  -> batchSize.asInstanceOf[js.Any],
+        "batchSize" -> batchSize.asInstanceOf[js.Any],
         "lambdaName" -> lambdaName.asInstanceOf[js.Any],
-        "name"       -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       next.foreach(__v => __obj.updateDynamic("next")(__v.asInstanceOf[js.Any]))
@@ -2160,7 +2160,7 @@ package iotanalytics {
     ): LoggingOptions = {
       val __obj = js.Dynamic.literal(
         "enabled" -> enabled.asInstanceOf[js.Any],
-        "level"   -> level.asInstanceOf[js.Any],
+        "level" -> level.asInstanceOf[js.Any],
         "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
@@ -2189,8 +2189,8 @@ package iotanalytics {
     ): MathActivity = {
       val __obj = js.Dynamic.literal(
         "attribute" -> attribute.asInstanceOf[js.Any],
-        "math"      -> math.asInstanceOf[js.Any],
-        "name"      -> name.asInstanceOf[js.Any]
+        "math" -> math.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       next.foreach(__v => __obj.updateDynamic("next")(__v.asInstanceOf[js.Any]))
@@ -2215,7 +2215,7 @@ package iotanalytics {
     ): Message = {
       val __obj = js.Dynamic.literal(
         "messageId" -> messageId.asInstanceOf[js.Any],
-        "payload"   -> payload.asInstanceOf[js.Any]
+        "payload" -> payload.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Message]
@@ -2407,7 +2407,7 @@ package iotanalytics {
     ): RemoveAttributesActivity = {
       val __obj = js.Dynamic.literal(
         "attributes" -> attributes.asInstanceOf[js.Any],
-        "name"       -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       next.foreach(__v => __obj.updateDynamic("next")(__v.asInstanceOf[js.Any]))
@@ -2418,10 +2418,10 @@ package iotanalytics {
   @js.native
   sealed trait ReprocessingStatus extends js.Any
   object ReprocessingStatus extends js.Object {
-    val RUNNING   = "RUNNING".asInstanceOf[ReprocessingStatus]
+    val RUNNING = "RUNNING".asInstanceOf[ReprocessingStatus]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[ReprocessingStatus]
     val CANCELLED = "CANCELLED".asInstanceOf[ReprocessingStatus]
-    val FAILED    = "FAILED".asInstanceOf[ReprocessingStatus]
+    val FAILED = "FAILED".asInstanceOf[ReprocessingStatus]
 
     val values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, CANCELLED, FAILED))
   }
@@ -2467,7 +2467,7 @@ package iotanalytics {
         volumeSizeInGB: VolumeSizeInGB
     ): ResourceConfiguration = {
       val __obj = js.Dynamic.literal(
-        "computeType"    -> computeType.asInstanceOf[js.Any],
+        "computeType" -> computeType.asInstanceOf[js.Any],
         "volumeSizeInGB" -> volumeSizeInGB.asInstanceOf[js.Any]
       )
 
@@ -2510,7 +2510,7 @@ package iotanalytics {
         pipelineActivity: PipelineActivity
     ): RunPipelineActivityRequest = {
       val __obj = js.Dynamic.literal(
-        "payloads"         -> payloads.asInstanceOf[js.Any],
+        "payloads" -> payloads.asInstanceOf[js.Any],
         "pipelineActivity" -> pipelineActivity.asInstanceOf[js.Any]
       )
 
@@ -2557,8 +2557,8 @@ package iotanalytics {
         glueConfiguration: js.UndefOr[GlueConfiguration] = js.undefined
     ): S3DestinationConfiguration = {
       val __obj = js.Dynamic.literal(
-        "bucket"  -> bucket.asInstanceOf[js.Any],
-        "key"     -> key.asInstanceOf[js.Any],
+        "bucket" -> bucket.asInstanceOf[js.Any],
+        "key" -> key.asInstanceOf[js.Any],
         "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
@@ -2648,7 +2648,7 @@ package iotanalytics {
     ): SelectAttributesActivity = {
       val __obj = js.Dynamic.literal(
         "attributes" -> attributes.asInstanceOf[js.Any],
-        "name"       -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       next.foreach(__v => __obj.updateDynamic("next")(__v.asInstanceOf[js.Any]))
@@ -2800,7 +2800,7 @@ package iotanalytics {
         value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "key"   -> key.asInstanceOf[js.Any],
+        "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 
@@ -2822,7 +2822,7 @@ package iotanalytics {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -2877,7 +2877,7 @@ package iotanalytics {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -2942,7 +2942,7 @@ package iotanalytics {
         versioningConfiguration: js.UndefOr[VersioningConfiguration] = js.undefined
     ): UpdateDatasetRequest = {
       val __obj = js.Dynamic.literal(
-        "actions"     -> actions.asInstanceOf[js.Any],
+        "actions" -> actions.asInstanceOf[js.Any],
         "datasetName" -> datasetName.asInstanceOf[js.Any]
       )
 
@@ -2992,7 +2992,7 @@ package iotanalytics {
     ): UpdatePipelineRequest = {
       val __obj = js.Dynamic.literal(
         "pipelineActivities" -> pipelineActivities.asInstanceOf[js.Any],
-        "pipelineName"       -> pipelineName.asInstanceOf[js.Any]
+        "pipelineName" -> pipelineName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdatePipelineRequest]

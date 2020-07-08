@@ -7,61 +7,65 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object imagebuilder {
-  type AccountList                            = js.Array[NonEmptyString]
-  type AmiList                                = js.Array[Ami]
-  type AmiNameString                          = String
-  type Arn                                    = String
-  type ArnList                                = js.Array[Arn]
-  type ClientToken                            = String
-  type ComponentBuildVersionArn               = String
-  type ComponentConfigurationList             = js.Array[ComponentConfiguration]
-  type ComponentData                          = String
-  type ComponentSummaryList                   = js.Array[ComponentSummary]
-  type ComponentVersionArn                    = String
-  type ComponentVersionArnOrBuildVersionArn   = String
-  type ComponentVersionList                   = js.Array[ComponentVersion]
-  type DateTime                               = String
-  type DistributionConfigurationArn           = String
-  type DistributionConfigurationSummaryList   = js.Array[DistributionConfigurationSummary]
-  type DistributionList                       = js.Array[Distribution]
-  type DistributionTimeoutMinutes             = Int
-  type EbsIopsInteger                         = Int
-  type EbsVolumeSizeInteger                   = Int
-  type EmptyString                            = String
-  type FilterList                             = js.Array[Filter]
-  type FilterName                             = String
-  type FilterValue                            = String
-  type FilterValues                           = js.Array[FilterValue]
-  type ImageBuildVersionArn                   = String
-  type ImageBuilderArn                        = String
-  type ImagePipelineArn                       = String
-  type ImagePipelineList                      = js.Array[ImagePipeline]
-  type ImageRecipeArn                         = String
-  type ImageRecipeSummaryList                 = js.Array[ImageRecipeSummary]
-  type ImageSummaryList                       = js.Array[ImageSummary]
-  type ImageTestsTimeoutMinutes               = Int
-  type ImageVersionArn                        = String
-  type ImageVersionList                       = js.Array[ImageVersion]
-  type InfrastructureConfigurationArn         = String
+  type AccountList = js.Array[NonEmptyString]
+  type AmiList = js.Array[Ami]
+  type AmiNameString = String
+  type Arn = String
+  type ArnList = js.Array[Arn]
+  type ClientToken = String
+  type ComponentBuildVersionArn = String
+  type ComponentConfigurationList = js.Array[ComponentConfiguration]
+  type ComponentData = String
+  type ComponentSummaryList = js.Array[ComponentSummary]
+  type ComponentVersionArn = String
+  type ComponentVersionArnOrBuildVersionArn = String
+  type ComponentVersionList = js.Array[ComponentVersion]
+  type DateTime = String
+  type DistributionConfigurationArn = String
+  type DistributionConfigurationSummaryList = js.Array[DistributionConfigurationSummary]
+  type DistributionList = js.Array[Distribution]
+  type DistributionTimeoutMinutes = Int
+  type EbsIopsInteger = Int
+  type EbsVolumeSizeInteger = Int
+  type EmptyString = String
+  type FilterList = js.Array[Filter]
+  type FilterName = String
+  type FilterValue = String
+  type FilterValues = js.Array[FilterValue]
+  type ImageBuildVersionArn = String
+  type ImageBuilderArn = String
+  type ImagePipelineArn = String
+  type ImagePipelineList = js.Array[ImagePipeline]
+  type ImageRecipeArn = String
+  type ImageRecipeSummaryList = js.Array[ImageRecipeSummary]
+  type ImageSummaryList = js.Array[ImageSummary]
+  type ImageTestsTimeoutMinutes = Int
+  type ImageVersionArn = String
+  type ImageVersionArnOrBuildVersionArn = String
+  type ImageVersionList = js.Array[ImageVersion]
+  type InfrastructureConfigurationArn = String
   type InfrastructureConfigurationSummaryList = js.Array[InfrastructureConfigurationSummary]
-  type InlineComponentData                    = String
-  type InstanceBlockDeviceMappings            = js.Array[InstanceBlockDeviceMapping]
-  type InstanceType                           = String
-  type InstanceTypeList                       = js.Array[InstanceType]
-  type NonEmptyString                         = String
-  type NullableBoolean                        = Boolean
-  type ResourceName                           = String
-  type ResourcePolicyDocument                 = String
-  type RestrictedInteger                      = Int
-  type SecurityGroupIds                       = js.Array[NonEmptyString]
-  type SnsTopicArn                            = String
-  type StringList                             = js.Array[NonEmptyString]
-  type TagKey                                 = String
-  type TagKeyList                             = js.Array[TagKey]
-  type TagMap                                 = js.Dictionary[TagValue]
-  type TagValue                               = String
-  type Uri                                    = String
-  type VersionNumber                          = String
+  type InlineComponentData = String
+  type InstanceBlockDeviceMappings = js.Array[InstanceBlockDeviceMapping]
+  type InstanceType = String
+  type InstanceTypeList = js.Array[InstanceType]
+  type NonEmptyString = String
+  type NullableBoolean = Boolean
+  type OsVersion = String
+  type OsVersionList = js.Array[OsVersion]
+  type ResourceName = String
+  type ResourcePolicyDocument = String
+  type ResourceTagMap = js.Dictionary[TagValue]
+  type RestrictedInteger = Int
+  type SecurityGroupIds = js.Array[NonEmptyString]
+  type SnsTopicArn = String
+  type StringList = js.Array[NonEmptyString]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagMap = js.Dictionary[TagValue]
+  type TagValue = String
+  type Uri = String
+  type VersionNumber = String
 
   implicit final class ImagebuilderOps(private val service: Imagebuilder) extends AnyVal {
 
@@ -182,43 +186,43 @@ package imagebuilder {
     def this(config: AWSConfig) = this()
 
     def cancelImageCreation(params: CancelImageCreationRequest): Request[CancelImageCreationResponse] = js.native
-    def createComponent(params: CreateComponentRequest): Request[CreateComponentResponse]             = js.native
+    def createComponent(params: CreateComponentRequest): Request[CreateComponentResponse] = js.native
     def createDistributionConfiguration(
         params: CreateDistributionConfigurationRequest
-    ): Request[CreateDistributionConfigurationResponse]                                               = js.native
-    def createImage(params: CreateImageRequest): Request[CreateImageResponse]                         = js.native
+    ): Request[CreateDistributionConfigurationResponse] = js.native
+    def createImage(params: CreateImageRequest): Request[CreateImageResponse] = js.native
     def createImagePipeline(params: CreateImagePipelineRequest): Request[CreateImagePipelineResponse] = js.native
-    def createImageRecipe(params: CreateImageRecipeRequest): Request[CreateImageRecipeResponse]       = js.native
+    def createImageRecipe(params: CreateImageRecipeRequest): Request[CreateImageRecipeResponse] = js.native
     def createInfrastructureConfiguration(
         params: CreateInfrastructureConfigurationRequest
-    ): Request[CreateInfrastructureConfigurationResponse]                                 = js.native
+    ): Request[CreateInfrastructureConfigurationResponse] = js.native
     def deleteComponent(params: DeleteComponentRequest): Request[DeleteComponentResponse] = js.native
     def deleteDistributionConfiguration(
         params: DeleteDistributionConfigurationRequest
-    ): Request[DeleteDistributionConfigurationResponse]                                               = js.native
-    def deleteImage(params: DeleteImageRequest): Request[DeleteImageResponse]                         = js.native
+    ): Request[DeleteDistributionConfigurationResponse] = js.native
+    def deleteImage(params: DeleteImageRequest): Request[DeleteImageResponse] = js.native
     def deleteImagePipeline(params: DeleteImagePipelineRequest): Request[DeleteImagePipelineResponse] = js.native
-    def deleteImageRecipe(params: DeleteImageRecipeRequest): Request[DeleteImageRecipeResponse]       = js.native
+    def deleteImageRecipe(params: DeleteImageRecipeRequest): Request[DeleteImageRecipeResponse] = js.native
     def deleteInfrastructureConfiguration(
         params: DeleteInfrastructureConfigurationRequest
-    ): Request[DeleteInfrastructureConfigurationResponse]                                          = js.native
-    def getComponent(params: GetComponentRequest): Request[GetComponentResponse]                   = js.native
+    ): Request[DeleteInfrastructureConfigurationResponse] = js.native
+    def getComponent(params: GetComponentRequest): Request[GetComponentResponse] = js.native
     def getComponentPolicy(params: GetComponentPolicyRequest): Request[GetComponentPolicyResponse] = js.native
     def getDistributionConfiguration(
         params: GetDistributionConfigurationRequest
-    ): Request[GetDistributionConfigurationResponse]                                                     = js.native
-    def getImage(params: GetImageRequest): Request[GetImageResponse]                                     = js.native
-    def getImagePipeline(params: GetImagePipelineRequest): Request[GetImagePipelineResponse]             = js.native
-    def getImagePolicy(params: GetImagePolicyRequest): Request[GetImagePolicyResponse]                   = js.native
-    def getImageRecipe(params: GetImageRecipeRequest): Request[GetImageRecipeResponse]                   = js.native
+    ): Request[GetDistributionConfigurationResponse] = js.native
+    def getImage(params: GetImageRequest): Request[GetImageResponse] = js.native
+    def getImagePipeline(params: GetImagePipelineRequest): Request[GetImagePipelineResponse] = js.native
+    def getImagePolicy(params: GetImagePolicyRequest): Request[GetImagePolicyResponse] = js.native
+    def getImageRecipe(params: GetImageRecipeRequest): Request[GetImageRecipeResponse] = js.native
     def getImageRecipePolicy(params: GetImageRecipePolicyRequest): Request[GetImageRecipePolicyResponse] = js.native
     def getInfrastructureConfiguration(
         params: GetInfrastructureConfigurationRequest
-    ): Request[GetInfrastructureConfigurationResponse]                                    = js.native
+    ): Request[GetInfrastructureConfigurationResponse] = js.native
     def importComponent(params: ImportComponentRequest): Request[ImportComponentResponse] = js.native
     def listComponentBuildVersions(
         params: ListComponentBuildVersionsRequest
-    ): Request[ListComponentBuildVersionsResponse]                                     = js.native
+    ): Request[ListComponentBuildVersionsResponse] = js.native
     def listComponents(params: ListComponentsRequest): Request[ListComponentsResponse] = js.native
     def listDistributionConfigurations(
         params: ListDistributionConfigurationsRequest
@@ -228,23 +232,23 @@ package imagebuilder {
     def listImagePipelineImages(params: ListImagePipelineImagesRequest): Request[ListImagePipelineImagesResponse] =
       js.native
     def listImagePipelines(params: ListImagePipelinesRequest): Request[ListImagePipelinesResponse] = js.native
-    def listImageRecipes(params: ListImageRecipesRequest): Request[ListImageRecipesResponse]       = js.native
-    def listImages(params: ListImagesRequest): Request[ListImagesResponse]                         = js.native
+    def listImageRecipes(params: ListImageRecipesRequest): Request[ListImageRecipesResponse] = js.native
+    def listImages(params: ListImagesRequest): Request[ListImagesResponse] = js.native
     def listInfrastructureConfigurations(
         params: ListInfrastructureConfigurationsRequest
-    ): Request[ListInfrastructureConfigurationsResponse]                                                 = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]    = js.native
-    def putComponentPolicy(params: PutComponentPolicyRequest): Request[PutComponentPolicyResponse]       = js.native
-    def putImagePolicy(params: PutImagePolicyRequest): Request[PutImagePolicyResponse]                   = js.native
+    ): Request[ListInfrastructureConfigurationsResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def putComponentPolicy(params: PutComponentPolicyRequest): Request[PutComponentPolicyResponse] = js.native
+    def putImagePolicy(params: PutImagePolicyRequest): Request[PutImagePolicyResponse] = js.native
     def putImageRecipePolicy(params: PutImageRecipePolicyRequest): Request[PutImageRecipePolicyResponse] = js.native
     def startImagePipelineExecution(
         params: StartImagePipelineExecutionRequest
-    ): Request[StartImagePipelineExecutionResponse]                                 = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]       = js.native
+    ): Request[StartImagePipelineExecutionResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateDistributionConfiguration(
         params: UpdateDistributionConfigurationRequest
-    ): Request[UpdateDistributionConfigurationResponse]                                               = js.native
+    ): Request[UpdateDistributionConfigurationResponse] = js.native
     def updateImagePipeline(params: UpdateImagePipelineRequest): Request[UpdateImagePipelineResponse] = js.native
     def updateInfrastructureConfiguration(
         params: UpdateInfrastructureConfigurationRequest
@@ -289,6 +293,7 @@ package imagebuilder {
   trait AmiDistributionConfiguration extends js.Object {
     var amiTags: js.UndefOr[TagMap]
     var description: js.UndefOr[NonEmptyString]
+    var kmsKeyId: js.UndefOr[NonEmptyString]
     var launchPermission: js.UndefOr[LaunchPermissionConfiguration]
     var name: js.UndefOr[AmiNameString]
   }
@@ -298,12 +303,14 @@ package imagebuilder {
     def apply(
         amiTags: js.UndefOr[TagMap] = js.undefined,
         description: js.UndefOr[NonEmptyString] = js.undefined,
+        kmsKeyId: js.UndefOr[NonEmptyString] = js.undefined,
         launchPermission: js.UndefOr[LaunchPermissionConfiguration] = js.undefined,
         name: js.UndefOr[AmiNameString] = js.undefined
     ): AmiDistributionConfiguration = {
       val __obj = js.Dynamic.literal()
       amiTags.foreach(__v => __obj.updateDynamic("amiTags")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
       launchPermission.foreach(__v => __obj.updateDynamic("launchPermission")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AmiDistributionConfiguration]
@@ -323,7 +330,7 @@ package imagebuilder {
         imageBuildVersionArn: ImageBuildVersionArn
     ): CancelImageCreationRequest = {
       val __obj = js.Dynamic.literal(
-        "clientToken"          -> clientToken.asInstanceOf[js.Any],
+        "clientToken" -> clientToken.asInstanceOf[js.Any],
         "imageBuildVersionArn" -> imageBuildVersionArn.asInstanceOf[js.Any]
       )
 
@@ -368,6 +375,7 @@ package imagebuilder {
     var name: js.UndefOr[ResourceName]
     var owner: js.UndefOr[NonEmptyString]
     var platform: js.UndefOr[Platform]
+    var supportedOsVersions: js.UndefOr[OsVersionList]
     var tags: js.UndefOr[TagMap]
     var `type`: js.UndefOr[ComponentType]
     var version: js.UndefOr[VersionNumber]
@@ -386,6 +394,7 @@ package imagebuilder {
         name: js.UndefOr[ResourceName] = js.undefined,
         owner: js.UndefOr[NonEmptyString] = js.undefined,
         platform: js.UndefOr[Platform] = js.undefined,
+        supportedOsVersions: js.UndefOr[OsVersionList] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined,
         `type`: js.UndefOr[ComponentType] = js.undefined,
         version: js.UndefOr[VersionNumber] = js.undefined
@@ -401,6 +410,7 @@ package imagebuilder {
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       owner.foreach(__v => __obj.updateDynamic("owner")(__v.asInstanceOf[js.Any]))
       platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
+      supportedOsVersions.foreach(__v => __obj.updateDynamic("supportedOsVersions")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
@@ -449,6 +459,7 @@ package imagebuilder {
     var name: js.UndefOr[ResourceName]
     var owner: js.UndefOr[NonEmptyString]
     var platform: js.UndefOr[Platform]
+    var supportedOsVersions: js.UndefOr[OsVersionList]
     var tags: js.UndefOr[TagMap]
     var `type`: js.UndefOr[ComponentType]
     var version: js.UndefOr[VersionNumber]
@@ -464,6 +475,7 @@ package imagebuilder {
         name: js.UndefOr[ResourceName] = js.undefined,
         owner: js.UndefOr[NonEmptyString] = js.undefined,
         platform: js.UndefOr[Platform] = js.undefined,
+        supportedOsVersions: js.UndefOr[OsVersionList] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined,
         `type`: js.UndefOr[ComponentType] = js.undefined,
         version: js.UndefOr[VersionNumber] = js.undefined
@@ -476,6 +488,7 @@ package imagebuilder {
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       owner.foreach(__v => __obj.updateDynamic("owner")(__v.asInstanceOf[js.Any]))
       platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
+      supportedOsVersions.foreach(__v => __obj.updateDynamic("supportedOsVersions")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
@@ -487,7 +500,7 @@ package imagebuilder {
   sealed trait ComponentType extends js.Any
   object ComponentType extends js.Object {
     val BUILD = "BUILD".asInstanceOf[ComponentType]
-    val TEST  = "TEST".asInstanceOf[ComponentType]
+    val TEST = "TEST".asInstanceOf[ComponentType]
 
     val values = js.Object.freeze(js.Array(BUILD, TEST))
   }
@@ -503,6 +516,7 @@ package imagebuilder {
     var name: js.UndefOr[ResourceName]
     var owner: js.UndefOr[NonEmptyString]
     var platform: js.UndefOr[Platform]
+    var supportedOsVersions: js.UndefOr[OsVersionList]
     var `type`: js.UndefOr[ComponentType]
     var version: js.UndefOr[VersionNumber]
   }
@@ -516,6 +530,7 @@ package imagebuilder {
         name: js.UndefOr[ResourceName] = js.undefined,
         owner: js.UndefOr[NonEmptyString] = js.undefined,
         platform: js.UndefOr[Platform] = js.undefined,
+        supportedOsVersions: js.UndefOr[OsVersionList] = js.undefined,
         `type`: js.UndefOr[ComponentType] = js.undefined,
         version: js.UndefOr[VersionNumber] = js.undefined
     ): ComponentVersion = {
@@ -526,6 +541,7 @@ package imagebuilder {
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       owner.foreach(__v => __obj.updateDynamic("owner")(__v.asInstanceOf[js.Any]))
       platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
+      supportedOsVersions.foreach(__v => __obj.updateDynamic("supportedOsVersions")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComponentVersion]
@@ -542,6 +558,7 @@ package imagebuilder {
     var data: js.UndefOr[InlineComponentData]
     var description: js.UndefOr[NonEmptyString]
     var kmsKeyId: js.UndefOr[NonEmptyString]
+    var supportedOsVersions: js.UndefOr[OsVersionList]
     var tags: js.UndefOr[TagMap]
     var uri: js.UndefOr[Uri]
   }
@@ -557,13 +574,14 @@ package imagebuilder {
         data: js.UndefOr[InlineComponentData] = js.undefined,
         description: js.UndefOr[NonEmptyString] = js.undefined,
         kmsKeyId: js.UndefOr[NonEmptyString] = js.undefined,
+        supportedOsVersions: js.UndefOr[OsVersionList] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined,
         uri: js.UndefOr[Uri] = js.undefined
     ): CreateComponentRequest = {
       val __obj = js.Dynamic.literal(
-        "clientToken"     -> clientToken.asInstanceOf[js.Any],
-        "name"            -> name.asInstanceOf[js.Any],
-        "platform"        -> platform.asInstanceOf[js.Any],
+        "clientToken" -> clientToken.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "platform" -> platform.asInstanceOf[js.Any],
         "semanticVersion" -> semanticVersion.asInstanceOf[js.Any]
       )
 
@@ -571,6 +589,7 @@ package imagebuilder {
       data.foreach(__v => __obj.updateDynamic("data")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
+      supportedOsVersions.foreach(__v => __obj.updateDynamic("supportedOsVersions")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       uri.foreach(__v => __obj.updateDynamic("uri")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateComponentRequest]
@@ -618,9 +637,9 @@ package imagebuilder {
         tags: js.UndefOr[TagMap] = js.undefined
     ): CreateDistributionConfigurationRequest = {
       val __obj = js.Dynamic.literal(
-        "clientToken"   -> clientToken.asInstanceOf[js.Any],
+        "clientToken" -> clientToken.asInstanceOf[js.Any],
         "distributions" -> distributions.asInstanceOf[js.Any],
-        "name"          -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
@@ -661,6 +680,7 @@ package imagebuilder {
     var name: ResourceName
     var description: js.UndefOr[NonEmptyString]
     var distributionConfigurationArn: js.UndefOr[DistributionConfigurationArn]
+    var enhancedImageMetadataEnabled: js.UndefOr[NullableBoolean]
     var imageTestsConfiguration: js.UndefOr[ImageTestsConfiguration]
     var schedule: js.UndefOr[Schedule]
     var status: js.UndefOr[PipelineStatus]
@@ -676,21 +696,25 @@ package imagebuilder {
         name: ResourceName,
         description: js.UndefOr[NonEmptyString] = js.undefined,
         distributionConfigurationArn: js.UndefOr[DistributionConfigurationArn] = js.undefined,
+        enhancedImageMetadataEnabled: js.UndefOr[NullableBoolean] = js.undefined,
         imageTestsConfiguration: js.UndefOr[ImageTestsConfiguration] = js.undefined,
         schedule: js.UndefOr[Schedule] = js.undefined,
         status: js.UndefOr[PipelineStatus] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): CreateImagePipelineRequest = {
       val __obj = js.Dynamic.literal(
-        "clientToken"                    -> clientToken.asInstanceOf[js.Any],
-        "imageRecipeArn"                 -> imageRecipeArn.asInstanceOf[js.Any],
+        "clientToken" -> clientToken.asInstanceOf[js.Any],
+        "imageRecipeArn" -> imageRecipeArn.asInstanceOf[js.Any],
         "infrastructureConfigurationArn" -> infrastructureConfigurationArn.asInstanceOf[js.Any],
-        "name"                           -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       distributionConfigurationArn.foreach(__v =>
         __obj.updateDynamic("distributionConfigurationArn")(__v.asInstanceOf[js.Any])
+      )
+      enhancedImageMetadataEnabled.foreach(__v =>
+        __obj.updateDynamic("enhancedImageMetadataEnabled")(__v.asInstanceOf[js.Any])
       )
       imageTestsConfiguration.foreach(__v => __obj.updateDynamic("imageTestsConfiguration")(__v.asInstanceOf[js.Any]))
       schedule.foreach(__v => __obj.updateDynamic("schedule")(__v.asInstanceOf[js.Any]))
@@ -732,6 +756,7 @@ package imagebuilder {
     var blockDeviceMappings: js.UndefOr[InstanceBlockDeviceMappings]
     var description: js.UndefOr[NonEmptyString]
     var tags: js.UndefOr[TagMap]
+    var workingDirectory: js.UndefOr[NonEmptyString]
   }
 
   object CreateImageRecipeRequest {
@@ -744,19 +769,21 @@ package imagebuilder {
         semanticVersion: VersionNumber,
         blockDeviceMappings: js.UndefOr[InstanceBlockDeviceMappings] = js.undefined,
         description: js.UndefOr[NonEmptyString] = js.undefined,
-        tags: js.UndefOr[TagMap] = js.undefined
+        tags: js.UndefOr[TagMap] = js.undefined,
+        workingDirectory: js.UndefOr[NonEmptyString] = js.undefined
     ): CreateImageRecipeRequest = {
       val __obj = js.Dynamic.literal(
-        "clientToken"     -> clientToken.asInstanceOf[js.Any],
-        "components"      -> components.asInstanceOf[js.Any],
-        "name"            -> name.asInstanceOf[js.Any],
-        "parentImage"     -> parentImage.asInstanceOf[js.Any],
+        "clientToken" -> clientToken.asInstanceOf[js.Any],
+        "components" -> components.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "parentImage" -> parentImage.asInstanceOf[js.Any],
         "semanticVersion" -> semanticVersion.asInstanceOf[js.Any]
       )
 
       blockDeviceMappings.foreach(__v => __obj.updateDynamic("blockDeviceMappings")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      workingDirectory.foreach(__v => __obj.updateDynamic("workingDirectory")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateImageRecipeRequest]
     }
   }
@@ -789,6 +816,7 @@ package imagebuilder {
     var imageRecipeArn: ImageRecipeArn
     var infrastructureConfigurationArn: InfrastructureConfigurationArn
     var distributionConfigurationArn: js.UndefOr[DistributionConfigurationArn]
+    var enhancedImageMetadataEnabled: js.UndefOr[NullableBoolean]
     var imageTestsConfiguration: js.UndefOr[ImageTestsConfiguration]
     var tags: js.UndefOr[TagMap]
   }
@@ -800,17 +828,21 @@ package imagebuilder {
         imageRecipeArn: ImageRecipeArn,
         infrastructureConfigurationArn: InfrastructureConfigurationArn,
         distributionConfigurationArn: js.UndefOr[DistributionConfigurationArn] = js.undefined,
+        enhancedImageMetadataEnabled: js.UndefOr[NullableBoolean] = js.undefined,
         imageTestsConfiguration: js.UndefOr[ImageTestsConfiguration] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): CreateImageRequest = {
       val __obj = js.Dynamic.literal(
-        "clientToken"                    -> clientToken.asInstanceOf[js.Any],
-        "imageRecipeArn"                 -> imageRecipeArn.asInstanceOf[js.Any],
+        "clientToken" -> clientToken.asInstanceOf[js.Any],
+        "imageRecipeArn" -> imageRecipeArn.asInstanceOf[js.Any],
         "infrastructureConfigurationArn" -> infrastructureConfigurationArn.asInstanceOf[js.Any]
       )
 
       distributionConfigurationArn.foreach(__v =>
         __obj.updateDynamic("distributionConfigurationArn")(__v.asInstanceOf[js.Any])
+      )
+      enhancedImageMetadataEnabled.foreach(__v =>
+        __obj.updateDynamic("enhancedImageMetadataEnabled")(__v.asInstanceOf[js.Any])
       )
       imageTestsConfiguration.foreach(__v => __obj.updateDynamic("imageTestsConfiguration")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -849,6 +881,7 @@ package imagebuilder {
     var instanceTypes: js.UndefOr[InstanceTypeList]
     var keyPair: js.UndefOr[NonEmptyString]
     var logging: js.UndefOr[Logging]
+    var resourceTags: js.UndefOr[ResourceTagMap]
     var securityGroupIds: js.UndefOr[SecurityGroupIds]
     var snsTopicArn: js.UndefOr[SnsTopicArn]
     var subnetId: js.UndefOr[NonEmptyString]
@@ -866,6 +899,7 @@ package imagebuilder {
         instanceTypes: js.UndefOr[InstanceTypeList] = js.undefined,
         keyPair: js.UndefOr[NonEmptyString] = js.undefined,
         logging: js.UndefOr[Logging] = js.undefined,
+        resourceTags: js.UndefOr[ResourceTagMap] = js.undefined,
         securityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
         snsTopicArn: js.UndefOr[SnsTopicArn] = js.undefined,
         subnetId: js.UndefOr[NonEmptyString] = js.undefined,
@@ -873,15 +907,16 @@ package imagebuilder {
         terminateInstanceOnFailure: js.UndefOr[NullableBoolean] = js.undefined
     ): CreateInfrastructureConfigurationRequest = {
       val __obj = js.Dynamic.literal(
-        "clientToken"         -> clientToken.asInstanceOf[js.Any],
+        "clientToken" -> clientToken.asInstanceOf[js.Any],
         "instanceProfileName" -> instanceProfileName.asInstanceOf[js.Any],
-        "name"                -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       instanceTypes.foreach(__v => __obj.updateDynamic("instanceTypes")(__v.asInstanceOf[js.Any]))
       keyPair.foreach(__v => __obj.updateDynamic("keyPair")(__v.asInstanceOf[js.Any]))
       logging.foreach(__v => __obj.updateDynamic("logging")(__v.asInstanceOf[js.Any]))
+      resourceTags.foreach(__v => __obj.updateDynamic("resourceTags")(__v.asInstanceOf[js.Any]))
       securityGroupIds.foreach(__v => __obj.updateDynamic("securityGroupIds")(__v.asInstanceOf[js.Any]))
       snsTopicArn.foreach(__v => __obj.updateDynamic("snsTopicArn")(__v.asInstanceOf[js.Any]))
       subnetId.foreach(__v => __obj.updateDynamic("subnetId")(__v.asInstanceOf[js.Any]))
@@ -1289,10 +1324,10 @@ package imagebuilder {
   sealed trait EbsVolumeType extends js.Any
   object EbsVolumeType extends js.Object {
     val standard = "standard".asInstanceOf[EbsVolumeType]
-    val io1      = "io1".asInstanceOf[EbsVolumeType]
-    val gp2      = "gp2".asInstanceOf[EbsVolumeType]
-    val sc1      = "sc1".asInstanceOf[EbsVolumeType]
-    val st1      = "st1".asInstanceOf[EbsVolumeType]
+    val io1 = "io1".asInstanceOf[EbsVolumeType]
+    val gp2 = "gp2".asInstanceOf[EbsVolumeType]
+    val sc1 = "sc1".asInstanceOf[EbsVolumeType]
+    val st1 = "st1".asInstanceOf[EbsVolumeType]
 
     val values = js.Object.freeze(js.Array(standard, io1, gp2, sc1, st1))
   }
@@ -1358,13 +1393,13 @@ package imagebuilder {
 
   @js.native
   trait GetComponentRequest extends js.Object {
-    var componentBuildVersionArn: ComponentBuildVersionArn
+    var componentBuildVersionArn: ComponentVersionArnOrBuildVersionArn
   }
 
   object GetComponentRequest {
     @inline
     def apply(
-        componentBuildVersionArn: ComponentBuildVersionArn
+        componentBuildVersionArn: ComponentVersionArnOrBuildVersionArn
     ): GetComponentRequest = {
       val __obj = js.Dynamic.literal(
         "componentBuildVersionArn" -> componentBuildVersionArn.asInstanceOf[js.Any]
@@ -1582,13 +1617,13 @@ package imagebuilder {
 
   @js.native
   trait GetImageRequest extends js.Object {
-    var imageBuildVersionArn: ImageBuildVersionArn
+    var imageBuildVersionArn: ImageVersionArnOrBuildVersionArn
   }
 
   object GetImageRequest {
     @inline
     def apply(
-        imageBuildVersionArn: ImageBuildVersionArn
+        imageBuildVersionArn: ImageVersionArnOrBuildVersionArn
     ): GetImageRequest = {
       val __obj = js.Dynamic.literal(
         "imageBuildVersionArn" -> imageBuildVersionArn.asInstanceOf[js.Any]
@@ -1670,10 +1705,12 @@ package imagebuilder {
     var arn: js.UndefOr[ImageBuilderArn]
     var dateCreated: js.UndefOr[DateTime]
     var distributionConfiguration: js.UndefOr[DistributionConfiguration]
+    var enhancedImageMetadataEnabled: js.UndefOr[NullableBoolean]
     var imageRecipe: js.UndefOr[ImageRecipe]
     var imageTestsConfiguration: js.UndefOr[ImageTestsConfiguration]
     var infrastructureConfiguration: js.UndefOr[InfrastructureConfiguration]
     var name: js.UndefOr[ResourceName]
+    var osVersion: js.UndefOr[OsVersion]
     var outputResources: js.UndefOr[OutputResources]
     var platform: js.UndefOr[Platform]
     var sourcePipelineArn: js.UndefOr[Arn]
@@ -1689,10 +1726,12 @@ package imagebuilder {
         arn: js.UndefOr[ImageBuilderArn] = js.undefined,
         dateCreated: js.UndefOr[DateTime] = js.undefined,
         distributionConfiguration: js.UndefOr[DistributionConfiguration] = js.undefined,
+        enhancedImageMetadataEnabled: js.UndefOr[NullableBoolean] = js.undefined,
         imageRecipe: js.UndefOr[ImageRecipe] = js.undefined,
         imageTestsConfiguration: js.UndefOr[ImageTestsConfiguration] = js.undefined,
         infrastructureConfiguration: js.UndefOr[InfrastructureConfiguration] = js.undefined,
         name: js.UndefOr[ResourceName] = js.undefined,
+        osVersion: js.UndefOr[OsVersion] = js.undefined,
         outputResources: js.UndefOr[OutputResources] = js.undefined,
         platform: js.UndefOr[Platform] = js.undefined,
         sourcePipelineArn: js.UndefOr[Arn] = js.undefined,
@@ -1707,12 +1746,16 @@ package imagebuilder {
       distributionConfiguration.foreach(__v =>
         __obj.updateDynamic("distributionConfiguration")(__v.asInstanceOf[js.Any])
       )
+      enhancedImageMetadataEnabled.foreach(__v =>
+        __obj.updateDynamic("enhancedImageMetadataEnabled")(__v.asInstanceOf[js.Any])
+      )
       imageRecipe.foreach(__v => __obj.updateDynamic("imageRecipe")(__v.asInstanceOf[js.Any]))
       imageTestsConfiguration.foreach(__v => __obj.updateDynamic("imageTestsConfiguration")(__v.asInstanceOf[js.Any]))
       infrastructureConfiguration.foreach(__v =>
         __obj.updateDynamic("infrastructureConfiguration")(__v.asInstanceOf[js.Any])
       )
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      osVersion.foreach(__v => __obj.updateDynamic("osVersion")(__v.asInstanceOf[js.Any]))
       outputResources.foreach(__v => __obj.updateDynamic("outputResources")(__v.asInstanceOf[js.Any]))
       platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
       sourcePipelineArn.foreach(__v => __obj.updateDynamic("sourcePipelineArn")(__v.asInstanceOf[js.Any]))
@@ -1736,6 +1779,7 @@ package imagebuilder {
     var dateUpdated: js.UndefOr[DateTime]
     var description: js.UndefOr[NonEmptyString]
     var distributionConfigurationArn: js.UndefOr[Arn]
+    var enhancedImageMetadataEnabled: js.UndefOr[NullableBoolean]
     var imageRecipeArn: js.UndefOr[Arn]
     var imageTestsConfiguration: js.UndefOr[ImageTestsConfiguration]
     var infrastructureConfigurationArn: js.UndefOr[Arn]
@@ -1756,6 +1800,7 @@ package imagebuilder {
         dateUpdated: js.UndefOr[DateTime] = js.undefined,
         description: js.UndefOr[NonEmptyString] = js.undefined,
         distributionConfigurationArn: js.UndefOr[Arn] = js.undefined,
+        enhancedImageMetadataEnabled: js.UndefOr[NullableBoolean] = js.undefined,
         imageRecipeArn: js.UndefOr[Arn] = js.undefined,
         imageTestsConfiguration: js.UndefOr[ImageTestsConfiguration] = js.undefined,
         infrastructureConfigurationArn: js.UndefOr[Arn] = js.undefined,
@@ -1774,6 +1819,9 @@ package imagebuilder {
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       distributionConfigurationArn.foreach(__v =>
         __obj.updateDynamic("distributionConfigurationArn")(__v.asInstanceOf[js.Any])
+      )
+      enhancedImageMetadataEnabled.foreach(__v =>
+        __obj.updateDynamic("enhancedImageMetadataEnabled")(__v.asInstanceOf[js.Any])
       )
       imageRecipeArn.foreach(__v => __obj.updateDynamic("imageRecipeArn")(__v.asInstanceOf[js.Any]))
       imageTestsConfiguration.foreach(__v => __obj.updateDynamic("imageTestsConfiguration")(__v.asInstanceOf[js.Any]))
@@ -1805,6 +1853,7 @@ package imagebuilder {
     var platform: js.UndefOr[Platform]
     var tags: js.UndefOr[TagMap]
     var version: js.UndefOr[VersionNumber]
+    var workingDirectory: js.UndefOr[NonEmptyString]
   }
 
   object ImageRecipe {
@@ -1820,7 +1869,8 @@ package imagebuilder {
         parentImage: js.UndefOr[NonEmptyString] = js.undefined,
         platform: js.UndefOr[Platform] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined,
-        version: js.UndefOr[VersionNumber] = js.undefined
+        version: js.UndefOr[VersionNumber] = js.undefined,
+        workingDirectory: js.UndefOr[NonEmptyString] = js.undefined
     ): ImageRecipe = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
@@ -1834,6 +1884,7 @@ package imagebuilder {
       platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
+      workingDirectory.foreach(__v => __obj.updateDynamic("workingDirectory")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImageRecipe]
     }
   }
@@ -1900,17 +1951,17 @@ package imagebuilder {
   @js.native
   sealed trait ImageStatus extends js.Any
   object ImageStatus extends js.Object {
-    val PENDING      = "PENDING".asInstanceOf[ImageStatus]
-    val CREATING     = "CREATING".asInstanceOf[ImageStatus]
-    val BUILDING     = "BUILDING".asInstanceOf[ImageStatus]
-    val TESTING      = "TESTING".asInstanceOf[ImageStatus]
+    val PENDING = "PENDING".asInstanceOf[ImageStatus]
+    val CREATING = "CREATING".asInstanceOf[ImageStatus]
+    val BUILDING = "BUILDING".asInstanceOf[ImageStatus]
+    val TESTING = "TESTING".asInstanceOf[ImageStatus]
     val DISTRIBUTING = "DISTRIBUTING".asInstanceOf[ImageStatus]
-    val INTEGRATING  = "INTEGRATING".asInstanceOf[ImageStatus]
-    val AVAILABLE    = "AVAILABLE".asInstanceOf[ImageStatus]
-    val CANCELLED    = "CANCELLED".asInstanceOf[ImageStatus]
-    val FAILED       = "FAILED".asInstanceOf[ImageStatus]
-    val DEPRECATED   = "DEPRECATED".asInstanceOf[ImageStatus]
-    val DELETED      = "DELETED".asInstanceOf[ImageStatus]
+    val INTEGRATING = "INTEGRATING".asInstanceOf[ImageStatus]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[ImageStatus]
+    val CANCELLED = "CANCELLED".asInstanceOf[ImageStatus]
+    val FAILED = "FAILED".asInstanceOf[ImageStatus]
+    val DEPRECATED = "DEPRECATED".asInstanceOf[ImageStatus]
+    val DELETED = "DELETED".asInstanceOf[ImageStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1937,6 +1988,7 @@ package imagebuilder {
     var arn: js.UndefOr[ImageBuilderArn]
     var dateCreated: js.UndefOr[DateTime]
     var name: js.UndefOr[ResourceName]
+    var osVersion: js.UndefOr[OsVersion]
     var outputResources: js.UndefOr[OutputResources]
     var owner: js.UndefOr[NonEmptyString]
     var platform: js.UndefOr[Platform]
@@ -1951,6 +2003,7 @@ package imagebuilder {
         arn: js.UndefOr[ImageBuilderArn] = js.undefined,
         dateCreated: js.UndefOr[DateTime] = js.undefined,
         name: js.UndefOr[ResourceName] = js.undefined,
+        osVersion: js.UndefOr[OsVersion] = js.undefined,
         outputResources: js.UndefOr[OutputResources] = js.undefined,
         owner: js.UndefOr[NonEmptyString] = js.undefined,
         platform: js.UndefOr[Platform] = js.undefined,
@@ -1962,6 +2015,7 @@ package imagebuilder {
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       dateCreated.foreach(__v => __obj.updateDynamic("dateCreated")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      osVersion.foreach(__v => __obj.updateDynamic("osVersion")(__v.asInstanceOf[js.Any]))
       outputResources.foreach(__v => __obj.updateDynamic("outputResources")(__v.asInstanceOf[js.Any]))
       owner.foreach(__v => __obj.updateDynamic("owner")(__v.asInstanceOf[js.Any]))
       platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
@@ -2002,6 +2056,7 @@ package imagebuilder {
     var arn: js.UndefOr[ImageBuilderArn]
     var dateCreated: js.UndefOr[DateTime]
     var name: js.UndefOr[ResourceName]
+    var osVersion: js.UndefOr[OsVersion]
     var owner: js.UndefOr[NonEmptyString]
     var platform: js.UndefOr[Platform]
     var version: js.UndefOr[VersionNumber]
@@ -2013,6 +2068,7 @@ package imagebuilder {
         arn: js.UndefOr[ImageBuilderArn] = js.undefined,
         dateCreated: js.UndefOr[DateTime] = js.undefined,
         name: js.UndefOr[ResourceName] = js.undefined,
+        osVersion: js.UndefOr[OsVersion] = js.undefined,
         owner: js.UndefOr[NonEmptyString] = js.undefined,
         platform: js.UndefOr[Platform] = js.undefined,
         version: js.UndefOr[VersionNumber] = js.undefined
@@ -2021,6 +2077,7 @@ package imagebuilder {
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       dateCreated.foreach(__v => __obj.updateDynamic("dateCreated")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      osVersion.foreach(__v => __obj.updateDynamic("osVersion")(__v.asInstanceOf[js.Any]))
       owner.foreach(__v => __obj.updateDynamic("owner")(__v.asInstanceOf[js.Any]))
       platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
@@ -2061,12 +2118,12 @@ package imagebuilder {
         uri: js.UndefOr[Uri] = js.undefined
     ): ImportComponentRequest = {
       val __obj = js.Dynamic.literal(
-        "clientToken"     -> clientToken.asInstanceOf[js.Any],
-        "format"          -> format.asInstanceOf[js.Any],
-        "name"            -> name.asInstanceOf[js.Any],
-        "platform"        -> platform.asInstanceOf[js.Any],
+        "clientToken" -> clientToken.asInstanceOf[js.Any],
+        "format" -> format.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "platform" -> platform.asInstanceOf[js.Any],
         "semanticVersion" -> semanticVersion.asInstanceOf[js.Any],
-        "type"            -> `type`.asInstanceOf[js.Any]
+        "type" -> `type`.asInstanceOf[js.Any]
       )
 
       changeDescription.foreach(__v => __obj.updateDynamic("changeDescription")(__v.asInstanceOf[js.Any]))
@@ -2115,6 +2172,7 @@ package imagebuilder {
     var keyPair: js.UndefOr[NonEmptyString]
     var logging: js.UndefOr[Logging]
     var name: js.UndefOr[ResourceName]
+    var resourceTags: js.UndefOr[ResourceTagMap]
     var securityGroupIds: js.UndefOr[SecurityGroupIds]
     var snsTopicArn: js.UndefOr[NonEmptyString]
     var subnetId: js.UndefOr[NonEmptyString]
@@ -2134,6 +2192,7 @@ package imagebuilder {
         keyPair: js.UndefOr[NonEmptyString] = js.undefined,
         logging: js.UndefOr[Logging] = js.undefined,
         name: js.UndefOr[ResourceName] = js.undefined,
+        resourceTags: js.UndefOr[ResourceTagMap] = js.undefined,
         securityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
         snsTopicArn: js.UndefOr[NonEmptyString] = js.undefined,
         subnetId: js.UndefOr[NonEmptyString] = js.undefined,
@@ -2150,6 +2209,7 @@ package imagebuilder {
       keyPair.foreach(__v => __obj.updateDynamic("keyPair")(__v.asInstanceOf[js.Any]))
       logging.foreach(__v => __obj.updateDynamic("logging")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      resourceTags.foreach(__v => __obj.updateDynamic("resourceTags")(__v.asInstanceOf[js.Any]))
       securityGroupIds.foreach(__v => __obj.updateDynamic("securityGroupIds")(__v.asInstanceOf[js.Any]))
       snsTopicArn.foreach(__v => __obj.updateDynamic("snsTopicArn")(__v.asInstanceOf[js.Any]))
       subnetId.foreach(__v => __obj.updateDynamic("subnetId")(__v.asInstanceOf[js.Any]))
@@ -2171,6 +2231,7 @@ package imagebuilder {
     var dateUpdated: js.UndefOr[DateTime]
     var description: js.UndefOr[NonEmptyString]
     var name: js.UndefOr[ResourceName]
+    var resourceTags: js.UndefOr[ResourceTagMap]
     var tags: js.UndefOr[TagMap]
   }
 
@@ -2182,6 +2243,7 @@ package imagebuilder {
         dateUpdated: js.UndefOr[DateTime] = js.undefined,
         description: js.UndefOr[NonEmptyString] = js.undefined,
         name: js.UndefOr[ResourceName] = js.undefined,
+        resourceTags: js.UndefOr[ResourceTagMap] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): InfrastructureConfigurationSummary = {
       val __obj = js.Dynamic.literal()
@@ -2190,6 +2252,7 @@ package imagebuilder {
       dateUpdated.foreach(__v => __obj.updateDynamic("dateUpdated")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      resourceTags.foreach(__v => __obj.updateDynamic("resourceTags")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InfrastructureConfigurationSummary]
     }
@@ -2224,7 +2287,7 @@ package imagebuilder {
   }
 
   /**
-    * Describes the configuration for a launch permission. The launch permission modification request is sent to the [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html|EC2 ModifyImageAttribute]] API on behalf of the user for each Region they have selected to distribute the AMI.
+    * Describes the configuration for a launch permission. The launch permission modification request is sent to the [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html|EC2 ModifyImageAttribute]] API on behalf of the user for each Region they have selected to distribute the AMI. To make an AMI public, set the launch permission authorized accounts to <code>all</code>. See the examples for making an AMI public at [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html|EC2 ModifyImageAttribute]].
     */
   @js.native
   trait LaunchPermissionConfiguration extends js.Object {
@@ -2741,7 +2804,7 @@ package imagebuilder {
   @js.native
   sealed trait Ownership extends js.Any
   object Ownership extends js.Object {
-    val Self   = "Self".asInstanceOf[Ownership]
+    val Self = "Self".asInstanceOf[Ownership]
     val Shared = "Shared".asInstanceOf[Ownership]
     val Amazon = "Amazon".asInstanceOf[Ownership]
 
@@ -2762,7 +2825,7 @@ package imagebuilder {
   sealed trait PipelineStatus extends js.Any
   object PipelineStatus extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[PipelineStatus]
-    val ENABLED  = "ENABLED".asInstanceOf[PipelineStatus]
+    val ENABLED = "ENABLED".asInstanceOf[PipelineStatus]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -2771,7 +2834,7 @@ package imagebuilder {
   sealed trait Platform extends js.Any
   object Platform extends js.Object {
     val Windows = "Windows".asInstanceOf[Platform]
-    val Linux   = "Linux".asInstanceOf[Platform]
+    val Linux = "Linux".asInstanceOf[Platform]
 
     val values = js.Object.freeze(js.Array(Windows, Linux))
   }
@@ -2790,7 +2853,7 @@ package imagebuilder {
     ): PutComponentPolicyRequest = {
       val __obj = js.Dynamic.literal(
         "componentArn" -> componentArn.asInstanceOf[js.Any],
-        "policy"       -> policy.asInstanceOf[js.Any]
+        "policy" -> policy.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutComponentPolicyRequest]
@@ -2830,7 +2893,7 @@ package imagebuilder {
     ): PutImagePolicyRequest = {
       val __obj = js.Dynamic.literal(
         "imageArn" -> imageArn.asInstanceOf[js.Any],
-        "policy"   -> policy.asInstanceOf[js.Any]
+        "policy" -> policy.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutImagePolicyRequest]
@@ -2870,7 +2933,7 @@ package imagebuilder {
     ): PutImageRecipePolicyRequest = {
       val __obj = js.Dynamic.literal(
         "imageRecipeArn" -> imageRecipeArn.asInstanceOf[js.Any],
-        "policy"         -> policy.asInstanceOf[js.Any]
+        "policy" -> policy.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutImageRecipePolicyRequest]
@@ -2955,7 +3018,7 @@ package imagebuilder {
         imagePipelineArn: ImagePipelineArn
     ): StartImagePipelineExecutionRequest = {
       val __obj = js.Dynamic.literal(
-        "clientToken"      -> clientToken.asInstanceOf[js.Any],
+        "clientToken" -> clientToken.asInstanceOf[js.Any],
         "imagePipelineArn" -> imagePipelineArn.asInstanceOf[js.Any]
       )
 
@@ -2999,7 +3062,7 @@ package imagebuilder {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -3033,7 +3096,7 @@ package imagebuilder {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -3070,9 +3133,9 @@ package imagebuilder {
         description: js.UndefOr[NonEmptyString] = js.undefined
     ): UpdateDistributionConfigurationRequest = {
       val __obj = js.Dynamic.literal(
-        "clientToken"                  -> clientToken.asInstanceOf[js.Any],
+        "clientToken" -> clientToken.asInstanceOf[js.Any],
         "distributionConfigurationArn" -> distributionConfigurationArn.asInstanceOf[js.Any],
-        "distributions"                -> distributions.asInstanceOf[js.Any]
+        "distributions" -> distributions.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
@@ -3112,6 +3175,7 @@ package imagebuilder {
     var infrastructureConfigurationArn: InfrastructureConfigurationArn
     var description: js.UndefOr[NonEmptyString]
     var distributionConfigurationArn: js.UndefOr[DistributionConfigurationArn]
+    var enhancedImageMetadataEnabled: js.UndefOr[NullableBoolean]
     var imageTestsConfiguration: js.UndefOr[ImageTestsConfiguration]
     var schedule: js.UndefOr[Schedule]
     var status: js.UndefOr[PipelineStatus]
@@ -3126,20 +3190,24 @@ package imagebuilder {
         infrastructureConfigurationArn: InfrastructureConfigurationArn,
         description: js.UndefOr[NonEmptyString] = js.undefined,
         distributionConfigurationArn: js.UndefOr[DistributionConfigurationArn] = js.undefined,
+        enhancedImageMetadataEnabled: js.UndefOr[NullableBoolean] = js.undefined,
         imageTestsConfiguration: js.UndefOr[ImageTestsConfiguration] = js.undefined,
         schedule: js.UndefOr[Schedule] = js.undefined,
         status: js.UndefOr[PipelineStatus] = js.undefined
     ): UpdateImagePipelineRequest = {
       val __obj = js.Dynamic.literal(
-        "clientToken"                    -> clientToken.asInstanceOf[js.Any],
-        "imagePipelineArn"               -> imagePipelineArn.asInstanceOf[js.Any],
-        "imageRecipeArn"                 -> imageRecipeArn.asInstanceOf[js.Any],
+        "clientToken" -> clientToken.asInstanceOf[js.Any],
+        "imagePipelineArn" -> imagePipelineArn.asInstanceOf[js.Any],
+        "imageRecipeArn" -> imageRecipeArn.asInstanceOf[js.Any],
         "infrastructureConfigurationArn" -> infrastructureConfigurationArn.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       distributionConfigurationArn.foreach(__v =>
         __obj.updateDynamic("distributionConfigurationArn")(__v.asInstanceOf[js.Any])
+      )
+      enhancedImageMetadataEnabled.foreach(__v =>
+        __obj.updateDynamic("enhancedImageMetadataEnabled")(__v.asInstanceOf[js.Any])
       )
       imageTestsConfiguration.foreach(__v => __obj.updateDynamic("imageTestsConfiguration")(__v.asInstanceOf[js.Any]))
       schedule.foreach(__v => __obj.updateDynamic("schedule")(__v.asInstanceOf[js.Any]))
@@ -3179,6 +3247,7 @@ package imagebuilder {
     var instanceTypes: js.UndefOr[InstanceTypeList]
     var keyPair: js.UndefOr[NonEmptyString]
     var logging: js.UndefOr[Logging]
+    var resourceTags: js.UndefOr[ResourceTagMap]
     var securityGroupIds: js.UndefOr[SecurityGroupIds]
     var snsTopicArn: js.UndefOr[SnsTopicArn]
     var subnetId: js.UndefOr[NonEmptyString]
@@ -3195,21 +3264,23 @@ package imagebuilder {
         instanceTypes: js.UndefOr[InstanceTypeList] = js.undefined,
         keyPair: js.UndefOr[NonEmptyString] = js.undefined,
         logging: js.UndefOr[Logging] = js.undefined,
+        resourceTags: js.UndefOr[ResourceTagMap] = js.undefined,
         securityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
         snsTopicArn: js.UndefOr[SnsTopicArn] = js.undefined,
         subnetId: js.UndefOr[NonEmptyString] = js.undefined,
         terminateInstanceOnFailure: js.UndefOr[NullableBoolean] = js.undefined
     ): UpdateInfrastructureConfigurationRequest = {
       val __obj = js.Dynamic.literal(
-        "clientToken"                    -> clientToken.asInstanceOf[js.Any],
+        "clientToken" -> clientToken.asInstanceOf[js.Any],
         "infrastructureConfigurationArn" -> infrastructureConfigurationArn.asInstanceOf[js.Any],
-        "instanceProfileName"            -> instanceProfileName.asInstanceOf[js.Any]
+        "instanceProfileName" -> instanceProfileName.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       instanceTypes.foreach(__v => __obj.updateDynamic("instanceTypes")(__v.asInstanceOf[js.Any]))
       keyPair.foreach(__v => __obj.updateDynamic("keyPair")(__v.asInstanceOf[js.Any]))
       logging.foreach(__v => __obj.updateDynamic("logging")(__v.asInstanceOf[js.Any]))
+      resourceTags.foreach(__v => __obj.updateDynamic("resourceTags")(__v.asInstanceOf[js.Any]))
       securityGroupIds.foreach(__v => __obj.updateDynamic("securityGroupIds")(__v.asInstanceOf[js.Any]))
       snsTopicArn.foreach(__v => __obj.updateDynamic("snsTopicArn")(__v.asInstanceOf[js.Any]))
       subnetId.foreach(__v => __obj.updateDynamic("subnetId")(__v.asInstanceOf[js.Any]))

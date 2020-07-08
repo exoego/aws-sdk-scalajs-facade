@@ -7,51 +7,60 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object route53domains {
-  type AddressLine           = String
-  type BillingRecords        = js.Array[BillingRecord]
-  type City                  = String
-  type ContactName           = String
-  type ContactNumber         = String
-  type CurrentExpiryYear     = Int
-  type DNSSec                = String
-  type DomainAuthCode        = String
-  type DomainName            = String
-  type DomainStatus          = String
-  type DomainStatusList      = js.Array[DomainStatus]
+  type AccountId = String
+  type AddressLine = String
+  type BillingRecords = js.Array[BillingRecord]
+  type City = String
+  type ContactName = String
+  type ContactNumber = String
+  type CurrentExpiryYear = Int
+  type DNSSec = String
+  type DomainAuthCode = String
+  type DomainName = String
+  type DomainStatus = String
+  type DomainStatusList = js.Array[DomainStatus]
   type DomainSuggestionsList = js.Array[DomainSuggestion]
-  type DomainSummaryList     = js.Array[DomainSummary]
-  type DurationInYears       = Int
-  type Email                 = String
-  type ErrorMessage          = String
-  type ExtraParamList        = js.Array[ExtraParam]
-  type ExtraParamValue       = String
-  type FIAuthKey             = String
-  type GlueIp                = String
-  type GlueIpList            = js.Array[GlueIp]
-  type HostName              = String
-  type InvoiceId             = String
-  type LangCode              = String
-  type NameserverList        = js.Array[Nameserver]
-  type OperationId           = String
-  type OperationSummaryList  = js.Array[OperationSummary]
-  type PageMarker            = String
-  type PageMaxItems          = Int
-  type Price                 = Double
-  type RegistrarName         = String
-  type RegistrarUrl          = String
-  type RegistrarWhoIsServer  = String
-  type RegistryDomainId      = String
-  type Reseller              = String
-  type State                 = String
-  type TagKey                = String
-  type TagKeyList            = js.Array[TagKey]
-  type TagList               = js.Array[Tag]
-  type TagValue              = String
-  type Timestamp             = js.Date
-  type ZipCode               = String
+  type DomainSummaryList = js.Array[DomainSummary]
+  type DurationInYears = Int
+  type Email = String
+  type ErrorMessage = String
+  type ExtraParamList = js.Array[ExtraParam]
+  type ExtraParamValue = String
+  type FIAuthKey = String
+  type GlueIp = String
+  type GlueIpList = js.Array[GlueIp]
+  type HostName = String
+  type InvoiceId = String
+  type LangCode = String
+  type NameserverList = js.Array[Nameserver]
+  type OperationId = String
+  type OperationSummaryList = js.Array[OperationSummary]
+  type PageMarker = String
+  type PageMaxItems = Int
+  type Price = Double
+  type RegistrarName = String
+  type RegistrarUrl = String
+  type RegistrarWhoIsServer = String
+  type RegistryDomainId = String
+  type Reseller = String
+  type State = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type Timestamp = js.Date
+  type ZipCode = String
 
   implicit final class Route53DomainsOps(private val service: Route53Domains) extends AnyVal {
 
+    @inline def acceptDomainTransferFromAnotherAwsAccountFuture(
+        params: AcceptDomainTransferFromAnotherAwsAccountRequest
+    ): Future[AcceptDomainTransferFromAnotherAwsAccountResponse] =
+      service.acceptDomainTransferFromAnotherAwsAccount(params).promise().toFuture
+    @inline def cancelDomainTransferToAnotherAwsAccountFuture(
+        params: CancelDomainTransferToAnotherAwsAccountRequest
+    ): Future[CancelDomainTransferToAnotherAwsAccountResponse] =
+      service.cancelDomainTransferToAnotherAwsAccount(params).promise().toFuture
     @inline def checkDomainAvailabilityFuture(
         params: CheckDomainAvailabilityRequest
     ): Future[CheckDomainAvailabilityResponse] = service.checkDomainAvailability(params).promise().toFuture
@@ -89,6 +98,10 @@ package object route53domains {
       service.listTagsForDomain(params).promise().toFuture
     @inline def registerDomainFuture(params: RegisterDomainRequest): Future[RegisterDomainResponse] =
       service.registerDomain(params).promise().toFuture
+    @inline def rejectDomainTransferFromAnotherAwsAccountFuture(
+        params: RejectDomainTransferFromAnotherAwsAccountRequest
+    ): Future[RejectDomainTransferFromAnotherAwsAccountResponse] =
+      service.rejectDomainTransferFromAnotherAwsAccount(params).promise().toFuture
     @inline def renewDomainFuture(params: RenewDomainRequest): Future[RenewDomainResponse] =
       service.renewDomain(params).promise().toFuture
     @inline def resendContactReachabilityEmailFuture(
@@ -100,6 +113,10 @@ package object route53domains {
     ): Future[RetrieveDomainAuthCodeResponse] = service.retrieveDomainAuthCode(params).promise().toFuture
     @inline def transferDomainFuture(params: TransferDomainRequest): Future[TransferDomainResponse] =
       service.transferDomain(params).promise().toFuture
+    @inline def transferDomainToAnotherAwsAccountFuture(
+        params: TransferDomainToAnotherAwsAccountRequest
+    ): Future[TransferDomainToAnotherAwsAccountResponse] =
+      service.transferDomainToAnotherAwsAccount(params).promise().toFuture
     @inline def updateDomainContactFuture(params: UpdateDomainContactRequest): Future[UpdateDomainContactResponse] =
       service.updateDomainContact(params).promise().toFuture
     @inline def updateDomainContactPrivacyFuture(
@@ -121,37 +138,49 @@ package route53domains {
   class Route53Domains() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def acceptDomainTransferFromAnotherAwsAccount(
+        params: AcceptDomainTransferFromAnotherAwsAccountRequest
+    ): Request[AcceptDomainTransferFromAnotherAwsAccountResponse] = js.native
+    def cancelDomainTransferToAnotherAwsAccount(
+        params: CancelDomainTransferToAnotherAwsAccountRequest
+    ): Request[CancelDomainTransferToAnotherAwsAccountResponse] = js.native
     def checkDomainAvailability(params: CheckDomainAvailabilityRequest): Request[CheckDomainAvailabilityResponse] =
       js.native
     def checkDomainTransferability(
         params: CheckDomainTransferabilityRequest
-    ): Request[CheckDomainTransferabilityResponse]                                                    = js.native
+    ): Request[CheckDomainTransferabilityResponse] = js.native
     def deleteTagsForDomain(params: DeleteTagsForDomainRequest): Request[DeleteTagsForDomainResponse] = js.native
     def disableDomainAutoRenew(params: DisableDomainAutoRenewRequest): Request[DisableDomainAutoRenewResponse] =
       js.native
     def disableDomainTransferLock(
         params: DisableDomainTransferLockRequest
-    ): Request[DisableDomainTransferLockResponse]                                                           = js.native
+    ): Request[DisableDomainTransferLockResponse] = js.native
     def enableDomainAutoRenew(params: EnableDomainAutoRenewRequest): Request[EnableDomainAutoRenewResponse] = js.native
     def enableDomainTransferLock(params: EnableDomainTransferLockRequest): Request[EnableDomainTransferLockResponse] =
       js.native
     def getContactReachabilityStatus(
         params: GetContactReachabilityStatusRequest
-    ): Request[GetContactReachabilityStatusResponse]                                                     = js.native
-    def getDomainDetail(params: GetDomainDetailRequest): Request[GetDomainDetailResponse]                = js.native
+    ): Request[GetContactReachabilityStatusResponse] = js.native
+    def getDomainDetail(params: GetDomainDetailRequest): Request[GetDomainDetailResponse] = js.native
     def getDomainSuggestions(params: GetDomainSuggestionsRequest): Request[GetDomainSuggestionsResponse] = js.native
-    def getOperationDetail(params: GetOperationDetailRequest): Request[GetOperationDetailResponse]       = js.native
-    def listDomains(params: ListDomainsRequest): Request[ListDomainsResponse]                            = js.native
-    def listOperations(params: ListOperationsRequest): Request[ListOperationsResponse]                   = js.native
-    def listTagsForDomain(params: ListTagsForDomainRequest): Request[ListTagsForDomainResponse]          = js.native
-    def registerDomain(params: RegisterDomainRequest): Request[RegisterDomainResponse]                   = js.native
-    def renewDomain(params: RenewDomainRequest): Request[RenewDomainResponse]                            = js.native
+    def getOperationDetail(params: GetOperationDetailRequest): Request[GetOperationDetailResponse] = js.native
+    def listDomains(params: ListDomainsRequest): Request[ListDomainsResponse] = js.native
+    def listOperations(params: ListOperationsRequest): Request[ListOperationsResponse] = js.native
+    def listTagsForDomain(params: ListTagsForDomainRequest): Request[ListTagsForDomainResponse] = js.native
+    def registerDomain(params: RegisterDomainRequest): Request[RegisterDomainResponse] = js.native
+    def rejectDomainTransferFromAnotherAwsAccount(
+        params: RejectDomainTransferFromAnotherAwsAccountRequest
+    ): Request[RejectDomainTransferFromAnotherAwsAccountResponse] = js.native
+    def renewDomain(params: RenewDomainRequest): Request[RenewDomainResponse] = js.native
     def resendContactReachabilityEmail(
         params: ResendContactReachabilityEmailRequest
     ): Request[ResendContactReachabilityEmailResponse] = js.native
     def retrieveDomainAuthCode(params: RetrieveDomainAuthCodeRequest): Request[RetrieveDomainAuthCodeResponse] =
       js.native
-    def transferDomain(params: TransferDomainRequest): Request[TransferDomainResponse]                = js.native
+    def transferDomain(params: TransferDomainRequest): Request[TransferDomainResponse] = js.native
+    def transferDomainToAnotherAwsAccount(
+        params: TransferDomainToAnotherAwsAccountRequest
+    ): Request[TransferDomainToAnotherAwsAccountResponse] = js.native
     def updateDomainContact(params: UpdateDomainContactRequest): Request[UpdateDomainContactResponse] = js.native
     def updateDomainContactPrivacy(
         params: UpdateDomainContactPrivacyRequest
@@ -159,7 +188,50 @@ package route53domains {
     def updateDomainNameservers(params: UpdateDomainNameserversRequest): Request[UpdateDomainNameserversResponse] =
       js.native
     def updateTagsForDomain(params: UpdateTagsForDomainRequest): Request[UpdateTagsForDomainResponse] = js.native
-    def viewBilling(params: ViewBillingRequest): Request[ViewBillingResponse]                         = js.native
+    def viewBilling(params: ViewBillingRequest): Request[ViewBillingResponse] = js.native
+  }
+
+  /**
+    * The AcceptDomainTransferFromAnotherAwsAccount request includes the following elements.
+    */
+  @js.native
+  trait AcceptDomainTransferFromAnotherAwsAccountRequest extends js.Object {
+    var DomainName: DomainName
+    var Password: String
+  }
+
+  object AcceptDomainTransferFromAnotherAwsAccountRequest {
+    @inline
+    def apply(
+        DomainName: DomainName,
+        Password: String
+    ): AcceptDomainTransferFromAnotherAwsAccountRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "Password" -> Password.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[AcceptDomainTransferFromAnotherAwsAccountRequest]
+    }
+  }
+
+  /**
+    * The AcceptDomainTransferFromAnotherAwsAccount response includes the following element.
+    */
+  @js.native
+  trait AcceptDomainTransferFromAnotherAwsAccountResponse extends js.Object {
+    var OperationId: js.UndefOr[OperationId]
+  }
+
+  object AcceptDomainTransferFromAnotherAwsAccountResponse {
+    @inline
+    def apply(
+        OperationId: js.UndefOr[OperationId] = js.undefined
+    ): AcceptDomainTransferFromAnotherAwsAccountResponse = {
+      val __obj = js.Dynamic.literal()
+      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AcceptDomainTransferFromAnotherAwsAccountResponse]
+    }
   }
 
   /**
@@ -190,6 +262,46 @@ package route53domains {
       Operation.foreach(__v => __obj.updateDynamic("Operation")(__v.asInstanceOf[js.Any]))
       Price.foreach(__v => __obj.updateDynamic("Price")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BillingRecord]
+    }
+  }
+
+  /**
+    * The CancelDomainTransferToAnotherAwsAccount request includes the following element.
+    */
+  @js.native
+  trait CancelDomainTransferToAnotherAwsAccountRequest extends js.Object {
+    var DomainName: DomainName
+  }
+
+  object CancelDomainTransferToAnotherAwsAccountRequest {
+    @inline
+    def apply(
+        DomainName: DomainName
+    ): CancelDomainTransferToAnotherAwsAccountRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CancelDomainTransferToAnotherAwsAccountRequest]
+    }
+  }
+
+  /**
+    * The <code>CancelDomainTransferToAnotherAwsAccount</code> response includes the following element.
+    */
+  @js.native
+  trait CancelDomainTransferToAnotherAwsAccountResponse extends js.Object {
+    var OperationId: js.UndefOr[OperationId]
+  }
+
+  object CancelDomainTransferToAnotherAwsAccountResponse {
+    @inline
+    def apply(
+        OperationId: js.UndefOr[OperationId] = js.undefined
+    ): CancelDomainTransferToAnotherAwsAccountResponse = {
+      val __obj = js.Dynamic.literal()
+      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CancelDomainTransferToAnotherAwsAccountResponse]
     }
   }
 
@@ -344,11 +456,11 @@ package route53domains {
   @js.native
   sealed trait ContactType extends js.Any
   object ContactType extends js.Object {
-    val PERSON      = "PERSON".asInstanceOf[ContactType]
-    val COMPANY     = "COMPANY".asInstanceOf[ContactType]
+    val PERSON = "PERSON".asInstanceOf[ContactType]
+    val COMPANY = "COMPANY".asInstanceOf[ContactType]
     val ASSOCIATION = "ASSOCIATION".asInstanceOf[ContactType]
     val PUBLIC_BODY = "PUBLIC_BODY".asInstanceOf[ContactType]
-    val RESELLER    = "RESELLER".asInstanceOf[ContactType]
+    val RESELLER = "RESELLER".asInstanceOf[ContactType]
 
     val values = js.Object.freeze(js.Array(PERSON, COMPANY, ASSOCIATION, PUBLIC_BODY, RESELLER))
   }
@@ -837,7 +949,7 @@ package route53domains {
         TagsToDelete: TagKeyList
     ): DeleteTagsForDomainRequest = {
       val __obj = js.Dynamic.literal(
-        "DomainName"   -> DomainName.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
         "TagsToDelete" -> TagsToDelete.asInstanceOf[js.Any]
       )
 
@@ -934,14 +1046,14 @@ package route53domains {
   @js.native
   sealed trait DomainAvailability extends js.Any
   object DomainAvailability extends js.Object {
-    val AVAILABLE              = "AVAILABLE".asInstanceOf[DomainAvailability]
-    val AVAILABLE_RESERVED     = "AVAILABLE_RESERVED".asInstanceOf[DomainAvailability]
-    val AVAILABLE_PREORDER     = "AVAILABLE_PREORDER".asInstanceOf[DomainAvailability]
-    val UNAVAILABLE            = "UNAVAILABLE".asInstanceOf[DomainAvailability]
-    val UNAVAILABLE_PREMIUM    = "UNAVAILABLE_PREMIUM".asInstanceOf[DomainAvailability]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[DomainAvailability]
+    val AVAILABLE_RESERVED = "AVAILABLE_RESERVED".asInstanceOf[DomainAvailability]
+    val AVAILABLE_PREORDER = "AVAILABLE_PREORDER".asInstanceOf[DomainAvailability]
+    val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[DomainAvailability]
+    val UNAVAILABLE_PREMIUM = "UNAVAILABLE_PREMIUM".asInstanceOf[DomainAvailability]
     val UNAVAILABLE_RESTRICTED = "UNAVAILABLE_RESTRICTED".asInstanceOf[DomainAvailability]
-    val RESERVED               = "RESERVED".asInstanceOf[DomainAvailability]
-    val DONT_KNOW              = "DONT_KNOW".asInstanceOf[DomainAvailability]
+    val RESERVED = "RESERVED".asInstanceOf[DomainAvailability]
+    val DONT_KNOW = "DONT_KNOW".asInstanceOf[DomainAvailability]
 
     val values = js.Object.freeze(
       js.Array(
@@ -955,14 +1067,6 @@ package route53domains {
         DONT_KNOW
       )
     )
-  }
-
-  /**
-    * The number of domains has exceeded the allowed threshold for the account.
-    */
-  @js.native
-  trait DomainLimitExceededException extends js.Object {
-    val message: ErrorMessage
   }
 
   /**
@@ -1018,7 +1122,7 @@ package route53domains {
   }
 
   /**
-    * A complex type that contains information about whether the specified domain can be transferred to Amazon Route 53.
+    * A complex type that contains information about whether the specified domain can be transferred to Route 53.
     */
   @js.native
   trait DomainTransferability extends js.Object {
@@ -1034,14 +1138,6 @@ package route53domains {
       Transferable.foreach(__v => __obj.updateDynamic("Transferable")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainTransferability]
     }
-  }
-
-  /**
-    * The request is already in progress for the domain.
-    */
-  @js.native
-  trait DuplicateRequestException extends js.Object {
-    val message: ErrorMessage
   }
 
   @js.native
@@ -1133,7 +1229,7 @@ package route53domains {
         Value: ExtraParamValue
     ): ExtraParam = {
       val __obj = js.Dynamic.literal(
-        "Name"  -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -1144,32 +1240,35 @@ package route53domains {
   @js.native
   sealed trait ExtraParamName extends js.Any
   object ExtraParamName extends js.Object {
-    val DUNS_NUMBER               = "DUNS_NUMBER".asInstanceOf[ExtraParamName]
-    val BRAND_NUMBER              = "BRAND_NUMBER".asInstanceOf[ExtraParamName]
-    val BIRTH_DEPARTMENT          = "BIRTH_DEPARTMENT".asInstanceOf[ExtraParamName]
-    val BIRTH_DATE_IN_YYYY_MM_DD  = "BIRTH_DATE_IN_YYYY_MM_DD".asInstanceOf[ExtraParamName]
-    val BIRTH_COUNTRY             = "BIRTH_COUNTRY".asInstanceOf[ExtraParamName]
-    val BIRTH_CITY                = "BIRTH_CITY".asInstanceOf[ExtraParamName]
-    val DOCUMENT_NUMBER           = "DOCUMENT_NUMBER".asInstanceOf[ExtraParamName]
-    val AU_ID_NUMBER              = "AU_ID_NUMBER".asInstanceOf[ExtraParamName]
-    val AU_ID_TYPE                = "AU_ID_TYPE".asInstanceOf[ExtraParamName]
-    val CA_LEGAL_TYPE             = "CA_LEGAL_TYPE".asInstanceOf[ExtraParamName]
-    val CA_BUSINESS_ENTITY_TYPE   = "CA_BUSINESS_ENTITY_TYPE".asInstanceOf[ExtraParamName]
-    val ES_IDENTIFICATION         = "ES_IDENTIFICATION".asInstanceOf[ExtraParamName]
-    val ES_IDENTIFICATION_TYPE    = "ES_IDENTIFICATION_TYPE".asInstanceOf[ExtraParamName]
-    val ES_LEGAL_FORM             = "ES_LEGAL_FORM".asInstanceOf[ExtraParamName]
-    val FI_BUSINESS_NUMBER        = "FI_BUSINESS_NUMBER".asInstanceOf[ExtraParamName]
-    val FI_ID_NUMBER              = "FI_ID_NUMBER".asInstanceOf[ExtraParamName]
-    val FI_NATIONALITY            = "FI_NATIONALITY".asInstanceOf[ExtraParamName]
-    val FI_ORGANIZATION_TYPE      = "FI_ORGANIZATION_TYPE".asInstanceOf[ExtraParamName]
-    val IT_PIN                    = "IT_PIN".asInstanceOf[ExtraParamName]
+    val DUNS_NUMBER = "DUNS_NUMBER".asInstanceOf[ExtraParamName]
+    val BRAND_NUMBER = "BRAND_NUMBER".asInstanceOf[ExtraParamName]
+    val BIRTH_DEPARTMENT = "BIRTH_DEPARTMENT".asInstanceOf[ExtraParamName]
+    val BIRTH_DATE_IN_YYYY_MM_DD = "BIRTH_DATE_IN_YYYY_MM_DD".asInstanceOf[ExtraParamName]
+    val BIRTH_COUNTRY = "BIRTH_COUNTRY".asInstanceOf[ExtraParamName]
+    val BIRTH_CITY = "BIRTH_CITY".asInstanceOf[ExtraParamName]
+    val DOCUMENT_NUMBER = "DOCUMENT_NUMBER".asInstanceOf[ExtraParamName]
+    val AU_ID_NUMBER = "AU_ID_NUMBER".asInstanceOf[ExtraParamName]
+    val AU_ID_TYPE = "AU_ID_TYPE".asInstanceOf[ExtraParamName]
+    val CA_LEGAL_TYPE = "CA_LEGAL_TYPE".asInstanceOf[ExtraParamName]
+    val CA_BUSINESS_ENTITY_TYPE = "CA_BUSINESS_ENTITY_TYPE".asInstanceOf[ExtraParamName]
+    val CA_LEGAL_REPRESENTATIVE = "CA_LEGAL_REPRESENTATIVE".asInstanceOf[ExtraParamName]
+    val CA_LEGAL_REPRESENTATIVE_CAPACITY = "CA_LEGAL_REPRESENTATIVE_CAPACITY".asInstanceOf[ExtraParamName]
+    val ES_IDENTIFICATION = "ES_IDENTIFICATION".asInstanceOf[ExtraParamName]
+    val ES_IDENTIFICATION_TYPE = "ES_IDENTIFICATION_TYPE".asInstanceOf[ExtraParamName]
+    val ES_LEGAL_FORM = "ES_LEGAL_FORM".asInstanceOf[ExtraParamName]
+    val FI_BUSINESS_NUMBER = "FI_BUSINESS_NUMBER".asInstanceOf[ExtraParamName]
+    val FI_ID_NUMBER = "FI_ID_NUMBER".asInstanceOf[ExtraParamName]
+    val FI_NATIONALITY = "FI_NATIONALITY".asInstanceOf[ExtraParamName]
+    val FI_ORGANIZATION_TYPE = "FI_ORGANIZATION_TYPE".asInstanceOf[ExtraParamName]
+    val IT_NATIONALITY = "IT_NATIONALITY".asInstanceOf[ExtraParamName]
+    val IT_PIN = "IT_PIN".asInstanceOf[ExtraParamName]
     val IT_REGISTRANT_ENTITY_TYPE = "IT_REGISTRANT_ENTITY_TYPE".asInstanceOf[ExtraParamName]
-    val RU_PASSPORT_DATA          = "RU_PASSPORT_DATA".asInstanceOf[ExtraParamName]
-    val SE_ID_NUMBER              = "SE_ID_NUMBER".asInstanceOf[ExtraParamName]
-    val SG_ID_NUMBER              = "SG_ID_NUMBER".asInstanceOf[ExtraParamName]
-    val VAT_NUMBER                = "VAT_NUMBER".asInstanceOf[ExtraParamName]
-    val UK_CONTACT_TYPE           = "UK_CONTACT_TYPE".asInstanceOf[ExtraParamName]
-    val UK_COMPANY_NUMBER         = "UK_COMPANY_NUMBER".asInstanceOf[ExtraParamName]
+    val RU_PASSPORT_DATA = "RU_PASSPORT_DATA".asInstanceOf[ExtraParamName]
+    val SE_ID_NUMBER = "SE_ID_NUMBER".asInstanceOf[ExtraParamName]
+    val SG_ID_NUMBER = "SG_ID_NUMBER".asInstanceOf[ExtraParamName]
+    val VAT_NUMBER = "VAT_NUMBER".asInstanceOf[ExtraParamName]
+    val UK_CONTACT_TYPE = "UK_CONTACT_TYPE".asInstanceOf[ExtraParamName]
+    val UK_COMPANY_NUMBER = "UK_COMPANY_NUMBER".asInstanceOf[ExtraParamName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1184,6 +1283,8 @@ package route53domains {
         AU_ID_TYPE,
         CA_LEGAL_TYPE,
         CA_BUSINESS_ENTITY_TYPE,
+        CA_LEGAL_REPRESENTATIVE,
+        CA_LEGAL_REPRESENTATIVE_CAPACITY,
         ES_IDENTIFICATION,
         ES_IDENTIFICATION_TYPE,
         ES_LEGAL_FORM,
@@ -1191,6 +1292,7 @@ package route53domains {
         FI_ID_NUMBER,
         FI_NATIONALITY,
         FI_ORGANIZATION_TYPE,
+        IT_NATIONALITY,
         IT_PIN,
         IT_REGISTRANT_ENTITY_TYPE,
         RU_PASSPORT_DATA,
@@ -1313,11 +1415,11 @@ package route53domains {
         WhoIsServer: js.UndefOr[RegistrarWhoIsServer] = js.undefined
     ): GetDomainDetailResponse = {
       val __obj = js.Dynamic.literal(
-        "AdminContact"      -> AdminContact.asInstanceOf[js.Any],
-        "DomainName"        -> DomainName.asInstanceOf[js.Any],
-        "Nameservers"       -> Nameservers.asInstanceOf[js.Any],
+        "AdminContact" -> AdminContact.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "Nameservers" -> Nameservers.asInstanceOf[js.Any],
         "RegistrantContact" -> RegistrantContact.asInstanceOf[js.Any],
-        "TechContact"       -> TechContact.asInstanceOf[js.Any]
+        "TechContact" -> TechContact.asInstanceOf[js.Any]
       )
 
       AbuseContactEmail.foreach(__v => __obj.updateDynamic("AbuseContactEmail")(__v.asInstanceOf[js.Any]))
@@ -1355,8 +1457,8 @@ package route53domains {
         SuggestionCount: Int
     ): GetDomainSuggestionsRequest = {
       val __obj = js.Dynamic.literal(
-        "DomainName"      -> DomainName.asInstanceOf[js.Any],
-        "OnlyAvailable"   -> OnlyAvailable.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "OnlyAvailable" -> OnlyAvailable.asInstanceOf[js.Any],
         "SuggestionCount" -> SuggestionCount.asInstanceOf[js.Any]
       )
 
@@ -1381,7 +1483,7 @@ package route53domains {
   }
 
   /**
-    * The <a>GetOperationDetail</a> request includes the following element.
+    * The [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html|GetOperationDetail]] request includes the following element.
     */
   @js.native
   trait GetOperationDetailRequest extends js.Object {
@@ -1433,14 +1535,6 @@ package route53domains {
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOperationDetailResponse]
     }
-  }
-
-  /**
-    * The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an operation that is already completed. For a domain name, it might not be a valid domain name or belong to the requester account.
-    */
-  @js.native
-  trait InvalidInputException extends js.Object {
-    val message: ErrorMessage
   }
 
   /**
@@ -1604,22 +1698,14 @@ package route53domains {
     }
   }
 
-  /**
-    * The number of operations or jobs running exceeded the allowed threshold for the account.
-    */
-  @js.native
-  trait OperationLimitExceededException extends js.Object {
-    val message: ErrorMessage
-  }
-
   @js.native
   sealed trait OperationStatus extends js.Any
   object OperationStatus extends js.Object {
-    val SUBMITTED   = "SUBMITTED".asInstanceOf[OperationStatus]
+    val SUBMITTED = "SUBMITTED".asInstanceOf[OperationStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[OperationStatus]
-    val ERROR       = "ERROR".asInstanceOf[OperationStatus]
-    val SUCCESSFUL  = "SUCCESSFUL".asInstanceOf[OperationStatus]
-    val FAILED      = "FAILED".asInstanceOf[OperationStatus]
+    val ERROR = "ERROR".asInstanceOf[OperationStatus]
+    val SUCCESSFUL = "SUCCESSFUL".asInstanceOf[OperationStatus]
+    val FAILED = "FAILED".asInstanceOf[OperationStatus]
 
     val values = js.Object.freeze(js.Array(SUBMITTED, IN_PROGRESS, ERROR, SUCCESSFUL, FAILED))
   }
@@ -1644,10 +1730,10 @@ package route53domains {
         Type: OperationType
     ): OperationSummary = {
       val __obj = js.Dynamic.literal(
-        "OperationId"   -> OperationId.asInstanceOf[js.Any],
-        "Status"        -> Status.asInstanceOf[js.Any],
+        "OperationId" -> OperationId.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any],
         "SubmittedDate" -> SubmittedDate.asInstanceOf[js.Any],
-        "Type"          -> Type.asInstanceOf[js.Any]
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[OperationSummary]
@@ -1657,22 +1743,24 @@ package route53domains {
   @js.native
   sealed trait OperationType extends js.Any
   object OperationType extends js.Object {
-    val REGISTER_DOMAIN           = "REGISTER_DOMAIN".asInstanceOf[OperationType]
-    val DELETE_DOMAIN             = "DELETE_DOMAIN".asInstanceOf[OperationType]
-    val TRANSFER_IN_DOMAIN        = "TRANSFER_IN_DOMAIN".asInstanceOf[OperationType]
-    val UPDATE_DOMAIN_CONTACT     = "UPDATE_DOMAIN_CONTACT".asInstanceOf[OperationType]
-    val UPDATE_NAMESERVER         = "UPDATE_NAMESERVER".asInstanceOf[OperationType]
+    val REGISTER_DOMAIN = "REGISTER_DOMAIN".asInstanceOf[OperationType]
+    val DELETE_DOMAIN = "DELETE_DOMAIN".asInstanceOf[OperationType]
+    val TRANSFER_IN_DOMAIN = "TRANSFER_IN_DOMAIN".asInstanceOf[OperationType]
+    val UPDATE_DOMAIN_CONTACT = "UPDATE_DOMAIN_CONTACT".asInstanceOf[OperationType]
+    val UPDATE_NAMESERVER = "UPDATE_NAMESERVER".asInstanceOf[OperationType]
     val CHANGE_PRIVACY_PROTECTION = "CHANGE_PRIVACY_PROTECTION".asInstanceOf[OperationType]
-    val DOMAIN_LOCK               = "DOMAIN_LOCK".asInstanceOf[OperationType]
-    val ENABLE_AUTORENEW          = "ENABLE_AUTORENEW".asInstanceOf[OperationType]
-    val DISABLE_AUTORENEW         = "DISABLE_AUTORENEW".asInstanceOf[OperationType]
-    val ADD_DNSSEC                = "ADD_DNSSEC".asInstanceOf[OperationType]
-    val REMOVE_DNSSEC             = "REMOVE_DNSSEC".asInstanceOf[OperationType]
-    val EXPIRE_DOMAIN             = "EXPIRE_DOMAIN".asInstanceOf[OperationType]
-    val TRANSFER_OUT_DOMAIN       = "TRANSFER_OUT_DOMAIN".asInstanceOf[OperationType]
-    val CHANGE_DOMAIN_OWNER       = "CHANGE_DOMAIN_OWNER".asInstanceOf[OperationType]
-    val RENEW_DOMAIN              = "RENEW_DOMAIN".asInstanceOf[OperationType]
-    val PUSH_DOMAIN               = "PUSH_DOMAIN".asInstanceOf[OperationType]
+    val DOMAIN_LOCK = "DOMAIN_LOCK".asInstanceOf[OperationType]
+    val ENABLE_AUTORENEW = "ENABLE_AUTORENEW".asInstanceOf[OperationType]
+    val DISABLE_AUTORENEW = "DISABLE_AUTORENEW".asInstanceOf[OperationType]
+    val ADD_DNSSEC = "ADD_DNSSEC".asInstanceOf[OperationType]
+    val REMOVE_DNSSEC = "REMOVE_DNSSEC".asInstanceOf[OperationType]
+    val EXPIRE_DOMAIN = "EXPIRE_DOMAIN".asInstanceOf[OperationType]
+    val TRANSFER_OUT_DOMAIN = "TRANSFER_OUT_DOMAIN".asInstanceOf[OperationType]
+    val CHANGE_DOMAIN_OWNER = "CHANGE_DOMAIN_OWNER".asInstanceOf[OperationType]
+    val RENEW_DOMAIN = "RENEW_DOMAIN".asInstanceOf[OperationType]
+    val PUSH_DOMAIN = "PUSH_DOMAIN".asInstanceOf[OperationType]
+    val INTERNAL_TRANSFER_OUT_DOMAIN = "INTERNAL_TRANSFER_OUT_DOMAIN".asInstanceOf[OperationType]
+    val INTERNAL_TRANSFER_IN_DOMAIN = "INTERNAL_TRANSFER_IN_DOMAIN".asInstanceOf[OperationType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1691,7 +1779,9 @@ package route53domains {
         TRANSFER_OUT_DOMAIN,
         CHANGE_DOMAIN_OWNER,
         RENEW_DOMAIN,
-        PUSH_DOMAIN
+        PUSH_DOMAIN,
+        INTERNAL_TRANSFER_OUT_DOMAIN,
+        INTERNAL_TRANSFER_IN_DOMAIN
       )
     )
   }
@@ -1700,7 +1790,7 @@ package route53domains {
   sealed trait ReachabilityStatus extends js.Any
   object ReachabilityStatus extends js.Object {
     val PENDING = "PENDING".asInstanceOf[ReachabilityStatus]
-    val DONE    = "DONE".asInstanceOf[ReachabilityStatus]
+    val DONE = "DONE".asInstanceOf[ReachabilityStatus]
     val EXPIRED = "EXPIRED".asInstanceOf[ReachabilityStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, DONE, EXPIRED))
@@ -1738,11 +1828,11 @@ package route53domains {
         PrivacyProtectTechContact: js.UndefOr[Boolean] = js.undefined
     ): RegisterDomainRequest = {
       val __obj = js.Dynamic.literal(
-        "AdminContact"      -> AdminContact.asInstanceOf[js.Any],
-        "DomainName"        -> DomainName.asInstanceOf[js.Any],
-        "DurationInYears"   -> DurationInYears.asInstanceOf[js.Any],
+        "AdminContact" -> AdminContact.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "DurationInYears" -> DurationInYears.asInstanceOf[js.Any],
         "RegistrantContact" -> RegistrantContact.asInstanceOf[js.Any],
-        "TechContact"       -> TechContact.asInstanceOf[js.Any]
+        "TechContact" -> TechContact.asInstanceOf[js.Any]
       )
 
       AutoRenew.foreach(__v => __obj.updateDynamic("AutoRenew")(__v.asInstanceOf[js.Any]))
@@ -1782,6 +1872,46 @@ package route53domains {
   }
 
   /**
+    * The RejectDomainTransferFromAnotherAwsAccount request includes the following element.
+    */
+  @js.native
+  trait RejectDomainTransferFromAnotherAwsAccountRequest extends js.Object {
+    var DomainName: DomainName
+  }
+
+  object RejectDomainTransferFromAnotherAwsAccountRequest {
+    @inline
+    def apply(
+        DomainName: DomainName
+    ): RejectDomainTransferFromAnotherAwsAccountRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[RejectDomainTransferFromAnotherAwsAccountRequest]
+    }
+  }
+
+  /**
+    * The RejectDomainTransferFromAnotherAwsAccount response includes the following element.
+    */
+  @js.native
+  trait RejectDomainTransferFromAnotherAwsAccountResponse extends js.Object {
+    var OperationId: js.UndefOr[OperationId]
+  }
+
+  object RejectDomainTransferFromAnotherAwsAccountResponse {
+    @inline
+    def apply(
+        OperationId: js.UndefOr[OperationId] = js.undefined
+    ): RejectDomainTransferFromAnotherAwsAccountResponse = {
+      val __obj = js.Dynamic.literal()
+      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RejectDomainTransferFromAnotherAwsAccountResponse]
+    }
+  }
+
+  /**
     * A <code>RenewDomain</code> request includes the number of years that you want to renew for and the current expiration year.
     */
   @js.native
@@ -1800,7 +1930,7 @@ package route53domains {
     ): RenewDomainRequest = {
       val __obj = js.Dynamic.literal(
         "CurrentExpiryYear" -> CurrentExpiryYear.asInstanceOf[js.Any],
-        "DomainName"        -> DomainName.asInstanceOf[js.Any]
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
       DurationInYears.foreach(__v => __obj.updateDynamic("DurationInYears")(__v.asInstanceOf[js.Any]))
@@ -1907,14 +2037,6 @@ package route53domains {
   }
 
   /**
-    * The top-level domain does not support this operation.
-    */
-  @js.native
-  trait TLDRulesViolationException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
     * Each tag includes the following elements.
     */
   @js.native
@@ -1972,11 +2094,11 @@ package route53domains {
         PrivacyProtectTechContact: js.UndefOr[Boolean] = js.undefined
     ): TransferDomainRequest = {
       val __obj = js.Dynamic.literal(
-        "AdminContact"      -> AdminContact.asInstanceOf[js.Any],
-        "DomainName"        -> DomainName.asInstanceOf[js.Any],
-        "DurationInYears"   -> DurationInYears.asInstanceOf[js.Any],
+        "AdminContact" -> AdminContact.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "DurationInYears" -> DurationInYears.asInstanceOf[js.Any],
         "RegistrantContact" -> RegistrantContact.asInstanceOf[js.Any],
-        "TechContact"       -> TechContact.asInstanceOf[js.Any]
+        "TechContact" -> TechContact.asInstanceOf[js.Any]
       )
 
       AuthCode.foreach(__v => __obj.updateDynamic("AuthCode")(__v.asInstanceOf[js.Any]))
@@ -1997,7 +2119,7 @@ package route53domains {
   }
 
   /**
-    * The TranserDomain response includes the following element.
+    * The TransferDomain response includes the following element.
     */
   @js.native
   trait TransferDomainResponse extends js.Object {
@@ -2018,31 +2140,69 @@ package route53domains {
   }
 
   /**
-    * Whether the domain name can be transferred to Amazon Route 53.
+    * The TransferDomainToAnotherAwsAccount request includes the following elements.
+    */
+  @js.native
+  trait TransferDomainToAnotherAwsAccountRequest extends js.Object {
+    var AccountId: AccountId
+    var DomainName: DomainName
+  }
+
+  object TransferDomainToAnotherAwsAccountRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        DomainName: DomainName
+    ): TransferDomainToAnotherAwsAccountRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TransferDomainToAnotherAwsAccountRequest]
+    }
+  }
+
+  /**
+    * The <code>TransferDomainToAnotherAwsAccount</code> response includes the following elements.
+    */
+  @js.native
+  trait TransferDomainToAnotherAwsAccountResponse extends js.Object {
+    var OperationId: js.UndefOr[OperationId]
+    var Password: js.UndefOr[String]
+  }
+
+  object TransferDomainToAnotherAwsAccountResponse {
+    @inline
+    def apply(
+        OperationId: js.UndefOr[OperationId] = js.undefined,
+        Password: js.UndefOr[String] = js.undefined
+    ): TransferDomainToAnotherAwsAccountResponse = {
+      val __obj = js.Dynamic.literal()
+      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
+      Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TransferDomainToAnotherAwsAccountResponse]
+    }
+  }
+
+  /**
+    * Whether the domain name can be transferred to Route 53.
     *
     * '''Note:'''You can transfer only domains that have a value of <code>TRANSFERABLE</code> for <code>Transferable</code>.
     * Valid values:
-    *  <dl> <dt>TRANSFERABLE</dt> <dd> The domain name can be transferred to Amazon Route 53.
-    *  </dd> <dt>UNTRANSFERRABLE</dt> <dd> The domain name can't be transferred to Amazon Route 53.
+    *  <dl> <dt>TRANSFERABLE</dt> <dd> The domain name can be transferred to Route 53.
+    *  </dd> <dt>UNTRANSFERRABLE</dt> <dd> The domain name can't be transferred to Route 53.
     *  </dd> <dt>DONT_KNOW</dt> <dd> Reserved for future use.
     *  </dd> </dl>
     */
   @js.native
   sealed trait Transferable extends js.Any
   object Transferable extends js.Object {
-    val TRANSFERABLE   = "TRANSFERABLE".asInstanceOf[Transferable]
+    val TRANSFERABLE = "TRANSFERABLE".asInstanceOf[Transferable]
     val UNTRANSFERABLE = "UNTRANSFERABLE".asInstanceOf[Transferable]
-    val DONT_KNOW      = "DONT_KNOW".asInstanceOf[Transferable]
+    val DONT_KNOW = "DONT_KNOW".asInstanceOf[Transferable]
 
     val values = js.Object.freeze(js.Array(TRANSFERABLE, UNTRANSFERABLE, DONT_KNOW))
-  }
-
-  /**
-    * Amazon Route 53 does not support this top-level domain (TLD).
-    */
-  @js.native
-  trait UnsupportedTLDException extends js.Object {
-    val message: ErrorMessage
   }
 
   /**
@@ -2166,7 +2326,7 @@ package route53domains {
         FIAuthKey: js.UndefOr[FIAuthKey] = js.undefined
     ): UpdateDomainNameserversRequest = {
       val __obj = js.Dynamic.literal(
-        "DomainName"  -> DomainName.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
         "Nameservers" -> Nameservers.asInstanceOf[js.Any]
       )
 

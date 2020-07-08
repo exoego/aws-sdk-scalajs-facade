@@ -7,37 +7,37 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object signer {
-  type BucketName            = String
-  type CertificateArn        = String
-  type ClientRequestToken    = String
-  type CompletedAt           = js.Date
-  type CreatedAt             = js.Date
-  type DisplayName           = String
-  type EncryptionAlgorithms  = js.Array[EncryptionAlgorithm]
-  type HashAlgorithms        = js.Array[HashAlgorithm]
-  type ImageFormats          = js.Array[ImageFormat]
-  type JobId                 = String
-  type Key                   = String
-  type MaxResults            = Int
-  type MaxSizeInMB           = Int
-  type NextToken             = String
-  type PlatformId            = String
-  type Prefix                = String
-  type ProfileName           = String
-  type RequestedBy           = String
-  type SigningJobs           = js.Array[SigningJob]
-  type SigningParameterKey   = String
+  type BucketName = String
+  type CertificateArn = String
+  type ClientRequestToken = String
+  type CompletedAt = js.Date
+  type CreatedAt = js.Date
+  type DisplayName = String
+  type EncryptionAlgorithms = js.Array[EncryptionAlgorithm]
+  type HashAlgorithms = js.Array[HashAlgorithm]
+  type ImageFormats = js.Array[ImageFormat]
+  type JobId = String
+  type Key = String
+  type MaxResults = Int
+  type MaxSizeInMB = Int
+  type NextToken = String
+  type PlatformId = String
+  type Prefix = String
+  type ProfileName = String
+  type RequestedBy = String
+  type SigningJobs = js.Array[SigningJob]
+  type SigningParameterKey = String
   type SigningParameterValue = String
-  type SigningParameters     = js.Dictionary[SigningParameterValue]
-  type SigningPlatforms      = js.Array[SigningPlatform]
-  type SigningProfiles       = js.Array[SigningProfile]
-  type StatusReason          = String
-  type TagKey                = String
-  type TagKeyList            = js.Array[TagKey]
-  type TagMap                = js.Dictionary[TagValue]
-  type TagValue              = String
-  type Version               = String
-  type key                   = String
+  type SigningParameters = js.Dictionary[SigningParameterValue]
+  type SigningPlatforms = js.Array[SigningPlatform]
+  type SigningProfiles = js.Array[SigningProfile]
+  type StatusReason = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagMap = js.Dictionary[TagValue]
+  type TagValue = String
+  type Version = String
+  type key = String
 
   implicit final class SignerOps(private val service: Signer) extends AnyVal {
 
@@ -74,18 +74,18 @@ package signer {
   class Signer() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def cancelSigningProfile(params: CancelSigningProfileRequest): Request[js.Object]                    = js.native
-    def describeSigningJob(params: DescribeSigningJobRequest): Request[DescribeSigningJobResponse]       = js.native
-    def getSigningPlatform(params: GetSigningPlatformRequest): Request[GetSigningPlatformResponse]       = js.native
-    def getSigningProfile(params: GetSigningProfileRequest): Request[GetSigningProfileResponse]          = js.native
-    def listSigningJobs(params: ListSigningJobsRequest): Request[ListSigningJobsResponse]                = js.native
+    def cancelSigningProfile(params: CancelSigningProfileRequest): Request[js.Object] = js.native
+    def describeSigningJob(params: DescribeSigningJobRequest): Request[DescribeSigningJobResponse] = js.native
+    def getSigningPlatform(params: GetSigningPlatformRequest): Request[GetSigningPlatformResponse] = js.native
+    def getSigningProfile(params: GetSigningProfileRequest): Request[GetSigningProfileResponse] = js.native
+    def listSigningJobs(params: ListSigningJobsRequest): Request[ListSigningJobsResponse] = js.native
     def listSigningPlatforms(params: ListSigningPlatformsRequest): Request[ListSigningPlatformsResponse] = js.native
-    def listSigningProfiles(params: ListSigningProfilesRequest): Request[ListSigningProfilesResponse]    = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]    = js.native
-    def putSigningProfile(params: PutSigningProfileRequest): Request[PutSigningProfileResponse]          = js.native
-    def startSigningJob(params: StartSigningJobRequest): Request[StartSigningJobResponse]                = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                            = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                      = js.native
+    def listSigningProfiles(params: ListSigningProfilesRequest): Request[ListSigningProfilesResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def putSigningProfile(params: PutSigningProfileRequest): Request[PutSigningProfileResponse] = js.native
+    def startSigningJob(params: StartSigningJobRequest): Request[StartSigningJobResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
   }
 
   @js.native
@@ -206,7 +206,7 @@ package signer {
   @js.native
   sealed trait EncryptionAlgorithm extends js.Any
   object EncryptionAlgorithm extends js.Object {
-    val RSA   = "RSA".asInstanceOf[EncryptionAlgorithm]
+    val RSA = "RSA".asInstanceOf[EncryptionAlgorithm]
     val ECDSA = "ECDSA".asInstanceOf[EncryptionAlgorithm]
 
     val values = js.Object.freeze(js.Array(RSA, ECDSA))
@@ -229,7 +229,7 @@ package signer {
     ): EncryptionAlgorithmOptions = {
       val __obj = js.Dynamic.literal(
         "allowedValues" -> allowedValues.asInstanceOf[js.Any],
-        "defaultValue"  -> defaultValue.asInstanceOf[js.Any]
+        "defaultValue" -> defaultValue.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[EncryptionAlgorithmOptions]
@@ -349,7 +349,7 @@ package signer {
   @js.native
   sealed trait HashAlgorithm extends js.Any
   object HashAlgorithm extends js.Object {
-    val SHA1   = "SHA1".asInstanceOf[HashAlgorithm]
+    val SHA1 = "SHA1".asInstanceOf[HashAlgorithm]
     val SHA256 = "SHA256".asInstanceOf[HashAlgorithm]
 
     val values = js.Object.freeze(js.Array(SHA1, SHA256))
@@ -372,7 +372,7 @@ package signer {
     ): HashAlgorithmOptions = {
       val __obj = js.Dynamic.literal(
         "allowedValues" -> allowedValues.asInstanceOf[js.Any],
-        "defaultValue"  -> defaultValue.asInstanceOf[js.Any]
+        "defaultValue" -> defaultValue.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[HashAlgorithmOptions]
@@ -383,8 +383,10 @@ package signer {
   sealed trait ImageFormat extends js.Any
   object ImageFormat extends js.Object {
     val JSON = "JSON".asInstanceOf[ImageFormat]
+    val JSONEmbedded = "JSONEmbedded".asInstanceOf[ImageFormat]
+    val JSONDetached = "JSONDetached".asInstanceOf[ImageFormat]
 
-    val values = js.Object.freeze(js.Array(JSON))
+    val values = js.Object.freeze(js.Array(JSON, JSONEmbedded, JSONDetached))
   }
 
   @js.native
@@ -577,8 +579,8 @@ package signer {
         tags: js.UndefOr[TagMap] = js.undefined
     ): PutSigningProfileRequest = {
       val __obj = js.Dynamic.literal(
-        "platformId"      -> platformId.asInstanceOf[js.Any],
-        "profileName"     -> profileName.asInstanceOf[js.Any],
+        "platformId" -> platformId.asInstanceOf[js.Any],
+        "profileName" -> profileName.asInstanceOf[js.Any],
         "signingMaterial" -> signingMaterial.asInstanceOf[js.Any]
       )
 
@@ -668,8 +670,8 @@ package signer {
     ): S3Source = {
       val __obj = js.Dynamic.literal(
         "bucketName" -> bucketName.asInstanceOf[js.Any],
-        "key"        -> key.asInstanceOf[js.Any],
-        "version"    -> version.asInstanceOf[js.Any]
+        "key" -> key.asInstanceOf[js.Any],
+        "version" -> version.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[S3Source]
@@ -712,7 +714,7 @@ package signer {
     ): SigningConfiguration = {
       val __obj = js.Dynamic.literal(
         "encryptionAlgorithmOptions" -> encryptionAlgorithmOptions.asInstanceOf[js.Any],
-        "hashAlgorithmOptions"       -> hashAlgorithmOptions.asInstanceOf[js.Any]
+        "hashAlgorithmOptions" -> hashAlgorithmOptions.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[SigningConfiguration]
@@ -757,7 +759,7 @@ package signer {
         supportedFormats: ImageFormats
     ): SigningImageFormat = {
       val __obj = js.Dynamic.literal(
-        "defaultFormat"    -> defaultFormat.asInstanceOf[js.Any],
+        "defaultFormat" -> defaultFormat.asInstanceOf[js.Any],
         "supportedFormats" -> supportedFormats.asInstanceOf[js.Any]
       )
 
@@ -821,7 +823,7 @@ package signer {
   }
 
   /**
-    * Contains information about the signing configurations and parameters that is used to perform a code signing job.
+    * Contains information about the signing configurations and parameters that are used to perform a code signing job.
     */
   @js.native
   trait SigningPlatform extends js.Object {
@@ -866,15 +868,18 @@ package signer {
   @js.native
   trait SigningPlatformOverrides extends js.Object {
     var signingConfiguration: js.UndefOr[SigningConfigurationOverrides]
+    var signingImageFormat: js.UndefOr[ImageFormat]
   }
 
   object SigningPlatformOverrides {
     @inline
     def apply(
-        signingConfiguration: js.UndefOr[SigningConfigurationOverrides] = js.undefined
+        signingConfiguration: js.UndefOr[SigningConfigurationOverrides] = js.undefined,
+        signingImageFormat: js.UndefOr[ImageFormat] = js.undefined
     ): SigningPlatformOverrides = {
       val __obj = js.Dynamic.literal()
       signingConfiguration.foreach(__v => __obj.updateDynamic("signingConfiguration")(__v.asInstanceOf[js.Any]))
+      signingImageFormat.foreach(__v => __obj.updateDynamic("signingImageFormat")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SigningPlatformOverrides]
     }
   }
@@ -919,7 +924,7 @@ package signer {
   @js.native
   sealed trait SigningProfileStatus extends js.Any
   object SigningProfileStatus extends js.Object {
-    val Active   = "Active".asInstanceOf[SigningProfileStatus]
+    val Active = "Active".asInstanceOf[SigningProfileStatus]
     val Canceled = "Canceled".asInstanceOf[SigningProfileStatus]
 
     val values = js.Object.freeze(js.Array(Active, Canceled))
@@ -929,8 +934,8 @@ package signer {
   sealed trait SigningStatus extends js.Any
   object SigningStatus extends js.Object {
     val InProgress = "InProgress".asInstanceOf[SigningStatus]
-    val Failed     = "Failed".asInstanceOf[SigningStatus]
-    val Succeeded  = "Succeeded".asInstanceOf[SigningStatus]
+    val Failed = "Failed".asInstanceOf[SigningStatus]
+    val Succeeded = "Succeeded".asInstanceOf[SigningStatus]
 
     val values = js.Object.freeze(js.Array(InProgress, Failed, Succeeded))
   }
@@ -972,8 +977,8 @@ package signer {
     ): StartSigningJobRequest = {
       val __obj = js.Dynamic.literal(
         "clientRequestToken" -> clientRequestToken.asInstanceOf[js.Any],
-        "destination"        -> destination.asInstanceOf[js.Any],
-        "source"             -> source.asInstanceOf[js.Any]
+        "destination" -> destination.asInstanceOf[js.Any],
+        "source" -> source.asInstanceOf[js.Any]
       )
 
       profileName.foreach(__v => __obj.updateDynamic("profileName")(__v.asInstanceOf[js.Any]))
@@ -1011,7 +1016,7 @@ package signer {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1045,7 +1050,7 @@ package signer {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]

@@ -7,31 +7,31 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object kinesisvideo {
-  type ChannelInfoList            = js.Array[ChannelInfo]
-  type ChannelName                = String
-  type DataEndpoint               = String
+  type ChannelInfoList = js.Array[ChannelInfo]
+  type ChannelName = String
+  type DataEndpoint = String
   type DataRetentionChangeInHours = Int
-  type DataRetentionInHours       = Int
-  type DeviceName                 = String
-  type KmsKeyId                   = String
-  type ListOfProtocols            = js.Array[ChannelProtocol]
-  type ListStreamsInputLimit      = Int
-  type MediaType                  = String
-  type MessageTtlSeconds          = Int
-  type NextToken                  = String
-  type ResourceARN                = String
-  type ResourceEndpoint           = String
-  type ResourceEndpointList       = js.Array[ResourceEndpointListItem]
-  type ResourceTags               = js.Dictionary[TagValue]
-  type StreamInfoList             = js.Array[StreamInfo]
-  type StreamName                 = String
-  type TagKey                     = String
-  type TagKeyList                 = js.Array[TagKey]
-  type TagList                    = js.Array[Tag]
-  type TagOnCreateList            = js.Array[Tag]
-  type TagValue                   = String
-  type Timestamp                  = js.Date
-  type Version                    = String
+  type DataRetentionInHours = Int
+  type DeviceName = String
+  type KmsKeyId = String
+  type ListOfProtocols = js.Array[ChannelProtocol]
+  type ListStreamsInputLimit = Int
+  type MediaType = String
+  type MessageTtlSeconds = Int
+  type NextToken = String
+  type ResourceARN = String
+  type ResourceEndpoint = String
+  type ResourceEndpointList = js.Array[ResourceEndpointListItem]
+  type ResourceTags = js.Dictionary[TagValue]
+  type StreamInfoList = js.Array[StreamInfo]
+  type StreamName = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagOnCreateList = js.Array[Tag]
+  type TagValue = String
+  type Timestamp = js.Date
+  type Version = String
 
   implicit final class KinesisVideoOps(private val service: KinesisVideo) extends AnyVal {
 
@@ -88,38 +88,39 @@ package kinesisvideo {
     def this(config: AWSConfig) = this()
 
     def createSignalingChannel(params: CreateSignalingChannelInput): Request[CreateSignalingChannelOutput] = js.native
-    def createStream(params: CreateStreamInput): Request[CreateStreamOutput]                               = js.native
+    def createStream(params: CreateStreamInput): Request[CreateStreamOutput] = js.native
     def deleteSignalingChannel(params: DeleteSignalingChannelInput): Request[DeleteSignalingChannelOutput] = js.native
-    def deleteStream(params: DeleteStreamInput): Request[DeleteStreamOutput]                               = js.native
+    def deleteStream(params: DeleteStreamInput): Request[DeleteStreamOutput] = js.native
     def describeSignalingChannel(params: DescribeSignalingChannelInput): Request[DescribeSignalingChannelOutput] =
       js.native
-    def describeStream(params: DescribeStreamInput): Request[DescribeStreamOutput]    = js.native
+    def describeStream(params: DescribeStreamInput): Request[DescribeStreamOutput] = js.native
     def getDataEndpoint(params: GetDataEndpointInput): Request[GetDataEndpointOutput] = js.native
     def getSignalingChannelEndpoint(
         params: GetSignalingChannelEndpointInput
-    ): Request[GetSignalingChannelEndpointOutput]                                                          = js.native
-    def listSignalingChannels(params: ListSignalingChannelsInput): Request[ListSignalingChannelsOutput]    = js.native
-    def listStreams(params: ListStreamsInput): Request[ListStreamsOutput]                                  = js.native
-    def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput]          = js.native
-    def listTagsForStream(params: ListTagsForStreamInput): Request[ListTagsForStreamOutput]                = js.native
-    def tagResource(params: TagResourceInput): Request[TagResourceOutput]                                  = js.native
-    def tagStream(params: TagStreamInput): Request[TagStreamOutput]                                        = js.native
-    def untagResource(params: UntagResourceInput): Request[UntagResourceOutput]                            = js.native
-    def untagStream(params: UntagStreamInput): Request[UntagStreamOutput]                                  = js.native
-    def updateDataRetention(params: UpdateDataRetentionInput): Request[UpdateDataRetentionOutput]          = js.native
+    ): Request[GetSignalingChannelEndpointOutput] = js.native
+    def listSignalingChannels(params: ListSignalingChannelsInput): Request[ListSignalingChannelsOutput] = js.native
+    def listStreams(params: ListStreamsInput): Request[ListStreamsOutput] = js.native
+    def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
+    def listTagsForStream(params: ListTagsForStreamInput): Request[ListTagsForStreamOutput] = js.native
+    def tagResource(params: TagResourceInput): Request[TagResourceOutput] = js.native
+    def tagStream(params: TagStreamInput): Request[TagStreamOutput] = js.native
+    def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
+    def untagStream(params: UntagStreamInput): Request[UntagStreamOutput] = js.native
+    def updateDataRetention(params: UpdateDataRetentionInput): Request[UpdateDataRetentionOutput] = js.native
     def updateSignalingChannel(params: UpdateSignalingChannelInput): Request[UpdateSignalingChannelOutput] = js.native
-    def updateStream(params: UpdateStreamInput): Request[UpdateStreamOutput]                               = js.native
+    def updateStream(params: UpdateStreamInput): Request[UpdateStreamOutput] = js.native
   }
 
   @js.native
   sealed trait APIName extends js.Any
   object APIName extends js.Object {
-    val PUT_MEDIA                      = "PUT_MEDIA".asInstanceOf[APIName]
-    val GET_MEDIA                      = "GET_MEDIA".asInstanceOf[APIName]
-    val LIST_FRAGMENTS                 = "LIST_FRAGMENTS".asInstanceOf[APIName]
-    val GET_MEDIA_FOR_FRAGMENT_LIST    = "GET_MEDIA_FOR_FRAGMENT_LIST".asInstanceOf[APIName]
-    val GET_HLS_STREAMING_SESSION_URL  = "GET_HLS_STREAMING_SESSION_URL".asInstanceOf[APIName]
+    val PUT_MEDIA = "PUT_MEDIA".asInstanceOf[APIName]
+    val GET_MEDIA = "GET_MEDIA".asInstanceOf[APIName]
+    val LIST_FRAGMENTS = "LIST_FRAGMENTS".asInstanceOf[APIName]
+    val GET_MEDIA_FOR_FRAGMENT_LIST = "GET_MEDIA_FOR_FRAGMENT_LIST".asInstanceOf[APIName]
+    val GET_HLS_STREAMING_SESSION_URL = "GET_HLS_STREAMING_SESSION_URL".asInstanceOf[APIName]
     val GET_DASH_STREAMING_SESSION_URL = "GET_DASH_STREAMING_SESSION_URL".asInstanceOf[APIName]
+    val GET_CLIP = "GET_CLIP".asInstanceOf[APIName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -128,7 +129,8 @@ package kinesisvideo {
         LIST_FRAGMENTS,
         GET_MEDIA_FOR_FRAGMENT_LIST,
         GET_HLS_STREAMING_SESSION_URL,
-        GET_DASH_STREAMING_SESSION_URL
+        GET_DASH_STREAMING_SESSION_URL,
+        GET_CLIP
       )
     )
   }
@@ -197,7 +199,7 @@ package kinesisvideo {
   @js.native
   sealed trait ChannelProtocol extends js.Any
   object ChannelProtocol extends js.Object {
-    val WSS   = "WSS".asInstanceOf[ChannelProtocol]
+    val WSS = "WSS".asInstanceOf[ChannelProtocol]
     val HTTPS = "HTTPS".asInstanceOf[ChannelProtocol]
 
     val values = js.Object.freeze(js.Array(WSS, HTTPS))
@@ -769,7 +771,7 @@ package kinesisvideo {
   sealed trait Status extends js.Any
   object Status extends js.Object {
     val CREATING = "CREATING".asInstanceOf[Status]
-    val ACTIVE   = "ACTIVE".asInstanceOf[Status]
+    val ACTIVE = "ACTIVE".asInstanceOf[Status]
     val UPDATING = "UPDATING".asInstanceOf[Status]
     val DELETING = "DELETING".asInstanceOf[Status]
 
@@ -857,7 +859,7 @@ package kinesisvideo {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -879,7 +881,7 @@ package kinesisvideo {
     ): TagResourceInput = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceInput]
@@ -950,7 +952,7 @@ package kinesisvideo {
     ): UntagResourceInput = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "TagKeyList"  -> TagKeyList.asInstanceOf[js.Any]
+        "TagKeyList" -> TagKeyList.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceInput]
@@ -1026,9 +1028,9 @@ package kinesisvideo {
         StreamName: js.UndefOr[StreamName] = js.undefined
     ): UpdateDataRetentionInput = {
       val __obj = js.Dynamic.literal(
-        "CurrentVersion"             -> CurrentVersion.asInstanceOf[js.Any],
+        "CurrentVersion" -> CurrentVersion.asInstanceOf[js.Any],
         "DataRetentionChangeInHours" -> DataRetentionChangeInHours.asInstanceOf[js.Any],
-        "Operation"                  -> Operation.asInstanceOf[js.Any]
+        "Operation" -> Operation.asInstanceOf[js.Any]
       )
 
       StreamARN.foreach(__v => __obj.updateDynamic("StreamARN")(__v.asInstanceOf[js.Any]))
@@ -1074,7 +1076,7 @@ package kinesisvideo {
         SingleMasterConfiguration: js.UndefOr[SingleMasterConfiguration] = js.undefined
     ): UpdateSignalingChannelInput = {
       val __obj = js.Dynamic.literal(
-        "ChannelARN"     -> ChannelARN.asInstanceOf[js.Any],
+        "ChannelARN" -> ChannelARN.asInstanceOf[js.Any],
         "CurrentVersion" -> CurrentVersion.asInstanceOf[js.Any]
       )
 

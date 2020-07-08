@@ -7,182 +7,183 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object servicecatalog {
-  type AcceptLanguage                          = String
-  type AccessLevelFilterValue                  = String
-  type AccountId                               = String
-  type AccountIds                              = js.Array[AccountId]
-  type AddTags                                 = js.Array[Tag]
-  type AllowedValue                            = String
-  type AllowedValues                           = js.Array[AllowedValue]
-  type ApproximateCount                        = Int
-  type AttributeValue                          = String
-  type BudgetName                              = String
-  type Budgets                                 = js.Array[BudgetDetail]
-  type CausingEntity                           = String
-  type CloudWatchDashboardName                 = String
-  type CloudWatchDashboards                    = js.Array[CloudWatchDashboard]
-  type ConstraintDescription                   = String
-  type ConstraintDetails                       = js.Array[ConstraintDetail]
-  type ConstraintParameters                    = String
-  type ConstraintSummaries                     = js.Array[ConstraintSummary]
-  type ConstraintType                          = String
-  type CopyOptions                             = js.Array[CopyOption]
-  type CreatedTime                             = js.Date
-  type CreationTime                            = js.Date
-  type DefaultValue                            = String
-  type Description                             = String
-  type DisableTemplateValidation               = Boolean
-  type Error                                   = String
-  type ErrorCode                               = String
-  type ErrorDescription                        = String
-  type ExecutionParameterKey                   = String
-  type ExecutionParameterMap                   = js.Dictionary[ExecutionParameterValueList]
-  type ExecutionParameterType                  = String
-  type ExecutionParameterValue                 = String
-  type ExecutionParameterValueList             = js.Array[ExecutionParameterValue]
-  type ExecutionParameters                     = js.Array[ExecutionParameter]
-  type FailedServiceActionAssociations         = js.Array[FailedServiceActionAssociation]
-  type HasDefaultPath                          = Boolean
-  type Id                                      = String
-  type IdempotencyToken                        = String
-  type IgnoreErrors                            = Boolean
-  type InstructionType                         = String
-  type InstructionValue                        = String
-  type LastRequestId                           = String
-  type LaunchPathSummaries                     = js.Array[LaunchPathSummary]
-  type LogicalResourceId                       = String
-  type Message                                 = String
-  type Namespaces                              = js.Array[AccountId]
-  type NoEcho                                  = Boolean
-  type NotificationArn                         = String
-  type NotificationArns                        = js.Array[NotificationArn]
-  type OrganizationNodeValue                   = String
-  type OrganizationNodes                       = js.Array[OrganizationNode]
-  type OutputKey                               = String
-  type OutputValue                             = String
-  type PageSize                                = Int
-  type PageToken                               = String
-  type ParameterKey                            = String
-  type ParameterType                           = String
-  type ParameterValue                          = String
-  type PhysicalId                              = String
-  type PhysicalResourceId                      = String
-  type PlanResourceType                        = String
-  type PortfolioDescription                    = String
-  type PortfolioDetails                        = js.Array[PortfolioDetail]
-  type PortfolioDisplayName                    = String
-  type PortfolioName                           = String
-  type PrincipalARN                            = String
-  type Principals                              = js.Array[Principal]
-  type ProductArn                              = String
-  type ProductViewAggregationType              = String
-  type ProductViewAggregationValues            = js.Array[ProductViewAggregationValue]
-  type ProductViewAggregations                 = js.Dictionary[ProductViewAggregationValues]
-  type ProductViewDetails                      = js.Array[ProductViewDetail]
-  type ProductViewDistributor                  = String
-  type ProductViewFilterValue                  = String
-  type ProductViewFilterValues                 = js.Array[ProductViewFilterValue]
-  type ProductViewFilters                      = js.Dictionary[ProductViewFilterValues]
-  type ProductViewName                         = String
-  type ProductViewOwner                        = String
-  type ProductViewShortDescription             = String
-  type ProductViewSummaries                    = js.Array[ProductViewSummary]
-  type PropertyName                            = String
-  type PropertyValue                           = String
-  type ProviderName                            = String
-  type ProvisionedProductAttributes            = js.Array[ProvisionedProductAttribute]
-  type ProvisionedProductDetails               = js.Array[ProvisionedProductDetail]
-  type ProvisionedProductFilters               = js.Dictionary[ProvisionedProductViewFilterValues]
-  type ProvisionedProductId                    = String
-  type ProvisionedProductName                  = String
-  type ProvisionedProductNameOrArn             = String
-  type ProvisionedProductPlanName              = String
-  type ProvisionedProductPlans                 = js.Array[ProvisionedProductPlanSummary]
-  type ProvisionedProductProperties            = js.Dictionary[PropertyValue]
-  type ProvisionedProductStatusMessage         = String
-  type ProvisionedProductType                  = String
-  type ProvisionedProductViewFilterValue       = String
-  type ProvisionedProductViewFilterValues      = js.Array[ProvisionedProductViewFilterValue]
-  type ProvisioningArtifactActive              = Boolean
-  type ProvisioningArtifactCreatedTime         = js.Date
-  type ProvisioningArtifactDescription         = String
-  type ProvisioningArtifactDetails             = js.Array[ProvisioningArtifactDetail]
-  type ProvisioningArtifactInfo                = js.Dictionary[ProvisioningArtifactInfoValue]
-  type ProvisioningArtifactInfoKey             = String
-  type ProvisioningArtifactInfoValue           = String
-  type ProvisioningArtifactName                = String
-  type ProvisioningArtifactParameters          = js.Array[ProvisioningArtifactParameter]
-  type ProvisioningArtifactPropertyValue       = String
-  type ProvisioningArtifactSummaries           = js.Array[ProvisioningArtifactSummary]
-  type ProvisioningArtifactViews               = js.Array[ProvisioningArtifactView]
-  type ProvisioningArtifacts                   = js.Array[ProvisioningArtifact]
-  type ProvisioningParameters                  = js.Array[ProvisioningParameter]
-  type RecordDetails                           = js.Array[RecordDetail]
-  type RecordErrors                            = js.Array[RecordError]
-  type RecordOutputs                           = js.Array[RecordOutput]
-  type RecordTagKey                            = String
-  type RecordTagValue                          = String
-  type RecordTags                              = js.Array[RecordTag]
-  type RecordType                              = String
-  type Region                                  = String
-  type ResourceARN                             = String
-  type ResourceChangeDetails                   = js.Array[ResourceChangeDetail]
-  type ResourceChanges                         = js.Array[ResourceChange]
-  type ResourceDetailARN                       = String
-  type ResourceDetailCreatedTime               = js.Date
-  type ResourceDetailDescription               = String
-  type ResourceDetailId                        = String
-  type ResourceDetailName                      = String
-  type ResourceDetails                         = js.Array[ResourceDetail]
-  type ResourceId                              = String
-  type ResourceType                            = String
-  type Scope                                   = js.Array[ResourceAttribute]
-  type SearchFilterKey                         = String
-  type SearchFilterValue                       = String
-  type SearchProvisionedProductsPageSize       = Int
-  type ServiceActionAssociationErrorMessage    = String
-  type ServiceActionAssociations               = js.Array[ServiceActionAssociation]
-  type ServiceActionDefinitionMap              = js.Dictionary[ServiceActionDefinitionValue]
-  type ServiceActionDefinitionValue            = String
-  type ServiceActionDescription                = String
-  type ServiceActionName                       = String
-  type ServiceActionSummaries                  = js.Array[ServiceActionSummary]
-  type ShareErrors                             = js.Array[ShareError]
-  type SortField                               = String
-  type SourceProvisioningArtifactProperties    = js.Array[SourceProvisioningArtifactPropertiesMap]
+  type AcceptLanguage = String
+  type AccessLevelFilterValue = String
+  type AccountId = String
+  type AccountIds = js.Array[AccountId]
+  type AddTags = js.Array[Tag]
+  type AllowedValue = String
+  type AllowedValues = js.Array[AllowedValue]
+  type ApproximateCount = Int
+  type AttributeValue = String
+  type BudgetName = String
+  type Budgets = js.Array[BudgetDetail]
+  type CausingEntity = String
+  type CloudWatchDashboardName = String
+  type CloudWatchDashboards = js.Array[CloudWatchDashboard]
+  type ConstraintDescription = String
+  type ConstraintDetails = js.Array[ConstraintDetail]
+  type ConstraintParameters = String
+  type ConstraintSummaries = js.Array[ConstraintSummary]
+  type ConstraintType = String
+  type CopyOptions = js.Array[CopyOption]
+  type CreatedTime = js.Date
+  type CreationTime = js.Date
+  type DefaultValue = String
+  type Description = String
+  type DisableTemplateValidation = Boolean
+  type Error = String
+  type ErrorCode = String
+  type ErrorDescription = String
+  type ExecutionParameterKey = String
+  type ExecutionParameterMap = js.Dictionary[ExecutionParameterValueList]
+  type ExecutionParameterType = String
+  type ExecutionParameterValue = String
+  type ExecutionParameterValueList = js.Array[ExecutionParameterValue]
+  type ExecutionParameters = js.Array[ExecutionParameter]
+  type FailedServiceActionAssociations = js.Array[FailedServiceActionAssociation]
+  type HasDefaultPath = Boolean
+  type Id = String
+  type IdempotencyToken = String
+  type IgnoreErrors = Boolean
+  type InstructionType = String
+  type InstructionValue = String
+  type LastRequestId = String
+  type LaunchPathSummaries = js.Array[LaunchPathSummary]
+  type LaunchPaths = js.Array[LaunchPath]
+  type LogicalResourceId = String
+  type Message = String
+  type Namespaces = js.Array[AccountId]
+  type NoEcho = Boolean
+  type NotificationArn = String
+  type NotificationArns = js.Array[NotificationArn]
+  type OrganizationNodeValue = String
+  type OrganizationNodes = js.Array[OrganizationNode]
+  type OutputKey = String
+  type OutputValue = String
+  type PageSize = Int
+  type PageToken = String
+  type ParameterKey = String
+  type ParameterType = String
+  type ParameterValue = String
+  type PhysicalId = String
+  type PhysicalResourceId = String
+  type PlanResourceType = String
+  type PortfolioDescription = String
+  type PortfolioDetails = js.Array[PortfolioDetail]
+  type PortfolioDisplayName = String
+  type PortfolioName = String
+  type PrincipalARN = String
+  type Principals = js.Array[Principal]
+  type ProductArn = String
+  type ProductViewAggregationType = String
+  type ProductViewAggregationValues = js.Array[ProductViewAggregationValue]
+  type ProductViewAggregations = js.Dictionary[ProductViewAggregationValues]
+  type ProductViewDetails = js.Array[ProductViewDetail]
+  type ProductViewDistributor = String
+  type ProductViewFilterValue = String
+  type ProductViewFilterValues = js.Array[ProductViewFilterValue]
+  type ProductViewFilters = js.Dictionary[ProductViewFilterValues]
+  type ProductViewName = String
+  type ProductViewOwner = String
+  type ProductViewShortDescription = String
+  type ProductViewSummaries = js.Array[ProductViewSummary]
+  type PropertyName = String
+  type PropertyValue = String
+  type ProviderName = String
+  type ProvisionedProductAttributes = js.Array[ProvisionedProductAttribute]
+  type ProvisionedProductDetails = js.Array[ProvisionedProductDetail]
+  type ProvisionedProductFilters = js.Dictionary[ProvisionedProductViewFilterValues]
+  type ProvisionedProductId = String
+  type ProvisionedProductName = String
+  type ProvisionedProductNameOrArn = String
+  type ProvisionedProductPlanName = String
+  type ProvisionedProductPlans = js.Array[ProvisionedProductPlanSummary]
+  type ProvisionedProductProperties = js.Dictionary[PropertyValue]
+  type ProvisionedProductStatusMessage = String
+  type ProvisionedProductType = String
+  type ProvisionedProductViewFilterValue = String
+  type ProvisionedProductViewFilterValues = js.Array[ProvisionedProductViewFilterValue]
+  type ProvisioningArtifactActive = Boolean
+  type ProvisioningArtifactCreatedTime = js.Date
+  type ProvisioningArtifactDescription = String
+  type ProvisioningArtifactDetails = js.Array[ProvisioningArtifactDetail]
+  type ProvisioningArtifactInfo = js.Dictionary[ProvisioningArtifactInfoValue]
+  type ProvisioningArtifactInfoKey = String
+  type ProvisioningArtifactInfoValue = String
+  type ProvisioningArtifactName = String
+  type ProvisioningArtifactParameters = js.Array[ProvisioningArtifactParameter]
+  type ProvisioningArtifactPropertyValue = String
+  type ProvisioningArtifactSummaries = js.Array[ProvisioningArtifactSummary]
+  type ProvisioningArtifactViews = js.Array[ProvisioningArtifactView]
+  type ProvisioningArtifacts = js.Array[ProvisioningArtifact]
+  type ProvisioningParameters = js.Array[ProvisioningParameter]
+  type RecordDetails = js.Array[RecordDetail]
+  type RecordErrors = js.Array[RecordError]
+  type RecordOutputs = js.Array[RecordOutput]
+  type RecordTagKey = String
+  type RecordTagValue = String
+  type RecordTags = js.Array[RecordTag]
+  type RecordType = String
+  type Region = String
+  type ResourceARN = String
+  type ResourceChangeDetails = js.Array[ResourceChangeDetail]
+  type ResourceChanges = js.Array[ResourceChange]
+  type ResourceDetailARN = String
+  type ResourceDetailCreatedTime = js.Date
+  type ResourceDetailDescription = String
+  type ResourceDetailId = String
+  type ResourceDetailName = String
+  type ResourceDetails = js.Array[ResourceDetail]
+  type ResourceId = String
+  type ResourceType = String
+  type Scope = js.Array[ResourceAttribute]
+  type SearchFilterKey = String
+  type SearchFilterValue = String
+  type SearchProvisionedProductsPageSize = Int
+  type ServiceActionAssociationErrorMessage = String
+  type ServiceActionAssociations = js.Array[ServiceActionAssociation]
+  type ServiceActionDefinitionMap = js.Dictionary[ServiceActionDefinitionValue]
+  type ServiceActionDefinitionValue = String
+  type ServiceActionDescription = String
+  type ServiceActionName = String
+  type ServiceActionSummaries = js.Array[ServiceActionSummary]
+  type ShareErrors = js.Array[ShareError]
+  type SortField = String
+  type SourceProvisioningArtifactProperties = js.Array[SourceProvisioningArtifactPropertiesMap]
   type SourceProvisioningArtifactPropertiesMap = js.Dictionary[ProvisioningArtifactPropertyValue]
-  type StackInstances                          = js.Array[StackInstance]
-  type StackSetAccounts                        = js.Array[AccountId]
-  type StackSetFailureToleranceCount           = Int
-  type StackSetFailureTolerancePercentage      = Int
-  type StackSetMaxConcurrencyCount             = Int
-  type StackSetMaxConcurrencyPercentage        = Int
-  type StackSetRegions                         = js.Array[Region]
-  type StatusDetail                            = String
-  type StatusMessage                           = String
-  type SuccessfulShares                        = js.Array[AccountId]
-  type SupportDescription                      = String
-  type SupportEmail                            = String
-  type SupportUrl                              = String
-  type TagKey                                  = String
-  type TagKeys                                 = js.Array[TagKey]
-  type TagOptionActive                         = Boolean
-  type TagOptionDetails                        = js.Array[TagOptionDetail]
-  type TagOptionId                             = String
-  type TagOptionKey                            = String
-  type TagOptionSummaries                      = js.Array[TagOptionSummary]
-  type TagOptionValue                          = String
-  type TagOptionValues                         = js.Array[TagOptionValue]
-  type TagValue                                = String
-  type Tags                                    = js.Array[Tag]
-  type TotalResultsCount                       = Int
-  type UpdateProvisioningParameters            = js.Array[UpdateProvisioningParameter]
-  type UpdatedTime                             = js.Date
-  type UsageInstructions                       = js.Array[UsageInstruction]
-  type UsePreviousValue                        = Boolean
-  type UserArn                                 = String
-  type UserArnSession                          = String
-  type Verbose                                 = Boolean
+  type StackInstances = js.Array[StackInstance]
+  type StackSetAccounts = js.Array[AccountId]
+  type StackSetFailureToleranceCount = Int
+  type StackSetFailureTolerancePercentage = Int
+  type StackSetMaxConcurrencyCount = Int
+  type StackSetMaxConcurrencyPercentage = Int
+  type StackSetRegions = js.Array[Region]
+  type StatusDetail = String
+  type StatusMessage = String
+  type SuccessfulShares = js.Array[AccountId]
+  type SupportDescription = String
+  type SupportEmail = String
+  type SupportUrl = String
+  type TagKey = String
+  type TagKeys = js.Array[TagKey]
+  type TagOptionActive = Boolean
+  type TagOptionDetails = js.Array[TagOptionDetail]
+  type TagOptionId = String
+  type TagOptionKey = String
+  type TagOptionSummaries = js.Array[TagOptionSummary]
+  type TagOptionValue = String
+  type TagOptionValues = js.Array[TagOptionValue]
+  type TagValue = String
+  type Tags = js.Array[Tag]
+  type TotalResultsCount = Int
+  type UpdateProvisioningParameters = js.Array[UpdateProvisioningParameter]
+  type UpdatedTime = js.Date
+  type UsageInstructions = js.Array[UsageInstruction]
+  type UsePreviousValue = Boolean
+  type UserArn = String
+  type UserArnSession = String
+  type Verbose = Boolean
 
   implicit final class ServiceCatalogOps(private val service: ServiceCatalog) extends AnyVal {
 
@@ -445,40 +446,40 @@ package servicecatalog {
     ): Request[BatchAssociateServiceActionWithProvisioningArtifactOutput] = js.native
     def batchDisassociateServiceActionFromProvisioningArtifact(
         params: BatchDisassociateServiceActionFromProvisioningArtifactInput
-    ): Request[BatchDisassociateServiceActionFromProvisioningArtifactOutput]                         = js.native
-    def copyProduct(params: CopyProductInput): Request[CopyProductOutput]                            = js.native
-    def createConstraint(params: CreateConstraintInput): Request[CreateConstraintOutput]             = js.native
-    def createPortfolio(params: CreatePortfolioInput): Request[CreatePortfolioOutput]                = js.native
+    ): Request[BatchDisassociateServiceActionFromProvisioningArtifactOutput] = js.native
+    def copyProduct(params: CopyProductInput): Request[CopyProductOutput] = js.native
+    def createConstraint(params: CreateConstraintInput): Request[CreateConstraintOutput] = js.native
+    def createPortfolio(params: CreatePortfolioInput): Request[CreatePortfolioOutput] = js.native
     def createPortfolioShare(params: CreatePortfolioShareInput): Request[CreatePortfolioShareOutput] = js.native
-    def createProduct(params: CreateProductInput): Request[CreateProductOutput]                      = js.native
+    def createProduct(params: CreateProductInput): Request[CreateProductOutput] = js.native
     def createProvisionedProductPlan(
         params: CreateProvisionedProductPlanInput
     ): Request[CreateProvisionedProductPlanOutput] = js.native
     def createProvisioningArtifact(params: CreateProvisioningArtifactInput): Request[CreateProvisioningArtifactOutput] =
       js.native
-    def createServiceAction(params: CreateServiceActionInput): Request[CreateServiceActionOutput]    = js.native
-    def createTagOption(params: CreateTagOptionInput): Request[CreateTagOptionOutput]                = js.native
-    def deleteConstraint(params: DeleteConstraintInput): Request[DeleteConstraintOutput]             = js.native
-    def deletePortfolio(params: DeletePortfolioInput): Request[DeletePortfolioOutput]                = js.native
+    def createServiceAction(params: CreateServiceActionInput): Request[CreateServiceActionOutput] = js.native
+    def createTagOption(params: CreateTagOptionInput): Request[CreateTagOptionOutput] = js.native
+    def deleteConstraint(params: DeleteConstraintInput): Request[DeleteConstraintOutput] = js.native
+    def deletePortfolio(params: DeletePortfolioInput): Request[DeletePortfolioOutput] = js.native
     def deletePortfolioShare(params: DeletePortfolioShareInput): Request[DeletePortfolioShareOutput] = js.native
-    def deleteProduct(params: DeleteProductInput): Request[DeleteProductOutput]                      = js.native
+    def deleteProduct(params: DeleteProductInput): Request[DeleteProductOutput] = js.native
     def deleteProvisionedProductPlan(
         params: DeleteProvisionedProductPlanInput
     ): Request[DeleteProvisionedProductPlanOutput] = js.native
     def deleteProvisioningArtifact(params: DeleteProvisioningArtifactInput): Request[DeleteProvisioningArtifactOutput] =
       js.native
     def deleteServiceAction(params: DeleteServiceActionInput): Request[DeleteServiceActionOutput] = js.native
-    def deleteTagOption(params: DeleteTagOptionInput): Request[DeleteTagOptionOutput]             = js.native
-    def describeConstraint(params: DescribeConstraintInput): Request[DescribeConstraintOutput]    = js.native
+    def deleteTagOption(params: DeleteTagOptionInput): Request[DeleteTagOptionOutput] = js.native
+    def describeConstraint(params: DescribeConstraintInput): Request[DescribeConstraintOutput] = js.native
     def describeCopyProductStatus(params: DescribeCopyProductStatusInput): Request[DescribeCopyProductStatusOutput] =
       js.native
     def describePortfolio(params: DescribePortfolioInput): Request[DescribePortfolioOutput] = js.native
     def describePortfolioShareStatus(
         params: DescribePortfolioShareStatusInput
-    ): Request[DescribePortfolioShareStatusOutput]                                                         = js.native
-    def describeProduct(params: DescribeProductInput): Request[DescribeProductOutput]                      = js.native
+    ): Request[DescribePortfolioShareStatusOutput] = js.native
+    def describeProduct(params: DescribeProductInput): Request[DescribeProductOutput] = js.native
     def describeProductAsAdmin(params: DescribeProductAsAdminInput): Request[DescribeProductAsAdminOutput] = js.native
-    def describeProductView(params: DescribeProductViewInput): Request[DescribeProductViewOutput]          = js.native
+    def describeProductView(params: DescribeProductViewInput): Request[DescribeProductViewOutput] = js.native
     def describeProvisionedProduct(params: DescribeProvisionedProductInput): Request[DescribeProvisionedProductOutput] =
       js.native
     def describeProvisionedProductPlan(
@@ -489,12 +490,12 @@ package servicecatalog {
     ): Request[DescribeProvisioningArtifactOutput] = js.native
     def describeProvisioningParameters(
         params: DescribeProvisioningParametersInput
-    ): Request[DescribeProvisioningParametersOutput]                                                    = js.native
-    def describeRecord(params: DescribeRecordInput): Request[DescribeRecordOutput]                      = js.native
+    ): Request[DescribeProvisioningParametersOutput] = js.native
+    def describeRecord(params: DescribeRecordInput): Request[DescribeRecordOutput] = js.native
     def describeServiceAction(params: DescribeServiceActionInput): Request[DescribeServiceActionOutput] = js.native
     def describeServiceActionExecutionParameters(
         params: DescribeServiceActionExecutionParametersInput
-    ): Request[DescribeServiceActionExecutionParametersOutput]                              = js.native
+    ): Request[DescribeServiceActionExecutionParametersOutput] = js.native
     def describeTagOption(params: DescribeTagOptionInput): Request[DescribeTagOptionOutput] = js.native
     def disableAWSOrganizationsAccess(
         params: DisableAWSOrganizationsAccessInput
@@ -528,17 +529,17 @@ package servicecatalog {
     ): Request[GetAWSOrganizationsAccessStatusOutput] = js.native
     def listAcceptedPortfolioShares(
         params: ListAcceptedPortfolioSharesInput
-    ): Request[ListAcceptedPortfolioSharesOutput]                                                          = js.native
+    ): Request[ListAcceptedPortfolioSharesOutput] = js.native
     def listBudgetsForResource(params: ListBudgetsForResourceInput): Request[ListBudgetsForResourceOutput] = js.native
     def listConstraintsForPortfolio(
         params: ListConstraintsForPortfolioInput
-    ): Request[ListConstraintsForPortfolioOutput]                                     = js.native
+    ): Request[ListConstraintsForPortfolioOutput] = js.native
     def listLaunchPaths(params: ListLaunchPathsInput): Request[ListLaunchPathsOutput] = js.native
     def listOrganizationPortfolioAccess(
         params: ListOrganizationPortfolioAccessInput
-    ): Request[ListOrganizationPortfolioAccessOutput]                                             = js.native
+    ): Request[ListOrganizationPortfolioAccessOutput] = js.native
     def listPortfolioAccess(params: ListPortfolioAccessInput): Request[ListPortfolioAccessOutput] = js.native
-    def listPortfolios(params: ListPortfoliosInput): Request[ListPortfoliosOutput]                = js.native
+    def listPortfolios(params: ListPortfoliosInput): Request[ListPortfoliosOutput] = js.native
     def listPortfoliosForProduct(params: ListPortfoliosForProductInput): Request[ListPortfoliosForProductOutput] =
       js.native
     def listPrincipalsForPortfolio(params: ListPrincipalsForPortfolioInput): Request[ListPrincipalsForPortfolioOutput] =
@@ -550,7 +551,7 @@ package servicecatalog {
       js.native
     def listProvisioningArtifactsForServiceAction(
         params: ListProvisioningArtifactsForServiceActionInput
-    ): Request[ListProvisioningArtifactsForServiceActionOutput]                             = js.native
+    ): Request[ListProvisioningArtifactsForServiceActionOutput] = js.native
     def listRecordHistory(params: ListRecordHistoryInput): Request[ListRecordHistoryOutput] = js.native
     def listResourcesForTagOption(params: ListResourcesForTagOptionInput): Request[ListResourcesForTagOptionOutput] =
       js.native
@@ -560,22 +561,22 @@ package servicecatalog {
     ): Request[ListServiceActionsForProvisioningArtifactOutput] = js.native
     def listStackInstancesForProvisionedProduct(
         params: ListStackInstancesForProvisionedProductInput
-    ): Request[ListStackInstancesForProvisionedProductOutput]                                        = js.native
-    def listTagOptions(params: ListTagOptionsInput): Request[ListTagOptionsOutput]                   = js.native
-    def provisionProduct(params: ProvisionProductInput): Request[ProvisionProductOutput]             = js.native
+    ): Request[ListStackInstancesForProvisionedProductOutput] = js.native
+    def listTagOptions(params: ListTagOptionsInput): Request[ListTagOptionsOutput] = js.native
+    def provisionProduct(params: ProvisionProductInput): Request[ProvisionProductOutput] = js.native
     def rejectPortfolioShare(params: RejectPortfolioShareInput): Request[RejectPortfolioShareOutput] = js.native
     def scanProvisionedProducts(params: ScanProvisionedProductsInput): Request[ScanProvisionedProductsOutput] =
       js.native
-    def searchProducts(params: SearchProductsInput): Request[SearchProductsOutput]                      = js.native
+    def searchProducts(params: SearchProductsInput): Request[SearchProductsOutput] = js.native
     def searchProductsAsAdmin(params: SearchProductsAsAdminInput): Request[SearchProductsAsAdminOutput] = js.native
     def searchProvisionedProducts(params: SearchProvisionedProductsInput): Request[SearchProvisionedProductsOutput] =
       js.native
     def terminateProvisionedProduct(
         params: TerminateProvisionedProductInput
-    ): Request[TerminateProvisionedProductOutput]                                        = js.native
+    ): Request[TerminateProvisionedProductOutput] = js.native
     def updateConstraint(params: UpdateConstraintInput): Request[UpdateConstraintOutput] = js.native
-    def updatePortfolio(params: UpdatePortfolioInput): Request[UpdatePortfolioOutput]    = js.native
-    def updateProduct(params: UpdateProductInput): Request[UpdateProductOutput]          = js.native
+    def updatePortfolio(params: UpdatePortfolioInput): Request[UpdatePortfolioOutput] = js.native
+    def updateProduct(params: UpdateProductInput): Request[UpdateProductOutput] = js.native
     def updateProvisionedProduct(params: UpdateProvisionedProductInput): Request[UpdateProvisionedProductOutput] =
       js.native
     def updateProvisionedProductProperties(
@@ -584,7 +585,7 @@ package servicecatalog {
     def updateProvisioningArtifact(params: UpdateProvisioningArtifactInput): Request[UpdateProvisioningArtifactOutput] =
       js.native
     def updateServiceAction(params: UpdateServiceActionInput): Request[UpdateServiceActionOutput] = js.native
-    def updateTagOption(params: UpdateTagOptionInput): Request[UpdateTagOptionOutput]             = js.native
+    def updateTagOption(params: UpdateTagOptionInput): Request[UpdateTagOptionOutput] = js.native
   }
 
   @js.native
@@ -650,8 +651,8 @@ package servicecatalog {
   sealed trait AccessLevelFilterKey extends js.Any
   object AccessLevelFilterKey extends js.Object {
     val Account = "Account".asInstanceOf[AccessLevelFilterKey]
-    val Role    = "Role".asInstanceOf[AccessLevelFilterKey]
-    val User    = "User".asInstanceOf[AccessLevelFilterKey]
+    val Role = "Role".asInstanceOf[AccessLevelFilterKey]
+    val User = "User".asInstanceOf[AccessLevelFilterKey]
 
     val values = js.Object.freeze(js.Array(Account, Role, User))
   }
@@ -659,9 +660,9 @@ package servicecatalog {
   @js.native
   sealed trait AccessStatus extends js.Any
   object AccessStatus extends js.Object {
-    val ENABLED      = "ENABLED".asInstanceOf[AccessStatus]
+    val ENABLED = "ENABLED".asInstanceOf[AccessStatus]
     val UNDER_CHANGE = "UNDER_CHANGE".asInstanceOf[AccessStatus]
-    val DISABLED     = "DISABLED".asInstanceOf[AccessStatus]
+    val DISABLED = "DISABLED".asInstanceOf[AccessStatus]
 
     val values = js.Object.freeze(js.Array(ENABLED, UNDER_CHANGE, DISABLED))
   }
@@ -717,8 +718,8 @@ package servicecatalog {
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): AssociatePrincipalWithPortfolioInput = {
       val __obj = js.Dynamic.literal(
-        "PortfolioId"   -> PortfolioId.asInstanceOf[js.Any],
-        "PrincipalARN"  -> PrincipalARN.asInstanceOf[js.Any],
+        "PortfolioId" -> PortfolioId.asInstanceOf[js.Any],
+        "PrincipalARN" -> PrincipalARN.asInstanceOf[js.Any],
         "PrincipalType" -> PrincipalType.asInstanceOf[js.Any]
       )
 
@@ -758,7 +759,7 @@ package servicecatalog {
     ): AssociateProductWithPortfolioInput = {
       val __obj = js.Dynamic.literal(
         "PortfolioId" -> PortfolioId.asInstanceOf[js.Any],
-        "ProductId"   -> ProductId.asInstanceOf[js.Any]
+        "ProductId" -> ProductId.asInstanceOf[js.Any]
       )
 
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
@@ -797,9 +798,9 @@ package servicecatalog {
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): AssociateServiceActionWithProvisioningArtifactInput = {
       val __obj = js.Dynamic.literal(
-        "ProductId"              -> ProductId.asInstanceOf[js.Any],
+        "ProductId" -> ProductId.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any],
-        "ServiceActionId"        -> ServiceActionId.asInstanceOf[js.Any]
+        "ServiceActionId" -> ServiceActionId.asInstanceOf[js.Any]
       )
 
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
@@ -833,7 +834,7 @@ package servicecatalog {
         TagOptionId: TagOptionId
     ): AssociateTagOptionWithResourceInput = {
       val __obj = js.Dynamic.literal(
-        "ResourceId"  -> ResourceId.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "TagOptionId" -> TagOptionId.asInstanceOf[js.Any]
       )
 
@@ -954,7 +955,7 @@ package servicecatalog {
   @js.native
   sealed trait ChangeAction extends js.Any
   object ChangeAction extends js.Object {
-    val ADD    = "ADD".asInstanceOf[ChangeAction]
+    val ADD = "ADD".asInstanceOf[ChangeAction]
     val MODIFY = "MODIFY".asInstanceOf[ChangeAction]
     val REMOVE = "REMOVE".asInstanceOf[ChangeAction]
 
@@ -988,6 +989,8 @@ package servicecatalog {
     var ConstraintId: js.UndefOr[Id]
     var Description: js.UndefOr[ConstraintDescription]
     var Owner: js.UndefOr[AccountId]
+    var PortfolioId: js.UndefOr[Id]
+    var ProductId: js.UndefOr[Id]
     var Type: js.UndefOr[ConstraintType]
   }
 
@@ -997,12 +1000,16 @@ package servicecatalog {
         ConstraintId: js.UndefOr[Id] = js.undefined,
         Description: js.UndefOr[ConstraintDescription] = js.undefined,
         Owner: js.UndefOr[AccountId] = js.undefined,
+        PortfolioId: js.UndefOr[Id] = js.undefined,
+        ProductId: js.UndefOr[Id] = js.undefined,
         Type: js.UndefOr[ConstraintType] = js.undefined
     ): ConstraintDetail = {
       val __obj = js.Dynamic.literal()
       ConstraintId.foreach(__v => __obj.updateDynamic("ConstraintId")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
+      PortfolioId.foreach(__v => __obj.updateDynamic("PortfolioId")(__v.asInstanceOf[js.Any]))
+      ProductId.foreach(__v => __obj.updateDynamic("ProductId")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConstraintDetail]
     }
@@ -1095,9 +1102,9 @@ package servicecatalog {
   @js.native
   sealed trait CopyProductStatus extends js.Any
   object CopyProductStatus extends js.Object {
-    val SUCCEEDED   = "SUCCEEDED".asInstanceOf[CopyProductStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[CopyProductStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[CopyProductStatus]
-    val FAILED      = "FAILED".asInstanceOf[CopyProductStatus]
+    val FAILED = "FAILED".asInstanceOf[CopyProductStatus]
 
     val values = js.Object.freeze(js.Array(SUCCEEDED, IN_PROGRESS, FAILED))
   }
@@ -1126,10 +1133,10 @@ package servicecatalog {
     ): CreateConstraintInput = {
       val __obj = js.Dynamic.literal(
         "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
-        "Parameters"       -> Parameters.asInstanceOf[js.Any],
-        "PortfolioId"      -> PortfolioId.asInstanceOf[js.Any],
-        "ProductId"        -> ProductId.asInstanceOf[js.Any],
-        "Type"             -> Type.asInstanceOf[js.Any]
+        "Parameters" -> Parameters.asInstanceOf[js.Any],
+        "PortfolioId" -> PortfolioId.asInstanceOf[js.Any],
+        "ProductId" -> ProductId.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
@@ -1181,9 +1188,9 @@ package servicecatalog {
         Tags: js.UndefOr[AddTags] = js.undefined
     ): CreatePortfolioInput = {
       val __obj = js.Dynamic.literal(
-        "DisplayName"      -> DisplayName.asInstanceOf[js.Any],
+        "DisplayName" -> DisplayName.asInstanceOf[js.Any],
         "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
-        "ProviderName"     -> ProviderName.asInstanceOf[js.Any]
+        "ProviderName" -> ProviderName.asInstanceOf[js.Any]
       )
 
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
@@ -1288,10 +1295,10 @@ package servicecatalog {
         Tags: js.UndefOr[AddTags] = js.undefined
     ): CreateProductInput = {
       val __obj = js.Dynamic.literal(
-        "IdempotencyToken"               -> IdempotencyToken.asInstanceOf[js.Any],
-        "Name"                           -> Name.asInstanceOf[js.Any],
-        "Owner"                          -> Owner.asInstanceOf[js.Any],
-        "ProductType"                    -> ProductType.asInstanceOf[js.Any],
+        "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Owner" -> Owner.asInstanceOf[js.Any],
+        "ProductType" -> ProductType.asInstanceOf[js.Any],
         "ProvisioningArtifactParameters" -> ProvisioningArtifactParameters.asInstanceOf[js.Any]
       )
 
@@ -1361,10 +1368,10 @@ package servicecatalog {
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateProvisionedProductPlanInput = {
       val __obj = js.Dynamic.literal(
-        "IdempotencyToken"       -> IdempotencyToken.asInstanceOf[js.Any],
-        "PlanName"               -> PlanName.asInstanceOf[js.Any],
-        "PlanType"               -> PlanType.asInstanceOf[js.Any],
-        "ProductId"              -> ProductId.asInstanceOf[js.Any],
+        "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
+        "PlanName" -> PlanName.asInstanceOf[js.Any],
+        "PlanType" -> PlanType.asInstanceOf[js.Any],
+        "ProductId" -> ProductId.asInstanceOf[js.Any],
         "ProvisionedProductName" -> ProvisionedProductName.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any]
       )
@@ -1424,8 +1431,8 @@ package servicecatalog {
     ): CreateProvisioningArtifactInput = {
       val __obj = js.Dynamic.literal(
         "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
-        "Parameters"       -> Parameters.asInstanceOf[js.Any],
-        "ProductId"        -> ProductId.asInstanceOf[js.Any]
+        "Parameters" -> Parameters.asInstanceOf[js.Any],
+        "ProductId" -> ProductId.asInstanceOf[js.Any]
       )
 
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
@@ -1478,10 +1485,10 @@ package servicecatalog {
         Description: js.UndefOr[ServiceActionDescription] = js.undefined
     ): CreateServiceActionInput = {
       val __obj = js.Dynamic.literal(
-        "Definition"       -> Definition.asInstanceOf[js.Any],
-        "DefinitionType"   -> DefinitionType.asInstanceOf[js.Any],
+        "Definition" -> Definition.asInstanceOf[js.Any],
+        "DefinitionType" -> DefinitionType.asInstanceOf[js.Any],
         "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
@@ -1519,7 +1526,7 @@ package servicecatalog {
         Value: TagOptionValue
     ): CreateTagOptionInput = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -1740,7 +1747,7 @@ package servicecatalog {
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): DeleteProvisioningArtifactInput = {
       val __obj = js.Dynamic.literal(
-        "ProductId"              -> ProductId.asInstanceOf[js.Any],
+        "ProductId" -> ProductId.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any]
       )
 
@@ -2007,21 +2014,22 @@ package servicecatalog {
 
   @js.native
   trait DescribeProductAsAdminInput extends js.Object {
-    var Id: Id
     var AcceptLanguage: js.UndefOr[AcceptLanguage]
+    var Id: js.UndefOr[Id]
+    var Name: js.UndefOr[ProductViewName]
   }
 
   object DescribeProductAsAdminInput {
     @inline
     def apply(
-        Id: Id,
-        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
+        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+        Id: js.UndefOr[Id] = js.undefined,
+        Name: js.UndefOr[ProductViewName] = js.undefined
     ): DescribeProductAsAdminInput = {
-      val __obj = js.Dynamic.literal(
-        "Id" -> Id.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProductAsAdminInput]
     }
   }
@@ -2058,21 +2066,22 @@ package servicecatalog {
 
   @js.native
   trait DescribeProductInput extends js.Object {
-    var Id: Id
     var AcceptLanguage: js.UndefOr[AcceptLanguage]
+    var Id: js.UndefOr[Id]
+    var Name: js.UndefOr[ProductViewName]
   }
 
   object DescribeProductInput {
     @inline
     def apply(
-        Id: Id,
-        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
+        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+        Id: js.UndefOr[Id] = js.undefined,
+        Name: js.UndefOr[ProductViewName] = js.undefined
     ): DescribeProductInput = {
-      val __obj = js.Dynamic.literal(
-        "Id" -> Id.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProductInput]
     }
   }
@@ -2080,6 +2089,7 @@ package servicecatalog {
   @js.native
   trait DescribeProductOutput extends js.Object {
     var Budgets: js.UndefOr[Budgets]
+    var LaunchPaths: js.UndefOr[LaunchPaths]
     var ProductViewSummary: js.UndefOr[ProductViewSummary]
     var ProvisioningArtifacts: js.UndefOr[ProvisioningArtifacts]
   }
@@ -2088,11 +2098,13 @@ package servicecatalog {
     @inline
     def apply(
         Budgets: js.UndefOr[Budgets] = js.undefined,
+        LaunchPaths: js.UndefOr[LaunchPaths] = js.undefined,
         ProductViewSummary: js.UndefOr[ProductViewSummary] = js.undefined,
         ProvisioningArtifacts: js.UndefOr[ProvisioningArtifacts] = js.undefined
     ): DescribeProductOutput = {
       val __obj = js.Dynamic.literal()
       Budgets.foreach(__v => __obj.updateDynamic("Budgets")(__v.asInstanceOf[js.Any]))
+      LaunchPaths.foreach(__v => __obj.updateDynamic("LaunchPaths")(__v.asInstanceOf[js.Any]))
       ProductViewSummary.foreach(__v => __obj.updateDynamic("ProductViewSummary")(__v.asInstanceOf[js.Any]))
       ProvisioningArtifacts.foreach(__v => __obj.updateDynamic("ProvisioningArtifacts")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProductOutput]
@@ -2232,26 +2244,30 @@ package servicecatalog {
 
   @js.native
   trait DescribeProvisioningArtifactInput extends js.Object {
-    var ProductId: Id
-    var ProvisioningArtifactId: Id
     var AcceptLanguage: js.UndefOr[AcceptLanguage]
+    var ProductId: js.UndefOr[Id]
+    var ProductName: js.UndefOr[ProductViewName]
+    var ProvisioningArtifactId: js.UndefOr[Id]
+    var ProvisioningArtifactName: js.UndefOr[ProvisioningArtifactName]
     var Verbose: js.UndefOr[Verbose]
   }
 
   object DescribeProvisioningArtifactInput {
     @inline
     def apply(
-        ProductId: Id,
-        ProvisioningArtifactId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+        ProductId: js.UndefOr[Id] = js.undefined,
+        ProductName: js.UndefOr[ProductViewName] = js.undefined,
+        ProvisioningArtifactId: js.UndefOr[Id] = js.undefined,
+        ProvisioningArtifactName: js.UndefOr[ProvisioningArtifactName] = js.undefined,
         Verbose: js.UndefOr[Verbose] = js.undefined
     ): DescribeProvisioningArtifactInput = {
-      val __obj = js.Dynamic.literal(
-        "ProductId"              -> ProductId.asInstanceOf[js.Any],
-        "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      ProductId.foreach(__v => __obj.updateDynamic("ProductId")(__v.asInstanceOf[js.Any]))
+      ProductName.foreach(__v => __obj.updateDynamic("ProductName")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactId.foreach(__v => __obj.updateDynamic("ProvisioningArtifactId")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactName.foreach(__v => __obj.updateDynamic("ProvisioningArtifactName")(__v.asInstanceOf[js.Any]))
       Verbose.foreach(__v => __obj.updateDynamic("Verbose")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProvisioningArtifactInput]
     }
@@ -2298,7 +2314,7 @@ package servicecatalog {
         PathId: js.UndefOr[Id] = js.undefined
     ): DescribeProvisioningParametersInput = {
       val __obj = js.Dynamic.literal(
-        "ProductId"              -> ProductId.asInstanceOf[js.Any],
+        "ProductId" -> ProductId.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any]
       )
 
@@ -2405,7 +2421,7 @@ package servicecatalog {
     ): DescribeServiceActionExecutionParametersInput = {
       val __obj = js.Dynamic.literal(
         "ProvisionedProductId" -> ProvisionedProductId.asInstanceOf[js.Any],
-        "ServiceActionId"      -> ServiceActionId.asInstanceOf[js.Any]
+        "ServiceActionId" -> ServiceActionId.asInstanceOf[js.Any]
       )
 
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
@@ -2575,7 +2591,7 @@ package servicecatalog {
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): DisassociatePrincipalFromPortfolioInput = {
       val __obj = js.Dynamic.literal(
-        "PortfolioId"  -> PortfolioId.asInstanceOf[js.Any],
+        "PortfolioId" -> PortfolioId.asInstanceOf[js.Any],
         "PrincipalARN" -> PrincipalARN.asInstanceOf[js.Any]
       )
 
@@ -2613,7 +2629,7 @@ package servicecatalog {
     ): DisassociateProductFromPortfolioInput = {
       val __obj = js.Dynamic.literal(
         "PortfolioId" -> PortfolioId.asInstanceOf[js.Any],
-        "ProductId"   -> ProductId.asInstanceOf[js.Any]
+        "ProductId" -> ProductId.asInstanceOf[js.Any]
       )
 
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
@@ -2651,9 +2667,9 @@ package servicecatalog {
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): DisassociateServiceActionFromProvisioningArtifactInput = {
       val __obj = js.Dynamic.literal(
-        "ProductId"              -> ProductId.asInstanceOf[js.Any],
+        "ProductId" -> ProductId.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any],
-        "ServiceActionId"        -> ServiceActionId.asInstanceOf[js.Any]
+        "ServiceActionId" -> ServiceActionId.asInstanceOf[js.Any]
       )
 
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
@@ -2687,7 +2703,7 @@ package servicecatalog {
         TagOptionId: TagOptionId
     ): DisassociateTagOptionFromResourceInput = {
       val __obj = js.Dynamic.literal(
-        "ResourceId"  -> ResourceId.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "TagOptionId" -> TagOptionId.asInstanceOf[js.Any]
       )
 
@@ -2737,7 +2753,7 @@ package servicecatalog {
   @js.native
   sealed trait EvaluationType extends js.Any
   object EvaluationType extends js.Object {
-    val STATIC  = "STATIC".asInstanceOf[EvaluationType]
+    val STATIC = "STATIC".asInstanceOf[EvaluationType]
     val DYNAMIC = "DYNAMIC".asInstanceOf[EvaluationType]
 
     val values = js.Object.freeze(js.Array(STATIC, DYNAMIC))
@@ -2759,7 +2775,7 @@ package servicecatalog {
     ): ExecuteProvisionedProductPlanInput = {
       val __obj = js.Dynamic.literal(
         "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
-        "PlanId"           -> PlanId.asInstanceOf[js.Any]
+        "PlanId" -> PlanId.asInstanceOf[js.Any]
       )
 
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
@@ -2802,9 +2818,9 @@ package servicecatalog {
         Parameters: js.UndefOr[ExecutionParameterMap] = js.undefined
     ): ExecuteProvisionedProductServiceActionInput = {
       val __obj = js.Dynamic.literal(
-        "ExecuteToken"         -> ExecuteToken.asInstanceOf[js.Any],
+        "ExecuteToken" -> ExecuteToken.asInstanceOf[js.Any],
         "ProvisionedProductId" -> ProvisionedProductId.asInstanceOf[js.Any],
-        "ServiceActionId"      -> ServiceActionId.asInstanceOf[js.Any]
+        "ServiceActionId" -> ServiceActionId.asInstanceOf[js.Any]
       )
 
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
@@ -2911,6 +2927,28 @@ package servicecatalog {
       val __obj = js.Dynamic.literal()
       AccessStatus.foreach(__v => __obj.updateDynamic("AccessStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAWSOrganizationsAccessStatusOutput]
+    }
+  }
+
+  /**
+    * A launch path object.
+    */
+  @js.native
+  trait LaunchPath extends js.Object {
+    var Id: js.UndefOr[Id]
+    var Name: js.UndefOr[PortfolioName]
+  }
+
+  object LaunchPath {
+    @inline
+    def apply(
+        Id: js.UndefOr[Id] = js.undefined,
+        Name: js.UndefOr[PortfolioName] = js.undefined
+    ): LaunchPath = {
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LaunchPath]
     }
   }
 
@@ -3147,7 +3185,7 @@ package servicecatalog {
     ): ListOrganizationPortfolioAccessInput = {
       val __obj = js.Dynamic.literal(
         "OrganizationNodeType" -> OrganizationNodeType.asInstanceOf[js.Any],
-        "PortfolioId"          -> PortfolioId.asInstanceOf[js.Any]
+        "PortfolioId" -> PortfolioId.asInstanceOf[js.Any]
       )
 
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
@@ -3629,7 +3667,7 @@ package servicecatalog {
         PageToken: js.UndefOr[PageToken] = js.undefined
     ): ListServiceActionsForProvisioningArtifactInput = {
       val __obj = js.Dynamic.literal(
-        "ProductId"              -> ProductId.asInstanceOf[js.Any],
+        "ProductId" -> ProductId.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any]
       )
 
@@ -3837,9 +3875,9 @@ package servicecatalog {
   @js.native
   sealed trait OrganizationNodeType extends js.Any
   object OrganizationNodeType extends js.Object {
-    val ORGANIZATION        = "ORGANIZATION".asInstanceOf[OrganizationNodeType]
+    val ORGANIZATION = "ORGANIZATION".asInstanceOf[OrganizationNodeType]
     val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT".asInstanceOf[OrganizationNodeType]
-    val ACCOUNT             = "ACCOUNT".asInstanceOf[OrganizationNodeType]
+    val ACCOUNT = "ACCOUNT".asInstanceOf[OrganizationNodeType]
 
     val values = js.Object.freeze(js.Array(ORGANIZATION, ORGANIZATIONAL_UNIT, ACCOUNT))
   }
@@ -3900,9 +3938,9 @@ package servicecatalog {
   @js.native
   sealed trait PortfolioShareType extends js.Any
   object PortfolioShareType extends js.Object {
-    val IMPORTED           = "IMPORTED".asInstanceOf[PortfolioShareType]
+    val IMPORTED = "IMPORTED".asInstanceOf[PortfolioShareType]
     val AWS_SERVICECATALOG = "AWS_SERVICECATALOG".asInstanceOf[PortfolioShareType]
-    val AWS_ORGANIZATIONS  = "AWS_ORGANIZATIONS".asInstanceOf[PortfolioShareType]
+    val AWS_ORGANIZATIONS = "AWS_ORGANIZATIONS".asInstanceOf[PortfolioShareType]
 
     val values = js.Object.freeze(js.Array(IMPORTED, AWS_SERVICECATALOG, AWS_ORGANIZATIONS))
   }
@@ -3949,7 +3987,7 @@ package servicecatalog {
   sealed trait ProductType extends js.Any
   object ProductType extends js.Object {
     val CLOUD_FORMATION_TEMPLATE = "CLOUD_FORMATION_TEMPLATE".asInstanceOf[ProductType]
-    val MARKETPLACE              = "MARKETPLACE".asInstanceOf[ProductType]
+    val MARKETPLACE = "MARKETPLACE".asInstanceOf[ProductType]
 
     val values = js.Object.freeze(js.Array(CLOUD_FORMATION_TEMPLATE, MARKETPLACE))
   }
@@ -4007,9 +4045,9 @@ package servicecatalog {
   @js.native
   sealed trait ProductViewFilterBy extends js.Any
   object ProductViewFilterBy extends js.Object {
-    val FullTextSearch  = "FullTextSearch".asInstanceOf[ProductViewFilterBy]
-    val Owner           = "Owner".asInstanceOf[ProductViewFilterBy]
-    val ProductType     = "ProductType".asInstanceOf[ProductViewFilterBy]
+    val FullTextSearch = "FullTextSearch".asInstanceOf[ProductViewFilterBy]
+    val Owner = "Owner".asInstanceOf[ProductViewFilterBy]
+    val ProductType = "ProductType".asInstanceOf[ProductViewFilterBy]
     val SourceProductId = "SourceProductId".asInstanceOf[ProductViewFilterBy]
 
     val values = js.Object.freeze(js.Array(FullTextSearch, Owner, ProductType, SourceProductId))
@@ -4018,7 +4056,7 @@ package servicecatalog {
   @js.native
   sealed trait ProductViewSortBy extends js.Any
   object ProductViewSortBy extends js.Object {
-    val Title        = "Title".asInstanceOf[ProductViewSortBy]
+    val Title = "Title".asInstanceOf[ProductViewSortBy]
     val VersionCount = "VersionCount".asInstanceOf[ProductViewSortBy]
     val CreationDate = "CreationDate".asInstanceOf[ProductViewSortBy]
 
@@ -4111,8 +4149,8 @@ package servicecatalog {
         Tags: js.UndefOr[Tags] = js.undefined
     ): ProvisionProductInput = {
       val __obj = js.Dynamic.literal(
-        "ProductId"              -> ProductId.asInstanceOf[js.Any],
-        "ProvisionToken"         -> ProvisionToken.asInstanceOf[js.Any],
+        "ProductId" -> ProductId.asInstanceOf[js.Any],
+        "ProvisionToken" -> ProvisionToken.asInstanceOf[js.Any],
         "ProvisionedProductName" -> ProvisionedProductName.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any]
       )
@@ -4317,12 +4355,12 @@ package servicecatalog {
   @js.native
   sealed trait ProvisionedProductPlanStatus extends js.Any
   object ProvisionedProductPlanStatus extends js.Object {
-    val CREATE_IN_PROGRESS  = "CREATE_IN_PROGRESS".asInstanceOf[ProvisionedProductPlanStatus]
-    val CREATE_SUCCESS      = "CREATE_SUCCESS".asInstanceOf[ProvisionedProductPlanStatus]
-    val CREATE_FAILED       = "CREATE_FAILED".asInstanceOf[ProvisionedProductPlanStatus]
+    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[ProvisionedProductPlanStatus]
+    val CREATE_SUCCESS = "CREATE_SUCCESS".asInstanceOf[ProvisionedProductPlanStatus]
+    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[ProvisionedProductPlanStatus]
     val EXECUTE_IN_PROGRESS = "EXECUTE_IN_PROGRESS".asInstanceOf[ProvisionedProductPlanStatus]
-    val EXECUTE_SUCCESS     = "EXECUTE_SUCCESS".asInstanceOf[ProvisionedProductPlanStatus]
-    val EXECUTE_FAILED      = "EXECUTE_FAILED".asInstanceOf[ProvisionedProductPlanStatus]
+    val EXECUTE_SUCCESS = "EXECUTE_SUCCESS".asInstanceOf[ProvisionedProductPlanStatus]
+    val EXECUTE_FAILED = "EXECUTE_FAILED".asInstanceOf[ProvisionedProductPlanStatus]
 
     val values = js.Object.freeze(
       js.Array(CREATE_IN_PROGRESS, CREATE_SUCCESS, CREATE_FAILED, EXECUTE_IN_PROGRESS, EXECUTE_SUCCESS, EXECUTE_FAILED)
@@ -4374,10 +4412,10 @@ package servicecatalog {
   @js.native
   sealed trait ProvisionedProductStatus extends js.Any
   object ProvisionedProductStatus extends js.Object {
-    val AVAILABLE        = "AVAILABLE".asInstanceOf[ProvisionedProductStatus]
-    val UNDER_CHANGE     = "UNDER_CHANGE".asInstanceOf[ProvisionedProductStatus]
-    val TAINTED          = "TAINTED".asInstanceOf[ProvisionedProductStatus]
-    val ERROR            = "ERROR".asInstanceOf[ProvisionedProductStatus]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[ProvisionedProductStatus]
+    val UNDER_CHANGE = "UNDER_CHANGE".asInstanceOf[ProvisionedProductStatus]
+    val TAINTED = "TAINTED".asInstanceOf[ProvisionedProductStatus]
+    val ERROR = "ERROR".asInstanceOf[ProvisionedProductStatus]
     val PLAN_IN_PROGRESS = "PLAN_IN_PROGRESS".asInstanceOf[ProvisionedProductStatus]
 
     val values = js.Object.freeze(js.Array(AVAILABLE, UNDER_CHANGE, TAINTED, ERROR, PLAN_IN_PROGRESS))
@@ -4462,7 +4500,7 @@ package servicecatalog {
   @js.native
   sealed trait ProvisioningArtifactGuidance extends js.Any
   object ProvisioningArtifactGuidance extends js.Object {
-    val DEFAULT    = "DEFAULT".asInstanceOf[ProvisioningArtifactGuidance]
+    val DEFAULT = "DEFAULT".asInstanceOf[ProvisioningArtifactGuidance]
     val DEPRECATED = "DEPRECATED".asInstanceOf[ProvisioningArtifactGuidance]
 
     val values = js.Object.freeze(js.Array(DEFAULT, DEPRECATED))
@@ -4605,8 +4643,8 @@ package servicecatalog {
   sealed trait ProvisioningArtifactType extends js.Any
   object ProvisioningArtifactType extends js.Object {
     val CLOUD_FORMATION_TEMPLATE = "CLOUD_FORMATION_TEMPLATE".asInstanceOf[ProvisioningArtifactType]
-    val MARKETPLACE_AMI          = "MARKETPLACE_AMI".asInstanceOf[ProvisioningArtifactType]
-    val MARKETPLACE_CAR          = "MARKETPLACE_CAR".asInstanceOf[ProvisioningArtifactType]
+    val MARKETPLACE_AMI = "MARKETPLACE_AMI".asInstanceOf[ProvisioningArtifactType]
+    val MARKETPLACE_CAR = "MARKETPLACE_CAR".asInstanceOf[ProvisioningArtifactType]
 
     val values = js.Object.freeze(js.Array(CLOUD_FORMATION_TEMPLATE, MARKETPLACE_AMI, MARKETPLACE_CAR))
   }
@@ -4802,11 +4840,11 @@ package servicecatalog {
   @js.native
   sealed trait RecordStatus extends js.Any
   object RecordStatus extends js.Object {
-    val CREATED              = "CREATED".asInstanceOf[RecordStatus]
-    val IN_PROGRESS          = "IN_PROGRESS".asInstanceOf[RecordStatus]
+    val CREATED = "CREATED".asInstanceOf[RecordStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[RecordStatus]
     val IN_PROGRESS_IN_ERROR = "IN_PROGRESS_IN_ERROR".asInstanceOf[RecordStatus]
-    val SUCCEEDED            = "SUCCEEDED".asInstanceOf[RecordStatus]
-    val FAILED               = "FAILED".asInstanceOf[RecordStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[RecordStatus]
+    val FAILED = "FAILED".asInstanceOf[RecordStatus]
 
     val values = js.Object.freeze(js.Array(CREATED, IN_PROGRESS, IN_PROGRESS_IN_ERROR, SUCCEEDED, FAILED))
   }
@@ -4873,8 +4911,8 @@ package servicecatalog {
   @js.native
   sealed trait Replacement extends js.Any
   object Replacement extends js.Object {
-    val TRUE        = "TRUE".asInstanceOf[Replacement]
-    val FALSE       = "FALSE".asInstanceOf[Replacement]
+    val TRUE = "TRUE".asInstanceOf[Replacement]
+    val FALSE = "FALSE".asInstanceOf[Replacement]
     val CONDITIONAL = "CONDITIONAL".asInstanceOf[Replacement]
 
     val values = js.Object.freeze(js.Array(TRUE, FALSE, CONDITIONAL))
@@ -4883,9 +4921,9 @@ package servicecatalog {
   @js.native
   sealed trait RequiresRecreation extends js.Any
   object RequiresRecreation extends js.Object {
-    val NEVER         = "NEVER".asInstanceOf[RequiresRecreation]
+    val NEVER = "NEVER".asInstanceOf[RequiresRecreation]
     val CONDITIONALLY = "CONDITIONALLY".asInstanceOf[RequiresRecreation]
-    val ALWAYS        = "ALWAYS".asInstanceOf[RequiresRecreation]
+    val ALWAYS = "ALWAYS".asInstanceOf[RequiresRecreation]
 
     val values = js.Object.freeze(js.Array(NEVER, CONDITIONALLY, ALWAYS))
   }
@@ -4893,12 +4931,12 @@ package servicecatalog {
   @js.native
   sealed trait ResourceAttribute extends js.Any
   object ResourceAttribute extends js.Object {
-    val PROPERTIES     = "PROPERTIES".asInstanceOf[ResourceAttribute]
-    val METADATA       = "METADATA".asInstanceOf[ResourceAttribute]
+    val PROPERTIES = "PROPERTIES".asInstanceOf[ResourceAttribute]
+    val METADATA = "METADATA".asInstanceOf[ResourceAttribute]
     val CREATIONPOLICY = "CREATIONPOLICY".asInstanceOf[ResourceAttribute]
-    val UPDATEPOLICY   = "UPDATEPOLICY".asInstanceOf[ResourceAttribute]
+    val UPDATEPOLICY = "UPDATEPOLICY".asInstanceOf[ResourceAttribute]
     val DELETIONPOLICY = "DELETIONPOLICY".asInstanceOf[ResourceAttribute]
-    val TAGS           = "TAGS".asInstanceOf[ResourceAttribute]
+    val TAGS = "TAGS".asInstanceOf[ResourceAttribute]
 
     val values = js.Object.freeze(js.Array(PROPERTIES, METADATA, CREATIONPOLICY, UPDATEPOLICY, DELETIONPOLICY, TAGS))
   }
@@ -5248,9 +5286,9 @@ package servicecatalog {
         ServiceActionId: Id
     ): ServiceActionAssociation = {
       val __obj = js.Dynamic.literal(
-        "ProductId"              -> ProductId.asInstanceOf[js.Any],
+        "ProductId" -> ProductId.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any],
-        "ServiceActionId"        -> ServiceActionId.asInstanceOf[js.Any]
+        "ServiceActionId" -> ServiceActionId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ServiceActionAssociation]
@@ -5261,10 +5299,10 @@ package servicecatalog {
   sealed trait ServiceActionAssociationErrorCode extends js.Any
   object ServiceActionAssociationErrorCode extends js.Object {
     val DUPLICATE_RESOURCE = "DUPLICATE_RESOURCE".asInstanceOf[ServiceActionAssociationErrorCode]
-    val INTERNAL_FAILURE   = "INTERNAL_FAILURE".asInstanceOf[ServiceActionAssociationErrorCode]
-    val LIMIT_EXCEEDED     = "LIMIT_EXCEEDED".asInstanceOf[ServiceActionAssociationErrorCode]
+    val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[ServiceActionAssociationErrorCode]
+    val LIMIT_EXCEEDED = "LIMIT_EXCEEDED".asInstanceOf[ServiceActionAssociationErrorCode]
     val RESOURCE_NOT_FOUND = "RESOURCE_NOT_FOUND".asInstanceOf[ServiceActionAssociationErrorCode]
-    val THROTTLING         = "THROTTLING".asInstanceOf[ServiceActionAssociationErrorCode]
+    val THROTTLING = "THROTTLING".asInstanceOf[ServiceActionAssociationErrorCode]
 
     val values =
       js.Object.freeze(js.Array(DUPLICATE_RESOURCE, INTERNAL_FAILURE, LIMIT_EXCEEDED, RESOURCE_NOT_FOUND, THROTTLING))
@@ -5273,8 +5311,8 @@ package servicecatalog {
   @js.native
   sealed trait ServiceActionDefinitionKey extends js.Any
   object ServiceActionDefinitionKey extends js.Object {
-    val Name       = "Name".asInstanceOf[ServiceActionDefinitionKey]
-    val Version    = "Version".asInstanceOf[ServiceActionDefinitionKey]
+    val Name = "Name".asInstanceOf[ServiceActionDefinitionKey]
+    val Version = "Version".asInstanceOf[ServiceActionDefinitionKey]
     val AssumeRole = "AssumeRole".asInstanceOf[ServiceActionDefinitionKey]
     val Parameters = "Parameters".asInstanceOf[ServiceActionDefinitionKey]
 
@@ -5389,11 +5427,11 @@ package servicecatalog {
   @js.native
   sealed trait ShareStatus extends js.Any
   object ShareStatus extends js.Object {
-    val NOT_STARTED           = "NOT_STARTED".asInstanceOf[ShareStatus]
-    val IN_PROGRESS           = "IN_PROGRESS".asInstanceOf[ShareStatus]
-    val COMPLETED             = "COMPLETED".asInstanceOf[ShareStatus]
+    val NOT_STARTED = "NOT_STARTED".asInstanceOf[ShareStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ShareStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[ShareStatus]
     val COMPLETED_WITH_ERRORS = "COMPLETED_WITH_ERRORS".asInstanceOf[ShareStatus]
-    val ERROR                 = "ERROR".asInstanceOf[ShareStatus]
+    val ERROR = "ERROR".asInstanceOf[ShareStatus]
 
     val values = js.Object.freeze(js.Array(NOT_STARTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERRORS, ERROR))
   }
@@ -5401,7 +5439,7 @@ package servicecatalog {
   @js.native
   sealed trait SortOrder extends js.Any
   object SortOrder extends js.Object {
-    val ASCENDING  = "ASCENDING".asInstanceOf[SortOrder]
+    val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
     val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
 
     val values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
@@ -5435,8 +5473,8 @@ package servicecatalog {
   @js.native
   sealed trait StackInstanceStatus extends js.Any
   object StackInstanceStatus extends js.Object {
-    val CURRENT    = "CURRENT".asInstanceOf[StackInstanceStatus]
-    val OUTDATED   = "OUTDATED".asInstanceOf[StackInstanceStatus]
+    val CURRENT = "CURRENT".asInstanceOf[StackInstanceStatus]
+    val OUTDATED = "OUTDATED".asInstanceOf[StackInstanceStatus]
     val INOPERABLE = "INOPERABLE".asInstanceOf[StackInstanceStatus]
 
     val values = js.Object.freeze(js.Array(CURRENT, OUTDATED, INOPERABLE))
@@ -5456,8 +5494,8 @@ package servicecatalog {
   sealed trait Status extends js.Any
   object Status extends js.Object {
     val AVAILABLE = "AVAILABLE".asInstanceOf[Status]
-    val CREATING  = "CREATING".asInstanceOf[Status]
-    val FAILED    = "FAILED".asInstanceOf[Status]
+    val CREATING = "CREATING".asInstanceOf[Status]
+    val FAILED = "FAILED".asInstanceOf[Status]
 
     val values = js.Object.freeze(js.Array(AVAILABLE, CREATING, FAILED))
   }
@@ -5478,7 +5516,7 @@ package servicecatalog {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -5831,8 +5869,8 @@ package servicecatalog {
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): UpdateProvisionedProductPropertiesInput = {
       val __obj = js.Dynamic.literal(
-        "IdempotencyToken"             -> IdempotencyToken.asInstanceOf[js.Any],
-        "ProvisionedProductId"         -> ProvisionedProductId.asInstanceOf[js.Any],
+        "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
+        "ProvisionedProductId" -> ProvisionedProductId.asInstanceOf[js.Any],
         "ProvisionedProductProperties" -> ProvisionedProductProperties.asInstanceOf[js.Any]
       )
 
@@ -5891,7 +5929,7 @@ package servicecatalog {
         Name: js.UndefOr[ProvisioningArtifactName] = js.undefined
     ): UpdateProvisioningArtifactInput = {
       val __obj = js.Dynamic.literal(
-        "ProductId"              -> ProductId.asInstanceOf[js.Any],
+        "ProductId" -> ProductId.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any]
       )
 

@@ -7,83 +7,84 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object redshift {
-  type AccountsWithRestoreAccessList      = js.Array[AccountWithRestoreAccess]
-  type AssociatedClusterList              = js.Array[ClusterAssociatedToSchedule]
-  type AttributeList                      = js.Array[AccountAttribute]
-  type AttributeNameList                  = js.Array[String]
-  type AttributeValueList                 = js.Array[AttributeValueTarget]
-  type AvailabilityZoneList               = js.Array[AvailabilityZone]
-  type BatchSnapshotOperationErrorList    = js.Array[SnapshotErrorMessage]
-  type BatchSnapshotOperationErrors       = js.Array[SnapshotErrorMessage]
-  type BooleanOptional                    = Boolean
-  type ClusterDbRevisionsList             = js.Array[ClusterDbRevision]
-  type ClusterIamRoleList                 = js.Array[ClusterIamRole]
-  type ClusterList                        = js.Array[Cluster]
-  type ClusterNodesList                   = js.Array[ClusterNode]
-  type ClusterParameterGroupStatusList    = js.Array[ClusterParameterGroupStatus]
-  type ClusterParameterStatusList         = js.Array[ClusterParameterStatus]
+  type AccountsWithRestoreAccessList = js.Array[AccountWithRestoreAccess]
+  type AssociatedClusterList = js.Array[ClusterAssociatedToSchedule]
+  type AttributeList = js.Array[AccountAttribute]
+  type AttributeNameList = js.Array[String]
+  type AttributeValueList = js.Array[AttributeValueTarget]
+  type AvailabilityZoneList = js.Array[AvailabilityZone]
+  type BatchSnapshotOperationErrorList = js.Array[SnapshotErrorMessage]
+  type BatchSnapshotOperationErrors = js.Array[SnapshotErrorMessage]
+  type BooleanOptional = Boolean
+  type ClusterDbRevisionsList = js.Array[ClusterDbRevision]
+  type ClusterIamRoleList = js.Array[ClusterIamRole]
+  type ClusterList = js.Array[Cluster]
+  type ClusterNodesList = js.Array[ClusterNode]
+  type ClusterParameterGroupStatusList = js.Array[ClusterParameterGroupStatus]
+  type ClusterParameterStatusList = js.Array[ClusterParameterStatus]
   type ClusterSecurityGroupMembershipList = js.Array[ClusterSecurityGroupMembership]
-  type ClusterSecurityGroupNameList       = js.Array[String]
-  type ClusterSecurityGroups              = js.Array[ClusterSecurityGroup]
-  type ClusterSubnetGroups                = js.Array[ClusterSubnetGroup]
-  type ClusterVersionList                 = js.Array[ClusterVersion]
-  type DbGroupList                        = js.Array[String]
-  type DeferredMaintenanceWindowsList     = js.Array[DeferredMaintenanceWindow]
-  type DeleteClusterSnapshotMessageList   = js.Array[DeleteClusterSnapshotMessage]
-  type DoubleOptional                     = Double
-  type EC2SecurityGroupList               = js.Array[EC2SecurityGroup]
-  type EligibleTracksToUpdateList         = js.Array[UpdateTarget]
-  type EventCategoriesList                = js.Array[String]
-  type EventCategoriesMapList             = js.Array[EventCategoriesMap]
-  type EventInfoMapList                   = js.Array[EventInfoMap]
-  type EventList                          = js.Array[Event]
-  type EventSubscriptionsList             = js.Array[EventSubscription]
-  type HsmClientCertificateList           = js.Array[HsmClientCertificate]
-  type HsmConfigurationList               = js.Array[HsmConfiguration]
-  type IPRangeList                        = js.Array[IPRange]
-  type IamRoleArnList                     = js.Array[String]
-  type ImportTablesCompleted              = js.Array[String]
-  type ImportTablesInProgress             = js.Array[String]
-  type ImportTablesNotStarted             = js.Array[String]
-  type IntegerOptional                    = Int
-  type LongOptional                       = Double
-  type NodeConfigurationOptionList        = js.Array[NodeConfigurationOption]
+  type ClusterSecurityGroupNameList = js.Array[String]
+  type ClusterSecurityGroups = js.Array[ClusterSecurityGroup]
+  type ClusterSubnetGroups = js.Array[ClusterSubnetGroup]
+  type ClusterVersionList = js.Array[ClusterVersion]
+  type DbGroupList = js.Array[String]
+  type DeferredMaintenanceWindowsList = js.Array[DeferredMaintenanceWindow]
+  type DeleteClusterSnapshotMessageList = js.Array[DeleteClusterSnapshotMessage]
+  type DoubleOptional = Double
+  type EC2SecurityGroupList = js.Array[EC2SecurityGroup]
+  type EligibleTracksToUpdateList = js.Array[UpdateTarget]
+  type EventCategoriesList = js.Array[String]
+  type EventCategoriesMapList = js.Array[EventCategoriesMap]
+  type EventInfoMapList = js.Array[EventInfoMap]
+  type EventList = js.Array[Event]
+  type EventSubscriptionsList = js.Array[EventSubscription]
+  type HsmClientCertificateList = js.Array[HsmClientCertificate]
+  type HsmConfigurationList = js.Array[HsmConfiguration]
+  type IPRangeList = js.Array[IPRange]
+  type IamRoleArnList = js.Array[String]
+  type ImportTablesCompleted = js.Array[String]
+  type ImportTablesInProgress = js.Array[String]
+  type ImportTablesNotStarted = js.Array[String]
+  type IntegerOptional = Int
+  type LongOptional = Double
+  type NodeConfigurationOptionList = js.Array[NodeConfigurationOption]
   type NodeConfigurationOptionsFilterList = js.Array[NodeConfigurationOptionsFilter]
-  type OrderableClusterOptionsList        = js.Array[OrderableClusterOption]
-  type ParameterGroupList                 = js.Array[ClusterParameterGroup]
-  type ParametersList                     = js.Array[Parameter]
-  type PendingActionsList                 = js.Array[String]
-  type RecurringChargeList                = js.Array[RecurringCharge]
-  type ReservedNodeList                   = js.Array[ReservedNode]
-  type ReservedNodeOfferingList           = js.Array[ReservedNodeOffering]
-  type RestorableNodeTypeList             = js.Array[String]
-  type RevisionTargetsList                = js.Array[RevisionTarget]
-  type ScheduleDefinitionList             = js.Array[String]
-  type ScheduledActionFilterList          = js.Array[ScheduledActionFilter]
-  type ScheduledActionList                = js.Array[ScheduledAction]
-  type ScheduledActionTimeList            = js.Array[TStamp]
-  type ScheduledSnapshotTimeList          = js.Array[TStamp]
-  type SensitiveString                    = String
-  type SnapshotCopyGrantList              = js.Array[SnapshotCopyGrant]
-  type SnapshotIdentifierList             = js.Array[String]
-  type SnapshotList                       = js.Array[Snapshot]
-  type SnapshotScheduleList               = js.Array[SnapshotSchedule]
-  type SnapshotSortingEntityList          = js.Array[SnapshotSortingEntity]
-  type SourceIdsList                      = js.Array[String]
-  type SubnetIdentifierList               = js.Array[String]
-  type SubnetList                         = js.Array[Subnet]
-  type SupportedOperationList             = js.Array[SupportedOperation]
-  type SupportedPlatformsList             = js.Array[SupportedPlatform]
-  type TStamp                             = js.Date
-  type TableRestoreStatusList             = js.Array[TableRestoreStatus]
-  type TagKeyList                         = js.Array[String]
-  type TagList                            = js.Array[Tag]
-  type TagValueList                       = js.Array[String]
-  type TaggedResourceList                 = js.Array[TaggedResource]
-  type TrackList                          = js.Array[MaintenanceTrack]
-  type ValueStringList                    = js.Array[String]
-  type VpcSecurityGroupIdList             = js.Array[String]
-  type VpcSecurityGroupMembershipList     = js.Array[VpcSecurityGroupMembership]
+  type OrderableClusterOptionsList = js.Array[OrderableClusterOption]
+  type ParameterGroupList = js.Array[ClusterParameterGroup]
+  type ParametersList = js.Array[Parameter]
+  type PendingActionsList = js.Array[String]
+  type RecurringChargeList = js.Array[RecurringCharge]
+  type ReservedNodeList = js.Array[ReservedNode]
+  type ReservedNodeOfferingList = js.Array[ReservedNodeOffering]
+  type RestorableNodeTypeList = js.Array[String]
+  type RevisionTargetsList = js.Array[RevisionTarget]
+  type ScheduleDefinitionList = js.Array[String]
+  type ScheduledActionFilterList = js.Array[ScheduledActionFilter]
+  type ScheduledActionList = js.Array[ScheduledAction]
+  type ScheduledActionTimeList = js.Array[TStamp]
+  type ScheduledSnapshotTimeList = js.Array[TStamp]
+  type SensitiveString = String
+  type SnapshotCopyGrantList = js.Array[SnapshotCopyGrant]
+  type SnapshotIdentifierList = js.Array[String]
+  type SnapshotList = js.Array[Snapshot]
+  type SnapshotScheduleList = js.Array[SnapshotSchedule]
+  type SnapshotSortingEntityList = js.Array[SnapshotSortingEntity]
+  type SourceIdsList = js.Array[String]
+  type SubnetIdentifierList = js.Array[String]
+  type SubnetList = js.Array[Subnet]
+  type SupportedOperationList = js.Array[SupportedOperation]
+  type SupportedPlatformsList = js.Array[SupportedPlatform]
+  type TStamp = js.Date
+  type TableRestoreStatusList = js.Array[TableRestoreStatus]
+  type TagKeyList = js.Array[String]
+  type TagList = js.Array[Tag]
+  type TagValueList = js.Array[String]
+  type TaggedResourceList = js.Array[TaggedResource]
+  type TrackList = js.Array[MaintenanceTrack]
+  type UsageLimits = js.Array[UsageLimit]
+  type ValueStringList = js.Array[String]
+  type VpcSecurityGroupIdList = js.Array[String]
+  type VpcSecurityGroupMembershipList = js.Array[VpcSecurityGroupMembership]
 
   implicit final class RedshiftOps(private val service: Redshift) extends AnyVal {
 
@@ -138,6 +139,8 @@ package object redshift {
       service.createSnapshotSchedule(params).promise().toFuture
     @inline def createTagsFuture(params: CreateTagsMessage): Future[js.Object] =
       service.createTags(params).promise().toFuture
+    @inline def createUsageLimitFuture(params: CreateUsageLimitMessage): Future[UsageLimit] =
+      service.createUsageLimit(params).promise().toFuture
     @inline def deleteClusterFuture(params: DeleteClusterMessage): Future[DeleteClusterResult] =
       service.deleteCluster(params).promise().toFuture
     @inline def deleteClusterParameterGroupFuture(params: DeleteClusterParameterGroupMessage): Future[js.Object] =
@@ -162,6 +165,8 @@ package object redshift {
       service.deleteSnapshotSchedule(params).promise().toFuture
     @inline def deleteTagsFuture(params: DeleteTagsMessage): Future[js.Object] =
       service.deleteTags(params).promise().toFuture
+    @inline def deleteUsageLimitFuture(params: DeleteUsageLimitMessage): Future[js.Object] =
+      service.deleteUsageLimit(params).promise().toFuture
     @inline def describeAccountAttributesFuture(
         params: DescribeAccountAttributesMessage
     ): Future[AccountAttributeList] = service.describeAccountAttributes(params).promise().toFuture
@@ -228,13 +233,15 @@ package object redshift {
     ): Future[SnapshotCopyGrantMessage] = service.describeSnapshotCopyGrants(params).promise().toFuture
     @inline def describeSnapshotSchedulesFuture(
         params: DescribeSnapshotSchedulesMessage
-    ): Future[DescribeSnapshotSchedulesOutputMessage]                   = service.describeSnapshotSchedules(params).promise().toFuture
+    ): Future[DescribeSnapshotSchedulesOutputMessage] = service.describeSnapshotSchedules(params).promise().toFuture
     @inline def describeStorageFuture(): Future[CustomerStorageMessage] = service.describeStorage().promise().toFuture
     @inline def describeTableRestoreStatusFuture(
         params: DescribeTableRestoreStatusMessage
     ): Future[TableRestoreStatusMessage] = service.describeTableRestoreStatus(params).promise().toFuture
     @inline def describeTagsFuture(params: DescribeTagsMessage): Future[TaggedResourceListMessage] =
       service.describeTags(params).promise().toFuture
+    @inline def describeUsageLimitsFuture(params: DescribeUsageLimitsMessage): Future[UsageLimitList] =
+      service.describeUsageLimits(params).promise().toFuture
     @inline def disableLoggingFuture(params: DisableLoggingMessage): Future[LoggingStatus] =
       service.disableLogging(params).promise().toFuture
     @inline def disableSnapshotCopyFuture(params: DisableSnapshotCopyMessage): Future[DisableSnapshotCopyResult] =
@@ -280,6 +287,10 @@ package object redshift {
       service.modifySnapshotCopyRetentionPeriod(params).promise().toFuture
     @inline def modifySnapshotScheduleFuture(params: ModifySnapshotScheduleMessage): Future[SnapshotSchedule] =
       service.modifySnapshotSchedule(params).promise().toFuture
+    @inline def modifyUsageLimitFuture(params: ModifyUsageLimitMessage): Future[UsageLimit] =
+      service.modifyUsageLimit(params).promise().toFuture
+    @inline def pauseClusterFuture(params: PauseClusterMessage): Future[PauseClusterResult] =
+      service.pauseCluster(params).promise().toFuture
     @inline def purchaseReservedNodeOfferingFuture(
         params: PurchaseReservedNodeOfferingMessage
     ): Future[PurchaseReservedNodeOfferingResult] = service.purchaseReservedNodeOffering(params).promise().toFuture
@@ -297,6 +308,8 @@ package object redshift {
         params: RestoreTableFromClusterSnapshotMessage
     ): Future[RestoreTableFromClusterSnapshotResult] =
       service.restoreTableFromClusterSnapshot(params).promise().toFuture
+    @inline def resumeClusterFuture(params: ResumeClusterMessage): Future[ResumeClusterResult] =
+      service.resumeCluster(params).promise().toFuture
     @inline def revokeClusterSecurityGroupIngressFuture(
         params: RevokeClusterSecurityGroupIngressMessage
     ): Future[RevokeClusterSecurityGroupIngressResult] =
@@ -327,16 +340,16 @@ package redshift {
     ): Request[BatchDeleteClusterSnapshotsResult] = js.native
     def batchModifyClusterSnapshots(
         params: BatchModifyClusterSnapshotsMessage
-    ): Request[BatchModifyClusterSnapshotsOutputMessage]                                            = js.native
-    def cancelResize(params: CancelResizeMessage): Request[ResizeProgressMessage]                   = js.native
+    ): Request[BatchModifyClusterSnapshotsOutputMessage] = js.native
+    def cancelResize(params: CancelResizeMessage): Request[ResizeProgressMessage] = js.native
     def copyClusterSnapshot(params: CopyClusterSnapshotMessage): Request[CopyClusterSnapshotResult] = js.native
-    def createCluster(params: CreateClusterMessage): Request[CreateClusterResult]                   = js.native
+    def createCluster(params: CreateClusterMessage): Request[CreateClusterResult] = js.native
     def createClusterParameterGroup(
         params: CreateClusterParameterGroupMessage
     ): Request[CreateClusterParameterGroupResult] = js.native
     def createClusterSecurityGroup(
         params: CreateClusterSecurityGroupMessage
-    ): Request[CreateClusterSecurityGroupResult]                                                          = js.native
+    ): Request[CreateClusterSecurityGroupResult] = js.native
     def createClusterSnapshot(params: CreateClusterSnapshotMessage): Request[CreateClusterSnapshotResult] = js.native
     def createClusterSubnetGroup(params: CreateClusterSubnetGroupMessage): Request[CreateClusterSubnetGroupResult] =
       js.native
@@ -344,25 +357,27 @@ package redshift {
       js.native
     def createHsmClientCertificate(
         params: CreateHsmClientCertificateMessage
-    ): Request[CreateHsmClientCertificateResult]                                                             = js.native
+    ): Request[CreateHsmClientCertificateResult] = js.native
     def createHsmConfiguration(params: CreateHsmConfigurationMessage): Request[CreateHsmConfigurationResult] = js.native
-    def createScheduledAction(params: CreateScheduledActionMessage): Request[ScheduledAction]                = js.native
+    def createScheduledAction(params: CreateScheduledActionMessage): Request[ScheduledAction] = js.native
     def createSnapshotCopyGrant(params: CreateSnapshotCopyGrantMessage): Request[CreateSnapshotCopyGrantResult] =
       js.native
-    def createSnapshotSchedule(params: CreateSnapshotScheduleMessage): Request[SnapshotSchedule]           = js.native
-    def createTags(params: CreateTagsMessage): Request[js.Object]                                          = js.native
-    def deleteCluster(params: DeleteClusterMessage): Request[DeleteClusterResult]                          = js.native
-    def deleteClusterParameterGroup(params: DeleteClusterParameterGroupMessage): Request[js.Object]        = js.native
-    def deleteClusterSecurityGroup(params: DeleteClusterSecurityGroupMessage): Request[js.Object]          = js.native
-    def deleteClusterSnapshot(params: DeleteClusterSnapshotMessage): Request[DeleteClusterSnapshotResult]  = js.native
-    def deleteClusterSubnetGroup(params: DeleteClusterSubnetGroupMessage): Request[js.Object]              = js.native
-    def deleteEventSubscription(params: DeleteEventSubscriptionMessage): Request[js.Object]                = js.native
-    def deleteHsmClientCertificate(params: DeleteHsmClientCertificateMessage): Request[js.Object]          = js.native
-    def deleteHsmConfiguration(params: DeleteHsmConfigurationMessage): Request[js.Object]                  = js.native
-    def deleteScheduledAction(params: DeleteScheduledActionMessage): Request[js.Object]                    = js.native
-    def deleteSnapshotCopyGrant(params: DeleteSnapshotCopyGrantMessage): Request[js.Object]                = js.native
-    def deleteSnapshotSchedule(params: DeleteSnapshotScheduleMessage): Request[js.Object]                  = js.native
-    def deleteTags(params: DeleteTagsMessage): Request[js.Object]                                          = js.native
+    def createSnapshotSchedule(params: CreateSnapshotScheduleMessage): Request[SnapshotSchedule] = js.native
+    def createTags(params: CreateTagsMessage): Request[js.Object] = js.native
+    def createUsageLimit(params: CreateUsageLimitMessage): Request[UsageLimit] = js.native
+    def deleteCluster(params: DeleteClusterMessage): Request[DeleteClusterResult] = js.native
+    def deleteClusterParameterGroup(params: DeleteClusterParameterGroupMessage): Request[js.Object] = js.native
+    def deleteClusterSecurityGroup(params: DeleteClusterSecurityGroupMessage): Request[js.Object] = js.native
+    def deleteClusterSnapshot(params: DeleteClusterSnapshotMessage): Request[DeleteClusterSnapshotResult] = js.native
+    def deleteClusterSubnetGroup(params: DeleteClusterSubnetGroupMessage): Request[js.Object] = js.native
+    def deleteEventSubscription(params: DeleteEventSubscriptionMessage): Request[js.Object] = js.native
+    def deleteHsmClientCertificate(params: DeleteHsmClientCertificateMessage): Request[js.Object] = js.native
+    def deleteHsmConfiguration(params: DeleteHsmConfigurationMessage): Request[js.Object] = js.native
+    def deleteScheduledAction(params: DeleteScheduledActionMessage): Request[js.Object] = js.native
+    def deleteSnapshotCopyGrant(params: DeleteSnapshotCopyGrantMessage): Request[js.Object] = js.native
+    def deleteSnapshotSchedule(params: DeleteSnapshotScheduleMessage): Request[js.Object] = js.native
+    def deleteTags(params: DeleteTagsMessage): Request[js.Object] = js.native
+    def deleteUsageLimit(params: DeleteUsageLimitMessage): Request[js.Object] = js.native
     def describeAccountAttributes(params: DescribeAccountAttributesMessage): Request[AccountAttributeList] = js.native
     def describeClusterDbRevisions(params: DescribeClusterDbRevisionsMessage): Request[ClusterDbRevisionsMessage] =
       js.native
@@ -373,16 +388,16 @@ package redshift {
       js.native
     def describeClusterSecurityGroups(
         params: DescribeClusterSecurityGroupsMessage
-    ): Request[ClusterSecurityGroupMessage]                                                         = js.native
+    ): Request[ClusterSecurityGroupMessage] = js.native
     def describeClusterSnapshots(params: DescribeClusterSnapshotsMessage): Request[SnapshotMessage] = js.native
     def describeClusterSubnetGroups(params: DescribeClusterSubnetGroupsMessage): Request[ClusterSubnetGroupMessage] =
       js.native
-    def describeClusterTracks(params: DescribeClusterTracksMessage): Request[TrackListMessage]           = js.native
+    def describeClusterTracks(params: DescribeClusterTracksMessage): Request[TrackListMessage] = js.native
     def describeClusterVersions(params: DescribeClusterVersionsMessage): Request[ClusterVersionsMessage] = js.native
-    def describeClusters(params: DescribeClustersMessage): Request[ClustersMessage]                      = js.native
+    def describeClusters(params: DescribeClustersMessage): Request[ClustersMessage] = js.native
     def describeDefaultClusterParameters(
         params: DescribeDefaultClusterParametersMessage
-    ): Request[DescribeDefaultClusterParametersResult]                                                   = js.native
+    ): Request[DescribeDefaultClusterParametersResult] = js.native
     def describeEventCategories(params: DescribeEventCategoriesMessage): Request[EventCategoriesMessage] = js.native
     def describeEventSubscriptions(params: DescribeEventSubscriptionsMessage): Request[EventSubscriptionsMessage] =
       js.native
@@ -401,27 +416,28 @@ package redshift {
     ): Request[OrderableClusterOptionsMessage] = js.native
     def describeReservedNodeOfferings(
         params: DescribeReservedNodeOfferingsMessage
-    ): Request[ReservedNodeOfferingsMessage]                                                                = js.native
-    def describeReservedNodes(params: DescribeReservedNodesMessage): Request[ReservedNodesMessage]          = js.native
-    def describeResize(params: DescribeResizeMessage): Request[ResizeProgressMessage]                       = js.native
+    ): Request[ReservedNodeOfferingsMessage] = js.native
+    def describeReservedNodes(params: DescribeReservedNodesMessage): Request[ReservedNodesMessage] = js.native
+    def describeResize(params: DescribeResizeMessage): Request[ResizeProgressMessage] = js.native
     def describeScheduledActions(params: DescribeScheduledActionsMessage): Request[ScheduledActionsMessage] = js.native
     def describeSnapshotCopyGrants(params: DescribeSnapshotCopyGrantsMessage): Request[SnapshotCopyGrantMessage] =
       js.native
     def describeSnapshotSchedules(
         params: DescribeSnapshotSchedulesMessage
-    ): Request[DescribeSnapshotSchedulesOutputMessage]     = js.native
+    ): Request[DescribeSnapshotSchedulesOutputMessage] = js.native
     def describeStorage(): Request[CustomerStorageMessage] = js.native
     def describeTableRestoreStatus(params: DescribeTableRestoreStatusMessage): Request[TableRestoreStatusMessage] =
       js.native
-    def describeTags(params: DescribeTagsMessage): Request[TaggedResourceListMessage]               = js.native
-    def disableLogging(params: DisableLoggingMessage): Request[LoggingStatus]                       = js.native
+    def describeTags(params: DescribeTagsMessage): Request[TaggedResourceListMessage] = js.native
+    def describeUsageLimits(params: DescribeUsageLimitsMessage): Request[UsageLimitList] = js.native
+    def disableLogging(params: DisableLoggingMessage): Request[LoggingStatus] = js.native
     def disableSnapshotCopy(params: DisableSnapshotCopyMessage): Request[DisableSnapshotCopyResult] = js.native
-    def enableLogging(params: EnableLoggingMessage): Request[LoggingStatus]                         = js.native
-    def enableSnapshotCopy(params: EnableSnapshotCopyMessage): Request[EnableSnapshotCopyResult]    = js.native
-    def getClusterCredentials(params: GetClusterCredentialsMessage): Request[ClusterCredentials]    = js.native
+    def enableLogging(params: EnableLoggingMessage): Request[LoggingStatus] = js.native
+    def enableSnapshotCopy(params: EnableSnapshotCopyMessage): Request[EnableSnapshotCopyResult] = js.native
+    def getClusterCredentials(params: GetClusterCredentialsMessage): Request[ClusterCredentials] = js.native
     def getReservedNodeExchangeOfferings(
         params: GetReservedNodeExchangeOfferingsInputMessage
-    ): Request[GetReservedNodeExchangeOfferingsOutputMessage]                     = js.native
+    ): Request[GetReservedNodeExchangeOfferingsOutputMessage] = js.native
     def modifyCluster(params: ModifyClusterMessage): Request[ModifyClusterResult] = js.native
     def modifyClusterDbRevision(params: ModifyClusterDbRevisionMessage): Request[ModifyClusterDbRevisionResult] =
       js.native
@@ -430,9 +446,9 @@ package redshift {
       js.native
     def modifyClusterParameterGroup(
         params: ModifyClusterParameterGroupMessage
-    ): Request[ClusterParameterGroupNameMessage]                                                          = js.native
+    ): Request[ClusterParameterGroupNameMessage] = js.native
     def modifyClusterSnapshot(params: ModifyClusterSnapshotMessage): Request[ModifyClusterSnapshotResult] = js.native
-    def modifyClusterSnapshotSchedule(params: ModifyClusterSnapshotScheduleMessage): Request[js.Object]   = js.native
+    def modifyClusterSnapshotSchedule(params: ModifyClusterSnapshotScheduleMessage): Request[js.Object] = js.native
     def modifyClusterSubnetGroup(params: ModifyClusterSubnetGroupMessage): Request[ModifyClusterSubnetGroupResult] =
       js.native
     def modifyEventSubscription(params: ModifyEventSubscriptionMessage): Request[ModifyEventSubscriptionResult] =
@@ -440,15 +456,17 @@ package redshift {
     def modifyScheduledAction(params: ModifyScheduledActionMessage): Request[ScheduledAction] = js.native
     def modifySnapshotCopyRetentionPeriod(
         params: ModifySnapshotCopyRetentionPeriodMessage
-    ): Request[ModifySnapshotCopyRetentionPeriodResult]                                          = js.native
+    ): Request[ModifySnapshotCopyRetentionPeriodResult] = js.native
     def modifySnapshotSchedule(params: ModifySnapshotScheduleMessage): Request[SnapshotSchedule] = js.native
+    def modifyUsageLimit(params: ModifyUsageLimitMessage): Request[UsageLimit] = js.native
+    def pauseCluster(params: PauseClusterMessage): Request[PauseClusterResult] = js.native
     def purchaseReservedNodeOffering(
         params: PurchaseReservedNodeOfferingMessage
-    ): Request[PurchaseReservedNodeOfferingResult]                                = js.native
+    ): Request[PurchaseReservedNodeOfferingResult] = js.native
     def rebootCluster(params: RebootClusterMessage): Request[RebootClusterResult] = js.native
     def resetClusterParameterGroup(
         params: ResetClusterParameterGroupMessage
-    ): Request[ClusterParameterGroupNameMessage]                                  = js.native
+    ): Request[ClusterParameterGroupNameMessage] = js.native
     def resizeCluster(params: ResizeClusterMessage): Request[ResizeClusterResult] = js.native
     def restoreFromClusterSnapshot(
         params: RestoreFromClusterSnapshotMessage
@@ -456,11 +474,12 @@ package redshift {
     def restoreTableFromClusterSnapshot(
         params: RestoreTableFromClusterSnapshotMessage
     ): Request[RestoreTableFromClusterSnapshotResult] = js.native
+    def resumeCluster(params: ResumeClusterMessage): Request[ResumeClusterResult] = js.native
     def revokeClusterSecurityGroupIngress(
         params: RevokeClusterSecurityGroupIngressMessage
-    ): Request[RevokeClusterSecurityGroupIngressResult]                                                = js.native
+    ): Request[RevokeClusterSecurityGroupIngressResult] = js.native
     def revokeSnapshotAccess(params: RevokeSnapshotAccessMessage): Request[RevokeSnapshotAccessResult] = js.native
-    def rotateEncryptionKey(params: RotateEncryptionKeyMessage): Request[RotateEncryptionKeyResult]    = js.native
+    def rotateEncryptionKey(params: RotateEncryptionKeyMessage): Request[RotateEncryptionKeyResult] = js.native
   }
 
   @js.native
@@ -476,7 +495,7 @@ package redshift {
         TargetReservedNodeOfferingId: String
     ): AcceptReservedNodeExchangeInputMessage = {
       val __obj = js.Dynamic.literal(
-        "ReservedNodeId"               -> ReservedNodeId.asInstanceOf[js.Any],
+        "ReservedNodeId" -> ReservedNodeId.asInstanceOf[js.Any],
         "TargetReservedNodeOfferingId" -> TargetReservedNodeOfferingId.asInstanceOf[js.Any]
       )
 
@@ -563,9 +582,9 @@ package redshift {
   @js.native
   sealed trait ActionType extends js.Any
   object ActionType extends js.Object {
-    val `restore-cluster`       = "restore-cluster".asInstanceOf[ActionType]
+    val `restore-cluster` = "restore-cluster".asInstanceOf[ActionType]
     val `recommend-node-config` = "recommend-node-config".asInstanceOf[ActionType]
-    val `resize-cluster`        = "resize-cluster".asInstanceOf[ActionType]
+    val `resize-cluster` = "resize-cluster".asInstanceOf[ActionType]
 
     val values = js.Object.freeze(js.Array(`restore-cluster`, `recommend-node-config`, `resize-cluster`))
   }
@@ -654,7 +673,7 @@ package redshift {
     ): AuthorizeSnapshotAccessMessage = {
       val __obj = js.Dynamic.literal(
         "AccountWithRestoreAccess" -> AccountWithRestoreAccess.asInstanceOf[js.Any],
-        "SnapshotIdentifier"       -> SnapshotIdentifier.asInstanceOf[js.Any]
+        "SnapshotIdentifier" -> SnapshotIdentifier.asInstanceOf[js.Any]
       )
 
       SnapshotClusterIdentifier.foreach(__v =>
@@ -1623,10 +1642,10 @@ package redshift {
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): CreateClusterMessage = {
       val __obj = js.Dynamic.literal(
-        "ClusterIdentifier"  -> ClusterIdentifier.asInstanceOf[js.Any],
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
         "MasterUserPassword" -> MasterUserPassword.asInstanceOf[js.Any],
-        "MasterUsername"     -> MasterUsername.asInstanceOf[js.Any],
-        "NodeType"           -> NodeType.asInstanceOf[js.Any]
+        "MasterUsername" -> MasterUsername.asInstanceOf[js.Any],
+        "NodeType" -> NodeType.asInstanceOf[js.Any]
       )
 
       AdditionalInfo.foreach(__v => __obj.updateDynamic("AdditionalInfo")(__v.asInstanceOf[js.Any]))
@@ -1693,9 +1712,9 @@ package redshift {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateClusterParameterGroupMessage = {
       val __obj = js.Dynamic.literal(
-        "Description"          -> Description.asInstanceOf[js.Any],
+        "Description" -> Description.asInstanceOf[js.Any],
         "ParameterGroupFamily" -> ParameterGroupFamily.asInstanceOf[js.Any],
-        "ParameterGroupName"   -> ParameterGroupName.asInstanceOf[js.Any]
+        "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -1754,7 +1773,7 @@ package redshift {
     ): CreateClusterSecurityGroupMessage = {
       val __obj = js.Dynamic.literal(
         "ClusterSecurityGroupName" -> ClusterSecurityGroupName.asInstanceOf[js.Any],
-        "Description"              -> Description.asInstanceOf[js.Any]
+        "Description" -> Description.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -1798,7 +1817,7 @@ package redshift {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateClusterSnapshotMessage = {
       val __obj = js.Dynamic.literal(
-        "ClusterIdentifier"  -> ClusterIdentifier.asInstanceOf[js.Any],
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
         "SnapshotIdentifier" -> SnapshotIdentifier.asInstanceOf[js.Any]
       )
 
@@ -1847,8 +1866,8 @@ package redshift {
     ): CreateClusterSubnetGroupMessage = {
       val __obj = js.Dynamic.literal(
         "ClusterSubnetGroupName" -> ClusterSubnetGroupName.asInstanceOf[js.Any],
-        "Description"            -> Description.asInstanceOf[js.Any],
-        "SubnetIds"              -> SubnetIds.asInstanceOf[js.Any]
+        "Description" -> Description.asInstanceOf[js.Any],
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -1900,7 +1919,7 @@ package redshift {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateEventSubscriptionMessage = {
       val __obj = js.Dynamic.literal(
-        "SnsTopicArn"      -> SnsTopicArn.asInstanceOf[js.Any],
+        "SnsTopicArn" -> SnsTopicArn.asInstanceOf[js.Any],
         "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
       )
 
@@ -1996,11 +2015,11 @@ package redshift {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateHsmConfigurationMessage = {
       val __obj = js.Dynamic.literal(
-        "Description"                -> Description.asInstanceOf[js.Any],
+        "Description" -> Description.asInstanceOf[js.Any],
         "HsmConfigurationIdentifier" -> HsmConfigurationIdentifier.asInstanceOf[js.Any],
-        "HsmIpAddress"               -> HsmIpAddress.asInstanceOf[js.Any],
-        "HsmPartitionName"           -> HsmPartitionName.asInstanceOf[js.Any],
-        "HsmPartitionPassword"       -> HsmPartitionPassword.asInstanceOf[js.Any],
+        "HsmIpAddress" -> HsmIpAddress.asInstanceOf[js.Any],
+        "HsmPartitionName" -> HsmPartitionName.asInstanceOf[js.Any],
+        "HsmPartitionPassword" -> HsmPartitionPassword.asInstanceOf[js.Any],
         "HsmServerPublicCertificate" -> HsmServerPublicCertificate.asInstanceOf[js.Any]
       )
 
@@ -2050,10 +2069,10 @@ package redshift {
         StartTime: js.UndefOr[TStamp] = js.undefined
     ): CreateScheduledActionMessage = {
       val __obj = js.Dynamic.literal(
-        "IamRole"             -> IamRole.asInstanceOf[js.Any],
-        "Schedule"            -> Schedule.asInstanceOf[js.Any],
+        "IamRole" -> IamRole.asInstanceOf[js.Any],
+        "Schedule" -> Schedule.asInstanceOf[js.Any],
         "ScheduledActionName" -> ScheduledActionName.asInstanceOf[js.Any],
-        "TargetAction"        -> TargetAction.asInstanceOf[js.Any]
+        "TargetAction" -> TargetAction.asInstanceOf[js.Any]
       )
 
       Enable.foreach(__v => __obj.updateDynamic("Enable")(__v.asInstanceOf[js.Any]))
@@ -2157,10 +2176,46 @@ package redshift {
     ): CreateTagsMessage = {
       val __obj = js.Dynamic.literal(
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
-        "Tags"         -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateTagsMessage]
+    }
+  }
+
+  @js.native
+  trait CreateUsageLimitMessage extends js.Object {
+    var Amount: Double
+    var ClusterIdentifier: String
+    var FeatureType: UsageLimitFeatureType
+    var LimitType: UsageLimitLimitType
+    var BreachAction: js.UndefOr[UsageLimitBreachAction]
+    var Period: js.UndefOr[UsageLimitPeriod]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateUsageLimitMessage {
+    @inline
+    def apply(
+        Amount: Double,
+        ClusterIdentifier: String,
+        FeatureType: UsageLimitFeatureType,
+        LimitType: UsageLimitLimitType,
+        BreachAction: js.UndefOr[UsageLimitBreachAction] = js.undefined,
+        Period: js.UndefOr[UsageLimitPeriod] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateUsageLimitMessage = {
+      val __obj = js.Dynamic.literal(
+        "Amount" -> Amount.asInstanceOf[js.Any],
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
+        "FeatureType" -> FeatureType.asInstanceOf[js.Any],
+        "LimitType" -> LimitType.asInstanceOf[js.Any]
+      )
+
+      BreachAction.foreach(__v => __obj.updateDynamic("BreachAction")(__v.asInstanceOf[js.Any]))
+      Period.foreach(__v => __obj.updateDynamic("Period")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateUsageLimitMessage]
     }
   }
 
@@ -2573,10 +2628,28 @@ package redshift {
     ): DeleteTagsMessage = {
       val __obj = js.Dynamic.literal(
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
-        "TagKeys"      -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteTagsMessage]
+    }
+  }
+
+  @js.native
+  trait DeleteUsageLimitMessage extends js.Object {
+    var UsageLimitId: String
+  }
+
+  object DeleteUsageLimitMessage {
+    @inline
+    def apply(
+        UsageLimitId: String
+    ): DeleteUsageLimitMessage = {
+      val __obj = js.Dynamic.literal(
+        "UsageLimitId" -> UsageLimitId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteUsageLimitMessage]
     }
   }
 
@@ -3408,6 +3481,40 @@ package redshift {
     }
   }
 
+  @js.native
+  trait DescribeUsageLimitsMessage extends js.Object {
+    var ClusterIdentifier: js.UndefOr[String]
+    var FeatureType: js.UndefOr[UsageLimitFeatureType]
+    var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var TagKeys: js.UndefOr[TagKeyList]
+    var TagValues: js.UndefOr[TagValueList]
+    var UsageLimitId: js.UndefOr[String]
+  }
+
+  object DescribeUsageLimitsMessage {
+    @inline
+    def apply(
+        ClusterIdentifier: js.UndefOr[String] = js.undefined,
+        FeatureType: js.UndefOr[UsageLimitFeatureType] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        TagKeys: js.UndefOr[TagKeyList] = js.undefined,
+        TagValues: js.UndefOr[TagValueList] = js.undefined,
+        UsageLimitId: js.UndefOr[String] = js.undefined
+    ): DescribeUsageLimitsMessage = {
+      val __obj = js.Dynamic.literal()
+      ClusterIdentifier.foreach(__v => __obj.updateDynamic("ClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      FeatureType.foreach(__v => __obj.updateDynamic("FeatureType")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      TagKeys.foreach(__v => __obj.updateDynamic("TagKeys")(__v.asInstanceOf[js.Any]))
+      TagValues.foreach(__v => __obj.updateDynamic("TagValues")(__v.asInstanceOf[js.Any]))
+      UsageLimitId.foreach(__v => __obj.updateDynamic("UsageLimitId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeUsageLimitsMessage]
+    }
+  }
+
   /**
     * <p/>
     */
@@ -3534,7 +3641,7 @@ package redshift {
         S3KeyPrefix: js.UndefOr[String] = js.undefined
     ): EnableLoggingMessage = {
       val __obj = js.Dynamic.literal(
-        "BucketName"        -> BucketName.asInstanceOf[js.Any],
+        "BucketName" -> BucketName.asInstanceOf[js.Any],
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
       )
 
@@ -3840,7 +3947,7 @@ package redshift {
     ): GetClusterCredentialsMessage = {
       val __obj = js.Dynamic.literal(
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
-        "DbUser"            -> DbUser.asInstanceOf[js.Any]
+        "DbUser" -> DbUser.asInstanceOf[js.Any]
       )
 
       AutoCreate.foreach(__v => __obj.updateDynamic("AutoCreate")(__v.asInstanceOf[js.Any]))
@@ -4121,7 +4228,7 @@ package redshift {
   @js.native
   sealed trait Mode extends js.Any
   object Mode extends js.Object {
-    val standard           = "standard".asInstanceOf[Mode]
+    val standard = "standard".asInstanceOf[Mode]
     val `high-performance` = "high-performance".asInstanceOf[Mode]
 
     val values = js.Object.freeze(js.Array(standard, `high-performance`))
@@ -4141,7 +4248,7 @@ package redshift {
     ): ModifyClusterDbRevisionMessage = {
       val __obj = js.Dynamic.literal(
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
-        "RevisionTarget"    -> RevisionTarget.asInstanceOf[js.Any]
+        "RevisionTarget" -> RevisionTarget.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ModifyClusterDbRevisionMessage]
@@ -4373,7 +4480,7 @@ package redshift {
     ): ModifyClusterParameterGroupMessage = {
       val __obj = js.Dynamic.literal(
         "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any],
-        "Parameters"         -> Parameters.asInstanceOf[js.Any]
+        "Parameters" -> Parameters.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ModifyClusterParameterGroupMessage]
@@ -4481,7 +4588,7 @@ package redshift {
     ): ModifyClusterSubnetGroupMessage = {
       val __obj = js.Dynamic.literal(
         "ClusterSubnetGroupName" -> ClusterSubnetGroupName.asInstanceOf[js.Any],
-        "SubnetIds"              -> SubnetIds.asInstanceOf[js.Any]
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -4620,7 +4727,7 @@ package redshift {
     ): ModifySnapshotCopyRetentionPeriodMessage = {
       val __obj = js.Dynamic.literal(
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
-        "RetentionPeriod"   -> RetentionPeriod.asInstanceOf[js.Any]
+        "RetentionPeriod" -> RetentionPeriod.asInstanceOf[js.Any]
       )
 
       Manual.foreach(__v => __obj.updateDynamic("Manual")(__v.asInstanceOf[js.Any]))
@@ -4658,10 +4765,34 @@ package redshift {
     ): ModifySnapshotScheduleMessage = {
       val __obj = js.Dynamic.literal(
         "ScheduleDefinitions" -> ScheduleDefinitions.asInstanceOf[js.Any],
-        "ScheduleIdentifier"  -> ScheduleIdentifier.asInstanceOf[js.Any]
+        "ScheduleIdentifier" -> ScheduleIdentifier.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ModifySnapshotScheduleMessage]
+    }
+  }
+
+  @js.native
+  trait ModifyUsageLimitMessage extends js.Object {
+    var UsageLimitId: String
+    var Amount: js.UndefOr[LongOptional]
+    var BreachAction: js.UndefOr[UsageLimitBreachAction]
+  }
+
+  object ModifyUsageLimitMessage {
+    @inline
+    def apply(
+        UsageLimitId: String,
+        Amount: js.UndefOr[LongOptional] = js.undefined,
+        BreachAction: js.UndefOr[UsageLimitBreachAction] = js.undefined
+    ): ModifyUsageLimitMessage = {
+      val __obj = js.Dynamic.literal(
+        "UsageLimitId" -> UsageLimitId.asInstanceOf[js.Any]
+      )
+
+      Amount.foreach(__v => __obj.updateDynamic("Amount")(__v.asInstanceOf[js.Any]))
+      BreachAction.foreach(__v => __obj.updateDynamic("BreachAction")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyUsageLimitMessage]
     }
   }
 
@@ -4723,7 +4854,7 @@ package redshift {
   @js.native
   sealed trait NodeConfigurationOptionsFilterName extends js.Any
   object NodeConfigurationOptionsFilterName extends js.Object {
-    val NodeType      = "NodeType".asInstanceOf[NodeConfigurationOptionsFilterName]
+    val NodeType = "NodeType".asInstanceOf[NodeConfigurationOptionsFilterName]
     val NumberOfNodes = "NumberOfNodes".asInstanceOf[NodeConfigurationOptionsFilterName]
     val EstimatedDiskUtilizationPercent =
       "EstimatedDiskUtilizationPercent".asInstanceOf[NodeConfigurationOptionsFilterName]
@@ -4756,12 +4887,12 @@ package redshift {
   @js.native
   sealed trait OperatorType extends js.Any
   object OperatorType extends js.Object {
-    val eq      = "eq".asInstanceOf[OperatorType]
-    val lt      = "lt".asInstanceOf[OperatorType]
-    val gt      = "gt".asInstanceOf[OperatorType]
-    val le      = "le".asInstanceOf[OperatorType]
-    val ge      = "ge".asInstanceOf[OperatorType]
-    val in      = "in".asInstanceOf[OperatorType]
+    val eq = "eq".asInstanceOf[OperatorType]
+    val lt = "lt".asInstanceOf[OperatorType]
+    val gt = "gt".asInstanceOf[OperatorType]
+    val le = "le".asInstanceOf[OperatorType]
+    val ge = "ge".asInstanceOf[OperatorType]
+    val in = "in".asInstanceOf[OperatorType]
     val between = "between".asInstanceOf[OperatorType]
 
     val values = js.Object.freeze(js.Array(eq, lt, gt, le, ge, in, between))
@@ -4863,10 +4994,44 @@ package redshift {
   @js.native
   sealed trait ParameterApplyType extends js.Any
   object ParameterApplyType extends js.Object {
-    val static  = "static".asInstanceOf[ParameterApplyType]
+    val static = "static".asInstanceOf[ParameterApplyType]
     val dynamic = "dynamic".asInstanceOf[ParameterApplyType]
 
     val values = js.Object.freeze(js.Array(static, dynamic))
+  }
+
+  @js.native
+  trait PauseClusterMessage extends js.Object {
+    var ClusterIdentifier: String
+  }
+
+  object PauseClusterMessage {
+    @inline
+    def apply(
+        ClusterIdentifier: String
+    ): PauseClusterMessage = {
+      val __obj = js.Dynamic.literal(
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[PauseClusterMessage]
+    }
+  }
+
+  @js.native
+  trait PauseClusterResult extends js.Object {
+    var Cluster: js.UndefOr[Cluster]
+  }
+
+  object PauseClusterResult {
+    @inline
+    def apply(
+        Cluster: js.UndefOr[Cluster] = js.undefined
+    ): PauseClusterResult = {
+      val __obj = js.Dynamic.literal()
+      Cluster.foreach(__v => __obj.updateDynamic("Cluster")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PauseClusterResult]
+    }
   }
 
   /**
@@ -5120,7 +5285,7 @@ package redshift {
   @js.native
   sealed trait ReservedNodeOfferingType extends js.Any
   object ReservedNodeOfferingType extends js.Object {
-    val Regular    = "Regular".asInstanceOf[ReservedNodeOfferingType]
+    val Regular = "Regular".asInstanceOf[ReservedNodeOfferingType]
     val Upgradable = "Upgradable".asInstanceOf[ReservedNodeOfferingType]
 
     val values = js.Object.freeze(js.Array(Regular, Upgradable))
@@ -5401,7 +5566,7 @@ package redshift {
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): RestoreFromClusterSnapshotMessage = {
       val __obj = js.Dynamic.literal(
-        "ClusterIdentifier"  -> ClusterIdentifier.asInstanceOf[js.Any],
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
         "SnapshotIdentifier" -> SnapshotIdentifier.asInstanceOf[js.Any]
       )
 
@@ -5531,11 +5696,11 @@ package redshift {
         TargetSchemaName: js.UndefOr[String] = js.undefined
     ): RestoreTableFromClusterSnapshotMessage = {
       val __obj = js.Dynamic.literal(
-        "ClusterIdentifier"  -> ClusterIdentifier.asInstanceOf[js.Any],
-        "NewTableName"       -> NewTableName.asInstanceOf[js.Any],
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
+        "NewTableName" -> NewTableName.asInstanceOf[js.Any],
         "SnapshotIdentifier" -> SnapshotIdentifier.asInstanceOf[js.Any],
         "SourceDatabaseName" -> SourceDatabaseName.asInstanceOf[js.Any],
-        "SourceTableName"    -> SourceTableName.asInstanceOf[js.Any]
+        "SourceTableName" -> SourceTableName.asInstanceOf[js.Any]
       )
 
       SourceSchemaName.foreach(__v => __obj.updateDynamic("SourceSchemaName")(__v.asInstanceOf[js.Any]))
@@ -5558,6 +5723,40 @@ package redshift {
       val __obj = js.Dynamic.literal()
       TableRestoreStatus.foreach(__v => __obj.updateDynamic("TableRestoreStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestoreTableFromClusterSnapshotResult]
+    }
+  }
+
+  @js.native
+  trait ResumeClusterMessage extends js.Object {
+    var ClusterIdentifier: String
+  }
+
+  object ResumeClusterMessage {
+    @inline
+    def apply(
+        ClusterIdentifier: String
+    ): ResumeClusterMessage = {
+      val __obj = js.Dynamic.literal(
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ResumeClusterMessage]
+    }
+  }
+
+  @js.native
+  trait ResumeClusterResult extends js.Object {
+    var Cluster: js.UndefOr[Cluster]
+  }
+
+  object ResumeClusterResult {
+    @inline
+    def apply(
+        Cluster: js.UndefOr[Cluster] = js.undefined
+    ): ResumeClusterResult = {
+      val __obj = js.Dynamic.literal()
+      Cluster.foreach(__v => __obj.updateDynamic("Cluster")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResumeClusterResult]
     }
   }
 
@@ -5653,7 +5852,7 @@ package redshift {
     ): RevokeSnapshotAccessMessage = {
       val __obj = js.Dynamic.literal(
         "AccountWithRestoreAccess" -> AccountWithRestoreAccess.asInstanceOf[js.Any],
-        "SnapshotIdentifier"       -> SnapshotIdentifier.asInstanceOf[js.Any]
+        "SnapshotIdentifier" -> SnapshotIdentifier.asInstanceOf[js.Any]
       )
 
       SnapshotClusterIdentifier.foreach(__v =>
@@ -5720,8 +5919,8 @@ package redshift {
   sealed trait ScheduleState extends js.Any
   object ScheduleState extends js.Object {
     val MODIFYING = "MODIFYING".asInstanceOf[ScheduleState]
-    val ACTIVE    = "ACTIVE".asInstanceOf[ScheduleState]
-    val FAILED    = "FAILED".asInstanceOf[ScheduleState]
+    val ACTIVE = "ACTIVE".asInstanceOf[ScheduleState]
+    val FAILED = "FAILED".asInstanceOf[ScheduleState]
 
     val values = js.Object.freeze(js.Array(MODIFYING, ACTIVE, FAILED))
   }
@@ -5787,7 +5986,7 @@ package redshift {
         Values: ValueStringList
     ): ScheduledActionFilter = {
       val __obj = js.Dynamic.literal(
-        "Name"   -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
@@ -5799,7 +5998,7 @@ package redshift {
   sealed trait ScheduledActionFilterName extends js.Any
   object ScheduledActionFilterName extends js.Object {
     val `cluster-identifier` = "cluster-identifier".asInstanceOf[ScheduledActionFilterName]
-    val `iam-role`           = "iam-role".asInstanceOf[ScheduledActionFilterName]
+    val `iam-role` = "iam-role".asInstanceOf[ScheduledActionFilterName]
 
     val values = js.Object.freeze(js.Array(`cluster-identifier`, `iam-role`))
   }
@@ -5807,7 +6006,7 @@ package redshift {
   @js.native
   sealed trait ScheduledActionState extends js.Any
   object ScheduledActionState extends js.Object {
-    val ACTIVE   = "ACTIVE".asInstanceOf[ScheduledActionState]
+    val ACTIVE = "ACTIVE".asInstanceOf[ScheduledActionState]
     val DISABLED = "DISABLED".asInstanceOf[ScheduledActionState]
 
     val values = js.Object.freeze(js.Array(ACTIVE, DISABLED))
@@ -5818,16 +6017,22 @@ package redshift {
     */
   @js.native
   trait ScheduledActionType extends js.Object {
+    var PauseCluster: js.UndefOr[PauseClusterMessage]
     var ResizeCluster: js.UndefOr[ResizeClusterMessage]
+    var ResumeCluster: js.UndefOr[ResumeClusterMessage]
   }
 
   object ScheduledActionType {
     @inline
     def apply(
-        ResizeCluster: js.UndefOr[ResizeClusterMessage] = js.undefined
+        PauseCluster: js.UndefOr[PauseClusterMessage] = js.undefined,
+        ResizeCluster: js.UndefOr[ResizeClusterMessage] = js.undefined,
+        ResumeCluster: js.UndefOr[ResumeClusterMessage] = js.undefined
     ): ScheduledActionType = {
       val __obj = js.Dynamic.literal()
+      PauseCluster.foreach(__v => __obj.updateDynamic("PauseCluster")(__v.asInstanceOf[js.Any]))
       ResizeCluster.foreach(__v => __obj.updateDynamic("ResizeCluster")(__v.asInstanceOf[js.Any]))
+      ResumeCluster.foreach(__v => __obj.updateDynamic("ResumeCluster")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScheduledActionType]
     }
   }
@@ -5836,8 +6041,10 @@ package redshift {
   sealed trait ScheduledActionTypeValues extends js.Any
   object ScheduledActionTypeValues extends js.Object {
     val ResizeCluster = "ResizeCluster".asInstanceOf[ScheduledActionTypeValues]
+    val PauseCluster = "PauseCluster".asInstanceOf[ScheduledActionTypeValues]
+    val ResumeCluster = "ResumeCluster".asInstanceOf[ScheduledActionTypeValues]
 
-    val values = js.Object.freeze(js.Array(ResizeCluster))
+    val values = js.Object.freeze(js.Array(ResizeCluster, PauseCluster, ResumeCluster))
   }
 
   @js.native
@@ -5996,7 +6203,7 @@ package redshift {
   sealed trait SnapshotAttributeToSortBy extends js.Any
   object SnapshotAttributeToSortBy extends js.Object {
     val SOURCE_TYPE = "SOURCE_TYPE".asInstanceOf[SnapshotAttributeToSortBy]
-    val TOTAL_SIZE  = "TOTAL_SIZE".asInstanceOf[SnapshotAttributeToSortBy]
+    val TOTAL_SIZE = "TOTAL_SIZE".asInstanceOf[SnapshotAttributeToSortBy]
     val CREATE_TIME = "CREATE_TIME".asInstanceOf[SnapshotAttributeToSortBy]
 
     val values = js.Object.freeze(js.Array(SOURCE_TYPE, TOTAL_SIZE, CREATE_TIME))
@@ -6166,7 +6373,7 @@ package redshift {
   @js.native
   sealed trait SortByOrder extends js.Any
   object SortByOrder extends js.Object {
-    val ASC  = "ASC".asInstanceOf[SortByOrder]
+    val ASC = "ASC".asInstanceOf[SortByOrder]
     val DESC = "DESC".asInstanceOf[SortByOrder]
 
     val values = js.Object.freeze(js.Array(ASC, DESC))
@@ -6175,11 +6382,11 @@ package redshift {
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType extends js.Object {
-    val cluster                   = "cluster".asInstanceOf[SourceType]
+    val cluster = "cluster".asInstanceOf[SourceType]
     val `cluster-parameter-group` = "cluster-parameter-group".asInstanceOf[SourceType]
-    val `cluster-security-group`  = "cluster-security-group".asInstanceOf[SourceType]
-    val `cluster-snapshot`        = "cluster-snapshot".asInstanceOf[SourceType]
-    val `scheduled-action`        = "scheduled-action".asInstanceOf[SourceType]
+    val `cluster-security-group` = "cluster-security-group".asInstanceOf[SourceType]
+    val `cluster-snapshot` = "cluster-snapshot".asInstanceOf[SourceType]
+    val `scheduled-action` = "scheduled-action".asInstanceOf[SourceType]
 
     val values = js.Object.freeze(
       js.Array(cluster, `cluster-parameter-group`, `cluster-security-group`, `cluster-snapshot`, `scheduled-action`)
@@ -6334,11 +6541,11 @@ package redshift {
   @js.native
   sealed trait TableRestoreStatusType extends js.Any
   object TableRestoreStatusType extends js.Object {
-    val PENDING     = "PENDING".asInstanceOf[TableRestoreStatusType]
+    val PENDING = "PENDING".asInstanceOf[TableRestoreStatusType]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[TableRestoreStatusType]
-    val SUCCEEDED   = "SUCCEEDED".asInstanceOf[TableRestoreStatusType]
-    val FAILED      = "FAILED".asInstanceOf[TableRestoreStatusType]
-    val CANCELED    = "CANCELED".asInstanceOf[TableRestoreStatusType]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[TableRestoreStatusType]
+    val FAILED = "FAILED".asInstanceOf[TableRestoreStatusType]
+    val CANCELED = "CANCELED".asInstanceOf[TableRestoreStatusType]
 
     val values = js.Object.freeze(js.Array(PENDING, IN_PROGRESS, SUCCEEDED, FAILED, CANCELED))
   }
@@ -6454,6 +6661,103 @@ package redshift {
       SupportedOperations.foreach(__v => __obj.updateDynamic("SupportedOperations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateTarget]
     }
+  }
+
+  /**
+    * Describes a usage limit object for a cluster.
+    */
+  @js.native
+  trait UsageLimit extends js.Object {
+    var Amount: js.UndefOr[Double]
+    var BreachAction: js.UndefOr[UsageLimitBreachAction]
+    var ClusterIdentifier: js.UndefOr[String]
+    var FeatureType: js.UndefOr[UsageLimitFeatureType]
+    var LimitType: js.UndefOr[UsageLimitLimitType]
+    var Period: js.UndefOr[UsageLimitPeriod]
+    var Tags: js.UndefOr[TagList]
+    var UsageLimitId: js.UndefOr[String]
+  }
+
+  object UsageLimit {
+    @inline
+    def apply(
+        Amount: js.UndefOr[Double] = js.undefined,
+        BreachAction: js.UndefOr[UsageLimitBreachAction] = js.undefined,
+        ClusterIdentifier: js.UndefOr[String] = js.undefined,
+        FeatureType: js.UndefOr[UsageLimitFeatureType] = js.undefined,
+        LimitType: js.UndefOr[UsageLimitLimitType] = js.undefined,
+        Period: js.UndefOr[UsageLimitPeriod] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        UsageLimitId: js.UndefOr[String] = js.undefined
+    ): UsageLimit = {
+      val __obj = js.Dynamic.literal()
+      Amount.foreach(__v => __obj.updateDynamic("Amount")(__v.asInstanceOf[js.Any]))
+      BreachAction.foreach(__v => __obj.updateDynamic("BreachAction")(__v.asInstanceOf[js.Any]))
+      ClusterIdentifier.foreach(__v => __obj.updateDynamic("ClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      FeatureType.foreach(__v => __obj.updateDynamic("FeatureType")(__v.asInstanceOf[js.Any]))
+      LimitType.foreach(__v => __obj.updateDynamic("LimitType")(__v.asInstanceOf[js.Any]))
+      Period.foreach(__v => __obj.updateDynamic("Period")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      UsageLimitId.foreach(__v => __obj.updateDynamic("UsageLimitId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UsageLimit]
+    }
+  }
+
+  @js.native
+  sealed trait UsageLimitBreachAction extends js.Any
+  object UsageLimitBreachAction extends js.Object {
+    val log = "log".asInstanceOf[UsageLimitBreachAction]
+    val `emit-metric` = "emit-metric".asInstanceOf[UsageLimitBreachAction]
+    val disable = "disable".asInstanceOf[UsageLimitBreachAction]
+
+    val values = js.Object.freeze(js.Array(log, `emit-metric`, disable))
+  }
+
+  @js.native
+  sealed trait UsageLimitFeatureType extends js.Any
+  object UsageLimitFeatureType extends js.Object {
+    val spectrum = "spectrum".asInstanceOf[UsageLimitFeatureType]
+    val `concurrency-scaling` = "concurrency-scaling".asInstanceOf[UsageLimitFeatureType]
+
+    val values = js.Object.freeze(js.Array(spectrum, `concurrency-scaling`))
+  }
+
+  @js.native
+  sealed trait UsageLimitLimitType extends js.Any
+  object UsageLimitLimitType extends js.Object {
+    val time = "time".asInstanceOf[UsageLimitLimitType]
+    val `data-scanned` = "data-scanned".asInstanceOf[UsageLimitLimitType]
+
+    val values = js.Object.freeze(js.Array(time, `data-scanned`))
+  }
+
+  @js.native
+  trait UsageLimitList extends js.Object {
+    var Marker: js.UndefOr[String]
+    var UsageLimits: js.UndefOr[UsageLimits]
+  }
+
+  object UsageLimitList {
+    @inline
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        UsageLimits: js.UndefOr[UsageLimits] = js.undefined
+    ): UsageLimitList = {
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      UsageLimits.foreach(__v => __obj.updateDynamic("UsageLimits")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UsageLimitList]
+    }
+  }
+
+  @js.native
+  sealed trait UsageLimitPeriod extends js.Any
+  object UsageLimitPeriod extends js.Object {
+    val daily = "daily".asInstanceOf[UsageLimitPeriod]
+    val weekly = "weekly".asInstanceOf[UsageLimitPeriod]
+    val monthly = "monthly".asInstanceOf[UsageLimitPeriod]
+
+    val values = js.Object.freeze(js.Array(daily, weekly, monthly))
   }
 
   /**

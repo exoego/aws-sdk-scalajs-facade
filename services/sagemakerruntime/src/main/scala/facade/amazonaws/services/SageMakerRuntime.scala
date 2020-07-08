@@ -7,11 +7,12 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object sagemakerruntime {
-  type BodyBlob               = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type BodyBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type CustomAttributesHeader = String
-  type EndpointName           = String
-  type Header                 = String
-  type TargetModelHeader      = String
+  type EndpointName = String
+  type Header = String
+  type TargetModelHeader = String
+  type TargetVariantHeader = String
 
   implicit final class SageMakerRuntimeOps(private val service: SageMakerRuntime) extends AnyVal {
 
@@ -37,6 +38,7 @@ package sagemakerruntime {
     var ContentType: js.UndefOr[Header]
     var CustomAttributes: js.UndefOr[CustomAttributesHeader]
     var TargetModel: js.UndefOr[TargetModelHeader]
+    var TargetVariant: js.UndefOr[TargetVariantHeader]
   }
 
   object InvokeEndpointInput {
@@ -47,10 +49,11 @@ package sagemakerruntime {
         Accept: js.UndefOr[Header] = js.undefined,
         ContentType: js.UndefOr[Header] = js.undefined,
         CustomAttributes: js.UndefOr[CustomAttributesHeader] = js.undefined,
-        TargetModel: js.UndefOr[TargetModelHeader] = js.undefined
+        TargetModel: js.UndefOr[TargetModelHeader] = js.undefined,
+        TargetVariant: js.UndefOr[TargetVariantHeader] = js.undefined
     ): InvokeEndpointInput = {
       val __obj = js.Dynamic.literal(
-        "Body"         -> Body.asInstanceOf[js.Any],
+        "Body" -> Body.asInstanceOf[js.Any],
         "EndpointName" -> EndpointName.asInstanceOf[js.Any]
       )
 
@@ -58,6 +61,7 @@ package sagemakerruntime {
       ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
       CustomAttributes.foreach(__v => __obj.updateDynamic("CustomAttributes")(__v.asInstanceOf[js.Any]))
       TargetModel.foreach(__v => __obj.updateDynamic("TargetModel")(__v.asInstanceOf[js.Any]))
+      TargetVariant.foreach(__v => __obj.updateDynamic("TargetVariant")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InvokeEndpointInput]
     }
   }

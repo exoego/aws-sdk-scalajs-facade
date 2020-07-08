@@ -7,420 +7,436 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object iot {
-  type AbortCriteriaList                          = js.Array[AbortCriteria]
-  type AbortThresholdPercentage                   = Double
-  type AcmCertificateArn                          = String
-  type ActionList                                 = js.Array[Action]
-  type ActiveViolations                           = js.Array[ActiveViolation]
-  type AdditionalMetricsToRetainList              = js.Array[BehaviorMetric]
-  type AdditionalParameterMap                     = js.Dictionary[Value]
-  type AggregationField                           = String
-  type AlarmName                                  = String
-  type AlertTargetArn                             = String
-  type AlertTargets                               = js.Dictionary[AlertTarget]
-  type AllowAuthorizerOverride                    = Boolean
-  type AllowAutoRegistration                      = Boolean
-  type ApproximateSecondsBeforeTimedOut           = Double
-  type AscendingOrder                             = Boolean
-  type AssetId                                    = String
-  type AssetPropertyAlias                         = String
-  type AssetPropertyBooleanValue                  = String
-  type AssetPropertyDoubleValue                   = String
-  type AssetPropertyEntryId                       = String
-  type AssetPropertyId                            = String
-  type AssetPropertyIntegerValue                  = String
-  type AssetPropertyOffsetInNanos                 = String
-  type AssetPropertyQuality                       = String
-  type AssetPropertyStringValue                   = String
-  type AssetPropertyTimeInSeconds                 = String
-  type AssetPropertyValueList                     = js.Array[AssetPropertyValue]
-  type AttributeKey                               = String
-  type AttributeName                              = String
-  type AttributeValue                             = String
-  type Attributes                                 = js.Dictionary[AttributeValue]
-  type AttributesMap                              = js.Dictionary[Value]
-  type AuditCheckConfigurations                   = js.Dictionary[AuditCheckConfiguration]
-  type AuditCheckName                             = String
-  type AuditCheckToActionsMapping                 = js.Dictionary[MitigationActionNameList]
-  type AuditCheckToReasonCodeFilter               = js.Dictionary[ReasonForNonComplianceCodes]
-  type AuditDetails                               = js.Dictionary[AuditCheckDetails]
-  type AuditFindings                              = js.Array[AuditFinding]
+  type AbortCriteriaList = js.Array[AbortCriteria]
+  type AbortThresholdPercentage = Double
+  type AcmCertificateArn = String
+  type ActionList = js.Array[Action]
+  type ActiveViolations = js.Array[ActiveViolation]
+  type AdditionalMetricsToRetainList = js.Array[BehaviorMetric]
+  type AdditionalMetricsToRetainV2List = js.Array[MetricToRetain]
+  type AdditionalParameterMap = js.Dictionary[Value]
+  type AggregationField = String
+  type AlarmName = String
+  type AlertTargetArn = String
+  type AlertTargets = js.Dictionary[AlertTarget]
+  type AllowAuthorizerOverride = Boolean
+  type AllowAutoRegistration = Boolean
+  type ApproximateSecondsBeforeTimedOut = Double
+  type AscendingOrder = Boolean
+  type AssetId = String
+  type AssetPropertyAlias = String
+  type AssetPropertyBooleanValue = String
+  type AssetPropertyDoubleValue = String
+  type AssetPropertyEntryId = String
+  type AssetPropertyId = String
+  type AssetPropertyIntegerValue = String
+  type AssetPropertyOffsetInNanos = String
+  type AssetPropertyQuality = String
+  type AssetPropertyStringValue = String
+  type AssetPropertyTimeInSeconds = String
+  type AssetPropertyValueList = js.Array[AssetPropertyValue]
+  type AttributeKey = String
+  type AttributeName = String
+  type AttributeValue = String
+  type Attributes = js.Dictionary[AttributeValue]
+  type AttributesMap = js.Dictionary[Value]
+  type AuditCheckConfigurations = js.Dictionary[AuditCheckConfiguration]
+  type AuditCheckName = String
+  type AuditCheckToActionsMapping = js.Dictionary[MitigationActionNameList]
+  type AuditCheckToReasonCodeFilter = js.Dictionary[ReasonForNonComplianceCodes]
+  type AuditDetails = js.Dictionary[AuditCheckDetails]
+  type AuditFindings = js.Array[AuditFinding]
   type AuditMitigationActionExecutionMetadataList = js.Array[AuditMitigationActionExecutionMetadata]
-  type AuditMitigationActionsTaskId               = String
-  type AuditMitigationActionsTaskMetadataList     = js.Array[AuditMitigationActionsTaskMetadata]
-  type AuditMitigationActionsTaskStatistics       = js.Dictionary[TaskStatisticsForAuditCheck]
-  type AuditNotificationTargetConfigurations      = js.Dictionary[AuditNotificationTarget]
-  type AuditTaskId                                = String
-  type AuditTaskMetadataList                      = js.Array[AuditTaskMetadata]
-  type AuthInfos                                  = js.Array[AuthInfo]
-  type AuthResults                                = js.Array[AuthResult]
-  type AuthorizerArn                              = String
-  type AuthorizerFunctionArn                      = String
-  type AuthorizerName                             = String
-  type Authorizers                                = js.Array[AuthorizerSummary]
-  type Average                                    = Double
-  type AwsAccountId                               = String
-  type AwsArn                                     = String
-  type AwsIotJobArn                               = String
-  type AwsIotJobId                                = String
-  type AwsIotSqlVersion                           = String
-  type BehaviorMetric                             = String
-  type BehaviorName                               = String
-  type Behaviors                                  = js.Array[Behavior]
-  type BillingGroupArn                            = String
-  type BillingGroupDescription                    = String
-  type BillingGroupId                             = String
-  type BillingGroupName                           = String
-  type BillingGroupNameAndArnList                 = js.Array[GroupNameAndArn]
-  type BooleanKey                                 = Boolean
-  type BucketName                                 = String
-  type CACertificates                             = js.Array[CACertificate]
-  type CanceledChecksCount                        = Int
-  type CanceledFindingsCount                      = Double
-  type CanceledThings                             = Int
-  type CertificateArn                             = String
-  type CertificateId                              = String
-  type CertificateName                            = String
-  type CertificatePathOnDevice                    = String
-  type CertificatePem                             = String
-  type CertificateSigningRequest                  = String
-  type Certificates                               = js.Array[Certificate]
-  type ChannelName                                = String
-  type CheckCompliant                             = Boolean
-  type Cidr                                       = String
-  type Cidrs                                      = js.Array[Cidr]
-  type ClientId                                   = String
-  type ClientRequestToken                         = String
-  type Code                                       = String
-  type CognitoIdentityPoolId                      = String
-  type Comment                                    = String
-  type CompliantChecksCount                       = Int
-  type ConfirmationToken                          = String
-  type ConnectivityTimestamp                      = Double
-  type ConsecutiveDatapointsToAlarm               = Int
-  type ConsecutiveDatapointsToClear               = Int
-  type Count                                      = Int
-  type CreatedAtDate                              = js.Date
-  type CreationDate                               = js.Date
-  type CredentialDurationSeconds                  = Int
-  type CustomerVersion                            = Int
-  type DateType                                   = js.Date
-  type DayOfMonth                                 = String
-  type DeleteAdditionalMetricsToRetain            = Boolean
-  type DeleteAlertTargets                         = Boolean
-  type DeleteBehaviors                            = Boolean
-  type DeleteScheduledAudits                      = Boolean
-  type DeleteStream                               = Boolean
-  type DeliveryStreamName                         = String
-  type DeprecationDate                            = js.Date
-  type Description                                = String
-  type DetailsKey                                 = String
-  type DetailsMap                                 = js.Dictionary[DetailsValue]
-  type DetailsValue                               = String
-  type DeviceDefenderThingName                    = String
-  type DisableAllLogs                             = Boolean
-  type DomainConfigurationArn                     = String
-  type DomainConfigurationName                    = String
-  type DomainConfigurations                       = js.Array[DomainConfigurationSummary]
-  type DomainName                                 = String
-  type DurationSeconds                            = Int
-  type DynamoOperation                            = String
-  type EffectivePolicies                          = js.Array[EffectivePolicy]
-  type ElasticsearchEndpoint                      = String
-  type ElasticsearchId                            = String
-  type ElasticsearchIndex                         = String
-  type ElasticsearchType                          = String
-  type Enabled                                    = Boolean
-  type EndpointAddress                            = String
-  type EndpointType                               = String
-  type ErrorCode                                  = String
-  type ErrorMessage                               = String
-  type EvaluationStatistic                        = String
-  type EventConfigurations                        = js.Dictionary[Configuration]
-  type ExecutionNamePrefix                        = String
-  type ExecutionNumber                            = Double
-  type ExpectedVersion                            = Double
-  type ExpiresInSec                               = Double
-  type ExpiresInSeconds                           = Double
-  type FailedChecksCount                          = Int
-  type FailedFindingsCount                        = Double
-  type FailedThings                               = Int
-  type FieldName                                  = String
-  type Fields                                     = js.Array[Field]
-  type FileId                                     = Int
-  type FileName                                   = String
-  type FindingId                                  = String
-  type FindingIds                                 = js.Array[FindingId]
-  type FirehoseSeparator                          = String
-  type Flag                                       = Boolean
-  type ForceDelete                                = Boolean
-  type ForceDeleteAWSJob                          = Boolean
-  type ForceFlag                                  = Boolean
-  type Forced                                     = Boolean
-  type FunctionArn                                = String
-  type GenerationId                               = String
-  type HashAlgorithm                              = String
-  type HashKeyField                               = String
-  type HashKeyValue                               = String
-  type HeaderKey                                  = String
-  type HeaderList                                 = js.Array[HttpActionHeader]
-  type HeaderValue                                = String
-  type HttpHeaderName                             = String
-  type HttpHeaderValue                            = String
-  type HttpHeaders                                = js.Dictionary[HttpHeaderValue]
-  type HttpQueryString                            = String
-  type InProgressChecksCount                      = Int
-  type InProgressThings                           = Int
-  type InProgressTimeoutInMinutes                 = Double
-  type IncrementFactor                            = Double
-  type IndexName                                  = String
-  type IndexNamesList                             = js.Array[IndexName]
-  type IndexSchema                                = String
-  type InlineDocument                             = String
-  type InputName                                  = String
-  type IsAuthenticated                            = Boolean
-  type IsDefaultVersion                           = Boolean
-  type IsDisabled                                 = Boolean
-  type JobArn                                     = String
-  type JobDescription                             = String
-  type JobDocument                                = String
-  type JobDocumentSource                          = String
-  type JobExecutionSummaryForJobList              = js.Array[JobExecutionSummaryForJob]
-  type JobExecutionSummaryForThingList            = js.Array[JobExecutionSummaryForThing]
-  type JobId                                      = String
-  type JobSummaryList                             = js.Array[JobSummary]
-  type JobTargets                                 = js.Array[TargetArn]
-  type JsonDocument                               = String
-  type Key                                        = String
-  type KeyName                                    = String
-  type KeyValue                                   = String
-  type LaserMaxResults                            = Int
-  type LastModifiedDate                           = js.Date
-  type LogTargetConfigurations                    = js.Array[LogTargetConfiguration]
-  type LogTargetName                              = String
-  type Marker                                     = String
-  type MaxJobExecutionsPerMin                     = Int
-  type MaxResults                                 = Int
-  type Maximum                                    = Double
-  type MaximumPerMinute                           = Int
-  type Message                                    = String
-  type MessageId                                  = String
-  type Minimum                                    = Double
-  type MinimumNumberOfExecutedThings              = Int
-  type MissingContextValue                        = String
-  type MissingContextValues                       = js.Array[MissingContextValue]
-  type MitigationActionArn                        = String
-  type MitigationActionId                         = String
-  type MitigationActionIdentifierList             = js.Array[MitigationActionIdentifier]
-  type MitigationActionList                       = js.Array[MitigationAction]
-  type MitigationActionName                       = String
-  type MitigationActionNameList                   = js.Array[MitigationActionName]
-  type MqttClientId                               = String
-  type MqttPassword                               = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type MqttUsername                               = String
-  type NextToken                                  = String
-  type NonCompliantChecksCount                    = Int
-  type NonCompliantResourcesCount                 = Double
-  type NumberOfThings                             = Int
-  type OTAUpdateArn                               = String
-  type OTAUpdateDescription                       = String
-  type OTAUpdateErrorMessage                      = String
-  type OTAUpdateFileVersion                       = String
-  type OTAUpdateFiles                             = js.Array[OTAUpdateFile]
-  type OTAUpdateId                                = String
-  type OTAUpdatesSummary                          = js.Array[OTAUpdateSummary]
-  type OptionalVersion                            = Double
-  type OutgoingCertificates                       = js.Array[OutgoingCertificate]
-  type OverrideDynamicGroups                      = Boolean
-  type PageSize                                   = Int
-  type Parameter                                  = String
-  type Parameters                                 = js.Dictionary[Value]
-  type PartitionKey                               = String
-  type PayloadField                               = String
-  type Percent                                    = Double
-  type PercentList                                = js.Array[Percent]
-  type PercentValue                               = Double
-  type Percentage                                 = Int
-  type Percentiles                                = js.Array[PercentPair]
-  type Platform                                   = String
-  type Policies                                   = js.Array[Policy]
-  type PolicyArn                                  = String
-  type PolicyDocument                             = String
-  type PolicyDocuments                            = js.Array[PolicyDocument]
-  type PolicyName                                 = String
-  type PolicyNames                                = js.Array[PolicyName]
-  type PolicyTarget                               = String
-  type PolicyTargets                              = js.Array[PolicyTarget]
-  type PolicyVersionId                            = String
-  type PolicyVersions                             = js.Array[PolicyVersion]
-  type Port                                       = Int
-  type Ports                                      = js.Array[Port]
-  type Prefix                                     = String
-  type Principal                                  = String
-  type PrincipalArn                               = String
-  type PrincipalId                                = String
-  type Principals                                 = js.Array[PrincipalArn]
-  type PrivateKey                                 = String
-  type ProcessingTargetName                       = String
-  type ProcessingTargetNameList                   = js.Array[ProcessingTargetName]
-  type Protocols                                  = js.Array[Protocol]
-  type ProvisioningTemplateListing                = js.Array[ProvisioningTemplateSummary]
-  type ProvisioningTemplateVersionListing         = js.Array[ProvisioningTemplateVersionSummary]
-  type PublicKey                                  = String
-  type PublicKeyMap                               = js.Dictionary[KeyValue]
-  type PutAssetPropertyValueEntryList             = js.Array[PutAssetPropertyValueEntry]
-  type Qos                                        = Int
-  type QueryMaxResults                            = Int
-  type QueryString                                = String
-  type QueryVersion                               = String
-  type QueueUrl                                   = String
-  type QueuedThings                               = Int
-  type RangeKeyField                              = String
-  type RangeKeyValue                              = String
-  type ReasonCode                                 = String
-  type ReasonForNonCompliance                     = String
-  type ReasonForNonComplianceCode                 = String
-  type ReasonForNonComplianceCodes                = js.Array[ReasonForNonComplianceCode]
-  type Recursive                                  = Boolean
-  type RecursiveWithoutDefault                    = Boolean
-  type RegistrationCode                           = String
-  type RegistryMaxResults                         = Int
-  type RegistryS3BucketName                       = String
-  type RegistryS3KeyName                          = String
-  type RejectedThings                             = Int
-  type RelatedResources                           = js.Array[RelatedResource]
-  type RemoveAuthorizerConfig                     = Boolean
-  type RemoveAutoRegistration                     = Boolean
-  type RemoveThingType                            = Boolean
-  type RemovedThings                              = Int
-  type ReservedDomainConfigurationName            = String
-  type Resource                                   = String
-  type ResourceArn                                = String
-  type ResourceArns                               = js.Dictionary[ResourceArn]
-  type ResourceLogicalId                          = String
-  type Resources                                  = js.Array[Resource]
-  type RoleAlias                                  = String
-  type RoleAliasArn                               = String
-  type RoleAliases                                = js.Array[RoleAlias]
-  type RoleArn                                    = String
-  type RolloutRatePerMinute                       = Int
-  type RuleArn                                    = String
-  type RuleName                                   = String
-  type S3Bucket                                   = String
-  type S3FileUrl                                  = String
-  type S3FileUrlList                              = js.Array[S3FileUrl]
-  type S3Key                                      = String
-  type S3Version                                  = String
-  type SQL                                        = String
-  type SalesforceEndpoint                         = String
-  type SalesforceToken                            = String
-  type ScheduledAuditArn                          = String
-  type ScheduledAuditMetadataList                 = js.Array[ScheduledAuditMetadata]
-  type ScheduledAuditName                         = String
-  type SearchableAttributes                       = js.Array[AttributeName]
-  type Seconds                                    = Int
-  type SecurityProfileArn                         = String
-  type SecurityProfileDescription                 = String
-  type SecurityProfileIdentifiers                 = js.Array[SecurityProfileIdentifier]
-  type SecurityProfileName                        = String
-  type SecurityProfileTargetArn                   = String
-  type SecurityProfileTargetMappings              = js.Array[SecurityProfileTargetMapping]
-  type SecurityProfileTargets                     = js.Array[SecurityProfileTarget]
-  type ServerCertificateArns                      = js.Array[AcmCertificateArn]
-  type ServerCertificateStatusDetail              = String
-  type ServerCertificates                         = js.Array[ServerCertificateSummary]
-  type ServerName                                 = String
-  type ServiceName                                = String
-  type SetAsActive                                = Boolean
-  type SetAsActiveFlag                            = Boolean
-  type SetAsDefault                               = Boolean
-  type Signature                                  = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type SignatureAlgorithm                         = String
-  type SigningJobId                               = String
-  type SigningProfileName                         = String
-  type SigningRegion                              = String
-  type SkippedFindingsCount                       = Double
-  type SkyfallMaxResults                          = Int
-  type SnsTopicArn                                = String
-  type StateMachineName                           = String
-  type StateReason                                = String
-  type StateValue                                 = String
-  type StdDeviation                               = Double
-  type StreamArn                                  = String
-  type StreamDescription                          = String
-  type StreamFiles                                = js.Array[StreamFile]
-  type StreamId                                   = String
-  type StreamName                                 = String
-  type StreamVersion                              = Int
-  type StreamsSummary                             = js.Array[StreamSummary]
-  type StringMap                                  = js.Dictionary[String]
-  type SucceededFindingsCount                     = Double
-  type SucceededThings                            = Int
-  type Sum                                        = Double
-  type SumOfSquares                               = Double
-  type TableName                                  = String
-  type TagKey                                     = String
-  type TagKeyList                                 = js.Array[TagKey]
-  type TagList                                    = js.Array[Tag]
-  type TagValue                                   = String
-  type Target                                     = String
-  type TargetArn                                  = String
-  type TargetAuditCheckNames                      = js.Array[AuditCheckName]
-  type Targets                                    = js.Array[Target]
-  type TaskId                                     = String
-  type TaskIdList                                 = js.Array[TaskId]
-  type TemplateArn                                = String
-  type TemplateBody                               = String
-  type TemplateDescription                        = String
-  type TemplateName                               = String
-  type TemplateVersionId                          = Int
-  type ThingArn                                   = String
-  type ThingAttributeList                         = js.Array[ThingAttribute]
-  type ThingDocumentList                          = js.Array[ThingDocument]
-  type ThingGroupArn                              = String
-  type ThingGroupDescription                      = String
-  type ThingGroupDocumentList                     = js.Array[ThingGroupDocument]
-  type ThingGroupId                               = String
-  type ThingGroupList                             = js.Array[ThingGroupName]
-  type ThingGroupName                             = String
-  type ThingGroupNameAndArnList                   = js.Array[GroupNameAndArn]
-  type ThingGroupNameList                         = js.Array[ThingGroupName]
-  type ThingGroupNames                            = js.Array[ThingGroupName]
-  type ThingId                                    = String
-  type ThingName                                  = String
-  type ThingNameList                              = js.Array[ThingName]
-  type ThingTypeArn                               = String
-  type ThingTypeDescription                       = String
-  type ThingTypeId                                = String
-  type ThingTypeList                              = js.Array[ThingTypeDefinition]
-  type ThingTypeName                              = String
-  type TimedOutThings                             = Int
-  type Timestamp                                  = js.Date
-  type Token                                      = String
-  type TokenKeyName                               = String
-  type TokenSignature                             = String
-  type Topic                                      = String
-  type TopicPattern                               = String
-  type TopicRuleDestinationMaxResults             = Int
-  type TopicRuleDestinationSummaries              = js.Array[TopicRuleDestinationSummary]
-  type TopicRuleList                              = js.Array[TopicRuleListItem]
-  type TopicRuleMaxResults                        = Int
-  type TotalChecksCount                           = Int
-  type TotalFindingsCount                         = Double
-  type TotalResourcesCount                        = Double
-  type UndoDeprecate                              = Boolean
-  type UnsignedLong                               = Double
-  type Url                                        = String
-  type UseBase64                                  = Boolean
-  type Valid                                      = Boolean
-  type ValidationErrors                           = js.Array[ValidationError]
-  type Value                                      = String
-  type Variance                                   = Double
-  type Version                                    = Double
-  type VersionNumber                              = Double
-  type ViolationEvents                            = js.Array[ViolationEvent]
-  type ViolationId                                = String
-  type WaitingForDataCollectionChecksCount        = Int
+  type AuditMitigationActionsTaskId = String
+  type AuditMitigationActionsTaskMetadataList = js.Array[AuditMitigationActionsTaskMetadata]
+  type AuditMitigationActionsTaskStatistics = js.Dictionary[TaskStatisticsForAuditCheck]
+  type AuditNotificationTargetConfigurations = js.Dictionary[AuditNotificationTarget]
+  type AuditTaskId = String
+  type AuditTaskMetadataList = js.Array[AuditTaskMetadata]
+  type AuthInfos = js.Array[AuthInfo]
+  type AuthResults = js.Array[AuthResult]
+  type AuthorizerArn = String
+  type AuthorizerFunctionArn = String
+  type AuthorizerName = String
+  type Authorizers = js.Array[AuthorizerSummary]
+  type Average = Double
+  type AwsAccountId = String
+  type AwsArn = String
+  type AwsIotJobArn = String
+  type AwsIotJobId = String
+  type AwsIotSqlVersion = String
+  type AwsJobAbortCriteriaAbortThresholdPercentage = Double
+  type AwsJobAbortCriteriaList = js.Array[AwsJobAbortCriteria]
+  type AwsJobAbortCriteriaMinimumNumberOfExecutedThings = Int
+  type AwsJobRateIncreaseCriteriaNumberOfThings = Int
+  type AwsJobRolloutIncrementFactor = Double
+  type AwsJobRolloutRatePerMinute = Int
+  type AwsJobTimeoutInProgressTimeoutInMinutes = Double
+  type BehaviorMetric = String
+  type BehaviorName = String
+  type Behaviors = js.Array[Behavior]
+  type BillingGroupArn = String
+  type BillingGroupDescription = String
+  type BillingGroupId = String
+  type BillingGroupName = String
+  type BillingGroupNameAndArnList = js.Array[GroupNameAndArn]
+  type BooleanKey = Boolean
+  type BucketName = String
+  type CACertificates = js.Array[CACertificate]
+  type CanceledChecksCount = Int
+  type CanceledFindingsCount = Double
+  type CanceledThings = Int
+  type CertificateArn = String
+  type CertificateId = String
+  type CertificateName = String
+  type CertificatePathOnDevice = String
+  type CertificatePem = String
+  type CertificateSigningRequest = String
+  type Certificates = js.Array[Certificate]
+  type ChannelName = String
+  type CheckCompliant = Boolean
+  type Cidr = String
+  type Cidrs = js.Array[Cidr]
+  type ClientId = String
+  type ClientRequestToken = String
+  type Code = String
+  type CognitoIdentityPoolId = String
+  type Comment = String
+  type CompliantChecksCount = Int
+  type ConfirmationToken = String
+  type ConnectivityTimestamp = Double
+  type ConsecutiveDatapointsToAlarm = Int
+  type ConsecutiveDatapointsToClear = Int
+  type Count = Int
+  type CreatedAtDate = js.Date
+  type CreationDate = js.Date
+  type CredentialDurationSeconds = Int
+  type CustomerVersion = Int
+  type DateType = js.Date
+  type DayOfMonth = String
+  type DeleteAdditionalMetricsToRetain = Boolean
+  type DeleteAlertTargets = Boolean
+  type DeleteBehaviors = Boolean
+  type DeleteScheduledAudits = Boolean
+  type DeleteStream = Boolean
+  type DeliveryStreamName = String
+  type DeprecationDate = js.Date
+  type Description = String
+  type DetailsKey = String
+  type DetailsMap = js.Dictionary[DetailsValue]
+  type DetailsValue = String
+  type DeviceDefenderThingName = String
+  type DimensionArn = String
+  type DimensionName = String
+  type DimensionNames = js.Array[DimensionName]
+  type DimensionStringValue = String
+  type DimensionStringValues = js.Array[DimensionStringValue]
+  type DisableAllLogs = Boolean
+  type DomainConfigurationArn = String
+  type DomainConfigurationName = String
+  type DomainConfigurations = js.Array[DomainConfigurationSummary]
+  type DomainName = String
+  type DurationSeconds = Int
+  type DynamoOperation = String
+  type EffectivePolicies = js.Array[EffectivePolicy]
+  type ElasticsearchEndpoint = String
+  type ElasticsearchId = String
+  type ElasticsearchIndex = String
+  type ElasticsearchType = String
+  type Enabled = Boolean
+  type EndpointAddress = String
+  type EndpointType = String
+  type ErrorCode = String
+  type ErrorMessage = String
+  type EvaluationStatistic = String
+  type EventConfigurations = js.Dictionary[Configuration]
+  type ExecutionNamePrefix = String
+  type ExecutionNumber = Double
+  type ExpectedVersion = Double
+  type ExpiresInSec = Double
+  type ExpiresInSeconds = Double
+  type FailedChecksCount = Int
+  type FailedFindingsCount = Double
+  type FailedThings = Int
+  type FieldName = String
+  type Fields = js.Array[Field]
+  type FileId = Int
+  type FileName = String
+  type FindingId = String
+  type FindingIds = js.Array[FindingId]
+  type FirehoseSeparator = String
+  type Flag = Boolean
+  type ForceDelete = Boolean
+  type ForceDeleteAWSJob = Boolean
+  type ForceFlag = Boolean
+  type Forced = Boolean
+  type FunctionArn = String
+  type GenerationId = String
+  type HashAlgorithm = String
+  type HashKeyField = String
+  type HashKeyValue = String
+  type HeaderKey = String
+  type HeaderList = js.Array[HttpActionHeader]
+  type HeaderValue = String
+  type HttpHeaderName = String
+  type HttpHeaderValue = String
+  type HttpHeaders = js.Dictionary[HttpHeaderValue]
+  type HttpQueryString = String
+  type InProgressChecksCount = Int
+  type InProgressThings = Int
+  type InProgressTimeoutInMinutes = Double
+  type IncrementFactor = Double
+  type IndexName = String
+  type IndexNamesList = js.Array[IndexName]
+  type IndexSchema = String
+  type InlineDocument = String
+  type InputName = String
+  type IsAuthenticated = Boolean
+  type IsDefaultVersion = Boolean
+  type IsDisabled = Boolean
+  type JobArn = String
+  type JobDescription = String
+  type JobDocument = String
+  type JobDocumentSource = String
+  type JobExecutionSummaryForJobList = js.Array[JobExecutionSummaryForJob]
+  type JobExecutionSummaryForThingList = js.Array[JobExecutionSummaryForThing]
+  type JobId = String
+  type JobSummaryList = js.Array[JobSummary]
+  type JobTargets = js.Array[TargetArn]
+  type JsonDocument = String
+  type Key = String
+  type KeyName = String
+  type KeyValue = String
+  type LaserMaxResults = Int
+  type LastModifiedDate = js.Date
+  type LogGroupName = String
+  type LogTargetConfigurations = js.Array[LogTargetConfiguration]
+  type LogTargetName = String
+  type Marker = String
+  type MaxJobExecutionsPerMin = Int
+  type MaxResults = Int
+  type Maximum = Double
+  type MaximumPerMinute = Int
+  type Message = String
+  type MessageId = String
+  type Minimum = Double
+  type MinimumNumberOfExecutedThings = Int
+  type MissingContextValue = String
+  type MissingContextValues = js.Array[MissingContextValue]
+  type MitigationActionArn = String
+  type MitigationActionId = String
+  type MitigationActionIdentifierList = js.Array[MitigationActionIdentifier]
+  type MitigationActionList = js.Array[MitigationAction]
+  type MitigationActionName = String
+  type MitigationActionNameList = js.Array[MitigationActionName]
+  type MqttClientId = String
+  type MqttPassword = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type MqttUsername = String
+  type NextToken = String
+  type NonCompliantChecksCount = Int
+  type NonCompliantResourcesCount = Double
+  type NumberOfThings = Int
+  type OTAUpdateArn = String
+  type OTAUpdateDescription = String
+  type OTAUpdateErrorMessage = String
+  type OTAUpdateFileVersion = String
+  type OTAUpdateFiles = js.Array[OTAUpdateFile]
+  type OTAUpdateId = String
+  type OTAUpdatesSummary = js.Array[OTAUpdateSummary]
+  type OptionalVersion = Double
+  type OutgoingCertificates = js.Array[OutgoingCertificate]
+  type OverrideDynamicGroups = Boolean
+  type PageSize = Int
+  type Parameter = String
+  type Parameters = js.Dictionary[Value]
+  type PartitionKey = String
+  type PayloadField = String
+  type PayloadVersion = String
+  type Percent = Double
+  type PercentList = js.Array[Percent]
+  type PercentValue = Double
+  type Percentage = Int
+  type Percentiles = js.Array[PercentPair]
+  type Platform = String
+  type Policies = js.Array[Policy]
+  type PolicyArn = String
+  type PolicyDocument = String
+  type PolicyDocuments = js.Array[PolicyDocument]
+  type PolicyName = String
+  type PolicyNames = js.Array[PolicyName]
+  type PolicyTarget = String
+  type PolicyTargets = js.Array[PolicyTarget]
+  type PolicyVersionId = String
+  type PolicyVersions = js.Array[PolicyVersion]
+  type Port = Int
+  type Ports = js.Array[Port]
+  type Prefix = String
+  type Principal = String
+  type PrincipalArn = String
+  type PrincipalId = String
+  type Principals = js.Array[PrincipalArn]
+  type PrivateKey = String
+  type ProcessingTargetName = String
+  type ProcessingTargetNameList = js.Array[ProcessingTargetName]
+  type Protocols = js.Array[Protocol]
+  type ProvisioningTemplateListing = js.Array[ProvisioningTemplateSummary]
+  type ProvisioningTemplateVersionListing = js.Array[ProvisioningTemplateVersionSummary]
+  type PublicKey = String
+  type PublicKeyMap = js.Dictionary[KeyValue]
+  type PutAssetPropertyValueEntryList = js.Array[PutAssetPropertyValueEntry]
+  type Qos = Int
+  type QueryMaxResults = Int
+  type QueryString = String
+  type QueryVersion = String
+  type QueueUrl = String
+  type QueuedThings = Int
+  type RangeKeyField = String
+  type RangeKeyValue = String
+  type ReasonCode = String
+  type ReasonForNonCompliance = String
+  type ReasonForNonComplianceCode = String
+  type ReasonForNonComplianceCodes = js.Array[ReasonForNonComplianceCode]
+  type Recursive = Boolean
+  type RecursiveWithoutDefault = Boolean
+  type RegistrationCode = String
+  type RegistryMaxResults = Int
+  type RegistryS3BucketName = String
+  type RegistryS3KeyName = String
+  type RejectedThings = Int
+  type RelatedResources = js.Array[RelatedResource]
+  type RemoveAuthorizerConfig = Boolean
+  type RemoveAutoRegistration = Boolean
+  type RemoveHook = Boolean
+  type RemoveThingType = Boolean
+  type RemovedThings = Int
+  type ReservedDomainConfigurationName = String
+  type Resource = String
+  type ResourceArn = String
+  type ResourceArns = js.Dictionary[ResourceArn]
+  type ResourceLogicalId = String
+  type Resources = js.Array[Resource]
+  type RoleAlias = String
+  type RoleAliasArn = String
+  type RoleAliases = js.Array[RoleAlias]
+  type RoleArn = String
+  type RolloutRatePerMinute = Int
+  type RuleArn = String
+  type RuleName = String
+  type S3Bucket = String
+  type S3FileUrl = String
+  type S3FileUrlList = js.Array[S3FileUrl]
+  type S3Key = String
+  type S3Version = String
+  type SQL = String
+  type SalesforceEndpoint = String
+  type SalesforceToken = String
+  type ScheduledAuditArn = String
+  type ScheduledAuditMetadataList = js.Array[ScheduledAuditMetadata]
+  type ScheduledAuditName = String
+  type SearchableAttributes = js.Array[AttributeName]
+  type Seconds = Int
+  type SecurityProfileArn = String
+  type SecurityProfileDescription = String
+  type SecurityProfileIdentifiers = js.Array[SecurityProfileIdentifier]
+  type SecurityProfileName = String
+  type SecurityProfileTargetArn = String
+  type SecurityProfileTargetMappings = js.Array[SecurityProfileTargetMapping]
+  type SecurityProfileTargets = js.Array[SecurityProfileTarget]
+  type ServerCertificateArns = js.Array[AcmCertificateArn]
+  type ServerCertificateStatusDetail = String
+  type ServerCertificates = js.Array[ServerCertificateSummary]
+  type ServerName = String
+  type ServiceName = String
+  type SetAsActive = Boolean
+  type SetAsActiveFlag = Boolean
+  type SetAsDefault = Boolean
+  type Signature = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type SignatureAlgorithm = String
+  type SigningJobId = String
+  type SigningProfileName = String
+  type SigningRegion = String
+  type SkippedFindingsCount = Double
+  type SkyfallMaxResults = Int
+  type SnsTopicArn = String
+  type StateMachineName = String
+  type StateReason = String
+  type StateValue = String
+  type StdDeviation = Double
+  type StreamArn = String
+  type StreamDescription = String
+  type StreamFiles = js.Array[StreamFile]
+  type StreamId = String
+  type StreamName = String
+  type StreamVersion = Int
+  type StreamsSummary = js.Array[StreamSummary]
+  type StringMap = js.Dictionary[String]
+  type SucceededFindingsCount = Double
+  type SucceededThings = Int
+  type Sum = Double
+  type SumOfSquares = Double
+  type TableName = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type Target = String
+  type TargetArn = String
+  type TargetAuditCheckNames = js.Array[AuditCheckName]
+  type Targets = js.Array[Target]
+  type TaskId = String
+  type TaskIdList = js.Array[TaskId]
+  type TemplateArn = String
+  type TemplateBody = String
+  type TemplateDescription = String
+  type TemplateName = String
+  type TemplateVersionId = Int
+  type ThingArn = String
+  type ThingAttributeList = js.Array[ThingAttribute]
+  type ThingDocumentList = js.Array[ThingDocument]
+  type ThingGroupArn = String
+  type ThingGroupDescription = String
+  type ThingGroupDocumentList = js.Array[ThingGroupDocument]
+  type ThingGroupId = String
+  type ThingGroupList = js.Array[ThingGroupName]
+  type ThingGroupName = String
+  type ThingGroupNameAndArnList = js.Array[GroupNameAndArn]
+  type ThingGroupNameList = js.Array[ThingGroupName]
+  type ThingGroupNames = js.Array[ThingGroupName]
+  type ThingId = String
+  type ThingName = String
+  type ThingNameList = js.Array[ThingName]
+  type ThingTypeArn = String
+  type ThingTypeDescription = String
+  type ThingTypeId = String
+  type ThingTypeList = js.Array[ThingTypeDefinition]
+  type ThingTypeName = String
+  type TimedOutThings = Int
+  type Timestamp = js.Date
+  type Token = String
+  type TokenKeyName = String
+  type TokenSignature = String
+  type Topic = String
+  type TopicPattern = String
+  type TopicRuleDestinationMaxResults = Int
+  type TopicRuleDestinationSummaries = js.Array[TopicRuleDestinationSummary]
+  type TopicRuleList = js.Array[TopicRuleListItem]
+  type TopicRuleMaxResults = Int
+  type TotalChecksCount = Int
+  type TotalFindingsCount = Double
+  type TotalResourcesCount = Double
+  type UndoDeprecate = Boolean
+  type UnsignedLong = Double
+  type Url = String
+  type UseBase64 = Boolean
+  type Valid = Boolean
+  type ValidationErrors = js.Array[ValidationError]
+  type Value = String
+  type Variance = Double
+  type Version = Double
+  type VersionNumber = Double
+  type ViolationEvents = js.Array[ViolationEvent]
+  type ViolationId = String
+  type WaitingForDataCollectionChecksCount = Int
 
   implicit final class IotOps(private val service: Iot) extends AnyVal {
 
@@ -466,6 +482,8 @@ package object iot {
     @inline def createCertificateFromCsrFuture(
         params: CreateCertificateFromCsrRequest
     ): Future[CreateCertificateFromCsrResponse] = service.createCertificateFromCsr(params).promise().toFuture
+    @inline def createDimensionFuture(params: CreateDimensionRequest): Future[CreateDimensionResponse] =
+      service.createDimension(params).promise().toFuture
     @inline def createDomainConfigurationFuture(
         params: CreateDomainConfigurationRequest
     ): Future[CreateDomainConfigurationResponse] = service.createDomainConfiguration(params).promise().toFuture
@@ -528,6 +546,8 @@ package object iot {
       service.deleteCACertificate(params).promise().toFuture
     @inline def deleteCertificateFuture(params: DeleteCertificateRequest): Future[js.Object] =
       service.deleteCertificate(params).promise().toFuture
+    @inline def deleteDimensionFuture(params: DeleteDimensionRequest): Future[DeleteDimensionResponse] =
+      service.deleteDimension(params).promise().toFuture
     @inline def deleteDomainConfigurationFuture(
         params: DeleteDomainConfigurationRequest
     ): Future[DeleteDomainConfigurationResponse] = service.deleteDomainConfiguration(params).promise().toFuture
@@ -605,6 +625,8 @@ package object iot {
     @inline def describeDefaultAuthorizerFuture(
         params: DescribeDefaultAuthorizerRequest
     ): Future[DescribeDefaultAuthorizerResponse] = service.describeDefaultAuthorizer(params).promise().toFuture
+    @inline def describeDimensionFuture(params: DescribeDimensionRequest): Future[DescribeDimensionResponse] =
+      service.describeDimension(params).promise().toFuture
     @inline def describeDomainConfigurationFuture(
         params: DescribeDomainConfigurationRequest
     ): Future[DescribeDomainConfigurationResponse] = service.describeDomainConfiguration(params).promise().toFuture
@@ -715,6 +737,8 @@ package object iot {
       service.listCertificatesByCA(params).promise().toFuture
     @inline def listCertificatesFuture(params: ListCertificatesRequest): Future[ListCertificatesResponse] =
       service.listCertificates(params).promise().toFuture
+    @inline def listDimensionsFuture(params: ListDimensionsRequest): Future[ListDimensionsResponse] =
+      service.listDimensions(params).promise().toFuture
     @inline def listDomainConfigurationsFuture(
         params: ListDomainConfigurationsRequest
     ): Future[ListDomainConfigurationsResponse] = service.listDomainConfigurations(params).promise().toFuture
@@ -805,6 +829,9 @@ package object iot {
     ): Future[RegisterCACertificateResponse] = service.registerCACertificate(params).promise().toFuture
     @inline def registerCertificateFuture(params: RegisterCertificateRequest): Future[RegisterCertificateResponse] =
       service.registerCertificate(params).promise().toFuture
+    @inline def registerCertificateWithoutCAFuture(
+        params: RegisterCertificateWithoutCARequest
+    ): Future[RegisterCertificateWithoutCAResponse] = service.registerCertificateWithoutCA(params).promise().toFuture
     @inline def registerThingFuture(params: RegisterThingRequest): Future[RegisterThingResponse] =
       service.registerThing(params).promise().toFuture
     @inline def rejectCertificateTransferFuture(params: RejectCertificateTransferRequest): Future[js.Object] =
@@ -864,6 +891,8 @@ package object iot {
       service.updateCACertificate(params).promise().toFuture
     @inline def updateCertificateFuture(params: UpdateCertificateRequest): Future[js.Object] =
       service.updateCertificate(params).promise().toFuture
+    @inline def updateDimensionFuture(params: UpdateDimensionRequest): Future[UpdateDimensionResponse] =
+      service.updateDimension(params).promise().toFuture
     @inline def updateDomainConfigurationFuture(
         params: UpdateDomainConfigurationRequest
     ): Future[UpdateDomainConfigurationResponse] = service.updateDomainConfiguration(params).promise().toFuture
@@ -922,25 +951,26 @@ package iot {
     def addThingToThingGroup(params: AddThingToThingGroupRequest): Request[AddThingToThingGroupResponse] = js.native
     def associateTargetsWithJob(params: AssociateTargetsWithJobRequest): Request[AssociateTargetsWithJobResponse] =
       js.native
-    def attachPolicy(params: AttachPolicyRequest): Request[js.Object]                                       = js.native
+    def attachPolicy(params: AttachPolicyRequest): Request[js.Object] = js.native
     def attachSecurityProfile(params: AttachSecurityProfileRequest): Request[AttachSecurityProfileResponse] = js.native
-    def attachThingPrincipal(params: AttachThingPrincipalRequest): Request[AttachThingPrincipalResponse]    = js.native
+    def attachThingPrincipal(params: AttachThingPrincipalRequest): Request[AttachThingPrincipalResponse] = js.native
     def cancelAuditMitigationActionsTask(
         params: CancelAuditMitigationActionsTaskRequest
-    ): Request[CancelAuditMitigationActionsTaskResponse]                                        = js.native
-    def cancelAuditTask(params: CancelAuditTaskRequest): Request[CancelAuditTaskResponse]       = js.native
+    ): Request[CancelAuditMitigationActionsTaskResponse] = js.native
+    def cancelAuditTask(params: CancelAuditTaskRequest): Request[CancelAuditTaskResponse] = js.native
     def cancelCertificateTransfer(params: CancelCertificateTransferRequest): Request[js.Object] = js.native
-    def cancelJob(params: CancelJobRequest): Request[CancelJobResponse]                         = js.native
-    def cancelJobExecution(params: CancelJobExecutionRequest): Request[js.Object]               = js.native
+    def cancelJob(params: CancelJobRequest): Request[CancelJobResponse] = js.native
+    def cancelJobExecution(params: CancelJobExecutionRequest): Request[js.Object] = js.native
     def clearDefaultAuthorizer(params: ClearDefaultAuthorizerRequest): Request[ClearDefaultAuthorizerResponse] =
       js.native
     def confirmTopicRuleDestination(
         params: ConfirmTopicRuleDestinationRequest
-    ): Request[ConfirmTopicRuleDestinationResponse]                                                = js.native
-    def createAuthorizer(params: CreateAuthorizerRequest): Request[CreateAuthorizerResponse]       = js.native
+    ): Request[ConfirmTopicRuleDestinationResponse] = js.native
+    def createAuthorizer(params: CreateAuthorizerRequest): Request[CreateAuthorizerResponse] = js.native
     def createBillingGroup(params: CreateBillingGroupRequest): Request[CreateBillingGroupResponse] = js.native
     def createCertificateFromCsr(params: CreateCertificateFromCsrRequest): Request[CreateCertificateFromCsrResponse] =
       js.native
+    def createDimension(params: CreateDimensionRequest): Request[CreateDimensionResponse] = js.native
     def createDomainConfiguration(
         params: CreateDomainConfigurationRequest
     ): Request[CreateDomainConfigurationResponse] = js.native
@@ -951,8 +981,8 @@ package iot {
       js.native
     def createMitigationAction(params: CreateMitigationActionRequest): Request[CreateMitigationActionResponse] =
       js.native
-    def createOTAUpdate(params: CreateOTAUpdateRequest): Request[CreateOTAUpdateResponse]             = js.native
-    def createPolicy(params: CreatePolicyRequest): Request[CreatePolicyResponse]                      = js.native
+    def createOTAUpdate(params: CreateOTAUpdateRequest): Request[CreateOTAUpdateResponse] = js.native
+    def createPolicy(params: CreatePolicyRequest): Request[CreatePolicyResponse] = js.native
     def createPolicyVersion(params: CreatePolicyVersionRequest): Request[CreatePolicyVersionResponse] = js.native
     def createProvisioningClaim(params: CreateProvisioningClaimRequest): Request[CreateProvisioningClaimResponse] =
       js.native
@@ -961,37 +991,38 @@ package iot {
     ): Request[CreateProvisioningTemplateResponse] = js.native
     def createProvisioningTemplateVersion(
         params: CreateProvisioningTemplateVersionRequest
-    ): Request[CreateProvisioningTemplateVersionResponse]                                                   = js.native
-    def createRoleAlias(params: CreateRoleAliasRequest): Request[CreateRoleAliasResponse]                   = js.native
-    def createScheduledAudit(params: CreateScheduledAuditRequest): Request[CreateScheduledAuditResponse]    = js.native
+    ): Request[CreateProvisioningTemplateVersionResponse] = js.native
+    def createRoleAlias(params: CreateRoleAliasRequest): Request[CreateRoleAliasResponse] = js.native
+    def createScheduledAudit(params: CreateScheduledAuditRequest): Request[CreateScheduledAuditResponse] = js.native
     def createSecurityProfile(params: CreateSecurityProfileRequest): Request[CreateSecurityProfileResponse] = js.native
-    def createStream(params: CreateStreamRequest): Request[CreateStreamResponse]                            = js.native
-    def createThing(params: CreateThingRequest): Request[CreateThingResponse]                               = js.native
-    def createThingGroup(params: CreateThingGroupRequest): Request[CreateThingGroupResponse]                = js.native
-    def createThingType(params: CreateThingTypeRequest): Request[CreateThingTypeResponse]                   = js.native
-    def createTopicRule(params: CreateTopicRuleRequest): Request[js.Object]                                 = js.native
+    def createStream(params: CreateStreamRequest): Request[CreateStreamResponse] = js.native
+    def createThing(params: CreateThingRequest): Request[CreateThingResponse] = js.native
+    def createThingGroup(params: CreateThingGroupRequest): Request[CreateThingGroupResponse] = js.native
+    def createThingType(params: CreateThingTypeRequest): Request[CreateThingTypeResponse] = js.native
+    def createTopicRule(params: CreateTopicRuleRequest): Request[js.Object] = js.native
     def createTopicRuleDestination(
         params: CreateTopicRuleDestinationRequest
     ): Request[CreateTopicRuleDestinationResponse] = js.native
     def deleteAccountAuditConfiguration(
         params: DeleteAccountAuditConfigurationRequest
-    ): Request[DeleteAccountAuditConfigurationResponse]                                               = js.native
-    def deleteAuthorizer(params: DeleteAuthorizerRequest): Request[DeleteAuthorizerResponse]          = js.native
-    def deleteBillingGroup(params: DeleteBillingGroupRequest): Request[DeleteBillingGroupResponse]    = js.native
+    ): Request[DeleteAccountAuditConfigurationResponse] = js.native
+    def deleteAuthorizer(params: DeleteAuthorizerRequest): Request[DeleteAuthorizerResponse] = js.native
+    def deleteBillingGroup(params: DeleteBillingGroupRequest): Request[DeleteBillingGroupResponse] = js.native
     def deleteCACertificate(params: DeleteCACertificateRequest): Request[DeleteCACertificateResponse] = js.native
-    def deleteCertificate(params: DeleteCertificateRequest): Request[js.Object]                       = js.native
+    def deleteCertificate(params: DeleteCertificateRequest): Request[js.Object] = js.native
+    def deleteDimension(params: DeleteDimensionRequest): Request[DeleteDimensionResponse] = js.native
     def deleteDomainConfiguration(
         params: DeleteDomainConfigurationRequest
     ): Request[DeleteDomainConfigurationResponse] = js.native
     def deleteDynamicThingGroup(params: DeleteDynamicThingGroupRequest): Request[DeleteDynamicThingGroupResponse] =
       js.native
-    def deleteJob(params: DeleteJobRequest): Request[js.Object]                   = js.native
+    def deleteJob(params: DeleteJobRequest): Request[js.Object] = js.native
     def deleteJobExecution(params: DeleteJobExecutionRequest): Request[js.Object] = js.native
     def deleteMitigationAction(params: DeleteMitigationActionRequest): Request[DeleteMitigationActionResponse] =
       js.native
     def deleteOTAUpdate(params: DeleteOTAUpdateRequest): Request[DeleteOTAUpdateResponse] = js.native
-    def deletePolicy(params: DeletePolicyRequest): Request[js.Object]                     = js.native
-    def deletePolicyVersion(params: DeletePolicyVersionRequest): Request[js.Object]       = js.native
+    def deletePolicy(params: DeletePolicyRequest): Request[js.Object] = js.native
+    def deletePolicyVersion(params: DeletePolicyVersionRequest): Request[js.Object] = js.native
     def deleteProvisioningTemplate(
         params: DeleteProvisioningTemplateRequest
     ): Request[DeleteProvisioningTemplateResponse] = js.native
@@ -1000,43 +1031,44 @@ package iot {
     ): Request[DeleteProvisioningTemplateVersionResponse] = js.native
     def deleteRegistrationCode(params: DeleteRegistrationCodeRequest): Request[DeleteRegistrationCodeResponse] =
       js.native
-    def deleteRoleAlias(params: DeleteRoleAliasRequest): Request[DeleteRoleAliasResponse]                   = js.native
-    def deleteScheduledAudit(params: DeleteScheduledAuditRequest): Request[DeleteScheduledAuditResponse]    = js.native
+    def deleteRoleAlias(params: DeleteRoleAliasRequest): Request[DeleteRoleAliasResponse] = js.native
+    def deleteScheduledAudit(params: DeleteScheduledAuditRequest): Request[DeleteScheduledAuditResponse] = js.native
     def deleteSecurityProfile(params: DeleteSecurityProfileRequest): Request[DeleteSecurityProfileResponse] = js.native
-    def deleteStream(params: DeleteStreamRequest): Request[DeleteStreamResponse]                            = js.native
-    def deleteThing(params: DeleteThingRequest): Request[DeleteThingResponse]                               = js.native
-    def deleteThingGroup(params: DeleteThingGroupRequest): Request[DeleteThingGroupResponse]                = js.native
-    def deleteThingType(params: DeleteThingTypeRequest): Request[DeleteThingTypeResponse]                   = js.native
-    def deleteTopicRule(params: DeleteTopicRuleRequest): Request[js.Object]                                 = js.native
+    def deleteStream(params: DeleteStreamRequest): Request[DeleteStreamResponse] = js.native
+    def deleteThing(params: DeleteThingRequest): Request[DeleteThingResponse] = js.native
+    def deleteThingGroup(params: DeleteThingGroupRequest): Request[DeleteThingGroupResponse] = js.native
+    def deleteThingType(params: DeleteThingTypeRequest): Request[DeleteThingTypeResponse] = js.native
+    def deleteTopicRule(params: DeleteTopicRuleRequest): Request[js.Object] = js.native
     def deleteTopicRuleDestination(
         params: DeleteTopicRuleDestinationRequest
-    ): Request[DeleteTopicRuleDestinationResponse]                                                 = js.native
-    def deleteV2LoggingLevel(params: DeleteV2LoggingLevelRequest): Request[js.Object]              = js.native
+    ): Request[DeleteTopicRuleDestinationResponse] = js.native
+    def deleteV2LoggingLevel(params: DeleteV2LoggingLevelRequest): Request[js.Object] = js.native
     def deprecateThingType(params: DeprecateThingTypeRequest): Request[DeprecateThingTypeResponse] = js.native
     def describeAccountAuditConfiguration(
         params: DescribeAccountAuditConfigurationRequest
-    ): Request[DescribeAccountAuditConfigurationResponse]                                                = js.native
+    ): Request[DescribeAccountAuditConfigurationResponse] = js.native
     def describeAuditFinding(params: DescribeAuditFindingRequest): Request[DescribeAuditFindingResponse] = js.native
     def describeAuditMitigationActionsTask(
         params: DescribeAuditMitigationActionsTaskRequest
-    ): Request[DescribeAuditMitigationActionsTaskResponse]                                                  = js.native
-    def describeAuditTask(params: DescribeAuditTaskRequest): Request[DescribeAuditTaskResponse]             = js.native
-    def describeAuthorizer(params: DescribeAuthorizerRequest): Request[DescribeAuthorizerResponse]          = js.native
-    def describeBillingGroup(params: DescribeBillingGroupRequest): Request[DescribeBillingGroupResponse]    = js.native
+    ): Request[DescribeAuditMitigationActionsTaskResponse] = js.native
+    def describeAuditTask(params: DescribeAuditTaskRequest): Request[DescribeAuditTaskResponse] = js.native
+    def describeAuthorizer(params: DescribeAuthorizerRequest): Request[DescribeAuthorizerResponse] = js.native
+    def describeBillingGroup(params: DescribeBillingGroupRequest): Request[DescribeBillingGroupResponse] = js.native
     def describeCACertificate(params: DescribeCACertificateRequest): Request[DescribeCACertificateResponse] = js.native
-    def describeCertificate(params: DescribeCertificateRequest): Request[DescribeCertificateResponse]       = js.native
+    def describeCertificate(params: DescribeCertificateRequest): Request[DescribeCertificateResponse] = js.native
     def describeDefaultAuthorizer(
         params: DescribeDefaultAuthorizerRequest
     ): Request[DescribeDefaultAuthorizerResponse] = js.native
+    def describeDimension(params: DescribeDimensionRequest): Request[DescribeDimensionResponse] = js.native
     def describeDomainConfiguration(
         params: DescribeDomainConfigurationRequest
-    ): Request[DescribeDomainConfigurationResponse]                                          = js.native
+    ): Request[DescribeDomainConfigurationResponse] = js.native
     def describeEndpoint(params: DescribeEndpointRequest): Request[DescribeEndpointResponse] = js.native
     def describeEventConfigurations(
         params: DescribeEventConfigurationsRequest
-    ): Request[DescribeEventConfigurationsResponse]                                                      = js.native
-    def describeIndex(params: DescribeIndexRequest): Request[DescribeIndexResponse]                      = js.native
-    def describeJob(params: DescribeJobRequest): Request[DescribeJobResponse]                            = js.native
+    ): Request[DescribeEventConfigurationsResponse] = js.native
+    def describeIndex(params: DescribeIndexRequest): Request[DescribeIndexResponse] = js.native
+    def describeJob(params: DescribeJobRequest): Request[DescribeJobResponse] = js.native
     def describeJobExecution(params: DescribeJobExecutionRequest): Request[DescribeJobExecutionResponse] = js.native
     def describeMitigationAction(params: DescribeMitigationActionRequest): Request[DescribeMitigationActionResponse] =
       js.native
@@ -1045,55 +1077,56 @@ package iot {
     ): Request[DescribeProvisioningTemplateResponse] = js.native
     def describeProvisioningTemplateVersion(
         params: DescribeProvisioningTemplateVersionRequest
-    ): Request[DescribeProvisioningTemplateVersionResponse]                                     = js.native
+    ): Request[DescribeProvisioningTemplateVersionResponse] = js.native
     def describeRoleAlias(params: DescribeRoleAliasRequest): Request[DescribeRoleAliasResponse] = js.native
     def describeScheduledAudit(params: DescribeScheduledAuditRequest): Request[DescribeScheduledAuditResponse] =
       js.native
     def describeSecurityProfile(params: DescribeSecurityProfileRequest): Request[DescribeSecurityProfileResponse] =
       js.native
-    def describeStream(params: DescribeStreamRequest): Request[DescribeStreamResponse]             = js.native
-    def describeThing(params: DescribeThingRequest): Request[DescribeThingResponse]                = js.native
+    def describeStream(params: DescribeStreamRequest): Request[DescribeStreamResponse] = js.native
+    def describeThing(params: DescribeThingRequest): Request[DescribeThingResponse] = js.native
     def describeThingGroup(params: DescribeThingGroupRequest): Request[DescribeThingGroupResponse] = js.native
     def describeThingRegistrationTask(
         params: DescribeThingRegistrationTaskRequest
-    ): Request[DescribeThingRegistrationTaskResponse]                                                       = js.native
-    def describeThingType(params: DescribeThingTypeRequest): Request[DescribeThingTypeResponse]             = js.native
-    def detachPolicy(params: DetachPolicyRequest): Request[js.Object]                                       = js.native
+    ): Request[DescribeThingRegistrationTaskResponse] = js.native
+    def describeThingType(params: DescribeThingTypeRequest): Request[DescribeThingTypeResponse] = js.native
+    def detachPolicy(params: DetachPolicyRequest): Request[js.Object] = js.native
     def detachSecurityProfile(params: DetachSecurityProfileRequest): Request[DetachSecurityProfileResponse] = js.native
-    def detachThingPrincipal(params: DetachThingPrincipalRequest): Request[DetachThingPrincipalResponse]    = js.native
-    def disableTopicRule(params: DisableTopicRuleRequest): Request[js.Object]                               = js.native
-    def enableTopicRule(params: EnableTopicRuleRequest): Request[js.Object]                                 = js.native
-    def getCardinality(params: GetCardinalityRequest): Request[GetCardinalityResponse]                      = js.native
-    def getEffectivePolicies(params: GetEffectivePoliciesRequest): Request[GetEffectivePoliciesResponse]    = js.native
+    def detachThingPrincipal(params: DetachThingPrincipalRequest): Request[DetachThingPrincipalResponse] = js.native
+    def disableTopicRule(params: DisableTopicRuleRequest): Request[js.Object] = js.native
+    def enableTopicRule(params: EnableTopicRuleRequest): Request[js.Object] = js.native
+    def getCardinality(params: GetCardinalityRequest): Request[GetCardinalityResponse] = js.native
+    def getEffectivePolicies(params: GetEffectivePoliciesRequest): Request[GetEffectivePoliciesResponse] = js.native
     def getIndexingConfiguration(params: GetIndexingConfigurationRequest): Request[GetIndexingConfigurationResponse] =
       js.native
-    def getJobDocument(params: GetJobDocumentRequest): Request[GetJobDocumentResponse]                = js.native
-    def getLoggingOptions(params: GetLoggingOptionsRequest): Request[GetLoggingOptionsResponse]       = js.native
-    def getOTAUpdate(params: GetOTAUpdateRequest): Request[GetOTAUpdateResponse]                      = js.native
-    def getPercentiles(params: GetPercentilesRequest): Request[GetPercentilesResponse]                = js.native
-    def getPolicy(params: GetPolicyRequest): Request[GetPolicyResponse]                               = js.native
-    def getPolicyVersion(params: GetPolicyVersionRequest): Request[GetPolicyVersionResponse]          = js.native
+    def getJobDocument(params: GetJobDocumentRequest): Request[GetJobDocumentResponse] = js.native
+    def getLoggingOptions(params: GetLoggingOptionsRequest): Request[GetLoggingOptionsResponse] = js.native
+    def getOTAUpdate(params: GetOTAUpdateRequest): Request[GetOTAUpdateResponse] = js.native
+    def getPercentiles(params: GetPercentilesRequest): Request[GetPercentilesResponse] = js.native
+    def getPolicy(params: GetPolicyRequest): Request[GetPolicyResponse] = js.native
+    def getPolicyVersion(params: GetPolicyVersionRequest): Request[GetPolicyVersionResponse] = js.native
     def getRegistrationCode(params: GetRegistrationCodeRequest): Request[GetRegistrationCodeResponse] = js.native
-    def getStatistics(params: GetStatisticsRequest): Request[GetStatisticsResponse]                   = js.native
-    def getTopicRule(params: GetTopicRuleRequest): Request[GetTopicRuleResponse]                      = js.native
+    def getStatistics(params: GetStatisticsRequest): Request[GetStatisticsResponse] = js.native
+    def getTopicRule(params: GetTopicRuleRequest): Request[GetTopicRuleResponse] = js.native
     def getTopicRuleDestination(params: GetTopicRuleDestinationRequest): Request[GetTopicRuleDestinationResponse] =
       js.native
-    def getV2LoggingOptions(params: GetV2LoggingOptionsRequest): Request[GetV2LoggingOptionsResponse]    = js.native
+    def getV2LoggingOptions(params: GetV2LoggingOptionsRequest): Request[GetV2LoggingOptionsResponse] = js.native
     def listActiveViolations(params: ListActiveViolationsRequest): Request[ListActiveViolationsResponse] = js.native
     def listAttachedPolicies(params: ListAttachedPoliciesRequest): Request[ListAttachedPoliciesResponse] = js.native
-    def listAuditFindings(params: ListAuditFindingsRequest): Request[ListAuditFindingsResponse]          = js.native
+    def listAuditFindings(params: ListAuditFindingsRequest): Request[ListAuditFindingsResponse] = js.native
     def listAuditMitigationActionsExecutions(
         params: ListAuditMitigationActionsExecutionsRequest
     ): Request[ListAuditMitigationActionsExecutionsResponse] = js.native
     def listAuditMitigationActionsTasks(
         params: ListAuditMitigationActionsTasksRequest
-    ): Request[ListAuditMitigationActionsTasksResponse]                                                  = js.native
-    def listAuditTasks(params: ListAuditTasksRequest): Request[ListAuditTasksResponse]                   = js.native
-    def listAuthorizers(params: ListAuthorizersRequest): Request[ListAuthorizersResponse]                = js.native
-    def listBillingGroups(params: ListBillingGroupsRequest): Request[ListBillingGroupsResponse]          = js.native
-    def listCACertificates(params: ListCACertificatesRequest): Request[ListCACertificatesResponse]       = js.native
-    def listCertificates(params: ListCertificatesRequest): Request[ListCertificatesResponse]             = js.native
+    ): Request[ListAuditMitigationActionsTasksResponse] = js.native
+    def listAuditTasks(params: ListAuditTasksRequest): Request[ListAuditTasksResponse] = js.native
+    def listAuthorizers(params: ListAuthorizersRequest): Request[ListAuthorizersResponse] = js.native
+    def listBillingGroups(params: ListBillingGroupsRequest): Request[ListBillingGroupsResponse] = js.native
+    def listCACertificates(params: ListCACertificatesRequest): Request[ListCACertificatesResponse] = js.native
+    def listCertificates(params: ListCertificatesRequest): Request[ListCertificatesResponse] = js.native
     def listCertificatesByCA(params: ListCertificatesByCARequest): Request[ListCertificatesByCAResponse] = js.native
+    def listDimensions(params: ListDimensionsRequest): Request[ListDimensionsResponse] = js.native
     def listDomainConfigurations(params: ListDomainConfigurationsRequest): Request[ListDomainConfigurationsResponse] =
       js.native
     def listIndices(params: ListIndicesRequest): Request[ListIndicesResponse] = js.native
@@ -1101,33 +1134,33 @@ package iot {
       js.native
     def listJobExecutionsForThing(
         params: ListJobExecutionsForThingRequest
-    ): Request[ListJobExecutionsForThingResponse]                                                           = js.native
-    def listJobs(params: ListJobsRequest): Request[ListJobsResponse]                                        = js.native
+    ): Request[ListJobExecutionsForThingResponse] = js.native
+    def listJobs(params: ListJobsRequest): Request[ListJobsResponse] = js.native
     def listMitigationActions(params: ListMitigationActionsRequest): Request[ListMitigationActionsResponse] = js.native
-    def listOTAUpdates(params: ListOTAUpdatesRequest): Request[ListOTAUpdatesResponse]                      = js.native
+    def listOTAUpdates(params: ListOTAUpdatesRequest): Request[ListOTAUpdatesResponse] = js.native
     def listOutgoingCertificates(params: ListOutgoingCertificatesRequest): Request[ListOutgoingCertificatesResponse] =
       js.native
-    def listPolicies(params: ListPoliciesRequest): Request[ListPoliciesResponse]                      = js.native
-    def listPolicyVersions(params: ListPolicyVersionsRequest): Request[ListPolicyVersionsResponse]    = js.native
+    def listPolicies(params: ListPoliciesRequest): Request[ListPoliciesResponse] = js.native
+    def listPolicyVersions(params: ListPolicyVersionsRequest): Request[ListPolicyVersionsResponse] = js.native
     def listPrincipalThings(params: ListPrincipalThingsRequest): Request[ListPrincipalThingsResponse] = js.native
     def listProvisioningTemplateVersions(
         params: ListProvisioningTemplateVersionsRequest
     ): Request[ListProvisioningTemplateVersionsResponse] = js.native
     def listProvisioningTemplates(
         params: ListProvisioningTemplatesRequest
-    ): Request[ListProvisioningTemplatesResponse]                                                        = js.native
-    def listRoleAliases(params: ListRoleAliasesRequest): Request[ListRoleAliasesResponse]                = js.native
-    def listScheduledAudits(params: ListScheduledAuditsRequest): Request[ListScheduledAuditsResponse]    = js.native
+    ): Request[ListProvisioningTemplatesResponse] = js.native
+    def listRoleAliases(params: ListRoleAliasesRequest): Request[ListRoleAliasesResponse] = js.native
+    def listScheduledAudits(params: ListScheduledAuditsRequest): Request[ListScheduledAuditsResponse] = js.native
     def listSecurityProfiles(params: ListSecurityProfilesRequest): Request[ListSecurityProfilesResponse] = js.native
     def listSecurityProfilesForTarget(
         params: ListSecurityProfilesForTargetRequest
-    ): Request[ListSecurityProfilesForTargetResponse]                                                    = js.native
-    def listStreams(params: ListStreamsRequest): Request[ListStreamsResponse]                            = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]    = js.native
+    ): Request[ListSecurityProfilesForTargetResponse] = js.native
+    def listStreams(params: ListStreamsRequest): Request[ListStreamsResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listTargetsForPolicy(params: ListTargetsForPolicyRequest): Request[ListTargetsForPolicyResponse] = js.native
     def listTargetsForSecurityProfile(
         params: ListTargetsForSecurityProfileRequest
-    ): Request[ListTargetsForSecurityProfileResponse]                                     = js.native
+    ): Request[ListTargetsForSecurityProfileResponse] = js.native
     def listThingGroups(params: ListThingGroupsRequest): Request[ListThingGroupsResponse] = js.native
     def listThingGroupsForThing(params: ListThingGroupsForThingRequest): Request[ListThingGroupsForThingResponse] =
       js.native
@@ -1137,36 +1170,39 @@ package iot {
     ): Request[ListThingRegistrationTaskReportsResponse] = js.native
     def listThingRegistrationTasks(
         params: ListThingRegistrationTasksRequest
-    ): Request[ListThingRegistrationTasksResponse]                                     = js.native
+    ): Request[ListThingRegistrationTasksResponse] = js.native
     def listThingTypes(params: ListThingTypesRequest): Request[ListThingTypesResponse] = js.native
-    def listThings(params: ListThingsRequest): Request[ListThingsResponse]             = js.native
+    def listThings(params: ListThingsRequest): Request[ListThingsResponse] = js.native
     def listThingsInBillingGroup(params: ListThingsInBillingGroupRequest): Request[ListThingsInBillingGroupResponse] =
       js.native
     def listThingsInThingGroup(params: ListThingsInThingGroupRequest): Request[ListThingsInThingGroupResponse] =
       js.native
     def listTopicRuleDestinations(
         params: ListTopicRuleDestinationsRequest
-    ): Request[ListTopicRuleDestinationsResponse]                                                           = js.native
-    def listTopicRules(params: ListTopicRulesRequest): Request[ListTopicRulesResponse]                      = js.native
-    def listV2LoggingLevels(params: ListV2LoggingLevelsRequest): Request[ListV2LoggingLevelsResponse]       = js.native
-    def listViolationEvents(params: ListViolationEventsRequest): Request[ListViolationEventsResponse]       = js.native
+    ): Request[ListTopicRuleDestinationsResponse] = js.native
+    def listTopicRules(params: ListTopicRulesRequest): Request[ListTopicRulesResponse] = js.native
+    def listV2LoggingLevels(params: ListV2LoggingLevelsRequest): Request[ListV2LoggingLevelsResponse] = js.native
+    def listViolationEvents(params: ListViolationEventsRequest): Request[ListViolationEventsResponse] = js.native
     def registerCACertificate(params: RegisterCACertificateRequest): Request[RegisterCACertificateResponse] = js.native
-    def registerCertificate(params: RegisterCertificateRequest): Request[RegisterCertificateResponse]       = js.native
-    def registerThing(params: RegisterThingRequest): Request[RegisterThingResponse]                         = js.native
-    def rejectCertificateTransfer(params: RejectCertificateTransferRequest): Request[js.Object]             = js.native
+    def registerCertificate(params: RegisterCertificateRequest): Request[RegisterCertificateResponse] = js.native
+    def registerCertificateWithoutCA(
+        params: RegisterCertificateWithoutCARequest
+    ): Request[RegisterCertificateWithoutCAResponse] = js.native
+    def registerThing(params: RegisterThingRequest): Request[RegisterThingResponse] = js.native
+    def rejectCertificateTransfer(params: RejectCertificateTransferRequest): Request[js.Object] = js.native
     def removeThingFromBillingGroup(
         params: RemoveThingFromBillingGroupRequest
     ): Request[RemoveThingFromBillingGroupResponse] = js.native
     def removeThingFromThingGroup(
         params: RemoveThingFromThingGroupRequest
-    ): Request[RemoveThingFromThingGroupResponse]                                                        = js.native
-    def replaceTopicRule(params: ReplaceTopicRuleRequest): Request[js.Object]                            = js.native
-    def searchIndex(params: SearchIndexRequest): Request[SearchIndexResponse]                            = js.native
+    ): Request[RemoveThingFromThingGroupResponse] = js.native
+    def replaceTopicRule(params: ReplaceTopicRuleRequest): Request[js.Object] = js.native
+    def searchIndex(params: SearchIndexRequest): Request[SearchIndexResponse] = js.native
     def setDefaultAuthorizer(params: SetDefaultAuthorizerRequest): Request[SetDefaultAuthorizerResponse] = js.native
-    def setDefaultPolicyVersion(params: SetDefaultPolicyVersionRequest): Request[js.Object]              = js.native
-    def setLoggingOptions(params: SetLoggingOptionsRequest): Request[js.Object]                          = js.native
-    def setV2LoggingLevel(params: SetV2LoggingLevelRequest): Request[js.Object]                          = js.native
-    def setV2LoggingOptions(params: SetV2LoggingOptionsRequest): Request[js.Object]                      = js.native
+    def setDefaultPolicyVersion(params: SetDefaultPolicyVersionRequest): Request[js.Object] = js.native
+    def setLoggingOptions(params: SetLoggingOptionsRequest): Request[js.Object] = js.native
+    def setV2LoggingLevel(params: SetV2LoggingLevelRequest): Request[js.Object] = js.native
+    def setV2LoggingOptions(params: SetV2LoggingOptionsRequest): Request[js.Object] = js.native
     def startAuditMitigationActionsTask(
         params: StartAuditMitigationActionsTaskRequest
     ): Request[StartAuditMitigationActionsTaskResponse] = js.native
@@ -1177,19 +1213,20 @@ package iot {
     ): Request[StartThingRegistrationTaskResponse] = js.native
     def stopThingRegistrationTask(
         params: StopThingRegistrationTaskRequest
-    ): Request[StopThingRegistrationTaskResponse]                                                        = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                            = js.native
-    def testAuthorization(params: TestAuthorizationRequest): Request[TestAuthorizationResponse]          = js.native
+    ): Request[StopThingRegistrationTaskResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def testAuthorization(params: TestAuthorizationRequest): Request[TestAuthorizationResponse] = js.native
     def testInvokeAuthorizer(params: TestInvokeAuthorizerRequest): Request[TestInvokeAuthorizerResponse] = js.native
-    def transferCertificate(params: TransferCertificateRequest): Request[TransferCertificateResponse]    = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                      = js.native
+    def transferCertificate(params: TransferCertificateRequest): Request[TransferCertificateResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateAccountAuditConfiguration(
         params: UpdateAccountAuditConfigurationRequest
-    ): Request[UpdateAccountAuditConfigurationResponse]                                            = js.native
-    def updateAuthorizer(params: UpdateAuthorizerRequest): Request[UpdateAuthorizerResponse]       = js.native
+    ): Request[UpdateAccountAuditConfigurationResponse] = js.native
+    def updateAuthorizer(params: UpdateAuthorizerRequest): Request[UpdateAuthorizerResponse] = js.native
     def updateBillingGroup(params: UpdateBillingGroupRequest): Request[UpdateBillingGroupResponse] = js.native
-    def updateCACertificate(params: UpdateCACertificateRequest): Request[js.Object]                = js.native
-    def updateCertificate(params: UpdateCertificateRequest): Request[js.Object]                    = js.native
+    def updateCACertificate(params: UpdateCACertificateRequest): Request[js.Object] = js.native
+    def updateCertificate(params: UpdateCertificateRequest): Request[js.Object] = js.native
+    def updateDimension(params: UpdateDimensionRequest): Request[UpdateDimensionResponse] = js.native
     def updateDomainConfiguration(
         params: UpdateDomainConfigurationRequest
     ): Request[UpdateDomainConfigurationResponse] = js.native
@@ -1200,19 +1237,19 @@ package iot {
     ): Request[UpdateEventConfigurationsResponse] = js.native
     def updateIndexingConfiguration(
         params: UpdateIndexingConfigurationRequest
-    ): Request[UpdateIndexingConfigurationResponse]             = js.native
+    ): Request[UpdateIndexingConfigurationResponse] = js.native
     def updateJob(params: UpdateJobRequest): Request[js.Object] = js.native
     def updateMitigationAction(params: UpdateMitigationActionRequest): Request[UpdateMitigationActionResponse] =
       js.native
     def updateProvisioningTemplate(
         params: UpdateProvisioningTemplateRequest
-    ): Request[UpdateProvisioningTemplateResponse]                                                          = js.native
-    def updateRoleAlias(params: UpdateRoleAliasRequest): Request[UpdateRoleAliasResponse]                   = js.native
-    def updateScheduledAudit(params: UpdateScheduledAuditRequest): Request[UpdateScheduledAuditResponse]    = js.native
+    ): Request[UpdateProvisioningTemplateResponse] = js.native
+    def updateRoleAlias(params: UpdateRoleAliasRequest): Request[UpdateRoleAliasResponse] = js.native
+    def updateScheduledAudit(params: UpdateScheduledAuditRequest): Request[UpdateScheduledAuditResponse] = js.native
     def updateSecurityProfile(params: UpdateSecurityProfileRequest): Request[UpdateSecurityProfileResponse] = js.native
-    def updateStream(params: UpdateStreamRequest): Request[UpdateStreamResponse]                            = js.native
-    def updateThing(params: UpdateThingRequest): Request[UpdateThingResponse]                               = js.native
-    def updateThingGroup(params: UpdateThingGroupRequest): Request[UpdateThingGroupResponse]                = js.native
+    def updateStream(params: UpdateStreamRequest): Request[UpdateStreamResponse] = js.native
+    def updateThing(params: UpdateThingRequest): Request[UpdateThingResponse] = js.native
+    def updateThingGroup(params: UpdateThingGroupRequest): Request[UpdateThingGroupResponse] = js.native
     def updateThingGroupsForThing(
         params: UpdateThingGroupsForThingRequest
     ): Request[UpdateThingGroupsForThingResponse] = js.native
@@ -1245,7 +1282,7 @@ package iot {
   }
 
   /**
-    * Details of abort criteria to abort the job.
+    * The criteria that determine when and how a job abort takes place.
     */
   @js.native
   trait AbortConfig extends js.Object {
@@ -1266,7 +1303,7 @@ package iot {
   }
 
   /**
-    * Details of abort criteria to define rules to abort the job.
+    * The criteria that determine when and how a job abort takes place.
     */
   @js.native
   trait AbortCriteria extends js.Object {
@@ -1285,10 +1322,10 @@ package iot {
         thresholdPercentage: AbortThresholdPercentage
     ): AbortCriteria = {
       val __obj = js.Dynamic.literal(
-        "action"                    -> action.asInstanceOf[js.Any],
-        "failureType"               -> failureType.asInstanceOf[js.Any],
+        "action" -> action.asInstanceOf[js.Any],
+        "failureType" -> failureType.asInstanceOf[js.Any],
         "minNumberOfExecutedThings" -> minNumberOfExecutedThings.asInstanceOf[js.Any],
-        "thresholdPercentage"       -> thresholdPercentage.asInstanceOf[js.Any]
+        "thresholdPercentage" -> thresholdPercentage.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AbortCriteria]
@@ -1325,6 +1362,7 @@ package iot {
   @js.native
   trait Action extends js.Object {
     var cloudwatchAlarm: js.UndefOr[CloudwatchAlarmAction]
+    var cloudwatchLogs: js.UndefOr[CloudwatchLogsAction]
     var cloudwatchMetric: js.UndefOr[CloudwatchMetricAction]
     var dynamoDB: js.UndefOr[DynamoDBAction]
     var dynamoDBv2: js.UndefOr[DynamoDBv2Action]
@@ -1348,6 +1386,7 @@ package iot {
     @inline
     def apply(
         cloudwatchAlarm: js.UndefOr[CloudwatchAlarmAction] = js.undefined,
+        cloudwatchLogs: js.UndefOr[CloudwatchLogsAction] = js.undefined,
         cloudwatchMetric: js.UndefOr[CloudwatchMetricAction] = js.undefined,
         dynamoDB: js.UndefOr[DynamoDBAction] = js.undefined,
         dynamoDBv2: js.UndefOr[DynamoDBv2Action] = js.undefined,
@@ -1368,6 +1407,7 @@ package iot {
     ): Action = {
       val __obj = js.Dynamic.literal()
       cloudwatchAlarm.foreach(__v => __obj.updateDynamic("cloudwatchAlarm")(__v.asInstanceOf[js.Any]))
+      cloudwatchLogs.foreach(__v => __obj.updateDynamic("cloudwatchLogs")(__v.asInstanceOf[js.Any]))
       cloudwatchMetric.foreach(__v => __obj.updateDynamic("cloudwatchMetric")(__v.asInstanceOf[js.Any]))
       dynamoDB.foreach(__v => __obj.updateDynamic("dynamoDB")(__v.asInstanceOf[js.Any]))
       dynamoDBv2.foreach(__v => __obj.updateDynamic("dynamoDBv2")(__v.asInstanceOf[js.Any]))
@@ -1392,10 +1432,10 @@ package iot {
   @js.native
   sealed trait ActionType extends js.Any
   object ActionType extends js.Object {
-    val PUBLISH   = "PUBLISH".asInstanceOf[ActionType]
+    val PUBLISH = "PUBLISH".asInstanceOf[ActionType]
     val SUBSCRIBE = "SUBSCRIBE".asInstanceOf[ActionType]
-    val RECEIVE   = "RECEIVE".asInstanceOf[ActionType]
-    val CONNECT   = "CONNECT".asInstanceOf[ActionType]
+    val RECEIVE = "RECEIVE".asInstanceOf[ActionType]
+    val CONNECT = "CONNECT".asInstanceOf[ActionType]
 
     val values = js.Object.freeze(js.Array(PUBLISH, SUBSCRIBE, RECEIVE, CONNECT))
   }
@@ -1557,7 +1597,7 @@ package iot {
     ): AlertTarget = {
       val __obj = js.Dynamic.literal(
         "alertTargetArn" -> alertTargetArn.asInstanceOf[js.Any],
-        "roleArn"        -> roleArn.asInstanceOf[js.Any]
+        "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AlertTarget]
@@ -1637,7 +1677,7 @@ package iot {
     ): AssetPropertyValue = {
       val __obj = js.Dynamic.literal(
         "timestamp" -> timestamp.asInstanceOf[js.Any],
-        "value"     -> value.asInstanceOf[js.Any]
+        "value" -> value.asInstanceOf[js.Any]
       )
 
       quality.foreach(__v => __obj.updateDynamic("quality")(__v.asInstanceOf[js.Any]))
@@ -1688,7 +1728,7 @@ package iot {
         comment: js.UndefOr[Comment] = js.undefined
     ): AssociateTargetsWithJobRequest = {
       val __obj = js.Dynamic.literal(
-        "jobId"   -> jobId.asInstanceOf[js.Any],
+        "jobId" -> jobId.asInstanceOf[js.Any],
         "targets" -> targets.asInstanceOf[js.Any]
       )
 
@@ -1733,7 +1773,7 @@ package iot {
     ): AttachPolicyRequest = {
       val __obj = js.Dynamic.literal(
         "policyName" -> policyName.asInstanceOf[js.Any],
-        "target"     -> target.asInstanceOf[js.Any]
+        "target" -> target.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AttachPolicyRequest]
@@ -1757,7 +1797,7 @@ package iot {
     ): AttachPrincipalPolicyRequest = {
       val __obj = js.Dynamic.literal(
         "policyName" -> policyName.asInstanceOf[js.Any],
-        "principal"  -> principal.asInstanceOf[js.Any]
+        "principal" -> principal.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AttachPrincipalPolicyRequest]
@@ -1777,7 +1817,7 @@ package iot {
         securityProfileTargetArn: SecurityProfileTargetArn
     ): AttachSecurityProfileRequest = {
       val __obj = js.Dynamic.literal(
-        "securityProfileName"      -> securityProfileName.asInstanceOf[js.Any],
+        "securityProfileName" -> securityProfileName.asInstanceOf[js.Any],
         "securityProfileTargetArn" -> securityProfileTargetArn.asInstanceOf[js.Any]
       )
 
@@ -1918,12 +1958,12 @@ package iot {
   @js.native
   sealed trait AuditCheckRunStatus extends js.Any
   object AuditCheckRunStatus extends js.Object {
-    val IN_PROGRESS                 = "IN_PROGRESS".asInstanceOf[AuditCheckRunStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AuditCheckRunStatus]
     val WAITING_FOR_DATA_COLLECTION = "WAITING_FOR_DATA_COLLECTION".asInstanceOf[AuditCheckRunStatus]
-    val CANCELED                    = "CANCELED".asInstanceOf[AuditCheckRunStatus]
-    val COMPLETED_COMPLIANT         = "COMPLETED_COMPLIANT".asInstanceOf[AuditCheckRunStatus]
-    val COMPLETED_NON_COMPLIANT     = "COMPLETED_NON_COMPLIANT".asInstanceOf[AuditCheckRunStatus]
-    val FAILED                      = "FAILED".asInstanceOf[AuditCheckRunStatus]
+    val CANCELED = "CANCELED".asInstanceOf[AuditCheckRunStatus]
+    val COMPLETED_COMPLIANT = "COMPLETED_COMPLIANT".asInstanceOf[AuditCheckRunStatus]
+    val COMPLETED_NON_COMPLIANT = "COMPLETED_NON_COMPLIANT".asInstanceOf[AuditCheckRunStatus]
+    val FAILED = "FAILED".asInstanceOf[AuditCheckRunStatus]
 
     val values = js.Object.freeze(
       js.Array(IN_PROGRESS, WAITING_FOR_DATA_COLLECTION, CANCELED, COMPLETED_COMPLIANT, COMPLETED_NON_COMPLIANT, FAILED)
@@ -1982,9 +2022,9 @@ package iot {
   sealed trait AuditFindingSeverity extends js.Any
   object AuditFindingSeverity extends js.Object {
     val CRITICAL = "CRITICAL".asInstanceOf[AuditFindingSeverity]
-    val HIGH     = "HIGH".asInstanceOf[AuditFindingSeverity]
-    val MEDIUM   = "MEDIUM".asInstanceOf[AuditFindingSeverity]
-    val LOW      = "LOW".asInstanceOf[AuditFindingSeverity]
+    val HIGH = "HIGH".asInstanceOf[AuditFindingSeverity]
+    val MEDIUM = "MEDIUM".asInstanceOf[AuditFindingSeverity]
+    val LOW = "LOW".asInstanceOf[AuditFindingSeverity]
 
     val values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW))
   }
@@ -1992,10 +2032,10 @@ package iot {
   @js.native
   sealed trait AuditFrequency extends js.Any
   object AuditFrequency extends js.Object {
-    val DAILY    = "DAILY".asInstanceOf[AuditFrequency]
-    val WEEKLY   = "WEEKLY".asInstanceOf[AuditFrequency]
+    val DAILY = "DAILY".asInstanceOf[AuditFrequency]
+    val WEEKLY = "WEEKLY".asInstanceOf[AuditFrequency]
     val BIWEEKLY = "BIWEEKLY".asInstanceOf[AuditFrequency]
-    val MONTHLY  = "MONTHLY".asInstanceOf[AuditFrequency]
+    val MONTHLY = "MONTHLY".asInstanceOf[AuditFrequency]
 
     val values = js.Object.freeze(js.Array(DAILY, WEEKLY, BIWEEKLY, MONTHLY))
   }
@@ -2047,11 +2087,11 @@ package iot {
   sealed trait AuditMitigationActionsExecutionStatus extends js.Any
   object AuditMitigationActionsExecutionStatus extends js.Object {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AuditMitigationActionsExecutionStatus]
-    val COMPLETED   = "COMPLETED".asInstanceOf[AuditMitigationActionsExecutionStatus]
-    val FAILED      = "FAILED".asInstanceOf[AuditMitigationActionsExecutionStatus]
-    val CANCELED    = "CANCELED".asInstanceOf[AuditMitigationActionsExecutionStatus]
-    val SKIPPED     = "SKIPPED".asInstanceOf[AuditMitigationActionsExecutionStatus]
-    val PENDING     = "PENDING".asInstanceOf[AuditMitigationActionsExecutionStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[AuditMitigationActionsExecutionStatus]
+    val FAILED = "FAILED".asInstanceOf[AuditMitigationActionsExecutionStatus]
+    val CANCELED = "CANCELED".asInstanceOf[AuditMitigationActionsExecutionStatus]
+    val SKIPPED = "SKIPPED".asInstanceOf[AuditMitigationActionsExecutionStatus]
+    val PENDING = "PENDING".asInstanceOf[AuditMitigationActionsExecutionStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED, SKIPPED, PENDING))
   }
@@ -2085,9 +2125,9 @@ package iot {
   sealed trait AuditMitigationActionsTaskStatus extends js.Any
   object AuditMitigationActionsTaskStatus extends js.Object {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AuditMitigationActionsTaskStatus]
-    val COMPLETED   = "COMPLETED".asInstanceOf[AuditMitigationActionsTaskStatus]
-    val FAILED      = "FAILED".asInstanceOf[AuditMitigationActionsTaskStatus]
-    val CANCELED    = "CANCELED".asInstanceOf[AuditMitigationActionsTaskStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[AuditMitigationActionsTaskStatus]
+    val FAILED = "FAILED".asInstanceOf[AuditMitigationActionsTaskStatus]
+    val CANCELED = "CANCELED".asInstanceOf[AuditMitigationActionsTaskStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED))
   }
@@ -2181,9 +2221,9 @@ package iot {
   sealed trait AuditTaskStatus extends js.Any
   object AuditTaskStatus extends js.Object {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AuditTaskStatus]
-    val COMPLETED   = "COMPLETED".asInstanceOf[AuditTaskStatus]
-    val FAILED      = "FAILED".asInstanceOf[AuditTaskStatus]
-    val CANCELED    = "CANCELED".asInstanceOf[AuditTaskStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[AuditTaskStatus]
+    val FAILED = "FAILED".asInstanceOf[AuditTaskStatus]
+    val CANCELED = "CANCELED".asInstanceOf[AuditTaskStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED))
   }
@@ -2200,7 +2240,7 @@ package iot {
   @js.native
   sealed trait AuthDecision extends js.Any
   object AuthDecision extends js.Object {
-    val ALLOWED       = "ALLOWED".asInstanceOf[AuthDecision]
+    val ALLOWED = "ALLOWED".asInstanceOf[AuthDecision]
     val EXPLICIT_DENY = "EXPLICIT_DENY".asInstanceOf[AuthDecision]
     val IMPLICIT_DENY = "IMPLICIT_DENY".asInstanceOf[AuthDecision]
 
@@ -2212,19 +2252,21 @@ package iot {
     */
   @js.native
   trait AuthInfo extends js.Object {
+    var resources: Resources
     var actionType: js.UndefOr[ActionType]
-    var resources: js.UndefOr[Resources]
   }
 
   object AuthInfo {
     @inline
     def apply(
-        actionType: js.UndefOr[ActionType] = js.undefined,
-        resources: js.UndefOr[Resources] = js.undefined
+        resources: Resources,
+        actionType: js.UndefOr[ActionType] = js.undefined
     ): AuthInfo = {
-      val __obj = js.Dynamic.literal()
+      val __obj = js.Dynamic.literal(
+        "resources" -> resources.asInstanceOf[js.Any]
+      )
+
       actionType.foreach(__v => __obj.updateDynamic("actionType")(__v.asInstanceOf[js.Any]))
-      resources.foreach(__v => __obj.updateDynamic("resources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AuthInfo]
     }
   }
@@ -2328,7 +2370,7 @@ package iot {
   @js.native
   sealed trait AuthorizerStatus extends js.Any
   object AuthorizerStatus extends js.Object {
-    val ACTIVE   = "ACTIVE".asInstanceOf[AuthorizerStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[AuthorizerStatus]
     val INACTIVE = "INACTIVE".asInstanceOf[AuthorizerStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
@@ -2359,10 +2401,80 @@ package iot {
   @js.native
   sealed trait AutoRegistrationStatus extends js.Any
   object AutoRegistrationStatus extends js.Object {
-    val ENABLE  = "ENABLE".asInstanceOf[AutoRegistrationStatus]
+    val ENABLE = "ENABLE".asInstanceOf[AutoRegistrationStatus]
     val DISABLE = "DISABLE".asInstanceOf[AutoRegistrationStatus]
 
     val values = js.Object.freeze(js.Array(ENABLE, DISABLE))
+  }
+
+  /**
+    * The criteria that determine when and how a job abort takes place.
+    */
+  @js.native
+  trait AwsJobAbortConfig extends js.Object {
+    var abortCriteriaList: AwsJobAbortCriteriaList
+  }
+
+  object AwsJobAbortConfig {
+    @inline
+    def apply(
+        abortCriteriaList: AwsJobAbortCriteriaList
+    ): AwsJobAbortConfig = {
+      val __obj = js.Dynamic.literal(
+        "abortCriteriaList" -> abortCriteriaList.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[AwsJobAbortConfig]
+    }
+  }
+
+  /**
+    * The criteria that determine when and how a job abort takes place.
+    */
+  @js.native
+  trait AwsJobAbortCriteria extends js.Object {
+    var action: AwsJobAbortCriteriaAbortAction
+    var failureType: AwsJobAbortCriteriaFailureType
+    var minNumberOfExecutedThings: AwsJobAbortCriteriaMinimumNumberOfExecutedThings
+    var thresholdPercentage: AwsJobAbortCriteriaAbortThresholdPercentage
+  }
+
+  object AwsJobAbortCriteria {
+    @inline
+    def apply(
+        action: AwsJobAbortCriteriaAbortAction,
+        failureType: AwsJobAbortCriteriaFailureType,
+        minNumberOfExecutedThings: AwsJobAbortCriteriaMinimumNumberOfExecutedThings,
+        thresholdPercentage: AwsJobAbortCriteriaAbortThresholdPercentage
+    ): AwsJobAbortCriteria = {
+      val __obj = js.Dynamic.literal(
+        "action" -> action.asInstanceOf[js.Any],
+        "failureType" -> failureType.asInstanceOf[js.Any],
+        "minNumberOfExecutedThings" -> minNumberOfExecutedThings.asInstanceOf[js.Any],
+        "thresholdPercentage" -> thresholdPercentage.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[AwsJobAbortCriteria]
+    }
+  }
+
+  @js.native
+  sealed trait AwsJobAbortCriteriaAbortAction extends js.Any
+  object AwsJobAbortCriteriaAbortAction extends js.Object {
+    val CANCEL = "CANCEL".asInstanceOf[AwsJobAbortCriteriaAbortAction]
+
+    val values = js.Object.freeze(js.Array(CANCEL))
+  }
+
+  @js.native
+  sealed trait AwsJobAbortCriteriaFailureType extends js.Any
+  object AwsJobAbortCriteriaFailureType extends js.Object {
+    val FAILED = "FAILED".asInstanceOf[AwsJobAbortCriteriaFailureType]
+    val REJECTED = "REJECTED".asInstanceOf[AwsJobAbortCriteriaFailureType]
+    val TIMED_OUT = "TIMED_OUT".asInstanceOf[AwsJobAbortCriteriaFailureType]
+    val ALL = "ALL".asInstanceOf[AwsJobAbortCriteriaFailureType]
+
+    val values = js.Object.freeze(js.Array(FAILED, REJECTED, TIMED_OUT, ALL))
   }
 
   /**
@@ -2370,17 +2482,47 @@ package iot {
     */
   @js.native
   trait AwsJobExecutionsRolloutConfig extends js.Object {
+    var exponentialRate: js.UndefOr[AwsJobExponentialRolloutRate]
     var maximumPerMinute: js.UndefOr[MaximumPerMinute]
   }
 
   object AwsJobExecutionsRolloutConfig {
     @inline
     def apply(
+        exponentialRate: js.UndefOr[AwsJobExponentialRolloutRate] = js.undefined,
         maximumPerMinute: js.UndefOr[MaximumPerMinute] = js.undefined
     ): AwsJobExecutionsRolloutConfig = {
       val __obj = js.Dynamic.literal()
+      exponentialRate.foreach(__v => __obj.updateDynamic("exponentialRate")(__v.asInstanceOf[js.Any]))
       maximumPerMinute.foreach(__v => __obj.updateDynamic("maximumPerMinute")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsJobExecutionsRolloutConfig]
+    }
+  }
+
+  /**
+    * The rate of increase for a job rollout. This parameter allows you to define an exponential rate increase for a job rollout.
+    */
+  @js.native
+  trait AwsJobExponentialRolloutRate extends js.Object {
+    var baseRatePerMinute: AwsJobRolloutRatePerMinute
+    var incrementFactor: AwsJobRolloutIncrementFactor
+    var rateIncreaseCriteria: AwsJobRateIncreaseCriteria
+  }
+
+  object AwsJobExponentialRolloutRate {
+    @inline
+    def apply(
+        baseRatePerMinute: AwsJobRolloutRatePerMinute,
+        incrementFactor: AwsJobRolloutIncrementFactor,
+        rateIncreaseCriteria: AwsJobRateIncreaseCriteria
+    ): AwsJobExponentialRolloutRate = {
+      val __obj = js.Dynamic.literal(
+        "baseRatePerMinute" -> baseRatePerMinute.asInstanceOf[js.Any],
+        "incrementFactor" -> incrementFactor.asInstanceOf[js.Any],
+        "rateIncreaseCriteria" -> rateIncreaseCriteria.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[AwsJobExponentialRolloutRate]
     }
   }
 
@@ -2404,6 +2546,49 @@ package iot {
   }
 
   /**
+    * The criteria to initiate the increase in rate of rollout for a job.
+    */
+  @js.native
+  trait AwsJobRateIncreaseCriteria extends js.Object {
+    var numberOfNotifiedThings: js.UndefOr[AwsJobRateIncreaseCriteriaNumberOfThings]
+    var numberOfSucceededThings: js.UndefOr[AwsJobRateIncreaseCriteriaNumberOfThings]
+  }
+
+  object AwsJobRateIncreaseCriteria {
+    @inline
+    def apply(
+        numberOfNotifiedThings: js.UndefOr[AwsJobRateIncreaseCriteriaNumberOfThings] = js.undefined,
+        numberOfSucceededThings: js.UndefOr[AwsJobRateIncreaseCriteriaNumberOfThings] = js.undefined
+    ): AwsJobRateIncreaseCriteria = {
+      val __obj = js.Dynamic.literal()
+      numberOfNotifiedThings.foreach(__v => __obj.updateDynamic("numberOfNotifiedThings")(__v.asInstanceOf[js.Any]))
+      numberOfSucceededThings.foreach(__v => __obj.updateDynamic("numberOfSucceededThings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsJobRateIncreaseCriteria]
+    }
+  }
+
+  /**
+    * Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.
+    */
+  @js.native
+  trait AwsJobTimeoutConfig extends js.Object {
+    var inProgressTimeoutInMinutes: js.UndefOr[AwsJobTimeoutInProgressTimeoutInMinutes]
+  }
+
+  object AwsJobTimeoutConfig {
+    @inline
+    def apply(
+        inProgressTimeoutInMinutes: js.UndefOr[AwsJobTimeoutInProgressTimeoutInMinutes] = js.undefined
+    ): AwsJobTimeoutConfig = {
+      val __obj = js.Dynamic.literal()
+      inProgressTimeoutInMinutes.foreach(__v =>
+        __obj.updateDynamic("inProgressTimeoutInMinutes")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[AwsJobTimeoutConfig]
+    }
+  }
+
+  /**
     * A Device Defender security profile behavior.
     */
   @js.native
@@ -2411,6 +2596,7 @@ package iot {
     var name: BehaviorName
     var criteria: js.UndefOr[BehaviorCriteria]
     var metric: js.UndefOr[BehaviorMetric]
+    var metricDimension: js.UndefOr[MetricDimension]
   }
 
   object Behavior {
@@ -2418,7 +2604,8 @@ package iot {
     def apply(
         name: BehaviorName,
         criteria: js.UndefOr[BehaviorCriteria] = js.undefined,
-        metric: js.UndefOr[BehaviorMetric] = js.undefined
+        metric: js.UndefOr[BehaviorMetric] = js.undefined,
+        metricDimension: js.UndefOr[MetricDimension] = js.undefined
     ): Behavior = {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
@@ -2426,6 +2613,7 @@ package iot {
 
       criteria.foreach(__v => __obj.updateDynamic("criteria")(__v.asInstanceOf[js.Any]))
       metric.foreach(__v => __obj.updateDynamic("metric")(__v.asInstanceOf[js.Any]))
+      metricDimension.foreach(__v => __obj.updateDynamic("metricDimension")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Behavior]
     }
   }
@@ -2586,7 +2774,7 @@ package iot {
   @js.native
   sealed trait CACertificateStatus extends js.Any
   object CACertificateStatus extends js.Object {
-    val ACTIVE   = "ACTIVE".asInstanceOf[CACertificateStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[CACertificateStatus]
     val INACTIVE = "INACTIVE".asInstanceOf[CACertificateStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
@@ -2702,7 +2890,7 @@ package iot {
         statusDetails: js.UndefOr[DetailsMap] = js.undefined
     ): CancelJobExecutionRequest = {
       val __obj = js.Dynamic.literal(
-        "jobId"     -> jobId.asInstanceOf[js.Any],
+        "jobId" -> jobId.asInstanceOf[js.Any],
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
 
@@ -2765,14 +2953,14 @@ package iot {
   @js.native
   sealed trait CannedAccessControlList extends js.Any
   object CannedAccessControlList extends js.Object {
-    val `private`                   = "private".asInstanceOf[CannedAccessControlList]
-    val `public-read`               = "public-read".asInstanceOf[CannedAccessControlList]
-    val `public-read-write`         = "public-read-write".asInstanceOf[CannedAccessControlList]
-    val `aws-exec-read`             = "aws-exec-read".asInstanceOf[CannedAccessControlList]
-    val `authenticated-read`        = "authenticated-read".asInstanceOf[CannedAccessControlList]
-    val `bucket-owner-read`         = "bucket-owner-read".asInstanceOf[CannedAccessControlList]
+    val `private` = "private".asInstanceOf[CannedAccessControlList]
+    val `public-read` = "public-read".asInstanceOf[CannedAccessControlList]
+    val `public-read-write` = "public-read-write".asInstanceOf[CannedAccessControlList]
+    val `aws-exec-read` = "aws-exec-read".asInstanceOf[CannedAccessControlList]
+    val `authenticated-read` = "authenticated-read".asInstanceOf[CannedAccessControlList]
+    val `bucket-owner-read` = "bucket-owner-read".asInstanceOf[CannedAccessControlList]
     val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[CannedAccessControlList]
-    val `log-delivery-write`        = "log-delivery-write".asInstanceOf[CannedAccessControlList]
+    val `log-delivery-write` = "log-delivery-write".asInstanceOf[CannedAccessControlList]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2795,6 +2983,7 @@ package iot {
   trait Certificate extends js.Object {
     var certificateArn: js.UndefOr[CertificateArn]
     var certificateId: js.UndefOr[CertificateId]
+    var certificateMode: js.UndefOr[CertificateMode]
     var creationDate: js.UndefOr[DateType]
     var status: js.UndefOr[CertificateStatus]
   }
@@ -2804,12 +2993,14 @@ package iot {
     def apply(
         certificateArn: js.UndefOr[CertificateArn] = js.undefined,
         certificateId: js.UndefOr[CertificateId] = js.undefined,
+        certificateMode: js.UndefOr[CertificateMode] = js.undefined,
         creationDate: js.UndefOr[DateType] = js.undefined,
         status: js.UndefOr[CertificateStatus] = js.undefined
     ): Certificate = {
       val __obj = js.Dynamic.literal()
       certificateArn.foreach(__v => __obj.updateDynamic("certificateArn")(__v.asInstanceOf[js.Any]))
       certificateId.foreach(__v => __obj.updateDynamic("certificateId")(__v.asInstanceOf[js.Any]))
+      certificateMode.foreach(__v => __obj.updateDynamic("certificateMode")(__v.asInstanceOf[js.Any]))
       creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Certificate]
@@ -2824,6 +3015,7 @@ package iot {
     var caCertificateId: js.UndefOr[CertificateId]
     var certificateArn: js.UndefOr[CertificateArn]
     var certificateId: js.UndefOr[CertificateId]
+    var certificateMode: js.UndefOr[CertificateMode]
     var certificatePem: js.UndefOr[CertificatePem]
     var creationDate: js.UndefOr[DateType]
     var customerVersion: js.UndefOr[CustomerVersion]
@@ -2842,6 +3034,7 @@ package iot {
         caCertificateId: js.UndefOr[CertificateId] = js.undefined,
         certificateArn: js.UndefOr[CertificateArn] = js.undefined,
         certificateId: js.UndefOr[CertificateId] = js.undefined,
+        certificateMode: js.UndefOr[CertificateMode] = js.undefined,
         certificatePem: js.UndefOr[CertificatePem] = js.undefined,
         creationDate: js.UndefOr[DateType] = js.undefined,
         customerVersion: js.UndefOr[CustomerVersion] = js.undefined,
@@ -2857,6 +3050,7 @@ package iot {
       caCertificateId.foreach(__v => __obj.updateDynamic("caCertificateId")(__v.asInstanceOf[js.Any]))
       certificateArn.foreach(__v => __obj.updateDynamic("certificateArn")(__v.asInstanceOf[js.Any]))
       certificateId.foreach(__v => __obj.updateDynamic("certificateId")(__v.asInstanceOf[js.Any]))
+      certificateMode.foreach(__v => __obj.updateDynamic("certificateMode")(__v.asInstanceOf[js.Any]))
       certificatePem.foreach(__v => __obj.updateDynamic("certificatePem")(__v.asInstanceOf[js.Any]))
       creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
       customerVersion.foreach(__v => __obj.updateDynamic("customerVersion")(__v.asInstanceOf[js.Any]))
@@ -2872,13 +3066,22 @@ package iot {
   }
 
   @js.native
+  sealed trait CertificateMode extends js.Any
+  object CertificateMode extends js.Object {
+    val DEFAULT = "DEFAULT".asInstanceOf[CertificateMode]
+    val SNI_ONLY = "SNI_ONLY".asInstanceOf[CertificateMode]
+
+    val values = js.Object.freeze(js.Array(DEFAULT, SNI_ONLY))
+  }
+
+  @js.native
   sealed trait CertificateStatus extends js.Any
   object CertificateStatus extends js.Object {
-    val ACTIVE             = "ACTIVE".asInstanceOf[CertificateStatus]
-    val INACTIVE           = "INACTIVE".asInstanceOf[CertificateStatus]
-    val REVOKED            = "REVOKED".asInstanceOf[CertificateStatus]
-    val PENDING_TRANSFER   = "PENDING_TRANSFER".asInstanceOf[CertificateStatus]
-    val REGISTER_INACTIVE  = "REGISTER_INACTIVE".asInstanceOf[CertificateStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[CertificateStatus]
+    val INACTIVE = "INACTIVE".asInstanceOf[CertificateStatus]
+    val REVOKED = "REVOKED".asInstanceOf[CertificateStatus]
+    val PENDING_TRANSFER = "PENDING_TRANSFER".asInstanceOf[CertificateStatus]
+    val REGISTER_INACTIVE = "REGISTER_INACTIVE".asInstanceOf[CertificateStatus]
     val PENDING_ACTIVATION = "PENDING_ACTIVATION".asInstanceOf[CertificateStatus]
 
     val values =
@@ -2953,13 +3156,37 @@ package iot {
         stateValue: StateValue
     ): CloudwatchAlarmAction = {
       val __obj = js.Dynamic.literal(
-        "alarmName"   -> alarmName.asInstanceOf[js.Any],
-        "roleArn"     -> roleArn.asInstanceOf[js.Any],
+        "alarmName" -> alarmName.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
         "stateReason" -> stateReason.asInstanceOf[js.Any],
-        "stateValue"  -> stateValue.asInstanceOf[js.Any]
+        "stateValue" -> stateValue.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CloudwatchAlarmAction]
+    }
+  }
+
+  /**
+    * Describes an action that sends data to CloudWatch Logs.
+    */
+  @js.native
+  trait CloudwatchLogsAction extends js.Object {
+    var logGroupName: LogGroupName
+    var roleArn: AwsArn
+  }
+
+  object CloudwatchLogsAction {
+    @inline
+    def apply(
+        logGroupName: LogGroupName,
+        roleArn: AwsArn
+    ): CloudwatchLogsAction = {
+      val __obj = js.Dynamic.literal(
+        "logGroupName" -> logGroupName.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CloudwatchLogsAction]
     }
   }
 
@@ -2987,11 +3214,11 @@ package iot {
         metricTimestamp: js.UndefOr[String] = js.undefined
     ): CloudwatchMetricAction = {
       val __obj = js.Dynamic.literal(
-        "metricName"      -> metricName.asInstanceOf[js.Any],
+        "metricName" -> metricName.asInstanceOf[js.Any],
         "metricNamespace" -> metricNamespace.asInstanceOf[js.Any],
-        "metricUnit"      -> metricUnit.asInstanceOf[js.Any],
-        "metricValue"     -> metricValue.asInstanceOf[js.Any],
-        "roleArn"         -> roleArn.asInstanceOf[js.Any]
+        "metricUnit" -> metricUnit.asInstanceOf[js.Any],
+        "metricValue" -> metricValue.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
       metricTimestamp.foreach(__v => __obj.updateDynamic("metricTimestamp")(__v.asInstanceOf[js.Any]))
@@ -3068,14 +3295,14 @@ package iot {
   @js.native
   sealed trait ComparisonOperator extends js.Any
   object ComparisonOperator extends js.Object {
-    val `less-than`           = "less-than".asInstanceOf[ComparisonOperator]
-    val `less-than-equals`    = "less-than-equals".asInstanceOf[ComparisonOperator]
-    val `greater-than`        = "greater-than".asInstanceOf[ComparisonOperator]
+    val `less-than` = "less-than".asInstanceOf[ComparisonOperator]
+    val `less-than-equals` = "less-than-equals".asInstanceOf[ComparisonOperator]
+    val `greater-than` = "greater-than".asInstanceOf[ComparisonOperator]
     val `greater-than-equals` = "greater-than-equals".asInstanceOf[ComparisonOperator]
-    val `in-cidr-set`         = "in-cidr-set".asInstanceOf[ComparisonOperator]
-    val `not-in-cidr-set`     = "not-in-cidr-set".asInstanceOf[ComparisonOperator]
-    val `in-port-set`         = "in-port-set".asInstanceOf[ComparisonOperator]
-    val `not-in-port-set`     = "not-in-port-set".asInstanceOf[ComparisonOperator]
+    val `in-cidr-set` = "in-cidr-set".asInstanceOf[ComparisonOperator]
+    val `not-in-cidr-set` = "not-in-cidr-set".asInstanceOf[ComparisonOperator]
+    val `in-port-set` = "in-port-set".asInstanceOf[ComparisonOperator]
+    val `not-in-port-set` = "not-in-port-set".asInstanceOf[ComparisonOperator]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3147,6 +3374,7 @@ package iot {
     var authorizerName: AuthorizerName
     var signingDisabled: js.UndefOr[BooleanKey]
     var status: js.UndefOr[AuthorizerStatus]
+    var tags: js.UndefOr[TagList]
     var tokenKeyName: js.UndefOr[TokenKeyName]
     var tokenSigningPublicKeys: js.UndefOr[PublicKeyMap]
   }
@@ -3158,16 +3386,18 @@ package iot {
         authorizerName: AuthorizerName,
         signingDisabled: js.UndefOr[BooleanKey] = js.undefined,
         status: js.UndefOr[AuthorizerStatus] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined,
         tokenKeyName: js.UndefOr[TokenKeyName] = js.undefined,
         tokenSigningPublicKeys: js.UndefOr[PublicKeyMap] = js.undefined
     ): CreateAuthorizerRequest = {
       val __obj = js.Dynamic.literal(
         "authorizerFunctionArn" -> authorizerFunctionArn.asInstanceOf[js.Any],
-        "authorizerName"        -> authorizerName.asInstanceOf[js.Any]
+        "authorizerName" -> authorizerName.asInstanceOf[js.Any]
       )
 
       signingDisabled.foreach(__v => __obj.updateDynamic("signingDisabled")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       tokenKeyName.foreach(__v => __obj.updateDynamic("tokenKeyName")(__v.asInstanceOf[js.Any]))
       tokenSigningPublicKeys.foreach(__v => __obj.updateDynamic("tokenSigningPublicKeys")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAuthorizerRequest]
@@ -3289,12 +3519,62 @@ package iot {
   }
 
   @js.native
+  trait CreateDimensionRequest extends js.Object {
+    var clientRequestToken: ClientRequestToken
+    var name: DimensionName
+    var stringValues: DimensionStringValues
+    var `type`: DimensionType
+    var tags: js.UndefOr[TagList]
+  }
+
+  object CreateDimensionRequest {
+    @inline
+    def apply(
+        clientRequestToken: ClientRequestToken,
+        name: DimensionName,
+        stringValues: DimensionStringValues,
+        `type`: DimensionType,
+        tags: js.UndefOr[TagList] = js.undefined
+    ): CreateDimensionRequest = {
+      val __obj = js.Dynamic.literal(
+        "clientRequestToken" -> clientRequestToken.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "stringValues" -> stringValues.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
+      )
+
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDimensionRequest]
+    }
+  }
+
+  @js.native
+  trait CreateDimensionResponse extends js.Object {
+    var arn: js.UndefOr[DimensionArn]
+    var name: js.UndefOr[DimensionName]
+  }
+
+  object CreateDimensionResponse {
+    @inline
+    def apply(
+        arn: js.UndefOr[DimensionArn] = js.undefined,
+        name: js.UndefOr[DimensionName] = js.undefined
+    ): CreateDimensionResponse = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDimensionResponse]
+    }
+  }
+
+  @js.native
   trait CreateDomainConfigurationRequest extends js.Object {
     var domainConfigurationName: DomainConfigurationName
     var authorizerConfig: js.UndefOr[AuthorizerConfig]
     var domainName: js.UndefOr[DomainName]
     var serverCertificateArns: js.UndefOr[ServerCertificateArns]
     var serviceType: js.UndefOr[ServiceType]
+    var tags: js.UndefOr[TagList]
     var validationCertificateArn: js.UndefOr[AcmCertificateArn]
   }
 
@@ -3306,6 +3586,7 @@ package iot {
         domainName: js.UndefOr[DomainName] = js.undefined,
         serverCertificateArns: js.UndefOr[ServerCertificateArns] = js.undefined,
         serviceType: js.UndefOr[ServiceType] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined,
         validationCertificateArn: js.UndefOr[AcmCertificateArn] = js.undefined
     ): CreateDomainConfigurationRequest = {
       val __obj = js.Dynamic.literal(
@@ -3316,6 +3597,7 @@ package iot {
       domainName.foreach(__v => __obj.updateDynamic("domainName")(__v.asInstanceOf[js.Any]))
       serverCertificateArns.foreach(__v => __obj.updateDynamic("serverCertificateArns")(__v.asInstanceOf[js.Any]))
       serviceType.foreach(__v => __obj.updateDynamic("serviceType")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       validationCertificateArn.foreach(__v => __obj.updateDynamic("validationCertificateArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDomainConfigurationRequest]
     }
@@ -3361,7 +3643,7 @@ package iot {
         thingGroupProperties: js.UndefOr[ThingGroupProperties] = js.undefined
     ): CreateDynamicThingGroupRequest = {
       val __obj = js.Dynamic.literal(
-        "queryString"    -> queryString.asInstanceOf[js.Any],
+        "queryString" -> queryString.asInstanceOf[js.Any],
         "thingGroupName" -> thingGroupName.asInstanceOf[js.Any]
       )
 
@@ -3435,7 +3717,7 @@ package iot {
         timeoutConfig: js.UndefOr[TimeoutConfig] = js.undefined
     ): CreateJobRequest = {
       val __obj = js.Dynamic.literal(
-        "jobId"   -> jobId.asInstanceOf[js.Any],
+        "jobId" -> jobId.asInstanceOf[js.Any],
         "targets" -> targets.asInstanceOf[js.Any]
       )
 
@@ -3540,9 +3822,9 @@ package iot {
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateMitigationActionRequest = {
       val __obj = js.Dynamic.literal(
-        "actionName"   -> actionName.asInstanceOf[js.Any],
+        "actionName" -> actionName.asInstanceOf[js.Any],
         "actionParams" -> actionParams.asInstanceOf[js.Any],
-        "roleArn"      -> roleArn.asInstanceOf[js.Any]
+        "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -3576,8 +3858,10 @@ package iot {
     var roleArn: RoleArn
     var targets: Targets
     var additionalParameters: js.UndefOr[AdditionalParameterMap]
+    var awsJobAbortConfig: js.UndefOr[AwsJobAbortConfig]
     var awsJobExecutionsRolloutConfig: js.UndefOr[AwsJobExecutionsRolloutConfig]
     var awsJobPresignedUrlConfig: js.UndefOr[AwsJobPresignedUrlConfig]
+    var awsJobTimeoutConfig: js.UndefOr[AwsJobTimeoutConfig]
     var description: js.UndefOr[OTAUpdateDescription]
     var protocols: js.UndefOr[Protocols]
     var tags: js.UndefOr[TagList]
@@ -3592,25 +3876,29 @@ package iot {
         roleArn: RoleArn,
         targets: Targets,
         additionalParameters: js.UndefOr[AdditionalParameterMap] = js.undefined,
+        awsJobAbortConfig: js.UndefOr[AwsJobAbortConfig] = js.undefined,
         awsJobExecutionsRolloutConfig: js.UndefOr[AwsJobExecutionsRolloutConfig] = js.undefined,
         awsJobPresignedUrlConfig: js.UndefOr[AwsJobPresignedUrlConfig] = js.undefined,
+        awsJobTimeoutConfig: js.UndefOr[AwsJobTimeoutConfig] = js.undefined,
         description: js.UndefOr[OTAUpdateDescription] = js.undefined,
         protocols: js.UndefOr[Protocols] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined,
         targetSelection: js.UndefOr[TargetSelection] = js.undefined
     ): CreateOTAUpdateRequest = {
       val __obj = js.Dynamic.literal(
-        "files"       -> files.asInstanceOf[js.Any],
+        "files" -> files.asInstanceOf[js.Any],
         "otaUpdateId" -> otaUpdateId.asInstanceOf[js.Any],
-        "roleArn"     -> roleArn.asInstanceOf[js.Any],
-        "targets"     -> targets.asInstanceOf[js.Any]
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
+        "targets" -> targets.asInstanceOf[js.Any]
       )
 
       additionalParameters.foreach(__v => __obj.updateDynamic("additionalParameters")(__v.asInstanceOf[js.Any]))
+      awsJobAbortConfig.foreach(__v => __obj.updateDynamic("awsJobAbortConfig")(__v.asInstanceOf[js.Any]))
       awsJobExecutionsRolloutConfig.foreach(__v =>
         __obj.updateDynamic("awsJobExecutionsRolloutConfig")(__v.asInstanceOf[js.Any])
       )
       awsJobPresignedUrlConfig.foreach(__v => __obj.updateDynamic("awsJobPresignedUrlConfig")(__v.asInstanceOf[js.Any]))
+      awsJobTimeoutConfig.foreach(__v => __obj.updateDynamic("awsJobTimeoutConfig")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       protocols.foreach(__v => __obj.updateDynamic("protocols")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -3654,19 +3942,22 @@ package iot {
   trait CreatePolicyRequest extends js.Object {
     var policyDocument: PolicyDocument
     var policyName: PolicyName
+    var tags: js.UndefOr[TagList]
   }
 
   object CreatePolicyRequest {
     @inline
     def apply(
         policyDocument: PolicyDocument,
-        policyName: PolicyName
+        policyName: PolicyName,
+        tags: js.UndefOr[TagList] = js.undefined
     ): CreatePolicyRequest = {
       val __obj = js.Dynamic.literal(
         "policyDocument" -> policyDocument.asInstanceOf[js.Any],
-        "policyName"     -> policyName.asInstanceOf[js.Any]
+        "policyName" -> policyName.asInstanceOf[js.Any]
       )
 
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePolicyRequest]
     }
   }
@@ -3718,7 +4009,7 @@ package iot {
     ): CreatePolicyVersionRequest = {
       val __obj = js.Dynamic.literal(
         "policyDocument" -> policyDocument.asInstanceOf[js.Any],
-        "policyName"     -> policyName.asInstanceOf[js.Any]
+        "policyName" -> policyName.asInstanceOf[js.Any]
       )
 
       setAsDefault.foreach(__v => __obj.updateDynamic("setAsDefault")(__v.asInstanceOf[js.Any]))
@@ -3804,6 +4095,7 @@ package iot {
     var templateName: TemplateName
     var description: js.UndefOr[TemplateDescription]
     var enabled: js.UndefOr[Enabled]
+    var preProvisioningHook: js.UndefOr[ProvisioningHook]
     var tags: js.UndefOr[TagList]
   }
 
@@ -3815,16 +4107,18 @@ package iot {
         templateName: TemplateName,
         description: js.UndefOr[TemplateDescription] = js.undefined,
         enabled: js.UndefOr[Enabled] = js.undefined,
+        preProvisioningHook: js.UndefOr[ProvisioningHook] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateProvisioningTemplateRequest = {
       val __obj = js.Dynamic.literal(
         "provisioningRoleArn" -> provisioningRoleArn.asInstanceOf[js.Any],
-        "templateBody"        -> templateBody.asInstanceOf[js.Any],
-        "templateName"        -> templateName.asInstanceOf[js.Any]
+        "templateBody" -> templateBody.asInstanceOf[js.Any],
+        "templateName" -> templateName.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       enabled.foreach(__v => __obj.updateDynamic("enabled")(__v.asInstanceOf[js.Any]))
+      preProvisioningHook.foreach(__v => __obj.updateDynamic("preProvisioningHook")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProvisioningTemplateRequest]
     }
@@ -3906,6 +4200,7 @@ package iot {
     var roleAlias: RoleAlias
     var roleArn: RoleArn
     var credentialDurationSeconds: js.UndefOr[CredentialDurationSeconds]
+    var tags: js.UndefOr[TagList]
   }
 
   object CreateRoleAliasRequest {
@@ -3913,16 +4208,18 @@ package iot {
     def apply(
         roleAlias: RoleAlias,
         roleArn: RoleArn,
-        credentialDurationSeconds: js.UndefOr[CredentialDurationSeconds] = js.undefined
+        credentialDurationSeconds: js.UndefOr[CredentialDurationSeconds] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
     ): CreateRoleAliasRequest = {
       val __obj = js.Dynamic.literal(
         "roleAlias" -> roleAlias.asInstanceOf[js.Any],
-        "roleArn"   -> roleArn.asInstanceOf[js.Any]
+        "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
       credentialDurationSeconds.foreach(__v =>
         __obj.updateDynamic("credentialDurationSeconds")(__v.asInstanceOf[js.Any])
       )
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRoleAliasRequest]
     }
   }
@@ -3967,9 +4264,9 @@ package iot {
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateScheduledAuditRequest = {
       val __obj = js.Dynamic.literal(
-        "frequency"          -> frequency.asInstanceOf[js.Any],
+        "frequency" -> frequency.asInstanceOf[js.Any],
         "scheduledAuditName" -> scheduledAuditName.asInstanceOf[js.Any],
-        "targetCheckNames"   -> targetCheckNames.asInstanceOf[js.Any]
+        "targetCheckNames" -> targetCheckNames.asInstanceOf[js.Any]
       )
 
       dayOfMonth.foreach(__v => __obj.updateDynamic("dayOfMonth")(__v.asInstanceOf[js.Any]))
@@ -3999,6 +4296,7 @@ package iot {
   trait CreateSecurityProfileRequest extends js.Object {
     var securityProfileName: SecurityProfileName
     var additionalMetricsToRetain: js.UndefOr[AdditionalMetricsToRetainList]
+    var additionalMetricsToRetainV2: js.UndefOr[AdditionalMetricsToRetainV2List]
     var alertTargets: js.UndefOr[AlertTargets]
     var behaviors: js.UndefOr[Behaviors]
     var securityProfileDescription: js.UndefOr[SecurityProfileDescription]
@@ -4010,6 +4308,7 @@ package iot {
     def apply(
         securityProfileName: SecurityProfileName,
         additionalMetricsToRetain: js.UndefOr[AdditionalMetricsToRetainList] = js.undefined,
+        additionalMetricsToRetainV2: js.UndefOr[AdditionalMetricsToRetainV2List] = js.undefined,
         alertTargets: js.UndefOr[AlertTargets] = js.undefined,
         behaviors: js.UndefOr[Behaviors] = js.undefined,
         securityProfileDescription: js.UndefOr[SecurityProfileDescription] = js.undefined,
@@ -4021,6 +4320,9 @@ package iot {
 
       additionalMetricsToRetain.foreach(__v =>
         __obj.updateDynamic("additionalMetricsToRetain")(__v.asInstanceOf[js.Any])
+      )
+      additionalMetricsToRetainV2.foreach(__v =>
+        __obj.updateDynamic("additionalMetricsToRetainV2")(__v.asInstanceOf[js.Any])
       )
       alertTargets.foreach(__v => __obj.updateDynamic("alertTargets")(__v.asInstanceOf[js.Any]))
       behaviors.foreach(__v => __obj.updateDynamic("behaviors")(__v.asInstanceOf[js.Any]))
@@ -4070,8 +4372,8 @@ package iot {
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateStreamRequest = {
       val __obj = js.Dynamic.literal(
-        "files"    -> files.asInstanceOf[js.Any],
-        "roleArn"  -> roleArn.asInstanceOf[js.Any],
+        "files" -> files.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
         "streamId" -> streamId.asInstanceOf[js.Any]
       )
 
@@ -4314,7 +4616,7 @@ package iot {
         tags: js.UndefOr[String] = js.undefined
     ): CreateTopicRuleRequest = {
       val __obj = js.Dynamic.literal(
-        "ruleName"         -> ruleName.asInstanceOf[js.Any],
+        "ruleName" -> ruleName.asInstanceOf[js.Any],
         "topicRulePayload" -> topicRulePayload.asInstanceOf[js.Any]
       )
 
@@ -4521,6 +4823,37 @@ package iot {
   }
 
   @js.native
+  trait DeleteDimensionRequest extends js.Object {
+    var name: DimensionName
+  }
+
+  object DeleteDimensionRequest {
+    @inline
+    def apply(
+        name: DimensionName
+    ): DeleteDimensionRequest = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteDimensionRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteDimensionResponse extends js.Object {}
+
+  object DeleteDimensionResponse {
+    @inline
+    def apply(
+    ): DeleteDimensionResponse = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeleteDimensionResponse]
+    }
+  }
+
+  @js.native
   trait DeleteDomainConfigurationRequest extends js.Object {
     var domainConfigurationName: DomainConfigurationName
   }
@@ -4603,8 +4936,8 @@ package iot {
     ): DeleteJobExecutionRequest = {
       val __obj = js.Dynamic.literal(
         "executionNumber" -> executionNumber.asInstanceOf[js.Any],
-        "jobId"           -> jobId.asInstanceOf[js.Any],
-        "thingName"       -> thingName.asInstanceOf[js.Any]
+        "jobId" -> jobId.asInstanceOf[js.Any],
+        "thingName" -> thingName.asInstanceOf[js.Any]
       )
 
       force.foreach(__v => __obj.updateDynamic("force")(__v.asInstanceOf[js.Any]))
@@ -4738,7 +5071,7 @@ package iot {
         policyVersionId: PolicyVersionId
     ): DeletePolicyVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "policyName"      -> policyName.asInstanceOf[js.Any],
+        "policyName" -> policyName.asInstanceOf[js.Any],
         "policyVersionId" -> policyVersionId.asInstanceOf[js.Any]
       )
 
@@ -4791,7 +5124,7 @@ package iot {
     ): DeleteProvisioningTemplateVersionRequest = {
       val __obj = js.Dynamic.literal(
         "templateName" -> templateName.asInstanceOf[js.Any],
-        "versionId"    -> versionId.asInstanceOf[js.Any]
+        "versionId" -> versionId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteProvisioningTemplateVersionRequest]
@@ -5586,6 +5919,55 @@ package iot {
   }
 
   @js.native
+  trait DescribeDimensionRequest extends js.Object {
+    var name: DimensionName
+  }
+
+  object DescribeDimensionRequest {
+    @inline
+    def apply(
+        name: DimensionName
+    ): DescribeDimensionRequest = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeDimensionRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeDimensionResponse extends js.Object {
+    var arn: js.UndefOr[DimensionArn]
+    var creationDate: js.UndefOr[Timestamp]
+    var lastModifiedDate: js.UndefOr[Timestamp]
+    var name: js.UndefOr[DimensionName]
+    var stringValues: js.UndefOr[DimensionStringValues]
+    var `type`: js.UndefOr[DimensionType]
+  }
+
+  object DescribeDimensionResponse {
+    @inline
+    def apply(
+        arn: js.UndefOr[DimensionArn] = js.undefined,
+        creationDate: js.UndefOr[Timestamp] = js.undefined,
+        lastModifiedDate: js.UndefOr[Timestamp] = js.undefined,
+        name: js.UndefOr[DimensionName] = js.undefined,
+        stringValues: js.UndefOr[DimensionStringValues] = js.undefined,
+        `type`: js.UndefOr[DimensionType] = js.undefined
+    ): DescribeDimensionResponse = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
+      lastModifiedDate.foreach(__v => __obj.updateDynamic("lastModifiedDate")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      stringValues.foreach(__v => __obj.updateDynamic("stringValues")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDimensionResponse]
+    }
+  }
+
+  @js.native
   trait DescribeDomainConfigurationRequest extends js.Object {
     var domainConfigurationName: ReservedDomainConfigurationName
   }
@@ -5770,7 +6152,7 @@ package iot {
         executionNumber: js.UndefOr[ExecutionNumber] = js.undefined
     ): DescribeJobExecutionRequest = {
       val __obj = js.Dynamic.literal(
-        "jobId"     -> jobId.asInstanceOf[js.Any],
+        "jobId" -> jobId.asInstanceOf[js.Any],
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
 
@@ -5912,6 +6294,7 @@ package iot {
     var description: js.UndefOr[TemplateDescription]
     var enabled: js.UndefOr[Enabled]
     var lastModifiedDate: js.UndefOr[DateType]
+    var preProvisioningHook: js.UndefOr[ProvisioningHook]
     var provisioningRoleArn: js.UndefOr[RoleArn]
     var templateArn: js.UndefOr[TemplateArn]
     var templateBody: js.UndefOr[TemplateBody]
@@ -5926,6 +6309,7 @@ package iot {
         description: js.UndefOr[TemplateDescription] = js.undefined,
         enabled: js.UndefOr[Enabled] = js.undefined,
         lastModifiedDate: js.UndefOr[DateType] = js.undefined,
+        preProvisioningHook: js.UndefOr[ProvisioningHook] = js.undefined,
         provisioningRoleArn: js.UndefOr[RoleArn] = js.undefined,
         templateArn: js.UndefOr[TemplateArn] = js.undefined,
         templateBody: js.UndefOr[TemplateBody] = js.undefined,
@@ -5937,6 +6321,7 @@ package iot {
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       enabled.foreach(__v => __obj.updateDynamic("enabled")(__v.asInstanceOf[js.Any]))
       lastModifiedDate.foreach(__v => __obj.updateDynamic("lastModifiedDate")(__v.asInstanceOf[js.Any]))
+      preProvisioningHook.foreach(__v => __obj.updateDynamic("preProvisioningHook")(__v.asInstanceOf[js.Any]))
       provisioningRoleArn.foreach(__v => __obj.updateDynamic("provisioningRoleArn")(__v.asInstanceOf[js.Any]))
       templateArn.foreach(__v => __obj.updateDynamic("templateArn")(__v.asInstanceOf[js.Any]))
       templateBody.foreach(__v => __obj.updateDynamic("templateBody")(__v.asInstanceOf[js.Any]))
@@ -5959,7 +6344,7 @@ package iot {
     ): DescribeProvisioningTemplateVersionRequest = {
       val __obj = js.Dynamic.literal(
         "templateName" -> templateName.asInstanceOf[js.Any],
-        "versionId"    -> versionId.asInstanceOf[js.Any]
+        "versionId" -> versionId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeProvisioningTemplateVersionRequest]
@@ -6095,6 +6480,7 @@ package iot {
   @js.native
   trait DescribeSecurityProfileResponse extends js.Object {
     var additionalMetricsToRetain: js.UndefOr[AdditionalMetricsToRetainList]
+    var additionalMetricsToRetainV2: js.UndefOr[AdditionalMetricsToRetainV2List]
     var alertTargets: js.UndefOr[AlertTargets]
     var behaviors: js.UndefOr[Behaviors]
     var creationDate: js.UndefOr[Timestamp]
@@ -6109,6 +6495,7 @@ package iot {
     @inline
     def apply(
         additionalMetricsToRetain: js.UndefOr[AdditionalMetricsToRetainList] = js.undefined,
+        additionalMetricsToRetainV2: js.UndefOr[AdditionalMetricsToRetainV2List] = js.undefined,
         alertTargets: js.UndefOr[AlertTargets] = js.undefined,
         behaviors: js.UndefOr[Behaviors] = js.undefined,
         creationDate: js.UndefOr[Timestamp] = js.undefined,
@@ -6121,6 +6508,9 @@ package iot {
       val __obj = js.Dynamic.literal()
       additionalMetricsToRetain.foreach(__v =>
         __obj.updateDynamic("additionalMetricsToRetain")(__v.asInstanceOf[js.Any])
+      )
+      additionalMetricsToRetainV2.foreach(__v =>
+        __obj.updateDynamic("additionalMetricsToRetainV2")(__v.asInstanceOf[js.Any])
       )
       alertTargets.foreach(__v => __obj.updateDynamic("alertTargets")(__v.asInstanceOf[js.Any]))
       behaviors.foreach(__v => __obj.updateDynamic("behaviors")(__v.asInstanceOf[js.Any]))
@@ -6444,7 +6834,7 @@ package iot {
     ): DetachPolicyRequest = {
       val __obj = js.Dynamic.literal(
         "policyName" -> policyName.asInstanceOf[js.Any],
-        "target"     -> target.asInstanceOf[js.Any]
+        "target" -> target.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DetachPolicyRequest]
@@ -6468,7 +6858,7 @@ package iot {
     ): DetachPrincipalPolicyRequest = {
       val __obj = js.Dynamic.literal(
         "policyName" -> policyName.asInstanceOf[js.Any],
-        "principal"  -> principal.asInstanceOf[js.Any]
+        "principal" -> principal.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DetachPrincipalPolicyRequest]
@@ -6488,7 +6878,7 @@ package iot {
         securityProfileTargetArn: SecurityProfileTargetArn
     ): DetachSecurityProfileRequest = {
       val __obj = js.Dynamic.literal(
-        "securityProfileName"      -> securityProfileName.asInstanceOf[js.Any],
+        "securityProfileName" -> securityProfileName.asInstanceOf[js.Any],
         "securityProfileTargetArn" -> securityProfileTargetArn.asInstanceOf[js.Any]
       )
 
@@ -6557,6 +6947,23 @@ package iot {
     val values = js.Object.freeze(js.Array(DEACTIVATE))
   }
 
+  @js.native
+  sealed trait DimensionType extends js.Any
+  object DimensionType extends js.Object {
+    val TOPIC_FILTER = "TOPIC_FILTER".asInstanceOf[DimensionType]
+
+    val values = js.Object.freeze(js.Array(TOPIC_FILTER))
+  }
+
+  @js.native
+  sealed trait DimensionValueOperator extends js.Any
+  object DimensionValueOperator extends js.Object {
+    val IN = "IN".asInstanceOf[DimensionValueOperator]
+    val NOT_IN = "NOT_IN".asInstanceOf[DimensionValueOperator]
+
+    val values = js.Object.freeze(js.Array(IN, NOT_IN))
+  }
+
   /**
     * The input for the DisableTopicRuleRequest operation.
     */
@@ -6581,7 +6988,7 @@ package iot {
   @js.native
   sealed trait DomainConfigurationStatus extends js.Any
   object DomainConfigurationStatus extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[DomainConfigurationStatus]
+    val ENABLED = "ENABLED".asInstanceOf[DomainConfigurationStatus]
     val DISABLED = "DISABLED".asInstanceOf[DomainConfigurationStatus]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -6619,8 +7026,8 @@ package iot {
   @js.native
   sealed trait DomainType extends js.Any
   object DomainType extends js.Object {
-    val ENDPOINT         = "ENDPOINT".asInstanceOf[DomainType]
-    val AWS_MANAGED      = "AWS_MANAGED".asInstanceOf[DomainType]
+    val ENDPOINT = "ENDPOINT".asInstanceOf[DomainType]
+    val AWS_MANAGED = "AWS_MANAGED".asInstanceOf[DomainType]
     val CUSTOMER_MANAGED = "CUSTOMER_MANAGED".asInstanceOf[DomainType]
 
     val values = js.Object.freeze(js.Array(ENDPOINT, AWS_MANAGED, CUSTOMER_MANAGED))
@@ -6629,8 +7036,8 @@ package iot {
   @js.native
   sealed trait DynamicGroupStatus extends js.Any
   object DynamicGroupStatus extends js.Object {
-    val ACTIVE     = "ACTIVE".asInstanceOf[DynamicGroupStatus]
-    val BUILDING   = "BUILDING".asInstanceOf[DynamicGroupStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[DynamicGroupStatus]
+    val BUILDING = "BUILDING".asInstanceOf[DynamicGroupStatus]
     val REBUILDING = "REBUILDING".asInstanceOf[DynamicGroupStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, BUILDING, REBUILDING))
@@ -6676,8 +7083,8 @@ package iot {
       val __obj = js.Dynamic.literal(
         "hashKeyField" -> hashKeyField.asInstanceOf[js.Any],
         "hashKeyValue" -> hashKeyValue.asInstanceOf[js.Any],
-        "roleArn"      -> roleArn.asInstanceOf[js.Any],
-        "tableName"    -> tableName.asInstanceOf[js.Any]
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
+        "tableName" -> tableName.asInstanceOf[js.Any]
       )
 
       hashKeyType.foreach(__v => __obj.updateDynamic("hashKeyType")(__v.asInstanceOf[js.Any]))
@@ -6772,10 +7179,10 @@ package iot {
     ): ElasticsearchAction = {
       val __obj = js.Dynamic.literal(
         "endpoint" -> endpoint.asInstanceOf[js.Any],
-        "id"       -> id.asInstanceOf[js.Any],
-        "index"    -> index.asInstanceOf[js.Any],
-        "roleArn"  -> roleArn.asInstanceOf[js.Any],
-        "type"     -> `type`.asInstanceOf[js.Any]
+        "id" -> id.asInstanceOf[js.Any],
+        "index" -> index.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ElasticsearchAction]
@@ -6798,7 +7205,7 @@ package iot {
         roleArnForLogging: RoleArn
     ): EnableIoTLoggingParams = {
       val __obj = js.Dynamic.literal(
-        "logLevel"          -> logLevel.asInstanceOf[js.Any],
+        "logLevel" -> logLevel.asInstanceOf[js.Any],
         "roleArnForLogging" -> roleArnForLogging.asInstanceOf[js.Any]
       )
 
@@ -6852,17 +7259,17 @@ package iot {
   @js.native
   sealed trait EventType extends js.Any
   object EventType extends js.Object {
-    val THING                  = "THING".asInstanceOf[EventType]
-    val THING_GROUP            = "THING_GROUP".asInstanceOf[EventType]
-    val THING_TYPE             = "THING_TYPE".asInstanceOf[EventType]
+    val THING = "THING".asInstanceOf[EventType]
+    val THING_GROUP = "THING_GROUP".asInstanceOf[EventType]
+    val THING_TYPE = "THING_TYPE".asInstanceOf[EventType]
     val THING_GROUP_MEMBERSHIP = "THING_GROUP_MEMBERSHIP".asInstanceOf[EventType]
-    val THING_GROUP_HIERARCHY  = "THING_GROUP_HIERARCHY".asInstanceOf[EventType]
+    val THING_GROUP_HIERARCHY = "THING_GROUP_HIERARCHY".asInstanceOf[EventType]
     val THING_TYPE_ASSOCIATION = "THING_TYPE_ASSOCIATION".asInstanceOf[EventType]
-    val JOB                    = "JOB".asInstanceOf[EventType]
-    val JOB_EXECUTION          = "JOB_EXECUTION".asInstanceOf[EventType]
-    val POLICY                 = "POLICY".asInstanceOf[EventType]
-    val CERTIFICATE            = "CERTIFICATE".asInstanceOf[EventType]
-    val CA_CERTIFICATE         = "CA_CERTIFICATE".asInstanceOf[EventType]
+    val JOB = "JOB".asInstanceOf[EventType]
+    val JOB_EXECUTION = "JOB_EXECUTION".asInstanceOf[EventType]
+    val POLICY = "POLICY".asInstanceOf[EventType]
+    val CERTIFICATE = "CERTIFICATE".asInstanceOf[EventType]
+    val CA_CERTIFICATE = "CA_CERTIFICATE".asInstanceOf[EventType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -6918,8 +7325,8 @@ package iot {
         rateIncreaseCriteria: RateIncreaseCriteria
     ): ExponentialRolloutRate = {
       val __obj = js.Dynamic.literal(
-        "baseRatePerMinute"    -> baseRatePerMinute.asInstanceOf[js.Any],
-        "incrementFactor"      -> incrementFactor.asInstanceOf[js.Any],
+        "baseRatePerMinute" -> baseRatePerMinute.asInstanceOf[js.Any],
+        "incrementFactor" -> incrementFactor.asInstanceOf[js.Any],
         "rateIncreaseCriteria" -> rateIncreaseCriteria.asInstanceOf[js.Any]
       )
 
@@ -6952,8 +7359,8 @@ package iot {
   @js.native
   sealed trait FieldType extends js.Any
   object FieldType extends js.Object {
-    val Number  = "Number".asInstanceOf[FieldType]
-    val String  = "String".asInstanceOf[FieldType]
+    val Number = "Number".asInstanceOf[FieldType]
+    val String = "String".asInstanceOf[FieldType]
     val Boolean = "Boolean".asInstanceOf[FieldType]
 
     val values = js.Object.freeze(js.Array(Number, String, Boolean))
@@ -7000,7 +7407,7 @@ package iot {
     ): FirehoseAction = {
       val __obj = js.Dynamic.literal(
         "deliveryStreamName" -> deliveryStreamName.asInstanceOf[js.Any],
-        "roleArn"            -> roleArn.asInstanceOf[js.Any]
+        "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
       separator.foreach(__v => __obj.updateDynamic("separator")(__v.asInstanceOf[js.Any]))
@@ -7351,7 +7758,7 @@ package iot {
         policyVersionId: PolicyVersionId
     ): GetPolicyVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "policyName"      -> policyName.asInstanceOf[js.Any],
+        "policyName" -> policyName.asInstanceOf[js.Any],
         "policyVersionId" -> policyVersionId.asInstanceOf[js.Any]
       )
 
@@ -7657,7 +8064,7 @@ package iot {
         value: HeaderValue
     ): HttpActionHeader = {
       val __obj = js.Dynamic.literal(
-        "key"   -> key.asInstanceOf[js.Any],
+        "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 
@@ -7787,8 +8194,8 @@ package iot {
   @js.native
   sealed trait IndexStatus extends js.Any
   object IndexStatus extends js.Object {
-    val ACTIVE     = "ACTIVE".asInstanceOf[IndexStatus]
-    val BUILDING   = "BUILDING".asInstanceOf[IndexStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[IndexStatus]
+    val BUILDING = "BUILDING".asInstanceOf[IndexStatus]
     val REBUILDING = "REBUILDING".asInstanceOf[IndexStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, BUILDING, REBUILDING))
@@ -7838,7 +8245,7 @@ package iot {
     ): IotEventsAction = {
       val __obj = js.Dynamic.literal(
         "inputName" -> inputName.asInstanceOf[js.Any],
-        "roleArn"   -> roleArn.asInstanceOf[js.Any]
+        "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
       messageId.foreach(__v => __obj.updateDynamic("messageId")(__v.asInstanceOf[js.Any]))
@@ -7863,7 +8270,7 @@ package iot {
     ): IotSiteWiseAction = {
       val __obj = js.Dynamic.literal(
         "putAssetPropertyValueEntries" -> putAssetPropertyValueEntries.asInstanceOf[js.Any],
-        "roleArn"                      -> roleArn.asInstanceOf[js.Any]
+        "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[IotSiteWiseAction]
@@ -7993,10 +8400,10 @@ package iot {
   @js.native
   sealed trait JobExecutionFailureType extends js.Any
   object JobExecutionFailureType extends js.Object {
-    val FAILED    = "FAILED".asInstanceOf[JobExecutionFailureType]
-    val REJECTED  = "REJECTED".asInstanceOf[JobExecutionFailureType]
+    val FAILED = "FAILED".asInstanceOf[JobExecutionFailureType]
+    val REJECTED = "REJECTED".asInstanceOf[JobExecutionFailureType]
     val TIMED_OUT = "TIMED_OUT".asInstanceOf[JobExecutionFailureType]
-    val ALL       = "ALL".asInstanceOf[JobExecutionFailureType]
+    val ALL = "ALL".asInstanceOf[JobExecutionFailureType]
 
     val values = js.Object.freeze(js.Array(FAILED, REJECTED, TIMED_OUT, ALL))
   }
@@ -8004,14 +8411,14 @@ package iot {
   @js.native
   sealed trait JobExecutionStatus extends js.Any
   object JobExecutionStatus extends js.Object {
-    val QUEUED      = "QUEUED".asInstanceOf[JobExecutionStatus]
+    val QUEUED = "QUEUED".asInstanceOf[JobExecutionStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobExecutionStatus]
-    val SUCCEEDED   = "SUCCEEDED".asInstanceOf[JobExecutionStatus]
-    val FAILED      = "FAILED".asInstanceOf[JobExecutionStatus]
-    val TIMED_OUT   = "TIMED_OUT".asInstanceOf[JobExecutionStatus]
-    val REJECTED    = "REJECTED".asInstanceOf[JobExecutionStatus]
-    val REMOVED     = "REMOVED".asInstanceOf[JobExecutionStatus]
-    val CANCELED    = "CANCELED".asInstanceOf[JobExecutionStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[JobExecutionStatus]
+    val FAILED = "FAILED".asInstanceOf[JobExecutionStatus]
+    val TIMED_OUT = "TIMED_OUT".asInstanceOf[JobExecutionStatus]
+    val REJECTED = "REJECTED".asInstanceOf[JobExecutionStatus]
+    val REMOVED = "REMOVED".asInstanceOf[JobExecutionStatus]
+    val CANCELED = "CANCELED".asInstanceOf[JobExecutionStatus]
 
     val values =
       js.Object.freeze(js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED))
@@ -8179,9 +8586,9 @@ package iot {
   @js.native
   sealed trait JobStatus extends js.Any
   object JobStatus extends js.Object {
-    val IN_PROGRESS          = "IN_PROGRESS".asInstanceOf[JobStatus]
-    val CANCELED             = "CANCELED".asInstanceOf[JobStatus]
-    val COMPLETED            = "COMPLETED".asInstanceOf[JobStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobStatus]
+    val CANCELED = "CANCELED".asInstanceOf[JobStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[JobStatus]
     val DELETION_IN_PROGRESS = "DELETION_IN_PROGRESS".asInstanceOf[JobStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, CANCELED, COMPLETED, DELETION_IN_PROGRESS))
@@ -8267,7 +8674,7 @@ package iot {
         partitionKey: js.UndefOr[PartitionKey] = js.undefined
     ): KinesisAction = {
       val __obj = js.Dynamic.literal(
-        "roleArn"    -> roleArn.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
         "streamName" -> streamName.asInstanceOf[js.Any]
       )
 
@@ -8460,7 +8867,7 @@ package iot {
     ): ListAuditMitigationActionsExecutionsRequest = {
       val __obj = js.Dynamic.literal(
         "findingId" -> findingId.asInstanceOf[js.Any],
-        "taskId"    -> taskId.asInstanceOf[js.Any]
+        "taskId" -> taskId.asInstanceOf[js.Any]
       )
 
       actionStatus.foreach(__v => __obj.updateDynamic("actionStatus")(__v.asInstanceOf[js.Any]))
@@ -8512,7 +8919,7 @@ package iot {
         taskStatus: js.UndefOr[AuditMitigationActionsTaskStatus] = js.undefined
     ): ListAuditMitigationActionsTasksRequest = {
       val __obj = js.Dynamic.literal(
-        "endTime"   -> endTime.asInstanceOf[js.Any],
+        "endTime" -> endTime.asInstanceOf[js.Any],
         "startTime" -> startTime.asInstanceOf[js.Any]
       )
 
@@ -8565,7 +8972,7 @@ package iot {
         taskType: js.UndefOr[AuditTaskType] = js.undefined
     ): ListAuditTasksRequest = {
       val __obj = js.Dynamic.literal(
-        "endTime"   -> endTime.asInstanceOf[js.Any],
+        "endTime" -> endTime.asInstanceOf[js.Any],
         "startTime" -> startTime.asInstanceOf[js.Any]
       )
 
@@ -8824,6 +9231,44 @@ package iot {
       certificates.foreach(__v => __obj.updateDynamic("certificates")(__v.asInstanceOf[js.Any]))
       nextMarker.foreach(__v => __obj.updateDynamic("nextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCertificatesResponse]
+    }
+  }
+
+  @js.native
+  trait ListDimensionsRequest extends js.Object {
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListDimensionsRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDimensionsRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDimensionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListDimensionsResponse extends js.Object {
+    var dimensionNames: js.UndefOr[DimensionNames]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListDimensionsResponse {
+    @inline
+    def apply(
+        dimensionNames: js.UndefOr[DimensionNames] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDimensionsResponse = {
+      val __obj = js.Dynamic.literal()
+      dimensionNames.foreach(__v => __obj.updateDynamic("dimensionNames")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDimensionsResponse]
     }
   }
 
@@ -9627,6 +10072,7 @@ package iot {
 
   @js.native
   trait ListSecurityProfilesRequest extends js.Object {
+    var dimensionName: js.UndefOr[DimensionName]
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
   }
@@ -9634,10 +10080,12 @@ package iot {
   object ListSecurityProfilesRequest {
     @inline
     def apply(
+        dimensionName: js.UndefOr[DimensionName] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListSecurityProfilesRequest = {
       val __obj = js.Dynamic.literal()
+      dimensionName.foreach(__v => __obj.updateDynamic("dimensionName")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSecurityProfilesRequest]
@@ -9980,7 +10428,7 @@ package iot {
     ): ListThingRegistrationTaskReportsRequest = {
       val __obj = js.Dynamic.literal(
         "reportType" -> reportType.asInstanceOf[js.Any],
-        "taskId"     -> taskId.asInstanceOf[js.Any]
+        "taskId" -> taskId.asInstanceOf[js.Any]
       )
 
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
@@ -10391,7 +10839,7 @@ package iot {
         thingName: js.UndefOr[DeviceDefenderThingName] = js.undefined
     ): ListViolationEventsRequest = {
       val __obj = js.Dynamic.literal(
-        "endTime"   -> endTime.asInstanceOf[js.Any],
+        "endTime" -> endTime.asInstanceOf[js.Any],
         "startTime" -> startTime.asInstanceOf[js.Any]
       )
 
@@ -10425,10 +10873,10 @@ package iot {
   @js.native
   sealed trait LogLevel extends js.Any
   object LogLevel extends js.Object {
-    val DEBUG    = "DEBUG".asInstanceOf[LogLevel]
-    val INFO     = "INFO".asInstanceOf[LogLevel]
-    val ERROR    = "ERROR".asInstanceOf[LogLevel]
-    val WARN     = "WARN".asInstanceOf[LogLevel]
+    val DEBUG = "DEBUG".asInstanceOf[LogLevel]
+    val INFO = "INFO".asInstanceOf[LogLevel]
+    val ERROR = "ERROR".asInstanceOf[LogLevel]
+    val WARN = "WARN".asInstanceOf[LogLevel]
     val DISABLED = "DISABLED".asInstanceOf[LogLevel]
 
     val values = js.Object.freeze(js.Array(DEBUG, INFO, ERROR, WARN, DISABLED))
@@ -10483,7 +10931,7 @@ package iot {
   @js.native
   sealed trait LogTargetType extends js.Any
   object LogTargetType extends js.Object {
-    val DEFAULT     = "DEFAULT".asInstanceOf[LogTargetType]
+    val DEFAULT = "DEFAULT".asInstanceOf[LogTargetType]
     val THING_GROUP = "THING_GROUP".asInstanceOf[LogTargetType]
 
     val values = js.Object.freeze(js.Array(DEFAULT, THING_GROUP))
@@ -10516,10 +10964,58 @@ package iot {
   @js.native
   sealed trait MessageFormat extends js.Any
   object MessageFormat extends js.Object {
-    val RAW  = "RAW".asInstanceOf[MessageFormat]
+    val RAW = "RAW".asInstanceOf[MessageFormat]
     val JSON = "JSON".asInstanceOf[MessageFormat]
 
     val values = js.Object.freeze(js.Array(RAW, JSON))
+  }
+
+  /**
+    * The dimension of a metric.
+    */
+  @js.native
+  trait MetricDimension extends js.Object {
+    var dimensionName: DimensionName
+    var operator: js.UndefOr[DimensionValueOperator]
+  }
+
+  object MetricDimension {
+    @inline
+    def apply(
+        dimensionName: DimensionName,
+        operator: js.UndefOr[DimensionValueOperator] = js.undefined
+    ): MetricDimension = {
+      val __obj = js.Dynamic.literal(
+        "dimensionName" -> dimensionName.asInstanceOf[js.Any]
+      )
+
+      operator.foreach(__v => __obj.updateDynamic("operator")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetricDimension]
+    }
+  }
+
+  /**
+    * The metric you want to retain. Dimensions are optional.
+    */
+  @js.native
+  trait MetricToRetain extends js.Object {
+    var metric: BehaviorMetric
+    var metricDimension: js.UndefOr[MetricDimension]
+  }
+
+  object MetricToRetain {
+    @inline
+    def apply(
+        metric: BehaviorMetric,
+        metricDimension: js.UndefOr[MetricDimension] = js.undefined
+    ): MetricToRetain = {
+      val __obj = js.Dynamic.literal(
+        "metric" -> metric.asInstanceOf[js.Any]
+      )
+
+      metricDimension.foreach(__v => __obj.updateDynamic("metricDimension")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetricToRetain]
+    }
   }
 
   /**
@@ -10647,12 +11143,12 @@ package iot {
   @js.native
   sealed trait MitigationActionType extends js.Any
   object MitigationActionType extends js.Object {
-    val UPDATE_DEVICE_CERTIFICATE      = "UPDATE_DEVICE_CERTIFICATE".asInstanceOf[MitigationActionType]
-    val UPDATE_CA_CERTIFICATE          = "UPDATE_CA_CERTIFICATE".asInstanceOf[MitigationActionType]
-    val ADD_THINGS_TO_THING_GROUP      = "ADD_THINGS_TO_THING_GROUP".asInstanceOf[MitigationActionType]
+    val UPDATE_DEVICE_CERTIFICATE = "UPDATE_DEVICE_CERTIFICATE".asInstanceOf[MitigationActionType]
+    val UPDATE_CA_CERTIFICATE = "UPDATE_CA_CERTIFICATE".asInstanceOf[MitigationActionType]
+    val ADD_THINGS_TO_THING_GROUP = "ADD_THINGS_TO_THING_GROUP".asInstanceOf[MitigationActionType]
     val REPLACE_DEFAULT_POLICY_VERSION = "REPLACE_DEFAULT_POLICY_VERSION".asInstanceOf[MitigationActionType]
-    val ENABLE_IOT_LOGGING             = "ENABLE_IOT_LOGGING".asInstanceOf[MitigationActionType]
-    val PUBLISH_FINDING_TO_SNS         = "PUBLISH_FINDING_TO_SNS".asInstanceOf[MitigationActionType]
+    val ENABLE_IOT_LOGGING = "ENABLE_IOT_LOGGING".asInstanceOf[MitigationActionType]
+    val PUBLISH_FINDING_TO_SNS = "PUBLISH_FINDING_TO_SNS".asInstanceOf[MitigationActionType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -10816,10 +11312,10 @@ package iot {
   @js.native
   sealed trait OTAUpdateStatus extends js.Any
   object OTAUpdateStatus extends js.Object {
-    val CREATE_PENDING     = "CREATE_PENDING".asInstanceOf[OTAUpdateStatus]
+    val CREATE_PENDING = "CREATE_PENDING".asInstanceOf[OTAUpdateStatus]
     val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[OTAUpdateStatus]
-    val CREATE_COMPLETE    = "CREATE_COMPLETE".asInstanceOf[OTAUpdateStatus]
-    val CREATE_FAILED      = "CREATE_FAILED".asInstanceOf[OTAUpdateStatus]
+    val CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[OTAUpdateStatus]
+    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[OTAUpdateStatus]
 
     val values = js.Object.freeze(js.Array(CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED))
   }
@@ -11014,6 +11510,30 @@ package iot {
   }
 
   /**
+    * Structure that contains <code>payloadVersion</code> and <code>targetArn</code>.
+    */
+  @js.native
+  trait ProvisioningHook extends js.Object {
+    var targetArn: TargetArn
+    var payloadVersion: js.UndefOr[PayloadVersion]
+  }
+
+  object ProvisioningHook {
+    @inline
+    def apply(
+        targetArn: TargetArn,
+        payloadVersion: js.UndefOr[PayloadVersion] = js.undefined
+    ): ProvisioningHook = {
+      val __obj = js.Dynamic.literal(
+        "targetArn" -> targetArn.asInstanceOf[js.Any]
+      )
+
+      payloadVersion.foreach(__v => __obj.updateDynamic("payloadVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProvisioningHook]
+    }
+  }
+
+  /**
     * A summary of information about a fleet provisioning template.
     */
   @js.native
@@ -11179,6 +11699,7 @@ package iot {
     var allowAutoRegistration: js.UndefOr[AllowAutoRegistration]
     var registrationConfig: js.UndefOr[RegistrationConfig]
     var setAsActive: js.UndefOr[SetAsActive]
+    var tags: js.UndefOr[TagList]
   }
 
   object RegisterCACertificateRequest {
@@ -11188,16 +11709,18 @@ package iot {
         verificationCertificate: CertificatePem,
         allowAutoRegistration: js.UndefOr[AllowAutoRegistration] = js.undefined,
         registrationConfig: js.UndefOr[RegistrationConfig] = js.undefined,
-        setAsActive: js.UndefOr[SetAsActive] = js.undefined
+        setAsActive: js.UndefOr[SetAsActive] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
     ): RegisterCACertificateRequest = {
       val __obj = js.Dynamic.literal(
-        "caCertificate"           -> caCertificate.asInstanceOf[js.Any],
+        "caCertificate" -> caCertificate.asInstanceOf[js.Any],
         "verificationCertificate" -> verificationCertificate.asInstanceOf[js.Any]
       )
 
       allowAutoRegistration.foreach(__v => __obj.updateDynamic("allowAutoRegistration")(__v.asInstanceOf[js.Any]))
       registrationConfig.foreach(__v => __obj.updateDynamic("registrationConfig")(__v.asInstanceOf[js.Any]))
       setAsActive.foreach(__v => __obj.updateDynamic("setAsActive")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterCACertificateRequest]
     }
   }
@@ -11273,6 +11796,46 @@ package iot {
       certificateArn.foreach(__v => __obj.updateDynamic("certificateArn")(__v.asInstanceOf[js.Any]))
       certificateId.foreach(__v => __obj.updateDynamic("certificateId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterCertificateResponse]
+    }
+  }
+
+  @js.native
+  trait RegisterCertificateWithoutCARequest extends js.Object {
+    var certificatePem: CertificatePem
+    var status: js.UndefOr[CertificateStatus]
+  }
+
+  object RegisterCertificateWithoutCARequest {
+    @inline
+    def apply(
+        certificatePem: CertificatePem,
+        status: js.UndefOr[CertificateStatus] = js.undefined
+    ): RegisterCertificateWithoutCARequest = {
+      val __obj = js.Dynamic.literal(
+        "certificatePem" -> certificatePem.asInstanceOf[js.Any]
+      )
+
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisterCertificateWithoutCARequest]
+    }
+  }
+
+  @js.native
+  trait RegisterCertificateWithoutCAResponse extends js.Object {
+    var certificateArn: js.UndefOr[CertificateArn]
+    var certificateId: js.UndefOr[CertificateId]
+  }
+
+  object RegisterCertificateWithoutCAResponse {
+    @inline
+    def apply(
+        certificateArn: js.UndefOr[CertificateArn] = js.undefined,
+        certificateId: js.UndefOr[CertificateId] = js.undefined
+    ): RegisterCertificateWithoutCAResponse = {
+      val __obj = js.Dynamic.literal()
+      certificateArn.foreach(__v => __obj.updateDynamic("certificateArn")(__v.asInstanceOf[js.Any]))
+      certificateId.foreach(__v => __obj.updateDynamic("certificateId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisterCertificateWithoutCAResponse]
     }
   }
 
@@ -11500,7 +12063,7 @@ package iot {
         topicRulePayload: TopicRulePayload
     ): ReplaceTopicRuleRequest = {
       val __obj = js.Dynamic.literal(
-        "ruleName"         -> ruleName.asInstanceOf[js.Any],
+        "ruleName" -> ruleName.asInstanceOf[js.Any],
         "topicRulePayload" -> topicRulePayload.asInstanceOf[js.Any]
       )
 
@@ -11511,7 +12074,7 @@ package iot {
   @js.native
   sealed trait ReportType extends js.Any
   object ReportType extends js.Object {
-    val ERRORS  = "ERRORS".asInstanceOf[ReportType]
+    val ERRORS = "ERRORS".asInstanceOf[ReportType]
     val RESULTS = "RESULTS".asInstanceOf[ReportType]
 
     val values = js.Object.freeze(js.Array(ERRORS, RESULTS))
@@ -11536,7 +12099,7 @@ package iot {
     ): RepublishAction = {
       val __obj = js.Dynamic.literal(
         "roleArn" -> roleArn.asInstanceOf[js.Any],
-        "topic"   -> topic.asInstanceOf[js.Any]
+        "topic" -> topic.asInstanceOf[js.Any]
       )
 
       qos.foreach(__v => __obj.updateDynamic("qos")(__v.asInstanceOf[js.Any]))
@@ -11587,14 +12150,14 @@ package iot {
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {
-    val DEVICE_CERTIFICATE    = "DEVICE_CERTIFICATE".asInstanceOf[ResourceType]
-    val CA_CERTIFICATE        = "CA_CERTIFICATE".asInstanceOf[ResourceType]
-    val IOT_POLICY            = "IOT_POLICY".asInstanceOf[ResourceType]
+    val DEVICE_CERTIFICATE = "DEVICE_CERTIFICATE".asInstanceOf[ResourceType]
+    val CA_CERTIFICATE = "CA_CERTIFICATE".asInstanceOf[ResourceType]
+    val IOT_POLICY = "IOT_POLICY".asInstanceOf[ResourceType]
     val COGNITO_IDENTITY_POOL = "COGNITO_IDENTITY_POOL".asInstanceOf[ResourceType]
-    val CLIENT_ID             = "CLIENT_ID".asInstanceOf[ResourceType]
-    val ACCOUNT_SETTINGS      = "ACCOUNT_SETTINGS".asInstanceOf[ResourceType]
-    val ROLE_ALIAS            = "ROLE_ALIAS".asInstanceOf[ResourceType]
-    val IAM_ROLE              = "IAM_ROLE".asInstanceOf[ResourceType]
+    val CLIENT_ID = "CLIENT_ID".asInstanceOf[ResourceType]
+    val ACCOUNT_SETTINGS = "ACCOUNT_SETTINGS".asInstanceOf[ResourceType]
+    val ROLE_ALIAS = "ROLE_ALIAS".asInstanceOf[ResourceType]
+    val IAM_ROLE = "IAM_ROLE".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -11670,8 +12233,8 @@ package iot {
     ): S3Action = {
       val __obj = js.Dynamic.literal(
         "bucketName" -> bucketName.asInstanceOf[js.Any],
-        "key"        -> key.asInstanceOf[js.Any],
-        "roleArn"    -> roleArn.asInstanceOf[js.Any]
+        "key" -> key.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
       cannedAcl.foreach(__v => __obj.updateDynamic("cannedAcl")(__v.asInstanceOf[js.Any]))
@@ -11743,7 +12306,7 @@ package iot {
     ): SalesforceAction = {
       val __obj = js.Dynamic.literal(
         "token" -> token.asInstanceOf[js.Any],
-        "url"   -> url.asInstanceOf[js.Any]
+        "url" -> url.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[SalesforceAction]
@@ -11849,7 +12412,7 @@ package iot {
         name: SecurityProfileName
     ): SecurityProfileIdentifier = {
       val __obj = js.Dynamic.literal(
-        "arn"  -> arn.asInstanceOf[js.Any],
+        "arn" -> arn.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any]
       )
 
@@ -11906,7 +12469,7 @@ package iot {
   sealed trait ServerCertificateStatus extends js.Any
   object ServerCertificateStatus extends js.Object {
     val INVALID = "INVALID".asInstanceOf[ServerCertificateStatus]
-    val VALID   = "VALID".asInstanceOf[ServerCertificateStatus]
+    val VALID = "VALID".asInstanceOf[ServerCertificateStatus]
 
     val values = js.Object.freeze(js.Array(INVALID, VALID))
   }
@@ -11941,9 +12504,9 @@ package iot {
   @js.native
   sealed trait ServiceType extends js.Any
   object ServiceType extends js.Object {
-    val DATA                = "DATA".asInstanceOf[ServiceType]
+    val DATA = "DATA".asInstanceOf[ServiceType]
     val CREDENTIAL_PROVIDER = "CREDENTIAL_PROVIDER".asInstanceOf[ServiceType]
-    val JOBS                = "JOBS".asInstanceOf[ServiceType]
+    val JOBS = "JOBS".asInstanceOf[ServiceType]
 
     val values = js.Object.freeze(js.Array(DATA, CREDENTIAL_PROVIDER, JOBS))
   }
@@ -12001,7 +12564,7 @@ package iot {
         policyVersionId: PolicyVersionId
     ): SetDefaultPolicyVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "policyName"      -> policyName.asInstanceOf[js.Any],
+        "policyName" -> policyName.asInstanceOf[js.Any],
         "policyVersionId" -> policyVersionId.asInstanceOf[js.Any]
       )
 
@@ -12043,7 +12606,7 @@ package iot {
         logTarget: LogTarget
     ): SetV2LoggingLevelRequest = {
       val __obj = js.Dynamic.literal(
-        "logLevel"  -> logLevel.asInstanceOf[js.Any],
+        "logLevel" -> logLevel.asInstanceOf[js.Any],
         "logTarget" -> logTarget.asInstanceOf[js.Any]
       )
 
@@ -12091,8 +12654,8 @@ package iot {
         signingRegion: SigningRegion
     ): SigV4Authorization = {
       val __obj = js.Dynamic.literal(
-        "roleArn"       -> roleArn.asInstanceOf[js.Any],
-        "serviceName"   -> serviceName.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
+        "serviceName" -> serviceName.asInstanceOf[js.Any],
         "signingRegion" -> signingRegion.asInstanceOf[js.Any]
       )
 
@@ -12143,7 +12706,7 @@ package iot {
         messageFormat: js.UndefOr[MessageFormat] = js.undefined
     ): SnsAction = {
       val __obj = js.Dynamic.literal(
-        "roleArn"   -> roleArn.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
         "targetArn" -> targetArn.asInstanceOf[js.Any]
       )
 
@@ -12171,7 +12734,7 @@ package iot {
     ): SqsAction = {
       val __obj = js.Dynamic.literal(
         "queueUrl" -> queueUrl.asInstanceOf[js.Any],
-        "roleArn"  -> roleArn.asInstanceOf[js.Any]
+        "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
       useBase64.foreach(__v => __obj.updateDynamic("useBase64")(__v.asInstanceOf[js.Any]))
@@ -12197,9 +12760,9 @@ package iot {
     ): StartAuditMitigationActionsTaskRequest = {
       val __obj = js.Dynamic.literal(
         "auditCheckToActionsMapping" -> auditCheckToActionsMapping.asInstanceOf[js.Any],
-        "clientRequestToken"         -> clientRequestToken.asInstanceOf[js.Any],
-        "target"                     -> target.asInstanceOf[js.Any],
-        "taskId"                     -> taskId.asInstanceOf[js.Any]
+        "clientRequestToken" -> clientRequestToken.asInstanceOf[js.Any],
+        "target" -> target.asInstanceOf[js.Any],
+        "taskId" -> taskId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[StartAuditMitigationActionsTaskRequest]
@@ -12299,9 +12862,9 @@ package iot {
     ): StartThingRegistrationTaskRequest = {
       val __obj = js.Dynamic.literal(
         "inputFileBucket" -> inputFileBucket.asInstanceOf[js.Any],
-        "inputFileKey"    -> inputFileKey.asInstanceOf[js.Any],
-        "roleArn"         -> roleArn.asInstanceOf[js.Any],
-        "templateBody"    -> templateBody.asInstanceOf[js.Any]
+        "inputFileKey" -> inputFileKey.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
+        "templateBody" -> templateBody.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[StartThingRegistrationTaskRequest]
@@ -12387,9 +12950,9 @@ package iot {
   sealed trait Status extends js.Any
   object Status extends js.Object {
     val InProgress = "InProgress".asInstanceOf[Status]
-    val Completed  = "Completed".asInstanceOf[Status]
-    val Failed     = "Failed".asInstanceOf[Status]
-    val Cancelled  = "Cancelled".asInstanceOf[Status]
+    val Completed = "Completed".asInstanceOf[Status]
+    val Failed = "Failed".asInstanceOf[Status]
+    val Cancelled = "Cancelled".asInstanceOf[Status]
     val Cancelling = "Cancelling".asInstanceOf[Status]
 
     val values = js.Object.freeze(js.Array(InProgress, Completed, Failed, Cancelled, Cancelling))
@@ -12413,7 +12976,7 @@ package iot {
         executionNamePrefix: js.UndefOr[ExecutionNamePrefix] = js.undefined
     ): StepFunctionsAction = {
       val __obj = js.Dynamic.literal(
-        "roleArn"          -> roleArn.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
         "stateMachineName" -> stateMachineName.asInstanceOf[js.Any]
       )
 
@@ -12570,18 +13133,20 @@ package iot {
     */
   @js.native
   trait Tag extends js.Object {
-    var Key: js.UndefOr[TagKey]
+    var Key: TagKey
     var Value: js.UndefOr[TagValue]
   }
 
   object Tag {
     @inline
     def apply(
-        Key: js.UndefOr[TagKey] = js.undefined,
+        Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val __obj = js.Dynamic.literal()
-      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal(
+        "Key" -> Key.asInstanceOf[js.Any]
+      )
+
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tag]
     }
@@ -12601,7 +13166,7 @@ package iot {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -12625,7 +13190,7 @@ package iot {
   sealed trait TargetSelection extends js.Any
   object TargetSelection extends js.Object {
     val CONTINUOUS = "CONTINUOUS".asInstanceOf[TargetSelection]
-    val SNAPSHOT   = "SNAPSHOT".asInstanceOf[TargetSelection]
+    val SNAPSHOT = "SNAPSHOT".asInstanceOf[TargetSelection]
 
     val values = js.Object.freeze(js.Array(CONTINUOUS, SNAPSHOT))
   }
@@ -12866,7 +13431,7 @@ package iot {
   @js.native
   sealed trait ThingConnectivityIndexingMode extends js.Any
   object ThingConnectivityIndexingMode extends js.Object {
-    val OFF    = "OFF".asInstanceOf[ThingConnectivityIndexingMode]
+    val OFF = "OFF".asInstanceOf[ThingConnectivityIndexingMode]
     val STATUS = "STATUS".asInstanceOf[ThingConnectivityIndexingMode]
 
     val values = js.Object.freeze(js.Array(OFF, STATUS))
@@ -12971,7 +13536,7 @@ package iot {
   sealed trait ThingGroupIndexingMode extends js.Any
   object ThingGroupIndexingMode extends js.Object {
     val OFF = "OFF".asInstanceOf[ThingGroupIndexingMode]
-    val ON  = "ON".asInstanceOf[ThingGroupIndexingMode]
+    val ON = "ON".asInstanceOf[ThingGroupIndexingMode]
 
     val values = js.Object.freeze(js.Array(OFF, ON))
   }
@@ -13058,8 +13623,8 @@ package iot {
   @js.native
   sealed trait ThingIndexingMode extends js.Any
   object ThingIndexingMode extends js.Object {
-    val OFF                 = "OFF".asInstanceOf[ThingIndexingMode]
-    val REGISTRY            = "REGISTRY".asInstanceOf[ThingIndexingMode]
+    val OFF = "OFF".asInstanceOf[ThingIndexingMode]
+    val REGISTRY = "REGISTRY".asInstanceOf[ThingIndexingMode]
     val REGISTRY_AND_SHADOW = "REGISTRY_AND_SHADOW".asInstanceOf[ThingIndexingMode]
 
     val values = js.Object.freeze(js.Array(OFF, REGISTRY, REGISTRY_AND_SHADOW))
@@ -13270,10 +13835,10 @@ package iot {
   @js.native
   sealed trait TopicRuleDestinationStatus extends js.Any
   object TopicRuleDestinationStatus extends js.Object {
-    val ENABLED     = "ENABLED".asInstanceOf[TopicRuleDestinationStatus]
+    val ENABLED = "ENABLED".asInstanceOf[TopicRuleDestinationStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[TopicRuleDestinationStatus]
-    val DISABLED    = "DISABLED".asInstanceOf[TopicRuleDestinationStatus]
-    val ERROR       = "ERROR".asInstanceOf[TopicRuleDestinationStatus]
+    val DISABLED = "DISABLED".asInstanceOf[TopicRuleDestinationStatus]
+    val ERROR = "ERROR".asInstanceOf[TopicRuleDestinationStatus]
 
     val values = js.Object.freeze(js.Array(ENABLED, IN_PROGRESS, DISABLED, ERROR))
   }
@@ -13362,7 +13927,7 @@ package iot {
     ): TopicRulePayload = {
       val __obj = js.Dynamic.literal(
         "actions" -> actions.asInstanceOf[js.Any],
-        "sql"     -> sql.asInstanceOf[js.Any]
+        "sql" -> sql.asInstanceOf[js.Any]
       )
 
       awsIotSqlVersion.foreach(__v => __obj.updateDynamic("awsIotSqlVersion")(__v.asInstanceOf[js.Any]))
@@ -13391,7 +13956,7 @@ package iot {
         transferMessage: js.UndefOr[Message] = js.undefined
     ): TransferCertificateRequest = {
       val __obj = js.Dynamic.literal(
-        "certificateId"    -> certificateId.asInstanceOf[js.Any],
+        "certificateId" -> certificateId.asInstanceOf[js.Any],
         "targetAwsAccount" -> targetAwsAccount.asInstanceOf[js.Any]
       )
 
@@ -13466,7 +14031,7 @@ package iot {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -13587,7 +14152,7 @@ package iot {
         expectedVersion: js.UndefOr[OptionalVersion] = js.undefined
     ): UpdateBillingGroupRequest = {
       val __obj = js.Dynamic.literal(
-        "billingGroupName"       -> billingGroupName.asInstanceOf[js.Any],
+        "billingGroupName" -> billingGroupName.asInstanceOf[js.Any],
         "billingGroupProperties" -> billingGroupProperties.asInstanceOf[js.Any]
       )
 
@@ -13685,7 +14250,7 @@ package iot {
     ): UpdateCertificateRequest = {
       val __obj = js.Dynamic.literal(
         "certificateId" -> certificateId.asInstanceOf[js.Any],
-        "newStatus"     -> newStatus.asInstanceOf[js.Any]
+        "newStatus" -> newStatus.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateCertificateRequest]
@@ -13710,6 +14275,58 @@ package iot {
       )
 
       __obj.asInstanceOf[UpdateDeviceCertificateParams]
+    }
+  }
+
+  @js.native
+  trait UpdateDimensionRequest extends js.Object {
+    var name: DimensionName
+    var stringValues: DimensionStringValues
+  }
+
+  object UpdateDimensionRequest {
+    @inline
+    def apply(
+        name: DimensionName,
+        stringValues: DimensionStringValues
+    ): UpdateDimensionRequest = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any],
+        "stringValues" -> stringValues.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateDimensionRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateDimensionResponse extends js.Object {
+    var arn: js.UndefOr[DimensionArn]
+    var creationDate: js.UndefOr[Timestamp]
+    var lastModifiedDate: js.UndefOr[Timestamp]
+    var name: js.UndefOr[DimensionName]
+    var stringValues: js.UndefOr[DimensionStringValues]
+    var `type`: js.UndefOr[DimensionType]
+  }
+
+  object UpdateDimensionResponse {
+    @inline
+    def apply(
+        arn: js.UndefOr[DimensionArn] = js.undefined,
+        creationDate: js.UndefOr[Timestamp] = js.undefined,
+        lastModifiedDate: js.UndefOr[Timestamp] = js.undefined,
+        name: js.UndefOr[DimensionName] = js.undefined,
+        stringValues: js.UndefOr[DimensionStringValues] = js.undefined,
+        `type`: js.UndefOr[DimensionType] = js.undefined
+    ): UpdateDimensionResponse = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
+      lastModifiedDate.foreach(__v => __obj.updateDynamic("lastModifiedDate")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      stringValues.foreach(__v => __obj.updateDynamic("stringValues")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDimensionResponse]
     }
   }
 
@@ -13782,7 +14399,7 @@ package iot {
         queryVersion: js.UndefOr[QueryVersion] = js.undefined
     ): UpdateDynamicThingGroupRequest = {
       val __obj = js.Dynamic.literal(
-        "thingGroupName"       -> thingGroupName.asInstanceOf[js.Any],
+        "thingGroupName" -> thingGroupName.asInstanceOf[js.Any],
         "thingGroupProperties" -> thingGroupProperties.asInstanceOf[js.Any]
       )
 
@@ -13959,7 +14576,9 @@ package iot {
     var defaultVersionId: js.UndefOr[TemplateVersionId]
     var description: js.UndefOr[TemplateDescription]
     var enabled: js.UndefOr[Enabled]
+    var preProvisioningHook: js.UndefOr[ProvisioningHook]
     var provisioningRoleArn: js.UndefOr[RoleArn]
+    var removePreProvisioningHook: js.UndefOr[RemoveHook]
   }
 
   object UpdateProvisioningTemplateRequest {
@@ -13969,7 +14588,9 @@ package iot {
         defaultVersionId: js.UndefOr[TemplateVersionId] = js.undefined,
         description: js.UndefOr[TemplateDescription] = js.undefined,
         enabled: js.UndefOr[Enabled] = js.undefined,
-        provisioningRoleArn: js.UndefOr[RoleArn] = js.undefined
+        preProvisioningHook: js.UndefOr[ProvisioningHook] = js.undefined,
+        provisioningRoleArn: js.UndefOr[RoleArn] = js.undefined,
+        removePreProvisioningHook: js.UndefOr[RemoveHook] = js.undefined
     ): UpdateProvisioningTemplateRequest = {
       val __obj = js.Dynamic.literal(
         "templateName" -> templateName.asInstanceOf[js.Any]
@@ -13978,7 +14599,11 @@ package iot {
       defaultVersionId.foreach(__v => __obj.updateDynamic("defaultVersionId")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       enabled.foreach(__v => __obj.updateDynamic("enabled")(__v.asInstanceOf[js.Any]))
+      preProvisioningHook.foreach(__v => __obj.updateDynamic("preProvisioningHook")(__v.asInstanceOf[js.Any]))
       provisioningRoleArn.foreach(__v => __obj.updateDynamic("provisioningRoleArn")(__v.asInstanceOf[js.Any]))
+      removePreProvisioningHook.foreach(__v =>
+        __obj.updateDynamic("removePreProvisioningHook")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[UpdateProvisioningTemplateRequest]
     }
   }
@@ -14091,6 +14716,7 @@ package iot {
   trait UpdateSecurityProfileRequest extends js.Object {
     var securityProfileName: SecurityProfileName
     var additionalMetricsToRetain: js.UndefOr[AdditionalMetricsToRetainList]
+    var additionalMetricsToRetainV2: js.UndefOr[AdditionalMetricsToRetainV2List]
     var alertTargets: js.UndefOr[AlertTargets]
     var behaviors: js.UndefOr[Behaviors]
     var deleteAdditionalMetricsToRetain: js.UndefOr[DeleteAdditionalMetricsToRetain]
@@ -14105,6 +14731,7 @@ package iot {
     def apply(
         securityProfileName: SecurityProfileName,
         additionalMetricsToRetain: js.UndefOr[AdditionalMetricsToRetainList] = js.undefined,
+        additionalMetricsToRetainV2: js.UndefOr[AdditionalMetricsToRetainV2List] = js.undefined,
         alertTargets: js.UndefOr[AlertTargets] = js.undefined,
         behaviors: js.UndefOr[Behaviors] = js.undefined,
         deleteAdditionalMetricsToRetain: js.UndefOr[DeleteAdditionalMetricsToRetain] = js.undefined,
@@ -14119,6 +14746,9 @@ package iot {
 
       additionalMetricsToRetain.foreach(__v =>
         __obj.updateDynamic("additionalMetricsToRetain")(__v.asInstanceOf[js.Any])
+      )
+      additionalMetricsToRetainV2.foreach(__v =>
+        __obj.updateDynamic("additionalMetricsToRetainV2")(__v.asInstanceOf[js.Any])
       )
       alertTargets.foreach(__v => __obj.updateDynamic("alertTargets")(__v.asInstanceOf[js.Any]))
       behaviors.foreach(__v => __obj.updateDynamic("behaviors")(__v.asInstanceOf[js.Any]))
@@ -14138,6 +14768,7 @@ package iot {
   @js.native
   trait UpdateSecurityProfileResponse extends js.Object {
     var additionalMetricsToRetain: js.UndefOr[AdditionalMetricsToRetainList]
+    var additionalMetricsToRetainV2: js.UndefOr[AdditionalMetricsToRetainV2List]
     var alertTargets: js.UndefOr[AlertTargets]
     var behaviors: js.UndefOr[Behaviors]
     var creationDate: js.UndefOr[Timestamp]
@@ -14152,6 +14783,7 @@ package iot {
     @inline
     def apply(
         additionalMetricsToRetain: js.UndefOr[AdditionalMetricsToRetainList] = js.undefined,
+        additionalMetricsToRetainV2: js.UndefOr[AdditionalMetricsToRetainV2List] = js.undefined,
         alertTargets: js.UndefOr[AlertTargets] = js.undefined,
         behaviors: js.UndefOr[Behaviors] = js.undefined,
         creationDate: js.UndefOr[Timestamp] = js.undefined,
@@ -14164,6 +14796,9 @@ package iot {
       val __obj = js.Dynamic.literal()
       additionalMetricsToRetain.foreach(__v =>
         __obj.updateDynamic("additionalMetricsToRetain")(__v.asInstanceOf[js.Any])
+      )
+      additionalMetricsToRetainV2.foreach(__v =>
+        __obj.updateDynamic("additionalMetricsToRetainV2")(__v.asInstanceOf[js.Any])
       )
       alertTargets.foreach(__v => __obj.updateDynamic("alertTargets")(__v.asInstanceOf[js.Any]))
       behaviors.foreach(__v => __obj.updateDynamic("behaviors")(__v.asInstanceOf[js.Any]))
@@ -14246,7 +14881,7 @@ package iot {
         expectedVersion: js.UndefOr[OptionalVersion] = js.undefined
     ): UpdateThingGroupRequest = {
       val __obj = js.Dynamic.literal(
-        "thingGroupName"       -> thingGroupName.asInstanceOf[js.Any],
+        "thingGroupName" -> thingGroupName.asInstanceOf[js.Any],
         "thingGroupProperties" -> thingGroupProperties.asInstanceOf[js.Any]
       )
 
@@ -14371,7 +15006,7 @@ package iot {
         status: TopicRuleDestinationStatus
     ): UpdateTopicRuleDestinationRequest = {
       val __obj = js.Dynamic.literal(
-        "arn"    -> arn.asInstanceOf[js.Any],
+        "arn" -> arn.asInstanceOf[js.Any],
         "status" -> status.asInstanceOf[js.Any]
       )
 
@@ -14488,8 +15123,8 @@ package iot {
   @js.native
   sealed trait ViolationEventType extends js.Any
   object ViolationEventType extends js.Object {
-    val `in-alarm`          = "in-alarm".asInstanceOf[ViolationEventType]
-    val `alarm-cleared`     = "alarm-cleared".asInstanceOf[ViolationEventType]
+    val `in-alarm` = "in-alarm".asInstanceOf[ViolationEventType]
+    val `alarm-cleared` = "alarm-cleared".asInstanceOf[ViolationEventType]
     val `alarm-invalidated` = "alarm-invalidated".asInstanceOf[ViolationEventType]
 
     val values = js.Object.freeze(js.Array(`in-alarm`, `alarm-cleared`, `alarm-invalidated`))

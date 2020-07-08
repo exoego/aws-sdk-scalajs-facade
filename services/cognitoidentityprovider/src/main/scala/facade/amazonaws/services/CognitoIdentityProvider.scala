@@ -7,133 +7,132 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object cognitoidentityprovider {
-  type AWSAccountIdType                             = String
-  type AccountTakeoverActionNotifyType              = Boolean
+  type AWSAccountIdType = String
+  type AccountTakeoverActionNotifyType = Boolean
   type AdminCreateUserUnusedAccountValidityDaysType = Int
-  type AliasAttributesListType                      = js.Array[AliasAttributeType]
-  type ArnType                                      = String
-  type AttributeListType                            = js.Array[AttributeType]
-  type AttributeMappingKeyType                      = String
-  type AttributeMappingType                         = js.Dictionary[StringType]
-  type AttributeNameListType                        = js.Array[AttributeNameType]
-  type AttributeNameType                            = String
-  type AttributeValueType                           = String
-  type AuthEventsType                               = js.Array[AuthEventType]
-  type AuthParametersType                           = js.Dictionary[AuthParametersValueType]
-  type AuthParametersValueType                      = String
-  type BlockedIPRangeListType                       = js.Array[StringType]
-  type BooleanType                                  = Boolean
-  type CSSType                                      = String
-  type CSSVersionType                               = String
-  type CallbackURLsListType                         = js.Array[RedirectUrlType]
-  type ChallengeParametersType                      = js.Dictionary[StringType]
-  type ChallengeResponseListType                    = js.Array[ChallengeResponseType]
-  type ChallengeResponsesType                       = js.Dictionary[StringType]
-  type ClientIdType                                 = String
-  type ClientMetadataType                           = js.Dictionary[StringType]
-  type ClientNameType                               = String
-  type ClientPermissionListType                     = js.Array[ClientPermissionType]
-  type ClientPermissionType                         = String
-  type ClientSecretType                             = String
-  type CodeDeliveryDetailsListType                  = js.Array[CodeDeliveryDetailsType]
-  type CompletionMessageType                        = String
-  type ConfirmationCodeType                         = String
-  type CustomAttributeNameType                      = String
-  type CustomAttributesListType                     = js.Array[SchemaAttributeType]
-  type DateType                                     = js.Date
-  type DeliveryMediumListType                       = js.Array[DeliveryMediumType]
-  type DescriptionType                              = String
-  type DeviceKeyType                                = String
-  type DeviceListType                               = js.Array[DeviceType]
-  type DeviceNameType                               = String
-  type DomainType                                   = String
-  type DomainVersionType                            = String
-  type EmailAddressType                             = String
-  type EmailNotificationBodyType                    = String
-  type EmailNotificationSubjectType                 = String
-  type EmailVerificationMessageByLinkType           = String
-  type EmailVerificationMessageType                 = String
-  type EmailVerificationSubjectByLinkType           = String
-  type EmailVerificationSubjectType                 = String
-  type EventFiltersType                             = js.Array[EventFilterType]
-  type EventIdType                                  = String
-  type ExplicitAuthFlowsListType                    = js.Array[ExplicitAuthFlowsType]
-  type ForceAliasCreation                           = Boolean
-  type GenerateSecret                               = Boolean
-  type GroupListType                                = js.Array[GroupType]
-  type GroupNameType                                = String
-  type HexStringType                                = String
-  type HttpHeaderList                               = js.Array[HttpHeader]
-  type IdpIdentifierType                            = String
-  type IdpIdentifiersListType                       = js.Array[IdpIdentifierType]
-  type ImageFileType                                = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type ImageUrlType                                 = String
-  type IntegerType                                  = Int
-  type ListOfStringTypes                            = js.Array[StringType]
-  type ListProvidersLimitType                       = Int
-  type ListResourceServersLimitType                 = Int
-  type LogoutURLsListType                           = js.Array[RedirectUrlType]
-  type LongType                                     = Double
-  type MFAOptionListType                            = js.Array[MFAOptionType]
-  type OAuthFlowsType                               = js.Array[OAuthFlowType]
-  type PaginationKey                                = String
-  type PaginationKeyType                            = String
-  type PasswordPolicyMinLengthType                  = Int
-  type PasswordType                                 = String
-  type PoolQueryLimitType                           = Int
-  type PreSignedUrlType                             = String
-  type PrecedenceType                               = Int
-  type PriorityType                                 = Int
-  type ProviderDetailsType                          = js.Dictionary[StringType]
-  type ProviderNameType                             = String
-  type ProviderNameTypeV1                           = String
-  type ProvidersListType                            = js.Array[ProviderDescription]
-  type QueryLimit                                   = Int
-  type QueryLimitType                               = Int
-  type RecoveryMechanismsType                       = js.Array[RecoveryOptionType]
-  type RedirectUrlType                              = String
-  type RefreshTokenValidityType                     = Int
-  type ResourceServerIdentifierType                 = String
-  type ResourceServerNameType                       = String
-  type ResourceServerScopeDescriptionType           = String
-  type ResourceServerScopeListType                  = js.Array[ResourceServerScopeType]
-  type ResourceServerScopeNameType                  = String
-  type ResourceServersListType                      = js.Array[ResourceServerType]
-  type S3BucketType                                 = String
-  type SESConfigurationSet                          = String
-  type SchemaAttributesListType                     = js.Array[SchemaAttributeType]
-  type ScopeListType                                = js.Array[ScopeType]
-  type ScopeType                                    = String
-  type SearchPaginationTokenType                    = String
-  type SearchedAttributeNamesListType               = js.Array[AttributeNameType]
-  type SecretCodeType                               = String
-  type SecretHashType                               = String
-  type SessionType                                  = String
-  type SkippedIPRangeListType                       = js.Array[StringType]
-  type SmsVerificationMessageType                   = String
-  type SoftwareTokenMFAUserCodeType                 = String
-  type StringType                                   = String
-  type SupportedIdentityProvidersListType           = js.Array[ProviderNameType]
-  type TagKeysType                                  = String
-  type TagValueType                                 = String
-  type TemporaryPasswordValidityDaysType            = Int
-  type TokenModelType                               = String
-  type UserFilterType                               = String
-  type UserImportJobIdType                          = String
-  type UserImportJobNameType                        = String
-  type UserImportJobsListType                       = js.Array[UserImportJobType]
-  type UserMFASettingListType                       = js.Array[StringType]
-  type UserPoolClientListType                       = js.Array[UserPoolClientDescription]
-  type UserPoolIdType                               = String
-  type UserPoolListType                             = js.Array[UserPoolDescriptionType]
-  type UserPoolNameType                             = String
-  type UserPoolTagsListType                         = js.Array[TagKeysType]
-  type UserPoolTagsType                             = js.Dictionary[TagValueType]
-  type UsernameAttributesListType                   = js.Array[UsernameAttributeType]
-  type UsernameType                                 = String
-  type UsersListType                                = js.Array[UserType]
-  type VerifiedAttributesListType                   = js.Array[VerifiedAttributeType]
-  type WrappedBooleanType                           = Boolean
+  type AliasAttributesListType = js.Array[AliasAttributeType]
+  type ArnType = String
+  type AttributeListType = js.Array[AttributeType]
+  type AttributeMappingKeyType = String
+  type AttributeMappingType = js.Dictionary[StringType]
+  type AttributeNameListType = js.Array[AttributeNameType]
+  type AttributeNameType = String
+  type AttributeValueType = String
+  type AuthEventsType = js.Array[AuthEventType]
+  type AuthParametersType = js.Dictionary[StringType]
+  type BlockedIPRangeListType = js.Array[StringType]
+  type BooleanType = Boolean
+  type CSSType = String
+  type CSSVersionType = String
+  type CallbackURLsListType = js.Array[RedirectUrlType]
+  type ChallengeParametersType = js.Dictionary[StringType]
+  type ChallengeResponseListType = js.Array[ChallengeResponseType]
+  type ChallengeResponsesType = js.Dictionary[StringType]
+  type ClientIdType = String
+  type ClientMetadataType = js.Dictionary[StringType]
+  type ClientNameType = String
+  type ClientPermissionListType = js.Array[ClientPermissionType]
+  type ClientPermissionType = String
+  type ClientSecretType = String
+  type CodeDeliveryDetailsListType = js.Array[CodeDeliveryDetailsType]
+  type CompletionMessageType = String
+  type ConfirmationCodeType = String
+  type CustomAttributeNameType = String
+  type CustomAttributesListType = js.Array[SchemaAttributeType]
+  type DateType = js.Date
+  type DeliveryMediumListType = js.Array[DeliveryMediumType]
+  type DescriptionType = String
+  type DeviceKeyType = String
+  type DeviceListType = js.Array[DeviceType]
+  type DeviceNameType = String
+  type DomainType = String
+  type DomainVersionType = String
+  type EmailAddressType = String
+  type EmailNotificationBodyType = String
+  type EmailNotificationSubjectType = String
+  type EmailVerificationMessageByLinkType = String
+  type EmailVerificationMessageType = String
+  type EmailVerificationSubjectByLinkType = String
+  type EmailVerificationSubjectType = String
+  type EventFiltersType = js.Array[EventFilterType]
+  type EventIdType = String
+  type ExplicitAuthFlowsListType = js.Array[ExplicitAuthFlowsType]
+  type ForceAliasCreation = Boolean
+  type GenerateSecret = Boolean
+  type GroupListType = js.Array[GroupType]
+  type GroupNameType = String
+  type HexStringType = String
+  type HttpHeaderList = js.Array[HttpHeader]
+  type IdpIdentifierType = String
+  type IdpIdentifiersListType = js.Array[IdpIdentifierType]
+  type ImageFileType = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type ImageUrlType = String
+  type IntegerType = Int
+  type ListOfStringTypes = js.Array[StringType]
+  type ListProvidersLimitType = Int
+  type ListResourceServersLimitType = Int
+  type LogoutURLsListType = js.Array[RedirectUrlType]
+  type LongType = Double
+  type MFAOptionListType = js.Array[MFAOptionType]
+  type OAuthFlowsType = js.Array[OAuthFlowType]
+  type PaginationKey = String
+  type PaginationKeyType = String
+  type PasswordPolicyMinLengthType = Int
+  type PasswordType = String
+  type PoolQueryLimitType = Int
+  type PreSignedUrlType = String
+  type PrecedenceType = Int
+  type PriorityType = Int
+  type ProviderDetailsType = js.Dictionary[StringType]
+  type ProviderNameType = String
+  type ProviderNameTypeV1 = String
+  type ProvidersListType = js.Array[ProviderDescription]
+  type QueryLimit = Int
+  type QueryLimitType = Int
+  type RecoveryMechanismsType = js.Array[RecoveryOptionType]
+  type RedirectUrlType = String
+  type RefreshTokenValidityType = Int
+  type ResourceServerIdentifierType = String
+  type ResourceServerNameType = String
+  type ResourceServerScopeDescriptionType = String
+  type ResourceServerScopeListType = js.Array[ResourceServerScopeType]
+  type ResourceServerScopeNameType = String
+  type ResourceServersListType = js.Array[ResourceServerType]
+  type S3BucketType = String
+  type SESConfigurationSet = String
+  type SchemaAttributesListType = js.Array[SchemaAttributeType]
+  type ScopeListType = js.Array[ScopeType]
+  type ScopeType = String
+  type SearchPaginationTokenType = String
+  type SearchedAttributeNamesListType = js.Array[AttributeNameType]
+  type SecretCodeType = String
+  type SecretHashType = String
+  type SessionType = String
+  type SkippedIPRangeListType = js.Array[StringType]
+  type SmsVerificationMessageType = String
+  type SoftwareTokenMFAUserCodeType = String
+  type StringType = String
+  type SupportedIdentityProvidersListType = js.Array[ProviderNameType]
+  type TagKeysType = String
+  type TagValueType = String
+  type TemporaryPasswordValidityDaysType = Int
+  type TokenModelType = String
+  type UserFilterType = String
+  type UserImportJobIdType = String
+  type UserImportJobNameType = String
+  type UserImportJobsListType = js.Array[UserImportJobType]
+  type UserMFASettingListType = js.Array[StringType]
+  type UserPoolClientListType = js.Array[UserPoolClientDescription]
+  type UserPoolIdType = String
+  type UserPoolListType = js.Array[UserPoolDescriptionType]
+  type UserPoolNameType = String
+  type UserPoolTagsListType = js.Array[TagKeysType]
+  type UserPoolTagsType = js.Dictionary[TagValueType]
+  type UsernameAttributesListType = js.Array[UsernameAttributeType]
+  type UsernameType = String
+  type UsersListType = js.Array[UserType]
+  type VerifiedAttributesListType = js.Array[VerifiedAttributeType]
+  type WrappedBooleanType = Boolean
 
   implicit final class CognitoIdentityProviderOps(private val service: CognitoIdentityProvider) extends AnyVal {
 
@@ -377,21 +376,21 @@ package cognitoidentityprovider {
     def this(config: AWSConfig) = this()
 
     def addCustomAttributes(params: AddCustomAttributesRequest): Request[AddCustomAttributesResponse] = js.native
-    def adminAddUserToGroup(params: AdminAddUserToGroupRequest): Request[js.Object]                   = js.native
-    def adminConfirmSignUp(params: AdminConfirmSignUpRequest): Request[AdminConfirmSignUpResponse]    = js.native
-    def adminCreateUser(params: AdminCreateUserRequest): Request[AdminCreateUserResponse]             = js.native
-    def adminDeleteUser(params: AdminDeleteUserRequest): Request[js.Object]                           = js.native
+    def adminAddUserToGroup(params: AdminAddUserToGroupRequest): Request[js.Object] = js.native
+    def adminConfirmSignUp(params: AdminConfirmSignUpRequest): Request[AdminConfirmSignUpResponse] = js.native
+    def adminCreateUser(params: AdminCreateUserRequest): Request[AdminCreateUserResponse] = js.native
+    def adminDeleteUser(params: AdminDeleteUserRequest): Request[js.Object] = js.native
     def adminDeleteUserAttributes(
         params: AdminDeleteUserAttributesRequest
     ): Request[AdminDeleteUserAttributesResponse] = js.native
     def adminDisableProviderForUser(
         params: AdminDisableProviderForUserRequest
-    ): Request[AdminDisableProviderForUserResponse]                                             = js.native
-    def adminDisableUser(params: AdminDisableUserRequest): Request[AdminDisableUserResponse]    = js.native
-    def adminEnableUser(params: AdminEnableUserRequest): Request[AdminEnableUserResponse]       = js.native
-    def adminForgetDevice(params: AdminForgetDeviceRequest): Request[js.Object]                 = js.native
-    def adminGetDevice(params: AdminGetDeviceRequest): Request[AdminGetDeviceResponse]          = js.native
-    def adminGetUser(params: AdminGetUserRequest): Request[AdminGetUserResponse]                = js.native
+    ): Request[AdminDisableProviderForUserResponse] = js.native
+    def adminDisableUser(params: AdminDisableUserRequest): Request[AdminDisableUserResponse] = js.native
+    def adminEnableUser(params: AdminEnableUserRequest): Request[AdminEnableUserResponse] = js.native
+    def adminForgetDevice(params: AdminForgetDeviceRequest): Request[js.Object] = js.native
+    def adminGetDevice(params: AdminGetDeviceRequest): Request[AdminGetDeviceResponse] = js.native
+    def adminGetUser(params: AdminGetUserRequest): Request[AdminGetUserResponse] = js.native
     def adminInitiateAuth(params: AdminInitiateAuthRequest): Request[AdminInitiateAuthResponse] = js.native
     def adminLinkProviderForUser(params: AdminLinkProviderForUserRequest): Request[AdminLinkProviderForUserResponse] =
       js.native
@@ -408,7 +407,7 @@ package cognitoidentityprovider {
     ): Request[AdminRespondToAuthChallengeResponse] = js.native
     def adminSetUserMFAPreference(
         params: AdminSetUserMFAPreferenceRequest
-    ): Request[AdminSetUserMFAPreferenceResponse]                                                        = js.native
+    ): Request[AdminSetUserMFAPreferenceResponse] = js.native
     def adminSetUserPassword(params: AdminSetUserPasswordRequest): Request[AdminSetUserPasswordResponse] = js.native
     def adminSetUserSettings(params: AdminSetUserSettingsRequest): Request[AdminSetUserSettingsResponse] = js.native
     def adminUpdateAuthEventFeedback(
@@ -423,25 +422,25 @@ package cognitoidentityprovider {
       js.native
     def associateSoftwareToken(params: AssociateSoftwareTokenRequest): Request[AssociateSoftwareTokenResponse] =
       js.native
-    def changePassword(params: ChangePasswordRequest): Request[ChangePasswordResponse]                      = js.native
-    def confirmDevice(params: ConfirmDeviceRequest): Request[ConfirmDeviceResponse]                         = js.native
+    def changePassword(params: ChangePasswordRequest): Request[ChangePasswordResponse] = js.native
+    def confirmDevice(params: ConfirmDeviceRequest): Request[ConfirmDeviceResponse] = js.native
     def confirmForgotPassword(params: ConfirmForgotPasswordRequest): Request[ConfirmForgotPasswordResponse] = js.native
-    def confirmSignUp(params: ConfirmSignUpRequest): Request[ConfirmSignUpResponse]                         = js.native
-    def createGroup(params: CreateGroupRequest): Request[CreateGroupResponse]                               = js.native
+    def confirmSignUp(params: ConfirmSignUpRequest): Request[ConfirmSignUpResponse] = js.native
+    def createGroup(params: CreateGroupRequest): Request[CreateGroupResponse] = js.native
     def createIdentityProvider(params: CreateIdentityProviderRequest): Request[CreateIdentityProviderResponse] =
       js.native
     def createResourceServer(params: CreateResourceServerRequest): Request[CreateResourceServerResponse] = js.native
-    def createUserImportJob(params: CreateUserImportJobRequest): Request[CreateUserImportJobResponse]    = js.native
-    def createUserPool(params: CreateUserPoolRequest): Request[CreateUserPoolResponse]                   = js.native
+    def createUserImportJob(params: CreateUserImportJobRequest): Request[CreateUserImportJobResponse] = js.native
+    def createUserPool(params: CreateUserPoolRequest): Request[CreateUserPoolResponse] = js.native
     def createUserPoolClient(params: CreateUserPoolClientRequest): Request[CreateUserPoolClientResponse] = js.native
     def createUserPoolDomain(params: CreateUserPoolDomainRequest): Request[CreateUserPoolDomainResponse] = js.native
-    def deleteGroup(params: DeleteGroupRequest): Request[js.Object]                                      = js.native
-    def deleteIdentityProvider(params: DeleteIdentityProviderRequest): Request[js.Object]                = js.native
-    def deleteResourceServer(params: DeleteResourceServerRequest): Request[js.Object]                    = js.native
-    def deleteUser(params: DeleteUserRequest): Request[js.Object]                                        = js.native
+    def deleteGroup(params: DeleteGroupRequest): Request[js.Object] = js.native
+    def deleteIdentityProvider(params: DeleteIdentityProviderRequest): Request[js.Object] = js.native
+    def deleteResourceServer(params: DeleteResourceServerRequest): Request[js.Object] = js.native
+    def deleteUser(params: DeleteUserRequest): Request[js.Object] = js.native
     def deleteUserAttributes(params: DeleteUserAttributesRequest): Request[DeleteUserAttributesResponse] = js.native
-    def deleteUserPool(params: DeleteUserPoolRequest): Request[js.Object]                                = js.native
-    def deleteUserPoolClient(params: DeleteUserPoolClientRequest): Request[js.Object]                    = js.native
+    def deleteUserPool(params: DeleteUserPoolRequest): Request[js.Object] = js.native
+    def deleteUserPoolClient(params: DeleteUserPoolClientRequest): Request[js.Object] = js.native
     def deleteUserPoolDomain(params: DeleteUserPoolDomainRequest): Request[DeleteUserPoolDomainResponse] = js.native
     def describeIdentityProvider(params: DescribeIdentityProviderRequest): Request[DescribeIdentityProviderResponse] =
       js.native
@@ -449,67 +448,67 @@ package cognitoidentityprovider {
       js.native
     def describeRiskConfiguration(
         params: DescribeRiskConfigurationRequest
-    ): Request[DescribeRiskConfigurationResponse]                                                           = js.native
+    ): Request[DescribeRiskConfigurationResponse] = js.native
     def describeUserImportJob(params: DescribeUserImportJobRequest): Request[DescribeUserImportJobResponse] = js.native
-    def describeUserPool(params: DescribeUserPoolRequest): Request[DescribeUserPoolResponse]                = js.native
+    def describeUserPool(params: DescribeUserPoolRequest): Request[DescribeUserPoolResponse] = js.native
     def describeUserPoolClient(params: DescribeUserPoolClientRequest): Request[DescribeUserPoolClientResponse] =
       js.native
     def describeUserPoolDomain(params: DescribeUserPoolDomainRequest): Request[DescribeUserPoolDomainResponse] =
       js.native
-    def forgetDevice(params: ForgetDeviceRequest): Request[js.Object]                  = js.native
+    def forgetDevice(params: ForgetDeviceRequest): Request[js.Object] = js.native
     def forgotPassword(params: ForgotPasswordRequest): Request[ForgotPasswordResponse] = js.native
-    def getCSVHeader(params: GetCSVHeaderRequest): Request[GetCSVHeaderResponse]       = js.native
-    def getDevice(params: GetDeviceRequest): Request[GetDeviceResponse]                = js.native
-    def getGroup(params: GetGroupRequest): Request[GetGroupResponse]                   = js.native
+    def getCSVHeader(params: GetCSVHeaderRequest): Request[GetCSVHeaderResponse] = js.native
+    def getDevice(params: GetDeviceRequest): Request[GetDeviceResponse] = js.native
+    def getGroup(params: GetGroupRequest): Request[GetGroupResponse] = js.native
     def getIdentityProviderByIdentifier(
         params: GetIdentityProviderByIdentifierRequest
-    ): Request[GetIdentityProviderByIdentifierResponse]                                                     = js.native
+    ): Request[GetIdentityProviderByIdentifierResponse] = js.native
     def getSigningCertificate(params: GetSigningCertificateRequest): Request[GetSigningCertificateResponse] = js.native
-    def getUICustomization(params: GetUICustomizationRequest): Request[GetUICustomizationResponse]          = js.native
-    def getUser(params: GetUserRequest): Request[GetUserResponse]                                           = js.native
+    def getUICustomization(params: GetUICustomizationRequest): Request[GetUICustomizationResponse] = js.native
+    def getUser(params: GetUserRequest): Request[GetUserResponse] = js.native
     def getUserAttributeVerificationCode(
         params: GetUserAttributeVerificationCodeRequest
-    ): Request[GetUserAttributeVerificationCodeResponse]                                                    = js.native
-    def getUserPoolMfaConfig(params: GetUserPoolMfaConfigRequest): Request[GetUserPoolMfaConfigResponse]    = js.native
-    def globalSignOut(params: GlobalSignOutRequest): Request[GlobalSignOutResponse]                         = js.native
-    def initiateAuth(params: InitiateAuthRequest): Request[InitiateAuthResponse]                            = js.native
-    def listDevices(params: ListDevicesRequest): Request[ListDevicesResponse]                               = js.native
-    def listGroups(params: ListGroupsRequest): Request[ListGroupsResponse]                                  = js.native
+    ): Request[GetUserAttributeVerificationCodeResponse] = js.native
+    def getUserPoolMfaConfig(params: GetUserPoolMfaConfigRequest): Request[GetUserPoolMfaConfigResponse] = js.native
+    def globalSignOut(params: GlobalSignOutRequest): Request[GlobalSignOutResponse] = js.native
+    def initiateAuth(params: InitiateAuthRequest): Request[InitiateAuthResponse] = js.native
+    def listDevices(params: ListDevicesRequest): Request[ListDevicesResponse] = js.native
+    def listGroups(params: ListGroupsRequest): Request[ListGroupsResponse] = js.native
     def listIdentityProviders(params: ListIdentityProvidersRequest): Request[ListIdentityProvidersResponse] = js.native
-    def listResourceServers(params: ListResourceServersRequest): Request[ListResourceServersResponse]       = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
-    def listUserImportJobs(params: ListUserImportJobsRequest): Request[ListUserImportJobsResponse]          = js.native
-    def listUserPoolClients(params: ListUserPoolClientsRequest): Request[ListUserPoolClientsResponse]       = js.native
-    def listUserPools(params: ListUserPoolsRequest): Request[ListUserPoolsResponse]                         = js.native
-    def listUsers(params: ListUsersRequest): Request[ListUsersResponse]                                     = js.native
-    def listUsersInGroup(params: ListUsersInGroupRequest): Request[ListUsersInGroupResponse]                = js.native
+    def listResourceServers(params: ListResourceServersRequest): Request[ListResourceServersResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def listUserImportJobs(params: ListUserImportJobsRequest): Request[ListUserImportJobsResponse] = js.native
+    def listUserPoolClients(params: ListUserPoolClientsRequest): Request[ListUserPoolClientsResponse] = js.native
+    def listUserPools(params: ListUserPoolsRequest): Request[ListUserPoolsResponse] = js.native
+    def listUsers(params: ListUsersRequest): Request[ListUsersResponse] = js.native
+    def listUsersInGroup(params: ListUsersInGroupRequest): Request[ListUsersInGroupResponse] = js.native
     def resendConfirmationCode(params: ResendConfirmationCodeRequest): Request[ResendConfirmationCodeResponse] =
       js.native
     def respondToAuthChallenge(params: RespondToAuthChallengeRequest): Request[RespondToAuthChallengeResponse] =
       js.native
     def setRiskConfiguration(params: SetRiskConfigurationRequest): Request[SetRiskConfigurationResponse] = js.native
-    def setUICustomization(params: SetUICustomizationRequest): Request[SetUICustomizationResponse]       = js.native
+    def setUICustomization(params: SetUICustomizationRequest): Request[SetUICustomizationResponse] = js.native
     def setUserMFAPreference(params: SetUserMFAPreferenceRequest): Request[SetUserMFAPreferenceResponse] = js.native
     def setUserPoolMfaConfig(params: SetUserPoolMfaConfigRequest): Request[SetUserPoolMfaConfigResponse] = js.native
-    def setUserSettings(params: SetUserSettingsRequest): Request[SetUserSettingsResponse]                = js.native
-    def signUp(params: SignUpRequest): Request[SignUpResponse]                                           = js.native
-    def startUserImportJob(params: StartUserImportJobRequest): Request[StartUserImportJobResponse]       = js.native
-    def stopUserImportJob(params: StopUserImportJobRequest): Request[StopUserImportJobResponse]          = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                            = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                      = js.native
+    def setUserSettings(params: SetUserSettingsRequest): Request[SetUserSettingsResponse] = js.native
+    def signUp(params: SignUpRequest): Request[SignUpResponse] = js.native
+    def startUserImportJob(params: StartUserImportJobRequest): Request[StartUserImportJobResponse] = js.native
+    def stopUserImportJob(params: StopUserImportJobRequest): Request[StopUserImportJobResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateAuthEventFeedback(params: UpdateAuthEventFeedbackRequest): Request[UpdateAuthEventFeedbackResponse] =
       js.native
     def updateDeviceStatus(params: UpdateDeviceStatusRequest): Request[UpdateDeviceStatusResponse] = js.native
-    def updateGroup(params: UpdateGroupRequest): Request[UpdateGroupResponse]                      = js.native
+    def updateGroup(params: UpdateGroupRequest): Request[UpdateGroupResponse] = js.native
     def updateIdentityProvider(params: UpdateIdentityProviderRequest): Request[UpdateIdentityProviderResponse] =
       js.native
     def updateResourceServer(params: UpdateResourceServerRequest): Request[UpdateResourceServerResponse] = js.native
     def updateUserAttributes(params: UpdateUserAttributesRequest): Request[UpdateUserAttributesResponse] = js.native
-    def updateUserPool(params: UpdateUserPoolRequest): Request[UpdateUserPoolResponse]                   = js.native
+    def updateUserPool(params: UpdateUserPoolRequest): Request[UpdateUserPoolResponse] = js.native
     def updateUserPoolClient(params: UpdateUserPoolClientRequest): Request[UpdateUserPoolClientResponse] = js.native
     def updateUserPoolDomain(params: UpdateUserPoolDomainRequest): Request[UpdateUserPoolDomainResponse] = js.native
-    def verifySoftwareToken(params: VerifySoftwareTokenRequest): Request[VerifySoftwareTokenResponse]    = js.native
-    def verifyUserAttribute(params: VerifyUserAttributeRequest): Request[VerifyUserAttributeResponse]    = js.native
+    def verifySoftwareToken(params: VerifySoftwareTokenRequest): Request[VerifySoftwareTokenResponse] = js.native
+    def verifyUserAttribute(params: VerifyUserAttributeRequest): Request[VerifyUserAttributeResponse] = js.native
   }
 
   /**
@@ -548,7 +547,7 @@ package cognitoidentityprovider {
     ): AccountTakeoverActionType = {
       val __obj = js.Dynamic.literal(
         "EventAction" -> EventAction.asInstanceOf[js.Any],
-        "Notify"      -> Notify.asInstanceOf[js.Any]
+        "Notify" -> Notify.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AccountTakeoverActionType]
@@ -583,10 +582,10 @@ package cognitoidentityprovider {
   @js.native
   sealed trait AccountTakeoverEventActionType extends js.Any
   object AccountTakeoverEventActionType extends js.Object {
-    val BLOCK             = "BLOCK".asInstanceOf[AccountTakeoverEventActionType]
+    val BLOCK = "BLOCK".asInstanceOf[AccountTakeoverEventActionType]
     val MFA_IF_CONFIGURED = "MFA_IF_CONFIGURED".asInstanceOf[AccountTakeoverEventActionType]
-    val MFA_REQUIRED      = "MFA_REQUIRED".asInstanceOf[AccountTakeoverEventActionType]
-    val NO_ACTION         = "NO_ACTION".asInstanceOf[AccountTakeoverEventActionType]
+    val MFA_REQUIRED = "MFA_REQUIRED".asInstanceOf[AccountTakeoverEventActionType]
+    val NO_ACTION = "NO_ACTION".asInstanceOf[AccountTakeoverEventActionType]
 
     val values = js.Object.freeze(js.Array(BLOCK, MFA_IF_CONFIGURED, MFA_REQUIRED, NO_ACTION))
   }
@@ -632,7 +631,7 @@ package cognitoidentityprovider {
     ): AddCustomAttributesRequest = {
       val __obj = js.Dynamic.literal(
         "CustomAttributes" -> CustomAttributes.asInstanceOf[js.Any],
-        "UserPoolId"       -> UserPoolId.asInstanceOf[js.Any]
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddCustomAttributesRequest]
@@ -670,9 +669,9 @@ package cognitoidentityprovider {
         Username: UsernameType
     ): AdminAddUserToGroupRequest = {
       val __obj = js.Dynamic.literal(
-        "GroupName"  -> GroupName.asInstanceOf[js.Any],
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
-        "Username"   -> Username.asInstanceOf[js.Any]
+        "Username" -> Username.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AdminAddUserToGroupRequest]
@@ -698,7 +697,7 @@ package cognitoidentityprovider {
     ): AdminConfirmSignUpRequest = {
       val __obj = js.Dynamic.literal(
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
-        "Username"   -> Username.asInstanceOf[js.Any]
+        "Username" -> Username.asInstanceOf[js.Any]
       )
 
       ClientMetadata.foreach(__v => __obj.updateDynamic("ClientMetadata")(__v.asInstanceOf[js.Any]))
@@ -780,7 +779,7 @@ package cognitoidentityprovider {
     ): AdminCreateUserRequest = {
       val __obj = js.Dynamic.literal(
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
-        "Username"   -> Username.asInstanceOf[js.Any]
+        "Username" -> Username.asInstanceOf[js.Any]
       )
 
       ClientMetadata.foreach(__v => __obj.updateDynamic("ClientMetadata")(__v.asInstanceOf[js.Any]))
@@ -832,8 +831,8 @@ package cognitoidentityprovider {
     ): AdminDeleteUserAttributesRequest = {
       val __obj = js.Dynamic.literal(
         "UserAttributeNames" -> UserAttributeNames.asInstanceOf[js.Any],
-        "UserPoolId"         -> UserPoolId.asInstanceOf[js.Any],
-        "Username"           -> Username.asInstanceOf[js.Any]
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AdminDeleteUserAttributesRequest]
@@ -873,7 +872,7 @@ package cognitoidentityprovider {
     ): AdminDeleteUserRequest = {
       val __obj = js.Dynamic.literal(
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
-        "Username"   -> Username.asInstanceOf[js.Any]
+        "Username" -> Username.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AdminDeleteUserRequest]
@@ -893,7 +892,7 @@ package cognitoidentityprovider {
         UserPoolId: StringType
     ): AdminDisableProviderForUserRequest = {
       val __obj = js.Dynamic.literal(
-        "User"       -> User.asInstanceOf[js.Any],
+        "User" -> User.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
@@ -931,7 +930,7 @@ package cognitoidentityprovider {
     ): AdminDisableUserRequest = {
       val __obj = js.Dynamic.literal(
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
-        "Username"   -> Username.asInstanceOf[js.Any]
+        "Username" -> Username.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AdminDisableUserRequest]
@@ -971,7 +970,7 @@ package cognitoidentityprovider {
     ): AdminEnableUserRequest = {
       val __obj = js.Dynamic.literal(
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
-        "Username"   -> Username.asInstanceOf[js.Any]
+        "Username" -> Username.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AdminEnableUserRequest]
@@ -1012,9 +1011,9 @@ package cognitoidentityprovider {
         Username: UsernameType
     ): AdminForgetDeviceRequest = {
       val __obj = js.Dynamic.literal(
-        "DeviceKey"  -> DeviceKey.asInstanceOf[js.Any],
+        "DeviceKey" -> DeviceKey.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
-        "Username"   -> Username.asInstanceOf[js.Any]
+        "Username" -> Username.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AdminForgetDeviceRequest]
@@ -1039,9 +1038,9 @@ package cognitoidentityprovider {
         Username: UsernameType
     ): AdminGetDeviceRequest = {
       val __obj = js.Dynamic.literal(
-        "DeviceKey"  -> DeviceKey.asInstanceOf[js.Any],
+        "DeviceKey" -> DeviceKey.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
-        "Username"   -> Username.asInstanceOf[js.Any]
+        "Username" -> Username.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AdminGetDeviceRequest]
@@ -1086,7 +1085,7 @@ package cognitoidentityprovider {
     ): AdminGetUserRequest = {
       val __obj = js.Dynamic.literal(
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
-        "Username"   -> Username.asInstanceOf[js.Any]
+        "Username" -> Username.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AdminGetUserRequest]
@@ -1164,8 +1163,8 @@ package cognitoidentityprovider {
         ContextData: js.UndefOr[ContextDataType] = js.undefined
     ): AdminInitiateAuthRequest = {
       val __obj = js.Dynamic.literal(
-        "AuthFlow"   -> AuthFlow.asInstanceOf[js.Any],
-        "ClientId"   -> ClientId.asInstanceOf[js.Any],
+        "AuthFlow" -> AuthFlow.asInstanceOf[js.Any],
+        "ClientId" -> ClientId.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
@@ -1221,8 +1220,8 @@ package cognitoidentityprovider {
     ): AdminLinkProviderForUserRequest = {
       val __obj = js.Dynamic.literal(
         "DestinationUser" -> DestinationUser.asInstanceOf[js.Any],
-        "SourceUser"      -> SourceUser.asInstanceOf[js.Any],
-        "UserPoolId"      -> UserPoolId.asInstanceOf[js.Any]
+        "SourceUser" -> SourceUser.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AdminLinkProviderForUserRequest]
@@ -1263,7 +1262,7 @@ package cognitoidentityprovider {
     ): AdminListDevicesRequest = {
       val __obj = js.Dynamic.literal(
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
-        "Username"   -> Username.asInstanceOf[js.Any]
+        "Username" -> Username.asInstanceOf[js.Any]
       )
 
       Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
@@ -1312,7 +1311,7 @@ package cognitoidentityprovider {
     ): AdminListGroupsForUserRequest = {
       val __obj = js.Dynamic.literal(
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
-        "Username"   -> Username.asInstanceOf[js.Any]
+        "Username" -> Username.asInstanceOf[js.Any]
       )
 
       Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
@@ -1358,7 +1357,7 @@ package cognitoidentityprovider {
     ): AdminListUserAuthEventsRequest = {
       val __obj = js.Dynamic.literal(
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
-        "Username"   -> Username.asInstanceOf[js.Any]
+        "Username" -> Username.asInstanceOf[js.Any]
       )
 
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
@@ -1401,9 +1400,9 @@ package cognitoidentityprovider {
         Username: UsernameType
     ): AdminRemoveUserFromGroupRequest = {
       val __obj = js.Dynamic.literal(
-        "GroupName"  -> GroupName.asInstanceOf[js.Any],
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
-        "Username"   -> Username.asInstanceOf[js.Any]
+        "Username" -> Username.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AdminRemoveUserFromGroupRequest]
@@ -1429,7 +1428,7 @@ package cognitoidentityprovider {
     ): AdminResetUserPasswordRequest = {
       val __obj = js.Dynamic.literal(
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
-        "Username"   -> Username.asInstanceOf[js.Any]
+        "Username" -> Username.asInstanceOf[js.Any]
       )
 
       ClientMetadata.foreach(__v => __obj.updateDynamic("ClientMetadata")(__v.asInstanceOf[js.Any]))
@@ -1482,8 +1481,8 @@ package cognitoidentityprovider {
     ): AdminRespondToAuthChallengeRequest = {
       val __obj = js.Dynamic.literal(
         "ChallengeName" -> ChallengeName.asInstanceOf[js.Any],
-        "ClientId"      -> ClientId.asInstanceOf[js.Any],
-        "UserPoolId"    -> UserPoolId.asInstanceOf[js.Any]
+        "ClientId" -> ClientId.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
       AnalyticsMetadata.foreach(__v => __obj.updateDynamic("AnalyticsMetadata")(__v.asInstanceOf[js.Any]))
@@ -1541,7 +1540,7 @@ package cognitoidentityprovider {
     ): AdminSetUserMFAPreferenceRequest = {
       val __obj = js.Dynamic.literal(
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
-        "Username"   -> Username.asInstanceOf[js.Any]
+        "Username" -> Username.asInstanceOf[js.Any]
       )
 
       SMSMfaSettings.foreach(__v => __obj.updateDynamic("SMSMfaSettings")(__v.asInstanceOf[js.Any]))
@@ -1580,9 +1579,9 @@ package cognitoidentityprovider {
         Permanent: js.UndefOr[BooleanType] = js.undefined
     ): AdminSetUserPasswordRequest = {
       val __obj = js.Dynamic.literal(
-        "Password"   -> Password.asInstanceOf[js.Any],
+        "Password" -> Password.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
-        "Username"   -> Username.asInstanceOf[js.Any]
+        "Username" -> Username.asInstanceOf[js.Any]
       )
 
       Permanent.foreach(__v => __obj.updateDynamic("Permanent")(__v.asInstanceOf[js.Any]))
@@ -1623,7 +1622,7 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "MFAOptions" -> MFAOptions.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
-        "Username"   -> Username.asInstanceOf[js.Any]
+        "Username" -> Username.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AdminSetUserSettingsRequest]
@@ -1663,10 +1662,10 @@ package cognitoidentityprovider {
         Username: UsernameType
     ): AdminUpdateAuthEventFeedbackRequest = {
       val __obj = js.Dynamic.literal(
-        "EventId"       -> EventId.asInstanceOf[js.Any],
+        "EventId" -> EventId.asInstanceOf[js.Any],
         "FeedbackValue" -> FeedbackValue.asInstanceOf[js.Any],
-        "UserPoolId"    -> UserPoolId.asInstanceOf[js.Any],
-        "Username"      -> Username.asInstanceOf[js.Any]
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AdminUpdateAuthEventFeedbackRequest]
@@ -1706,9 +1705,9 @@ package cognitoidentityprovider {
         DeviceRememberedStatus: js.UndefOr[DeviceRememberedStatusType] = js.undefined
     ): AdminUpdateDeviceStatusRequest = {
       val __obj = js.Dynamic.literal(
-        "DeviceKey"  -> DeviceKey.asInstanceOf[js.Any],
+        "DeviceKey" -> DeviceKey.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
-        "Username"   -> Username.asInstanceOf[js.Any]
+        "Username" -> Username.asInstanceOf[js.Any]
       )
 
       DeviceRememberedStatus.foreach(__v => __obj.updateDynamic("DeviceRememberedStatus")(__v.asInstanceOf[js.Any]))
@@ -1753,8 +1752,8 @@ package cognitoidentityprovider {
     ): AdminUpdateUserAttributesRequest = {
       val __obj = js.Dynamic.literal(
         "UserAttributes" -> UserAttributes.asInstanceOf[js.Any],
-        "UserPoolId"     -> UserPoolId.asInstanceOf[js.Any],
-        "Username"       -> Username.asInstanceOf[js.Any]
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any]
       )
 
       ClientMetadata.foreach(__v => __obj.updateDynamic("ClientMetadata")(__v.asInstanceOf[js.Any]))
@@ -1795,7 +1794,7 @@ package cognitoidentityprovider {
     ): AdminUserGlobalSignOutRequest = {
       val __obj = js.Dynamic.literal(
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
-        "Username"   -> Username.asInstanceOf[js.Any]
+        "Username" -> Username.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AdminUserGlobalSignOutRequest]
@@ -1821,8 +1820,8 @@ package cognitoidentityprovider {
   @js.native
   sealed trait AdvancedSecurityModeType extends js.Any
   object AdvancedSecurityModeType extends js.Object {
-    val OFF      = "OFF".asInstanceOf[AdvancedSecurityModeType]
-    val AUDIT    = "AUDIT".asInstanceOf[AdvancedSecurityModeType]
+    val OFF = "OFF".asInstanceOf[AdvancedSecurityModeType]
+    val AUDIT = "AUDIT".asInstanceOf[AdvancedSecurityModeType]
     val ENFORCED = "ENFORCED".asInstanceOf[AdvancedSecurityModeType]
 
     val values = js.Object.freeze(js.Array(OFF, AUDIT, ENFORCED))
@@ -1831,8 +1830,8 @@ package cognitoidentityprovider {
   @js.native
   sealed trait AliasAttributeType extends js.Any
   object AliasAttributeType extends js.Object {
-    val phone_number       = "phone_number".asInstanceOf[AliasAttributeType]
-    val email              = "email".asInstanceOf[AliasAttributeType]
+    val phone_number = "phone_number".asInstanceOf[AliasAttributeType]
+    val email = "email".asInstanceOf[AliasAttributeType]
     val preferred_username = "preferred_username".asInstanceOf[AliasAttributeType]
 
     val values = js.Object.freeze(js.Array(phone_number, email, preferred_username))
@@ -1840,6 +1839,8 @@ package cognitoidentityprovider {
 
   /**
     * The Amazon Pinpoint analytics configuration for collecting metrics for a user pool.
+    *
+    * '''Note:'''Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.
     */
   @js.native
   trait AnalyticsConfigurationType extends js.Object {
@@ -1859,8 +1860,8 @@ package cognitoidentityprovider {
     ): AnalyticsConfigurationType = {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "ExternalId"    -> ExternalId.asInstanceOf[js.Any],
-        "RoleArn"       -> RoleArn.asInstanceOf[js.Any]
+        "ExternalId" -> ExternalId.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
       UserDataShared.foreach(__v => __obj.updateDynamic("UserDataShared")(__v.asInstanceOf[js.Any]))
@@ -1871,6 +1872,8 @@ package cognitoidentityprovider {
   /**
     * An Amazon Pinpoint analytics endpoint.
     *  An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.
+    *
+    * '''Note:'''Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.
     */
   @js.native
   trait AnalyticsMetadataType extends js.Object {
@@ -1929,10 +1932,10 @@ package cognitoidentityprovider {
   @js.native
   sealed trait AttributeDataType extends js.Any
   object AttributeDataType extends js.Object {
-    val String   = "String".asInstanceOf[AttributeDataType]
-    val Number   = "Number".asInstanceOf[AttributeDataType]
+    val String = "String".asInstanceOf[AttributeDataType]
+    val Number = "Number".asInstanceOf[AttributeDataType]
     val DateTime = "DateTime".asInstanceOf[AttributeDataType]
-    val Boolean  = "Boolean".asInstanceOf[AttributeDataType]
+    val Boolean = "Boolean".asInstanceOf[AttributeDataType]
 
     val values = js.Object.freeze(js.Array(String, Number, DateTime, Boolean))
   }
@@ -2004,12 +2007,12 @@ package cognitoidentityprovider {
   @js.native
   sealed trait AuthFlowType extends js.Any
   object AuthFlowType extends js.Object {
-    val USER_SRP_AUTH            = "USER_SRP_AUTH".asInstanceOf[AuthFlowType]
-    val REFRESH_TOKEN_AUTH       = "REFRESH_TOKEN_AUTH".asInstanceOf[AuthFlowType]
-    val REFRESH_TOKEN            = "REFRESH_TOKEN".asInstanceOf[AuthFlowType]
-    val CUSTOM_AUTH              = "CUSTOM_AUTH".asInstanceOf[AuthFlowType]
-    val ADMIN_NO_SRP_AUTH        = "ADMIN_NO_SRP_AUTH".asInstanceOf[AuthFlowType]
-    val USER_PASSWORD_AUTH       = "USER_PASSWORD_AUTH".asInstanceOf[AuthFlowType]
+    val USER_SRP_AUTH = "USER_SRP_AUTH".asInstanceOf[AuthFlowType]
+    val REFRESH_TOKEN_AUTH = "REFRESH_TOKEN_AUTH".asInstanceOf[AuthFlowType]
+    val REFRESH_TOKEN = "REFRESH_TOKEN".asInstanceOf[AuthFlowType]
+    val CUSTOM_AUTH = "CUSTOM_AUTH".asInstanceOf[AuthFlowType]
+    val ADMIN_NO_SRP_AUTH = "ADMIN_NO_SRP_AUTH".asInstanceOf[AuthFlowType]
+    val USER_PASSWORD_AUTH = "USER_PASSWORD_AUTH".asInstanceOf[AuthFlowType]
     val ADMIN_USER_PASSWORD_AUTH = "ADMIN_USER_PASSWORD_AUTH".asInstanceOf[AuthFlowType]
 
     val values = js.Object.freeze(
@@ -2063,7 +2066,7 @@ package cognitoidentityprovider {
   sealed trait ChallengeName extends js.Any
   object ChallengeName extends js.Object {
     val Password = "Password".asInstanceOf[ChallengeName]
-    val Mfa      = "Mfa".asInstanceOf[ChallengeName]
+    val Mfa = "Mfa".asInstanceOf[ChallengeName]
 
     val values = js.Object.freeze(js.Array(Password, Mfa))
   }
@@ -2071,16 +2074,16 @@ package cognitoidentityprovider {
   @js.native
   sealed trait ChallengeNameType extends js.Any
   object ChallengeNameType extends js.Object {
-    val SMS_MFA                  = "SMS_MFA".asInstanceOf[ChallengeNameType]
-    val SOFTWARE_TOKEN_MFA       = "SOFTWARE_TOKEN_MFA".asInstanceOf[ChallengeNameType]
-    val SELECT_MFA_TYPE          = "SELECT_MFA_TYPE".asInstanceOf[ChallengeNameType]
-    val MFA_SETUP                = "MFA_SETUP".asInstanceOf[ChallengeNameType]
-    val PASSWORD_VERIFIER        = "PASSWORD_VERIFIER".asInstanceOf[ChallengeNameType]
-    val CUSTOM_CHALLENGE         = "CUSTOM_CHALLENGE".asInstanceOf[ChallengeNameType]
-    val DEVICE_SRP_AUTH          = "DEVICE_SRP_AUTH".asInstanceOf[ChallengeNameType]
+    val SMS_MFA = "SMS_MFA".asInstanceOf[ChallengeNameType]
+    val SOFTWARE_TOKEN_MFA = "SOFTWARE_TOKEN_MFA".asInstanceOf[ChallengeNameType]
+    val SELECT_MFA_TYPE = "SELECT_MFA_TYPE".asInstanceOf[ChallengeNameType]
+    val MFA_SETUP = "MFA_SETUP".asInstanceOf[ChallengeNameType]
+    val PASSWORD_VERIFIER = "PASSWORD_VERIFIER".asInstanceOf[ChallengeNameType]
+    val CUSTOM_CHALLENGE = "CUSTOM_CHALLENGE".asInstanceOf[ChallengeNameType]
+    val DEVICE_SRP_AUTH = "DEVICE_SRP_AUTH".asInstanceOf[ChallengeNameType]
     val DEVICE_PASSWORD_VERIFIER = "DEVICE_PASSWORD_VERIFIER".asInstanceOf[ChallengeNameType]
-    val ADMIN_NO_SRP_AUTH        = "ADMIN_NO_SRP_AUTH".asInstanceOf[ChallengeNameType]
-    val NEW_PASSWORD_REQUIRED    = "NEW_PASSWORD_REQUIRED".asInstanceOf[ChallengeNameType]
+    val ADMIN_NO_SRP_AUTH = "ADMIN_NO_SRP_AUTH".asInstanceOf[ChallengeNameType]
+    val NEW_PASSWORD_REQUIRED = "NEW_PASSWORD_REQUIRED".asInstanceOf[ChallengeNameType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2147,7 +2150,7 @@ package cognitoidentityprovider {
         ProposedPassword: PasswordType
     ): ChangePasswordRequest = {
       val __obj = js.Dynamic.literal(
-        "AccessToken"      -> AccessToken.asInstanceOf[js.Any],
+        "AccessToken" -> AccessToken.asInstanceOf[js.Any],
         "PreviousPassword" -> PreviousPassword.asInstanceOf[js.Any],
         "ProposedPassword" -> ProposedPassword.asInstanceOf[js.Any]
       )
@@ -2221,7 +2224,7 @@ package cognitoidentityprovider {
   @js.native
   sealed trait CompromisedCredentialsEventActionType extends js.Any
   object CompromisedCredentialsEventActionType extends js.Object {
-    val BLOCK     = "BLOCK".asInstanceOf[CompromisedCredentialsEventActionType]
+    val BLOCK = "BLOCK".asInstanceOf[CompromisedCredentialsEventActionType]
     val NO_ACTION = "NO_ACTION".asInstanceOf[CompromisedCredentialsEventActionType]
 
     val values = js.Object.freeze(js.Array(BLOCK, NO_ACTION))
@@ -2272,7 +2275,7 @@ package cognitoidentityprovider {
     ): ConfirmDeviceRequest = {
       val __obj = js.Dynamic.literal(
         "AccessToken" -> AccessToken.asInstanceOf[js.Any],
-        "DeviceKey"   -> DeviceKey.asInstanceOf[js.Any]
+        "DeviceKey" -> DeviceKey.asInstanceOf[js.Any]
       )
 
       DeviceName.foreach(__v => __obj.updateDynamic("DeviceName")(__v.asInstanceOf[js.Any]))
@@ -2332,10 +2335,10 @@ package cognitoidentityprovider {
         UserContextData: js.UndefOr[UserContextDataType] = js.undefined
     ): ConfirmForgotPasswordRequest = {
       val __obj = js.Dynamic.literal(
-        "ClientId"         -> ClientId.asInstanceOf[js.Any],
+        "ClientId" -> ClientId.asInstanceOf[js.Any],
         "ConfirmationCode" -> ConfirmationCode.asInstanceOf[js.Any],
-        "Password"         -> Password.asInstanceOf[js.Any],
-        "Username"         -> Username.asInstanceOf[js.Any]
+        "Password" -> Password.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any]
       )
 
       AnalyticsMetadata.foreach(__v => __obj.updateDynamic("AnalyticsMetadata")(__v.asInstanceOf[js.Any]))
@@ -2390,9 +2393,9 @@ package cognitoidentityprovider {
         UserContextData: js.UndefOr[UserContextDataType] = js.undefined
     ): ConfirmSignUpRequest = {
       val __obj = js.Dynamic.literal(
-        "ClientId"         -> ClientId.asInstanceOf[js.Any],
+        "ClientId" -> ClientId.asInstanceOf[js.Any],
         "ConfirmationCode" -> ConfirmationCode.asInstanceOf[js.Any],
-        "Username"         -> Username.asInstanceOf[js.Any]
+        "Username" -> Username.asInstanceOf[js.Any]
       )
 
       AnalyticsMetadata.foreach(__v => __obj.updateDynamic("AnalyticsMetadata")(__v.asInstanceOf[js.Any]))
@@ -2443,9 +2446,9 @@ package cognitoidentityprovider {
     ): ContextDataType = {
       val __obj = js.Dynamic.literal(
         "HttpHeaders" -> HttpHeaders.asInstanceOf[js.Any],
-        "IpAddress"   -> IpAddress.asInstanceOf[js.Any],
-        "ServerName"  -> ServerName.asInstanceOf[js.Any],
-        "ServerPath"  -> ServerPath.asInstanceOf[js.Any]
+        "IpAddress" -> IpAddress.asInstanceOf[js.Any],
+        "ServerName" -> ServerName.asInstanceOf[js.Any],
+        "ServerPath" -> ServerPath.asInstanceOf[js.Any]
       )
 
       EncodedData.foreach(__v => __obj.updateDynamic("EncodedData")(__v.asInstanceOf[js.Any]))
@@ -2472,7 +2475,7 @@ package cognitoidentityprovider {
         RoleArn: js.UndefOr[ArnType] = js.undefined
     ): CreateGroupRequest = {
       val __obj = js.Dynamic.literal(
-        "GroupName"  -> GroupName.asInstanceOf[js.Any],
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
@@ -2521,9 +2524,9 @@ package cognitoidentityprovider {
     ): CreateIdentityProviderRequest = {
       val __obj = js.Dynamic.literal(
         "ProviderDetails" -> ProviderDetails.asInstanceOf[js.Any],
-        "ProviderName"    -> ProviderName.asInstanceOf[js.Any],
-        "ProviderType"    -> ProviderType.asInstanceOf[js.Any],
-        "UserPoolId"      -> UserPoolId.asInstanceOf[js.Any]
+        "ProviderName" -> ProviderName.asInstanceOf[js.Any],
+        "ProviderType" -> ProviderType.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
       AttributeMapping.foreach(__v => __obj.updateDynamic("AttributeMapping")(__v.asInstanceOf[js.Any]))
@@ -2568,7 +2571,7 @@ package cognitoidentityprovider {
     ): CreateResourceServerRequest = {
       val __obj = js.Dynamic.literal(
         "Identifier" -> Identifier.asInstanceOf[js.Any],
-        "Name"       -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
@@ -2614,8 +2617,8 @@ package cognitoidentityprovider {
     ): CreateUserImportJobRequest = {
       val __obj = js.Dynamic.literal(
         "CloudWatchLogsRoleArn" -> CloudWatchLogsRoleArn.asInstanceOf[js.Any],
-        "JobName"               -> JobName.asInstanceOf[js.Any],
-        "UserPoolId"            -> UserPoolId.asInstanceOf[js.Any]
+        "JobName" -> JobName.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateUserImportJobRequest]
@@ -2747,7 +2750,7 @@ package cognitoidentityprovider {
         CustomDomainConfig: js.UndefOr[CustomDomainConfigType] = js.undefined
     ): CreateUserPoolDomainRequest = {
       val __obj = js.Dynamic.literal(
-        "Domain"     -> Domain.asInstanceOf[js.Any],
+        "Domain" -> Domain.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
@@ -2917,7 +2920,7 @@ package cognitoidentityprovider {
         UserPoolId: UserPoolIdType
     ): DeleteGroupRequest = {
       val __obj = js.Dynamic.literal(
-        "GroupName"  -> GroupName.asInstanceOf[js.Any],
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
@@ -2939,7 +2942,7 @@ package cognitoidentityprovider {
     ): DeleteIdentityProviderRequest = {
       val __obj = js.Dynamic.literal(
         "ProviderName" -> ProviderName.asInstanceOf[js.Any],
-        "UserPoolId"   -> UserPoolId.asInstanceOf[js.Any]
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteIdentityProviderRequest]
@@ -2983,7 +2986,7 @@ package cognitoidentityprovider {
         UserAttributeNames: AttributeNameListType
     ): DeleteUserAttributesRequest = {
       val __obj = js.Dynamic.literal(
-        "AccessToken"        -> AccessToken.asInstanceOf[js.Any],
+        "AccessToken" -> AccessToken.asInstanceOf[js.Any],
         "UserAttributeNames" -> UserAttributeNames.asInstanceOf[js.Any]
       )
 
@@ -3023,7 +3026,7 @@ package cognitoidentityprovider {
         UserPoolId: UserPoolIdType
     ): DeleteUserPoolClientRequest = {
       val __obj = js.Dynamic.literal(
-        "ClientId"   -> ClientId.asInstanceOf[js.Any],
+        "ClientId" -> ClientId.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
@@ -3044,7 +3047,7 @@ package cognitoidentityprovider {
         UserPoolId: UserPoolIdType
     ): DeleteUserPoolDomainRequest = {
       val __obj = js.Dynamic.literal(
-        "Domain"     -> Domain.asInstanceOf[js.Any],
+        "Domain" -> Domain.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
@@ -3110,7 +3113,7 @@ package cognitoidentityprovider {
   @js.native
   sealed trait DeliveryMediumType extends js.Any
   object DeliveryMediumType extends js.Object {
-    val SMS   = "SMS".asInstanceOf[DeliveryMediumType]
+    val SMS = "SMS".asInstanceOf[DeliveryMediumType]
     val EMAIL = "EMAIL".asInstanceOf[DeliveryMediumType]
 
     val values = js.Object.freeze(js.Array(SMS, EMAIL))
@@ -3130,7 +3133,7 @@ package cognitoidentityprovider {
     ): DescribeIdentityProviderRequest = {
       val __obj = js.Dynamic.literal(
         "ProviderName" -> ProviderName.asInstanceOf[js.Any],
-        "UserPoolId"   -> UserPoolId.asInstanceOf[js.Any]
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeIdentityProviderRequest]
@@ -3249,7 +3252,7 @@ package cognitoidentityprovider {
         UserPoolId: UserPoolIdType
     ): DescribeUserImportJobRequest = {
       val __obj = js.Dynamic.literal(
-        "JobId"      -> JobId.asInstanceOf[js.Any],
+        "JobId" -> JobId.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
@@ -3292,7 +3295,7 @@ package cognitoidentityprovider {
         UserPoolId: UserPoolIdType
     ): DescribeUserPoolClientRequest = {
       val __obj = js.Dynamic.literal(
-        "ClientId"   -> ClientId.asInstanceOf[js.Any],
+        "ClientId" -> ClientId.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
@@ -3422,7 +3425,7 @@ package cognitoidentityprovider {
   @js.native
   sealed trait DeviceRememberedStatusType extends js.Any
   object DeviceRememberedStatusType extends js.Object {
-    val remembered     = "remembered".asInstanceOf[DeviceRememberedStatusType]
+    val remembered = "remembered".asInstanceOf[DeviceRememberedStatusType]
     val not_remembered = "not_remembered".asInstanceOf[DeviceRememberedStatusType]
 
     val values = js.Object.freeze(js.Array(remembered, not_remembered))
@@ -3529,8 +3532,8 @@ package cognitoidentityprovider {
     val CREATING = "CREATING".asInstanceOf[DomainStatusType]
     val DELETING = "DELETING".asInstanceOf[DomainStatusType]
     val UPDATING = "UPDATING".asInstanceOf[DomainStatusType]
-    val ACTIVE   = "ACTIVE".asInstanceOf[DomainStatusType]
-    val FAILED   = "FAILED".asInstanceOf[DomainStatusType]
+    val ACTIVE = "ACTIVE".asInstanceOf[DomainStatusType]
+    val FAILED = "FAILED".asInstanceOf[DomainStatusType]
 
     val values = js.Object.freeze(js.Array(CREATING, DELETING, UPDATING, ACTIVE, FAILED))
   }
@@ -3570,7 +3573,7 @@ package cognitoidentityprovider {
   sealed trait EmailSendingAccountType extends js.Any
   object EmailSendingAccountType extends js.Object {
     val COGNITO_DEFAULT = "COGNITO_DEFAULT".asInstanceOf[EmailSendingAccountType]
-    val DEVELOPER       = "DEVELOPER".asInstanceOf[EmailSendingAccountType]
+    val DEVELOPER = "DEVELOPER".asInstanceOf[EmailSendingAccountType]
 
     val values = js.Object.freeze(js.Array(COGNITO_DEFAULT, DEVELOPER))
   }
@@ -3625,7 +3628,7 @@ package cognitoidentityprovider {
     ): EventFeedbackType = {
       val __obj = js.Dynamic.literal(
         "FeedbackValue" -> FeedbackValue.asInstanceOf[js.Any],
-        "Provider"      -> Provider.asInstanceOf[js.Any]
+        "Provider" -> Provider.asInstanceOf[js.Any]
       )
 
       FeedbackDate.foreach(__v => __obj.updateDynamic("FeedbackDate")(__v.asInstanceOf[js.Any]))
@@ -3636,9 +3639,9 @@ package cognitoidentityprovider {
   @js.native
   sealed trait EventFilterType extends js.Any
   object EventFilterType extends js.Object {
-    val SIGN_IN         = "SIGN_IN".asInstanceOf[EventFilterType]
+    val SIGN_IN = "SIGN_IN".asInstanceOf[EventFilterType]
     val PASSWORD_CHANGE = "PASSWORD_CHANGE".asInstanceOf[EventFilterType]
-    val SIGN_UP         = "SIGN_UP".asInstanceOf[EventFilterType]
+    val SIGN_UP = "SIGN_UP".asInstanceOf[EventFilterType]
 
     val values = js.Object.freeze(js.Array(SIGN_IN, PASSWORD_CHANGE, SIGN_UP))
   }
@@ -3657,6 +3660,7 @@ package cognitoidentityprovider {
     */
   @js.native
   trait EventRiskType extends js.Object {
+    var CompromisedCredentialsDetected: js.UndefOr[WrappedBooleanType]
     var RiskDecision: js.UndefOr[RiskDecisionType]
     var RiskLevel: js.UndefOr[RiskLevelType]
   }
@@ -3664,10 +3668,14 @@ package cognitoidentityprovider {
   object EventRiskType {
     @inline
     def apply(
+        CompromisedCredentialsDetected: js.UndefOr[WrappedBooleanType] = js.undefined,
         RiskDecision: js.UndefOr[RiskDecisionType] = js.undefined,
         RiskLevel: js.UndefOr[RiskLevelType] = js.undefined
     ): EventRiskType = {
       val __obj = js.Dynamic.literal()
+      CompromisedCredentialsDetected.foreach(__v =>
+        __obj.updateDynamic("CompromisedCredentialsDetected")(__v.asInstanceOf[js.Any])
+      )
       RiskDecision.foreach(__v => __obj.updateDynamic("RiskDecision")(__v.asInstanceOf[js.Any]))
       RiskLevel.foreach(__v => __obj.updateDynamic("RiskLevel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventRiskType]
@@ -3677,8 +3685,8 @@ package cognitoidentityprovider {
   @js.native
   sealed trait EventType extends js.Any
   object EventType extends js.Object {
-    val SignIn         = "SignIn".asInstanceOf[EventType]
-    val SignUp         = "SignUp".asInstanceOf[EventType]
+    val SignIn = "SignIn".asInstanceOf[EventType]
+    val SignUp = "SignUp".asInstanceOf[EventType]
     val ForgotPassword = "ForgotPassword".asInstanceOf[EventType]
 
     val values = js.Object.freeze(js.Array(SignIn, SignUp, ForgotPassword))
@@ -3687,14 +3695,14 @@ package cognitoidentityprovider {
   @js.native
   sealed trait ExplicitAuthFlowsType extends js.Any
   object ExplicitAuthFlowsType extends js.Object {
-    val ADMIN_NO_SRP_AUTH              = "ADMIN_NO_SRP_AUTH".asInstanceOf[ExplicitAuthFlowsType]
-    val CUSTOM_AUTH_FLOW_ONLY          = "CUSTOM_AUTH_FLOW_ONLY".asInstanceOf[ExplicitAuthFlowsType]
-    val USER_PASSWORD_AUTH             = "USER_PASSWORD_AUTH".asInstanceOf[ExplicitAuthFlowsType]
+    val ADMIN_NO_SRP_AUTH = "ADMIN_NO_SRP_AUTH".asInstanceOf[ExplicitAuthFlowsType]
+    val CUSTOM_AUTH_FLOW_ONLY = "CUSTOM_AUTH_FLOW_ONLY".asInstanceOf[ExplicitAuthFlowsType]
+    val USER_PASSWORD_AUTH = "USER_PASSWORD_AUTH".asInstanceOf[ExplicitAuthFlowsType]
     val ALLOW_ADMIN_USER_PASSWORD_AUTH = "ALLOW_ADMIN_USER_PASSWORD_AUTH".asInstanceOf[ExplicitAuthFlowsType]
-    val ALLOW_CUSTOM_AUTH              = "ALLOW_CUSTOM_AUTH".asInstanceOf[ExplicitAuthFlowsType]
-    val ALLOW_USER_PASSWORD_AUTH       = "ALLOW_USER_PASSWORD_AUTH".asInstanceOf[ExplicitAuthFlowsType]
-    val ALLOW_USER_SRP_AUTH            = "ALLOW_USER_SRP_AUTH".asInstanceOf[ExplicitAuthFlowsType]
-    val ALLOW_REFRESH_TOKEN_AUTH       = "ALLOW_REFRESH_TOKEN_AUTH".asInstanceOf[ExplicitAuthFlowsType]
+    val ALLOW_CUSTOM_AUTH = "ALLOW_CUSTOM_AUTH".asInstanceOf[ExplicitAuthFlowsType]
+    val ALLOW_USER_PASSWORD_AUTH = "ALLOW_USER_PASSWORD_AUTH".asInstanceOf[ExplicitAuthFlowsType]
+    val ALLOW_USER_SRP_AUTH = "ALLOW_USER_SRP_AUTH".asInstanceOf[ExplicitAuthFlowsType]
+    val ALLOW_REFRESH_TOKEN_AUTH = "ALLOW_REFRESH_TOKEN_AUTH".asInstanceOf[ExplicitAuthFlowsType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3713,7 +3721,7 @@ package cognitoidentityprovider {
   @js.native
   sealed trait FeedbackValueType extends js.Any
   object FeedbackValueType extends js.Object {
-    val Valid   = "Valid".asInstanceOf[FeedbackValueType]
+    val Valid = "Valid".asInstanceOf[FeedbackValueType]
     val Invalid = "Invalid".asInstanceOf[FeedbackValueType]
 
     val values = js.Object.freeze(js.Array(Valid, Invalid))
@@ -3899,7 +3907,7 @@ package cognitoidentityprovider {
         UserPoolId: UserPoolIdType
     ): GetGroupRequest = {
       val __obj = js.Dynamic.literal(
-        "GroupName"  -> GroupName.asInstanceOf[js.Any],
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
@@ -3937,7 +3945,7 @@ package cognitoidentityprovider {
     ): GetIdentityProviderByIdentifierRequest = {
       val __obj = js.Dynamic.literal(
         "IdpIdentifier" -> IdpIdentifier.asInstanceOf[js.Any],
-        "UserPoolId"    -> UserPoolId.asInstanceOf[js.Any]
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetIdentityProviderByIdentifierRequest]
@@ -4059,7 +4067,7 @@ package cognitoidentityprovider {
         ClientMetadata: js.UndefOr[ClientMetadataType] = js.undefined
     ): GetUserAttributeVerificationCodeRequest = {
       val __obj = js.Dynamic.literal(
-        "AccessToken"   -> AccessToken.asInstanceOf[js.Any],
+        "AccessToken" -> AccessToken.asInstanceOf[js.Any],
         "AttributeName" -> AttributeName.asInstanceOf[js.Any]
       )
 
@@ -4173,7 +4181,7 @@ package cognitoidentityprovider {
     ): GetUserResponse = {
       val __obj = js.Dynamic.literal(
         "UserAttributes" -> UserAttributes.asInstanceOf[js.Any],
-        "Username"       -> Username.asInstanceOf[js.Any]
+        "Username" -> Username.asInstanceOf[js.Any]
       )
 
       MFAOptions.foreach(__v => __obj.updateDynamic("MFAOptions")(__v.asInstanceOf[js.Any]))
@@ -4322,12 +4330,12 @@ package cognitoidentityprovider {
   @js.native
   sealed trait IdentityProviderTypeType extends js.Any
   object IdentityProviderTypeType extends js.Object {
-    val SAML            = "SAML".asInstanceOf[IdentityProviderTypeType]
-    val Facebook        = "Facebook".asInstanceOf[IdentityProviderTypeType]
-    val Google          = "Google".asInstanceOf[IdentityProviderTypeType]
+    val SAML = "SAML".asInstanceOf[IdentityProviderTypeType]
+    val Facebook = "Facebook".asInstanceOf[IdentityProviderTypeType]
+    val Google = "Google".asInstanceOf[IdentityProviderTypeType]
     val LoginWithAmazon = "LoginWithAmazon".asInstanceOf[IdentityProviderTypeType]
     val SignInWithApple = "SignInWithApple".asInstanceOf[IdentityProviderTypeType]
-    val OIDC            = "OIDC".asInstanceOf[IdentityProviderTypeType]
+    val OIDC = "OIDC".asInstanceOf[IdentityProviderTypeType]
 
     val values = js.Object.freeze(js.Array(SAML, Facebook, Google, LoginWithAmazon, SignInWithApple, OIDC))
   }
@@ -4821,7 +4829,7 @@ package cognitoidentityprovider {
         NextToken: js.UndefOr[PaginationKey] = js.undefined
     ): ListUsersInGroupRequest = {
       val __obj = js.Dynamic.literal(
-        "GroupName"  -> GroupName.asInstanceOf[js.Any],
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
@@ -4932,7 +4940,7 @@ package cognitoidentityprovider {
   @js.native
   sealed trait MessageActionType extends js.Any
   object MessageActionType extends js.Object {
-    val RESEND   = "RESEND".asInstanceOf[MessageActionType]
+    val RESEND = "RESEND".asInstanceOf[MessageActionType]
     val SUPPRESS = "SUPPRESS".asInstanceOf[MessageActionType]
 
     val values = js.Object.freeze(js.Array(RESEND, SUPPRESS))
@@ -5073,8 +5081,8 @@ package cognitoidentityprovider {
   @js.native
   sealed trait OAuthFlowType extends js.Any
   object OAuthFlowType extends js.Object {
-    val code               = "code".asInstanceOf[OAuthFlowType]
-    val `implicit`         = "implicit".asInstanceOf[OAuthFlowType]
+    val code = "code".asInstanceOf[OAuthFlowType]
+    val `implicit` = "implicit".asInstanceOf[OAuthFlowType]
     val client_credentials = "client_credentials".asInstanceOf[OAuthFlowType]
 
     val values = js.Object.freeze(js.Array(code, `implicit`, client_credentials))
@@ -5119,7 +5127,7 @@ package cognitoidentityprovider {
   @js.native
   sealed trait PreventUserExistenceErrorTypes extends js.Any
   object PreventUserExistenceErrorTypes extends js.Object {
-    val LEGACY  = "LEGACY".asInstanceOf[PreventUserExistenceErrorTypes]
+    val LEGACY = "LEGACY".asInstanceOf[PreventUserExistenceErrorTypes]
     val ENABLED = "ENABLED".asInstanceOf[PreventUserExistenceErrorTypes]
 
     val values = js.Object.freeze(js.Array(LEGACY, ENABLED))
@@ -5181,9 +5189,9 @@ package cognitoidentityprovider {
   @js.native
   sealed trait RecoveryOptionNameType extends js.Any
   object RecoveryOptionNameType extends js.Object {
-    val verified_email        = "verified_email".asInstanceOf[RecoveryOptionNameType]
+    val verified_email = "verified_email".asInstanceOf[RecoveryOptionNameType]
     val verified_phone_number = "verified_phone_number".asInstanceOf[RecoveryOptionNameType]
-    val admin_only            = "admin_only".asInstanceOf[RecoveryOptionNameType]
+    val admin_only = "admin_only".asInstanceOf[RecoveryOptionNameType]
 
     val values = js.Object.freeze(js.Array(verified_email, verified_phone_number, admin_only))
   }
@@ -5204,7 +5212,7 @@ package cognitoidentityprovider {
         Priority: PriorityType
     ): RecoveryOptionType = {
       val __obj = js.Dynamic.literal(
-        "Name"     -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Priority" -> Priority.asInstanceOf[js.Any]
       )
 
@@ -5284,7 +5292,7 @@ package cognitoidentityprovider {
     ): ResourceServerScopeType = {
       val __obj = js.Dynamic.literal(
         "ScopeDescription" -> ScopeDescription.asInstanceOf[js.Any],
-        "ScopeName"        -> ScopeName.asInstanceOf[js.Any]
+        "ScopeName" -> ScopeName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ResourceServerScopeType]
@@ -5346,7 +5354,7 @@ package cognitoidentityprovider {
     ): RespondToAuthChallengeRequest = {
       val __obj = js.Dynamic.literal(
         "ChallengeName" -> ChallengeName.asInstanceOf[js.Any],
-        "ClientId"      -> ClientId.asInstanceOf[js.Any]
+        "ClientId" -> ClientId.asInstanceOf[js.Any]
       )
 
       AnalyticsMetadata.foreach(__v => __obj.updateDynamic("AnalyticsMetadata")(__v.asInstanceOf[js.Any]))
@@ -5429,9 +5437,9 @@ package cognitoidentityprovider {
   @js.native
   sealed trait RiskDecisionType extends js.Any
   object RiskDecisionType extends js.Object {
-    val NoRisk          = "NoRisk".asInstanceOf[RiskDecisionType]
+    val NoRisk = "NoRisk".asInstanceOf[RiskDecisionType]
     val AccountTakeover = "AccountTakeover".asInstanceOf[RiskDecisionType]
-    val Block           = "Block".asInstanceOf[RiskDecisionType]
+    val Block = "Block".asInstanceOf[RiskDecisionType]
 
     val values = js.Object.freeze(js.Array(NoRisk, AccountTakeover, Block))
   }
@@ -5461,9 +5469,9 @@ package cognitoidentityprovider {
   @js.native
   sealed trait RiskLevelType extends js.Any
   object RiskLevelType extends js.Object {
-    val Low    = "Low".asInstanceOf[RiskLevelType]
+    val Low = "Low".asInstanceOf[RiskLevelType]
     val Medium = "Medium".asInstanceOf[RiskLevelType]
-    val High   = "High".asInstanceOf[RiskLevelType]
+    val High = "High".asInstanceOf[RiskLevelType]
 
     val values = js.Object.freeze(js.Array(Low, Medium, High))
   }
@@ -5737,7 +5745,7 @@ package cognitoidentityprovider {
     ): SetUserSettingsRequest = {
       val __obj = js.Dynamic.literal(
         "AccessToken" -> AccessToken.asInstanceOf[js.Any],
-        "MFAOptions"  -> MFAOptions.asInstanceOf[js.Any]
+        "MFAOptions" -> MFAOptions.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[SetUserSettingsRequest]
@@ -5824,7 +5832,7 @@ package cognitoidentityprovider {
     ): SignUpResponse = {
       val __obj = js.Dynamic.literal(
         "UserConfirmed" -> UserConfirmed.asInstanceOf[js.Any],
-        "UserSub"       -> UserSub.asInstanceOf[js.Any]
+        "UserSub" -> UserSub.asInstanceOf[js.Any]
       )
 
       CodeDeliveryDetails.foreach(__v => __obj.updateDynamic("CodeDeliveryDetails")(__v.asInstanceOf[js.Any]))
@@ -5935,7 +5943,7 @@ package cognitoidentityprovider {
         UserPoolId: UserPoolIdType
     ): StartUserImportJobRequest = {
       val __obj = js.Dynamic.literal(
-        "JobId"      -> JobId.asInstanceOf[js.Any],
+        "JobId" -> JobId.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
@@ -5965,7 +5973,7 @@ package cognitoidentityprovider {
   @js.native
   sealed trait StatusType extends js.Any
   object StatusType extends js.Object {
-    val Enabled  = "Enabled".asInstanceOf[StatusType]
+    val Enabled = "Enabled".asInstanceOf[StatusType]
     val Disabled = "Disabled".asInstanceOf[StatusType]
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
@@ -5987,7 +5995,7 @@ package cognitoidentityprovider {
         UserPoolId: UserPoolIdType
     ): StopUserImportJobRequest = {
       val __obj = js.Dynamic.literal(
-        "JobId"      -> JobId.asInstanceOf[js.Any],
+        "JobId" -> JobId.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
@@ -6050,7 +6058,7 @@ package cognitoidentityprovider {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -6121,7 +6129,7 @@ package cognitoidentityprovider {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -6160,11 +6168,11 @@ package cognitoidentityprovider {
         Username: UsernameType
     ): UpdateAuthEventFeedbackRequest = {
       val __obj = js.Dynamic.literal(
-        "EventId"       -> EventId.asInstanceOf[js.Any],
+        "EventId" -> EventId.asInstanceOf[js.Any],
         "FeedbackToken" -> FeedbackToken.asInstanceOf[js.Any],
         "FeedbackValue" -> FeedbackValue.asInstanceOf[js.Any],
-        "UserPoolId"    -> UserPoolId.asInstanceOf[js.Any],
-        "Username"      -> Username.asInstanceOf[js.Any]
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateAuthEventFeedbackRequest]
@@ -6203,7 +6211,7 @@ package cognitoidentityprovider {
     ): UpdateDeviceStatusRequest = {
       val __obj = js.Dynamic.literal(
         "AccessToken" -> AccessToken.asInstanceOf[js.Any],
-        "DeviceKey"   -> DeviceKey.asInstanceOf[js.Any]
+        "DeviceKey" -> DeviceKey.asInstanceOf[js.Any]
       )
 
       DeviceRememberedStatus.foreach(__v => __obj.updateDynamic("DeviceRememberedStatus")(__v.asInstanceOf[js.Any]))
@@ -6246,7 +6254,7 @@ package cognitoidentityprovider {
         RoleArn: js.UndefOr[ArnType] = js.undefined
     ): UpdateGroupRequest = {
       val __obj = js.Dynamic.literal(
-        "GroupName"  -> GroupName.asInstanceOf[js.Any],
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
@@ -6293,7 +6301,7 @@ package cognitoidentityprovider {
     ): UpdateIdentityProviderRequest = {
       val __obj = js.Dynamic.literal(
         "ProviderName" -> ProviderName.asInstanceOf[js.Any],
-        "UserPoolId"   -> UserPoolId.asInstanceOf[js.Any]
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
       AttributeMapping.foreach(__v => __obj.updateDynamic("AttributeMapping")(__v.asInstanceOf[js.Any]))
@@ -6339,7 +6347,7 @@ package cognitoidentityprovider {
     ): UpdateResourceServerRequest = {
       val __obj = js.Dynamic.literal(
         "Identifier" -> Identifier.asInstanceOf[js.Any],
-        "Name"       -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
@@ -6384,7 +6392,7 @@ package cognitoidentityprovider {
         ClientMetadata: js.UndefOr[ClientMetadataType] = js.undefined
     ): UpdateUserAttributesRequest = {
       val __obj = js.Dynamic.literal(
-        "AccessToken"    -> AccessToken.asInstanceOf[js.Any],
+        "AccessToken" -> AccessToken.asInstanceOf[js.Any],
         "UserAttributes" -> UserAttributes.asInstanceOf[js.Any]
       )
 
@@ -6456,7 +6464,7 @@ package cognitoidentityprovider {
         WriteAttributes: js.UndefOr[ClientPermissionListType] = js.undefined
     ): UpdateUserPoolClientRequest = {
       val __obj = js.Dynamic.literal(
-        "ClientId"   -> ClientId.asInstanceOf[js.Any],
+        "ClientId" -> ClientId.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
@@ -6522,8 +6530,8 @@ package cognitoidentityprovider {
     ): UpdateUserPoolDomainRequest = {
       val __obj = js.Dynamic.literal(
         "CustomDomainConfig" -> CustomDomainConfig.asInstanceOf[js.Any],
-        "Domain"             -> Domain.asInstanceOf[js.Any],
-        "UserPoolId"         -> UserPoolId.asInstanceOf[js.Any]
+        "Domain" -> Domain.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateUserPoolDomainRequest]
@@ -6658,14 +6666,14 @@ package cognitoidentityprovider {
   @js.native
   sealed trait UserImportJobStatusType extends js.Any
   object UserImportJobStatusType extends js.Object {
-    val Created    = "Created".asInstanceOf[UserImportJobStatusType]
-    val Pending    = "Pending".asInstanceOf[UserImportJobStatusType]
+    val Created = "Created".asInstanceOf[UserImportJobStatusType]
+    val Pending = "Pending".asInstanceOf[UserImportJobStatusType]
     val InProgress = "InProgress".asInstanceOf[UserImportJobStatusType]
-    val Stopping   = "Stopping".asInstanceOf[UserImportJobStatusType]
-    val Expired    = "Expired".asInstanceOf[UserImportJobStatusType]
-    val Stopped    = "Stopped".asInstanceOf[UserImportJobStatusType]
-    val Failed     = "Failed".asInstanceOf[UserImportJobStatusType]
-    val Succeeded  = "Succeeded".asInstanceOf[UserImportJobStatusType]
+    val Stopping = "Stopping".asInstanceOf[UserImportJobStatusType]
+    val Expired = "Expired".asInstanceOf[UserImportJobStatusType]
+    val Stopped = "Stopped".asInstanceOf[UserImportJobStatusType]
+    val Failed = "Failed".asInstanceOf[UserImportJobStatusType]
+    val Succeeded = "Succeeded".asInstanceOf[UserImportJobStatusType]
 
     val values = js.Object.freeze(js.Array(Created, Pending, InProgress, Stopping, Expired, Stopped, Failed, Succeeded))
   }
@@ -6887,8 +6895,8 @@ package cognitoidentityprovider {
   @js.native
   sealed trait UserPoolMfaType extends js.Any
   object UserPoolMfaType extends js.Object {
-    val OFF      = "OFF".asInstanceOf[UserPoolMfaType]
-    val ON       = "ON".asInstanceOf[UserPoolMfaType]
+    val OFF = "OFF".asInstanceOf[UserPoolMfaType]
+    val ON = "ON".asInstanceOf[UserPoolMfaType]
     val OPTIONAL = "OPTIONAL".asInstanceOf[UserPoolMfaType]
 
     val values = js.Object.freeze(js.Array(OFF, ON, OPTIONAL))
@@ -7029,12 +7037,12 @@ package cognitoidentityprovider {
   @js.native
   sealed trait UserStatusType extends js.Any
   object UserStatusType extends js.Object {
-    val UNCONFIRMED           = "UNCONFIRMED".asInstanceOf[UserStatusType]
-    val CONFIRMED             = "CONFIRMED".asInstanceOf[UserStatusType]
-    val ARCHIVED              = "ARCHIVED".asInstanceOf[UserStatusType]
-    val COMPROMISED           = "COMPROMISED".asInstanceOf[UserStatusType]
-    val UNKNOWN               = "UNKNOWN".asInstanceOf[UserStatusType]
-    val RESET_REQUIRED        = "RESET_REQUIRED".asInstanceOf[UserStatusType]
+    val UNCONFIRMED = "UNCONFIRMED".asInstanceOf[UserStatusType]
+    val CONFIRMED = "CONFIRMED".asInstanceOf[UserStatusType]
+    val ARCHIVED = "ARCHIVED".asInstanceOf[UserStatusType]
+    val COMPROMISED = "COMPROMISED".asInstanceOf[UserStatusType]
+    val UNKNOWN = "UNKNOWN".asInstanceOf[UserStatusType]
+    val RESET_REQUIRED = "RESET_REQUIRED".asInstanceOf[UserStatusType]
     val FORCE_CHANGE_PASSWORD = "FORCE_CHANGE_PASSWORD".asInstanceOf[UserStatusType]
 
     val values = js.Object.freeze(
@@ -7083,7 +7091,7 @@ package cognitoidentityprovider {
   sealed trait UsernameAttributeType extends js.Any
   object UsernameAttributeType extends js.Object {
     val phone_number = "phone_number".asInstanceOf[UsernameAttributeType]
-    val email        = "email".asInstanceOf[UsernameAttributeType]
+    val email = "email".asInstanceOf[UsernameAttributeType]
 
     val values = js.Object.freeze(js.Array(phone_number, email))
   }
@@ -7147,7 +7155,7 @@ package cognitoidentityprovider {
   sealed trait VerifiedAttributeType extends js.Any
   object VerifiedAttributeType extends js.Object {
     val phone_number = "phone_number".asInstanceOf[VerifiedAttributeType]
-    val email        = "email".asInstanceOf[VerifiedAttributeType]
+    val email = "email".asInstanceOf[VerifiedAttributeType]
 
     val values = js.Object.freeze(js.Array(phone_number, email))
   }
@@ -7202,7 +7210,7 @@ package cognitoidentityprovider {
   sealed trait VerifySoftwareTokenResponseType extends js.Any
   object VerifySoftwareTokenResponseType extends js.Object {
     val SUCCESS = "SUCCESS".asInstanceOf[VerifySoftwareTokenResponseType]
-    val ERROR   = "ERROR".asInstanceOf[VerifySoftwareTokenResponseType]
+    val ERROR = "ERROR".asInstanceOf[VerifySoftwareTokenResponseType]
 
     val values = js.Object.freeze(js.Array(SUCCESS, ERROR))
   }
@@ -7225,9 +7233,9 @@ package cognitoidentityprovider {
         Code: ConfirmationCodeType
     ): VerifyUserAttributeRequest = {
       val __obj = js.Dynamic.literal(
-        "AccessToken"   -> AccessToken.asInstanceOf[js.Any],
+        "AccessToken" -> AccessToken.asInstanceOf[js.Any],
         "AttributeName" -> AttributeName.asInstanceOf[js.Any],
-        "Code"          -> Code.asInstanceOf[js.Any]
+        "Code" -> Code.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[VerifyUserAttributeRequest]

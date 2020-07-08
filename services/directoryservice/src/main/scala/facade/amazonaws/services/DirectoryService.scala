@@ -7,114 +7,114 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object directoryservice {
-  type AccessUrl                                  = String
-  type AddedDateTime                              = js.Date
-  type AliasName                                  = String
-  type AttributeName                              = String
-  type AttributeValue                             = String
-  type Attributes                                 = js.Array[Attribute]
-  type AvailabilityZone                           = String
-  type AvailabilityZones                          = js.Array[AvailabilityZone]
-  type CertificateCN                              = String
-  type CertificateData                            = String
-  type CertificateExpiryDateTime                  = js.Date
-  type CertificateId                              = String
-  type CertificateRegisteredDateTime              = js.Date
-  type CertificateStateReason                     = String
-  type CertificatesInfo                           = js.Array[CertificateInfo]
-  type CidrIp                                     = String
-  type CidrIps                                    = js.Array[CidrIp]
-  type CloudOnlyDirectoriesLimitReached           = Boolean
-  type ComputerName                               = String
-  type ComputerPassword                           = String
-  type ConditionalForwarders                      = js.Array[ConditionalForwarder]
-  type ConnectPassword                            = String
-  type ConnectedDirectoriesLimitReached           = Boolean
-  type CreateSnapshotBeforeSchemaExtension        = Boolean
-  type CreatedDateTime                            = js.Date
-  type CustomerId                                 = String
-  type CustomerUserName                           = String
-  type DeleteAssociatedConditionalForwarder       = Boolean
-  type Description                                = String
-  type DesiredNumberOfDomainControllers           = Int
-  type DirectoryDescriptions                      = js.Array[DirectoryDescription]
-  type DirectoryId                                = String
-  type DirectoryIds                               = js.Array[DirectoryId]
-  type DirectoryName                              = String
-  type DirectoryShortName                         = String
-  type DnsIpAddrs                                 = js.Array[IpAddr]
-  type DomainControllerId                         = String
-  type DomainControllerIds                        = js.Array[DomainControllerId]
-  type DomainControllerStatusReason               = String
-  type DomainControllers                          = js.Array[DomainController]
-  type EndDateTime                                = js.Date
-  type EventTopics                                = js.Array[EventTopic]
-  type IpAddr                                     = String
-  type IpAddrs                                    = js.Array[IpAddr]
-  type IpRouteStatusReason                        = String
-  type IpRoutes                                   = js.Array[IpRoute]
-  type IpRoutesInfo                               = js.Array[IpRouteInfo]
-  type LDAPSSettingsInfo                          = js.Array[LDAPSSettingInfo]
-  type LDAPSStatusReason                          = String
-  type LastUpdatedDateTime                        = js.Date
-  type LaunchTime                                 = js.Date
-  type LdifContent                                = String
-  type Limit                                      = Int
-  type LogGroupName                               = String
-  type LogSubscriptions                           = js.Array[LogSubscription]
-  type ManualSnapshotsLimitReached                = Boolean
-  type NextToken                                  = String
-  type Notes                                      = String
-  type OrganizationalUnitDN                       = String
-  type PageLimit                                  = Int
-  type Password                                   = String
-  type PortNumber                                 = Int
-  type RadiusDisplayLabel                         = String
-  type RadiusRetries                              = Int
-  type RadiusSharedSecret                         = String
-  type RadiusTimeout                              = Int
-  type RemoteDomainName                           = String
-  type RemoteDomainNames                          = js.Array[RemoteDomainName]
-  type RequestId                                  = String
-  type ResourceId                                 = String
-  type SID                                        = String
-  type SchemaExtensionId                          = String
-  type SchemaExtensionStatusReason                = String
-  type SchemaExtensionsInfo                       = js.Array[SchemaExtensionInfo]
-  type SecurityGroupId                            = String
-  type Server                                     = String
-  type Servers                                    = js.Array[Server]
-  type SharedDirectories                          = js.Array[SharedDirectory]
-  type SnapshotId                                 = String
-  type SnapshotIds                                = js.Array[SnapshotId]
-  type SnapshotName                               = String
-  type Snapshots                                  = js.Array[Snapshot]
-  type SsoEnabled                                 = Boolean
-  type StageReason                                = String
-  type StartDateTime                              = js.Date
-  type StartTime                                  = js.Date
-  type StateLastUpdatedDateTime                   = js.Date
-  type SubnetId                                   = String
-  type SubnetIds                                  = js.Array[SubnetId]
-  type SubscriptionCreatedDateTime                = js.Date
-  type TagKey                                     = String
-  type TagKeys                                    = js.Array[TagKey]
-  type TagValue                                   = String
-  type Tags                                       = js.Array[Tag]
-  type TargetId                                   = String
-  type TopicArn                                   = String
-  type TopicName                                  = String
-  type TopicNames                                 = js.Array[TopicName]
-  type TrustId                                    = String
-  type TrustIds                                   = js.Array[TrustId]
-  type TrustPassword                              = String
-  type TrustStateReason                           = String
-  type Trusts                                     = js.Array[Trust]
+  type AccessUrl = String
+  type AddedDateTime = js.Date
+  type AliasName = String
+  type AttributeName = String
+  type AttributeValue = String
+  type Attributes = js.Array[Attribute]
+  type AvailabilityZone = String
+  type AvailabilityZones = js.Array[AvailabilityZone]
+  type CertificateCN = String
+  type CertificateData = String
+  type CertificateExpiryDateTime = js.Date
+  type CertificateId = String
+  type CertificateRegisteredDateTime = js.Date
+  type CertificateStateReason = String
+  type CertificatesInfo = js.Array[CertificateInfo]
+  type CidrIp = String
+  type CidrIps = js.Array[CidrIp]
+  type CloudOnlyDirectoriesLimitReached = Boolean
+  type ComputerName = String
+  type ComputerPassword = String
+  type ConditionalForwarders = js.Array[ConditionalForwarder]
+  type ConnectPassword = String
+  type ConnectedDirectoriesLimitReached = Boolean
+  type CreateSnapshotBeforeSchemaExtension = Boolean
+  type CreatedDateTime = js.Date
+  type CustomerId = String
+  type CustomerUserName = String
+  type DeleteAssociatedConditionalForwarder = Boolean
+  type Description = String
+  type DesiredNumberOfDomainControllers = Int
+  type DirectoryDescriptions = js.Array[DirectoryDescription]
+  type DirectoryId = String
+  type DirectoryIds = js.Array[DirectoryId]
+  type DirectoryName = String
+  type DirectoryShortName = String
+  type DnsIpAddrs = js.Array[IpAddr]
+  type DomainControllerId = String
+  type DomainControllerIds = js.Array[DomainControllerId]
+  type DomainControllerStatusReason = String
+  type DomainControllers = js.Array[DomainController]
+  type EndDateTime = js.Date
+  type EventTopics = js.Array[EventTopic]
+  type IpAddr = String
+  type IpAddrs = js.Array[IpAddr]
+  type IpRouteStatusReason = String
+  type IpRoutes = js.Array[IpRoute]
+  type IpRoutesInfo = js.Array[IpRouteInfo]
+  type LDAPSSettingsInfo = js.Array[LDAPSSettingInfo]
+  type LDAPSStatusReason = String
+  type LastUpdatedDateTime = js.Date
+  type LaunchTime = js.Date
+  type LdifContent = String
+  type Limit = Int
+  type LogGroupName = String
+  type LogSubscriptions = js.Array[LogSubscription]
+  type ManualSnapshotsLimitReached = Boolean
+  type NextToken = String
+  type Notes = String
+  type OrganizationalUnitDN = String
+  type PageLimit = Int
+  type Password = String
+  type PortNumber = Int
+  type RadiusDisplayLabel = String
+  type RadiusRetries = Int
+  type RadiusSharedSecret = String
+  type RadiusTimeout = Int
+  type RemoteDomainName = String
+  type RemoteDomainNames = js.Array[RemoteDomainName]
+  type RequestId = String
+  type ResourceId = String
+  type SID = String
+  type SchemaExtensionId = String
+  type SchemaExtensionStatusReason = String
+  type SchemaExtensionsInfo = js.Array[SchemaExtensionInfo]
+  type SecurityGroupId = String
+  type Server = String
+  type Servers = js.Array[Server]
+  type SharedDirectories = js.Array[SharedDirectory]
+  type SnapshotId = String
+  type SnapshotIds = js.Array[SnapshotId]
+  type SnapshotName = String
+  type Snapshots = js.Array[Snapshot]
+  type SsoEnabled = Boolean
+  type StageReason = String
+  type StartDateTime = js.Date
+  type StartTime = js.Date
+  type StateLastUpdatedDateTime = js.Date
+  type SubnetId = String
+  type SubnetIds = js.Array[SubnetId]
+  type SubscriptionCreatedDateTime = js.Date
+  type TagKey = String
+  type TagKeys = js.Array[TagKey]
+  type TagValue = String
+  type Tags = js.Array[Tag]
+  type TargetId = String
+  type TopicArn = String
+  type TopicName = String
+  type TopicNames = js.Array[TopicName]
+  type TrustId = String
+  type TrustIds = js.Array[TrustId]
+  type TrustPassword = String
+  type TrustStateReason = String
+  type Trusts = js.Array[Trust]
   type UpdateSecurityGroupForDirectoryControllers = Boolean
-  type UseSameUsername                            = Boolean
-  type UserName                                   = String
-  type UserPassword                               = String
-  type VpcId                                      = String
+  type UseSameUsername = Boolean
+  type UserName = String
+  type UserPassword = String
+  type VpcId = String
 
   implicit final class DirectoryServiceOps(private val service: DirectoryService) extends AnyVal {
 
@@ -251,74 +251,74 @@ package directoryservice {
     def this(config: AWSConfig) = this()
 
     def acceptSharedDirectory(params: AcceptSharedDirectoryRequest): Request[AcceptSharedDirectoryResult] = js.native
-    def addIpRoutes(params: AddIpRoutesRequest): Request[AddIpRoutesResult]                               = js.native
-    def addTagsToResource(params: AddTagsToResourceRequest): Request[AddTagsToResourceResult]             = js.native
+    def addIpRoutes(params: AddIpRoutesRequest): Request[AddIpRoutesResult] = js.native
+    def addTagsToResource(params: AddTagsToResourceRequest): Request[AddTagsToResourceResult] = js.native
     def cancelSchemaExtension(params: CancelSchemaExtensionRequest): Request[CancelSchemaExtensionResult] = js.native
-    def connectDirectory(params: ConnectDirectoryRequest): Request[ConnectDirectoryResult]                = js.native
-    def createAlias(params: CreateAliasRequest): Request[CreateAliasResult]                               = js.native
-    def createComputer(params: CreateComputerRequest): Request[CreateComputerResult]                      = js.native
+    def connectDirectory(params: ConnectDirectoryRequest): Request[ConnectDirectoryResult] = js.native
+    def createAlias(params: CreateAliasRequest): Request[CreateAliasResult] = js.native
+    def createComputer(params: CreateComputerRequest): Request[CreateComputerResult] = js.native
     def createConditionalForwarder(
         params: CreateConditionalForwarderRequest
-    ): Request[CreateConditionalForwarderResult]                                                          = js.native
-    def createDirectory(params: CreateDirectoryRequest): Request[CreateDirectoryResult]                   = js.native
+    ): Request[CreateConditionalForwarderResult] = js.native
+    def createDirectory(params: CreateDirectoryRequest): Request[CreateDirectoryResult] = js.native
     def createLogSubscription(params: CreateLogSubscriptionRequest): Request[CreateLogSubscriptionResult] = js.native
-    def createMicrosoftAD(params: CreateMicrosoftADRequest): Request[CreateMicrosoftADResult]             = js.native
-    def createSnapshot(params: CreateSnapshotRequest): Request[CreateSnapshotResult]                      = js.native
-    def createTrust(params: CreateTrustRequest): Request[CreateTrustResult]                               = js.native
+    def createMicrosoftAD(params: CreateMicrosoftADRequest): Request[CreateMicrosoftADResult] = js.native
+    def createSnapshot(params: CreateSnapshotRequest): Request[CreateSnapshotResult] = js.native
+    def createTrust(params: CreateTrustRequest): Request[CreateTrustResult] = js.native
     def deleteConditionalForwarder(
         params: DeleteConditionalForwarderRequest
-    ): Request[DeleteConditionalForwarderResult]                                                          = js.native
-    def deleteDirectory(params: DeleteDirectoryRequest): Request[DeleteDirectoryResult]                   = js.native
+    ): Request[DeleteConditionalForwarderResult] = js.native
+    def deleteDirectory(params: DeleteDirectoryRequest): Request[DeleteDirectoryResult] = js.native
     def deleteLogSubscription(params: DeleteLogSubscriptionRequest): Request[DeleteLogSubscriptionResult] = js.native
-    def deleteSnapshot(params: DeleteSnapshotRequest): Request[DeleteSnapshotResult]                      = js.native
-    def deleteTrust(params: DeleteTrustRequest): Request[DeleteTrustResult]                               = js.native
+    def deleteSnapshot(params: DeleteSnapshotRequest): Request[DeleteSnapshotResult] = js.native
+    def deleteTrust(params: DeleteTrustRequest): Request[DeleteTrustResult] = js.native
     def deregisterCertificate(params: DeregisterCertificateRequest): Request[DeregisterCertificateResult] = js.native
-    def deregisterEventTopic(params: DeregisterEventTopicRequest): Request[DeregisterEventTopicResult]    = js.native
-    def describeCertificate(params: DescribeCertificateRequest): Request[DescribeCertificateResult]       = js.native
+    def deregisterEventTopic(params: DeregisterEventTopicRequest): Request[DeregisterEventTopicResult] = js.native
+    def describeCertificate(params: DescribeCertificateRequest): Request[DescribeCertificateResult] = js.native
     def describeConditionalForwarders(
         params: DescribeConditionalForwardersRequest
-    ): Request[DescribeConditionalForwardersResult]                                                 = js.native
+    ): Request[DescribeConditionalForwardersResult] = js.native
     def describeDirectories(params: DescribeDirectoriesRequest): Request[DescribeDirectoriesResult] = js.native
     def describeDomainControllers(params: DescribeDomainControllersRequest): Request[DescribeDomainControllersResult] =
       js.native
-    def describeEventTopics(params: DescribeEventTopicsRequest): Request[DescribeEventTopicsResult]       = js.native
+    def describeEventTopics(params: DescribeEventTopicsRequest): Request[DescribeEventTopicsResult] = js.native
     def describeLDAPSSettings(params: DescribeLDAPSSettingsRequest): Request[DescribeLDAPSSettingsResult] = js.native
     def describeSharedDirectories(params: DescribeSharedDirectoriesRequest): Request[DescribeSharedDirectoriesResult] =
       js.native
-    def describeSnapshots(params: DescribeSnapshotsRequest): Request[DescribeSnapshotsResult]                = js.native
-    def describeTrusts(params: DescribeTrustsRequest): Request[DescribeTrustsResult]                         = js.native
-    def disableLDAPS(params: DisableLDAPSRequest): Request[DisableLDAPSResult]                               = js.native
-    def disableRadius(params: DisableRadiusRequest): Request[DisableRadiusResult]                            = js.native
-    def disableSso(params: DisableSsoRequest): Request[DisableSsoResult]                                     = js.native
-    def enableLDAPS(params: EnableLDAPSRequest): Request[EnableLDAPSResult]                                  = js.native
-    def enableRadius(params: EnableRadiusRequest): Request[EnableRadiusResult]                               = js.native
-    def enableSso(params: EnableSsoRequest): Request[EnableSsoResult]                                        = js.native
-    def getDirectoryLimits(params: GetDirectoryLimitsRequest): Request[GetDirectoryLimitsResult]             = js.native
-    def getSnapshotLimits(params: GetSnapshotLimitsRequest): Request[GetSnapshotLimitsResult]                = js.native
-    def listCertificates(params: ListCertificatesRequest): Request[ListCertificatesResult]                   = js.native
-    def listIpRoutes(params: ListIpRoutesRequest): Request[ListIpRoutesResult]                               = js.native
-    def listLogSubscriptions(params: ListLogSubscriptionsRequest): Request[ListLogSubscriptionsResult]       = js.native
-    def listSchemaExtensions(params: ListSchemaExtensionsRequest): Request[ListSchemaExtensionsResult]       = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResult]          = js.native
-    def registerCertificate(params: RegisterCertificateRequest): Request[RegisterCertificateResult]          = js.native
-    def registerEventTopic(params: RegisterEventTopicRequest): Request[RegisterEventTopicResult]             = js.native
-    def rejectSharedDirectory(params: RejectSharedDirectoryRequest): Request[RejectSharedDirectoryResult]    = js.native
-    def removeIpRoutes(params: RemoveIpRoutesRequest): Request[RemoveIpRoutesResult]                         = js.native
+    def describeSnapshots(params: DescribeSnapshotsRequest): Request[DescribeSnapshotsResult] = js.native
+    def describeTrusts(params: DescribeTrustsRequest): Request[DescribeTrustsResult] = js.native
+    def disableLDAPS(params: DisableLDAPSRequest): Request[DisableLDAPSResult] = js.native
+    def disableRadius(params: DisableRadiusRequest): Request[DisableRadiusResult] = js.native
+    def disableSso(params: DisableSsoRequest): Request[DisableSsoResult] = js.native
+    def enableLDAPS(params: EnableLDAPSRequest): Request[EnableLDAPSResult] = js.native
+    def enableRadius(params: EnableRadiusRequest): Request[EnableRadiusResult] = js.native
+    def enableSso(params: EnableSsoRequest): Request[EnableSsoResult] = js.native
+    def getDirectoryLimits(params: GetDirectoryLimitsRequest): Request[GetDirectoryLimitsResult] = js.native
+    def getSnapshotLimits(params: GetSnapshotLimitsRequest): Request[GetSnapshotLimitsResult] = js.native
+    def listCertificates(params: ListCertificatesRequest): Request[ListCertificatesResult] = js.native
+    def listIpRoutes(params: ListIpRoutesRequest): Request[ListIpRoutesResult] = js.native
+    def listLogSubscriptions(params: ListLogSubscriptionsRequest): Request[ListLogSubscriptionsResult] = js.native
+    def listSchemaExtensions(params: ListSchemaExtensionsRequest): Request[ListSchemaExtensionsResult] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResult] = js.native
+    def registerCertificate(params: RegisterCertificateRequest): Request[RegisterCertificateResult] = js.native
+    def registerEventTopic(params: RegisterEventTopicRequest): Request[RegisterEventTopicResult] = js.native
+    def rejectSharedDirectory(params: RejectSharedDirectoryRequest): Request[RejectSharedDirectoryResult] = js.native
+    def removeIpRoutes(params: RemoveIpRoutesRequest): Request[RemoveIpRoutesResult] = js.native
     def removeTagsFromResource(params: RemoveTagsFromResourceRequest): Request[RemoveTagsFromResourceResult] = js.native
-    def resetUserPassword(params: ResetUserPasswordRequest): Request[ResetUserPasswordResult]                = js.native
-    def restoreFromSnapshot(params: RestoreFromSnapshotRequest): Request[RestoreFromSnapshotResult]          = js.native
-    def shareDirectory(params: ShareDirectoryRequest): Request[ShareDirectoryResult]                         = js.native
-    def startSchemaExtension(params: StartSchemaExtensionRequest): Request[StartSchemaExtensionResult]       = js.native
-    def unshareDirectory(params: UnshareDirectoryRequest): Request[UnshareDirectoryResult]                   = js.native
+    def resetUserPassword(params: ResetUserPasswordRequest): Request[ResetUserPasswordResult] = js.native
+    def restoreFromSnapshot(params: RestoreFromSnapshotRequest): Request[RestoreFromSnapshotResult] = js.native
+    def shareDirectory(params: ShareDirectoryRequest): Request[ShareDirectoryResult] = js.native
+    def startSchemaExtension(params: StartSchemaExtensionRequest): Request[StartSchemaExtensionResult] = js.native
+    def unshareDirectory(params: UnshareDirectoryRequest): Request[UnshareDirectoryResult] = js.native
     def updateConditionalForwarder(
         params: UpdateConditionalForwarderRequest
     ): Request[UpdateConditionalForwarderResult] = js.native
     def updateNumberOfDomainControllers(
         params: UpdateNumberOfDomainControllersRequest
-    ): Request[UpdateNumberOfDomainControllersResult]                          = js.native
+    ): Request[UpdateNumberOfDomainControllersResult] = js.native
     def updateRadius(params: UpdateRadiusRequest): Request[UpdateRadiusResult] = js.native
-    def updateTrust(params: UpdateTrustRequest): Request[UpdateTrustResult]    = js.native
-    def verifyTrust(params: VerifyTrustRequest): Request[VerifyTrustResult]    = js.native
+    def updateTrust(params: UpdateTrustRequest): Request[UpdateTrustResult] = js.native
+    def verifyTrust(params: VerifyTrustRequest): Request[VerifyTrustResult] = js.native
   }
 
   @js.native
@@ -372,7 +372,7 @@ package directoryservice {
     ): AddIpRoutesRequest = {
       val __obj = js.Dynamic.literal(
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
-        "IpRoutes"    -> IpRoutes.asInstanceOf[js.Any]
+        "IpRoutes" -> IpRoutes.asInstanceOf[js.Any]
       )
 
       UpdateSecurityGroupForDirectoryControllers.foreach(__v =>
@@ -409,7 +409,7 @@ package directoryservice {
     ): AddTagsToResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "Tags"       -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddTagsToResourceRequest]
@@ -464,7 +464,7 @@ package directoryservice {
         SchemaExtensionId: SchemaExtensionId
     ): CancelSchemaExtensionRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryId"       -> DirectoryId.asInstanceOf[js.Any],
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "SchemaExtensionId" -> SchemaExtensionId.asInstanceOf[js.Any]
       )
 
@@ -550,11 +550,11 @@ package directoryservice {
   @js.native
   sealed trait CertificateState extends js.Any
   object CertificateState extends js.Object {
-    val Registering      = "Registering".asInstanceOf[CertificateState]
-    val Registered       = "Registered".asInstanceOf[CertificateState]
-    val RegisterFailed   = "RegisterFailed".asInstanceOf[CertificateState]
-    val Deregistering    = "Deregistering".asInstanceOf[CertificateState]
-    val Deregistered     = "Deregistered".asInstanceOf[CertificateState]
+    val Registering = "Registering".asInstanceOf[CertificateState]
+    val Registered = "Registered".asInstanceOf[CertificateState]
+    val RegisterFailed = "RegisterFailed".asInstanceOf[CertificateState]
+    val Deregistering = "Deregistering".asInstanceOf[CertificateState]
+    val Deregistered = "Deregistered".asInstanceOf[CertificateState]
     val DeregisterFailed = "DeregisterFailed".asInstanceOf[CertificateState]
 
     val values =
@@ -638,9 +638,9 @@ package directoryservice {
     ): ConnectDirectoryRequest = {
       val __obj = js.Dynamic.literal(
         "ConnectSettings" -> ConnectSettings.asInstanceOf[js.Any],
-        "Name"            -> Name.asInstanceOf[js.Any],
-        "Password"        -> Password.asInstanceOf[js.Any],
-        "Size"            -> Size.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Password" -> Password.asInstanceOf[js.Any],
+        "Size" -> Size.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -685,7 +685,7 @@ package directoryservice {
         DirectoryId: DirectoryId
     ): CreateAliasRequest = {
       val __obj = js.Dynamic.literal(
-        "Alias"       -> Alias.asInstanceOf[js.Any],
+        "Alias" -> Alias.asInstanceOf[js.Any],
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
       )
 
@@ -738,8 +738,8 @@ package directoryservice {
     ): CreateComputerRequest = {
       val __obj = js.Dynamic.literal(
         "ComputerName" -> ComputerName.asInstanceOf[js.Any],
-        "DirectoryId"  -> DirectoryId.asInstanceOf[js.Any],
-        "Password"     -> Password.asInstanceOf[js.Any]
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
+        "Password" -> Password.asInstanceOf[js.Any]
       )
 
       ComputerAttributes.foreach(__v => __obj.updateDynamic("ComputerAttributes")(__v.asInstanceOf[js.Any]))
@@ -787,8 +787,8 @@ package directoryservice {
         RemoteDomainName: RemoteDomainName
     ): CreateConditionalForwarderRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryId"      -> DirectoryId.asInstanceOf[js.Any],
-        "DnsIpAddrs"       -> DnsIpAddrs.asInstanceOf[js.Any],
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
+        "DnsIpAddrs" -> DnsIpAddrs.asInstanceOf[js.Any],
         "RemoteDomainName" -> RemoteDomainName.asInstanceOf[js.Any]
       )
 
@@ -838,9 +838,9 @@ package directoryservice {
         VpcSettings: js.UndefOr[DirectoryVpcSettings] = js.undefined
     ): CreateDirectoryRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"     -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Password" -> Password.asInstanceOf[js.Any],
-        "Size"     -> Size.asInstanceOf[js.Any]
+        "Size" -> Size.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -883,7 +883,7 @@ package directoryservice {
         LogGroupName: LogGroupName
     ): CreateLogSubscriptionRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryId"  -> DirectoryId.asInstanceOf[js.Any],
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "LogGroupName" -> LogGroupName.asInstanceOf[js.Any]
       )
 
@@ -930,8 +930,8 @@ package directoryservice {
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateMicrosoftADRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"        -> Name.asInstanceOf[js.Any],
-        "Password"    -> Password.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Password" -> Password.asInstanceOf[js.Any],
         "VpcSettings" -> VpcSettings.asInstanceOf[js.Any]
       )
 
@@ -1032,10 +1032,10 @@ package directoryservice {
         TrustType: js.UndefOr[TrustType] = js.undefined
     ): CreateTrustRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryId"      -> DirectoryId.asInstanceOf[js.Any],
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "RemoteDomainName" -> RemoteDomainName.asInstanceOf[js.Any],
-        "TrustDirection"   -> TrustDirection.asInstanceOf[js.Any],
-        "TrustPassword"    -> TrustPassword.asInstanceOf[js.Any]
+        "TrustDirection" -> TrustDirection.asInstanceOf[js.Any],
+        "TrustPassword" -> TrustPassword.asInstanceOf[js.Any]
       )
 
       ConditionalForwarderIpAddrs.foreach(__v =>
@@ -1082,7 +1082,7 @@ package directoryservice {
         RemoteDomainName: RemoteDomainName
     ): DeleteConditionalForwarderRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryId"      -> DirectoryId.asInstanceOf[js.Any],
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "RemoteDomainName" -> RemoteDomainName.asInstanceOf[js.Any]
       )
 
@@ -1276,7 +1276,7 @@ package directoryservice {
     ): DeregisterCertificateRequest = {
       val __obj = js.Dynamic.literal(
         "CertificateId" -> CertificateId.asInstanceOf[js.Any],
-        "DirectoryId"   -> DirectoryId.asInstanceOf[js.Any]
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeregisterCertificateRequest]
@@ -1313,7 +1313,7 @@ package directoryservice {
     ): DeregisterEventTopicRequest = {
       val __obj = js.Dynamic.literal(
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
-        "TopicName"   -> TopicName.asInstanceOf[js.Any]
+        "TopicName" -> TopicName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeregisterEventTopicRequest]
@@ -1350,7 +1350,7 @@ package directoryservice {
     ): DescribeCertificateRequest = {
       val __obj = js.Dynamic.literal(
         "CertificateId" -> CertificateId.asInstanceOf[js.Any],
-        "DirectoryId"   -> DirectoryId.asInstanceOf[js.Any]
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeCertificateRequest]
@@ -1762,10 +1762,10 @@ package directoryservice {
         VpcId: VpcId
     ): DirectoryConnectSettings = {
       val __obj = js.Dynamic.literal(
-        "CustomerDnsIps"   -> CustomerDnsIps.asInstanceOf[js.Any],
+        "CustomerDnsIps" -> CustomerDnsIps.asInstanceOf[js.Any],
         "CustomerUserName" -> CustomerUserName.asInstanceOf[js.Any],
-        "SubnetIds"        -> SubnetIds.asInstanceOf[js.Any],
-        "VpcId"            -> VpcId.asInstanceOf[js.Any]
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any],
+        "VpcId" -> VpcId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DirectoryConnectSettings]
@@ -1902,7 +1902,7 @@ package directoryservice {
   sealed trait DirectoryEdition extends js.Any
   object DirectoryEdition extends js.Object {
     val Enterprise = "Enterprise".asInstanceOf[DirectoryEdition]
-    val Standard   = "Standard".asInstanceOf[DirectoryEdition]
+    val Standard = "Standard".asInstanceOf[DirectoryEdition]
 
     val values = js.Object.freeze(js.Array(Enterprise, Standard))
   }
@@ -1980,17 +1980,17 @@ package directoryservice {
   @js.native
   sealed trait DirectoryStage extends js.Any
   object DirectoryStage extends js.Object {
-    val Requested     = "Requested".asInstanceOf[DirectoryStage]
-    val Creating      = "Creating".asInstanceOf[DirectoryStage]
-    val Created       = "Created".asInstanceOf[DirectoryStage]
-    val Active        = "Active".asInstanceOf[DirectoryStage]
-    val Inoperable    = "Inoperable".asInstanceOf[DirectoryStage]
-    val Impaired      = "Impaired".asInstanceOf[DirectoryStage]
-    val Restoring     = "Restoring".asInstanceOf[DirectoryStage]
+    val Requested = "Requested".asInstanceOf[DirectoryStage]
+    val Creating = "Creating".asInstanceOf[DirectoryStage]
+    val Created = "Created".asInstanceOf[DirectoryStage]
+    val Active = "Active".asInstanceOf[DirectoryStage]
+    val Inoperable = "Inoperable".asInstanceOf[DirectoryStage]
+    val Impaired = "Impaired".asInstanceOf[DirectoryStage]
+    val Restoring = "Restoring".asInstanceOf[DirectoryStage]
     val RestoreFailed = "RestoreFailed".asInstanceOf[DirectoryStage]
-    val Deleting      = "Deleting".asInstanceOf[DirectoryStage]
-    val Deleted       = "Deleted".asInstanceOf[DirectoryStage]
-    val Failed        = "Failed".asInstanceOf[DirectoryStage]
+    val Deleting = "Deleting".asInstanceOf[DirectoryStage]
+    val Deleted = "Deleted".asInstanceOf[DirectoryStage]
+    val Failed = "Failed".asInstanceOf[DirectoryStage]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2012,9 +2012,9 @@ package directoryservice {
   @js.native
   sealed trait DirectoryType extends js.Any
   object DirectoryType extends js.Object {
-    val SimpleAD          = "SimpleAD".asInstanceOf[DirectoryType]
-    val ADConnector       = "ADConnector".asInstanceOf[DirectoryType]
-    val MicrosoftAD       = "MicrosoftAD".asInstanceOf[DirectoryType]
+    val SimpleAD = "SimpleAD".asInstanceOf[DirectoryType]
+    val ADConnector = "ADConnector".asInstanceOf[DirectoryType]
+    val MicrosoftAD = "MicrosoftAD".asInstanceOf[DirectoryType]
     val SharedMicrosoftAD = "SharedMicrosoftAD".asInstanceOf[DirectoryType]
 
     val values = js.Object.freeze(js.Array(SimpleAD, ADConnector, MicrosoftAD, SharedMicrosoftAD))
@@ -2037,7 +2037,7 @@ package directoryservice {
     ): DirectoryVpcSettings = {
       val __obj = js.Dynamic.literal(
         "SubnetIds" -> SubnetIds.asInstanceOf[js.Any],
-        "VpcId"     -> VpcId.asInstanceOf[js.Any]
+        "VpcId" -> VpcId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DirectoryVpcSettings]
@@ -2086,7 +2086,7 @@ package directoryservice {
     ): DisableLDAPSRequest = {
       val __obj = js.Dynamic.literal(
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
-        "Type"        -> Type.asInstanceOf[js.Any]
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DisableLDAPSRequest]
@@ -2237,13 +2237,13 @@ package directoryservice {
   @js.native
   sealed trait DomainControllerStatus extends js.Any
   object DomainControllerStatus extends js.Object {
-    val Creating  = "Creating".asInstanceOf[DomainControllerStatus]
-    val Active    = "Active".asInstanceOf[DomainControllerStatus]
-    val Impaired  = "Impaired".asInstanceOf[DomainControllerStatus]
+    val Creating = "Creating".asInstanceOf[DomainControllerStatus]
+    val Active = "Active".asInstanceOf[DomainControllerStatus]
+    val Impaired = "Impaired".asInstanceOf[DomainControllerStatus]
     val Restoring = "Restoring".asInstanceOf[DomainControllerStatus]
-    val Deleting  = "Deleting".asInstanceOf[DomainControllerStatus]
-    val Deleted   = "Deleted".asInstanceOf[DomainControllerStatus]
-    val Failed    = "Failed".asInstanceOf[DomainControllerStatus]
+    val Deleting = "Deleting".asInstanceOf[DomainControllerStatus]
+    val Deleted = "Deleted".asInstanceOf[DomainControllerStatus]
+    val Failed = "Failed".asInstanceOf[DomainControllerStatus]
 
     val values = js.Object.freeze(js.Array(Creating, Active, Impaired, Restoring, Deleting, Deleted, Failed))
   }
@@ -2262,7 +2262,7 @@ package directoryservice {
     ): EnableLDAPSRequest = {
       val __obj = js.Dynamic.literal(
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
-        "Type"        -> Type.asInstanceOf[js.Any]
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[EnableLDAPSRequest]
@@ -2298,7 +2298,7 @@ package directoryservice {
         RadiusSettings: RadiusSettings
     ): EnableRadiusRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryId"    -> DirectoryId.asInstanceOf[js.Any],
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "RadiusSettings" -> RadiusSettings.asInstanceOf[js.Any]
       )
 
@@ -2530,11 +2530,11 @@ package directoryservice {
   @js.native
   sealed trait IpRouteStatusMsg extends js.Any
   object IpRouteStatusMsg extends js.Object {
-    val Adding       = "Adding".asInstanceOf[IpRouteStatusMsg]
-    val Added        = "Added".asInstanceOf[IpRouteStatusMsg]
-    val Removing     = "Removing".asInstanceOf[IpRouteStatusMsg]
-    val Removed      = "Removed".asInstanceOf[IpRouteStatusMsg]
-    val AddFailed    = "AddFailed".asInstanceOf[IpRouteStatusMsg]
+    val Adding = "Adding".asInstanceOf[IpRouteStatusMsg]
+    val Added = "Added".asInstanceOf[IpRouteStatusMsg]
+    val Removing = "Removing".asInstanceOf[IpRouteStatusMsg]
+    val Removed = "Removed".asInstanceOf[IpRouteStatusMsg]
+    val AddFailed = "AddFailed".asInstanceOf[IpRouteStatusMsg]
     val RemoveFailed = "RemoveFailed".asInstanceOf[IpRouteStatusMsg]
 
     val values = js.Object.freeze(js.Array(Adding, Added, Removing, Removed, AddFailed, RemoveFailed))
@@ -2568,10 +2568,10 @@ package directoryservice {
   @js.native
   sealed trait LDAPSStatus extends js.Any
   object LDAPSStatus extends js.Object {
-    val Enabling     = "Enabling".asInstanceOf[LDAPSStatus]
-    val Enabled      = "Enabled".asInstanceOf[LDAPSStatus]
+    val Enabling = "Enabling".asInstanceOf[LDAPSStatus]
+    val Enabled = "Enabled".asInstanceOf[LDAPSStatus]
     val EnableFailed = "EnableFailed".asInstanceOf[LDAPSStatus]
-    val Disabled     = "Disabled".asInstanceOf[LDAPSStatus]
+    val Disabled = "Disabled".asInstanceOf[LDAPSStatus]
 
     val values = js.Object.freeze(js.Array(Enabling, Enabled, EnableFailed, Disabled))
   }
@@ -2861,8 +2861,8 @@ package directoryservice {
   @js.native
   sealed trait RadiusAuthenticationProtocol extends js.Any
   object RadiusAuthenticationProtocol extends js.Object {
-    val PAP         = "PAP".asInstanceOf[RadiusAuthenticationProtocol]
-    val CHAP        = "CHAP".asInstanceOf[RadiusAuthenticationProtocol]
+    val PAP = "PAP".asInstanceOf[RadiusAuthenticationProtocol]
+    val CHAP = "CHAP".asInstanceOf[RadiusAuthenticationProtocol]
     val `MS-CHAPv1` = "MS-CHAPv1".asInstanceOf[RadiusAuthenticationProtocol]
     val `MS-CHAPv2` = "MS-CHAPv2".asInstanceOf[RadiusAuthenticationProtocol]
 
@@ -2912,9 +2912,9 @@ package directoryservice {
   @js.native
   sealed trait RadiusStatus extends js.Any
   object RadiusStatus extends js.Object {
-    val Creating  = "Creating".asInstanceOf[RadiusStatus]
+    val Creating = "Creating".asInstanceOf[RadiusStatus]
     val Completed = "Completed".asInstanceOf[RadiusStatus]
-    val Failed    = "Failed".asInstanceOf[RadiusStatus]
+    val Failed = "Failed".asInstanceOf[RadiusStatus]
 
     val values = js.Object.freeze(js.Array(Creating, Completed, Failed))
   }
@@ -2933,7 +2933,7 @@ package directoryservice {
     ): RegisterCertificateRequest = {
       val __obj = js.Dynamic.literal(
         "CertificateData" -> CertificateData.asInstanceOf[js.Any],
-        "DirectoryId"     -> DirectoryId.asInstanceOf[js.Any]
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RegisterCertificateRequest]
@@ -2973,7 +2973,7 @@ package directoryservice {
     ): RegisterEventTopicRequest = {
       val __obj = js.Dynamic.literal(
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
-        "TopicName"   -> TopicName.asInstanceOf[js.Any]
+        "TopicName" -> TopicName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RegisterEventTopicRequest]
@@ -3043,7 +3043,7 @@ package directoryservice {
         DirectoryId: DirectoryId
     ): RemoveIpRoutesRequest = {
       val __obj = js.Dynamic.literal(
-        "CidrIps"     -> CidrIps.asInstanceOf[js.Any],
+        "CidrIps" -> CidrIps.asInstanceOf[js.Any],
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
       )
 
@@ -3078,7 +3078,7 @@ package directoryservice {
     ): RemoveTagsFromResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "TagKeys"    -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RemoveTagsFromResourceRequest]
@@ -3123,7 +3123,7 @@ package directoryservice {
       val __obj = js.Dynamic.literal(
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "NewPassword" -> NewPassword.asInstanceOf[js.Any],
-        "UserName"    -> UserName.asInstanceOf[js.Any]
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ResetUserPasswordRequest]
@@ -3222,15 +3222,15 @@ package directoryservice {
   @js.native
   sealed trait SchemaExtensionStatus extends js.Any
   object SchemaExtensionStatus extends js.Object {
-    val Initializing       = "Initializing".asInstanceOf[SchemaExtensionStatus]
-    val CreatingSnapshot   = "CreatingSnapshot".asInstanceOf[SchemaExtensionStatus]
-    val UpdatingSchema     = "UpdatingSchema".asInstanceOf[SchemaExtensionStatus]
-    val Replicating        = "Replicating".asInstanceOf[SchemaExtensionStatus]
-    val CancelInProgress   = "CancelInProgress".asInstanceOf[SchemaExtensionStatus]
+    val Initializing = "Initializing".asInstanceOf[SchemaExtensionStatus]
+    val CreatingSnapshot = "CreatingSnapshot".asInstanceOf[SchemaExtensionStatus]
+    val UpdatingSchema = "UpdatingSchema".asInstanceOf[SchemaExtensionStatus]
+    val Replicating = "Replicating".asInstanceOf[SchemaExtensionStatus]
+    val CancelInProgress = "CancelInProgress".asInstanceOf[SchemaExtensionStatus]
     val RollbackInProgress = "RollbackInProgress".asInstanceOf[SchemaExtensionStatus]
-    val Cancelled          = "Cancelled".asInstanceOf[SchemaExtensionStatus]
-    val Failed             = "Failed".asInstanceOf[SchemaExtensionStatus]
-    val Completed          = "Completed".asInstanceOf[SchemaExtensionStatus]
+    val Cancelled = "Cancelled".asInstanceOf[SchemaExtensionStatus]
+    val Failed = "Failed".asInstanceOf[SchemaExtensionStatus]
+    val Completed = "Completed".asInstanceOf[SchemaExtensionStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3250,7 +3250,7 @@ package directoryservice {
   @js.native
   sealed trait SelectiveAuth extends js.Any
   object SelectiveAuth extends js.Object {
-    val Enabled  = "Enabled".asInstanceOf[SelectiveAuth]
+    val Enabled = "Enabled".asInstanceOf[SelectiveAuth]
     val Disabled = "Disabled".asInstanceOf[SelectiveAuth]
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
@@ -3303,7 +3303,7 @@ package directoryservice {
   sealed trait ShareMethod extends js.Any
   object ShareMethod extends js.Object {
     val ORGANIZATIONS = "ORGANIZATIONS".asInstanceOf[ShareMethod]
-    val HANDSHAKE     = "HANDSHAKE".asInstanceOf[ShareMethod]
+    val HANDSHAKE = "HANDSHAKE".asInstanceOf[ShareMethod]
 
     val values = js.Object.freeze(js.Array(ORGANIZATIONS, HANDSHAKE))
   }
@@ -3311,15 +3311,15 @@ package directoryservice {
   @js.native
   sealed trait ShareStatus extends js.Any
   object ShareStatus extends js.Object {
-    val Shared            = "Shared".asInstanceOf[ShareStatus]
+    val Shared = "Shared".asInstanceOf[ShareStatus]
     val PendingAcceptance = "PendingAcceptance".asInstanceOf[ShareStatus]
-    val Rejected          = "Rejected".asInstanceOf[ShareStatus]
-    val Rejecting         = "Rejecting".asInstanceOf[ShareStatus]
-    val RejectFailed      = "RejectFailed".asInstanceOf[ShareStatus]
-    val Sharing           = "Sharing".asInstanceOf[ShareStatus]
-    val ShareFailed       = "ShareFailed".asInstanceOf[ShareStatus]
-    val Deleted           = "Deleted".asInstanceOf[ShareStatus]
-    val Deleting          = "Deleting".asInstanceOf[ShareStatus]
+    val Rejected = "Rejected".asInstanceOf[ShareStatus]
+    val Rejecting = "Rejecting".asInstanceOf[ShareStatus]
+    val RejectFailed = "RejectFailed".asInstanceOf[ShareStatus]
+    val Sharing = "Sharing".asInstanceOf[ShareStatus]
+    val ShareFailed = "ShareFailed".asInstanceOf[ShareStatus]
+    val Deleted = "Deleted".asInstanceOf[ShareStatus]
+    val Deleting = "Deleting".asInstanceOf[ShareStatus]
 
     val values = js.Object.freeze(
       js.Array(Shared, PendingAcceptance, Rejected, Rejecting, RejectFailed, Sharing, ShareFailed, Deleted, Deleting)
@@ -3342,7 +3342,7 @@ package directoryservice {
         Type: TargetType
     ): ShareTarget = {
       val __obj = js.Dynamic.literal(
-        "Id"   -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
@@ -3459,9 +3459,9 @@ package directoryservice {
   @js.native
   sealed trait SnapshotStatus extends js.Any
   object SnapshotStatus extends js.Object {
-    val Creating  = "Creating".asInstanceOf[SnapshotStatus]
+    val Creating = "Creating".asInstanceOf[SnapshotStatus]
     val Completed = "Completed".asInstanceOf[SnapshotStatus]
-    val Failed    = "Failed".asInstanceOf[SnapshotStatus]
+    val Failed = "Failed".asInstanceOf[SnapshotStatus]
 
     val values = js.Object.freeze(js.Array(Creating, Completed, Failed))
   }
@@ -3469,7 +3469,7 @@ package directoryservice {
   @js.native
   sealed trait SnapshotType extends js.Any
   object SnapshotType extends js.Object {
-    val Auto   = "Auto".asInstanceOf[SnapshotType]
+    val Auto = "Auto".asInstanceOf[SnapshotType]
     val Manual = "Manual".asInstanceOf[SnapshotType]
 
     val values = js.Object.freeze(js.Array(Auto, Manual))
@@ -3493,9 +3493,9 @@ package directoryservice {
     ): StartSchemaExtensionRequest = {
       val __obj = js.Dynamic.literal(
         "CreateSnapshotBeforeSchemaExtension" -> CreateSnapshotBeforeSchemaExtension.asInstanceOf[js.Any],
-        "Description"                         -> Description.asInstanceOf[js.Any],
-        "DirectoryId"                         -> DirectoryId.asInstanceOf[js.Any],
-        "LdifContent"                         -> LdifContent.asInstanceOf[js.Any]
+        "Description" -> Description.asInstanceOf[js.Any],
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
+        "LdifContent" -> LdifContent.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[StartSchemaExtensionRequest]
@@ -3534,7 +3534,7 @@ package directoryservice {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -3553,10 +3553,10 @@ package directoryservice {
   @js.native
   sealed trait TopicStatus extends js.Any
   object TopicStatus extends js.Object {
-    val Registered        = "Registered".asInstanceOf[TopicStatus]
+    val Registered = "Registered".asInstanceOf[TopicStatus]
     val `Topic not found` = "Topic not found".asInstanceOf[TopicStatus]
-    val Failed            = "Failed".asInstanceOf[TopicStatus]
-    val Deleted           = "Deleted".asInstanceOf[TopicStatus]
+    val Failed = "Failed".asInstanceOf[TopicStatus]
+    val Deleted = "Deleted".asInstanceOf[TopicStatus]
 
     val values = js.Object.freeze(js.Array(Registered, `Topic not found`, Failed, Deleted))
   }
@@ -3615,7 +3615,7 @@ package directoryservice {
   object TrustDirection extends js.Object {
     val `One-Way: Outgoing` = "One-Way: Outgoing".asInstanceOf[TrustDirection]
     val `One-Way: Incoming` = "One-Way: Incoming".asInstanceOf[TrustDirection]
-    val `Two-Way`           = "Two-Way".asInstanceOf[TrustDirection]
+    val `Two-Way` = "Two-Way".asInstanceOf[TrustDirection]
 
     val values = js.Object.freeze(js.Array(`One-Way: Outgoing`, `One-Way: Incoming`, `Two-Way`))
   }
@@ -3623,17 +3623,17 @@ package directoryservice {
   @js.native
   sealed trait TrustState extends js.Any
   object TrustState extends js.Object {
-    val Creating     = "Creating".asInstanceOf[TrustState]
-    val Created      = "Created".asInstanceOf[TrustState]
-    val Verifying    = "Verifying".asInstanceOf[TrustState]
+    val Creating = "Creating".asInstanceOf[TrustState]
+    val Created = "Created".asInstanceOf[TrustState]
+    val Verifying = "Verifying".asInstanceOf[TrustState]
     val VerifyFailed = "VerifyFailed".asInstanceOf[TrustState]
-    val Verified     = "Verified".asInstanceOf[TrustState]
-    val Updating     = "Updating".asInstanceOf[TrustState]
+    val Verified = "Verified".asInstanceOf[TrustState]
+    val Updating = "Updating".asInstanceOf[TrustState]
     val UpdateFailed = "UpdateFailed".asInstanceOf[TrustState]
-    val Updated      = "Updated".asInstanceOf[TrustState]
-    val Deleting     = "Deleting".asInstanceOf[TrustState]
-    val Deleted      = "Deleted".asInstanceOf[TrustState]
-    val Failed       = "Failed".asInstanceOf[TrustState]
+    val Updated = "Updated".asInstanceOf[TrustState]
+    val Deleting = "Deleting".asInstanceOf[TrustState]
+    val Deleted = "Deleted".asInstanceOf[TrustState]
+    val Failed = "Failed".asInstanceOf[TrustState]
 
     val values = js.Object.freeze(
       js.Array(
@@ -3655,7 +3655,7 @@ package directoryservice {
   @js.native
   sealed trait TrustType extends js.Any
   object TrustType extends js.Object {
-    val Forest   = "Forest".asInstanceOf[TrustType]
+    val Forest = "Forest".asInstanceOf[TrustType]
     val External = "External".asInstanceOf[TrustType]
 
     val values = js.Object.freeze(js.Array(Forest, External))
@@ -3674,7 +3674,7 @@ package directoryservice {
         UnshareTarget: UnshareTarget
     ): UnshareDirectoryRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryId"   -> DirectoryId.asInstanceOf[js.Any],
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "UnshareTarget" -> UnshareTarget.asInstanceOf[js.Any]
       )
 
@@ -3714,7 +3714,7 @@ package directoryservice {
         Type: TargetType
     ): UnshareTarget = {
       val __obj = js.Dynamic.literal(
-        "Id"   -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
@@ -3740,8 +3740,8 @@ package directoryservice {
         RemoteDomainName: RemoteDomainName
     ): UpdateConditionalForwarderRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryId"      -> DirectoryId.asInstanceOf[js.Any],
-        "DnsIpAddrs"       -> DnsIpAddrs.asInstanceOf[js.Any],
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
+        "DnsIpAddrs" -> DnsIpAddrs.asInstanceOf[js.Any],
         "RemoteDomainName" -> RemoteDomainName.asInstanceOf[js.Any]
       )
 
@@ -3779,7 +3779,7 @@ package directoryservice {
     ): UpdateNumberOfDomainControllersRequest = {
       val __obj = js.Dynamic.literal(
         "DesiredNumber" -> DesiredNumber.asInstanceOf[js.Any],
-        "DirectoryId"   -> DirectoryId.asInstanceOf[js.Any]
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateNumberOfDomainControllersRequest]
@@ -3815,7 +3815,7 @@ package directoryservice {
         RadiusSettings: RadiusSettings
     ): UpdateRadiusRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryId"    -> DirectoryId.asInstanceOf[js.Any],
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "RadiusSettings" -> RadiusSettings.asInstanceOf[js.Any]
       )
 

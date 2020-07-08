@@ -7,29 +7,33 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object outposts {
-  type AccountId                  = String
-  type AvailabilityZone           = String
-  type AvailabilityZoneId         = String
-  type InstanceType               = String
+  type AccountId = String
+  type AvailabilityZone = String
+  type AvailabilityZoneId = String
+  type InstanceType = String
   type InstanceTypeListDefinition = js.Array[InstanceTypeItem]
-  type LifeCycleStatus            = String
-  type MaxResults1000             = Int
-  type OutpostArn                 = String
-  type OutpostDescription         = String
-  type OutpostId                  = String
-  type OutpostName                = String
-  type OwnerId                    = String
-  type SiteDescription            = String
-  type SiteId                     = String
-  type SiteName                   = String
-  type Token                      = String
-  type outpostListDefinition      = js.Array[Outpost]
-  type siteListDefinition         = js.Array[Site]
+  type LifeCycleStatus = String
+  type MaxResults1000 = Int
+  type OutpostArn = String
+  type OutpostDescription = String
+  type OutpostId = String
+  type OutpostName = String
+  type OwnerId = String
+  type SiteDescription = String
+  type SiteId = String
+  type SiteName = String
+  type Token = String
+  type outpostListDefinition = js.Array[Outpost]
+  type siteListDefinition = js.Array[Site]
 
   implicit final class OutpostsOps(private val service: Outposts) extends AnyVal {
 
     @inline def createOutpostFuture(params: CreateOutpostInput): Future[CreateOutpostOutput] =
       service.createOutpost(params).promise().toFuture
+    @inline def deleteOutpostFuture(params: DeleteOutpostInput): Future[DeleteOutpostOutput] =
+      service.deleteOutpost(params).promise().toFuture
+    @inline def deleteSiteFuture(params: DeleteSiteInput): Future[DeleteSiteOutput] =
+      service.deleteSite(params).promise().toFuture
     @inline def getOutpostFuture(params: GetOutpostInput): Future[GetOutpostOutput] =
       service.getOutpost(params).promise().toFuture
     @inline def getOutpostInstanceTypesFuture(
@@ -49,11 +53,13 @@ package outposts {
     def this(config: AWSConfig) = this()
 
     def createOutpost(params: CreateOutpostInput): Request[CreateOutpostOutput] = js.native
-    def getOutpost(params: GetOutpostInput): Request[GetOutpostOutput]          = js.native
+    def deleteOutpost(params: DeleteOutpostInput): Request[DeleteOutpostOutput] = js.native
+    def deleteSite(params: DeleteSiteInput): Request[DeleteSiteOutput] = js.native
+    def getOutpost(params: GetOutpostInput): Request[GetOutpostOutput] = js.native
     def getOutpostInstanceTypes(params: GetOutpostInstanceTypesInput): Request[GetOutpostInstanceTypesOutput] =
       js.native
     def listOutposts(params: ListOutpostsInput): Request[ListOutpostsOutput] = js.native
-    def listSites(params: ListSitesInput): Request[ListSitesOutput]          = js.native
+    def listSites(params: ListSitesInput): Request[ListSitesOutput] = js.native
   }
 
   @js.native
@@ -99,6 +105,68 @@ package outposts {
       val __obj = js.Dynamic.literal()
       Outpost.foreach(__v => __obj.updateDynamic("Outpost")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateOutpostOutput]
+    }
+  }
+
+  @js.native
+  trait DeleteOutpostInput extends js.Object {
+    var OutpostId: OutpostId
+  }
+
+  object DeleteOutpostInput {
+    @inline
+    def apply(
+        OutpostId: OutpostId
+    ): DeleteOutpostInput = {
+      val __obj = js.Dynamic.literal(
+        "OutpostId" -> OutpostId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteOutpostInput]
+    }
+  }
+
+  @js.native
+  trait DeleteOutpostOutput extends js.Object {}
+
+  object DeleteOutpostOutput {
+    @inline
+    def apply(
+    ): DeleteOutpostOutput = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeleteOutpostOutput]
+    }
+  }
+
+  @js.native
+  trait DeleteSiteInput extends js.Object {
+    var SiteId: SiteId
+  }
+
+  object DeleteSiteInput {
+    @inline
+    def apply(
+        SiteId: SiteId
+    ): DeleteSiteInput = {
+      val __obj = js.Dynamic.literal(
+        "SiteId" -> SiteId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteSiteInput]
+    }
+  }
+
+  @js.native
+  trait DeleteSiteOutput extends js.Object {}
+
+  object DeleteSiteOutput {
+    @inline
+    def apply(
+    ): DeleteSiteOutput = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[DeleteSiteOutput]
     }
   }
 

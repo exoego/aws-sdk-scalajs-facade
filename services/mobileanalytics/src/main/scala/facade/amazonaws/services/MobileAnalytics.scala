@@ -8,12 +8,12 @@ import facade.amazonaws._
 
 package object mobileanalytics {
   type EventListDefinition = js.Array[Event]
-  type ISO8601Timestamp    = String
+  type ISO8601Timestamp = String
   type MapOfStringToNumber = js.Dictionary[Double]
   type MapOfStringToString = js.Dictionary[String0to1000Chars]
-  type String0to1000Chars  = String
-  type String10Chars       = String
-  type String50Chars       = String
+  type String0to1000Chars = String
+  type String10Chars = String
+  type String50Chars = String
 
   implicit final class MobileAnalyticsOps(private val service: MobileAnalytics) extends AnyVal {
 
@@ -94,7 +94,7 @@ package mobileanalytics {
     ): PutEventsInput = {
       val __obj = js.Dynamic.literal(
         "clientContext" -> clientContext.asInstanceOf[js.Any],
-        "events"        -> events.asInstanceOf[js.Any]
+        "events" -> events.asInstanceOf[js.Any]
       )
 
       clientContextEncoding.foreach(__v => __obj.updateDynamic("clientContextEncoding")(__v.asInstanceOf[js.Any]))

@@ -7,132 +7,134 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object elbv2 {
-  type ActionOrder  = Int
-  type Actions      = js.Array[Action]
+  type ActionOrder = Int
+  type Actions = js.Array[Action]
   type AllocationId = String
+  type AlpnPolicyName = js.Array[AlpnPolicyValue]
+  type AlpnPolicyValue = String
   type AuthenticateCognitoActionAuthenticationRequestExtraParams =
     js.Dictionary[AuthenticateCognitoActionAuthenticationRequestParamValue]
-  type AuthenticateCognitoActionAuthenticationRequestParamName  = String
+  type AuthenticateCognitoActionAuthenticationRequestParamName = String
   type AuthenticateCognitoActionAuthenticationRequestParamValue = String
-  type AuthenticateCognitoActionScope                           = String
-  type AuthenticateCognitoActionSessionCookieName               = String
-  type AuthenticateCognitoActionSessionTimeout                  = Double
-  type AuthenticateCognitoActionUserPoolArn                     = String
-  type AuthenticateCognitoActionUserPoolClientId                = String
-  type AuthenticateCognitoActionUserPoolDomain                  = String
+  type AuthenticateCognitoActionScope = String
+  type AuthenticateCognitoActionSessionCookieName = String
+  type AuthenticateCognitoActionSessionTimeout = Double
+  type AuthenticateCognitoActionUserPoolArn = String
+  type AuthenticateCognitoActionUserPoolClientId = String
+  type AuthenticateCognitoActionUserPoolDomain = String
   type AuthenticateOidcActionAuthenticationRequestExtraParams =
     js.Dictionary[AuthenticateOidcActionAuthenticationRequestParamValue]
-  type AuthenticateOidcActionAuthenticationRequestParamName  = String
+  type AuthenticateOidcActionAuthenticationRequestParamName = String
   type AuthenticateOidcActionAuthenticationRequestParamValue = String
-  type AuthenticateOidcActionAuthorizationEndpoint           = String
-  type AuthenticateOidcActionClientId                        = String
-  type AuthenticateOidcActionClientSecret                    = String
-  type AuthenticateOidcActionIssuer                          = String
-  type AuthenticateOidcActionScope                           = String
-  type AuthenticateOidcActionSessionCookieName               = String
-  type AuthenticateOidcActionSessionTimeout                  = Double
-  type AuthenticateOidcActionTokenEndpoint                   = String
-  type AuthenticateOidcActionUseExistingClientSecret         = Boolean
-  type AuthenticateOidcActionUserInfoEndpoint                = String
-  type AvailabilityZones                                     = js.Array[AvailabilityZone]
-  type CanonicalHostedZoneId                                 = String
-  type CertificateArn                                        = String
-  type CertificateList                                       = js.Array[Certificate]
-  type CipherName                                            = String
-  type CipherPriority                                        = Int
-  type Ciphers                                               = js.Array[Cipher]
-  type ConditionFieldName                                    = String
-  type CreatedTime                                           = js.Date
-  type DNSName                                               = String
-  type Default                                               = Boolean
-  type Description                                           = String
-  type FixedResponseActionContentType                        = String
-  type FixedResponseActionMessage                            = String
-  type FixedResponseActionStatusCode                         = String
-  type HealthCheckEnabled                                    = Boolean
-  type HealthCheckIntervalSeconds                            = Int
-  type HealthCheckPort                                       = String
-  type HealthCheckThresholdCount                             = Int
-  type HealthCheckTimeoutSeconds                             = Int
-  type HttpCode                                              = String
-  type HttpHeaderConditionName                               = String
-  type IpAddress                                             = String
-  type IsDefault                                             = Boolean
-  type Limits                                                = js.Array[Limit]
-  type ListOfString                                          = js.Array[StringValue]
-  type ListenerArn                                           = String
-  type ListenerArns                                          = js.Array[ListenerArn]
-  type Listeners                                             = js.Array[Listener]
-  type LoadBalancerAddresses                                 = js.Array[LoadBalancerAddress]
-  type LoadBalancerArn                                       = String
-  type LoadBalancerArns                                      = js.Array[LoadBalancerArn]
-  type LoadBalancerAttributeKey                              = String
-  type LoadBalancerAttributeValue                            = String
-  type LoadBalancerAttributes                                = js.Array[LoadBalancerAttribute]
-  type LoadBalancerName                                      = String
-  type LoadBalancerNames                                     = js.Array[LoadBalancerName]
-  type LoadBalancers                                         = js.Array[LoadBalancer]
-  type Marker                                                = String
-  type Max                                                   = String
-  type Name                                                  = String
-  type PageSize                                              = Int
-  type Path                                                  = String
-  type Port                                                  = Int
-  type PrivateIPv4Address                                    = String
-  type QueryStringKeyValuePairList                           = js.Array[QueryStringKeyValuePair]
-  type RedirectActionHost                                    = String
-  type RedirectActionPath                                    = String
-  type RedirectActionPort                                    = String
-  type RedirectActionProtocol                                = String
-  type RedirectActionQuery                                   = String
-  type ResourceArn                                           = String
-  type ResourceArns                                          = js.Array[ResourceArn]
-  type RuleArn                                               = String
-  type RuleArns                                              = js.Array[RuleArn]
-  type RuleConditionList                                     = js.Array[RuleCondition]
-  type RulePriority                                          = Int
-  type RulePriorityList                                      = js.Array[RulePriorityPair]
-  type Rules                                                 = js.Array[Rule]
-  type SecurityGroupId                                       = String
-  type SecurityGroups                                        = js.Array[SecurityGroupId]
-  type SslPolicies                                           = js.Array[SslPolicy]
-  type SslPolicyName                                         = String
-  type SslPolicyNames                                        = js.Array[SslPolicyName]
-  type SslProtocol                                           = String
-  type SslProtocols                                          = js.Array[SslProtocol]
-  type StateReason                                           = String
-  type StringValue                                           = String
-  type SubnetId                                              = String
-  type SubnetMappings                                        = js.Array[SubnetMapping]
-  type Subnets                                               = js.Array[SubnetId]
-  type TagDescriptions                                       = js.Array[TagDescription]
-  type TagKey                                                = String
-  type TagKeys                                               = js.Array[TagKey]
-  type TagList                                               = js.Array[Tag]
-  type TagValue                                              = String
-  type TargetDescriptions                                    = js.Array[TargetDescription]
-  type TargetGroupArn                                        = String
-  type TargetGroupArns                                       = js.Array[TargetGroupArn]
-  type TargetGroupAttributeKey                               = String
-  type TargetGroupAttributeValue                             = String
-  type TargetGroupAttributes                                 = js.Array[TargetGroupAttribute]
-  type TargetGroupList                                       = js.Array[TargetGroupTuple]
-  type TargetGroupName                                       = String
-  type TargetGroupNames                                      = js.Array[TargetGroupName]
-  type TargetGroupStickinessDurationSeconds                  = Int
-  type TargetGroupStickinessEnabled                          = Boolean
-  type TargetGroupWeight                                     = Int
-  type TargetGroups                                          = js.Array[TargetGroup]
-  type TargetHealthDescriptions                              = js.Array[TargetHealthDescription]
-  type TargetId                                              = String
-  type VpcId                                                 = String
-  type ZoneName                                              = String
+  type AuthenticateOidcActionAuthorizationEndpoint = String
+  type AuthenticateOidcActionClientId = String
+  type AuthenticateOidcActionClientSecret = String
+  type AuthenticateOidcActionIssuer = String
+  type AuthenticateOidcActionScope = String
+  type AuthenticateOidcActionSessionCookieName = String
+  type AuthenticateOidcActionSessionTimeout = Double
+  type AuthenticateOidcActionTokenEndpoint = String
+  type AuthenticateOidcActionUseExistingClientSecret = Boolean
+  type AuthenticateOidcActionUserInfoEndpoint = String
+  type AvailabilityZones = js.Array[AvailabilityZone]
+  type CanonicalHostedZoneId = String
+  type CertificateArn = String
+  type CertificateList = js.Array[Certificate]
+  type CipherName = String
+  type CipherPriority = Int
+  type Ciphers = js.Array[Cipher]
+  type ConditionFieldName = String
+  type CreatedTime = js.Date
+  type DNSName = String
+  type Default = Boolean
+  type Description = String
+  type FixedResponseActionContentType = String
+  type FixedResponseActionMessage = String
+  type FixedResponseActionStatusCode = String
+  type HealthCheckEnabled = Boolean
+  type HealthCheckIntervalSeconds = Int
+  type HealthCheckPort = String
+  type HealthCheckThresholdCount = Int
+  type HealthCheckTimeoutSeconds = Int
+  type HttpCode = String
+  type HttpHeaderConditionName = String
+  type IpAddress = String
+  type IsDefault = Boolean
+  type Limits = js.Array[Limit]
+  type ListOfString = js.Array[StringValue]
+  type ListenerArn = String
+  type ListenerArns = js.Array[ListenerArn]
+  type Listeners = js.Array[Listener]
+  type LoadBalancerAddresses = js.Array[LoadBalancerAddress]
+  type LoadBalancerArn = String
+  type LoadBalancerArns = js.Array[LoadBalancerArn]
+  type LoadBalancerAttributeKey = String
+  type LoadBalancerAttributeValue = String
+  type LoadBalancerAttributes = js.Array[LoadBalancerAttribute]
+  type LoadBalancerName = String
+  type LoadBalancerNames = js.Array[LoadBalancerName]
+  type LoadBalancers = js.Array[LoadBalancer]
+  type Marker = String
+  type Max = String
+  type Name = String
+  type PageSize = Int
+  type Path = String
+  type Port = Int
+  type PrivateIPv4Address = String
+  type QueryStringKeyValuePairList = js.Array[QueryStringKeyValuePair]
+  type RedirectActionHost = String
+  type RedirectActionPath = String
+  type RedirectActionPort = String
+  type RedirectActionProtocol = String
+  type RedirectActionQuery = String
+  type ResourceArn = String
+  type ResourceArns = js.Array[ResourceArn]
+  type RuleArn = String
+  type RuleArns = js.Array[RuleArn]
+  type RuleConditionList = js.Array[RuleCondition]
+  type RulePriority = Int
+  type RulePriorityList = js.Array[RulePriorityPair]
+  type Rules = js.Array[Rule]
+  type SecurityGroupId = String
+  type SecurityGroups = js.Array[SecurityGroupId]
+  type SslPolicies = js.Array[SslPolicy]
+  type SslPolicyName = String
+  type SslPolicyNames = js.Array[SslPolicyName]
+  type SslProtocol = String
+  type SslProtocols = js.Array[SslProtocol]
+  type StateReason = String
+  type StringValue = String
+  type SubnetId = String
+  type SubnetMappings = js.Array[SubnetMapping]
+  type Subnets = js.Array[SubnetId]
+  type TagDescriptions = js.Array[TagDescription]
+  type TagKey = String
+  type TagKeys = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type TargetDescriptions = js.Array[TargetDescription]
+  type TargetGroupArn = String
+  type TargetGroupArns = js.Array[TargetGroupArn]
+  type TargetGroupAttributeKey = String
+  type TargetGroupAttributeValue = String
+  type TargetGroupAttributes = js.Array[TargetGroupAttribute]
+  type TargetGroupList = js.Array[TargetGroupTuple]
+  type TargetGroupName = String
+  type TargetGroupNames = js.Array[TargetGroupName]
+  type TargetGroupStickinessDurationSeconds = Int
+  type TargetGroupStickinessEnabled = Boolean
+  type TargetGroupWeight = Int
+  type TargetGroups = js.Array[TargetGroup]
+  type TargetHealthDescriptions = js.Array[TargetHealthDescription]
+  type TargetId = String
+  type VpcId = String
+  type ZoneName = String
 
   implicit final class ELBv2Ops(private val service: ELBv2) extends AnyVal {
 
     @inline def addListenerCertificatesFuture(
         params: AddListenerCertificatesInput
-    ): Future[AddListenerCertificatesOutput]                               = service.addListenerCertificates(params).promise().toFuture
+    ): Future[AddListenerCertificatesOutput] = service.addListenerCertificates(params).promise().toFuture
     @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise().toFuture
     @inline def createListenerFuture(params: CreateListenerInput): Future[CreateListenerOutput] =
       service.createListener(params).promise().toFuture
@@ -215,50 +217,50 @@ package elbv2 {
 
     def addListenerCertificates(params: AddListenerCertificatesInput): Request[AddListenerCertificatesOutput] =
       js.native
-    def addTags(params: AddTagsInput): Request[AddTagsOutput]                                           = js.native
-    def createListener(params: CreateListenerInput): Request[CreateListenerOutput]                      = js.native
-    def createLoadBalancer(params: CreateLoadBalancerInput): Request[CreateLoadBalancerOutput]          = js.native
-    def createRule(params: CreateRuleInput): Request[CreateRuleOutput]                                  = js.native
-    def createTargetGroup(params: CreateTargetGroupInput): Request[CreateTargetGroupOutput]             = js.native
-    def deleteListener(params: DeleteListenerInput): Request[DeleteListenerOutput]                      = js.native
-    def deleteLoadBalancer(params: DeleteLoadBalancerInput): Request[DeleteLoadBalancerOutput]          = js.native
-    def deleteRule(params: DeleteRuleInput): Request[DeleteRuleOutput]                                  = js.native
-    def deleteTargetGroup(params: DeleteTargetGroupInput): Request[DeleteTargetGroupOutput]             = js.native
-    def deregisterTargets(params: DeregisterTargetsInput): Request[DeregisterTargetsOutput]             = js.native
+    def addTags(params: AddTagsInput): Request[AddTagsOutput] = js.native
+    def createListener(params: CreateListenerInput): Request[CreateListenerOutput] = js.native
+    def createLoadBalancer(params: CreateLoadBalancerInput): Request[CreateLoadBalancerOutput] = js.native
+    def createRule(params: CreateRuleInput): Request[CreateRuleOutput] = js.native
+    def createTargetGroup(params: CreateTargetGroupInput): Request[CreateTargetGroupOutput] = js.native
+    def deleteListener(params: DeleteListenerInput): Request[DeleteListenerOutput] = js.native
+    def deleteLoadBalancer(params: DeleteLoadBalancerInput): Request[DeleteLoadBalancerOutput] = js.native
+    def deleteRule(params: DeleteRuleInput): Request[DeleteRuleOutput] = js.native
+    def deleteTargetGroup(params: DeleteTargetGroupInput): Request[DeleteTargetGroupOutput] = js.native
+    def deregisterTargets(params: DeregisterTargetsInput): Request[DeregisterTargetsOutput] = js.native
     def describeAccountLimits(params: DescribeAccountLimitsInput): Request[DescribeAccountLimitsOutput] = js.native
     def describeListenerCertificates(
         params: DescribeListenerCertificatesInput
-    ): Request[DescribeListenerCertificatesOutput]                                          = js.native
+    ): Request[DescribeListenerCertificatesOutput] = js.native
     def describeListeners(params: DescribeListenersInput): Request[DescribeListenersOutput] = js.native
     def describeLoadBalancerAttributes(
         params: DescribeLoadBalancerAttributesInput
-    ): Request[DescribeLoadBalancerAttributesOutput]                                                    = js.native
+    ): Request[DescribeLoadBalancerAttributesOutput] = js.native
     def describeLoadBalancers(params: DescribeLoadBalancersInput): Request[DescribeLoadBalancersOutput] = js.native
-    def describeRules(params: DescribeRulesInput): Request[DescribeRulesOutput]                         = js.native
-    def describeSSLPolicies(params: DescribeSSLPoliciesInput): Request[DescribeSSLPoliciesOutput]       = js.native
-    def describeTags(params: DescribeTagsInput): Request[DescribeTagsOutput]                            = js.native
+    def describeRules(params: DescribeRulesInput): Request[DescribeRulesOutput] = js.native
+    def describeSSLPolicies(params: DescribeSSLPoliciesInput): Request[DescribeSSLPoliciesOutput] = js.native
+    def describeTags(params: DescribeTagsInput): Request[DescribeTagsOutput] = js.native
     def describeTargetGroupAttributes(
         params: DescribeTargetGroupAttributesInput
-    ): Request[DescribeTargetGroupAttributesOutput]                                                  = js.native
+    ): Request[DescribeTargetGroupAttributesOutput] = js.native
     def describeTargetGroups(params: DescribeTargetGroupsInput): Request[DescribeTargetGroupsOutput] = js.native
     def describeTargetHealth(params: DescribeTargetHealthInput): Request[DescribeTargetHealthOutput] = js.native
-    def modifyListener(params: ModifyListenerInput): Request[ModifyListenerOutput]                   = js.native
+    def modifyListener(params: ModifyListenerInput): Request[ModifyListenerOutput] = js.native
     def modifyLoadBalancerAttributes(
         params: ModifyLoadBalancerAttributesInput
-    ): Request[ModifyLoadBalancerAttributesOutput]                                          = js.native
-    def modifyRule(params: ModifyRuleInput): Request[ModifyRuleOutput]                      = js.native
+    ): Request[ModifyLoadBalancerAttributesOutput] = js.native
+    def modifyRule(params: ModifyRuleInput): Request[ModifyRuleOutput] = js.native
     def modifyTargetGroup(params: ModifyTargetGroupInput): Request[ModifyTargetGroupOutput] = js.native
     def modifyTargetGroupAttributes(
         params: ModifyTargetGroupAttributesInput
-    ): Request[ModifyTargetGroupAttributesOutput]                                     = js.native
+    ): Request[ModifyTargetGroupAttributesOutput] = js.native
     def registerTargets(params: RegisterTargetsInput): Request[RegisterTargetsOutput] = js.native
     def removeListenerCertificates(params: RemoveListenerCertificatesInput): Request[RemoveListenerCertificatesOutput] =
       js.native
-    def removeTags(params: RemoveTagsInput): Request[RemoveTagsOutput]                      = js.native
-    def setIpAddressType(params: SetIpAddressTypeInput): Request[SetIpAddressTypeOutput]    = js.native
+    def removeTags(params: RemoveTagsInput): Request[RemoveTagsOutput] = js.native
+    def setIpAddressType(params: SetIpAddressTypeInput): Request[SetIpAddressTypeOutput] = js.native
     def setRulePriorities(params: SetRulePrioritiesInput): Request[SetRulePrioritiesOutput] = js.native
     def setSecurityGroups(params: SetSecurityGroupsInput): Request[SetSecurityGroupsOutput] = js.native
-    def setSubnets(params: SetSubnetsInput): Request[SetSubnetsOutput]                      = js.native
+    def setSubnets(params: SetSubnetsInput): Request[SetSubnetsOutput] = js.native
   }
 
   /**
@@ -308,11 +310,11 @@ package elbv2 {
   @js.native
   sealed trait ActionTypeEnum extends js.Any
   object ActionTypeEnum extends js.Object {
-    val forward                = "forward".asInstanceOf[ActionTypeEnum]
-    val `authenticate-oidc`    = "authenticate-oidc".asInstanceOf[ActionTypeEnum]
+    val forward = "forward".asInstanceOf[ActionTypeEnum]
+    val `authenticate-oidc` = "authenticate-oidc".asInstanceOf[ActionTypeEnum]
     val `authenticate-cognito` = "authenticate-cognito".asInstanceOf[ActionTypeEnum]
-    val redirect               = "redirect".asInstanceOf[ActionTypeEnum]
-    val `fixed-response`       = "fixed-response".asInstanceOf[ActionTypeEnum]
+    val redirect = "redirect".asInstanceOf[ActionTypeEnum]
+    val `fixed-response` = "fixed-response".asInstanceOf[ActionTypeEnum]
 
     val values =
       js.Object.freeze(js.Array(forward, `authenticate-oidc`, `authenticate-cognito`, redirect, `fixed-response`))
@@ -332,7 +334,7 @@ package elbv2 {
     ): AddListenerCertificatesInput = {
       val __obj = js.Dynamic.literal(
         "Certificates" -> Certificates.asInstanceOf[js.Any],
-        "ListenerArn"  -> ListenerArn.asInstanceOf[js.Any]
+        "ListenerArn" -> ListenerArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddListenerCertificatesInput]
@@ -369,7 +371,7 @@ package elbv2 {
     ): AddTagsInput = {
       val __obj = js.Dynamic.literal(
         "ResourceArns" -> ResourceArns.asInstanceOf[js.Any],
-        "Tags"         -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddTagsInput]
@@ -392,8 +394,8 @@ package elbv2 {
   @js.native
   sealed trait AuthenticateCognitoActionConditionalBehaviorEnum extends js.Any
   object AuthenticateCognitoActionConditionalBehaviorEnum extends js.Object {
-    val deny         = "deny".asInstanceOf[AuthenticateCognitoActionConditionalBehaviorEnum]
-    val allow        = "allow".asInstanceOf[AuthenticateCognitoActionConditionalBehaviorEnum]
+    val deny = "deny".asInstanceOf[AuthenticateCognitoActionConditionalBehaviorEnum]
+    val allow = "allow".asInstanceOf[AuthenticateCognitoActionConditionalBehaviorEnum]
     val authenticate = "authenticate".asInstanceOf[AuthenticateCognitoActionConditionalBehaviorEnum]
 
     val values = js.Object.freeze(js.Array(deny, allow, authenticate))
@@ -428,9 +430,9 @@ package elbv2 {
         SessionTimeout: js.UndefOr[AuthenticateCognitoActionSessionTimeout] = js.undefined
     ): AuthenticateCognitoActionConfig = {
       val __obj = js.Dynamic.literal(
-        "UserPoolArn"      -> UserPoolArn.asInstanceOf[js.Any],
+        "UserPoolArn" -> UserPoolArn.asInstanceOf[js.Any],
         "UserPoolClientId" -> UserPoolClientId.asInstanceOf[js.Any],
-        "UserPoolDomain"   -> UserPoolDomain.asInstanceOf[js.Any]
+        "UserPoolDomain" -> UserPoolDomain.asInstanceOf[js.Any]
       )
 
       AuthenticationRequestExtraParams.foreach(__v =>
@@ -447,8 +449,8 @@ package elbv2 {
   @js.native
   sealed trait AuthenticateOidcActionConditionalBehaviorEnum extends js.Any
   object AuthenticateOidcActionConditionalBehaviorEnum extends js.Object {
-    val deny         = "deny".asInstanceOf[AuthenticateOidcActionConditionalBehaviorEnum]
-    val allow        = "allow".asInstanceOf[AuthenticateOidcActionConditionalBehaviorEnum]
+    val deny = "deny".asInstanceOf[AuthenticateOidcActionConditionalBehaviorEnum]
+    val allow = "allow".asInstanceOf[AuthenticateOidcActionConditionalBehaviorEnum]
     val authenticate = "authenticate".asInstanceOf[AuthenticateOidcActionConditionalBehaviorEnum]
 
     val values = js.Object.freeze(js.Array(deny, allow, authenticate))
@@ -492,10 +494,10 @@ package elbv2 {
     ): AuthenticateOidcActionConfig = {
       val __obj = js.Dynamic.literal(
         "AuthorizationEndpoint" -> AuthorizationEndpoint.asInstanceOf[js.Any],
-        "ClientId"              -> ClientId.asInstanceOf[js.Any],
-        "Issuer"                -> Issuer.asInstanceOf[js.Any],
-        "TokenEndpoint"         -> TokenEndpoint.asInstanceOf[js.Any],
-        "UserInfoEndpoint"      -> UserInfoEndpoint.asInstanceOf[js.Any]
+        "ClientId" -> ClientId.asInstanceOf[js.Any],
+        "Issuer" -> Issuer.asInstanceOf[js.Any],
+        "TokenEndpoint" -> TokenEndpoint.asInstanceOf[js.Any],
+        "UserInfoEndpoint" -> UserInfoEndpoint.asInstanceOf[js.Any]
       )
 
       AuthenticationRequestExtraParams.foreach(__v =>
@@ -586,6 +588,7 @@ package elbv2 {
     var LoadBalancerArn: LoadBalancerArn
     var Port: Port
     var Protocol: ProtocolEnum
+    var AlpnPolicy: js.UndefOr[AlpnPolicyName]
     var Certificates: js.UndefOr[CertificateList]
     var SslPolicy: js.UndefOr[SslPolicyName]
   }
@@ -597,16 +600,18 @@ package elbv2 {
         LoadBalancerArn: LoadBalancerArn,
         Port: Port,
         Protocol: ProtocolEnum,
+        AlpnPolicy: js.UndefOr[AlpnPolicyName] = js.undefined,
         Certificates: js.UndefOr[CertificateList] = js.undefined,
         SslPolicy: js.UndefOr[SslPolicyName] = js.undefined
     ): CreateListenerInput = {
       val __obj = js.Dynamic.literal(
-        "DefaultActions"  -> DefaultActions.asInstanceOf[js.Any],
+        "DefaultActions" -> DefaultActions.asInstanceOf[js.Any],
         "LoadBalancerArn" -> LoadBalancerArn.asInstanceOf[js.Any],
-        "Port"            -> Port.asInstanceOf[js.Any],
-        "Protocol"        -> Protocol.asInstanceOf[js.Any]
+        "Port" -> Port.asInstanceOf[js.Any],
+        "Protocol" -> Protocol.asInstanceOf[js.Any]
       )
 
+      AlpnPolicy.foreach(__v => __obj.updateDynamic("AlpnPolicy")(__v.asInstanceOf[js.Any]))
       Certificates.foreach(__v => __obj.updateDynamic("Certificates")(__v.asInstanceOf[js.Any]))
       SslPolicy.foreach(__v => __obj.updateDynamic("SslPolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateListenerInput]
@@ -701,10 +706,10 @@ package elbv2 {
         Priority: RulePriority
     ): CreateRuleInput = {
       val __obj = js.Dynamic.literal(
-        "Actions"     -> Actions.asInstanceOf[js.Any],
-        "Conditions"  -> Conditions.asInstanceOf[js.Any],
+        "Actions" -> Actions.asInstanceOf[js.Any],
+        "Conditions" -> Conditions.asInstanceOf[js.Any],
         "ListenerArn" -> ListenerArn.asInstanceOf[js.Any],
-        "Priority"    -> Priority.asInstanceOf[js.Any]
+        "Priority" -> Priority.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateRuleInput]
@@ -942,7 +947,7 @@ package elbv2 {
     ): DeregisterTargetsInput = {
       val __obj = js.Dynamic.literal(
         "TargetGroupArn" -> TargetGroupArn.asInstanceOf[js.Any],
-        "Targets"        -> Targets.asInstanceOf[js.Any]
+        "Targets" -> Targets.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeregisterTargetsInput]
@@ -1518,7 +1523,7 @@ package elbv2 {
   @js.native
   sealed trait IpAddressType extends js.Any
   object IpAddressType extends js.Object {
-    val ipv4      = "ipv4".asInstanceOf[IpAddressType]
+    val ipv4 = "ipv4".asInstanceOf[IpAddressType]
     val dualstack = "dualstack".asInstanceOf[IpAddressType]
 
     val values = js.Object.freeze(js.Array(ipv4, dualstack))
@@ -1551,6 +1556,7 @@ package elbv2 {
     */
   @js.native
   trait Listener extends js.Object {
+    var AlpnPolicy: js.UndefOr[AlpnPolicyName]
     var Certificates: js.UndefOr[CertificateList]
     var DefaultActions: js.UndefOr[Actions]
     var ListenerArn: js.UndefOr[ListenerArn]
@@ -1563,6 +1569,7 @@ package elbv2 {
   object Listener {
     @inline
     def apply(
+        AlpnPolicy: js.UndefOr[AlpnPolicyName] = js.undefined,
         Certificates: js.UndefOr[CertificateList] = js.undefined,
         DefaultActions: js.UndefOr[Actions] = js.undefined,
         ListenerArn: js.UndefOr[ListenerArn] = js.undefined,
@@ -1572,6 +1579,7 @@ package elbv2 {
         SslPolicy: js.UndefOr[SslPolicyName] = js.undefined
     ): Listener = {
       val __obj = js.Dynamic.literal()
+      AlpnPolicy.foreach(__v => __obj.updateDynamic("AlpnPolicy")(__v.asInstanceOf[js.Any]))
       Certificates.foreach(__v => __obj.updateDynamic("Certificates")(__v.asInstanceOf[js.Any]))
       DefaultActions.foreach(__v => __obj.updateDynamic("DefaultActions")(__v.asInstanceOf[js.Any]))
       ListenerArn.foreach(__v => __obj.updateDynamic("ListenerArn")(__v.asInstanceOf[js.Any]))
@@ -1686,7 +1694,7 @@ package elbv2 {
   sealed trait LoadBalancerSchemeEnum extends js.Any
   object LoadBalancerSchemeEnum extends js.Object {
     val `internet-facing` = "internet-facing".asInstanceOf[LoadBalancerSchemeEnum]
-    val internal          = "internal".asInstanceOf[LoadBalancerSchemeEnum]
+    val internal = "internal".asInstanceOf[LoadBalancerSchemeEnum]
 
     val values = js.Object.freeze(js.Array(`internet-facing`, internal))
   }
@@ -1716,10 +1724,10 @@ package elbv2 {
   @js.native
   sealed trait LoadBalancerStateEnum extends js.Any
   object LoadBalancerStateEnum extends js.Object {
-    val active          = "active".asInstanceOf[LoadBalancerStateEnum]
-    val provisioning    = "provisioning".asInstanceOf[LoadBalancerStateEnum]
+    val active = "active".asInstanceOf[LoadBalancerStateEnum]
+    val provisioning = "provisioning".asInstanceOf[LoadBalancerStateEnum]
     val active_impaired = "active_impaired".asInstanceOf[LoadBalancerStateEnum]
-    val failed          = "failed".asInstanceOf[LoadBalancerStateEnum]
+    val failed = "failed".asInstanceOf[LoadBalancerStateEnum]
 
     val values = js.Object.freeze(js.Array(active, provisioning, active_impaired, failed))
   }
@@ -1728,7 +1736,7 @@ package elbv2 {
   sealed trait LoadBalancerTypeEnum extends js.Any
   object LoadBalancerTypeEnum extends js.Object {
     val application = "application".asInstanceOf[LoadBalancerTypeEnum]
-    val network     = "network".asInstanceOf[LoadBalancerTypeEnum]
+    val network = "network".asInstanceOf[LoadBalancerTypeEnum]
 
     val values = js.Object.freeze(js.Array(application, network))
   }
@@ -1757,6 +1765,7 @@ package elbv2 {
   @js.native
   trait ModifyListenerInput extends js.Object {
     var ListenerArn: ListenerArn
+    var AlpnPolicy: js.UndefOr[AlpnPolicyName]
     var Certificates: js.UndefOr[CertificateList]
     var DefaultActions: js.UndefOr[Actions]
     var Port: js.UndefOr[Port]
@@ -1768,6 +1777,7 @@ package elbv2 {
     @inline
     def apply(
         ListenerArn: ListenerArn,
+        AlpnPolicy: js.UndefOr[AlpnPolicyName] = js.undefined,
         Certificates: js.UndefOr[CertificateList] = js.undefined,
         DefaultActions: js.UndefOr[Actions] = js.undefined,
         Port: js.UndefOr[Port] = js.undefined,
@@ -1778,6 +1788,7 @@ package elbv2 {
         "ListenerArn" -> ListenerArn.asInstanceOf[js.Any]
       )
 
+      AlpnPolicy.foreach(__v => __obj.updateDynamic("AlpnPolicy")(__v.asInstanceOf[js.Any]))
       Certificates.foreach(__v => __obj.updateDynamic("Certificates")(__v.asInstanceOf[js.Any]))
       DefaultActions.foreach(__v => __obj.updateDynamic("DefaultActions")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
@@ -1816,7 +1827,7 @@ package elbv2 {
         LoadBalancerArn: LoadBalancerArn
     ): ModifyLoadBalancerAttributesInput = {
       val __obj = js.Dynamic.literal(
-        "Attributes"      -> Attributes.asInstanceOf[js.Any],
+        "Attributes" -> Attributes.asInstanceOf[js.Any],
         "LoadBalancerArn" -> LoadBalancerArn.asInstanceOf[js.Any]
       )
 
@@ -1893,7 +1904,7 @@ package elbv2 {
         TargetGroupArn: TargetGroupArn
     ): ModifyTargetGroupAttributesInput = {
       val __obj = js.Dynamic.literal(
-        "Attributes"     -> Attributes.asInstanceOf[js.Any],
+        "Attributes" -> Attributes.asInstanceOf[js.Any],
         "TargetGroupArn" -> TargetGroupArn.asInstanceOf[js.Any]
       )
 
@@ -2004,11 +2015,11 @@ package elbv2 {
   @js.native
   sealed trait ProtocolEnum extends js.Any
   object ProtocolEnum extends js.Object {
-    val HTTP    = "HTTP".asInstanceOf[ProtocolEnum]
-    val HTTPS   = "HTTPS".asInstanceOf[ProtocolEnum]
-    val TCP     = "TCP".asInstanceOf[ProtocolEnum]
-    val TLS     = "TLS".asInstanceOf[ProtocolEnum]
-    val UDP     = "UDP".asInstanceOf[ProtocolEnum]
+    val HTTP = "HTTP".asInstanceOf[ProtocolEnum]
+    val HTTPS = "HTTPS".asInstanceOf[ProtocolEnum]
+    val TCP = "TCP".asInstanceOf[ProtocolEnum]
+    val TLS = "TLS".asInstanceOf[ProtocolEnum]
+    val UDP = "UDP".asInstanceOf[ProtocolEnum]
     val TCP_UDP = "TCP_UDP".asInstanceOf[ProtocolEnum]
 
     val values = js.Object.freeze(js.Array(HTTP, HTTPS, TCP, TLS, UDP, TCP_UDP))
@@ -2123,7 +2134,7 @@ package elbv2 {
     ): RegisterTargetsInput = {
       val __obj = js.Dynamic.literal(
         "TargetGroupArn" -> TargetGroupArn.asInstanceOf[js.Any],
-        "Targets"        -> Targets.asInstanceOf[js.Any]
+        "Targets" -> Targets.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RegisterTargetsInput]
@@ -2157,7 +2168,7 @@ package elbv2 {
     ): RemoveListenerCertificatesInput = {
       val __obj = js.Dynamic.literal(
         "Certificates" -> Certificates.asInstanceOf[js.Any],
-        "ListenerArn"  -> ListenerArn.asInstanceOf[js.Any]
+        "ListenerArn" -> ListenerArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RemoveListenerCertificatesInput]
@@ -2191,7 +2202,7 @@ package elbv2 {
     ): RemoveTagsInput = {
       val __obj = js.Dynamic.literal(
         "ResourceArns" -> ResourceArns.asInstanceOf[js.Any],
-        "TagKeys"      -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RemoveTagsInput]
@@ -2317,7 +2328,7 @@ package elbv2 {
         LoadBalancerArn: LoadBalancerArn
     ): SetIpAddressTypeInput = {
       val __obj = js.Dynamic.literal(
-        "IpAddressType"   -> IpAddressType.asInstanceOf[js.Any],
+        "IpAddressType" -> IpAddressType.asInstanceOf[js.Any],
         "LoadBalancerArn" -> LoadBalancerArn.asInstanceOf[js.Any]
       )
 
@@ -2389,7 +2400,7 @@ package elbv2 {
     ): SetSecurityGroupsInput = {
       val __obj = js.Dynamic.literal(
         "LoadBalancerArn" -> LoadBalancerArn.asInstanceOf[js.Any],
-        "SecurityGroups"  -> SecurityGroups.asInstanceOf[js.Any]
+        "SecurityGroups" -> SecurityGroups.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[SetSecurityGroupsInput]
@@ -2782,18 +2793,18 @@ package elbv2 {
   @js.native
   sealed trait TargetHealthReasonEnum extends js.Any
   object TargetHealthReasonEnum extends js.Object {
-    val `Elb.RegistrationInProgress`      = "Elb.RegistrationInProgress".asInstanceOf[TargetHealthReasonEnum]
-    val `Elb.InitialHealthChecking`       = "Elb.InitialHealthChecking".asInstanceOf[TargetHealthReasonEnum]
-    val `Target.ResponseCodeMismatch`     = "Target.ResponseCodeMismatch".asInstanceOf[TargetHealthReasonEnum]
-    val `Target.Timeout`                  = "Target.Timeout".asInstanceOf[TargetHealthReasonEnum]
-    val `Target.FailedHealthChecks`       = "Target.FailedHealthChecks".asInstanceOf[TargetHealthReasonEnum]
-    val `Target.NotRegistered`            = "Target.NotRegistered".asInstanceOf[TargetHealthReasonEnum]
-    val `Target.NotInUse`                 = "Target.NotInUse".asInstanceOf[TargetHealthReasonEnum]
+    val `Elb.RegistrationInProgress` = "Elb.RegistrationInProgress".asInstanceOf[TargetHealthReasonEnum]
+    val `Elb.InitialHealthChecking` = "Elb.InitialHealthChecking".asInstanceOf[TargetHealthReasonEnum]
+    val `Target.ResponseCodeMismatch` = "Target.ResponseCodeMismatch".asInstanceOf[TargetHealthReasonEnum]
+    val `Target.Timeout` = "Target.Timeout".asInstanceOf[TargetHealthReasonEnum]
+    val `Target.FailedHealthChecks` = "Target.FailedHealthChecks".asInstanceOf[TargetHealthReasonEnum]
+    val `Target.NotRegistered` = "Target.NotRegistered".asInstanceOf[TargetHealthReasonEnum]
+    val `Target.NotInUse` = "Target.NotInUse".asInstanceOf[TargetHealthReasonEnum]
     val `Target.DeregistrationInProgress` = "Target.DeregistrationInProgress".asInstanceOf[TargetHealthReasonEnum]
-    val `Target.InvalidState`             = "Target.InvalidState".asInstanceOf[TargetHealthReasonEnum]
-    val `Target.IpUnusable`               = "Target.IpUnusable".asInstanceOf[TargetHealthReasonEnum]
-    val `Target.HealthCheckDisabled`      = "Target.HealthCheckDisabled".asInstanceOf[TargetHealthReasonEnum]
-    val `Elb.InternalError`               = "Elb.InternalError".asInstanceOf[TargetHealthReasonEnum]
+    val `Target.InvalidState` = "Target.InvalidState".asInstanceOf[TargetHealthReasonEnum]
+    val `Target.IpUnusable` = "Target.IpUnusable".asInstanceOf[TargetHealthReasonEnum]
+    val `Target.HealthCheckDisabled` = "Target.HealthCheckDisabled".asInstanceOf[TargetHealthReasonEnum]
+    val `Elb.InternalError` = "Elb.InternalError".asInstanceOf[TargetHealthReasonEnum]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2816,11 +2827,11 @@ package elbv2 {
   @js.native
   sealed trait TargetHealthStateEnum extends js.Any
   object TargetHealthStateEnum extends js.Object {
-    val initial     = "initial".asInstanceOf[TargetHealthStateEnum]
-    val healthy     = "healthy".asInstanceOf[TargetHealthStateEnum]
-    val unhealthy   = "unhealthy".asInstanceOf[TargetHealthStateEnum]
-    val unused      = "unused".asInstanceOf[TargetHealthStateEnum]
-    val draining    = "draining".asInstanceOf[TargetHealthStateEnum]
+    val initial = "initial".asInstanceOf[TargetHealthStateEnum]
+    val healthy = "healthy".asInstanceOf[TargetHealthStateEnum]
+    val unhealthy = "unhealthy".asInstanceOf[TargetHealthStateEnum]
+    val unused = "unused".asInstanceOf[TargetHealthStateEnum]
+    val draining = "draining".asInstanceOf[TargetHealthStateEnum]
     val unavailable = "unavailable".asInstanceOf[TargetHealthStateEnum]
 
     val values = js.Object.freeze(js.Array(initial, healthy, unhealthy, unused, draining, unavailable))
@@ -2830,8 +2841,8 @@ package elbv2 {
   sealed trait TargetTypeEnum extends js.Any
   object TargetTypeEnum extends js.Object {
     val instance = "instance".asInstanceOf[TargetTypeEnum]
-    val ip       = "ip".asInstanceOf[TargetTypeEnum]
-    val lambda   = "lambda".asInstanceOf[TargetTypeEnum]
+    val ip = "ip".asInstanceOf[TargetTypeEnum]
+    val lambda = "lambda".asInstanceOf[TargetTypeEnum]
 
     val values = js.Object.freeze(js.Array(instance, ip, lambda))
   }

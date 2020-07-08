@@ -7,13 +7,13 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object pinpointsmsvoice {
-  type ConfigurationSets            = js.Array[WordCharactersWithDelimiters]
-  type EventDestinations            = js.Array[EventDestination]
-  type EventTypes                   = js.Array[EventType]
-  type NextTokenString              = String
-  type NonEmptyString               = String
+  type ConfigurationSets = js.Array[WordCharactersWithDelimiters]
+  type EventDestinations = js.Array[EventDestination]
+  type EventTypes = js.Array[EventType]
+  type NextTokenString = String
+  type NonEmptyString = String
   type WordCharactersWithDelimiters = String
-  type __string                     = String
+  type __string = String
 
   implicit final class PinpointSMSVoiceOps(private val service: PinpointSMSVoice) extends AnyVal {
 
@@ -65,9 +65,9 @@ package pinpointsmsvoice {
     ): Request[DeleteConfigurationSetEventDestinationResponse] = js.native
     def getConfigurationSetEventDestinations(
         params: GetConfigurationSetEventDestinationsRequest
-    ): Request[GetConfigurationSetEventDestinationsResponse]                                                = js.native
+    ): Request[GetConfigurationSetEventDestinationsResponse] = js.native
     def listConfigurationSets(params: ListConfigurationSetsRequest): Request[ListConfigurationSetsResponse] = js.native
-    def sendVoiceMessage(params: SendVoiceMessageRequest): Request[SendVoiceMessageResponse]                = js.native
+    def sendVoiceMessage(params: SendVoiceMessageRequest): Request[SendVoiceMessageResponse] = js.native
     def updateConfigurationSetEventDestination(
         params: UpdateConfigurationSetEventDestinationRequest
     ): Request[UpdateConfigurationSetEventDestinationResponse] = js.native
@@ -343,12 +343,12 @@ package pinpointsmsvoice {
   sealed trait EventType extends js.Any
   object EventType extends js.Object {
     val INITIATED_CALL = "INITIATED_CALL".asInstanceOf[EventType]
-    val RINGING        = "RINGING".asInstanceOf[EventType]
-    val ANSWERED       = "ANSWERED".asInstanceOf[EventType]
+    val RINGING = "RINGING".asInstanceOf[EventType]
+    val ANSWERED = "ANSWERED".asInstanceOf[EventType]
     val COMPLETED_CALL = "COMPLETED_CALL".asInstanceOf[EventType]
-    val BUSY           = "BUSY".asInstanceOf[EventType]
-    val FAILED         = "FAILED".asInstanceOf[EventType]
-    val NO_ANSWER      = "NO_ANSWER".asInstanceOf[EventType]
+    val BUSY = "BUSY".asInstanceOf[EventType]
+    val FAILED = "FAILED".asInstanceOf[EventType]
+    val NO_ANSWER = "NO_ANSWER".asInstanceOf[EventType]
 
     val values = js.Object.freeze(js.Array(INITIATED_CALL, RINGING, ANSWERED, COMPLETED_CALL, BUSY, FAILED, NO_ANSWER))
   }

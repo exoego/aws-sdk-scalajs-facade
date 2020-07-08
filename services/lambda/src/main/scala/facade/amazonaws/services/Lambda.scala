@@ -7,90 +7,93 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object lambda {
-  type Action                                   = String
-  type AdditionalVersion                        = String
-  type AdditionalVersionWeights                 = js.Dictionary[Weight]
-  type Alias                                    = String
-  type AliasList                                = js.Array[AliasConfiguration]
-  type Arn                                      = String
-  type BatchSize                                = Int
-  type BisectBatchOnFunctionError               = Boolean
-  type Blob                                     = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type BlobStream                               = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type CompatibleRuntimes                       = js.Array[Runtime]
-  type Date                                     = js.Date
-  type Description                              = String
-  type DestinationArn                           = String
-  type Enabled                                  = Boolean
-  type EnvironmentVariableName                  = String
-  type EnvironmentVariableValue                 = String
-  type EnvironmentVariables                     = js.Dictionary[EnvironmentVariableValue]
-  type EventSourceMappingsList                  = js.Array[EventSourceMappingConfiguration]
-  type EventSourceToken                         = String
-  type FunctionArn                              = String
-  type FunctionEventInvokeConfigList            = js.Array[FunctionEventInvokeConfig]
-  type FunctionList                             = js.Array[FunctionConfiguration]
-  type FunctionName                             = String
-  type Handler                                  = String
-  type HttpStatus                               = Int
-  type KMSKeyArn                                = String
-  type LastUpdateStatusReason                   = String
-  type LayerArn                                 = String
-  type LayerList                                = js.Array[LayerVersionArn]
-  type LayerName                                = String
-  type LayerPermissionAllowedAction             = String
-  type LayerPermissionAllowedPrincipal          = String
-  type LayerVersionArn                          = String
-  type LayerVersionNumber                       = Double
-  type LayerVersionsList                        = js.Array[LayerVersionsListItem]
-  type LayersList                               = js.Array[LayersListItem]
-  type LayersReferenceList                      = js.Array[Layer]
-  type LicenseInfo                              = String
-  type MasterRegion                             = String
-  type MaxFunctionEventInvokeConfigListItems    = Int
-  type MaxLayerListItems                        = Int
-  type MaxListItems                             = Int
+  type Action = String
+  type AdditionalVersion = String
+  type AdditionalVersionWeights = js.Dictionary[Weight]
+  type Alias = String
+  type AliasList = js.Array[AliasConfiguration]
+  type Arn = String
+  type BatchSize = Int
+  type BisectBatchOnFunctionError = Boolean
+  type Blob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type BlobStream = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type CompatibleRuntimes = js.Array[Runtime]
+  type Date = js.Date
+  type Description = String
+  type DestinationArn = String
+  type Enabled = Boolean
+  type EnvironmentVariableName = String
+  type EnvironmentVariableValue = String
+  type EnvironmentVariables = js.Dictionary[EnvironmentVariableValue]
+  type EventSourceMappingsList = js.Array[EventSourceMappingConfiguration]
+  type EventSourceToken = String
+  type FileSystemArn = String
+  type FileSystemConfigList = js.Array[FileSystemConfig]
+  type FunctionArn = String
+  type FunctionEventInvokeConfigList = js.Array[FunctionEventInvokeConfig]
+  type FunctionList = js.Array[FunctionConfiguration]
+  type FunctionName = String
+  type Handler = String
+  type HttpStatus = Int
+  type KMSKeyArn = String
+  type LastUpdateStatusReason = String
+  type LayerArn = String
+  type LayerList = js.Array[LayerVersionArn]
+  type LayerName = String
+  type LayerPermissionAllowedAction = String
+  type LayerPermissionAllowedPrincipal = String
+  type LayerVersionArn = String
+  type LayerVersionNumber = Double
+  type LayerVersionsList = js.Array[LayerVersionsListItem]
+  type LayersList = js.Array[LayersListItem]
+  type LayersReferenceList = js.Array[Layer]
+  type LicenseInfo = String
+  type LocalMountPath = String
+  type MasterRegion = String
+  type MaxFunctionEventInvokeConfigListItems = Int
+  type MaxLayerListItems = Int
+  type MaxListItems = Int
   type MaxProvisionedConcurrencyConfigListItems = Int
-  type MaximumBatchingWindowInSeconds           = Int
-  type MaximumEventAgeInSeconds                 = Int
-  type MaximumRecordAgeInSeconds                = Int
-  type MaximumRetryAttempts                     = Int
-  type MaximumRetryAttemptsEventSourceMapping   = Int
-  type MemorySize                               = Int
-  type NameSpacedFunctionArn                    = String
-  type NamespacedFunctionName                   = String
-  type NamespacedStatementId                    = String
-  type NonNegativeInteger                       = Int
-  type OrganizationId                           = String
-  type ParallelizationFactor                    = Int
-  type PositiveInteger                          = Int
-  type Principal                                = String
-  type ProvisionedConcurrencyConfigList         = js.Array[ProvisionedConcurrencyConfigListItem]
-  type Qualifier                                = String
-  type ReservedConcurrentExecutions             = Int
-  type ResourceArn                              = String
-  type RoleArn                                  = String
-  type S3Bucket                                 = String
-  type S3Key                                    = String
-  type S3ObjectVersion                          = String
-  type SecurityGroupId                          = String
-  type SecurityGroupIds                         = js.Array[SecurityGroupId]
-  type SensitiveString                          = String
-  type SourceOwner                              = String
-  type StateReason                              = String
-  type StatementId                              = String
-  type SubnetId                                 = String
-  type SubnetIds                                = js.Array[SubnetId]
-  type TagKey                                   = String
-  type TagKeyList                               = js.Array[TagKey]
-  type TagValue                                 = String
-  type Tags                                     = js.Dictionary[TagValue]
-  type Timeout                                  = Int
-  type Timestamp                                = String
-  type UnreservedConcurrentExecutions           = Int
-  type Version                                  = String
-  type VpcId                                    = String
-  type Weight                                   = Double
+  type MaximumBatchingWindowInSeconds = Int
+  type MaximumEventAgeInSeconds = Int
+  type MaximumRecordAgeInSeconds = Int
+  type MaximumRetryAttempts = Int
+  type MaximumRetryAttemptsEventSourceMapping = Int
+  type MemorySize = Int
+  type NameSpacedFunctionArn = String
+  type NamespacedFunctionName = String
+  type NamespacedStatementId = String
+  type NonNegativeInteger = Int
+  type OrganizationId = String
+  type ParallelizationFactor = Int
+  type PositiveInteger = Int
+  type Principal = String
+  type ProvisionedConcurrencyConfigList = js.Array[ProvisionedConcurrencyConfigListItem]
+  type Qualifier = String
+  type ReservedConcurrentExecutions = Int
+  type ResourceArn = String
+  type RoleArn = String
+  type S3Bucket = String
+  type S3Key = String
+  type S3ObjectVersion = String
+  type SecurityGroupId = String
+  type SecurityGroupIds = js.Array[SecurityGroupId]
+  type SensitiveString = String
+  type SourceOwner = String
+  type StateReason = String
+  type StatementId = String
+  type SubnetId = String
+  type SubnetIds = js.Array[SubnetId]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagValue = String
+  type Tags = js.Dictionary[TagValue]
+  type Timeout = Int
+  type Timestamp = String
+  type UnreservedConcurrentExecutions = Int
+  type Version = String
+  type VpcId = String
+  type Weight = Double
 
   implicit final class LambdaOps(private val service: Lambda) extends AnyVal {
 
@@ -224,23 +227,23 @@ package lambda {
 
     def addLayerVersionPermission(
         params: AddLayerVersionPermissionRequest
-    ): Request[AddLayerVersionPermissionResponse]                                   = js.native
+    ): Request[AddLayerVersionPermissionResponse] = js.native
     def addPermission(params: AddPermissionRequest): Request[AddPermissionResponse] = js.native
-    def createAlias(params: CreateAliasRequest): Request[AliasConfiguration]        = js.native
+    def createAlias(params: CreateAliasRequest): Request[AliasConfiguration] = js.native
     def createEventSourceMapping(params: CreateEventSourceMappingRequest): Request[EventSourceMappingConfiguration] =
       js.native
     def createFunction(params: CreateFunctionRequest): Request[FunctionConfiguration] = js.native
-    def deleteAlias(params: DeleteAliasRequest): Request[js.Object]                   = js.native
+    def deleteAlias(params: DeleteAliasRequest): Request[js.Object] = js.native
     def deleteEventSourceMapping(params: DeleteEventSourceMappingRequest): Request[EventSourceMappingConfiguration] =
       js.native
-    def deleteFunction(params: DeleteFunctionRequest): Request[js.Object]                                   = js.native
-    def deleteFunctionConcurrency(params: DeleteFunctionConcurrencyRequest): Request[js.Object]             = js.native
+    def deleteFunction(params: DeleteFunctionRequest): Request[js.Object] = js.native
+    def deleteFunctionConcurrency(params: DeleteFunctionConcurrencyRequest): Request[js.Object] = js.native
     def deleteFunctionEventInvokeConfig(params: DeleteFunctionEventInvokeConfigRequest): Request[js.Object] = js.native
-    def deleteLayerVersion(params: DeleteLayerVersionRequest): Request[js.Object]                           = js.native
+    def deleteLayerVersion(params: DeleteLayerVersionRequest): Request[js.Object] = js.native
     def deleteProvisionedConcurrencyConfig(params: DeleteProvisionedConcurrencyConfigRequest): Request[js.Object] =
       js.native
     def getAccountSettings(params: GetAccountSettingsRequest): Request[GetAccountSettingsResponse] = js.native
-    def getAlias(params: GetAliasRequest): Request[AliasConfiguration]                             = js.native
+    def getAlias(params: GetAliasRequest): Request[AliasConfiguration] = js.native
     def getEventSourceMapping(params: GetEventSourceMappingRequest): Request[EventSourceMappingConfiguration] =
       js.native
     def getFunction(params: GetFunctionRequest): Request[GetFunctionResponse] = js.native
@@ -249,42 +252,42 @@ package lambda {
     def getFunctionConfiguration(params: GetFunctionConfigurationRequest): Request[FunctionConfiguration] = js.native
     def getFunctionEventInvokeConfig(params: GetFunctionEventInvokeConfigRequest): Request[FunctionEventInvokeConfig] =
       js.native
-    def getLayerVersion(params: GetLayerVersionRequest): Request[GetLayerVersionResponse]                   = js.native
-    def getLayerVersionByArn(params: GetLayerVersionByArnRequest): Request[GetLayerVersionResponse]         = js.native
+    def getLayerVersion(params: GetLayerVersionRequest): Request[GetLayerVersionResponse] = js.native
+    def getLayerVersionByArn(params: GetLayerVersionByArnRequest): Request[GetLayerVersionResponse] = js.native
     def getLayerVersionPolicy(params: GetLayerVersionPolicyRequest): Request[GetLayerVersionPolicyResponse] = js.native
-    def getPolicy(params: GetPolicyRequest): Request[GetPolicyResponse]                                     = js.native
+    def getPolicy(params: GetPolicyRequest): Request[GetPolicyResponse] = js.native
     def getProvisionedConcurrencyConfig(
         params: GetProvisionedConcurrencyConfigRequest
-    ): Request[GetProvisionedConcurrencyConfigResponse]                       = js.native
-    def invoke(params: InvocationRequest): Request[InvocationResponse]        = js.native
+    ): Request[GetProvisionedConcurrencyConfigResponse] = js.native
+    def invoke(params: InvocationRequest): Request[InvocationResponse] = js.native
     def listAliases(params: ListAliasesRequest): Request[ListAliasesResponse] = js.native
     def listEventSourceMappings(params: ListEventSourceMappingsRequest): Request[ListEventSourceMappingsResponse] =
       js.native
     def listFunctionEventInvokeConfigs(
         params: ListFunctionEventInvokeConfigsRequest
-    ): Request[ListFunctionEventInvokeConfigsResponse]                                          = js.native
-    def listFunctions(params: ListFunctionsRequest): Request[ListFunctionsResponse]             = js.native
+    ): Request[ListFunctionEventInvokeConfigsResponse] = js.native
+    def listFunctions(params: ListFunctionsRequest): Request[ListFunctionsResponse] = js.native
     def listLayerVersions(params: ListLayerVersionsRequest): Request[ListLayerVersionsResponse] = js.native
-    def listLayers(params: ListLayersRequest): Request[ListLayersResponse]                      = js.native
+    def listLayers(params: ListLayersRequest): Request[ListLayersResponse] = js.native
     def listProvisionedConcurrencyConfigs(
         params: ListProvisionedConcurrencyConfigsRequest
-    ): Request[ListProvisionedConcurrencyConfigsResponse]            = js.native
+    ): Request[ListProvisionedConcurrencyConfigsResponse] = js.native
     def listTags(params: ListTagsRequest): Request[ListTagsResponse] = js.native
     def listVersionsByFunction(params: ListVersionsByFunctionRequest): Request[ListVersionsByFunctionResponse] =
       js.native
     def publishLayerVersion(params: PublishLayerVersionRequest): Request[PublishLayerVersionResponse] = js.native
-    def publishVersion(params: PublishVersionRequest): Request[FunctionConfiguration]                 = js.native
-    def putFunctionConcurrency(params: PutFunctionConcurrencyRequest): Request[Concurrency]           = js.native
+    def publishVersion(params: PublishVersionRequest): Request[FunctionConfiguration] = js.native
+    def putFunctionConcurrency(params: PutFunctionConcurrencyRequest): Request[Concurrency] = js.native
     def putFunctionEventInvokeConfig(params: PutFunctionEventInvokeConfigRequest): Request[FunctionEventInvokeConfig] =
       js.native
     def putProvisionedConcurrencyConfig(
         params: PutProvisionedConcurrencyConfigRequest
-    ): Request[PutProvisionedConcurrencyConfigResponse]                                               = js.native
+    ): Request[PutProvisionedConcurrencyConfigResponse] = js.native
     def removeLayerVersionPermission(params: RemoveLayerVersionPermissionRequest): Request[js.Object] = js.native
-    def removePermission(params: RemovePermissionRequest): Request[js.Object]                         = js.native
-    def tagResource(params: TagResourceRequest): Request[js.Object]                                   = js.native
-    def untagResource(params: UntagResourceRequest): Request[js.Object]                               = js.native
-    def updateAlias(params: UpdateAliasRequest): Request[AliasConfiguration]                          = js.native
+    def removePermission(params: RemovePermissionRequest): Request[js.Object] = js.native
+    def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
+    def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
+    def updateAlias(params: UpdateAliasRequest): Request[AliasConfiguration] = js.native
     def updateEventSourceMapping(params: UpdateEventSourceMappingRequest): Request[EventSourceMappingConfiguration] =
       js.native
     def updateFunctionCode(params: UpdateFunctionCodeRequest): Request[FunctionConfiguration] = js.native
@@ -376,10 +379,10 @@ package lambda {
         RevisionId: js.UndefOr[String] = js.undefined
     ): AddLayerVersionPermissionRequest = {
       val __obj = js.Dynamic.literal(
-        "Action"        -> Action.asInstanceOf[js.Any],
-        "LayerName"     -> LayerName.asInstanceOf[js.Any],
-        "Principal"     -> Principal.asInstanceOf[js.Any],
-        "StatementId"   -> StatementId.asInstanceOf[js.Any],
+        "Action" -> Action.asInstanceOf[js.Any],
+        "LayerName" -> LayerName.asInstanceOf[js.Any],
+        "Principal" -> Principal.asInstanceOf[js.Any],
+        "StatementId" -> StatementId.asInstanceOf[js.Any],
         "VersionNumber" -> VersionNumber.asInstanceOf[js.Any]
       )
 
@@ -435,10 +438,10 @@ package lambda {
         SourceArn: js.UndefOr[Arn] = js.undefined
     ): AddPermissionRequest = {
       val __obj = js.Dynamic.literal(
-        "Action"       -> Action.asInstanceOf[js.Any],
+        "Action" -> Action.asInstanceOf[js.Any],
         "FunctionName" -> FunctionName.asInstanceOf[js.Any],
-        "Principal"    -> Principal.asInstanceOf[js.Any],
-        "StatementId"  -> StatementId.asInstanceOf[js.Any]
+        "Principal" -> Principal.asInstanceOf[js.Any],
+        "StatementId" -> StatementId.asInstanceOf[js.Any]
       )
 
       EventSourceToken.foreach(__v => __obj.updateDynamic("EventSourceToken")(__v.asInstanceOf[js.Any]))
@@ -556,9 +559,9 @@ package lambda {
         RoutingConfig: js.UndefOr[AliasRoutingConfiguration] = js.undefined
     ): CreateAliasRequest = {
       val __obj = js.Dynamic.literal(
-        "FunctionName"    -> FunctionName.asInstanceOf[js.Any],
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
         "FunctionVersion" -> FunctionVersion.asInstanceOf[js.Any],
-        "Name"            -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -601,7 +604,7 @@ package lambda {
     ): CreateEventSourceMappingRequest = {
       val __obj = js.Dynamic.literal(
         "EventSourceArn" -> EventSourceArn.asInstanceOf[js.Any],
-        "FunctionName"   -> FunctionName.asInstanceOf[js.Any]
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
       )
 
       BatchSize.foreach(__v => __obj.updateDynamic("BatchSize")(__v.asInstanceOf[js.Any]))
@@ -636,6 +639,7 @@ package lambda {
     var DeadLetterConfig: js.UndefOr[DeadLetterConfig]
     var Description: js.UndefOr[Description]
     var Environment: js.UndefOr[Environment]
+    var FileSystemConfigs: js.UndefOr[FileSystemConfigList]
     var KMSKeyArn: js.UndefOr[KMSKeyArn]
     var Layers: js.UndefOr[LayerList]
     var MemorySize: js.UndefOr[MemorySize]
@@ -657,6 +661,7 @@ package lambda {
         DeadLetterConfig: js.UndefOr[DeadLetterConfig] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         Environment: js.UndefOr[Environment] = js.undefined,
+        FileSystemConfigs: js.UndefOr[FileSystemConfigList] = js.undefined,
         KMSKeyArn: js.UndefOr[KMSKeyArn] = js.undefined,
         Layers: js.UndefOr[LayerList] = js.undefined,
         MemorySize: js.UndefOr[MemorySize] = js.undefined,
@@ -667,16 +672,17 @@ package lambda {
         VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): CreateFunctionRequest = {
       val __obj = js.Dynamic.literal(
-        "Code"         -> Code.asInstanceOf[js.Any],
+        "Code" -> Code.asInstanceOf[js.Any],
         "FunctionName" -> FunctionName.asInstanceOf[js.Any],
-        "Handler"      -> Handler.asInstanceOf[js.Any],
-        "Role"         -> Role.asInstanceOf[js.Any],
-        "Runtime"      -> Runtime.asInstanceOf[js.Any]
+        "Handler" -> Handler.asInstanceOf[js.Any],
+        "Role" -> Role.asInstanceOf[js.Any],
+        "Runtime" -> Runtime.asInstanceOf[js.Any]
       )
 
       DeadLetterConfig.foreach(__v => __obj.updateDynamic("DeadLetterConfig")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
+      FileSystemConfigs.foreach(__v => __obj.updateDynamic("FileSystemConfigs")(__v.asInstanceOf[js.Any]))
       KMSKeyArn.foreach(__v => __obj.updateDynamic("KMSKeyArn")(__v.asInstanceOf[js.Any]))
       Layers.foreach(__v => __obj.updateDynamic("Layers")(__v.asInstanceOf[js.Any]))
       MemorySize.foreach(__v => __obj.updateDynamic("MemorySize")(__v.asInstanceOf[js.Any]))
@@ -722,7 +728,7 @@ package lambda {
     ): DeleteAliasRequest = {
       val __obj = js.Dynamic.literal(
         "FunctionName" -> FunctionName.asInstanceOf[js.Any],
-        "Name"         -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteAliasRequest]
@@ -820,7 +826,7 @@ package lambda {
         VersionNumber: LayerVersionNumber
     ): DeleteLayerVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "LayerName"     -> LayerName.asInstanceOf[js.Any],
+        "LayerName" -> LayerName.asInstanceOf[js.Any],
         "VersionNumber" -> VersionNumber.asInstanceOf[js.Any]
       )
 
@@ -842,7 +848,7 @@ package lambda {
     ): DeleteProvisionedConcurrencyConfigRequest = {
       val __obj = js.Dynamic.literal(
         "FunctionName" -> FunctionName.asInstanceOf[js.Any],
-        "Qualifier"    -> Qualifier.asInstanceOf[js.Any]
+        "Qualifier" -> Qualifier.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteProvisionedConcurrencyConfigRequest]
@@ -1002,10 +1008,34 @@ package lambda {
   sealed trait EventSourcePosition extends js.Any
   object EventSourcePosition extends js.Object {
     val TRIM_HORIZON = "TRIM_HORIZON".asInstanceOf[EventSourcePosition]
-    val LATEST       = "LATEST".asInstanceOf[EventSourcePosition]
+    val LATEST = "LATEST".asInstanceOf[EventSourcePosition]
     val AT_TIMESTAMP = "AT_TIMESTAMP".asInstanceOf[EventSourcePosition]
 
     val values = js.Object.freeze(js.Array(TRIM_HORIZON, LATEST, AT_TIMESTAMP))
+  }
+
+  /**
+    * Details about the connection between a Lambda function and an Amazon EFS file system.
+    */
+  @js.native
+  trait FileSystemConfig extends js.Object {
+    var Arn: FileSystemArn
+    var LocalMountPath: LocalMountPath
+  }
+
+  object FileSystemConfig {
+    @inline
+    def apply(
+        Arn: FileSystemArn,
+        LocalMountPath: LocalMountPath
+    ): FileSystemConfig = {
+      val __obj = js.Dynamic.literal(
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "LocalMountPath" -> LocalMountPath.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[FileSystemConfig]
+    }
   }
 
   /**
@@ -1068,6 +1098,7 @@ package lambda {
     var DeadLetterConfig: js.UndefOr[DeadLetterConfig]
     var Description: js.UndefOr[Description]
     var Environment: js.UndefOr[EnvironmentResponse]
+    var FileSystemConfigs: js.UndefOr[FileSystemConfigList]
     var FunctionArn: js.UndefOr[NameSpacedFunctionArn]
     var FunctionName: js.UndefOr[NamespacedFunctionName]
     var Handler: js.UndefOr[Handler]
@@ -1099,6 +1130,7 @@ package lambda {
         DeadLetterConfig: js.UndefOr[DeadLetterConfig] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         Environment: js.UndefOr[EnvironmentResponse] = js.undefined,
+        FileSystemConfigs: js.UndefOr[FileSystemConfigList] = js.undefined,
         FunctionArn: js.UndefOr[NameSpacedFunctionArn] = js.undefined,
         FunctionName: js.UndefOr[NamespacedFunctionName] = js.undefined,
         Handler: js.UndefOr[Handler] = js.undefined,
@@ -1127,6 +1159,7 @@ package lambda {
       DeadLetterConfig.foreach(__v => __obj.updateDynamic("DeadLetterConfig")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
+      FileSystemConfigs.foreach(__v => __obj.updateDynamic("FileSystemConfigs")(__v.asInstanceOf[js.Any]))
       FunctionArn.foreach(__v => __obj.updateDynamic("FunctionArn")(__v.asInstanceOf[js.Any]))
       FunctionName.foreach(__v => __obj.updateDynamic("FunctionName")(__v.asInstanceOf[js.Any]))
       Handler.foreach(__v => __obj.updateDynamic("Handler")(__v.asInstanceOf[js.Any]))
@@ -1236,7 +1269,7 @@ package lambda {
     ): GetAliasRequest = {
       val __obj = js.Dynamic.literal(
         "FunctionName" -> FunctionName.asInstanceOf[js.Any],
-        "Name"         -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetAliasRequest]
@@ -1416,7 +1449,7 @@ package lambda {
         VersionNumber: LayerVersionNumber
     ): GetLayerVersionPolicyRequest = {
       val __obj = js.Dynamic.literal(
-        "LayerName"     -> LayerName.asInstanceOf[js.Any],
+        "LayerName" -> LayerName.asInstanceOf[js.Any],
         "VersionNumber" -> VersionNumber.asInstanceOf[js.Any]
       )
 
@@ -1456,7 +1489,7 @@ package lambda {
         VersionNumber: LayerVersionNumber
     ): GetLayerVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "LayerName"     -> LayerName.asInstanceOf[js.Any],
+        "LayerName" -> LayerName.asInstanceOf[js.Any],
         "VersionNumber" -> VersionNumber.asInstanceOf[js.Any]
       )
 
@@ -1555,7 +1588,7 @@ package lambda {
     ): GetProvisionedConcurrencyConfigRequest = {
       val __obj = js.Dynamic.literal(
         "FunctionName" -> FunctionName.asInstanceOf[js.Any],
-        "Qualifier"    -> Qualifier.asInstanceOf[js.Any]
+        "Qualifier" -> Qualifier.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetProvisionedConcurrencyConfigRequest]
@@ -1663,9 +1696,9 @@ package lambda {
   @js.native
   sealed trait InvocationType extends js.Any
   object InvocationType extends js.Object {
-    val Event           = "Event".asInstanceOf[InvocationType]
+    val Event = "Event".asInstanceOf[InvocationType]
     val RequestResponse = "RequestResponse".asInstanceOf[InvocationType]
-    val DryRun          = "DryRun".asInstanceOf[InvocationType]
+    val DryRun = "DryRun".asInstanceOf[InvocationType]
 
     val values = js.Object.freeze(js.Array(Event, RequestResponse, DryRun))
   }
@@ -1685,7 +1718,7 @@ package lambda {
     ): InvokeAsyncRequest = {
       val __obj = js.Dynamic.literal(
         "FunctionName" -> FunctionName.asInstanceOf[js.Any],
-        "InvokeArgs"   -> InvokeArgs.asInstanceOf[js.Any]
+        "InvokeArgs" -> InvokeArgs.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[InvokeAsyncRequest]
@@ -1716,7 +1749,7 @@ package lambda {
   sealed trait LastUpdateStatus extends js.Any
   object LastUpdateStatus extends js.Object {
     val Successful = "Successful".asInstanceOf[LastUpdateStatus]
-    val Failed     = "Failed".asInstanceOf[LastUpdateStatus]
+    val Failed = "Failed".asInstanceOf[LastUpdateStatus]
     val InProgress = "InProgress".asInstanceOf[LastUpdateStatus]
 
     val values = js.Object.freeze(js.Array(Successful, Failed, InProgress))
@@ -1725,13 +1758,13 @@ package lambda {
   @js.native
   sealed trait LastUpdateStatusReasonCode extends js.Any
   object LastUpdateStatusReasonCode extends js.Object {
-    val EniLimitExceeded            = "EniLimitExceeded".asInstanceOf[LastUpdateStatusReasonCode]
+    val EniLimitExceeded = "EniLimitExceeded".asInstanceOf[LastUpdateStatusReasonCode]
     val InsufficientRolePermissions = "InsufficientRolePermissions".asInstanceOf[LastUpdateStatusReasonCode]
-    val InvalidConfiguration        = "InvalidConfiguration".asInstanceOf[LastUpdateStatusReasonCode]
-    val InternalError               = "InternalError".asInstanceOf[LastUpdateStatusReasonCode]
-    val SubnetOutOfIPAddresses      = "SubnetOutOfIPAddresses".asInstanceOf[LastUpdateStatusReasonCode]
-    val InvalidSubnet               = "InvalidSubnet".asInstanceOf[LastUpdateStatusReasonCode]
-    val InvalidSecurityGroup        = "InvalidSecurityGroup".asInstanceOf[LastUpdateStatusReasonCode]
+    val InvalidConfiguration = "InvalidConfiguration".asInstanceOf[LastUpdateStatusReasonCode]
+    val InternalError = "InternalError".asInstanceOf[LastUpdateStatusReasonCode]
+    val SubnetOutOfIPAddresses = "SubnetOutOfIPAddresses".asInstanceOf[LastUpdateStatusReasonCode]
+    val InvalidSubnet = "InvalidSubnet".asInstanceOf[LastUpdateStatusReasonCode]
+    val InvalidSecurityGroup = "InvalidSecurityGroup".asInstanceOf[LastUpdateStatusReasonCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2365,8 +2398,8 @@ package lambda {
   sealed trait ProvisionedConcurrencyStatusEnum extends js.Any
   object ProvisionedConcurrencyStatusEnum extends js.Object {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ProvisionedConcurrencyStatusEnum]
-    val READY       = "READY".asInstanceOf[ProvisionedConcurrencyStatusEnum]
-    val FAILED      = "FAILED".asInstanceOf[ProvisionedConcurrencyStatusEnum]
+    val READY = "READY".asInstanceOf[ProvisionedConcurrencyStatusEnum]
+    val FAILED = "FAILED".asInstanceOf[ProvisionedConcurrencyStatusEnum]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, READY, FAILED))
   }
@@ -2390,7 +2423,7 @@ package lambda {
         LicenseInfo: js.UndefOr[LicenseInfo] = js.undefined
     ): PublishLayerVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "Content"   -> Content.asInstanceOf[js.Any],
+        "Content" -> Content.asInstanceOf[js.Any],
         "LayerName" -> LayerName.asInstanceOf[js.Any]
       )
 
@@ -2478,7 +2511,7 @@ package lambda {
         ReservedConcurrentExecutions: ReservedConcurrentExecutions
     ): PutFunctionConcurrencyRequest = {
       val __obj = js.Dynamic.literal(
-        "FunctionName"                 -> FunctionName.asInstanceOf[js.Any],
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
         "ReservedConcurrentExecutions" -> ReservedConcurrentExecutions.asInstanceOf[js.Any]
       )
 
@@ -2531,9 +2564,9 @@ package lambda {
         Qualifier: Qualifier
     ): PutProvisionedConcurrencyConfigRequest = {
       val __obj = js.Dynamic.literal(
-        "FunctionName"                    -> FunctionName.asInstanceOf[js.Any],
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
         "ProvisionedConcurrentExecutions" -> ProvisionedConcurrentExecutions.asInstanceOf[js.Any],
-        "Qualifier"                       -> Qualifier.asInstanceOf[js.Any]
+        "Qualifier" -> Qualifier.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutProvisionedConcurrencyConfigRequest]
@@ -2594,8 +2627,8 @@ package lambda {
         RevisionId: js.UndefOr[String] = js.undefined
     ): RemoveLayerVersionPermissionRequest = {
       val __obj = js.Dynamic.literal(
-        "LayerName"     -> LayerName.asInstanceOf[js.Any],
-        "StatementId"   -> StatementId.asInstanceOf[js.Any],
+        "LayerName" -> LayerName.asInstanceOf[js.Any],
+        "StatementId" -> StatementId.asInstanceOf[js.Any],
         "VersionNumber" -> VersionNumber.asInstanceOf[js.Any]
       )
 
@@ -2622,7 +2655,7 @@ package lambda {
     ): RemovePermissionRequest = {
       val __obj = js.Dynamic.literal(
         "FunctionName" -> FunctionName.asInstanceOf[js.Any],
-        "StatementId"  -> StatementId.asInstanceOf[js.Any]
+        "StatementId" -> StatementId.asInstanceOf[js.Any]
       )
 
       Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
@@ -2634,26 +2667,27 @@ package lambda {
   @js.native
   sealed trait Runtime extends js.Any
   object Runtime extends js.Object {
-    val nodejs           = "nodejs".asInstanceOf[Runtime]
-    val `nodejs4.3`      = "nodejs4.3".asInstanceOf[Runtime]
-    val `nodejs6.10`     = "nodejs6.10".asInstanceOf[Runtime]
-    val `nodejs8.10`     = "nodejs8.10".asInstanceOf[Runtime]
-    val `nodejs10.x`     = "nodejs10.x".asInstanceOf[Runtime]
-    val `nodejs12.x`     = "nodejs12.x".asInstanceOf[Runtime]
-    val java8            = "java8".asInstanceOf[Runtime]
-    val java11           = "java11".asInstanceOf[Runtime]
-    val `python2.7`      = "python2.7".asInstanceOf[Runtime]
-    val `python3.6`      = "python3.6".asInstanceOf[Runtime]
-    val `python3.7`      = "python3.7".asInstanceOf[Runtime]
-    val `python3.8`      = "python3.8".asInstanceOf[Runtime]
-    val `dotnetcore1.0`  = "dotnetcore1.0".asInstanceOf[Runtime]
-    val `dotnetcore2.0`  = "dotnetcore2.0".asInstanceOf[Runtime]
-    val `dotnetcore2.1`  = "dotnetcore2.1".asInstanceOf[Runtime]
+    val nodejs = "nodejs".asInstanceOf[Runtime]
+    val `nodejs4.3` = "nodejs4.3".asInstanceOf[Runtime]
+    val `nodejs6.10` = "nodejs6.10".asInstanceOf[Runtime]
+    val `nodejs8.10` = "nodejs8.10".asInstanceOf[Runtime]
+    val `nodejs10.x` = "nodejs10.x".asInstanceOf[Runtime]
+    val `nodejs12.x` = "nodejs12.x".asInstanceOf[Runtime]
+    val java8 = "java8".asInstanceOf[Runtime]
+    val java11 = "java11".asInstanceOf[Runtime]
+    val `python2.7` = "python2.7".asInstanceOf[Runtime]
+    val `python3.6` = "python3.6".asInstanceOf[Runtime]
+    val `python3.7` = "python3.7".asInstanceOf[Runtime]
+    val `python3.8` = "python3.8".asInstanceOf[Runtime]
+    val `dotnetcore1.0` = "dotnetcore1.0".asInstanceOf[Runtime]
+    val `dotnetcore2.0` = "dotnetcore2.0".asInstanceOf[Runtime]
+    val `dotnetcore2.1` = "dotnetcore2.1".asInstanceOf[Runtime]
+    val `dotnetcore3.1` = "dotnetcore3.1".asInstanceOf[Runtime]
     val `nodejs4.3-edge` = "nodejs4.3-edge".asInstanceOf[Runtime]
-    val `go1.x`          = "go1.x".asInstanceOf[Runtime]
-    val `ruby2.5`        = "ruby2.5".asInstanceOf[Runtime]
-    val `ruby2.7`        = "ruby2.7".asInstanceOf[Runtime]
-    val provided         = "provided".asInstanceOf[Runtime]
+    val `go1.x` = "go1.x".asInstanceOf[Runtime]
+    val `ruby2.5` = "ruby2.5".asInstanceOf[Runtime]
+    val `ruby2.7` = "ruby2.7".asInstanceOf[Runtime]
+    val provided = "provided".asInstanceOf[Runtime]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2672,6 +2706,7 @@ package lambda {
         `dotnetcore1.0`,
         `dotnetcore2.0`,
         `dotnetcore2.1`,
+        `dotnetcore3.1`,
         `nodejs4.3-edge`,
         `go1.x`,
         `ruby2.5`,
@@ -2684,10 +2719,10 @@ package lambda {
   @js.native
   sealed trait State extends js.Any
   object State extends js.Object {
-    val Pending  = "Pending".asInstanceOf[State]
-    val Active   = "Active".asInstanceOf[State]
+    val Pending = "Pending".asInstanceOf[State]
+    val Active = "Active".asInstanceOf[State]
     val Inactive = "Inactive".asInstanceOf[State]
-    val Failed   = "Failed".asInstanceOf[State]
+    val Failed = "Failed".asInstanceOf[State]
 
     val values = js.Object.freeze(js.Array(Pending, Active, Inactive, Failed))
   }
@@ -2695,16 +2730,16 @@ package lambda {
   @js.native
   sealed trait StateReasonCode extends js.Any
   object StateReasonCode extends js.Object {
-    val Idle                        = "Idle".asInstanceOf[StateReasonCode]
-    val Creating                    = "Creating".asInstanceOf[StateReasonCode]
-    val Restoring                   = "Restoring".asInstanceOf[StateReasonCode]
-    val EniLimitExceeded            = "EniLimitExceeded".asInstanceOf[StateReasonCode]
+    val Idle = "Idle".asInstanceOf[StateReasonCode]
+    val Creating = "Creating".asInstanceOf[StateReasonCode]
+    val Restoring = "Restoring".asInstanceOf[StateReasonCode]
+    val EniLimitExceeded = "EniLimitExceeded".asInstanceOf[StateReasonCode]
     val InsufficientRolePermissions = "InsufficientRolePermissions".asInstanceOf[StateReasonCode]
-    val InvalidConfiguration        = "InvalidConfiguration".asInstanceOf[StateReasonCode]
-    val InternalError               = "InternalError".asInstanceOf[StateReasonCode]
-    val SubnetOutOfIPAddresses      = "SubnetOutOfIPAddresses".asInstanceOf[StateReasonCode]
-    val InvalidSubnet               = "InvalidSubnet".asInstanceOf[StateReasonCode]
-    val InvalidSecurityGroup        = "InvalidSecurityGroup".asInstanceOf[StateReasonCode]
+    val InvalidConfiguration = "InvalidConfiguration".asInstanceOf[StateReasonCode]
+    val InternalError = "InternalError".asInstanceOf[StateReasonCode]
+    val SubnetOutOfIPAddresses = "SubnetOutOfIPAddresses".asInstanceOf[StateReasonCode]
+    val InvalidSubnet = "InvalidSubnet".asInstanceOf[StateReasonCode]
+    val InvalidSecurityGroup = "InvalidSecurityGroup".asInstanceOf[StateReasonCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2736,7 +2771,7 @@ package lambda {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "Resource" -> Resource.asInstanceOf[js.Any],
-        "Tags"     -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -2784,7 +2819,7 @@ package lambda {
   @js.native
   sealed trait TracingMode extends js.Any
   object TracingMode extends js.Object {
-    val Active      = "Active".asInstanceOf[TracingMode]
+    val Active = "Active".asInstanceOf[TracingMode]
     val PassThrough = "PassThrough".asInstanceOf[TracingMode]
 
     val values = js.Object.freeze(js.Array(Active, PassThrough))
@@ -2804,7 +2839,7 @@ package lambda {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "Resource" -> Resource.asInstanceOf[js.Any],
-        "TagKeys"  -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -2833,7 +2868,7 @@ package lambda {
     ): UpdateAliasRequest = {
       val __obj = js.Dynamic.literal(
         "FunctionName" -> FunctionName.asInstanceOf[js.Any],
-        "Name"         -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -2940,6 +2975,7 @@ package lambda {
     var DeadLetterConfig: js.UndefOr[DeadLetterConfig]
     var Description: js.UndefOr[Description]
     var Environment: js.UndefOr[Environment]
+    var FileSystemConfigs: js.UndefOr[FileSystemConfigList]
     var Handler: js.UndefOr[Handler]
     var KMSKeyArn: js.UndefOr[KMSKeyArn]
     var Layers: js.UndefOr[LayerList]
@@ -2959,6 +2995,7 @@ package lambda {
         DeadLetterConfig: js.UndefOr[DeadLetterConfig] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         Environment: js.UndefOr[Environment] = js.undefined,
+        FileSystemConfigs: js.UndefOr[FileSystemConfigList] = js.undefined,
         Handler: js.UndefOr[Handler] = js.undefined,
         KMSKeyArn: js.UndefOr[KMSKeyArn] = js.undefined,
         Layers: js.UndefOr[LayerList] = js.undefined,
@@ -2977,6 +3014,7 @@ package lambda {
       DeadLetterConfig.foreach(__v => __obj.updateDynamic("DeadLetterConfig")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
+      FileSystemConfigs.foreach(__v => __obj.updateDynamic("FileSystemConfigs")(__v.asInstanceOf[js.Any]))
       Handler.foreach(__v => __obj.updateDynamic("Handler")(__v.asInstanceOf[js.Any]))
       KMSKeyArn.foreach(__v => __obj.updateDynamic("KMSKeyArn")(__v.asInstanceOf[js.Any]))
       Layers.foreach(__v => __obj.updateDynamic("Layers")(__v.asInstanceOf[js.Any]))

@@ -7,45 +7,62 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object iotevents {
-  type Actions                       = js.Array[Action]
-  type AmazonResourceName            = String
-  type AttributeJsonPath             = String
-  type Attributes                    = js.Array[Attribute]
-  type Condition                     = String
-  type DeliveryStreamName            = String
-  type DetectorDebugOptions          = js.Array[DetectorDebugOption]
-  type DetectorModelArn              = String
-  type DetectorModelDescription      = String
-  type DetectorModelName             = String
-  type DetectorModelSummaries        = js.Array[DetectorModelSummary]
-  type DetectorModelVersion          = String
+  type Actions = js.Array[Action]
+  type AmazonResourceName = String
+  type AssetId = String
+  type AssetPropertyAlias = String
+  type AssetPropertyBooleanValue = String
+  type AssetPropertyDoubleValue = String
+  type AssetPropertyEntryId = String
+  type AssetPropertyId = String
+  type AssetPropertyIntegerValue = String
+  type AssetPropertyOffsetInNanos = String
+  type AssetPropertyQuality = String
+  type AssetPropertyStringValue = String
+  type AssetPropertyTimeInSeconds = String
+  type AttributeJsonPath = String
+  type Attributes = js.Array[Attribute]
+  type Condition = String
+  type ContentExpression = String
+  type DeliveryStreamName = String
+  type DetectorDebugOptions = js.Array[DetectorDebugOption]
+  type DetectorModelArn = String
+  type DetectorModelDescription = String
+  type DetectorModelName = String
+  type DetectorModelSummaries = js.Array[DetectorModelSummary]
+  type DetectorModelVersion = String
   type DetectorModelVersionSummaries = js.Array[DetectorModelVersionSummary]
-  type EventName                     = String
-  type Events                        = js.Array[Event]
-  type FirehoseSeparator             = String
-  type InputArn                      = String
-  type InputDescription              = String
-  type InputName                     = String
-  type InputSummaries                = js.Array[InputSummary]
-  type KeyValue                      = String
-  type LoggingEnabled                = Boolean
-  type MQTTTopic                     = String
-  type MaxResults                    = Int
-  type NextToken                     = String
-  type QueueUrl                      = String
-  type Seconds                       = Int
-  type StateName                     = String
-  type States                        = js.Array[State]
-  type TagKey                        = String
-  type TagKeys                       = js.Array[TagKey]
-  type TagValue                      = String
-  type Tags                          = js.Array[Tag]
-  type TimerName                     = String
-  type Timestamp                     = js.Date
-  type TransitionEvents              = js.Array[TransitionEvent]
-  type UseBase64                     = Boolean
-  type VariableName                  = String
-  type VariableValue                 = String
+  type DynamoKeyField = String
+  type DynamoKeyType = String
+  type DynamoKeyValue = String
+  type DynamoOperation = String
+  type DynamoTableName = String
+  type EventName = String
+  type Events = js.Array[Event]
+  type FirehoseSeparator = String
+  type InputArn = String
+  type InputDescription = String
+  type InputName = String
+  type InputSummaries = js.Array[InputSummary]
+  type KeyValue = String
+  type LoggingEnabled = Boolean
+  type MQTTTopic = String
+  type MaxResults = Int
+  type NextToken = String
+  type QueueUrl = String
+  type Seconds = Int
+  type StateName = String
+  type States = js.Array[State]
+  type TagKey = String
+  type TagKeys = js.Array[TagKey]
+  type TagValue = String
+  type Tags = js.Array[Tag]
+  type TimerName = String
+  type Timestamp = js.Date
+  type TransitionEvents = js.Array[TransitionEvent]
+  type UseBase64 = Boolean
+  type VariableName = String
+  type VariableValue = String
 
   implicit final class IoTEventsOps(private val service: IoTEvents) extends AnyVal {
 
@@ -93,35 +110,38 @@ package iotevents {
   class IoTEvents() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createDetectorModel(params: CreateDetectorModelRequest): Request[CreateDetectorModelResponse]       = js.native
-    def createInput(params: CreateInputRequest): Request[CreateInputResponse]                               = js.native
-    def deleteDetectorModel(params: DeleteDetectorModelRequest): Request[DeleteDetectorModelResponse]       = js.native
-    def deleteInput(params: DeleteInputRequest): Request[DeleteInputResponse]                               = js.native
+    def createDetectorModel(params: CreateDetectorModelRequest): Request[CreateDetectorModelResponse] = js.native
+    def createInput(params: CreateInputRequest): Request[CreateInputResponse] = js.native
+    def deleteDetectorModel(params: DeleteDetectorModelRequest): Request[DeleteDetectorModelResponse] = js.native
+    def deleteInput(params: DeleteInputRequest): Request[DeleteInputResponse] = js.native
     def describeDetectorModel(params: DescribeDetectorModelRequest): Request[DescribeDetectorModelResponse] = js.native
-    def describeInput(params: DescribeInputRequest): Request[DescribeInputResponse]                         = js.native
+    def describeInput(params: DescribeInputRequest): Request[DescribeInputResponse] = js.native
     def describeLoggingOptions(params: DescribeLoggingOptionsRequest): Request[DescribeLoggingOptionsResponse] =
       js.native
     def listDetectorModelVersions(
         params: ListDetectorModelVersionsRequest
-    ): Request[ListDetectorModelVersionsResponse]                                                     = js.native
-    def listDetectorModels(params: ListDetectorModelsRequest): Request[ListDetectorModelsResponse]    = js.native
-    def listInputs(params: ListInputsRequest): Request[ListInputsResponse]                            = js.native
+    ): Request[ListDetectorModelVersionsResponse] = js.native
+    def listDetectorModels(params: ListDetectorModelsRequest): Request[ListDetectorModelsResponse] = js.native
+    def listInputs(params: ListInputsRequest): Request[ListInputsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def putLoggingOptions(params: PutLoggingOptionsRequest): Request[js.Object]                       = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
+    def putLoggingOptions(params: PutLoggingOptionsRequest): Request[js.Object] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateDetectorModel(params: UpdateDetectorModelRequest): Request[UpdateDetectorModelResponse] = js.native
-    def updateInput(params: UpdateInputRequest): Request[UpdateInputResponse]                         = js.native
+    def updateInput(params: UpdateInputRequest): Request[UpdateInputResponse] = js.native
   }
 
   /**
-    * An action to be performed when the <code>"condition"</code> is TRUE.
+    * An action to be performed when the <code>condition</code> is TRUE.
     */
   @js.native
   trait Action extends js.Object {
     var clearTimer: js.UndefOr[ClearTimerAction]
+    var dynamoDB: js.UndefOr[DynamoDBAction]
+    var dynamoDBv2: js.UndefOr[DynamoDBv2Action]
     var firehose: js.UndefOr[FirehoseAction]
     var iotEvents: js.UndefOr[IotEventsAction]
+    var iotSiteWise: js.UndefOr[IotSiteWiseAction]
     var iotTopicPublish: js.UndefOr[IotTopicPublishAction]
     var lambda: js.UndefOr[LambdaAction]
     var resetTimer: js.UndefOr[ResetTimerAction]
@@ -135,8 +155,11 @@ package iotevents {
     @inline
     def apply(
         clearTimer: js.UndefOr[ClearTimerAction] = js.undefined,
+        dynamoDB: js.UndefOr[DynamoDBAction] = js.undefined,
+        dynamoDBv2: js.UndefOr[DynamoDBv2Action] = js.undefined,
         firehose: js.UndefOr[FirehoseAction] = js.undefined,
         iotEvents: js.UndefOr[IotEventsAction] = js.undefined,
+        iotSiteWise: js.UndefOr[IotSiteWiseAction] = js.undefined,
         iotTopicPublish: js.UndefOr[IotTopicPublishAction] = js.undefined,
         lambda: js.UndefOr[LambdaAction] = js.undefined,
         resetTimer: js.UndefOr[ResetTimerAction] = js.undefined,
@@ -147,8 +170,11 @@ package iotevents {
     ): Action = {
       val __obj = js.Dynamic.literal()
       clearTimer.foreach(__v => __obj.updateDynamic("clearTimer")(__v.asInstanceOf[js.Any]))
+      dynamoDB.foreach(__v => __obj.updateDynamic("dynamoDB")(__v.asInstanceOf[js.Any]))
+      dynamoDBv2.foreach(__v => __obj.updateDynamic("dynamoDBv2")(__v.asInstanceOf[js.Any]))
       firehose.foreach(__v => __obj.updateDynamic("firehose")(__v.asInstanceOf[js.Any]))
       iotEvents.foreach(__v => __obj.updateDynamic("iotEvents")(__v.asInstanceOf[js.Any]))
+      iotSiteWise.foreach(__v => __obj.updateDynamic("iotSiteWise")(__v.asInstanceOf[js.Any]))
       iotTopicPublish.foreach(__v => __obj.updateDynamic("iotTopicPublish")(__v.asInstanceOf[js.Any]))
       lambda.foreach(__v => __obj.updateDynamic("lambda")(__v.asInstanceOf[js.Any]))
       resetTimer.foreach(__v => __obj.updateDynamic("resetTimer")(__v.asInstanceOf[js.Any]))
@@ -161,7 +187,99 @@ package iotevents {
   }
 
   /**
-    * The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using <code>BatchPutMessage</code>. Each such message contains a JSON payload, and those attributes (and their paired values) specified here are available for use in the <code>condition</code> expressions used by detectors.
+    * A structure that contains timestamp information. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_TimeInNanos.html|TimeInNanos]] in the <i>AWS IoT SiteWise API Reference</i>.
+    *  For parameters that are string data type, you can specify the following options:
+    * * Use a string. For example, the <code>timeInSeconds</code> value can be <code>'1586400675'</code>.
+    *  * Use an expression. For example, the <code>timeInSeconds</code> value can be <code>'{input.TemperatureInput.sensorData.timestamp/1000}'</code>.
+    *  For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
+    */
+  @js.native
+  trait AssetPropertyTimestamp extends js.Object {
+    var timeInSeconds: AssetPropertyTimeInSeconds
+    var offsetInNanos: js.UndefOr[AssetPropertyOffsetInNanos]
+  }
+
+  object AssetPropertyTimestamp {
+    @inline
+    def apply(
+        timeInSeconds: AssetPropertyTimeInSeconds,
+        offsetInNanos: js.UndefOr[AssetPropertyOffsetInNanos] = js.undefined
+    ): AssetPropertyTimestamp = {
+      val __obj = js.Dynamic.literal(
+        "timeInSeconds" -> timeInSeconds.asInstanceOf[js.Any]
+      )
+
+      offsetInNanos.foreach(__v => __obj.updateDynamic("offsetInNanos")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssetPropertyTimestamp]
+    }
+  }
+
+  /**
+    * A structure that contains value information. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetPropertyValue.html|AssetPropertyValue]] in the <i>AWS IoT SiteWise API Reference</i>.
+    *  For parameters that are string data type, you can specify the following options:
+    * * Use a string. For example, the <code>quality</code> value can be <code>'GOOD'</code>.
+    *  * Use an expression. For example, the <code>quality</code> value can be <code>input.TemperatureInput.sensorData.quality</code> .
+    *  For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
+    */
+  @js.native
+  trait AssetPropertyValue extends js.Object {
+    var value: AssetPropertyVariant
+    var quality: js.UndefOr[AssetPropertyQuality]
+    var timestamp: js.UndefOr[AssetPropertyTimestamp]
+  }
+
+  object AssetPropertyValue {
+    @inline
+    def apply(
+        value: AssetPropertyVariant,
+        quality: js.UndefOr[AssetPropertyQuality] = js.undefined,
+        timestamp: js.UndefOr[AssetPropertyTimestamp] = js.undefined
+    ): AssetPropertyValue = {
+      val __obj = js.Dynamic.literal(
+        "value" -> value.asInstanceOf[js.Any]
+      )
+
+      quality.foreach(__v => __obj.updateDynamic("quality")(__v.asInstanceOf[js.Any]))
+      timestamp.foreach(__v => __obj.updateDynamic("timestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssetPropertyValue]
+    }
+  }
+
+  /**
+    * A structure that contains an asset property value. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Variant.html|Variant]] in the <i>AWS IoT SiteWise API Reference</i>.
+    *  <important> You must specify one of the following value types, depending on the <code>dataType</code> of the specified asset property. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetProperty.html|AssetProperty]] in the <i>AWS IoT SiteWise API Reference</i>.
+    *  </important> For parameters that are string data type, you can specify the following options:
+    * * Use a string. For example, the <code>doubleValue</code> value can be <code>'47.9'</code>.
+    *  * Use an expression. For example, the <code>doubleValue</code> value can be <code>input.TemperatureInput.sensorData.temperature</code>.
+    *  For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
+    */
+  @js.native
+  trait AssetPropertyVariant extends js.Object {
+    var booleanValue: js.UndefOr[AssetPropertyBooleanValue]
+    var doubleValue: js.UndefOr[AssetPropertyDoubleValue]
+    var integerValue: js.UndefOr[AssetPropertyIntegerValue]
+    var stringValue: js.UndefOr[AssetPropertyStringValue]
+  }
+
+  object AssetPropertyVariant {
+    @inline
+    def apply(
+        booleanValue: js.UndefOr[AssetPropertyBooleanValue] = js.undefined,
+        doubleValue: js.UndefOr[AssetPropertyDoubleValue] = js.undefined,
+        integerValue: js.UndefOr[AssetPropertyIntegerValue] = js.undefined,
+        stringValue: js.UndefOr[AssetPropertyStringValue] = js.undefined
+    ): AssetPropertyVariant = {
+      val __obj = js.Dynamic.literal()
+      booleanValue.foreach(__v => __obj.updateDynamic("booleanValue")(__v.asInstanceOf[js.Any]))
+      doubleValue.foreach(__v => __obj.updateDynamic("doubleValue")(__v.asInstanceOf[js.Any]))
+      integerValue.foreach(__v => __obj.updateDynamic("integerValue")(__v.asInstanceOf[js.Any]))
+      stringValue.foreach(__v => __obj.updateDynamic("stringValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssetPropertyVariant]
+    }
+  }
+
+  /**
+    * The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using <code>BatchPutMessage</code>. Each such message contains a JSON payload. Those attributes (and their paired values) specified here are available for use in the <code>condition</code> expressions used by detectors.
     */
   @js.native
   trait Attribute extends js.Object {
@@ -226,8 +344,8 @@ package iotevents {
     ): CreateDetectorModelRequest = {
       val __obj = js.Dynamic.literal(
         "detectorModelDefinition" -> detectorModelDefinition.asInstanceOf[js.Any],
-        "detectorModelName"       -> detectorModelName.asInstanceOf[js.Any],
-        "roleArn"                 -> roleArn.asInstanceOf[js.Any]
+        "detectorModelName" -> detectorModelName.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
       detectorModelDescription.foreach(__v => __obj.updateDynamic("detectorModelDescription")(__v.asInstanceOf[js.Any]))
@@ -274,7 +392,7 @@ package iotevents {
     ): CreateInputRequest = {
       val __obj = js.Dynamic.literal(
         "inputDefinition" -> inputDefinition.asInstanceOf[js.Any],
-        "inputName"       -> inputName.asInstanceOf[js.Any]
+        "inputName" -> inputName.asInstanceOf[js.Any]
       )
 
       inputDescription.foreach(__v => __obj.updateDynamic("inputDescription")(__v.asInstanceOf[js.Any]))
@@ -572,7 +690,7 @@ package iotevents {
     ): DetectorModelDefinition = {
       val __obj = js.Dynamic.literal(
         "initialStateName" -> initialStateName.asInstanceOf[js.Any],
-        "states"           -> states.asInstanceOf[js.Any]
+        "states" -> states.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DetectorModelDefinition]
@@ -607,13 +725,13 @@ package iotevents {
   @js.native
   sealed trait DetectorModelVersionStatus extends js.Any
   object DetectorModelVersionStatus extends js.Object {
-    val ACTIVE     = "ACTIVE".asInstanceOf[DetectorModelVersionStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[DetectorModelVersionStatus]
     val ACTIVATING = "ACTIVATING".asInstanceOf[DetectorModelVersionStatus]
-    val INACTIVE   = "INACTIVE".asInstanceOf[DetectorModelVersionStatus]
+    val INACTIVE = "INACTIVE".asInstanceOf[DetectorModelVersionStatus]
     val DEPRECATED = "DEPRECATED".asInstanceOf[DetectorModelVersionStatus]
-    val DRAFT      = "DRAFT".asInstanceOf[DetectorModelVersionStatus]
-    val PAUSED     = "PAUSED".asInstanceOf[DetectorModelVersionStatus]
-    val FAILED     = "FAILED".asInstanceOf[DetectorModelVersionStatus]
+    val DRAFT = "DRAFT".asInstanceOf[DetectorModelVersionStatus]
+    val PAUSED = "PAUSED".asInstanceOf[DetectorModelVersionStatus]
+    val FAILED = "FAILED".asInstanceOf[DetectorModelVersionStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, ACTIVATING, INACTIVE, DEPRECATED, DRAFT, PAUSED, FAILED))
   }
@@ -658,17 +776,98 @@ package iotevents {
     }
   }
 
+  /**
+    * Defines an action to write to the Amazon DynamoDB table that you created. The standard action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can also customize the [[https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html|payload]]. One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify.
+    *  The <code>tableName</code> and <code>hashKeyField</code> values must match the table name and the partition key of the DynamoDB table.
+    *
+    * '''Note:'''If the DynamoDB table also has a sort key, you must specify <code>rangeKeyField</code>. The <code>rangeKeyField</code> value must match the sort key.
+    * <p/> The <code>hashKeyValue</code> and <code>rangeKeyValue</code> use substitution templates. These templates provide data at runtime. The syntax is <code>{sql-expression}</code>.
+    *  You can use expressions for parameters that are string data type. For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
+    *
+    * '''Note:'''If the defined payload type is a string, <code>DynamoDBAction</code> writes non-JSON data to the DynamoDB table as binary data. The DynamoDB console displays the data as Base64-encoded text. The <code>payloadField</code> is <code>&lt;payload-field&gt;_raw</code>.
+    */
+  @js.native
+  trait DynamoDBAction extends js.Object {
+    var hashKeyField: DynamoKeyField
+    var hashKeyValue: DynamoKeyValue
+    var tableName: DynamoTableName
+    var hashKeyType: js.UndefOr[DynamoKeyType]
+    var operation: js.UndefOr[DynamoOperation]
+    var payload: js.UndefOr[Payload]
+    var payloadField: js.UndefOr[DynamoKeyField]
+    var rangeKeyField: js.UndefOr[DynamoKeyField]
+    var rangeKeyType: js.UndefOr[DynamoKeyType]
+    var rangeKeyValue: js.UndefOr[DynamoKeyValue]
+  }
+
+  object DynamoDBAction {
+    @inline
+    def apply(
+        hashKeyField: DynamoKeyField,
+        hashKeyValue: DynamoKeyValue,
+        tableName: DynamoTableName,
+        hashKeyType: js.UndefOr[DynamoKeyType] = js.undefined,
+        operation: js.UndefOr[DynamoOperation] = js.undefined,
+        payload: js.UndefOr[Payload] = js.undefined,
+        payloadField: js.UndefOr[DynamoKeyField] = js.undefined,
+        rangeKeyField: js.UndefOr[DynamoKeyField] = js.undefined,
+        rangeKeyType: js.UndefOr[DynamoKeyType] = js.undefined,
+        rangeKeyValue: js.UndefOr[DynamoKeyValue] = js.undefined
+    ): DynamoDBAction = {
+      val __obj = js.Dynamic.literal(
+        "hashKeyField" -> hashKeyField.asInstanceOf[js.Any],
+        "hashKeyValue" -> hashKeyValue.asInstanceOf[js.Any],
+        "tableName" -> tableName.asInstanceOf[js.Any]
+      )
+
+      hashKeyType.foreach(__v => __obj.updateDynamic("hashKeyType")(__v.asInstanceOf[js.Any]))
+      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
+      payload.foreach(__v => __obj.updateDynamic("payload")(__v.asInstanceOf[js.Any]))
+      payloadField.foreach(__v => __obj.updateDynamic("payloadField")(__v.asInstanceOf[js.Any]))
+      rangeKeyField.foreach(__v => __obj.updateDynamic("rangeKeyField")(__v.asInstanceOf[js.Any]))
+      rangeKeyType.foreach(__v => __obj.updateDynamic("rangeKeyType")(__v.asInstanceOf[js.Any]))
+      rangeKeyValue.foreach(__v => __obj.updateDynamic("rangeKeyValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DynamoDBAction]
+    }
+  }
+
+  /**
+    * Defines an action to write to the Amazon DynamoDB table that you created. The default action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can also customize the [[https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html|payload]]. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify.
+    *  <important> The <code>type</code> value for <code>Payload</code> must be <code>JSON</code>.
+    *  </important> You can use expressions for parameters that are strings. For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
+    */
+  @js.native
+  trait DynamoDBv2Action extends js.Object {
+    var tableName: DynamoTableName
+    var payload: js.UndefOr[Payload]
+  }
+
+  object DynamoDBv2Action {
+    @inline
+    def apply(
+        tableName: DynamoTableName,
+        payload: js.UndefOr[Payload] = js.undefined
+    ): DynamoDBv2Action = {
+      val __obj = js.Dynamic.literal(
+        "tableName" -> tableName.asInstanceOf[js.Any]
+      )
+
+      payload.foreach(__v => __obj.updateDynamic("payload")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DynamoDBv2Action]
+    }
+  }
+
   @js.native
   sealed trait EvaluationMethod extends js.Any
   object EvaluationMethod extends js.Object {
-    val BATCH  = "BATCH".asInstanceOf[EvaluationMethod]
+    val BATCH = "BATCH".asInstanceOf[EvaluationMethod]
     val SERIAL = "SERIAL".asInstanceOf[EvaluationMethod]
 
     val values = js.Object.freeze(js.Array(BATCH, SERIAL))
   }
 
   /**
-    * Specifies the <code>"actions"</code> to be performed when the <code>"condition"</code> evaluates to TRUE.
+    * Specifies the <code>actions</code> to be performed when the <code>condition</code> evaluates to TRUE.
     */
   @js.native
   trait Event extends js.Object {
@@ -695,11 +894,12 @@ package iotevents {
   }
 
   /**
-    * Sends information about the detector model instance and the event that triggered the action to a Kinesis Data Firehose delivery stream.
+    * Sends information about the detector model instance and the event that triggered the action to an Amazon Kinesis Data Firehose delivery stream.
     */
   @js.native
   trait FirehoseAction extends js.Object {
     var deliveryStreamName: DeliveryStreamName
+    var payload: js.UndefOr[Payload]
     var separator: js.UndefOr[FirehoseSeparator]
   }
 
@@ -707,12 +907,14 @@ package iotevents {
     @inline
     def apply(
         deliveryStreamName: DeliveryStreamName,
+        payload: js.UndefOr[Payload] = js.undefined,
         separator: js.UndefOr[FirehoseSeparator] = js.undefined
     ): FirehoseAction = {
       val __obj = js.Dynamic.literal(
         "deliveryStreamName" -> deliveryStreamName.asInstanceOf[js.Any]
       )
 
+      payload.foreach(__v => __obj.updateDynamic("payload")(__v.asInstanceOf[js.Any]))
       separator.foreach(__v => __obj.updateDynamic("separator")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FirehoseAction]
     }
@@ -764,11 +966,11 @@ package iotevents {
         inputDescription: js.UndefOr[InputDescription] = js.undefined
     ): InputConfiguration = {
       val __obj = js.Dynamic.literal(
-        "creationTime"   -> creationTime.asInstanceOf[js.Any],
-        "inputArn"       -> inputArn.asInstanceOf[js.Any],
-        "inputName"      -> inputName.asInstanceOf[js.Any],
+        "creationTime" -> creationTime.asInstanceOf[js.Any],
+        "inputArn" -> inputArn.asInstanceOf[js.Any],
+        "inputName" -> inputName.asInstanceOf[js.Any],
         "lastUpdateTime" -> lastUpdateTime.asInstanceOf[js.Any],
-        "status"         -> status.asInstanceOf[js.Any]
+        "status" -> status.asInstanceOf[js.Any]
       )
 
       inputDescription.foreach(__v => __obj.updateDynamic("inputDescription")(__v.asInstanceOf[js.Any]))
@@ -802,7 +1004,7 @@ package iotevents {
   object InputStatus extends js.Object {
     val CREATING = "CREATING".asInstanceOf[InputStatus]
     val UPDATING = "UPDATING".asInstanceOf[InputStatus]
-    val ACTIVE   = "ACTIVE".asInstanceOf[InputStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[InputStatus]
     val DELETING = "DELETING".asInstanceOf[InputStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, UPDATING, ACTIVE, DELETING))
@@ -848,38 +1050,82 @@ package iotevents {
   @js.native
   trait IotEventsAction extends js.Object {
     var inputName: InputName
+    var payload: js.UndefOr[Payload]
   }
 
   object IotEventsAction {
     @inline
     def apply(
-        inputName: InputName
+        inputName: InputName,
+        payload: js.UndefOr[Payload] = js.undefined
     ): IotEventsAction = {
       val __obj = js.Dynamic.literal(
         "inputName" -> inputName.asInstanceOf[js.Any]
       )
 
+      payload.foreach(__v => __obj.updateDynamic("payload")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IotEventsAction]
     }
   }
 
   /**
-    * Information required to publish the MQTT message via the AWS IoT message broker.
+    * Sends information about the detector model instance and the event that triggered the action to a specified asset property in AWS IoT SiteWise.
+    *  <important> You must specify either <code>propertyAlias</code> or both <code>assetId</code> and <code>propertyId</code> to identify the target asset property in AWS IoT SiteWise.
+    *  </important> For parameters that are string data type, you can specify the following options:
+    * * Use a string. For example, the <code>propertyAlias</code> value can be <code>'/company/windfarm/3/turbine/7/temperature'</code>.
+    *  * Use an expression. For example, the <code>propertyAlias</code> value can be <code>'company/windfarm/{input.TemperatureInput.sensorData.windfarmID}/turbine/{input.TemperatureInput.sensorData.turbineID}/temperature'</code>.
+    *  For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
+    */
+  @js.native
+  trait IotSiteWiseAction extends js.Object {
+    var propertyValue: AssetPropertyValue
+    var assetId: js.UndefOr[AssetId]
+    var entryId: js.UndefOr[AssetPropertyEntryId]
+    var propertyAlias: js.UndefOr[AssetPropertyAlias]
+    var propertyId: js.UndefOr[AssetPropertyId]
+  }
+
+  object IotSiteWiseAction {
+    @inline
+    def apply(
+        propertyValue: AssetPropertyValue,
+        assetId: js.UndefOr[AssetId] = js.undefined,
+        entryId: js.UndefOr[AssetPropertyEntryId] = js.undefined,
+        propertyAlias: js.UndefOr[AssetPropertyAlias] = js.undefined,
+        propertyId: js.UndefOr[AssetPropertyId] = js.undefined
+    ): IotSiteWiseAction = {
+      val __obj = js.Dynamic.literal(
+        "propertyValue" -> propertyValue.asInstanceOf[js.Any]
+      )
+
+      assetId.foreach(__v => __obj.updateDynamic("assetId")(__v.asInstanceOf[js.Any]))
+      entryId.foreach(__v => __obj.updateDynamic("entryId")(__v.asInstanceOf[js.Any]))
+      propertyAlias.foreach(__v => __obj.updateDynamic("propertyAlias")(__v.asInstanceOf[js.Any]))
+      propertyId.foreach(__v => __obj.updateDynamic("propertyId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IotSiteWiseAction]
+    }
+  }
+
+  /**
+    * Information required to publish the MQTT message through the AWS IoT message broker.
     */
   @js.native
   trait IotTopicPublishAction extends js.Object {
     var mqttTopic: MQTTTopic
+    var payload: js.UndefOr[Payload]
   }
 
   object IotTopicPublishAction {
     @inline
     def apply(
-        mqttTopic: MQTTTopic
+        mqttTopic: MQTTTopic,
+        payload: js.UndefOr[Payload] = js.undefined
     ): IotTopicPublishAction = {
       val __obj = js.Dynamic.literal(
         "mqttTopic" -> mqttTopic.asInstanceOf[js.Any]
       )
 
+      payload.foreach(__v => __obj.updateDynamic("payload")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IotTopicPublishAction]
     }
   }
@@ -890,17 +1136,20 @@ package iotevents {
   @js.native
   trait LambdaAction extends js.Object {
     var functionArn: AmazonResourceName
+    var payload: js.UndefOr[Payload]
   }
 
   object LambdaAction {
     @inline
     def apply(
-        functionArn: AmazonResourceName
+        functionArn: AmazonResourceName,
+        payload: js.UndefOr[Payload] = js.undefined
     ): LambdaAction = {
       val __obj = js.Dynamic.literal(
         "functionArn" -> functionArn.asInstanceOf[js.Any]
       )
 
+      payload.foreach(__v => __obj.updateDynamic("payload")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LambdaAction]
     }
   }
@@ -1064,7 +1313,7 @@ package iotevents {
   sealed trait LoggingLevel extends js.Any
   object LoggingLevel extends js.Object {
     val ERROR = "ERROR".asInstanceOf[LoggingLevel]
-    val INFO  = "INFO".asInstanceOf[LoggingLevel]
+    val INFO = "INFO".asInstanceOf[LoggingLevel]
     val DEBUG = "DEBUG".asInstanceOf[LoggingLevel]
 
     val values = js.Object.freeze(js.Array(ERROR, INFO, DEBUG))
@@ -1091,7 +1340,7 @@ package iotevents {
     ): LoggingOptions = {
       val __obj = js.Dynamic.literal(
         "enabled" -> enabled.asInstanceOf[js.Any],
-        "level"   -> level.asInstanceOf[js.Any],
+        "level" -> level.asInstanceOf[js.Any],
         "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
@@ -1120,7 +1369,7 @@ package iotevents {
   }
 
   /**
-    * When exiting this state, perform these <code>"actions"</code> if the specified <code>"condition"</code> is TRUE.
+    * When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is <code>TRUE</code>.
     */
   @js.native
   trait OnExitLifecycle extends js.Object {
@@ -1139,7 +1388,7 @@ package iotevents {
   }
 
   /**
-    * Specifies the actions performed when the <code>"condition"</code> evaluates to TRUE.
+    * Specifies the actions performed when the <code>condition</code> evaluates to TRUE.
     */
   @js.native
   trait OnInputLifecycle extends js.Object {
@@ -1158,6 +1407,40 @@ package iotevents {
       transitionEvents.foreach(__v => __obj.updateDynamic("transitionEvents")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OnInputLifecycle]
     }
+  }
+
+  /**
+    * Information needed to configure the payload.
+    *  By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.
+    */
+  @js.native
+  trait Payload extends js.Object {
+    var contentExpression: ContentExpression
+    var `type`: PayloadType
+  }
+
+  object Payload {
+    @inline
+    def apply(
+        contentExpression: ContentExpression,
+        `type`: PayloadType
+    ): Payload = {
+      val __obj = js.Dynamic.literal(
+        "contentExpression" -> contentExpression.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[Payload]
+    }
+  }
+
+  @js.native
+  sealed trait PayloadType extends js.Any
+  object PayloadType extends js.Object {
+    val STRING = "STRING".asInstanceOf[PayloadType]
+    val JSON = "JSON".asInstanceOf[PayloadType]
+
+    val values = js.Object.freeze(js.Array(STRING, JSON))
   }
 
   @js.native
@@ -1179,7 +1462,7 @@ package iotevents {
   }
 
   /**
-    * Information needed to reset the timer.
+    * Information required to reset the timer. The timer is reset to the previously evaluated result of the duration. The duration expression isn't reevaluated when you reset the timer.
     */
   @js.native
   trait ResetTimerAction extends js.Object {
@@ -1205,17 +1488,20 @@ package iotevents {
   @js.native
   trait SNSTopicPublishAction extends js.Object {
     var targetArn: AmazonResourceName
+    var payload: js.UndefOr[Payload]
   }
 
   object SNSTopicPublishAction {
     @inline
     def apply(
-        targetArn: AmazonResourceName
+        targetArn: AmazonResourceName,
+        payload: js.UndefOr[Payload] = js.undefined
     ): SNSTopicPublishAction = {
       val __obj = js.Dynamic.literal(
         "targetArn" -> targetArn.asInstanceOf[js.Any]
       )
 
+      payload.foreach(__v => __obj.updateDynamic("payload")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SNSTopicPublishAction]
     }
   }
@@ -1225,21 +1511,24 @@ package iotevents {
     */
   @js.native
   trait SetTimerAction extends js.Object {
-    var seconds: Seconds
     var timerName: TimerName
+    var durationExpression: js.UndefOr[VariableValue]
+    var seconds: js.UndefOr[Seconds]
   }
 
   object SetTimerAction {
     @inline
     def apply(
-        seconds: Seconds,
-        timerName: TimerName
+        timerName: TimerName,
+        durationExpression: js.UndefOr[VariableValue] = js.undefined,
+        seconds: js.UndefOr[Seconds] = js.undefined
     ): SetTimerAction = {
       val __obj = js.Dynamic.literal(
-        "seconds"   -> seconds.asInstanceOf[js.Any],
         "timerName" -> timerName.asInstanceOf[js.Any]
       )
 
+      durationExpression.foreach(__v => __obj.updateDynamic("durationExpression")(__v.asInstanceOf[js.Any]))
+      seconds.foreach(__v => __obj.updateDynamic("seconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetTimerAction]
     }
   }
@@ -1260,7 +1549,7 @@ package iotevents {
         variableName: VariableName
     ): SetVariableAction = {
       val __obj = js.Dynamic.literal(
-        "value"        -> value.asInstanceOf[js.Any],
+        "value" -> value.asInstanceOf[js.Any],
         "variableName" -> variableName.asInstanceOf[js.Any]
       )
 
@@ -1274,6 +1563,7 @@ package iotevents {
   @js.native
   trait SqsAction extends js.Object {
     var queueUrl: QueueUrl
+    var payload: js.UndefOr[Payload]
     var useBase64: js.UndefOr[UseBase64]
   }
 
@@ -1281,12 +1571,14 @@ package iotevents {
     @inline
     def apply(
         queueUrl: QueueUrl,
+        payload: js.UndefOr[Payload] = js.undefined,
         useBase64: js.UndefOr[UseBase64] = js.undefined
     ): SqsAction = {
       val __obj = js.Dynamic.literal(
         "queueUrl" -> queueUrl.asInstanceOf[js.Any]
       )
 
+      payload.foreach(__v => __obj.updateDynamic("payload")(__v.asInstanceOf[js.Any]))
       useBase64.foreach(__v => __obj.updateDynamic("useBase64")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SqsAction]
     }
@@ -1338,7 +1630,7 @@ package iotevents {
         value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "key"   -> key.asInstanceOf[js.Any],
+        "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 
@@ -1360,7 +1652,7 @@ package iotevents {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1381,7 +1673,7 @@ package iotevents {
   }
 
   /**
-    * Specifies the actions performed and the next state entered when a <code>"condition"</code> evaluates to TRUE.
+    * Specifies the actions performed and the next state entered when a <code>condition</code> evaluates to TRUE.
     */
   @js.native
   trait TransitionEvent extends js.Object {
@@ -1424,7 +1716,7 @@ package iotevents {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -1464,8 +1756,8 @@ package iotevents {
     ): UpdateDetectorModelRequest = {
       val __obj = js.Dynamic.literal(
         "detectorModelDefinition" -> detectorModelDefinition.asInstanceOf[js.Any],
-        "detectorModelName"       -> detectorModelName.asInstanceOf[js.Any],
-        "roleArn"                 -> roleArn.asInstanceOf[js.Any]
+        "detectorModelName" -> detectorModelName.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
       detectorModelDescription.foreach(__v => __obj.updateDynamic("detectorModelDescription")(__v.asInstanceOf[js.Any]))
@@ -1508,7 +1800,7 @@ package iotevents {
     ): UpdateInputRequest = {
       val __obj = js.Dynamic.literal(
         "inputDefinition" -> inputDefinition.asInstanceOf[js.Any],
-        "inputName"       -> inputName.asInstanceOf[js.Any]
+        "inputName" -> inputName.asInstanceOf[js.Any]
       )
 
       inputDescription.foreach(__v => __obj.updateDynamic("inputDescription")(__v.asInstanceOf[js.Any]))

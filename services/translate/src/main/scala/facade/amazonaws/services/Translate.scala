@@ -7,30 +7,30 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object translate {
-  type AppliedTerminologyList           = js.Array[AppliedTerminology]
-  type BoundedLengthString              = String
-  type ClientTokenString                = String
-  type ContentType                      = String
-  type Description                      = String
-  type EncryptionKeyID                  = String
-  type IamRoleArn                       = String
-  type JobId                            = String
-  type JobName                          = String
-  type LanguageCodeString               = String
-  type LanguageCodeStringList           = js.Array[LanguageCodeString]
-  type MaxResultsInteger                = Int
-  type NextToken                        = String
-  type ResourceName                     = String
-  type ResourceNameList                 = js.Array[ResourceName]
-  type S3Uri                            = String
-  type TargetLanguageCodeStringList     = js.Array[LanguageCodeString]
-  type TermList                         = js.Array[Term]
-  type TerminologyArn                   = String
-  type TerminologyFile                  = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type TerminologyPropertiesList        = js.Array[TerminologyProperties]
+  type AppliedTerminologyList = js.Array[AppliedTerminology]
+  type BoundedLengthString = String
+  type ClientTokenString = String
+  type ContentType = String
+  type Description = String
+  type EncryptionKeyID = String
+  type IamRoleArn = String
+  type JobId = String
+  type JobName = String
+  type LanguageCodeString = String
+  type LanguageCodeStringList = js.Array[LanguageCodeString]
+  type MaxResultsInteger = Int
+  type NextToken = String
+  type ResourceName = String
+  type ResourceNameList = js.Array[ResourceName]
+  type S3Uri = String
+  type TargetLanguageCodeStringList = js.Array[LanguageCodeString]
+  type TermList = js.Array[Term]
+  type TerminologyArn = String
+  type TerminologyFile = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type TerminologyPropertiesList = js.Array[TerminologyProperties]
   type TextTranslationJobPropertiesList = js.Array[TextTranslationJobProperties]
-  type Timestamp                        = js.Date
-  type UnboundedLengthString            = String
+  type Timestamp = js.Date
+  type UnboundedLengthString = String
 
   implicit final class TranslateOps(private val service: Translate) extends AnyVal {
 
@@ -68,8 +68,8 @@ package translate {
     def deleteTerminology(params: DeleteTerminologyRequest): Request[js.Object] = js.native
     def describeTextTranslationJob(
         params: DescribeTextTranslationJobRequest
-    ): Request[DescribeTextTranslationJobResponse]                                              = js.native
-    def getTerminology(params: GetTerminologyRequest): Request[GetTerminologyResponse]          = js.native
+    ): Request[DescribeTextTranslationJobResponse] = js.native
+    def getTerminology(params: GetTerminologyRequest): Request[GetTerminologyResponse] = js.native
     def importTerminology(params: ImportTerminologyRequest): Request[ImportTerminologyResponse] = js.native
     def listTerminologies(params: ListTerminologiesRequest): Request[ListTerminologiesResponse] = js.native
     def listTextTranslationJobs(params: ListTextTranslationJobsRequest): Request[ListTextTranslationJobsResponse] =
@@ -173,7 +173,7 @@ package translate {
         Type: EncryptionKeyType
     ): EncryptionKey = {
       val __obj = js.Dynamic.literal(
-        "Id"   -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
@@ -202,7 +202,7 @@ package translate {
         TerminologyDataFormat: TerminologyDataFormat
     ): GetTerminologyRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"                  -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "TerminologyDataFormat" -> TerminologyDataFormat.asInstanceOf[js.Any]
       )
 
@@ -248,8 +248,8 @@ package translate {
         EncryptionKey: js.UndefOr[EncryptionKey] = js.undefined
     ): ImportTerminologyRequest = {
       val __obj = js.Dynamic.literal(
-        "MergeStrategy"   -> MergeStrategy.asInstanceOf[js.Any],
-        "Name"            -> Name.asInstanceOf[js.Any],
+        "MergeStrategy" -> MergeStrategy.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "TerminologyData" -> TerminologyData.asInstanceOf[js.Any]
       )
 
@@ -292,7 +292,7 @@ package translate {
     ): InputDataConfig = {
       val __obj = js.Dynamic.literal(
         "ContentType" -> ContentType.asInstanceOf[js.Any],
-        "S3Uri"       -> S3Uri.asInstanceOf[js.Any]
+        "S3Uri" -> S3Uri.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[InputDataConfig]
@@ -327,13 +327,13 @@ package translate {
   @js.native
   sealed trait JobStatus extends js.Any
   object JobStatus extends js.Object {
-    val SUBMITTED            = "SUBMITTED".asInstanceOf[JobStatus]
-    val IN_PROGRESS          = "IN_PROGRESS".asInstanceOf[JobStatus]
-    val COMPLETED            = "COMPLETED".asInstanceOf[JobStatus]
+    val SUBMITTED = "SUBMITTED".asInstanceOf[JobStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[JobStatus]
     val COMPLETED_WITH_ERROR = "COMPLETED_WITH_ERROR".asInstanceOf[JobStatus]
-    val FAILED               = "FAILED".asInstanceOf[JobStatus]
-    val STOP_REQUESTED       = "STOP_REQUESTED".asInstanceOf[JobStatus]
-    val STOPPED              = "STOPPED".asInstanceOf[JobStatus]
+    val FAILED = "FAILED".asInstanceOf[JobStatus]
+    val STOP_REQUESTED = "STOP_REQUESTED".asInstanceOf[JobStatus]
+    val STOPPED = "STOPPED".asInstanceOf[JobStatus]
 
     val values = js.Object.freeze(
       js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERROR, FAILED, STOP_REQUESTED, STOPPED)
@@ -477,11 +477,11 @@ package translate {
         TerminologyNames: js.UndefOr[ResourceNameList] = js.undefined
     ): StartTextTranslationJobRequest = {
       val __obj = js.Dynamic.literal(
-        "ClientToken"         -> ClientToken.asInstanceOf[js.Any],
-        "DataAccessRoleArn"   -> DataAccessRoleArn.asInstanceOf[js.Any],
-        "InputDataConfig"     -> InputDataConfig.asInstanceOf[js.Any],
-        "OutputDataConfig"    -> OutputDataConfig.asInstanceOf[js.Any],
-        "SourceLanguageCode"  -> SourceLanguageCode.asInstanceOf[js.Any],
+        "ClientToken" -> ClientToken.asInstanceOf[js.Any],
+        "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
+        "InputDataConfig" -> InputDataConfig.asInstanceOf[js.Any],
+        "OutputDataConfig" -> OutputDataConfig.asInstanceOf[js.Any],
+        "SourceLanguageCode" -> SourceLanguageCode.asInstanceOf[js.Any],
         "TargetLanguageCodes" -> TargetLanguageCodes.asInstanceOf[js.Any]
       )
 
@@ -585,7 +585,7 @@ package translate {
         Format: TerminologyDataFormat
     ): TerminologyData = {
       val __obj = js.Dynamic.literal(
-        "File"   -> File.asInstanceOf[js.Any],
+        "File" -> File.asInstanceOf[js.Any],
         "Format" -> Format.asInstanceOf[js.Any]
       )
 
@@ -618,7 +618,7 @@ package translate {
         RepositoryType: String
     ): TerminologyDataLocation = {
       val __obj = js.Dynamic.literal(
-        "Location"       -> Location.asInstanceOf[js.Any],
+        "Location" -> Location.asInstanceOf[js.Any],
         "RepositoryType" -> RepositoryType.asInstanceOf[js.Any]
       )
 
@@ -774,7 +774,7 @@ package translate {
       val __obj = js.Dynamic.literal(
         "SourceLanguageCode" -> SourceLanguageCode.asInstanceOf[js.Any],
         "TargetLanguageCode" -> TargetLanguageCode.asInstanceOf[js.Any],
-        "Text"               -> Text.asInstanceOf[js.Any]
+        "Text" -> Text.asInstanceOf[js.Any]
       )
 
       TerminologyNames.foreach(__v => __obj.updateDynamic("TerminologyNames")(__v.asInstanceOf[js.Any]))
@@ -801,7 +801,7 @@ package translate {
       val __obj = js.Dynamic.literal(
         "SourceLanguageCode" -> SourceLanguageCode.asInstanceOf[js.Any],
         "TargetLanguageCode" -> TargetLanguageCode.asInstanceOf[js.Any],
-        "TranslatedText"     -> TranslatedText.asInstanceOf[js.Any]
+        "TranslatedText" -> TranslatedText.asInstanceOf[js.Any]
       )
 
       AppliedTerminologies.foreach(__v => __obj.updateDynamic("AppliedTerminologies")(__v.asInstanceOf[js.Any]))

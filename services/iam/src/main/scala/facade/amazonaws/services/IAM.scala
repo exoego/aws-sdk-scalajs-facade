@@ -7,134 +7,135 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object iam {
-  type AccessDetails                                   = js.Array[AccessDetail]
-  type ActionNameListType                              = js.Array[ActionNameType]
-  type ActionNameType                                  = String
-  type ArnListType                                     = js.Array[arnType]
-  type BootstrapDatum                                  = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type ColumnNumber                                    = Int
-  type ContextEntryListType                            = js.Array[ContextEntry]
-  type ContextKeyNameType                              = String
-  type ContextKeyNamesResultListType                   = js.Array[ContextKeyNameType]
-  type ContextKeyValueListType                         = js.Array[ContextKeyValueType]
-  type ContextKeyValueType                             = String
-  type DeletionTaskIdType                              = String
-  type EvalDecisionDetailsType                         = js.Dictionary[PolicyEvaluationDecisionType]
-  type EvalDecisionSourceType                          = String
-  type EvaluationResultsListType                       = js.Array[EvaluationResult]
-  type LineNumber                                      = Int
-  type ManagedPolicyDetailListType                     = js.Array[ManagedPolicyDetail]
-  type OpenIDConnectProviderListType                   = js.Array[OpenIDConnectProviderListEntry]
-  type OpenIDConnectProviderUrlType                    = String
-  type PolicyGroupListType                             = js.Array[PolicyGroup]
-  type PolicyIdentifierType                            = String
-  type PolicyRoleListType                              = js.Array[PolicyRole]
-  type PolicyUserListType                              = js.Array[PolicyUser]
-  type ReasonType                                      = String
-  type RegionNameType                                  = String
-  type ReportContentType                               = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type ReportStateDescriptionType                      = String
-  type ResourceHandlingOptionType                      = String
-  type ResourceNameListType                            = js.Array[ResourceNameType]
-  type ResourceNameType                                = String
-  type ResourceSpecificResultListType                  = js.Array[ResourceSpecificResult]
-  type RoleUsageListType                               = js.Array[RoleUsageType]
-  type SAMLMetadataDocumentType                        = String
-  type SAMLProviderListType                            = js.Array[SAMLProviderListEntry]
-  type SAMLProviderNameType                            = String
-  type SSHPublicKeyListType                            = js.Array[SSHPublicKeyMetadata]
-  type ServiceSpecificCredentialsListType              = js.Array[ServiceSpecificCredentialMetadata]
-  type ServicesLastAccessed                            = js.Array[ServiceLastAccessed]
-  type SimulationPolicyListType                        = js.Array[policyDocumentType]
-  type StatementListType                               = js.Array[Statement]
-  type accessKeyIdType                                 = String
-  type accessKeyMetadataListType                       = js.Array[AccessKeyMetadata]
-  type accessKeySecretType                             = String
-  type accountAliasListType                            = js.Array[accountAliasType]
-  type accountAliasType                                = String
-  type arnType                                         = String
-  type attachedPoliciesListType                        = js.Array[AttachedPolicy]
-  type attachmentCountType                             = Int
-  type authenticationCodeType                          = String
-  type booleanObjectType                               = Boolean
-  type booleanType                                     = Boolean
-  type certificateBodyType                             = String
-  type certificateChainType                            = String
-  type certificateIdType                               = String
-  type certificateListType                             = js.Array[SigningCertificate]
-  type clientIDListType                                = js.Array[clientIDType]
-  type clientIDType                                    = String
-  type customSuffixType                                = String
-  type dateType                                        = js.Date
-  type entityDetailsListType                           = js.Array[EntityDetails]
-  type entityListType                                  = js.Array[EntityType]
-  type entityNameType                                  = String
-  type existingUserNameType                            = String
-  type groupDetailListType                             = js.Array[GroupDetail]
-  type groupListType                                   = js.Array[Group]
-  type groupNameListType                               = js.Array[groupNameType]
-  type groupNameType                                   = String
-  type idType                                          = String
-  type instanceProfileListType                         = js.Array[InstanceProfile]
-  type instanceProfileNameType                         = String
-  type integerType                                     = Int
-  type jobIDType                                       = String
+  type AccessDetails = js.Array[AccessDetail]
+  type ActionNameListType = js.Array[ActionNameType]
+  type ActionNameType = String
+  type ArnListType = js.Array[arnType]
+  type BootstrapDatum = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type ColumnNumber = Int
+  type ContextEntryListType = js.Array[ContextEntry]
+  type ContextKeyNameType = String
+  type ContextKeyNamesResultListType = js.Array[ContextKeyNameType]
+  type ContextKeyValueListType = js.Array[ContextKeyValueType]
+  type ContextKeyValueType = String
+  type DeletionTaskIdType = String
+  type EvalDecisionDetailsType = js.Dictionary[PolicyEvaluationDecisionType]
+  type EvalDecisionSourceType = String
+  type EvaluationResultsListType = js.Array[EvaluationResult]
+  type LineNumber = Int
+  type ManagedPolicyDetailListType = js.Array[ManagedPolicyDetail]
+  type OpenIDConnectProviderListType = js.Array[OpenIDConnectProviderListEntry]
+  type OpenIDConnectProviderUrlType = String
+  type PolicyGroupListType = js.Array[PolicyGroup]
+  type PolicyIdentifierType = String
+  type PolicyRoleListType = js.Array[PolicyRole]
+  type PolicyUserListType = js.Array[PolicyUser]
+  type ReasonType = String
+  type RegionNameType = String
+  type ReportContentType = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type ReportStateDescriptionType = String
+  type ResourceHandlingOptionType = String
+  type ResourceNameListType = js.Array[ResourceNameType]
+  type ResourceNameType = String
+  type ResourceSpecificResultListType = js.Array[ResourceSpecificResult]
+  type RoleUsageListType = js.Array[RoleUsageType]
+  type SAMLMetadataDocumentType = String
+  type SAMLProviderListType = js.Array[SAMLProviderListEntry]
+  type SAMLProviderNameType = String
+  type SSHPublicKeyListType = js.Array[SSHPublicKeyMetadata]
+  type ServiceSpecificCredentialsListType = js.Array[ServiceSpecificCredentialMetadata]
+  type ServicesLastAccessed = js.Array[ServiceLastAccessed]
+  type SimulationPolicyListType = js.Array[policyDocumentType]
+  type StatementListType = js.Array[Statement]
+  type TrackedActionsLastAccessed = js.Array[TrackedActionLastAccessed]
+  type accessKeyIdType = String
+  type accessKeyMetadataListType = js.Array[AccessKeyMetadata]
+  type accessKeySecretType = String
+  type accountAliasListType = js.Array[accountAliasType]
+  type accountAliasType = String
+  type arnType = String
+  type attachedPoliciesListType = js.Array[AttachedPolicy]
+  type attachmentCountType = Int
+  type authenticationCodeType = String
+  type booleanObjectType = Boolean
+  type booleanType = Boolean
+  type certificateBodyType = String
+  type certificateChainType = String
+  type certificateIdType = String
+  type certificateListType = js.Array[SigningCertificate]
+  type clientIDListType = js.Array[clientIDType]
+  type clientIDType = String
+  type customSuffixType = String
+  type dateType = js.Date
+  type entityDetailsListType = js.Array[EntityDetails]
+  type entityListType = js.Array[EntityType]
+  type entityNameType = String
+  type existingUserNameType = String
+  type groupDetailListType = js.Array[GroupDetail]
+  type groupListType = js.Array[Group]
+  type groupNameListType = js.Array[groupNameType]
+  type groupNameType = String
+  type idType = String
+  type instanceProfileListType = js.Array[InstanceProfile]
+  type instanceProfileNameType = String
+  type integerType = Int
+  type jobIDType = String
   type listPolicyGrantingServiceAccessResponseListType = js.Array[ListPoliciesGrantingServiceAccessEntry]
-  type markerType                                      = String
-  type maxItemsType                                    = Int
-  type maxPasswordAgeType                              = Int
-  type mfaDeviceListType                               = js.Array[MFADevice]
-  type minimumPasswordLengthType                       = Int
-  type organizationsEntityPathType                     = String
-  type organizationsPolicyIdType                       = String
-  type passwordReusePreventionType                     = Int
-  type passwordType                                    = String
-  type pathPrefixType                                  = String
-  type pathType                                        = String
-  type policyDescriptionType                           = String
-  type policyDetailListType                            = js.Array[PolicyDetail]
-  type policyDocumentType                              = String
-  type policyDocumentVersionListType                   = js.Array[PolicyVersion]
-  type policyGrantingServiceAccessListType             = js.Array[PolicyGrantingServiceAccess]
-  type policyListType                                  = js.Array[Policy]
-  type policyNameListType                              = js.Array[policyNameType]
-  type policyNameType                                  = String
-  type policyPathType                                  = String
-  type policyVersionIdType                             = String
-  type privateKeyType                                  = String
-  type publicKeyFingerprintType                        = String
-  type publicKeyIdType                                 = String
-  type publicKeyMaterialType                           = String
-  type responseMarkerType                              = String
-  type roleDescriptionType                             = String
-  type roleDetailListType                              = js.Array[RoleDetail]
-  type roleListType                                    = js.Array[Role]
-  type roleMaxSessionDurationType                      = Int
-  type roleNameType                                    = String
-  type serialNumberType                                = String
-  type serverCertificateMetadataListType               = js.Array[ServerCertificateMetadata]
-  type serverCertificateNameType                       = String
-  type serviceName                                     = String
-  type serviceNameType                                 = String
-  type serviceNamespaceListType                        = js.Array[serviceNamespaceType]
-  type serviceNamespaceType                            = String
-  type servicePassword                                 = String
-  type serviceSpecificCredentialId                     = String
-  type serviceUserName                                 = String
-  type stringType                                      = String
-  type summaryMapType                                  = js.Dictionary[summaryValueType]
-  type summaryValueType                                = Int
-  type tagKeyListType                                  = js.Array[tagKeyType]
-  type tagKeyType                                      = String
-  type tagListType                                     = js.Array[Tag]
-  type tagValueType                                    = String
-  type thumbprintListType                              = js.Array[thumbprintType]
-  type thumbprintType                                  = String
-  type userDetailListType                              = js.Array[UserDetail]
-  type userListType                                    = js.Array[User]
-  type userNameType                                    = String
-  type virtualMFADeviceListType                        = js.Array[VirtualMFADevice]
-  type virtualMFADeviceName                            = String
+  type markerType = String
+  type maxItemsType = Int
+  type maxPasswordAgeType = Int
+  type mfaDeviceListType = js.Array[MFADevice]
+  type minimumPasswordLengthType = Int
+  type organizationsEntityPathType = String
+  type organizationsPolicyIdType = String
+  type passwordReusePreventionType = Int
+  type passwordType = String
+  type pathPrefixType = String
+  type pathType = String
+  type policyDescriptionType = String
+  type policyDetailListType = js.Array[PolicyDetail]
+  type policyDocumentType = String
+  type policyDocumentVersionListType = js.Array[PolicyVersion]
+  type policyGrantingServiceAccessListType = js.Array[PolicyGrantingServiceAccess]
+  type policyListType = js.Array[Policy]
+  type policyNameListType = js.Array[policyNameType]
+  type policyNameType = String
+  type policyPathType = String
+  type policyVersionIdType = String
+  type privateKeyType = String
+  type publicKeyFingerprintType = String
+  type publicKeyIdType = String
+  type publicKeyMaterialType = String
+  type responseMarkerType = String
+  type roleDescriptionType = String
+  type roleDetailListType = js.Array[RoleDetail]
+  type roleListType = js.Array[Role]
+  type roleMaxSessionDurationType = Int
+  type roleNameType = String
+  type serialNumberType = String
+  type serverCertificateMetadataListType = js.Array[ServerCertificateMetadata]
+  type serverCertificateNameType = String
+  type serviceName = String
+  type serviceNameType = String
+  type serviceNamespaceListType = js.Array[serviceNamespaceType]
+  type serviceNamespaceType = String
+  type servicePassword = String
+  type serviceSpecificCredentialId = String
+  type serviceUserName = String
+  type stringType = String
+  type summaryMapType = js.Dictionary[summaryValueType]
+  type summaryValueType = Int
+  type tagKeyListType = js.Array[tagKeyType]
+  type tagKeyType = String
+  type tagListType = js.Array[Tag]
+  type tagValueType = String
+  type thumbprintListType = js.Array[thumbprintType]
+  type thumbprintType = String
+  type userDetailListType = js.Array[UserDetail]
+  type userListType = js.Array[User]
+  type userNameType = String
+  type virtualMFADeviceListType = js.Array[VirtualMFADevice]
+  type virtualMFADeviceName = String
 
   implicit final class IAMOps(private val service: IAM) extends AnyVal {
 
@@ -473,96 +474,96 @@ package iam {
 
     def addClientIDToOpenIDConnectProvider(params: AddClientIDToOpenIDConnectProviderRequest): Request[js.Object] =
       js.native
-    def addRoleToInstanceProfile(params: AddRoleToInstanceProfileRequest): Request[js.Object]               = js.native
-    def addUserToGroup(params: AddUserToGroupRequest): Request[js.Object]                                   = js.native
-    def attachGroupPolicy(params: AttachGroupPolicyRequest): Request[js.Object]                             = js.native
-    def attachRolePolicy(params: AttachRolePolicyRequest): Request[js.Object]                               = js.native
-    def attachUserPolicy(params: AttachUserPolicyRequest): Request[js.Object]                               = js.native
-    def changePassword(params: ChangePasswordRequest): Request[js.Object]                                   = js.native
-    def createAccessKey(params: CreateAccessKeyRequest): Request[CreateAccessKeyResponse]                   = js.native
-    def createAccountAlias(params: CreateAccountAliasRequest): Request[js.Object]                           = js.native
-    def createGroup(params: CreateGroupRequest): Request[CreateGroupResponse]                               = js.native
+    def addRoleToInstanceProfile(params: AddRoleToInstanceProfileRequest): Request[js.Object] = js.native
+    def addUserToGroup(params: AddUserToGroupRequest): Request[js.Object] = js.native
+    def attachGroupPolicy(params: AttachGroupPolicyRequest): Request[js.Object] = js.native
+    def attachRolePolicy(params: AttachRolePolicyRequest): Request[js.Object] = js.native
+    def attachUserPolicy(params: AttachUserPolicyRequest): Request[js.Object] = js.native
+    def changePassword(params: ChangePasswordRequest): Request[js.Object] = js.native
+    def createAccessKey(params: CreateAccessKeyRequest): Request[CreateAccessKeyResponse] = js.native
+    def createAccountAlias(params: CreateAccountAliasRequest): Request[js.Object] = js.native
+    def createGroup(params: CreateGroupRequest): Request[CreateGroupResponse] = js.native
     def createInstanceProfile(params: CreateInstanceProfileRequest): Request[CreateInstanceProfileResponse] = js.native
-    def createLoginProfile(params: CreateLoginProfileRequest): Request[CreateLoginProfileResponse]          = js.native
+    def createLoginProfile(params: CreateLoginProfileRequest): Request[CreateLoginProfileResponse] = js.native
     def createOpenIDConnectProvider(
         params: CreateOpenIDConnectProviderRequest
-    ): Request[CreateOpenIDConnectProviderResponse]                                                   = js.native
-    def createPolicy(params: CreatePolicyRequest): Request[CreatePolicyResponse]                      = js.native
+    ): Request[CreateOpenIDConnectProviderResponse] = js.native
+    def createPolicy(params: CreatePolicyRequest): Request[CreatePolicyResponse] = js.native
     def createPolicyVersion(params: CreatePolicyVersionRequest): Request[CreatePolicyVersionResponse] = js.native
-    def createRole(params: CreateRoleRequest): Request[CreateRoleResponse]                            = js.native
-    def createSAMLProvider(params: CreateSAMLProviderRequest): Request[CreateSAMLProviderResponse]    = js.native
+    def createRole(params: CreateRoleRequest): Request[CreateRoleResponse] = js.native
+    def createSAMLProvider(params: CreateSAMLProviderRequest): Request[CreateSAMLProviderResponse] = js.native
     def createServiceLinkedRole(params: CreateServiceLinkedRoleRequest): Request[CreateServiceLinkedRoleResponse] =
       js.native
     def createServiceSpecificCredential(
         params: CreateServiceSpecificCredentialRequest
-    ): Request[CreateServiceSpecificCredentialResponse]                    = js.native
+    ): Request[CreateServiceSpecificCredentialResponse] = js.native
     def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native
     def createVirtualMFADevice(params: CreateVirtualMFADeviceRequest): Request[CreateVirtualMFADeviceResponse] =
       js.native
-    def deactivateMFADevice(params: DeactivateMFADeviceRequest): Request[js.Object]                     = js.native
-    def deleteAccessKey(params: DeleteAccessKeyRequest): Request[js.Object]                             = js.native
-    def deleteAccountAlias(params: DeleteAccountAliasRequest): Request[js.Object]                       = js.native
-    def deleteAccountPasswordPolicy(): Request[js.Object]                                               = js.native
-    def deleteGroup(params: DeleteGroupRequest): Request[js.Object]                                     = js.native
-    def deleteGroupPolicy(params: DeleteGroupPolicyRequest): Request[js.Object]                         = js.native
-    def deleteInstanceProfile(params: DeleteInstanceProfileRequest): Request[js.Object]                 = js.native
-    def deleteLoginProfile(params: DeleteLoginProfileRequest): Request[js.Object]                       = js.native
-    def deleteOpenIDConnectProvider(params: DeleteOpenIDConnectProviderRequest): Request[js.Object]     = js.native
-    def deletePolicy(params: DeletePolicyRequest): Request[js.Object]                                   = js.native
-    def deletePolicyVersion(params: DeletePolicyVersionRequest): Request[js.Object]                     = js.native
-    def deleteRole(params: DeleteRoleRequest): Request[js.Object]                                       = js.native
+    def deactivateMFADevice(params: DeactivateMFADeviceRequest): Request[js.Object] = js.native
+    def deleteAccessKey(params: DeleteAccessKeyRequest): Request[js.Object] = js.native
+    def deleteAccountAlias(params: DeleteAccountAliasRequest): Request[js.Object] = js.native
+    def deleteAccountPasswordPolicy(): Request[js.Object] = js.native
+    def deleteGroup(params: DeleteGroupRequest): Request[js.Object] = js.native
+    def deleteGroupPolicy(params: DeleteGroupPolicyRequest): Request[js.Object] = js.native
+    def deleteInstanceProfile(params: DeleteInstanceProfileRequest): Request[js.Object] = js.native
+    def deleteLoginProfile(params: DeleteLoginProfileRequest): Request[js.Object] = js.native
+    def deleteOpenIDConnectProvider(params: DeleteOpenIDConnectProviderRequest): Request[js.Object] = js.native
+    def deletePolicy(params: DeletePolicyRequest): Request[js.Object] = js.native
+    def deletePolicyVersion(params: DeletePolicyVersionRequest): Request[js.Object] = js.native
+    def deleteRole(params: DeleteRoleRequest): Request[js.Object] = js.native
     def deleteRolePermissionsBoundary(params: DeleteRolePermissionsBoundaryRequest): Request[js.Object] = js.native
-    def deleteRolePolicy(params: DeleteRolePolicyRequest): Request[js.Object]                           = js.native
-    def deleteSAMLProvider(params: DeleteSAMLProviderRequest): Request[js.Object]                       = js.native
-    def deleteSSHPublicKey(params: DeleteSSHPublicKeyRequest): Request[js.Object]                       = js.native
-    def deleteServerCertificate(params: DeleteServerCertificateRequest): Request[js.Object]             = js.native
+    def deleteRolePolicy(params: DeleteRolePolicyRequest): Request[js.Object] = js.native
+    def deleteSAMLProvider(params: DeleteSAMLProviderRequest): Request[js.Object] = js.native
+    def deleteSSHPublicKey(params: DeleteSSHPublicKeyRequest): Request[js.Object] = js.native
+    def deleteServerCertificate(params: DeleteServerCertificateRequest): Request[js.Object] = js.native
     def deleteServiceLinkedRole(params: DeleteServiceLinkedRoleRequest): Request[DeleteServiceLinkedRoleResponse] =
       js.native
     def deleteServiceSpecificCredential(params: DeleteServiceSpecificCredentialRequest): Request[js.Object] = js.native
-    def deleteSigningCertificate(params: DeleteSigningCertificateRequest): Request[js.Object]               = js.native
-    def deleteUser(params: DeleteUserRequest): Request[js.Object]                                           = js.native
-    def deleteUserPermissionsBoundary(params: DeleteUserPermissionsBoundaryRequest): Request[js.Object]     = js.native
-    def deleteUserPolicy(params: DeleteUserPolicyRequest): Request[js.Object]                               = js.native
-    def deleteVirtualMFADevice(params: DeleteVirtualMFADeviceRequest): Request[js.Object]                   = js.native
-    def detachGroupPolicy(params: DetachGroupPolicyRequest): Request[js.Object]                             = js.native
-    def detachRolePolicy(params: DetachRolePolicyRequest): Request[js.Object]                               = js.native
-    def detachUserPolicy(params: DetachUserPolicyRequest): Request[js.Object]                               = js.native
-    def enableMFADevice(params: EnableMFADeviceRequest): Request[js.Object]                                 = js.native
-    def generateCredentialReport(): Request[GenerateCredentialReportResponse]                               = js.native
+    def deleteSigningCertificate(params: DeleteSigningCertificateRequest): Request[js.Object] = js.native
+    def deleteUser(params: DeleteUserRequest): Request[js.Object] = js.native
+    def deleteUserPermissionsBoundary(params: DeleteUserPermissionsBoundaryRequest): Request[js.Object] = js.native
+    def deleteUserPolicy(params: DeleteUserPolicyRequest): Request[js.Object] = js.native
+    def deleteVirtualMFADevice(params: DeleteVirtualMFADeviceRequest): Request[js.Object] = js.native
+    def detachGroupPolicy(params: DetachGroupPolicyRequest): Request[js.Object] = js.native
+    def detachRolePolicy(params: DetachRolePolicyRequest): Request[js.Object] = js.native
+    def detachUserPolicy(params: DetachUserPolicyRequest): Request[js.Object] = js.native
+    def enableMFADevice(params: EnableMFADeviceRequest): Request[js.Object] = js.native
+    def generateCredentialReport(): Request[GenerateCredentialReportResponse] = js.native
     def generateOrganizationsAccessReport(
         params: GenerateOrganizationsAccessReportRequest
     ): Request[GenerateOrganizationsAccessReportResponse] = js.native
     def generateServiceLastAccessedDetails(
         params: GenerateServiceLastAccessedDetailsRequest
-    ): Request[GenerateServiceLastAccessedDetailsResponse]                                               = js.native
+    ): Request[GenerateServiceLastAccessedDetailsResponse] = js.native
     def getAccessKeyLastUsed(params: GetAccessKeyLastUsedRequest): Request[GetAccessKeyLastUsedResponse] = js.native
     def getAccountAuthorizationDetails(
         params: GetAccountAuthorizationDetailsRequest
-    ): Request[GetAccountAuthorizationDetailsResponse]                        = js.native
+    ): Request[GetAccountAuthorizationDetailsResponse] = js.native
     def getAccountPasswordPolicy(): Request[GetAccountPasswordPolicyResponse] = js.native
-    def getAccountSummary(): Request[GetAccountSummaryResponse]               = js.native
+    def getAccountSummary(): Request[GetAccountSummaryResponse] = js.native
     def getContextKeysForCustomPolicy(
         params: GetContextKeysForCustomPolicyRequest
     ): Request[GetContextKeysForPolicyResponse] = js.native
     def getContextKeysForPrincipalPolicy(
         params: GetContextKeysForPrincipalPolicyRequest
-    ): Request[GetContextKeysForPolicyResponse]                                                    = js.native
-    def getCredentialReport(): Request[GetCredentialReportResponse]                                = js.native
-    def getGroup(params: GetGroupRequest): Request[GetGroupResponse]                               = js.native
-    def getGroupPolicy(params: GetGroupPolicyRequest): Request[GetGroupPolicyResponse]             = js.native
+    ): Request[GetContextKeysForPolicyResponse] = js.native
+    def getCredentialReport(): Request[GetCredentialReportResponse] = js.native
+    def getGroup(params: GetGroupRequest): Request[GetGroupResponse] = js.native
+    def getGroupPolicy(params: GetGroupPolicyRequest): Request[GetGroupPolicyResponse] = js.native
     def getInstanceProfile(params: GetInstanceProfileRequest): Request[GetInstanceProfileResponse] = js.native
-    def getLoginProfile(params: GetLoginProfileRequest): Request[GetLoginProfileResponse]          = js.native
+    def getLoginProfile(params: GetLoginProfileRequest): Request[GetLoginProfileResponse] = js.native
     def getOpenIDConnectProvider(params: GetOpenIDConnectProviderRequest): Request[GetOpenIDConnectProviderResponse] =
       js.native
     def getOrganizationsAccessReport(
         params: GetOrganizationsAccessReportRequest
-    ): Request[GetOrganizationsAccessReportResponse]                                                     = js.native
-    def getPolicy(params: GetPolicyRequest): Request[GetPolicyResponse]                                  = js.native
-    def getPolicyVersion(params: GetPolicyVersionRequest): Request[GetPolicyVersionResponse]             = js.native
-    def getRole(params: GetRoleRequest): Request[GetRoleResponse]                                        = js.native
-    def getRolePolicy(params: GetRolePolicyRequest): Request[GetRolePolicyResponse]                      = js.native
-    def getSAMLProvider(params: GetSAMLProviderRequest): Request[GetSAMLProviderResponse]                = js.native
-    def getSSHPublicKey(params: GetSSHPublicKeyRequest): Request[GetSSHPublicKeyResponse]                = js.native
+    ): Request[GetOrganizationsAccessReportResponse] = js.native
+    def getPolicy(params: GetPolicyRequest): Request[GetPolicyResponse] = js.native
+    def getPolicyVersion(params: GetPolicyVersionRequest): Request[GetPolicyVersionResponse] = js.native
+    def getRole(params: GetRoleRequest): Request[GetRoleResponse] = js.native
+    def getRolePolicy(params: GetRolePolicyRequest): Request[GetRolePolicyResponse] = js.native
+    def getSAMLProvider(params: GetSAMLProviderRequest): Request[GetSAMLProviderResponse] = js.native
+    def getSSHPublicKey(params: GetSSHPublicKeyRequest): Request[GetSSHPublicKeyResponse] = js.native
     def getServerCertificate(params: GetServerCertificateRequest): Request[GetServerCertificateResponse] = js.native
     def getServiceLastAccessedDetails(
         params: GetServiceLastAccessedDetailsRequest
@@ -572,10 +573,10 @@ package iam {
     ): Request[GetServiceLastAccessedDetailsWithEntitiesResponse] = js.native
     def getServiceLinkedRoleDeletionStatus(
         params: GetServiceLinkedRoleDeletionStatusRequest
-    ): Request[GetServiceLinkedRoleDeletionStatusResponse]                                         = js.native
-    def getUser(params: GetUserRequest): Request[GetUserResponse]                                  = js.native
-    def getUserPolicy(params: GetUserPolicyRequest): Request[GetUserPolicyResponse]                = js.native
-    def listAccessKeys(params: ListAccessKeysRequest): Request[ListAccessKeysResponse]             = js.native
+    ): Request[GetServiceLinkedRoleDeletionStatusResponse] = js.native
+    def getUser(params: GetUserRequest): Request[GetUserResponse] = js.native
+    def getUserPolicy(params: GetUserPolicyRequest): Request[GetUserPolicyResponse] = js.native
+    def listAccessKeys(params: ListAccessKeysRequest): Request[ListAccessKeysResponse] = js.native
     def listAccountAliases(params: ListAccountAliasesRequest): Request[ListAccountAliasesResponse] = js.native
     def listAttachedGroupPolicies(
         params: ListAttachedGroupPoliciesRequest
@@ -585,27 +586,27 @@ package iam {
     def listAttachedUserPolicies(params: ListAttachedUserPoliciesRequest): Request[ListAttachedUserPoliciesResponse] =
       js.native
     def listEntitiesForPolicy(params: ListEntitiesForPolicyRequest): Request[ListEntitiesForPolicyResponse] = js.native
-    def listGroupPolicies(params: ListGroupPoliciesRequest): Request[ListGroupPoliciesResponse]             = js.native
-    def listGroups(params: ListGroupsRequest): Request[ListGroupsResponse]                                  = js.native
-    def listGroupsForUser(params: ListGroupsForUserRequest): Request[ListGroupsForUserResponse]             = js.native
-    def listInstanceProfiles(params: ListInstanceProfilesRequest): Request[ListInstanceProfilesResponse]    = js.native
+    def listGroupPolicies(params: ListGroupPoliciesRequest): Request[ListGroupPoliciesResponse] = js.native
+    def listGroups(params: ListGroupsRequest): Request[ListGroupsResponse] = js.native
+    def listGroupsForUser(params: ListGroupsForUserRequest): Request[ListGroupsForUserResponse] = js.native
+    def listInstanceProfiles(params: ListInstanceProfilesRequest): Request[ListInstanceProfilesResponse] = js.native
     def listInstanceProfilesForRole(
         params: ListInstanceProfilesForRoleRequest
-    ): Request[ListInstanceProfilesForRoleResponse]                                    = js.native
+    ): Request[ListInstanceProfilesForRoleResponse] = js.native
     def listMFADevices(params: ListMFADevicesRequest): Request[ListMFADevicesResponse] = js.native
     def listOpenIDConnectProviders(
         params: ListOpenIDConnectProvidersRequest
-    ): Request[ListOpenIDConnectProvidersResponse]                               = js.native
+    ): Request[ListOpenIDConnectProvidersResponse] = js.native
     def listPolicies(params: ListPoliciesRequest): Request[ListPoliciesResponse] = js.native
     def listPoliciesGrantingServiceAccess(
         params: ListPoliciesGrantingServiceAccessRequest
-    ): Request[ListPoliciesGrantingServiceAccessResponse]                                          = js.native
+    ): Request[ListPoliciesGrantingServiceAccessResponse] = js.native
     def listPolicyVersions(params: ListPolicyVersionsRequest): Request[ListPolicyVersionsResponse] = js.native
-    def listRolePolicies(params: ListRolePoliciesRequest): Request[ListRolePoliciesResponse]       = js.native
-    def listRoleTags(params: ListRoleTagsRequest): Request[ListRoleTagsResponse]                   = js.native
-    def listRoles(params: ListRolesRequest): Request[ListRolesResponse]                            = js.native
-    def listSAMLProviders(params: ListSAMLProvidersRequest): Request[ListSAMLProvidersResponse]    = js.native
-    def listSSHPublicKeys(params: ListSSHPublicKeysRequest): Request[ListSSHPublicKeysResponse]    = js.native
+    def listRolePolicies(params: ListRolePoliciesRequest): Request[ListRolePoliciesResponse] = js.native
+    def listRoleTags(params: ListRoleTagsRequest): Request[ListRoleTagsResponse] = js.native
+    def listRoles(params: ListRolesRequest): Request[ListRolesResponse] = js.native
+    def listSAMLProviders(params: ListSAMLProvidersRequest): Request[ListSAMLProvidersResponse] = js.native
+    def listSSHPublicKeys(params: ListSSHPublicKeysRequest): Request[ListSSHPublicKeysResponse] = js.native
     def listServerCertificates(params: ListServerCertificatesRequest): Request[ListServerCertificatesResponse] =
       js.native
     def listServiceSpecificCredentials(
@@ -613,54 +614,63 @@ package iam {
     ): Request[ListServiceSpecificCredentialsResponse] = js.native
     def listSigningCertificates(params: ListSigningCertificatesRequest): Request[ListSigningCertificatesResponse] =
       js.native
-    def listUserPolicies(params: ListUserPoliciesRequest): Request[ListUserPoliciesResponse]                = js.native
-    def listUserTags(params: ListUserTagsRequest): Request[ListUserTagsResponse]                            = js.native
-    def listUsers(params: ListUsersRequest): Request[ListUsersResponse]                                     = js.native
+    def listUserPolicies(params: ListUserPoliciesRequest): Request[ListUserPoliciesResponse] = js.native
+    def listUserTags(params: ListUserTagsRequest): Request[ListUserTagsResponse] = js.native
+    def listUsers(params: ListUsersRequest): Request[ListUsersResponse] = js.native
     def listVirtualMFADevices(params: ListVirtualMFADevicesRequest): Request[ListVirtualMFADevicesResponse] = js.native
-    def putGroupPolicy(params: PutGroupPolicyRequest): Request[js.Object]                                   = js.native
-    def putRolePermissionsBoundary(params: PutRolePermissionsBoundaryRequest): Request[js.Object]           = js.native
-    def putRolePolicy(params: PutRolePolicyRequest): Request[js.Object]                                     = js.native
-    def putUserPermissionsBoundary(params: PutUserPermissionsBoundaryRequest): Request[js.Object]           = js.native
-    def putUserPolicy(params: PutUserPolicyRequest): Request[js.Object]                                     = js.native
+    def putGroupPolicy(params: PutGroupPolicyRequest): Request[js.Object] = js.native
+    def putRolePermissionsBoundary(params: PutRolePermissionsBoundaryRequest): Request[js.Object] = js.native
+    def putRolePolicy(params: PutRolePolicyRequest): Request[js.Object] = js.native
+    def putUserPermissionsBoundary(params: PutUserPermissionsBoundaryRequest): Request[js.Object] = js.native
+    def putUserPolicy(params: PutUserPolicyRequest): Request[js.Object] = js.native
     def removeClientIDFromOpenIDConnectProvider(
         params: RemoveClientIDFromOpenIDConnectProviderRequest
-    ): Request[js.Object]                                                                               = js.native
+    ): Request[js.Object] = js.native
     def removeRoleFromInstanceProfile(params: RemoveRoleFromInstanceProfileRequest): Request[js.Object] = js.native
-    def removeUserFromGroup(params: RemoveUserFromGroupRequest): Request[js.Object]                     = js.native
+    def removeUserFromGroup(params: RemoveUserFromGroupRequest): Request[js.Object] = js.native
     def resetServiceSpecificCredential(
         params: ResetServiceSpecificCredentialRequest
-    ): Request[ResetServiceSpecificCredentialResponse]                                      = js.native
-    def resyncMFADevice(params: ResyncMFADeviceRequest): Request[js.Object]                 = js.native
+    ): Request[ResetServiceSpecificCredentialResponse] = js.native
+    def resyncMFADevice(params: ResyncMFADeviceRequest): Request[js.Object] = js.native
     def setDefaultPolicyVersion(params: SetDefaultPolicyVersionRequest): Request[js.Object] = js.native
     def setSecurityTokenServicePreferences(params: SetSecurityTokenServicePreferencesRequest): Request[js.Object] =
       js.native
-    def simulateCustomPolicy(params: SimulateCustomPolicyRequest): Request[SimulatePolicyResponse]       = js.native
+    def simulateCustomPolicy(params: SimulateCustomPolicyRequest): Request[SimulatePolicyResponse] = js.native
     def simulatePrincipalPolicy(params: SimulatePrincipalPolicyRequest): Request[SimulatePolicyResponse] = js.native
-    def tagRole(params: TagRoleRequest): Request[js.Object]                                              = js.native
-    def tagUser(params: TagUserRequest): Request[js.Object]                                              = js.native
-    def untagRole(params: UntagRoleRequest): Request[js.Object]                                          = js.native
-    def untagUser(params: UntagUserRequest): Request[js.Object]                                          = js.native
-    def updateAccessKey(params: UpdateAccessKeyRequest): Request[js.Object]                              = js.native
-    def updateAccountPasswordPolicy(params: UpdateAccountPasswordPolicyRequest): Request[js.Object]      = js.native
-    def updateAssumeRolePolicy(params: UpdateAssumeRolePolicyRequest): Request[js.Object]                = js.native
-    def updateGroup(params: UpdateGroupRequest): Request[js.Object]                                      = js.native
-    def updateLoginProfile(params: UpdateLoginProfileRequest): Request[js.Object]                        = js.native
+    def tagRole(params: TagRoleRequest): Request[js.Object] = js.native
+    def tagUser(params: TagUserRequest): Request[js.Object] = js.native
+    def untagRole(params: UntagRoleRequest): Request[js.Object] = js.native
+    def untagUser(params: UntagUserRequest): Request[js.Object] = js.native
+    def updateAccessKey(params: UpdateAccessKeyRequest): Request[js.Object] = js.native
+    def updateAccountPasswordPolicy(params: UpdateAccountPasswordPolicyRequest): Request[js.Object] = js.native
+    def updateAssumeRolePolicy(params: UpdateAssumeRolePolicyRequest): Request[js.Object] = js.native
+    def updateGroup(params: UpdateGroupRequest): Request[js.Object] = js.native
+    def updateLoginProfile(params: UpdateLoginProfileRequest): Request[js.Object] = js.native
     def updateOpenIDConnectProviderThumbprint(
         params: UpdateOpenIDConnectProviderThumbprintRequest
-    ): Request[js.Object]                                                                                   = js.native
-    def updateRole(params: UpdateRoleRequest): Request[UpdateRoleResponse]                                  = js.native
+    ): Request[js.Object] = js.native
+    def updateRole(params: UpdateRoleRequest): Request[UpdateRoleResponse] = js.native
     def updateRoleDescription(params: UpdateRoleDescriptionRequest): Request[UpdateRoleDescriptionResponse] = js.native
-    def updateSAMLProvider(params: UpdateSAMLProviderRequest): Request[UpdateSAMLProviderResponse]          = js.native
-    def updateSSHPublicKey(params: UpdateSSHPublicKeyRequest): Request[js.Object]                           = js.native
-    def updateServerCertificate(params: UpdateServerCertificateRequest): Request[js.Object]                 = js.native
+    def updateSAMLProvider(params: UpdateSAMLProviderRequest): Request[UpdateSAMLProviderResponse] = js.native
+    def updateSSHPublicKey(params: UpdateSSHPublicKeyRequest): Request[js.Object] = js.native
+    def updateServerCertificate(params: UpdateServerCertificateRequest): Request[js.Object] = js.native
     def updateServiceSpecificCredential(params: UpdateServiceSpecificCredentialRequest): Request[js.Object] = js.native
-    def updateSigningCertificate(params: UpdateSigningCertificateRequest): Request[js.Object]               = js.native
-    def updateUser(params: UpdateUserRequest): Request[js.Object]                                           = js.native
-    def uploadSSHPublicKey(params: UploadSSHPublicKeyRequest): Request[UploadSSHPublicKeyResponse]          = js.native
+    def updateSigningCertificate(params: UpdateSigningCertificateRequest): Request[js.Object] = js.native
+    def updateUser(params: UpdateUserRequest): Request[js.Object] = js.native
+    def uploadSSHPublicKey(params: UploadSSHPublicKeyRequest): Request[UploadSSHPublicKeyResponse] = js.native
     def uploadServerCertificate(params: UploadServerCertificateRequest): Request[UploadServerCertificateResponse] =
       js.native
     def uploadSigningCertificate(params: UploadSigningCertificateRequest): Request[UploadSigningCertificateResponse] =
       js.native
+  }
+
+  @js.native
+  sealed trait AccessAdvisorUsageGranularityType extends js.Any
+  object AccessAdvisorUsageGranularityType extends js.Object {
+    val SERVICE_LEVEL = "SERVICE_LEVEL".asInstanceOf[AccessAdvisorUsageGranularityType]
+    val ACTION_LEVEL = "ACTION_LEVEL".asInstanceOf[AccessAdvisorUsageGranularityType]
+
+    val values = js.Object.freeze(js.Array(SERVICE_LEVEL, ACTION_LEVEL))
   }
 
   /**
@@ -688,7 +698,7 @@ package iam {
         TotalAuthenticatedEntities: js.UndefOr[integerType] = js.undefined
     ): AccessDetail = {
       val __obj = js.Dynamic.literal(
-        "ServiceName"      -> ServiceName.asInstanceOf[js.Any],
+        "ServiceName" -> ServiceName.asInstanceOf[js.Any],
         "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any]
       )
 
@@ -727,10 +737,10 @@ package iam {
         CreateDate: js.UndefOr[dateType] = js.undefined
     ): AccessKey = {
       val __obj = js.Dynamic.literal(
-        "AccessKeyId"     -> AccessKeyId.asInstanceOf[js.Any],
+        "AccessKeyId" -> AccessKeyId.asInstanceOf[js.Any],
         "SecretAccessKey" -> SecretAccessKey.asInstanceOf[js.Any],
-        "Status"          -> Status.asInstanceOf[js.Any],
-        "UserName"        -> UserName.asInstanceOf[js.Any]
+        "Status" -> Status.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
@@ -758,8 +768,8 @@ package iam {
     ): AccessKeyLastUsed = {
       val __obj = js.Dynamic.literal(
         "LastUsedDate" -> LastUsedDate.asInstanceOf[js.Any],
-        "Region"       -> Region.asInstanceOf[js.Any],
-        "ServiceName"  -> ServiceName.asInstanceOf[js.Any]
+        "Region" -> Region.asInstanceOf[js.Any],
+        "ServiceName" -> ServiceName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AccessKeyLastUsed]
@@ -808,7 +818,7 @@ package iam {
         OpenIDConnectProviderArn: arnType
     ): AddClientIDToOpenIDConnectProviderRequest = {
       val __obj = js.Dynamic.literal(
-        "ClientID"                 -> ClientID.asInstanceOf[js.Any],
+        "ClientID" -> ClientID.asInstanceOf[js.Any],
         "OpenIDConnectProviderArn" -> OpenIDConnectProviderArn.asInstanceOf[js.Any]
       )
 
@@ -830,7 +840,7 @@ package iam {
     ): AddRoleToInstanceProfileRequest = {
       val __obj = js.Dynamic.literal(
         "InstanceProfileName" -> InstanceProfileName.asInstanceOf[js.Any],
-        "RoleName"            -> RoleName.asInstanceOf[js.Any]
+        "RoleName" -> RoleName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddRoleToInstanceProfileRequest]
@@ -851,7 +861,7 @@ package iam {
     ): AddUserToGroupRequest = {
       val __obj = js.Dynamic.literal(
         "GroupName" -> GroupName.asInstanceOf[js.Any],
-        "UserName"  -> UserName.asInstanceOf[js.Any]
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddUserToGroupRequest]
@@ -893,7 +903,7 @@ package iam {
     ): AttachRolePolicyRequest = {
       val __obj = js.Dynamic.literal(
         "PolicyArn" -> PolicyArn.asInstanceOf[js.Any],
-        "RoleName"  -> RoleName.asInstanceOf[js.Any]
+        "RoleName" -> RoleName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AttachRolePolicyRequest]
@@ -914,7 +924,7 @@ package iam {
     ): AttachUserPolicyRequest = {
       val __obj = js.Dynamic.literal(
         "PolicyArn" -> PolicyArn.asInstanceOf[js.Any],
-        "UserName"  -> UserName.asInstanceOf[js.Any]
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AttachUserPolicyRequest]
@@ -992,7 +1002,7 @@ package iam {
 
   /**
     * Contains information about a condition context key. It includes the name of the key and specifies the value (or values, if the context key supports multiple values) to use in the simulation. This information is used when evaluating the <code>Condition</code> elements of the input policies.
-    *  This data type is used as an input parameter to <code> <a>SimulateCustomPolicy</a> </code> and <code> <a>SimulatePrincipalPolicy</a> </code>.
+    *  This data type is used as an input parameter to <a>SimulateCustomPolicy</a> and <a>SimulatePrincipalPolicy</a>.
     */
   @js.native
   trait ContextEntry extends js.Object {
@@ -1019,18 +1029,18 @@ package iam {
   @js.native
   sealed trait ContextKeyTypeEnum extends js.Any
   object ContextKeyTypeEnum extends js.Object {
-    val string      = "string".asInstanceOf[ContextKeyTypeEnum]
-    val stringList  = "stringList".asInstanceOf[ContextKeyTypeEnum]
-    val numeric     = "numeric".asInstanceOf[ContextKeyTypeEnum]
+    val string = "string".asInstanceOf[ContextKeyTypeEnum]
+    val stringList = "stringList".asInstanceOf[ContextKeyTypeEnum]
+    val numeric = "numeric".asInstanceOf[ContextKeyTypeEnum]
     val numericList = "numericList".asInstanceOf[ContextKeyTypeEnum]
-    val boolean     = "boolean".asInstanceOf[ContextKeyTypeEnum]
+    val boolean = "boolean".asInstanceOf[ContextKeyTypeEnum]
     val booleanList = "booleanList".asInstanceOf[ContextKeyTypeEnum]
-    val ip          = "ip".asInstanceOf[ContextKeyTypeEnum]
-    val ipList      = "ipList".asInstanceOf[ContextKeyTypeEnum]
-    val binary      = "binary".asInstanceOf[ContextKeyTypeEnum]
-    val binaryList  = "binaryList".asInstanceOf[ContextKeyTypeEnum]
-    val date        = "date".asInstanceOf[ContextKeyTypeEnum]
-    val dateList    = "dateList".asInstanceOf[ContextKeyTypeEnum]
+    val ip = "ip".asInstanceOf[ContextKeyTypeEnum]
+    val ipList = "ipList".asInstanceOf[ContextKeyTypeEnum]
+    val binary = "binary".asInstanceOf[ContextKeyTypeEnum]
+    val binaryList = "binaryList".asInstanceOf[ContextKeyTypeEnum]
+    val date = "date".asInstanceOf[ContextKeyTypeEnum]
+    val dateList = "dateList".asInstanceOf[ContextKeyTypeEnum]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1250,7 +1260,7 @@ package iam {
     ): CreateOpenIDConnectProviderRequest = {
       val __obj = js.Dynamic.literal(
         "ThumbprintList" -> ThumbprintList.asInstanceOf[js.Any],
-        "Url"            -> Url.asInstanceOf[js.Any]
+        "Url" -> Url.asInstanceOf[js.Any]
       )
 
       ClientIDList.foreach(__v => __obj.updateDynamic("ClientIDList")(__v.asInstanceOf[js.Any]))
@@ -1295,7 +1305,7 @@ package iam {
     ): CreatePolicyRequest = {
       val __obj = js.Dynamic.literal(
         "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
-        "PolicyName"     -> PolicyName.asInstanceOf[js.Any]
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -1338,7 +1348,7 @@ package iam {
         SetAsDefault: js.UndefOr[booleanType] = js.undefined
     ): CreatePolicyVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "PolicyArn"      -> PolicyArn.asInstanceOf[js.Any],
+        "PolicyArn" -> PolicyArn.asInstanceOf[js.Any],
         "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any]
       )
 
@@ -1390,7 +1400,7 @@ package iam {
     ): CreateRoleRequest = {
       val __obj = js.Dynamic.literal(
         "AssumeRolePolicyDocument" -> AssumeRolePolicyDocument.asInstanceOf[js.Any],
-        "RoleName"                 -> RoleName.asInstanceOf[js.Any]
+        "RoleName" -> RoleName.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -1436,7 +1446,7 @@ package iam {
         SAMLMetadataDocument: SAMLMetadataDocumentType
     ): CreateSAMLProviderRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"                 -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "SAMLMetadataDocument" -> SAMLMetadataDocument.asInstanceOf[js.Any]
       )
 
@@ -1517,7 +1527,7 @@ package iam {
     ): CreateServiceSpecificCredentialRequest = {
       val __obj = js.Dynamic.literal(
         "ServiceName" -> ServiceName.asInstanceOf[js.Any],
-        "UserName"    -> UserName.asInstanceOf[js.Any]
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateServiceSpecificCredentialRequest]
@@ -1644,7 +1654,7 @@ package iam {
     ): DeactivateMFADeviceRequest = {
       val __obj = js.Dynamic.literal(
         "SerialNumber" -> SerialNumber.asInstanceOf[js.Any],
-        "UserName"     -> UserName.asInstanceOf[js.Any]
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeactivateMFADeviceRequest]
@@ -1703,7 +1713,7 @@ package iam {
         PolicyName: policyNameType
     ): DeleteGroupPolicyRequest = {
       val __obj = js.Dynamic.literal(
-        "GroupName"  -> GroupName.asInstanceOf[js.Any],
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
         "PolicyName" -> PolicyName.asInstanceOf[js.Any]
       )
 
@@ -1854,7 +1864,7 @@ package iam {
     ): DeleteRolePolicyRequest = {
       val __obj = js.Dynamic.literal(
         "PolicyName" -> PolicyName.asInstanceOf[js.Any],
-        "RoleName"   -> RoleName.asInstanceOf[js.Any]
+        "RoleName" -> RoleName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteRolePolicyRequest]
@@ -1911,7 +1921,7 @@ package iam {
     ): DeleteSSHPublicKeyRequest = {
       val __obj = js.Dynamic.literal(
         "SSHPublicKeyId" -> SSHPublicKeyId.asInstanceOf[js.Any],
-        "UserName"       -> UserName.asInstanceOf[js.Any]
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteSSHPublicKeyRequest]
@@ -2046,7 +2056,7 @@ package iam {
     ): DeleteUserPolicyRequest = {
       val __obj = js.Dynamic.literal(
         "PolicyName" -> PolicyName.asInstanceOf[js.Any],
-        "UserName"   -> UserName.asInstanceOf[js.Any]
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteUserPolicyRequest]
@@ -2115,9 +2125,9 @@ package iam {
   @js.native
   sealed trait DeletionTaskStatusType extends js.Any
   object DeletionTaskStatusType extends js.Object {
-    val SUCCEEDED   = "SUCCEEDED".asInstanceOf[DeletionTaskStatusType]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[DeletionTaskStatusType]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[DeletionTaskStatusType]
-    val FAILED      = "FAILED".asInstanceOf[DeletionTaskStatusType]
+    val FAILED = "FAILED".asInstanceOf[DeletionTaskStatusType]
     val NOT_STARTED = "NOT_STARTED".asInstanceOf[DeletionTaskStatusType]
 
     val values = js.Object.freeze(js.Array(SUCCEEDED, IN_PROGRESS, FAILED, NOT_STARTED))
@@ -2158,7 +2168,7 @@ package iam {
     ): DetachRolePolicyRequest = {
       val __obj = js.Dynamic.literal(
         "PolicyArn" -> PolicyArn.asInstanceOf[js.Any],
-        "RoleName"  -> RoleName.asInstanceOf[js.Any]
+        "RoleName" -> RoleName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DetachRolePolicyRequest]
@@ -2179,7 +2189,7 @@ package iam {
     ): DetachUserPolicyRequest = {
       val __obj = js.Dynamic.literal(
         "PolicyArn" -> PolicyArn.asInstanceOf[js.Any],
-        "UserName"  -> UserName.asInstanceOf[js.Any]
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DetachUserPolicyRequest]
@@ -2205,8 +2215,8 @@ package iam {
       val __obj = js.Dynamic.literal(
         "AuthenticationCode1" -> AuthenticationCode1.asInstanceOf[js.Any],
         "AuthenticationCode2" -> AuthenticationCode2.asInstanceOf[js.Any],
-        "SerialNumber"        -> SerialNumber.asInstanceOf[js.Any],
-        "UserName"            -> UserName.asInstanceOf[js.Any]
+        "SerialNumber" -> SerialNumber.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[EnableMFADeviceRequest]
@@ -2261,8 +2271,8 @@ package iam {
         Path: js.UndefOr[pathType] = js.undefined
     ): EntityInfo = {
       val __obj = js.Dynamic.literal(
-        "Arn"  -> Arn.asInstanceOf[js.Any],
-        "Id"   -> Id.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
@@ -2275,11 +2285,11 @@ package iam {
   @js.native
   sealed trait EntityType extends js.Any
   object EntityType extends js.Object {
-    val User               = "User".asInstanceOf[EntityType]
-    val Role               = "Role".asInstanceOf[EntityType]
-    val Group              = "Group".asInstanceOf[EntityType]
+    val User = "User".asInstanceOf[EntityType]
+    val Role = "Role".asInstanceOf[EntityType]
+    val Group = "Group".asInstanceOf[EntityType]
     val LocalManagedPolicy = "LocalManagedPolicy".asInstanceOf[EntityType]
-    val AWSManagedPolicy   = "AWSManagedPolicy".asInstanceOf[EntityType]
+    val AWSManagedPolicy = "AWSManagedPolicy".asInstanceOf[EntityType]
 
     val values = js.Object.freeze(js.Array(User, Role, Group, LocalManagedPolicy, AWSManagedPolicy))
   }
@@ -2301,7 +2311,7 @@ package iam {
         Message: stringType
     ): ErrorDetails = {
       val __obj = js.Dynamic.literal(
-        "Code"    -> Code.asInstanceOf[js.Any],
+        "Code" -> Code.asInstanceOf[js.Any],
         "Message" -> Message.asInstanceOf[js.Any]
       )
 
@@ -2341,7 +2351,7 @@ package iam {
     ): EvaluationResult = {
       val __obj = js.Dynamic.literal(
         "EvalActionName" -> EvalActionName.asInstanceOf[js.Any],
-        "EvalDecision"   -> EvalDecision.asInstanceOf[js.Any]
+        "EvalDecision" -> EvalDecision.asInstanceOf[js.Any]
       )
 
       EvalDecisionDetails.foreach(__v => __obj.updateDynamic("EvalDecisionDetails")(__v.asInstanceOf[js.Any]))
@@ -2421,17 +2431,20 @@ package iam {
   @js.native
   trait GenerateServiceLastAccessedDetailsRequest extends js.Object {
     var Arn: arnType
+    var Granularity: js.UndefOr[AccessAdvisorUsageGranularityType]
   }
 
   object GenerateServiceLastAccessedDetailsRequest {
     @inline
     def apply(
-        Arn: arnType
+        Arn: arnType,
+        Granularity: js.UndefOr[AccessAdvisorUsageGranularityType] = js.undefined
     ): GenerateServiceLastAccessedDetailsRequest = {
       val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
 
+      Granularity.foreach(__v => __obj.updateDynamic("Granularity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GenerateServiceLastAccessedDetailsRequest]
     }
   }
@@ -2684,7 +2697,7 @@ package iam {
         PolicyName: policyNameType
     ): GetGroupPolicyRequest = {
       val __obj = js.Dynamic.literal(
-        "GroupName"  -> GroupName.asInstanceOf[js.Any],
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
         "PolicyName" -> PolicyName.asInstanceOf[js.Any]
       )
 
@@ -2710,9 +2723,9 @@ package iam {
         PolicyName: policyNameType
     ): GetGroupPolicyResponse = {
       val __obj = js.Dynamic.literal(
-        "GroupName"      -> GroupName.asInstanceOf[js.Any],
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
         "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
-        "PolicyName"     -> PolicyName.asInstanceOf[js.Any]
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetGroupPolicyResponse]
@@ -2952,7 +2965,7 @@ package iam {
     ): GetOrganizationsAccessReportResponse = {
       val __obj = js.Dynamic.literal(
         "JobCreationDate" -> JobCreationDate.asInstanceOf[js.Any],
-        "JobStatus"       -> JobStatus.asInstanceOf[js.Any]
+        "JobStatus" -> JobStatus.asInstanceOf[js.Any]
       )
 
       AccessDetails.foreach(__v => __obj.updateDynamic("AccessDetails")(__v.asInstanceOf[js.Any]))
@@ -3061,7 +3074,7 @@ package iam {
     ): GetRolePolicyRequest = {
       val __obj = js.Dynamic.literal(
         "PolicyName" -> PolicyName.asInstanceOf[js.Any],
-        "RoleName"   -> RoleName.asInstanceOf[js.Any]
+        "RoleName" -> RoleName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetRolePolicyRequest]
@@ -3087,8 +3100,8 @@ package iam {
     ): GetRolePolicyResponse = {
       val __obj = js.Dynamic.literal(
         "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
-        "PolicyName"     -> PolicyName.asInstanceOf[js.Any],
-        "RoleName"       -> RoleName.asInstanceOf[js.Any]
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
+        "RoleName" -> RoleName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetRolePolicyResponse]
@@ -3192,9 +3205,9 @@ package iam {
         UserName: userNameType
     ): GetSSHPublicKeyRequest = {
       val __obj = js.Dynamic.literal(
-        "Encoding"       -> Encoding.asInstanceOf[js.Any],
+        "Encoding" -> Encoding.asInstanceOf[js.Any],
         "SSHPublicKeyId" -> SSHPublicKeyId.asInstanceOf[js.Any],
-        "UserName"       -> UserName.asInstanceOf[js.Any]
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetSSHPublicKeyRequest]
@@ -3291,6 +3304,7 @@ package iam {
     var ServicesLastAccessed: ServicesLastAccessed
     var Error: js.UndefOr[ErrorDetails]
     var IsTruncated: js.UndefOr[booleanType]
+    var JobType: js.UndefOr[AccessAdvisorUsageGranularityType]
     var Marker: js.UndefOr[responseMarkerType]
   }
 
@@ -3303,17 +3317,19 @@ package iam {
         ServicesLastAccessed: ServicesLastAccessed,
         Error: js.UndefOr[ErrorDetails] = js.undefined,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
+        JobType: js.UndefOr[AccessAdvisorUsageGranularityType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): GetServiceLastAccessedDetailsResponse = {
       val __obj = js.Dynamic.literal(
-        "JobCompletionDate"    -> JobCompletionDate.asInstanceOf[js.Any],
-        "JobCreationDate"      -> JobCreationDate.asInstanceOf[js.Any],
-        "JobStatus"            -> JobStatus.asInstanceOf[js.Any],
+        "JobCompletionDate" -> JobCompletionDate.asInstanceOf[js.Any],
+        "JobCreationDate" -> JobCreationDate.asInstanceOf[js.Any],
+        "JobStatus" -> JobStatus.asInstanceOf[js.Any],
         "ServicesLastAccessed" -> ServicesLastAccessed.asInstanceOf[js.Any]
       )
 
       Error.foreach(__v => __obj.updateDynamic("Error")(__v.asInstanceOf[js.Any]))
       IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      JobType.foreach(__v => __obj.updateDynamic("JobType")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetServiceLastAccessedDetailsResponse]
     }
@@ -3336,7 +3352,7 @@ package iam {
         MaxItems: js.UndefOr[maxItemsType] = js.undefined
     ): GetServiceLastAccessedDetailsWithEntitiesRequest = {
       val __obj = js.Dynamic.literal(
-        "JobId"            -> JobId.asInstanceOf[js.Any],
+        "JobId" -> JobId.asInstanceOf[js.Any],
         "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any]
       )
 
@@ -3371,8 +3387,8 @@ package iam {
       val __obj = js.Dynamic.literal(
         "EntityDetailsList" -> EntityDetailsList.asInstanceOf[js.Any],
         "JobCompletionDate" -> JobCompletionDate.asInstanceOf[js.Any],
-        "JobCreationDate"   -> JobCreationDate.asInstanceOf[js.Any],
-        "JobStatus"         -> JobStatus.asInstanceOf[js.Any]
+        "JobCreationDate" -> JobCreationDate.asInstanceOf[js.Any],
+        "JobStatus" -> JobStatus.asInstanceOf[js.Any]
       )
 
       Error.foreach(__v => __obj.updateDynamic("Error")(__v.asInstanceOf[js.Any]))
@@ -3435,7 +3451,7 @@ package iam {
     ): GetUserPolicyRequest = {
       val __obj = js.Dynamic.literal(
         "PolicyName" -> PolicyName.asInstanceOf[js.Any],
-        "UserName"   -> UserName.asInstanceOf[js.Any]
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetUserPolicyRequest]
@@ -3461,8 +3477,8 @@ package iam {
     ): GetUserPolicyResponse = {
       val __obj = js.Dynamic.literal(
         "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
-        "PolicyName"     -> PolicyName.asInstanceOf[js.Any],
-        "UserName"       -> UserName.asInstanceOf[js.Any]
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetUserPolicyResponse]
@@ -3532,11 +3548,11 @@ package iam {
         Path: pathType
     ): Group = {
       val __obj = js.Dynamic.literal(
-        "Arn"        -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "CreateDate" -> CreateDate.asInstanceOf[js.Any],
-        "GroupId"    -> GroupId.asInstanceOf[js.Any],
-        "GroupName"  -> GroupName.asInstanceOf[js.Any],
-        "Path"       -> Path.asInstanceOf[js.Any]
+        "GroupId" -> GroupId.asInstanceOf[js.Any],
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "Path" -> Path.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Group]
@@ -3610,12 +3626,12 @@ package iam {
         Roles: roleListType
     ): InstanceProfile = {
       val __obj = js.Dynamic.literal(
-        "Arn"                 -> Arn.asInstanceOf[js.Any],
-        "CreateDate"          -> CreateDate.asInstanceOf[js.Any],
-        "InstanceProfileId"   -> InstanceProfileId.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "CreateDate" -> CreateDate.asInstanceOf[js.Any],
+        "InstanceProfileId" -> InstanceProfileId.asInstanceOf[js.Any],
         "InstanceProfileName" -> InstanceProfileName.asInstanceOf[js.Any],
-        "Path"                -> Path.asInstanceOf[js.Any],
-        "Roles"               -> Roles.asInstanceOf[js.Any]
+        "Path" -> Path.asInstanceOf[js.Any],
+        "Roles" -> Roles.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[InstanceProfile]
@@ -4309,7 +4325,7 @@ package iam {
         Marker: js.UndefOr[markerType] = js.undefined
     ): ListPoliciesGrantingServiceAccessRequest = {
       val __obj = js.Dynamic.literal(
-        "Arn"               -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "ServiceNamespaces" -> ServiceNamespaces.asInstanceOf[js.Any]
       )
 
@@ -5026,7 +5042,7 @@ package iam {
     ): LoginProfile = {
       val __obj = js.Dynamic.literal(
         "CreateDate" -> CreateDate.asInstanceOf[js.Any],
-        "UserName"   -> UserName.asInstanceOf[js.Any]
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       PasswordResetRequired.foreach(__v => __obj.updateDynamic("PasswordResetRequired")(__v.asInstanceOf[js.Any]))
@@ -5053,9 +5069,9 @@ package iam {
         UserName: userNameType
     ): MFADevice = {
       val __obj = js.Dynamic.literal(
-        "EnableDate"   -> EnableDate.asInstanceOf[js.Any],
+        "EnableDate" -> EnableDate.asInstanceOf[js.Any],
         "SerialNumber" -> SerialNumber.asInstanceOf[js.Any],
-        "UserName"     -> UserName.asInstanceOf[js.Any]
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[MFADevice]
@@ -5317,7 +5333,7 @@ package iam {
   @js.native
   sealed trait PolicyEvaluationDecisionType extends js.Any
   object PolicyEvaluationDecisionType extends js.Object {
-    val allowed      = "allowed".asInstanceOf[PolicyEvaluationDecisionType]
+    val allowed = "allowed".asInstanceOf[PolicyEvaluationDecisionType]
     val explicitDeny = "explicitDeny".asInstanceOf[PolicyEvaluationDecisionType]
     val implicitDeny = "implicitDeny".asInstanceOf[PolicyEvaluationDecisionType]
 
@@ -5409,13 +5425,13 @@ package iam {
   @js.native
   sealed trait PolicySourceType extends js.Any
   object PolicySourceType extends js.Object {
-    val user           = "user".asInstanceOf[PolicySourceType]
-    val group          = "group".asInstanceOf[PolicySourceType]
-    val role           = "role".asInstanceOf[PolicySourceType]
-    val `aws-managed`  = "aws-managed".asInstanceOf[PolicySourceType]
+    val user = "user".asInstanceOf[PolicySourceType]
+    val group = "group".asInstanceOf[PolicySourceType]
+    val role = "role".asInstanceOf[PolicySourceType]
+    val `aws-managed` = "aws-managed".asInstanceOf[PolicySourceType]
     val `user-managed` = "user-managed".asInstanceOf[PolicySourceType]
-    val resource       = "resource".asInstanceOf[PolicySourceType]
-    val none           = "none".asInstanceOf[PolicySourceType]
+    val resource = "resource".asInstanceOf[PolicySourceType]
+    val none = "none".asInstanceOf[PolicySourceType]
 
     val values = js.Object.freeze(js.Array(user, group, role, `aws-managed`, `user-managed`, resource, none))
   }
@@ -5427,7 +5443,7 @@ package iam {
   @js.native
   sealed trait PolicyUsageType extends js.Any
   object PolicyUsageType extends js.Object {
-    val PermissionsPolicy   = "PermissionsPolicy".asInstanceOf[PolicyUsageType]
+    val PermissionsPolicy = "PermissionsPolicy".asInstanceOf[PolicyUsageType]
     val PermissionsBoundary = "PermissionsBoundary".asInstanceOf[PolicyUsageType]
 
     val values = js.Object.freeze(js.Array(PermissionsPolicy, PermissionsBoundary))
@@ -5525,9 +5541,9 @@ package iam {
         PolicyName: policyNameType
     ): PutGroupPolicyRequest = {
       val __obj = js.Dynamic.literal(
-        "GroupName"      -> GroupName.asInstanceOf[js.Any],
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
         "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
-        "PolicyName"     -> PolicyName.asInstanceOf[js.Any]
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutGroupPolicyRequest]
@@ -5548,7 +5564,7 @@ package iam {
     ): PutRolePermissionsBoundaryRequest = {
       val __obj = js.Dynamic.literal(
         "PermissionsBoundary" -> PermissionsBoundary.asInstanceOf[js.Any],
-        "RoleName"            -> RoleName.asInstanceOf[js.Any]
+        "RoleName" -> RoleName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutRolePermissionsBoundaryRequest]
@@ -5571,8 +5587,8 @@ package iam {
     ): PutRolePolicyRequest = {
       val __obj = js.Dynamic.literal(
         "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
-        "PolicyName"     -> PolicyName.asInstanceOf[js.Any],
-        "RoleName"       -> RoleName.asInstanceOf[js.Any]
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
+        "RoleName" -> RoleName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutRolePolicyRequest]
@@ -5593,7 +5609,7 @@ package iam {
     ): PutUserPermissionsBoundaryRequest = {
       val __obj = js.Dynamic.literal(
         "PermissionsBoundary" -> PermissionsBoundary.asInstanceOf[js.Any],
-        "UserName"            -> UserName.asInstanceOf[js.Any]
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutUserPermissionsBoundaryRequest]
@@ -5616,8 +5632,8 @@ package iam {
     ): PutUserPolicyRequest = {
       val __obj = js.Dynamic.literal(
         "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
-        "PolicyName"     -> PolicyName.asInstanceOf[js.Any],
-        "UserName"       -> UserName.asInstanceOf[js.Any]
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutUserPolicyRequest]
@@ -5637,7 +5653,7 @@ package iam {
         OpenIDConnectProviderArn: arnType
     ): RemoveClientIDFromOpenIDConnectProviderRequest = {
       val __obj = js.Dynamic.literal(
-        "ClientID"                 -> ClientID.asInstanceOf[js.Any],
+        "ClientID" -> ClientID.asInstanceOf[js.Any],
         "OpenIDConnectProviderArn" -> OpenIDConnectProviderArn.asInstanceOf[js.Any]
       )
 
@@ -5659,7 +5675,7 @@ package iam {
     ): RemoveRoleFromInstanceProfileRequest = {
       val __obj = js.Dynamic.literal(
         "InstanceProfileName" -> InstanceProfileName.asInstanceOf[js.Any],
-        "RoleName"            -> RoleName.asInstanceOf[js.Any]
+        "RoleName" -> RoleName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RemoveRoleFromInstanceProfileRequest]
@@ -5680,7 +5696,7 @@ package iam {
     ): RemoveUserFromGroupRequest = {
       val __obj = js.Dynamic.literal(
         "GroupName" -> GroupName.asInstanceOf[js.Any],
-        "UserName"  -> UserName.asInstanceOf[js.Any]
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RemoveUserFromGroupRequest]
@@ -5698,9 +5714,9 @@ package iam {
   @js.native
   sealed trait ReportStateType extends js.Any
   object ReportStateType extends js.Object {
-    val STARTED    = "STARTED".asInstanceOf[ReportStateType]
+    val STARTED = "STARTED".asInstanceOf[ReportStateType]
     val INPROGRESS = "INPROGRESS".asInstanceOf[ReportStateType]
-    val COMPLETE   = "COMPLETE".asInstanceOf[ReportStateType]
+    val COMPLETE = "COMPLETE".asInstanceOf[ReportStateType]
 
     val values = js.Object.freeze(js.Array(STARTED, INPROGRESS, COMPLETE))
   }
@@ -5770,7 +5786,7 @@ package iam {
     ): ResourceSpecificResult = {
       val __obj = js.Dynamic.literal(
         "EvalResourceDecision" -> EvalResourceDecision.asInstanceOf[js.Any],
-        "EvalResourceName"     -> EvalResourceName.asInstanceOf[js.Any]
+        "EvalResourceName" -> EvalResourceName.asInstanceOf[js.Any]
       )
 
       EvalDecisionDetails.foreach(__v => __obj.updateDynamic("EvalDecisionDetails")(__v.asInstanceOf[js.Any]))
@@ -5802,8 +5818,8 @@ package iam {
       val __obj = js.Dynamic.literal(
         "AuthenticationCode1" -> AuthenticationCode1.asInstanceOf[js.Any],
         "AuthenticationCode2" -> AuthenticationCode2.asInstanceOf[js.Any],
-        "SerialNumber"        -> SerialNumber.asInstanceOf[js.Any],
-        "UserName"            -> UserName.asInstanceOf[js.Any]
+        "SerialNumber" -> SerialNumber.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ResyncMFADeviceRequest]
@@ -5844,11 +5860,11 @@ package iam {
         Tags: js.UndefOr[tagListType] = js.undefined
     ): Role = {
       val __obj = js.Dynamic.literal(
-        "Arn"        -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "CreateDate" -> CreateDate.asInstanceOf[js.Any],
-        "Path"       -> Path.asInstanceOf[js.Any],
-        "RoleId"     -> RoleId.asInstanceOf[js.Any],
-        "RoleName"   -> RoleName.asInstanceOf[js.Any]
+        "Path" -> Path.asInstanceOf[js.Any],
+        "RoleId" -> RoleId.asInstanceOf[js.Any],
+        "RoleName" -> RoleName.asInstanceOf[js.Any]
       )
 
       AssumeRolePolicyDocument.foreach(__v => __obj.updateDynamic("AssumeRolePolicyDocument")(__v.asInstanceOf[js.Any]))
@@ -6010,11 +6026,11 @@ package iam {
         UploadDate: js.UndefOr[dateType] = js.undefined
     ): SSHPublicKey = {
       val __obj = js.Dynamic.literal(
-        "Fingerprint"      -> Fingerprint.asInstanceOf[js.Any],
+        "Fingerprint" -> Fingerprint.asInstanceOf[js.Any],
         "SSHPublicKeyBody" -> SSHPublicKeyBody.asInstanceOf[js.Any],
-        "SSHPublicKeyId"   -> SSHPublicKeyId.asInstanceOf[js.Any],
-        "Status"           -> Status.asInstanceOf[js.Any],
-        "UserName"         -> UserName.asInstanceOf[js.Any]
+        "SSHPublicKeyId" -> SSHPublicKeyId.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       UploadDate.foreach(__v => __obj.updateDynamic("UploadDate")(__v.asInstanceOf[js.Any]))
@@ -6044,9 +6060,9 @@ package iam {
     ): SSHPublicKeyMetadata = {
       val __obj = js.Dynamic.literal(
         "SSHPublicKeyId" -> SSHPublicKeyId.asInstanceOf[js.Any],
-        "Status"         -> Status.asInstanceOf[js.Any],
-        "UploadDate"     -> UploadDate.asInstanceOf[js.Any],
-        "UserName"       -> UserName.asInstanceOf[js.Any]
+        "Status" -> Status.asInstanceOf[js.Any],
+        "UploadDate" -> UploadDate.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[SSHPublicKeyMetadata]
@@ -6072,7 +6088,7 @@ package iam {
         CertificateChain: js.UndefOr[certificateChainType] = js.undefined
     ): ServerCertificate = {
       val __obj = js.Dynamic.literal(
-        "CertificateBody"           -> CertificateBody.asInstanceOf[js.Any],
+        "CertificateBody" -> CertificateBody.asInstanceOf[js.Any],
         "ServerCertificateMetadata" -> ServerCertificateMetadata.asInstanceOf[js.Any]
       )
 
@@ -6106,9 +6122,9 @@ package iam {
         UploadDate: js.UndefOr[dateType] = js.undefined
     ): ServerCertificateMetadata = {
       val __obj = js.Dynamic.literal(
-        "Arn"                   -> Arn.asInstanceOf[js.Any],
-        "Path"                  -> Path.asInstanceOf[js.Any],
-        "ServerCertificateId"   -> ServerCertificateId.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "Path" -> Path.asInstanceOf[js.Any],
+        "ServerCertificateId" -> ServerCertificateId.asInstanceOf[js.Any],
         "ServerCertificateName" -> ServerCertificateName.asInstanceOf[js.Any]
       )
 
@@ -6128,7 +6144,9 @@ package iam {
     var ServiceNamespace: serviceNamespaceType
     var LastAuthenticated: js.UndefOr[dateType]
     var LastAuthenticatedEntity: js.UndefOr[arnType]
+    var LastAuthenticatedRegion: js.UndefOr[stringType]
     var TotalAuthenticatedEntities: js.UndefOr[integerType]
+    var TrackedActionsLastAccessed: js.UndefOr[TrackedActionsLastAccessed]
   }
 
   object ServiceLastAccessed {
@@ -6138,17 +6156,23 @@ package iam {
         ServiceNamespace: serviceNamespaceType,
         LastAuthenticated: js.UndefOr[dateType] = js.undefined,
         LastAuthenticatedEntity: js.UndefOr[arnType] = js.undefined,
-        TotalAuthenticatedEntities: js.UndefOr[integerType] = js.undefined
+        LastAuthenticatedRegion: js.UndefOr[stringType] = js.undefined,
+        TotalAuthenticatedEntities: js.UndefOr[integerType] = js.undefined,
+        TrackedActionsLastAccessed: js.UndefOr[TrackedActionsLastAccessed] = js.undefined
     ): ServiceLastAccessed = {
       val __obj = js.Dynamic.literal(
-        "ServiceName"      -> ServiceName.asInstanceOf[js.Any],
+        "ServiceName" -> ServiceName.asInstanceOf[js.Any],
         "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any]
       )
 
       LastAuthenticated.foreach(__v => __obj.updateDynamic("LastAuthenticated")(__v.asInstanceOf[js.Any]))
       LastAuthenticatedEntity.foreach(__v => __obj.updateDynamic("LastAuthenticatedEntity")(__v.asInstanceOf[js.Any]))
+      LastAuthenticatedRegion.foreach(__v => __obj.updateDynamic("LastAuthenticatedRegion")(__v.asInstanceOf[js.Any]))
       TotalAuthenticatedEntities.foreach(__v =>
         __obj.updateDynamic("TotalAuthenticatedEntities")(__v.asInstanceOf[js.Any])
+      )
+      TrackedActionsLastAccessed.foreach(__v =>
+        __obj.updateDynamic("TrackedActionsLastAccessed")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ServiceLastAccessed]
     }
@@ -6180,13 +6204,13 @@ package iam {
         UserName: userNameType
     ): ServiceSpecificCredential = {
       val __obj = js.Dynamic.literal(
-        "CreateDate"                  -> CreateDate.asInstanceOf[js.Any],
-        "ServiceName"                 -> ServiceName.asInstanceOf[js.Any],
-        "ServicePassword"             -> ServicePassword.asInstanceOf[js.Any],
+        "CreateDate" -> CreateDate.asInstanceOf[js.Any],
+        "ServiceName" -> ServiceName.asInstanceOf[js.Any],
+        "ServicePassword" -> ServicePassword.asInstanceOf[js.Any],
         "ServiceSpecificCredentialId" -> ServiceSpecificCredentialId.asInstanceOf[js.Any],
-        "ServiceUserName"             -> ServiceUserName.asInstanceOf[js.Any],
-        "Status"                      -> Status.asInstanceOf[js.Any],
-        "UserName"                    -> UserName.asInstanceOf[js.Any]
+        "ServiceUserName" -> ServiceUserName.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ServiceSpecificCredential]
@@ -6217,12 +6241,12 @@ package iam {
         UserName: userNameType
     ): ServiceSpecificCredentialMetadata = {
       val __obj = js.Dynamic.literal(
-        "CreateDate"                  -> CreateDate.asInstanceOf[js.Any],
-        "ServiceName"                 -> ServiceName.asInstanceOf[js.Any],
+        "CreateDate" -> CreateDate.asInstanceOf[js.Any],
+        "ServiceName" -> ServiceName.asInstanceOf[js.Any],
         "ServiceSpecificCredentialId" -> ServiceSpecificCredentialId.asInstanceOf[js.Any],
-        "ServiceUserName"             -> ServiceUserName.asInstanceOf[js.Any],
-        "Status"                      -> Status.asInstanceOf[js.Any],
-        "UserName"                    -> UserName.asInstanceOf[js.Any]
+        "ServiceUserName" -> ServiceUserName.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ServiceSpecificCredentialMetadata]
@@ -6292,9 +6316,9 @@ package iam {
     ): SigningCertificate = {
       val __obj = js.Dynamic.literal(
         "CertificateBody" -> CertificateBody.asInstanceOf[js.Any],
-        "CertificateId"   -> CertificateId.asInstanceOf[js.Any],
-        "Status"          -> Status.asInstanceOf[js.Any],
-        "UserName"        -> UserName.asInstanceOf[js.Any]
+        "CertificateId" -> CertificateId.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       UploadDate.foreach(__v => __obj.updateDynamic("UploadDate")(__v.asInstanceOf[js.Any]))
@@ -6333,7 +6357,7 @@ package iam {
         ResourcePolicy: js.UndefOr[policyDocumentType] = js.undefined
     ): SimulateCustomPolicyRequest = {
       val __obj = js.Dynamic.literal(
-        "ActionNames"     -> ActionNames.asInstanceOf[js.Any],
+        "ActionNames" -> ActionNames.asInstanceOf[js.Any],
         "PolicyInputList" -> PolicyInputList.asInstanceOf[js.Any]
       )
 
@@ -6410,7 +6434,7 @@ package iam {
         ResourcePolicy: js.UndefOr[policyDocumentType] = js.undefined
     ): SimulatePrincipalPolicyRequest = {
       val __obj = js.Dynamic.literal(
-        "ActionNames"     -> ActionNames.asInstanceOf[js.Any],
+        "ActionNames" -> ActionNames.asInstanceOf[js.Any],
         "PolicySourceArn" -> PolicySourceArn.asInstanceOf[js.Any]
       )
 
@@ -6475,7 +6499,7 @@ package iam {
         Value: tagValueType
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -6497,7 +6521,7 @@ package iam {
     ): TagRoleRequest = {
       val __obj = js.Dynamic.literal(
         "RoleName" -> RoleName.asInstanceOf[js.Any],
-        "Tags"     -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagRoleRequest]
@@ -6517,11 +6541,40 @@ package iam {
         UserName: existingUserNameType
     ): TagUserRequest = {
       val __obj = js.Dynamic.literal(
-        "Tags"     -> Tags.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagUserRequest]
+    }
+  }
+
+  /**
+    * Contains details about the most recent attempt to access an action within the service.
+    *  This data type is used as a response element in the <a>GetServiceLastAccessedDetails</a> operation.
+    */
+  @js.native
+  trait TrackedActionLastAccessed extends js.Object {
+    var ActionName: js.UndefOr[stringType]
+    var LastAccessedEntity: js.UndefOr[arnType]
+    var LastAccessedRegion: js.UndefOr[stringType]
+    var LastAccessedTime: js.UndefOr[dateType]
+  }
+
+  object TrackedActionLastAccessed {
+    @inline
+    def apply(
+        ActionName: js.UndefOr[stringType] = js.undefined,
+        LastAccessedEntity: js.UndefOr[arnType] = js.undefined,
+        LastAccessedRegion: js.UndefOr[stringType] = js.undefined,
+        LastAccessedTime: js.UndefOr[dateType] = js.undefined
+    ): TrackedActionLastAccessed = {
+      val __obj = js.Dynamic.literal()
+      ActionName.foreach(__v => __obj.updateDynamic("ActionName")(__v.asInstanceOf[js.Any]))
+      LastAccessedEntity.foreach(__v => __obj.updateDynamic("LastAccessedEntity")(__v.asInstanceOf[js.Any]))
+      LastAccessedRegion.foreach(__v => __obj.updateDynamic("LastAccessedRegion")(__v.asInstanceOf[js.Any]))
+      LastAccessedTime.foreach(__v => __obj.updateDynamic("LastAccessedTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TrackedActionLastAccessed]
     }
   }
 
@@ -6539,7 +6592,7 @@ package iam {
     ): UntagRoleRequest = {
       val __obj = js.Dynamic.literal(
         "RoleName" -> RoleName.asInstanceOf[js.Any],
-        "TagKeys"  -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagRoleRequest]
@@ -6559,7 +6612,7 @@ package iam {
         UserName: existingUserNameType
     ): UntagUserRequest = {
       val __obj = js.Dynamic.literal(
-        "TagKeys"  -> TagKeys.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
@@ -6583,7 +6636,7 @@ package iam {
     ): UpdateAccessKeyRequest = {
       val __obj = js.Dynamic.literal(
         "AccessKeyId" -> AccessKeyId.asInstanceOf[js.Any],
-        "Status"      -> Status.asInstanceOf[js.Any]
+        "Status" -> Status.asInstanceOf[js.Any]
       )
 
       UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
@@ -6651,7 +6704,7 @@ package iam {
     ): UpdateAssumeRolePolicyRequest = {
       val __obj = js.Dynamic.literal(
         "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
-        "RoleName"       -> RoleName.asInstanceOf[js.Any]
+        "RoleName" -> RoleName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateAssumeRolePolicyRequest]
@@ -6720,7 +6773,7 @@ package iam {
     ): UpdateOpenIDConnectProviderThumbprintRequest = {
       val __obj = js.Dynamic.literal(
         "OpenIDConnectProviderArn" -> OpenIDConnectProviderArn.asInstanceOf[js.Any],
-        "ThumbprintList"           -> ThumbprintList.asInstanceOf[js.Any]
+        "ThumbprintList" -> ThumbprintList.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateOpenIDConnectProviderThumbprintRequest]
@@ -6741,7 +6794,7 @@ package iam {
     ): UpdateRoleDescriptionRequest = {
       val __obj = js.Dynamic.literal(
         "Description" -> Description.asInstanceOf[js.Any],
-        "RoleName"    -> RoleName.asInstanceOf[js.Any]
+        "RoleName" -> RoleName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateRoleDescriptionRequest]
@@ -6815,7 +6868,7 @@ package iam {
     ): UpdateSAMLProviderRequest = {
       val __obj = js.Dynamic.literal(
         "SAMLMetadataDocument" -> SAMLMetadataDocument.asInstanceOf[js.Any],
-        "SAMLProviderArn"      -> SAMLProviderArn.asInstanceOf[js.Any]
+        "SAMLProviderArn" -> SAMLProviderArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateSAMLProviderRequest]
@@ -6857,8 +6910,8 @@ package iam {
     ): UpdateSSHPublicKeyRequest = {
       val __obj = js.Dynamic.literal(
         "SSHPublicKeyId" -> SSHPublicKeyId.asInstanceOf[js.Any],
-        "Status"         -> Status.asInstanceOf[js.Any],
-        "UserName"       -> UserName.asInstanceOf[js.Any]
+        "Status" -> Status.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateSSHPublicKeyRequest]
@@ -6905,7 +6958,7 @@ package iam {
     ): UpdateServiceSpecificCredentialRequest = {
       val __obj = js.Dynamic.literal(
         "ServiceSpecificCredentialId" -> ServiceSpecificCredentialId.asInstanceOf[js.Any],
-        "Status"                      -> Status.asInstanceOf[js.Any]
+        "Status" -> Status.asInstanceOf[js.Any]
       )
 
       UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
@@ -6929,7 +6982,7 @@ package iam {
     ): UpdateSigningCertificateRequest = {
       val __obj = js.Dynamic.literal(
         "CertificateId" -> CertificateId.asInstanceOf[js.Any],
-        "Status"        -> Status.asInstanceOf[js.Any]
+        "Status" -> Status.asInstanceOf[js.Any]
       )
 
       UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
@@ -6975,7 +7028,7 @@ package iam {
     ): UploadSSHPublicKeyRequest = {
       val __obj = js.Dynamic.literal(
         "SSHPublicKeyBody" -> SSHPublicKeyBody.asInstanceOf[js.Any],
-        "UserName"         -> UserName.asInstanceOf[js.Any]
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UploadSSHPublicKeyRequest]
@@ -7020,8 +7073,8 @@ package iam {
         Path: js.UndefOr[pathType] = js.undefined
     ): UploadServerCertificateRequest = {
       val __obj = js.Dynamic.literal(
-        "CertificateBody"       -> CertificateBody.asInstanceOf[js.Any],
-        "PrivateKey"            -> PrivateKey.asInstanceOf[js.Any],
+        "CertificateBody" -> CertificateBody.asInstanceOf[js.Any],
+        "PrivateKey" -> PrivateKey.asInstanceOf[js.Any],
         "ServerCertificateName" -> ServerCertificateName.asInstanceOf[js.Any]
       )
 
@@ -7126,11 +7179,11 @@ package iam {
         Tags: js.UndefOr[tagListType] = js.undefined
     ): User = {
       val __obj = js.Dynamic.literal(
-        "Arn"        -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "CreateDate" -> CreateDate.asInstanceOf[js.Any],
-        "Path"       -> Path.asInstanceOf[js.Any],
-        "UserId"     -> UserId.asInstanceOf[js.Any],
-        "UserName"   -> UserName.asInstanceOf[js.Any]
+        "Path" -> Path.asInstanceOf[js.Any],
+        "UserId" -> UserId.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       PasswordLastUsed.foreach(__v => __obj.updateDynamic("PasswordLastUsed")(__v.asInstanceOf[js.Any]))
@@ -7223,9 +7276,9 @@ package iam {
   @js.native
   sealed trait assignmentStatusType extends js.Any
   object assignmentStatusType extends js.Object {
-    val Assigned   = "Assigned".asInstanceOf[assignmentStatusType]
+    val Assigned = "Assigned".asInstanceOf[assignmentStatusType]
     val Unassigned = "Unassigned".asInstanceOf[assignmentStatusType]
-    val Any        = "Any".asInstanceOf[assignmentStatusType]
+    val Any = "Any".asInstanceOf[assignmentStatusType]
 
     val values = js.Object.freeze(js.Array(Assigned, Unassigned, Any))
   }
@@ -7252,8 +7305,8 @@ package iam {
   sealed trait jobStatusType extends js.Any
   object jobStatusType extends js.Object {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[jobStatusType]
-    val COMPLETED   = "COMPLETED".asInstanceOf[jobStatusType]
-    val FAILED      = "FAILED".asInstanceOf[jobStatusType]
+    val COMPLETED = "COMPLETED".asInstanceOf[jobStatusType]
+    val FAILED = "FAILED".asInstanceOf[jobStatusType]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED, FAILED))
   }
@@ -7261,8 +7314,8 @@ package iam {
   @js.native
   sealed trait policyOwnerEntityType extends js.Any
   object policyOwnerEntityType extends js.Object {
-    val USER  = "USER".asInstanceOf[policyOwnerEntityType]
-    val ROLE  = "ROLE".asInstanceOf[policyOwnerEntityType]
+    val USER = "USER".asInstanceOf[policyOwnerEntityType]
+    val ROLE = "ROLE".asInstanceOf[policyOwnerEntityType]
     val GROUP = "GROUP".asInstanceOf[policyOwnerEntityType]
 
     val values = js.Object.freeze(js.Array(USER, ROLE, GROUP))
@@ -7271,8 +7324,8 @@ package iam {
   @js.native
   sealed trait policyScopeType extends js.Any
   object policyScopeType extends js.Object {
-    val All   = "All".asInstanceOf[policyScopeType]
-    val AWS   = "AWS".asInstanceOf[policyScopeType]
+    val All = "All".asInstanceOf[policyScopeType]
+    val AWS = "AWS".asInstanceOf[policyScopeType]
     val Local = "Local".asInstanceOf[policyScopeType]
 
     val values = js.Object.freeze(js.Array(All, AWS, Local))
@@ -7281,7 +7334,7 @@ package iam {
   @js.native
   sealed trait policyType extends js.Any
   object policyType extends js.Object {
-    val INLINE  = "INLINE".asInstanceOf[policyType]
+    val INLINE = "INLINE".asInstanceOf[policyType]
     val MANAGED = "MANAGED".asInstanceOf[policyType]
 
     val values = js.Object.freeze(js.Array(INLINE, MANAGED))
@@ -7290,9 +7343,9 @@ package iam {
   @js.native
   sealed trait sortKeyType extends js.Any
   object sortKeyType extends js.Object {
-    val SERVICE_NAMESPACE_ASCENDING        = "SERVICE_NAMESPACE_ASCENDING".asInstanceOf[sortKeyType]
-    val SERVICE_NAMESPACE_DESCENDING       = "SERVICE_NAMESPACE_DESCENDING".asInstanceOf[sortKeyType]
-    val LAST_AUTHENTICATED_TIME_ASCENDING  = "LAST_AUTHENTICATED_TIME_ASCENDING".asInstanceOf[sortKeyType]
+    val SERVICE_NAMESPACE_ASCENDING = "SERVICE_NAMESPACE_ASCENDING".asInstanceOf[sortKeyType]
+    val SERVICE_NAMESPACE_DESCENDING = "SERVICE_NAMESPACE_DESCENDING".asInstanceOf[sortKeyType]
+    val LAST_AUTHENTICATED_TIME_ASCENDING = "LAST_AUTHENTICATED_TIME_ASCENDING".asInstanceOf[sortKeyType]
     val LAST_AUTHENTICATED_TIME_DESCENDING = "LAST_AUTHENTICATED_TIME_DESCENDING".asInstanceOf[sortKeyType]
 
     val values = js.Object.freeze(
@@ -7308,7 +7361,7 @@ package iam {
   @js.native
   sealed trait statusType extends js.Any
   object statusType extends js.Object {
-    val Active   = "Active".asInstanceOf[statusType]
+    val Active = "Active".asInstanceOf[statusType]
     val Inactive = "Inactive".asInstanceOf[statusType]
 
     val values = js.Object.freeze(js.Array(Active, Inactive))
@@ -7317,32 +7370,32 @@ package iam {
   @js.native
   sealed trait summaryKeyType extends js.Any
   object summaryKeyType extends js.Object {
-    val Users                             = "Users".asInstanceOf[summaryKeyType]
-    val UsersQuota                        = "UsersQuota".asInstanceOf[summaryKeyType]
-    val Groups                            = "Groups".asInstanceOf[summaryKeyType]
-    val GroupsQuota                       = "GroupsQuota".asInstanceOf[summaryKeyType]
-    val ServerCertificates                = "ServerCertificates".asInstanceOf[summaryKeyType]
-    val ServerCertificatesQuota           = "ServerCertificatesQuota".asInstanceOf[summaryKeyType]
-    val UserPolicySizeQuota               = "UserPolicySizeQuota".asInstanceOf[summaryKeyType]
-    val GroupPolicySizeQuota              = "GroupPolicySizeQuota".asInstanceOf[summaryKeyType]
-    val GroupsPerUserQuota                = "GroupsPerUserQuota".asInstanceOf[summaryKeyType]
-    val SigningCertificatesPerUserQuota   = "SigningCertificatesPerUserQuota".asInstanceOf[summaryKeyType]
-    val AccessKeysPerUserQuota            = "AccessKeysPerUserQuota".asInstanceOf[summaryKeyType]
-    val MFADevices                        = "MFADevices".asInstanceOf[summaryKeyType]
-    val MFADevicesInUse                   = "MFADevicesInUse".asInstanceOf[summaryKeyType]
-    val AccountMFAEnabled                 = "AccountMFAEnabled".asInstanceOf[summaryKeyType]
-    val AccountAccessKeysPresent          = "AccountAccessKeysPresent".asInstanceOf[summaryKeyType]
+    val Users = "Users".asInstanceOf[summaryKeyType]
+    val UsersQuota = "UsersQuota".asInstanceOf[summaryKeyType]
+    val Groups = "Groups".asInstanceOf[summaryKeyType]
+    val GroupsQuota = "GroupsQuota".asInstanceOf[summaryKeyType]
+    val ServerCertificates = "ServerCertificates".asInstanceOf[summaryKeyType]
+    val ServerCertificatesQuota = "ServerCertificatesQuota".asInstanceOf[summaryKeyType]
+    val UserPolicySizeQuota = "UserPolicySizeQuota".asInstanceOf[summaryKeyType]
+    val GroupPolicySizeQuota = "GroupPolicySizeQuota".asInstanceOf[summaryKeyType]
+    val GroupsPerUserQuota = "GroupsPerUserQuota".asInstanceOf[summaryKeyType]
+    val SigningCertificatesPerUserQuota = "SigningCertificatesPerUserQuota".asInstanceOf[summaryKeyType]
+    val AccessKeysPerUserQuota = "AccessKeysPerUserQuota".asInstanceOf[summaryKeyType]
+    val MFADevices = "MFADevices".asInstanceOf[summaryKeyType]
+    val MFADevicesInUse = "MFADevicesInUse".asInstanceOf[summaryKeyType]
+    val AccountMFAEnabled = "AccountMFAEnabled".asInstanceOf[summaryKeyType]
+    val AccountAccessKeysPresent = "AccountAccessKeysPresent".asInstanceOf[summaryKeyType]
     val AccountSigningCertificatesPresent = "AccountSigningCertificatesPresent".asInstanceOf[summaryKeyType]
-    val AttachedPoliciesPerGroupQuota     = "AttachedPoliciesPerGroupQuota".asInstanceOf[summaryKeyType]
-    val AttachedPoliciesPerRoleQuota      = "AttachedPoliciesPerRoleQuota".asInstanceOf[summaryKeyType]
-    val AttachedPoliciesPerUserQuota      = "AttachedPoliciesPerUserQuota".asInstanceOf[summaryKeyType]
-    val Policies                          = "Policies".asInstanceOf[summaryKeyType]
-    val PoliciesQuota                     = "PoliciesQuota".asInstanceOf[summaryKeyType]
-    val PolicySizeQuota                   = "PolicySizeQuota".asInstanceOf[summaryKeyType]
-    val PolicyVersionsInUse               = "PolicyVersionsInUse".asInstanceOf[summaryKeyType]
-    val PolicyVersionsInUseQuota          = "PolicyVersionsInUseQuota".asInstanceOf[summaryKeyType]
-    val VersionsPerPolicyQuota            = "VersionsPerPolicyQuota".asInstanceOf[summaryKeyType]
-    val GlobalEndpointTokenVersion        = "GlobalEndpointTokenVersion".asInstanceOf[summaryKeyType]
+    val AttachedPoliciesPerGroupQuota = "AttachedPoliciesPerGroupQuota".asInstanceOf[summaryKeyType]
+    val AttachedPoliciesPerRoleQuota = "AttachedPoliciesPerRoleQuota".asInstanceOf[summaryKeyType]
+    val AttachedPoliciesPerUserQuota = "AttachedPoliciesPerUserQuota".asInstanceOf[summaryKeyType]
+    val Policies = "Policies".asInstanceOf[summaryKeyType]
+    val PoliciesQuota = "PoliciesQuota".asInstanceOf[summaryKeyType]
+    val PolicySizeQuota = "PolicySizeQuota".asInstanceOf[summaryKeyType]
+    val PolicyVersionsInUse = "PolicyVersionsInUse".asInstanceOf[summaryKeyType]
+    val PolicyVersionsInUseQuota = "PolicyVersionsInUseQuota".asInstanceOf[summaryKeyType]
+    val VersionsPerPolicyQuota = "VersionsPerPolicyQuota".asInstanceOf[summaryKeyType]
+    val GlobalEndpointTokenVersion = "GlobalEndpointTokenVersion".asInstanceOf[summaryKeyType]
 
     val values = js.Object.freeze(
       js.Array(

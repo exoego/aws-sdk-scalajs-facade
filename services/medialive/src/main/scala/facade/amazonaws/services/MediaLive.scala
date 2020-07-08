@@ -7,112 +7,116 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object medialive {
-  type MaxResults                                    = Int
-  type Tags                                          = js.Dictionary[__string]
-  type __double                                      = Double
-  type __doubleMin0                                  = Double
-  type __doubleMin1                                  = Double
-  type __doubleMinNegative59Max0                     = Double
-  type __integer                                     = Int
-  type __integerMin0                                 = Int
-  type __integerMin0Max10                            = Int
-  type __integerMin0Max100                           = Int
-  type __integerMin0Max1000                          = Int
-  type __integerMin0Max10000                         = Int
-  type __integerMin0Max1000000                       = Int
-  type __integerMin0Max100000000                     = Int
-  type __integerMin0Max128                           = Int
-  type __integerMin0Max15                            = Int
-  type __integerMin0Max255                           = Int
-  type __integerMin0Max30                            = Int
-  type __integerMin0Max32768                         = Int
-  type __integerMin0Max3600                          = Int
-  type __integerMin0Max500                           = Int
-  type __integerMin0Max600                           = Int
-  type __integerMin0Max65535                         = Int
-  type __integerMin0Max65536                         = Int
-  type __integerMin0Max7                             = Int
-  type __integerMin0Max8191                          = Int
-  type __integerMin1                                 = Int
-  type __integerMin1000                              = Int
-  type __integerMin1000000Max100000000               = Int
-  type __integerMin100000Max100000000                = Int
-  type __integerMin100000Max40000000                 = Int
-  type __integerMin100000Max80000000                 = Int
-  type __integerMin1000Max3000                       = Int
-  type __integerMin1000Max30000                      = Int
-  type __integerMin1Max10                            = Int
-  type __integerMin1Max1000000                       = Int
-  type __integerMin1Max16                            = Int
-  type __integerMin1Max20                            = Int
-  type __integerMin1Max3003                          = Int
-  type __integerMin1Max31                            = Int
-  type __integerMin1Max32                            = Int
-  type __integerMin1Max3600000                       = Int
-  type __integerMin1Max4                             = Int
-  type __integerMin1Max5                             = Int
-  type __integerMin1Max6                             = Int
-  type __integerMin1Max8                             = Int
-  type __integerMin25Max10000                        = Int
-  type __integerMin25Max2000                         = Int
-  type __integerMin3                                 = Int
-  type __integerMin30                                = Int
-  type __integerMin4Max20                            = Int
-  type __integerMin96Max600                          = Int
-  type __integerMinNegative1000Max1000               = Int
-  type __integerMinNegative60Max6                    = Int
-  type __integerMinNegative60Max60                   = Int
-  type __listOfAudioChannelMapping                   = js.Array[AudioChannelMapping]
-  type __listOfAudioDescription                      = js.Array[AudioDescription]
-  type __listOfAudioSelector                         = js.Array[AudioSelector]
-  type __listOfCaptionDescription                    = js.Array[CaptionDescription]
-  type __listOfCaptionLanguageMapping                = js.Array[CaptionLanguageMapping]
-  type __listOfCaptionSelector                       = js.Array[CaptionSelector]
-  type __listOfChannelEgressEndpoint                 = js.Array[ChannelEgressEndpoint]
-  type __listOfChannelSummary                        = js.Array[ChannelSummary]
-  type __listOfHlsAdMarkers                          = js.Array[HlsAdMarkers]
-  type __listOfInput                                 = js.Array[Input]
-  type __listOfInputAttachment                       = js.Array[InputAttachment]
-  type __listOfInputChannelLevel                     = js.Array[InputChannelLevel]
-  type __listOfInputDestination                      = js.Array[InputDestination]
-  type __listOfInputDestinationRequest               = js.Array[InputDestinationRequest]
-  type __listOfInputSecurityGroup                    = js.Array[InputSecurityGroup]
-  type __listOfInputSource                           = js.Array[InputSource]
-  type __listOfInputSourceRequest                    = js.Array[InputSourceRequest]
-  type __listOfInputWhitelistRule                    = js.Array[InputWhitelistRule]
-  type __listOfInputWhitelistRuleCidr                = js.Array[InputWhitelistRuleCidr]
-  type __listOfMediaConnectFlow                      = js.Array[MediaConnectFlow]
-  type __listOfMediaConnectFlowRequest               = js.Array[MediaConnectFlowRequest]
+  type MaxResults = Int
+  type Tags = js.Dictionary[__string]
+  type __double = Double
+  type __doubleMin0 = Double
+  type __doubleMin1 = Double
+  type __doubleMinNegative59Max0 = Double
+  type __integer = Int
+  type __integerMin0 = Int
+  type __integerMin0Max10 = Int
+  type __integerMin0Max100 = Int
+  type __integerMin0Max1000 = Int
+  type __integerMin0Max10000 = Int
+  type __integerMin0Max1000000 = Int
+  type __integerMin0Max100000000 = Int
+  type __integerMin0Max128 = Int
+  type __integerMin0Max15 = Int
+  type __integerMin0Max255 = Int
+  type __integerMin0Max30 = Int
+  type __integerMin0Max32768 = Int
+  type __integerMin0Max3600 = Int
+  type __integerMin0Max500 = Int
+  type __integerMin0Max600 = Int
+  type __integerMin0Max65535 = Int
+  type __integerMin0Max65536 = Int
+  type __integerMin0Max7 = Int
+  type __integerMin0Max8191 = Int
+  type __integerMin1 = Int
+  type __integerMin1000 = Int
+  type __integerMin1000000Max100000000 = Int
+  type __integerMin100000Max100000000 = Int
+  type __integerMin100000Max40000000 = Int
+  type __integerMin100000Max80000000 = Int
+  type __integerMin1000Max3000 = Int
+  type __integerMin1000Max30000 = Int
+  type __integerMin1Max10 = Int
+  type __integerMin1Max1000000 = Int
+  type __integerMin1Max16 = Int
+  type __integerMin1Max20 = Int
+  type __integerMin1Max3003 = Int
+  type __integerMin1Max31 = Int
+  type __integerMin1Max32 = Int
+  type __integerMin1Max3600000 = Int
+  type __integerMin1Max4 = Int
+  type __integerMin1Max5 = Int
+  type __integerMin1Max6 = Int
+  type __integerMin1Max8 = Int
+  type __integerMin25Max10000 = Int
+  type __integerMin25Max2000 = Int
+  type __integerMin3 = Int
+  type __integerMin30 = Int
+  type __integerMin4Max20 = Int
+  type __integerMin96Max600 = Int
+  type __integerMinNegative1000Max1000 = Int
+  type __integerMinNegative60Max6 = Int
+  type __integerMinNegative60Max60 = Int
+  type __listOfAudioChannelMapping = js.Array[AudioChannelMapping]
+  type __listOfAudioDescription = js.Array[AudioDescription]
+  type __listOfAudioSelector = js.Array[AudioSelector]
+  type __listOfAudioTrack = js.Array[AudioTrack]
+  type __listOfCaptionDescription = js.Array[CaptionDescription]
+  type __listOfCaptionLanguageMapping = js.Array[CaptionLanguageMapping]
+  type __listOfCaptionSelector = js.Array[CaptionSelector]
+  type __listOfChannelEgressEndpoint = js.Array[ChannelEgressEndpoint]
+  type __listOfChannelSummary = js.Array[ChannelSummary]
+  type __listOfHlsAdMarkers = js.Array[HlsAdMarkers]
+  type __listOfInput = js.Array[Input]
+  type __listOfInputAttachment = js.Array[InputAttachment]
+  type __listOfInputChannelLevel = js.Array[InputChannelLevel]
+  type __listOfInputDestination = js.Array[InputDestination]
+  type __listOfInputDestinationRequest = js.Array[InputDestinationRequest]
+  type __listOfInputDeviceRequest = js.Array[InputDeviceRequest]
+  type __listOfInputDeviceSettings = js.Array[InputDeviceSettings]
+  type __listOfInputDeviceSummary = js.Array[InputDeviceSummary]
+  type __listOfInputSecurityGroup = js.Array[InputSecurityGroup]
+  type __listOfInputSource = js.Array[InputSource]
+  type __listOfInputSourceRequest = js.Array[InputSourceRequest]
+  type __listOfInputWhitelistRule = js.Array[InputWhitelistRule]
+  type __listOfInputWhitelistRuleCidr = js.Array[InputWhitelistRuleCidr]
+  type __listOfMediaConnectFlow = js.Array[MediaConnectFlow]
+  type __listOfMediaConnectFlowRequest = js.Array[MediaConnectFlowRequest]
   type __listOfMediaPackageOutputDestinationSettings = js.Array[MediaPackageOutputDestinationSettings]
-  type __listOfMultiplexOutputDestination            = js.Array[MultiplexOutputDestination]
-  type __listOfMultiplexProgramSummary               = js.Array[MultiplexProgramSummary]
-  type __listOfMultiplexSummary                      = js.Array[MultiplexSummary]
-  type __listOfOffering                              = js.Array[Offering]
-  type __listOfOutput                                = js.Array[Output]
-  type __listOfOutputDestination                     = js.Array[OutputDestination]
-  type __listOfOutputDestinationSettings             = js.Array[OutputDestinationSettings]
-  type __listOfOutputGroup                           = js.Array[OutputGroup]
-  type __listOfPipelineDetail                        = js.Array[PipelineDetail]
-  type __listOfPipelinePauseStateSettings            = js.Array[PipelinePauseStateSettings]
-  type __listOfReservation                           = js.Array[Reservation]
-  type __listOfScheduleAction                        = js.Array[ScheduleAction]
-  type __listOfScte35Descriptor                      = js.Array[Scte35Descriptor]
-  type __listOfVideoDescription                      = js.Array[VideoDescription]
-  type __listOf__integer                             = js.Array[__integer]
-  type __listOf__string                              = js.Array[__string]
-  type __longMin0Max1099511627775                    = Double
-  type __longMin0Max4294967295                       = Double
-  type __longMin0Max8589934591                       = Double
-  type __string                                      = String
-  type __stringMax256                                = String
-  type __stringMax32                                 = String
-  type __stringMin1                                  = String
-  type __stringMin1Max255                            = String
-  type __stringMin1Max256                            = String
-  type __stringMin32Max32                            = String
-  type __stringMin34Max34                            = String
-  type __stringMin3Max3                              = String
-  type __stringMin6Max6                              = String
+  type __listOfMultiplexOutputDestination = js.Array[MultiplexOutputDestination]
+  type __listOfMultiplexProgramSummary = js.Array[MultiplexProgramSummary]
+  type __listOfMultiplexSummary = js.Array[MultiplexSummary]
+  type __listOfOffering = js.Array[Offering]
+  type __listOfOutput = js.Array[Output]
+  type __listOfOutputDestination = js.Array[OutputDestination]
+  type __listOfOutputDestinationSettings = js.Array[OutputDestinationSettings]
+  type __listOfOutputGroup = js.Array[OutputGroup]
+  type __listOfPipelineDetail = js.Array[PipelineDetail]
+  type __listOfPipelinePauseStateSettings = js.Array[PipelinePauseStateSettings]
+  type __listOfReservation = js.Array[Reservation]
+  type __listOfScheduleAction = js.Array[ScheduleAction]
+  type __listOfScte35Descriptor = js.Array[Scte35Descriptor]
+  type __listOfVideoDescription = js.Array[VideoDescription]
+  type __listOf__integer = js.Array[__integer]
+  type __listOf__string = js.Array[__string]
+  type __longMin0Max1099511627775 = Double
+  type __longMin0Max4294967295 = Double
+  type __longMin0Max8589934591 = Double
+  type __string = String
+  type __stringMax256 = String
+  type __stringMax32 = String
+  type __stringMin1 = String
+  type __stringMin1Max255 = String
+  type __stringMin1Max256 = String
+  type __stringMin32Max32 = String
+  type __stringMin34Max34 = String
+  type __stringMin3Max3 = String
+  type __stringMin6Max6 = String
 
   implicit final class MediaLiveOps(private val service: MediaLive) extends AnyVal {
 
@@ -152,6 +156,8 @@ package object medialive {
       service.deleteTags(params).promise().toFuture
     @inline def describeChannelFuture(params: DescribeChannelRequest): Future[DescribeChannelResponse] =
       service.describeChannel(params).promise().toFuture
+    @inline def describeInputDeviceFuture(params: DescribeInputDeviceRequest): Future[DescribeInputDeviceResponse] =
+      service.describeInputDevice(params).promise().toFuture
     @inline def describeInputFuture(params: DescribeInputRequest): Future[DescribeInputResponse] =
       service.describeInput(params).promise().toFuture
     @inline def describeInputSecurityGroupFuture(
@@ -170,6 +176,8 @@ package object medialive {
       service.describeSchedule(params).promise().toFuture
     @inline def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] =
       service.listChannels(params).promise().toFuture
+    @inline def listInputDevicesFuture(params: ListInputDevicesRequest): Future[ListInputDevicesResponse] =
+      service.listInputDevices(params).promise().toFuture
     @inline def listInputSecurityGroupsFuture(
         params: ListInputSecurityGroupsRequest
     ): Future[ListInputSecurityGroupsResponse] = service.listInputSecurityGroups(params).promise().toFuture
@@ -200,6 +208,8 @@ package object medialive {
       service.updateChannelClass(params).promise().toFuture
     @inline def updateChannelFuture(params: UpdateChannelRequest): Future[UpdateChannelResponse] =
       service.updateChannel(params).promise().toFuture
+    @inline def updateInputDeviceFuture(params: UpdateInputDeviceRequest): Future[UpdateInputDeviceResponse] =
+      service.updateInputDevice(params).promise().toFuture
     @inline def updateInputFuture(params: UpdateInputRequest): Future[UpdateInputResponse] =
       service.updateInput(params).promise().toFuture
     @inline def updateInputSecurityGroupFuture(
@@ -222,52 +232,55 @@ package medialive {
     def this(config: AWSConfig) = this()
 
     def batchUpdateSchedule(params: BatchUpdateScheduleRequest): Request[BatchUpdateScheduleResponse] = js.native
-    def createChannel(params: CreateChannelRequest): Request[CreateChannelResponse]                   = js.native
-    def createInput(params: CreateInputRequest): Request[CreateInputResponse]                         = js.native
+    def createChannel(params: CreateChannelRequest): Request[CreateChannelResponse] = js.native
+    def createInput(params: CreateInputRequest): Request[CreateInputResponse] = js.native
     def createInputSecurityGroup(params: CreateInputSecurityGroupRequest): Request[CreateInputSecurityGroupResponse] =
       js.native
     def createMultiplex(params: CreateMultiplexRequest): Request[CreateMultiplexResponse] = js.native
     def createMultiplexProgram(params: CreateMultiplexProgramRequest): Request[CreateMultiplexProgramResponse] =
       js.native
-    def createTags(params: CreateTagsRequest): Request[js.Object]                   = js.native
+    def createTags(params: CreateTagsRequest): Request[js.Object] = js.native
     def deleteChannel(params: DeleteChannelRequest): Request[DeleteChannelResponse] = js.native
-    def deleteInput(params: DeleteInputRequest): Request[DeleteInputResponse]       = js.native
+    def deleteInput(params: DeleteInputRequest): Request[DeleteInputResponse] = js.native
     def deleteInputSecurityGroup(params: DeleteInputSecurityGroupRequest): Request[DeleteInputSecurityGroupResponse] =
       js.native
     def deleteMultiplex(params: DeleteMultiplexRequest): Request[DeleteMultiplexResponse] = js.native
     def deleteMultiplexProgram(params: DeleteMultiplexProgramRequest): Request[DeleteMultiplexProgramResponse] =
       js.native
     def deleteReservation(params: DeleteReservationRequest): Request[DeleteReservationResponse] = js.native
-    def deleteSchedule(params: DeleteScheduleRequest): Request[DeleteScheduleResponse]          = js.native
-    def deleteTags(params: DeleteTagsRequest): Request[js.Object]                               = js.native
-    def describeChannel(params: DescribeChannelRequest): Request[DescribeChannelResponse]       = js.native
-    def describeInput(params: DescribeInputRequest): Request[DescribeInputResponse]             = js.native
+    def deleteSchedule(params: DeleteScheduleRequest): Request[DeleteScheduleResponse] = js.native
+    def deleteTags(params: DeleteTagsRequest): Request[js.Object] = js.native
+    def describeChannel(params: DescribeChannelRequest): Request[DescribeChannelResponse] = js.native
+    def describeInput(params: DescribeInputRequest): Request[DescribeInputResponse] = js.native
+    def describeInputDevice(params: DescribeInputDeviceRequest): Request[DescribeInputDeviceResponse] = js.native
     def describeInputSecurityGroup(
         params: DescribeInputSecurityGroupRequest
-    ): Request[DescribeInputSecurityGroupResponse]                                              = js.native
+    ): Request[DescribeInputSecurityGroupResponse] = js.native
     def describeMultiplex(params: DescribeMultiplexRequest): Request[DescribeMultiplexResponse] = js.native
     def describeMultiplexProgram(params: DescribeMultiplexProgramRequest): Request[DescribeMultiplexProgramResponse] =
       js.native
-    def describeOffering(params: DescribeOfferingRequest): Request[DescribeOfferingResponse]          = js.native
+    def describeOffering(params: DescribeOfferingRequest): Request[DescribeOfferingResponse] = js.native
     def describeReservation(params: DescribeReservationRequest): Request[DescribeReservationResponse] = js.native
-    def describeSchedule(params: DescribeScheduleRequest): Request[DescribeScheduleResponse]          = js.native
-    def listChannels(params: ListChannelsRequest): Request[ListChannelsResponse]                      = js.native
+    def describeSchedule(params: DescribeScheduleRequest): Request[DescribeScheduleResponse] = js.native
+    def listChannels(params: ListChannelsRequest): Request[ListChannelsResponse] = js.native
+    def listInputDevices(params: ListInputDevicesRequest): Request[ListInputDevicesResponse] = js.native
     def listInputSecurityGroups(params: ListInputSecurityGroupsRequest): Request[ListInputSecurityGroupsResponse] =
       js.native
-    def listInputs(params: ListInputsRequest): Request[ListInputsResponse]                                  = js.native
+    def listInputs(params: ListInputsRequest): Request[ListInputsResponse] = js.native
     def listMultiplexPrograms(params: ListMultiplexProgramsRequest): Request[ListMultiplexProgramsResponse] = js.native
-    def listMultiplexes(params: ListMultiplexesRequest): Request[ListMultiplexesResponse]                   = js.native
-    def listOfferings(params: ListOfferingsRequest): Request[ListOfferingsResponse]                         = js.native
-    def listReservations(params: ListReservationsRequest): Request[ListReservationsResponse]                = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
-    def purchaseOffering(params: PurchaseOfferingRequest): Request[PurchaseOfferingResponse]                = js.native
-    def startChannel(params: StartChannelRequest): Request[StartChannelResponse]                            = js.native
-    def startMultiplex(params: StartMultiplexRequest): Request[StartMultiplexResponse]                      = js.native
-    def stopChannel(params: StopChannelRequest): Request[StopChannelResponse]                               = js.native
-    def stopMultiplex(params: StopMultiplexRequest): Request[StopMultiplexResponse]                         = js.native
-    def updateChannel(params: UpdateChannelRequest): Request[UpdateChannelResponse]                         = js.native
-    def updateChannelClass(params: UpdateChannelClassRequest): Request[UpdateChannelClassResponse]          = js.native
-    def updateInput(params: UpdateInputRequest): Request[UpdateInputResponse]                               = js.native
+    def listMultiplexes(params: ListMultiplexesRequest): Request[ListMultiplexesResponse] = js.native
+    def listOfferings(params: ListOfferingsRequest): Request[ListOfferingsResponse] = js.native
+    def listReservations(params: ListReservationsRequest): Request[ListReservationsResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def purchaseOffering(params: PurchaseOfferingRequest): Request[PurchaseOfferingResponse] = js.native
+    def startChannel(params: StartChannelRequest): Request[StartChannelResponse] = js.native
+    def startMultiplex(params: StartMultiplexRequest): Request[StartMultiplexResponse] = js.native
+    def stopChannel(params: StopChannelRequest): Request[StopChannelResponse] = js.native
+    def stopMultiplex(params: StopMultiplexRequest): Request[StopMultiplexResponse] = js.native
+    def updateChannel(params: UpdateChannelRequest): Request[UpdateChannelResponse] = js.native
+    def updateChannelClass(params: UpdateChannelClassRequest): Request[UpdateChannelClassResponse] = js.native
+    def updateInput(params: UpdateInputRequest): Request[UpdateInputResponse] = js.native
+    def updateInputDevice(params: UpdateInputDeviceRequest): Request[UpdateInputDeviceResponse] = js.native
     def updateInputSecurityGroup(params: UpdateInputSecurityGroupRequest): Request[UpdateInputSecurityGroupResponse] =
       js.native
     def updateMultiplex(params: UpdateMultiplexRequest): Request[UpdateMultiplexResponse] = js.native
@@ -299,7 +312,7 @@ package medialive {
   sealed trait AacInputType extends js.Any
   object AacInputType extends js.Object {
     val BROADCASTER_MIXED_AD = "BROADCASTER_MIXED_AD".asInstanceOf[AacInputType]
-    val NORMAL               = "NORMAL".asInstanceOf[AacInputType]
+    val NORMAL = "NORMAL".asInstanceOf[AacInputType]
 
     val values = js.Object.freeze(js.Array(BROADCASTER_MIXED_AD, NORMAL))
   }
@@ -312,7 +325,7 @@ package medialive {
   object AacProfile extends js.Object {
     val HEV1 = "HEV1".asInstanceOf[AacProfile]
     val HEV2 = "HEV2".asInstanceOf[AacProfile]
-    val LC   = "LC".asInstanceOf[AacProfile]
+    val LC = "LC".asInstanceOf[AacProfile]
 
     val values = js.Object.freeze(js.Array(HEV1, HEV2, LC))
   }
@@ -336,7 +349,7 @@ package medialive {
   sealed trait AacRawFormat extends js.Any
   object AacRawFormat extends js.Object {
     val LATM_LOAS = "LATM_LOAS".asInstanceOf[AacRawFormat]
-    val NONE      = "NONE".asInstanceOf[AacRawFormat]
+    val NONE = "NONE".asInstanceOf[AacRawFormat]
 
     val values = js.Object.freeze(js.Array(LATM_LOAS, NONE))
   }
@@ -402,10 +415,10 @@ package medialive {
   @js.native
   sealed trait AacVbrQuality extends js.Any
   object AacVbrQuality extends js.Object {
-    val HIGH        = "HIGH".asInstanceOf[AacVbrQuality]
-    val LOW         = "LOW".asInstanceOf[AacVbrQuality]
+    val HIGH = "HIGH".asInstanceOf[AacVbrQuality]
+    val LOW = "LOW".asInstanceOf[AacVbrQuality]
     val MEDIUM_HIGH = "MEDIUM_HIGH".asInstanceOf[AacVbrQuality]
-    val MEDIUM_LOW  = "MEDIUM_LOW".asInstanceOf[AacVbrQuality]
+    val MEDIUM_LOW = "MEDIUM_LOW".asInstanceOf[AacVbrQuality]
 
     val values = js.Object.freeze(js.Array(HIGH, LOW, MEDIUM_HIGH, MEDIUM_LOW))
   }
@@ -416,14 +429,14 @@ package medialive {
   @js.native
   sealed trait Ac3BitstreamMode extends js.Any
   object Ac3BitstreamMode extends js.Object {
-    val COMMENTARY        = "COMMENTARY".asInstanceOf[Ac3BitstreamMode]
-    val COMPLETE_MAIN     = "COMPLETE_MAIN".asInstanceOf[Ac3BitstreamMode]
-    val DIALOGUE          = "DIALOGUE".asInstanceOf[Ac3BitstreamMode]
-    val EMERGENCY         = "EMERGENCY".asInstanceOf[Ac3BitstreamMode]
-    val HEARING_IMPAIRED  = "HEARING_IMPAIRED".asInstanceOf[Ac3BitstreamMode]
+    val COMMENTARY = "COMMENTARY".asInstanceOf[Ac3BitstreamMode]
+    val COMPLETE_MAIN = "COMPLETE_MAIN".asInstanceOf[Ac3BitstreamMode]
+    val DIALOGUE = "DIALOGUE".asInstanceOf[Ac3BitstreamMode]
+    val EMERGENCY = "EMERGENCY".asInstanceOf[Ac3BitstreamMode]
+    val HEARING_IMPAIRED = "HEARING_IMPAIRED".asInstanceOf[Ac3BitstreamMode]
     val MUSIC_AND_EFFECTS = "MUSIC_AND_EFFECTS".asInstanceOf[Ac3BitstreamMode]
     val VISUALLY_IMPAIRED = "VISUALLY_IMPAIRED".asInstanceOf[Ac3BitstreamMode]
-    val VOICE_OVER        = "VOICE_OVER".asInstanceOf[Ac3BitstreamMode]
+    val VOICE_OVER = "VOICE_OVER".asInstanceOf[Ac3BitstreamMode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -445,9 +458,9 @@ package medialive {
   @js.native
   sealed trait Ac3CodingMode extends js.Any
   object Ac3CodingMode extends js.Object {
-    val CODING_MODE_1_0     = "CODING_MODE_1_0".asInstanceOf[Ac3CodingMode]
-    val CODING_MODE_1_1     = "CODING_MODE_1_1".asInstanceOf[Ac3CodingMode]
-    val CODING_MODE_2_0     = "CODING_MODE_2_0".asInstanceOf[Ac3CodingMode]
+    val CODING_MODE_1_0 = "CODING_MODE_1_0".asInstanceOf[Ac3CodingMode]
+    val CODING_MODE_1_1 = "CODING_MODE_1_1".asInstanceOf[Ac3CodingMode]
+    val CODING_MODE_2_0 = "CODING_MODE_2_0".asInstanceOf[Ac3CodingMode]
     val CODING_MODE_3_2_LFE = "CODING_MODE_3_2_LFE".asInstanceOf[Ac3CodingMode]
 
     val values = js.Object.freeze(js.Array(CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_3_2_LFE))
@@ -460,7 +473,7 @@ package medialive {
   sealed trait Ac3DrcProfile extends js.Any
   object Ac3DrcProfile extends js.Object {
     val FILM_STANDARD = "FILM_STANDARD".asInstanceOf[Ac3DrcProfile]
-    val NONE          = "NONE".asInstanceOf[Ac3DrcProfile]
+    val NONE = "NONE".asInstanceOf[Ac3DrcProfile]
 
     val values = js.Object.freeze(js.Array(FILM_STANDARD, NONE))
   }
@@ -472,7 +485,7 @@ package medialive {
   sealed trait Ac3LfeFilter extends js.Any
   object Ac3LfeFilter extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[Ac3LfeFilter]
-    val ENABLED  = "ENABLED".asInstanceOf[Ac3LfeFilter]
+    val ENABLED = "ENABLED".asInstanceOf[Ac3LfeFilter]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -483,7 +496,7 @@ package medialive {
   @js.native
   sealed trait Ac3MetadataControl extends js.Any
   object Ac3MetadataControl extends js.Object {
-    val FOLLOW_INPUT   = "FOLLOW_INPUT".asInstanceOf[Ac3MetadataControl]
+    val FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[Ac3MetadataControl]
     val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[Ac3MetadataControl]
 
     val values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
@@ -532,9 +545,9 @@ package medialive {
   @js.native
   sealed trait AfdSignaling extends js.Any
   object AfdSignaling extends js.Object {
-    val AUTO  = "AUTO".asInstanceOf[AfdSignaling]
+    val AUTO = "AUTO".asInstanceOf[AfdSignaling]
     val FIXED = "FIXED".asInstanceOf[AfdSignaling]
-    val NONE  = "NONE".asInstanceOf[AfdSignaling]
+    val NONE = "NONE".asInstanceOf[AfdSignaling]
 
     val values = js.Object.freeze(js.Array(AUTO, FIXED, NONE))
   }
@@ -658,7 +671,7 @@ package medialive {
     ): AudioChannelMapping = {
       val __obj = js.Dynamic.literal(
         "InputChannelLevels" -> InputChannelLevels.asInstanceOf[js.Any],
-        "OutputChannel"      -> OutputChannel.asInstanceOf[js.Any]
+        "OutputChannel" -> OutputChannel.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AudioChannelMapping]
@@ -729,7 +742,7 @@ package medialive {
     ): AudioDescription = {
       val __obj = js.Dynamic.literal(
         "AudioSelectorName" -> AudioSelectorName.asInstanceOf[js.Any],
-        "Name"              -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       AudioNormalizationSettings.foreach(__v =>
@@ -752,7 +765,7 @@ package medialive {
   @js.native
   sealed trait AudioDescriptionAudioTypeControl extends js.Any
   object AudioDescriptionAudioTypeControl extends js.Object {
-    val FOLLOW_INPUT   = "FOLLOW_INPUT".asInstanceOf[AudioDescriptionAudioTypeControl]
+    val FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[AudioDescriptionAudioTypeControl]
     val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[AudioDescriptionAudioTypeControl]
 
     val values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
@@ -764,7 +777,7 @@ package medialive {
   @js.native
   sealed trait AudioDescriptionLanguageCodeControl extends js.Any
   object AudioDescriptionLanguageCodeControl extends js.Object {
-    val FOLLOW_INPUT   = "FOLLOW_INPUT".asInstanceOf[AudioDescriptionLanguageCodeControl]
+    val FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[AudioDescriptionLanguageCodeControl]
     val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[AudioDescriptionLanguageCodeControl]
 
     val values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
@@ -800,7 +813,7 @@ package medialive {
   @js.native
   sealed trait AudioLanguageSelectionPolicy extends js.Any
   object AudioLanguageSelectionPolicy extends js.Object {
-    val LOOSE  = "LOOSE".asInstanceOf[AudioLanguageSelectionPolicy]
+    val LOOSE = "LOOSE".asInstanceOf[AudioLanguageSelectionPolicy]
     val STRICT = "STRICT".asInstanceOf[AudioLanguageSelectionPolicy]
 
     val values = js.Object.freeze(js.Array(LOOSE, STRICT))
@@ -860,7 +873,7 @@ package medialive {
   @js.native
   sealed trait AudioOnlyHlsSegmentType extends js.Any
   object AudioOnlyHlsSegmentType extends js.Object {
-    val AAC  = "AAC".asInstanceOf[AudioOnlyHlsSegmentType]
+    val AAC = "AAC".asInstanceOf[AudioOnlyHlsSegmentType]
     val FMP4 = "FMP4".asInstanceOf[AudioOnlyHlsSegmentType]
 
     val values = js.Object.freeze(js.Array(AAC, FMP4))
@@ -900,10 +913,10 @@ package medialive {
   @js.native
   sealed trait AudioOnlyHlsTrackType extends js.Any
   object AudioOnlyHlsTrackType extends js.Object {
-    val ALTERNATE_AUDIO_AUTO_SELECT         = "ALTERNATE_AUDIO_AUTO_SELECT".asInstanceOf[AudioOnlyHlsTrackType]
+    val ALTERNATE_AUDIO_AUTO_SELECT = "ALTERNATE_AUDIO_AUTO_SELECT".asInstanceOf[AudioOnlyHlsTrackType]
     val ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT = "ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT".asInstanceOf[AudioOnlyHlsTrackType]
-    val ALTERNATE_AUDIO_NOT_AUTO_SELECT     = "ALTERNATE_AUDIO_NOT_AUTO_SELECT".asInstanceOf[AudioOnlyHlsTrackType]
-    val AUDIO_ONLY_VARIANT_STREAM           = "AUDIO_ONLY_VARIANT_STREAM".asInstanceOf[AudioOnlyHlsTrackType]
+    val ALTERNATE_AUDIO_NOT_AUTO_SELECT = "ALTERNATE_AUDIO_NOT_AUTO_SELECT".asInstanceOf[AudioOnlyHlsTrackType]
+    val AUDIO_ONLY_VARIANT_STREAM = "AUDIO_ONLY_VARIANT_STREAM".asInstanceOf[AudioOnlyHlsTrackType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -967,18 +980,63 @@ package medialive {
   trait AudioSelectorSettings extends js.Object {
     var AudioLanguageSelection: js.UndefOr[AudioLanguageSelection]
     var AudioPidSelection: js.UndefOr[AudioPidSelection]
+    var AudioTrackSelection: js.UndefOr[AudioTrackSelection]
   }
 
   object AudioSelectorSettings {
     @inline
     def apply(
         AudioLanguageSelection: js.UndefOr[AudioLanguageSelection] = js.undefined,
-        AudioPidSelection: js.UndefOr[AudioPidSelection] = js.undefined
+        AudioPidSelection: js.UndefOr[AudioPidSelection] = js.undefined,
+        AudioTrackSelection: js.UndefOr[AudioTrackSelection] = js.undefined
     ): AudioSelectorSettings = {
       val __obj = js.Dynamic.literal()
       AudioLanguageSelection.foreach(__v => __obj.updateDynamic("AudioLanguageSelection")(__v.asInstanceOf[js.Any]))
       AudioPidSelection.foreach(__v => __obj.updateDynamic("AudioPidSelection")(__v.asInstanceOf[js.Any]))
+      AudioTrackSelection.foreach(__v => __obj.updateDynamic("AudioTrackSelection")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AudioSelectorSettings]
+    }
+  }
+
+  /**
+    * Audio Track
+    */
+  @js.native
+  trait AudioTrack extends js.Object {
+    var Track: __integerMin1
+  }
+
+  object AudioTrack {
+    @inline
+    def apply(
+        Track: __integerMin1
+    ): AudioTrack = {
+      val __obj = js.Dynamic.literal(
+        "Track" -> Track.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[AudioTrack]
+    }
+  }
+
+  /**
+    * Audio Track Selection
+    */
+  @js.native
+  trait AudioTrackSelection extends js.Object {
+    var Tracks: __listOfAudioTrack
+  }
+
+  object AudioTrackSelection {
+    @inline
+    def apply(
+        Tracks: __listOfAudioTrack
+    ): AudioTrackSelection = {
+      val __obj = js.Dynamic.literal(
+        "Tracks" -> Tracks.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[AudioTrackSelection]
     }
   }
 
@@ -988,9 +1046,9 @@ package medialive {
   @js.native
   sealed trait AudioType extends js.Any
   object AudioType extends js.Object {
-    val CLEAN_EFFECTS              = "CLEAN_EFFECTS".asInstanceOf[AudioType]
-    val HEARING_IMPAIRED           = "HEARING_IMPAIRED".asInstanceOf[AudioType]
-    val UNDEFINED                  = "UNDEFINED".asInstanceOf[AudioType]
+    val CLEAN_EFFECTS = "CLEAN_EFFECTS".asInstanceOf[AudioType]
+    val HEARING_IMPAIRED = "HEARING_IMPAIRED".asInstanceOf[AudioType]
+    val UNDEFINED = "UNDEFINED".asInstanceOf[AudioType]
     val VISUAL_IMPAIRED_COMMENTARY = "VISUAL_IMPAIRED_COMMENTARY".asInstanceOf[AudioType]
 
     val values = js.Object.freeze(js.Array(CLEAN_EFFECTS, HEARING_IMPAIRED, UNDEFINED, VISUAL_IMPAIRED_COMMENTARY))
@@ -1006,6 +1064,30 @@ package medialive {
     val COMMON = "COMMON".asInstanceOf[AuthenticationScheme]
 
     val values = js.Object.freeze(js.Array(AKAMAI, COMMON))
+  }
+
+  /**
+    * The settings for Automatic Input Failover.
+    */
+  @js.native
+  trait AutomaticInputFailoverSettings extends js.Object {
+    var SecondaryInputId: __string
+    var InputPreference: js.UndefOr[InputPreference]
+  }
+
+  object AutomaticInputFailoverSettings {
+    @inline
+    def apply(
+        SecondaryInputId: __string,
+        InputPreference: js.UndefOr[InputPreference] = js.undefined
+    ): AutomaticInputFailoverSettings = {
+      val __obj = js.Dynamic.literal(
+        "SecondaryInputId" -> SecondaryInputId.asInstanceOf[js.Any]
+      )
+
+      InputPreference.foreach(__v => __obj.updateDynamic("InputPreference")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AutomaticInputFailoverSettings]
+    }
   }
 
   /**
@@ -1037,7 +1119,7 @@ package medialive {
   sealed trait AvailBlankingState extends js.Any
   object AvailBlankingState extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[AvailBlankingState]
-    val ENABLED  = "ENABLED".asInstanceOf[AvailBlankingState]
+    val ENABLED = "ENABLED".asInstanceOf[AvailBlankingState]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -1254,7 +1336,7 @@ package medialive {
   sealed trait BlackoutSlateNetworkEndBlackout extends js.Any
   object BlackoutSlateNetworkEndBlackout extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[BlackoutSlateNetworkEndBlackout]
-    val ENABLED  = "ENABLED".asInstanceOf[BlackoutSlateNetworkEndBlackout]
+    val ENABLED = "ENABLED".asInstanceOf[BlackoutSlateNetworkEndBlackout]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -1266,7 +1348,7 @@ package medialive {
   sealed trait BlackoutSlateState extends js.Any
   object BlackoutSlateState extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[BlackoutSlateState]
-    val ENABLED  = "ENABLED".asInstanceOf[BlackoutSlateState]
+    val ENABLED = "ENABLED".asInstanceOf[BlackoutSlateState]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -1278,8 +1360,8 @@ package medialive {
   sealed trait BurnInAlignment extends js.Any
   object BurnInAlignment extends js.Object {
     val CENTERED = "CENTERED".asInstanceOf[BurnInAlignment]
-    val LEFT     = "LEFT".asInstanceOf[BurnInAlignment]
-    val SMART    = "SMART".asInstanceOf[BurnInAlignment]
+    val LEFT = "LEFT".asInstanceOf[BurnInAlignment]
+    val SMART = "SMART".asInstanceOf[BurnInAlignment]
 
     val values = js.Object.freeze(js.Array(CENTERED, LEFT, SMART))
   }
@@ -1291,7 +1373,7 @@ package medialive {
   sealed trait BurnInBackgroundColor extends js.Any
   object BurnInBackgroundColor extends js.Object {
     val BLACK = "BLACK".asInstanceOf[BurnInBackgroundColor]
-    val NONE  = "NONE".asInstanceOf[BurnInBackgroundColor]
+    val NONE = "NONE".asInstanceOf[BurnInBackgroundColor]
     val WHITE = "WHITE".asInstanceOf[BurnInBackgroundColor]
 
     val values = js.Object.freeze(js.Array(BLACK, NONE, WHITE))
@@ -1370,11 +1452,11 @@ package medialive {
   @js.native
   sealed trait BurnInFontColor extends js.Any
   object BurnInFontColor extends js.Object {
-    val BLACK  = "BLACK".asInstanceOf[BurnInFontColor]
-    val BLUE   = "BLUE".asInstanceOf[BurnInFontColor]
-    val GREEN  = "GREEN".asInstanceOf[BurnInFontColor]
-    val RED    = "RED".asInstanceOf[BurnInFontColor]
-    val WHITE  = "WHITE".asInstanceOf[BurnInFontColor]
+    val BLACK = "BLACK".asInstanceOf[BurnInFontColor]
+    val BLUE = "BLUE".asInstanceOf[BurnInFontColor]
+    val GREEN = "GREEN".asInstanceOf[BurnInFontColor]
+    val RED = "RED".asInstanceOf[BurnInFontColor]
+    val WHITE = "WHITE".asInstanceOf[BurnInFontColor]
     val YELLOW = "YELLOW".asInstanceOf[BurnInFontColor]
 
     val values = js.Object.freeze(js.Array(BLACK, BLUE, GREEN, RED, WHITE, YELLOW))
@@ -1386,11 +1468,11 @@ package medialive {
   @js.native
   sealed trait BurnInOutlineColor extends js.Any
   object BurnInOutlineColor extends js.Object {
-    val BLACK  = "BLACK".asInstanceOf[BurnInOutlineColor]
-    val BLUE   = "BLUE".asInstanceOf[BurnInOutlineColor]
-    val GREEN  = "GREEN".asInstanceOf[BurnInOutlineColor]
-    val RED    = "RED".asInstanceOf[BurnInOutlineColor]
-    val WHITE  = "WHITE".asInstanceOf[BurnInOutlineColor]
+    val BLACK = "BLACK".asInstanceOf[BurnInOutlineColor]
+    val BLUE = "BLUE".asInstanceOf[BurnInOutlineColor]
+    val GREEN = "GREEN".asInstanceOf[BurnInOutlineColor]
+    val RED = "RED".asInstanceOf[BurnInOutlineColor]
+    val WHITE = "WHITE".asInstanceOf[BurnInOutlineColor]
     val YELLOW = "YELLOW".asInstanceOf[BurnInOutlineColor]
 
     val values = js.Object.freeze(js.Array(BLACK, BLUE, GREEN, RED, WHITE, YELLOW))
@@ -1403,7 +1485,7 @@ package medialive {
   sealed trait BurnInShadowColor extends js.Any
   object BurnInShadowColor extends js.Object {
     val BLACK = "BLACK".asInstanceOf[BurnInShadowColor]
-    val NONE  = "NONE".asInstanceOf[BurnInShadowColor]
+    val NONE = "NONE".asInstanceOf[BurnInShadowColor]
     val WHITE = "WHITE".asInstanceOf[BurnInShadowColor]
 
     val values = js.Object.freeze(js.Array(BLACK, NONE, WHITE))
@@ -1415,7 +1497,7 @@ package medialive {
   @js.native
   sealed trait BurnInTeletextGridControl extends js.Any
   object BurnInTeletextGridControl extends js.Object {
-    val FIXED  = "FIXED".asInstanceOf[BurnInTeletextGridControl]
+    val FIXED = "FIXED".asInstanceOf[BurnInTeletextGridControl]
     val SCALED = "SCALED".asInstanceOf[BurnInTeletextGridControl]
 
     val values = js.Object.freeze(js.Array(FIXED, SCALED))
@@ -1444,7 +1526,7 @@ package medialive {
     ): CaptionDescription = {
       val __obj = js.Dynamic.literal(
         "CaptionSelectorName" -> CaptionSelectorName.asInstanceOf[js.Any],
-        "Name"                -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       DestinationSettings.foreach(__v => __obj.updateDynamic("DestinationSettings")(__v.asInstanceOf[js.Any]))
@@ -1544,8 +1626,8 @@ package medialive {
         LanguageDescription: __stringMin1
     ): CaptionLanguageMapping = {
       val __obj = js.Dynamic.literal(
-        "CaptionChannel"      -> CaptionChannel.asInstanceOf[js.Any],
-        "LanguageCode"        -> LanguageCode.asInstanceOf[js.Any],
+        "CaptionChannel" -> CaptionChannel.asInstanceOf[js.Any],
+        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
         "LanguageDescription" -> LanguageDescription.asInstanceOf[js.Any]
       )
 
@@ -1681,7 +1763,7 @@ package medialive {
   @js.native
   sealed trait ChannelClass extends js.Any
   object ChannelClass extends js.Object {
-    val STANDARD        = "STANDARD".asInstanceOf[ChannelClass]
+    val STANDARD = "STANDARD".asInstanceOf[ChannelClass]
     val SINGLE_PIPELINE = "SINGLE_PIPELINE".asInstanceOf[ChannelClass]
 
     val values = js.Object.freeze(js.Array(STANDARD, SINGLE_PIPELINE))
@@ -1712,16 +1794,16 @@ package medialive {
   @js.native
   sealed trait ChannelState extends js.Any
   object ChannelState extends js.Object {
-    val CREATING      = "CREATING".asInstanceOf[ChannelState]
+    val CREATING = "CREATING".asInstanceOf[ChannelState]
     val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[ChannelState]
-    val IDLE          = "IDLE".asInstanceOf[ChannelState]
-    val STARTING      = "STARTING".asInstanceOf[ChannelState]
-    val RUNNING       = "RUNNING".asInstanceOf[ChannelState]
-    val RECOVERING    = "RECOVERING".asInstanceOf[ChannelState]
-    val STOPPING      = "STOPPING".asInstanceOf[ChannelState]
-    val DELETING      = "DELETING".asInstanceOf[ChannelState]
-    val DELETED       = "DELETED".asInstanceOf[ChannelState]
-    val UPDATING      = "UPDATING".asInstanceOf[ChannelState]
+    val IDLE = "IDLE".asInstanceOf[ChannelState]
+    val STARTING = "STARTING".asInstanceOf[ChannelState]
+    val RUNNING = "RUNNING".asInstanceOf[ChannelState]
+    val RECOVERING = "RECOVERING".asInstanceOf[ChannelState]
+    val STOPPING = "STOPPING".asInstanceOf[ChannelState]
+    val DELETING = "DELETING".asInstanceOf[ChannelState]
+    val DELETED = "DELETED".asInstanceOf[ChannelState]
+    val UPDATING = "UPDATING".asInstanceOf[ChannelState]
     val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[ChannelState]
 
     val values = js.Object.freeze(
@@ -1886,6 +1968,7 @@ package medialive {
   @js.native
   trait CreateInputRequest extends js.Object {
     var Destinations: js.UndefOr[__listOfInputDestinationRequest]
+    var InputDevices: js.UndefOr[__listOfInputDeviceSettings]
     var InputSecurityGroups: js.UndefOr[__listOf__string]
     var MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlowRequest]
     var Name: js.UndefOr[__string]
@@ -1901,6 +1984,7 @@ package medialive {
     @inline
     def apply(
         Destinations: js.UndefOr[__listOfInputDestinationRequest] = js.undefined,
+        InputDevices: js.UndefOr[__listOfInputDeviceSettings] = js.undefined,
         InputSecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
         MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlowRequest] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
@@ -1913,6 +1997,7 @@ package medialive {
     ): CreateInputRequest = {
       val __obj = js.Dynamic.literal()
       Destinations.foreach(__v => __obj.updateDynamic("Destinations")(__v.asInstanceOf[js.Any]))
+      InputDevices.foreach(__v => __obj.updateDynamic("InputDevices")(__v.asInstanceOf[js.Any]))
       InputSecurityGroups.foreach(__v => __obj.updateDynamic("InputSecurityGroups")(__v.asInstanceOf[js.Any]))
       MediaConnectFlows.foreach(__v => __obj.updateDynamic("MediaConnectFlows")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -2006,10 +2091,10 @@ package medialive {
         RequestId: __string
     ): CreateMultiplexProgramRequest = {
       val __obj = js.Dynamic.literal(
-        "MultiplexId"              -> MultiplexId.asInstanceOf[js.Any],
+        "MultiplexId" -> MultiplexId.asInstanceOf[js.Any],
         "MultiplexProgramSettings" -> MultiplexProgramSettings.asInstanceOf[js.Any],
-        "ProgramName"              -> ProgramName.asInstanceOf[js.Any],
-        "RequestId"                -> RequestId.asInstanceOf[js.Any]
+        "ProgramName" -> ProgramName.asInstanceOf[js.Any],
+        "RequestId" -> RequestId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateMultiplexProgramRequest]
@@ -2059,8 +2144,8 @@ package medialive {
       val __obj = js.Dynamic.literal(
         "AvailabilityZones" -> AvailabilityZones.asInstanceOf[js.Any],
         "MultiplexSettings" -> MultiplexSettings.asInstanceOf[js.Any],
-        "Name"              -> Name.asInstanceOf[js.Any],
-        "RequestId"         -> RequestId.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any],
+        "RequestId" -> RequestId.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -2531,7 +2616,7 @@ package medialive {
     ): DeleteTagsRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteTagsRequest]
@@ -2621,6 +2706,73 @@ package medialive {
   }
 
   /**
+    * Placeholder documentation for DescribeInputDeviceRequest
+    */
+  @js.native
+  trait DescribeInputDeviceRequest extends js.Object {
+    var InputDeviceId: __string
+  }
+
+  object DescribeInputDeviceRequest {
+    @inline
+    def apply(
+        InputDeviceId: __string
+    ): DescribeInputDeviceRequest = {
+      val __obj = js.Dynamic.literal(
+        "InputDeviceId" -> InputDeviceId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeInputDeviceRequest]
+    }
+  }
+
+  /**
+    * Placeholder documentation for DescribeInputDeviceResponse
+    */
+  @js.native
+  trait DescribeInputDeviceResponse extends js.Object {
+    var Arn: js.UndefOr[__string]
+    var ConnectionState: js.UndefOr[InputDeviceConnectionState]
+    var DeviceSettingsSyncState: js.UndefOr[DeviceSettingsSyncState]
+    var HdDeviceSettings: js.UndefOr[InputDeviceHdSettings]
+    var Id: js.UndefOr[__string]
+    var MacAddress: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
+    var NetworkSettings: js.UndefOr[InputDeviceNetworkSettings]
+    var SerialNumber: js.UndefOr[__string]
+    var Type: js.UndefOr[InputDeviceType]
+  }
+
+  object DescribeInputDeviceResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        ConnectionState: js.UndefOr[InputDeviceConnectionState] = js.undefined,
+        DeviceSettingsSyncState: js.UndefOr[DeviceSettingsSyncState] = js.undefined,
+        HdDeviceSettings: js.UndefOr[InputDeviceHdSettings] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined,
+        MacAddress: js.UndefOr[__string] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        NetworkSettings: js.UndefOr[InputDeviceNetworkSettings] = js.undefined,
+        SerialNumber: js.UndefOr[__string] = js.undefined,
+        Type: js.UndefOr[InputDeviceType] = js.undefined
+    ): DescribeInputDeviceResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      ConnectionState.foreach(__v => __obj.updateDynamic("ConnectionState")(__v.asInstanceOf[js.Any]))
+      DeviceSettingsSyncState.foreach(__v => __obj.updateDynamic("DeviceSettingsSyncState")(__v.asInstanceOf[js.Any]))
+      HdDeviceSettings.foreach(__v => __obj.updateDynamic("HdDeviceSettings")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      MacAddress.foreach(__v => __obj.updateDynamic("MacAddress")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NetworkSettings.foreach(__v => __obj.updateDynamic("NetworkSettings")(__v.asInstanceOf[js.Any]))
+      SerialNumber.foreach(__v => __obj.updateDynamic("SerialNumber")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeInputDeviceResponse]
+    }
+  }
+
+  /**
     * Placeholder documentation for DescribeInputRequest
     */
   @js.native
@@ -2651,6 +2803,7 @@ package medialive {
     var Destinations: js.UndefOr[__listOfInputDestination]
     var Id: js.UndefOr[__string]
     var InputClass: js.UndefOr[InputClass]
+    var InputDevices: js.UndefOr[__listOfInputDeviceSettings]
     var InputSourceType: js.UndefOr[InputSourceType]
     var MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlow]
     var Name: js.UndefOr[__string]
@@ -2670,6 +2823,7 @@ package medialive {
         Destinations: js.UndefOr[__listOfInputDestination] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
         InputClass: js.UndefOr[InputClass] = js.undefined,
+        InputDevices: js.UndefOr[__listOfInputDeviceSettings] = js.undefined,
         InputSourceType: js.UndefOr[InputSourceType] = js.undefined,
         MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlow] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
@@ -2686,6 +2840,7 @@ package medialive {
       Destinations.foreach(__v => __obj.updateDynamic("Destinations")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       InputClass.foreach(__v => __obj.updateDynamic("InputClass")(__v.asInstanceOf[js.Any]))
+      InputDevices.foreach(__v => __obj.updateDynamic("InputDevices")(__v.asInstanceOf[js.Any]))
       InputSourceType.foreach(__v => __obj.updateDynamic("InputSourceType")(__v.asInstanceOf[js.Any]))
       MediaConnectFlows.foreach(__v => __obj.updateDynamic("MediaConnectFlows")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -3084,6 +3239,18 @@ package medialive {
   }
 
   /**
+    * The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
+    */
+  @js.native
+  sealed trait DeviceSettingsSyncState extends js.Any
+  object DeviceSettingsSyncState extends js.Object {
+    val SYNCED = "SYNCED".asInstanceOf[DeviceSettingsSyncState]
+    val SYNCING = "SYNCING".asInstanceOf[DeviceSettingsSyncState]
+
+    val values = js.Object.freeze(js.Array(SYNCED, SYNCING))
+  }
+
+  /**
     * DVB Network Information Table (NIT)
     */
   @js.native
@@ -3101,7 +3268,7 @@ package medialive {
         RepInterval: js.UndefOr[__integerMin25Max10000] = js.undefined
     ): DvbNitSettings = {
       val __obj = js.Dynamic.literal(
-        "NetworkId"   -> NetworkId.asInstanceOf[js.Any],
+        "NetworkId" -> NetworkId.asInstanceOf[js.Any],
         "NetworkName" -> NetworkName.asInstanceOf[js.Any]
       )
 
@@ -3116,10 +3283,10 @@ package medialive {
   @js.native
   sealed trait DvbSdtOutputSdt extends js.Any
   object DvbSdtOutputSdt extends js.Object {
-    val SDT_FOLLOW            = "SDT_FOLLOW".asInstanceOf[DvbSdtOutputSdt]
+    val SDT_FOLLOW = "SDT_FOLLOW".asInstanceOf[DvbSdtOutputSdt]
     val SDT_FOLLOW_IF_PRESENT = "SDT_FOLLOW_IF_PRESENT".asInstanceOf[DvbSdtOutputSdt]
-    val SDT_MANUAL            = "SDT_MANUAL".asInstanceOf[DvbSdtOutputSdt]
-    val SDT_NONE              = "SDT_NONE".asInstanceOf[DvbSdtOutputSdt]
+    val SDT_MANUAL = "SDT_MANUAL".asInstanceOf[DvbSdtOutputSdt]
+    val SDT_NONE = "SDT_NONE".asInstanceOf[DvbSdtOutputSdt]
 
     val values = js.Object.freeze(js.Array(SDT_FOLLOW, SDT_FOLLOW_IF_PRESENT, SDT_MANUAL, SDT_NONE))
   }
@@ -3159,8 +3326,8 @@ package medialive {
   sealed trait DvbSubDestinationAlignment extends js.Any
   object DvbSubDestinationAlignment extends js.Object {
     val CENTERED = "CENTERED".asInstanceOf[DvbSubDestinationAlignment]
-    val LEFT     = "LEFT".asInstanceOf[DvbSubDestinationAlignment]
-    val SMART    = "SMART".asInstanceOf[DvbSubDestinationAlignment]
+    val LEFT = "LEFT".asInstanceOf[DvbSubDestinationAlignment]
+    val SMART = "SMART".asInstanceOf[DvbSubDestinationAlignment]
 
     val values = js.Object.freeze(js.Array(CENTERED, LEFT, SMART))
   }
@@ -3172,7 +3339,7 @@ package medialive {
   sealed trait DvbSubDestinationBackgroundColor extends js.Any
   object DvbSubDestinationBackgroundColor extends js.Object {
     val BLACK = "BLACK".asInstanceOf[DvbSubDestinationBackgroundColor]
-    val NONE  = "NONE".asInstanceOf[DvbSubDestinationBackgroundColor]
+    val NONE = "NONE".asInstanceOf[DvbSubDestinationBackgroundColor]
     val WHITE = "WHITE".asInstanceOf[DvbSubDestinationBackgroundColor]
 
     val values = js.Object.freeze(js.Array(BLACK, NONE, WHITE))
@@ -3184,11 +3351,11 @@ package medialive {
   @js.native
   sealed trait DvbSubDestinationFontColor extends js.Any
   object DvbSubDestinationFontColor extends js.Object {
-    val BLACK  = "BLACK".asInstanceOf[DvbSubDestinationFontColor]
-    val BLUE   = "BLUE".asInstanceOf[DvbSubDestinationFontColor]
-    val GREEN  = "GREEN".asInstanceOf[DvbSubDestinationFontColor]
-    val RED    = "RED".asInstanceOf[DvbSubDestinationFontColor]
-    val WHITE  = "WHITE".asInstanceOf[DvbSubDestinationFontColor]
+    val BLACK = "BLACK".asInstanceOf[DvbSubDestinationFontColor]
+    val BLUE = "BLUE".asInstanceOf[DvbSubDestinationFontColor]
+    val GREEN = "GREEN".asInstanceOf[DvbSubDestinationFontColor]
+    val RED = "RED".asInstanceOf[DvbSubDestinationFontColor]
+    val WHITE = "WHITE".asInstanceOf[DvbSubDestinationFontColor]
     val YELLOW = "YELLOW".asInstanceOf[DvbSubDestinationFontColor]
 
     val values = js.Object.freeze(js.Array(BLACK, BLUE, GREEN, RED, WHITE, YELLOW))
@@ -3200,11 +3367,11 @@ package medialive {
   @js.native
   sealed trait DvbSubDestinationOutlineColor extends js.Any
   object DvbSubDestinationOutlineColor extends js.Object {
-    val BLACK  = "BLACK".asInstanceOf[DvbSubDestinationOutlineColor]
-    val BLUE   = "BLUE".asInstanceOf[DvbSubDestinationOutlineColor]
-    val GREEN  = "GREEN".asInstanceOf[DvbSubDestinationOutlineColor]
-    val RED    = "RED".asInstanceOf[DvbSubDestinationOutlineColor]
-    val WHITE  = "WHITE".asInstanceOf[DvbSubDestinationOutlineColor]
+    val BLACK = "BLACK".asInstanceOf[DvbSubDestinationOutlineColor]
+    val BLUE = "BLUE".asInstanceOf[DvbSubDestinationOutlineColor]
+    val GREEN = "GREEN".asInstanceOf[DvbSubDestinationOutlineColor]
+    val RED = "RED".asInstanceOf[DvbSubDestinationOutlineColor]
+    val WHITE = "WHITE".asInstanceOf[DvbSubDestinationOutlineColor]
     val YELLOW = "YELLOW".asInstanceOf[DvbSubDestinationOutlineColor]
 
     val values = js.Object.freeze(js.Array(BLACK, BLUE, GREEN, RED, WHITE, YELLOW))
@@ -3284,7 +3451,7 @@ package medialive {
   sealed trait DvbSubDestinationShadowColor extends js.Any
   object DvbSubDestinationShadowColor extends js.Object {
     val BLACK = "BLACK".asInstanceOf[DvbSubDestinationShadowColor]
-    val NONE  = "NONE".asInstanceOf[DvbSubDestinationShadowColor]
+    val NONE = "NONE".asInstanceOf[DvbSubDestinationShadowColor]
     val WHITE = "WHITE".asInstanceOf[DvbSubDestinationShadowColor]
 
     val values = js.Object.freeze(js.Array(BLACK, NONE, WHITE))
@@ -3296,7 +3463,7 @@ package medialive {
   @js.native
   sealed trait DvbSubDestinationTeletextGridControl extends js.Any
   object DvbSubDestinationTeletextGridControl extends js.Object {
-    val FIXED  = "FIXED".asInstanceOf[DvbSubDestinationTeletextGridControl]
+    val FIXED = "FIXED".asInstanceOf[DvbSubDestinationTeletextGridControl]
     val SCALED = "SCALED".asInstanceOf[DvbSubDestinationTeletextGridControl]
 
     val values = js.Object.freeze(js.Array(FIXED, SCALED))
@@ -3347,7 +3514,7 @@ package medialive {
   sealed trait Eac3AttenuationControl extends js.Any
   object Eac3AttenuationControl extends js.Object {
     val ATTENUATE_3_DB = "ATTENUATE_3_DB".asInstanceOf[Eac3AttenuationControl]
-    val NONE           = "NONE".asInstanceOf[Eac3AttenuationControl]
+    val NONE = "NONE".asInstanceOf[Eac3AttenuationControl]
 
     val values = js.Object.freeze(js.Array(ATTENUATE_3_DB, NONE))
   }
@@ -3358,10 +3525,10 @@ package medialive {
   @js.native
   sealed trait Eac3BitstreamMode extends js.Any
   object Eac3BitstreamMode extends js.Object {
-    val COMMENTARY        = "COMMENTARY".asInstanceOf[Eac3BitstreamMode]
-    val COMPLETE_MAIN     = "COMPLETE_MAIN".asInstanceOf[Eac3BitstreamMode]
-    val EMERGENCY         = "EMERGENCY".asInstanceOf[Eac3BitstreamMode]
-    val HEARING_IMPAIRED  = "HEARING_IMPAIRED".asInstanceOf[Eac3BitstreamMode]
+    val COMMENTARY = "COMMENTARY".asInstanceOf[Eac3BitstreamMode]
+    val COMPLETE_MAIN = "COMPLETE_MAIN".asInstanceOf[Eac3BitstreamMode]
+    val EMERGENCY = "EMERGENCY".asInstanceOf[Eac3BitstreamMode]
+    val HEARING_IMPAIRED = "HEARING_IMPAIRED".asInstanceOf[Eac3BitstreamMode]
     val VISUALLY_IMPAIRED = "VISUALLY_IMPAIRED".asInstanceOf[Eac3BitstreamMode]
 
     val values = js.Object.freeze(js.Array(COMMENTARY, COMPLETE_MAIN, EMERGENCY, HEARING_IMPAIRED, VISUALLY_IMPAIRED))
@@ -3387,7 +3554,7 @@ package medialive {
   sealed trait Eac3DcFilter extends js.Any
   object Eac3DcFilter extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[Eac3DcFilter]
-    val ENABLED  = "ENABLED".asInstanceOf[Eac3DcFilter]
+    val ENABLED = "ENABLED".asInstanceOf[Eac3DcFilter]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -3398,12 +3565,12 @@ package medialive {
   @js.native
   sealed trait Eac3DrcLine extends js.Any
   object Eac3DrcLine extends js.Object {
-    val FILM_LIGHT     = "FILM_LIGHT".asInstanceOf[Eac3DrcLine]
-    val FILM_STANDARD  = "FILM_STANDARD".asInstanceOf[Eac3DrcLine]
-    val MUSIC_LIGHT    = "MUSIC_LIGHT".asInstanceOf[Eac3DrcLine]
+    val FILM_LIGHT = "FILM_LIGHT".asInstanceOf[Eac3DrcLine]
+    val FILM_STANDARD = "FILM_STANDARD".asInstanceOf[Eac3DrcLine]
+    val MUSIC_LIGHT = "MUSIC_LIGHT".asInstanceOf[Eac3DrcLine]
     val MUSIC_STANDARD = "MUSIC_STANDARD".asInstanceOf[Eac3DrcLine]
-    val NONE           = "NONE".asInstanceOf[Eac3DrcLine]
-    val SPEECH         = "SPEECH".asInstanceOf[Eac3DrcLine]
+    val NONE = "NONE".asInstanceOf[Eac3DrcLine]
+    val SPEECH = "SPEECH".asInstanceOf[Eac3DrcLine]
 
     val values = js.Object.freeze(js.Array(FILM_LIGHT, FILM_STANDARD, MUSIC_LIGHT, MUSIC_STANDARD, NONE, SPEECH))
   }
@@ -3414,12 +3581,12 @@ package medialive {
   @js.native
   sealed trait Eac3DrcRf extends js.Any
   object Eac3DrcRf extends js.Object {
-    val FILM_LIGHT     = "FILM_LIGHT".asInstanceOf[Eac3DrcRf]
-    val FILM_STANDARD  = "FILM_STANDARD".asInstanceOf[Eac3DrcRf]
-    val MUSIC_LIGHT    = "MUSIC_LIGHT".asInstanceOf[Eac3DrcRf]
+    val FILM_LIGHT = "FILM_LIGHT".asInstanceOf[Eac3DrcRf]
+    val FILM_STANDARD = "FILM_STANDARD".asInstanceOf[Eac3DrcRf]
+    val MUSIC_LIGHT = "MUSIC_LIGHT".asInstanceOf[Eac3DrcRf]
     val MUSIC_STANDARD = "MUSIC_STANDARD".asInstanceOf[Eac3DrcRf]
-    val NONE           = "NONE".asInstanceOf[Eac3DrcRf]
-    val SPEECH         = "SPEECH".asInstanceOf[Eac3DrcRf]
+    val NONE = "NONE".asInstanceOf[Eac3DrcRf]
+    val SPEECH = "SPEECH".asInstanceOf[Eac3DrcRf]
 
     val values = js.Object.freeze(js.Array(FILM_LIGHT, FILM_STANDARD, MUSIC_LIGHT, MUSIC_STANDARD, NONE, SPEECH))
   }
@@ -3430,7 +3597,7 @@ package medialive {
   @js.native
   sealed trait Eac3LfeControl extends js.Any
   object Eac3LfeControl extends js.Object {
-    val LFE    = "LFE".asInstanceOf[Eac3LfeControl]
+    val LFE = "LFE".asInstanceOf[Eac3LfeControl]
     val NO_LFE = "NO_LFE".asInstanceOf[Eac3LfeControl]
 
     val values = js.Object.freeze(js.Array(LFE, NO_LFE))
@@ -3443,7 +3610,7 @@ package medialive {
   sealed trait Eac3LfeFilter extends js.Any
   object Eac3LfeFilter extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[Eac3LfeFilter]
-    val ENABLED  = "ENABLED".asInstanceOf[Eac3LfeFilter]
+    val ENABLED = "ENABLED".asInstanceOf[Eac3LfeFilter]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -3454,7 +3621,7 @@ package medialive {
   @js.native
   sealed trait Eac3MetadataControl extends js.Any
   object Eac3MetadataControl extends js.Object {
-    val FOLLOW_INPUT   = "FOLLOW_INPUT".asInstanceOf[Eac3MetadataControl]
+    val FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[Eac3MetadataControl]
     val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[Eac3MetadataControl]
 
     val values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
@@ -3467,7 +3634,7 @@ package medialive {
   sealed trait Eac3PassthroughControl extends js.Any
   object Eac3PassthroughControl extends js.Object {
     val NO_PASSTHROUGH = "NO_PASSTHROUGH".asInstanceOf[Eac3PassthroughControl]
-    val WHEN_POSSIBLE  = "WHEN_POSSIBLE".asInstanceOf[Eac3PassthroughControl]
+    val WHEN_POSSIBLE = "WHEN_POSSIBLE".asInstanceOf[Eac3PassthroughControl]
 
     val values = js.Object.freeze(js.Array(NO_PASSTHROUGH, WHEN_POSSIBLE))
   }
@@ -3478,7 +3645,7 @@ package medialive {
   @js.native
   sealed trait Eac3PhaseControl extends js.Any
   object Eac3PhaseControl extends js.Object {
-    val NO_SHIFT         = "NO_SHIFT".asInstanceOf[Eac3PhaseControl]
+    val NO_SHIFT = "NO_SHIFT".asInstanceOf[Eac3PhaseControl]
     val SHIFT_90_DEGREES = "SHIFT_90_DEGREES".asInstanceOf[Eac3PhaseControl]
 
     val values = js.Object.freeze(js.Array(NO_SHIFT, SHIFT_90_DEGREES))
@@ -3566,9 +3733,9 @@ package medialive {
   @js.native
   sealed trait Eac3StereoDownmix extends js.Any
   object Eac3StereoDownmix extends js.Object {
-    val DPL2          = "DPL2".asInstanceOf[Eac3StereoDownmix]
-    val LO_RO         = "LO_RO".asInstanceOf[Eac3StereoDownmix]
-    val LT_RT         = "LT_RT".asInstanceOf[Eac3StereoDownmix]
+    val DPL2 = "DPL2".asInstanceOf[Eac3StereoDownmix]
+    val LO_RO = "LO_RO".asInstanceOf[Eac3StereoDownmix]
+    val LT_RT = "LT_RT".asInstanceOf[Eac3StereoDownmix]
     val NOT_INDICATED = "NOT_INDICATED".asInstanceOf[Eac3StereoDownmix]
 
     val values = js.Object.freeze(js.Array(DPL2, LO_RO, LT_RT, NOT_INDICATED))
@@ -3580,8 +3747,8 @@ package medialive {
   @js.native
   sealed trait Eac3SurroundExMode extends js.Any
   object Eac3SurroundExMode extends js.Object {
-    val DISABLED      = "DISABLED".asInstanceOf[Eac3SurroundExMode]
-    val ENABLED       = "ENABLED".asInstanceOf[Eac3SurroundExMode]
+    val DISABLED = "DISABLED".asInstanceOf[Eac3SurroundExMode]
+    val ENABLED = "ENABLED".asInstanceOf[Eac3SurroundExMode]
     val NOT_INDICATED = "NOT_INDICATED".asInstanceOf[Eac3SurroundExMode]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED, NOT_INDICATED))
@@ -3593,8 +3760,8 @@ package medialive {
   @js.native
   sealed trait Eac3SurroundMode extends js.Any
   object Eac3SurroundMode extends js.Object {
-    val DISABLED      = "DISABLED".asInstanceOf[Eac3SurroundMode]
-    val ENABLED       = "ENABLED".asInstanceOf[Eac3SurroundMode]
+    val DISABLED = "DISABLED".asInstanceOf[Eac3SurroundMode]
+    val ENABLED = "ENABLED".asInstanceOf[Eac3SurroundMode]
     val NOT_INDICATED = "NOT_INDICATED".asInstanceOf[Eac3SurroundMode]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED, NOT_INDICATED))
@@ -3606,7 +3773,7 @@ package medialive {
   @js.native
   sealed trait EmbeddedConvert608To708 extends js.Any
   object EmbeddedConvert608To708 extends js.Object {
-    val DISABLED  = "DISABLED".asInstanceOf[EmbeddedConvert608To708]
+    val DISABLED = "DISABLED".asInstanceOf[EmbeddedConvert608To708]
     val UPCONVERT = "UPCONVERT".asInstanceOf[EmbeddedConvert608To708]
 
     val values = js.Object.freeze(js.Array(DISABLED, UPCONVERT))
@@ -3651,7 +3818,7 @@ package medialive {
   sealed trait EmbeddedScte20Detection extends js.Any
   object EmbeddedScte20Detection extends js.Object {
     val AUTO = "AUTO".asInstanceOf[EmbeddedScte20Detection]
-    val OFF  = "OFF".asInstanceOf[EmbeddedScte20Detection]
+    val OFF = "OFF".asInstanceOf[EmbeddedScte20Detection]
 
     val values = js.Object.freeze(js.Array(AUTO, OFF))
   }
@@ -3697,6 +3864,7 @@ package medialive {
     var AvailConfiguration: js.UndefOr[AvailConfiguration]
     var BlackoutSlate: js.UndefOr[BlackoutSlate]
     var CaptionDescriptions: js.UndefOr[__listOfCaptionDescription]
+    var FeatureActivations: js.UndefOr[FeatureActivations]
     var GlobalConfiguration: js.UndefOr[GlobalConfiguration]
     var NielsenConfiguration: js.UndefOr[NielsenConfiguration]
   }
@@ -3712,13 +3880,14 @@ package medialive {
         AvailConfiguration: js.UndefOr[AvailConfiguration] = js.undefined,
         BlackoutSlate: js.UndefOr[BlackoutSlate] = js.undefined,
         CaptionDescriptions: js.UndefOr[__listOfCaptionDescription] = js.undefined,
+        FeatureActivations: js.UndefOr[FeatureActivations] = js.undefined,
         GlobalConfiguration: js.UndefOr[GlobalConfiguration] = js.undefined,
         NielsenConfiguration: js.UndefOr[NielsenConfiguration] = js.undefined
     ): EncoderSettings = {
       val __obj = js.Dynamic.literal(
         "AudioDescriptions" -> AudioDescriptions.asInstanceOf[js.Any],
-        "OutputGroups"      -> OutputGroups.asInstanceOf[js.Any],
-        "TimecodeConfig"    -> TimecodeConfig.asInstanceOf[js.Any],
+        "OutputGroups" -> OutputGroups.asInstanceOf[js.Any],
+        "TimecodeConfig" -> TimecodeConfig.asInstanceOf[js.Any],
         "VideoDescriptions" -> VideoDescriptions.asInstanceOf[js.Any]
       )
 
@@ -3726,10 +3895,44 @@ package medialive {
       AvailConfiguration.foreach(__v => __obj.updateDynamic("AvailConfiguration")(__v.asInstanceOf[js.Any]))
       BlackoutSlate.foreach(__v => __obj.updateDynamic("BlackoutSlate")(__v.asInstanceOf[js.Any]))
       CaptionDescriptions.foreach(__v => __obj.updateDynamic("CaptionDescriptions")(__v.asInstanceOf[js.Any]))
+      FeatureActivations.foreach(__v => __obj.updateDynamic("FeatureActivations")(__v.asInstanceOf[js.Any]))
       GlobalConfiguration.foreach(__v => __obj.updateDynamic("GlobalConfiguration")(__v.asInstanceOf[js.Any]))
       NielsenConfiguration.foreach(__v => __obj.updateDynamic("NielsenConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EncoderSettings]
     }
+  }
+
+  /**
+    * Feature Activations
+    */
+  @js.native
+  trait FeatureActivations extends js.Object {
+    var InputPrepareScheduleActions: js.UndefOr[FeatureActivationsInputPrepareScheduleActions]
+  }
+
+  object FeatureActivations {
+    @inline
+    def apply(
+        InputPrepareScheduleActions: js.UndefOr[FeatureActivationsInputPrepareScheduleActions] = js.undefined
+    ): FeatureActivations = {
+      val __obj = js.Dynamic.literal()
+      InputPrepareScheduleActions.foreach(__v =>
+        __obj.updateDynamic("InputPrepareScheduleActions")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[FeatureActivations]
+    }
+  }
+
+  /**
+    * Feature Activations Input Prepare Schedule Actions
+    */
+  @js.native
+  sealed trait FeatureActivationsInputPrepareScheduleActions extends js.Any
+  object FeatureActivationsInputPrepareScheduleActions extends js.Object {
+    val DISABLED = "DISABLED".asInstanceOf[FeatureActivationsInputPrepareScheduleActions]
+    val ENABLED = "ENABLED".asInstanceOf[FeatureActivationsInputPrepareScheduleActions]
+
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -3738,7 +3941,7 @@ package medialive {
   @js.native
   sealed trait FecOutputIncludeFec extends js.Any
   object FecOutputIncludeFec extends js.Object {
-    val COLUMN         = "COLUMN".asInstanceOf[FecOutputIncludeFec]
+    val COLUMN = "COLUMN".asInstanceOf[FecOutputIncludeFec]
     val COLUMN_AND_ROW = "COLUMN_AND_ROW".asInstanceOf[FecOutputIncludeFec]
 
     val values = js.Object.freeze(js.Array(COLUMN, COLUMN_AND_ROW))
@@ -3831,17 +4034,47 @@ package medialive {
   @js.native
   trait Fmp4HlsSettings extends js.Object {
     var AudioRenditionSets: js.UndefOr[__string]
+    var NielsenId3Behavior: js.UndefOr[Fmp4NielsenId3Behavior]
+    var TimedMetadataBehavior: js.UndefOr[Fmp4TimedMetadataBehavior]
   }
 
   object Fmp4HlsSettings {
     @inline
     def apply(
-        AudioRenditionSets: js.UndefOr[__string] = js.undefined
+        AudioRenditionSets: js.UndefOr[__string] = js.undefined,
+        NielsenId3Behavior: js.UndefOr[Fmp4NielsenId3Behavior] = js.undefined,
+        TimedMetadataBehavior: js.UndefOr[Fmp4TimedMetadataBehavior] = js.undefined
     ): Fmp4HlsSettings = {
       val __obj = js.Dynamic.literal()
       AudioRenditionSets.foreach(__v => __obj.updateDynamic("AudioRenditionSets")(__v.asInstanceOf[js.Any]))
+      NielsenId3Behavior.foreach(__v => __obj.updateDynamic("NielsenId3Behavior")(__v.asInstanceOf[js.Any]))
+      TimedMetadataBehavior.foreach(__v => __obj.updateDynamic("TimedMetadataBehavior")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Fmp4HlsSettings]
     }
+  }
+
+  /**
+    * Fmp4 Nielsen Id3 Behavior
+    */
+  @js.native
+  sealed trait Fmp4NielsenId3Behavior extends js.Any
+  object Fmp4NielsenId3Behavior extends js.Object {
+    val NO_PASSTHROUGH = "NO_PASSTHROUGH".asInstanceOf[Fmp4NielsenId3Behavior]
+    val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[Fmp4NielsenId3Behavior]
+
+    val values = js.Object.freeze(js.Array(NO_PASSTHROUGH, PASSTHROUGH))
+  }
+
+  /**
+    * Fmp4 Timed Metadata Behavior
+    */
+  @js.native
+  sealed trait Fmp4TimedMetadataBehavior extends js.Any
+  object Fmp4TimedMetadataBehavior extends js.Object {
+    val NO_PASSTHROUGH = "NO_PASSTHROUGH".asInstanceOf[Fmp4TimedMetadataBehavior]
+    val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[Fmp4TimedMetadataBehavior]
+
+    val values = js.Object.freeze(js.Array(NO_PASSTHROUGH, PASSTHROUGH))
   }
 
   /**
@@ -3860,7 +4093,7 @@ package medialive {
         ReferenceActionName: __string
     ): FollowModeScheduleActionStartSettings = {
       val __obj = js.Dynamic.literal(
-        "FollowPoint"         -> FollowPoint.asInstanceOf[js.Any],
+        "FollowPoint" -> FollowPoint.asInstanceOf[js.Any],
         "ReferenceActionName" -> ReferenceActionName.asInstanceOf[js.Any]
       )
 
@@ -3874,7 +4107,7 @@ package medialive {
   @js.native
   sealed trait FollowPoint extends js.Any
   object FollowPoint extends js.Object {
-    val END   = "END".asInstanceOf[FollowPoint]
+    val END = "END".asInstanceOf[FollowPoint]
     val START = "START".asInstanceOf[FollowPoint]
 
     val values = js.Object.freeze(js.Array(END, START))
@@ -3908,7 +4141,7 @@ package medialive {
   sealed trait FrameCaptureIntervalUnit extends js.Any
   object FrameCaptureIntervalUnit extends js.Object {
     val MILLISECONDS = "MILLISECONDS".asInstanceOf[FrameCaptureIntervalUnit]
-    val SECONDS      = "SECONDS".asInstanceOf[FrameCaptureIntervalUnit]
+    val SECONDS = "SECONDS".asInstanceOf[FrameCaptureIntervalUnit]
 
     val values = js.Object.freeze(js.Array(MILLISECONDS, SECONDS))
   }
@@ -3998,7 +4231,7 @@ package medialive {
   @js.native
   sealed trait GlobalConfigurationInputEndAction extends js.Any
   object GlobalConfigurationInputEndAction extends js.Object {
-    val NONE                   = "NONE".asInstanceOf[GlobalConfigurationInputEndAction]
+    val NONE = "NONE".asInstanceOf[GlobalConfigurationInputEndAction]
     val SWITCH_AND_LOOP_INPUTS = "SWITCH_AND_LOOP_INPUTS".asInstanceOf[GlobalConfigurationInputEndAction]
 
     val values = js.Object.freeze(js.Array(NONE, SWITCH_AND_LOOP_INPUTS))
@@ -4011,7 +4244,7 @@ package medialive {
   sealed trait GlobalConfigurationLowFramerateInputs extends js.Any
   object GlobalConfigurationLowFramerateInputs extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[GlobalConfigurationLowFramerateInputs]
-    val ENABLED  = "ENABLED".asInstanceOf[GlobalConfigurationLowFramerateInputs]
+    val ENABLED = "ENABLED".asInstanceOf[GlobalConfigurationLowFramerateInputs]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -4022,7 +4255,7 @@ package medialive {
   @js.native
   sealed trait GlobalConfigurationOutputLockingMode extends js.Any
   object GlobalConfigurationOutputLockingMode extends js.Object {
-    val EPOCH_LOCKING    = "EPOCH_LOCKING".asInstanceOf[GlobalConfigurationOutputLockingMode]
+    val EPOCH_LOCKING = "EPOCH_LOCKING".asInstanceOf[GlobalConfigurationOutputLockingMode]
     val PIPELINE_LOCKING = "PIPELINE_LOCKING".asInstanceOf[GlobalConfigurationOutputLockingMode]
 
     val values = js.Object.freeze(js.Array(EPOCH_LOCKING, PIPELINE_LOCKING))
@@ -4034,7 +4267,7 @@ package medialive {
   @js.native
   sealed trait GlobalConfigurationOutputTimingSource extends js.Any
   object GlobalConfigurationOutputTimingSource extends js.Object {
-    val INPUT_CLOCK  = "INPUT_CLOCK".asInstanceOf[GlobalConfigurationOutputTimingSource]
+    val INPUT_CLOCK = "INPUT_CLOCK".asInstanceOf[GlobalConfigurationOutputTimingSource]
     val SYSTEM_CLOCK = "SYSTEM_CLOCK".asInstanceOf[GlobalConfigurationOutputTimingSource]
 
     val values = js.Object.freeze(js.Array(INPUT_CLOCK, SYSTEM_CLOCK))
@@ -4046,12 +4279,12 @@ package medialive {
   @js.native
   sealed trait H264AdaptiveQuantization extends js.Any
   object H264AdaptiveQuantization extends js.Object {
-    val HIGH   = "HIGH".asInstanceOf[H264AdaptiveQuantization]
+    val HIGH = "HIGH".asInstanceOf[H264AdaptiveQuantization]
     val HIGHER = "HIGHER".asInstanceOf[H264AdaptiveQuantization]
-    val LOW    = "LOW".asInstanceOf[H264AdaptiveQuantization]
-    val MAX    = "MAX".asInstanceOf[H264AdaptiveQuantization]
+    val LOW = "LOW".asInstanceOf[H264AdaptiveQuantization]
+    val MAX = "MAX".asInstanceOf[H264AdaptiveQuantization]
     val MEDIUM = "MEDIUM".asInstanceOf[H264AdaptiveQuantization]
-    val OFF    = "OFF".asInstanceOf[H264AdaptiveQuantization]
+    val OFF = "OFF".asInstanceOf[H264AdaptiveQuantization]
 
     val values = js.Object.freeze(js.Array(HIGH, HIGHER, LOW, MAX, MEDIUM, OFF))
   }
@@ -4108,13 +4341,44 @@ package medialive {
   }
 
   /**
+    * H264 Filter Settings
+    */
+  @js.native
+  trait H264FilterSettings extends js.Object {
+    var TemporalFilterSettings: js.UndefOr[TemporalFilterSettings]
+  }
+
+  object H264FilterSettings {
+    @inline
+    def apply(
+        TemporalFilterSettings: js.UndefOr[TemporalFilterSettings] = js.undefined
+    ): H264FilterSettings = {
+      val __obj = js.Dynamic.literal()
+      TemporalFilterSettings.foreach(__v => __obj.updateDynamic("TemporalFilterSettings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[H264FilterSettings]
+    }
+  }
+
+  /**
     * H264 Flicker Aq
     */
   @js.native
   sealed trait H264FlickerAq extends js.Any
   object H264FlickerAq extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[H264FlickerAq]
-    val ENABLED  = "ENABLED".asInstanceOf[H264FlickerAq]
+    val ENABLED = "ENABLED".asInstanceOf[H264FlickerAq]
+
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
+  }
+
+  /**
+    * H264 Force Field Pictures
+    */
+  @js.native
+  sealed trait H264ForceFieldPictures extends js.Any
+  object H264ForceFieldPictures extends js.Object {
+    val DISABLED = "DISABLED".asInstanceOf[H264ForceFieldPictures]
+    val ENABLED = "ENABLED".asInstanceOf[H264ForceFieldPictures]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -4126,7 +4390,7 @@ package medialive {
   sealed trait H264FramerateControl extends js.Any
   object H264FramerateControl extends js.Object {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[H264FramerateControl]
-    val SPECIFIED              = "SPECIFIED".asInstanceOf[H264FramerateControl]
+    val SPECIFIED = "SPECIFIED".asInstanceOf[H264FramerateControl]
 
     val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
@@ -4138,7 +4402,7 @@ package medialive {
   sealed trait H264GopBReference extends js.Any
   object H264GopBReference extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[H264GopBReference]
-    val ENABLED  = "ENABLED".asInstanceOf[H264GopBReference]
+    val ENABLED = "ENABLED".asInstanceOf[H264GopBReference]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -4149,7 +4413,7 @@ package medialive {
   @js.native
   sealed trait H264GopSizeUnits extends js.Any
   object H264GopSizeUnits extends js.Object {
-    val FRAMES  = "FRAMES".asInstanceOf[H264GopSizeUnits]
+    val FRAMES = "FRAMES".asInstanceOf[H264GopSizeUnits]
     val SECONDS = "SECONDS".asInstanceOf[H264GopSizeUnits]
 
     val values = js.Object.freeze(js.Array(FRAMES, SECONDS))
@@ -4161,22 +4425,22 @@ package medialive {
   @js.native
   sealed trait H264Level extends js.Any
   object H264Level extends js.Object {
-    val H264_LEVEL_1    = "H264_LEVEL_1".asInstanceOf[H264Level]
-    val H264_LEVEL_1_1  = "H264_LEVEL_1_1".asInstanceOf[H264Level]
-    val H264_LEVEL_1_2  = "H264_LEVEL_1_2".asInstanceOf[H264Level]
-    val H264_LEVEL_1_3  = "H264_LEVEL_1_3".asInstanceOf[H264Level]
-    val H264_LEVEL_2    = "H264_LEVEL_2".asInstanceOf[H264Level]
-    val H264_LEVEL_2_1  = "H264_LEVEL_2_1".asInstanceOf[H264Level]
-    val H264_LEVEL_2_2  = "H264_LEVEL_2_2".asInstanceOf[H264Level]
-    val H264_LEVEL_3    = "H264_LEVEL_3".asInstanceOf[H264Level]
-    val H264_LEVEL_3_1  = "H264_LEVEL_3_1".asInstanceOf[H264Level]
-    val H264_LEVEL_3_2  = "H264_LEVEL_3_2".asInstanceOf[H264Level]
-    val H264_LEVEL_4    = "H264_LEVEL_4".asInstanceOf[H264Level]
-    val H264_LEVEL_4_1  = "H264_LEVEL_4_1".asInstanceOf[H264Level]
-    val H264_LEVEL_4_2  = "H264_LEVEL_4_2".asInstanceOf[H264Level]
-    val H264_LEVEL_5    = "H264_LEVEL_5".asInstanceOf[H264Level]
-    val H264_LEVEL_5_1  = "H264_LEVEL_5_1".asInstanceOf[H264Level]
-    val H264_LEVEL_5_2  = "H264_LEVEL_5_2".asInstanceOf[H264Level]
+    val H264_LEVEL_1 = "H264_LEVEL_1".asInstanceOf[H264Level]
+    val H264_LEVEL_1_1 = "H264_LEVEL_1_1".asInstanceOf[H264Level]
+    val H264_LEVEL_1_2 = "H264_LEVEL_1_2".asInstanceOf[H264Level]
+    val H264_LEVEL_1_3 = "H264_LEVEL_1_3".asInstanceOf[H264Level]
+    val H264_LEVEL_2 = "H264_LEVEL_2".asInstanceOf[H264Level]
+    val H264_LEVEL_2_1 = "H264_LEVEL_2_1".asInstanceOf[H264Level]
+    val H264_LEVEL_2_2 = "H264_LEVEL_2_2".asInstanceOf[H264Level]
+    val H264_LEVEL_3 = "H264_LEVEL_3".asInstanceOf[H264Level]
+    val H264_LEVEL_3_1 = "H264_LEVEL_3_1".asInstanceOf[H264Level]
+    val H264_LEVEL_3_2 = "H264_LEVEL_3_2".asInstanceOf[H264Level]
+    val H264_LEVEL_4 = "H264_LEVEL_4".asInstanceOf[H264Level]
+    val H264_LEVEL_4_1 = "H264_LEVEL_4_1".asInstanceOf[H264Level]
+    val H264_LEVEL_4_2 = "H264_LEVEL_4_2".asInstanceOf[H264Level]
+    val H264_LEVEL_5 = "H264_LEVEL_5".asInstanceOf[H264Level]
+    val H264_LEVEL_5_1 = "H264_LEVEL_5_1".asInstanceOf[H264Level]
+    val H264_LEVEL_5_2 = "H264_LEVEL_5_2".asInstanceOf[H264Level]
     val H264_LEVEL_AUTO = "H264_LEVEL_AUTO".asInstanceOf[H264Level]
 
     val values = js.Object.freeze(
@@ -4208,8 +4472,8 @@ package medialive {
   @js.native
   sealed trait H264LookAheadRateControl extends js.Any
   object H264LookAheadRateControl extends js.Object {
-    val HIGH   = "HIGH".asInstanceOf[H264LookAheadRateControl]
-    val LOW    = "LOW".asInstanceOf[H264LookAheadRateControl]
+    val HIGH = "HIGH".asInstanceOf[H264LookAheadRateControl]
+    val LOW = "LOW".asInstanceOf[H264LookAheadRateControl]
     val MEDIUM = "MEDIUM".asInstanceOf[H264LookAheadRateControl]
 
     val values = js.Object.freeze(js.Array(HIGH, LOW, MEDIUM))
@@ -4222,7 +4486,7 @@ package medialive {
   sealed trait H264ParControl extends js.Any
   object H264ParControl extends js.Object {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[H264ParControl]
-    val SPECIFIED              = "SPECIFIED".asInstanceOf[H264ParControl]
+    val SPECIFIED = "SPECIFIED".asInstanceOf[H264ParControl]
 
     val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
@@ -4233,14 +4497,26 @@ package medialive {
   @js.native
   sealed trait H264Profile extends js.Any
   object H264Profile extends js.Object {
-    val BASELINE       = "BASELINE".asInstanceOf[H264Profile]
-    val HIGH           = "HIGH".asInstanceOf[H264Profile]
-    val HIGH_10BIT     = "HIGH_10BIT".asInstanceOf[H264Profile]
-    val HIGH_422       = "HIGH_422".asInstanceOf[H264Profile]
+    val BASELINE = "BASELINE".asInstanceOf[H264Profile]
+    val HIGH = "HIGH".asInstanceOf[H264Profile]
+    val HIGH_10BIT = "HIGH_10BIT".asInstanceOf[H264Profile]
+    val HIGH_422 = "HIGH_422".asInstanceOf[H264Profile]
     val HIGH_422_10BIT = "HIGH_422_10BIT".asInstanceOf[H264Profile]
-    val MAIN           = "MAIN".asInstanceOf[H264Profile]
+    val MAIN = "MAIN".asInstanceOf[H264Profile]
 
     val values = js.Object.freeze(js.Array(BASELINE, HIGH, HIGH_10BIT, HIGH_422, HIGH_422_10BIT, MAIN))
+  }
+
+  /**
+    * H264 Quality Level
+    */
+  @js.native
+  sealed trait H264QualityLevel extends js.Any
+  object H264QualityLevel extends js.Object {
+    val ENHANCED_QUALITY = "ENHANCED_QUALITY".asInstanceOf[H264QualityLevel]
+    val STANDARD_QUALITY = "STANDARD_QUALITY".asInstanceOf[H264QualityLevel]
+
+    val values = js.Object.freeze(js.Array(ENHANCED_QUALITY, STANDARD_QUALITY))
   }
 
   /**
@@ -4249,10 +4525,10 @@ package medialive {
   @js.native
   sealed trait H264RateControlMode extends js.Any
   object H264RateControlMode extends js.Object {
-    val CBR       = "CBR".asInstanceOf[H264RateControlMode]
+    val CBR = "CBR".asInstanceOf[H264RateControlMode]
     val MULTIPLEX = "MULTIPLEX".asInstanceOf[H264RateControlMode]
-    val QVBR      = "QVBR".asInstanceOf[H264RateControlMode]
-    val VBR       = "VBR".asInstanceOf[H264RateControlMode]
+    val QVBR = "QVBR".asInstanceOf[H264RateControlMode]
+    val VBR = "VBR".asInstanceOf[H264RateControlMode]
 
     val values = js.Object.freeze(js.Array(CBR, MULTIPLEX, QVBR, VBR))
   }
@@ -4263,7 +4539,7 @@ package medialive {
   @js.native
   sealed trait H264ScanType extends js.Any
   object H264ScanType extends js.Object {
-    val INTERLACED  = "INTERLACED".asInstanceOf[H264ScanType]
+    val INTERLACED = "INTERLACED".asInstanceOf[H264ScanType]
     val PROGRESSIVE = "PROGRESSIVE".asInstanceOf[H264ScanType]
 
     val values = js.Object.freeze(js.Array(INTERLACED, PROGRESSIVE))
@@ -4276,7 +4552,7 @@ package medialive {
   sealed trait H264SceneChangeDetect extends js.Any
   object H264SceneChangeDetect extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[H264SceneChangeDetect]
-    val ENABLED  = "ENABLED".asInstanceOf[H264SceneChangeDetect]
+    val ENABLED = "ENABLED".asInstanceOf[H264SceneChangeDetect]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -4294,8 +4570,10 @@ package medialive {
     var ColorMetadata: js.UndefOr[H264ColorMetadata]
     var ColorSpaceSettings: js.UndefOr[H264ColorSpaceSettings]
     var EntropyEncoding: js.UndefOr[H264EntropyEncoding]
+    var FilterSettings: js.UndefOr[H264FilterSettings]
     var FixedAfd: js.UndefOr[FixedAfd]
     var FlickerAq: js.UndefOr[H264FlickerAq]
+    var ForceFieldPictures: js.UndefOr[H264ForceFieldPictures]
     var FramerateControl: js.UndefOr[H264FramerateControl]
     var FramerateDenominator: js.UndefOr[__integerMin1]
     var FramerateNumerator: js.UndefOr[__integerMin1]
@@ -4313,6 +4591,7 @@ package medialive {
     var ParDenominator: js.UndefOr[__integerMin1]
     var ParNumerator: js.UndefOr[__integer]
     var Profile: js.UndefOr[H264Profile]
+    var QualityLevel: js.UndefOr[H264QualityLevel]
     var QvbrQualityLevel: js.UndefOr[__integerMin1Max10]
     var RateControlMode: js.UndefOr[H264RateControlMode]
     var ScanType: js.UndefOr[H264ScanType]
@@ -4337,8 +4616,10 @@ package medialive {
         ColorMetadata: js.UndefOr[H264ColorMetadata] = js.undefined,
         ColorSpaceSettings: js.UndefOr[H264ColorSpaceSettings] = js.undefined,
         EntropyEncoding: js.UndefOr[H264EntropyEncoding] = js.undefined,
+        FilterSettings: js.UndefOr[H264FilterSettings] = js.undefined,
         FixedAfd: js.UndefOr[FixedAfd] = js.undefined,
         FlickerAq: js.UndefOr[H264FlickerAq] = js.undefined,
+        ForceFieldPictures: js.UndefOr[H264ForceFieldPictures] = js.undefined,
         FramerateControl: js.UndefOr[H264FramerateControl] = js.undefined,
         FramerateDenominator: js.UndefOr[__integerMin1] = js.undefined,
         FramerateNumerator: js.UndefOr[__integerMin1] = js.undefined,
@@ -4356,6 +4637,7 @@ package medialive {
         ParDenominator: js.UndefOr[__integerMin1] = js.undefined,
         ParNumerator: js.UndefOr[__integer] = js.undefined,
         Profile: js.UndefOr[H264Profile] = js.undefined,
+        QualityLevel: js.UndefOr[H264QualityLevel] = js.undefined,
         QvbrQualityLevel: js.UndefOr[__integerMin1Max10] = js.undefined,
         RateControlMode: js.UndefOr[H264RateControlMode] = js.undefined,
         ScanType: js.UndefOr[H264ScanType] = js.undefined,
@@ -4377,8 +4659,10 @@ package medialive {
       ColorMetadata.foreach(__v => __obj.updateDynamic("ColorMetadata")(__v.asInstanceOf[js.Any]))
       ColorSpaceSettings.foreach(__v => __obj.updateDynamic("ColorSpaceSettings")(__v.asInstanceOf[js.Any]))
       EntropyEncoding.foreach(__v => __obj.updateDynamic("EntropyEncoding")(__v.asInstanceOf[js.Any]))
+      FilterSettings.foreach(__v => __obj.updateDynamic("FilterSettings")(__v.asInstanceOf[js.Any]))
       FixedAfd.foreach(__v => __obj.updateDynamic("FixedAfd")(__v.asInstanceOf[js.Any]))
       FlickerAq.foreach(__v => __obj.updateDynamic("FlickerAq")(__v.asInstanceOf[js.Any]))
+      ForceFieldPictures.foreach(__v => __obj.updateDynamic("ForceFieldPictures")(__v.asInstanceOf[js.Any]))
       FramerateControl.foreach(__v => __obj.updateDynamic("FramerateControl")(__v.asInstanceOf[js.Any]))
       FramerateDenominator.foreach(__v => __obj.updateDynamic("FramerateDenominator")(__v.asInstanceOf[js.Any]))
       FramerateNumerator.foreach(__v => __obj.updateDynamic("FramerateNumerator")(__v.asInstanceOf[js.Any]))
@@ -4396,6 +4680,7 @@ package medialive {
       ParDenominator.foreach(__v => __obj.updateDynamic("ParDenominator")(__v.asInstanceOf[js.Any]))
       ParNumerator.foreach(__v => __obj.updateDynamic("ParNumerator")(__v.asInstanceOf[js.Any]))
       Profile.foreach(__v => __obj.updateDynamic("Profile")(__v.asInstanceOf[js.Any]))
+      QualityLevel.foreach(__v => __obj.updateDynamic("QualityLevel")(__v.asInstanceOf[js.Any]))
       QvbrQualityLevel.foreach(__v => __obj.updateDynamic("QvbrQualityLevel")(__v.asInstanceOf[js.Any]))
       RateControlMode.foreach(__v => __obj.updateDynamic("RateControlMode")(__v.asInstanceOf[js.Any]))
       ScanType.foreach(__v => __obj.updateDynamic("ScanType")(__v.asInstanceOf[js.Any]))
@@ -4418,7 +4703,7 @@ package medialive {
   sealed trait H264SpatialAq extends js.Any
   object H264SpatialAq extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[H264SpatialAq]
-    val ENABLED  = "ENABLED".asInstanceOf[H264SpatialAq]
+    val ENABLED = "ENABLED".asInstanceOf[H264SpatialAq]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -4430,7 +4715,7 @@ package medialive {
   sealed trait H264SubGopLength extends js.Any
   object H264SubGopLength extends js.Object {
     val DYNAMIC = "DYNAMIC".asInstanceOf[H264SubGopLength]
-    val FIXED   = "FIXED".asInstanceOf[H264SubGopLength]
+    val FIXED = "FIXED".asInstanceOf[H264SubGopLength]
 
     val values = js.Object.freeze(js.Array(DYNAMIC, FIXED))
   }
@@ -4442,7 +4727,7 @@ package medialive {
   sealed trait H264Syntax extends js.Any
   object H264Syntax extends js.Object {
     val DEFAULT = "DEFAULT".asInstanceOf[H264Syntax]
-    val RP2027  = "RP2027".asInstanceOf[H264Syntax]
+    val RP2027 = "RP2027".asInstanceOf[H264Syntax]
 
     val values = js.Object.freeze(js.Array(DEFAULT, RP2027))
   }
@@ -4454,7 +4739,7 @@ package medialive {
   sealed trait H264TemporalAq extends js.Any
   object H264TemporalAq extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[H264TemporalAq]
-    val ENABLED  = "ENABLED".asInstanceOf[H264TemporalAq]
+    val ENABLED = "ENABLED".asInstanceOf[H264TemporalAq]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -4465,7 +4750,7 @@ package medialive {
   @js.native
   sealed trait H264TimecodeInsertionBehavior extends js.Any
   object H264TimecodeInsertionBehavior extends js.Object {
-    val DISABLED       = "DISABLED".asInstanceOf[H264TimecodeInsertionBehavior]
+    val DISABLED = "DISABLED".asInstanceOf[H264TimecodeInsertionBehavior]
     val PIC_TIMING_SEI = "PIC_TIMING_SEI".asInstanceOf[H264TimecodeInsertionBehavior]
 
     val values = js.Object.freeze(js.Array(DISABLED, PIC_TIMING_SEI))
@@ -4477,12 +4762,12 @@ package medialive {
   @js.native
   sealed trait H265AdaptiveQuantization extends js.Any
   object H265AdaptiveQuantization extends js.Object {
-    val HIGH   = "HIGH".asInstanceOf[H265AdaptiveQuantization]
+    val HIGH = "HIGH".asInstanceOf[H265AdaptiveQuantization]
     val HIGHER = "HIGHER".asInstanceOf[H265AdaptiveQuantization]
-    val LOW    = "LOW".asInstanceOf[H265AdaptiveQuantization]
-    val MAX    = "MAX".asInstanceOf[H265AdaptiveQuantization]
+    val LOW = "LOW".asInstanceOf[H265AdaptiveQuantization]
+    val MAX = "MAX".asInstanceOf[H265AdaptiveQuantization]
     val MEDIUM = "MEDIUM".asInstanceOf[H265AdaptiveQuantization]
-    val OFF    = "OFF".asInstanceOf[H265AdaptiveQuantization]
+    val OFF = "OFF".asInstanceOf[H265AdaptiveQuantization]
 
     val values = js.Object.freeze(js.Array(HIGH, HIGHER, LOW, MAX, MEDIUM, OFF))
   }
@@ -4494,7 +4779,7 @@ package medialive {
   sealed trait H265AlternativeTransferFunction extends js.Any
   object H265AlternativeTransferFunction extends js.Object {
     val INSERT = "INSERT".asInstanceOf[H265AlternativeTransferFunction]
-    val OMIT   = "OMIT".asInstanceOf[H265AlternativeTransferFunction]
+    val OMIT = "OMIT".asInstanceOf[H265AlternativeTransferFunction]
 
     val values = js.Object.freeze(js.Array(INSERT, OMIT))
   }
@@ -4548,7 +4833,7 @@ package medialive {
   sealed trait H265FlickerAq extends js.Any
   object H265FlickerAq extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[H265FlickerAq]
-    val ENABLED  = "ENABLED".asInstanceOf[H265FlickerAq]
+    val ENABLED = "ENABLED".asInstanceOf[H265FlickerAq]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -4559,7 +4844,7 @@ package medialive {
   @js.native
   sealed trait H265GopSizeUnits extends js.Any
   object H265GopSizeUnits extends js.Object {
-    val FRAMES  = "FRAMES".asInstanceOf[H265GopSizeUnits]
+    val FRAMES = "FRAMES".asInstanceOf[H265GopSizeUnits]
     val SECONDS = "SECONDS".asInstanceOf[H265GopSizeUnits]
 
     val values = js.Object.freeze(js.Array(FRAMES, SECONDS))
@@ -4571,19 +4856,19 @@ package medialive {
   @js.native
   sealed trait H265Level extends js.Any
   object H265Level extends js.Object {
-    val H265_LEVEL_1    = "H265_LEVEL_1".asInstanceOf[H265Level]
-    val H265_LEVEL_2    = "H265_LEVEL_2".asInstanceOf[H265Level]
-    val H265_LEVEL_2_1  = "H265_LEVEL_2_1".asInstanceOf[H265Level]
-    val H265_LEVEL_3    = "H265_LEVEL_3".asInstanceOf[H265Level]
-    val H265_LEVEL_3_1  = "H265_LEVEL_3_1".asInstanceOf[H265Level]
-    val H265_LEVEL_4    = "H265_LEVEL_4".asInstanceOf[H265Level]
-    val H265_LEVEL_4_1  = "H265_LEVEL_4_1".asInstanceOf[H265Level]
-    val H265_LEVEL_5    = "H265_LEVEL_5".asInstanceOf[H265Level]
-    val H265_LEVEL_5_1  = "H265_LEVEL_5_1".asInstanceOf[H265Level]
-    val H265_LEVEL_5_2  = "H265_LEVEL_5_2".asInstanceOf[H265Level]
-    val H265_LEVEL_6    = "H265_LEVEL_6".asInstanceOf[H265Level]
-    val H265_LEVEL_6_1  = "H265_LEVEL_6_1".asInstanceOf[H265Level]
-    val H265_LEVEL_6_2  = "H265_LEVEL_6_2".asInstanceOf[H265Level]
+    val H265_LEVEL_1 = "H265_LEVEL_1".asInstanceOf[H265Level]
+    val H265_LEVEL_2 = "H265_LEVEL_2".asInstanceOf[H265Level]
+    val H265_LEVEL_2_1 = "H265_LEVEL_2_1".asInstanceOf[H265Level]
+    val H265_LEVEL_3 = "H265_LEVEL_3".asInstanceOf[H265Level]
+    val H265_LEVEL_3_1 = "H265_LEVEL_3_1".asInstanceOf[H265Level]
+    val H265_LEVEL_4 = "H265_LEVEL_4".asInstanceOf[H265Level]
+    val H265_LEVEL_4_1 = "H265_LEVEL_4_1".asInstanceOf[H265Level]
+    val H265_LEVEL_5 = "H265_LEVEL_5".asInstanceOf[H265Level]
+    val H265_LEVEL_5_1 = "H265_LEVEL_5_1".asInstanceOf[H265Level]
+    val H265_LEVEL_5_2 = "H265_LEVEL_5_2".asInstanceOf[H265Level]
+    val H265_LEVEL_6 = "H265_LEVEL_6".asInstanceOf[H265Level]
+    val H265_LEVEL_6_1 = "H265_LEVEL_6_1".asInstanceOf[H265Level]
+    val H265_LEVEL_6_2 = "H265_LEVEL_6_2".asInstanceOf[H265Level]
     val H265_LEVEL_AUTO = "H265_LEVEL_AUTO".asInstanceOf[H265Level]
 
     val values = js.Object.freeze(
@@ -4612,8 +4897,8 @@ package medialive {
   @js.native
   sealed trait H265LookAheadRateControl extends js.Any
   object H265LookAheadRateControl extends js.Object {
-    val HIGH   = "HIGH".asInstanceOf[H265LookAheadRateControl]
-    val LOW    = "LOW".asInstanceOf[H265LookAheadRateControl]
+    val HIGH = "HIGH".asInstanceOf[H265LookAheadRateControl]
+    val LOW = "LOW".asInstanceOf[H265LookAheadRateControl]
     val MEDIUM = "MEDIUM".asInstanceOf[H265LookAheadRateControl]
 
     val values = js.Object.freeze(js.Array(HIGH, LOW, MEDIUM))
@@ -4625,7 +4910,7 @@ package medialive {
   @js.native
   sealed trait H265Profile extends js.Any
   object H265Profile extends js.Object {
-    val MAIN       = "MAIN".asInstanceOf[H265Profile]
+    val MAIN = "MAIN".asInstanceOf[H265Profile]
     val MAIN_10BIT = "MAIN_10BIT".asInstanceOf[H265Profile]
 
     val values = js.Object.freeze(js.Array(MAIN, MAIN_10BIT))
@@ -4637,9 +4922,9 @@ package medialive {
   @js.native
   sealed trait H265RateControlMode extends js.Any
   object H265RateControlMode extends js.Object {
-    val CBR       = "CBR".asInstanceOf[H265RateControlMode]
+    val CBR = "CBR".asInstanceOf[H265RateControlMode]
     val MULTIPLEX = "MULTIPLEX".asInstanceOf[H265RateControlMode]
-    val QVBR      = "QVBR".asInstanceOf[H265RateControlMode]
+    val QVBR = "QVBR".asInstanceOf[H265RateControlMode]
 
     val values = js.Object.freeze(js.Array(CBR, MULTIPLEX, QVBR))
   }
@@ -4662,7 +4947,7 @@ package medialive {
   sealed trait H265SceneChangeDetect extends js.Any
   object H265SceneChangeDetect extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[H265SceneChangeDetect]
-    val ENABLED  = "ENABLED".asInstanceOf[H265SceneChangeDetect]
+    val ENABLED = "ENABLED".asInstanceOf[H265SceneChangeDetect]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -4736,7 +5021,7 @@ package medialive {
     ): H265Settings = {
       val __obj = js.Dynamic.literal(
         "FramerateDenominator" -> FramerateDenominator.asInstanceOf[js.Any],
-        "FramerateNumerator"   -> FramerateNumerator.asInstanceOf[js.Any]
+        "FramerateNumerator" -> FramerateNumerator.asInstanceOf[js.Any]
       )
 
       AdaptiveQuantization.foreach(__v => __obj.updateDynamic("AdaptiveQuantization")(__v.asInstanceOf[js.Any]))
@@ -4789,7 +5074,7 @@ package medialive {
   @js.native
   sealed trait H265TimecodeInsertionBehavior extends js.Any
   object H265TimecodeInsertionBehavior extends js.Object {
-    val DISABLED       = "DISABLED".asInstanceOf[H265TimecodeInsertionBehavior]
+    val DISABLED = "DISABLED".asInstanceOf[H265TimecodeInsertionBehavior]
     val PIC_TIMING_SEI = "PIC_TIMING_SEI".asInstanceOf[H265TimecodeInsertionBehavior]
 
     val values = js.Object.freeze(js.Array(DISABLED, PIC_TIMING_SEI))
@@ -4823,8 +5108,8 @@ package medialive {
   @js.native
   sealed trait HlsAdMarkers extends js.Any
   object HlsAdMarkers extends js.Object {
-    val ADOBE            = "ADOBE".asInstanceOf[HlsAdMarkers]
-    val ELEMENTAL        = "ELEMENTAL".asInstanceOf[HlsAdMarkers]
+    val ADOBE = "ADOBE".asInstanceOf[HlsAdMarkers]
+    val ELEMENTAL = "ELEMENTAL".asInstanceOf[HlsAdMarkers]
     val ELEMENTAL_SCTE35 = "ELEMENTAL_SCTE35".asInstanceOf[HlsAdMarkers]
 
     val values = js.Object.freeze(js.Array(ADOBE, ELEMENTAL, ELEMENTAL_SCTE35))
@@ -4836,7 +5121,7 @@ package medialive {
   @js.native
   sealed trait HlsAkamaiHttpTransferMode extends js.Any
   object HlsAkamaiHttpTransferMode extends js.Object {
-    val CHUNKED     = "CHUNKED".asInstanceOf[HlsAkamaiHttpTransferMode]
+    val CHUNKED = "CHUNKED".asInstanceOf[HlsAkamaiHttpTransferMode]
     val NON_CHUNKED = "NON_CHUNKED".asInstanceOf[HlsAkamaiHttpTransferMode]
 
     val values = js.Object.freeze(js.Array(CHUNKED, NON_CHUNKED))
@@ -4914,8 +5199,8 @@ package medialive {
   sealed trait HlsCaptionLanguageSetting extends js.Any
   object HlsCaptionLanguageSetting extends js.Object {
     val INSERT = "INSERT".asInstanceOf[HlsCaptionLanguageSetting]
-    val NONE   = "NONE".asInstanceOf[HlsCaptionLanguageSetting]
-    val OMIT   = "OMIT".asInstanceOf[HlsCaptionLanguageSetting]
+    val NONE = "NONE".asInstanceOf[HlsCaptionLanguageSetting]
+    val OMIT = "OMIT".asInstanceOf[HlsCaptionLanguageSetting]
 
     val values = js.Object.freeze(js.Array(INSERT, NONE, OMIT))
   }
@@ -4955,7 +5240,7 @@ package medialive {
   sealed trait HlsClientCache extends js.Any
   object HlsClientCache extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[HlsClientCache]
-    val ENABLED  = "ENABLED".asInstanceOf[HlsClientCache]
+    val ENABLED = "ENABLED".asInstanceOf[HlsClientCache]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -4978,7 +5263,7 @@ package medialive {
   @js.native
   sealed trait HlsDirectoryStructure extends js.Any
   object HlsDirectoryStructure extends js.Object {
-    val SINGLE_DIRECTORY        = "SINGLE_DIRECTORY".asInstanceOf[HlsDirectoryStructure]
+    val SINGLE_DIRECTORY = "SINGLE_DIRECTORY".asInstanceOf[HlsDirectoryStructure]
     val SUBDIRECTORY_PER_STREAM = "SUBDIRECTORY_PER_STREAM".asInstanceOf[HlsDirectoryStructure]
 
     val values = js.Object.freeze(js.Array(SINGLE_DIRECTORY, SUBDIRECTORY_PER_STREAM))
@@ -4990,7 +5275,7 @@ package medialive {
   @js.native
   sealed trait HlsEncryptionType extends js.Any
   object HlsEncryptionType extends js.Object {
-    val AES128     = "AES128".asInstanceOf[HlsEncryptionType]
+    val AES128 = "AES128".asInstanceOf[HlsEncryptionType]
     val SAMPLE_AES = "SAMPLE_AES".asInstanceOf[HlsEncryptionType]
 
     val values = js.Object.freeze(js.Array(AES128, SAMPLE_AES))
@@ -5176,7 +5461,7 @@ package medialive {
   sealed trait HlsId3SegmentTaggingState extends js.Any
   object HlsId3SegmentTaggingState extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[HlsId3SegmentTaggingState]
-    val ENABLED  = "ENABLED".asInstanceOf[HlsId3SegmentTaggingState]
+    val ENABLED = "ENABLED".asInstanceOf[HlsId3SegmentTaggingState]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -5227,7 +5512,7 @@ package medialive {
   @js.native
   sealed trait HlsIvSource extends js.Any
   object HlsIvSource extends js.Object {
-    val EXPLICIT               = "EXPLICIT".asInstanceOf[HlsIvSource]
+    val EXPLICIT = "EXPLICIT".asInstanceOf[HlsIvSource]
     val FOLLOWS_SEGMENT_NUMBER = "FOLLOWS_SEGMENT_NUMBER".asInstanceOf[HlsIvSource]
 
     val values = js.Object.freeze(js.Array(EXPLICIT, FOLLOWS_SEGMENT_NUMBER))
@@ -5252,7 +5537,7 @@ package medialive {
   sealed trait HlsManifestDurationFormat extends js.Any
   object HlsManifestDurationFormat extends js.Object {
     val FLOATING_POINT = "FLOATING_POINT".asInstanceOf[HlsManifestDurationFormat]
-    val INTEGER        = "INTEGER".asInstanceOf[HlsManifestDurationFormat]
+    val INTEGER = "INTEGER".asInstanceOf[HlsManifestDurationFormat]
 
     val values = js.Object.freeze(js.Array(FLOATING_POINT, INTEGER))
   }
@@ -5306,7 +5591,7 @@ package medialive {
   sealed trait HlsMode extends js.Any
   object HlsMode extends js.Object {
     val LIVE = "LIVE".asInstanceOf[HlsMode]
-    val VOD  = "VOD".asInstanceOf[HlsMode]
+    val VOD = "VOD".asInstanceOf[HlsMode]
 
     val values = js.Object.freeze(js.Array(LIVE, VOD))
   }
@@ -5318,7 +5603,7 @@ package medialive {
   sealed trait HlsOutputSelection extends js.Any
   object HlsOutputSelection extends js.Object {
     val MANIFESTS_AND_SEGMENTS = "MANIFESTS_AND_SEGMENTS".asInstanceOf[HlsOutputSelection]
-    val SEGMENTS_ONLY          = "SEGMENTS_ONLY".asInstanceOf[HlsOutputSelection]
+    val SEGMENTS_ONLY = "SEGMENTS_ONLY".asInstanceOf[HlsOutputSelection]
 
     val values = js.Object.freeze(js.Array(MANIFESTS_AND_SEGMENTS, SEGMENTS_ONLY))
   }
@@ -5372,7 +5657,7 @@ package medialive {
   sealed trait HlsRedundantManifest extends js.Any
   object HlsRedundantManifest extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[HlsRedundantManifest]
-    val ENABLED  = "ENABLED".asInstanceOf[HlsRedundantManifest]
+    val ENABLED = "ENABLED".asInstanceOf[HlsRedundantManifest]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -5384,7 +5669,7 @@ package medialive {
   sealed trait HlsSegmentationMode extends js.Any
   object HlsSegmentationMode extends js.Object {
     val USE_INPUT_SEGMENTATION = "USE_INPUT_SEGMENTATION".asInstanceOf[HlsSegmentationMode]
-    val USE_SEGMENT_DURATION   = "USE_SEGMENT_DURATION".asInstanceOf[HlsSegmentationMode]
+    val USE_SEGMENT_DURATION = "USE_SEGMENT_DURATION".asInstanceOf[HlsSegmentationMode]
 
     val values = js.Object.freeze(js.Array(USE_INPUT_SEGMENTATION, USE_SEGMENT_DURATION))
   }
@@ -5467,7 +5752,7 @@ package medialive {
   sealed trait HlsTsFileMode extends js.Any
   object HlsTsFileMode extends js.Object {
     val SEGMENTED_FILES = "SEGMENTED_FILES".asInstanceOf[HlsTsFileMode]
-    val SINGLE_FILE     = "SINGLE_FILE".asInstanceOf[HlsTsFileMode]
+    val SINGLE_FILE = "SINGLE_FILE".asInstanceOf[HlsTsFileMode]
 
     val values = js.Object.freeze(js.Array(SEGMENTED_FILES, SINGLE_FILE))
   }
@@ -5478,7 +5763,7 @@ package medialive {
   @js.native
   sealed trait HlsWebdavHttpTransferMode extends js.Any
   object HlsWebdavHttpTransferMode extends js.Object {
-    val CHUNKED     = "CHUNKED".asInstanceOf[HlsWebdavHttpTransferMode]
+    val CHUNKED = "CHUNKED".asInstanceOf[HlsWebdavHttpTransferMode]
     val NON_CHUNKED = "NON_CHUNKED".asInstanceOf[HlsWebdavHttpTransferMode]
 
     val values = js.Object.freeze(js.Array(CHUNKED, NON_CHUNKED))
@@ -5528,7 +5813,7 @@ package medialive {
   }
 
   /**
-    * Settings to configure an action so that it occurs immediately. This is only supported for input switch actions currently.
+    * Settings to configure an action so that it occurs as soon as possible.
     */
   @js.native
   trait ImmediateModeScheduleActionStartSettings extends js.Object {}
@@ -5553,6 +5838,7 @@ package medialive {
     var Destinations: js.UndefOr[__listOfInputDestination]
     var Id: js.UndefOr[__string]
     var InputClass: js.UndefOr[InputClass]
+    var InputDevices: js.UndefOr[__listOfInputDeviceSettings]
     var InputSourceType: js.UndefOr[InputSourceType]
     var MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlow]
     var Name: js.UndefOr[__string]
@@ -5572,6 +5858,7 @@ package medialive {
         Destinations: js.UndefOr[__listOfInputDestination] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
         InputClass: js.UndefOr[InputClass] = js.undefined,
+        InputDevices: js.UndefOr[__listOfInputDeviceSettings] = js.undefined,
         InputSourceType: js.UndefOr[InputSourceType] = js.undefined,
         MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlow] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
@@ -5588,6 +5875,7 @@ package medialive {
       Destinations.foreach(__v => __obj.updateDynamic("Destinations")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       InputClass.foreach(__v => __obj.updateDynamic("InputClass")(__v.asInstanceOf[js.Any]))
+      InputDevices.foreach(__v => __obj.updateDynamic("InputDevices")(__v.asInstanceOf[js.Any]))
       InputSourceType.foreach(__v => __obj.updateDynamic("InputSourceType")(__v.asInstanceOf[js.Any]))
       MediaConnectFlows.foreach(__v => __obj.updateDynamic("MediaConnectFlows")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -5606,6 +5894,7 @@ package medialive {
     */
   @js.native
   trait InputAttachment extends js.Object {
+    var AutomaticInputFailoverSettings: js.UndefOr[AutomaticInputFailoverSettings]
     var InputAttachmentName: js.UndefOr[__string]
     var InputId: js.UndefOr[__string]
     var InputSettings: js.UndefOr[InputSettings]
@@ -5614,11 +5903,15 @@ package medialive {
   object InputAttachment {
     @inline
     def apply(
+        AutomaticInputFailoverSettings: js.UndefOr[AutomaticInputFailoverSettings] = js.undefined,
         InputAttachmentName: js.UndefOr[__string] = js.undefined,
         InputId: js.UndefOr[__string] = js.undefined,
         InputSettings: js.UndefOr[InputSettings] = js.undefined
     ): InputAttachment = {
       val __obj = js.Dynamic.literal()
+      AutomaticInputFailoverSettings.foreach(__v =>
+        __obj.updateDynamic("AutomaticInputFailoverSettings")(__v.asInstanceOf[js.Any])
+      )
       InputAttachmentName.foreach(__v => __obj.updateDynamic("InputAttachmentName")(__v.asInstanceOf[js.Any]))
       InputId.foreach(__v => __obj.updateDynamic("InputId")(__v.asInstanceOf[js.Any]))
       InputSettings.foreach(__v => __obj.updateDynamic("InputSettings")(__v.asInstanceOf[js.Any]))
@@ -5642,7 +5935,7 @@ package medialive {
         InputChannel: __integerMin0Max15
     ): InputChannelLevel = {
       val __obj = js.Dynamic.literal(
-        "Gain"         -> Gain.asInstanceOf[js.Any],
+        "Gain" -> Gain.asInstanceOf[js.Any],
         "InputChannel" -> InputChannel.asInstanceOf[js.Any]
       )
 
@@ -5656,7 +5949,7 @@ package medialive {
   @js.native
   sealed trait InputClass extends js.Any
   object InputClass extends js.Object {
-    val STANDARD        = "STANDARD".asInstanceOf[InputClass]
+    val STANDARD = "STANDARD".asInstanceOf[InputClass]
     val SINGLE_PIPELINE = "SINGLE_PIPELINE".asInstanceOf[InputClass]
 
     val values = js.Object.freeze(js.Array(STANDARD, SINGLE_PIPELINE))
@@ -5696,8 +5989,8 @@ package medialive {
   sealed trait InputCodec extends js.Any
   object InputCodec extends js.Object {
     val MPEG2 = "MPEG2".asInstanceOf[InputCodec]
-    val AVC   = "AVC".asInstanceOf[InputCodec]
-    val HEVC  = "HEVC".asInstanceOf[InputCodec]
+    val AVC = "AVC".asInstanceOf[InputCodec]
+    val HEVC = "HEVC".asInstanceOf[InputCodec]
 
     val values = js.Object.freeze(js.Array(MPEG2, AVC, HEVC))
   }
@@ -5709,7 +6002,7 @@ package medialive {
   sealed trait InputDeblockFilter extends js.Any
   object InputDeblockFilter extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[InputDeblockFilter]
-    val ENABLED  = "ENABLED".asInstanceOf[InputDeblockFilter]
+    val ENABLED = "ENABLED".asInstanceOf[InputDeblockFilter]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -5721,7 +6014,7 @@ package medialive {
   sealed trait InputDenoiseFilter extends js.Any
   object InputDenoiseFilter extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[InputDenoiseFilter]
-    val ENABLED  = "ENABLED".asInstanceOf[InputDenoiseFilter]
+    val ENABLED = "ENABLED".asInstanceOf[InputDenoiseFilter]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -5796,14 +6089,275 @@ package medialive {
   }
 
   /**
+    * The source at the input device that is currently active.
+    */
+  @js.native
+  sealed trait InputDeviceActiveInput extends js.Any
+  object InputDeviceActiveInput extends js.Object {
+    val HDMI = "HDMI".asInstanceOf[InputDeviceActiveInput]
+    val SDI = "SDI".asInstanceOf[InputDeviceActiveInput]
+
+    val values = js.Object.freeze(js.Array(HDMI, SDI))
+  }
+
+  /**
+    * Configurable settings for the input device.
+    */
+  @js.native
+  trait InputDeviceConfigurableSettings extends js.Object {
+    var ConfiguredInput: js.UndefOr[InputDeviceConfiguredInput]
+    var MaxBitrate: js.UndefOr[__integer]
+  }
+
+  object InputDeviceConfigurableSettings {
+    @inline
+    def apply(
+        ConfiguredInput: js.UndefOr[InputDeviceConfiguredInput] = js.undefined,
+        MaxBitrate: js.UndefOr[__integer] = js.undefined
+    ): InputDeviceConfigurableSettings = {
+      val __obj = js.Dynamic.literal()
+      ConfiguredInput.foreach(__v => __obj.updateDynamic("ConfiguredInput")(__v.asInstanceOf[js.Any]))
+      MaxBitrate.foreach(__v => __obj.updateDynamic("MaxBitrate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputDeviceConfigurableSettings]
+    }
+  }
+
+  /**
+    * The source to activate (use) from the input device.
+    */
+  @js.native
+  sealed trait InputDeviceConfiguredInput extends js.Any
+  object InputDeviceConfiguredInput extends js.Object {
+    val AUTO = "AUTO".asInstanceOf[InputDeviceConfiguredInput]
+    val HDMI = "HDMI".asInstanceOf[InputDeviceConfiguredInput]
+    val SDI = "SDI".asInstanceOf[InputDeviceConfiguredInput]
+
+    val values = js.Object.freeze(js.Array(AUTO, HDMI, SDI))
+  }
+
+  /**
+    * The state of the connection between the input device and AWS.
+    */
+  @js.native
+  sealed trait InputDeviceConnectionState extends js.Any
+  object InputDeviceConnectionState extends js.Object {
+    val DISCONNECTED = "DISCONNECTED".asInstanceOf[InputDeviceConnectionState]
+    val CONNECTED = "CONNECTED".asInstanceOf[InputDeviceConnectionState]
+
+    val values = js.Object.freeze(js.Array(DISCONNECTED, CONNECTED))
+  }
+
+  /**
+    * Settings that describe the active source from the input device, and the video characteristics of that source.
+    */
+  @js.native
+  trait InputDeviceHdSettings extends js.Object {
+    var ActiveInput: js.UndefOr[InputDeviceActiveInput]
+    var ConfiguredInput: js.UndefOr[InputDeviceConfiguredInput]
+    var DeviceState: js.UndefOr[InputDeviceState]
+    var Framerate: js.UndefOr[__double]
+    var Height: js.UndefOr[__integer]
+    var MaxBitrate: js.UndefOr[__integer]
+    var ScanType: js.UndefOr[InputDeviceScanType]
+    var Width: js.UndefOr[__integer]
+  }
+
+  object InputDeviceHdSettings {
+    @inline
+    def apply(
+        ActiveInput: js.UndefOr[InputDeviceActiveInput] = js.undefined,
+        ConfiguredInput: js.UndefOr[InputDeviceConfiguredInput] = js.undefined,
+        DeviceState: js.UndefOr[InputDeviceState] = js.undefined,
+        Framerate: js.UndefOr[__double] = js.undefined,
+        Height: js.UndefOr[__integer] = js.undefined,
+        MaxBitrate: js.UndefOr[__integer] = js.undefined,
+        ScanType: js.UndefOr[InputDeviceScanType] = js.undefined,
+        Width: js.UndefOr[__integer] = js.undefined
+    ): InputDeviceHdSettings = {
+      val __obj = js.Dynamic.literal()
+      ActiveInput.foreach(__v => __obj.updateDynamic("ActiveInput")(__v.asInstanceOf[js.Any]))
+      ConfiguredInput.foreach(__v => __obj.updateDynamic("ConfiguredInput")(__v.asInstanceOf[js.Any]))
+      DeviceState.foreach(__v => __obj.updateDynamic("DeviceState")(__v.asInstanceOf[js.Any]))
+      Framerate.foreach(__v => __obj.updateDynamic("Framerate")(__v.asInstanceOf[js.Any]))
+      Height.foreach(__v => __obj.updateDynamic("Height")(__v.asInstanceOf[js.Any]))
+      MaxBitrate.foreach(__v => __obj.updateDynamic("MaxBitrate")(__v.asInstanceOf[js.Any]))
+      ScanType.foreach(__v => __obj.updateDynamic("ScanType")(__v.asInstanceOf[js.Any]))
+      Width.foreach(__v => __obj.updateDynamic("Width")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputDeviceHdSettings]
+    }
+  }
+
+  /**
+    * Specifies whether the input device has been configured (outside of MediaLive) to use a dynamic IP address assignment (DHCP) or a static IP address.
+    */
+  @js.native
+  sealed trait InputDeviceIpScheme extends js.Any
+  object InputDeviceIpScheme extends js.Object {
+    val STATIC = "STATIC".asInstanceOf[InputDeviceIpScheme]
+    val DHCP = "DHCP".asInstanceOf[InputDeviceIpScheme]
+
+    val values = js.Object.freeze(js.Array(STATIC, DHCP))
+  }
+
+  /**
+    * The network settings for the input device.
+    */
+  @js.native
+  trait InputDeviceNetworkSettings extends js.Object {
+    var DnsAddresses: js.UndefOr[__listOf__string]
+    var Gateway: js.UndefOr[__string]
+    var IpAddress: js.UndefOr[__string]
+    var IpScheme: js.UndefOr[InputDeviceIpScheme]
+    var SubnetMask: js.UndefOr[__string]
+  }
+
+  object InputDeviceNetworkSettings {
+    @inline
+    def apply(
+        DnsAddresses: js.UndefOr[__listOf__string] = js.undefined,
+        Gateway: js.UndefOr[__string] = js.undefined,
+        IpAddress: js.UndefOr[__string] = js.undefined,
+        IpScheme: js.UndefOr[InputDeviceIpScheme] = js.undefined,
+        SubnetMask: js.UndefOr[__string] = js.undefined
+    ): InputDeviceNetworkSettings = {
+      val __obj = js.Dynamic.literal()
+      DnsAddresses.foreach(__v => __obj.updateDynamic("DnsAddresses")(__v.asInstanceOf[js.Any]))
+      Gateway.foreach(__v => __obj.updateDynamic("Gateway")(__v.asInstanceOf[js.Any]))
+      IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
+      IpScheme.foreach(__v => __obj.updateDynamic("IpScheme")(__v.asInstanceOf[js.Any]))
+      SubnetMask.foreach(__v => __obj.updateDynamic("SubnetMask")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputDeviceNetworkSettings]
+    }
+  }
+
+  /**
+    * Settings for an input device.
+    */
+  @js.native
+  trait InputDeviceRequest extends js.Object {
+    var Id: js.UndefOr[__string]
+  }
+
+  object InputDeviceRequest {
+    @inline
+    def apply(
+        Id: js.UndefOr[__string] = js.undefined
+    ): InputDeviceRequest = {
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputDeviceRequest]
+    }
+  }
+
+  /**
+    * The scan type of the video source.
+    */
+  @js.native
+  sealed trait InputDeviceScanType extends js.Any
+  object InputDeviceScanType extends js.Object {
+    val INTERLACED = "INTERLACED".asInstanceOf[InputDeviceScanType]
+    val PROGRESSIVE = "PROGRESSIVE".asInstanceOf[InputDeviceScanType]
+
+    val values = js.Object.freeze(js.Array(INTERLACED, PROGRESSIVE))
+  }
+
+  /**
+    * Settings for an input device.
+    */
+  @js.native
+  trait InputDeviceSettings extends js.Object {
+    var Id: js.UndefOr[__string]
+  }
+
+  object InputDeviceSettings {
+    @inline
+    def apply(
+        Id: js.UndefOr[__string] = js.undefined
+    ): InputDeviceSettings = {
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputDeviceSettings]
+    }
+  }
+
+  /**
+    * The state of the input device.
+    */
+  @js.native
+  sealed trait InputDeviceState extends js.Any
+  object InputDeviceState extends js.Object {
+    val IDLE = "IDLE".asInstanceOf[InputDeviceState]
+    val STREAMING = "STREAMING".asInstanceOf[InputDeviceState]
+
+    val values = js.Object.freeze(js.Array(IDLE, STREAMING))
+  }
+
+  /**
+    * Details of the input device.
+    */
+  @js.native
+  trait InputDeviceSummary extends js.Object {
+    var Arn: js.UndefOr[__string]
+    var ConnectionState: js.UndefOr[InputDeviceConnectionState]
+    var DeviceSettingsSyncState: js.UndefOr[DeviceSettingsSyncState]
+    var HdDeviceSettings: js.UndefOr[InputDeviceHdSettings]
+    var Id: js.UndefOr[__string]
+    var MacAddress: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
+    var NetworkSettings: js.UndefOr[InputDeviceNetworkSettings]
+    var SerialNumber: js.UndefOr[__string]
+    var Type: js.UndefOr[InputDeviceType]
+  }
+
+  object InputDeviceSummary {
+    @inline
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        ConnectionState: js.UndefOr[InputDeviceConnectionState] = js.undefined,
+        DeviceSettingsSyncState: js.UndefOr[DeviceSettingsSyncState] = js.undefined,
+        HdDeviceSettings: js.UndefOr[InputDeviceHdSettings] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined,
+        MacAddress: js.UndefOr[__string] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        NetworkSettings: js.UndefOr[InputDeviceNetworkSettings] = js.undefined,
+        SerialNumber: js.UndefOr[__string] = js.undefined,
+        Type: js.UndefOr[InputDeviceType] = js.undefined
+    ): InputDeviceSummary = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      ConnectionState.foreach(__v => __obj.updateDynamic("ConnectionState")(__v.asInstanceOf[js.Any]))
+      DeviceSettingsSyncState.foreach(__v => __obj.updateDynamic("DeviceSettingsSyncState")(__v.asInstanceOf[js.Any]))
+      HdDeviceSettings.foreach(__v => __obj.updateDynamic("HdDeviceSettings")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      MacAddress.foreach(__v => __obj.updateDynamic("MacAddress")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NetworkSettings.foreach(__v => __obj.updateDynamic("NetworkSettings")(__v.asInstanceOf[js.Any]))
+      SerialNumber.foreach(__v => __obj.updateDynamic("SerialNumber")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputDeviceSummary]
+    }
+  }
+
+  /**
+    * The type of the input device. For an AWS Elemental Link device that outputs resolutions up to 1080, choose "HD".
+    */
+  @js.native
+  sealed trait InputDeviceType extends js.Any
+  object InputDeviceType extends js.Object {
+    val HD = "HD".asInstanceOf[InputDeviceType]
+
+    val values = js.Object.freeze(js.Array(HD))
+  }
+
+  /**
     * Input Filter
     */
   @js.native
   sealed trait InputFilter extends js.Any
   object InputFilter extends js.Object {
-    val AUTO     = "AUTO".asInstanceOf[InputFilter]
+    val AUTO = "AUTO".asInstanceOf[InputFilter]
     val DISABLED = "DISABLED".asInstanceOf[InputFilter]
-    val FORCED   = "FORCED".asInstanceOf[InputFilter]
+    val FORCED = "FORCED".asInstanceOf[InputFilter]
 
     val values = js.Object.freeze(js.Array(AUTO, DISABLED, FORCED))
   }
@@ -5841,7 +6395,7 @@ package medialive {
   @js.native
   sealed trait InputLossActionForHlsOut extends js.Any
   object InputLossActionForHlsOut extends js.Object {
-    val EMIT_OUTPUT  = "EMIT_OUTPUT".asInstanceOf[InputLossActionForHlsOut]
+    val EMIT_OUTPUT = "EMIT_OUTPUT".asInstanceOf[InputLossActionForHlsOut]
     val PAUSE_OUTPUT = "PAUSE_OUTPUT".asInstanceOf[InputLossActionForHlsOut]
 
     val values = js.Object.freeze(js.Array(EMIT_OUTPUT, PAUSE_OUTPUT))
@@ -5853,7 +6407,7 @@ package medialive {
   @js.native
   sealed trait InputLossActionForMsSmoothOut extends js.Any
   object InputLossActionForMsSmoothOut extends js.Object {
-    val EMIT_OUTPUT  = "EMIT_OUTPUT".asInstanceOf[InputLossActionForMsSmoothOut]
+    val EMIT_OUTPUT = "EMIT_OUTPUT".asInstanceOf[InputLossActionForMsSmoothOut]
     val PAUSE_OUTPUT = "PAUSE_OUTPUT".asInstanceOf[InputLossActionForMsSmoothOut]
 
     val values = js.Object.freeze(js.Array(EMIT_OUTPUT, PAUSE_OUTPUT))
@@ -5865,7 +6419,7 @@ package medialive {
   @js.native
   sealed trait InputLossActionForRtmpOut extends js.Any
   object InputLossActionForRtmpOut extends js.Object {
-    val EMIT_OUTPUT  = "EMIT_OUTPUT".asInstanceOf[InputLossActionForRtmpOut]
+    val EMIT_OUTPUT = "EMIT_OUTPUT".asInstanceOf[InputLossActionForRtmpOut]
     val PAUSE_OUTPUT = "PAUSE_OUTPUT".asInstanceOf[InputLossActionForRtmpOut]
 
     val values = js.Object.freeze(js.Array(EMIT_OUTPUT, PAUSE_OUTPUT))
@@ -5878,7 +6432,7 @@ package medialive {
   sealed trait InputLossActionForUdpOut extends js.Any
   object InputLossActionForUdpOut extends js.Object {
     val DROP_PROGRAM = "DROP_PROGRAM".asInstanceOf[InputLossActionForUdpOut]
-    val DROP_TS      = "DROP_TS".asInstanceOf[InputLossActionForUdpOut]
+    val DROP_TS = "DROP_TS".asInstanceOf[InputLossActionForUdpOut]
     val EMIT_PROGRAM = "EMIT_PROGRAM".asInstanceOf[InputLossActionForUdpOut]
 
     val values = js.Object.freeze(js.Array(DROP_PROGRAM, DROP_TS, EMIT_PROGRAM))
@@ -5941,13 +6495,54 @@ package medialive {
   }
 
   /**
+    * Input preference when deciding which input to make active when a previously failed input has recovered.
+    * If \"EQUAL_INPUT_PREFERENCE\", then the active input will stay active as long as it is healthy.
+    * If \"PRIMARY_INPUT_PREFERRED\", then always switch back to the primary input when it is healthy.
+    */
+  @js.native
+  sealed trait InputPreference extends js.Any
+  object InputPreference extends js.Object {
+    val EQUAL_INPUT_PREFERENCE = "EQUAL_INPUT_PREFERENCE".asInstanceOf[InputPreference]
+    val PRIMARY_INPUT_PREFERRED = "PRIMARY_INPUT_PREFERRED".asInstanceOf[InputPreference]
+
+    val values = js.Object.freeze(js.Array(EQUAL_INPUT_PREFERENCE, PRIMARY_INPUT_PREFERRED))
+  }
+
+  /**
+    * Action to prepare an input for a future immediate input switch.
+    */
+  @js.native
+  trait InputPrepareScheduleActionSettings extends js.Object {
+    var InputAttachmentNameReference: __string
+    var InputClippingSettings: js.UndefOr[InputClippingSettings]
+    var UrlPath: js.UndefOr[__listOf__string]
+  }
+
+  object InputPrepareScheduleActionSettings {
+    @inline
+    def apply(
+        InputAttachmentNameReference: __string,
+        InputClippingSettings: js.UndefOr[InputClippingSettings] = js.undefined,
+        UrlPath: js.UndefOr[__listOf__string] = js.undefined
+    ): InputPrepareScheduleActionSettings = {
+      val __obj = js.Dynamic.literal(
+        "InputAttachmentNameReference" -> InputAttachmentNameReference.asInstanceOf[js.Any]
+      )
+
+      InputClippingSettings.foreach(__v => __obj.updateDynamic("InputClippingSettings")(__v.asInstanceOf[js.Any]))
+      UrlPath.foreach(__v => __obj.updateDynamic("UrlPath")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputPrepareScheduleActionSettings]
+    }
+  }
+
+  /**
     * Input resolution based on lines of vertical resolution in the input; SD is less than 720 lines, HD is 720 to 1080 lines, UHD is greater than 1080 lines
     */
   @js.native
   sealed trait InputResolution extends js.Any
   object InputResolution extends js.Object {
-    val SD  = "SD".asInstanceOf[InputResolution]
-    val HD  = "HD".asInstanceOf[InputResolution]
+    val SD = "SD".asInstanceOf[InputResolution]
+    val HD = "HD".asInstanceOf[InputResolution]
     val UHD = "UHD".asInstanceOf[InputResolution]
 
     val values = js.Object.freeze(js.Array(SD, HD, UHD))
@@ -5993,10 +6588,10 @@ package medialive {
   @js.native
   sealed trait InputSecurityGroupState extends js.Any
   object InputSecurityGroupState extends js.Object {
-    val IDLE     = "IDLE".asInstanceOf[InputSecurityGroupState]
-    val IN_USE   = "IN_USE".asInstanceOf[InputSecurityGroupState]
+    val IDLE = "IDLE".asInstanceOf[InputSecurityGroupState]
+    val IN_USE = "IN_USE".asInstanceOf[InputSecurityGroupState]
     val UPDATING = "UPDATING".asInstanceOf[InputSecurityGroupState]
-    val DELETED  = "DELETED".asInstanceOf[InputSecurityGroupState]
+    val DELETED = "DELETED".asInstanceOf[InputSecurityGroupState]
 
     val values = js.Object.freeze(js.Array(IDLE, IN_USE, UPDATING, DELETED))
   }
@@ -6013,6 +6608,7 @@ package medialive {
     var FilterStrength: js.UndefOr[__integerMin1Max5]
     var InputFilter: js.UndefOr[InputFilter]
     var NetworkInputSettings: js.UndefOr[NetworkInputSettings]
+    var Smpte2038DataPreference: js.UndefOr[Smpte2038DataPreference]
     var SourceEndBehavior: js.UndefOr[InputSourceEndBehavior]
     var VideoSelector: js.UndefOr[VideoSelector]
   }
@@ -6027,6 +6623,7 @@ package medialive {
         FilterStrength: js.UndefOr[__integerMin1Max5] = js.undefined,
         InputFilter: js.UndefOr[InputFilter] = js.undefined,
         NetworkInputSettings: js.UndefOr[NetworkInputSettings] = js.undefined,
+        Smpte2038DataPreference: js.UndefOr[Smpte2038DataPreference] = js.undefined,
         SourceEndBehavior: js.UndefOr[InputSourceEndBehavior] = js.undefined,
         VideoSelector: js.UndefOr[VideoSelector] = js.undefined
     ): InputSettings = {
@@ -6038,6 +6635,7 @@ package medialive {
       FilterStrength.foreach(__v => __obj.updateDynamic("FilterStrength")(__v.asInstanceOf[js.Any]))
       InputFilter.foreach(__v => __obj.updateDynamic("InputFilter")(__v.asInstanceOf[js.Any]))
       NetworkInputSettings.foreach(__v => __obj.updateDynamic("NetworkInputSettings")(__v.asInstanceOf[js.Any]))
+      Smpte2038DataPreference.foreach(__v => __obj.updateDynamic("Smpte2038DataPreference")(__v.asInstanceOf[js.Any]))
       SourceEndBehavior.foreach(__v => __obj.updateDynamic("SourceEndBehavior")(__v.asInstanceOf[js.Any]))
       VideoSelector.foreach(__v => __obj.updateDynamic("VideoSelector")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InputSettings]
@@ -6076,7 +6674,7 @@ package medialive {
   sealed trait InputSourceEndBehavior extends js.Any
   object InputSourceEndBehavior extends js.Object {
     val CONTINUE = "CONTINUE".asInstanceOf[InputSourceEndBehavior]
-    val LOOP     = "LOOP".asInstanceOf[InputSourceEndBehavior]
+    val LOOP = "LOOP".asInstanceOf[InputSourceEndBehavior]
 
     val values = js.Object.freeze(js.Array(CONTINUE, LOOP))
   }
@@ -6114,7 +6712,7 @@ package medialive {
   @js.native
   sealed trait InputSourceType extends js.Any
   object InputSourceType extends js.Object {
-    val STATIC  = "STATIC".asInstanceOf[InputSourceType]
+    val STATIC = "STATIC".asInstanceOf[InputSourceType]
     val DYNAMIC = "DYNAMIC".asInstanceOf[InputSourceType]
 
     val values = js.Object.freeze(js.Array(STATIC, DYNAMIC))
@@ -6155,7 +6753,7 @@ package medialive {
     val DETACHED = "DETACHED".asInstanceOf[InputState]
     val ATTACHED = "ATTACHED".asInstanceOf[InputState]
     val DELETING = "DELETING".asInstanceOf[InputState]
-    val DELETED  = "DELETED".asInstanceOf[InputState]
+    val DELETED = "DELETED".asInstanceOf[InputState]
 
     val values = js.Object.freeze(js.Array(CREATING, DETACHED, ATTACHED, DELETING, DELETED))
   }
@@ -6194,7 +6792,7 @@ package medialive {
   sealed trait InputTimecodeSource extends js.Any
   object InputTimecodeSource extends js.Object {
     val ZEROBASED = "ZEROBASED".asInstanceOf[InputTimecodeSource]
-    val EMBEDDED  = "EMBEDDED".asInstanceOf[InputTimecodeSource]
+    val EMBEDDED = "EMBEDDED".asInstanceOf[InputTimecodeSource]
 
     val values = js.Object.freeze(js.Array(ZEROBASED, EMBEDDED))
   }
@@ -6205,15 +6803,18 @@ package medialive {
   @js.native
   sealed trait InputType extends js.Any
   object InputType extends js.Object {
-    val UDP_PUSH     = "UDP_PUSH".asInstanceOf[InputType]
-    val RTP_PUSH     = "RTP_PUSH".asInstanceOf[InputType]
-    val RTMP_PUSH    = "RTMP_PUSH".asInstanceOf[InputType]
-    val RTMP_PULL    = "RTMP_PULL".asInstanceOf[InputType]
-    val URL_PULL     = "URL_PULL".asInstanceOf[InputType]
-    val MP4_FILE     = "MP4_FILE".asInstanceOf[InputType]
+    val UDP_PUSH = "UDP_PUSH".asInstanceOf[InputType]
+    val RTP_PUSH = "RTP_PUSH".asInstanceOf[InputType]
+    val RTMP_PUSH = "RTMP_PUSH".asInstanceOf[InputType]
+    val RTMP_PULL = "RTMP_PULL".asInstanceOf[InputType]
+    val URL_PULL = "URL_PULL".asInstanceOf[InputType]
+    val MP4_FILE = "MP4_FILE".asInstanceOf[InputType]
     val MEDIACONNECT = "MEDIACONNECT".asInstanceOf[InputType]
+    val INPUT_DEVICE = "INPUT_DEVICE".asInstanceOf[InputType]
 
-    val values = js.Object.freeze(js.Array(UDP_PUSH, RTP_PUSH, RTMP_PUSH, RTMP_PULL, URL_PULL, MP4_FILE, MEDIACONNECT))
+    val values = js.Object.freeze(
+      js.Array(UDP_PUSH, RTP_PUSH, RTMP_PUSH, RTMP_PULL, URL_PULL, MP4_FILE, MEDIACONNECT, INPUT_DEVICE)
+    )
   }
 
   /**
@@ -6353,6 +6954,50 @@ package medialive {
       Channels.foreach(__v => __obj.updateDynamic("Channels")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListChannelsResponse]
+    }
+  }
+
+  /**
+    * Placeholder documentation for ListInputDevicesRequest
+    */
+  @js.native
+  trait ListInputDevicesRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object ListInputDevicesRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListInputDevicesRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListInputDevicesRequest]
+    }
+  }
+
+  /**
+    * Placeholder documentation for ListInputDevicesResponse
+    */
+  @js.native
+  trait ListInputDevicesResponse extends js.Object {
+    var InputDevices: js.UndefOr[__listOfInputDeviceSummary]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object ListInputDevicesResponse {
+    @inline
+    def apply(
+        InputDevices: js.UndefOr[__listOfInputDeviceSummary] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListInputDevicesResponse = {
+      val __obj = js.Dynamic.literal()
+      InputDevices.foreach(__v => __obj.updateDynamic("InputDevices")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListInputDevicesResponse]
     }
   }
 
@@ -6725,10 +7370,10 @@ package medialive {
   @js.native
   sealed trait LogLevel extends js.Any
   object LogLevel extends js.Object {
-    val ERROR    = "ERROR".asInstanceOf[LogLevel]
-    val WARNING  = "WARNING".asInstanceOf[LogLevel]
-    val INFO     = "INFO".asInstanceOf[LogLevel]
-    val DEBUG    = "DEBUG".asInstanceOf[LogLevel]
+    val ERROR = "ERROR".asInstanceOf[LogLevel]
+    val WARNING = "WARNING".asInstanceOf[LogLevel]
+    val INFO = "INFO".asInstanceOf[LogLevel]
+    val DEBUG = "DEBUG".asInstanceOf[LogLevel]
     val DISABLED = "DISABLED".asInstanceOf[LogLevel]
 
     val values = js.Object.freeze(js.Array(ERROR, WARNING, INFO, DEBUG, DISABLED))
@@ -6740,7 +7385,7 @@ package medialive {
   @js.native
   sealed trait M2tsAbsentInputAudioBehavior extends js.Any
   object M2tsAbsentInputAudioBehavior extends js.Object {
-    val DROP           = "DROP".asInstanceOf[M2tsAbsentInputAudioBehavior]
+    val DROP = "DROP".asInstanceOf[M2tsAbsentInputAudioBehavior]
     val ENCODE_SILENCE = "ENCODE_SILENCE".asInstanceOf[M2tsAbsentInputAudioBehavior]
 
     val values = js.Object.freeze(js.Array(DROP, ENCODE_SILENCE))
@@ -6753,7 +7398,7 @@ package medialive {
   sealed trait M2tsArib extends js.Any
   object M2tsArib extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[M2tsArib]
-    val ENABLED  = "ENABLED".asInstanceOf[M2tsArib]
+    val ENABLED = "ENABLED".asInstanceOf[M2tsArib]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -6764,7 +7409,7 @@ package medialive {
   @js.native
   sealed trait M2tsAribCaptionsPidControl extends js.Any
   object M2tsAribCaptionsPidControl extends js.Object {
-    val AUTO           = "AUTO".asInstanceOf[M2tsAribCaptionsPidControl]
+    val AUTO = "AUTO".asInstanceOf[M2tsAribCaptionsPidControl]
     val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[M2tsAribCaptionsPidControl]
 
     val values = js.Object.freeze(js.Array(AUTO, USE_CONFIGURED))
@@ -6777,7 +7422,7 @@ package medialive {
   sealed trait M2tsAudioBufferModel extends js.Any
   object M2tsAudioBufferModel extends js.Object {
     val ATSC = "ATSC".asInstanceOf[M2tsAudioBufferModel]
-    val DVB  = "DVB".asInstanceOf[M2tsAudioBufferModel]
+    val DVB = "DVB".asInstanceOf[M2tsAudioBufferModel]
 
     val values = js.Object.freeze(js.Array(ATSC, DVB))
   }
@@ -6789,7 +7434,7 @@ package medialive {
   sealed trait M2tsAudioInterval extends js.Any
   object M2tsAudioInterval extends js.Object {
     val VIDEO_AND_FIXED_INTERVALS = "VIDEO_AND_FIXED_INTERVALS".asInstanceOf[M2tsAudioInterval]
-    val VIDEO_INTERVAL            = "VIDEO_INTERVAL".asInstanceOf[M2tsAudioInterval]
+    val VIDEO_INTERVAL = "VIDEO_INTERVAL".asInstanceOf[M2tsAudioInterval]
 
     val values = js.Object.freeze(js.Array(VIDEO_AND_FIXED_INTERVALS, VIDEO_INTERVAL))
   }
@@ -6801,7 +7446,7 @@ package medialive {
   sealed trait M2tsAudioStreamType extends js.Any
   object M2tsAudioStreamType extends js.Object {
     val ATSC = "ATSC".asInstanceOf[M2tsAudioStreamType]
-    val DVB  = "DVB".asInstanceOf[M2tsAudioStreamType]
+    val DVB = "DVB".asInstanceOf[M2tsAudioStreamType]
 
     val values = js.Object.freeze(js.Array(ATSC, DVB))
   }
@@ -6813,7 +7458,7 @@ package medialive {
   sealed trait M2tsBufferModel extends js.Any
   object M2tsBufferModel extends js.Object {
     val MULTIPLEX = "MULTIPLEX".asInstanceOf[M2tsBufferModel]
-    val NONE      = "NONE".asInstanceOf[M2tsBufferModel]
+    val NONE = "NONE".asInstanceOf[M2tsBufferModel]
 
     val values = js.Object.freeze(js.Array(MULTIPLEX, NONE))
   }
@@ -6825,7 +7470,7 @@ package medialive {
   sealed trait M2tsCcDescriptor extends js.Any
   object M2tsCcDescriptor extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[M2tsCcDescriptor]
-    val ENABLED  = "ENABLED".asInstanceOf[M2tsCcDescriptor]
+    val ENABLED = "ENABLED".asInstanceOf[M2tsCcDescriptor]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -6836,7 +7481,7 @@ package medialive {
   @js.native
   sealed trait M2tsEbifControl extends js.Any
   object M2tsEbifControl extends js.Object {
-    val NONE        = "NONE".asInstanceOf[M2tsEbifControl]
+    val NONE = "NONE".asInstanceOf[M2tsEbifControl]
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[M2tsEbifControl]
 
     val values = js.Object.freeze(js.Array(NONE, PASSTHROUGH))
@@ -6849,7 +7494,7 @@ package medialive {
   sealed trait M2tsEbpPlacement extends js.Any
   object M2tsEbpPlacement extends js.Object {
     val VIDEO_AND_AUDIO_PIDS = "VIDEO_AND_AUDIO_PIDS".asInstanceOf[M2tsEbpPlacement]
-    val VIDEO_PID            = "VIDEO_PID".asInstanceOf[M2tsEbpPlacement]
+    val VIDEO_PID = "VIDEO_PID".asInstanceOf[M2tsEbpPlacement]
 
     val values = js.Object.freeze(js.Array(VIDEO_AND_AUDIO_PIDS, VIDEO_PID))
   }
@@ -6872,7 +7517,7 @@ package medialive {
   @js.native
   sealed trait M2tsKlv extends js.Any
   object M2tsKlv extends js.Object {
-    val NONE        = "NONE".asInstanceOf[M2tsKlv]
+    val NONE = "NONE".asInstanceOf[M2tsKlv]
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[M2tsKlv]
 
     val values = js.Object.freeze(js.Array(NONE, PASSTHROUGH))
@@ -6885,7 +7530,7 @@ package medialive {
   sealed trait M2tsNielsenId3Behavior extends js.Any
   object M2tsNielsenId3Behavior extends js.Object {
     val NO_PASSTHROUGH = "NO_PASSTHROUGH".asInstanceOf[M2tsNielsenId3Behavior]
-    val PASSTHROUGH    = "PASSTHROUGH".asInstanceOf[M2tsNielsenId3Behavior]
+    val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[M2tsNielsenId3Behavior]
 
     val values = js.Object.freeze(js.Array(NO_PASSTHROUGH, PASSTHROUGH))
   }
@@ -6897,7 +7542,7 @@ package medialive {
   sealed trait M2tsPcrControl extends js.Any
   object M2tsPcrControl extends js.Object {
     val CONFIGURED_PCR_PERIOD = "CONFIGURED_PCR_PERIOD".asInstanceOf[M2tsPcrControl]
-    val PCR_EVERY_PES_PACKET  = "PCR_EVERY_PES_PACKET".asInstanceOf[M2tsPcrControl]
+    val PCR_EVERY_PES_PACKET = "PCR_EVERY_PES_PACKET".asInstanceOf[M2tsPcrControl]
 
     val values = js.Object.freeze(js.Array(CONFIGURED_PCR_PERIOD, PCR_EVERY_PES_PACKET))
   }
@@ -6920,7 +7565,7 @@ package medialive {
   @js.native
   sealed trait M2tsScte35Control extends js.Any
   object M2tsScte35Control extends js.Object {
-    val NONE        = "NONE".asInstanceOf[M2tsScte35Control]
+    val NONE = "NONE".asInstanceOf[M2tsScte35Control]
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[M2tsScte35Control]
 
     val values = js.Object.freeze(js.Array(NONE, PASSTHROUGH))
@@ -6932,11 +7577,11 @@ package medialive {
   @js.native
   sealed trait M2tsSegmentationMarkers extends js.Any
   object M2tsSegmentationMarkers extends js.Object {
-    val EBP          = "EBP".asInstanceOf[M2tsSegmentationMarkers]
-    val EBP_LEGACY   = "EBP_LEGACY".asInstanceOf[M2tsSegmentationMarkers]
-    val NONE         = "NONE".asInstanceOf[M2tsSegmentationMarkers]
+    val EBP = "EBP".asInstanceOf[M2tsSegmentationMarkers]
+    val EBP_LEGACY = "EBP_LEGACY".asInstanceOf[M2tsSegmentationMarkers]
+    val NONE = "NONE".asInstanceOf[M2tsSegmentationMarkers]
     val PSI_SEGSTART = "PSI_SEGSTART".asInstanceOf[M2tsSegmentationMarkers]
-    val RAI_ADAPT    = "RAI_ADAPT".asInstanceOf[M2tsSegmentationMarkers]
+    val RAI_ADAPT = "RAI_ADAPT".asInstanceOf[M2tsSegmentationMarkers]
     val RAI_SEGSTART = "RAI_SEGSTART".asInstanceOf[M2tsSegmentationMarkers]
 
     val values = js.Object.freeze(js.Array(EBP, EBP_LEGACY, NONE, PSI_SEGSTART, RAI_ADAPT, RAI_SEGSTART))
@@ -6949,7 +7594,7 @@ package medialive {
   sealed trait M2tsSegmentationStyle extends js.Any
   object M2tsSegmentationStyle extends js.Object {
     val MAINTAIN_CADENCE = "MAINTAIN_CADENCE".asInstanceOf[M2tsSegmentationStyle]
-    val RESET_CADENCE    = "RESET_CADENCE".asInstanceOf[M2tsSegmentationStyle]
+    val RESET_CADENCE = "RESET_CADENCE".asInstanceOf[M2tsSegmentationStyle]
 
     val values = js.Object.freeze(js.Array(MAINTAIN_CADENCE, RESET_CADENCE))
   }
@@ -7118,7 +7763,7 @@ package medialive {
   sealed trait M2tsTimedMetadataBehavior extends js.Any
   object M2tsTimedMetadataBehavior extends js.Object {
     val NO_PASSTHROUGH = "NO_PASSTHROUGH".asInstanceOf[M2tsTimedMetadataBehavior]
-    val PASSTHROUGH    = "PASSTHROUGH".asInstanceOf[M2tsTimedMetadataBehavior]
+    val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[M2tsTimedMetadataBehavior]
 
     val values = js.Object.freeze(js.Array(NO_PASSTHROUGH, PASSTHROUGH))
   }
@@ -7130,7 +7775,7 @@ package medialive {
   sealed trait M3u8NielsenId3Behavior extends js.Any
   object M3u8NielsenId3Behavior extends js.Object {
     val NO_PASSTHROUGH = "NO_PASSTHROUGH".asInstanceOf[M3u8NielsenId3Behavior]
-    val PASSTHROUGH    = "PASSTHROUGH".asInstanceOf[M3u8NielsenId3Behavior]
+    val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[M3u8NielsenId3Behavior]
 
     val values = js.Object.freeze(js.Array(NO_PASSTHROUGH, PASSTHROUGH))
   }
@@ -7142,7 +7787,7 @@ package medialive {
   sealed trait M3u8PcrControl extends js.Any
   object M3u8PcrControl extends js.Object {
     val CONFIGURED_PCR_PERIOD = "CONFIGURED_PCR_PERIOD".asInstanceOf[M3u8PcrControl]
-    val PCR_EVERY_PES_PACKET  = "PCR_EVERY_PES_PACKET".asInstanceOf[M3u8PcrControl]
+    val PCR_EVERY_PES_PACKET = "PCR_EVERY_PES_PACKET".asInstanceOf[M3u8PcrControl]
 
     val values = js.Object.freeze(js.Array(CONFIGURED_PCR_PERIOD, PCR_EVERY_PES_PACKET))
   }
@@ -7154,7 +7799,7 @@ package medialive {
   sealed trait M3u8Scte35Behavior extends js.Any
   object M3u8Scte35Behavior extends js.Object {
     val NO_PASSTHROUGH = "NO_PASSTHROUGH".asInstanceOf[M3u8Scte35Behavior]
-    val PASSTHROUGH    = "PASSTHROUGH".asInstanceOf[M3u8Scte35Behavior]
+    val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[M3u8Scte35Behavior]
 
     val values = js.Object.freeze(js.Array(NO_PASSTHROUGH, PASSTHROUGH))
   }
@@ -7233,7 +7878,7 @@ package medialive {
   sealed trait M3u8TimedMetadataBehavior extends js.Any
   object M3u8TimedMetadataBehavior extends js.Object {
     val NO_PASSTHROUGH = "NO_PASSTHROUGH".asInstanceOf[M3u8TimedMetadataBehavior]
-    val PASSTHROUGH    = "PASSTHROUGH".asInstanceOf[M3u8TimedMetadataBehavior]
+    val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[M3u8TimedMetadataBehavior]
 
     val values = js.Object.freeze(js.Array(NO_PASSTHROUGH, PASSTHROUGH))
   }
@@ -7721,7 +8366,7 @@ package medialive {
     ): MultiplexProgramServiceDescriptor = {
       val __obj = js.Dynamic.literal(
         "ProviderName" -> ProviderName.asInstanceOf[js.Any],
-        "ServiceName"  -> ServiceName.asInstanceOf[js.Any]
+        "ServiceName" -> ServiceName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[MultiplexProgramServiceDescriptor]
@@ -7734,6 +8379,7 @@ package medialive {
   @js.native
   trait MultiplexProgramSettings extends js.Object {
     var ProgramNumber: __integerMin0Max65535
+    var PreferredChannelPipeline: js.UndefOr[PreferredChannelPipeline]
     var ServiceDescriptor: js.UndefOr[MultiplexProgramServiceDescriptor]
     var VideoSettings: js.UndefOr[MultiplexVideoSettings]
   }
@@ -7742,6 +8388,7 @@ package medialive {
     @inline
     def apply(
         ProgramNumber: __integerMin0Max65535,
+        PreferredChannelPipeline: js.UndefOr[PreferredChannelPipeline] = js.undefined,
         ServiceDescriptor: js.UndefOr[MultiplexProgramServiceDescriptor] = js.undefined,
         VideoSettings: js.UndefOr[MultiplexVideoSettings] = js.undefined
     ): MultiplexProgramSettings = {
@@ -7749,6 +8396,7 @@ package medialive {
         "ProgramNumber" -> ProgramNumber.asInstanceOf[js.Any]
       )
 
+      PreferredChannelPipeline.foreach(__v => __obj.updateDynamic("PreferredChannelPipeline")(__v.asInstanceOf[js.Any]))
       ServiceDescriptor.foreach(__v => __obj.updateDynamic("ServiceDescriptor")(__v.asInstanceOf[js.Any]))
       VideoSettings.foreach(__v => __obj.updateDynamic("VideoSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MultiplexProgramSettings]
@@ -7798,7 +8446,7 @@ package medialive {
     ): MultiplexSettings = {
       val __obj = js.Dynamic.literal(
         "TransportStreamBitrate" -> TransportStreamBitrate.asInstanceOf[js.Any],
-        "TransportStreamId"      -> TransportStreamId.asInstanceOf[js.Any]
+        "TransportStreamId" -> TransportStreamId.asInstanceOf[js.Any]
       )
 
       MaximumVideoBufferDelayMilliseconds.foreach(__v =>
@@ -7836,15 +8484,15 @@ package medialive {
   @js.native
   sealed trait MultiplexState extends js.Any
   object MultiplexState extends js.Object {
-    val CREATING      = "CREATING".asInstanceOf[MultiplexState]
+    val CREATING = "CREATING".asInstanceOf[MultiplexState]
     val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[MultiplexState]
-    val IDLE          = "IDLE".asInstanceOf[MultiplexState]
-    val STARTING      = "STARTING".asInstanceOf[MultiplexState]
-    val RUNNING       = "RUNNING".asInstanceOf[MultiplexState]
-    val RECOVERING    = "RECOVERING".asInstanceOf[MultiplexState]
-    val STOPPING      = "STOPPING".asInstanceOf[MultiplexState]
-    val DELETING      = "DELETING".asInstanceOf[MultiplexState]
-    val DELETED       = "DELETED".asInstanceOf[MultiplexState]
+    val IDLE = "IDLE".asInstanceOf[MultiplexState]
+    val STARTING = "STARTING".asInstanceOf[MultiplexState]
+    val RUNNING = "RUNNING".asInstanceOf[MultiplexState]
+    val RECOVERING = "RECOVERING".asInstanceOf[MultiplexState]
+    val STOPPING = "STOPPING".asInstanceOf[MultiplexState]
+    val DELETING = "DELETING".asInstanceOf[MultiplexState]
+    val DELETED = "DELETED".asInstanceOf[MultiplexState]
 
     val values = js.Object.freeze(
       js.Array(CREATING, CREATE_FAILED, IDLE, STARTING, RUNNING, RECOVERING, STOPPING, DELETING, DELETED)
@@ -8002,7 +8650,7 @@ package medialive {
   sealed trait NielsenPcmToId3TaggingState extends js.Any
   object NielsenPcmToId3TaggingState extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[NielsenPcmToId3TaggingState]
-    val ENABLED  = "ENABLED".asInstanceOf[NielsenPcmToId3TaggingState]
+    val ENABLED = "ENABLED".asInstanceOf[NielsenPcmToId3TaggingState]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -8186,7 +8834,7 @@ package medialive {
     ): OutputGroup = {
       val __obj = js.Dynamic.literal(
         "OutputGroupSettings" -> OutputGroupSettings.asInstanceOf[js.Any],
-        "Outputs"             -> Outputs.asInstanceOf[js.Any]
+        "Outputs" -> Outputs.asInstanceOf[js.Any]
       )
 
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -8399,6 +9047,23 @@ package medialive {
   }
 
   /**
+    * Indicates which pipeline is preferred by the multiplex for program ingest.
+    * If set to \"PIPELINE_0\" or \"PIPELINE_1\" and an unhealthy ingest causes the multiplex to switch to the non-preferred pipeline,
+    * it will switch back once that ingest is healthy again. If set to \"CURRENTLY_ACTIVE\",
+    * it will not switch back to the other pipeline based on it recovering to a healthy state,
+    * it will only switch if the active pipeline becomes unhealthy.
+    */
+  @js.native
+  sealed trait PreferredChannelPipeline extends js.Any
+  object PreferredChannelPipeline extends js.Object {
+    val CURRENTLY_ACTIVE = "CURRENTLY_ACTIVE".asInstanceOf[PreferredChannelPipeline]
+    val PIPELINE_0 = "PIPELINE_0".asInstanceOf[PreferredChannelPipeline]
+    val PIPELINE_1 = "PIPELINE_1".asInstanceOf[PreferredChannelPipeline]
+
+    val values = js.Object.freeze(js.Array(CURRENTLY_ACTIVE, PIPELINE_0, PIPELINE_1))
+  }
+
+  /**
     * Placeholder documentation for PurchaseOfferingRequest
     */
   @js.native
@@ -8422,7 +9087,7 @@ package medialive {
         Tags: js.UndefOr[Tags] = js.undefined
     ): PurchaseOfferingRequest = {
       val __obj = js.Dynamic.literal(
-        "Count"      -> Count.asInstanceOf[js.Any],
+        "Count" -> Count.asInstanceOf[js.Any],
         "OfferingId" -> OfferingId.asInstanceOf[js.Any]
       )
 
@@ -8589,8 +9254,8 @@ package medialive {
   sealed trait ReservationCodec extends js.Any
   object ReservationCodec extends js.Object {
     val MPEG2 = "MPEG2".asInstanceOf[ReservationCodec]
-    val AVC   = "AVC".asInstanceOf[ReservationCodec]
-    val HEVC  = "HEVC".asInstanceOf[ReservationCodec]
+    val AVC = "AVC".asInstanceOf[ReservationCodec]
+    val HEVC = "HEVC".asInstanceOf[ReservationCodec]
     val AUDIO = "AUDIO".asInstanceOf[ReservationCodec]
 
     val values = js.Object.freeze(js.Array(MPEG2, AVC, HEVC, AUDIO))
@@ -8627,8 +9292,8 @@ package medialive {
   @js.native
   sealed trait ReservationResolution extends js.Any
   object ReservationResolution extends js.Object {
-    val SD  = "SD".asInstanceOf[ReservationResolution]
-    val HD  = "HD".asInstanceOf[ReservationResolution]
+    val SD = "SD".asInstanceOf[ReservationResolution]
+    val HD = "HD".asInstanceOf[ReservationResolution]
     val FHD = "FHD".asInstanceOf[ReservationResolution]
     val UHD = "UHD".asInstanceOf[ReservationResolution]
 
@@ -8681,10 +9346,10 @@ package medialive {
   @js.native
   sealed trait ReservationResourceType extends js.Any
   object ReservationResourceType extends js.Object {
-    val INPUT     = "INPUT".asInstanceOf[ReservationResourceType]
-    val OUTPUT    = "OUTPUT".asInstanceOf[ReservationResourceType]
+    val INPUT = "INPUT".asInstanceOf[ReservationResourceType]
+    val OUTPUT = "OUTPUT".asInstanceOf[ReservationResourceType]
     val MULTIPLEX = "MULTIPLEX".asInstanceOf[ReservationResourceType]
-    val CHANNEL   = "CHANNEL".asInstanceOf[ReservationResourceType]
+    val CHANNEL = "CHANNEL".asInstanceOf[ReservationResourceType]
 
     val values = js.Object.freeze(js.Array(INPUT, OUTPUT, MULTIPLEX, CHANNEL))
   }
@@ -8695,7 +9360,7 @@ package medialive {
   @js.native
   sealed trait ReservationSpecialFeature extends js.Any
   object ReservationSpecialFeature extends js.Object {
-    val ADVANCED_AUDIO      = "ADVANCED_AUDIO".asInstanceOf[ReservationSpecialFeature]
+    val ADVANCED_AUDIO = "ADVANCED_AUDIO".asInstanceOf[ReservationSpecialFeature]
     val AUDIO_NORMALIZATION = "AUDIO_NORMALIZATION".asInstanceOf[ReservationSpecialFeature]
 
     val values = js.Object.freeze(js.Array(ADVANCED_AUDIO, AUDIO_NORMALIZATION))
@@ -8707,10 +9372,10 @@ package medialive {
   @js.native
   sealed trait ReservationState extends js.Any
   object ReservationState extends js.Object {
-    val ACTIVE   = "ACTIVE".asInstanceOf[ReservationState]
-    val EXPIRED  = "EXPIRED".asInstanceOf[ReservationState]
+    val ACTIVE = "ACTIVE".asInstanceOf[ReservationState]
+    val EXPIRED = "EXPIRED".asInstanceOf[ReservationState]
     val CANCELED = "CANCELED".asInstanceOf[ReservationState]
-    val DELETED  = "DELETED".asInstanceOf[ReservationState]
+    val DELETED = "DELETED".asInstanceOf[ReservationState]
 
     val values = js.Object.freeze(js.Array(ACTIVE, EXPIRED, CANCELED, DELETED))
   }
@@ -8723,7 +9388,7 @@ package medialive {
   object ReservationVideoQuality extends js.Object {
     val STANDARD = "STANDARD".asInstanceOf[ReservationVideoQuality]
     val ENHANCED = "ENHANCED".asInstanceOf[ReservationVideoQuality]
-    val PREMIUM  = "PREMIUM".asInstanceOf[ReservationVideoQuality]
+    val PREMIUM = "PREMIUM".asInstanceOf[ReservationVideoQuality]
 
     val values = js.Object.freeze(js.Array(STANDARD, ENHANCED, PREMIUM))
   }
@@ -8735,7 +9400,7 @@ package medialive {
   sealed trait RtmpCacheFullBehavior extends js.Any
   object RtmpCacheFullBehavior extends js.Object {
     val DISCONNECT_IMMEDIATELY = "DISCONNECT_IMMEDIATELY".asInstanceOf[RtmpCacheFullBehavior]
-    val WAIT_FOR_SERVER        = "WAIT_FOR_SERVER".asInstanceOf[RtmpCacheFullBehavior]
+    val WAIT_FOR_SERVER = "WAIT_FOR_SERVER".asInstanceOf[RtmpCacheFullBehavior]
 
     val values = js.Object.freeze(js.Array(DISCONNECT_IMMEDIATELY, WAIT_FOR_SERVER))
   }
@@ -8746,8 +9411,8 @@ package medialive {
   @js.native
   sealed trait RtmpCaptionData extends js.Any
   object RtmpCaptionData extends js.Object {
-    val ALL                   = "ALL".asInstanceOf[RtmpCaptionData]
-    val FIELD1_608            = "FIELD1_608".asInstanceOf[RtmpCaptionData]
+    val ALL = "ALL".asInstanceOf[RtmpCaptionData]
+    val FIELD1_608 = "FIELD1_608".asInstanceOf[RtmpCaptionData]
     val FIELD1_AND_FIELD2_608 = "FIELD1_AND_FIELD2_608".asInstanceOf[RtmpCaptionData]
 
     val values = js.Object.freeze(js.Array(ALL, FIELD1_608, FIELD1_AND_FIELD2_608))
@@ -8809,7 +9474,7 @@ package medialive {
   @js.native
   sealed trait RtmpOutputCertificateMode extends js.Any
   object RtmpOutputCertificateMode extends js.Object {
-    val SELF_SIGNED         = "SELF_SIGNED".asInstanceOf[RtmpOutputCertificateMode]
+    val SELF_SIGNED = "SELF_SIGNED".asInstanceOf[RtmpOutputCertificateMode]
     val VERIFY_AUTHENTICITY = "VERIFY_AUTHENTICITY".asInstanceOf[RtmpOutputCertificateMode]
 
     val values = js.Object.freeze(js.Array(SELF_SIGNED, VERIFY_AUTHENTICITY))
@@ -8863,8 +9528,8 @@ package medialive {
         ScheduleActionStartSettings: ScheduleActionStartSettings
     ): ScheduleAction = {
       val __obj = js.Dynamic.literal(
-        "ActionName"                  -> ActionName.asInstanceOf[js.Any],
-        "ScheduleActionSettings"      -> ScheduleActionSettings.asInstanceOf[js.Any],
+        "ActionName" -> ActionName.asInstanceOf[js.Any],
+        "ScheduleActionSettings" -> ScheduleActionSettings.asInstanceOf[js.Any],
         "ScheduleActionStartSettings" -> ScheduleActionStartSettings.asInstanceOf[js.Any]
       )
 
@@ -8879,6 +9544,7 @@ package medialive {
   trait ScheduleActionSettings extends js.Object {
     var HlsId3SegmentTaggingSettings: js.UndefOr[HlsId3SegmentTaggingScheduleActionSettings]
     var HlsTimedMetadataSettings: js.UndefOr[HlsTimedMetadataScheduleActionSettings]
+    var InputPrepareSettings: js.UndefOr[InputPrepareScheduleActionSettings]
     var InputSwitchSettings: js.UndefOr[InputSwitchScheduleActionSettings]
     var PauseStateSettings: js.UndefOr[PauseStateScheduleActionSettings]
     var Scte35ReturnToNetworkSettings: js.UndefOr[Scte35ReturnToNetworkScheduleActionSettings]
@@ -8893,6 +9559,7 @@ package medialive {
     def apply(
         HlsId3SegmentTaggingSettings: js.UndefOr[HlsId3SegmentTaggingScheduleActionSettings] = js.undefined,
         HlsTimedMetadataSettings: js.UndefOr[HlsTimedMetadataScheduleActionSettings] = js.undefined,
+        InputPrepareSettings: js.UndefOr[InputPrepareScheduleActionSettings] = js.undefined,
         InputSwitchSettings: js.UndefOr[InputSwitchScheduleActionSettings] = js.undefined,
         PauseStateSettings: js.UndefOr[PauseStateScheduleActionSettings] = js.undefined,
         Scte35ReturnToNetworkSettings: js.UndefOr[Scte35ReturnToNetworkScheduleActionSettings] = js.undefined,
@@ -8906,6 +9573,7 @@ package medialive {
         __obj.updateDynamic("HlsId3SegmentTaggingSettings")(__v.asInstanceOf[js.Any])
       )
       HlsTimedMetadataSettings.foreach(__v => __obj.updateDynamic("HlsTimedMetadataSettings")(__v.asInstanceOf[js.Any]))
+      InputPrepareSettings.foreach(__v => __obj.updateDynamic("InputPrepareSettings")(__v.asInstanceOf[js.Any]))
       InputSwitchSettings.foreach(__v => __obj.updateDynamic("InputSwitchSettings")(__v.asInstanceOf[js.Any]))
       PauseStateSettings.foreach(__v => __obj.updateDynamic("PauseStateSettings")(__v.asInstanceOf[js.Any]))
       Scte35ReturnToNetworkSettings.foreach(__v =>
@@ -8962,7 +9630,7 @@ package medialive {
   @js.native
   sealed trait Scte20Convert608To708 extends js.Any
   object Scte20Convert608To708 extends js.Object {
-    val DISABLED  = "DISABLED".asInstanceOf[Scte20Convert608To708]
+    val DISABLED = "DISABLED".asInstanceOf[Scte20Convert608To708]
     val UPCONVERT = "UPCONVERT".asInstanceOf[Scte20Convert608To708]
 
     val values = js.Object.freeze(js.Array(DISABLED, UPCONVERT))
@@ -9072,7 +9740,7 @@ package medialive {
   sealed trait Scte35ArchiveAllowedFlag extends js.Any
   object Scte35ArchiveAllowedFlag extends js.Object {
     val ARCHIVE_NOT_ALLOWED = "ARCHIVE_NOT_ALLOWED".asInstanceOf[Scte35ArchiveAllowedFlag]
-    val ARCHIVE_ALLOWED     = "ARCHIVE_ALLOWED".asInstanceOf[Scte35ArchiveAllowedFlag]
+    val ARCHIVE_ALLOWED = "ARCHIVE_ALLOWED".asInstanceOf[Scte35ArchiveAllowedFlag]
 
     val values = js.Object.freeze(js.Array(ARCHIVE_NOT_ALLOWED, ARCHIVE_ALLOWED))
   }
@@ -9097,8 +9765,8 @@ package medialive {
         WebDeliveryAllowedFlag: Scte35WebDeliveryAllowedFlag
     ): Scte35DeliveryRestrictions = {
       val __obj = js.Dynamic.literal(
-        "ArchiveAllowedFlag"     -> ArchiveAllowedFlag.asInstanceOf[js.Any],
-        "DeviceRestrictions"     -> DeviceRestrictions.asInstanceOf[js.Any],
+        "ArchiveAllowedFlag" -> ArchiveAllowedFlag.asInstanceOf[js.Any],
+        "DeviceRestrictions" -> DeviceRestrictions.asInstanceOf[js.Any],
         "NoRegionalBlackoutFlag" -> NoRegionalBlackoutFlag.asInstanceOf[js.Any],
         "WebDeliveryAllowedFlag" -> WebDeliveryAllowedFlag.asInstanceOf[js.Any]
       )
@@ -9156,7 +9824,7 @@ package medialive {
   @js.native
   sealed trait Scte35DeviceRestrictions extends js.Any
   object Scte35DeviceRestrictions extends js.Object {
-    val NONE            = "NONE".asInstanceOf[Scte35DeviceRestrictions]
+    val NONE = "NONE".asInstanceOf[Scte35DeviceRestrictions]
     val RESTRICT_GROUP0 = "RESTRICT_GROUP0".asInstanceOf[Scte35DeviceRestrictions]
     val RESTRICT_GROUP1 = "RESTRICT_GROUP1".asInstanceOf[Scte35DeviceRestrictions]
     val RESTRICT_GROUP2 = "RESTRICT_GROUP2".asInstanceOf[Scte35DeviceRestrictions]
@@ -9170,7 +9838,7 @@ package medialive {
   @js.native
   sealed trait Scte35NoRegionalBlackoutFlag extends js.Any
   object Scte35NoRegionalBlackoutFlag extends js.Object {
-    val REGIONAL_BLACKOUT    = "REGIONAL_BLACKOUT".asInstanceOf[Scte35NoRegionalBlackoutFlag]
+    val REGIONAL_BLACKOUT = "REGIONAL_BLACKOUT".asInstanceOf[Scte35NoRegionalBlackoutFlag]
     val NO_REGIONAL_BLACKOUT = "NO_REGIONAL_BLACKOUT".asInstanceOf[Scte35NoRegionalBlackoutFlag]
 
     val values = js.Object.freeze(js.Array(REGIONAL_BLACKOUT, NO_REGIONAL_BLACKOUT))
@@ -9245,7 +9913,7 @@ package medialive {
     ): Scte35SegmentationDescriptor = {
       val __obj = js.Dynamic.literal(
         "SegmentationCancelIndicator" -> SegmentationCancelIndicator.asInstanceOf[js.Any],
-        "SegmentationEventId"         -> SegmentationEventId.asInstanceOf[js.Any]
+        "SegmentationEventId" -> SegmentationEventId.asInstanceOf[js.Any]
       )
 
       DeliveryRestrictions.foreach(__v => __obj.updateDynamic("DeliveryRestrictions")(__v.asInstanceOf[js.Any]))
@@ -9387,7 +10055,7 @@ package medialive {
   sealed trait Scte35WebDeliveryAllowedFlag extends js.Any
   object Scte35WebDeliveryAllowedFlag extends js.Object {
     val WEB_DELIVERY_NOT_ALLOWED = "WEB_DELIVERY_NOT_ALLOWED".asInstanceOf[Scte35WebDeliveryAllowedFlag]
-    val WEB_DELIVERY_ALLOWED     = "WEB_DELIVERY_ALLOWED".asInstanceOf[Scte35WebDeliveryAllowedFlag]
+    val WEB_DELIVERY_ALLOWED = "WEB_DELIVERY_ALLOWED".asInstanceOf[Scte35WebDeliveryAllowedFlag]
 
     val values = js.Object.freeze(js.Array(WEB_DELIVERY_NOT_ALLOWED, WEB_DELIVERY_ALLOWED))
   }
@@ -9398,7 +10066,7 @@ package medialive {
   @js.native
   sealed trait SmoothGroupAudioOnlyTimecodeControl extends js.Any
   object SmoothGroupAudioOnlyTimecodeControl extends js.Object {
-    val PASSTHROUGH          = "PASSTHROUGH".asInstanceOf[SmoothGroupAudioOnlyTimecodeControl]
+    val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[SmoothGroupAudioOnlyTimecodeControl]
     val USE_CONFIGURED_CLOCK = "USE_CONFIGURED_CLOCK".asInstanceOf[SmoothGroupAudioOnlyTimecodeControl]
 
     val values = js.Object.freeze(js.Array(PASSTHROUGH, USE_CONFIGURED_CLOCK))
@@ -9410,7 +10078,7 @@ package medialive {
   @js.native
   sealed trait SmoothGroupCertificateMode extends js.Any
   object SmoothGroupCertificateMode extends js.Object {
-    val SELF_SIGNED         = "SELF_SIGNED".asInstanceOf[SmoothGroupCertificateMode]
+    val SELF_SIGNED = "SELF_SIGNED".asInstanceOf[SmoothGroupCertificateMode]
     val VERIFY_AUTHENTICITY = "VERIFY_AUTHENTICITY".asInstanceOf[SmoothGroupCertificateMode]
 
     val values = js.Object.freeze(js.Array(SELF_SIGNED, VERIFY_AUTHENTICITY))
@@ -9422,9 +10090,9 @@ package medialive {
   @js.native
   sealed trait SmoothGroupEventIdMode extends js.Any
   object SmoothGroupEventIdMode extends js.Object {
-    val NO_EVENT_ID    = "NO_EVENT_ID".asInstanceOf[SmoothGroupEventIdMode]
+    val NO_EVENT_ID = "NO_EVENT_ID".asInstanceOf[SmoothGroupEventIdMode]
     val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[SmoothGroupEventIdMode]
-    val USE_TIMESTAMP  = "USE_TIMESTAMP".asInstanceOf[SmoothGroupEventIdMode]
+    val USE_TIMESTAMP = "USE_TIMESTAMP".asInstanceOf[SmoothGroupEventIdMode]
 
     val values = js.Object.freeze(js.Array(NO_EVENT_ID, USE_CONFIGURED, USE_TIMESTAMP))
   }
@@ -9435,7 +10103,7 @@ package medialive {
   @js.native
   sealed trait SmoothGroupEventStopBehavior extends js.Any
   object SmoothGroupEventStopBehavior extends js.Object {
-    val NONE     = "NONE".asInstanceOf[SmoothGroupEventStopBehavior]
+    val NONE = "NONE".asInstanceOf[SmoothGroupEventStopBehavior]
     val SEND_EOS = "SEND_EOS".asInstanceOf[SmoothGroupEventStopBehavior]
 
     val values = js.Object.freeze(js.Array(NONE, SEND_EOS))
@@ -9448,7 +10116,7 @@ package medialive {
   sealed trait SmoothGroupSegmentationMode extends js.Any
   object SmoothGroupSegmentationMode extends js.Object {
     val USE_INPUT_SEGMENTATION = "USE_INPUT_SEGMENTATION".asInstanceOf[SmoothGroupSegmentationMode]
-    val USE_SEGMENT_DURATION   = "USE_SEGMENT_DURATION".asInstanceOf[SmoothGroupSegmentationMode]
+    val USE_SEGMENT_DURATION = "USE_SEGMENT_DURATION".asInstanceOf[SmoothGroupSegmentationMode]
 
     val values = js.Object.freeze(js.Array(USE_INPUT_SEGMENTATION, USE_SEGMENT_DURATION))
   }
@@ -9459,10 +10127,11 @@ package medialive {
   @js.native
   sealed trait SmoothGroupSparseTrackType extends js.Any
   object SmoothGroupSparseTrackType extends js.Object {
-    val NONE    = "NONE".asInstanceOf[SmoothGroupSparseTrackType]
+    val NONE = "NONE".asInstanceOf[SmoothGroupSparseTrackType]
     val SCTE_35 = "SCTE_35".asInstanceOf[SmoothGroupSparseTrackType]
+    val SCTE_35_WITHOUT_SEGMENTATION = "SCTE_35_WITHOUT_SEGMENTATION".asInstanceOf[SmoothGroupSparseTrackType]
 
-    val values = js.Object.freeze(js.Array(NONE, SCTE_35))
+    val values = js.Object.freeze(js.Array(NONE, SCTE_35, SCTE_35_WITHOUT_SEGMENTATION))
   }
 
   /**
@@ -9472,7 +10141,7 @@ package medialive {
   sealed trait SmoothGroupStreamManifestBehavior extends js.Any
   object SmoothGroupStreamManifestBehavior extends js.Object {
     val DO_NOT_SEND = "DO_NOT_SEND".asInstanceOf[SmoothGroupStreamManifestBehavior]
-    val SEND        = "SEND".asInstanceOf[SmoothGroupStreamManifestBehavior]
+    val SEND = "SEND".asInstanceOf[SmoothGroupStreamManifestBehavior]
 
     val values = js.Object.freeze(js.Array(DO_NOT_SEND, SEND))
   }
@@ -9484,9 +10153,21 @@ package medialive {
   sealed trait SmoothGroupTimestampOffsetMode extends js.Any
   object SmoothGroupTimestampOffsetMode extends js.Object {
     val USE_CONFIGURED_OFFSET = "USE_CONFIGURED_OFFSET".asInstanceOf[SmoothGroupTimestampOffsetMode]
-    val USE_EVENT_START_DATE  = "USE_EVENT_START_DATE".asInstanceOf[SmoothGroupTimestampOffsetMode]
+    val USE_EVENT_START_DATE = "USE_EVENT_START_DATE".asInstanceOf[SmoothGroupTimestampOffsetMode]
 
     val values = js.Object.freeze(js.Array(USE_CONFIGURED_OFFSET, USE_EVENT_START_DATE))
+  }
+
+  /**
+    * Smpte2038 Data Preference
+    */
+  @js.native
+  sealed trait Smpte2038DataPreference extends js.Any
+  object Smpte2038DataPreference extends js.Object {
+    val IGNORE = "IGNORE".asInstanceOf[Smpte2038DataPreference]
+    val PREFER = "PREFER".asInstanceOf[Smpte2038DataPreference]
+
+    val values = js.Object.freeze(js.Array(IGNORE, PREFER))
   }
 
   /**
@@ -10000,6 +10681,88 @@ package medialive {
   }
 
   /**
+    * Temporal Filter Post Filter Sharpening
+    */
+  @js.native
+  sealed trait TemporalFilterPostFilterSharpening extends js.Any
+  object TemporalFilterPostFilterSharpening extends js.Object {
+    val AUTO = "AUTO".asInstanceOf[TemporalFilterPostFilterSharpening]
+    val DISABLED = "DISABLED".asInstanceOf[TemporalFilterPostFilterSharpening]
+    val ENABLED = "ENABLED".asInstanceOf[TemporalFilterPostFilterSharpening]
+
+    val values = js.Object.freeze(js.Array(AUTO, DISABLED, ENABLED))
+  }
+
+  /**
+    * Temporal Filter Settings
+    */
+  @js.native
+  trait TemporalFilterSettings extends js.Object {
+    var PostFilterSharpening: js.UndefOr[TemporalFilterPostFilterSharpening]
+    var Strength: js.UndefOr[TemporalFilterStrength]
+  }
+
+  object TemporalFilterSettings {
+    @inline
+    def apply(
+        PostFilterSharpening: js.UndefOr[TemporalFilterPostFilterSharpening] = js.undefined,
+        Strength: js.UndefOr[TemporalFilterStrength] = js.undefined
+    ): TemporalFilterSettings = {
+      val __obj = js.Dynamic.literal()
+      PostFilterSharpening.foreach(__v => __obj.updateDynamic("PostFilterSharpening")(__v.asInstanceOf[js.Any]))
+      Strength.foreach(__v => __obj.updateDynamic("Strength")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TemporalFilterSettings]
+    }
+  }
+
+  /**
+    * Temporal Filter Strength
+    */
+  @js.native
+  sealed trait TemporalFilterStrength extends js.Any
+  object TemporalFilterStrength extends js.Object {
+    val AUTO = "AUTO".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_1 = "STRENGTH_1".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_2 = "STRENGTH_2".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_3 = "STRENGTH_3".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_4 = "STRENGTH_4".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_5 = "STRENGTH_5".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_6 = "STRENGTH_6".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_7 = "STRENGTH_7".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_8 = "STRENGTH_8".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_9 = "STRENGTH_9".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_10 = "STRENGTH_10".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_11 = "STRENGTH_11".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_12 = "STRENGTH_12".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_13 = "STRENGTH_13".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_14 = "STRENGTH_14".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_15 = "STRENGTH_15".asInstanceOf[TemporalFilterStrength]
+    val STRENGTH_16 = "STRENGTH_16".asInstanceOf[TemporalFilterStrength]
+
+    val values = js.Object.freeze(
+      js.Array(
+        AUTO,
+        STRENGTH_1,
+        STRENGTH_2,
+        STRENGTH_3,
+        STRENGTH_4,
+        STRENGTH_5,
+        STRENGTH_6,
+        STRENGTH_7,
+        STRENGTH_8,
+        STRENGTH_9,
+        STRENGTH_10,
+        STRENGTH_11,
+        STRENGTH_12,
+        STRENGTH_13,
+        STRENGTH_14,
+        STRENGTH_15,
+        STRENGTH_16
+      )
+    )
+  }
+
+  /**
     * Timecode Config
     */
   @js.native
@@ -10029,9 +10792,9 @@ package medialive {
   @js.native
   sealed trait TimecodeConfigSource extends js.Any
   object TimecodeConfigSource extends js.Object {
-    val EMBEDDED    = "EMBEDDED".asInstanceOf[TimecodeConfigSource]
+    val EMBEDDED = "EMBEDDED".asInstanceOf[TimecodeConfigSource]
     val SYSTEMCLOCK = "SYSTEMCLOCK".asInstanceOf[TimecodeConfigSource]
-    val ZEROBASED   = "ZEROBASED".asInstanceOf[TimecodeConfigSource]
+    val ZEROBASED = "ZEROBASED".asInstanceOf[TimecodeConfigSource]
 
     val values = js.Object.freeze(js.Array(EMBEDDED, SYSTEMCLOCK, ZEROBASED))
   }
@@ -10061,7 +10824,7 @@ package medialive {
   @js.native
   sealed trait TtmlDestinationStyleControl extends js.Any
   object TtmlDestinationStyleControl extends js.Object {
-    val PASSTHROUGH    = "PASSTHROUGH".asInstanceOf[TtmlDestinationStyleControl]
+    val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[TtmlDestinationStyleControl]
     val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[TtmlDestinationStyleControl]
 
     val values = js.Object.freeze(js.Array(PASSTHROUGH, USE_CONFIGURED))
@@ -10132,7 +10895,7 @@ package medialive {
     ): UdpOutputSettings = {
       val __obj = js.Dynamic.literal(
         "ContainerSettings" -> ContainerSettings.asInstanceOf[js.Any],
-        "Destination"       -> Destination.asInstanceOf[js.Any]
+        "Destination" -> Destination.asInstanceOf[js.Any]
       )
 
       BufferMsec.foreach(__v => __obj.updateDynamic("BufferMsec")(__v.asInstanceOf[js.Any]))
@@ -10173,7 +10936,7 @@ package medialive {
     ): UpdateChannelClassRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelClass" -> ChannelClass.asInstanceOf[js.Any],
-        "ChannelId"    -> ChannelId.asInstanceOf[js.Any]
+        "ChannelId" -> ChannelId.asInstanceOf[js.Any]
       )
 
       Destinations.foreach(__v => __obj.updateDynamic("Destinations")(__v.asInstanceOf[js.Any]))
@@ -10262,12 +11025,86 @@ package medialive {
   }
 
   /**
+    * A request to update an input device.
+    */
+  @js.native
+  trait UpdateInputDeviceRequest extends js.Object {
+    var InputDeviceId: __string
+    var HdDeviceSettings: js.UndefOr[InputDeviceConfigurableSettings]
+    var Name: js.UndefOr[__string]
+  }
+
+  object UpdateInputDeviceRequest {
+    @inline
+    def apply(
+        InputDeviceId: __string,
+        HdDeviceSettings: js.UndefOr[InputDeviceConfigurableSettings] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined
+    ): UpdateInputDeviceRequest = {
+      val __obj = js.Dynamic.literal(
+        "InputDeviceId" -> InputDeviceId.asInstanceOf[js.Any]
+      )
+
+      HdDeviceSettings.foreach(__v => __obj.updateDynamic("HdDeviceSettings")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateInputDeviceRequest]
+    }
+  }
+
+  /**
+    * Placeholder documentation for UpdateInputDeviceResponse
+    */
+  @js.native
+  trait UpdateInputDeviceResponse extends js.Object {
+    var Arn: js.UndefOr[__string]
+    var ConnectionState: js.UndefOr[InputDeviceConnectionState]
+    var DeviceSettingsSyncState: js.UndefOr[DeviceSettingsSyncState]
+    var HdDeviceSettings: js.UndefOr[InputDeviceHdSettings]
+    var Id: js.UndefOr[__string]
+    var MacAddress: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
+    var NetworkSettings: js.UndefOr[InputDeviceNetworkSettings]
+    var SerialNumber: js.UndefOr[__string]
+    var Type: js.UndefOr[InputDeviceType]
+  }
+
+  object UpdateInputDeviceResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        ConnectionState: js.UndefOr[InputDeviceConnectionState] = js.undefined,
+        DeviceSettingsSyncState: js.UndefOr[DeviceSettingsSyncState] = js.undefined,
+        HdDeviceSettings: js.UndefOr[InputDeviceHdSettings] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined,
+        MacAddress: js.UndefOr[__string] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        NetworkSettings: js.UndefOr[InputDeviceNetworkSettings] = js.undefined,
+        SerialNumber: js.UndefOr[__string] = js.undefined,
+        Type: js.UndefOr[InputDeviceType] = js.undefined
+    ): UpdateInputDeviceResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      ConnectionState.foreach(__v => __obj.updateDynamic("ConnectionState")(__v.asInstanceOf[js.Any]))
+      DeviceSettingsSyncState.foreach(__v => __obj.updateDynamic("DeviceSettingsSyncState")(__v.asInstanceOf[js.Any]))
+      HdDeviceSettings.foreach(__v => __obj.updateDynamic("HdDeviceSettings")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      MacAddress.foreach(__v => __obj.updateDynamic("MacAddress")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NetworkSettings.foreach(__v => __obj.updateDynamic("NetworkSettings")(__v.asInstanceOf[js.Any]))
+      SerialNumber.foreach(__v => __obj.updateDynamic("SerialNumber")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateInputDeviceResponse]
+    }
+  }
+
+  /**
     * A request to update an input.
     */
   @js.native
   trait UpdateInputRequest extends js.Object {
     var InputId: __string
     var Destinations: js.UndefOr[__listOfInputDestinationRequest]
+    var InputDevices: js.UndefOr[__listOfInputDeviceRequest]
     var InputSecurityGroups: js.UndefOr[__listOf__string]
     var MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlowRequest]
     var Name: js.UndefOr[__string]
@@ -10280,6 +11117,7 @@ package medialive {
     def apply(
         InputId: __string,
         Destinations: js.UndefOr[__listOfInputDestinationRequest] = js.undefined,
+        InputDevices: js.UndefOr[__listOfInputDeviceRequest] = js.undefined,
         InputSecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
         MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlowRequest] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
@@ -10291,6 +11129,7 @@ package medialive {
       )
 
       Destinations.foreach(__v => __obj.updateDynamic("Destinations")(__v.asInstanceOf[js.Any]))
+      InputDevices.foreach(__v => __obj.updateDynamic("InputDevices")(__v.asInstanceOf[js.Any]))
       InputSecurityGroups.foreach(__v => __obj.updateDynamic("InputSecurityGroups")(__v.asInstanceOf[js.Any]))
       MediaConnectFlows.foreach(__v => __obj.updateDynamic("MediaConnectFlows")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -10570,9 +11409,9 @@ package medialive {
   @js.native
   sealed trait VideoDescriptionRespondToAfd extends js.Any
   object VideoDescriptionRespondToAfd extends js.Object {
-    val NONE        = "NONE".asInstanceOf[VideoDescriptionRespondToAfd]
+    val NONE = "NONE".asInstanceOf[VideoDescriptionRespondToAfd]
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[VideoDescriptionRespondToAfd]
-    val RESPOND     = "RESPOND".asInstanceOf[VideoDescriptionRespondToAfd]
+    val RESPOND = "RESPOND".asInstanceOf[VideoDescriptionRespondToAfd]
 
     val values = js.Object.freeze(js.Array(NONE, PASSTHROUGH, RESPOND))
   }
@@ -10583,7 +11422,7 @@ package medialive {
   @js.native
   sealed trait VideoDescriptionScalingBehavior extends js.Any
   object VideoDescriptionScalingBehavior extends js.Object {
-    val DEFAULT           = "DEFAULT".asInstanceOf[VideoDescriptionScalingBehavior]
+    val DEFAULT = "DEFAULT".asInstanceOf[VideoDescriptionScalingBehavior]
     val STRETCH_TO_OUTPUT = "STRETCH_TO_OUTPUT".asInstanceOf[VideoDescriptionScalingBehavior]
 
     val values = js.Object.freeze(js.Array(DEFAULT, STRETCH_TO_OUTPUT))
@@ -10620,7 +11459,7 @@ package medialive {
   @js.native
   sealed trait VideoSelectorColorSpace extends js.Any
   object VideoSelectorColorSpace extends js.Object {
-    val FOLLOW  = "FOLLOW".asInstanceOf[VideoSelectorColorSpace]
+    val FOLLOW = "FOLLOW".asInstanceOf[VideoSelectorColorSpace]
     val REC_601 = "REC_601".asInstanceOf[VideoSelectorColorSpace]
     val REC_709 = "REC_709".asInstanceOf[VideoSelectorColorSpace]
 
@@ -10634,7 +11473,7 @@ package medialive {
   sealed trait VideoSelectorColorSpaceUsage extends js.Any
   object VideoSelectorColorSpaceUsage extends js.Object {
     val FALLBACK = "FALLBACK".asInstanceOf[VideoSelectorColorSpaceUsage]
-    val FORCE    = "FORCE".asInstanceOf[VideoSelectorColorSpaceUsage]
+    val FORCE = "FORCE".asInstanceOf[VideoSelectorColorSpaceUsage]
 
     val values = js.Object.freeze(js.Array(FALLBACK, FORCE))
   }

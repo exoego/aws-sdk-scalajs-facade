@@ -7,28 +7,28 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object dax {
-  type AvailabilityZoneList        = js.Array[String]
-  type ClusterList                 = js.Array[Cluster]
-  type ClusterNameList             = js.Array[String]
-  type EventList                   = js.Array[Event]
-  type IntegerOptional             = Int
-  type KeyList                     = js.Array[String]
-  type NodeIdentifierList          = js.Array[String]
-  type NodeList                    = js.Array[Node]
-  type NodeTypeSpecificValueList   = js.Array[NodeTypeSpecificValue]
-  type ParameterGroupList          = js.Array[ParameterGroup]
-  type ParameterGroupNameList      = js.Array[String]
-  type ParameterList               = js.Array[Parameter]
-  type ParameterNameValueList      = js.Array[ParameterNameValue]
-  type SSEEnabled                  = Boolean
+  type AvailabilityZoneList = js.Array[String]
+  type ClusterList = js.Array[Cluster]
+  type ClusterNameList = js.Array[String]
+  type EventList = js.Array[Event]
+  type IntegerOptional = Int
+  type KeyList = js.Array[String]
+  type NodeIdentifierList = js.Array[String]
+  type NodeList = js.Array[Node]
+  type NodeTypeSpecificValueList = js.Array[NodeTypeSpecificValue]
+  type ParameterGroupList = js.Array[ParameterGroup]
+  type ParameterGroupNameList = js.Array[String]
+  type ParameterList = js.Array[Parameter]
+  type ParameterNameValueList = js.Array[ParameterNameValue]
+  type SSEEnabled = Boolean
   type SecurityGroupIdentifierList = js.Array[String]
   type SecurityGroupMembershipList = js.Array[SecurityGroupMembership]
-  type SubnetGroupList             = js.Array[SubnetGroup]
-  type SubnetGroupNameList         = js.Array[String]
-  type SubnetIdentifierList        = js.Array[String]
-  type SubnetList                  = js.Array[Subnet]
-  type TStamp                      = js.Date
-  type TagList                     = js.Array[Tag]
+  type SubnetGroupList = js.Array[SubnetGroup]
+  type SubnetGroupNameList = js.Array[String]
+  type SubnetIdentifierList = js.Array[String]
+  type SubnetList = js.Array[Subnet]
+  type TStamp = js.Date
+  type TagList = js.Array[Tag]
 
   implicit final class DAXOps(private val service: DAX) extends AnyVal {
 
@@ -87,40 +87,40 @@ package dax {
   class DAX() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createCluster(params: CreateClusterRequest): Request[CreateClusterResponse]                      = js.native
+    def createCluster(params: CreateClusterRequest): Request[CreateClusterResponse] = js.native
     def createParameterGroup(params: CreateParameterGroupRequest): Request[CreateParameterGroupResponse] = js.native
-    def createSubnetGroup(params: CreateSubnetGroupRequest): Request[CreateSubnetGroupResponse]          = js.native
+    def createSubnetGroup(params: CreateSubnetGroupRequest): Request[CreateSubnetGroupResponse] = js.native
     def decreaseReplicationFactor(
         params: DecreaseReplicationFactorRequest
-    ): Request[DecreaseReplicationFactorResponse]                                                        = js.native
-    def deleteCluster(params: DeleteClusterRequest): Request[DeleteClusterResponse]                      = js.native
+    ): Request[DecreaseReplicationFactorResponse] = js.native
+    def deleteCluster(params: DeleteClusterRequest): Request[DeleteClusterResponse] = js.native
     def deleteParameterGroup(params: DeleteParameterGroupRequest): Request[DeleteParameterGroupResponse] = js.native
-    def deleteSubnetGroup(params: DeleteSubnetGroupRequest): Request[DeleteSubnetGroupResponse]          = js.native
-    def describeClusters(params: DescribeClustersRequest): Request[DescribeClustersResponse]             = js.native
+    def deleteSubnetGroup(params: DeleteSubnetGroupRequest): Request[DeleteSubnetGroupResponse] = js.native
+    def describeClusters(params: DescribeClustersRequest): Request[DescribeClustersResponse] = js.native
     def describeDefaultParameters(
         params: DescribeDefaultParametersRequest
-    ): Request[DescribeDefaultParametersResponse]                                      = js.native
+    ): Request[DescribeDefaultParametersResponse] = js.native
     def describeEvents(params: DescribeEventsRequest): Request[DescribeEventsResponse] = js.native
     def describeParameterGroups(params: DescribeParameterGroupsRequest): Request[DescribeParameterGroupsResponse] =
       js.native
-    def describeParameters(params: DescribeParametersRequest): Request[DescribeParametersResponse]       = js.native
+    def describeParameters(params: DescribeParametersRequest): Request[DescribeParametersResponse] = js.native
     def describeSubnetGroups(params: DescribeSubnetGroupsRequest): Request[DescribeSubnetGroupsResponse] = js.native
     def increaseReplicationFactor(
         params: IncreaseReplicationFactorRequest
-    ): Request[IncreaseReplicationFactorResponse]                                                        = js.native
-    def listTags(params: ListTagsRequest): Request[ListTagsResponse]                                     = js.native
-    def rebootNode(params: RebootNodeRequest): Request[RebootNodeResponse]                               = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                            = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                      = js.native
-    def updateCluster(params: UpdateClusterRequest): Request[UpdateClusterResponse]                      = js.native
+    ): Request[IncreaseReplicationFactorResponse] = js.native
+    def listTags(params: ListTagsRequest): Request[ListTagsResponse] = js.native
+    def rebootNode(params: RebootNodeRequest): Request[RebootNodeResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateCluster(params: UpdateClusterRequest): Request[UpdateClusterResponse] = js.native
     def updateParameterGroup(params: UpdateParameterGroupRequest): Request[UpdateParameterGroupResponse] = js.native
-    def updateSubnetGroup(params: UpdateSubnetGroupRequest): Request[UpdateSubnetGroupResponse]          = js.native
+    def updateSubnetGroup(params: UpdateSubnetGroupRequest): Request[UpdateSubnetGroupResponse] = js.native
   }
 
   @js.native
   sealed trait ChangeType extends js.Any
   object ChangeType extends js.Object {
-    val IMMEDIATE       = "IMMEDIATE".asInstanceOf[ChangeType]
+    val IMMEDIATE = "IMMEDIATE".asInstanceOf[ChangeType]
     val REQUIRES_REBOOT = "REQUIRES_REBOOT".asInstanceOf[ChangeType]
 
     val values = js.Object.freeze(js.Array(IMMEDIATE, REQUIRES_REBOOT))
@@ -232,9 +232,9 @@ package dax {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateClusterRequest = {
       val __obj = js.Dynamic.literal(
-        "ClusterName"       -> ClusterName.asInstanceOf[js.Any],
-        "IamRoleArn"        -> IamRoleArn.asInstanceOf[js.Any],
-        "NodeType"          -> NodeType.asInstanceOf[js.Any],
+        "ClusterName" -> ClusterName.asInstanceOf[js.Any],
+        "IamRoleArn" -> IamRoleArn.asInstanceOf[js.Any],
+        "NodeType" -> NodeType.asInstanceOf[js.Any],
         "ReplicationFactor" -> ReplicationFactor.asInstanceOf[js.Any]
       )
 
@@ -322,7 +322,7 @@ package dax {
     ): CreateSubnetGroupRequest = {
       val __obj = js.Dynamic.literal(
         "SubnetGroupName" -> SubnetGroupName.asInstanceOf[js.Any],
-        "SubnetIds"       -> SubnetIds.asInstanceOf[js.Any]
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -363,7 +363,7 @@ package dax {
         NodeIdsToRemove: js.UndefOr[NodeIdentifierList] = js.undefined
     ): DecreaseReplicationFactorRequest = {
       val __obj = js.Dynamic.literal(
-        "ClusterName"          -> ClusterName.asInstanceOf[js.Any],
+        "ClusterName" -> ClusterName.asInstanceOf[js.Any],
         "NewReplicationFactor" -> NewReplicationFactor.asInstanceOf[js.Any]
       )
 
@@ -816,7 +816,7 @@ package dax {
         AvailabilityZones: js.UndefOr[AvailabilityZoneList] = js.undefined
     ): IncreaseReplicationFactorRequest = {
       val __obj = js.Dynamic.literal(
-        "ClusterName"          -> ClusterName.asInstanceOf[js.Any],
+        "ClusterName" -> ClusterName.asInstanceOf[js.Any],
         "NewReplicationFactor" -> NewReplicationFactor.asInstanceOf[js.Any]
       )
 
@@ -844,8 +844,8 @@ package dax {
   @js.native
   sealed trait IsModifiable extends js.Any
   object IsModifiable extends js.Object {
-    val TRUE        = "TRUE".asInstanceOf[IsModifiable]
-    val FALSE       = "FALSE".asInstanceOf[IsModifiable]
+    val TRUE = "TRUE".asInstanceOf[IsModifiable]
+    val FALSE = "FALSE".asInstanceOf[IsModifiable]
     val CONDITIONAL = "CONDITIONAL".asInstanceOf[IsModifiable]
 
     val values = js.Object.freeze(js.Array(TRUE, FALSE, CONDITIONAL))
@@ -1087,7 +1087,7 @@ package dax {
   @js.native
   sealed trait ParameterType extends js.Any
   object ParameterType extends js.Object {
-    val DEFAULT            = "DEFAULT".asInstanceOf[ParameterType]
+    val DEFAULT = "DEFAULT".asInstanceOf[ParameterType]
     val NODE_TYPE_SPECIFIC = "NODE_TYPE_SPECIFIC".asInstanceOf[ParameterType]
 
     val values = js.Object.freeze(js.Array(DEFAULT, NODE_TYPE_SPECIFIC))
@@ -1107,7 +1107,7 @@ package dax {
     ): RebootNodeRequest = {
       val __obj = js.Dynamic.literal(
         "ClusterName" -> ClusterName.asInstanceOf[js.Any],
-        "NodeId"      -> NodeId.asInstanceOf[js.Any]
+        "NodeId" -> NodeId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RebootNodeRequest]
@@ -1173,10 +1173,10 @@ package dax {
   @js.native
   sealed trait SSEStatus extends js.Any
   object SSEStatus extends js.Object {
-    val ENABLING  = "ENABLING".asInstanceOf[SSEStatus]
-    val ENABLED   = "ENABLED".asInstanceOf[SSEStatus]
+    val ENABLING = "ENABLING".asInstanceOf[SSEStatus]
+    val ENABLED = "ENABLED".asInstanceOf[SSEStatus]
     val DISABLING = "DISABLING".asInstanceOf[SSEStatus]
-    val DISABLED  = "DISABLED".asInstanceOf[SSEStatus]
+    val DISABLED = "DISABLED".asInstanceOf[SSEStatus]
 
     val values = js.Object.freeze(js.Array(ENABLING, ENABLED, DISABLING, DISABLED))
   }
@@ -1206,9 +1206,9 @@ package dax {
   @js.native
   sealed trait SourceType extends js.Any
   object SourceType extends js.Object {
-    val CLUSTER         = "CLUSTER".asInstanceOf[SourceType]
+    val CLUSTER = "CLUSTER".asInstanceOf[SourceType]
     val PARAMETER_GROUP = "PARAMETER_GROUP".asInstanceOf[SourceType]
-    val SUBNET_GROUP    = "SUBNET_GROUP".asInstanceOf[SourceType]
+    val SUBNET_GROUP = "SUBNET_GROUP".asInstanceOf[SourceType]
 
     val values = js.Object.freeze(js.Array(CLUSTER, PARAMETER_GROUP, SUBNET_GROUP))
   }
@@ -1303,7 +1303,7 @@ package dax {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
-        "Tags"         -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1340,7 +1340,7 @@ package dax {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
-        "TagKeys"      -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -1430,7 +1430,7 @@ package dax {
         ParameterNameValues: ParameterNameValueList
     ): UpdateParameterGroupRequest = {
       val __obj = js.Dynamic.literal(
-        "ParameterGroupName"  -> ParameterGroupName.asInstanceOf[js.Any],
+        "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any],
         "ParameterNameValues" -> ParameterNameValues.asInstanceOf[js.Any]
       )
 

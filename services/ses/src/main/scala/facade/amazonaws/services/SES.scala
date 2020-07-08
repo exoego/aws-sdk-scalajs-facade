@@ -7,97 +7,97 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object ses {
-  type Address                           = String
-  type AddressList                       = js.Array[Address]
-  type AmazonResourceName                = String
-  type ArrivalDate                       = js.Date
-  type BounceMessage                     = String
-  type BounceSmtpReplyCode               = String
-  type BounceStatusCode                  = String
-  type BouncedRecipientInfoList          = js.Array[BouncedRecipientInfo]
-  type BulkEmailDestinationList          = js.Array[BulkEmailDestination]
-  type BulkEmailDestinationStatusList    = js.Array[BulkEmailDestinationStatus]
-  type Charset                           = String
-  type Cidr                              = String
+  type Address = String
+  type AddressList = js.Array[Address]
+  type AmazonResourceName = String
+  type ArrivalDate = js.Date
+  type BounceMessage = String
+  type BounceSmtpReplyCode = String
+  type BounceStatusCode = String
+  type BouncedRecipientInfoList = js.Array[BouncedRecipientInfo]
+  type BulkEmailDestinationList = js.Array[BulkEmailDestination]
+  type BulkEmailDestinationStatusList = js.Array[BulkEmailDestinationStatus]
+  type Charset = String
+  type Cidr = String
   type CloudWatchDimensionConfigurations = js.Array[CloudWatchDimensionConfiguration]
-  type ConfigurationSetAttributeList     = js.Array[ConfigurationSetAttribute]
-  type ConfigurationSetName              = String
-  type ConfigurationSets                 = js.Array[ConfigurationSet]
-  type Counter                           = Double
-  type CustomRedirectDomain              = String
-  type CustomVerificationEmailTemplates  = js.Array[CustomVerificationEmailTemplate]
-  type DefaultDimensionValue             = String
-  type DiagnosticCode                    = String
-  type DimensionName                     = String
-  type DkimAttributes                    = js.Dictionary[IdentityDkimAttributes]
-  type Domain                            = String
-  type DsnStatus                         = String
-  type Enabled                           = Boolean
-  type Error                             = String
-  type EventDestinationName              = String
-  type EventDestinations                 = js.Array[EventDestination]
-  type EventTypes                        = js.Array[EventType]
-  type Explanation                       = String
-  type ExtensionFieldList                = js.Array[ExtensionField]
-  type ExtensionFieldName                = String
-  type ExtensionFieldValue               = String
-  type FailureRedirectionURL             = String
-  type FromAddress                       = String
-  type HeaderName                        = String
-  type HeaderValue                       = String
-  type HtmlPart                          = String
-  type Identity                          = String
-  type IdentityList                      = js.Array[Identity]
-  type LastAttemptDate                   = js.Date
-  type LastFreshStart                    = js.Date
-  type MailFromDomainAttributes          = js.Dictionary[IdentityMailFromDomainAttributes]
-  type MailFromDomainName                = String
-  type Max24HourSend                     = Double
-  type MaxItems                          = Int
-  type MaxResults                        = Int
-  type MaxSendRate                       = Double
-  type MessageData                       = String
-  type MessageId                         = String
-  type MessageTagList                    = js.Array[MessageTag]
-  type MessageTagName                    = String
-  type MessageTagValue                   = String
-  type NextToken                         = String
-  type NotificationAttributes            = js.Dictionary[IdentityNotificationAttributes]
-  type NotificationTopic                 = String
-  type Policy                            = String
-  type PolicyMap                         = js.Dictionary[Policy]
-  type PolicyName                        = String
-  type PolicyNameList                    = js.Array[PolicyName]
-  type RawMessageData                    = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type ReceiptActionsList                = js.Array[ReceiptAction]
-  type ReceiptFilterList                 = js.Array[ReceiptFilter]
-  type ReceiptFilterName                 = String
-  type ReceiptRuleName                   = String
-  type ReceiptRuleNamesList              = js.Array[ReceiptRuleName]
-  type ReceiptRuleSetName                = String
-  type ReceiptRuleSetsLists              = js.Array[ReceiptRuleSetMetadata]
-  type ReceiptRulesList                  = js.Array[ReceiptRule]
-  type Recipient                         = String
-  type RecipientsList                    = js.Array[Recipient]
-  type RemoteMta                         = String
-  type RenderedTemplate                  = String
-  type ReportingMta                      = String
-  type S3BucketName                      = String
-  type S3KeyPrefix                       = String
-  type SendDataPointList                 = js.Array[SendDataPoint]
-  type SentLast24Hours                   = Double
-  type Subject                           = String
-  type SubjectPart                       = String
-  type SuccessRedirectionURL             = String
-  type TemplateContent                   = String
-  type TemplateData                      = String
-  type TemplateMetadataList              = js.Array[TemplateMetadata]
-  type TemplateName                      = String
-  type TextPart                          = String
-  type Timestamp                         = js.Date
-  type VerificationAttributes            = js.Dictionary[IdentityVerificationAttributes]
-  type VerificationToken                 = String
-  type VerificationTokenList             = js.Array[VerificationToken]
+  type ConfigurationSetAttributeList = js.Array[ConfigurationSetAttribute]
+  type ConfigurationSetName = String
+  type ConfigurationSets = js.Array[ConfigurationSet]
+  type Counter = Double
+  type CustomRedirectDomain = String
+  type CustomVerificationEmailTemplates = js.Array[CustomVerificationEmailTemplate]
+  type DefaultDimensionValue = String
+  type DiagnosticCode = String
+  type DimensionName = String
+  type DkimAttributes = js.Dictionary[IdentityDkimAttributes]
+  type Domain = String
+  type DsnStatus = String
+  type Enabled = Boolean
+  type Error = String
+  type EventDestinationName = String
+  type EventDestinations = js.Array[EventDestination]
+  type EventTypes = js.Array[EventType]
+  type Explanation = String
+  type ExtensionFieldList = js.Array[ExtensionField]
+  type ExtensionFieldName = String
+  type ExtensionFieldValue = String
+  type FailureRedirectionURL = String
+  type FromAddress = String
+  type HeaderName = String
+  type HeaderValue = String
+  type HtmlPart = String
+  type Identity = String
+  type IdentityList = js.Array[Identity]
+  type LastAttemptDate = js.Date
+  type LastFreshStart = js.Date
+  type MailFromDomainAttributes = js.Dictionary[IdentityMailFromDomainAttributes]
+  type MailFromDomainName = String
+  type Max24HourSend = Double
+  type MaxItems = Int
+  type MaxResults = Int
+  type MaxSendRate = Double
+  type MessageData = String
+  type MessageId = String
+  type MessageTagList = js.Array[MessageTag]
+  type MessageTagName = String
+  type MessageTagValue = String
+  type NextToken = String
+  type NotificationAttributes = js.Dictionary[IdentityNotificationAttributes]
+  type NotificationTopic = String
+  type Policy = String
+  type PolicyMap = js.Dictionary[Policy]
+  type PolicyName = String
+  type PolicyNameList = js.Array[PolicyName]
+  type RawMessageData = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type ReceiptActionsList = js.Array[ReceiptAction]
+  type ReceiptFilterList = js.Array[ReceiptFilter]
+  type ReceiptFilterName = String
+  type ReceiptRuleName = String
+  type ReceiptRuleNamesList = js.Array[ReceiptRuleName]
+  type ReceiptRuleSetName = String
+  type ReceiptRuleSetsLists = js.Array[ReceiptRuleSetMetadata]
+  type ReceiptRulesList = js.Array[ReceiptRule]
+  type Recipient = String
+  type RecipientsList = js.Array[Recipient]
+  type RemoteMta = String
+  type RenderedTemplate = String
+  type ReportingMta = String
+  type S3BucketName = String
+  type S3KeyPrefix = String
+  type SendDataPointList = js.Array[SendDataPoint]
+  type SentLast24Hours = Double
+  type Subject = String
+  type SubjectPart = String
+  type SuccessRedirectionURL = String
+  type TemplateContent = String
+  type TemplateData = String
+  type TemplateMetadataList = js.Array[TemplateMetadata]
+  type TemplateName = String
+  type TextPart = String
+  type Timestamp = js.Date
+  type VerificationAttributes = js.Dictionary[IdentityVerificationAttributes]
+  type VerificationToken = String
+  type VerificationTokenList = js.Array[VerificationToken]
 
   implicit final class SESOps(private val service: SES) extends AnyVal {
 
@@ -310,11 +310,11 @@ package ses {
     ): Request[CreateConfigurationSetTrackingOptionsResponse] = js.native
     def createCustomVerificationEmailTemplate(
         params: CreateCustomVerificationEmailTemplateRequest
-    ): Request[js.Object]                                                                                = js.native
-    def createReceiptFilter(params: CreateReceiptFilterRequest): Request[CreateReceiptFilterResponse]    = js.native
-    def createReceiptRule(params: CreateReceiptRuleRequest): Request[CreateReceiptRuleResponse]          = js.native
+    ): Request[js.Object] = js.native
+    def createReceiptFilter(params: CreateReceiptFilterRequest): Request[CreateReceiptFilterResponse] = js.native
+    def createReceiptRule(params: CreateReceiptRuleRequest): Request[CreateReceiptRuleResponse] = js.native
     def createReceiptRuleSet(params: CreateReceiptRuleSetRequest): Request[CreateReceiptRuleSetResponse] = js.native
-    def createTemplate(params: CreateTemplateRequest): Request[CreateTemplateResponse]                   = js.native
+    def createTemplate(params: CreateTemplateRequest): Request[CreateTemplateResponse] = js.native
     def deleteConfigurationSet(params: DeleteConfigurationSetRequest): Request[DeleteConfigurationSetResponse] =
       js.native
     def deleteConfigurationSetEventDestination(
@@ -325,14 +325,14 @@ package ses {
     ): Request[DeleteConfigurationSetTrackingOptionsResponse] = js.native
     def deleteCustomVerificationEmailTemplate(
         params: DeleteCustomVerificationEmailTemplateRequest
-    ): Request[js.Object]                                                                                = js.native
-    def deleteIdentity(params: DeleteIdentityRequest): Request[DeleteIdentityResponse]                   = js.native
+    ): Request[js.Object] = js.native
+    def deleteIdentity(params: DeleteIdentityRequest): Request[DeleteIdentityResponse] = js.native
     def deleteIdentityPolicy(params: DeleteIdentityPolicyRequest): Request[DeleteIdentityPolicyResponse] = js.native
-    def deleteReceiptFilter(params: DeleteReceiptFilterRequest): Request[DeleteReceiptFilterResponse]    = js.native
-    def deleteReceiptRule(params: DeleteReceiptRuleRequest): Request[DeleteReceiptRuleResponse]          = js.native
+    def deleteReceiptFilter(params: DeleteReceiptFilterRequest): Request[DeleteReceiptFilterResponse] = js.native
+    def deleteReceiptRule(params: DeleteReceiptRuleRequest): Request[DeleteReceiptRuleResponse] = js.native
     def deleteReceiptRuleSet(params: DeleteReceiptRuleSetRequest): Request[DeleteReceiptRuleSetResponse] = js.native
-    def deleteTemplate(params: DeleteTemplateRequest): Request[DeleteTemplateResponse]                   = js.native
-    def deleteVerifiedEmailAddress(params: DeleteVerifiedEmailAddressRequest): Request[js.Object]        = js.native
+    def deleteTemplate(params: DeleteTemplateRequest): Request[DeleteTemplateResponse] = js.native
+    def deleteVerifiedEmailAddress(params: DeleteVerifiedEmailAddressRequest): Request[js.Object] = js.native
     def describeActiveReceiptRuleSet(
         params: DescribeActiveReceiptRuleSetRequest
     ): Request[DescribeActiveReceiptRuleSetResponse] = js.native
@@ -353,37 +353,37 @@ package ses {
     ): Request[GetIdentityMailFromDomainAttributesResponse] = js.native
     def getIdentityNotificationAttributes(
         params: GetIdentityNotificationAttributesRequest
-    ): Request[GetIdentityNotificationAttributesResponse]                                             = js.native
+    ): Request[GetIdentityNotificationAttributesResponse] = js.native
     def getIdentityPolicies(params: GetIdentityPoliciesRequest): Request[GetIdentityPoliciesResponse] = js.native
     def getIdentityVerificationAttributes(
         params: GetIdentityVerificationAttributesRequest
-    ): Request[GetIdentityVerificationAttributesResponse]                                                   = js.native
-    def getSendQuota(): Request[GetSendQuotaResponse]                                                       = js.native
-    def getSendStatistics(): Request[GetSendStatisticsResponse]                                             = js.native
-    def getTemplate(params: GetTemplateRequest): Request[GetTemplateResponse]                               = js.native
+    ): Request[GetIdentityVerificationAttributesResponse] = js.native
+    def getSendQuota(): Request[GetSendQuotaResponse] = js.native
+    def getSendStatistics(): Request[GetSendStatisticsResponse] = js.native
+    def getTemplate(params: GetTemplateRequest): Request[GetTemplateResponse] = js.native
     def listConfigurationSets(params: ListConfigurationSetsRequest): Request[ListConfigurationSetsResponse] = js.native
     def listCustomVerificationEmailTemplates(
         params: ListCustomVerificationEmailTemplatesRequest
-    ): Request[ListCustomVerificationEmailTemplatesResponse]                                             = js.native
-    def listIdentities(params: ListIdentitiesRequest): Request[ListIdentitiesResponse]                   = js.native
+    ): Request[ListCustomVerificationEmailTemplatesResponse] = js.native
+    def listIdentities(params: ListIdentitiesRequest): Request[ListIdentitiesResponse] = js.native
     def listIdentityPolicies(params: ListIdentityPoliciesRequest): Request[ListIdentityPoliciesResponse] = js.native
-    def listReceiptFilters(params: ListReceiptFiltersRequest): Request[ListReceiptFiltersResponse]       = js.native
-    def listReceiptRuleSets(params: ListReceiptRuleSetsRequest): Request[ListReceiptRuleSetsResponse]    = js.native
-    def listTemplates(params: ListTemplatesRequest): Request[ListTemplatesResponse]                      = js.native
-    def listVerifiedEmailAddresses(): Request[ListVerifiedEmailAddressesResponse]                        = js.native
+    def listReceiptFilters(params: ListReceiptFiltersRequest): Request[ListReceiptFiltersResponse] = js.native
+    def listReceiptRuleSets(params: ListReceiptRuleSetsRequest): Request[ListReceiptRuleSetsResponse] = js.native
+    def listTemplates(params: ListTemplatesRequest): Request[ListTemplatesResponse] = js.native
+    def listVerifiedEmailAddresses(): Request[ListVerifiedEmailAddressesResponse] = js.native
     def putConfigurationSetDeliveryOptions(
         params: PutConfigurationSetDeliveryOptionsRequest
-    ): Request[PutConfigurationSetDeliveryOptionsResponse]                                                  = js.native
-    def putIdentityPolicy(params: PutIdentityPolicyRequest): Request[PutIdentityPolicyResponse]             = js.native
+    ): Request[PutConfigurationSetDeliveryOptionsResponse] = js.native
+    def putIdentityPolicy(params: PutIdentityPolicyRequest): Request[PutIdentityPolicyResponse] = js.native
     def reorderReceiptRuleSet(params: ReorderReceiptRuleSetRequest): Request[ReorderReceiptRuleSetResponse] = js.native
-    def sendBounce(params: SendBounceRequest): Request[SendBounceResponse]                                  = js.native
+    def sendBounce(params: SendBounceRequest): Request[SendBounceResponse] = js.native
     def sendBulkTemplatedEmail(params: SendBulkTemplatedEmailRequest): Request[SendBulkTemplatedEmailResponse] =
       js.native
     def sendCustomVerificationEmail(
         params: SendCustomVerificationEmailRequest
-    ): Request[SendCustomVerificationEmailResponse]                                                = js.native
-    def sendEmail(params: SendEmailRequest): Request[SendEmailResponse]                            = js.native
-    def sendRawEmail(params: SendRawEmailRequest): Request[SendRawEmailResponse]                   = js.native
+    ): Request[SendCustomVerificationEmailResponse] = js.native
+    def sendEmail(params: SendEmailRequest): Request[SendEmailResponse] = js.native
+    def sendRawEmail(params: SendRawEmailRequest): Request[SendRawEmailResponse] = js.native
     def sendTemplatedEmail(params: SendTemplatedEmailRequest): Request[SendTemplatedEmailResponse] = js.native
     def setActiveReceiptRuleSet(params: SetActiveReceiptRuleSetRequest): Request[SetActiveReceiptRuleSetResponse] =
       js.native
@@ -403,7 +403,7 @@ package ses {
     ): Request[SetIdentityNotificationTopicResponse] = js.native
     def setReceiptRulePosition(params: SetReceiptRulePositionRequest): Request[SetReceiptRulePositionResponse] =
       js.native
-    def testRenderTemplate(params: TestRenderTemplateRequest): Request[TestRenderTemplateResponse]  = js.native
+    def testRenderTemplate(params: TestRenderTemplateRequest): Request[TestRenderTemplateResponse] = js.native
     def updateAccountSendingEnabled(params: UpdateAccountSendingEnabledRequest): Request[js.Object] = js.native
     def updateConfigurationSetEventDestination(
         params: UpdateConfigurationSetEventDestinationRequest
@@ -418,13 +418,13 @@ package ses {
     ): Request[UpdateConfigurationSetTrackingOptionsResponse] = js.native
     def updateCustomVerificationEmailTemplate(
         params: UpdateCustomVerificationEmailTemplateRequest
-    ): Request[js.Object]                                                                                = js.native
-    def updateReceiptRule(params: UpdateReceiptRuleRequest): Request[UpdateReceiptRuleResponse]          = js.native
-    def updateTemplate(params: UpdateTemplateRequest): Request[UpdateTemplateResponse]                   = js.native
-    def verifyDomainDkim(params: VerifyDomainDkimRequest): Request[VerifyDomainDkimResponse]             = js.native
+    ): Request[js.Object] = js.native
+    def updateReceiptRule(params: UpdateReceiptRuleRequest): Request[UpdateReceiptRuleResponse] = js.native
+    def updateTemplate(params: UpdateTemplateRequest): Request[UpdateTemplateResponse] = js.native
+    def verifyDomainDkim(params: VerifyDomainDkimRequest): Request[VerifyDomainDkimResponse] = js.native
     def verifyDomainIdentity(params: VerifyDomainIdentityRequest): Request[VerifyDomainIdentityResponse] = js.native
-    def verifyEmailAddress(params: VerifyEmailAddressRequest): Request[js.Object]                        = js.native
-    def verifyEmailIdentity(params: VerifyEmailIdentityRequest): Request[VerifyEmailIdentityResponse]    = js.native
+    def verifyEmailAddress(params: VerifyEmailAddressRequest): Request[js.Object] = js.native
+    def verifyEmailIdentity(params: VerifyEmailIdentityRequest): Request[VerifyEmailIdentityResponse] = js.native
   }
 
   /**
@@ -444,7 +444,7 @@ package ses {
         HeaderValue: HeaderValue
     ): AddHeaderAction = {
       val __obj = js.Dynamic.literal(
-        "HeaderName"  -> HeaderName.asInstanceOf[js.Any],
+        "HeaderName" -> HeaderName.asInstanceOf[js.Any],
         "HeaderValue" -> HeaderValue.asInstanceOf[js.Any]
       )
 
@@ -456,7 +456,7 @@ package ses {
   sealed trait BehaviorOnMXFailure extends js.Any
   object BehaviorOnMXFailure extends js.Object {
     val UseDefaultValue = "UseDefaultValue".asInstanceOf[BehaviorOnMXFailure]
-    val RejectMessage   = "RejectMessage".asInstanceOf[BehaviorOnMXFailure]
+    val RejectMessage = "RejectMessage".asInstanceOf[BehaviorOnMXFailure]
 
     val values = js.Object.freeze(js.Array(UseDefaultValue, RejectMessage))
   }
@@ -506,8 +506,8 @@ package ses {
         TopicArn: js.UndefOr[AmazonResourceName] = js.undefined
     ): BounceAction = {
       val __obj = js.Dynamic.literal(
-        "Message"       -> Message.asInstanceOf[js.Any],
-        "Sender"        -> Sender.asInstanceOf[js.Any],
+        "Message" -> Message.asInstanceOf[js.Any],
+        "Sender" -> Sender.asInstanceOf[js.Any],
         "SmtpReplyCode" -> SmtpReplyCode.asInstanceOf[js.Any]
       )
 
@@ -520,11 +520,11 @@ package ses {
   @js.native
   sealed trait BounceType extends js.Any
   object BounceType extends js.Object {
-    val DoesNotExist     = "DoesNotExist".asInstanceOf[BounceType]
-    val MessageTooLarge  = "MessageTooLarge".asInstanceOf[BounceType]
-    val ExceededQuota    = "ExceededQuota".asInstanceOf[BounceType]
-    val ContentRejected  = "ContentRejected".asInstanceOf[BounceType]
-    val Undefined        = "Undefined".asInstanceOf[BounceType]
+    val DoesNotExist = "DoesNotExist".asInstanceOf[BounceType]
+    val MessageTooLarge = "MessageTooLarge".asInstanceOf[BounceType]
+    val ExceededQuota = "ExceededQuota".asInstanceOf[BounceType]
+    val ContentRejected = "ContentRejected".asInstanceOf[BounceType]
+    val Undefined = "Undefined".asInstanceOf[BounceType]
     val TemporaryFailure = "TemporaryFailure".asInstanceOf[BounceType]
 
     val values = js.Object.freeze(
@@ -618,20 +618,20 @@ package ses {
   @js.native
   sealed trait BulkEmailStatus extends js.Any
   object BulkEmailStatus extends js.Object {
-    val Success                       = "Success".asInstanceOf[BulkEmailStatus]
-    val MessageRejected               = "MessageRejected".asInstanceOf[BulkEmailStatus]
-    val MailFromDomainNotVerified     = "MailFromDomainNotVerified".asInstanceOf[BulkEmailStatus]
-    val ConfigurationSetDoesNotExist  = "ConfigurationSetDoesNotExist".asInstanceOf[BulkEmailStatus]
-    val TemplateDoesNotExist          = "TemplateDoesNotExist".asInstanceOf[BulkEmailStatus]
-    val AccountSuspended              = "AccountSuspended".asInstanceOf[BulkEmailStatus]
-    val AccountThrottled              = "AccountThrottled".asInstanceOf[BulkEmailStatus]
-    val AccountDailyQuotaExceeded     = "AccountDailyQuotaExceeded".asInstanceOf[BulkEmailStatus]
-    val InvalidSendingPoolName        = "InvalidSendingPoolName".asInstanceOf[BulkEmailStatus]
-    val AccountSendingPaused          = "AccountSendingPaused".asInstanceOf[BulkEmailStatus]
+    val Success = "Success".asInstanceOf[BulkEmailStatus]
+    val MessageRejected = "MessageRejected".asInstanceOf[BulkEmailStatus]
+    val MailFromDomainNotVerified = "MailFromDomainNotVerified".asInstanceOf[BulkEmailStatus]
+    val ConfigurationSetDoesNotExist = "ConfigurationSetDoesNotExist".asInstanceOf[BulkEmailStatus]
+    val TemplateDoesNotExist = "TemplateDoesNotExist".asInstanceOf[BulkEmailStatus]
+    val AccountSuspended = "AccountSuspended".asInstanceOf[BulkEmailStatus]
+    val AccountThrottled = "AccountThrottled".asInstanceOf[BulkEmailStatus]
+    val AccountDailyQuotaExceeded = "AccountDailyQuotaExceeded".asInstanceOf[BulkEmailStatus]
+    val InvalidSendingPoolName = "InvalidSendingPoolName".asInstanceOf[BulkEmailStatus]
+    val AccountSendingPaused = "AccountSendingPaused".asInstanceOf[BulkEmailStatus]
     val ConfigurationSetSendingPaused = "ConfigurationSetSendingPaused".asInstanceOf[BulkEmailStatus]
-    val InvalidParameterValue         = "InvalidParameterValue".asInstanceOf[BulkEmailStatus]
-    val TransientFailure              = "TransientFailure".asInstanceOf[BulkEmailStatus]
-    val Failed                        = "Failed".asInstanceOf[BulkEmailStatus]
+    val InvalidParameterValue = "InvalidParameterValue".asInstanceOf[BulkEmailStatus]
+    val TransientFailure = "TransientFailure".asInstanceOf[BulkEmailStatus]
+    val Failed = "Failed".asInstanceOf[BulkEmailStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -670,7 +670,7 @@ package ses {
     ): CloneReceiptRuleSetRequest = {
       val __obj = js.Dynamic.literal(
         "OriginalRuleSetName" -> OriginalRuleSetName.asInstanceOf[js.Any],
-        "RuleSetName"         -> RuleSetName.asInstanceOf[js.Any]
+        "RuleSetName" -> RuleSetName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CloneReceiptRuleSetRequest]
@@ -735,8 +735,8 @@ package ses {
     ): CloudWatchDimensionConfiguration = {
       val __obj = js.Dynamic.literal(
         "DefaultDimensionValue" -> DefaultDimensionValue.asInstanceOf[js.Any],
-        "DimensionName"         -> DimensionName.asInstanceOf[js.Any],
-        "DimensionValueSource"  -> DimensionValueSource.asInstanceOf[js.Any]
+        "DimensionName" -> DimensionName.asInstanceOf[js.Any],
+        "DimensionValueSource" -> DimensionValueSource.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CloudWatchDimensionConfiguration]
@@ -769,8 +769,8 @@ package ses {
   sealed trait ConfigurationSetAttribute extends js.Any
   object ConfigurationSetAttribute extends js.Object {
     val eventDestinations = "eventDestinations".asInstanceOf[ConfigurationSetAttribute]
-    val trackingOptions   = "trackingOptions".asInstanceOf[ConfigurationSetAttribute]
-    val deliveryOptions   = "deliveryOptions".asInstanceOf[ConfigurationSetAttribute]
+    val trackingOptions = "trackingOptions".asInstanceOf[ConfigurationSetAttribute]
+    val deliveryOptions = "deliveryOptions".asInstanceOf[ConfigurationSetAttribute]
     val reputationOptions = "reputationOptions".asInstanceOf[ConfigurationSetAttribute]
 
     val values = js.Object.freeze(js.Array(eventDestinations, trackingOptions, deliveryOptions, reputationOptions))
@@ -818,7 +818,7 @@ package ses {
     ): CreateConfigurationSetEventDestinationRequest = {
       val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
-        "EventDestination"     -> EventDestination.asInstanceOf[js.Any]
+        "EventDestination" -> EventDestination.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateConfigurationSetEventDestinationRequest]
@@ -895,7 +895,7 @@ package ses {
     ): CreateConfigurationSetTrackingOptionsRequest = {
       val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
-        "TrackingOptions"      -> TrackingOptions.asInstanceOf[js.Any]
+        "TrackingOptions" -> TrackingOptions.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateConfigurationSetTrackingOptionsRequest]
@@ -943,11 +943,11 @@ package ses {
     ): CreateCustomVerificationEmailTemplateRequest = {
       val __obj = js.Dynamic.literal(
         "FailureRedirectionURL" -> FailureRedirectionURL.asInstanceOf[js.Any],
-        "FromEmailAddress"      -> FromEmailAddress.asInstanceOf[js.Any],
+        "FromEmailAddress" -> FromEmailAddress.asInstanceOf[js.Any],
         "SuccessRedirectionURL" -> SuccessRedirectionURL.asInstanceOf[js.Any],
-        "TemplateContent"       -> TemplateContent.asInstanceOf[js.Any],
-        "TemplateName"          -> TemplateName.asInstanceOf[js.Any],
-        "TemplateSubject"       -> TemplateSubject.asInstanceOf[js.Any]
+        "TemplateContent" -> TemplateContent.asInstanceOf[js.Any],
+        "TemplateName" -> TemplateName.asInstanceOf[js.Any],
+        "TemplateSubject" -> TemplateSubject.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateCustomVerificationEmailTemplateRequest]
@@ -1009,7 +1009,7 @@ package ses {
         After: js.UndefOr[ReceiptRuleName] = js.undefined
     ): CreateReceiptRuleRequest = {
       val __obj = js.Dynamic.literal(
-        "Rule"        -> Rule.asInstanceOf[js.Any],
+        "Rule" -> Rule.asInstanceOf[js.Any],
         "RuleSetName" -> RuleSetName.asInstanceOf[js.Any]
       )
 
@@ -1108,9 +1108,9 @@ package ses {
   @js.native
   sealed trait CustomMailFromStatus extends js.Any
   object CustomMailFromStatus extends js.Object {
-    val Pending          = "Pending".asInstanceOf[CustomMailFromStatus]
-    val Success          = "Success".asInstanceOf[CustomMailFromStatus]
-    val Failed           = "Failed".asInstanceOf[CustomMailFromStatus]
+    val Pending = "Pending".asInstanceOf[CustomMailFromStatus]
+    val Success = "Success".asInstanceOf[CustomMailFromStatus]
+    val Failed = "Failed".asInstanceOf[CustomMailFromStatus]
     val TemporaryFailure = "TemporaryFailure".asInstanceOf[CustomMailFromStatus]
 
     val values = js.Object.freeze(js.Array(Pending, Success, Failed, TemporaryFailure))
@@ -1298,7 +1298,7 @@ package ses {
         PolicyName: PolicyName
     ): DeleteIdentityPolicyRequest = {
       val __obj = js.Dynamic.literal(
-        "Identity"   -> Identity.asInstanceOf[js.Any],
+        "Identity" -> Identity.asInstanceOf[js.Any],
         "PolicyName" -> PolicyName.asInstanceOf[js.Any]
       )
 
@@ -1412,7 +1412,7 @@ package ses {
         RuleSetName: ReceiptRuleSetName
     ): DeleteReceiptRuleRequest = {
       val __obj = js.Dynamic.literal(
-        "RuleName"    -> RuleName.asInstanceOf[js.Any],
+        "RuleName" -> RuleName.asInstanceOf[js.Any],
         "RuleSetName" -> RuleSetName.asInstanceOf[js.Any]
       )
 
@@ -1658,7 +1658,7 @@ package ses {
         RuleSetName: ReceiptRuleSetName
     ): DescribeReceiptRuleRequest = {
       val __obj = js.Dynamic.literal(
-        "RuleName"    -> RuleName.asInstanceOf[js.Any],
+        "RuleName" -> RuleName.asInstanceOf[js.Any],
         "RuleSetName" -> RuleSetName.asInstanceOf[js.Any]
       )
 
@@ -1758,9 +1758,9 @@ package ses {
   @js.native
   sealed trait DimensionValueSource extends js.Any
   object DimensionValueSource extends js.Object {
-    val messageTag  = "messageTag".asInstanceOf[DimensionValueSource]
+    val messageTag = "messageTag".asInstanceOf[DimensionValueSource]
     val emailHeader = "emailHeader".asInstanceOf[DimensionValueSource]
-    val linkTag     = "linkTag".asInstanceOf[DimensionValueSource]
+    val linkTag = "linkTag".asInstanceOf[DimensionValueSource]
 
     val values = js.Object.freeze(js.Array(messageTag, emailHeader, linkTag))
   }
@@ -1768,11 +1768,11 @@ package ses {
   @js.native
   sealed trait DsnAction extends js.Any
   object DsnAction extends js.Object {
-    val failed    = "failed".asInstanceOf[DsnAction]
-    val delayed   = "delayed".asInstanceOf[DsnAction]
+    val failed = "failed".asInstanceOf[DsnAction]
+    val delayed = "delayed".asInstanceOf[DsnAction]
     val delivered = "delivered".asInstanceOf[DsnAction]
-    val relayed   = "relayed".asInstanceOf[DsnAction]
-    val expanded  = "expanded".asInstanceOf[DsnAction]
+    val relayed = "relayed".asInstanceOf[DsnAction]
+    val expanded = "expanded".asInstanceOf[DsnAction]
 
     val values = js.Object.freeze(js.Array(failed, delayed, delivered, relayed, expanded))
   }
@@ -1805,7 +1805,7 @@ package ses {
     ): EventDestination = {
       val __obj = js.Dynamic.literal(
         "MatchingEventTypes" -> MatchingEventTypes.asInstanceOf[js.Any],
-        "Name"               -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       CloudWatchDestination.foreach(__v => __obj.updateDynamic("CloudWatchDestination")(__v.asInstanceOf[js.Any]))
@@ -1821,13 +1821,13 @@ package ses {
   @js.native
   sealed trait EventType extends js.Any
   object EventType extends js.Object {
-    val send             = "send".asInstanceOf[EventType]
-    val reject           = "reject".asInstanceOf[EventType]
-    val bounce           = "bounce".asInstanceOf[EventType]
-    val complaint        = "complaint".asInstanceOf[EventType]
-    val delivery         = "delivery".asInstanceOf[EventType]
-    val open             = "open".asInstanceOf[EventType]
-    val click            = "click".asInstanceOf[EventType]
+    val send = "send".asInstanceOf[EventType]
+    val reject = "reject".asInstanceOf[EventType]
+    val bounce = "bounce".asInstanceOf[EventType]
+    val complaint = "complaint".asInstanceOf[EventType]
+    val delivery = "delivery".asInstanceOf[EventType]
+    val open = "open".asInstanceOf[EventType]
+    val click = "click".asInstanceOf[EventType]
     val renderingFailure = "renderingFailure".asInstanceOf[EventType]
 
     val values = js.Object.freeze(js.Array(send, reject, bounce, complaint, delivery, open, click, renderingFailure))
@@ -1850,7 +1850,7 @@ package ses {
         Value: ExtensionFieldValue
     ): ExtensionField = {
       val __obj = js.Dynamic.literal(
-        "Name"  -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -2074,7 +2074,7 @@ package ses {
         PolicyNames: PolicyNameList
     ): GetIdentityPoliciesRequest = {
       val __obj = js.Dynamic.literal(
-        "Identity"    -> Identity.asInstanceOf[js.Any],
+        "Identity" -> Identity.asInstanceOf[js.Any],
         "PolicyNames" -> PolicyNames.asInstanceOf[js.Any]
       )
 
@@ -2241,7 +2241,7 @@ package ses {
         DkimTokens: js.UndefOr[VerificationTokenList] = js.undefined
     ): IdentityDkimAttributes = {
       val __obj = js.Dynamic.literal(
-        "DkimEnabled"            -> DkimEnabled.asInstanceOf[js.Any],
+        "DkimEnabled" -> DkimEnabled.asInstanceOf[js.Any],
         "DkimVerificationStatus" -> DkimVerificationStatus.asInstanceOf[js.Any]
       )
 
@@ -2268,8 +2268,8 @@ package ses {
         MailFromDomainStatus: CustomMailFromStatus
     ): IdentityMailFromDomainAttributes = {
       val __obj = js.Dynamic.literal(
-        "BehaviorOnMXFailure"  -> BehaviorOnMXFailure.asInstanceOf[js.Any],
-        "MailFromDomain"       -> MailFromDomain.asInstanceOf[js.Any],
+        "BehaviorOnMXFailure" -> BehaviorOnMXFailure.asInstanceOf[js.Any],
+        "MailFromDomain" -> MailFromDomain.asInstanceOf[js.Any],
         "MailFromDomainStatus" -> MailFromDomainStatus.asInstanceOf[js.Any]
       )
 
@@ -2303,9 +2303,9 @@ package ses {
         HeadersInDeliveryNotificationsEnabled: js.UndefOr[Enabled] = js.undefined
     ): IdentityNotificationAttributes = {
       val __obj = js.Dynamic.literal(
-        "BounceTopic"       -> BounceTopic.asInstanceOf[js.Any],
-        "ComplaintTopic"    -> ComplaintTopic.asInstanceOf[js.Any],
-        "DeliveryTopic"     -> DeliveryTopic.asInstanceOf[js.Any],
+        "BounceTopic" -> BounceTopic.asInstanceOf[js.Any],
+        "ComplaintTopic" -> ComplaintTopic.asInstanceOf[js.Any],
+        "DeliveryTopic" -> DeliveryTopic.asInstanceOf[js.Any],
         "ForwardingEnabled" -> ForwardingEnabled.asInstanceOf[js.Any]
       )
 
@@ -2326,7 +2326,7 @@ package ses {
   sealed trait IdentityType extends js.Any
   object IdentityType extends js.Object {
     val EmailAddress = "EmailAddress".asInstanceOf[IdentityType]
-    val Domain       = "Domain".asInstanceOf[IdentityType]
+    val Domain = "Domain".asInstanceOf[IdentityType]
 
     val values = js.Object.freeze(js.Array(EmailAddress, Domain))
   }
@@ -2358,7 +2358,7 @@ package ses {
   @js.native
   sealed trait InvocationType extends js.Any
   object InvocationType extends js.Object {
-    val Event           = "Event".asInstanceOf[InvocationType]
+    val Event = "Event".asInstanceOf[InvocationType]
     val RequestResponse = "RequestResponse".asInstanceOf[InvocationType]
 
     val values = js.Object.freeze(js.Array(Event, RequestResponse))
@@ -2382,7 +2382,7 @@ package ses {
     ): KinesisFirehoseDestination = {
       val __obj = js.Dynamic.literal(
         "DeliveryStreamARN" -> DeliveryStreamARN.asInstanceOf[js.Any],
-        "IAMRoleARN"        -> IAMRoleARN.asInstanceOf[js.Any]
+        "IAMRoleARN" -> IAMRoleARN.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[KinesisFirehoseDestination]
@@ -2749,7 +2749,7 @@ package ses {
         Subject: Content
     ): Message = {
       val __obj = js.Dynamic.literal(
-        "Body"    -> Body.asInstanceOf[js.Any],
+        "Body" -> Body.asInstanceOf[js.Any],
         "Subject" -> Subject.asInstanceOf[js.Any]
       )
 
@@ -2802,7 +2802,7 @@ package ses {
         Value: MessageTagValue
     ): MessageTag = {
       val __obj = js.Dynamic.literal(
-        "Name"  -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -2813,9 +2813,9 @@ package ses {
   @js.native
   sealed trait NotificationType extends js.Any
   object NotificationType extends js.Object {
-    val Bounce    = "Bounce".asInstanceOf[NotificationType]
+    val Bounce = "Bounce".asInstanceOf[NotificationType]
     val Complaint = "Complaint".asInstanceOf[NotificationType]
-    val Delivery  = "Delivery".asInstanceOf[NotificationType]
+    val Delivery = "Delivery".asInstanceOf[NotificationType]
 
     val values = js.Object.freeze(js.Array(Bounce, Complaint, Delivery))
   }
@@ -2878,8 +2878,8 @@ package ses {
         PolicyName: PolicyName
     ): PutIdentityPolicyRequest = {
       val __obj = js.Dynamic.literal(
-        "Identity"   -> Identity.asInstanceOf[js.Any],
-        "Policy"     -> Policy.asInstanceOf[js.Any],
+        "Identity" -> Identity.asInstanceOf[js.Any],
+        "Policy" -> Policy.asInstanceOf[js.Any],
         "PolicyName" -> PolicyName.asInstanceOf[js.Any]
       )
 
@@ -2980,7 +2980,7 @@ package ses {
     ): ReceiptFilter = {
       val __obj = js.Dynamic.literal(
         "IpFilter" -> IpFilter.asInstanceOf[js.Any],
-        "Name"     -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ReceiptFilter]
@@ -3013,7 +3013,7 @@ package ses {
         Policy: ReceiptFilterPolicy
     ): ReceiptIpFilter = {
       val __obj = js.Dynamic.literal(
-        "Cidr"   -> Cidr.asInstanceOf[js.Any],
+        "Cidr" -> Cidr.asInstanceOf[js.Any],
         "Policy" -> Policy.asInstanceOf[js.Any]
       )
 
@@ -3139,7 +3139,7 @@ package ses {
         RuleSetName: ReceiptRuleSetName
     ): ReorderReceiptRuleSetRequest = {
       val __obj = js.Dynamic.literal(
-        "RuleNames"   -> RuleNames.asInstanceOf[js.Any],
+        "RuleNames" -> RuleNames.asInstanceOf[js.Any],
         "RuleSetName" -> RuleSetName.asInstanceOf[js.Any]
       )
 
@@ -3253,7 +3253,7 @@ package ses {
   sealed trait SNSActionEncoding extends js.Any
   object SNSActionEncoding extends js.Object {
     val `UTF-8` = "UTF-8".asInstanceOf[SNSActionEncoding]
-    val Base64  = "Base64".asInstanceOf[SNSActionEncoding]
+    val Base64 = "Base64".asInstanceOf[SNSActionEncoding]
 
     val values = js.Object.freeze(js.Array(`UTF-8`, Base64))
   }
@@ -3304,9 +3304,9 @@ package ses {
         MessageDsn: js.UndefOr[MessageDsn] = js.undefined
     ): SendBounceRequest = {
       val __obj = js.Dynamic.literal(
-        "BounceSender"             -> BounceSender.asInstanceOf[js.Any],
+        "BounceSender" -> BounceSender.asInstanceOf[js.Any],
         "BouncedRecipientInfoList" -> BouncedRecipientInfoList.asInstanceOf[js.Any],
-        "OriginalMessageId"        -> OriginalMessageId.asInstanceOf[js.Any]
+        "OriginalMessageId" -> OriginalMessageId.asInstanceOf[js.Any]
       )
 
       BounceSenderArn.foreach(__v => __obj.updateDynamic("BounceSenderArn")(__v.asInstanceOf[js.Any]))
@@ -3370,8 +3370,8 @@ package ses {
     ): SendBulkTemplatedEmailRequest = {
       val __obj = js.Dynamic.literal(
         "Destinations" -> Destinations.asInstanceOf[js.Any],
-        "Source"       -> Source.asInstanceOf[js.Any],
-        "Template"     -> Template.asInstanceOf[js.Any]
+        "Source" -> Source.asInstanceOf[js.Any],
+        "Template" -> Template.asInstanceOf[js.Any]
       )
 
       ConfigurationSetName.foreach(__v => __obj.updateDynamic("ConfigurationSetName")(__v.asInstanceOf[js.Any]))
@@ -3512,8 +3512,8 @@ package ses {
     ): SendEmailRequest = {
       val __obj = js.Dynamic.literal(
         "Destination" -> Destination.asInstanceOf[js.Any],
-        "Message"     -> Message.asInstanceOf[js.Any],
-        "Source"      -> Source.asInstanceOf[js.Any]
+        "Message" -> Message.asInstanceOf[js.Any],
+        "Source" -> Source.asInstanceOf[js.Any]
       )
 
       ConfigurationSetName.foreach(__v => __obj.updateDynamic("ConfigurationSetName")(__v.asInstanceOf[js.Any]))
@@ -3644,9 +3644,9 @@ package ses {
         TemplateArn: js.UndefOr[AmazonResourceName] = js.undefined
     ): SendTemplatedEmailRequest = {
       val __obj = js.Dynamic.literal(
-        "Destination"  -> Destination.asInstanceOf[js.Any],
-        "Source"       -> Source.asInstanceOf[js.Any],
-        "Template"     -> Template.asInstanceOf[js.Any],
+        "Destination" -> Destination.asInstanceOf[js.Any],
+        "Source" -> Source.asInstanceOf[js.Any],
+        "Template" -> Template.asInstanceOf[js.Any],
         "TemplateData" -> TemplateData.asInstanceOf[js.Any]
       )
 
@@ -3731,7 +3731,7 @@ package ses {
     ): SetIdentityDkimEnabledRequest = {
       val __obj = js.Dynamic.literal(
         "DkimEnabled" -> DkimEnabled.asInstanceOf[js.Any],
-        "Identity"    -> Identity.asInstanceOf[js.Any]
+        "Identity" -> Identity.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[SetIdentityDkimEnabledRequest]
@@ -3771,7 +3771,7 @@ package ses {
     ): SetIdentityFeedbackForwardingEnabledRequest = {
       val __obj = js.Dynamic.literal(
         "ForwardingEnabled" -> ForwardingEnabled.asInstanceOf[js.Any],
-        "Identity"          -> Identity.asInstanceOf[js.Any]
+        "Identity" -> Identity.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[SetIdentityFeedbackForwardingEnabledRequest]
@@ -3812,8 +3812,8 @@ package ses {
         NotificationType: NotificationType
     ): SetIdentityHeadersInNotificationsEnabledRequest = {
       val __obj = js.Dynamic.literal(
-        "Enabled"          -> Enabled.asInstanceOf[js.Any],
-        "Identity"         -> Identity.asInstanceOf[js.Any],
+        "Enabled" -> Enabled.asInstanceOf[js.Any],
+        "Identity" -> Identity.asInstanceOf[js.Any],
         "NotificationType" -> NotificationType.asInstanceOf[js.Any]
       )
 
@@ -3898,7 +3898,7 @@ package ses {
         SnsTopic: js.UndefOr[NotificationTopic] = js.undefined
     ): SetIdentityNotificationTopicRequest = {
       val __obj = js.Dynamic.literal(
-        "Identity"         -> Identity.asInstanceOf[js.Any],
+        "Identity" -> Identity.asInstanceOf[js.Any],
         "NotificationType" -> NotificationType.asInstanceOf[js.Any]
       )
 
@@ -3941,7 +3941,7 @@ package ses {
         After: js.UndefOr[ReceiptRuleName] = js.undefined
     ): SetReceiptRulePositionRequest = {
       val __obj = js.Dynamic.literal(
-        "RuleName"    -> RuleName.asInstanceOf[js.Any],
+        "RuleName" -> RuleName.asInstanceOf[js.Any],
         "RuleSetName" -> RuleSetName.asInstanceOf[js.Any]
       )
 
@@ -4091,7 +4091,7 @@ package ses {
   @js.native
   sealed trait TlsPolicy extends js.Any
   object TlsPolicy extends js.Object {
-    val Require  = "Require".asInstanceOf[TlsPolicy]
+    val Require = "Require".asInstanceOf[TlsPolicy]
     val Optional = "Optional".asInstanceOf[TlsPolicy]
 
     val values = js.Object.freeze(js.Array(Require, Optional))
@@ -4153,7 +4153,7 @@ package ses {
     ): UpdateConfigurationSetEventDestinationRequest = {
       val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
-        "EventDestination"     -> EventDestination.asInstanceOf[js.Any]
+        "EventDestination" -> EventDestination.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateConfigurationSetEventDestinationRequest]
@@ -4193,7 +4193,7 @@ package ses {
     ): UpdateConfigurationSetReputationMetricsEnabledRequest = {
       val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
-        "Enabled"              -> Enabled.asInstanceOf[js.Any]
+        "Enabled" -> Enabled.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateConfigurationSetReputationMetricsEnabledRequest]
@@ -4217,7 +4217,7 @@ package ses {
     ): UpdateConfigurationSetSendingEnabledRequest = {
       val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
-        "Enabled"              -> Enabled.asInstanceOf[js.Any]
+        "Enabled" -> Enabled.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateConfigurationSetSendingEnabledRequest]
@@ -4241,7 +4241,7 @@ package ses {
     ): UpdateConfigurationSetTrackingOptionsRequest = {
       val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
-        "TrackingOptions"      -> TrackingOptions.asInstanceOf[js.Any]
+        "TrackingOptions" -> TrackingOptions.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateConfigurationSetTrackingOptionsRequest]
@@ -4316,7 +4316,7 @@ package ses {
         RuleSetName: ReceiptRuleSetName
     ): UpdateReceiptRuleRequest = {
       val __obj = js.Dynamic.literal(
-        "Rule"        -> Rule.asInstanceOf[js.Any],
+        "Rule" -> Rule.asInstanceOf[js.Any],
         "RuleSetName" -> RuleSetName.asInstanceOf[js.Any]
       )
 
@@ -4374,11 +4374,11 @@ package ses {
   @js.native
   sealed trait VerificationStatus extends js.Any
   object VerificationStatus extends js.Object {
-    val Pending          = "Pending".asInstanceOf[VerificationStatus]
-    val Success          = "Success".asInstanceOf[VerificationStatus]
-    val Failed           = "Failed".asInstanceOf[VerificationStatus]
+    val Pending = "Pending".asInstanceOf[VerificationStatus]
+    val Success = "Success".asInstanceOf[VerificationStatus]
+    val Failed = "Failed".asInstanceOf[VerificationStatus]
     val TemporaryFailure = "TemporaryFailure".asInstanceOf[VerificationStatus]
-    val NotStarted       = "NotStarted".asInstanceOf[VerificationStatus]
+    val NotStarted = "NotStarted".asInstanceOf[VerificationStatus]
 
     val values = js.Object.freeze(js.Array(Pending, Success, Failed, TemporaryFailure, NotStarted))
   }

@@ -7,13 +7,16 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object iotdata {
-  type ErrorMessage = String
   type JsonDocument = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type Payload      = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type Qos          = Int
-  type ThingName    = String
-  type Topic        = String
-  type errorMessage = String
+  type NamedShadowList = js.Array[ShadowName]
+  type NextToken = String
+  type PageSize = Int
+  type Payload = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Qos = Int
+  type ShadowName = String
+  type ThingName = String
+  type Timestamp = Double
+  type Topic = String
 
   implicit final class IotDataOps(private val service: IotData) extends AnyVal {
 
@@ -21,6 +24,9 @@ package object iotdata {
       service.deleteThingShadow(params).promise().toFuture
     @inline def getThingShadowFuture(params: GetThingShadowRequest): Future[GetThingShadowResponse] =
       service.getThingShadow(params).promise().toFuture
+    @inline def listNamedShadowsForThingFuture(
+        params: ListNamedShadowsForThingRequest
+    ): Future[ListNamedShadowsForThingResponse] = service.listNamedShadowsForThing(params).promise().toFuture
     @inline def publishFuture(params: PublishRequest): Future[js.Object] = service.publish(params).promise().toFuture
     @inline def updateThingShadowFuture(params: UpdateThingShadowRequest): Future[UpdateThingShadowResponse] =
       service.updateThingShadow(params).promise().toFuture
@@ -34,17 +40,11 @@ package iotdata {
     def this(config: AWSConfig) = this()
 
     def deleteThingShadow(params: DeleteThingShadowRequest): Request[DeleteThingShadowResponse] = js.native
-    def getThingShadow(params: GetThingShadowRequest): Request[GetThingShadowResponse]          = js.native
-    def publish(params: PublishRequest): Request[js.Object]                                     = js.native
+    def getThingShadow(params: GetThingShadowRequest): Request[GetThingShadowResponse] = js.native
+    def listNamedShadowsForThing(params: ListNamedShadowsForThingRequest): Request[ListNamedShadowsForThingResponse] =
+      js.native
+    def publish(params: PublishRequest): Request[js.Object] = js.native
     def updateThingShadow(params: UpdateThingShadowRequest): Request[UpdateThingShadowResponse] = js.native
-  }
-
-  /**
-    * The specified version does not match the version of the document.
-    */
-  @js.native
-  trait ConflictExceptionException extends js.Object {
-    val message: ErrorMessage
   }
 
   /**
@@ -53,17 +53,20 @@ package iotdata {
   @js.native
   trait DeleteThingShadowRequest extends js.Object {
     var thingName: ThingName
+    var shadowName: js.UndefOr[ShadowName]
   }
 
   object DeleteThingShadowRequest {
     @inline
     def apply(
-        thingName: ThingName
+        thingName: ThingName,
+        shadowName: js.UndefOr[ShadowName] = js.undefined
     ): DeleteThingShadowRequest = {
       val __obj = js.Dynamic.literal(
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
 
+      shadowName.foreach(__v => __obj.updateDynamic("shadowName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteThingShadowRequest]
     }
   }
@@ -95,17 +98,20 @@ package iotdata {
   @js.native
   trait GetThingShadowRequest extends js.Object {
     var thingName: ThingName
+    var shadowName: js.UndefOr[ShadowName]
   }
 
   object GetThingShadowRequest {
     @inline
     def apply(
-        thingName: ThingName
+        thingName: ThingName,
+        shadowName: js.UndefOr[ShadowName] = js.undefined
     ): GetThingShadowRequest = {
       val __obj = js.Dynamic.literal(
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
 
+      shadowName.foreach(__v => __obj.updateDynamic("shadowName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetThingShadowRequest]
     }
   }
@@ -129,28 +135,50 @@ package iotdata {
     }
   }
 
-  /**
-    * An unexpected error has occurred.
-    */
   @js.native
-  trait InternalFailureExceptionException extends js.Object {
-    val message: errorMessage
+  trait ListNamedShadowsForThingRequest extends js.Object {
+    var thingName: ThingName
+    var nextToken: js.UndefOr[NextToken]
+    var pageSize: js.UndefOr[PageSize]
   }
 
-  /**
-    * The request is not valid.
-    */
-  @js.native
-  trait InvalidRequestExceptionException extends js.Object {
-    val message: errorMessage
+  object ListNamedShadowsForThingRequest {
+    @inline
+    def apply(
+        thingName: ThingName,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        pageSize: js.UndefOr[PageSize] = js.undefined
+    ): ListNamedShadowsForThingRequest = {
+      val __obj = js.Dynamic.literal(
+        "thingName" -> thingName.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      pageSize.foreach(__v => __obj.updateDynamic("pageSize")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListNamedShadowsForThingRequest]
+    }
   }
 
-  /**
-    * The specified combination of HTTP verb and URI is not supported.
-    */
   @js.native
-  trait MethodNotAllowedExceptionException extends js.Object {
-    val message: ErrorMessage
+  trait ListNamedShadowsForThingResponse extends js.Object {
+    var nextToken: js.UndefOr[NextToken]
+    var results: js.UndefOr[NamedShadowList]
+    var timestamp: js.UndefOr[Timestamp]
+  }
+
+  object ListNamedShadowsForThingResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        results: js.UndefOr[NamedShadowList] = js.undefined,
+        timestamp: js.UndefOr[Timestamp] = js.undefined
+    ): ListNamedShadowsForThingResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      results.foreach(__v => __obj.updateDynamic("results")(__v.asInstanceOf[js.Any]))
+      timestamp.foreach(__v => __obj.updateDynamic("timestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListNamedShadowsForThingResponse]
+    }
   }
 
   /**
@@ -181,73 +209,28 @@ package iotdata {
   }
 
   /**
-    * The payload exceeds the maximum size allowed.
-    */
-  @js.native
-  trait RequestEntityTooLargeExceptionException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
-    * The specified resource does not exist.
-    */
-  @js.native
-  trait ResourceNotFoundExceptionException extends js.Object {
-    val message: errorMessage
-  }
-
-  /**
-    * The service is temporarily unavailable.
-    */
-  @js.native
-  trait ServiceUnavailableExceptionException extends js.Object {
-    val message: errorMessage
-  }
-
-  /**
-    * The rate exceeds the limit.
-    */
-  @js.native
-  trait ThrottlingExceptionException extends js.Object {
-    val message: errorMessage
-  }
-
-  /**
-    * You are not authorized to perform this operation.
-    */
-  @js.native
-  trait UnauthorizedExceptionException extends js.Object {
-    val message: errorMessage
-  }
-
-  /**
-    * The document encoding is not supported.
-    */
-  @js.native
-  trait UnsupportedDocumentEncodingExceptionException extends js.Object {
-    val message: errorMessage
-  }
-
-  /**
     * The input for the UpdateThingShadow operation.
     */
   @js.native
   trait UpdateThingShadowRequest extends js.Object {
     var payload: JsonDocument
     var thingName: ThingName
+    var shadowName: js.UndefOr[ShadowName]
   }
 
   object UpdateThingShadowRequest {
     @inline
     def apply(
         payload: JsonDocument,
-        thingName: ThingName
+        thingName: ThingName,
+        shadowName: js.UndefOr[ShadowName] = js.undefined
     ): UpdateThingShadowRequest = {
       val __obj = js.Dynamic.literal(
-        "payload"   -> payload.asInstanceOf[js.Any],
+        "payload" -> payload.asInstanceOf[js.Any],
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
 
+      shadowName.foreach(__v => __obj.updateDynamic("shadowName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateThingShadowRequest]
     }
   }

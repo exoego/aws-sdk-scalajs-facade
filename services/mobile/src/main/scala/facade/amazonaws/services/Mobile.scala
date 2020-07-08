@@ -7,34 +7,34 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object mobile {
-  type AttributeKey      = String
-  type AttributeValue    = String
-  type Attributes        = js.Dictionary[AttributeValue]
+  type AttributeKey = String
+  type AttributeValue = String
+  type Attributes = js.Dictionary[AttributeValue]
   type BundleDescription = String
-  type BundleId          = String
-  type BundleList        = js.Array[BundleDetails]
-  type BundleTitle       = String
-  type BundleVersion     = String
-  type ConsoleUrl        = String
-  type Contents          = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type Date              = js.Date
-  type DownloadUrl       = String
-  type ErrorMessage      = String
-  type Feature           = String
-  type IconUrl           = String
-  type MaxResults        = Int
-  type NextToken         = String
-  type Platforms         = js.Array[Platform]
-  type ProjectId         = String
-  type ProjectName       = String
-  type ProjectRegion     = String
-  type ProjectSummaries  = js.Array[ProjectSummary]
-  type ResourceArn       = String
-  type ResourceName      = String
-  type ResourceType      = String
-  type Resources         = js.Array[Resource]
-  type ShareUrl          = String
-  type SnapshotId        = String
+  type BundleId = String
+  type BundleList = js.Array[BundleDetails]
+  type BundleTitle = String
+  type BundleVersion = String
+  type ConsoleUrl = String
+  type Contents = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Date = js.Date
+  type DownloadUrl = String
+  type ErrorMessage = String
+  type Feature = String
+  type IconUrl = String
+  type MaxResults = Int
+  type NextToken = String
+  type Platforms = js.Array[Platform]
+  type ProjectId = String
+  type ProjectName = String
+  type ProjectRegion = String
+  type ProjectSummaries = js.Array[ProjectSummary]
+  type ResourceArn = String
+  type ResourceName = String
+  type ResourceType = String
+  type Resources = js.Array[Resource]
+  type ShareUrl = String
+  type SnapshotId = String
 
   implicit final class MobileOps(private val service: Mobile) extends AnyVal {
 
@@ -65,15 +65,15 @@ package mobile {
   class Mobile() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createProject(params: CreateProjectRequest): Request[CreateProjectResult]       = js.native
-    def deleteProject(params: DeleteProjectRequest): Request[DeleteProjectResult]       = js.native
-    def describeBundle(params: DescribeBundleRequest): Request[DescribeBundleResult]    = js.native
+    def createProject(params: CreateProjectRequest): Request[CreateProjectResult] = js.native
+    def deleteProject(params: DeleteProjectRequest): Request[DeleteProjectResult] = js.native
+    def describeBundle(params: DescribeBundleRequest): Request[DescribeBundleResult] = js.native
     def describeProject(params: DescribeProjectRequest): Request[DescribeProjectResult] = js.native
-    def exportBundle(params: ExportBundleRequest): Request[ExportBundleResult]          = js.native
-    def exportProject(params: ExportProjectRequest): Request[ExportProjectResult]       = js.native
-    def listBundles(params: ListBundlesRequest): Request[ListBundlesResult]             = js.native
-    def listProjects(params: ListProjectsRequest): Request[ListProjectsResult]          = js.native
-    def updateProject(params: UpdateProjectRequest): Request[UpdateProjectResult]       = js.native
+    def exportBundle(params: ExportBundleRequest): Request[ExportBundleResult] = js.native
+    def exportProject(params: ExportProjectRequest): Request[ExportProjectResult] = js.native
+    def listBundles(params: ListBundlesRequest): Request[ListBundlesResult] = js.native
+    def listProjects(params: ListProjectsRequest): Request[ListProjectsResult] = js.native
+    def updateProject(params: UpdateProjectRequest): Request[UpdateProjectResult] = js.native
   }
 
   /**
@@ -510,12 +510,12 @@ package mobile {
   @js.native
   sealed trait Platform extends js.Any
   object Platform extends js.Object {
-    val OSX        = "OSX".asInstanceOf[Platform]
-    val WINDOWS    = "WINDOWS".asInstanceOf[Platform]
-    val LINUX      = "LINUX".asInstanceOf[Platform]
-    val OBJC       = "OBJC".asInstanceOf[Platform]
-    val SWIFT      = "SWIFT".asInstanceOf[Platform]
-    val ANDROID    = "ANDROID".asInstanceOf[Platform]
+    val OSX = "OSX".asInstanceOf[Platform]
+    val WINDOWS = "WINDOWS".asInstanceOf[Platform]
+    val LINUX = "LINUX".asInstanceOf[Platform]
+    val OBJC = "OBJC".asInstanceOf[Platform]
+    val SWIFT = "SWIFT".asInstanceOf[Platform]
+    val ANDROID = "ANDROID".asInstanceOf[Platform]
     val JAVASCRIPT = "JAVASCRIPT".asInstanceOf[Platform]
 
     val values = js.Object.freeze(js.Array(OSX, WINDOWS, LINUX, OBJC, SWIFT, ANDROID, JAVASCRIPT))
@@ -567,8 +567,8 @@ package mobile {
   @js.native
   sealed trait ProjectState extends js.Any
   object ProjectState extends js.Object {
-    val NORMAL    = "NORMAL".asInstanceOf[ProjectState]
-    val SYNCING   = "SYNCING".asInstanceOf[ProjectState]
+    val NORMAL = "NORMAL".asInstanceOf[ProjectState]
+    val SYNCING = "SYNCING".asInstanceOf[ProjectState]
     val IMPORTING = "IMPORTING".asInstanceOf[ProjectState]
 
     val values = js.Object.freeze(js.Array(NORMAL, SYNCING, IMPORTING))

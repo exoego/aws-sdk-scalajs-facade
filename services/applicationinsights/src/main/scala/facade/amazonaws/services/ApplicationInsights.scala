@@ -7,58 +7,79 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object applicationinsights {
-  type AffectedResource                       = String
-  type AmazonResourceName                     = String
-  type ApplicationComponentList               = js.Array[ApplicationComponent]
-  type ApplicationInfoList                    = js.Array[ApplicationInfo]
-  type ComponentConfiguration                 = String
-  type ComponentName                          = String
-  type ConfigurationEventDetail               = String
-  type ConfigurationEventList                 = js.Array[ConfigurationEvent]
+  type AffectedResource = String
+  type AmazonResourceName = String
+  type ApplicationComponentList = js.Array[ApplicationComponent]
+  type ApplicationInfoList = js.Array[ApplicationInfo]
+  type CWEMonitorEnabled = Boolean
+  type CloudWatchEventDetailType = String
+  type CloudWatchEventId = String
+  type CodeDeployApplication = String
+  type CodeDeployDeploymentGroup = String
+  type CodeDeployDeploymentId = String
+  type CodeDeployInstanceGroupId = String
+  type CodeDeployState = String
+  type ComponentConfiguration = String
+  type ComponentName = String
+  type ConfigurationEventDetail = String
+  type ConfigurationEventList = js.Array[ConfigurationEvent]
   type ConfigurationEventMonitoredResourceARN = String
-  type ConfigurationEventResourceName         = String
-  type ConfigurationEventTime                 = js.Date
-  type EndTime                                = js.Date
-  type Feedback                               = js.Dictionary[FeedbackValue]
-  type Insights                               = String
-  type LifeCycle                              = String
-  type LineTime                               = js.Date
-  type LogGroup                               = String
-  type LogPatternList                         = js.Array[LogPattern]
-  type LogPatternName                         = String
-  type LogPatternRank                         = Int
-  type LogPatternRegex                        = String
-  type LogPatternSetList                      = js.Array[LogPatternSetName]
-  type LogPatternSetName                      = String
-  type LogText                                = String
-  type MaxEntities                            = Int
-  type MetricName                             = String
-  type MetricNamespace                        = String
-  type Monitor                                = Boolean
-  type NewComponentName                       = String
-  type ObservationId                          = String
-  type ObservationList                        = js.Array[Observation]
-  type OpsCenterEnabled                       = Boolean
-  type OpsItemSNSTopicArn                     = String
-  type PaginationToken                        = String
-  type ProblemId                              = String
-  type ProblemList                            = js.Array[Problem]
-  type Remarks                                = String
-  type RemoveSNSTopic                         = Boolean
-  type ResourceARN                            = String
-  type ResourceGroupName                      = String
-  type ResourceList                           = js.Array[ResourceARN]
-  type ResourceType                           = String
-  type SourceARN                              = String
-  type SourceType                             = String
-  type StartTime                              = js.Date
-  type TagKey                                 = String
-  type TagKeyList                             = js.Array[TagKey]
-  type TagList                                = js.Array[Tag]
-  type TagValue                               = String
-  type Title                                  = String
-  type Unit                                   = String
-  type Value                                  = Double
+  type ConfigurationEventResourceName = String
+  type ConfigurationEventTime = js.Date
+  type Ec2State = String
+  type EndTime = js.Date
+  type Feedback = js.Dictionary[FeedbackValue]
+  type HealthEventArn = String
+  type HealthEventDescription = String
+  type HealthEventTypeCategory = String
+  type HealthEventTypeCode = String
+  type HealthService = String
+  type Insights = String
+  type LifeCycle = String
+  type LineTime = js.Date
+  type LogGroup = String
+  type LogPatternList = js.Array[LogPattern]
+  type LogPatternName = String
+  type LogPatternRank = Int
+  type LogPatternRegex = String
+  type LogPatternSetList = js.Array[LogPatternSetName]
+  type LogPatternSetName = String
+  type LogText = String
+  type MaxEntities = Int
+  type MetricName = String
+  type MetricNamespace = String
+  type Monitor = Boolean
+  type NewComponentName = String
+  type ObservationId = String
+  type ObservationList = js.Array[Observation]
+  type OpsCenterEnabled = Boolean
+  type OpsItemSNSTopicArn = String
+  type PaginationToken = String
+  type ProblemId = String
+  type ProblemList = js.Array[Problem]
+  type Remarks = String
+  type RemoveSNSTopic = Boolean
+  type ResourceARN = String
+  type ResourceGroupName = String
+  type ResourceList = js.Array[ResourceARN]
+  type ResourceType = String
+  type SourceARN = String
+  type SourceType = String
+  type StartTime = js.Date
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type Title = String
+  type Unit = String
+  type Value = Double
+  type XRayErrorPercent = Int
+  type XRayFaultPercent = Int
+  type XRayNodeName = String
+  type XRayNodeType = String
+  type XRayRequestAverageLatency = Double
+  type XRayRequestCount = Int
+  type XRayThrottlePercent = Int
 
   implicit final class ApplicationInsightsOps(private val service: ApplicationInsights) extends AnyVal {
 
@@ -132,41 +153,41 @@ package applicationinsights {
   class ApplicationInsights() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createApplication(params: CreateApplicationRequest): Request[CreateApplicationResponse]       = js.native
-    def createComponent(params: CreateComponentRequest): Request[CreateComponentResponse]             = js.native
-    def createLogPattern(params: CreateLogPatternRequest): Request[CreateLogPatternResponse]          = js.native
-    def deleteApplication(params: DeleteApplicationRequest): Request[DeleteApplicationResponse]       = js.native
-    def deleteComponent(params: DeleteComponentRequest): Request[DeleteComponentResponse]             = js.native
-    def deleteLogPattern(params: DeleteLogPatternRequest): Request[DeleteLogPatternResponse]          = js.native
+    def createApplication(params: CreateApplicationRequest): Request[CreateApplicationResponse] = js.native
+    def createComponent(params: CreateComponentRequest): Request[CreateComponentResponse] = js.native
+    def createLogPattern(params: CreateLogPatternRequest): Request[CreateLogPatternResponse] = js.native
+    def deleteApplication(params: DeleteApplicationRequest): Request[DeleteApplicationResponse] = js.native
+    def deleteComponent(params: DeleteComponentRequest): Request[DeleteComponentResponse] = js.native
+    def deleteLogPattern(params: DeleteLogPatternRequest): Request[DeleteLogPatternResponse] = js.native
     def describeApplication(params: DescribeApplicationRequest): Request[DescribeApplicationResponse] = js.native
-    def describeComponent(params: DescribeComponentRequest): Request[DescribeComponentResponse]       = js.native
+    def describeComponent(params: DescribeComponentRequest): Request[DescribeComponentResponse] = js.native
     def describeComponentConfiguration(
         params: DescribeComponentConfigurationRequest
     ): Request[DescribeComponentConfigurationResponse] = js.native
     def describeComponentConfigurationRecommendation(
         params: DescribeComponentConfigurationRecommendationRequest
-    ): Request[DescribeComponentConfigurationRecommendationResponse]                                  = js.native
-    def describeLogPattern(params: DescribeLogPatternRequest): Request[DescribeLogPatternResponse]    = js.native
+    ): Request[DescribeComponentConfigurationRecommendationResponse] = js.native
+    def describeLogPattern(params: DescribeLogPatternRequest): Request[DescribeLogPatternResponse] = js.native
     def describeObservation(params: DescribeObservationRequest): Request[DescribeObservationResponse] = js.native
-    def describeProblem(params: DescribeProblemRequest): Request[DescribeProblemResponse]             = js.native
+    def describeProblem(params: DescribeProblemRequest): Request[DescribeProblemResponse] = js.native
     def describeProblemObservations(
         params: DescribeProblemObservationsRequest
-    ): Request[DescribeProblemObservationsResponse]                                          = js.native
+    ): Request[DescribeProblemObservationsResponse] = js.native
     def listApplications(params: ListApplicationsRequest): Request[ListApplicationsResponse] = js.native
-    def listComponents(params: ListComponentsRequest): Request[ListComponentsResponse]       = js.native
+    def listComponents(params: ListComponentsRequest): Request[ListComponentsResponse] = js.native
     def listConfigurationHistory(params: ListConfigurationHistoryRequest): Request[ListConfigurationHistoryResponse] =
       js.native
-    def listLogPatternSets(params: ListLogPatternSetsRequest): Request[ListLogPatternSetsResponse]    = js.native
-    def listLogPatterns(params: ListLogPatternsRequest): Request[ListLogPatternsResponse]             = js.native
-    def listProblems(params: ListProblemsRequest): Request[ListProblemsResponse]                      = js.native
+    def listLogPatternSets(params: ListLogPatternSetsRequest): Request[ListLogPatternSetsResponse] = js.native
+    def listLogPatterns(params: ListLogPatternsRequest): Request[ListLogPatternsResponse] = js.native
+    def listProblems(params: ListProblemsRequest): Request[ListProblemsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
-    def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse]       = js.native
-    def updateComponent(params: UpdateComponentRequest): Request[UpdateComponentResponse]             = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse] = js.native
+    def updateComponent(params: UpdateComponentRequest): Request[UpdateComponentResponse] = js.native
     def updateComponentConfiguration(
         params: UpdateComponentConfigurationRequest
-    ): Request[UpdateComponentConfigurationResponse]                                         = js.native
+    ): Request[UpdateComponentConfigurationResponse] = js.native
     def updateLogPattern(params: UpdateLogPatternRequest): Request[UpdateLogPatternResponse] = js.native
   }
 
@@ -203,6 +224,7 @@ package applicationinsights {
     */
   @js.native
   trait ApplicationInfo extends js.Object {
+    var CWEMonitorEnabled: js.UndefOr[CWEMonitorEnabled]
     var LifeCycle: js.UndefOr[LifeCycle]
     var OpsCenterEnabled: js.UndefOr[OpsCenterEnabled]
     var OpsItemSNSTopicArn: js.UndefOr[OpsItemSNSTopicArn]
@@ -213,6 +235,7 @@ package applicationinsights {
   object ApplicationInfo {
     @inline
     def apply(
+        CWEMonitorEnabled: js.UndefOr[CWEMonitorEnabled] = js.undefined,
         LifeCycle: js.UndefOr[LifeCycle] = js.undefined,
         OpsCenterEnabled: js.UndefOr[OpsCenterEnabled] = js.undefined,
         OpsItemSNSTopicArn: js.UndefOr[OpsItemSNSTopicArn] = js.undefined,
@@ -220,6 +243,7 @@ package applicationinsights {
         ResourceGroupName: js.UndefOr[ResourceGroupName] = js.undefined
     ): ApplicationInfo = {
       val __obj = js.Dynamic.literal()
+      CWEMonitorEnabled.foreach(__v => __obj.updateDynamic("CWEMonitorEnabled")(__v.asInstanceOf[js.Any]))
       LifeCycle.foreach(__v => __obj.updateDynamic("LifeCycle")(__v.asInstanceOf[js.Any]))
       OpsCenterEnabled.foreach(__v => __obj.updateDynamic("OpsCenterEnabled")(__v.asInstanceOf[js.Any]))
       OpsItemSNSTopicArn.foreach(__v => __obj.updateDynamic("OpsItemSNSTopicArn")(__v.asInstanceOf[js.Any]))
@@ -227,6 +251,16 @@ package applicationinsights {
       ResourceGroupName.foreach(__v => __obj.updateDynamic("ResourceGroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationInfo]
     }
+  }
+
+  @js.native
+  sealed trait CloudWatchEventSource extends js.Any
+  object CloudWatchEventSource extends js.Object {
+    val EC2 = "EC2".asInstanceOf[CloudWatchEventSource]
+    val CODE_DEPLOY = "CODE_DEPLOY".asInstanceOf[CloudWatchEventSource]
+    val HEALTH = "HEALTH".asInstanceOf[CloudWatchEventSource]
+
+    val values = js.Object.freeze(js.Array(EC2, CODE_DEPLOY, HEALTH))
   }
 
   /**
@@ -267,8 +301,8 @@ package applicationinsights {
   sealed trait ConfigurationEventResourceType extends js.Any
   object ConfigurationEventResourceType extends js.Object {
     val CLOUDWATCH_ALARM = "CLOUDWATCH_ALARM".asInstanceOf[ConfigurationEventResourceType]
-    val CLOUDFORMATION   = "CLOUDFORMATION".asInstanceOf[ConfigurationEventResourceType]
-    val SSM_ASSOCIATION  = "SSM_ASSOCIATION".asInstanceOf[ConfigurationEventResourceType]
+    val CLOUDFORMATION = "CLOUDFORMATION".asInstanceOf[ConfigurationEventResourceType]
+    val SSM_ASSOCIATION = "SSM_ASSOCIATION".asInstanceOf[ConfigurationEventResourceType]
 
     val values = js.Object.freeze(js.Array(CLOUDWATCH_ALARM, CLOUDFORMATION, SSM_ASSOCIATION))
   }
@@ -276,8 +310,8 @@ package applicationinsights {
   @js.native
   sealed trait ConfigurationEventStatus extends js.Any
   object ConfigurationEventStatus extends js.Object {
-    val INFO  = "INFO".asInstanceOf[ConfigurationEventStatus]
-    val WARN  = "WARN".asInstanceOf[ConfigurationEventStatus]
+    val INFO = "INFO".asInstanceOf[ConfigurationEventStatus]
+    val WARN = "WARN".asInstanceOf[ConfigurationEventStatus]
     val ERROR = "ERROR".asInstanceOf[ConfigurationEventStatus]
 
     val values = js.Object.freeze(js.Array(INFO, WARN, ERROR))
@@ -286,6 +320,7 @@ package applicationinsights {
   @js.native
   trait CreateApplicationRequest extends js.Object {
     var ResourceGroupName: ResourceGroupName
+    var CWEMonitorEnabled: js.UndefOr[CWEMonitorEnabled]
     var OpsCenterEnabled: js.UndefOr[OpsCenterEnabled]
     var OpsItemSNSTopicArn: js.UndefOr[OpsItemSNSTopicArn]
     var Tags: js.UndefOr[TagList]
@@ -295,6 +330,7 @@ package applicationinsights {
     @inline
     def apply(
         ResourceGroupName: ResourceGroupName,
+        CWEMonitorEnabled: js.UndefOr[CWEMonitorEnabled] = js.undefined,
         OpsCenterEnabled: js.UndefOr[OpsCenterEnabled] = js.undefined,
         OpsItemSNSTopicArn: js.UndefOr[OpsItemSNSTopicArn] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -303,6 +339,7 @@ package applicationinsights {
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
 
+      CWEMonitorEnabled.foreach(__v => __obj.updateDynamic("CWEMonitorEnabled")(__v.asInstanceOf[js.Any]))
       OpsCenterEnabled.foreach(__v => __obj.updateDynamic("OpsCenterEnabled")(__v.asInstanceOf[js.Any]))
       OpsItemSNSTopicArn.foreach(__v => __obj.updateDynamic("OpsItemSNSTopicArn")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -341,9 +378,9 @@ package applicationinsights {
         ResourceList: ResourceList
     ): CreateComponentRequest = {
       val __obj = js.Dynamic.literal(
-        "ComponentName"     -> ComponentName.asInstanceOf[js.Any],
+        "ComponentName" -> ComponentName.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any],
-        "ResourceList"      -> ResourceList.asInstanceOf[js.Any]
+        "ResourceList" -> ResourceList.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateComponentRequest]
@@ -382,10 +419,10 @@ package applicationinsights {
         ResourceGroupName: ResourceGroupName
     ): CreateLogPatternRequest = {
       val __obj = js.Dynamic.literal(
-        "Pattern"           -> Pattern.asInstanceOf[js.Any],
-        "PatternName"       -> PatternName.asInstanceOf[js.Any],
-        "PatternSetName"    -> PatternSetName.asInstanceOf[js.Any],
-        "Rank"              -> Rank.asInstanceOf[js.Any],
+        "Pattern" -> Pattern.asInstanceOf[js.Any],
+        "PatternName" -> PatternName.asInstanceOf[js.Any],
+        "PatternSetName" -> PatternSetName.asInstanceOf[js.Any],
+        "Rank" -> Rank.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
 
@@ -456,7 +493,7 @@ package applicationinsights {
         ResourceGroupName: ResourceGroupName
     ): DeleteComponentRequest = {
       val __obj = js.Dynamic.literal(
-        "ComponentName"     -> ComponentName.asInstanceOf[js.Any],
+        "ComponentName" -> ComponentName.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
 
@@ -492,8 +529,8 @@ package applicationinsights {
         ResourceGroupName: ResourceGroupName
     ): DeleteLogPatternRequest = {
       val __obj = js.Dynamic.literal(
-        "PatternName"       -> PatternName.asInstanceOf[js.Any],
-        "PatternSetName"    -> PatternSetName.asInstanceOf[js.Any],
+        "PatternName" -> PatternName.asInstanceOf[js.Any],
+        "PatternSetName" -> PatternSetName.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
 
@@ -563,9 +600,9 @@ package applicationinsights {
         Tier: Tier
     ): DescribeComponentConfigurationRecommendationRequest = {
       val __obj = js.Dynamic.literal(
-        "ComponentName"     -> ComponentName.asInstanceOf[js.Any],
+        "ComponentName" -> ComponentName.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any],
-        "Tier"              -> Tier.asInstanceOf[js.Any]
+        "Tier" -> Tier.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeComponentConfigurationRecommendationRequest]
@@ -601,7 +638,7 @@ package applicationinsights {
         ResourceGroupName: ResourceGroupName
     ): DescribeComponentConfigurationRequest = {
       val __obj = js.Dynamic.literal(
-        "ComponentName"     -> ComponentName.asInstanceOf[js.Any],
+        "ComponentName" -> ComponentName.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
 
@@ -644,7 +681,7 @@ package applicationinsights {
         ResourceGroupName: ResourceGroupName
     ): DescribeComponentRequest = {
       val __obj = js.Dynamic.literal(
-        "ComponentName"     -> ComponentName.asInstanceOf[js.Any],
+        "ComponentName" -> ComponentName.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
 
@@ -686,8 +723,8 @@ package applicationinsights {
         ResourceGroupName: ResourceGroupName
     ): DescribeLogPatternRequest = {
       val __obj = js.Dynamic.literal(
-        "PatternName"       -> PatternName.asInstanceOf[js.Any],
-        "PatternSetName"    -> PatternSetName.asInstanceOf[js.Any],
+        "PatternName" -> PatternName.asInstanceOf[js.Any],
+        "PatternSetName" -> PatternSetName.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
 
@@ -828,8 +865,8 @@ package applicationinsights {
   sealed trait FeedbackValue extends js.Any
   object FeedbackValue extends js.Object {
     val NOT_SPECIFIED = "NOT_SPECIFIED".asInstanceOf[FeedbackValue]
-    val USEFUL        = "USEFUL".asInstanceOf[FeedbackValue]
-    val NOT_USEFUL    = "NOT_USEFUL".asInstanceOf[FeedbackValue]
+    val USEFUL = "USEFUL".asInstanceOf[FeedbackValue]
+    val NOT_USEFUL = "NOT_USEFUL".asInstanceOf[FeedbackValue]
 
     val values = js.Object.freeze(js.Array(NOT_SPECIFIED, USEFUL, NOT_USEFUL))
   }
@@ -1145,8 +1182,8 @@ package applicationinsights {
   sealed trait LogFilter extends js.Any
   object LogFilter extends js.Object {
     val ERROR = "ERROR".asInstanceOf[LogFilter]
-    val WARN  = "WARN".asInstanceOf[LogFilter]
-    val INFO  = "INFO".asInstanceOf[LogFilter]
+    val WARN = "WARN".asInstanceOf[LogFilter]
+    val INFO = "INFO".asInstanceOf[LogFilter]
 
     val values = js.Object.freeze(js.Array(ERROR, WARN, INFO))
   }
@@ -1184,7 +1221,21 @@ package applicationinsights {
     */
   @js.native
   trait Observation extends js.Object {
+    var CloudWatchEventDetailType: js.UndefOr[CloudWatchEventDetailType]
+    var CloudWatchEventId: js.UndefOr[CloudWatchEventId]
+    var CloudWatchEventSource: js.UndefOr[CloudWatchEventSource]
+    var CodeDeployApplication: js.UndefOr[CodeDeployApplication]
+    var CodeDeployDeploymentGroup: js.UndefOr[CodeDeployDeploymentGroup]
+    var CodeDeployDeploymentId: js.UndefOr[CodeDeployDeploymentId]
+    var CodeDeployInstanceGroupId: js.UndefOr[CodeDeployInstanceGroupId]
+    var CodeDeployState: js.UndefOr[CodeDeployState]
+    var Ec2State: js.UndefOr[Ec2State]
     var EndTime: js.UndefOr[EndTime]
+    var HealthEventArn: js.UndefOr[HealthEventArn]
+    var HealthEventDescription: js.UndefOr[HealthEventDescription]
+    var HealthEventTypeCategory: js.UndefOr[HealthEventTypeCategory]
+    var HealthEventTypeCode: js.UndefOr[HealthEventTypeCode]
+    var HealthService: js.UndefOr[HealthService]
     var Id: js.UndefOr[ObservationId]
     var LineTime: js.UndefOr[LineTime]
     var LogFilter: js.UndefOr[LogFilter]
@@ -1197,12 +1248,33 @@ package applicationinsights {
     var StartTime: js.UndefOr[StartTime]
     var Unit: js.UndefOr[Unit]
     var Value: js.UndefOr[Value]
+    var XRayErrorPercent: js.UndefOr[XRayErrorPercent]
+    var XRayFaultPercent: js.UndefOr[XRayFaultPercent]
+    var XRayNodeName: js.UndefOr[XRayNodeName]
+    var XRayNodeType: js.UndefOr[XRayNodeType]
+    var XRayRequestAverageLatency: js.UndefOr[XRayRequestAverageLatency]
+    var XRayRequestCount: js.UndefOr[XRayRequestCount]
+    var XRayThrottlePercent: js.UndefOr[XRayThrottlePercent]
   }
 
   object Observation {
     @inline
     def apply(
+        CloudWatchEventDetailType: js.UndefOr[CloudWatchEventDetailType] = js.undefined,
+        CloudWatchEventId: js.UndefOr[CloudWatchEventId] = js.undefined,
+        CloudWatchEventSource: js.UndefOr[CloudWatchEventSource] = js.undefined,
+        CodeDeployApplication: js.UndefOr[CodeDeployApplication] = js.undefined,
+        CodeDeployDeploymentGroup: js.UndefOr[CodeDeployDeploymentGroup] = js.undefined,
+        CodeDeployDeploymentId: js.UndefOr[CodeDeployDeploymentId] = js.undefined,
+        CodeDeployInstanceGroupId: js.UndefOr[CodeDeployInstanceGroupId] = js.undefined,
+        CodeDeployState: js.UndefOr[CodeDeployState] = js.undefined,
+        Ec2State: js.UndefOr[Ec2State] = js.undefined,
         EndTime: js.UndefOr[EndTime] = js.undefined,
+        HealthEventArn: js.UndefOr[HealthEventArn] = js.undefined,
+        HealthEventDescription: js.UndefOr[HealthEventDescription] = js.undefined,
+        HealthEventTypeCategory: js.UndefOr[HealthEventTypeCategory] = js.undefined,
+        HealthEventTypeCode: js.UndefOr[HealthEventTypeCode] = js.undefined,
+        HealthService: js.UndefOr[HealthService] = js.undefined,
         Id: js.UndefOr[ObservationId] = js.undefined,
         LineTime: js.UndefOr[LineTime] = js.undefined,
         LogFilter: js.UndefOr[LogFilter] = js.undefined,
@@ -1214,10 +1286,37 @@ package applicationinsights {
         SourceType: js.UndefOr[SourceType] = js.undefined,
         StartTime: js.UndefOr[StartTime] = js.undefined,
         Unit: js.UndefOr[Unit] = js.undefined,
-        Value: js.UndefOr[Value] = js.undefined
+        Value: js.UndefOr[Value] = js.undefined,
+        XRayErrorPercent: js.UndefOr[XRayErrorPercent] = js.undefined,
+        XRayFaultPercent: js.UndefOr[XRayFaultPercent] = js.undefined,
+        XRayNodeName: js.UndefOr[XRayNodeName] = js.undefined,
+        XRayNodeType: js.UndefOr[XRayNodeType] = js.undefined,
+        XRayRequestAverageLatency: js.UndefOr[XRayRequestAverageLatency] = js.undefined,
+        XRayRequestCount: js.UndefOr[XRayRequestCount] = js.undefined,
+        XRayThrottlePercent: js.UndefOr[XRayThrottlePercent] = js.undefined
     ): Observation = {
       val __obj = js.Dynamic.literal()
+      CloudWatchEventDetailType.foreach(__v =>
+        __obj.updateDynamic("CloudWatchEventDetailType")(__v.asInstanceOf[js.Any])
+      )
+      CloudWatchEventId.foreach(__v => __obj.updateDynamic("CloudWatchEventId")(__v.asInstanceOf[js.Any]))
+      CloudWatchEventSource.foreach(__v => __obj.updateDynamic("CloudWatchEventSource")(__v.asInstanceOf[js.Any]))
+      CodeDeployApplication.foreach(__v => __obj.updateDynamic("CodeDeployApplication")(__v.asInstanceOf[js.Any]))
+      CodeDeployDeploymentGroup.foreach(__v =>
+        __obj.updateDynamic("CodeDeployDeploymentGroup")(__v.asInstanceOf[js.Any])
+      )
+      CodeDeployDeploymentId.foreach(__v => __obj.updateDynamic("CodeDeployDeploymentId")(__v.asInstanceOf[js.Any]))
+      CodeDeployInstanceGroupId.foreach(__v =>
+        __obj.updateDynamic("CodeDeployInstanceGroupId")(__v.asInstanceOf[js.Any])
+      )
+      CodeDeployState.foreach(__v => __obj.updateDynamic("CodeDeployState")(__v.asInstanceOf[js.Any]))
+      Ec2State.foreach(__v => __obj.updateDynamic("Ec2State")(__v.asInstanceOf[js.Any]))
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      HealthEventArn.foreach(__v => __obj.updateDynamic("HealthEventArn")(__v.asInstanceOf[js.Any]))
+      HealthEventDescription.foreach(__v => __obj.updateDynamic("HealthEventDescription")(__v.asInstanceOf[js.Any]))
+      HealthEventTypeCategory.foreach(__v => __obj.updateDynamic("HealthEventTypeCategory")(__v.asInstanceOf[js.Any]))
+      HealthEventTypeCode.foreach(__v => __obj.updateDynamic("HealthEventTypeCode")(__v.asInstanceOf[js.Any]))
+      HealthService.foreach(__v => __obj.updateDynamic("HealthService")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       LineTime.foreach(__v => __obj.updateDynamic("LineTime")(__v.asInstanceOf[js.Any]))
       LogFilter.foreach(__v => __obj.updateDynamic("LogFilter")(__v.asInstanceOf[js.Any]))
@@ -1230,6 +1329,15 @@ package applicationinsights {
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      XRayErrorPercent.foreach(__v => __obj.updateDynamic("XRayErrorPercent")(__v.asInstanceOf[js.Any]))
+      XRayFaultPercent.foreach(__v => __obj.updateDynamic("XRayFaultPercent")(__v.asInstanceOf[js.Any]))
+      XRayNodeName.foreach(__v => __obj.updateDynamic("XRayNodeName")(__v.asInstanceOf[js.Any]))
+      XRayNodeType.foreach(__v => __obj.updateDynamic("XRayNodeType")(__v.asInstanceOf[js.Any]))
+      XRayRequestAverageLatency.foreach(__v =>
+        __obj.updateDynamic("XRayRequestAverageLatency")(__v.asInstanceOf[js.Any])
+      )
+      XRayRequestCount.foreach(__v => __obj.updateDynamic("XRayRequestCount")(__v.asInstanceOf[js.Any]))
+      XRayThrottlePercent.foreach(__v => __obj.updateDynamic("XRayThrottlePercent")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Observation]
     }
   }
@@ -1302,9 +1410,9 @@ package applicationinsights {
   @js.native
   sealed trait SeverityLevel extends js.Any
   object SeverityLevel extends js.Object {
-    val Low    = "Low".asInstanceOf[SeverityLevel]
+    val Low = "Low".asInstanceOf[SeverityLevel]
     val Medium = "Medium".asInstanceOf[SeverityLevel]
-    val High   = "High".asInstanceOf[SeverityLevel]
+    val High = "High".asInstanceOf[SeverityLevel]
 
     val values = js.Object.freeze(js.Array(Low, Medium, High))
   }
@@ -1312,9 +1420,9 @@ package applicationinsights {
   @js.native
   sealed trait Status extends js.Any
   object Status extends js.Object {
-    val IGNORE   = "IGNORE".asInstanceOf[Status]
+    val IGNORE = "IGNORE".asInstanceOf[Status]
     val RESOLVED = "RESOLVED".asInstanceOf[Status]
-    val PENDING  = "PENDING".asInstanceOf[Status]
+    val PENDING = "PENDING".asInstanceOf[Status]
 
     val values = js.Object.freeze(js.Array(IGNORE, RESOLVED, PENDING))
   }
@@ -1339,7 +1447,7 @@ package applicationinsights {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -1361,7 +1469,7 @@ package applicationinsights {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1384,11 +1492,11 @@ package applicationinsights {
   @js.native
   sealed trait Tier extends js.Any
   object Tier extends js.Object {
-    val DEFAULT        = "DEFAULT".asInstanceOf[Tier]
-    val DOT_NET_CORE   = "DOT_NET_CORE".asInstanceOf[Tier]
+    val DEFAULT = "DEFAULT".asInstanceOf[Tier]
+    val DOT_NET_CORE = "DOT_NET_CORE".asInstanceOf[Tier]
     val DOT_NET_WORKER = "DOT_NET_WORKER".asInstanceOf[Tier]
-    val DOT_NET_WEB    = "DOT_NET_WEB".asInstanceOf[Tier]
-    val SQL_SERVER     = "SQL_SERVER".asInstanceOf[Tier]
+    val DOT_NET_WEB = "DOT_NET_WEB".asInstanceOf[Tier]
+    val SQL_SERVER = "SQL_SERVER".asInstanceOf[Tier]
 
     val values = js.Object.freeze(js.Array(DEFAULT, DOT_NET_CORE, DOT_NET_WORKER, DOT_NET_WEB, SQL_SERVER))
   }
@@ -1407,7 +1515,7 @@ package applicationinsights {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -1430,6 +1538,7 @@ package applicationinsights {
   @js.native
   trait UpdateApplicationRequest extends js.Object {
     var ResourceGroupName: ResourceGroupName
+    var CWEMonitorEnabled: js.UndefOr[CWEMonitorEnabled]
     var OpsCenterEnabled: js.UndefOr[OpsCenterEnabled]
     var OpsItemSNSTopicArn: js.UndefOr[OpsItemSNSTopicArn]
     var RemoveSNSTopic: js.UndefOr[RemoveSNSTopic]
@@ -1439,6 +1548,7 @@ package applicationinsights {
     @inline
     def apply(
         ResourceGroupName: ResourceGroupName,
+        CWEMonitorEnabled: js.UndefOr[CWEMonitorEnabled] = js.undefined,
         OpsCenterEnabled: js.UndefOr[OpsCenterEnabled] = js.undefined,
         OpsItemSNSTopicArn: js.UndefOr[OpsItemSNSTopicArn] = js.undefined,
         RemoveSNSTopic: js.UndefOr[RemoveSNSTopic] = js.undefined
@@ -1447,6 +1557,7 @@ package applicationinsights {
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
 
+      CWEMonitorEnabled.foreach(__v => __obj.updateDynamic("CWEMonitorEnabled")(__v.asInstanceOf[js.Any]))
       OpsCenterEnabled.foreach(__v => __obj.updateDynamic("OpsCenterEnabled")(__v.asInstanceOf[js.Any]))
       OpsItemSNSTopicArn.foreach(__v => __obj.updateDynamic("OpsItemSNSTopicArn")(__v.asInstanceOf[js.Any]))
       RemoveSNSTopic.foreach(__v => __obj.updateDynamic("RemoveSNSTopic")(__v.asInstanceOf[js.Any]))
@@ -1489,7 +1600,7 @@ package applicationinsights {
         Tier: js.UndefOr[Tier] = js.undefined
     ): UpdateComponentConfigurationRequest = {
       val __obj = js.Dynamic.literal(
-        "ComponentName"     -> ComponentName.asInstanceOf[js.Any],
+        "ComponentName" -> ComponentName.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
 
@@ -1530,7 +1641,7 @@ package applicationinsights {
         ResourceList: js.UndefOr[ResourceList] = js.undefined
     ): UpdateComponentRequest = {
       val __obj = js.Dynamic.literal(
-        "ComponentName"     -> ComponentName.asInstanceOf[js.Any],
+        "ComponentName" -> ComponentName.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
 
@@ -1572,8 +1683,8 @@ package applicationinsights {
         Rank: js.UndefOr[LogPatternRank] = js.undefined
     ): UpdateLogPatternRequest = {
       val __obj = js.Dynamic.literal(
-        "PatternName"       -> PatternName.asInstanceOf[js.Any],
-        "PatternSetName"    -> PatternSetName.asInstanceOf[js.Any],
+        "PatternName" -> PatternName.asInstanceOf[js.Any],
+        "PatternSetName" -> PatternSetName.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
 

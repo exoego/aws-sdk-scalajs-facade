@@ -7,34 +7,34 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object rdsdataservice {
-  type Arn                 = String
-  type ArrayOfArray        = js.Array[ArrayValue]
-  type ArrayValueList      = js.Array[Value]
-  type Blob                = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type BooleanArray        = js.Array[BoxedBoolean]
-  type BoxedBoolean        = Boolean
-  type BoxedDouble         = Double
-  type BoxedFloat          = Float
-  type BoxedInteger        = Int
-  type BoxedLong           = Double
-  type DbName              = String
-  type DoubleArray         = js.Array[BoxedDouble]
-  type FieldList           = js.Array[Field]
-  type Id                  = String
-  type LongArray           = js.Array[BoxedLong]
-  type Metadata            = js.Array[ColumnMetadata]
-  type ParameterName       = String
-  type Records             = js.Array[Record]
-  type RecordsUpdated      = Double
-  type Row                 = js.Array[Value]
-  type SqlParameterSets    = js.Array[SqlParametersList]
-  type SqlParametersList   = js.Array[SqlParameter]
-  type SqlRecords          = js.Array[FieldList]
-  type SqlStatement        = String
+  type Arn = String
+  type ArrayOfArray = js.Array[ArrayValue]
+  type ArrayValueList = js.Array[Value]
+  type Blob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type BooleanArray = js.Array[BoxedBoolean]
+  type BoxedBoolean = Boolean
+  type BoxedDouble = Double
+  type BoxedFloat = Float
+  type BoxedInteger = Int
+  type BoxedLong = Double
+  type DbName = String
+  type DoubleArray = js.Array[BoxedDouble]
+  type FieldList = js.Array[Field]
+  type Id = String
+  type LongArray = js.Array[BoxedLong]
+  type Metadata = js.Array[ColumnMetadata]
+  type ParameterName = String
+  type Records = js.Array[Record]
+  type RecordsUpdated = Double
+  type Row = js.Array[Value]
+  type SqlParameterSets = js.Array[SqlParametersList]
+  type SqlParametersList = js.Array[SqlParameter]
+  type SqlRecords = js.Array[FieldList]
+  type SqlStatement = String
   type SqlStatementResults = js.Array[SqlStatementResult]
-  type StringArray         = js.Array[String]
-  type TransactionStatus   = String
-  type UpdateResults       = js.Array[UpdateResult]
+  type StringArray = js.Array[String]
+  type TransactionStatus = String
+  type UpdateResults = js.Array[UpdateResult]
 
   implicit final class RDSDataServiceOps(private val service: RDSDataService) extends AnyVal {
 
@@ -59,10 +59,10 @@ package rdsdataservice {
     def this(config: AWSConfig) = this()
 
     def batchExecuteStatement(params: BatchExecuteStatementRequest): Request[BatchExecuteStatementResponse] = js.native
-    def beginTransaction(params: BeginTransactionRequest): Request[BeginTransactionResponse]                = js.native
-    def commitTransaction(params: CommitTransactionRequest): Request[CommitTransactionResponse]             = js.native
-    def executeStatement(params: ExecuteStatementRequest): Request[ExecuteStatementResponse]                = js.native
-    def rollbackTransaction(params: RollbackTransactionRequest): Request[RollbackTransactionResponse]       = js.native
+    def beginTransaction(params: BeginTransactionRequest): Request[BeginTransactionResponse] = js.native
+    def commitTransaction(params: CommitTransactionRequest): Request[CommitTransactionResponse] = js.native
+    def executeStatement(params: ExecuteStatementRequest): Request[ExecuteStatementResponse] = js.native
+    def rollbackTransaction(params: RollbackTransactionRequest): Request[RollbackTransactionResponse] = js.native
     @deprecated("The ExecuteSql API is deprecated, please use the ExecuteStatement API.", "forever") def executeSql(
         params: ExecuteSqlRequest
     ): Request[ExecuteSqlResponse] = js.native
@@ -126,8 +126,8 @@ package rdsdataservice {
     ): BatchExecuteStatementRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "secretArn"   -> secretArn.asInstanceOf[js.Any],
-        "sql"         -> sql.asInstanceOf[js.Any]
+        "secretArn" -> secretArn.asInstanceOf[js.Any],
+        "sql" -> sql.asInstanceOf[js.Any]
       )
 
       database.foreach(__v => __obj.updateDynamic("database")(__v.asInstanceOf[js.Any]))
@@ -178,7 +178,7 @@ package rdsdataservice {
     ): BeginTransactionRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "secretArn"   -> secretArn.asInstanceOf[js.Any]
+        "secretArn" -> secretArn.asInstanceOf[js.Any]
       )
 
       database.foreach(__v => __obj.updateDynamic("database")(__v.asInstanceOf[js.Any]))
@@ -282,8 +282,8 @@ package rdsdataservice {
         transactionId: Id
     ): CommitTransactionRequest = {
       val __obj = js.Dynamic.literal(
-        "resourceArn"   -> resourceArn.asInstanceOf[js.Any],
-        "secretArn"     -> secretArn.asInstanceOf[js.Any],
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "secretArn" -> secretArn.asInstanceOf[js.Any],
         "transactionId" -> transactionId.asInstanceOf[js.Any]
       )
 
@@ -314,7 +314,7 @@ package rdsdataservice {
   sealed trait DecimalReturnType extends js.Any
   object DecimalReturnType extends js.Object {
     val DOUBLE_OR_LONG = "DOUBLE_OR_LONG".asInstanceOf[DecimalReturnType]
-    val STRING         = "STRING".asInstanceOf[DecimalReturnType]
+    val STRING = "STRING".asInstanceOf[DecimalReturnType]
 
     val values = js.Object.freeze(js.Array(DOUBLE_OR_LONG, STRING))
   }
@@ -341,9 +341,9 @@ package rdsdataservice {
         schema: js.UndefOr[DbName] = js.undefined
     ): ExecuteSqlRequest = {
       val __obj = js.Dynamic.literal(
-        "awsSecretStoreArn"      -> awsSecretStoreArn.asInstanceOf[js.Any],
+        "awsSecretStoreArn" -> awsSecretStoreArn.asInstanceOf[js.Any],
         "dbClusterOrInstanceArn" -> dbClusterOrInstanceArn.asInstanceOf[js.Any],
-        "sqlStatements"          -> sqlStatements.asInstanceOf[js.Any]
+        "sqlStatements" -> sqlStatements.asInstanceOf[js.Any]
       )
 
       database.foreach(__v => __obj.updateDynamic("database")(__v.asInstanceOf[js.Any]))
@@ -404,8 +404,8 @@ package rdsdataservice {
     ): ExecuteStatementRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "secretArn"   -> secretArn.asInstanceOf[js.Any],
-        "sql"         -> sql.asInstanceOf[js.Any]
+        "secretArn" -> secretArn.asInstanceOf[js.Any],
+        "sql" -> sql.asInstanceOf[js.Any]
       )
 
       continueAfterTimeout.foreach(__v => __obj.updateDynamic("continueAfterTimeout")(__v.asInstanceOf[js.Any]))
@@ -584,8 +584,8 @@ package rdsdataservice {
         transactionId: Id
     ): RollbackTransactionRequest = {
       val __obj = js.Dynamic.literal(
-        "resourceArn"   -> resourceArn.asInstanceOf[js.Any],
-        "secretArn"     -> secretArn.asInstanceOf[js.Any],
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "secretArn" -> secretArn.asInstanceOf[js.Any],
         "transactionId" -> transactionId.asInstanceOf[js.Any]
       )
 
@@ -682,9 +682,9 @@ package rdsdataservice {
   @js.native
   sealed trait TypeHint extends js.Any
   object TypeHint extends js.Object {
-    val DATE      = "DATE".asInstanceOf[TypeHint]
-    val DECIMAL   = "DECIMAL".asInstanceOf[TypeHint]
-    val TIME      = "TIME".asInstanceOf[TypeHint]
+    val DATE = "DATE".asInstanceOf[TypeHint]
+    val DECIMAL = "DECIMAL".asInstanceOf[TypeHint]
+    val TIME = "TIME".asInstanceOf[TypeHint]
     val TIMESTAMP = "TIMESTAMP".asInstanceOf[TypeHint]
 
     val values = js.Object.freeze(js.Array(DATE, DECIMAL, TIME, TIMESTAMP))

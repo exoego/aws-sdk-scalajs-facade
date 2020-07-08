@@ -7,49 +7,49 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object codestar {
-  type BucketKey              = String
-  type BucketName             = String
-  type ClientRequestToken     = String
-  type CreatedTimestamp       = js.Date
-  type DeleteStack            = Boolean
-  type Email                  = String
-  type GitHubPersonalToken    = String
-  type LastModifiedTimestamp  = js.Date
-  type MaxResults             = Int
-  type PaginationToken        = String
-  type ProjectArn             = String
-  type ProjectDescription     = String
-  type ProjectId              = String
-  type ProjectName            = String
-  type ProjectTemplateId      = String
-  type ProjectsList           = js.Array[ProjectSummary]
-  type Reason                 = String
-  type RemoteAccessAllowed    = Boolean
-  type RepositoryDescription  = String
+  type BucketKey = String
+  type BucketName = String
+  type ClientRequestToken = String
+  type CreatedTimestamp = js.Date
+  type DeleteStack = Boolean
+  type Email = String
+  type GitHubPersonalToken = String
+  type LastModifiedTimestamp = js.Date
+  type MaxResults = Int
+  type PaginationToken = String
+  type ProjectArn = String
+  type ProjectDescription = String
+  type ProjectId = String
+  type ProjectName = String
+  type ProjectTemplateId = String
+  type ProjectsList = js.Array[ProjectSummary]
+  type Reason = String
+  type RemoteAccessAllowed = Boolean
+  type RepositoryDescription = String
   type RepositoryEnableIssues = Boolean
-  type RepositoryIsPrivate    = Boolean
-  type RepositoryName         = String
-  type RepositoryOwner        = String
-  type RepositoryType         = String
-  type ResourceId             = String
-  type ResourcesResult        = js.Array[Resource]
-  type Role                   = String
-  type RoleArn                = String
-  type SourceCode             = js.Array[Code]
-  type SshPublicKey           = String
-  type StackId                = String
-  type State                  = String
-  type TagKey                 = String
-  type TagKeys                = js.Array[TagKey]
-  type TagValue               = String
-  type Tags                   = js.Dictionary[TagValue]
-  type TeamMemberResult       = js.Array[TeamMember]
-  type TemplateParameterKey   = String
-  type TemplateParameterMap   = js.Dictionary[TemplateParameterValue]
+  type RepositoryIsPrivate = Boolean
+  type RepositoryName = String
+  type RepositoryOwner = String
+  type RepositoryType = String
+  type ResourceId = String
+  type ResourcesResult = js.Array[Resource]
+  type Role = String
+  type RoleArn = String
+  type SourceCode = js.Array[Code]
+  type SshPublicKey = String
+  type StackId = String
+  type State = String
+  type TagKey = String
+  type TagKeys = js.Array[TagKey]
+  type TagValue = String
+  type Tags = js.Dictionary[TagValue]
+  type TeamMemberResult = js.Array[TeamMember]
+  type TemplateParameterKey = String
+  type TemplateParameterMap = js.Dictionary[TemplateParameterValue]
   type TemplateParameterValue = String
-  type UserArn                = String
+  type UserArn = String
   type UserProfileDisplayName = String
-  type UserProfilesList       = js.Array[UserProfileSummary]
+  type UserProfilesList = js.Array[UserProfileSummary]
 
   implicit final class CodeStarOps(private val service: CodeStar) extends AnyVal {
 
@@ -99,24 +99,24 @@ package codestar {
   class CodeStar() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def associateTeamMember(params: AssociateTeamMemberRequest): Request[AssociateTeamMemberResult]          = js.native
-    def createProject(params: CreateProjectRequest): Request[CreateProjectResult]                            = js.native
-    def createUserProfile(params: CreateUserProfileRequest): Request[CreateUserProfileResult]                = js.native
-    def deleteProject(params: DeleteProjectRequest): Request[DeleteProjectResult]                            = js.native
-    def deleteUserProfile(params: DeleteUserProfileRequest): Request[DeleteUserProfileResult]                = js.native
-    def describeProject(params: DescribeProjectRequest): Request[DescribeProjectResult]                      = js.native
-    def describeUserProfile(params: DescribeUserProfileRequest): Request[DescribeUserProfileResult]          = js.native
+    def associateTeamMember(params: AssociateTeamMemberRequest): Request[AssociateTeamMemberResult] = js.native
+    def createProject(params: CreateProjectRequest): Request[CreateProjectResult] = js.native
+    def createUserProfile(params: CreateUserProfileRequest): Request[CreateUserProfileResult] = js.native
+    def deleteProject(params: DeleteProjectRequest): Request[DeleteProjectResult] = js.native
+    def deleteUserProfile(params: DeleteUserProfileRequest): Request[DeleteUserProfileResult] = js.native
+    def describeProject(params: DescribeProjectRequest): Request[DescribeProjectResult] = js.native
+    def describeUserProfile(params: DescribeUserProfileRequest): Request[DescribeUserProfileResult] = js.native
     def disassociateTeamMember(params: DisassociateTeamMemberRequest): Request[DisassociateTeamMemberResult] = js.native
-    def listProjects(params: ListProjectsRequest): Request[ListProjectsResult]                               = js.native
-    def listResources(params: ListResourcesRequest): Request[ListResourcesResult]                            = js.native
-    def listTagsForProject(params: ListTagsForProjectRequest): Request[ListTagsForProjectResult]             = js.native
-    def listTeamMembers(params: ListTeamMembersRequest): Request[ListTeamMembersResult]                      = js.native
-    def listUserProfiles(params: ListUserProfilesRequest): Request[ListUserProfilesResult]                   = js.native
-    def tagProject(params: TagProjectRequest): Request[TagProjectResult]                                     = js.native
-    def untagProject(params: UntagProjectRequest): Request[UntagProjectResult]                               = js.native
-    def updateProject(params: UpdateProjectRequest): Request[UpdateProjectResult]                            = js.native
-    def updateTeamMember(params: UpdateTeamMemberRequest): Request[UpdateTeamMemberResult]                   = js.native
-    def updateUserProfile(params: UpdateUserProfileRequest): Request[UpdateUserProfileResult]                = js.native
+    def listProjects(params: ListProjectsRequest): Request[ListProjectsResult] = js.native
+    def listResources(params: ListResourcesRequest): Request[ListResourcesResult] = js.native
+    def listTagsForProject(params: ListTagsForProjectRequest): Request[ListTagsForProjectResult] = js.native
+    def listTeamMembers(params: ListTeamMembersRequest): Request[ListTeamMembersResult] = js.native
+    def listUserProfiles(params: ListUserProfilesRequest): Request[ListUserProfilesResult] = js.native
+    def tagProject(params: TagProjectRequest): Request[TagProjectResult] = js.native
+    def untagProject(params: UntagProjectRequest): Request[UntagProjectResult] = js.native
+    def updateProject(params: UpdateProjectRequest): Request[UpdateProjectResult] = js.native
+    def updateTeamMember(params: UpdateTeamMemberRequest): Request[UpdateTeamMemberResult] = js.native
+    def updateUserProfile(params: UpdateUserProfileRequest): Request[UpdateUserProfileResult] = js.native
   }
 
   @js.native
@@ -138,9 +138,9 @@ package codestar {
         remoteAccessAllowed: js.UndefOr[RemoteAccessAllowed] = js.undefined
     ): AssociateTeamMemberRequest = {
       val __obj = js.Dynamic.literal(
-        "projectId"   -> projectId.asInstanceOf[js.Any],
+        "projectId" -> projectId.asInstanceOf[js.Any],
         "projectRole" -> projectRole.asInstanceOf[js.Any],
-        "userArn"     -> userArn.asInstanceOf[js.Any]
+        "userArn" -> userArn.asInstanceOf[js.Any]
       )
 
       clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
@@ -182,7 +182,7 @@ package codestar {
     ): Code = {
       val __obj = js.Dynamic.literal(
         "destination" -> destination.asInstanceOf[js.Any],
-        "source"      -> source.asInstanceOf[js.Any]
+        "source" -> source.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Code]
@@ -276,7 +276,7 @@ package codestar {
         toolchain: js.UndefOr[Toolchain] = js.undefined
     ): CreateProjectRequest = {
       val __obj = js.Dynamic.literal(
-        "id"   -> id.asInstanceOf[js.Any],
+        "id" -> id.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any]
       )
 
@@ -307,7 +307,7 @@ package codestar {
     ): CreateProjectResult = {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any],
-        "id"  -> id.asInstanceOf[js.Any]
+        "id" -> id.asInstanceOf[js.Any]
       )
 
       clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
@@ -333,9 +333,9 @@ package codestar {
         sshPublicKey: js.UndefOr[SshPublicKey] = js.undefined
     ): CreateUserProfileRequest = {
       val __obj = js.Dynamic.literal(
-        "displayName"  -> displayName.asInstanceOf[js.Any],
+        "displayName" -> displayName.asInstanceOf[js.Any],
         "emailAddress" -> emailAddress.asInstanceOf[js.Any],
-        "userArn"      -> userArn.asInstanceOf[js.Any]
+        "userArn" -> userArn.asInstanceOf[js.Any]
       )
 
       sshPublicKey.foreach(__v => __obj.updateDynamic("sshPublicKey")(__v.asInstanceOf[js.Any]))
@@ -552,9 +552,9 @@ package codestar {
         sshPublicKey: js.UndefOr[SshPublicKey] = js.undefined
     ): DescribeUserProfileResult = {
       val __obj = js.Dynamic.literal(
-        "createdTimestamp"      -> createdTimestamp.asInstanceOf[js.Any],
+        "createdTimestamp" -> createdTimestamp.asInstanceOf[js.Any],
         "lastModifiedTimestamp" -> lastModifiedTimestamp.asInstanceOf[js.Any],
-        "userArn"               -> userArn.asInstanceOf[js.Any]
+        "userArn" -> userArn.asInstanceOf[js.Any]
       )
 
       displayName.foreach(__v => __obj.updateDynamic("displayName")(__v.asInstanceOf[js.Any]))
@@ -578,7 +578,7 @@ package codestar {
     ): DisassociateTeamMemberRequest = {
       val __obj = js.Dynamic.literal(
         "projectId" -> projectId.asInstanceOf[js.Any],
-        "userArn"   -> userArn.asInstanceOf[js.Any]
+        "userArn" -> userArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DisassociateTeamMemberRequest]
@@ -624,12 +624,12 @@ package codestar {
         description: js.UndefOr[RepositoryDescription] = js.undefined
     ): GitHubCodeDestination = {
       val __obj = js.Dynamic.literal(
-        "issuesEnabled"     -> issuesEnabled.asInstanceOf[js.Any],
-        "name"              -> name.asInstanceOf[js.Any],
-        "owner"             -> owner.asInstanceOf[js.Any],
+        "issuesEnabled" -> issuesEnabled.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "owner" -> owner.asInstanceOf[js.Any],
         "privateRepository" -> privateRepository.asInstanceOf[js.Any],
-        "token"             -> token.asInstanceOf[js.Any],
-        "type"              -> `type`.asInstanceOf[js.Any]
+        "token" -> token.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
@@ -950,7 +950,7 @@ package codestar {
         tags: Tags
     ): TagProjectRequest = {
       val __obj = js.Dynamic.literal(
-        "id"   -> id.asInstanceOf[js.Any],
+        "id" -> id.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
 
@@ -993,7 +993,7 @@ package codestar {
     ): TeamMember = {
       val __obj = js.Dynamic.literal(
         "projectRole" -> projectRole.asInstanceOf[js.Any],
-        "userArn"     -> userArn.asInstanceOf[js.Any]
+        "userArn" -> userArn.asInstanceOf[js.Any]
       )
 
       remoteAccessAllowed.foreach(__v => __obj.updateDynamic("remoteAccessAllowed")(__v.asInstanceOf[js.Any]))
@@ -1062,7 +1062,7 @@ package codestar {
         tags: TagKeys
     ): UntagProjectRequest = {
       val __obj = js.Dynamic.literal(
-        "id"   -> id.asInstanceOf[js.Any],
+        "id" -> id.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
 
@@ -1138,7 +1138,7 @@ package codestar {
     ): UpdateTeamMemberRequest = {
       val __obj = js.Dynamic.literal(
         "projectId" -> projectId.asInstanceOf[js.Any],
-        "userArn"   -> userArn.asInstanceOf[js.Any]
+        "userArn" -> userArn.asInstanceOf[js.Any]
       )
 
       projectRole.foreach(__v => __obj.updateDynamic("projectRole")(__v.asInstanceOf[js.Any]))

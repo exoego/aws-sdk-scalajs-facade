@@ -7,30 +7,38 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object qldb {
-  type Arn                 = String
-  type DeletionProtection  = Boolean
-  type Digest              = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type IonText             = String
+  type Arn = String
+  type DeletionProtection = Boolean
+  type Digest = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type IonText = String
+  type JournalKinesisStreamDescriptionList = js.Array[JournalKinesisStreamDescription]
   type JournalS3ExportList = js.Array[JournalS3ExportDescription]
-  type LedgerList          = js.Array[LedgerSummary]
-  type LedgerName          = String
-  type MaxResults          = Int
-  type NextToken           = String
-  type S3Bucket            = String
-  type S3Prefix            = String
-  type TagKey              = String
-  type TagKeyList          = js.Array[TagKey]
-  type TagValue            = String
-  type Tags                = js.Dictionary[TagValue]
-  type Timestamp           = js.Date
-  type UniqueId            = String
+  type LedgerList = js.Array[LedgerSummary]
+  type LedgerName = String
+  type MaxResults = Int
+  type NextToken = String
+  type S3Bucket = String
+  type S3Prefix = String
+  type StreamName = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagValue = String
+  type Tags = js.Dictionary[TagValue]
+  type Timestamp = js.Date
+  type UniqueId = String
 
   implicit final class QLDBOps(private val service: QLDB) extends AnyVal {
 
+    @inline def cancelJournalKinesisStreamFuture(
+        params: CancelJournalKinesisStreamRequest
+    ): Future[CancelJournalKinesisStreamResponse] = service.cancelJournalKinesisStream(params).promise().toFuture
     @inline def createLedgerFuture(params: CreateLedgerRequest): Future[CreateLedgerResponse] =
       service.createLedger(params).promise().toFuture
     @inline def deleteLedgerFuture(params: DeleteLedgerRequest): Future[js.Object] =
       service.deleteLedger(params).promise().toFuture
+    @inline def describeJournalKinesisStreamFuture(
+        params: DescribeJournalKinesisStreamRequest
+    ): Future[DescribeJournalKinesisStreamResponse] = service.describeJournalKinesisStream(params).promise().toFuture
     @inline def describeJournalS3ExportFuture(
         params: DescribeJournalS3ExportRequest
     ): Future[DescribeJournalS3ExportResponse] = service.describeJournalS3Export(params).promise().toFuture
@@ -44,6 +52,10 @@ package object qldb {
       service.getDigest(params).promise().toFuture
     @inline def getRevisionFuture(params: GetRevisionRequest): Future[GetRevisionResponse] =
       service.getRevision(params).promise().toFuture
+    @inline def listJournalKinesisStreamsForLedgerFuture(
+        params: ListJournalKinesisStreamsForLedgerRequest
+    ): Future[ListJournalKinesisStreamsForLedgerResponse] =
+      service.listJournalKinesisStreamsForLedger(params).promise().toFuture
     @inline def listJournalS3ExportsForLedgerFuture(
         params: ListJournalS3ExportsForLedgerRequest
     ): Future[ListJournalS3ExportsForLedgerResponse] = service.listJournalS3ExportsForLedger(params).promise().toFuture
@@ -53,6 +65,9 @@ package object qldb {
       service.listLedgers(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise().toFuture
+    @inline def streamJournalToKinesisFuture(
+        params: StreamJournalToKinesisRequest
+    ): Future[StreamJournalToKinesisResponse] = service.streamJournalToKinesis(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
@@ -68,24 +83,72 @@ package qldb {
   class QLDB() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def cancelJournalKinesisStream(
+        params: CancelJournalKinesisStreamRequest
+    ): Request[CancelJournalKinesisStreamResponse] = js.native
     def createLedger(params: CreateLedgerRequest): Request[CreateLedgerResponse] = js.native
-    def deleteLedger(params: DeleteLedgerRequest): Request[js.Object]            = js.native
+    def deleteLedger(params: DeleteLedgerRequest): Request[js.Object] = js.native
+    def describeJournalKinesisStream(
+        params: DescribeJournalKinesisStreamRequest
+    ): Request[DescribeJournalKinesisStreamResponse] = js.native
     def describeJournalS3Export(params: DescribeJournalS3ExportRequest): Request[DescribeJournalS3ExportResponse] =
       js.native
-    def describeLedger(params: DescribeLedgerRequest): Request[DescribeLedgerResponse]                   = js.native
-    def exportJournalToS3(params: ExportJournalToS3Request): Request[ExportJournalToS3Response]          = js.native
-    def getBlock(params: GetBlockRequest): Request[GetBlockResponse]                                     = js.native
-    def getDigest(params: GetDigestRequest): Request[GetDigestResponse]                                  = js.native
-    def getRevision(params: GetRevisionRequest): Request[GetRevisionResponse]                            = js.native
+    def describeLedger(params: DescribeLedgerRequest): Request[DescribeLedgerResponse] = js.native
+    def exportJournalToS3(params: ExportJournalToS3Request): Request[ExportJournalToS3Response] = js.native
+    def getBlock(params: GetBlockRequest): Request[GetBlockResponse] = js.native
+    def getDigest(params: GetDigestRequest): Request[GetDigestResponse] = js.native
+    def getRevision(params: GetRevisionRequest): Request[GetRevisionResponse] = js.native
+    def listJournalKinesisStreamsForLedger(
+        params: ListJournalKinesisStreamsForLedgerRequest
+    ): Request[ListJournalKinesisStreamsForLedgerResponse] = js.native
     def listJournalS3Exports(params: ListJournalS3ExportsRequest): Request[ListJournalS3ExportsResponse] = js.native
     def listJournalS3ExportsForLedger(
         params: ListJournalS3ExportsForLedgerRequest
-    ): Request[ListJournalS3ExportsForLedgerResponse]                                                 = js.native
-    def listLedgers(params: ListLedgersRequest): Request[ListLedgersResponse]                         = js.native
+    ): Request[ListJournalS3ExportsForLedgerResponse] = js.native
+    def listLedgers(params: ListLedgersRequest): Request[ListLedgersResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
-    def updateLedger(params: UpdateLedgerRequest): Request[UpdateLedgerResponse]                      = js.native
+    def streamJournalToKinesis(params: StreamJournalToKinesisRequest): Request[StreamJournalToKinesisResponse] =
+      js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateLedger(params: UpdateLedgerRequest): Request[UpdateLedgerResponse] = js.native
+  }
+
+  @js.native
+  trait CancelJournalKinesisStreamRequest extends js.Object {
+    var LedgerName: LedgerName
+    var StreamId: UniqueId
+  }
+
+  object CancelJournalKinesisStreamRequest {
+    @inline
+    def apply(
+        LedgerName: LedgerName,
+        StreamId: UniqueId
+    ): CancelJournalKinesisStreamRequest = {
+      val __obj = js.Dynamic.literal(
+        "LedgerName" -> LedgerName.asInstanceOf[js.Any],
+        "StreamId" -> StreamId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CancelJournalKinesisStreamRequest]
+    }
+  }
+
+  @js.native
+  trait CancelJournalKinesisStreamResponse extends js.Object {
+    var StreamId: js.UndefOr[UniqueId]
+  }
+
+  object CancelJournalKinesisStreamResponse {
+    @inline
+    def apply(
+        StreamId: js.UndefOr[UniqueId] = js.undefined
+    ): CancelJournalKinesisStreamResponse = {
+      val __obj = js.Dynamic.literal()
+      StreamId.foreach(__v => __obj.updateDynamic("StreamId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CancelJournalKinesisStreamResponse]
+    }
   }
 
   @js.native
@@ -105,7 +168,7 @@ package qldb {
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateLedgerRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"            -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "PermissionsMode" -> PermissionsMode.asInstanceOf[js.Any]
       )
 
@@ -162,6 +225,43 @@ package qldb {
   }
 
   @js.native
+  trait DescribeJournalKinesisStreamRequest extends js.Object {
+    var LedgerName: LedgerName
+    var StreamId: UniqueId
+  }
+
+  object DescribeJournalKinesisStreamRequest {
+    @inline
+    def apply(
+        LedgerName: LedgerName,
+        StreamId: UniqueId
+    ): DescribeJournalKinesisStreamRequest = {
+      val __obj = js.Dynamic.literal(
+        "LedgerName" -> LedgerName.asInstanceOf[js.Any],
+        "StreamId" -> StreamId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeJournalKinesisStreamRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeJournalKinesisStreamResponse extends js.Object {
+    var Stream: js.UndefOr[JournalKinesisStreamDescription]
+  }
+
+  object DescribeJournalKinesisStreamResponse {
+    @inline
+    def apply(
+        Stream: js.UndefOr[JournalKinesisStreamDescription] = js.undefined
+    ): DescribeJournalKinesisStreamResponse = {
+      val __obj = js.Dynamic.literal()
+      Stream.foreach(__v => __obj.updateDynamic("Stream")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeJournalKinesisStreamResponse]
+    }
+  }
+
+  @js.native
   trait DescribeJournalS3ExportRequest extends js.Object {
     var ExportId: UniqueId
     var Name: LedgerName
@@ -175,7 +275,7 @@ package qldb {
     ): DescribeJournalS3ExportRequest = {
       val __obj = js.Dynamic.literal(
         "ExportId" -> ExportId.asInstanceOf[js.Any],
-        "Name"     -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeJournalS3ExportRequest]
@@ -247,6 +347,15 @@ package qldb {
   }
 
   @js.native
+  sealed trait ErrorCause extends js.Any
+  object ErrorCause extends js.Object {
+    val KINESIS_STREAM_NOT_FOUND = "KINESIS_STREAM_NOT_FOUND".asInstanceOf[ErrorCause]
+    val IAM_PERMISSION_REVOKED = "IAM_PERMISSION_REVOKED".asInstanceOf[ErrorCause]
+
+    val values = js.Object.freeze(js.Array(KINESIS_STREAM_NOT_FOUND, IAM_PERMISSION_REVOKED))
+  }
+
+  @js.native
   trait ExportJournalToS3Request extends js.Object {
     var ExclusiveEndTime: Timestamp
     var InclusiveStartTime: Timestamp
@@ -265,10 +374,10 @@ package qldb {
         S3ExportConfiguration: S3ExportConfiguration
     ): ExportJournalToS3Request = {
       val __obj = js.Dynamic.literal(
-        "ExclusiveEndTime"      -> ExclusiveEndTime.asInstanceOf[js.Any],
-        "InclusiveStartTime"    -> InclusiveStartTime.asInstanceOf[js.Any],
-        "Name"                  -> Name.asInstanceOf[js.Any],
-        "RoleArn"               -> RoleArn.asInstanceOf[js.Any],
+        "ExclusiveEndTime" -> ExclusiveEndTime.asInstanceOf[js.Any],
+        "InclusiveStartTime" -> InclusiveStartTime.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
         "S3ExportConfiguration" -> S3ExportConfiguration.asInstanceOf[js.Any]
       )
 
@@ -298,8 +407,8 @@ package qldb {
   sealed trait ExportStatus extends js.Any
   object ExportStatus extends js.Object {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ExportStatus]
-    val COMPLETED   = "COMPLETED".asInstanceOf[ExportStatus]
-    val CANCELLED   = "CANCELLED".asInstanceOf[ExportStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[ExportStatus]
+    val CANCELLED = "CANCELLED".asInstanceOf[ExportStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED, CANCELLED))
   }
@@ -320,7 +429,7 @@ package qldb {
     ): GetBlockRequest = {
       val __obj = js.Dynamic.literal(
         "BlockAddress" -> BlockAddress.asInstanceOf[js.Any],
-        "Name"         -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       DigestTipAddress.foreach(__v => __obj.updateDynamic("DigestTipAddress")(__v.asInstanceOf[js.Any]))
@@ -380,7 +489,7 @@ package qldb {
         DigestTipAddress: ValueHolder
     ): GetDigestResponse = {
       val __obj = js.Dynamic.literal(
-        "Digest"           -> Digest.asInstanceOf[js.Any],
+        "Digest" -> Digest.asInstanceOf[js.Any],
         "DigestTipAddress" -> DigestTipAddress.asInstanceOf[js.Any]
       )
 
@@ -406,8 +515,8 @@ package qldb {
     ): GetRevisionRequest = {
       val __obj = js.Dynamic.literal(
         "BlockAddress" -> BlockAddress.asInstanceOf[js.Any],
-        "DocumentId"   -> DocumentId.asInstanceOf[js.Any],
-        "Name"         -> Name.asInstanceOf[js.Any]
+        "DocumentId" -> DocumentId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       DigestTipAddress.foreach(__v => __obj.updateDynamic("DigestTipAddress")(__v.asInstanceOf[js.Any]))
@@ -433,6 +542,57 @@ package qldb {
 
       Proof.foreach(__v => __obj.updateDynamic("Proof")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRevisionResponse]
+    }
+  }
+
+  /**
+    * The information about an Amazon QLDB journal stream, including the Amazon Resource Name (ARN), stream name, creation time, current status, and the parameters of your original stream creation request.
+    */
+  @js.native
+  trait JournalKinesisStreamDescription extends js.Object {
+    var KinesisConfiguration: KinesisConfiguration
+    var LedgerName: LedgerName
+    var RoleArn: Arn
+    var Status: StreamStatus
+    var StreamId: UniqueId
+    var StreamName: StreamName
+    var Arn: js.UndefOr[Arn]
+    var CreationTime: js.UndefOr[Timestamp]
+    var ErrorCause: js.UndefOr[ErrorCause]
+    var ExclusiveEndTime: js.UndefOr[Timestamp]
+    var InclusiveStartTime: js.UndefOr[Timestamp]
+  }
+
+  object JournalKinesisStreamDescription {
+    @inline
+    def apply(
+        KinesisConfiguration: KinesisConfiguration,
+        LedgerName: LedgerName,
+        RoleArn: Arn,
+        Status: StreamStatus,
+        StreamId: UniqueId,
+        StreamName: StreamName,
+        Arn: js.UndefOr[Arn] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        ErrorCause: js.UndefOr[ErrorCause] = js.undefined,
+        ExclusiveEndTime: js.UndefOr[Timestamp] = js.undefined,
+        InclusiveStartTime: js.UndefOr[Timestamp] = js.undefined
+    ): JournalKinesisStreamDescription = {
+      val __obj = js.Dynamic.literal(
+        "KinesisConfiguration" -> KinesisConfiguration.asInstanceOf[js.Any],
+        "LedgerName" -> LedgerName.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any],
+        "StreamId" -> StreamId.asInstanceOf[js.Any],
+        "StreamName" -> StreamName.asInstanceOf[js.Any]
+      )
+
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      ErrorCause.foreach(__v => __obj.updateDynamic("ErrorCause")(__v.asInstanceOf[js.Any]))
+      ExclusiveEndTime.foreach(__v => __obj.updateDynamic("ExclusiveEndTime")(__v.asInstanceOf[js.Any]))
+      InclusiveStartTime.foreach(__v => __obj.updateDynamic("InclusiveStartTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JournalKinesisStreamDescription]
     }
   }
 
@@ -464,17 +624,41 @@ package qldb {
         Status: ExportStatus
     ): JournalS3ExportDescription = {
       val __obj = js.Dynamic.literal(
-        "ExclusiveEndTime"      -> ExclusiveEndTime.asInstanceOf[js.Any],
-        "ExportCreationTime"    -> ExportCreationTime.asInstanceOf[js.Any],
-        "ExportId"              -> ExportId.asInstanceOf[js.Any],
-        "InclusiveStartTime"    -> InclusiveStartTime.asInstanceOf[js.Any],
-        "LedgerName"            -> LedgerName.asInstanceOf[js.Any],
-        "RoleArn"               -> RoleArn.asInstanceOf[js.Any],
+        "ExclusiveEndTime" -> ExclusiveEndTime.asInstanceOf[js.Any],
+        "ExportCreationTime" -> ExportCreationTime.asInstanceOf[js.Any],
+        "ExportId" -> ExportId.asInstanceOf[js.Any],
+        "InclusiveStartTime" -> InclusiveStartTime.asInstanceOf[js.Any],
+        "LedgerName" -> LedgerName.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
         "S3ExportConfiguration" -> S3ExportConfiguration.asInstanceOf[js.Any],
-        "Status"                -> Status.asInstanceOf[js.Any]
+        "Status" -> Status.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[JournalS3ExportDescription]
+    }
+  }
+
+  /**
+    * The configuration settings of the Amazon Kinesis Data Streams destination for your Amazon QLDB journal stream.
+    */
+  @js.native
+  trait KinesisConfiguration extends js.Object {
+    var StreamArn: Arn
+    var AggregationEnabled: js.UndefOr[Boolean]
+  }
+
+  object KinesisConfiguration {
+    @inline
+    def apply(
+        StreamArn: Arn,
+        AggregationEnabled: js.UndefOr[Boolean] = js.undefined
+    ): KinesisConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "StreamArn" -> StreamArn.asInstanceOf[js.Any]
+      )
+
+      AggregationEnabled.foreach(__v => __obj.updateDynamic("AggregationEnabled")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KinesisConfiguration]
     }
   }
 
@@ -482,9 +666,9 @@ package qldb {
   sealed trait LedgerState extends js.Any
   object LedgerState extends js.Object {
     val CREATING = "CREATING".asInstanceOf[LedgerState]
-    val ACTIVE   = "ACTIVE".asInstanceOf[LedgerState]
+    val ACTIVE = "ACTIVE".asInstanceOf[LedgerState]
     val DELETING = "DELETING".asInstanceOf[LedgerState]
-    val DELETED  = "DELETED".asInstanceOf[LedgerState]
+    val DELETED = "DELETED".asInstanceOf[LedgerState]
 
     val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, DELETED))
   }
@@ -511,6 +695,49 @@ package qldb {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LedgerSummary]
+    }
+  }
+
+  @js.native
+  trait ListJournalKinesisStreamsForLedgerRequest extends js.Object {
+    var LedgerName: LedgerName
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListJournalKinesisStreamsForLedgerRequest {
+    @inline
+    def apply(
+        LedgerName: LedgerName,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListJournalKinesisStreamsForLedgerRequest = {
+      val __obj = js.Dynamic.literal(
+        "LedgerName" -> LedgerName.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListJournalKinesisStreamsForLedgerRequest]
+    }
+  }
+
+  @js.native
+  trait ListJournalKinesisStreamsForLedgerResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var Streams: js.UndefOr[JournalKinesisStreamDescriptionList]
+  }
+
+  object ListJournalKinesisStreamsForLedgerResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Streams: js.UndefOr[JournalKinesisStreamDescriptionList] = js.undefined
+    ): ListJournalKinesisStreamsForLedgerResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Streams.foreach(__v => __obj.updateDynamic("Streams")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListJournalKinesisStreamsForLedgerResponse]
     }
   }
 
@@ -717,9 +944,9 @@ package qldb {
         Prefix: S3Prefix
     ): S3ExportConfiguration = {
       val __obj = js.Dynamic.literal(
-        "Bucket"                  -> Bucket.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
         "EncryptionConfiguration" -> EncryptionConfiguration.asInstanceOf[js.Any],
-        "Prefix"                  -> Prefix.asInstanceOf[js.Any]
+        "Prefix" -> Prefix.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[S3ExportConfiguration]
@@ -729,11 +956,75 @@ package qldb {
   @js.native
   sealed trait S3ObjectEncryptionType extends js.Any
   object S3ObjectEncryptionType extends js.Object {
-    val SSE_KMS       = "SSE_KMS".asInstanceOf[S3ObjectEncryptionType]
-    val SSE_S3        = "SSE_S3".asInstanceOf[S3ObjectEncryptionType]
+    val SSE_KMS = "SSE_KMS".asInstanceOf[S3ObjectEncryptionType]
+    val SSE_S3 = "SSE_S3".asInstanceOf[S3ObjectEncryptionType]
     val NO_ENCRYPTION = "NO_ENCRYPTION".asInstanceOf[S3ObjectEncryptionType]
 
     val values = js.Object.freeze(js.Array(SSE_KMS, SSE_S3, NO_ENCRYPTION))
+  }
+
+  @js.native
+  trait StreamJournalToKinesisRequest extends js.Object {
+    var InclusiveStartTime: Timestamp
+    var KinesisConfiguration: KinesisConfiguration
+    var LedgerName: LedgerName
+    var RoleArn: Arn
+    var StreamName: StreamName
+    var ExclusiveEndTime: js.UndefOr[Timestamp]
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object StreamJournalToKinesisRequest {
+    @inline
+    def apply(
+        InclusiveStartTime: Timestamp,
+        KinesisConfiguration: KinesisConfiguration,
+        LedgerName: LedgerName,
+        RoleArn: Arn,
+        StreamName: StreamName,
+        ExclusiveEndTime: js.UndefOr[Timestamp] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): StreamJournalToKinesisRequest = {
+      val __obj = js.Dynamic.literal(
+        "InclusiveStartTime" -> InclusiveStartTime.asInstanceOf[js.Any],
+        "KinesisConfiguration" -> KinesisConfiguration.asInstanceOf[js.Any],
+        "LedgerName" -> LedgerName.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
+        "StreamName" -> StreamName.asInstanceOf[js.Any]
+      )
+
+      ExclusiveEndTime.foreach(__v => __obj.updateDynamic("ExclusiveEndTime")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StreamJournalToKinesisRequest]
+    }
+  }
+
+  @js.native
+  trait StreamJournalToKinesisResponse extends js.Object {
+    var StreamId: js.UndefOr[UniqueId]
+  }
+
+  object StreamJournalToKinesisResponse {
+    @inline
+    def apply(
+        StreamId: js.UndefOr[UniqueId] = js.undefined
+    ): StreamJournalToKinesisResponse = {
+      val __obj = js.Dynamic.literal()
+      StreamId.foreach(__v => __obj.updateDynamic("StreamId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StreamJournalToKinesisResponse]
+    }
+  }
+
+  @js.native
+  sealed trait StreamStatus extends js.Any
+  object StreamStatus extends js.Object {
+    val ACTIVE = "ACTIVE".asInstanceOf[StreamStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[StreamStatus]
+    val CANCELED = "CANCELED".asInstanceOf[StreamStatus]
+    val FAILED = "FAILED".asInstanceOf[StreamStatus]
+    val IMPAIRED = "IMPAIRED".asInstanceOf[StreamStatus]
+
+    val values = js.Object.freeze(js.Array(ACTIVE, COMPLETED, CANCELED, FAILED, IMPAIRED))
   }
 
   @js.native
@@ -750,7 +1041,7 @@ package qldb {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -784,7 +1075,7 @@ package qldb {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -854,7 +1145,7 @@ package qldb {
   }
 
   /**
-    * A structure that can contain an Amazon Ion value in multiple encoding formats.
+    * A structure that can contain a value in multiple encoding formats.
     */
   @js.native
   trait ValueHolder extends js.Object {

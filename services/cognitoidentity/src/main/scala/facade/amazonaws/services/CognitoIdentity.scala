@@ -7,51 +7,51 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object cognitoidentity {
-  type ARNString                         = String
-  type AccessKeyString                   = String
-  type AccountId                         = String
-  type ClaimName                         = String
-  type ClaimValue                        = String
-  type ClassicFlow                       = Boolean
-  type CognitoIdentityProviderClientId   = String
-  type CognitoIdentityProviderList       = js.Array[CognitoIdentityProvider]
-  type CognitoIdentityProviderName       = String
+  type ARNString = String
+  type AccessKeyString = String
+  type AccountId = String
+  type ClaimName = String
+  type ClaimValue = String
+  type ClassicFlow = Boolean
+  type CognitoIdentityProviderClientId = String
+  type CognitoIdentityProviderList = js.Array[CognitoIdentityProvider]
+  type CognitoIdentityProviderName = String
   type CognitoIdentityProviderTokenCheck = Boolean
-  type DateType                          = js.Date
-  type DeveloperProviderName             = String
-  type DeveloperUserIdentifier           = String
-  type DeveloperUserIdentifierList       = js.Array[DeveloperUserIdentifier]
-  type HideDisabled                      = Boolean
-  type IdentitiesList                    = js.Array[IdentityDescription]
-  type IdentityId                        = String
-  type IdentityIdList                    = js.Array[IdentityId]
-  type IdentityPoolId                    = String
-  type IdentityPoolName                  = String
-  type IdentityPoolTagsListType          = js.Array[TagKeysType]
-  type IdentityPoolTagsType              = js.Dictionary[TagValueType]
-  type IdentityPoolUnauthenticated       = Boolean
-  type IdentityPoolsList                 = js.Array[IdentityPoolShortDescription]
-  type IdentityProviderId                = String
-  type IdentityProviderName              = String
-  type IdentityProviderToken             = String
-  type IdentityProviders                 = js.Dictionary[IdentityProviderId]
-  type LoginsList                        = js.Array[IdentityProviderName]
-  type LoginsMap                         = js.Dictionary[IdentityProviderToken]
-  type MappingRulesList                  = js.Array[MappingRule]
-  type OIDCProviderList                  = js.Array[ARNString]
-  type OIDCToken                         = String
-  type PaginationKey                     = String
-  type QueryLimit                        = Int
-  type RoleMappingMap                    = js.Dictionary[RoleMapping]
-  type RoleType                          = String
-  type RolesMap                          = js.Dictionary[ARNString]
-  type SAMLProviderList                  = js.Array[ARNString]
-  type SecretKeyString                   = String
-  type SessionTokenString                = String
-  type TagKeysType                       = String
-  type TagValueType                      = String
-  type TokenDuration                     = Double
-  type UnprocessedIdentityIdList         = js.Array[UnprocessedIdentityId]
+  type DateType = js.Date
+  type DeveloperProviderName = String
+  type DeveloperUserIdentifier = String
+  type DeveloperUserIdentifierList = js.Array[DeveloperUserIdentifier]
+  type HideDisabled = Boolean
+  type IdentitiesList = js.Array[IdentityDescription]
+  type IdentityId = String
+  type IdentityIdList = js.Array[IdentityId]
+  type IdentityPoolId = String
+  type IdentityPoolName = String
+  type IdentityPoolTagsListType = js.Array[TagKeysType]
+  type IdentityPoolTagsType = js.Dictionary[TagValueType]
+  type IdentityPoolUnauthenticated = Boolean
+  type IdentityPoolsList = js.Array[IdentityPoolShortDescription]
+  type IdentityProviderId = String
+  type IdentityProviderName = String
+  type IdentityProviderToken = String
+  type IdentityProviders = js.Dictionary[IdentityProviderId]
+  type LoginsList = js.Array[IdentityProviderName]
+  type LoginsMap = js.Dictionary[IdentityProviderToken]
+  type MappingRulesList = js.Array[MappingRule]
+  type OIDCProviderList = js.Array[ARNString]
+  type OIDCToken = String
+  type PaginationKey = String
+  type QueryLimit = Int
+  type RoleMappingMap = js.Dictionary[RoleMapping]
+  type RoleType = String
+  type RolesMap = js.Dictionary[ARNString]
+  type SAMLProviderList = js.Array[ARNString]
+  type SecretKeyString = String
+  type SessionTokenString = String
+  type TagKeysType = String
+  type TagValueType = String
+  type TokenDuration = Double
+  type UnprocessedIdentityIdList = js.Array[UnprocessedIdentityId]
 
   implicit final class CognitoIdentityOps(private val service: CognitoIdentity) extends AnyVal {
 
@@ -67,7 +67,7 @@ package object cognitoidentity {
       service.describeIdentityPool(params).promise().toFuture
     @inline def getCredentialsForIdentityFuture(
         params: GetCredentialsForIdentityInput
-    ): Future[GetCredentialsForIdentityResponse]                       = service.getCredentialsForIdentity(params).promise().toFuture
+    ): Future[GetCredentialsForIdentityResponse] = service.getCredentialsForIdentity(params).promise().toFuture
     @inline def getIdFuture(params: GetIdInput): Future[GetIdResponse] = service.getId(params).promise().toFuture
     @inline def getIdentityPoolRolesFuture(params: GetIdentityPoolRolesInput): Future[GetIdentityPoolRolesResponse] =
       service.getIdentityPoolRoles(params).promise().toFuture
@@ -110,39 +110,39 @@ package cognitoidentity {
   class CognitoIdentity() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createIdentityPool(params: CreateIdentityPoolInput): Request[IdentityPool]         = js.native
+    def createIdentityPool(params: CreateIdentityPoolInput): Request[IdentityPool] = js.native
     def deleteIdentities(params: DeleteIdentitiesInput): Request[DeleteIdentitiesResponse] = js.native
-    def deleteIdentityPool(params: DeleteIdentityPoolInput): Request[js.Object]            = js.native
-    def describeIdentity(params: DescribeIdentityInput): Request[IdentityDescription]      = js.native
-    def describeIdentityPool(params: DescribeIdentityPoolInput): Request[IdentityPool]     = js.native
+    def deleteIdentityPool(params: DeleteIdentityPoolInput): Request[js.Object] = js.native
+    def describeIdentity(params: DescribeIdentityInput): Request[IdentityDescription] = js.native
+    def describeIdentityPool(params: DescribeIdentityPoolInput): Request[IdentityPool] = js.native
     def getCredentialsForIdentity(params: GetCredentialsForIdentityInput): Request[GetCredentialsForIdentityResponse] =
       js.native
-    def getId(params: GetIdInput): Request[GetIdResponse]                                              = js.native
+    def getId(params: GetIdInput): Request[GetIdResponse] = js.native
     def getIdentityPoolRoles(params: GetIdentityPoolRolesInput): Request[GetIdentityPoolRolesResponse] = js.native
-    def getOpenIdToken(params: GetOpenIdTokenInput): Request[GetOpenIdTokenResponse]                   = js.native
+    def getOpenIdToken(params: GetOpenIdTokenInput): Request[GetOpenIdTokenResponse] = js.native
     def getOpenIdTokenForDeveloperIdentity(
         params: GetOpenIdTokenForDeveloperIdentityInput
-    ): Request[GetOpenIdTokenForDeveloperIdentityResponse]                                          = js.native
-    def listIdentities(params: ListIdentitiesInput): Request[ListIdentitiesResponse]                = js.native
-    def listIdentityPools(params: ListIdentityPoolsInput): Request[ListIdentityPoolsResponse]       = js.native
+    ): Request[GetOpenIdTokenForDeveloperIdentityResponse] = js.native
+    def listIdentities(params: ListIdentitiesInput): Request[ListIdentitiesResponse] = js.native
+    def listIdentityPools(params: ListIdentityPoolsInput): Request[ListIdentityPoolsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceResponse] = js.native
     def lookupDeveloperIdentity(params: LookupDeveloperIdentityInput): Request[LookupDeveloperIdentityResponse] =
       js.native
     def mergeDeveloperIdentities(params: MergeDeveloperIdentitiesInput): Request[MergeDeveloperIdentitiesResponse] =
       js.native
-    def setIdentityPoolRoles(params: SetIdentityPoolRolesInput): Request[js.Object]       = js.native
-    def tagResource(params: TagResourceInput): Request[TagResourceResponse]               = js.native
+    def setIdentityPoolRoles(params: SetIdentityPoolRolesInput): Request[js.Object] = js.native
+    def tagResource(params: TagResourceInput): Request[TagResourceResponse] = js.native
     def unlinkDeveloperIdentity(params: UnlinkDeveloperIdentityInput): Request[js.Object] = js.native
-    def unlinkIdentity(params: UnlinkIdentityInput): Request[js.Object]                   = js.native
-    def untagResource(params: UntagResourceInput): Request[UntagResourceResponse]         = js.native
-    def updateIdentityPool(params: IdentityPool): Request[IdentityPool]                   = js.native
+    def unlinkIdentity(params: UnlinkIdentityInput): Request[js.Object] = js.native
+    def untagResource(params: UntagResourceInput): Request[UntagResourceResponse] = js.native
+    def updateIdentityPool(params: IdentityPool): Request[IdentityPool] = js.native
   }
 
   @js.native
   sealed trait AmbiguousRoleResolutionType extends js.Any
   object AmbiguousRoleResolutionType extends js.Object {
     val AuthenticatedRole = "AuthenticatedRole".asInstanceOf[AmbiguousRoleResolutionType]
-    val Deny              = "Deny".asInstanceOf[AmbiguousRoleResolutionType]
+    val Deny = "Deny".asInstanceOf[AmbiguousRoleResolutionType]
 
     val values = js.Object.freeze(js.Array(AuthenticatedRole, Deny))
   }
@@ -203,7 +203,7 @@ package cognitoidentity {
     ): CreateIdentityPoolInput = {
       val __obj = js.Dynamic.literal(
         "AllowUnauthenticatedIdentities" -> AllowUnauthenticatedIdentities.asInstanceOf[js.Any],
-        "IdentityPoolName"               -> IdentityPoolName.asInstanceOf[js.Any]
+        "IdentityPoolName" -> IdentityPoolName.asInstanceOf[js.Any]
       )
 
       AllowClassicFlow.foreach(__v => __obj.updateDynamic("AllowClassicFlow")(__v.asInstanceOf[js.Any]))
@@ -353,7 +353,7 @@ package cognitoidentity {
   @js.native
   sealed trait ErrorCode extends js.Any
   object ErrorCode extends js.Object {
-    val AccessDenied        = "AccessDenied".asInstanceOf[ErrorCode]
+    val AccessDenied = "AccessDenied".asInstanceOf[ErrorCode]
     val InternalServerError = "InternalServerError".asInstanceOf[ErrorCode]
 
     val values = js.Object.freeze(js.Array(AccessDenied, InternalServerError))
@@ -521,7 +521,7 @@ package cognitoidentity {
     ): GetOpenIdTokenForDeveloperIdentityInput = {
       val __obj = js.Dynamic.literal(
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any],
-        "Logins"         -> Logins.asInstanceOf[js.Any]
+        "Logins" -> Logins.asInstanceOf[js.Any]
       )
 
       IdentityId.foreach(__v => __obj.updateDynamic("IdentityId")(__v.asInstanceOf[js.Any]))
@@ -659,8 +659,8 @@ package cognitoidentity {
     ): IdentityPool = {
       val __obj = js.Dynamic.literal(
         "AllowUnauthenticatedIdentities" -> AllowUnauthenticatedIdentities.asInstanceOf[js.Any],
-        "IdentityPoolId"                 -> IdentityPoolId.asInstanceOf[js.Any],
-        "IdentityPoolName"               -> IdentityPoolName.asInstanceOf[js.Any]
+        "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any],
+        "IdentityPoolName" -> IdentityPoolName.asInstanceOf[js.Any]
       )
 
       AllowClassicFlow.foreach(__v => __obj.updateDynamic("AllowClassicFlow")(__v.asInstanceOf[js.Any]))
@@ -719,7 +719,7 @@ package cognitoidentity {
     ): ListIdentitiesInput = {
       val __obj = js.Dynamic.literal(
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any],
-        "MaxResults"     -> MaxResults.asInstanceOf[js.Any]
+        "MaxResults" -> MaxResults.asInstanceOf[js.Any]
       )
 
       HideDisabled.foreach(__v => __obj.updateDynamic("HideDisabled")(__v.asInstanceOf[js.Any]))
@@ -913,10 +913,10 @@ package cognitoidentity {
         Value: ClaimValue
     ): MappingRule = {
       val __obj = js.Dynamic.literal(
-        "Claim"     -> Claim.asInstanceOf[js.Any],
+        "Claim" -> Claim.asInstanceOf[js.Any],
         "MatchType" -> MatchType.asInstanceOf[js.Any],
-        "RoleARN"   -> RoleARN.asInstanceOf[js.Any],
-        "Value"     -> Value.asInstanceOf[js.Any]
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[MappingRule]
@@ -926,10 +926,10 @@ package cognitoidentity {
   @js.native
   sealed trait MappingRuleMatchType extends js.Any
   object MappingRuleMatchType extends js.Object {
-    val Equals     = "Equals".asInstanceOf[MappingRuleMatchType]
-    val Contains   = "Contains".asInstanceOf[MappingRuleMatchType]
+    val Equals = "Equals".asInstanceOf[MappingRuleMatchType]
+    val Contains = "Contains".asInstanceOf[MappingRuleMatchType]
     val StartsWith = "StartsWith".asInstanceOf[MappingRuleMatchType]
-    val NotEqual   = "NotEqual".asInstanceOf[MappingRuleMatchType]
+    val NotEqual = "NotEqual".asInstanceOf[MappingRuleMatchType]
 
     val values = js.Object.freeze(js.Array(Equals, Contains, StartsWith, NotEqual))
   }
@@ -955,9 +955,9 @@ package cognitoidentity {
     ): MergeDeveloperIdentitiesInput = {
       val __obj = js.Dynamic.literal(
         "DestinationUserIdentifier" -> DestinationUserIdentifier.asInstanceOf[js.Any],
-        "DeveloperProviderName"     -> DeveloperProviderName.asInstanceOf[js.Any],
-        "IdentityPoolId"            -> IdentityPoolId.asInstanceOf[js.Any],
-        "SourceUserIdentifier"      -> SourceUserIdentifier.asInstanceOf[js.Any]
+        "DeveloperProviderName" -> DeveloperProviderName.asInstanceOf[js.Any],
+        "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any],
+        "SourceUserIdentifier" -> SourceUserIdentifier.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[MergeDeveloperIdentitiesInput]
@@ -1059,7 +1059,7 @@ package cognitoidentity {
     ): SetIdentityPoolRolesInput = {
       val __obj = js.Dynamic.literal(
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any],
-        "Roles"          -> Roles.asInstanceOf[js.Any]
+        "Roles" -> Roles.asInstanceOf[js.Any]
       )
 
       RoleMappings.foreach(__v => __obj.updateDynamic("RoleMappings")(__v.asInstanceOf[js.Any]))
@@ -1081,7 +1081,7 @@ package cognitoidentity {
     ): TagResourceInput = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceInput]
@@ -1121,10 +1121,10 @@ package cognitoidentity {
         IdentityPoolId: IdentityPoolId
     ): UnlinkDeveloperIdentityInput = {
       val __obj = js.Dynamic.literal(
-        "DeveloperProviderName"   -> DeveloperProviderName.asInstanceOf[js.Any],
+        "DeveloperProviderName" -> DeveloperProviderName.asInstanceOf[js.Any],
         "DeveloperUserIdentifier" -> DeveloperUserIdentifier.asInstanceOf[js.Any],
-        "IdentityId"              -> IdentityId.asInstanceOf[js.Any],
-        "IdentityPoolId"          -> IdentityPoolId.asInstanceOf[js.Any]
+        "IdentityId" -> IdentityId.asInstanceOf[js.Any],
+        "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UnlinkDeveloperIdentityInput]
@@ -1149,8 +1149,8 @@ package cognitoidentity {
         LoginsToRemove: LoginsList
     ): UnlinkIdentityInput = {
       val __obj = js.Dynamic.literal(
-        "IdentityId"     -> IdentityId.asInstanceOf[js.Any],
-        "Logins"         -> Logins.asInstanceOf[js.Any],
+        "IdentityId" -> IdentityId.asInstanceOf[js.Any],
+        "Logins" -> Logins.asInstanceOf[js.Any],
         "LoginsToRemove" -> LoginsToRemove.asInstanceOf[js.Any]
       )
 
@@ -1194,7 +1194,7 @@ package cognitoidentity {
     ): UntagResourceInput = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceInput]

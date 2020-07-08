@@ -7,200 +7,200 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object s3 {
-  type AbortDate                       = js.Date
-  type AbortRuleId                     = String
-  type AcceptRanges                    = String
-  type AccountId                       = String
-  type AllowQuotedRecordDelimiter      = Boolean
-  type AllowedHeader                   = String
-  type AllowedHeaders                  = js.Array[AllowedHeader]
-  type AllowedMethod                   = String
-  type AllowedMethods                  = js.Array[AllowedMethod]
-  type AllowedOrigin                   = String
-  type AllowedOrigins                  = js.Array[AllowedOrigin]
-  type AnalyticsConfigurationList      = js.Array[AnalyticsConfiguration]
-  type AnalyticsId                     = String
-  type Body                            = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type BucketName                      = String
-  type Buckets                         = js.Array[Bucket]
-  type BypassGovernanceRetention       = Boolean
-  type BytesProcessed                  = Double
-  type BytesReturned                   = Double
-  type BytesScanned                    = Double
-  type CORSRules                       = js.Array[CORSRule]
-  type CacheControl                    = String
-  type CloudFunction                   = String
-  type CloudFunctionInvocationRole     = String
-  type Code                            = String
-  type Comments                        = String
-  type CommonPrefixList                = js.Array[CommonPrefix]
-  type CompletedPartList               = js.Array[CompletedPart]
-  type ConfirmRemoveSelfBucketAccess   = Boolean
-  type ContentDisposition              = String
-  type ContentEncoding                 = String
-  type ContentLanguage                 = String
-  type ContentLength                   = Double
-  type ContentMD5                      = String
-  type ContentRange                    = String
-  type ContentType                     = String
-  type CopySource                      = String
-  type CopySourceIfMatch               = String
-  type CopySourceIfModifiedSince       = js.Date
-  type CopySourceIfNoneMatch           = String
-  type CopySourceIfUnmodifiedSince     = js.Date
-  type CopySourceRange                 = String
-  type CopySourceSSECustomerAlgorithm  = String
-  type CopySourceSSECustomerKey        = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type CopySourceSSECustomerKeyMD5     = String
-  type CopySourceVersionId             = String
-  type CreationDate                    = js.Date
-  type Date                            = js.Date
-  type Days                            = Int
-  type DaysAfterInitiation             = Int
-  type DeleteMarker                    = Boolean
-  type DeleteMarkerVersionId           = String
-  type DeleteMarkers                   = js.Array[DeleteMarkerEntry]
-  type DeletedObjects                  = js.Array[DeletedObject]
-  type Delimiter                       = String
-  type Description                     = String
-  type DisplayName                     = String
-  type ETag                            = String
-  type EmailAddress                    = String
-  type EnableRequestProgress           = Boolean
-  type End                             = Double
-  type Errors                          = js.Array[Error]
-  type EventList                       = js.Array[Event]
-  type Expiration                      = String
-  type ExpiredObjectDeleteMarker       = Boolean
-  type Expires                         = js.Date
-  type ExposeHeader                    = String
-  type ExposeHeaders                   = js.Array[ExposeHeader]
-  type Expression                      = String
-  type FetchOwner                      = Boolean
-  type FieldDelimiter                  = String
-  type FilterRuleList                  = js.Array[FilterRule]
-  type FilterRuleValue                 = String
-  type GrantFullControl                = String
-  type GrantRead                       = String
-  type GrantReadACP                    = String
-  type GrantWrite                      = String
-  type GrantWriteACP                   = String
-  type Grants                          = js.Array[Grant]
-  type HostName                        = String
-  type HttpErrorCodeReturnedEquals     = String
-  type HttpRedirectCode                = String
-  type ID                              = String
-  type IfMatch                         = String
-  type IfModifiedSince                 = js.Date
-  type IfNoneMatch                     = String
-  type IfUnmodifiedSince               = js.Date
-  type Initiated                       = js.Date
-  type InventoryConfigurationList      = js.Array[InventoryConfiguration]
-  type InventoryId                     = String
-  type InventoryOptionalFields         = js.Array[InventoryOptionalField]
-  type IsEnabled                       = Boolean
-  type IsLatest                        = Boolean
-  type IsPublic                        = Boolean
-  type IsTruncated                     = Boolean
-  type KMSContext                      = String
-  type KeyCount                        = Int
-  type KeyMarker                       = String
-  type KeyPrefixEquals                 = String
-  type LambdaFunctionArn               = String
+  type AbortDate = js.Date
+  type AbortRuleId = String
+  type AcceptRanges = String
+  type AccountId = String
+  type AllowQuotedRecordDelimiter = Boolean
+  type AllowedHeader = String
+  type AllowedHeaders = js.Array[AllowedHeader]
+  type AllowedMethod = String
+  type AllowedMethods = js.Array[AllowedMethod]
+  type AllowedOrigin = String
+  type AllowedOrigins = js.Array[AllowedOrigin]
+  type AnalyticsConfigurationList = js.Array[AnalyticsConfiguration]
+  type AnalyticsId = String
+  type Body = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type BucketName = String
+  type Buckets = js.Array[Bucket]
+  type BypassGovernanceRetention = Boolean
+  type BytesProcessed = Double
+  type BytesReturned = Double
+  type BytesScanned = Double
+  type CORSRules = js.Array[CORSRule]
+  type CacheControl = String
+  type CloudFunction = String
+  type CloudFunctionInvocationRole = String
+  type Code = String
+  type Comments = String
+  type CommonPrefixList = js.Array[CommonPrefix]
+  type CompletedPartList = js.Array[CompletedPart]
+  type ConfirmRemoveSelfBucketAccess = Boolean
+  type ContentDisposition = String
+  type ContentEncoding = String
+  type ContentLanguage = String
+  type ContentLength = Double
+  type ContentMD5 = String
+  type ContentRange = String
+  type ContentType = String
+  type CopySource = String
+  type CopySourceIfMatch = String
+  type CopySourceIfModifiedSince = js.Date
+  type CopySourceIfNoneMatch = String
+  type CopySourceIfUnmodifiedSince = js.Date
+  type CopySourceRange = String
+  type CopySourceSSECustomerAlgorithm = String
+  type CopySourceSSECustomerKey = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type CopySourceSSECustomerKeyMD5 = String
+  type CopySourceVersionId = String
+  type CreationDate = js.Date
+  type Date = js.Date
+  type Days = Int
+  type DaysAfterInitiation = Int
+  type DeleteMarker = Boolean
+  type DeleteMarkerVersionId = String
+  type DeleteMarkers = js.Array[DeleteMarkerEntry]
+  type DeletedObjects = js.Array[DeletedObject]
+  type Delimiter = String
+  type Description = String
+  type DisplayName = String
+  type ETag = String
+  type EmailAddress = String
+  type EnableRequestProgress = Boolean
+  type End = Double
+  type Errors = js.Array[Error]
+  type EventList = js.Array[Event]
+  type Expiration = String
+  type ExpiredObjectDeleteMarker = Boolean
+  type Expires = js.Date
+  type ExposeHeader = String
+  type ExposeHeaders = js.Array[ExposeHeader]
+  type Expression = String
+  type FetchOwner = Boolean
+  type FieldDelimiter = String
+  type FilterRuleList = js.Array[FilterRule]
+  type FilterRuleValue = String
+  type GrantFullControl = String
+  type GrantRead = String
+  type GrantReadACP = String
+  type GrantWrite = String
+  type GrantWriteACP = String
+  type Grants = js.Array[Grant]
+  type HostName = String
+  type HttpErrorCodeReturnedEquals = String
+  type HttpRedirectCode = String
+  type ID = String
+  type IfMatch = String
+  type IfModifiedSince = js.Date
+  type IfNoneMatch = String
+  type IfUnmodifiedSince = js.Date
+  type Initiated = js.Date
+  type InventoryConfigurationList = js.Array[InventoryConfiguration]
+  type InventoryId = String
+  type InventoryOptionalFields = js.Array[InventoryOptionalField]
+  type IsEnabled = Boolean
+  type IsLatest = Boolean
+  type IsPublic = Boolean
+  type IsTruncated = Boolean
+  type KMSContext = String
+  type KeyCount = Int
+  type KeyMarker = String
+  type KeyPrefixEquals = String
+  type LambdaFunctionArn = String
   type LambdaFunctionConfigurationList = js.Array[LambdaFunctionConfiguration]
-  type LastModified                    = js.Date
-  type LifecycleRules                  = js.Array[LifecycleRule]
-  type Location                        = String
-  type LocationPrefix                  = String
-  type MFA                             = String
-  type Marker                          = String
-  type MaxAgeSeconds                   = Int
-  type MaxKeys                         = Int
-  type MaxParts                        = Int
-  type MaxUploads                      = Int
-  type Message                         = String
-  type Metadata                        = js.Dictionary[MetadataValue]
-  type MetadataKey                     = String
-  type MetadataValue                   = String
-  type MetricsConfigurationList        = js.Array[MetricsConfiguration]
-  type MetricsId                       = String
-  type Minutes                         = Int
-  type MissingMeta                     = Int
-  type MultipartUploadId               = String
-  type MultipartUploadList             = js.Array[MultipartUpload]
-  type NextKeyMarker                   = String
-  type NextMarker                      = String
-  type NextPartNumberMarker            = Int
-  type NextToken                       = String
-  type NextUploadIdMarker              = String
-  type NextVersionIdMarker             = String
+  type LastModified = js.Date
+  type LifecycleRules = js.Array[LifecycleRule]
+  type Location = String
+  type LocationPrefix = String
+  type MFA = String
+  type Marker = String
+  type MaxAgeSeconds = Int
+  type MaxKeys = Int
+  type MaxParts = Int
+  type MaxUploads = Int
+  type Message = String
+  type Metadata = js.Dictionary[MetadataValue]
+  type MetadataKey = String
+  type MetadataValue = String
+  type MetricsConfigurationList = js.Array[MetricsConfiguration]
+  type MetricsId = String
+  type Minutes = Int
+  type MissingMeta = Int
+  type MultipartUploadId = String
+  type MultipartUploadList = js.Array[MultipartUpload]
+  type NextKeyMarker = String
+  type NextMarker = String
+  type NextPartNumberMarker = Int
+  type NextToken = String
+  type NextUploadIdMarker = String
+  type NextVersionIdMarker = String
   type NoncurrentVersionTransitionList = js.Array[NoncurrentVersionTransition]
-  type NotificationId                  = String
-  type ObjectIdentifierList            = js.Array[ObjectIdentifier]
-  type ObjectKey                       = String
-  type ObjectList                      = js.Array[Object]
-  type ObjectLockEnabledForBucket      = Boolean
-  type ObjectLockRetainUntilDate       = js.Date
-  type ObjectLockToken                 = String
-  type ObjectVersionId                 = String
-  type ObjectVersionList               = js.Array[ObjectVersion]
-  type PartNumber                      = Int
-  type PartNumberMarker                = Int
-  type Parts                           = js.Array[Part]
-  type PartsCount                      = Int
-  type Policy                          = String
-  type Prefix                          = String
-  type Priority                        = Int
-  type QueueArn                        = String
-  type QueueConfigurationList          = js.Array[QueueConfiguration]
-  type Quiet                           = Boolean
-  type QuoteCharacter                  = String
-  type QuoteEscapeCharacter            = String
-  type Range                           = String
-  type RecordDelimiter                 = String
-  type ReplaceKeyPrefixWith            = String
-  type ReplaceKeyWith                  = String
-  type ReplicaKmsKeyID                 = String
-  type ReplicationRules                = js.Array[ReplicationRule]
-  type ResponseCacheControl            = String
-  type ResponseContentDisposition      = String
-  type ResponseContentEncoding         = String
-  type ResponseContentLanguage         = String
-  type ResponseContentType             = String
-  type ResponseExpires                 = js.Date
-  type Restore                         = String
-  type RestoreOutputPath               = String
-  type Role                            = String
-  type RoutingRules                    = js.Array[RoutingRule]
-  type Rules                           = js.Array[Rule]
-  type SSECustomerAlgorithm            = String
-  type SSECustomerKey                  = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type SSECustomerKeyMD5               = String
-  type SSEKMSEncryptionContext         = String
-  type SSEKMSKeyId                     = String
-  type ServerSideEncryptionRules       = js.Array[ServerSideEncryptionRule]
-  type Setting                         = Boolean
-  type Size                            = Int
-  type Start                           = Double
-  type StartAfter                      = String
-  type Suffix                          = String
-  type TagCount                        = Int
-  type TagSet                          = js.Array[Tag]
-  type TaggingHeader                   = String
-  type TargetBucket                    = String
-  type TargetGrants                    = js.Array[TargetGrant]
-  type TargetPrefix                    = String
-  type Token                           = String
-  type TopicArn                        = String
-  type TopicConfigurationList          = js.Array[TopicConfiguration]
-  type TransitionList                  = js.Array[Transition]
-  type URI                             = String
-  type UploadIdMarker                  = String
-  type UserMetadata                    = js.Array[MetadataEntry]
-  type Value                           = String
-  type VersionIdMarker                 = String
-  type WebsiteRedirectLocation         = String
-  type Years                           = Int
+  type NotificationId = String
+  type ObjectIdentifierList = js.Array[ObjectIdentifier]
+  type ObjectKey = String
+  type ObjectList = js.Array[Object]
+  type ObjectLockEnabledForBucket = Boolean
+  type ObjectLockRetainUntilDate = js.Date
+  type ObjectLockToken = String
+  type ObjectVersionId = String
+  type ObjectVersionList = js.Array[ObjectVersion]
+  type PartNumber = Int
+  type PartNumberMarker = Int
+  type Parts = js.Array[Part]
+  type PartsCount = Int
+  type Policy = String
+  type Prefix = String
+  type Priority = Int
+  type QueueArn = String
+  type QueueConfigurationList = js.Array[QueueConfiguration]
+  type Quiet = Boolean
+  type QuoteCharacter = String
+  type QuoteEscapeCharacter = String
+  type Range = String
+  type RecordDelimiter = String
+  type ReplaceKeyPrefixWith = String
+  type ReplaceKeyWith = String
+  type ReplicaKmsKeyID = String
+  type ReplicationRules = js.Array[ReplicationRule]
+  type ResponseCacheControl = String
+  type ResponseContentDisposition = String
+  type ResponseContentEncoding = String
+  type ResponseContentLanguage = String
+  type ResponseContentType = String
+  type ResponseExpires = js.Date
+  type Restore = String
+  type RestoreOutputPath = String
+  type Role = String
+  type RoutingRules = js.Array[RoutingRule]
+  type Rules = js.Array[Rule]
+  type SSECustomerAlgorithm = String
+  type SSECustomerKey = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type SSECustomerKeyMD5 = String
+  type SSEKMSEncryptionContext = String
+  type SSEKMSKeyId = String
+  type ServerSideEncryptionRules = js.Array[ServerSideEncryptionRule]
+  type Setting = Boolean
+  type Size = Int
+  type Start = Double
+  type StartAfter = String
+  type Suffix = String
+  type TagCount = Int
+  type TagSet = js.Array[Tag]
+  type TaggingHeader = String
+  type TargetBucket = String
+  type TargetGrants = js.Array[TargetGrant]
+  type TargetPrefix = String
+  type Token = String
+  type TopicArn = String
+  type TopicConfigurationList = js.Array[TopicConfiguration]
+  type TransitionList = js.Array[Transition]
+  type URI = String
+  type UploadIdMarker = String
+  type UserMetadata = js.Array[MetadataEntry]
+  type Value = String
+  type VersionIdMarker = String
+  type WebsiteRedirectLocation = String
+  type Years = Int
 
   implicit final class S3Ops(private val service: S3) extends AnyVal {
 
@@ -427,90 +427,90 @@ package object s3 {
   @js.native
   sealed trait Operation extends js.Any
   object Operation extends js.Object {
-    val abortMultipartUpload               = "abortMultipartUpload".asInstanceOf[Operation]
-    val completeMultipartUpload            = "completeMultipartUpload".asInstanceOf[Operation]
-    val copyObject                         = "copyObject".asInstanceOf[Operation]
-    val createBucket                       = "createBucket".asInstanceOf[Operation]
-    val createMultipartUpload              = "createMultipartUpload".asInstanceOf[Operation]
+    val abortMultipartUpload = "abortMultipartUpload".asInstanceOf[Operation]
+    val completeMultipartUpload = "completeMultipartUpload".asInstanceOf[Operation]
+    val copyObject = "copyObject".asInstanceOf[Operation]
+    val createBucket = "createBucket".asInstanceOf[Operation]
+    val createMultipartUpload = "createMultipartUpload".asInstanceOf[Operation]
     val deleteBucketAnalyticsConfiguration = "deleteBucketAnalyticsConfiguration".asInstanceOf[Operation]
-    val deleteBucketCors                   = "deleteBucketCors".asInstanceOf[Operation]
-    val deleteBucketEncryption             = "deleteBucketEncryption".asInstanceOf[Operation]
-    val deleteBucket                       = "deleteBucket".asInstanceOf[Operation]
+    val deleteBucketCors = "deleteBucketCors".asInstanceOf[Operation]
+    val deleteBucketEncryption = "deleteBucketEncryption".asInstanceOf[Operation]
+    val deleteBucket = "deleteBucket".asInstanceOf[Operation]
     val deleteBucketInventoryConfiguration = "deleteBucketInventoryConfiguration".asInstanceOf[Operation]
-    val deleteBucketLifecycle              = "deleteBucketLifecycle".asInstanceOf[Operation]
-    val deleteBucketMetricsConfiguration   = "deleteBucketMetricsConfiguration".asInstanceOf[Operation]
-    val deleteBucketPolicy                 = "deleteBucketPolicy".asInstanceOf[Operation]
-    val deleteBucketReplication            = "deleteBucketReplication".asInstanceOf[Operation]
-    val deleteBucketTagging                = "deleteBucketTagging".asInstanceOf[Operation]
-    val deleteBucketWebsite                = "deleteBucketWebsite".asInstanceOf[Operation]
-    val deleteObject                       = "deleteObject".asInstanceOf[Operation]
-    val deleteObjectTagging                = "deleteObjectTagging".asInstanceOf[Operation]
-    val deleteObjects                      = "deleteObjects".asInstanceOf[Operation]
-    val deletePublicAccessBlock            = "deletePublicAccessBlock".asInstanceOf[Operation]
-    val getBucketAccelerateConfiguration   = "getBucketAccelerateConfiguration".asInstanceOf[Operation]
-    val getBucketAcl                       = "getBucketAcl".asInstanceOf[Operation]
-    val getBucketAnalyticsConfiguration    = "getBucketAnalyticsConfiguration".asInstanceOf[Operation]
-    val getBucketCors                      = "getBucketCors".asInstanceOf[Operation]
-    val getBucketEncryption                = "getBucketEncryption".asInstanceOf[Operation]
-    val getBucketInventoryConfiguration    = "getBucketInventoryConfiguration".asInstanceOf[Operation]
-    val getBucketLifecycleConfiguration    = "getBucketLifecycleConfiguration".asInstanceOf[Operation]
-    val getBucketLocation                  = "getBucketLocation".asInstanceOf[Operation]
-    val getBucketLogging                   = "getBucketLogging".asInstanceOf[Operation]
-    val getBucketMetricsConfiguration      = "getBucketMetricsConfiguration".asInstanceOf[Operation]
+    val deleteBucketLifecycle = "deleteBucketLifecycle".asInstanceOf[Operation]
+    val deleteBucketMetricsConfiguration = "deleteBucketMetricsConfiguration".asInstanceOf[Operation]
+    val deleteBucketPolicy = "deleteBucketPolicy".asInstanceOf[Operation]
+    val deleteBucketReplication = "deleteBucketReplication".asInstanceOf[Operation]
+    val deleteBucketTagging = "deleteBucketTagging".asInstanceOf[Operation]
+    val deleteBucketWebsite = "deleteBucketWebsite".asInstanceOf[Operation]
+    val deleteObject = "deleteObject".asInstanceOf[Operation]
+    val deleteObjectTagging = "deleteObjectTagging".asInstanceOf[Operation]
+    val deleteObjects = "deleteObjects".asInstanceOf[Operation]
+    val deletePublicAccessBlock = "deletePublicAccessBlock".asInstanceOf[Operation]
+    val getBucketAccelerateConfiguration = "getBucketAccelerateConfiguration".asInstanceOf[Operation]
+    val getBucketAcl = "getBucketAcl".asInstanceOf[Operation]
+    val getBucketAnalyticsConfiguration = "getBucketAnalyticsConfiguration".asInstanceOf[Operation]
+    val getBucketCors = "getBucketCors".asInstanceOf[Operation]
+    val getBucketEncryption = "getBucketEncryption".asInstanceOf[Operation]
+    val getBucketInventoryConfiguration = "getBucketInventoryConfiguration".asInstanceOf[Operation]
+    val getBucketLifecycleConfiguration = "getBucketLifecycleConfiguration".asInstanceOf[Operation]
+    val getBucketLocation = "getBucketLocation".asInstanceOf[Operation]
+    val getBucketLogging = "getBucketLogging".asInstanceOf[Operation]
+    val getBucketMetricsConfiguration = "getBucketMetricsConfiguration".asInstanceOf[Operation]
     val getBucketNotificationConfiguration = "getBucketNotificationConfiguration".asInstanceOf[Operation]
-    val getBucketPolicy                    = "getBucketPolicy".asInstanceOf[Operation]
-    val getBucketPolicyStatus              = "getBucketPolicyStatus".asInstanceOf[Operation]
-    val getBucketReplication               = "getBucketReplication".asInstanceOf[Operation]
-    val getBucketRequestPayment            = "getBucketRequestPayment".asInstanceOf[Operation]
-    val getBucketTagging                   = "getBucketTagging".asInstanceOf[Operation]
-    val getBucketVersioning                = "getBucketVersioning".asInstanceOf[Operation]
-    val getBucketWebsite                   = "getBucketWebsite".asInstanceOf[Operation]
-    val getObjectAcl                       = "getObjectAcl".asInstanceOf[Operation]
-    val getObject                          = "getObject".asInstanceOf[Operation]
-    val getObjectLegalHold                 = "getObjectLegalHold".asInstanceOf[Operation]
-    val getObjectLockConfiguration         = "getObjectLockConfiguration".asInstanceOf[Operation]
-    val getObjectRetention                 = "getObjectRetention".asInstanceOf[Operation]
-    val getObjectTagging                   = "getObjectTagging".asInstanceOf[Operation]
-    val getObjectTorrent                   = "getObjectTorrent".asInstanceOf[Operation]
-    val getPublicAccessBlock               = "getPublicAccessBlock".asInstanceOf[Operation]
-    val headBucket                         = "headBucket".asInstanceOf[Operation]
-    val headObject                         = "headObject".asInstanceOf[Operation]
-    val listBucketAnalyticsConfigurations  = "listBucketAnalyticsConfigurations".asInstanceOf[Operation]
-    val listBucketInventoryConfigurations  = "listBucketInventoryConfigurations".asInstanceOf[Operation]
-    val listBucketMetricsConfigurations    = "listBucketMetricsConfigurations".asInstanceOf[Operation]
-    val listBuckets                        = "listBuckets".asInstanceOf[Operation]
-    val listMultipartUploads               = "listMultipartUploads".asInstanceOf[Operation]
-    val listObjectVersions                 = "listObjectVersions".asInstanceOf[Operation]
-    val listObjects                        = "listObjects".asInstanceOf[Operation]
-    val listObjectsV2                      = "listObjectsV2".asInstanceOf[Operation]
-    val listParts                          = "listParts".asInstanceOf[Operation]
-    val putBucketAccelerateConfiguration   = "putBucketAccelerateConfiguration".asInstanceOf[Operation]
-    val putBucketAcl                       = "putBucketAcl".asInstanceOf[Operation]
-    val putBucketAnalyticsConfiguration    = "putBucketAnalyticsConfiguration".asInstanceOf[Operation]
-    val putBucketCors                      = "putBucketCors".asInstanceOf[Operation]
-    val putBucketEncryption                = "putBucketEncryption".asInstanceOf[Operation]
-    val putBucketInventoryConfiguration    = "putBucketInventoryConfiguration".asInstanceOf[Operation]
-    val putBucketLifecycleConfiguration    = "putBucketLifecycleConfiguration".asInstanceOf[Operation]
-    val putBucketLogging                   = "putBucketLogging".asInstanceOf[Operation]
-    val putBucketMetricsConfiguration      = "putBucketMetricsConfiguration".asInstanceOf[Operation]
+    val getBucketPolicy = "getBucketPolicy".asInstanceOf[Operation]
+    val getBucketPolicyStatus = "getBucketPolicyStatus".asInstanceOf[Operation]
+    val getBucketReplication = "getBucketReplication".asInstanceOf[Operation]
+    val getBucketRequestPayment = "getBucketRequestPayment".asInstanceOf[Operation]
+    val getBucketTagging = "getBucketTagging".asInstanceOf[Operation]
+    val getBucketVersioning = "getBucketVersioning".asInstanceOf[Operation]
+    val getBucketWebsite = "getBucketWebsite".asInstanceOf[Operation]
+    val getObjectAcl = "getObjectAcl".asInstanceOf[Operation]
+    val getObject = "getObject".asInstanceOf[Operation]
+    val getObjectLegalHold = "getObjectLegalHold".asInstanceOf[Operation]
+    val getObjectLockConfiguration = "getObjectLockConfiguration".asInstanceOf[Operation]
+    val getObjectRetention = "getObjectRetention".asInstanceOf[Operation]
+    val getObjectTagging = "getObjectTagging".asInstanceOf[Operation]
+    val getObjectTorrent = "getObjectTorrent".asInstanceOf[Operation]
+    val getPublicAccessBlock = "getPublicAccessBlock".asInstanceOf[Operation]
+    val headBucket = "headBucket".asInstanceOf[Operation]
+    val headObject = "headObject".asInstanceOf[Operation]
+    val listBucketAnalyticsConfigurations = "listBucketAnalyticsConfigurations".asInstanceOf[Operation]
+    val listBucketInventoryConfigurations = "listBucketInventoryConfigurations".asInstanceOf[Operation]
+    val listBucketMetricsConfigurations = "listBucketMetricsConfigurations".asInstanceOf[Operation]
+    val listBuckets = "listBuckets".asInstanceOf[Operation]
+    val listMultipartUploads = "listMultipartUploads".asInstanceOf[Operation]
+    val listObjectVersions = "listObjectVersions".asInstanceOf[Operation]
+    val listObjects = "listObjects".asInstanceOf[Operation]
+    val listObjectsV2 = "listObjectsV2".asInstanceOf[Operation]
+    val listParts = "listParts".asInstanceOf[Operation]
+    val putBucketAccelerateConfiguration = "putBucketAccelerateConfiguration".asInstanceOf[Operation]
+    val putBucketAcl = "putBucketAcl".asInstanceOf[Operation]
+    val putBucketAnalyticsConfiguration = "putBucketAnalyticsConfiguration".asInstanceOf[Operation]
+    val putBucketCors = "putBucketCors".asInstanceOf[Operation]
+    val putBucketEncryption = "putBucketEncryption".asInstanceOf[Operation]
+    val putBucketInventoryConfiguration = "putBucketInventoryConfiguration".asInstanceOf[Operation]
+    val putBucketLifecycleConfiguration = "putBucketLifecycleConfiguration".asInstanceOf[Operation]
+    val putBucketLogging = "putBucketLogging".asInstanceOf[Operation]
+    val putBucketMetricsConfiguration = "putBucketMetricsConfiguration".asInstanceOf[Operation]
     val putBucketNotificationConfiguration = "putBucketNotificationConfiguration".asInstanceOf[Operation]
-    val putBucketPolicy                    = "putBucketPolicy".asInstanceOf[Operation]
-    val putBucketReplication               = "putBucketReplication".asInstanceOf[Operation]
-    val putBucketRequestPayment            = "putBucketRequestPayment".asInstanceOf[Operation]
-    val putBucketTagging                   = "putBucketTagging".asInstanceOf[Operation]
-    val putBucketVersioning                = "putBucketVersioning".asInstanceOf[Operation]
-    val putBucketWebsite                   = "putBucketWebsite".asInstanceOf[Operation]
-    val putObjectAcl                       = "putObjectAcl".asInstanceOf[Operation]
-    val putObject                          = "putObject".asInstanceOf[Operation]
-    val putObjectLegalHold                 = "putObjectLegalHold".asInstanceOf[Operation]
-    val putObjectLockConfiguration         = "putObjectLockConfiguration".asInstanceOf[Operation]
-    val putObjectRetention                 = "putObjectRetention".asInstanceOf[Operation]
-    val putObjectTagging                   = "putObjectTagging".asInstanceOf[Operation]
-    val putPublicAccessBlock               = "putPublicAccessBlock".asInstanceOf[Operation]
-    val restoreObject                      = "restoreObject".asInstanceOf[Operation]
-    val selectObjectContent                = "selectObjectContent".asInstanceOf[Operation]
-    val uploadPartCopy                     = "uploadPartCopy".asInstanceOf[Operation]
-    val uploadPart                         = "uploadPart".asInstanceOf[Operation]
+    val putBucketPolicy = "putBucketPolicy".asInstanceOf[Operation]
+    val putBucketReplication = "putBucketReplication".asInstanceOf[Operation]
+    val putBucketRequestPayment = "putBucketRequestPayment".asInstanceOf[Operation]
+    val putBucketTagging = "putBucketTagging".asInstanceOf[Operation]
+    val putBucketVersioning = "putBucketVersioning".asInstanceOf[Operation]
+    val putBucketWebsite = "putBucketWebsite".asInstanceOf[Operation]
+    val putObjectAcl = "putObjectAcl".asInstanceOf[Operation]
+    val putObject = "putObject".asInstanceOf[Operation]
+    val putObjectLegalHold = "putObjectLegalHold".asInstanceOf[Operation]
+    val putObjectLockConfiguration = "putObjectLockConfiguration".asInstanceOf[Operation]
+    val putObjectRetention = "putObjectRetention".asInstanceOf[Operation]
+    val putObjectTagging = "putObjectTagging".asInstanceOf[Operation]
+    val putPublicAccessBlock = "putPublicAccessBlock".asInstanceOf[Operation]
+    val restoreObject = "restoreObject".asInstanceOf[Operation]
+    val selectObjectContent = "selectObjectContent".asInstanceOf[Operation]
+    val uploadPartCopy = "uploadPartCopy".asInstanceOf[Operation]
+    val uploadPart = "uploadPart".asInstanceOf[Operation]
   }
 }
 
@@ -523,70 +523,70 @@ package s3 {
     def abortMultipartUpload(params: AbortMultipartUploadRequest): Request[AbortMultipartUploadOutput] = js.native
     def completeMultipartUpload(params: CompleteMultipartUploadRequest): Request[CompleteMultipartUploadOutput] =
       js.native
-    def copyObject(params: CopyObjectRequest): Request[CopyObjectOutput]                                  = js.native
-    def createBucket(params: CreateBucketRequest): Request[CreateBucketOutput]                            = js.native
+    def copyObject(params: CopyObjectRequest): Request[CopyObjectOutput] = js.native
+    def createBucket(params: CreateBucketRequest): Request[CreateBucketOutput] = js.native
     def createMultipartUpload(params: CreateMultipartUploadRequest): Request[CreateMultipartUploadOutput] = js.native
-    def deleteBucket(params: DeleteBucketRequest): Request[js.Object]                                     = js.native
+    def deleteBucket(params: DeleteBucketRequest): Request[js.Object] = js.native
     def deleteBucketAnalyticsConfiguration(params: DeleteBucketAnalyticsConfigurationRequest): Request[js.Object] =
       js.native
-    def deleteBucketCors(params: DeleteBucketCorsRequest): Request[js.Object]             = js.native
+    def deleteBucketCors(params: DeleteBucketCorsRequest): Request[js.Object] = js.native
     def deleteBucketEncryption(params: DeleteBucketEncryptionRequest): Request[js.Object] = js.native
     def deleteBucketInventoryConfiguration(params: DeleteBucketInventoryConfigurationRequest): Request[js.Object] =
       js.native
     def deleteBucketLifecycle(params: DeleteBucketLifecycleRequest): Request[js.Object] = js.native
     def deleteBucketMetricsConfiguration(params: DeleteBucketMetricsConfigurationRequest): Request[js.Object] =
       js.native
-    def deleteBucketPolicy(params: DeleteBucketPolicyRequest): Request[js.Object]                   = js.native
-    def deleteBucketReplication(params: DeleteBucketReplicationRequest): Request[js.Object]         = js.native
-    def deleteBucketTagging(params: DeleteBucketTaggingRequest): Request[js.Object]                 = js.native
-    def deleteBucketWebsite(params: DeleteBucketWebsiteRequest): Request[js.Object]                 = js.native
-    def deleteObject(params: DeleteObjectRequest): Request[DeleteObjectOutput]                      = js.native
+    def deleteBucketPolicy(params: DeleteBucketPolicyRequest): Request[js.Object] = js.native
+    def deleteBucketReplication(params: DeleteBucketReplicationRequest): Request[js.Object] = js.native
+    def deleteBucketTagging(params: DeleteBucketTaggingRequest): Request[js.Object] = js.native
+    def deleteBucketWebsite(params: DeleteBucketWebsiteRequest): Request[js.Object] = js.native
+    def deleteObject(params: DeleteObjectRequest): Request[DeleteObjectOutput] = js.native
     def deleteObjectTagging(params: DeleteObjectTaggingRequest): Request[DeleteObjectTaggingOutput] = js.native
-    def deleteObjects(params: DeleteObjectsRequest): Request[DeleteObjectsOutput]                   = js.native
-    def deletePublicAccessBlock(params: DeletePublicAccessBlockRequest): Request[js.Object]         = js.native
+    def deleteObjects(params: DeleteObjectsRequest): Request[DeleteObjectsOutput] = js.native
+    def deletePublicAccessBlock(params: DeletePublicAccessBlockRequest): Request[js.Object] = js.native
     def getBucketAccelerateConfiguration(
         params: GetBucketAccelerateConfigurationRequest
-    ): Request[GetBucketAccelerateConfigurationOutput]                         = js.native
+    ): Request[GetBucketAccelerateConfigurationOutput] = js.native
     def getBucketAcl(params: GetBucketAclRequest): Request[GetBucketAclOutput] = js.native
     def getBucketAnalyticsConfiguration(
         params: GetBucketAnalyticsConfigurationRequest
-    ): Request[GetBucketAnalyticsConfigurationOutput]                                               = js.native
-    def getBucketCors(params: GetBucketCorsRequest): Request[GetBucketCorsOutput]                   = js.native
+    ): Request[GetBucketAnalyticsConfigurationOutput] = js.native
+    def getBucketCors(params: GetBucketCorsRequest): Request[GetBucketCorsOutput] = js.native
     def getBucketEncryption(params: GetBucketEncryptionRequest): Request[GetBucketEncryptionOutput] = js.native
     def getBucketInventoryConfiguration(
         params: GetBucketInventoryConfigurationRequest
     ): Request[GetBucketInventoryConfigurationOutput] = js.native
     def getBucketLifecycleConfiguration(
         params: GetBucketLifecycleConfigurationRequest
-    ): Request[GetBucketLifecycleConfigurationOutput]                                         = js.native
+    ): Request[GetBucketLifecycleConfigurationOutput] = js.native
     def getBucketLocation(params: GetBucketLocationRequest): Request[GetBucketLocationOutput] = js.native
-    def getBucketLogging(params: GetBucketLoggingRequest): Request[GetBucketLoggingOutput]    = js.native
+    def getBucketLogging(params: GetBucketLoggingRequest): Request[GetBucketLoggingOutput] = js.native
     def getBucketMetricsConfiguration(
         params: GetBucketMetricsConfigurationRequest
     ): Request[GetBucketMetricsConfigurationOutput] = js.native
     def getBucketNotificationConfiguration(
         params: GetBucketNotificationConfigurationRequest
-    ): Request[NotificationConfiguration]                                                                 = js.native
-    def getBucketPolicy(params: GetBucketPolicyRequest): Request[GetBucketPolicyOutput]                   = js.native
+    ): Request[NotificationConfiguration] = js.native
+    def getBucketPolicy(params: GetBucketPolicyRequest): Request[GetBucketPolicyOutput] = js.native
     def getBucketPolicyStatus(params: GetBucketPolicyStatusRequest): Request[GetBucketPolicyStatusOutput] = js.native
-    def getBucketReplication(params: GetBucketReplicationRequest): Request[GetBucketReplicationOutput]    = js.native
+    def getBucketReplication(params: GetBucketReplicationRequest): Request[GetBucketReplicationOutput] = js.native
     def getBucketRequestPayment(params: GetBucketRequestPaymentRequest): Request[GetBucketRequestPaymentOutput] =
       js.native
-    def getBucketTagging(params: GetBucketTaggingRequest): Request[GetBucketTaggingOutput]          = js.native
+    def getBucketTagging(params: GetBucketTaggingRequest): Request[GetBucketTaggingOutput] = js.native
     def getBucketVersioning(params: GetBucketVersioningRequest): Request[GetBucketVersioningOutput] = js.native
-    def getBucketWebsite(params: GetBucketWebsiteRequest): Request[GetBucketWebsiteOutput]          = js.native
-    def getObject(params: GetObjectRequest): Request[GetObjectOutput]                               = js.native
-    def getObjectAcl(params: GetObjectAclRequest): Request[GetObjectAclOutput]                      = js.native
-    def getObjectLegalHold(params: GetObjectLegalHoldRequest): Request[GetObjectLegalHoldOutput]    = js.native
+    def getBucketWebsite(params: GetBucketWebsiteRequest): Request[GetBucketWebsiteOutput] = js.native
+    def getObject(params: GetObjectRequest): Request[GetObjectOutput] = js.native
+    def getObjectAcl(params: GetObjectAclRequest): Request[GetObjectAclOutput] = js.native
+    def getObjectLegalHold(params: GetObjectLegalHoldRequest): Request[GetObjectLegalHoldOutput] = js.native
     def getObjectLockConfiguration(
         params: GetObjectLockConfigurationRequest
-    ): Request[GetObjectLockConfigurationOutput]                                                       = js.native
-    def getObjectRetention(params: GetObjectRetentionRequest): Request[GetObjectRetentionOutput]       = js.native
-    def getObjectTagging(params: GetObjectTaggingRequest): Request[GetObjectTaggingOutput]             = js.native
-    def getObjectTorrent(params: GetObjectTorrentRequest): Request[GetObjectTorrentOutput]             = js.native
+    ): Request[GetObjectLockConfigurationOutput] = js.native
+    def getObjectRetention(params: GetObjectRetentionRequest): Request[GetObjectRetentionOutput] = js.native
+    def getObjectTagging(params: GetObjectTaggingRequest): Request[GetObjectTaggingOutput] = js.native
+    def getObjectTorrent(params: GetObjectTorrentRequest): Request[GetObjectTorrentOutput] = js.native
     def getPublicAccessBlock(params: GetPublicAccessBlockRequest): Request[GetPublicAccessBlockOutput] = js.native
-    def headBucket(params: HeadBucketRequest): Request[js.Object]                                      = js.native
-    def headObject(params: HeadObjectRequest): Request[HeadObjectOutput]                               = js.native
+    def headBucket(params: HeadBucketRequest): Request[js.Object] = js.native
+    def headObject(params: HeadObjectRequest): Request[HeadObjectOutput] = js.native
     def listBucketAnalyticsConfigurations(
         params: ListBucketAnalyticsConfigurationsRequest
     ): Request[ListBucketAnalyticsConfigurationsOutput] = js.native
@@ -595,44 +595,44 @@ package s3 {
     ): Request[ListBucketInventoryConfigurationsOutput] = js.native
     def listBucketMetricsConfigurations(
         params: ListBucketMetricsConfigurationsRequest
-    ): Request[ListBucketMetricsConfigurationsOutput]                                                  = js.native
-    def listBuckets(): Request[ListBucketsOutput]                                                      = js.native
+    ): Request[ListBucketMetricsConfigurationsOutput] = js.native
+    def listBuckets(): Request[ListBucketsOutput] = js.native
     def listMultipartUploads(params: ListMultipartUploadsRequest): Request[ListMultipartUploadsOutput] = js.native
-    def listObjectVersions(params: ListObjectVersionsRequest): Request[ListObjectVersionsOutput]       = js.native
-    def listObjects(params: ListObjectsRequest): Request[ListObjectsOutput]                            = js.native
-    def listObjectsV2(params: ListObjectsV2Request): Request[ListObjectsV2Output]                      = js.native
-    def listParts(params: ListPartsRequest): Request[ListPartsOutput]                                  = js.native
+    def listObjectVersions(params: ListObjectVersionsRequest): Request[ListObjectVersionsOutput] = js.native
+    def listObjects(params: ListObjectsRequest): Request[ListObjectsOutput] = js.native
+    def listObjectsV2(params: ListObjectsV2Request): Request[ListObjectsV2Output] = js.native
+    def listParts(params: ListPartsRequest): Request[ListPartsOutput] = js.native
     def putBucketAccelerateConfiguration(params: PutBucketAccelerateConfigurationRequest): Request[js.Object] =
       js.native
-    def putBucketAcl(params: PutBucketAclRequest): Request[js.Object]                                       = js.native
+    def putBucketAcl(params: PutBucketAclRequest): Request[js.Object] = js.native
     def putBucketAnalyticsConfiguration(params: PutBucketAnalyticsConfigurationRequest): Request[js.Object] = js.native
-    def putBucketCors(params: PutBucketCorsRequest): Request[js.Object]                                     = js.native
-    def putBucketEncryption(params: PutBucketEncryptionRequest): Request[js.Object]                         = js.native
+    def putBucketCors(params: PutBucketCorsRequest): Request[js.Object] = js.native
+    def putBucketEncryption(params: PutBucketEncryptionRequest): Request[js.Object] = js.native
     def putBucketInventoryConfiguration(params: PutBucketInventoryConfigurationRequest): Request[js.Object] = js.native
     def putBucketLifecycleConfiguration(params: PutBucketLifecycleConfigurationRequest): Request[js.Object] = js.native
-    def putBucketLogging(params: PutBucketLoggingRequest): Request[js.Object]                               = js.native
-    def putBucketMetricsConfiguration(params: PutBucketMetricsConfigurationRequest): Request[js.Object]     = js.native
+    def putBucketLogging(params: PutBucketLoggingRequest): Request[js.Object] = js.native
+    def putBucketMetricsConfiguration(params: PutBucketMetricsConfigurationRequest): Request[js.Object] = js.native
     def putBucketNotificationConfiguration(params: PutBucketNotificationConfigurationRequest): Request[js.Object] =
       js.native
-    def putBucketPolicy(params: PutBucketPolicyRequest): Request[js.Object]                      = js.native
-    def putBucketReplication(params: PutBucketReplicationRequest): Request[js.Object]            = js.native
-    def putBucketRequestPayment(params: PutBucketRequestPaymentRequest): Request[js.Object]      = js.native
-    def putBucketTagging(params: PutBucketTaggingRequest): Request[js.Object]                    = js.native
-    def putBucketVersioning(params: PutBucketVersioningRequest): Request[js.Object]              = js.native
-    def putBucketWebsite(params: PutBucketWebsiteRequest): Request[js.Object]                    = js.native
-    def putObject(params: PutObjectRequest): Request[PutObjectOutput]                            = js.native
-    def putObjectAcl(params: PutObjectAclRequest): Request[PutObjectAclOutput]                   = js.native
+    def putBucketPolicy(params: PutBucketPolicyRequest): Request[js.Object] = js.native
+    def putBucketReplication(params: PutBucketReplicationRequest): Request[js.Object] = js.native
+    def putBucketRequestPayment(params: PutBucketRequestPaymentRequest): Request[js.Object] = js.native
+    def putBucketTagging(params: PutBucketTaggingRequest): Request[js.Object] = js.native
+    def putBucketVersioning(params: PutBucketVersioningRequest): Request[js.Object] = js.native
+    def putBucketWebsite(params: PutBucketWebsiteRequest): Request[js.Object] = js.native
+    def putObject(params: PutObjectRequest): Request[PutObjectOutput] = js.native
+    def putObjectAcl(params: PutObjectAclRequest): Request[PutObjectAclOutput] = js.native
     def putObjectLegalHold(params: PutObjectLegalHoldRequest): Request[PutObjectLegalHoldOutput] = js.native
     def putObjectLockConfiguration(
         params: PutObjectLockConfigurationRequest
-    ): Request[PutObjectLockConfigurationOutput]                                                    = js.native
-    def putObjectRetention(params: PutObjectRetentionRequest): Request[PutObjectRetentionOutput]    = js.native
-    def putObjectTagging(params: PutObjectTaggingRequest): Request[PutObjectTaggingOutput]          = js.native
-    def putPublicAccessBlock(params: PutPublicAccessBlockRequest): Request[js.Object]               = js.native
-    def restoreObject(params: RestoreObjectRequest): Request[RestoreObjectOutput]                   = js.native
+    ): Request[PutObjectLockConfigurationOutput] = js.native
+    def putObjectRetention(params: PutObjectRetentionRequest): Request[PutObjectRetentionOutput] = js.native
+    def putObjectTagging(params: PutObjectTaggingRequest): Request[PutObjectTaggingOutput] = js.native
+    def putPublicAccessBlock(params: PutPublicAccessBlockRequest): Request[js.Object] = js.native
+    def restoreObject(params: RestoreObjectRequest): Request[RestoreObjectOutput] = js.native
     def selectObjectContent(params: SelectObjectContentRequest): Request[SelectObjectContentOutput] = js.native
-    def uploadPart(params: UploadPartRequest): Request[UploadPartOutput]                            = js.native
-    def uploadPartCopy(params: UploadPartCopyRequest): Request[UploadPartCopyOutput]                = js.native
+    def uploadPart(params: UploadPartRequest): Request[UploadPartOutput] = js.native
+    def uploadPartCopy(params: UploadPartCopyRequest): Request[UploadPartCopyOutput] = js.native
     @deprecated("Deprecated in AWS SDK", "forever") def getBucketLifecycle(
         params: GetBucketLifecycleRequest
     ): Request[GetBucketLifecycleOutput] = js.native
@@ -699,8 +699,8 @@ package s3 {
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined
     ): AbortMultipartUploadRequest = {
       val __obj = js.Dynamic.literal(
-        "Bucket"   -> Bucket.asInstanceOf[js.Any],
-        "Key"      -> Key.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "UploadId" -> UploadId.asInstanceOf[js.Any]
       )
 
@@ -811,7 +811,7 @@ package s3 {
         Filter: js.UndefOr[AnalyticsFilter] = js.undefined
     ): AnalyticsConfiguration = {
       val __obj = js.Dynamic.literal(
-        "Id"                   -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "StorageClassAnalysis" -> StorageClassAnalysis.asInstanceOf[js.Any]
       )
 
@@ -929,7 +929,7 @@ package s3 {
   @js.native
   sealed trait BucketAccelerateStatus extends js.Any
   object BucketAccelerateStatus extends js.Object {
-    val Enabled   = "Enabled".asInstanceOf[BucketAccelerateStatus]
+    val Enabled = "Enabled".asInstanceOf[BucketAccelerateStatus]
     val Suspended = "Suspended".asInstanceOf[BucketAccelerateStatus]
 
     val values = js.Object.freeze(js.Array(Enabled, Suspended))
@@ -938,9 +938,9 @@ package s3 {
   @js.native
   sealed trait BucketCannedACL extends js.Any
   object BucketCannedACL extends js.Object {
-    val `private`            = "private".asInstanceOf[BucketCannedACL]
-    val `public-read`        = "public-read".asInstanceOf[BucketCannedACL]
-    val `public-read-write`  = "public-read-write".asInstanceOf[BucketCannedACL]
+    val `private` = "private".asInstanceOf[BucketCannedACL]
+    val `public-read` = "public-read".asInstanceOf[BucketCannedACL]
+    val `public-read-write` = "public-read-write".asInstanceOf[BucketCannedACL]
     val `authenticated-read` = "authenticated-read".asInstanceOf[BucketCannedACL]
 
     val values = js.Object.freeze(js.Array(`private`, `public-read`, `public-read-write`, `authenticated-read`))
@@ -970,17 +970,17 @@ package s3 {
   @js.native
   sealed trait BucketLocationConstraint extends js.Any
   object BucketLocationConstraint extends js.Object {
-    val EU               = "EU".asInstanceOf[BucketLocationConstraint]
-    val `eu-west-1`      = "eu-west-1".asInstanceOf[BucketLocationConstraint]
-    val `us-west-1`      = "us-west-1".asInstanceOf[BucketLocationConstraint]
-    val `us-west-2`      = "us-west-2".asInstanceOf[BucketLocationConstraint]
-    val `ap-south-1`     = "ap-south-1".asInstanceOf[BucketLocationConstraint]
+    val EU = "EU".asInstanceOf[BucketLocationConstraint]
+    val `eu-west-1` = "eu-west-1".asInstanceOf[BucketLocationConstraint]
+    val `us-west-1` = "us-west-1".asInstanceOf[BucketLocationConstraint]
+    val `us-west-2` = "us-west-2".asInstanceOf[BucketLocationConstraint]
+    val `ap-south-1` = "ap-south-1".asInstanceOf[BucketLocationConstraint]
     val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[BucketLocationConstraint]
     val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[BucketLocationConstraint]
     val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[BucketLocationConstraint]
-    val `sa-east-1`      = "sa-east-1".asInstanceOf[BucketLocationConstraint]
-    val `cn-north-1`     = "cn-north-1".asInstanceOf[BucketLocationConstraint]
-    val `eu-central-1`   = "eu-central-1".asInstanceOf[BucketLocationConstraint]
+    val `sa-east-1` = "sa-east-1".asInstanceOf[BucketLocationConstraint]
+    val `cn-north-1` = "cn-north-1".asInstanceOf[BucketLocationConstraint]
+    val `eu-central-1` = "eu-central-1".asInstanceOf[BucketLocationConstraint]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1022,8 +1022,8 @@ package s3 {
   sealed trait BucketLogsPermission extends js.Any
   object BucketLogsPermission extends js.Object {
     val FULL_CONTROL = "FULL_CONTROL".asInstanceOf[BucketLogsPermission]
-    val READ         = "READ".asInstanceOf[BucketLogsPermission]
-    val WRITE        = "WRITE".asInstanceOf[BucketLogsPermission]
+    val READ = "READ".asInstanceOf[BucketLogsPermission]
+    val WRITE = "WRITE".asInstanceOf[BucketLogsPermission]
 
     val values = js.Object.freeze(js.Array(FULL_CONTROL, READ, WRITE))
   }
@@ -1031,7 +1031,7 @@ package s3 {
   @js.native
   sealed trait BucketVersioningStatus extends js.Any
   object BucketVersioningStatus extends js.Object {
-    val Enabled   = "Enabled".asInstanceOf[BucketVersioningStatus]
+    val Enabled = "Enabled".asInstanceOf[BucketVersioningStatus]
     val Suspended = "Suspended".asInstanceOf[BucketVersioningStatus]
 
     val values = js.Object.freeze(js.Array(Enabled, Suspended))
@@ -1270,8 +1270,8 @@ package s3 {
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined
     ): CompleteMultipartUploadRequest = {
       val __obj = js.Dynamic.literal(
-        "Bucket"   -> Bucket.asInstanceOf[js.Any],
-        "Key"      -> Key.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "UploadId" -> UploadId.asInstanceOf[js.Any]
       )
 
@@ -1325,8 +1325,8 @@ package s3 {
   @js.native
   sealed trait CompressionType extends js.Any
   object CompressionType extends js.Object {
-    val NONE  = "NONE".asInstanceOf[CompressionType]
-    val GZIP  = "GZIP".asInstanceOf[CompressionType]
+    val NONE = "NONE".asInstanceOf[CompressionType]
+    val GZIP = "GZIP".asInstanceOf[CompressionType]
     val BZIP2 = "BZIP2".asInstanceOf[CompressionType]
 
     val values = js.Object.freeze(js.Array(NONE, GZIP, BZIP2))
@@ -1498,9 +1498,9 @@ package s3 {
         WebsiteRedirectLocation: js.UndefOr[WebsiteRedirectLocation] = js.undefined
     ): CopyObjectRequest = {
       val __obj = js.Dynamic.literal(
-        "Bucket"     -> Bucket.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
         "CopySource" -> CopySource.asInstanceOf[js.Any],
-        "Key"        -> Key.asInstanceOf[js.Any]
+        "Key" -> Key.asInstanceOf[js.Any]
       )
 
       ACL.foreach(__v => __obj.updateDynamic("ACL")(__v.asInstanceOf[js.Any]))
@@ -1788,7 +1788,7 @@ package s3 {
     ): CreateMultipartUploadRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
+        "Key" -> Key.asInstanceOf[js.Any]
       )
 
       ACL.foreach(__v => __obj.updateDynamic("ACL")(__v.asInstanceOf[js.Any]))
@@ -1887,7 +1887,7 @@ package s3 {
     ): DeleteBucketAnalyticsConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Id"     -> Id.asInstanceOf[js.Any]
+        "Id" -> Id.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteBucketAnalyticsConfigurationRequest]
@@ -1944,7 +1944,7 @@ package s3 {
     ): DeleteBucketInventoryConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Id"     -> Id.asInstanceOf[js.Any]
+        "Id" -> Id.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteBucketInventoryConfigurationRequest]
@@ -1983,7 +1983,7 @@ package s3 {
     ): DeleteBucketMetricsConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Id"     -> Id.asInstanceOf[js.Any]
+        "Id" -> Id.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteBucketMetricsConfigurationRequest]
@@ -2135,7 +2135,7 @@ package s3 {
   @js.native
   sealed trait DeleteMarkerReplicationStatus extends js.Any
   object DeleteMarkerReplicationStatus extends js.Object {
-    val Enabled  = "Enabled".asInstanceOf[DeleteMarkerReplicationStatus]
+    val Enabled = "Enabled".asInstanceOf[DeleteMarkerReplicationStatus]
     val Disabled = "Disabled".asInstanceOf[DeleteMarkerReplicationStatus]
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
@@ -2185,7 +2185,7 @@ package s3 {
     ): DeleteObjectRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
+        "Key" -> Key.asInstanceOf[js.Any]
       )
 
       BypassGovernanceRetention.foreach(__v =>
@@ -2230,7 +2230,7 @@ package s3 {
     ): DeleteObjectTaggingRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
+        "Key" -> Key.asInstanceOf[js.Any]
       )
 
       VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
@@ -2505,22 +2505,22 @@ package s3 {
   @js.native
   sealed trait Event extends js.Any
   object Event extends js.Object {
-    val `s3:ReducedRedundancyLostObject`            = "s3:ReducedRedundancyLostObject".asInstanceOf[Event]
-    val `s3:ObjectCreated:*`                        = "s3:ObjectCreated:*".asInstanceOf[Event]
-    val `s3:ObjectCreated:Put`                      = "s3:ObjectCreated:Put".asInstanceOf[Event]
-    val `s3:ObjectCreated:Post`                     = "s3:ObjectCreated:Post".asInstanceOf[Event]
-    val `s3:ObjectCreated:Copy`                     = "s3:ObjectCreated:Copy".asInstanceOf[Event]
-    val `s3:ObjectCreated:CompleteMultipartUpload`  = "s3:ObjectCreated:CompleteMultipartUpload".asInstanceOf[Event]
-    val `s3:ObjectRemoved:*`                        = "s3:ObjectRemoved:*".asInstanceOf[Event]
-    val `s3:ObjectRemoved:Delete`                   = "s3:ObjectRemoved:Delete".asInstanceOf[Event]
-    val `s3:ObjectRemoved:DeleteMarkerCreated`      = "s3:ObjectRemoved:DeleteMarkerCreated".asInstanceOf[Event]
-    val `s3:ObjectRestore:*`                        = "s3:ObjectRestore:*".asInstanceOf[Event]
-    val `s3:ObjectRestore:Post`                     = "s3:ObjectRestore:Post".asInstanceOf[Event]
-    val `s3:ObjectRestore:Completed`                = "s3:ObjectRestore:Completed".asInstanceOf[Event]
-    val `s3:Replication:*`                          = "s3:Replication:*".asInstanceOf[Event]
+    val `s3:ReducedRedundancyLostObject` = "s3:ReducedRedundancyLostObject".asInstanceOf[Event]
+    val `s3:ObjectCreated:*` = "s3:ObjectCreated:*".asInstanceOf[Event]
+    val `s3:ObjectCreated:Put` = "s3:ObjectCreated:Put".asInstanceOf[Event]
+    val `s3:ObjectCreated:Post` = "s3:ObjectCreated:Post".asInstanceOf[Event]
+    val `s3:ObjectCreated:Copy` = "s3:ObjectCreated:Copy".asInstanceOf[Event]
+    val `s3:ObjectCreated:CompleteMultipartUpload` = "s3:ObjectCreated:CompleteMultipartUpload".asInstanceOf[Event]
+    val `s3:ObjectRemoved:*` = "s3:ObjectRemoved:*".asInstanceOf[Event]
+    val `s3:ObjectRemoved:Delete` = "s3:ObjectRemoved:Delete".asInstanceOf[Event]
+    val `s3:ObjectRemoved:DeleteMarkerCreated` = "s3:ObjectRemoved:DeleteMarkerCreated".asInstanceOf[Event]
+    val `s3:ObjectRestore:*` = "s3:ObjectRestore:*".asInstanceOf[Event]
+    val `s3:ObjectRestore:Post` = "s3:ObjectRestore:Post".asInstanceOf[Event]
+    val `s3:ObjectRestore:Completed` = "s3:ObjectRestore:Completed".asInstanceOf[Event]
+    val `s3:Replication:*` = "s3:Replication:*".asInstanceOf[Event]
     val `s3:Replication:OperationFailedReplication` = "s3:Replication:OperationFailedReplication".asInstanceOf[Event]
-    val `s3:Replication:OperationNotTracked`        = "s3:Replication:OperationNotTracked".asInstanceOf[Event]
-    val `s3:Replication:OperationMissedThreshold`   = "s3:Replication:OperationMissedThreshold".asInstanceOf[Event]
+    val `s3:Replication:OperationNotTracked` = "s3:Replication:OperationNotTracked".asInstanceOf[Event]
+    val `s3:Replication:OperationMissedThreshold` = "s3:Replication:OperationMissedThreshold".asInstanceOf[Event]
     val `s3:Replication:OperationReplicatedAfterThreshold` =
       "s3:Replication:OperationReplicatedAfterThreshold".asInstanceOf[Event]
 
@@ -2571,7 +2571,7 @@ package s3 {
   @js.native
   sealed trait ExistingObjectReplicationStatus extends js.Any
   object ExistingObjectReplicationStatus extends js.Object {
-    val Enabled  = "Enabled".asInstanceOf[ExistingObjectReplicationStatus]
+    val Enabled = "Enabled".asInstanceOf[ExistingObjectReplicationStatus]
     val Disabled = "Disabled".asInstanceOf[ExistingObjectReplicationStatus]
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
@@ -2580,7 +2580,7 @@ package s3 {
   @js.native
   sealed trait ExpirationStatus extends js.Any
   object ExpirationStatus extends js.Object {
-    val Enabled  = "Enabled".asInstanceOf[ExpirationStatus]
+    val Enabled = "Enabled".asInstanceOf[ExpirationStatus]
     val Disabled = "Disabled".asInstanceOf[ExpirationStatus]
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
@@ -2597,9 +2597,9 @@ package s3 {
   @js.native
   sealed trait FileHeaderInfo extends js.Any
   object FileHeaderInfo extends js.Object {
-    val USE    = "USE".asInstanceOf[FileHeaderInfo]
+    val USE = "USE".asInstanceOf[FileHeaderInfo]
     val IGNORE = "IGNORE".asInstanceOf[FileHeaderInfo]
-    val NONE   = "NONE".asInstanceOf[FileHeaderInfo]
+    val NONE = "NONE".asInstanceOf[FileHeaderInfo]
 
     val values = js.Object.freeze(js.Array(USE, IGNORE, NONE))
   }
@@ -2736,7 +2736,7 @@ package s3 {
     ): GetBucketAnalyticsConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Id"     -> Id.asInstanceOf[js.Any]
+        "Id" -> Id.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetBucketAnalyticsConfigurationRequest]
@@ -2843,7 +2843,7 @@ package s3 {
     ): GetBucketInventoryConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Id"     -> Id.asInstanceOf[js.Any]
+        "Id" -> Id.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetBucketInventoryConfigurationRequest]
@@ -3016,7 +3016,7 @@ package s3 {
     ): GetBucketMetricsConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Id"     -> Id.asInstanceOf[js.Any]
+        "Id" -> Id.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetBucketMetricsConfigurationRequest]
@@ -3333,7 +3333,7 @@ package s3 {
     ): GetObjectAclRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
+        "Key" -> Key.asInstanceOf[js.Any]
       )
 
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
@@ -3376,7 +3376,7 @@ package s3 {
     ): GetObjectLegalHoldRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
+        "Key" -> Key.asInstanceOf[js.Any]
       )
 
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
@@ -3577,7 +3577,7 @@ package s3 {
     ): GetObjectRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
+        "Key" -> Key.asInstanceOf[js.Any]
       )
 
       IfMatch.foreach(__v => __obj.updateDynamic("IfMatch")(__v.asInstanceOf[js.Any]))
@@ -3637,7 +3637,7 @@ package s3 {
     ): GetObjectRetentionRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
+        "Key" -> Key.asInstanceOf[js.Any]
       )
 
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
@@ -3683,7 +3683,7 @@ package s3 {
     ): GetObjectTaggingRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
+        "Key" -> Key.asInstanceOf[js.Any]
       )
 
       VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
@@ -3726,7 +3726,7 @@ package s3 {
     ): GetObjectTorrentRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
+        "Key" -> Key.asInstanceOf[js.Any]
       )
 
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
@@ -3771,7 +3771,7 @@ package s3 {
   }
 
   /**
-    * Container for Glacier job parameters.
+    * Container for S3 Glacier job parameters.
     */
   @js.native
   trait GlacierJobParameters extends js.Object {
@@ -4001,7 +4001,7 @@ package s3 {
     ): HeadObjectRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
+        "Key" -> Key.asInstanceOf[js.Any]
       )
 
       IfMatch.foreach(__v => __obj.updateDynamic("IfMatch")(__v.asInstanceOf[js.Any]))
@@ -4116,11 +4116,11 @@ package s3 {
         OptionalFields: js.UndefOr[InventoryOptionalFields] = js.undefined
     ): InventoryConfiguration = {
       val __obj = js.Dynamic.literal(
-        "Destination"            -> Destination.asInstanceOf[js.Any],
-        "Id"                     -> Id.asInstanceOf[js.Any],
+        "Destination" -> Destination.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "IncludedObjectVersions" -> IncludedObjectVersions.asInstanceOf[js.Any],
-        "IsEnabled"              -> IsEnabled.asInstanceOf[js.Any],
-        "Schedule"               -> Schedule.asInstanceOf[js.Any]
+        "IsEnabled" -> IsEnabled.asInstanceOf[js.Any],
+        "Schedule" -> Schedule.asInstanceOf[js.Any]
       )
 
       Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
@@ -4196,8 +4196,8 @@ package s3 {
   @js.native
   sealed trait InventoryFormat extends js.Any
   object InventoryFormat extends js.Object {
-    val CSV     = "CSV".asInstanceOf[InventoryFormat]
-    val ORC     = "ORC".asInstanceOf[InventoryFormat]
+    val CSV = "CSV".asInstanceOf[InventoryFormat]
+    val ORC = "ORC".asInstanceOf[InventoryFormat]
     val Parquet = "Parquet".asInstanceOf[InventoryFormat]
 
     val values = js.Object.freeze(js.Array(CSV, ORC, Parquet))
@@ -4206,7 +4206,7 @@ package s3 {
   @js.native
   sealed trait InventoryFrequency extends js.Any
   object InventoryFrequency extends js.Object {
-    val Daily  = "Daily".asInstanceOf[InventoryFrequency]
+    val Daily = "Daily".asInstanceOf[InventoryFrequency]
     val Weekly = "Weekly".asInstanceOf[InventoryFrequency]
 
     val values = js.Object.freeze(js.Array(Daily, Weekly))
@@ -4215,7 +4215,7 @@ package s3 {
   @js.native
   sealed trait InventoryIncludedObjectVersions extends js.Any
   object InventoryIncludedObjectVersions extends js.Object {
-    val All     = "All".asInstanceOf[InventoryIncludedObjectVersions]
+    val All = "All".asInstanceOf[InventoryIncludedObjectVersions]
     val Current = "Current".asInstanceOf[InventoryIncludedObjectVersions]
 
     val values = js.Object.freeze(js.Array(All, Current))
@@ -4224,16 +4224,16 @@ package s3 {
   @js.native
   sealed trait InventoryOptionalField extends js.Any
   object InventoryOptionalField extends js.Object {
-    val Size                         = "Size".asInstanceOf[InventoryOptionalField]
-    val LastModifiedDate             = "LastModifiedDate".asInstanceOf[InventoryOptionalField]
-    val StorageClass                 = "StorageClass".asInstanceOf[InventoryOptionalField]
-    val ETag                         = "ETag".asInstanceOf[InventoryOptionalField]
-    val IsMultipartUploaded          = "IsMultipartUploaded".asInstanceOf[InventoryOptionalField]
-    val ReplicationStatus            = "ReplicationStatus".asInstanceOf[InventoryOptionalField]
-    val EncryptionStatus             = "EncryptionStatus".asInstanceOf[InventoryOptionalField]
-    val ObjectLockRetainUntilDate    = "ObjectLockRetainUntilDate".asInstanceOf[InventoryOptionalField]
-    val ObjectLockMode               = "ObjectLockMode".asInstanceOf[InventoryOptionalField]
-    val ObjectLockLegalHoldStatus    = "ObjectLockLegalHoldStatus".asInstanceOf[InventoryOptionalField]
+    val Size = "Size".asInstanceOf[InventoryOptionalField]
+    val LastModifiedDate = "LastModifiedDate".asInstanceOf[InventoryOptionalField]
+    val StorageClass = "StorageClass".asInstanceOf[InventoryOptionalField]
+    val ETag = "ETag".asInstanceOf[InventoryOptionalField]
+    val IsMultipartUploaded = "IsMultipartUploaded".asInstanceOf[InventoryOptionalField]
+    val ReplicationStatus = "ReplicationStatus".asInstanceOf[InventoryOptionalField]
+    val EncryptionStatus = "EncryptionStatus".asInstanceOf[InventoryOptionalField]
+    val ObjectLockRetainUntilDate = "ObjectLockRetainUntilDate".asInstanceOf[InventoryOptionalField]
+    val ObjectLockMode = "ObjectLockMode".asInstanceOf[InventoryOptionalField]
+    val ObjectLockLegalHoldStatus = "ObjectLockLegalHoldStatus".asInstanceOf[InventoryOptionalField]
     val IntelligentTieringAccessTier = "IntelligentTieringAccessTier".asInstanceOf[InventoryOptionalField]
 
     val values = js.Object.freeze(
@@ -4349,7 +4349,7 @@ package s3 {
   sealed trait JSONType extends js.Any
   object JSONType extends js.Object {
     val DOCUMENT = "DOCUMENT".asInstanceOf[JSONType]
-    val LINES    = "LINES".asInstanceOf[JSONType]
+    val LINES = "LINES".asInstanceOf[JSONType]
 
     val values = js.Object.freeze(js.Array(DOCUMENT, LINES))
   }
@@ -4374,7 +4374,7 @@ package s3 {
         Id: js.UndefOr[NotificationId] = js.undefined
     ): LambdaFunctionConfiguration = {
       val __obj = js.Dynamic.literal(
-        "Events"            -> Events.asInstanceOf[js.Any],
+        "Events" -> Events.asInstanceOf[js.Any],
         "LambdaFunctionArn" -> LambdaFunctionArn.asInstanceOf[js.Any]
       )
 
@@ -5110,8 +5110,8 @@ package s3 {
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined
     ): ListPartsRequest = {
       val __obj = js.Dynamic.literal(
-        "Bucket"   -> Bucket.asInstanceOf[js.Any],
-        "Key"      -> Key.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "UploadId" -> UploadId.asInstanceOf[js.Any]
       )
 
@@ -5152,7 +5152,7 @@ package s3 {
   @js.native
   sealed trait MFADelete extends js.Any
   object MFADelete extends js.Object {
-    val Enabled  = "Enabled".asInstanceOf[MFADelete]
+    val Enabled = "Enabled".asInstanceOf[MFADelete]
     val Disabled = "Disabled".asInstanceOf[MFADelete]
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
@@ -5161,7 +5161,7 @@ package s3 {
   @js.native
   sealed trait MFADeleteStatus extends js.Any
   object MFADeleteStatus extends js.Object {
-    val Enabled  = "Enabled".asInstanceOf[MFADeleteStatus]
+    val Enabled = "Enabled".asInstanceOf[MFADeleteStatus]
     val Disabled = "Disabled".asInstanceOf[MFADeleteStatus]
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
@@ -5170,7 +5170,7 @@ package s3 {
   @js.native
   sealed trait MetadataDirective extends js.Any
   object MetadataDirective extends js.Object {
-    val COPY    = "COPY".asInstanceOf[MetadataDirective]
+    val COPY = "COPY".asInstanceOf[MetadataDirective]
     val REPLACE = "REPLACE".asInstanceOf[MetadataDirective]
 
     val values = js.Object.freeze(js.Array(COPY, REPLACE))
@@ -5215,7 +5215,7 @@ package s3 {
     ): Metrics = {
       val __obj = js.Dynamic.literal(
         "EventThreshold" -> EventThreshold.asInstanceOf[js.Any],
-        "Status"         -> Status.asInstanceOf[js.Any]
+        "Status" -> Status.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Metrics]
@@ -5296,7 +5296,7 @@ package s3 {
   @js.native
   sealed trait MetricsStatus extends js.Any
   object MetricsStatus extends js.Object {
-    val Enabled  = "Enabled".asInstanceOf[MetricsStatus]
+    val Enabled = "Enabled".asInstanceOf[MetricsStatus]
     val Disabled = "Disabled".asInstanceOf[MetricsStatus]
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
@@ -5484,12 +5484,12 @@ package s3 {
   @js.native
   sealed trait ObjectCannedACL extends js.Any
   object ObjectCannedACL extends js.Object {
-    val `private`                   = "private".asInstanceOf[ObjectCannedACL]
-    val `public-read`               = "public-read".asInstanceOf[ObjectCannedACL]
-    val `public-read-write`         = "public-read-write".asInstanceOf[ObjectCannedACL]
-    val `authenticated-read`        = "authenticated-read".asInstanceOf[ObjectCannedACL]
-    val `aws-exec-read`             = "aws-exec-read".asInstanceOf[ObjectCannedACL]
-    val `bucket-owner-read`         = "bucket-owner-read".asInstanceOf[ObjectCannedACL]
+    val `private` = "private".asInstanceOf[ObjectCannedACL]
+    val `public-read` = "public-read".asInstanceOf[ObjectCannedACL]
+    val `public-read-write` = "public-read-write".asInstanceOf[ObjectCannedACL]
+    val `authenticated-read` = "authenticated-read".asInstanceOf[ObjectCannedACL]
+    val `aws-exec-read` = "aws-exec-read".asInstanceOf[ObjectCannedACL]
+    val `bucket-owner-read` = "bucket-owner-read".asInstanceOf[ObjectCannedACL]
     val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[ObjectCannedACL]
 
     val values = js.Object.freeze(
@@ -5581,7 +5581,7 @@ package s3 {
   @js.native
   sealed trait ObjectLockLegalHoldStatus extends js.Any
   object ObjectLockLegalHoldStatus extends js.Object {
-    val ON  = "ON".asInstanceOf[ObjectLockLegalHoldStatus]
+    val ON = "ON".asInstanceOf[ObjectLockLegalHoldStatus]
     val OFF = "OFF".asInstanceOf[ObjectLockLegalHoldStatus]
 
     val values = js.Object.freeze(js.Array(ON, OFF))
@@ -5649,13 +5649,13 @@ package s3 {
   @js.native
   sealed trait ObjectStorageClass extends js.Any
   object ObjectStorageClass extends js.Object {
-    val STANDARD            = "STANDARD".asInstanceOf[ObjectStorageClass]
-    val REDUCED_REDUNDANCY  = "REDUCED_REDUNDANCY".asInstanceOf[ObjectStorageClass]
-    val GLACIER             = "GLACIER".asInstanceOf[ObjectStorageClass]
-    val STANDARD_IA         = "STANDARD_IA".asInstanceOf[ObjectStorageClass]
-    val ONEZONE_IA          = "ONEZONE_IA".asInstanceOf[ObjectStorageClass]
+    val STANDARD = "STANDARD".asInstanceOf[ObjectStorageClass]
+    val REDUCED_REDUNDANCY = "REDUCED_REDUNDANCY".asInstanceOf[ObjectStorageClass]
+    val GLACIER = "GLACIER".asInstanceOf[ObjectStorageClass]
+    val STANDARD_IA = "STANDARD_IA".asInstanceOf[ObjectStorageClass]
+    val ONEZONE_IA = "ONEZONE_IA".asInstanceOf[ObjectStorageClass]
     val INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[ObjectStorageClass]
-    val DEEP_ARCHIVE        = "DEEP_ARCHIVE".asInstanceOf[ObjectStorageClass]
+    val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[ObjectStorageClass]
 
     val values = js.Object.freeze(
       js.Array(STANDARD, REDUCED_REDUNDANCY, GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE)
@@ -5828,7 +5828,7 @@ package s3 {
   @js.native
   sealed trait Payer extends js.Any
   object Payer extends js.Object {
-    val Requester   = "Requester".asInstanceOf[Payer]
+    val Requester = "Requester".asInstanceOf[Payer]
     val BucketOwner = "BucketOwner".asInstanceOf[Payer]
 
     val values = js.Object.freeze(js.Array(Requester, BucketOwner))
@@ -5838,10 +5838,10 @@ package s3 {
   sealed trait Permission extends js.Any
   object Permission extends js.Object {
     val FULL_CONTROL = "FULL_CONTROL".asInstanceOf[Permission]
-    val WRITE        = "WRITE".asInstanceOf[Permission]
-    val WRITE_ACP    = "WRITE_ACP".asInstanceOf[Permission]
-    val READ         = "READ".asInstanceOf[Permission]
-    val READ_ACP     = "READ_ACP".asInstanceOf[Permission]
+    val WRITE = "WRITE".asInstanceOf[Permission]
+    val WRITE_ACP = "WRITE_ACP".asInstanceOf[Permission]
+    val READ = "READ".asInstanceOf[Permission]
+    val READ_ACP = "READ_ACP".asInstanceOf[Permission]
 
     val values = js.Object.freeze(js.Array(FULL_CONTROL, WRITE, WRITE_ACP, READ, READ_ACP))
   }
@@ -5912,7 +5912,7 @@ package s3 {
   @js.native
   sealed trait Protocol extends js.Any
   object Protocol extends js.Object {
-    val http  = "http".asInstanceOf[Protocol]
+    val http = "http".asInstanceOf[Protocol]
     val https = "https".asInstanceOf[Protocol]
 
     val values = js.Object.freeze(js.Array(http, https))
@@ -5960,7 +5960,7 @@ package s3 {
     ): PutBucketAccelerateConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "AccelerateConfiguration" -> AccelerateConfiguration.asInstanceOf[js.Any],
-        "Bucket"                  -> Bucket.asInstanceOf[js.Any]
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutBucketAccelerateConfigurationRequest]
@@ -6025,8 +6025,8 @@ package s3 {
     ): PutBucketAnalyticsConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "AnalyticsConfiguration" -> AnalyticsConfiguration.asInstanceOf[js.Any],
-        "Bucket"                 -> Bucket.asInstanceOf[js.Any],
-        "Id"                     -> Id.asInstanceOf[js.Any]
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutBucketAnalyticsConfigurationRequest]
@@ -6048,7 +6048,7 @@ package s3 {
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined
     ): PutBucketCorsRequest = {
       val __obj = js.Dynamic.literal(
-        "Bucket"            -> Bucket.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
         "CORSConfiguration" -> CORSConfiguration.asInstanceOf[js.Any]
       )
 
@@ -6072,7 +6072,7 @@ package s3 {
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined
     ): PutBucketEncryptionRequest = {
       val __obj = js.Dynamic.literal(
-        "Bucket"                            -> Bucket.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
         "ServerSideEncryptionConfiguration" -> ServerSideEncryptionConfiguration.asInstanceOf[js.Any]
       )
 
@@ -6096,8 +6096,8 @@ package s3 {
         InventoryConfiguration: InventoryConfiguration
     ): PutBucketInventoryConfigurationRequest = {
       val __obj = js.Dynamic.literal(
-        "Bucket"                 -> Bucket.asInstanceOf[js.Any],
-        "Id"                     -> Id.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "InventoryConfiguration" -> InventoryConfiguration.asInstanceOf[js.Any]
       )
 
@@ -6165,7 +6165,7 @@ package s3 {
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined
     ): PutBucketLoggingRequest = {
       val __obj = js.Dynamic.literal(
-        "Bucket"              -> Bucket.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
         "BucketLoggingStatus" -> BucketLoggingStatus.asInstanceOf[js.Any]
       )
 
@@ -6189,8 +6189,8 @@ package s3 {
         MetricsConfiguration: MetricsConfiguration
     ): PutBucketMetricsConfigurationRequest = {
       val __obj = js.Dynamic.literal(
-        "Bucket"               -> Bucket.asInstanceOf[js.Any],
-        "Id"                   -> Id.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "MetricsConfiguration" -> MetricsConfiguration.asInstanceOf[js.Any]
       )
 
@@ -6211,7 +6211,7 @@ package s3 {
         NotificationConfiguration: NotificationConfiguration
     ): PutBucketNotificationConfigurationRequest = {
       val __obj = js.Dynamic.literal(
-        "Bucket"                    -> Bucket.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
         "NotificationConfiguration" -> NotificationConfiguration.asInstanceOf[js.Any]
       )
 
@@ -6234,7 +6234,7 @@ package s3 {
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined
     ): PutBucketNotificationRequest = {
       val __obj = js.Dynamic.literal(
-        "Bucket"                    -> Bucket.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
         "NotificationConfiguration" -> NotificationConfiguration.asInstanceOf[js.Any]
       )
 
@@ -6289,7 +6289,7 @@ package s3 {
         Token: js.UndefOr[ObjectLockToken] = js.undefined
     ): PutBucketReplicationRequest = {
       val __obj = js.Dynamic.literal(
-        "Bucket"                   -> Bucket.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
         "ReplicationConfiguration" -> ReplicationConfiguration.asInstanceOf[js.Any]
       )
 
@@ -6314,7 +6314,7 @@ package s3 {
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined
     ): PutBucketRequestPaymentRequest = {
       val __obj = js.Dynamic.literal(
-        "Bucket"                      -> Bucket.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
         "RequestPaymentConfiguration" -> RequestPaymentConfiguration.asInstanceOf[js.Any]
       )
 
@@ -6338,7 +6338,7 @@ package s3 {
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined
     ): PutBucketTaggingRequest = {
       val __obj = js.Dynamic.literal(
-        "Bucket"  -> Bucket.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
         "Tagging" -> Tagging.asInstanceOf[js.Any]
       )
 
@@ -6364,7 +6364,7 @@ package s3 {
         MFA: js.UndefOr[MFA] = js.undefined
     ): PutBucketVersioningRequest = {
       val __obj = js.Dynamic.literal(
-        "Bucket"                  -> Bucket.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
         "VersioningConfiguration" -> VersioningConfiguration.asInstanceOf[js.Any]
       )
 
@@ -6389,7 +6389,7 @@ package s3 {
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined
     ): PutBucketWebsiteRequest = {
       val __obj = js.Dynamic.literal(
-        "Bucket"               -> Bucket.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
         "WebsiteConfiguration" -> WebsiteConfiguration.asInstanceOf[js.Any]
       )
 
@@ -6448,7 +6448,7 @@ package s3 {
     ): PutObjectAclRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
+        "Key" -> Key.asInstanceOf[js.Any]
       )
 
       ACL.foreach(__v => __obj.updateDynamic("ACL")(__v.asInstanceOf[js.Any]))
@@ -6503,7 +6503,7 @@ package s3 {
     ): PutObjectLegalHoldRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
+        "Key" -> Key.asInstanceOf[js.Any]
       )
 
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
@@ -6670,7 +6670,7 @@ package s3 {
     ): PutObjectRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
+        "Key" -> Key.asInstanceOf[js.Any]
       )
 
       ACL.foreach(__v => __obj.updateDynamic("ACL")(__v.asInstanceOf[js.Any]))
@@ -6749,7 +6749,7 @@ package s3 {
     ): PutObjectRetentionRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
+        "Key" -> Key.asInstanceOf[js.Any]
       )
 
       BypassGovernanceRetention.foreach(__v =>
@@ -6798,8 +6798,8 @@ package s3 {
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): PutObjectTaggingRequest = {
       val __obj = js.Dynamic.literal(
-        "Bucket"  -> Bucket.asInstanceOf[js.Any],
-        "Key"     -> Key.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Tagging" -> Tagging.asInstanceOf[js.Any]
       )
 
@@ -6824,7 +6824,7 @@ package s3 {
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined
     ): PutPublicAccessBlockRequest = {
       val __obj = js.Dynamic.literal(
-        "Bucket"                         -> Bucket.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
         "PublicAccessBlockConfiguration" -> PublicAccessBlockConfiguration.asInstanceOf[js.Any]
       )
 
@@ -6853,7 +6853,7 @@ package s3 {
         Id: js.UndefOr[NotificationId] = js.undefined
     ): QueueConfiguration = {
       val __obj = js.Dynamic.literal(
-        "Events"   -> Events.asInstanceOf[js.Any],
+        "Events" -> Events.asInstanceOf[js.Any],
         "QueueArn" -> QueueArn.asInstanceOf[js.Any]
       )
 
@@ -6894,7 +6894,7 @@ package s3 {
   @js.native
   sealed trait QuoteFields extends js.Any
   object QuoteFields extends js.Object {
-    val ALWAYS   = "ALWAYS".asInstanceOf[QuoteFields]
+    val ALWAYS = "ALWAYS".asInstanceOf[QuoteFields]
     val ASNEEDED = "ASNEEDED".asInstanceOf[QuoteFields]
 
     val values = js.Object.freeze(js.Array(ALWAYS, ASNEEDED))
@@ -6990,7 +6990,7 @@ package s3 {
         Rules: ReplicationRules
     ): ReplicationConfiguration = {
       val __obj = js.Dynamic.literal(
-        "Role"  -> Role.asInstanceOf[js.Any],
+        "Role" -> Role.asInstanceOf[js.Any],
         "Rules" -> Rules.asInstanceOf[js.Any]
       )
 
@@ -7029,7 +7029,7 @@ package s3 {
     ): ReplicationRule = {
       val __obj = js.Dynamic.literal(
         "Destination" -> Destination.asInstanceOf[js.Any],
-        "Status"      -> Status.asInstanceOf[js.Any]
+        "Status" -> Status.asInstanceOf[js.Any]
       )
 
       DeleteMarkerReplication.foreach(__v => __obj.updateDynamic("DeleteMarkerReplication")(__v.asInstanceOf[js.Any]))
@@ -7098,7 +7098,7 @@ package s3 {
   @js.native
   sealed trait ReplicationRuleStatus extends js.Any
   object ReplicationRuleStatus extends js.Object {
-    val Enabled  = "Enabled".asInstanceOf[ReplicationRuleStatus]
+    val Enabled = "Enabled".asInstanceOf[ReplicationRuleStatus]
     val Disabled = "Disabled".asInstanceOf[ReplicationRuleStatus]
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
@@ -7108,9 +7108,9 @@ package s3 {
   sealed trait ReplicationStatus extends js.Any
   object ReplicationStatus extends js.Object {
     val COMPLETE = "COMPLETE".asInstanceOf[ReplicationStatus]
-    val PENDING  = "PENDING".asInstanceOf[ReplicationStatus]
-    val FAILED   = "FAILED".asInstanceOf[ReplicationStatus]
-    val REPLICA  = "REPLICA".asInstanceOf[ReplicationStatus]
+    val PENDING = "PENDING".asInstanceOf[ReplicationStatus]
+    val FAILED = "FAILED".asInstanceOf[ReplicationStatus]
+    val REPLICA = "REPLICA".asInstanceOf[ReplicationStatus]
 
     val values = js.Object.freeze(js.Array(COMPLETE, PENDING, FAILED, REPLICA))
   }
@@ -7132,7 +7132,7 @@ package s3 {
     ): ReplicationTime = {
       val __obj = js.Dynamic.literal(
         "Status" -> Status.asInstanceOf[js.Any],
-        "Time"   -> Time.asInstanceOf[js.Any]
+        "Time" -> Time.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ReplicationTime]
@@ -7142,7 +7142,7 @@ package s3 {
   @js.native
   sealed trait ReplicationTimeStatus extends js.Any
   object ReplicationTimeStatus extends js.Object {
-    val Enabled  = "Enabled".asInstanceOf[ReplicationTimeStatus]
+    val Enabled = "Enabled".asInstanceOf[ReplicationTimeStatus]
     val Disabled = "Disabled".asInstanceOf[ReplicationTimeStatus]
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
@@ -7268,7 +7268,7 @@ package s3 {
     ): RestoreObjectRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any]
+        "Key" -> Key.asInstanceOf[js.Any]
       )
 
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
@@ -7348,7 +7348,7 @@ package s3 {
   }
 
   /**
-    * Specifies lifecycle rules for an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlifecycle.html|PUT Bucket lifecycle]] in the <i>Amazon Simple Storage Service API Reference</i>.
+    * Specifies lifecycle rules for an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlifecycle.html|Put Bucket Lifecycle Configuration]] in the <i>Amazon Simple Storage Service API Reference</i>. For examples, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html#API_PutBucketLifecycleConfiguration_Examples|Put Bucket Lifecycle Configuration Examples]]
     */
   @js.native
   trait Rule extends js.Object {
@@ -7443,7 +7443,7 @@ package s3 {
     ): S3Location = {
       val __obj = js.Dynamic.literal(
         "BucketName" -> BucketName.asInstanceOf[js.Any],
-        "Prefix"     -> Prefix.asInstanceOf[js.Any]
+        "Prefix" -> Prefix.asInstanceOf[js.Any]
       )
 
       AccessControlList.foreach(__v => __obj.updateDynamic("AccessControlList")(__v.asInstanceOf[js.Any]))
@@ -7596,11 +7596,11 @@ package s3 {
         ScanRange: js.UndefOr[ScanRange] = js.undefined
     ): SelectObjectContentRequest = {
       val __obj = js.Dynamic.literal(
-        "Bucket"              -> Bucket.asInstanceOf[js.Any],
-        "Expression"          -> Expression.asInstanceOf[js.Any],
-        "ExpressionType"      -> ExpressionType.asInstanceOf[js.Any],
-        "InputSerialization"  -> InputSerialization.asInstanceOf[js.Any],
-        "Key"                 -> Key.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
+        "Expression" -> Expression.asInstanceOf[js.Any],
+        "ExpressionType" -> ExpressionType.asInstanceOf[js.Any],
+        "InputSerialization" -> InputSerialization.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "OutputSerialization" -> OutputSerialization.asInstanceOf[js.Any]
       )
 
@@ -7633,9 +7633,9 @@ package s3 {
         OutputSerialization: OutputSerialization
     ): SelectParameters = {
       val __obj = js.Dynamic.literal(
-        "Expression"          -> Expression.asInstanceOf[js.Any],
-        "ExpressionType"      -> ExpressionType.asInstanceOf[js.Any],
-        "InputSerialization"  -> InputSerialization.asInstanceOf[js.Any],
+        "Expression" -> Expression.asInstanceOf[js.Any],
+        "ExpressionType" -> ExpressionType.asInstanceOf[js.Any],
+        "InputSerialization" -> InputSerialization.asInstanceOf[js.Any],
         "OutputSerialization" -> OutputSerialization.asInstanceOf[js.Any]
       )
 
@@ -7646,7 +7646,7 @@ package s3 {
   @js.native
   sealed trait ServerSideEncryption extends js.Any
   object ServerSideEncryption extends js.Object {
-    val AES256    = "AES256".asInstanceOf[ServerSideEncryption]
+    val AES256 = "AES256".asInstanceOf[ServerSideEncryption]
     val `aws:kms` = "aws:kms".asInstanceOf[ServerSideEncryption]
 
     val values = js.Object.freeze(js.Array(AES256, `aws:kms`))
@@ -7761,7 +7761,7 @@ package s3 {
   @js.native
   sealed trait SseKmsEncryptedObjectsStatus extends js.Any
   object SseKmsEncryptedObjectsStatus extends js.Object {
-    val Enabled  = "Enabled".asInstanceOf[SseKmsEncryptedObjectsStatus]
+    val Enabled = "Enabled".asInstanceOf[SseKmsEncryptedObjectsStatus]
     val Disabled = "Disabled".asInstanceOf[SseKmsEncryptedObjectsStatus]
 
     val values = js.Object.freeze(js.Array(Enabled, Disabled))
@@ -7814,13 +7814,13 @@ package s3 {
   @js.native
   sealed trait StorageClass extends js.Any
   object StorageClass extends js.Object {
-    val STANDARD            = "STANDARD".asInstanceOf[StorageClass]
-    val REDUCED_REDUNDANCY  = "REDUCED_REDUNDANCY".asInstanceOf[StorageClass]
-    val STANDARD_IA         = "STANDARD_IA".asInstanceOf[StorageClass]
-    val ONEZONE_IA          = "ONEZONE_IA".asInstanceOf[StorageClass]
+    val STANDARD = "STANDARD".asInstanceOf[StorageClass]
+    val REDUCED_REDUNDANCY = "REDUCED_REDUNDANCY".asInstanceOf[StorageClass]
+    val STANDARD_IA = "STANDARD_IA".asInstanceOf[StorageClass]
+    val ONEZONE_IA = "ONEZONE_IA".asInstanceOf[StorageClass]
     val INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[StorageClass]
-    val GLACIER             = "GLACIER".asInstanceOf[StorageClass]
-    val DEEP_ARCHIVE        = "DEEP_ARCHIVE".asInstanceOf[StorageClass]
+    val GLACIER = "GLACIER".asInstanceOf[StorageClass]
+    val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[StorageClass]
 
     val values = js.Object.freeze(
       js.Array(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE)
@@ -7862,7 +7862,7 @@ package s3 {
         OutputSchemaVersion: StorageClassAnalysisSchemaVersion
     ): StorageClassAnalysisDataExport = {
       val __obj = js.Dynamic.literal(
-        "Destination"         -> Destination.asInstanceOf[js.Any],
+        "Destination" -> Destination.asInstanceOf[js.Any],
         "OutputSchemaVersion" -> OutputSchemaVersion.asInstanceOf[js.Any]
       )
 
@@ -7894,7 +7894,7 @@ package s3 {
         Value: Value
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -7926,7 +7926,7 @@ package s3 {
   @js.native
   sealed trait TaggingDirective extends js.Any
   object TaggingDirective extends js.Object {
-    val COPY    = "COPY".asInstanceOf[TaggingDirective]
+    val COPY = "COPY".asInstanceOf[TaggingDirective]
     val REPLACE = "REPLACE".asInstanceOf[TaggingDirective]
 
     val values = js.Object.freeze(js.Array(COPY, REPLACE))
@@ -7957,8 +7957,8 @@ package s3 {
   @js.native
   sealed trait Tier extends js.Any
   object Tier extends js.Object {
-    val Standard  = "Standard".asInstanceOf[Tier]
-    val Bulk      = "Bulk".asInstanceOf[Tier]
+    val Standard = "Standard".asInstanceOf[Tier]
+    val Bulk = "Bulk".asInstanceOf[Tier]
     val Expedited = "Expedited".asInstanceOf[Tier]
 
     val values = js.Object.freeze(js.Array(Standard, Bulk, Expedited))
@@ -7984,7 +7984,7 @@ package s3 {
         Id: js.UndefOr[NotificationId] = js.undefined
     ): TopicConfiguration = {
       val __obj = js.Dynamic.literal(
-        "Events"   -> Events.asInstanceOf[js.Any],
+        "Events" -> Events.asInstanceOf[js.Any],
         "TopicArn" -> TopicArn.asInstanceOf[js.Any]
       )
 
@@ -8023,7 +8023,7 @@ package s3 {
   }
 
   /**
-    * Specifies when an object transitions to a specified storage class.
+    * Specifies when an object transitions to a specified storage class. For more information about Amazon S3 lifecycle configuration rules, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html|Transitioning Objects Using Amazon S3 Lifecycle]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
     */
   @js.native
   trait Transition extends js.Object {
@@ -8050,11 +8050,11 @@ package s3 {
   @js.native
   sealed trait TransitionStorageClass extends js.Any
   object TransitionStorageClass extends js.Object {
-    val GLACIER             = "GLACIER".asInstanceOf[TransitionStorageClass]
-    val STANDARD_IA         = "STANDARD_IA".asInstanceOf[TransitionStorageClass]
-    val ONEZONE_IA          = "ONEZONE_IA".asInstanceOf[TransitionStorageClass]
+    val GLACIER = "GLACIER".asInstanceOf[TransitionStorageClass]
+    val STANDARD_IA = "STANDARD_IA".asInstanceOf[TransitionStorageClass]
+    val ONEZONE_IA = "ONEZONE_IA".asInstanceOf[TransitionStorageClass]
     val INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[TransitionStorageClass]
-    val DEEP_ARCHIVE        = "DEEP_ARCHIVE".asInstanceOf[TransitionStorageClass]
+    val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[TransitionStorageClass]
 
     val values = js.Object.freeze(js.Array(GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE))
   }
@@ -8062,9 +8062,9 @@ package s3 {
   @js.native
   sealed trait Type extends js.Any
   object Type extends js.Object {
-    val CanonicalUser         = "CanonicalUser".asInstanceOf[Type]
+    val CanonicalUser = "CanonicalUser".asInstanceOf[Type]
     val AmazonCustomerByEmail = "AmazonCustomerByEmail".asInstanceOf[Type]
-    val Group                 = "Group".asInstanceOf[Type]
+    val Group = "Group".asInstanceOf[Type]
 
     val values = js.Object.freeze(js.Array(CanonicalUser, AmazonCustomerByEmail, Group))
   }
@@ -8146,11 +8146,11 @@ package s3 {
         SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined
     ): UploadPartCopyRequest = {
       val __obj = js.Dynamic.literal(
-        "Bucket"     -> Bucket.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
         "CopySource" -> CopySource.asInstanceOf[js.Any],
-        "Key"        -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "PartNumber" -> PartNumber.asInstanceOf[js.Any],
-        "UploadId"   -> UploadId.asInstanceOf[js.Any]
+        "UploadId" -> UploadId.asInstanceOf[js.Any]
       )
 
       CopySourceIfMatch.foreach(__v => __obj.updateDynamic("CopySourceIfMatch")(__v.asInstanceOf[js.Any]))
@@ -8239,10 +8239,10 @@ package s3 {
         SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined
     ): UploadPartRequest = {
       val __obj = js.Dynamic.literal(
-        "Bucket"     -> Bucket.asInstanceOf[js.Any],
-        "Key"        -> Key.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "PartNumber" -> PartNumber.asInstanceOf[js.Any],
-        "UploadId"   -> UploadId.asInstanceOf[js.Any]
+        "UploadId" -> UploadId.asInstanceOf[js.Any]
       )
 
       Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))

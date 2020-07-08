@@ -7,66 +7,66 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object appstream {
-  type AccessEndpointList                       = js.Array[AccessEndpoint]
-  type AccountName                              = String
-  type AccountPassword                          = String
-  type Applications                             = js.Array[Application]
-  type AppstreamAgentVersion                    = String
-  type Arn                                      = String
-  type ArnList                                  = js.Array[Arn]
-  type AwsAccountId                             = String
-  type AwsAccountIdList                         = js.Array[AwsAccountId]
-  type BooleanObject                            = Boolean
-  type DescribeImagesMaxResults                 = Int
-  type Description                              = String
-  type DirectoryConfigList                      = js.Array[DirectoryConfig]
-  type DirectoryName                            = String
-  type DirectoryNameList                        = js.Array[DirectoryName]
-  type DisplayName                              = String
-  type Domain                                   = String
-  type DomainList                               = js.Array[Domain]
-  type EmbedHostDomain                          = String
-  type EmbedHostDomains                         = js.Array[EmbedHostDomain]
-  type FeedbackURL                              = String
-  type FleetAttributes                          = js.Array[FleetAttribute]
-  type FleetErrors                              = js.Array[FleetError]
-  type FleetList                                = js.Array[Fleet]
-  type ImageBuilderList                         = js.Array[ImageBuilder]
-  type ImageList                                = js.Array[Image]
-  type LastReportGenerationExecutionErrors      = js.Array[LastReportGenerationExecutionError]
-  type MaxResults                               = Int
-  type Metadata                                 = js.Dictionary[String]
-  type Name                                     = String
-  type OrganizationalUnitDistinguishedName      = String
+  type AccessEndpointList = js.Array[AccessEndpoint]
+  type AccountName = String
+  type AccountPassword = String
+  type Applications = js.Array[Application]
+  type AppstreamAgentVersion = String
+  type Arn = String
+  type ArnList = js.Array[Arn]
+  type AwsAccountId = String
+  type AwsAccountIdList = js.Array[AwsAccountId]
+  type BooleanObject = Boolean
+  type DescribeImagesMaxResults = Int
+  type Description = String
+  type DirectoryConfigList = js.Array[DirectoryConfig]
+  type DirectoryName = String
+  type DirectoryNameList = js.Array[DirectoryName]
+  type DisplayName = String
+  type Domain = String
+  type DomainList = js.Array[Domain]
+  type EmbedHostDomain = String
+  type EmbedHostDomains = js.Array[EmbedHostDomain]
+  type FeedbackURL = String
+  type FleetAttributes = js.Array[FleetAttribute]
+  type FleetErrors = js.Array[FleetError]
+  type FleetList = js.Array[Fleet]
+  type ImageBuilderList = js.Array[ImageBuilder]
+  type ImageList = js.Array[Image]
+  type LastReportGenerationExecutionErrors = js.Array[LastReportGenerationExecutionError]
+  type MaxResults = Int
+  type Metadata = js.Dictionary[String]
+  type Name = String
+  type OrganizationalUnitDistinguishedName = String
   type OrganizationalUnitDistinguishedNamesList = js.Array[OrganizationalUnitDistinguishedName]
-  type RedirectURL                              = String
-  type RegionName                               = String
-  type ResourceErrors                           = js.Array[ResourceError]
-  type ResourceIdentifier                       = String
-  type SecurityGroupIdList                      = js.Array[String]
-  type SessionList                              = js.Array[Session]
-  type SettingsGroup                            = String
-  type SharedImagePermissionsList               = js.Array[SharedImagePermissions]
-  type StackAttributes                          = js.Array[StackAttribute]
-  type StackErrors                              = js.Array[StackError]
-  type StackList                                = js.Array[Stack]
-  type StorageConnectorList                     = js.Array[StorageConnector]
-  type StreamingUrlUserId                       = String
-  type StringList                               = js.Array[String]
-  type SubnetIdList                             = js.Array[String]
-  type TagKey                                   = String
-  type TagKeyList                               = js.Array[TagKey]
-  type TagValue                                 = String
-  type Tags                                     = js.Dictionary[TagValue]
-  type Timestamp                                = js.Date
-  type UsageReportSubscriptionList              = js.Array[UsageReportSubscription]
-  type UserAttributeValue                       = String
-  type UserId                                   = String
-  type UserList                                 = js.Array[User]
-  type UserSettingList                          = js.Array[UserSetting]
-  type UserStackAssociationErrorList            = js.Array[UserStackAssociationError]
-  type UserStackAssociationList                 = js.Array[UserStackAssociation]
-  type Username                                 = String
+  type RedirectURL = String
+  type RegionName = String
+  type ResourceErrors = js.Array[ResourceError]
+  type ResourceIdentifier = String
+  type SecurityGroupIdList = js.Array[String]
+  type SessionList = js.Array[Session]
+  type SettingsGroup = String
+  type SharedImagePermissionsList = js.Array[SharedImagePermissions]
+  type StackAttributes = js.Array[StackAttribute]
+  type StackErrors = js.Array[StackError]
+  type StackList = js.Array[Stack]
+  type StorageConnectorList = js.Array[StorageConnector]
+  type StreamingUrlUserId = String
+  type StringList = js.Array[String]
+  type SubnetIdList = js.Array[String]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagValue = String
+  type Tags = js.Dictionary[TagValue]
+  type Timestamp = js.Date
+  type UsageReportSubscriptionList = js.Array[UsageReportSubscription]
+  type UserAttributeValue = String
+  type UserId = String
+  type UserList = js.Array[User]
+  type UserSettingList = js.Array[UserSetting]
+  type UserStackAssociationErrorList = js.Array[UserStackAssociationError]
+  type UserStackAssociationList = js.Array[UserStackAssociation]
+  type Username = String
 
   implicit final class AppStreamOps(private val service: AppStream) extends AnyVal {
 
@@ -190,63 +190,63 @@ package appstream {
       js.native
     def batchDisassociateUserStack(
         params: BatchDisassociateUserStackRequest
-    ): Request[BatchDisassociateUserStackResult]                                                          = js.native
-    def copyImage(params: CopyImageRequest): Request[CopyImageResponse]                                   = js.native
+    ): Request[BatchDisassociateUserStackResult] = js.native
+    def copyImage(params: CopyImageRequest): Request[CopyImageResponse] = js.native
     def createDirectoryConfig(params: CreateDirectoryConfigRequest): Request[CreateDirectoryConfigResult] = js.native
-    def createFleet(params: CreateFleetRequest): Request[CreateFleetResult]                               = js.native
-    def createImageBuilder(params: CreateImageBuilderRequest): Request[CreateImageBuilderResult]          = js.native
+    def createFleet(params: CreateFleetRequest): Request[CreateFleetResult] = js.native
+    def createImageBuilder(params: CreateImageBuilderRequest): Request[CreateImageBuilderResult] = js.native
     def createImageBuilderStreamingURL(
         params: CreateImageBuilderStreamingURLRequest
-    ): Request[CreateImageBuilderStreamingURLResult]                                             = js.native
-    def createStack(params: CreateStackRequest): Request[CreateStackResult]                      = js.native
+    ): Request[CreateImageBuilderStreamingURLResult] = js.native
+    def createStack(params: CreateStackRequest): Request[CreateStackResult] = js.native
     def createStreamingURL(params: CreateStreamingURLRequest): Request[CreateStreamingURLResult] = js.native
     def createUsageReportSubscription(
         params: CreateUsageReportSubscriptionRequest
-    ): Request[CreateUsageReportSubscriptionResult]                                                          = js.native
-    def createUser(params: CreateUserRequest): Request[CreateUserResult]                                     = js.native
-    def deleteDirectoryConfig(params: DeleteDirectoryConfigRequest): Request[DeleteDirectoryConfigResult]    = js.native
-    def deleteFleet(params: DeleteFleetRequest): Request[DeleteFleetResult]                                  = js.native
-    def deleteImage(params: DeleteImageRequest): Request[DeleteImageResult]                                  = js.native
-    def deleteImageBuilder(params: DeleteImageBuilderRequest): Request[DeleteImageBuilderResult]             = js.native
+    ): Request[CreateUsageReportSubscriptionResult] = js.native
+    def createUser(params: CreateUserRequest): Request[CreateUserResult] = js.native
+    def deleteDirectoryConfig(params: DeleteDirectoryConfigRequest): Request[DeleteDirectoryConfigResult] = js.native
+    def deleteFleet(params: DeleteFleetRequest): Request[DeleteFleetResult] = js.native
+    def deleteImage(params: DeleteImageRequest): Request[DeleteImageResult] = js.native
+    def deleteImageBuilder(params: DeleteImageBuilderRequest): Request[DeleteImageBuilderResult] = js.native
     def deleteImagePermissions(params: DeleteImagePermissionsRequest): Request[DeleteImagePermissionsResult] = js.native
-    def deleteStack(params: DeleteStackRequest): Request[DeleteStackResult]                                  = js.native
+    def deleteStack(params: DeleteStackRequest): Request[DeleteStackResult] = js.native
     def deleteUsageReportSubscription(
         params: DeleteUsageReportSubscriptionRequest
-    ): Request[DeleteUsageReportSubscriptionResult]                      = js.native
+    ): Request[DeleteUsageReportSubscriptionResult] = js.native
     def deleteUser(params: DeleteUserRequest): Request[DeleteUserResult] = js.native
     def describeDirectoryConfigs(params: DescribeDirectoryConfigsRequest): Request[DescribeDirectoryConfigsResult] =
       js.native
-    def describeFleets(params: DescribeFleetsRequest): Request[DescribeFleetsResult]                      = js.native
+    def describeFleets(params: DescribeFleetsRequest): Request[DescribeFleetsResult] = js.native
     def describeImageBuilders(params: DescribeImageBuildersRequest): Request[DescribeImageBuildersResult] = js.native
     def describeImagePermissions(params: DescribeImagePermissionsRequest): Request[DescribeImagePermissionsResult] =
       js.native
-    def describeImages(params: DescribeImagesRequest): Request[DescribeImagesResult]       = js.native
+    def describeImages(params: DescribeImagesRequest): Request[DescribeImagesResult] = js.native
     def describeSessions(params: DescribeSessionsRequest): Request[DescribeSessionsResult] = js.native
-    def describeStacks(params: DescribeStacksRequest): Request[DescribeStacksResult]       = js.native
+    def describeStacks(params: DescribeStacksRequest): Request[DescribeStacksResult] = js.native
     def describeUsageReportSubscriptions(
         params: DescribeUsageReportSubscriptionsRequest
     ): Request[DescribeUsageReportSubscriptionsResult] = js.native
     def describeUserStackAssociations(
         params: DescribeUserStackAssociationsRequest
-    ): Request[DescribeUserStackAssociationsResult]                                                          = js.native
-    def describeUsers(params: DescribeUsersRequest): Request[DescribeUsersResult]                            = js.native
-    def disableUser(params: DisableUserRequest): Request[DisableUserResult]                                  = js.native
-    def disassociateFleet(params: DisassociateFleetRequest): Request[DisassociateFleetResult]                = js.native
-    def enableUser(params: EnableUserRequest): Request[EnableUserResult]                                     = js.native
-    def expireSession(params: ExpireSessionRequest): Request[ExpireSessionResult]                            = js.native
-    def listAssociatedFleets(params: ListAssociatedFleetsRequest): Request[ListAssociatedFleetsResult]       = js.native
-    def listAssociatedStacks(params: ListAssociatedStacksRequest): Request[ListAssociatedStacksResult]       = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]        = js.native
-    def startFleet(params: StartFleetRequest): Request[StartFleetResult]                                     = js.native
-    def startImageBuilder(params: StartImageBuilderRequest): Request[StartImageBuilderResult]                = js.native
-    def stopFleet(params: StopFleetRequest): Request[StopFleetResult]                                        = js.native
-    def stopImageBuilder(params: StopImageBuilderRequest): Request[StopImageBuilderResult]                   = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                                = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                          = js.native
-    def updateDirectoryConfig(params: UpdateDirectoryConfigRequest): Request[UpdateDirectoryConfigResult]    = js.native
-    def updateFleet(params: UpdateFleetRequest): Request[UpdateFleetResult]                                  = js.native
+    ): Request[DescribeUserStackAssociationsResult] = js.native
+    def describeUsers(params: DescribeUsersRequest): Request[DescribeUsersResult] = js.native
+    def disableUser(params: DisableUserRequest): Request[DisableUserResult] = js.native
+    def disassociateFleet(params: DisassociateFleetRequest): Request[DisassociateFleetResult] = js.native
+    def enableUser(params: EnableUserRequest): Request[EnableUserResult] = js.native
+    def expireSession(params: ExpireSessionRequest): Request[ExpireSessionResult] = js.native
+    def listAssociatedFleets(params: ListAssociatedFleetsRequest): Request[ListAssociatedFleetsResult] = js.native
+    def listAssociatedStacks(params: ListAssociatedStacksRequest): Request[ListAssociatedStacksResult] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def startFleet(params: StartFleetRequest): Request[StartFleetResult] = js.native
+    def startImageBuilder(params: StartImageBuilderRequest): Request[StartImageBuilderResult] = js.native
+    def stopFleet(params: StopFleetRequest): Request[StopFleetResult] = js.native
+    def stopImageBuilder(params: StopImageBuilderRequest): Request[StopImageBuilderResult] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateDirectoryConfig(params: UpdateDirectoryConfigRequest): Request[UpdateDirectoryConfigResult] = js.native
+    def updateFleet(params: UpdateFleetRequest): Request[UpdateFleetResult] = js.native
     def updateImagePermissions(params: UpdateImagePermissionsRequest): Request[UpdateImagePermissionsResult] = js.native
-    def updateStack(params: UpdateStackRequest): Request[UpdateStackResult]                                  = js.native
+    def updateStack(params: UpdateStackRequest): Request[UpdateStackResult] = js.native
   }
 
   /**
@@ -285,10 +285,10 @@ package appstream {
   sealed trait Action extends js.Any
   object Action extends js.Object {
     val CLIPBOARD_COPY_FROM_LOCAL_DEVICE = "CLIPBOARD_COPY_FROM_LOCAL_DEVICE".asInstanceOf[Action]
-    val CLIPBOARD_COPY_TO_LOCAL_DEVICE   = "CLIPBOARD_COPY_TO_LOCAL_DEVICE".asInstanceOf[Action]
-    val FILE_UPLOAD                      = "FILE_UPLOAD".asInstanceOf[Action]
-    val FILE_DOWNLOAD                    = "FILE_DOWNLOAD".asInstanceOf[Action]
-    val PRINTING_TO_LOCAL_DEVICE         = "PRINTING_TO_LOCAL_DEVICE".asInstanceOf[Action]
+    val CLIPBOARD_COPY_TO_LOCAL_DEVICE = "CLIPBOARD_COPY_TO_LOCAL_DEVICE".asInstanceOf[Action]
+    val FILE_UPLOAD = "FILE_UPLOAD".asInstanceOf[Action]
+    val FILE_DOWNLOAD = "FILE_DOWNLOAD".asInstanceOf[Action]
+    val PRINTING_TO_LOCAL_DEVICE = "PRINTING_TO_LOCAL_DEVICE".asInstanceOf[Action]
 
     val values = js.Object.freeze(
       js.Array(
@@ -424,8 +424,8 @@ package appstream {
   @js.native
   sealed trait AuthenticationType extends js.Any
   object AuthenticationType extends js.Object {
-    val API      = "API".asInstanceOf[AuthenticationType]
-    val SAML     = "SAML".asInstanceOf[AuthenticationType]
+    val API = "API".asInstanceOf[AuthenticationType]
+    val SAML = "SAML".asInstanceOf[AuthenticationType]
     val USERPOOL = "USERPOOL".asInstanceOf[AuthenticationType]
 
     val values = js.Object.freeze(js.Array(API, SAML, USERPOOL))
@@ -568,8 +568,8 @@ package appstream {
     ): CopyImageRequest = {
       val __obj = js.Dynamic.literal(
         "DestinationImageName" -> DestinationImageName.asInstanceOf[js.Any],
-        "DestinationRegion"    -> DestinationRegion.asInstanceOf[js.Any],
-        "SourceImageName"      -> SourceImageName.asInstanceOf[js.Any]
+        "DestinationRegion" -> DestinationRegion.asInstanceOf[js.Any],
+        "SourceImageName" -> SourceImageName.asInstanceOf[js.Any]
       )
 
       DestinationImageDescription.foreach(__v =>
@@ -610,9 +610,9 @@ package appstream {
         ServiceAccountCredentials: ServiceAccountCredentials
     ): CreateDirectoryConfigRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryName"                        -> DirectoryName.asInstanceOf[js.Any],
+        "DirectoryName" -> DirectoryName.asInstanceOf[js.Any],
         "OrganizationalUnitDistinguishedNames" -> OrganizationalUnitDistinguishedNames.asInstanceOf[js.Any],
-        "ServiceAccountCredentials"            -> ServiceAccountCredentials.asInstanceOf[js.Any]
+        "ServiceAccountCredentials" -> ServiceAccountCredentials.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateDirectoryConfigRequest]
@@ -677,8 +677,8 @@ package appstream {
     ): CreateFleetRequest = {
       val __obj = js.Dynamic.literal(
         "ComputeCapacity" -> ComputeCapacity.asInstanceOf[js.Any],
-        "InstanceType"    -> InstanceType.asInstanceOf[js.Any],
-        "Name"            -> Name.asInstanceOf[js.Any]
+        "InstanceType" -> InstanceType.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -756,7 +756,7 @@ package appstream {
     ): CreateImageBuilderRequest = {
       val __obj = js.Dynamic.literal(
         "InstanceType" -> InstanceType.asInstanceOf[js.Any],
-        "Name"         -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       AccessEndpoints.foreach(__v => __obj.updateDynamic("AccessEndpoints")(__v.asInstanceOf[js.Any]))
@@ -919,7 +919,7 @@ package appstream {
       val __obj = js.Dynamic.literal(
         "FleetName" -> FleetName.asInstanceOf[js.Any],
         "StackName" -> StackName.asInstanceOf[js.Any],
-        "UserId"    -> UserId.asInstanceOf[js.Any]
+        "UserId" -> UserId.asInstanceOf[js.Any]
       )
 
       ApplicationId.foreach(__v => __obj.updateDynamic("ApplicationId")(__v.asInstanceOf[js.Any]))
@@ -1000,7 +1000,7 @@ package appstream {
     ): CreateUserRequest = {
       val __obj = js.Dynamic.literal(
         "AuthenticationType" -> AuthenticationType.asInstanceOf[js.Any],
-        "UserName"           -> UserName.asInstanceOf[js.Any]
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       FirstName.foreach(__v => __obj.updateDynamic("FirstName")(__v.asInstanceOf[js.Any]))
@@ -1132,7 +1132,7 @@ package appstream {
         SharedAccountId: AwsAccountId
     ): DeleteImagePermissionsRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"            -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "SharedAccountId" -> SharedAccountId.asInstanceOf[js.Any]
       )
 
@@ -1258,7 +1258,7 @@ package appstream {
     ): DeleteUserRequest = {
       val __obj = js.Dynamic.literal(
         "AuthenticationType" -> AuthenticationType.asInstanceOf[js.Any],
-        "UserName"           -> UserName.asInstanceOf[js.Any]
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteUserRequest]
@@ -1762,7 +1762,7 @@ package appstream {
     ): DisableUserRequest = {
       val __obj = js.Dynamic.literal(
         "AuthenticationType" -> AuthenticationType.asInstanceOf[js.Any],
-        "UserName"           -> UserName.asInstanceOf[js.Any]
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DisableUserRequest]
@@ -1854,7 +1854,7 @@ package appstream {
     ): EnableUserRequest = {
       val __obj = js.Dynamic.literal(
         "AuthenticationType" -> AuthenticationType.asInstanceOf[js.Any],
-        "UserName"           -> UserName.asInstanceOf[js.Any]
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[EnableUserRequest]
@@ -1955,11 +1955,11 @@ package appstream {
         VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): Fleet = {
       val __obj = js.Dynamic.literal(
-        "Arn"                   -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "ComputeCapacityStatus" -> ComputeCapacityStatus.asInstanceOf[js.Any],
-        "InstanceType"          -> InstanceType.asInstanceOf[js.Any],
-        "Name"                  -> Name.asInstanceOf[js.Any],
-        "State"                 -> State.asInstanceOf[js.Any]
+        "InstanceType" -> InstanceType.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "State" -> State.asInstanceOf[js.Any]
       )
 
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
@@ -1992,10 +1992,10 @@ package appstream {
   @js.native
   sealed trait FleetAttribute extends js.Any
   object FleetAttribute extends js.Object {
-    val VPC_CONFIGURATION                    = "VPC_CONFIGURATION".asInstanceOf[FleetAttribute]
+    val VPC_CONFIGURATION = "VPC_CONFIGURATION".asInstanceOf[FleetAttribute]
     val VPC_CONFIGURATION_SECURITY_GROUP_IDS = "VPC_CONFIGURATION_SECURITY_GROUP_IDS".asInstanceOf[FleetAttribute]
-    val DOMAIN_JOIN_INFO                     = "DOMAIN_JOIN_INFO".asInstanceOf[FleetAttribute]
-    val IAM_ROLE_ARN                         = "IAM_ROLE_ARN".asInstanceOf[FleetAttribute]
+    val DOMAIN_JOIN_INFO = "DOMAIN_JOIN_INFO".asInstanceOf[FleetAttribute]
+    val IAM_ROLE_ARN = "IAM_ROLE_ARN".asInstanceOf[FleetAttribute]
 
     val values = js.Object.freeze(
       js.Array(VPC_CONFIGURATION, VPC_CONFIGURATION_SECURITY_GROUP_IDS, DOMAIN_JOIN_INFO, IAM_ROLE_ARN)
@@ -2033,34 +2033,34 @@ package appstream {
       "IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION".asInstanceOf[FleetErrorCode]
     val IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION =
       "IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION".asInstanceOf[FleetErrorCode]
-    val NETWORK_INTERFACE_LIMIT_EXCEEDED     = "NETWORK_INTERFACE_LIMIT_EXCEEDED".asInstanceOf[FleetErrorCode]
-    val INTERNAL_SERVICE_ERROR               = "INTERNAL_SERVICE_ERROR".asInstanceOf[FleetErrorCode]
-    val IAM_SERVICE_ROLE_IS_MISSING          = "IAM_SERVICE_ROLE_IS_MISSING".asInstanceOf[FleetErrorCode]
-    val MACHINE_ROLE_IS_MISSING              = "MACHINE_ROLE_IS_MISSING".asInstanceOf[FleetErrorCode]
-    val STS_DISABLED_IN_REGION               = "STS_DISABLED_IN_REGION".asInstanceOf[FleetErrorCode]
+    val NETWORK_INTERFACE_LIMIT_EXCEEDED = "NETWORK_INTERFACE_LIMIT_EXCEEDED".asInstanceOf[FleetErrorCode]
+    val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[FleetErrorCode]
+    val IAM_SERVICE_ROLE_IS_MISSING = "IAM_SERVICE_ROLE_IS_MISSING".asInstanceOf[FleetErrorCode]
+    val MACHINE_ROLE_IS_MISSING = "MACHINE_ROLE_IS_MISSING".asInstanceOf[FleetErrorCode]
+    val STS_DISABLED_IN_REGION = "STS_DISABLED_IN_REGION".asInstanceOf[FleetErrorCode]
     val SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES = "SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES".asInstanceOf[FleetErrorCode]
     val IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION =
       "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION".asInstanceOf[FleetErrorCode]
-    val SUBNET_NOT_FOUND             = "SUBNET_NOT_FOUND".asInstanceOf[FleetErrorCode]
-    val IMAGE_NOT_FOUND              = "IMAGE_NOT_FOUND".asInstanceOf[FleetErrorCode]
+    val SUBNET_NOT_FOUND = "SUBNET_NOT_FOUND".asInstanceOf[FleetErrorCode]
+    val IMAGE_NOT_FOUND = "IMAGE_NOT_FOUND".asInstanceOf[FleetErrorCode]
     val INVALID_SUBNET_CONFIGURATION = "INVALID_SUBNET_CONFIGURATION".asInstanceOf[FleetErrorCode]
-    val SECURITY_GROUPS_NOT_FOUND    = "SECURITY_GROUPS_NOT_FOUND".asInstanceOf[FleetErrorCode]
-    val IGW_NOT_ATTACHED             = "IGW_NOT_ATTACHED".asInstanceOf[FleetErrorCode]
+    val SECURITY_GROUPS_NOT_FOUND = "SECURITY_GROUPS_NOT_FOUND".asInstanceOf[FleetErrorCode]
+    val IGW_NOT_ATTACHED = "IGW_NOT_ATTACHED".asInstanceOf[FleetErrorCode]
     val IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION =
       "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION".asInstanceOf[FleetErrorCode]
-    val DOMAIN_JOIN_ERROR_FILE_NOT_FOUND        = "DOMAIN_JOIN_ERROR_FILE_NOT_FOUND".asInstanceOf[FleetErrorCode]
-    val DOMAIN_JOIN_ERROR_ACCESS_DENIED         = "DOMAIN_JOIN_ERROR_ACCESS_DENIED".asInstanceOf[FleetErrorCode]
-    val DOMAIN_JOIN_ERROR_LOGON_FAILURE         = "DOMAIN_JOIN_ERROR_LOGON_FAILURE".asInstanceOf[FleetErrorCode]
-    val DOMAIN_JOIN_ERROR_INVALID_PARAMETER     = "DOMAIN_JOIN_ERROR_INVALID_PARAMETER".asInstanceOf[FleetErrorCode]
-    val DOMAIN_JOIN_ERROR_MORE_DATA             = "DOMAIN_JOIN_ERROR_MORE_DATA".asInstanceOf[FleetErrorCode]
-    val DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN        = "DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN".asInstanceOf[FleetErrorCode]
-    val DOMAIN_JOIN_ERROR_NOT_SUPPORTED         = "DOMAIN_JOIN_ERROR_NOT_SUPPORTED".asInstanceOf[FleetErrorCode]
+    val DOMAIN_JOIN_ERROR_FILE_NOT_FOUND = "DOMAIN_JOIN_ERROR_FILE_NOT_FOUND".asInstanceOf[FleetErrorCode]
+    val DOMAIN_JOIN_ERROR_ACCESS_DENIED = "DOMAIN_JOIN_ERROR_ACCESS_DENIED".asInstanceOf[FleetErrorCode]
+    val DOMAIN_JOIN_ERROR_LOGON_FAILURE = "DOMAIN_JOIN_ERROR_LOGON_FAILURE".asInstanceOf[FleetErrorCode]
+    val DOMAIN_JOIN_ERROR_INVALID_PARAMETER = "DOMAIN_JOIN_ERROR_INVALID_PARAMETER".asInstanceOf[FleetErrorCode]
+    val DOMAIN_JOIN_ERROR_MORE_DATA = "DOMAIN_JOIN_ERROR_MORE_DATA".asInstanceOf[FleetErrorCode]
+    val DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN = "DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN".asInstanceOf[FleetErrorCode]
+    val DOMAIN_JOIN_ERROR_NOT_SUPPORTED = "DOMAIN_JOIN_ERROR_NOT_SUPPORTED".asInstanceOf[FleetErrorCode]
     val DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME = "DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME".asInstanceOf[FleetErrorCode]
     val DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED =
       "DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED".asInstanceOf[FleetErrorCode]
     val DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED =
       "DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED".asInstanceOf[FleetErrorCode]
-    val DOMAIN_JOIN_NERR_PASSWORD_EXPIRED  = "DOMAIN_JOIN_NERR_PASSWORD_EXPIRED".asInstanceOf[FleetErrorCode]
+    val DOMAIN_JOIN_NERR_PASSWORD_EXPIRED = "DOMAIN_JOIN_NERR_PASSWORD_EXPIRED".asInstanceOf[FleetErrorCode]
     val DOMAIN_JOIN_INTERNAL_SERVICE_ERROR = "DOMAIN_JOIN_INTERNAL_SERVICE_ERROR".asInstanceOf[FleetErrorCode]
 
     val values = js.Object.freeze(
@@ -2101,9 +2101,9 @@ package appstream {
   sealed trait FleetState extends js.Any
   object FleetState extends js.Object {
     val STARTING = "STARTING".asInstanceOf[FleetState]
-    val RUNNING  = "RUNNING".asInstanceOf[FleetState]
+    val RUNNING = "RUNNING".asInstanceOf[FleetState]
     val STOPPING = "STOPPING".asInstanceOf[FleetState]
-    val STOPPED  = "STOPPED".asInstanceOf[FleetState]
+    val STOPPED = "STOPPED".asInstanceOf[FleetState]
 
     val values = js.Object.freeze(js.Array(STARTING, RUNNING, STOPPING, STOPPED))
   }
@@ -2264,15 +2264,15 @@ package appstream {
   @js.native
   sealed trait ImageBuilderState extends js.Any
   object ImageBuilderState extends js.Object {
-    val PENDING        = "PENDING".asInstanceOf[ImageBuilderState]
+    val PENDING = "PENDING".asInstanceOf[ImageBuilderState]
     val UPDATING_AGENT = "UPDATING_AGENT".asInstanceOf[ImageBuilderState]
-    val RUNNING        = "RUNNING".asInstanceOf[ImageBuilderState]
-    val STOPPING       = "STOPPING".asInstanceOf[ImageBuilderState]
-    val STOPPED        = "STOPPED".asInstanceOf[ImageBuilderState]
-    val REBOOTING      = "REBOOTING".asInstanceOf[ImageBuilderState]
-    val SNAPSHOTTING   = "SNAPSHOTTING".asInstanceOf[ImageBuilderState]
-    val DELETING       = "DELETING".asInstanceOf[ImageBuilderState]
-    val FAILED         = "FAILED".asInstanceOf[ImageBuilderState]
+    val RUNNING = "RUNNING".asInstanceOf[ImageBuilderState]
+    val STOPPING = "STOPPING".asInstanceOf[ImageBuilderState]
+    val STOPPED = "STOPPED".asInstanceOf[ImageBuilderState]
+    val REBOOTING = "REBOOTING".asInstanceOf[ImageBuilderState]
+    val SNAPSHOTTING = "SNAPSHOTTING".asInstanceOf[ImageBuilderState]
+    val DELETING = "DELETING".asInstanceOf[ImageBuilderState]
+    val FAILED = "FAILED".asInstanceOf[ImageBuilderState]
 
     val values = js.Object.freeze(
       js.Array(PENDING, UPDATING_AGENT, RUNNING, STOPPING, STOPPED, REBOOTING, SNAPSHOTTING, DELETING, FAILED)
@@ -2304,7 +2304,7 @@ package appstream {
   @js.native
   sealed trait ImageBuilderStateChangeReasonCode extends js.Any
   object ImageBuilderStateChangeReasonCode extends js.Object {
-    val INTERNAL_ERROR    = "INTERNAL_ERROR".asInstanceOf[ImageBuilderStateChangeReasonCode]
+    val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[ImageBuilderStateChangeReasonCode]
     val IMAGE_UNAVAILABLE = "IMAGE_UNAVAILABLE".asInstanceOf[ImageBuilderStateChangeReasonCode]
 
     val values = js.Object.freeze(js.Array(INTERNAL_ERROR, IMAGE_UNAVAILABLE))
@@ -2335,11 +2335,11 @@ package appstream {
   @js.native
   sealed trait ImageState extends js.Any
   object ImageState extends js.Object {
-    val PENDING   = "PENDING".asInstanceOf[ImageState]
+    val PENDING = "PENDING".asInstanceOf[ImageState]
     val AVAILABLE = "AVAILABLE".asInstanceOf[ImageState]
-    val FAILED    = "FAILED".asInstanceOf[ImageState]
-    val COPYING   = "COPYING".asInstanceOf[ImageState]
-    val DELETING  = "DELETING".asInstanceOf[ImageState]
+    val FAILED = "FAILED".asInstanceOf[ImageState]
+    val COPYING = "COPYING".asInstanceOf[ImageState]
+    val DELETING = "DELETING".asInstanceOf[ImageState]
 
     val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, FAILED, COPYING, DELETING))
   }
@@ -2369,9 +2369,9 @@ package appstream {
   @js.native
   sealed trait ImageStateChangeReasonCode extends js.Any
   object ImageStateChangeReasonCode extends js.Object {
-    val INTERNAL_ERROR              = "INTERNAL_ERROR".asInstanceOf[ImageStateChangeReasonCode]
+    val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[ImageStateChangeReasonCode]
     val IMAGE_BUILDER_NOT_AVAILABLE = "IMAGE_BUILDER_NOT_AVAILABLE".asInstanceOf[ImageStateChangeReasonCode]
-    val IMAGE_COPY_FAILURE          = "IMAGE_COPY_FAILURE".asInstanceOf[ImageStateChangeReasonCode]
+    val IMAGE_COPY_FAILURE = "IMAGE_COPY_FAILURE".asInstanceOf[ImageStateChangeReasonCode]
 
     val values = js.Object.freeze(js.Array(INTERNAL_ERROR, IMAGE_BUILDER_NOT_AVAILABLE, IMAGE_COPY_FAILURE))
   }
@@ -2516,7 +2516,7 @@ package appstream {
   sealed trait MessageAction extends js.Any
   object MessageAction extends js.Object {
     val SUPPRESS = "SUPPRESS".asInstanceOf[MessageAction]
-    val RESEND   = "RESEND".asInstanceOf[MessageAction]
+    val RESEND = "RESEND".asInstanceOf[MessageAction]
 
     val values = js.Object.freeze(js.Array(SUPPRESS, RESEND))
   }
@@ -2546,7 +2546,7 @@ package appstream {
   @js.native
   sealed trait Permission extends js.Any
   object Permission extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[Permission]
+    val ENABLED = "ENABLED".asInstanceOf[Permission]
     val DISABLED = "DISABLED".asInstanceOf[Permission]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -2555,7 +2555,7 @@ package appstream {
   @js.native
   sealed trait PlatformType extends js.Any
   object PlatformType extends js.Object {
-    val WINDOWS             = "WINDOWS".asInstanceOf[PlatformType]
+    val WINDOWS = "WINDOWS".asInstanceOf[PlatformType]
     val WINDOWS_SERVER_2016 = "WINDOWS_SERVER_2016".asInstanceOf[PlatformType]
     val WINDOWS_SERVER_2019 = "WINDOWS_SERVER_2019".asInstanceOf[PlatformType]
 
@@ -2603,7 +2603,7 @@ package appstream {
         AccountPassword: AccountPassword
     ): ServiceAccountCredentials = {
       val __obj = js.Dynamic.literal(
-        "AccountName"     -> AccountName.asInstanceOf[js.Any],
+        "AccountName" -> AccountName.asInstanceOf[js.Any],
         "AccountPassword" -> AccountPassword.asInstanceOf[js.Any]
       )
 
@@ -2644,10 +2644,10 @@ package appstream {
     ): Session = {
       val __obj = js.Dynamic.literal(
         "FleetName" -> FleetName.asInstanceOf[js.Any],
-        "Id"        -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "StackName" -> StackName.asInstanceOf[js.Any],
-        "State"     -> State.asInstanceOf[js.Any],
-        "UserId"    -> UserId.asInstanceOf[js.Any]
+        "State" -> State.asInstanceOf[js.Any],
+        "UserId" -> UserId.asInstanceOf[js.Any]
       )
 
       AuthenticationType.foreach(__v => __obj.updateDynamic("AuthenticationType")(__v.asInstanceOf[js.Any]))
@@ -2664,7 +2664,7 @@ package appstream {
   @js.native
   sealed trait SessionConnectionState extends js.Any
   object SessionConnectionState extends js.Object {
-    val CONNECTED     = "CONNECTED".asInstanceOf[SessionConnectionState]
+    val CONNECTED = "CONNECTED".asInstanceOf[SessionConnectionState]
     val NOT_CONNECTED = "NOT_CONNECTED".asInstanceOf[SessionConnectionState]
 
     val values = js.Object.freeze(js.Array(CONNECTED, NOT_CONNECTED))
@@ -2676,7 +2676,7 @@ package appstream {
   @js.native
   sealed trait SessionState extends js.Any
   object SessionState extends js.Object {
-    val ACTIVE  = "ACTIVE".asInstanceOf[SessionState]
+    val ACTIVE = "ACTIVE".asInstanceOf[SessionState]
     val PENDING = "PENDING".asInstanceOf[SessionState]
     val EXPIRED = "EXPIRED".asInstanceOf[SessionState]
 
@@ -2700,7 +2700,7 @@ package appstream {
     ): SharedImagePermissions = {
       val __obj = js.Dynamic.literal(
         "imagePermissions" -> imagePermissions.asInstanceOf[js.Any],
-        "sharedAccountId"  -> sharedAccountId.asInstanceOf[js.Any]
+        "sharedAccountId" -> sharedAccountId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[SharedImagePermissions]
@@ -2767,17 +2767,17 @@ package appstream {
   @js.native
   sealed trait StackAttribute extends js.Any
   object StackAttribute extends js.Object {
-    val STORAGE_CONNECTORS             = "STORAGE_CONNECTORS".asInstanceOf[StackAttribute]
-    val STORAGE_CONNECTOR_HOMEFOLDERS  = "STORAGE_CONNECTOR_HOMEFOLDERS".asInstanceOf[StackAttribute]
+    val STORAGE_CONNECTORS = "STORAGE_CONNECTORS".asInstanceOf[StackAttribute]
+    val STORAGE_CONNECTOR_HOMEFOLDERS = "STORAGE_CONNECTOR_HOMEFOLDERS".asInstanceOf[StackAttribute]
     val STORAGE_CONNECTOR_GOOGLE_DRIVE = "STORAGE_CONNECTOR_GOOGLE_DRIVE".asInstanceOf[StackAttribute]
-    val STORAGE_CONNECTOR_ONE_DRIVE    = "STORAGE_CONNECTOR_ONE_DRIVE".asInstanceOf[StackAttribute]
-    val REDIRECT_URL                   = "REDIRECT_URL".asInstanceOf[StackAttribute]
-    val FEEDBACK_URL                   = "FEEDBACK_URL".asInstanceOf[StackAttribute]
-    val THEME_NAME                     = "THEME_NAME".asInstanceOf[StackAttribute]
-    val USER_SETTINGS                  = "USER_SETTINGS".asInstanceOf[StackAttribute]
-    val EMBED_HOST_DOMAINS             = "EMBED_HOST_DOMAINS".asInstanceOf[StackAttribute]
-    val IAM_ROLE_ARN                   = "IAM_ROLE_ARN".asInstanceOf[StackAttribute]
-    val ACCESS_ENDPOINTS               = "ACCESS_ENDPOINTS".asInstanceOf[StackAttribute]
+    val STORAGE_CONNECTOR_ONE_DRIVE = "STORAGE_CONNECTOR_ONE_DRIVE".asInstanceOf[StackAttribute]
+    val REDIRECT_URL = "REDIRECT_URL".asInstanceOf[StackAttribute]
+    val FEEDBACK_URL = "FEEDBACK_URL".asInstanceOf[StackAttribute]
+    val THEME_NAME = "THEME_NAME".asInstanceOf[StackAttribute]
+    val USER_SETTINGS = "USER_SETTINGS".asInstanceOf[StackAttribute]
+    val EMBED_HOST_DOMAINS = "EMBED_HOST_DOMAINS".asInstanceOf[StackAttribute]
+    val IAM_ROLE_ARN = "IAM_ROLE_ARN".asInstanceOf[StackAttribute]
+    val ACCESS_ENDPOINTS = "ACCESS_ENDPOINTS".asInstanceOf[StackAttribute]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2822,7 +2822,7 @@ package appstream {
   sealed trait StackErrorCode extends js.Any
   object StackErrorCode extends js.Object {
     val STORAGE_CONNECTOR_ERROR = "STORAGE_CONNECTOR_ERROR".asInstanceOf[StackErrorCode]
-    val INTERNAL_SERVICE_ERROR  = "INTERNAL_SERVICE_ERROR".asInstanceOf[StackErrorCode]
+    val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[StackErrorCode]
 
     val values = js.Object.freeze(js.Array(STORAGE_CONNECTOR_ERROR, INTERNAL_SERVICE_ERROR))
   }
@@ -2993,9 +2993,9 @@ package appstream {
   @js.native
   sealed trait StorageConnectorType extends js.Any
   object StorageConnectorType extends js.Object {
-    val HOMEFOLDERS  = "HOMEFOLDERS".asInstanceOf[StorageConnectorType]
+    val HOMEFOLDERS = "HOMEFOLDERS".asInstanceOf[StorageConnectorType]
     val GOOGLE_DRIVE = "GOOGLE_DRIVE".asInstanceOf[StorageConnectorType]
-    val ONE_DRIVE    = "ONE_DRIVE".asInstanceOf[StorageConnectorType]
+    val ONE_DRIVE = "ONE_DRIVE".asInstanceOf[StorageConnectorType]
 
     val values = js.Object.freeze(js.Array(HOMEFOLDERS, GOOGLE_DRIVE, ONE_DRIVE))
   }
@@ -3014,7 +3014,7 @@ package appstream {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -3048,7 +3048,7 @@ package appstream {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -3211,8 +3211,8 @@ package appstream {
     ): UpdateImagePermissionsRequest = {
       val __obj = js.Dynamic.literal(
         "ImagePermissions" -> ImagePermissions.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any],
-        "SharedAccountId"  -> SharedAccountId.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any],
+        "SharedAccountId" -> SharedAccountId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateImagePermissionsRequest]
@@ -3302,8 +3302,8 @@ package appstream {
   @js.native
   sealed trait UsageReportExecutionErrorCode extends js.Any
   object UsageReportExecutionErrorCode extends js.Object {
-    val RESOURCE_NOT_FOUND     = "RESOURCE_NOT_FOUND".asInstanceOf[UsageReportExecutionErrorCode]
-    val ACCESS_DENIED          = "ACCESS_DENIED".asInstanceOf[UsageReportExecutionErrorCode]
+    val RESOURCE_NOT_FOUND = "RESOURCE_NOT_FOUND".asInstanceOf[UsageReportExecutionErrorCode]
+    val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[UsageReportExecutionErrorCode]
     val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[UsageReportExecutionErrorCode]
 
     val values = js.Object.freeze(js.Array(RESOURCE_NOT_FOUND, ACCESS_DENIED, INTERNAL_SERVICE_ERROR))
@@ -3403,7 +3403,7 @@ package appstream {
         Permission: Permission
     ): UserSetting = {
       val __obj = js.Dynamic.literal(
-        "Action"     -> Action.asInstanceOf[js.Any],
+        "Action" -> Action.asInstanceOf[js.Any],
         "Permission" -> Permission.asInstanceOf[js.Any]
       )
 
@@ -3432,8 +3432,8 @@ package appstream {
     ): UserStackAssociation = {
       val __obj = js.Dynamic.literal(
         "AuthenticationType" -> AuthenticationType.asInstanceOf[js.Any],
-        "StackName"          -> StackName.asInstanceOf[js.Any],
-        "UserName"           -> UserName.asInstanceOf[js.Any]
+        "StackName" -> StackName.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
       SendEmailNotification.foreach(__v => __obj.updateDynamic("SendEmailNotification")(__v.asInstanceOf[js.Any]))
@@ -3469,9 +3469,9 @@ package appstream {
   @js.native
   sealed trait UserStackAssociationErrorCode extends js.Any
   object UserStackAssociationErrorCode extends js.Object {
-    val STACK_NOT_FOUND     = "STACK_NOT_FOUND".asInstanceOf[UserStackAssociationErrorCode]
+    val STACK_NOT_FOUND = "STACK_NOT_FOUND".asInstanceOf[UserStackAssociationErrorCode]
     val USER_NAME_NOT_FOUND = "USER_NAME_NOT_FOUND".asInstanceOf[UserStackAssociationErrorCode]
-    val INTERNAL_ERROR      = "INTERNAL_ERROR".asInstanceOf[UserStackAssociationErrorCode]
+    val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[UserStackAssociationErrorCode]
 
     val values = js.Object.freeze(js.Array(STACK_NOT_FOUND, USER_NAME_NOT_FOUND, INTERNAL_ERROR))
   }
@@ -3479,9 +3479,9 @@ package appstream {
   @js.native
   sealed trait VisibilityType extends js.Any
   object VisibilityType extends js.Object {
-    val PUBLIC  = "PUBLIC".asInstanceOf[VisibilityType]
+    val PUBLIC = "PUBLIC".asInstanceOf[VisibilityType]
     val PRIVATE = "PRIVATE".asInstanceOf[VisibilityType]
-    val SHARED  = "SHARED".asInstanceOf[VisibilityType]
+    val SHARED = "SHARED".asInstanceOf[VisibilityType]
 
     val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE, SHARED))
   }

@@ -7,32 +7,32 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object migrationhub {
-  type ApplicationId                   = String
-  type ApplicationIds                  = js.Array[ApplicationId]
-  type ApplicationStateList            = js.Array[ApplicationState]
-  type ConfigurationId                 = String
-  type CreatedArtifactDescription      = String
-  type CreatedArtifactList             = js.Array[CreatedArtifact]
-  type CreatedArtifactName             = String
-  type DiscoveredResourceDescription   = String
-  type DiscoveredResourceList          = js.Array[DiscoveredResource]
-  type DryRun                          = Boolean
-  type LatestResourceAttributeList     = js.Array[ResourceAttribute]
-  type MaxResults                      = Int
-  type MaxResultsCreatedArtifacts      = Int
-  type MaxResultsResources             = Int
-  type MigrationTaskName               = String
-  type MigrationTaskSummaryList        = js.Array[MigrationTaskSummary]
-  type NextUpdateSeconds               = Int
-  type ProgressPercent                 = Int
-  type ProgressUpdateStream            = String
+  type ApplicationId = String
+  type ApplicationIds = js.Array[ApplicationId]
+  type ApplicationStateList = js.Array[ApplicationState]
+  type ConfigurationId = String
+  type CreatedArtifactDescription = String
+  type CreatedArtifactList = js.Array[CreatedArtifact]
+  type CreatedArtifactName = String
+  type DiscoveredResourceDescription = String
+  type DiscoveredResourceList = js.Array[DiscoveredResource]
+  type DryRun = Boolean
+  type LatestResourceAttributeList = js.Array[ResourceAttribute]
+  type MaxResults = Int
+  type MaxResultsCreatedArtifacts = Int
+  type MaxResultsResources = Int
+  type MigrationTaskName = String
+  type MigrationTaskSummaryList = js.Array[MigrationTaskSummary]
+  type NextUpdateSeconds = Int
+  type ProgressPercent = Int
+  type ProgressUpdateStream = String
   type ProgressUpdateStreamSummaryList = js.Array[ProgressUpdateStreamSummary]
-  type ResourceAttributeList           = js.Array[ResourceAttribute]
-  type ResourceAttributeValue          = String
-  type ResourceName                    = String
-  type StatusDetail                    = String
-  type Token                           = String
-  type UpdateDateTime                  = js.Date
+  type ResourceAttributeList = js.Array[ResourceAttribute]
+  type ResourceAttributeValue = String
+  type ResourceName = String
+  type StatusDetail = String
+  type Token = String
+  type UpdateDateTime = js.Date
 
   implicit final class MigrationHubOps(private val service: MigrationHub) extends AnyVal {
 
@@ -109,10 +109,10 @@ package migrationhub {
     ): Request[DisassociateCreatedArtifactResult] = js.native
     def disassociateDiscoveredResource(
         params: DisassociateDiscoveredResourceRequest
-    ): Request[DisassociateDiscoveredResourceResult]                                                      = js.native
-    def importMigrationTask(params: ImportMigrationTaskRequest): Request[ImportMigrationTaskResult]       = js.native
+    ): Request[DisassociateDiscoveredResourceResult] = js.native
+    def importMigrationTask(params: ImportMigrationTaskRequest): Request[ImportMigrationTaskResult] = js.native
     def listApplicationStates(params: ListApplicationStatesRequest): Request[ListApplicationStatesResult] = js.native
-    def listCreatedArtifacts(params: ListCreatedArtifactsRequest): Request[ListCreatedArtifactsResult]    = js.native
+    def listCreatedArtifacts(params: ListCreatedArtifactsRequest): Request[ListCreatedArtifactsResult] = js.native
     def listDiscoveredResources(params: ListDiscoveredResourcesRequest): Request[ListDiscoveredResourcesResult] =
       js.native
     def listMigrationTasks(params: ListMigrationTasksRequest): Request[ListMigrationTasksResult] = js.native
@@ -154,7 +154,7 @@ package migrationhub {
   object ApplicationStatus extends js.Object {
     val NOT_STARTED = "NOT_STARTED".asInstanceOf[ApplicationStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ApplicationStatus]
-    val COMPLETED   = "COMPLETED".asInstanceOf[ApplicationStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[ApplicationStatus]
 
     val values = js.Object.freeze(js.Array(NOT_STARTED, IN_PROGRESS, COMPLETED))
   }
@@ -176,8 +176,8 @@ package migrationhub {
         DryRun: js.UndefOr[DryRun] = js.undefined
     ): AssociateCreatedArtifactRequest = {
       val __obj = js.Dynamic.literal(
-        "CreatedArtifact"      -> CreatedArtifact.asInstanceOf[js.Any],
-        "MigrationTaskName"    -> MigrationTaskName.asInstanceOf[js.Any],
+        "CreatedArtifact" -> CreatedArtifact.asInstanceOf[js.Any],
+        "MigrationTaskName" -> MigrationTaskName.asInstanceOf[js.Any],
         "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any]
       )
 
@@ -216,8 +216,8 @@ package migrationhub {
         DryRun: js.UndefOr[DryRun] = js.undefined
     ): AssociateDiscoveredResourceRequest = {
       val __obj = js.Dynamic.literal(
-        "DiscoveredResource"   -> DiscoveredResource.asInstanceOf[js.Any],
-        "MigrationTaskName"    -> MigrationTaskName.asInstanceOf[js.Any],
+        "DiscoveredResource" -> DiscoveredResource.asInstanceOf[js.Any],
+        "MigrationTaskName" -> MigrationTaskName.asInstanceOf[js.Any],
         "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any]
       )
 
@@ -381,7 +381,7 @@ package migrationhub {
         ProgressUpdateStream: ProgressUpdateStream
     ): DescribeMigrationTaskRequest = {
       val __obj = js.Dynamic.literal(
-        "MigrationTaskName"    -> MigrationTaskName.asInstanceOf[js.Any],
+        "MigrationTaskName" -> MigrationTaskName.asInstanceOf[js.Any],
         "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any]
       )
 
@@ -422,8 +422,8 @@ package migrationhub {
         DryRun: js.UndefOr[DryRun] = js.undefined
     ): DisassociateCreatedArtifactRequest = {
       val __obj = js.Dynamic.literal(
-        "CreatedArtifactName"  -> CreatedArtifactName.asInstanceOf[js.Any],
-        "MigrationTaskName"    -> MigrationTaskName.asInstanceOf[js.Any],
+        "CreatedArtifactName" -> CreatedArtifactName.asInstanceOf[js.Any],
+        "MigrationTaskName" -> MigrationTaskName.asInstanceOf[js.Any],
         "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any]
       )
 
@@ -462,8 +462,8 @@ package migrationhub {
         DryRun: js.UndefOr[DryRun] = js.undefined
     ): DisassociateDiscoveredResourceRequest = {
       val __obj = js.Dynamic.literal(
-        "ConfigurationId"      -> ConfigurationId.asInstanceOf[js.Any],
-        "MigrationTaskName"    -> MigrationTaskName.asInstanceOf[js.Any],
+        "ConfigurationId" -> ConfigurationId.asInstanceOf[js.Any],
+        "MigrationTaskName" -> MigrationTaskName.asInstanceOf[js.Any],
         "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any]
       )
 
@@ -524,7 +524,7 @@ package migrationhub {
         DryRun: js.UndefOr[DryRun] = js.undefined
     ): ImportMigrationTaskRequest = {
       val __obj = js.Dynamic.literal(
-        "MigrationTaskName"    -> MigrationTaskName.asInstanceOf[js.Any],
+        "MigrationTaskName" -> MigrationTaskName.asInstanceOf[js.Any],
         "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any]
       )
 
@@ -604,7 +604,7 @@ package migrationhub {
         NextToken: js.UndefOr[Token] = js.undefined
     ): ListCreatedArtifactsRequest = {
       val __obj = js.Dynamic.literal(
-        "MigrationTaskName"    -> MigrationTaskName.asInstanceOf[js.Any],
+        "MigrationTaskName" -> MigrationTaskName.asInstanceOf[js.Any],
         "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any]
       )
 
@@ -650,7 +650,7 @@ package migrationhub {
         NextToken: js.UndefOr[Token] = js.undefined
     ): ListDiscoveredResourcesRequest = {
       val __obj = js.Dynamic.literal(
-        "MigrationTaskName"    -> MigrationTaskName.asInstanceOf[js.Any],
+        "MigrationTaskName" -> MigrationTaskName.asInstanceOf[js.Any],
         "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any]
       )
 
@@ -843,7 +843,7 @@ package migrationhub {
     ): NotifyApplicationStateRequest = {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "Status"        -> Status.asInstanceOf[js.Any]
+        "Status" -> Status.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -886,11 +886,11 @@ package migrationhub {
         DryRun: js.UndefOr[DryRun] = js.undefined
     ): NotifyMigrationTaskStateRequest = {
       val __obj = js.Dynamic.literal(
-        "MigrationTaskName"    -> MigrationTaskName.asInstanceOf[js.Any],
-        "NextUpdateSeconds"    -> NextUpdateSeconds.asInstanceOf[js.Any],
+        "MigrationTaskName" -> MigrationTaskName.asInstanceOf[js.Any],
+        "NextUpdateSeconds" -> NextUpdateSeconds.asInstanceOf[js.Any],
         "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any],
-        "Task"                 -> Task.asInstanceOf[js.Any],
-        "UpdateDateTime"       -> UpdateDateTime.asInstanceOf[js.Any]
+        "Task" -> Task.asInstanceOf[js.Any],
+        "UpdateDateTime" -> UpdateDateTime.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
@@ -947,8 +947,8 @@ package migrationhub {
         DryRun: js.UndefOr[DryRun] = js.undefined
     ): PutResourceAttributesRequest = {
       val __obj = js.Dynamic.literal(
-        "MigrationTaskName"     -> MigrationTaskName.asInstanceOf[js.Any],
-        "ProgressUpdateStream"  -> ProgressUpdateStream.asInstanceOf[js.Any],
+        "MigrationTaskName" -> MigrationTaskName.asInstanceOf[js.Any],
+        "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any],
         "ResourceAttributeList" -> ResourceAttributeList.asInstanceOf[js.Any]
       )
 
@@ -994,7 +994,7 @@ package migrationhub {
         Value: ResourceAttributeValue
     ): ResourceAttribute = {
       val __obj = js.Dynamic.literal(
-        "Type"  -> Type.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -1005,16 +1005,16 @@ package migrationhub {
   @js.native
   sealed trait ResourceAttributeType extends js.Any
   object ResourceAttributeType extends js.Object {
-    val IPV4_ADDRESS                = "IPV4_ADDRESS".asInstanceOf[ResourceAttributeType]
-    val IPV6_ADDRESS                = "IPV6_ADDRESS".asInstanceOf[ResourceAttributeType]
-    val MAC_ADDRESS                 = "MAC_ADDRESS".asInstanceOf[ResourceAttributeType]
-    val FQDN                        = "FQDN".asInstanceOf[ResourceAttributeType]
-    val VM_MANAGER_ID               = "VM_MANAGER_ID".asInstanceOf[ResourceAttributeType]
+    val IPV4_ADDRESS = "IPV4_ADDRESS".asInstanceOf[ResourceAttributeType]
+    val IPV6_ADDRESS = "IPV6_ADDRESS".asInstanceOf[ResourceAttributeType]
+    val MAC_ADDRESS = "MAC_ADDRESS".asInstanceOf[ResourceAttributeType]
+    val FQDN = "FQDN".asInstanceOf[ResourceAttributeType]
+    val VM_MANAGER_ID = "VM_MANAGER_ID".asInstanceOf[ResourceAttributeType]
     val VM_MANAGED_OBJECT_REFERENCE = "VM_MANAGED_OBJECT_REFERENCE".asInstanceOf[ResourceAttributeType]
-    val VM_NAME                     = "VM_NAME".asInstanceOf[ResourceAttributeType]
-    val VM_PATH                     = "VM_PATH".asInstanceOf[ResourceAttributeType]
-    val BIOS_ID                     = "BIOS_ID".asInstanceOf[ResourceAttributeType]
-    val MOTHERBOARD_SERIAL_NUMBER   = "MOTHERBOARD_SERIAL_NUMBER".asInstanceOf[ResourceAttributeType]
+    val VM_NAME = "VM_NAME".asInstanceOf[ResourceAttributeType]
+    val VM_PATH = "VM_PATH".asInstanceOf[ResourceAttributeType]
+    val BIOS_ID = "BIOS_ID".asInstanceOf[ResourceAttributeType]
+    val MOTHERBOARD_SERIAL_NUMBER = "MOTHERBOARD_SERIAL_NUMBER".asInstanceOf[ResourceAttributeType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1037,8 +1037,8 @@ package migrationhub {
   object Status extends js.Object {
     val NOT_STARTED = "NOT_STARTED".asInstanceOf[Status]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[Status]
-    val FAILED      = "FAILED".asInstanceOf[Status]
-    val COMPLETED   = "COMPLETED".asInstanceOf[Status]
+    val FAILED = "FAILED".asInstanceOf[Status]
+    val COMPLETED = "COMPLETED".asInstanceOf[Status]
 
     val values = js.Object.freeze(js.Array(NOT_STARTED, IN_PROGRESS, FAILED, COMPLETED))
   }

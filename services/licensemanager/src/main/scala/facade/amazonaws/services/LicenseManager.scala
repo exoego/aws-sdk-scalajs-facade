@@ -7,29 +7,29 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object licensemanager {
-  type BoxBoolean                       = Boolean
-  type BoxInteger                       = Int
-  type BoxLong                          = Double
-  type ConsumedLicenseSummaryList       = js.Array[ConsumedLicenseSummary]
-  type DateTime                         = js.Date
-  type FilterName                       = String
-  type FilterValue                      = String
-  type FilterValues                     = js.Array[FilterValue]
-  type Filters                          = js.Array[Filter]
-  type InventoryFilterList              = js.Array[InventoryFilter]
+  type BoxBoolean = Boolean
+  type BoxInteger = Int
+  type BoxLong = Double
+  type ConsumedLicenseSummaryList = js.Array[ConsumedLicenseSummary]
+  type DateTime = js.Date
+  type FilterName = String
+  type FilterValue = String
+  type FilterValues = js.Array[FilterValue]
+  type Filters = js.Array[Filter]
+  type InventoryFilterList = js.Array[InventoryFilter]
   type LicenseConfigurationAssociations = js.Array[LicenseConfigurationAssociation]
-  type LicenseConfigurationUsageList    = js.Array[LicenseConfigurationUsage]
-  type LicenseConfigurations            = js.Array[LicenseConfiguration]
-  type LicenseOperationFailureList      = js.Array[LicenseOperationFailure]
-  type LicenseSpecifications            = js.Array[LicenseSpecification]
-  type ManagedResourceSummaryList       = js.Array[ManagedResourceSummary]
-  type MetadataList                     = js.Array[Metadata]
-  type ProductInformationFilterList     = js.Array[ProductInformationFilter]
-  type ProductInformationList           = js.Array[ProductInformation]
-  type ResourceInventoryList            = js.Array[ResourceInventory]
-  type StringList                       = js.Array[String]
-  type TagKeyList                       = js.Array[String]
-  type TagList                          = js.Array[Tag]
+  type LicenseConfigurationUsageList = js.Array[LicenseConfigurationUsage]
+  type LicenseConfigurations = js.Array[LicenseConfiguration]
+  type LicenseOperationFailureList = js.Array[LicenseOperationFailure]
+  type LicenseSpecifications = js.Array[LicenseSpecification]
+  type ManagedResourceSummaryList = js.Array[ManagedResourceSummary]
+  type MetadataList = js.Array[Metadata]
+  type ProductInformationFilterList = js.Array[ProductInformationFilter]
+  type ProductInformationList = js.Array[ProductInformation]
+  type ResourceInventoryList = js.Array[ResourceInventory]
+  type StringList = js.Array[String]
+  type TagKeyList = js.Array[String]
+  type TagList = js.Array[Tag]
 
   implicit final class LicenseManagerOps(private val service: LicenseManager) extends AnyVal {
 
@@ -111,20 +111,20 @@ package licensemanager {
     ): Request[ListLicenseConfigurationsResponse] = js.native
     def listLicenseSpecificationsForResource(
         params: ListLicenseSpecificationsForResourceRequest
-    ): Request[ListLicenseSpecificationsForResourceResponse]                                                = js.native
+    ): Request[ListLicenseSpecificationsForResourceResponse] = js.native
     def listResourceInventory(params: ListResourceInventoryRequest): Request[ListResourceInventoryResponse] = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listUsageForLicenseConfiguration(
         params: ListUsageForLicenseConfigurationRequest
-    ): Request[ListUsageForLicenseConfigurationResponse]                            = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]       = js.native
+    ): Request[ListUsageForLicenseConfigurationResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateLicenseConfiguration(
         params: UpdateLicenseConfigurationRequest
     ): Request[UpdateLicenseConfigurationResponse] = js.native
     def updateLicenseSpecificationsForResource(
         params: UpdateLicenseSpecificationsForResourceRequest
-    ): Request[UpdateLicenseSpecificationsForResourceResponse]                                              = js.native
+    ): Request[UpdateLicenseSpecificationsForResourceResponse] = js.native
     def updateServiceSettings(params: UpdateServiceSettingsRequest): Request[UpdateServiceSettingsResponse] = js.native
   }
 
@@ -195,7 +195,7 @@ package licensemanager {
     ): CreateLicenseConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "LicenseCountingType" -> LicenseCountingType.asInstanceOf[js.Any],
-        "Name"                -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -428,7 +428,7 @@ package licensemanager {
     ): InventoryFilter = {
       val __obj = js.Dynamic.literal(
         "Condition" -> Condition.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
@@ -439,10 +439,10 @@ package licensemanager {
   @js.native
   sealed trait InventoryFilterCondition extends js.Any
   object InventoryFilterCondition extends js.Object {
-    val EQUALS      = "EQUALS".asInstanceOf[InventoryFilterCondition]
-    val NOT_EQUALS  = "NOT_EQUALS".asInstanceOf[InventoryFilterCondition]
+    val EQUALS = "EQUALS".asInstanceOf[InventoryFilterCondition]
+    val NOT_EQUALS = "NOT_EQUALS".asInstanceOf[InventoryFilterCondition]
     val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[InventoryFilterCondition]
-    val CONTAINS    = "CONTAINS".asInstanceOf[InventoryFilterCondition]
+    val CONTAINS = "CONTAINS".asInstanceOf[InventoryFilterCondition]
 
     val values = js.Object.freeze(js.Array(EQUALS, NOT_EQUALS, BEGINS_WITH, CONTAINS))
   }
@@ -546,7 +546,7 @@ package licensemanager {
   sealed trait LicenseConfigurationStatus extends js.Any
   object LicenseConfigurationStatus extends js.Object {
     val AVAILABLE = "AVAILABLE".asInstanceOf[LicenseConfigurationStatus]
-    val DISABLED  = "DISABLED".asInstanceOf[LicenseConfigurationStatus]
+    val DISABLED = "DISABLED".asInstanceOf[LicenseConfigurationStatus]
 
     val values = js.Object.freeze(js.Array(AVAILABLE, DISABLED))
   }
@@ -588,10 +588,10 @@ package licensemanager {
   @js.native
   sealed trait LicenseCountingType extends js.Any
   object LicenseCountingType extends js.Object {
-    val vCPU     = "vCPU".asInstanceOf[LicenseCountingType]
+    val vCPU = "vCPU".asInstanceOf[LicenseCountingType]
     val Instance = "Instance".asInstanceOf[LicenseCountingType]
-    val Core     = "Core".asInstanceOf[LicenseCountingType]
-    val Socket   = "Socket".asInstanceOf[LicenseCountingType]
+    val Core = "Core".asInstanceOf[LicenseCountingType]
+    val Socket = "Socket".asInstanceOf[LicenseCountingType]
 
     val values = js.Object.freeze(js.Array(vCPU, Instance, Core, Socket))
   }
@@ -1039,7 +1039,7 @@ package licensemanager {
     ): ProductInformation = {
       val __obj = js.Dynamic.literal(
         "ProductInformationFilterList" -> ProductInformationFilterList.asInstanceOf[js.Any],
-        "ResourceType"                 -> ResourceType.asInstanceOf[js.Any]
+        "ResourceType" -> ResourceType.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ProductInformation]
@@ -1065,8 +1065,8 @@ package licensemanager {
     ): ProductInformationFilter = {
       val __obj = js.Dynamic.literal(
         "ProductInformationFilterComparator" -> ProductInformationFilterComparator.asInstanceOf[js.Any],
-        "ProductInformationFilterName"       -> ProductInformationFilterName.asInstanceOf[js.Any],
-        "ProductInformationFilterValue"      -> ProductInformationFilterValue.asInstanceOf[js.Any]
+        "ProductInformationFilterName" -> ProductInformationFilterName.asInstanceOf[js.Any],
+        "ProductInformationFilterValue" -> ProductInformationFilterValue.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ProductInformationFilter]
@@ -1110,10 +1110,10 @@ package licensemanager {
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {
-    val EC2_INSTANCE                     = "EC2_INSTANCE".asInstanceOf[ResourceType]
-    val EC2_HOST                         = "EC2_HOST".asInstanceOf[ResourceType]
-    val EC2_AMI                          = "EC2_AMI".asInstanceOf[ResourceType]
-    val RDS                              = "RDS".asInstanceOf[ResourceType]
+    val EC2_INSTANCE = "EC2_INSTANCE".asInstanceOf[ResourceType]
+    val EC2_HOST = "EC2_HOST".asInstanceOf[ResourceType]
+    val EC2_AMI = "EC2_AMI".asInstanceOf[ResourceType]
+    val RDS = "RDS".asInstanceOf[ResourceType]
     val SYSTEMS_MANAGER_MANAGED_INSTANCE = "SYSTEMS_MANAGER_MANAGED_INSTANCE".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(js.Array(EC2_INSTANCE, EC2_HOST, EC2_AMI, RDS, SYSTEMS_MANAGER_MANAGED_INSTANCE))
@@ -1155,7 +1155,7 @@ package licensemanager {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1189,7 +1189,7 @@ package licensemanager {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]

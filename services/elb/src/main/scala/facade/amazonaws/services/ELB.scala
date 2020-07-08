@@ -7,81 +7,81 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object elb {
-  type AccessLogEnabled                = Boolean
-  type AccessLogInterval               = Int
-  type AccessLogPrefix                 = String
-  type AccessPointName                 = String
-  type AccessPointPort                 = Int
-  type AdditionalAttributeKey          = String
-  type AdditionalAttributeValue        = String
-  type AdditionalAttributes            = js.Array[AdditionalAttribute]
-  type AppCookieStickinessPolicies     = js.Array[AppCookieStickinessPolicy]
-  type AttributeName                   = String
-  type AttributeType                   = String
-  type AttributeValue                  = String
-  type AvailabilityZone                = String
-  type AvailabilityZones               = js.Array[AvailabilityZone]
-  type BackendServerDescriptions       = js.Array[BackendServerDescription]
-  type Cardinality                     = String
-  type ConnectionDrainingEnabled       = Boolean
-  type ConnectionDrainingTimeout       = Int
-  type CookieExpirationPeriod          = Double
-  type CookieName                      = String
-  type CreatedTime                     = js.Date
-  type CrossZoneLoadBalancingEnabled   = Boolean
-  type DNSName                         = String
-  type DefaultValue                    = String
-  type Description                     = String
-  type EndPointPort                    = Int
-  type HealthCheckInterval             = Int
-  type HealthCheckTarget               = String
-  type HealthCheckTimeout              = Int
-  type HealthyThreshold                = Int
-  type IdleTimeout                     = Int
-  type InstanceId                      = String
-  type InstancePort                    = Int
-  type InstanceStates                  = js.Array[InstanceState]
-  type Instances                       = js.Array[Instance]
-  type LBCookieStickinessPolicies      = js.Array[LBCookieStickinessPolicy]
-  type Limits                          = js.Array[Limit]
-  type ListenerDescriptions            = js.Array[ListenerDescription]
-  type Listeners                       = js.Array[Listener]
-  type LoadBalancerDescriptions        = js.Array[LoadBalancerDescription]
-  type LoadBalancerNames               = js.Array[AccessPointName]
-  type LoadBalancerNamesMax20          = js.Array[AccessPointName]
-  type LoadBalancerScheme              = String
-  type Marker                          = String
-  type Max                             = String
-  type Name                            = String
-  type PageSize                        = Int
-  type PolicyAttributeDescriptions     = js.Array[PolicyAttributeDescription]
+  type AccessLogEnabled = Boolean
+  type AccessLogInterval = Int
+  type AccessLogPrefix = String
+  type AccessPointName = String
+  type AccessPointPort = Int
+  type AdditionalAttributeKey = String
+  type AdditionalAttributeValue = String
+  type AdditionalAttributes = js.Array[AdditionalAttribute]
+  type AppCookieStickinessPolicies = js.Array[AppCookieStickinessPolicy]
+  type AttributeName = String
+  type AttributeType = String
+  type AttributeValue = String
+  type AvailabilityZone = String
+  type AvailabilityZones = js.Array[AvailabilityZone]
+  type BackendServerDescriptions = js.Array[BackendServerDescription]
+  type Cardinality = String
+  type ConnectionDrainingEnabled = Boolean
+  type ConnectionDrainingTimeout = Int
+  type CookieExpirationPeriod = Double
+  type CookieName = String
+  type CreatedTime = js.Date
+  type CrossZoneLoadBalancingEnabled = Boolean
+  type DNSName = String
+  type DefaultValue = String
+  type Description = String
+  type EndPointPort = Int
+  type HealthCheckInterval = Int
+  type HealthCheckTarget = String
+  type HealthCheckTimeout = Int
+  type HealthyThreshold = Int
+  type IdleTimeout = Int
+  type InstanceId = String
+  type InstancePort = Int
+  type InstanceStates = js.Array[InstanceState]
+  type Instances = js.Array[Instance]
+  type LBCookieStickinessPolicies = js.Array[LBCookieStickinessPolicy]
+  type Limits = js.Array[Limit]
+  type ListenerDescriptions = js.Array[ListenerDescription]
+  type Listeners = js.Array[Listener]
+  type LoadBalancerDescriptions = js.Array[LoadBalancerDescription]
+  type LoadBalancerNames = js.Array[AccessPointName]
+  type LoadBalancerNamesMax20 = js.Array[AccessPointName]
+  type LoadBalancerScheme = String
+  type Marker = String
+  type Max = String
+  type Name = String
+  type PageSize = Int
+  type PolicyAttributeDescriptions = js.Array[PolicyAttributeDescription]
   type PolicyAttributeTypeDescriptions = js.Array[PolicyAttributeTypeDescription]
-  type PolicyAttributes                = js.Array[PolicyAttribute]
-  type PolicyDescriptions              = js.Array[PolicyDescription]
-  type PolicyName                      = String
-  type PolicyNames                     = js.Array[PolicyName]
-  type PolicyTypeDescriptions          = js.Array[PolicyTypeDescription]
-  type PolicyTypeName                  = String
-  type PolicyTypeNames                 = js.Array[PolicyTypeName]
-  type Ports                           = js.Array[AccessPointPort]
-  type Protocol                        = String
-  type ReasonCode                      = String
-  type S3BucketName                    = String
-  type SSLCertificateId                = String
-  type SecurityGroupId                 = String
-  type SecurityGroupName               = String
-  type SecurityGroupOwnerAlias         = String
-  type SecurityGroups                  = js.Array[SecurityGroupId]
-  type State                           = String
-  type SubnetId                        = String
-  type Subnets                         = js.Array[SubnetId]
-  type TagDescriptions                 = js.Array[TagDescription]
-  type TagKey                          = String
-  type TagKeyList                      = js.Array[TagKeyOnly]
-  type TagList                         = js.Array[Tag]
-  type TagValue                        = String
-  type UnhealthyThreshold              = Int
-  type VPCId                           = String
+  type PolicyAttributes = js.Array[PolicyAttribute]
+  type PolicyDescriptions = js.Array[PolicyDescription]
+  type PolicyName = String
+  type PolicyNames = js.Array[PolicyName]
+  type PolicyTypeDescriptions = js.Array[PolicyTypeDescription]
+  type PolicyTypeName = String
+  type PolicyTypeNames = js.Array[PolicyTypeName]
+  type Ports = js.Array[AccessPointPort]
+  type Protocol = String
+  type ReasonCode = String
+  type S3BucketName = String
+  type SSLCertificateId = String
+  type SecurityGroupId = String
+  type SecurityGroupName = String
+  type SecurityGroupOwnerAlias = String
+  type SecurityGroups = js.Array[SecurityGroupId]
+  type State = String
+  type SubnetId = String
+  type Subnets = js.Array[SubnetId]
+  type TagDescriptions = js.Array[TagDescription]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKeyOnly]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type UnhealthyThreshold = Int
+  type VPCId = String
 
   implicit final class ELBOps(private val service: ELB) extends AnyVal {
 
@@ -184,14 +184,14 @@ package elb {
     ): Request[ApplySecurityGroupsToLoadBalancerOutput] = js.native
     def attachLoadBalancerToSubnets(
         params: AttachLoadBalancerToSubnetsInput
-    ): Request[AttachLoadBalancerToSubnetsOutput]                                                    = js.native
+    ): Request[AttachLoadBalancerToSubnetsOutput] = js.native
     def configureHealthCheck(params: ConfigureHealthCheckInput): Request[ConfigureHealthCheckOutput] = js.native
     def createAppCookieStickinessPolicy(
         params: CreateAppCookieStickinessPolicyInput
     ): Request[CreateAppCookieStickinessPolicyOutput] = js.native
     def createLBCookieStickinessPolicy(
         params: CreateLBCookieStickinessPolicyInput
-    ): Request[CreateLBCookieStickinessPolicyOutput]                                         = js.native
+    ): Request[CreateLBCookieStickinessPolicyOutput] = js.native
     def createLoadBalancer(params: CreateAccessPointInput): Request[CreateAccessPointOutput] = js.native
     def createLoadBalancerListeners(
         params: CreateLoadBalancerListenerInput
@@ -206,7 +206,7 @@ package elb {
       js.native
     def deregisterInstancesFromLoadBalancer(params: DeregisterEndPointsInput): Request[DeregisterEndPointsOutput] =
       js.native
-    def describeAccountLimits(params: DescribeAccountLimitsInput): Request[DescribeAccountLimitsOutput]  = js.native
+    def describeAccountLimits(params: DescribeAccountLimitsInput): Request[DescribeAccountLimitsOutput] = js.native
     def describeInstanceHealth(params: DescribeEndPointStateInput): Request[DescribeEndPointStateOutput] = js.native
     def describeLoadBalancerAttributes(
         params: DescribeLoadBalancerAttributesInput
@@ -216,9 +216,9 @@ package elb {
     ): Request[DescribeLoadBalancerPoliciesOutput] = js.native
     def describeLoadBalancerPolicyTypes(
         params: DescribeLoadBalancerPolicyTypesInput
-    ): Request[DescribeLoadBalancerPolicyTypesOutput]                                                 = js.native
+    ): Request[DescribeLoadBalancerPolicyTypesOutput] = js.native
     def describeLoadBalancers(params: DescribeAccessPointsInput): Request[DescribeAccessPointsOutput] = js.native
-    def describeTags(params: DescribeTagsInput): Request[DescribeTagsOutput]                          = js.native
+    def describeTags(params: DescribeTagsInput): Request[DescribeTagsOutput] = js.native
     def detachLoadBalancerFromSubnets(
         params: DetachLoadBalancerFromSubnetsInput
     ): Request[DetachLoadBalancerFromSubnetsOutput] = js.native
@@ -229,9 +229,9 @@ package elb {
       js.native
     def modifyLoadBalancerAttributes(
         params: ModifyLoadBalancerAttributesInput
-    ): Request[ModifyLoadBalancerAttributesOutput]                                                          = js.native
+    ): Request[ModifyLoadBalancerAttributesOutput] = js.native
     def registerInstancesWithLoadBalancer(params: RegisterEndPointsInput): Request[RegisterEndPointsOutput] = js.native
-    def removeTags(params: RemoveTagsInput): Request[RemoveTagsOutput]                                      = js.native
+    def removeTags(params: RemoveTagsInput): Request[RemoveTagsOutput] = js.native
     def setLoadBalancerListenerSSLCertificate(
         params: SetLoadBalancerListenerSSLCertificateInput
     ): Request[SetLoadBalancerListenerSSLCertificateOutput] = js.native
@@ -290,7 +290,7 @@ package elb {
     ): AddAvailabilityZonesInput = {
       val __obj = js.Dynamic.literal(
         "AvailabilityZones" -> AvailabilityZones.asInstanceOf[js.Any],
-        "LoadBalancerName"  -> LoadBalancerName.asInstanceOf[js.Any]
+        "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddAvailabilityZonesInput]
@@ -333,7 +333,7 @@ package elb {
     ): AddTagsInput = {
       val __obj = js.Dynamic.literal(
         "LoadBalancerNames" -> LoadBalancerNames.asInstanceOf[js.Any],
-        "Tags"              -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddTagsInput]
@@ -417,7 +417,7 @@ package elb {
     ): ApplySecurityGroupsToLoadBalancerInput = {
       val __obj = js.Dynamic.literal(
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
-        "SecurityGroups"   -> SecurityGroups.asInstanceOf[js.Any]
+        "SecurityGroups" -> SecurityGroups.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ApplySecurityGroupsToLoadBalancerInput]
@@ -460,7 +460,7 @@ package elb {
     ): AttachLoadBalancerToSubnetsInput = {
       val __obj = js.Dynamic.literal(
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
-        "Subnets"          -> Subnets.asInstanceOf[js.Any]
+        "Subnets" -> Subnets.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AttachLoadBalancerToSubnetsInput]
@@ -524,7 +524,7 @@ package elb {
         LoadBalancerName: AccessPointName
     ): ConfigureHealthCheckInput = {
       val __obj = js.Dynamic.literal(
-        "HealthCheck"      -> HealthCheck.asInstanceOf[js.Any],
+        "HealthCheck" -> HealthCheck.asInstanceOf[js.Any],
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
       )
 
@@ -622,7 +622,7 @@ package elb {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateAccessPointInput = {
       val __obj = js.Dynamic.literal(
-        "Listeners"        -> Listeners.asInstanceOf[js.Any],
+        "Listeners" -> Listeners.asInstanceOf[js.Any],
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
       )
 
@@ -672,9 +672,9 @@ package elb {
         PolicyName: PolicyName
     ): CreateAppCookieStickinessPolicyInput = {
       val __obj = js.Dynamic.literal(
-        "CookieName"       -> CookieName.asInstanceOf[js.Any],
+        "CookieName" -> CookieName.asInstanceOf[js.Any],
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
-        "PolicyName"       -> PolicyName.asInstanceOf[js.Any]
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateAppCookieStickinessPolicyInput]
@@ -716,7 +716,7 @@ package elb {
     ): CreateLBCookieStickinessPolicyInput = {
       val __obj = js.Dynamic.literal(
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
-        "PolicyName"       -> PolicyName.asInstanceOf[js.Any]
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any]
       )
 
       CookieExpirationPeriod.foreach(__v => __obj.updateDynamic("CookieExpirationPeriod")(__v.asInstanceOf[js.Any]))
@@ -756,7 +756,7 @@ package elb {
         LoadBalancerName: AccessPointName
     ): CreateLoadBalancerListenerInput = {
       val __obj = js.Dynamic.literal(
-        "Listeners"        -> Listeners.asInstanceOf[js.Any],
+        "Listeners" -> Listeners.asInstanceOf[js.Any],
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
       )
 
@@ -801,8 +801,8 @@ package elb {
     ): CreateLoadBalancerPolicyInput = {
       val __obj = js.Dynamic.literal(
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
-        "PolicyName"       -> PolicyName.asInstanceOf[js.Any],
-        "PolicyTypeName"   -> PolicyTypeName.asInstanceOf[js.Any]
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
+        "PolicyTypeName" -> PolicyTypeName.asInstanceOf[js.Any]
       )
 
       PolicyAttributes.foreach(__v => __obj.updateDynamic("PolicyAttributes")(__v.asInstanceOf[js.Any]))
@@ -900,7 +900,7 @@ package elb {
         LoadBalancerPorts: Ports
     ): DeleteLoadBalancerListenerInput = {
       val __obj = js.Dynamic.literal(
-        "LoadBalancerName"  -> LoadBalancerName.asInstanceOf[js.Any],
+        "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "LoadBalancerPorts" -> LoadBalancerPorts.asInstanceOf[js.Any]
       )
 
@@ -941,7 +941,7 @@ package elb {
     ): DeleteLoadBalancerPolicyInput = {
       val __obj = js.Dynamic.literal(
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
-        "PolicyName"       -> PolicyName.asInstanceOf[js.Any]
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteLoadBalancerPolicyInput]
@@ -980,7 +980,7 @@ package elb {
         LoadBalancerName: AccessPointName
     ): DeregisterEndPointsInput = {
       val __obj = js.Dynamic.literal(
-        "Instances"        -> Instances.asInstanceOf[js.Any],
+        "Instances" -> Instances.asInstanceOf[js.Any],
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
       )
 
@@ -1311,7 +1311,7 @@ package elb {
     ): DetachLoadBalancerFromSubnetsInput = {
       val __obj = js.Dynamic.literal(
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
-        "Subnets"          -> Subnets.asInstanceOf[js.Any]
+        "Subnets" -> Subnets.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DetachLoadBalancerFromSubnetsInput]
@@ -1359,10 +1359,10 @@ package elb {
         UnhealthyThreshold: UnhealthyThreshold
     ): HealthCheck = {
       val __obj = js.Dynamic.literal(
-        "HealthyThreshold"   -> HealthyThreshold.asInstanceOf[js.Any],
-        "Interval"           -> Interval.asInstanceOf[js.Any],
-        "Target"             -> Target.asInstanceOf[js.Any],
-        "Timeout"            -> Timeout.asInstanceOf[js.Any],
+        "HealthyThreshold" -> HealthyThreshold.asInstanceOf[js.Any],
+        "Interval" -> Interval.asInstanceOf[js.Any],
+        "Target" -> Target.asInstanceOf[js.Any],
+        "Timeout" -> Timeout.asInstanceOf[js.Any],
         "UnhealthyThreshold" -> UnhealthyThreshold.asInstanceOf[js.Any]
       )
 
@@ -1484,9 +1484,9 @@ package elb {
         SSLCertificateId: js.UndefOr[SSLCertificateId] = js.undefined
     ): Listener = {
       val __obj = js.Dynamic.literal(
-        "InstancePort"     -> InstancePort.asInstanceOf[js.Any],
+        "InstancePort" -> InstancePort.asInstanceOf[js.Any],
         "LoadBalancerPort" -> LoadBalancerPort.asInstanceOf[js.Any],
-        "Protocol"         -> Protocol.asInstanceOf[js.Any]
+        "Protocol" -> Protocol.asInstanceOf[js.Any]
       )
 
       InstanceProtocol.foreach(__v => __obj.updateDynamic("InstanceProtocol")(__v.asInstanceOf[js.Any]))
@@ -1633,7 +1633,7 @@ package elb {
     ): ModifyLoadBalancerAttributesInput = {
       val __obj = js.Dynamic.literal(
         "LoadBalancerAttributes" -> LoadBalancerAttributes.asInstanceOf[js.Any],
-        "LoadBalancerName"       -> LoadBalancerName.asInstanceOf[js.Any]
+        "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ModifyLoadBalancerAttributesInput]
@@ -1836,7 +1836,7 @@ package elb {
         LoadBalancerName: AccessPointName
     ): RegisterEndPointsInput = {
       val __obj = js.Dynamic.literal(
-        "Instances"        -> Instances.asInstanceOf[js.Any],
+        "Instances" -> Instances.asInstanceOf[js.Any],
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
       )
 
@@ -1880,7 +1880,7 @@ package elb {
     ): RemoveAvailabilityZonesInput = {
       val __obj = js.Dynamic.literal(
         "AvailabilityZones" -> AvailabilityZones.asInstanceOf[js.Any],
-        "LoadBalancerName"  -> LoadBalancerName.asInstanceOf[js.Any]
+        "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RemoveAvailabilityZonesInput]
@@ -1923,7 +1923,7 @@ package elb {
     ): RemoveTagsInput = {
       val __obj = js.Dynamic.literal(
         "LoadBalancerNames" -> LoadBalancerNames.asInstanceOf[js.Any],
-        "Tags"              -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RemoveTagsInput]
@@ -2007,9 +2007,9 @@ package elb {
         PolicyNames: PolicyNames
     ): SetLoadBalancerPoliciesForBackendServerInput = {
       val __obj = js.Dynamic.literal(
-        "InstancePort"     -> InstancePort.asInstanceOf[js.Any],
+        "InstancePort" -> InstancePort.asInstanceOf[js.Any],
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
-        "PolicyNames"      -> PolicyNames.asInstanceOf[js.Any]
+        "PolicyNames" -> PolicyNames.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[SetLoadBalancerPoliciesForBackendServerInput]
@@ -2052,7 +2052,7 @@ package elb {
       val __obj = js.Dynamic.literal(
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "LoadBalancerPort" -> LoadBalancerPort.asInstanceOf[js.Any],
-        "PolicyNames"      -> PolicyNames.asInstanceOf[js.Any]
+        "PolicyNames" -> PolicyNames.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[SetLoadBalancerPoliciesOfListenerInput]

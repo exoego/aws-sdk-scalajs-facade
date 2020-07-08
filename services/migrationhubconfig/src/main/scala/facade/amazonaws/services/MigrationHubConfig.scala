@@ -7,14 +7,14 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object migrationhubconfig {
-  type ControlId                            = String
+  type ControlId = String
   type DescribeHomeRegionControlsMaxResults = Int
-  type DryRun                               = Boolean
-  type HomeRegion                           = String
-  type HomeRegionControls                   = js.Array[HomeRegionControl]
-  type RequestedTime                        = js.Date
-  type TargetId                             = String
-  type Token                                = String
+  type DryRun = Boolean
+  type HomeRegion = String
+  type HomeRegionControls = js.Array[HomeRegionControl]
+  type RequestedTime = js.Date
+  type TargetId = String
+  type Token = String
 
   implicit final class MigrationHubConfigOps(private val service: MigrationHubConfig) extends AnyVal {
 
@@ -39,7 +39,7 @@ package migrationhubconfig {
       js.native
     def describeHomeRegionControls(
         params: DescribeHomeRegionControlsRequest
-    ): Request[DescribeHomeRegionControlsResult]                                  = js.native
+    ): Request[DescribeHomeRegionControlsResult] = js.native
     def getHomeRegion(params: GetHomeRegionRequest): Request[GetHomeRegionResult] = js.native
   }
 
@@ -59,7 +59,7 @@ package migrationhubconfig {
     ): CreateHomeRegionControlRequest = {
       val __obj = js.Dynamic.literal(
         "HomeRegion" -> HomeRegion.asInstanceOf[js.Any],
-        "Target"     -> Target.asInstanceOf[js.Any]
+        "Target" -> Target.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))

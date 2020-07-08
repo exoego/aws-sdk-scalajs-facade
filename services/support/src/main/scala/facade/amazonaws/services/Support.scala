@@ -7,51 +7,51 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object support {
-  type AfterTime                            = String
-  type AttachmentId                         = String
-  type AttachmentSet                        = js.Array[AttachmentDetails]
-  type AttachmentSetId                      = String
-  type Attachments                          = js.Array[Attachment]
-  type BeforeTime                           = String
-  type CaseId                               = String
-  type CaseIdList                           = js.Array[CaseId]
-  type CaseList                             = js.Array[CaseDetails]
-  type CaseStatus                           = String
-  type CategoryCode                         = String
-  type CategoryList                         = js.Array[Category]
-  type CategoryName                         = String
-  type CcEmailAddress                       = String
-  type CcEmailAddressList                   = js.Array[CcEmailAddress]
-  type CommunicationBody                    = String
-  type CommunicationList                    = js.Array[Communication]
-  type Data                                 = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type DisplayId                            = String
-  type ExpiryTime                           = String
-  type FileName                             = String
-  type IncludeCommunications                = Boolean
-  type IncludeResolvedCases                 = Boolean
-  type IssueType                            = String
-  type Language                             = String
-  type MaxResults                           = Int
-  type NextToken                            = String
-  type Result                               = Boolean
-  type ServiceCode                          = String
-  type ServiceCodeList                      = js.Array[ServiceCode]
-  type ServiceList                          = js.Array[Service]
-  type ServiceName                          = String
-  type SeverityCode                         = String
-  type SeverityLevelCode                    = String
-  type SeverityLevelName                    = String
-  type SeverityLevelsList                   = js.Array[SeverityLevel]
-  type Status                               = String
-  type StringList                           = js.Array[String]
-  type Subject                              = String
-  type SubmittedBy                          = String
-  type TimeCreated                          = String
-  type TrustedAdvisorCheckList              = js.Array[TrustedAdvisorCheckDescription]
+  type AfterTime = String
+  type AttachmentId = String
+  type AttachmentSet = js.Array[AttachmentDetails]
+  type AttachmentSetId = String
+  type Attachments = js.Array[Attachment]
+  type BeforeTime = String
+  type CaseId = String
+  type CaseIdList = js.Array[CaseId]
+  type CaseList = js.Array[CaseDetails]
+  type CaseStatus = String
+  type CategoryCode = String
+  type CategoryList = js.Array[Category]
+  type CategoryName = String
+  type CcEmailAddress = String
+  type CcEmailAddressList = js.Array[CcEmailAddress]
+  type CommunicationBody = String
+  type CommunicationList = js.Array[Communication]
+  type Data = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type DisplayId = String
+  type ExpiryTime = String
+  type FileName = String
+  type IncludeCommunications = Boolean
+  type IncludeResolvedCases = Boolean
+  type IssueType = String
+  type Language = String
+  type MaxResults = Int
+  type NextToken = String
+  type Result = Boolean
+  type ServiceCode = String
+  type ServiceCodeList = js.Array[ServiceCode]
+  type ServiceList = js.Array[Service]
+  type ServiceName = String
+  type SeverityCode = String
+  type SeverityLevelCode = String
+  type SeverityLevelName = String
+  type SeverityLevelsList = js.Array[SeverityLevel]
+  type Status = String
+  type StringList = js.Array[String]
+  type Subject = String
+  type SubmittedBy = String
+  type TimeCreated = String
+  type TrustedAdvisorCheckList = js.Array[TrustedAdvisorCheckDescription]
   type TrustedAdvisorCheckRefreshStatusList = js.Array[TrustedAdvisorCheckRefreshStatus]
-  type TrustedAdvisorCheckSummaryList       = js.Array[TrustedAdvisorCheckSummary]
-  type TrustedAdvisorResourceDetailList     = js.Array[TrustedAdvisorResourceDetail]
+  type TrustedAdvisorCheckSummaryList = js.Array[TrustedAdvisorCheckSummary]
+  type TrustedAdvisorResourceDetailList = js.Array[TrustedAdvisorResourceDetail]
 
   implicit final class SupportOps(private val service: Support) extends AnyVal {
 
@@ -106,9 +106,9 @@ package support {
     def addAttachmentsToSet(params: AddAttachmentsToSetRequest): Request[AddAttachmentsToSetResponse] = js.native
     def addCommunicationToCase(params: AddCommunicationToCaseRequest): Request[AddCommunicationToCaseResponse] =
       js.native
-    def createCase(params: CreateCaseRequest): Request[CreateCaseResponse]                         = js.native
+    def createCase(params: CreateCaseRequest): Request[CreateCaseResponse] = js.native
     def describeAttachment(params: DescribeAttachmentRequest): Request[DescribeAttachmentResponse] = js.native
-    def describeCases(params: DescribeCasesRequest): Request[DescribeCasesResponse]                = js.native
+    def describeCases(params: DescribeCasesRequest): Request[DescribeCasesResponse] = js.native
     def describeCommunications(params: DescribeCommunicationsRequest): Request[DescribeCommunicationsResponse] =
       js.native
     def describeServices(params: DescribeServicesRequest): Request[DescribeServicesResponse] = js.native
@@ -128,13 +128,10 @@ package support {
     ): Request[DescribeTrustedAdvisorChecksResponse] = js.native
     def refreshTrustedAdvisorCheck(
         params: RefreshTrustedAdvisorCheckRequest
-    ): Request[RefreshTrustedAdvisorCheckResponse]                            = js.native
+    ): Request[RefreshTrustedAdvisorCheckResponse] = js.native
     def resolveCase(params: ResolveCaseRequest): Request[ResolveCaseResponse] = js.native
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait AddAttachmentsToSetRequest extends js.Object {
     var attachments: Attachments
@@ -178,9 +175,6 @@ package support {
     }
   }
 
-  /**
-    * To be written.
-    */
   @js.native
   trait AddCommunicationToCaseRequest extends js.Object {
     var communicationBody: CommunicationBody
@@ -272,17 +266,23 @@ package support {
   }
 
   /**
-    * A JSON-formatted object that contains the metadata for a support case. It is contained the response from a <a>DescribeCases</a> request. ```CaseDetails``` contains the following fields:
+    * A JSON-formatted object that contains the metadata for a support case. It is contained in the response from a <a>DescribeCases</a> request. ```CaseDetails``` contains the following fields:
     * * ```caseId.``` The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>.
     *  * ```categoryCode.``` The category of problem for the AWS Support case. Corresponds to the CategoryCode values returned by a call to <a>DescribeServices</a>.
     *  * ```displayId.``` The identifier for the case on pages in the AWS Support Center.
     *  * ```language.``` The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.
-    *  * ```recentCommunications.``` One or more <a>Communication</a> objects. Fields of these objects are <code>attachments</code>, <code>body</code>, <code>caseId</code>, <code>submittedBy</code>, and <code>timeCreated</code>.
     *  * ```nextToken.``` A resumption point for pagination.
+    *  * ```recentCommunications.``` One or more <a>Communication</a> objects. Fields of these objects are <code>attachments</code>, <code>body</code>, <code>caseId</code>, <code>submittedBy</code>, and <code>timeCreated</code>.
     *  * ```serviceCode.``` The identifier for the AWS service that corresponds to the service code defined in the call to <a>DescribeServices</a>.
     *  * ```severityCode.``` The severity code assigned to the case. Contains one of the values returned by the call to <a>DescribeSeverityLevels</a>. The possible values are: <code>low</code>, <code>normal</code>, <code>high</code>, <code>urgent</code>, and <code>critical</code>.
-    *  * ```status.``` The status of the case in the AWS Support Center. The possible values are: <code>resolved</code>, <code>pending-customer-action</code>, <code>opened</code>, <code>unassigned</code>, and <code>work-in-progress</code>.
-    *  * ```subject.``` The subject line of the case.
+    *  * ```status.``` The status of the case in the AWS Support Center. Valid values:
+    * <li> <code>opened</code>
+    *  * <code>pending-customer-action</code>
+    *  * <code>reopened</code>
+    *  * <code>resolved</code>
+    *  * <code>unassigned</code>
+    *  * <code>work-in-progress</code>
+    * </li> * ```subject.``` The subject line of the case.
     *  * ```submittedBy.``` The email address of the account that submitted the case.
     *  * ```timeCreated.``` The time the case was created, in ISO-8601 format.
     */
@@ -416,7 +416,7 @@ package support {
     ): CreateCaseRequest = {
       val __obj = js.Dynamic.literal(
         "communicationBody" -> communicationBody.asInstanceOf[js.Any],
-        "subject"           -> subject.asInstanceOf[js.Any]
+        "subject" -> subject.asInstanceOf[js.Any]
       )
 
       attachmentSetId.foreach(__v => __obj.updateDynamic("attachmentSetId")(__v.asInstanceOf[js.Any]))
@@ -527,7 +527,7 @@ package support {
   }
 
   /**
-    * Returns an array of <a>CaseDetails</a> objects and a <code>nextToken</code> that defines a point for pagination in the result set.
+    * Returns an array of [[https://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html|CaseDetails]] objects and a <code>nextToken</code> that defines a point for pagination in the result set.
     */
   @js.native
   trait DescribeCasesResponse extends js.Object {
@@ -673,9 +673,6 @@ package support {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DescribeTrustedAdvisorCheckRefreshStatusesRequest extends js.Object {
     var checkIds: StringList
@@ -797,9 +794,6 @@ package support {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DescribeTrustedAdvisorChecksRequest extends js.Object {
     var language: String
@@ -967,7 +961,7 @@ package support {
   }
 
   /**
-    * A code and name pair that represents the severity level of a support case. The available values depend on the support plan for the account. For more information, see [[https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity|Choosing a Severity]].
+    * A code and name pair that represents the severity level of a support case. The available values depend on the support plan for the account. For more information, see [[https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity|Choosing a severity]] in the <i>AWS Support User Guide</i>.
     */
   @js.native
   trait SeverityLevel extends js.Object {
@@ -1029,11 +1023,11 @@ package support {
         name: String
     ): TrustedAdvisorCheckDescription = {
       val __obj = js.Dynamic.literal(
-        "category"    -> category.asInstanceOf[js.Any],
+        "category" -> category.asInstanceOf[js.Any],
         "description" -> description.asInstanceOf[js.Any],
-        "id"          -> id.asInstanceOf[js.Any],
-        "metadata"    -> metadata.asInstanceOf[js.Any],
-        "name"        -> name.asInstanceOf[js.Any]
+        "id" -> id.asInstanceOf[js.Any],
+        "metadata" -> metadata.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TrustedAdvisorCheckDescription]
@@ -1058,9 +1052,9 @@ package support {
         status: String
     ): TrustedAdvisorCheckRefreshStatus = {
       val __obj = js.Dynamic.literal(
-        "checkId"                    -> checkId.asInstanceOf[js.Any],
+        "checkId" -> checkId.asInstanceOf[js.Any],
         "millisUntilNextRefreshable" -> millisUntilNextRefreshable.asInstanceOf[js.Any],
-        "status"                     -> status.asInstanceOf[js.Any]
+        "status" -> status.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TrustedAdvisorCheckRefreshStatus]
@@ -1092,11 +1086,11 @@ package support {
     ): TrustedAdvisorCheckResult = {
       val __obj = js.Dynamic.literal(
         "categorySpecificSummary" -> categorySpecificSummary.asInstanceOf[js.Any],
-        "checkId"                 -> checkId.asInstanceOf[js.Any],
-        "flaggedResources"        -> flaggedResources.asInstanceOf[js.Any],
-        "resourcesSummary"        -> resourcesSummary.asInstanceOf[js.Any],
-        "status"                  -> status.asInstanceOf[js.Any],
-        "timestamp"               -> timestamp.asInstanceOf[js.Any]
+        "checkId" -> checkId.asInstanceOf[js.Any],
+        "flaggedResources" -> flaggedResources.asInstanceOf[js.Any],
+        "resourcesSummary" -> resourcesSummary.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any],
+        "timestamp" -> timestamp.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TrustedAdvisorCheckResult]
@@ -1128,10 +1122,10 @@ package support {
     ): TrustedAdvisorCheckSummary = {
       val __obj = js.Dynamic.literal(
         "categorySpecificSummary" -> categorySpecificSummary.asInstanceOf[js.Any],
-        "checkId"                 -> checkId.asInstanceOf[js.Any],
-        "resourcesSummary"        -> resourcesSummary.asInstanceOf[js.Any],
-        "status"                  -> status.asInstanceOf[js.Any],
-        "timestamp"               -> timestamp.asInstanceOf[js.Any]
+        "checkId" -> checkId.asInstanceOf[js.Any],
+        "resourcesSummary" -> resourcesSummary.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any],
+        "timestamp" -> timestamp.asInstanceOf[js.Any]
       )
 
       hasFlaggedResources.foreach(__v => __obj.updateDynamic("hasFlaggedResources")(__v.asInstanceOf[js.Any]))
@@ -1140,7 +1134,7 @@ package support {
   }
 
   /**
-    * The estimated cost savings that might be realized if the recommended actions are taken.
+    * The estimated cost savings that might be realized if the recommended operations are taken.
     */
   @js.native
   trait TrustedAdvisorCostOptimizingSummary extends js.Object {
@@ -1155,7 +1149,7 @@ package support {
         estimatedPercentMonthlySavings: Double
     ): TrustedAdvisorCostOptimizingSummary = {
       val __obj = js.Dynamic.literal(
-        "estimatedMonthlySavings"        -> estimatedMonthlySavings.asInstanceOf[js.Any],
+        "estimatedMonthlySavings" -> estimatedMonthlySavings.asInstanceOf[js.Any],
         "estimatedPercentMonthlySavings" -> estimatedPercentMonthlySavings.asInstanceOf[js.Any]
       )
 
@@ -1185,9 +1179,9 @@ package support {
         region: js.UndefOr[String] = js.undefined
     ): TrustedAdvisorResourceDetail = {
       val __obj = js.Dynamic.literal(
-        "metadata"   -> metadata.asInstanceOf[js.Any],
+        "metadata" -> metadata.asInstanceOf[js.Any],
         "resourceId" -> resourceId.asInstanceOf[js.Any],
-        "status"     -> status.asInstanceOf[js.Any]
+        "status" -> status.asInstanceOf[js.Any]
       )
 
       isSuppressed.foreach(__v => __obj.updateDynamic("isSuppressed")(__v.asInstanceOf[js.Any]))
@@ -1216,9 +1210,9 @@ package support {
         resourcesSuppressed: Double
     ): TrustedAdvisorResourcesSummary = {
       val __obj = js.Dynamic.literal(
-        "resourcesFlagged"    -> resourcesFlagged.asInstanceOf[js.Any],
-        "resourcesIgnored"    -> resourcesIgnored.asInstanceOf[js.Any],
-        "resourcesProcessed"  -> resourcesProcessed.asInstanceOf[js.Any],
+        "resourcesFlagged" -> resourcesFlagged.asInstanceOf[js.Any],
+        "resourcesIgnored" -> resourcesIgnored.asInstanceOf[js.Any],
+        "resourcesProcessed" -> resourcesProcessed.asInstanceOf[js.Any],
         "resourcesSuppressed" -> resourcesSuppressed.asInstanceOf[js.Any]
       )
 

@@ -7,105 +7,105 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object elastictranscoder {
-  type AccessControl        = String
-  type AccessControls       = js.Array[AccessControl]
-  type Artworks             = js.Array[Artwork]
-  type Ascending            = String
-  type AspectRatio          = String
-  type AudioBitDepth        = String
-  type AudioBitOrder        = String
-  type AudioBitRate         = String
-  type AudioChannels        = String
-  type AudioCodec           = String
-  type AudioCodecProfile    = String
-  type AudioPackingMode     = String
-  type AudioSampleRate      = String
-  type AudioSigned          = String
-  type Base64EncodedString  = String
-  type BucketName           = String
-  type CaptionFormatFormat  = String
+  type AccessControl = String
+  type AccessControls = js.Array[AccessControl]
+  type Artworks = js.Array[Artwork]
+  type Ascending = String
+  type AspectRatio = String
+  type AudioBitDepth = String
+  type AudioBitOrder = String
+  type AudioBitRate = String
+  type AudioChannels = String
+  type AudioCodec = String
+  type AudioCodecProfile = String
+  type AudioPackingMode = String
+  type AudioSampleRate = String
+  type AudioSigned = String
+  type Base64EncodedString = String
+  type BucketName = String
+  type CaptionFormatFormat = String
   type CaptionFormatPattern = String
-  type CaptionFormats       = js.Array[CaptionFormat]
-  type CaptionMergePolicy   = String
-  type CaptionSources       = js.Array[CaptionSource]
-  type CodecOption          = String
-  type CodecOptions         = js.Dictionary[CodecOption]
+  type CaptionFormats = js.Array[CaptionFormat]
+  type CaptionMergePolicy = String
+  type CaptionSources = js.Array[CaptionSource]
+  type CodecOption = String
+  type CodecOptions = js.Dictionary[CodecOption]
   @deprecated("Deprecated in AWS SDK", "forever")
-  type Composition                 = js.Array[Clip]
-  type CreateJobOutputs            = js.Array[CreateJobOutput]
-  type CreateJobPlaylists          = js.Array[CreateJobPlaylist]
-  type Description                 = String
-  type Digits                      = String
-  type DigitsOrAuto                = String
-  type EncryptionMode              = String
-  type ExceptionMessages           = js.Array[String]
-  type Filename                    = String
-  type FixedGOP                    = String
-  type FloatString                 = String
-  type FrameRate                   = String
-  type Grantee                     = String
-  type GranteeType                 = String
-  type HlsContentProtectionMethod  = String
-  type HorizontalAlign             = String
-  type Id                          = String
-  type Interlaced                  = String
-  type JobContainer                = String
-  type JobInputs                   = js.Array[JobInput]
-  type JobOutputs                  = js.Array[JobOutput]
-  type JobStatus                   = String
-  type JobWatermarks               = js.Array[JobWatermark]
-  type Jobs                        = js.Array[Job]
-  type JpgOrPng                    = String
-  type Key                         = String
-  type KeyArn                      = String
-  type KeyIdGuid                   = String
-  type KeyStoragePolicy            = String
-  type KeyframesMaxDist            = String
-  type LongKey                     = String
-  type MaxFrameRate                = String
-  type MergePolicy                 = String
-  type Name                        = String
+  type Composition = js.Array[Clip]
+  type CreateJobOutputs = js.Array[CreateJobOutput]
+  type CreateJobPlaylists = js.Array[CreateJobPlaylist]
+  type Description = String
+  type Digits = String
+  type DigitsOrAuto = String
+  type EncryptionMode = String
+  type ExceptionMessages = js.Array[String]
+  type Filename = String
+  type FixedGOP = String
+  type FloatString = String
+  type FrameRate = String
+  type Grantee = String
+  type GranteeType = String
+  type HlsContentProtectionMethod = String
+  type HorizontalAlign = String
+  type Id = String
+  type Interlaced = String
+  type JobContainer = String
+  type JobInputs = js.Array[JobInput]
+  type JobOutputs = js.Array[JobOutput]
+  type JobStatus = String
+  type JobWatermarks = js.Array[JobWatermark]
+  type Jobs = js.Array[Job]
+  type JpgOrPng = String
+  type Key = String
+  type KeyArn = String
+  type KeyIdGuid = String
+  type KeyStoragePolicy = String
+  type KeyframesMaxDist = String
+  type LongKey = String
+  type MaxFrameRate = String
+  type MergePolicy = String
+  type Name = String
   type NonEmptyBase64EncodedString = String
-  type NullableInteger             = Int
-  type NullableLong                = Double
-  type OneTo512String              = String
-  type Opacity                     = String
-  type OutputKeys                  = js.Array[Key]
-  type PaddingPolicy               = String
-  type Permissions                 = js.Array[Permission]
-  type PipelineStatus              = String
-  type Pipelines                   = js.Array[Pipeline]
-  type PixelsOrPercent             = String
-  type PlayReadyDrmFormatString    = String
-  type PlaylistFormat              = String
-  type Playlists                   = js.Array[Playlist]
-  type PresetContainer             = String
-  type PresetType                  = String
-  type PresetWatermarkId           = String
-  type PresetWatermarks            = js.Array[PresetWatermark]
-  type Presets                     = js.Array[Preset]
-  type Resolution                  = String
-  type Role                        = String
-  type Rotate                      = String
-  type SizingPolicy                = String
-  type SnsTopic                    = String
-  type SnsTopics                   = js.Array[SnsTopic]
-  type StorageClass                = String
-  type Success                     = String
-  type Target                      = String
-  type ThumbnailPattern            = String
-  type ThumbnailResolution         = String
-  type Time                        = String
-  type TimeOffset                  = String
-  type UserMetadata                = js.Dictionary[String]
-  type VerticalAlign               = String
-  type VideoBitRate                = String
-  type VideoCodec                  = String
-  type Warnings                    = js.Array[Warning]
-  type WatermarkKey                = String
-  type WatermarkSizingPolicy       = String
-  type ZeroTo255String             = String
-  type ZeroTo512String             = String
+  type NullableInteger = Int
+  type NullableLong = Double
+  type OneTo512String = String
+  type Opacity = String
+  type OutputKeys = js.Array[Key]
+  type PaddingPolicy = String
+  type Permissions = js.Array[Permission]
+  type PipelineStatus = String
+  type Pipelines = js.Array[Pipeline]
+  type PixelsOrPercent = String
+  type PlayReadyDrmFormatString = String
+  type PlaylistFormat = String
+  type Playlists = js.Array[Playlist]
+  type PresetContainer = String
+  type PresetType = String
+  type PresetWatermarkId = String
+  type PresetWatermarks = js.Array[PresetWatermark]
+  type Presets = js.Array[Preset]
+  type Resolution = String
+  type Role = String
+  type Rotate = String
+  type SizingPolicy = String
+  type SnsTopic = String
+  type SnsTopics = js.Array[SnsTopic]
+  type StorageClass = String
+  type Success = String
+  type Target = String
+  type ThumbnailPattern = String
+  type ThumbnailResolution = String
+  type Time = String
+  type TimeOffset = String
+  type UserMetadata = js.Dictionary[String]
+  type VerticalAlign = String
+  type VideoBitRate = String
+  type VideoCodec = String
+  type Warnings = js.Array[Warning]
+  type WatermarkKey = String
+  type WatermarkSizingPolicy = String
+  type ZeroTo255String = String
+  type ZeroTo512String = String
 
   implicit final class ElasticTranscoderOps(private val service: ElasticTranscoder) extends AnyVal {
 
@@ -151,23 +151,23 @@ package elastictranscoder {
   class ElasticTranscoder() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def cancelJob(params: CancelJobRequest): Request[CancelJobResponse]                            = js.native
-    def createJob(params: CreateJobRequest): Request[CreateJobResponse]                            = js.native
-    def createPipeline(params: CreatePipelineRequest): Request[CreatePipelineResponse]             = js.native
-    def createPreset(params: CreatePresetRequest): Request[CreatePresetResponse]                   = js.native
-    def deletePipeline(params: DeletePipelineRequest): Request[DeletePipelineResponse]             = js.native
-    def deletePreset(params: DeletePresetRequest): Request[DeletePresetResponse]                   = js.native
+    def cancelJob(params: CancelJobRequest): Request[CancelJobResponse] = js.native
+    def createJob(params: CreateJobRequest): Request[CreateJobResponse] = js.native
+    def createPipeline(params: CreatePipelineRequest): Request[CreatePipelineResponse] = js.native
+    def createPreset(params: CreatePresetRequest): Request[CreatePresetResponse] = js.native
+    def deletePipeline(params: DeletePipelineRequest): Request[DeletePipelineResponse] = js.native
+    def deletePreset(params: DeletePresetRequest): Request[DeletePresetResponse] = js.native
     def listJobsByPipeline(params: ListJobsByPipelineRequest): Request[ListJobsByPipelineResponse] = js.native
-    def listJobsByStatus(params: ListJobsByStatusRequest): Request[ListJobsByStatusResponse]       = js.native
-    def listPipelines(params: ListPipelinesRequest): Request[ListPipelinesResponse]                = js.native
-    def listPresets(params: ListPresetsRequest): Request[ListPresetsResponse]                      = js.native
-    def readJob(params: ReadJobRequest): Request[ReadJobResponse]                                  = js.native
-    def readPipeline(params: ReadPipelineRequest): Request[ReadPipelineResponse]                   = js.native
-    def readPreset(params: ReadPresetRequest): Request[ReadPresetResponse]                         = js.native
-    def updatePipeline(params: UpdatePipelineRequest): Request[UpdatePipelineResponse]             = js.native
+    def listJobsByStatus(params: ListJobsByStatusRequest): Request[ListJobsByStatusResponse] = js.native
+    def listPipelines(params: ListPipelinesRequest): Request[ListPipelinesResponse] = js.native
+    def listPresets(params: ListPresetsRequest): Request[ListPresetsResponse] = js.native
+    def readJob(params: ReadJobRequest): Request[ReadJobResponse] = js.native
+    def readPipeline(params: ReadPipelineRequest): Request[ReadPipelineResponse] = js.native
+    def readPreset(params: ReadPresetRequest): Request[ReadPresetResponse] = js.native
+    def updatePipeline(params: UpdatePipelineRequest): Request[UpdatePipelineResponse] = js.native
     def updatePipelineNotifications(
         params: UpdatePipelineNotificationsRequest
-    ): Request[UpdatePipelineNotificationsResponse]                                                      = js.native
+    ): Request[UpdatePipelineNotificationsResponse] = js.native
     def updatePipelineStatus(params: UpdatePipelineStatusRequest): Request[UpdatePipelineStatusResponse] = js.native
     @deprecated("Deprecated in AWS SDK", "forever") def testRole(params: TestRoleRequest): Request[TestRoleResponse] =
       js.native
@@ -582,8 +582,8 @@ package elastictranscoder {
     ): CreatePipelineRequest = {
       val __obj = js.Dynamic.literal(
         "InputBucket" -> InputBucket.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any],
-        "Role"        -> Role.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Role" -> Role.asInstanceOf[js.Any]
       )
 
       AwsKmsKeyArn.foreach(__v => __obj.updateDynamic("AwsKmsKeyArn")(__v.asInstanceOf[js.Any]))
@@ -642,7 +642,7 @@ package elastictranscoder {
     ): CreatePresetRequest = {
       val __obj = js.Dynamic.literal(
         "Container" -> Container.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       Audio.foreach(__v => __obj.updateDynamic("Audio")(__v.asInstanceOf[js.Any]))
@@ -1714,10 +1714,10 @@ package elastictranscoder {
         Topics: SnsTopics
     ): TestRoleRequest = {
       val __obj = js.Dynamic.literal(
-        "InputBucket"  -> InputBucket.asInstanceOf[js.Any],
+        "InputBucket" -> InputBucket.asInstanceOf[js.Any],
         "OutputBucket" -> OutputBucket.asInstanceOf[js.Any],
-        "Role"         -> Role.asInstanceOf[js.Any],
-        "Topics"       -> Topics.asInstanceOf[js.Any]
+        "Role" -> Role.asInstanceOf[js.Any],
+        "Topics" -> Topics.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TestRoleRequest]
@@ -1850,7 +1850,7 @@ package elastictranscoder {
         Notifications: Notifications
     ): UpdatePipelineNotificationsRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"            -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "Notifications" -> Notifications.asInstanceOf[js.Any]
       )
 
@@ -1957,7 +1957,7 @@ package elastictranscoder {
         Status: PipelineStatus
     ): UpdatePipelineStatusRequest = {
       val __obj = js.Dynamic.literal(
-        "Id"     -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "Status" -> Status.asInstanceOf[js.Any]
       )
 

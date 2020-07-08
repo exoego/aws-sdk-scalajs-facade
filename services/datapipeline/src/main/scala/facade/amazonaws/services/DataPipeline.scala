@@ -7,34 +7,34 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object datapipeline {
-  type ParameterAttributeList  = js.Array[ParameterAttribute]
-  type ParameterObjectList     = js.Array[ParameterObject]
-  type ParameterValueList      = js.Array[ParameterValue]
+  type ParameterAttributeList = js.Array[ParameterAttribute]
+  type ParameterObjectList = js.Array[ParameterObject]
+  type ParameterValueList = js.Array[ParameterValue]
   type PipelineDescriptionList = js.Array[PipelineDescription]
-  type PipelineObjectList      = js.Array[PipelineObject]
-  type PipelineObjectMap       = js.Dictionary[PipelineObject]
-  type SelectorList            = js.Array[Selector]
-  type ValidationErrors        = js.Array[ValidationError]
-  type ValidationWarnings      = js.Array[ValidationWarning]
-  type attributeNameString     = String
-  type attributeValueString    = String
-  type cancelActive            = Boolean
-  type errorMessage            = String
-  type fieldList               = js.Array[Field]
-  type fieldNameString         = String
-  type fieldStringValue        = String
-  type id                      = String
-  type idList                  = js.Array[id]
-  type longString              = String
-  type pipelineList            = js.Array[PipelineIdName]
-  type stringList              = js.Array[String]
-  type tagKey                  = String
-  type tagList                 = js.Array[Tag]
-  type tagValue                = String
-  type taskId                  = String
-  type timestamp               = js.Date
-  type validationMessage       = String
-  type validationMessages      = js.Array[validationMessage]
+  type PipelineObjectList = js.Array[PipelineObject]
+  type PipelineObjectMap = js.Dictionary[PipelineObject]
+  type SelectorList = js.Array[Selector]
+  type ValidationErrors = js.Array[ValidationError]
+  type ValidationWarnings = js.Array[ValidationWarning]
+  type attributeNameString = String
+  type attributeValueString = String
+  type cancelActive = Boolean
+  type errorMessage = String
+  type fieldList = js.Array[Field]
+  type fieldNameString = String
+  type fieldStringValue = String
+  type id = String
+  type idList = js.Array[id]
+  type longString = String
+  type pipelineList = js.Array[PipelineIdName]
+  type stringList = js.Array[String]
+  type tagKey = String
+  type tagList = js.Array[Tag]
+  type tagValue = String
+  type taskId = String
+  type timestamp = js.Date
+  type validationMessage = String
+  type validationMessages = js.Array[validationMessage]
 
   implicit final class DataPipelineOps(private val service: DataPipeline) extends AnyVal {
 
@@ -86,24 +86,24 @@ package datapipeline {
   class DataPipeline() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def activatePipeline(params: ActivatePipelineInput): Request[ActivatePipelineOutput]                = js.native
-    def addTags(params: AddTagsInput): Request[AddTagsOutput]                                           = js.native
-    def createPipeline(params: CreatePipelineInput): Request[CreatePipelineOutput]                      = js.native
-    def deactivatePipeline(params: DeactivatePipelineInput): Request[DeactivatePipelineOutput]          = js.native
-    def deletePipeline(params: DeletePipelineInput): Request[js.Object]                                 = js.native
-    def describeObjects(params: DescribeObjectsInput): Request[DescribeObjectsOutput]                   = js.native
-    def describePipelines(params: DescribePipelinesInput): Request[DescribePipelinesOutput]             = js.native
-    def evaluateExpression(params: EvaluateExpressionInput): Request[EvaluateExpressionOutput]          = js.native
+    def activatePipeline(params: ActivatePipelineInput): Request[ActivatePipelineOutput] = js.native
+    def addTags(params: AddTagsInput): Request[AddTagsOutput] = js.native
+    def createPipeline(params: CreatePipelineInput): Request[CreatePipelineOutput] = js.native
+    def deactivatePipeline(params: DeactivatePipelineInput): Request[DeactivatePipelineOutput] = js.native
+    def deletePipeline(params: DeletePipelineInput): Request[js.Object] = js.native
+    def describeObjects(params: DescribeObjectsInput): Request[DescribeObjectsOutput] = js.native
+    def describePipelines(params: DescribePipelinesInput): Request[DescribePipelinesOutput] = js.native
+    def evaluateExpression(params: EvaluateExpressionInput): Request[EvaluateExpressionOutput] = js.native
     def getPipelineDefinition(params: GetPipelineDefinitionInput): Request[GetPipelineDefinitionOutput] = js.native
-    def listPipelines(params: ListPipelinesInput): Request[ListPipelinesOutput]                         = js.native
-    def pollForTask(params: PollForTaskInput): Request[PollForTaskOutput]                               = js.native
+    def listPipelines(params: ListPipelinesInput): Request[ListPipelinesOutput] = js.native
+    def pollForTask(params: PollForTaskInput): Request[PollForTaskOutput] = js.native
     def putPipelineDefinition(params: PutPipelineDefinitionInput): Request[PutPipelineDefinitionOutput] = js.native
-    def queryObjects(params: QueryObjectsInput): Request[QueryObjectsOutput]                            = js.native
-    def removeTags(params: RemoveTagsInput): Request[RemoveTagsOutput]                                  = js.native
-    def reportTaskProgress(params: ReportTaskProgressInput): Request[ReportTaskProgressOutput]          = js.native
+    def queryObjects(params: QueryObjectsInput): Request[QueryObjectsOutput] = js.native
+    def removeTags(params: RemoveTagsInput): Request[RemoveTagsOutput] = js.native
+    def reportTaskProgress(params: ReportTaskProgressInput): Request[ReportTaskProgressOutput] = js.native
     def reportTaskRunnerHeartbeat(params: ReportTaskRunnerHeartbeatInput): Request[ReportTaskRunnerHeartbeatOutput] =
       js.native
-    def setStatus(params: SetStatusInput): Request[js.Object]                   = js.native
+    def setStatus(params: SetStatusInput): Request[js.Object] = js.native
     def setTaskStatus(params: SetTaskStatusInput): Request[SetTaskStatusOutput] = js.native
     def validatePipelineDefinition(params: ValidatePipelineDefinitionInput): Request[ValidatePipelineDefinitionOutput] =
       js.native
@@ -169,7 +169,7 @@ package datapipeline {
     ): AddTagsInput = {
       val __obj = js.Dynamic.literal(
         "pipelineId" -> pipelineId.asInstanceOf[js.Any],
-        "tags"       -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddTagsInput]
@@ -212,7 +212,7 @@ package datapipeline {
         tags: js.UndefOr[tagList] = js.undefined
     ): CreatePipelineInput = {
       val __obj = js.Dynamic.literal(
-        "name"     -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "uniqueId" -> uniqueId.asInstanceOf[js.Any]
       )
 
@@ -324,7 +324,7 @@ package datapipeline {
         marker: js.UndefOr[String] = js.undefined
     ): DescribeObjectsInput = {
       val __obj = js.Dynamic.literal(
-        "objectIds"  -> objectIds.asInstanceOf[js.Any],
+        "objectIds" -> objectIds.asInstanceOf[js.Any],
         "pipelineId" -> pipelineId.asInstanceOf[js.Any]
       )
 
@@ -422,7 +422,7 @@ package datapipeline {
     ): EvaluateExpressionInput = {
       val __obj = js.Dynamic.literal(
         "expression" -> expression.asInstanceOf[js.Any],
-        "objectId"   -> objectId.asInstanceOf[js.Any],
+        "objectId" -> objectId.asInstanceOf[js.Any],
         "pipelineId" -> pipelineId.asInstanceOf[js.Any]
       )
 
@@ -637,10 +637,10 @@ package datapipeline {
   @js.native
   sealed trait OperatorType extends js.Any
   object OperatorType extends js.Object {
-    val EQ      = "EQ".asInstanceOf[OperatorType]
-    val REF_EQ  = "REF_EQ".asInstanceOf[OperatorType]
-    val LE      = "LE".asInstanceOf[OperatorType]
-    val GE      = "GE".asInstanceOf[OperatorType]
+    val EQ = "EQ".asInstanceOf[OperatorType]
+    val REF_EQ = "REF_EQ".asInstanceOf[OperatorType]
+    val LE = "LE".asInstanceOf[OperatorType]
+    val GE = "GE".asInstanceOf[OperatorType]
     val BETWEEN = "BETWEEN".asInstanceOf[OperatorType]
 
     val values = js.Object.freeze(js.Array(EQ, REF_EQ, LE, GE, BETWEEN))
@@ -662,7 +662,7 @@ package datapipeline {
         stringValue: attributeValueString
     ): ParameterAttribute = {
       val __obj = js.Dynamic.literal(
-        "key"         -> key.asInstanceOf[js.Any],
+        "key" -> key.asInstanceOf[js.Any],
         "stringValue" -> stringValue.asInstanceOf[js.Any]
       )
 
@@ -687,7 +687,7 @@ package datapipeline {
     ): ParameterObject = {
       val __obj = js.Dynamic.literal(
         "attributes" -> attributes.asInstanceOf[js.Any],
-        "id"         -> id.asInstanceOf[js.Any]
+        "id" -> id.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ParameterObject]
@@ -710,7 +710,7 @@ package datapipeline {
         stringValue: fieldStringValue
     ): ParameterValue = {
       val __obj = js.Dynamic.literal(
-        "id"          -> id.asInstanceOf[js.Any],
+        "id" -> id.asInstanceOf[js.Any],
         "stringValue" -> stringValue.asInstanceOf[js.Any]
       )
 
@@ -748,8 +748,8 @@ package datapipeline {
         tags: js.UndefOr[tagList] = js.undefined
     ): PipelineDescription = {
       val __obj = js.Dynamic.literal(
-        "fields"     -> fields.asInstanceOf[js.Any],
-        "name"       -> name.asInstanceOf[js.Any],
+        "fields" -> fields.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "pipelineId" -> pipelineId.asInstanceOf[js.Any]
       )
 
@@ -808,8 +808,8 @@ package datapipeline {
     ): PipelineObject = {
       val __obj = js.Dynamic.literal(
         "fields" -> fields.asInstanceOf[js.Any],
-        "id"     -> id.asInstanceOf[js.Any],
-        "name"   -> name.asInstanceOf[js.Any]
+        "id" -> id.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PipelineObject]
@@ -882,7 +882,7 @@ package datapipeline {
         parameterValues: js.UndefOr[ParameterValueList] = js.undefined
     ): PutPipelineDefinitionInput = {
       val __obj = js.Dynamic.literal(
-        "pipelineId"      -> pipelineId.asInstanceOf[js.Any],
+        "pipelineId" -> pipelineId.asInstanceOf[js.Any],
         "pipelineObjects" -> pipelineObjects.asInstanceOf[js.Any]
       )
 
@@ -961,7 +961,7 @@ package datapipeline {
     ): QueryObjectsInput = {
       val __obj = js.Dynamic.literal(
         "pipelineId" -> pipelineId.asInstanceOf[js.Any],
-        "sphere"     -> sphere.asInstanceOf[js.Any]
+        "sphere" -> sphere.asInstanceOf[js.Any]
       )
 
       limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
@@ -1013,7 +1013,7 @@ package datapipeline {
     ): RemoveTagsInput = {
       val __obj = js.Dynamic.literal(
         "pipelineId" -> pipelineId.asInstanceOf[js.Any],
-        "tagKeys"    -> tagKeys.asInstanceOf[js.Any]
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RemoveTagsInput]
@@ -1169,9 +1169,9 @@ package datapipeline {
         status: String
     ): SetStatusInput = {
       val __obj = js.Dynamic.literal(
-        "objectIds"  -> objectIds.asInstanceOf[js.Any],
+        "objectIds" -> objectIds.asInstanceOf[js.Any],
         "pipelineId" -> pipelineId.asInstanceOf[js.Any],
-        "status"     -> status.asInstanceOf[js.Any]
+        "status" -> status.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[SetStatusInput]
@@ -1200,7 +1200,7 @@ package datapipeline {
         errorStackTrace: js.UndefOr[String] = js.undefined
     ): SetTaskStatusInput = {
       val __obj = js.Dynamic.literal(
-        "taskId"     -> taskId.asInstanceOf[js.Any],
+        "taskId" -> taskId.asInstanceOf[js.Any],
         "taskStatus" -> taskStatus.asInstanceOf[js.Any]
       )
 
@@ -1243,7 +1243,7 @@ package datapipeline {
         value: tagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "key"   -> key.asInstanceOf[js.Any],
+        "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 
@@ -1291,8 +1291,8 @@ package datapipeline {
   sealed trait TaskStatus extends js.Any
   object TaskStatus extends js.Object {
     val FINISHED = "FINISHED".asInstanceOf[TaskStatus]
-    val FAILED   = "FAILED".asInstanceOf[TaskStatus]
-    val FALSE    = "FALSE".asInstanceOf[TaskStatus]
+    val FAILED = "FAILED".asInstanceOf[TaskStatus]
+    val FALSE = "FALSE".asInstanceOf[TaskStatus]
 
     val values = js.Object.freeze(js.Array(FINISHED, FAILED, FALSE))
   }
@@ -1317,7 +1317,7 @@ package datapipeline {
         parameterValues: js.UndefOr[ParameterValueList] = js.undefined
     ): ValidatePipelineDefinitionInput = {
       val __obj = js.Dynamic.literal(
-        "pipelineId"      -> pipelineId.asInstanceOf[js.Any],
+        "pipelineId" -> pipelineId.asInstanceOf[js.Any],
         "pipelineObjects" -> pipelineObjects.asInstanceOf[js.Any]
       )
 

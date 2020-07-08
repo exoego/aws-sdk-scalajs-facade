@@ -7,29 +7,29 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object resourcegroups {
-  type GroupArn               = String
-  type GroupDescription       = String
-  type GroupFilterList        = js.Array[GroupFilter]
-  type GroupFilterValue       = String
-  type GroupFilterValues      = js.Array[GroupFilterValue]
-  type GroupIdentifierList    = js.Array[GroupIdentifier]
-  type GroupList              = js.Array[Group]
-  type GroupName              = String
-  type MaxResults             = Int
-  type NextToken              = String
-  type Query                  = String
-  type QueryErrorList         = js.Array[QueryError]
-  type QueryErrorMessage      = String
-  type ResourceArn            = String
-  type ResourceFilterList     = js.Array[ResourceFilter]
-  type ResourceFilterValue    = String
-  type ResourceFilterValues   = js.Array[ResourceFilterValue]
+  type GroupArn = String
+  type GroupDescription = String
+  type GroupFilterList = js.Array[GroupFilter]
+  type GroupFilterValue = String
+  type GroupFilterValues = js.Array[GroupFilterValue]
+  type GroupIdentifierList = js.Array[GroupIdentifier]
+  type GroupList = js.Array[Group]
+  type GroupName = String
+  type MaxResults = Int
+  type NextToken = String
+  type Query = String
+  type QueryErrorList = js.Array[QueryError]
+  type QueryErrorMessage = String
+  type ResourceArn = String
+  type ResourceFilterList = js.Array[ResourceFilter]
+  type ResourceFilterValue = String
+  type ResourceFilterValues = js.Array[ResourceFilterValue]
   type ResourceIdentifierList = js.Array[ResourceIdentifier]
-  type ResourceType           = String
-  type TagKey                 = String
-  type TagKeyList             = js.Array[TagKey]
-  type TagValue               = String
-  type Tags                   = js.Dictionary[TagValue]
+  type ResourceType = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagValue = String
+  type Tags = js.Dictionary[TagValue]
 
   implicit final class ResourceGroupsOps(private val service: ResourceGroups) extends AnyVal {
 
@@ -48,7 +48,7 @@ package object resourcegroups {
       service.listGroups(params).promise().toFuture
     @inline def searchResourcesFuture(params: SearchResourcesInput): Future[SearchResourcesOutput] =
       service.searchResources(params).promise().toFuture
-    @inline def tagFuture(params: TagInput): Future[TagOutput]       = service.tag(params).promise().toFuture
+    @inline def tagFuture(params: TagInput): Future[TagOutput] = service.tag(params).promise().toFuture
     @inline def untagFuture(params: UntagInput): Future[UntagOutput] = service.untag(params).promise().toFuture
     @inline def updateGroupFuture(params: UpdateGroupInput): Future[UpdateGroupOutput] =
       service.updateGroup(params).promise().toFuture
@@ -63,18 +63,18 @@ package resourcegroups {
   class ResourceGroups() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createGroup(params: CreateGroupInput): Request[CreateGroupOutput]                      = js.native
-    def deleteGroup(params: DeleteGroupInput): Request[DeleteGroupOutput]                      = js.native
-    def getGroup(params: GetGroupInput): Request[GetGroupOutput]                               = js.native
-    def getGroupQuery(params: GetGroupQueryInput): Request[GetGroupQueryOutput]                = js.native
-    def getTags(params: GetTagsInput): Request[GetTagsOutput]                                  = js.native
+    def createGroup(params: CreateGroupInput): Request[CreateGroupOutput] = js.native
+    def deleteGroup(params: DeleteGroupInput): Request[DeleteGroupOutput] = js.native
+    def getGroup(params: GetGroupInput): Request[GetGroupOutput] = js.native
+    def getGroupQuery(params: GetGroupQueryInput): Request[GetGroupQueryOutput] = js.native
+    def getTags(params: GetTagsInput): Request[GetTagsOutput] = js.native
     def listGroupResources(params: ListGroupResourcesInput): Request[ListGroupResourcesOutput] = js.native
-    def listGroups(params: ListGroupsInput): Request[ListGroupsOutput]                         = js.native
-    def searchResources(params: SearchResourcesInput): Request[SearchResourcesOutput]          = js.native
-    def tag(params: TagInput): Request[TagOutput]                                              = js.native
-    def untag(params: UntagInput): Request[UntagOutput]                                        = js.native
-    def updateGroup(params: UpdateGroupInput): Request[UpdateGroupOutput]                      = js.native
-    def updateGroupQuery(params: UpdateGroupQueryInput): Request[UpdateGroupQueryOutput]       = js.native
+    def listGroups(params: ListGroupsInput): Request[ListGroupsOutput] = js.native
+    def searchResources(params: SearchResourcesInput): Request[SearchResourcesOutput] = js.native
+    def tag(params: TagInput): Request[TagOutput] = js.native
+    def untag(params: UntagInput): Request[UntagOutput] = js.native
+    def updateGroup(params: UpdateGroupInput): Request[UpdateGroupOutput] = js.native
+    def updateGroupQuery(params: UpdateGroupQueryInput): Request[UpdateGroupQueryOutput] = js.native
   }
 
   @js.native
@@ -94,7 +94,7 @@ package resourcegroups {
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateGroupInput = {
       val __obj = js.Dynamic.literal(
-        "Name"          -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "ResourceQuery" -> ResourceQuery.asInstanceOf[js.Any]
       )
 
@@ -284,7 +284,7 @@ package resourcegroups {
     ): Group = {
       val __obj = js.Dynamic.literal(
         "GroupArn" -> GroupArn.asInstanceOf[js.Any],
-        "Name"     -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -308,7 +308,7 @@ package resourcegroups {
         Values: GroupFilterValues
     ): GroupFilter = {
       val __obj = js.Dynamic.literal(
-        "Name"   -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
@@ -362,7 +362,7 @@ package resourcegroups {
         ResourceQuery: ResourceQuery
     ): GroupQuery = {
       val __obj = js.Dynamic.literal(
-        "GroupName"     -> GroupName.asInstanceOf[js.Any],
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
         "ResourceQuery" -> ResourceQuery.asInstanceOf[js.Any]
       )
 
@@ -488,7 +488,7 @@ package resourcegroups {
   @js.native
   sealed trait QueryErrorCode extends js.Any
   object QueryErrorCode extends js.Object {
-    val CLOUDFORMATION_STACK_INACTIVE     = "CLOUDFORMATION_STACK_INACTIVE".asInstanceOf[QueryErrorCode]
+    val CLOUDFORMATION_STACK_INACTIVE = "CLOUDFORMATION_STACK_INACTIVE".asInstanceOf[QueryErrorCode]
     val CLOUDFORMATION_STACK_NOT_EXISTING = "CLOUDFORMATION_STACK_NOT_EXISTING".asInstanceOf[QueryErrorCode]
 
     val values = js.Object.freeze(js.Array(CLOUDFORMATION_STACK_INACTIVE, CLOUDFORMATION_STACK_NOT_EXISTING))
@@ -497,7 +497,7 @@ package resourcegroups {
   @js.native
   sealed trait QueryType extends js.Any
   object QueryType extends js.Object {
-    val TAG_FILTERS_1_0          = "TAG_FILTERS_1_0".asInstanceOf[QueryType]
+    val TAG_FILTERS_1_0 = "TAG_FILTERS_1_0".asInstanceOf[QueryType]
     val CLOUDFORMATION_STACK_1_0 = "CLOUDFORMATION_STACK_1_0".asInstanceOf[QueryType]
 
     val values = js.Object.freeze(js.Array(TAG_FILTERS_1_0, CLOUDFORMATION_STACK_1_0))
@@ -519,7 +519,7 @@ package resourcegroups {
         Values: ResourceFilterValues
     ): ResourceFilter = {
       val __obj = js.Dynamic.literal(
-        "Name"   -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
@@ -574,7 +574,7 @@ package resourcegroups {
     ): ResourceQuery = {
       val __obj = js.Dynamic.literal(
         "Query" -> Query.asInstanceOf[js.Any],
-        "Type"  -> Type.asInstanceOf[js.Any]
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ResourceQuery]
@@ -640,7 +640,7 @@ package resourcegroups {
         Tags: Tags
     ): TagInput = {
       val __obj = js.Dynamic.literal(
-        "Arn"  -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
@@ -680,7 +680,7 @@ package resourcegroups {
         Keys: TagKeyList
     ): UntagInput = {
       val __obj = js.Dynamic.literal(
-        "Arn"  -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "Keys" -> Keys.asInstanceOf[js.Any]
       )
 
@@ -757,7 +757,7 @@ package resourcegroups {
         ResourceQuery: ResourceQuery
     ): UpdateGroupQueryInput = {
       val __obj = js.Dynamic.literal(
-        "GroupName"     -> GroupName.asInstanceOf[js.Any],
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
         "ResourceQuery" -> ResourceQuery.asInstanceOf[js.Any]
       )
 

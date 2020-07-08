@@ -7,80 +7,84 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object cloudwatchlogs {
-  type AccessPolicy                = String
-  type Arn                         = String
-  type Days                        = Int
-  type DefaultValue                = Double
-  type Descending                  = Boolean
-  type DescribeLimit               = Int
-  type DescribeQueriesMaxResults   = Int
-  type DestinationArn              = String
-  type DestinationName             = String
-  type Destinations                = js.Array[Destination]
-  type EventId                     = String
-  type EventMessage                = String
-  type EventNumber                 = Double
-  type EventsLimit                 = Int
-  type ExportDestinationBucket     = String
-  type ExportDestinationPrefix     = String
-  type ExportTaskId                = String
-  type ExportTaskName              = String
-  type ExportTaskStatusMessage     = String
-  type ExportTasks                 = js.Array[ExportTask]
-  type ExtractedValues             = js.Dictionary[Value]
-  type Field                       = String
-  type FilterCount                 = Int
-  type FilterName                  = String
-  type FilterPattern               = String
-  type FilteredLogEvents           = js.Array[FilteredLogEvent]
-  type InputLogEvents              = js.Array[InputLogEvent]
-  type InputLogStreamNames         = js.Array[LogStreamName]
-  type Interleaved                 = Boolean
-  type KmsKeyId                    = String
-  type LogEventIndex               = Int
-  type LogGroupFieldList           = js.Array[LogGroupField]
-  type LogGroupName                = String
-  type LogGroupNames               = js.Array[LogGroupName]
-  type LogGroups                   = js.Array[LogGroup]
-  type LogRecord                   = js.Dictionary[Value]
-  type LogRecordPointer            = String
-  type LogStreamName               = String
+  type AccessPolicy = String
+  type Arn = String
+  type Days = Int
+  type DefaultValue = Double
+  type Descending = Boolean
+  type DescribeLimit = Int
+  type DescribeQueriesMaxResults = Int
+  type DestinationArn = String
+  type DestinationName = String
+  type Destinations = js.Array[Destination]
+  type EventId = String
+  type EventMessage = String
+  type EventNumber = Double
+  type EventsLimit = Int
+  type ExportDestinationBucket = String
+  type ExportDestinationPrefix = String
+  type ExportTaskId = String
+  type ExportTaskName = String
+  type ExportTaskStatusMessage = String
+  type ExportTasks = js.Array[ExportTask]
+  type ExtractedValues = js.Dictionary[Value]
+  type Field = String
+  type FilterCount = Int
+  type FilterName = String
+  type FilterPattern = String
+  type FilteredLogEvents = js.Array[FilteredLogEvent]
+  type InputLogEvents = js.Array[InputLogEvent]
+  type InputLogStreamNames = js.Array[LogStreamName]
+  type Interleaved = Boolean
+  type KmsKeyId = String
+  type LogEventIndex = Int
+  type LogGroupFieldList = js.Array[LogGroupField]
+  type LogGroupName = String
+  type LogGroupNames = js.Array[LogGroupName]
+  type LogGroups = js.Array[LogGroup]
+  type LogRecord = js.Dictionary[Value]
+  type LogRecordPointer = String
+  type LogStreamName = String
   type LogStreamSearchedCompletely = Boolean
-  type LogStreams                  = js.Array[LogStream]
-  type MetricFilterMatches         = js.Array[MetricFilterMatchRecord]
-  type MetricFilters               = js.Array[MetricFilter]
-  type MetricName                  = String
-  type MetricNamespace             = String
-  type MetricTransformations       = js.Array[MetricTransformation]
-  type MetricValue                 = String
-  type NextToken                   = String
-  type OutputLogEvents             = js.Array[OutputLogEvent]
-  type Percentage                  = Int
-  type PolicyDocument              = String
-  type PolicyName                  = String
-  type QueryId                     = String
-  type QueryInfoList               = js.Array[QueryInfo]
-  type QueryResults                = js.Array[ResultRows]
-  type QueryString                 = String
-  type ResourcePolicies            = js.Array[ResourcePolicy]
-  type ResultRows                  = js.Array[ResultField]
-  type RoleArn                     = String
-  type SearchedLogStreams          = js.Array[SearchedLogStream]
-  type SequenceToken               = String
-  type StartFromHead               = Boolean
-  type StatsValue                  = Double
-  type StoredBytes                 = Double
-  type SubscriptionFilters         = js.Array[SubscriptionFilter]
-  type Success                     = Boolean
-  type TagKey                      = String
-  type TagList                     = js.Array[TagKey]
-  type TagValue                    = String
-  type Tags                        = js.Dictionary[TagValue]
-  type TargetArn                   = String
-  type TestEventMessages           = js.Array[EventMessage]
-  type Timestamp                   = Double
-  type Token                       = String
-  type Value                       = String
+  type LogStreams = js.Array[LogStream]
+  type MetricFilterMatches = js.Array[MetricFilterMatchRecord]
+  type MetricFilters = js.Array[MetricFilter]
+  type MetricName = String
+  type MetricNamespace = String
+  type MetricTransformations = js.Array[MetricTransformation]
+  type MetricValue = String
+  type NextToken = String
+  type OutputLogEvents = js.Array[OutputLogEvent]
+  type Percentage = Int
+  type PolicyDocument = String
+  type PolicyName = String
+  type QueryDefinitionList = js.Array[QueryDefinition]
+  type QueryDefinitionName = String
+  type QueryDefinitionString = String
+  type QueryId = String
+  type QueryInfoList = js.Array[QueryInfo]
+  type QueryListMaxResults = Int
+  type QueryResults = js.Array[ResultRows]
+  type QueryString = String
+  type ResourcePolicies = js.Array[ResourcePolicy]
+  type ResultRows = js.Array[ResultField]
+  type RoleArn = String
+  type SearchedLogStreams = js.Array[SearchedLogStream]
+  type SequenceToken = String
+  type StartFromHead = Boolean
+  type StatsValue = Double
+  type StoredBytes = Double
+  type SubscriptionFilters = js.Array[SubscriptionFilter]
+  type Success = Boolean
+  type TagKey = String
+  type TagList = js.Array[TagKey]
+  type TagValue = String
+  type Tags = js.Dictionary[TagValue]
+  type TargetArn = String
+  type TestEventMessages = js.Array[EventMessage]
+  type Timestamp = Double
+  type Token = String
+  type Value = String
 
   implicit final class CloudWatchLogsOps(private val service: CloudWatchLogs) extends AnyVal {
 
@@ -102,6 +106,9 @@ package object cloudwatchlogs {
       service.deleteLogStream(params).promise().toFuture
     @inline def deleteMetricFilterFuture(params: DeleteMetricFilterRequest): Future[js.Object] =
       service.deleteMetricFilter(params).promise().toFuture
+    @inline def deleteQueryDefinitionFuture(
+        params: DeleteQueryDefinitionRequest
+    ): Future[DeleteQueryDefinitionResponse] = service.deleteQueryDefinition(params).promise().toFuture
     @inline def deleteResourcePolicyFuture(params: DeleteResourcePolicyRequest): Future[js.Object] =
       service.deleteResourcePolicy(params).promise().toFuture
     @inline def deleteRetentionPolicyFuture(params: DeleteRetentionPolicyRequest): Future[js.Object] =
@@ -121,6 +128,9 @@ package object cloudwatchlogs {
     ): Future[DescribeMetricFiltersResponse] = service.describeMetricFilters(params).promise().toFuture
     @inline def describeQueriesFuture(params: DescribeQueriesRequest): Future[DescribeQueriesResponse] =
       service.describeQueries(params).promise().toFuture
+    @inline def describeQueryDefinitionsFuture(
+        params: DescribeQueryDefinitionsRequest
+    ): Future[DescribeQueryDefinitionsResponse] = service.describeQueryDefinitions(params).promise().toFuture
     @inline def describeResourcePoliciesFuture(
         params: DescribeResourcePoliciesRequest
     ): Future[DescribeResourcePoliciesResponse] = service.describeResourcePolicies(params).promise().toFuture
@@ -149,6 +159,8 @@ package object cloudwatchlogs {
       service.putLogEvents(params).promise().toFuture
     @inline def putMetricFilterFuture(params: PutMetricFilterRequest): Future[js.Object] =
       service.putMetricFilter(params).promise().toFuture
+    @inline def putQueryDefinitionFuture(params: PutQueryDefinitionRequest): Future[PutQueryDefinitionResponse] =
+      service.putQueryDefinition(params).promise().toFuture
     @inline def putResourcePolicyFuture(params: PutResourcePolicyRequest): Future[PutResourcePolicyResponse] =
       service.putResourcePolicy(params).promise().toFuture
     @inline def putRetentionPolicyFuture(params: PutRetentionPolicyRequest): Future[js.Object] =
@@ -174,48 +186,52 @@ package cloudwatchlogs {
   class CloudWatchLogs() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def associateKmsKey(params: AssociateKmsKeyRequest): Request[js.Object]                                 = js.native
-    def cancelExportTask(params: CancelExportTaskRequest): Request[js.Object]                               = js.native
-    def createExportTask(params: CreateExportTaskRequest): Request[CreateExportTaskResponse]                = js.native
-    def createLogGroup(params: CreateLogGroupRequest): Request[js.Object]                                   = js.native
-    def createLogStream(params: CreateLogStreamRequest): Request[js.Object]                                 = js.native
-    def deleteDestination(params: DeleteDestinationRequest): Request[js.Object]                             = js.native
-    def deleteLogGroup(params: DeleteLogGroupRequest): Request[js.Object]                                   = js.native
-    def deleteLogStream(params: DeleteLogStreamRequest): Request[js.Object]                                 = js.native
-    def deleteMetricFilter(params: DeleteMetricFilterRequest): Request[js.Object]                           = js.native
-    def deleteResourcePolicy(params: DeleteResourcePolicyRequest): Request[js.Object]                       = js.native
-    def deleteRetentionPolicy(params: DeleteRetentionPolicyRequest): Request[js.Object]                     = js.native
-    def deleteSubscriptionFilter(params: DeleteSubscriptionFilterRequest): Request[js.Object]               = js.native
-    def describeDestinations(params: DescribeDestinationsRequest): Request[DescribeDestinationsResponse]    = js.native
-    def describeExportTasks(params: DescribeExportTasksRequest): Request[DescribeExportTasksResponse]       = js.native
-    def describeLogGroups(params: DescribeLogGroupsRequest): Request[DescribeLogGroupsResponse]             = js.native
-    def describeLogStreams(params: DescribeLogStreamsRequest): Request[DescribeLogStreamsResponse]          = js.native
+    def associateKmsKey(params: AssociateKmsKeyRequest): Request[js.Object] = js.native
+    def cancelExportTask(params: CancelExportTaskRequest): Request[js.Object] = js.native
+    def createExportTask(params: CreateExportTaskRequest): Request[CreateExportTaskResponse] = js.native
+    def createLogGroup(params: CreateLogGroupRequest): Request[js.Object] = js.native
+    def createLogStream(params: CreateLogStreamRequest): Request[js.Object] = js.native
+    def deleteDestination(params: DeleteDestinationRequest): Request[js.Object] = js.native
+    def deleteLogGroup(params: DeleteLogGroupRequest): Request[js.Object] = js.native
+    def deleteLogStream(params: DeleteLogStreamRequest): Request[js.Object] = js.native
+    def deleteMetricFilter(params: DeleteMetricFilterRequest): Request[js.Object] = js.native
+    def deleteQueryDefinition(params: DeleteQueryDefinitionRequest): Request[DeleteQueryDefinitionResponse] = js.native
+    def deleteResourcePolicy(params: DeleteResourcePolicyRequest): Request[js.Object] = js.native
+    def deleteRetentionPolicy(params: DeleteRetentionPolicyRequest): Request[js.Object] = js.native
+    def deleteSubscriptionFilter(params: DeleteSubscriptionFilterRequest): Request[js.Object] = js.native
+    def describeDestinations(params: DescribeDestinationsRequest): Request[DescribeDestinationsResponse] = js.native
+    def describeExportTasks(params: DescribeExportTasksRequest): Request[DescribeExportTasksResponse] = js.native
+    def describeLogGroups(params: DescribeLogGroupsRequest): Request[DescribeLogGroupsResponse] = js.native
+    def describeLogStreams(params: DescribeLogStreamsRequest): Request[DescribeLogStreamsResponse] = js.native
     def describeMetricFilters(params: DescribeMetricFiltersRequest): Request[DescribeMetricFiltersResponse] = js.native
-    def describeQueries(params: DescribeQueriesRequest): Request[DescribeQueriesResponse]                   = js.native
+    def describeQueries(params: DescribeQueriesRequest): Request[DescribeQueriesResponse] = js.native
+    def describeQueryDefinitions(params: DescribeQueryDefinitionsRequest): Request[DescribeQueryDefinitionsResponse] =
+      js.native
     def describeResourcePolicies(params: DescribeResourcePoliciesRequest): Request[DescribeResourcePoliciesResponse] =
       js.native
     def describeSubscriptionFilters(
         params: DescribeSubscriptionFiltersRequest
-    ): Request[DescribeSubscriptionFiltersResponse]                                             = js.native
-    def disassociateKmsKey(params: DisassociateKmsKeyRequest): Request[js.Object]               = js.native
-    def filterLogEvents(params: FilterLogEventsRequest): Request[FilterLogEventsResponse]       = js.native
-    def getLogEvents(params: GetLogEventsRequest): Request[GetLogEventsResponse]                = js.native
+    ): Request[DescribeSubscriptionFiltersResponse] = js.native
+    def disassociateKmsKey(params: DisassociateKmsKeyRequest): Request[js.Object] = js.native
+    def filterLogEvents(params: FilterLogEventsRequest): Request[FilterLogEventsResponse] = js.native
+    def getLogEvents(params: GetLogEventsRequest): Request[GetLogEventsResponse] = js.native
     def getLogGroupFields(params: GetLogGroupFieldsRequest): Request[GetLogGroupFieldsResponse] = js.native
-    def getLogRecord(params: GetLogRecordRequest): Request[GetLogRecordResponse]                = js.native
-    def getQueryResults(params: GetQueryResultsRequest): Request[GetQueryResultsResponse]       = js.native
-    def listTagsLogGroup(params: ListTagsLogGroupRequest): Request[ListTagsLogGroupResponse]    = js.native
-    def putDestination(params: PutDestinationRequest): Request[PutDestinationResponse]          = js.native
-    def putDestinationPolicy(params: PutDestinationPolicyRequest): Request[js.Object]           = js.native
-    def putLogEvents(params: PutLogEventsRequest): Request[PutLogEventsResponse]                = js.native
-    def putMetricFilter(params: PutMetricFilterRequest): Request[js.Object]                     = js.native
+    def getLogRecord(params: GetLogRecordRequest): Request[GetLogRecordResponse] = js.native
+    def getQueryResults(params: GetQueryResultsRequest): Request[GetQueryResultsResponse] = js.native
+    def listTagsLogGroup(params: ListTagsLogGroupRequest): Request[ListTagsLogGroupResponse] = js.native
+    def putDestination(params: PutDestinationRequest): Request[PutDestinationResponse] = js.native
+    def putDestinationPolicy(params: PutDestinationPolicyRequest): Request[js.Object] = js.native
+    def putLogEvents(params: PutLogEventsRequest): Request[PutLogEventsResponse] = js.native
+    def putMetricFilter(params: PutMetricFilterRequest): Request[js.Object] = js.native
+    def putQueryDefinition(params: PutQueryDefinitionRequest): Request[PutQueryDefinitionResponse] = js.native
     def putResourcePolicy(params: PutResourcePolicyRequest): Request[PutResourcePolicyResponse] = js.native
-    def putRetentionPolicy(params: PutRetentionPolicyRequest): Request[js.Object]               = js.native
-    def putSubscriptionFilter(params: PutSubscriptionFilterRequest): Request[js.Object]         = js.native
-    def startQuery(params: StartQueryRequest): Request[StartQueryResponse]                      = js.native
-    def stopQuery(params: StopQueryRequest): Request[StopQueryResponse]                         = js.native
-    def tagLogGroup(params: TagLogGroupRequest): Request[js.Object]                             = js.native
-    def testMetricFilter(params: TestMetricFilterRequest): Request[TestMetricFilterResponse]    = js.native
-    def untagLogGroup(params: UntagLogGroupRequest): Request[js.Object]                         = js.native
+    def putRetentionPolicy(params: PutRetentionPolicyRequest): Request[js.Object] = js.native
+    def putSubscriptionFilter(params: PutSubscriptionFilterRequest): Request[js.Object] = js.native
+    def startQuery(params: StartQueryRequest): Request[StartQueryResponse] = js.native
+    def stopQuery(params: StopQueryRequest): Request[StopQueryResponse] = js.native
+    def tagLogGroup(params: TagLogGroupRequest): Request[js.Object] = js.native
+    def testMetricFilter(params: TestMetricFilterRequest): Request[TestMetricFilterResponse] = js.native
+    def untagLogGroup(params: UntagLogGroupRequest): Request[js.Object] = js.native
   }
 
   @js.native
@@ -231,7 +247,7 @@ package cloudwatchlogs {
         logGroupName: LogGroupName
     ): AssociateKmsKeyRequest = {
       val __obj = js.Dynamic.literal(
-        "kmsKeyId"     -> kmsKeyId.asInstanceOf[js.Any],
+        "kmsKeyId" -> kmsKeyId.asInstanceOf[js.Any],
         "logGroupName" -> logGroupName.asInstanceOf[js.Any]
       )
 
@@ -280,10 +296,10 @@ package cloudwatchlogs {
         taskName: js.UndefOr[ExportTaskName] = js.undefined
     ): CreateExportTaskRequest = {
       val __obj = js.Dynamic.literal(
-        "destination"  -> destination.asInstanceOf[js.Any],
-        "from"         -> from.asInstanceOf[js.Any],
+        "destination" -> destination.asInstanceOf[js.Any],
+        "from" -> from.asInstanceOf[js.Any],
         "logGroupName" -> logGroupName.asInstanceOf[js.Any],
-        "to"           -> to.asInstanceOf[js.Any]
+        "to" -> to.asInstanceOf[js.Any]
       )
 
       destinationPrefix.foreach(__v => __obj.updateDynamic("destinationPrefix")(__v.asInstanceOf[js.Any]))
@@ -346,7 +362,7 @@ package cloudwatchlogs {
         logStreamName: LogStreamName
     ): CreateLogStreamRequest = {
       val __obj = js.Dynamic.literal(
-        "logGroupName"  -> logGroupName.asInstanceOf[js.Any],
+        "logGroupName" -> logGroupName.asInstanceOf[js.Any],
         "logStreamName" -> logStreamName.asInstanceOf[js.Any]
       )
 
@@ -403,7 +419,7 @@ package cloudwatchlogs {
         logStreamName: LogStreamName
     ): DeleteLogStreamRequest = {
       val __obj = js.Dynamic.literal(
-        "logGroupName"  -> logGroupName.asInstanceOf[js.Any],
+        "logGroupName" -> logGroupName.asInstanceOf[js.Any],
         "logStreamName" -> logStreamName.asInstanceOf[js.Any]
       )
 
@@ -424,11 +440,45 @@ package cloudwatchlogs {
         logGroupName: LogGroupName
     ): DeleteMetricFilterRequest = {
       val __obj = js.Dynamic.literal(
-        "filterName"   -> filterName.asInstanceOf[js.Any],
+        "filterName" -> filterName.asInstanceOf[js.Any],
         "logGroupName" -> logGroupName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteMetricFilterRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteQueryDefinitionRequest extends js.Object {
+    var queryDefinitionId: QueryId
+  }
+
+  object DeleteQueryDefinitionRequest {
+    @inline
+    def apply(
+        queryDefinitionId: QueryId
+    ): DeleteQueryDefinitionRequest = {
+      val __obj = js.Dynamic.literal(
+        "queryDefinitionId" -> queryDefinitionId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteQueryDefinitionRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteQueryDefinitionResponse extends js.Object {
+    var success: js.UndefOr[Success]
+  }
+
+  object DeleteQueryDefinitionResponse {
+    @inline
+    def apply(
+        success: js.UndefOr[Success] = js.undefined
+    ): DeleteQueryDefinitionResponse = {
+      val __obj = js.Dynamic.literal()
+      success.foreach(__v => __obj.updateDynamic("success")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteQueryDefinitionResponse]
     }
   }
 
@@ -479,7 +529,7 @@ package cloudwatchlogs {
         logGroupName: LogGroupName
     ): DeleteSubscriptionFilterRequest = {
       val __obj = js.Dynamic.literal(
-        "filterName"   -> filterName.asInstanceOf[js.Any],
+        "filterName" -> filterName.asInstanceOf[js.Any],
         "logGroupName" -> logGroupName.asInstanceOf[js.Any]
       )
 
@@ -760,6 +810,49 @@ package cloudwatchlogs {
   }
 
   @js.native
+  trait DescribeQueryDefinitionsRequest extends js.Object {
+    var maxResults: js.UndefOr[QueryListMaxResults]
+    var nextToken: js.UndefOr[NextToken]
+    var queryDefinitionNamePrefix: js.UndefOr[QueryDefinitionName]
+  }
+
+  object DescribeQueryDefinitionsRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[QueryListMaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        queryDefinitionNamePrefix: js.UndefOr[QueryDefinitionName] = js.undefined
+    ): DescribeQueryDefinitionsRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      queryDefinitionNamePrefix.foreach(__v =>
+        __obj.updateDynamic("queryDefinitionNamePrefix")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeQueryDefinitionsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeQueryDefinitionsResponse extends js.Object {
+    var nextToken: js.UndefOr[NextToken]
+    var queryDefinitions: js.UndefOr[QueryDefinitionList]
+  }
+
+  object DescribeQueryDefinitionsResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        queryDefinitions: js.UndefOr[QueryDefinitionList] = js.undefined
+    ): DescribeQueryDefinitionsResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      queryDefinitions.foreach(__v => __obj.updateDynamic("queryDefinitions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeQueryDefinitionsResponse]
+    }
+  }
+
+  @js.native
   trait DescribeResourcePoliciesRequest extends js.Object {
     var limit: js.UndefOr[DescribeLimit]
     var nextToken: js.UndefOr[NextToken]
@@ -901,7 +994,7 @@ package cloudwatchlogs {
   @js.native
   sealed trait Distribution extends js.Any
   object Distribution extends js.Object {
-    val Random      = "Random".asInstanceOf[Distribution]
+    val Random = "Random".asInstanceOf[Distribution]
     val ByLogStream = "ByLogStream".asInstanceOf[Distribution]
 
     val values = js.Object.freeze(js.Array(Random, ByLogStream))
@@ -997,12 +1090,12 @@ package cloudwatchlogs {
   @js.native
   sealed trait ExportTaskStatusCode extends js.Any
   object ExportTaskStatusCode extends js.Object {
-    val CANCELLED      = "CANCELLED".asInstanceOf[ExportTaskStatusCode]
-    val COMPLETED      = "COMPLETED".asInstanceOf[ExportTaskStatusCode]
-    val FAILED         = "FAILED".asInstanceOf[ExportTaskStatusCode]
-    val PENDING        = "PENDING".asInstanceOf[ExportTaskStatusCode]
+    val CANCELLED = "CANCELLED".asInstanceOf[ExportTaskStatusCode]
+    val COMPLETED = "COMPLETED".asInstanceOf[ExportTaskStatusCode]
+    val FAILED = "FAILED".asInstanceOf[ExportTaskStatusCode]
+    val PENDING = "PENDING".asInstanceOf[ExportTaskStatusCode]
     val PENDING_CANCEL = "PENDING_CANCEL".asInstanceOf[ExportTaskStatusCode]
-    val RUNNING        = "RUNNING".asInstanceOf[ExportTaskStatusCode]
+    val RUNNING = "RUNNING".asInstanceOf[ExportTaskStatusCode]
 
     val values = js.Object.freeze(js.Array(CANCELLED, COMPLETED, FAILED, PENDING, PENDING_CANCEL, RUNNING))
   }
@@ -1125,7 +1218,7 @@ package cloudwatchlogs {
         startTime: js.UndefOr[Timestamp] = js.undefined
     ): GetLogEventsRequest = {
       val __obj = js.Dynamic.literal(
-        "logGroupName"  -> logGroupName.asInstanceOf[js.Any],
+        "logGroupName" -> logGroupName.asInstanceOf[js.Any],
         "logStreamName" -> logStreamName.asInstanceOf[js.Any]
       )
 
@@ -1287,7 +1380,7 @@ package cloudwatchlogs {
         timestamp: Timestamp
     ): InputLogEvent = {
       val __obj = js.Dynamic.literal(
-        "message"   -> message.asInstanceOf[js.Any],
+        "message" -> message.asInstanceOf[js.Any],
         "timestamp" -> timestamp.asInstanceOf[js.Any]
       )
 
@@ -1504,9 +1597,9 @@ package cloudwatchlogs {
         defaultValue: js.UndefOr[DefaultValue] = js.undefined
     ): MetricTransformation = {
       val __obj = js.Dynamic.literal(
-        "metricName"      -> metricName.asInstanceOf[js.Any],
+        "metricName" -> metricName.asInstanceOf[js.Any],
         "metricNamespace" -> metricNamespace.asInstanceOf[js.Any],
-        "metricValue"     -> metricValue.asInstanceOf[js.Any]
+        "metricValue" -> metricValue.asInstanceOf[js.Any]
       )
 
       defaultValue.foreach(__v => __obj.updateDynamic("defaultValue")(__v.asInstanceOf[js.Any]))
@@ -1561,7 +1654,7 @@ package cloudwatchlogs {
         destinationName: DestinationName
     ): PutDestinationPolicyRequest = {
       val __obj = js.Dynamic.literal(
-        "accessPolicy"    -> accessPolicy.asInstanceOf[js.Any],
+        "accessPolicy" -> accessPolicy.asInstanceOf[js.Any],
         "destinationName" -> destinationName.asInstanceOf[js.Any]
       )
 
@@ -1585,8 +1678,8 @@ package cloudwatchlogs {
     ): PutDestinationRequest = {
       val __obj = js.Dynamic.literal(
         "destinationName" -> destinationName.asInstanceOf[js.Any],
-        "roleArn"         -> roleArn.asInstanceOf[js.Any],
-        "targetArn"       -> targetArn.asInstanceOf[js.Any]
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
+        "targetArn" -> targetArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutDestinationRequest]
@@ -1626,8 +1719,8 @@ package cloudwatchlogs {
         sequenceToken: js.UndefOr[SequenceToken] = js.undefined
     ): PutLogEventsRequest = {
       val __obj = js.Dynamic.literal(
-        "logEvents"     -> logEvents.asInstanceOf[js.Any],
-        "logGroupName"  -> logGroupName.asInstanceOf[js.Any],
+        "logEvents" -> logEvents.asInstanceOf[js.Any],
+        "logGroupName" -> logGroupName.asInstanceOf[js.Any],
         "logStreamName" -> logStreamName.asInstanceOf[js.Any]
       )
 
@@ -1672,13 +1765,56 @@ package cloudwatchlogs {
         metricTransformations: MetricTransformations
     ): PutMetricFilterRequest = {
       val __obj = js.Dynamic.literal(
-        "filterName"            -> filterName.asInstanceOf[js.Any],
-        "filterPattern"         -> filterPattern.asInstanceOf[js.Any],
-        "logGroupName"          -> logGroupName.asInstanceOf[js.Any],
+        "filterName" -> filterName.asInstanceOf[js.Any],
+        "filterPattern" -> filterPattern.asInstanceOf[js.Any],
+        "logGroupName" -> logGroupName.asInstanceOf[js.Any],
         "metricTransformations" -> metricTransformations.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutMetricFilterRequest]
+    }
+  }
+
+  @js.native
+  trait PutQueryDefinitionRequest extends js.Object {
+    var name: QueryDefinitionName
+    var queryString: QueryDefinitionString
+    var logGroupNames: js.UndefOr[LogGroupNames]
+    var queryDefinitionId: js.UndefOr[QueryId]
+  }
+
+  object PutQueryDefinitionRequest {
+    @inline
+    def apply(
+        name: QueryDefinitionName,
+        queryString: QueryDefinitionString,
+        logGroupNames: js.UndefOr[LogGroupNames] = js.undefined,
+        queryDefinitionId: js.UndefOr[QueryId] = js.undefined
+    ): PutQueryDefinitionRequest = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any],
+        "queryString" -> queryString.asInstanceOf[js.Any]
+      )
+
+      logGroupNames.foreach(__v => __obj.updateDynamic("logGroupNames")(__v.asInstanceOf[js.Any]))
+      queryDefinitionId.foreach(__v => __obj.updateDynamic("queryDefinitionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutQueryDefinitionRequest]
+    }
+  }
+
+  @js.native
+  trait PutQueryDefinitionResponse extends js.Object {
+    var queryDefinitionId: js.UndefOr[QueryId]
+  }
+
+  object PutQueryDefinitionResponse {
+    @inline
+    def apply(
+        queryDefinitionId: js.UndefOr[QueryId] = js.undefined
+    ): PutQueryDefinitionResponse = {
+      val __obj = js.Dynamic.literal()
+      queryDefinitionId.foreach(__v => __obj.updateDynamic("queryDefinitionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutQueryDefinitionResponse]
     }
   }
 
@@ -1730,7 +1866,7 @@ package cloudwatchlogs {
         retentionInDays: Days
     ): PutRetentionPolicyRequest = {
       val __obj = js.Dynamic.literal(
-        "logGroupName"    -> logGroupName.asInstanceOf[js.Any],
+        "logGroupName" -> logGroupName.asInstanceOf[js.Any],
         "retentionInDays" -> retentionInDays.asInstanceOf[js.Any]
       )
 
@@ -1760,14 +1896,42 @@ package cloudwatchlogs {
     ): PutSubscriptionFilterRequest = {
       val __obj = js.Dynamic.literal(
         "destinationArn" -> destinationArn.asInstanceOf[js.Any],
-        "filterName"     -> filterName.asInstanceOf[js.Any],
-        "filterPattern"  -> filterPattern.asInstanceOf[js.Any],
-        "logGroupName"   -> logGroupName.asInstanceOf[js.Any]
+        "filterName" -> filterName.asInstanceOf[js.Any],
+        "filterPattern" -> filterPattern.asInstanceOf[js.Any],
+        "logGroupName" -> logGroupName.asInstanceOf[js.Any]
       )
 
       distribution.foreach(__v => __obj.updateDynamic("distribution")(__v.asInstanceOf[js.Any]))
       roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutSubscriptionFilterRequest]
+    }
+  }
+
+  @js.native
+  trait QueryDefinition extends js.Object {
+    var lastModified: js.UndefOr[Timestamp]
+    var logGroupNames: js.UndefOr[LogGroupNames]
+    var name: js.UndefOr[QueryDefinitionName]
+    var queryDefinitionId: js.UndefOr[QueryId]
+    var queryString: js.UndefOr[QueryDefinitionString]
+  }
+
+  object QueryDefinition {
+    @inline
+    def apply(
+        lastModified: js.UndefOr[Timestamp] = js.undefined,
+        logGroupNames: js.UndefOr[LogGroupNames] = js.undefined,
+        name: js.UndefOr[QueryDefinitionName] = js.undefined,
+        queryDefinitionId: js.UndefOr[QueryId] = js.undefined,
+        queryString: js.UndefOr[QueryDefinitionString] = js.undefined
+    ): QueryDefinition = {
+      val __obj = js.Dynamic.literal()
+      lastModified.foreach(__v => __obj.updateDynamic("lastModified")(__v.asInstanceOf[js.Any]))
+      logGroupNames.foreach(__v => __obj.updateDynamic("logGroupNames")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      queryDefinitionId.foreach(__v => __obj.updateDynamic("queryDefinitionId")(__v.asInstanceOf[js.Any]))
+      queryString.foreach(__v => __obj.updateDynamic("queryString")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueryDefinition]
     }
   }
 
@@ -1831,9 +1995,9 @@ package cloudwatchlogs {
   sealed trait QueryStatus extends js.Any
   object QueryStatus extends js.Object {
     val Scheduled = "Scheduled".asInstanceOf[QueryStatus]
-    val Running   = "Running".asInstanceOf[QueryStatus]
-    val Complete  = "Complete".asInstanceOf[QueryStatus]
-    val Failed    = "Failed".asInstanceOf[QueryStatus]
+    val Running = "Running".asInstanceOf[QueryStatus]
+    val Complete = "Complete".asInstanceOf[QueryStatus]
+    val Failed = "Failed".asInstanceOf[QueryStatus]
     val Cancelled = "Cancelled".asInstanceOf[QueryStatus]
 
     val values = js.Object.freeze(js.Array(Scheduled, Running, Complete, Failed, Cancelled))
@@ -1891,6 +2055,7 @@ package cloudwatchlogs {
 
   /**
     * Contains one field from one log event returned by a CloudWatch Logs Insights query, along with the value of that field.
+    *  For more information about the fields that are generated by CloudWatch logs, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html|Supported Logs and Discovered Fields]].
     */
   @js.native
   trait ResultField extends js.Object {
@@ -1954,9 +2119,9 @@ package cloudwatchlogs {
         logGroupNames: js.UndefOr[LogGroupNames] = js.undefined
     ): StartQueryRequest = {
       val __obj = js.Dynamic.literal(
-        "endTime"     -> endTime.asInstanceOf[js.Any],
+        "endTime" -> endTime.asInstanceOf[js.Any],
         "queryString" -> queryString.asInstanceOf[js.Any],
-        "startTime"   -> startTime.asInstanceOf[js.Any]
+        "startTime" -> startTime.asInstanceOf[js.Any]
       )
 
       limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
@@ -2067,7 +2232,7 @@ package cloudwatchlogs {
     ): TagLogGroupRequest = {
       val __obj = js.Dynamic.literal(
         "logGroupName" -> logGroupName.asInstanceOf[js.Any],
-        "tags"         -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagLogGroupRequest]
@@ -2087,7 +2252,7 @@ package cloudwatchlogs {
         logEventMessages: TestEventMessages
     ): TestMetricFilterRequest = {
       val __obj = js.Dynamic.literal(
-        "filterPattern"    -> filterPattern.asInstanceOf[js.Any],
+        "filterPattern" -> filterPattern.asInstanceOf[js.Any],
         "logEventMessages" -> logEventMessages.asInstanceOf[js.Any]
       )
 
@@ -2125,7 +2290,7 @@ package cloudwatchlogs {
     ): UntagLogGroupRequest = {
       val __obj = js.Dynamic.literal(
         "logGroupName" -> logGroupName.asInstanceOf[js.Any],
-        "tags"         -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagLogGroupRequest]

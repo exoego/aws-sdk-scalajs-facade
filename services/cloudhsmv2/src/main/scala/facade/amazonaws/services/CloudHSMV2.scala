@@ -7,36 +7,36 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object cloudhsmv2 {
-  type BackupId              = String
-  type Backups               = js.Array[Backup]
-  type Cert                  = String
-  type ClusterId             = String
-  type Clusters              = js.Array[Cluster]
-  type EniId                 = String
-  type ExternalAz            = String
+  type BackupId = String
+  type Backups = js.Array[Backup]
+  type Cert = String
+  type ClusterId = String
+  type Clusters = js.Array[Cluster]
+  type EniId = String
+  type ExternalAz = String
   type ExternalSubnetMapping = js.Dictionary[SubnetId]
-  type Field                 = String
-  type Filters               = js.Dictionary[Strings]
-  type HsmId                 = String
-  type HsmType               = String
-  type Hsms                  = js.Array[Hsm]
-  type IpAddress             = String
-  type MaxSize               = Int
-  type NextToken             = String
-  type PreCoPassword         = String
-  type Region                = String
-  type ResourceId            = String
-  type SecurityGroup         = String
-  type StateMessage          = String
-  type Strings               = js.Array[String]
-  type SubnetId              = String
-  type SubnetIds             = js.Array[SubnetId]
-  type TagKey                = String
-  type TagKeyList            = js.Array[TagKey]
-  type TagList               = js.Array[Tag]
-  type TagValue              = String
-  type Timestamp             = js.Date
-  type VpcId                 = String
+  type Field = String
+  type Filters = js.Dictionary[Strings]
+  type HsmId = String
+  type HsmType = String
+  type Hsms = js.Array[Hsm]
+  type IpAddress = String
+  type MaxSize = Int
+  type NextToken = String
+  type PreCoPassword = String
+  type Region = String
+  type ResourceId = String
+  type SecurityGroup = String
+  type StateMessage = String
+  type Strings = js.Array[String]
+  type SubnetId = String
+  type SubnetIds = js.Array[SubnetId]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type Timestamp = js.Date
+  type VpcId = String
 
   implicit final class CloudHSMV2Ops(private val service: CloudHSMV2) extends AnyVal {
 
@@ -76,18 +76,18 @@ package cloudhsmv2 {
     def this(config: AWSConfig) = this()
 
     def copyBackupToRegion(params: CopyBackupToRegionRequest): Request[CopyBackupToRegionResponse] = js.native
-    def createCluster(params: CreateClusterRequest): Request[CreateClusterResponse]                = js.native
-    def createHsm(params: CreateHsmRequest): Request[CreateHsmResponse]                            = js.native
-    def deleteBackup(params: DeleteBackupRequest): Request[DeleteBackupResponse]                   = js.native
-    def deleteCluster(params: DeleteClusterRequest): Request[DeleteClusterResponse]                = js.native
-    def deleteHsm(params: DeleteHsmRequest): Request[DeleteHsmResponse]                            = js.native
-    def describeBackups(params: DescribeBackupsRequest): Request[DescribeBackupsResponse]          = js.native
-    def describeClusters(params: DescribeClustersRequest): Request[DescribeClustersResponse]       = js.native
-    def initializeCluster(params: InitializeClusterRequest): Request[InitializeClusterResponse]    = js.native
-    def listTags(params: ListTagsRequest): Request[ListTagsResponse]                               = js.native
-    def restoreBackup(params: RestoreBackupRequest): Request[RestoreBackupResponse]                = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                      = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                = js.native
+    def createCluster(params: CreateClusterRequest): Request[CreateClusterResponse] = js.native
+    def createHsm(params: CreateHsmRequest): Request[CreateHsmResponse] = js.native
+    def deleteBackup(params: DeleteBackupRequest): Request[DeleteBackupResponse] = js.native
+    def deleteCluster(params: DeleteClusterRequest): Request[DeleteClusterResponse] = js.native
+    def deleteHsm(params: DeleteHsmRequest): Request[DeleteHsmResponse] = js.native
+    def describeBackups(params: DescribeBackupsRequest): Request[DescribeBackupsResponse] = js.native
+    def describeClusters(params: DescribeClustersRequest): Request[DescribeClustersResponse] = js.native
+    def initializeCluster(params: InitializeClusterRequest): Request[InitializeClusterResponse] = js.native
+    def listTags(params: ListTagsRequest): Request[ListTagsResponse] = js.native
+    def restoreBackup(params: RestoreBackupRequest): Request[RestoreBackupResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
   }
 
   /**
@@ -150,9 +150,9 @@ package cloudhsmv2 {
   sealed trait BackupState extends js.Any
   object BackupState extends js.Object {
     val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[BackupState]
-    val READY              = "READY".asInstanceOf[BackupState]
-    val DELETED            = "DELETED".asInstanceOf[BackupState]
-    val PENDING_DELETION   = "PENDING_DELETION".asInstanceOf[BackupState]
+    val READY = "READY".asInstanceOf[BackupState]
+    val DELETED = "DELETED".asInstanceOf[BackupState]
+    val PENDING_DELETION = "PENDING_DELETION".asInstanceOf[BackupState]
 
     val values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, READY, DELETED, PENDING_DELETION))
   }
@@ -251,15 +251,15 @@ package cloudhsmv2 {
   @js.native
   sealed trait ClusterState extends js.Any
   object ClusterState extends js.Object {
-    val CREATE_IN_PROGRESS     = "CREATE_IN_PROGRESS".asInstanceOf[ClusterState]
-    val UNINITIALIZED          = "UNINITIALIZED".asInstanceOf[ClusterState]
+    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[ClusterState]
+    val UNINITIALIZED = "UNINITIALIZED".asInstanceOf[ClusterState]
     val INITIALIZE_IN_PROGRESS = "INITIALIZE_IN_PROGRESS".asInstanceOf[ClusterState]
-    val INITIALIZED            = "INITIALIZED".asInstanceOf[ClusterState]
-    val ACTIVE                 = "ACTIVE".asInstanceOf[ClusterState]
-    val UPDATE_IN_PROGRESS     = "UPDATE_IN_PROGRESS".asInstanceOf[ClusterState]
-    val DELETE_IN_PROGRESS     = "DELETE_IN_PROGRESS".asInstanceOf[ClusterState]
-    val DELETED                = "DELETED".asInstanceOf[ClusterState]
-    val DEGRADED               = "DEGRADED".asInstanceOf[ClusterState]
+    val INITIALIZED = "INITIALIZED".asInstanceOf[ClusterState]
+    val ACTIVE = "ACTIVE".asInstanceOf[ClusterState]
+    val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[ClusterState]
+    val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[ClusterState]
+    val DELETED = "DELETED".asInstanceOf[ClusterState]
+    val DEGRADED = "DEGRADED".asInstanceOf[ClusterState]
 
     val values = js.Object.freeze(
       js.Array(
@@ -291,7 +291,7 @@ package cloudhsmv2 {
         TagList: js.UndefOr[TagList] = js.undefined
     ): CopyBackupToRegionRequest = {
       val __obj = js.Dynamic.literal(
-        "BackupId"          -> BackupId.asInstanceOf[js.Any],
+        "BackupId" -> BackupId.asInstanceOf[js.Any],
         "DestinationRegion" -> DestinationRegion.asInstanceOf[js.Any]
       )
 
@@ -333,7 +333,7 @@ package cloudhsmv2 {
         TagList: js.UndefOr[TagList] = js.undefined
     ): CreateClusterRequest = {
       val __obj = js.Dynamic.literal(
-        "HsmType"   -> HsmType.asInstanceOf[js.Any],
+        "HsmType" -> HsmType.asInstanceOf[js.Any],
         "SubnetIds" -> SubnetIds.asInstanceOf[js.Any]
       )
 
@@ -375,7 +375,7 @@ package cloudhsmv2 {
     ): CreateHsmRequest = {
       val __obj = js.Dynamic.literal(
         "AvailabilityZone" -> AvailabilityZone.asInstanceOf[js.Any],
-        "ClusterId"        -> ClusterId.asInstanceOf[js.Any]
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
       )
 
       IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
@@ -669,10 +669,10 @@ package cloudhsmv2 {
   sealed trait HsmState extends js.Any
   object HsmState extends js.Object {
     val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[HsmState]
-    val ACTIVE             = "ACTIVE".asInstanceOf[HsmState]
-    val DEGRADED           = "DEGRADED".asInstanceOf[HsmState]
+    val ACTIVE = "ACTIVE".asInstanceOf[HsmState]
+    val DEGRADED = "DEGRADED".asInstanceOf[HsmState]
     val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[HsmState]
-    val DELETED            = "DELETED".asInstanceOf[HsmState]
+    val DELETED = "DELETED".asInstanceOf[HsmState]
 
     val values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, ACTIVE, DEGRADED, DELETE_IN_PROGRESS, DELETED))
   }
@@ -692,8 +692,8 @@ package cloudhsmv2 {
         TrustAnchor: Cert
     ): InitializeClusterRequest = {
       val __obj = js.Dynamic.literal(
-        "ClusterId"   -> ClusterId.asInstanceOf[js.Any],
-        "SignedCert"  -> SignedCert.asInstanceOf[js.Any],
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any],
+        "SignedCert" -> SignedCert.asInstanceOf[js.Any],
         "TrustAnchor" -> TrustAnchor.asInstanceOf[js.Any]
       )
 
@@ -815,7 +815,7 @@ package cloudhsmv2 {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -837,7 +837,7 @@ package cloudhsmv2 {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "TagList"    -> TagList.asInstanceOf[js.Any]
+        "TagList" -> TagList.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]

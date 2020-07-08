@@ -7,30 +7,30 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object cognitosync {
-  type ApplicationArn        = String
-  type ApplicationArnList    = js.Array[ApplicationArn]
-  type AssumeRoleArn         = String
-  type ClientContext         = String
-  type CognitoEventType      = String
-  type DatasetList           = js.Array[Dataset]
-  type DatasetName           = String
-  type Date                  = js.Date
-  type DeviceId              = String
-  type Events                = js.Dictionary[LambdaFunctionArn]
-  type ExceptionMessage      = String
-  type IdentityId            = String
-  type IdentityPoolId        = String
+  type ApplicationArn = String
+  type ApplicationArnList = js.Array[ApplicationArn]
+  type AssumeRoleArn = String
+  type ClientContext = String
+  type CognitoEventType = String
+  type DatasetList = js.Array[Dataset]
+  type DatasetName = String
+  type Date = js.Date
+  type DeviceId = String
+  type Events = js.Dictionary[LambdaFunctionArn]
+  type ExceptionMessage = String
+  type IdentityId = String
+  type IdentityPoolId = String
   type IdentityPoolUsageList = js.Array[IdentityPoolUsage]
-  type IntegerString         = Int
-  type LambdaFunctionArn     = String
+  type IntegerString = Int
+  type LambdaFunctionArn = String
   type MergedDatasetNameList = js.Array[String]
-  type PushToken             = String
-  type RecordKey             = String
-  type RecordList            = js.Array[Record]
-  type RecordPatchList       = js.Array[RecordPatch]
-  type RecordValue           = String
-  type StreamName            = String
-  type SyncSessionToken      = String
+  type PushToken = String
+  type RecordKey = String
+  type RecordList = js.Array[Record]
+  type RecordPatchList = js.Array[RecordPatch]
+  type RecordValue = String
+  type StreamName = String
+  type SyncSessionToken = String
 
   implicit final class CognitoSyncOps(private val service: CognitoSync) extends AnyVal {
 
@@ -84,26 +84,26 @@ package cognitosync {
   class CognitoSync() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def bulkPublish(params: BulkPublishRequest): Request[BulkPublishResponse]             = js.native
-    def deleteDataset(params: DeleteDatasetRequest): Request[DeleteDatasetResponse]       = js.native
+    def bulkPublish(params: BulkPublishRequest): Request[BulkPublishResponse] = js.native
+    def deleteDataset(params: DeleteDatasetRequest): Request[DeleteDatasetResponse] = js.native
     def describeDataset(params: DescribeDatasetRequest): Request[DescribeDatasetResponse] = js.native
     def describeIdentityPoolUsage(
         params: DescribeIdentityPoolUsageRequest
-    ): Request[DescribeIdentityPoolUsageResponse]                                                           = js.native
+    ): Request[DescribeIdentityPoolUsageResponse] = js.native
     def describeIdentityUsage(params: DescribeIdentityUsageRequest): Request[DescribeIdentityUsageResponse] = js.native
     def getBulkPublishDetails(params: GetBulkPublishDetailsRequest): Request[GetBulkPublishDetailsResponse] = js.native
-    def getCognitoEvents(params: GetCognitoEventsRequest): Request[GetCognitoEventsResponse]                = js.native
+    def getCognitoEvents(params: GetCognitoEventsRequest): Request[GetCognitoEventsResponse] = js.native
     def getIdentityPoolConfiguration(
         params: GetIdentityPoolConfigurationRequest
-    ): Request[GetIdentityPoolConfigurationResponse]                                                        = js.native
-    def listDatasets(params: ListDatasetsRequest): Request[ListDatasetsResponse]                            = js.native
+    ): Request[GetIdentityPoolConfigurationResponse] = js.native
+    def listDatasets(params: ListDatasetsRequest): Request[ListDatasetsResponse] = js.native
     def listIdentityPoolUsage(params: ListIdentityPoolUsageRequest): Request[ListIdentityPoolUsageResponse] = js.native
-    def listRecords(params: ListRecordsRequest): Request[ListRecordsResponse]                               = js.native
-    def registerDevice(params: RegisterDeviceRequest): Request[RegisterDeviceResponse]                      = js.native
-    def setCognitoEvents(params: SetCognitoEventsRequest): Request[js.Object]                               = js.native
+    def listRecords(params: ListRecordsRequest): Request[ListRecordsResponse] = js.native
+    def registerDevice(params: RegisterDeviceRequest): Request[RegisterDeviceResponse] = js.native
+    def setCognitoEvents(params: SetCognitoEventsRequest): Request[js.Object] = js.native
     def setIdentityPoolConfiguration(
         params: SetIdentityPoolConfigurationRequest
-    ): Request[SetIdentityPoolConfigurationResponse]                                               = js.native
+    ): Request[SetIdentityPoolConfigurationResponse] = js.native
     def subscribeToDataset(params: SubscribeToDatasetRequest): Request[SubscribeToDatasetResponse] = js.native
     def unsubscribeFromDataset(params: UnsubscribeFromDatasetRequest): Request[UnsubscribeFromDatasetResponse] =
       js.native
@@ -163,8 +163,8 @@ package cognitosync {
   object BulkPublishStatus extends js.Object {
     val NOT_STARTED = "NOT_STARTED".asInstanceOf[BulkPublishStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[BulkPublishStatus]
-    val FAILED      = "FAILED".asInstanceOf[BulkPublishStatus]
-    val SUCCEEDED   = "SUCCEEDED".asInstanceOf[BulkPublishStatus]
+    val FAILED = "FAILED".asInstanceOf[BulkPublishStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[BulkPublishStatus]
 
     val values = js.Object.freeze(js.Array(NOT_STARTED, IN_PROGRESS, FAILED, SUCCEEDED))
   }
@@ -257,8 +257,8 @@ package cognitosync {
         IdentityPoolId: IdentityPoolId
     ): DeleteDatasetRequest = {
       val __obj = js.Dynamic.literal(
-        "DatasetName"    -> DatasetName.asInstanceOf[js.Any],
-        "IdentityId"     -> IdentityId.asInstanceOf[js.Any],
+        "DatasetName" -> DatasetName.asInstanceOf[js.Any],
+        "IdentityId" -> IdentityId.asInstanceOf[js.Any],
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
 
@@ -303,8 +303,8 @@ package cognitosync {
         IdentityPoolId: IdentityPoolId
     ): DescribeDatasetRequest = {
       val __obj = js.Dynamic.literal(
-        "DatasetName"    -> DatasetName.asInstanceOf[js.Any],
-        "IdentityId"     -> IdentityId.asInstanceOf[js.Any],
+        "DatasetName" -> DatasetName.asInstanceOf[js.Any],
+        "IdentityId" -> IdentityId.asInstanceOf[js.Any],
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
 
@@ -387,7 +387,7 @@ package cognitosync {
         IdentityPoolId: IdentityPoolId
     ): DescribeIdentityUsageRequest = {
       val __obj = js.Dynamic.literal(
-        "IdentityId"     -> IdentityId.asInstanceOf[js.Any],
+        "IdentityId" -> IdentityId.asInstanceOf[js.Any],
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
 
@@ -684,7 +684,7 @@ package cognitosync {
         NextToken: js.UndefOr[String] = js.undefined
     ): ListDatasetsRequest = {
       val __obj = js.Dynamic.literal(
-        "IdentityId"     -> IdentityId.asInstanceOf[js.Any],
+        "IdentityId" -> IdentityId.asInstanceOf[js.Any],
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
 
@@ -795,8 +795,8 @@ package cognitosync {
         SyncSessionToken: js.UndefOr[SyncSessionToken] = js.undefined
     ): ListRecordsRequest = {
       val __obj = js.Dynamic.literal(
-        "DatasetName"    -> DatasetName.asInstanceOf[js.Any],
-        "IdentityId"     -> IdentityId.asInstanceOf[js.Any],
+        "DatasetName" -> DatasetName.asInstanceOf[js.Any],
+        "IdentityId" -> IdentityId.asInstanceOf[js.Any],
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
 
@@ -865,7 +865,7 @@ package cognitosync {
   sealed trait Operation extends js.Any
   object Operation extends js.Object {
     val replace = "replace".asInstanceOf[Operation]
-    val remove  = "remove".asInstanceOf[Operation]
+    val remove = "remove".asInstanceOf[Operation]
 
     val values = js.Object.freeze(js.Array(replace, remove))
   }
@@ -873,10 +873,10 @@ package cognitosync {
   @js.native
   sealed trait Platform extends js.Any
   object Platform extends js.Object {
-    val APNS         = "APNS".asInstanceOf[Platform]
+    val APNS = "APNS".asInstanceOf[Platform]
     val APNS_SANDBOX = "APNS_SANDBOX".asInstanceOf[Platform]
-    val GCM          = "GCM".asInstanceOf[Platform]
-    val ADM          = "ADM".asInstanceOf[Platform]
+    val GCM = "GCM".asInstanceOf[Platform]
+    val ADM = "ADM".asInstanceOf[Platform]
 
     val values = js.Object.freeze(js.Array(APNS, APNS_SANDBOX, GCM, ADM))
   }
@@ -959,8 +959,8 @@ package cognitosync {
         Value: js.UndefOr[RecordValue] = js.undefined
     ): RecordPatch = {
       val __obj = js.Dynamic.literal(
-        "Key"       -> Key.asInstanceOf[js.Any],
-        "Op"        -> Op.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Op" -> Op.asInstanceOf[js.Any],
         "SyncCount" -> SyncCount.asInstanceOf[js.Any]
       )
 
@@ -990,10 +990,10 @@ package cognitosync {
         Token: PushToken
     ): RegisterDeviceRequest = {
       val __obj = js.Dynamic.literal(
-        "IdentityId"     -> IdentityId.asInstanceOf[js.Any],
+        "IdentityId" -> IdentityId.asInstanceOf[js.Any],
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any],
-        "Platform"       -> Platform.asInstanceOf[js.Any],
-        "Token"          -> Token.asInstanceOf[js.Any]
+        "Platform" -> Platform.asInstanceOf[js.Any],
+        "Token" -> Token.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RegisterDeviceRequest]
@@ -1052,7 +1052,7 @@ package cognitosync {
         IdentityPoolId: IdentityPoolId
     ): SetCognitoEventsRequest = {
       val __obj = js.Dynamic.literal(
-        "Events"         -> Events.asInstanceOf[js.Any],
+        "Events" -> Events.asInstanceOf[js.Any],
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
 
@@ -1115,7 +1115,7 @@ package cognitosync {
   @js.native
   sealed trait StreamingStatus extends js.Any
   object StreamingStatus extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[StreamingStatus]
+    val ENABLED = "ENABLED".asInstanceOf[StreamingStatus]
     val DISABLED = "DISABLED".asInstanceOf[StreamingStatus]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -1141,9 +1141,9 @@ package cognitosync {
         IdentityPoolId: IdentityPoolId
     ): SubscribeToDatasetRequest = {
       val __obj = js.Dynamic.literal(
-        "DatasetName"    -> DatasetName.asInstanceOf[js.Any],
-        "DeviceId"       -> DeviceId.asInstanceOf[js.Any],
-        "IdentityId"     -> IdentityId.asInstanceOf[js.Any],
+        "DatasetName" -> DatasetName.asInstanceOf[js.Any],
+        "DeviceId" -> DeviceId.asInstanceOf[js.Any],
+        "IdentityId" -> IdentityId.asInstanceOf[js.Any],
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
 
@@ -1195,9 +1195,9 @@ package cognitosync {
         IdentityPoolId: IdentityPoolId
     ): UnsubscribeFromDatasetRequest = {
       val __obj = js.Dynamic.literal(
-        "DatasetName"    -> DatasetName.asInstanceOf[js.Any],
-        "DeviceId"       -> DeviceId.asInstanceOf[js.Any],
-        "IdentityId"     -> IdentityId.asInstanceOf[js.Any],
+        "DatasetName" -> DatasetName.asInstanceOf[js.Any],
+        "DeviceId" -> DeviceId.asInstanceOf[js.Any],
+        "IdentityId" -> IdentityId.asInstanceOf[js.Any],
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
 
@@ -1247,9 +1247,9 @@ package cognitosync {
         RecordPatches: js.UndefOr[RecordPatchList] = js.undefined
     ): UpdateRecordsRequest = {
       val __obj = js.Dynamic.literal(
-        "DatasetName"      -> DatasetName.asInstanceOf[js.Any],
-        "IdentityId"       -> IdentityId.asInstanceOf[js.Any],
-        "IdentityPoolId"   -> IdentityPoolId.asInstanceOf[js.Any],
+        "DatasetName" -> DatasetName.asInstanceOf[js.Any],
+        "IdentityId" -> IdentityId.asInstanceOf[js.Any],
+        "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any],
         "SyncSessionToken" -> SyncSessionToken.asInstanceOf[js.Any]
       )
 

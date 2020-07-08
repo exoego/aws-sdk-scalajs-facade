@@ -7,68 +7,68 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object emr {
-  type ApplicationList               = js.Array[Application]
-  type ArnType                       = String
-  type BooleanObject                 = Boolean
-  type BootstrapActionConfigList     = js.Array[BootstrapActionConfig]
-  type BootstrapActionDetailList     = js.Array[BootstrapActionDetail]
-  type CancelStepsInfoList           = js.Array[CancelStepsInfo]
-  type ClusterId                     = String
-  type ClusterStateList              = js.Array[ClusterState]
-  type ClusterSummaryList            = js.Array[ClusterSummary]
-  type CommandList                   = js.Array[Command]
-  type ConfigurationList             = js.Array[Configuration]
-  type Date                          = js.Date
-  type EC2InstanceIdsList            = js.Array[InstanceId]
+  type ApplicationList = js.Array[Application]
+  type ArnType = String
+  type BooleanObject = Boolean
+  type BootstrapActionConfigList = js.Array[BootstrapActionConfig]
+  type BootstrapActionDetailList = js.Array[BootstrapActionDetail]
+  type CancelStepsInfoList = js.Array[CancelStepsInfo]
+  type ClusterId = String
+  type ClusterStateList = js.Array[ClusterState]
+  type ClusterSummaryList = js.Array[ClusterSummary]
+  type CommandList = js.Array[Command]
+  type ConfigurationList = js.Array[Configuration]
+  type Date = js.Date
+  type EC2InstanceIdsList = js.Array[InstanceId]
   type EC2InstanceIdsToTerminateList = js.Array[InstanceId]
-  type EbsBlockDeviceConfigList      = js.Array[EbsBlockDeviceConfig]
-  type EbsBlockDeviceList            = js.Array[EbsBlockDevice]
-  type EbsVolumeList                 = js.Array[EbsVolume]
-  type InstanceFleetConfigList       = js.Array[InstanceFleetConfig]
-  type InstanceFleetId               = String
-  type InstanceFleetList             = js.Array[InstanceFleet]
-  type InstanceGroupConfigList       = js.Array[InstanceGroupConfig]
-  type InstanceGroupDetailList       = js.Array[InstanceGroupDetail]
-  type InstanceGroupId               = String
-  type InstanceGroupIdsList          = js.Array[XmlStringMaxLen256]
-  type InstanceGroupList             = js.Array[InstanceGroup]
+  type EbsBlockDeviceConfigList = js.Array[EbsBlockDeviceConfig]
+  type EbsBlockDeviceList = js.Array[EbsBlockDevice]
+  type EbsVolumeList = js.Array[EbsVolume]
+  type InstanceFleetConfigList = js.Array[InstanceFleetConfig]
+  type InstanceFleetId = String
+  type InstanceFleetList = js.Array[InstanceFleet]
+  type InstanceGroupConfigList = js.Array[InstanceGroupConfig]
+  type InstanceGroupDetailList = js.Array[InstanceGroupDetail]
+  type InstanceGroupId = String
+  type InstanceGroupIdsList = js.Array[XmlStringMaxLen256]
+  type InstanceGroupList = js.Array[InstanceGroup]
   type InstanceGroupModifyConfigList = js.Array[InstanceGroupModifyConfig]
-  type InstanceGroupTypeList         = js.Array[InstanceGroupType]
-  type InstanceId                    = String
-  type InstanceList                  = js.Array[Instance]
-  type InstanceStateList             = js.Array[InstanceState]
-  type InstanceType                  = String
-  type InstanceTypeConfigList        = js.Array[InstanceTypeConfig]
+  type InstanceGroupTypeList = js.Array[InstanceGroupType]
+  type InstanceId = String
+  type InstanceList = js.Array[Instance]
+  type InstanceStateList = js.Array[InstanceState]
+  type InstanceType = String
+  type InstanceTypeConfigList = js.Array[InstanceTypeConfig]
   type InstanceTypeSpecificationList = js.Array[InstanceTypeSpecification]
-  type JobFlowDetailList             = js.Array[JobFlowDetail]
-  type JobFlowExecutionStateList     = js.Array[JobFlowExecutionState]
-  type KeyValueList                  = js.Array[KeyValue]
-  type Marker                        = String
-  type MetricDimensionList           = js.Array[MetricDimension]
-  type NewSupportedProductsList      = js.Array[SupportedProductConfig]
-  type NonNegativeDouble             = Double
-  type OptionalArnType               = String
-  type Port                          = Int
-  type PortRanges                    = js.Array[PortRange]
-  type ResourceId                    = String
-  type ScalingRuleList               = js.Array[ScalingRule]
-  type SecurityConfigurationList     = js.Array[SecurityConfigurationSummary]
-  type SecurityGroupsList            = js.Array[XmlStringMaxLen256]
-  type StepConfigList                = js.Array[StepConfig]
-  type StepDetailList                = js.Array[StepDetail]
-  type StepId                        = String
-  type StepIdsList                   = js.Array[XmlStringMaxLen256]
-  type StepStateList                 = js.Array[StepState]
-  type StepSummaryList               = js.Array[StepSummary]
-  type StringList                    = js.Array[String]
-  type StringMap                     = js.Dictionary[String]
-  type SupportedProductsList         = js.Array[XmlStringMaxLen256]
-  type TagList                       = js.Array[Tag]
-  type WholeNumber                   = Int
-  type XmlString                     = String
-  type XmlStringList                 = js.Array[XmlString]
-  type XmlStringMaxLen256            = String
-  type XmlStringMaxLen256List        = js.Array[XmlStringMaxLen256]
+  type JobFlowDetailList = js.Array[JobFlowDetail]
+  type JobFlowExecutionStateList = js.Array[JobFlowExecutionState]
+  type KeyValueList = js.Array[KeyValue]
+  type Marker = String
+  type MetricDimensionList = js.Array[MetricDimension]
+  type NewSupportedProductsList = js.Array[SupportedProductConfig]
+  type NonNegativeDouble = Double
+  type OptionalArnType = String
+  type Port = Int
+  type PortRanges = js.Array[PortRange]
+  type ResourceId = String
+  type ScalingRuleList = js.Array[ScalingRule]
+  type SecurityConfigurationList = js.Array[SecurityConfigurationSummary]
+  type SecurityGroupsList = js.Array[XmlStringMaxLen256]
+  type StepConfigList = js.Array[StepConfig]
+  type StepDetailList = js.Array[StepDetail]
+  type StepId = String
+  type StepIdsList = js.Array[XmlStringMaxLen256]
+  type StepStateList = js.Array[StepState]
+  type StepSummaryList = js.Array[StepSummary]
+  type StringList = js.Array[String]
+  type StringMap = js.Dictionary[String]
+  type SupportedProductsList = js.Array[XmlStringMaxLen256]
+  type TagList = js.Array[Tag]
+  type WholeNumber = Int
+  type XmlString = String
+  type XmlStringList = js.Array[XmlString]
+  type XmlStringMaxLen256 = String
+  type XmlStringMaxLen256List = js.Array[XmlStringMaxLen256]
 
   implicit final class EMROps(private val service: EMR) extends AnyVal {
 
@@ -98,6 +98,9 @@ package object emr {
         params: GetBlockPublicAccessConfigurationInput
     ): Future[GetBlockPublicAccessConfigurationOutput] =
       service.getBlockPublicAccessConfiguration(params).promise().toFuture
+    @inline def getManagedScalingPolicyFuture(
+        params: GetManagedScalingPolicyInput
+    ): Future[GetManagedScalingPolicyOutput] = service.getManagedScalingPolicy(params).promise().toFuture
     @inline def listBootstrapActionsFuture(params: ListBootstrapActionsInput): Future[ListBootstrapActionsOutput] =
       service.listBootstrapActions(params).promise().toFuture
     @inline def listClustersFuture(params: ListClustersInput): Future[ListClustersOutput] =
@@ -125,9 +128,15 @@ package object emr {
         params: PutBlockPublicAccessConfigurationInput
     ): Future[PutBlockPublicAccessConfigurationOutput] =
       service.putBlockPublicAccessConfiguration(params).promise().toFuture
+    @inline def putManagedScalingPolicyFuture(
+        params: PutManagedScalingPolicyInput
+    ): Future[PutManagedScalingPolicyOutput] = service.putManagedScalingPolicy(params).promise().toFuture
     @inline def removeAutoScalingPolicyFuture(
         params: RemoveAutoScalingPolicyInput
     ): Future[RemoveAutoScalingPolicyOutput] = service.removeAutoScalingPolicy(params).promise().toFuture
+    @inline def removeManagedScalingPolicyFuture(
+        params: RemoveManagedScalingPolicyInput
+    ): Future[RemoveManagedScalingPolicyOutput] = service.removeManagedScalingPolicy(params).promise().toFuture
     @inline def removeTagsFuture(params: RemoveTagsInput): Future[RemoveTagsOutput] =
       service.removeTags(params).promise().toFuture
     @inline def runJobFlowFuture(params: RunJobFlowInput): Future[RunJobFlowOutput] =
@@ -147,47 +156,53 @@ package emr {
   class EMR() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def addInstanceFleet(params: AddInstanceFleetInput): Request[AddInstanceFleetOutput]    = js.native
+    def addInstanceFleet(params: AddInstanceFleetInput): Request[AddInstanceFleetOutput] = js.native
     def addInstanceGroups(params: AddInstanceGroupsInput): Request[AddInstanceGroupsOutput] = js.native
-    def addJobFlowSteps(params: AddJobFlowStepsInput): Request[AddJobFlowStepsOutput]       = js.native
-    def addTags(params: AddTagsInput): Request[AddTagsOutput]                               = js.native
-    def cancelSteps(params: CancelStepsInput): Request[CancelStepsOutput]                   = js.native
+    def addJobFlowSteps(params: AddJobFlowStepsInput): Request[AddJobFlowStepsOutput] = js.native
+    def addTags(params: AddTagsInput): Request[AddTagsOutput] = js.native
+    def cancelSteps(params: CancelStepsInput): Request[CancelStepsOutput] = js.native
     def createSecurityConfiguration(
         params: CreateSecurityConfigurationInput
     ): Request[CreateSecurityConfigurationOutput] = js.native
     def deleteSecurityConfiguration(
         params: DeleteSecurityConfigurationInput
-    ): Request[DeleteSecurityConfigurationOutput]                                     = js.native
+    ): Request[DeleteSecurityConfigurationOutput] = js.native
     def describeCluster(params: DescribeClusterInput): Request[DescribeClusterOutput] = js.native
     def describeSecurityConfiguration(
         params: DescribeSecurityConfigurationInput
-    ): Request[DescribeSecurityConfigurationOutput]                          = js.native
+    ): Request[DescribeSecurityConfigurationOutput] = js.native
     def describeStep(params: DescribeStepInput): Request[DescribeStepOutput] = js.native
     def getBlockPublicAccessConfiguration(
         params: GetBlockPublicAccessConfigurationInput
-    ): Request[GetBlockPublicAccessConfigurationOutput]                                              = js.native
+    ): Request[GetBlockPublicAccessConfigurationOutput] = js.native
+    def getManagedScalingPolicy(params: GetManagedScalingPolicyInput): Request[GetManagedScalingPolicyOutput] =
+      js.native
     def listBootstrapActions(params: ListBootstrapActionsInput): Request[ListBootstrapActionsOutput] = js.native
-    def listClusters(params: ListClustersInput): Request[ListClustersOutput]                         = js.native
-    def listInstanceFleets(params: ListInstanceFleetsInput): Request[ListInstanceFleetsOutput]       = js.native
-    def listInstanceGroups(params: ListInstanceGroupsInput): Request[ListInstanceGroupsOutput]       = js.native
-    def listInstances(params: ListInstancesInput): Request[ListInstancesOutput]                      = js.native
+    def listClusters(params: ListClustersInput): Request[ListClustersOutput] = js.native
+    def listInstanceFleets(params: ListInstanceFleetsInput): Request[ListInstanceFleetsOutput] = js.native
+    def listInstanceGroups(params: ListInstanceGroupsInput): Request[ListInstanceGroupsOutput] = js.native
+    def listInstances(params: ListInstancesInput): Request[ListInstancesOutput] = js.native
     def listSecurityConfigurations(params: ListSecurityConfigurationsInput): Request[ListSecurityConfigurationsOutput] =
       js.native
-    def listSteps(params: ListStepsInput): Request[ListStepsOutput]                                  = js.native
-    def modifyCluster(params: ModifyClusterInput): Request[ModifyClusterOutput]                      = js.native
-    def modifyInstanceFleet(params: ModifyInstanceFleetInput): Request[js.Object]                    = js.native
-    def modifyInstanceGroups(params: ModifyInstanceGroupsInput): Request[js.Object]                  = js.native
+    def listSteps(params: ListStepsInput): Request[ListStepsOutput] = js.native
+    def modifyCluster(params: ModifyClusterInput): Request[ModifyClusterOutput] = js.native
+    def modifyInstanceFleet(params: ModifyInstanceFleetInput): Request[js.Object] = js.native
+    def modifyInstanceGroups(params: ModifyInstanceGroupsInput): Request[js.Object] = js.native
     def putAutoScalingPolicy(params: PutAutoScalingPolicyInput): Request[PutAutoScalingPolicyOutput] = js.native
     def putBlockPublicAccessConfiguration(
         params: PutBlockPublicAccessConfigurationInput
     ): Request[PutBlockPublicAccessConfigurationOutput] = js.native
+    def putManagedScalingPolicy(params: PutManagedScalingPolicyInput): Request[PutManagedScalingPolicyOutput] =
+      js.native
     def removeAutoScalingPolicy(params: RemoveAutoScalingPolicyInput): Request[RemoveAutoScalingPolicyOutput] =
       js.native
-    def removeTags(params: RemoveTagsInput): Request[RemoveTagsOutput]                      = js.native
-    def runJobFlow(params: RunJobFlowInput): Request[RunJobFlowOutput]                      = js.native
+    def removeManagedScalingPolicy(params: RemoveManagedScalingPolicyInput): Request[RemoveManagedScalingPolicyOutput] =
+      js.native
+    def removeTags(params: RemoveTagsInput): Request[RemoveTagsOutput] = js.native
+    def runJobFlow(params: RunJobFlowInput): Request[RunJobFlowOutput] = js.native
     def setTerminationProtection(params: SetTerminationProtectionInput): Request[js.Object] = js.native
-    def setVisibleToAllUsers(params: SetVisibleToAllUsersInput): Request[js.Object]         = js.native
-    def terminateJobFlows(params: TerminateJobFlowsInput): Request[js.Object]               = js.native
+    def setVisibleToAllUsers(params: SetVisibleToAllUsersInput): Request[js.Object] = js.native
+    def terminateJobFlows(params: TerminateJobFlowsInput): Request[js.Object] = js.native
     @deprecated("Deprecated in AWS SDK", "forever") def describeJobFlows(
         params: DescribeJobFlowsInput
     ): Request[DescribeJobFlowsOutput] = js.native
@@ -197,9 +212,9 @@ package emr {
   sealed trait ActionOnFailure extends js.Any
   object ActionOnFailure extends js.Object {
     val TERMINATE_JOB_FLOW = "TERMINATE_JOB_FLOW".asInstanceOf[ActionOnFailure]
-    val TERMINATE_CLUSTER  = "TERMINATE_CLUSTER".asInstanceOf[ActionOnFailure]
-    val CANCEL_AND_WAIT    = "CANCEL_AND_WAIT".asInstanceOf[ActionOnFailure]
-    val CONTINUE           = "CONTINUE".asInstanceOf[ActionOnFailure]
+    val TERMINATE_CLUSTER = "TERMINATE_CLUSTER".asInstanceOf[ActionOnFailure]
+    val CANCEL_AND_WAIT = "CANCEL_AND_WAIT".asInstanceOf[ActionOnFailure]
+    val CONTINUE = "CONTINUE".asInstanceOf[ActionOnFailure]
 
     val values = js.Object.freeze(js.Array(TERMINATE_JOB_FLOW, TERMINATE_CLUSTER, CANCEL_AND_WAIT, CONTINUE))
   }
@@ -217,7 +232,7 @@ package emr {
         InstanceFleet: InstanceFleetConfig
     ): AddInstanceFleetInput = {
       val __obj = js.Dynamic.literal(
-        "ClusterId"     -> ClusterId.asInstanceOf[js.Any],
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any],
         "InstanceFleet" -> InstanceFleet.asInstanceOf[js.Any]
       )
 
@@ -264,7 +279,7 @@ package emr {
     ): AddInstanceGroupsInput = {
       val __obj = js.Dynamic.literal(
         "InstanceGroups" -> InstanceGroups.asInstanceOf[js.Any],
-        "JobFlowId"      -> JobFlowId.asInstanceOf[js.Any]
+        "JobFlowId" -> JobFlowId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddInstanceGroupsInput]
@@ -313,7 +328,7 @@ package emr {
     ): AddJobFlowStepsInput = {
       val __obj = js.Dynamic.literal(
         "JobFlowId" -> JobFlowId.asInstanceOf[js.Any],
-        "Steps"     -> Steps.asInstanceOf[js.Any]
+        "Steps" -> Steps.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddJobFlowStepsInput]
@@ -356,7 +371,7 @@ package emr {
     ): AddTagsInput = {
       val __obj = js.Dynamic.literal(
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "Tags"       -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddTagsInput]
@@ -382,9 +397,9 @@ package emr {
   @js.native
   sealed trait AdjustmentType extends js.Any
   object AdjustmentType extends js.Object {
-    val CHANGE_IN_CAPACITY         = "CHANGE_IN_CAPACITY".asInstanceOf[AdjustmentType]
+    val CHANGE_IN_CAPACITY = "CHANGE_IN_CAPACITY".asInstanceOf[AdjustmentType]
     val PERCENT_CHANGE_IN_CAPACITY = "PERCENT_CHANGE_IN_CAPACITY".asInstanceOf[AdjustmentType]
-    val EXACT_CAPACITY             = "EXACT_CAPACITY".asInstanceOf[AdjustmentType]
+    val EXACT_CAPACITY = "EXACT_CAPACITY".asInstanceOf[AdjustmentType]
 
     val values = js.Object.freeze(js.Array(CHANGE_IN_CAPACITY, PERCENT_CHANGE_IN_CAPACITY, EXACT_CAPACITY))
   }
@@ -435,7 +450,7 @@ package emr {
     ): AutoScalingPolicy = {
       val __obj = js.Dynamic.literal(
         "Constraints" -> Constraints.asInstanceOf[js.Any],
-        "Rules"       -> Rules.asInstanceOf[js.Any]
+        "Rules" -> Rules.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AutoScalingPolicy]
@@ -470,12 +485,12 @@ package emr {
   @js.native
   sealed trait AutoScalingPolicyState extends js.Any
   object AutoScalingPolicyState extends js.Object {
-    val PENDING   = "PENDING".asInstanceOf[AutoScalingPolicyState]
+    val PENDING = "PENDING".asInstanceOf[AutoScalingPolicyState]
     val ATTACHING = "ATTACHING".asInstanceOf[AutoScalingPolicyState]
-    val ATTACHED  = "ATTACHED".asInstanceOf[AutoScalingPolicyState]
+    val ATTACHED = "ATTACHED".asInstanceOf[AutoScalingPolicyState]
     val DETACHING = "DETACHING".asInstanceOf[AutoScalingPolicyState]
-    val DETACHED  = "DETACHED".asInstanceOf[AutoScalingPolicyState]
-    val FAILED    = "FAILED".asInstanceOf[AutoScalingPolicyState]
+    val DETACHED = "DETACHED".asInstanceOf[AutoScalingPolicyState]
+    val FAILED = "FAILED".asInstanceOf[AutoScalingPolicyState]
 
     val values = js.Object.freeze(js.Array(PENDING, ATTACHING, ATTACHED, DETACHING, DETACHED, FAILED))
   }
@@ -505,9 +520,9 @@ package emr {
   @js.native
   sealed trait AutoScalingPolicyStateChangeReasonCode extends js.Any
   object AutoScalingPolicyStateChangeReasonCode extends js.Object {
-    val USER_REQUEST      = "USER_REQUEST".asInstanceOf[AutoScalingPolicyStateChangeReasonCode]
+    val USER_REQUEST = "USER_REQUEST".asInstanceOf[AutoScalingPolicyStateChangeReasonCode]
     val PROVISION_FAILURE = "PROVISION_FAILURE".asInstanceOf[AutoScalingPolicyStateChangeReasonCode]
-    val CLEANUP_FAILURE   = "CLEANUP_FAILURE".asInstanceOf[AutoScalingPolicyStateChangeReasonCode]
+    val CLEANUP_FAILURE = "CLEANUP_FAILURE".asInstanceOf[AutoScalingPolicyStateChangeReasonCode]
 
     val values = js.Object.freeze(js.Array(USER_REQUEST, PROVISION_FAILURE, CLEANUP_FAILURE))
   }
@@ -576,7 +591,7 @@ package emr {
         CreationDateTime: Date
     ): BlockPublicAccessConfigurationMetadata = {
       val __obj = js.Dynamic.literal(
-        "CreatedByArn"     -> CreatedByArn.asInstanceOf[js.Any],
+        "CreatedByArn" -> CreatedByArn.asInstanceOf[js.Any],
         "CreationDateTime" -> CreationDateTime.asInstanceOf[js.Any]
       )
 
@@ -600,7 +615,7 @@ package emr {
         ScriptBootstrapAction: ScriptBootstrapActionConfig
     ): BootstrapActionConfig = {
       val __obj = js.Dynamic.literal(
-        "Name"                  -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "ScriptBootstrapAction" -> ScriptBootstrapAction.asInstanceOf[js.Any]
       )
 
@@ -671,7 +686,7 @@ package emr {
     ): CancelStepsInput = {
       val __obj = js.Dynamic.literal(
         "ClusterId" -> ClusterId.asInstanceOf[js.Any],
-        "StepIds"   -> StepIds.asInstanceOf[js.Any]
+        "StepIds" -> StepIds.asInstanceOf[js.Any]
       )
 
       StepCancellationOption.foreach(__v => __obj.updateDynamic("StepCancellationOption")(__v.asInstanceOf[js.Any]))
@@ -702,7 +717,7 @@ package emr {
   sealed trait CancelStepsRequestStatus extends js.Any
   object CancelStepsRequestStatus extends js.Object {
     val SUBMITTED = "SUBMITTED".asInstanceOf[CancelStepsRequestStatus]
-    val FAILED    = "FAILED".asInstanceOf[CancelStepsRequestStatus]
+    val FAILED = "FAILED".asInstanceOf[CancelStepsRequestStatus]
 
     val values = js.Object.freeze(js.Array(SUBMITTED, FAILED))
   }
@@ -738,9 +753,9 @@ package emr {
     ): CloudWatchAlarmDefinition = {
       val __obj = js.Dynamic.literal(
         "ComparisonOperator" -> ComparisonOperator.asInstanceOf[js.Any],
-        "MetricName"         -> MetricName.asInstanceOf[js.Any],
-        "Period"             -> Period.asInstanceOf[js.Any],
-        "Threshold"          -> Threshold.asInstanceOf[js.Any]
+        "MetricName" -> MetricName.asInstanceOf[js.Any],
+        "Period" -> Period.asInstanceOf[js.Any],
+        "Threshold" -> Threshold.asInstanceOf[js.Any]
       )
 
       Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
@@ -768,6 +783,7 @@ package emr {
     var Id: js.UndefOr[ClusterId]
     var InstanceCollectionType: js.UndefOr[InstanceCollectionType]
     var KerberosAttributes: js.UndefOr[KerberosAttributes]
+    var LogEncryptionKmsKeyId: js.UndefOr[String]
     var LogUri: js.UndefOr[String]
     var MasterPublicDnsName: js.UndefOr[String]
     var Name: js.UndefOr[String]
@@ -801,6 +817,7 @@ package emr {
         Id: js.UndefOr[ClusterId] = js.undefined,
         InstanceCollectionType: js.UndefOr[InstanceCollectionType] = js.undefined,
         KerberosAttributes: js.UndefOr[KerberosAttributes] = js.undefined,
+        LogEncryptionKmsKeyId: js.UndefOr[String] = js.undefined,
         LogUri: js.UndefOr[String] = js.undefined,
         MasterPublicDnsName: js.UndefOr[String] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
@@ -831,6 +848,7 @@ package emr {
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       InstanceCollectionType.foreach(__v => __obj.updateDynamic("InstanceCollectionType")(__v.asInstanceOf[js.Any]))
       KerberosAttributes.foreach(__v => __obj.updateDynamic("KerberosAttributes")(__v.asInstanceOf[js.Any]))
+      LogEncryptionKmsKeyId.foreach(__v => __obj.updateDynamic("LogEncryptionKmsKeyId")(__v.asInstanceOf[js.Any]))
       LogUri.foreach(__v => __obj.updateDynamic("LogUri")(__v.asInstanceOf[js.Any]))
       MasterPublicDnsName.foreach(__v => __obj.updateDynamic("MasterPublicDnsName")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -855,12 +873,12 @@ package emr {
   @js.native
   sealed trait ClusterState extends js.Any
   object ClusterState extends js.Object {
-    val STARTING               = "STARTING".asInstanceOf[ClusterState]
-    val BOOTSTRAPPING          = "BOOTSTRAPPING".asInstanceOf[ClusterState]
-    val RUNNING                = "RUNNING".asInstanceOf[ClusterState]
-    val WAITING                = "WAITING".asInstanceOf[ClusterState]
-    val TERMINATING            = "TERMINATING".asInstanceOf[ClusterState]
-    val TERMINATED             = "TERMINATED".asInstanceOf[ClusterState]
+    val STARTING = "STARTING".asInstanceOf[ClusterState]
+    val BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[ClusterState]
+    val RUNNING = "RUNNING".asInstanceOf[ClusterState]
+    val WAITING = "WAITING".asInstanceOf[ClusterState]
+    val TERMINATING = "TERMINATING".asInstanceOf[ClusterState]
+    val TERMINATED = "TERMINATED".asInstanceOf[ClusterState]
     val TERMINATED_WITH_ERRORS = "TERMINATED_WITH_ERRORS".asInstanceOf[ClusterState]
 
     val values = js.Object.freeze(
@@ -893,14 +911,14 @@ package emr {
   @js.native
   sealed trait ClusterStateChangeReasonCode extends js.Any
   object ClusterStateChangeReasonCode extends js.Object {
-    val INTERNAL_ERROR         = "INTERNAL_ERROR".asInstanceOf[ClusterStateChangeReasonCode]
-    val VALIDATION_ERROR       = "VALIDATION_ERROR".asInstanceOf[ClusterStateChangeReasonCode]
-    val INSTANCE_FAILURE       = "INSTANCE_FAILURE".asInstanceOf[ClusterStateChangeReasonCode]
+    val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[ClusterStateChangeReasonCode]
+    val VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[ClusterStateChangeReasonCode]
+    val INSTANCE_FAILURE = "INSTANCE_FAILURE".asInstanceOf[ClusterStateChangeReasonCode]
     val INSTANCE_FLEET_TIMEOUT = "INSTANCE_FLEET_TIMEOUT".asInstanceOf[ClusterStateChangeReasonCode]
-    val BOOTSTRAP_FAILURE      = "BOOTSTRAP_FAILURE".asInstanceOf[ClusterStateChangeReasonCode]
-    val USER_REQUEST           = "USER_REQUEST".asInstanceOf[ClusterStateChangeReasonCode]
-    val STEP_FAILURE           = "STEP_FAILURE".asInstanceOf[ClusterStateChangeReasonCode]
-    val ALL_STEPS_COMPLETED    = "ALL_STEPS_COMPLETED".asInstanceOf[ClusterStateChangeReasonCode]
+    val BOOTSTRAP_FAILURE = "BOOTSTRAP_FAILURE".asInstanceOf[ClusterStateChangeReasonCode]
+    val USER_REQUEST = "USER_REQUEST".asInstanceOf[ClusterStateChangeReasonCode]
+    val STEP_FAILURE = "STEP_FAILURE".asInstanceOf[ClusterStateChangeReasonCode]
+    val ALL_STEPS_COMPLETED = "ALL_STEPS_COMPLETED".asInstanceOf[ClusterStateChangeReasonCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1029,11 +1047,56 @@ package emr {
   sealed trait ComparisonOperator extends js.Any
   object ComparisonOperator extends js.Object {
     val GREATER_THAN_OR_EQUAL = "GREATER_THAN_OR_EQUAL".asInstanceOf[ComparisonOperator]
-    val GREATER_THAN          = "GREATER_THAN".asInstanceOf[ComparisonOperator]
-    val LESS_THAN             = "LESS_THAN".asInstanceOf[ComparisonOperator]
-    val LESS_THAN_OR_EQUAL    = "LESS_THAN_OR_EQUAL".asInstanceOf[ComparisonOperator]
+    val GREATER_THAN = "GREATER_THAN".asInstanceOf[ComparisonOperator]
+    val LESS_THAN = "LESS_THAN".asInstanceOf[ComparisonOperator]
+    val LESS_THAN_OR_EQUAL = "LESS_THAN_OR_EQUAL".asInstanceOf[ComparisonOperator]
 
     val values = js.Object.freeze(js.Array(GREATER_THAN_OR_EQUAL, GREATER_THAN, LESS_THAN, LESS_THAN_OR_EQUAL))
+  }
+
+  /**
+    * The EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster can not be above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration.
+    */
+  @js.native
+  trait ComputeLimits extends js.Object {
+    var MaximumCapacityUnits: Int
+    var MinimumCapacityUnits: Int
+    var UnitType: ComputeLimitsUnitType
+    var MaximumCoreCapacityUnits: js.UndefOr[Int]
+    var MaximumOnDemandCapacityUnits: js.UndefOr[Int]
+  }
+
+  object ComputeLimits {
+    @inline
+    def apply(
+        MaximumCapacityUnits: Int,
+        MinimumCapacityUnits: Int,
+        UnitType: ComputeLimitsUnitType,
+        MaximumCoreCapacityUnits: js.UndefOr[Int] = js.undefined,
+        MaximumOnDemandCapacityUnits: js.UndefOr[Int] = js.undefined
+    ): ComputeLimits = {
+      val __obj = js.Dynamic.literal(
+        "MaximumCapacityUnits" -> MaximumCapacityUnits.asInstanceOf[js.Any],
+        "MinimumCapacityUnits" -> MinimumCapacityUnits.asInstanceOf[js.Any],
+        "UnitType" -> UnitType.asInstanceOf[js.Any]
+      )
+
+      MaximumCoreCapacityUnits.foreach(__v => __obj.updateDynamic("MaximumCoreCapacityUnits")(__v.asInstanceOf[js.Any]))
+      MaximumOnDemandCapacityUnits.foreach(__v =>
+        __obj.updateDynamic("MaximumOnDemandCapacityUnits")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ComputeLimits]
+    }
+  }
+
+  @js.native
+  sealed trait ComputeLimitsUnitType extends js.Any
+  object ComputeLimitsUnitType extends js.Object {
+    val InstanceFleetUnits = "InstanceFleetUnits".asInstanceOf[ComputeLimitsUnitType]
+    val Instances = "Instances".asInstanceOf[ComputeLimitsUnitType]
+    val VCPU = "VCPU".asInstanceOf[ComputeLimitsUnitType]
+
+    val values = js.Object.freeze(js.Array(InstanceFleetUnits, Instances, VCPU))
   }
 
   /**
@@ -1075,7 +1138,7 @@ package emr {
         SecurityConfiguration: String
     ): CreateSecurityConfigurationInput = {
       val __obj = js.Dynamic.literal(
-        "Name"                  -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "SecurityConfiguration" -> SecurityConfiguration.asInstanceOf[js.Any]
       )
 
@@ -1097,7 +1160,7 @@ package emr {
     ): CreateSecurityConfigurationOutput = {
       val __obj = js.Dynamic.literal(
         "CreationDateTime" -> CreationDateTime.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateSecurityConfigurationOutput]
@@ -1279,7 +1342,7 @@ package emr {
     ): DescribeStepInput = {
       val __obj = js.Dynamic.literal(
         "ClusterId" -> ClusterId.asInstanceOf[js.Any],
-        "StepId"    -> StepId.asInstanceOf[js.Any]
+        "StepId" -> StepId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeStepInput]
@@ -1507,11 +1570,45 @@ package emr {
         BlockPublicAccessConfigurationMetadata: BlockPublicAccessConfigurationMetadata
     ): GetBlockPublicAccessConfigurationOutput = {
       val __obj = js.Dynamic.literal(
-        "BlockPublicAccessConfiguration"         -> BlockPublicAccessConfiguration.asInstanceOf[js.Any],
+        "BlockPublicAccessConfiguration" -> BlockPublicAccessConfiguration.asInstanceOf[js.Any],
         "BlockPublicAccessConfigurationMetadata" -> BlockPublicAccessConfigurationMetadata.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetBlockPublicAccessConfigurationOutput]
+    }
+  }
+
+  @js.native
+  trait GetManagedScalingPolicyInput extends js.Object {
+    var ClusterId: ClusterId
+  }
+
+  object GetManagedScalingPolicyInput {
+    @inline
+    def apply(
+        ClusterId: ClusterId
+    ): GetManagedScalingPolicyInput = {
+      val __obj = js.Dynamic.literal(
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetManagedScalingPolicyInput]
+    }
+  }
+
+  @js.native
+  trait GetManagedScalingPolicyOutput extends js.Object {
+    var ManagedScalingPolicy: js.UndefOr[ManagedScalingPolicy]
+  }
+
+  object GetManagedScalingPolicyOutput {
+    @inline
+    def apply(
+        ManagedScalingPolicy: js.UndefOr[ManagedScalingPolicy] = js.undefined
+    ): GetManagedScalingPolicyOutput = {
+      val __obj = js.Dynamic.literal()
+      ManagedScalingPolicy.foreach(__v => __obj.updateDynamic("ManagedScalingPolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetManagedScalingPolicyOutput]
     }
   }
 
@@ -1754,24 +1851,25 @@ package emr {
   }
 
   /**
-    * The launch specification for Spot instances in the fleet, which determines the defined duration and provisioning timeout behavior.
+    * The launch specification for Spot instances in the fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.
     *
-    * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
+    * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand and Spot instance allocation strategies are available in Amazon EMR version 5.12.1 and later.
     */
   @js.native
   trait InstanceFleetProvisioningSpecifications extends js.Object {
-    var SpotSpecification: SpotProvisioningSpecification
+    var OnDemandSpecification: js.UndefOr[OnDemandProvisioningSpecification]
+    var SpotSpecification: js.UndefOr[SpotProvisioningSpecification]
   }
 
   object InstanceFleetProvisioningSpecifications {
     @inline
     def apply(
-        SpotSpecification: SpotProvisioningSpecification
+        OnDemandSpecification: js.UndefOr[OnDemandProvisioningSpecification] = js.undefined,
+        SpotSpecification: js.UndefOr[SpotProvisioningSpecification] = js.undefined
     ): InstanceFleetProvisioningSpecifications = {
-      val __obj = js.Dynamic.literal(
-        "SpotSpecification" -> SpotSpecification.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
+      OnDemandSpecification.foreach(__v => __obj.updateDynamic("OnDemandSpecification")(__v.asInstanceOf[js.Any]))
+      SpotSpecification.foreach(__v => __obj.updateDynamic("SpotSpecification")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceFleetProvisioningSpecifications]
     }
   }
@@ -1779,13 +1877,13 @@ package emr {
   @js.native
   sealed trait InstanceFleetState extends js.Any
   object InstanceFleetState extends js.Object {
-    val PROVISIONING  = "PROVISIONING".asInstanceOf[InstanceFleetState]
+    val PROVISIONING = "PROVISIONING".asInstanceOf[InstanceFleetState]
     val BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[InstanceFleetState]
-    val RUNNING       = "RUNNING".asInstanceOf[InstanceFleetState]
-    val RESIZING      = "RESIZING".asInstanceOf[InstanceFleetState]
-    val SUSPENDED     = "SUSPENDED".asInstanceOf[InstanceFleetState]
-    val TERMINATING   = "TERMINATING".asInstanceOf[InstanceFleetState]
-    val TERMINATED    = "TERMINATED".asInstanceOf[InstanceFleetState]
+    val RUNNING = "RUNNING".asInstanceOf[InstanceFleetState]
+    val RESIZING = "RESIZING".asInstanceOf[InstanceFleetState]
+    val SUSPENDED = "SUSPENDED".asInstanceOf[InstanceFleetState]
+    val TERMINATING = "TERMINATING".asInstanceOf[InstanceFleetState]
+    val TERMINATED = "TERMINATED".asInstanceOf[InstanceFleetState]
 
     val values =
       js.Object.freeze(js.Array(PROVISIONING, BOOTSTRAPPING, RUNNING, RESIZING, SUSPENDED, TERMINATING, TERMINATED))
@@ -1818,9 +1916,9 @@ package emr {
   @js.native
   sealed trait InstanceFleetStateChangeReasonCode extends js.Any
   object InstanceFleetStateChangeReasonCode extends js.Object {
-    val INTERNAL_ERROR     = "INTERNAL_ERROR".asInstanceOf[InstanceFleetStateChangeReasonCode]
-    val VALIDATION_ERROR   = "VALIDATION_ERROR".asInstanceOf[InstanceFleetStateChangeReasonCode]
-    val INSTANCE_FAILURE   = "INSTANCE_FAILURE".asInstanceOf[InstanceFleetStateChangeReasonCode]
+    val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[InstanceFleetStateChangeReasonCode]
+    val VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[InstanceFleetStateChangeReasonCode]
+    val INSTANCE_FAILURE = "INSTANCE_FAILURE".asInstanceOf[InstanceFleetStateChangeReasonCode]
     val CLUSTER_TERMINATED = "CLUSTER_TERMINATED".asInstanceOf[InstanceFleetStateChangeReasonCode]
 
     val values = js.Object.freeze(js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, CLUSTER_TERMINATED))
@@ -1884,8 +1982,8 @@ package emr {
   sealed trait InstanceFleetType extends js.Any
   object InstanceFleetType extends js.Object {
     val MASTER = "MASTER".asInstanceOf[InstanceFleetType]
-    val CORE   = "CORE".asInstanceOf[InstanceFleetType]
-    val TASK   = "TASK".asInstanceOf[InstanceFleetType]
+    val CORE = "CORE".asInstanceOf[InstanceFleetType]
+    val TASK = "TASK".asInstanceOf[InstanceFleetType]
 
     val values = js.Object.freeze(js.Array(MASTER, CORE, TASK))
   }
@@ -1992,8 +2090,8 @@ package emr {
     ): InstanceGroupConfig = {
       val __obj = js.Dynamic.literal(
         "InstanceCount" -> InstanceCount.asInstanceOf[js.Any],
-        "InstanceRole"  -> InstanceRole.asInstanceOf[js.Any],
-        "InstanceType"  -> InstanceType.asInstanceOf[js.Any]
+        "InstanceRole" -> InstanceRole.asInstanceOf[js.Any],
+        "InstanceType" -> InstanceType.asInstanceOf[js.Any]
       )
 
       AutoScalingPolicy.foreach(__v => __obj.updateDynamic("AutoScalingPolicy")(__v.asInstanceOf[js.Any]))
@@ -2046,13 +2144,13 @@ package emr {
         StartDateTime: js.UndefOr[Date] = js.undefined
     ): InstanceGroupDetail = {
       val __obj = js.Dynamic.literal(
-        "CreationDateTime"     -> CreationDateTime.asInstanceOf[js.Any],
+        "CreationDateTime" -> CreationDateTime.asInstanceOf[js.Any],
         "InstanceRequestCount" -> InstanceRequestCount.asInstanceOf[js.Any],
-        "InstanceRole"         -> InstanceRole.asInstanceOf[js.Any],
+        "InstanceRole" -> InstanceRole.asInstanceOf[js.Any],
         "InstanceRunningCount" -> InstanceRunningCount.asInstanceOf[js.Any],
-        "InstanceType"         -> InstanceType.asInstanceOf[js.Any],
-        "Market"               -> Market.asInstanceOf[js.Any],
-        "State"                -> State.asInstanceOf[js.Any]
+        "InstanceType" -> InstanceType.asInstanceOf[js.Any],
+        "Market" -> Market.asInstanceOf[js.Any],
+        "State" -> State.asInstanceOf[js.Any]
       )
 
       BidPrice.foreach(__v => __obj.updateDynamic("BidPrice")(__v.asInstanceOf[js.Any]))
@@ -2104,17 +2202,17 @@ package emr {
   @js.native
   sealed trait InstanceGroupState extends js.Any
   object InstanceGroupState extends js.Object {
-    val PROVISIONING  = "PROVISIONING".asInstanceOf[InstanceGroupState]
+    val PROVISIONING = "PROVISIONING".asInstanceOf[InstanceGroupState]
     val BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[InstanceGroupState]
-    val RUNNING       = "RUNNING".asInstanceOf[InstanceGroupState]
+    val RUNNING = "RUNNING".asInstanceOf[InstanceGroupState]
     val RECONFIGURING = "RECONFIGURING".asInstanceOf[InstanceGroupState]
-    val RESIZING      = "RESIZING".asInstanceOf[InstanceGroupState]
-    val SUSPENDED     = "SUSPENDED".asInstanceOf[InstanceGroupState]
-    val TERMINATING   = "TERMINATING".asInstanceOf[InstanceGroupState]
-    val TERMINATED    = "TERMINATED".asInstanceOf[InstanceGroupState]
-    val ARRESTED      = "ARRESTED".asInstanceOf[InstanceGroupState]
+    val RESIZING = "RESIZING".asInstanceOf[InstanceGroupState]
+    val SUSPENDED = "SUSPENDED".asInstanceOf[InstanceGroupState]
+    val TERMINATING = "TERMINATING".asInstanceOf[InstanceGroupState]
+    val TERMINATED = "TERMINATED".asInstanceOf[InstanceGroupState]
+    val ARRESTED = "ARRESTED".asInstanceOf[InstanceGroupState]
     val SHUTTING_DOWN = "SHUTTING_DOWN".asInstanceOf[InstanceGroupState]
-    val ENDED         = "ENDED".asInstanceOf[InstanceGroupState]
+    val ENDED = "ENDED".asInstanceOf[InstanceGroupState]
 
     val values = js.Object.freeze(
       js.Array(
@@ -2158,9 +2256,9 @@ package emr {
   @js.native
   sealed trait InstanceGroupStateChangeReasonCode extends js.Any
   object InstanceGroupStateChangeReasonCode extends js.Object {
-    val INTERNAL_ERROR     = "INTERNAL_ERROR".asInstanceOf[InstanceGroupStateChangeReasonCode]
-    val VALIDATION_ERROR   = "VALIDATION_ERROR".asInstanceOf[InstanceGroupStateChangeReasonCode]
-    val INSTANCE_FAILURE   = "INSTANCE_FAILURE".asInstanceOf[InstanceGroupStateChangeReasonCode]
+    val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[InstanceGroupStateChangeReasonCode]
+    val VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[InstanceGroupStateChangeReasonCode]
+    val INSTANCE_FAILURE = "INSTANCE_FAILURE".asInstanceOf[InstanceGroupStateChangeReasonCode]
     val CLUSTER_TERMINATED = "CLUSTER_TERMINATED".asInstanceOf[InstanceGroupStateChangeReasonCode]
 
     val values = js.Object.freeze(js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, CLUSTER_TERMINATED))
@@ -2220,8 +2318,8 @@ package emr {
   sealed trait InstanceGroupType extends js.Any
   object InstanceGroupType extends js.Object {
     val MASTER = "MASTER".asInstanceOf[InstanceGroupType]
-    val CORE   = "CORE".asInstanceOf[InstanceGroupType]
-    val TASK   = "TASK".asInstanceOf[InstanceGroupType]
+    val CORE = "CORE".asInstanceOf[InstanceGroupType]
+    val TASK = "TASK".asInstanceOf[InstanceGroupType]
 
     val values = js.Object.freeze(js.Array(MASTER, CORE, TASK))
   }
@@ -2257,8 +2355,8 @@ package emr {
   sealed trait InstanceRoleType extends js.Any
   object InstanceRoleType extends js.Object {
     val MASTER = "MASTER".asInstanceOf[InstanceRoleType]
-    val CORE   = "CORE".asInstanceOf[InstanceRoleType]
-    val TASK   = "TASK".asInstanceOf[InstanceRoleType]
+    val CORE = "CORE".asInstanceOf[InstanceRoleType]
+    val TASK = "TASK".asInstanceOf[InstanceRoleType]
 
     val values = js.Object.freeze(js.Array(MASTER, CORE, TASK))
   }
@@ -2267,10 +2365,10 @@ package emr {
   sealed trait InstanceState extends js.Any
   object InstanceState extends js.Object {
     val AWAITING_FULFILLMENT = "AWAITING_FULFILLMENT".asInstanceOf[InstanceState]
-    val PROVISIONING         = "PROVISIONING".asInstanceOf[InstanceState]
-    val BOOTSTRAPPING        = "BOOTSTRAPPING".asInstanceOf[InstanceState]
-    val RUNNING              = "RUNNING".asInstanceOf[InstanceState]
-    val TERMINATED           = "TERMINATED".asInstanceOf[InstanceState]
+    val PROVISIONING = "PROVISIONING".asInstanceOf[InstanceState]
+    val BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[InstanceState]
+    val RUNNING = "RUNNING".asInstanceOf[InstanceState]
+    val TERMINATED = "TERMINATED".asInstanceOf[InstanceState]
 
     val values = js.Object.freeze(js.Array(AWAITING_FULFILLMENT, PROVISIONING, BOOTSTRAPPING, RUNNING, TERMINATED))
   }
@@ -2300,10 +2398,10 @@ package emr {
   @js.native
   sealed trait InstanceStateChangeReasonCode extends js.Any
   object InstanceStateChangeReasonCode extends js.Object {
-    val INTERNAL_ERROR     = "INTERNAL_ERROR".asInstanceOf[InstanceStateChangeReasonCode]
-    val VALIDATION_ERROR   = "VALIDATION_ERROR".asInstanceOf[InstanceStateChangeReasonCode]
-    val INSTANCE_FAILURE   = "INSTANCE_FAILURE".asInstanceOf[InstanceStateChangeReasonCode]
-    val BOOTSTRAP_FAILURE  = "BOOTSTRAP_FAILURE".asInstanceOf[InstanceStateChangeReasonCode]
+    val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[InstanceStateChangeReasonCode]
+    val VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[InstanceStateChangeReasonCode]
+    val INSTANCE_FAILURE = "INSTANCE_FAILURE".asInstanceOf[InstanceStateChangeReasonCode]
+    val BOOTSTRAP_FAILURE = "BOOTSTRAP_FAILURE".asInstanceOf[InstanceStateChangeReasonCode]
     val CLUSTER_TERMINATED = "CLUSTER_TERMINATED".asInstanceOf[InstanceStateChangeReasonCode]
 
     val values = js.Object.freeze(
@@ -2455,6 +2553,7 @@ package emr {
     var AutoScalingRole: js.UndefOr[XmlString]
     var BootstrapActions: js.UndefOr[BootstrapActionDetailList]
     var JobFlowRole: js.UndefOr[XmlString]
+    var LogEncryptionKmsKeyId: js.UndefOr[XmlString]
     var LogUri: js.UndefOr[XmlString]
     var ScaleDownBehavior: js.UndefOr[ScaleDownBehavior]
     var ServiceRole: js.UndefOr[XmlString]
@@ -2474,6 +2573,7 @@ package emr {
         AutoScalingRole: js.UndefOr[XmlString] = js.undefined,
         BootstrapActions: js.UndefOr[BootstrapActionDetailList] = js.undefined,
         JobFlowRole: js.UndefOr[XmlString] = js.undefined,
+        LogEncryptionKmsKeyId: js.UndefOr[XmlString] = js.undefined,
         LogUri: js.UndefOr[XmlString] = js.undefined,
         ScaleDownBehavior: js.UndefOr[ScaleDownBehavior] = js.undefined,
         ServiceRole: js.UndefOr[XmlString] = js.undefined,
@@ -2483,15 +2583,16 @@ package emr {
     ): JobFlowDetail = {
       val __obj = js.Dynamic.literal(
         "ExecutionStatusDetail" -> ExecutionStatusDetail.asInstanceOf[js.Any],
-        "Instances"             -> Instances.asInstanceOf[js.Any],
-        "JobFlowId"             -> JobFlowId.asInstanceOf[js.Any],
-        "Name"                  -> Name.asInstanceOf[js.Any]
+        "Instances" -> Instances.asInstanceOf[js.Any],
+        "JobFlowId" -> JobFlowId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       AmiVersion.foreach(__v => __obj.updateDynamic("AmiVersion")(__v.asInstanceOf[js.Any]))
       AutoScalingRole.foreach(__v => __obj.updateDynamic("AutoScalingRole")(__v.asInstanceOf[js.Any]))
       BootstrapActions.foreach(__v => __obj.updateDynamic("BootstrapActions")(__v.asInstanceOf[js.Any]))
       JobFlowRole.foreach(__v => __obj.updateDynamic("JobFlowRole")(__v.asInstanceOf[js.Any]))
+      LogEncryptionKmsKeyId.foreach(__v => __obj.updateDynamic("LogEncryptionKmsKeyId")(__v.asInstanceOf[js.Any]))
       LogUri.foreach(__v => __obj.updateDynamic("LogUri")(__v.asInstanceOf[js.Any]))
       ScaleDownBehavior.foreach(__v => __obj.updateDynamic("ScaleDownBehavior")(__v.asInstanceOf[js.Any]))
       ServiceRole.foreach(__v => __obj.updateDynamic("ServiceRole")(__v.asInstanceOf[js.Any]))
@@ -2508,14 +2609,14 @@ package emr {
   @js.native
   sealed trait JobFlowExecutionState extends js.Any
   object JobFlowExecutionState extends js.Object {
-    val STARTING      = "STARTING".asInstanceOf[JobFlowExecutionState]
+    val STARTING = "STARTING".asInstanceOf[JobFlowExecutionState]
     val BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[JobFlowExecutionState]
-    val RUNNING       = "RUNNING".asInstanceOf[JobFlowExecutionState]
-    val WAITING       = "WAITING".asInstanceOf[JobFlowExecutionState]
+    val RUNNING = "RUNNING".asInstanceOf[JobFlowExecutionState]
+    val WAITING = "WAITING".asInstanceOf[JobFlowExecutionState]
     val SHUTTING_DOWN = "SHUTTING_DOWN".asInstanceOf[JobFlowExecutionState]
-    val TERMINATED    = "TERMINATED".asInstanceOf[JobFlowExecutionState]
-    val COMPLETED     = "COMPLETED".asInstanceOf[JobFlowExecutionState]
-    val FAILED        = "FAILED".asInstanceOf[JobFlowExecutionState]
+    val TERMINATED = "TERMINATED".asInstanceOf[JobFlowExecutionState]
+    val COMPLETED = "COMPLETED".asInstanceOf[JobFlowExecutionState]
+    val FAILED = "FAILED".asInstanceOf[JobFlowExecutionState]
 
     val values = js.Object.freeze(
       js.Array(STARTING, BOOTSTRAPPING, RUNNING, WAITING, SHUTTING_DOWN, TERMINATED, COMPLETED, FAILED)
@@ -2547,7 +2648,7 @@ package emr {
     ): JobFlowExecutionStatusDetail = {
       val __obj = js.Dynamic.literal(
         "CreationDateTime" -> CreationDateTime.asInstanceOf[js.Any],
-        "State"            -> State.asInstanceOf[js.Any]
+        "State" -> State.asInstanceOf[js.Any]
       )
 
       EndDateTime.foreach(__v => __obj.updateDynamic("EndDateTime")(__v.asInstanceOf[js.Any]))
@@ -2675,9 +2776,9 @@ package emr {
         TerminationProtected: js.UndefOr[Boolean] = js.undefined
     ): JobFlowInstancesDetail = {
       val __obj = js.Dynamic.literal(
-        "InstanceCount"      -> InstanceCount.asInstanceOf[js.Any],
+        "InstanceCount" -> InstanceCount.asInstanceOf[js.Any],
         "MasterInstanceType" -> MasterInstanceType.asInstanceOf[js.Any],
-        "SlaveInstanceType"  -> SlaveInstanceType.asInstanceOf[js.Any]
+        "SlaveInstanceType" -> SlaveInstanceType.asInstanceOf[js.Any]
       )
 
       Ec2KeyName.foreach(__v => __obj.updateDynamic("Ec2KeyName")(__v.asInstanceOf[js.Any]))
@@ -2719,7 +2820,7 @@ package emr {
     ): KerberosAttributes = {
       val __obj = js.Dynamic.literal(
         "KdcAdminPassword" -> KdcAdminPassword.asInstanceOf[js.Any],
-        "Realm"            -> Realm.asInstanceOf[js.Any]
+        "Realm" -> Realm.asInstanceOf[js.Any]
       )
 
       ADDomainJoinPassword.foreach(__v => __obj.updateDynamic("ADDomainJoinPassword")(__v.asInstanceOf[js.Any]))
@@ -3083,11 +3184,30 @@ package emr {
     }
   }
 
+  /**
+    * Managed scaling policy for an Amazon EMR cluster. The policy specifies the limits for resources that can be added or terminated from a cluster. The policy only applies to the core and task nodes. The master node cannot be scaled after initial configuration.
+    */
+  @js.native
+  trait ManagedScalingPolicy extends js.Object {
+    var ComputeLimits: js.UndefOr[ComputeLimits]
+  }
+
+  object ManagedScalingPolicy {
+    @inline
+    def apply(
+        ComputeLimits: js.UndefOr[ComputeLimits] = js.undefined
+    ): ManagedScalingPolicy = {
+      val __obj = js.Dynamic.literal()
+      ComputeLimits.foreach(__v => __obj.updateDynamic("ComputeLimits")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ManagedScalingPolicy]
+    }
+  }
+
   @js.native
   sealed trait MarketType extends js.Any
   object MarketType extends js.Object {
     val ON_DEMAND = "ON_DEMAND".asInstanceOf[MarketType]
-    val SPOT      = "SPOT".asInstanceOf[MarketType]
+    val SPOT = "SPOT".asInstanceOf[MarketType]
 
     val values = js.Object.freeze(js.Array(ON_DEMAND, SPOT))
   }
@@ -3164,7 +3284,7 @@ package emr {
         InstanceFleet: InstanceFleetModifyConfig
     ): ModifyInstanceFleetInput = {
       val __obj = js.Dynamic.literal(
-        "ClusterId"     -> ClusterId.asInstanceOf[js.Any],
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any],
         "InstanceFleet" -> InstanceFleet.asInstanceOf[js.Any]
       )
 
@@ -3191,6 +3311,37 @@ package emr {
       ClusterId.foreach(__v => __obj.updateDynamic("ClusterId")(__v.asInstanceOf[js.Any]))
       InstanceGroups.foreach(__v => __obj.updateDynamic("InstanceGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyInstanceGroupsInput]
+    }
+  }
+
+  @js.native
+  sealed trait OnDemandProvisioningAllocationStrategy extends js.Any
+  object OnDemandProvisioningAllocationStrategy extends js.Object {
+    val `lowest-price` = "lowest-price".asInstanceOf[OnDemandProvisioningAllocationStrategy]
+
+    val values = js.Object.freeze(js.Array(`lowest-price`))
+  }
+
+  /**
+    * The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.
+    *
+    * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand instances allocation strategy is available in Amazon EMR version 5.12.1 and later.
+    */
+  @js.native
+  trait OnDemandProvisioningSpecification extends js.Object {
+    var AllocationStrategy: OnDemandProvisioningAllocationStrategy
+  }
+
+  object OnDemandProvisioningSpecification {
+    @inline
+    def apply(
+        AllocationStrategy: OnDemandProvisioningAllocationStrategy
+    ): OnDemandProvisioningSpecification = {
+      val __obj = js.Dynamic.literal(
+        "AllocationStrategy" -> AllocationStrategy.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[OnDemandProvisioningSpecification]
     }
   }
 
@@ -3256,8 +3407,8 @@ package emr {
     ): PutAutoScalingPolicyInput = {
       val __obj = js.Dynamic.literal(
         "AutoScalingPolicy" -> AutoScalingPolicy.asInstanceOf[js.Any],
-        "ClusterId"         -> ClusterId.asInstanceOf[js.Any],
-        "InstanceGroupId"   -> InstanceGroupId.asInstanceOf[js.Any]
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any],
+        "InstanceGroupId" -> InstanceGroupId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutAutoScalingPolicyInput]
@@ -3321,6 +3472,40 @@ package emr {
   }
 
   @js.native
+  trait PutManagedScalingPolicyInput extends js.Object {
+    var ClusterId: ClusterId
+    var ManagedScalingPolicy: ManagedScalingPolicy
+  }
+
+  object PutManagedScalingPolicyInput {
+    @inline
+    def apply(
+        ClusterId: ClusterId,
+        ManagedScalingPolicy: ManagedScalingPolicy
+    ): PutManagedScalingPolicyInput = {
+      val __obj = js.Dynamic.literal(
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any],
+        "ManagedScalingPolicy" -> ManagedScalingPolicy.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[PutManagedScalingPolicyInput]
+    }
+  }
+
+  @js.native
+  trait PutManagedScalingPolicyOutput extends js.Object {}
+
+  object PutManagedScalingPolicyOutput {
+    @inline
+    def apply(
+    ): PutManagedScalingPolicyOutput = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[PutManagedScalingPolicyOutput]
+    }
+  }
+
+  @js.native
   trait RemoveAutoScalingPolicyInput extends js.Object {
     var ClusterId: ClusterId
     var InstanceGroupId: InstanceGroupId
@@ -3333,7 +3518,7 @@ package emr {
         InstanceGroupId: InstanceGroupId
     ): RemoveAutoScalingPolicyInput = {
       val __obj = js.Dynamic.literal(
-        "ClusterId"       -> ClusterId.asInstanceOf[js.Any],
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any],
         "InstanceGroupId" -> InstanceGroupId.asInstanceOf[js.Any]
       )
 
@@ -3354,6 +3539,37 @@ package emr {
     }
   }
 
+  @js.native
+  trait RemoveManagedScalingPolicyInput extends js.Object {
+    var ClusterId: ClusterId
+  }
+
+  object RemoveManagedScalingPolicyInput {
+    @inline
+    def apply(
+        ClusterId: ClusterId
+    ): RemoveManagedScalingPolicyInput = {
+      val __obj = js.Dynamic.literal(
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[RemoveManagedScalingPolicyInput]
+    }
+  }
+
+  @js.native
+  trait RemoveManagedScalingPolicyOutput extends js.Object {}
+
+  object RemoveManagedScalingPolicyOutput {
+    @inline
+    def apply(
+    ): RemoveManagedScalingPolicyOutput = {
+      val __obj = js.Dynamic.literal()
+
+      __obj.asInstanceOf[RemoveManagedScalingPolicyOutput]
+    }
+  }
+
   /**
     * This input identifies a cluster and a list of tags to remove.
     */
@@ -3371,7 +3587,7 @@ package emr {
     ): RemoveTagsInput = {
       val __obj = js.Dynamic.literal(
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "TagKeys"    -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RemoveTagsInput]
@@ -3398,7 +3614,7 @@ package emr {
   sealed trait RepoUpgradeOnBoot extends js.Any
   object RepoUpgradeOnBoot extends js.Object {
     val SECURITY = "SECURITY".asInstanceOf[RepoUpgradeOnBoot]
-    val NONE     = "NONE".asInstanceOf[RepoUpgradeOnBoot]
+    val NONE = "NONE".asInstanceOf[RepoUpgradeOnBoot]
 
     val values = js.Object.freeze(js.Array(SECURITY, NONE))
   }
@@ -3420,7 +3636,9 @@ package emr {
     var EbsRootVolumeSize: js.UndefOr[Int]
     var JobFlowRole: js.UndefOr[XmlString]
     var KerberosAttributes: js.UndefOr[KerberosAttributes]
+    var LogEncryptionKmsKeyId: js.UndefOr[XmlString]
     var LogUri: js.UndefOr[XmlString]
+    var ManagedScalingPolicy: js.UndefOr[ManagedScalingPolicy]
     var NewSupportedProducts: js.UndefOr[NewSupportedProductsList]
     var ReleaseLabel: js.UndefOr[XmlStringMaxLen256]
     var RepoUpgradeOnBoot: js.UndefOr[RepoUpgradeOnBoot]
@@ -3449,7 +3667,9 @@ package emr {
         EbsRootVolumeSize: js.UndefOr[Int] = js.undefined,
         JobFlowRole: js.UndefOr[XmlString] = js.undefined,
         KerberosAttributes: js.UndefOr[KerberosAttributes] = js.undefined,
+        LogEncryptionKmsKeyId: js.UndefOr[XmlString] = js.undefined,
         LogUri: js.UndefOr[XmlString] = js.undefined,
+        ManagedScalingPolicy: js.UndefOr[ManagedScalingPolicy] = js.undefined,
         NewSupportedProducts: js.UndefOr[NewSupportedProductsList] = js.undefined,
         ReleaseLabel: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         RepoUpgradeOnBoot: js.UndefOr[RepoUpgradeOnBoot] = js.undefined,
@@ -3464,7 +3684,7 @@ package emr {
     ): RunJobFlowInput = {
       val __obj = js.Dynamic.literal(
         "Instances" -> Instances.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       AdditionalInfo.foreach(__v => __obj.updateDynamic("AdditionalInfo")(__v.asInstanceOf[js.Any]))
@@ -3477,7 +3697,9 @@ package emr {
       EbsRootVolumeSize.foreach(__v => __obj.updateDynamic("EbsRootVolumeSize")(__v.asInstanceOf[js.Any]))
       JobFlowRole.foreach(__v => __obj.updateDynamic("JobFlowRole")(__v.asInstanceOf[js.Any]))
       KerberosAttributes.foreach(__v => __obj.updateDynamic("KerberosAttributes")(__v.asInstanceOf[js.Any]))
+      LogEncryptionKmsKeyId.foreach(__v => __obj.updateDynamic("LogEncryptionKmsKeyId")(__v.asInstanceOf[js.Any]))
       LogUri.foreach(__v => __obj.updateDynamic("LogUri")(__v.asInstanceOf[js.Any]))
+      ManagedScalingPolicy.foreach(__v => __obj.updateDynamic("ManagedScalingPolicy")(__v.asInstanceOf[js.Any]))
       NewSupportedProducts.foreach(__v => __obj.updateDynamic("NewSupportedProducts")(__v.asInstanceOf[js.Any]))
       ReleaseLabel.foreach(__v => __obj.updateDynamic("ReleaseLabel")(__v.asInstanceOf[js.Any]))
       RepoUpgradeOnBoot.foreach(__v => __obj.updateDynamic("RepoUpgradeOnBoot")(__v.asInstanceOf[js.Any]))
@@ -3518,7 +3740,7 @@ package emr {
   @js.native
   sealed trait ScaleDownBehavior extends js.Any
   object ScaleDownBehavior extends js.Object {
-    val TERMINATE_AT_INSTANCE_HOUR   = "TERMINATE_AT_INSTANCE_HOUR".asInstanceOf[ScaleDownBehavior]
+    val TERMINATE_AT_INSTANCE_HOUR = "TERMINATE_AT_INSTANCE_HOUR".asInstanceOf[ScaleDownBehavior]
     val TERMINATE_AT_TASK_COMPLETION = "TERMINATE_AT_TASK_COMPLETION".asInstanceOf[ScaleDownBehavior]
 
     val values = js.Object.freeze(js.Array(TERMINATE_AT_INSTANCE_HOUR, TERMINATE_AT_TASK_COMPLETION))
@@ -3592,8 +3814,8 @@ package emr {
         Description: js.UndefOr[String] = js.undefined
     ): ScalingRule = {
       val __obj = js.Dynamic.literal(
-        "Action"  -> Action.asInstanceOf[js.Any],
-        "Name"    -> Name.asInstanceOf[js.Any],
+        "Action" -> Action.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Trigger" -> Trigger.asInstanceOf[js.Any]
       )
 
@@ -3685,7 +3907,7 @@ package emr {
         TerminationProtected: Boolean
     ): SetTerminationProtectionInput = {
       val __obj = js.Dynamic.literal(
-        "JobFlowIds"           -> JobFlowIds.asInstanceOf[js.Any],
+        "JobFlowIds" -> JobFlowIds.asInstanceOf[js.Any],
         "TerminationProtected" -> TerminationProtected.asInstanceOf[js.Any]
       )
 
@@ -3709,7 +3931,7 @@ package emr {
         VisibleToAllUsers: Boolean
     ): SetVisibleToAllUsersInput = {
       val __obj = js.Dynamic.literal(
-        "JobFlowIds"        -> JobFlowIds.asInstanceOf[js.Any],
+        "JobFlowIds" -> JobFlowIds.asInstanceOf[js.Any],
         "VisibleToAllUsers" -> VisibleToAllUsers.asInstanceOf[js.Any]
       )
 
@@ -3766,15 +3988,24 @@ package emr {
     }
   }
 
+  @js.native
+  sealed trait SpotProvisioningAllocationStrategy extends js.Any
+  object SpotProvisioningAllocationStrategy extends js.Object {
+    val `capacity-optimized` = "capacity-optimized".asInstanceOf[SpotProvisioningAllocationStrategy]
+
+    val values = js.Object.freeze(js.Array(`capacity-optimized`))
+  }
+
   /**
-    * The launch specification for Spot instances in the instance fleet, which determines the defined duration and provisioning timeout behavior.
+    * The launch specification for Spot instances in the instance fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.
     *
-    * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
+    * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. Spot instance allocation strategy is available in Amazon EMR version 5.12.1 and later.
     */
   @js.native
   trait SpotProvisioningSpecification extends js.Object {
     var TimeoutAction: SpotProvisioningTimeoutAction
     var TimeoutDurationMinutes: WholeNumber
+    var AllocationStrategy: js.UndefOr[SpotProvisioningAllocationStrategy]
     var BlockDurationMinutes: js.UndefOr[WholeNumber]
   }
 
@@ -3783,13 +4014,15 @@ package emr {
     def apply(
         TimeoutAction: SpotProvisioningTimeoutAction,
         TimeoutDurationMinutes: WholeNumber,
+        AllocationStrategy: js.UndefOr[SpotProvisioningAllocationStrategy] = js.undefined,
         BlockDurationMinutes: js.UndefOr[WholeNumber] = js.undefined
     ): SpotProvisioningSpecification = {
       val __obj = js.Dynamic.literal(
-        "TimeoutAction"          -> TimeoutAction.asInstanceOf[js.Any],
+        "TimeoutAction" -> TimeoutAction.asInstanceOf[js.Any],
         "TimeoutDurationMinutes" -> TimeoutDurationMinutes.asInstanceOf[js.Any]
       )
 
+      AllocationStrategy.foreach(__v => __obj.updateDynamic("AllocationStrategy")(__v.asInstanceOf[js.Any]))
       BlockDurationMinutes.foreach(__v => __obj.updateDynamic("BlockDurationMinutes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SpotProvisioningSpecification]
     }
@@ -3799,7 +4032,7 @@ package emr {
   sealed trait SpotProvisioningTimeoutAction extends js.Any
   object SpotProvisioningTimeoutAction extends js.Object {
     val SWITCH_TO_ON_DEMAND = "SWITCH_TO_ON_DEMAND".asInstanceOf[SpotProvisioningTimeoutAction]
-    val TERMINATE_CLUSTER   = "TERMINATE_CLUSTER".asInstanceOf[SpotProvisioningTimeoutAction]
+    val TERMINATE_CLUSTER = "TERMINATE_CLUSTER".asInstanceOf[SpotProvisioningTimeoutAction]
 
     val values = js.Object.freeze(js.Array(SWITCH_TO_ON_DEMAND, TERMINATE_CLUSTER))
   }
@@ -3808,10 +4041,10 @@ package emr {
   sealed trait Statistic extends js.Any
   object Statistic extends js.Object {
     val SAMPLE_COUNT = "SAMPLE_COUNT".asInstanceOf[Statistic]
-    val AVERAGE      = "AVERAGE".asInstanceOf[Statistic]
-    val SUM          = "SUM".asInstanceOf[Statistic]
-    val MINIMUM      = "MINIMUM".asInstanceOf[Statistic]
-    val MAXIMUM      = "MAXIMUM".asInstanceOf[Statistic]
+    val AVERAGE = "AVERAGE".asInstanceOf[Statistic]
+    val SUM = "SUM".asInstanceOf[Statistic]
+    val MINIMUM = "MINIMUM".asInstanceOf[Statistic]
+    val MAXIMUM = "MAXIMUM".asInstanceOf[Statistic]
 
     val values = js.Object.freeze(js.Array(SAMPLE_COUNT, AVERAGE, SUM, MINIMUM, MAXIMUM))
   }
@@ -3850,7 +4083,7 @@ package emr {
   @js.native
   sealed trait StepCancellationOption extends js.Any
   object StepCancellationOption extends js.Object {
-    val SEND_INTERRUPT    = "SEND_INTERRUPT".asInstanceOf[StepCancellationOption]
+    val SEND_INTERRUPT = "SEND_INTERRUPT".asInstanceOf[StepCancellationOption]
     val TERMINATE_PROCESS = "TERMINATE_PROCESS".asInstanceOf[StepCancellationOption]
 
     val values = js.Object.freeze(js.Array(SEND_INTERRUPT, TERMINATE_PROCESS))
@@ -3875,7 +4108,7 @@ package emr {
     ): StepConfig = {
       val __obj = js.Dynamic.literal(
         "HadoopJarStep" -> HadoopJarStep.asInstanceOf[js.Any],
-        "Name"          -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       ActionOnFailure.foreach(__v => __obj.updateDynamic("ActionOnFailure")(__v.asInstanceOf[js.Any]))
@@ -3900,7 +4133,7 @@ package emr {
     ): StepDetail = {
       val __obj = js.Dynamic.literal(
         "ExecutionStatusDetail" -> ExecutionStatusDetail.asInstanceOf[js.Any],
-        "StepConfig"            -> StepConfig.asInstanceOf[js.Any]
+        "StepConfig" -> StepConfig.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[StepDetail]
@@ -3910,12 +4143,12 @@ package emr {
   @js.native
   sealed trait StepExecutionState extends js.Any
   object StepExecutionState extends js.Object {
-    val PENDING     = "PENDING".asInstanceOf[StepExecutionState]
-    val RUNNING     = "RUNNING".asInstanceOf[StepExecutionState]
-    val CONTINUE    = "CONTINUE".asInstanceOf[StepExecutionState]
-    val COMPLETED   = "COMPLETED".asInstanceOf[StepExecutionState]
-    val CANCELLED   = "CANCELLED".asInstanceOf[StepExecutionState]
-    val FAILED      = "FAILED".asInstanceOf[StepExecutionState]
+    val PENDING = "PENDING".asInstanceOf[StepExecutionState]
+    val RUNNING = "RUNNING".asInstanceOf[StepExecutionState]
+    val CONTINUE = "CONTINUE".asInstanceOf[StepExecutionState]
+    val COMPLETED = "COMPLETED".asInstanceOf[StepExecutionState]
+    val CANCELLED = "CANCELLED".asInstanceOf[StepExecutionState]
+    val FAILED = "FAILED".asInstanceOf[StepExecutionState]
     val INTERRUPTED = "INTERRUPTED".asInstanceOf[StepExecutionState]
 
     val values = js.Object.freeze(js.Array(PENDING, RUNNING, CONTINUE, COMPLETED, CANCELLED, FAILED, INTERRUPTED))
@@ -3944,7 +4177,7 @@ package emr {
     ): StepExecutionStatusDetail = {
       val __obj = js.Dynamic.literal(
         "CreationDateTime" -> CreationDateTime.asInstanceOf[js.Any],
-        "State"            -> State.asInstanceOf[js.Any]
+        "State" -> State.asInstanceOf[js.Any]
       )
 
       EndDateTime.foreach(__v => __obj.updateDynamic("EndDateTime")(__v.asInstanceOf[js.Any]))
@@ -3957,13 +4190,13 @@ package emr {
   @js.native
   sealed trait StepState extends js.Any
   object StepState extends js.Object {
-    val PENDING        = "PENDING".asInstanceOf[StepState]
+    val PENDING = "PENDING".asInstanceOf[StepState]
     val CANCEL_PENDING = "CANCEL_PENDING".asInstanceOf[StepState]
-    val RUNNING        = "RUNNING".asInstanceOf[StepState]
-    val COMPLETED      = "COMPLETED".asInstanceOf[StepState]
-    val CANCELLED      = "CANCELLED".asInstanceOf[StepState]
-    val FAILED         = "FAILED".asInstanceOf[StepState]
-    val INTERRUPTED    = "INTERRUPTED".asInstanceOf[StepState]
+    val RUNNING = "RUNNING".asInstanceOf[StepState]
+    val COMPLETED = "COMPLETED".asInstanceOf[StepState]
+    val CANCELLED = "CANCELLED".asInstanceOf[StepState]
+    val FAILED = "FAILED".asInstanceOf[StepState]
+    val INTERRUPTED = "INTERRUPTED".asInstanceOf[StepState]
 
     val values = js.Object.freeze(js.Array(PENDING, CANCEL_PENDING, RUNNING, COMPLETED, CANCELLED, FAILED, INTERRUPTED))
   }
@@ -4150,33 +4383,33 @@ package emr {
   @js.native
   sealed trait Unit extends js.Any
   object Unit extends js.Object {
-    val NONE                  = "NONE".asInstanceOf[Unit]
-    val SECONDS               = "SECONDS".asInstanceOf[Unit]
-    val MICRO_SECONDS         = "MICRO_SECONDS".asInstanceOf[Unit]
-    val MILLI_SECONDS         = "MILLI_SECONDS".asInstanceOf[Unit]
-    val BYTES                 = "BYTES".asInstanceOf[Unit]
-    val KILO_BYTES            = "KILO_BYTES".asInstanceOf[Unit]
-    val MEGA_BYTES            = "MEGA_BYTES".asInstanceOf[Unit]
-    val GIGA_BYTES            = "GIGA_BYTES".asInstanceOf[Unit]
-    val TERA_BYTES            = "TERA_BYTES".asInstanceOf[Unit]
-    val BITS                  = "BITS".asInstanceOf[Unit]
-    val KILO_BITS             = "KILO_BITS".asInstanceOf[Unit]
-    val MEGA_BITS             = "MEGA_BITS".asInstanceOf[Unit]
-    val GIGA_BITS             = "GIGA_BITS".asInstanceOf[Unit]
-    val TERA_BITS             = "TERA_BITS".asInstanceOf[Unit]
-    val PERCENT               = "PERCENT".asInstanceOf[Unit]
-    val COUNT                 = "COUNT".asInstanceOf[Unit]
-    val BYTES_PER_SECOND      = "BYTES_PER_SECOND".asInstanceOf[Unit]
+    val NONE = "NONE".asInstanceOf[Unit]
+    val SECONDS = "SECONDS".asInstanceOf[Unit]
+    val MICRO_SECONDS = "MICRO_SECONDS".asInstanceOf[Unit]
+    val MILLI_SECONDS = "MILLI_SECONDS".asInstanceOf[Unit]
+    val BYTES = "BYTES".asInstanceOf[Unit]
+    val KILO_BYTES = "KILO_BYTES".asInstanceOf[Unit]
+    val MEGA_BYTES = "MEGA_BYTES".asInstanceOf[Unit]
+    val GIGA_BYTES = "GIGA_BYTES".asInstanceOf[Unit]
+    val TERA_BYTES = "TERA_BYTES".asInstanceOf[Unit]
+    val BITS = "BITS".asInstanceOf[Unit]
+    val KILO_BITS = "KILO_BITS".asInstanceOf[Unit]
+    val MEGA_BITS = "MEGA_BITS".asInstanceOf[Unit]
+    val GIGA_BITS = "GIGA_BITS".asInstanceOf[Unit]
+    val TERA_BITS = "TERA_BITS".asInstanceOf[Unit]
+    val PERCENT = "PERCENT".asInstanceOf[Unit]
+    val COUNT = "COUNT".asInstanceOf[Unit]
+    val BYTES_PER_SECOND = "BYTES_PER_SECOND".asInstanceOf[Unit]
     val KILO_BYTES_PER_SECOND = "KILO_BYTES_PER_SECOND".asInstanceOf[Unit]
     val MEGA_BYTES_PER_SECOND = "MEGA_BYTES_PER_SECOND".asInstanceOf[Unit]
     val GIGA_BYTES_PER_SECOND = "GIGA_BYTES_PER_SECOND".asInstanceOf[Unit]
     val TERA_BYTES_PER_SECOND = "TERA_BYTES_PER_SECOND".asInstanceOf[Unit]
-    val BITS_PER_SECOND       = "BITS_PER_SECOND".asInstanceOf[Unit]
-    val KILO_BITS_PER_SECOND  = "KILO_BITS_PER_SECOND".asInstanceOf[Unit]
-    val MEGA_BITS_PER_SECOND  = "MEGA_BITS_PER_SECOND".asInstanceOf[Unit]
-    val GIGA_BITS_PER_SECOND  = "GIGA_BITS_PER_SECOND".asInstanceOf[Unit]
-    val TERA_BITS_PER_SECOND  = "TERA_BITS_PER_SECOND".asInstanceOf[Unit]
-    val COUNT_PER_SECOND      = "COUNT_PER_SECOND".asInstanceOf[Unit]
+    val BITS_PER_SECOND = "BITS_PER_SECOND".asInstanceOf[Unit]
+    val KILO_BITS_PER_SECOND = "KILO_BITS_PER_SECOND".asInstanceOf[Unit]
+    val MEGA_BITS_PER_SECOND = "MEGA_BITS_PER_SECOND".asInstanceOf[Unit]
+    val GIGA_BITS_PER_SECOND = "GIGA_BITS_PER_SECOND".asInstanceOf[Unit]
+    val TERA_BITS_PER_SECOND = "TERA_BITS_PER_SECOND".asInstanceOf[Unit]
+    val COUNT_PER_SECOND = "COUNT_PER_SECOND".asInstanceOf[Unit]
 
     val values = js.Object.freeze(
       js.Array(
@@ -4229,7 +4462,7 @@ package emr {
         Iops: js.UndefOr[Int] = js.undefined
     ): VolumeSpecification = {
       val __obj = js.Dynamic.literal(
-        "SizeInGB"   -> SizeInGB.asInstanceOf[js.Any],
+        "SizeInGB" -> SizeInGB.asInstanceOf[js.Any],
         "VolumeType" -> VolumeType.asInstanceOf[js.Any]
       )
 

@@ -7,34 +7,38 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object appconfig {
-  type ApplicationList                  = js.Array[Application]
-  type Arn                              = String
-  type Blob                             = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type ConfigurationProfileSummaryList  = js.Array[ConfigurationProfileSummary]
-  type DeploymentList                   = js.Array[DeploymentSummary]
-  type DeploymentStrategyId             = String
-  type DeploymentStrategyList           = js.Array[DeploymentStrategy]
-  type Description                      = String
-  type EnvironmentList                  = js.Array[Environment]
-  type GrowthFactor                     = Float
-  type Id                               = String
-  type Iso8601DateTime                  = js.Date
-  type MaxResults                       = Int
-  type MinutesBetween0And24Hours        = Int
-  type MonitorList                      = js.Array[Monitor]
-  type Name                             = String
-  type NextToken                        = String
-  type Percentage                       = Float
+  type ApplicationList = js.Array[Application]
+  type Arn = String
+  type Blob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type ConfigurationProfileSummaryList = js.Array[ConfigurationProfileSummary]
+  type DeploymentEvents = js.Array[DeploymentEvent]
+  type DeploymentList = js.Array[DeploymentSummary]
+  type DeploymentStrategyId = String
+  type DeploymentStrategyList = js.Array[DeploymentStrategy]
+  type Description = String
+  type EnvironmentList = js.Array[Environment]
+  type GrowthFactor = Float
+  type HostedConfigurationVersionSummaryList = js.Array[HostedConfigurationVersionSummary]
+  type Id = String
+  type Iso8601DateTime = js.Date
+  type MaxResults = Int
+  type MinutesBetween0And24Hours = Int
+  type MonitorList = js.Array[Monitor]
+  type Name = String
+  type NextToken = String
+  type Percentage = Float
+  type RoleArn = String
   type StringWithLengthBetween0And32768 = String
-  type StringWithLengthBetween1And64    = String
-  type TagKey                           = String
-  type TagKeyList                       = js.Array[TagKey]
-  type TagMap                           = js.Dictionary[TagValue]
-  type TagValue                         = String
-  type Uri                              = String
-  type ValidatorList                    = js.Array[Validator]
-  type ValidatorTypeList                = js.Array[ValidatorType]
-  type Version                          = String
+  type StringWithLengthBetween1And255 = String
+  type StringWithLengthBetween1And64 = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagMap = js.Dictionary[TagValue]
+  type TagValue = String
+  type Uri = String
+  type ValidatorList = js.Array[Validator]
+  type ValidatorTypeList = js.Array[ValidatorType]
+  type Version = String
 
   implicit final class AppConfigOps(private val service: AppConfig) extends AnyVal {
 
@@ -47,6 +51,9 @@ package object appconfig {
       service.createDeploymentStrategy(params).promise().toFuture
     @inline def createEnvironmentFuture(params: CreateEnvironmentRequest): Future[Environment] =
       service.createEnvironment(params).promise().toFuture
+    @inline def createHostedConfigurationVersionFuture(
+        params: CreateHostedConfigurationVersionRequest
+    ): Future[HostedConfigurationVersion] = service.createHostedConfigurationVersion(params).promise().toFuture
     @inline def deleteApplicationFuture(params: DeleteApplicationRequest): Future[js.Object] =
       service.deleteApplication(params).promise().toFuture
     @inline def deleteConfigurationProfileFuture(params: DeleteConfigurationProfileRequest): Future[js.Object] =
@@ -55,6 +62,9 @@ package object appconfig {
       service.deleteDeploymentStrategy(params).promise().toFuture
     @inline def deleteEnvironmentFuture(params: DeleteEnvironmentRequest): Future[js.Object] =
       service.deleteEnvironment(params).promise().toFuture
+    @inline def deleteHostedConfigurationVersionFuture(
+        params: DeleteHostedConfigurationVersionRequest
+    ): Future[js.Object] = service.deleteHostedConfigurationVersion(params).promise().toFuture
     @inline def getApplicationFuture(params: GetApplicationRequest): Future[Application] =
       service.getApplication(params).promise().toFuture
     @inline def getConfigurationFuture(params: GetConfigurationRequest): Future[Configuration] =
@@ -67,6 +77,9 @@ package object appconfig {
       service.getDeploymentStrategy(params).promise().toFuture
     @inline def getEnvironmentFuture(params: GetEnvironmentRequest): Future[Environment] =
       service.getEnvironment(params).promise().toFuture
+    @inline def getHostedConfigurationVersionFuture(
+        params: GetHostedConfigurationVersionRequest
+    ): Future[HostedConfigurationVersion] = service.getHostedConfigurationVersion(params).promise().toFuture
     @inline def listApplicationsFuture(params: ListApplicationsRequest): Future[Applications] =
       service.listApplications(params).promise().toFuture
     @inline def listConfigurationProfilesFuture(
@@ -78,6 +91,9 @@ package object appconfig {
       service.listDeployments(params).promise().toFuture
     @inline def listEnvironmentsFuture(params: ListEnvironmentsRequest): Future[Environments] =
       service.listEnvironments(params).promise().toFuture
+    @inline def listHostedConfigurationVersionsFuture(
+        params: ListHostedConfigurationVersionsRequest
+    ): Future[HostedConfigurationVersions] = service.listHostedConfigurationVersions(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ResourceTags] =
       service.listTagsForResource(params).promise().toFuture
     @inline def startDeploymentFuture(params: StartDeploymentRequest): Future[Deployment] =
@@ -108,35 +124,46 @@ package appconfig {
   class AppConfig() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createApplication(params: CreateApplicationRequest): Request[Application]                            = js.native
+    def createApplication(params: CreateApplicationRequest): Request[Application] = js.native
     def createConfigurationProfile(params: CreateConfigurationProfileRequest): Request[ConfigurationProfile] = js.native
-    def createDeploymentStrategy(params: CreateDeploymentStrategyRequest): Request[DeploymentStrategy]       = js.native
-    def createEnvironment(params: CreateEnvironmentRequest): Request[Environment]                            = js.native
-    def deleteApplication(params: DeleteApplicationRequest): Request[js.Object]                              = js.native
-    def deleteConfigurationProfile(params: DeleteConfigurationProfileRequest): Request[js.Object]            = js.native
-    def deleteDeploymentStrategy(params: DeleteDeploymentStrategyRequest): Request[js.Object]                = js.native
-    def deleteEnvironment(params: DeleteEnvironmentRequest): Request[js.Object]                              = js.native
-    def getApplication(params: GetApplicationRequest): Request[Application]                                  = js.native
-    def getConfiguration(params: GetConfigurationRequest): Request[Configuration]                            = js.native
-    def getConfigurationProfile(params: GetConfigurationProfileRequest): Request[ConfigurationProfile]       = js.native
-    def getDeployment(params: GetDeploymentRequest): Request[Deployment]                                     = js.native
-    def getDeploymentStrategy(params: GetDeploymentStrategyRequest): Request[DeploymentStrategy]             = js.native
-    def getEnvironment(params: GetEnvironmentRequest): Request[Environment]                                  = js.native
-    def listApplications(params: ListApplicationsRequest): Request[Applications]                             = js.native
-    def listConfigurationProfiles(params: ListConfigurationProfilesRequest): Request[ConfigurationProfiles]  = js.native
-    def listDeploymentStrategies(params: ListDeploymentStrategiesRequest): Request[DeploymentStrategies]     = js.native
-    def listDeployments(params: ListDeploymentsRequest): Request[Deployments]                                = js.native
-    def listEnvironments(params: ListEnvironmentsRequest): Request[Environments]                             = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ResourceTags]                       = js.native
-    def startDeployment(params: StartDeploymentRequest): Request[Deployment]                                 = js.native
-    def stopDeployment(params: StopDeploymentRequest): Request[Deployment]                                   = js.native
-    def tagResource(params: TagResourceRequest): Request[js.Object]                                          = js.native
-    def untagResource(params: UntagResourceRequest): Request[js.Object]                                      = js.native
-    def updateApplication(params: UpdateApplicationRequest): Request[Application]                            = js.native
+    def createDeploymentStrategy(params: CreateDeploymentStrategyRequest): Request[DeploymentStrategy] = js.native
+    def createEnvironment(params: CreateEnvironmentRequest): Request[Environment] = js.native
+    def createHostedConfigurationVersion(
+        params: CreateHostedConfigurationVersionRequest
+    ): Request[HostedConfigurationVersion] = js.native
+    def deleteApplication(params: DeleteApplicationRequest): Request[js.Object] = js.native
+    def deleteConfigurationProfile(params: DeleteConfigurationProfileRequest): Request[js.Object] = js.native
+    def deleteDeploymentStrategy(params: DeleteDeploymentStrategyRequest): Request[js.Object] = js.native
+    def deleteEnvironment(params: DeleteEnvironmentRequest): Request[js.Object] = js.native
+    def deleteHostedConfigurationVersion(params: DeleteHostedConfigurationVersionRequest): Request[js.Object] =
+      js.native
+    def getApplication(params: GetApplicationRequest): Request[Application] = js.native
+    def getConfiguration(params: GetConfigurationRequest): Request[Configuration] = js.native
+    def getConfigurationProfile(params: GetConfigurationProfileRequest): Request[ConfigurationProfile] = js.native
+    def getDeployment(params: GetDeploymentRequest): Request[Deployment] = js.native
+    def getDeploymentStrategy(params: GetDeploymentStrategyRequest): Request[DeploymentStrategy] = js.native
+    def getEnvironment(params: GetEnvironmentRequest): Request[Environment] = js.native
+    def getHostedConfigurationVersion(
+        params: GetHostedConfigurationVersionRequest
+    ): Request[HostedConfigurationVersion] = js.native
+    def listApplications(params: ListApplicationsRequest): Request[Applications] = js.native
+    def listConfigurationProfiles(params: ListConfigurationProfilesRequest): Request[ConfigurationProfiles] = js.native
+    def listDeploymentStrategies(params: ListDeploymentStrategiesRequest): Request[DeploymentStrategies] = js.native
+    def listDeployments(params: ListDeploymentsRequest): Request[Deployments] = js.native
+    def listEnvironments(params: ListEnvironmentsRequest): Request[Environments] = js.native
+    def listHostedConfigurationVersions(
+        params: ListHostedConfigurationVersionsRequest
+    ): Request[HostedConfigurationVersions] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ResourceTags] = js.native
+    def startDeployment(params: StartDeploymentRequest): Request[Deployment] = js.native
+    def stopDeployment(params: StopDeploymentRequest): Request[Deployment] = js.native
+    def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
+    def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
+    def updateApplication(params: UpdateApplicationRequest): Request[Application] = js.native
     def updateConfigurationProfile(params: UpdateConfigurationProfileRequest): Request[ConfigurationProfile] = js.native
-    def updateDeploymentStrategy(params: UpdateDeploymentStrategyRequest): Request[DeploymentStrategy]       = js.native
-    def updateEnvironment(params: UpdateEnvironmentRequest): Request[Environment]                            = js.native
-    def validateConfiguration(params: ValidateConfigurationRequest): Request[js.Object]                      = js.native
+    def updateDeploymentStrategy(params: UpdateDeploymentStrategyRequest): Request[DeploymentStrategy] = js.native
+    def updateEnvironment(params: UpdateEnvironmentRequest): Request[Environment] = js.native
+    def validateConfiguration(params: ValidateConfigurationRequest): Request[js.Object] = js.native
   }
 
   @js.native
@@ -209,7 +236,7 @@ package appconfig {
     var Id: js.UndefOr[Id]
     var LocationUri: js.UndefOr[Uri]
     var Name: js.UndefOr[Name]
-    var RetrievalRoleArn: js.UndefOr[Arn]
+    var RetrievalRoleArn: js.UndefOr[RoleArn]
     var Validators: js.UndefOr[ValidatorList]
   }
 
@@ -221,7 +248,7 @@ package appconfig {
         Id: js.UndefOr[Id] = js.undefined,
         LocationUri: js.UndefOr[Uri] = js.undefined,
         Name: js.UndefOr[Name] = js.undefined,
-        RetrievalRoleArn: js.UndefOr[Arn] = js.undefined,
+        RetrievalRoleArn: js.UndefOr[RoleArn] = js.undefined,
         Validators: js.UndefOr[ValidatorList] = js.undefined
     ): ConfigurationProfile = {
       val __obj = js.Dynamic.literal()
@@ -315,8 +342,8 @@ package appconfig {
     var ApplicationId: Id
     var LocationUri: Uri
     var Name: Name
-    var RetrievalRoleArn: Arn
     var Description: js.UndefOr[Description]
+    var RetrievalRoleArn: js.UndefOr[RoleArn]
     var Tags: js.UndefOr[TagMap]
     var Validators: js.UndefOr[ValidatorList]
   }
@@ -327,19 +354,19 @@ package appconfig {
         ApplicationId: Id,
         LocationUri: Uri,
         Name: Name,
-        RetrievalRoleArn: Arn,
         Description: js.UndefOr[Description] = js.undefined,
+        RetrievalRoleArn: js.UndefOr[RoleArn] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined,
         Validators: js.UndefOr[ValidatorList] = js.undefined
     ): CreateConfigurationProfileRequest = {
       val __obj = js.Dynamic.literal(
-        "ApplicationId"    -> ApplicationId.asInstanceOf[js.Any],
-        "LocationUri"      -> LocationUri.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any],
-        "RetrievalRoleArn" -> RetrievalRoleArn.asInstanceOf[js.Any]
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "LocationUri" -> LocationUri.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      RetrievalRoleArn.foreach(__v => __obj.updateDynamic("RetrievalRoleArn")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       Validators.foreach(__v => __obj.updateDynamic("Validators")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateConfigurationProfileRequest]
@@ -372,9 +399,9 @@ package appconfig {
     ): CreateDeploymentStrategyRequest = {
       val __obj = js.Dynamic.literal(
         "DeploymentDurationInMinutes" -> DeploymentDurationInMinutes.asInstanceOf[js.Any],
-        "GrowthFactor"                -> GrowthFactor.asInstanceOf[js.Any],
-        "Name"                        -> Name.asInstanceOf[js.Any],
-        "ReplicateTo"                 -> ReplicateTo.asInstanceOf[js.Any]
+        "GrowthFactor" -> GrowthFactor.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "ReplicateTo" -> ReplicateTo.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -405,13 +432,46 @@ package appconfig {
     ): CreateEnvironmentRequest = {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "Name"          -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Monitors.foreach(__v => __obj.updateDynamic("Monitors")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateEnvironmentRequest]
+    }
+  }
+
+  @js.native
+  trait CreateHostedConfigurationVersionRequest extends js.Object {
+    var ApplicationId: Id
+    var ConfigurationProfileId: Id
+    var Content: Blob
+    var ContentType: StringWithLengthBetween1And255
+    var Description: js.UndefOr[Description]
+    var LatestVersionNumber: js.UndefOr[Int]
+  }
+
+  object CreateHostedConfigurationVersionRequest {
+    @inline
+    def apply(
+        ApplicationId: Id,
+        ConfigurationProfileId: Id,
+        Content: Blob,
+        ContentType: StringWithLengthBetween1And255,
+        Description: js.UndefOr[Description] = js.undefined,
+        LatestVersionNumber: js.UndefOr[Int] = js.undefined
+    ): CreateHostedConfigurationVersionRequest = {
+      val __obj = js.Dynamic.literal(
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "ConfigurationProfileId" -> ConfigurationProfileId.asInstanceOf[js.Any],
+        "Content" -> Content.asInstanceOf[js.Any],
+        "ContentType" -> ContentType.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LatestVersionNumber.foreach(__v => __obj.updateDynamic("LatestVersionNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateHostedConfigurationVersionRequest]
     }
   }
 
@@ -446,7 +506,7 @@ package appconfig {
         ConfigurationProfileId: Id
     ): DeleteConfigurationProfileRequest = {
       val __obj = js.Dynamic.literal(
-        "ApplicationId"          -> ApplicationId.asInstanceOf[js.Any],
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "ConfigurationProfileId" -> ConfigurationProfileId.asInstanceOf[js.Any]
       )
 
@@ -494,6 +554,30 @@ package appconfig {
   }
 
   @js.native
+  trait DeleteHostedConfigurationVersionRequest extends js.Object {
+    var ApplicationId: Id
+    var ConfigurationProfileId: Id
+    var VersionNumber: Int
+  }
+
+  object DeleteHostedConfigurationVersionRequest {
+    @inline
+    def apply(
+        ApplicationId: Id,
+        ConfigurationProfileId: Id,
+        VersionNumber: Int
+    ): DeleteHostedConfigurationVersionRequest = {
+      val __obj = js.Dynamic.literal(
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "ConfigurationProfileId" -> ConfigurationProfileId.asInstanceOf[js.Any],
+        "VersionNumber" -> VersionNumber.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteHostedConfigurationVersionRequest]
+    }
+  }
+
+  @js.native
   trait Deployment extends js.Object {
     var ApplicationId: js.UndefOr[Id]
     var CompletedAt: js.UndefOr[Iso8601DateTime]
@@ -506,6 +590,7 @@ package appconfig {
     var DeploymentStrategyId: js.UndefOr[Id]
     var Description: js.UndefOr[Description]
     var EnvironmentId: js.UndefOr[Id]
+    var EventLog: js.UndefOr[DeploymentEvents]
     var FinalBakeTimeInMinutes: js.UndefOr[MinutesBetween0And24Hours]
     var GrowthFactor: js.UndefOr[Percentage]
     var GrowthType: js.UndefOr[GrowthType]
@@ -528,6 +613,7 @@ package appconfig {
         DeploymentStrategyId: js.UndefOr[Id] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         EnvironmentId: js.UndefOr[Id] = js.undefined,
+        EventLog: js.UndefOr[DeploymentEvents] = js.undefined,
         FinalBakeTimeInMinutes: js.UndefOr[MinutesBetween0And24Hours] = js.undefined,
         GrowthFactor: js.UndefOr[Percentage] = js.undefined,
         GrowthType: js.UndefOr[GrowthType] = js.undefined,
@@ -549,6 +635,7 @@ package appconfig {
       DeploymentStrategyId.foreach(__v => __obj.updateDynamic("DeploymentStrategyId")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       EnvironmentId.foreach(__v => __obj.updateDynamic("EnvironmentId")(__v.asInstanceOf[js.Any]))
+      EventLog.foreach(__v => __obj.updateDynamic("EventLog")(__v.asInstanceOf[js.Any]))
       FinalBakeTimeInMinutes.foreach(__v => __obj.updateDynamic("FinalBakeTimeInMinutes")(__v.asInstanceOf[js.Any]))
       GrowthFactor.foreach(__v => __obj.updateDynamic("GrowthFactor")(__v.asInstanceOf[js.Any]))
       GrowthType.foreach(__v => __obj.updateDynamic("GrowthType")(__v.asInstanceOf[js.Any]))
@@ -559,15 +646,65 @@ package appconfig {
     }
   }
 
+  /**
+    * An object that describes a deployment event.
+    */
+  @js.native
+  trait DeploymentEvent extends js.Object {
+    var Description: js.UndefOr[Description]
+    var EventType: js.UndefOr[DeploymentEventType]
+    var OccurredAt: js.UndefOr[Iso8601DateTime]
+    var TriggeredBy: js.UndefOr[TriggeredBy]
+  }
+
+  object DeploymentEvent {
+    @inline
+    def apply(
+        Description: js.UndefOr[Description] = js.undefined,
+        EventType: js.UndefOr[DeploymentEventType] = js.undefined,
+        OccurredAt: js.UndefOr[Iso8601DateTime] = js.undefined,
+        TriggeredBy: js.UndefOr[TriggeredBy] = js.undefined
+    ): DeploymentEvent = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EventType.foreach(__v => __obj.updateDynamic("EventType")(__v.asInstanceOf[js.Any]))
+      OccurredAt.foreach(__v => __obj.updateDynamic("OccurredAt")(__v.asInstanceOf[js.Any]))
+      TriggeredBy.foreach(__v => __obj.updateDynamic("TriggeredBy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeploymentEvent]
+    }
+  }
+
+  @js.native
+  sealed trait DeploymentEventType extends js.Any
+  object DeploymentEventType extends js.Object {
+    val PERCENTAGE_UPDATED = "PERCENTAGE_UPDATED".asInstanceOf[DeploymentEventType]
+    val ROLLBACK_STARTED = "ROLLBACK_STARTED".asInstanceOf[DeploymentEventType]
+    val ROLLBACK_COMPLETED = "ROLLBACK_COMPLETED".asInstanceOf[DeploymentEventType]
+    val BAKE_TIME_STARTED = "BAKE_TIME_STARTED".asInstanceOf[DeploymentEventType]
+    val DEPLOYMENT_STARTED = "DEPLOYMENT_STARTED".asInstanceOf[DeploymentEventType]
+    val DEPLOYMENT_COMPLETED = "DEPLOYMENT_COMPLETED".asInstanceOf[DeploymentEventType]
+
+    val values = js.Object.freeze(
+      js.Array(
+        PERCENTAGE_UPDATED,
+        ROLLBACK_STARTED,
+        ROLLBACK_COMPLETED,
+        BAKE_TIME_STARTED,
+        DEPLOYMENT_STARTED,
+        DEPLOYMENT_COMPLETED
+      )
+    )
+  }
+
   @js.native
   sealed trait DeploymentState extends js.Any
   object DeploymentState extends js.Object {
-    val BAKING       = "BAKING".asInstanceOf[DeploymentState]
-    val VALIDATING   = "VALIDATING".asInstanceOf[DeploymentState]
-    val DEPLOYING    = "DEPLOYING".asInstanceOf[DeploymentState]
-    val COMPLETE     = "COMPLETE".asInstanceOf[DeploymentState]
+    val BAKING = "BAKING".asInstanceOf[DeploymentState]
+    val VALIDATING = "VALIDATING".asInstanceOf[DeploymentState]
+    val DEPLOYING = "DEPLOYING".asInstanceOf[DeploymentState]
+    val COMPLETE = "COMPLETE".asInstanceOf[DeploymentState]
     val ROLLING_BACK = "ROLLING_BACK".asInstanceOf[DeploymentState]
-    val ROLLED_BACK  = "ROLLED_BACK".asInstanceOf[DeploymentState]
+    val ROLLED_BACK = "ROLLED_BACK".asInstanceOf[DeploymentState]
 
     val values = js.Object.freeze(js.Array(BAKING, VALIDATING, DEPLOYING, COMPLETE, ROLLING_BACK, ROLLED_BACK))
   }
@@ -735,9 +872,9 @@ package appconfig {
   sealed trait EnvironmentState extends js.Any
   object EnvironmentState extends js.Object {
     val READY_FOR_DEPLOYMENT = "READY_FOR_DEPLOYMENT".asInstanceOf[EnvironmentState]
-    val DEPLOYING            = "DEPLOYING".asInstanceOf[EnvironmentState]
-    val ROLLING_BACK         = "ROLLING_BACK".asInstanceOf[EnvironmentState]
-    val ROLLED_BACK          = "ROLLED_BACK".asInstanceOf[EnvironmentState]
+    val DEPLOYING = "DEPLOYING".asInstanceOf[EnvironmentState]
+    val ROLLING_BACK = "ROLLING_BACK".asInstanceOf[EnvironmentState]
+    val ROLLED_BACK = "ROLLED_BACK".asInstanceOf[EnvironmentState]
 
     val values = js.Object.freeze(js.Array(READY_FOR_DEPLOYMENT, DEPLOYING, ROLLING_BACK, ROLLED_BACK))
   }
@@ -792,7 +929,7 @@ package appconfig {
         ConfigurationProfileId: Id
     ): GetConfigurationProfileRequest = {
       val __obj = js.Dynamic.literal(
-        "ApplicationId"          -> ApplicationId.asInstanceOf[js.Any],
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "ConfigurationProfileId" -> ConfigurationProfileId.asInstanceOf[js.Any]
       )
 
@@ -819,10 +956,10 @@ package appconfig {
         ClientConfigurationVersion: js.UndefOr[Version] = js.undefined
     ): GetConfigurationRequest = {
       val __obj = js.Dynamic.literal(
-        "Application"   -> Application.asInstanceOf[js.Any],
-        "ClientId"      -> ClientId.asInstanceOf[js.Any],
+        "Application" -> Application.asInstanceOf[js.Any],
+        "ClientId" -> ClientId.asInstanceOf[js.Any],
         "Configuration" -> Configuration.asInstanceOf[js.Any],
-        "Environment"   -> Environment.asInstanceOf[js.Any]
+        "Environment" -> Environment.asInstanceOf[js.Any]
       )
 
       ClientConfigurationVersion.foreach(__v =>
@@ -847,9 +984,9 @@ package appconfig {
         EnvironmentId: Id
     ): GetDeploymentRequest = {
       val __obj = js.Dynamic.literal(
-        "ApplicationId"    -> ApplicationId.asInstanceOf[js.Any],
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "DeploymentNumber" -> DeploymentNumber.asInstanceOf[js.Any],
-        "EnvironmentId"    -> EnvironmentId.asInstanceOf[js.Any]
+        "EnvironmentId" -> EnvironmentId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetDeploymentRequest]
@@ -896,12 +1033,117 @@ package appconfig {
   }
 
   @js.native
+  trait GetHostedConfigurationVersionRequest extends js.Object {
+    var ApplicationId: Id
+    var ConfigurationProfileId: Id
+    var VersionNumber: Int
+  }
+
+  object GetHostedConfigurationVersionRequest {
+    @inline
+    def apply(
+        ApplicationId: Id,
+        ConfigurationProfileId: Id,
+        VersionNumber: Int
+    ): GetHostedConfigurationVersionRequest = {
+      val __obj = js.Dynamic.literal(
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "ConfigurationProfileId" -> ConfigurationProfileId.asInstanceOf[js.Any],
+        "VersionNumber" -> VersionNumber.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetHostedConfigurationVersionRequest]
+    }
+  }
+
+  @js.native
   sealed trait GrowthType extends js.Any
   object GrowthType extends js.Object {
-    val LINEAR      = "LINEAR".asInstanceOf[GrowthType]
+    val LINEAR = "LINEAR".asInstanceOf[GrowthType]
     val EXPONENTIAL = "EXPONENTIAL".asInstanceOf[GrowthType]
 
     val values = js.Object.freeze(js.Array(LINEAR, EXPONENTIAL))
+  }
+
+  @js.native
+  trait HostedConfigurationVersion extends js.Object {
+    var ApplicationId: js.UndefOr[Id]
+    var ConfigurationProfileId: js.UndefOr[Id]
+    var Content: js.UndefOr[Blob]
+    var ContentType: js.UndefOr[StringWithLengthBetween1And255]
+    var Description: js.UndefOr[Description]
+    var VersionNumber: js.UndefOr[Int]
+  }
+
+  object HostedConfigurationVersion {
+    @inline
+    def apply(
+        ApplicationId: js.UndefOr[Id] = js.undefined,
+        ConfigurationProfileId: js.UndefOr[Id] = js.undefined,
+        Content: js.UndefOr[Blob] = js.undefined,
+        ContentType: js.UndefOr[StringWithLengthBetween1And255] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        VersionNumber: js.UndefOr[Int] = js.undefined
+    ): HostedConfigurationVersion = {
+      val __obj = js.Dynamic.literal()
+      ApplicationId.foreach(__v => __obj.updateDynamic("ApplicationId")(__v.asInstanceOf[js.Any]))
+      ConfigurationProfileId.foreach(__v => __obj.updateDynamic("ConfigurationProfileId")(__v.asInstanceOf[js.Any]))
+      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      VersionNumber.foreach(__v => __obj.updateDynamic("VersionNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HostedConfigurationVersion]
+    }
+  }
+
+  /**
+    * Information about the configuration.
+    */
+  @js.native
+  trait HostedConfigurationVersionSummary extends js.Object {
+    var ApplicationId: js.UndefOr[Id]
+    var ConfigurationProfileId: js.UndefOr[Id]
+    var ContentType: js.UndefOr[StringWithLengthBetween1And255]
+    var Description: js.UndefOr[Description]
+    var VersionNumber: js.UndefOr[Int]
+  }
+
+  object HostedConfigurationVersionSummary {
+    @inline
+    def apply(
+        ApplicationId: js.UndefOr[Id] = js.undefined,
+        ConfigurationProfileId: js.UndefOr[Id] = js.undefined,
+        ContentType: js.UndefOr[StringWithLengthBetween1And255] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        VersionNumber: js.UndefOr[Int] = js.undefined
+    ): HostedConfigurationVersionSummary = {
+      val __obj = js.Dynamic.literal()
+      ApplicationId.foreach(__v => __obj.updateDynamic("ApplicationId")(__v.asInstanceOf[js.Any]))
+      ConfigurationProfileId.foreach(__v => __obj.updateDynamic("ConfigurationProfileId")(__v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      VersionNumber.foreach(__v => __obj.updateDynamic("VersionNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HostedConfigurationVersionSummary]
+    }
+  }
+
+  @js.native
+  trait HostedConfigurationVersions extends js.Object {
+    var Items: js.UndefOr[HostedConfigurationVersionSummaryList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object HostedConfigurationVersions {
+    @inline
+    def apply(
+        Items: js.UndefOr[HostedConfigurationVersionSummaryList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): HostedConfigurationVersions = {
+      val __obj = js.Dynamic.literal()
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HostedConfigurationVersions]
+    }
   }
 
   @js.native
@@ -1018,6 +1260,33 @@ package appconfig {
   }
 
   @js.native
+  trait ListHostedConfigurationVersionsRequest extends js.Object {
+    var ApplicationId: Id
+    var ConfigurationProfileId: Id
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListHostedConfigurationVersionsRequest {
+    @inline
+    def apply(
+        ApplicationId: Id,
+        ConfigurationProfileId: Id,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListHostedConfigurationVersionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "ConfigurationProfileId" -> ConfigurationProfileId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListHostedConfigurationVersionsRequest]
+    }
+  }
+
+  @js.native
   trait ListTagsForResourceRequest extends js.Object {
     var ResourceArn: Arn
   }
@@ -1041,14 +1310,14 @@ package appconfig {
   @js.native
   trait Monitor extends js.Object {
     var AlarmArn: js.UndefOr[Arn]
-    var AlarmRoleArn: js.UndefOr[Arn]
+    var AlarmRoleArn: js.UndefOr[RoleArn]
   }
 
   object Monitor {
     @inline
     def apply(
         AlarmArn: js.UndefOr[Arn] = js.undefined,
-        AlarmRoleArn: js.UndefOr[Arn] = js.undefined
+        AlarmRoleArn: js.UndefOr[RoleArn] = js.undefined
     ): Monitor = {
       val __obj = js.Dynamic.literal()
       AlarmArn.foreach(__v => __obj.updateDynamic("AlarmArn")(__v.asInstanceOf[js.Any]))
@@ -1060,7 +1329,7 @@ package appconfig {
   @js.native
   sealed trait ReplicateTo extends js.Any
   object ReplicateTo extends js.Object {
-    val NONE         = "NONE".asInstanceOf[ReplicateTo]
+    val NONE = "NONE".asInstanceOf[ReplicateTo]
     val SSM_DOCUMENT = "SSM_DOCUMENT".asInstanceOf[ReplicateTo]
 
     val values = js.Object.freeze(js.Array(NONE, SSM_DOCUMENT))
@@ -1105,11 +1374,11 @@ package appconfig {
         Tags: js.UndefOr[TagMap] = js.undefined
     ): StartDeploymentRequest = {
       val __obj = js.Dynamic.literal(
-        "ApplicationId"          -> ApplicationId.asInstanceOf[js.Any],
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "ConfigurationProfileId" -> ConfigurationProfileId.asInstanceOf[js.Any],
-        "ConfigurationVersion"   -> ConfigurationVersion.asInstanceOf[js.Any],
-        "DeploymentStrategyId"   -> DeploymentStrategyId.asInstanceOf[js.Any],
-        "EnvironmentId"          -> EnvironmentId.asInstanceOf[js.Any]
+        "ConfigurationVersion" -> ConfigurationVersion.asInstanceOf[js.Any],
+        "DeploymentStrategyId" -> DeploymentStrategyId.asInstanceOf[js.Any],
+        "EnvironmentId" -> EnvironmentId.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -1133,9 +1402,9 @@ package appconfig {
         EnvironmentId: Id
     ): StopDeploymentRequest = {
       val __obj = js.Dynamic.literal(
-        "ApplicationId"    -> ApplicationId.asInstanceOf[js.Any],
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "DeploymentNumber" -> DeploymentNumber.asInstanceOf[js.Any],
-        "EnvironmentId"    -> EnvironmentId.asInstanceOf[js.Any]
+        "EnvironmentId" -> EnvironmentId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[StopDeploymentRequest]
@@ -1156,11 +1425,22 @@ package appconfig {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
     }
+  }
+
+  @js.native
+  sealed trait TriggeredBy extends js.Any
+  object TriggeredBy extends js.Object {
+    val USER = "USER".asInstanceOf[TriggeredBy]
+    val APPCONFIG = "APPCONFIG".asInstanceOf[TriggeredBy]
+    val CLOUDWATCH_ALARM = "CLOUDWATCH_ALARM".asInstanceOf[TriggeredBy]
+    val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[TriggeredBy]
+
+    val values = js.Object.freeze(js.Array(USER, APPCONFIG, CLOUDWATCH_ALARM, INTERNAL_ERROR))
   }
 
   @js.native
@@ -1177,7 +1457,7 @@ package appconfig {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -1214,7 +1494,7 @@ package appconfig {
     var ConfigurationProfileId: Id
     var Description: js.UndefOr[Description]
     var Name: js.UndefOr[Name]
-    var RetrievalRoleArn: js.UndefOr[Arn]
+    var RetrievalRoleArn: js.UndefOr[RoleArn]
     var Validators: js.UndefOr[ValidatorList]
   }
 
@@ -1225,11 +1505,11 @@ package appconfig {
         ConfigurationProfileId: Id,
         Description: js.UndefOr[Description] = js.undefined,
         Name: js.UndefOr[Name] = js.undefined,
-        RetrievalRoleArn: js.UndefOr[Arn] = js.undefined,
+        RetrievalRoleArn: js.UndefOr[RoleArn] = js.undefined,
         Validators: js.UndefOr[ValidatorList] = js.undefined
     ): UpdateConfigurationProfileRequest = {
       val __obj = js.Dynamic.literal(
-        "ApplicationId"          -> ApplicationId.asInstanceOf[js.Any],
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "ConfigurationProfileId" -> ConfigurationProfileId.asInstanceOf[js.Any]
       )
 
@@ -1321,9 +1601,9 @@ package appconfig {
         ConfigurationVersion: Version
     ): ValidateConfigurationRequest = {
       val __obj = js.Dynamic.literal(
-        "ApplicationId"          -> ApplicationId.asInstanceOf[js.Any],
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "ConfigurationProfileId" -> ConfigurationProfileId.asInstanceOf[js.Any],
-        "ConfigurationVersion"   -> ConfigurationVersion.asInstanceOf[js.Any]
+        "ConfigurationVersion" -> ConfigurationVersion.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ValidateConfigurationRequest]
@@ -1347,7 +1627,7 @@ package appconfig {
     ): Validator = {
       val __obj = js.Dynamic.literal(
         "Content" -> Content.asInstanceOf[js.Any],
-        "Type"    -> Type.asInstanceOf[js.Any]
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Validator]
@@ -1358,7 +1638,7 @@ package appconfig {
   sealed trait ValidatorType extends js.Any
   object ValidatorType extends js.Object {
     val JSON_SCHEMA = "JSON_SCHEMA".asInstanceOf[ValidatorType]
-    val LAMBDA      = "LAMBDA".asInstanceOf[ValidatorType]
+    val LAMBDA = "LAMBDA".asInstanceOf[ValidatorType]
 
     val values = js.Object.freeze(js.Array(JSON_SCHEMA, LAMBDA))
   }

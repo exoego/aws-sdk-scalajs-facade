@@ -7,28 +7,28 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object batch {
-  type ArrayJobStatusSummary        = js.Dictionary[Int]
-  type AttemptDetails               = js.Array[AttemptDetail]
+  type ArrayJobStatusSummary = js.Dictionary[Int]
+  type AttemptDetails = js.Array[AttemptDetail]
   type ComputeEnvironmentDetailList = js.Array[ComputeEnvironmentDetail]
-  type ComputeEnvironmentOrders     = js.Array[ComputeEnvironmentOrder]
-  type DeviceCgroupPermissions      = js.Array[DeviceCgroupPermission]
-  type DevicesList                  = js.Array[Device]
-  type EnvironmentVariables         = js.Array[KeyValuePair]
-  type JobDefinitionList            = js.Array[JobDefinition]
-  type JobDependencyList            = js.Array[JobDependency]
-  type JobDetailList                = js.Array[JobDetail]
-  type JobQueueDetailList           = js.Array[JobQueueDetail]
-  type JobSummaryList               = js.Array[JobSummary]
-  type MountPoints                  = js.Array[MountPoint]
-  type NetworkInterfaceList         = js.Array[NetworkInterface]
-  type NodePropertyOverrides        = js.Array[NodePropertyOverride]
-  type NodeRangeProperties          = js.Array[NodeRangeProperty]
-  type ParametersMap                = js.Dictionary[String]
-  type ResourceRequirements         = js.Array[ResourceRequirement]
-  type StringList                   = js.Array[String]
-  type TagsMap                      = js.Dictionary[String]
-  type Ulimits                      = js.Array[Ulimit]
-  type Volumes                      = js.Array[Volume]
+  type ComputeEnvironmentOrders = js.Array[ComputeEnvironmentOrder]
+  type DeviceCgroupPermissions = js.Array[DeviceCgroupPermission]
+  type DevicesList = js.Array[Device]
+  type EnvironmentVariables = js.Array[KeyValuePair]
+  type JobDefinitionList = js.Array[JobDefinition]
+  type JobDependencyList = js.Array[JobDependency]
+  type JobDetailList = js.Array[JobDetail]
+  type JobQueueDetailList = js.Array[JobQueueDetail]
+  type JobSummaryList = js.Array[JobSummary]
+  type MountPoints = js.Array[MountPoint]
+  type NetworkInterfaceList = js.Array[NetworkInterface]
+  type NodePropertyOverrides = js.Array[NodePropertyOverride]
+  type NodeRangeProperties = js.Array[NodeRangeProperty]
+  type ParametersMap = js.Dictionary[String]
+  type ResourceRequirements = js.Array[ResourceRequirement]
+  type StringList = js.Array[String]
+  type TagsMap = js.Dictionary[String]
+  type Ulimits = js.Array[Ulimit]
+  type Volumes = js.Array[Volume]
 
   implicit final class BatchOps(private val service: Batch) extends AnyVal {
 
@@ -94,12 +94,12 @@ package batch {
     ): Request[DescribeComputeEnvironmentsResponse] = js.native
     def describeJobDefinitions(params: DescribeJobDefinitionsRequest): Request[DescribeJobDefinitionsResponse] =
       js.native
-    def describeJobQueues(params: DescribeJobQueuesRequest): Request[DescribeJobQueuesResponse]             = js.native
-    def describeJobs(params: DescribeJobsRequest): Request[DescribeJobsResponse]                            = js.native
-    def listJobs(params: ListJobsRequest): Request[ListJobsResponse]                                        = js.native
+    def describeJobQueues(params: DescribeJobQueuesRequest): Request[DescribeJobQueuesResponse] = js.native
+    def describeJobs(params: DescribeJobsRequest): Request[DescribeJobsResponse] = js.native
+    def listJobs(params: ListJobsRequest): Request[ListJobsResponse] = js.native
     def registerJobDefinition(params: RegisterJobDefinitionRequest): Request[RegisterJobDefinitionResponse] = js.native
-    def submitJob(params: SubmitJobRequest): Request[SubmitJobResponse]                                     = js.native
-    def terminateJob(params: TerminateJobRequest): Request[TerminateJobResponse]                            = js.native
+    def submitJob(params: SubmitJobRequest): Request[SubmitJobResponse] = js.native
+    def terminateJob(params: TerminateJobRequest): Request[TerminateJobResponse] = js.native
     def updateComputeEnvironment(params: UpdateComputeEnvironmentRequest): Request[UpdateComputeEnvironmentResponse] =
       js.native
     def updateJobQueue(params: UpdateJobQueueRequest): Request[UpdateJobQueueResponse] = js.native
@@ -108,7 +108,7 @@ package batch {
   @js.native
   sealed trait ArrayJobDependency extends js.Any
   object ArrayJobDependency extends js.Object {
-    val N_TO_N     = "N_TO_N".asInstanceOf[ArrayJobDependency]
+    val N_TO_N = "N_TO_N".asInstanceOf[ArrayJobDependency]
     val SEQUENTIAL = "SEQUENTIAL".asInstanceOf[ArrayJobDependency]
 
     val values = js.Object.freeze(js.Array(N_TO_N, SEQUENTIAL))
@@ -245,7 +245,7 @@ package batch {
   @js.native
   sealed trait CEState extends js.Any
   object CEState extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[CEState]
+    val ENABLED = "ENABLED".asInstanceOf[CEState]
     val DISABLED = "DISABLED".asInstanceOf[CEState]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -257,9 +257,9 @@ package batch {
     val CREATING = "CREATING".asInstanceOf[CEStatus]
     val UPDATING = "UPDATING".asInstanceOf[CEStatus]
     val DELETING = "DELETING".asInstanceOf[CEStatus]
-    val DELETED  = "DELETED".asInstanceOf[CEStatus]
-    val VALID    = "VALID".asInstanceOf[CEStatus]
-    val INVALID  = "INVALID".asInstanceOf[CEStatus]
+    val DELETED = "DELETED".asInstanceOf[CEStatus]
+    val VALID = "VALID".asInstanceOf[CEStatus]
+    val INVALID = "INVALID".asInstanceOf[CEStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, DELETED, VALID, INVALID))
   }
@@ -267,7 +267,7 @@ package batch {
   @js.native
   sealed trait CEType extends js.Any
   object CEType extends js.Object {
-    val MANAGED   = "MANAGED".asInstanceOf[CEType]
+    val MANAGED = "MANAGED".asInstanceOf[CEType]
     val UNMANAGED = "UNMANAGED".asInstanceOf[CEType]
 
     val values = js.Object.freeze(js.Array(MANAGED, UNMANAGED))
@@ -276,8 +276,8 @@ package batch {
   @js.native
   sealed trait CRAllocationStrategy extends js.Any
   object CRAllocationStrategy extends js.Object {
-    val BEST_FIT                = "BEST_FIT".asInstanceOf[CRAllocationStrategy]
-    val BEST_FIT_PROGRESSIVE    = "BEST_FIT_PROGRESSIVE".asInstanceOf[CRAllocationStrategy]
+    val BEST_FIT = "BEST_FIT".asInstanceOf[CRAllocationStrategy]
+    val BEST_FIT_PROGRESSIVE = "BEST_FIT_PROGRESSIVE".asInstanceOf[CRAllocationStrategy]
     val SPOT_CAPACITY_OPTIMIZED = "SPOT_CAPACITY_OPTIMIZED".asInstanceOf[CRAllocationStrategy]
 
     val values = js.Object.freeze(js.Array(BEST_FIT, BEST_FIT_PROGRESSIVE, SPOT_CAPACITY_OPTIMIZED))
@@ -286,7 +286,7 @@ package batch {
   @js.native
   sealed trait CRType extends js.Any
   object CRType extends js.Object {
-    val EC2  = "EC2".asInstanceOf[CRType]
+    val EC2 = "EC2".asInstanceOf[CRType]
     val SPOT = "SPOT".asInstanceOf[CRType]
 
     val values = js.Object.freeze(js.Array(EC2, SPOT))
@@ -305,7 +305,7 @@ package batch {
         reason: String
     ): CancelJobRequest = {
       val __obj = js.Dynamic.literal(
-        "jobId"  -> jobId.asInstanceOf[js.Any],
+        "jobId" -> jobId.asInstanceOf[js.Any],
         "reason" -> reason.asInstanceOf[js.Any]
       )
 
@@ -356,9 +356,9 @@ package batch {
         `type`: js.UndefOr[CEType] = js.undefined
     ): ComputeEnvironmentDetail = {
       val __obj = js.Dynamic.literal(
-        "computeEnvironmentArn"  -> computeEnvironmentArn.asInstanceOf[js.Any],
+        "computeEnvironmentArn" -> computeEnvironmentArn.asInstanceOf[js.Any],
         "computeEnvironmentName" -> computeEnvironmentName.asInstanceOf[js.Any],
-        "ecsClusterArn"          -> ecsClusterArn.asInstanceOf[js.Any]
+        "ecsClusterArn" -> ecsClusterArn.asInstanceOf[js.Any]
       )
 
       computeResources.foreach(__v => __obj.updateDynamic("computeResources")(__v.asInstanceOf[js.Any]))
@@ -388,7 +388,7 @@ package batch {
     ): ComputeEnvironmentOrder = {
       val __obj = js.Dynamic.literal(
         "computeEnvironment" -> computeEnvironment.asInstanceOf[js.Any],
-        "order"              -> order.asInstanceOf[js.Any]
+        "order" -> order.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ComputeEnvironmentOrder]
@@ -439,12 +439,12 @@ package batch {
         tags: js.UndefOr[TagsMap] = js.undefined
     ): ComputeResource = {
       val __obj = js.Dynamic.literal(
-        "instanceRole"  -> instanceRole.asInstanceOf[js.Any],
+        "instanceRole" -> instanceRole.asInstanceOf[js.Any],
         "instanceTypes" -> instanceTypes.asInstanceOf[js.Any],
-        "maxvCpus"      -> maxvCpus.asInstanceOf[js.Any],
-        "minvCpus"      -> minvCpus.asInstanceOf[js.Any],
-        "subnets"       -> subnets.asInstanceOf[js.Any],
-        "type"          -> `type`.asInstanceOf[js.Any]
+        "maxvCpus" -> maxvCpus.asInstanceOf[js.Any],
+        "minvCpus" -> minvCpus.asInstanceOf[js.Any],
+        "subnets" -> subnets.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
       )
 
       allocationStrategy.foreach(__v => __obj.updateDynamic("allocationStrategy")(__v.asInstanceOf[js.Any]))
@@ -702,8 +702,8 @@ package batch {
     ): CreateComputeEnvironmentRequest = {
       val __obj = js.Dynamic.literal(
         "computeEnvironmentName" -> computeEnvironmentName.asInstanceOf[js.Any],
-        "serviceRole"            -> serviceRole.asInstanceOf[js.Any],
-        "type"                   -> `type`.asInstanceOf[js.Any]
+        "serviceRole" -> serviceRole.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
       )
 
       computeResources.foreach(__v => __obj.updateDynamic("computeResources")(__v.asInstanceOf[js.Any]))
@@ -749,8 +749,8 @@ package batch {
     ): CreateJobQueueRequest = {
       val __obj = js.Dynamic.literal(
         "computeEnvironmentOrder" -> computeEnvironmentOrder.asInstanceOf[js.Any],
-        "jobQueueName"            -> jobQueueName.asInstanceOf[js.Any],
-        "priority"                -> priority.asInstanceOf[js.Any]
+        "jobQueueName" -> jobQueueName.asInstanceOf[js.Any],
+        "priority" -> priority.asInstanceOf[js.Any]
       )
 
       state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
@@ -771,7 +771,7 @@ package batch {
         jobQueueName: String
     ): CreateJobQueueResponse = {
       val __obj = js.Dynamic.literal(
-        "jobQueueArn"  -> jobQueueArn.asInstanceOf[js.Any],
+        "jobQueueArn" -> jobQueueArn.asInstanceOf[js.Any],
         "jobQueueName" -> jobQueueName.asInstanceOf[js.Any]
       )
 
@@ -1065,7 +1065,7 @@ package batch {
   @js.native
   sealed trait DeviceCgroupPermission extends js.Any
   object DeviceCgroupPermission extends js.Object {
-    val READ  = "READ".asInstanceOf[DeviceCgroupPermission]
+    val READ = "READ".asInstanceOf[DeviceCgroupPermission]
     val WRITE = "WRITE".asInstanceOf[DeviceCgroupPermission]
     val MKNOD = "MKNOD".asInstanceOf[DeviceCgroupPermission]
 
@@ -1094,7 +1094,7 @@ package batch {
   @js.native
   sealed trait JQState extends js.Any
   object JQState extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[JQState]
+    val ENABLED = "ENABLED".asInstanceOf[JQState]
     val DISABLED = "DISABLED".asInstanceOf[JQState]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -1106,9 +1106,9 @@ package batch {
     val CREATING = "CREATING".asInstanceOf[JQStatus]
     val UPDATING = "UPDATING".asInstanceOf[JQStatus]
     val DELETING = "DELETING".asInstanceOf[JQStatus]
-    val DELETED  = "DELETED".asInstanceOf[JQStatus]
-    val VALID    = "VALID".asInstanceOf[JQStatus]
-    val INVALID  = "INVALID".asInstanceOf[JQStatus]
+    val DELETED = "DELETED".asInstanceOf[JQStatus]
+    val VALID = "VALID".asInstanceOf[JQStatus]
+    val INVALID = "INVALID".asInstanceOf[JQStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, DELETED, VALID, INVALID))
   }
@@ -1145,10 +1145,10 @@ package batch {
         timeout: js.UndefOr[JobTimeout] = js.undefined
     ): JobDefinition = {
       val __obj = js.Dynamic.literal(
-        "jobDefinitionArn"  -> jobDefinitionArn.asInstanceOf[js.Any],
+        "jobDefinitionArn" -> jobDefinitionArn.asInstanceOf[js.Any],
         "jobDefinitionName" -> jobDefinitionName.asInstanceOf[js.Any],
-        "revision"          -> revision.asInstanceOf[js.Any],
-        "type"              -> `type`.asInstanceOf[js.Any]
+        "revision" -> revision.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
       )
 
       containerProperties.foreach(__v => __obj.updateDynamic("containerProperties")(__v.asInstanceOf[js.Any]))
@@ -1241,11 +1241,11 @@ package batch {
     ): JobDetail = {
       val __obj = js.Dynamic.literal(
         "jobDefinition" -> jobDefinition.asInstanceOf[js.Any],
-        "jobId"         -> jobId.asInstanceOf[js.Any],
-        "jobName"       -> jobName.asInstanceOf[js.Any],
-        "jobQueue"      -> jobQueue.asInstanceOf[js.Any],
-        "startedAt"     -> startedAt.asInstanceOf[js.Any],
-        "status"        -> status.asInstanceOf[js.Any]
+        "jobId" -> jobId.asInstanceOf[js.Any],
+        "jobName" -> jobName.asInstanceOf[js.Any],
+        "jobQueue" -> jobQueue.asInstanceOf[js.Any],
+        "startedAt" -> startedAt.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any]
       )
 
       arrayProperties.foreach(__v => __obj.updateDynamic("arrayProperties")(__v.asInstanceOf[js.Any]))
@@ -1291,10 +1291,10 @@ package batch {
     ): JobQueueDetail = {
       val __obj = js.Dynamic.literal(
         "computeEnvironmentOrder" -> computeEnvironmentOrder.asInstanceOf[js.Any],
-        "jobQueueArn"             -> jobQueueArn.asInstanceOf[js.Any],
-        "jobQueueName"            -> jobQueueName.asInstanceOf[js.Any],
-        "priority"                -> priority.asInstanceOf[js.Any],
-        "state"                   -> state.asInstanceOf[js.Any]
+        "jobQueueArn" -> jobQueueArn.asInstanceOf[js.Any],
+        "jobQueueName" -> jobQueueName.asInstanceOf[js.Any],
+        "priority" -> priority.asInstanceOf[js.Any],
+        "state" -> state.asInstanceOf[js.Any]
       )
 
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
@@ -1307,12 +1307,12 @@ package batch {
   sealed trait JobStatus extends js.Any
   object JobStatus extends js.Object {
     val SUBMITTED = "SUBMITTED".asInstanceOf[JobStatus]
-    val PENDING   = "PENDING".asInstanceOf[JobStatus]
-    val RUNNABLE  = "RUNNABLE".asInstanceOf[JobStatus]
-    val STARTING  = "STARTING".asInstanceOf[JobStatus]
-    val RUNNING   = "RUNNING".asInstanceOf[JobStatus]
+    val PENDING = "PENDING".asInstanceOf[JobStatus]
+    val RUNNABLE = "RUNNABLE".asInstanceOf[JobStatus]
+    val STARTING = "STARTING".asInstanceOf[JobStatus]
+    val RUNNING = "RUNNING".asInstanceOf[JobStatus]
     val SUCCEEDED = "SUCCEEDED".asInstanceOf[JobStatus]
-    val FAILED    = "FAILED".asInstanceOf[JobStatus]
+    val FAILED = "FAILED".asInstanceOf[JobStatus]
 
     val values = js.Object.freeze(js.Array(SUBMITTED, PENDING, RUNNABLE, STARTING, RUNNING, SUCCEEDED, FAILED))
   }
@@ -1349,7 +1349,7 @@ package batch {
         stoppedAt: js.UndefOr[Double] = js.undefined
     ): JobSummary = {
       val __obj = js.Dynamic.literal(
-        "jobId"   -> jobId.asInstanceOf[js.Any],
+        "jobId" -> jobId.asInstanceOf[js.Any],
         "jobName" -> jobName.asInstanceOf[js.Any]
       )
 
@@ -1614,9 +1614,9 @@ package batch {
         numNodes: Int
     ): NodeProperties = {
       val __obj = js.Dynamic.literal(
-        "mainNode"            -> mainNode.asInstanceOf[js.Any],
+        "mainNode" -> mainNode.asInstanceOf[js.Any],
         "nodeRangeProperties" -> nodeRangeProperties.asInstanceOf[js.Any],
-        "numNodes"            -> numNodes.asInstanceOf[js.Any]
+        "numNodes" -> numNodes.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[NodeProperties]
@@ -1720,7 +1720,7 @@ package batch {
     ): RegisterJobDefinitionRequest = {
       val __obj = js.Dynamic.literal(
         "jobDefinitionName" -> jobDefinitionName.asInstanceOf[js.Any],
-        "type"              -> `type`.asInstanceOf[js.Any]
+        "type" -> `type`.asInstanceOf[js.Any]
       )
 
       containerProperties.foreach(__v => __obj.updateDynamic("containerProperties")(__v.asInstanceOf[js.Any]))
@@ -1747,9 +1747,9 @@ package batch {
         revision: Int
     ): RegisterJobDefinitionResponse = {
       val __obj = js.Dynamic.literal(
-        "jobDefinitionArn"  -> jobDefinitionArn.asInstanceOf[js.Any],
+        "jobDefinitionArn" -> jobDefinitionArn.asInstanceOf[js.Any],
         "jobDefinitionName" -> jobDefinitionName.asInstanceOf[js.Any],
-        "revision"          -> revision.asInstanceOf[js.Any]
+        "revision" -> revision.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RegisterJobDefinitionResponse]
@@ -1772,7 +1772,7 @@ package batch {
         value: String
     ): ResourceRequirement = {
       val __obj = js.Dynamic.literal(
-        "type"  -> `type`.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 
@@ -1837,8 +1837,8 @@ package batch {
     ): SubmitJobRequest = {
       val __obj = js.Dynamic.literal(
         "jobDefinition" -> jobDefinition.asInstanceOf[js.Any],
-        "jobName"       -> jobName.asInstanceOf[js.Any],
-        "jobQueue"      -> jobQueue.asInstanceOf[js.Any]
+        "jobName" -> jobName.asInstanceOf[js.Any],
+        "jobQueue" -> jobQueue.asInstanceOf[js.Any]
       )
 
       arrayProperties.foreach(__v => __obj.updateDynamic("arrayProperties")(__v.asInstanceOf[js.Any]))
@@ -1865,7 +1865,7 @@ package batch {
         jobName: String
     ): SubmitJobResponse = {
       val __obj = js.Dynamic.literal(
-        "jobId"   -> jobId.asInstanceOf[js.Any],
+        "jobId" -> jobId.asInstanceOf[js.Any],
         "jobName" -> jobName.asInstanceOf[js.Any]
       )
 
@@ -1886,7 +1886,7 @@ package batch {
         reason: String
     ): TerminateJobRequest = {
       val __obj = js.Dynamic.literal(
-        "jobId"  -> jobId.asInstanceOf[js.Any],
+        "jobId" -> jobId.asInstanceOf[js.Any],
         "reason" -> reason.asInstanceOf[js.Any]
       )
 
@@ -1926,7 +1926,7 @@ package batch {
     ): Ulimit = {
       val __obj = js.Dynamic.literal(
         "hardLimit" -> hardLimit.asInstanceOf[js.Any],
-        "name"      -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "softLimit" -> softLimit.asInstanceOf[js.Any]
       )
 

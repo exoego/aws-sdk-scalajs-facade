@@ -8,26 +8,26 @@ import facade.amazonaws._
 
 package object appsync {
   type AdditionalAuthenticationProviders = js.Array[AdditionalAuthenticationProvider]
-  type ApiKeys                           = js.Array[ApiKey]
-  type Blob                              = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type BooleanValue                      = Boolean
-  type CachingKeys                       = js.Array[String]
-  type DataSources                       = js.Array[DataSource]
-  type Functions                         = js.Array[FunctionConfiguration]
-  type FunctionsIds                      = js.Array[String]
-  type GraphqlApis                       = js.Array[GraphqlApi]
-  type MapOfStringToString               = js.Dictionary[String]
-  type MappingTemplate                   = String
-  type MaxResults                        = Int
-  type PaginationToken                   = String
-  type Resolvers                         = js.Array[Resolver]
-  type ResourceArn                       = String
-  type ResourceName                      = String
-  type TagKey                            = String
-  type TagKeyList                        = js.Array[TagKey]
-  type TagMap                            = js.Dictionary[TagValue]
-  type TagValue                          = String
-  type TypeList                          = js.Array[Type]
+  type ApiKeys = js.Array[ApiKey]
+  type Blob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type BooleanValue = Boolean
+  type CachingKeys = js.Array[String]
+  type DataSources = js.Array[DataSource]
+  type Functions = js.Array[FunctionConfiguration]
+  type FunctionsIds = js.Array[String]
+  type GraphqlApis = js.Array[GraphqlApi]
+  type MapOfStringToString = js.Dictionary[String]
+  type MappingTemplate = String
+  type MaxResults = Int
+  type PaginationToken = String
+  type Resolvers = js.Array[Resolver]
+  type ResourceArn = String
+  type ResourceName = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagMap = js.Dictionary[TagValue]
+  type TagValue = String
+  type TypeList = js.Array[Type]
 
   implicit final class AppSyncOps(private val service: AppSync) extends AnyVal {
 
@@ -125,50 +125,50 @@ package appsync {
   class AppSync() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createApiCache(params: CreateApiCacheRequest): Request[CreateApiCacheResponse]       = js.native
-    def createApiKey(params: CreateApiKeyRequest): Request[CreateApiKeyResponse]             = js.native
+    def createApiCache(params: CreateApiCacheRequest): Request[CreateApiCacheResponse] = js.native
+    def createApiKey(params: CreateApiKeyRequest): Request[CreateApiKeyResponse] = js.native
     def createDataSource(params: CreateDataSourceRequest): Request[CreateDataSourceResponse] = js.native
-    def createFunction(params: CreateFunctionRequest): Request[CreateFunctionResponse]       = js.native
+    def createFunction(params: CreateFunctionRequest): Request[CreateFunctionResponse] = js.native
     def createGraphqlApi(params: CreateGraphqlApiRequest): Request[CreateGraphqlApiResponse] = js.native
-    def createResolver(params: CreateResolverRequest): Request[CreateResolverResponse]       = js.native
-    def createType(params: CreateTypeRequest): Request[CreateTypeResponse]                   = js.native
-    def deleteApiCache(params: DeleteApiCacheRequest): Request[DeleteApiCacheResponse]       = js.native
-    def deleteApiKey(params: DeleteApiKeyRequest): Request[DeleteApiKeyResponse]             = js.native
+    def createResolver(params: CreateResolverRequest): Request[CreateResolverResponse] = js.native
+    def createType(params: CreateTypeRequest): Request[CreateTypeResponse] = js.native
+    def deleteApiCache(params: DeleteApiCacheRequest): Request[DeleteApiCacheResponse] = js.native
+    def deleteApiKey(params: DeleteApiKeyRequest): Request[DeleteApiKeyResponse] = js.native
     def deleteDataSource(params: DeleteDataSourceRequest): Request[DeleteDataSourceResponse] = js.native
-    def deleteFunction(params: DeleteFunctionRequest): Request[DeleteFunctionResponse]       = js.native
+    def deleteFunction(params: DeleteFunctionRequest): Request[DeleteFunctionResponse] = js.native
     def deleteGraphqlApi(params: DeleteGraphqlApiRequest): Request[DeleteGraphqlApiResponse] = js.native
-    def deleteResolver(params: DeleteResolverRequest): Request[DeleteResolverResponse]       = js.native
-    def deleteType(params: DeleteTypeRequest): Request[DeleteTypeResponse]                   = js.native
-    def flushApiCache(params: FlushApiCacheRequest): Request[FlushApiCacheResponse]          = js.native
-    def getApiCache(params: GetApiCacheRequest): Request[GetApiCacheResponse]                = js.native
-    def getDataSource(params: GetDataSourceRequest): Request[GetDataSourceResponse]          = js.native
-    def getFunction(params: GetFunctionRequest): Request[GetFunctionResponse]                = js.native
-    def getGraphqlApi(params: GetGraphqlApiRequest): Request[GetGraphqlApiResponse]          = js.native
+    def deleteResolver(params: DeleteResolverRequest): Request[DeleteResolverResponse] = js.native
+    def deleteType(params: DeleteTypeRequest): Request[DeleteTypeResponse] = js.native
+    def flushApiCache(params: FlushApiCacheRequest): Request[FlushApiCacheResponse] = js.native
+    def getApiCache(params: GetApiCacheRequest): Request[GetApiCacheResponse] = js.native
+    def getDataSource(params: GetDataSourceRequest): Request[GetDataSourceResponse] = js.native
+    def getFunction(params: GetFunctionRequest): Request[GetFunctionResponse] = js.native
+    def getGraphqlApi(params: GetGraphqlApiRequest): Request[GetGraphqlApiResponse] = js.native
     def getIntrospectionSchema(params: GetIntrospectionSchemaRequest): Request[GetIntrospectionSchemaResponse] =
       js.native
     def getResolver(params: GetResolverRequest): Request[GetResolverResponse] = js.native
     def getSchemaCreationStatus(params: GetSchemaCreationStatusRequest): Request[GetSchemaCreationStatusResponse] =
       js.native
-    def getType(params: GetTypeRequest): Request[GetTypeResponse]                         = js.native
-    def listApiKeys(params: ListApiKeysRequest): Request[ListApiKeysResponse]             = js.native
+    def getType(params: GetTypeRequest): Request[GetTypeResponse] = js.native
+    def listApiKeys(params: ListApiKeysRequest): Request[ListApiKeysResponse] = js.native
     def listDataSources(params: ListDataSourcesRequest): Request[ListDataSourcesResponse] = js.native
-    def listFunctions(params: ListFunctionsRequest): Request[ListFunctionsResponse]       = js.native
+    def listFunctions(params: ListFunctionsRequest): Request[ListFunctionsResponse] = js.native
     def listGraphqlApis(params: ListGraphqlApisRequest): Request[ListGraphqlApisResponse] = js.native
-    def listResolvers(params: ListResolversRequest): Request[ListResolversResponse]       = js.native
+    def listResolvers(params: ListResolversRequest): Request[ListResolversResponse] = js.native
     def listResolversByFunction(params: ListResolversByFunctionRequest): Request[ListResolversByFunctionResponse] =
       js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def listTypes(params: ListTypesRequest): Request[ListTypesResponse]                               = js.native
+    def listTypes(params: ListTypesRequest): Request[ListTypesResponse] = js.native
     def startSchemaCreation(params: StartSchemaCreationRequest): Request[StartSchemaCreationResponse] = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
-    def updateApiCache(params: UpdateApiCacheRequest): Request[UpdateApiCacheResponse]                = js.native
-    def updateApiKey(params: UpdateApiKeyRequest): Request[UpdateApiKeyResponse]                      = js.native
-    def updateDataSource(params: UpdateDataSourceRequest): Request[UpdateDataSourceResponse]          = js.native
-    def updateFunction(params: UpdateFunctionRequest): Request[UpdateFunctionResponse]                = js.native
-    def updateGraphqlApi(params: UpdateGraphqlApiRequest): Request[UpdateGraphqlApiResponse]          = js.native
-    def updateResolver(params: UpdateResolverRequest): Request[UpdateResolverResponse]                = js.native
-    def updateType(params: UpdateTypeRequest): Request[UpdateTypeResponse]                            = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateApiCache(params: UpdateApiCacheRequest): Request[UpdateApiCacheResponse] = js.native
+    def updateApiKey(params: UpdateApiKeyRequest): Request[UpdateApiKeyResponse] = js.native
+    def updateDataSource(params: UpdateDataSourceRequest): Request[UpdateDataSourceResponse] = js.native
+    def updateFunction(params: UpdateFunctionRequest): Request[UpdateFunctionResponse] = js.native
+    def updateGraphqlApi(params: UpdateGraphqlApiRequest): Request[UpdateGraphqlApiResponse] = js.native
+    def updateResolver(params: UpdateResolverRequest): Request[UpdateResolverResponse] = js.native
+    def updateType(params: UpdateTypeRequest): Request[UpdateTypeResponse] = js.native
   }
 
   /**
@@ -234,10 +234,10 @@ package appsync {
   sealed trait ApiCacheStatus extends js.Any
   object ApiCacheStatus extends js.Object {
     val AVAILABLE = "AVAILABLE".asInstanceOf[ApiCacheStatus]
-    val CREATING  = "CREATING".asInstanceOf[ApiCacheStatus]
-    val DELETING  = "DELETING".asInstanceOf[ApiCacheStatus]
+    val CREATING = "CREATING".asInstanceOf[ApiCacheStatus]
+    val DELETING = "DELETING".asInstanceOf[ApiCacheStatus]
     val MODIFYING = "MODIFYING".asInstanceOf[ApiCacheStatus]
-    val FAILED    = "FAILED".asInstanceOf[ApiCacheStatus]
+    val FAILED = "FAILED".asInstanceOf[ApiCacheStatus]
 
     val values = js.Object.freeze(js.Array(AVAILABLE, CREATING, DELETING, MODIFYING, FAILED))
   }
@@ -245,16 +245,41 @@ package appsync {
   @js.native
   sealed trait ApiCacheType extends js.Any
   object ApiCacheType extends js.Object {
-    val T2_SMALL   = "T2_SMALL".asInstanceOf[ApiCacheType]
-    val T2_MEDIUM  = "T2_MEDIUM".asInstanceOf[ApiCacheType]
-    val R4_LARGE   = "R4_LARGE".asInstanceOf[ApiCacheType]
-    val R4_XLARGE  = "R4_XLARGE".asInstanceOf[ApiCacheType]
+    val T2_SMALL = "T2_SMALL".asInstanceOf[ApiCacheType]
+    val T2_MEDIUM = "T2_MEDIUM".asInstanceOf[ApiCacheType]
+    val R4_LARGE = "R4_LARGE".asInstanceOf[ApiCacheType]
+    val R4_XLARGE = "R4_XLARGE".asInstanceOf[ApiCacheType]
     val R4_2XLARGE = "R4_2XLARGE".asInstanceOf[ApiCacheType]
     val R4_4XLARGE = "R4_4XLARGE".asInstanceOf[ApiCacheType]
     val R4_8XLARGE = "R4_8XLARGE".asInstanceOf[ApiCacheType]
+    val SMALL = "SMALL".asInstanceOf[ApiCacheType]
+    val MEDIUM = "MEDIUM".asInstanceOf[ApiCacheType]
+    val LARGE = "LARGE".asInstanceOf[ApiCacheType]
+    val XLARGE = "XLARGE".asInstanceOf[ApiCacheType]
+    val LARGE_2X = "LARGE_2X".asInstanceOf[ApiCacheType]
+    val LARGE_4X = "LARGE_4X".asInstanceOf[ApiCacheType]
+    val LARGE_8X = "LARGE_8X".asInstanceOf[ApiCacheType]
+    val LARGE_12X = "LARGE_12X".asInstanceOf[ApiCacheType]
 
-    val values =
-      js.Object.freeze(js.Array(T2_SMALL, T2_MEDIUM, R4_LARGE, R4_XLARGE, R4_2XLARGE, R4_4XLARGE, R4_8XLARGE))
+    val values = js.Object.freeze(
+      js.Array(
+        T2_SMALL,
+        T2_MEDIUM,
+        R4_LARGE,
+        R4_XLARGE,
+        R4_2XLARGE,
+        R4_4XLARGE,
+        R4_8XLARGE,
+        SMALL,
+        MEDIUM,
+        LARGE,
+        XLARGE,
+        LARGE_2X,
+        LARGE_4X,
+        LARGE_8X,
+        LARGE_12X
+      )
+    )
   }
 
   @js.native
@@ -307,10 +332,10 @@ package appsync {
   @js.native
   sealed trait AuthenticationType extends js.Any
   object AuthenticationType extends js.Object {
-    val API_KEY                   = "API_KEY".asInstanceOf[AuthenticationType]
-    val AWS_IAM                   = "AWS_IAM".asInstanceOf[AuthenticationType]
+    val API_KEY = "API_KEY".asInstanceOf[AuthenticationType]
+    val AWS_IAM = "AWS_IAM".asInstanceOf[AuthenticationType]
     val AMAZON_COGNITO_USER_POOLS = "AMAZON_COGNITO_USER_POOLS".asInstanceOf[AuthenticationType]
-    val OPENID_CONNECT            = "OPENID_CONNECT".asInstanceOf[AuthenticationType]
+    val OPENID_CONNECT = "OPENID_CONNECT".asInstanceOf[AuthenticationType]
 
     val values = js.Object.freeze(js.Array(API_KEY, AWS_IAM, AMAZON_COGNITO_USER_POOLS, OPENID_CONNECT))
   }
@@ -409,7 +434,7 @@ package appsync {
         appIdClientRegex: js.UndefOr[String] = js.undefined
     ): CognitoUserPoolConfig = {
       val __obj = js.Dynamic.literal(
-        "awsRegion"  -> awsRegion.asInstanceOf[js.Any],
+        "awsRegion" -> awsRegion.asInstanceOf[js.Any],
         "userPoolId" -> userPoolId.asInstanceOf[js.Any]
       )
 
@@ -422,7 +447,7 @@ package appsync {
   sealed trait ConflictDetectionType extends js.Any
   object ConflictDetectionType extends js.Object {
     val VERSION = "VERSION".asInstanceOf[ConflictDetectionType]
-    val NONE    = "NONE".asInstanceOf[ConflictDetectionType]
+    val NONE = "NONE".asInstanceOf[ConflictDetectionType]
 
     val values = js.Object.freeze(js.Array(VERSION, NONE))
   }
@@ -431,9 +456,9 @@ package appsync {
   sealed trait ConflictHandlerType extends js.Any
   object ConflictHandlerType extends js.Object {
     val OPTIMISTIC_CONCURRENCY = "OPTIMISTIC_CONCURRENCY".asInstanceOf[ConflictHandlerType]
-    val LAMBDA                 = "LAMBDA".asInstanceOf[ConflictHandlerType]
-    val AUTOMERGE              = "AUTOMERGE".asInstanceOf[ConflictHandlerType]
-    val NONE                   = "NONE".asInstanceOf[ConflictHandlerType]
+    val LAMBDA = "LAMBDA".asInstanceOf[ConflictHandlerType]
+    val AUTOMERGE = "AUTOMERGE".asInstanceOf[ConflictHandlerType]
+    val NONE = "NONE".asInstanceOf[ConflictHandlerType]
 
     val values = js.Object.freeze(js.Array(OPTIMISTIC_CONCURRENCY, LAMBDA, AUTOMERGE, NONE))
   }
@@ -463,9 +488,9 @@ package appsync {
     ): CreateApiCacheRequest = {
       val __obj = js.Dynamic.literal(
         "apiCachingBehavior" -> apiCachingBehavior.asInstanceOf[js.Any],
-        "apiId"              -> apiId.asInstanceOf[js.Any],
-        "ttl"                -> ttl.asInstanceOf[js.Any],
-        "type"               -> `type`.asInstanceOf[js.Any]
+        "apiId" -> apiId.asInstanceOf[js.Any],
+        "ttl" -> ttl.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
       )
 
       atRestEncryptionEnabled.foreach(__v => __obj.updateDynamic("atRestEncryptionEnabled")(__v.asInstanceOf[js.Any]))
@@ -563,8 +588,8 @@ package appsync {
     ): CreateDataSourceRequest = {
       val __obj = js.Dynamic.literal(
         "apiId" -> apiId.asInstanceOf[js.Any],
-        "name"  -> name.asInstanceOf[js.Any],
-        "type"  -> `type`.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
@@ -617,10 +642,10 @@ package appsync {
         responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined
     ): CreateFunctionRequest = {
       val __obj = js.Dynamic.literal(
-        "apiId"                  -> apiId.asInstanceOf[js.Any],
-        "dataSourceName"         -> dataSourceName.asInstanceOf[js.Any],
-        "functionVersion"        -> functionVersion.asInstanceOf[js.Any],
-        "name"                   -> name.asInstanceOf[js.Any],
+        "apiId" -> apiId.asInstanceOf[js.Any],
+        "dataSourceName" -> dataSourceName.asInstanceOf[js.Any],
+        "functionVersion" -> functionVersion.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "requestMappingTemplate" -> requestMappingTemplate.asInstanceOf[js.Any]
       )
 
@@ -672,7 +697,7 @@ package appsync {
     ): CreateGraphqlApiRequest = {
       val __obj = js.Dynamic.literal(
         "authenticationType" -> authenticationType.asInstanceOf[js.Any],
-        "name"               -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       additionalAuthenticationProviders.foreach(__v =>
@@ -732,10 +757,10 @@ package appsync {
         syncConfig: js.UndefOr[SyncConfig] = js.undefined
     ): CreateResolverRequest = {
       val __obj = js.Dynamic.literal(
-        "apiId"                  -> apiId.asInstanceOf[js.Any],
-        "fieldName"              -> fieldName.asInstanceOf[js.Any],
+        "apiId" -> apiId.asInstanceOf[js.Any],
+        "fieldName" -> fieldName.asInstanceOf[js.Any],
         "requestMappingTemplate" -> requestMappingTemplate.asInstanceOf[js.Any],
-        "typeName"               -> typeName.asInstanceOf[js.Any]
+        "typeName" -> typeName.asInstanceOf[js.Any]
       )
 
       cachingConfig.foreach(__v => __obj.updateDynamic("cachingConfig")(__v.asInstanceOf[js.Any]))
@@ -779,9 +804,9 @@ package appsync {
         format: TypeDefinitionFormat
     ): CreateTypeRequest = {
       val __obj = js.Dynamic.literal(
-        "apiId"      -> apiId.asInstanceOf[js.Any],
+        "apiId" -> apiId.asInstanceOf[js.Any],
         "definition" -> definition.asInstanceOf[js.Any],
-        "format"     -> format.asInstanceOf[js.Any]
+        "format" -> format.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateTypeRequest]
@@ -853,12 +878,12 @@ package appsync {
   @js.native
   sealed trait DataSourceType extends js.Any
   object DataSourceType extends js.Object {
-    val AWS_LAMBDA           = "AWS_LAMBDA".asInstanceOf[DataSourceType]
-    val AMAZON_DYNAMODB      = "AMAZON_DYNAMODB".asInstanceOf[DataSourceType]
+    val AWS_LAMBDA = "AWS_LAMBDA".asInstanceOf[DataSourceType]
+    val AMAZON_DYNAMODB = "AMAZON_DYNAMODB".asInstanceOf[DataSourceType]
     val AMAZON_ELASTICSEARCH = "AMAZON_ELASTICSEARCH".asInstanceOf[DataSourceType]
-    val NONE                 = "NONE".asInstanceOf[DataSourceType]
-    val HTTP                 = "HTTP".asInstanceOf[DataSourceType]
-    val RELATIONAL_DATABASE  = "RELATIONAL_DATABASE".asInstanceOf[DataSourceType]
+    val NONE = "NONE".asInstanceOf[DataSourceType]
+    val HTTP = "HTTP".asInstanceOf[DataSourceType]
+    val RELATIONAL_DATABASE = "RELATIONAL_DATABASE".asInstanceOf[DataSourceType]
 
     val values =
       js.Object.freeze(js.Array(AWS_LAMBDA, AMAZON_DYNAMODB, AMAZON_ELASTICSEARCH, NONE, HTTP, RELATIONAL_DATABASE))
@@ -868,7 +893,7 @@ package appsync {
   sealed trait DefaultAction extends js.Any
   object DefaultAction extends js.Object {
     val ALLOW = "ALLOW".asInstanceOf[DefaultAction]
-    val DENY  = "DENY".asInstanceOf[DefaultAction]
+    val DENY = "DENY".asInstanceOf[DefaultAction]
 
     val values = js.Object.freeze(js.Array(ALLOW, DENY))
   }
@@ -924,7 +949,7 @@ package appsync {
     ): DeleteApiKeyRequest = {
       val __obj = js.Dynamic.literal(
         "apiId" -> apiId.asInstanceOf[js.Any],
-        "id"    -> id.asInstanceOf[js.Any]
+        "id" -> id.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteApiKeyRequest]
@@ -958,7 +983,7 @@ package appsync {
     ): DeleteDataSourceRequest = {
       val __obj = js.Dynamic.literal(
         "apiId" -> apiId.asInstanceOf[js.Any],
-        "name"  -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteDataSourceRequest]
@@ -991,7 +1016,7 @@ package appsync {
         functionId: ResourceName
     ): DeleteFunctionRequest = {
       val __obj = js.Dynamic.literal(
-        "apiId"      -> apiId.asInstanceOf[js.Any],
+        "apiId" -> apiId.asInstanceOf[js.Any],
         "functionId" -> functionId.asInstanceOf[js.Any]
       )
 
@@ -1058,9 +1083,9 @@ package appsync {
         typeName: ResourceName
     ): DeleteResolverRequest = {
       val __obj = js.Dynamic.literal(
-        "apiId"     -> apiId.asInstanceOf[js.Any],
+        "apiId" -> apiId.asInstanceOf[js.Any],
         "fieldName" -> fieldName.asInstanceOf[js.Any],
-        "typeName"  -> typeName.asInstanceOf[js.Any]
+        "typeName" -> typeName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteResolverRequest]
@@ -1093,7 +1118,7 @@ package appsync {
         typeName: ResourceName
     ): DeleteTypeRequest = {
       val __obj = js.Dynamic.literal(
-        "apiId"    -> apiId.asInstanceOf[js.Any],
+        "apiId" -> apiId.asInstanceOf[js.Any],
         "typeName" -> typeName.asInstanceOf[js.Any]
       )
 
@@ -1189,7 +1214,7 @@ package appsync {
     ): ElasticsearchDataSourceConfig = {
       val __obj = js.Dynamic.literal(
         "awsRegion" -> awsRegion.asInstanceOf[js.Any],
-        "endpoint"  -> endpoint.asInstanceOf[js.Any]
+        "endpoint" -> endpoint.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ElasticsearchDataSourceConfig]
@@ -1199,9 +1224,9 @@ package appsync {
   @js.native
   sealed trait FieldLogLevel extends js.Any
   object FieldLogLevel extends js.Object {
-    val NONE  = "NONE".asInstanceOf[FieldLogLevel]
+    val NONE = "NONE".asInstanceOf[FieldLogLevel]
     val ERROR = "ERROR".asInstanceOf[FieldLogLevel]
-    val ALL   = "ALL".asInstanceOf[FieldLogLevel]
+    val ALL = "ALL".asInstanceOf[FieldLogLevel]
 
     val values = js.Object.freeze(js.Array(NONE, ERROR, ALL))
   }
@@ -1337,7 +1362,7 @@ package appsync {
     ): GetDataSourceRequest = {
       val __obj = js.Dynamic.literal(
         "apiId" -> apiId.asInstanceOf[js.Any],
-        "name"  -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetDataSourceRequest]
@@ -1373,7 +1398,7 @@ package appsync {
         functionId: ResourceName
     ): GetFunctionRequest = {
       val __obj = js.Dynamic.literal(
-        "apiId"      -> apiId.asInstanceOf[js.Any],
+        "apiId" -> apiId.asInstanceOf[js.Any],
         "functionId" -> functionId.asInstanceOf[js.Any]
       )
 
@@ -1446,7 +1471,7 @@ package appsync {
         includeDirectives: js.UndefOr[BooleanValue] = js.undefined
     ): GetIntrospectionSchemaRequest = {
       val __obj = js.Dynamic.literal(
-        "apiId"  -> apiId.asInstanceOf[js.Any],
+        "apiId" -> apiId.asInstanceOf[js.Any],
         "format" -> format.asInstanceOf[js.Any]
       )
 
@@ -1486,9 +1511,9 @@ package appsync {
         typeName: ResourceName
     ): GetResolverRequest = {
       val __obj = js.Dynamic.literal(
-        "apiId"     -> apiId.asInstanceOf[js.Any],
+        "apiId" -> apiId.asInstanceOf[js.Any],
         "fieldName" -> fieldName.asInstanceOf[js.Any],
-        "typeName"  -> typeName.asInstanceOf[js.Any]
+        "typeName" -> typeName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetResolverRequest]
@@ -1563,8 +1588,8 @@ package appsync {
         typeName: ResourceName
     ): GetTypeRequest = {
       val __obj = js.Dynamic.literal(
-        "apiId"    -> apiId.asInstanceOf[js.Any],
-        "format"   -> format.asInstanceOf[js.Any],
+        "apiId" -> apiId.asInstanceOf[js.Any],
+        "format" -> format.asInstanceOf[js.Any],
         "typeName" -> typeName.asInstanceOf[js.Any]
       )
 
@@ -1885,7 +1910,7 @@ package appsync {
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListResolversByFunctionRequest = {
       val __obj = js.Dynamic.literal(
-        "apiId"      -> apiId.asInstanceOf[js.Any],
+        "apiId" -> apiId.asInstanceOf[js.Any],
         "functionId" -> functionId.asInstanceOf[js.Any]
       )
 
@@ -1931,7 +1956,7 @@ package appsync {
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListResolversRequest = {
       val __obj = js.Dynamic.literal(
-        "apiId"    -> apiId.asInstanceOf[js.Any],
+        "apiId" -> apiId.asInstanceOf[js.Any],
         "typeName" -> typeName.asInstanceOf[js.Any]
       )
 
@@ -2011,7 +2036,7 @@ package appsync {
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListTypesRequest = {
       val __obj = js.Dynamic.literal(
-        "apiId"  -> apiId.asInstanceOf[js.Any],
+        "apiId" -> apiId.asInstanceOf[js.Any],
         "format" -> format.asInstanceOf[js.Any]
       )
 
@@ -2059,7 +2084,7 @@ package appsync {
     ): LogConfig = {
       val __obj = js.Dynamic.literal(
         "cloudWatchLogsRoleArn" -> cloudWatchLogsRoleArn.asInstanceOf[js.Any],
-        "fieldLogLevel"         -> fieldLogLevel.asInstanceOf[js.Any]
+        "fieldLogLevel" -> fieldLogLevel.asInstanceOf[js.Any]
       )
 
       excludeVerboseContent.foreach(__v => __obj.updateDynamic("excludeVerboseContent")(__v.asInstanceOf[js.Any]))
@@ -2100,7 +2125,7 @@ package appsync {
   @js.native
   sealed trait OutputType extends js.Any
   object OutputType extends js.Object {
-    val SDL  = "SDL".asInstanceOf[OutputType]
+    val SDL = "SDL".asInstanceOf[OutputType]
     val JSON = "JSON".asInstanceOf[OutputType]
 
     val values = js.Object.freeze(js.Array(SDL, JSON))
@@ -2237,7 +2262,7 @@ package appsync {
   @js.native
   sealed trait ResolverKind extends js.Any
   object ResolverKind extends js.Object {
-    val UNIT     = "UNIT".asInstanceOf[ResolverKind]
+    val UNIT = "UNIT".asInstanceOf[ResolverKind]
     val PIPELINE = "PIPELINE".asInstanceOf[ResolverKind]
 
     val values = js.Object.freeze(js.Array(UNIT, PIPELINE))
@@ -2246,11 +2271,11 @@ package appsync {
   @js.native
   sealed trait SchemaStatus extends js.Any
   object SchemaStatus extends js.Object {
-    val PROCESSING     = "PROCESSING".asInstanceOf[SchemaStatus]
-    val ACTIVE         = "ACTIVE".asInstanceOf[SchemaStatus]
-    val DELETING       = "DELETING".asInstanceOf[SchemaStatus]
-    val FAILED         = "FAILED".asInstanceOf[SchemaStatus]
-    val SUCCESS        = "SUCCESS".asInstanceOf[SchemaStatus]
+    val PROCESSING = "PROCESSING".asInstanceOf[SchemaStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[SchemaStatus]
+    val DELETING = "DELETING".asInstanceOf[SchemaStatus]
+    val FAILED = "FAILED".asInstanceOf[SchemaStatus]
+    val SUCCESS = "SUCCESS".asInstanceOf[SchemaStatus]
     val NOT_APPLICABLE = "NOT_APPLICABLE".asInstanceOf[SchemaStatus]
 
     val values = js.Object.freeze(js.Array(PROCESSING, ACTIVE, DELETING, FAILED, SUCCESS, NOT_APPLICABLE))
@@ -2269,7 +2294,7 @@ package appsync {
         definition: Blob
     ): StartSchemaCreationRequest = {
       val __obj = js.Dynamic.literal(
-        "apiId"      -> apiId.asInstanceOf[js.Any],
+        "apiId" -> apiId.asInstanceOf[js.Any],
         "definition" -> definition.asInstanceOf[js.Any]
       )
 
@@ -2335,7 +2360,7 @@ package appsync {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -2389,7 +2414,7 @@ package appsync {
   @js.native
   sealed trait TypeDefinitionFormat extends js.Any
   object TypeDefinitionFormat extends js.Object {
-    val SDL  = "SDL".asInstanceOf[TypeDefinitionFormat]
+    val SDL = "SDL".asInstanceOf[TypeDefinitionFormat]
     val JSON = "JSON".asInstanceOf[TypeDefinitionFormat]
 
     val values = js.Object.freeze(js.Array(SDL, JSON))
@@ -2409,7 +2434,7 @@ package appsync {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -2450,9 +2475,9 @@ package appsync {
     ): UpdateApiCacheRequest = {
       val __obj = js.Dynamic.literal(
         "apiCachingBehavior" -> apiCachingBehavior.asInstanceOf[js.Any],
-        "apiId"              -> apiId.asInstanceOf[js.Any],
-        "ttl"                -> ttl.asInstanceOf[js.Any],
-        "type"               -> `type`.asInstanceOf[js.Any]
+        "apiId" -> apiId.asInstanceOf[js.Any],
+        "ttl" -> ttl.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateApiCacheRequest]
@@ -2496,7 +2521,7 @@ package appsync {
     ): UpdateApiKeyRequest = {
       val __obj = js.Dynamic.literal(
         "apiId" -> apiId.asInstanceOf[js.Any],
-        "id"    -> id.asInstanceOf[js.Any]
+        "id" -> id.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
@@ -2551,8 +2576,8 @@ package appsync {
     ): UpdateDataSourceRequest = {
       val __obj = js.Dynamic.literal(
         "apiId" -> apiId.asInstanceOf[js.Any],
-        "name"  -> name.asInstanceOf[js.Any],
-        "type"  -> `type`.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
@@ -2607,11 +2632,11 @@ package appsync {
         responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined
     ): UpdateFunctionRequest = {
       val __obj = js.Dynamic.literal(
-        "apiId"                  -> apiId.asInstanceOf[js.Any],
-        "dataSourceName"         -> dataSourceName.asInstanceOf[js.Any],
-        "functionId"             -> functionId.asInstanceOf[js.Any],
-        "functionVersion"        -> functionVersion.asInstanceOf[js.Any],
-        "name"                   -> name.asInstanceOf[js.Any],
+        "apiId" -> apiId.asInstanceOf[js.Any],
+        "dataSourceName" -> dataSourceName.asInstanceOf[js.Any],
+        "functionId" -> functionId.asInstanceOf[js.Any],
+        "functionVersion" -> functionVersion.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "requestMappingTemplate" -> requestMappingTemplate.asInstanceOf[js.Any]
       )
 
@@ -2663,7 +2688,7 @@ package appsync {
     ): UpdateGraphqlApiRequest = {
       val __obj = js.Dynamic.literal(
         "apiId" -> apiId.asInstanceOf[js.Any],
-        "name"  -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       additionalAuthenticationProviders.foreach(__v =>
@@ -2723,10 +2748,10 @@ package appsync {
         syncConfig: js.UndefOr[SyncConfig] = js.undefined
     ): UpdateResolverRequest = {
       val __obj = js.Dynamic.literal(
-        "apiId"                  -> apiId.asInstanceOf[js.Any],
-        "fieldName"              -> fieldName.asInstanceOf[js.Any],
+        "apiId" -> apiId.asInstanceOf[js.Any],
+        "fieldName" -> fieldName.asInstanceOf[js.Any],
         "requestMappingTemplate" -> requestMappingTemplate.asInstanceOf[js.Any],
-        "typeName"               -> typeName.asInstanceOf[js.Any]
+        "typeName" -> typeName.asInstanceOf[js.Any]
       )
 
       cachingConfig.foreach(__v => __obj.updateDynamic("cachingConfig")(__v.asInstanceOf[js.Any]))
@@ -2772,8 +2797,8 @@ package appsync {
         definition: js.UndefOr[String] = js.undefined
     ): UpdateTypeRequest = {
       val __obj = js.Dynamic.literal(
-        "apiId"    -> apiId.asInstanceOf[js.Any],
-        "format"   -> format.asInstanceOf[js.Any],
+        "apiId" -> apiId.asInstanceOf[js.Any],
+        "format" -> format.asInstanceOf[js.Any],
         "typeName" -> typeName.asInstanceOf[js.Any]
       )
 
@@ -2818,9 +2843,9 @@ package appsync {
         appIdClientRegex: js.UndefOr[String] = js.undefined
     ): UserPoolConfig = {
       val __obj = js.Dynamic.literal(
-        "awsRegion"     -> awsRegion.asInstanceOf[js.Any],
+        "awsRegion" -> awsRegion.asInstanceOf[js.Any],
         "defaultAction" -> defaultAction.asInstanceOf[js.Any],
-        "userPoolId"    -> userPoolId.asInstanceOf[js.Any]
+        "userPoolId" -> userPoolId.asInstanceOf[js.Any]
       )
 
       appIdClientRegex.foreach(__v => __obj.updateDynamic("appIdClientRegex")(__v.asInstanceOf[js.Any]))

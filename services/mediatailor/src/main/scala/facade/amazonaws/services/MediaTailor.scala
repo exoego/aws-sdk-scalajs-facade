@@ -7,13 +7,13 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object mediatailor {
-  type __integer                      = Int
-  type __integerMin1                  = Int
-  type __integerMin1Max100            = Int
+  type __integer = Int
+  type __integerMin1 = Int
+  type __integerMin1Max100 = Int
   type __listOfPlaybackConfigurations = js.Array[PlaybackConfiguration]
-  type __listOf__string               = js.Array[__string]
-  type __mapOf__string                = js.Dictionary[__string]
-  type __string                       = String
+  type __listOf__string = js.Array[__string]
+  type __mapOf__string = js.Dictionary[__string]
+  type __string = String
 
   implicit final class MediaTailorOps(private val service: MediaTailor) extends AnyVal {
 
@@ -51,12 +51,56 @@ package mediatailor {
       js.native
     def listPlaybackConfigurations(
         params: ListPlaybackConfigurationsRequest
-    ): Request[ListPlaybackConfigurationsResponse]                                                    = js.native
+    ): Request[ListPlaybackConfigurationsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putPlaybackConfiguration(params: PutPlaybackConfigurationRequest): Request[PutPlaybackConfigurationResponse] =
       js.native
-    def tagResource(params: TagResourceRequest): Request[js.Object]     = js.native
+    def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
+  }
+
+  /**
+    * The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long manifest, or if a viewer joins mid-break.
+    */
+  @js.native
+  trait AvailSuppression extends js.Object {
+    var Mode: js.UndefOr[Mode]
+    var Value: js.UndefOr[__string]
+  }
+
+  object AvailSuppression {
+    @inline
+    def apply(
+        Mode: js.UndefOr[Mode] = js.undefined,
+        Value: js.UndefOr[__string] = js.undefined
+    ): AvailSuppression = {
+      val __obj = js.Dynamic.literal()
+      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AvailSuppression]
+    }
+  }
+
+  /**
+    * The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break.
+    */
+  @js.native
+  trait Bumper extends js.Object {
+    var EndUrl: js.UndefOr[__string]
+    var StartUrl: js.UndefOr[__string]
+  }
+
+  object Bumper {
+    @inline
+    def apply(
+        EndUrl: js.UndefOr[__string] = js.undefined,
+        StartUrl: js.UndefOr[__string] = js.undefined
+    ): Bumper = {
+      val __obj = js.Dynamic.literal()
+      EndUrl.foreach(__v => __obj.updateDynamic("EndUrl")(__v.asInstanceOf[js.Any]))
+      StartUrl.foreach(__v => __obj.updateDynamic("StartUrl")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Bumper]
+    }
   }
 
   /**
@@ -180,6 +224,8 @@ package mediatailor {
   @js.native
   trait GetPlaybackConfigurationResponse extends js.Object {
     var AdDecisionServerUrl: js.UndefOr[__string]
+    var AvailSuppression: js.UndefOr[AvailSuppression]
+    var Bumper: js.UndefOr[Bumper]
     var CdnConfiguration: js.UndefOr[CdnConfiguration]
     var DashConfiguration: js.UndefOr[DashConfiguration]
     var HlsConfiguration: js.UndefOr[HlsConfiguration]
@@ -199,6 +245,8 @@ package mediatailor {
     @inline
     def apply(
         AdDecisionServerUrl: js.UndefOr[__string] = js.undefined,
+        AvailSuppression: js.UndefOr[AvailSuppression] = js.undefined,
+        Bumper: js.UndefOr[Bumper] = js.undefined,
         CdnConfiguration: js.UndefOr[CdnConfiguration] = js.undefined,
         DashConfiguration: js.UndefOr[DashConfiguration] = js.undefined,
         HlsConfiguration: js.UndefOr[HlsConfiguration] = js.undefined,
@@ -215,6 +263,8 @@ package mediatailor {
     ): GetPlaybackConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       AdDecisionServerUrl.foreach(__v => __obj.updateDynamic("AdDecisionServerUrl")(__v.asInstanceOf[js.Any]))
+      AvailSuppression.foreach(__v => __obj.updateDynamic("AvailSuppression")(__v.asInstanceOf[js.Any]))
+      Bumper.foreach(__v => __obj.updateDynamic("Bumper")(__v.asInstanceOf[js.Any]))
       CdnConfiguration.foreach(__v => __obj.updateDynamic("CdnConfiguration")(__v.asInstanceOf[js.Any]))
       DashConfiguration.foreach(__v => __obj.updateDynamic("DashConfiguration")(__v.asInstanceOf[js.Any]))
       HlsConfiguration.foreach(__v => __obj.updateDynamic("HlsConfiguration")(__v.asInstanceOf[js.Any]))
@@ -350,10 +400,19 @@ package mediatailor {
   }
 
   @js.native
+  sealed trait Mode extends js.Any
+  object Mode extends js.Object {
+    val OFF = "OFF".asInstanceOf[Mode]
+    val BEHIND_LIVE_EDGE = "BEHIND_LIVE_EDGE".asInstanceOf[Mode]
+
+    val values = js.Object.freeze(js.Array(OFF, BEHIND_LIVE_EDGE))
+  }
+
+  @js.native
   sealed trait OriginManifestType extends js.Any
   object OriginManifestType extends js.Object {
     val SINGLE_PERIOD = "SINGLE_PERIOD".asInstanceOf[OriginManifestType]
-    val MULTI_PERIOD  = "MULTI_PERIOD".asInstanceOf[OriginManifestType]
+    val MULTI_PERIOD = "MULTI_PERIOD".asInstanceOf[OriginManifestType]
 
     val values = js.Object.freeze(js.Array(SINGLE_PERIOD, MULTI_PERIOD))
   }
@@ -364,6 +423,8 @@ package mediatailor {
   @js.native
   trait PlaybackConfiguration extends js.Object {
     var AdDecisionServerUrl: js.UndefOr[__string]
+    var AvailSuppression: js.UndefOr[AvailSuppression]
+    var Bumper: js.UndefOr[Bumper]
     var CdnConfiguration: js.UndefOr[CdnConfiguration]
     var DashConfiguration: js.UndefOr[DashConfiguration]
     var HlsConfiguration: js.UndefOr[HlsConfiguration]
@@ -382,6 +443,8 @@ package mediatailor {
     @inline
     def apply(
         AdDecisionServerUrl: js.UndefOr[__string] = js.undefined,
+        AvailSuppression: js.UndefOr[AvailSuppression] = js.undefined,
+        Bumper: js.UndefOr[Bumper] = js.undefined,
         CdnConfiguration: js.UndefOr[CdnConfiguration] = js.undefined,
         DashConfiguration: js.UndefOr[DashConfiguration] = js.undefined,
         HlsConfiguration: js.UndefOr[HlsConfiguration] = js.undefined,
@@ -397,6 +460,8 @@ package mediatailor {
     ): PlaybackConfiguration = {
       val __obj = js.Dynamic.literal()
       AdDecisionServerUrl.foreach(__v => __obj.updateDynamic("AdDecisionServerUrl")(__v.asInstanceOf[js.Any]))
+      AvailSuppression.foreach(__v => __obj.updateDynamic("AvailSuppression")(__v.asInstanceOf[js.Any]))
+      Bumper.foreach(__v => __obj.updateDynamic("Bumper")(__v.asInstanceOf[js.Any]))
       CdnConfiguration.foreach(__v => __obj.updateDynamic("CdnConfiguration")(__v.asInstanceOf[js.Any]))
       DashConfiguration.foreach(__v => __obj.updateDynamic("DashConfiguration")(__v.asInstanceOf[js.Any]))
       HlsConfiguration.foreach(__v => __obj.updateDynamic("HlsConfiguration")(__v.asInstanceOf[js.Any]))
@@ -420,6 +485,8 @@ package mediatailor {
   @js.native
   trait PutPlaybackConfigurationRequest extends js.Object {
     var AdDecisionServerUrl: js.UndefOr[__string]
+    var AvailSuppression: js.UndefOr[AvailSuppression]
+    var Bumper: js.UndefOr[Bumper]
     var CdnConfiguration: js.UndefOr[CdnConfiguration]
     var DashConfiguration: js.UndefOr[DashConfigurationForPut]
     var LivePreRollConfiguration: js.UndefOr[LivePreRollConfiguration]
@@ -435,6 +502,8 @@ package mediatailor {
     @inline
     def apply(
         AdDecisionServerUrl: js.UndefOr[__string] = js.undefined,
+        AvailSuppression: js.UndefOr[AvailSuppression] = js.undefined,
+        Bumper: js.UndefOr[Bumper] = js.undefined,
         CdnConfiguration: js.UndefOr[CdnConfiguration] = js.undefined,
         DashConfiguration: js.UndefOr[DashConfigurationForPut] = js.undefined,
         LivePreRollConfiguration: js.UndefOr[LivePreRollConfiguration] = js.undefined,
@@ -447,6 +516,8 @@ package mediatailor {
     ): PutPlaybackConfigurationRequest = {
       val __obj = js.Dynamic.literal()
       AdDecisionServerUrl.foreach(__v => __obj.updateDynamic("AdDecisionServerUrl")(__v.asInstanceOf[js.Any]))
+      AvailSuppression.foreach(__v => __obj.updateDynamic("AvailSuppression")(__v.asInstanceOf[js.Any]))
+      Bumper.foreach(__v => __obj.updateDynamic("Bumper")(__v.asInstanceOf[js.Any]))
       CdnConfiguration.foreach(__v => __obj.updateDynamic("CdnConfiguration")(__v.asInstanceOf[js.Any]))
       DashConfiguration.foreach(__v => __obj.updateDynamic("DashConfiguration")(__v.asInstanceOf[js.Any]))
       LivePreRollConfiguration.foreach(__v => __obj.updateDynamic("LivePreRollConfiguration")(__v.asInstanceOf[js.Any]))
@@ -465,6 +536,8 @@ package mediatailor {
   @js.native
   trait PutPlaybackConfigurationResponse extends js.Object {
     var AdDecisionServerUrl: js.UndefOr[__string]
+    var AvailSuppression: js.UndefOr[AvailSuppression]
+    var Bumper: js.UndefOr[Bumper]
     var CdnConfiguration: js.UndefOr[CdnConfiguration]
     var DashConfiguration: js.UndefOr[DashConfiguration]
     var HlsConfiguration: js.UndefOr[HlsConfiguration]
@@ -484,6 +557,8 @@ package mediatailor {
     @inline
     def apply(
         AdDecisionServerUrl: js.UndefOr[__string] = js.undefined,
+        AvailSuppression: js.UndefOr[AvailSuppression] = js.undefined,
+        Bumper: js.UndefOr[Bumper] = js.undefined,
         CdnConfiguration: js.UndefOr[CdnConfiguration] = js.undefined,
         DashConfiguration: js.UndefOr[DashConfiguration] = js.undefined,
         HlsConfiguration: js.UndefOr[HlsConfiguration] = js.undefined,
@@ -500,6 +575,8 @@ package mediatailor {
     ): PutPlaybackConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       AdDecisionServerUrl.foreach(__v => __obj.updateDynamic("AdDecisionServerUrl")(__v.asInstanceOf[js.Any]))
+      AvailSuppression.foreach(__v => __obj.updateDynamic("AvailSuppression")(__v.asInstanceOf[js.Any]))
+      Bumper.foreach(__v => __obj.updateDynamic("Bumper")(__v.asInstanceOf[js.Any]))
       CdnConfiguration.foreach(__v => __obj.updateDynamic("CdnConfiguration")(__v.asInstanceOf[js.Any]))
       DashConfiguration.foreach(__v => __obj.updateDynamic("DashConfiguration")(__v.asInstanceOf[js.Any]))
       HlsConfiguration.foreach(__v => __obj.updateDynamic("HlsConfiguration")(__v.asInstanceOf[js.Any]))
@@ -535,7 +612,7 @@ package mediatailor {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -556,7 +633,7 @@ package mediatailor {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]

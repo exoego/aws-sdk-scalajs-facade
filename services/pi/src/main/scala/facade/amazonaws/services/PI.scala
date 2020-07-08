@@ -7,18 +7,18 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object pi {
-  type DataPointsList              = js.Array[DataPoint]
+  type DataPointsList = js.Array[DataPoint]
   type DimensionKeyDescriptionList = js.Array[DimensionKeyDescription]
-  type DimensionMap                = js.Dictionary[String]
-  type ISOTimestamp                = js.Date
-  type Limit                       = Int
-  type MaxResults                  = Int
-  type MetricKeyDataPointsList     = js.Array[MetricKeyDataPoints]
-  type MetricQueryFilterMap        = js.Dictionary[String]
-  type MetricQueryList             = js.Array[MetricQuery]
-  type MetricValuesList            = js.Array[Double]
-  type ResponsePartitionKeyList    = js.Array[ResponsePartitionKey]
-  type StringList                  = js.Array[String]
+  type DimensionMap = js.Dictionary[String]
+  type ISOTimestamp = js.Date
+  type Limit = Int
+  type MaxResults = Int
+  type MetricKeyDataPointsList = js.Array[MetricKeyDataPoints]
+  type MetricQueryFilterMap = js.Dictionary[String]
+  type MetricQueryList = js.Array[MetricQuery]
+  type MetricValuesList = js.Array[Double]
+  type ResponsePartitionKeyList = js.Array[ResponsePartitionKey]
+  type StringList = js.Array[String]
 
   implicit final class PIOps(private val service: PI) extends AnyVal {
 
@@ -37,7 +37,7 @@ package pi {
     def this(config: AWSConfig) = this()
 
     def describeDimensionKeys(params: DescribeDimensionKeysRequest): Request[DescribeDimensionKeysResponse] = js.native
-    def getResourceMetrics(params: GetResourceMetricsRequest): Request[GetResourceMetricsResponse]          = js.native
+    def getResourceMetrics(params: GetResourceMetricsRequest): Request[GetResourceMetricsResponse] = js.native
   }
 
   /**
@@ -57,7 +57,7 @@ package pi {
     ): DataPoint = {
       val __obj = js.Dynamic.literal(
         "Timestamp" -> Timestamp.asInstanceOf[js.Any],
-        "Value"     -> Value.asInstanceOf[js.Any]
+        "Value" -> Value.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DataPoint]
@@ -95,12 +95,12 @@ package pi {
         PeriodInSeconds: js.UndefOr[Int] = js.undefined
     ): DescribeDimensionKeysRequest = {
       val __obj = js.Dynamic.literal(
-        "EndTime"     -> EndTime.asInstanceOf[js.Any],
-        "GroupBy"     -> GroupBy.asInstanceOf[js.Any],
-        "Identifier"  -> Identifier.asInstanceOf[js.Any],
-        "Metric"      -> Metric.asInstanceOf[js.Any],
+        "EndTime" -> EndTime.asInstanceOf[js.Any],
+        "GroupBy" -> GroupBy.asInstanceOf[js.Any],
+        "Identifier" -> Identifier.asInstanceOf[js.Any],
+        "Metric" -> Metric.asInstanceOf[js.Any],
         "ServiceType" -> ServiceType.asInstanceOf[js.Any],
-        "StartTime"   -> StartTime.asInstanceOf[js.Any]
+        "StartTime" -> StartTime.asInstanceOf[js.Any]
       )
 
       Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
@@ -217,11 +217,11 @@ package pi {
         PeriodInSeconds: js.UndefOr[Int] = js.undefined
     ): GetResourceMetricsRequest = {
       val __obj = js.Dynamic.literal(
-        "EndTime"       -> EndTime.asInstanceOf[js.Any],
-        "Identifier"    -> Identifier.asInstanceOf[js.Any],
+        "EndTime" -> EndTime.asInstanceOf[js.Any],
+        "Identifier" -> Identifier.asInstanceOf[js.Any],
         "MetricQueries" -> MetricQueries.asInstanceOf[js.Any],
-        "ServiceType"   -> ServiceType.asInstanceOf[js.Any],
-        "StartTime"     -> StartTime.asInstanceOf[js.Any]
+        "ServiceType" -> ServiceType.asInstanceOf[js.Any],
+        "StartTime" -> StartTime.asInstanceOf[js.Any]
       )
 
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))

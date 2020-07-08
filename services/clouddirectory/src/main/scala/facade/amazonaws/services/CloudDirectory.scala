@@ -7,70 +7,70 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object clouddirectory {
-  type Arn                               = String
-  type Arns                              = js.Array[Arn]
-  type AttributeKeyAndValueList          = js.Array[AttributeKeyAndValue]
-  type AttributeKeyList                  = js.Array[AttributeKey]
-  type AttributeName                     = String
-  type AttributeNameAndValueList         = js.Array[AttributeNameAndValue]
-  type AttributeNameList                 = js.Array[AttributeName]
-  type BatchReadOperationList            = js.Array[BatchReadOperation]
-  type BatchReadOperationResponseList    = js.Array[BatchReadOperationResponse]
-  type BatchReferenceName                = String
-  type BatchWriteOperationList           = js.Array[BatchWriteOperation]
-  type BatchWriteOperationResponseList   = js.Array[BatchWriteOperationResponse]
-  type BinaryAttributeValue              = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type BooleanAttributeValue             = Boolean
-  type Date                              = js.Date
-  type DatetimeAttributeValue            = js.Date
-  type DirectoryArn                      = String
-  type DirectoryList                     = js.Array[Directory]
-  type DirectoryName                     = String
-  type ExceptionMessage                  = String
-  type FacetAttributeList                = js.Array[FacetAttribute]
-  type FacetAttributeUpdateList          = js.Array[FacetAttributeUpdate]
-  type FacetName                         = String
-  type FacetNameList                     = js.Array[FacetName]
-  type IndexAttachmentList               = js.Array[IndexAttachment]
-  type LinkAttributeUpdateList           = js.Array[LinkAttributeUpdate]
-  type LinkName                          = String
-  type LinkNameToObjectIdentifierMap     = js.Dictionary[ObjectIdentifier]
-  type NextToken                         = String
-  type NumberAttributeValue              = String
-  type NumberResults                     = Int
-  type ObjectAttributeRangeList          = js.Array[ObjectAttributeRange]
-  type ObjectAttributeUpdateList         = js.Array[ObjectAttributeUpdate]
-  type ObjectIdentifier                  = String
-  type ObjectIdentifierAndLinkNameList   = js.Array[ObjectIdentifierAndLinkNameTuple]
-  type ObjectIdentifierList              = js.Array[ObjectIdentifier]
-  type ObjectIdentifierToLinkNameMap     = js.Dictionary[LinkName]
-  type PathString                        = String
-  type PathToObjectIdentifiersList       = js.Array[PathToObjectIdentifiers]
-  type PolicyAttachmentList              = js.Array[PolicyAttachment]
-  type PolicyToPathList                  = js.Array[PolicyToPath]
-  type PolicyType                        = String
-  type RuleKey                           = String
-  type RuleMap                           = js.Dictionary[Rule]
-  type RuleParameterKey                  = String
-  type RuleParameterMap                  = js.Dictionary[RuleParameterValue]
-  type RuleParameterValue                = String
-  type SchemaFacetList                   = js.Array[SchemaFacet]
-  type SchemaJsonDocument                = String
-  type SchemaName                        = String
-  type SelectorObjectReference           = String
-  type StringAttributeValue              = String
-  type TagKey                            = String
-  type TagKeyList                        = js.Array[TagKey]
-  type TagList                           = js.Array[Tag]
-  type TagValue                          = String
-  type TagsNumberResults                 = Int
-  type TypedLinkAttributeDefinitionList  = js.Array[TypedLinkAttributeDefinition]
-  type TypedLinkAttributeRangeList       = js.Array[TypedLinkAttributeRange]
+  type Arn = String
+  type Arns = js.Array[Arn]
+  type AttributeKeyAndValueList = js.Array[AttributeKeyAndValue]
+  type AttributeKeyList = js.Array[AttributeKey]
+  type AttributeName = String
+  type AttributeNameAndValueList = js.Array[AttributeNameAndValue]
+  type AttributeNameList = js.Array[AttributeName]
+  type BatchReadOperationList = js.Array[BatchReadOperation]
+  type BatchReadOperationResponseList = js.Array[BatchReadOperationResponse]
+  type BatchReferenceName = String
+  type BatchWriteOperationList = js.Array[BatchWriteOperation]
+  type BatchWriteOperationResponseList = js.Array[BatchWriteOperationResponse]
+  type BinaryAttributeValue = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type BooleanAttributeValue = Boolean
+  type Date = js.Date
+  type DatetimeAttributeValue = js.Date
+  type DirectoryArn = String
+  type DirectoryList = js.Array[Directory]
+  type DirectoryName = String
+  type ExceptionMessage = String
+  type FacetAttributeList = js.Array[FacetAttribute]
+  type FacetAttributeUpdateList = js.Array[FacetAttributeUpdate]
+  type FacetName = String
+  type FacetNameList = js.Array[FacetName]
+  type IndexAttachmentList = js.Array[IndexAttachment]
+  type LinkAttributeUpdateList = js.Array[LinkAttributeUpdate]
+  type LinkName = String
+  type LinkNameToObjectIdentifierMap = js.Dictionary[ObjectIdentifier]
+  type NextToken = String
+  type NumberAttributeValue = String
+  type NumberResults = Int
+  type ObjectAttributeRangeList = js.Array[ObjectAttributeRange]
+  type ObjectAttributeUpdateList = js.Array[ObjectAttributeUpdate]
+  type ObjectIdentifier = String
+  type ObjectIdentifierAndLinkNameList = js.Array[ObjectIdentifierAndLinkNameTuple]
+  type ObjectIdentifierList = js.Array[ObjectIdentifier]
+  type ObjectIdentifierToLinkNameMap = js.Dictionary[LinkName]
+  type PathString = String
+  type PathToObjectIdentifiersList = js.Array[PathToObjectIdentifiers]
+  type PolicyAttachmentList = js.Array[PolicyAttachment]
+  type PolicyToPathList = js.Array[PolicyToPath]
+  type PolicyType = String
+  type RuleKey = String
+  type RuleMap = js.Dictionary[Rule]
+  type RuleParameterKey = String
+  type RuleParameterMap = js.Dictionary[RuleParameterValue]
+  type RuleParameterValue = String
+  type SchemaFacetList = js.Array[SchemaFacet]
+  type SchemaJsonDocument = String
+  type SchemaName = String
+  type SelectorObjectReference = String
+  type StringAttributeValue = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type TagsNumberResults = Int
+  type TypedLinkAttributeDefinitionList = js.Array[TypedLinkAttributeDefinition]
+  type TypedLinkAttributeRangeList = js.Array[TypedLinkAttributeRange]
   type TypedLinkFacetAttributeUpdateList = js.Array[TypedLinkFacetAttributeUpdate]
-  type TypedLinkName                     = String
-  type TypedLinkNameList                 = js.Array[TypedLinkName]
-  type TypedLinkSpecifierList            = js.Array[TypedLinkSpecifier]
-  type Version                           = String
+  type TypedLinkName = String
+  type TypedLinkNameList = js.Array[TypedLinkName]
+  type TypedLinkSpecifierList = js.Array[TypedLinkSpecifier]
+  type Version = String
 
   implicit final class CloudDirectoryOps(private val service: CloudDirectory) extends AnyVal {
 
@@ -230,59 +230,59 @@ package clouddirectory {
   class CloudDirectory() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def addFacetToObject(params: AddFacetToObjectRequest): Request[AddFacetToObjectResponse]             = js.native
-    def applySchema(params: ApplySchemaRequest): Request[ApplySchemaResponse]                            = js.native
-    def attachObject(params: AttachObjectRequest): Request[AttachObjectResponse]                         = js.native
-    def attachPolicy(params: AttachPolicyRequest): Request[AttachPolicyResponse]                         = js.native
-    def attachToIndex(params: AttachToIndexRequest): Request[AttachToIndexResponse]                      = js.native
-    def attachTypedLink(params: AttachTypedLinkRequest): Request[AttachTypedLinkResponse]                = js.native
-    def batchRead(params: BatchReadRequest): Request[BatchReadResponse]                                  = js.native
-    def batchWrite(params: BatchWriteRequest): Request[BatchWriteResponse]                               = js.native
-    def createDirectory(params: CreateDirectoryRequest): Request[CreateDirectoryResponse]                = js.native
-    def createFacet(params: CreateFacetRequest): Request[CreateFacetResponse]                            = js.native
-    def createIndex(params: CreateIndexRequest): Request[CreateIndexResponse]                            = js.native
-    def createObject(params: CreateObjectRequest): Request[CreateObjectResponse]                         = js.native
-    def createSchema(params: CreateSchemaRequest): Request[CreateSchemaResponse]                         = js.native
+    def addFacetToObject(params: AddFacetToObjectRequest): Request[AddFacetToObjectResponse] = js.native
+    def applySchema(params: ApplySchemaRequest): Request[ApplySchemaResponse] = js.native
+    def attachObject(params: AttachObjectRequest): Request[AttachObjectResponse] = js.native
+    def attachPolicy(params: AttachPolicyRequest): Request[AttachPolicyResponse] = js.native
+    def attachToIndex(params: AttachToIndexRequest): Request[AttachToIndexResponse] = js.native
+    def attachTypedLink(params: AttachTypedLinkRequest): Request[AttachTypedLinkResponse] = js.native
+    def batchRead(params: BatchReadRequest): Request[BatchReadResponse] = js.native
+    def batchWrite(params: BatchWriteRequest): Request[BatchWriteResponse] = js.native
+    def createDirectory(params: CreateDirectoryRequest): Request[CreateDirectoryResponse] = js.native
+    def createFacet(params: CreateFacetRequest): Request[CreateFacetResponse] = js.native
+    def createIndex(params: CreateIndexRequest): Request[CreateIndexResponse] = js.native
+    def createObject(params: CreateObjectRequest): Request[CreateObjectResponse] = js.native
+    def createSchema(params: CreateSchemaRequest): Request[CreateSchemaResponse] = js.native
     def createTypedLinkFacet(params: CreateTypedLinkFacetRequest): Request[CreateTypedLinkFacetResponse] = js.native
-    def deleteDirectory(params: DeleteDirectoryRequest): Request[DeleteDirectoryResponse]                = js.native
-    def deleteFacet(params: DeleteFacetRequest): Request[DeleteFacetResponse]                            = js.native
-    def deleteObject(params: DeleteObjectRequest): Request[DeleteObjectResponse]                         = js.native
-    def deleteSchema(params: DeleteSchemaRequest): Request[DeleteSchemaResponse]                         = js.native
+    def deleteDirectory(params: DeleteDirectoryRequest): Request[DeleteDirectoryResponse] = js.native
+    def deleteFacet(params: DeleteFacetRequest): Request[DeleteFacetResponse] = js.native
+    def deleteObject(params: DeleteObjectRequest): Request[DeleteObjectResponse] = js.native
+    def deleteSchema(params: DeleteSchemaRequest): Request[DeleteSchemaResponse] = js.native
     def deleteTypedLinkFacet(params: DeleteTypedLinkFacetRequest): Request[DeleteTypedLinkFacetResponse] = js.native
-    def detachFromIndex(params: DetachFromIndexRequest): Request[DetachFromIndexResponse]                = js.native
-    def detachObject(params: DetachObjectRequest): Request[DetachObjectResponse]                         = js.native
-    def detachPolicy(params: DetachPolicyRequest): Request[DetachPolicyResponse]                         = js.native
-    def detachTypedLink(params: DetachTypedLinkRequest): Request[js.Object]                              = js.native
-    def disableDirectory(params: DisableDirectoryRequest): Request[DisableDirectoryResponse]             = js.native
-    def enableDirectory(params: EnableDirectoryRequest): Request[EnableDirectoryResponse]                = js.native
+    def detachFromIndex(params: DetachFromIndexRequest): Request[DetachFromIndexResponse] = js.native
+    def detachObject(params: DetachObjectRequest): Request[DetachObjectResponse] = js.native
+    def detachPolicy(params: DetachPolicyRequest): Request[DetachPolicyResponse] = js.native
+    def detachTypedLink(params: DetachTypedLinkRequest): Request[js.Object] = js.native
+    def disableDirectory(params: DisableDirectoryRequest): Request[DisableDirectoryResponse] = js.native
+    def enableDirectory(params: EnableDirectoryRequest): Request[EnableDirectoryResponse] = js.native
     def getAppliedSchemaVersion(params: GetAppliedSchemaVersionRequest): Request[GetAppliedSchemaVersionResponse] =
       js.native
-    def getDirectory(params: GetDirectoryRequest): Request[GetDirectoryResponse]                         = js.native
-    def getFacet(params: GetFacetRequest): Request[GetFacetResponse]                                     = js.native
-    def getLinkAttributes(params: GetLinkAttributesRequest): Request[GetLinkAttributesResponse]          = js.native
-    def getObjectAttributes(params: GetObjectAttributesRequest): Request[GetObjectAttributesResponse]    = js.native
+    def getDirectory(params: GetDirectoryRequest): Request[GetDirectoryResponse] = js.native
+    def getFacet(params: GetFacetRequest): Request[GetFacetResponse] = js.native
+    def getLinkAttributes(params: GetLinkAttributesRequest): Request[GetLinkAttributesResponse] = js.native
+    def getObjectAttributes(params: GetObjectAttributesRequest): Request[GetObjectAttributesResponse] = js.native
     def getObjectInformation(params: GetObjectInformationRequest): Request[GetObjectInformationResponse] = js.native
-    def getSchemaAsJson(params: GetSchemaAsJsonRequest): Request[GetSchemaAsJsonResponse]                = js.native
+    def getSchemaAsJson(params: GetSchemaAsJsonRequest): Request[GetSchemaAsJsonResponse] = js.native
     def getTypedLinkFacetInformation(
         params: GetTypedLinkFacetInformationRequest
-    ): Request[GetTypedLinkFacetInformationResponse]                                                        = js.native
+    ): Request[GetTypedLinkFacetInformationResponse] = js.native
     def listAppliedSchemaArns(params: ListAppliedSchemaArnsRequest): Request[ListAppliedSchemaArnsResponse] = js.native
-    def listAttachedIndices(params: ListAttachedIndicesRequest): Request[ListAttachedIndicesResponse]       = js.native
+    def listAttachedIndices(params: ListAttachedIndicesRequest): Request[ListAttachedIndicesResponse] = js.native
     def listDevelopmentSchemaArns(
         params: ListDevelopmentSchemaArnsRequest
-    ): Request[ListDevelopmentSchemaArnsResponse]                                                     = js.native
-    def listDirectories(params: ListDirectoriesRequest): Request[ListDirectoriesResponse]             = js.native
+    ): Request[ListDevelopmentSchemaArnsResponse] = js.native
+    def listDirectories(params: ListDirectoriesRequest): Request[ListDirectoriesResponse] = js.native
     def listFacetAttributes(params: ListFacetAttributesRequest): Request[ListFacetAttributesResponse] = js.native
-    def listFacetNames(params: ListFacetNamesRequest): Request[ListFacetNamesResponse]                = js.native
+    def listFacetNames(params: ListFacetNamesRequest): Request[ListFacetNamesResponse] = js.native
     def listIncomingTypedLinks(params: ListIncomingTypedLinksRequest): Request[ListIncomingTypedLinksResponse] =
       js.native
-    def listIndex(params: ListIndexRequest): Request[ListIndexResponse]                                     = js.native
+    def listIndex(params: ListIndexRequest): Request[ListIndexResponse] = js.native
     def listManagedSchemaArns(params: ListManagedSchemaArnsRequest): Request[ListManagedSchemaArnsResponse] = js.native
-    def listObjectAttributes(params: ListObjectAttributesRequest): Request[ListObjectAttributesResponse]    = js.native
-    def listObjectChildren(params: ListObjectChildrenRequest): Request[ListObjectChildrenResponse]          = js.native
+    def listObjectAttributes(params: ListObjectAttributesRequest): Request[ListObjectAttributesResponse] = js.native
+    def listObjectChildren(params: ListObjectChildrenRequest): Request[ListObjectChildrenResponse] = js.native
     def listObjectParentPaths(params: ListObjectParentPathsRequest): Request[ListObjectParentPathsResponse] = js.native
-    def listObjectParents(params: ListObjectParentsRequest): Request[ListObjectParentsResponse]             = js.native
-    def listObjectPolicies(params: ListObjectPoliciesRequest): Request[ListObjectPoliciesResponse]          = js.native
+    def listObjectParents(params: ListObjectParentsRequest): Request[ListObjectParentsResponse] = js.native
+    def listObjectPolicies(params: ListObjectPoliciesRequest): Request[ListObjectPoliciesResponse] = js.native
     def listOutgoingTypedLinks(params: ListOutgoingTypedLinksRequest): Request[ListOutgoingTypedLinksResponse] =
       js.native
     def listPolicyAttachments(params: ListPolicyAttachmentsRequest): Request[ListPolicyAttachmentsResponse] = js.native
@@ -294,17 +294,17 @@ package clouddirectory {
     ): Request[ListTypedLinkFacetAttributesResponse] = js.native
     def listTypedLinkFacetNames(params: ListTypedLinkFacetNamesRequest): Request[ListTypedLinkFacetNamesResponse] =
       js.native
-    def lookupPolicy(params: LookupPolicyRequest): Request[LookupPolicyResponse]                            = js.native
-    def publishSchema(params: PublishSchemaRequest): Request[PublishSchemaResponse]                         = js.native
-    def putSchemaFromJson(params: PutSchemaFromJsonRequest): Request[PutSchemaFromJsonResponse]             = js.native
+    def lookupPolicy(params: LookupPolicyRequest): Request[LookupPolicyResponse] = js.native
+    def publishSchema(params: PublishSchemaRequest): Request[PublishSchemaResponse] = js.native
+    def putSchemaFromJson(params: PutSchemaFromJsonRequest): Request[PutSchemaFromJsonResponse] = js.native
     def removeFacetFromObject(params: RemoveFacetFromObjectRequest): Request[RemoveFacetFromObjectResponse] = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                         = js.native
-    def updateFacet(params: UpdateFacetRequest): Request[UpdateFacetResponse]                               = js.native
-    def updateLinkAttributes(params: UpdateLinkAttributesRequest): Request[UpdateLinkAttributesResponse]    = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateFacet(params: UpdateFacetRequest): Request[UpdateFacetResponse] = js.native
+    def updateLinkAttributes(params: UpdateLinkAttributesRequest): Request[UpdateLinkAttributesResponse] = js.native
     def updateObjectAttributes(params: UpdateObjectAttributesRequest): Request[UpdateObjectAttributesResponse] =
       js.native
-    def updateSchema(params: UpdateSchemaRequest): Request[UpdateSchemaResponse]                         = js.native
+    def updateSchema(params: UpdateSchemaRequest): Request[UpdateSchemaResponse] = js.native
     def updateTypedLinkFacet(params: UpdateTypedLinkFacetRequest): Request[UpdateTypedLinkFacetResponse] = js.native
     def upgradeAppliedSchema(params: UpgradeAppliedSchemaRequest): Request[UpgradeAppliedSchemaResponse] = js.native
     def upgradePublishedSchema(params: UpgradePublishedSchemaRequest): Request[UpgradePublishedSchemaResponse] =
@@ -328,9 +328,9 @@ package clouddirectory {
         ObjectAttributeList: js.UndefOr[AttributeKeyAndValueList] = js.undefined
     ): AddFacetToObjectRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
-        "SchemaFacet"     -> SchemaFacet.asInstanceOf[js.Any]
+        "SchemaFacet" -> SchemaFacet.asInstanceOf[js.Any]
       )
 
       ObjectAttributeList.foreach(__v => __obj.updateDynamic("ObjectAttributeList")(__v.asInstanceOf[js.Any]))
@@ -364,7 +364,7 @@ package clouddirectory {
         PublishedSchemaArn: Arn
     ): ApplySchemaRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryArn"       -> DirectoryArn.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "PublishedSchemaArn" -> PublishedSchemaArn.asInstanceOf[js.Any]
       )
 
@@ -408,9 +408,9 @@ package clouddirectory {
         ParentReference: ObjectReference
     ): AttachObjectRequest = {
       val __obj = js.Dynamic.literal(
-        "ChildReference"  -> ChildReference.asInstanceOf[js.Any],
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
-        "LinkName"        -> LinkName.asInstanceOf[js.Any],
+        "ChildReference" -> ChildReference.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
+        "LinkName" -> LinkName.asInstanceOf[js.Any],
         "ParentReference" -> ParentReference.asInstanceOf[js.Any]
       )
 
@@ -449,7 +449,7 @@ package clouddirectory {
         PolicyReference: ObjectReference
     ): AttachPolicyRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
         "PolicyReference" -> PolicyReference.asInstanceOf[js.Any]
       )
@@ -486,8 +486,8 @@ package clouddirectory {
         TargetReference: ObjectReference
     ): AttachToIndexRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
-        "IndexReference"  -> IndexReference.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
+        "IndexReference" -> IndexReference.asInstanceOf[js.Any],
         "TargetReference" -> TargetReference.asInstanceOf[js.Any]
       )
 
@@ -530,11 +530,11 @@ package clouddirectory {
         TypedLinkFacet: TypedLinkSchemaAndFacetName
     ): AttachTypedLinkRequest = {
       val __obj = js.Dynamic.literal(
-        "Attributes"            -> Attributes.asInstanceOf[js.Any],
-        "DirectoryArn"          -> DirectoryArn.asInstanceOf[js.Any],
+        "Attributes" -> Attributes.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "SourceObjectReference" -> SourceObjectReference.asInstanceOf[js.Any],
         "TargetObjectReference" -> TargetObjectReference.asInstanceOf[js.Any],
-        "TypedLinkFacet"        -> TypedLinkFacet.asInstanceOf[js.Any]
+        "TypedLinkFacet" -> TypedLinkFacet.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AttachTypedLinkRequest]
@@ -576,7 +576,7 @@ package clouddirectory {
     ): AttributeKey = {
       val __obj = js.Dynamic.literal(
         "FacetName" -> FacetName.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
 
@@ -600,7 +600,7 @@ package clouddirectory {
         Value: TypedAttributeValue
     ): AttributeKeyAndValue = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -625,7 +625,7 @@ package clouddirectory {
     ): AttributeNameAndValue = {
       val __obj = js.Dynamic.literal(
         "AttributeName" -> AttributeName.asInstanceOf[js.Any],
-        "Value"         -> Value.asInstanceOf[js.Any]
+        "Value" -> Value.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AttributeNameAndValue]
@@ -651,8 +651,8 @@ package clouddirectory {
     ): BatchAddFacetToObject = {
       val __obj = js.Dynamic.literal(
         "ObjectAttributeList" -> ObjectAttributeList.asInstanceOf[js.Any],
-        "ObjectReference"     -> ObjectReference.asInstanceOf[js.Any],
-        "SchemaFacet"         -> SchemaFacet.asInstanceOf[js.Any]
+        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
+        "SchemaFacet" -> SchemaFacet.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[BatchAddFacetToObject]
@@ -693,8 +693,8 @@ package clouddirectory {
         ParentReference: ObjectReference
     ): BatchAttachObject = {
       val __obj = js.Dynamic.literal(
-        "ChildReference"  -> ChildReference.asInstanceOf[js.Any],
-        "LinkName"        -> LinkName.asInstanceOf[js.Any],
+        "ChildReference" -> ChildReference.asInstanceOf[js.Any],
+        "LinkName" -> LinkName.asInstanceOf[js.Any],
         "ParentReference" -> ParentReference.asInstanceOf[js.Any]
       )
 
@@ -777,7 +777,7 @@ package clouddirectory {
         TargetReference: ObjectReference
     ): BatchAttachToIndex = {
       val __obj = js.Dynamic.literal(
-        "IndexReference"  -> IndexReference.asInstanceOf[js.Any],
+        "IndexReference" -> IndexReference.asInstanceOf[js.Any],
         "TargetReference" -> TargetReference.asInstanceOf[js.Any]
       )
 
@@ -824,10 +824,10 @@ package clouddirectory {
         TypedLinkFacet: TypedLinkSchemaAndFacetName
     ): BatchAttachTypedLink = {
       val __obj = js.Dynamic.literal(
-        "Attributes"            -> Attributes.asInstanceOf[js.Any],
+        "Attributes" -> Attributes.asInstanceOf[js.Any],
         "SourceObjectReference" -> SourceObjectReference.asInstanceOf[js.Any],
         "TargetObjectReference" -> TargetObjectReference.asInstanceOf[js.Any],
-        "TypedLinkFacet"        -> TypedLinkFacet.asInstanceOf[js.Any]
+        "TypedLinkFacet" -> TypedLinkFacet.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[BatchAttachTypedLink]
@@ -875,7 +875,7 @@ package clouddirectory {
         ParentReference: js.UndefOr[ObjectReference] = js.undefined
     ): BatchCreateIndex = {
       val __obj = js.Dynamic.literal(
-        "IsUnique"                    -> IsUnique.asInstanceOf[js.Any],
+        "IsUnique" -> IsUnique.asInstanceOf[js.Any],
         "OrderedIndexedAttributeList" -> OrderedIndexedAttributeList.asInstanceOf[js.Any]
       )
 
@@ -928,7 +928,7 @@ package clouddirectory {
     ): BatchCreateObject = {
       val __obj = js.Dynamic.literal(
         "ObjectAttributeList" -> ObjectAttributeList.asInstanceOf[js.Any],
-        "SchemaFacet"         -> SchemaFacet.asInstanceOf[js.Any]
+        "SchemaFacet" -> SchemaFacet.asInstanceOf[js.Any]
       )
 
       BatchReferenceName.foreach(__v => __obj.updateDynamic("BatchReferenceName")(__v.asInstanceOf[js.Any]))
@@ -1010,7 +1010,7 @@ package clouddirectory {
         TargetReference: ObjectReference
     ): BatchDetachFromIndex = {
       val __obj = js.Dynamic.literal(
-        "IndexReference"  -> IndexReference.asInstanceOf[js.Any],
+        "IndexReference" -> IndexReference.asInstanceOf[js.Any],
         "TargetReference" -> TargetReference.asInstanceOf[js.Any]
       )
 
@@ -1055,7 +1055,7 @@ package clouddirectory {
         BatchReferenceName: js.UndefOr[BatchReferenceName] = js.undefined
     ): BatchDetachObject = {
       val __obj = js.Dynamic.literal(
-        "LinkName"        -> LinkName.asInstanceOf[js.Any],
+        "LinkName" -> LinkName.asInstanceOf[js.Any],
         "ParentReference" -> ParentReference.asInstanceOf[js.Any]
       )
 
@@ -1176,7 +1176,7 @@ package clouddirectory {
         TypedLinkSpecifier: TypedLinkSpecifier
     ): BatchGetLinkAttributes = {
       val __obj = js.Dynamic.literal(
-        "AttributeNames"     -> AttributeNames.asInstanceOf[js.Any],
+        "AttributeNames" -> AttributeNames.asInstanceOf[js.Any],
         "TypedLinkSpecifier" -> TypedLinkSpecifier.asInstanceOf[js.Any]
       )
 
@@ -1221,9 +1221,9 @@ package clouddirectory {
         SchemaFacet: SchemaFacet
     ): BatchGetObjectAttributes = {
       val __obj = js.Dynamic.literal(
-        "AttributeNames"  -> AttributeNames.asInstanceOf[js.Any],
+        "AttributeNames" -> AttributeNames.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
-        "SchemaFacet"     -> SchemaFacet.asInstanceOf[js.Any]
+        "SchemaFacet" -> SchemaFacet.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[BatchGetObjectAttributes]
@@ -1870,19 +1870,19 @@ package clouddirectory {
   @js.native
   sealed trait BatchReadExceptionType extends js.Any
   object BatchReadExceptionType extends js.Object {
-    val ValidationException             = "ValidationException".asInstanceOf[BatchReadExceptionType]
-    val InvalidArnException             = "InvalidArnException".asInstanceOf[BatchReadExceptionType]
-    val ResourceNotFoundException       = "ResourceNotFoundException".asInstanceOf[BatchReadExceptionType]
-    val InvalidNextTokenException       = "InvalidNextTokenException".asInstanceOf[BatchReadExceptionType]
-    val AccessDeniedException           = "AccessDeniedException".asInstanceOf[BatchReadExceptionType]
-    val NotNodeException                = "NotNodeException".asInstanceOf[BatchReadExceptionType]
-    val FacetValidationException        = "FacetValidationException".asInstanceOf[BatchReadExceptionType]
+    val ValidationException = "ValidationException".asInstanceOf[BatchReadExceptionType]
+    val InvalidArnException = "InvalidArnException".asInstanceOf[BatchReadExceptionType]
+    val ResourceNotFoundException = "ResourceNotFoundException".asInstanceOf[BatchReadExceptionType]
+    val InvalidNextTokenException = "InvalidNextTokenException".asInstanceOf[BatchReadExceptionType]
+    val AccessDeniedException = "AccessDeniedException".asInstanceOf[BatchReadExceptionType]
+    val NotNodeException = "NotNodeException".asInstanceOf[BatchReadExceptionType]
+    val FacetValidationException = "FacetValidationException".asInstanceOf[BatchReadExceptionType]
     val CannotListParentOfRootException = "CannotListParentOfRootException".asInstanceOf[BatchReadExceptionType]
-    val NotIndexException               = "NotIndexException".asInstanceOf[BatchReadExceptionType]
-    val NotPolicyException              = "NotPolicyException".asInstanceOf[BatchReadExceptionType]
-    val DirectoryNotEnabledException    = "DirectoryNotEnabledException".asInstanceOf[BatchReadExceptionType]
-    val LimitExceededException          = "LimitExceededException".asInstanceOf[BatchReadExceptionType]
-    val InternalServiceException        = "InternalServiceException".asInstanceOf[BatchReadExceptionType]
+    val NotIndexException = "NotIndexException".asInstanceOf[BatchReadExceptionType]
+    val NotPolicyException = "NotPolicyException".asInstanceOf[BatchReadExceptionType]
+    val DirectoryNotEnabledException = "DirectoryNotEnabledException".asInstanceOf[BatchReadExceptionType]
+    val LimitExceededException = "LimitExceededException".asInstanceOf[BatchReadExceptionType]
+    val InternalServiceException = "InternalServiceException".asInstanceOf[BatchReadExceptionType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1999,7 +1999,7 @@ package clouddirectory {
     ): BatchReadRequest = {
       val __obj = js.Dynamic.literal(
         "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
-        "Operations"   -> Operations.asInstanceOf[js.Any]
+        "Operations" -> Operations.asInstanceOf[js.Any]
       )
 
       ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
@@ -2098,7 +2098,7 @@ package clouddirectory {
     ): BatchRemoveFacetFromObject = {
       val __obj = js.Dynamic.literal(
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
-        "SchemaFacet"     -> SchemaFacet.asInstanceOf[js.Any]
+        "SchemaFacet" -> SchemaFacet.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[BatchRemoveFacetFromObject]
@@ -2137,7 +2137,7 @@ package clouddirectory {
         TypedLinkSpecifier: TypedLinkSpecifier
     ): BatchUpdateLinkAttributes = {
       val __obj = js.Dynamic.literal(
-        "AttributeUpdates"   -> AttributeUpdates.asInstanceOf[js.Any],
+        "AttributeUpdates" -> AttributeUpdates.asInstanceOf[js.Any],
         "TypedLinkSpecifier" -> TypedLinkSpecifier.asInstanceOf[js.Any]
       )
 
@@ -2178,7 +2178,7 @@ package clouddirectory {
     ): BatchUpdateObjectAttributes = {
       val __obj = js.Dynamic.literal(
         "AttributeUpdates" -> AttributeUpdates.asInstanceOf[js.Any],
-        "ObjectReference"  -> ObjectReference.asInstanceOf[js.Any]
+        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[BatchUpdateObjectAttributes]
@@ -2340,7 +2340,7 @@ package clouddirectory {
     ): BatchWriteRequest = {
       val __obj = js.Dynamic.literal(
         "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
-        "Operations"   -> Operations.asInstanceOf[js.Any]
+        "Operations" -> Operations.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[BatchWriteRequest]
@@ -2367,7 +2367,7 @@ package clouddirectory {
   sealed trait ConsistencyLevel extends js.Any
   object ConsistencyLevel extends js.Object {
     val SERIALIZABLE = "SERIALIZABLE".asInstanceOf[ConsistencyLevel]
-    val EVENTUAL     = "EVENTUAL".asInstanceOf[ConsistencyLevel]
+    val EVENTUAL = "EVENTUAL".asInstanceOf[ConsistencyLevel]
 
     val values = js.Object.freeze(js.Array(SERIALIZABLE, EVENTUAL))
   }
@@ -2385,7 +2385,7 @@ package clouddirectory {
         SchemaArn: Arn
     ): CreateDirectoryRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"      -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
 
@@ -2411,8 +2411,8 @@ package clouddirectory {
     ): CreateDirectoryResponse = {
       val __obj = js.Dynamic.literal(
         "AppliedSchemaArn" -> AppliedSchemaArn.asInstanceOf[js.Any],
-        "DirectoryArn"     -> DirectoryArn.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "ObjectIdentifier" -> ObjectIdentifier.asInstanceOf[js.Any]
       )
 
@@ -2439,7 +2439,7 @@ package clouddirectory {
         ObjectType: js.UndefOr[ObjectType] = js.undefined
     ): CreateFacetRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"      -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
 
@@ -2482,8 +2482,8 @@ package clouddirectory {
         ParentReference: js.UndefOr[ObjectReference] = js.undefined
     ): CreateIndexRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryArn"                -> DirectoryArn.asInstanceOf[js.Any],
-        "IsUnique"                    -> IsUnique.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
+        "IsUnique" -> IsUnique.asInstanceOf[js.Any],
         "OrderedIndexedAttributeList" -> OrderedIndexedAttributeList.asInstanceOf[js.Any]
       )
 
@@ -2602,7 +2602,7 @@ package clouddirectory {
         SchemaArn: Arn
     ): CreateTypedLinkFacetRequest = {
       val __obj = js.Dynamic.literal(
-        "Facet"     -> Facet.asInstanceOf[js.Any],
+        "Facet" -> Facet.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
 
@@ -2672,7 +2672,7 @@ package clouddirectory {
         SchemaArn: Arn
     ): DeleteFacetRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"      -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
 
@@ -2706,7 +2706,7 @@ package clouddirectory {
         ObjectReference: ObjectReference
     ): DeleteObjectRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
@@ -2774,7 +2774,7 @@ package clouddirectory {
         SchemaArn: Arn
     ): DeleteTypedLinkFacetRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"      -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
 
@@ -2810,8 +2810,8 @@ package clouddirectory {
         TargetReference: ObjectReference
     ): DetachFromIndexRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
-        "IndexReference"  -> IndexReference.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
+        "IndexReference" -> IndexReference.asInstanceOf[js.Any],
         "TargetReference" -> TargetReference.asInstanceOf[js.Any]
       )
 
@@ -2850,8 +2850,8 @@ package clouddirectory {
         ParentReference: ObjectReference
     ): DetachObjectRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
-        "LinkName"        -> LinkName.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
+        "LinkName" -> LinkName.asInstanceOf[js.Any],
         "ParentReference" -> ParentReference.asInstanceOf[js.Any]
       )
 
@@ -2890,7 +2890,7 @@ package clouddirectory {
         PolicyReference: ObjectReference
     ): DetachPolicyRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
         "PolicyReference" -> PolicyReference.asInstanceOf[js.Any]
       )
@@ -2925,7 +2925,7 @@ package clouddirectory {
         TypedLinkSpecifier: TypedLinkSpecifier
     ): DetachTypedLinkRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryArn"       -> DirectoryArn.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "TypedLinkSpecifier" -> TypedLinkSpecifier.asInstanceOf[js.Any]
       )
 
@@ -2964,9 +2964,9 @@ package clouddirectory {
   @js.native
   sealed trait DirectoryState extends js.Any
   object DirectoryState extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[DirectoryState]
+    val ENABLED = "ENABLED".asInstanceOf[DirectoryState]
     val DISABLED = "DISABLED".asInstanceOf[DirectoryState]
-    val DELETED  = "DELETED".asInstanceOf[DirectoryState]
+    val DELETED = "DELETED".asInstanceOf[DirectoryState]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED, DELETED))
   }
@@ -3145,7 +3145,7 @@ package clouddirectory {
     ): FacetAttributeReference = {
       val __obj = js.Dynamic.literal(
         "TargetAttributeName" -> TargetAttributeName.asInstanceOf[js.Any],
-        "TargetFacetName"     -> TargetFacetName.asInstanceOf[js.Any]
+        "TargetFacetName" -> TargetFacetName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[FacetAttributeReference]
@@ -3155,12 +3155,12 @@ package clouddirectory {
   @js.native
   sealed trait FacetAttributeType extends js.Any
   object FacetAttributeType extends js.Object {
-    val STRING   = "STRING".asInstanceOf[FacetAttributeType]
-    val BINARY   = "BINARY".asInstanceOf[FacetAttributeType]
-    val BOOLEAN  = "BOOLEAN".asInstanceOf[FacetAttributeType]
-    val NUMBER   = "NUMBER".asInstanceOf[FacetAttributeType]
+    val STRING = "STRING".asInstanceOf[FacetAttributeType]
+    val BINARY = "BINARY".asInstanceOf[FacetAttributeType]
+    val BOOLEAN = "BOOLEAN".asInstanceOf[FacetAttributeType]
+    val NUMBER = "NUMBER".asInstanceOf[FacetAttributeType]
     val DATETIME = "DATETIME".asInstanceOf[FacetAttributeType]
-    val VARIANT  = "VARIANT".asInstanceOf[FacetAttributeType]
+    val VARIANT = "VARIANT".asInstanceOf[FacetAttributeType]
 
     val values = js.Object.freeze(js.Array(STRING, BINARY, BOOLEAN, NUMBER, DATETIME, VARIANT))
   }
@@ -3190,7 +3190,7 @@ package clouddirectory {
   @js.native
   sealed trait FacetStyle extends js.Any
   object FacetStyle extends js.Object {
-    val STATIC  = "STATIC".asInstanceOf[FacetStyle]
+    val STATIC = "STATIC".asInstanceOf[FacetStyle]
     val DYNAMIC = "DYNAMIC".asInstanceOf[FacetStyle]
 
     val values = js.Object.freeze(js.Array(STATIC, DYNAMIC))
@@ -3279,7 +3279,7 @@ package clouddirectory {
         SchemaArn: Arn
     ): GetFacetRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"      -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
 
@@ -3320,8 +3320,8 @@ package clouddirectory {
         ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined
     ): GetLinkAttributesRequest = {
       val __obj = js.Dynamic.literal(
-        "AttributeNames"     -> AttributeNames.asInstanceOf[js.Any],
-        "DirectoryArn"       -> DirectoryArn.asInstanceOf[js.Any],
+        "AttributeNames" -> AttributeNames.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "TypedLinkSpecifier" -> TypedLinkSpecifier.asInstanceOf[js.Any]
       )
 
@@ -3365,10 +3365,10 @@ package clouddirectory {
         ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined
     ): GetObjectAttributesRequest = {
       val __obj = js.Dynamic.literal(
-        "AttributeNames"  -> AttributeNames.asInstanceOf[js.Any],
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
+        "AttributeNames" -> AttributeNames.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
-        "SchemaFacet"     -> SchemaFacet.asInstanceOf[js.Any]
+        "SchemaFacet" -> SchemaFacet.asInstanceOf[js.Any]
       )
 
       ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
@@ -3407,7 +3407,7 @@ package clouddirectory {
         ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined
     ): GetObjectInformationRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
@@ -3485,7 +3485,7 @@ package clouddirectory {
         SchemaArn: Arn
     ): GetTypedLinkFacetInformationRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"      -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
 
@@ -3640,7 +3640,7 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListAttachedIndicesRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "TargetReference" -> TargetReference.asInstanceOf[js.Any]
       )
 
@@ -3768,7 +3768,7 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListFacetAttributesRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"      -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
 
@@ -3863,7 +3863,7 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListIncomingTypedLinksRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
@@ -3916,7 +3916,7 @@ package clouddirectory {
         RangesOnIndexedValues: js.UndefOr[ObjectAttributeRangeList] = js.undefined
     ): ListIndexRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryArn"   -> DirectoryArn.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "IndexReference" -> IndexReference.asInstanceOf[js.Any]
       )
 
@@ -4009,7 +4009,7 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListObjectAttributesRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
@@ -4059,7 +4059,7 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListObjectChildrenRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
@@ -4106,7 +4106,7 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListObjectParentPathsRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
@@ -4158,7 +4158,7 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListObjectParentsRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
@@ -4213,7 +4213,7 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListObjectPoliciesRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
@@ -4266,7 +4266,7 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListOutgoingTypedLinksRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
@@ -4317,7 +4317,7 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListPolicyAttachmentsRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "PolicyReference" -> PolicyReference.asInstanceOf[js.Any]
       )
 
@@ -4448,7 +4448,7 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListTypedLinkFacetAttributesRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"      -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
 
@@ -4537,7 +4537,7 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): LookupPolicyRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
@@ -4680,10 +4680,10 @@ package clouddirectory {
   @js.native
   sealed trait ObjectType extends js.Any
   object ObjectType extends js.Object {
-    val NODE      = "NODE".asInstanceOf[ObjectType]
+    val NODE = "NODE".asInstanceOf[ObjectType]
     val LEAF_NODE = "LEAF_NODE".asInstanceOf[ObjectType]
-    val POLICY    = "POLICY".asInstanceOf[ObjectType]
-    val INDEX     = "INDEX".asInstanceOf[ObjectType]
+    val POLICY = "POLICY".asInstanceOf[ObjectType]
+    val INDEX = "INDEX".asInstanceOf[ObjectType]
 
     val values = js.Object.freeze(js.Array(NODE, LEAF_NODE, POLICY, INDEX))
   }
@@ -4775,7 +4775,7 @@ package clouddirectory {
     ): PublishSchemaRequest = {
       val __obj = js.Dynamic.literal(
         "DevelopmentSchemaArn" -> DevelopmentSchemaArn.asInstanceOf[js.Any],
-        "Version"              -> Version.asInstanceOf[js.Any]
+        "Version" -> Version.asInstanceOf[js.Any]
       )
 
       MinorVersion.foreach(__v => __obj.updateDynamic("MinorVersion")(__v.asInstanceOf[js.Any]))
@@ -4813,7 +4813,7 @@ package clouddirectory {
         SchemaArn: Arn
     ): PutSchemaFromJsonRequest = {
       val __obj = js.Dynamic.literal(
-        "Document"  -> Document.asInstanceOf[js.Any],
+        "Document" -> Document.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
 
@@ -4840,11 +4840,11 @@ package clouddirectory {
   @js.native
   sealed trait RangeMode extends js.Any
   object RangeMode extends js.Object {
-    val FIRST                      = "FIRST".asInstanceOf[RangeMode]
-    val LAST                       = "LAST".asInstanceOf[RangeMode]
+    val FIRST = "FIRST".asInstanceOf[RangeMode]
+    val LAST = "LAST".asInstanceOf[RangeMode]
     val LAST_BEFORE_MISSING_VALUES = "LAST_BEFORE_MISSING_VALUES".asInstanceOf[RangeMode]
-    val INCLUSIVE                  = "INCLUSIVE".asInstanceOf[RangeMode]
-    val EXCLUSIVE                  = "EXCLUSIVE".asInstanceOf[RangeMode]
+    val INCLUSIVE = "INCLUSIVE".asInstanceOf[RangeMode]
+    val EXCLUSIVE = "EXCLUSIVE".asInstanceOf[RangeMode]
 
     val values = js.Object.freeze(js.Array(FIRST, LAST, LAST_BEFORE_MISSING_VALUES, INCLUSIVE, EXCLUSIVE))
   }
@@ -4864,9 +4864,9 @@ package clouddirectory {
         SchemaFacet: SchemaFacet
     ): RemoveFacetFromObjectRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
-        "SchemaFacet"     -> SchemaFacet.asInstanceOf[js.Any]
+        "SchemaFacet" -> SchemaFacet.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RemoveFacetFromObjectRequest]
@@ -4890,7 +4890,7 @@ package clouddirectory {
   sealed trait RequiredAttributeBehavior extends js.Any
   object RequiredAttributeBehavior extends js.Object {
     val REQUIRED_ALWAYS = "REQUIRED_ALWAYS".asInstanceOf[RequiredAttributeBehavior]
-    val NOT_REQUIRED    = "NOT_REQUIRED".asInstanceOf[RequiredAttributeBehavior]
+    val NOT_REQUIRED = "NOT_REQUIRED".asInstanceOf[RequiredAttributeBehavior]
 
     val values = js.Object.freeze(js.Array(REQUIRED_ALWAYS, NOT_REQUIRED))
   }
@@ -4920,10 +4920,10 @@ package clouddirectory {
   @js.native
   sealed trait RuleType extends js.Any
   object RuleType extends js.Object {
-    val BINARY_LENGTH     = "BINARY_LENGTH".asInstanceOf[RuleType]
+    val BINARY_LENGTH = "BINARY_LENGTH".asInstanceOf[RuleType]
     val NUMBER_COMPARISON = "NUMBER_COMPARISON".asInstanceOf[RuleType]
-    val STRING_FROM_SET   = "STRING_FROM_SET".asInstanceOf[RuleType]
-    val STRING_LENGTH     = "STRING_LENGTH".asInstanceOf[RuleType]
+    val STRING_FROM_SET = "STRING_FROM_SET".asInstanceOf[RuleType]
+    val STRING_LENGTH = "STRING_LENGTH".asInstanceOf[RuleType]
 
     val values = js.Object.freeze(js.Array(BINARY_LENGTH, NUMBER_COMPARISON, STRING_FROM_SET, STRING_LENGTH))
   }
@@ -4986,7 +4986,7 @@ package clouddirectory {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -5057,7 +5057,7 @@ package clouddirectory {
         StartValue: js.UndefOr[TypedAttributeValue] = js.undefined
     ): TypedAttributeValueRange = {
       val __obj = js.Dynamic.literal(
-        "EndMode"   -> EndMode.asInstanceOf[js.Any],
+        "EndMode" -> EndMode.asInstanceOf[js.Any],
         "StartMode" -> StartMode.asInstanceOf[js.Any]
       )
 
@@ -5091,9 +5091,9 @@ package clouddirectory {
         Rules: js.UndefOr[RuleMap] = js.undefined
     ): TypedLinkAttributeDefinition = {
       val __obj = js.Dynamic.literal(
-        "Name"             -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "RequiredBehavior" -> RequiredBehavior.asInstanceOf[js.Any],
-        "Type"             -> Type.asInstanceOf[js.Any]
+        "Type" -> Type.asInstanceOf[js.Any]
       )
 
       DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
@@ -5145,9 +5145,9 @@ package clouddirectory {
         Name: TypedLinkName
     ): TypedLinkFacet = {
       val __obj = js.Dynamic.literal(
-        "Attributes"             -> Attributes.asInstanceOf[js.Any],
+        "Attributes" -> Attributes.asInstanceOf[js.Any],
         "IdentityAttributeOrder" -> IdentityAttributeOrder.asInstanceOf[js.Any],
-        "Name"                   -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TypedLinkFacet]
@@ -5170,7 +5170,7 @@ package clouddirectory {
         Attribute: TypedLinkAttributeDefinition
     ): TypedLinkFacetAttributeUpdate = {
       val __obj = js.Dynamic.literal(
-        "Action"    -> Action.asInstanceOf[js.Any],
+        "Action" -> Action.asInstanceOf[js.Any],
         "Attribute" -> Attribute.asInstanceOf[js.Any]
       )
 
@@ -5194,7 +5194,7 @@ package clouddirectory {
         TypedLinkName: TypedLinkName
     ): TypedLinkSchemaAndFacetName = {
       val __obj = js.Dynamic.literal(
-        "SchemaArn"     -> SchemaArn.asInstanceOf[js.Any],
+        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any],
         "TypedLinkName" -> TypedLinkName.asInstanceOf[js.Any]
       )
 
@@ -5223,9 +5223,9 @@ package clouddirectory {
     ): TypedLinkSpecifier = {
       val __obj = js.Dynamic.literal(
         "IdentityAttributeValues" -> IdentityAttributeValues.asInstanceOf[js.Any],
-        "SourceObjectReference"   -> SourceObjectReference.asInstanceOf[js.Any],
-        "TargetObjectReference"   -> TargetObjectReference.asInstanceOf[js.Any],
-        "TypedLinkFacet"          -> TypedLinkFacet.asInstanceOf[js.Any]
+        "SourceObjectReference" -> SourceObjectReference.asInstanceOf[js.Any],
+        "TargetObjectReference" -> TargetObjectReference.asInstanceOf[js.Any],
+        "TypedLinkFacet" -> TypedLinkFacet.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TypedLinkSpecifier]
@@ -5246,7 +5246,7 @@ package clouddirectory {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -5270,7 +5270,7 @@ package clouddirectory {
   sealed trait UpdateActionType extends js.Any
   object UpdateActionType extends js.Object {
     val CREATE_OR_UPDATE = "CREATE_OR_UPDATE".asInstanceOf[UpdateActionType]
-    val DELETE           = "DELETE".asInstanceOf[UpdateActionType]
+    val DELETE = "DELETE".asInstanceOf[UpdateActionType]
 
     val values = js.Object.freeze(js.Array(CREATE_OR_UPDATE, DELETE))
   }
@@ -5292,7 +5292,7 @@ package clouddirectory {
         ObjectType: js.UndefOr[ObjectType] = js.undefined
     ): UpdateFacetRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"      -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
 
@@ -5330,8 +5330,8 @@ package clouddirectory {
         TypedLinkSpecifier: TypedLinkSpecifier
     ): UpdateLinkAttributesRequest = {
       val __obj = js.Dynamic.literal(
-        "AttributeUpdates"   -> AttributeUpdates.asInstanceOf[js.Any],
-        "DirectoryArn"       -> DirectoryArn.asInstanceOf[js.Any],
+        "AttributeUpdates" -> AttributeUpdates.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "TypedLinkSpecifier" -> TypedLinkSpecifier.asInstanceOf[js.Any]
       )
 
@@ -5368,8 +5368,8 @@ package clouddirectory {
     ): UpdateObjectAttributesRequest = {
       val __obj = js.Dynamic.literal(
         "AttributeUpdates" -> AttributeUpdates.asInstanceOf[js.Any],
-        "DirectoryArn"     -> DirectoryArn.asInstanceOf[js.Any],
-        "ObjectReference"  -> ObjectReference.asInstanceOf[js.Any]
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
+        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateObjectAttributesRequest]
@@ -5405,7 +5405,7 @@ package clouddirectory {
         SchemaArn: Arn
     ): UpdateSchemaRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"      -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
 
@@ -5446,10 +5446,10 @@ package clouddirectory {
         SchemaArn: Arn
     ): UpdateTypedLinkFacetRequest = {
       val __obj = js.Dynamic.literal(
-        "AttributeUpdates"       -> AttributeUpdates.asInstanceOf[js.Any],
+        "AttributeUpdates" -> AttributeUpdates.asInstanceOf[js.Any],
         "IdentityAttributeOrder" -> IdentityAttributeOrder.asInstanceOf[js.Any],
-        "Name"                   -> Name.asInstanceOf[js.Any],
-        "SchemaArn"              -> SchemaArn.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any],
+        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateTypedLinkFacetRequest]
@@ -5484,7 +5484,7 @@ package clouddirectory {
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): UpgradeAppliedSchemaRequest = {
       val __obj = js.Dynamic.literal(
-        "DirectoryArn"       -> DirectoryArn.asInstanceOf[js.Any],
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "PublishedSchemaArn" -> PublishedSchemaArn.asInstanceOf[js.Any]
       )
 
@@ -5530,8 +5530,8 @@ package clouddirectory {
     ): UpgradePublishedSchemaRequest = {
       val __obj = js.Dynamic.literal(
         "DevelopmentSchemaArn" -> DevelopmentSchemaArn.asInstanceOf[js.Any],
-        "MinorVersion"         -> MinorVersion.asInstanceOf[js.Any],
-        "PublishedSchemaArn"   -> PublishedSchemaArn.asInstanceOf[js.Any]
+        "MinorVersion" -> MinorVersion.asInstanceOf[js.Any],
+        "PublishedSchemaArn" -> PublishedSchemaArn.asInstanceOf[js.Any]
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))

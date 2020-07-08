@@ -7,79 +7,83 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object lightsail {
-  type AddOnList                                            = js.Array[AddOn]
-  type AddOnRequestList                                     = js.Array[AddOnRequest]
-  type AttachedDiskList                                     = js.Array[AttachedDisk]
-  type AttachedDiskMap                                      = js.Dictionary[DiskMapList]
-  type AutoSnapshotDate                                     = String
-  type AutoSnapshotDetailsList                              = js.Array[AutoSnapshotDetails]
-  type AvailabilityZoneList                                 = js.Array[AvailabilityZone]
-  type Base64                                               = String
-  type BlueprintList                                        = js.Array[Blueprint]
-  type BundleList                                           = js.Array[Bundle]
-  type CloudFormationStackRecordList                        = js.Array[CloudFormationStackRecord]
-  type CloudFormationStackRecordSourceInfoList              = js.Array[CloudFormationStackRecordSourceInfo]
-  type DiskInfoList                                         = js.Array[DiskInfo]
-  type DiskList                                             = js.Array[Disk]
-  type DiskMapList                                          = js.Array[DiskMap]
-  type DiskSnapshotList                                     = js.Array[DiskSnapshot]
-  type DomainEntryList                                      = js.Array[DomainEntry]
-  type DomainEntryOptions                                   = js.Dictionary[String]
-  type DomainEntryOptionsKeys                               = String
-  type DomainEntryType                                      = String
-  type DomainList                                           = js.Array[Domain]
-  type DomainName                                           = String
-  type DomainNameList                                       = js.Array[DomainName]
-  type ExportSnapshotRecordList                             = js.Array[ExportSnapshotRecord]
-  type HostKeysList                                         = js.Array[HostKeyAttributes]
-  type InstanceEntryList                                    = js.Array[InstanceEntry]
-  type InstanceHealthSummaryList                            = js.Array[InstanceHealthSummary]
-  type InstanceList                                         = js.Array[Instance]
-  type InstancePlatformList                                 = js.Array[InstancePlatform]
-  type InstancePortInfoList                                 = js.Array[InstancePortInfo]
-  type InstancePortStateList                                = js.Array[InstancePortState]
-  type InstanceSnapshotList                                 = js.Array[InstanceSnapshot]
-  type IpAddress                                            = String
-  type IpV6Address                                          = String
-  type IsoDate                                              = js.Date
-  type KeyPairList                                          = js.Array[KeyPair]
-  type LoadBalancerConfigurationOptions                     = js.Dictionary[String]
-  type LoadBalancerList                                     = js.Array[LoadBalancer]
+  type AddOnList = js.Array[AddOn]
+  type AddOnRequestList = js.Array[AddOnRequest]
+  type AlarmsList = js.Array[Alarm]
+  type AttachedDiskList = js.Array[AttachedDisk]
+  type AttachedDiskMap = js.Dictionary[DiskMapList]
+  type AutoSnapshotDate = String
+  type AutoSnapshotDetailsList = js.Array[AutoSnapshotDetails]
+  type AvailabilityZoneList = js.Array[AvailabilityZone]
+  type Base64 = String
+  type BlueprintList = js.Array[Blueprint]
+  type BundleList = js.Array[Bundle]
+  type CloudFormationStackRecordList = js.Array[CloudFormationStackRecord]
+  type CloudFormationStackRecordSourceInfoList = js.Array[CloudFormationStackRecordSourceInfo]
+  type ContactMethodsList = js.Array[ContactMethod]
+  type ContactProtocolsList = js.Array[ContactProtocol]
+  type DiskInfoList = js.Array[DiskInfo]
+  type DiskList = js.Array[Disk]
+  type DiskMapList = js.Array[DiskMap]
+  type DiskSnapshotList = js.Array[DiskSnapshot]
+  type DomainEntryList = js.Array[DomainEntry]
+  type DomainEntryOptions = js.Dictionary[String]
+  type DomainEntryOptionsKeys = String
+  type DomainEntryType = String
+  type DomainList = js.Array[Domain]
+  type DomainName = String
+  type DomainNameList = js.Array[DomainName]
+  type ExportSnapshotRecordList = js.Array[ExportSnapshotRecord]
+  type HostKeysList = js.Array[HostKeyAttributes]
+  type InstanceEntryList = js.Array[InstanceEntry]
+  type InstanceHealthSummaryList = js.Array[InstanceHealthSummary]
+  type InstanceList = js.Array[Instance]
+  type InstancePlatformList = js.Array[InstancePlatform]
+  type InstancePortInfoList = js.Array[InstancePortInfo]
+  type InstancePortStateList = js.Array[InstancePortState]
+  type InstanceSnapshotList = js.Array[InstanceSnapshot]
+  type IpAddress = String
+  type IpV6Address = String
+  type IsoDate = js.Date
+  type KeyPairList = js.Array[KeyPair]
+  type LoadBalancerConfigurationOptions = js.Dictionary[String]
+  type LoadBalancerList = js.Array[LoadBalancer]
   type LoadBalancerTlsCertificateDomainValidationOptionList = js.Array[LoadBalancerTlsCertificateDomainValidationOption]
   type LoadBalancerTlsCertificateDomainValidationRecordList = js.Array[LoadBalancerTlsCertificateDomainValidationRecord]
-  type LoadBalancerTlsCertificateList                       = js.Array[LoadBalancerTlsCertificate]
-  type LoadBalancerTlsCertificateSummaryList                = js.Array[LoadBalancerTlsCertificateSummary]
-  type LogEventList                                         = js.Array[LogEvent]
-  type MetricDatapointList                                  = js.Array[MetricDatapoint]
-  type MetricPeriod                                         = Int
-  type MetricStatisticList                                  = js.Array[MetricStatistic]
-  type NonEmptyString                                       = String
-  type OperationList                                        = js.Array[Operation]
-  type PendingMaintenanceActionList                         = js.Array[PendingMaintenanceAction]
-  type Port                                                 = Int
-  type PortInfoList                                         = js.Array[PortInfo]
-  type PortList                                             = js.Array[Port]
-  type RegionList                                           = js.Array[Region]
-  type RelationalDatabaseBlueprintList                      = js.Array[RelationalDatabaseBlueprint]
-  type RelationalDatabaseBundleList                         = js.Array[RelationalDatabaseBundle]
-  type RelationalDatabaseEventList                          = js.Array[RelationalDatabaseEvent]
-  type RelationalDatabaseList                               = js.Array[RelationalDatabase]
-  type RelationalDatabaseParameterList                      = js.Array[RelationalDatabaseParameter]
-  type RelationalDatabaseSnapshotList                       = js.Array[RelationalDatabaseSnapshot]
-  type ResourceArn                                          = String
-  type ResourceName                                         = String
-  type ResourceNameList                                     = js.Array[ResourceName]
-  type SensitiveString                                      = String
-  type StaticIpList                                         = js.Array[StaticIp]
-  type StringList                                           = js.Array[String]
-  type StringMax256                                         = String
-  type TagKey                                               = String
-  type TagKeyList                                           = js.Array[TagKey]
-  type TagList                                              = js.Array[Tag]
-  type TagValue                                             = String
-  type TimeOfDay                                            = String
-  type double                                               = Double
-  type timestamp                                            = js.Date
+  type LoadBalancerTlsCertificateList = js.Array[LoadBalancerTlsCertificate]
+  type LoadBalancerTlsCertificateSummaryList = js.Array[LoadBalancerTlsCertificateSummary]
+  type LogEventList = js.Array[LogEvent]
+  type MetricDatapointList = js.Array[MetricDatapoint]
+  type MetricPeriod = Int
+  type MetricStatisticList = js.Array[MetricStatistic]
+  type NonEmptyString = String
+  type NotificationTriggerList = js.Array[AlarmState]
+  type OperationList = js.Array[Operation]
+  type PendingMaintenanceActionList = js.Array[PendingMaintenanceAction]
+  type Port = Int
+  type PortInfoList = js.Array[PortInfo]
+  type PortList = js.Array[Port]
+  type RegionList = js.Array[Region]
+  type RelationalDatabaseBlueprintList = js.Array[RelationalDatabaseBlueprint]
+  type RelationalDatabaseBundleList = js.Array[RelationalDatabaseBundle]
+  type RelationalDatabaseEventList = js.Array[RelationalDatabaseEvent]
+  type RelationalDatabaseList = js.Array[RelationalDatabase]
+  type RelationalDatabaseParameterList = js.Array[RelationalDatabaseParameter]
+  type RelationalDatabaseSnapshotList = js.Array[RelationalDatabaseSnapshot]
+  type ResourceArn = String
+  type ResourceName = String
+  type ResourceNameList = js.Array[ResourceName]
+  type SensitiveString = String
+  type StaticIpList = js.Array[StaticIp]
+  type StringList = js.Array[String]
+  type StringMax256 = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type TimeOfDay = String
+  type double = Double
+  type timestamp = js.Date
 
   implicit final class LightsailOps(private val service: Lightsail) extends AnyVal {
 
@@ -104,6 +108,8 @@ package object lightsail {
     @inline def createCloudFormationStackFuture(
         params: CreateCloudFormationStackRequest
     ): Future[CreateCloudFormationStackResult] = service.createCloudFormationStack(params).promise().toFuture
+    @inline def createContactMethodFuture(params: CreateContactMethodRequest): Future[CreateContactMethodResult] =
+      service.createContactMethod(params).promise().toFuture
     @inline def createDiskFromSnapshotFuture(
         params: CreateDiskFromSnapshotRequest
     ): Future[CreateDiskFromSnapshotResult] = service.createDiskFromSnapshot(params).promise().toFuture
@@ -142,8 +148,12 @@ package object lightsail {
         params: CreateRelationalDatabaseSnapshotRequest
     ): Future[CreateRelationalDatabaseSnapshotResult] =
       service.createRelationalDatabaseSnapshot(params).promise().toFuture
+    @inline def deleteAlarmFuture(params: DeleteAlarmRequest): Future[DeleteAlarmResult] =
+      service.deleteAlarm(params).promise().toFuture
     @inline def deleteAutoSnapshotFuture(params: DeleteAutoSnapshotRequest): Future[DeleteAutoSnapshotResult] =
       service.deleteAutoSnapshot(params).promise().toFuture
+    @inline def deleteContactMethodFuture(params: DeleteContactMethodRequest): Future[DeleteContactMethodResult] =
+      service.deleteContactMethod(params).promise().toFuture
     @inline def deleteDiskFuture(params: DeleteDiskRequest): Future[DeleteDiskResult] =
       service.deleteDisk(params).promise().toFuture
     @inline def deleteDiskSnapshotFuture(params: DeleteDiskSnapshotRequest): Future[DeleteDiskSnapshotResult] =
@@ -193,6 +203,8 @@ package object lightsail {
       service.exportSnapshot(params).promise().toFuture
     @inline def getActiveNamesFuture(params: GetActiveNamesRequest): Future[GetActiveNamesResult] =
       service.getActiveNames(params).promise().toFuture
+    @inline def getAlarmsFuture(params: GetAlarmsRequest): Future[GetAlarmsResult] =
+      service.getAlarms(params).promise().toFuture
     @inline def getAutoSnapshotsFuture(params: GetAutoSnapshotsRequest): Future[GetAutoSnapshotsResult] =
       service.getAutoSnapshots(params).promise().toFuture
     @inline def getBlueprintsFuture(params: GetBlueprintsRequest): Future[GetBlueprintsResult] =
@@ -202,6 +214,8 @@ package object lightsail {
     @inline def getCloudFormationStackRecordsFuture(
         params: GetCloudFormationStackRecordsRequest
     ): Future[GetCloudFormationStackRecordsResult] = service.getCloudFormationStackRecords(params).promise().toFuture
+    @inline def getContactMethodsFuture(params: GetContactMethodsRequest): Future[GetContactMethodsResult] =
+      service.getContactMethods(params).promise().toFuture
     @inline def getDiskFuture(params: GetDiskRequest): Future[GetDiskResult] =
       service.getDisk(params).promise().toFuture
     @inline def getDiskSnapshotFuture(params: GetDiskSnapshotRequest): Future[GetDiskSnapshotResult] =
@@ -310,6 +324,8 @@ package object lightsail {
     ): Future[OpenInstancePublicPortsResult] = service.openInstancePublicPorts(params).promise().toFuture
     @inline def peerVpcFuture(params: PeerVpcRequest): Future[PeerVpcResult] =
       service.peerVpc(params).promise().toFuture
+    @inline def putAlarmFuture(params: PutAlarmRequest): Future[PutAlarmResult] =
+      service.putAlarm(params).promise().toFuture
     @inline def putInstancePublicPortsFuture(
         params: PutInstancePublicPortsRequest
     ): Future[PutInstancePublicPortsResult] = service.putInstancePublicPorts(params).promise().toFuture
@@ -320,6 +336,9 @@ package object lightsail {
     ): Future[RebootRelationalDatabaseResult] = service.rebootRelationalDatabase(params).promise().toFuture
     @inline def releaseStaticIpFuture(params: ReleaseStaticIpRequest): Future[ReleaseStaticIpResult] =
       service.releaseStaticIp(params).promise().toFuture
+    @inline def sendContactMethodVerificationFuture(
+        params: SendContactMethodVerificationRequest
+    ): Future[SendContactMethodVerificationResult] = service.sendContactMethodVerification(params).promise().toFuture
     @inline def startInstanceFuture(params: StartInstanceRequest): Future[StartInstanceResult] =
       service.startInstance(params).promise().toFuture
     @inline def startRelationalDatabaseFuture(
@@ -332,6 +351,8 @@ package object lightsail {
     ): Future[StopRelationalDatabaseResult] = service.stopRelationalDatabase(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResult] =
       service.tagResource(params).promise().toFuture
+    @inline def testAlarmFuture(params: TestAlarmRequest): Future[TestAlarmResult] =
+      service.testAlarm(params).promise().toFuture
     @inline def unpeerVpcFuture(params: UnpeerVpcRequest): Future[UnpeerVpcResult] =
       service.unpeerVpc(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResult] =
@@ -358,30 +379,31 @@ package lightsail {
     def this(config: AWSConfig) = this()
 
     def allocateStaticIp(params: AllocateStaticIpRequest): Request[AllocateStaticIpResult] = js.native
-    def attachDisk(params: AttachDiskRequest): Request[AttachDiskResult]                   = js.native
+    def attachDisk(params: AttachDiskRequest): Request[AttachDiskResult] = js.native
     def attachInstancesToLoadBalancer(
         params: AttachInstancesToLoadBalancerRequest
     ): Request[AttachInstancesToLoadBalancerResult] = js.native
     def attachLoadBalancerTlsCertificate(
         params: AttachLoadBalancerTlsCertificateRequest
-    ): Request[AttachLoadBalancerTlsCertificateResult]                               = js.native
+    ): Request[AttachLoadBalancerTlsCertificateResult] = js.native
     def attachStaticIp(params: AttachStaticIpRequest): Request[AttachStaticIpResult] = js.native
     def closeInstancePublicPorts(params: CloseInstancePublicPortsRequest): Request[CloseInstancePublicPortsResult] =
       js.native
     def copySnapshot(params: CopySnapshotRequest): Request[CopySnapshotResult] = js.native
     def createCloudFormationStack(params: CreateCloudFormationStackRequest): Request[CreateCloudFormationStackResult] =
       js.native
-    def createDisk(params: CreateDiskRequest): Request[CreateDiskResult]                                     = js.native
+    def createContactMethod(params: CreateContactMethodRequest): Request[CreateContactMethodResult] = js.native
+    def createDisk(params: CreateDiskRequest): Request[CreateDiskResult] = js.native
     def createDiskFromSnapshot(params: CreateDiskFromSnapshotRequest): Request[CreateDiskFromSnapshotResult] = js.native
-    def createDiskSnapshot(params: CreateDiskSnapshotRequest): Request[CreateDiskSnapshotResult]             = js.native
-    def createDomain(params: CreateDomainRequest): Request[CreateDomainResult]                               = js.native
-    def createDomainEntry(params: CreateDomainEntryRequest): Request[CreateDomainEntryResult]                = js.native
+    def createDiskSnapshot(params: CreateDiskSnapshotRequest): Request[CreateDiskSnapshotResult] = js.native
+    def createDomain(params: CreateDomainRequest): Request[CreateDomainResult] = js.native
+    def createDomainEntry(params: CreateDomainEntryRequest): Request[CreateDomainEntryResult] = js.native
     def createInstanceSnapshot(params: CreateInstanceSnapshotRequest): Request[CreateInstanceSnapshotResult] = js.native
-    def createInstances(params: CreateInstancesRequest): Request[CreateInstancesResult]                      = js.native
+    def createInstances(params: CreateInstancesRequest): Request[CreateInstancesResult] = js.native
     def createInstancesFromSnapshot(
         params: CreateInstancesFromSnapshotRequest
-    ): Request[CreateInstancesFromSnapshotResult]                                                = js.native
-    def createKeyPair(params: CreateKeyPairRequest): Request[CreateKeyPairResult]                = js.native
+    ): Request[CreateInstancesFromSnapshotResult] = js.native
+    def createKeyPair(params: CreateKeyPairRequest): Request[CreateKeyPairResult] = js.native
     def createLoadBalancer(params: CreateLoadBalancerRequest): Request[CreateLoadBalancerResult] = js.native
     def createLoadBalancerTlsCertificate(
         params: CreateLoadBalancerTlsCertificateRequest
@@ -393,17 +415,19 @@ package lightsail {
     ): Request[CreateRelationalDatabaseFromSnapshotResult] = js.native
     def createRelationalDatabaseSnapshot(
         params: CreateRelationalDatabaseSnapshotRequest
-    ): Request[CreateRelationalDatabaseSnapshotResult]                                                       = js.native
-    def deleteAutoSnapshot(params: DeleteAutoSnapshotRequest): Request[DeleteAutoSnapshotResult]             = js.native
-    def deleteDisk(params: DeleteDiskRequest): Request[DeleteDiskResult]                                     = js.native
-    def deleteDiskSnapshot(params: DeleteDiskSnapshotRequest): Request[DeleteDiskSnapshotResult]             = js.native
-    def deleteDomain(params: DeleteDomainRequest): Request[DeleteDomainResult]                               = js.native
-    def deleteDomainEntry(params: DeleteDomainEntryRequest): Request[DeleteDomainEntryResult]                = js.native
-    def deleteInstance(params: DeleteInstanceRequest): Request[DeleteInstanceResult]                         = js.native
+    ): Request[CreateRelationalDatabaseSnapshotResult] = js.native
+    def deleteAlarm(params: DeleteAlarmRequest): Request[DeleteAlarmResult] = js.native
+    def deleteAutoSnapshot(params: DeleteAutoSnapshotRequest): Request[DeleteAutoSnapshotResult] = js.native
+    def deleteContactMethod(params: DeleteContactMethodRequest): Request[DeleteContactMethodResult] = js.native
+    def deleteDisk(params: DeleteDiskRequest): Request[DeleteDiskResult] = js.native
+    def deleteDiskSnapshot(params: DeleteDiskSnapshotRequest): Request[DeleteDiskSnapshotResult] = js.native
+    def deleteDomain(params: DeleteDomainRequest): Request[DeleteDomainResult] = js.native
+    def deleteDomainEntry(params: DeleteDomainEntryRequest): Request[DeleteDomainEntryResult] = js.native
+    def deleteInstance(params: DeleteInstanceRequest): Request[DeleteInstanceResult] = js.native
     def deleteInstanceSnapshot(params: DeleteInstanceSnapshotRequest): Request[DeleteInstanceSnapshotResult] = js.native
-    def deleteKeyPair(params: DeleteKeyPairRequest): Request[DeleteKeyPairResult]                            = js.native
-    def deleteKnownHostKeys(params: DeleteKnownHostKeysRequest): Request[DeleteKnownHostKeysResult]          = js.native
-    def deleteLoadBalancer(params: DeleteLoadBalancerRequest): Request[DeleteLoadBalancerResult]             = js.native
+    def deleteKeyPair(params: DeleteKeyPairRequest): Request[DeleteKeyPairResult] = js.native
+    def deleteKnownHostKeys(params: DeleteKnownHostKeysRequest): Request[DeleteKnownHostKeysResult] = js.native
+    def deleteLoadBalancer(params: DeleteLoadBalancerRequest): Request[DeleteLoadBalancerResult] = js.native
     def deleteLoadBalancerTlsCertificate(
         params: DeleteLoadBalancerTlsCertificateRequest
     ): Request[DeleteLoadBalancerTlsCertificateResult] = js.native
@@ -411,29 +435,31 @@ package lightsail {
       js.native
     def deleteRelationalDatabaseSnapshot(
         params: DeleteRelationalDatabaseSnapshotRequest
-    ): Request[DeleteRelationalDatabaseSnapshotResult]                   = js.native
+    ): Request[DeleteRelationalDatabaseSnapshotResult] = js.native
     def detachDisk(params: DetachDiskRequest): Request[DetachDiskResult] = js.native
     def detachInstancesFromLoadBalancer(
         params: DetachInstancesFromLoadBalancerRequest
-    ): Request[DetachInstancesFromLoadBalancerResult]                                                        = js.native
-    def detachStaticIp(params: DetachStaticIpRequest): Request[DetachStaticIpResult]                         = js.native
-    def disableAddOn(params: DisableAddOnRequest): Request[DisableAddOnResult]                               = js.native
+    ): Request[DetachInstancesFromLoadBalancerResult] = js.native
+    def detachStaticIp(params: DetachStaticIpRequest): Request[DetachStaticIpResult] = js.native
+    def disableAddOn(params: DisableAddOnRequest): Request[DisableAddOnResult] = js.native
     def downloadDefaultKeyPair(params: DownloadDefaultKeyPairRequest): Request[DownloadDefaultKeyPairResult] = js.native
-    def enableAddOn(params: EnableAddOnRequest): Request[EnableAddOnResult]                                  = js.native
-    def exportSnapshot(params: ExportSnapshotRequest): Request[ExportSnapshotResult]                         = js.native
-    def getActiveNames(params: GetActiveNamesRequest): Request[GetActiveNamesResult]                         = js.native
-    def getAutoSnapshots(params: GetAutoSnapshotsRequest): Request[GetAutoSnapshotsResult]                   = js.native
-    def getBlueprints(params: GetBlueprintsRequest): Request[GetBlueprintsResult]                            = js.native
-    def getBundles(params: GetBundlesRequest): Request[GetBundlesResult]                                     = js.native
+    def enableAddOn(params: EnableAddOnRequest): Request[EnableAddOnResult] = js.native
+    def exportSnapshot(params: ExportSnapshotRequest): Request[ExportSnapshotResult] = js.native
+    def getActiveNames(params: GetActiveNamesRequest): Request[GetActiveNamesResult] = js.native
+    def getAlarms(params: GetAlarmsRequest): Request[GetAlarmsResult] = js.native
+    def getAutoSnapshots(params: GetAutoSnapshotsRequest): Request[GetAutoSnapshotsResult] = js.native
+    def getBlueprints(params: GetBlueprintsRequest): Request[GetBlueprintsResult] = js.native
+    def getBundles(params: GetBundlesRequest): Request[GetBundlesResult] = js.native
     def getCloudFormationStackRecords(
         params: GetCloudFormationStackRecordsRequest
-    ): Request[GetCloudFormationStackRecordsResult]                                        = js.native
-    def getDisk(params: GetDiskRequest): Request[GetDiskResult]                            = js.native
-    def getDiskSnapshot(params: GetDiskSnapshotRequest): Request[GetDiskSnapshotResult]    = js.native
+    ): Request[GetCloudFormationStackRecordsResult] = js.native
+    def getContactMethods(params: GetContactMethodsRequest): Request[GetContactMethodsResult] = js.native
+    def getDisk(params: GetDiskRequest): Request[GetDiskResult] = js.native
+    def getDiskSnapshot(params: GetDiskSnapshotRequest): Request[GetDiskSnapshotResult] = js.native
     def getDiskSnapshots(params: GetDiskSnapshotsRequest): Request[GetDiskSnapshotsResult] = js.native
-    def getDisks(params: GetDisksRequest): Request[GetDisksResult]                         = js.native
-    def getDomain(params: GetDomainRequest): Request[GetDomainResult]                      = js.native
-    def getDomains(params: GetDomainsRequest): Request[GetDomainsResult]                   = js.native
+    def getDisks(params: GetDisksRequest): Request[GetDisksResult] = js.native
+    def getDomain(params: GetDomainRequest): Request[GetDomainResult] = js.native
+    def getDomains(params: GetDomainsRequest): Request[GetDomainsResult] = js.native
     def getExportSnapshotRecords(params: GetExportSnapshotRecordsRequest): Request[GetExportSnapshotRecordsResult] =
       js.native
     def getInstance(params: GetInstanceRequest): Request[GetInstanceResult] = js.native
@@ -441,24 +467,24 @@ package lightsail {
       js.native
     def getInstanceMetricData(params: GetInstanceMetricDataRequest): Request[GetInstanceMetricDataResult] = js.native
     def getInstancePortStates(params: GetInstancePortStatesRequest): Request[GetInstancePortStatesResult] = js.native
-    def getInstanceSnapshot(params: GetInstanceSnapshotRequest): Request[GetInstanceSnapshotResult]       = js.native
-    def getInstanceSnapshots(params: GetInstanceSnapshotsRequest): Request[GetInstanceSnapshotsResult]    = js.native
-    def getInstanceState(params: GetInstanceStateRequest): Request[GetInstanceStateResult]                = js.native
-    def getInstances(params: GetInstancesRequest): Request[GetInstancesResult]                            = js.native
-    def getKeyPair(params: GetKeyPairRequest): Request[GetKeyPairResult]                                  = js.native
-    def getKeyPairs(params: GetKeyPairsRequest): Request[GetKeyPairsResult]                               = js.native
-    def getLoadBalancer(params: GetLoadBalancerRequest): Request[GetLoadBalancerResult]                   = js.native
+    def getInstanceSnapshot(params: GetInstanceSnapshotRequest): Request[GetInstanceSnapshotResult] = js.native
+    def getInstanceSnapshots(params: GetInstanceSnapshotsRequest): Request[GetInstanceSnapshotsResult] = js.native
+    def getInstanceState(params: GetInstanceStateRequest): Request[GetInstanceStateResult] = js.native
+    def getInstances(params: GetInstancesRequest): Request[GetInstancesResult] = js.native
+    def getKeyPair(params: GetKeyPairRequest): Request[GetKeyPairResult] = js.native
+    def getKeyPairs(params: GetKeyPairsRequest): Request[GetKeyPairsResult] = js.native
+    def getLoadBalancer(params: GetLoadBalancerRequest): Request[GetLoadBalancerResult] = js.native
     def getLoadBalancerMetricData(params: GetLoadBalancerMetricDataRequest): Request[GetLoadBalancerMetricDataResult] =
       js.native
     def getLoadBalancerTlsCertificates(
         params: GetLoadBalancerTlsCertificatesRequest
-    ): Request[GetLoadBalancerTlsCertificatesResult]                                       = js.native
+    ): Request[GetLoadBalancerTlsCertificatesResult] = js.native
     def getLoadBalancers(params: GetLoadBalancersRequest): Request[GetLoadBalancersResult] = js.native
-    def getOperation(params: GetOperationRequest): Request[GetOperationResult]             = js.native
-    def getOperations(params: GetOperationsRequest): Request[GetOperationsResult]          = js.native
+    def getOperation(params: GetOperationRequest): Request[GetOperationResult] = js.native
+    def getOperations(params: GetOperationsRequest): Request[GetOperationsResult] = js.native
     def getOperationsForResource(params: GetOperationsForResourceRequest): Request[GetOperationsForResourceResult] =
       js.native
-    def getRegions(params: GetRegionsRequest): Request[GetRegionsResult]                                  = js.native
+    def getRegions(params: GetRegionsRequest): Request[GetRegionsResult] = js.native
     def getRelationalDatabase(params: GetRelationalDatabaseRequest): Request[GetRelationalDatabaseResult] = js.native
     def getRelationalDatabaseBlueprints(
         params: GetRelationalDatabaseBlueprintsRequest
@@ -489,29 +515,34 @@ package lightsail {
     ): Request[GetRelationalDatabaseSnapshotResult] = js.native
     def getRelationalDatabaseSnapshots(
         params: GetRelationalDatabaseSnapshotsRequest
-    ): Request[GetRelationalDatabaseSnapshotsResult]                                                         = js.native
+    ): Request[GetRelationalDatabaseSnapshotsResult] = js.native
     def getRelationalDatabases(params: GetRelationalDatabasesRequest): Request[GetRelationalDatabasesResult] = js.native
-    def getStaticIp(params: GetStaticIpRequest): Request[GetStaticIpResult]                                  = js.native
-    def getStaticIps(params: GetStaticIpsRequest): Request[GetStaticIpsResult]                               = js.native
-    def importKeyPair(params: ImportKeyPairRequest): Request[ImportKeyPairResult]                            = js.native
-    def isVpcPeered(params: IsVpcPeeredRequest): Request[IsVpcPeeredResult]                                  = js.native
+    def getStaticIp(params: GetStaticIpRequest): Request[GetStaticIpResult] = js.native
+    def getStaticIps(params: GetStaticIpsRequest): Request[GetStaticIpsResult] = js.native
+    def importKeyPair(params: ImportKeyPairRequest): Request[ImportKeyPairResult] = js.native
+    def isVpcPeered(params: IsVpcPeeredRequest): Request[IsVpcPeeredResult] = js.native
     def openInstancePublicPorts(params: OpenInstancePublicPortsRequest): Request[OpenInstancePublicPortsResult] =
       js.native
-    def peerVpc(params: PeerVpcRequest): Request[PeerVpcResult]                                              = js.native
+    def peerVpc(params: PeerVpcRequest): Request[PeerVpcResult] = js.native
+    def putAlarm(params: PutAlarmRequest): Request[PutAlarmResult] = js.native
     def putInstancePublicPorts(params: PutInstancePublicPortsRequest): Request[PutInstancePublicPortsResult] = js.native
-    def rebootInstance(params: RebootInstanceRequest): Request[RebootInstanceResult]                         = js.native
+    def rebootInstance(params: RebootInstanceRequest): Request[RebootInstanceResult] = js.native
     def rebootRelationalDatabase(params: RebootRelationalDatabaseRequest): Request[RebootRelationalDatabaseResult] =
       js.native
     def releaseStaticIp(params: ReleaseStaticIpRequest): Request[ReleaseStaticIpResult] = js.native
-    def startInstance(params: StartInstanceRequest): Request[StartInstanceResult]       = js.native
+    def sendContactMethodVerification(
+        params: SendContactMethodVerificationRequest
+    ): Request[SendContactMethodVerificationResult] = js.native
+    def startInstance(params: StartInstanceRequest): Request[StartInstanceResult] = js.native
     def startRelationalDatabase(params: StartRelationalDatabaseRequest): Request[StartRelationalDatabaseResult] =
       js.native
-    def stopInstance(params: StopInstanceRequest): Request[StopInstanceResult]                               = js.native
+    def stopInstance(params: StopInstanceRequest): Request[StopInstanceResult] = js.native
     def stopRelationalDatabase(params: StopRelationalDatabaseRequest): Request[StopRelationalDatabaseResult] = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResult]                                  = js.native
-    def unpeerVpc(params: UnpeerVpcRequest): Request[UnpeerVpcResult]                                        = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResult]                            = js.native
-    def updateDomainEntry(params: UpdateDomainEntryRequest): Request[UpdateDomainEntryResult]                = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResult] = js.native
+    def testAlarm(params: TestAlarmRequest): Request[TestAlarmResult] = js.native
+    def unpeerVpc(params: UnpeerVpcRequest): Request[UnpeerVpcResult] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResult] = js.native
+    def updateDomainEntry(params: UpdateDomainEntryRequest): Request[UpdateDomainEntryResult] = js.native
     def updateLoadBalancerAttribute(
         params: UpdateLoadBalancerAttributeRequest
     ): Request[UpdateLoadBalancerAttributeResult] = js.native
@@ -525,7 +556,7 @@ package lightsail {
   @js.native
   sealed trait AccessDirection extends js.Any
   object AccessDirection extends js.Object {
-    val inbound  = "inbound".asInstanceOf[AccessDirection]
+    val inbound = "inbound".asInstanceOf[AccessDirection]
     val outbound = "outbound".asInstanceOf[AccessDirection]
 
     val values = js.Object.freeze(js.Array(inbound, outbound))
@@ -593,6 +624,93 @@ package lightsail {
     val values = js.Object.freeze(js.Array(AutoSnapshot))
   }
 
+  /**
+    * Describes an alarm.
+    *  An alarm is a way to monitor your Amazon Lightsail resource metrics. For more information, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms|Alarms in Amazon Lightsail]].
+    */
+  @js.native
+  trait Alarm extends js.Object {
+    var arn: js.UndefOr[NonEmptyString]
+    var comparisonOperator: js.UndefOr[ComparisonOperator]
+    var contactProtocols: js.UndefOr[ContactProtocolsList]
+    var createdAt: js.UndefOr[IsoDate]
+    var datapointsToAlarm: js.UndefOr[Int]
+    var evaluationPeriods: js.UndefOr[Int]
+    var location: js.UndefOr[ResourceLocation]
+    var metricName: js.UndefOr[MetricName]
+    var monitoredResourceInfo: js.UndefOr[MonitoredResourceInfo]
+    var name: js.UndefOr[ResourceName]
+    var notificationEnabled: js.UndefOr[Boolean]
+    var notificationTriggers: js.UndefOr[NotificationTriggerList]
+    var period: js.UndefOr[MetricPeriod]
+    var resourceType: js.UndefOr[ResourceType]
+    var state: js.UndefOr[AlarmState]
+    var statistic: js.UndefOr[MetricStatistic]
+    var supportCode: js.UndefOr[String]
+    var threshold: js.UndefOr[double]
+    var treatMissingData: js.UndefOr[TreatMissingData]
+    var unit: js.UndefOr[MetricUnit]
+  }
+
+  object Alarm {
+    @inline
+    def apply(
+        arn: js.UndefOr[NonEmptyString] = js.undefined,
+        comparisonOperator: js.UndefOr[ComparisonOperator] = js.undefined,
+        contactProtocols: js.UndefOr[ContactProtocolsList] = js.undefined,
+        createdAt: js.UndefOr[IsoDate] = js.undefined,
+        datapointsToAlarm: js.UndefOr[Int] = js.undefined,
+        evaluationPeriods: js.UndefOr[Int] = js.undefined,
+        location: js.UndefOr[ResourceLocation] = js.undefined,
+        metricName: js.UndefOr[MetricName] = js.undefined,
+        monitoredResourceInfo: js.UndefOr[MonitoredResourceInfo] = js.undefined,
+        name: js.UndefOr[ResourceName] = js.undefined,
+        notificationEnabled: js.UndefOr[Boolean] = js.undefined,
+        notificationTriggers: js.UndefOr[NotificationTriggerList] = js.undefined,
+        period: js.UndefOr[MetricPeriod] = js.undefined,
+        resourceType: js.UndefOr[ResourceType] = js.undefined,
+        state: js.UndefOr[AlarmState] = js.undefined,
+        statistic: js.UndefOr[MetricStatistic] = js.undefined,
+        supportCode: js.UndefOr[String] = js.undefined,
+        threshold: js.UndefOr[double] = js.undefined,
+        treatMissingData: js.UndefOr[TreatMissingData] = js.undefined,
+        unit: js.UndefOr[MetricUnit] = js.undefined
+    ): Alarm = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      comparisonOperator.foreach(__v => __obj.updateDynamic("comparisonOperator")(__v.asInstanceOf[js.Any]))
+      contactProtocols.foreach(__v => __obj.updateDynamic("contactProtocols")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      datapointsToAlarm.foreach(__v => __obj.updateDynamic("datapointsToAlarm")(__v.asInstanceOf[js.Any]))
+      evaluationPeriods.foreach(__v => __obj.updateDynamic("evaluationPeriods")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      metricName.foreach(__v => __obj.updateDynamic("metricName")(__v.asInstanceOf[js.Any]))
+      monitoredResourceInfo.foreach(__v => __obj.updateDynamic("monitoredResourceInfo")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      notificationEnabled.foreach(__v => __obj.updateDynamic("notificationEnabled")(__v.asInstanceOf[js.Any]))
+      notificationTriggers.foreach(__v => __obj.updateDynamic("notificationTriggers")(__v.asInstanceOf[js.Any]))
+      period.foreach(__v => __obj.updateDynamic("period")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      statistic.foreach(__v => __obj.updateDynamic("statistic")(__v.asInstanceOf[js.Any]))
+      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
+      threshold.foreach(__v => __obj.updateDynamic("threshold")(__v.asInstanceOf[js.Any]))
+      treatMissingData.foreach(__v => __obj.updateDynamic("treatMissingData")(__v.asInstanceOf[js.Any]))
+      unit.foreach(__v => __obj.updateDynamic("unit")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Alarm]
+    }
+  }
+
+  @js.native
+  sealed trait AlarmState extends js.Any
+  object AlarmState extends js.Object {
+    val OK = "OK".asInstanceOf[AlarmState]
+    val ALARM = "ALARM".asInstanceOf[AlarmState]
+    val INSUFFICIENT_DATA = "INSUFFICIENT_DATA".asInstanceOf[AlarmState]
+
+    val values = js.Object.freeze(js.Array(OK, ALARM, INSUFFICIENT_DATA))
+  }
+
   @js.native
   trait AllocateStaticIpRequest extends js.Object {
     var staticIpName: ResourceName
@@ -642,8 +760,8 @@ package lightsail {
         instanceName: ResourceName
     ): AttachDiskRequest = {
       val __obj = js.Dynamic.literal(
-        "diskName"     -> diskName.asInstanceOf[js.Any],
-        "diskPath"     -> diskPath.asInstanceOf[js.Any],
+        "diskName" -> diskName.asInstanceOf[js.Any],
+        "diskPath" -> diskPath.asInstanceOf[js.Any],
         "instanceName" -> instanceName.asInstanceOf[js.Any]
       )
 
@@ -680,7 +798,7 @@ package lightsail {
         loadBalancerName: ResourceName
     ): AttachInstancesToLoadBalancerRequest = {
       val __obj = js.Dynamic.literal(
-        "instanceNames"    -> instanceNames.asInstanceOf[js.Any],
+        "instanceNames" -> instanceNames.asInstanceOf[js.Any],
         "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
       )
 
@@ -717,7 +835,7 @@ package lightsail {
         loadBalancerName: ResourceName
     ): AttachLoadBalancerTlsCertificateRequest = {
       val __obj = js.Dynamic.literal(
-        "certificateName"  -> certificateName.asInstanceOf[js.Any],
+        "certificateName" -> certificateName.asInstanceOf[js.Any],
         "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
       )
 
@@ -855,10 +973,10 @@ package lightsail {
   @js.native
   sealed trait AutoSnapshotStatus extends js.Any
   object AutoSnapshotStatus extends js.Object {
-    val Success    = "Success".asInstanceOf[AutoSnapshotStatus]
-    val Failed     = "Failed".asInstanceOf[AutoSnapshotStatus]
+    val Success = "Success".asInstanceOf[AutoSnapshotStatus]
+    val Failed = "Failed".asInstanceOf[AutoSnapshotStatus]
     val InProgress = "InProgress".asInstanceOf[AutoSnapshotStatus]
-    val NotFound   = "NotFound".asInstanceOf[AutoSnapshotStatus]
+    val NotFound = "NotFound".asInstanceOf[AutoSnapshotStatus]
 
     val values = js.Object.freeze(js.Array(Success, Failed, InProgress, NotFound))
   }
@@ -940,7 +1058,7 @@ package lightsail {
   @js.native
   sealed trait BlueprintType extends js.Any
   object BlueprintType extends js.Object {
-    val os  = "os".asInstanceOf[BlueprintType]
+    val os = "os".asInstanceOf[BlueprintType]
     val app = "app".asInstanceOf[BlueprintType]
 
     val values = js.Object.freeze(js.Array(os, app))
@@ -1009,7 +1127,7 @@ package lightsail {
     ): CloseInstancePublicPortsRequest = {
       val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any],
-        "portInfo"     -> portInfo.asInstanceOf[js.Any]
+        "portInfo" -> portInfo.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CloseInstancePublicPortsRequest]
@@ -1107,6 +1225,90 @@ package lightsail {
   }
 
   @js.native
+  sealed trait ComparisonOperator extends js.Any
+  object ComparisonOperator extends js.Object {
+    val GreaterThanOrEqualToThreshold = "GreaterThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
+    val GreaterThanThreshold = "GreaterThanThreshold".asInstanceOf[ComparisonOperator]
+    val LessThanThreshold = "LessThanThreshold".asInstanceOf[ComparisonOperator]
+    val LessThanOrEqualToThreshold = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
+
+    val values = js.Object.freeze(
+      js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
+    )
+  }
+
+  /**
+    * Describes a contact method.
+    *  A contact method is a way to send you notifications. For more information, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications|Notifications in Amazon Lightsail]].
+    */
+  @js.native
+  trait ContactMethod extends js.Object {
+    var arn: js.UndefOr[NonEmptyString]
+    var contactEndpoint: js.UndefOr[NonEmptyString]
+    var createdAt: js.UndefOr[IsoDate]
+    var location: js.UndefOr[ResourceLocation]
+    var name: js.UndefOr[ResourceName]
+    var protocol: js.UndefOr[ContactProtocol]
+    var resourceType: js.UndefOr[ResourceType]
+    var status: js.UndefOr[ContactMethodStatus]
+    var supportCode: js.UndefOr[String]
+  }
+
+  object ContactMethod {
+    @inline
+    def apply(
+        arn: js.UndefOr[NonEmptyString] = js.undefined,
+        contactEndpoint: js.UndefOr[NonEmptyString] = js.undefined,
+        createdAt: js.UndefOr[IsoDate] = js.undefined,
+        location: js.UndefOr[ResourceLocation] = js.undefined,
+        name: js.UndefOr[ResourceName] = js.undefined,
+        protocol: js.UndefOr[ContactProtocol] = js.undefined,
+        resourceType: js.UndefOr[ResourceType] = js.undefined,
+        status: js.UndefOr[ContactMethodStatus] = js.undefined,
+        supportCode: js.UndefOr[String] = js.undefined
+    ): ContactMethod = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      contactEndpoint.foreach(__v => __obj.updateDynamic("contactEndpoint")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContactMethod]
+    }
+  }
+
+  @js.native
+  sealed trait ContactMethodStatus extends js.Any
+  object ContactMethodStatus extends js.Object {
+    val PendingVerification = "PendingVerification".asInstanceOf[ContactMethodStatus]
+    val Valid = "Valid".asInstanceOf[ContactMethodStatus]
+    val Invalid = "Invalid".asInstanceOf[ContactMethodStatus]
+
+    val values = js.Object.freeze(js.Array(PendingVerification, Valid, Invalid))
+  }
+
+  @js.native
+  sealed trait ContactMethodVerificationProtocol extends js.Any
+  object ContactMethodVerificationProtocol extends js.Object {
+    val Email = "Email".asInstanceOf[ContactMethodVerificationProtocol]
+
+    val values = js.Object.freeze(js.Array(Email))
+  }
+
+  @js.native
+  sealed trait ContactProtocol extends js.Any
+  object ContactProtocol extends js.Object {
+    val Email = "Email".asInstanceOf[ContactProtocol]
+    val SMS = "SMS".asInstanceOf[ContactProtocol]
+
+    val values = js.Object.freeze(js.Array(Email, SMS))
+  }
+
+  @js.native
   trait CopySnapshotRequest extends js.Object {
     var sourceRegion: RegionName
     var targetSnapshotName: ResourceName
@@ -1127,7 +1329,7 @@ package lightsail {
         useLatestRestorableAutoSnapshot: js.UndefOr[Boolean] = js.undefined
     ): CopySnapshotRequest = {
       val __obj = js.Dynamic.literal(
-        "sourceRegion"       -> sourceRegion.asInstanceOf[js.Any],
+        "sourceRegion" -> sourceRegion.asInstanceOf[js.Any],
         "targetSnapshotName" -> targetSnapshotName.asInstanceOf[js.Any]
       )
 
@@ -1192,6 +1394,43 @@ package lightsail {
   }
 
   @js.native
+  trait CreateContactMethodRequest extends js.Object {
+    var contactEndpoint: StringMax256
+    var protocol: ContactProtocol
+  }
+
+  object CreateContactMethodRequest {
+    @inline
+    def apply(
+        contactEndpoint: StringMax256,
+        protocol: ContactProtocol
+    ): CreateContactMethodRequest = {
+      val __obj = js.Dynamic.literal(
+        "contactEndpoint" -> contactEndpoint.asInstanceOf[js.Any],
+        "protocol" -> protocol.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateContactMethodRequest]
+    }
+  }
+
+  @js.native
+  trait CreateContactMethodResult extends js.Object {
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object CreateContactMethodResult {
+    @inline
+    def apply(
+        operations: js.UndefOr[OperationList] = js.undefined
+    ): CreateContactMethodResult = {
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateContactMethodResult]
+    }
+  }
+
+  @js.native
   trait CreateDiskFromSnapshotRequest extends js.Object {
     var availabilityZone: NonEmptyString
     var diskName: ResourceName
@@ -1219,8 +1458,8 @@ package lightsail {
     ): CreateDiskFromSnapshotRequest = {
       val __obj = js.Dynamic.literal(
         "availabilityZone" -> availabilityZone.asInstanceOf[js.Any],
-        "diskName"         -> diskName.asInstanceOf[js.Any],
-        "sizeInGb"         -> sizeInGb.asInstanceOf[js.Any]
+        "diskName" -> diskName.asInstanceOf[js.Any],
+        "sizeInGb" -> sizeInGb.asInstanceOf[js.Any]
       )
 
       addOns.foreach(__v => __obj.updateDynamic("addOns")(__v.asInstanceOf[js.Any]))
@@ -1271,8 +1510,8 @@ package lightsail {
     ): CreateDiskRequest = {
       val __obj = js.Dynamic.literal(
         "availabilityZone" -> availabilityZone.asInstanceOf[js.Any],
-        "diskName"         -> diskName.asInstanceOf[js.Any],
-        "sizeInGb"         -> sizeInGb.asInstanceOf[js.Any]
+        "diskName" -> diskName.asInstanceOf[js.Any],
+        "sizeInGb" -> sizeInGb.asInstanceOf[js.Any]
       )
 
       addOns.foreach(__v => __obj.updateDynamic("addOns")(__v.asInstanceOf[js.Any]))
@@ -1354,7 +1593,7 @@ package lightsail {
     ): CreateDomainEntryRequest = {
       val __obj = js.Dynamic.literal(
         "domainEntry" -> domainEntry.asInstanceOf[js.Any],
-        "domainName"  -> domainName.asInstanceOf[js.Any]
+        "domainName" -> domainName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateDomainEntryRequest]
@@ -1429,7 +1668,7 @@ package lightsail {
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateInstanceSnapshotRequest = {
       val __obj = js.Dynamic.literal(
-        "instanceName"         -> instanceName.asInstanceOf[js.Any],
+        "instanceName" -> instanceName.asInstanceOf[js.Any],
         "instanceSnapshotName" -> instanceSnapshotName.asInstanceOf[js.Any]
       )
 
@@ -1488,8 +1727,8 @@ package lightsail {
     ): CreateInstancesFromSnapshotRequest = {
       val __obj = js.Dynamic.literal(
         "availabilityZone" -> availabilityZone.asInstanceOf[js.Any],
-        "bundleId"         -> bundleId.asInstanceOf[js.Any],
-        "instanceNames"    -> instanceNames.asInstanceOf[js.Any]
+        "bundleId" -> bundleId.asInstanceOf[js.Any],
+        "instanceNames" -> instanceNames.asInstanceOf[js.Any]
       )
 
       addOns.foreach(__v => __obj.updateDynamic("addOns")(__v.asInstanceOf[js.Any]))
@@ -1551,9 +1790,9 @@ package lightsail {
     ): CreateInstancesRequest = {
       val __obj = js.Dynamic.literal(
         "availabilityZone" -> availabilityZone.asInstanceOf[js.Any],
-        "blueprintId"      -> blueprintId.asInstanceOf[js.Any],
-        "bundleId"         -> bundleId.asInstanceOf[js.Any],
-        "instanceNames"    -> instanceNames.asInstanceOf[js.Any]
+        "blueprintId" -> blueprintId.asInstanceOf[js.Any],
+        "bundleId" -> bundleId.asInstanceOf[js.Any],
+        "instanceNames" -> instanceNames.asInstanceOf[js.Any]
       )
 
       addOns.foreach(__v => __obj.updateDynamic("addOns")(__v.asInstanceOf[js.Any]))
@@ -1650,7 +1889,7 @@ package lightsail {
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateLoadBalancerRequest = {
       val __obj = js.Dynamic.literal(
-        "instancePort"     -> instancePort.asInstanceOf[js.Any],
+        "instancePort" -> instancePort.asInstanceOf[js.Any],
         "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
       )
 
@@ -1701,8 +1940,8 @@ package lightsail {
     ): CreateLoadBalancerTlsCertificateRequest = {
       val __obj = js.Dynamic.literal(
         "certificateDomainName" -> certificateDomainName.asInstanceOf[js.Any],
-        "certificateName"       -> certificateName.asInstanceOf[js.Any],
-        "loadBalancerName"      -> loadBalancerName.asInstanceOf[js.Any]
+        "certificateName" -> certificateName.asInstanceOf[js.Any],
+        "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
       )
 
       certificateAlternativeNames.foreach(__v =>
@@ -1824,11 +2063,11 @@ package lightsail {
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateRelationalDatabaseRequest = {
       val __obj = js.Dynamic.literal(
-        "masterDatabaseName"            -> masterDatabaseName.asInstanceOf[js.Any],
-        "masterUsername"                -> masterUsername.asInstanceOf[js.Any],
+        "masterDatabaseName" -> masterDatabaseName.asInstanceOf[js.Any],
+        "masterUsername" -> masterUsername.asInstanceOf[js.Any],
         "relationalDatabaseBlueprintId" -> relationalDatabaseBlueprintId.asInstanceOf[js.Any],
-        "relationalDatabaseBundleId"    -> relationalDatabaseBundleId.asInstanceOf[js.Any],
-        "relationalDatabaseName"        -> relationalDatabaseName.asInstanceOf[js.Any]
+        "relationalDatabaseBundleId" -> relationalDatabaseBundleId.asInstanceOf[js.Any],
+        "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
       )
 
       availabilityZone.foreach(__v => __obj.updateDynamic("availabilityZone")(__v.asInstanceOf[js.Any]))
@@ -1874,7 +2113,7 @@ package lightsail {
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateRelationalDatabaseSnapshotRequest = {
       val __obj = js.Dynamic.literal(
-        "relationalDatabaseName"         -> relationalDatabaseName.asInstanceOf[js.Any],
+        "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any],
         "relationalDatabaseSnapshotName" -> relationalDatabaseSnapshotName.asInstanceOf[js.Any]
       )
 
@@ -1900,6 +2139,40 @@ package lightsail {
   }
 
   @js.native
+  trait DeleteAlarmRequest extends js.Object {
+    var alarmName: ResourceName
+  }
+
+  object DeleteAlarmRequest {
+    @inline
+    def apply(
+        alarmName: ResourceName
+    ): DeleteAlarmRequest = {
+      val __obj = js.Dynamic.literal(
+        "alarmName" -> alarmName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteAlarmRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteAlarmResult extends js.Object {
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object DeleteAlarmResult {
+    @inline
+    def apply(
+        operations: js.UndefOr[OperationList] = js.undefined
+    ): DeleteAlarmResult = {
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteAlarmResult]
+    }
+  }
+
+  @js.native
   trait DeleteAutoSnapshotRequest extends js.Object {
     var date: AutoSnapshotDate
     var resourceName: ResourceName
@@ -1912,7 +2185,7 @@ package lightsail {
         resourceName: ResourceName
     ): DeleteAutoSnapshotRequest = {
       val __obj = js.Dynamic.literal(
-        "date"         -> date.asInstanceOf[js.Any],
+        "date" -> date.asInstanceOf[js.Any],
         "resourceName" -> resourceName.asInstanceOf[js.Any]
       )
 
@@ -1933,6 +2206,40 @@ package lightsail {
       val __obj = js.Dynamic.literal()
       operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteAutoSnapshotResult]
+    }
+  }
+
+  @js.native
+  trait DeleteContactMethodRequest extends js.Object {
+    var protocol: ContactProtocol
+  }
+
+  object DeleteContactMethodRequest {
+    @inline
+    def apply(
+        protocol: ContactProtocol
+    ): DeleteContactMethodRequest = {
+      val __obj = js.Dynamic.literal(
+        "protocol" -> protocol.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteContactMethodRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteContactMethodResult extends js.Object {
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object DeleteContactMethodResult {
+    @inline
+    def apply(
+        operations: js.UndefOr[OperationList] = js.undefined
+    ): DeleteContactMethodResult = {
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteContactMethodResult]
     }
   }
 
@@ -2021,7 +2328,7 @@ package lightsail {
     ): DeleteDomainEntryRequest = {
       val __obj = js.Dynamic.literal(
         "domainEntry" -> domainEntry.asInstanceOf[js.Any],
-        "domainName"  -> domainName.asInstanceOf[js.Any]
+        "domainName" -> domainName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DeleteDomainEntryRequest]
@@ -2266,7 +2573,7 @@ package lightsail {
         force: js.UndefOr[Boolean] = js.undefined
     ): DeleteLoadBalancerTlsCertificateRequest = {
       val __obj = js.Dynamic.literal(
-        "certificateName"  -> certificateName.asInstanceOf[js.Any],
+        "certificateName" -> certificateName.asInstanceOf[js.Any],
         "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
       )
 
@@ -2436,7 +2743,7 @@ package lightsail {
         loadBalancerName: ResourceName
     ): DetachInstancesFromLoadBalancerRequest = {
       val __obj = js.Dynamic.literal(
-        "instanceNames"    -> instanceNames.asInstanceOf[js.Any],
+        "instanceNames" -> instanceNames.asInstanceOf[js.Any],
         "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
       )
 
@@ -2507,7 +2814,7 @@ package lightsail {
         resourceName: ResourceName
     ): DisableAddOnRequest = {
       val __obj = js.Dynamic.literal(
-        "addOnType"    -> addOnType.asInstanceOf[js.Any],
+        "addOnType" -> addOnType.asInstanceOf[js.Any],
         "resourceName" -> resourceName.asInstanceOf[js.Any]
       )
 
@@ -2731,10 +3038,10 @@ package lightsail {
   @js.native
   sealed trait DiskSnapshotState extends js.Any
   object DiskSnapshotState extends js.Object {
-    val pending   = "pending".asInstanceOf[DiskSnapshotState]
+    val pending = "pending".asInstanceOf[DiskSnapshotState]
     val completed = "completed".asInstanceOf[DiskSnapshotState]
-    val error     = "error".asInstanceOf[DiskSnapshotState]
-    val unknown   = "unknown".asInstanceOf[DiskSnapshotState]
+    val error = "error".asInstanceOf[DiskSnapshotState]
+    val unknown = "unknown".asInstanceOf[DiskSnapshotState]
 
     val values = js.Object.freeze(js.Array(pending, completed, error, unknown))
   }
@@ -2742,11 +3049,11 @@ package lightsail {
   @js.native
   sealed trait DiskState extends js.Any
   object DiskState extends js.Object {
-    val pending   = "pending".asInstanceOf[DiskState]
-    val error     = "error".asInstanceOf[DiskState]
+    val pending = "pending".asInstanceOf[DiskState]
+    val error = "error".asInstanceOf[DiskState]
     val available = "available".asInstanceOf[DiskState]
-    val `in-use`  = "in-use".asInstanceOf[DiskState]
-    val unknown   = "unknown".asInstanceOf[DiskState]
+    val `in-use` = "in-use".asInstanceOf[DiskState]
+    val unknown = "unknown".asInstanceOf[DiskState]
 
     val values = js.Object.freeze(js.Array(pending, error, available, `in-use`, unknown))
   }
@@ -2978,7 +3285,7 @@ package lightsail {
   sealed trait ExportSnapshotRecordSourceType extends js.Any
   object ExportSnapshotRecordSourceType extends js.Object {
     val InstanceSnapshot = "InstanceSnapshot".asInstanceOf[ExportSnapshotRecordSourceType]
-    val DiskSnapshot     = "DiskSnapshot".asInstanceOf[ExportSnapshotRecordSourceType]
+    val DiskSnapshot = "DiskSnapshot".asInstanceOf[ExportSnapshotRecordSourceType]
 
     val values = js.Object.freeze(js.Array(InstanceSnapshot, DiskSnapshot))
   }
@@ -3049,6 +3356,47 @@ package lightsail {
       activeNames.foreach(__v => __obj.updateDynamic("activeNames")(__v.asInstanceOf[js.Any]))
       nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetActiveNamesResult]
+    }
+  }
+
+  @js.native
+  trait GetAlarmsRequest extends js.Object {
+    var alarmName: js.UndefOr[ResourceName]
+    var monitoredResourceName: js.UndefOr[ResourceName]
+    var pageToken: js.UndefOr[String]
+  }
+
+  object GetAlarmsRequest {
+    @inline
+    def apply(
+        alarmName: js.UndefOr[ResourceName] = js.undefined,
+        monitoredResourceName: js.UndefOr[ResourceName] = js.undefined,
+        pageToken: js.UndefOr[String] = js.undefined
+    ): GetAlarmsRequest = {
+      val __obj = js.Dynamic.literal()
+      alarmName.foreach(__v => __obj.updateDynamic("alarmName")(__v.asInstanceOf[js.Any]))
+      monitoredResourceName.foreach(__v => __obj.updateDynamic("monitoredResourceName")(__v.asInstanceOf[js.Any]))
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAlarmsRequest]
+    }
+  }
+
+  @js.native
+  trait GetAlarmsResult extends js.Object {
+    var alarms: js.UndefOr[AlarmsList]
+    var nextPageToken: js.UndefOr[String]
+  }
+
+  object GetAlarmsResult {
+    @inline
+    def apply(
+        alarms: js.UndefOr[AlarmsList] = js.undefined,
+        nextPageToken: js.UndefOr[String] = js.undefined
+    ): GetAlarmsResult = {
+      val __obj = js.Dynamic.literal()
+      alarms.foreach(__v => __obj.updateDynamic("alarms")(__v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAlarmsResult]
     }
   }
 
@@ -3202,6 +3550,38 @@ package lightsail {
       )
       nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCloudFormationStackRecordsResult]
+    }
+  }
+
+  @js.native
+  trait GetContactMethodsRequest extends js.Object {
+    var protocols: js.UndefOr[ContactProtocolsList]
+  }
+
+  object GetContactMethodsRequest {
+    @inline
+    def apply(
+        protocols: js.UndefOr[ContactProtocolsList] = js.undefined
+    ): GetContactMethodsRequest = {
+      val __obj = js.Dynamic.literal()
+      protocols.foreach(__v => __obj.updateDynamic("protocols")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetContactMethodsRequest]
+    }
+  }
+
+  @js.native
+  trait GetContactMethodsResult extends js.Object {
+    var contactMethods: js.UndefOr[ContactMethodsList]
+  }
+
+  object GetContactMethodsResult {
+    @inline
+    def apply(
+        contactMethods: js.UndefOr[ContactMethodsList] = js.undefined
+    ): GetContactMethodsResult = {
+      val __obj = js.Dynamic.literal()
+      contactMethods.foreach(__v => __obj.updateDynamic("contactMethods")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetContactMethodsResult]
     }
   }
 
@@ -3507,13 +3887,13 @@ package lightsail {
         unit: MetricUnit
     ): GetInstanceMetricDataRequest = {
       val __obj = js.Dynamic.literal(
-        "endTime"      -> endTime.asInstanceOf[js.Any],
+        "endTime" -> endTime.asInstanceOf[js.Any],
         "instanceName" -> instanceName.asInstanceOf[js.Any],
-        "metricName"   -> metricName.asInstanceOf[js.Any],
-        "period"       -> period.asInstanceOf[js.Any],
-        "startTime"    -> startTime.asInstanceOf[js.Any],
-        "statistics"   -> statistics.asInstanceOf[js.Any],
-        "unit"         -> unit.asInstanceOf[js.Any]
+        "metricName" -> metricName.asInstanceOf[js.Any],
+        "period" -> period.asInstanceOf[js.Any],
+        "startTime" -> startTime.asInstanceOf[js.Any],
+        "statistics" -> statistics.asInstanceOf[js.Any],
+        "unit" -> unit.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetInstanceMetricDataRequest]
@@ -3837,13 +4217,13 @@ package lightsail {
         unit: MetricUnit
     ): GetLoadBalancerMetricDataRequest = {
       val __obj = js.Dynamic.literal(
-        "endTime"          -> endTime.asInstanceOf[js.Any],
+        "endTime" -> endTime.asInstanceOf[js.Any],
         "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any],
-        "metricName"       -> metricName.asInstanceOf[js.Any],
-        "period"           -> period.asInstanceOf[js.Any],
-        "startTime"        -> startTime.asInstanceOf[js.Any],
-        "statistics"       -> statistics.asInstanceOf[js.Any],
-        "unit"             -> unit.asInstanceOf[js.Any]
+        "metricName" -> metricName.asInstanceOf[js.Any],
+        "period" -> period.asInstanceOf[js.Any],
+        "startTime" -> startTime.asInstanceOf[js.Any],
+        "statistics" -> statistics.asInstanceOf[js.Any],
+        "unit" -> unit.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetLoadBalancerMetricDataRequest]
@@ -4255,7 +4635,7 @@ package lightsail {
         startTime: js.UndefOr[IsoDate] = js.undefined
     ): GetRelationalDatabaseLogEventsRequest = {
       val __obj = js.Dynamic.literal(
-        "logStreamName"          -> logStreamName.asInstanceOf[js.Any],
+        "logStreamName" -> logStreamName.asInstanceOf[js.Any],
         "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
       )
 
@@ -4386,13 +4766,13 @@ package lightsail {
         unit: MetricUnit
     ): GetRelationalDatabaseMetricDataRequest = {
       val __obj = js.Dynamic.literal(
-        "endTime"                -> endTime.asInstanceOf[js.Any],
-        "metricName"             -> metricName.asInstanceOf[js.Any],
-        "period"                 -> period.asInstanceOf[js.Any],
+        "endTime" -> endTime.asInstanceOf[js.Any],
+        "metricName" -> metricName.asInstanceOf[js.Any],
+        "period" -> period.asInstanceOf[js.Any],
         "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any],
-        "startTime"              -> startTime.asInstanceOf[js.Any],
-        "statistics"             -> statistics.asInstanceOf[js.Any],
-        "unit"                   -> unit.asInstanceOf[js.Any]
+        "startTime" -> startTime.asInstanceOf[js.Any],
+        "statistics" -> statistics.asInstanceOf[js.Any],
+        "unit" -> unit.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetRelationalDatabaseMetricDataRequest]
@@ -4719,7 +5099,7 @@ package lightsail {
         publicKeyBase64: Base64
     ): ImportKeyPairRequest = {
       val __obj = js.Dynamic.literal(
-        "keyPairName"     -> keyPairName.asInstanceOf[js.Any],
+        "keyPairName" -> keyPairName.asInstanceOf[js.Any],
         "publicKeyBase64" -> publicKeyBase64.asInstanceOf[js.Any]
       )
 
@@ -4897,9 +5277,9 @@ package lightsail {
     ): InstanceEntry = {
       val __obj = js.Dynamic.literal(
         "availabilityZone" -> availabilityZone.asInstanceOf[js.Any],
-        "instanceType"     -> instanceType.asInstanceOf[js.Any],
-        "portInfoSource"   -> portInfoSource.asInstanceOf[js.Any],
-        "sourceName"       -> sourceName.asInstanceOf[js.Any]
+        "instanceType" -> instanceType.asInstanceOf[js.Any],
+        "portInfoSource" -> portInfoSource.asInstanceOf[js.Any],
+        "sourceName" -> sourceName.asInstanceOf[js.Any]
       )
 
       userData.foreach(__v => __obj.updateDynamic("userData")(__v.asInstanceOf[js.Any]))
@@ -4935,17 +5315,17 @@ package lightsail {
   @js.native
   sealed trait InstanceHealthReason extends js.Any
   object InstanceHealthReason extends js.Object {
-    val `Lb.RegistrationInProgress`         = "Lb.RegistrationInProgress".asInstanceOf[InstanceHealthReason]
-    val `Lb.InitialHealthChecking`          = "Lb.InitialHealthChecking".asInstanceOf[InstanceHealthReason]
-    val `Lb.InternalError`                  = "Lb.InternalError".asInstanceOf[InstanceHealthReason]
-    val `Instance.ResponseCodeMismatch`     = "Instance.ResponseCodeMismatch".asInstanceOf[InstanceHealthReason]
-    val `Instance.Timeout`                  = "Instance.Timeout".asInstanceOf[InstanceHealthReason]
-    val `Instance.FailedHealthChecks`       = "Instance.FailedHealthChecks".asInstanceOf[InstanceHealthReason]
-    val `Instance.NotRegistered`            = "Instance.NotRegistered".asInstanceOf[InstanceHealthReason]
-    val `Instance.NotInUse`                 = "Instance.NotInUse".asInstanceOf[InstanceHealthReason]
+    val `Lb.RegistrationInProgress` = "Lb.RegistrationInProgress".asInstanceOf[InstanceHealthReason]
+    val `Lb.InitialHealthChecking` = "Lb.InitialHealthChecking".asInstanceOf[InstanceHealthReason]
+    val `Lb.InternalError` = "Lb.InternalError".asInstanceOf[InstanceHealthReason]
+    val `Instance.ResponseCodeMismatch` = "Instance.ResponseCodeMismatch".asInstanceOf[InstanceHealthReason]
+    val `Instance.Timeout` = "Instance.Timeout".asInstanceOf[InstanceHealthReason]
+    val `Instance.FailedHealthChecks` = "Instance.FailedHealthChecks".asInstanceOf[InstanceHealthReason]
+    val `Instance.NotRegistered` = "Instance.NotRegistered".asInstanceOf[InstanceHealthReason]
+    val `Instance.NotInUse` = "Instance.NotInUse".asInstanceOf[InstanceHealthReason]
     val `Instance.DeregistrationInProgress` = "Instance.DeregistrationInProgress".asInstanceOf[InstanceHealthReason]
-    val `Instance.InvalidState`             = "Instance.InvalidState".asInstanceOf[InstanceHealthReason]
-    val `Instance.IpUnusable`               = "Instance.IpUnusable".asInstanceOf[InstanceHealthReason]
+    val `Instance.InvalidState` = "Instance.InvalidState".asInstanceOf[InstanceHealthReason]
+    val `Instance.IpUnusable` = "Instance.IpUnusable".asInstanceOf[InstanceHealthReason]
 
     val values = js.Object.freeze(
       js.Array(
@@ -4967,11 +5347,11 @@ package lightsail {
   @js.native
   sealed trait InstanceHealthState extends js.Any
   object InstanceHealthState extends js.Object {
-    val initial     = "initial".asInstanceOf[InstanceHealthState]
-    val healthy     = "healthy".asInstanceOf[InstanceHealthState]
-    val unhealthy   = "unhealthy".asInstanceOf[InstanceHealthState]
-    val unused      = "unused".asInstanceOf[InstanceHealthState]
-    val draining    = "draining".asInstanceOf[InstanceHealthState]
+    val initial = "initial".asInstanceOf[InstanceHealthState]
+    val healthy = "healthy".asInstanceOf[InstanceHealthState]
+    val unhealthy = "unhealthy".asInstanceOf[InstanceHealthState]
+    val unused = "unused".asInstanceOf[InstanceHealthState]
+    val draining = "draining".asInstanceOf[InstanceHealthState]
     val unavailable = "unavailable".asInstanceOf[InstanceHealthState]
 
     val values = js.Object.freeze(js.Array(initial, healthy, unhealthy, unused, draining, unavailable))
@@ -5005,12 +5385,14 @@ package lightsail {
   @js.native
   sealed trait InstanceMetricName extends js.Any
   object InstanceMetricName extends js.Object {
-    val CPUUtilization             = "CPUUtilization".asInstanceOf[InstanceMetricName]
-    val NetworkIn                  = "NetworkIn".asInstanceOf[InstanceMetricName]
-    val NetworkOut                 = "NetworkOut".asInstanceOf[InstanceMetricName]
-    val StatusCheckFailed          = "StatusCheckFailed".asInstanceOf[InstanceMetricName]
+    val CPUUtilization = "CPUUtilization".asInstanceOf[InstanceMetricName]
+    val NetworkIn = "NetworkIn".asInstanceOf[InstanceMetricName]
+    val NetworkOut = "NetworkOut".asInstanceOf[InstanceMetricName]
+    val StatusCheckFailed = "StatusCheckFailed".asInstanceOf[InstanceMetricName]
     val StatusCheckFailed_Instance = "StatusCheckFailed_Instance".asInstanceOf[InstanceMetricName]
-    val StatusCheckFailed_System   = "StatusCheckFailed_System".asInstanceOf[InstanceMetricName]
+    val StatusCheckFailed_System = "StatusCheckFailed_System".asInstanceOf[InstanceMetricName]
+    val BurstCapacityTime = "BurstCapacityTime".asInstanceOf[InstanceMetricName]
+    val BurstCapacityPercentage = "BurstCapacityPercentage".asInstanceOf[InstanceMetricName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -5019,7 +5401,9 @@ package lightsail {
         NetworkOut,
         StatusCheckFailed,
         StatusCheckFailed_Instance,
-        StatusCheckFailed_System
+        StatusCheckFailed_System,
+        BurstCapacityTime,
+        BurstCapacityPercentage
       )
     )
   }
@@ -5050,19 +5434,21 @@ package lightsail {
   sealed trait InstancePlatform extends js.Any
   object InstancePlatform extends js.Object {
     val LINUX_UNIX = "LINUX_UNIX".asInstanceOf[InstancePlatform]
-    val WINDOWS    = "WINDOWS".asInstanceOf[InstancePlatform]
+    val WINDOWS = "WINDOWS".asInstanceOf[InstancePlatform]
 
     val values = js.Object.freeze(js.Array(LINUX_UNIX, WINDOWS))
   }
 
   /**
-    * Describes information about the instance ports.
+    * Describes information about ports for an Amazon Lightsail instance.
     */
   @js.native
   trait InstancePortInfo extends js.Object {
     var accessDirection: js.UndefOr[AccessDirection]
     var accessFrom: js.UndefOr[String]
     var accessType: js.UndefOr[PortAccessType]
+    var cidrListAliases: js.UndefOr[StringList]
+    var cidrs: js.UndefOr[StringList]
     var commonName: js.UndefOr[String]
     var fromPort: js.UndefOr[Port]
     var protocol: js.UndefOr[NetworkProtocol]
@@ -5075,6 +5461,8 @@ package lightsail {
         accessDirection: js.UndefOr[AccessDirection] = js.undefined,
         accessFrom: js.UndefOr[String] = js.undefined,
         accessType: js.UndefOr[PortAccessType] = js.undefined,
+        cidrListAliases: js.UndefOr[StringList] = js.undefined,
+        cidrs: js.UndefOr[StringList] = js.undefined,
         commonName: js.UndefOr[String] = js.undefined,
         fromPort: js.UndefOr[Port] = js.undefined,
         protocol: js.UndefOr[NetworkProtocol] = js.undefined,
@@ -5084,6 +5472,8 @@ package lightsail {
       accessDirection.foreach(__v => __obj.updateDynamic("accessDirection")(__v.asInstanceOf[js.Any]))
       accessFrom.foreach(__v => __obj.updateDynamic("accessFrom")(__v.asInstanceOf[js.Any]))
       accessType.foreach(__v => __obj.updateDynamic("accessType")(__v.asInstanceOf[js.Any]))
+      cidrListAliases.foreach(__v => __obj.updateDynamic("cidrListAliases")(__v.asInstanceOf[js.Any]))
+      cidrs.foreach(__v => __obj.updateDynamic("cidrs")(__v.asInstanceOf[js.Any]))
       commonName.foreach(__v => __obj.updateDynamic("commonName")(__v.asInstanceOf[js.Any]))
       fromPort.foreach(__v => __obj.updateDynamic("fromPort")(__v.asInstanceOf[js.Any]))
       protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
@@ -5093,10 +5483,12 @@ package lightsail {
   }
 
   /**
-    * Describes the port state.
+    * Describes open ports on an instance, the IP addresses allowed to connect to the instance through the ports, and the protocol.
     */
   @js.native
   trait InstancePortState extends js.Object {
+    var cidrListAliases: js.UndefOr[StringList]
+    var cidrs: js.UndefOr[StringList]
     var fromPort: js.UndefOr[Port]
     var protocol: js.UndefOr[NetworkProtocol]
     var state: js.UndefOr[PortState]
@@ -5106,12 +5498,16 @@ package lightsail {
   object InstancePortState {
     @inline
     def apply(
+        cidrListAliases: js.UndefOr[StringList] = js.undefined,
+        cidrs: js.UndefOr[StringList] = js.undefined,
         fromPort: js.UndefOr[Port] = js.undefined,
         protocol: js.UndefOr[NetworkProtocol] = js.undefined,
         state: js.UndefOr[PortState] = js.undefined,
         toPort: js.UndefOr[Port] = js.undefined
     ): InstancePortState = {
       val __obj = js.Dynamic.literal()
+      cidrListAliases.foreach(__v => __obj.updateDynamic("cidrListAliases")(__v.asInstanceOf[js.Any]))
+      cidrs.foreach(__v => __obj.updateDynamic("cidrs")(__v.asInstanceOf[js.Any]))
       fromPort.foreach(__v => __obj.updateDynamic("fromPort")(__v.asInstanceOf[js.Any]))
       protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
       state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
@@ -5212,8 +5608,8 @@ package lightsail {
   @js.native
   sealed trait InstanceSnapshotState extends js.Any
   object InstanceSnapshotState extends js.Object {
-    val pending   = "pending".asInstanceOf[InstanceSnapshotState]
-    val error     = "error".asInstanceOf[InstanceSnapshotState]
+    val pending = "pending".asInstanceOf[InstanceSnapshotState]
+    val error = "error".asInstanceOf[InstanceSnapshotState]
     val available = "available".asInstanceOf[InstanceSnapshotState]
 
     val values = js.Object.freeze(js.Array(pending, error, available))
@@ -5377,7 +5773,7 @@ package lightsail {
   @js.native
   sealed trait LoadBalancerAttributeName extends js.Any
   object LoadBalancerAttributeName extends js.Object {
-    val HealthCheckPath          = "HealthCheckPath".asInstanceOf[LoadBalancerAttributeName]
+    val HealthCheckPath = "HealthCheckPath".asInstanceOf[LoadBalancerAttributeName]
     val SessionStickinessEnabled = "SessionStickinessEnabled".asInstanceOf[LoadBalancerAttributeName]
     val SessionStickiness_LB_CookieDurationSeconds =
       "SessionStickiness_LB_CookieDurationSeconds".asInstanceOf[LoadBalancerAttributeName]
@@ -5390,17 +5786,17 @@ package lightsail {
   sealed trait LoadBalancerMetricName extends js.Any
   object LoadBalancerMetricName extends js.Object {
     val ClientTLSNegotiationErrorCount = "ClientTLSNegotiationErrorCount".asInstanceOf[LoadBalancerMetricName]
-    val HealthyHostCount               = "HealthyHostCount".asInstanceOf[LoadBalancerMetricName]
-    val UnhealthyHostCount             = "UnhealthyHostCount".asInstanceOf[LoadBalancerMetricName]
-    val HTTPCode_LB_4XX_Count          = "HTTPCode_LB_4XX_Count".asInstanceOf[LoadBalancerMetricName]
-    val HTTPCode_LB_5XX_Count          = "HTTPCode_LB_5XX_Count".asInstanceOf[LoadBalancerMetricName]
-    val HTTPCode_Instance_2XX_Count    = "HTTPCode_Instance_2XX_Count".asInstanceOf[LoadBalancerMetricName]
-    val HTTPCode_Instance_3XX_Count    = "HTTPCode_Instance_3XX_Count".asInstanceOf[LoadBalancerMetricName]
-    val HTTPCode_Instance_4XX_Count    = "HTTPCode_Instance_4XX_Count".asInstanceOf[LoadBalancerMetricName]
-    val HTTPCode_Instance_5XX_Count    = "HTTPCode_Instance_5XX_Count".asInstanceOf[LoadBalancerMetricName]
-    val InstanceResponseTime           = "InstanceResponseTime".asInstanceOf[LoadBalancerMetricName]
-    val RejectedConnectionCount        = "RejectedConnectionCount".asInstanceOf[LoadBalancerMetricName]
-    val RequestCount                   = "RequestCount".asInstanceOf[LoadBalancerMetricName]
+    val HealthyHostCount = "HealthyHostCount".asInstanceOf[LoadBalancerMetricName]
+    val UnhealthyHostCount = "UnhealthyHostCount".asInstanceOf[LoadBalancerMetricName]
+    val HTTPCode_LB_4XX_Count = "HTTPCode_LB_4XX_Count".asInstanceOf[LoadBalancerMetricName]
+    val HTTPCode_LB_5XX_Count = "HTTPCode_LB_5XX_Count".asInstanceOf[LoadBalancerMetricName]
+    val HTTPCode_Instance_2XX_Count = "HTTPCode_Instance_2XX_Count".asInstanceOf[LoadBalancerMetricName]
+    val HTTPCode_Instance_3XX_Count = "HTTPCode_Instance_3XX_Count".asInstanceOf[LoadBalancerMetricName]
+    val HTTPCode_Instance_4XX_Count = "HTTPCode_Instance_4XX_Count".asInstanceOf[LoadBalancerMetricName]
+    val HTTPCode_Instance_5XX_Count = "HTTPCode_Instance_5XX_Count".asInstanceOf[LoadBalancerMetricName]
+    val InstanceResponseTime = "InstanceResponseTime".asInstanceOf[LoadBalancerMetricName]
+    val RejectedConnectionCount = "RejectedConnectionCount".asInstanceOf[LoadBalancerMetricName]
+    val RequestCount = "RequestCount".asInstanceOf[LoadBalancerMetricName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -5424,7 +5820,7 @@ package lightsail {
   sealed trait LoadBalancerProtocol extends js.Any
   object LoadBalancerProtocol extends js.Object {
     val HTTP_HTTPS = "HTTP_HTTPS".asInstanceOf[LoadBalancerProtocol]
-    val HTTP       = "HTTP".asInstanceOf[LoadBalancerProtocol]
+    val HTTP = "HTTP".asInstanceOf[LoadBalancerProtocol]
 
     val values = js.Object.freeze(js.Array(HTTP_HTTPS, HTTP))
   }
@@ -5432,11 +5828,11 @@ package lightsail {
   @js.native
   sealed trait LoadBalancerState extends js.Any
   object LoadBalancerState extends js.Object {
-    val active          = "active".asInstanceOf[LoadBalancerState]
-    val provisioning    = "provisioning".asInstanceOf[LoadBalancerState]
+    val active = "active".asInstanceOf[LoadBalancerState]
+    val provisioning = "provisioning".asInstanceOf[LoadBalancerState]
     val active_impaired = "active_impaired".asInstanceOf[LoadBalancerState]
-    val failed          = "failed".asInstanceOf[LoadBalancerState]
-    val unknown         = "unknown".asInstanceOf[LoadBalancerState]
+    val failed = "failed".asInstanceOf[LoadBalancerState]
+    val unknown = "unknown".asInstanceOf[LoadBalancerState]
 
     val values = js.Object.freeze(js.Array(active, provisioning, active_impaired, failed, unknown))
   }
@@ -5537,8 +5933,8 @@ package lightsail {
   sealed trait LoadBalancerTlsCertificateDomainStatus extends js.Any
   object LoadBalancerTlsCertificateDomainStatus extends js.Object {
     val PENDING_VALIDATION = "PENDING_VALIDATION".asInstanceOf[LoadBalancerTlsCertificateDomainStatus]
-    val FAILED             = "FAILED".asInstanceOf[LoadBalancerTlsCertificateDomainStatus]
-    val SUCCESS            = "SUCCESS".asInstanceOf[LoadBalancerTlsCertificateDomainStatus]
+    val FAILED = "FAILED".asInstanceOf[LoadBalancerTlsCertificateDomainStatus]
+    val SUCCESS = "SUCCESS".asInstanceOf[LoadBalancerTlsCertificateDomainStatus]
 
     val values = js.Object.freeze(js.Array(PENDING_VALIDATION, FAILED, SUCCESS))
   }
@@ -5602,9 +5998,9 @@ package lightsail {
     val NO_AVAILABLE_CONTACTS = "NO_AVAILABLE_CONTACTS".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
     val ADDITIONAL_VERIFICATION_REQUIRED =
       "ADDITIONAL_VERIFICATION_REQUIRED".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
-    val DOMAIN_NOT_ALLOWED    = "DOMAIN_NOT_ALLOWED".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
+    val DOMAIN_NOT_ALLOWED = "DOMAIN_NOT_ALLOWED".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
     val INVALID_PUBLIC_DOMAIN = "INVALID_PUBLIC_DOMAIN".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
-    val OTHER                 = "OTHER".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
+    val OTHER = "OTHER".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
 
     val values = js.Object.freeze(
       js.Array(
@@ -5621,9 +6017,9 @@ package lightsail {
   sealed trait LoadBalancerTlsCertificateRenewalStatus extends js.Any
   object LoadBalancerTlsCertificateRenewalStatus extends js.Object {
     val PENDING_AUTO_RENEWAL = "PENDING_AUTO_RENEWAL".asInstanceOf[LoadBalancerTlsCertificateRenewalStatus]
-    val PENDING_VALIDATION   = "PENDING_VALIDATION".asInstanceOf[LoadBalancerTlsCertificateRenewalStatus]
-    val SUCCESS              = "SUCCESS".asInstanceOf[LoadBalancerTlsCertificateRenewalStatus]
-    val FAILED               = "FAILED".asInstanceOf[LoadBalancerTlsCertificateRenewalStatus]
+    val PENDING_VALIDATION = "PENDING_VALIDATION".asInstanceOf[LoadBalancerTlsCertificateRenewalStatus]
+    val SUCCESS = "SUCCESS".asInstanceOf[LoadBalancerTlsCertificateRenewalStatus]
+    val FAILED = "FAILED".asInstanceOf[LoadBalancerTlsCertificateRenewalStatus]
 
     val values = js.Object.freeze(js.Array(PENDING_AUTO_RENEWAL, PENDING_VALIDATION, SUCCESS, FAILED))
   }
@@ -5653,16 +6049,16 @@ package lightsail {
   @js.native
   sealed trait LoadBalancerTlsCertificateRevocationReason extends js.Any
   object LoadBalancerTlsCertificateRevocationReason extends js.Object {
-    val UNSPECIFIED            = "UNSPECIFIED".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
-    val KEY_COMPROMISE         = "KEY_COMPROMISE".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
-    val CA_COMPROMISE          = "CA_COMPROMISE".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
-    val AFFILIATION_CHANGED    = "AFFILIATION_CHANGED".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
-    val SUPERCEDED             = "SUPERCEDED".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val UNSPECIFIED = "UNSPECIFIED".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val KEY_COMPROMISE = "KEY_COMPROMISE".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val CA_COMPROMISE = "CA_COMPROMISE".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val AFFILIATION_CHANGED = "AFFILIATION_CHANGED".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val SUPERCEDED = "SUPERCEDED".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
     val CESSATION_OF_OPERATION = "CESSATION_OF_OPERATION".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
-    val CERTIFICATE_HOLD       = "CERTIFICATE_HOLD".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
-    val REMOVE_FROM_CRL        = "REMOVE_FROM_CRL".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
-    val PRIVILEGE_WITHDRAWN    = "PRIVILEGE_WITHDRAWN".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
-    val A_A_COMPROMISE         = "A_A_COMPROMISE".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val CERTIFICATE_HOLD = "CERTIFICATE_HOLD".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val REMOVE_FROM_CRL = "REMOVE_FROM_CRL".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val PRIVILEGE_WITHDRAWN = "PRIVILEGE_WITHDRAWN".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
+    val A_A_COMPROMISE = "A_A_COMPROMISE".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
 
     val values = js.Object.freeze(
       js.Array(
@@ -5683,14 +6079,14 @@ package lightsail {
   @js.native
   sealed trait LoadBalancerTlsCertificateStatus extends js.Any
   object LoadBalancerTlsCertificateStatus extends js.Object {
-    val PENDING_VALIDATION   = "PENDING_VALIDATION".asInstanceOf[LoadBalancerTlsCertificateStatus]
-    val ISSUED               = "ISSUED".asInstanceOf[LoadBalancerTlsCertificateStatus]
-    val INACTIVE             = "INACTIVE".asInstanceOf[LoadBalancerTlsCertificateStatus]
-    val EXPIRED              = "EXPIRED".asInstanceOf[LoadBalancerTlsCertificateStatus]
+    val PENDING_VALIDATION = "PENDING_VALIDATION".asInstanceOf[LoadBalancerTlsCertificateStatus]
+    val ISSUED = "ISSUED".asInstanceOf[LoadBalancerTlsCertificateStatus]
+    val INACTIVE = "INACTIVE".asInstanceOf[LoadBalancerTlsCertificateStatus]
+    val EXPIRED = "EXPIRED".asInstanceOf[LoadBalancerTlsCertificateStatus]
     val VALIDATION_TIMED_OUT = "VALIDATION_TIMED_OUT".asInstanceOf[LoadBalancerTlsCertificateStatus]
-    val REVOKED              = "REVOKED".asInstanceOf[LoadBalancerTlsCertificateStatus]
-    val FAILED               = "FAILED".asInstanceOf[LoadBalancerTlsCertificateStatus]
-    val UNKNOWN              = "UNKNOWN".asInstanceOf[LoadBalancerTlsCertificateStatus]
+    val REVOKED = "REVOKED".asInstanceOf[LoadBalancerTlsCertificateStatus]
+    val FAILED = "FAILED".asInstanceOf[LoadBalancerTlsCertificateStatus]
+    val UNKNOWN = "UNKNOWN".asInstanceOf[LoadBalancerTlsCertificateStatus]
 
     val values = js.Object.freeze(
       js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED, UNKNOWN)
@@ -5779,12 +6175,72 @@ package lightsail {
   }
 
   @js.native
+  sealed trait MetricName extends js.Any
+  object MetricName extends js.Object {
+    val CPUUtilization = "CPUUtilization".asInstanceOf[MetricName]
+    val NetworkIn = "NetworkIn".asInstanceOf[MetricName]
+    val NetworkOut = "NetworkOut".asInstanceOf[MetricName]
+    val StatusCheckFailed = "StatusCheckFailed".asInstanceOf[MetricName]
+    val StatusCheckFailed_Instance = "StatusCheckFailed_Instance".asInstanceOf[MetricName]
+    val StatusCheckFailed_System = "StatusCheckFailed_System".asInstanceOf[MetricName]
+    val ClientTLSNegotiationErrorCount = "ClientTLSNegotiationErrorCount".asInstanceOf[MetricName]
+    val HealthyHostCount = "HealthyHostCount".asInstanceOf[MetricName]
+    val UnhealthyHostCount = "UnhealthyHostCount".asInstanceOf[MetricName]
+    val HTTPCode_LB_4XX_Count = "HTTPCode_LB_4XX_Count".asInstanceOf[MetricName]
+    val HTTPCode_LB_5XX_Count = "HTTPCode_LB_5XX_Count".asInstanceOf[MetricName]
+    val HTTPCode_Instance_2XX_Count = "HTTPCode_Instance_2XX_Count".asInstanceOf[MetricName]
+    val HTTPCode_Instance_3XX_Count = "HTTPCode_Instance_3XX_Count".asInstanceOf[MetricName]
+    val HTTPCode_Instance_4XX_Count = "HTTPCode_Instance_4XX_Count".asInstanceOf[MetricName]
+    val HTTPCode_Instance_5XX_Count = "HTTPCode_Instance_5XX_Count".asInstanceOf[MetricName]
+    val InstanceResponseTime = "InstanceResponseTime".asInstanceOf[MetricName]
+    val RejectedConnectionCount = "RejectedConnectionCount".asInstanceOf[MetricName]
+    val RequestCount = "RequestCount".asInstanceOf[MetricName]
+    val DatabaseConnections = "DatabaseConnections".asInstanceOf[MetricName]
+    val DiskQueueDepth = "DiskQueueDepth".asInstanceOf[MetricName]
+    val FreeStorageSpace = "FreeStorageSpace".asInstanceOf[MetricName]
+    val NetworkReceiveThroughput = "NetworkReceiveThroughput".asInstanceOf[MetricName]
+    val NetworkTransmitThroughput = "NetworkTransmitThroughput".asInstanceOf[MetricName]
+    val BurstCapacityTime = "BurstCapacityTime".asInstanceOf[MetricName]
+    val BurstCapacityPercentage = "BurstCapacityPercentage".asInstanceOf[MetricName]
+
+    val values = js.Object.freeze(
+      js.Array(
+        CPUUtilization,
+        NetworkIn,
+        NetworkOut,
+        StatusCheckFailed,
+        StatusCheckFailed_Instance,
+        StatusCheckFailed_System,
+        ClientTLSNegotiationErrorCount,
+        HealthyHostCount,
+        UnhealthyHostCount,
+        HTTPCode_LB_4XX_Count,
+        HTTPCode_LB_5XX_Count,
+        HTTPCode_Instance_2XX_Count,
+        HTTPCode_Instance_3XX_Count,
+        HTTPCode_Instance_4XX_Count,
+        HTTPCode_Instance_5XX_Count,
+        InstanceResponseTime,
+        RejectedConnectionCount,
+        RequestCount,
+        DatabaseConnections,
+        DiskQueueDepth,
+        FreeStorageSpace,
+        NetworkReceiveThroughput,
+        NetworkTransmitThroughput,
+        BurstCapacityTime,
+        BurstCapacityPercentage
+      )
+    )
+  }
+
+  @js.native
   sealed trait MetricStatistic extends js.Any
   object MetricStatistic extends js.Object {
-    val Minimum     = "Minimum".asInstanceOf[MetricStatistic]
-    val Maximum     = "Maximum".asInstanceOf[MetricStatistic]
-    val Sum         = "Sum".asInstanceOf[MetricStatistic]
-    val Average     = "Average".asInstanceOf[MetricStatistic]
+    val Minimum = "Minimum".asInstanceOf[MetricStatistic]
+    val Maximum = "Maximum".asInstanceOf[MetricStatistic]
+    val Sum = "Sum".asInstanceOf[MetricStatistic]
+    val Average = "Average".asInstanceOf[MetricStatistic]
     val SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
 
     val values = js.Object.freeze(js.Array(Minimum, Maximum, Sum, Average, SampleCount))
@@ -5793,33 +6249,33 @@ package lightsail {
   @js.native
   sealed trait MetricUnit extends js.Any
   object MetricUnit extends js.Object {
-    val Seconds            = "Seconds".asInstanceOf[MetricUnit]
-    val Microseconds       = "Microseconds".asInstanceOf[MetricUnit]
-    val Milliseconds       = "Milliseconds".asInstanceOf[MetricUnit]
-    val Bytes              = "Bytes".asInstanceOf[MetricUnit]
-    val Kilobytes          = "Kilobytes".asInstanceOf[MetricUnit]
-    val Megabytes          = "Megabytes".asInstanceOf[MetricUnit]
-    val Gigabytes          = "Gigabytes".asInstanceOf[MetricUnit]
-    val Terabytes          = "Terabytes".asInstanceOf[MetricUnit]
-    val Bits               = "Bits".asInstanceOf[MetricUnit]
-    val Kilobits           = "Kilobits".asInstanceOf[MetricUnit]
-    val Megabits           = "Megabits".asInstanceOf[MetricUnit]
-    val Gigabits           = "Gigabits".asInstanceOf[MetricUnit]
-    val Terabits           = "Terabits".asInstanceOf[MetricUnit]
-    val Percent            = "Percent".asInstanceOf[MetricUnit]
-    val Count              = "Count".asInstanceOf[MetricUnit]
-    val `Bytes/Second`     = "Bytes/Second".asInstanceOf[MetricUnit]
+    val Seconds = "Seconds".asInstanceOf[MetricUnit]
+    val Microseconds = "Microseconds".asInstanceOf[MetricUnit]
+    val Milliseconds = "Milliseconds".asInstanceOf[MetricUnit]
+    val Bytes = "Bytes".asInstanceOf[MetricUnit]
+    val Kilobytes = "Kilobytes".asInstanceOf[MetricUnit]
+    val Megabytes = "Megabytes".asInstanceOf[MetricUnit]
+    val Gigabytes = "Gigabytes".asInstanceOf[MetricUnit]
+    val Terabytes = "Terabytes".asInstanceOf[MetricUnit]
+    val Bits = "Bits".asInstanceOf[MetricUnit]
+    val Kilobits = "Kilobits".asInstanceOf[MetricUnit]
+    val Megabits = "Megabits".asInstanceOf[MetricUnit]
+    val Gigabits = "Gigabits".asInstanceOf[MetricUnit]
+    val Terabits = "Terabits".asInstanceOf[MetricUnit]
+    val Percent = "Percent".asInstanceOf[MetricUnit]
+    val Count = "Count".asInstanceOf[MetricUnit]
+    val `Bytes/Second` = "Bytes/Second".asInstanceOf[MetricUnit]
     val `Kilobytes/Second` = "Kilobytes/Second".asInstanceOf[MetricUnit]
     val `Megabytes/Second` = "Megabytes/Second".asInstanceOf[MetricUnit]
     val `Gigabytes/Second` = "Gigabytes/Second".asInstanceOf[MetricUnit]
     val `Terabytes/Second` = "Terabytes/Second".asInstanceOf[MetricUnit]
-    val `Bits/Second`      = "Bits/Second".asInstanceOf[MetricUnit]
-    val `Kilobits/Second`  = "Kilobits/Second".asInstanceOf[MetricUnit]
-    val `Megabits/Second`  = "Megabits/Second".asInstanceOf[MetricUnit]
-    val `Gigabits/Second`  = "Gigabits/Second".asInstanceOf[MetricUnit]
-    val `Terabits/Second`  = "Terabits/Second".asInstanceOf[MetricUnit]
-    val `Count/Second`     = "Count/Second".asInstanceOf[MetricUnit]
-    val None               = "None".asInstanceOf[MetricUnit]
+    val `Bits/Second` = "Bits/Second".asInstanceOf[MetricUnit]
+    val `Kilobits/Second` = "Kilobits/Second".asInstanceOf[MetricUnit]
+    val `Megabits/Second` = "Megabits/Second".asInstanceOf[MetricUnit]
+    val `Gigabits/Second` = "Gigabits/Second".asInstanceOf[MetricUnit]
+    val `Terabits/Second` = "Terabits/Second".asInstanceOf[MetricUnit]
+    val `Count/Second` = "Count/Second".asInstanceOf[MetricUnit]
+    val None = "None".asInstanceOf[MetricUnit]
 
     val values = js.Object.freeze(
       js.Array(
@@ -5855,6 +6311,32 @@ package lightsail {
   }
 
   /**
+    * Describes resource being monitored by an alarm.
+    *  An alarm is a way to monitor your Amazon Lightsail resource metrics. For more information, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms|Alarms in Amazon Lightsail]].
+    */
+  @js.native
+  trait MonitoredResourceInfo extends js.Object {
+    var arn: js.UndefOr[ResourceArn]
+    var name: js.UndefOr[ResourceName]
+    var resourceType: js.UndefOr[ResourceType]
+  }
+
+  object MonitoredResourceInfo {
+    @inline
+    def apply(
+        arn: js.UndefOr[ResourceArn] = js.undefined,
+        name: js.UndefOr[ResourceName] = js.undefined,
+        resourceType: js.UndefOr[ResourceType] = js.undefined
+    ): MonitoredResourceInfo = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MonitoredResourceInfo]
+    }
+  }
+
+  /**
     * Describes the monthly data transfer in and out of your virtual private server (or <i>instance</i>).
     */
   @js.native
@@ -5879,8 +6361,9 @@ package lightsail {
     val tcp = "tcp".asInstanceOf[NetworkProtocol]
     val all = "all".asInstanceOf[NetworkProtocol]
     val udp = "udp".asInstanceOf[NetworkProtocol]
+    val icmp = "icmp".asInstanceOf[NetworkProtocol]
 
-    val values = js.Object.freeze(js.Array(tcp, all, udp))
+    val values = js.Object.freeze(js.Array(tcp, all, udp, icmp))
   }
 
   @js.native
@@ -5897,7 +6380,7 @@ package lightsail {
     ): OpenInstancePublicPortsRequest = {
       val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any],
-        "portInfo"     -> portInfo.asInstanceOf[js.Any]
+        "portInfo" -> portInfo.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[OpenInstancePublicPortsRequest]
@@ -5976,10 +6459,10 @@ package lightsail {
   sealed trait OperationStatus extends js.Any
   object OperationStatus extends js.Object {
     val NotStarted = "NotStarted".asInstanceOf[OperationStatus]
-    val Started    = "Started".asInstanceOf[OperationStatus]
-    val Failed     = "Failed".asInstanceOf[OperationStatus]
-    val Completed  = "Completed".asInstanceOf[OperationStatus]
-    val Succeeded  = "Succeeded".asInstanceOf[OperationStatus]
+    val Started = "Started".asInstanceOf[OperationStatus]
+    val Failed = "Failed".asInstanceOf[OperationStatus]
+    val Completed = "Completed".asInstanceOf[OperationStatus]
+    val Succeeded = "Succeeded".asInstanceOf[OperationStatus]
 
     val values = js.Object.freeze(js.Array(NotStarted, Started, Failed, Completed, Succeeded))
   }
@@ -5987,53 +6470,61 @@ package lightsail {
   @js.native
   sealed trait OperationType extends js.Any
   object OperationType extends js.Object {
-    val DeleteKnownHostKeys                  = "DeleteKnownHostKeys".asInstanceOf[OperationType]
-    val DeleteInstance                       = "DeleteInstance".asInstanceOf[OperationType]
-    val CreateInstance                       = "CreateInstance".asInstanceOf[OperationType]
-    val StopInstance                         = "StopInstance".asInstanceOf[OperationType]
-    val StartInstance                        = "StartInstance".asInstanceOf[OperationType]
-    val RebootInstance                       = "RebootInstance".asInstanceOf[OperationType]
-    val OpenInstancePublicPorts              = "OpenInstancePublicPorts".asInstanceOf[OperationType]
-    val PutInstancePublicPorts               = "PutInstancePublicPorts".asInstanceOf[OperationType]
-    val CloseInstancePublicPorts             = "CloseInstancePublicPorts".asInstanceOf[OperationType]
-    val AllocateStaticIp                     = "AllocateStaticIp".asInstanceOf[OperationType]
-    val ReleaseStaticIp                      = "ReleaseStaticIp".asInstanceOf[OperationType]
-    val AttachStaticIp                       = "AttachStaticIp".asInstanceOf[OperationType]
-    val DetachStaticIp                       = "DetachStaticIp".asInstanceOf[OperationType]
-    val UpdateDomainEntry                    = "UpdateDomainEntry".asInstanceOf[OperationType]
-    val DeleteDomainEntry                    = "DeleteDomainEntry".asInstanceOf[OperationType]
-    val CreateDomain                         = "CreateDomain".asInstanceOf[OperationType]
-    val DeleteDomain                         = "DeleteDomain".asInstanceOf[OperationType]
-    val CreateInstanceSnapshot               = "CreateInstanceSnapshot".asInstanceOf[OperationType]
-    val DeleteInstanceSnapshot               = "DeleteInstanceSnapshot".asInstanceOf[OperationType]
-    val CreateInstancesFromSnapshot          = "CreateInstancesFromSnapshot".asInstanceOf[OperationType]
-    val CreateLoadBalancer                   = "CreateLoadBalancer".asInstanceOf[OperationType]
-    val DeleteLoadBalancer                   = "DeleteLoadBalancer".asInstanceOf[OperationType]
-    val AttachInstancesToLoadBalancer        = "AttachInstancesToLoadBalancer".asInstanceOf[OperationType]
-    val DetachInstancesFromLoadBalancer      = "DetachInstancesFromLoadBalancer".asInstanceOf[OperationType]
-    val UpdateLoadBalancerAttribute          = "UpdateLoadBalancerAttribute".asInstanceOf[OperationType]
-    val CreateLoadBalancerTlsCertificate     = "CreateLoadBalancerTlsCertificate".asInstanceOf[OperationType]
-    val DeleteLoadBalancerTlsCertificate     = "DeleteLoadBalancerTlsCertificate".asInstanceOf[OperationType]
-    val AttachLoadBalancerTlsCertificate     = "AttachLoadBalancerTlsCertificate".asInstanceOf[OperationType]
-    val CreateDisk                           = "CreateDisk".asInstanceOf[OperationType]
-    val DeleteDisk                           = "DeleteDisk".asInstanceOf[OperationType]
-    val AttachDisk                           = "AttachDisk".asInstanceOf[OperationType]
-    val DetachDisk                           = "DetachDisk".asInstanceOf[OperationType]
-    val CreateDiskSnapshot                   = "CreateDiskSnapshot".asInstanceOf[OperationType]
-    val DeleteDiskSnapshot                   = "DeleteDiskSnapshot".asInstanceOf[OperationType]
-    val CreateDiskFromSnapshot               = "CreateDiskFromSnapshot".asInstanceOf[OperationType]
-    val CreateRelationalDatabase             = "CreateRelationalDatabase".asInstanceOf[OperationType]
-    val UpdateRelationalDatabase             = "UpdateRelationalDatabase".asInstanceOf[OperationType]
-    val DeleteRelationalDatabase             = "DeleteRelationalDatabase".asInstanceOf[OperationType]
+    val DeleteKnownHostKeys = "DeleteKnownHostKeys".asInstanceOf[OperationType]
+    val DeleteInstance = "DeleteInstance".asInstanceOf[OperationType]
+    val CreateInstance = "CreateInstance".asInstanceOf[OperationType]
+    val StopInstance = "StopInstance".asInstanceOf[OperationType]
+    val StartInstance = "StartInstance".asInstanceOf[OperationType]
+    val RebootInstance = "RebootInstance".asInstanceOf[OperationType]
+    val OpenInstancePublicPorts = "OpenInstancePublicPorts".asInstanceOf[OperationType]
+    val PutInstancePublicPorts = "PutInstancePublicPorts".asInstanceOf[OperationType]
+    val CloseInstancePublicPorts = "CloseInstancePublicPorts".asInstanceOf[OperationType]
+    val AllocateStaticIp = "AllocateStaticIp".asInstanceOf[OperationType]
+    val ReleaseStaticIp = "ReleaseStaticIp".asInstanceOf[OperationType]
+    val AttachStaticIp = "AttachStaticIp".asInstanceOf[OperationType]
+    val DetachStaticIp = "DetachStaticIp".asInstanceOf[OperationType]
+    val UpdateDomainEntry = "UpdateDomainEntry".asInstanceOf[OperationType]
+    val DeleteDomainEntry = "DeleteDomainEntry".asInstanceOf[OperationType]
+    val CreateDomain = "CreateDomain".asInstanceOf[OperationType]
+    val DeleteDomain = "DeleteDomain".asInstanceOf[OperationType]
+    val CreateInstanceSnapshot = "CreateInstanceSnapshot".asInstanceOf[OperationType]
+    val DeleteInstanceSnapshot = "DeleteInstanceSnapshot".asInstanceOf[OperationType]
+    val CreateInstancesFromSnapshot = "CreateInstancesFromSnapshot".asInstanceOf[OperationType]
+    val CreateLoadBalancer = "CreateLoadBalancer".asInstanceOf[OperationType]
+    val DeleteLoadBalancer = "DeleteLoadBalancer".asInstanceOf[OperationType]
+    val AttachInstancesToLoadBalancer = "AttachInstancesToLoadBalancer".asInstanceOf[OperationType]
+    val DetachInstancesFromLoadBalancer = "DetachInstancesFromLoadBalancer".asInstanceOf[OperationType]
+    val UpdateLoadBalancerAttribute = "UpdateLoadBalancerAttribute".asInstanceOf[OperationType]
+    val CreateLoadBalancerTlsCertificate = "CreateLoadBalancerTlsCertificate".asInstanceOf[OperationType]
+    val DeleteLoadBalancerTlsCertificate = "DeleteLoadBalancerTlsCertificate".asInstanceOf[OperationType]
+    val AttachLoadBalancerTlsCertificate = "AttachLoadBalancerTlsCertificate".asInstanceOf[OperationType]
+    val CreateDisk = "CreateDisk".asInstanceOf[OperationType]
+    val DeleteDisk = "DeleteDisk".asInstanceOf[OperationType]
+    val AttachDisk = "AttachDisk".asInstanceOf[OperationType]
+    val DetachDisk = "DetachDisk".asInstanceOf[OperationType]
+    val CreateDiskSnapshot = "CreateDiskSnapshot".asInstanceOf[OperationType]
+    val DeleteDiskSnapshot = "DeleteDiskSnapshot".asInstanceOf[OperationType]
+    val CreateDiskFromSnapshot = "CreateDiskFromSnapshot".asInstanceOf[OperationType]
+    val CreateRelationalDatabase = "CreateRelationalDatabase".asInstanceOf[OperationType]
+    val UpdateRelationalDatabase = "UpdateRelationalDatabase".asInstanceOf[OperationType]
+    val DeleteRelationalDatabase = "DeleteRelationalDatabase".asInstanceOf[OperationType]
     val CreateRelationalDatabaseFromSnapshot = "CreateRelationalDatabaseFromSnapshot".asInstanceOf[OperationType]
-    val CreateRelationalDatabaseSnapshot     = "CreateRelationalDatabaseSnapshot".asInstanceOf[OperationType]
-    val DeleteRelationalDatabaseSnapshot     = "DeleteRelationalDatabaseSnapshot".asInstanceOf[OperationType]
-    val UpdateRelationalDatabaseParameters   = "UpdateRelationalDatabaseParameters".asInstanceOf[OperationType]
-    val StartRelationalDatabase              = "StartRelationalDatabase".asInstanceOf[OperationType]
-    val RebootRelationalDatabase             = "RebootRelationalDatabase".asInstanceOf[OperationType]
-    val StopRelationalDatabase               = "StopRelationalDatabase".asInstanceOf[OperationType]
-    val EnableAddOn                          = "EnableAddOn".asInstanceOf[OperationType]
-    val DisableAddOn                         = "DisableAddOn".asInstanceOf[OperationType]
+    val CreateRelationalDatabaseSnapshot = "CreateRelationalDatabaseSnapshot".asInstanceOf[OperationType]
+    val DeleteRelationalDatabaseSnapshot = "DeleteRelationalDatabaseSnapshot".asInstanceOf[OperationType]
+    val UpdateRelationalDatabaseParameters = "UpdateRelationalDatabaseParameters".asInstanceOf[OperationType]
+    val StartRelationalDatabase = "StartRelationalDatabase".asInstanceOf[OperationType]
+    val RebootRelationalDatabase = "RebootRelationalDatabase".asInstanceOf[OperationType]
+    val StopRelationalDatabase = "StopRelationalDatabase".asInstanceOf[OperationType]
+    val EnableAddOn = "EnableAddOn".asInstanceOf[OperationType]
+    val DisableAddOn = "DisableAddOn".asInstanceOf[OperationType]
+    val PutAlarm = "PutAlarm".asInstanceOf[OperationType]
+    val GetAlarms = "GetAlarms".asInstanceOf[OperationType]
+    val DeleteAlarm = "DeleteAlarm".asInstanceOf[OperationType]
+    val TestAlarm = "TestAlarm".asInstanceOf[OperationType]
+    val CreateContactMethod = "CreateContactMethod".asInstanceOf[OperationType]
+    val GetContactMethods = "GetContactMethods".asInstanceOf[OperationType]
+    val SendContactMethodVerification = "SendContactMethodVerification".asInstanceOf[OperationType]
+    val DeleteContactMethod = "DeleteContactMethod".asInstanceOf[OperationType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -6083,7 +6574,15 @@ package lightsail {
         RebootRelationalDatabase,
         StopRelationalDatabase,
         EnableAddOn,
-        DisableAddOn
+        DisableAddOn,
+        PutAlarm,
+        GetAlarms,
+        DeleteAlarm,
+        TestAlarm,
+        CreateContactMethod,
+        GetContactMethods,
+        SendContactMethodVerification,
+        DeleteContactMethod
       )
     )
   }
@@ -6192,17 +6691,19 @@ package lightsail {
   @js.native
   sealed trait PortAccessType extends js.Any
   object PortAccessType extends js.Object {
-    val Public  = "Public".asInstanceOf[PortAccessType]
+    val Public = "Public".asInstanceOf[PortAccessType]
     val Private = "Private".asInstanceOf[PortAccessType]
 
     val values = js.Object.freeze(js.Array(Public, Private))
   }
 
   /**
-    * Describes information about the ports on your virtual private server (or <i>instance</i>).
+    * Describes ports to open on an instance, the IP addresses allowed to connect to the instance through the ports, and the protocol.
     */
   @js.native
   trait PortInfo extends js.Object {
+    var cidrListAliases: js.UndefOr[StringList]
+    var cidrs: js.UndefOr[StringList]
     var fromPort: js.UndefOr[Port]
     var protocol: js.UndefOr[NetworkProtocol]
     var toPort: js.UndefOr[Port]
@@ -6211,11 +6712,15 @@ package lightsail {
   object PortInfo {
     @inline
     def apply(
+        cidrListAliases: js.UndefOr[StringList] = js.undefined,
+        cidrs: js.UndefOr[StringList] = js.undefined,
         fromPort: js.UndefOr[Port] = js.undefined,
         protocol: js.UndefOr[NetworkProtocol] = js.undefined,
         toPort: js.UndefOr[Port] = js.undefined
     ): PortInfo = {
       val __obj = js.Dynamic.literal()
+      cidrListAliases.foreach(__v => __obj.updateDynamic("cidrListAliases")(__v.asInstanceOf[js.Any]))
+      cidrs.foreach(__v => __obj.updateDynamic("cidrs")(__v.asInstanceOf[js.Any]))
       fromPort.foreach(__v => __obj.updateDynamic("fromPort")(__v.asInstanceOf[js.Any]))
       protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
       toPort.foreach(__v => __obj.updateDynamic("toPort")(__v.asInstanceOf[js.Any]))
@@ -6226,10 +6731,10 @@ package lightsail {
   @js.native
   sealed trait PortInfoSourceType extends js.Any
   object PortInfoSourceType extends js.Object {
-    val DEFAULT  = "DEFAULT".asInstanceOf[PortInfoSourceType]
+    val DEFAULT = "DEFAULT".asInstanceOf[PortInfoSourceType]
     val INSTANCE = "INSTANCE".asInstanceOf[PortInfoSourceType]
-    val NONE     = "NONE".asInstanceOf[PortInfoSourceType]
-    val CLOSED   = "CLOSED".asInstanceOf[PortInfoSourceType]
+    val NONE = "NONE".asInstanceOf[PortInfoSourceType]
+    val CLOSED = "CLOSED".asInstanceOf[PortInfoSourceType]
 
     val values = js.Object.freeze(js.Array(DEFAULT, INSTANCE, NONE, CLOSED))
   }
@@ -6237,10 +6742,74 @@ package lightsail {
   @js.native
   sealed trait PortState extends js.Any
   object PortState extends js.Object {
-    val open   = "open".asInstanceOf[PortState]
+    val open = "open".asInstanceOf[PortState]
     val closed = "closed".asInstanceOf[PortState]
 
     val values = js.Object.freeze(js.Array(open, closed))
+  }
+
+  @js.native
+  trait PutAlarmRequest extends js.Object {
+    var alarmName: ResourceName
+    var comparisonOperator: ComparisonOperator
+    var evaluationPeriods: Int
+    var metricName: MetricName
+    var monitoredResourceName: ResourceName
+    var threshold: double
+    var contactProtocols: js.UndefOr[ContactProtocolsList]
+    var datapointsToAlarm: js.UndefOr[Int]
+    var notificationEnabled: js.UndefOr[Boolean]
+    var notificationTriggers: js.UndefOr[NotificationTriggerList]
+    var treatMissingData: js.UndefOr[TreatMissingData]
+  }
+
+  object PutAlarmRequest {
+    @inline
+    def apply(
+        alarmName: ResourceName,
+        comparisonOperator: ComparisonOperator,
+        evaluationPeriods: Int,
+        metricName: MetricName,
+        monitoredResourceName: ResourceName,
+        threshold: double,
+        contactProtocols: js.UndefOr[ContactProtocolsList] = js.undefined,
+        datapointsToAlarm: js.UndefOr[Int] = js.undefined,
+        notificationEnabled: js.UndefOr[Boolean] = js.undefined,
+        notificationTriggers: js.UndefOr[NotificationTriggerList] = js.undefined,
+        treatMissingData: js.UndefOr[TreatMissingData] = js.undefined
+    ): PutAlarmRequest = {
+      val __obj = js.Dynamic.literal(
+        "alarmName" -> alarmName.asInstanceOf[js.Any],
+        "comparisonOperator" -> comparisonOperator.asInstanceOf[js.Any],
+        "evaluationPeriods" -> evaluationPeriods.asInstanceOf[js.Any],
+        "metricName" -> metricName.asInstanceOf[js.Any],
+        "monitoredResourceName" -> monitoredResourceName.asInstanceOf[js.Any],
+        "threshold" -> threshold.asInstanceOf[js.Any]
+      )
+
+      contactProtocols.foreach(__v => __obj.updateDynamic("contactProtocols")(__v.asInstanceOf[js.Any]))
+      datapointsToAlarm.foreach(__v => __obj.updateDynamic("datapointsToAlarm")(__v.asInstanceOf[js.Any]))
+      notificationEnabled.foreach(__v => __obj.updateDynamic("notificationEnabled")(__v.asInstanceOf[js.Any]))
+      notificationTriggers.foreach(__v => __obj.updateDynamic("notificationTriggers")(__v.asInstanceOf[js.Any]))
+      treatMissingData.foreach(__v => __obj.updateDynamic("treatMissingData")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutAlarmRequest]
+    }
+  }
+
+  @js.native
+  trait PutAlarmResult extends js.Object {
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object PutAlarmResult {
+    @inline
+    def apply(
+        operations: js.UndefOr[OperationList] = js.undefined
+    ): PutAlarmResult = {
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutAlarmResult]
+    }
   }
 
   @js.native
@@ -6257,7 +6826,7 @@ package lightsail {
     ): PutInstancePublicPortsRequest = {
       val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any],
-        "portInfos"    -> portInfos.asInstanceOf[js.Any]
+        "portInfos" -> portInfos.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutInstancePublicPortsRequest]
@@ -6351,9 +6920,9 @@ package lightsail {
   @js.native
   sealed trait RecordState extends js.Any
   object RecordState extends js.Object {
-    val Started   = "Started".asInstanceOf[RecordState]
+    val Started = "Started".asInstanceOf[RecordState]
     val Succeeded = "Succeeded".asInstanceOf[RecordState]
-    val Failed    = "Failed".asInstanceOf[RecordState]
+    val Failed = "Failed".asInstanceOf[RecordState]
 
     val values = js.Object.freeze(js.Array(Started, Succeeded, Failed))
   }
@@ -6397,16 +6966,16 @@ package lightsail {
   @js.native
   sealed trait RegionName extends js.Any
   object RegionName extends js.Object {
-    val `us-east-1`      = "us-east-1".asInstanceOf[RegionName]
-    val `us-east-2`      = "us-east-2".asInstanceOf[RegionName]
-    val `us-west-1`      = "us-west-1".asInstanceOf[RegionName]
-    val `us-west-2`      = "us-west-2".asInstanceOf[RegionName]
-    val `eu-west-1`      = "eu-west-1".asInstanceOf[RegionName]
-    val `eu-west-2`      = "eu-west-2".asInstanceOf[RegionName]
-    val `eu-west-3`      = "eu-west-3".asInstanceOf[RegionName]
-    val `eu-central-1`   = "eu-central-1".asInstanceOf[RegionName]
-    val `ca-central-1`   = "ca-central-1".asInstanceOf[RegionName]
-    val `ap-south-1`     = "ap-south-1".asInstanceOf[RegionName]
+    val `us-east-1` = "us-east-1".asInstanceOf[RegionName]
+    val `us-east-2` = "us-east-2".asInstanceOf[RegionName]
+    val `us-west-1` = "us-west-1".asInstanceOf[RegionName]
+    val `us-west-2` = "us-west-2".asInstanceOf[RegionName]
+    val `eu-west-1` = "eu-west-1".asInstanceOf[RegionName]
+    val `eu-west-2` = "eu-west-2".asInstanceOf[RegionName]
+    val `eu-west-3` = "eu-west-3".asInstanceOf[RegionName]
+    val `eu-central-1` = "eu-central-1".asInstanceOf[RegionName]
+    val `ca-central-1` = "ca-central-1".asInstanceOf[RegionName]
+    val `ap-south-1` = "ap-south-1".asInstanceOf[RegionName]
     val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[RegionName]
     val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[RegionName]
     val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[RegionName]
@@ -6699,11 +7268,11 @@ package lightsail {
   @js.native
   sealed trait RelationalDatabaseMetricName extends js.Any
   object RelationalDatabaseMetricName extends js.Object {
-    val CPUUtilization            = "CPUUtilization".asInstanceOf[RelationalDatabaseMetricName]
-    val DatabaseConnections       = "DatabaseConnections".asInstanceOf[RelationalDatabaseMetricName]
-    val DiskQueueDepth            = "DiskQueueDepth".asInstanceOf[RelationalDatabaseMetricName]
-    val FreeStorageSpace          = "FreeStorageSpace".asInstanceOf[RelationalDatabaseMetricName]
-    val NetworkReceiveThroughput  = "NetworkReceiveThroughput".asInstanceOf[RelationalDatabaseMetricName]
+    val CPUUtilization = "CPUUtilization".asInstanceOf[RelationalDatabaseMetricName]
+    val DatabaseConnections = "DatabaseConnections".asInstanceOf[RelationalDatabaseMetricName]
+    val DiskQueueDepth = "DiskQueueDepth".asInstanceOf[RelationalDatabaseMetricName]
+    val FreeStorageSpace = "FreeStorageSpace".asInstanceOf[RelationalDatabaseMetricName]
+    val NetworkReceiveThroughput = "NetworkReceiveThroughput".asInstanceOf[RelationalDatabaseMetricName]
     val NetworkTransmitThroughput = "NetworkTransmitThroughput".asInstanceOf[RelationalDatabaseMetricName]
 
     val values = js.Object.freeze(
@@ -6761,9 +7330,9 @@ package lightsail {
   @js.native
   sealed trait RelationalDatabasePasswordVersion extends js.Any
   object RelationalDatabasePasswordVersion extends js.Object {
-    val CURRENT  = "CURRENT".asInstanceOf[RelationalDatabasePasswordVersion]
+    val CURRENT = "CURRENT".asInstanceOf[RelationalDatabasePasswordVersion]
     val PREVIOUS = "PREVIOUS".asInstanceOf[RelationalDatabasePasswordVersion]
-    val PENDING  = "PENDING".asInstanceOf[RelationalDatabasePasswordVersion]
+    val PENDING = "PENDING".asInstanceOf[RelationalDatabasePasswordVersion]
 
     val values = js.Object.freeze(js.Array(CURRENT, PREVIOUS, PENDING))
   }
@@ -6896,20 +7465,22 @@ package lightsail {
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType extends js.Object {
-    val Instance                   = "Instance".asInstanceOf[ResourceType]
-    val StaticIp                   = "StaticIp".asInstanceOf[ResourceType]
-    val KeyPair                    = "KeyPair".asInstanceOf[ResourceType]
-    val InstanceSnapshot           = "InstanceSnapshot".asInstanceOf[ResourceType]
-    val Domain                     = "Domain".asInstanceOf[ResourceType]
-    val PeeredVpc                  = "PeeredVpc".asInstanceOf[ResourceType]
-    val LoadBalancer               = "LoadBalancer".asInstanceOf[ResourceType]
+    val Instance = "Instance".asInstanceOf[ResourceType]
+    val StaticIp = "StaticIp".asInstanceOf[ResourceType]
+    val KeyPair = "KeyPair".asInstanceOf[ResourceType]
+    val InstanceSnapshot = "InstanceSnapshot".asInstanceOf[ResourceType]
+    val Domain = "Domain".asInstanceOf[ResourceType]
+    val PeeredVpc = "PeeredVpc".asInstanceOf[ResourceType]
+    val LoadBalancer = "LoadBalancer".asInstanceOf[ResourceType]
     val LoadBalancerTlsCertificate = "LoadBalancerTlsCertificate".asInstanceOf[ResourceType]
-    val Disk                       = "Disk".asInstanceOf[ResourceType]
-    val DiskSnapshot               = "DiskSnapshot".asInstanceOf[ResourceType]
-    val RelationalDatabase         = "RelationalDatabase".asInstanceOf[ResourceType]
+    val Disk = "Disk".asInstanceOf[ResourceType]
+    val DiskSnapshot = "DiskSnapshot".asInstanceOf[ResourceType]
+    val RelationalDatabase = "RelationalDatabase".asInstanceOf[ResourceType]
     val RelationalDatabaseSnapshot = "RelationalDatabaseSnapshot".asInstanceOf[ResourceType]
-    val ExportSnapshotRecord       = "ExportSnapshotRecord".asInstanceOf[ResourceType]
-    val CloudFormationStackRecord  = "CloudFormationStackRecord".asInstanceOf[ResourceType]
+    val ExportSnapshotRecord = "ExportSnapshotRecord".asInstanceOf[ResourceType]
+    val CloudFormationStackRecord = "CloudFormationStackRecord".asInstanceOf[ResourceType]
+    val Alarm = "Alarm".asInstanceOf[ResourceType]
+    val ContactMethod = "ContactMethod".asInstanceOf[ResourceType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -6926,9 +7497,45 @@ package lightsail {
         RelationalDatabase,
         RelationalDatabaseSnapshot,
         ExportSnapshotRecord,
-        CloudFormationStackRecord
+        CloudFormationStackRecord,
+        Alarm,
+        ContactMethod
       )
     )
+  }
+
+  @js.native
+  trait SendContactMethodVerificationRequest extends js.Object {
+    var protocol: ContactMethodVerificationProtocol
+  }
+
+  object SendContactMethodVerificationRequest {
+    @inline
+    def apply(
+        protocol: ContactMethodVerificationProtocol
+    ): SendContactMethodVerificationRequest = {
+      val __obj = js.Dynamic.literal(
+        "protocol" -> protocol.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[SendContactMethodVerificationRequest]
+    }
+  }
+
+  @js.native
+  trait SendContactMethodVerificationResult extends js.Object {
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object SendContactMethodVerificationResult {
+    @inline
+    def apply(
+        operations: js.UndefOr[OperationList] = js.undefined
+    ): SendContactMethodVerificationResult = {
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SendContactMethodVerificationResult]
+    }
   }
 
   @js.native
@@ -7157,7 +7764,7 @@ package lightsail {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceName" -> resourceName.asInstanceOf[js.Any],
-        "tags"         -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       resourceArn.foreach(__v => __obj.updateDynamic("resourceArn")(__v.asInstanceOf[js.Any]))
@@ -7179,6 +7786,54 @@ package lightsail {
       operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagResourceResult]
     }
+  }
+
+  @js.native
+  trait TestAlarmRequest extends js.Object {
+    var alarmName: ResourceName
+    var state: AlarmState
+  }
+
+  object TestAlarmRequest {
+    @inline
+    def apply(
+        alarmName: ResourceName,
+        state: AlarmState
+    ): TestAlarmRequest = {
+      val __obj = js.Dynamic.literal(
+        "alarmName" -> alarmName.asInstanceOf[js.Any],
+        "state" -> state.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TestAlarmRequest]
+    }
+  }
+
+  @js.native
+  trait TestAlarmResult extends js.Object {
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object TestAlarmResult {
+    @inline
+    def apply(
+        operations: js.UndefOr[OperationList] = js.undefined
+    ): TestAlarmResult = {
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TestAlarmResult]
+    }
+  }
+
+  @js.native
+  sealed trait TreatMissingData extends js.Any
+  object TreatMissingData extends js.Object {
+    val breaching = "breaching".asInstanceOf[TreatMissingData]
+    val notBreaching = "notBreaching".asInstanceOf[TreatMissingData]
+    val ignore = "ignore".asInstanceOf[TreatMissingData]
+    val missing = "missing".asInstanceOf[TreatMissingData]
+
+    val values = js.Object.freeze(js.Array(breaching, notBreaching, ignore, missing))
   }
 
   @js.native
@@ -7226,7 +7881,7 @@ package lightsail {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceName" -> resourceName.asInstanceOf[js.Any],
-        "tagKeys"      -> tagKeys.asInstanceOf[js.Any]
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
 
       resourceArn.foreach(__v => __obj.updateDynamic("resourceArn")(__v.asInstanceOf[js.Any]))
@@ -7264,7 +7919,7 @@ package lightsail {
     ): UpdateDomainEntryRequest = {
       val __obj = js.Dynamic.literal(
         "domainEntry" -> domainEntry.asInstanceOf[js.Any],
-        "domainName"  -> domainName.asInstanceOf[js.Any]
+        "domainName" -> domainName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateDomainEntryRequest]
@@ -7302,8 +7957,8 @@ package lightsail {
         loadBalancerName: ResourceName
     ): UpdateLoadBalancerAttributeRequest = {
       val __obj = js.Dynamic.literal(
-        "attributeName"    -> attributeName.asInstanceOf[js.Any],
-        "attributeValue"   -> attributeValue.asInstanceOf[js.Any],
+        "attributeName" -> attributeName.asInstanceOf[js.Any],
+        "attributeValue" -> attributeValue.asInstanceOf[js.Any],
         "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
       )
 
@@ -7340,7 +7995,7 @@ package lightsail {
         relationalDatabaseName: ResourceName
     ): UpdateRelationalDatabaseParametersRequest = {
       val __obj = js.Dynamic.literal(
-        "parameters"             -> parameters.asInstanceOf[js.Any],
+        "parameters" -> parameters.asInstanceOf[js.Any],
         "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
       )
 

@@ -7,170 +7,180 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object mediaconvert {
-  type __doubleMin0                                = Double
-  type __doubleMin0Max1                            = Double
-  type __doubleMin0Max2147483647                   = Double
-  type __doubleMinNegative59Max0                   = Double
-  type __doubleMinNegative60Max3                   = Double
-  type __doubleMinNegative60MaxNegative1           = Double
-  type __doubleMinNegative6Max3                    = Double
-  type __integer                                   = Int
-  type __integerMin0Max0                           = Int
-  type __integerMin0Max1                           = Int
-  type __integerMin0Max10                          = Int
-  type __integerMin0Max100                         = Int
-  type __integerMin0Max1000                        = Int
-  type __integerMin0Max10000                       = Int
-  type __integerMin0Max1152000000                  = Int
-  type __integerMin0Max128                         = Int
-  type __integerMin0Max1466400000                  = Int
-  type __integerMin0Max15                          = Int
-  type __integerMin0Max16                          = Int
-  type __integerMin0Max2147483647                  = Int
-  type __integerMin0Max255                         = Int
-  type __integerMin0Max3                           = Int
-  type __integerMin0Max30                          = Int
-  type __integerMin0Max30000                       = Int
-  type __integerMin0Max3600                        = Int
-  type __integerMin0Max4                           = Int
-  type __integerMin0Max47185920                    = Int
-  type __integerMin0Max500                         = Int
-  type __integerMin0Max50000                       = Int
-  type __integerMin0Max65535                       = Int
-  type __integerMin0Max7                           = Int
-  type __integerMin0Max8                           = Int
-  type __integerMin0Max9                           = Int
-  type __integerMin0Max96                          = Int
-  type __integerMin0Max99                          = Int
-  type __integerMin1000Max1152000000               = Int
-  type __integerMin1000Max1466400000               = Int
-  type __integerMin1000Max288000000                = Int
-  type __integerMin1000Max30000                    = Int
-  type __integerMin1000Max300000000                = Int
-  type __integerMin10Max48                         = Int
-  type __integerMin16000Max320000                  = Int
-  type __integerMin16Max24                         = Int
-  type __integerMin1Max1                           = Int
-  type __integerMin1Max10                          = Int
-  type __integerMin1Max100                         = Int
-  type __integerMin1Max10000000                    = Int
-  type __integerMin1Max1001                        = Int
-  type __integerMin1Max17895697                    = Int
-  type __integerMin1Max2                           = Int
-  type __integerMin1Max20                          = Int
-  type __integerMin1Max2147483640                  = Int
-  type __integerMin1Max2147483647                  = Int
-  type __integerMin1Max31                          = Int
-  type __integerMin1Max32                          = Int
-  type __integerMin1Max4                           = Int
-  type __integerMin1Max6                           = Int
-  type __integerMin1Max64                          = Int
-  type __integerMin22050Max48000                   = Int
-  type __integerMin24Max60000                      = Int
-  type __integerMin25Max10000                      = Int
-  type __integerMin25Max2000                       = Int
-  type __integerMin2Max2147483647                  = Int
-  type __integerMin32000Max384000                  = Int
-  type __integerMin32000Max48000                   = Int
-  type __integerMin32Max8182                       = Int
-  type __integerMin32Max8192                       = Int
-  type __integerMin384000Max768000                 = Int
-  type __integerMin48000Max48000                   = Int
-  type __integerMin6000Max1024000                  = Int
-  type __integerMin64000Max640000                  = Int
-  type __integerMin8000Max192000                   = Int
-  type __integerMin8000Max96000                    = Int
-  type __integerMin96Max600                        = Int
-  type __integerMinNegative1000Max1000             = Int
-  type __integerMinNegative180Max180               = Int
-  type __integerMinNegative1Max3                   = Int
+  type __doubleMin0 = Double
+  type __doubleMin0Max1 = Double
+  type __doubleMin0Max2147483647 = Double
+  type __doubleMinNegative59Max0 = Double
+  type __doubleMinNegative60Max3 = Double
+  type __doubleMinNegative60MaxNegative1 = Double
+  type __doubleMinNegative6Max3 = Double
+  type __integer = Int
+  type __integerMin0Max0 = Int
+  type __integerMin0Max1 = Int
+  type __integerMin0Max10 = Int
+  type __integerMin0Max100 = Int
+  type __integerMin0Max1000 = Int
+  type __integerMin0Max10000 = Int
+  type __integerMin0Max1152000000 = Int
+  type __integerMin0Max128 = Int
+  type __integerMin0Max1466400000 = Int
+  type __integerMin0Max15 = Int
+  type __integerMin0Max16 = Int
+  type __integerMin0Max2147483647 = Int
+  type __integerMin0Max255 = Int
+  type __integerMin0Max3 = Int
+  type __integerMin0Max30 = Int
+  type __integerMin0Max30000 = Int
+  type __integerMin0Max3600 = Int
+  type __integerMin0Max4 = Int
+  type __integerMin0Max4194303 = Int
+  type __integerMin0Max47185920 = Int
+  type __integerMin0Max500 = Int
+  type __integerMin0Max50000 = Int
+  type __integerMin0Max65535 = Int
+  type __integerMin0Max7 = Int
+  type __integerMin0Max8 = Int
+  type __integerMin0Max9 = Int
+  type __integerMin0Max96 = Int
+  type __integerMin0Max99 = Int
+  type __integerMin1000Max1152000000 = Int
+  type __integerMin1000Max1466400000 = Int
+  type __integerMin1000Max288000000 = Int
+  type __integerMin1000Max30000 = Int
+  type __integerMin1000Max300000000 = Int
+  type __integerMin1000Max480000000 = Int
+  type __integerMin10Max48 = Int
+  type __integerMin16000Max320000 = Int
+  type __integerMin16000Max48000 = Int
+  type __integerMin16Max24 = Int
+  type __integerMin1Max1 = Int
+  type __integerMin1Max10 = Int
+  type __integerMin1Max100 = Int
+  type __integerMin1Max10000000 = Int
+  type __integerMin1Max1001 = Int
+  type __integerMin1Max17895697 = Int
+  type __integerMin1Max2 = Int
+  type __integerMin1Max20 = Int
+  type __integerMin1Max2147483640 = Int
+  type __integerMin1Max2147483647 = Int
+  type __integerMin1Max31 = Int
+  type __integerMin1Max32 = Int
+  type __integerMin1Max4 = Int
+  type __integerMin1Max6 = Int
+  type __integerMin1Max60000 = Int
+  type __integerMin1Max64 = Int
+  type __integerMin22050Max48000 = Int
+  type __integerMin24Max60000 = Int
+  type __integerMin25Max10000 = Int
+  type __integerMin25Max2000 = Int
+  type __integerMin2Max2147483647 = Int
+  type __integerMin32000Max192000 = Int
+  type __integerMin32000Max384000 = Int
+  type __integerMin32000Max48000 = Int
+  type __integerMin32Max8182 = Int
+  type __integerMin32Max8192 = Int
+  type __integerMin384000Max768000 = Int
+  type __integerMin48000Max48000 = Int
+  type __integerMin6000Max1024000 = Int
+  type __integerMin64000Max640000 = Int
+  type __integerMin7Max15 = Int
+  type __integerMin8000Max192000 = Int
+  type __integerMin8000Max96000 = Int
+  type __integerMin96Max600 = Int
+  type __integerMinNegative1000Max1000 = Int
+  type __integerMinNegative180Max180 = Int
+  type __integerMinNegative1Max10 = Int
+  type __integerMinNegative1Max3 = Int
   type __integerMinNegative2147483648Max2147483647 = Int
-  type __integerMinNegative2Max3                   = Int
-  type __integerMinNegative50Max50                 = Int
-  type __integerMinNegative5Max5                   = Int
-  type __integerMinNegative60Max6                  = Int
-  type __integerMinNegative70Max0                  = Int
-  type __listOfAudioDescription                    = js.Array[AudioDescription]
-  type __listOfCaptionDescription                  = js.Array[CaptionDescription]
-  type __listOfCaptionDescriptionPreset            = js.Array[CaptionDescriptionPreset]
-  type __listOfCmafAdditionalManifest              = js.Array[CmafAdditionalManifest]
-  type __listOfDashAdditionalManifest              = js.Array[DashAdditionalManifest]
-  type __listOfEndpoint                            = js.Array[Endpoint]
-  type __listOfHlsAdMarkers                        = js.Array[HlsAdMarkers]
-  type __listOfHlsAdditionalManifest               = js.Array[HlsAdditionalManifest]
-  type __listOfHlsCaptionLanguageMapping           = js.Array[HlsCaptionLanguageMapping]
-  type __listOfId3Insertion                        = js.Array[Id3Insertion]
-  type __listOfInput                               = js.Array[Input]
-  type __listOfInputClipping                       = js.Array[InputClipping]
-  type __listOfInputTemplate                       = js.Array[InputTemplate]
-  type __listOfInsertableImage                     = js.Array[InsertableImage]
-  type __listOfJob                                 = js.Array[Job]
-  type __listOfJobTemplate                         = js.Array[JobTemplate]
-  type __listOfMsSmoothAdditionalManifest          = js.Array[MsSmoothAdditionalManifest]
-  type __listOfOutput                              = js.Array[Output]
-  type __listOfOutputChannelMapping                = js.Array[OutputChannelMapping]
-  type __listOfOutputDetail                        = js.Array[OutputDetail]
-  type __listOfOutputGroup                         = js.Array[OutputGroup]
-  type __listOfOutputGroupDetail                   = js.Array[OutputGroupDetail]
-  type __listOfPreset                              = js.Array[Preset]
-  type __listOfQueue                               = js.Array[Queue]
-  type __listOfTeletextPageType                    = js.Array[TeletextPageType]
-  type __listOf__integerMin1Max2147483647          = js.Array[__integerMin1Max2147483647]
-  type __listOf__integerMin32Max8182               = js.Array[__integerMin32Max8182]
-  type __listOf__integerMinNegative60Max6          = js.Array[__integerMinNegative60Max6]
-  type __listOf__string                            = js.Array[__string]
-  type __listOf__stringMin1                        = js.Array[__stringMin1]
+  type __integerMinNegative2Max3 = Int
+  type __integerMinNegative50Max50 = Int
+  type __integerMinNegative5Max5 = Int
+  type __integerMinNegative60Max6 = Int
+  type __integerMinNegative70Max0 = Int
+  type __listOfAudioDescription = js.Array[AudioDescription]
+  type __listOfCaptionDescription = js.Array[CaptionDescription]
+  type __listOfCaptionDescriptionPreset = js.Array[CaptionDescriptionPreset]
+  type __listOfCmafAdditionalManifest = js.Array[CmafAdditionalManifest]
+  type __listOfDashAdditionalManifest = js.Array[DashAdditionalManifest]
+  type __listOfEndpoint = js.Array[Endpoint]
+  type __listOfHlsAdMarkers = js.Array[HlsAdMarkers]
+  type __listOfHlsAdditionalManifest = js.Array[HlsAdditionalManifest]
+  type __listOfHlsCaptionLanguageMapping = js.Array[HlsCaptionLanguageMapping]
+  type __listOfHopDestination = js.Array[HopDestination]
+  type __listOfId3Insertion = js.Array[Id3Insertion]
+  type __listOfInput = js.Array[Input]
+  type __listOfInputClipping = js.Array[InputClipping]
+  type __listOfInputTemplate = js.Array[InputTemplate]
+  type __listOfInsertableImage = js.Array[InsertableImage]
+  type __listOfJob = js.Array[Job]
+  type __listOfJobTemplate = js.Array[JobTemplate]
+  type __listOfMsSmoothAdditionalManifest = js.Array[MsSmoothAdditionalManifest]
+  type __listOfOutput = js.Array[Output]
+  type __listOfOutputChannelMapping = js.Array[OutputChannelMapping]
+  type __listOfOutputDetail = js.Array[OutputDetail]
+  type __listOfOutputGroup = js.Array[OutputGroup]
+  type __listOfOutputGroupDetail = js.Array[OutputGroupDetail]
+  type __listOfPreset = js.Array[Preset]
+  type __listOfQueue = js.Array[Queue]
+  type __listOfQueueTransition = js.Array[QueueTransition]
+  type __listOfTeletextPageType = js.Array[TeletextPageType]
+  type __listOf__integerMin1Max2147483647 = js.Array[__integerMin1Max2147483647]
+  type __listOf__integerMin32Max8182 = js.Array[__integerMin32Max8182]
+  type __listOf__integerMinNegative60Max6 = js.Array[__integerMinNegative60Max6]
+  type __listOf__string = js.Array[__string]
+  type __listOf__stringMin1 = js.Array[__stringMin1]
   type __listOf__stringMin36Max36Pattern09aFAF809aFAF409aFAF409aFAF409aFAF12 =
     js.Array[__stringMin36Max36Pattern09aFAF809aFAF409aFAF409aFAF409aFAF12]
   type __listOf__stringPattern09aFAF809aFAF409aFAF409aFAF409aFAF12 =
     js.Array[__stringPattern09aFAF809aFAF409aFAF409aFAF409aFAF12]
-  type __listOf__stringPatternS3ASSETMAPXml                            = js.Array[__stringPatternS3ASSETMAPXml]
-  type __mapOfAudioSelector                                            = js.Dictionary[AudioSelector]
-  type __mapOfAudioSelectorGroup                                       = js.Dictionary[AudioSelectorGroup]
-  type __mapOfCaptionSelector                                          = js.Dictionary[CaptionSelector]
-  type __mapOf__string                                                 = js.Dictionary[__string]
-  type __string                                                        = String
-  type __stringMin0                                                    = String
-  type __stringMin1                                                    = String
-  type __stringMin11Max11Pattern01D20305D205D                          = String
-  type __stringMin14Max1285PatternS3Mov09PngHttpsMov09Png              = String
-  type __stringMin14PatternS3BmpBMPPngPNGHttpsBmpBMPPngPNG             = String
+  type __listOf__stringPatternS3ASSETMAPXml = js.Array[__stringPatternS3ASSETMAPXml]
+  type __mapOfAudioSelector = js.Dictionary[AudioSelector]
+  type __mapOfAudioSelectorGroup = js.Dictionary[AudioSelectorGroup]
+  type __mapOfCaptionSelector = js.Dictionary[CaptionSelector]
+  type __mapOf__string = js.Dictionary[__string]
+  type __string = String
+  type __stringMin0 = String
+  type __stringMin1 = String
+  type __stringMin11Max11Pattern01D20305D205D = String
+  type __stringMin14Max1285PatternS3Mov09PngHttpsMov09Png = String
+  type __stringMin14PatternS3BmpBMPPngPNGHttpsBmpBMPPngPNG = String
   type __stringMin14PatternS3BmpBMPPngPNGTgaTGAHttpsBmpBMPPngPNGTgaTGA = String
   type __stringMin14PatternS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMIHttpsSccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMI =
     String
-  type __stringMin16Max24PatternAZaZ0922AZaZ0916                         = String
-  type __stringMin1Max256                                                = String
-  type __stringMin24Max512PatternAZaZ0902                                = String
-  type __stringMin32Max32Pattern09aFAF32                                 = String
-  type __stringMin36Max36Pattern09aFAF809aFAF409aFAF409aFAF409aFAF12     = String
-  type __stringMin3Max3Pattern1809aFAF09aEAE                             = String
-  type __stringMin3Max3PatternAZaZ3                                      = String
+  type __stringMin16Max24PatternAZaZ0922AZaZ0916 = String
+  type __stringMin1Max100000 = String
+  type __stringMin1Max256 = String
+  type __stringMin24Max512PatternAZaZ0902 = String
+  type __stringMin32Max32Pattern09aFAF32 = String
+  type __stringMin36Max36Pattern09aFAF809aFAF409aFAF409aFAF409aFAF12 = String
+  type __stringMin3Max3Pattern1809aFAF09aEAE = String
+  type __stringMin3Max3PatternAZaZ3 = String
   type __stringMin9Max19PatternAZ26EastWestCentralNorthSouthEastWest1912 = String
-  type __stringPattern                                                   = String
-  type __stringPattern010920405090509092                                 = String
-  type __stringPattern01D20305D205D                                      = String
-  type __stringPattern0940191020191209301                                = String
-  type __stringPattern09aFAF809aFAF409aFAF409aFAF409aFAF12               = String
-  type __stringPatternAZaZ0902                                           = String
-  type __stringPatternAZaZ0932                                           = String
-  type __stringPatternAZaZ23AZaZ                                         = String
-  type __stringPatternArnAwsUsGovAcm                                     = String
+  type __stringPattern = String
+  type __stringPattern010920405090509092 = String
+  type __stringPattern01D20305D205D = String
+  type __stringPattern0940191020191209301 = String
+  type __stringPattern09aFAF809aFAF409aFAF409aFAF409aFAF12 = String
+  type __stringPatternAZaZ0902 = String
+  type __stringPatternAZaZ0932 = String
+  type __stringPatternAZaZ23AZaZ = String
+  type __stringPatternArnAwsUsGovAcm = String
   type __stringPatternArnAwsUsGovCnKmsAZ26EastWestCentralNorthSouthEastWest1912D12KeyAFAF098AFAF094AFAF094AFAF094AFAF0912 =
     String
-  type __stringPatternDD                      = String
-  type __stringPatternHttps                   = String
+  type __stringPatternDD = String
+  type __stringPatternHttps = String
   type __stringPatternIdentityAZaZ26AZaZ09163 = String
-  type __stringPatternS3                      = String
-  type __stringPatternS3ASSETMAPXml           = String
-  type __stringPatternS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEEHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE =
-    String
+  type __stringPatternS3 = String
+  type __stringPatternS3ASSETMAPXml = String
   type __stringPatternS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLLHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLL =
     String
+  type __stringPatternS3WWEEBBMMMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEEHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE =
+    String
   type __stringPatternSNManifestConfirmConditionNotificationNS = String
-  type __stringPatternSNSignalProcessingNotificationNS         = String
-  type __stringPatternW                                        = String
-  type __stringPatternWS                                       = String
-  type __timestampUnix                                         = js.Date
+  type __stringPatternSNSignalProcessingNotificationNS = String
+  type __stringPatternW = String
+  type __stringPatternWS = String
+  type __timestampUnix = js.Date
 
   implicit final class MediaConvertOps(private val service: MediaConvert) extends AnyVal {
 
@@ -196,7 +206,7 @@ package object mediaconvert {
       service.describeEndpoints(params).promise().toFuture
     @inline def disassociateCertificateFuture(
         params: DisassociateCertificateRequest
-    ): Future[DisassociateCertificateResponse]                              = service.disassociateCertificate(params).promise().toFuture
+    ): Future[DisassociateCertificateResponse] = service.disassociateCertificate(params).promise().toFuture
     @inline def getJobFuture(params: GetJobRequest): Future[GetJobResponse] = service.getJob(params).promise().toFuture
     @inline def getJobTemplateFuture(params: GetJobTemplateRequest): Future[GetJobTemplateResponse] =
       service.getJobTemplate(params).promise().toFuture
@@ -234,31 +244,31 @@ package mediaconvert {
     def this(config: AWSConfig) = this()
 
     def associateCertificate(params: AssociateCertificateRequest): Request[AssociateCertificateResponse] = js.native
-    def cancelJob(params: CancelJobRequest): Request[CancelJobResponse]                                  = js.native
-    def createJob(params: CreateJobRequest): Request[CreateJobResponse]                                  = js.native
-    def createJobTemplate(params: CreateJobTemplateRequest): Request[CreateJobTemplateResponse]          = js.native
-    def createPreset(params: CreatePresetRequest): Request[CreatePresetResponse]                         = js.native
-    def createQueue(params: CreateQueueRequest): Request[CreateQueueResponse]                            = js.native
-    def deleteJobTemplate(params: DeleteJobTemplateRequest): Request[DeleteJobTemplateResponse]          = js.native
-    def deletePreset(params: DeletePresetRequest): Request[DeletePresetResponse]                         = js.native
-    def deleteQueue(params: DeleteQueueRequest): Request[DeleteQueueResponse]                            = js.native
-    def describeEndpoints(params: DescribeEndpointsRequest): Request[DescribeEndpointsResponse]          = js.native
+    def cancelJob(params: CancelJobRequest): Request[CancelJobResponse] = js.native
+    def createJob(params: CreateJobRequest): Request[CreateJobResponse] = js.native
+    def createJobTemplate(params: CreateJobTemplateRequest): Request[CreateJobTemplateResponse] = js.native
+    def createPreset(params: CreatePresetRequest): Request[CreatePresetResponse] = js.native
+    def createQueue(params: CreateQueueRequest): Request[CreateQueueResponse] = js.native
+    def deleteJobTemplate(params: DeleteJobTemplateRequest): Request[DeleteJobTemplateResponse] = js.native
+    def deletePreset(params: DeletePresetRequest): Request[DeletePresetResponse] = js.native
+    def deleteQueue(params: DeleteQueueRequest): Request[DeleteQueueResponse] = js.native
+    def describeEndpoints(params: DescribeEndpointsRequest): Request[DescribeEndpointsResponse] = js.native
     def disassociateCertificate(params: DisassociateCertificateRequest): Request[DisassociateCertificateResponse] =
       js.native
-    def getJob(params: GetJobRequest): Request[GetJobResponse]                                        = js.native
-    def getJobTemplate(params: GetJobTemplateRequest): Request[GetJobTemplateResponse]                = js.native
-    def getPreset(params: GetPresetRequest): Request[GetPresetResponse]                               = js.native
-    def getQueue(params: GetQueueRequest): Request[GetQueueResponse]                                  = js.native
-    def listJobTemplates(params: ListJobTemplatesRequest): Request[ListJobTemplatesResponse]          = js.native
-    def listJobs(params: ListJobsRequest): Request[ListJobsResponse]                                  = js.native
-    def listPresets(params: ListPresetsRequest): Request[ListPresetsResponse]                         = js.native
-    def listQueues(params: ListQueuesRequest): Request[ListQueuesResponse]                            = js.native
+    def getJob(params: GetJobRequest): Request[GetJobResponse] = js.native
+    def getJobTemplate(params: GetJobTemplateRequest): Request[GetJobTemplateResponse] = js.native
+    def getPreset(params: GetPresetRequest): Request[GetPresetResponse] = js.native
+    def getQueue(params: GetQueueRequest): Request[GetQueueResponse] = js.native
+    def listJobTemplates(params: ListJobTemplatesRequest): Request[ListJobTemplatesResponse] = js.native
+    def listJobs(params: ListJobsRequest): Request[ListJobsResponse] = js.native
+    def listPresets(params: ListPresetsRequest): Request[ListPresetsResponse] = js.native
+    def listQueues(params: ListQueuesRequest): Request[ListQueuesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
-    def updateJobTemplate(params: UpdateJobTemplateRequest): Request[UpdateJobTemplateResponse]       = js.native
-    def updatePreset(params: UpdatePresetRequest): Request[UpdatePresetResponse]                      = js.native
-    def updateQueue(params: UpdateQueueRequest): Request[UpdateQueueResponse]                         = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateJobTemplate(params: UpdateJobTemplateRequest): Request[UpdateJobTemplateResponse] = js.native
+    def updatePreset(params: UpdatePresetRequest): Request[UpdatePresetResponse] = js.native
+    def updateQueue(params: UpdateQueueRequest): Request[UpdateQueueResponse] = js.native
   }
 
   /**
@@ -268,7 +278,7 @@ package mediaconvert {
   sealed trait AacAudioDescriptionBroadcasterMix extends js.Any
   object AacAudioDescriptionBroadcasterMix extends js.Object {
     val BROADCASTER_MIXED_AD = "BROADCASTER_MIXED_AD".asInstanceOf[AacAudioDescriptionBroadcasterMix]
-    val NORMAL               = "NORMAL".asInstanceOf[AacAudioDescriptionBroadcasterMix]
+    val NORMAL = "NORMAL".asInstanceOf[AacAudioDescriptionBroadcasterMix]
 
     val values = js.Object.freeze(js.Array(BROADCASTER_MIXED_AD, NORMAL))
   }
@@ -279,7 +289,7 @@ package mediaconvert {
   @js.native
   sealed trait AacCodecProfile extends js.Any
   object AacCodecProfile extends js.Object {
-    val LC   = "LC".asInstanceOf[AacCodecProfile]
+    val LC = "LC".asInstanceOf[AacCodecProfile]
     val HEV1 = "HEV1".asInstanceOf[AacCodecProfile]
     val HEV2 = "HEV2".asInstanceOf[AacCodecProfile]
 
@@ -321,7 +331,7 @@ package mediaconvert {
   sealed trait AacRawFormat extends js.Any
   object AacRawFormat extends js.Object {
     val LATM_LOAS = "LATM_LOAS".asInstanceOf[AacRawFormat]
-    val NONE      = "NONE".asInstanceOf[AacRawFormat]
+    val NONE = "NONE".asInstanceOf[AacRawFormat]
 
     val values = js.Object.freeze(js.Array(LATM_LOAS, NONE))
   }
@@ -389,10 +399,10 @@ package mediaconvert {
   @js.native
   sealed trait AacVbrQuality extends js.Any
   object AacVbrQuality extends js.Object {
-    val LOW         = "LOW".asInstanceOf[AacVbrQuality]
-    val MEDIUM_LOW  = "MEDIUM_LOW".asInstanceOf[AacVbrQuality]
+    val LOW = "LOW".asInstanceOf[AacVbrQuality]
+    val MEDIUM_LOW = "MEDIUM_LOW".asInstanceOf[AacVbrQuality]
     val MEDIUM_HIGH = "MEDIUM_HIGH".asInstanceOf[AacVbrQuality]
-    val HIGH        = "HIGH".asInstanceOf[AacVbrQuality]
+    val HIGH = "HIGH".asInstanceOf[AacVbrQuality]
 
     val values = js.Object.freeze(js.Array(LOW, MEDIUM_LOW, MEDIUM_HIGH, HIGH))
   }
@@ -403,14 +413,14 @@ package mediaconvert {
   @js.native
   sealed trait Ac3BitstreamMode extends js.Any
   object Ac3BitstreamMode extends js.Object {
-    val COMPLETE_MAIN     = "COMPLETE_MAIN".asInstanceOf[Ac3BitstreamMode]
-    val COMMENTARY        = "COMMENTARY".asInstanceOf[Ac3BitstreamMode]
-    val DIALOGUE          = "DIALOGUE".asInstanceOf[Ac3BitstreamMode]
-    val EMERGENCY         = "EMERGENCY".asInstanceOf[Ac3BitstreamMode]
-    val HEARING_IMPAIRED  = "HEARING_IMPAIRED".asInstanceOf[Ac3BitstreamMode]
+    val COMPLETE_MAIN = "COMPLETE_MAIN".asInstanceOf[Ac3BitstreamMode]
+    val COMMENTARY = "COMMENTARY".asInstanceOf[Ac3BitstreamMode]
+    val DIALOGUE = "DIALOGUE".asInstanceOf[Ac3BitstreamMode]
+    val EMERGENCY = "EMERGENCY".asInstanceOf[Ac3BitstreamMode]
+    val HEARING_IMPAIRED = "HEARING_IMPAIRED".asInstanceOf[Ac3BitstreamMode]
     val MUSIC_AND_EFFECTS = "MUSIC_AND_EFFECTS".asInstanceOf[Ac3BitstreamMode]
     val VISUALLY_IMPAIRED = "VISUALLY_IMPAIRED".asInstanceOf[Ac3BitstreamMode]
-    val VOICE_OVER        = "VOICE_OVER".asInstanceOf[Ac3BitstreamMode]
+    val VOICE_OVER = "VOICE_OVER".asInstanceOf[Ac3BitstreamMode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -432,9 +442,9 @@ package mediaconvert {
   @js.native
   sealed trait Ac3CodingMode extends js.Any
   object Ac3CodingMode extends js.Object {
-    val CODING_MODE_1_0     = "CODING_MODE_1_0".asInstanceOf[Ac3CodingMode]
-    val CODING_MODE_1_1     = "CODING_MODE_1_1".asInstanceOf[Ac3CodingMode]
-    val CODING_MODE_2_0     = "CODING_MODE_2_0".asInstanceOf[Ac3CodingMode]
+    val CODING_MODE_1_0 = "CODING_MODE_1_0".asInstanceOf[Ac3CodingMode]
+    val CODING_MODE_1_1 = "CODING_MODE_1_1".asInstanceOf[Ac3CodingMode]
+    val CODING_MODE_2_0 = "CODING_MODE_2_0".asInstanceOf[Ac3CodingMode]
     val CODING_MODE_3_2_LFE = "CODING_MODE_3_2_LFE".asInstanceOf[Ac3CodingMode]
 
     val values = js.Object.freeze(js.Array(CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_3_2_LFE))
@@ -447,7 +457,7 @@ package mediaconvert {
   sealed trait Ac3DynamicRangeCompressionProfile extends js.Any
   object Ac3DynamicRangeCompressionProfile extends js.Object {
     val FILM_STANDARD = "FILM_STANDARD".asInstanceOf[Ac3DynamicRangeCompressionProfile]
-    val NONE          = "NONE".asInstanceOf[Ac3DynamicRangeCompressionProfile]
+    val NONE = "NONE".asInstanceOf[Ac3DynamicRangeCompressionProfile]
 
     val values = js.Object.freeze(js.Array(FILM_STANDARD, NONE))
   }
@@ -458,7 +468,7 @@ package mediaconvert {
   @js.native
   sealed trait Ac3LfeFilter extends js.Any
   object Ac3LfeFilter extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[Ac3LfeFilter]
+    val ENABLED = "ENABLED".asInstanceOf[Ac3LfeFilter]
     val DISABLED = "DISABLED".asInstanceOf[Ac3LfeFilter]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -470,7 +480,7 @@ package mediaconvert {
   @js.native
   sealed trait Ac3MetadataControl extends js.Any
   object Ac3MetadataControl extends js.Object {
-    val FOLLOW_INPUT   = "FOLLOW_INPUT".asInstanceOf[Ac3MetadataControl]
+    val FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[Ac3MetadataControl]
     val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[Ac3MetadataControl]
 
     val values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
@@ -524,15 +534,15 @@ package mediaconvert {
   @js.native
   sealed trait AccelerationMode extends js.Any
   object AccelerationMode extends js.Object {
-    val DISABLED  = "DISABLED".asInstanceOf[AccelerationMode]
-    val ENABLED   = "ENABLED".asInstanceOf[AccelerationMode]
+    val DISABLED = "DISABLED".asInstanceOf[AccelerationMode]
+    val ENABLED = "ENABLED".asInstanceOf[AccelerationMode]
     val PREFERRED = "PREFERRED".asInstanceOf[AccelerationMode]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED, PREFERRED))
   }
 
   /**
-    * Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
+    * Accelerated transcoding can significantly speed up jobs with long, visually complex content.
     */
   @js.native
   trait AccelerationSettings extends js.Object {
@@ -558,9 +568,9 @@ package mediaconvert {
   @js.native
   sealed trait AccelerationStatus extends js.Any
   object AccelerationStatus extends js.Object {
-    val NOT_APPLICABLE  = "NOT_APPLICABLE".asInstanceOf[AccelerationStatus]
-    val IN_PROGRESS     = "IN_PROGRESS".asInstanceOf[AccelerationStatus]
-    val ACCELERATED     = "ACCELERATED".asInstanceOf[AccelerationStatus]
+    val NOT_APPLICABLE = "NOT_APPLICABLE".asInstanceOf[AccelerationStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AccelerationStatus]
+    val ACCELERATED = "ACCELERATED".asInstanceOf[AccelerationStatus]
     val NOT_ACCELERATED = "NOT_ACCELERATED".asInstanceOf[AccelerationStatus]
 
     val values = js.Object.freeze(js.Array(NOT_APPLICABLE, IN_PROGRESS, ACCELERATED, NOT_ACCELERATED))
@@ -572,8 +582,8 @@ package mediaconvert {
   @js.native
   sealed trait AfdSignaling extends js.Any
   object AfdSignaling extends js.Object {
-    val NONE  = "NONE".asInstanceOf[AfdSignaling]
-    val AUTO  = "AUTO".asInstanceOf[AfdSignaling]
+    val NONE = "NONE".asInstanceOf[AfdSignaling]
+    val AUTO = "AUTO".asInstanceOf[AfdSignaling]
     val FIXED = "FIXED".asInstanceOf[AfdSignaling]
 
     val values = js.Object.freeze(js.Array(NONE, AUTO, FIXED))
@@ -610,7 +620,7 @@ package mediaconvert {
   @js.native
   sealed trait AlphaBehavior extends js.Any
   object AlphaBehavior extends js.Object {
-    val DISCARD       = "DISCARD".asInstanceOf[AlphaBehavior]
+    val DISCARD = "DISCARD".asInstanceOf[AlphaBehavior]
     val REMAP_TO_LUMA = "REMAP_TO_LUMA".asInstanceOf[AlphaBehavior]
 
     val values = js.Object.freeze(js.Array(DISCARD, REMAP_TO_LUMA))
@@ -623,7 +633,7 @@ package mediaconvert {
   sealed trait AncillaryConvert608To708 extends js.Any
   object AncillaryConvert608To708 extends js.Object {
     val UPCONVERT = "UPCONVERT".asInstanceOf[AncillaryConvert608To708]
-    val DISABLED  = "DISABLED".asInstanceOf[AncillaryConvert608To708]
+    val DISABLED = "DISABLED".asInstanceOf[AncillaryConvert608To708]
 
     val values = js.Object.freeze(js.Array(UPCONVERT, DISABLED))
   }
@@ -662,7 +672,7 @@ package mediaconvert {
   sealed trait AncillaryTerminateCaptions extends js.Any
   object AncillaryTerminateCaptions extends js.Object {
     val END_OF_INPUT = "END_OF_INPUT".asInstanceOf[AncillaryTerminateCaptions]
-    val DISABLED     = "DISABLED".asInstanceOf[AncillaryTerminateCaptions]
+    val DISABLED = "DISABLED".asInstanceOf[AncillaryTerminateCaptions]
 
     val values = js.Object.freeze(js.Array(END_OF_INPUT, DISABLED))
   }
@@ -674,7 +684,7 @@ package mediaconvert {
   sealed trait AntiAlias extends js.Any
   object AntiAlias extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[AntiAlias]
-    val ENABLED  = "ENABLED".asInstanceOf[AntiAlias]
+    val ENABLED = "ENABLED".asInstanceOf[AntiAlias]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -716,21 +726,23 @@ package mediaconvert {
   @js.native
   sealed trait AudioCodec extends js.Any
   object AudioCodec extends js.Object {
-    val AAC         = "AAC".asInstanceOf[AudioCodec]
-    val MP2         = "MP2".asInstanceOf[AudioCodec]
-    val MP3         = "MP3".asInstanceOf[AudioCodec]
-    val WAV         = "WAV".asInstanceOf[AudioCodec]
-    val AIFF        = "AIFF".asInstanceOf[AudioCodec]
-    val AC3         = "AC3".asInstanceOf[AudioCodec]
-    val EAC3        = "EAC3".asInstanceOf[AudioCodec]
-    val EAC3_ATMOS  = "EAC3_ATMOS".asInstanceOf[AudioCodec]
+    val AAC = "AAC".asInstanceOf[AudioCodec]
+    val MP2 = "MP2".asInstanceOf[AudioCodec]
+    val MP3 = "MP3".asInstanceOf[AudioCodec]
+    val WAV = "WAV".asInstanceOf[AudioCodec]
+    val AIFF = "AIFF".asInstanceOf[AudioCodec]
+    val AC3 = "AC3".asInstanceOf[AudioCodec]
+    val EAC3 = "EAC3".asInstanceOf[AudioCodec]
+    val EAC3_ATMOS = "EAC3_ATMOS".asInstanceOf[AudioCodec]
+    val VORBIS = "VORBIS".asInstanceOf[AudioCodec]
+    val OPUS = "OPUS".asInstanceOf[AudioCodec]
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[AudioCodec]
 
-    val values = js.Object.freeze(js.Array(AAC, MP2, MP3, WAV, AIFF, AC3, EAC3, EAC3_ATMOS, PASSTHROUGH))
+    val values = js.Object.freeze(js.Array(AAC, MP2, MP3, WAV, AIFF, AC3, EAC3, EAC3_ATMOS, VORBIS, OPUS, PASSTHROUGH))
   }
 
   /**
-    * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio encoding. The settings in this group vary depending on the value that you choose for Audio codec (Codec). For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
+    * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio encoding. The settings in this group vary depending on the value that you choose for Audio codec (Codec). For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings * VORBIS, VorbisSettings * OPUS, OpusSettings
     */
   @js.native
   trait AudioCodecSettings extends js.Object {
@@ -742,6 +754,8 @@ package mediaconvert {
     var Eac3Settings: js.UndefOr[Eac3Settings]
     var Mp2Settings: js.UndefOr[Mp2Settings]
     var Mp3Settings: js.UndefOr[Mp3Settings]
+    var OpusSettings: js.UndefOr[OpusSettings]
+    var VorbisSettings: js.UndefOr[VorbisSettings]
     var WavSettings: js.UndefOr[WavSettings]
   }
 
@@ -756,6 +770,8 @@ package mediaconvert {
         Eac3Settings: js.UndefOr[Eac3Settings] = js.undefined,
         Mp2Settings: js.UndefOr[Mp2Settings] = js.undefined,
         Mp3Settings: js.UndefOr[Mp3Settings] = js.undefined,
+        OpusSettings: js.UndefOr[OpusSettings] = js.undefined,
+        VorbisSettings: js.UndefOr[VorbisSettings] = js.undefined,
         WavSettings: js.UndefOr[WavSettings] = js.undefined
     ): AudioCodecSettings = {
       val __obj = js.Dynamic.literal()
@@ -767,6 +783,8 @@ package mediaconvert {
       Eac3Settings.foreach(__v => __obj.updateDynamic("Eac3Settings")(__v.asInstanceOf[js.Any]))
       Mp2Settings.foreach(__v => __obj.updateDynamic("Mp2Settings")(__v.asInstanceOf[js.Any]))
       Mp3Settings.foreach(__v => __obj.updateDynamic("Mp3Settings")(__v.asInstanceOf[js.Any]))
+      OpusSettings.foreach(__v => __obj.updateDynamic("OpusSettings")(__v.asInstanceOf[js.Any]))
+      VorbisSettings.foreach(__v => __obj.updateDynamic("VorbisSettings")(__v.asInstanceOf[js.Any]))
       WavSettings.foreach(__v => __obj.updateDynamic("WavSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AudioCodecSettings]
     }
@@ -778,7 +796,7 @@ package mediaconvert {
   @js.native
   sealed trait AudioDefaultSelection extends js.Any
   object AudioDefaultSelection extends js.Object {
-    val DEFAULT     = "DEFAULT".asInstanceOf[AudioDefaultSelection]
+    val DEFAULT = "DEFAULT".asInstanceOf[AudioDefaultSelection]
     val NOT_DEFAULT = "NOT_DEFAULT".asInstanceOf[AudioDefaultSelection]
 
     val values = js.Object.freeze(js.Array(DEFAULT, NOT_DEFAULT))
@@ -838,7 +856,7 @@ package mediaconvert {
   @js.native
   sealed trait AudioLanguageCodeControl extends js.Any
   object AudioLanguageCodeControl extends js.Object {
-    val FOLLOW_INPUT   = "FOLLOW_INPUT".asInstanceOf[AudioLanguageCodeControl]
+    val FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[AudioLanguageCodeControl]
     val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[AudioLanguageCodeControl]
 
     val values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
@@ -865,7 +883,7 @@ package mediaconvert {
   sealed trait AudioNormalizationAlgorithmControl extends js.Any
   object AudioNormalizationAlgorithmControl extends js.Object {
     val CORRECT_AUDIO = "CORRECT_AUDIO".asInstanceOf[AudioNormalizationAlgorithmControl]
-    val MEASURE_ONLY  = "MEASURE_ONLY".asInstanceOf[AudioNormalizationAlgorithmControl]
+    val MEASURE_ONLY = "MEASURE_ONLY".asInstanceOf[AudioNormalizationAlgorithmControl]
 
     val values = js.Object.freeze(js.Array(CORRECT_AUDIO, MEASURE_ONLY))
   }
@@ -876,7 +894,7 @@ package mediaconvert {
   @js.native
   sealed trait AudioNormalizationLoudnessLogging extends js.Any
   object AudioNormalizationLoudnessLogging extends js.Object {
-    val LOG      = "LOG".asInstanceOf[AudioNormalizationLoudnessLogging]
+    val LOG = "LOG".asInstanceOf[AudioNormalizationLoudnessLogging]
     val DONT_LOG = "DONT_LOG".asInstanceOf[AudioNormalizationLoudnessLogging]
 
     val values = js.Object.freeze(js.Array(LOG, DONT_LOG))
@@ -889,7 +907,7 @@ package mediaconvert {
   sealed trait AudioNormalizationPeakCalculation extends js.Any
   object AudioNormalizationPeakCalculation extends js.Object {
     val TRUE_PEAK = "TRUE_PEAK".asInstanceOf[AudioNormalizationPeakCalculation]
-    val NONE      = "NONE".asInstanceOf[AudioNormalizationPeakCalculation]
+    val NONE = "NONE".asInstanceOf[AudioNormalizationPeakCalculation]
 
     val values = js.Object.freeze(js.Array(TRUE_PEAK, NONE))
   }
@@ -936,7 +954,7 @@ package mediaconvert {
     var CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3]
     var DefaultSelection: js.UndefOr[AudioDefaultSelection]
     var ExternalAudioFileInput: js.UndefOr[
-      __stringPatternS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEEHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE
+      __stringPatternS3WWEEBBMMMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEEHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE
     ]
     var LanguageCode: js.UndefOr[LanguageCode]
     var Offset: js.UndefOr[__integerMinNegative2147483648Max2147483647]
@@ -953,7 +971,7 @@ package mediaconvert {
         CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
         DefaultSelection: js.UndefOr[AudioDefaultSelection] = js.undefined,
         ExternalAudioFileInput: js.UndefOr[
-          __stringPatternS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEEHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE
+          __stringPatternS3WWEEBBMMMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEEHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE
         ] = js.undefined,
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         Offset: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
@@ -1003,8 +1021,8 @@ package mediaconvert {
   @js.native
   sealed trait AudioSelectorType extends js.Any
   object AudioSelectorType extends js.Object {
-    val PID           = "PID".asInstanceOf[AudioSelectorType]
-    val TRACK         = "TRACK".asInstanceOf[AudioSelectorType]
+    val PID = "PID".asInstanceOf[AudioSelectorType]
+    val TRACK = "TRACK".asInstanceOf[AudioSelectorType]
     val LANGUAGE_CODE = "LANGUAGE_CODE".asInstanceOf[AudioSelectorType]
 
     val values = js.Object.freeze(js.Array(PID, TRACK, LANGUAGE_CODE))
@@ -1016,10 +1034,153 @@ package mediaconvert {
   @js.native
   sealed trait AudioTypeControl extends js.Any
   object AudioTypeControl extends js.Object {
-    val FOLLOW_INPUT   = "FOLLOW_INPUT".asInstanceOf[AudioTypeControl]
+    val FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[AudioTypeControl]
     val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[AudioTypeControl]
 
     val values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
+  }
+
+  /**
+    * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+    */
+  @js.native
+  sealed trait Av1AdaptiveQuantization extends js.Any
+  object Av1AdaptiveQuantization extends js.Object {
+    val OFF = "OFF".asInstanceOf[Av1AdaptiveQuantization]
+    val LOW = "LOW".asInstanceOf[Av1AdaptiveQuantization]
+    val MEDIUM = "MEDIUM".asInstanceOf[Av1AdaptiveQuantization]
+    val HIGH = "HIGH".asInstanceOf[Av1AdaptiveQuantization]
+    val HIGHER = "HIGHER".asInstanceOf[Av1AdaptiveQuantization]
+    val MAX = "MAX".asInstanceOf[Av1AdaptiveQuantization]
+
+    val values = js.Object.freeze(js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX))
+  }
+
+  /**
+    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+    */
+  @js.native
+  sealed trait Av1FramerateControl extends js.Any
+  object Av1FramerateControl extends js.Object {
+    val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Av1FramerateControl]
+    val SPECIFIED = "SPECIFIED".asInstanceOf[Av1FramerateControl]
+
+    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+  }
+
+  /**
+    * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion.
+    */
+  @js.native
+  sealed trait Av1FramerateConversionAlgorithm extends js.Any
+  object Av1FramerateConversionAlgorithm extends js.Object {
+    val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Av1FramerateConversionAlgorithm]
+    val INTERPOLATE = "INTERPOLATE".asInstanceOf[Av1FramerateConversionAlgorithm]
+
+    val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
+  }
+
+  /**
+    * Settings for quality-defined variable bitrate encoding with the AV1 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode.
+    */
+  @js.native
+  trait Av1QvbrSettings extends js.Object {
+    var QvbrQualityLevel: js.UndefOr[__integerMin1Max10]
+    var QvbrQualityLevelFineTune: js.UndefOr[__doubleMin0Max1]
+  }
+
+  object Av1QvbrSettings {
+    @inline
+    def apply(
+        QvbrQualityLevel: js.UndefOr[__integerMin1Max10] = js.undefined,
+        QvbrQualityLevelFineTune: js.UndefOr[__doubleMin0Max1] = js.undefined
+    ): Av1QvbrSettings = {
+      val __obj = js.Dynamic.literal()
+      QvbrQualityLevel.foreach(__v => __obj.updateDynamic("QvbrQualityLevel")(__v.asInstanceOf[js.Any]))
+      QvbrQualityLevelFineTune.foreach(__v => __obj.updateDynamic("QvbrQualityLevelFineTune")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Av1QvbrSettings]
+    }
+  }
+
+  /**
+    * 'With AV1 outputs, for rate control mode, MediaConvert supports only quality-defined variable bitrate (QVBR). You can''t use CBR or VBR.'
+    */
+  @js.native
+  sealed trait Av1RateControlMode extends js.Any
+  object Av1RateControlMode extends js.Object {
+    val QVBR = "QVBR".asInstanceOf[Av1RateControlMode]
+
+    val values = js.Object.freeze(js.Array(QVBR))
+  }
+
+  /**
+    * Required when you set Codec, under VideoDescription>CodecSettings to the value AV1.
+    */
+  @js.native
+  trait Av1Settings extends js.Object {
+    var AdaptiveQuantization: js.UndefOr[Av1AdaptiveQuantization]
+    var FramerateControl: js.UndefOr[Av1FramerateControl]
+    var FramerateConversionAlgorithm: js.UndefOr[Av1FramerateConversionAlgorithm]
+    var FramerateDenominator: js.UndefOr[__integerMin1Max2147483647]
+    var FramerateNumerator: js.UndefOr[__integerMin1Max2147483647]
+    var GopSize: js.UndefOr[__doubleMin0]
+    var MaxBitrate: js.UndefOr[__integerMin1000Max1152000000]
+    var NumberBFramesBetweenReferenceFrames: js.UndefOr[__integerMin7Max15]
+    var QvbrSettings: js.UndefOr[Av1QvbrSettings]
+    var RateControlMode: js.UndefOr[Av1RateControlMode]
+    var Slices: js.UndefOr[__integerMin1Max32]
+    var SpatialAdaptiveQuantization: js.UndefOr[Av1SpatialAdaptiveQuantization]
+  }
+
+  object Av1Settings {
+    @inline
+    def apply(
+        AdaptiveQuantization: js.UndefOr[Av1AdaptiveQuantization] = js.undefined,
+        FramerateControl: js.UndefOr[Av1FramerateControl] = js.undefined,
+        FramerateConversionAlgorithm: js.UndefOr[Av1FramerateConversionAlgorithm] = js.undefined,
+        FramerateDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        FramerateNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        GopSize: js.UndefOr[__doubleMin0] = js.undefined,
+        MaxBitrate: js.UndefOr[__integerMin1000Max1152000000] = js.undefined,
+        NumberBFramesBetweenReferenceFrames: js.UndefOr[__integerMin7Max15] = js.undefined,
+        QvbrSettings: js.UndefOr[Av1QvbrSettings] = js.undefined,
+        RateControlMode: js.UndefOr[Av1RateControlMode] = js.undefined,
+        Slices: js.UndefOr[__integerMin1Max32] = js.undefined,
+        SpatialAdaptiveQuantization: js.UndefOr[Av1SpatialAdaptiveQuantization] = js.undefined
+    ): Av1Settings = {
+      val __obj = js.Dynamic.literal()
+      AdaptiveQuantization.foreach(__v => __obj.updateDynamic("AdaptiveQuantization")(__v.asInstanceOf[js.Any]))
+      FramerateControl.foreach(__v => __obj.updateDynamic("FramerateControl")(__v.asInstanceOf[js.Any]))
+      FramerateConversionAlgorithm.foreach(__v =>
+        __obj.updateDynamic("FramerateConversionAlgorithm")(__v.asInstanceOf[js.Any])
+      )
+      FramerateDenominator.foreach(__v => __obj.updateDynamic("FramerateDenominator")(__v.asInstanceOf[js.Any]))
+      FramerateNumerator.foreach(__v => __obj.updateDynamic("FramerateNumerator")(__v.asInstanceOf[js.Any]))
+      GopSize.foreach(__v => __obj.updateDynamic("GopSize")(__v.asInstanceOf[js.Any]))
+      MaxBitrate.foreach(__v => __obj.updateDynamic("MaxBitrate")(__v.asInstanceOf[js.Any]))
+      NumberBFramesBetweenReferenceFrames.foreach(__v =>
+        __obj.updateDynamic("NumberBFramesBetweenReferenceFrames")(__v.asInstanceOf[js.Any])
+      )
+      QvbrSettings.foreach(__v => __obj.updateDynamic("QvbrSettings")(__v.asInstanceOf[js.Any]))
+      RateControlMode.foreach(__v => __obj.updateDynamic("RateControlMode")(__v.asInstanceOf[js.Any]))
+      Slices.foreach(__v => __obj.updateDynamic("Slices")(__v.asInstanceOf[js.Any]))
+      SpatialAdaptiveQuantization.foreach(__v =>
+        __obj.updateDynamic("SpatialAdaptiveQuantization")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[Av1Settings]
+    }
+  }
+
+  /**
+    * Adjust quantization within each frame based on spatial variation of content complexity.
+    */
+  @js.native
+  sealed trait Av1SpatialAdaptiveQuantization extends js.Any
+  object Av1SpatialAdaptiveQuantization extends js.Object {
+    val DISABLED = "DISABLED".asInstanceOf[Av1SpatialAdaptiveQuantization]
+    val ENABLED = "ENABLED".asInstanceOf[Av1SpatialAdaptiveQuantization]
+
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -1042,15 +1203,15 @@ package mediaconvert {
   }
 
   /**
-    * Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will appear on the billing report unsorted.
+    * The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up.
     */
   @js.native
   sealed trait BillingTagsSource extends js.Any
   object BillingTagsSource extends js.Object {
-    val QUEUE        = "QUEUE".asInstanceOf[BillingTagsSource]
-    val PRESET       = "PRESET".asInstanceOf[BillingTagsSource]
+    val QUEUE = "QUEUE".asInstanceOf[BillingTagsSource]
+    val PRESET = "PRESET".asInstanceOf[BillingTagsSource]
     val JOB_TEMPLATE = "JOB_TEMPLATE".asInstanceOf[BillingTagsSource]
-    val JOB          = "JOB".asInstanceOf[BillingTagsSource]
+    val JOB = "JOB".asInstanceOf[BillingTagsSource]
 
     val values = js.Object.freeze(js.Array(QUEUE, PRESET, JOB_TEMPLATE, JOB))
   }
@@ -1129,7 +1290,7 @@ package mediaconvert {
   sealed trait BurninSubtitleAlignment extends js.Any
   object BurninSubtitleAlignment extends js.Object {
     val CENTERED = "CENTERED".asInstanceOf[BurninSubtitleAlignment]
-    val LEFT     = "LEFT".asInstanceOf[BurninSubtitleAlignment]
+    val LEFT = "LEFT".asInstanceOf[BurninSubtitleAlignment]
 
     val values = js.Object.freeze(js.Array(CENTERED, LEFT))
   }
@@ -1141,7 +1302,7 @@ package mediaconvert {
   @js.native
   sealed trait BurninSubtitleBackgroundColor extends js.Any
   object BurninSubtitleBackgroundColor extends js.Object {
-    val NONE  = "NONE".asInstanceOf[BurninSubtitleBackgroundColor]
+    val NONE = "NONE".asInstanceOf[BurninSubtitleBackgroundColor]
     val BLACK = "BLACK".asInstanceOf[BurninSubtitleBackgroundColor]
     val WHITE = "WHITE".asInstanceOf[BurninSubtitleBackgroundColor]
 
@@ -1154,12 +1315,12 @@ package mediaconvert {
   @js.native
   sealed trait BurninSubtitleFontColor extends js.Any
   object BurninSubtitleFontColor extends js.Object {
-    val WHITE  = "WHITE".asInstanceOf[BurninSubtitleFontColor]
-    val BLACK  = "BLACK".asInstanceOf[BurninSubtitleFontColor]
+    val WHITE = "WHITE".asInstanceOf[BurninSubtitleFontColor]
+    val BLACK = "BLACK".asInstanceOf[BurninSubtitleFontColor]
     val YELLOW = "YELLOW".asInstanceOf[BurninSubtitleFontColor]
-    val RED    = "RED".asInstanceOf[BurninSubtitleFontColor]
-    val GREEN  = "GREEN".asInstanceOf[BurninSubtitleFontColor]
-    val BLUE   = "BLUE".asInstanceOf[BurninSubtitleFontColor]
+    val RED = "RED".asInstanceOf[BurninSubtitleFontColor]
+    val GREEN = "GREEN".asInstanceOf[BurninSubtitleFontColor]
+    val BLUE = "BLUE".asInstanceOf[BurninSubtitleFontColor]
 
     val values = js.Object.freeze(js.Array(WHITE, BLACK, YELLOW, RED, GREEN, BLUE))
   }
@@ -1170,12 +1331,12 @@ package mediaconvert {
   @js.native
   sealed trait BurninSubtitleOutlineColor extends js.Any
   object BurninSubtitleOutlineColor extends js.Object {
-    val BLACK  = "BLACK".asInstanceOf[BurninSubtitleOutlineColor]
-    val WHITE  = "WHITE".asInstanceOf[BurninSubtitleOutlineColor]
+    val BLACK = "BLACK".asInstanceOf[BurninSubtitleOutlineColor]
+    val WHITE = "WHITE".asInstanceOf[BurninSubtitleOutlineColor]
     val YELLOW = "YELLOW".asInstanceOf[BurninSubtitleOutlineColor]
-    val RED    = "RED".asInstanceOf[BurninSubtitleOutlineColor]
-    val GREEN  = "GREEN".asInstanceOf[BurninSubtitleOutlineColor]
-    val BLUE   = "BLUE".asInstanceOf[BurninSubtitleOutlineColor]
+    val RED = "RED".asInstanceOf[BurninSubtitleOutlineColor]
+    val GREEN = "GREEN".asInstanceOf[BurninSubtitleOutlineColor]
+    val BLUE = "BLUE".asInstanceOf[BurninSubtitleOutlineColor]
 
     val values = js.Object.freeze(js.Array(BLACK, WHITE, YELLOW, RED, GREEN, BLUE))
   }
@@ -1187,7 +1348,7 @@ package mediaconvert {
   @js.native
   sealed trait BurninSubtitleShadowColor extends js.Any
   object BurninSubtitleShadowColor extends js.Object {
-    val NONE  = "NONE".asInstanceOf[BurninSubtitleShadowColor]
+    val NONE = "NONE".asInstanceOf[BurninSubtitleShadowColor]
     val BLACK = "BLACK".asInstanceOf[BurninSubtitleShadowColor]
     val WHITE = "WHITE".asInstanceOf[BurninSubtitleShadowColor]
 
@@ -1200,7 +1361,7 @@ package mediaconvert {
   @js.native
   sealed trait BurninSubtitleTeletextSpacing extends js.Any
   object BurninSubtitleTeletextSpacing extends js.Object {
-    val FIXED_GRID   = "FIXED_GRID".asInstanceOf[BurninSubtitleTeletextSpacing]
+    val FIXED_GRID = "FIXED_GRID".asInstanceOf[BurninSubtitleTeletextSpacing]
     val PROPORTIONAL = "PROPORTIONAL".asInstanceOf[BurninSubtitleTeletextSpacing]
 
     val values = js.Object.freeze(js.Array(FIXED_GRID, PROPORTIONAL))
@@ -1350,18 +1511,18 @@ package mediaconvert {
   @js.native
   sealed trait CaptionDestinationType extends js.Any
   object CaptionDestinationType extends js.Object {
-    val BURN_IN              = "BURN_IN".asInstanceOf[CaptionDestinationType]
-    val DVB_SUB              = "DVB_SUB".asInstanceOf[CaptionDestinationType]
-    val EMBEDDED             = "EMBEDDED".asInstanceOf[CaptionDestinationType]
+    val BURN_IN = "BURN_IN".asInstanceOf[CaptionDestinationType]
+    val DVB_SUB = "DVB_SUB".asInstanceOf[CaptionDestinationType]
+    val EMBEDDED = "EMBEDDED".asInstanceOf[CaptionDestinationType]
     val EMBEDDED_PLUS_SCTE20 = "EMBEDDED_PLUS_SCTE20".asInstanceOf[CaptionDestinationType]
-    val IMSC                 = "IMSC".asInstanceOf[CaptionDestinationType]
+    val IMSC = "IMSC".asInstanceOf[CaptionDestinationType]
     val SCTE20_PLUS_EMBEDDED = "SCTE20_PLUS_EMBEDDED".asInstanceOf[CaptionDestinationType]
-    val SCC                  = "SCC".asInstanceOf[CaptionDestinationType]
-    val SRT                  = "SRT".asInstanceOf[CaptionDestinationType]
-    val SMI                  = "SMI".asInstanceOf[CaptionDestinationType]
-    val TELETEXT             = "TELETEXT".asInstanceOf[CaptionDestinationType]
-    val TTML                 = "TTML".asInstanceOf[CaptionDestinationType]
-    val WEBVTT               = "WEBVTT".asInstanceOf[CaptionDestinationType]
+    val SCC = "SCC".asInstanceOf[CaptionDestinationType]
+    val SRT = "SRT".asInstanceOf[CaptionDestinationType]
+    val SMI = "SMI".asInstanceOf[CaptionDestinationType]
+    val TELETEXT = "TELETEXT".asInstanceOf[CaptionDestinationType]
+    val TTML = "TTML".asInstanceOf[CaptionDestinationType]
+    val WEBVTT = "WEBVTT".asInstanceOf[CaptionDestinationType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1403,6 +1564,28 @@ package mediaconvert {
       LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
       SourceSettings.foreach(__v => __obj.updateDynamic("SourceSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CaptionSelector]
+    }
+  }
+
+  /**
+    * Ignore this setting unless your input captions format is SCC. To have the service compensate for differing frame rates between your input captions and input video, specify the frame rate of the captions file. Specify this value as a fraction, using the settings Framerate numerator (framerateNumerator) and Framerate denominator (framerateDenominator). For example, you might specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001 for 29.97 fps.
+    */
+  @js.native
+  trait CaptionSourceFramerate extends js.Object {
+    var FramerateDenominator: js.UndefOr[__integerMin1Max1001]
+    var FramerateNumerator: js.UndefOr[__integerMin1Max60000]
+  }
+
+  object CaptionSourceFramerate {
+    @inline
+    def apply(
+        FramerateDenominator: js.UndefOr[__integerMin1Max1001] = js.undefined,
+        FramerateNumerator: js.UndefOr[__integerMin1Max60000] = js.undefined
+    ): CaptionSourceFramerate = {
+      val __obj = js.Dynamic.literal()
+      FramerateDenominator.foreach(__v => __obj.updateDynamic("FramerateDenominator")(__v.asInstanceOf[js.Any]))
+      FramerateNumerator.foreach(__v => __obj.updateDynamic("FramerateNumerator")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CaptionSourceFramerate]
     }
   }
 
@@ -1449,18 +1632,18 @@ package mediaconvert {
   @js.native
   sealed trait CaptionSourceType extends js.Any
   object CaptionSourceType extends js.Object {
-    val ANCILLARY   = "ANCILLARY".asInstanceOf[CaptionSourceType]
-    val DVB_SUB     = "DVB_SUB".asInstanceOf[CaptionSourceType]
-    val EMBEDDED    = "EMBEDDED".asInstanceOf[CaptionSourceType]
-    val SCTE20      = "SCTE20".asInstanceOf[CaptionSourceType]
-    val SCC         = "SCC".asInstanceOf[CaptionSourceType]
-    val TTML        = "TTML".asInstanceOf[CaptionSourceType]
-    val STL         = "STL".asInstanceOf[CaptionSourceType]
-    val SRT         = "SRT".asInstanceOf[CaptionSourceType]
-    val SMI         = "SMI".asInstanceOf[CaptionSourceType]
-    val TELETEXT    = "TELETEXT".asInstanceOf[CaptionSourceType]
+    val ANCILLARY = "ANCILLARY".asInstanceOf[CaptionSourceType]
+    val DVB_SUB = "DVB_SUB".asInstanceOf[CaptionSourceType]
+    val EMBEDDED = "EMBEDDED".asInstanceOf[CaptionSourceType]
+    val SCTE20 = "SCTE20".asInstanceOf[CaptionSourceType]
+    val SCC = "SCC".asInstanceOf[CaptionSourceType]
+    val TTML = "TTML".asInstanceOf[CaptionSourceType]
+    val STL = "STL".asInstanceOf[CaptionSourceType]
+    val SRT = "SRT".asInstanceOf[CaptionSourceType]
+    val SMI = "SMI".asInstanceOf[CaptionSourceType]
+    val TELETEXT = "TELETEXT".asInstanceOf[CaptionSourceType]
     val NULL_SOURCE = "NULL_SOURCE".asInstanceOf[CaptionSourceType]
-    val IMSC        = "IMSC".asInstanceOf[CaptionSourceType]
+    val IMSC = "IMSC".asInstanceOf[CaptionSourceType]
 
     val values = js.Object.freeze(
       js.Array(ANCILLARY, DVB_SUB, EMBEDDED, SCTE20, SCC, TTML, STL, SRT, SMI, TELETEXT, NULL_SOURCE, IMSC)
@@ -1515,7 +1698,7 @@ package mediaconvert {
   sealed trait CmafClientCache extends js.Any
   object CmafClientCache extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[CmafClientCache]
-    val ENABLED  = "ENABLED".asInstanceOf[CmafClientCache]
+    val ENABLED = "ENABLED".asInstanceOf[CmafClientCache]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -1577,7 +1760,7 @@ package mediaconvert {
   sealed trait CmafEncryptionType extends js.Any
   object CmafEncryptionType extends js.Object {
     val SAMPLE_AES = "SAMPLE_AES".asInstanceOf[CmafEncryptionType]
-    val AES_CTR    = "AES_CTR".asInstanceOf[CmafEncryptionType]
+    val AES_CTR = "AES_CTR".asInstanceOf[CmafEncryptionType]
 
     val values = js.Object.freeze(js.Array(SAMPLE_AES, AES_CTR))
   }
@@ -1675,7 +1858,7 @@ package mediaconvert {
   @js.native
   sealed trait CmafKeyProviderType extends js.Any
   object CmafKeyProviderType extends js.Object {
-    val SPEKE      = "SPEKE".asInstanceOf[CmafKeyProviderType]
+    val SPEKE = "SPEKE".asInstanceOf[CmafKeyProviderType]
     val STATIC_KEY = "STATIC_KEY".asInstanceOf[CmafKeyProviderType]
 
     val values = js.Object.freeze(js.Array(SPEKE, STATIC_KEY))
@@ -1700,7 +1883,7 @@ package mediaconvert {
   sealed trait CmafManifestDurationFormat extends js.Any
   object CmafManifestDurationFormat extends js.Object {
     val FLOATING_POINT = "FLOATING_POINT".asInstanceOf[CmafManifestDurationFormat]
-    val INTEGER        = "INTEGER".asInstanceOf[CmafManifestDurationFormat]
+    val INTEGER = "INTEGER".asInstanceOf[CmafManifestDurationFormat]
 
     val values = js.Object.freeze(js.Array(FLOATING_POINT, INTEGER))
   }
@@ -1711,7 +1894,7 @@ package mediaconvert {
   @js.native
   sealed trait CmafMpdProfile extends js.Any
   object CmafMpdProfile extends js.Object {
-    val MAIN_PROFILE      = "MAIN_PROFILE".asInstanceOf[CmafMpdProfile]
+    val MAIN_PROFILE = "MAIN_PROFILE".asInstanceOf[CmafMpdProfile]
     val ON_DEMAND_PROFILE = "ON_DEMAND_PROFILE".asInstanceOf[CmafMpdProfile]
 
     val values = js.Object.freeze(js.Array(MAIN_PROFILE, ON_DEMAND_PROFILE))
@@ -1723,7 +1906,7 @@ package mediaconvert {
   @js.native
   sealed trait CmafSegmentControl extends js.Any
   object CmafSegmentControl extends js.Object {
-    val SINGLE_FILE     = "SINGLE_FILE".asInstanceOf[CmafSegmentControl]
+    val SINGLE_FILE = "SINGLE_FILE".asInstanceOf[CmafSegmentControl]
     val SEGMENTED_FILES = "SEGMENTED_FILES".asInstanceOf[CmafSegmentControl]
 
     val values = js.Object.freeze(js.Array(SINGLE_FILE, SEGMENTED_FILES))
@@ -1748,7 +1931,7 @@ package mediaconvert {
   sealed trait CmafWriteDASHManifest extends js.Any
   object CmafWriteDASHManifest extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[CmafWriteDASHManifest]
-    val ENABLED  = "ENABLED".asInstanceOf[CmafWriteDASHManifest]
+    val ENABLED = "ENABLED".asInstanceOf[CmafWriteDASHManifest]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -1760,7 +1943,7 @@ package mediaconvert {
   sealed trait CmafWriteHLSManifest extends js.Any
   object CmafWriteHLSManifest extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[CmafWriteHLSManifest]
-    val ENABLED  = "ENABLED".asInstanceOf[CmafWriteHLSManifest]
+    val ENABLED = "ENABLED".asInstanceOf[CmafWriteHLSManifest]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -1771,7 +1954,7 @@ package mediaconvert {
   @js.native
   sealed trait CmafWriteSegmentTimelineInRepresentation extends js.Any
   object CmafWriteSegmentTimelineInRepresentation extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[CmafWriteSegmentTimelineInRepresentation]
+    val ENABLED = "ENABLED".asInstanceOf[CmafWriteSegmentTimelineInRepresentation]
     val DISABLED = "DISABLED".asInstanceOf[CmafWriteSegmentTimelineInRepresentation]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -1784,7 +1967,7 @@ package mediaconvert {
   sealed trait CmfcScte35Esam extends js.Any
   object CmfcScte35Esam extends js.Object {
     val INSERT = "INSERT".asInstanceOf[CmfcScte35Esam]
-    val NONE   = "NONE".asInstanceOf[CmfcScte35Esam]
+    val NONE = "NONE".asInstanceOf[CmfcScte35Esam]
 
     val values = js.Object.freeze(js.Array(INSERT, NONE))
   }
@@ -1796,7 +1979,7 @@ package mediaconvert {
   sealed trait CmfcScte35Source extends js.Any
   object CmfcScte35Source extends js.Object {
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[CmfcScte35Source]
-    val NONE        = "NONE".asInstanceOf[CmfcScte35Source]
+    val NONE = "NONE".asInstanceOf[CmfcScte35Source]
 
     val values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
   }
@@ -1875,25 +2058,25 @@ package mediaconvert {
   @js.native
   sealed trait ColorSpace extends js.Any
   object ColorSpace extends js.Object {
-    val FOLLOW   = "FOLLOW".asInstanceOf[ColorSpace]
-    val REC_601  = "REC_601".asInstanceOf[ColorSpace]
-    val REC_709  = "REC_709".asInstanceOf[ColorSpace]
-    val HDR10    = "HDR10".asInstanceOf[ColorSpace]
+    val FOLLOW = "FOLLOW".asInstanceOf[ColorSpace]
+    val REC_601 = "REC_601".asInstanceOf[ColorSpace]
+    val REC_709 = "REC_709".asInstanceOf[ColorSpace]
+    val HDR10 = "HDR10".asInstanceOf[ColorSpace]
     val HLG_2020 = "HLG_2020".asInstanceOf[ColorSpace]
 
     val values = js.Object.freeze(js.Array(FOLLOW, REC_601, REC_709, HDR10, HLG_2020))
   }
 
   /**
-    * Specify the color space you want for this output. The service supports conversion between HDR formats, between SDR formats, and from SDR to HDR. The service doesn't support conversion from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted output.
+    * Specify the color space you want for this output. The service supports conversion between HDR formats, between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR.
     */
   @js.native
   sealed trait ColorSpaceConversion extends js.Any
   object ColorSpaceConversion extends js.Object {
-    val NONE           = "NONE".asInstanceOf[ColorSpaceConversion]
-    val FORCE_601      = "FORCE_601".asInstanceOf[ColorSpaceConversion]
-    val FORCE_709      = "FORCE_709".asInstanceOf[ColorSpaceConversion]
-    val FORCE_HDR10    = "FORCE_HDR10".asInstanceOf[ColorSpaceConversion]
+    val NONE = "NONE".asInstanceOf[ColorSpaceConversion]
+    val FORCE_601 = "FORCE_601".asInstanceOf[ColorSpaceConversion]
+    val FORCE_709 = "FORCE_709".asInstanceOf[ColorSpaceConversion]
+    val FORCE_HDR10 = "FORCE_HDR10".asInstanceOf[ColorSpaceConversion]
     val FORCE_HLG_2020 = "FORCE_HLG_2020".asInstanceOf[ColorSpaceConversion]
 
     val values = js.Object.freeze(js.Array(NONE, FORCE_601, FORCE_709, FORCE_HDR10, FORCE_HLG_2020))
@@ -1905,7 +2088,7 @@ package mediaconvert {
   @js.native
   sealed trait ColorSpaceUsage extends js.Any
   object ColorSpaceUsage extends js.Object {
-    val FORCE    = "FORCE".asInstanceOf[ColorSpaceUsage]
+    val FORCE = "FORCE".asInstanceOf[ColorSpaceUsage]
     val FALLBACK = "FALLBACK".asInstanceOf[ColorSpaceUsage]
 
     val values = js.Object.freeze(js.Array(FORCE, FALLBACK))
@@ -1935,6 +2118,7 @@ package mediaconvert {
     var MovSettings: js.UndefOr[MovSettings]
     var Mp4Settings: js.UndefOr[Mp4Settings]
     var MpdSettings: js.UndefOr[MpdSettings]
+    var MxfSettings: js.UndefOr[MxfSettings]
   }
 
   object ContainerSettings {
@@ -1947,7 +2131,8 @@ package mediaconvert {
         M3u8Settings: js.UndefOr[M3u8Settings] = js.undefined,
         MovSettings: js.UndefOr[MovSettings] = js.undefined,
         Mp4Settings: js.UndefOr[Mp4Settings] = js.undefined,
-        MpdSettings: js.UndefOr[MpdSettings] = js.undefined
+        MpdSettings: js.UndefOr[MpdSettings] = js.undefined,
+        MxfSettings: js.UndefOr[MxfSettings] = js.undefined
     ): ContainerSettings = {
       val __obj = js.Dynamic.literal()
       CmfcSettings.foreach(__v => __obj.updateDynamic("CmfcSettings")(__v.asInstanceOf[js.Any]))
@@ -1958,6 +2143,7 @@ package mediaconvert {
       MovSettings.foreach(__v => __obj.updateDynamic("MovSettings")(__v.asInstanceOf[js.Any]))
       Mp4Settings.foreach(__v => __obj.updateDynamic("Mp4Settings")(__v.asInstanceOf[js.Any]))
       MpdSettings.foreach(__v => __obj.updateDynamic("MpdSettings")(__v.asInstanceOf[js.Any]))
+      MxfSettings.foreach(__v => __obj.updateDynamic("MxfSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContainerSettings]
     }
   }
@@ -1968,18 +2154,19 @@ package mediaconvert {
   @js.native
   sealed trait ContainerType extends js.Any
   object ContainerType extends js.Object {
-    val F4V  = "F4V".asInstanceOf[ContainerType]
+    val F4V = "F4V".asInstanceOf[ContainerType]
     val ISMV = "ISMV".asInstanceOf[ContainerType]
     val M2TS = "M2TS".asInstanceOf[ContainerType]
     val M3U8 = "M3U8".asInstanceOf[ContainerType]
     val CMFC = "CMFC".asInstanceOf[ContainerType]
-    val MOV  = "MOV".asInstanceOf[ContainerType]
-    val MP4  = "MP4".asInstanceOf[ContainerType]
-    val MPD  = "MPD".asInstanceOf[ContainerType]
-    val MXF  = "MXF".asInstanceOf[ContainerType]
-    val RAW  = "RAW".asInstanceOf[ContainerType]
+    val MOV = "MOV".asInstanceOf[ContainerType]
+    val MP4 = "MP4".asInstanceOf[ContainerType]
+    val MPD = "MPD".asInstanceOf[ContainerType]
+    val MXF = "MXF".asInstanceOf[ContainerType]
+    val WEBM = "WEBM".asInstanceOf[ContainerType]
+    val RAW = "RAW".asInstanceOf[ContainerType]
 
-    val values = js.Object.freeze(js.Array(F4V, ISMV, M2TS, M3U8, CMFC, MOV, MP4, MPD, MXF, RAW))
+    val values = js.Object.freeze(js.Array(F4V, ISMV, M2TS, M3U8, CMFC, MOV, MP4, MPD, MXF, WEBM, RAW))
   }
 
   @js.native
@@ -1989,6 +2176,7 @@ package mediaconvert {
     var AccelerationSettings: js.UndefOr[AccelerationSettings]
     var BillingTagsSource: js.UndefOr[BillingTagsSource]
     var ClientRequestToken: js.UndefOr[__string]
+    var HopDestinations: js.UndefOr[__listOfHopDestination]
     var JobTemplate: js.UndefOr[__string]
     var Priority: js.UndefOr[__integerMinNegative50Max50]
     var Queue: js.UndefOr[__string]
@@ -2006,6 +2194,7 @@ package mediaconvert {
         AccelerationSettings: js.UndefOr[AccelerationSettings] = js.undefined,
         BillingTagsSource: js.UndefOr[BillingTagsSource] = js.undefined,
         ClientRequestToken: js.UndefOr[__string] = js.undefined,
+        HopDestinations: js.UndefOr[__listOfHopDestination] = js.undefined,
         JobTemplate: js.UndefOr[__string] = js.undefined,
         Priority: js.UndefOr[__integerMinNegative50Max50] = js.undefined,
         Queue: js.UndefOr[__string] = js.undefined,
@@ -2015,13 +2204,14 @@ package mediaconvert {
         UserMetadata: js.UndefOr[__mapOf__string] = js.undefined
     ): CreateJobRequest = {
       val __obj = js.Dynamic.literal(
-        "Role"     -> Role.asInstanceOf[js.Any],
+        "Role" -> Role.asInstanceOf[js.Any],
         "Settings" -> Settings.asInstanceOf[js.Any]
       )
 
       AccelerationSettings.foreach(__v => __obj.updateDynamic("AccelerationSettings")(__v.asInstanceOf[js.Any]))
       BillingTagsSource.foreach(__v => __obj.updateDynamic("BillingTagsSource")(__v.asInstanceOf[js.Any]))
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      HopDestinations.foreach(__v => __obj.updateDynamic("HopDestinations")(__v.asInstanceOf[js.Any]))
       JobTemplate.foreach(__v => __obj.updateDynamic("JobTemplate")(__v.asInstanceOf[js.Any]))
       Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
       Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
@@ -2056,6 +2246,7 @@ package mediaconvert {
     var AccelerationSettings: js.UndefOr[AccelerationSettings]
     var Category: js.UndefOr[__string]
     var Description: js.UndefOr[__string]
+    var HopDestinations: js.UndefOr[__listOfHopDestination]
     var Priority: js.UndefOr[__integerMinNegative50Max50]
     var Queue: js.UndefOr[__string]
     var StatusUpdateInterval: js.UndefOr[StatusUpdateInterval]
@@ -2070,19 +2261,21 @@ package mediaconvert {
         AccelerationSettings: js.UndefOr[AccelerationSettings] = js.undefined,
         Category: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
+        HopDestinations: js.UndefOr[__listOfHopDestination] = js.undefined,
         Priority: js.UndefOr[__integerMinNegative50Max50] = js.undefined,
         Queue: js.UndefOr[__string] = js.undefined,
         StatusUpdateInterval: js.UndefOr[StatusUpdateInterval] = js.undefined,
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): CreateJobTemplateRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"     -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Settings" -> Settings.asInstanceOf[js.Any]
       )
 
       AccelerationSettings.foreach(__v => __obj.updateDynamic("AccelerationSettings")(__v.asInstanceOf[js.Any]))
       Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      HopDestinations.foreach(__v => __obj.updateDynamic("HopDestinations")(__v.asInstanceOf[js.Any]))
       Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
       Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
       StatusUpdateInterval.foreach(__v => __obj.updateDynamic("StatusUpdateInterval")(__v.asInstanceOf[js.Any]))
@@ -2126,7 +2319,7 @@ package mediaconvert {
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): CreatePresetRequest = {
       val __obj = js.Dynamic.literal(
-        "Name"     -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Settings" -> Settings.asInstanceOf[js.Any]
       )
 
@@ -2309,7 +2502,7 @@ package mediaconvert {
   sealed trait DashIsoHbbtvCompliance extends js.Any
   object DashIsoHbbtvCompliance extends js.Object {
     val HBBTV_1_5 = "HBBTV_1_5".asInstanceOf[DashIsoHbbtvCompliance]
-    val NONE      = "NONE".asInstanceOf[DashIsoHbbtvCompliance]
+    val NONE = "NONE".asInstanceOf[DashIsoHbbtvCompliance]
 
     val values = js.Object.freeze(js.Array(HBBTV_1_5, NONE))
   }
@@ -2320,7 +2513,7 @@ package mediaconvert {
   @js.native
   sealed trait DashIsoMpdProfile extends js.Any
   object DashIsoMpdProfile extends js.Object {
-    val MAIN_PROFILE      = "MAIN_PROFILE".asInstanceOf[DashIsoMpdProfile]
+    val MAIN_PROFILE = "MAIN_PROFILE".asInstanceOf[DashIsoMpdProfile]
     val ON_DEMAND_PROFILE = "ON_DEMAND_PROFILE".asInstanceOf[DashIsoMpdProfile]
 
     val values = js.Object.freeze(js.Array(MAIN_PROFILE, ON_DEMAND_PROFILE))
@@ -2332,7 +2525,7 @@ package mediaconvert {
   @js.native
   sealed trait DashIsoPlaybackDeviceCompatibility extends js.Any
   object DashIsoPlaybackDeviceCompatibility extends js.Object {
-    val CENC_V1         = "CENC_V1".asInstanceOf[DashIsoPlaybackDeviceCompatibility]
+    val CENC_V1 = "CENC_V1".asInstanceOf[DashIsoPlaybackDeviceCompatibility]
     val UNENCRYPTED_SEI = "UNENCRYPTED_SEI".asInstanceOf[DashIsoPlaybackDeviceCompatibility]
 
     val values = js.Object.freeze(js.Array(CENC_V1, UNENCRYPTED_SEI))
@@ -2344,7 +2537,7 @@ package mediaconvert {
   @js.native
   sealed trait DashIsoSegmentControl extends js.Any
   object DashIsoSegmentControl extends js.Object {
-    val SINGLE_FILE     = "SINGLE_FILE".asInstanceOf[DashIsoSegmentControl]
+    val SINGLE_FILE = "SINGLE_FILE".asInstanceOf[DashIsoSegmentControl]
     val SEGMENTED_FILES = "SEGMENTED_FILES".asInstanceOf[DashIsoSegmentControl]
 
     val values = js.Object.freeze(js.Array(SINGLE_FILE, SEGMENTED_FILES))
@@ -2356,7 +2549,7 @@ package mediaconvert {
   @js.native
   sealed trait DashIsoWriteSegmentTimelineInRepresentation extends js.Any
   object DashIsoWriteSegmentTimelineInRepresentation extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[DashIsoWriteSegmentTimelineInRepresentation]
+    val ENABLED = "ENABLED".asInstanceOf[DashIsoWriteSegmentTimelineInRepresentation]
     val DISABLED = "DISABLED".asInstanceOf[DashIsoWriteSegmentTimelineInRepresentation]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -2381,10 +2574,10 @@ package mediaconvert {
   @js.native
   sealed trait DeinterlaceAlgorithm extends js.Any
   object DeinterlaceAlgorithm extends js.Object {
-    val INTERPOLATE        = "INTERPOLATE".asInstanceOf[DeinterlaceAlgorithm]
+    val INTERPOLATE = "INTERPOLATE".asInstanceOf[DeinterlaceAlgorithm]
     val INTERPOLATE_TICKER = "INTERPOLATE_TICKER".asInstanceOf[DeinterlaceAlgorithm]
-    val BLEND              = "BLEND".asInstanceOf[DeinterlaceAlgorithm]
-    val BLEND_TICKER       = "BLEND_TICKER".asInstanceOf[DeinterlaceAlgorithm]
+    val BLEND = "BLEND".asInstanceOf[DeinterlaceAlgorithm]
+    val BLEND_TICKER = "BLEND_TICKER".asInstanceOf[DeinterlaceAlgorithm]
 
     val values = js.Object.freeze(js.Array(INTERPOLATE, INTERPOLATE_TICKER, BLEND, BLEND_TICKER))
   }
@@ -2421,7 +2614,7 @@ package mediaconvert {
   sealed trait DeinterlacerControl extends js.Any
   object DeinterlacerControl extends js.Object {
     val FORCE_ALL_FRAMES = "FORCE_ALL_FRAMES".asInstanceOf[DeinterlacerControl]
-    val NORMAL           = "NORMAL".asInstanceOf[DeinterlacerControl]
+    val NORMAL = "NORMAL".asInstanceOf[DeinterlacerControl]
 
     val values = js.Object.freeze(js.Array(FORCE_ALL_FRAMES, NORMAL))
   }
@@ -2432,9 +2625,9 @@ package mediaconvert {
   @js.native
   sealed trait DeinterlacerMode extends js.Any
   object DeinterlacerMode extends js.Object {
-    val DEINTERLACE      = "DEINTERLACE".asInstanceOf[DeinterlacerMode]
+    val DEINTERLACE = "DEINTERLACE".asInstanceOf[DeinterlacerMode]
     val INVERSE_TELECINE = "INVERSE_TELECINE".asInstanceOf[DeinterlacerMode]
-    val ADAPTIVE         = "ADAPTIVE".asInstanceOf[DeinterlacerMode]
+    val ADAPTIVE = "ADAPTIVE".asInstanceOf[DeinterlacerMode]
 
     val values = js.Object.freeze(js.Array(DEINTERLACE, INVERSE_TELECINE, ADAPTIVE))
   }
@@ -2538,7 +2731,7 @@ package mediaconvert {
   @js.native
   sealed trait DescribeEndpointsMode extends js.Any
   object DescribeEndpointsMode extends js.Object {
-    val DEFAULT  = "DEFAULT".asInstanceOf[DescribeEndpointsMode]
+    val DEFAULT = "DEFAULT".asInstanceOf[DescribeEndpointsMode]
     val GET_ONLY = "GET_ONLY".asInstanceOf[DescribeEndpointsMode]
 
     val values = js.Object.freeze(js.Array(DEFAULT, GET_ONLY))
@@ -2693,7 +2886,7 @@ package mediaconvert {
   object DolbyVisionLevel6Mode extends js.Object {
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[DolbyVisionLevel6Mode]
     val RECALCULATE = "RECALCULATE".asInstanceOf[DolbyVisionLevel6Mode]
-    val SPECIFY     = "SPECIFY".asInstanceOf[DolbyVisionLevel6Mode]
+    val SPECIFY = "SPECIFY".asInstanceOf[DolbyVisionLevel6Mode]
 
     val values = js.Object.freeze(js.Array(PASSTHROUGH, RECALCULATE, SPECIFY))
   }
@@ -2716,7 +2909,7 @@ package mediaconvert {
   sealed trait DropFrameTimecode extends js.Any
   object DropFrameTimecode extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[DropFrameTimecode]
-    val ENABLED  = "ENABLED".asInstanceOf[DropFrameTimecode]
+    val ENABLED = "ENABLED".asInstanceOf[DropFrameTimecode]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -2870,7 +3063,7 @@ package mediaconvert {
   sealed trait DvbSubtitleAlignment extends js.Any
   object DvbSubtitleAlignment extends js.Object {
     val CENTERED = "CENTERED".asInstanceOf[DvbSubtitleAlignment]
-    val LEFT     = "LEFT".asInstanceOf[DvbSubtitleAlignment]
+    val LEFT = "LEFT".asInstanceOf[DvbSubtitleAlignment]
 
     val values = js.Object.freeze(js.Array(CENTERED, LEFT))
   }
@@ -2882,7 +3075,7 @@ package mediaconvert {
   @js.native
   sealed trait DvbSubtitleBackgroundColor extends js.Any
   object DvbSubtitleBackgroundColor extends js.Object {
-    val NONE  = "NONE".asInstanceOf[DvbSubtitleBackgroundColor]
+    val NONE = "NONE".asInstanceOf[DvbSubtitleBackgroundColor]
     val BLACK = "BLACK".asInstanceOf[DvbSubtitleBackgroundColor]
     val WHITE = "WHITE".asInstanceOf[DvbSubtitleBackgroundColor]
 
@@ -2895,12 +3088,12 @@ package mediaconvert {
   @js.native
   sealed trait DvbSubtitleFontColor extends js.Any
   object DvbSubtitleFontColor extends js.Object {
-    val WHITE  = "WHITE".asInstanceOf[DvbSubtitleFontColor]
-    val BLACK  = "BLACK".asInstanceOf[DvbSubtitleFontColor]
+    val WHITE = "WHITE".asInstanceOf[DvbSubtitleFontColor]
+    val BLACK = "BLACK".asInstanceOf[DvbSubtitleFontColor]
     val YELLOW = "YELLOW".asInstanceOf[DvbSubtitleFontColor]
-    val RED    = "RED".asInstanceOf[DvbSubtitleFontColor]
-    val GREEN  = "GREEN".asInstanceOf[DvbSubtitleFontColor]
-    val BLUE   = "BLUE".asInstanceOf[DvbSubtitleFontColor]
+    val RED = "RED".asInstanceOf[DvbSubtitleFontColor]
+    val GREEN = "GREEN".asInstanceOf[DvbSubtitleFontColor]
+    val BLUE = "BLUE".asInstanceOf[DvbSubtitleFontColor]
 
     val values = js.Object.freeze(js.Array(WHITE, BLACK, YELLOW, RED, GREEN, BLUE))
   }
@@ -2911,12 +3104,12 @@ package mediaconvert {
   @js.native
   sealed trait DvbSubtitleOutlineColor extends js.Any
   object DvbSubtitleOutlineColor extends js.Object {
-    val BLACK  = "BLACK".asInstanceOf[DvbSubtitleOutlineColor]
-    val WHITE  = "WHITE".asInstanceOf[DvbSubtitleOutlineColor]
+    val BLACK = "BLACK".asInstanceOf[DvbSubtitleOutlineColor]
+    val WHITE = "WHITE".asInstanceOf[DvbSubtitleOutlineColor]
     val YELLOW = "YELLOW".asInstanceOf[DvbSubtitleOutlineColor]
-    val RED    = "RED".asInstanceOf[DvbSubtitleOutlineColor]
-    val GREEN  = "GREEN".asInstanceOf[DvbSubtitleOutlineColor]
-    val BLUE   = "BLUE".asInstanceOf[DvbSubtitleOutlineColor]
+    val RED = "RED".asInstanceOf[DvbSubtitleOutlineColor]
+    val GREEN = "GREEN".asInstanceOf[DvbSubtitleOutlineColor]
+    val BLUE = "BLUE".asInstanceOf[DvbSubtitleOutlineColor]
 
     val values = js.Object.freeze(js.Array(BLACK, WHITE, YELLOW, RED, GREEN, BLUE))
   }
@@ -2928,7 +3121,7 @@ package mediaconvert {
   @js.native
   sealed trait DvbSubtitleShadowColor extends js.Any
   object DvbSubtitleShadowColor extends js.Object {
-    val NONE  = "NONE".asInstanceOf[DvbSubtitleShadowColor]
+    val NONE = "NONE".asInstanceOf[DvbSubtitleShadowColor]
     val BLACK = "BLACK".asInstanceOf[DvbSubtitleShadowColor]
     val WHITE = "WHITE".asInstanceOf[DvbSubtitleShadowColor]
 
@@ -2941,7 +3134,7 @@ package mediaconvert {
   @js.native
   sealed trait DvbSubtitleTeletextSpacing extends js.Any
   object DvbSubtitleTeletextSpacing extends js.Object {
-    val FIXED_GRID   = "FIXED_GRID".asInstanceOf[DvbSubtitleTeletextSpacing]
+    val FIXED_GRID = "FIXED_GRID".asInstanceOf[DvbSubtitleTeletextSpacing]
     val PROPORTIONAL = "PROPORTIONAL".asInstanceOf[DvbSubtitleTeletextSpacing]
 
     val values = js.Object.freeze(js.Array(FIXED_GRID, PROPORTIONAL))
@@ -2954,7 +3147,7 @@ package mediaconvert {
   sealed trait DvbSubtitlingType extends js.Any
   object DvbSubtitlingType extends js.Object {
     val HEARING_IMPAIRED = "HEARING_IMPAIRED".asInstanceOf[DvbSubtitlingType]
-    val STANDARD         = "STANDARD".asInstanceOf[DvbSubtitlingType]
+    val STANDARD = "STANDARD".asInstanceOf[DvbSubtitlingType]
 
     val values = js.Object.freeze(js.Array(HEARING_IMPAIRED, STANDARD))
   }
@@ -3006,7 +3199,7 @@ package mediaconvert {
   @js.native
   sealed trait Eac3AtmosDialogueIntelligence extends js.Any
   object Eac3AtmosDialogueIntelligence extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[Eac3AtmosDialogueIntelligence]
+    val ENABLED = "ENABLED".asInstanceOf[Eac3AtmosDialogueIntelligence]
     val DISABLED = "DISABLED".asInstanceOf[Eac3AtmosDialogueIntelligence]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -3018,12 +3211,12 @@ package mediaconvert {
   @js.native
   sealed trait Eac3AtmosDynamicRangeCompressionLine extends js.Any
   object Eac3AtmosDynamicRangeCompressionLine extends js.Object {
-    val NONE           = "NONE".asInstanceOf[Eac3AtmosDynamicRangeCompressionLine]
-    val FILM_STANDARD  = "FILM_STANDARD".asInstanceOf[Eac3AtmosDynamicRangeCompressionLine]
-    val FILM_LIGHT     = "FILM_LIGHT".asInstanceOf[Eac3AtmosDynamicRangeCompressionLine]
+    val NONE = "NONE".asInstanceOf[Eac3AtmosDynamicRangeCompressionLine]
+    val FILM_STANDARD = "FILM_STANDARD".asInstanceOf[Eac3AtmosDynamicRangeCompressionLine]
+    val FILM_LIGHT = "FILM_LIGHT".asInstanceOf[Eac3AtmosDynamicRangeCompressionLine]
     val MUSIC_STANDARD = "MUSIC_STANDARD".asInstanceOf[Eac3AtmosDynamicRangeCompressionLine]
-    val MUSIC_LIGHT    = "MUSIC_LIGHT".asInstanceOf[Eac3AtmosDynamicRangeCompressionLine]
-    val SPEECH         = "SPEECH".asInstanceOf[Eac3AtmosDynamicRangeCompressionLine]
+    val MUSIC_LIGHT = "MUSIC_LIGHT".asInstanceOf[Eac3AtmosDynamicRangeCompressionLine]
+    val SPEECH = "SPEECH".asInstanceOf[Eac3AtmosDynamicRangeCompressionLine]
 
     val values = js.Object.freeze(js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH))
   }
@@ -3034,12 +3227,12 @@ package mediaconvert {
   @js.native
   sealed trait Eac3AtmosDynamicRangeCompressionRf extends js.Any
   object Eac3AtmosDynamicRangeCompressionRf extends js.Object {
-    val NONE           = "NONE".asInstanceOf[Eac3AtmosDynamicRangeCompressionRf]
-    val FILM_STANDARD  = "FILM_STANDARD".asInstanceOf[Eac3AtmosDynamicRangeCompressionRf]
-    val FILM_LIGHT     = "FILM_LIGHT".asInstanceOf[Eac3AtmosDynamicRangeCompressionRf]
+    val NONE = "NONE".asInstanceOf[Eac3AtmosDynamicRangeCompressionRf]
+    val FILM_STANDARD = "FILM_STANDARD".asInstanceOf[Eac3AtmosDynamicRangeCompressionRf]
+    val FILM_LIGHT = "FILM_LIGHT".asInstanceOf[Eac3AtmosDynamicRangeCompressionRf]
     val MUSIC_STANDARD = "MUSIC_STANDARD".asInstanceOf[Eac3AtmosDynamicRangeCompressionRf]
-    val MUSIC_LIGHT    = "MUSIC_LIGHT".asInstanceOf[Eac3AtmosDynamicRangeCompressionRf]
-    val SPEECH         = "SPEECH".asInstanceOf[Eac3AtmosDynamicRangeCompressionRf]
+    val MUSIC_LIGHT = "MUSIC_LIGHT".asInstanceOf[Eac3AtmosDynamicRangeCompressionRf]
+    val SPEECH = "SPEECH".asInstanceOf[Eac3AtmosDynamicRangeCompressionRf]
 
     val values = js.Object.freeze(js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH))
   }
@@ -3050,7 +3243,7 @@ package mediaconvert {
   @js.native
   sealed trait Eac3AtmosMeteringMode extends js.Any
   object Eac3AtmosMeteringMode extends js.Object {
-    val LEQ_A         = "LEQ_A".asInstanceOf[Eac3AtmosMeteringMode]
+    val LEQ_A = "LEQ_A".asInstanceOf[Eac3AtmosMeteringMode]
     val ITU_BS_1770_1 = "ITU_BS_1770_1".asInstanceOf[Eac3AtmosMeteringMode]
     val ITU_BS_1770_2 = "ITU_BS_1770_2".asInstanceOf[Eac3AtmosMeteringMode]
     val ITU_BS_1770_3 = "ITU_BS_1770_3".asInstanceOf[Eac3AtmosMeteringMode]
@@ -3131,9 +3324,9 @@ package mediaconvert {
   sealed trait Eac3AtmosStereoDownmix extends js.Any
   object Eac3AtmosStereoDownmix extends js.Object {
     val NOT_INDICATED = "NOT_INDICATED".asInstanceOf[Eac3AtmosStereoDownmix]
-    val STEREO        = "STEREO".asInstanceOf[Eac3AtmosStereoDownmix]
-    val SURROUND      = "SURROUND".asInstanceOf[Eac3AtmosStereoDownmix]
-    val DPL2          = "DPL2".asInstanceOf[Eac3AtmosStereoDownmix]
+    val STEREO = "STEREO".asInstanceOf[Eac3AtmosStereoDownmix]
+    val SURROUND = "SURROUND".asInstanceOf[Eac3AtmosStereoDownmix]
+    val DPL2 = "DPL2".asInstanceOf[Eac3AtmosStereoDownmix]
 
     val values = js.Object.freeze(js.Array(NOT_INDICATED, STEREO, SURROUND, DPL2))
   }
@@ -3145,8 +3338,8 @@ package mediaconvert {
   sealed trait Eac3AtmosSurroundExMode extends js.Any
   object Eac3AtmosSurroundExMode extends js.Object {
     val NOT_INDICATED = "NOT_INDICATED".asInstanceOf[Eac3AtmosSurroundExMode]
-    val ENABLED       = "ENABLED".asInstanceOf[Eac3AtmosSurroundExMode]
-    val DISABLED      = "DISABLED".asInstanceOf[Eac3AtmosSurroundExMode]
+    val ENABLED = "ENABLED".asInstanceOf[Eac3AtmosSurroundExMode]
+    val DISABLED = "DISABLED".asInstanceOf[Eac3AtmosSurroundExMode]
 
     val values = js.Object.freeze(js.Array(NOT_INDICATED, ENABLED, DISABLED))
   }
@@ -3158,7 +3351,7 @@ package mediaconvert {
   sealed trait Eac3AttenuationControl extends js.Any
   object Eac3AttenuationControl extends js.Object {
     val ATTENUATE_3_DB = "ATTENUATE_3_DB".asInstanceOf[Eac3AttenuationControl]
-    val NONE           = "NONE".asInstanceOf[Eac3AttenuationControl]
+    val NONE = "NONE".asInstanceOf[Eac3AttenuationControl]
 
     val values = js.Object.freeze(js.Array(ATTENUATE_3_DB, NONE))
   }
@@ -3169,10 +3362,10 @@ package mediaconvert {
   @js.native
   sealed trait Eac3BitstreamMode extends js.Any
   object Eac3BitstreamMode extends js.Object {
-    val COMPLETE_MAIN     = "COMPLETE_MAIN".asInstanceOf[Eac3BitstreamMode]
-    val COMMENTARY        = "COMMENTARY".asInstanceOf[Eac3BitstreamMode]
-    val EMERGENCY         = "EMERGENCY".asInstanceOf[Eac3BitstreamMode]
-    val HEARING_IMPAIRED  = "HEARING_IMPAIRED".asInstanceOf[Eac3BitstreamMode]
+    val COMPLETE_MAIN = "COMPLETE_MAIN".asInstanceOf[Eac3BitstreamMode]
+    val COMMENTARY = "COMMENTARY".asInstanceOf[Eac3BitstreamMode]
+    val EMERGENCY = "EMERGENCY".asInstanceOf[Eac3BitstreamMode]
+    val HEARING_IMPAIRED = "HEARING_IMPAIRED".asInstanceOf[Eac3BitstreamMode]
     val VISUALLY_IMPAIRED = "VISUALLY_IMPAIRED".asInstanceOf[Eac3BitstreamMode]
 
     val values = js.Object.freeze(js.Array(COMPLETE_MAIN, COMMENTARY, EMERGENCY, HEARING_IMPAIRED, VISUALLY_IMPAIRED))
@@ -3197,7 +3390,7 @@ package mediaconvert {
   @js.native
   sealed trait Eac3DcFilter extends js.Any
   object Eac3DcFilter extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[Eac3DcFilter]
+    val ENABLED = "ENABLED".asInstanceOf[Eac3DcFilter]
     val DISABLED = "DISABLED".asInstanceOf[Eac3DcFilter]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -3209,12 +3402,12 @@ package mediaconvert {
   @js.native
   sealed trait Eac3DynamicRangeCompressionLine extends js.Any
   object Eac3DynamicRangeCompressionLine extends js.Object {
-    val NONE           = "NONE".asInstanceOf[Eac3DynamicRangeCompressionLine]
-    val FILM_STANDARD  = "FILM_STANDARD".asInstanceOf[Eac3DynamicRangeCompressionLine]
-    val FILM_LIGHT     = "FILM_LIGHT".asInstanceOf[Eac3DynamicRangeCompressionLine]
+    val NONE = "NONE".asInstanceOf[Eac3DynamicRangeCompressionLine]
+    val FILM_STANDARD = "FILM_STANDARD".asInstanceOf[Eac3DynamicRangeCompressionLine]
+    val FILM_LIGHT = "FILM_LIGHT".asInstanceOf[Eac3DynamicRangeCompressionLine]
     val MUSIC_STANDARD = "MUSIC_STANDARD".asInstanceOf[Eac3DynamicRangeCompressionLine]
-    val MUSIC_LIGHT    = "MUSIC_LIGHT".asInstanceOf[Eac3DynamicRangeCompressionLine]
-    val SPEECH         = "SPEECH".asInstanceOf[Eac3DynamicRangeCompressionLine]
+    val MUSIC_LIGHT = "MUSIC_LIGHT".asInstanceOf[Eac3DynamicRangeCompressionLine]
+    val SPEECH = "SPEECH".asInstanceOf[Eac3DynamicRangeCompressionLine]
 
     val values = js.Object.freeze(js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH))
   }
@@ -3225,12 +3418,12 @@ package mediaconvert {
   @js.native
   sealed trait Eac3DynamicRangeCompressionRf extends js.Any
   object Eac3DynamicRangeCompressionRf extends js.Object {
-    val NONE           = "NONE".asInstanceOf[Eac3DynamicRangeCompressionRf]
-    val FILM_STANDARD  = "FILM_STANDARD".asInstanceOf[Eac3DynamicRangeCompressionRf]
-    val FILM_LIGHT     = "FILM_LIGHT".asInstanceOf[Eac3DynamicRangeCompressionRf]
+    val NONE = "NONE".asInstanceOf[Eac3DynamicRangeCompressionRf]
+    val FILM_STANDARD = "FILM_STANDARD".asInstanceOf[Eac3DynamicRangeCompressionRf]
+    val FILM_LIGHT = "FILM_LIGHT".asInstanceOf[Eac3DynamicRangeCompressionRf]
     val MUSIC_STANDARD = "MUSIC_STANDARD".asInstanceOf[Eac3DynamicRangeCompressionRf]
-    val MUSIC_LIGHT    = "MUSIC_LIGHT".asInstanceOf[Eac3DynamicRangeCompressionRf]
-    val SPEECH         = "SPEECH".asInstanceOf[Eac3DynamicRangeCompressionRf]
+    val MUSIC_LIGHT = "MUSIC_LIGHT".asInstanceOf[Eac3DynamicRangeCompressionRf]
+    val SPEECH = "SPEECH".asInstanceOf[Eac3DynamicRangeCompressionRf]
 
     val values = js.Object.freeze(js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH))
   }
@@ -3241,7 +3434,7 @@ package mediaconvert {
   @js.native
   sealed trait Eac3LfeControl extends js.Any
   object Eac3LfeControl extends js.Object {
-    val LFE    = "LFE".asInstanceOf[Eac3LfeControl]
+    val LFE = "LFE".asInstanceOf[Eac3LfeControl]
     val NO_LFE = "NO_LFE".asInstanceOf[Eac3LfeControl]
 
     val values = js.Object.freeze(js.Array(LFE, NO_LFE))
@@ -3253,7 +3446,7 @@ package mediaconvert {
   @js.native
   sealed trait Eac3LfeFilter extends js.Any
   object Eac3LfeFilter extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[Eac3LfeFilter]
+    val ENABLED = "ENABLED".asInstanceOf[Eac3LfeFilter]
     val DISABLED = "DISABLED".asInstanceOf[Eac3LfeFilter]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -3265,7 +3458,7 @@ package mediaconvert {
   @js.native
   sealed trait Eac3MetadataControl extends js.Any
   object Eac3MetadataControl extends js.Object {
-    val FOLLOW_INPUT   = "FOLLOW_INPUT".asInstanceOf[Eac3MetadataControl]
+    val FOLLOW_INPUT = "FOLLOW_INPUT".asInstanceOf[Eac3MetadataControl]
     val USE_CONFIGURED = "USE_CONFIGURED".asInstanceOf[Eac3MetadataControl]
 
     val values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
@@ -3277,7 +3470,7 @@ package mediaconvert {
   @js.native
   sealed trait Eac3PassthroughControl extends js.Any
   object Eac3PassthroughControl extends js.Object {
-    val WHEN_POSSIBLE  = "WHEN_POSSIBLE".asInstanceOf[Eac3PassthroughControl]
+    val WHEN_POSSIBLE = "WHEN_POSSIBLE".asInstanceOf[Eac3PassthroughControl]
     val NO_PASSTHROUGH = "NO_PASSTHROUGH".asInstanceOf[Eac3PassthroughControl]
 
     val values = js.Object.freeze(js.Array(WHEN_POSSIBLE, NO_PASSTHROUGH))
@@ -3290,7 +3483,7 @@ package mediaconvert {
   sealed trait Eac3PhaseControl extends js.Any
   object Eac3PhaseControl extends js.Object {
     val SHIFT_90_DEGREES = "SHIFT_90_DEGREES".asInstanceOf[Eac3PhaseControl]
-    val NO_SHIFT         = "NO_SHIFT".asInstanceOf[Eac3PhaseControl]
+    val NO_SHIFT = "NO_SHIFT".asInstanceOf[Eac3PhaseControl]
 
     val values = js.Object.freeze(js.Array(SHIFT_90_DEGREES, NO_SHIFT))
   }
@@ -3385,9 +3578,9 @@ package mediaconvert {
   sealed trait Eac3StereoDownmix extends js.Any
   object Eac3StereoDownmix extends js.Object {
     val NOT_INDICATED = "NOT_INDICATED".asInstanceOf[Eac3StereoDownmix]
-    val LO_RO         = "LO_RO".asInstanceOf[Eac3StereoDownmix]
-    val LT_RT         = "LT_RT".asInstanceOf[Eac3StereoDownmix]
-    val DPL2          = "DPL2".asInstanceOf[Eac3StereoDownmix]
+    val LO_RO = "LO_RO".asInstanceOf[Eac3StereoDownmix]
+    val LT_RT = "LT_RT".asInstanceOf[Eac3StereoDownmix]
+    val DPL2 = "DPL2".asInstanceOf[Eac3StereoDownmix]
 
     val values = js.Object.freeze(js.Array(NOT_INDICATED, LO_RO, LT_RT, DPL2))
   }
@@ -3399,8 +3592,8 @@ package mediaconvert {
   sealed trait Eac3SurroundExMode extends js.Any
   object Eac3SurroundExMode extends js.Object {
     val NOT_INDICATED = "NOT_INDICATED".asInstanceOf[Eac3SurroundExMode]
-    val ENABLED       = "ENABLED".asInstanceOf[Eac3SurroundExMode]
-    val DISABLED      = "DISABLED".asInstanceOf[Eac3SurroundExMode]
+    val ENABLED = "ENABLED".asInstanceOf[Eac3SurroundExMode]
+    val DISABLED = "DISABLED".asInstanceOf[Eac3SurroundExMode]
 
     val values = js.Object.freeze(js.Array(NOT_INDICATED, ENABLED, DISABLED))
   }
@@ -3412,8 +3605,8 @@ package mediaconvert {
   sealed trait Eac3SurroundMode extends js.Any
   object Eac3SurroundMode extends js.Object {
     val NOT_INDICATED = "NOT_INDICATED".asInstanceOf[Eac3SurroundMode]
-    val ENABLED       = "ENABLED".asInstanceOf[Eac3SurroundMode]
-    val DISABLED      = "DISABLED".asInstanceOf[Eac3SurroundMode]
+    val ENABLED = "ENABLED".asInstanceOf[Eac3SurroundMode]
+    val DISABLED = "DISABLED".asInstanceOf[Eac3SurroundMode]
 
     val values = js.Object.freeze(js.Array(NOT_INDICATED, ENABLED, DISABLED))
   }
@@ -3425,7 +3618,7 @@ package mediaconvert {
   sealed trait EmbeddedConvert608To708 extends js.Any
   object EmbeddedConvert608To708 extends js.Object {
     val UPCONVERT = "UPCONVERT".asInstanceOf[EmbeddedConvert608To708]
-    val DISABLED  = "DISABLED".asInstanceOf[EmbeddedConvert608To708]
+    val DISABLED = "DISABLED".asInstanceOf[EmbeddedConvert608To708]
 
     val values = js.Object.freeze(js.Array(UPCONVERT, DISABLED))
   }
@@ -3491,7 +3684,7 @@ package mediaconvert {
   sealed trait EmbeddedTerminateCaptions extends js.Any
   object EmbeddedTerminateCaptions extends js.Object {
     val END_OF_INPUT = "END_OF_INPUT".asInstanceOf[EmbeddedTerminateCaptions]
-    val DISABLED     = "DISABLED".asInstanceOf[EmbeddedTerminateCaptions]
+    val DISABLED = "DISABLED".asInstanceOf[EmbeddedTerminateCaptions]
 
     val values = js.Object.freeze(js.Array(END_OF_INPUT, DISABLED))
   }
@@ -3589,7 +3782,7 @@ package mediaconvert {
   sealed trait F4vMoovPlacement extends js.Any
   object F4vMoovPlacement extends js.Object {
     val PROGRESSIVE_DOWNLOAD = "PROGRESSIVE_DOWNLOAD".asInstanceOf[F4vMoovPlacement]
-    val NORMAL               = "NORMAL".asInstanceOf[F4vMoovPlacement]
+    val NORMAL = "NORMAL".asInstanceOf[F4vMoovPlacement]
 
     val values = js.Object.freeze(js.Array(PROGRESSIVE_DOWNLOAD, NORMAL))
   }
@@ -3642,7 +3835,7 @@ package mediaconvert {
   sealed trait FileSourceConvert608To708 extends js.Any
   object FileSourceConvert608To708 extends js.Object {
     val UPCONVERT = "UPCONVERT".asInstanceOf[FileSourceConvert608To708]
-    val DISABLED  = "DISABLED".asInstanceOf[FileSourceConvert608To708]
+    val DISABLED = "DISABLED".asInstanceOf[FileSourceConvert608To708]
 
     val values = js.Object.freeze(js.Array(UPCONVERT, DISABLED))
   }
@@ -3653,6 +3846,7 @@ package mediaconvert {
   @js.native
   trait FileSourceSettings extends js.Object {
     var Convert608To708: js.UndefOr[FileSourceConvert608To708]
+    var Framerate: js.UndefOr[CaptionSourceFramerate]
     var SourceFile: js.UndefOr[
       __stringMin14PatternS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMIHttpsSccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMI
     ]
@@ -3663,6 +3857,7 @@ package mediaconvert {
     @inline
     def apply(
         Convert608To708: js.UndefOr[FileSourceConvert608To708] = js.undefined,
+        Framerate: js.UndefOr[CaptionSourceFramerate] = js.undefined,
         SourceFile: js.UndefOr[
           __stringMin14PatternS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMIHttpsSccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMI
         ] = js.undefined,
@@ -3670,6 +3865,7 @@ package mediaconvert {
     ): FileSourceSettings = {
       val __obj = js.Dynamic.literal()
       Convert608To708.foreach(__v => __obj.updateDynamic("Convert608To708")(__v.asInstanceOf[js.Any]))
+      Framerate.foreach(__v => __obj.updateDynamic("Framerate")(__v.asInstanceOf[js.Any]))
       SourceFile.foreach(__v => __obj.updateDynamic("SourceFile")(__v.asInstanceOf[js.Any]))
       TimeDelta.foreach(__v => __obj.updateDynamic("TimeDelta")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FileSourceSettings]
@@ -3683,8 +3879,8 @@ package mediaconvert {
   sealed trait FontScript extends js.Any
   object FontScript extends js.Object {
     val AUTOMATIC = "AUTOMATIC".asInstanceOf[FontScript]
-    val HANS      = "HANS".asInstanceOf[FontScript]
-    val HANT      = "HANT".asInstanceOf[FontScript]
+    val HANS = "HANS".asInstanceOf[FontScript]
+    val HANT = "HANT".asInstanceOf[FontScript]
 
     val values = js.Object.freeze(js.Array(AUTOMATIC, HANS, HANT))
   }
@@ -3859,12 +4055,12 @@ package mediaconvert {
   @js.native
   sealed trait H264AdaptiveQuantization extends js.Any
   object H264AdaptiveQuantization extends js.Object {
-    val OFF    = "OFF".asInstanceOf[H264AdaptiveQuantization]
-    val LOW    = "LOW".asInstanceOf[H264AdaptiveQuantization]
+    val OFF = "OFF".asInstanceOf[H264AdaptiveQuantization]
+    val LOW = "LOW".asInstanceOf[H264AdaptiveQuantization]
     val MEDIUM = "MEDIUM".asInstanceOf[H264AdaptiveQuantization]
-    val HIGH   = "HIGH".asInstanceOf[H264AdaptiveQuantization]
+    val HIGH = "HIGH".asInstanceOf[H264AdaptiveQuantization]
     val HIGHER = "HIGHER".asInstanceOf[H264AdaptiveQuantization]
-    val MAX    = "MAX".asInstanceOf[H264AdaptiveQuantization]
+    val MAX = "MAX".asInstanceOf[H264AdaptiveQuantization]
 
     val values = js.Object.freeze(js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX))
   }
@@ -3875,21 +4071,21 @@ package mediaconvert {
   @js.native
   sealed trait H264CodecLevel extends js.Any
   object H264CodecLevel extends js.Object {
-    val AUTO      = "AUTO".asInstanceOf[H264CodecLevel]
-    val LEVEL_1   = "LEVEL_1".asInstanceOf[H264CodecLevel]
+    val AUTO = "AUTO".asInstanceOf[H264CodecLevel]
+    val LEVEL_1 = "LEVEL_1".asInstanceOf[H264CodecLevel]
     val LEVEL_1_1 = "LEVEL_1_1".asInstanceOf[H264CodecLevel]
     val LEVEL_1_2 = "LEVEL_1_2".asInstanceOf[H264CodecLevel]
     val LEVEL_1_3 = "LEVEL_1_3".asInstanceOf[H264CodecLevel]
-    val LEVEL_2   = "LEVEL_2".asInstanceOf[H264CodecLevel]
+    val LEVEL_2 = "LEVEL_2".asInstanceOf[H264CodecLevel]
     val LEVEL_2_1 = "LEVEL_2_1".asInstanceOf[H264CodecLevel]
     val LEVEL_2_2 = "LEVEL_2_2".asInstanceOf[H264CodecLevel]
-    val LEVEL_3   = "LEVEL_3".asInstanceOf[H264CodecLevel]
+    val LEVEL_3 = "LEVEL_3".asInstanceOf[H264CodecLevel]
     val LEVEL_3_1 = "LEVEL_3_1".asInstanceOf[H264CodecLevel]
     val LEVEL_3_2 = "LEVEL_3_2".asInstanceOf[H264CodecLevel]
-    val LEVEL_4   = "LEVEL_4".asInstanceOf[H264CodecLevel]
+    val LEVEL_4 = "LEVEL_4".asInstanceOf[H264CodecLevel]
     val LEVEL_4_1 = "LEVEL_4_1".asInstanceOf[H264CodecLevel]
     val LEVEL_4_2 = "LEVEL_4_2".asInstanceOf[H264CodecLevel]
-    val LEVEL_5   = "LEVEL_5".asInstanceOf[H264CodecLevel]
+    val LEVEL_5 = "LEVEL_5".asInstanceOf[H264CodecLevel]
     val LEVEL_5_1 = "LEVEL_5_1".asInstanceOf[H264CodecLevel]
     val LEVEL_5_2 = "LEVEL_5_2".asInstanceOf[H264CodecLevel]
 
@@ -3922,12 +4118,12 @@ package mediaconvert {
   @js.native
   sealed trait H264CodecProfile extends js.Any
   object H264CodecProfile extends js.Object {
-    val BASELINE       = "BASELINE".asInstanceOf[H264CodecProfile]
-    val HIGH           = "HIGH".asInstanceOf[H264CodecProfile]
-    val HIGH_10BIT     = "HIGH_10BIT".asInstanceOf[H264CodecProfile]
-    val HIGH_422       = "HIGH_422".asInstanceOf[H264CodecProfile]
+    val BASELINE = "BASELINE".asInstanceOf[H264CodecProfile]
+    val HIGH = "HIGH".asInstanceOf[H264CodecProfile]
+    val HIGH_10BIT = "HIGH_10BIT".asInstanceOf[H264CodecProfile]
+    val HIGH_422 = "HIGH_422".asInstanceOf[H264CodecProfile]
     val HIGH_422_10BIT = "HIGH_422_10BIT".asInstanceOf[H264CodecProfile]
-    val MAIN           = "MAIN".asInstanceOf[H264CodecProfile]
+    val MAIN = "MAIN".asInstanceOf[H264CodecProfile]
 
     val values = js.Object.freeze(js.Array(BASELINE, HIGH, HIGH_10BIT, HIGH_422, HIGH_422_10BIT, MAIN))
   }
@@ -3939,7 +4135,7 @@ package mediaconvert {
   sealed trait H264DynamicSubGop extends js.Any
   object H264DynamicSubGop extends js.Object {
     val ADAPTIVE = "ADAPTIVE".asInstanceOf[H264DynamicSubGop]
-    val STATIC   = "STATIC".asInstanceOf[H264DynamicSubGop]
+    val STATIC = "STATIC".asInstanceOf[H264DynamicSubGop]
 
     val values = js.Object.freeze(js.Array(ADAPTIVE, STATIC))
   }
@@ -3962,7 +4158,7 @@ package mediaconvert {
   @js.native
   sealed trait H264FieldEncoding extends js.Any
   object H264FieldEncoding extends js.Object {
-    val PAFF        = "PAFF".asInstanceOf[H264FieldEncoding]
+    val PAFF = "PAFF".asInstanceOf[H264FieldEncoding]
     val FORCE_FIELD = "FORCE_FIELD".asInstanceOf[H264FieldEncoding]
 
     val values = js.Object.freeze(js.Array(PAFF, FORCE_FIELD))
@@ -3975,7 +4171,7 @@ package mediaconvert {
   sealed trait H264FlickerAdaptiveQuantization extends js.Any
   object H264FlickerAdaptiveQuantization extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[H264FlickerAdaptiveQuantization]
-    val ENABLED  = "ENABLED".asInstanceOf[H264FlickerAdaptiveQuantization]
+    val ENABLED = "ENABLED".asInstanceOf[H264FlickerAdaptiveQuantization]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -3987,19 +4183,19 @@ package mediaconvert {
   sealed trait H264FramerateControl extends js.Any
   object H264FramerateControl extends js.Object {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[H264FramerateControl]
-    val SPECIFIED              = "SPECIFIED".asInstanceOf[H264FramerateControl]
+    val SPECIFIED = "SPECIFIED".asInstanceOf[H264FramerateControl]
 
     val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
-    * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+    * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion.
     */
   @js.native
   sealed trait H264FramerateConversionAlgorithm extends js.Any
   object H264FramerateConversionAlgorithm extends js.Object {
     val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[H264FramerateConversionAlgorithm]
-    val INTERPOLATE    = "INTERPOLATE".asInstanceOf[H264FramerateConversionAlgorithm]
+    val INTERPOLATE = "INTERPOLATE".asInstanceOf[H264FramerateConversionAlgorithm]
 
     val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
   }
@@ -4011,7 +4207,7 @@ package mediaconvert {
   sealed trait H264GopBReference extends js.Any
   object H264GopBReference extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[H264GopBReference]
-    val ENABLED  = "ENABLED".asInstanceOf[H264GopBReference]
+    val ENABLED = "ENABLED".asInstanceOf[H264GopBReference]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -4022,7 +4218,7 @@ package mediaconvert {
   @js.native
   sealed trait H264GopSizeUnits extends js.Any
   object H264GopSizeUnits extends js.Object {
-    val FRAMES  = "FRAMES".asInstanceOf[H264GopSizeUnits]
+    val FRAMES = "FRAMES".asInstanceOf[H264GopSizeUnits]
     val SECONDS = "SECONDS".asInstanceOf[H264GopSizeUnits]
 
     val values = js.Object.freeze(js.Array(FRAMES, SECONDS))
@@ -4036,36 +4232,36 @@ package mediaconvert {
   @js.native
   sealed trait H264InterlaceMode extends js.Any
   object H264InterlaceMode extends js.Object {
-    val PROGRESSIVE         = "PROGRESSIVE".asInstanceOf[H264InterlaceMode]
-    val TOP_FIELD           = "TOP_FIELD".asInstanceOf[H264InterlaceMode]
-    val BOTTOM_FIELD        = "BOTTOM_FIELD".asInstanceOf[H264InterlaceMode]
-    val FOLLOW_TOP_FIELD    = "FOLLOW_TOP_FIELD".asInstanceOf[H264InterlaceMode]
+    val PROGRESSIVE = "PROGRESSIVE".asInstanceOf[H264InterlaceMode]
+    val TOP_FIELD = "TOP_FIELD".asInstanceOf[H264InterlaceMode]
+    val BOTTOM_FIELD = "BOTTOM_FIELD".asInstanceOf[H264InterlaceMode]
+    val FOLLOW_TOP_FIELD = "FOLLOW_TOP_FIELD".asInstanceOf[H264InterlaceMode]
     val FOLLOW_BOTTOM_FIELD = "FOLLOW_BOTTOM_FIELD".asInstanceOf[H264InterlaceMode]
 
     val values = js.Object.freeze(js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD))
   }
 
   /**
-    * Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the input. Using the console, do this by choosing Follow source for Pixel aspect ratio.
+    * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
     */
   @js.native
   sealed trait H264ParControl extends js.Any
   object H264ParControl extends js.Object {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[H264ParControl]
-    val SPECIFIED              = "SPECIFIED".asInstanceOf[H264ParControl]
+    val SPECIFIED = "SPECIFIED".asInstanceOf[H264ParControl]
 
     val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
-    * Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use fast single-pass, high-quality singlepass, or high-quality multipass video encoding.
+    * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
     */
   @js.native
   sealed trait H264QualityTuningLevel extends js.Any
   object H264QualityTuningLevel extends js.Object {
-    val SINGLE_PASS    = "SINGLE_PASS".asInstanceOf[H264QualityTuningLevel]
+    val SINGLE_PASS = "SINGLE_PASS".asInstanceOf[H264QualityTuningLevel]
     val SINGLE_PASS_HQ = "SINGLE_PASS_HQ".asInstanceOf[H264QualityTuningLevel]
-    val MULTI_PASS_HQ  = "MULTI_PASS_HQ".asInstanceOf[H264QualityTuningLevel]
+    val MULTI_PASS_HQ = "MULTI_PASS_HQ".asInstanceOf[H264QualityTuningLevel]
 
     val values = js.Object.freeze(js.Array(SINGLE_PASS, SINGLE_PASS_HQ, MULTI_PASS_HQ))
   }
@@ -4101,8 +4297,8 @@ package mediaconvert {
   @js.native
   sealed trait H264RateControlMode extends js.Any
   object H264RateControlMode extends js.Object {
-    val VBR  = "VBR".asInstanceOf[H264RateControlMode]
-    val CBR  = "CBR".asInstanceOf[H264RateControlMode]
+    val VBR = "VBR".asInstanceOf[H264RateControlMode]
+    val CBR = "CBR".asInstanceOf[H264RateControlMode]
     val QVBR = "QVBR".asInstanceOf[H264RateControlMode]
 
     val values = js.Object.freeze(js.Array(VBR, CBR, QVBR))
@@ -4115,7 +4311,7 @@ package mediaconvert {
   sealed trait H264RepeatPps extends js.Any
   object H264RepeatPps extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[H264RepeatPps]
-    val ENABLED  = "ENABLED".asInstanceOf[H264RepeatPps]
+    val ENABLED = "ENABLED".asInstanceOf[H264RepeatPps]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -4126,8 +4322,8 @@ package mediaconvert {
   @js.native
   sealed trait H264SceneChangeDetect extends js.Any
   object H264SceneChangeDetect extends js.Object {
-    val DISABLED             = "DISABLED".asInstanceOf[H264SceneChangeDetect]
-    val ENABLED              = "ENABLED".asInstanceOf[H264SceneChangeDetect]
+    val DISABLED = "DISABLED".asInstanceOf[H264SceneChangeDetect]
+    val ENABLED = "ENABLED".asInstanceOf[H264SceneChangeDetect]
     val TRANSITION_DETECTION = "TRANSITION_DETECTION".asInstanceOf[H264SceneChangeDetect]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED, TRANSITION_DETECTION))
@@ -4285,7 +4481,7 @@ package mediaconvert {
   sealed trait H264SlowPal extends js.Any
   object H264SlowPal extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[H264SlowPal]
-    val ENABLED  = "ENABLED".asInstanceOf[H264SlowPal]
+    val ENABLED = "ENABLED".asInstanceOf[H264SlowPal]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -4297,7 +4493,7 @@ package mediaconvert {
   sealed trait H264SpatialAdaptiveQuantization extends js.Any
   object H264SpatialAdaptiveQuantization extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[H264SpatialAdaptiveQuantization]
-    val ENABLED  = "ENABLED".asInstanceOf[H264SpatialAdaptiveQuantization]
+    val ENABLED = "ENABLED".asInstanceOf[H264SpatialAdaptiveQuantization]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -4309,7 +4505,7 @@ package mediaconvert {
   sealed trait H264Syntax extends js.Any
   object H264Syntax extends js.Object {
     val DEFAULT = "DEFAULT".asInstanceOf[H264Syntax]
-    val RP2027  = "RP2027".asInstanceOf[H264Syntax]
+    val RP2027 = "RP2027".asInstanceOf[H264Syntax]
 
     val values = js.Object.freeze(js.Array(DEFAULT, RP2027))
   }
@@ -4334,7 +4530,7 @@ package mediaconvert {
   sealed trait H264TemporalAdaptiveQuantization extends js.Any
   object H264TemporalAdaptiveQuantization extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[H264TemporalAdaptiveQuantization]
-    val ENABLED  = "ENABLED".asInstanceOf[H264TemporalAdaptiveQuantization]
+    val ENABLED = "ENABLED".asInstanceOf[H264TemporalAdaptiveQuantization]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -4346,7 +4542,7 @@ package mediaconvert {
   sealed trait H264UnregisteredSeiTimecode extends js.Any
   object H264UnregisteredSeiTimecode extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[H264UnregisteredSeiTimecode]
-    val ENABLED  = "ENABLED".asInstanceOf[H264UnregisteredSeiTimecode]
+    val ENABLED = "ENABLED".asInstanceOf[H264UnregisteredSeiTimecode]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -4357,12 +4553,12 @@ package mediaconvert {
   @js.native
   sealed trait H265AdaptiveQuantization extends js.Any
   object H265AdaptiveQuantization extends js.Object {
-    val OFF    = "OFF".asInstanceOf[H265AdaptiveQuantization]
-    val LOW    = "LOW".asInstanceOf[H265AdaptiveQuantization]
+    val OFF = "OFF".asInstanceOf[H265AdaptiveQuantization]
+    val LOW = "LOW".asInstanceOf[H265AdaptiveQuantization]
     val MEDIUM = "MEDIUM".asInstanceOf[H265AdaptiveQuantization]
-    val HIGH   = "HIGH".asInstanceOf[H265AdaptiveQuantization]
+    val HIGH = "HIGH".asInstanceOf[H265AdaptiveQuantization]
     val HIGHER = "HIGHER".asInstanceOf[H265AdaptiveQuantization]
-    val MAX    = "MAX".asInstanceOf[H265AdaptiveQuantization]
+    val MAX = "MAX".asInstanceOf[H265AdaptiveQuantization]
 
     val values = js.Object.freeze(js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX))
   }
@@ -4374,7 +4570,7 @@ package mediaconvert {
   sealed trait H265AlternateTransferFunctionSei extends js.Any
   object H265AlternateTransferFunctionSei extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[H265AlternateTransferFunctionSei]
-    val ENABLED  = "ENABLED".asInstanceOf[H265AlternateTransferFunctionSei]
+    val ENABLED = "ENABLED".asInstanceOf[H265AlternateTransferFunctionSei]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -4385,18 +4581,18 @@ package mediaconvert {
   @js.native
   sealed trait H265CodecLevel extends js.Any
   object H265CodecLevel extends js.Object {
-    val AUTO      = "AUTO".asInstanceOf[H265CodecLevel]
-    val LEVEL_1   = "LEVEL_1".asInstanceOf[H265CodecLevel]
-    val LEVEL_2   = "LEVEL_2".asInstanceOf[H265CodecLevel]
+    val AUTO = "AUTO".asInstanceOf[H265CodecLevel]
+    val LEVEL_1 = "LEVEL_1".asInstanceOf[H265CodecLevel]
+    val LEVEL_2 = "LEVEL_2".asInstanceOf[H265CodecLevel]
     val LEVEL_2_1 = "LEVEL_2_1".asInstanceOf[H265CodecLevel]
-    val LEVEL_3   = "LEVEL_3".asInstanceOf[H265CodecLevel]
+    val LEVEL_3 = "LEVEL_3".asInstanceOf[H265CodecLevel]
     val LEVEL_3_1 = "LEVEL_3_1".asInstanceOf[H265CodecLevel]
-    val LEVEL_4   = "LEVEL_4".asInstanceOf[H265CodecLevel]
+    val LEVEL_4 = "LEVEL_4".asInstanceOf[H265CodecLevel]
     val LEVEL_4_1 = "LEVEL_4_1".asInstanceOf[H265CodecLevel]
-    val LEVEL_5   = "LEVEL_5".asInstanceOf[H265CodecLevel]
+    val LEVEL_5 = "LEVEL_5".asInstanceOf[H265CodecLevel]
     val LEVEL_5_1 = "LEVEL_5_1".asInstanceOf[H265CodecLevel]
     val LEVEL_5_2 = "LEVEL_5_2".asInstanceOf[H265CodecLevel]
-    val LEVEL_6   = "LEVEL_6".asInstanceOf[H265CodecLevel]
+    val LEVEL_6 = "LEVEL_6".asInstanceOf[H265CodecLevel]
     val LEVEL_6_1 = "LEVEL_6_1".asInstanceOf[H265CodecLevel]
     val LEVEL_6_2 = "LEVEL_6_2".asInstanceOf[H265CodecLevel]
 
@@ -4426,12 +4622,12 @@ package mediaconvert {
   @js.native
   sealed trait H265CodecProfile extends js.Any
   object H265CodecProfile extends js.Object {
-    val MAIN_MAIN           = "MAIN_MAIN".asInstanceOf[H265CodecProfile]
-    val MAIN_HIGH           = "MAIN_HIGH".asInstanceOf[H265CodecProfile]
-    val MAIN10_MAIN         = "MAIN10_MAIN".asInstanceOf[H265CodecProfile]
-    val MAIN10_HIGH         = "MAIN10_HIGH".asInstanceOf[H265CodecProfile]
-    val MAIN_422_8BIT_MAIN  = "MAIN_422_8BIT_MAIN".asInstanceOf[H265CodecProfile]
-    val MAIN_422_8BIT_HIGH  = "MAIN_422_8BIT_HIGH".asInstanceOf[H265CodecProfile]
+    val MAIN_MAIN = "MAIN_MAIN".asInstanceOf[H265CodecProfile]
+    val MAIN_HIGH = "MAIN_HIGH".asInstanceOf[H265CodecProfile]
+    val MAIN10_MAIN = "MAIN10_MAIN".asInstanceOf[H265CodecProfile]
+    val MAIN10_HIGH = "MAIN10_HIGH".asInstanceOf[H265CodecProfile]
+    val MAIN_422_8BIT_MAIN = "MAIN_422_8BIT_MAIN".asInstanceOf[H265CodecProfile]
+    val MAIN_422_8BIT_HIGH = "MAIN_422_8BIT_HIGH".asInstanceOf[H265CodecProfile]
     val MAIN_422_10BIT_MAIN = "MAIN_422_10BIT_MAIN".asInstanceOf[H265CodecProfile]
     val MAIN_422_10BIT_HIGH = "MAIN_422_10BIT_HIGH".asInstanceOf[H265CodecProfile]
 
@@ -4456,7 +4652,7 @@ package mediaconvert {
   sealed trait H265DynamicSubGop extends js.Any
   object H265DynamicSubGop extends js.Object {
     val ADAPTIVE = "ADAPTIVE".asInstanceOf[H265DynamicSubGop]
-    val STATIC   = "STATIC".asInstanceOf[H265DynamicSubGop]
+    val STATIC = "STATIC".asInstanceOf[H265DynamicSubGop]
 
     val values = js.Object.freeze(js.Array(ADAPTIVE, STATIC))
   }
@@ -4468,31 +4664,31 @@ package mediaconvert {
   sealed trait H265FlickerAdaptiveQuantization extends js.Any
   object H265FlickerAdaptiveQuantization extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[H265FlickerAdaptiveQuantization]
-    val ENABLED  = "ENABLED".asInstanceOf[H265FlickerAdaptiveQuantization]
+    val ENABLED = "ENABLED".asInstanceOf[H265FlickerAdaptiveQuantization]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
-    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job sepecification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
     */
   @js.native
   sealed trait H265FramerateControl extends js.Any
   object H265FramerateControl extends js.Object {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[H265FramerateControl]
-    val SPECIFIED              = "SPECIFIED".asInstanceOf[H265FramerateControl]
+    val SPECIFIED = "SPECIFIED".asInstanceOf[H265FramerateControl]
 
     val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
-    * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+    * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion.
     */
   @js.native
   sealed trait H265FramerateConversionAlgorithm extends js.Any
   object H265FramerateConversionAlgorithm extends js.Object {
     val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[H265FramerateConversionAlgorithm]
-    val INTERPOLATE    = "INTERPOLATE".asInstanceOf[H265FramerateConversionAlgorithm]
+    val INTERPOLATE = "INTERPOLATE".asInstanceOf[H265FramerateConversionAlgorithm]
 
     val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
   }
@@ -4504,7 +4700,7 @@ package mediaconvert {
   sealed trait H265GopBReference extends js.Any
   object H265GopBReference extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[H265GopBReference]
-    val ENABLED  = "ENABLED".asInstanceOf[H265GopBReference]
+    val ENABLED = "ENABLED".asInstanceOf[H265GopBReference]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -4515,7 +4711,7 @@ package mediaconvert {
   @js.native
   sealed trait H265GopSizeUnits extends js.Any
   object H265GopSizeUnits extends js.Object {
-    val FRAMES  = "FRAMES".asInstanceOf[H265GopSizeUnits]
+    val FRAMES = "FRAMES".asInstanceOf[H265GopSizeUnits]
     val SECONDS = "SECONDS".asInstanceOf[H265GopSizeUnits]
 
     val values = js.Object.freeze(js.Array(FRAMES, SECONDS))
@@ -4527,36 +4723,36 @@ package mediaconvert {
   @js.native
   sealed trait H265InterlaceMode extends js.Any
   object H265InterlaceMode extends js.Object {
-    val PROGRESSIVE         = "PROGRESSIVE".asInstanceOf[H265InterlaceMode]
-    val TOP_FIELD           = "TOP_FIELD".asInstanceOf[H265InterlaceMode]
-    val BOTTOM_FIELD        = "BOTTOM_FIELD".asInstanceOf[H265InterlaceMode]
-    val FOLLOW_TOP_FIELD    = "FOLLOW_TOP_FIELD".asInstanceOf[H265InterlaceMode]
+    val PROGRESSIVE = "PROGRESSIVE".asInstanceOf[H265InterlaceMode]
+    val TOP_FIELD = "TOP_FIELD".asInstanceOf[H265InterlaceMode]
+    val BOTTOM_FIELD = "BOTTOM_FIELD".asInstanceOf[H265InterlaceMode]
+    val FOLLOW_TOP_FIELD = "FOLLOW_TOP_FIELD".asInstanceOf[H265InterlaceMode]
     val FOLLOW_BOTTOM_FIELD = "FOLLOW_BOTTOM_FIELD".asInstanceOf[H265InterlaceMode]
 
     val values = js.Object.freeze(js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD))
   }
 
   /**
-    * Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the input. Using the console, do this by choosing Follow source for Pixel aspect ratio.
+    * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
     */
   @js.native
   sealed trait H265ParControl extends js.Any
   object H265ParControl extends js.Object {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[H265ParControl]
-    val SPECIFIED              = "SPECIFIED".asInstanceOf[H265ParControl]
+    val SPECIFIED = "SPECIFIED".asInstanceOf[H265ParControl]
 
     val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
-    * Use Quality tuning level (H265QualityTuningLevel) to specifiy whether to use fast single-pass, high-quality singlepass, or high-quality multipass video encoding.
+    * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
     */
   @js.native
   sealed trait H265QualityTuningLevel extends js.Any
   object H265QualityTuningLevel extends js.Object {
-    val SINGLE_PASS    = "SINGLE_PASS".asInstanceOf[H265QualityTuningLevel]
+    val SINGLE_PASS = "SINGLE_PASS".asInstanceOf[H265QualityTuningLevel]
     val SINGLE_PASS_HQ = "SINGLE_PASS_HQ".asInstanceOf[H265QualityTuningLevel]
-    val MULTI_PASS_HQ  = "MULTI_PASS_HQ".asInstanceOf[H265QualityTuningLevel]
+    val MULTI_PASS_HQ = "MULTI_PASS_HQ".asInstanceOf[H265QualityTuningLevel]
 
     val values = js.Object.freeze(js.Array(SINGLE_PASS, SINGLE_PASS_HQ, MULTI_PASS_HQ))
   }
@@ -4592,8 +4788,8 @@ package mediaconvert {
   @js.native
   sealed trait H265RateControlMode extends js.Any
   object H265RateControlMode extends js.Object {
-    val VBR  = "VBR".asInstanceOf[H265RateControlMode]
-    val CBR  = "CBR".asInstanceOf[H265RateControlMode]
+    val VBR = "VBR".asInstanceOf[H265RateControlMode]
+    val CBR = "CBR".asInstanceOf[H265RateControlMode]
     val QVBR = "QVBR".asInstanceOf[H265RateControlMode]
 
     val values = js.Object.freeze(js.Array(VBR, CBR, QVBR))
@@ -4605,9 +4801,9 @@ package mediaconvert {
   @js.native
   sealed trait H265SampleAdaptiveOffsetFilterMode extends js.Any
   object H265SampleAdaptiveOffsetFilterMode extends js.Object {
-    val DEFAULT  = "DEFAULT".asInstanceOf[H265SampleAdaptiveOffsetFilterMode]
+    val DEFAULT = "DEFAULT".asInstanceOf[H265SampleAdaptiveOffsetFilterMode]
     val ADAPTIVE = "ADAPTIVE".asInstanceOf[H265SampleAdaptiveOffsetFilterMode]
-    val OFF      = "OFF".asInstanceOf[H265SampleAdaptiveOffsetFilterMode]
+    val OFF = "OFF".asInstanceOf[H265SampleAdaptiveOffsetFilterMode]
 
     val values = js.Object.freeze(js.Array(DEFAULT, ADAPTIVE, OFF))
   }
@@ -4618,8 +4814,8 @@ package mediaconvert {
   @js.native
   sealed trait H265SceneChangeDetect extends js.Any
   object H265SceneChangeDetect extends js.Object {
-    val DISABLED             = "DISABLED".asInstanceOf[H265SceneChangeDetect]
-    val ENABLED              = "ENABLED".asInstanceOf[H265SceneChangeDetect]
+    val DISABLED = "DISABLED".asInstanceOf[H265SceneChangeDetect]
+    val ENABLED = "ENABLED".asInstanceOf[H265SceneChangeDetect]
     val TRANSITION_DETECTION = "TRANSITION_DETECTION".asInstanceOf[H265SceneChangeDetect]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED, TRANSITION_DETECTION))
@@ -4781,7 +4977,7 @@ package mediaconvert {
   sealed trait H265SlowPal extends js.Any
   object H265SlowPal extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[H265SlowPal]
-    val ENABLED  = "ENABLED".asInstanceOf[H265SlowPal]
+    val ENABLED = "ENABLED".asInstanceOf[H265SlowPal]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -4793,7 +4989,7 @@ package mediaconvert {
   sealed trait H265SpatialAdaptiveQuantization extends js.Any
   object H265SpatialAdaptiveQuantization extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[H265SpatialAdaptiveQuantization]
-    val ENABLED  = "ENABLED".asInstanceOf[H265SpatialAdaptiveQuantization]
+    val ENABLED = "ENABLED".asInstanceOf[H265SpatialAdaptiveQuantization]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -4818,7 +5014,7 @@ package mediaconvert {
   sealed trait H265TemporalAdaptiveQuantization extends js.Any
   object H265TemporalAdaptiveQuantization extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[H265TemporalAdaptiveQuantization]
-    val ENABLED  = "ENABLED".asInstanceOf[H265TemporalAdaptiveQuantization]
+    val ENABLED = "ENABLED".asInstanceOf[H265TemporalAdaptiveQuantization]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -4830,7 +5026,7 @@ package mediaconvert {
   sealed trait H265TemporalIds extends js.Any
   object H265TemporalIds extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[H265TemporalIds]
-    val ENABLED  = "ENABLED".asInstanceOf[H265TemporalIds]
+    val ENABLED = "ENABLED".asInstanceOf[H265TemporalIds]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -4842,7 +5038,7 @@ package mediaconvert {
   sealed trait H265Tiles extends js.Any
   object H265Tiles extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[H265Tiles]
-    val ENABLED  = "ENABLED".asInstanceOf[H265Tiles]
+    val ENABLED = "ENABLED".asInstanceOf[H265Tiles]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -4854,7 +5050,7 @@ package mediaconvert {
   sealed trait H265UnregisteredSeiTimecode extends js.Any
   object H265UnregisteredSeiTimecode extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[H265UnregisteredSeiTimecode]
-    val ENABLED  = "ENABLED".asInstanceOf[H265UnregisteredSeiTimecode]
+    val ENABLED = "ENABLED".asInstanceOf[H265UnregisteredSeiTimecode]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -4928,7 +5124,7 @@ package mediaconvert {
   @js.native
   sealed trait HlsAdMarkers extends js.Any
   object HlsAdMarkers extends js.Object {
-    val ELEMENTAL        = "ELEMENTAL".asInstanceOf[HlsAdMarkers]
+    val ELEMENTAL = "ELEMENTAL".asInstanceOf[HlsAdMarkers]
     val ELEMENTAL_SCTE35 = "ELEMENTAL_SCTE35".asInstanceOf[HlsAdMarkers]
 
     val values = js.Object.freeze(js.Array(ELEMENTAL, ELEMENTAL_SCTE35))
@@ -4963,7 +5159,7 @@ package mediaconvert {
   sealed trait HlsAudioOnlyContainer extends js.Any
   object HlsAudioOnlyContainer extends js.Object {
     val AUTOMATIC = "AUTOMATIC".asInstanceOf[HlsAudioOnlyContainer]
-    val M2TS      = "M2TS".asInstanceOf[HlsAudioOnlyContainer]
+    val M2TS = "M2TS".asInstanceOf[HlsAudioOnlyContainer]
 
     val values = js.Object.freeze(js.Array(AUTOMATIC, M2TS))
   }
@@ -4975,9 +5171,9 @@ package mediaconvert {
   sealed trait HlsAudioTrackType extends js.Any
   object HlsAudioTrackType extends js.Object {
     val ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT = "ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT".asInstanceOf[HlsAudioTrackType]
-    val ALTERNATE_AUDIO_AUTO_SELECT         = "ALTERNATE_AUDIO_AUTO_SELECT".asInstanceOf[HlsAudioTrackType]
-    val ALTERNATE_AUDIO_NOT_AUTO_SELECT     = "ALTERNATE_AUDIO_NOT_AUTO_SELECT".asInstanceOf[HlsAudioTrackType]
-    val AUDIO_ONLY_VARIANT_STREAM           = "AUDIO_ONLY_VARIANT_STREAM".asInstanceOf[HlsAudioTrackType]
+    val ALTERNATE_AUDIO_AUTO_SELECT = "ALTERNATE_AUDIO_AUTO_SELECT".asInstanceOf[HlsAudioTrackType]
+    val ALTERNATE_AUDIO_NOT_AUTO_SELECT = "ALTERNATE_AUDIO_NOT_AUTO_SELECT".asInstanceOf[HlsAudioTrackType]
+    val AUDIO_ONLY_VARIANT_STREAM = "AUDIO_ONLY_VARIANT_STREAM".asInstanceOf[HlsAudioTrackType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -5024,8 +5220,8 @@ package mediaconvert {
   sealed trait HlsCaptionLanguageSetting extends js.Any
   object HlsCaptionLanguageSetting extends js.Object {
     val INSERT = "INSERT".asInstanceOf[HlsCaptionLanguageSetting]
-    val OMIT   = "OMIT".asInstanceOf[HlsCaptionLanguageSetting]
-    val NONE   = "NONE".asInstanceOf[HlsCaptionLanguageSetting]
+    val OMIT = "OMIT".asInstanceOf[HlsCaptionLanguageSetting]
+    val NONE = "NONE".asInstanceOf[HlsCaptionLanguageSetting]
 
     val values = js.Object.freeze(js.Array(INSERT, OMIT, NONE))
   }
@@ -5037,7 +5233,7 @@ package mediaconvert {
   sealed trait HlsClientCache extends js.Any
   object HlsClientCache extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[HlsClientCache]
-    val ENABLED  = "ENABLED".asInstanceOf[HlsClientCache]
+    val ENABLED = "ENABLED".asInstanceOf[HlsClientCache]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -5060,7 +5256,7 @@ package mediaconvert {
   @js.native
   sealed trait HlsDirectoryStructure extends js.Any
   object HlsDirectoryStructure extends js.Object {
-    val SINGLE_DIRECTORY        = "SINGLE_DIRECTORY".asInstanceOf[HlsDirectoryStructure]
+    val SINGLE_DIRECTORY = "SINGLE_DIRECTORY".asInstanceOf[HlsDirectoryStructure]
     val SUBDIRECTORY_PER_STREAM = "SUBDIRECTORY_PER_STREAM".asInstanceOf[HlsDirectoryStructure]
 
     val values = js.Object.freeze(js.Array(SINGLE_DIRECTORY, SUBDIRECTORY_PER_STREAM))
@@ -5113,7 +5309,7 @@ package mediaconvert {
   @js.native
   sealed trait HlsEncryptionType extends js.Any
   object HlsEncryptionType extends js.Object {
-    val AES128     = "AES128".asInstanceOf[HlsEncryptionType]
+    val AES128 = "AES128".asInstanceOf[HlsEncryptionType]
     val SAMPLE_AES = "SAMPLE_AES".asInstanceOf[HlsEncryptionType]
 
     val values = js.Object.freeze(js.Array(AES128, SAMPLE_AES))
@@ -5242,7 +5438,7 @@ package mediaconvert {
   @js.native
   sealed trait HlsKeyProviderType extends js.Any
   object HlsKeyProviderType extends js.Object {
-    val SPEKE      = "SPEKE".asInstanceOf[HlsKeyProviderType]
+    val SPEKE = "SPEKE".asInstanceOf[HlsKeyProviderType]
     val STATIC_KEY = "STATIC_KEY".asInstanceOf[HlsKeyProviderType]
 
     val values = js.Object.freeze(js.Array(SPEKE, STATIC_KEY))
@@ -5267,7 +5463,7 @@ package mediaconvert {
   sealed trait HlsManifestDurationFormat extends js.Any
   object HlsManifestDurationFormat extends js.Object {
     val FLOATING_POINT = "FLOATING_POINT".asInstanceOf[HlsManifestDurationFormat]
-    val INTEGER        = "INTEGER".asInstanceOf[HlsManifestDurationFormat]
+    val INTEGER = "INTEGER".asInstanceOf[HlsManifestDurationFormat]
 
     val values = js.Object.freeze(js.Array(FLOATING_POINT, INTEGER))
   }
@@ -5278,7 +5474,7 @@ package mediaconvert {
   @js.native
   sealed trait HlsOfflineEncrypted extends js.Any
   object HlsOfflineEncrypted extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[HlsOfflineEncrypted]
+    val ENABLED = "ENABLED".asInstanceOf[HlsOfflineEncrypted]
     val DISABLED = "DISABLED".asInstanceOf[HlsOfflineEncrypted]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -5291,7 +5487,7 @@ package mediaconvert {
   sealed trait HlsOutputSelection extends js.Any
   object HlsOutputSelection extends js.Object {
     val MANIFESTS_AND_SEGMENTS = "MANIFESTS_AND_SEGMENTS".asInstanceOf[HlsOutputSelection]
-    val SEGMENTS_ONLY          = "SEGMENTS_ONLY".asInstanceOf[HlsOutputSelection]
+    val SEGMENTS_ONLY = "SEGMENTS_ONLY".asInstanceOf[HlsOutputSelection]
 
     val values = js.Object.freeze(js.Array(MANIFESTS_AND_SEGMENTS, SEGMENTS_ONLY))
   }
@@ -5314,7 +5510,7 @@ package mediaconvert {
   @js.native
   sealed trait HlsSegmentControl extends js.Any
   object HlsSegmentControl extends js.Object {
-    val SINGLE_FILE     = "SINGLE_FILE".asInstanceOf[HlsSegmentControl]
+    val SINGLE_FILE = "SINGLE_FILE".asInstanceOf[HlsSegmentControl]
     val SEGMENTED_FILES = "SEGMENTED_FILES".asInstanceOf[HlsSegmentControl]
 
     val values = js.Object.freeze(js.Array(SINGLE_FILE, SEGMENTED_FILES))
@@ -5380,6 +5576,31 @@ package mediaconvert {
   }
 
   /**
+    * Optional. Configuration for a destination queue to which the job can hop once a customer-defined minimum wait time has passed.
+    */
+  @js.native
+  trait HopDestination extends js.Object {
+    var Priority: js.UndefOr[__integerMinNegative50Max50]
+    var Queue: js.UndefOr[__string]
+    var WaitMinutes: js.UndefOr[__integer]
+  }
+
+  object HopDestination {
+    @inline
+    def apply(
+        Priority: js.UndefOr[__integerMinNegative50Max50] = js.undefined,
+        Queue: js.UndefOr[__string] = js.undefined,
+        WaitMinutes: js.UndefOr[__integer] = js.undefined
+    ): HopDestination = {
+      val __obj = js.Dynamic.literal()
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
+      WaitMinutes.foreach(__v => __obj.updateDynamic("WaitMinutes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HopDestination]
+    }
+  }
+
+  /**
     * To insert ID3 tags in your output, specify two values. Use ID3 tag (Id3) to specify the base 64 encoded string and use Timecode (TimeCode) to specify the time when the tag should be inserted. To insert multiple ID3 tags in your output, create multiple instances of ID3 insertion (Id3Insertion).
     */
   @js.native
@@ -5440,12 +5661,12 @@ package mediaconvert {
   }
 
   /**
-    * Keep this setting enabled to have MediaConvert use the font style and position information from the captions source in the output. This option is available only when your input captions are CFF-TT, IMSC, SMPTE-TT, or TTML. Disable this setting for simplified output captions.
+    * Keep this setting enabled to have MediaConvert use the font style and position information from the captions source in the output. This option is available only when your input captions are IMSC, SMPTE-TT, or TTML. Disable this setting for simplified output captions.
     */
   @js.native
   sealed trait ImscStylePassthrough extends js.Any
   object ImscStylePassthrough extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[ImscStylePassthrough]
+    val ENABLED = "ENABLED".asInstanceOf[ImscStylePassthrough]
     val DISABLED = "DISABLED".asInstanceOf[ImscStylePassthrough]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -5551,12 +5772,12 @@ package mediaconvert {
   }
 
   /**
-    * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manaully controllable for MPEG2 and uncompressed video inputs.
+    * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manually controllable for MPEG2 and uncompressed video inputs.
     */
   @js.native
   sealed trait InputDeblockFilter extends js.Any
   object InputDeblockFilter extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[InputDeblockFilter]
+    val ENABLED = "ENABLED".asInstanceOf[InputDeblockFilter]
     val DISABLED = "DISABLED".asInstanceOf[InputDeblockFilter]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -5596,7 +5817,7 @@ package mediaconvert {
   @js.native
   sealed trait InputDenoiseFilter extends js.Any
   object InputDenoiseFilter extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[InputDenoiseFilter]
+    val ENABLED = "ENABLED".asInstanceOf[InputDenoiseFilter]
     val DISABLED = "DISABLED".asInstanceOf[InputDenoiseFilter]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -5608,9 +5829,9 @@ package mediaconvert {
   @js.native
   sealed trait InputFilterEnable extends js.Any
   object InputFilterEnable extends js.Object {
-    val AUTO    = "AUTO".asInstanceOf[InputFilterEnable]
+    val AUTO = "AUTO".asInstanceOf[InputFilterEnable]
     val DISABLE = "DISABLE".asInstanceOf[InputFilterEnable]
-    val FORCE   = "FORCE".asInstanceOf[InputFilterEnable]
+    val FORCE = "FORCE".asInstanceOf[InputFilterEnable]
 
     val values = js.Object.freeze(js.Array(AUTO, DISABLE, FORCE))
   }
@@ -5622,7 +5843,7 @@ package mediaconvert {
   sealed trait InputPsiControl extends js.Any
   object InputPsiControl extends js.Object {
     val IGNORE_PSI = "IGNORE_PSI".asInstanceOf[InputPsiControl]
-    val USE_PSI    = "USE_PSI".asInstanceOf[InputPsiControl]
+    val USE_PSI = "USE_PSI".asInstanceOf[InputPsiControl]
 
     val values = js.Object.freeze(js.Array(IGNORE_PSI, USE_PSI))
   }
@@ -5633,11 +5854,11 @@ package mediaconvert {
   @js.native
   sealed trait InputRotate extends js.Any
   object InputRotate extends js.Object {
-    val DEGREE_0    = "DEGREE_0".asInstanceOf[InputRotate]
-    val DEGREES_90  = "DEGREES_90".asInstanceOf[InputRotate]
+    val DEGREE_0 = "DEGREE_0".asInstanceOf[InputRotate]
+    val DEGREES_90 = "DEGREES_90".asInstanceOf[InputRotate]
     val DEGREES_180 = "DEGREES_180".asInstanceOf[InputRotate]
     val DEGREES_270 = "DEGREES_270".asInstanceOf[InputRotate]
-    val AUTO        = "AUTO".asInstanceOf[InputRotate]
+    val AUTO = "AUTO".asInstanceOf[InputRotate]
 
     val values = js.Object.freeze(js.Array(DEGREE_0, DEGREES_90, DEGREES_180, DEGREES_270, AUTO))
   }
@@ -5712,8 +5933,8 @@ package mediaconvert {
   @js.native
   sealed trait InputTimecodeSource extends js.Any
   object InputTimecodeSource extends js.Object {
-    val EMBEDDED       = "EMBEDDED".asInstanceOf[InputTimecodeSource]
-    val ZEROBASED      = "ZEROBASED".asInstanceOf[InputTimecodeSource]
+    val EMBEDDED = "EMBEDDED".asInstanceOf[InputTimecodeSource]
+    val ZEROBASED = "ZEROBASED".asInstanceOf[InputTimecodeSource]
     val SPECIFIEDSTART = "SPECIFIEDSTART".asInstanceOf[InputTimecodeSource]
 
     val values = js.Object.freeze(js.Array(EMBEDDED, ZEROBASED, SPECIFIEDSTART))
@@ -5783,6 +6004,7 @@ package mediaconvert {
     var CurrentPhase: js.UndefOr[JobPhase]
     var ErrorCode: js.UndefOr[__integer]
     var ErrorMessage: js.UndefOr[__string]
+    var HopDestinations: js.UndefOr[__listOfHopDestination]
     var Id: js.UndefOr[__string]
     var JobPercentComplete: js.UndefOr[__integer]
     var JobTemplate: js.UndefOr[__string]
@@ -5790,6 +6012,7 @@ package mediaconvert {
     var OutputGroupDetails: js.UndefOr[__listOfOutputGroupDetail]
     var Priority: js.UndefOr[__integerMinNegative50Max50]
     var Queue: js.UndefOr[__string]
+    var QueueTransitions: js.UndefOr[__listOfQueueTransition]
     var RetryCount: js.UndefOr[__integer]
     var SimulateReservedQueue: js.UndefOr[SimulateReservedQueue]
     var Status: js.UndefOr[JobStatus]
@@ -5811,6 +6034,7 @@ package mediaconvert {
         CurrentPhase: js.UndefOr[JobPhase] = js.undefined,
         ErrorCode: js.UndefOr[__integer] = js.undefined,
         ErrorMessage: js.UndefOr[__string] = js.undefined,
+        HopDestinations: js.UndefOr[__listOfHopDestination] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
         JobPercentComplete: js.UndefOr[__integer] = js.undefined,
         JobTemplate: js.UndefOr[__string] = js.undefined,
@@ -5818,6 +6042,7 @@ package mediaconvert {
         OutputGroupDetails: js.UndefOr[__listOfOutputGroupDetail] = js.undefined,
         Priority: js.UndefOr[__integerMinNegative50Max50] = js.undefined,
         Queue: js.UndefOr[__string] = js.undefined,
+        QueueTransitions: js.UndefOr[__listOfQueueTransition] = js.undefined,
         RetryCount: js.UndefOr[__integer] = js.undefined,
         SimulateReservedQueue: js.UndefOr[SimulateReservedQueue] = js.undefined,
         Status: js.UndefOr[JobStatus] = js.undefined,
@@ -5826,7 +6051,7 @@ package mediaconvert {
         UserMetadata: js.UndefOr[__mapOf__string] = js.undefined
     ): Job = {
       val __obj = js.Dynamic.literal(
-        "Role"     -> Role.asInstanceOf[js.Any],
+        "Role" -> Role.asInstanceOf[js.Any],
         "Settings" -> Settings.asInstanceOf[js.Any]
       )
 
@@ -5838,6 +6063,7 @@ package mediaconvert {
       CurrentPhase.foreach(__v => __obj.updateDynamic("CurrentPhase")(__v.asInstanceOf[js.Any]))
       ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
       ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      HopDestinations.foreach(__v => __obj.updateDynamic("HopDestinations")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       JobPercentComplete.foreach(__v => __obj.updateDynamic("JobPercentComplete")(__v.asInstanceOf[js.Any]))
       JobTemplate.foreach(__v => __obj.updateDynamic("JobTemplate")(__v.asInstanceOf[js.Any]))
@@ -5845,6 +6071,7 @@ package mediaconvert {
       OutputGroupDetails.foreach(__v => __obj.updateDynamic("OutputGroupDetails")(__v.asInstanceOf[js.Any]))
       Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
       Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
+      QueueTransitions.foreach(__v => __obj.updateDynamic("QueueTransitions")(__v.asInstanceOf[js.Any]))
       RetryCount.foreach(__v => __obj.updateDynamic("RetryCount")(__v.asInstanceOf[js.Any]))
       SimulateReservedQueue.foreach(__v => __obj.updateDynamic("SimulateReservedQueue")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -5883,9 +6110,9 @@ package mediaconvert {
   @js.native
   sealed trait JobPhase extends js.Any
   object JobPhase extends js.Object {
-    val PROBING     = "PROBING".asInstanceOf[JobPhase]
+    val PROBING = "PROBING".asInstanceOf[JobPhase]
     val TRANSCODING = "TRANSCODING".asInstanceOf[JobPhase]
-    val UPLOADING   = "UPLOADING".asInstanceOf[JobPhase]
+    val UPLOADING = "UPLOADING".asInstanceOf[JobPhase]
 
     val values = js.Object.freeze(js.Array(PROBING, TRANSCODING, UPLOADING))
   }
@@ -5939,11 +6166,11 @@ package mediaconvert {
   @js.native
   sealed trait JobStatus extends js.Any
   object JobStatus extends js.Object {
-    val SUBMITTED   = "SUBMITTED".asInstanceOf[JobStatus]
+    val SUBMITTED = "SUBMITTED".asInstanceOf[JobStatus]
     val PROGRESSING = "PROGRESSING".asInstanceOf[JobStatus]
-    val COMPLETE    = "COMPLETE".asInstanceOf[JobStatus]
-    val CANCELED    = "CANCELED".asInstanceOf[JobStatus]
-    val ERROR       = "ERROR".asInstanceOf[JobStatus]
+    val COMPLETE = "COMPLETE".asInstanceOf[JobStatus]
+    val CANCELED = "CANCELED".asInstanceOf[JobStatus]
+    val ERROR = "ERROR".asInstanceOf[JobStatus]
 
     val values = js.Object.freeze(js.Array(SUBMITTED, PROGRESSING, COMPLETE, CANCELED, ERROR))
   }
@@ -5960,6 +6187,7 @@ package mediaconvert {
     var Category: js.UndefOr[__string]
     var CreatedAt: js.UndefOr[__timestampUnix]
     var Description: js.UndefOr[__string]
+    var HopDestinations: js.UndefOr[__listOfHopDestination]
     var LastUpdated: js.UndefOr[__timestampUnix]
     var Priority: js.UndefOr[__integerMinNegative50Max50]
     var Queue: js.UndefOr[__string]
@@ -5977,6 +6205,7 @@ package mediaconvert {
         Category: js.UndefOr[__string] = js.undefined,
         CreatedAt: js.UndefOr[__timestampUnix] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
+        HopDestinations: js.UndefOr[__listOfHopDestination] = js.undefined,
         LastUpdated: js.UndefOr[__timestampUnix] = js.undefined,
         Priority: js.UndefOr[__integerMinNegative50Max50] = js.undefined,
         Queue: js.UndefOr[__string] = js.undefined,
@@ -5984,7 +6213,7 @@ package mediaconvert {
         Type: js.UndefOr[Type] = js.undefined
     ): JobTemplate = {
       val __obj = js.Dynamic.literal(
-        "Name"     -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Settings" -> Settings.asInstanceOf[js.Any]
       )
 
@@ -5993,6 +6222,7 @@ package mediaconvert {
       Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
       CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      HopDestinations.foreach(__v => __obj.updateDynamic("HopDestinations")(__v.asInstanceOf[js.Any]))
       LastUpdated.foreach(__v => __obj.updateDynamic("LastUpdated")(__v.asInstanceOf[js.Any]))
       Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
       Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
@@ -6008,9 +6238,9 @@ package mediaconvert {
   @js.native
   sealed trait JobTemplateListBy extends js.Any
   object JobTemplateListBy extends js.Object {
-    val NAME          = "NAME".asInstanceOf[JobTemplateListBy]
+    val NAME = "NAME".asInstanceOf[JobTemplateListBy]
     val CREATION_DATE = "CREATION_DATE".asInstanceOf[JobTemplateListBy]
-    val SYSTEM        = "SYSTEM".asInstanceOf[JobTemplateListBy]
+    val SYSTEM = "SYSTEM".asInstanceOf[JobTemplateListBy]
 
     val values = js.Object.freeze(js.Array(NAME, CREATION_DATE, SYSTEM))
   }
@@ -6678,7 +6908,7 @@ package mediaconvert {
   @js.native
   sealed trait M2tsAudioBufferModel extends js.Any
   object M2tsAudioBufferModel extends js.Object {
-    val DVB  = "DVB".asInstanceOf[M2tsAudioBufferModel]
+    val DVB = "DVB".asInstanceOf[M2tsAudioBufferModel]
     val ATSC = "ATSC".asInstanceOf[M2tsAudioBufferModel]
 
     val values = js.Object.freeze(js.Array(DVB, ATSC))
@@ -6691,7 +6921,7 @@ package mediaconvert {
   sealed trait M2tsBufferModel extends js.Any
   object M2tsBufferModel extends js.Object {
     val MULTIPLEX = "MULTIPLEX".asInstanceOf[M2tsBufferModel]
-    val NONE      = "NONE".asInstanceOf[M2tsBufferModel]
+    val NONE = "NONE".asInstanceOf[M2tsBufferModel]
 
     val values = js.Object.freeze(js.Array(MULTIPLEX, NONE))
   }
@@ -6703,7 +6933,7 @@ package mediaconvert {
   sealed trait M2tsEbpAudioInterval extends js.Any
   object M2tsEbpAudioInterval extends js.Object {
     val VIDEO_AND_FIXED_INTERVALS = "VIDEO_AND_FIXED_INTERVALS".asInstanceOf[M2tsEbpAudioInterval]
-    val VIDEO_INTERVAL            = "VIDEO_INTERVAL".asInstanceOf[M2tsEbpAudioInterval]
+    val VIDEO_INTERVAL = "VIDEO_INTERVAL".asInstanceOf[M2tsEbpAudioInterval]
 
     val values = js.Object.freeze(js.Array(VIDEO_AND_FIXED_INTERVALS, VIDEO_INTERVAL))
   }
@@ -6715,7 +6945,7 @@ package mediaconvert {
   sealed trait M2tsEbpPlacement extends js.Any
   object M2tsEbpPlacement extends js.Object {
     val VIDEO_AND_AUDIO_PIDS = "VIDEO_AND_AUDIO_PIDS".asInstanceOf[M2tsEbpPlacement]
-    val VIDEO_PID            = "VIDEO_PID".asInstanceOf[M2tsEbpPlacement]
+    val VIDEO_PID = "VIDEO_PID".asInstanceOf[M2tsEbpPlacement]
 
     val values = js.Object.freeze(js.Array(VIDEO_AND_AUDIO_PIDS, VIDEO_PID))
   }
@@ -6738,7 +6968,7 @@ package mediaconvert {
   @js.native
   sealed trait M2tsForceTsVideoEbpOrder extends js.Any
   object M2tsForceTsVideoEbpOrder extends js.Object {
-    val FORCE   = "FORCE".asInstanceOf[M2tsForceTsVideoEbpOrder]
+    val FORCE = "FORCE".asInstanceOf[M2tsForceTsVideoEbpOrder]
     val DEFAULT = "DEFAULT".asInstanceOf[M2tsForceTsVideoEbpOrder]
 
     val values = js.Object.freeze(js.Array(FORCE, DEFAULT))
@@ -6751,7 +6981,7 @@ package mediaconvert {
   sealed trait M2tsNielsenId3 extends js.Any
   object M2tsNielsenId3 extends js.Object {
     val INSERT = "INSERT".asInstanceOf[M2tsNielsenId3]
-    val NONE   = "NONE".asInstanceOf[M2tsNielsenId3]
+    val NONE = "NONE".asInstanceOf[M2tsNielsenId3]
 
     val values = js.Object.freeze(js.Array(INSERT, NONE))
   }
@@ -6762,7 +6992,7 @@ package mediaconvert {
   @js.native
   sealed trait M2tsPcrControl extends js.Any
   object M2tsPcrControl extends js.Object {
-    val PCR_EVERY_PES_PACKET  = "PCR_EVERY_PES_PACKET".asInstanceOf[M2tsPcrControl]
+    val PCR_EVERY_PES_PACKET = "PCR_EVERY_PES_PACKET".asInstanceOf[M2tsPcrControl]
     val CONFIGURED_PCR_PERIOD = "CONFIGURED_PCR_PERIOD".asInstanceOf[M2tsPcrControl]
 
     val values = js.Object.freeze(js.Array(PCR_EVERY_PES_PACKET, CONFIGURED_PCR_PERIOD))
@@ -6806,7 +7036,7 @@ package mediaconvert {
   sealed trait M2tsScte35Source extends js.Any
   object M2tsScte35Source extends js.Object {
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[M2tsScte35Source]
-    val NONE        = "NONE".asInstanceOf[M2tsScte35Source]
+    val NONE = "NONE".asInstanceOf[M2tsScte35Source]
 
     val values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
   }
@@ -6817,12 +7047,12 @@ package mediaconvert {
   @js.native
   sealed trait M2tsSegmentationMarkers extends js.Any
   object M2tsSegmentationMarkers extends js.Object {
-    val NONE         = "NONE".asInstanceOf[M2tsSegmentationMarkers]
+    val NONE = "NONE".asInstanceOf[M2tsSegmentationMarkers]
     val RAI_SEGSTART = "RAI_SEGSTART".asInstanceOf[M2tsSegmentationMarkers]
-    val RAI_ADAPT    = "RAI_ADAPT".asInstanceOf[M2tsSegmentationMarkers]
+    val RAI_ADAPT = "RAI_ADAPT".asInstanceOf[M2tsSegmentationMarkers]
     val PSI_SEGSTART = "PSI_SEGSTART".asInstanceOf[M2tsSegmentationMarkers]
-    val EBP          = "EBP".asInstanceOf[M2tsSegmentationMarkers]
-    val EBP_LEGACY   = "EBP_LEGACY".asInstanceOf[M2tsSegmentationMarkers]
+    val EBP = "EBP".asInstanceOf[M2tsSegmentationMarkers]
+    val EBP_LEGACY = "EBP_LEGACY".asInstanceOf[M2tsSegmentationMarkers]
 
     val values = js.Object.freeze(js.Array(NONE, RAI_SEGSTART, RAI_ADAPT, PSI_SEGSTART, EBP, EBP_LEGACY))
   }
@@ -6834,7 +7064,7 @@ package mediaconvert {
   sealed trait M2tsSegmentationStyle extends js.Any
   object M2tsSegmentationStyle extends js.Object {
     val MAINTAIN_CADENCE = "MAINTAIN_CADENCE".asInstanceOf[M2tsSegmentationStyle]
-    val RESET_CADENCE    = "RESET_CADENCE".asInstanceOf[M2tsSegmentationStyle]
+    val RESET_CADENCE = "RESET_CADENCE".asInstanceOf[M2tsSegmentationStyle]
 
     val values = js.Object.freeze(js.Array(MAINTAIN_CADENCE, RESET_CADENCE))
   }
@@ -6970,7 +7200,7 @@ package mediaconvert {
   sealed trait M3u8NielsenId3 extends js.Any
   object M3u8NielsenId3 extends js.Object {
     val INSERT = "INSERT".asInstanceOf[M3u8NielsenId3]
-    val NONE   = "NONE".asInstanceOf[M3u8NielsenId3]
+    val NONE = "NONE".asInstanceOf[M3u8NielsenId3]
 
     val values = js.Object.freeze(js.Array(INSERT, NONE))
   }
@@ -6981,7 +7211,7 @@ package mediaconvert {
   @js.native
   sealed trait M3u8PcrControl extends js.Any
   object M3u8PcrControl extends js.Object {
-    val PCR_EVERY_PES_PACKET  = "PCR_EVERY_PES_PACKET".asInstanceOf[M3u8PcrControl]
+    val PCR_EVERY_PES_PACKET = "PCR_EVERY_PES_PACKET".asInstanceOf[M3u8PcrControl]
     val CONFIGURED_PCR_PERIOD = "CONFIGURED_PCR_PERIOD".asInstanceOf[M3u8PcrControl]
 
     val values = js.Object.freeze(js.Array(PCR_EVERY_PES_PACKET, CONFIGURED_PCR_PERIOD))
@@ -6994,7 +7224,7 @@ package mediaconvert {
   sealed trait M3u8Scte35Source extends js.Any
   object M3u8Scte35Source extends js.Object {
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[M3u8Scte35Source]
-    val NONE        = "NONE".asInstanceOf[M3u8Scte35Source]
+    val NONE = "NONE".asInstanceOf[M3u8Scte35Source]
 
     val values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
   }
@@ -7159,7 +7389,7 @@ package mediaconvert {
   @js.native
   sealed trait MotionImagePlayback extends js.Any
   object MotionImagePlayback extends js.Object {
-    val ONCE   = "ONCE".asInstanceOf[MotionImagePlayback]
+    val ONCE = "ONCE".asInstanceOf[MotionImagePlayback]
     val REPEAT = "REPEAT".asInstanceOf[MotionImagePlayback]
 
     val values = js.Object.freeze(js.Array(ONCE, REPEAT))
@@ -7196,7 +7426,7 @@ package mediaconvert {
   sealed trait MovMpeg2FourCCControl extends js.Any
   object MovMpeg2FourCCControl extends js.Object {
     val XDCAM = "XDCAM".asInstanceOf[MovMpeg2FourCCControl]
-    val MPEG  = "MPEG".asInstanceOf[MovMpeg2FourCCControl]
+    val MPEG = "MPEG".asInstanceOf[MovMpeg2FourCCControl]
 
     val values = js.Object.freeze(js.Array(XDCAM, MPEG))
   }
@@ -7208,7 +7438,7 @@ package mediaconvert {
   sealed trait MovPaddingControl extends js.Any
   object MovPaddingControl extends js.Object {
     val OMNEON = "OMNEON".asInstanceOf[MovPaddingControl]
-    val NONE   = "NONE".asInstanceOf[MovPaddingControl]
+    val NONE = "NONE".asInstanceOf[MovPaddingControl]
 
     val values = js.Object.freeze(js.Array(OMNEON, NONE))
   }
@@ -7220,7 +7450,7 @@ package mediaconvert {
   sealed trait MovReference extends js.Any
   object MovReference extends js.Object {
     val SELF_CONTAINED = "SELF_CONTAINED".asInstanceOf[MovReference]
-    val EXTERNAL       = "EXTERNAL".asInstanceOf[MovReference]
+    val EXTERNAL = "EXTERNAL".asInstanceOf[MovReference]
 
     val values = js.Object.freeze(js.Array(SELF_CONTAINED, EXTERNAL))
   }
@@ -7355,7 +7585,7 @@ package mediaconvert {
   sealed trait Mp4MoovPlacement extends js.Any
   object Mp4MoovPlacement extends js.Object {
     val PROGRESSIVE_DOWNLOAD = "PROGRESSIVE_DOWNLOAD".asInstanceOf[Mp4MoovPlacement]
-    val NORMAL               = "NORMAL".asInstanceOf[Mp4MoovPlacement]
+    val NORMAL = "NORMAL".asInstanceOf[Mp4MoovPlacement]
 
     val values = js.Object.freeze(js.Array(PROGRESSIVE_DOWNLOAD, NORMAL))
   }
@@ -7397,7 +7627,7 @@ package mediaconvert {
   @js.native
   sealed trait MpdCaptionContainerType extends js.Any
   object MpdCaptionContainerType extends js.Object {
-    val RAW            = "RAW".asInstanceOf[MpdCaptionContainerType]
+    val RAW = "RAW".asInstanceOf[MpdCaptionContainerType]
     val FRAGMENTED_MP4 = "FRAGMENTED_MP4".asInstanceOf[MpdCaptionContainerType]
 
     val values = js.Object.freeze(js.Array(RAW, FRAGMENTED_MP4))
@@ -7410,7 +7640,7 @@ package mediaconvert {
   sealed trait MpdScte35Esam extends js.Any
   object MpdScte35Esam extends js.Object {
     val INSERT = "INSERT".asInstanceOf[MpdScte35Esam]
-    val NONE   = "NONE".asInstanceOf[MpdScte35Esam]
+    val NONE = "NONE".asInstanceOf[MpdScte35Esam]
 
     val values = js.Object.freeze(js.Array(INSERT, NONE))
   }
@@ -7422,7 +7652,7 @@ package mediaconvert {
   sealed trait MpdScte35Source extends js.Any
   object MpdScte35Source extends js.Object {
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[MpdScte35Source]
-    val NONE        = "NONE".asInstanceOf[MpdScte35Source]
+    val NONE = "NONE".asInstanceOf[MpdScte35Source]
 
     val values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
   }
@@ -7458,10 +7688,10 @@ package mediaconvert {
   @js.native
   sealed trait Mpeg2AdaptiveQuantization extends js.Any
   object Mpeg2AdaptiveQuantization extends js.Object {
-    val OFF    = "OFF".asInstanceOf[Mpeg2AdaptiveQuantization]
-    val LOW    = "LOW".asInstanceOf[Mpeg2AdaptiveQuantization]
+    val OFF = "OFF".asInstanceOf[Mpeg2AdaptiveQuantization]
+    val LOW = "LOW".asInstanceOf[Mpeg2AdaptiveQuantization]
     val MEDIUM = "MEDIUM".asInstanceOf[Mpeg2AdaptiveQuantization]
-    val HIGH   = "HIGH".asInstanceOf[Mpeg2AdaptiveQuantization]
+    val HIGH = "HIGH".asInstanceOf[Mpeg2AdaptiveQuantization]
 
     val values = js.Object.freeze(js.Array(OFF, LOW, MEDIUM, HIGH))
   }
@@ -7472,11 +7702,11 @@ package mediaconvert {
   @js.native
   sealed trait Mpeg2CodecLevel extends js.Any
   object Mpeg2CodecLevel extends js.Object {
-    val AUTO     = "AUTO".asInstanceOf[Mpeg2CodecLevel]
-    val LOW      = "LOW".asInstanceOf[Mpeg2CodecLevel]
-    val MAIN     = "MAIN".asInstanceOf[Mpeg2CodecLevel]
+    val AUTO = "AUTO".asInstanceOf[Mpeg2CodecLevel]
+    val LOW = "LOW".asInstanceOf[Mpeg2CodecLevel]
+    val MAIN = "MAIN".asInstanceOf[Mpeg2CodecLevel]
     val HIGH1440 = "HIGH1440".asInstanceOf[Mpeg2CodecLevel]
-    val HIGH     = "HIGH".asInstanceOf[Mpeg2CodecLevel]
+    val HIGH = "HIGH".asInstanceOf[Mpeg2CodecLevel]
 
     val values = js.Object.freeze(js.Array(AUTO, LOW, MAIN, HIGH1440, HIGH))
   }
@@ -7487,7 +7717,7 @@ package mediaconvert {
   @js.native
   sealed trait Mpeg2CodecProfile extends js.Any
   object Mpeg2CodecProfile extends js.Object {
-    val MAIN        = "MAIN".asInstanceOf[Mpeg2CodecProfile]
+    val MAIN = "MAIN".asInstanceOf[Mpeg2CodecProfile]
     val PROFILE_422 = "PROFILE_422".asInstanceOf[Mpeg2CodecProfile]
 
     val values = js.Object.freeze(js.Array(MAIN, PROFILE_422))
@@ -7500,31 +7730,31 @@ package mediaconvert {
   sealed trait Mpeg2DynamicSubGop extends js.Any
   object Mpeg2DynamicSubGop extends js.Object {
     val ADAPTIVE = "ADAPTIVE".asInstanceOf[Mpeg2DynamicSubGop]
-    val STATIC   = "STATIC".asInstanceOf[Mpeg2DynamicSubGop]
+    val STATIC = "STATIC".asInstanceOf[Mpeg2DynamicSubGop]
 
     val values = js.Object.freeze(js.Array(ADAPTIVE, STATIC))
   }
 
   /**
-    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job sepecification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
     */
   @js.native
   sealed trait Mpeg2FramerateControl extends js.Any
   object Mpeg2FramerateControl extends js.Object {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Mpeg2FramerateControl]
-    val SPECIFIED              = "SPECIFIED".asInstanceOf[Mpeg2FramerateControl]
+    val SPECIFIED = "SPECIFIED".asInstanceOf[Mpeg2FramerateControl]
 
     val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
-    * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+    * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion.
     */
   @js.native
   sealed trait Mpeg2FramerateConversionAlgorithm extends js.Any
   object Mpeg2FramerateConversionAlgorithm extends js.Object {
     val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Mpeg2FramerateConversionAlgorithm]
-    val INTERPOLATE    = "INTERPOLATE".asInstanceOf[Mpeg2FramerateConversionAlgorithm]
+    val INTERPOLATE = "INTERPOLATE".asInstanceOf[Mpeg2FramerateConversionAlgorithm]
 
     val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
   }
@@ -7535,7 +7765,7 @@ package mediaconvert {
   @js.native
   sealed trait Mpeg2GopSizeUnits extends js.Any
   object Mpeg2GopSizeUnits extends js.Object {
-    val FRAMES  = "FRAMES".asInstanceOf[Mpeg2GopSizeUnits]
+    val FRAMES = "FRAMES".asInstanceOf[Mpeg2GopSizeUnits]
     val SECONDS = "SECONDS".asInstanceOf[Mpeg2GopSizeUnits]
 
     val values = js.Object.freeze(js.Array(FRAMES, SECONDS))
@@ -7549,10 +7779,10 @@ package mediaconvert {
   @js.native
   sealed trait Mpeg2InterlaceMode extends js.Any
   object Mpeg2InterlaceMode extends js.Object {
-    val PROGRESSIVE         = "PROGRESSIVE".asInstanceOf[Mpeg2InterlaceMode]
-    val TOP_FIELD           = "TOP_FIELD".asInstanceOf[Mpeg2InterlaceMode]
-    val BOTTOM_FIELD        = "BOTTOM_FIELD".asInstanceOf[Mpeg2InterlaceMode]
-    val FOLLOW_TOP_FIELD    = "FOLLOW_TOP_FIELD".asInstanceOf[Mpeg2InterlaceMode]
+    val PROGRESSIVE = "PROGRESSIVE".asInstanceOf[Mpeg2InterlaceMode]
+    val TOP_FIELD = "TOP_FIELD".asInstanceOf[Mpeg2InterlaceMode]
+    val BOTTOM_FIELD = "BOTTOM_FIELD".asInstanceOf[Mpeg2InterlaceMode]
+    val FOLLOW_TOP_FIELD = "FOLLOW_TOP_FIELD".asInstanceOf[Mpeg2InterlaceMode]
     val FOLLOW_BOTTOM_FIELD = "FOLLOW_BOTTOM_FIELD".asInstanceOf[Mpeg2InterlaceMode]
 
     val values = js.Object.freeze(js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD))
@@ -7564,9 +7794,9 @@ package mediaconvert {
   @js.native
   sealed trait Mpeg2IntraDcPrecision extends js.Any
   object Mpeg2IntraDcPrecision extends js.Object {
-    val AUTO                  = "AUTO".asInstanceOf[Mpeg2IntraDcPrecision]
-    val INTRA_DC_PRECISION_8  = "INTRA_DC_PRECISION_8".asInstanceOf[Mpeg2IntraDcPrecision]
-    val INTRA_DC_PRECISION_9  = "INTRA_DC_PRECISION_9".asInstanceOf[Mpeg2IntraDcPrecision]
+    val AUTO = "AUTO".asInstanceOf[Mpeg2IntraDcPrecision]
+    val INTRA_DC_PRECISION_8 = "INTRA_DC_PRECISION_8".asInstanceOf[Mpeg2IntraDcPrecision]
+    val INTRA_DC_PRECISION_9 = "INTRA_DC_PRECISION_9".asInstanceOf[Mpeg2IntraDcPrecision]
     val INTRA_DC_PRECISION_10 = "INTRA_DC_PRECISION_10".asInstanceOf[Mpeg2IntraDcPrecision]
     val INTRA_DC_PRECISION_11 = "INTRA_DC_PRECISION_11".asInstanceOf[Mpeg2IntraDcPrecision]
 
@@ -7576,25 +7806,25 @@ package mediaconvert {
   }
 
   /**
-    * Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the input. Using the console, do this by choosing Follow source for Pixel aspect ratio.
+    * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
     */
   @js.native
   sealed trait Mpeg2ParControl extends js.Any
   object Mpeg2ParControl extends js.Object {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Mpeg2ParControl]
-    val SPECIFIED              = "SPECIFIED".asInstanceOf[Mpeg2ParControl]
+    val SPECIFIED = "SPECIFIED".asInstanceOf[Mpeg2ParControl]
 
     val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
-    * Use Quality tuning level (Mpeg2QualityTuningLevel) to specifiy whether to use single-pass or multipass video encoding.
+    * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
     */
   @js.native
   sealed trait Mpeg2QualityTuningLevel extends js.Any
   object Mpeg2QualityTuningLevel extends js.Object {
     val SINGLE_PASS = "SINGLE_PASS".asInstanceOf[Mpeg2QualityTuningLevel]
-    val MULTI_PASS  = "MULTI_PASS".asInstanceOf[Mpeg2QualityTuningLevel]
+    val MULTI_PASS = "MULTI_PASS".asInstanceOf[Mpeg2QualityTuningLevel]
 
     val values = js.Object.freeze(js.Array(SINGLE_PASS, MULTI_PASS))
   }
@@ -7618,7 +7848,7 @@ package mediaconvert {
   sealed trait Mpeg2SceneChangeDetect extends js.Any
   object Mpeg2SceneChangeDetect extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[Mpeg2SceneChangeDetect]
-    val ENABLED  = "ENABLED".asInstanceOf[Mpeg2SceneChangeDetect]
+    val ENABLED = "ENABLED".asInstanceOf[Mpeg2SceneChangeDetect]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -7749,7 +7979,7 @@ package mediaconvert {
   sealed trait Mpeg2SlowPal extends js.Any
   object Mpeg2SlowPal extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[Mpeg2SlowPal]
-    val ENABLED  = "ENABLED".asInstanceOf[Mpeg2SlowPal]
+    val ENABLED = "ENABLED".asInstanceOf[Mpeg2SlowPal]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -7761,7 +7991,7 @@ package mediaconvert {
   sealed trait Mpeg2SpatialAdaptiveQuantization extends js.Any
   object Mpeg2SpatialAdaptiveQuantization extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[Mpeg2SpatialAdaptiveQuantization]
-    val ENABLED  = "ENABLED".asInstanceOf[Mpeg2SpatialAdaptiveQuantization]
+    val ENABLED = "ENABLED".asInstanceOf[Mpeg2SpatialAdaptiveQuantization]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -7773,7 +8003,7 @@ package mediaconvert {
   sealed trait Mpeg2Syntax extends js.Any
   object Mpeg2Syntax extends js.Object {
     val DEFAULT = "DEFAULT".asInstanceOf[Mpeg2Syntax]
-    val D_10    = "D_10".asInstanceOf[Mpeg2Syntax]
+    val D_10 = "D_10".asInstanceOf[Mpeg2Syntax]
 
     val values = js.Object.freeze(js.Array(DEFAULT, D_10))
   }
@@ -7798,7 +8028,7 @@ package mediaconvert {
   sealed trait Mpeg2TemporalAdaptiveQuantization extends js.Any
   object Mpeg2TemporalAdaptiveQuantization extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[Mpeg2TemporalAdaptiveQuantization]
-    val ENABLED  = "ENABLED".asInstanceOf[Mpeg2TemporalAdaptiveQuantization]
+    val ENABLED = "ENABLED".asInstanceOf[Mpeg2TemporalAdaptiveQuantization]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -7832,7 +8062,7 @@ package mediaconvert {
   sealed trait MsSmoothAudioDeduplication extends js.Any
   object MsSmoothAudioDeduplication extends js.Object {
     val COMBINE_DUPLICATE_STREAMS = "COMBINE_DUPLICATE_STREAMS".asInstanceOf[MsSmoothAudioDeduplication]
-    val NONE                      = "NONE".asInstanceOf[MsSmoothAudioDeduplication]
+    val NONE = "NONE".asInstanceOf[MsSmoothAudioDeduplication]
 
     val values = js.Object.freeze(js.Array(COMBINE_DUPLICATE_STREAMS, NONE))
   }
@@ -7899,10 +8129,69 @@ package mediaconvert {
   @js.native
   sealed trait MsSmoothManifestEncoding extends js.Any
   object MsSmoothManifestEncoding extends js.Object {
-    val UTF8  = "UTF8".asInstanceOf[MsSmoothManifestEncoding]
+    val UTF8 = "UTF8".asInstanceOf[MsSmoothManifestEncoding]
     val UTF16 = "UTF16".asInstanceOf[MsSmoothManifestEncoding]
 
     val values = js.Object.freeze(js.Array(UTF8, UTF16))
+  }
+
+  /**
+    * Optional. When you have AFD signaling set up in your output video stream, use this setting to choose whether to also include it in the MXF wrapper. Choose Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper. Choose Copy from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream for this output to the MXF wrapper. Regardless of which option you choose, the AFD values remain in the video stream. Related settings: To set up your output to include or exclude AFD values, see AfdSignaling, under VideoDescription. On the console, find AFD signaling under the output's video encoding settings.
+    */
+  @js.native
+  sealed trait MxfAfdSignaling extends js.Any
+  object MxfAfdSignaling extends js.Object {
+    val NO_COPY = "NO_COPY".asInstanceOf[MxfAfdSignaling]
+    val COPY_FROM_VIDEO = "COPY_FROM_VIDEO".asInstanceOf[MxfAfdSignaling]
+
+    val values = js.Object.freeze(js.Array(NO_COPY, COPY_FROM_VIDEO))
+  }
+
+  /**
+    * MXF settings
+    */
+  @js.native
+  trait MxfSettings extends js.Object {
+    var AfdSignaling: js.UndefOr[MxfAfdSignaling]
+  }
+
+  object MxfSettings {
+    @inline
+    def apply(
+        AfdSignaling: js.UndefOr[MxfAfdSignaling] = js.undefined
+    ): MxfSettings = {
+      val __obj = js.Dynamic.literal()
+      AfdSignaling.foreach(__v => __obj.updateDynamic("AfdSignaling")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MxfSettings]
+    }
+  }
+
+  /**
+    * For forensic video watermarking, MediaConvert supports Nagra NexGuard File Marker watermarking. MediaConvert supports both PreRelease Content (NGPR/G2) and OTT Streaming workflows.
+    */
+  @js.native
+  trait NexGuardFileMarkerSettings extends js.Object {
+    var License: js.UndefOr[__stringMin1Max100000]
+    var Payload: js.UndefOr[__integerMin0Max4194303]
+    var Preset: js.UndefOr[__stringMin1Max256]
+    var Strength: js.UndefOr[WatermarkingStrength]
+  }
+
+  object NexGuardFileMarkerSettings {
+    @inline
+    def apply(
+        License: js.UndefOr[__stringMin1Max100000] = js.undefined,
+        Payload: js.UndefOr[__integerMin0Max4194303] = js.undefined,
+        Preset: js.UndefOr[__stringMin1Max256] = js.undefined,
+        Strength: js.UndefOr[WatermarkingStrength] = js.undefined
+    ): NexGuardFileMarkerSettings = {
+      val __obj = js.Dynamic.literal()
+      License.foreach(__v => __obj.updateDynamic("License")(__v.asInstanceOf[js.Any]))
+      Payload.foreach(__v => __obj.updateDynamic("Payload")(__v.asInstanceOf[js.Any]))
+      Preset.foreach(__v => __obj.updateDynamic("Preset")(__v.asInstanceOf[js.Any]))
+      Strength.foreach(__v => __obj.updateDynamic("Strength")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NexGuardFileMarkerSettings]
+    }
   }
 
   /**
@@ -7925,6 +8214,19 @@ package mediaconvert {
       DistributorId.foreach(__v => __obj.updateDynamic("DistributorId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NielsenConfiguration]
     }
+  }
+
+  /**
+    * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can optionally use this setting to apply additional sharpening. The default behavior, Auto (AUTO) allows the transcoder to determine whether to apply filtering, depending on input type and quality.
+    */
+  @js.native
+  sealed trait NoiseFilterPostTemporalSharpening extends js.Any
+  object NoiseFilterPostTemporalSharpening extends js.Object {
+    val DISABLED = "DISABLED".asInstanceOf[NoiseFilterPostTemporalSharpening]
+    val ENABLED = "ENABLED".asInstanceOf[NoiseFilterPostTemporalSharpening]
+    val AUTO = "AUTO".asInstanceOf[NoiseFilterPostTemporalSharpening]
+
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED, AUTO))
   }
 
   /**
@@ -7962,13 +8264,13 @@ package mediaconvert {
   sealed trait NoiseReducerFilter extends js.Any
   object NoiseReducerFilter extends js.Object {
     val BILATERAL = "BILATERAL".asInstanceOf[NoiseReducerFilter]
-    val MEAN      = "MEAN".asInstanceOf[NoiseReducerFilter]
-    val GAUSSIAN  = "GAUSSIAN".asInstanceOf[NoiseReducerFilter]
-    val LANCZOS   = "LANCZOS".asInstanceOf[NoiseReducerFilter]
-    val SHARPEN   = "SHARPEN".asInstanceOf[NoiseReducerFilter]
-    val CONSERVE  = "CONSERVE".asInstanceOf[NoiseReducerFilter]
-    val SPATIAL   = "SPATIAL".asInstanceOf[NoiseReducerFilter]
-    val TEMPORAL  = "TEMPORAL".asInstanceOf[NoiseReducerFilter]
+    val MEAN = "MEAN".asInstanceOf[NoiseReducerFilter]
+    val GAUSSIAN = "GAUSSIAN".asInstanceOf[NoiseReducerFilter]
+    val LANCZOS = "LANCZOS".asInstanceOf[NoiseReducerFilter]
+    val SHARPEN = "SHARPEN".asInstanceOf[NoiseReducerFilter]
+    val CONSERVE = "CONSERVE".asInstanceOf[NoiseReducerFilter]
+    val SPATIAL = "SPATIAL".asInstanceOf[NoiseReducerFilter]
+    val TEMPORAL = "TEMPORAL".asInstanceOf[NoiseReducerFilter]
 
     val values = js.Object.freeze(js.Array(BILATERAL, MEAN, GAUSSIAN, LANCZOS, SHARPEN, CONSERVE, SPATIAL, TEMPORAL))
   }
@@ -8025,6 +8327,7 @@ package mediaconvert {
   @js.native
   trait NoiseReducerTemporalFilterSettings extends js.Object {
     var AggressiveMode: js.UndefOr[__integerMin0Max4]
+    var PostTemporalSharpening: js.UndefOr[NoiseFilterPostTemporalSharpening]
     var Speed: js.UndefOr[__integerMinNegative1Max3]
     var Strength: js.UndefOr[__integerMin0Max16]
   }
@@ -8033,11 +8336,13 @@ package mediaconvert {
     @inline
     def apply(
         AggressiveMode: js.UndefOr[__integerMin0Max4] = js.undefined,
+        PostTemporalSharpening: js.UndefOr[NoiseFilterPostTemporalSharpening] = js.undefined,
         Speed: js.UndefOr[__integerMinNegative1Max3] = js.undefined,
         Strength: js.UndefOr[__integerMin0Max16] = js.undefined
     ): NoiseReducerTemporalFilterSettings = {
       val __obj = js.Dynamic.literal()
       AggressiveMode.foreach(__v => __obj.updateDynamic("AggressiveMode")(__v.asInstanceOf[js.Any]))
+      PostTemporalSharpening.foreach(__v => __obj.updateDynamic("PostTemporalSharpening")(__v.asInstanceOf[js.Any]))
       Speed.foreach(__v => __obj.updateDynamic("Speed")(__v.asInstanceOf[js.Any]))
       Strength.foreach(__v => __obj.updateDynamic("Strength")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NoiseReducerTemporalFilterSettings]
@@ -8045,12 +8350,37 @@ package mediaconvert {
   }
 
   /**
-    * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
+    * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value OPUS.
+    */
+  @js.native
+  trait OpusSettings extends js.Object {
+    var Bitrate: js.UndefOr[__integerMin32000Max192000]
+    var Channels: js.UndefOr[__integerMin1Max2]
+    var SampleRate: js.UndefOr[__integerMin16000Max48000]
+  }
+
+  object OpusSettings {
+    @inline
+    def apply(
+        Bitrate: js.UndefOr[__integerMin32000Max192000] = js.undefined,
+        Channels: js.UndefOr[__integerMin1Max2] = js.undefined,
+        SampleRate: js.UndefOr[__integerMin16000Max48000] = js.undefined
+    ): OpusSettings = {
+      val __obj = js.Dynamic.literal()
+      Bitrate.foreach(__v => __obj.updateDynamic("Bitrate")(__v.asInstanceOf[js.Any]))
+      Channels.foreach(__v => __obj.updateDynamic("Channels")(__v.asInstanceOf[js.Any]))
+      SampleRate.foreach(__v => __obj.updateDynamic("SampleRate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OpusSettings]
+    }
+  }
+
+  /**
+    * Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
     */
   @js.native
   sealed trait Order extends js.Any
   object Order extends js.Object {
-    val ASCENDING  = "ASCENDING".asInstanceOf[Order]
+    val ASCENDING = "ASCENDING".asInstanceOf[Order]
     val DESCENDING = "DESCENDING".asInstanceOf[Order]
 
     val values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
@@ -8224,11 +8554,11 @@ package mediaconvert {
   @js.native
   sealed trait OutputGroupType extends js.Any
   object OutputGroupType extends js.Object {
-    val HLS_GROUP_SETTINGS       = "HLS_GROUP_SETTINGS".asInstanceOf[OutputGroupType]
-    val DASH_ISO_GROUP_SETTINGS  = "DASH_ISO_GROUP_SETTINGS".asInstanceOf[OutputGroupType]
-    val FILE_GROUP_SETTINGS      = "FILE_GROUP_SETTINGS".asInstanceOf[OutputGroupType]
+    val HLS_GROUP_SETTINGS = "HLS_GROUP_SETTINGS".asInstanceOf[OutputGroupType]
+    val DASH_ISO_GROUP_SETTINGS = "DASH_ISO_GROUP_SETTINGS".asInstanceOf[OutputGroupType]
+    val FILE_GROUP_SETTINGS = "FILE_GROUP_SETTINGS".asInstanceOf[OutputGroupType]
     val MS_SMOOTH_GROUP_SETTINGS = "MS_SMOOTH_GROUP_SETTINGS".asInstanceOf[OutputGroupType]
-    val CMAF_GROUP_SETTINGS      = "CMAF_GROUP_SETTINGS".asInstanceOf[OutputGroupType]
+    val CMAF_GROUP_SETTINGS = "CMAF_GROUP_SETTINGS".asInstanceOf[OutputGroupType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -8247,10 +8577,10 @@ package mediaconvert {
   @js.native
   sealed trait OutputSdt extends js.Any
   object OutputSdt extends js.Object {
-    val SDT_FOLLOW            = "SDT_FOLLOW".asInstanceOf[OutputSdt]
+    val SDT_FOLLOW = "SDT_FOLLOW".asInstanceOf[OutputSdt]
     val SDT_FOLLOW_IF_PRESENT = "SDT_FOLLOW_IF_PRESENT".asInstanceOf[OutputSdt]
-    val SDT_MANUAL            = "SDT_MANUAL".asInstanceOf[OutputSdt]
-    val SDT_NONE              = "SDT_NONE".asInstanceOf[OutputSdt]
+    val SDT_MANUAL = "SDT_MANUAL".asInstanceOf[OutputSdt]
+    val SDT_NONE = "SDT_NONE".asInstanceOf[OutputSdt]
 
     val values = js.Object.freeze(js.Array(SDT_FOLLOW, SDT_FOLLOW_IF_PRESENT, SDT_MANUAL, SDT_NONE))
   }
@@ -8271,6 +8601,27 @@ package mediaconvert {
       val __obj = js.Dynamic.literal()
       HlsSettings.foreach(__v => __obj.updateDynamic("HlsSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputSettings]
+    }
+  }
+
+  /**
+    * If you work with a third party video watermarking partner, use the group of settings that correspond with your watermarking partner to include watermarks in your output.
+    */
+  @js.native
+  trait PartnerWatermarking extends js.Object {
+    var NexguardFileMarkerSettings: js.UndefOr[NexGuardFileMarkerSettings]
+  }
+
+  object PartnerWatermarking {
+    @inline
+    def apply(
+        NexguardFileMarkerSettings: js.UndefOr[NexGuardFileMarkerSettings] = js.undefined
+    ): PartnerWatermarking = {
+      val __obj = js.Dynamic.literal()
+      NexguardFileMarkerSettings.foreach(__v =>
+        __obj.updateDynamic("NexguardFileMarkerSettings")(__v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[PartnerWatermarking]
     }
   }
 
@@ -8302,7 +8653,7 @@ package mediaconvert {
         Type: js.UndefOr[Type] = js.undefined
     ): Preset = {
       val __obj = js.Dynamic.literal(
-        "Name"     -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Settings" -> Settings.asInstanceOf[js.Any]
       )
 
@@ -8322,9 +8673,9 @@ package mediaconvert {
   @js.native
   sealed trait PresetListBy extends js.Any
   object PresetListBy extends js.Object {
-    val NAME          = "NAME".asInstanceOf[PresetListBy]
+    val NAME = "NAME".asInstanceOf[PresetListBy]
     val CREATION_DATE = "CREATION_DATE".asInstanceOf[PresetListBy]
-    val SYSTEM        = "SYSTEM".asInstanceOf[PresetListBy]
+    val SYSTEM = "SYSTEM".asInstanceOf[PresetListBy]
 
     val values = js.Object.freeze(js.Array(NAME, CREATION_DATE, SYSTEM))
   }
@@ -8364,7 +8715,7 @@ package mediaconvert {
   sealed trait PricingPlan extends js.Any
   object PricingPlan extends js.Object {
     val ON_DEMAND = "ON_DEMAND".asInstanceOf[PricingPlan]
-    val RESERVED  = "RESERVED".asInstanceOf[PricingPlan]
+    val RESERVED = "RESERVED".asInstanceOf[PricingPlan]
 
     val values = js.Object.freeze(js.Array(ON_DEMAND, RESERVED))
   }
@@ -8375,9 +8726,9 @@ package mediaconvert {
   @js.native
   sealed trait ProresCodecProfile extends js.Any
   object ProresCodecProfile extends js.Object {
-    val APPLE_PRORES_422       = "APPLE_PRORES_422".asInstanceOf[ProresCodecProfile]
-    val APPLE_PRORES_422_HQ    = "APPLE_PRORES_422_HQ".asInstanceOf[ProresCodecProfile]
-    val APPLE_PRORES_422_LT    = "APPLE_PRORES_422_LT".asInstanceOf[ProresCodecProfile]
+    val APPLE_PRORES_422 = "APPLE_PRORES_422".asInstanceOf[ProresCodecProfile]
+    val APPLE_PRORES_422_HQ = "APPLE_PRORES_422_HQ".asInstanceOf[ProresCodecProfile]
+    val APPLE_PRORES_422_LT = "APPLE_PRORES_422_LT".asInstanceOf[ProresCodecProfile]
     val APPLE_PRORES_422_PROXY = "APPLE_PRORES_422_PROXY".asInstanceOf[ProresCodecProfile]
 
     val values =
@@ -8385,25 +8736,25 @@ package mediaconvert {
   }
 
   /**
-    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job sepecification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
     */
   @js.native
   sealed trait ProresFramerateControl extends js.Any
   object ProresFramerateControl extends js.Object {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[ProresFramerateControl]
-    val SPECIFIED              = "SPECIFIED".asInstanceOf[ProresFramerateControl]
+    val SPECIFIED = "SPECIFIED".asInstanceOf[ProresFramerateControl]
 
     val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
-    * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+    * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion.
     */
   @js.native
   sealed trait ProresFramerateConversionAlgorithm extends js.Any
   object ProresFramerateConversionAlgorithm extends js.Object {
     val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[ProresFramerateConversionAlgorithm]
-    val INTERPOLATE    = "INTERPOLATE".asInstanceOf[ProresFramerateConversionAlgorithm]
+    val INTERPOLATE = "INTERPOLATE".asInstanceOf[ProresFramerateConversionAlgorithm]
 
     val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
   }
@@ -8416,23 +8767,23 @@ package mediaconvert {
   @js.native
   sealed trait ProresInterlaceMode extends js.Any
   object ProresInterlaceMode extends js.Object {
-    val PROGRESSIVE         = "PROGRESSIVE".asInstanceOf[ProresInterlaceMode]
-    val TOP_FIELD           = "TOP_FIELD".asInstanceOf[ProresInterlaceMode]
-    val BOTTOM_FIELD        = "BOTTOM_FIELD".asInstanceOf[ProresInterlaceMode]
-    val FOLLOW_TOP_FIELD    = "FOLLOW_TOP_FIELD".asInstanceOf[ProresInterlaceMode]
+    val PROGRESSIVE = "PROGRESSIVE".asInstanceOf[ProresInterlaceMode]
+    val TOP_FIELD = "TOP_FIELD".asInstanceOf[ProresInterlaceMode]
+    val BOTTOM_FIELD = "BOTTOM_FIELD".asInstanceOf[ProresInterlaceMode]
+    val FOLLOW_TOP_FIELD = "FOLLOW_TOP_FIELD".asInstanceOf[ProresInterlaceMode]
     val FOLLOW_BOTTOM_FIELD = "FOLLOW_BOTTOM_FIELD".asInstanceOf[ProresInterlaceMode]
 
     val values = js.Object.freeze(js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD))
   }
 
   /**
-    * Use (ProresParControl) to specify how the service determines the pixel aspect ratio. Set to Follow source (INITIALIZE_FROM_SOURCE) to use the pixel aspect ratio from the input.  To specify a different pixel aspect ratio: Using the console, choose it from the dropdown menu. Using the API, set ProresParControl to (SPECIFIED) and provide  for (ParNumerator) and (ParDenominator).
+    * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
     */
   @js.native
   sealed trait ProresParControl extends js.Any
   object ProresParControl extends js.Object {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[ProresParControl]
-    val SPECIFIED              = "SPECIFIED".asInstanceOf[ProresParControl]
+    val SPECIFIED = "SPECIFIED".asInstanceOf[ProresParControl]
 
     val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
@@ -8495,7 +8846,7 @@ package mediaconvert {
   sealed trait ProresSlowPal extends js.Any
   object ProresSlowPal extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[ProresSlowPal]
-    val ENABLED  = "ENABLED".asInstanceOf[ProresSlowPal]
+    val ENABLED = "ENABLED".asInstanceOf[ProresSlowPal]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -8569,7 +8920,7 @@ package mediaconvert {
   @js.native
   sealed trait QueueListBy extends js.Any
   object QueueListBy extends js.Object {
-    val NAME          = "NAME".asInstanceOf[QueueListBy]
+    val NAME = "NAME".asInstanceOf[QueueListBy]
     val CREATION_DATE = "CREATION_DATE".asInstanceOf[QueueListBy]
 
     val values = js.Object.freeze(js.Array(NAME, CREATION_DATE))
@@ -8585,6 +8936,31 @@ package mediaconvert {
     val PAUSED = "PAUSED".asInstanceOf[QueueStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, PAUSED))
+  }
+
+  /**
+    * Description of the source and destination queues between which the job has moved, along with the timestamp of the move
+    */
+  @js.native
+  trait QueueTransition extends js.Object {
+    var DestinationQueue: js.UndefOr[__string]
+    var SourceQueue: js.UndefOr[__string]
+    var Timestamp: js.UndefOr[__timestampUnix]
+  }
+
+  object QueueTransition {
+    @inline
+    def apply(
+        DestinationQueue: js.UndefOr[__string] = js.undefined,
+        SourceQueue: js.UndefOr[__string] = js.undefined,
+        Timestamp: js.UndefOr[__timestampUnix] = js.undefined
+    ): QueueTransition = {
+      val __obj = js.Dynamic.literal()
+      DestinationQueue.foreach(__v => __obj.updateDynamic("DestinationQueue")(__v.asInstanceOf[js.Any]))
+      SourceQueue.foreach(__v => __obj.updateDynamic("SourceQueue")(__v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueueTransition]
+    }
   }
 
   /**
@@ -8647,7 +9023,7 @@ package mediaconvert {
   sealed trait RenewalType extends js.Any
   object RenewalType extends js.Object {
     val AUTO_RENEW = "AUTO_RENEW".asInstanceOf[RenewalType]
-    val EXPIRE     = "EXPIRE".asInstanceOf[RenewalType]
+    val EXPIRE = "EXPIRE".asInstanceOf[RenewalType]
 
     val values = js.Object.freeze(js.Array(AUTO_RENEW, EXPIRE))
   }
@@ -8704,8 +9080,8 @@ package mediaconvert {
         ReservedSlots: __integer
     ): ReservationPlanSettings = {
       val __obj = js.Dynamic.literal(
-        "Commitment"    -> Commitment.asInstanceOf[js.Any],
-        "RenewalType"   -> RenewalType.asInstanceOf[js.Any],
+        "Commitment" -> Commitment.asInstanceOf[js.Any],
+        "RenewalType" -> RenewalType.asInstanceOf[js.Any],
         "ReservedSlots" -> ReservedSlots.asInstanceOf[js.Any]
       )
 
@@ -8719,7 +9095,7 @@ package mediaconvert {
   @js.native
   sealed trait ReservationPlanStatus extends js.Any
   object ReservationPlanStatus extends js.Object {
-    val ACTIVE  = "ACTIVE".asInstanceOf[ReservationPlanStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[ReservationPlanStatus]
     val EXPIRED = "EXPIRED".asInstanceOf[ReservationPlanStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, EXPIRED))
@@ -8753,8 +9129,8 @@ package mediaconvert {
   @js.native
   sealed trait RespondToAfd extends js.Any
   object RespondToAfd extends js.Object {
-    val NONE        = "NONE".asInstanceOf[RespondToAfd]
-    val RESPOND     = "RESPOND".asInstanceOf[RespondToAfd]
+    val NONE = "NONE".asInstanceOf[RespondToAfd]
+    val RESPOND = "RESPOND".asInstanceOf[RespondToAfd]
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[RespondToAfd]
 
     val values = js.Object.freeze(js.Array(NONE, RESPOND, PASSTHROUGH))
@@ -8833,9 +9209,9 @@ package mediaconvert {
   @js.native
   sealed trait S3ObjectCannedAcl extends js.Any
   object S3ObjectCannedAcl extends js.Object {
-    val PUBLIC_READ               = "PUBLIC_READ".asInstanceOf[S3ObjectCannedAcl]
-    val AUTHENTICATED_READ        = "AUTHENTICATED_READ".asInstanceOf[S3ObjectCannedAcl]
-    val BUCKET_OWNER_READ         = "BUCKET_OWNER_READ".asInstanceOf[S3ObjectCannedAcl]
+    val PUBLIC_READ = "PUBLIC_READ".asInstanceOf[S3ObjectCannedAcl]
+    val AUTHENTICATED_READ = "AUTHENTICATED_READ".asInstanceOf[S3ObjectCannedAcl]
+    val BUCKET_OWNER_READ = "BUCKET_OWNER_READ".asInstanceOf[S3ObjectCannedAcl]
     val BUCKET_OWNER_FULL_CONTROL = "BUCKET_OWNER_FULL_CONTROL".asInstanceOf[S3ObjectCannedAcl]
 
     val values =
@@ -8848,7 +9224,7 @@ package mediaconvert {
   @js.native
   sealed trait S3ServerSideEncryptionType extends js.Any
   object S3ServerSideEncryptionType extends js.Object {
-    val SERVER_SIDE_ENCRYPTION_S3  = "SERVER_SIDE_ENCRYPTION_S3".asInstanceOf[S3ServerSideEncryptionType]
+    val SERVER_SIDE_ENCRYPTION_S3 = "SERVER_SIDE_ENCRYPTION_S3".asInstanceOf[S3ServerSideEncryptionType]
     val SERVER_SIDE_ENCRYPTION_KMS = "SERVER_SIDE_ENCRYPTION_KMS".asInstanceOf[S3ServerSideEncryptionType]
 
     val values = js.Object.freeze(js.Array(SERVER_SIDE_ENCRYPTION_S3, SERVER_SIDE_ENCRYPTION_KMS))
@@ -8860,7 +9236,7 @@ package mediaconvert {
   @js.native
   sealed trait ScalingBehavior extends js.Any
   object ScalingBehavior extends js.Object {
-    val DEFAULT           = "DEFAULT".asInstanceOf[ScalingBehavior]
+    val DEFAULT = "DEFAULT".asInstanceOf[ScalingBehavior]
     val STRETCH_TO_OUTPUT = "STRETCH_TO_OUTPUT".asInstanceOf[ScalingBehavior]
 
     val values = js.Object.freeze(js.Array(DEFAULT, STRETCH_TO_OUTPUT))
@@ -8872,10 +9248,10 @@ package mediaconvert {
   @js.native
   sealed trait SccDestinationFramerate extends js.Any
   object SccDestinationFramerate extends js.Object {
-    val FRAMERATE_23_97               = "FRAMERATE_23_97".asInstanceOf[SccDestinationFramerate]
-    val FRAMERATE_24                  = "FRAMERATE_24".asInstanceOf[SccDestinationFramerate]
-    val FRAMERATE_25                  = "FRAMERATE_25".asInstanceOf[SccDestinationFramerate]
-    val FRAMERATE_29_97_DROPFRAME     = "FRAMERATE_29_97_DROPFRAME".asInstanceOf[SccDestinationFramerate]
+    val FRAMERATE_23_97 = "FRAMERATE_23_97".asInstanceOf[SccDestinationFramerate]
+    val FRAMERATE_24 = "FRAMERATE_24".asInstanceOf[SccDestinationFramerate]
+    val FRAMERATE_25 = "FRAMERATE_25".asInstanceOf[SccDestinationFramerate]
+    val FRAMERATE_29_97_DROPFRAME = "FRAMERATE_29_97_DROPFRAME".asInstanceOf[SccDestinationFramerate]
     val FRAMERATE_29_97_NON_DROPFRAME = "FRAMERATE_29_97_NON_DROPFRAME".asInstanceOf[SccDestinationFramerate]
 
     val values = js.Object.freeze(
@@ -8909,7 +9285,7 @@ package mediaconvert {
   sealed trait SimulateReservedQueue extends js.Any
   object SimulateReservedQueue extends js.Object {
     val DISABLED = "DISABLED".asInstanceOf[SimulateReservedQueue]
-    val ENABLED  = "ENABLED".asInstanceOf[SimulateReservedQueue]
+    val ENABLED = "ENABLED".asInstanceOf[SimulateReservedQueue]
 
     val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
@@ -9009,12 +9385,12 @@ package mediaconvert {
   @js.native
   sealed trait StatusUpdateInterval extends js.Any
   object StatusUpdateInterval extends js.Object {
-    val SECONDS_10  = "SECONDS_10".asInstanceOf[StatusUpdateInterval]
-    val SECONDS_12  = "SECONDS_12".asInstanceOf[StatusUpdateInterval]
-    val SECONDS_15  = "SECONDS_15".asInstanceOf[StatusUpdateInterval]
-    val SECONDS_20  = "SECONDS_20".asInstanceOf[StatusUpdateInterval]
-    val SECONDS_30  = "SECONDS_30".asInstanceOf[StatusUpdateInterval]
-    val SECONDS_60  = "SECONDS_60".asInstanceOf[StatusUpdateInterval]
+    val SECONDS_10 = "SECONDS_10".asInstanceOf[StatusUpdateInterval]
+    val SECONDS_12 = "SECONDS_12".asInstanceOf[StatusUpdateInterval]
+    val SECONDS_15 = "SECONDS_15".asInstanceOf[StatusUpdateInterval]
+    val SECONDS_20 = "SECONDS_20".asInstanceOf[StatusUpdateInterval]
+    val SECONDS_30 = "SECONDS_30".asInstanceOf[StatusUpdateInterval]
+    val SECONDS_60 = "SECONDS_60".asInstanceOf[StatusUpdateInterval]
     val SECONDS_120 = "SECONDS_120".asInstanceOf[StatusUpdateInterval]
     val SECONDS_180 = "SECONDS_180".asInstanceOf[StatusUpdateInterval]
     val SECONDS_240 = "SECONDS_240".asInstanceOf[StatusUpdateInterval]
@@ -9059,7 +9435,7 @@ package mediaconvert {
         Tags: __mapOf__string
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
-        "Arn"  -> Arn.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
@@ -9108,10 +9484,10 @@ package mediaconvert {
   @js.native
   sealed trait TeletextPageType extends js.Any
   object TeletextPageType extends js.Object {
-    val PAGE_TYPE_INITIAL                   = "PAGE_TYPE_INITIAL".asInstanceOf[TeletextPageType]
-    val PAGE_TYPE_SUBTITLE                  = "PAGE_TYPE_SUBTITLE".asInstanceOf[TeletextPageType]
-    val PAGE_TYPE_ADDL_INFO                 = "PAGE_TYPE_ADDL_INFO".asInstanceOf[TeletextPageType]
-    val PAGE_TYPE_PROGRAM_SCHEDULE          = "PAGE_TYPE_PROGRAM_SCHEDULE".asInstanceOf[TeletextPageType]
+    val PAGE_TYPE_INITIAL = "PAGE_TYPE_INITIAL".asInstanceOf[TeletextPageType]
+    val PAGE_TYPE_SUBTITLE = "PAGE_TYPE_SUBTITLE".asInstanceOf[TeletextPageType]
+    val PAGE_TYPE_ADDL_INFO = "PAGE_TYPE_ADDL_INFO".asInstanceOf[TeletextPageType]
+    val PAGE_TYPE_PROGRAM_SCHEDULE = "PAGE_TYPE_PROGRAM_SCHEDULE".asInstanceOf[TeletextPageType]
     val PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE = "PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE".asInstanceOf[TeletextPageType]
 
     val values = js.Object.freeze(
@@ -9175,15 +9551,15 @@ package mediaconvert {
   @js.native
   sealed trait TimecodeBurninPosition extends js.Any
   object TimecodeBurninPosition extends js.Object {
-    val TOP_CENTER    = "TOP_CENTER".asInstanceOf[TimecodeBurninPosition]
-    val TOP_LEFT      = "TOP_LEFT".asInstanceOf[TimecodeBurninPosition]
-    val TOP_RIGHT     = "TOP_RIGHT".asInstanceOf[TimecodeBurninPosition]
-    val MIDDLE_LEFT   = "MIDDLE_LEFT".asInstanceOf[TimecodeBurninPosition]
+    val TOP_CENTER = "TOP_CENTER".asInstanceOf[TimecodeBurninPosition]
+    val TOP_LEFT = "TOP_LEFT".asInstanceOf[TimecodeBurninPosition]
+    val TOP_RIGHT = "TOP_RIGHT".asInstanceOf[TimecodeBurninPosition]
+    val MIDDLE_LEFT = "MIDDLE_LEFT".asInstanceOf[TimecodeBurninPosition]
     val MIDDLE_CENTER = "MIDDLE_CENTER".asInstanceOf[TimecodeBurninPosition]
-    val MIDDLE_RIGHT  = "MIDDLE_RIGHT".asInstanceOf[TimecodeBurninPosition]
-    val BOTTOM_LEFT   = "BOTTOM_LEFT".asInstanceOf[TimecodeBurninPosition]
+    val MIDDLE_RIGHT = "MIDDLE_RIGHT".asInstanceOf[TimecodeBurninPosition]
+    val BOTTOM_LEFT = "BOTTOM_LEFT".asInstanceOf[TimecodeBurninPosition]
     val BOTTOM_CENTER = "BOTTOM_CENTER".asInstanceOf[TimecodeBurninPosition]
-    val BOTTOM_RIGHT  = "BOTTOM_RIGHT".asInstanceOf[TimecodeBurninPosition]
+    val BOTTOM_RIGHT = "BOTTOM_RIGHT".asInstanceOf[TimecodeBurninPosition]
 
     val values = js.Object.freeze(
       js.Array(
@@ -9234,8 +9610,8 @@ package mediaconvert {
   @js.native
   sealed trait TimecodeSource extends js.Any
   object TimecodeSource extends js.Object {
-    val EMBEDDED       = "EMBEDDED".asInstanceOf[TimecodeSource]
-    val ZEROBASED      = "ZEROBASED".asInstanceOf[TimecodeSource]
+    val EMBEDDED = "EMBEDDED".asInstanceOf[TimecodeSource]
+    val ZEROBASED = "ZEROBASED".asInstanceOf[TimecodeSource]
     val SPECIFIEDSTART = "SPECIFIEDSTART".asInstanceOf[TimecodeSource]
 
     val values = js.Object.freeze(js.Array(EMBEDDED, ZEROBASED, SPECIFIEDSTART))
@@ -9248,7 +9624,7 @@ package mediaconvert {
   sealed trait TimedMetadata extends js.Any
   object TimedMetadata extends js.Object {
     val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[TimedMetadata]
-    val NONE        = "NONE".asInstanceOf[TimedMetadata]
+    val NONE = "NONE".asInstanceOf[TimedMetadata]
 
     val values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
   }
@@ -9336,12 +9712,12 @@ package mediaconvert {
   }
 
   /**
-    * Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT, CFF-TT) to the CFF-TT output or TTML output.
+    * Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT) to the TTML output.
     */
   @js.native
   sealed trait TtmlStylePassthrough extends js.Any
   object TtmlStylePassthrough extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[TtmlStylePassthrough]
+    val ENABLED = "ENABLED".asInstanceOf[TtmlStylePassthrough]
     val DISABLED = "DISABLED".asInstanceOf[TtmlStylePassthrough]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -9396,6 +9772,7 @@ package mediaconvert {
     var AccelerationSettings: js.UndefOr[AccelerationSettings]
     var Category: js.UndefOr[__string]
     var Description: js.UndefOr[__string]
+    var HopDestinations: js.UndefOr[__listOfHopDestination]
     var Priority: js.UndefOr[__integerMinNegative50Max50]
     var Queue: js.UndefOr[__string]
     var Settings: js.UndefOr[JobTemplateSettings]
@@ -9409,6 +9786,7 @@ package mediaconvert {
         AccelerationSettings: js.UndefOr[AccelerationSettings] = js.undefined,
         Category: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
+        HopDestinations: js.UndefOr[__listOfHopDestination] = js.undefined,
         Priority: js.UndefOr[__integerMinNegative50Max50] = js.undefined,
         Queue: js.UndefOr[__string] = js.undefined,
         Settings: js.UndefOr[JobTemplateSettings] = js.undefined,
@@ -9421,6 +9799,7 @@ package mediaconvert {
       AccelerationSettings.foreach(__v => __obj.updateDynamic("AccelerationSettings")(__v.asInstanceOf[js.Any]))
       Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      HopDestinations.foreach(__v => __obj.updateDynamic("HopDestinations")(__v.asInstanceOf[js.Any]))
       Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
       Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
       Settings.foreach(__v => __obj.updateDynamic("Settings")(__v.asInstanceOf[js.Any]))
@@ -9538,44 +9917,56 @@ package mediaconvert {
   sealed trait VideoCodec extends js.Any
   object VideoCodec extends js.Object {
     val FRAME_CAPTURE = "FRAME_CAPTURE".asInstanceOf[VideoCodec]
-    val H_264         = "H_264".asInstanceOf[VideoCodec]
-    val H_265         = "H_265".asInstanceOf[VideoCodec]
-    val MPEG2         = "MPEG2".asInstanceOf[VideoCodec]
-    val PRORES        = "PRORES".asInstanceOf[VideoCodec]
+    val AV1 = "AV1".asInstanceOf[VideoCodec]
+    val H_264 = "H_264".asInstanceOf[VideoCodec]
+    val H_265 = "H_265".asInstanceOf[VideoCodec]
+    val MPEG2 = "MPEG2".asInstanceOf[VideoCodec]
+    val PRORES = "PRORES".asInstanceOf[VideoCodec]
+    val VP8 = "VP8".asInstanceOf[VideoCodec]
+    val VP9 = "VP9".asInstanceOf[VideoCodec]
 
-    val values = js.Object.freeze(js.Array(FRAME_CAPTURE, H_264, H_265, MPEG2, PRORES))
+    val values = js.Object.freeze(js.Array(FRAME_CAPTURE, AV1, H_264, H_265, MPEG2, PRORES, VP8, VP9))
   }
 
   /**
-    * Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec (Codec). For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings
+    * Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec (Codec). For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * FRAME_CAPTURE, FrameCaptureSettings * AV1, Av1Settings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VP8, Vp8Settings * VP9, Vp9Settings
     */
   @js.native
   trait VideoCodecSettings extends js.Object {
+    var Av1Settings: js.UndefOr[Av1Settings]
     var Codec: js.UndefOr[VideoCodec]
     var FrameCaptureSettings: js.UndefOr[FrameCaptureSettings]
     var H264Settings: js.UndefOr[H264Settings]
     var H265Settings: js.UndefOr[H265Settings]
     var Mpeg2Settings: js.UndefOr[Mpeg2Settings]
     var ProresSettings: js.UndefOr[ProresSettings]
+    var Vp8Settings: js.UndefOr[Vp8Settings]
+    var Vp9Settings: js.UndefOr[Vp9Settings]
   }
 
   object VideoCodecSettings {
     @inline
     def apply(
+        Av1Settings: js.UndefOr[Av1Settings] = js.undefined,
         Codec: js.UndefOr[VideoCodec] = js.undefined,
         FrameCaptureSettings: js.UndefOr[FrameCaptureSettings] = js.undefined,
         H264Settings: js.UndefOr[H264Settings] = js.undefined,
         H265Settings: js.UndefOr[H265Settings] = js.undefined,
         Mpeg2Settings: js.UndefOr[Mpeg2Settings] = js.undefined,
-        ProresSettings: js.UndefOr[ProresSettings] = js.undefined
+        ProresSettings: js.UndefOr[ProresSettings] = js.undefined,
+        Vp8Settings: js.UndefOr[Vp8Settings] = js.undefined,
+        Vp9Settings: js.UndefOr[Vp9Settings] = js.undefined
     ): VideoCodecSettings = {
       val __obj = js.Dynamic.literal()
+      Av1Settings.foreach(__v => __obj.updateDynamic("Av1Settings")(__v.asInstanceOf[js.Any]))
       Codec.foreach(__v => __obj.updateDynamic("Codec")(__v.asInstanceOf[js.Any]))
       FrameCaptureSettings.foreach(__v => __obj.updateDynamic("FrameCaptureSettings")(__v.asInstanceOf[js.Any]))
       H264Settings.foreach(__v => __obj.updateDynamic("H264Settings")(__v.asInstanceOf[js.Any]))
       H265Settings.foreach(__v => __obj.updateDynamic("H265Settings")(__v.asInstanceOf[js.Any]))
       Mpeg2Settings.foreach(__v => __obj.updateDynamic("Mpeg2Settings")(__v.asInstanceOf[js.Any]))
       ProresSettings.foreach(__v => __obj.updateDynamic("ProresSettings")(__v.asInstanceOf[js.Any]))
+      Vp8Settings.foreach(__v => __obj.updateDynamic("Vp8Settings")(__v.asInstanceOf[js.Any]))
+      Vp9Settings.foreach(__v => __obj.updateDynamic("Vp9Settings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VideoCodecSettings]
     }
   }
@@ -9673,6 +10064,7 @@ package mediaconvert {
     var DolbyVision: js.UndefOr[DolbyVision]
     var ImageInserter: js.UndefOr[ImageInserter]
     var NoiseReducer: js.UndefOr[NoiseReducer]
+    var PartnerWatermarking: js.UndefOr[PartnerWatermarking]
     var TimecodeBurnin: js.UndefOr[TimecodeBurnin]
   }
 
@@ -9684,6 +10076,7 @@ package mediaconvert {
         DolbyVision: js.UndefOr[DolbyVision] = js.undefined,
         ImageInserter: js.UndefOr[ImageInserter] = js.undefined,
         NoiseReducer: js.UndefOr[NoiseReducer] = js.undefined,
+        PartnerWatermarking: js.UndefOr[PartnerWatermarking] = js.undefined,
         TimecodeBurnin: js.UndefOr[TimecodeBurnin] = js.undefined
     ): VideoPreprocessor = {
       val __obj = js.Dynamic.literal()
@@ -9692,6 +10085,7 @@ package mediaconvert {
       DolbyVision.foreach(__v => __obj.updateDynamic("DolbyVision")(__v.asInstanceOf[js.Any]))
       ImageInserter.foreach(__v => __obj.updateDynamic("ImageInserter")(__v.asInstanceOf[js.Any]))
       NoiseReducer.foreach(__v => __obj.updateDynamic("NoiseReducer")(__v.asInstanceOf[js.Any]))
+      PartnerWatermarking.foreach(__v => __obj.updateDynamic("PartnerWatermarking")(__v.asInstanceOf[js.Any]))
       TimecodeBurnin.foreach(__v => __obj.updateDynamic("TimecodeBurnin")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VideoPreprocessor]
     }
@@ -9740,10 +10134,282 @@ package mediaconvert {
   @js.native
   sealed trait VideoTimecodeInsertion extends js.Any
   object VideoTimecodeInsertion extends js.Object {
-    val DISABLED       = "DISABLED".asInstanceOf[VideoTimecodeInsertion]
+    val DISABLED = "DISABLED".asInstanceOf[VideoTimecodeInsertion]
     val PIC_TIMING_SEI = "PIC_TIMING_SEI".asInstanceOf[VideoTimecodeInsertion]
 
     val values = js.Object.freeze(js.Array(DISABLED, PIC_TIMING_SEI))
+  }
+
+  /**
+    * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value Vorbis.
+    */
+  @js.native
+  trait VorbisSettings extends js.Object {
+    var Channels: js.UndefOr[__integerMin1Max2]
+    var SampleRate: js.UndefOr[__integerMin22050Max48000]
+    var VbrQuality: js.UndefOr[__integerMinNegative1Max10]
+  }
+
+  object VorbisSettings {
+    @inline
+    def apply(
+        Channels: js.UndefOr[__integerMin1Max2] = js.undefined,
+        SampleRate: js.UndefOr[__integerMin22050Max48000] = js.undefined,
+        VbrQuality: js.UndefOr[__integerMinNegative1Max10] = js.undefined
+    ): VorbisSettings = {
+      val __obj = js.Dynamic.literal()
+      Channels.foreach(__v => __obj.updateDynamic("Channels")(__v.asInstanceOf[js.Any]))
+      SampleRate.foreach(__v => __obj.updateDynamic("SampleRate")(__v.asInstanceOf[js.Any]))
+      VbrQuality.foreach(__v => __obj.updateDynamic("VbrQuality")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VorbisSettings]
+    }
+  }
+
+  /**
+    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+    */
+  @js.native
+  sealed trait Vp8FramerateControl extends js.Any
+  object Vp8FramerateControl extends js.Object {
+    val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Vp8FramerateControl]
+    val SPECIFIED = "SPECIFIED".asInstanceOf[Vp8FramerateControl]
+
+    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+  }
+
+  /**
+    * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use Drop duplicate (DUPLICATE_DROP) conversion. When you choose Interpolate (INTERPOLATE) instead, the conversion produces smoother motion.
+    */
+  @js.native
+  sealed trait Vp8FramerateConversionAlgorithm extends js.Any
+  object Vp8FramerateConversionAlgorithm extends js.Object {
+    val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Vp8FramerateConversionAlgorithm]
+    val INTERPOLATE = "INTERPOLATE".asInstanceOf[Vp8FramerateConversionAlgorithm]
+
+    val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
+  }
+
+  /**
+    * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
+    */
+  @js.native
+  sealed trait Vp8ParControl extends js.Any
+  object Vp8ParControl extends js.Object {
+    val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Vp8ParControl]
+    val SPECIFIED = "SPECIFIED".asInstanceOf[Vp8ParControl]
+
+    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+  }
+
+  /**
+    * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
+    */
+  @js.native
+  sealed trait Vp8QualityTuningLevel extends js.Any
+  object Vp8QualityTuningLevel extends js.Object {
+    val MULTI_PASS = "MULTI_PASS".asInstanceOf[Vp8QualityTuningLevel]
+    val MULTI_PASS_HQ = "MULTI_PASS_HQ".asInstanceOf[Vp8QualityTuningLevel]
+
+    val values = js.Object.freeze(js.Array(MULTI_PASS, MULTI_PASS_HQ))
+  }
+
+  /**
+    * With the VP8 codec, you can use only the variable bitrate (VBR) rate control mode.
+    */
+  @js.native
+  sealed trait Vp8RateControlMode extends js.Any
+  object Vp8RateControlMode extends js.Object {
+    val VBR = "VBR".asInstanceOf[Vp8RateControlMode]
+
+    val values = js.Object.freeze(js.Array(VBR))
+  }
+
+  /**
+    * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8.
+    */
+  @js.native
+  trait Vp8Settings extends js.Object {
+    var Bitrate: js.UndefOr[__integerMin1000Max1152000000]
+    var FramerateControl: js.UndefOr[Vp8FramerateControl]
+    var FramerateConversionAlgorithm: js.UndefOr[Vp8FramerateConversionAlgorithm]
+    var FramerateDenominator: js.UndefOr[__integerMin1Max2147483647]
+    var FramerateNumerator: js.UndefOr[__integerMin1Max2147483647]
+    var GopSize: js.UndefOr[__doubleMin0]
+    var HrdBufferSize: js.UndefOr[__integerMin0Max47185920]
+    var MaxBitrate: js.UndefOr[__integerMin1000Max1152000000]
+    var ParControl: js.UndefOr[Vp8ParControl]
+    var ParDenominator: js.UndefOr[__integerMin1Max2147483647]
+    var ParNumerator: js.UndefOr[__integerMin1Max2147483647]
+    var QualityTuningLevel: js.UndefOr[Vp8QualityTuningLevel]
+    var RateControlMode: js.UndefOr[Vp8RateControlMode]
+  }
+
+  object Vp8Settings {
+    @inline
+    def apply(
+        Bitrate: js.UndefOr[__integerMin1000Max1152000000] = js.undefined,
+        FramerateControl: js.UndefOr[Vp8FramerateControl] = js.undefined,
+        FramerateConversionAlgorithm: js.UndefOr[Vp8FramerateConversionAlgorithm] = js.undefined,
+        FramerateDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        FramerateNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        GopSize: js.UndefOr[__doubleMin0] = js.undefined,
+        HrdBufferSize: js.UndefOr[__integerMin0Max47185920] = js.undefined,
+        MaxBitrate: js.UndefOr[__integerMin1000Max1152000000] = js.undefined,
+        ParControl: js.UndefOr[Vp8ParControl] = js.undefined,
+        ParDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        ParNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        QualityTuningLevel: js.UndefOr[Vp8QualityTuningLevel] = js.undefined,
+        RateControlMode: js.UndefOr[Vp8RateControlMode] = js.undefined
+    ): Vp8Settings = {
+      val __obj = js.Dynamic.literal()
+      Bitrate.foreach(__v => __obj.updateDynamic("Bitrate")(__v.asInstanceOf[js.Any]))
+      FramerateControl.foreach(__v => __obj.updateDynamic("FramerateControl")(__v.asInstanceOf[js.Any]))
+      FramerateConversionAlgorithm.foreach(__v =>
+        __obj.updateDynamic("FramerateConversionAlgorithm")(__v.asInstanceOf[js.Any])
+      )
+      FramerateDenominator.foreach(__v => __obj.updateDynamic("FramerateDenominator")(__v.asInstanceOf[js.Any]))
+      FramerateNumerator.foreach(__v => __obj.updateDynamic("FramerateNumerator")(__v.asInstanceOf[js.Any]))
+      GopSize.foreach(__v => __obj.updateDynamic("GopSize")(__v.asInstanceOf[js.Any]))
+      HrdBufferSize.foreach(__v => __obj.updateDynamic("HrdBufferSize")(__v.asInstanceOf[js.Any]))
+      MaxBitrate.foreach(__v => __obj.updateDynamic("MaxBitrate")(__v.asInstanceOf[js.Any]))
+      ParControl.foreach(__v => __obj.updateDynamic("ParControl")(__v.asInstanceOf[js.Any]))
+      ParDenominator.foreach(__v => __obj.updateDynamic("ParDenominator")(__v.asInstanceOf[js.Any]))
+      ParNumerator.foreach(__v => __obj.updateDynamic("ParNumerator")(__v.asInstanceOf[js.Any]))
+      QualityTuningLevel.foreach(__v => __obj.updateDynamic("QualityTuningLevel")(__v.asInstanceOf[js.Any]))
+      RateControlMode.foreach(__v => __obj.updateDynamic("RateControlMode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Vp8Settings]
+    }
+  }
+
+  /**
+    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+    */
+  @js.native
+  sealed trait Vp9FramerateControl extends js.Any
+  object Vp9FramerateControl extends js.Object {
+    val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Vp9FramerateControl]
+    val SPECIFIED = "SPECIFIED".asInstanceOf[Vp9FramerateControl]
+
+    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+  }
+
+  /**
+    * Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use Drop duplicate (DUPLICATE_DROP) conversion. When you choose Interpolate (INTERPOLATE) instead, the conversion produces smoother motion.
+    */
+  @js.native
+  sealed trait Vp9FramerateConversionAlgorithm extends js.Any
+  object Vp9FramerateConversionAlgorithm extends js.Object {
+    val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Vp9FramerateConversionAlgorithm]
+    val INTERPOLATE = "INTERPOLATE".asInstanceOf[Vp9FramerateConversionAlgorithm]
+
+    val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
+  }
+
+  /**
+    * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
+    */
+  @js.native
+  sealed trait Vp9ParControl extends js.Any
+  object Vp9ParControl extends js.Object {
+    val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Vp9ParControl]
+    val SPECIFIED = "SPECIFIED".asInstanceOf[Vp9ParControl]
+
+    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
+  }
+
+  /**
+    * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
+    */
+  @js.native
+  sealed trait Vp9QualityTuningLevel extends js.Any
+  object Vp9QualityTuningLevel extends js.Object {
+    val MULTI_PASS = "MULTI_PASS".asInstanceOf[Vp9QualityTuningLevel]
+    val MULTI_PASS_HQ = "MULTI_PASS_HQ".asInstanceOf[Vp9QualityTuningLevel]
+
+    val values = js.Object.freeze(js.Array(MULTI_PASS, MULTI_PASS_HQ))
+  }
+
+  /**
+    * With the VP9 codec, you can use only the variable bitrate (VBR) rate control mode.
+    */
+  @js.native
+  sealed trait Vp9RateControlMode extends js.Any
+  object Vp9RateControlMode extends js.Object {
+    val VBR = "VBR".asInstanceOf[Vp9RateControlMode]
+
+    val values = js.Object.freeze(js.Array(VBR))
+  }
+
+  /**
+    * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9.
+    */
+  @js.native
+  trait Vp9Settings extends js.Object {
+    var Bitrate: js.UndefOr[__integerMin1000Max480000000]
+    var FramerateControl: js.UndefOr[Vp9FramerateControl]
+    var FramerateConversionAlgorithm: js.UndefOr[Vp9FramerateConversionAlgorithm]
+    var FramerateDenominator: js.UndefOr[__integerMin1Max2147483647]
+    var FramerateNumerator: js.UndefOr[__integerMin1Max2147483647]
+    var GopSize: js.UndefOr[__doubleMin0]
+    var HrdBufferSize: js.UndefOr[__integerMin0Max47185920]
+    var MaxBitrate: js.UndefOr[__integerMin1000Max480000000]
+    var ParControl: js.UndefOr[Vp9ParControl]
+    var ParDenominator: js.UndefOr[__integerMin1Max2147483647]
+    var ParNumerator: js.UndefOr[__integerMin1Max2147483647]
+    var QualityTuningLevel: js.UndefOr[Vp9QualityTuningLevel]
+    var RateControlMode: js.UndefOr[Vp9RateControlMode]
+  }
+
+  object Vp9Settings {
+    @inline
+    def apply(
+        Bitrate: js.UndefOr[__integerMin1000Max480000000] = js.undefined,
+        FramerateControl: js.UndefOr[Vp9FramerateControl] = js.undefined,
+        FramerateConversionAlgorithm: js.UndefOr[Vp9FramerateConversionAlgorithm] = js.undefined,
+        FramerateDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        FramerateNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        GopSize: js.UndefOr[__doubleMin0] = js.undefined,
+        HrdBufferSize: js.UndefOr[__integerMin0Max47185920] = js.undefined,
+        MaxBitrate: js.UndefOr[__integerMin1000Max480000000] = js.undefined,
+        ParControl: js.UndefOr[Vp9ParControl] = js.undefined,
+        ParDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        ParNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        QualityTuningLevel: js.UndefOr[Vp9QualityTuningLevel] = js.undefined,
+        RateControlMode: js.UndefOr[Vp9RateControlMode] = js.undefined
+    ): Vp9Settings = {
+      val __obj = js.Dynamic.literal()
+      Bitrate.foreach(__v => __obj.updateDynamic("Bitrate")(__v.asInstanceOf[js.Any]))
+      FramerateControl.foreach(__v => __obj.updateDynamic("FramerateControl")(__v.asInstanceOf[js.Any]))
+      FramerateConversionAlgorithm.foreach(__v =>
+        __obj.updateDynamic("FramerateConversionAlgorithm")(__v.asInstanceOf[js.Any])
+      )
+      FramerateDenominator.foreach(__v => __obj.updateDynamic("FramerateDenominator")(__v.asInstanceOf[js.Any]))
+      FramerateNumerator.foreach(__v => __obj.updateDynamic("FramerateNumerator")(__v.asInstanceOf[js.Any]))
+      GopSize.foreach(__v => __obj.updateDynamic("GopSize")(__v.asInstanceOf[js.Any]))
+      HrdBufferSize.foreach(__v => __obj.updateDynamic("HrdBufferSize")(__v.asInstanceOf[js.Any]))
+      MaxBitrate.foreach(__v => __obj.updateDynamic("MaxBitrate")(__v.asInstanceOf[js.Any]))
+      ParControl.foreach(__v => __obj.updateDynamic("ParControl")(__v.asInstanceOf[js.Any]))
+      ParDenominator.foreach(__v => __obj.updateDynamic("ParDenominator")(__v.asInstanceOf[js.Any]))
+      ParNumerator.foreach(__v => __obj.updateDynamic("ParNumerator")(__v.asInstanceOf[js.Any]))
+      QualityTuningLevel.foreach(__v => __obj.updateDynamic("QualityTuningLevel")(__v.asInstanceOf[js.Any]))
+      RateControlMode.foreach(__v => __obj.updateDynamic("RateControlMode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Vp9Settings]
+    }
+  }
+
+  /**
+    * Optional. Ignore this setting unless Nagra support directs you to specify a value. When you don't specify a value here, the Nagra NexGuard library uses its default value.
+    */
+  @js.native
+  sealed trait WatermarkingStrength extends js.Any
+  object WatermarkingStrength extends js.Object {
+    val LIGHTEST = "LIGHTEST".asInstanceOf[WatermarkingStrength]
+    val LIGHTER = "LIGHTER".asInstanceOf[WatermarkingStrength]
+    val DEFAULT = "DEFAULT".asInstanceOf[WatermarkingStrength]
+    val STRONGER = "STRONGER".asInstanceOf[WatermarkingStrength]
+    val STRONGEST = "STRONGEST".asInstanceOf[WatermarkingStrength]
+
+    val values = js.Object.freeze(js.Array(LIGHTEST, LIGHTER, DEFAULT, STRONGER, STRONGEST))
   }
 
   /**

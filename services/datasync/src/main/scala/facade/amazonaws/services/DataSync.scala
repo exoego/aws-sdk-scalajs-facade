@@ -7,54 +7,54 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object datasync {
-  type ActivationKey                   = String
-  type AgentArn                        = String
-  type AgentArnList                    = js.Array[AgentArn]
-  type AgentList                       = js.Array[AgentListEntry]
-  type BytesPerSecond                  = Double
+  type ActivationKey = String
+  type AgentArn = String
+  type AgentArnList = js.Array[AgentArn]
+  type AgentList = js.Array[AgentListEntry]
+  type BytesPerSecond = Double
   type DestinationNetworkInterfaceArns = js.Array[NetworkInterfaceArn]
-  type Duration                        = Double
-  type Ec2SecurityGroupArn             = String
-  type Ec2SecurityGroupArnList         = js.Array[Ec2SecurityGroupArn]
-  type Ec2SubnetArn                    = String
-  type EfsFilesystemArn                = String
-  type EfsSubdirectory                 = String
-  type Endpoint                        = String
-  type FilterList                      = js.Array[FilterRule]
-  type FilterValue                     = String
-  type FsxFilesystemArn                = String
-  type FsxWindowsSubdirectory          = String
-  type IamRoleArn                      = String
-  type LocationArn                     = String
-  type LocationList                    = js.Array[LocationListEntry]
-  type LocationUri                     = String
-  type LogGroupArn                     = String
-  type MaxResults                      = Int
-  type NetworkInterfaceArn             = String
-  type NextToken                       = String
-  type NfsSubdirectory                 = String
-  type PLSecurityGroupArnList          = js.Array[Ec2SecurityGroupArn]
-  type PLSubnetArnList                 = js.Array[Ec2SubnetArn]
-  type S3BucketArn                     = String
-  type S3Subdirectory                  = String
-  type ScheduleExpressionCron          = String
-  type ServerHostname                  = String
-  type SmbDomain                       = String
-  type SmbPassword                     = String
-  type SmbSubdirectory                 = String
-  type SmbUser                         = String
-  type SourceNetworkInterfaceArns      = js.Array[NetworkInterfaceArn]
-  type TagKey                          = String
-  type TagKeyList                      = js.Array[TagKey]
-  type TagList                         = js.Array[TagListEntry]
-  type TagValue                        = String
-  type TaggableResourceArn             = String
-  type TaskArn                         = String
-  type TaskExecutionArn                = String
-  type TaskExecutionList               = js.Array[TaskExecutionListEntry]
-  type TaskList                        = js.Array[TaskListEntry]
-  type Time                            = js.Date
-  type VpcEndpointId                   = String
+  type Duration = Double
+  type Ec2SecurityGroupArn = String
+  type Ec2SecurityGroupArnList = js.Array[Ec2SecurityGroupArn]
+  type Ec2SubnetArn = String
+  type EfsFilesystemArn = String
+  type EfsSubdirectory = String
+  type Endpoint = String
+  type FilterList = js.Array[FilterRule]
+  type FilterValue = String
+  type FsxFilesystemArn = String
+  type FsxWindowsSubdirectory = String
+  type IamRoleArn = String
+  type LocationArn = String
+  type LocationList = js.Array[LocationListEntry]
+  type LocationUri = String
+  type LogGroupArn = String
+  type MaxResults = Int
+  type NetworkInterfaceArn = String
+  type NextToken = String
+  type NfsSubdirectory = String
+  type PLSecurityGroupArnList = js.Array[Ec2SecurityGroupArn]
+  type PLSubnetArnList = js.Array[Ec2SubnetArn]
+  type S3BucketArn = String
+  type S3Subdirectory = String
+  type ScheduleExpressionCron = String
+  type ServerHostname = String
+  type SmbDomain = String
+  type SmbPassword = String
+  type SmbSubdirectory = String
+  type SmbUser = String
+  type SourceNetworkInterfaceArns = js.Array[NetworkInterfaceArn]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[TagListEntry]
+  type TagValue = String
+  type TaggableResourceArn = String
+  type TaskArn = String
+  type TaskExecutionArn = String
+  type TaskExecutionList = js.Array[TaskExecutionListEntry]
+  type TaskList = js.Array[TaskListEntry]
+  type Time = js.Date
+  type VpcEndpointId = String
 
   implicit final class DataSyncOps(private val service: DataSync) extends AnyVal {
 
@@ -129,37 +129,37 @@ package datasync {
     def this(config: AWSConfig) = this()
 
     def cancelTaskExecution(params: CancelTaskExecutionRequest): Request[CancelTaskExecutionResponse] = js.native
-    def createAgent(params: CreateAgentRequest): Request[CreateAgentResponse]                         = js.native
-    def createLocationEfs(params: CreateLocationEfsRequest): Request[CreateLocationEfsResponse]       = js.native
+    def createAgent(params: CreateAgentRequest): Request[CreateAgentResponse] = js.native
+    def createLocationEfs(params: CreateLocationEfsRequest): Request[CreateLocationEfsResponse] = js.native
     def createLocationFsxWindows(params: CreateLocationFsxWindowsRequest): Request[CreateLocationFsxWindowsResponse] =
       js.native
-    def createLocationNfs(params: CreateLocationNfsRequest): Request[CreateLocationNfsResponse]       = js.native
-    def createLocationS3(params: CreateLocationS3Request): Request[CreateLocationS3Response]          = js.native
-    def createLocationSmb(params: CreateLocationSmbRequest): Request[CreateLocationSmbResponse]       = js.native
-    def createTask(params: CreateTaskRequest): Request[CreateTaskResponse]                            = js.native
-    def deleteAgent(params: DeleteAgentRequest): Request[DeleteAgentResponse]                         = js.native
-    def deleteLocation(params: DeleteLocationRequest): Request[DeleteLocationResponse]                = js.native
-    def deleteTask(params: DeleteTaskRequest): Request[DeleteTaskResponse]                            = js.native
-    def describeAgent(params: DescribeAgentRequest): Request[DescribeAgentResponse]                   = js.native
+    def createLocationNfs(params: CreateLocationNfsRequest): Request[CreateLocationNfsResponse] = js.native
+    def createLocationS3(params: CreateLocationS3Request): Request[CreateLocationS3Response] = js.native
+    def createLocationSmb(params: CreateLocationSmbRequest): Request[CreateLocationSmbResponse] = js.native
+    def createTask(params: CreateTaskRequest): Request[CreateTaskResponse] = js.native
+    def deleteAgent(params: DeleteAgentRequest): Request[DeleteAgentResponse] = js.native
+    def deleteLocation(params: DeleteLocationRequest): Request[DeleteLocationResponse] = js.native
+    def deleteTask(params: DeleteTaskRequest): Request[DeleteTaskResponse] = js.native
+    def describeAgent(params: DescribeAgentRequest): Request[DescribeAgentResponse] = js.native
     def describeLocationEfs(params: DescribeLocationEfsRequest): Request[DescribeLocationEfsResponse] = js.native
     def describeLocationFsxWindows(
         params: DescribeLocationFsxWindowsRequest
-    ): Request[DescribeLocationFsxWindowsResponse]                                                          = js.native
-    def describeLocationNfs(params: DescribeLocationNfsRequest): Request[DescribeLocationNfsResponse]       = js.native
-    def describeLocationS3(params: DescribeLocationS3Request): Request[DescribeLocationS3Response]          = js.native
-    def describeLocationSmb(params: DescribeLocationSmbRequest): Request[DescribeLocationSmbResponse]       = js.native
-    def describeTask(params: DescribeTaskRequest): Request[DescribeTaskResponse]                            = js.native
+    ): Request[DescribeLocationFsxWindowsResponse] = js.native
+    def describeLocationNfs(params: DescribeLocationNfsRequest): Request[DescribeLocationNfsResponse] = js.native
+    def describeLocationS3(params: DescribeLocationS3Request): Request[DescribeLocationS3Response] = js.native
+    def describeLocationSmb(params: DescribeLocationSmbRequest): Request[DescribeLocationSmbResponse] = js.native
+    def describeTask(params: DescribeTaskRequest): Request[DescribeTaskResponse] = js.native
     def describeTaskExecution(params: DescribeTaskExecutionRequest): Request[DescribeTaskExecutionResponse] = js.native
-    def listAgents(params: ListAgentsRequest): Request[ListAgentsResponse]                                  = js.native
-    def listLocations(params: ListLocationsRequest): Request[ListLocationsResponse]                         = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
-    def listTaskExecutions(params: ListTaskExecutionsRequest): Request[ListTaskExecutionsResponse]          = js.native
-    def listTasks(params: ListTasksRequest): Request[ListTasksResponse]                                     = js.native
-    def startTaskExecution(params: StartTaskExecutionRequest): Request[StartTaskExecutionResponse]          = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                         = js.native
-    def updateAgent(params: UpdateAgentRequest): Request[UpdateAgentResponse]                               = js.native
-    def updateTask(params: UpdateTaskRequest): Request[UpdateTaskResponse]                                  = js.native
+    def listAgents(params: ListAgentsRequest): Request[ListAgentsResponse] = js.native
+    def listLocations(params: ListLocationsRequest): Request[ListLocationsResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def listTaskExecutions(params: ListTaskExecutionsRequest): Request[ListTaskExecutionsResponse] = js.native
+    def listTasks(params: ListTasksRequest): Request[ListTasksResponse] = js.native
+    def startTaskExecution(params: StartTaskExecutionRequest): Request[StartTaskExecutionResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateAgent(params: UpdateAgentRequest): Request[UpdateAgentResponse] = js.native
+    def updateTask(params: UpdateTaskRequest): Request[UpdateTaskResponse] = js.native
   }
 
   /**
@@ -190,7 +190,7 @@ package datasync {
   @js.native
   sealed trait AgentStatus extends js.Any
   object AgentStatus extends js.Object {
-    val ONLINE  = "ONLINE".asInstanceOf[AgentStatus]
+    val ONLINE = "ONLINE".asInstanceOf[AgentStatus]
     val OFFLINE = "OFFLINE".asInstanceOf[AgentStatus]
 
     val values = js.Object.freeze(js.Array(ONLINE, OFFLINE))
@@ -199,7 +199,7 @@ package datasync {
   @js.native
   sealed trait Atime extends js.Any
   object Atime extends js.Object {
-    val NONE        = "NONE".asInstanceOf[Atime]
+    val NONE = "NONE".asInstanceOf[Atime]
     val BEST_EFFORT = "BEST_EFFORT".asInstanceOf[Atime]
 
     val values = js.Object.freeze(js.Array(NONE, BEST_EFFORT))
@@ -302,7 +302,7 @@ package datasync {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateLocationEfsRequest = {
       val __obj = js.Dynamic.literal(
-        "Ec2Config"        -> Ec2Config.asInstanceOf[js.Any],
+        "Ec2Config" -> Ec2Config.asInstanceOf[js.Any],
         "EfsFilesystemArn" -> EfsFilesystemArn.asInstanceOf[js.Any]
       )
 
@@ -354,10 +354,10 @@ package datasync {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateLocationFsxWindowsRequest = {
       val __obj = js.Dynamic.literal(
-        "FsxFilesystemArn"  -> FsxFilesystemArn.asInstanceOf[js.Any],
-        "Password"          -> Password.asInstanceOf[js.Any],
+        "FsxFilesystemArn" -> FsxFilesystemArn.asInstanceOf[js.Any],
+        "Password" -> Password.asInstanceOf[js.Any],
         "SecurityGroupArns" -> SecurityGroupArns.asInstanceOf[js.Any],
-        "User"              -> User.asInstanceOf[js.Any]
+        "User" -> User.asInstanceOf[js.Any]
       )
 
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
@@ -402,9 +402,9 @@ package datasync {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateLocationNfsRequest = {
       val __obj = js.Dynamic.literal(
-        "OnPremConfig"   -> OnPremConfig.asInstanceOf[js.Any],
+        "OnPremConfig" -> OnPremConfig.asInstanceOf[js.Any],
         "ServerHostname" -> ServerHostname.asInstanceOf[js.Any],
-        "Subdirectory"   -> Subdirectory.asInstanceOf[js.Any]
+        "Subdirectory" -> Subdirectory.asInstanceOf[js.Any]
       )
 
       MountOptions.foreach(__v => __obj.updateDynamic("MountOptions")(__v.asInstanceOf[js.Any]))
@@ -449,7 +449,7 @@ package datasync {
     ): CreateLocationS3Request = {
       val __obj = js.Dynamic.literal(
         "S3BucketArn" -> S3BucketArn.asInstanceOf[js.Any],
-        "S3Config"    -> S3Config.asInstanceOf[js.Any]
+        "S3Config" -> S3Config.asInstanceOf[js.Any]
       )
 
       S3StorageClass.foreach(__v => __obj.updateDynamic("S3StorageClass")(__v.asInstanceOf[js.Any]))
@@ -500,11 +500,11 @@ package datasync {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateLocationSmbRequest = {
       val __obj = js.Dynamic.literal(
-        "AgentArns"      -> AgentArns.asInstanceOf[js.Any],
-        "Password"       -> Password.asInstanceOf[js.Any],
+        "AgentArns" -> AgentArns.asInstanceOf[js.Any],
+        "Password" -> Password.asInstanceOf[js.Any],
         "ServerHostname" -> ServerHostname.asInstanceOf[js.Any],
-        "Subdirectory"   -> Subdirectory.asInstanceOf[js.Any],
-        "User"           -> User.asInstanceOf[js.Any]
+        "Subdirectory" -> Subdirectory.asInstanceOf[js.Any],
+        "User" -> User.asInstanceOf[js.Any]
       )
 
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
@@ -556,7 +556,7 @@ package datasync {
     ): CreateTaskRequest = {
       val __obj = js.Dynamic.literal(
         "DestinationLocationArn" -> DestinationLocationArn.asInstanceOf[js.Any],
-        "SourceLocationArn"      -> SourceLocationArn.asInstanceOf[js.Any]
+        "SourceLocationArn" -> SourceLocationArn.asInstanceOf[js.Any]
       )
 
       CloudWatchLogGroupArn.foreach(__v => __obj.updateDynamic("CloudWatchLogGroupArn")(__v.asInstanceOf[js.Any]))
@@ -1139,7 +1139,7 @@ package datasync {
     ): Ec2Config = {
       val __obj = js.Dynamic.literal(
         "SecurityGroupArns" -> SecurityGroupArns.asInstanceOf[js.Any],
-        "SubnetArn"         -> SubnetArn.asInstanceOf[js.Any]
+        "SubnetArn" -> SubnetArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Ec2Config]
@@ -1149,9 +1149,9 @@ package datasync {
   @js.native
   sealed trait EndpointType extends js.Any
   object EndpointType extends js.Object {
-    val PUBLIC       = "PUBLIC".asInstanceOf[EndpointType]
+    val PUBLIC = "PUBLIC".asInstanceOf[EndpointType]
     val PRIVATE_LINK = "PRIVATE_LINK".asInstanceOf[EndpointType]
-    val FIPS         = "FIPS".asInstanceOf[EndpointType]
+    val FIPS = "FIPS".asInstanceOf[EndpointType]
 
     val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE_LINK, FIPS))
   }
@@ -1189,10 +1189,10 @@ package datasync {
   @js.native
   sealed trait Gid extends js.Any
   object Gid extends js.Object {
-    val NONE      = "NONE".asInstanceOf[Gid]
+    val NONE = "NONE".asInstanceOf[Gid]
     val INT_VALUE = "INT_VALUE".asInstanceOf[Gid]
-    val NAME      = "NAME".asInstanceOf[Gid]
-    val BOTH      = "BOTH".asInstanceOf[Gid]
+    val NAME = "NAME".asInstanceOf[Gid]
+    val BOTH = "BOTH".asInstanceOf[Gid]
 
     val values = js.Object.freeze(js.Array(NONE, INT_VALUE, NAME, BOTH))
   }
@@ -1423,8 +1423,8 @@ package datasync {
   @js.native
   sealed trait LogLevel extends js.Any
   object LogLevel extends js.Object {
-    val OFF      = "OFF".asInstanceOf[LogLevel]
-    val BASIC    = "BASIC".asInstanceOf[LogLevel]
+    val OFF = "OFF".asInstanceOf[LogLevel]
+    val BASIC = "BASIC".asInstanceOf[LogLevel]
     val TRANSFER = "TRANSFER".asInstanceOf[LogLevel]
 
     val values = js.Object.freeze(js.Array(OFF, BASIC, TRANSFER))
@@ -1433,7 +1433,7 @@ package datasync {
   @js.native
   sealed trait Mtime extends js.Any
   object Mtime extends js.Object {
-    val NONE     = "NONE".asInstanceOf[Mtime]
+    val NONE = "NONE".asInstanceOf[Mtime]
     val PRESERVE = "PRESERVE".asInstanceOf[Mtime]
 
     val values = js.Object.freeze(js.Array(NONE, PRESERVE))
@@ -1462,9 +1462,9 @@ package datasync {
   sealed trait NfsVersion extends js.Any
   object NfsVersion extends js.Object {
     val AUTOMATIC = "AUTOMATIC".asInstanceOf[NfsVersion]
-    val NFS3      = "NFS3".asInstanceOf[NfsVersion]
-    val NFS4_0    = "NFS4_0".asInstanceOf[NfsVersion]
-    val NFS4_1    = "NFS4_1".asInstanceOf[NfsVersion]
+    val NFS3 = "NFS3".asInstanceOf[NfsVersion]
+    val NFS4_0 = "NFS4_0".asInstanceOf[NfsVersion]
+    val NFS4_1 = "NFS4_1".asInstanceOf[NfsVersion]
 
     val values = js.Object.freeze(js.Array(AUTOMATIC, NFS3, NFS4_0, NFS4_1))
   }
@@ -1547,7 +1547,7 @@ package datasync {
   sealed trait OverwriteMode extends js.Any
   object OverwriteMode extends js.Object {
     val ALWAYS = "ALWAYS".asInstanceOf[OverwriteMode]
-    val NEVER  = "NEVER".asInstanceOf[OverwriteMode]
+    val NEVER = "NEVER".asInstanceOf[OverwriteMode]
 
     val values = js.Object.freeze(js.Array(ALWAYS, NEVER))
   }
@@ -1557,7 +1557,7 @@ package datasync {
   object PhaseStatus extends js.Object {
     val PENDING = "PENDING".asInstanceOf[PhaseStatus]
     val SUCCESS = "SUCCESS".asInstanceOf[PhaseStatus]
-    val ERROR   = "ERROR".asInstanceOf[PhaseStatus]
+    val ERROR = "ERROR".asInstanceOf[PhaseStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, SUCCESS, ERROR))
   }
@@ -1565,7 +1565,7 @@ package datasync {
   @js.native
   sealed trait PosixPermissions extends js.Any
   object PosixPermissions extends js.Object {
-    val NONE     = "NONE".asInstanceOf[PosixPermissions]
+    val NONE = "NONE".asInstanceOf[PosixPermissions]
     val PRESERVE = "PRESERVE".asInstanceOf[PosixPermissions]
 
     val values = js.Object.freeze(js.Array(NONE, PRESERVE))
@@ -1575,7 +1575,7 @@ package datasync {
   sealed trait PreserveDeletedFiles extends js.Any
   object PreserveDeletedFiles extends js.Object {
     val PRESERVE = "PRESERVE".asInstanceOf[PreserveDeletedFiles]
-    val REMOVE   = "REMOVE".asInstanceOf[PreserveDeletedFiles]
+    val REMOVE = "REMOVE".asInstanceOf[PreserveDeletedFiles]
 
     val values = js.Object.freeze(js.Array(PRESERVE, REMOVE))
   }
@@ -1583,7 +1583,7 @@ package datasync {
   @js.native
   sealed trait PreserveDevices extends js.Any
   object PreserveDevices extends js.Object {
-    val NONE     = "NONE".asInstanceOf[PreserveDevices]
+    val NONE = "NONE".asInstanceOf[PreserveDevices]
     val PRESERVE = "PRESERVE".asInstanceOf[PreserveDevices]
 
     val values = js.Object.freeze(js.Array(NONE, PRESERVE))
@@ -1642,12 +1642,12 @@ package datasync {
   @js.native
   sealed trait S3StorageClass extends js.Any
   object S3StorageClass extends js.Object {
-    val STANDARD            = "STANDARD".asInstanceOf[S3StorageClass]
-    val STANDARD_IA         = "STANDARD_IA".asInstanceOf[S3StorageClass]
-    val ONEZONE_IA          = "ONEZONE_IA".asInstanceOf[S3StorageClass]
+    val STANDARD = "STANDARD".asInstanceOf[S3StorageClass]
+    val STANDARD_IA = "STANDARD_IA".asInstanceOf[S3StorageClass]
+    val ONEZONE_IA = "ONEZONE_IA".asInstanceOf[S3StorageClass]
     val INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[S3StorageClass]
-    val GLACIER             = "GLACIER".asInstanceOf[S3StorageClass]
-    val DEEP_ARCHIVE        = "DEEP_ARCHIVE".asInstanceOf[S3StorageClass]
+    val GLACIER = "GLACIER".asInstanceOf[S3StorageClass]
+    val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[S3StorageClass]
 
     val values =
       js.Object.freeze(js.Array(STANDARD, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE))
@@ -1676,8 +1676,8 @@ package datasync {
   sealed trait SmbVersion extends js.Any
   object SmbVersion extends js.Object {
     val AUTOMATIC = "AUTOMATIC".asInstanceOf[SmbVersion]
-    val SMB2      = "SMB2".asInstanceOf[SmbVersion]
-    val SMB3      = "SMB3".asInstanceOf[SmbVersion]
+    val SMB2 = "SMB2".asInstanceOf[SmbVersion]
+    val SMB3 = "SMB3".asInstanceOf[SmbVersion]
 
     val values = js.Object.freeze(js.Array(AUTOMATIC, SMB2, SMB3))
   }
@@ -1760,7 +1760,7 @@ package datasync {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1848,13 +1848,13 @@ package datasync {
   @js.native
   sealed trait TaskExecutionStatus extends js.Any
   object TaskExecutionStatus extends js.Object {
-    val QUEUED       = "QUEUED".asInstanceOf[TaskExecutionStatus]
-    val LAUNCHING    = "LAUNCHING".asInstanceOf[TaskExecutionStatus]
-    val PREPARING    = "PREPARING".asInstanceOf[TaskExecutionStatus]
+    val QUEUED = "QUEUED".asInstanceOf[TaskExecutionStatus]
+    val LAUNCHING = "LAUNCHING".asInstanceOf[TaskExecutionStatus]
+    val PREPARING = "PREPARING".asInstanceOf[TaskExecutionStatus]
     val TRANSFERRING = "TRANSFERRING".asInstanceOf[TaskExecutionStatus]
-    val VERIFYING    = "VERIFYING".asInstanceOf[TaskExecutionStatus]
-    val SUCCESS      = "SUCCESS".asInstanceOf[TaskExecutionStatus]
-    val ERROR        = "ERROR".asInstanceOf[TaskExecutionStatus]
+    val VERIFYING = "VERIFYING".asInstanceOf[TaskExecutionStatus]
+    val SUCCESS = "SUCCESS".asInstanceOf[TaskExecutionStatus]
+    val ERROR = "ERROR".asInstanceOf[TaskExecutionStatus]
 
     val values = js.Object.freeze(js.Array(QUEUED, LAUNCHING, PREPARING, TRANSFERRING, VERIFYING, SUCCESS, ERROR))
   }
@@ -1887,7 +1887,7 @@ package datasync {
   @js.native
   sealed trait TaskQueueing extends js.Any
   object TaskQueueing extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[TaskQueueing]
+    val ENABLED = "ENABLED".asInstanceOf[TaskQueueing]
     val DISABLED = "DISABLED".asInstanceOf[TaskQueueing]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -1917,10 +1917,10 @@ package datasync {
   @js.native
   sealed trait TaskStatus extends js.Any
   object TaskStatus extends js.Object {
-    val AVAILABLE   = "AVAILABLE".asInstanceOf[TaskStatus]
-    val CREATING    = "CREATING".asInstanceOf[TaskStatus]
-    val QUEUED      = "QUEUED".asInstanceOf[TaskStatus]
-    val RUNNING     = "RUNNING".asInstanceOf[TaskStatus]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[TaskStatus]
+    val CREATING = "CREATING".asInstanceOf[TaskStatus]
+    val QUEUED = "QUEUED".asInstanceOf[TaskStatus]
+    val RUNNING = "RUNNING".asInstanceOf[TaskStatus]
     val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[TaskStatus]
 
     val values = js.Object.freeze(js.Array(AVAILABLE, CREATING, QUEUED, RUNNING, UNAVAILABLE))
@@ -1929,10 +1929,10 @@ package datasync {
   @js.native
   sealed trait Uid extends js.Any
   object Uid extends js.Object {
-    val NONE      = "NONE".asInstanceOf[Uid]
+    val NONE = "NONE".asInstanceOf[Uid]
     val INT_VALUE = "INT_VALUE".asInstanceOf[Uid]
-    val NAME      = "NAME".asInstanceOf[Uid]
-    val BOTH      = "BOTH".asInstanceOf[Uid]
+    val NAME = "NAME".asInstanceOf[Uid]
+    val BOTH = "BOTH".asInstanceOf[Uid]
 
     val values = js.Object.freeze(js.Array(NONE, INT_VALUE, NAME, BOTH))
   }
@@ -1950,7 +1950,7 @@ package datasync {
         ResourceArn: TaggableResourceArn
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
-        "Keys"        -> Keys.asInstanceOf[js.Any],
+        "Keys" -> Keys.asInstanceOf[js.Any],
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -2058,8 +2058,8 @@ package datasync {
   sealed trait VerifyMode extends js.Any
   object VerifyMode extends js.Object {
     val POINT_IN_TIME_CONSISTENT = "POINT_IN_TIME_CONSISTENT".asInstanceOf[VerifyMode]
-    val ONLY_FILES_TRANSFERRED   = "ONLY_FILES_TRANSFERRED".asInstanceOf[VerifyMode]
-    val NONE                     = "NONE".asInstanceOf[VerifyMode]
+    val ONLY_FILES_TRANSFERRED = "ONLY_FILES_TRANSFERRED".asInstanceOf[VerifyMode]
+    val NONE = "NONE".asInstanceOf[VerifyMode]
 
     val values = js.Object.freeze(js.Array(POINT_IN_TIME_CONSISTENT, ONLY_FILES_TRANSFERRED, NONE))
   }

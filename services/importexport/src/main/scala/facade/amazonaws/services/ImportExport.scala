@@ -7,47 +7,47 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object importexport {
-  type APIVersion            = String
-  type ArtifactList          = js.Array[Artifact]
-  type Carrier               = String
-  type CreationDate          = js.Date
-  type CurrentManifest       = String
-  type Description           = String
-  type ErrorCount            = Int
-  type ErrorMessage          = String
-  type GenericString         = String
-  type IsCanceled            = Boolean
-  type IsTruncated           = Boolean
-  type JobId                 = String
-  type JobIdList             = js.Array[GenericString]
-  type JobsList              = js.Array[Job]
-  type LocationCode          = String
-  type LocationMessage       = String
-  type LogBucket             = String
-  type LogKey                = String
-  type Manifest              = String
-  type ManifestAddendum      = String
-  type Marker                = String
-  type MaxJobs               = Int
-  type ProgressCode          = String
-  type ProgressMessage       = String
-  type Signature             = String
+  type APIVersion = String
+  type ArtifactList = js.Array[Artifact]
+  type Carrier = String
+  type CreationDate = js.Date
+  type CurrentManifest = String
+  type Description = String
+  type ErrorCount = Int
+  type ErrorMessage = String
+  type GenericString = String
+  type IsCanceled = Boolean
+  type IsTruncated = Boolean
+  type JobId = String
+  type JobIdList = js.Array[GenericString]
+  type JobsList = js.Array[Job]
+  type LocationCode = String
+  type LocationMessage = String
+  type LogBucket = String
+  type LogKey = String
+  type Manifest = String
+  type ManifestAddendum = String
+  type Marker = String
+  type MaxJobs = Int
+  type ProgressCode = String
+  type ProgressMessage = String
+  type Signature = String
   type SignatureFileContents = String
-  type Success               = Boolean
-  type TrackingNumber        = String
-  type URL                   = String
-  type ValidateOnly          = Boolean
-  type WarningMessage        = String
-  type city                  = String
-  type company               = String
-  type country               = String
-  type name                  = String
-  type phoneNumber           = String
-  type postalCode            = String
-  type stateOrProvince       = String
-  type street1               = String
-  type street2               = String
-  type street3               = String
+  type Success = Boolean
+  type TrackingNumber = String
+  type URL = String
+  type ValidateOnly = Boolean
+  type WarningMessage = String
+  type city = String
+  type company = String
+  type country = String
+  type name = String
+  type phoneNumber = String
+  type postalCode = String
+  type stateOrProvince = String
+  type street1 = String
+  type street2 = String
+  type street3 = String
 
   implicit final class ImportExportOps(private val service: ImportExport) extends AnyVal {
 
@@ -72,12 +72,12 @@ package importexport {
   class ImportExport() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def cancelJob(params: CancelJobInput): Request[CancelJobOutput]                      = js.native
-    def createJob(params: CreateJobInput): Request[CreateJobOutput]                      = js.native
+    def cancelJob(params: CancelJobInput): Request[CancelJobOutput] = js.native
+    def createJob(params: CreateJobInput): Request[CreateJobOutput] = js.native
     def getShippingLabel(params: GetShippingLabelInput): Request[GetShippingLabelOutput] = js.native
-    def getStatus(params: GetStatusInput): Request[GetStatusOutput]                      = js.native
-    def listJobs(params: ListJobsInput): Request[ListJobsOutput]                         = js.native
-    def updateJob(params: UpdateJobInput): Request[UpdateJobOutput]                      = js.native
+    def getStatus(params: GetStatusInput): Request[GetStatusOutput] = js.native
+    def listJobs(params: ListJobsInput): Request[ListJobsOutput] = js.native
+    def updateJob(params: UpdateJobInput): Request[UpdateJobOutput] = js.native
   }
 
   /**
@@ -183,8 +183,8 @@ package importexport {
         ManifestAddendum: js.UndefOr[ManifestAddendum] = js.undefined
     ): CreateJobInput = {
       val __obj = js.Dynamic.literal(
-        "JobType"      -> JobType.asInstanceOf[js.Any],
-        "Manifest"     -> Manifest.asInstanceOf[js.Any],
+        "JobType" -> JobType.asInstanceOf[js.Any],
+        "Manifest" -> Manifest.asInstanceOf[js.Any],
         "ValidateOnly" -> ValidateOnly.asInstanceOf[js.Any]
       )
 
@@ -639,9 +639,9 @@ package importexport {
         APIVersion: js.UndefOr[APIVersion] = js.undefined
     ): UpdateJobInput = {
       val __obj = js.Dynamic.literal(
-        "JobId"        -> JobId.asInstanceOf[js.Any],
-        "JobType"      -> JobType.asInstanceOf[js.Any],
-        "Manifest"     -> Manifest.asInstanceOf[js.Any],
+        "JobId" -> JobId.asInstanceOf[js.Any],
+        "JobType" -> JobType.asInstanceOf[js.Any],
+        "Manifest" -> Manifest.asInstanceOf[js.Any],
         "ValidateOnly" -> ValidateOnly.asInstanceOf[js.Any]
       )
 

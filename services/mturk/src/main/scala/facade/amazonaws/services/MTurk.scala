@@ -7,37 +7,37 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object mturk {
-  type AssignmentList                 = js.Array[Assignment]
-  type AssignmentStatusList           = js.Array[AssignmentStatus]
-  type BonusPaymentList               = js.Array[BonusPayment]
-  type CountryParameters              = String
-  type CurrencyAmount                 = String
-  type CustomerId                     = String
-  type CustomerIdList                 = js.Array[CustomerId]
-  type EntityId                       = String
-  type EventTypeList                  = js.Array[EventType]
-  type ExceptionMessage               = String
-  type HITLayoutParameterList         = js.Array[HITLayoutParameter]
-  type HITList                        = js.Array[HIT]
-  type IdempotencyToken               = String
-  type IntegerList                    = js.Array[Int]
-  type LocaleList                     = js.Array[Locale]
+  type AssignmentList = js.Array[Assignment]
+  type AssignmentStatusList = js.Array[AssignmentStatus]
+  type BonusPaymentList = js.Array[BonusPayment]
+  type CountryParameters = String
+  type CurrencyAmount = String
+  type CustomerId = String
+  type CustomerIdList = js.Array[CustomerId]
+  type EntityId = String
+  type EventTypeList = js.Array[EventType]
+  type ExceptionMessage = String
+  type HITLayoutParameterList = js.Array[HITLayoutParameter]
+  type HITList = js.Array[HIT]
+  type IdempotencyToken = String
+  type IntegerList = js.Array[Int]
+  type LocaleList = js.Array[Locale]
   type NotifyWorkersFailureStatusList = js.Array[NotifyWorkersFailureStatus]
-  type PaginationToken                = String
-  type ParameterMapEntryList          = js.Array[ParameterMapEntry]
-  type PolicyParameterList            = js.Array[PolicyParameter]
-  type QualificationList              = js.Array[Qualification]
-  type QualificationRequestList       = js.Array[QualificationRequest]
-  type QualificationRequirementList   = js.Array[QualificationRequirement]
-  type QualificationTypeList          = js.Array[QualificationType]
-  type ResultSize                     = Int
-  type ReviewActionDetailList         = js.Array[ReviewActionDetail]
-  type ReviewPolicyLevelList          = js.Array[ReviewPolicyLevel]
-  type ReviewResultDetailList         = js.Array[ReviewResultDetail]
-  type StringList                     = js.Array[String]
-  type Timestamp                      = js.Date
-  type TurkErrorCode                  = String
-  type WorkerBlockList                = js.Array[WorkerBlock]
+  type PaginationToken = String
+  type ParameterMapEntryList = js.Array[ParameterMapEntry]
+  type PolicyParameterList = js.Array[PolicyParameter]
+  type QualificationList = js.Array[Qualification]
+  type QualificationRequestList = js.Array[QualificationRequest]
+  type QualificationRequirementList = js.Array[QualificationRequirement]
+  type QualificationTypeList = js.Array[QualificationType]
+  type ResultSize = Int
+  type ReviewActionDetailList = js.Array[ReviewActionDetail]
+  type ReviewPolicyLevelList = js.Array[ReviewPolicyLevel]
+  type ReviewResultDetailList = js.Array[ReviewResultDetail]
+  type StringList = js.Array[String]
+  type Timestamp = js.Date
+  type TurkErrorCode = String
+  type WorkerBlockList = js.Array[WorkerBlock]
 
   implicit final class MTurkOps(private val service: MTurk) extends AnyVal {
 
@@ -152,36 +152,36 @@ package mturk {
 
     def acceptQualificationRequest(
         params: AcceptQualificationRequestRequest
-    ): Request[AcceptQualificationRequestResponse]                                              = js.native
+    ): Request[AcceptQualificationRequestResponse] = js.native
     def approveAssignment(params: ApproveAssignmentRequest): Request[ApproveAssignmentResponse] = js.native
     def associateQualificationWithWorker(
         params: AssociateQualificationWithWorkerRequest
     ): Request[AssociateQualificationWithWorkerResponse] = js.native
     def createAdditionalAssignmentsForHIT(
         params: CreateAdditionalAssignmentsForHITRequest
-    ): Request[CreateAdditionalAssignmentsForHITResponse]                                                = js.native
-    def createHIT(params: CreateHITRequest): Request[CreateHITResponse]                                  = js.native
-    def createHITType(params: CreateHITTypeRequest): Request[CreateHITTypeResponse]                      = js.native
+    ): Request[CreateAdditionalAssignmentsForHITResponse] = js.native
+    def createHIT(params: CreateHITRequest): Request[CreateHITResponse] = js.native
+    def createHITType(params: CreateHITTypeRequest): Request[CreateHITTypeResponse] = js.native
     def createHITWithHITType(params: CreateHITWithHITTypeRequest): Request[CreateHITWithHITTypeResponse] = js.native
     def createQualificationType(params: CreateQualificationTypeRequest): Request[CreateQualificationTypeResponse] =
       js.native
     def createWorkerBlock(params: CreateWorkerBlockRequest): Request[CreateWorkerBlockResponse] = js.native
-    def deleteHIT(params: DeleteHITRequest): Request[DeleteHITResponse]                         = js.native
+    def deleteHIT(params: DeleteHITRequest): Request[DeleteHITResponse] = js.native
     def deleteQualificationType(params: DeleteQualificationTypeRequest): Request[DeleteQualificationTypeResponse] =
       js.native
     def deleteWorkerBlock(params: DeleteWorkerBlockRequest): Request[DeleteWorkerBlockResponse] = js.native
     def disassociateQualificationFromWorker(
         params: DisassociateQualificationFromWorkerRequest
-    ): Request[DisassociateQualificationFromWorkerResponse]                                                 = js.native
-    def getAccountBalance(params: GetAccountBalanceRequest): Request[GetAccountBalanceResponse]             = js.native
-    def getAssignment(params: GetAssignmentRequest): Request[GetAssignmentResponse]                         = js.native
-    def getFileUploadURL(params: GetFileUploadURLRequest): Request[GetFileUploadURLResponse]                = js.native
-    def getHIT(params: GetHITRequest): Request[GetHITResponse]                                              = js.native
+    ): Request[DisassociateQualificationFromWorkerResponse] = js.native
+    def getAccountBalance(params: GetAccountBalanceRequest): Request[GetAccountBalanceResponse] = js.native
+    def getAssignment(params: GetAssignmentRequest): Request[GetAssignmentResponse] = js.native
+    def getFileUploadURL(params: GetFileUploadURLRequest): Request[GetFileUploadURLResponse] = js.native
+    def getHIT(params: GetHITRequest): Request[GetHITResponse] = js.native
     def getQualificationScore(params: GetQualificationScoreRequest): Request[GetQualificationScoreResponse] = js.native
-    def getQualificationType(params: GetQualificationTypeRequest): Request[GetQualificationTypeResponse]    = js.native
+    def getQualificationType(params: GetQualificationTypeRequest): Request[GetQualificationTypeResponse] = js.native
     def listAssignmentsForHIT(params: ListAssignmentsForHITRequest): Request[ListAssignmentsForHITResponse] = js.native
-    def listBonusPayments(params: ListBonusPaymentsRequest): Request[ListBonusPaymentsResponse]             = js.native
-    def listHITs(params: ListHITsRequest): Request[ListHITsResponse]                                        = js.native
+    def listBonusPayments(params: ListBonusPaymentsRequest): Request[ListBonusPaymentsResponse] = js.native
+    def listHITs(params: ListHITsRequest): Request[ListHITsResponse] = js.native
     def listHITsForQualificationType(
         params: ListHITsForQualificationTypeRequest
     ): Request[ListHITsForQualificationTypeResponse] = js.native
@@ -192,17 +192,17 @@ package mturk {
       js.native
     def listReviewPolicyResultsForHIT(
         params: ListReviewPolicyResultsForHITRequest
-    ): Request[ListReviewPolicyResultsForHITResponse]                                              = js.native
+    ): Request[ListReviewPolicyResultsForHITResponse] = js.native
     def listReviewableHITs(params: ListReviewableHITsRequest): Request[ListReviewableHITsResponse] = js.native
-    def listWorkerBlocks(params: ListWorkerBlocksRequest): Request[ListWorkerBlocksResponse]       = js.native
+    def listWorkerBlocks(params: ListWorkerBlocksRequest): Request[ListWorkerBlocksResponse] = js.native
     def listWorkersWithQualificationType(
         params: ListWorkersWithQualificationTypeRequest
-    ): Request[ListWorkersWithQualificationTypeResponse]                                     = js.native
-    def notifyWorkers(params: NotifyWorkersRequest): Request[NotifyWorkersResponse]          = js.native
+    ): Request[ListWorkersWithQualificationTypeResponse] = js.native
+    def notifyWorkers(params: NotifyWorkersRequest): Request[NotifyWorkersResponse] = js.native
     def rejectAssignment(params: RejectAssignmentRequest): Request[RejectAssignmentResponse] = js.native
     def rejectQualificationRequest(
         params: RejectQualificationRequestRequest
-    ): Request[RejectQualificationRequestResponse]                      = js.native
+    ): Request[RejectQualificationRequestResponse] = js.native
     def sendBonus(params: SendBonusRequest): Request[SendBonusResponse] = js.native
     def sendTestEventNotification(
         params: SendTestEventNotificationRequest
@@ -210,7 +210,7 @@ package mturk {
     def updateExpirationForHIT(params: UpdateExpirationForHITRequest): Request[UpdateExpirationForHITResponse] =
       js.native
     def updateHITReviewStatus(params: UpdateHITReviewStatusRequest): Request[UpdateHITReviewStatusResponse] = js.native
-    def updateHITTypeOfHIT(params: UpdateHITTypeOfHITRequest): Request[UpdateHITTypeOfHITResponse]          = js.native
+    def updateHITTypeOfHIT(params: UpdateHITTypeOfHITRequest): Request[UpdateHITTypeOfHITResponse] = js.native
     def updateNotificationSettings(
         params: UpdateNotificationSettingsRequest
     ): Request[UpdateNotificationSettingsResponse] = js.native
@@ -345,8 +345,8 @@ package mturk {
   sealed trait AssignmentStatus extends js.Any
   object AssignmentStatus extends js.Object {
     val Submitted = "Submitted".asInstanceOf[AssignmentStatus]
-    val Approved  = "Approved".asInstanceOf[AssignmentStatus]
-    val Rejected  = "Rejected".asInstanceOf[AssignmentStatus]
+    val Approved = "Approved".asInstanceOf[AssignmentStatus]
+    val Rejected = "Rejected".asInstanceOf[AssignmentStatus]
 
     val values = js.Object.freeze(js.Array(Submitted, Approved, Rejected))
   }
@@ -369,7 +369,7 @@ package mturk {
     ): AssociateQualificationWithWorkerRequest = {
       val __obj = js.Dynamic.literal(
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any],
-        "WorkerId"            -> WorkerId.asInstanceOf[js.Any]
+        "WorkerId" -> WorkerId.asInstanceOf[js.Any]
       )
 
       IntegerValue.foreach(__v => __obj.updateDynamic("IntegerValue")(__v.asInstanceOf[js.Any]))
@@ -425,16 +425,16 @@ package mturk {
   @js.native
   sealed trait Comparator extends js.Any
   object Comparator extends js.Object {
-    val LessThan             = "LessThan".asInstanceOf[Comparator]
-    val LessThanOrEqualTo    = "LessThanOrEqualTo".asInstanceOf[Comparator]
-    val GreaterThan          = "GreaterThan".asInstanceOf[Comparator]
+    val LessThan = "LessThan".asInstanceOf[Comparator]
+    val LessThanOrEqualTo = "LessThanOrEqualTo".asInstanceOf[Comparator]
+    val GreaterThan = "GreaterThan".asInstanceOf[Comparator]
     val GreaterThanOrEqualTo = "GreaterThanOrEqualTo".asInstanceOf[Comparator]
-    val EqualTo              = "EqualTo".asInstanceOf[Comparator]
-    val NotEqualTo           = "NotEqualTo".asInstanceOf[Comparator]
-    val Exists               = "Exists".asInstanceOf[Comparator]
-    val DoesNotExist         = "DoesNotExist".asInstanceOf[Comparator]
-    val In                   = "In".asInstanceOf[Comparator]
-    val NotIn                = "NotIn".asInstanceOf[Comparator]
+    val EqualTo = "EqualTo".asInstanceOf[Comparator]
+    val NotEqualTo = "NotEqualTo".asInstanceOf[Comparator]
+    val Exists = "Exists".asInstanceOf[Comparator]
+    val DoesNotExist = "DoesNotExist".asInstanceOf[Comparator]
+    val In = "In".asInstanceOf[Comparator]
+    val NotIn = "NotIn".asInstanceOf[Comparator]
 
     val values = js.Object.freeze(
       js.Array(
@@ -467,7 +467,7 @@ package mturk {
         UniqueRequestToken: js.UndefOr[IdempotencyToken] = js.undefined
     ): CreateAdditionalAssignmentsForHITRequest = {
       val __obj = js.Dynamic.literal(
-        "HITId"                         -> HITId.asInstanceOf[js.Any],
+        "HITId" -> HITId.asInstanceOf[js.Any],
         "NumberOfAdditionalAssignments" -> NumberOfAdditionalAssignments.asInstanceOf[js.Any]
       )
 
@@ -531,10 +531,10 @@ package mturk {
     ): CreateHITRequest = {
       val __obj = js.Dynamic.literal(
         "AssignmentDurationInSeconds" -> AssignmentDurationInSeconds.asInstanceOf[js.Any],
-        "Description"                 -> Description.asInstanceOf[js.Any],
-        "LifetimeInSeconds"           -> LifetimeInSeconds.asInstanceOf[js.Any],
-        "Reward"                      -> Reward.asInstanceOf[js.Any],
-        "Title"                       -> Title.asInstanceOf[js.Any]
+        "Description" -> Description.asInstanceOf[js.Any],
+        "LifetimeInSeconds" -> LifetimeInSeconds.asInstanceOf[js.Any],
+        "Reward" -> Reward.asInstanceOf[js.Any],
+        "Title" -> Title.asInstanceOf[js.Any]
       )
 
       AssignmentReviewPolicy.foreach(__v => __obj.updateDynamic("AssignmentReviewPolicy")(__v.asInstanceOf[js.Any]))
@@ -596,9 +596,9 @@ package mturk {
     ): CreateHITTypeRequest = {
       val __obj = js.Dynamic.literal(
         "AssignmentDurationInSeconds" -> AssignmentDurationInSeconds.asInstanceOf[js.Any],
-        "Description"                 -> Description.asInstanceOf[js.Any],
-        "Reward"                      -> Reward.asInstanceOf[js.Any],
-        "Title"                       -> Title.asInstanceOf[js.Any]
+        "Description" -> Description.asInstanceOf[js.Any],
+        "Reward" -> Reward.asInstanceOf[js.Any],
+        "Title" -> Title.asInstanceOf[js.Any]
       )
 
       AutoApprovalDelayInSeconds.foreach(__v =>
@@ -657,7 +657,7 @@ package mturk {
         UniqueRequestToken: js.UndefOr[IdempotencyToken] = js.undefined
     ): CreateHITWithHITTypeRequest = {
       val __obj = js.Dynamic.literal(
-        "HITTypeId"         -> HITTypeId.asInstanceOf[js.Any],
+        "HITTypeId" -> HITTypeId.asInstanceOf[js.Any],
         "LifetimeInSeconds" -> LifetimeInSeconds.asInstanceOf[js.Any]
       )
 
@@ -718,8 +718,8 @@ package mturk {
         TestDurationInSeconds: js.UndefOr[Double] = js.undefined
     ): CreateQualificationTypeRequest = {
       val __obj = js.Dynamic.literal(
-        "Description"             -> Description.asInstanceOf[js.Any],
-        "Name"                    -> Name.asInstanceOf[js.Any],
+        "Description" -> Description.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "QualificationTypeStatus" -> QualificationTypeStatus.asInstanceOf[js.Any]
       )
 
@@ -763,7 +763,7 @@ package mturk {
         WorkerId: CustomerId
     ): CreateWorkerBlockRequest = {
       val __obj = js.Dynamic.literal(
-        "Reason"   -> Reason.asInstanceOf[js.Any],
+        "Reason" -> Reason.asInstanceOf[js.Any],
         "WorkerId" -> WorkerId.asInstanceOf[js.Any]
       )
 
@@ -896,7 +896,7 @@ package mturk {
     ): DisassociateQualificationFromWorkerRequest = {
       val __obj = js.Dynamic.literal(
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any],
-        "WorkerId"            -> WorkerId.asInstanceOf[js.Any]
+        "WorkerId" -> WorkerId.asInstanceOf[js.Any]
       )
 
       Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
@@ -920,18 +920,18 @@ package mturk {
   @js.native
   sealed trait EventType extends js.Any
   object EventType extends js.Object {
-    val AssignmentAccepted  = "AssignmentAccepted".asInstanceOf[EventType]
+    val AssignmentAccepted = "AssignmentAccepted".asInstanceOf[EventType]
     val AssignmentAbandoned = "AssignmentAbandoned".asInstanceOf[EventType]
-    val AssignmentReturned  = "AssignmentReturned".asInstanceOf[EventType]
+    val AssignmentReturned = "AssignmentReturned".asInstanceOf[EventType]
     val AssignmentSubmitted = "AssignmentSubmitted".asInstanceOf[EventType]
-    val AssignmentRejected  = "AssignmentRejected".asInstanceOf[EventType]
-    val AssignmentApproved  = "AssignmentApproved".asInstanceOf[EventType]
-    val HITCreated          = "HITCreated".asInstanceOf[EventType]
-    val HITExpired          = "HITExpired".asInstanceOf[EventType]
-    val HITReviewable       = "HITReviewable".asInstanceOf[EventType]
-    val HITExtended         = "HITExtended".asInstanceOf[EventType]
-    val HITDisposed         = "HITDisposed".asInstanceOf[EventType]
-    val Ping                = "Ping".asInstanceOf[EventType]
+    val AssignmentRejected = "AssignmentRejected".asInstanceOf[EventType]
+    val AssignmentApproved = "AssignmentApproved".asInstanceOf[EventType]
+    val HITCreated = "HITCreated".asInstanceOf[EventType]
+    val HITExpired = "HITExpired".asInstanceOf[EventType]
+    val HITReviewable = "HITReviewable".asInstanceOf[EventType]
+    val HITExtended = "HITExtended".asInstanceOf[EventType]
+    val HITDisposed = "HITDisposed".asInstanceOf[EventType]
+    val Ping = "Ping".asInstanceOf[EventType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1033,7 +1033,7 @@ package mturk {
         QuestionIdentifier: String
     ): GetFileUploadURLRequest = {
       val __obj = js.Dynamic.literal(
-        "AssignmentId"       -> AssignmentId.asInstanceOf[js.Any],
+        "AssignmentId" -> AssignmentId.asInstanceOf[js.Any],
         "QuestionIdentifier" -> QuestionIdentifier.asInstanceOf[js.Any]
       )
 
@@ -1105,7 +1105,7 @@ package mturk {
     ): GetQualificationScoreRequest = {
       val __obj = js.Dynamic.literal(
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any],
-        "WorkerId"            -> WorkerId.asInstanceOf[js.Any]
+        "WorkerId" -> WorkerId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[GetQualificationScoreRequest]
@@ -1256,8 +1256,8 @@ package mturk {
   @js.native
   sealed trait HITAccessActions extends js.Any
   object HITAccessActions extends js.Object {
-    val Accept                   = "Accept".asInstanceOf[HITAccessActions]
-    val PreviewAndAccept         = "PreviewAndAccept".asInstanceOf[HITAccessActions]
+    val Accept = "Accept".asInstanceOf[HITAccessActions]
+    val PreviewAndAccept = "PreviewAndAccept".asInstanceOf[HITAccessActions]
     val DiscoverPreviewAndAccept = "DiscoverPreviewAndAccept".asInstanceOf[HITAccessActions]
 
     val values = js.Object.freeze(js.Array(Accept, PreviewAndAccept, DiscoverPreviewAndAccept))
@@ -1279,7 +1279,7 @@ package mturk {
         Value: String
     ): HITLayoutParameter = {
       val __obj = js.Dynamic.literal(
-        "Name"  -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -1290,9 +1290,9 @@ package mturk {
   @js.native
   sealed trait HITReviewStatus extends js.Any
   object HITReviewStatus extends js.Object {
-    val NotReviewed           = "NotReviewed".asInstanceOf[HITReviewStatus]
-    val MarkedForReview       = "MarkedForReview".asInstanceOf[HITReviewStatus]
-    val ReviewedAppropriate   = "ReviewedAppropriate".asInstanceOf[HITReviewStatus]
+    val NotReviewed = "NotReviewed".asInstanceOf[HITReviewStatus]
+    val MarkedForReview = "MarkedForReview".asInstanceOf[HITReviewStatus]
+    val ReviewedAppropriate = "ReviewedAppropriate".asInstanceOf[HITReviewStatus]
     val ReviewedInappropriate = "ReviewedInappropriate".asInstanceOf[HITReviewStatus]
 
     val values = js.Object.freeze(js.Array(NotReviewed, MarkedForReview, ReviewedAppropriate, ReviewedInappropriate))
@@ -1301,11 +1301,11 @@ package mturk {
   @js.native
   sealed trait HITStatus extends js.Any
   object HITStatus extends js.Object {
-    val Assignable   = "Assignable".asInstanceOf[HITStatus]
+    val Assignable = "Assignable".asInstanceOf[HITStatus]
     val Unassignable = "Unassignable".asInstanceOf[HITStatus]
-    val Reviewable   = "Reviewable".asInstanceOf[HITStatus]
-    val Reviewing    = "Reviewing".asInstanceOf[HITStatus]
-    val Disposed     = "Disposed".asInstanceOf[HITStatus]
+    val Reviewable = "Reviewable".asInstanceOf[HITStatus]
+    val Reviewing = "Reviewing".asInstanceOf[HITStatus]
+    val Disposed = "Disposed".asInstanceOf[HITStatus]
 
     val values = js.Object.freeze(js.Array(Assignable, Unassignable, Reviewable, Reviewing, Disposed))
   }
@@ -1835,9 +1835,9 @@ package mturk {
     ): NotificationSpecification = {
       val __obj = js.Dynamic.literal(
         "Destination" -> Destination.asInstanceOf[js.Any],
-        "EventTypes"  -> EventTypes.asInstanceOf[js.Any],
-        "Transport"   -> Transport.asInstanceOf[js.Any],
-        "Version"     -> Version.asInstanceOf[js.Any]
+        "EventTypes" -> EventTypes.asInstanceOf[js.Any],
+        "Transport" -> Transport.asInstanceOf[js.Any],
+        "Version" -> Version.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[NotificationSpecification]
@@ -1848,8 +1848,8 @@ package mturk {
   sealed trait NotificationTransport extends js.Any
   object NotificationTransport extends js.Object {
     val Email = "Email".asInstanceOf[NotificationTransport]
-    val SQS   = "SQS".asInstanceOf[NotificationTransport]
-    val SNS   = "SNS".asInstanceOf[NotificationTransport]
+    val SQS = "SQS".asInstanceOf[NotificationTransport]
+    val SNS = "SNS".asInstanceOf[NotificationTransport]
 
     val values = js.Object.freeze(js.Array(Email, SQS, SNS))
   }
@@ -1906,8 +1906,8 @@ package mturk {
     ): NotifyWorkersRequest = {
       val __obj = js.Dynamic.literal(
         "MessageText" -> MessageText.asInstanceOf[js.Any],
-        "Subject"     -> Subject.asInstanceOf[js.Any],
-        "WorkerIds"   -> WorkerIds.asInstanceOf[js.Any]
+        "Subject" -> Subject.asInstanceOf[js.Any],
+        "WorkerIds" -> WorkerIds.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[NotifyWorkersRequest]
@@ -2071,7 +2071,7 @@ package mturk {
         RequiredToPreview: js.UndefOr[Boolean] = js.undefined
     ): QualificationRequirement = {
       val __obj = js.Dynamic.literal(
-        "Comparator"          -> Comparator.asInstanceOf[js.Any],
+        "Comparator" -> Comparator.asInstanceOf[js.Any],
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any]
       )
 
@@ -2150,7 +2150,7 @@ package mturk {
   @js.native
   sealed trait QualificationTypeStatus extends js.Any
   object QualificationTypeStatus extends js.Object {
-    val Active   = "Active".asInstanceOf[QualificationTypeStatus]
+    val Active = "Active".asInstanceOf[QualificationTypeStatus]
     val Inactive = "Inactive".asInstanceOf[QualificationTypeStatus]
 
     val values = js.Object.freeze(js.Array(Active, Inactive))
@@ -2169,7 +2169,7 @@ package mturk {
         RequesterFeedback: String
     ): RejectAssignmentRequest = {
       val __obj = js.Dynamic.literal(
-        "AssignmentId"      -> AssignmentId.asInstanceOf[js.Any],
+        "AssignmentId" -> AssignmentId.asInstanceOf[js.Any],
         "RequesterFeedback" -> RequesterFeedback.asInstanceOf[js.Any]
       )
 
@@ -2276,9 +2276,9 @@ package mturk {
   @js.native
   sealed trait ReviewActionStatus extends js.Any
   object ReviewActionStatus extends js.Object {
-    val Intended  = "Intended".asInstanceOf[ReviewActionStatus]
+    val Intended = "Intended".asInstanceOf[ReviewActionStatus]
     val Succeeded = "Succeeded".asInstanceOf[ReviewActionStatus]
-    val Failed    = "Failed".asInstanceOf[ReviewActionStatus]
+    val Failed = "Failed".asInstanceOf[ReviewActionStatus]
     val Cancelled = "Cancelled".asInstanceOf[ReviewActionStatus]
 
     val values = js.Object.freeze(js.Array(Intended, Succeeded, Failed, Cancelled))
@@ -2312,7 +2312,7 @@ package mturk {
   sealed trait ReviewPolicyLevel extends js.Any
   object ReviewPolicyLevel extends js.Object {
     val Assignment = "Assignment".asInstanceOf[ReviewPolicyLevel]
-    val HIT        = "HIT".asInstanceOf[ReviewPolicyLevel]
+    val HIT = "HIT".asInstanceOf[ReviewPolicyLevel]
 
     val values = js.Object.freeze(js.Array(Assignment, HIT))
   }
@@ -2377,7 +2377,7 @@ package mturk {
   sealed trait ReviewableHITStatus extends js.Any
   object ReviewableHITStatus extends js.Object {
     val Reviewable = "Reviewable".asInstanceOf[ReviewableHITStatus]
-    val Reviewing  = "Reviewing".asInstanceOf[ReviewableHITStatus]
+    val Reviewing = "Reviewing".asInstanceOf[ReviewableHITStatus]
 
     val values = js.Object.freeze(js.Array(Reviewable, Reviewing))
   }
@@ -2402,9 +2402,9 @@ package mturk {
     ): SendBonusRequest = {
       val __obj = js.Dynamic.literal(
         "AssignmentId" -> AssignmentId.asInstanceOf[js.Any],
-        "BonusAmount"  -> BonusAmount.asInstanceOf[js.Any],
-        "Reason"       -> Reason.asInstanceOf[js.Any],
-        "WorkerId"     -> WorkerId.asInstanceOf[js.Any]
+        "BonusAmount" -> BonusAmount.asInstanceOf[js.Any],
+        "Reason" -> Reason.asInstanceOf[js.Any],
+        "WorkerId" -> WorkerId.asInstanceOf[js.Any]
       )
 
       UniqueRequestToken.foreach(__v => __obj.updateDynamic("UniqueRequestToken")(__v.asInstanceOf[js.Any]))
@@ -2438,7 +2438,7 @@ package mturk {
         TestEventType: EventType
     ): SendTestEventNotificationRequest = {
       val __obj = js.Dynamic.literal(
-        "Notification"  -> Notification.asInstanceOf[js.Any],
+        "Notification" -> Notification.asInstanceOf[js.Any],
         "TestEventType" -> TestEventType.asInstanceOf[js.Any]
       )
 
@@ -2482,7 +2482,7 @@ package mturk {
     ): UpdateExpirationForHITRequest = {
       val __obj = js.Dynamic.literal(
         "ExpireAt" -> ExpireAt.asInstanceOf[js.Any],
-        "HITId"    -> HITId.asInstanceOf[js.Any]
+        "HITId" -> HITId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateExpirationForHITRequest]
@@ -2549,7 +2549,7 @@ package mturk {
         HITTypeId: EntityId
     ): UpdateHITTypeOfHITRequest = {
       val __obj = js.Dynamic.literal(
-        "HITId"     -> HITId.asInstanceOf[js.Any],
+        "HITId" -> HITId.asInstanceOf[js.Any],
         "HITTypeId" -> HITTypeId.asInstanceOf[js.Any]
       )
 

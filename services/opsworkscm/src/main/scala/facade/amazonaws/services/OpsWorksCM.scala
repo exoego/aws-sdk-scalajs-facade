@@ -7,36 +7,36 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object opsworkscm {
-  type AWSOpsWorksCMResourceArn       = String
-  type AccountAttributes              = js.Array[AccountAttribute]
-  type AttributeName                  = String
-  type AttributeValue                 = String
-  type BackupId                       = String
+  type AWSOpsWorksCMResourceArn = String
+  type AccountAttributes = js.Array[AccountAttribute]
+  type AttributeName = String
+  type AttributeValue = String
+  type BackupId = String
   type BackupRetentionCountDefinition = Int
-  type Backups                        = js.Array[Backup]
-  type CustomCertificate              = String
-  type CustomDomain                   = String
-  type CustomPrivateKey               = String
-  type EngineAttributeName            = String
-  type EngineAttributeValue           = String
-  type EngineAttributes               = js.Array[EngineAttribute]
-  type InstanceProfileArn             = String
-  type KeyPair                        = String
-  type MaxResults                     = Int
-  type NextToken                      = String
-  type NodeAssociationStatusToken     = String
-  type NodeName                       = String
-  type ServerEvents                   = js.Array[ServerEvent]
-  type ServerName                     = String
-  type Servers                        = js.Array[Server]
-  type ServiceRoleArn                 = String
-  type Strings                        = js.Array[String]
-  type TagKey                         = String
-  type TagKeyList                     = js.Array[TagKey]
-  type TagList                        = js.Array[Tag]
-  type TagValue                       = String
-  type TimeWindowDefinition           = String
-  type Timestamp                      = js.Date
+  type Backups = js.Array[Backup]
+  type CustomCertificate = String
+  type CustomDomain = String
+  type CustomPrivateKey = String
+  type EngineAttributeName = String
+  type EngineAttributeValue = String
+  type EngineAttributes = js.Array[EngineAttribute]
+  type InstanceProfileArn = String
+  type KeyPair = String
+  type MaxResults = Int
+  type NextToken = String
+  type NodeAssociationStatusToken = String
+  type NodeName = String
+  type ServerEvents = js.Array[ServerEvent]
+  type ServerName = String
+  type Servers = js.Array[Server]
+  type ServiceRoleArn = String
+  type Strings = js.Array[String]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type TimeWindowDefinition = String
+  type Timestamp = js.Date
 
   implicit final class OpsWorksCMOps(private val service: OpsWorksCM) extends AnyVal {
 
@@ -92,29 +92,29 @@ package opsworkscm {
     def this(config: AWSConfig) = this()
 
     def associateNode(params: AssociateNodeRequest): Request[AssociateNodeResponse] = js.native
-    def createBackup(params: CreateBackupRequest): Request[CreateBackupResponse]    = js.native
-    def createServer(params: CreateServerRequest): Request[CreateServerResponse]    = js.native
-    def deleteBackup(params: DeleteBackupRequest): Request[DeleteBackupResponse]    = js.native
-    def deleteServer(params: DeleteServerRequest): Request[DeleteServerResponse]    = js.native
+    def createBackup(params: CreateBackupRequest): Request[CreateBackupResponse] = js.native
+    def createServer(params: CreateServerRequest): Request[CreateServerResponse] = js.native
+    def deleteBackup(params: DeleteBackupRequest): Request[DeleteBackupResponse] = js.native
+    def deleteServer(params: DeleteServerRequest): Request[DeleteServerResponse] = js.native
     def describeAccountAttributes(
         params: DescribeAccountAttributesRequest
-    ): Request[DescribeAccountAttributesResponse]                                         = js.native
+    ): Request[DescribeAccountAttributesResponse] = js.native
     def describeBackups(params: DescribeBackupsRequest): Request[DescribeBackupsResponse] = js.native
-    def describeEvents(params: DescribeEventsRequest): Request[DescribeEventsResponse]    = js.native
+    def describeEvents(params: DescribeEventsRequest): Request[DescribeEventsResponse] = js.native
     def describeNodeAssociationStatus(
         params: DescribeNodeAssociationStatusRequest
-    ): Request[DescribeNodeAssociationStatusResponse]                                        = js.native
-    def describeServers(params: DescribeServersRequest): Request[DescribeServersResponse]    = js.native
+    ): Request[DescribeNodeAssociationStatusResponse] = js.native
+    def describeServers(params: DescribeServersRequest): Request[DescribeServersResponse] = js.native
     def disassociateNode(params: DisassociateNodeRequest): Request[DisassociateNodeResponse] = js.native
     def exportServerEngineAttribute(
         params: ExportServerEngineAttributeRequest
-    ): Request[ExportServerEngineAttributeResponse]                                                   = js.native
+    ): Request[ExportServerEngineAttributeResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def restoreServer(params: RestoreServerRequest): Request[RestoreServerResponse]                   = js.native
-    def startMaintenance(params: StartMaintenanceRequest): Request[StartMaintenanceResponse]          = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
-    def updateServer(params: UpdateServerRequest): Request[UpdateServerResponse]                      = js.native
+    def restoreServer(params: RestoreServerRequest): Request[RestoreServerResponse] = js.native
+    def startMaintenance(params: StartMaintenanceRequest): Request[StartMaintenanceResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateServer(params: UpdateServerRequest): Request[UpdateServerResponse] = js.native
     def updateServerEngineAttributes(
         params: UpdateServerEngineAttributesRequest
     ): Request[UpdateServerEngineAttributesResponse] = js.native
@@ -161,8 +161,8 @@ package opsworkscm {
     ): AssociateNodeRequest = {
       val __obj = js.Dynamic.literal(
         "EngineAttributes" -> EngineAttributes.asInstanceOf[js.Any],
-        "NodeName"         -> NodeName.asInstanceOf[js.Any],
-        "ServerName"       -> ServerName.asInstanceOf[js.Any]
+        "NodeName" -> NodeName.asInstanceOf[js.Any],
+        "ServerName" -> ServerName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AssociateNodeRequest]
@@ -281,9 +281,9 @@ package opsworkscm {
   sealed trait BackupStatus extends js.Any
   object BackupStatus extends js.Object {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[BackupStatus]
-    val OK          = "OK".asInstanceOf[BackupStatus]
-    val FAILED      = "FAILED".asInstanceOf[BackupStatus]
-    val DELETING    = "DELETING".asInstanceOf[BackupStatus]
+    val OK = "OK".asInstanceOf[BackupStatus]
+    val FAILED = "FAILED".asInstanceOf[BackupStatus]
+    val DELETING = "DELETING".asInstanceOf[BackupStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, OK, FAILED, DELETING))
   }
@@ -292,7 +292,7 @@ package opsworkscm {
   sealed trait BackupType extends js.Any
   object BackupType extends js.Object {
     val AUTOMATED = "AUTOMATED".asInstanceOf[BackupType]
-    val MANUAL    = "MANUAL".asInstanceOf[BackupType]
+    val MANUAL = "MANUAL".asInstanceOf[BackupType]
 
     val values = js.Object.freeze(js.Array(AUTOMATED, MANUAL))
   }
@@ -339,6 +339,7 @@ package opsworkscm {
 
   @js.native
   trait CreateServerRequest extends js.Object {
+    var Engine: String
     var InstanceProfileArn: InstanceProfileArn
     var InstanceType: String
     var ServerName: ServerName
@@ -350,7 +351,6 @@ package opsworkscm {
     var CustomDomain: js.UndefOr[CustomDomain]
     var CustomPrivateKey: js.UndefOr[CustomPrivateKey]
     var DisableAutomatedBackup: js.UndefOr[Boolean]
-    var Engine: js.UndefOr[String]
     var EngineAttributes: js.UndefOr[EngineAttributes]
     var EngineModel: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
@@ -365,6 +365,7 @@ package opsworkscm {
   object CreateServerRequest {
     @inline
     def apply(
+        Engine: String,
         InstanceProfileArn: InstanceProfileArn,
         InstanceType: String,
         ServerName: ServerName,
@@ -376,7 +377,6 @@ package opsworkscm {
         CustomDomain: js.UndefOr[CustomDomain] = js.undefined,
         CustomPrivateKey: js.UndefOr[CustomPrivateKey] = js.undefined,
         DisableAutomatedBackup: js.UndefOr[Boolean] = js.undefined,
-        Engine: js.UndefOr[String] = js.undefined,
         EngineAttributes: js.UndefOr[EngineAttributes] = js.undefined,
         EngineModel: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
@@ -388,10 +388,11 @@ package opsworkscm {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateServerRequest = {
       val __obj = js.Dynamic.literal(
+        "Engine" -> Engine.asInstanceOf[js.Any],
         "InstanceProfileArn" -> InstanceProfileArn.asInstanceOf[js.Any],
-        "InstanceType"       -> InstanceType.asInstanceOf[js.Any],
-        "ServerName"         -> ServerName.asInstanceOf[js.Any],
-        "ServiceRoleArn"     -> ServiceRoleArn.asInstanceOf[js.Any]
+        "InstanceType" -> InstanceType.asInstanceOf[js.Any],
+        "ServerName" -> ServerName.asInstanceOf[js.Any],
+        "ServiceRoleArn" -> ServiceRoleArn.asInstanceOf[js.Any]
       )
 
       AssociatePublicIpAddress.foreach(__v => __obj.updateDynamic("AssociatePublicIpAddress")(__v.asInstanceOf[js.Any]))
@@ -401,7 +402,6 @@ package opsworkscm {
       CustomDomain.foreach(__v => __obj.updateDynamic("CustomDomain")(__v.asInstanceOf[js.Any]))
       CustomPrivateKey.foreach(__v => __obj.updateDynamic("CustomPrivateKey")(__v.asInstanceOf[js.Any]))
       DisableAutomatedBackup.foreach(__v => __obj.updateDynamic("DisableAutomatedBackup")(__v.asInstanceOf[js.Any]))
-      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineAttributes.foreach(__v => __obj.updateDynamic("EngineAttributes")(__v.asInstanceOf[js.Any]))
       EngineModel.foreach(__v => __obj.updateDynamic("EngineModel")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
@@ -625,7 +625,7 @@ package opsworkscm {
     ): DescribeNodeAssociationStatusRequest = {
       val __obj = js.Dynamic.literal(
         "NodeAssociationStatusToken" -> NodeAssociationStatusToken.asInstanceOf[js.Any],
-        "ServerName"                 -> ServerName.asInstanceOf[js.Any]
+        "ServerName" -> ServerName.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DescribeNodeAssociationStatusRequest]
@@ -707,7 +707,7 @@ package opsworkscm {
         EngineAttributes: js.UndefOr[EngineAttributes] = js.undefined
     ): DisassociateNodeRequest = {
       val __obj = js.Dynamic.literal(
-        "NodeName"   -> NodeName.asInstanceOf[js.Any],
+        "NodeName" -> NodeName.asInstanceOf[js.Any],
         "ServerName" -> ServerName.asInstanceOf[js.Any]
       )
 
@@ -772,7 +772,7 @@ package opsworkscm {
     ): ExportServerEngineAttributeRequest = {
       val __obj = js.Dynamic.literal(
         "ExportAttributeName" -> ExportAttributeName.asInstanceOf[js.Any],
-        "ServerName"          -> ServerName.asInstanceOf[js.Any]
+        "ServerName" -> ServerName.asInstanceOf[js.Any]
       )
 
       InputAttributes.foreach(__v => __obj.updateDynamic("InputAttributes")(__v.asInstanceOf[js.Any]))
@@ -846,7 +846,7 @@ package opsworkscm {
   sealed trait MaintenanceStatus extends js.Any
   object MaintenanceStatus extends js.Object {
     val SUCCESS = "SUCCESS".asInstanceOf[MaintenanceStatus]
-    val FAILED  = "FAILED".asInstanceOf[MaintenanceStatus]
+    val FAILED = "FAILED".asInstanceOf[MaintenanceStatus]
 
     val values = js.Object.freeze(js.Array(SUCCESS, FAILED))
   }
@@ -860,8 +860,8 @@ package opsworkscm {
   @js.native
   sealed trait NodeAssociationStatus extends js.Any
   object NodeAssociationStatus extends js.Object {
-    val SUCCESS     = "SUCCESS".asInstanceOf[NodeAssociationStatus]
-    val FAILED      = "FAILED".asInstanceOf[NodeAssociationStatus]
+    val SUCCESS = "SUCCESS".asInstanceOf[NodeAssociationStatus]
+    val FAILED = "FAILED".asInstanceOf[NodeAssociationStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[NodeAssociationStatus]
 
     val values = js.Object.freeze(js.Array(SUCCESS, FAILED, IN_PROGRESS))
@@ -884,7 +884,7 @@ package opsworkscm {
         KeyPair: js.UndefOr[KeyPair] = js.undefined
     ): RestoreServerRequest = {
       val __obj = js.Dynamic.literal(
-        "BackupId"   -> BackupId.asInstanceOf[js.Any],
+        "BackupId" -> BackupId.asInstanceOf[js.Any],
         "ServerName" -> ServerName.asInstanceOf[js.Any]
       )
 
@@ -1028,19 +1028,19 @@ package opsworkscm {
   @js.native
   sealed trait ServerStatus extends js.Any
   object ServerStatus extends js.Object {
-    val BACKING_UP        = "BACKING_UP".asInstanceOf[ServerStatus]
-    val CONNECTION_LOST   = "CONNECTION_LOST".asInstanceOf[ServerStatus]
-    val CREATING          = "CREATING".asInstanceOf[ServerStatus]
-    val DELETING          = "DELETING".asInstanceOf[ServerStatus]
-    val MODIFYING         = "MODIFYING".asInstanceOf[ServerStatus]
-    val FAILED            = "FAILED".asInstanceOf[ServerStatus]
-    val HEALTHY           = "HEALTHY".asInstanceOf[ServerStatus]
-    val RUNNING           = "RUNNING".asInstanceOf[ServerStatus]
-    val RESTORING         = "RESTORING".asInstanceOf[ServerStatus]
-    val SETUP             = "SETUP".asInstanceOf[ServerStatus]
+    val BACKING_UP = "BACKING_UP".asInstanceOf[ServerStatus]
+    val CONNECTION_LOST = "CONNECTION_LOST".asInstanceOf[ServerStatus]
+    val CREATING = "CREATING".asInstanceOf[ServerStatus]
+    val DELETING = "DELETING".asInstanceOf[ServerStatus]
+    val MODIFYING = "MODIFYING".asInstanceOf[ServerStatus]
+    val FAILED = "FAILED".asInstanceOf[ServerStatus]
+    val HEALTHY = "HEALTHY".asInstanceOf[ServerStatus]
+    val RUNNING = "RUNNING".asInstanceOf[ServerStatus]
+    val RESTORING = "RESTORING".asInstanceOf[ServerStatus]
+    val SETUP = "SETUP".asInstanceOf[ServerStatus]
     val UNDER_MAINTENANCE = "UNDER_MAINTENANCE".asInstanceOf[ServerStatus]
-    val UNHEALTHY         = "UNHEALTHY".asInstanceOf[ServerStatus]
-    val TERMINATED        = "TERMINATED".asInstanceOf[ServerStatus]
+    val UNHEALTHY = "UNHEALTHY".asInstanceOf[ServerStatus]
+    val TERMINATED = "TERMINATED".asInstanceOf[ServerStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1114,7 +1114,7 @@ package opsworkscm {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -1136,7 +1136,7 @@ package opsworkscm {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1170,7 +1170,7 @@ package opsworkscm {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -1206,7 +1206,7 @@ package opsworkscm {
     ): UpdateServerEngineAttributesRequest = {
       val __obj = js.Dynamic.literal(
         "AttributeName" -> AttributeName.asInstanceOf[js.Any],
-        "ServerName"    -> ServerName.asInstanceOf[js.Any]
+        "ServerName" -> ServerName.asInstanceOf[js.Any]
       )
 
       AttributeValue.foreach(__v => __obj.updateDynamic("AttributeValue")(__v.asInstanceOf[js.Any]))

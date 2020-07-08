@@ -7,34 +7,34 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object acm {
-  type Arn                        = String
-  type CertificateBody            = String
-  type CertificateBodyBlob        = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type CertificateChain           = String
-  type CertificateChainBlob       = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type CertificateStatuses        = js.Array[CertificateStatus]
-  type CertificateSummaryList     = js.Array[CertificateSummary]
-  type DomainList                 = js.Array[DomainNameString]
-  type DomainNameString           = String
-  type DomainValidationList       = js.Array[DomainValidation]
+  type Arn = String
+  type CertificateBody = String
+  type CertificateBodyBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type CertificateChain = String
+  type CertificateChainBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type CertificateStatuses = js.Array[CertificateStatus]
+  type CertificateSummaryList = js.Array[CertificateSummary]
+  type DomainList = js.Array[DomainNameString]
+  type DomainNameString = String
+  type DomainValidationList = js.Array[DomainValidation]
   type DomainValidationOptionList = js.Array[DomainValidationOption]
   type ExtendedKeyUsageFilterList = js.Array[ExtendedKeyUsageName]
-  type ExtendedKeyUsageList       = js.Array[ExtendedKeyUsage]
-  type IdempotencyToken           = String
-  type InUseList                  = js.Array[String]
-  type KeyAlgorithmList           = js.Array[KeyAlgorithm]
-  type KeyUsageFilterList         = js.Array[KeyUsageName]
-  type KeyUsageList               = js.Array[KeyUsage]
-  type MaxItems                   = Int
-  type NextToken                  = String
-  type PassphraseBlob             = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type PrivateKey                 = String
-  type PrivateKeyBlob             = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type TStamp                     = js.Date
-  type TagKey                     = String
-  type TagList                    = js.Array[Tag]
-  type TagValue                   = String
-  type ValidationEmailList        = js.Array[String]
+  type ExtendedKeyUsageList = js.Array[ExtendedKeyUsage]
+  type IdempotencyToken = String
+  type InUseList = js.Array[String]
+  type KeyAlgorithmList = js.Array[KeyAlgorithm]
+  type KeyUsageFilterList = js.Array[KeyUsageName]
+  type KeyUsageList = js.Array[KeyUsage]
+  type MaxItems = Int
+  type NextToken = String
+  type PassphraseBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type PrivateKey = String
+  type PrivateKeyBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type TStamp = js.Date
+  type TagKey = String
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type ValidationEmailList = js.Array[String]
 
   implicit final class ACMOps(private val service: ACM) extends AnyVal {
 
@@ -74,20 +74,20 @@ package acm {
   class ACM() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def addTagsToCertificate(params: AddTagsToCertificateRequest): Request[js.Object]                 = js.native
-    def deleteCertificate(params: DeleteCertificateRequest): Request[js.Object]                       = js.native
+    def addTagsToCertificate(params: AddTagsToCertificateRequest): Request[js.Object] = js.native
+    def deleteCertificate(params: DeleteCertificateRequest): Request[js.Object] = js.native
     def describeCertificate(params: DescribeCertificateRequest): Request[DescribeCertificateResponse] = js.native
-    def exportCertificate(params: ExportCertificateRequest): Request[ExportCertificateResponse]       = js.native
-    def getCertificate(params: GetCertificateRequest): Request[GetCertificateResponse]                = js.native
-    def importCertificate(params: ImportCertificateRequest): Request[ImportCertificateResponse]       = js.native
-    def listCertificates(params: ListCertificatesRequest): Request[ListCertificatesResponse]          = js.native
+    def exportCertificate(params: ExportCertificateRequest): Request[ExportCertificateResponse] = js.native
+    def getCertificate(params: GetCertificateRequest): Request[GetCertificateResponse] = js.native
+    def importCertificate(params: ImportCertificateRequest): Request[ImportCertificateResponse] = js.native
+    def listCertificates(params: ListCertificatesRequest): Request[ListCertificatesResponse] = js.native
     def listTagsForCertificate(params: ListTagsForCertificateRequest): Request[ListTagsForCertificateResponse] =
       js.native
-    def removeTagsFromCertificate(params: RemoveTagsFromCertificateRequest): Request[js.Object]    = js.native
-    def renewCertificate(params: RenewCertificateRequest): Request[js.Object]                      = js.native
+    def removeTagsFromCertificate(params: RemoveTagsFromCertificateRequest): Request[js.Object] = js.native
+    def renewCertificate(params: RenewCertificateRequest): Request[js.Object] = js.native
     def requestCertificate(params: RequestCertificateRequest): Request[RequestCertificateResponse] = js.native
-    def resendValidationEmail(params: ResendValidationEmailRequest): Request[js.Object]            = js.native
-    def updateCertificateOptions(params: UpdateCertificateOptionsRequest): Request[js.Object]      = js.native
+    def resendValidationEmail(params: ResendValidationEmailRequest): Request[js.Object] = js.native
+    def updateCertificateOptions(params: UpdateCertificateOptionsRequest): Request[js.Object] = js.native
   }
 
   @js.native
@@ -104,7 +104,7 @@ package acm {
     ): AddTagsToCertificateRequest = {
       val __obj = js.Dynamic.literal(
         "CertificateArn" -> CertificateArn.asInstanceOf[js.Any],
-        "Tags"           -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddTagsToCertificateRequest]
@@ -229,13 +229,13 @@ package acm {
   @js.native
   sealed trait CertificateStatus extends js.Any
   object CertificateStatus extends js.Object {
-    val PENDING_VALIDATION   = "PENDING_VALIDATION".asInstanceOf[CertificateStatus]
-    val ISSUED               = "ISSUED".asInstanceOf[CertificateStatus]
-    val INACTIVE             = "INACTIVE".asInstanceOf[CertificateStatus]
-    val EXPIRED              = "EXPIRED".asInstanceOf[CertificateStatus]
+    val PENDING_VALIDATION = "PENDING_VALIDATION".asInstanceOf[CertificateStatus]
+    val ISSUED = "ISSUED".asInstanceOf[CertificateStatus]
+    val INACTIVE = "INACTIVE".asInstanceOf[CertificateStatus]
+    val EXPIRED = "EXPIRED".asInstanceOf[CertificateStatus]
     val VALIDATION_TIMED_OUT = "VALIDATION_TIMED_OUT".asInstanceOf[CertificateStatus]
-    val REVOKED              = "REVOKED".asInstanceOf[CertificateStatus]
-    val FAILED               = "FAILED".asInstanceOf[CertificateStatus]
+    val REVOKED = "REVOKED".asInstanceOf[CertificateStatus]
+    val FAILED = "FAILED".asInstanceOf[CertificateStatus]
 
     val values =
       js.Object.freeze(js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED))
@@ -266,7 +266,7 @@ package acm {
   @js.native
   sealed trait CertificateTransparencyLoggingPreference extends js.Any
   object CertificateTransparencyLoggingPreference extends js.Object {
-    val ENABLED  = "ENABLED".asInstanceOf[CertificateTransparencyLoggingPreference]
+    val ENABLED = "ENABLED".asInstanceOf[CertificateTransparencyLoggingPreference]
     val DISABLED = "DISABLED".asInstanceOf[CertificateTransparencyLoggingPreference]
 
     val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
@@ -275,9 +275,9 @@ package acm {
   @js.native
   sealed trait CertificateType extends js.Any
   object CertificateType extends js.Object {
-    val IMPORTED      = "IMPORTED".asInstanceOf[CertificateType]
+    val IMPORTED = "IMPORTED".asInstanceOf[CertificateType]
     val AMAZON_ISSUED = "AMAZON_ISSUED".asInstanceOf[CertificateType]
-    val PRIVATE       = "PRIVATE".asInstanceOf[CertificateType]
+    val PRIVATE = "PRIVATE".asInstanceOf[CertificateType]
 
     val values = js.Object.freeze(js.Array(IMPORTED, AMAZON_ISSUED, PRIVATE))
   }
@@ -338,8 +338,8 @@ package acm {
   sealed trait DomainStatus extends js.Any
   object DomainStatus extends js.Object {
     val PENDING_VALIDATION = "PENDING_VALIDATION".asInstanceOf[DomainStatus]
-    val SUCCESS            = "SUCCESS".asInstanceOf[DomainStatus]
-    val FAILED             = "FAILED".asInstanceOf[DomainStatus]
+    val SUCCESS = "SUCCESS".asInstanceOf[DomainStatus]
+    val FAILED = "FAILED".asInstanceOf[DomainStatus]
 
     val values = js.Object.freeze(js.Array(PENDING_VALIDATION, SUCCESS, FAILED))
   }
@@ -396,7 +396,7 @@ package acm {
         ValidationDomain: DomainNameString
     ): DomainValidationOption = {
       val __obj = js.Dynamic.literal(
-        "DomainName"       -> DomainName.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
         "ValidationDomain" -> ValidationDomain.asInstanceOf[js.Any]
       )
 
@@ -418,7 +418,7 @@ package acm {
     ): ExportCertificateRequest = {
       val __obj = js.Dynamic.literal(
         "CertificateArn" -> CertificateArn.asInstanceOf[js.Any],
-        "Passphrase"     -> Passphrase.asInstanceOf[js.Any]
+        "Passphrase" -> Passphrase.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ExportCertificateRequest]
@@ -474,16 +474,16 @@ package acm {
   object ExtendedKeyUsageName extends js.Object {
     val TLS_WEB_SERVER_AUTHENTICATION = "TLS_WEB_SERVER_AUTHENTICATION".asInstanceOf[ExtendedKeyUsageName]
     val TLS_WEB_CLIENT_AUTHENTICATION = "TLS_WEB_CLIENT_AUTHENTICATION".asInstanceOf[ExtendedKeyUsageName]
-    val CODE_SIGNING                  = "CODE_SIGNING".asInstanceOf[ExtendedKeyUsageName]
-    val EMAIL_PROTECTION              = "EMAIL_PROTECTION".asInstanceOf[ExtendedKeyUsageName]
-    val TIME_STAMPING                 = "TIME_STAMPING".asInstanceOf[ExtendedKeyUsageName]
-    val OCSP_SIGNING                  = "OCSP_SIGNING".asInstanceOf[ExtendedKeyUsageName]
-    val IPSEC_END_SYSTEM              = "IPSEC_END_SYSTEM".asInstanceOf[ExtendedKeyUsageName]
-    val IPSEC_TUNNEL                  = "IPSEC_TUNNEL".asInstanceOf[ExtendedKeyUsageName]
-    val IPSEC_USER                    = "IPSEC_USER".asInstanceOf[ExtendedKeyUsageName]
-    val ANY                           = "ANY".asInstanceOf[ExtendedKeyUsageName]
-    val NONE                          = "NONE".asInstanceOf[ExtendedKeyUsageName]
-    val CUSTOM                        = "CUSTOM".asInstanceOf[ExtendedKeyUsageName]
+    val CODE_SIGNING = "CODE_SIGNING".asInstanceOf[ExtendedKeyUsageName]
+    val EMAIL_PROTECTION = "EMAIL_PROTECTION".asInstanceOf[ExtendedKeyUsageName]
+    val TIME_STAMPING = "TIME_STAMPING".asInstanceOf[ExtendedKeyUsageName]
+    val OCSP_SIGNING = "OCSP_SIGNING".asInstanceOf[ExtendedKeyUsageName]
+    val IPSEC_END_SYSTEM = "IPSEC_END_SYSTEM".asInstanceOf[ExtendedKeyUsageName]
+    val IPSEC_TUNNEL = "IPSEC_TUNNEL".asInstanceOf[ExtendedKeyUsageName]
+    val IPSEC_USER = "IPSEC_USER".asInstanceOf[ExtendedKeyUsageName]
+    val ANY = "ANY".asInstanceOf[ExtendedKeyUsageName]
+    val NONE = "NONE".asInstanceOf[ExtendedKeyUsageName]
+    val CUSTOM = "CUSTOM".asInstanceOf[ExtendedKeyUsageName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -506,22 +506,22 @@ package acm {
   @js.native
   sealed trait FailureReason extends js.Any
   object FailureReason extends js.Object {
-    val NO_AVAILABLE_CONTACTS            = "NO_AVAILABLE_CONTACTS".asInstanceOf[FailureReason]
+    val NO_AVAILABLE_CONTACTS = "NO_AVAILABLE_CONTACTS".asInstanceOf[FailureReason]
     val ADDITIONAL_VERIFICATION_REQUIRED = "ADDITIONAL_VERIFICATION_REQUIRED".asInstanceOf[FailureReason]
-    val DOMAIN_NOT_ALLOWED               = "DOMAIN_NOT_ALLOWED".asInstanceOf[FailureReason]
-    val INVALID_PUBLIC_DOMAIN            = "INVALID_PUBLIC_DOMAIN".asInstanceOf[FailureReason]
-    val DOMAIN_VALIDATION_DENIED         = "DOMAIN_VALIDATION_DENIED".asInstanceOf[FailureReason]
-    val CAA_ERROR                        = "CAA_ERROR".asInstanceOf[FailureReason]
-    val PCA_LIMIT_EXCEEDED               = "PCA_LIMIT_EXCEEDED".asInstanceOf[FailureReason]
-    val PCA_INVALID_ARN                  = "PCA_INVALID_ARN".asInstanceOf[FailureReason]
-    val PCA_INVALID_STATE                = "PCA_INVALID_STATE".asInstanceOf[FailureReason]
-    val PCA_REQUEST_FAILED               = "PCA_REQUEST_FAILED".asInstanceOf[FailureReason]
-    val PCA_NAME_CONSTRAINTS_VALIDATION  = "PCA_NAME_CONSTRAINTS_VALIDATION".asInstanceOf[FailureReason]
-    val PCA_RESOURCE_NOT_FOUND           = "PCA_RESOURCE_NOT_FOUND".asInstanceOf[FailureReason]
-    val PCA_INVALID_ARGS                 = "PCA_INVALID_ARGS".asInstanceOf[FailureReason]
-    val PCA_INVALID_DURATION             = "PCA_INVALID_DURATION".asInstanceOf[FailureReason]
-    val PCA_ACCESS_DENIED                = "PCA_ACCESS_DENIED".asInstanceOf[FailureReason]
-    val OTHER                            = "OTHER".asInstanceOf[FailureReason]
+    val DOMAIN_NOT_ALLOWED = "DOMAIN_NOT_ALLOWED".asInstanceOf[FailureReason]
+    val INVALID_PUBLIC_DOMAIN = "INVALID_PUBLIC_DOMAIN".asInstanceOf[FailureReason]
+    val DOMAIN_VALIDATION_DENIED = "DOMAIN_VALIDATION_DENIED".asInstanceOf[FailureReason]
+    val CAA_ERROR = "CAA_ERROR".asInstanceOf[FailureReason]
+    val PCA_LIMIT_EXCEEDED = "PCA_LIMIT_EXCEEDED".asInstanceOf[FailureReason]
+    val PCA_INVALID_ARN = "PCA_INVALID_ARN".asInstanceOf[FailureReason]
+    val PCA_INVALID_STATE = "PCA_INVALID_STATE".asInstanceOf[FailureReason]
+    val PCA_REQUEST_FAILED = "PCA_REQUEST_FAILED".asInstanceOf[FailureReason]
+    val PCA_NAME_CONSTRAINTS_VALIDATION = "PCA_NAME_CONSTRAINTS_VALIDATION".asInstanceOf[FailureReason]
+    val PCA_RESOURCE_NOT_FOUND = "PCA_RESOURCE_NOT_FOUND".asInstanceOf[FailureReason]
+    val PCA_INVALID_ARGS = "PCA_INVALID_ARGS".asInstanceOf[FailureReason]
+    val PCA_INVALID_DURATION = "PCA_INVALID_DURATION".asInstanceOf[FailureReason]
+    val PCA_ACCESS_DENIED = "PCA_ACCESS_DENIED".asInstanceOf[FailureReason]
+    val OTHER = "OTHER".asInstanceOf[FailureReason]
 
     val values = js.Object.freeze(
       js.Array(
@@ -627,7 +627,7 @@ package acm {
     ): ImportCertificateRequest = {
       val __obj = js.Dynamic.literal(
         "Certificate" -> Certificate.asInstanceOf[js.Any],
-        "PrivateKey"  -> PrivateKey.asInstanceOf[js.Any]
+        "PrivateKey" -> PrivateKey.asInstanceOf[js.Any]
       )
 
       CertificateArn.foreach(__v => __obj.updateDynamic("CertificateArn")(__v.asInstanceOf[js.Any]))
@@ -656,12 +656,12 @@ package acm {
   @js.native
   sealed trait KeyAlgorithm extends js.Any
   object KeyAlgorithm extends js.Object {
-    val RSA_2048      = "RSA_2048".asInstanceOf[KeyAlgorithm]
-    val RSA_1024      = "RSA_1024".asInstanceOf[KeyAlgorithm]
-    val RSA_4096      = "RSA_4096".asInstanceOf[KeyAlgorithm]
+    val RSA_2048 = "RSA_2048".asInstanceOf[KeyAlgorithm]
+    val RSA_1024 = "RSA_1024".asInstanceOf[KeyAlgorithm]
+    val RSA_4096 = "RSA_4096".asInstanceOf[KeyAlgorithm]
     val EC_prime256v1 = "EC_prime256v1".asInstanceOf[KeyAlgorithm]
-    val EC_secp384r1  = "EC_secp384r1".asInstanceOf[KeyAlgorithm]
-    val EC_secp521r1  = "EC_secp521r1".asInstanceOf[KeyAlgorithm]
+    val EC_secp384r1 = "EC_secp384r1".asInstanceOf[KeyAlgorithm]
+    val EC_secp521r1 = "EC_secp521r1".asInstanceOf[KeyAlgorithm]
 
     val values = js.Object.freeze(js.Array(RSA_2048, RSA_1024, RSA_4096, EC_prime256v1, EC_secp384r1, EC_secp521r1))
   }
@@ -688,17 +688,17 @@ package acm {
   @js.native
   sealed trait KeyUsageName extends js.Any
   object KeyUsageName extends js.Object {
-    val DIGITAL_SIGNATURE   = "DIGITAL_SIGNATURE".asInstanceOf[KeyUsageName]
-    val NON_REPUDIATION     = "NON_REPUDIATION".asInstanceOf[KeyUsageName]
-    val KEY_ENCIPHERMENT    = "KEY_ENCIPHERMENT".asInstanceOf[KeyUsageName]
-    val DATA_ENCIPHERMENT   = "DATA_ENCIPHERMENT".asInstanceOf[KeyUsageName]
-    val KEY_AGREEMENT       = "KEY_AGREEMENT".asInstanceOf[KeyUsageName]
+    val DIGITAL_SIGNATURE = "DIGITAL_SIGNATURE".asInstanceOf[KeyUsageName]
+    val NON_REPUDIATION = "NON_REPUDIATION".asInstanceOf[KeyUsageName]
+    val KEY_ENCIPHERMENT = "KEY_ENCIPHERMENT".asInstanceOf[KeyUsageName]
+    val DATA_ENCIPHERMENT = "DATA_ENCIPHERMENT".asInstanceOf[KeyUsageName]
+    val KEY_AGREEMENT = "KEY_AGREEMENT".asInstanceOf[KeyUsageName]
     val CERTIFICATE_SIGNING = "CERTIFICATE_SIGNING".asInstanceOf[KeyUsageName]
-    val CRL_SIGNING         = "CRL_SIGNING".asInstanceOf[KeyUsageName]
-    val ENCIPHER_ONLY       = "ENCIPHER_ONLY".asInstanceOf[KeyUsageName]
-    val DECIPHER_ONLY       = "DECIPHER_ONLY".asInstanceOf[KeyUsageName]
-    val ANY                 = "ANY".asInstanceOf[KeyUsageName]
-    val CUSTOM              = "CUSTOM".asInstanceOf[KeyUsageName]
+    val CRL_SIGNING = "CRL_SIGNING".asInstanceOf[KeyUsageName]
+    val ENCIPHER_ONLY = "ENCIPHER_ONLY".asInstanceOf[KeyUsageName]
+    val DECIPHER_ONLY = "DECIPHER_ONLY".asInstanceOf[KeyUsageName]
+    val ANY = "ANY".asInstanceOf[KeyUsageName]
+    val CUSTOM = "CUSTOM".asInstanceOf[KeyUsageName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -817,7 +817,7 @@ package acm {
     ): RemoveTagsFromCertificateRequest = {
       val __obj = js.Dynamic.literal(
         "CertificateArn" -> CertificateArn.asInstanceOf[js.Any],
-        "Tags"           -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[RemoveTagsFromCertificateRequest]
@@ -845,7 +845,7 @@ package acm {
   @js.native
   sealed trait RenewalEligibility extends js.Any
   object RenewalEligibility extends js.Object {
-    val ELIGIBLE   = "ELIGIBLE".asInstanceOf[RenewalEligibility]
+    val ELIGIBLE = "ELIGIBLE".asInstanceOf[RenewalEligibility]
     val INELIGIBLE = "INELIGIBLE".asInstanceOf[RenewalEligibility]
 
     val values = js.Object.freeze(js.Array(ELIGIBLE, INELIGIBLE))
@@ -855,9 +855,9 @@ package acm {
   sealed trait RenewalStatus extends js.Any
   object RenewalStatus extends js.Object {
     val PENDING_AUTO_RENEWAL = "PENDING_AUTO_RENEWAL".asInstanceOf[RenewalStatus]
-    val PENDING_VALIDATION   = "PENDING_VALIDATION".asInstanceOf[RenewalStatus]
-    val SUCCESS              = "SUCCESS".asInstanceOf[RenewalStatus]
-    val FAILED               = "FAILED".asInstanceOf[RenewalStatus]
+    val PENDING_VALIDATION = "PENDING_VALIDATION".asInstanceOf[RenewalStatus]
+    val SUCCESS = "SUCCESS".asInstanceOf[RenewalStatus]
+    val FAILED = "FAILED".asInstanceOf[RenewalStatus]
 
     val values = js.Object.freeze(js.Array(PENDING_AUTO_RENEWAL, PENDING_VALIDATION, SUCCESS, FAILED))
   }
@@ -883,8 +883,8 @@ package acm {
     ): RenewalSummary = {
       val __obj = js.Dynamic.literal(
         "DomainValidationOptions" -> DomainValidationOptions.asInstanceOf[js.Any],
-        "RenewalStatus"           -> RenewalStatus.asInstanceOf[js.Any],
-        "UpdatedAt"               -> UpdatedAt.asInstanceOf[js.Any]
+        "RenewalStatus" -> RenewalStatus.asInstanceOf[js.Any],
+        "UpdatedAt" -> UpdatedAt.asInstanceOf[js.Any]
       )
 
       RenewalStatusReason.foreach(__v => __obj.updateDynamic("RenewalStatusReason")(__v.asInstanceOf[js.Any]))
@@ -962,8 +962,8 @@ package acm {
         ValidationDomain: DomainNameString
     ): ResendValidationEmailRequest = {
       val __obj = js.Dynamic.literal(
-        "CertificateArn"   -> CertificateArn.asInstanceOf[js.Any],
-        "Domain"           -> Domain.asInstanceOf[js.Any],
+        "CertificateArn" -> CertificateArn.asInstanceOf[js.Any],
+        "Domain" -> Domain.asInstanceOf[js.Any],
         "ValidationDomain" -> ValidationDomain.asInstanceOf[js.Any]
       )
 
@@ -989,8 +989,8 @@ package acm {
         Value: String
     ): ResourceRecord = {
       val __obj = js.Dynamic.literal(
-        "Name"  -> Name.asInstanceOf[js.Any],
-        "Type"  -> Type.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -1001,16 +1001,16 @@ package acm {
   @js.native
   sealed trait RevocationReason extends js.Any
   object RevocationReason extends js.Object {
-    val UNSPECIFIED            = "UNSPECIFIED".asInstanceOf[RevocationReason]
-    val KEY_COMPROMISE         = "KEY_COMPROMISE".asInstanceOf[RevocationReason]
-    val CA_COMPROMISE          = "CA_COMPROMISE".asInstanceOf[RevocationReason]
-    val AFFILIATION_CHANGED    = "AFFILIATION_CHANGED".asInstanceOf[RevocationReason]
-    val SUPERCEDED             = "SUPERCEDED".asInstanceOf[RevocationReason]
+    val UNSPECIFIED = "UNSPECIFIED".asInstanceOf[RevocationReason]
+    val KEY_COMPROMISE = "KEY_COMPROMISE".asInstanceOf[RevocationReason]
+    val CA_COMPROMISE = "CA_COMPROMISE".asInstanceOf[RevocationReason]
+    val AFFILIATION_CHANGED = "AFFILIATION_CHANGED".asInstanceOf[RevocationReason]
+    val SUPERCEDED = "SUPERCEDED".asInstanceOf[RevocationReason]
     val CESSATION_OF_OPERATION = "CESSATION_OF_OPERATION".asInstanceOf[RevocationReason]
-    val CERTIFICATE_HOLD       = "CERTIFICATE_HOLD".asInstanceOf[RevocationReason]
-    val REMOVE_FROM_CRL        = "REMOVE_FROM_CRL".asInstanceOf[RevocationReason]
-    val PRIVILEGE_WITHDRAWN    = "PRIVILEGE_WITHDRAWN".asInstanceOf[RevocationReason]
-    val A_A_COMPROMISE         = "A_A_COMPROMISE".asInstanceOf[RevocationReason]
+    val CERTIFICATE_HOLD = "CERTIFICATE_HOLD".asInstanceOf[RevocationReason]
+    val REMOVE_FROM_CRL = "REMOVE_FROM_CRL".asInstanceOf[RevocationReason]
+    val PRIVILEGE_WITHDRAWN = "PRIVILEGE_WITHDRAWN".asInstanceOf[RevocationReason]
+    val A_A_COMPROMISE = "A_A_COMPROMISE".asInstanceOf[RevocationReason]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1066,7 +1066,7 @@ package acm {
     ): UpdateCertificateOptionsRequest = {
       val __obj = js.Dynamic.literal(
         "CertificateArn" -> CertificateArn.asInstanceOf[js.Any],
-        "Options"        -> Options.asInstanceOf[js.Any]
+        "Options" -> Options.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UpdateCertificateOptionsRequest]
@@ -1077,7 +1077,7 @@ package acm {
   sealed trait ValidationMethod extends js.Any
   object ValidationMethod extends js.Object {
     val EMAIL = "EMAIL".asInstanceOf[ValidationMethod]
-    val DNS   = "DNS".asInstanceOf[ValidationMethod]
+    val DNS = "DNS".asInstanceOf[ValidationMethod]
 
     val values = js.Object.freeze(js.Array(EMAIL, DNS))
   }

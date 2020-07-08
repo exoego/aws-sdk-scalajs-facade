@@ -7,83 +7,83 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object sesv2 {
-  type AmazonResourceName                  = String
-  type BlacklistEntries                    = js.Array[BlacklistEntry]
-  type BlacklistItemName                   = String
-  type BlacklistItemNames                  = js.Array[BlacklistItemName]
-  type BlacklistReport                     = js.Dictionary[BlacklistEntries]
-  type BlacklistingDescription             = String
-  type CampaignId                          = String
-  type Charset                             = String
-  type CloudWatchDimensionConfigurations   = js.Array[CloudWatchDimensionConfiguration]
-  type ConfigurationSetName                = String
-  type ConfigurationSetNameList            = js.Array[ConfigurationSetName]
-  type CustomRedirectDomain                = String
-  type DailyVolumes                        = js.Array[DailyVolume]
-  type DedicatedIpList                     = js.Array[DedicatedIp]
-  type DefaultDimensionValue               = String
-  type DeliverabilityTestReports           = js.Array[DeliverabilityTestReport]
-  type DeliverabilityTestSubject           = String
-  type DimensionName                       = String
-  type DnsToken                            = String
-  type DnsTokenList                        = js.Array[DnsToken]
-  type Domain                              = String
-  type DomainDeliverabilityCampaignList    = js.Array[DomainDeliverabilityCampaign]
+  type AmazonResourceName = String
+  type BlacklistEntries = js.Array[BlacklistEntry]
+  type BlacklistItemName = String
+  type BlacklistItemNames = js.Array[BlacklistItemName]
+  type BlacklistReport = js.Dictionary[BlacklistEntries]
+  type BlacklistingDescription = String
+  type CampaignId = String
+  type Charset = String
+  type CloudWatchDimensionConfigurations = js.Array[CloudWatchDimensionConfiguration]
+  type ConfigurationSetName = String
+  type ConfigurationSetNameList = js.Array[ConfigurationSetName]
+  type CustomRedirectDomain = String
+  type DailyVolumes = js.Array[DailyVolume]
+  type DedicatedIpList = js.Array[DedicatedIp]
+  type DefaultDimensionValue = String
+  type DeliverabilityTestReports = js.Array[DeliverabilityTestReport]
+  type DeliverabilityTestSubject = String
+  type DimensionName = String
+  type DnsToken = String
+  type DnsTokenList = js.Array[DnsToken]
+  type Domain = String
+  type DomainDeliverabilityCampaignList = js.Array[DomainDeliverabilityCampaign]
   type DomainDeliverabilityTrackingOptions = js.Array[DomainDeliverabilityTrackingOption]
-  type DomainIspPlacements                 = js.Array[DomainIspPlacement]
-  type EmailAddress                        = String
-  type EmailAddressList                    = js.Array[EmailAddress]
-  type Enabled                             = Boolean
-  type Esp                                 = String
-  type Esps                                = js.Array[Esp]
-  type EventDestinationName                = String
-  type EventDestinations                   = js.Array[EventDestination]
-  type EventTypes                          = js.Array[EventType]
-  type FeedbackId                          = String
-  type GeneralEnforcementStatus            = String
-  type Identity                            = String
-  type IdentityInfoList                    = js.Array[IdentityInfo]
-  type ImageUrl                            = String
-  type Ip                                  = String
-  type IpList                              = js.Array[Ip]
-  type IspName                             = String
-  type IspNameList                         = js.Array[IspName]
-  type IspPlacements                       = js.Array[IspPlacement]
-  type LastFreshStart                      = js.Date
-  type ListOfDedicatedIpPools              = js.Array[PoolName]
-  type MailFromDomainName                  = String
-  type Max24HourSend                       = Double
-  type MaxItems                            = Int
-  type MaxSendRate                         = Double
-  type MessageContent                      = String
-  type MessageData                         = String
-  type MessageTagList                      = js.Array[MessageTag]
-  type MessageTagName                      = String
-  type MessageTagValue                     = String
-  type NextToken                           = String
-  type OutboundMessageId                   = String
-  type Percentage                          = Double
-  type Percentage100Wrapper                = Int
-  type PoolName                            = String
-  type PrivateKey                          = String
-  type RawMessageData                      = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type RblName                             = String
-  type ReportId                            = String
-  type ReportName                          = String
-  type Selector                            = String
-  type SendingPoolName                     = String
-  type SentLast24Hours                     = Double
-  type Subject                             = String
-  type SuppressedDestinationSummaries      = js.Array[SuppressedDestinationSummary]
-  type SuppressionListReasons              = js.Array[SuppressionListReason]
-  type TagKey                              = String
-  type TagKeyList                          = js.Array[TagKey]
-  type TagList                             = js.Array[Tag]
-  type TagValue                            = String
-  type TemplateArn                         = String
-  type TemplateData                        = String
-  type Timestamp                           = js.Date
-  type Volume                              = Double
+  type DomainIspPlacements = js.Array[DomainIspPlacement]
+  type EmailAddress = String
+  type EmailAddressList = js.Array[EmailAddress]
+  type Enabled = Boolean
+  type Esp = String
+  type Esps = js.Array[Esp]
+  type EventDestinationName = String
+  type EventDestinations = js.Array[EventDestination]
+  type EventTypes = js.Array[EventType]
+  type FeedbackId = String
+  type GeneralEnforcementStatus = String
+  type Identity = String
+  type IdentityInfoList = js.Array[IdentityInfo]
+  type ImageUrl = String
+  type Ip = String
+  type IpList = js.Array[Ip]
+  type IspName = String
+  type IspNameList = js.Array[IspName]
+  type IspPlacements = js.Array[IspPlacement]
+  type LastFreshStart = js.Date
+  type ListOfDedicatedIpPools = js.Array[PoolName]
+  type MailFromDomainName = String
+  type Max24HourSend = Double
+  type MaxItems = Int
+  type MaxSendRate = Double
+  type MessageContent = String
+  type MessageData = String
+  type MessageTagList = js.Array[MessageTag]
+  type MessageTagName = String
+  type MessageTagValue = String
+  type NextToken = String
+  type OutboundMessageId = String
+  type Percentage = Double
+  type Percentage100Wrapper = Int
+  type PoolName = String
+  type PrivateKey = String
+  type RawMessageData = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type RblName = String
+  type ReportId = String
+  type ReportName = String
+  type Selector = String
+  type SendingPoolName = String
+  type SentLast24Hours = Double
+  type Subject = String
+  type SuppressedDestinationSummaries = js.Array[SuppressedDestinationSummary]
+  type SuppressionListReasons = js.Array[SuppressionListReason]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
+  type TemplateArn = String
+  type TemplateData = String
+  type Timestamp = js.Date
+  type Volume = Double
 
   implicit final class SESv2Ops(private val service: SESv2) extends AnyVal {
 
@@ -253,29 +253,29 @@ package sesv2 {
       js.native
     def createConfigurationSetEventDestination(
         params: CreateConfigurationSetEventDestinationRequest
-    ): Request[CreateConfigurationSetEventDestinationResponse]                                              = js.native
+    ): Request[CreateConfigurationSetEventDestinationResponse] = js.native
     def createDedicatedIpPool(params: CreateDedicatedIpPoolRequest): Request[CreateDedicatedIpPoolResponse] = js.native
     def createDeliverabilityTestReport(
         params: CreateDeliverabilityTestReportRequest
-    ): Request[CreateDeliverabilityTestReportResponse]                                                = js.native
+    ): Request[CreateDeliverabilityTestReportResponse] = js.native
     def createEmailIdentity(params: CreateEmailIdentityRequest): Request[CreateEmailIdentityResponse] = js.native
     def deleteConfigurationSet(params: DeleteConfigurationSetRequest): Request[DeleteConfigurationSetResponse] =
       js.native
     def deleteConfigurationSetEventDestination(
         params: DeleteConfigurationSetEventDestinationRequest
-    ): Request[DeleteConfigurationSetEventDestinationResponse]                                              = js.native
+    ): Request[DeleteConfigurationSetEventDestinationResponse] = js.native
     def deleteDedicatedIpPool(params: DeleteDedicatedIpPoolRequest): Request[DeleteDedicatedIpPoolResponse] = js.native
-    def deleteEmailIdentity(params: DeleteEmailIdentityRequest): Request[DeleteEmailIdentityResponse]       = js.native
+    def deleteEmailIdentity(params: DeleteEmailIdentityRequest): Request[DeleteEmailIdentityResponse] = js.native
     def deleteSuppressedDestination(
         params: DeleteSuppressedDestinationRequest
-    ): Request[DeleteSuppressedDestinationResponse]                                                   = js.native
-    def getAccount(params: GetAccountRequest): Request[GetAccountResponse]                            = js.native
+    ): Request[DeleteSuppressedDestinationResponse] = js.native
+    def getAccount(params: GetAccountRequest): Request[GetAccountResponse] = js.native
     def getBlacklistReports(params: GetBlacklistReportsRequest): Request[GetBlacklistReportsResponse] = js.native
     def getConfigurationSet(params: GetConfigurationSetRequest): Request[GetConfigurationSetResponse] = js.native
     def getConfigurationSetEventDestinations(
         params: GetConfigurationSetEventDestinationsRequest
-    ): Request[GetConfigurationSetEventDestinationsResponse]                              = js.native
-    def getDedicatedIp(params: GetDedicatedIpRequest): Request[GetDedicatedIpResponse]    = js.native
+    ): Request[GetConfigurationSetEventDestinationsResponse] = js.native
+    def getDedicatedIp(params: GetDedicatedIpRequest): Request[GetDedicatedIpResponse] = js.native
     def getDedicatedIps(params: GetDedicatedIpsRequest): Request[GetDedicatedIpsResponse] = js.native
     def getDeliverabilityDashboardOptions(
         params: GetDeliverabilityDashboardOptionsRequest
@@ -288,22 +288,22 @@ package sesv2 {
     ): Request[GetDomainDeliverabilityCampaignResponse] = js.native
     def getDomainStatisticsReport(
         params: GetDomainStatisticsReportRequest
-    ): Request[GetDomainStatisticsReportResponse]                                            = js.native
+    ): Request[GetDomainStatisticsReportResponse] = js.native
     def getEmailIdentity(params: GetEmailIdentityRequest): Request[GetEmailIdentityResponse] = js.native
     def getSuppressedDestination(params: GetSuppressedDestinationRequest): Request[GetSuppressedDestinationResponse] =
       js.native
     def listConfigurationSets(params: ListConfigurationSetsRequest): Request[ListConfigurationSetsResponse] = js.native
-    def listDedicatedIpPools(params: ListDedicatedIpPoolsRequest): Request[ListDedicatedIpPoolsResponse]    = js.native
+    def listDedicatedIpPools(params: ListDedicatedIpPoolsRequest): Request[ListDedicatedIpPoolsResponse] = js.native
     def listDeliverabilityTestReports(
         params: ListDeliverabilityTestReportsRequest
     ): Request[ListDeliverabilityTestReportsResponse] = js.native
     def listDomainDeliverabilityCampaigns(
         params: ListDomainDeliverabilityCampaignsRequest
-    ): Request[ListDomainDeliverabilityCampaignsResponse]                                             = js.native
+    ): Request[ListDomainDeliverabilityCampaignsResponse] = js.native
     def listEmailIdentities(params: ListEmailIdentitiesRequest): Request[ListEmailIdentitiesResponse] = js.native
     def listSuppressedDestinations(
         params: ListSuppressedDestinationsRequest
-    ): Request[ListSuppressedDestinationsResponse]                                                    = js.native
+    ): Request[ListSuppressedDestinationsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putAccountDedicatedIpWarmupAttributes(
         params: PutAccountDedicatedIpWarmupAttributesRequest
@@ -328,7 +328,7 @@ package sesv2 {
     ): Request[PutConfigurationSetSuppressionOptionsResponse] = js.native
     def putConfigurationSetTrackingOptions(
         params: PutConfigurationSetTrackingOptionsRequest
-    ): Request[PutConfigurationSetTrackingOptionsResponse]                                               = js.native
+    ): Request[PutConfigurationSetTrackingOptionsResponse] = js.native
     def putDedicatedIpInPool(params: PutDedicatedIpInPoolRequest): Request[PutDedicatedIpInPoolResponse] = js.native
     def putDedicatedIpWarmupAttributes(
         params: PutDedicatedIpWarmupAttributesRequest
@@ -350,8 +350,8 @@ package sesv2 {
     ): Request[PutEmailIdentityMailFromAttributesResponse] = js.native
     def putSuppressedDestination(params: PutSuppressedDestinationRequest): Request[PutSuppressedDestinationResponse] =
       js.native
-    def sendEmail(params: SendEmailRequest): Request[SendEmailResponse]             = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]       = js.native
+    def sendEmail(params: SendEmailRequest): Request[SendEmailResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateConfigurationSetEventDestination(
         params: UpdateConfigurationSetEventDestinationRequest
@@ -366,7 +366,7 @@ package sesv2 {
   sealed trait BehaviorOnMxFailure extends js.Any
   object BehaviorOnMxFailure extends js.Object {
     val USE_DEFAULT_VALUE = "USE_DEFAULT_VALUE".asInstanceOf[BehaviorOnMxFailure]
-    val REJECT_MESSAGE    = "REJECT_MESSAGE".asInstanceOf[BehaviorOnMxFailure]
+    val REJECT_MESSAGE = "REJECT_MESSAGE".asInstanceOf[BehaviorOnMxFailure]
 
     val values = js.Object.freeze(js.Array(USE_DEFAULT_VALUE, REJECT_MESSAGE))
   }
@@ -458,8 +458,8 @@ package sesv2 {
     ): CloudWatchDimensionConfiguration = {
       val __obj = js.Dynamic.literal(
         "DefaultDimensionValue" -> DefaultDimensionValue.asInstanceOf[js.Any],
-        "DimensionName"         -> DimensionName.asInstanceOf[js.Any],
-        "DimensionValueSource"  -> DimensionValueSource.asInstanceOf[js.Any]
+        "DimensionName" -> DimensionName.asInstanceOf[js.Any],
+        "DimensionValueSource" -> DimensionValueSource.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CloudWatchDimensionConfiguration]
@@ -509,7 +509,7 @@ package sesv2 {
     ): CreateConfigurationSetEventDestinationRequest = {
       val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
-        "EventDestination"     -> EventDestination.asInstanceOf[js.Any],
+        "EventDestination" -> EventDestination.asInstanceOf[js.Any],
         "EventDestinationName" -> EventDestinationName.asInstanceOf[js.Any]
       )
 
@@ -648,7 +648,7 @@ package sesv2 {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDeliverabilityTestReportRequest = {
       val __obj = js.Dynamic.literal(
-        "Content"          -> Content.asInstanceOf[js.Any],
+        "Content" -> Content.asInstanceOf[js.Any],
         "FromEmailAddress" -> FromEmailAddress.asInstanceOf[js.Any]
       )
 
@@ -675,7 +675,7 @@ package sesv2 {
     ): CreateDeliverabilityTestReportResponse = {
       val __obj = js.Dynamic.literal(
         "DeliverabilityTestStatus" -> DeliverabilityTestStatus.asInstanceOf[js.Any],
-        "ReportId"                 -> ReportId.asInstanceOf[js.Any]
+        "ReportId" -> ReportId.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateDeliverabilityTestReportResponse]
@@ -781,9 +781,9 @@ package sesv2 {
         PoolName: js.UndefOr[PoolName] = js.undefined
     ): DedicatedIp = {
       val __obj = js.Dynamic.literal(
-        "Ip"               -> Ip.asInstanceOf[js.Any],
+        "Ip" -> Ip.asInstanceOf[js.Any],
         "WarmupPercentage" -> WarmupPercentage.asInstanceOf[js.Any],
-        "WarmupStatus"     -> WarmupStatus.asInstanceOf[js.Any]
+        "WarmupStatus" -> WarmupStatus.asInstanceOf[js.Any]
       )
 
       PoolName.foreach(__v => __obj.updateDynamic("PoolName")(__v.asInstanceOf[js.Any]))
@@ -985,9 +985,9 @@ package sesv2 {
   @js.native
   sealed trait DeliverabilityDashboardAccountStatus extends js.Any
   object DeliverabilityDashboardAccountStatus extends js.Object {
-    val ACTIVE             = "ACTIVE".asInstanceOf[DeliverabilityDashboardAccountStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[DeliverabilityDashboardAccountStatus]
     val PENDING_EXPIRATION = "PENDING_EXPIRATION".asInstanceOf[DeliverabilityDashboardAccountStatus]
-    val DISABLED           = "DISABLED".asInstanceOf[DeliverabilityDashboardAccountStatus]
+    val DISABLED = "DISABLED".asInstanceOf[DeliverabilityDashboardAccountStatus]
 
     val values = js.Object.freeze(js.Array(ACTIVE, PENDING_EXPIRATION, DISABLED))
   }
@@ -1033,7 +1033,7 @@ package sesv2 {
   sealed trait DeliverabilityTestStatus extends js.Any
   object DeliverabilityTestStatus extends js.Object {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[DeliverabilityTestStatus]
-    val COMPLETED   = "COMPLETED".asInstanceOf[DeliverabilityTestStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[DeliverabilityTestStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED))
   }
@@ -1091,9 +1091,9 @@ package sesv2 {
   @js.native
   sealed trait DimensionValueSource extends js.Any
   object DimensionValueSource extends js.Object {
-    val MESSAGE_TAG  = "MESSAGE_TAG".asInstanceOf[DimensionValueSource]
+    val MESSAGE_TAG = "MESSAGE_TAG".asInstanceOf[DimensionValueSource]
     val EMAIL_HEADER = "EMAIL_HEADER".asInstanceOf[DimensionValueSource]
-    val LINK_TAG     = "LINK_TAG".asInstanceOf[DimensionValueSource]
+    val LINK_TAG = "LINK_TAG".asInstanceOf[DimensionValueSource]
 
     val values = js.Object.freeze(js.Array(MESSAGE_TAG, EMAIL_HEADER, LINK_TAG))
   }
@@ -1144,7 +1144,7 @@ package sesv2 {
     ): DkimSigningAttributes = {
       val __obj = js.Dynamic.literal(
         "DomainSigningPrivateKey" -> DomainSigningPrivateKey.asInstanceOf[js.Any],
-        "DomainSigningSelector"   -> DomainSigningSelector.asInstanceOf[js.Any]
+        "DomainSigningSelector" -> DomainSigningSelector.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DkimSigningAttributes]
@@ -1154,7 +1154,7 @@ package sesv2 {
   @js.native
   sealed trait DkimSigningAttributesOrigin extends js.Any
   object DkimSigningAttributesOrigin extends js.Object {
-    val AWS_SES  = "AWS_SES".asInstanceOf[DkimSigningAttributesOrigin]
+    val AWS_SES = "AWS_SES".asInstanceOf[DkimSigningAttributesOrigin]
     val EXTERNAL = "EXTERNAL".asInstanceOf[DkimSigningAttributesOrigin]
 
     val values = js.Object.freeze(js.Array(AWS_SES, EXTERNAL))
@@ -1171,11 +1171,11 @@ package sesv2 {
   @js.native
   sealed trait DkimStatus extends js.Any
   object DkimStatus extends js.Object {
-    val PENDING           = "PENDING".asInstanceOf[DkimStatus]
-    val SUCCESS           = "SUCCESS".asInstanceOf[DkimStatus]
-    val FAILED            = "FAILED".asInstanceOf[DkimStatus]
+    val PENDING = "PENDING".asInstanceOf[DkimStatus]
+    val SUCCESS = "SUCCESS".asInstanceOf[DkimStatus]
+    val FAILED = "FAILED".asInstanceOf[DkimStatus]
     val TEMPORARY_FAILURE = "TEMPORARY_FAILURE".asInstanceOf[DkimStatus]
-    val NOT_STARTED       = "NOT_STARTED".asInstanceOf[DkimStatus]
+    val NOT_STARTED = "NOT_STARTED".asInstanceOf[DkimStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, SUCCESS, FAILED, TEMPORARY_FAILURE, NOT_STARTED))
   }
@@ -1322,7 +1322,7 @@ package sesv2 {
   }
 
   /**
-    * In the Amazon SES API v2, <i>events</i> include message sends, deliveries, opens, clicks, bounces, and complaints. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.
+    * In the Amazon SES API v2, <i>events</i> include message sends, deliveries, opens, clicks, bounces, complaints and delivery delays. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.
     */
   @js.native
   trait EventDestination extends js.Object {
@@ -1348,7 +1348,7 @@ package sesv2 {
     ): EventDestination = {
       val __obj = js.Dynamic.literal(
         "MatchingEventTypes" -> MatchingEventTypes.asInstanceOf[js.Any],
-        "Name"               -> Name.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       CloudWatchDestination.foreach(__v => __obj.updateDynamic("CloudWatchDestination")(__v.asInstanceOf[js.Any]))
@@ -1404,16 +1404,19 @@ package sesv2 {
   @js.native
   sealed trait EventType extends js.Any
   object EventType extends js.Object {
-    val SEND              = "SEND".asInstanceOf[EventType]
-    val REJECT            = "REJECT".asInstanceOf[EventType]
-    val BOUNCE            = "BOUNCE".asInstanceOf[EventType]
-    val COMPLAINT         = "COMPLAINT".asInstanceOf[EventType]
-    val DELIVERY          = "DELIVERY".asInstanceOf[EventType]
-    val OPEN              = "OPEN".asInstanceOf[EventType]
-    val CLICK             = "CLICK".asInstanceOf[EventType]
+    val SEND = "SEND".asInstanceOf[EventType]
+    val REJECT = "REJECT".asInstanceOf[EventType]
+    val BOUNCE = "BOUNCE".asInstanceOf[EventType]
+    val COMPLAINT = "COMPLAINT".asInstanceOf[EventType]
+    val DELIVERY = "DELIVERY".asInstanceOf[EventType]
+    val OPEN = "OPEN".asInstanceOf[EventType]
+    val CLICK = "CLICK".asInstanceOf[EventType]
     val RENDERING_FAILURE = "RENDERING_FAILURE".asInstanceOf[EventType]
+    val DELIVERY_DELAY = "DELIVERY_DELAY".asInstanceOf[EventType]
 
-    val values = js.Object.freeze(js.Array(SEND, REJECT, BOUNCE, COMPLAINT, DELIVERY, OPEN, CLICK, RENDERING_FAILURE))
+    val values = js.Object.freeze(
+      js.Array(SEND, REJECT, BOUNCE, COMPLAINT, DELIVERY, OPEN, CLICK, RENDERING_FAILURE, DELIVERY_DELAY)
+    )
   }
 
   /**
@@ -1791,8 +1794,8 @@ package sesv2 {
     ): GetDeliverabilityTestReportResponse = {
       val __obj = js.Dynamic.literal(
         "DeliverabilityTestReport" -> DeliverabilityTestReport.asInstanceOf[js.Any],
-        "IspPlacements"            -> IspPlacements.asInstanceOf[js.Any],
-        "OverallPlacement"         -> OverallPlacement.asInstanceOf[js.Any]
+        "IspPlacements" -> IspPlacements.asInstanceOf[js.Any],
+        "OverallPlacement" -> OverallPlacement.asInstanceOf[js.Any]
       )
 
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
@@ -1861,8 +1864,8 @@ package sesv2 {
         StartDate: Timestamp
     ): GetDomainStatisticsReportRequest = {
       val __obj = js.Dynamic.literal(
-        "Domain"    -> Domain.asInstanceOf[js.Any],
-        "EndDate"   -> EndDate.asInstanceOf[js.Any],
+        "Domain" -> Domain.asInstanceOf[js.Any],
+        "EndDate" -> EndDate.asInstanceOf[js.Any],
         "StartDate" -> StartDate.asInstanceOf[js.Any]
       )
 
@@ -1886,7 +1889,7 @@ package sesv2 {
         OverallVolume: OverallVolume
     ): GetDomainStatisticsReportResponse = {
       val __obj = js.Dynamic.literal(
-        "DailyVolumes"  -> DailyVolumes.asInstanceOf[js.Any],
+        "DailyVolumes" -> DailyVolumes.asInstanceOf[js.Any],
         "OverallVolume" -> OverallVolume.asInstanceOf[js.Any]
       )
 
@@ -2024,8 +2027,8 @@ package sesv2 {
   @js.native
   sealed trait IdentityType extends js.Any
   object IdentityType extends js.Object {
-    val EMAIL_ADDRESS  = "EMAIL_ADDRESS".asInstanceOf[IdentityType]
-    val DOMAIN         = "DOMAIN".asInstanceOf[IdentityType]
+    val EMAIL_ADDRESS = "EMAIL_ADDRESS".asInstanceOf[IdentityType]
+    val DOMAIN = "DOMAIN".asInstanceOf[IdentityType]
     val MANAGED_DOMAIN = "MANAGED_DOMAIN".asInstanceOf[IdentityType]
 
     val values = js.Object.freeze(js.Array(EMAIL_ADDRESS, DOMAIN, MANAGED_DOMAIN))
@@ -2092,7 +2095,7 @@ package sesv2 {
     ): KinesisFirehoseDestination = {
       val __obj = js.Dynamic.literal(
         "DeliveryStreamArn" -> DeliveryStreamArn.asInstanceOf[js.Any],
-        "IamRoleArn"        -> IamRoleArn.asInstanceOf[js.Any]
+        "IamRoleArn" -> IamRoleArn.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[KinesisFirehoseDestination]
@@ -2255,8 +2258,8 @@ package sesv2 {
         PageSize: js.UndefOr[MaxItems] = js.undefined
     ): ListDomainDeliverabilityCampaignsRequest = {
       val __obj = js.Dynamic.literal(
-        "EndDate"          -> EndDate.asInstanceOf[js.Any],
-        "StartDate"        -> StartDate.asInstanceOf[js.Any],
+        "EndDate" -> EndDate.asInstanceOf[js.Any],
+        "StartDate" -> StartDate.asInstanceOf[js.Any],
         "SubscribedDomain" -> SubscribedDomain.asInstanceOf[js.Any]
       )
 
@@ -2443,8 +2446,8 @@ package sesv2 {
         MailFromDomainStatus: MailFromDomainStatus
     ): MailFromAttributes = {
       val __obj = js.Dynamic.literal(
-        "BehaviorOnMxFailure"  -> BehaviorOnMxFailure.asInstanceOf[js.Any],
-        "MailFromDomain"       -> MailFromDomain.asInstanceOf[js.Any],
+        "BehaviorOnMxFailure" -> BehaviorOnMxFailure.asInstanceOf[js.Any],
+        "MailFromDomain" -> MailFromDomain.asInstanceOf[js.Any],
         "MailFromDomainStatus" -> MailFromDomainStatus.asInstanceOf[js.Any]
       )
 
@@ -2462,9 +2465,9 @@ package sesv2 {
   @js.native
   sealed trait MailFromDomainStatus extends js.Any
   object MailFromDomainStatus extends js.Object {
-    val PENDING           = "PENDING".asInstanceOf[MailFromDomainStatus]
-    val SUCCESS           = "SUCCESS".asInstanceOf[MailFromDomainStatus]
-    val FAILED            = "FAILED".asInstanceOf[MailFromDomainStatus]
+    val PENDING = "PENDING".asInstanceOf[MailFromDomainStatus]
+    val SUCCESS = "SUCCESS".asInstanceOf[MailFromDomainStatus]
+    val FAILED = "FAILED".asInstanceOf[MailFromDomainStatus]
     val TEMPORARY_FAILURE = "TEMPORARY_FAILURE".asInstanceOf[MailFromDomainStatus]
 
     val values = js.Object.freeze(js.Array(PENDING, SUCCESS, FAILED, TEMPORARY_FAILURE))
@@ -2486,7 +2489,7 @@ package sesv2 {
         Subject: Content
     ): Message = {
       val __obj = js.Dynamic.literal(
-        "Body"    -> Body.asInstanceOf[js.Any],
+        "Body" -> Body.asInstanceOf[js.Any],
         "Subject" -> Subject.asInstanceOf[js.Any]
       )
 
@@ -2510,7 +2513,7 @@ package sesv2 {
         Value: MessageTagValue
     ): MessageTag = {
       val __obj = js.Dynamic.literal(
-        "Name"  -> Name.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -2918,7 +2921,7 @@ package sesv2 {
     ): PutDedicatedIpInPoolRequest = {
       val __obj = js.Dynamic.literal(
         "DestinationPoolName" -> DestinationPoolName.asInstanceOf[js.Any],
-        "Ip"                  -> Ip.asInstanceOf[js.Any]
+        "Ip" -> Ip.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutDedicatedIpInPoolRequest]
@@ -2957,7 +2960,7 @@ package sesv2 {
         WarmupPercentage: Percentage100Wrapper
     ): PutDedicatedIpWarmupAttributesRequest = {
       val __obj = js.Dynamic.literal(
-        "Ip"               -> Ip.asInstanceOf[js.Any],
+        "Ip" -> Ip.asInstanceOf[js.Any],
         "WarmupPercentage" -> WarmupPercentage.asInstanceOf[js.Any]
       )
 
@@ -3080,7 +3083,7 @@ package sesv2 {
         SigningAttributes: js.UndefOr[DkimSigningAttributes] = js.undefined
     ): PutEmailIdentityDkimSigningAttributesRequest = {
       val __obj = js.Dynamic.literal(
-        "EmailIdentity"           -> EmailIdentity.asInstanceOf[js.Any],
+        "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any],
         "SigningAttributesOrigin" -> SigningAttributesOrigin.asInstanceOf[js.Any]
       )
 
@@ -3212,7 +3215,7 @@ package sesv2 {
     ): PutSuppressedDestinationRequest = {
       val __obj = js.Dynamic.literal(
         "EmailAddress" -> EmailAddress.asInstanceOf[js.Any],
-        "Reason"       -> Reason.asInstanceOf[js.Any]
+        "Reason" -> Reason.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[PutSuppressedDestinationRequest]
@@ -3304,7 +3307,7 @@ package sesv2 {
         ReplyToAddresses: js.UndefOr[EmailAddressList] = js.undefined
     ): SendEmailRequest = {
       val __obj = js.Dynamic.literal(
-        "Content"     -> Content.asInstanceOf[js.Any],
+        "Content" -> Content.asInstanceOf[js.Any],
         "Destination" -> Destination.asInstanceOf[js.Any]
       )
 
@@ -3423,9 +3426,9 @@ package sesv2 {
         Attributes: js.UndefOr[SuppressedDestinationAttributes] = js.undefined
     ): SuppressedDestination = {
       val __obj = js.Dynamic.literal(
-        "EmailAddress"   -> EmailAddress.asInstanceOf[js.Any],
+        "EmailAddress" -> EmailAddress.asInstanceOf[js.Any],
         "LastUpdateTime" -> LastUpdateTime.asInstanceOf[js.Any],
-        "Reason"         -> Reason.asInstanceOf[js.Any]
+        "Reason" -> Reason.asInstanceOf[js.Any]
       )
 
       Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
@@ -3473,9 +3476,9 @@ package sesv2 {
         Reason: SuppressionListReason
     ): SuppressedDestinationSummary = {
       val __obj = js.Dynamic.literal(
-        "EmailAddress"   -> EmailAddress.asInstanceOf[js.Any],
+        "EmailAddress" -> EmailAddress.asInstanceOf[js.Any],
         "LastUpdateTime" -> LastUpdateTime.asInstanceOf[js.Any],
-        "Reason"         -> Reason.asInstanceOf[js.Any]
+        "Reason" -> Reason.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[SuppressedDestinationSummary]
@@ -3509,7 +3512,7 @@ package sesv2 {
   @js.native
   sealed trait SuppressionListReason extends js.Any
   object SuppressionListReason extends js.Object {
-    val BOUNCE    = "BOUNCE".asInstanceOf[SuppressionListReason]
+    val BOUNCE = "BOUNCE".asInstanceOf[SuppressionListReason]
     val COMPLAINT = "COMPLAINT".asInstanceOf[SuppressionListReason]
 
     val values = js.Object.freeze(js.Array(BOUNCE, COMPLAINT))
@@ -3555,7 +3558,7 @@ package sesv2 {
         Value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "Key"   -> Key.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -3577,7 +3580,7 @@ package sesv2 {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags"        -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -3625,7 +3628,7 @@ package sesv2 {
   @js.native
   sealed trait TlsPolicy extends js.Any
   object TlsPolicy extends js.Object {
-    val REQUIRE  = "REQUIRE".asInstanceOf[TlsPolicy]
+    val REQUIRE = "REQUIRE".asInstanceOf[TlsPolicy]
     val OPTIONAL = "OPTIONAL".asInstanceOf[TlsPolicy]
 
     val values = js.Object.freeze(js.Array(REQUIRE, OPTIONAL))
@@ -3667,7 +3670,7 @@ package sesv2 {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -3706,7 +3709,7 @@ package sesv2 {
     ): UpdateConfigurationSetEventDestinationRequest = {
       val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
-        "EventDestination"     -> EventDestination.asInstanceOf[js.Any],
+        "EventDestination" -> EventDestination.asInstanceOf[js.Any],
         "EventDestinationName" -> EventDestinationName.asInstanceOf[js.Any]
       )
 
@@ -3765,7 +3768,7 @@ package sesv2 {
   sealed trait WarmupStatus extends js.Any
   object WarmupStatus extends js.Object {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[WarmupStatus]
-    val DONE        = "DONE".asInstanceOf[WarmupStatus]
+    val DONE = "DONE".asInstanceOf[WarmupStatus]
 
     val values = js.Object.freeze(js.Array(IN_PROGRESS, DONE))
   }

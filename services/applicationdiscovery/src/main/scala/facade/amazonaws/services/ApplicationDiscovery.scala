@@ -7,62 +7,62 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object applicationdiscovery {
-  type AgentConfigurationStatusList          = js.Array[AgentConfigurationStatus]
-  type AgentId                               = String
-  type AgentIds                              = js.Array[AgentId]
-  type AgentNetworkInfoList                  = js.Array[AgentNetworkInfo]
-  type AgentsInfo                            = js.Array[AgentInfo]
-  type ApplicationId                         = String
-  type ApplicationIdsList                    = js.Array[ApplicationId]
+  type AgentConfigurationStatusList = js.Array[AgentConfigurationStatus]
+  type AgentId = String
+  type AgentIds = js.Array[AgentId]
+  type AgentNetworkInfoList = js.Array[AgentNetworkInfo]
+  type AgentsInfo = js.Array[AgentInfo]
+  type ApplicationId = String
+  type ApplicationIdsList = js.Array[ApplicationId]
   type BatchDeleteImportDataErrorDescription = String
-  type BatchDeleteImportDataErrorList        = js.Array[BatchDeleteImportDataError]
-  type BoxedInteger                          = Int
-  type ClientRequestToken                    = String
-  type Condition                             = String
-  type Configuration                         = js.Dictionary[String]
-  type ConfigurationId                       = String
-  type ConfigurationIdList                   = js.Array[ConfigurationId]
-  type ConfigurationTagSet                   = js.Array[ConfigurationTag]
-  type Configurations                        = js.Array[Configuration]
-  type ConfigurationsDownloadUrl             = String
-  type ConfigurationsExportId                = String
-  type ContinuousExportDescriptions          = js.Array[ContinuousExportDescription]
-  type ContinuousExportIds                   = js.Array[ConfigurationsExportId]
-  type DatabaseName                          = String
-  type DescribeConfigurationsAttribute       = js.Dictionary[String]
-  type DescribeConfigurationsAttributes      = js.Array[DescribeConfigurationsAttribute]
-  type DescribeContinuousExportsMaxResults   = Int
-  type DescribeImportTasksFilterList         = js.Array[ImportTaskFilter]
-  type DescribeImportTasksMaxResults         = Int
-  type ExportDataFormats                     = js.Array[ExportDataFormat]
-  type ExportFilters                         = js.Array[ExportFilter]
-  type ExportIds                             = js.Array[ConfigurationsExportId]
-  type ExportRequestTime                     = js.Date
-  type ExportStatusMessage                   = String
-  type ExportsInfo                           = js.Array[ExportInfo]
-  type FilterName                            = String
-  type FilterValue                           = String
-  type FilterValues                          = js.Array[FilterValue]
-  type Filters                               = js.Array[Filter]
-  type ImportTaskFilterValue                 = String
-  type ImportTaskFilterValueList             = js.Array[ImportTaskFilterValue]
-  type ImportTaskIdentifier                  = String
-  type ImportTaskList                        = js.Array[ImportTask]
-  type ImportTaskName                        = String
-  type ImportURL                             = String
-  type NeighborDetailsList                   = js.Array[NeighborConnectionDetail]
-  type NextToken                             = String
-  type OrderByList                           = js.Array[OrderByElement]
-  type S3Bucket                              = String
-  type S3PresignedUrl                        = String
-  type SchemaStorageConfig                   = js.Dictionary[String]
-  type StringMax255                          = String
-  type TagFilters                            = js.Array[TagFilter]
-  type TagKey                                = String
-  type TagSet                                = js.Array[Tag]
-  type TagValue                              = String
-  type TimeStamp                             = js.Date
-  type ToDeleteIdentifierList                = js.Array[ImportTaskIdentifier]
+  type BatchDeleteImportDataErrorList = js.Array[BatchDeleteImportDataError]
+  type BoxedInteger = Int
+  type ClientRequestToken = String
+  type Condition = String
+  type Configuration = js.Dictionary[String]
+  type ConfigurationId = String
+  type ConfigurationIdList = js.Array[ConfigurationId]
+  type ConfigurationTagSet = js.Array[ConfigurationTag]
+  type Configurations = js.Array[Configuration]
+  type ConfigurationsDownloadUrl = String
+  type ConfigurationsExportId = String
+  type ContinuousExportDescriptions = js.Array[ContinuousExportDescription]
+  type ContinuousExportIds = js.Array[ConfigurationsExportId]
+  type DatabaseName = String
+  type DescribeConfigurationsAttribute = js.Dictionary[String]
+  type DescribeConfigurationsAttributes = js.Array[DescribeConfigurationsAttribute]
+  type DescribeContinuousExportsMaxResults = Int
+  type DescribeImportTasksFilterList = js.Array[ImportTaskFilter]
+  type DescribeImportTasksMaxResults = Int
+  type ExportDataFormats = js.Array[ExportDataFormat]
+  type ExportFilters = js.Array[ExportFilter]
+  type ExportIds = js.Array[ConfigurationsExportId]
+  type ExportRequestTime = js.Date
+  type ExportStatusMessage = String
+  type ExportsInfo = js.Array[ExportInfo]
+  type FilterName = String
+  type FilterValue = String
+  type FilterValues = js.Array[FilterValue]
+  type Filters = js.Array[Filter]
+  type ImportTaskFilterValue = String
+  type ImportTaskFilterValueList = js.Array[ImportTaskFilterValue]
+  type ImportTaskIdentifier = String
+  type ImportTaskList = js.Array[ImportTask]
+  type ImportTaskName = String
+  type ImportURL = String
+  type NeighborDetailsList = js.Array[NeighborConnectionDetail]
+  type NextToken = String
+  type OrderByList = js.Array[OrderByElement]
+  type S3Bucket = String
+  type S3PresignedUrl = String
+  type SchemaStorageConfig = js.Dictionary[String]
+  type StringMax255 = String
+  type TagFilters = js.Array[TagFilter]
+  type TagKey = String
+  type TagSet = js.Array[Tag]
+  type TagValue = String
+  type TimeStamp = js.Date
+  type ToDeleteIdentifierList = js.Array[ImportTaskIdentifier]
 
   implicit final class ApplicationDiscoveryOps(private val service: ApplicationDiscovery) extends AnyVal {
 
@@ -133,37 +133,37 @@ package applicationdiscovery {
 
     def associateConfigurationItemsToApplication(
         params: AssociateConfigurationItemsToApplicationRequest
-    ): Request[AssociateConfigurationItemsToApplicationResponse]                                            = js.native
+    ): Request[AssociateConfigurationItemsToApplicationResponse] = js.native
     def batchDeleteImportData(params: BatchDeleteImportDataRequest): Request[BatchDeleteImportDataResponse] = js.native
-    def createApplication(params: CreateApplicationRequest): Request[CreateApplicationResponse]             = js.native
-    def createTags(params: CreateTagsRequest): Request[CreateTagsResponse]                                  = js.native
-    def deleteApplications(params: DeleteApplicationsRequest): Request[DeleteApplicationsResponse]          = js.native
-    def deleteTags(params: DeleteTagsRequest): Request[DeleteTagsResponse]                                  = js.native
-    def describeAgents(params: DescribeAgentsRequest): Request[DescribeAgentsResponse]                      = js.native
+    def createApplication(params: CreateApplicationRequest): Request[CreateApplicationResponse] = js.native
+    def createTags(params: CreateTagsRequest): Request[CreateTagsResponse] = js.native
+    def deleteApplications(params: DeleteApplicationsRequest): Request[DeleteApplicationsResponse] = js.native
+    def deleteTags(params: DeleteTagsRequest): Request[DeleteTagsResponse] = js.native
+    def describeAgents(params: DescribeAgentsRequest): Request[DescribeAgentsResponse] = js.native
     def describeConfigurations(params: DescribeConfigurationsRequest): Request[DescribeConfigurationsResponse] =
       js.native
     def describeContinuousExports(
         params: DescribeContinuousExportsRequest
-    ): Request[DescribeContinuousExportsResponse]                                                     = js.native
+    ): Request[DescribeContinuousExportsResponse] = js.native
     def describeExportTasks(params: DescribeExportTasksRequest): Request[DescribeExportTasksResponse] = js.native
     def describeImportTasks(params: DescribeImportTasksRequest): Request[DescribeImportTasksResponse] = js.native
-    def describeTags(params: DescribeTagsRequest): Request[DescribeTagsResponse]                      = js.native
+    def describeTags(params: DescribeTagsRequest): Request[DescribeTagsResponse] = js.native
     def disassociateConfigurationItemsFromApplication(
         params: DisassociateConfigurationItemsFromApplicationRequest
-    ): Request[DisassociateConfigurationItemsFromApplicationResponse]                                       = js.native
-    def getDiscoverySummary(params: GetDiscoverySummaryRequest): Request[GetDiscoverySummaryResponse]       = js.native
-    def listConfigurations(params: ListConfigurationsRequest): Request[ListConfigurationsResponse]          = js.native
-    def listServerNeighbors(params: ListServerNeighborsRequest): Request[ListServerNeighborsResponse]       = js.native
+    ): Request[DisassociateConfigurationItemsFromApplicationResponse] = js.native
+    def getDiscoverySummary(params: GetDiscoverySummaryRequest): Request[GetDiscoverySummaryResponse] = js.native
+    def listConfigurations(params: ListConfigurationsRequest): Request[ListConfigurationsResponse] = js.native
+    def listServerNeighbors(params: ListServerNeighborsRequest): Request[ListServerNeighborsResponse] = js.native
     def startContinuousExport(params: StartContinuousExportRequest): Request[StartContinuousExportResponse] = js.native
     def startDataCollectionByAgentIds(
         params: StartDataCollectionByAgentIdsRequest
-    ): Request[StartDataCollectionByAgentIdsResponse]                                                    = js.native
-    def startExportTask(params: StartExportTaskRequest): Request[StartExportTaskResponse]                = js.native
-    def startImportTask(params: StartImportTaskRequest): Request[StartImportTaskResponse]                = js.native
+    ): Request[StartDataCollectionByAgentIdsResponse] = js.native
+    def startExportTask(params: StartExportTaskRequest): Request[StartExportTaskResponse] = js.native
+    def startImportTask(params: StartImportTaskRequest): Request[StartImportTaskResponse] = js.native
     def stopContinuousExport(params: StopContinuousExportRequest): Request[StopContinuousExportResponse] = js.native
     def stopDataCollectionByAgentIds(
         params: StopDataCollectionByAgentIdsRequest
-    ): Request[StopDataCollectionByAgentIdsResponse]                                            = js.native
+    ): Request[StopDataCollectionByAgentIdsResponse] = js.native
     def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse] = js.native
     @deprecated("Deprecated in AWS SDK", "forever") def describeExportConfigurations(
         params: DescribeExportConfigurationsRequest
@@ -268,12 +268,12 @@ package applicationdiscovery {
   @js.native
   sealed trait AgentStatus extends js.Any
   object AgentStatus extends js.Object {
-    val HEALTHY     = "HEALTHY".asInstanceOf[AgentStatus]
-    val UNHEALTHY   = "UNHEALTHY".asInstanceOf[AgentStatus]
-    val RUNNING     = "RUNNING".asInstanceOf[AgentStatus]
-    val UNKNOWN     = "UNKNOWN".asInstanceOf[AgentStatus]
+    val HEALTHY = "HEALTHY".asInstanceOf[AgentStatus]
+    val UNHEALTHY = "UNHEALTHY".asInstanceOf[AgentStatus]
+    val RUNNING = "RUNNING".asInstanceOf[AgentStatus]
+    val UNKNOWN = "UNKNOWN".asInstanceOf[AgentStatus]
     val BLACKLISTED = "BLACKLISTED".asInstanceOf[AgentStatus]
-    val SHUTDOWN    = "SHUTDOWN".asInstanceOf[AgentStatus]
+    val SHUTDOWN = "SHUTDOWN".asInstanceOf[AgentStatus]
 
     val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY, RUNNING, UNKNOWN, BLACKLISTED, SHUTDOWN))
   }
@@ -292,7 +292,7 @@ package applicationdiscovery {
     ): AssociateConfigurationItemsToApplicationRequest = {
       val __obj = js.Dynamic.literal(
         "applicationConfigurationId" -> applicationConfigurationId.asInstanceOf[js.Any],
-        "configurationIds"           -> configurationIds.asInstanceOf[js.Any]
+        "configurationIds" -> configurationIds.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AssociateConfigurationItemsToApplicationRequest]
@@ -340,9 +340,9 @@ package applicationdiscovery {
   @js.native
   sealed trait BatchDeleteImportDataErrorCode extends js.Any
   object BatchDeleteImportDataErrorCode extends js.Object {
-    val NOT_FOUND             = "NOT_FOUND".asInstanceOf[BatchDeleteImportDataErrorCode]
+    val NOT_FOUND = "NOT_FOUND".asInstanceOf[BatchDeleteImportDataErrorCode]
     val INTERNAL_SERVER_ERROR = "INTERNAL_SERVER_ERROR".asInstanceOf[BatchDeleteImportDataErrorCode]
-    val OVER_LIMIT            = "OVER_LIMIT".asInstanceOf[BatchDeleteImportDataErrorCode]
+    val OVER_LIMIT = "OVER_LIMIT".asInstanceOf[BatchDeleteImportDataErrorCode]
 
     val values = js.Object.freeze(js.Array(NOT_FOUND, INTERNAL_SERVER_ERROR, OVER_LIMIT))
   }
@@ -384,9 +384,9 @@ package applicationdiscovery {
   @js.native
   sealed trait ConfigurationItemType extends js.Any
   object ConfigurationItemType extends js.Object {
-    val SERVER      = "SERVER".asInstanceOf[ConfigurationItemType]
-    val PROCESS     = "PROCESS".asInstanceOf[ConfigurationItemType]
-    val CONNECTION  = "CONNECTION".asInstanceOf[ConfigurationItemType]
+    val SERVER = "SERVER".asInstanceOf[ConfigurationItemType]
+    val PROCESS = "PROCESS".asInstanceOf[ConfigurationItemType]
+    val CONNECTION = "CONNECTION".asInstanceOf[ConfigurationItemType]
     val APPLICATION = "APPLICATION".asInstanceOf[ConfigurationItemType]
 
     val values = js.Object.freeze(js.Array(SERVER, PROCESS, CONNECTION, APPLICATION))
@@ -467,12 +467,12 @@ package applicationdiscovery {
   sealed trait ContinuousExportStatus extends js.Any
   object ContinuousExportStatus extends js.Object {
     val START_IN_PROGRESS = "START_IN_PROGRESS".asInstanceOf[ContinuousExportStatus]
-    val START_FAILED      = "START_FAILED".asInstanceOf[ContinuousExportStatus]
-    val ACTIVE            = "ACTIVE".asInstanceOf[ContinuousExportStatus]
-    val ERROR             = "ERROR".asInstanceOf[ContinuousExportStatus]
-    val STOP_IN_PROGRESS  = "STOP_IN_PROGRESS".asInstanceOf[ContinuousExportStatus]
-    val STOP_FAILED       = "STOP_FAILED".asInstanceOf[ContinuousExportStatus]
-    val INACTIVE          = "INACTIVE".asInstanceOf[ContinuousExportStatus]
+    val START_FAILED = "START_FAILED".asInstanceOf[ContinuousExportStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[ContinuousExportStatus]
+    val ERROR = "ERROR".asInstanceOf[ContinuousExportStatus]
+    val STOP_IN_PROGRESS = "STOP_IN_PROGRESS".asInstanceOf[ContinuousExportStatus]
+    val STOP_FAILED = "STOP_FAILED".asInstanceOf[ContinuousExportStatus]
+    val INACTIVE = "INACTIVE".asInstanceOf[ContinuousExportStatus]
 
     val values = js.Object.freeze(
       js.Array(START_IN_PROGRESS, START_FAILED, ACTIVE, ERROR, STOP_IN_PROGRESS, STOP_FAILED, INACTIVE)
@@ -530,7 +530,7 @@ package applicationdiscovery {
     ): CreateTagsRequest = {
       val __obj = js.Dynamic.literal(
         "configurationIds" -> configurationIds.asInstanceOf[js.Any],
-        "tags"             -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CreateTagsRequest]
@@ -576,13 +576,13 @@ package applicationdiscovery {
         unknownAgents: Int
     ): CustomerAgentInfo = {
       val __obj = js.Dynamic.literal(
-        "activeAgents"      -> activeAgents.asInstanceOf[js.Any],
+        "activeAgents" -> activeAgents.asInstanceOf[js.Any],
         "blackListedAgents" -> blackListedAgents.asInstanceOf[js.Any],
-        "healthyAgents"     -> healthyAgents.asInstanceOf[js.Any],
-        "shutdownAgents"    -> shutdownAgents.asInstanceOf[js.Any],
-        "totalAgents"       -> totalAgents.asInstanceOf[js.Any],
-        "unhealthyAgents"   -> unhealthyAgents.asInstanceOf[js.Any],
-        "unknownAgents"     -> unknownAgents.asInstanceOf[js.Any]
+        "healthyAgents" -> healthyAgents.asInstanceOf[js.Any],
+        "shutdownAgents" -> shutdownAgents.asInstanceOf[js.Any],
+        "totalAgents" -> totalAgents.asInstanceOf[js.Any],
+        "unhealthyAgents" -> unhealthyAgents.asInstanceOf[js.Any],
+        "unknownAgents" -> unknownAgents.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CustomerAgentInfo]
@@ -615,13 +615,13 @@ package applicationdiscovery {
         unknownConnectors: Int
     ): CustomerConnectorInfo = {
       val __obj = js.Dynamic.literal(
-        "activeConnectors"      -> activeConnectors.asInstanceOf[js.Any],
+        "activeConnectors" -> activeConnectors.asInstanceOf[js.Any],
         "blackListedConnectors" -> blackListedConnectors.asInstanceOf[js.Any],
-        "healthyConnectors"     -> healthyConnectors.asInstanceOf[js.Any],
-        "shutdownConnectors"    -> shutdownConnectors.asInstanceOf[js.Any],
-        "totalConnectors"       -> totalConnectors.asInstanceOf[js.Any],
-        "unhealthyConnectors"   -> unhealthyConnectors.asInstanceOf[js.Any],
-        "unknownConnectors"     -> unknownConnectors.asInstanceOf[js.Any]
+        "healthyConnectors" -> healthyConnectors.asInstanceOf[js.Any],
+        "shutdownConnectors" -> shutdownConnectors.asInstanceOf[js.Any],
+        "totalConnectors" -> totalConnectors.asInstanceOf[js.Any],
+        "unhealthyConnectors" -> unhealthyConnectors.asInstanceOf[js.Any],
+        "unknownConnectors" -> unknownConnectors.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[CustomerConnectorInfo]
@@ -1001,7 +1001,7 @@ package applicationdiscovery {
     ): DisassociateConfigurationItemsFromApplicationRequest = {
       val __obj = js.Dynamic.literal(
         "applicationConfigurationId" -> applicationConfigurationId.asInstanceOf[js.Any],
-        "configurationIds"           -> configurationIds.asInstanceOf[js.Any]
+        "configurationIds" -> configurationIds.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[DisassociateConfigurationItemsFromApplicationRequest]
@@ -1040,7 +1040,7 @@ package applicationdiscovery {
   @js.native
   sealed trait ExportDataFormat extends js.Any
   object ExportDataFormat extends js.Object {
-    val CSV     = "CSV".asInstanceOf[ExportDataFormat]
+    val CSV = "CSV".asInstanceOf[ExportDataFormat]
     val GRAPHML = "GRAPHML".asInstanceOf[ExportDataFormat]
 
     val values = js.Object.freeze(js.Array(CSV, GRAPHML))
@@ -1065,8 +1065,8 @@ package applicationdiscovery {
     ): ExportFilter = {
       val __obj = js.Dynamic.literal(
         "condition" -> condition.asInstanceOf[js.Any],
-        "name"      -> name.asInstanceOf[js.Any],
-        "values"    -> values.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any],
+        "values" -> values.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[ExportFilter]
@@ -1101,10 +1101,10 @@ package applicationdiscovery {
         requestedStartTime: js.UndefOr[TimeStamp] = js.undefined
     ): ExportInfo = {
       val __obj = js.Dynamic.literal(
-        "exportId"          -> exportId.asInstanceOf[js.Any],
+        "exportId" -> exportId.asInstanceOf[js.Any],
         "exportRequestTime" -> exportRequestTime.asInstanceOf[js.Any],
-        "exportStatus"      -> exportStatus.asInstanceOf[js.Any],
-        "statusMessage"     -> statusMessage.asInstanceOf[js.Any]
+        "exportStatus" -> exportStatus.asInstanceOf[js.Any],
+        "statusMessage" -> statusMessage.asInstanceOf[js.Any]
       )
 
       configurationsDownloadUrl.foreach(__v =>
@@ -1120,8 +1120,8 @@ package applicationdiscovery {
   @js.native
   sealed trait ExportStatus extends js.Any
   object ExportStatus extends js.Object {
-    val FAILED      = "FAILED".asInstanceOf[ExportStatus]
-    val SUCCEEDED   = "SUCCEEDED".asInstanceOf[ExportStatus]
+    val FAILED = "FAILED".asInstanceOf[ExportStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[ExportStatus]
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ExportStatus]
 
     val values = js.Object.freeze(js.Array(FAILED, SUCCEEDED, IN_PROGRESS))
@@ -1147,8 +1147,8 @@ package applicationdiscovery {
     ): Filter = {
       val __obj = js.Dynamic.literal(
         "condition" -> condition.asInstanceOf[js.Any],
-        "name"      -> name.asInstanceOf[js.Any],
-        "values"    -> values.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any],
+        "values" -> values.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[Filter]
@@ -1204,17 +1204,17 @@ package applicationdiscovery {
   @js.native
   sealed trait ImportStatus extends js.Any
   object ImportStatus extends js.Object {
-    val IMPORT_IN_PROGRESS                  = "IMPORT_IN_PROGRESS".asInstanceOf[ImportStatus]
-    val IMPORT_COMPLETE                     = "IMPORT_COMPLETE".asInstanceOf[ImportStatus]
-    val IMPORT_COMPLETE_WITH_ERRORS         = "IMPORT_COMPLETE_WITH_ERRORS".asInstanceOf[ImportStatus]
-    val IMPORT_FAILED                       = "IMPORT_FAILED".asInstanceOf[ImportStatus]
+    val IMPORT_IN_PROGRESS = "IMPORT_IN_PROGRESS".asInstanceOf[ImportStatus]
+    val IMPORT_COMPLETE = "IMPORT_COMPLETE".asInstanceOf[ImportStatus]
+    val IMPORT_COMPLETE_WITH_ERRORS = "IMPORT_COMPLETE_WITH_ERRORS".asInstanceOf[ImportStatus]
+    val IMPORT_FAILED = "IMPORT_FAILED".asInstanceOf[ImportStatus]
     val IMPORT_FAILED_SERVER_LIMIT_EXCEEDED = "IMPORT_FAILED_SERVER_LIMIT_EXCEEDED".asInstanceOf[ImportStatus]
     val IMPORT_FAILED_RECORD_LIMIT_EXCEEDED = "IMPORT_FAILED_RECORD_LIMIT_EXCEEDED".asInstanceOf[ImportStatus]
-    val DELETE_IN_PROGRESS                  = "DELETE_IN_PROGRESS".asInstanceOf[ImportStatus]
-    val DELETE_COMPLETE                     = "DELETE_COMPLETE".asInstanceOf[ImportStatus]
-    val DELETE_FAILED                       = "DELETE_FAILED".asInstanceOf[ImportStatus]
-    val DELETE_FAILED_LIMIT_EXCEEDED        = "DELETE_FAILED_LIMIT_EXCEEDED".asInstanceOf[ImportStatus]
-    val INTERNAL_ERROR                      = "INTERNAL_ERROR".asInstanceOf[ImportStatus]
+    val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[ImportStatus]
+    val DELETE_COMPLETE = "DELETE_COMPLETE".asInstanceOf[ImportStatus]
+    val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[ImportStatus]
+    val DELETE_FAILED_LIMIT_EXCEEDED = "DELETE_FAILED_LIMIT_EXCEEDED".asInstanceOf[ImportStatus]
+    val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[ImportStatus]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1318,8 +1318,8 @@ package applicationdiscovery {
   sealed trait ImportTaskFilterName extends js.Any
   object ImportTaskFilterName extends js.Object {
     val IMPORT_TASK_ID = "IMPORT_TASK_ID".asInstanceOf[ImportTaskFilterName]
-    val STATUS         = "STATUS".asInstanceOf[ImportTaskFilterName]
-    val NAME           = "NAME".asInstanceOf[ImportTaskFilterName]
+    val STATUS = "STATUS".asInstanceOf[ImportTaskFilterName]
+    val NAME = "NAME".asInstanceOf[ImportTaskFilterName]
 
     val values = js.Object.freeze(js.Array(IMPORT_TASK_ID, STATUS, NAME))
   }
@@ -1449,9 +1449,9 @@ package applicationdiscovery {
         transportProtocol: js.UndefOr[String] = js.undefined
     ): NeighborConnectionDetail = {
       val __obj = js.Dynamic.literal(
-        "connectionsCount"    -> connectionsCount.asInstanceOf[js.Any],
+        "connectionsCount" -> connectionsCount.asInstanceOf[js.Any],
         "destinationServerId" -> destinationServerId.asInstanceOf[js.Any],
-        "sourceServerId"      -> sourceServerId.asInstanceOf[js.Any]
+        "sourceServerId" -> sourceServerId.asInstanceOf[js.Any]
       )
 
       destinationPort.foreach(__v => __obj.updateDynamic("destinationPort")(__v.asInstanceOf[js.Any]))
@@ -1618,7 +1618,7 @@ package applicationdiscovery {
     ): StartImportTaskRequest = {
       val __obj = js.Dynamic.literal(
         "importUrl" -> importUrl.asInstanceOf[js.Any],
-        "name"      -> name.asInstanceOf[js.Any]
+        "name" -> name.asInstanceOf[js.Any]
       )
 
       clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
@@ -1731,7 +1731,7 @@ package applicationdiscovery {
         value: TagValue
     ): Tag = {
       val __obj = js.Dynamic.literal(
-        "key"   -> key.asInstanceOf[js.Any],
+        "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 
@@ -1755,7 +1755,7 @@ package applicationdiscovery {
         values: FilterValues
     ): TagFilter = {
       val __obj = js.Dynamic.literal(
-        "name"   -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "values" -> values.asInstanceOf[js.Any]
       )
 
@@ -1803,7 +1803,7 @@ package applicationdiscovery {
   @js.native
   sealed trait orderString extends js.Any
   object orderString extends js.Object {
-    val ASC  = "ASC".asInstanceOf[orderString]
+    val ASC = "ASC".asInstanceOf[orderString]
     val DESC = "DESC".asInstanceOf[orderString]
 
     val values = js.Object.freeze(js.Array(ASC, DESC))

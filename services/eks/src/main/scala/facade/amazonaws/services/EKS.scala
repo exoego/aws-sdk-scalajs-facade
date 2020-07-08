@@ -7,32 +7,33 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object eks {
-  type AutoScalingGroupList             = js.Array[AutoScalingGroup]
-  type BoxedBoolean                     = Boolean
-  type BoxedInteger                     = Int
-  type Capacity                         = Int
-  type ClusterName                      = String
-  type ErrorDetails                     = js.Array[ErrorDetail]
-  type FargateProfileLabel              = js.Dictionary[String]
-  type FargateProfileSelectors          = js.Array[FargateProfileSelector]
+  type AutoScalingGroupList = js.Array[AutoScalingGroup]
+  type BoxedBoolean = Boolean
+  type BoxedInteger = Int
+  type Capacity = Int
+  type ClusterName = String
+  type EncryptionConfigList = js.Array[EncryptionConfig]
+  type ErrorDetails = js.Array[ErrorDetail]
+  type FargateProfileLabel = js.Dictionary[String]
+  type FargateProfileSelectors = js.Array[FargateProfileSelector]
   type FargateProfilesRequestMaxResults = Int
-  type IssueList                        = js.Array[Issue]
-  type ListClustersRequestMaxResults    = Int
-  type ListNodegroupsRequestMaxResults  = Int
-  type ListUpdatesRequestMaxResults     = Int
-  type LogSetups                        = js.Array[LogSetup]
-  type LogTypes                         = js.Array[LogType]
-  type StringList                       = js.Array[String]
-  type TagKey                           = String
-  type TagKeyList                       = js.Array[TagKey]
-  type TagMap                           = js.Dictionary[TagValue]
-  type TagValue                         = String
-  type Timestamp                        = js.Date
-  type UpdateParams                     = js.Array[UpdateParam]
-  type labelKey                         = String
-  type labelValue                       = String
-  type labelsKeyList                    = js.Array[String]
-  type labelsMap                        = js.Dictionary[labelValue]
+  type IssueList = js.Array[Issue]
+  type ListClustersRequestMaxResults = Int
+  type ListNodegroupsRequestMaxResults = Int
+  type ListUpdatesRequestMaxResults = Int
+  type LogSetups = js.Array[LogSetup]
+  type LogTypes = js.Array[LogType]
+  type StringList = js.Array[String]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagMap = js.Dictionary[TagValue]
+  type TagValue = String
+  type Timestamp = js.Date
+  type UpdateParams = js.Array[UpdateParam]
+  type labelKey = String
+  type labelValue = String
+  type labelsKeyList = js.Array[String]
+  type labelsMap = js.Dictionary[labelValue]
 
   implicit final class EKSOps(private val service: EKS) extends AnyVal {
 
@@ -90,26 +91,26 @@ package eks {
   class EKS() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createCluster(params: CreateClusterRequest): Request[CreateClusterResponse]                      = js.native
+    def createCluster(params: CreateClusterRequest): Request[CreateClusterResponse] = js.native
     def createFargateProfile(params: CreateFargateProfileRequest): Request[CreateFargateProfileResponse] = js.native
-    def createNodegroup(params: CreateNodegroupRequest): Request[CreateNodegroupResponse]                = js.native
-    def deleteCluster(params: DeleteClusterRequest): Request[DeleteClusterResponse]                      = js.native
+    def createNodegroup(params: CreateNodegroupRequest): Request[CreateNodegroupResponse] = js.native
+    def deleteCluster(params: DeleteClusterRequest): Request[DeleteClusterResponse] = js.native
     def deleteFargateProfile(params: DeleteFargateProfileRequest): Request[DeleteFargateProfileResponse] = js.native
-    def deleteNodegroup(params: DeleteNodegroupRequest): Request[DeleteNodegroupResponse]                = js.native
-    def describeCluster(params: DescribeClusterRequest): Request[DescribeClusterResponse]                = js.native
+    def deleteNodegroup(params: DeleteNodegroupRequest): Request[DeleteNodegroupResponse] = js.native
+    def describeCluster(params: DescribeClusterRequest): Request[DescribeClusterResponse] = js.native
     def describeFargateProfile(params: DescribeFargateProfileRequest): Request[DescribeFargateProfileResponse] =
       js.native
-    def describeNodegroup(params: DescribeNodegroupRequest): Request[DescribeNodegroupResponse]             = js.native
-    def describeUpdate(params: DescribeUpdateRequest): Request[DescribeUpdateResponse]                      = js.native
-    def listClusters(params: ListClustersRequest): Request[ListClustersResponse]                            = js.native
-    def listFargateProfiles(params: ListFargateProfilesRequest): Request[ListFargateProfilesResponse]       = js.native
-    def listNodegroups(params: ListNodegroupsRequest): Request[ListNodegroupsResponse]                      = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
-    def listUpdates(params: ListUpdatesRequest): Request[ListUpdatesResponse]                               = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                         = js.native
-    def updateClusterConfig(params: UpdateClusterConfigRequest): Request[UpdateClusterConfigResponse]       = js.native
-    def updateClusterVersion(params: UpdateClusterVersionRequest): Request[UpdateClusterVersionResponse]    = js.native
+    def describeNodegroup(params: DescribeNodegroupRequest): Request[DescribeNodegroupResponse] = js.native
+    def describeUpdate(params: DescribeUpdateRequest): Request[DescribeUpdateResponse] = js.native
+    def listClusters(params: ListClustersRequest): Request[ListClustersResponse] = js.native
+    def listFargateProfiles(params: ListFargateProfilesRequest): Request[ListFargateProfilesResponse] = js.native
+    def listNodegroups(params: ListNodegroupsRequest): Request[ListNodegroupsResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def listUpdates(params: ListUpdatesRequest): Request[ListUpdatesResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateClusterConfig(params: UpdateClusterConfigRequest): Request[UpdateClusterConfigResponse] = js.native
+    def updateClusterVersion(params: UpdateClusterVersionRequest): Request[UpdateClusterVersionResponse] = js.native
     def updateNodegroupConfig(params: UpdateNodegroupConfigRequest): Request[UpdateNodegroupConfigResponse] = js.native
     def updateNodegroupVersion(params: UpdateNodegroupVersionRequest): Request[UpdateNodegroupVersionResponse] =
       js.native
@@ -118,7 +119,7 @@ package eks {
   @js.native
   sealed trait AMITypes extends js.Any
   object AMITypes extends js.Object {
-    val AL2_x86_64     = "AL2_x86_64".asInstanceOf[AMITypes]
+    val AL2_x86_64 = "AL2_x86_64".asInstanceOf[AMITypes]
     val AL2_x86_64_GPU = "AL2_x86_64_GPU".asInstanceOf[AMITypes]
 
     val values = js.Object.freeze(js.Array(AL2_x86_64, AL2_x86_64_GPU))
@@ -171,6 +172,7 @@ package eks {
     var certificateAuthority: js.UndefOr[Certificate]
     var clientRequestToken: js.UndefOr[String]
     var createdAt: js.UndefOr[Timestamp]
+    var encryptionConfig: js.UndefOr[EncryptionConfigList]
     var endpoint: js.UndefOr[String]
     var identity: js.UndefOr[Identity]
     var logging: js.UndefOr[Logging]
@@ -190,6 +192,7 @@ package eks {
         certificateAuthority: js.UndefOr[Certificate] = js.undefined,
         clientRequestToken: js.UndefOr[String] = js.undefined,
         createdAt: js.UndefOr[Timestamp] = js.undefined,
+        encryptionConfig: js.UndefOr[EncryptionConfigList] = js.undefined,
         endpoint: js.UndefOr[String] = js.undefined,
         identity: js.UndefOr[Identity] = js.undefined,
         logging: js.UndefOr[Logging] = js.undefined,
@@ -206,6 +209,7 @@ package eks {
       certificateAuthority.foreach(__v => __obj.updateDynamic("certificateAuthority")(__v.asInstanceOf[js.Any]))
       clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      encryptionConfig.foreach(__v => __obj.updateDynamic("encryptionConfig")(__v.asInstanceOf[js.Any]))
       endpoint.foreach(__v => __obj.updateDynamic("endpoint")(__v.asInstanceOf[js.Any]))
       identity.foreach(__v => __obj.updateDynamic("identity")(__v.asInstanceOf[js.Any]))
       logging.foreach(__v => __obj.updateDynamic("logging")(__v.asInstanceOf[js.Any]))
@@ -224,9 +228,9 @@ package eks {
   sealed trait ClusterStatus extends js.Any
   object ClusterStatus extends js.Object {
     val CREATING = "CREATING".asInstanceOf[ClusterStatus]
-    val ACTIVE   = "ACTIVE".asInstanceOf[ClusterStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[ClusterStatus]
     val DELETING = "DELETING".asInstanceOf[ClusterStatus]
-    val FAILED   = "FAILED".asInstanceOf[ClusterStatus]
+    val FAILED = "FAILED".asInstanceOf[ClusterStatus]
     val UPDATING = "UPDATING".asInstanceOf[ClusterStatus]
 
     val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, FAILED, UPDATING))
@@ -238,6 +242,7 @@ package eks {
     var resourcesVpcConfig: VpcConfigRequest
     var roleArn: String
     var clientRequestToken: js.UndefOr[String]
+    var encryptionConfig: js.UndefOr[EncryptionConfigList]
     var logging: js.UndefOr[Logging]
     var tags: js.UndefOr[TagMap]
     var version: js.UndefOr[String]
@@ -250,17 +255,19 @@ package eks {
         resourcesVpcConfig: VpcConfigRequest,
         roleArn: String,
         clientRequestToken: js.UndefOr[String] = js.undefined,
+        encryptionConfig: js.UndefOr[EncryptionConfigList] = js.undefined,
         logging: js.UndefOr[Logging] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined,
         version: js.UndefOr[String] = js.undefined
     ): CreateClusterRequest = {
       val __obj = js.Dynamic.literal(
-        "name"               -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "resourcesVpcConfig" -> resourcesVpcConfig.asInstanceOf[js.Any],
-        "roleArn"            -> roleArn.asInstanceOf[js.Any]
+        "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
       clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      encryptionConfig.foreach(__v => __obj.updateDynamic("encryptionConfig")(__v.asInstanceOf[js.Any]))
       logging.foreach(__v => __obj.updateDynamic("logging")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
@@ -307,8 +314,8 @@ package eks {
         tags: js.UndefOr[TagMap] = js.undefined
     ): CreateFargateProfileRequest = {
       val __obj = js.Dynamic.literal(
-        "clusterName"         -> clusterName.asInstanceOf[js.Any],
-        "fargateProfileName"  -> fargateProfileName.asInstanceOf[js.Any],
+        "clusterName" -> clusterName.asInstanceOf[js.Any],
+        "fargateProfileName" -> fargateProfileName.asInstanceOf[js.Any],
         "podExecutionRoleArn" -> podExecutionRoleArn.asInstanceOf[js.Any]
       )
 
@@ -373,10 +380,10 @@ package eks {
         version: js.UndefOr[String] = js.undefined
     ): CreateNodegroupRequest = {
       val __obj = js.Dynamic.literal(
-        "clusterName"   -> clusterName.asInstanceOf[js.Any],
-        "nodeRole"      -> nodeRole.asInstanceOf[js.Any],
+        "clusterName" -> clusterName.asInstanceOf[js.Any],
+        "nodeRole" -> nodeRole.asInstanceOf[js.Any],
         "nodegroupName" -> nodegroupName.asInstanceOf[js.Any],
-        "subnets"       -> subnets.asInstanceOf[js.Any]
+        "subnets" -> subnets.asInstanceOf[js.Any]
       )
 
       amiType.foreach(__v => __obj.updateDynamic("amiType")(__v.asInstanceOf[js.Any]))
@@ -456,7 +463,7 @@ package eks {
         fargateProfileName: String
     ): DeleteFargateProfileRequest = {
       val __obj = js.Dynamic.literal(
-        "clusterName"        -> clusterName.asInstanceOf[js.Any],
+        "clusterName" -> clusterName.asInstanceOf[js.Any],
         "fargateProfileName" -> fargateProfileName.asInstanceOf[js.Any]
       )
 
@@ -493,7 +500,7 @@ package eks {
         nodegroupName: String
     ): DeleteNodegroupRequest = {
       val __obj = js.Dynamic.literal(
-        "clusterName"   -> clusterName.asInstanceOf[js.Any],
+        "clusterName" -> clusterName.asInstanceOf[js.Any],
         "nodegroupName" -> nodegroupName.asInstanceOf[js.Any]
       )
 
@@ -564,7 +571,7 @@ package eks {
         fargateProfileName: String
     ): DescribeFargateProfileRequest = {
       val __obj = js.Dynamic.literal(
-        "clusterName"        -> clusterName.asInstanceOf[js.Any],
+        "clusterName" -> clusterName.asInstanceOf[js.Any],
         "fargateProfileName" -> fargateProfileName.asInstanceOf[js.Any]
       )
 
@@ -601,7 +608,7 @@ package eks {
         nodegroupName: String
     ): DescribeNodegroupRequest = {
       val __obj = js.Dynamic.literal(
-        "clusterName"   -> clusterName.asInstanceOf[js.Any],
+        "clusterName" -> clusterName.asInstanceOf[js.Any],
         "nodegroupName" -> nodegroupName.asInstanceOf[js.Any]
       )
 
@@ -640,7 +647,7 @@ package eks {
         nodegroupName: js.UndefOr[String] = js.undefined
     ): DescribeUpdateRequest = {
       val __obj = js.Dynamic.literal(
-        "name"     -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "updateId" -> updateId.asInstanceOf[js.Any]
       )
 
@@ -665,19 +672,41 @@ package eks {
     }
   }
 
+  /**
+    * The encryption configuration for the cluster.
+    */
+  @js.native
+  trait EncryptionConfig extends js.Object {
+    var provider: js.UndefOr[Provider]
+    var resources: js.UndefOr[StringList]
+  }
+
+  object EncryptionConfig {
+    @inline
+    def apply(
+        provider: js.UndefOr[Provider] = js.undefined,
+        resources: js.UndefOr[StringList] = js.undefined
+    ): EncryptionConfig = {
+      val __obj = js.Dynamic.literal()
+      provider.foreach(__v => __obj.updateDynamic("provider")(__v.asInstanceOf[js.Any]))
+      resources.foreach(__v => __obj.updateDynamic("resources")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EncryptionConfig]
+    }
+  }
+
   @js.native
   sealed trait ErrorCode extends js.Any
   object ErrorCode extends js.Object {
-    val SubnetNotFound            = "SubnetNotFound".asInstanceOf[ErrorCode]
-    val SecurityGroupNotFound     = "SecurityGroupNotFound".asInstanceOf[ErrorCode]
-    val EniLimitReached           = "EniLimitReached".asInstanceOf[ErrorCode]
-    val IpNotAvailable            = "IpNotAvailable".asInstanceOf[ErrorCode]
-    val AccessDenied              = "AccessDenied".asInstanceOf[ErrorCode]
-    val OperationNotPermitted     = "OperationNotPermitted".asInstanceOf[ErrorCode]
-    val VpcIdNotFound             = "VpcIdNotFound".asInstanceOf[ErrorCode]
-    val Unknown                   = "Unknown".asInstanceOf[ErrorCode]
-    val NodeCreationFailure       = "NodeCreationFailure".asInstanceOf[ErrorCode]
-    val PodEvictionFailure        = "PodEvictionFailure".asInstanceOf[ErrorCode]
+    val SubnetNotFound = "SubnetNotFound".asInstanceOf[ErrorCode]
+    val SecurityGroupNotFound = "SecurityGroupNotFound".asInstanceOf[ErrorCode]
+    val EniLimitReached = "EniLimitReached".asInstanceOf[ErrorCode]
+    val IpNotAvailable = "IpNotAvailable".asInstanceOf[ErrorCode]
+    val AccessDenied = "AccessDenied".asInstanceOf[ErrorCode]
+    val OperationNotPermitted = "OperationNotPermitted".asInstanceOf[ErrorCode]
+    val VpcIdNotFound = "VpcIdNotFound".asInstanceOf[ErrorCode]
+    val Unknown = "Unknown".asInstanceOf[ErrorCode]
+    val NodeCreationFailure = "NodeCreationFailure".asInstanceOf[ErrorCode]
+    val PodEvictionFailure = "PodEvictionFailure".asInstanceOf[ErrorCode]
     val InsufficientFreeAddresses = "InsufficientFreeAddresses".asInstanceOf[ErrorCode]
 
     val values = js.Object.freeze(
@@ -790,9 +819,9 @@ package eks {
   @js.native
   sealed trait FargateProfileStatus extends js.Any
   object FargateProfileStatus extends js.Object {
-    val CREATING      = "CREATING".asInstanceOf[FargateProfileStatus]
-    val ACTIVE        = "ACTIVE".asInstanceOf[FargateProfileStatus]
-    val DELETING      = "DELETING".asInstanceOf[FargateProfileStatus]
+    val CREATING = "CREATING".asInstanceOf[FargateProfileStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[FargateProfileStatus]
+    val DELETING = "DELETING".asInstanceOf[FargateProfileStatus]
     val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[FargateProfileStatus]
     val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[FargateProfileStatus]
 
@@ -1072,11 +1101,11 @@ package eks {
   @js.native
   sealed trait LogType extends js.Any
   object LogType extends js.Object {
-    val api               = "api".asInstanceOf[LogType]
-    val audit             = "audit".asInstanceOf[LogType]
-    val authenticator     = "authenticator".asInstanceOf[LogType]
+    val api = "api".asInstanceOf[LogType]
+    val audit = "audit".asInstanceOf[LogType]
+    val authenticator = "authenticator".asInstanceOf[LogType]
     val controllerManager = "controllerManager".asInstanceOf[LogType]
-    val scheduler         = "scheduler".asInstanceOf[LogType]
+    val scheduler = "scheduler".asInstanceOf[LogType]
 
     val values = js.Object.freeze(js.Array(api, audit, authenticator, controllerManager, scheduler))
   }
@@ -1195,20 +1224,23 @@ package eks {
   @js.native
   sealed trait NodegroupIssueCode extends js.Any
   object NodegroupIssueCode extends js.Object {
-    val AutoScalingGroupNotFound             = "AutoScalingGroupNotFound".asInstanceOf[NodegroupIssueCode]
+    val AutoScalingGroupNotFound = "AutoScalingGroupNotFound".asInstanceOf[NodegroupIssueCode]
     val AutoScalingGroupInvalidConfiguration = "AutoScalingGroupInvalidConfiguration".asInstanceOf[NodegroupIssueCode]
-    val Ec2SecurityGroupNotFound             = "Ec2SecurityGroupNotFound".asInstanceOf[NodegroupIssueCode]
-    val Ec2SecurityGroupDeletionFailure      = "Ec2SecurityGroupDeletionFailure".asInstanceOf[NodegroupIssueCode]
-    val Ec2LaunchTemplateNotFound            = "Ec2LaunchTemplateNotFound".asInstanceOf[NodegroupIssueCode]
-    val Ec2LaunchTemplateVersionMismatch     = "Ec2LaunchTemplateVersionMismatch".asInstanceOf[NodegroupIssueCode]
-    val Ec2SubnetNotFound                    = "Ec2SubnetNotFound".asInstanceOf[NodegroupIssueCode]
-    val IamInstanceProfileNotFound           = "IamInstanceProfileNotFound".asInstanceOf[NodegroupIssueCode]
-    val IamNodeRoleNotFound                  = "IamNodeRoleNotFound".asInstanceOf[NodegroupIssueCode]
-    val AsgInstanceLaunchFailures            = "AsgInstanceLaunchFailures".asInstanceOf[NodegroupIssueCode]
-    val InstanceLimitExceeded                = "InstanceLimitExceeded".asInstanceOf[NodegroupIssueCode]
-    val InsufficientFreeAddresses            = "InsufficientFreeAddresses".asInstanceOf[NodegroupIssueCode]
-    val AccessDenied                         = "AccessDenied".asInstanceOf[NodegroupIssueCode]
-    val InternalFailure                      = "InternalFailure".asInstanceOf[NodegroupIssueCode]
+    val Ec2SecurityGroupNotFound = "Ec2SecurityGroupNotFound".asInstanceOf[NodegroupIssueCode]
+    val Ec2SecurityGroupDeletionFailure = "Ec2SecurityGroupDeletionFailure".asInstanceOf[NodegroupIssueCode]
+    val Ec2LaunchTemplateNotFound = "Ec2LaunchTemplateNotFound".asInstanceOf[NodegroupIssueCode]
+    val Ec2LaunchTemplateVersionMismatch = "Ec2LaunchTemplateVersionMismatch".asInstanceOf[NodegroupIssueCode]
+    val Ec2SubnetNotFound = "Ec2SubnetNotFound".asInstanceOf[NodegroupIssueCode]
+    val Ec2SubnetInvalidConfiguration = "Ec2SubnetInvalidConfiguration".asInstanceOf[NodegroupIssueCode]
+    val IamInstanceProfileNotFound = "IamInstanceProfileNotFound".asInstanceOf[NodegroupIssueCode]
+    val IamLimitExceeded = "IamLimitExceeded".asInstanceOf[NodegroupIssueCode]
+    val IamNodeRoleNotFound = "IamNodeRoleNotFound".asInstanceOf[NodegroupIssueCode]
+    val NodeCreationFailure = "NodeCreationFailure".asInstanceOf[NodegroupIssueCode]
+    val AsgInstanceLaunchFailures = "AsgInstanceLaunchFailures".asInstanceOf[NodegroupIssueCode]
+    val InstanceLimitExceeded = "InstanceLimitExceeded".asInstanceOf[NodegroupIssueCode]
+    val InsufficientFreeAddresses = "InsufficientFreeAddresses".asInstanceOf[NodegroupIssueCode]
+    val AccessDenied = "AccessDenied".asInstanceOf[NodegroupIssueCode]
+    val InternalFailure = "InternalFailure".asInstanceOf[NodegroupIssueCode]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1219,8 +1251,11 @@ package eks {
         Ec2LaunchTemplateNotFound,
         Ec2LaunchTemplateVersionMismatch,
         Ec2SubnetNotFound,
+        Ec2SubnetInvalidConfiguration,
         IamInstanceProfileNotFound,
+        IamLimitExceeded,
         IamNodeRoleNotFound,
+        NodeCreationFailure,
         AsgInstanceLaunchFailures,
         InstanceLimitExceeded,
         InsufficientFreeAddresses,
@@ -1282,13 +1317,13 @@ package eks {
   @js.native
   sealed trait NodegroupStatus extends js.Any
   object NodegroupStatus extends js.Object {
-    val CREATING      = "CREATING".asInstanceOf[NodegroupStatus]
-    val ACTIVE        = "ACTIVE".asInstanceOf[NodegroupStatus]
-    val UPDATING      = "UPDATING".asInstanceOf[NodegroupStatus]
-    val DELETING      = "DELETING".asInstanceOf[NodegroupStatus]
+    val CREATING = "CREATING".asInstanceOf[NodegroupStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[NodegroupStatus]
+    val UPDATING = "UPDATING".asInstanceOf[NodegroupStatus]
+    val DELETING = "DELETING".asInstanceOf[NodegroupStatus]
     val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[NodegroupStatus]
     val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[NodegroupStatus]
-    val DEGRADED      = "DEGRADED".asInstanceOf[NodegroupStatus]
+    val DEGRADED = "DEGRADED".asInstanceOf[NodegroupStatus]
 
     val values =
       js.Object.freeze(js.Array(CREATING, ACTIVE, UPDATING, DELETING, CREATE_FAILED, DELETE_FAILED, DEGRADED))
@@ -1310,6 +1345,25 @@ package eks {
       val __obj = js.Dynamic.literal()
       issuer.foreach(__v => __obj.updateDynamic("issuer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OIDC]
+    }
+  }
+
+  /**
+    * Identifies the AWS Key Management Service (AWS KMS) customer master key (CMK) used to encrypt the secrets.
+    */
+  @js.native
+  trait Provider extends js.Object {
+    var keyArn: js.UndefOr[String]
+  }
+
+  object Provider {
+    @inline
+    def apply(
+        keyArn: js.UndefOr[String] = js.undefined
+    ): Provider = {
+      val __obj = js.Dynamic.literal()
+      keyArn.foreach(__v => __obj.updateDynamic("keyArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Provider]
     }
   }
 
@@ -1349,7 +1403,7 @@ package eks {
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
+        "tags" -> tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagResourceRequest]
@@ -1383,7 +1437,7 @@ package eks {
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagResourceRequest]
@@ -1495,7 +1549,7 @@ package eks {
         clientRequestToken: js.UndefOr[String] = js.undefined
     ): UpdateClusterVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "name"    -> name.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
         "version" -> version.asInstanceOf[js.Any]
       )
 
@@ -1561,7 +1615,7 @@ package eks {
         scalingConfig: js.UndefOr[NodegroupScalingConfig] = js.undefined
     ): UpdateNodegroupConfigRequest = {
       val __obj = js.Dynamic.literal(
-        "clusterName"   -> clusterName.asInstanceOf[js.Any],
+        "clusterName" -> clusterName.asInstanceOf[js.Any],
         "nodegroupName" -> nodegroupName.asInstanceOf[js.Any]
       )
 
@@ -1609,7 +1663,7 @@ package eks {
         version: js.UndefOr[String] = js.undefined
     ): UpdateNodegroupVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "clusterName"   -> clusterName.asInstanceOf[js.Any],
+        "clusterName" -> clusterName.asInstanceOf[js.Any],
         "nodegroupName" -> nodegroupName.asInstanceOf[js.Any]
       )
 
@@ -1662,18 +1716,18 @@ package eks {
   @js.native
   sealed trait UpdateParamType extends js.Any
   object UpdateParamType extends js.Object {
-    val Version               = "Version".asInstanceOf[UpdateParamType]
-    val PlatformVersion       = "PlatformVersion".asInstanceOf[UpdateParamType]
+    val Version = "Version".asInstanceOf[UpdateParamType]
+    val PlatformVersion = "PlatformVersion".asInstanceOf[UpdateParamType]
     val EndpointPrivateAccess = "EndpointPrivateAccess".asInstanceOf[UpdateParamType]
-    val EndpointPublicAccess  = "EndpointPublicAccess".asInstanceOf[UpdateParamType]
-    val ClusterLogging        = "ClusterLogging".asInstanceOf[UpdateParamType]
-    val DesiredSize           = "DesiredSize".asInstanceOf[UpdateParamType]
-    val LabelsToAdd           = "LabelsToAdd".asInstanceOf[UpdateParamType]
-    val LabelsToRemove        = "LabelsToRemove".asInstanceOf[UpdateParamType]
-    val MaxSize               = "MaxSize".asInstanceOf[UpdateParamType]
-    val MinSize               = "MinSize".asInstanceOf[UpdateParamType]
-    val ReleaseVersion        = "ReleaseVersion".asInstanceOf[UpdateParamType]
-    val PublicAccessCidrs     = "PublicAccessCidrs".asInstanceOf[UpdateParamType]
+    val EndpointPublicAccess = "EndpointPublicAccess".asInstanceOf[UpdateParamType]
+    val ClusterLogging = "ClusterLogging".asInstanceOf[UpdateParamType]
+    val DesiredSize = "DesiredSize".asInstanceOf[UpdateParamType]
+    val LabelsToAdd = "LabelsToAdd".asInstanceOf[UpdateParamType]
+    val LabelsToRemove = "LabelsToRemove".asInstanceOf[UpdateParamType]
+    val MaxSize = "MaxSize".asInstanceOf[UpdateParamType]
+    val MinSize = "MinSize".asInstanceOf[UpdateParamType]
+    val ReleaseVersion = "ReleaseVersion".asInstanceOf[UpdateParamType]
+    val PublicAccessCidrs = "PublicAccessCidrs".asInstanceOf[UpdateParamType]
 
     val values = js.Object.freeze(
       js.Array(
@@ -1697,8 +1751,8 @@ package eks {
   sealed trait UpdateStatus extends js.Any
   object UpdateStatus extends js.Object {
     val InProgress = "InProgress".asInstanceOf[UpdateStatus]
-    val Failed     = "Failed".asInstanceOf[UpdateStatus]
-    val Cancelled  = "Cancelled".asInstanceOf[UpdateStatus]
+    val Failed = "Failed".asInstanceOf[UpdateStatus]
+    val Cancelled = "Cancelled".asInstanceOf[UpdateStatus]
     val Successful = "Successful".asInstanceOf[UpdateStatus]
 
     val values = js.Object.freeze(js.Array(InProgress, Failed, Cancelled, Successful))
@@ -1707,10 +1761,10 @@ package eks {
   @js.native
   sealed trait UpdateType extends js.Any
   object UpdateType extends js.Object {
-    val VersionUpdate        = "VersionUpdate".asInstanceOf[UpdateType]
+    val VersionUpdate = "VersionUpdate".asInstanceOf[UpdateType]
     val EndpointAccessUpdate = "EndpointAccessUpdate".asInstanceOf[UpdateType]
-    val LoggingUpdate        = "LoggingUpdate".asInstanceOf[UpdateType]
-    val ConfigUpdate         = "ConfigUpdate".asInstanceOf[UpdateType]
+    val LoggingUpdate = "LoggingUpdate".asInstanceOf[UpdateType]
+    val ConfigUpdate = "ConfigUpdate".asInstanceOf[UpdateType]
 
     val values = js.Object.freeze(js.Array(VersionUpdate, EndpointAccessUpdate, LoggingUpdate, ConfigUpdate))
   }

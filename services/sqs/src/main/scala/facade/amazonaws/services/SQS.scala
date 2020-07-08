@@ -7,31 +7,33 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object sqs {
-  type AWSAccountIdList                             = js.Array[String]
-  type ActionNameList                               = js.Array[String]
-  type AttributeNameList                            = js.Array[QueueAttributeName]
-  type BatchResultErrorEntryList                    = js.Array[BatchResultErrorEntry]
-  type Binary                                       = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type BinaryList                                   = js.Array[Binary]
+  type AWSAccountIdList = js.Array[String]
+  type ActionNameList = js.Array[String]
+  type AttributeNameList = js.Array[QueueAttributeName]
+  type BatchResultErrorEntryList = js.Array[BatchResultErrorEntry]
+  type Binary = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type BinaryList = js.Array[Binary]
+  type BoxedInteger = Int
   type ChangeMessageVisibilityBatchRequestEntryList = js.Array[ChangeMessageVisibilityBatchRequestEntry]
-  type ChangeMessageVisibilityBatchResultEntryList  = js.Array[ChangeMessageVisibilityBatchResultEntry]
-  type DeleteMessageBatchRequestEntryList           = js.Array[DeleteMessageBatchRequestEntry]
-  type DeleteMessageBatchResultEntryList            = js.Array[DeleteMessageBatchResultEntry]
-  type MessageAttributeName                         = String
-  type MessageAttributeNameList                     = js.Array[MessageAttributeName]
-  type MessageBodyAttributeMap                      = js.Dictionary[MessageAttributeValue]
-  type MessageBodySystemAttributeMap                = js.Dictionary[MessageSystemAttributeValue]
-  type MessageList                                  = js.Array[Message]
-  type MessageSystemAttributeMap                    = js.Dictionary[String]
-  type QueueAttributeMap                            = js.Dictionary[String]
-  type QueueUrlList                                 = js.Array[String]
-  type SendMessageBatchRequestEntryList             = js.Array[SendMessageBatchRequestEntry]
-  type SendMessageBatchResultEntryList              = js.Array[SendMessageBatchResultEntry]
-  type StringList                                   = js.Array[String]
-  type TagKey                                       = String
-  type TagKeyList                                   = js.Array[TagKey]
-  type TagMap                                       = js.Dictionary[TagValue]
-  type TagValue                                     = String
+  type ChangeMessageVisibilityBatchResultEntryList = js.Array[ChangeMessageVisibilityBatchResultEntry]
+  type DeleteMessageBatchRequestEntryList = js.Array[DeleteMessageBatchRequestEntry]
+  type DeleteMessageBatchResultEntryList = js.Array[DeleteMessageBatchResultEntry]
+  type MessageAttributeName = String
+  type MessageAttributeNameList = js.Array[MessageAttributeName]
+  type MessageBodyAttributeMap = js.Dictionary[MessageAttributeValue]
+  type MessageBodySystemAttributeMap = js.Dictionary[MessageSystemAttributeValue]
+  type MessageList = js.Array[Message]
+  type MessageSystemAttributeMap = js.Dictionary[String]
+  type QueueAttributeMap = js.Dictionary[String]
+  type QueueUrlList = js.Array[String]
+  type SendMessageBatchRequestEntryList = js.Array[SendMessageBatchRequestEntry]
+  type SendMessageBatchResultEntryList = js.Array[SendMessageBatchResultEntry]
+  type StringList = js.Array[String]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagMap = js.Dictionary[TagValue]
+  type TagValue = String
+  type Token = String
 
   implicit final class SQSOps(private val service: SQS) extends AnyVal {
 
@@ -85,30 +87,30 @@ package sqs {
   class SQS() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def addPermission(params: AddPermissionRequest): Request[js.Object]                     = js.native
+    def addPermission(params: AddPermissionRequest): Request[js.Object] = js.native
     def changeMessageVisibility(params: ChangeMessageVisibilityRequest): Request[js.Object] = js.native
     def changeMessageVisibilityBatch(
         params: ChangeMessageVisibilityBatchRequest
-    ): Request[ChangeMessageVisibilityBatchResult]                                               = js.native
-    def createQueue(params: CreateQueueRequest): Request[CreateQueueResult]                      = js.native
-    def deleteMessage(params: DeleteMessageRequest): Request[js.Object]                          = js.native
+    ): Request[ChangeMessageVisibilityBatchResult] = js.native
+    def createQueue(params: CreateQueueRequest): Request[CreateQueueResult] = js.native
+    def deleteMessage(params: DeleteMessageRequest): Request[js.Object] = js.native
     def deleteMessageBatch(params: DeleteMessageBatchRequest): Request[DeleteMessageBatchResult] = js.native
-    def deleteQueue(params: DeleteQueueRequest): Request[js.Object]                              = js.native
+    def deleteQueue(params: DeleteQueueRequest): Request[js.Object] = js.native
     def getQueueAttributes(params: GetQueueAttributesRequest): Request[GetQueueAttributesResult] = js.native
-    def getQueueUrl(params: GetQueueUrlRequest): Request[GetQueueUrlResult]                      = js.native
+    def getQueueUrl(params: GetQueueUrlRequest): Request[GetQueueUrlResult] = js.native
     def listDeadLetterSourceQueues(
         params: ListDeadLetterSourceQueuesRequest
-    ): Request[ListDeadLetterSourceQueuesResult]                                           = js.native
-    def listQueueTags(params: ListQueueTagsRequest): Request[ListQueueTagsResult]          = js.native
-    def listQueues(params: ListQueuesRequest): Request[ListQueuesResult]                   = js.native
-    def purgeQueue(params: PurgeQueueRequest): Request[js.Object]                          = js.native
-    def receiveMessage(params: ReceiveMessageRequest): Request[ReceiveMessageResult]       = js.native
-    def removePermission(params: RemovePermissionRequest): Request[js.Object]              = js.native
-    def sendMessage(params: SendMessageRequest): Request[SendMessageResult]                = js.native
+    ): Request[ListDeadLetterSourceQueuesResult] = js.native
+    def listQueueTags(params: ListQueueTagsRequest): Request[ListQueueTagsResult] = js.native
+    def listQueues(params: ListQueuesRequest): Request[ListQueuesResult] = js.native
+    def purgeQueue(params: PurgeQueueRequest): Request[js.Object] = js.native
+    def receiveMessage(params: ReceiveMessageRequest): Request[ReceiveMessageResult] = js.native
+    def removePermission(params: RemovePermissionRequest): Request[js.Object] = js.native
+    def sendMessage(params: SendMessageRequest): Request[SendMessageResult] = js.native
     def sendMessageBatch(params: SendMessageBatchRequest): Request[SendMessageBatchResult] = js.native
-    def setQueueAttributes(params: SetQueueAttributesRequest): Request[js.Object]          = js.native
-    def tagQueue(params: TagQueueRequest): Request[js.Object]                              = js.native
-    def untagQueue(params: UntagQueueRequest): Request[js.Object]                          = js.native
+    def setQueueAttributes(params: SetQueueAttributesRequest): Request[js.Object] = js.native
+    def tagQueue(params: TagQueueRequest): Request[js.Object] = js.native
+    def untagQueue(params: UntagQueueRequest): Request[js.Object] = js.native
   }
 
   /**
@@ -132,9 +134,9 @@ package sqs {
     ): AddPermissionRequest = {
       val __obj = js.Dynamic.literal(
         "AWSAccountIds" -> AWSAccountIds.asInstanceOf[js.Any],
-        "Actions"       -> Actions.asInstanceOf[js.Any],
-        "Label"         -> Label.asInstanceOf[js.Any],
-        "QueueUrl"      -> QueueUrl.asInstanceOf[js.Any]
+        "Actions" -> Actions.asInstanceOf[js.Any],
+        "Label" -> Label.asInstanceOf[js.Any],
+        "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[AddPermissionRequest]
@@ -161,8 +163,8 @@ package sqs {
         Message: js.UndefOr[String] = js.undefined
     ): BatchResultErrorEntry = {
       val __obj = js.Dynamic.literal(
-        "Code"        -> Code.asInstanceOf[js.Any],
-        "Id"          -> Id.asInstanceOf[js.Any],
+        "Code" -> Code.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "SenderFault" -> SenderFault.asInstanceOf[js.Any]
       )
 
@@ -187,7 +189,7 @@ package sqs {
         QueueUrl: String
     ): ChangeMessageVisibilityBatchRequest = {
       val __obj = js.Dynamic.literal(
-        "Entries"  -> Entries.asInstanceOf[js.Any],
+        "Entries" -> Entries.asInstanceOf[js.Any],
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
 
@@ -217,7 +219,7 @@ package sqs {
         VisibilityTimeout: js.UndefOr[Int] = js.undefined
     ): ChangeMessageVisibilityBatchRequestEntry = {
       val __obj = js.Dynamic.literal(
-        "Id"            -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "ReceiptHandle" -> ReceiptHandle.asInstanceOf[js.Any]
       )
 
@@ -242,7 +244,7 @@ package sqs {
         Successful: ChangeMessageVisibilityBatchResultEntryList
     ): ChangeMessageVisibilityBatchResult = {
       val __obj = js.Dynamic.literal(
-        "Failed"     -> Failed.asInstanceOf[js.Any],
+        "Failed" -> Failed.asInstanceOf[js.Any],
         "Successful" -> Successful.asInstanceOf[js.Any]
       )
 
@@ -286,8 +288,8 @@ package sqs {
         VisibilityTimeout: Int
     ): ChangeMessageVisibilityRequest = {
       val __obj = js.Dynamic.literal(
-        "QueueUrl"          -> QueueUrl.asInstanceOf[js.Any],
-        "ReceiptHandle"     -> ReceiptHandle.asInstanceOf[js.Any],
+        "QueueUrl" -> QueueUrl.asInstanceOf[js.Any],
+        "ReceiptHandle" -> ReceiptHandle.asInstanceOf[js.Any],
         "VisibilityTimeout" -> VisibilityTimeout.asInstanceOf[js.Any]
       )
 
@@ -357,7 +359,7 @@ package sqs {
         QueueUrl: String
     ): DeleteMessageBatchRequest = {
       val __obj = js.Dynamic.literal(
-        "Entries"  -> Entries.asInstanceOf[js.Any],
+        "Entries" -> Entries.asInstanceOf[js.Any],
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
 
@@ -381,7 +383,7 @@ package sqs {
         ReceiptHandle: String
     ): DeleteMessageBatchRequestEntry = {
       val __obj = js.Dynamic.literal(
-        "Id"            -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "ReceiptHandle" -> ReceiptHandle.asInstanceOf[js.Any]
       )
 
@@ -405,7 +407,7 @@ package sqs {
         Successful: DeleteMessageBatchResultEntryList
     ): DeleteMessageBatchResult = {
       val __obj = js.Dynamic.literal(
-        "Failed"     -> Failed.asInstanceOf[js.Any],
+        "Failed" -> Failed.asInstanceOf[js.Any],
         "Successful" -> Successful.asInstanceOf[js.Any]
       )
 
@@ -450,7 +452,7 @@ package sqs {
         ReceiptHandle: String
     ): DeleteMessageRequest = {
       val __obj = js.Dynamic.literal(
-        "QueueUrl"      -> QueueUrl.asInstanceOf[js.Any],
+        "QueueUrl" -> QueueUrl.asInstanceOf[js.Any],
         "ReceiptHandle" -> ReceiptHandle.asInstanceOf[js.Any]
       )
 
@@ -571,17 +573,23 @@ package sqs {
   @js.native
   trait ListDeadLetterSourceQueuesRequest extends js.Object {
     var QueueUrl: String
+    var MaxResults: js.UndefOr[BoxedInteger]
+    var NextToken: js.UndefOr[Token]
   }
 
   object ListDeadLetterSourceQueuesRequest {
     @inline
     def apply(
-        QueueUrl: String
+        QueueUrl: String,
+        MaxResults: js.UndefOr[BoxedInteger] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
     ): ListDeadLetterSourceQueuesRequest = {
       val __obj = js.Dynamic.literal(
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
 
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeadLetterSourceQueuesRequest]
     }
   }
@@ -592,17 +600,20 @@ package sqs {
   @js.native
   trait ListDeadLetterSourceQueuesResult extends js.Object {
     var queueUrls: QueueUrlList
+    var NextToken: js.UndefOr[Token]
   }
 
   object ListDeadLetterSourceQueuesResult {
     @inline
     def apply(
-        queueUrls: QueueUrlList
+        queueUrls: QueueUrlList,
+        NextToken: js.UndefOr[Token] = js.undefined
     ): ListDeadLetterSourceQueuesResult = {
       val __obj = js.Dynamic.literal(
         "queueUrls" -> queueUrls.asInstanceOf[js.Any]
       )
 
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeadLetterSourceQueuesResult]
     }
   }
@@ -646,15 +657,21 @@ package sqs {
     */
   @js.native
   trait ListQueuesRequest extends js.Object {
+    var MaxResults: js.UndefOr[BoxedInteger]
+    var NextToken: js.UndefOr[Token]
     var QueueNamePrefix: js.UndefOr[String]
   }
 
   object ListQueuesRequest {
     @inline
     def apply(
+        MaxResults: js.UndefOr[BoxedInteger] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined,
         QueueNamePrefix: js.UndefOr[String] = js.undefined
     ): ListQueuesRequest = {
       val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       QueueNamePrefix.foreach(__v => __obj.updateDynamic("QueueNamePrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListQueuesRequest]
     }
@@ -665,15 +682,18 @@ package sqs {
     */
   @js.native
   trait ListQueuesResult extends js.Object {
+    var NextToken: js.UndefOr[Token]
     var QueueUrls: js.UndefOr[QueueUrlList]
   }
 
   object ListQueuesResult {
     @inline
     def apply(
+        NextToken: js.UndefOr[Token] = js.undefined,
         QueueUrls: js.UndefOr[QueueUrlList] = js.undefined
     ): ListQueuesResult = {
       val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       QueueUrls.foreach(__v => __obj.updateDynamic("QueueUrls")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListQueuesResult]
     }
@@ -753,14 +773,14 @@ package sqs {
   @js.native
   sealed trait MessageSystemAttributeName extends js.Any
   object MessageSystemAttributeName extends js.Object {
-    val SenderId                         = "SenderId".asInstanceOf[MessageSystemAttributeName]
-    val SentTimestamp                    = "SentTimestamp".asInstanceOf[MessageSystemAttributeName]
-    val ApproximateReceiveCount          = "ApproximateReceiveCount".asInstanceOf[MessageSystemAttributeName]
+    val SenderId = "SenderId".asInstanceOf[MessageSystemAttributeName]
+    val SentTimestamp = "SentTimestamp".asInstanceOf[MessageSystemAttributeName]
+    val ApproximateReceiveCount = "ApproximateReceiveCount".asInstanceOf[MessageSystemAttributeName]
     val ApproximateFirstReceiveTimestamp = "ApproximateFirstReceiveTimestamp".asInstanceOf[MessageSystemAttributeName]
-    val SequenceNumber                   = "SequenceNumber".asInstanceOf[MessageSystemAttributeName]
-    val MessageDeduplicationId           = "MessageDeduplicationId".asInstanceOf[MessageSystemAttributeName]
-    val MessageGroupId                   = "MessageGroupId".asInstanceOf[MessageSystemAttributeName]
-    val AWSTraceHeader                   = "AWSTraceHeader".asInstanceOf[MessageSystemAttributeName]
+    val SequenceNumber = "SequenceNumber".asInstanceOf[MessageSystemAttributeName]
+    val MessageDeduplicationId = "MessageDeduplicationId".asInstanceOf[MessageSystemAttributeName]
+    val MessageGroupId = "MessageGroupId".asInstanceOf[MessageSystemAttributeName]
+    val AWSTraceHeader = "AWSTraceHeader".asInstanceOf[MessageSystemAttributeName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -842,24 +862,24 @@ package sqs {
   @js.native
   sealed trait QueueAttributeName extends js.Any
   object QueueAttributeName extends js.Object {
-    val All                                   = "All".asInstanceOf[QueueAttributeName]
-    val Policy                                = "Policy".asInstanceOf[QueueAttributeName]
-    val VisibilityTimeout                     = "VisibilityTimeout".asInstanceOf[QueueAttributeName]
-    val MaximumMessageSize                    = "MaximumMessageSize".asInstanceOf[QueueAttributeName]
-    val MessageRetentionPeriod                = "MessageRetentionPeriod".asInstanceOf[QueueAttributeName]
-    val ApproximateNumberOfMessages           = "ApproximateNumberOfMessages".asInstanceOf[QueueAttributeName]
+    val All = "All".asInstanceOf[QueueAttributeName]
+    val Policy = "Policy".asInstanceOf[QueueAttributeName]
+    val VisibilityTimeout = "VisibilityTimeout".asInstanceOf[QueueAttributeName]
+    val MaximumMessageSize = "MaximumMessageSize".asInstanceOf[QueueAttributeName]
+    val MessageRetentionPeriod = "MessageRetentionPeriod".asInstanceOf[QueueAttributeName]
+    val ApproximateNumberOfMessages = "ApproximateNumberOfMessages".asInstanceOf[QueueAttributeName]
     val ApproximateNumberOfMessagesNotVisible = "ApproximateNumberOfMessagesNotVisible".asInstanceOf[QueueAttributeName]
-    val CreatedTimestamp                      = "CreatedTimestamp".asInstanceOf[QueueAttributeName]
-    val LastModifiedTimestamp                 = "LastModifiedTimestamp".asInstanceOf[QueueAttributeName]
-    val QueueArn                              = "QueueArn".asInstanceOf[QueueAttributeName]
-    val ApproximateNumberOfMessagesDelayed    = "ApproximateNumberOfMessagesDelayed".asInstanceOf[QueueAttributeName]
-    val DelaySeconds                          = "DelaySeconds".asInstanceOf[QueueAttributeName]
-    val ReceiveMessageWaitTimeSeconds         = "ReceiveMessageWaitTimeSeconds".asInstanceOf[QueueAttributeName]
-    val RedrivePolicy                         = "RedrivePolicy".asInstanceOf[QueueAttributeName]
-    val FifoQueue                             = "FifoQueue".asInstanceOf[QueueAttributeName]
-    val ContentBasedDeduplication             = "ContentBasedDeduplication".asInstanceOf[QueueAttributeName]
-    val KmsMasterKeyId                        = "KmsMasterKeyId".asInstanceOf[QueueAttributeName]
-    val KmsDataKeyReusePeriodSeconds          = "KmsDataKeyReusePeriodSeconds".asInstanceOf[QueueAttributeName]
+    val CreatedTimestamp = "CreatedTimestamp".asInstanceOf[QueueAttributeName]
+    val LastModifiedTimestamp = "LastModifiedTimestamp".asInstanceOf[QueueAttributeName]
+    val QueueArn = "QueueArn".asInstanceOf[QueueAttributeName]
+    val ApproximateNumberOfMessagesDelayed = "ApproximateNumberOfMessagesDelayed".asInstanceOf[QueueAttributeName]
+    val DelaySeconds = "DelaySeconds".asInstanceOf[QueueAttributeName]
+    val ReceiveMessageWaitTimeSeconds = "ReceiveMessageWaitTimeSeconds".asInstanceOf[QueueAttributeName]
+    val RedrivePolicy = "RedrivePolicy".asInstanceOf[QueueAttributeName]
+    val FifoQueue = "FifoQueue".asInstanceOf[QueueAttributeName]
+    val ContentBasedDeduplication = "ContentBasedDeduplication".asInstanceOf[QueueAttributeName]
+    val KmsMasterKeyId = "KmsMasterKeyId".asInstanceOf[QueueAttributeName]
+    val KmsDataKeyReusePeriodSeconds = "KmsDataKeyReusePeriodSeconds".asInstanceOf[QueueAttributeName]
 
     val values = js.Object.freeze(
       js.Array(
@@ -959,7 +979,7 @@ package sqs {
         QueueUrl: String
     ): RemovePermissionRequest = {
       val __obj = js.Dynamic.literal(
-        "Label"    -> Label.asInstanceOf[js.Any],
+        "Label" -> Label.asInstanceOf[js.Any],
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
 
@@ -983,7 +1003,7 @@ package sqs {
         QueueUrl: String
     ): SendMessageBatchRequest = {
       val __obj = js.Dynamic.literal(
-        "Entries"  -> Entries.asInstanceOf[js.Any],
+        "Entries" -> Entries.asInstanceOf[js.Any],
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
 
@@ -1017,7 +1037,7 @@ package sqs {
         MessageSystemAttributes: js.UndefOr[MessageBodySystemAttributeMap] = js.undefined
     ): SendMessageBatchRequestEntry = {
       val __obj = js.Dynamic.literal(
-        "Id"          -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "MessageBody" -> MessageBody.asInstanceOf[js.Any]
       )
 
@@ -1046,7 +1066,7 @@ package sqs {
         Successful: SendMessageBatchResultEntryList
     ): SendMessageBatchResult = {
       val __obj = js.Dynamic.literal(
-        "Failed"     -> Failed.asInstanceOf[js.Any],
+        "Failed" -> Failed.asInstanceOf[js.Any],
         "Successful" -> Successful.asInstanceOf[js.Any]
       )
 
@@ -1078,9 +1098,9 @@ package sqs {
         SequenceNumber: js.UndefOr[String] = js.undefined
     ): SendMessageBatchResultEntry = {
       val __obj = js.Dynamic.literal(
-        "Id"               -> Id.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
         "MD5OfMessageBody" -> MD5OfMessageBody.asInstanceOf[js.Any],
-        "MessageId"        -> MessageId.asInstanceOf[js.Any]
+        "MessageId" -> MessageId.asInstanceOf[js.Any]
       )
 
       MD5OfMessageAttributes.foreach(__v => __obj.updateDynamic("MD5OfMessageAttributes")(__v.asInstanceOf[js.Any]))
@@ -1119,7 +1139,7 @@ package sqs {
     ): SendMessageRequest = {
       val __obj = js.Dynamic.literal(
         "MessageBody" -> MessageBody.asInstanceOf[js.Any],
-        "QueueUrl"    -> QueueUrl.asInstanceOf[js.Any]
+        "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
 
       DelaySeconds.foreach(__v => __obj.updateDynamic("DelaySeconds")(__v.asInstanceOf[js.Any]))
@@ -1181,7 +1201,7 @@ package sqs {
     ): SetQueueAttributesRequest = {
       val __obj = js.Dynamic.literal(
         "Attributes" -> Attributes.asInstanceOf[js.Any],
-        "QueueUrl"   -> QueueUrl.asInstanceOf[js.Any]
+        "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[SetQueueAttributesRequest]
@@ -1202,7 +1222,7 @@ package sqs {
     ): TagQueueRequest = {
       val __obj = js.Dynamic.literal(
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any],
-        "Tags"     -> Tags.asInstanceOf[js.Any]
+        "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[TagQueueRequest]
@@ -1223,7 +1243,7 @@ package sqs {
     ): UntagQueueRequest = {
       val __obj = js.Dynamic.literal(
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any],
-        "TagKeys"  -> TagKeys.asInstanceOf[js.Any]
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
 
       __obj.asInstanceOf[UntagQueueRequest]
